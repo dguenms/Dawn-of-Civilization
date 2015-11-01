@@ -5425,6 +5425,8 @@ m_iDistanceMaintenanceModifier(0),
 m_iNumCitiesMaintenanceModifier(0),
 m_iCorporationMaintenanceModifier(0),
 m_iCorporationCommerceModifier(0), //Leoreth
+m_iCorporationUnhappinessModifier(0), // Leoreth
+m_iWonderProductionModifier(0), // Leoreth
 m_iProcessModifier(0), //Leoreth
 m_iExtraHealth(0),
 m_iPollutionModifier(0), //Leoreth
@@ -5445,6 +5447,8 @@ m_iWarWearinessModifier(0),
 m_iFreeSpecialist(0),
 m_iCoreFreeSpecialist(0), //Leoreth
 m_iTradeRoutes(0),
+m_iCapitalTradeModifier(0), // Leoreth
+m_iDefensivePactTradeModifier(0), // Leoreth
 m_iTechPrereq(NO_TECH),
 m_iCivicPercentAnger(0),
 m_iMaxConscript(0),
@@ -5460,6 +5464,7 @@ m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
 m_bNoForeignTrade(false),
+m_bNoForeignTradeModifier(false), // Leoreth
 m_bNoCorporations(false),
 m_bNoForeignCorporations(false),
 m_bStateReligion(false),
@@ -5588,6 +5593,18 @@ int CvCivicInfo::getCorporationCommerceModifier() const
 	return m_iCorporationCommerceModifier;
 }
 
+// Leoreth
+int CvCivicInfo::getCorporationUnhappinessModifier() const
+{
+	return m_iCorporationUnhappinessModifier;
+}
+
+// Leoreth
+int CvCivicInfo::getWonderProductionModifier() const
+{
+	return m_iWonderProductionModifier;
+}
+
 //Leoreth
 int CvCivicInfo::getProcessModifier() const
 {
@@ -5692,6 +5709,18 @@ int CvCivicInfo::getTradeRoutes() const
 	return m_iTradeRoutes;
 }
 
+// Leoreth
+int CvCivicInfo::getCapitalTradeModifier() const
+{
+	return m_iCapitalTradeModifier;
+}
+
+// Leoreth
+int CvCivicInfo::getDefensivePactTradeModifier() const
+{
+	return m_iDefensivePactTradeModifier;
+}
+
 int CvCivicInfo::getTechPrereq() const
 {
 	return m_iTechPrereq;
@@ -5767,6 +5796,11 @@ bool CvCivicInfo::isBuildingOnlyHealthy() const
 bool CvCivicInfo::isNoForeignTrade() const
 {
 	return m_bNoForeignTrade;
+}
+
+bool CvCivicInfo::isNoForeignTradeModifier() const
+{
+	return m_bNoForeignTradeModifier;
 }
 
 bool CvCivicInfo::isNoCorporations() const
@@ -6014,6 +6048,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iNumCitiesMaintenanceModifier);
 	stream->Read(&m_iCorporationMaintenanceModifier);
 	stream->Read(&m_iCorporationCommerceModifier); //Leoreth
+	stream->Read(&m_iCorporationUnhappinessModifier); // Leoreth
+	stream->Read(&m_iWonderProductionModifier); // Leoreth
 	stream->Read(&m_iProcessModifier); //Leoreth
 	stream->Read(&m_iExtraHealth);
 	stream->Read(&m_iPollutionModifier); //Leoreth
@@ -6034,6 +6070,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iFreeSpecialist);
 	stream->Read(&m_iCoreFreeSpecialist); //Leoreth
 	stream->Read(&m_iTradeRoutes);
+	stream->Read(&m_iCapitalTradeModifier); // Leoreth
+	stream->Read(&m_iDefensivePactTradeModifier); // Leoreth
 	stream->Read(&m_iTechPrereq);
 	stream->Read(&m_iCivicPercentAnger);
 	stream->Read(&m_iMaxConscript);
@@ -6050,6 +6088,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bNoUnhealthyPopulation);
 	stream->Read(&m_bBuildingOnlyHealthy);
 	stream->Read(&m_bNoForeignTrade);
+	stream->Read(&m_bNoForeignTradeModifier); // Leoreth
 	stream->Read(&m_bNoCorporations);
 	stream->Read(&m_bNoForeignCorporations);
 	stream->Read(&m_bStateReligion);
@@ -6172,6 +6211,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iNumCitiesMaintenanceModifier);
 	stream->Write(m_iCorporationMaintenanceModifier);
 	stream->Write(m_iCorporationCommerceModifier); //Leoreth
+	stream->Write(m_iCorporationUnhappinessModifier); // Leoreth
+	stream->Write(m_iWonderProductionModifier); // Leoreth
 	stream->Write(m_iProcessModifier); //Leoreth
 	stream->Write(m_iExtraHealth);
 	stream->Write(m_iPollutionModifier); //Leoreth
@@ -6192,6 +6233,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iFreeSpecialist);
 	stream->Write(m_iCoreFreeSpecialist); //Leoreth
 	stream->Write(m_iTradeRoutes);
+	stream->Write(m_iCapitalTradeModifier); // Leoreth
+	stream->Write(m_iDefensivePactTradeModifier); // Leoreth
 	stream->Write(m_iTechPrereq);
 	stream->Write(m_iCivicPercentAnger);
 	stream->Write(m_iMaxConscript);
@@ -6208,6 +6251,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bNoUnhealthyPopulation);
 	stream->Write(m_bBuildingOnlyHealthy);
 	stream->Write(m_bNoForeignTrade);
+	stream->Write(m_bNoForeignTradeModifier); // Leoreth
 	stream->Write(m_bNoCorporations);
 	stream->Write(m_bNoForeignCorporations);
 	stream->Write(m_bStateReligion);
@@ -6278,6 +6322,8 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iNumCitiesMaintenanceModifier, "iNumCitiesMaintenanceModifier");
 	pXML->GetChildXmlValByName(&m_iCorporationMaintenanceModifier, "iCorporationMaintenanceModifier");
 	pXML->GetChildXmlValByName(&m_iCorporationCommerceModifier, "iCorporationCommerceModifier"); //Leoreth
+	pXML->GetChildXmlValByName(&m_iCorporationUnhappinessModifier, "iCorporationUnhappinessModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iWonderProductionModifier, "iWonderProductionModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iProcessModifier, "iProcessModifier"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iExtraHealth, "iExtraHealth");
 	pXML->GetChildXmlValByName(&m_iPollutionModifier, "iPollutionModifier"); //Leoreth
@@ -6302,7 +6348,10 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iFreeSpecialist, "iFreeSpecialist");
 	pXML->GetChildXmlValByName(&m_iCoreFreeSpecialist, "iCoreFreeSpecialist"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");
+	pXML->GetChildXmlValByName(&m_iCapitalTradeModifier, "iCapitalTradeModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iDefensivePactTradeModifier, "iDefensivePactTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoForeignTrade, "bNoForeignTrade");
+	pXML->GetChildXmlValByName(&m_bNoForeignTradeModifier, "bNoForeignTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoCorporations, "bNoCorporations");
 	pXML->GetChildXmlValByName(&m_bNoForeignCorporations, "bNoForeignCorporations");
 	pXML->GetChildXmlValByName(&m_iCivicPercentAnger, "iCivicPercentAnger");

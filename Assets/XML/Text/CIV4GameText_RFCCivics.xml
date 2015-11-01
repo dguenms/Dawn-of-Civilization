@@ -286,8 +286,8 @@
 		<English>Egalitarianism</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_SELF_SUFFICIENCY</Tag>
-		<English>Self-Sufficiency</English>
+		<Tag>TXT_KEY_CIVIC_SUBSISTENCE</Tag>
+		<English>Subsistence</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FORCED_LABOR</Tag>
@@ -358,8 +358,12 @@
 		<English>Standing Army</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_NAVAL_DOMINANCE_TITLE</Tag>
-		<English>Naval Dominance</English>
+		<Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY</Tag>
+		<English>Naval Supremacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MULTILATERALISM</Tag>
+		<English>Multilateralism</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
@@ -457,19 +461,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DYNASTICISM_STRATEGY</Tag>
-		<English>Military units in cities increase happiness</English>
+		<English>Extra happiness from military units, faster construction of Wonders</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REPRESENTATION_STRATEGY</Tag>
-		<English>Extra research from city specialists</English>
+		<English>May hire double the amount of Statesmen, extra happiness in the largest cities, extra happiness from Courthouses</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM_STRATEGY</Tag>
-		<English>Faster military unit production; less war anger; more espionage</English>
+		<English>No city distance maintenance, extra happiness from military units, extra espionage from specialists</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_UNIVERSAL_SUFFRAGE_STRATEGY</Tag>
-		<English>Extra happiness in largest cities; extra production from towns</English>
+		<Tag>TXT_KEY_CIVIC_EGALITARIANISM_STRATEGY</Tag>
+		<English>May hire double the amount of Artists, Scientists, Engineers, extra production from Towns, unhappiness from civs without Egalitarianism</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DIRECT_RULE_STRATEGY</Tag>
@@ -477,59 +481,51 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Tag>
-		<English>New units receive free experience points; lower unit and city support costs</English>
+		<English>Extra experience for units, extra commerce from Forts, extra happiness from Castles</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ABSOLUTISM_STRATEGY</Tag>
-		<English>Increases production and commerce in your capital city</English>
+		<English>Extra production and commerce in your Capital</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AUTOCRACY_STRATEGY</Tag>
-		<English>Can draft three units per turn; barracks produce extra happiness</English>
+		<English>Can draft two units per turn, increased Great General birth rate, extra happiness from Barracks</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AGRARIANISM_STRATEGY</Tag>
-		<English>Extra commerce from plantations and pastures; slower GP birth rate; slower cottage growth</English>
+		<English>Increased Worker work rate, extra production from Pastures, extra commerce from Farms</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPITALISM_STRATEGY</Tag>
-		<English>Extra commerce from towns; can spend gold to finish production</English>
+		<English>Extra commerce from Towns, extra trade route yield, can spend gold to finish building construction</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TRIBALISM_STRATEGY</Tag>
 		<English>The most primitive Society civic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_FORCED_LABOR_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Tag>
 		<English>Can sacrifice city population to finish production</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_URBANIZATION_STRATEGY</Tag>
-		<English>Workers build improvements faster; more production from workshops</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_EGALITARIANISM_STRATEGY</Tag>
-		<English>You may assign unlimited artist, scientist, and merchant specialists in your cities.</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REPUBLIC_STRATEGY</Tag>
-		<English>Increases great people birth rate; cottages develop faster; extra war weariness</English>
+		<English>Increased Great People birth rate, increased Cottage growth</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Tag>
-		<English>Specialists produce food if city works less than seven tiles; increased city maintenance</English>
+		<English>Extra food from specialists if city works less than seven tiles, increased number of cities maintenance</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_SELF_SUFFICIENCY_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_SUBSISTENCE_STRATEGY</Tag>
 		<English>The most primitive Economy civic</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCANTILISM_STRATEGY</Tag>
-		<English>Free specialist in each city but no foreign trade routes</English>
+		<English>No additional income from foreign trade routes, extra income from trade through your Capital, extra commerce from Plantations, faster construction of Customs Houses</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FREE_MARKET_STRATEGY</Tag>
-		<English>Extra trade route and trade yield in each city; increased corporation commerce</English>
+		<English>Extra trade route in all cities, increased corporation commerce</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL_STRATEGY</Tag>
@@ -541,7 +537,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_STRATEGY</Tag>
-		<English>Reduced unhealthiness in all cities; extra happiness from forest preserves</English>
+		<English>Reduced unhealthiness in all cities, extra commerce from Windmills, Watermills, Forest Preserves, extra happiness from Public Transportation, faster construction of Recycling Centers and Hydro Plants</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ANIMISM_STRATEGY</Tag>
@@ -549,27 +545,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PANTHEON_STRATEGY</Tag>
-		<English>Can build classical wonders; extra happiness from pagan temples; extra unhappiness from non-state religions</English>
+		<English>Can build classical wonders, extra happiness from Pagan Temples, extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Tag>
-		<English>Can build missionaries without monasteries; cities with state religion construct buildings faster; extra unhappiness from non-state religions</English>
+		<English>Cities with state religion construct buildings faster, extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FANATICISM_STRATEGY</Tag>
-		<English>Cities with state religion train units faster; extra unhappiness from non-state religions</English>
+		<English>Cities with state religion train units faster, no spread of non-state religions, extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
-		<English>No spread of non-state religion; new units receive free experience points in cities with state religion</English>
+		<English>May hire double the amount of Priest specialists, extra unit experiences in cities with state religion, extra happiness in cities with state religion, extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SCHOLASTICISM_STRATEGY</Tag>
-		<English>Increases great people birth rate in cities with state religion; extra unhappiness from non-state religions</English>
+		<English>Increased Great People birth rate in cities with state religion, can train Missionaries without Monasteries, extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Tag>
-		<English>No state religion. No unhappiness from non-state religions; increased scientific research</English>
+		<English>No state religion, no unhappiness from non-state religions, increased scientific research</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD</Tag>

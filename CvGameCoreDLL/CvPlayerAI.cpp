@@ -7914,6 +7914,8 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 	iHumanDealWeight = AI_dealVal(ePlayer, pTheirList);
 	iAIDealWeight = GET_PLAYER(ePlayer).AI_dealVal(getID(), pOurList);
 
+	GC.getGame().logMsg("Player %d to player %d, human value: %d, AI value: %d", getID(), ePlayer, iHumanDealWeight, iAIDealWeight);
+
 	int iGoldValuePercent = AI_goldTradeValuePercent(ePlayer);
 
 	pTheirCounter->clear();
@@ -8510,12 +8512,21 @@ int CvPlayerAI::AI_maxGoldTrade(PlayerTypes ePlayer) const
 int CvPlayerAI::AI_maxGoldPerTurnTrade(PlayerTypes ePlayer) const
 {
 	int iMaxGoldPerTurn;
+	int iResearchSurplus = 0;
 
 	FAssert(ePlayer != getID());
+
+	// Leoreth: if most commerce goes into research (binary research), make some gold available as well
+	int iCommerceThreshold = isHuman() ? 50 : 80;
+	if (getCommercePercent(COMMERCE_RESEARCH) >= iCommerceThreshold)
+	{
+		iResearchSurplus = getCommerceRate(COMMERCE_RESEARCH) * (getCommercePercent(COMMERCE_RESEARCH) - iCommerceThreshold) / 100;
+	}
 
 	if (isHuman() || (GET_PLAYER(ePlayer).getTeam() == getTeam()))
 	{
 		iMaxGoldPerTurn = (calculateGoldRate() + (getGold() / GC.getDefineINT("PEACE_TREATY_LENGTH")));
+		iMaxGoldPerTurn += iResearchSurplus;
 	}
 	else
 	{
@@ -8527,7 +8538,7 @@ int CvPlayerAI::AI_maxGoldPerTurnTrade(PlayerTypes ePlayer) const
 		iMaxGoldPerTurn += std::min(0, getGoldPerTurnByPlayer(ePlayer));
 	}
 
-	return std::max(0, std::min(iMaxGoldPerTurn, calculateGoldRate()));
+	return std::max(0, std::min(iMaxGoldPerTurn, calculateGoldRate() + iResearchSurplus));
 }
 
 
@@ -8574,7 +8585,7 @@ int CvPlayerAI::AI_bonusHappinessVal(BonusTypes eBonus, int iChange) const
 	{
 		iHappinessDifference = std::max(0, iChange * (pLoopCity->unhappyLevel() - pLoopCity->happyLevel()));
 		
-		if (pLoopCity->foodDifference() > 0) iHappinessDifference += iChange * std::min(2, pLoopCity->foodDifference() / 2);
+		if (pLoopCity->foodDifference() > 0) iHappinessDifference += iChange * std::min(5, pLoopCity->estimateGrowth(getTurns(25)));
 
 		iValue += iChange * range(pLoopCity->getBonusHappiness(eBonus), 0, iHappinessDifference);
 	}
@@ -8593,7 +8604,7 @@ int CvPlayerAI::AI_bonusHealthVal(BonusTypes eBonus, int iChange) const
 	{
 		iHealthDifference = std::max(0, iChange * (pLoopCity->badHealth() - pLoopCity->goodHealth()));
 
-		if (pLoopCity->foodDifference() > 0) iHealthDifference += iChange * std::min(2, pLoopCity->foodDifference() / 2);
+		if (pLoopCity->foodDifference() > 0) iHealthDifference += iChange * std::min(5, pLoopCity->estimateGrowth(getTurns(25)));
 
 		iValue += iChange * range(pLoopCity->getBonusHealth(eBonus), 0, iHealthDifference);
 	}
@@ -8960,7 +8971,6 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 
 			// Leoreth: value more because happiness/health now scale better
 			//iValue /= 10;
-			iValue /= 2;
 		}
 
 		// Leoreth: apply change
@@ -8977,7 +8987,8 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 		}
 
 		// Leoreth: scale with gold value
-		iValue /= 10;
+		iValue *= 2;
+		iValue /= 5;
 
 		//clamp value non-negative
 		m_aiBonusValue[eBonus] = iChange * std::max(0, iChange * iValue);
@@ -9014,6 +9025,9 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 					iValue += (30 * kCorp.getCommerceProduced(COMMERCE_RESEARCH) * iCorpCount) / iCityCount;
 					iValue += (12 * kCorp.getCommerceProduced(COMMERCE_CULTURE) * iCorpCount) / iCityCount;
 					iValue += (20 * kCorp.getCommerceProduced(COMMERCE_ESPIONAGE) * iCorpCount) / iCityCount;
+
+					iValue += 100 * kCorp.getHappiness() * iCorpCount;
+					iValue += 50 * kCorp.getHealth() * iCorpCount;
 
 					//Disabled since you can't found/spread a corp unless there is already a bonus,
 					//and that bonus will provide the entirity of the bonusProduced benefit.
@@ -9078,6 +9092,8 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 		}
 	}
 
+	//GC.getGame().logMsg("Player %s to %s trade val for bonus %s change %d: %d", getCivilizationShortDescription(), GET_PLAYER(ePlayer).getCivilizationShortDescription(), GC.getBonusInfo(eBonus).getText(), iChange, iValue);
+
 	return (iValue * GC.getDefineINT("PEACE_TREATY_LENGTH"));
 }
 
@@ -9110,6 +9126,12 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 	if (GET_PLAYER(ePlayer).getTeam() == getTeam())
 	{
 		return NO_DENIAL;
+	}
+
+	// Leoreth: resources can be completely worthless now even though you do not already have them
+	if (GET_PLAYER(ePlayer).AI_bonusTradeVal(eBonus, getID(), 1) <= 0)
+	{
+		return DENIAL_NO_GAIN;
 	}
 
 	if (GET_PLAYER(ePlayer).getNumAvailableBonuses(eBonus) > 0 && GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) <= 0)
@@ -11582,6 +11604,8 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 	bWarPlan = (GET_TEAM(getTeam()).getAnyWarPlanCount(true) > 0);
 
+	CvCity* pCapital = getCapitalCity();
+
 	iConnectedForeignCities = countPotentialForeignTradeCitiesConnected();
 	iTotalReligonCount = countTotalHasReligion();
 	ReligionTypes eBestReligion = AI_bestReligion();
@@ -11627,12 +11651,29 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
-	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12);
+	iValue += (kCivic.getFreeSpecialist() * getNumCities() * /*12*/ 18);
 
 	// Leoreth: factor in extra unit upkeep
 	if (eCivic == CIVIC_MERCENARIES)
 	{
-		iValue -= getNumMilitaryUnits();
+		iValue -= getNumMilitaryUnits() / 3;
+	}
+
+	// Leoreth: wonder production modifier
+	iTempValue = kCivic.getWonderProductionModifier();
+	if (iTempValue != 0)
+	{
+		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+		{
+			CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+			if (::isWorldWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()))
+			{
+				if (canConstruct((BuildingTypes)iI) || (canConstruct((BuildingTypes)iI, false, false, false, true) && canResearch((TechTypes)kBuilding.getPrereqAndTech())))
+				{
+					iValue += iTempValue * 20 / 100;
+				}
+			}
+		}
 	}
 
 	//Leoreth: free core specialist
@@ -11653,7 +11694,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				iY = pLoopCity->getY();
 				if (plotDistance(iX, iY, iCapitalX, iCapitalY) <= 3)
 				{
-					iValue += kCivic.getCoreFreeSpecialist() * 12;
+					iValue += kCivic.getCoreFreeSpecialist() * 18;
 				}
 			}
 			//GC.getGameINLINE().logMsg("End AI free core specialist.");
@@ -11716,6 +11757,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * 3) * 6) + (getNumCities() * 2));
 	iValue += -((kCivic.isNoForeignTrade()) ? (iConnectedForeignCities * 3) : 0);
+	iValue -= kCivic.isNoForeignTradeModifier() ? (iConnectedForeignCities * 3 / 2) : 0; // Leoreth
+	iValue += (pCapital) ? ((100 + kCivic.getCapitalTradeModifier()) * pCapital->getTradeRoutes() * AI_yieldWeight(YIELD_COMMERCE) * 2 / 100) : 0; // Leoreth
+	iValue += (100 + kCivic.getDefensivePactTradeModifier()) * iConnectedForeignCities * AI_yieldWeight(YIELD_COMMERCE) * 2 / 100; // Leoreth
 	if (kCivic.isNoCorporations())
 	{
 		iValue -= countHeadquarters() * (40 + 3 * getNumCities());
@@ -11842,6 +11886,21 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 /************************************************************************************************/
 	}
 
+	// Leoreth: corporation unhappiness modifier
+	iTempValue = kCivic.getCorporationUnhappinessModifier();
+	if (iTempValue < 0 && iTempValue >= -100)
+	{
+		int iUnhappiness = 0;
+		int iLoop;
+		CvCity* pLoopCity;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			iUnhappiness += pLoopCity->getCorporationBadHappiness();
+		}
+
+		iValue += AI_getHappinessWeight(-iTempValue * iUnhappiness / 100, 1);
+	}
+
 	if (kCivic.getWarWearinessModifier() != 0)
 	{
 		int iAngerPercent = getWarWearinessPercentAnger();
@@ -11889,7 +11948,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 		iTempValue += ((kCivic.getYieldModifier(iI) * getNumCities()) / 2);
 		iTempValue += ((kCivic.getCapitalYieldModifier(iI) * 3) / 4);
-		CvCity* pCapital = getCapitalCity();
+
 		if (pCapital)
 		{
 			iTempValue += ((kCivic.getCapitalYieldModifier(iI) * pCapital->getBaseYieldRate((YieldTypes)iI)) / 80);
@@ -11900,10 +11959,9 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) + getNumCities() * 2))) / 100;
 		}
+
 		// Leoreth: specialist extra yield
-		//GC.getGameINLINE().logMsg("Begin AI specialist extra yield.");
 		iTempValue += ((kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15);
-		//GC.getGameINLINE().logMsg("End AI specialist extra yield.");
 
 		if (iI == YIELD_FOOD)
 		{
@@ -12130,7 +12188,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Rhye - end 6th
 
 	//Leoreth: Pantheon civic
-	if (eCivic == (CivicTypes)PANTHEON)
+	if (eCivic == CIVIC_PANTHEON)
 	{
 		//GC.getGameINLINE().logMsg("Begin AI pantheon civic.");
 		if (GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getFavoriteReligion() == -1 && GET_PLAYER(getID()).getCurrentEra() < 2 && getID() != MAYA)
@@ -12163,7 +12221,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}*/
 
 	// Leoreth - prefer Pantheon if more than half of their cities has no religion
-	if (eCivic == (CivicTypes)PANTHEON){  // Pantheon
+	if (eCivic == CIVIC_PANTHEON){  // Pantheon
 		//GC.getGameINLINE().logMsg("Pantheon check entered");
         if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME){
             int iCityCounter = 0;

@@ -4644,6 +4644,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeBuildingDefense(GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
 		changeBuildingBombardDefense(GC.getBuildingInfo(eBuilding).getBombardDefenseModifier() * iChange);
 
+		// Leoreth: Himeji Castle effect: defense modifiers affect culture
+		if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+		{
+			changeCommerceRateModifier(COMMERCE_CULTURE, GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
+		}
+
 		changeBaseGreatPeopleRate(GC.getBuildingInfo(eBuilding).getGreatPeopleRateChange() * iChange);
 
 		if (GC.getBuildingInfo(eBuilding).getGreatPeopleUnitClass() != NO_UNITCLASS)
@@ -4675,9 +4681,8 @@ void CvCity::processProcess(ProcessTypes eProcess, int iChange)
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 	{
 		//Leoreth: process efficiency modifier inside (civic)
-		changeProductionToCommerceModifier(((CommerceTypes)iI), ((GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) * (100+GET_PLAYER(getOwner()).getProcessModifier()) / 100 * iChange)));
+		changeProductionToCommerceModifier(((CommerceTypes)iI), ((GC.getProcessInfo(eProcess).getProductionToCommerceModifier(iI) * (100 + GET_PLAYER(getOwner()).getProcessModifier()) / 100 * iChange)));
 	}
-	//GC.getGameINLINE().logMsg("End process process.");
 }
 
 
@@ -5805,23 +5810,6 @@ int CvCity::getHurryGold(HurryTypes eHurry, int iHurryCost) const
 	}
 
 	iGold = (iHurryCost * GC.getHurryInfo(eHurry).getGoldPerProduction());
-
-	// Leoreth: -25% hurry cost if not first in GDP (make it more useful without being exploitable - disabled)
-	/*bool bFirstGDP = true;
-	for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).calculateTotalCommerce() > GET_PLAYER(getOwner()).calculateTotalCommerce())
-		{
-			bFirstGDP = false;
-			break;
-		}
-	}
-
-	if (!bFirstGDP)
-	{
-		iGold *= 3;
-		iGold /= 4;
-	}*/
 	
 	// Phoenician UP: -50% mercenary cost
 	if (getOwnerINLINE() == CARTHAGE && GC.getHurryInfo(eHurry).isUnits())
@@ -9817,25 +9805,53 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	if (NULL != pOtherCity)
 	{
-	    //Leoreth: includes Porcelain Tower effect
+	    // Leoreth: includes Porcelain Tower effect
 		if (area() != pOtherCity->area() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
 		{
 			iModifier += GC.getDefineINT("OVERSEAS_TRADE_MODIFIER");
 		}
 
-        //Leoreth: includes Porcelain Tower effect
-		if (getTeam() != pOtherCity->getTeam() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
+        // Leoreth: includes Porcelain Tower effect
+		if ((getTeam() != pOtherCity->getTeam() && !GET_PLAYER(getOwner()).isNoForeignTradeModifier()) || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
 		{
 			iModifier += getForeignTradeRouteModifier();
 
 			iModifier += getPeaceTradeModifier(pOtherCity->getTeam());
 		}
 
-		//Leoreth: new distance modifier
+		// Leoreth: new distance modifier
 		iModifier += getDistanceTradeModifier(pOtherCity);
+
+		// Leoreth: new modifier for trade routes with capital
+		iModifier += getCapitalTradeModifier(pOtherCity);
+
+		// Leoreth: new modifier for trade routes with defensive pact partners
+		iModifier += getDefensivePactTradeModifier(pOtherCity);
 	}
 
 	return iModifier;
+}
+
+int CvCity::getCapitalTradeModifier(CvCity* pOtherCity) const
+{
+	if (pOtherCity == NULL) return 0;
+
+	if (isCapital() || (pOtherCity->getOwner() == getOwner() && pOtherCity->isCapital()))
+	{
+		return GET_PLAYER(getOwner()).getCapitalTradeModifier();
+	}
+
+	return 0;
+}
+
+int CvCity::getDefensivePactTradeModifier(CvCity* pOtherCity) const
+{
+	if (GET_TEAM(getTeam()).isDefensivePact(pOtherCity->getTeam()))
+	{
+		return GET_PLAYER(getOwner()).getDefensivePactTradeModifier();
+	}
+
+	return 0;
 }
 
 int CvCity::getDistanceTradeModifier(CvCity* pOtherCity) const
@@ -10215,7 +10231,7 @@ int CvCity::getCommerceRateTimes100(CommerceTypes eIndex) const
 
 			if (pUnit->getOwner() == getOwner() && pUnit->isFortifyable() && pUnit->getFortifyTurns() >= GC.getDefineINT("MAX_FORTIFY_TURNS"))
 			{
-				iRate += 100;
+				iRate += 100 * pUnit->getLevel();
 			}
 		}
 	}
@@ -10296,7 +10312,7 @@ void CvCity::updateCommerce(CommerceTypes eIndex)
 	else
 	{
 		iNewCommerce = (getBaseCommerceRateTimes100(eIndex) * getTotalCommerceRateModifier(eIndex)) / 100;
-		iNewCommerce += getYieldRate(YIELD_PRODUCTION) * getProductionToCommerceModifier(eIndex);
+		iNewCommerce += getBaseYieldRate(YIELD_PRODUCTION) * getProductionToCommerceModifier(eIndex); // Leoreth: no production modifiers for processes anymore
 	}
 
 	if (iOldCommerce != iNewCommerce)
@@ -10971,7 +10987,7 @@ void CvCity::updateCorporationHappiness()
 			iNewBadHappiness -= iHappiness;
 		}
 	}
-
+	
 	if (iOldGoodHappiness != iNewGoodHappiness)
 	{
 		m_iCorporationGoodHappiness = iNewGoodHappiness;
@@ -17405,6 +17421,13 @@ int CvCity::getCorporationHappinessByCorporation(CorporationTypes eCorporation) 
 			}
 		}
 	}
+	
+	// Leoreth: corporation bad happiness modifier
+	if (iHappiness < 0)
+	{
+		iHappiness *= 100 + GET_PLAYER(getOwner()).getCorporationUnhappinessModifier();
+		iHappiness /= 100;
+	}
 
 	return iHappiness / 10;
 }
@@ -17747,4 +17770,27 @@ void CvCity::updateGreatWall()
 {
 	gDLL->getEngineIFace()->RemoveGreatWall(this);
 	gDLL->getEngineIFace()->AddGreatWall(this);
+}
+
+// Leoreth: estimate how many points the city will grow in the next X turns
+int CvCity::estimateGrowth(int iTurns) const
+{
+	int iTurnsLeft = iTurns;
+	int iFoodStored = getFood();
+	int iPopulation = getPopulation();
+	int iFoodDifference = foodDifference();
+	int iGrowthThreshold = growthThreshold();
+
+	while (iFoodDifference > 0 && (iGrowthThreshold - iFoodStored) / iFoodDifference <= iTurnsLeft)
+	{
+		iPopulation++;
+		iTurnsLeft -= (iGrowthThreshold - iFoodStored) / iFoodDifference;
+
+		iGrowthThreshold = GET_PLAYER(getOwnerINLINE()).getGrowthThreshold(iPopulation);
+		iFoodStored = iGrowthThreshold * getMaxFoodKeptPercent() / 100;
+
+		iFoodDifference -= (iPopulation < NUM_CITY_PLOTS) ? 1 : 2;
+	}
+
+	return iPopulation - getPopulation();
 }

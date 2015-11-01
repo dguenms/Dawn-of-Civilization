@@ -4325,7 +4325,7 @@ class RiseAndFall:
 				  con.iPolytheism, con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, \
 				  con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iMathematics, \
 				  con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iCivilService, con.iHunting, con.iArchery, \
-				  con.iAnimalHusbandry, con.iAesthetics]
+				  con.iAnimalHusbandry, con.iAesthetics, con.iCalendar]
 		for iTech in lJapaneseTechs:
 			teamJapan.setHasTech(iTech, True, iCiv, False, False)
                 iCiv = iVikings
@@ -4354,34 +4354,6 @@ class RiseAndFall:
                 teamVikings.setHasTech(con.iArchery, True, iCiv, False, False)
                 teamVikings.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
                 teamVikings.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
-                iCiv = iArabia
-                teamArabia.setHasTech(con.iMining, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iIronWorking, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iMetalCasting, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iMachinery, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iMysticism, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iPolytheism, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iMasonry, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iPriesthood, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iMonotheism, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iTheology, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iMonarchy, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iDivineRight, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iFishing, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iTheWheel, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iPottery, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iAgriculture, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iWriting, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iFeudalism, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iAlphabet, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iMathematics, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iConstruction, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iCurrency, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iHunting, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iArchery, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iAnimalHusbandry, True, iCiv, False, False)
-                teamArabia.setHasTech(con.iHorsebackRiding, True, iCiv, False, False)
                 iCiv = iIndependent
                 teamIndependent.setHasTech(con.iMining, True, iCiv, False, False)
                 teamIndependent.setHasTech(con.iBronzeWorking, True, iCiv, False, False)
@@ -4617,7 +4589,7 @@ class RiseAndFall:
 					  con.iPolytheism, con.iMeditation, con.iPriesthood, con.iMasonry, con.iMonarchy, con.iFishing, \
 					  con.iSailing, con.iTheWheel, con.iPottery, con.iAgriculture, con.iWriting, con.iMathematics, \
 					  con.iConstruction, con.iCurrency, con.iCodeOfLaws, con.iCivilService, con.iHunting, con.iArchery, \
-					  con.iAnimalHusbandry]
+					  con.iAnimalHusbandry, con.iCalendar]
 			for iTech in lJapaneseTechs:
 				teamJapan.setHasTech(iTech, True, iCiv, False, False)
 		if iCiv == iTamils:

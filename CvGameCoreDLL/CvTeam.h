@@ -93,6 +93,7 @@ public:
 	int getTechLeaderModifier() const;
 	int getSpreadResearchModifier(TechTypes eTech) const;
 	int getTurnResearchModifier() const;
+	int getModernizationResearchModifier(TechTypes eTech) const;
 
 	bool hasHolyCity(ReligionTypes eReligion) const;																		// Exposed to Python
 	bool hasHeadquarters(CorporationTypes eCorporation) const;																		// Exposed to Python

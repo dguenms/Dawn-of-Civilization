@@ -1344,6 +1344,8 @@ public:
 	int getNumCitiesMaintenanceModifier() const;				// Exposed to Python
 	int getCorporationMaintenanceModifier() const;				// Exposed to Python
 	int getCorporationCommerceModifier() const; //Leoreth
+	int getCorporationUnhappinessModifier() const; // Leoreth
+	int getWonderProductionModifier() const; // Leoreth
 	int getProcessModifier() const; //Leoreth
 	int getExtraHealth() const;						// Exposed to Python
 	int getPollutionModifier() const; //Leoreth
@@ -1364,6 +1366,8 @@ public:
 	int getFreeSpecialist() const;				// Exposed to Python
 	int getCoreFreeSpecialist() const; //Leoreth
 	int getTradeRoutes() const;				// Exposed to Python
+	int getCapitalTradeModifier() const; // Leoreth
+	int getDefensivePactTradeModifier() const; // Leoreth
 	int getTechPrereq() const;				// Exposed to Python
 	int getCivicPercentAnger() const;				// Exposed to Python
 	int getMaxConscript() const;				// Exposed to Python
@@ -1381,6 +1385,7 @@ public:
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
 	bool isBuildingOnlyHealthy() const;				// Exposed to Python
 	bool isNoForeignTrade() const;				// Exposed to Python
+	bool isNoForeignTradeModifier() const; // Leoreth
 	bool isNoCorporations() const;				// Exposed to Python
 	bool isNoForeignCorporations() const;				// Exposed to Python
 	bool isStateReligion() const;				// Exposed to Python
@@ -1446,6 +1451,8 @@ protected:
 	int m_iNumCitiesMaintenanceModifier;
 	int m_iCorporationMaintenanceModifier;
 	int m_iCorporationCommerceModifier; //Leoreth
+	int m_iCorporationUnhappinessModifier; // Leoreth
+	int m_iWonderProductionModifier; // Leoreth
 	int m_iProcessModifier; //Leoreth
 	int m_iExtraHealth;
 	int m_iPollutionModifier; //Leoreth
@@ -1466,6 +1473,8 @@ protected:
 	int m_iFreeSpecialist;
 	int m_iCoreFreeSpecialist; //Leoreth
 	int m_iTradeRoutes;
+	int m_iCapitalTradeModifier; // Leoreth
+	int m_iDefensivePactTradeModifier; // Leoreth
 	int m_iTechPrereq;
 	int m_iCivicPercentAnger;
 	int m_iMaxConscript;
@@ -1483,6 +1492,7 @@ protected:
 	bool m_bNoUnhealthyPopulation;
 	bool m_bBuildingOnlyHealthy;
 	bool m_bNoForeignTrade;
+	bool m_bNoForeignTradeModifier; // Leoreth
 	bool m_bNoCorporations;
 	bool m_bNoForeignCorporations;
 	bool m_bStateReligion;

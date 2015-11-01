@@ -644,6 +644,8 @@
 	<ElementType name="iNumCitiesMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iCorporationMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iCorporationCommerceModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iCorporationUnhappinessModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iWonderProductionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iProcessModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iExtraHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iPollutionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
@@ -667,7 +669,10 @@
 	<ElementType name="iLargestCityHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeSpecialist" content="textOnly" dt:type="int"/>
 	<ElementType name="iCoreFreeSpecialist" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iCapitalTradeModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iDefensivePactTradeModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="bNoForeignTrade" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bNoForeignTradeModifier" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bNoCorporations" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNoForeignCorporations" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iCivicPercentAnger" content="textOnly" dt:type="int"/>
@@ -825,6 +830,8 @@
 		<element type="iNumCitiesMaintenanceModifier"/>
 		<element type="iCorporationMaintenanceModifier"/>
 		<element type="iCorporationCommerceModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iCorporationUnhappinessModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iWonderProductionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iProcessModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iExtraHealth"/>
 		<element type="iPollutionModifier" minOccurs="0"/> <!-- Leoreth -->
@@ -850,7 +857,10 @@
 		<element type="iFreeSpecialist"/>
 		<element type="iCoreFreeSpecialist" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iTradeRoutes"/>
+		<element type="iCapitalTradeModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iDefensivePactTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoForeignTrade"/>
+		<element type="bNoForeignTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoCorporations"/>
 		<element type="bNoForeignCorporations"/>
 		<element type="iCivicPercentAnger"/>

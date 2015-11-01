@@ -1235,7 +1235,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STONEHENGE</Tag>	<!-- missing translations -->
-		<English>The Great Sphynx</English>
+		<English>The Great Sphinx</English>
 		<French>
 			<Text></Text>
 			<Gender>Male</Gender>
@@ -1372,6 +1372,11 @@
 		<Spanish>Resoluci&#243;n n&#186; 427 de la ONU (principio mundial - Libertad religiosa)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VOTE_SECULARISM</Tag>
+		<English>U.N. Resolution #413 (Global Civic - Multilateralism)</English>
+		<German>U.N.-Resolution Nr. 413 (Globale Staatsform - Multilateralism)</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VOTE_PUBLIC_WELFARE</Tag>
 		<English>U.N. Resolution #631 (Global Civic - Public Welfare)</English>
 	</TEXT>
@@ -1399,5 +1404,4 @@
 		<Tag>TXT_KEY_VOTE_UN_RELEASE_CIVILIZATION</Tag>
 		<English>Release Civilization</English>
 	</TEXT>
-
 </Civ4GameText>

@@ -1111,10 +1111,10 @@ def calculateStability(iPlayer):
 	bCityStates = (iCivicGovernment == con.iCivicCityStates)
 	bMercantilism = (iCivicEconomy == con.iCivicMercantilism)
 	bVassalage = (iCivicOrganization == con.iCivicVassalage)
-	bWarriorCode = (iCivicMilitary == con.iCivicWarriorCode)
 	bEnvironmentalism = (iCivicEconomy == con.iCivicEnvironmentalism)
 	bFanaticism = (iCivicGovernment == con.iCivicFanaticism)
 	bAutocracy = (iCivicGovernment == con.iCivicAutocracy)
+	bMultilateralism = (iCivicMilitary == con.iCivicMultilateralism)
 	
 	bSingleCoreCity = (len(utils.getCoreCityList(iPlayer, iReborn)) == 1)
 	
@@ -1145,7 +1145,7 @@ def calculateStability(iPlayer):
 			iCulturePercent = 100
 				
 		#bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
-		bExpansionExceptions = bTotalitarianism or bWarriorCode
+		bExpansionExceptions = bTotalitarianism
 		
 		# Expansion
 		if plot.isCore(iPlayer):
@@ -1409,8 +1409,9 @@ def calculateStability(iPlayer):
 		if iCivicOrganization == con.iCivicEgalitarianism: iCivicStability -= 3
 		
 	if iCivicOrganization == con.iCivicVassalage:
-		if iCivicMilitary in [con.iCivicWarriorCode, con.iCivicLevyArmies]: iCivicStability += 3
+		if iCivicMilitary == con.iCivicLevyArmies: iCivicStability += 3
 		else: iCivicStability -= 5
+		
 		if iCivicEconomy in [con.iCivicCapitalism, con.iCivicIndustrialism, con.iCivicPublicWelfare]: iCivicStability -= 5
 	
 		if iCurrentEra == con.iMedieval:
@@ -1420,9 +1421,9 @@ def calculateStability(iPlayer):
 	if iCivicGovernment == con.iCivicCityStates:
 		if iCivicOrganization in [con.iCivicVassalage, con.iCivicAbsolutism, con.iCivicEgalitarianism]: iCivicStability -= 3
 		if iCivicEconomy == con.iCivicGuilds: iCivicStability += 2
-		elif iCivicEconomy not in [con.iCivicMercantilism, con.iCivicSelfSufficiency]: iCivicStability -= 5
+		elif iCivicEconomy not in [con.iCivicMercantilism, con.iCivicSubsistence]: iCivicStability -= 5
 		if iCivicMilitary in [con.iCivicMilitia, con.iCivicMercenaries]: iCivicStability += 2
-		elif iCivicMilitary != con.iCivicNavalDominance: iCivicStability -= 3
+		elif iCivicMilitary != con.iCivicNavalSupremacy: iCivicStability -= 3
 		
 	if iCivicOrganization == con.iCivicAbsolutism:
 		if iCivicGovernment == con.iCivicRepublic: iCivicStability -= 5
@@ -1435,12 +1436,14 @@ def calculateStability(iPlayer):
 	if iCivicGovernment == con.iCivicRepublic:
 		if iCivicOrganization == con.iCivicRepresentation: iCivicStability += 2
 		
-	if iCivicMilitary == con.iCivicWarriorCode:
-		if iCivicGovernment == con.iCivicDynasticism: iCivicStability += 2
-		if iCivicReligion == con.iCivicFanaticism: iCivicStability += 2
-		
 	if iCivicGovernment == con.iCivicAutocracy:
 		if iCivicMilitary == con.iCivicStandingArmy: iCivicStability += 3
+		
+	if iCivicMilitary == con.iCivicMultilateralism:
+		if iCivicGovernment == con.iCivicAutocracy: iCivicStability -= 2
+		if iCivicOrganization == con.iCivicTotalitarianism: iCivicStability -= 3
+		if iCivicOrganization == con.iCivicEgalitarianism: iCivicStability += 2
+		if iCivicReligion == con.iCivicFanaticism: iCivicStability -= 3
 		
 	if utils.getHumanID() != iPlayer and iCivicStability < 0: iCivicStability /= 2
 		
@@ -1474,16 +1477,13 @@ def calculateStability(iPlayer):
 		if iCivicOrganization not in [con.iCivicEgalitarianism, con.iCivicTotalitarianism]: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iCorporation):
-		if iCivicEconomy in [con.iCivicSelfSufficiency, con.iCivicGuilds]: iCivicStability -= 5
+		if iCivicEconomy in [con.iCivicSubsistence, con.iCivicGuilds]: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iEconomics):
 		if iCivicLabor == con.iCivicSlavery and iCivicOrganization != con.iCivicTotalitarianism: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(con.iNationalism):
 		if iCivicMilitary == con.iCivicMercenaries: iCivicStability -= 5
-		
-	if tPlayer.isHasTech(con.iMilitaryScience):
-		if iCivicMilitary == con.iCivicWarriorCode: iCivicStability -= 7
 		
 	if utils.getHumanID() != iPlayer and iCivicStability < 0: iCivicStability /= 2
 	
@@ -1531,6 +1531,7 @@ def calculateStability(iPlayer):
 	iRelationStability = 0
 	iAutocracyStability = 0
 	iFanaticismStability = 0
+	iMultilateralismStability = 0
 	
 	iNumContacts = 0
 	
@@ -1557,6 +1558,7 @@ def calculateStability(iPlayer):
 		# defensive pacts
 		if tPlayer.isDefensivePact(iLoopPlayer):
 			if iLoopScore > iPlayerScore: iDefensivePactStability += 5
+			if bMultilateralism: iDefensivePactStability += 3
 			
 		# open borders
 		if tPlayer.canContact(iLoopPlayer):
@@ -1581,6 +1583,9 @@ def calculateStability(iPlayer):
 			if tPlayer.isAtWar(iLoopPlayer):
 				if pLoopPlayer.getStateReligion() != iStateReligion: iFanaticismStability += 3
 				else: iFanaticismStability -= 2
+		if bMultilateralism:
+			if tPlayer.isAtWar(iLoopPlayer):
+				iMultilateralismStability -= 2
 		
 	# penalize contacts because they allow more OB treaties
 	iRelationStability -= (iNumContacts / 2 + min(4, iNumContacts))
@@ -1591,8 +1596,9 @@ def calculateStability(iPlayer):
 	lParameters[con.iParameterRelations] = iRelationStability
 	lParameters[con.iParameterAutocracy] = iAutocracyStability
 	lParameters[con.iParameterFanaticism] = iFanaticismStability
+	lParameters[con.iParameterMultilateralism] = iMultilateralismStability
 			
-	iForeignStability += iNeighborStability + iVassalStability + iDefensivePactStability + iRelationStability + iAutocracyStability + iFanaticismStability
+	iForeignStability += iNeighborStability + iVassalStability + iDefensivePactStability + iRelationStability + iAutocracyStability + iFanaticismStability + iMultilateralismStability
 	
 	# MILITARY
 	
@@ -2168,7 +2174,6 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	
 def getResurrectionTechs(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
-	iCurrentEra = gc.getGame().getCurrentEra()
 	lTechList = []
 	lSourceCivs = []
 	
@@ -2191,11 +2196,6 @@ def getResurrectionTechs(iPlayer):
 		lSourceCivs.append(con.iIndependent2)
 	
 	for iTech in range(con.iNumTechs):
-		
-		# all techs from previous eras for free
-		if gc.getTechInfo(iTech).getEra() < iCurrentEra:
-			lTechList.append(iTech)
-			continue
 			
 		# at least half of the source civs know this technology
 		iCount = 0

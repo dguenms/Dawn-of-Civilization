@@ -1017,6 +1017,9 @@ public:
 	void updateGreatWall();
 	void updateArtStyleType();
 	int getDistanceTradeModifier(CvCity* pOtherCity) const;
+	int getCapitalTradeModifier(CvCity* pOtherCity) const;
+	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
+	int estimateGrowth(int iTurns) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

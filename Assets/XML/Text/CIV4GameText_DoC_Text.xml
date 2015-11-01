@@ -978,6 +978,11 @@
 		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Aufstieg der Zivilisation:[COLOR_REVERT]</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_MODERNIZATION_MODIFIER</Tag>
+		<English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernization:[COLOR_REVERT]</English>
+		<German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernisierung:[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_BONUS_PLAYER_TRADE</Tag>
 		<English>Trade</English>
 		<German>Handel</German>
@@ -1013,6 +1018,46 @@
 		<Tag>TXT_KEY_MISC_SPY_UPGRADED</Tag>
 		<English>Your Spy has reached the status of a Great Spy!</English>
 		<German>Ihr Spion hat den Status eines Gro&#223;en Spions erreicht!</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NO_FOREIGN_TRADE_MODIFIER</Tag>
+		<English>[ICON_BULLET]No Additional Income from Foreign Trade Routes</English>
+		<German>[ICON_BULLET]Kein zusätzliches Einkommen durch ausländische Handelsrouten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NO_UNHAPPINESS_CORPORATION</Tag>
+		<English>[ICON_BULLET]No [ICON_UNHAPPY] from Corporations</English>
+		<German>[ICON_BULLET]Kein [ICON_UNHAPPY] durch Kapitalgesellschaften</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NO_UNHAPPINESS_CORPORATION_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from Corporations</English>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] durch Kapitalgesellschaften</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WONDER_PRODUCTION</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] when building Wonders</English>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] beim Bau von Wundern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPITAL_TRADE_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] going through your Capital</English>
+		<German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] durch die Hauptstadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_MOD_CAPITAL_ROUTE</Tag>
+		<English>%D1_Mod%%: for trading through Capital</English>
+		<German>%D1_Mod%%: durch Handel durch die Hauptstadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DEFENSIVE_PACT_TRADE_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</English>
+		<German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] mit Verteidigungsbündnispartnern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_MOD_DEFENSIVE_PACT</Tag>
+		<English>%D1_Mod%%: for trading with Defensive Pact partner</English>
+		<German>%D1_Mod%%: durch Handel mit einem Verteidigungsbündnispartner</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>

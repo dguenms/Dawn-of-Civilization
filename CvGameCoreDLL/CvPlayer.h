@@ -519,6 +519,10 @@ public:
 	int getCorporationCommerceModifier() const;
 	void changeCorporationCommerceModifier(int iChange);
 
+	// Leoreth
+	int getCorporationUnhappinessModifier() const;
+	void changeCorporationUnhappinessModifier(int iChange);
+
 	//Leoreth
 	int getProcessModifier() const;
 	void changeProcessModifier(int iChange);
@@ -573,6 +577,11 @@ public:
 	bool isNoForeignTrade() const;																																						// Exposed to Python
 	void changeNoForeignTradeCount(int iChange);
 
+	// Leoreth
+	int getNoForeignTradeModifierCount() const;
+	bool isNoForeignTradeModifier() const;
+	void changeNoForeignTradeModifierCount(int iChange);
+
 	int getNoCorporationsCount() const;
 	bool isNoCorporations() const;																																						// Exposed to Python
 	void changeNoCorporationsCount(int iChange);
@@ -586,6 +595,14 @@ public:
 
 	int getTradeRoutes() const;																																								// Exposed to Python
 	void changeTradeRoutes(int iChange);																																// Exposed to Python
+
+	// Leoreth
+	int getCapitalTradeModifier() const;
+	void changeCapitalTradeModifier(int iChange);
+
+	// Leoreth
+	int getDefensivePactTradeModifier() const;
+	void changeDefensivePactTradeModifier(int iChange);
 
 	DllExport int getRevolutionTimer() const;																																	// Exposed to Python
 	void setRevolutionTimer(int iNewValue);
@@ -1258,6 +1275,7 @@ protected:
 	int m_iNumCitiesMaintenanceModifier;
 	int m_iCorporationMaintenanceModifier;
 	int m_iCorporationCommerceModifier; //Leoreth
+	int m_iCorporationUnhappinessModifier; // Leoreth
 	int m_iProcessModifier; //Leoreth
 	int m_iTotalMaintenance;
 	int m_iUpkeepModifier;
@@ -1274,10 +1292,13 @@ protected:
 	int m_iFreeSpecialist;
 	int m_iCoreFreeSpecialist; //Leoreth
 	int m_iNoForeignTradeCount;
+	int m_iNoForeignTradeModifierCount; // Leoreth
 	int m_iNoCorporationsCount;
 	int m_iNoForeignCorporationsCount;
 	int m_iCoastalTradeRoutes;
 	int m_iTradeRoutes;
+	int m_iCapitalTradeModifier; // Leoreth
+	int m_iDefensivePactTradeModifier; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

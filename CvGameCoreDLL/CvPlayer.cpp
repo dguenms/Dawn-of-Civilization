@@ -471,6 +471,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iNumCitiesMaintenanceModifier = 0;
 	m_iCorporationMaintenanceModifier = 0;
 	m_iCorporationCommerceModifier = 0; //Leoreth
+	m_iCorporationUnhappinessModifier = 0; // Leoreth
 	m_iProcessModifier = 0; //Leoreth
 	m_iTotalMaintenance = 0;
 	m_iUpkeepModifier = 0;
@@ -487,10 +488,13 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iFreeSpecialist = 0;
 	m_iCoreFreeSpecialist = 0; //Leoreth
 	m_iNoForeignTradeCount = 0;
+	m_iNoForeignTradeModifierCount = 0; // Leoreth
 	m_iNoCorporationsCount = 0;
 	m_iNoForeignCorporationsCount = 0;
 	m_iCoastalTradeRoutes = 0;
 	m_iTradeRoutes = 0;
+	m_iCapitalTradeModifier= 0; // Leoreth
+	m_iDefensivePactTradeModifier = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -7376,6 +7380,17 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			}
 		}
 	}
+
+	// Leoreth: Himeji Castle effect
+	if (eBuilding == HIMEJI_CASTLE)
+	{
+		CvCity* pLoopCity;
+		int iLoop;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			pLoopCity->changeCommerceRateModifier(COMMERCE_CULTURE, pLoopCity->getBuildingDefense() * iChange);
+		}
+	}
 }
 
 
@@ -10628,6 +10643,25 @@ void CvPlayer::changeCorporationCommerceModifier(int iChange)
 	if (iChange != 0)
 	{
 		m_iCorporationCommerceModifier += iChange;
+
+		updateCorporation();
+	}
+}
+
+// Leoreth
+int CvPlayer::getCorporationUnhappinessModifier() const
+{
+	return m_iCorporationUnhappinessModifier;
+}
+
+// Leoreth
+void CvPlayer::changeCorporationUnhappinessModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCorporationUnhappinessModifier += iChange;
+
+		updateCorporation();
 	}
 }
 
@@ -10785,9 +10819,9 @@ int CvPlayer::getExtraHappiness() const
 	{
 		int iCivicHappiness = 0;
 
-		if (getCivics((CivicOptionTypes)0) == REPUBLIC) iCivicHappiness += 2;
-		if (getCivics((CivicOptionTypes)2) == CAPITALISM) iCivicHappiness += 2;
-		if (getCivics((CivicOptionTypes)3) == FREE_MARKET) iCivicHappiness += 2;
+		if (getCivics((CivicOptionTypes)0) == CIVIC_REPUBLIC) iCivicHappiness += 2;
+		if (getCivics((CivicOptionTypes)2) == CIVIC_CAPITALISM) iCivicHappiness += 2;
+		if (getCivics((CivicOptionTypes)3) == CIVIC_FREE_MARKET) iCivicHappiness += 2;
 
 		return m_iExtraHappiness + iCivicHappiness;
 	}
@@ -10988,6 +11022,33 @@ void CvPlayer::changeNoForeignTradeCount(int iChange)
 }
 
 
+// Leoreth
+int CvPlayer::getNoForeignTradeModifierCount() const
+{
+	return m_iNoForeignTradeModifierCount;
+}
+
+
+// Leoreth
+bool CvPlayer::isNoForeignTradeModifier() const
+{
+	return (getNoForeignTradeModifierCount() > 0);
+}
+
+
+// Leoreth
+void CvPlayer::changeNoForeignTradeModifierCount(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iNoForeignTradeModifierCount += iChange;
+		FAssert(getNoForeignTradeModifierCount() >= 0);
+		
+		GC.getGameINLINE().updateTradeRoutes();
+	}
+}
+
+
 int CvPlayer::getNoCorporationsCount() const
 {
 	return m_iNoCorporationsCount;
@@ -11066,6 +11127,44 @@ void CvPlayer::changeTradeRoutes(int iChange)
 	{
 		m_iTradeRoutes = (m_iTradeRoutes + iChange);
 		FAssert(getTradeRoutes() >= 0);
+
+		updateTradeRoutes();
+	}
+}
+
+
+// Leoreth
+int CvPlayer::getCapitalTradeModifier() const
+{
+	return m_iCapitalTradeModifier;
+}
+
+
+// Leoreth
+void CvPlayer::changeCapitalTradeModifier(int iChange) 
+{
+	if (iChange != 0)
+	{
+		m_iCapitalTradeModifier += iChange;
+
+		updateTradeRoutes();
+	}
+}
+
+
+// Leoreth
+int CvPlayer::getDefensivePactTradeModifier() const
+{
+	return m_iDefensivePactTradeModifier;
+}
+
+
+// Leoreth
+void CvPlayer::changeDefensivePactTradeModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iDefensivePactTradeModifier += iChange;
 
 		updateTradeRoutes();
 	}
@@ -18235,6 +18334,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeNumCitiesMaintenanceModifier(GC.getCivicInfo(eCivic).getNumCitiesMaintenanceModifier() * iChange);
 	changeCorporationMaintenanceModifier(GC.getCivicInfo(eCivic).getCorporationMaintenanceModifier() * iChange);
 	changeCorporationCommerceModifier(GC.getCivicInfo(eCivic).getCorporationCommerceModifier() * iChange); //Leoreth
+	changeCorporationUnhappinessModifier(GC.getCivicInfo(eCivic).getCorporationUnhappinessModifier() * iChange); // Leoreth
+	changeMaxGlobalBuildingProductionModifier(GC.getCivicInfo(eCivic).getWonderProductionModifier() * iChange); // Leoreth
 	changeProcessModifier(GC.getCivicInfo(eCivic).getProcessModifier() * iChange); //Leoreth
 	changeExtraHealth(GC.getCivicInfo(eCivic).getExtraHealth() * iChange);
 	changePollutionModifier(GC.getCivicInfo(eCivic).getPollutionModifier() * iChange); //Leoreth
@@ -18259,7 +18360,10 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeFreeSpecialist(GC.getCivicInfo(eCivic).getFreeSpecialist() * iChange);
 	changeCoreFreeSpecialist(GC.getCivicInfo(eCivic).getCoreFreeSpecialist() * iChange); //Leoreth
 	changeTradeRoutes(GC.getCivicInfo(eCivic).getTradeRoutes() * iChange);
+	changeCapitalTradeModifier(GC.getCivicInfo(eCivic).getCapitalTradeModifier() * iChange); // Leoreth
+	changeDefensivePactTradeModifier(GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() * iChange); // Leoreth
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
+	changeNoForeignTradeModifierCount(GC.getCivicInfo(eCivic).isNoForeignTradeModifier() * iChange); // Leoreth
 	changeNoCorporationsCount(GC.getCivicInfo(eCivic).isNoCorporations() * iChange);
 	changeNoForeignCorporationsCount(GC.getCivicInfo(eCivic).isNoForeignCorporations() * iChange);
 	changeStateReligionCount((GC.getCivicInfo(eCivic).isStateReligion()) ? iChange : 0);
@@ -18621,6 +18725,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iNumCitiesMaintenanceModifier);
 	pStream->Read(&m_iCorporationMaintenanceModifier);
 	pStream->Read(&m_iCorporationCommerceModifier); //Leoreth
+	pStream->Read(&m_iCorporationUnhappinessModifier); // Leoreth
 	pStream->Read(&m_iProcessModifier); //Leoreth
 	pStream->Read(&m_iTotalMaintenance);
 	pStream->Read(&m_iUpkeepModifier);
@@ -18637,10 +18742,13 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iFreeSpecialist);
 	pStream->Read(&m_iCoreFreeSpecialist); //Leoreth
 	pStream->Read(&m_iNoForeignTradeCount);
+	pStream->Read(&m_iNoForeignTradeModifierCount); // Leoreth
 	pStream->Read(&m_iNoCorporationsCount);
 	pStream->Read(&m_iNoForeignCorporationsCount);
 	pStream->Read(&m_iCoastalTradeRoutes);
 	pStream->Read(&m_iTradeRoutes);
+	pStream->Read(&m_iCapitalTradeModifier); // Leoreth
+	pStream->Read(&m_iDefensivePactTradeModifier); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -19130,6 +19238,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNumCitiesMaintenanceModifier);
 	pStream->Write(m_iCorporationMaintenanceModifier);
 	pStream->Write(m_iCorporationCommerceModifier); //Leoreth
+	pStream->Write(m_iCorporationUnhappinessModifier); // Leoreth
 	pStream->Write(m_iProcessModifier); //Leoreth
 	pStream->Write(m_iTotalMaintenance);
 	pStream->Write(m_iUpkeepModifier);
@@ -19146,10 +19255,13 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iFreeSpecialist);
 	pStream->Write(m_iCoreFreeSpecialist); //Leoreth
 	pStream->Write(m_iNoForeignTradeCount);
+	pStream->Write(m_iNoForeignTradeModifierCount); // Leoreth
 	pStream->Write(m_iNoCorporationsCount);
 	pStream->Write(m_iNoForeignCorporationsCount);
 	pStream->Write(m_iCoastalTradeRoutes);
 	pStream->Write(m_iTradeRoutes);
+	pStream->Write(m_iCapitalTradeModifier); // Leoreth
+	pStream->Write(m_iDefensivePactTradeModifier); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -25009,7 +25121,7 @@ bool CvPlayer::isHasBuilding(BuildingTypes eIndex) const
 
 bool CvPlayer::isHasBuildingEffect(BuildingTypes eIndex) const
 {
-	return (isHasBuilding(eIndex) && (GC.getBuildingInfo(eIndex).getObsoleteTech() == -1 || !GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo(eIndex).getObsoleteTech())));
+	return (isHasBuilding(eIndex) && (GC.getBuildingInfo(eIndex).getObsoleteTech() == NO_TECH || !GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBuildingInfo(eIndex).getObsoleteTech())));
 }
 
 EraTypes CvPlayer::getSoundtrackEra()

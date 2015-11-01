@@ -150,7 +150,9 @@ class CvCivicsScreen:
 		iSpacing = 8
 
 		sName = "CivicIcon" + str(iCategory)
+		print gc.getCivicInfo(iCivic).getText()
 		sButton = gc.getCivicInfo(iCivic).getButton()
+		print "Button works"
 		screen.setImageButton(sName, sButton, iX + iSpacing , iY + iSpacing, self.BUTTON_LARGE, self.BUTTON_LARGE, WidgetTypes.WIDGET_GENERAL, iCivic, 1)
 
 		sName = "CivicCost" + str(iCategory)
