@@ -1253,7 +1253,7 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tChinaTL, vic.tChinaBR):
 			return 16
 				
-		if utils.isPlotInArea((x, y), vic.tIndochinaTL, vic.tIndochinaBR):
+		if utils.isPlotInArea((x, y), vic.tIndochinaTL, vic.tIndochinaBR, vic.tIndochinaExceptions):
 			return 17
 				
 		if utils.isPlotInArea((x, y), vic.tIndonesiaTL, vic.tIndonesiaBR):
