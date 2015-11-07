@@ -17053,7 +17053,7 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 			}
 
 			// Leoreth: Himeji Castle effect: defense modifier counts as culture modifier
-			if (GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+			if (eCommerceType == COMMERCE_CULTURE && GET_PLAYER(city.getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
 			{
 				iBuildingMod += infoBuilding.getDefenseModifier();
 			}
