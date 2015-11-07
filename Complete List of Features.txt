@@ -298,6 +298,7 @@ CIVILIZATIONS
 	* Unique Building: Obelisk (Pagan Temple): +1 Priest slot, +25% culture
 	* Unique Power: enables Dynasticism, Slavery and Pantheon
 * China
+	* Spawn: Chang'an
 	* Leaders: Qin Shi Huang, Tang Taizong, Hongwu, Mao Zedong
 	* Color: Light Yellow / Black
 	* Unique Unit: Cho-Ko-Nu (Crossbowman): now requires Metallurgy and Construction
@@ -320,6 +321,7 @@ CIVILIZATIONS
 		* Build the Oracle, the Parthenon, the Colossus and the Temple of Artemis by 250 BC
 		* Control Egypt, Phoenicia, Babylonia and Persia by 330 BC
 * India
+	* Spawn: Pataliputra
 	* Leaders: Ashoka, Chandragupta, Shahuji, Gandhi
 	* Color: Orange / Yellow
 	* Spawn: 1500 BC at Pataliputra
@@ -721,6 +723,19 @@ NEW CIVILIZATIONS
 		* Experience 2 Golden Ages by 1930 AD
 		* Have 25000 culture in Buenos Aires in 1960 AD
 		* Experience 5 Golden Ages by 2000 AD
+* Colombia
+	* Spawn: 1814 in Bogotá
+	* Conditional: if controlling civilization is not stable
+	* Leaders: Bolivar
+	* Color: Purple / Dark Yellow
+	* Coat of Arms: Colombian Eagle
+	* Unique Unit: Albion Legion (Grenadier): +1 move, starts with City Raider
+	* Unique Building: Hacienda (Grocer): +1 food for improved Banana, +3 commerce for improved Coffee
+	* Unique Power: The Power of the Liberator: No City Resistance on Conquest in Latin America
+	* Unique Historical Victory:
+		* Allow no European colonies in Peru, Gran Colombia, the Guayanas and the Caribbean in 1870 AD
+		* Control South America in 1920 AD
+		* Acquire 3000 gold by selling resources by 1950 AD
 * Brazil
 	* Spawn: 1822 AD at Rio de Janeiro
 	* Conditional: if controlling civilization is not stable
