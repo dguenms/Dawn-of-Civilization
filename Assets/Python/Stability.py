@@ -1565,7 +1565,8 @@ def calculateStability(iPlayer):
 			#if pLoopPlayer.getStateReligion() == iStateReligion: iRelationStability += 1
 			#else: iRelationStability += 2
 			
-			iRelationStability += 1
+			if tPlayer.isOpenBorders(iLoopPlayer):
+				iRelationStability += 1
 			
 			iNumContacts += 1
 			
@@ -1589,6 +1590,9 @@ def calculateStability(iPlayer):
 		
 	# penalize contacts because they allow more OB treaties
 	iRelationStability -= (iNumContacts / 2 + min(4, iNumContacts))
+	
+	if iNumContacts <= 2 * min(iCurrentEra, 2) + 1:
+		iRelationStability = 0
 	
 	lParameters[con.iParameterNeighbors] = iNeighborStability
 	lParameters[con.iParameterVassals] = iVassalStability
