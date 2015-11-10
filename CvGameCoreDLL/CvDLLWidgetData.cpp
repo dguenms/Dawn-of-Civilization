@@ -3992,8 +3992,20 @@ void CvDLLWidgetData::parseFlagHelp(CvWidgetDataStruct &widgetDataStruct, CvWStr
 	//Rhye - stop
 	szBuffer.append(szTempBuffer);
 	szBuffer.append(NEWLINE);
+	
+	swprintf(szTempString, L"%s" NEWLINE, GC.getLeaderHeadInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getLeaderType()).getDescription());
+	szBuffer.append(szTempString);
 
-	GAMETEXT.parseLeaderTraits(szBuffer, GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getLeaderType(), GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType());
+	// Unique powers
+	szText = gDLL->getText(uniquePower[GET_PLAYER(GC.getGameINLINE().getActivePlayer())][0]);
+	swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
+	szBuffer.append(szTempString);
+
+	szText = gDLL->getText(uniquePower[GET_PLAYER(GC.getGameINLINE().getActivePlayer())][1]);
+	swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
+	szBuffer.append(szTempString);
+
+	//GAMETEXT.parseLeaderTraits(szBuffer, GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getLeaderType(), GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType());
 }
 
 
