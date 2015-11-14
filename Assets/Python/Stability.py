@@ -71,6 +71,13 @@ def checkTurn(iGameTurn):
 	if iGameTurn >= getTurnForYear(con.tBirth[utils.getHumanID()]):
 		sd.setHumanStability(calculateStability(utils.getHumanID()))
 		
+def endTurn(iPlayer):
+	dSecedingCities = sd.getSecedingCities()
+	
+	if iPlayer in dSecedingCities:
+		secedeCities(iPlayer, dSecedingCities[iPlayer])
+		del dSecedingCities[iPlayer]
+		
 def triggerCollapse(iPlayer):
 	sd.setTurnsToCollapse(iPlayer, 1)
 
@@ -502,6 +509,10 @@ def getPossibleMinors(iPlayer):
 		
 	return [con.iIndependent, con.iIndependent2]
 	
+def secession(iPlayer, lCities):
+	dSecedingCities = sd.getSecedingCities()
+	dSecedingCities[iPlayer] = lCities
+	
 def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	lPossibleMinors = getPossibleMinors(iPlayer)
 	dPossibleResurrections = {}
@@ -710,7 +721,7 @@ def collapseToCore(iPlayer):
 			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 				
 		# secede all foreign cities
-		secedeCities(iPlayer, lAhistoricalCities)
+		secession(iPlayer, lAhistoricalCities)
 		
 	# otherwise, secede all cities outside of core
 	elif lNonCoreCities:
@@ -721,7 +732,7 @@ def collapseToCore(iPlayer):
 			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 			
 		# secede all non-core cities
-		secedeCities(iPlayer, lNonCoreCities)
+		secession(iPlayer, lNonCoreCities)
 	
 	# territorial crisis should be impossible while controlling only the core but otherwise lose some territory
 	else:
@@ -736,7 +747,7 @@ def secedeSingleCity(iPlayer):
 			
 	# secede a non-core city with the lowest settler map value
 	if lCities:
-		secedeCities(iPlayer, [utils.getHighestEntry(lCities, lambda x: -gc.getMap().plot(x.getX(), x.getY()).getSettlerMapValue(iPlayer))])
+		secession(iPlayer, [utils.getHighestEntry(lCities, lambda x: -gc.getMap().plot(x.getX(), x.getY()).getSettlerMapValue(iPlayer))])
 	else:
 		loseTerritory(iPlayer)
 		
@@ -781,7 +792,7 @@ def secedeUnhappyCities(iPlayer):
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 			
 	# secede all unhappy cities
-	secedeCities(iPlayer, lCities)
+	secession(iPlayer, lCities)
 		
 def secedeEnemyTargetCities(iPlayer):
 	tPlayer = gc.getTeam(iPlayer)

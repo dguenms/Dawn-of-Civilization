@@ -136,6 +136,7 @@ class StoredData:
 				    'lHappinessTrend' : [[] for i in range(con.iNumPlayers)],
 				    'lWarTrend' : [[[] for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
 				    'lWarStartTurn' : [[0 for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
+				    'dSecedingCities' : {},
 				}
                 self.save()
 		
@@ -312,6 +313,9 @@ class StoredData:
 		
 	def changeBarbarianLosses(self, iPlayer, iChange):
 		self.scriptDict['lBarbarianLosses'][iPlayer] += iChange
+		
+	def getSecedingCities(self):
+		return self.scriptDict['dSecedingCities']
 		
 	# AIWARS
 		
