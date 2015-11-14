@@ -153,8 +153,8 @@ class Barbs:
 			iNumUnits = 2 + iHandicap
                         self.checkSpawn(iBarbarian, con.iHorseArcher, iNumUnits, (91, 50), (107, 54), self.spawnNomads, iGameTurn, 7-iHandicap, 0, ["TXT_KEY_ADJECTIVE_GOKTURK", "TXT_KEY_ADJECTIVE_UIGHUR"])
                 if (iGameTurn > getTurnForYear(900) and iGameTurn <= getTurnForYear(1100)):
-			iNumUnits = iHandicap
-                        self.checkSpawn(iBarbarian, con.iMongolKeshik, iNumUnits, (94, 48), (107, 54), self.spawnNomads, iGameTurn, 8, 0, ["TXT_KEY_ADJECTIVE_JURCHEN", "TXT_KEY_ADJECTIVE_KHITAN"])
+			iNumUnits = 1 + iHandicap
+                        self.checkSpawn(iBarbarian, con.iMongolKeshik, iNumUnits, (94, 48), (107, 54), self.spawnInvaders, iGameTurn, 6, 0, ["TXT_KEY_ADJECTIVE_JURCHEN", "TXT_KEY_ADJECTIVE_KHITAN"])
                         
                 #tibet
                 if (iGameTurn >= getTurnForYear(-350) and iGameTurn <= getTurnForYear(1100)):

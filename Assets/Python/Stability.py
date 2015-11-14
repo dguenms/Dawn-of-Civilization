@@ -1144,8 +1144,8 @@ def calculateStability(iPlayer):
 		else:
 			iCulturePercent = 100
 				
-		#bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
-		bExpansionExceptions = bTotalitarianism
+		bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
+		#bExpansionExceptions = bTotalitarianism
 		
 		# Expansion
 		if plot.isCore(iPlayer):
@@ -2179,7 +2179,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 def getResurrectionTechs(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	lTechList = []
-	lSourceCivs = []
+	lSourceCivs = [iPlayer]
 	
 	# same tech group
 	for lRegionList in con.lTechGroups:
@@ -2207,7 +2207,7 @@ def getResurrectionTechs(iPlayer):
 			if gc.getTeam(iOtherCiv).isHasTech(iTech):
 				iCount += 1
 				
-		if 3 * iCount >= 2 * len(lSourceCivs):
+		if 2 * iCount >= len(lSourceCivs):
 			lTechList.append(iTech)
 			
 	return lTechList
