@@ -5669,7 +5669,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == HUNTING)
 										iValue *= 2;
 									if (iI == ENGINEERING)
-										iValue /= 2;
+										iValue /= 4;
                                     if (iI == EDUCATION) {
                                         iValue *= 2;
                                         iValue /= 3;

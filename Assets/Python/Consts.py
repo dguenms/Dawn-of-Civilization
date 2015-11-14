@@ -298,7 +298,7 @@ tBirth = (
 # Leoreth: stability penalty from this date on
 tFall = (
 -343,					# Egypt
-1271,					# China
+1127,					# China
 -539,					# Babylonia
 -1700,					# Harappa
 -146,					# Greece

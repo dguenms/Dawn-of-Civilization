@@ -2802,7 +2802,8 @@ int CvTeam::getCivilizationResearchModifier() const
 	// nerf late game China
 	if (getLeaderID() == CHINA)
 	{
-		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 40;
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() == ERA_MEDIEVAL) iCivModifier += 15;
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 30;
 	}
 
 	// reborn civilizations have different modifiers
@@ -5403,11 +5404,11 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 	FAssertMsg(ePlayer >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds (invalid Index)");
 
-	// Leoreth: update total tech value
-	changeTotalTechValue(bNewValue ? GC.getTechInfo(eIndex).getResearchCost() : -GC.getTechInfo(eIndex).getResearchCost());
-
 	if (isHasTech(eIndex) != bNewValue)
 	{
+		// Leoreth: update total tech value
+		changeTotalTechValue(bNewValue ? GC.getTechInfo(eIndex).getResearchCost() : -GC.getTechInfo(eIndex).getResearchCost());
+
 		if (GC.getTechInfo(eIndex).isRepeat())
 		{
 			m_paiTechCount[eIndex]++;
