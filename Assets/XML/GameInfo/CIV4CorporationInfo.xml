@@ -150,7 +150,7 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
-			<iHappiness>-2</iHappiness>
+			<iHappiness>-1</iHappiness>
 			<iHealth>-1</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_SHEEP</BonusType>
@@ -225,8 +225,8 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
-			<iHappiness>-6</iHappiness>
-			<iHealth>-6</iHealth>
+			<iHappiness>-5</iHappiness>
+			<iHealth>-5</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
@@ -294,7 +294,7 @@
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
 			<iMaintenance>0</iMaintenance>
-			<iHappiness>-4</iHappiness>
+			<iHappiness>-3</iHappiness>
 			<iHealth>-2</iHealth>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
