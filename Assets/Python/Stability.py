@@ -71,6 +71,13 @@ def checkTurn(iGameTurn):
 	if iGameTurn >= getTurnForYear(con.tBirth[utils.getHumanID()]):
 		sd.setHumanStability(calculateStability(utils.getHumanID()))
 		
+def endTurn(iPlayer):
+	dSecedingCities = sd.getSecedingCities()
+	
+	if iPlayer in dSecedingCities:
+		secedeCities(iPlayer, dSecedingCities[iPlayer])
+		del dSecedingCities[iPlayer]
+		
 def triggerCollapse(iPlayer):
 	sd.setTurnsToCollapse(iPlayer, 1)
 
@@ -502,6 +509,10 @@ def getPossibleMinors(iPlayer):
 		
 	return [con.iIndependent, con.iIndependent2]
 	
+def secession(iPlayer, lCities):
+	dSecedingCities = sd.getSecedingCities()
+	dSecedingCities[iPlayer] = lCities
+	
 def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	lPossibleMinors = getPossibleMinors(iPlayer)
 	dPossibleResurrections = {}
@@ -710,7 +721,7 @@ def collapseToCore(iPlayer):
 			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 				
 		# secede all foreign cities
-		secedeCities(iPlayer, lAhistoricalCities)
+		secession(iPlayer, lAhistoricalCities)
 		
 	# otherwise, secede all cities outside of core
 	elif lNonCoreCities:
@@ -721,7 +732,7 @@ def collapseToCore(iPlayer):
 			CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 			
 		# secede all non-core cities
-		secedeCities(iPlayer, lNonCoreCities)
+		secession(iPlayer, lNonCoreCities)
 	
 	# territorial crisis should be impossible while controlling only the core but otherwise lose some territory
 	else:
@@ -736,7 +747,7 @@ def secedeSingleCity(iPlayer):
 			
 	# secede a non-core city with the lowest settler map value
 	if lCities:
-		secedeCities(iPlayer, [utils.getHighestEntry(lCities, lambda x: -gc.getMap().plot(x.getX(), x.getY()).getSettlerMapValue(iPlayer))])
+		secession(iPlayer, [utils.getHighestEntry(lCities, lambda x: -gc.getMap().plot(x.getX(), x.getY()).getSettlerMapValue(iPlayer))])
 	else:
 		loseTerritory(iPlayer)
 		
@@ -781,7 +792,7 @@ def secedeUnhappyCities(iPlayer):
 		CyInterface().addMessage(iPlayer, False, con.iDuration, sText, "", 0, "", ColorTypes(con.iRed), -1, -1, True, True)
 			
 	# secede all unhappy cities
-	secedeCities(iPlayer, lCities)
+	secession(iPlayer, lCities)
 		
 def secedeEnemyTargetCities(iPlayer):
 	tPlayer = gc.getTeam(iPlayer)
@@ -1144,8 +1155,8 @@ def calculateStability(iPlayer):
 		else:
 			iCulturePercent = 100
 				
-		#bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
-		bExpansionExceptions = bTotalitarianism
+		bExpansionExceptions = ((bHistorical and iPlayer in [con.iMongolia]) or bTotalitarianism)
+		#bExpansionExceptions = bTotalitarianism
 		
 		# Expansion
 		if plot.isCore(iPlayer):
@@ -1565,7 +1576,8 @@ def calculateStability(iPlayer):
 			#if pLoopPlayer.getStateReligion() == iStateReligion: iRelationStability += 1
 			#else: iRelationStability += 2
 			
-			iRelationStability += 1
+			if tPlayer.isOpenBorders(iLoopPlayer):
+				iRelationStability += 1
 			
 			iNumContacts += 1
 			
@@ -1589,6 +1601,9 @@ def calculateStability(iPlayer):
 		
 	# penalize contacts because they allow more OB treaties
 	iRelationStability -= (iNumContacts / 2 + min(4, iNumContacts))
+	
+	if iNumContacts <= 2 * min(iCurrentEra, 2) + 1:
+		iRelationStability = 0
 	
 	lParameters[con.iParameterNeighbors] = iNeighborStability
 	lParameters[con.iParameterVassals] = iVassalStability
@@ -2175,7 +2190,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 def getResurrectionTechs(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	lTechList = []
-	lSourceCivs = []
+	lSourceCivs = [iPlayer]
 	
 	# same tech group
 	for lRegionList in con.lTechGroups:
@@ -2203,7 +2218,7 @@ def getResurrectionTechs(iPlayer):
 			if gc.getTeam(iOtherCiv).isHasTech(iTech):
 				iCount += 1
 				
-		if 3 * iCount >= 2 * len(lSourceCivs):
+		if 2 * iCount >= len(lSourceCivs):
 			lTechList.append(iTech)
 			
 	return lTechList

@@ -153,7 +153,7 @@
 			<iTrainPercent>100</iTrainPercent>
 			<iConstructPercent>100</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>90</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
 			<iGreatPeoplePercent>100</iGreatPeoplePercent>
@@ -221,7 +221,7 @@
 			<iTrainPercent>90</iTrainPercent>
 			<iConstructPercent>90</iConstructPercent>
 			<iCreatePercent>90</iCreatePercent>
-			<iResearchPercent>90</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>90</iBuildPercent>
 			<iImprovementPercent>90</iImprovementPercent>
 			<iGreatPeoplePercent>90</iGreatPeoplePercent>
@@ -414,7 +414,7 @@
 			<iTrainPercent>60</iTrainPercent>
 			<iConstructPercent>60</iConstructPercent>
 			<iCreatePercent>60</iCreatePercent>
-			<iResearchPercent>40</iResearchPercent>
+			<iResearchPercent>150</iResearchPercent>
 			<iBuildPercent>60</iBuildPercent>
 			<iImprovementPercent>60</iImprovementPercent>
 			<iGreatPeoplePercent>60</iGreatPeoplePercent>

@@ -3502,8 +3502,11 @@ class RiseAndFall:
                         utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 6)
 			if utils.getHumanID() != iMongolia: 
                         	utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
-				utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
+				utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+				utils.makeUnitAI(con.iMongolKeshik, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
 				utils.makeUnitAI(con.iBombard, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+				utils.makeUnitAI(con.iBombard, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+				utils.makeUnitAI(con.iMaceman, iCiv, tPlot, UnitAITypes.UNITAI_COUNTER, 2)
 				utils.makeUnitAI(con.iScout, iCiv, tPlot, UnitAITypes.UNITAI_EXPLORE, 2)
                         utils.makeUnit(con.iBombard, iCiv, tPlot, 3)
 			if utils.getHumanID() != iMongolia:

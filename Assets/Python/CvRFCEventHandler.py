@@ -125,6 +125,7 @@ class CvRFCEventHandler:
 		eventManager.addEventHandler("cityAcquiredAndKept", self.onCityAcquiredAndKept)
 		eventManager.addEventHandler("blockade", self.onBlockade)
 		eventManager.addEventHandler("peaceBrokered", self.onPeaceBrokered)
+		eventManager.addEventHandler("EndPlayerTurn", self.onEndPlayerTurn)
                
                 self.eventManager = eventManager
 
@@ -870,6 +871,11 @@ class CvRFCEventHandler:
 		iBroker, iPlayer1, iPlayer2 = argsList
 		
 		vic.onPeaceBrokered(iBroker, iPlayer1, iPlayer2)
+		
+	def onEndPlayerTurn(self, argsList):
+		iGameTurn, iPlayer = argsList
+		
+		sta.endTurn(iPlayer)
 
         def onKbdEvent(self, argsList):
                 'keypress handler - return 1 if the event was consumed'
