@@ -3503,6 +3503,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_PRINTING_PRESS</PrereqTech>
+				<PrereqTech>TECH_EDUCATION</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_SCIENTIFIC_METHOD_QUOTE</Quote>
 			<Sound>AS2D_TECH_SCIMETHOD</Sound>
