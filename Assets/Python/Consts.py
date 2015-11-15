@@ -1700,7 +1700,7 @@ tNormalAreasTL = (
 (74, 38), #Babylonia
 (84, 35), #Harappa
 (64, 39), #Greece
-(87, 33), #India
+(89, 38), #India
 (72, 39), #Carthage
 (3, 15), #Polynesia
 (79, 37), #Persia
@@ -1792,7 +1792,7 @@ tNormalAreasBR = (
 (79, 44), #Babylonia
 (88, 42), #Harappa
 (68, 44), #Greece
-(94, 37), #India
+(96, 42), #India
 (74, 41), #Carthage
 (13, 21), #Polynesia
 (86, 46), #Persia

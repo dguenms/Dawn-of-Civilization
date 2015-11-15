@@ -8630,7 +8630,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 		int iI, iJ;
 
 		int iNumBonuses = getNumAvailableBonuses(eBonus);
-		bool bOnlyBonus = (iChange == 0 || (iNumBonuses == 0 || iChange == 1) || (iNumBonuses == 1 || iChange == -1));
+		bool bOnlyBonus = (iChange == 0 || (iNumBonuses == 0 && iChange == 1) || (iNumBonuses == 1 && iChange == -1));
 		bool bStrategic = false;
 
 		if (!GET_TEAM(getTeam()).isBonusObsolete(eBonus))
@@ -9002,8 +9002,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 {
 	int iValue = 0;
-	int iCityCount = 1; //getNumCities();
-	//iCityCount += iCityCount / 6 + 1;
+	int iNumCities = std::max(1, getNumCities());
 
 	for (int iCorporation = 0; iCorporation < GC.getNumCorporationInfos(); ++iCorporation)
 	{
@@ -9011,20 +9010,19 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 		if (iCorpCount > 0)
 		{
 			int iNumCorpBonuses = 0;
-			//iCorpCount += getNumCities() / 6 + 1;
 			CvCorporationInfo& kCorp = GC.getCorporationInfo((CorporationTypes)iCorporation);
 			for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 			{
 				if (eBonus == kCorp.getPrereqBonus(i))
 				{
-					iValue += (50 * kCorp.getYieldProduced(YIELD_FOOD) * iCorpCount) / iCityCount;
-					iValue += (50 * kCorp.getYieldProduced(YIELD_PRODUCTION) * iCorpCount) / iCityCount;
-					iValue += (30 * kCorp.getYieldProduced(YIELD_COMMERCE) * iCorpCount) / iCityCount;
+					iValue += 50 * kCorp.getYieldProduced(YIELD_FOOD) * iCorpCount;
+					iValue += 50 * kCorp.getYieldProduced(YIELD_PRODUCTION) * iCorpCount;
+					iValue += 30 * kCorp.getYieldProduced(YIELD_COMMERCE) * iCorpCount;
 
-					iValue += (30 * kCorp.getCommerceProduced(COMMERCE_GOLD) * iCorpCount) / iCityCount;
-					iValue += (30 * kCorp.getCommerceProduced(COMMERCE_RESEARCH) * iCorpCount) / iCityCount;
-					iValue += (12 * kCorp.getCommerceProduced(COMMERCE_CULTURE) * iCorpCount) / iCityCount;
-					iValue += (20 * kCorp.getCommerceProduced(COMMERCE_ESPIONAGE) * iCorpCount) / iCityCount;
+					iValue += 30 * kCorp.getCommerceProduced(COMMERCE_GOLD) * iCorpCount;
+					iValue += 30 * kCorp.getCommerceProduced(COMMERCE_RESEARCH) * iCorpCount;
+					iValue += 12 * kCorp.getCommerceProduced(COMMERCE_CULTURE) * iCorpCount;
+					iValue += 20 * kCorp.getCommerceProduced(COMMERCE_ESPIONAGE) * iCorpCount;
 
 					iValue += 100 * kCorp.getHappiness() * iCorpCount;
 					iValue += 50 * kCorp.getHealth() * iCorpCount;
@@ -9044,8 +9042,12 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 		}
 	}
 
+	iValue /= iNumCities;
+
 	iValue /= 100;	//percent
-	iValue /= 10;	//match AI_baseBonusVal
+
+	//match AI_baseBonusVal
+	//iValue /= 10;
 
 	return iValue;
 }
