@@ -9002,7 +9002,7 @@ int CvPlayerAI::AI_baseBonusVal(BonusTypes eBonus, int iChange) const
 int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus) const
 {
 	int iValue = 0;
-	int iNumCities = getNumCities();
+	int iNumCities = std::max(1, getNumCities());
 
 	for (int iCorporation = 0; iCorporation < GC.getNumCorporationInfos(); ++iCorporation)
 	{
