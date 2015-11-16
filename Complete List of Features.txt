@@ -769,6 +769,7 @@ TECHNOLOGIES
 * Assembly Line also requires Railroad
 * Electricity also requires Steam Power
 * Economics also requires Astronomy
+* Scientific Method also requires Education
 * Reduced the cost of Divine Right
 * Electricity is required to access Aluminum
 * Cow, Deer, Pig, Sheep, Fish, Clam, Crab can only be traded after the discovery of Refrigeration
@@ -903,6 +904,7 @@ IMPROVEMENTS
 * Forts increase defense by +50%
 * Fishing Boats on Ocean require Compass and provide +1 food
 * Pastures yield +1 food after the discovery of Refrigeration
+* Forts cannot be built next to cities or other Forts
 
 GAME SCENARIOS
 * Complete overhaul of the Indian subcontinent: extensive expansion to the south, more resources, grass floodplains at the Ganges
