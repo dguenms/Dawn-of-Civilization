@@ -90,9 +90,10 @@ tEasternEuropeTL = (69, 48)
 tEasternEuropeBR = (73, 64)
 
 # second French goal: control 40% of Europe and North America in 1800 AD
+# first English goal: colonize every continent by 1730 AD
 # third Maya goal: make contact with a European civilization before they have discovered America
 tNorthAmericaTL = (10, 40)
-tNorthAmericaBR = (37, 54)
+tNorthAmericaBR = (37, 58)
 
 # first English goal: colonize every continent by 1730 AD
 tOceaniaTL = (99, 5)
