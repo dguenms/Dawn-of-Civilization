@@ -5793,11 +5793,13 @@ void CvCityAI::AI_updateBestBuild()
 								iHappyAdjust -= GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHappiness();
 							}
 
-
+							// Leoreth: ignore yield change of defensive structures if no natural food on the tile
+							bool bIgnoreYieldChange = GC.getImprovementInfo(eImprovement).getDefenseModifier() > 0 && pLoopPlot->calculateNatureYield(YIELD_FOOD, getTeam(), bIgnoreFeature) == 0;
+							
 							bUseBaseValue = false;
 							for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 							{
-								aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+								aiFinalYields[iJ] = (pLoopPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature) + (!bIgnoreYieldChange) ? pLoopPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false) : 0);
 							}
 						}
 					}

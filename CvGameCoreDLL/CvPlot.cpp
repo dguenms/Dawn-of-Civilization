@@ -2694,6 +2694,24 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 			}
 		}
 
+		// Leoreth: no adjacent acts as city improvements
+		CvPlot* pAdjacentPlot;
+		if (GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isActsAsCity())
+		{
+			for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+			{
+				pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+				if (pAdjacentPlot != NULL)
+				{
+					if (pAdjacentPlot->isCity() || (pAdjacentPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pAdjacentPlot->getImprovementType()).isActsAsCity()))
+					{
+						return false;
+					}
+				}
+			}
+		}
+
 		if (getImprovementType() != NO_IMPROVEMENT)
 		{
 			if (GC.getImprovementInfo(getImprovementType()).isPermanent())
