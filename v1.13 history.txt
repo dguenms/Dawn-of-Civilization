@@ -237,3 +237,5 @@
 # During AI trades, human players always have at least as much gold per turn available as they would make at 50% gold rate, even if it is currently spent on research/culture/espionage
 # added the Guadalquivir river in Iberia
 # fixed a bug that gave Arabia a higher tech score in the 600 AD scenario
+# Scientific Method also requires Education
+# Forts cannot be constructed next to cities and other forts
