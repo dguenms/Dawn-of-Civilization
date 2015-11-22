@@ -18402,11 +18402,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=31
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=48,y=32
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -18759,11 +18762,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=31
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=49,y=32
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
