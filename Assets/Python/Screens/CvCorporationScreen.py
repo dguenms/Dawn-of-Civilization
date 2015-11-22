@@ -6,6 +6,9 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 
+import Consts as con
+import companies
+
 PyPlayer = PyHelpers.PyPlayer
 
 # globals
@@ -67,7 +70,7 @@ class CvCorporationScreen:
 		self.X_CITY2_AREA = 522
 		self.Y_CITY_AREA = 282
 		self.W_CITY_AREA = 457
-		self.H_CITY_AREA = 395
+		self.H_CITY_AREA = 180
 		
 		self.X_CITY = 10
 		self.DY_CITY = 38
@@ -84,6 +87,21 @@ class CvCorporationScreen:
 			self.EXIT_NAME		: self.Exit,
 			self.BUTTON_NAME		: self.CorporationScreenButton,
 			}	
+			
+		#Merijn: Corp Info screen
+		self.X_REQUIREMENTS_AREA = self.X_CITY1_AREA
+		self.Y_REQUIREMENTS_AREA = self.Y_CITY_AREA + self.H_CITY_AREA + 25
+		self.W_REQUIREMENTS_AREA = 200
+		self.H_REQUIREMENTS_AREA = 200
+		self.REQUIREMENTS_ID =  "RequirementsAreaWidget"
+		self.TECH_REQUIRED_BUTTON = "TechRequiredButton"
+		self.TECH_REQUIRED_BUTTON_CORPORATION = "CorporationTechRequiredButton"
+		
+		self.X_INFLUENCES_AREA = self.X_REQUIREMENTS_AREA + self.W_REQUIREMENTS_AREA + 20
+		self.Y_INFLUENCES_AREA = self.Y_REQUIREMENTS_AREA
+		self.W_INFLUENCES_AREA = self.X_CITY2_AREA + self.W_CITY_AREA - self.X_INFLUENCES_AREA
+		self.H_INFLUENCES_AREA = self.H_REQUIREMENTS_AREA
+		self.INFLUENCES_ID =  "InfluencessAreaWidget"
 			
 	def getScreen(self):
 		return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.CORPORATION_SCREEN)
@@ -123,6 +141,10 @@ class CvCorporationScreen:
 
 		# Draw Corporation info
 		self.drawCorporationInfo()
+		
+		#Merijn
+		self.drawRequirements(self.iCorporationSelected)
+		self.drawInfluences(self.iCorporationSelected)
 		
 		self.drawCityInfo(self.iCorporationSelected)
 
@@ -178,6 +200,12 @@ class CvCorporationScreen:
 						szListLabels.append(szList)
 						szList = u""
 						
+			iActivePlayer = CyGame().getActivePlayer()
+			if iActivePlayer == con.iBrazil and i == companies.iOilIndustry:
+				eBonus = con.iSugar
+				szList += u", "
+				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
+				
 			if len(szList) > 0:
 				szListLabels.append(szList)
 						
@@ -299,8 +327,8 @@ class CvCorporationScreen:
 			else:
 				szRightCities += u"<font=3>" + szCityName + u"</font>\n"
 		
-		screen.addMultilineText("Child" + self.AREA1_ID, szLeftCities, self.X_CITY1_AREA+5, self.Y_CITY_AREA+5, self.W_CITY_AREA-10, self.H_CITY_AREA-10, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-		screen.addMultilineText("Child" + self.AREA2_ID, szRightCities, self.X_CITY2_AREA+5, self.Y_CITY_AREA+5, self.W_CITY_AREA-10, self.H_CITY_AREA-10, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.addMultilineText("Child" + self.AREA1_ID, szLeftCities, self.X_CITY1_AREA+5, self.Y_CITY_AREA+5, self.W_CITY_AREA-10, self.H_CITY_AREA-15, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.addMultilineText("Child" + self.AREA2_ID, szRightCities, self.X_CITY2_AREA+5, self.Y_CITY_AREA+5, self.W_CITY_AREA-10, self.H_CITY_AREA-15, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 													
 		# Header...
 		if self.iCorporationExamined != -1:
@@ -309,6 +337,89 @@ class CvCorporationScreen:
 			screen.setLabel(self.HEADER_NAME, "Background", u"<font=4b>" + localText.getText("TXT_KEY_CORPORATION_SCREEN_TITLE", ()).upper() + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.Y_TITLE, self.Z_TEXT, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		
 		screen.setText(self.EXIT_NAME, "Background", self.EXIT_TEXT, CvUtil.FONT_RIGHT_JUSTIFY, self.X_EXIT, self.Y_EXIT, self.Z_TEXT, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, 1, 0)
+		
+	def drawRequirements(self, iCorporation):
+		if (not self.bScreenUp):
+			return
+		
+		pActivePlayer = gc.getPlayer(CyGame().getActivePlayer())
+		iActivePlayer = CyGame().getActivePlayer()
+		teamCiv = gc.getTeam(pActivePlayer.getTeam())
+		
+		screen = self.getScreen()
+			
+		if (iCorporation == gc.getNumCorporationInfos()):
+			iLinkCorporation = -1
+		else:
+			iLinkCorporation = iCorporation
+		
+		szRequirementsArea = self.REQUIREMENTS_ID
+		screen.addPanel(szRequirementsArea, "", "", True, True, self.X_REQUIREMENTS_AREA, self.Y_REQUIREMENTS_AREA, self.W_REQUIREMENTS_AREA, self.H_REQUIREMENTS_AREA, PanelStyles.PANEL_STYLE_MAIN)
+		
+		if (iLinkCorporation != -1):
+			#Resource counter
+			szListLabels = []
+			for iRequired in range(gc.getDefineINT("NUM_CORPORATION_PREREQ_BONUSES")):
+				eBonus = gc.getCorporationInfo(iLinkCorporation).getPrereqBonus(iRequired)
+				if -1 != eBonus:
+					szList = u""
+					szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
+					szList += u" : "
+					iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
+					szList += u"%d" % iAvailableBonus
+					szListLabels.append(szList)
+			if iActivePlayer == con.iBrazil and iLinkCorporation == companies.iOilIndustry:
+				eBonus = con.iSugar
+				szList = u""
+				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
+				szList += u" : "
+				iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
+				szList += u"%d" % iAvailableBonus
+				szListLabels.append(szList)
+			
+			iRow = 0
+			for szList in szListLabels:
+				screen.setLabel("", szRequirementsArea, szList, CvUtil.FONT_CENTER_JUSTIFY, self.X_REQUIREMENTS_AREA + 30, self.Y_REQUIREMENTS_AREA + 60 + iRow, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+				iRow += 16
+			
+			szButtonName = self.TECH_REQUIRED_BUTTON
+			iRequiredCorp = gc.getCorporationInfo(iLinkCorporation).getTechPrereq()
+			screen.addDDSGFC(szButtonName, gc.getTechInfo(iRequiredCorp).getButton(), self.X_REQUIREMENTS_AREA + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, gc.getCorporationInfo(iLinkCorporation).getTechPrereq(), -1)
+			
+			szList = u""
+			if teamCiv.isHasTech(iRequiredCorp):
+				szList += u"%c" % (CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
+			else:
+				szList += u"%c" % (CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
+			screen.setLabel("", szRequirementsArea, szList, CvUtil.FONT_CENTER_JUSTIFY, self.X_REQUIREMENTS_AREA + self.BUTTON_SIZE + 20, self.Y_REQUIREMENTS_AREA + self.BUTTON_SIZE - 8, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		
+			if (iLinkCorporation > 1):
+				szButtonName = self.TECH_REQUIRED_BUTTON_CORPORATION
+				screen.addDDSGFC(szButtonName, gc.getTechInfo(con.iCorporation).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, con.iCorporation, -1)
+				
+				szList = u""
+				if teamCiv.isHasTech(con.iCorporation):
+					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
+				else:
+					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
+				screen.setLabel("", szRequirementsArea, szList, CvUtil.FONT_CENTER_JUSTIFY, self.X_REQUIREMENTS_AREA + self.BUTTON_SIZE + self.BUTTON_SIZE + 40, self.Y_REQUIREMENTS_AREA + self.BUTTON_SIZE - 8, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		
+	def drawInfluences(self, iCorporation):
+		if (not self.bScreenUp):
+			return
+			
+		screen = self.getScreen()
+
+		if (iCorporation == gc.getNumCorporationInfos()):
+			iLinkCorporation = -1
+		else:
+			iLinkCorporation = iCorporation
+
+		szInfluencesArea = self.INFLUENCES_ID
+		screen.addPanel(self.INFLUENCES_ID, "", "", True, True, self.X_INFLUENCES_AREA, self.Y_INFLUENCES_AREA, self.W_INFLUENCES_AREA, self.H_INFLUENCES_AREA, PanelStyles.PANEL_STYLE_MAIN)
+
+		if (iLinkCorporation != -1):		
+			screen.addMultilineText("Child" + self.INFLUENCES_ID, localText.getText("TXT_KEY_CORPORATION_INFLUENCES_"+str(iLinkCorporation), ()), self.X_INFLUENCES_AREA+10, self.Y_INFLUENCES_AREA+10, self.W_INFLUENCES_AREA-20, self.H_INFLUENCES_AREA-20, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 	def Exit(self, inputClass):
 		screen = self.getScreen()
@@ -353,12 +464,18 @@ class CvCorporationScreen:
 				self.iCorporationSelected = inputClass.getID()
 			self.iCorporationExamined = self.iCorporationSelected
 			self.drawCityInfo(self.iCorporationSelected)
+			self.drawRequirements(self.iCorporationSelected)
+			self.drawInfluences(self.iCorporationSelected)
 		elif ( inputClass.getNotifyCode() == NotifyCode.NOTIFY_CURSOR_MOVE_ON ) :
 			self.iCorporationExamined = inputClass.getID()
 			self.drawCityInfo(self.iCorporationExamined)
+			self.drawRequirements(self.iCorporationExamined)
+			self.drawInfluences(self.iCorporationExamined)
 		elif ( inputClass.getNotifyCode() == NotifyCode.NOTIFY_CURSOR_MOVE_OFF ) :
 			self.iCorporationExamined = self.iCorporationSelected
 			self.drawCityInfo(self.iCorporationSelected)
+			self.drawRequirements(self.iCorporationSelected)
+			self.drawInfluences(self.iCorporationSelected)
 		return 0
 		
 				
