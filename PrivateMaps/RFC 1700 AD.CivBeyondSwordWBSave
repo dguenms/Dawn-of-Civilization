@@ -20749,12 +20749,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=31
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=22,24,29,38,45,
 EndPlot
 BeginPlot
 	x=48,y=32
+	isNOfRiver
+	RiverWEDirection=3
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
@@ -21173,12 +21176,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=49,y=31
+	RiverNSDirection=0
+	isWOfRiver
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=23,45,
 EndPlot
 BeginPlot
 	x=49,y=32
+	isNOfRiver
+	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=23,45,
