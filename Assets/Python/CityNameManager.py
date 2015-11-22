@@ -296,6 +296,9 @@ def onTechAcquired(iCiv):
 		elif iCiv == iJapan:
 			for city in lCities:
 				if city.getName() == 'Edo': city.setName('Toukyou', False)
+		elif iCiv == iPortugal:
+			for city in lCities:
+				if city.getName() == 'Mo&#231;ambique': city.setName('Louren&#231;o Marques', False)
 		elif iCiv == iRussia:
 			if pCiv.getCivics(3) == con.iCivicCentralPlanning: applySovietNames()
 		elif iCiv == iTurkey:
