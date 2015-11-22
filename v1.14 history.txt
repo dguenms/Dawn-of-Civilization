@@ -1,0 +1,3 @@
+* Laurenco Marques renamed Mocambique, added Saint Louis du Senegal (credit to Panopticon)
+* added the Senegal River
+* Improved corporation advisor (lists tech requirements, number of available resources, factors influencing spread) (credit to merijn_v1)
