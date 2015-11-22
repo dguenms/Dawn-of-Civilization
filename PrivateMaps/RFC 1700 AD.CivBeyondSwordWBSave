@@ -21169,7 +21169,7 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=23,24,29,38,45,
+	TeamReveal=22,23,24,29,38,45,
 EndPlot
 BeginPlot
 	x=49,y=31
