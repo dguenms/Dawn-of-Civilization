@@ -2855,33 +2855,32 @@ iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobac
 #Buildings (update Persian UHV every time this is changed)
 
 iNumBuildings = 209
-(iPalace, iGreatPalace, iForbiddenPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
-iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iOttomanHammam, iKhmerBaray, iIndianStepwell, iMoorishNoria, iHarappanBath,
+(iPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
+iMongolGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iOttomanHammam, iKhmerBaray, iMoorishNoria, iHarappanBath, iIndianStepwell,
 iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugalFeitoria, iDrydock, iAirport,
 iForge, iMaliMint, iItalianArtStudio, iFactory, iGermanAssemblyPlant, iJapaneseZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant,
-iIndustrialPark, iObelisk, iEgyptianObelisk, iEthiopianStele, iNativeAmericaTotem, iIndonesianCandi, iIndianEdict, iPublicTransportation, iAcademy,
+iIndustrialPark, iObelisk, iEgyptianObelisk, iEthiopianStele, iIndonesianCandi, iIndianEdict, iSumerianZiggurat, iNativeAmericaTotem, iPublicTransportation,
 iLibrary, iArabianMadrassa, iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, 
-iRussianResearchInstitute, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavillion, iColosseum, iMayaBallCourt, iBabylonGarden, iMexicoCharreada, 
-iPolynesianMarae, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iKongoMbwadi, iPhoenicianGlassmaker, 
+iRussianResearchInstitute, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavillion, iColosseum, iMayaBallCourt, iMexicoCharreada, 
+iPolynesianMarae, iBabylonGarden, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iKongoMbwadi, iPhoenicianGlassmaker, 
 iGrocer, iBrazilianFazenda, iColombianHacienda, iBank, iEnglishStockExchange, iSupermarket, iAmericanMall, iArgentineRefrigerationPlant, iCourthouse,
-iAztecSacrificialAltar,  iHolyRomanRathaus, iSumerianZiggurat, iPolishSejmik, iJail, iIndianMausoleum, iFrenchSalon, iCanadianRoyalMountedPolice, iLevee, 
-iNetherlandsDike, iIntelligenceAgency, iNationalSecurity, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iChristianTemple, iChristianCathedral, 
+iAztecSacrificialAltar,  iHolyRomanRathaus, iPolishSejmik, iJail, iFrenchSalon, iIndianMausoleum, iCanadianRoyalMountedPolice, iLevee, 
+iNetherlandsDike, iIntelligenceAgency, iNationalSecurity, iAcademy, iMilitaryAcademy, iGreatPalace, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iChristianTemple, iChristianCathedral, 
 iChristianMonastery, iChristianShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iIslamicTemple, iIslamicCathedral,
 iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, 
 iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery,
 iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral,
-iZoroastrianMonastery, iZoroastrianShrine, iTriumphalArch, iGlobeTheatre, iNationalPark, iNationalGallery,
-iWallStreet, iIronWorks, iTradingCompany, iIberianTradingCompany, iRedCross, iInterpol, iMilitaryAcademy, iPyramid,
-iStonehenge, iGreatLibrary, iGreatLighthouse, iHangingGarden, iColossus, iOracle, iParthenon, iFlavianAmphitheatre, iAngkorWat,
-iTempleOfKukulkan, iSistineChapel, iSpiralMinaret, iNotreDame, iTajMahal, iKremlin, iEiffelTower, iStatueOfLiberty,
-iWembley, iGraceland, iHollywood, iGreatDam, iPentagon, iMtRushmore, iUnitedNations, iSpaceElevator, iCERN, iArtemis,
-iSankore, iGreatWall, iStatueOfZeus, iMausoleumOfMaussollos, iCristoRedentor, iShwedagonPaya, iGreatCothon, iMoaiStatues, iApostolicPalace,
-iLeaningTower, iOlympicPark, iTempleOfSalomon, iIshtarGate, iTheodosianWalls, iTerracottaArmy, iMezquita, iDomeOfTheRock,
-iTopkapiPalace, iBrandenburgGate, iSanMarcoBasilica, iWestminster, iBorobudur, iKhajuraho,
-iHimejiCastle, iPorcelainTower, iHarmandirSahib, iBlueMosque, iRedFort, iVersailles, iTrafalgarSquare, iEmpireState,
-iGrandCanal, iFloatingGardens, iLubyanka, iMachuPicchu, iCNTower) = range(iNumBuildings)
+iZoroastrianMonastery, iZoroastrianShrine, iTriumphalArch, iGlobeTheatre, iTradingCompany, iIberianTradingCompany, iWallStreet, iOlympicPark, iNationalGallery,
+iIronWorks, iInterpol, iNationalPark, iRedCross, iStonehenge, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iArtemis,
+iPyramid, iHangingGarden, iOracle, iMoaiStatues, iIshtarGate, iTempleOfSalomon, iColossus, iParthenon, iStatueOfZeus,
+iShwedagonPaya, iKhajuraho, iGreatLibrary, iMausoleumOfMaussollos, iFloatingGardens, iFlavianAmphitheatre,
+iGreatWall, iTheodosianWalls, iMachuPicchu, iBorobudur, iGrandCanal, iNotreDame, iTempleOfKukulkan, iHimejiCastle,
+iBlueMosque, iAngkorWat, iTopkapiPalace, iApostolicPalace, iMezquita, iSistineChapel, iLeaningTower, iRedFort,
+iVersailles, iForbiddenPalace, iSpiralMinaret, iDomeOfTheRock, iSankore, iTajMahal, iSanMarcoBasilica, iPorcelainTower,
+iKremlin, iHarmandirSahib, iTrafalgarSquare, iBrandenburgGate, iStatueOfLiberty, iPentagon, iLubyanka, iWestminster, iMtRushmore,
+iEiffelTower, iEmpireState, iCERN, iWembley, iGraceland, iCristoRedentor, iGreatDam, iHollywood, iUnitedNations, iCNTower, iSpaceElevator) = range(iNumBuildings)
 
-iBeginWonders = iPyramid # different from DLL constant because that includes national wonders
+iBeginWonders = iStonehenge # different from DLL constant because that includes national wonders
 
 iSummerPalace = iGreatPalace
 iHeroicEpic = iFlavianAmphitheatre
