@@ -38,7 +38,7 @@
 		<English>[TAB]Christianity endured many schisms and heresies through the Dark Ages and Middle Ages, the most significant being the Great Schism of 1054, when the Roman Catholic and Eastern Orthodox churches separated. The Renaissance saw a split in Catholicism of perhaps even greater magnitude. The Protestant Reformation began as an internal reaction against corrupt practices and ended as a full-blown theological schism. The process began with Martin Luther's nailing of the Ninety-Five Theses to the door of Wittenberg Castle in 1517, and ended with the Peace of Westphalia in 1648, which permanently recognised the Catholic-Protestant division in Europe. Events between these include the conversion of many European states to Protestant faiths (of which there were many), the Council of Trent (beginning in 1545 to encourage internal Catholic reform), and the Thirty Years' War, beginning in 1618, which left Central Europe devastated.</English>
 		<French>[TAB]Les peuples du monde antique &#233;taient fascin&#233;s et intimid&#233;s par les forces de la nature. Les s&#233;ismes, temp&#234;tes et autres ph&#233;nom&#232;nes naturels &#233;taient g&#233;n&#233;ralement consid&#233;r&#233;s comme des signes du ciel. Des individus et des groupes se sont d&#233;marqu&#233;s en donnant des explications &#224; ces &#233;v&#233;nements et ont transmis leurs connaissances &#224; la tribu. Les pr&#234;tres et pr&#234;tresses du mysticisme, souvent appel&#233;s oracles, pr&#233;tendaient &#234;tre li&#233;s au divin par la m&#233;ditation et la transe. Le mysticisme primitif offrait &#224; l'humanit&#233; les premiers semblants de liens avec les puissances qui fa&#231;onnaient leur monde et repr&#233;sentait un premier pas vers les religions organis&#233;es &#224; venir, polyth&#233;istes ou monoth&#233;istes.</French>
 		<German>[TAB]Die V&#246;lker der alten Welt waren von den Naturm&#228;chten, die sie umgaben, gleicherma&#223;en fasziniert wie ge&#228;ngstigt: Erdbeben, St&#252;rme und andere Naturereignisse wurden allgemein als Zeichen der G&#246;tter interpretiert. Sowohl einzelne Mystiker als auch mystische Vereinigungen begannen, Erkl&#228;rungen f&#252;r diese Vorg&#228;nge zu formulieren und ihren St&#228;mmen kundzutun. Die Priester und Priesterinnen der Mystik, die oftmals als Orakel bezeichnet wurden, behaupteten, durch Meditation und im Trancezustand in direkter Verbindung mit den G&#246;ttern zu stehen. Auf diese Weise suggerierte die primitive Mystik den Menschen erste Kontakte mit den M&#228;chten, die ihre Welt erschaffen und geformt hatten - damit war der Grundstein f&#252;r die polytheistischen und monotheistischen Religionen der Zukunft gelegt.</German>
-		<Italian>[TAB]I popoli antichi erano affascinati e al tempo stesso intimiditi dalle forze della natura che li circondava: terremoti, tempeste e altri fenomeni erano generalmente visti come segni inviati dal cielo. Individui e gruppi tentarono di formulare spiegazioni per questi eventi, che si tramandarono poi di generazione in generazione. I sacerdoti e le sacerdotesse del misticismo, spesso chiamati &quot;oracoli&quot;, dichiaravano di entrare in contatto con la divinit‡ attraverso la meditazione profonda e la contemplazione in stato di trance. Il misticismo primitivo fornÏ all'umanit‡ il primo, tenue, legame con i poteri che formavano il mondo e rappresentÚ il primo passo verso le religioni organizzate, monoteiste e politeiste, che apparvero successivamente.</Italian>
+		<Italian>[TAB]I popoli antichi erano affascinati e al tempo stesso intimiditi dalle forze della natura che li circondava: terremoti, tempeste e altri fenomeni erano generalmente visti come segni inviati dal cielo. Individui e gruppi tentarono di formulare spiegazioni per questi eventi, che si tramandarono poi di generazione in generazione. I sacerdoti e le sacerdotesse del misticismo, spesso chiamati &quot;oracoli&quot;, dichiaravano di entrare in contatto con la divinit√† attraverso la meditazione profonda e la contemplazione in stato di trance. Il misticismo primitivo forn√¨ all'umanit√† il primo, tenue, legame con i poteri che formavano il mondo e rappresent√≤ il primo passo verso le religioni organizzate, monoteiste e politeiste, che apparvero successivamente.</Italian>
 		<Spanish>[TAB]A los pueblos del mundo antiguo les fascinaban y sobrecog&#237;an las fuerzas de la naturaleza que les rodeaban. Los terremotos, tormentas y otros fen&#243;menos sol&#237;an ser considerados se&#241;ales del cielo. Surgieron individuos y grupos que formulaban explicaciones para estos sucesos, y transmit&#237;an dicho conocimiento a la tribu. Los sacerdotes y sacerdotisas del misticismo, llamados a menudo or&#225;culos, afirmaban unirse con la divinidad por medio de la meditaci&#243;n y de un estado contemplativo similar al trance. El misticismo primitivo ofreci&#243; a la humanidad los primeros y tenues v&#237;nculos con los poderes que daban forma a su mundo, y represent&#243; un primer paso en el camino hacia las futuras religiones organizadas, tanto polite&#237;stas como monote&#237;stas</Spanish>
 	</TEXT>
 	<TEXT>
@@ -437,7 +437,7 @@
 		<Tag>TXT_KEY_BUILDING_CHRISTIAN_SHRINE</Tag>
 		<English>Church of the Holy Sepulchre</English>
 		<French>
-			<Text>…glise du Saint-SÈpulcre</Text>
+			<Text>√âglise du Saint-S√©pulcre</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
@@ -467,7 +467,7 @@
 			<Plural>1</Plural>
 		</French>
 		<German>
-			<Text>Seidenstraﬂe</Text>
+			<Text>Seidenstra√üe</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
@@ -563,7 +563,7 @@
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>÷lindustrie</Text>
+			<Text>√ñlindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
@@ -841,5 +841,41 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_0</Tag>
+		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities on the historical route[NEWLINE][ICON_BULLET]Cannot spread after 1500 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources (especially Silk resources)[NEWLINE][ICON_BULLET]Adopting the Tribalism or Free Market civics[NEWLINE][ICON_BULLET]Being the Mongolian civilization[NEWLINE][ICON_BULLET]Markets, Grocers[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Being the Chinese civilization[NEWLINE][ICON_BULLET]Coastal cities without a Harbor[NEWLINE][ICON_BULLET]Christian state religion[NEWLINE][ICON_BULLET]Too many other companies present</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_1</Tag>
+		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities belonging to the Spanish, French, English, Portuguese, Dutch or Viking civilizations[NEWLINE][ICON_BULLET]Cannot spread after 1800 AD[NEWLINE][ICON_BULLET]Can only spread to cities in the Caribbean, Sub-Saharan Africa, South Asia or cities that have the Trading Corporation National Wonder[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Mercantilism or Free Market civic[NEWLINE][ICON_BULLET]Being the Dutch civilization[NEWLINE][ICON_BULLET]Harbors, Customs Houses, Banks, Trading Company (National Wonder)[NEWLINE][ICON_BULLET]Cities in the Caribbean[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_2</Tag>
+		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Granaries, Grocers, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Fishing Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_3</Tag>
+		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Lighthouses, Harbors, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Cereal Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_4</Tag>
+		<English>Additional Requirements:[NEWLINE][ICON_BULLET]Cannot spread after 1920 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Markets, Factories[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Steel Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_5</Tag>
+		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Factories, Coal Plants, Industrial Parks, Ironworks[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Textile Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_6</Tag>
+		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Banks, Industrial Parks, Stock Market[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Computer Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_7</Tag>
+		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Factories, Theatres, Broadcast Towers, National Gallery[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_INFLUENCES_8</Tag>
+		<English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Factories, Laboratories, Universities, CERN Research Complex[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Oil Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
 	</TEXT>
 </Civ4GameText>
