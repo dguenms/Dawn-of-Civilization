@@ -68,7 +68,7 @@ tMinorCities = (
 (880, (65, 48), iIndependent2, 'Buda', 3, con.iHorseArcher, 5),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, con.iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, con.iArcher, 2),		# Chan Chan
-(900, (109, 33), iIndependent, 'Tondo', 2, con.iArcher, 2),		# Chan Chan
+(900, (109, 33), iIndependent, 'Tondo', 2, con.iArcher, 2),		# Tondo/Manila
 (900, (69, 52), iIndependent, 'Kyiv', 2, con.iLongbowman, 2),		# Kiev
 (990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, con.iVikingBerserker, 1),	# Trondheim
