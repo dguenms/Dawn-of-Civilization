@@ -11,10 +11,10 @@ typedef list<char*> LISTCHAR;
 
 #define MAX_COM_SHRINE			(20)
 
-#define GREATPALACE				(GC.getInfoTypeForString("BUILDING_GREAT_PALACE"))
-#define SUMMERPALACE			(GC.getInfoTypeForString("BUILDING_GREAT_PALACE"))
-//#define VERSAILLES				(GC.getInfoTypeForString("BUILDING_VERSAILLES"))
-//#define FORBIDDENPALACE			(GC.getInfoTypeForString("BUILDING_FORBIDDEN_PALACE"))
+#define GREATPALACE				(98)
+#define SUMMERPALACE			(98)
+//#define VERSAILLES				(2)
+//#define FORBIDDENPALACE			(2)
 
 #define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
 
