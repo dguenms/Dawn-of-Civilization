@@ -17503,7 +17503,8 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	// tiles with forts can be covered for free
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pPlot->getImprovementType()).isActsAsCity()) return 0;
 
-	int iCost = pPlot->calculateCultureCost();
+    // EPGQUOTA add player indicator to culture
+	int iCost = pPlot->calculateCultureCost(getOwnerINLINE());
 	int iDistance = plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY());
 
 	if (bOrdering)
