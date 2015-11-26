@@ -2809,22 +2809,22 @@ iUtopia = iCommunism
 # initialise unit variables to unit indices from XML
 
 iNumUnits = 163
-(iLion, iBear, iPanther, iWolf, iSettler, iHarappanSettler, iWorker, iIndianFastWorker, iBrazilianLenhador, iScout, iExplorer, iSpy, iProsecutor,
-iJewishMissionary, iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, 
-iTaoistMissionary, iZoroastrianMissionary, iWarrior, iIncanQuechua, iSwordsman, iAztecJaguar, iCelticGallicWarrior, iRomePraetorian,
-iAxeman, iGreekPhalanx, iSumerianVulture, iNativeAmericaDogSoldier, iMaceman, iJapanSamurai, iVikingBerserker, iKongoPombos, 
-iSpearman, iZuluImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iFrenchMusketeer, iOttomanJanissary, iEthiopianOromoWarrior, 
-iIranianQizilbash, iIroquoisMohawk, iRifleman, iEnglishRedcoat, iAmericanMinuteman, iGrenadier, iColombianAlbionLegion, iAtInfantry, iInfantry, iBersagliere,
-iSamInfantry, iMobileSam, iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMaliSkirmisher, iBabylonBowman, iNubianMedjay, iMayaHolkan, 
-iLongbowman,iIndianBambooBowman,  iCrossbowman, iChinaChokonu, iChariot, iEgyptWarChariot, iCelticCidainh, iHittiteHuluganni, iPersiaImmortal, iHorseArcher, 
-iCarthageNumidianCavalry, iKushanAsvaka, iMongolKeshik, iTibetanKhampa, iKnight, iArabiaCamelarcher, iByzantineCataphract, iSeljukGhulamWarrior, iThaiChangSuek, 
-iMandeFarari, iSpanishConquistador, iCuirassier,  iMoorishCamelGunner, iPolishWingedHussar, iSiouxMountedBrave, iCavalry, iRussiaCossack, iMexicoRurales, 
-iArgentineGrenadierCavalry, iWarElephant, iKhmerBallistaElephant, iCarthaginianWarElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha, 
-iTrebuchet, iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iPolynesianWaka, iBireme, iTrireme, 
-iCaravel, iPortugalCarrack, iTamilDharani, iGalleon, iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iMoorishCorsair, iFrigate, 
-iShipOfTheLine, iIronclad, iTransport,  iDestroyer, iCanadaCorvette,iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter, 
-iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iStatesman, iGreatGeneralUnit, 
-iGreatSpy,iFemaleProphet, iFemaleArtist, iFemaleScientist, iFemaleMerchant, iFemaleEngineer, iFemaleStatesman, iFemaleGreatGeneral, 
+(iLion, iBear, iPanther, iWolf, iSettler, iHarappanSettler, iWorker, iBrazilianLenhador, iIndianFastWorker, iScout, iExplorer, iSpy, iProsecutor,
+iJewishMissionary, iChristianMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary,
+iTaoistMissionary, iZoroastrianMissionary, iWarrior, iSwordsman, iAztecJaguar, iRomePraetorian, iCelticGallicWarrior,
+iAxeman, iGreekPhalanx, iIncanQuechua, iSumerianVulture, iNativeAmericaDogSoldier, iMaceman, iJapanSamurai, iVikingBerserker, iKongoPombos,
+iSpearman, iPersiaImmortal, iZuluImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iOttomanJanissary, iEthiopianOromoWarrior, 
+iIranianQizilbash, iIroquoisMohawk, iFrenchMusketeer, iRifleman, iEnglishRedcoat, iAmericanMinuteman, iGrenadier, iColombianAlbionLegion, iAtInfantry, iInfantry, iBersagliere,
+iSamInfantry, iMobileSam, iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMaliSkirmisher, iBabylonBowman, iMayaHolkan, iNubianMedjay,
+iLongbowman, iIndianBambooBowman, iCrossbowman, iChinaChokonu, iChariot, iEgyptWarChariot, iHittiteHuluganni, iCelticCidainh, iHorseArcher, iTibetanKhampa,
+iCarthageNumidianCavalry, iKushanAsvaka, iKnight, iMongolKeshik, iArabiaCamelarcher, iByzantineCataphract, iThaiChangSuek, iSeljukGhulamWarrior,
+iMandeFarari, iCuirassier, iSpanishConquistador, iPolishWingedHussar, iSiouxMountedBrave,  iMoorishCamelGunner, iCavalry, iRussiaCossack, iMexicoRurales,
+iArgentineGrenadierCavalry, iWarElephant, iKhmerBallistaElephant, iCarthaginianWarElephant, iTank, iGermanPanzer, iModernArmor, iGunship, iCatapult, iKoreanHwacha,
+iTrebuchet, iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iPolynesianWaka, iBireme, iTrireme,
+iCaravel, iPortugalCarrack, iTamilDharani, iGalleon, iNetherlandsOostindievaarder, iPrivateer, iIndonesianOrangLaut, iMoorishCorsair, iFrigate,
+iShipOfTheLine, iIronclad, iTransport,  iDestroyer, iCanadaCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter,
+iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iStatesman, iGreatGeneralUnit,
+iGreatSpy, iFemaleProphet, iFemaleArtist, iFemaleScientist, iFemaleMerchant, iFemaleEngineer, iFemaleStatesman, iFemaleGreatGeneral,
 iFemaleGreatSpy, iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
 
 iCongoPombos = iKongoPombos
@@ -2849,8 +2849,8 @@ iGreatSpy : iFemaleGreatSpy,
 # initialise bonuses variables to bonuses IDs from WBS
 iNumBonuses = 40
 (iAluminium, iCoal, iCopper, iHorse, iIron, iMarble, iOil, iStone, iUranium, iBanana, iClam, iCorn, iCow, iCrab,
-iDeer, iFish, iPig, iRice, iSheep, iWheat, iDye, iFur, iGems, iGold, iIncense, iIvory, iSilk, iSilver, iSpices,
-iSugar, iWine, iWhales, iSoccer, iSongs, iMovies, iCotton, iCoffee, iTea, iTobacco, iPearls) = range(iNumBonuses)
+iDeer, iFish, iPig, iRice, iSheep, iWheat, iCoffee, iCotton, iDye, iFur, iGems, iGold, iIncense, iIvory, iPearls, iSilk, iSilver, iSpices,
+iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBonuses)
 
 #Buildings (update Persian UHV every time this is changed)
 
