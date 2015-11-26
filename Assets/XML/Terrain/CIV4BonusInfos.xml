@@ -1188,7 +1188,6 @@
 			<FeatureTerrainBooleans/>
 			<bUseLSystem>0</bUseLSystem>
 		</BonusInfo>
-
 		<BonusInfo>
 			<Type>BONUS_COFFEE</Type>
 			<Description>TXT_KEY_BONUS_COFFEE</Description>
