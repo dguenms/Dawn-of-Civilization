@@ -14,10 +14,6 @@ import Popup
 gc = CyGlobalContext()
 iChange = 1
 
-import RFCUtils
-utils = RFCUtils.RFCUtils()
-import Consts as con
-
 class WBPlayerScreen:
 
 	def __init__(self):
@@ -163,14 +159,6 @@ class WBPlayerScreen:
 			screen.setText("AdjustCommerceFlexible" + gc.getCommerceInfo(i).getType(), "Background", "<font=3>" + sText + "</font>", CvUtil.FONT_LEFT_JUSTIFY, iX + 50, iY + 1, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_PYTHON, 7881, i)
 			iY += 30
 
-		#Merijn: Place Civenabled buttons
-		iY += 30
-		if iPlayer in con.lSecondaryCivs:
-			if utils.getPlayerEnabled(iPlayer):
-				screen.setButtonGFC("CivEnabledButton", "", gc.getMissionInfo(gc.getInfoTypeForString("MISSION_FOUND")).getButton(), iX, iY, 64, 64, WidgetTypes.WIDGET_PYTHON, 22001, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
-			else:
-				screen.setButtonGFC("CivEnabledButton", "", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iX, iY, 64, 64, WidgetTypes.WIDGET_PYTHON, 22001, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-
 	def placeScript(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
 		iX = screen.getXResolution()/4
@@ -238,7 +226,7 @@ class WBPlayerScreen:
 		if pPlayer.getStateReligion() > -1:
 			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
 		screen.appendTableRow("WBPlayerReligions")
-		screen.setTableText("WBPlayerReligions", 0, 0, "<font=3>" + sColor + CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ()) + "</font></color>", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), WidgetTypes.WIDGET_HELP_RELIGION, 0, -1, CvUtil.FONT_LEFT_JUSTIFY )
+		screen.setTableText("WBPlayerReligions", 0, 0, "<font=3>" + sColor + CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ()) + "</font></color>", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), WidgetTypes.WIDGET_HELP_RELIGION, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 		for item in lReligions:
 			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
 			if pPlayer.getStateReligion() == item[1]:
@@ -438,14 +426,7 @@ class WBPlayerScreen:
 			if pPlayer.canDoCivics(iCivic):
 				pPlayer.setCivics(gc.getCivicInfo(iCivic).getCivicOptionType(), iCivic)
 			self.interfaceScreen(iPlayer)
-			
-		elif inputClass.getFunctionName() == "CivEnabledButton":
-			if utils.getPlayerEnabled(iPlayer):
-				utils.setPlayerEnabled(iPlayer, False)
-			else:
-				utils.setPlayerEnabled(iPlayer, True)
-			self.interfaceScreen(iPlayer)
-			
+
 		elif inputClass.getFunctionName() == "PlayerEditScriptData":
 			popup = Popup.PyPopup(1111, EventContextTypes.EVENTCONTEXT_ALL)
 			popup.setHeaderString(CyTranslator().getText("TXT_KEY_WB_SCRIPT", ()))
