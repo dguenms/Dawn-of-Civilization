@@ -135,12 +135,12 @@ def getWidgetHelp(argsList):
 		return func(eWidgetType, iData1, iData2, bOption)
 	
 ## Religion Screen ##
-#	if eWidgetType == WidgetTypes.WIDGET_HELP_RELIGION:
-#		if iData1 == -1:
-#			return CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ())
+	if eWidgetType == WidgetTypes.WIDGET_HELP_RELIGION:
+		if iData1 == -1:
+			return CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ())
 
 ## Platy WorldBuilder ##
-	if eWidgetType == WidgetTypes.WIDGET_PYTHON:
+	elif eWidgetType == WidgetTypes.WIDGET_PYTHON:
 		if iData1 == 1027:
 			return CyTranslator().getText("TXT_KEY_WB_PLOT_DATA",())
 		elif iData1 == 1028:
