@@ -809,20 +809,4 @@
 		<Italian>Kill</Italian>
 		<Spanish>Matar</Spanish>
 	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_ENABLE_CIV</Tag>
-		<English>This civ is enabled. (Click to disable)</English>
-		<French>This civ is enabled. (Click to disable)</French>
-		<German>This civ is enabled. (Click to disable)</German>
-		<Italian>This civ is enabled. (Click to disable)</Italian>
-		<Spanish>This civ is enabled. (Click to disable)</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_DISABLE_CIV</Tag>
-		<English>This civ is disabled. (Click to enable)</English>
-		<French>This civ is disabled. (Click to enable)</French>
-		<German>This civ is disabled. (Click to enable)</German>
-		<Italian>This civ is disabled. (Click to enable)</Italian>
-		<Spanish>This civ is disabled. (Click to enable)</Spanish>
-	</TEXT>
 </Civ4GameText>
