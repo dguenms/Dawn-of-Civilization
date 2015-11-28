@@ -40,14 +40,6 @@ class WBInfoScreen:
 				gc.getTechInfo,
 				gc.getProjectInfo,
 				]
-				
-		# Merijn StabMap colors
-		self.iColorCore = "COLOR_PLAYER_DARK_GREEN"
-		self.iColorHistorical = "COLOR_GREEN"
-		self.iColorContested = "COLOR_YELLOW"
-		self.iColorForeignCore = "COLOR_RED"
-		self.iColorSpawn = "COLOR_PLAYER_DARK_PINK"
-		self.iColorSpawnWater = "COLOR_PLAYER_GREYISH_CYAN"
 
 	def interfaceScreen(self, iPlayerX):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
@@ -80,8 +72,6 @@ class WBInfoScreen:
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIVIC", ()), 11, 11, 11 == iMode)
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_TECH", ()), 12, 12, 12 == iMode)
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_PROJECT", ()), 13, 13, 13 == iMode)
-		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_STABILITY_MAPS", ()), 14, 14, 14 == iMode)
-		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_SPAWN_MAPS", ()), 15, 15, 15 == iMode)
 		
 		screen.addDropDownBoxGFC("CurrentPlayer", iX + iWidth/2, iY, iWidth/2, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		for i in xrange(gc.getMAX_PLAYERS()):
