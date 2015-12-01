@@ -173,6 +173,32 @@ def onCityAcquired(city, iNewOwner):
 	
 	if sNewName:
 		city.setName(sNewName, False)
+	
+dCommunistNames = {
+	'Caricyn'		:	'Stalingrad',
+	'Sankt-Peterburg'	:	'Leningrad',
+	"Tver'"			:	'Kalinin',
+	'Ekaterinburg'		:	'Sverdlovsk',
+	'Nizhnij Novgorod'	:	'Gorki',
+	'Samara'		:	'Kujbyshev',
+	"Car'grad"		:	"Konstantinopol'",
+	'Bobrujsk'		:	'Stalink',
+	'Vjatka'		:	'Kirov',
+	'Bavly'			:	"Oktjabr'skij",
+	'Sumin'			:	'Sumy',
+	'Sjangan'		:	'Gon Kong',
+}
+
+def applyCommunistNames(iCiv):
+	for city in utils.getCityList(iCiv):
+		sName = city.getName()
+		if sName in dCommunistNames:
+			city.setName(dCommunistNames[sName], False)
+			
+def revertCommunistNames(iCiv):
+	for city in utils.getCityList(iCiv):
+		sIdentifier = getIdentifier(city.getName())
+		if not sIdentifier: continue
 		
 def applySovietNames():
 	for city in utils.getCityList(iRussia):
@@ -286,6 +312,11 @@ def onReligionSpread(iReligion, iCiv, city):
 		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: city.setName('Buddhapest', False)
 			
 def onRevolution(iCiv):
+
+	if gc.getPlayer(iCiv).getCivics(3) == iCivicCentralPlanning:
+		applyCommunistNames(iCiv)
+	else:
+		revertCommunistNames(iCiv)
 
 	if iCiv == iEgypt:
 		updateCityNames(iCiv)
