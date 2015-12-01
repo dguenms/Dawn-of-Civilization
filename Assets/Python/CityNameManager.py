@@ -4,7 +4,7 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers
 import Popup
-import Consts as con
+from Consts import *
 import RFCUtils
 from StoredData import sd
 
@@ -12,65 +12,6 @@ from StoredData import sd
 gc = CyGlobalContext()
 utils = RFCUtils.RFCUtils()
 PyPlayer = PyHelpers.PyPlayer
-
-### Constants ###
-
-# initialise player variables to player IDs from WBS
-iEgypt = con.iEgypt
-iIndia = con.iIndia
-iChina = con.iChina
-iBabylonia = con.iBabylonia
-iHarappa = con.iHarappa
-iGreece = con.iGreece
-iPersia = con.iPersia
-iCarthage = con.iCarthage
-iPolynesia = con.iPolynesia
-iRome = con.iRome
-iTamils = con.iTamils
-iJapan = con.iJapan
-iEthiopia = con.iEthiopia
-iKorea = con.iKorea
-iMaya = con.iMaya
-iByzantium = con.iByzantium
-iVikings = con.iVikings
-iArabia = con.iArabia
-iTibet = con.iTibet
-iKhmer = con.iKhmer
-iIndonesia = con.iIndonesia
-iMoors = con.iMoors
-iSpain = con.iSpain
-iFrance = con.iFrance
-iEngland = con.iEngland
-iHolyRome = con.iHolyRome
-iRussia = con.iRussia
-iNetherlands = con.iNetherlands
-iHolland = con.iHolland
-iMali = con.iMali
-iPoland = con.iPoland
-iTurkey = con.iTurkey
-iPortugal = con.iPortugal
-iInca = con.iInca
-iItaly = con.iItaly
-iMongolia = con.iMongolia
-iAztecs = con.iAztecs
-iMughals = con.iMughals
-iThailand = con.iThailand
-iCongo = con.iCongo
-iGermany = con.iGermany
-iAmerica = con.iAmerica
-iArgentina = con.iArgentina
-iBrazil = con.iBrazil
-iCanada = con.iCanada
-iNumPlayers = con.iNumPlayers
-iNumMajorPlayers = con.iNumMajorPlayers
-iNumActivePlayers = con.iNumActivePlayers
-iIndependent = con.iIndependent
-iIndependent2 = con.iIndependent2
-iNative = con.iNative
-iCeltia = con.iCeltia
-iSeljuks = con.iSeljuks
-iBarbarian = con.iBarbarian
-iNumTotalPlayers = con.iNumTotalPlayers
 
 iNumLanguages = 41
 (iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
@@ -93,7 +34,7 @@ def getLanguages(iCiv):
 	pCiv = gc.getPlayer(iCiv)
 
 	if iCiv == iEgypt:
-		if pCiv.getStateReligion() == con.iIslam: return (iLangEgyptianArabic, iLangArabian)
+		if pCiv.getStateReligion() == iIslam: return (iLangEgyptianArabic, iLangArabian)
 		return (iLangEgyptian,)
 	elif iCiv == iChina: return (iLangChinese,)
 	elif iCiv == iBabylonia: return (iLangBabylonian,)
@@ -176,9 +117,9 @@ def getRenameName(iCiv, sName):
 	if not sIdentifier: return None
 	
 	for iLanguage in tLanguages:
-		if sName in tRenames[iLanguage]:
-			return tRenames[iLanguage][sName]
-		if sName in tRenames[iLanguage].values():	# don't need to keep identical renames in the dictionary to avoid a secondary language overwriting it
+		if sIdentifier in tRenames[iLanguage]:
+			return tRenames[iLanguage][sIdentifier]
+		if sIdentifier in tRenames[iLanguage].values():	# if a higher preference language already has a name for this city, do not rename it with the following languages
 			return None
 			
 	return None
@@ -220,9 +161,8 @@ def onCityAcquired(city, iNewOwner):
 	elif sOldName == 'Toranaro' and iNewOwner not in [iJapan, iFrance]: sNewName = 'Tolanaro'
 	elif sOldName == 'Kerimane' and iNewOwner != iJapan: sNewName = 'Quelimane'
 	elif sOldName == 'Sofara' and iNewOwner != iJapan: sNewName = 'Sofala'
-	#elif sOldName == 'Indraprastha' and iNewOwner == iIndia: sNewName = 'Dilli'
 	elif sOldName == 'Singidunon' and iNewOwner != iByzantium: sNewName = 'Belgrad'
-	elif sOldName == 'York' and iNewOwner == iCanada and city.getRegionID() == con.rCanada: sNewName = 'Toronto'
+	elif sOldName == 'York' and iNewOwner == iCanada and city.getRegionID() == rCanada: sNewName = 'Toronto'
 	elif sOldName == 'Prey Nokor': sNewName = 'Saigon'
 	
 	if sNewName:
@@ -338,11 +278,11 @@ def onTechAcquired(iCiv):
 def onReligionSpread(iReligion, iCiv, city):
 
 	if iCiv == iIndonesia:
-		if iReligion == con.iIslam:
+		if iReligion == iIslam:
 			if city.getName() == 'Yogyakarta': city.setName('Mataram', False)
 			
 	# easter egg
-	if iReligion == con.iBuddhism:
+	if iReligion == iBuddhism:
 		if city.getName() in ['Buda', 'Budapest', 'Aquincum', 'Akin']: city.setName('Buddhapest', False)
 			
 def onRevolution(iCiv):
