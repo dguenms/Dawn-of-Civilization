@@ -200,26 +200,57 @@ def revertCommunistNames(iCiv):
 		sIdentifier = getIdentifier(city.getName())
 		if not sIdentifier: continue
 		
-def applySovietNames():
-	for city in utils.getCityList(iRussia):
-		sOldName = city.getName()
-		sNewName = ""
-		
-		if sOldName == 'Caricyn': sNewName = 'Stalingrad'
-		elif sOldName == 'Sankt-Peterburg': sNewName = 'Leningrad'
-		elif sOldName == "Tver'": sNewName = 'Kalinin'
-		elif sOldName == 'Ekaterinburg': sNewName = 'Sverdlovsk'
-		elif sOldName == 'Nizhnij Novgorod': sNewName = 'Gorki'
-		elif sOldName == 'Samara': sNewName = 'Kujbyshev'
-		elif sOldName == "Car'grad": sNewName = "Konstantinopol'"
-		elif sOldName == 'Bobrujsk': sNewName = 'Stalink'
-		elif sOldName == 'Vjatka': sNewName = 'Kirov'
-		elif sOldName == 'Bavly': sNewName = "Oktjabr'skij"
-		elif sOldName == 'Sumin': sNewName = 'Sumy'
-		elif sOldName == 'Sjangan': sNewName = 'Gon Kong'
-		
-		if sNewName != "":
-			city.setName(sNewName, False)
+		if sIdentifier in dCommunistNames:
+			city.setName(sIdentifier, False)
+			
+tEraNames = (
+# ancient
+{},
+# classical
+{},
+# medieval
+{
+	"Chang'an"		:	"Xi'an",
+	'Zhongdu'		:	'Beijing',
+	'Indraprastha'		:	'Dilli',
+},
+# renaissance
+{
+	'Pataliputra'		:	'Patna',
+	'Haojing'		:	'Aomen',
+	'Nidaros'		:	'Trondheim',
+	'Roskilde'		:	'K&#248;benhavn',
+	'Haithabu'		:	'Hamburg',
+	'Novokholmogory'	:	"Arkhangel'sk",
+	'Spas na Kholmu'	:	'Krasnyj Kholm',
+	'Tumasik'		:	'Singapura',
+	'Sundapura'		:	'Jayakarta',
+	'Buda'			:	'Budapest',
+},
+# industrial
+{
+	'Yax Mutal'		:	'Tikal',
+	'Edo'			:	'Toukyou',
+	'Mo&#231;ambique'	:	'Lauren&#231;o Marques',
+	'Constantinopolis'	:	'Istanbul',
+	'Fiorenza'		:	'Firenze',
+	'Dagou'			:	'Gaoxiong',
+	'Ayutthaya'		:	'Bangkok',
+	'York'			:	'Toronto',
+},
+# modern
+{
+	'Angora'		:	'Ankara',
+	'Hanseong'		:	'Seoul'
+},
+# future
+{},
+)
+
+def getEraRename(sName, iEra):
+	if sName in tEraNames[iEra]:
+		return tEraNames[iEra][sName]
+	return None
 			
 def onTechAcquired(iCiv):
 	pCiv = gc.getPlayer(iCiv)
@@ -227,79 +258,18 @@ def onTechAcquired(iCiv):
 	
 	iEra = pCiv.getCurrentEra()
 	
-	if iEra == con.iMedieval:
-		if iCiv in [iChina, iMongolia, iJapan]:
-			for city in lCities:
-				if city.getName() == "Chang'an": city.setName("Xi'an", False)
-				elif city.getName() == 'Zhongdu': city.setName('Beijing', False)
-		elif iCiv == iIndia:
-			for city in lCities:
-				if city.getName() == 'Indraprastha': city.setName('Dilli', False)
-	elif iEra == con.iRenaissance:
-		if iCiv in [iIndia, iArabia, iTurkey]:
-			for city in lCities:
-				if city.getName() == 'Pataliputra': city.setName('Patna', False)
-		elif iCiv in [iChina, iMongolia, iJapan]:
-			for city in lCities:
-				if city.getName() == 'Haojing': city.setName('Aomen', False)
-		elif iCiv == iVikings:
-			for city in lCities:
-				if city.getName() == 'Nidaros': city.setName('Trondheim', False)
-				elif city.getName() == 'Roskilde': city.setName('K&#248;benhavn', False)
-		elif iCiv == iHolyRome:
-			for city in lCities:
-				if city.getName() == 'Haithabu': city.setName('Hamburg', False)
-		elif iCiv == iRussia:
-			for city in lCities:
-				if city.getName() == 'Novokholmogory': city.setName("Arkhangel'sk", False)
-				elif city.getName() == 'Spas na Kholmu': city.setName('Krasnyj Kholm', False)
-		elif iCiv == iIndonesia:
-			for city in lCities:
-				if city.getName() == 'Tumasik': city.setName('Singapura', False)
-				elif city.getName() == 'Sundapura': city.setName('Jayakarta', False)
-				
-		if iCiv in [iRussia, iHolyRome, iGermany, iPoland]:
-			for city in lCities:
-				if city.getName() == 'Buda': city.setName('Budapest', False)
-	elif iEra == con.iIndustrial:
-		if iCiv in [iEngland, iSpain, iAmerica]:
-			for city in lCities:
-				if city.getName() == 'Yax Mutal': city.setName('Tikal', False)
-		elif iCiv == iJapan:
-			for city in lCities:
-				if city.getName() == 'Edo': city.setName('Toukyou', False)
-		elif iCiv == iPortugal:
-			for city in lCities:
-				if city.getName() == 'Mo&#231;ambique': city.setName('Louren&#231;o Marques', False)
-		elif iCiv == iRussia:
-			if pCiv.getCivics(3) == con.iCivicCentralPlanning: applySovietNames()
-		elif iCiv == iTurkey:
-			for city in lCities:
-				if city.getName() == 'Kostantiniyye': city.setName('Istanbul', False)
-		elif iCiv == iItaly:
-			for city in lCities:
-				if city.getName() == 'Fiorenza': city.setName('Firenze', False)
-		elif iCiv == iChina:
-			for city in lCities:
-				if city.getName() == 'Dagou': city.setName('Gaoxiong', False)
-		elif iCiv == iThailand:
-			for city in lCities:
-				if city.getName() == 'Ayutthaya': city.setName('Bangkok', False)
+	for iEra in range(pCiv.getCurrentEra()+1):
+		for city in lCities:
+			sIdentifier = getIdentifier(city.getName())
+			if not sIdentifier: continue
+			
+			if sIdentifier == 'York' and city.getRegionID() == rBritain: continue # do not rename English York
 		
-		if iCiv in [iEngland, iFrance, iAmerica]:
-			for city in lCities:
-				if city.getName() == 'York' and city.getRegionID() == con.rCanada: city.setName('Toronto', False)
-				
-		if iCiv in [iEngland, iIndia, iMughals]:
-			for city in lCities:
-				if city.getName() == 'Daibul': city.setName('Karachi', False)
-	elif iEra == con.iModern:
-		if iCiv in [iTurkey, iIndependent, iIndependent2, iBarbarian, iSeljuks]:
-			for city in lCities:
-				if city.getName() == 'Angora': city.setName('Ankara', False)
-		elif iCiv in [iKorea, iChina, iJapan]:
-			for city in lCities:
-				if city.getName() == 'Hanseong': city.setName('Seoul', False)
+			sNewIdentifier = getEraRename(city.getName(), iEra)
+			if not sNewIdentifier: continue
+			
+			sNewName = getRenameName(iCiv, sNewIdentifier)
+			if sNewName: city.setName(sNewName, False)
 				
 def onReligionSpread(iReligion, iCiv, city):
 
