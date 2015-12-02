@@ -30,7 +30,6 @@ def isResurrected(iCiv):
 	return (sd.scriptDict['lResurrections'][iCiv] > 0)
 
 def getLanguages(iCiv):
-
 	pCiv = gc.getPlayer(iCiv)
 
 	if iCiv == iEgypt:
@@ -90,20 +89,43 @@ def getLanguages(iCiv):
 	elif iCiv == iCeltia: return (iLangCeltic,)
 	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
 	else: return None
+	
+def getNativeLanguages(tPlot):
+	x, y = tPlot
+	plot = gc.getMap().plot(x, y)
+	
+	lCorePlayers = [i for i in range(iNumPlayers) if plot.isCore(i)]
+	if not lCorePlayers: lCorePlayers = [i for i in range(iNumPlayers)]
+	
+	iNativePlayer = utils.getHighestIndex(lCorePlayers, lambda x: plot.getSettlerMapValue(x))
+	
+	return getLanguages(iNativePlayer)
 
 def getFoundName(iCiv, tPlot):
 	x, y = tPlot
 	tLanguages = getLanguages(iCiv)
-	if tLanguages == -1: return "-1"
+	if not tLanguages: return None
 	
-	for i in range(len(tLanguages)):
-		iLanguage = tLanguages[i]
+	for iLanguage in tLanguages:
 		if iLanguage in dFoundMaps:
 			sName = dFoundMaps[iLanguage][67-y][x]
 			if sName != "-1":
 				return sName
 				
-	return "-1"
+	return None
+	
+def getNativeName(iCiv, tPlot):
+	x, y = tPlot
+	tLanguages = getNativeLanguages(tPlot)
+	if not tLanguages: return None
+	
+	for iLanguage in tLanguages:
+		if iLanguage in dFoundMaps:
+			sName = dFoundMaps[iLanguage][67-y][x]
+			if sName != "-1":
+				return getRenameName(iCiv, tPlot)
+				
+	return None
 	
 def getIdentifier(sName):
 	if sName not in dIdentifiers: return None
@@ -121,7 +143,7 @@ def getRenameName(iCiv, sName):
 			return tRenames[iLanguage][sIdentifier]
 		if sName in tRenames[iLanguage].values():	# if a higher preference language already has a name for this city, do not rename it with the following languages
 			return None
-			
+	
 	return None
 	
 def updateCityNames(iCiv):
@@ -137,14 +159,19 @@ def updateCityNamesFound(iCiv):
 			city.setName(sNewName, False)
 	
 def onCityBuilt(city):
-
 	iOwner = city.getOwner()
 	x = city.getX()
 	y = city.getY()
 	
 	sNewName = getFoundName(iOwner, (x,y))
 	
-	if sNewName != "-1":
+	if sNewName: 
+		city.setName(sNewName, False)
+		return
+		
+	sNewName = getNativeName(iOwner, (x,y))
+	
+	if sNewName:
 		city.setName(sNewName, False)
 		
 def onCityAcquired(city, iNewOwner):
@@ -4782,6 +4809,7 @@ dIdentifiers = {
 	'Pomp&#233;i'		:	'Pompeii',
 	'Pompeya'		:	'Pompeii',
 	'Pompeii'		:	'Pompeii',
+	'Neapolis'		:	'Neapolis',
 	'Napoli'		:	'Neapolis',
 	'Nabuli'		:	'Neapolis',
 	'Neapel'		:	'Neapolis',
