@@ -119,7 +119,7 @@ def getRenameName(iCiv, sName):
 	for iLanguage in tLanguages:
 		if sIdentifier in tRenames[iLanguage]:
 			return tRenames[iLanguage][sIdentifier]
-		if sIdentifier in tRenames[iLanguage].values():	# if a higher preference language already has a name for this city, do not rename it with the following languages
+		if sName in tRenames[iLanguage].values():	# if a higher preference language already has a name for this city, do not rename it with the following languages
 			return None
 			
 	return None
@@ -127,7 +127,7 @@ def getRenameName(iCiv, sName):
 def updateCityNames(iCiv):
 	for city in utils.getCityList(iCiv):
 		sNewName = getRenameName(iCiv, city.getName())
-		if sNewName != "-1":
+		if sNewName is not None:
 			city.setName(sNewName, False)
 			
 def updateCityNamesFound(iCiv):
@@ -201,7 +201,9 @@ def revertCommunistNames(iCiv):
 		if not sIdentifier: continue
 		
 		if sIdentifier in dCommunistNames:
-			city.setName(sIdentifier, False)
+			sRename = getRenameName(iCiv, sIdentifier)
+			
+			if sRename: city.setName(sRename, False)
 			
 tEraNames = (
 # ancient
