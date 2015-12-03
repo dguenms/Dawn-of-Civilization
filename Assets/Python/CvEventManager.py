@@ -17,13 +17,21 @@ import Popup as PyPopup
 import CvCameraControls
 import CvTopCivs
 import sys
-import CvWorldBuilderScreen
 import CvAdvisorUtils
 import CvTechChooser
 
 #Rhye
 import RFCUtils
 utils = RFCUtils.RFCUtils()
+
+## Ultrapack ##
+import WBCityEditScreen
+import WBUnitScreen
+import WBPlayerScreen
+import WBGameDataScreen
+import WBPlotScreen
+import CvPlatyBuilderScreen
+## Ultrapack ##
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -175,15 +183,18 @@ class CvEventManager(object):
 		################## Events List ###############################
 		self.Events={
 			CvUtil.EventEditCityName : ('EditCityName', self.__eventEditCityNameApply, self.__eventEditCityNameBegin),
-			CvUtil.EventEditCity : ('EditCity', self.__eventEditCityApply, self.__eventEditCityBegin),
 			CvUtil.EventPlaceObject : ('PlaceObject', self.__eventPlaceObjectApply, self.__eventPlaceObjectBegin),
 			CvUtil.EventAwardTechsAndGold: ('AwardTechsAndGold', self.__eventAwardTechsAndGoldApply, self.__eventAwardTechsAndGoldBegin),
 			CvUtil.EventEditUnitName : ('EditUnitName', self.__eventEditUnitNameApply, self.__eventEditUnitNameBegin),
-			CvUtil.EventWBAllPlotsPopup : ('WBAllPlotsPopup', self.__eventWBAllPlotsPopupApply, self.__eventWBAllPlotsPopupBegin),
-			CvUtil.EventWBLandmarkPopup : ('WBLandmarkPopup', self.__eventWBLandmarkPopupApply, self.__eventWBLandmarkPopupBegin),
-			CvUtil.EventWBScriptPopup : ('WBScriptPopup', self.__eventWBScriptPopupApply, self.__eventWBScriptPopupBegin),
-			CvUtil.EventWBStartYearPopup : ('WBStartYearPopup', self.__eventWBStartYearPopupApply, self.__eventWBStartYearPopupBegin),
+## Platy Builder ##
+			CvUtil.EventWBLandmarkPopup : ('WBLandmarkPopup', self.__eventWBLandmarkPopupApply, self.__eventWBScriptPopupBegin),
 			CvUtil.EventShowWonder: ('ShowWonder', self.__eventShowWonderApply, self.__eventShowWonderBegin),
+			1111 : ('WBPlayerScript', self.__eventWBPlayerScriptPopupApply, self.__eventWBScriptPopupBegin),
+			2222 : ('WBCityScript', self.__eventWBCityScriptPopupApply, self.__eventWBScriptPopupBegin),
+			3333 : ('WBUnitScript', self.__eventWBUnitScriptPopupApply, self.__eventWBScriptPopupBegin),
+			4444 : ('WBGameScript', self.__eventWBGameScriptPopupApply, self.__eventWBScriptPopupBegin),
+			5555 : ('WBPlotScript', self.__eventWBPlotScriptPopupApply, self.__eventWBScriptPopupBegin),
+## Platy Builder ##
 		}	
 #################### EVENT STARTERS ######################
 	def handleEvent(self, argsList):
@@ -398,6 +409,9 @@ class CvEventManager(object):
 		iGameTurn = argsList[0]
 
 	def onFirstContact(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Contact'
 		iTeamX,iHasMetTeamY = argsList
 		if (not self.__LOG_CONTACT):
@@ -462,6 +476,9 @@ class CvEventManager(object):
 				CyInterface().addCombatMessage(cdDefender.eOwner,combatMessage)
 
 	def onImprovementBuilt(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Improvement Built'
 		iImprovement, iX, iY = argsList
 		if (not self.__LOG_IMPROVEMENT):
@@ -470,6 +487,9 @@ class CvEventManager(object):
 			%(PyInfo.ImprovementInfo(iImprovement).getDescription(), iX, iY))
 
 	def onImprovementDestroyed(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Improvement Destroyed'
 		iImprovement, iOwner, iX, iY = argsList
 		if (not self.__LOG_IMPROVEMENT):
@@ -478,6 +498,9 @@ class CvEventManager(object):
 			%(PyInfo.ImprovementInfo(iImprovement).getDescription(), iX, iY))
 
 	def onRouteBuilt(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Route Built'
 		iRoute, iX, iY = argsList
 		if (not self.__LOG_IMPROVEMENT):
@@ -486,6 +509,9 @@ class CvEventManager(object):
 			%(gc.getRouteInfo(iRoute).getDescription(), iX, iY))
 
 	def onPlotRevealed(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Plot Revealed'
 		pPlot = argsList[0]
 		iTeam = argsList[1]
@@ -525,6 +551,16 @@ class CvEventManager(object):
 			popupInfo.setData3(0)
 			popupInfo.setText(u"showWonderMovie")
 			popupInfo.addPopup(pCity.getOwner())
+	## Platy Builder ##
+			if not CyGame().GetWorldBuilderMode():
+	## Platy Builder ##
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+				popupInfo.setData1(iBuildingType)
+				popupInfo.setData2(pCity.getID())
+				popupInfo.setData3(0)
+				popupInfo.setText(u"showWonderMovie")
+				popupInfo.addPopup(pCity.getOwner())
 
 		CvAdvisorUtils.buildingBuiltFeats(pCity, iBuildingType)
 
@@ -545,6 +581,16 @@ class CvEventManager(object):
 			popupInfo.setData3(2)
 			popupInfo.setText(u"showWonderMovie")
 			popupInfo.addPopup(pCity.getOwner())
+	## Platy Builder ##
+			if not CyGame().GetWorldBuilderMode():
+	## Platy Builder ##
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+				popupInfo.setData1(iProjectType)
+				popupInfo.setData2(pCity.getID())
+				popupInfo.setData3(2)
+				popupInfo.setText(u"showWonderMovie")
+				popupInfo.addPopup(pCity.getOwner())
 				
 	def onSelectionGroupPushMission(self, argsList):
 		'selection group mission'
@@ -579,6 +625,9 @@ class CvEventManager(object):
 			return
 		
 	def onUnitCreated(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Unit Completed'
 		unit = argsList[0]
 		player = PyPlayer(unit.getOwner())
@@ -609,6 +658,9 @@ class CvEventManager(object):
 			%(player.getID(), player.getCivilizationName(), PyInfo.UnitInfo(unit.getUnitType()).getDescription(), attacker.getID()))
 
 	def onUnitLost(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Unit Lost'
 		unit = argsList[0]
 		player = PyPlayer(unit.getOwner())
@@ -677,6 +729,9 @@ class CvEventManager(object):
 		CvUtil.pyPrint('%s received a goody' %(gc.getPlayer(iPlayer).getCivilizationDescription(0)),)
 	
 	def onGreatPersonBorn(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Unit Promoted'
 		pUnit, iPlayer, pCity = argsList
 		player = PyPlayer(iPlayer)
@@ -687,6 +742,9 @@ class CvEventManager(object):
 		CvUtil.pyPrint('A %s was born for %s in %s' %(pUnit.getName(), player.getCivilizationName(), pCity.getName()))
 	
 	def onTechAcquired(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Tech Acquired'
 		iTechType, iTeam, iPlayer, bAnnounce = argsList
 		# Note that iPlayer may be NULL (-1) and not a refer to a player object
@@ -714,6 +772,9 @@ class CvEventManager(object):
 		CvUtil.pyPrint('%s was selected by Player %d' %(PyInfo.TechnologyInfo(iTechType).getDescription(), iPlayer))
 	
 	def onReligionFounded(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Religion Founded'
 		iReligion, iFounder = argsList
 		player = PyPlayer(iFounder)
@@ -735,6 +796,9 @@ class CvEventManager(object):
 			%(iFounder, player.getCivilizationName(), gc.getReligionInfo(iReligion).getDescription()))
 
 	def onReligionSpread(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Religion Has Spread to a City'
 		iReligion, iOwner, pSpreadCity = argsList
 		player = PyPlayer(iOwner)
@@ -744,6 +808,9 @@ class CvEventManager(object):
 			%(gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pSpreadCity.getName()))
 
 	def onReligionRemove(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Religion Has been removed from a City'
 		iReligion, iOwner, pRemoveCity = argsList
 		player = PyPlayer(iOwner)
@@ -753,6 +820,9 @@ class CvEventManager(object):
 			%(gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pRemoveCity.getName()))
 				
 	def onCorporationFounded(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Corporation Founded'
 		iCorporation, iFounder = argsList
 		player = PyPlayer(iFounder)
@@ -763,6 +833,9 @@ class CvEventManager(object):
 			%(iFounder, player.getCivilizationName(), gc.getCorporationInfo(iCorporation).getDescription()))
 
 	def onCorporationSpread(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Corporation Has Spread to a City'
 		iCorporation, iOwner, pSpreadCity = argsList
 		player = PyPlayer(iOwner)
@@ -772,6 +845,9 @@ class CvEventManager(object):
 			%(gc.getCorporationInfo(iCorporation).getDescription(), iOwner, player.getCivilizationName(), pSpreadCity.getName()))
 
 	def onCorporationRemove(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Corporation Has been removed from a City'
 		iCorporation, iOwner, pRemoveCity = argsList
 		player = PyPlayer(iOwner)
@@ -781,6 +857,9 @@ class CvEventManager(object):
 			%(gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pRemoveCity.getName()))
 				
 	def onGoldenAge(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Golden Age'
 		iPlayer = argsList[0]
 		player = PyPlayer(iPlayer)
@@ -790,6 +869,9 @@ class CvEventManager(object):
 			%(iPlayer, player.getCivilizationName()))
 
 	def onEndGoldenAge(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'End Golden Age'
 		iPlayer = argsList[0]
 		player = PyPlayer(iPlayer)
@@ -799,6 +881,9 @@ class CvEventManager(object):
 			%(iPlayer, player.getCivilizationName()))
 
 	def onChangeWar(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'War Status Changes'
 		bIsWar = argsList[0]
 		iTeam = argsList[1]
@@ -823,6 +908,9 @@ class CvEventManager(object):
 		CvUtil.pyPrint("Player %d's alive status set to: %d" %(iPlayerID, int(bNewValue)))
 		
 	def onPlayerChangeStateReligion(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'Player changes his state religion'
 		iPlayer, iNewReligion, iOldReligion = argsList
 		
@@ -867,6 +955,9 @@ class CvEventManager(object):
 		CvUtil.pyPrint("City Razed Event: %s" %(city.getName(),))
 	
 	def onCityAcquired(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'City Acquired'
 		iPreviousOwner,iNewOwner,pCity,bConquest,bTrade = argsList
 		CvUtil.pyPrint('City Acquired Event: %s' %(pCity.getName()))
@@ -886,6 +977,9 @@ class CvEventManager(object):
 			%(city.getName(), player.getID(), player.getCivilizationName()))
 	
 	def onCultureExpansion(self, argsList):
+	## Platy Builder ##
+		if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython: return
+	## Platy Builder ##
 		'City Culture Expansion'
 		pCity = argsList[0]
 		iPlayer = argsList[1]
@@ -1040,68 +1134,92 @@ class CvEventManager(object):
 		'Wonder Movie Apply'
 		if (getChtLvl() > 0):
 			CvDebugTools.CvDebugTools().applyWonderMovie( (popupReturn) )
+
+## Platy Builder ##
 	
 	def __eventEditUnitNameBegin(self, argsList):
 		pUnit = argsList
 		popup = PyPopup.PyPopup(CvUtil.EventEditUnitName, EventContextTypes.EVENTCONTEXT_ALL)
-		popup.setUserData((pUnit.getID(),))
+		popup.setUserData((pUnit.getID(), CyGame().getActivePlayer()))
 		popup.setBodyString(localText.getText("TXT_KEY_RENAME_UNIT", ()))
 		popup.createEditBox(pUnit.getNameNoDesc())
+		popup.setEditBoxMaxCharCount(25)
 		popup.launch()
 
-	def __eventEditUnitNameApply(self, playerID, userData, popupReturn):	
-		'Edit Unit Name Event'
-		iUnitID = userData[0]
-		unit = gc.getPlayer(playerID).getUnit(iUnitID)
-		newName = popupReturn.getEditBoxString(0)
-		if (len(newName) > 25):
-			newName = newName[:25]			
+	def __eventEditUnitNameApply(self, playerID, userData, popupReturn):
+		unit = gc.getPlayer(userData[1]).getUnit(userData[0])
+		newName = popupReturn.getEditBoxString(0)		
 		unit.setName(newName)
+		if CyGame().GetWorldBuilderMode():
+			WBUnitScreen.WBUnitScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeStats()
+			WBUnitScreen.WBUnitScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeCurrentUnit()	
+				
+	def __eventEditCityNameBegin(self, city, bRename):
+		popup = PyPopup.PyPopup(CvUtil.EventEditCityName, EventContextTypes.EVENTCONTEXT_ALL)
+		popup.setUserData((city.getID(), bRename, CyGame().getActivePlayer()))
+		popup.setHeaderString(localText.getText("TXT_KEY_NAME_CITY", ()))
+		popup.setBodyString(localText.getText("TXT_KEY_SETTLE_NEW_CITY_NAME", ()))
+		popup.createEditBox(city.getName())
+		popup.setEditBoxMaxCharCount(15)
+		popup.launch()
+	
+	def __eventEditCityNameApply(self, playerID, userData, popupReturn):
+		city = gc.getPlayer(userData[2]).getCity(userData[0])
+		cityName = popupReturn.getEditBoxString(0)
+		city.setName(cityName, not userData[1])
+		if CyGame().GetWorldBuilderMode() and not CyGame().isInAdvancedStart():
+			WBCityEditScreen.WBCityEditScreen().placeStats()
 
-	def __eventWBAllPlotsPopupBegin(self, argsList):
-		CvScreensInterface.getWorldBuilderScreen().allPlotsCB()
-		return
-	def __eventWBAllPlotsPopupApply(self, playerID, userData, popupReturn):
-		if (popupReturn.getButtonClicked() >= 0):
-			CvScreensInterface.getWorldBuilderScreen().handleAllPlotsCB(popupReturn)
+	def __eventWBPlayerScriptPopupApply(self, playerID, userData, popupReturn):
+		sScript = popupReturn.getEditBoxString(0)
+		gc.getPlayer(userData[0]).setScriptData(CvUtil.convertToStr(sScript))
+		WBPlayerScreen.WBPlayerScreen().placeScript()
 		return
 
-	def __eventWBLandmarkPopupBegin(self, argsList):
-		CvScreensInterface.getWorldBuilderScreen().setLandmarkCB("")
-		#popup = PyPopup.PyPopup(CvUtil.EventWBLandmarkPopup, EventContextTypes.EVENTCONTEXT_ALL)
-		#popup.createEditBox(localText.getText("TXT_KEY_WB_LANDMARK_START", ()))
-		#popup.launch()
+	def __eventWBCityScriptPopupApply(self, playerID, userData, popupReturn):
+		sScript = popupReturn.getEditBoxString(0)
+		pCity = gc.getPlayer(userData[0]).getCity(userData[1])
+		pCity.setScriptData(CvUtil.convertToStr(sScript))
+		WBCityEditScreen.WBCityEditScreen().placeScript()
+		return
+
+	def __eventWBUnitScriptPopupApply(self, playerID, userData, popupReturn):
+		sScript = popupReturn.getEditBoxString(0)
+		pUnit = gc.getPlayer(userData[0]).getUnit(userData[1])
+		pUnit.setScriptData(CvUtil.convertToStr(sScript))
+		WBUnitScreen.WBUnitScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
+		return
+
+	def __eventWBScriptPopupBegin(self):
+		return
+
+	def __eventWBGameScriptPopupApply(self, playerID, userData, popupReturn):
+		sScript = popupReturn.getEditBoxString(0)
+		CyGame().setScriptData(CvUtil.convertToStr(sScript))
+		WBGameDataScreen.WBGameDataScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
+		return
+
+	def __eventWBPlotScriptPopupApply(self, playerID, userData, popupReturn):
+		sScript = popupReturn.getEditBoxString(0)
+		pPlot = CyMap().plot(userData[0], userData[1])
+		pPlot.setScriptData(CvUtil.convertToStr(sScript))
+		WBPlotScreen.WBPlotScreen().placeScript()
 		return
 
 	def __eventWBLandmarkPopupApply(self, playerID, userData, popupReturn):
-		if (popupReturn.getEditBoxString(0)):
-			szLandmark = popupReturn.getEditBoxString(0)
-			if (len(szLandmark)):
-				CvScreensInterface.getWorldBuilderScreen().setLandmarkCB(szLandmark)
-		return
-
-	def __eventWBScriptPopupBegin(self, argsList):
-		popup = PyPopup.PyPopup(CvUtil.EventWBScriptPopup, EventContextTypes.EVENTCONTEXT_ALL)
-		popup.setHeaderString(localText.getText("TXT_KEY_WB_SCRIPT", ()))
-		popup.createEditBox(CvScreensInterface.getWorldBuilderScreen().getCurrentScript())
-		popup.launch()
-		return
-
-	def __eventWBScriptPopupApply(self, playerID, userData, popupReturn):
-		if (popupReturn.getEditBoxString(0)):
-			szScriptName = popupReturn.getEditBoxString(0)
-			CvScreensInterface.getWorldBuilderScreen().setScriptCB(szScriptName)
-		return
-
-	def __eventWBStartYearPopupBegin(self, argsList):
-		popup = PyPopup.PyPopup(CvUtil.EventWBStartYearPopup, EventContextTypes.EVENTCONTEXT_ALL)
-		popup.createSpinBox(0, "", gc.getGame().getStartYear(), 1, 5000, -5000)
-		popup.launch()
-		return
-
-	def __eventWBStartYearPopupApply(self, playerID, userData, popupReturn):
-		iStartYear = popupReturn.getSpinnerWidgetValue(int(0))
-		CvScreensInterface.getWorldBuilderScreen().setStartYearCB(iStartYear)
+		sScript = popupReturn.getEditBoxString(0)
+		pPlot = CyMap().plot(userData[0], userData[1])
+		iPlayer = userData[2]
+		if userData[3] > -1:
+			pSign = CyEngine().getSignByIndex(userData[3])
+			iPlayer = pSign.getPlayerType()
+			CyEngine().removeSign(pPlot, iPlayer)
+		if len(sScript):
+			if iPlayer == gc.getBARBARIAN_PLAYER():
+				CyEngine().addLandmark(pPlot, CvUtil.convertToStr(sScript))
+			else:
+				CyEngine().addSign(pPlot, iPlayer, CvUtil.convertToStr(sScript))
+		WBPlotScreen.iCounter = 10
 		return
 
 	def onRevolution(self, argsList):
