@@ -30,7 +30,6 @@ def isResurrected(iCiv):
 	return (sd.scriptDict['lResurrections'][iCiv] > 0)
 
 def getLanguages(iCiv):
-
 	pCiv = gc.getPlayer(iCiv)
 
 	if iCiv == iEgypt:
@@ -90,20 +89,43 @@ def getLanguages(iCiv):
 	elif iCiv == iCeltia: return (iLangCeltic,)
 	elif iCiv == iSeljuks: return (iLangTurkish, iLangArabian)
 	else: return None
+	
+def getNativeLanguages(tPlot):
+	x, y = tPlot
+	plot = gc.getMap().plot(x, y)
+	
+	lCorePlayers = [i for i in range(iNumPlayers) if plot.isCore(i)]
+	if not lCorePlayers: lCorePlayers = [i for i in range(iNumPlayers)]
+	
+	iNativePlayer = utils.getHighestIndex(lCorePlayers, lambda x: plot.getSettlerMapValue(x))
+	
+	return getLanguages(iNativePlayer)
 
 def getFoundName(iCiv, tPlot):
 	x, y = tPlot
 	tLanguages = getLanguages(iCiv)
-	if tLanguages == -1: return "-1"
+	if not tLanguages: return None
 	
-	for i in range(len(tLanguages)):
-		iLanguage = tLanguages[i]
+	for iLanguage in tLanguages:
 		if iLanguage in dFoundMaps:
 			sName = dFoundMaps[iLanguage][67-y][x]
 			if sName != "-1":
 				return sName
 				
-	return "-1"
+	return None
+	
+def getNativeName(iCiv, tPlot):
+	x, y = tPlot
+	tLanguages = getNativeLanguages(tPlot)
+	if not tLanguages: return None
+	
+	for iLanguage in tLanguages:
+		if iLanguage in dFoundMaps:
+			sName = dFoundMaps[iLanguage][67-y][x]
+			if sName != "-1":
+				return getRenameName(iCiv, tPlot)
+				
+	return None
 	
 def getIdentifier(sName):
 	if sName not in dIdentifiers: return None
@@ -121,7 +143,7 @@ def getRenameName(iCiv, sName):
 			return tRenames[iLanguage][sIdentifier]
 		if sName in tRenames[iLanguage].values():	# if a higher preference language already has a name for this city, do not rename it with the following languages
 			return None
-			
+	
 	return None
 	
 def updateCityNames(iCiv):
@@ -137,14 +159,19 @@ def updateCityNamesFound(iCiv):
 			city.setName(sNewName, False)
 	
 def onCityBuilt(city):
-
 	iOwner = city.getOwner()
 	x = city.getX()
 	y = city.getY()
 	
 	sNewName = getFoundName(iOwner, (x,y))
 	
-	if sNewName != "-1":
+	if sNewName: 
+		city.setName(sNewName, False)
+		return
+		
+	sNewName = getNativeName(iOwner, (x,y))
+	
+	if sNewName:
 		city.setName(sNewName, False)
 		
 def onCityAcquired(city, iNewOwner):
@@ -243,7 +270,8 @@ tEraNames = (
 # modern
 {
 	'Angora'		:	'Ankara',
-	'Hanseong'		:	'Seoul'
+	'Hanseong'		:	'Seoul',
+	'Jehol'			:	'Chengde',
 },
 # future
 {},
@@ -3143,7 +3171,7 @@ dIdentifiers = {
 	'Rostock'		:	'Rostock',
 	'Marseille'		:	'Marseille',
 	'Huelva'		:	'Onuba',
-	'Seito'			:	'Changdu',
+	'Seito'			:	'Chengdu',
 	'Santa Helena'		:	'Saint Helena',
 	'Hispalis'		:	'Sevilla',
 	'Tambuqcucha'		:	'Tambuqcucha',
@@ -3418,7 +3446,7 @@ dIdentifiers = {
 	'Wilno'			:	'Vilnius',
 	'Athinai'		:	'Athinai',
 	'Adrianopolis'		:	'Adrianoupolis',
-	'Wuzhow'		:	'Wuzhow',
+	'Wuzhou'		:	'Wuzhou',
 	'Brest'			:	'Brest',
 	'Kagoshima'		:	'Kagoshima',
 	'Al-Qadir'		:	'C&#223;diz',
@@ -3594,7 +3622,7 @@ dIdentifiers = {
 	'Cesarea Mazaca'	:	'Kaisareia',
 	'Ragha'			:	'Ragha',
 	'Split'			:	'Split',
-	'Changdu'		:	'Changdu',
+	'Chengdu'		:	'Chengdu',
 	'Iconium'		:	'Ikonion',
 	'Naissos'		:	'Naissos',
 	'Reims'			:	'Reims',
@@ -3757,7 +3785,7 @@ dIdentifiers = {
 	'Ctesiphon'		:	'Baghdad',
 	'Barcelone'		:	'Barcelona',
 	'Barcelona'		:	'Barcelona',
-	'Tsuuryou'		:	'Tungliao',
+	'Tsuuryou'		:	'Tongliao',
 	'Bayeux'		:	'Bayeux',
 	'Al-Aqabah'		:	'Akabe',
 	'Matsuyama'		:	'Matsuyama',
@@ -4441,7 +4469,7 @@ dIdentifiers = {
 	'Lutetia Parisiorum'	:	'Paris',
 	'Fort D&#233;troit'	:	'Detroit',
 	'Furukamappu'		:	"Juzhno-Kuri'lsk",
-	'Goshuu'		:	'Wuzhow',
+	'Goshuu'		:	'Wuzhou',
 	'Friedrichstadt'	:	'Frederikstad',
 	'Regio Tripolitana'	:	'Tripolis',
 	'Fort Hollandia'	:	'Pokesu',
@@ -4584,7 +4612,7 @@ dIdentifiers = {
 	'Shahat'		:	'Kyrene',
 	'Fort Beaus&#233;jour'	:	'Fort Beaus&#233;jour',
 	'Virunum'		:	'Klagenfurt',
-	'Tungliao'		:	'Tungliao',
+	'Tongliao'		:	'Tongliao',
 	'Mauritsstad'		:	'Recife',
 	'Sur'			:	'Sur',
 	'Messana'		:	'Messana',
@@ -4782,6 +4810,7 @@ dIdentifiers = {
 	'Pomp&#233;i'		:	'Pompeii',
 	'Pompeya'		:	'Pompeii',
 	'Pompeii'		:	'Pompeii',
+	'Neapolis'		:	'Neapolis',
 	'Napoli'		:	'Neapolis',
 	'Nabuli'		:	'Neapolis',
 	'Neapel'		:	'Neapolis',
@@ -4877,6 +4906,100 @@ dIdentifiers = {
 	'Ayutthaya'		:	'Ayutthaya',
 	'Mo&#231;ambique'	:	'Mo&#231;ambique',
 	'Lauren&#231;o Marques'	:	'Lauren&#231;o Marques',
+	'Haishenwai'		:	'Vladivostok',
+	'Qiqihar'		:	'Qiqihaer',
+	'Qingjin'		:	'Chongjin',
+	'Yuanshan'		:	'Wonsan',
+	'Chunchuan'		:	'Chuncheon',
+	'Fushan'		:	'Pusan',
+	'Hailar'		:	'Hailaer',
+	'Rzym'			:	'Roma',
+	'Wenecja'		:	'Venezia',
+	'Orl&#233;ans'		:	'Orl&#233;ans',
+	'Orlean'		:	'Orl&#233;ans',
+	'Piza'			:	'Pisa',
+	'Mediolan'		:	'Milano',
+	'Florencja'		:	'Firenze',
+	'Florencja'		:	'Fiorenza',
+	'Katania'		:	'Catania',
+	'Catania'		:	'Catania',
+	'Madryt'		:	'Madrid',
+	'Kordoba'		:	'Qurtubah',
+	'Kartagena'		:	'Cartagena',
+	'Paryz'			:	'Paris',
+	'Marsylia'		:	'Marseille',
+	'Strasburg'		:	'Strasbourg',
+	'Tuluza'		:	'Toulouse',
+	'Kopenhaga'		:	'K&#248;benhavn',
+	'Sztokholm'		:	'Stockholm',
+	'Stockholm'		:	'Stockholm',
+	'Londyn'		:	'London',
+	'Rostov-na-Donu'	:	'Rostov-na-Donu',
+	'Rost&#243;w nad Donem'	:	'Rostov-na-Donu',
+	'Rostov'		:	'Rostov',
+	'Rost&#243;w'		:	'Rostov',
+	'Volgograd'		:	'Volgograd',
+	'Wolgograd'		:	'Volgograd',
+	'Irkuck'		:	'Irkutsk',
+	'Nizny Nowogr&#243;d'	:	'Nizhnij Novgorod',
+	'Norilsk'		:	'Norilsk',
+	'Norylsk'		:	'Norilsk',
+	'Piotrogr&#243;d'	:	'Sankt-Peterburg',
+	'Astrachan'		:	'Astrakhan',
+	'Ateny'			:	'Athinai',
+	'Saloniki'		:	'Thessalonike',
+	'Sarajewo'		:	'Sarajevo',
+	'Kluz-Napoka'		:	'Cluj-Napoca',
+	'Dubrownik'		:	'Dubrovnik',
+	'Lubeka'		:	'L&#252;beck',
+	'L&#252;beck'		:	'L&#252;beck',
+	'Monachium'		:	'M&#252;nchen',
+	'Moguncja'		:	'Mainz',
+	'Hanower'		:	'Hannover',
+	'Akwizgran'		:	'Aachen',
+	'Drezno'		:	'Dresden',
+	'Fryburg'		:	'Freiburg',
+	'Freiburg'		:	'Freiburg',
+	'Genewa'		:	'Gen&#232;ve',
+	'Kilonia'		:	'Kiel',
+	'Kiel'			:	'Kiel',
+	'Lipsk'			:	'Leipzig',
+	'Leipzig'		:	'Leipzig',
+	'Norymberga'		:	'N&#252;rnberg',
+	'N&#252;rnberg'		:	'N&#252;rnberg',
+	'Poczdam'		:	'Potsdam',
+	'Potsdam'		:	'Potsdam',
+	'Ratyzbona'		:	'Regensburg',
+	'Trewir'		:	'Trier',
+	'Zurych'		:	'Zurich',
+	'Aleksandria'		:	'Alexandreia',
+	'Tyr'			:	'Sur',
+	'Trypolis'		:	'Tripolis',
+	'Damaszek'		:	'Dimashq',
+	'Antiochia'		:	'Antiocheia',
+	'Konstantynopol'	:	'Constantinopolis',
+	'Dubaj'			:	'Dubai',
+	'Dubai'			:	'Dubai',
+	'Mekka'			:	'Makkah',
+	'Jerozolima'		:	'Yerushalayim',
+	'Teheran'		:	'Tehran',
+	'Suza'			:	'Shush',
+	'Kair'			:	'Al-Qahirah',
+	'Pjongjang'		:	'Pyongyang',
+	'Szanghaj'		:	'Shanghai',
+	'Bombaj'		:	'Bombay',
+	'Mumbaj'		:	'Mumbai',
+	'Filadelfia'		:	'Philadelphia',
+	'Waszyngton'		:	'Washington',
+	'Nowy Jork'		:	'New York',
+	'Nowy Orlean'		:	'Nouvelle Orl&#233;ans',
+	'Meksyk'		:	'Tenochtitlan',
+	'Hawana'		:	'La Habana',
+	'Baghdadu'		:	'Baghdad',
+	'Siduna'		:	'Sydwn',
+	'Surru'			:	'Sur',
+	"Sana'a"		:	"Sana'a",
+	'Auzalites'		:	"Sana'a",
 }
 
 	
@@ -4933,6 +5056,7 @@ tRenames = (
 	'Kauthara'		:	'Kauthara',
 	'Vijayanagara'		:	'Vijayanagara',
 	'Bengaluru'		:	'Bengaluru',
+	'Kolachi'		:	'Kolachi',
 },
 #Language: Chinese
 {
@@ -4947,14 +5071,14 @@ tRenames = (
 	'Zhongdu'		:	'Zhongdu',
 	'Beijing'		:	'Beijing',
 	'Mudanjiang'		:	'Mudanjiang',
-	'Vladivostok'		:	'Fuladiwosituoke',
+	'Vladivostok'		:	'Haishenwai',
 	'Kaifeng'		:	'Kaifeng',
 	'Shanghai'		:	'Shanghai',
 	'Taibei'		:	'Taibei',
 	'Nagoya'		:	'Mingguwu',
 	'Qufu'			:	'Qufu',
 	'Vancouver'		:	'Wen Gehua',
-	'Changdu'		:	'Changdu',
+	'Chengdu'		:	'Chengdu',
 	'Qingdao'		:	'Qingdao',
 	'San Francisco'		:	'Jiu Jinshan',
 	'Tongjiang'		:	'Tongjiang',
@@ -4970,7 +5094,7 @@ tRenames = (
 	'Hegang'		:	'Hegang',
 	'Vijaya'		:	'Qui Nhon',
 	'Changchun'		:	'Changchun',
-	'Hailaer'		:	'Hailaer',
+	'Hailaer'		:	'Hailar',
 	'Wuhan'			:	'Wuhan',
 	'Kunming'		:	'Kunming',
 	'Luoyang'		:	'Luoyang',
@@ -4988,9 +5112,9 @@ tRenames = (
 	'Aomori'		:	'Qingsen',
 	'Weihai'		:	'Weihai',
 	'Jillin'		:	'Jillin',
-	'Chuncheon'		:	'Chuncheon',
+	'Chuncheon'		:	'Chunchuan',
 	'Nagano'		:	'Changye',
-	'Tungliao'		:	'Tungliao',
+	'Tongliao'		:	'Tongliao',
 	'Wonsan'		:	'Wonsan',
 	'Guiyang'		:	'Guiyang',
 	'Sendai'		:	'Xiantai',
@@ -5007,17 +5131,17 @@ tRenames = (
 	'Kagoshima'		:	"Lu'erdao",
 	'Kushiro'		:	'Chuanlu',
 	'Seogyeong'		:	'Baishan',
-	'Qiqihaer'		:	'Qiqihaer',
+	'Qiqihaer'		:	'Qiqihar',
 	'Hangzhou'		:	'Hangzhou',
 	'Nanjing'		:	'Nanjing',
 	'Jilin'			:	'Jilin',
 	'Akita'			:	'Qiutian',
 	'Zhangjiakou'		:	'Zhangjiakou',
 	'Yokohama'		:	'Hengbin',
-	'Wuzhow'		:	'Wuzhow',
+	'Wuzhou'		:	'Wuzhou',
 	'Pyongyang'		:	'Pyongyang',
 	'Pingfang'		:	'Pingfang',
-	'Pusan'			:	'Pusan',
+	'Pusan'			:	'Fushan',
 	'Seattle'		:	'Xi Yatu',
 	'Sapporo'		:	'Zahuang',
 	'Dilli'			:	'Deli',
@@ -5029,7 +5153,9 @@ tRenames = (
 	'Singapura'		:	'Xinjiapo',
 	'Edo'			:	'Jianghu',
 	'Toukyou'		:	'Jianghu',
-	'Kolachi'		:	'Kolachi',
+	'Chongjin'		:	'Qingjin',
+	'Wonsan'		:	'Yuanshan',
+	'Chengde'		:	'Chengde',
 },
 #Language: Tibetan
 {
@@ -5039,6 +5165,9 @@ tRenames = (
 },
 #Language: Babylonian
 {
+	'Sur'			:	'Surru',
+	'Sydwn'			:	'Siduna',
+	'Baghdad'		:	'Baghdadu',
 	'Yerushalayim'		:	'Urushalim',
 	'Elath'			:	'Elath',
 	'Baghdad'		:	'Baghdad',
@@ -5316,7 +5445,7 @@ tRenames = (
 	'Quelimane'		:	'Kerimane',
 	'San Francisco'		:	'Sanfuranshisuko',
 	'Chongjin'		:	'Seishin',
-	'Changdu'		:	'Seito',
+	'Chengdu'		:	'Seito',
 	'Nara'			:	'Nara',
 	'Jehol'			:	'Nekka',
 	'Lanzhou'		:	'Ranshuu',
@@ -5407,6 +5536,7 @@ tRenames = (
 	'Muqdisho'		:	'Muqdisho',
 	'Illizi'		:	'Illizi',
 	'Harare'		:	'Harare',
+	"Sana'a"		:	'Auzalites',
 },
 #Language: Korean
 {
@@ -5492,6 +5622,7 @@ tRenames = (
 },
 #Language: Viking
 {
+	'Stockholm'		:	'Stockholm',
 	'Roskilde'		:	'Roskilde',
 	'K&#248;benhavn'	:	'K&#248;benhavn',
 	'La Habana'		:	'Havanna',
@@ -5522,6 +5653,8 @@ tRenames = (
 },
 #Language: Arabian
 {
+	"Sana'a"		:	"Sana'a",
+	'Dubai'			:	'Dubai',
 	'Hyderabad'		:	'Hyderabad',
 	'Shiraz'		:	'Shiraz',
 	'Parsa'			:	'Shiraz',
@@ -6047,6 +6180,11 @@ tRenames = (
 },
 #Language: German
 {
+	'Potsdam'		:	'Potsdam',
+	'N&#252;rnberg'		:	'N&#252;rnberg',
+	'Leipzig'		:	'Leipzig',
+	'Kiel'			:	'Kiel',
+	'L&#252;beck'		:	'L&#252;beck',
 	'Ineb Hedj'		:	'Kairo',
 	'Al-Qahirah'		:	'Kairo',
 	'Yerushalayim'		:	'Jerusalem',
@@ -6159,6 +6297,12 @@ tRenames = (
 },
 #Language: Russian
 {
+	'Freiburg'		:	'Freiburg',
+	'Sankt-Peterburg'	:	'Sankt-Peterburg',
+	'Norilsk'		:	'Norilsk',
+	'Volgograd'		:	'Volgograd',
+	'Rostov'		:	'Rostov',
+	'Rostov-na-Donu'	:	'Rostov-na-Donu',
 	'Philippopolis'		:	'Plovdiv',
 	'Katharinenstadt'	:	'Marx',
 	'Dubrovnik'		:	'Dubrovnik',
@@ -6341,6 +6485,78 @@ tRenames = (
 },
 #Language: Polish
 {
+	'Roma'			:	'Rzym',
+	'Venezia'		:	'Wenecja',
+	'Pisa'			:	'Piza',
+	'Milano'		:	'Mediolan',
+	'Firenze'		:	'Florencja',
+	'Fiorenza'		:	'Florencja',
+	'Catania'		:	'Katania',
+	'Genova'		:	'Genua',
+	'Madrid'		:	'Madryt',
+	'Qurtubah'		:	'Kordoba',
+	'Cartagena'		:	'Kartagena',
+	'Paris'			:	'Paryz',
+	'Orl&#233;ans'		:	'Orlean',
+	'Marseille'		:	'Marsylia',
+	'Strasbourg'		:	'Strasburg',
+	'Toulouse'		:	'Tuluza',
+	'K&#248;benhavn'	:	'Kopenhaga',
+	'Stockholm'		:	'Sztokholm',
+	'London'		:	'Londyn',
+	'Rostov-na-Donu'	:	'Rost&#243;w nad Donem',
+	'Rostov'		:	'Rost&#243;w',
+	'Volgograd'		:	'Wolgograd',
+	'Irkutsk'		:	'Irkuck',
+	'Nizhnij Novgorod'	:	'Nizny Nowogr&#243;d',
+	'Norilsk'		:	'Norylsk',
+	'Sankt-Peterburg'	:	'Piotrogr&#243;d',
+	'Astrakhan'		:	'Astrachan',
+	'Tallinn'		:	'Tallinn',
+	'Athinai'		:	'Ateny',
+	'Thessalonike'		:	'Saloniki',
+	'Sarajevo'		:	'Sarajewo',
+	'Cluj-Napoca'		:	'Kluz-Napoka',
+	'Dubrovnik'		:	'Dubrownik',
+	'L&#252;beck'		:	'Lubeka',
+	'M&#252;nchen'		:	'Monachium',
+	'Mainz'			:	'Moguncja',
+	'Hannover'		:	'Hanower',
+	'Aachen'		:	'Akwizgran',
+	'Dresden'		:	'Drezno',
+	'Freiburg'		:	'Fryburg',
+	'Gen&#232;ve'		:	'Genewa',
+	'Kiel'			:	'Kilonia',
+	'Leipzig'		:	'Lipsk',
+	'N&#252;rnberg'		:	'Norymberga',
+	'Potsdam'		:	'Poczdam',
+	'Regensburg'		:	'Ratyzbona',
+	'Trier'			:	'Trewir',
+	'Zurich'		:	'Zurych',
+	'Alexandreia'		:	'Aleksandria',
+	'Sur'			:	'Tyr',
+	'Tripolis'		:	'Trypolis',
+	'Dimashq'		:	'Damaszek',
+	'Antiocheia'		:	'Antiochia',
+	'Constantinopolis'	:	'Konstantynopol',
+	'Dubai'			:	'Dubaj',
+	'Makkah'		:	'Mekka',
+	'Yerushalayim'		:	'Jerozolima',
+	'Tehran'		:	'Teheran',
+	'Shush'			:	'Suza',
+	'Al-Qahirah'		:	'Kair',
+	'Beijing'		:	'Pekin',
+	'Pyongyang'		:	'Pjongjang',
+	'Shanghai'		:	'Szanghaj',
+	'Toukyou'		:	'Tokio',
+	'Bombay'		:	'Bombaj',
+	'Mumbai'		:	'Mumbaj',
+	'Philadelphia'		:	'Filadelfia',
+	'Washington'		:	'Waszyngton',
+	'New York'		:	'Nowy Jork',
+	'Nouvelle Orl&#233;ans'	:	'Nowy Orlean',
+	'Tenochtitlan'		:	'Meksyk',
+	'La Habana'		:	'Hawana',
 	'Kowno'			:	'Kowno',
 	'Lw&#243;w'		:	'Lw&#243;w',
 	'Memel'			:	'Klajpeda',
@@ -6410,6 +6626,7 @@ tRenames = (
 },
 #Language: Italian
 {
+	'Catania'		:	'Catania',
 	'Yerushalayim'		:	'Gerusalemme',
 	'Lyon'			:	'Lione',
 	'Sparte'		:	'Sparta',
