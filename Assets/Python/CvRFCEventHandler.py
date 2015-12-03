@@ -786,7 +786,7 @@ class CvRFCEventHandler:
 	
 		if utils.getHumanID() != iPlayer:
 			if iPlayer == con.iJapan and iEra == con.iIndustrial:
-				utils.moveCapital(iPlayer, (116, 46)) # Toukyou
+				utils.moveCapital(iPlayer, (116, 47)) # Toukyou
 			elif iPlayer == con.iItaly and iEra == con.iIndustrial:
 				utils.moveCapital(iPlayer, (60, 44)) # Roma
 			elif iPlayer == con.iVikings and iEra == con.iRenaissance:
