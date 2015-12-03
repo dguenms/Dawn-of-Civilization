@@ -68,14 +68,17 @@ tMinorCities = (
 (880, (65, 48), iIndependent2, 'Buda', 3, con.iHorseArcher, 5),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, con.iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, con.iArcher, 2),		# Chan Chan
+(900, (109, 33), iIndependent, 'Tondo', 2, con.iArcher, 2),		# Tondo/Manila
 (900, (69, 52), iIndependent, 'Kyiv', 2, con.iLongbowman, 2),		# Kiev
 (990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, con.iVikingBerserker, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, con.iZuluImpi, 1),		# Quelimane
 (1100, (71, 20), iNative, 'Mombasa', 1, con.iZuluImpi, 1),		# Mombasa
 (1200, (77, 55), iBarbarian, 'Qazan', 2, con.iHorseArcher, 1),		# Kazan
+(1275, (57, 53), iIndependent, 'Amsterdam', 2, con.iLongbowman, 2),		# Amsterdam
 (1400, (104, 33), iIndependent, 'Saigon', 5, con.iLongbowman, 3),	# Saigon
 (1483, (62, 20), iNative, 'Mbanza Kongo', 1, con.iCongoPombos, 1),	# Mbanza Kongo
+(1610, (75, 17), iNative, 'Antananarivo', 3, con.iLongbowman, 2),	# Antananarivo
 )
 
 # do some research on dates here

@@ -18837,6 +18837,23 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45
+	EndUnit
+	BeginCity
+		CityOwner=45
+		CityName=Olissipo
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_CHRISTIAN_TEMPLE
+		ReligionType=RELIGION_CHRISTIANITY
+		Player44Culture=20
+	EndCity
 EndPlot
 BeginPlot
 	x=49,y=44
@@ -21143,8 +21160,26 @@ BeginPlot
 	x=55,y=50
 	RiverNSDirection=0
 	isWOfRiver
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
+	EndUnit
+	BeginCity
+		CityOwner=44
+		CityName=Lutetia
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_CHRISTIAN_TEMPLE
+		ReligionType=RELIGION_CHRISTIANITY
+		Player44Culture=20
+	EndCity
 EndPlot
 BeginPlot
 	x=55,y=51
@@ -22607,6 +22642,23 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	RouteType=ROUTE_ROMAN_ROAD
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
+	EndUnit
+	BeginCity
+		CityOwner=44
+		CityName=Florentia
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_CHRISTIAN_TEMPLE
+		ReligionType=RELIGION_CHRISTIANITY
+		Player44Culture=50
+	EndCity
 EndPlot
 BeginPlot
 	x=59,y=47

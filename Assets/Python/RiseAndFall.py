@@ -1821,7 +1821,7 @@ class RiseAndFall:
 		
 		for i in [x-1, x, x+1]:
 			for j in [y-1, y, y+1]:
-				if iCiv == iItaly and gc.getMap().plot(i,j).isCity():
+				if (iCiv == iItaly or (iCiv not in [iItaly, iThailand] and i == x and j == y)) and gc.getMap().plot(i,j).isCity():
 					bCapitalSettled = True
 					tCapital = (i,j)
 					break
@@ -2614,7 +2614,8 @@ class RiseAndFall:
                                         if (iNewWorldCiv == iInca):
                                                 gc.getMap().plot(27, 30).setFeatureType(-1, 0)
                                                 gc.getMap().plot(28, 31).setFeatureType(-1, 0)
-                                                gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
+                                                gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True)
+						gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota												
 						gc.getMap().plot(32, 19).setPlotType(PlotTypes.PLOT_HILLS, True, True)
                                         if (iNewWorldCiv == iAztecs):
                                                 gc.getMap().plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
