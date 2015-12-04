@@ -162,6 +162,14 @@ class CvRFCEventHandler:
 		#	sContinentDebug += "\n"
 		##print sContinentDebug
 		
+		
+
+		for i in range(con.iNumUnits):
+			print gc.getUnitInfo(i).getText()
+			
+		for i in range(con.iNumBuildings):
+			print gc.getBuildingInfo(i).getText()
+		
 		# Leoreth: set DLL core values
 		for x in range(124):
 			for y in range(68):
