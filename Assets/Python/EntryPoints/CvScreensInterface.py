@@ -34,8 +34,8 @@ import CvSpaceShipScreen
 import SevoScreenEnums
 # BUG - Sevopedia - end
 
-import CvWorldBuilderScreen
-import CvWorldBuilderDiplomacyScreen
+# import CvWorldBuilderScreen
+# import CvWorldBuilderDiplomacyScreen
 
 import CvDebugTools
 import CvDebugInfoScreen
@@ -74,6 +74,26 @@ def getStabilityLevel(argsList):
 def countAchievedGoals(argsList):
         return utils.countAchievedGoals(argsList[0])
 	
+## World Builder ## Platypedia
+import CvPlatyBuilderScreen
+import WBPlotScreen
+import WBEventScreen
+import WBBuildingScreen
+import WBCityDataScreen
+import WBCityEditScreen
+import WBTechScreen
+import WBProjectScreen
+import WBTeamScreen
+import WBPlayerScreen
+import WBUnitScreen
+import WBPromotionScreen
+import WBDiplomacyScreen
+import WBGameDataScreen
+import WBPlayerUnits
+import WBReligionScreen
+import WBCorporationScreen
+import WBInfoScreen
+import WBTradeScreen
 
 def toggleSetNoScreens():
 	global g_bIsScreenActive
@@ -99,7 +119,7 @@ def numPlotListButtons():
 
 techChooser = CvTechChooser.CvTechChooser()
 def showTechChooser():
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		techChooser.interfaceScreen()
 
 hallOfFameScreen = CvHallOfFameScreen.CvHallOfFameScreen(HALL_OF_FAME)
@@ -108,27 +128,26 @@ def showHallOfFame(argsList):
 
 civicScreen = CvCivicsScreen.CvCivicsScreen()
 def showCivicsScreen():
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		civicScreen.interfaceScreen()
 
 religionScreen = CvReligionScreen.CvReligionScreen()
 def showReligionScreen():
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		religionScreen.interfaceScreen()
 
 corporationScreen = CvCorporationScreen.CvCorporationScreen()
 def showCorporationScreen():
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		corporationScreen.interfaceScreen()
 
 optionsScreen = CvOptionsScreen.CvOptionsScreen()
 def showOptionsScreen():
 	optionsScreen.interfaceScreen()
 
-#foreignAdvisor = CvForeignAdvisor.CvForeignAdvisor()
 foreignAdvisor = CvExoticForeignAdvisor.CvExoticForeignAdvisor()
 def showForeignAdvisorScreen(argsList):
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		foreignAdvisor.interfaceScreen(argsList[0])
 
 # BUG - Finance Advisor - start
@@ -147,7 +166,7 @@ def createFinanceAdvisor():
 # BUG - Finance Advisor - end
 			
 def showFinanceAdvisor():
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		financeAdvisor.interfaceScreen()
 
 # BUG - CustDomAdv - start
@@ -166,7 +185,7 @@ def createDomesticAdvisor():
 # BUG - CustDomAdv - end
 
 def showDomesticAdvisor(argsList):
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		domesticAdvisor.interfaceScreen()
 
 # BUG - Military Advisor - start
@@ -184,7 +203,7 @@ def createMilitaryAdvisor():
 		HandleInputMap[MILITARY_ADVISOR] = militaryAdvisor
 
 def showMilitaryAdvisor():
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		if (AdvisorOpt.isBUG_MA()):
 			# TODO: move to CvBUGMilitaryAdvisor.interfaceScreen()
 			militaryAdvisor.IconGridActive = False
@@ -193,7 +212,7 @@ def showMilitaryAdvisor():
 
 espionageAdvisor = CvEspionageAdvisor.CvEspionageAdvisor()
 def showEspionageAdvisor():
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		espionageAdvisor.interfaceScreen()
 
 dawnOfMan = CvDawnOfMan.CvDawnOfMan(DAWN_OF_MAN)
@@ -241,7 +260,7 @@ def showTopCivs():
 
 infoScreen = CvInfoScreen.CvInfoScreen(INFO_SCREEN)
 def showInfoScreen(argsList):
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		iTabID = argsList[0]
 		iEndGame = argsList[1]
 		infoScreen.showScreen(-1, iTabID, iEndGame)
@@ -281,7 +300,7 @@ def showTechSplash(argsList):
 
 victoryScreen = CvVictoryScreen.CvVictoryScreen(VICTORY_SCREEN)
 def showVictoryScreen():
-	if (-1 != CyGame().getActivePlayer()):
+	if CyGame().getActivePlayer() > -1:
 		victoryScreen.interfaceScreen()
 
 # BUG - Sevopedia - start
@@ -533,7 +552,7 @@ def pediaShowHistorical(argsList):
 #################################################
 ## Worldbuilder
 #################################################
-worldBuilderScreen = CvWorldBuilderScreen.CvWorldBuilderScreen()
+worldBuilderScreen = CvPlatyBuilderScreen.CvWorldBuilderScreen()
 def getWorldBuilderScreen():
 	return worldBuilderScreen
 
@@ -545,9 +564,6 @@ def hideWorldBuilderScreen():
 
 def WorldBuilderToggleUnitEditCB():
 	worldBuilderScreen.toggleUnitEditCB()
-
-def WorldBuilderAllPlotsCB():
-	CvEventInterface.beginEvent(CvUtil.EventWBAllPlotsPopup)
 
 def WorldBuilderEraseCB():
 	worldBuilderScreen.eraseCB()
@@ -571,109 +587,13 @@ def WorldBuilderRevealTabModeCB():
 	worldBuilderScreen.revealTabModeCB()
 
 def WorldBuilderDiplomacyModeCB():
-	worldBuilderScreen.diplomacyModeCB()
+	WBDiplomacyScreen.WBDiplomacyScreen().interfaceScreen(CyGame().getActivePlayer(), False)
 
 def WorldBuilderRevealAllCB():
 	worldBuilderScreen.revealAll(True)
 
 def WorldBuilderUnRevealAllCB():
 	worldBuilderScreen.revealAll(False)
-
-def WorldBuilderHandleUnitCB( argsList ):
-	worldBuilderScreen.handleUnitCB(argsList)
-
-def WorldBuilderHandleTerrainCB( argsList ):
-	worldBuilderScreen.handleTerrainCB(argsList)
-
-def WorldBuilderHandleFeatureCB(argsList):
-	worldBuilderScreen.handleFeatureCB(argsList)
-
-def WorldBuilderHandleBonusCB( argsList ):
-	worldBuilderScreen.handleBonusCB(argsList)
-
-def WorldBuilderHandleImprovementCB(argsList):
-	worldBuilderScreen.handleImprovementCB(argsList)
-
-def WorldBuilderHandleTerritoryCB(argsList):
-	worldBuilderScreen.handleTerritoryCB(argsList)
-
-def WorldBuilderHandlePlotTypeCB( argsList ):
-	worldBuilderScreen.handlePlotTypeCB(argsList)
-
-def WorldBuilderHandleAllPlotsCB( argsList ):
-	worldBuilderScreen.handleAllPlotsCB(argsList)
-
-def WorldBuilderHandleUnitEditExperienceCB( argsList ):
-	worldBuilderScreen.handleUnitEditExperienceCB(argsList)
-	
-def WorldBuilderHandleUnitEditLevelCB( argsList ):
-	worldBuilderScreen.handleUnitEditLevelCB(argsList)
-	
-def WorldBuilderHandleUnitEditNameCB( argsList ):
-	worldBuilderScreen.handleUnitEditNameCB(argsList)
-	
-def WorldBuilderHandleCityEditPopulationCB( argsList ):
-	worldBuilderScreen.handleCityEditPopulationCB(argsList)
-
-def WorldBuilderHandleCityEditCultureCB( argsList ):
-	worldBuilderScreen.handleCityEditCultureCB(argsList)
-
-def WorldBuilderHandleCityEditGoldCB( argsList ):
-	worldBuilderScreen.handleCityEditGoldCB(argsList)
-
-def WorldBuilderHandleCityEditAddScriptCB( argsList ):
-	worldBuilderScreen.getCityScript()
-
-def WorldBuilderHandleUnitEditAddScriptCB( argsList ):
-	worldBuilderScreen.getUnitScript()
-
-def WorldBuilderHandleCityEditNameCB( argsList ):
-	worldBuilderScreen.handleCityEditNameCB(argsList)
-
-def WorldBuilderHandleLandmarkTextCB( argsList ):
-	worldBuilderScreen.handleLandmarkTextCB(argsList)
-
-def WorldBuilderHandleUnitEditPullDownCB( argsList ):
-	worldBuilderScreen.handleUnitEditPullDownCB(argsList)
-
-def WorldBuilderHandleUnitAITypeEditPullDownCB( argsList ):
-	worldBuilderScreen.handleUnitAITypeEditPullDownCB(argsList)
-
-def WorldBuilderHandlePlayerEditPullDownCB( argsList ):
-	worldBuilderScreen.handlePlayerEditPullDownCB(argsList)
-
-def WorldBuilderHandlePlayerUnitPullDownCB( argsList ):
-	worldBuilderScreen.handlePlayerUnitPullDownCB(argsList)
-
-def WorldBuilderHandleSelectTeamPullDownCB( argsList ):
-	worldBuilderScreen.handleSelectTeamPullDownCB(argsList)
-
-def WorldBuilderHandlePromotionCB( argsList ):
-	worldBuilderScreen.handlePromotionCB(argsList)
-
-def WorldBuilderHandleBuildingCB( argsList ):
-	worldBuilderScreen.handleBuildingCB(argsList)
-
-def WorldBuilderHandleTechCB( argsList ):
-	worldBuilderScreen.handleTechCB(argsList)
-
-def WorldBuilderHandleRouteCB( argsList ):
-	worldBuilderScreen.handleRouteCB(argsList)
-
-def WorldBuilderHandleEditCityBuildingCB( argsList ):
-	worldBuilderScreen.handleEditCityBuildingCB(argsList)
-
-def WorldBuilderHandleBrushWidthCB( argsList ):
-	worldBuilderScreen.handleBrushWidthCB(argsList)
-
-def WorldBuilderHandleBrushHeightCB( argsList ):
-	worldBuilderScreen.handleBrushHeightCB(argsList)
-
-def WorldBuilderHandleLandmarkCB( argsList ):
-	worldBuilderScreen.handleLandmarkCB(argsList)
-
-def WorldBuilderHandleFlyoutMenuCB( argsList ):
-	worldBuilderScreen.handleFlyoutMenuCB(argsList)
 
 def WorldBuilderGetHighlightPlot(argsList):
 	return worldBuilderScreen.getHighlightPlot(argsList)
@@ -689,56 +609,6 @@ def WorldBuilderOnAdvancedStartBrushSelected(argsList):
 	if (worldBuilderScreen.setCurrentAdvancedStartIndex(iIndex)):
 		if (worldBuilderScreen.setCurrentAdvancedStartList(iList)):
 			return 1
-	return 0
-
-def WorldBuilderOnNormalPlayerBrushSelected(argsList):
-	iList,iIndex,iTab = argsList;
-	print("WB brush selected, iList=%d, iIndex=%d, type=%d" %(iList,iIndex,iTab))	
-	if (worldBuilderScreen.setCurrentNormalPlayerIndex(iIndex)):
-		return 1
-	return 0
-
-def WorldBuilderOnNormalMapBrushSelected(argsList):
-	iList,iIndex,iTab = argsList;
-	print("WB brush selected, iList=%d, iIndex=%d, type=%d" %(iList,iIndex,iTab))	
-	if (worldBuilderScreen.setCurrentNormalMapIndex(iIndex)):
-		if (worldBuilderScreen.setCurrentNormalMapList(iList)):
-			return 1
-	return 0
-
-def WorldBuilderOnWBEditBrushSelected(argsList):
-	iList,iIndex,iTab = argsList;
-	if (worldBuilderScreen.setEditButtonClicked(iIndex)):
-		return 1
-	return 0
-
-def WorldBuilderOnWBEditReligionSelected(argsList):
-	iList,iIndex,iTab = argsList;
-	if (worldBuilderScreen.setEditReligionSelected(iIndex)):
-		return 1
-	return 0
-
-def WorldBuilderOnWBEditHolyCitySelected(argsList):
-	iList,iIndex,iTab = argsList;
-	if (worldBuilderScreen.setEditHolyCitySelected(iIndex)):
-		return 1
-	return 0
-
-def WorldBuilderOnWBEditCorporationSelected(argsList):
-	iList,iIndex,iTab = argsList;
-	if (worldBuilderScreen.setEditCorporationSelected(iIndex)):
-		return 1
-	return 0
-
-def WorldBuilderOnWBEditHeadquartersSelected(argsList):
-	iList,iIndex,iTab = argsList;
-	if (worldBuilderScreen.setEditHeadquartersSelected(iIndex)):
-		return 1
-	return 0
-
-def WorldBuilderOnAllPlotsBrushSelected(argsList):
-	if (worldBuilderScreen.handleAllPlotsCB(argsList)):
-		return 1
 	return 0
 
 def WorldBuilderGetASUnitTabID():
@@ -770,107 +640,6 @@ def WorldBuilderGetASVisibilityTabID():
 
 def WorldBuilderGetASTechTabID():
 	return worldBuilderScreen.getASTechTabID()
-
-def WorldBuilderGetUnitTabID():
-	return worldBuilderScreen.getUnitTabID()
-
-def WorldBuilderGetBuildingTabID():
-	return worldBuilderScreen.getBuildingTabID()
-
-def WorldBuilderGetTechnologyTabID():
-	return worldBuilderScreen.getTechnologyTabID()
-
-def WorldBuilderGetImprovementTabID():
-	return worldBuilderScreen.getImprovementTabID()
-
-def WorldBuilderGetBonusTabID():
-	return worldBuilderScreen.getBonusTabID()
-
-def WorldBuilderGetImprovementListID():
-	return worldBuilderScreen.getImprovementListID()
-
-def WorldBuilderGetBonusListID():
-	return worldBuilderScreen.getBonusListID()
-
-def WorldBuilderGetTerrainTabID():
-	return worldBuilderScreen.getTerrainTabID()
-
-def WorldBuilderGetTerrainListID():
-	return worldBuilderScreen.getTerrainListID()
-
-def WorldBuilderGetFeatureListID():
-	return worldBuilderScreen.getFeatureListID()
-
-def WorldBuilderGetPlotTypeListID():
-	return worldBuilderScreen.getPlotTypeListID()
-
-def WorldBuilderGetRouteListID():
-	return worldBuilderScreen.getRouteListID()
-
-def WorldBuilderGetTerritoryTabID():
-	return worldBuilderScreen.getTerritoryTabID()
-
-def WorldBuilderGetTerritoryListID():
-	return worldBuilderScreen.getTerritoryListID()
-
-def WorldBuilderHasTech(argsList):
-	iTech = argsList[0]
-	return worldBuilderScreen.hasTech(iTech)
-
-def WorldBuilderHasPromotion(argsList):
-	iPromotion = argsList[0]
-	return worldBuilderScreen.hasPromotion(iPromotion)
-
-def WorldBuilderHasBuilding(argsList):
-	iBuilding = argsList[0]
-	return worldBuilderScreen.getNumBuilding(iBuilding)
-
-def WorldBuilderHasReligion(argsList):
-	iReligion = argsList[0]
-	return worldBuilderScreen.hasReligion(iReligion)
-
-def WorldBuilderHasHolyCity(argsList):
-	iReligion = argsList[0]
-	return worldBuilderScreen.hasHolyCity(iReligion)
-
-def WorldBuilderHasCorporation(argsList):
-	iCorporation = argsList[0]
-	return worldBuilderScreen.hasCorporation(iCorporation)
-
-def WorldBuilderHasHeadquarters(argsList):
-	iCorporation = argsList[0]
-	return worldBuilderScreen.hasHeadquarters(iCorporation)
-
-def WorldBuilderHandleDiploPlayerDropdownCB( argsList ):
-	worldBuilderScreen.handleDiploPlayerDropdownCB(argsList)
-	
-##### WORLDBUILDER DIPLOMACY SCREEN #####
-
-worldBuilderDiplomacyScreen = CvWorldBuilderDiplomacyScreen.CvWorldBuilderDiplomacyScreen()
-def showWorldBuilderDiplomacyScreen():
-	worldBuilderDiplomacyScreen.interfaceScreen()
-
-def hideWorldBuilderDiplomacyScreen():
-	worldBuilderDiplomacyScreen.killScreen()
-
-def handleWorldBuilderDiplomacyPlayerPullDownCB(argsList):
-	worldBuilderDiplomacyScreen.handlePlayerPullDownCB(int(argsList[0]))
-
-def handleWorldBuilderDiplomacyVassalPullDownCB(argsList):
-	worldBuilderDiplomacyScreen.handleVassalPullDownCB(int(argsList[0]))
-
-def handleWorldBuilderDiplomacyAtWarPullDownCB(argsList):
-	worldBuilderDiplomacyScreen.handleAtWarPullDownCB(argsList)
-
-def handleWorldBuilderDiplomacyAIWeightPullDownCB(argsList):
-	worldBuilderDiplomacyScreen.handleAIWeightPullDownCB(argsList)
-
-def handleWorldBuilderDiplomacyAIWeightResetAllCB(argsList):
-	worldBuilderDiplomacyScreen.handleAIWeightResetAll()
-
-def handleWorldBuilderDiplomacyExitCB(argsList):
-	worldBuilderDiplomacyScreen.killScreen()
-
 #################################################
 ## Utility Functions (can be overridden by CvScreenUtilsInterface
 #################################################
@@ -962,9 +731,6 @@ def forceScreenUpdate (argsList):
 	# world builder Screen
 	elif ( argsList[0] == WORLDBUILDER_SCREEN ):
 		worldBuilderScreen.updateScreen()
-	# world builder diplomacy Screen
-	elif ( argsList[0] == WORLDBUILDER_DIPLOMACY_SCREEN ):
-		worldBuilderDiplomacyScreen.updateScreen()
 
 # Forced redraw
 def forceScreenRedraw (argsList):
@@ -975,10 +741,6 @@ def forceScreenRedraw (argsList):
 	# Main Interface Screen
 	if ( argsList[0] == MAIN_INTERFACE ):
 		mainInterface.redraw()
-	elif ( argsList[0] == WORLDBUILDER_SCREEN ):
-		worldBuilderScreen.redraw()
-	elif ( argsList[0] == WORLDBUILDER_DIPLOMACY_SCREEN ):
-		worldBuilderDiplomacyScreen.redraw()
 	elif ( argsList[0] == TECH_CHOOSER ):
 		techChooser.updateTechRecords(true)
 
@@ -1023,8 +785,8 @@ def refreshMilitaryAdvisor (argsList):
 		militaryAdvisor.refreshSelectedUnit(-argsList[0], argsList[1])
 	
 def updateMusicPath (argsList):
-    szPathName = argsList[0]
-    optionsScreen.updateMusicPath(szPathName)
+	szPathName = argsList[0]
+	optionsScreen.updateMusicPath(szPathName)
 
 def refreshOptionsScreen():
 	optionsScreen.refreshScreen()
@@ -1528,11 +1290,27 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					DAN_QUAYLE_SCREEN : danQuayleScreen,
 
 					WORLDBUILDER_SCREEN : worldBuilderScreen,
-					WORLDBUILDER_DIPLOMACY_SCREEN : worldBuilderDiplomacyScreen,
-					
+
 					DEBUG_INFO_SCREEN : debugInfoScreen,
-				
-				# add new screens here
+## World Builder ##
+					WB_PLOT : WBPlotScreen.WBPlotScreen(),
+					WB_EVENT: WBEventScreen.WBEventScreen(),
+					WB_BUILDING : WBBuildingScreen.WBBuildingScreen(),
+					WB_CITYDATA : WBCityDataScreen.WBCityDataScreen(),
+					WB_CITYEDIT : WBCityEditScreen.WBCityEditScreen(worldBuilderScreen),
+					WB_TECH : WBTechScreen.WBTechScreen(),
+					WB_PROJECT : WBProjectScreen.WBProjectScreen(),
+					WB_TEAM : WBTeamScreen.WBTeamScreen(),
+					WB_PLAYER : WBPlayerScreen.WBPlayerScreen(),
+					WB_UNIT : WBUnitScreen.WBUnitScreen(worldBuilderScreen),
+					WB_PROMOTION : WBPromotionScreen.WBPromotionScreen(),
+					WB_DIPLOMACY : WBDiplomacyScreen.WBDiplomacyScreen(),
+					WB_GAMEDATA : WBGameDataScreen.WBGameDataScreen(worldBuilderScreen),
+					WB_UNITLIST : WBPlayerUnits.WBPlayerUnits(),
+					WB_RELIGION : WBReligionScreen.WBReligionScreen(),
+					WB_CORPORATION : WBCorporationScreen.WBCorporationScreen(),
+					WB_INFO : WBInfoScreen.WBInfoScreen(),
+					WB_TRADE : WBTradeScreen.WBTradeScreen(),
 				}
 
 #######################################################################################
