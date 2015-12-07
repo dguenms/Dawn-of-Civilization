@@ -2616,6 +2616,7 @@ class RiseAndFall:
                                                 gc.getMap().plot(28, 31).setFeatureType(-1, 0)
                                                 gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
 						gc.getMap().plot(32, 19).setPlotType(PlotTypes.PLOT_HILLS, True, True)
+						gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
                                         if (iNewWorldCiv == iAztecs):
                                                 gc.getMap().plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 						

@@ -301,8 +301,6 @@ class Resources:
 			
 			self.createResource(70, 59, iDeer) # St Petersburg
 			
-			gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
-			
 		if iGameTurn == getTurnForYear(1800):
 			if gc.getDefineINT("PLAYER_REBIRTH_MEXICO") != 0:
 				self.createResource(17, 41, iHorse) # Mexico
