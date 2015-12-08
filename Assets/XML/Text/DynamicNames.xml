@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_PEOPLES_OF</Tag>
+		<English>Peoples of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEOPLES_ADJECTIVE</Tag>
+		<English>%s2 Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EMPIRE_OF</Tag>
+		<English>Empire of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EMPIRE_ADJECTIVE</Tag>
+		<English>%s2 Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KINGDOM_OF</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KINGDOM_ADJECTIVE</Tag>
+		<English>%s2 Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REPUBLIC_OF</Tag>
+		<English>Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_OF</Tag>
+		<English>Socialist Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 Socialist Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITED_STATES_OF</Tag>
+		<English>United States of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITED_STATES_ADJECTIVE</Tag>
+		<English>United %s2 States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEOPLES_REPUBLIC_OF</Tag>
+		<English>People's Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEOPLES_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 People's Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NATIONALIST_OF</Tag>
+		<English>Nationalist %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_STATES_OF</Tag>
+		<English>City States of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_STATES_ADJECTIVE</Tag>
+		<English>%s2 City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_TITLE</Tag>
+		<English>%s2 %s1</English>
+	</TEXT>
+</Civ4GameText>
