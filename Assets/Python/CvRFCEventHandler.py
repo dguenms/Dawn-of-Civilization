@@ -162,6 +162,14 @@ class CvRFCEventHandler:
 		#	sContinentDebug += "\n"
 		##print sContinentDebug
 		
+		
+
+		for i in range(con.iNumUnits):
+			print gc.getUnitInfo(i).getText()
+			
+		for i in range(con.iNumBuildings):
+			print gc.getBuildingInfo(i).getText()
+		
 		# Leoreth: set DLL core values
 		for x in range(124):
 			for y in range(68):
@@ -786,7 +794,7 @@ class CvRFCEventHandler:
 	
 		if utils.getHumanID() != iPlayer:
 			if iPlayer == con.iJapan and iEra == con.iIndustrial:
-				utils.moveCapital(iPlayer, (116, 46)) # Toukyou
+				utils.moveCapital(iPlayer, (116, 47)) # Toukyou
 			elif iPlayer == con.iItaly and iEra == con.iIndustrial:
 				utils.moveCapital(iPlayer, (60, 44)) # Roma
 			elif iPlayer == con.iVikings and iEra == con.iRenaissance:

@@ -2509,7 +2509,7 @@ class CvMainInterface:
 								iCount = iCount + 1
 						
 					# Leoreth: Byzantine UP: bribe barbarians
-					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == iByzantium:
+					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == iByzantium and pByzantium.getNumCities() > 0:
 						plot = CyMap().plot(pUnit.getX(), pUnit.getY())
 						unitList = [plot.getUnit(i) for i in range(plot.getNumUnits())]
 						bBarbarian = False

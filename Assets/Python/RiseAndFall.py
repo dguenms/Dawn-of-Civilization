@@ -609,7 +609,7 @@ class RiseAndFall:
 		if iButton >= len(targetList): return
 		
 		unit, iCost = targetList[iButton]
-		closestCity = gc.getMap().findCity(unit.getX(), unit.getY(), iByzantium, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+		closestCity = gc.getMap().findCity(unit.getX(), unit.getY(), iByzantium, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 		
 		newUnit = utils.makeUnit(unit.getUnitType(), iByzantium, (closestCity.plot().getX(), closestCity.plot().getY()), 1)
 		gc.getPlayer(iByzantium).changeGold(-iCost)
@@ -2616,6 +2616,7 @@ class RiseAndFall:
                                                 gc.getMap().plot(28, 31).setFeatureType(-1, 0)
                                                 gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
 						gc.getMap().plot(32, 19).setPlotType(PlotTypes.PLOT_HILLS, True, True)
+						gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
                                         if (iNewWorldCiv == iAztecs):
                                                 gc.getMap().plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 						
