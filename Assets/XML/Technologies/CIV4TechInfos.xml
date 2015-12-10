@@ -1547,11 +1547,11 @@
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>0</iAITradeModifier>
 			<!-- Rhye -->
-			<iCost>2300</iCost>
+			<iCost>2800</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_RENAISSANCE</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<Era>ERA_INDUSTRIAL</Era>
+			<FirstFreeUnitClass>UNITCLASS_STATESMAN</FirstFreeUnitClass>
 			<iFeatureProductionModifier>0</iFeatureProductionModifier>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
 			<iTradeRoutes>0</iTradeRoutes>
