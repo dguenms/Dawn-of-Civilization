@@ -6050,7 +6050,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									if (iI == CORPORATION || iI == ASSEMBLY_LINE)
 										iValue *= 2;
-									if (iI == RAILROAD)
+									if (iI == RAILROAD || iI == DEMOCRACY)
 										iValue *= 3;
 									break;
 								case ARGENTINA:

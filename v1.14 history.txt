@@ -1,3 +1,8 @@
 * Laurenco Marques renamed Mocambique, added Saint Louis du Senegal (credit to Panopticon)
-* added the Senegal River
+* Added the Senegal River
 * Improved corporation advisor (lists tech requirements, number of available resources, factors influencing spread) (credit to merijn_v1)
+* Included Platyping's PlatyBuilder to replace the standard World Builder (credit to merijn_v1 for the inclusion)
+* New city renaming system to ensure that all names are correctly translated between all languages and to limit file size
+* Communist names are based on civic, not on tech changes
+* Communist names are reverted when abandoning communism
+* The first to discover Democracy receives a Great Statesman
