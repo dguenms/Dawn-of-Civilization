@@ -5215,7 +5215,7 @@ class RiseAndFall:
 			for iTech in lGermanTechs:
 				teamGermany.setHasTech(iTech, True, iCiv, False, False)
 		if (iCiv == iAmerica):
-			for x in range(con.iDemocracy+1):
+			for x in range(con.iDemocracy):
 					teamAmerica.setHasTech(x, True, iCiv, False, False)
 			for x in range(con.iFishing, con.iChemistry+1):
 					teamAmerica.setHasTech(x, True, iCiv, False, False)
