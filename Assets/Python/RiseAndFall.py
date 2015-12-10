@@ -1334,6 +1334,12 @@ class RiseAndFall:
 					self.rebirthFirstTurn(iCiv)
 				if iGameTurn == getTurnForYear(con.tRebirth[iCiv])+1 and gc.getPlayer(iCiv).isAlive() and utils.isReborn(iCiv):
 					self.rebirthSecondTurn(iCiv)
+					
+	def endTurn(self, iPlayer):
+		for tTimedConquest in sd.getTimedConquests():
+			iConqueror, x, y = tTimedConquest
+			utils.colonialConquest(iConqueror, x, y)
+		sd.resetTimedConquests()
 
 	def rebirthFirstTurn(self, iCiv):
 		pCiv = gc.getPlayer(iCiv)
@@ -2898,7 +2904,8 @@ class RiseAndFall:
 							utils.colonialAcquisition(iPlayer, x, y)
 							gc.getPlayer(iTargetCiv).changeGold(200)
 						else:
-							utils.colonialConquest(iPlayer, x, y)
+							#utils.colonialConquest(iPlayer, x, y)
+							sd.timedConquest(iPlayer, x, y)
 						targetList.remove(tPlot)
 
 		pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
@@ -2908,7 +2915,8 @@ class RiseAndFall:
 
 		for tPlot in targetList:
 			x, y = tPlot
-			utils.colonialConquest(iPlayer, x, y)
+			#utils.colonialConquest(iPlayer, x, y)
+			sd.timedConquest(iPlayer, x, y)
 
 		tSeaPlot = -1
 		x, y = targetList[0]
