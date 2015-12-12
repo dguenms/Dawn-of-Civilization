@@ -64,4 +64,12 @@
 		<Tag>TXT_KEY_CIV_MALI_GERMAN_VASSAL</Tag>
 		<English>German West Africa</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_REICHSPROTEKTORAT</Tag>
+		<English>Reichsprotektorat %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_REICHSKOMMISSARIAT</Tag>
+		<English>Reichskommissariat %s1</English>
+	</TEXT>
 </Civ4GameText>

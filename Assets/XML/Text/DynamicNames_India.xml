@@ -9,67 +9,39 @@
 		<English>The Indians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_INDIA_PEOPLES</Tag>
 		<English>Indo-Aryan Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_DESC_DEFAULT</Tag>
-		<English>Maharajate of India</English>
+		<Tag>TXT_KEY_CIV_INDIA_DEFAULT</Tag>
+		<English>Maharajate of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_DESC_FASCIST</Tag>
-		<English>Undivided India</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_DESC_COMMUNIST</Tag>
-		<English>People's Republic of India</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_DESC_DEMOCRATIC</Tag>
-		<English>Republic of India</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_DESC_ISLAMIC_MODERN</Tag>
-		<English>Islamic Republic of India</English>
+		<Tag>TXT_KEY_CIV_INDIA_FASCIST</Tag>
+		<English>Undivided %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MARATHA</Tag>
-		<English>Maratha Confederacy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_MARATHA_EMPIRE</Tag>
-		<English>Maratha Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_SULTANATE</Tag>
-		<English>Sultanate of India</English>
+		<English>Maratha</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MAHAJANAPADAS</Tag>
-		<English>Indian Mahajanapadas</English>
+		<English>%s2 Mahajanapadas</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_MAURYA</Tag>
-		<English>Maurya Empire</English>
+		<English>Maurya</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_GUPTA</Tag>
-		<English>Gupta Empire</English>
+		<English>Gupta</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_PALA</Tag>
-		<English>Pala Empire</English>
+		<English>Pala</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_VIJAYANAGARA</Tag>
-		<English>Vijayanagara Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_SOVIET_VASSAL</Tag>
-		<English>Soviet India</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_NAZI_VASSAL</Tag>
-		<English>German India</English>
+		<English>Vijayanagara</English>
 	</TEXT>
 </Civ4GameText>
