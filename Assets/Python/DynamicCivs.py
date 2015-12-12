@@ -24,79 +24,581 @@ tNCAmericaBR = (37, 63)
 
 ### Dictionaries with text keys
 
-dDefaultNames = {
-	iEgypt : "TXT_KEY_CIV_EGYPT_DEFAULT",
-	iIndia : "TXT_KEY_CIV_INDIA_DEFAULT",
-	iChina : "TXT_KEY_CIV_CHINA_DEFAULT",
-	iBabylonia : "TXT_KEY_CIV_BABYLONIA_DEFAULT",
-	iHarappa : "TXT_KEY_CIV_HARAPPA_DEFAULT",
-	iGreece : "TXT_KEY_CIV_GREECE_DEFAULT",
-	iPersia : "TXT_KEY_CIV_PERSIA_DEFAULT",
-	iCarthage : "TXT_KEY_CIV_PHOENICIA_DEFAULT",
-	iPolynesia : "TXT_KEY_CIV_POLYNESIA_DEFAULT",
-	iRome : "TXT_KEY_CIV_ROME_DEFAULT",
-	iJapan : "TXT_KEY_CIV_JAPAN_DEFAULT",
-	iTamils : "TXT_KEY_CIV_TAMILS_DEFAULT",
-	iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DEFAULT",
-	iKorea : "TXT_KEY_CIV_KOREA_DEFAULT",
-	iMaya : "TXT_KEY_CIV_MAYA_DEFAULT",
-	iByzantium : "TXT_KEY_CIV_BYZANTIUM_DEFAULT",
-	iVikings : "TXT_KEY_CIV_VIKINGS_DEFAULT",
-	iArabia : "TXT_KEY_CIV_ARABIA_DEFAULT",
-	iTibet : "TXT_KEY_CIV_TIBET_DEFAULT",
-	iKhmer : "TXT_KEY_CIV_KHMER_DEFAULT",
-	iIndonesia : "TXT_KEY_CIV_INDONESIA_DEFAULT",
-	iMoors : "TXT_KEY_CIV_MOORS_DEFAULT",
-	iSpain : "TXT_KEY_CIV_SPAIN_DEFAULT",
-	iFrance : "TXT_KEY_CIV_FRANCE_DEFAULT",
-	iEngland : "TXT_KEY_CIV_ENGLAND_DEFAULT",
-	iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DEFAULT",
-	iRussia : "TXT_KEY_CIV_RUSSIA_DEFAULT",
-	iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DEFAULT",
-	iMali : "TXT_KEY_CIV_MALI_DEFAULT",
-	iPoland : "TXT_KEY_CIV_POLAND_DEFAULT",
-	iPortugal : "TXT_KEY_CIV_PORTUGAL_DEFAULT",
-	iInca : "TXT_KEY_CIV_INCA_DEFAULT",
-	iItaly : "TXT_KEY_CIV_ITALY_DEFAULT",
-	iMongolia : "TXT_KEY_CIV_MONGOLIA_DEFAULT",
-	iAztecs : "TXT_KEY_CIV_AZTECS_DEFAULT",
-	iMughals : "TXT_KEY_CIV_MUGHALS_DEFAULT",
-	iTurkey : "TXT_KEY_CIV_TURKEY_DEFAULT",
-	iThailand : "TXT_KEY_CIV_THAILAND_DEFAULT",
-	iCongo : "TXT_KEY_CIV_CONGO_DEFAULT",
-	iGermany : "TXT_KEY_CIV_GERMANY_DEFAULT",
-	iAmerica : "TXT_KEY_CIV_AMERICA_DEFAULT",
-	iArgentina : "TXT_KEY_CIV_ARGENTINA_DEFAULT",
-	iBrazil : "TXT_KEY_CIV_BRAZIL_DEFAULT",
-	iCanada : "TXT_KEY_CIV_CANADA_DEFAULT",
+dSpecificVassalNames = {
+	
 }
 
-### Utility methods for standard player names
+dVassalNames = {
+
+}
+
+dSpecificVassalTitles = {
+	iEgypt : {
+		iPhoenicia : "TXT_KEY_CIV_EGYPTIAN_PHOENICIA",
+		iEthiopia : "TXT_KEY_CIV_EGYPTIAN_ETHIOPIA",
+	},
+	iBabylonia : {
+		iPhoenicia : "TXT_KEY_ADJECTIVE_TITLE",
+	},
+}
+
+dMasterTitles = {
+	iChina : "TXT_KEY_CIV_CHINESE_VASSAL",
+}
+
+dCommunistVassalTitles = {
+	iRussia : {
+		iEgypt : "TXT_KEY_CIV_RUSSIA_SOVIET",
+		iIndia : "TXT_KEY_CIV_RUSSIA_SOVIET",
+		iChina : "TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE",
+		iBabylonia : "TXT_KEY_CIV_RUSSIA_SOVIET",
+	},
+}
+
+dFascistVassalTitles = {
+	iGermany : {
+		iEgypt : "TXT_KEY_CIV_GERMANY_REICHSPROTEKTORAT",
+		iIndia : "TXT_KEY_ADJECTIVE_TITLE",
+		iChina : "TXT_KEY_CIV_GERMANY_REICHSKOMMISSARIAT",
+		iBabylonia : "TXT_KEY_ADJECTIVE_TITLE",
+	},
+}
+
+dForeignAdjectives = {
+	iChina : {
+		iEgypt : "TXT_KEY_CIV_CHINESE_ADJECTIVE_EGYPT",
+		iIndia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_INDIA",
+		iBabylonia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_BABYLONIA",
+		iPersia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_PERSIA",
+		iRome : "TXT_KEY_CIV_CHINESE_ADJECTIVE_ROME",
+		iJapan : "TXT_KEY_CIV_CHINESE_ADJECTIVE_JAPAN",
+		iKorea : "TXT_KEY_CIV_CHINESE_ADJECTIVE_KOREA",
+		iByzantium : "TXT_KEY_CIV_CHINESE_ADJECTIVE_BYZANTIUM",
+		iArabia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_ARABIA",
+		iKhmer : "TXT_KEY_CIV_CHINESE_ADJECTIVE_KHMER",
+		iMongolia : "TXT_KEY_CIV_CHINESE_ADJECTIVE_MONGOLIA",
+		iTurkey : "TXT_KEY_CIV_CHINESE_ADJECTIVE_TURKEY",
+		iTibet : "TXT_KEY_CIV_CHINESE_ADJECTIVE_TIBET",
+	},
+}
+
+lRepublicOf = [iEgypt, iIndia, iChina]
+lRepublicAdj = [iBabylonia]
+
+lSocialistRepublicOf = []
+lSocialistRepublicAdj = []
+
+lPeoplesRepublicOf = [iIndia, iChina]
+lPeoplesRepublicAdj = []
+
+lIslamicRepublicOf = [iIndia]
+lIslamicRepublicAdj = []
+
+lNationalist = [iChina]
+
+lCityStatesStart = [iRome, iCarthage, iGreece, iIndia, iMaya, iAztecs]
+
+dEmpireThreshold = {
+	iCarthage : 4,
+	iIndonesia : 4,
+	iKorea : 4,
+	iRussia : 8,
+	iHolyRome : 3,
+	iGermany : 4,
+	iItaly : 4,
+	iInca : 3,
+	iMongolia : 6,
+	iPoland : 3,
+	iMoors : 3,
+	iTibet : 2,
+	iPolynesia : 3,
+	iTamils : 3,
+}
+
+dRespawnShortDescs = {
+	iAztecs : "TXT_KEY_CIV_MEXICO_SHORT_DESC",
+	iInca : "TXT_KEY_CIV_PERU_SHORT_DESC",
+	iHolyRome : "TXT_KEY_CIV_AUSTRIA_SHORT_DESC",
+}
+
+dRespawnAdjectives = {
+	iAztecs : "TXT_KEY_CIV_MEXICO_ADJECTIVE",
+	iInca : "TXT_KEY_CIV_PERU_ADJECTIVE",
+	iHolyRome : "TXT_KEY_CIV_AUSTRIA_ADJECTIVE",
+}
+
+dVassalShortDescs = {
+	iAztecs : "TXT_KEY_CIV_MEXICO_SHORT_DESC",
+	iInca : "TXT_KEY_CIV_PERU_SHORT_DESC",
+}
+
+dVassalAdjectives = {
+	iAztecs : "TXT_KEY_CIV_MEXICO_ADJECTIVE",
+	iInca : "TXT_KEY_CIV_PERU_ADJECTIVE",
+}
+
+dReligionShortDescs = {
+	iAztecs : ([iProtestantism, iCatholicism], "TXT_KEY_CIV_MEXICO_SHORT_DESC"),
+	iInca : ([iProtestantism, iCatholicism], "TXT_KEY_CIV_PERU_SHORT_DESC"),
+}
+
+dVassalAdjectives = {
+	iAztecs : ([iProtestantism, iCatholicism], "TXT_KEY_CIV_MEXICO_ADJECTIVE"),
+	iInca : ([iProtestantism, iCatholicism], "TXT_KEY_CIV_PERU_ADJECTIVE"),
+}
+
+dStartingLeaders = [
+# 3000 BC
+{
+	iEgypt : iRamesses,
+	iIndia : iAsoka,
+	iChina : iQinShiHuang,
+	iBabylonia : iGilgamesh,
+	iHarappa : iVatavelli,
+	iGreece : iPericles,
+	iPersia : iCyrus,
+	iCarthage : iHiram,
+	iPolynesia : iAhoeitu,
+	iRome : iJuliusCaesar,
+	iJapan : iJimmu,
+	iTamils : iRajendra,
+	iEthiopia : iZaraYaqob,
+	iKorea : iWangKon,
+	iMaya : iPacal,
+	iByzantium : iJustinian,
+	iVikings : iRagnar,
+	iArabia : iHarun,
+	iTibet : iSongtsen,
+	iKhmer : iSuryavarman,
+	iIndonesia : iDharmasetu,
+	iMoors : iRahman,
+	iSpain : iIsabella,
+	iFrance : iCharlemagne,
+	iEngland : iAlfred,
+	iHolyRome : iBarbarossa,
+	iRussia : iYaroslav,
+	iNetherlands : iWillemVanOranje,
+	iMali : iMansaMusa,
+	iPoland : iCasimir,
+	iPortugal : iAfonso,
+	iInca : iHuaynaCapac,
+	iItaly : iLorenzo,
+	iMongolia : iGenghisKhan,
+	iAztecs : iMontezuma,
+	iMughals : iTughluq,
+	iTurkey : iMehmed,
+	iThailand : iNaresuan,
+	iCongo : iMbemba,
+	iGermany : iFrederick,
+	iAmerica : iWashington,
+	iArgentina : iSanMartin,
+	iBrazil : iDomPedro,
+	iCanada : iTrudeau,
+},
+# 600 AD
+{
+	iChina : iTaizong,
+},
+# 1700 AD
+{
+	iChina : iHongwu,
+	iIndia : iShivaji,
+	iPersia : iAbbas,
+	iJapan : iTokugawa,
+	iVikings : iGustav,
+	iSpain : iPhilip,
+	iFrance : iLouis,
+	iEngland : iVictoria,
+	iHolyRome : iFrancis,
+	iRussia : iPeter,
+	iPoland : iSobieski,
+	iPortugal : iJoao,
+	iMughals : iAkbar,
+	iTurkey : iSuleiman,
+	iGermany : iFrederick,
+}]
+
+### Event handlers
+
+def setup():			
+	iScenario = utils.getScenario()
+	
+	for iPlayer in range(iNumPlayers):	
+		setDesc(iPlayer, peoplesName(iPlayer))
+		
+		if iScenario > i3000AD and gc.getPlayer(iPlayer).isAlive():
+			checkName(iPlayer)
+		
+		if not utils.isHuman(iPlayer):
+			setLeader(iPlayer, startingLeader(iPlayer))
+	
+	if iScenario == i600AD:
+		sd.changeAnarchyTurns(iChina, 3)
+		
+	elif iScenario == i1700AD:
+		sd.changeResurrections(iEgypt, 1)
+		
+def onCivRespawn(iPlayer, tOriginalOwners):
+	sd.changeResurrections(iPlayer, 1)
+	
+	if iPlayer in dRespawnShortDescs: setShort(iPlayer, text(dRespawnShortDescs[iPlayer]))
+	if iPlayer in dRespawnAdjectives: setAdjective(iPlayer, text(dRespawnAdjectives[iPlayer]))
+	
+	setDesc(iPlayer, defaultName(iPlayer))
+	checkName(iPlayer, tOriginalOwners)
+	checkLeader(iPlayer)
+	
+def onVassalState(iVassal):
+	if iPlayer in dVassalShortDescs: setShort(iPlayer, text(dVassalShortDescs[iPlayer]))
+	if iPlayer in dVassalAdjectives: setAdjective(iPlayer, text(dVassalAdjectives[iPlayer]))
+	
+	checkName(iPlayer)
+	
+def onPlayerChangeStateReligion(iPlayer, iReligion):
+	if iPlayer in dReligionShortDescs:
+		lReligions, sShort = dReligionShortDescs[iPlayer]
+		if iReligion in lReligions: setShort(iPlayer, text(sShort))
+		
+	if iPlayer in dReligionAdjectives:
+		lReligions, sAdjective = dReligionAdjectives[iPlayer]
+		if iReligion in lReligions: setAdjective(iPlayer, text(sAdjective))
+		
+	checkName(iPlayer)
+	
+def onRevolution(iPlayer):
+	sd.changeAnarchyTurns(iPlayer, 1)
+	checkName(iPlayer)
+	
+def onCityAcquired(iPreviousOwner, iNewOwner):
+	checkName(iPreviousOwner)
+	checkName(iOwner)
+	
+def onCityRazed(iOwner):
+	checkName(iOwner)
+	
+def onCityBuilt(iOwner):
+	checkName(iOwner)
+	
+def checkTurn(iGameTurn):
+	for iPlayer in range(iNumPlayers):
+		checkName(iPlayer)
+		checkLeader(iPlayer)
+		
+def checkName(iPlayer):
+	setDesc(desc(iPlayer, title(iPlayer)))
+	
+def checkLeader(iPlayer):
+	setLeader(leader(iPlayer))
+
+### Setter methods for player object ###
+
+def setDesc(iPlayer, sName):
+	gc.getPlayer(iPlayer).setCivDescription(sName)
+	
+def setShort(iPlayer, sShort):
+	gc.getPlayer(iPlayer).setCivShortDescription(sName)
+	
+def setAdjective(iPlayer, sAdj):
+	gc.getPlayer(iPlayer).setCivAdjective(sName)
+	
+def setLeader(iPlayer, iLeader):
+	if gc.getPlayer(iPlayer).getLeader() == iLeader: return
+	gc.getPlayer(iPlayer).setLeader(iLeader)
+
+### Utility methods for standard player names ###
+
+def getOrElse(dDictionary, iPlayer, sDefault=None):
+	if iPlayer in dDictionary: return dDictionary[iPlayer]
+	return sDefault
+
+def key(iPlayer, sSuffix):
+	if Suffix: Suffix = "_" + Suffix
+	return "TXT_KEY_" + short(iPlayer).upper() + sSuffix
 
 def text(sTextKey, tInput=()):
 	return localText.getText(sTextKey, tInput)
 	
-def name(iPlayer, sTextKey="%s1"):
-	return text(sTextKey, (short(iPlayer), adjective(iPlayer)))
+def desc(iPlayer, sTextKey="%s1"):
+	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
 
 def short(iPlayer):
 	return gc.getPlayer(iPlayer).getCivilizationShortDescription()
-	
-def long(iPlayer):
-	return gc.getPlayer(iPlayer).getCivilizationDescription()
 
 def adjective(iPlayer):
+	if isCapitulated(iPlayer):
+		sForeignAdjective = getOrElse(getOrElse(dForeignAdjectives, getMaster(iPlayer), {}), iPlayer)
+		if sForeignAdjective: return sForeignAdjective
+
 	return gc.getPlayer(iPlayer).getCivilizationAdjective()
 	
-### Naming methods
+### Utility methods for civilization status
 
-def defaultName(iPlayer):
-	if iPlayer in dDefaultNames: return name(dDefaultNames[iPlayer], iPlayer)
+def getCivics(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	return pPlayer.getCivics(0), pPlayer.getCivics(1), pPlayer.getCivics(2), pPlayer.getCivics(3), pPlayer.getCivics(4)
 
-	return long(iPlayer)
+def isCommunist(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iGovernment, iOrganization, c, iEconomy, d, e = getCivics(iPlayer)
+	
+	if iEconomy != iCivicCentralPlanning:
+		return False
+	
+	if iGovernment == iCivicTheocracy:
+		return False
+		
+	if iOrganization in [iCivicVassalage, iCivicAbsolutism]:
+		return False
+		
+	return True
+	
+def isFascist(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	a, iOrganization, b, c, d, e = getCivics(iPlayer)
+	
+	if iOrganization == iCivicTotalitarianism:
+		return True
+		
+	return False
+	
+def isRepublic(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	iGovernment, iOrganization, c, d, e = getCivics(iPlayer)
+	
+	if iGovernment == iCivicRepublic: 
+		return True
+	if iGovernment == iCivicAutocracy and iOrganization in [iCivicRepresentation, iCivicEgalitarianism]:
+		return True
+		
+	return False
+	
+def isVassal(iPlayer):
+	return utils.isAVassal(iPlayer)
+	
+def isCapitulated(iPlayer):
+	return isVassal(iPlayer) and tPlayer.isCapitulated()
+	
+def getMaster(iPlayer):
+	return utils.getMaster(iPlayer)
+	
+def isEmpire(iPlayer):
+	iThreshold = getEmpireThreshold(iPlayer)
+	return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
+	
+def getEmpireThreshold(iPlayer):
+	if iPlayer in dEmpireThreshold: return dEmpireThreshold[iPlayer]
+	
+	if gc.getPlayer(iPlayer).isReborn():
+		if iPlayer == iPersia: return 4
+		
+	return 5
+	
+def isAtWar(iPlayer):
+	for iTarget in range(iNumPlayers):
+		if tPlayer.isAtWar(iTarget):
+			return True
+	return False
+	
+### Naming methods ###
+
+def name(iPlayer):
+	if isCapitulated(iPlayer):
+		sVassalName = vassalName(iPlayer, getMaster(iPlayer))
+		if sVassalName: return sVassalName
+		
+	if isCommunist(iPlayer):
+		sCommunistName = communistName(iPlayer)
+		if sCommunistName: return sCommunistName
+		
+	if isFascist(iPlayer):
+		sFascistName = fascistName(iPlayer)
+		if sFascistName: return sFascistName
+		
+	if isRepublic(iPlayer):
+		sRepublicName = republicName(iPlayer)
+		if sRepublicName: return sRepublicName
+		
+	sSpecificName = specificName(iPlayer)
+	if sSpecificName: return sSpecificName
+	
+	return short(iPlayer)
+	
+def vassalName(iPlayer, iMaster):
+	sSpecificName = getOrElse(getOrElse(dSpecificVassalNames, iMaster, {}), iVassal)
+	if sSpecificName: return sSpecificName
+	
+	sVassalName = getOrElse(dVassalNames, iVassal)
+	if sVassalName: return sVassalName
+	
+	return None
+	
+def communistName(iPlayer):
+	return None
+	
+def fascistName(iPlayer):
+	return None
+	
+def republicName(iPlayer):
+	return None
 	
 def peoplesName(iPlayer):
-	if iPlayer in dPeopleNames: return 
+	return desc(iPlayer, key(iPlayer, "PEOPLES"))
+	
+### Title methods ###
+
+def title(iPlayer):
+	if iCapitulated(iPlayer):
+		sVassalTitle = vassalTitle(iPlayer, getMaster(iPlayer))
+		if sVassalTitle: return sVassalTitle
+		
+	if isCommunist(iPlayer):
+		sCommunistTitle = communistTitle(iPlayer)
+		if sCommunistTitle: return sCommunistTitle
+		
+	if isFascist(iPlayer):
+		sFascistTitle = fascistTitle(iPlayer)
+		if sFascistTitle: return sFascistTitle
+		
+	if isRepublic(iPlayer):
+		sRepublicTitle = republicTitle(iPlayer)
+		if sRepublicTitle: return sRepublicTitle
+		
+	sSpecificTitle = specificTitle(iPlayer)
+	if sSpecificTitle: return sSpecificTitle
+	
+	if isEmpire(iPlayer):
+		sEmpireTitle = empireTitle(iPlayer)
+		if sEmpireTitle: return sEmpireTitle
+	
+	return defaultTitle(iPlayer)
+	
+def vassalTitle(iPlayer, iMaster):
+	if isCommunist(iMaster):
+		sCommunistTitle = getOrElse(getOrElse(dCommunistVassalTitles, iMaster, {}), iPlayer)
+		if sCommunistTitle: return sCommunistTitle
+		
+	if isFascist(iMaster):
+		sFascistTitle = getOrElse(getOrElse(dFascistVassalTitles, iMaster, {}), iPlayer)
+		if sFascistTitle: return sFascistTitle
+
+	sSpecificTitle = getOrElse(getOrElse(dSpecificVassalTitles, iMaster, {}), iVassal)
+	if sSpecificTitle: return sSpecificTitle
+	
+	sMasterTitle = getOrElse(dMasterTitles, iMaster)
+	if sMasterTitle: return sMasterTitle
+	
+	return None
+	
+def communistTitle(iPlayer):
+	if iPlayer in lSocialistRepublicOf: return "TXT_KEY_SOCIALIST_REPUBLIC_OF"
+	if iPlayer in lSocialistRepublicAdj: return "TXT_KEY_SOCIALIST_REPUBLIC_ADJ"
+	if iPlayer in lPeoplesRepublicOf: return "TXT_KEY_PEOPLES_REPUBLIC_OF"
+	if iPlayer in lPeoplesRepublicAdj: return "TXT_KEY_PEOPLES_REPUBLIC_ADJ"
+
+	return key(iPlayer, "COMMUNIST")
+	
+def fascistTitle(iPlayer):
+	if iPlayer in lNationalist: return "TXT_KEY_NATIONALIST_OF"
+
+	return key(iPlayer, "FASCIST")
+	
+def republicTitle(iPlayer):
+	if iReligion == iIslam:
+		if iPlayer in lIslamicRepublicOf: return "TXT_KEY_ISLAMIC_REPUBLIC_OF"
+		if iPlayer in lIslamicRepublicAdj: return "TXT_KEY_ISLAMIC_REPUBLIC_ADJECTIVE"
+
+	if iPlayer in lRepublicOf: return "TXT_KEY_REPUBLIC_OF"
+	if iPlayer in lRepublicAdj: return "TXT_KEY_REPUBLIC_ADJECTIVE"
+	
+	return key(iPlayer, "REPUBLIC")
+
+def defaultTitle(iPlayer):
+	return desc(iPlayer, key(iPlayer, "DEFAULT"))
+	
+def specificTitle(iPlayer, lPreviousOwners=[]):
+	iGameTurn = gc.getGame().getGameTurn()
+	pPlayer = gc.getPlayer(iPlayer)
+	tPlayer = gc.getTeam(pPlayer.getTeam())
+	iCivicGovernment, iCivicOrganization, iCivicLabor, iCivicEconomy, iCivicReligion = getCivics(iPlayer)
+	
+	bReborn = pPlayer.isReborn()
+	iReligion = pPlayer.getStateReligion()
+	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	tCapitalCoords = (capital.getX(), capital.getY())
+	bAnarchy = pPlayer.isAnarchy()
+	bEmpire = self.isEmpire(iPlayer)
+	bCityStates = (iCivic0 == iCivicCityStates)
+	bTheocracy = (iCivic0 == iCivicTheocracy)
+	bResurrected = (self.getResurrections(iPlayer) > 0)
+	bCapitulated = bVassal and tPlayer.isCapitulated()
+	iAnarchyTurns = self.getAnarchyTurns(iPlayer)
+	iEra = pPlayer.getCurrentEra()
+	iGameEra = gc.getGame().getCurrentEra()
+	bWar = isAtWar(iPlayer)
+	
+	if iPlayer in lCityStatesStart:
+		if not tPlayer.isHasTech(iAlphabet):
+			bCityStates = True
+
+	if iPlayer == iEgypt:
+		if bResurrected:
+			if sd.getResurrections(iPlayer) < 2
+				if iReligion == iIslam:
+					if bTheocracy: return "TXT_KEY_CALIPHATE_ADJECTIVE"
+					return "TXT_KEY_SULTANATE_ADJECTIVE"
+				return "TXT_KEY_KINGDOM_ADJECTIVE"
+				
+		if iGreece in lPreviousOwners:
+			return "TXT_KEY_CIV_EGYPT_PTOLEMAIC"
+			
+		if bCityStates:
+			return "TXT_KEY_CITY_STATES_ADJECTIVE"
+				
+		if iEra == iAncient:
+			if iAnarchyTurns == 0: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
+			if iAnarchyTurns == 1: return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
+			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
+		
+		if iEra == iClassical:
+			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
+			
+	elif iPlayer == iIndia:
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_OF"
+			
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+		if iEra >= iRenaissance:
+			return "TXT_KEY_CONFEDERACY_ADJECTIVE"
+			
+		if bCityStates:
+			return "TXT_KEY_CIV_INDIA_MAHAJANAPADAS"
+			
+	elif iPlayer == iChina:
+		if bEmpire:
+			if iEra >= iIndustrial or utils.getScenario() == i1700AD:
+				return "TXT_KEY_EMPIRE_OF"
+			
+			if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
+				return "TXT_KEY_EMPIRE_OF"
+				
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+			
+	elif iPlayer == iBabylonia:
+		if bCityStates and not bEmpire:
+			return "TXT_KEY_CITY_STATES_ADJECTIVE"
+			
+		if bEmpire and iEra > iAncient:
+			return "TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE"
+			
+	
+### Leader methods ###
+
+def startingLeader(iPlayer):
+	if iPlayer in dStartingLeaders[utils.getScenario()]: return dStartingLeaders[utils.getScenario()][iPlayer]
+	
+	return dStartingLeaders[utils.getScenario()][iPlayer]
 
 class DynamicCivs:
 
@@ -105,95 +607,50 @@ class DynamicCivs:
 
                 
 		
-		self.peopleNames = {
-                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_PEOPLES",
-                        iIndia : "TXT_KEY_CIV_INDIA_DESC_PEOPLES",
-                        iChina : "TXT_KEY_CIV_CHINA_DESC_PEOPLES",
-                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_PEOPLES",
-			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_PEOPLES",
-                        iGreece : "TXT_KEY_CIV_GREECE_DESC_PEOPLES",
-                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_PEOPLES",
-                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES",
-			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_PEOPLES",
-                        iRome : "TXT_KEY_CIV_ROME_DESC_PEOPLES",
-                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_PEOPLES",
-			iTamils : "TXT_KEY_CIV_TAMILS_DESC_PEOPLES",
-                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_PEOPLES",
-                        iKorea : "TXT_KEY_CIV_KOREA_DESC_PEOPLES",
-                        iMaya : "TXT_KEY_CIV_MAYA_DESC_PEOPLES",
-                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_PEOPLES",
-                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_PEOPLES",
-                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_PEOPLES",
-			iTibet : "TXT_KEY_CIV_TIBET_DESC_PEOPLES",
-                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_PEOPLES",
-                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_PEOPLES",
-			iMoors : "TXT_KEY_CIV_MOORS_DESC_PEOPLES",
-                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_PEOPLES",
-                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_PEOPLES",
-                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_PEOPLES",
-                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_PEOPLES",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_PEOPLES",
-                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_PEOPLES",
-                        iMali : "TXT_KEY_CIV_MALI_DESC_PEOPLES",
-			iPoland : "TXT_KEY_CIV_POLAND_DESC_PEOPLES",
-                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_PEOPLES",
-                        iInca : "TXT_KEY_CIV_INCA_DESC_PEOPLES",
-			iItaly : "TXT_KEY_CIV_ITALY_DESC_PEOPLES",
-                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_PEOPLES",
-                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_PEOPLES",
-			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_PEOPLES",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_PEOPLES",
-			iThailand : "TXT_KEY_CIV_THAILAND_DESC_PEOPLES",
-			iCongo : "TXT_KEY_CIV_CONGO_DESC_PEOPLES",
-			iGermany : "TXT_KEY_CIV_GERMANY_DESC_PEOPLES",
-                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_PEOPLES",
-			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_PEOPLES",
-			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_PEOPLES",
-			iCanada : "TXT_KEY_CIV_CANADA_DESC_PEOPLES",
-                }
+		
 				
 		self.specificVassalNames = {
-			iEgypt : {
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_EGYPTIAN_VASSAL",	# Retenu
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_EGYPTIAN_VASSAL"},	# Punt
+			#iEgypt : {
+			#	iCarthage : "TXT_KEY_CIV_PHOENICIA_EGYPTIAN_VASSAL",	# Retenu
+			#	iEthiopia : "TXT_KEY_CIV_ETHIOPIA_EGYPTIAN_VASSAL"},	# Punt
 			#iIndia - none so far
-			iChina : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_CHINESE_VASSAL",
-				iIndia : "TXT_KEY_CIV_INDIA_CHINESE_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_CHINESE_VASSAL",
-				iGreece : "TXT_KEY_CIV_GREECE_CHINESE_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_CHINESE_VASSAL",
-				iCarthage : "TXT_KEY_CIV_CARTHAGE_CHINESE_VASSAL",
-				iRome : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
-				iJapan : "TXT_KEY_CIV_JAPAN_CHINESE_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_CHINESE_VASSAL",
-				iKorea : "TXT_KEY_CIV_KOREA_CHINESE_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_CHINESE_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_CHINESE_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_CHINESE_VASSAL",
-				iArabia : "TXT_KEY_CIV_ARABIA_CHINESE_VASSAL",
-				iTibet : "TXT_KEY_CIV_TIBET_CHINESE_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_CHINESE_VASSAL",
-				iIndonesia : "TXT_KEY_CIV_INDONESIA_CHINESE_VASSAL",
-				iSpain : "TXT_KEY_CIV_SPAIN_CHINESE_VASSAL",
-				iFrance : "TXT_KEY_CIV_FRANCE_CHINESE_VASSAL",
-				iEngland : "TXT_KEY_CIV_ENGLAND_CHINESE_VASSAL",
-				iHolyRome : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
-				iRussia : "TXT_KEY_CIV_RUSSIA_CHINESE_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_CHINESE_VASSAL",
-				iMali : "TXT_KEY_CIV_MALI_CHINESE_VASSAL",
-				iPortugal : "TXT_KEY_CIV_PORTUGAL_CHINESE_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_CHINESE_VASSAL",
-				iItaly : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
-				iMongolia : "TXT_KEY_CIV_MONGOLIA_CHINESE_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_CHINESE_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_CHINESE_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_CHINESE_VASSAL",
-				iThailand : "TXT_KEY_CIV_THAILAND_CHINESE_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
-				iAmerica : "TXT_KEY_CIV_AMERICA_CHINESE_VASSAL"},
-			iBabylonia : {
-				iPhoenicia : "TXT_KEY_CIV_PHOENICIA_BABYLONIAN_VASSAL"},	# Babylonian Phoenicia
+			#iChina : {
+			#	iEgypt : "TXT_KEY_CIV_EGYPT_CHINESE_VASSAL",
+			#	iIndia : "TXT_KEY_CIV_INDIA_CHINESE_VASSAL",
+			#	iBabylonia : "TXT_KEY_CIV_BABYLONIA_CHINESE_VASSAL",
+			#	iGreece : "TXT_KEY_CIV_GREECE_CHINESE_VASSAL",
+			#	iPersia : "TXT_KEY_CIV_PERSIA_CHINESE_VASSAL",
+			#	iCarthage : "TXT_KEY_CIV_CARTHAGE_CHINESE_VASSAL",
+			#	iRome : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
+			#	iJapan : "TXT_KEY_CIV_JAPAN_CHINESE_VASSAL",
+			#	iEthiopia : "TXT_KEY_CIV_ETHIOPIA_CHINESE_VASSAL",
+			#	iKorea : "TXT_KEY_CIV_KOREA_CHINESE_VASSAL",
+			#	iMaya : "TXT_KEY_CIV_MAYA_CHINESE_VASSAL",
+			#	iByzantium : "TXT_KEY_CIV_BYZANTIUM_CHINESE_VASSAL",
+			#	iVikings : "TXT_KEY_CIV_VIKINGS_CHINESE_VASSAL",
+			#	iArabia : "TXT_KEY_CIV_ARABIA_CHINESE_VASSAL",
+			#	iTibet : "TXT_KEY_CIV_TIBET_CHINESE_VASSAL",
+			#	iKhmer : "TXT_KEY_CIV_KHMER_CHINESE_VASSAL",
+			#	iIndonesia : "TXT_KEY_CIV_INDONESIA_CHINESE_VASSAL",
+			#	iSpain : "TXT_KEY_CIV_SPAIN_CHINESE_VASSAL",
+			#	iFrance : "TXT_KEY_CIV_FRANCE_CHINESE_VASSAL",
+			#	iEngland : "TXT_KEY_CIV_ENGLAND_CHINESE_VASSAL",
+			#	iHolyRome : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
+			#	iRussia : "TXT_KEY_CIV_RUSSIA_CHINESE_VASSAL",
+			#	iNetherlands : "TXT_KEY_CIV_NETHERLANDS_CHINESE_VASSAL",
+			#	iMali : "TXT_KEY_CIV_MALI_CHINESE_VASSAL",
+			#	iPortugal : "TXT_KEY_CIV_PORTUGAL_CHINESE_VASSAL",
+			#	iInca : "TXT_KEY_CIV_INCA_CHINESE_VASSAL",
+			#	iItaly : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
+			#	iMongolia : "TXT_KEY_CIV_MONGOLIA_CHINESE_VASSAL",
+			#	iAztecs : "TXT_KEY_CIV_AZTECS_CHINESE_VASSAL",
+			#	iTurkey : "TXT_KEY_CIV_TURKEY_CHINESE_VASSAL",
+			#	iMughals : "TXT_KEY_CIV_MUGHALS_CHINESE_VASSAL",
+			#	iThailand : "TXT_KEY_CIV_THAILAND_CHINESE_VASSAL",
+			#	iGermany : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
+			#	iAmerica : "TXT_KEY_CIV_AMERICA_CHINESE_VASSAL"},
+			#iBabylonia : {
+			#	iPhoenicia : "TXT_KEY_CIV_PHOENICIA_BABYLONIAN_VASSAL"},	# Babylonian Phoenicia
 			iGreece : {
 				iIndia : "TXT_KEY_CIV_INDIA_GREEK_VASSAL",	# Greco-Bactrians
 				iEgypt : "TXT_KEY_CIV_EGYPT_GREEK_VASSAL",	#  Ptolemaic Egypt
@@ -713,209 +1170,13 @@ class DynamicCivs:
 			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_ISLAMIC_MODERN",
                 }
 		
-		self.startingLeaders = {
-			iEgypt : iRamesses,
-			iIndia : iAsoka,
-			iChina : iQinShiHuang,
-			iBabylonia : iGilgamesh,
-			iHarappa : iVatavelli,
-			iGreece : iPericles,
-			iPersia : iCyrus,
-			iCarthage : iHiram,
-			iPolynesia : iAhoeitu,
-			iRome : iJuliusCaesar,
-			iJapan : iJimmu,
-			iTamils : iRajendra,
-			iEthiopia : iZaraYaqob,
-			iKorea : iWangKon,
-			iMaya : iPacal,
-			iByzantium : iJustinian,
-			iVikings : iRagnar,
-			iArabia : iHarun,
-			iTibet : iSongtsen,
-			iKhmer : iSuryavarman,
-			iIndonesia : iDharmasetu,
-			iMoors : iRahman,
-			iSpain : iIsabella,
-			iFrance : iCharlemagne,
-			iEngland : iAlfred,
-			iHolyRome : iBarbarossa,
-			iRussia : iYaroslav,
-			iNetherlands : iWillemVanOranje,
-			iMali : iMansaMusa,
-			iPoland : iCasimir,
-			iPortugal : iAfonso,
-			iInca : iHuaynaCapac,
-			iItaly : iLorenzo,
-			iMongolia : iGenghisKhan,
-			iAztecs : iMontezuma,
-			iMughals : iTughluq,
-			iTurkey : iMehmed,
-			iThailand : iNaresuan,
-			iCongo : iMbemba,
-			iGermany : iFrederick,
-			iAmerica : iWashington,
-			iArgentina : iSanMartin,
-			iBrazil : iDomPedro,
-			iCanada : iTrudeau,
-		}
 		
-		self.lateStartingLeaders = {
-			iChina : iTaizong
-		}
-		
-		self.l1700ADLeaders = {
-			iChina : iHongwu,
-			iIndia : iShivaji,
-			iPersia : iAbbas,
-			iJapan : iTokugawa,
-			iVikings : iGustav,
-			iSpain : iPhilip,
-			iFrance : iLouis,
-			iEngland : iVictoria,
-			iHolyRome : iFrancis,
-			iRussia : iPeter,
-			iPoland : iSobieski,
-			iPortugal : iJoao,
-			iMughals : iAkbar,
-			iTurkey : iSuleiman,
-			iGermany : iFrederick,
-		}
-		
-	def getAnarchyTurns(self, iPlayer):
-		return sd.scriptDict['lAnarchyTurns'][iPlayer]
-		
-	def changeAnarchyTurns(self, iPlayer, iAmount):
-		sd.scriptDict['lAnarchyTurns'][iPlayer] += iAmount
-		
-	def getResurrections(self, iPlayer):
-		return sd.scriptDict['lResurrections'][iPlayer]
-		
-	def changeResurrections(self, iPlayer, iAmount):
-		sd.scriptDict['lResurrections'][iPlayer] += iAmount
-		
-	#def getPreviousOwners(self, iPlayer):
-        #        return sd.scriptDict['lPreviousOwners']
-		
-	#def addPreviousOwner(self, iPlayer, iPreviousOwner):
-	#	sd.scriptDict['lPreviousOwners'].append(iPreviousOwner)
-		
-	#def removePreviousOwner(self, iPlayer, iPreviousOwner):
-	#	sd.scriptDict['lPreviousOwner'].remove(iPreviousOwner)
-                
-
-        def setCivDesc(self, iCiv, sName, sInsert=""):
-		if sInsert == "":
-			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, ()))
-		else:
-			gc.getPlayer(iCiv).setCivDescription(localText.getText(sName, (sInsert,)))
-			
-	def setCivName(self, iCiv, sName, sShort, sAdjective):
-		gc.getPlayer(iCiv).setCivName(localText.getText(sName, ()), localText.getText(sShort, ()), localText.getText(sAdjective, ()))
 	
-	def setCivAdjective(self, iCiv, sAdj):
-		gc.getPlayer(iCiv).setCivAdjective(sAdj)
-		
-	def setCivShortDesc(self, iCiv, sShort):
-		gc.getPlayer(iCiv).setCivShortDescription(sShort)
-		
-	def setLeader(self, iCiv, iLeader):
-		if gc.getPlayer(iCiv).getLeader() != iLeader:
-			gc.getPlayer(iCiv).setLeader(iLeader)
+			
+	
 
-        def setup(self):
-                for iPlayer in range(iNumPlayers):
-                        pPlayer = gc.getPlayer(iPlayer)
-                        self.setCivDesc(iPlayer, self.peopleNames[iPlayer])
-			
-			if not gc.getPlayer(iPlayer).isHuman():
-				self.setLeader(iPlayer, self.startingLeaders[iPlayer])
-			
-				if utils.getScenario() == i600AD and iPlayer in self.lateStartingLeaders:
-					self.setLeader(iPlayer, self.lateStartingLeaders[iPlayer])
-					
-				if utils.getScenario() == i1700AD and iPlayer in self.l1700ADLeaders:
-					self.setLeader(iPlayer, self.l1700ADLeaders[iPlayer])
-			
-		if utils.getScenario() == i600AD:
-			self.changeAnarchyTurns(iChina, 3)
-			self.setCivDesc(iByzantium, "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT")
-		elif utils.getScenario() == i1700AD:
-			self.changeResurrections(iEgypt, 1)
-			
-		if utils.getScenario() == i1700AD:
-			for iPlayer in [iChina, iIndia, iTamils, iPersia, iKorea, iJapan, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iPoland, iPortugal, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany]:
-				self.checkName(iPlayer)
-
-        def setDetermineds(self, iPlayer, szName="", szFlag=""):
-                pPlayer = gc.getPlayer(iPlayer)
-                if szName:
-                        self.setCivDesc(iPlayer, szName)
-                if szFlag:
-                        pPlayer.setFlag(szFlag)
-			
-	def isDemocratic(self, iPlayer):
-		pPlayer = gc.getPlayer(iPlayer)
-		iCivic0 = pPlayer.getCivics(0)
-		iCivic1 = pPlayer.getCivics(1)
 		
-		if iCivic0 == iCivicRepublic:
-			return True
-		if iCivic0 == iCivicAutocracy and (iCivic1 == iCivicRepresentation or iCivic1 == iCivicEgalitarianism):
-			return True
-			
-		return False
-		
-	def isCommunist(self, iPlayer):
-		pPlayer = gc.getPlayer(iPlayer)
-		iCivic0 = pPlayer.getCivics(0)
-		iCivic1 = pPlayer.getCivics(1)
-		iCivic3 = pPlayer.getCivics(3)
-		
-		if iCivic3 != iCivicCentralPlanning:
-			return False
-			
-		if iCivic0 == iCivicTheocracy:
-			return False
-			
-		if iCivic1 in [iCivicVassalage, iCivicAbsolutism]:
-			return False
-			
-		return True
-		
-	def isFascist(self, iPlayer):
-		pPlayer = gc.getPlayer(iPlayer)
-		#iCivic0 = pPlayer.getCivics(0)
-		iCivic1 = pPlayer.getCivics(1)
-		
-		if iCivic1 == iCivicTotalitarianism:
-			return True
-			
-		#if iCivic0 == iCivicAutocracy and iCivic1 not in [iCivicRepresentation, iCivicEgalitarianism]:
-		#	return True
-			
-		return False
-		
-	def isEmpire(self, iPlayer):
-		iThreshold = 5
-		
-		if iPlayer == iCarthage: iThreshold = 4
-		elif iPlayer == iIndonesia: iThreshold = 4
-		elif iPlayer == iKorea: iThreshold = 4
-		elif iPlayer == iRussia: iThreshold = 8
-		elif iPlayer == iHolyRome: iThreshold = 3
-		elif iPlayer == iGermany: iThreshold = 4
-		elif iPlayer == iPersia and pPersia.isReborn(): iThreshold = 4
-		elif iPlayer == iItaly: iThreshold = 4
-		elif iPlayer == iInca: iThreshold = 3
-		elif iPlayer == iMongolia: iThreshold = 6
-		elif iPlayer == iPoland: iThreshold = 3
-		elif iPlayer == iMoors: iThreshold = 3
-		elif iPlayer == iTibet: iThreshold = 2
-		elif iPlayer == iPolynesia: iThreshold = 3
-		elif iPlayer == iTamils: iThreshold = 3
-			
-		return gc.getPlayer(iPlayer).getNumCities() >= iThreshold
+	
 		
 		
         def checkName(self, iPlayer, lPreviousOwners=[]):
@@ -1147,6 +1408,8 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
 				return
 				
+			# Vijayanagara?
+				
 		elif iPlayer == iChina:
 			if not bResurrected:
 				if bEmpire:
@@ -1190,17 +1453,22 @@ class DynamicCivs:
 					return
 					
 		elif iPlayer == iBabylonia:
+			# return "Mesopotamian" as adjective here
 			if bCityStates and not bEmpire:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_CITY_STATES")
 				return
 		
+			# do as name/adjective
 			if capital.getName() == "Ninova" or capital.getName() == "Kalhu":
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_ASSYRIA")
 				return
 		
+			
 			if bEmpire and iEra > iAncient:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE")
 				return
+				
+			# also make sure that Mesopotamia is their foreign vassal name
 				
 		elif iPlayer == iGreece:
 			if bCityStates:
@@ -2203,84 +2471,3 @@ class DynamicCivs:
 			return
 				
 		self.setLeader(iPlayer, self.startingLeaders[iPlayer])
-		
-
-        def onCivRespawn(self, iPlayer, tOriginalOwners):
-                #pPlayer = gc.getPlayer(iPlayer)
-                #if tRebirthCiv[iPlayer] != -1:
-                #        pPlayer.setCivilizationType(tRebirthCiv[iPlayer])
-                #pPlayer.setLeader(tRebirthLeaders[iPlayer][0])
-		
-		print "On Respawn of Civ: "+str(iPlayer)
-		
-		self.changeResurrections(iPlayer, 1)
-		
-		if iPlayer == iAztecs:
-			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
-			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
-		elif iPlayer == iInca:
-			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_PERU_ADJECTIVE")
-			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_PERU_SHORT_DESC")
-		elif iPlayer == iHolyRome:
-			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
-			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
-			
-		
-                self.setCivDesc(iPlayer, self.defaultNames[iPlayer])
-                self.checkName(iPlayer, tOriginalOwners)
-		self.checkLeader(iPlayer)
-                
-        def onVassalState(self, argsList):
-                iMaster, iVassal, bVassal, bCapitulated = argsList
-		
-		if iVassal == iAztecs:
-			self.setCivAdjective(iVassal, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
-			self.setCivShortDesc(iVassal, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
-		elif iVassal == iInca:
-			self.setCivAdjective(iVassal, "TXT_KEY_CIV_PERU_ADJECTIVE")
-			self.setCivShortDesc(iVassal, "TXT_KEY_CIV_PERU_SHORT_DESC")
-			
-                self.checkName(iVassal)
-        
-        def onPlayerChangeStateReligion(self, argsList):
-                iPlayer, iNewReligion, iOldReligion = argsList
-		
-		if iNewReligion in [iJudaism, iChristianity]:
-			if iPlayer == iAztecs:
-				self.setCivAdjective(iPlayer, "TXT_KEY_CIV_MEXICO_ADJECTIVE")
-				self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_MEXICO_SHORT_DESC")
-			elif iPlayer == iInca:
-				self.setCivAdjective(iPlayer, "TXT_KEY_CIV_PERU_ADJECTIVE")
-				self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_PERU_SHORT_DESC")
-			
-                self.checkName(iPlayer)
-
-        def onRevolution(self, iPlayer):
-		self.changeAnarchyTurns(iPlayer, 1)
-	
-                self.checkName(iPlayer)
-                
-        def onCityAcquired(self, argsList):
-                iPreviousOwner, iNewOwner, city, bConquest, bTrade = argsList
-                
-		self.checkName(iPreviousOwner)
-		self.checkName(iNewOwner)
-		
-                #if city.getNumRealBuilding(iPalace):
-                #        self.checkName(iPreviousOwner)
-                
-                #if gc.getPlayer(iNewOwner).getNumCities() in [0, 1, 2, 3, 6]:
-                #        self.checkName(iNewOwner)
-		
-	def onCityRazed(self, argsList):
-		city, iPlayer = argsList
-		
-		self.checkName(iPlayer)
-			
-	def onCityBuilt(self, iOwner):
-		self.checkName(iOwner)
-
-        def checkTurn(self, iGameTurn): # called only once every ten turns
-                for iPlayer in range(iNumPlayers):
-                        self.checkName(iPlayer)
-			self.checkLeader(iPlayer)

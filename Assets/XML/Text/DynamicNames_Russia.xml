@@ -44,4 +44,12 @@
 		<Tag>TXT_KEY_CIV_AMERICA_RUSSIAN_VASSAL</Tag>
 		<English>Russian America</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET</Tag>
+		<English>Soviet %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 Soviet Republic</English>
+	</TEXT>
 </Civ4GameText>
