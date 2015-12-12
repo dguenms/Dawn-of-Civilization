@@ -26859,7 +26859,7 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClass> <!--I changed the event to feature the Temple of Solomon instead of a Jewish Monastery--> 
+					<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>8</iExtraCommerce>
 				</BuildingExtraCommerce>

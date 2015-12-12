@@ -28,7 +28,6 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_BROADWAY</Type>
-			<!-- Rhye -->
 			<Path>Art/Movies/Wonders/wembley.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -212,7 +211,6 @@
 			<Type>ART_DEF_MOVIE_CHRIST_THE_REDEEMER</Type>
 			<Path>Art/Movies/Wonders/Christ the Redeemer.bik</Path>
 		</MovieArtInfo>
-		<!-- Rhye - start -->
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_CHANNEL_TUNNEL</Type>
 			<Path>Art/Movies/Wonders/eurotunnel.bik</Path>
@@ -237,7 +235,6 @@
 			<Type>ART_DEF_MOVIE_GREAT_COTHON</Type>
 			<Path>Art/Movies/Wonders/Carthage_Port.bik</Path>
 		</MovieArtInfo>
-		<!-- Rhye - end -->
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_ISHTAR</Type>
 			<Path>Art/Movies/Wonders/Ishtar.bik</Path>

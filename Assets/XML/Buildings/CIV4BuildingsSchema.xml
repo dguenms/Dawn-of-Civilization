@@ -121,7 +121,7 @@
 	<ElementType name="iMinAreaSize" content="textOnly" dt:type="int"/>
 	<ElementType name="iConquestProb" content="textOnly" dt:type="int"/>
 	<ElementType name="iCitiesPrereq" content="textOnly" dt:type="int"/>
-	<ElementType name="iColoniesPrereq" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iColoniesPrereq" content="textOnly" dt:type="int"/>
 	<ElementType name="iTeamsPrereq" content="textOnly" dt:type="int"/>
 	<ElementType name="iLevelPrereq" content="textOnly" dt:type="int"/>
 	<ElementType name="iMinLatitude" content="textOnly" dt:type="int"/>
@@ -477,7 +477,7 @@
 		<element type="iMinAreaSize"/>
 		<element type="iConquestProb"/>
 		<element type="iCitiesPrereq"/>
-		<element type="iColoniesPrereq" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iColoniesPrereq" minOccurs="0"/>
 		<element type="iTeamsPrereq"/>
 		<element type="iLevelPrereq"/>
 		<element type="iMinLatitude"/>

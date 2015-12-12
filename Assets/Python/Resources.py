@@ -207,7 +207,7 @@ class Resources:
 			self.createResource(96, 36, iFish) # Calcutta, Dhaka, Pagan
 
 		if iGameTurn == getTurnForYear(1350):
-			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove jungle in Vietnam
+			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove rainforest in Vietnam
 
 		if (iGameTurn == getTurnForYear(1500)):
 			gc.getMap().plot(35, 54).setFeatureType(-1, 0) # remove Marsh in case it had been placed
@@ -300,6 +300,8 @@ class Resources:
 			self.createResource(39, 16, iFish) # Brazil
 			
 			self.createResource(70, 59, iDeer) # St Petersburg
+			
+			gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
 			
 		if iGameTurn == getTurnForYear(1800):
 			if gc.getDefineINT("PLAYER_REBIRTH_MEXICO") != 0:

@@ -56,12 +56,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -95,8 +93,7 @@
 			<iDistanceMaintenanceModifier>0</iDistanceMaintenanceModifier>
 			<iNumCitiesMaintenanceModifier>0</iNumCitiesMaintenanceModifier>
 			<iCorporationMaintenanceModifier>0</iCorporationMaintenanceModifier>
-			<iWonderProductionModifier>0</iWonderProductionModifier>
-			<iExtraHealth>0</iExtraHealth>
+			<iWonderProductionModifier>0</iWonderProductionModifier>			<iExtraHealth>0</iExtraHealth>
 			<iFreeExperience>0</iFreeExperience>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
 			<iImprovementUpgradeRateModifier>0</iImprovementUpgradeRateModifier>
@@ -129,12 +126,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -200,20 +195,17 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
 			<CommerceModifiers/>
 			<CapitalCommerceModifiers/>
 			<SpecialistExtraCommerces/>
-			<iSpecialistExtraYieldBaseThreshold>7</iSpecialistExtraYieldBaseThreshold>
-			<iSpecialistExtraYieldEraThreshold>0</iSpecialistExtraYieldEraThreshold>
+			<iSpecialistExtraYieldBaseThreshold>7</iSpecialistExtraYieldBaseThreshold>			<iSpecialistExtraYieldEraThreshold>0</iSpecialistExtraYieldEraThreshold>
 			<SpecialistThresholdExtraYields>
 				<iYield>1</iYield>
 			</SpecialistThresholdExtraYields>
@@ -276,12 +268,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -352,12 +342,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -428,12 +416,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -499,12 +485,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -571,12 +555,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -656,12 +638,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers>
 				<iYield>0</iYield>
@@ -731,12 +711,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -814,12 +792,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -890,12 +866,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -927,7 +901,6 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -983,12 +956,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1054,12 +1025,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1130,12 +1099,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1162,7 +1129,6 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -1218,23 +1184,17 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 				<iYield>10</iYield>
 			</YieldModifiers>
 			<CapitalYieldModifiers/>
-			<TradeYieldModifiers>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-			</TradeYieldModifiers>
+			<TradeYieldModifiers/>
 			<CommerceModifiers/>
 			<CapitalCommerceModifiers/>
 			<SpecialistExtraCommerces/>
@@ -1311,12 +1271,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers>
 				<iYield>0</iYield>
 				<iYield>10</iYield>
@@ -1343,7 +1301,6 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 				<ImprovementYieldChange>
@@ -1351,7 +1308,6 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -1375,8 +1331,7 @@
 			<iDistanceMaintenanceModifier>0</iDistanceMaintenanceModifier>
 			<iNumCitiesMaintenanceModifier>0</iNumCitiesMaintenanceModifier>
 			<iCorporationMaintenanceModifier>0</iCorporationMaintenanceModifier>
-			<iCorporationUnhappinessModifier>-50</iCorporationUnhappinessModifier>
-			<iExtraHealth>0</iExtraHealth>
+			<iCorporationUnhappinessModifier>-50</iCorporationUnhappinessModifier>			<iExtraHealth>0</iExtraHealth>
 			<iFreeExperience>0</iFreeExperience>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
 			<iImprovementUpgradeRateModifier>0</iImprovementUpgradeRateModifier>
@@ -1408,12 +1363,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1492,12 +1445,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1563,12 +1514,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1660,8 +1609,7 @@
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iFreeSpecialist>0</iFreeSpecialist>
 			<iTradeRoutes>0</iTradeRoutes>
-			<iCapitalTradeModifier>50</iCapitalTradeModifier>
-			<bNoForeignTrade>0</bNoForeignTrade>
+			<iCapitalTradeModifier>50</iCapitalTradeModifier>			<bNoForeignTrade>0</bNoForeignTrade>
 			<bNoForeignTradeModifier>1</bNoForeignTradeModifier>
 			<bNoCorporations>0</bNoCorporations>
 			<bNoForeignCorporations>0</bNoForeignCorporations>
@@ -1673,12 +1621,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1735,8 +1681,7 @@
 			<iDistanceMaintenanceModifier>0</iDistanceMaintenanceModifier>
 			<iNumCitiesMaintenanceModifier>0</iNumCitiesMaintenanceModifier>
 			<iCorporationMaintenanceModifier>0</iCorporationMaintenanceModifier>
-			<iCorporationCommerceModifier>25</iCorporationCommerceModifier>
-			<iExtraHealth>0</iExtraHealth>
+			<iCorporationCommerceModifier>25</iCorporationCommerceModifier>			<iExtraHealth>0</iExtraHealth>
 			<iFreeExperience>0</iFreeExperience>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
 			<iImprovementUpgradeRateModifier>0</iImprovementUpgradeRateModifier>
@@ -1768,12 +1713,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1807,7 +1750,6 @@
 			<iDistanceMaintenanceModifier>0</iDistanceMaintenanceModifier>
 			<iNumCitiesMaintenanceModifier>0</iNumCitiesMaintenanceModifier>
 			<iCorporationMaintenanceModifier>0</iCorporationMaintenanceModifier>
-			<iProcessModifier>0</iProcessModifier>
 			<iExtraHealth>0</iExtraHealth>
 			<iFreeExperience>0</iFreeExperience>
 			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
@@ -1840,12 +1782,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -1855,9 +1795,7 @@
 			<SpecialistExtraYields>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-				<iYield>0</iYield>
-			</SpecialistExtraYields>
-			<Hurrys/>
+			</SpecialistExtraYields>			<Hurrys/>
 			<SpecialBuildingNotRequireds/>
 			<SpecialistValids/>
 			<BuildingHappinessChanges/>
@@ -1959,12 +1897,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2070,12 +2006,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2097,7 +2031,7 @@
 			<Description>TXT_KEY_CIVIC_PANTHEON</Description>
 			<Civilopedia>TXT_KEY_CIVIC_PANTHEON_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_PANTHEON_STRATEGY</Strategy>
-			<Help>TXT_KEY_CIVIC_CLASSICAL_WONDERS</Help>
+			<Help>TXT_KEY_CIVIC_PANTHEON_HELP</Help>
 			<Button>,Art/Interface/Buttons/Buildings/SpaceElevator.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,5</Button>
 			<TechPrereq>TECH_POLYTHEISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
@@ -2142,12 +2076,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2218,12 +2150,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>25</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2289,12 +2219,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2365,12 +2293,10 @@
 			<iStateReligionUnitProductionModifier>25</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2437,12 +2363,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2511,12 +2435,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2528,7 +2450,6 @@
 			<SpecialistValids/>
 			<BuildingHappinessChanges/>
 			<BuildingHealthChanges/>
-			<BuildingProductionModifiers/>
 			<FeatureHappinessChanges/>
 			<ImprovementYieldChanges/>
 			<WeLoveTheKing/>
@@ -2584,12 +2505,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2666,12 +2585,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2743,12 +2660,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2777,11 +2692,9 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
-			<DomainProductionModifiers/>
 			<DomainExperienceModifiers>
 				<DomainExperienceModifier>
 					<DomainType>DOMAIN_LAND</DomainType>
@@ -2789,7 +2702,6 @@
 				</DomainExperienceModifier>
 			</DomainExperienceModifiers>
 			<WeLoveTheKing/>
-			<!-- Rhye - end -->
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_MILITARY</CivicOptionType>
@@ -2841,12 +2753,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2871,7 +2781,6 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 				<ImprovementYieldChange>
@@ -2879,7 +2788,6 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -2901,7 +2809,7 @@
 			<CivicOptionType>CIVICOPTION_MILITARY</CivicOptionType>
 			<Type>CIVIC_MULTILATERALISM</Type>
 			<Description>TXT_KEY_CIVIC_MULTILATERALISM</Description>
-			<Civilopedia>TXT_KEY_CIVIC_PACIFISM_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_CIVIC_MULTILATERALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_MULTILATERALISM_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Buildings/UnitedNations.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,7</Button>
 			<TechPrereq>TECH_RADIO</TechPrereq>
@@ -2948,12 +2856,10 @@
 			<iStateReligionUnitProductionModifier>0</iStateReligionUnitProductionModifier>
 			<iStateReligionBuildingProductionModifier>0</iStateReligionBuildingProductionModifier>
 			<iStateReligionFreeExperience>0</iStateReligionFreeExperience>
-			<!-- Rhye - start -->
 			<bStabilityVassalBonus>0</bStabilityVassalBonus>
 			<bStabilityFoundBonus>0</bStabilityFoundBonus>
 			<bStabilityConquestBonus>0</bStabilityConquestBonus>
 			<bStabilityCommerceBonus>0</bStabilityCommerceBonus>
-			<!-- Rhye - end -->
 			<YieldModifiers/>
 			<CapitalYieldModifiers/>
 			<TradeYieldModifiers/>
@@ -2965,7 +2871,6 @@
 			<SpecialistValids/>
 			<BuildingHappinessChanges/>
 			<BuildingHealthChanges/>
-			<BuildingProductionModifiers/>
 			<FeatureHappinessChanges/>
 			<ImprovementYieldChanges/>
 			<WeLoveTheKing/>

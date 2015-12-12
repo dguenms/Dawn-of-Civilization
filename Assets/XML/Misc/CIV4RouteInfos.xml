@@ -52,17 +52,12 @@
 			<iValue>2</iValue>
 			<iAdvancedStartCost>12</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<iMovement>30</iMovement>
+			<iMovement>20</iMovement>
 			<iFlatMovement>30</iFlatMovement>
 			<BonusType>NONE</BonusType>
 			<PrereqOrBonuses/>
 			<Yields/>
-			<TechMovementChanges>
-				<TechMovementChange>
-					<PrereqTech>TECH_MASONRY</PrereqTech>
-					<iMovementChange>-10</iMovementChange>
-				</TechMovementChange>
-			</TechMovementChanges>
+			<TechMovementChanges/>
 			<Button>Art/Interface/Buttons/BuildPavedRoad.dds</Button>
 		</RouteInfo>
 	</RouteInfos>

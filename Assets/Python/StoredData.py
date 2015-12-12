@@ -63,7 +63,6 @@ class StoredData:
 				    'lResurrections': [0 for i in range(con.iNumPlayers)],
 				    'lPlayerEnabled': [True for i in con.lSecondaryCivs],
 				    'lCityFounded': [False for i in range(con.iNumMinorCities)],
-				    'lTimedConquests' : [],
                                      #------------Religions
                                     'iSeed': -1,
 				    'lReformationDecision': [-1 for i in range(con.iNumPlayers)],
@@ -140,17 +139,6 @@ class StoredData:
 				    'dSecedingCities' : {},
 				}
                 self.save()
-		
-	# RISE AND FALL
-	
-	def timedConquest(self, iPlayer, x, y):
-		self.scriptDict['lTimedConquests'].append((iPlayer, x, y))
-		
-	def getTimedConquests(self):
-		return self.scriptDict['lTimedConquests']
-		
-	def resetTimedConquests(self):
-		self.scriptDict['lTimedConquests'] = []
 		
 	# STABILITY
 		

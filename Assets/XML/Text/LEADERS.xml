@@ -1,0 +1,2193 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ABBAS</Tag>
+  <English>Abbas I</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ABBAS_APPEARS</Tag>
+  <English>When the Iranians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ABU_BAKR</Tag>
+  <English>Abu Bakr</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ABUBAKR_APPEARS</Tag>
+  <English>NEVER</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_AFONSO</Tag>
+  <English>Afonso Henriques</English>
+  <French>Alphonse Henriques</French>
+  <German>Alfons Henriques</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_AFONSO_APPEARS</Tag>
+  <English>When the Portuguese Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_AHOEITU</Tag>
+  <English>Aho'eitu</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_AHOEITU_APPEARS</Tag>
+  <English>When the Polynesians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_AKBAR</Tag>
+  <English>Akbar</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_AKBAR_APPEARS</Tag>
+  <English>When the Mughals discover Patronage</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ALEXANDER</Tag>
+  <English>Alexander</English>
+  <French>
+   <Text>Alexandre le Grand</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Alexander</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Alessandro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Alejandro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ALEXANDER_APPEARS</Tag>
+  <English>When the Greeks control five or more cities[NEWLINE]or When the Greeks are not running City States and have discovered Code of Laws</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ALFRED</Tag>
+  <English>Alfred</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ALFRED_APPEARS</Tag>
+  <English>When the English Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ALP_ARSLAN</Tag>
+  <English>Alp Arslan</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ALPARSLAN_APPEARS</Tag>
+  <English>When the Seljuks Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ASOKA</Tag>
+  <English>Asoka</English>
+  <French>
+   <Text>Ashoka</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Ashoka</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Asoka</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Asoka</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ASOKA_APPEARS</Tag>
+  <English>When the Indians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ATATURK</Tag>
+  <English>Atat&#252;rk</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ATATURK_APPEARS</Tag>
+  <English>When the Turks are running Republic and are in or past the Industrial Age[NEWLINE]or when the Turks are running Autocracy and Representation or Egalitarianism and are in or past the Industrial Age[NEWLINE]or when the Turks are running Totalitarianism and are in or past the Industrial Age[NEWLINE]or when the Turks are running Central Planning, are not running Theocracy, Vassalage or Absolutism and are in or past the Industrial Age</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_AUGUSTUS</Tag>
+  <English>Augustus Caesar</English>
+  <French>
+   <Text>C&#233;sar Auguste</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Augustus C&#228;sar</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Cesare Augusto</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>C&#233;sar Augusto</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_AUGUSTUS_APPEARS</Tag>
+  <English>When the Greeks control five or more cities[NEWLINE]or When the Greeks are not running City States and have discovered Code of Laws</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BAIBARS</Tag>
+  <English>Baibars</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BAIBARS_APPEARS</Tag>
+  <English>When the Egyptians Respawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BARBARIAN</Tag>
+  <English>Barbarian</English>
+  <French>
+   <Text>Barbare</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Barbar</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Barbarico</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>B&#225;rbaro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BARBAROSSA</Tag>
+  <English>Barbarossa</English>
+  <French>
+   <Text>Barberousse</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <Spanish>
+   <Text>Barbarroja</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BARBAROSSA_APPEARS</Tag>
+  <English>When the Germans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BASIL</Tag>
+  <English>Basil II</English>
+  <French>
+   <Text>Basil II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>Basileios II.</German>
+  <Italian>
+   <Text>Basilio II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Basilio II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BASIL_APPEARS</Tag>
+  <English>When the year is past 1000 AD</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BISMARCK</Tag>
+  <English>Bismarck</English>
+  <French>
+   <Text>Bismarck</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bismarck</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Bismarck</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Bismarck</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BISMARCK_APPEARS</Tag>
+  <English>When the Prussians discover Nationalism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BOLIVAR</Tag>
+  <English>Bolivar</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BOLIVAR_APPEARS</Tag>
+  <English>When the Colombians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BOUDICA</Tag>
+  <English>Boudica</English>
+  <French>
+   <Text>Boadic&#233;e</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Boudicca</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Boudica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Boadicea</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BOUDICIA_APPEARS</Tag>
+  <English>NEVER</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BRENNUS</Tag>
+  <English>Brennus</English>
+  <French>
+   <Text>Brennus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Brennus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Brenno</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Breno</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_BRENNUS_APPEARS</Tag>
+  <English>When the Celts Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CARDENAS</Tag>
+  <English>Cardenas</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CARDENAS_APPEARS</Tag>
+  <English>When the Mexicans enter the Modern Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CASIMIR</Tag>
+  <English>Casimir III</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CASIMIR_APPEARS</Tag>
+  <English>When the Polish Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CATHERINE</Tag>
+  <English>
+   <Text>Catherine</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>Catherine</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Katharina</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Caterina</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Catalina</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CATHERINE_APPEARS</Tag>
+  <English>When the Russians are in the Renaissance Era and the year is past 1750 AD</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CAVOUR</Tag>
+  <English>Cavour</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CAVOUR_APPEARS</Tag>
+  <English>When the Italians enter the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHANDRAGUPTA</Tag>
+  <English>Chandragupta II</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHANDRAGUPTA_APPEARS</Tag>
+  <English>When the Indians discover Currency</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHARLEMAGNE</Tag>
+  <English>Charlemagne</English>
+  <French>
+   <Text>Charlemagne</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Karl der Gro&#223;e</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Carlo Magno</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Carlomagno</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHARLEMAGNE_APPEARS</Tag>
+  <English>When the French Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHARLES</Tag>
+  <English>Charles V</English>
+  <German>
+   <Text>Karl V.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Carlo V</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Carlos V</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHARLES_APPEARS</Tag>
+  <English>When the Germans enter the Renaissance Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHIANG_KAISHEK</Tag>
+  <English>Chiang Kai-Shek</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHINESE_LEADER</Tag>
+  <English>Mao Zedong</English>
+  <French>
+   <Text>Mao Ts&#233;-Tung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Mao Tse-tung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mao Tse Tung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mao Zedong</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHURCHILL</Tag>
+  <English>Churchill</English>
+  <French>
+   <Text>Churchill</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Churchill</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Churchill</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Churchill</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CHURCHILL_APPEARS</Tag>
+  <English>When the English enter the Modern Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CIV_DESCRIPTION</Tag>
+  <English>%s1_leader of %s2_civ_short_name</English>
+  <French>%s1_leader des %s2_civ_short_name</French>
+  <German>%s1_leader von %s2_civ_short_name</German>
+  <Italian>%s1_leader della civilt&#224; %s2:2_civ_short_name</Italian>
+  <Spanish>%s1_leader de %s2_civ_short_name</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CIXI</Tag>
+  <English>Cixi</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CYRUS</Tag>
+  <English>Cyrus</English>
+  <French>
+   <Text>Cyrus II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kyrus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ciro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ciro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_CYRUS_APPEARS</Tag>
+  <English>When the Persians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DARIUS</Tag>
+  <English>Darius I</English>
+  <French>
+   <Text>Darios Ier</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Dareios I.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Dario I</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Dar&#237;o I</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DARIUS_APPEARS</Tag>
+  <English>When the Persians control five or more cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DE_GAULLE</Tag>
+  <English>De Gaulle</English>
+  <French>
+   <Text>De Gaulle</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>De Gaulle</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>De Gaulle</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>De Gaulle</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DEGAULLE_APPEARS</Tag>
+  <English>When the French enter the Modern Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DESC_GENERIC</Tag>
+  <English>Leader Description</English>
+  <French>Description du dirigeant</French>
+  <German>Beschreibung Staatsoberhaupt</German>
+  <Italian>Descrizione del leader</Italian>
+  <Spanish>Descripci&#243;n del l&#237;der</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DHARMASETU</Tag>
+  <English>Dharmasetu</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DHARMASETU_APPEARS</Tag>
+  <English>When the Indonesians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DOM_PEDRO</Tag>
+  <English>Pedro II</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_DOMPEDRO_APPEARS</Tag>
+  <English>When the Brazilians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ELISHAT</Tag>
+  <English>Elishat</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ELIZABETH</Tag>
+  <English>
+   <Text>Elizabeth</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>Elizabeth</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Elizabeth</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Elisabetta</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Isabel I</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ELIZABETH_APPEARS</Tag>
+  <English>When the English enter the Renaissance Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_EPAMINONDAS</Tag>
+  <English>
+   <Text>Epaminondas</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>Epaminondas</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Epaminondas</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Epaminonda</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Epaminondas</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_FILIPE</Tag>
+  <English>Philip II</English>
+  <French>
+   <Text>Philippe II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Philipp II.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Filippo II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Felipe II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_FRANCIS</Tag>
+  <English>Francis I</English>
+  <French>
+   <Text>Francois I</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Franz I.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Francesco I</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Francisco I</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_FRANCIS_APPEARS</Tag>
+  <English>When the Germans enter the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_FRANCO</Tag>
+  <English>Franco</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_FRANCO_APPEARS</Tag>
+  <English>When the Spanish are running Totalitarianism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_FRANKLINROOSEVELT_APPEARS</Tag>
+  <English>When the Americans enter the Modern Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_FREDERICK</Tag>
+  <English>Frederick</English>
+  <French>
+   <Text>Fr&#233;d&#233;ric II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Friedrich</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Federico</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Federico</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_FREDERICK_APPEARS</Tag>
+  <English>When the Prussians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_GANDHI</Tag>
+  <English>Gandhi</English>
+  <French>
+   <Text>Gandhi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gandhi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Gandhi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Gandhi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_GANDHI_APPEARS</Tag>
+  <English>When the Indians are running Republic and are in or past the Modern Age[NEWLINE]or when the Indians are running Autocracy and Representation or Egalitarianism and are in or past the Modern Age[NEWLINE]or when the Indians are running Totalitarianism and are in or past the Modern Age[NEWLINE]or when the Indians are running Central Planning, are not running Theocracy, Vassalage or Absolutism and are in or past the Modern Age</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_GENGHIS_KHAN</Tag>
+  <English>Genghis Khan</English>
+  <French>
+   <Text>Gengis</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Dschinghis Khan</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Genghis Khan</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Gengis Kan</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_GENGHISKHAN_APPEARS</Tag>
+  <English>When the Mongols Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_GILGAMESH</Tag>
+  <English>Sargon</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_GILGAMESH_APPEARS</Tag>
+  <English>When the Babylonians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_GUSTAV</Tag>
+  <English>Gustav Adolph</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_GUSTAV_APPEARS</Tag>
+  <English>When the Vikings enter the Renaissance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HAGNON</Tag>
+  <English>
+   <Text>Hagnon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>Hagnon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Hagnon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Agnone</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Hagnon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HAILE_SELASSIE</Tag>
+  <English>Haile Selassie I</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HAILESELASSIE_APPEARS</Tag>
+  <English>When the Ethiopians enter the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HAMMURABI</Tag>
+  <English>Hammurabi</English>
+  <French>
+   <Text>Hammourabi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Hammurabi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Hammurabi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Hammurabi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HAMMURABI_APPEARS</Tag>
+  <English>When the year is past 1600 BC</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HANNIBAL</Tag>
+  <English>Hannibal</English>
+  <French>
+   <Text>Hannibal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Hannibal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Annibale</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>An&#237;bal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HANNIBAL_APPEARS</Tag>
+  <English>When the Phoenicians have their capital at Qart-Hadasht[NEWLINE]or When the Phoenicians control four or more cities[NEWLINE]or When the Phoenicians are not running City States and have discovered Code of Laws</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HARUN</Tag>
+  <English>Harun al-Rashid</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HARUN_APPEARS</Tag>
+  <English>When the Arabs Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HATSHEPSUT</Tag>
+  <English>Cleopatra VII</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HATSHEPSUT_APPEARS</Tag>
+  <English>When the Egyptians discover Literature</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HAYAM_WURUK</Tag>
+  <English>Hayam Wuruk</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HAYAMWURUK_APPEARS</Tag>
+  <English>When the Indonesians control four or more cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HIRAM</Tag>
+  <English>Hiram I</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HIRAM_APPEARS</Tag>
+  <English>When the Phoenicians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HITLER</Tag>
+  <English>Hitler</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HITLER_APPEARS</Tag>
+  <English>When the Prussians are running Totalitarianism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HONGWU</Tag>
+  <English>Hongwu</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HONGWU_APPEARS</Tag>
+  <English>When the Chinese are in the Renaissance Era and when the year is past 1400 AD[NEWLINE]or When the Chinese Respawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HUAYNA_CAPAC</Tag>
+  <English>Huayna Capac</English>
+  <French>
+   <Text>Huayna Capac</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Huayna Capac</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Huayna Capac</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Huayna C&#225;pac</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_HUAYNACAPAC_APPEARS</Tag>
+  <English>When the Incans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_IBN_TUGHLUQ</Tag>
+  <English>Muhammad bin Tughluq</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_INDEPENDENT</Tag>
+  <English>Independent Leader</English>
+  <French>
+   <Text>Dirigeant ind&#233;pendant</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Unabh&#228;ngigen-Staatsoberhaupt</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Leader indipendente</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>L&#237;der aut&#243;nomo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ISABELLA</Tag>
+  <English>
+   <Text>Isabella I</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>Isabelle</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Isabella</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Isabella</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Isabel la Cat&#243;lica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ISABELLA_APPEARS</Tag>
+  <English>When the Spanish Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JIMMU</Tag>
+  <English>Kammu</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JIMMU_APPEARS</Tag>
+  <English>When the Japanese Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JOAO</Tag>
+  <English>Joao II</English>
+  <French>
+   <Text>Jean II de Portugal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Joao II.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Giovanni II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Juan II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JOAO_APPEARS</Tag>
+  <English>When the Portuguese discover Optics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JUAREZ</Tag>
+  <English>Juarez</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JUAREZ_APPEARS</Tag>
+  <English>When the Mexicans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JULIUS_CAESAR</Tag>
+  <English>Julius Caesar</English>
+  <French>
+   <Text>Jules C&#233;sar</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Julius C&#228;sar</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Giulio Cesare</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Julio C&#233;sar</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JULIUSCAESAR_APPEARS</Tag>
+  <English>When the Romans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JUSTINIAN</Tag>
+  <English>Justinian I</English>
+  <French>
+   <Text>Justinien Ier</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Justinian I.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Giustiniano I</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Justiniano I</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_JUSTINIAN_APPEARS</Tag>
+  <English>When the Byzantines Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_KANGXI</Tag>
+  <English>Kangxi</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_KHOMEINI</Tag>
+  <English>Khomeini</English>
+  <German>Chomeini</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_KHOMEINI_APPEARS</Tag>
+  <English>When the Iranians enter the Modern Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_KRISHNA_DEVA_RAYA</Tag>
+  <English>Krishna Deva Raya</English>
+  <German>Krishna Deva Raya</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_KRISHNA_DEVA_RAYA_APPEARS</Tag>
+  <English>When the Tamils enter the Renaissance Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_KUBLAI_KHAN</Tag>
+  <English>Kublai Khan</English>
+  <French>
+   <Text>Kubilay Khan</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kublai Khan</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Kublai Khan</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Kublai Kan</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_KUBLAIKHAN_APPEARS</Tag>
+  <English>When the year is past 1400 AD</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_LINCOLN</Tag>
+  <English>Lincoln</English>
+  <French>
+   <Text>Lincoln</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Lincoln</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Lincoln</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Lincoln</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_LINCOLN_APPEARS</Tag>
+  <English>When the year is past 1850 AD</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_LOBSANG_GYATSO</Tag>
+  <English>Lobsang Gyatso</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_LOBSANGGYATSO_APPEARS</Tag>
+  <English>When the year is past 1500 AD</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_LORENZO</Tag>
+  <English>Lorenzo de' Medici</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_LORENZO_APPEARS</Tag>
+  <English>When the Italians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_LOUIS_APPEARS</Tag>
+  <English>When the French enter the Renaissance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_LOUISXIV</Tag>
+  <English>Louis XIV</English>
+  <French>
+   <Text>Louis XIV</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Ludwig XIV.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Luigi XIV</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Luis XIV</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MAJOR_WASHINGTON</Tag>
+  <English>Major George Washington</English>
+  <French>George Washington</French>
+  <German>George Washington</German>
+  <Italian>George Washington</Italian>
+  <Spanish>George Washington</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MANSA_MUSA</Tag>
+  <English>Mansa Musa</English>
+  <French>
+   <Text>Kankan Moussa</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Mansa Musa</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mansa Musa</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Kankan Musa</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MANSAMUSA_APPEARS</Tag>
+  <English>When the Mandinka Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MAO_APPEARS</Tag>
+  <English>When the Chinese are running Central Planning and are not running Theocracy, Vassalage or Absolutism[NEWLINE]or When the Chinese are in or past the Industrial Era and are running Republic[NEWLINE]or When the Chinese are in or past the Industrial Era and are running Autocracy and Representation or Egalitarianism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MARIA_APPEARS</Tag>
+  <English>When the Portuguese enter the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MARIA_II</Tag>
+  <English>Maria II</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MARQUIS_DUNQUESNE</Tag>
+  <English>Marquis Duquesne</English>
+  <Italian>Marchese Duquesne</Italian>
+  <Spanish>Duquesne</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MBEMBA</Tag>
+  <English>Mbemba</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MBEMBA_APPEARS</Tag>
+  <English>When the Congolese Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MEHMED</Tag>
+  <English>Mehmed II</English>
+  <French>
+   <Text>Mehmet II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Mehmet II.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mehmet II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mehmet II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MEHMED_APPEARS</Tag>
+  <English>When the Turks Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MEIJI</Tag>
+  <English>Meiji</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MEIJI_APPEARS</Tag>
+  <English>When the Japanese enter the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MONGKUT</Tag>
+  <English>Mongkut</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MONGKUT_APPEARS</Tag>
+  <English>When the Thais enter the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MONTEZUMA</Tag>
+  <English>Montezuma II</English>
+  <French>
+   <Text>Moctezuma II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Montezuma</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Montezuma</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Moctezuma</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_MONTEZUMA_APPEARS</Tag>
+  <English>When the Aztecs Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NAPOLEON</Tag>
+  <English>Napoleon</English>
+  <French>
+   <Text>Napol&#233;on</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Napoleon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Napoleone</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Napole&#243;n</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NAPOLEON_APPEARS</Tag>
+  <English>When the French discover Nationalism[NEWLINE]or When the French are in the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NARESUAN</Tag>
+  <English>Naresuan</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NARESUAN_APPEARS</Tag>
+  <English>When the Thais Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NASSER</Tag>
+  <English>Nasser</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NASSER_APPEARS</Tag>
+  <English>When the Egyptians are running Republic and are in or past the Modern Age[NEWLINE]or when the Egyptians are running Autocracy and Representation or Egalitarianism and are in or past the Modern Age[NEWLINE]or when the Egyptians are running Totalitarianism and are in or past the Modern Age[NEWLINE]or when the Egyptians are running Central Planning, are not running Theocracy, Vassalage or Absolutism and are in or past the Modern Age</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NATIVE</Tag>
+  <English>Native Leader</English>
+  <French>
+   <Text>Dirigeant natif</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Eingeborenen-Staatsoberhaupt</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>Leader dei nativi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>L&#237;der nativo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NICHOLAS_APPEARS</Tag>
+  <English>When the Russians enter the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_NICHOLAS_II</Tag>
+  <English>Nicholas II</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PACAL</Tag>
+  <English>Pacal I</English>
+  <French>
+   <Text>Pacal II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Pacal II.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pakal II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pacal II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PACAL_APPEARS</Tag>
+  <English>When the Mayans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PERICLES</Tag>
+  <English>Pericles</English>
+  <French>
+   <Text>P&#233;ricl&#232;s</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Perikles</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pericle</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pericles</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PERICLES_APPEARS</Tag>
+  <English>When the Greeks Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PERON</Tag>
+  <English>Per&#243;n</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PERON_APPEARS</Tag>
+  <English>When the Argentines enter the Modern Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PETER</Tag>
+  <English>Peter I</English>
+  <French>
+   <Text>Pierre le Grand</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Peter</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pietro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pedro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PETER_APPEARS</Tag>
+  <English>When the Russians enter the Renaissance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PHILIP_APPEARS</Tag>
+  <English>When a Civilization that is not the Mayans, the Incans or the Aztecs has met the Mayans, the Incans or the Aztecs</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_PITTACUS</Tag>
+  <English>Pittacus</English>
+  <French>
+   <Text>Pittacus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Pittakus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pittaco</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pittacus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_POLYCRATES</Tag>
+  <English>Polycrates</English>
+  <French>
+   <Text>Polycrate</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Polykrates</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Policrate</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Polycrates</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_QIN_SHI_HUANG</Tag>
+  <English>Qin Shi Huangdi</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_QINSHIHUANG_APPEARS</Tag>
+  <English>When the Chinese Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_RAGNAR</Tag>
+  <English>Ragnar</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_RAGNAR_APPEARS</Tag>
+  <English>When the Vikings Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_RAHMAN</Tag>
+  <English>Abd-ar-Rahman III</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_RAHMAN_APPEARS</Tag>
+  <English>When the Moors Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_RAJENDRA</Tag>
+  <English>Rajendra Chola I</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_RAJENDRA_APPEARS</Tag>
+  <English>When the Tamils Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_RAMESSES</Tag>
+  <English>Ramesses II</English>
+  <French>
+   <Text>Rams&#232;s II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Ramses II.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ramses II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Rams&#233;s II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_RAMESSES_APPEARS</Tag>
+  <English>When the Egyptians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ROOSEVELT</Tag>
+  <English>Roosevelt</English>
+  <French>
+   <Text>Roosevelt</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Roosevelt</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Roosevelt</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Roosevelt</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SALADIN</Tag>
+  <English>Saladin</English>
+  <French>
+   <Text>Saladin</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Saladin</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Saladino</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Saladino</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SALADIN_APPEARS</Tag>
+  <English>When the year is past 1000 AD</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SAN_MARTIN</Tag>
+  <English>San Martin</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SANMARTIN_APPEARS</Tag>
+  <English>When the Argentines Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SANTA_ANNA</Tag>
+  <English>Santa Anna</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SANTAANNA_APPEARS</Tag>
+  <English>When the Mexicans are running Totalitarianism[NEWLINE]or when the Mexicans are not running Republic or running Autocracy and Representation or Egalitarianism or running Central Planning without Theocracy, Vassalage, Absolutism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SHAKA</Tag>
+  <English>Shaka</English>
+  <French>
+   <Text>Chaka</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Shaka</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Shaka</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Chaka</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SHAKA_APPEARS</Tag>
+  <English>NEVER</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SHINGAS</Tag>
+  <English>Shingas</English>
+  <Italian>Shinga</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SHIVAJI</Tag>
+  <English>Shahuji</English>
+  <German>Shahuji</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SHIVAJI_APPEARS</Tag>
+  <English>When the Indians enter the Renaissance Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SITTING_BULL</Tag>
+  <English>Sitting Bull</English>
+  <French>
+   <Text>Sitting Bull</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Sitting Bull</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Toro Seduto</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Toro Sentado</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SITTINGBULL_APPEARS</Tag>
+  <English>NEVER</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SOBIESKI</Tag>
+  <English>Sobieski</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SOBIESKI_APPEARS</Tag>
+  <English>When the Polish enter the Renaissance Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SONGTSEN</Tag>
+  <English>Songtsen Gampo</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SONGTSEN_APPEARS</Tag>
+  <English>When the Tibetans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_STALIN</Tag>
+  <English>Stalin</English>
+  <French>
+   <Text>Staline</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Stalin</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Stalin</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Stalin</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_STALIN_APPEARS</Tag>
+  <English>When the Russians are running Republic and are in or past the Industrial Age[NEWLINE]or when the Russians are running Autocracy and Representation or Egalitarianism and are in or past the Industrial Age[NEWLINE]or when the Russians are running Totalitarianism and are in or past the Industrial Age[NEWLINE]or when the Russians are running Central Planning, are not running Theocracy, Vassalage or Absolutism and are in or past the Industrial Age</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SUHARTO</Tag>
+  <English>Suharto</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SUHARTO_APPEARS</Tag>
+  <English>When the Indonesians enter the Modern Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SULEIMAN</Tag>
+  <English>Suleiman I</English>
+  <French>
+   <Text>Soliman</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>S&#252;leyman I.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Solimano</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Solim&#225;n</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SULEIMAN_APPEARS</Tag>
+  <English>When the Turks discover Patronage</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SURYAVARMAN</Tag>
+  <English>Suryavarman II</English>
+  <French>
+   <Text>Suryavarman II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Suryavarman II.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Suryavarman II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Suryavarman II</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_SVEIN</Tag>
+  <English>Svein Forkbeard</English>
+  <French>
+   <Text>Sweyn &#224; la barbe-fourchue</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Sven Gabelbart</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Svein Barbaforcuta</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Svein Barba Bifurcada</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_TAIZONG</Tag>
+  <English>Taizong</English>
+  <German>Tang Taizong</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_TAIZONG_APPEARS</Tag>
+  <English>When the Chinese enter the Medieval Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_TIPU_SULTAN</Tag>
+  <English>Tipu Sultan</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_TOKUGAWA</Tag>
+  <English>Oda Nobunaga</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_TOKUGAWA_APPEARS</Tag>
+  <English>When the Japanese discover Feudalism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_TRUDEAU</Tag>
+  <English>Trudeau</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_TRUDEAU_APPEARS</Tag>
+  <English>When the Canadians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_TUGHLUQ_APPEARS</Tag>
+  <English>When the Mughals Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_VATAVELLI</Tag>
+  <English>Vatavelli</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_VATAVELLI_APPEARS</Tag>
+  <English>When the Harappans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_VICTORIA</Tag>
+  <English>
+   <Text>Victoria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>Victoria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Victoria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Vittoria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Victoria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_VICTORIA_APPEARS</Tag>
+  <English>When the English enter the Industrial Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_WANGKON</Tag>
+  <English>Wang Kon</English>
+  <French>
+   <Text>Wang Kon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Wang Kon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Wang Kon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Wang Kon</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_WANGKON_APPEARS</Tag>
+  <English>When the Koreans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_WASHINGTON</Tag>
+  <English>Washington</English>
+  <French>
+   <Text>Washington</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Washington</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Washington</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Washington</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_WASHINGTON_APPEARS</Tag>
+  <English>When the Americans Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_WILLEM_VAN_ORANJE</Tag>
+  <English>Willem I</English>
+  <French>
+   <Text>Guillaume d'Orange</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Wilhelm von Oranien</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Guglielmo d'Orange</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Guillermo de Orange</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_WILLEMVANORANJE_APPEARS</Tag>
+  <English>When the Dutch Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_WURYAVARMAN_APPEARS</Tag>
+  <English>When the Khmer Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_YAQUB</Tag>
+  <English>Yaqub al-Mansur</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_YAQUB_APPEARS</Tag>
+  <English>When the Moors Capital is not in Andalusia</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_YAROSLAV</Tag>
+  <English>Yaroslav I</English>
+  <French>
+   <Text>Iaroslav</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Jaroslaw</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Jaroslav</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Yaroslav</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_YAROSLAV_APPEARS</Tag>
+  <English>When the Russians Spawn</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ZARA_YAQOB</Tag>
+  <English>Zara Yaqob</English>
+  <French>
+   <Text>Zara Yacoub</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Zara Yaqob</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Zara Yaqob</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Zara Yakub</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_LEADER_ZARAYAQOB_APPEARS</Tag>
+  <English>When the Ethiopians Spawn</English>
+ </TEXT>
+</Civ4GameText>
