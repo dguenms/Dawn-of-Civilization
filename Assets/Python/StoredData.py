@@ -573,6 +573,20 @@ class StoredData:
 	def isFirstWorldColonized(self):
 		return self.getFirstNewWorldColony() != -1
 		
+	# DYNAMIC NAMES
+	
+	def getAnarchyTurns(self, iPlayer):
+		return sd.scriptDict['lAnarchyTurns'][iPlayer]
+		
+	def changeAnarchyTurns(self, iPlayer, iChange):
+		sd.scriptDict['lAnarchyTurns'][iPlayer] += iChange
+		
+	def getResurrections(self, iPlayer):
+		return sd.scriptDict['lResurrections'][iPlayer]
+		
+	def changeResurrections(self, iPlayer, iChange):
+		sd.scriptDict['lResurrections'][iPlayer] += iChange
+		
 # All modules import the following single instance, not the class
 
 sd = StoredData()
