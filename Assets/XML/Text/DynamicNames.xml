@@ -76,4 +76,32 @@
 		<Tag>TXT_KEY_ADJECTIVE_TITLE</Tag>
 		<English>%s2 %s1</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CALIPHATE_ADJECTIVE</Tag>
+		<English>%s2 Caliphate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SULTANATE_ADJECTIVE</Tag>
+		<English>%s2 Sultanate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SULTANATE_OF</Tag>
+		<English>Sultanate of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONFEDERACY_ADJECTIVE</Tag>
+		<English>%s2 Confederacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ISLAMIC_REPUBLIC_OF</Tag>
+		<English>Islamic Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ISLAMIC_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 Islamic Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English></English>
+	</TEXT>
 </Civ4GameText>
