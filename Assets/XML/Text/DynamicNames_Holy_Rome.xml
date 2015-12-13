@@ -13,32 +13,16 @@
 		<English>The Austrians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_PEOPLES</Tag>
 		<English>Germanic Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_DEFAULT</Tag>
-		<English>Kingdom of Germany</English>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Austria</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_COMMUNIST</Tag>
-		<English>Socialist Republic of Austria</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC_FASCIST</Tag>
-		<English>Greater Austrian Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_NAZI_VASSAL</Tag>
-		<English>Ostmark</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_SOVIET_VASSAL</Tag>
-		<English>Soviet Austria</English>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_FASCIST</Tag>
+		<English>Greater %s2 Empire</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_HRE</Tag>
@@ -53,8 +37,8 @@
 		<English>Austro-Hungarian Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_AUSTRIA_ARCHDUCHY</Tag>
-		<English>Archduchy of Austria</English>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_ARCHDUCHY_OF</Tag>
+		<English>Archduchy of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_HABSBURG_EMPIRE</Tag>
@@ -73,19 +57,31 @@
 		<English>Austrian</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_HOLY_ROMAN_VASSAL</Tag>
-		<English>Crown of Italy</English>
+		<Tag>TXT_KEY_CIV_HOLY_ROMAN_ITALY</Tag>
+		<English>Crown of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_HOLY_ROMAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_HOLY_ROMAN_FRANCE</Tag>
 		<English>West Francia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_NETHERLANDS_HOLY_ROMAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_HOLY_ROMAN_NETHERLANDS</Tag>
 		<English>Duchy of Brabant</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_HOLY_ROMAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_HOLY_ROMAN_BYZANTIUM</Tag>
 		<English>Latin Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROMAN_POLAND</Tag>
+		<English>Duchy of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRIAN_POLAND</Tag>
+		<English>Kingdom of Galicia and Lodomeria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRIAN_ITALY</Tag>
+		<English>Grand Duchy of Tuscany</English>
 	</TEXT>
 </Civ4GameText>

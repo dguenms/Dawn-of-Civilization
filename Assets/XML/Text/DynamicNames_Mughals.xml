@@ -17,28 +17,16 @@
 		<English>Pakistan</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_MUGHALS_PEOPLES</Tag>
 		<English>Ghorid Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_DESC_DEFAULT</Tag>
-		<English>Mughal Empire</English>
+		<Tag>TXT_KEY_CIV_MUGHALS_DEFAULT</Tag>
+		<English>%s1 Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Pakistan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_DESC_COMMUNIST</Tag>
-		<English>People's Republic of Pakistan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_DESC_FASCIST</Tag>
-		<English>Pakistani Military Government</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_DESC_ISLAMIC_MODERN</Tag>
-		<English>Islamic Republic of Pakistan</English>
+		<Tag>TXT_KEY_CIV_MUGHALS_FASCIST</Tag>
+		<English>%s2 Military Government</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DELHI</Tag>
@@ -49,15 +37,7 @@
 		<English>Republic of Delhi</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_SOVIET_VASSAL</Tag>
-		<English>Soviet Pakistan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_NAZI_VASSAL</Tag>
-		<English>German West India</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_MUGHAL_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_MUGHAL_INDIA</Tag>
 		<English>Deccan Sultanates</English>
 	</TEXT>
 </Civ4GameText>

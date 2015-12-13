@@ -21,39 +21,15 @@
 		<English>Songhai</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_MALI_PEOPLES</Tag>
 		<English>Mandinka Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_DESC_DEFAULT</Tag>
-		<English>Mali Empire</English>
+		<Tag>TXT_KEY_CIV_MALI_DEFAULT</Tag>
+		<English>%s1 Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Mali</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_DESC_COMMUNIST</Tag>
-		<English>People's Republic of Mali</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_DESC_FASCIST</Tag>
-		<English>Military Comittee of Mali</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_DESC_ISLAMIC_MODERN</Tag>
-		<English>Islamic Republic of Mali</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_SONGHAI</Tag>
-		<English>Songhai Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_SOVIET_VASSAL</Tag>
-		<English>Soviet Mali</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_NAZI_VASSAL</Tag>
-		<English>German West Africa</English>
+		<Tag>TXT_KEY_CIV_MALI_FASCIST</Tag>
+		<English>Military Comittee of %1</English>
 	</TEXT>
 </Civ4GameText>
