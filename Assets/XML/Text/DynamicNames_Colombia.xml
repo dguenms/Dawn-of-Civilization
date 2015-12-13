@@ -9,39 +9,27 @@
 		<English>The Colombians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_COLOMBIA_PEOPLES</Tag>
 		<English>Colombian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_DESC_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_COLOMBIA_DEFAULT</Tag>
 		<English>Kingdom of New Granada</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Colombia</English>
+		<Tag>TXT_KEY_CIV_COLOMBIA_REPUBLIC</Tag>
+		<English>Republic of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_DESC_COMMUNIST</Tag>
-		<English>Socialist Republic of Colombia</English>
+		<Tag>TXT_KEY_CIV_COLOMBIA_COMMUNIST</Tag>
+		<English>Socialist Republic of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_DESC_FASCIST</Tag>
-		<English>Colombian Junta</English>
+		<Tag>TXT_KEY_CIV_COLOMBIA_FASCIST</Tag>
+		<English>%s2 Junta</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_COLOMBIA_EMPIRE</Tag>
 		<English>Empire of Gran Colombia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_SPANISH_VASSAL</Tag>
-		<English>Viceroyalty of New Granada</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_SOVIET_VASSAL</Tag>
-		<English>Soviet Colombia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_COLOMBIA_NAZI_VASSAL</Tag>
-		<English>German Colombia</English>
 	</TEXT>
 </Civ4GameText>

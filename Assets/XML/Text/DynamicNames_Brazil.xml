@@ -9,35 +9,23 @@
 		<English>The Brazilians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BRAZIL_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_BRAZIL_PEOPLES</Tag>
 		<English>Brazilian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BRAZIL_DESC_DEFAULT</Tag>
-		<English>Kingdom of Brazil</English>
+		<Tag>TXT_KEY_CIV_BRAZIL_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BRAZIL_DESC_DEMOCRATIC</Tag>
-		<English>Federative Republic of Brazil</English>
+		<Tag>TXT_KEY_CIV_BRAZIL_REPUBLIC</Tag>
+		<English>Federative Republic of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BRAZIL_DESC_COMMUNIST</Tag>
-		<English>Socialist Republic of Brazil</English>
+		<Tag>TXT_KEY_CIV_BRAZIL_FASCIST</Tag>
+		<English>United States of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BRAZIL_DESC_FASCIST</Tag>
-		<English>United States of Brazil</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BRAZIL_EMPIRE</Tag>
-		<English>Empire of Brazil</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BRAZIL_SOVIET_VASSAL</Tag>
-		<English>Soviet Brazil</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BRAZIL_NAZI_VASSAL</Tag>
-		<English>German Brazil</English>
+		<Tag>TXT_KEY_CIV_BRAZILIAN_ARGENTINA</Tag>
+		<English>Transplatine Province</English>
 	</TEXT>
 </Civ4GameText>

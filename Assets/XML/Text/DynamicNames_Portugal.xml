@@ -9,24 +9,20 @@
 		<English>The Portuguese</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_PORTUGAL_PEOPLES</Tag>
 		<English>Lusitanian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_DESC_DEFAULT</Tag>
-		<English>Kingdom of Portugal</English>
+		<Tag>TXT_KEY_CIV_PORTUGAL_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_DESC_DEMOCRATIC</Tag>
-		<English>Portuguese Republic</English>
+		<Tag>TXT_KEY_CIV_PORTUGAL_COMMUNIST</Tag>
+		<English>%s2 Continuing Revolutionary Process</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_DESC_COMMUNIST</Tag>
-		<English>Portuguese Continuing Revolutionary Process</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_DESC_FASCIST</Tag>
-		<English>New State of Portugal</English>
+		<Tag>TXT_KEY_CIV_PORTUGAL_FASCIST</Tag>
+		<English>New State of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EMPIRE</Tag>
@@ -34,38 +30,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_BRAZIL</Tag>
-		<English>United Kingdom of Portugal and Brazil</English>
+		<English>United Kingdom of %s1 and Brazil</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PORTUGAL_EXILE</Tag>
-		<English>Portuguese Government in Exile</English>
+		<English>%s2 Government in Exile</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_PORTUGUESE_VASSAL</Tag>
-		<English>Viceroyalty of Portuguese India</English>
+		<Tag>TXT_KEY_CIV_PORTUGUESE_INDIA</Tag>
+		<English>Viceroyalty of %s2 %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_PORTUGUESE_VASSAL</Tag>
-		<English>Portuguese East Indies</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_PORTUGUESE_VASSAL</Tag>
-		<English>Portuguese Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_PORTUGUESE_VASSAL</Tag>
-		<English>Portuguese Yucat&#225;n</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_PORTUGUESE_VASSAL</Tag>
-		<English>Portuguese Peru</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_SOVIET_VASSAL</Tag>
-		<English>Soviet Portugal</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_NAZI_VASSAL</Tag>
-		<English>Reichskommissariat Portugal</English>
+		<Tag>TXT_KEY_CIV_PORTUGUESE_INDONESIA</Tag>
+		<English>%s2 East Indies</English>
 	</TEXT>
 </Civ4GameText>
