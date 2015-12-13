@@ -9,115 +9,87 @@
 		<English>The Arabs</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_ARABIA_PEOPLES</Tag>
 		<English>Bedouin Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_DESC_DEFAULT</Tag>
-		<English>Arabian Sultanates</English>
+		<Tag>TXT_KEY_CIV_ARABIA_DEFAULT</Tag>
+		<English>%s2 Sultanates</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_DESC_DEMOCRATIC</Tag>
+		<Tag>TXT_KEY_CIV_ARABIA_REPUBLIC</Tag>
 		<English>Arab League</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_ARABIA_FASCIST</Tag>
 		<English>Pan Arab State</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_DESC_COMMUNIST</Tag>
-		<English>Baathist Arabia</English>
+		<Tag>TXT_KEY_CIV_ARABIA_COMMUNIST</Tag>
+		<English>Baathist %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_SAUDI</Tag>
-		<English>Kingdom of Saudi-Arabia</English>
+		<English>Saudi-Arabia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_RASHIDUN_CALIPHATE</Tag>
-		<English>Rashidun Caliphate</English>
+		<Tag>TXT_KEY_CIV_ARABIA_RASHIDUN</Tag>
+		<English>Rashidun</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_UMMAYAD_CALIPHATE</Tag>
-		<English>Ummayad Caliphate</English>
+		<Tag>TXT_KEY_CIV_ARABIA_UMMAYAD</Tag>
+		<English>Ummayad</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_ABBASID_CALIPHATE</Tag>
-		<English>Abbasid Caliphate</English>
+		<Tag>TXT_KEY_CIV_ARABIA_ABBASID</Tag>
+		<English>Abbasid</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_SOVIET_VASSAL</Tag>
-		<English>Soviet Arabia</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_VASSAL</Tag>
+		<English>Emirate of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_NAZI_VASSAL</Tag>
-		<English>German Arabia</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_EGYPT</Tag>
+		<English>Misr</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Misr</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_BABYLONIA</Tag>
+		<English>Iraq</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Iraq</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_PERSIA</Tag>
+		<English>Fars</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Fars</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_CARTHAGE</Tag>
+		<English>Ifriqiya</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Ifriqiya</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ROME</Tag>
+		<English>Italiya</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Italiya</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ETHIOPIA</Tag>
+		<English>Abyssinia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Abyssinia</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_BYZANTIUM</Tag>
+		<English>R&#251;m</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Rûm</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_MOORS</Tag>
+		<English>Al-Andalus</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Scandinavia</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_SPAIN</Tag>
+		<English>Esbanya</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Kampuchea</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Al-Andalus</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Esbanya</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_NETHERLANDS_ARABIAN_VASSAL</Tag>
-		<English>Emirate of the Netherlands</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_ARABIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_ARABIAN_TURKEY</Tag>
 		<English>Ottoman Sultanate</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_ARABIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_ARABIAN_MUGHALS</Tag>
 		<English>Emirate of Delhi</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL</Tag>
-		<English>Emirate of Siam</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC</Tag>
-		<English>Emirate of %s1</English>
 	</TEXT>
 </Civ4GameText>

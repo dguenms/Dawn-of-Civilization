@@ -9,35 +9,15 @@
 		<English>The Tibetans</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TIBET_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_TIBET_PEOPLES</Tag>
 		<English>Tibetan Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TIBET_DESC_DEFAULT</Tag>
-		<English>Kingdom of Tibet</English>
+		<Tag>TXT_KEY_CIV_TIBET_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TIBET_EMPIRE</Tag>
-		<English>Tibetan Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TIBET_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Tibet</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TIBET_DESC_COMMUNIST</Tag>
-		<English>People's Republic of Tibet</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TIBET_NAZI_VASSAL</Tag>
-		<English>German Tibet</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TIBET_SOVIET_VASSAL</Tag>
-		<English>Soviet Tibet</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TIBET_DESC_FASCIST</Tag>
-		<English>Tibetan Empire</English>
+		<Tag>TXT_KEY_CIV_TIBET_FASCIST</Tag>
+		<English>%s2 Empire</English>
 	</TEXT>
 </Civ4GameText>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DESC_PEOPLES</Tag>
+		<English>Lombard Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DESC_DEFAULT</Tag>
+		<English>Kingdom of Italy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_ITALIAN_LEAGUE</Tag>
+		<English>Italian League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_LOMBARD_LEAGUE</Tag>
+		<English>Lombard League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS</Tag>
+		<English>Italian Maritime Republics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_KINGDOM</Tag>
+		<English>Kingdom of Italy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DUCHY_TUSCANY</Tag>
+		<English>Duchy of Tuscany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DUCHY_VENICE</Tag>
+		<English>Duchy of Venice</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DUCHY_MILAN</Tag>
+		<English>Duchy of Milan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_PAPAL_STATE</Tag>
+		<English>Papal States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_HOLY_ROMAN_VASSAL</Tag>
+		<English>Grand Duchy of Tuscany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_NAZI_VASSAL</Tag>
+		<English>Italian Social Republic</English>
+	</TEXT>
+</Civ4GameText>

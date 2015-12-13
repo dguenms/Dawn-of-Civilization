@@ -9,55 +9,47 @@
 		<English>The Polynesians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_POLYNESIA_PEOPLES</Tag>
 		<English>Polynesian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_DESC_DEFAULT</Tag>
-		<English>Kingdom of Tonga</English>
+		<Tag>TXT_KEY_CIV_POLYNESIA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_EMPIRE</Tag>
-		<English>Tu'i Tonga Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_DESC_DEMOCRATIC</Tag>
+		<Tag>TXT_KEY_CIV_POLYNESIA_REPUBLIC</Tag>
 		<English>Polynesian Republics</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_DESC_COMMUNIST</Tag>
-		<English>People's Republic of Polynesia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_POLYNESIA_FASCIST</Tag>
 		<English>Oceania</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POLYNESIA_TONGA</Tag>
+		<English>Tonga</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POLYNESIA_TUI_TONGA</Tag>
+		<English>Tu'i Tonga</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_HAWAII</Tag>
-		<English>Kingdom of Hawaii</English>
+		<English>Hawaii</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_SAMOA</Tag>
-		<English>Kingdom of Samoa</English>
+		<English>Samoa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLYNESIA_TUI_MANUA</Tag>
+		<English>Tu'i Manu'a</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_NIUE</Tag>
-		<English>Kingdom of Niue</English>
+		<English>Niue</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLYNESIA_TAHITI</Tag>
-		<English>Kingdom of Tahiti</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_EMPIRE_SAMOA</Tag>
-		<English>Tu'i Manu'a Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_NAZI_VASSAL</Tag>
-		<English>Nazi Polynesia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_POLYNESIA_SOVIET_VASSAL</Tag>
-		<English>Soviet Polynesia</English>
+		<English>Tahiti</English>
 	</TEXT>
 </Civ4GameText>
