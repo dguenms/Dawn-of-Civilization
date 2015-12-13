@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_CAPE_COAST_PEDIA</Tag>
+  <English>[TAB]In geography, a cape is a headland or promontory of large size extending into a body of water, usually the sea. A cape usually represents a marked change in trend of the coastline. Their proximity to the coastline makes them prone to natural forms of erosion, mainly tidal actions. This results in capes having a relatively short geologic lifespan. Capes can be formed by glaciers, volcanoes, and changes in sea level. Erosion plays a large role in each of these methods of formation.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_FALLOUT_PEDIA</Tag>
+  <English>[TAB]Fallout is the residual radiation hazard from a nuclear explosion, so called because it "falls out" of the atmosphere after the explosion. It commonly refers to the radioactive dust created when a nuclear weapon explodes. This radioactive dust, consisting of hot particles, is a kind of radioactive contamination. It can lead to the contamination of ground and the animal food chain.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_FLOOD_PLAINS_PEDIA</Tag>
+  <English>[TAB]A floodplain, or flood plain, is a flat or nearly flat land adjacent to a stream or river that stretches from the banks of its channel to the base of the enclosing valley walls and experiences flooding during periods of high discharge. It includes the floodway, which consists of the stream channel and adjacent areas that carry flood flows, and the flood fringe, which are areas covered by the flood, but which do not experience a strong current.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_FOREST_PEDIA</Tag>
+  <English>[TAB]A forest, also referred to as a wood or the woods and less often as a "wold" (or "weald"), "holt", or "frith" (or "firth"), is an area with a high density of trees. There are many definitions for forest, based on the various criteria. These plant communities cover approximately 9.4% of the Earth's surface (or 30% of total land area), though they once covered much more (about 50% of total land area), in many different regions and function as habitats for organisms, hydrologic flow modulators, and soil conservers, constituting one of the most important aspects of the Earth's biosphere. Although a forest is classified primarily by trees a forest ecosystem is defined intrinsically with additional species such as fungi.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_ICE_PEDIA</Tag>
+  <English>[TAB]Ice is water frozen into the solid state. Usually ice is the phase known as ice Ih, which is the most abundant of the varying solid phases on the Earth's surface. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter the appearance.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_ISLANDS_PEDIA</Tag>
+  <English>[TAB]An island is any piece of sub-continental land that is surrounded by water. Very small islands such as emergent land features on atolls can be called islets, skerries, cays or keys. An island in a river or a lake island may be called an eyot or ait, or a holm. A grouping of geographically or geologically related islands is called an archipelago, e.g. the Philippines.[PARAGRAPH:1]An island may be described as such despite the presence of an artificial land bridge, for example Singapore and its causeway, or the various Dutch delta islands, such as IJsselmonde. Some places may even retain "island" in their names for historical reasons after being connected to a larger landmass by a wide land bridge, such as Coney Island or Coronado Island. Conversely, when a piece of land is separated from the mainland by a man-made canal, for example the Peloponnese by the Corinth Canal, it is generally not considered an island.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_JUNGLE_PEDIA</Tag>
+  <English>[TAB]Jungle or Tropical forest refers to the dense, more or less impenetrable tropical rainforest biome with an abundance of animal and plant life. The term jungle is technically a synonym to Tropical Rainforest. The word jungle originates from the Sanskrit word jangala which referred to uncultivated land. Although the Sanskrit word refers to "dry land", it has been suggested that an Anglo-Indian interpretation led to its connotation as a dense "tangled thicket", while others have argued that a cognate word in Urdu did refer to forests. The term is prevalent in many languages of South Asia, and Iranian plateau, particularly in Bangla, Hindi, Marathi, Urdu, Punjabi and Persian.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_MARSH_PEDIA</Tag>
+  <English>[TAB]A marsh is a type of wetland that is dominated by herbaceous rather than woody plant species. Marshes can often be found at the edges of lakes and streams, where they form a transition between the aquatic and terrestrial ecosystems. They are often dominated by grasses, rushes or reeds. If woody plants are present they tend to be low-growing shrubs. This form of vegetation is what differentiates marshes from other types of wetland such as swamps, which are dominated by trees, and mires, which are wetlands that have accumulated deposits of acidic peat.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_OASIS_PEDIA</Tag>
+  <English>[TAB]In geography, an oasis is an isolated area of vegetation in a desert, typically surrounding a spring or similar water source. Oases also provide habitat for animals and even humans if the area is big enough. The location of oases has been of critical importance for trade and transportation routes in desert areas. Caravans must travel via oases so that supplies of water and food can be replenished. Thus, political or military control of an oasis has in many cases meant control of trade on a particular route. For example, the oases of Awjila, Ghadames and Kufra, situated in modern-day Libya, have at various times been vital to both North-South and East-West trade in the Sahara. The word oasis came into English via Greek oasis, borrowed directly from Egyptian or Demotic. It was not borrowed from Coptic, as is sometimes suggested; the Greek word is attested several centuries before Coptic existed as a written language.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_RAINFOREST_PEDIA</Tag>
+  <English>[TAB]Rainforests are forests characterized by high rainfall, with annual rainfall between 250 and 450 centimetres (98 and 177 in). There are two types of rainforest: tropical rainforest and temperate rainforest. The monsoon trough, alternatively known as the intertropical convergence zone, plays a significant role in creating the climatic conditions necessary for the Earth's tropical rainforests.[PARAGRAPH:1]Around 40% to 75% of all biotic species are indigenous to the rainforests. It has been estimated that there may be many millions of species of plants, insects and microorganisms still undiscovered in tropical rainforests. Tropical rainforests have been called the "jewels of the Earth" and the "world's largest pharmacy", because over one quarter of natural medicines have been discovered there. Rainforests are also responsible for 28% of the world's oxygen turnover, sometimes misnamed oxygen production, processing it through photosynthesis from carbon dioxide and consuming it through respiration.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUOY_PEDIA</Tag>
+  <English>Sea Route</English>
+  <French>Route maritime</French>
+  <German>Seeweg</German>
+  <Italian>Rotta navale</Italian>
+  <Spanish>Ruta mar&#237;tima</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_CAMP_PEDIA</Tag>
+  <English>[TAB]A camp is a place with temporary accommodation of huts, tents, or other structures, typically used by soldiers, refugees, hunters or travelling people.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_CITY_RUINS_PEDIA</Tag>
+  <English>[TAB]Ruins are the remains of human-made architecture: structures that were once complete, as time went by, have fallen into a state of partial or complete disrepair, due to lack of maintenance or deliberate acts of destruction. Natural disaster, war and depopulation are the most common root causes, with many structures becoming progressively derelict over time due to long-term weathering and scavenging.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_COTTAGE_HELP_PEDIA</Tag>
+  <English>100% Growth</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_COTTAGE_PEDIA</Tag>
+  <English>[TAB]A cottage is, typically, a small house. The word comes from England where it originally was a house that has a ground floor, with a first, lower storey of bedrooms which fit within the roofspace. In many places the word cottage is used to mean a small old-fashioned house. In modern usage, a cottage is usually a modest, often cosy dwelling, typically in a rural or semi-rural location. In the United Kingdom the term cottage denotes a small dwelling of traditional build, although it can also be applied to dwellings of modern construction which are designed to resemble traditional ones ("mock cottages").</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FARM_PEDIA</Tag>
+  <English>[TAB]A farm is an area of land that is devoted primarily to agricultural processes or an area of water that is devoted primarily to aquacultural processes, in order to produce and manage such commodities as fibres, grains, livestock, or fuel. It is the basic production facility in food production. Farms may be owned and operated by a single individual, family, community, corporation or a company. A farm can be a holding of any size from a fraction of a hectare to several thousand hectares.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FISHING_BOATS_PEDIA</Tag>
+  <English>[TAB]Man has long relied on the sea to provide sustenance. The most primitive peoples gathered mollusks and crabs from the sand; eventually they learned to make spears to capture the rich foodstuffs out of reach of hand. The fishing technology allows sophisticated advancements in fishing: building small coastal fishing vessels, weaving and deploying large fishing nets, constructing crab traps, and so forth.[PARAGRAPH:2]Fishing is a major industry in the world today, and hundreds of thousands of pounds of fish are taken from the sea every day. However, this has put a serious strain on the ocean's ecology, and continued unfettered fishing may soon overwhelm and destroy this precious resource.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FOREST_PRESERVE_IMPROVEMENT_PEDIA</Tag>
+  <English>[TAB]A nature reserve (natural reserve, nature preserve, natural preserve) is a protected area of importance for wildlife, flora, fauna or features of geological or other special interest, which is reserved and managed for conservation and to provide special opportunities for study or research. Nature reserves may be designated by government institutions in some countries, or by private landowners, such as charities and research institutions, regardless of nationality. Nature reserves fall into different IUCN categories depending on the level of protection afforded by local laws.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FOREST_PRESERVE_PEDIA</Tag>
+  <English>Forest Preserve</English>
+  <French>R&#233;serve bois&#233;e</French>
+  <German>Aufforstungsgebiet</German>
+  <Italian>Riserva forestale</Italian>
+  <Spanish>Reserva forestal</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FORT_PEDIA</Tag>
+  <English>[TAB]Forts in modern usage often refer to space set aside by governments for a permanent military facility; these often do not have any actual fortifications, and can have specializations (military barracks, administration, medical facilities, or intelligence). In the United States usage, forts specifically refer to US Army bases; US Marine Corps bases are referred to as camps.[PARAGRAPH:1]However there are some modern fortifications that are referred to as forts. These are typically small semi permanent fortifications. In urban combat they are built by upgrading existing structures such as houses or public buildings. In field warfare they are often log, sandbag or gabion type construction.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_GOODY_HUT_PEDIA</Tag>
+  <English>[TAB]A village is a clustered human settlement or community, larger than a hamlet with the population ranging from a few hundred to a few thousands (sometimes tens of thousands), Though often located in rural areas, the term urban village is also applied to certain urban neighbourhoods, such as the West Village in Manhattan, New York City and the Saifi Village in Beirut, Lebanon, as well as Hampstead Village in the London conurbation. Villages are normally permanent, with fixed dwellings; however, transient villages can occur. Further, the dwellings of a village are fairly close to one another, not scattered broadly over the landscape, as a dispersed settlement.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_HAMLET_PEDIA</Tag>
+  <English>[TAB]A hamlet is a type of settlement. The definition of hamlet varies by country. It usually refers to a small settlement, with a small population, in a rural area, or a component of a larger settlement or municipality.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_HIGH_SEA_FISHING_BOATS_PEDIA_HELP</Tag>
+  <English>+1[ICON_FOOD]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_LUMBERMILL_PEDIA</Tag>
+  <English>[TAB]A lumbermill is a facility where logs are cut into lumber.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_MINE_PEDIA</Tag>
+  <English>[TAB]There is evidence of surface mining dating back to prehistoric times. The first mining was probably for flint, which was used for knives, scrapers and arrowheads. The oldest known underground mine was in Swaziland over 40,000 years ago, to mine for ochre to use as a body pigment in ceremonies. During the Neolithic Age shafts were dug to extract flint from deeper in the earth. Gold, copper and silver were other minerals mined early in history.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_MINE_PEDIA_HELP</Tag>
+  <English>+2[ICON_PRODUCTION]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_OFFSHORE_PLATFORM_PEDIA</Tag>
+  <English>[TAB]An oil platform, offshore platform, or (colloquially) oil rig is a large structure with facilities to drill wells, to extract and process oil and natural gas, or to temporarily store product until it can be brought to shore for refining and marketing. In many cases, the platform contains facilities to house the workforce as well.[PARAGRAPH:1]Depending on the circumstances, the platform may be fixed to the ocean floor, may consist of an artificial island, or may float. Remote subsea wells may also be connected to a platform by flow lines and by umbilical connections. These subsea solutions may consist of one or more subsea wells, or of one or more manifold centers for multiple wells.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_PASTURE_PEDIA</Tag>
+  <English>[TAB]Pasture is land used for grazing. Pasture lands in the narrow sense are enclosed tracts of farmland, grazed by domesticated livestock, such as horses, cattle, sheep or swine. The vegetation of tended pasture, forage, consists mainly of grasses, with an interspersion of legumes and other forbs (non-grass herbaceous plants). Pasture is typically grazed throughout the summer, in contrast to meadow which is ungrazed or used for grazing only after being mown to make hay for animal fodder. Pasture in a wider sense additionally includes rangelands, other unenclosed pastoral systems, and land types used by wild animals for grazing or browsing.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_PLANTATION_PEDIA</Tag>
+  <English>[TAB]A plantation is a long, artificially-established forest, farm or estate, where crops are grown for sale, often in distant markets rather than for local on-site consumption. Plantations are developed on a large scale as the crops are grown for commercial purposes, not for local consumption.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_QUARRY_PEDIA</Tag>
+  <English>[TAB]A quarry is a type of open-pit mine from which rock or minerals are extracted. Quarries are generally used for extracting building materials, such as dimension stone, construction aggregate, riprap, sand, and gravel. They are often colocated with concrete and asphalt plants due to the requirement for large amounts of aggregate in those materials. The word quarry can include underground quarrying for stone, such as Bath stone.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION_PEDIA</Tag>
+  <English>[TAB]A plantation is a long, artificially-established forest, farm or estate, where crops are grown for sale, often in distant markets rather than for local on-site consumption. Plantations are developed on a large scale as the crops are grown for commercial purposes, not for local consumption. Slave labour extracted from forcibly transported Africans was used extensively to work on early plantations (such as cotton and sugar plantations) in the American colonies and the United States, throughout the Caribbean, the Americas and in European-occupied areas of Africa.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION_PEDIA_HELP</Tag>
+  <English>+1[ICON_PRODUCTION]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION_PEDIA_HELP_BANNANA</Tag>
+  <English>+1[ICON_PRODUCTION]+2[ICON_COMMERCE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_TOWN_PEDIA</Tag>
+  <English>[TAB]A town is a human settlement larger than a village but smaller than a city. The size a settlement must be in order to be called a "town" varies considerably in different parts of the world, so that, for example, many American "small towns" seem to British people to be no more than villages, while many British "small towns" would qualify as cities in the United States.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_VILLAGE_PEDIA</Tag>
+  <English>[TAB]A village is a clustered human settlement or community, larger than a hamlet with the population ranging from a few hundred to a few thousands (sometimes tens of thousands), Though often located in rural areas, the term urban village is also applied to certain urban neighbourhoods, such as the West Village in Manhattan, New York City and the Saifi Village in Beirut, Lebanon, as well as Hampstead Village in the London conurbation. Villages are normally permanent, with fixed dwellings; however, transient villages can occur. Further, the dwellings of a village are fairly close to one another, not scattered broadly over the landscape, as a dispersed settlement.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WATERMILL_PEDIA</Tag>
+  <English>[TAB]A watermill is a structure that uses a water wheel or turbine to drive a mechanical process such as flour, lumber or textile production, or metal shaping (rolling, grinding or wire drawing).</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WELL_PEDIA</Tag>
+  <English>[TAB]An oil well is a general term for any boring through the earth's surface that is designed to find and acquire petroleum oil hydrocarbons. Usually some natural gas is produced along with the oil. A well that is designed to produce mainly or only gas may be termed a gas well.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WHALING_BOATS_PEDIA</Tag>
+  <English>[TAB]Whaling is the hunting of whales mainly for meat and oil. Its earliest forms date to at least 3000 BC. Various coastal communities have long histories of sustenance whaling and harvesting beached whales. Industrial whaling emerged with organized fleets in the 17th century; competitive national whaling industries in the 18th and 19th centuries; and the introduction of factory ships along with the concept of whale harvesting in the first half of the 20th century.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WINDMILL_PEDIA</Tag>
+  <English>[TAB]A windmill is a machine which converts the energy of wind into rotational motion by means of adjustable vanes called sails or blades. The main use was originally for a grinding mill powered by the wind, reducing a solid or coarse substance into pulp or minute grains, by crushing, grinding, or pressing. Windmills have also been used to power sawmills and other industrial processes and as windpumps for obtaining fresh water from underground or for drainage of land.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WINERY_PEDIA</Tag>
+  <English>[TAB]A winery is a building or property that produces wine, or a business involved in the production of wine, such as a wine company. Some wine companies own many wineries. Besides wine making equipment, larger wineries may also feature warehouses, bottling lines, laboratories, and large expanses of tanks known as tank farms. The oldest winery in the world found to date is a 6,000 year old winery in the Areni region of Armenia, which is still a wine making region today.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WORKSHOP_PEDIA</Tag>
+  <English>[TAB]A workshop is a room or building which provides both the area and tools (or machinery) that may be required for the manufacture or repair of manufactured goods. Apart from the larger factories, workshops were the only places of production in the days before industrialisation.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_COAST_PEDIA</Tag>
+  <English>[TAB]The coastline is where the land meets the sea or ocean. A precise line that can be called a coastline cannot be determined due to the dynamic nature of tides. The term "coastal zone" can be used instead, which is a spatial zone where interaction of the sea and land processes occurs. Both the terms coast and coastal are often used to describe a geographic location or region; for example, New Zealand's West Coast, or the East and West Coasts of the United States.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_DESERT_PEDIA</Tag>
+  <English>[TAB]A desert is a landscape or region that receives an extremely low amount of precipitation, less than enough to support growth of most plants. Deserts are defined as areas with an average annual precipitation of less than 250 millimetres (10 in) per year, or as areas where more water is lost by evapotranspiration than falls as precipitation. In the K0ppen climate classification system, deserts are classed as BWh (hot desert) or BWk (temperate desert). In the Thornthwaite climate classification system, deserts would be classified as arid megathermal climates.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_GRASS_PEDIA</Tag>
+  <English>[TAB]Grasslands are areas where the vegetation is dominated by grasses (Poaceae) and other herbaceous (non-woody) plants (forbs). However, sedge (Cyperaceae) and rush (Juncaceae) families can also be found. Grasslands occur naturally on all continents except Antarctica. In temperate latitudes, such as northwest Europe and the Great Plains and California in North America, native grasslands are dominated by perennial bunch grass species, whereas in warmer climates annual species form a greater component of the vegetation.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_HILL_PEDIA</Tag>
+  <English>[TAB]A hill is a landform that extends above the surrounding terrain. Hills often have a distinct summit, although in areas with scarp/dip topography a hill may refer to a particular section of flat terrain without a massive summit.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_ICE_PEDIA</Tag>
+  <English>[TAB]Ice is water frozen into the solid state. Usually ice is the phase known as ice Ih, which is the most abundant of the varying solid phases on the Earth's surface. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter the appearance.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_LAKE_PEDIA</Tag>
+  <English>[TAB]A lake is an area (prototypically filled with water, also of variable size), localized in a basin, that is surrounded by land apart from any river or other outlet that serves to feed or drain the lake. Lakes lie on land and are not part of the ocean, and therefore are distinct from lagoons, and are also larger and deeper than ponds, though there are no official or scientific definitions. Lakes can be contrasted with rivers or streams, which are usually flowing. However most lakes are fed and drained by rivers and streams.[PARAGRAPH:1]Natural lakes are generally found in mountainous areas, rift zones, and areas with ongoing glaciation. Other lakes are found in endorheic basins or along the courses of mature rivers. In some parts of the world there are many lakes because of chaotic drainage patterns left over from the last Ice Age. All lakes are temporary over geologic time scales, as they will slowly fill in with sediments or spill out of the basin containing them.[PARAGRAPH:1]Many lakes are artificial and are constructed for industrial or agricultural use, for hydro-electric power generation or domestic water supply, or for aesthetic or recreational purposes.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_OCEAN_PEDIA</Tag>
+  <English>[TAB]An ocean is a major body of saline water, and a principal component of the hydrosphere. Approximately 71% of the Earth's surface (~3.6 x 10 8 km 2) is covered by ocean, a continuous body of water that is customarily divided into several principal oceans and smaller seas.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_PEAK_PEDIA</Tag>
+  <English>[TAB]A mountain is a large landform that stretches above the surrounding land in a limited area, usually in the form of a peak. A mountain is generally steeper than a hill. Mountains are formed through tectonic forces or volcanism. These forces can locally raise the surface of the earth. Mountains erode slowly through the action of rivers, weather conditions, and glaciers. A few mountains are isolated summits, but most occur in huge mountain ranges.[PARAGRAPH:1]High elevations on mountains produce colder climates than at sea level. These colder climates strongly affect the ecosystem of mountains: different elevations have different plants and animals. Because of the less hospitable terrain and climate, mountains tend to be used less for agriculture and more for resource extraction and recreation, such as mountain climbing.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_PLAINS_PEDIA</Tag>
+  <English>[TAB]In geography, a plain is a flat region. Plains occur as lowlands and at the bottoms of valleys but also on plateaus or uplands at high elevations. In a valley, a plain is enclosed on two sides but in other cases a plain may be delineated by a complete or partial ring of hills, by mountains or cliffs. Where a geological region contains more than one plain, they may be connected by a pass (sometime termed a gap). Plains may have been formed from flowing lava, deposited by water, ice, wind, or formed by erosion by these agents from hills and mountains.[PARAGRAPH:1]Plains in many areas are important for agriculture because where the soils were deposited as sediments they may be deep and fertile, and the flatness facilitates mechanization of crop production; or because they support grasslands which provide good grazing for livestock.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_RIVER_PEDIA</Tag>
+  <English>[TAB]A river is a natural flowing watercourse, usually freshwater, flowing towards an ocean, a lake, a sea, or another river. In some rare cases a river could flow into the ground and dry up completely at the end of its course, without reaching another body of water. Small rivers may be called by several other names, including stream, creek, brook, rivulet, and rill. There are no official definitions for generic terms, such as river, as applied to geographic features, although in some countries or communities a stream may be defined by its size. Many names for small rivers are specific to geographic location; examples are "run" in some parts of the United States, "burn" in Scotland and northeast England, and "beck" in northern England. Sometimes a river is defined as being larger than a creek, but not always: the language is vague.[PARAGRAPH:1]Rivers are part of the hydrological cycle. Water generally collects in a river from precipitation through a drainage basin from surface runoff and other sources such as groundwater recharge, springs, and the release of stored water in natural ice and snowpacks (e.g. from glaciers). Potamology is the scientific study of rivers while limnology is the study of inland waters in general.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_TUNDRA_PEDIA</Tag>
+  <English>[TAB]In physical geography, tundra is a biome where the tree growth is hindered by low temperatures and short growing seasons. The term tundra comes through Russian from the Kildin Sami word tund&#226;r "uplands," "treeless mountain tract." There are three types of tundra: Arctic tundra, alpine tundra, and Antarctic tundra. In tundra, the vegetation is composed of dwarf shrubs, sedges and grasses, mosses, and lichens. Scattered trees grow in some tundra. The ecotone (or ecological boundary region) between the tundra and the forest is known as the tree line or timberline.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_WETLAND_PEDIA</Tag>
+  <English>[TAB]A wetland is a land area that is saturated with water, either permanently or seasonally, such that it takes on the characteristics of a distinct ecosystem. Primarily, the factor that distinguishes wetlands from other land forms or water bodies is the characteristic vegetation of aquatic plants, adapted to its unique hydric soil. Wetlands play a number of roles in the environment, principally water purification, flood control, and shoreline stability. Wetlands are also considered the most biologically diverse of all ecosystems, serving as home to a wide range of plant and animal life. Wetlands occur naturally on every continent except Antarctica, the largest including the Amazon River basin, the West Siberian Plain, and the Pantanal. The water found in wetlands can be freshwater, brackish, or saltwater. The main wetland types include swamps, marshes, bogs, and fens; and sub-types include mangrove, carr, pocosin, and varzea. They can also be constructed artificially as a water management tool, which may play a role in the developing field of water-sensitive urban design. The UN Millennium Ecosystem Assessment determined that environmental degradation is more prominent within wetland systems than any other ecosystem on Earth. International conservation efforts are being used in conjunction with the development of rapid assessment tools to inform people about wetland issues.</English>
+ </TEXT>
+</Civ4GameText>

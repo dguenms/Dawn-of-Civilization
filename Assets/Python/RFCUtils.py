@@ -826,7 +826,7 @@ class RFCUtils:
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                         if (pCurrent.countTotalCulture() == 0 ):
                                                 # this is a good plot, so paint it and continue search
@@ -904,7 +904,7 @@ class RFCUtils:
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                         iClean = 0
                                         for x in range(tCoords[0] - 1, tCoords[0] + 2):        # from x-1 to x+1
@@ -926,7 +926,7 @@ class RFCUtils:
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                         if (pCurrent.getOwner() in argsList ):
                                                 # this is a good plot, so paint it and continue search
@@ -940,7 +940,7 @@ class RFCUtils:
 		bContinue = True
 		pCurrent = gc.getMap().plot(tCoords[0], tCoords[1])
 		if pCurrent.isHills() or pCurrent.isFlatlands():
-			if pCurrent.getTerrainType() != con.iMarsh and pCurrent.getFeatureType() != con.iJungle:
+			if pCurrent.getTerrainType() != con.iMarsh and pCurrent.getFeatureType() != con.iJungle and pCurrent.getFeatureType() != con.iRainforest:
 				if not pCurrent.isCity() and not pCurrent.isUnit():
 					return (None, bPaint, bContinue)
 		return (None, not bPaint, bContinue)
@@ -952,7 +952,7 @@ class RFCUtils:
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                         iClean = 0
                                         for x in range(tCoords[0] - 1, tCoords[0] + 2):        # from x-1 to x+1
@@ -977,7 +977,7 @@ class RFCUtils:
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
                         if ( not pCurrent.isImpassable()):
                                 if ( not pCurrent.isUnit() ):
-                                        if (pCurrent.getTerrainType() != con.iDesert) and (pCurrent.getTerrainType() != con.iTundra) and (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
+                                        if (pCurrent.getTerrainType() != con.iDesert) and (pCurrent.getTerrainType() != con.iTundra) and (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
                                                 if (pCurrent.countTotalCulture() == 0 ):
                                                         # this is a good plot, so paint it and continue search
                                                         return (None, bPaint, bContinue)
@@ -1052,7 +1052,7 @@ class RFCUtils:
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                             if (pCurrent.getOwner() == argsList ):
                                                     # this is a good plot, so paint it and continue search
@@ -1459,8 +1459,8 @@ class RFCUtils:
 			for y in range(68):
 				plot = gc.getMap().plot(x, y)
 				if plot.getOwner() == iPlayer:
-					if plot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"):
-						plot.setImprovementType(gc.getInfoTypeForString("IMPROVEMENT_PLANTATION"))
+					if plot.getImprovementType() == con.iSlavePlantation:
+						plot.setImprovementType(con.iPlantation)
 					if plot.isCity():
 						self.removeSlaves(plot.getPlotCity())
 						
@@ -1473,12 +1473,12 @@ class RFCUtils:
 			slave.kill(con.iBarbarian, False)
 			
 	def removeSlaves(self, city):
-		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
+		city.setFreeSpecialistCount(con.iSettledSlave, 0)
 		
 	def freeSlaves(self, city, iPlayer):
-		iNumSlaves = city.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"))
+		iNumSlaves = city.getFreeSpecialistCount(con.iSettledSlave)
 		if iNumSlaves > 0:
-			city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
+			city.setFreeSpecialistCount(con.iSettledSlave, 0)
 			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(con.iSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
 		
 	def getRandomEntry(self, list):

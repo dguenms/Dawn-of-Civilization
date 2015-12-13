@@ -1,0 +1,3765 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_NEW_GREEKWAR_TECH_ADVANCED_SAILING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Advanced Sailing[COLOR_REVERT] allows the creation of the [COLOR_UNIT_TEXT]Trireme[COLOR_REVERT] naval unit and the [COLOR_BUILDING_TEXT]Drydock[COLOR_REVERT] building.</English>
+  <French>La [COLOR_TECH_TEXT]navigation &#224; voile avanc&#233;e[COLOR_REVERT] permet de fabriquer des [COLOR_UNIT_TEXT]trir&#232;mes[COLOR_REVERT] et des [COLOR_BUILDING_TEXT]cales s&#232;ches[COLOR_REVERT].</French>
+  <German>Die [COLOR_TECH_TEXT]Fortgeschrittene Seefahrt[COLOR_REVERT] erm&#246;glicht die Errichtung von [COLOR_UNIT_TEXT]Trieren[COLOR_REVERT] und den Bau von [COLOR_BUILDING_TEXT]Trockendocks[COLOR_REVERT].</German>
+  <Italian>La [COLOR_TECH_TEXT]navigazione avanzata[COLOR_REVERT] permette la reazione della [COLOR_UNIT_TEXT]trireme[COLOR_REVERT] e del [COLOR_BUILDING_TEXT]cantiere navale[COLOR_REVERT].</Italian>
+  <Spanish>La [COLOR_TECH_TEXT]Navegaci&#243;n a vela avanzada[COLOR_REVERT] permite la creaci&#243;n de la unidad naval del [COLOR_UNIT_TEXT]Trirreme[COLOR_REVERT] y el edificio del [COLOR_BUILDING_TEXT]Astillero[COLOR_REVERT].</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_NEW_GREEKWAR_TECH_IMPROVED_FORMATIONS_I_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Improved Formations I[COLOR_REVERT] allows the creation of the [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT] unit, which is superior to the [COLOR_UNIT_TEXT]Spearman.[COLOR_REVERT]</English>
+  <French>Les [COLOR_TECH_TEXT]formations am&#233;lior&#233;es I[COLOR_REVERT] permettent de cr&#233;er des unit&#233;s d'[COLOR_UNIT_TEXT]hoplites[COLOR_REVERT], sup&#233;rieures aux [COLOR_UNIT_TEXT]lanciers.[COLOR_REVERT]</French>
+  <German>Die [COLOR_TECH_TEXT]Verbesserten Formationen I[COLOR_REVERT] erm&#246;glichen die Ausbildung von [COLOR_UNIT_TEXT]Hopliten[COLOR_REVERT], welche den &#252;blichen [COLOR_UNIT_TEXT]Speerk&#228;mpfern[COLOR_REVERT] &#252;berlegen sind.</German>
+  <Italian>Le [COLOR_TECH_TEXT]formazioni migliorate I[COLOR_REVERT] permettono la creazione dell'[COLOR_UNIT_TEXT]oplita[COLOR_REVERT], pi&#249; potente rispetto al [COLOR_UNIT_TEXT]lanciere[COLOR_REVERT].</Italian>
+  <Spanish>Las [COLOR_TECH_TEXT]Formaciones mejoradas I[COLOR_REVERT] permiten la creaci&#243;n de la unidad del [COLOR_UNIT_TEXT]Hoplita[COLOR_REVERT], que es superior al [COLOR_UNIT_TEXT]Lancero[COLOR_REVERT].</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_NEW_GREEKWAR_TECH_IMPROVED_FORMATIONS_II_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Improved Formations II[COLOR_REVERT] allows the creation of the [COLOR_UNIT_TEXT]Phalanx[COLOR_REVERT] unit, which is superior to the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT]. It also allows construction of the [COLOR_BUILDING_TEXT]Military Encampment[COLOR_REVERT] building, which increases ground units' experience.</English>
+  <French>Les [COLOR_TECH_TEXT]formations am&#233;lior&#233;es II[COLOR_REVERT] permettent de cr&#233;er des unit&#233;s de [COLOR_UNIT_TEXT]phalanges[COLOR_REVERT], sup&#233;rieures aux [COLOR_UNIT_TEXT]lanciers[COLOR_REVERT] et aux [COLOR_UNIT_TEXT]hoplites[COLOR_REVERT]. Elles permettent aussi de construire des [COLOR_BUILDING_TEXT]camps militaires[COLOR_REVERT], qui augmentent l'exp&#233;rience des unit&#233;s terrestres.</French>
+  <German>Die [COLOR_TECH_TEXT]Verbesserten Formationen II[COLOR_REVERT] gew&#228;hrleisten die Ausbildung von [COLOR_UNIT_TEXT]Phalanxen[COLOR_REVERT], welche den &#252;blichen [COLOR_UNIT_TEXT]Speerk&#228;mpfern[COLOR_REVERT] und [COLOR_UNIT_TEXT]Hopliten[COLOR_REVERT] &#252;berlegen sind. Au&#223;erdem erm&#246;glichen sie den Bau von [COLOR_BUILDING_TEXT]Ausbildungskasernen[COLOR_REVERT], die einen Erfahrungsanstieg f&#252;r Bodentruppen bewirken.</German>
+  <Italian>Le [COLOR_TECH_TEXT]formazioni migliorate II[COLOR_REVERT] permettono la creazione della [COLOR_UNIT_TEXT]falange[COLOR_REVERT], pi&#249; potente rispetto al [COLOR_UNIT_TEXT]lanciere[COLOR_REVERT] e all'[COLOR_UNIT_TEXT]oplita[COLOR_REVERT]. Essa inoltre consente la costruzione dell'[COLOR_BUILDING_TEXT]accampamento militare[COLOR_REVERT], che incrementa l'esperienza delle unit&#224; terrestri.</Italian>
+  <Spanish>Las [COLOR_TECH_TEXT]Formaciones mejoradas II[COLOR_REVERT] permiten la creaci&#243;n de la unidad de la [COLOR_UNIT_TEXT]Falange[COLOR_REVERT], que es superior al [COLOR_UNIT_TEXT]Lancero[COLOR_REVERT] y al [COLOR_UNIT_TEXT]Hoplita[COLOR_REVERT]. Tambi&#233;n permiten construir el edificio del [COLOR_BUILDING_TEXT]Campamento militar[COLOR_REVERT], que aumenta la experiencia de las unidades terrestres.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ADVANCED_FLIGHT</Tag>
+  <English>Advanced Flight</English>
+  <French>
+   <Text>Vol avanc&#233;</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Fortgeschrittene Luftfahrt</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Volo avanzato</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Vuelo avanzado</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ADVANCED_FLIGHT_QUOTE</Tag>
+  <English>"Oh! I have slipped the surly bonds of Earth - Put out my hand and touched the Face of God." - John Gillespie Magee, Junior</English>
+  <French>"Je me suis lib&#233;r&#233; des emprises de la terre. - J'ai tendu la main et j'ai caress&#233; le visage de Dieu." - John Gillespie Magee, Junior</French>
+  <German>"Ach! Ich bin den rauen Banden der Erde entglitten - ich streckte meine Hand aus und ber&#252;hrte das Antlitz Gottes." - John Gillespie Magee, Junior</German>
+  <Italian>"Oh! Sono scivolato via dai rozzi legami della Terra - Ho allungato la mano e ho toccato il Volto di Dio." - John Gillespie Magee, Junior</Italian>
+  <Spanish>"&#161;Oh! Me he librado de las amargas cadenas de la Tierra. - He estirado la mano y tocado el rostro de Dios". - John Gillespie Magee Junior</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ADVANCED_FLIGHT_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Advanced Flight[COLOR_REVERT] allows the training of [COLOR_UNIT_TEXT]Gunships[COLOR_REVERT] and [COLOR_UNIT_TEXT]Jet Fighters[COLOR_REVERT]. It also obsoletes the [COLOR_WARNING_TEXT]Stable[COLOR_REVERT] Building.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_AESTHETICS</Tag>
+  <English>Aesthetics</English>
+  <French>
+   <Text>Esth&#233;tique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>&#196;sthetik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Estetica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Est&#233;tica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_AESTHETICS_QUOTE</Tag>
+  <English>"Art for art's sake is an empty phrase. Art for the sake of truth, art for the sake of the good and the beautiful, that is the faith I am searching for." - George Sand</English>
+  <French>"L'art pour l'art est un mot creux. L'art pour la v&#233;rit&#233;, l'art pour le Bien et le beau, voil&#224; la foi que je recherche." - George Sand</French>
+  <German>"Kunst um der Kunst Willen ist eine leere Floskel. Kunst um der Wahrheit Willen, Kunst um des Guten und des Sch&#246;nen Willen, das ist der Glaube, nach dem ich suche." - George Sand</German>
+  <Italian>"Arte per amore dell'arte &#232; una frase senza senso. Arte per amore della verit&#224;, arte per amore del buono e del bello, questa &#232; la fede che vado cercando". - George Sand</Italian>
+  <Spanish>"Hablar del arte por el arte es no decir nada. El arte existe por la verdad, por el bien y por la belleza, y &#233;sa es la fe que yo busco". - George Sand</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_AESTHETICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Aesthetics[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Statue of Zeus[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT], and the [COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] World Wonders.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_AGRICULTURE</Tag>
+  <English>Agriculture</English>
+  <French>
+   <Text>Agriculture</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Landwirtschaft</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Agricoltura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Agricultura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_AGRICULTURE_QUOTE</Tag>
+  <English>"Oh farmers, pray that your summers be wet and your winters clear." - Virgil</English>
+  <French>"Oh, paysan, prie afin que tes &#233;t&#233;s soient humides et tes hivers secs." - Virgile</French>
+  <German>"Nassen Sommer kann auch der Herbst nicht trocknen." - Bauernregel</German>
+  <Italian>"Oh contadini, pregate perch&#233; le vostre estati non siano aride e i vostri inverni rigidi.." - Virgilio</Italian>
+  <Spanish>"Oh, campesinos, rezad para que en vuestros veranos llueva y vuestros inviernos sean despejados." - Virgilio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_AGRICULTURE_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Agriculture[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Farm[COLOR_REVERT] Improvement and the [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ALPHABET</Tag>
+  <English>Alphabet</English>
+  <French>
+   <Text>Alphabet</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Alphabet</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Alfabeto</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Alfabeto</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ALPHABET_QUOTE</Tag>
+  <English>"Words have the power to both destroy and heal. When words are both true and kind, they can change our world." - The Buddha</English>
+  <French>"Les mots ont le pouvoir de d&#233;truire et de soigner. Lorsqu'ils sont justes et g&#233;n&#233;reux, ils peuvent changer le monde." - Bouddha</French>
+  <German>"Worte haben die Kraft zu zerst&#246;ren oder zu heilen. Wenn Worte wahr und zugleich g&#252;tig sind, k&#246;nnen sie unsere Welt ver&#228;ndern." - Buddha</German>
+  <Italian>"Le parole hanno il potere di distruggere e di creare. Quando le parole sono sincere e gentili, possono cambiare il mondo." - Budda</Italian>
+  <Spanish>"Las palabras tienen el poder de destruir y sanar. Cuando las palabras son buenas y sinceras tienen el poder de cambiar el mundo." - Buda</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ALPHABET_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Alphabet[COLOR_REVERT] allows you to trade technologies with other civilizations and allows you to train [COLOR_UNIT_TEXT]Spies[COLOR_REVERT]. It also enables the [COLOR_HIGHLIGHT_TEXT]City States[COLOR_REVERT] Civic.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ANIMAL_HUSBANDRY</Tag>
+  <English>Animal Husbandry</English>
+  <French>
+   <Text>Elevage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Tierzucht</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Allevamento di animali</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ganader&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ANIMAL_HUSBANDRY_QUOTE</Tag>
+  <English>"Blessed shall be the fruit of thy cattle, the increase of thy kine, and the flocks of thy sheep." - The Bible, Deut. 28:4</English>
+  <French>"B&#233;nis seront le fruit de ton b&#233;tail, le fruit de tes entrailles et la laine de tes brebis." - La Bible, Deut&#233;ronome 28:4</French>
+  <German>"Gesegnet wird sein der Ertrag deines Ackers und die Jungtiere deines Viehs, deiner Rinder und deiner Schafe." - Die Bibel, Deut. 28:4</German>
+  <Italian>"Sia benedetto il frutto delle mandrie di bovini e delle greggi di pecore." - La Bibbia, Deut. 28:4</Italian>
+  <Spanish>"Bendito el fruto de tu vientre, y el fruto de tu bestia, la cr&#237;a de tus vacas, y los reba&#241;os de tus ovejas." - La Biblia, Deuteronomio 28:4</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ANIMAL_HUSBANDRY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Animal Husbandry[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Pasture[COLOR_REVERT] Improvement and reveals the [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT] Resource.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ARCHERY</Tag>
+  <English>Archery</English>
+  <French>
+   <Text>Tir &#224; l'arc</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bogenschie&#223;en</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tiro con l'arco</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tiro con arco</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ARCHERY_QUOTE</Tag>
+  <English>"Do not throw the arrow which will return against you." - Kurdish Proverb</English>
+  <French>"Ne lance pas la fl&#232;che qui se retournera contre toi !" - Proverbe kurde</French>
+  <German>"Schie&#223;e keinen Pfeil, der zu dir zur&#252;ckkehren k&#246;nnte." - Kurdisches Sprichwort</German>
+  <Italian>"Non scagliare la freccia che ti si rivolter&#224; contro." - Proverbio Curdo</Italian>
+  <Spanish>"No dispares la flecha que pueda volverse contra ti." - Proverbio kurdo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ARCHERY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Archery[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Archers[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ARTILLERY</Tag>
+  <English>Artillery</English>
+  <French>
+   <Text>Artillerie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Artillerie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Artiglieria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Artiller&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ARTILLERY_QUOTE</Tag>
+  <English>"Artillery adds dignity to what would otherwise be a vulgar brawl." - Frederick the Great</English>
+  <French>"L'artillerie conf&#232;re un peu de dignit&#233; &#224; ce qui ne serait que vulgaire bagarre !" - Fr&#233;d&#233;ric le Grand</French>
+  <German>"Die Artillerie verleiht einem vulg&#228;ren Gemetzel W&#252;rde." - Friedrich der Gro&#223;e</German>
+  <Italian>"L'artiglieria aggiunge dignit&#224; a quella che altrimenti sarebbe una volgare rissa." - Federico il Grande</Italian>
+  <Spanish>"La artiller&#237;a da dignidad a lo que, de otro modo, ser&#237;a una vulgar pelea." - Federico el Grande</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ARTILLERY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Artillery[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ASSEMBLY_LINE</Tag>
+  <English>Assembly Line</English>
+  <French>
+   <Text>Travail &#224; la cha&#238;ne</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Flie&#223;band</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Catena di montaggio</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Cadena de montaje</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ASSEMBLY_LINE_QUOTE</Tag>
+  <English>"People can have the Model T in any color - so long as it's black." - Henry Ford</English>
+  <French>"Les gens peuvent choisir la couleur de leur voiture, pourvu que ce soit noir." - Henry Ford</French>
+  <German>"Unser Modell T ist in jeder Farbe lieferbar, vorausgesetzt sie ist schwarz." - Henry Ford</German>
+  <Italian>"La gente pu&#242; avere il modello T in qualsiasi colore, a patto che sia nero." - Henry Ford</Italian>
+  <Spanish>"Los clientes pueden tener un coche del color que quieran, siempre que sea negro." - Henry Ford</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ASSEMBLY_LINE_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Assembly Line[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Pentagon[COLOR_REVERT] World Wonder and obsoletes [COLOR_WARNING_TEXT]Trading Company[COLOR_REVERT] National Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ASTRONOMY</Tag>
+  <English>Astronomy</English>
+  <French>
+   <Text>Astronomie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Astronomie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Astronomia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Astronom&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ASTRONOMY_QUOTE</Tag>
+  <English>"Astronomy compels the soul to look upwards and leads us from this world to another." - Plato</English>
+  <French>"L'astronomie oblige l'&#226;me &#224; se tourner vers les cieux et nous guide de ce monde vers un autre." - Platon </French>
+  <German>"Die Astronomie zwingt die Seele, nach oben zu schauen, und f&#252;hrt sie in eine andere Welt." - Plato</German>
+  <Italian>"L'astronomia obbliga l'anima a guardare in alto e ci conduce da un mondo a un altro." - Platone</Italian>
+  <Spanish>"La Astronom&#237;a obliga al alma a mirar hacia arriba y nos lleva de este mundo a otro." - Plat&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ASTRONOMY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Galleons[COLOR_REVERT], [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT], [COLOR_UNIT_TEXT]Frigates[COLOR_REVERT] and [COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT]. It allows [COLOR_UNIT_TEXT]Settlers[COLOR_REVERT] to be built on any continent, enables trading on the ocean, allows the spread of [COLOR_HIGHLIGHT_TEXT]Trading Companies[COLOR_REVERT], allows the construction of the [COLOR_BUILDING_TEXT]Observatory[COLOR_REVERT] Building and allows the construction of the [COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Colossus[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Moai Statues[COLOR_REVERT] World Wonders.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BANKING</Tag>
+  <English>Banking</English>
+  <French>
+   <Text>Banque</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bankwesen</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Sistema bancario</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Banca</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BANKING_QUOTE</Tag>
+  <English>"Banking establishments are more dangerous than standing armies." - Thomas Jefferson</English>
+  <French>"Les &#233;tablissements bancaires sont plus dangereux qu'une arm&#233;e en campagne." - Thomas Jefferson</French>
+  <German>"Banken sind gef&#228;hrlicher als stehende Armeen." - Thomas Jefferson</German>
+  <Italian>"Gli istituti bancari sono pi&#249; pericolosi di un esercito sul piede di guerra." - Thomas Jefferson</Italian>
+  <Spanish>"Los bancos son m&#225;s peligrosos para nuestras libertades que los ej&#233;rcitos en armas." - Thomas Jefferson</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BANKING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Banking[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT] Building. It allows the construction of the [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Mercantilism[COLOR_REVERT] Civic and obsoletes the [COLOR_WARNING_TEXT]Temple of Solomon[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BARBARIAN_NAVAL_MESSAGE</Tag>
+  <English>You may purchase a galley for free if you do not have any naval units. This prevents you from becoming trapped on an island. Galley's have a transport capacity of 5 units and can move across oceans.</English>
+  <French>Vous pouvez obtenir gratuitement une gal&#232;re si vous n'avez aucune unit&#233; navale. Cela vous permettra de ne pas rester pi&#233;g&#233; sur une &#238;le. Les gal&#232;res peuvent transporter jusqu'&#224; 5 unit&#233;s et traverser les oc&#233;ans.</French>
+  <German>Wenn Sie keine Marineeinheiten besitzen, k&#246;nnen Sie ein kostenloses Kriegsschiff erwerben, um zu verhindern, dass Sie m&#246;glicherweise auf einer Insel festsitzen. Kriegsschiffe k&#246;nnen bis zu 5 Einheiten transportieren und sind hochseetauglich.</German>
+  <Italian>Se non possiedi unit&#224; navali, puoi acquistare gratuitamente una galea per impedirti di rimanere intrappolato su un'isola. Le galee possono trasportare 5 unit&#224; e solcare gli oceani.</Italian>
+  <Spanish>Puedes adquirir una galera gratuita si careces de unidades navales. Eso impedir&#225; que te quedes atrapado en una isla. Las galeras tienen capacidad para transportar a 5 unidades y pueden moverse por las casillas de oc&#233;ano.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BASE_COST</Tag>
+  <English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Base Cost:[COLOR_REVERT]</English>
+  <German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Grundkosten:[COLOR_REVERT]</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BIOLOGY</Tag>
+  <English>Biology</English>
+  <French>
+   <Text>Biologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Biologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Biologia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Biolog&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BIOLOGY_QUOTE</Tag>
+  <English>"It is not the strongest of the species that survive, but the one most responsive to change." - Charles Darwin</English>
+  <French>"Ce n'est pas l'esp&#232;ce la plus puissante qui survit mais celle qui s'adapte le mieux au changement." - Charles Darwin</French>
+  <German>"Nicht die st&#228;rksten Spezies werden &#252;berleben, sondern jene, die sich Ver&#228;nderungen am besten anpassen k&#246;nnen." - Charles Darwin</German>
+  <Italian>"Non sopravvive la specie pi&#249; forte, ma quella pi&#249; adatta al cambiamento." - Charles Darwin</Italian>
+  <Spanish>"No sobrevive la especie m&#225;s fuerte, sino la m&#225;s adaptable al cambio." - Charles Darwin</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BIOLOGY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Biology[COLOR_REVERT] allows the construction of [COLOR_HIGHLIGHT_TEXT]Farms[COLOR_REVERT] without [COLOR_HIGHLIGHT_TEXT]Irrigation[COLOR_REVERT] as well as the [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] National Wonder. It increases the food production of all [COLOR_HIGHLIGHT_TEXT]Farm[COLOR_REVERT] Improvements by 1, allows the removal of Jungles and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Cereal Industry[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BRONZE_WORKING</Tag>
+  <English>Bronze Working</English>
+  <French>
+   <Text>Travail du bronze</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bronzeverarbeitung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Lavorazione del bronzo</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Forja del bronce</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BRONZE_WORKING_QUOTE</Tag>
+  <English>"It is entirely seemly for a young man killed in battle to lie mangled by the bronze spear. In his death all things appear fair." - Homer</English>
+  <French>"Un jeune homme tomb&#233; dans la bataille peut afficher la pointe d'airain fich&#233;e dans son corps car rien ne choque chez un mort." - Hom&#232;re</French>
+  <German>"So mancher J&#252;ngling f&#228;llt in der Schlacht, zermalmt von bronzenem Speer. Im Tode so scheint sein Schicksal vollbracht." - Homer</German>
+  <Italian>"Per un giovane &#232; decoroso morire in battaglia trafitto da una lancia di bronzo. Nella morte, tutte le cose sembrano giuste." - Omero</Italian>
+  <Spanish>"Yacer en el suelo, habiendo sido atravesado en la lid por el agudo bronce, es decoroso para un joven, y cuanto de &#233;l pueda verse todo es bello, a pesar de la muerte." - Homero</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_BRONZE_WORKING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Bronze Working[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource, allows you to train [COLOR_UNIT_TEXT]Axemen[COLOR_REVERT] and allows the removal of Forests.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CALENDAR</Tag>
+  <English>Calendar</English>
+  <French>
+   <Text>Calendrier</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kalender</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Calendario</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Calendario</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CALENDAR_QUOTE</Tag>
+  <English>"For everything there is a season and a time for every purpose under heaven." - Ecclesiastes</English>
+  <French>"A toute chose sa saison, et &#224; toute affaire sous les cieux, son temps." - Le livre de l'Eccl&#233;siaste</French>
+  <German>"F&#252;r alles gibt es eine Stunde. Und f&#252;r jedes Vorhaben unter dem Himmel eine Zeit." - Ekklesiastes</German>
+  <Italian>"Esistono una stagione e un tempo per ogni cosa." - Ecclesiaste</Italian>
+  <Spanish>"Todo tiene su tiempo, y todo cuanto se hace bajo el sol tiene su hora." - La Biblia, Eclesiast&#233;s</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CALENDAR_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Calendar[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Plantation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Slave Plantation[COLOR_REVERT] Improvements. It allows the construction of the [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Chinampa[COLOR_REVERT] World Wonders. It also centers the World Map and enables the [COLOR_HIGHLIGHT_TEXT]Agrarianism[COLOR_REVERT] Civic. The first player to discover [COLOR_TECH_TEXT]Calendar[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CAN_CONSTRUCT</Tag>
+  <English>[ICON_BULLET]Can Construct[SPACE]</English>
+  <French>[ICON_BULLET]Peut construire :[SPACE]</French>
+  <German>[ICON_BULLET]Erm&#246;glicht Bau von:[SPACE]</German>
+  <Italian>[ICON_BULLET]Pu&#242; costruire[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]Puede erigir[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CAN_CREATE</Tag>
+  <English>[ICON_BULLET]Can Create[SPACE]</English>
+  <French>[ICON_BULLET]Peut cr&#233;er :[SPACE]</French>
+  <German>[ICON_BULLET]Kann Folgendes erschaffen:[SPACE]</German>
+  <Italian>[ICON_BULLET]Pu&#242; creare[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]Se puede crear[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CAN_TRAIN</Tag>
+  <English>[ICON_BULLET]Can Train[SPACE]</English>
+  <French>[ICON_BULLET]Peut entra&#238;ner :[SPACE]</French>
+  <German>[ICON_BULLET]Ausbildung von:[SPACE]</German>
+  <Italian>[ICON_BULLET]Pu&#242; addestrare[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]Puede preparar[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CHEMISTRY</Tag>
+  <English>Chemistry</English>
+  <French>
+   <Text>Chimie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Chemie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Chimica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Qu&#237;mica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CHEMISTRY_QUOTE</Tag>
+  <English>"Chemistry means the difference between poverty and starvation and the abundant life." - Robert Brent</English>
+  <French>"La chimie est ce qui s&#233;pare la pauvret&#233; et la famine de l'abondance." - Robert Brent</French>
+  <German>"Die Chemie macht den Unterschied zwischen Armut und Hunger und einem Leben im &#220;berfluss." - Robert Brent</German>
+  <Italian>"La chimica rappresenta la differenza tra povert&#224; e fame e una vita piena di abbondanza." - Robert Brent</Italian>
+  <Spanish>"La Qu&#237;mica supone la diferencia entre la pobreza y la hambruna y una vida llena de abundancia." - Robert Brent</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CHEMISTRY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Chemistry[COLOR_REVERT] allows the training of [COLOR_UNIT_TEXT]Grenadiers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT]. It increases production from all [COLOR_HIGHLIGHT_TEXT]Workshops[COLOR_REVERT] by 1 and allows the construction of the [COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CHOOSER_TITLE</Tag>
+  <English>Technology Advisor</English>
+  <French>Conseiller scientifique</French>
+  <German>Technologieberater</German>
+  <Italian>Consigliere tecnologico</Italian>
+  <Spanish>Consejero de tecnolog&#237;a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CIVIL_SERVICE</Tag>
+  <English>Civil Service</English>
+  <French>
+   <Text>Administration</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>&#214;ffentliche Verwaltung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pubblica amministrazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Administraci&#243;n p&#250;blica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CIVIL_SERVICE_QUOTE</Tag>
+  <English>"The bureaucracy is expanding to meet the needs of the expanding bureaucracy" - Unknown</English>
+  <French>"La bureaucratie grandit pour r&#233;pondre aux besoins croissants de la bureaucratie grandissante." - Inconnu</French>
+  <German>"Die B&#252;rokratie wurde erfunden, um die Bed&#252;rfnisse der B&#252;rokratie zu stillen." - Unbekannt</German>
+  <Italian>"La burocrazia si espande per soddisfare i bisogni di una burocrazia in espansione." - Anonimo</Italian>
+  <Spanish>"La burocracia se expande para satisfacer las necesidades de una burocracia en expansi&#243;n." - An&#243;nimo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CIVIL_SERVICE_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Civil Service[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Absolutism[COLOR_REVERT] Civic and allows you to train [COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT]. It allows [COLOR_HIGHLIGHT_TEXT]Farms[COLOR_REVERT] to spread [COLOR_HIGHLIGHT_TEXT]Irrigation[COLOR_REVERT] and allows the construction of the [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CODE_OF_LAWS</Tag>
+  <English>Code of Laws</English>
+  <French>
+   <Text>Livre des lois</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gesetzgebung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Codice delle leggi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Legislaci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CODE_OF_LAWS_QUOTE</Tag>
+  <English>"To bring about the rule of righteousness in the land, so that the strong should not harm the weak." - Hammurabi's Code; Prologue</English>
+  <French>"Pour accompagner le r&#232;gne des justes sur la Terre afin que le fort jamais ne brutalise le faible." - Code d'Hammurabi, Prologue</French>
+  <German>"Es wird Zeit, dem Land Gesetze zu schenken, auf dass die Reichen die Armen nicht unterdr&#252;cken." - Codex Hammurabi, Prolog</German>
+  <Italian>"Per portare regole e giustizia, in modo che il pi&#249; forte non possa nuocere al pi&#249; debole." - Codice di Hammurabi, Prologo</Italian>
+  <Spanish>"Para traer el imperio de la Justicia al pa&#237;s y que los fuertes no perjudiquen a los d&#233;biles." - Pre&#225;mbulo del C&#243;digo de Hammurabi</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CODE_OF_LAWS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Code of Laws[COLOR_REVERT] allows construction of the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMBUSTION</Tag>
+  <English>Combustion</English>
+  <French>
+   <Text>Combustion</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Verbrennungsmotor</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Combustione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Combusti&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMBUSTION_QUOTE</Tag>
+  <English>"Everything in life is somewhere else, and you get there in a car." - E. B. White</English>
+  <French>"Dans la vie, tout est ailleurs, et on ne peut y aller qu'en voiture !" - E. B. White</French>
+  <German>"Im Leben ist alles irgendwo anders. Und hin kommt man mit dem Auto." - E. B. White</German>
+  <Italian>"Ogni cosa della vita si trova da qualche parte ed &#232; raggiungibile in automobile." - E. B. White</Italian>
+  <Spanish>"Todo en la vida est&#225; en otra parte, y all&#237; se llega en coche." - E. B. White</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMBUSTION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Combustion[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Transports[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Airships[COLOR_REVERT]. Allows the construction of the [COLOR_BUILDING_TEXT]Public Transportation[COLOR_REVERT] Building, the construction of the [COLOR_HIGHLIGHT_TEXT]Well[COLOR_REVERT] Improvement and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Oil Industry[COLOR_REVERT]. It obsoletes the [COLOR_WARNING_TEXT]Whale[COLOR_REVERT] Resource and the [COLOR_WARNING_TEXT]Trafalgar Square[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPASS</Tag>
+  <English>Compass</English>
+  <French>
+   <Text>Boussole</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kompass</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Magnetismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Br&#250;jula</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPASS_QUOTE</Tag>
+  <English>"The wisest men follow their own direction." - Euripides</English>
+  <French>"L'homme avis&#233; suit sa propre direction." - Euripide</French>
+  <German>"Ein weiser Mann folgt nur sich selbst." - Euripides</German>
+  <Italian>"Gli uomini pi&#249; saggi conoscono la direzione in cui andare." - Euripide</Italian>
+  <Spanish>"Los hombres m&#225;s sabios siguen su propio rumbo." - Eur&#237;pides</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPASS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Compass[COLOR_REVERT] allows the training of [COLOR_UNIT_TEXT]Explorers[COLOR_REVERT]. It allows the construction of the [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT] Improvement and allows the construction of the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT] Building. It obsoletes the [COLOR_WARNING_TEXT]Great Lighthouse[COLOR_REVERT] Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPOSITES</Tag>
+  <English>Composites</English>
+  <French>
+   <Text>Mat&#233;riaux composites</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Verbundstoffe</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Composti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Compuestos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPOSITES_QUOTE</Tag>
+  <English>"The whole is greater than the sum of its parts." - Aristotle</English>
+  <French>"La totalit&#233; est plus que la somme des parties." - Aristote</French>
+  <German>"Das Ganze ist mehr als die Summe seiner Teile." - Aristoteles</German>
+  <Italian>"Il risultato &#232; migliore della somma delle sue parti." - Aristotele</Italian>
+  <Spanish>"Un todo es mayor que la suma de sus partes." - Arist&#243;teles</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPOSITES_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Composites[COLOR_REVERT] allow you to train [COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT] and allows the [COLOR_HIGHLIGHT_TEXT]Alchemist III[COLOR_REVERT] Promotion. It also allows the construction of the [COLOR_BUILDING_TEXT]SS Casing[COLOR_REVERT] Spaceship Part.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPUTERS</Tag>
+  <English>Computers</English>
+  <French>
+   <Text>Informatique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Computertechnologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Computer</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ordenadores</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPUTERS_QUOTE</Tag>
+  <English>"Never trust a computer you can't throw out a window." - Steve Wozniak</English>
+  <French>"M&#233;fiez-vous d'un ordinateur que vous ne pouvez pas jeter par la fen&#234;tre." - Steve Wozniak</French>
+  <German>"Vertraue keinem Computer, den du nicht aus dem Fenster werfen kannst." - Steve Wozniak</German>
+  <Italian>"Mai fidarsi di un computer che non si pu&#242; lanciare fuori dalla finestra." - Steve Wozniak</Italian>
+  <Spanish>"Nunca te f&#237;es de un ordenador que no puedas tirar por la ventana." - Steve Wozniak</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_COMPUTERS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Computers[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT], allows the construction of the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] Building, allows the construction of the [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] Project and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Computer Industry[COLOR_REVERT]. It also obsoletes the [COLOR_WARNING_TEXT]Spiral Minaret[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CONSTITUTION</Tag>
+  <English>Constitution</English>
+  <French>
+   <Text>Constitution</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Verfassung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Costituzione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Constituci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CONSTITUTION_QUOTE</Tag>
+  <English>"No freeman shall be taken, imprisoned, or in any other way destroyed, except by the lawful judgment of his peers." - The Magna Carta</English>
+  <French>"Aucun homme libre ne sera saisi, emprisonn&#233; ou ex&#233;cut&#233;, de quelque mani&#232;re que ce soit, sans un jugement l&#233;gal de ses pairs." - La Magna Carta</French>
+  <German>"Kein freier Mann darf eingesperrt oder bestraft werden ohne ein rechtm&#228;&#223;iges Urteil seiner Standesgenossen." - Magna Carta</German>
+  <Italian>"Nessun uomo libero pu&#242; essere sequestrato, imprigionato o annullato in qualsiasi modo, ma deve essere giudicato solamente per le sue azioni." - La Magna Carta</Italian>
+  <Spanish>"Ning&#250;n hombre libre podr&#225; ser detenido o encarcelado o privado de sus derechos de cualquier otra forma, sino en virtud de sentencia judicial de sus pares y con arreglo a la ley del reino." - La Carta Magna</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CONSTITUTION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Constitution[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Representation[COLOR_REVERT] civic, allows the construction of the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]La Mezquita[COLOR_REVERT]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CONSTRUCTION</Tag>
+  <English>Construction</English>
+  <French>
+   <Text>Construction</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bauwesen</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Costruzione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Construcci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CONSTRUCTION_QUOTE</Tag>
+  <English>"And on the pedestal these words appear: 'My name is Ozymandias, king of kings: Look on my works, ye Mighty, and despair!' Nothing beside remains." - Percy Bysshe Shelley</English>
+  <French>"Et sur le pi&#233;destal apparaissent ces mots : 'Je suis Ozymandias, le Roi des Rois ; contemple mon oeuvre, &#212; Tout-puissant, et d&#233;sesp&#232;re !'" - Percy Bysshe Shelley </French>
+  <German>"Und auf dem Sockel erscheinen folgende Worte: 'Mein Name ist Ozymandias, K&#246;nig der K&#246;nige: Betrachtet mein Werk, ihr M&#228;chtigen, und verzweifelt!'" - Percy Bysshe Shelley</German>
+  <Italian>"E sul mio piedistallo saranno incise queste parole: 'Il mio nome &#232; Ozymandias, re dei re; guarda il mio operato e ammutolisci!'" - Percy Bysshe Shelley</Italian>
+  <Spanish>"Y en el pedestal se leen estas palabras: 'Mi nombre es Ozymandias, rey de reyes: &#161;Contemplad mis obras, poderosos, y perded la esperanza!' " - Percy Bysshe Shelley</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CONSTRUCTION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Construction[COLOR_REVERT] allows the construction of [COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT], allows Bridge Building and allows the construction of the [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT], [COLOR_BUILDING_TEXT]Great Wall[COLOR_REVERT], [COLOR_BUILDING_TEXT]Theodosian Walls[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CORPORATION</Tag>
+  <English>Corporation</English>
+  <French>
+   <Text>Soci&#233;t&#233; commerciale</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kapitalgesellschaft</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Corporazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Persona jur&#237;dica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CORPORATION_QUOTE</Tag>
+  <English>"Corporation, n. An ingenious device for obtaining individual profit without individual responsibility." - Ambrose Bierce</English>
+  <French>"Soci&#233;t&#233; commerciale, d&#233;finition : dispositif ing&#233;nieux favorisant le profit individuel sans responsabilit&#233; individuelle." - Ambrose Pierce</French>
+  <German>"Unternehmen sind eine M&#246;glichkeit, ohne individuelle Verantwortlichkeit Gewinne zu erwirtschaften." - Ambrose Bierce</German>
+  <Italian>"Corporazione, sostantivo. Un meccanismo ingegnoso per conquistare profitti individuali senza responsabilit&#224; individuali." - Ambrose Bierce</Italian>
+  <Spanish>"Persona jur&#237;dica, f. Der. Un ingenioso artificio para obtener ganancia individual sin responsabilidad individual." - Ambrose Bierce</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CORPORATION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Corporation[COLOR_REVERT] adds an additional trade route to all cities, enables the [COLOR_HIGHLIGHT_TEXT]Free Market[COLOR_REVERT] Civic and allows construction of the [COLOR_BUILDING_TEXT]Stock Market[COLOR_REVERT] National Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CURRENCY</Tag>
+  <English>Currency</English>
+  <French>
+   <Text>Monnaie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>W&#228;hrung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Valuta</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Moneda</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CURRENCY_QUOTE</Tag>
+  <English>"Everything is worth what its purchaser will pay for it." - Publius Syrus</English>
+  <French>"Toute chose a la valeur que son acqu&#233;reur est pr&#234;t &#224; payer." - Publius Syrus</French>
+  <German>"Jedes Ding ist wert, was der K&#228;ufer daf&#252;r zahlen will." - Publius Syrus</German>
+  <Italian>"Ogni cosa vale il prezzo che un acquirente &#232; disposto a pagare." - Publilio Siro</Italian>
+  <Spanish>"Las cosas valen lo que su comprador est&#233; dispuesto a pagar por ellas." - Publio Siro</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_CURRENCY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Currency[COLOR_REVERT] adds an additional trade route to all cities and allows the construction of the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT] Building. It also enables the [COLOR_HIGHLIGHT_TEXT]Mercenaries[COLOR_REVERT] Civic, allows you to trade gold with other civilizations and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Silk Route[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DEMOCRACY</Tag>
+  <English>Democracy</English>
+  <French>
+   <Text>D&#233;mocratie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Demokratie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Democrazia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Democracia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DEMOCRACY_QUOTE</Tag>
+  <English>"It has been said that democracy is the worst form of government except all the others that have been tried." - Winston Churchill</English>
+  <French>"On a dit que la d&#233;mocratie est la pire forme de gouvernement &#224; l'exception de toutes les autres." - Winston Churchill</French>
+  <German>"Man sagt, die Demokratie ist die schlechteste Staatsform, mit Ausnahme aller anderen." - Winston Churchill</German>
+  <Italian>"&#200; stato detto che la democrazia &#232; la peggior forma di governo all'infuori di tutte quelle che sono state gi&#224; tentate precedentemente." - Winston Churchill</Italian>
+  <Spanish>"La democracia es el peor de los reg&#237;menes, con excepci&#243;n de todos los dem&#225;s que se han probado." - Winston Churchill</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DEMOCRACY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Democracy[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Egalitarianism[COLOR_REVERT] Civic. It also allows the construction of the [COLOR_BUILDING_TEXT]Statue of Liberty[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] World Wonders.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DIVINE_RIGHT</Tag>
+  <English>Divine Right</English>
+  <French>
+   <Text>Droit divin</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>G&#246;ttliches Recht</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Diritto divino</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Derecho divino</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DIVINE_RIGHT_QUOTE</Tag>
+  <English>"I am the state." - Louis XIV</English>
+  <French>"L'Etat, c'est moi." - Louis XIV</French>
+  <German>"Der Staat bin ich." - Ludwig XIV.</German>
+  <Italian>"Lo stato sono io." - Luigi XIV</Italian>
+  <Spanish>"El Estado soy yo." - Luis XIV</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DIVINE_RIGHT_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Divine Right[COLOR_REVERT] enables [COLOR_HIGHLIGHT_TEXT]Fanaticism[COLOR_REVERT], obsoletes the [COLOR_WARNING_TEXT]Pagan Temple[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Great Library[COLOR_REVERT]. It allows the construction of the [COLOR_BUILDING_TEXT]Forbidden Palace[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Spiral Minaret[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] World Wonders. It also allows the training of the [COLOR_PROJECT_TEXT]Religious Persecutor[COLOR_REVERT] Unit. The first player to discover [COLOR_TECH_TEXT]Divine Right[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DRAMA</Tag>
+  <English>Drama</English>
+  <French>
+   <Text>Th&#233;&#226;tre</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Drama</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Drammaturgia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Drama</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DRAMA_QUOTE</Tag>
+  <English>"All the world's a stage, And all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts. " - William Shakespeare</English>
+  <French>"Le monde entier est une immense sc&#232;ne ! Tous, hommes et femmes, des acteurs qui y jouent leurs sorties, qui y jouent leurs entr&#233;es ; chacun interpr&#232;te maints r&#244;les dans sa vie !" - William Shakespeare</French>
+  <German>"Die ganze Welt ist B&#252;hne. Und alle Frauen und M&#228;nner blo&#223;e Spieler. Sie treten auf und gehen wieder ab. Sein Leben lang spielt einer manche Rollen." - William Shakespeare</German>
+  <Italian>"Il mondo &#232; un palco, uomini e donne sono solamente attori. Ci sono ingressi e uscite e ciascuno pu&#242; rivestire ruoli diversi. " - William Shakespeare</Italian>
+  <Spanish>"El mundo es un escenario y los hombres y mujeres que lo pueblan son solo actores. Todos hacen entradas y mutis y diversos papeles en la vida. " - William Shakespeare</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_DRAMA_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Drama[COLOR_REVERT] allows you to adjust the [COLOR_HIGHLIGHT_TEXT]Culture[COLOR_REVERT] slider and allows the construction of the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] National Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Great Sphinx[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ECOLOGY</Tag>
+  <English>Ecology</English>
+  <French>
+   <Text>Ecologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>&#214;kologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ecologia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ecolog&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ECOLOGY_QUOTE</Tag>
+  <English>"We do not inherit the earth from our ancestors, we borrow it from our children" - Native American Song</English>
+  <French>"Nous n'h&#233;ritons pas de la Terre de nos anc&#234;tres, nous l'empruntons &#224; nos enfants." - Chant am&#233;rindien</French>
+  <German>"Wir haben die Erde nicht von unseren Vorfahren geerbt, sondern von unseren Kindern geliehen." - Indianerlied</German>
+  <Italian>"Non ereditiamo la terra dai nostri antenati, la prendiamo in prestito per i nostri figli." - Canzone dei Nativi Americani</Italian>
+  <Spanish>"La Tierra no es una herencia de nuestros padres, sino un pr&#233;stamo de nuestros hijos." - Canci&#243;n de los ind&#237;genas americanos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ECOLOGY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Ecology[COLOR_REVERT] allows you to Scrub [COLOR_HIGHLIGHT_TEXT]Fallout[COLOR_REVERT] and enables the [COLOR_HIGHLIGHT_TEXT]Environmentalism[COLOR_REVERT] Civic. It also allows the construction of the [COLOR_BUILDING_TEXT]Recycling Center[COLOR_REVERT] Building and the [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT] Spaceship Part.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ECONOMICS</Tag>
+  <English>Economics</English>
+  <French>
+   <Text>Sciences &#233;conomiques</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Wirtschaftswesen</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Economia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Econom&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ECONOMICS_QUOTE</Tag>
+  <English>"Compound interest is the most powerful force in the universe." - Albert Einstein</English>
+  <French>"Les int&#233;r&#234;ts compos&#233;s sont la plus grande force de tout l'univers." - Albert Einstein</French>
+  <German>"Der Zinseszins war die gr&#246;&#223;te Erfindung des menschlichen Denkens." - Albert Einstein</German>
+  <Italian>"L'interesse composto &#232; la forza pi&#249; potente dell'universo." - Albert Einstein</Italian>
+  <Spanish>"El inter&#233;s compuesto es la fuerza m&#225;s poderosa de la galaxia." - Albert Einstein</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ECONOMICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Economics[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Capitalism[COLOR_REVERT] Civic, allows the [COLOR_BUILDING_TEXT]Customs House[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] National Wonder. The first to research [COLOR_TECH_TEXT]Economics[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT] unit.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_EDUCATION</Tag>
+  <English>Education</English>
+  <French>
+   <Text>Education</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bildungswesen</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Educazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Educaci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_EDUCATION_QUOTE</Tag>
+  <English>"There is no wealth like knowledge, no poverty like ignorance." - Ali ibn Abi-Talib</English>
+  <French>"Il n'existe plus grande richesse que le savoir, plus grande pauvret&#233; que l'ignorance." - Ali ibn Abi Talib</French>
+  <German>"Wissen ist der gr&#246;&#223;te Reichtum und Ignoranz zeugt von Armut." - Ali ibn Abi-Talib</German>
+  <Italian>"La conoscenza &#232; sintomo di benessere, l'ignoranza &#232; sintomo di povert&#224;." - Ali ibn Abi-Talib</Italian>
+  <Spanish>"No hay mayor riqueza que el conocimiento ni mayor pobreza que la ignorancia." - Al&#237; ibn Abi-Talib</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_EDUCATION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Education[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]University[COLOR_REVERT] Building and obsoletes the [COLOR_WARNING_TEXT]University of Sankore[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ELECTRICITY</Tag>
+  <English>Electricity</English>
+  <French>
+   <Text>Electricit&#233;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Elektrizit&#228;t</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Elettricit&#224;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Electricidad</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ELECTRICITY_QUOTE</Tag>
+  <English>"We will make electricity so cheap that only the rich will burn candles." - Thomas Edison</English>
+  <French>"L'&#233;lectricit&#233; sera si bon march&#233; que seuls les riches s'&#233;claireront encore &#224; la bougie." - Thomas Edison</French>
+  <German>"Wir machen die Elektrizit&#228;t so billig, dass nur noch die Reichen Kerzen benutzen!" - Thomas Edison</German>
+  <Italian>"Renderemo l'elettricit&#224; cos&#236; economica che solamente i ricchi accenderanno le candele." - Thomas Edison</Italian>
+  <Spanish>"Abarataremos tanto la electricidad que solo los ricos usar&#225;n velas." - Thomas Edison</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ELECTRICITY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Electricity[COLOR_REVERT] increases commerce output of all [COLOR_HIGHLIGHT_TEXT]Windmills[COLOR_REVERT] by 1 and all [COLOR_HIGHLIGHT_TEXT]Watermills[COLOR_REVERT] by 2 and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Luxury Industry[COLOR_REVERT]. It allows the construction of the [COLOR_BUILDING_TEXT]Bunker[COLOR_REVERT], [COLOR_BUILDING_TEXT]Bomb Shelter[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT] Buildings and the [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_EMPIRE_SIZE</Tag>
+  <English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Empire Size:[COLOR_REVERT]</English>
+  <German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Reichsgr&#246;&#223;e:[COLOR_REVERT]</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ENGINEERING</Tag>
+  <English>Engineering</English>
+  <French>
+   <Text>Ing&#233;nierie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Maschinenbau</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ingegneria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ingenier&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ENGINEERING_QUOTE</Tag>
+  <English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away." - Antoine de Saint-Exupry</English>
+  <French>"La perfection est atteinte non pas parce qu'il n'y a plus rien &#224; ajouter, mais lorsqu'il n'y a plus rien &#224; retirer." - Antoine de Saint-Exup&#233;ry</French>
+  <German>"Perfektion ist nicht dann erreicht, wenn es nichts mehr hinzuzuf&#252;gen gibt, sondern wenn man nichts mehr weglassen kann." - Antoine de Saint-Exup&#233;ry</German>
+  <Italian>"Un progettista sa di aver raggiunto la perfezione non quando non c'&#232; pi&#249; niente da aggiungere, ma quando non c'&#232; pi&#249; nulla da eliminare." - Antoine de Saint-Exupry</Italian>
+  <Spanish>"Un dise&#241;ador sabe que ha alcanzado la perfecci&#243;n no cuando ya no tiene nada m&#225;s que a&#241;adir, sino cuando no le queda nada m&#225;s que quitar." - Antoine de Saint-Exup&#233;ry</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ENGINEERING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Engineering[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Pikemen[COLOR_REVERT] and [COLOR_UNIT_TEXT]Trebuchets[COLOR_REVERT]. It also increases [COLOR_HIGHLIGHT_TEXT]Road[COLOR_REVERT] movement and allows the construction of the [COLOR_BUILDING_TEXT]Castle[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] World Wonders.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ERA_ADVANCE</Tag>
+  <English>[ICON_BULLET]Advances to the [COLOR_HIGHLIGHT_TEXT]%s1_era[COLOR_REVERT] Era</English>
+  <French>[ICON_BULLET]Avance &#224; l'&#233;poque : [COLOR_HIGHLIGHT_TEXT]%s1_era[COLOR_REVERT]</French>
+  <German>[ICON_BULLET]Fortschritt zum Zeitalter [COLOR_HIGHLIGHT_TEXT]%s1_era[COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET]Avanza all'era [COLOR_HIGHLIGHT_TEXT]%s1_era[COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]Avanza a la era [NUM1:del:de la:de los:de las] [COLOR_HIGHLIGHT_TEXT]%s1_era[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FASCISM</Tag>
+  <English>Fascism</English>
+  <French>
+   <Text>Fascisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Faschismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Fascismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Fascismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FASCISM_QUOTE</Tag>
+  <English>"The great masses of the people... will more easily fall victims to a big lie than to a small one." - Adolf Hitler</English>
+  <French>"C'est un fait que les masses avalent plus facilement un gros mensonge qu'un petit." - Adolf Hitler</French>
+  <German>"Die meisten Menschen werden leichter Opfer einer gro&#223;en L&#252;ge als einer kleinen." - deutscher Diktator</German>
+  <Italian>"Le grandi masse... sono pi&#249; propense a cadere vittime di una grande bugia, piuttosto di una piccola." - Adolf Hitler</Italian>
+  <Spanish>"Las grandes masas del pueblo caer&#225;n m&#225;s f&#225;cilmente v&#237;ctimas de una mentira grande que de una peque&#241;a." - Adolf Hitler</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FASCISM_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Fascism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT] Civic, allows you to train [COLOR_UNIT_TEXT]Paratroopers[COLOR_REVERT] and allows the construction of the [COLOR_BUILDING_TEXT]Mount Rushmore[COLOR_REVERT] World Wonder. The first to research [COLOR_TECH_TEXT]Fascism[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] unit</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FEUDALISM</Tag>
+  <English>Feudalism</English>
+  <French>
+   <Text>F&#233;odalisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Feudalismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Feudalesimo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Feudalismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FEUDALISM_QUOTE</Tag>
+  <English>"I will to my lord be true and faithful, and love all which he loves and shun all which he shuns." - Anglo Saxon Oath of Fealty</English>
+  <French>"Je jure loyaut&#233; et fid&#233;lit&#233; &#224; mon seigneur, j'aimerai ce qu'il aime et me d&#233;tournerai de ce dont il se d&#233;tourne." - Serment d'all&#233;geance anglo-saxon</French>
+  <German>"Ich werde meinem Herrn treue Dienste leisten. Seine Feinde sollen auch meine Feinde sein." - Angels&#228;chsischer Treueeid</German>
+  <Italian>"Sono devoto e credo nel mio Signore, amo ci&#242; che lui ama e rifuggo ci&#242; che lui rifugge." - Giuramento di fedelt&#224; anglosassone</Italian>
+  <Spanish>"Ser&#233; fiel y sincero para con mi se&#241;or, y amar&#233; todo lo que ame y abominar&#233; de todo lo que abomine." - Juramento de fidelidad anglosaj&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FEUDALISM_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Longbowmen[COLOR_REVERT] and allows the construction of the [COLOR_BUILDING_TEXT]Himeji Castle[COLOR_REVERT]. It also enables the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Levy Armies[COLOR_REVERT] Civics and obsoletes the [COLOR_WARNING_TEXT]Colosseum[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Great Pyramids[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FIBER_OPTICS</Tag>
+  <English>Fiber Optics</English>
+  <French>
+   <Text>Fibre optique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Glasfasertechnologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Fibre ottiche</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Fibra &#243;ptica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FIBER_OPTICS_QUOTE</Tag>
+  <English>"There is a single light of science, and to brighten it anywhere is to brighten it everywhere." - Isaac Asimov</English>
+  <French>"La lumi&#232;re de la science est unique et lorsqu'elle &#233;claire quelque part, elle &#233;claire partout." - Isaac Asimov</French>
+  <German>"Es gibt nur ein Licht der Wissenschaft, und es irgendwo zu entz&#252;nden hei&#223;t, es &#252;berall zu entz&#252;nden." - Isaac Asimov</German>
+  <Italian>"Accendendo la luce della scienza da qualche parte, lo si fa ovunque." - Isaac Asimov</Italian>
+  <Spanish>"La ciencia es una sola luz, e iluminar con ella cualquier parte es iluminar con ella el mundo entero." - Isaac Asimov</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FIBER_OPTICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Fiber Optics[COLOR_REVERT] allows you to construct the [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT] Spaceship Part. It also obsoletes the [COLOR_WARNING_TEXT]Westminster Palace[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FIRST_FREE_TECH</Tag>
+  <English>[ICON_BULLET]First to Discover Receives a [COLOR_TECH_TEXT]Free Technology[COLOR_REVERT] from your current or earlier Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FIRST_FREE_TECHS</Tag>
+  <English>[ICON_BULLET]First to Discover Receives [COLOR_TECH_TEXT]%d1_Num Free Technologies[COLOR_REVERT] from your current or earlier Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FIRST_RECEIVES</Tag>
+  <English>[ICON_BULLET]First to Discover Receives a [COLOR_UNIT_TEXT][LINK=literal]%s1_UnitName[\LINK][COLOR_REVERT]</English>
+  <French>[ICON_BULLET]Faire cette d&#233;couverte avant les autres octroie 1 [COLOR_UNIT_TEXT][LINK=literal]%s1_UnitName[\LINK][COLOR_REVERT]</French>
+  <German>[ICON_BULLET]Der erste Entdecker erh&#228;lt eine Einheit: [COLOR_UNIT_TEXT][LINK=literal]%s1_UnitName[\LINK][COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET]Il primo che scopre questa tecnologia riceve [NUM1:un:una:dei:delle] [COLOR_UNIT_TEXT][LINK=literal]%s1_UnitName[\LINK][COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]Quien haga primero su descubrimiento recibir&#225; [NUM1:un:una:unos:unas] [COLOR_UNIT_TEXT][LINK=literal]%s1_UnitName[\LINK][COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FISHING</Tag>
+  <English>Fishing</English>
+  <French>
+   <Text>P&#234;che</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Fischen</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pesca</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pesca</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FISHING_QUOTE</Tag>
+  <English>"Give a man a fish and you feed him for a day. Teach a man to fish and you feed him for a lifetime." - Lao Tzu</English>
+  <French>"Donne un poisson &#224; un homme et tu le nourris pour un jour, apprends-lui &#224; p&#234;cher et tu le nourris pour toujours." - Lao-Tseu</French>
+  <German>"Gib einem Menschen einen Fisch, und du ern&#228;hrst ihn f&#252;r einen Tag. Bring ihm bei zu fischen, und du ern&#228;hrst ihn sein Leben lang." - Laotse</German>
+  <Italian>"Un uomo pu&#242; saziarsi con un pesce al giorno. Un uomo che impara a pescare pu&#242; saziarsi per tutta la vita." - Lao Tzu</Italian>
+  <Spanish>"Si le das a un hombre un pescado, comer&#225; un d&#237;a. Si le ense&#241;as a pescar, comer&#225; toda la vida." - Lao Ts&#233;</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FISHING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Fishing[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Work Boats[COLOR_REVERT], allows cities to work water tiles and allows the construction of [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FISSION</Tag>
+  <English>Fission</English>
+  <French>
+   <Text>Fission nucl&#233;aire</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kernspaltung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Fissione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Fisi&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FISSION_QUOTE</Tag>
+  <English>If the radiance of a thousand suns were to burst at once into the sky, that would be like the splendor of the Mighty One... I am become Death, the Shatterer of Worlds. - J. Robert Oppenheimer, quoting "The Bhagavad Gita"</English>
+  <French>"Si la splendeur de mille soleils &#233;clatait &#224; la fois dans les cieux, cela serait comparable au rayonnement du grand Etre... Je suis devenu la Mort, le destructeur des mondes." - J. Robert Oppenheimer, citant la Bhagavad Gita</French>
+  <German>"Wenn das Licht von tausend Sonnen am Himmel pl&#246;tzlich br&#228;ch' hervor, zu gleicher Zeit - das w&#228;re gleich dem Glanze des Herrlichen ... Ich bin der Tod, der alles raubt, Ersch&#252;tterer der Welten." - J. Robert Oppenheimer, Zitat aus der "Bhagavad Gita"</German>
+  <Italian>Se migliaia di soli illuminassero il cielo sarebbe uno spettacolo di straordinaria potenza... Sono la Morte, Distruttrice di Mondi. - J. Robert Oppenheimer, citando il "Bhagavad Gita"</Italian>
+  <Spanish>"Si el brillo de mil soles refulgiese a la vez en el cielo, ser&#237;a como el esplendor del Poderoso... Me he convertido en la Muerte, la destructora de mundos." - J. Robert Oppenheimer, citando "El Bhagavad Gita"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FISSION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Fission[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Nuclear Plant[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] World Wonder and the [COLOR_PROJECT_TEXT]Manhattan Project[COLOR_REVERT]. It also allows you to train [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FLIGHT</Tag>
+  <English>Flight</English>
+  <French>
+   <Text>Aviation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Luftfahrt</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Volo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Vuelo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FLIGHT_QUOTE</Tag>
+  <English>"For once you have tasted flight you will walk the earth with your eyes turned skywards, for there you have been and there you will long to return." - Leonardo Da Vinci</English>
+  <French>"Car lorsque vous aurez go&#251;t&#233; aux beaut&#233;s du vol, vous parcourrez la Terre les yeux tourn&#233;s vers le ciel, car vous y serez all&#233; et qu'il vous tardera d'y revenir." - L&#233;onard de Vinci</French>
+  <German>"Wenn du einmal das Fliegen empfunden hast, wirst du f&#252;r immer auf der Erde wandeln mit deinen Augen himmelw&#228;rts gerichtet, denn dort bist du gewesen und dort wird es dich immer wieder hinziehen." - Leonardo Da Vinci</German>
+  <Italian>"Una volta aver assaporato il volo, quando tornerai sulla terra continuerai a guardare verso il cielo." - Leonardo Da Vinci</Italian>
+  <Spanish>"Una vez hayas probado el vuelo caminar&#225;s por la tierra con los ojos alzados hacia el cielo porque ya habr&#225;s estado all&#237; y querr&#225;s volver." - Leonardo Da Vinci</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FLIGHT_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Flight[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Paratroopers[COLOR_REVERT], [COLOR_UNIT_TEXT]Carriers[COLOR_REVERT], [COLOR_UNIT_TEXT]Fighters[COLOR_REVERT] and [COLOR_UNIT_TEXT]Bombers[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Airport[COLOR_REVERT] Building.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FUSION</Tag>
+  <English>Fusion</English>
+  <French>
+   <Text>Fusion nucl&#233;aire</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kernfusion</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Fusione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Fusi&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FUSION_QUOTE</Tag>
+  <English>"Any sufficiently advanced technology is indistinguishable from magic." - Arthur C. Clarke</English>
+  <French>"Une technologie suffisamment sophistiqu&#233;e ne peut &#234;tre distingu&#233;e de la magie." - Arthur C. Clarke</French>
+  <German>"Jede fortgeschrittene Technologie ist anfangs von Magie nicht zu unterscheiden." - Arthur C. Clarke</German>
+  <Italian>"Ogni tecnologia sufficientemente avanzata, &#232; indistinguibile dalla magia." - Arthur C. Clarke</Italian>
+  <Spanish>"Cualquier tecnolog&#237;a lo suficientemente avanzada es indistinguible de la magia." - Arthur C. Clarke</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FUSION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Fusion[COLOR_REVERT] allows you to construct the [COLOR_PROJECT_TEXT]SS Engine[COLOR_REVERT] Spaceship Part. The first to research [COLOR_TECH_TEXT]Fusion[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT] unit</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FUTURE_TECH</Tag>
+  <English>Future Tech</English>
+  <French>
+   <Text>Tech. futures</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Zukunftstech.</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tecnologia futura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tecnolog&#237;a futura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FUTURE_TECH_QUOTE</Tag>
+  <English>"The future will be better tomorrow." - Dan Quayle</English>
+  <French>"Le futur sera meilleur demain !" - Dan Quayle</French>
+  <German>"Morgen wird die Zukunft besser sein." - Dan Quayle</German>
+  <Italian>"Domani, il futuro sar&#224; migliore." - Dan Quayle</Italian>
+  <Spanish>"El futuro ser&#225; mejor ma&#241;ana." - Dan Quayle</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_FUTURE_TECH_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Future Tech[COLOR_REVERT] increases health and happiness in all your cities.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GENETICS</Tag>
+  <English>Genetics</English>
+  <French>
+   <Text>G&#233;n&#233;tique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gentechnik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Genetica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Gen&#233;tica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GENETICS_QUOTE</Tag>
+  <English>"Soon it will be a sin for parents to have a child which carries the heavy burden of genetic disease." - Bob Edwards</English>
+  <French>"Bient&#244;t, ce sera un p&#233;ch&#233; pour des parents d'avoir un enfant souffrant d'une maladie g&#233;n&#233;tique." - Bob Edwards</French>
+  <German>"Bald wird es eine S&#252;nde sein, wenn Eltern ein behindertes Kind zur Welt bringen." - Bob Edwards</German>
+  <Italian>"Presto sar&#224; un peccato per dei genitori avere figli che portano il fardello di una malattia genetica." - Bob Edwards</Italian>
+  <Spanish>"Pronto ser&#225; un pecado que los padres tengan hijos que lleven la pesada carga de una enfermedad gen&#233;tica." - Bob Edwards</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GENETICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Genetics[COLOR_REVERT] increases the health of all your cities. It allows you to construct the [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT] Spaceship Part.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GREAT_PERSON_DISCOVER</Tag>
+  <English>[ICON_BULLET]Can be researched by a [COLOR_UNIT_TEXT]%s1_great_person[COLOR_REVERT]</English>
+  <French>[ICON_BULLET]Peut &#234;tre recherch&#233;e par un [COLOR_UNIT_TEXT]%s1_great_person[COLOR_REVERT].</French>
+  <German>[ICON_BULLET]Kann von der Gro&#223;en Pers&#246;nlichkeit [COLOR_UNIT_TEXT]%s1_great_person[COLOR_REVERT] erforscht werden</German>
+  <Italian>[ICON_BULLET]Pu&#242; essere ricercata da un [COLOR_UNIT_TEXT]%s1_great_person[COLOR_REVERT].</Italian>
+  <Spanish>[ICON_BULLET]Esta tecnolog&#237;a puede investigarla un [COLOR_UNIT_TEXT]%s1_great_person[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GUILDS</Tag>
+  <English>Guilds</English>
+  <French>
+   <Text>Guildes</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Gilden</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Associazioni</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Gremios</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GUILDS_QUOTE</Tag>
+  <English>"People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public." - Adam Smith</English>
+  <French>"Ceux qui partagent le m&#234;me m&#233;tier se r&#233;unissent rarement, m&#234;me pour se divertir, mais leur conversation se fait in&#233;vitablement au d&#233;triment du public." - Adam Smith</French>
+  <German>"Gesch&#228;ftsleute des gleichen Gewerbes kommen selten, selbst zu Festen und zur Zerstreuung, zusammen, ohne dass das Gespr&#228;ch in einer Verschw&#246;rung gegen die &#214;ffentlichkeit endet." - Adam Smith</German>
+  <Italian>"&#200; raro che quelli che fanno lo stesso lavoro si riuniscano, nemmeno per divertirsi o fare baldoria, ma la conversazione termina sempre con una cospirazione ai danni della clientela." - Adam Smith</Italian>
+  <Spanish>"Gente del mismo oficio rara vez se re&#250;ne, ni tan solo para alegrarse o divertirse, sin que la conversaci&#243;n termine en una conspiraci&#243;n contra el p&#250;blico." - Adam Smith</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GUILDS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Guilds[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Knights[COLOR_REVERT], allow you to construct the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT] Building, enables the [COLOR_HIGHLIGHT_TEXT]Guilds[COLOR_REVERT] Civic and allows you to construct the [COLOR_HIGHLIGHT_TEXT]Lumbermill[COLOR_REVERT] Improvement. It increases production from all workshops by 1 and reveals the [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT] Resource.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GUNPOWDER</Tag>
+  <English>Gunpowder</English>
+  <French>
+   <Text>Poudre &#224; canon</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Schie&#223;pulver</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Polvere da sparo</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>P&#243;lvora</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GUNPOWDER_QUOTE</Tag>
+  <English>"You can get more of what you want with a kind word and a gun than you can with just a kind word." - Al Capone</English>
+  <French>"On obtient plus en demandant poliment une arme &#224; la main qu'en demandant juste poliment." - Al Capone</French>
+  <German>"Wenn du etwas wirklich willst, musst du deinen Worten mit einer Waffe Nachdruck verleihen." - Al Capone</German>
+  <Italian>"Con una parola gentile e una pistola, puoi ottenere di pi&#249; che con una sola parola gentile." - Al Capone</Italian>
+  <Spanish>"Uno puede conseguir m&#225;s con una palabra amable y una pistola que solo con una palabra amable." - Al Capone</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_GUNPOWDER_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT], [COLOR_UNIT_TEXT]Cuirassiers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Bombards[COLOR_REVERT]. It also allows the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] Promotion.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_HORSEBACK_RIDING</Tag>
+  <English>Horseback Riding</English>
+  <French>
+   <Text>Equitation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Reiterei</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Equitazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Equitaci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_HORSEBACK_RIDING_QUOTE</Tag>
+  <English>"If you speak the truth, have a foot in the stirrup." - Turkish proverb</English>
+  <French>"Si tu dis vrai, mets le pied &#224; l'&#233;trier." - Proverbe turc</French>
+  <German>"Wer die Wahrheit spricht, sollte besser einen Fu&#223; im Steigb&#252;gel haben." - Arabisches Sprichwort</German>
+  <Italian>"Se dici il vero, metti un piede nella staffa." - Proverbio Turco</Italian>
+  <Spanish>"Si dices la verdad, ya tienes un pie en el estribo." - Proverbio turco</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_HORSEBACK_RIDING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Horseback Riding[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Horse Archers[COLOR_REVERT] and [COLOR_UNIT_TEXT]War Elephants[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Stable[COLOR_REVERT] Building.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_HUNTING</Tag>
+  <English>Hunting</English>
+  <French>
+   <Text>Chasse</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Jagd</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Caccia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Caza</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_HUNTING_QUOTE</Tag>
+  <English>"If you chase two rabbits, you will lose them both." - Native American Saying</English>
+  <French>"Chasse deux li&#232;vres &#224; la fois et tu n'en attraperas aucun." - Proverbe am&#233;rindien</French>
+  <German>"Der, der zwei Hasen jagt, l&#228;sst einen zur&#252;ck und verliert den anderen." - Indianisches Sprichwort</German>
+  <Italian>"Se dai la caccia a due conigli, li perderai entrambi." - Proverbio dei Nativi Americani</Italian>
+  <Spanish>"Si persigues a dos conejos al mismo tiempo, los perder&#225;s a ambos." - Dicho de los ind&#237;genas americanos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_HUNTING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Hunting[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Scouts[COLOR_REVERT] and [COLOR_UNIT_TEXT]Spearmen[COLOR_REVERT]. It also allows you to construct the [COLOR_HIGHLIGHT_TEXT]Camp[COLOR_REVERT] Improvement.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_INDUSTRIALISM</Tag>
+  <English>Industrialism</English>
+  <French>
+   <Text>Industrialisation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Industrialisierung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Industrialismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Industrialismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_INDUSTRIALISM_QUOTE</Tag>
+  <English>"There is one rule for the industrialist and that is: Make the best quality of goods possible at the lowest cost possible, paying the highest wages possible." - Henry Ford</English>
+  <French>"L'industriel ne doit ob&#233;ir qu'&#224; une seule r&#232;gle : produire des biens de la meilleure qualit&#233; possible au moindre co&#251;t en payant les plus hauts salaires possibles." - Henry Ford</French>
+  <German>"Die wichtigste unternehmerische Regel lautet: Mache m&#246;glichst gute Produkte zu m&#246;glichst niedrigen Preisen und bezahle m&#246;glichst hohe L&#246;hne." - Henry Ford</German>
+  <Italian>"Esiste una sola regola per l'imprenditore: fare il miglior prodotto possibile al minor costo possibile, pagando i massimi stipendi possibili." - Henry Ford</Italian>
+  <Spanish>"Para el industrial solo hay una regla, que es la siguiente: hacer los productos de la mejor calidad posible al menor coste posible, pagando los salarios m&#225;s altos posibles." - Henry Ford</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_INDUSTRIALISM_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Industrialism[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Marines[COLOR_REVERT], [COLOR_UNIT_TEXT]Tanks[COLOR_REVERT] and [COLOR_UNIT_TEXT]Battleships[COLOR_REVERT], allows you to construct the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] World Wonder. It also reveals the [COLOR_HIGHLIGHT_TEXT]Aluminum[COLOR_REVERT] Resource, obsoletes the [COLOR_WARNING_TEXT]Ivory[COLOR_REVERT] Resource and enables the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] Promotion.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_IRON_WORKING</Tag>
+  <English>Iron Working</English>
+  <French>
+   <Text>Travail du fer</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Eisenverarbeitung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Lavorazione del ferro</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Forja del hierro</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_IRON_WORKING_QUOTE</Tag>
+  <English>"You should hammer your iron when it is glowing hot." - Publius Syrus</English>
+  <French>"Il faut battre le fer tant qu'il est chaud." - Publius Syrus</French>
+  <German>"Man muss das Eisen schmieden, solange es hei&#223; ist." - Publius Syrus</German>
+  <Italian>"Dovresti battere il ferro finch&#233; &#232; caldo." - Publilio Siro</Italian>
+  <Spanish>"Debes golpear el hierro cuando a&#250;n est&#225; al rojo vivo." - Publio Siro</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_IRON_WORKING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Iron Working[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] Resource and allows you to train [COLOR_UNIT_TEXT]Swordsmen[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LASER</Tag>
+  <English>Laser</English>
+  <French>
+   <Text>Laser</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Laser</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Laser</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>L&#225;ser</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LASER_QUOTE</Tag>
+  <English>"Nothing travels faster than the speed of light with the possible exception of bad news, which obeys its own special laws." - Douglas Adams</English>
+  <French>"Rien ne voyage plus vite que la lumi&#232;re, sauf &#233;ventuellement les mauvaises nouvelles, qui ob&#233;issent &#224; leurs propres lois." - Douglas Adams</French>
+  <German>"Nichts bewegt sich schneller als das Licht, au&#223;er m&#246;glicherweise schlechte Nachrichten, die ihren eigenen, besonderen Gesetzen gehorchen." - Douglas Adams</German>
+  <Italian>"Niente viaggia pi&#249; veloce della luce, con la possibile eccezione delle cattive notizie, che obbediscono a proprie leggi speciali." - Douglas Adams</Italian>
+  <Spanish>"Nada viaja m&#225;s deprisa que la luz, con la posible excepci&#243;n de las malas noticias, que obedecen sus propias leyes". - Douglas Adams</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LASER_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Laser[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Mobile SAMs[COLOR_REVERT] and [COLOR_UNIT_TEXT]Mobile Artillery[COLOR_REVERT]. It also allows you to construct the [COLOR_PROJECT_TEXT]SDI[COLOR_REVERT] Project.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LEADER_MODIFIER</Tag>
+  <English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Lead:[COLOR_REVERT]</English>
+  <German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Technologievorsprung:[COLOR_REVERT]</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LIBERALISM</Tag>
+  <English>Liberalism</English>
+  <French>
+   <Text>Lib&#233;ralisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Liberalismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Liberalismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Liberalismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LIBERALISM_QUOTE</Tag>
+  <English>"Any society that would give up a little liberty to gain a little security will deserve neither and lose both." - Benjamin Franklin</English>
+  <French>"Une soci&#233;t&#233; pr&#234;te &#224; sacrifier un peu de libert&#233; contre un peu de s&#233;curit&#233; ne m&#233;rite ni l'une ni l'autre et finit par perdre les deux !" - Benjamin Franklin</French>
+  <German>"Eine Gesellschaft, die ihre Freiheit zugunsten der Sicherheit opfert, hat beides nicht verdient." - Benjamin Franklin</German>
+  <Italian>"Qualsiasi societ&#224; che sacrifica un po' di libert&#224; per una maggiore sicurezza non si merita nessuna delle due cose e le perde entrambe." - Benjamin Franklin</Italian>
+  <Spanish>"Cualquier sociedad que renuncie a un poco de libertad para obtener algo de seguridad no se merece ni una ni otra y acabar&#225; perdiendo ambas." - Benjamin Franklin</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LIBERALISM_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Liberalism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Republic[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Secularism[COLOR_REVERT] Civics. The first to discover [COLOR_TECH_TEXT]Liberalism[COLOR_REVERT] receives a free technology from you current or earlier era.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LITERATURE</Tag>
+  <English>Literature</English>
+  <French>
+   <Text>Litt&#233;rature</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Literatur</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Letteratura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Literatura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LITERATURE_QUOTE</Tag>
+  <English>"Some books are to be tasted, others to be swallowed, and some few to be chewed and digested." - Sir Francis Bacon</English>
+  <French>"Certains livres se go&#251;tent, d'autres se d&#233;vorent, d'autres encore se m&#226;chent et se dig&#232;rent lentement." - Sir Francis Bacon</French>
+  <German>"Manche B&#252;cher m&#252;ssen gekostet werden, manche verschlingt man, und nur einige wenige kaut man und verdaut sie ganz." - Sir Francis Bacon</German>
+  <Italian>"Alcuni libri devono essere gustati, altri inghiottiti, altri divorati e digeriti." - Sir Francis Bacon</Italian>
+  <Spanish>"Algunos libros se han de paladear, otros se han de engullir y unos cuantos m&#225;s se han de masticar y digerir." - Sir Francis Bacon</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_LITERATURE_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Literature[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Academy[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Great Library[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MACHINERY</Tag>
+  <English>Machinery</English>
+  <French>
+   <Text>M&#233;canique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Maschinen</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Meccanica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Maquinaria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MACHINERY_QUOTE</Tag>
+  <English>"A god from the machine" - Menander</English>
+  <French>"La machine a enfant&#233; un DIEU." - Menander</French>
+  <German>"Deus ex machina." - Menander</German>
+  <Italian>"La divinit&#224; delle macchine" - Menandro</Italian>
+  <Spanish>"Deus ex machina." - Menandro</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MACHINERY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Machinery[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT] and [COLOR_UNIT_TEXT]Crossbowmen[COLOR_REVERT]. It also allows the construction of the [COLOR_HIGHLIGHT_TEXT]Windmill[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Watermill[COLOR_REVERT] Improvement, allows the construction of [COLOR_BUILDING_TEXT]Borobudur[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Grand Canal[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MASONRY</Tag>
+  <English>Masonry</English>
+  <French>
+   <Text>Ma&#231;onnerie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Steinmetzkunst</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Muratura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mamposter&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MASONRY_QUOTE</Tag>
+  <English>"It is from their foes, not their friends, that cities learn the lesson of building high walls." - Aristophanes</English>
+  <French>"Ce sont leurs ennemis et non leurs amis qui ont enseign&#233; aux cit&#233;s &#224; b&#226;tir de hautes murailles !" - Aristophane</French>
+  <German>"Nicht von ihren Freunden, sondern von ihren Feinden lernen St&#228;dte, hohe Mauern zu bauen." - Aristophanes</German>
+  <Italian>"&#200; dai nemici, non dagli amici, che le citt&#224; imparano la lezione di costruire alte mura." - Aristofane</Italian>
+  <Spanish>"Es de los enemigos, no de los amigos, que las ciudades aprenden la lecci&#243;n de construir murallas altas." - Arist&#243;fanes</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MASONRY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Masonry[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Quarry[COLOR_REVERT] Improvement and enables the [COLOR_HIGHLIGHT_TEXT]Slavery[COLOR_REVERT] Civic. It also allows the construction of the [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Great Pyramids[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] World Wonders.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MASS_MEDIA</Tag>
+  <English>Mass Media</English>
+  <French>
+   <Text>Mass m&#233;dias</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Massenmedien</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mass media</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Medios de comunicaci&#243;n</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MASS_MEDIA_QUOTE</Tag>
+  <English>"The only thing worse than being talked about is not being talked about." - Oscar Wilde</English>
+  <French>"Qu'on parle de vous, c'est affreux. Mais il y a une chose pire : c'est qu'on n'en parle pas." - Oscar Wilde</French>
+  <German>"Schlimmer als &#252;ber jemanden zu reden, ist &#252;ber jemanden nicht zu reden!" - Oscar Wilde</German>
+  <Italian>"L'unica cosa peggiore del parlare di qualcosa, &#232; non parlarne affatto." - Oscar Wilde</Italian>
+  <Spanish>"En este mundo lo &#250;nico peor que soportar que hablen de ti es que no se diga nada." - Oscar Wilde</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MASS_MEDIA_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Mass Media[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] Building, [COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT], the [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Public Welfare[COLOR_REVERT] Civic.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MATHEMATICS</Tag>
+  <English>Mathematics</English>
+  <French>
+   <Text>Math&#233;matiques</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Mathematik</Text>
+   <Gender>FEmale</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Matematica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Matem&#225;ticas</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MATHEMATICS_QUOTE</Tag>
+  <English>"If in other sciences we should arrive at certainty without doubt and truth without error, it behooves us to place the foundations of knowledge in mathematics." - Roger Bacon</English>
+  <French>"La science vise une certitude qui ne souffre aucun doute, une v&#233;rit&#233; qui ne souffre aucune erreur, les math&#233;matiques s'imposent donc comme les fondations de toute science." - Roger Bacon</French>
+  <German>"Nur mithilfe der Mathematik kann man wirklich wissen, denn in jeder Wissenschaft ist nur so viel an Wahrheit enthalten, wie in ihr Mathematik steckt." - Roger Bacon</German>
+  <Italian>"Se in altre scienze &#232; probabile raggiungere la certezza senza dubbio e senza errore, &#232; giusto porre le fondamenta del sapere nella matematica." - Roger Bacon</Italian>
+  <Spanish>"Si en las dem&#225;s ciencias hubi&#233;ramos de obtener la certeza sin dudas y la verdad sin errores, nos corresponder&#237;a basar el conocimiento en las Matem&#225;ticas." - Roger Bacon</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MATHEMATICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] Building, allows the construction of the [COLOR_HIGHLIGHT_TEXT]Fort[COLOR_REVERT] Improvement and allows you to train [COLOR_UNIT_TEXT]Catapults[COLOR_REVERT]. It also increases the production gained from chopping forests. The first player to discover [COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MEDICINE</Tag>
+  <English>Medicine</English>
+  <French>
+   <Text>M&#233;decine</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Medizin</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Medicina</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Medicina</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MEDICINE_QUOTE</Tag>
+  <English>"As to diseases make a habit of two things - to help, or at least, to do no harm." - Hippocrates</English>
+  <French>"Il faut s'exercer, dans le domaine des maladies, &#224; deux choses : &#234;tre utile, sinon ne pas nuire." - Hippocrate</French>
+  <German>"Was Krankheiten betrifft, so hat man zwei M&#246;glichkeiten: zu heilen oder wenigstens nicht zu schaden." - Hippokrates</German>
+  <Italian>"Per debellare le malattie ci vogliono cose in grado di aiutare o, al massimo, non nuocere." - Ippocrate</Italian>
+  <Spanish>"En cuanto a las enfermedades, ten por costumbre dos cosas: ayudar o, al menos, no hacer m&#225;s da&#241;o." - Hip&#243;crates</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MEDICINE_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Medicine[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Hospital[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Red Cross Society[COLOR_REVERT] National Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MEDITATION</Tag>
+  <English>Meditation</English>
+  <French>
+   <Text>M&#233;ditation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Meditation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Meditazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Meditaci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MEDITATION_QUOTE</Tag>
+  <English>"Meditation brings wisdom; lack of meditation leaves ignorance. Know well what leads you forward and what holds you back." - The Buddha</English>
+  <French>"Le sage s'adonne &#224; la m&#233;ditation ; l'ignorant s'y refuse. Apprends &#224; reconna&#238;tre ce qui te fait avancer et ce qui entrave ta progression." - Bouddha</French>
+  <German>"Meditation bedeutet Weisheit. Mangelnde Meditation bedeutet Ignoranz. Wisse, was dich voranbringt oder hemmt." - Buddha</German>
+  <Italian>"La meditazione porta saggezza. La mancanza di meditazione rende ignoranti. Impara bene ci&#242; che pu&#242; migliorarti e ci&#242; che pu&#242; peggiorarti." - Budda</Italian>
+  <Spanish>"La meditaci&#243;n trae la sabidur&#237;a y su carencia conlleva ignorancia. Has de conocer bien lo que te hace avanzar y lo que te frena." - Buda</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MEDITATION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Meditation[COLOR_REVERT] allows you to construct Religious [COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT]. The first player to discover [COLOR_TECH_TEXT]Meditation[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_METAL_CASTING</Tag>
+  <English>Metal Casting</English>
+  <French>
+   <Text>M&#233;tallurgie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Metallguss</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Fusione del metallo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Vaciado del metal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_METAL_CASTING_QUOTE</Tag>
+  <English>"And them that take the sword shall perish by the sword." - The Bible, Matthew</English>
+  <French>"Et ceux qui auront v&#233;cu par l'&#233;p&#233;e p&#233;riront par l'&#233;p&#233;e." - La Bible, Matthieu</French>
+  <German>"Wer das Schwert nimmt, der soll durchs Schwert umkommen." - Die Bibel, Matth&#228;us</German>
+  <Italian>"Chi di spada ferisce, di spada perisce." - La Bibbia, Matteo</Italian>
+  <Spanish>"Quien toma la espada, a espada morir&#225;." - La Biblia, San Mateo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_METAL_CASTING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Metal Casting[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] World Wonder. It also allows the construction of the [COLOR_HIGHLIGHT_TEXT]Workshop[COLOR_REVERT] Improvement and allows you to train [COLOR_UNIT_TEXT]Triremes[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MILITARY_SCIENCE</Tag>
+  <English>Military Science</English>
+  <French>
+   <Text>Science militaire</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Milit&#228;rwissenschaft</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Scienza militare</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Belicolog&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MILITARY_SCIENCE_QUOTE</Tag>
+  <English>"I must study politics and war that my sons may have liberty to study mathematics and philosophy." - John Adams</English>
+  <French>"Je dois &#233;tudier la politique et me battre pour que mes fils puissent &#234;tre libres d'&#233;tudier les math&#233;matiques et la philosophie." - John Adams</French>
+  <German>"Ich muss Politik und Krieg studieren, damit meine S&#246;hne die Freiheit haben, Mathematik und Philosophie zu studieren." - John Adams</German>
+  <Italian>"Devo studiare politica e arte della guerra in modo che i miei figli possano avere la libert&#224; di studiare matematica e filosofia". - John Adams</Italian>
+  <Spanish>"Debo estudiar las artes de la pol&#237;tica y la guerra para que mis hijos puedan estudiar las de las matem&#225;ticas y la filosof&#237;a". - John Adams</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MILITARY_SCIENCE_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Military Science[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Frigates[COLOR_REVERT] and allows you to construct the [COLOR_BUILDING_TEXT]Military Academy[COLOR_REVERT] Building. It also enables the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Commando[COLOR_REVERT] Promotions and enables the [COLOR_HIGHLIGHT_TEXT]Naval Dominance[COLOR_REVERT] Civic.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MILITARY_TRADITION</Tag>
+  <English>Military Tradition</English>
+  <French>
+   <Text>Tradition militaire</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Milit&#228;rwesen</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tradizione militare</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tradici&#243;n militar</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MILITARY_TRADITION_QUOTE</Tag>
+  <English>"Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win." - Sun-Tzu</English>
+  <French>"Le vainqueur triomphe avant m&#234;me de partir &#224; la guerre, le vaincu part &#224; la guerre puis r&#234;ve de triomphe." - Sun-Tzu</French>
+  <German>"Der General, der eine Schlacht gewinnt, stellt vor dem Kampf viele Berechnungen an. Der General, der verliert, stellt vorher kaum Berechnungen an." - Sun-Tzu</German>
+  <Italian>"I guerrieri vittoriosi prima vincono e poi vanno in guerra; quelli sconfitti, prima vanno in guerra e poi cercano di vincere." - Sun-Tzu</Italian>
+  <Spanish>"Los guerreros vencedores ganan primero y luego van a la guerra, mientras que los perdedores van a la guerra primero y luego pretenden ganar." - Sun Tzu</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MILITARY_TRADITION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], allows you to construct [COLOR_BUILDING_TEXT]St. Basil's Cathedral[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Harmandir Sahib[COLOR_REVERT] World Wonders. It enables [COLOR_HIGHLIGHT_TEXT]Defensive Pacts[COLOR_REVERT], enables the [COLOR_HIGHLIGHT_TEXT]Standing Army[COLOR_REVERT] Civic and obsoletes the [COLOR_WARNING_TEXT]Great Wall[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MINING</Tag>
+  <English>Mining</English>
+  <French>
+   <Text>Exploitation mini&#232;re</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bergbau</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Estrazione mineraria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Miner&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MINING_QUOTE</Tag>
+  <English>"The man who moves a mountain begins by carrying away small stones." - Confucius</English>
+  <French>"L'homme qui d&#233;place une montagne commence par les petites pierres." - Confucius</French>
+  <German>"Der Mann, der den Berg abtrug, war derselbe, der anfing, kleine Steine wegzutragen." - Konfuzius</German>
+  <Italian>"Un uomo che deve spostare una montagna comincia dalle piccole pietre." - Confucio</Italian>
+  <Spanish>"El hombre que mueve monta&#241;as empieza apartando piedrecitas." - Confucio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MINING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Mining[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Mine[COLOR_REVERT] Improvement.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MODERNIZATION_MODIFIER</Tag>
+  <English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernization:[COLOR_REVERT]</English>
+  <German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Modernisierung:[COLOR_REVERT]</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MONARCHY</Tag>
+  <English>Monarchy</English>
+  <French>
+   <Text>Monarchie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Monarchie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Monarchia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Monarqu&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MONARCHY_QUOTE</Tag>
+  <English>"A multitude of rulers is not a good thing. Let there be one ruler, one king." - Herodotus</English>
+  <French>"Abondance de souverains nuit ! Il ne peut y en avoir qu'un, un seul Roi !" - H&#233;rodote</French>
+  <German>"Zu viele Herrscher sind nicht gut. M&#246;ge ein Herrscher als K&#246;nig regieren!" - Herodot</German>
+  <Italian>"Non servono molti sovrani. Che il comando sia di un uomo solo, che sia proclamato un re." - Erodoto</Italian>
+  <Spanish>"No es bueno el caudillaje de muchos; sea uno solo el caudillo, uno solo el rey." - Herodoto</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MONARCHY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Monarchy[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]War Elephants[COLOR_REVERT], enables the [COLOR_HIGHLIGHT_TEXT]Dynasticism[COLOR_REVERT] Civic, allows [COLOR_HIGHLIGHT_TEXT]Vassal States[COLOR_REVERT] and allows the construction of the [COLOR_HIGHLIGHT_TEXT]Winery[COLOR_REVERT] Improvement.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MONOTHEISM</Tag>
+  <English>Monotheism</English>
+  <French>
+   <Text>Monoth&#233;isme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Monotheismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Monoteismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Monote&#237;smo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MONOTHEISM_QUOTE</Tag>
+  <English>"I am the Lord thy God. Thou shalt have no other gods before Me." - The Bible, Exodus</English>
+  <French>"Je suis le Seigneur, ton Dieu. Tu n'adoreras pas d'autre Dieu que moi." - La Bible, l'Exode</French>
+  <German>"Ich bin der Herr, dein Gott. Du sollst nicht haben andere G&#246;tter neben mir." - Die Bibel, Exodus</German>
+  <Italian>"Io sono il Signore. Non avrai altro Dio all'infuori di me." - La Bibbia - Esodo</Italian>
+  <Spanish>"Yo soy Yav&#233;, tu Dios. No tendr&#225;s otro Dios que a m&#237;." - La Biblia, &#201;xodo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MONOTHEISM_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] Civic and allows the construction of the [COLOR_BUILDING_TEXT]Temple of Solomon[COLOR_REVERT]. The first player to discover [COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MUSIC</Tag>
+  <English>Music</English>
+  <French>
+   <Text>Musique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Musik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Musica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>M&#250;sica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MUSIC_QUOTE</Tag>
+  <English>"If music be the food of love, play on." - William Shakespeare</English>
+  <French>"Si la musique nourrit l'amour, alors jouez !" - William Shakespeare</French>
+  <German>"Wenn Musik die Nahrung der Liebe ist, so spielt fort." - William Shakespeare</German>
+  <Italian>"Se la musica &#232; il nutrimento dell'amore, continua a suonare." - William Shakespeare</Italian>
+  <Spanish>"Si la m&#250;sica es el alimento del amor, tocadla." - William Shakespeare</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MUSIC_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Music[COLOR_REVERT] allows the construction of Religious [COLOR_BUILDING_TEXT]Cathedrals[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MYSTICISM</Tag>
+  <English>Mysticism</English>
+  <French>
+   <Text>Mysticisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Mystik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Misticismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Misticismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MYSTICISM_QUOTE</Tag>
+  <English>"Nature herself has imprinted on the minds of all the idea of God."  - Cicero</English>
+  <French>"Il y a des dieux parce que la nature en a imprim&#233; la notion dans toutes les &#226;mes." - Cic&#233;ron</French>
+  <German>"Die Natur hat uns den Begriff der G&#246;tter selbst gegeben." - Cicero</German>
+  <Italian>"La Natura stessa ha impresso nelle menti di tutti l'idea di Dio." - Cicerone</Italian>
+  <Spanish>"La propia Naturaleza ha grabado en la mente de todos la idea de Dios." - Cicer&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_MYSTICISM_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_NATIONALISM</Tag>
+  <English>Nationalism</English>
+  <French>
+   <Text>Nationalisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Nationalismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Nazionalismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Nacionalismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_NATIONALISM_QUOTE</Tag>
+  <English>"A man does not have himself killed for a half-pence a day or for a petty distinction. You must speak to the soul in order to electrify him." - Napoleon Bonaparte</English>
+  <French>"Un homme n'accepte pas de risquer sa vie pour deux sous par jour ou pour une m&#233;daille. Il faut parler &#224; son &#226;me, le galvaniser !" - Napol&#233;on Bonaparte</French>
+  <German>"Ein Mann riskiert nicht f&#252;r einen j&#228;mmerlichen Sold sein Leben. Man muss seine Seele ansprechen, um ihn zu elektrisieren!" - Napoleon Bonaparte</German>
+  <Italian>"Un uomo non rischia la vita per pochi soldi o per promozioni insignificanti. Per infervorarlo, bisogna parlare alla sua anima." - Napoleone Bonaparte</Italian>
+  <Spanish>"Un hombre no est&#225; dispuesto a morir por medio penique al d&#237;a ni por un qu&#237;tame all&#225; esas penas. Debes hablarle al alma para conmoverlo." - Napole&#243;n Bonaparte</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_NATIONALISM_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Nationalism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Autocracy[COLOR_REVERT] Civic, allows the construction of the [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] National Wonder, the [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] World Wonders. It also obsoletes the [COLOR_WARNING_TEXT]Apostolic Palace[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_NUM_TURNS</Tag>
+  <English>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1_Num Turns[COLOR_REVERT]</English>
+  <French>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1_Num tours[COLOR_REVERT]</French>
+  <German>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1_Num Runden[COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1_Num [NUM1:turno:turni][COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%d1_Num [NUM1:turno:turnos][COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_OBSOLETES</Tag>
+  <English>[COLOR_WARNING_TEXT]Obsoletes [LINK=literal]%s1_Name[\LINK][COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Rend la technologie "[LINK=literal]%s1_Name[\LINK]" obsol&#232;te[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Veraltet: [LINK=literal]%s1_Name[\LINK][COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT][LINK=literal]%s1_Name[\LINK] [NUM1:diventa obsoleto:diventa obsoleta:diventano obsolete:diventano obsolete][COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Deja [NUM1:obsoleto:obsoleta:obsoletos:obsoletas] [LINK=literal]%s1:2_Name[\LINK][COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_OBSOLETES_NO_LINK</Tag>
+  <English>[COLOR_WARNING_TEXT]Obsoletes %s1_Name[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Rend la technologie "%s1_Name" obsol&#232;te[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Veraltet: %s1_Name[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]%s1_Name diventa [NUM1:obsoleto:obsoleta][COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Deja [NUM1:obsoleto:obsoleta:obsoletos:obsoletas] %s1:2_Name[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_OPTICS</Tag>
+  <English>Optics</English>
+  <French>
+   <Text>Optique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Optik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ottica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>&#211;ptica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_OPTICS_QUOTE</Tag>
+  <English>"One doesn't discover new lands without losing sight of the shore." - Andre Gide</English>
+  <French>"Ne d&#233;couvre de nouvelles terres, que celui qui sait quitter tout rivage." - Andr&#233; Gide</French>
+  <German>"Man kann keine neuen L&#228;nder entdecken, ohne die K&#252;ste aus den Augen zu verlieren." - Andr&#233; Gide</German>
+  <Italian>"Una persona non pu&#242; scoprire nuove terre senza vederne la spiagge." - Andre Gide</Italian>
+  <Spanish>"Uno no descubre nuevas tierras sin perder de vista la costa." - Andr&#233; Gide</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_OPTICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Optics[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT], allows you to construct the [COLOR_HIGHLIGHT_TEXT]Whaling Boats[COLOR_REVERT] Improvement. It also increases your sight distance across water.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PAPER</Tag>
+  <English>Paper</English>
+  <French>
+   <Text>Papier</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Papier</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Carta</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Papel</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PAPER_QUOTE</Tag>
+  <English>"I cannot live without books" - Thomas Jefferson</English>
+  <French>"Je ne peux pas vivre sans livres." - Thomas Jefferson</French>
+  <German>"Ohne B&#252;cher kann ich nicht leben!" - Thomas Jefferson</German>
+  <Italian>"Non potrei vivere senza libri" - Thomas Jefferson</Italian>
+  <Spanish>"No puedo vivir sin libros." - Thomas Jefferson</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PAPER_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Paper[COLOR_REVERT] allows you to trade world maps with other civilizations and allows the construction of the [COLOR_BUILDING_TEXT]University of Sankore[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PATRONAGE</Tag>
+  <English>Patronage</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PATRONAGE_QUOTE</Tag>
+  <English>"Art, as far as it is able, follows nature, as a pupil imitates his master; thus your art must be, as it were, God's grandchild." - Dante Alighieri</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PATRONAGE_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Patronage[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] World Wonders. The first to research [COLOR_TECH_TEXT]Patronage[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT] unit.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PHILOSOPHY</Tag>
+  <English>Philosophy</English>
+  <French>
+   <Text>Philosophie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Philosophie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Filosofia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Filosof&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PHILOSOPHY_QUOTE</Tag>
+  <English>"I have gained this by philosophy: that I do without being commanded what others do only from fear of the law." - Aristotle</English>
+  <French>"La philosophie m'a appris ceci : ce que je fais sans que l'on me l'ordonne, les autres le font par crainte de la loi." - Aristote</French>
+  <German>"Dies habe ich durch Philosophie gewonnen. Dass ich tue, ohne befohlen zu werden, was andere nur aus Furcht vor dem Gesetz tun." - Aristoteles</German>
+  <Italian>"Con la filosofia ho conquistato il diritto di fare ci&#242; che voglio senza essere comandato da chi lo fa solo per timore della legge." - Aristotele</Italian>
+  <Spanish>"Con la filosof&#237;a he logrado lo siguiente: hacer, sin que me lo ordenen, lo que otros hacen solamente por temor a la ley." - Arist&#243;teles</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PHILOSOPHY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Philosophy[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Scholasticism[COLOR_REVERT] Civic and allows the construction of the [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PHYSICS</Tag>
+  <English>Physics</English>
+  <French>
+   <Text>Physique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Physik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Fisica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>F&#237;sica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PHYSICS_QUOTE</Tag>
+  <English>"To every action there is always opposed an equal reaction." - Isaac Newton</English>
+  <French>"A chaque action correspond une r&#233;action &#233;gale." - Isaac Newton</French>
+  <German>"Jede Aktion erzeugt gleichzeitig eine Reaktion." - Isaac Newton</German>
+  <Italian>"Ad ogni azione, corrisponde una reazione uguale ma di segno opposto." - Isaac Newton</Italian>
+  <Spanish>"Para cada acci&#243;n existe siempre una reacci&#243;n igual y de sentido contrario." - Isaac Newton</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PHYSICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Physics[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] Resource. The first to research [COLOR_TECH_TEXT]Physics[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT] unit.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PLASTICS</Tag>
+  <English>Plastics</English>
+  <French>
+   <Text>Mati&#232;res plastiques</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Plastik</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Plastica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pl&#225;stico</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PLASTICS_QUOTE</Tag>
+  <English>"I just want to say one word to you. Just one word: plastics." - Calder Willingham, The Graduate</English>
+  <French>"Je ne vous dirai qu'un mot, un seul mot : plastique." - Calder Willingham, Le Laur&#233;at</French>
+  <German>"Ich sage nur ein Wort. Nur ein einziges Wort: Plastik!" - Calder Willingham, Die Reifepr&#252;fung</German>
+  <Italian>"Voglio solo dirti una parola. Una sola. Plastica." - Calder Willingham, Il Laureato</Italian>
+  <Spanish>"Solo quiero decirle una palabra, una nada m&#225;s: pl&#225;stico." - Calder Willingham, El graduado</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PLASTICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Plastics[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Offshore Platform[COLOR_REVERT] Improvement, allows the construction of the [COLOR_BUILDING_TEXT]Hydro Plant[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Three Gorges Dam[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Fur[COLOR_REVERT] and [COLOR_WARNING_TEXT]Pearls[COLOR_REVERT] Resources.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_POLYTHEISM</Tag>
+  <English>Polytheism</English>
+  <French>
+   <Text>Polyth&#233;isme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Polytheismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Politeismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Polite&#237;smo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_POLYTHEISM_QUOTE</Tag>
+  <English>"Not at all similar are the race of the immortal gods and the race of men who walk upon the earth." - Homer</English>
+  <French>"La race des Dieux Immortels n'est point semblable &#224; celle des hommes qui marchent sur la Terre." - Hom&#232;re</French>
+  <German>"Die unsterblichen G&#246;tter haben nichts mit den Menschen, die auf Erden wandeln, gemein." - Homer</German>
+  <Italian>"La razza degli dei immortali e quella degli uomini terreni non sempre si somigliano." - Omero</Italian>
+  <Spanish>"No se parecen en absoluto la raza de los dioses inmortales y la raza de los hombres que hollan la Tierra." - Homero</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_POLYTHEISM_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Pantheon[COLOR_REVERT] Civic.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_POTTERY</Tag>
+  <English>Pottery</English>
+  <French>
+   <Text>Poterie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Keramik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ceramica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Alfarer&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_POTTERY_QUOTE</Tag>
+  <English>"Hath not the potter power over the clay, to make one vessel unto honor, and another unto dishonor?" - The Bible, Romans</English>
+  <French>"Le potier n'a-t-il pas pouvoir sur l'argile pour faire de la m&#234;me masse un vase &#224; honneur et un autre &#224; d&#233;shonneur ?" - La Bible, Ep&#238;tre aux Romains</French>
+  <German>"Hat nicht ein T&#246;pfer Macht &#252;ber den Ton, aus demselben Klumpen ein Gef&#228;&#223; zu ehrenvollem und ein anderes zu nicht ehrenvollem Gebrauch zu machen?" - Die Bibel, R&#246;mer</German>
+  <Italian>"Nelle mani dell'artigiano sta la capacit&#224; di creare vasi da giorno e vasi da notte." - La Bibbia, i Romani</Italian>
+  <Spanish>"&#191;O es que no puede el alfarero hacer del mismo barro un vaso de honor y uno indecoroso?" - La Biblia, San Mateo, Ep&#237;stola a los Romanos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_POTTERY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Pottery[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Cottage[COLOR_REVERT] Improvement, allows the construction of the [COLOR_BUILDING_TEXT]Granary[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Terracotta Army[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PRIESTHOOD</Tag>
+  <English>Priesthood</English>
+  <French>
+   <Text>Clerg&#233;</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Priestertum  </Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Sacerdozio</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Sacerdocio</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PRIESTHOOD_QUOTE</Tag>
+  <English>"The Lord bless you and keep you; the Lord make His face to shine upon you and be gracious to you; the Lord lift up His countenance upon you and give you peace." - The Bible, Numbers</English>
+  <French>"Le Seigneur te b&#233;nit et te garde ; il tourne vers toi son visage et te sourit. Il fait briller sur toi sa lumi&#232;re et te donne sa joie." - La Bible, Nombres 6.24</French>
+  <German>"Der Herr segne euch und beh&#252;te euch! Der Herr lasse sein Angesicht leuchten &#252;ber euch und sei euch gn&#228;dig! Der Herr erhebe sein Angesicht auf euch und gebe euch Frieden." - Die Bibel, Numeri</German>
+  <Italian>"Il Signore ti benedice e ti conforta; gli occhi del Signore sono gentili e vegliano su di te; lo sguardo del Signore si volge verso di te e ti dona la pace." - La Bibbia</Italian>
+  <Spanish>"El Se&#241;or te bendiga y te guarde. El Se&#241;or te muestre su rostro y tenga misericordia de ti. Vuelva el Se&#241;or su rostro hacia ti y te conceda la paz." - La Biblia, N&#250;meros</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PRIESTHOOD_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Priesthood[COLOR_REVERT] allows you to build Religious [COLOR_BUILDING_TEXT]Temples[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Shrine of Apollo[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Moai Statues[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] World Wonders.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PRINTING_PRESS</Tag>
+  <English>Printing Press</English>
+  <French>
+   <Text>Imprimerie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Druckerpresse</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tipografia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Imprenta</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PRINTING_PRESS_HELP</Tag>
+  <English>[ICON_BULLET]First [LINK=RELIGION_CHRISTIANITY]Catholic[\LINK] Nation to Discover Begins the [LINK=RELIGION_JUDAISM]Reformation[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PRINTING_PRESS_QUOTE</Tag>
+  <English>"What gunpowder did for war, the printing press has done for the mind." - Wendell Phillips</English>
+  <French>"La presse &#233;crite a chang&#233; l'esprit comme la poudre &#224; canon a chang&#233; la guerre." - Wendell Phillips</French>
+  <German>"Was das Schie&#223;pulver f&#252;r den Krieg war, ist die Druckerpresse f&#252;r den Geist." - Wendell Phillips</German>
+  <Italian>"La tipografia sta alla mente come la polvere da sparo sta alla guerra." - Wendell Phillips</Italian>
+  <Spanish>"La imprenta ha hecho por la mente lo que la p&#243;lvora hizo por la guerra." - Wendell Phillips</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_PRINTING_PRESS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Printing Press[COLOR_REVERT] increases the gold output of all [COLOR_HIGHLIGHT_TEXT]Village[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Town[COLOR_REVERT] Improvements by 1. The first catholic player to discover [COLOR_TECH_TEXT]Printing Press[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_QUOTE_2</Tag>
+  <English>[TAB]"In light of ever-increasing competition between advanced nations over resources with which to spur their struggling economies, the United States and China saw themselves locked in a dangerous dance as the 2060s passed. Both desperately sought expansion to mitigate the increasing turmoil caused by the economic collapse of the previous decade, and as a result each side's willingness to engage in negotiations diminished as conditions continued to deteriorate."[NEWLINE][PARAGRAPH:1]- Encyclopediae Galactica, History of the Earth and its Colonies</English>
+  <French>[TAB]"La concurrence accrue entre les nations les plus d&#233;velopp&#233;es pour le contr&#244;le des ressources s'accentua encore apr&#232;s 2060. Les Etats-Unis et la Chine, en particulier, d&#233;velopp&#232;rent des politiques tr&#232;s agressives dans ce sens. Ces deux nations cherch&#232;rent par tous les moyens &#224; se relever du chaos &#233;conomique dans lequel elles avaient &#233;t&#233; plong&#233;es quelques ann&#233;es plus t&#244;t, et leurs relations se d&#233;t&#233;rior&#232;rent rapidement."[NEWLINE][PARAGRAPH:1]- Encyclop&#233;die galactique, Histoire de la Terre et de ses colonies</French>
+  <German>[TAB]"Angesichts des immer h&#228;rter werdenden Wettbewerbs der fortschrittlichen L&#228;nder um die Ressourcen, die zur Steigerung der Wirtschaft ben&#246;tigt werden, befanden sich die USA und China am Ende der 2060er Jahre in einer gef&#228;hrlichen Situation. Beide Nationen versuchten verzweifelt zu expandieren, um die Folgen des Wirtschaftszusammenbruchs des vorhergehenden Jahrzehnts abzumildern. Die Verhandlungsbereitschaft sank auf beiden Seiten mit der Verschlechterung der Zust&#228;nde."[NEWLINE][PARAGRAPH:1]- Encyclopedia Galactica, Geschichte der Erde und ihrer Kolonien</German>
+  <Italian>[TAB]"Alla luce della crescente competizione tra le nazioni sviluppate per accaparrarsi risorse con cui sostenere le proprie economie in difficolt&#224;, intorno al 2060 gli Stati Uniti e la Cina si trovarono in una situazione pericolosa. Entrambi cercavano di espandersi per mitigare i tumulti causati dal collasso economico della precedente decade, e per questo la volont&#224; di negoziare di ciascuna parte and&#242; progressivamente diminuendo, mentre le condizioni continuavano a deteriorarsi."[NEWLINE][PARAGRAPH:1]- Enciclopedia Galattica, storia della Terra e delle sue colonie</Italian>
+  <Spanish>[TAB]"En vista de la pujante competitividad entre las naciones avanzadas por los recursos con que estimular sus econom&#237;as enfrentadas, los Estados Unidos y China acabaron trabados en un peligroso baile durante los a&#241;os 60 del tercer milenio. Ambas naciones buscaban desesperadamente la expansi&#243;n para mitigar la agitaci&#243;n creciente, causada por el colapso econ&#243;mico de la d&#233;cada anterior. Como consecuencia, la voluntad de ponerse a negociar disminuy&#243; por ambas partes y la situaci&#243;n sigui&#243; deterior&#225;ndose."[NEWLINE][PARAGRAPH:1]- Enciclopedia Gal&#225;ctica, "Historia de la Tierra y sus colonias"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RADIO</Tag>
+  <English>Radio</English>
+  <French>
+   <Text>Radio</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Funkwesen</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Radiocomunicazioni</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Radio</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RADIO_QUOTE</Tag>
+  <English>"Then one fine mornin' she puts on a New York station. You know her life was saved by Rock 'n' Roll." - The Velvet Underground, "Rock And Roll"</English>
+  <French>"Et un matin, elle &#233;couta une station de New York, et sa vie fut sauv&#233;e par le Rock'n'roll !" - The Velvet Underground (Rock And Roll)</French>
+  <German>"Es gibt in allen Funkh&#228;usern Leute, die nichts zu tun haben, aber das richtig gehetzt." - Robert Lembke</German>
+  <Italian>"Poi, una mattina, si sintonizz&#242; su una stazione radio di New York. La sua vita venne salvata dal rock 'n' roll." - The Velvet Underground, "Rock And Roll"</Italian>
+  <Spanish>"La radio no tiene futuro, los rayos X resultar&#225;n una farsa y las m&#225;quinas voladoras m&#225;s pesadas que el aire son imposibles." - William Thomson</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RADIO_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Radio[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Bombers[COLOR_REVERT], allows you to construct the [COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT], [COLOR_BUILDING_TEXT]Graceland[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Cristo Redentor[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Multilateralism[COLOR_REVERT] Civic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RAILROAD</Tag>
+  <English>Railroad</English>
+  <French>
+   <Text>Voies ferr&#233;es</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Eisenbahn</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ferrovia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ferrocarril</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RAILROAD_QUOTE</Tag>
+  <English>"I fooled you, I fooled you, I got pig iron, I got pig iron, I got all pig iron." - Lonnie Donegan, "Rock Island Line"</English>
+  <French>"Je t'ai roul&#233;, je t'ai roul&#233;, je t'ai roul&#233;, j'ai eu la fonte, j'ai eu la fonte, j'ai eu la fonte." - Chanson de Lonnie Donegan (Rock Island Line)</French>
+  <German>"Eine Eisenbahn besteht zu 95% aus Menschen und zu 5% aus Eisen." - Adam Smith</German>
+  <Italian>"Due rotaie che corrono parallele, per un viaggio pieno di traversine." - Lonnie Donegan, "Rock Island Line"</Italian>
+  <Spanish>"El tren camina y camina, y la m&#225;quina resuella, y tose con tos ferina. &#161;Vamos en una centella!" - Antonio Machado</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RAILROAD_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Railroad[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Machine Gunners[COLOR_REVERT] and allows you to construct the [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] World Wonder. It also allows you to construct the [COLOR_HIGHLIGHT_TEXT]Railroad[COLOR_REVERT] Improvement.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REFORMATION</Tag>
+  <English>Reformation</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REFORMATION_QUOTE</Tag>
+  <English>"Peace if possible, truth at all costs." - Martin Luther</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REFORMATION_STRATEGY</Tag>
+  <English>The [COLOR_TECH_TEXT]Reformation[COLOR_REVERT] sparks a great schism in Christianity!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REFRIGERATION</Tag>
+  <English>Refrigeration</English>
+  <French>
+   <Text>R&#233;frig&#233;ration</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>K&#252;hltechnik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Refrigerazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Refrigeraci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REFRIGERATION_QUOTE</Tag>
+  <English>"Tell me what you eat, and I will tell you what you are." - Anthelme Brillat-Savarin</English>
+  <French>"Dis-moi ce que tu manges et je te dirai qui tu es !" - Anthelme Brillat-Savarin</French>
+  <German>"Der Mensch ist, was er isst." - Anthelme Brillat-Savarin</German>
+  <Italian>"Dimmi cosa mangi e ti dir&#242; chi sei." - Anthelme Brillat-Savarin</Italian>
+  <Spanish>"Dime lo que comes y te dir&#233; qui&#233;n eres." - Anthelme Brillat-Savarin</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REFRIGERATION_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Refrigeration[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT] Building. It increases the food production of all [COLOR_HIGHLIGHT_TEXT]Pasture[COLOR_REVERT] Improvements by 1 and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Fishing Industry[COLOR_REVERT]. It also increases your water units' movement speed.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REPLACEABLE_PARTS</Tag>
+  <English>Replaceable Parts</English>
+  <French>
+   <Text>Pi&#232;ces de rechange</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Ersatzteile</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Componentistica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Repuestos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REPLACEABLE_PARTS_QUOTE</Tag>
+  <English>"The whole is more than the sum of its parts." - Aristotle</English>
+  <French>"La totalit&#233; est plus que la somme des parties." - Aristote</French>
+  <German>"Das Ganze ist gr&#246;&#223;er als die Summe seiner Teile." - Aristoteles</German>
+  <Italian>"Il risultato &#232; migliore della somma delle sue parti." - Aristotele</Italian>
+  <Spanish>"Un todo es m&#225;s que la suma de sus partes." - Arist&#243;teles</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_REPLACEABLE_PARTS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Replaceable Parts[COLOR_REVERT] increases the production output of all [COLOR_HIGHLIGHT_TEXT]Windmill[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Watermill[COLOR_REVERT] Improvements by 1. It also obsoletes the [COLOR_WARNING_TEXT]Grand Canal[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RIFLING</Tag>
+  <English>Rifling</English>
+  <French>
+   <Text>Fusil</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Drall</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Rigatura delle canne</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Fusil</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RIFLING_QUOTE</Tag>
+  <English>"Political power grows out of the barrel of a gun." - Mao Zedong</English>
+  <French>"Le pouvoir politique sort du canon d'un fusil." - Mao Ts&#233;-Tung</French>
+  <German>"Alle politische Macht r&#252;hrt von einem Gewehrlauf." - Mao Tsetung</German>
+  <Italian>"Il potere politico nasce dalla canna di un fucile." - Mao Tse Tung</Italian>
+  <Spanish>"El poder pol&#237;tico nace de los ca&#241;ones de los fusiles." - Mao Zedong</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_RIFLING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Rifling[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Riflemen[COLOR_REVERT], [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cannons[COLOR_REVERT], allows you to construct the [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Walls[COLOR_REVERT], [COLOR_WARNING_TEXT]Temple of Kukulkan[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Himeji Castle[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROBOTICS</Tag>
+  <English>Robotics</English>
+  <French>
+   <Text>Robotique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Robotertechnik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Robotica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Rob&#243;tica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROBOTICS_QUOTE</Tag>
+  <English>"The real problem is not whether machines think, but whether men do." - B.F. Skinner</English>
+  <French>"La vraie question n'est pas de savoir si les machines pensent mais si les humains pensent." - B.F. Skinner</French>
+  <German>"Das eigentliche Problem ist nicht, ob Maschinen denken k&#246;nnen, sondern ob Menschen es k&#246;nnen." - B.F. Skinner</German>
+  <Italian>"Il problema non &#232; se le macchine sono in grado di pensare, ma se lo &#232; l'uomo." - B.F. Skinner</Italian>
+  <Spanish>"El verdadero problema no es si las m&#225;quinas piensan, sino si los hombres lo hacen." - B. F. Skinner</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROBOTICS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Robotics[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Mechanized Infantry[COLOR_REVERT], [COLOR_UNIT_TEXT]Missile Cruisers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Stealth Bombers[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Space Elevator[COLOR_REVERT] World Wonder.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROCKETRY</Tag>
+  <English>Rocketry</English>
+  <French>
+   <Text>Fus&#233;es</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Raketentechnik</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Missilistica</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Coheter&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROCKETRY_QUOTE</Tag>
+  <English>"The Earth is the cradle of the mind, but one cannot eternally live in a cradle." - Konstantin E. Tsiolkovsky</English>
+  <French> "La Terre est le berceau de l'humanit&#233;, mais qui veut passer sa vie enti&#232;re dans un berceau ?" - Konstantin Tsiolkovsky</French>
+  <German>"Die Erde ist die Wiege der Menschheit, aber welches Kind bleibt schon ewig in seiner Wiege." - Konstantin E. Ciolkowski</German>
+  <Italian>"La Terra &#232; la culla della mente... ma non si pu&#242; vivere sempre in una culla..." - Konstantin E. Tsiolkovksy</Italian>
+  <Spanish>"La Tierra es la cuna de la Humanidad, pero no puedes vivir en una cuna eternamente." - Konstant&#237;n E. Tsiolkovksi</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROCKETRY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Rocketry[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Anti-Tanks[COLOR_REVERT], [COLOR_UNIT_TEXT]Sam Infantry[COLOR_REVERT], [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT], [COLOR_UNIT_TEXT]Guided Missiles[COLOR_REVERT], [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT]. It allows the construction of the [COLOR_PROJECT_TEXT]Space Program[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_ARCHER_II</Tag>
+  <English>Upgrade Archer</English>
+  <French>Am&#233;liorer l'archer</French>
+  <German>Bogensch&#252;tze</German>
+  <Italian>Aggiorna Arciere</Italian>
+  <Spanish>Modernizar Arquero</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_CARTHAGE_NUMIDIAN_CAVALRY_II</Tag>
+  <English>Upgrade Numidian Cavalry</English>
+  <French>Am&#233;liorer la cavalerie numide</French>
+  <German>Numidische Kavallerie</German>
+  <Italian>Aggiorna Cavalleria numida</Italian>
+  <Spanish>Modernizar Caballer&#237;a n&#250;mida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_CARTHAGE_NUMIDIAN_CAVALRY_III</Tag>
+  <English>Upgrade Numidian Cavalry II</English>
+  <French>Am&#233;liorer la cavalerie numide II</French>
+  <German>Numidische Kavallerie II</German>
+  <Italian>Aggiorna Cavalleria numida II</Italian>
+  <Spanish>Modernizar Caballer&#237;a n&#250;mida II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_CELTIC_CHARIOT_II</Tag>
+  <English>Upgrade Celtic Chariot</English>
+  <French>Am&#233;liorer le char celte</French>
+  <German>Keltischer Streitwagen</German>
+  <Italian>Aggiorna Carro celtico</Italian>
+  <Spanish>Modernizar Carro celta</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_CELTIC_CHARIOT_III</Tag>
+  <English>Upgrade Celtic Chariot II</English>
+  <French>Am&#233;liorer le char celte II</French>
+  <German>Keltischer Streitwagen II</German>
+  <Italian>Aggiorna Carro celtico II</Italian>
+  <Spanish>Modernizar Carro celta II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_CELTIC_GALLIC_WARRIOR_II</Tag>
+  <English>Upgrade Gallic Warrior</English>
+  <French>Am&#233;liorer le guerrier gaulois</French>
+  <German>Gallischer Krieger</German>
+  <Italian>Aggiorna Guerriero gallo</Italian>
+  <Spanish>Modernizar Guerrero galo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_CELTIC_GALLIC_WARRIOR_III</Tag>
+  <English>Upgrade Gallic Warrior III</English>
+  <French>Am&#233;liorer le guerrier gaulois III</French>
+  <German>Gallischer Krieger II</German>
+  <Italian>Aggiorna Guerriero gallo III</Italian>
+  <Spanish>Modernizar Guerrero galo III</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_EGYPT_ARCHER_II</Tag>
+  <English>Upgrade Egyptian Archer</English>
+  <French>Am&#233;liorer l'archer &#233;gyptien</French>
+  <German>&#196;gyptischer Bogensch&#252;tze</German>
+  <Italian>Aggiorna Arciere egizio</Italian>
+  <Spanish>Modernizar Arquero egipcio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_EGYPT_ARCHER_III</Tag>
+  <English>Upgrade Egyptian Archer II</English>
+  <French>Am&#233;liorer l'archer &#233;gyptien II</French>
+  <German>&#196;gyptischer Bogensch&#252;tze II</German>
+  <Italian>Aggiorna Arciere egizio II</Italian>
+  <Spanish>Modernizar Arquero egipcio II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_EGYPT_AXEMAN_II</Tag>
+  <English>Upgrade Egyptian Axeman</English>
+  <French>Am&#233;liorer le soldat avec hache &#233;gyptien</French>
+  <German>&#196;gyptischer Axtk&#228;mpfer</German>
+  <Italian>Aggiorna Guerriero con ascia egizio</Italian>
+  <Spanish>Modernizar Soldado con hacha egipcio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_EGYPT_AXEMAN_III</Tag>
+  <English>Upgrade Egyptian Axeman II</English>
+  <French>Am&#233;liorer le soldat avec hache &#233;gyptien II</French>
+  <German>&#196;gyptischer Axtk&#228;mpfer II</German>
+  <Italian>Aggiorna Guerriero con ascia egizio II</Italian>
+  <Spanish>Modernizar Soldado con hacha egipcio II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_EGYPT_WARCHARIOT_III</Tag>
+  <English>Upgrade War Chariot II</English>
+  <French>Am&#233;liorer le char de guerre II</French>
+  <German>Kriegsstreitwagen II</German>
+  <Italian>Aggiorna Carro da guerra II</Italian>
+  <Spanish>Modernizar Carro de guerra II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_GREEK_PHALANX_II</Tag>
+  <English>Upgrade Phalanx</English>
+  <French>Am&#233;liorer la phalange</French>
+  <German>Phalanx</German>
+  <Italian>Aggiorna Falange</Italian>
+  <Spanish>Modernizar Falange</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_GREEK_PHALANX_III</Tag>
+  <English>Upgrade Phalanx II</English>
+  <French>Am&#233;liorer la phalange II</French>
+  <German>Phalanx II</German>
+  <Italian>Aggiorna Falange II</Italian>
+  <Spanish>Modernizar Falange II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_HORSE_ARCHER_II</Tag>
+  <English>Upgrade Horse Archer </English>
+  <French>Am&#233;liorer l'archer mont&#233;</French>
+  <German>Berittener Bogensch&#252;tze</German>
+  <Italian>Aggiorna Arciere a cavallo </Italian>
+  <Spanish>Modernizar Arquero a caballo </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_HORSE_ARCHER_III</Tag>
+  <English>Upgrade Horse Archer II</English>
+  <French>Am&#233;liorer l'archer mont&#233; II</French>
+  <German>Berittener Bogensch&#252;tze II</German>
+  <Italian>Aggiorna Arciere a cavallo II</Italian>
+  <Spanish>Modernizar Arquero a caballo II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_PRAETORIAN_V</Tag>
+  <English>Upgrade Praetorian IV</English>
+  <French>Am&#233;liorer le pr&#233;torien IV</French>
+  <German>Pr&#228;torianer IV</German>
+  <Italian>Aggiorna Pretoriano IV</Italian>
+  <Spanish>Modernizar Pretoriano IV</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_ROME_PRAETORIAN_II</Tag>
+  <English>Upgrade Praetorian</English>
+  <French>Am&#233;liorer le pr&#233;torien</French>
+  <German>Pr&#228;torianer</German>
+  <Italian>Aggiorna Pretoriano</Italian>
+  <Spanish>Modernizar Pretoriano</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_ROME_PRAETORIAN_III</Tag>
+  <English>Upgrade Praetorian II</English>
+  <French>Am&#233;liorer le pr&#233;torien II</French>
+  <German>Pr&#228;torianer II</German>
+  <Italian>Aggiorna Pretoriano II</Italian>
+  <Spanish>Modernizar Pretoriano II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_ROME_PRAETORIAN_IV</Tag>
+  <English>Upgrade Praetorian III</English>
+  <French>Am&#233;liorer le pr&#233;torien III</French>
+  <German>Pr&#228;torianer III</German>
+  <Italian>Aggiorna Pretoriano III</Italian>
+  <Spanish>Modernizar Pretoriano III</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_ROME_PRAETORIAN_VI</Tag>
+  <English>Upgrade Praetorian V</English>
+  <French>Am&#233;liorer le pr&#233;torien V</French>
+  <German>Pr&#228;torianer V</German>
+  <Italian>Aggiorna Pretoriano V</Italian>
+  <Spanish>Modernizar Pretoriano V</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_ROME_PRAETORIAN_VII</Tag>
+  <English>Upgrade Praetorian VI</English>
+  <French>Am&#233;liorer le pr&#233;torien VI</French>
+  <German>Pr&#228;torianer VI</German>
+  <Italian>Aggiorna Pretoriano VI</Italian>
+  <Spanish>Modernizar Pretoriano VI</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_SWORDSMAN_II</Tag>
+  <English>Upgrade Swordsman</English>
+  <French>Am&#233;liorer le spadassin</French>
+  <German>Schwertk&#228;mpfer</German>
+  <Italian>Aggiorna Spadaccino</Italian>
+  <Spanish>Modernizar Soldado con espada</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_TRIREME_II</Tag>
+  <English>Upgrade Trireme</English>
+  <French>Am&#233;liorer la trir&#232;me</French>
+  <German>Trireme II</German>
+  <Italian>Aggiorna Trireme</Italian>
+  <Spanish>Modernizar Trirreme</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_UNIT_EGYPT_WARCHARIOT_II</Tag>
+  <English>Upgrade War Chariot</English>
+  <French>Am&#233;liorer le char de guerre</French>
+  <German>Kriegsstreitwagen</German>
+  <Italian>Aggiorna Carro da guerra</Italian>
+  <Spanish>Modernizar Carro de guerra</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_WAR_ELEPHANT_II</Tag>
+  <English>Upgrade War Elephant</English>
+  <French>Am&#233;liorer l'&#233;l&#233;phant de guerre</French>
+  <German>Kriegselefant</German>
+  <Italian>Aggiorna Elefante da guerra</Italian>
+  <Spanish>Modernizar Elefante de guerra</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_WARRIOR_II</Tag>
+  <English>Upgrade Warrior</English>
+  <French>Am&#233;liorer le guerrier</French>
+  <German>Krieger</German>
+  <Italian>Aggiorna Guerriero</Italian>
+  <Spanish>Modernizar Guerrero</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_IMP_WARRIOR_III</Tag>
+  <English>Upgrade Warrior II</English>
+  <French>Am&#233;liorer le guerrier II</French>
+  <German>Krieger II</German>
+  <Italian>Aggiorna Guerriero II</Italian>
+  <Spanish>Modernizar Guerrero II</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_TRAIN_ARTIST</Tag>
+  <English>Train Artist</English>
+  <French>Entra&#238;ner artiste</French>
+  <German>K&#252;nstler ausbilden</German>
+  <Italian>Addestra Artista</Italian>
+  <Spanish>Entrenar artista</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_TRAIN_ENGINEER_STRATEGY</Tag>
+  <English>Research to create a Engineer</English>
+  <French>Recherchez pour cr&#233;er un ing&#233;nieur</French>
+  <German>Erforschung erm&#246;glicht Ausbildung eines Ingenieurs.</German>
+  <Italian>Ricerca per creare un Ingegnere.</Italian>
+  <Spanish>Investiga para crear un ingeniero.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_TRAIN_MERCHANT</Tag>
+  <English>Train Merchant</English>
+  <French>Entra&#238;ner marchand</French>
+  <German>H&#228;ndler ausbilden</German>
+  <Italian>Addestra Mercante</Italian>
+  <Spanish>Entrenar mercader</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_TRAIN_PROPHET</Tag>
+  <English>Train Phophet</English>
+  <French>Entra&#238;ner proph&#232;te</French>
+  <German>Prophet ausbilden</German>
+  <Italian>Addestra Profeta</Italian>
+  <Spanish>Entrenar profeta</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_ROR_TRAIN_SCIENTIST</Tag>
+  <English>Train Scientist</English>
+  <French>Entra&#238;ner savant</French>
+  <German>Wissenschaftler ausbilden</German>
+  <Italian>Addestra Scienziato</Italian>
+  <Spanish>Entrenar cient&#237;fico</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SAILING</Tag>
+  <English>Sailing</English>
+  <French>
+   <Text>Navigation &#224; voile</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Segeln</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Navigazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Navegaci&#243;n a vela</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SAILING_QUOTE</Tag>
+  <English>"You can't direct the wind, but you can adjust your sails." - Unknown</English>
+  <French>"On ne peut pas faire tourner le vent, mais on peut faire tourner ses voiles." - Inconnu</French>
+  <German>"Den Wind vermagst du nicht zu lenken, deine Segel wohl." - Unbekannt</German>
+  <Italian>"Non puoi cambiare la direzione del vento, ma puoi orientare le tue vele." - Rhye</Italian>
+  <Spanish>"No puedes dirigir el viento, pero puedes mover las velas de tu barco." - Proverbio chino</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SAILING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Sailing[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Galleys[COLOR_REVERT] and [COLOR_UNIT_TEXT]Triremes[COLOR_REVERT]. It also enables trading along coasts and rivers, allows the construction of the [COLOR_BUILDING_TEXT]Harbor[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] World Wonders.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SATELLITES</Tag>
+  <English>Satellites</English>
+  <French>
+   <Text>Satellites</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Satellitentechnologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Satelliti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Sat&#233;lites</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SATELLITES_QUOTE</Tag>
+  <English>"Beep...beep...beep...beep..." - Sputnik I</English>
+  <French>"Bip... bip... bip... bip..." - Spoutnik I</French>
+  <German>"Beep ... Beep ... Beep ... Beep." - Sputnik I.</German>
+  <Italian>"Bip...bip... bip... bip" - Sputnik I</Italian>
+  <Spanish>"Bip... bip... bip... bip..." - Sputnik I</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SATELLITES_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Satellites[COLOR_REVERT] reveals the world map. It allows the construction of the [COLOR_PROJECT_TEXT]Space Elevator[COLOR_REVERT] World Wonder and allows you to construct the [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT] Spaceship Part.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SCIENTIFIC_METHOD</Tag>
+  <English>Scientific Method</English>
+  <French>
+   <Text>M&#233;thode scientifique</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Wissenschaftliche Methode</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Metodo scientifico</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>M&#233;todo cient&#237;fico</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SCIENTIFIC_METHOD_QUOTE</Tag>
+  <English>"I do not feel obliged to believe that the same God who has endowed us with sense, reason, and intellect has intended us to forgo their use." - Galileo Galilei</English>
+  <French>"J'ai du mal &#224; croire que le m&#234;me Dieu qui nous a dot&#233;s d'esprit, de raison et d'intelligence puisse vouloir que nous y renoncions." - Galil&#233;e</French>
+  <German>"Ich f&#252;hle mich nicht zu dem Glauben verpflichtet, dass derselbe Gott, der uns mit Sinnen, Vernunft und Verstand ausgestattet hat, von uns verlangt, dieselben nicht zu benutzen." - Galileo Galilei</German>
+  <Italian>"Non sono obbligato a credere che lo stesso Dio che ci ha donato il senso, la ragione e l'intelligenza voleva che ne dimenticassimo l_uso." - Galileo Galilei</Italian>
+  <Spanish>"No me siento obligado a creer que el mismo Dios que nos ha dotado de sentido com&#250;n, raciocinio e intelecto tuviera como intenci&#243;n privarnos de su uso." - Galileo Galilei</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SCIENTIFIC_METHOD_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Scientific Method[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] Resource, allows the construction of the [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] Improvement and allows the construction of the [COLOR_BUILDING_TEXT]Observatory[COLOR_REVERT] Building. It also obsoletes the [COLOR_WARNING_TEXT]Wat Preah Pisnulok[COLOR_REVERT], the [COLOR_WARNING_TEXT]Temple of Artemis[COLOR_REVERT], [COLOR_WARNING_TEXT]Borobudur[COLOR_REVERT], the [COLOR_WARNING_TEXT]Red Fort[COLOR_REVERT] and [COLOR_WARNING_TEXT]Monasteries[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SPAWN_MODIFIER</Tag>
+  <English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Rise of Civilization:[COLOR_REVERT]</English>
+  <German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Aufstieg der Zivilisation:[COLOR_REVERT]</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SPREAD_MODIFIER</Tag>
+  <English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Spread:[COLOR_REVERT]</English>
+  <German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Technologieverbreitung:[COLOR_REVERT]</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEALTH</Tag>
+  <English>Stealth</English>
+  <French>
+   <Text>Furtivit&#233;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Tarnung</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Invisibilit&#224;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Invisibilidad ante el radar</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEALTH_QUOTE</Tag>
+  <English>"Behind a veil, unseen yet present, I was the forceful soul that moved this mighty body." - Jean Racine</English>
+  <French>"Derri&#232;re un voile, invisible et pr&#233;sente, j'&#233;tais de ce grand corps l'&#226;me toute-puissante." - Jean Racine</French>
+  <German>"Hinter einem Schleier, unsichtbar aber doch vorhanden, war ich der m&#228;chtige Geist, der diesen kr&#228;ftigen K&#246;rper bewegte." - Jean Racine</German>
+  <Italian>"Dietro un velo, invisibile ma presente, ero la vigorosa anima che muoveva questo poderoso corpo." - Jean Racine</Italian>
+  <Spanish>"Tras un velo, invisible m&#225;s que presente, yo era el alma rectora que mov&#237;a este poderoso cuerpo". - Jean Racine</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEALTH_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Stealth[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Stealth Bombers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEAM_POWER</Tag>
+  <English>Steam Power</English>
+  <French>
+   <Text>Moteur &#224; vapeur</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Dampfmaschine</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Energia a vapore</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>M&#225;quina de vapor</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEAM_POWER_QUOTE</Tag>
+  <English>"You would make a ship sail against the winds and currents by lighting a bon-fire under her deck? I have no time for such nonsense." - Napoleon, on Robert Fulton's Steamship</English>
+  <French>"Vous feriez avancer un navire contre vents et courants en allumant un brasier sous le pont ? Je n'ai pas de temps &#224; perdre avec de telles inepties." - Napol&#233;on parlant du bateau &#224; vapeur de Robert Fulton</French>
+  <German>"Was veranlasst Sie zu der Annahme, dass ein Schiff gegen den Wind und gegen die Str&#246;mung segeln k&#246;nnte, wenn man nur ein Feuer unter Deck anz&#252;nde? Ich habe keine Zeit, mir so einen Unsinn anzuh&#246;ren." - Napoleon &#252;ber Robert Fultons Dampfschiff</German>
+  <Italian>"Quindi per far andare una nave controvento dovresti accendere un fuoco nella stiva? Non ho tempo per queste idiozie." - Napoleone a proposito della nave a vapore di Robert Fulton</Italian>
+  <Spanish>"-&#191;Usted har&#237;a barcos que navegaran contra las corrientes y los vientos con solo encender una caldera bajo la cubierta? &#173;Disc&#250;lpeme, no tengo tiempo para escuchar tonter&#237;as." - Napole&#243;n, hablando del barco a vapor de Robert Fulton</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEAM_POWER_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Steam Power[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT] Resource, causes workers to build improvements 50% faster and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Textile Industry[COLOR_REVERT]. It also allows you to train [COLOR_UNIT_TEXT]Ironclads[COLOR_REVERT] and allows you to construct the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT] Building.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEEL</Tag>
+  <English>Steel</English>
+  <French>
+   <Text>Acier</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Stahl</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Acciaio</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Acero</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEEL_QUOTE</Tag>
+  <English>"Before that steam drill shall beat me down, I'll die with my hammer in my hand." - from "John Henry, the Steel-Driving Man"</English>
+  <French>"Je mourrai le marteau &#224; la main avant que la machine &#224; vapeur ne me batte." - Chanson de John Henry (Steel-Driving Man)</French>
+  <German>"Wenn dieser Dampfbohrer mich schl&#228;gt, sterbe ich mit dem Hammer in der Hand." - Aus "John Henry, Steel-Driving Man"</German>
+  <Italian>"Piuttosto che farmi eliminare dalla trivella a vapore, morir&#242; con il martello in mano." - da "John Henry, the Steel-Driving Man"</Italian>
+  <Spanish>"Antes de que esa perforadora a vapor me derrote, morir&#233; con el martillo en la mano." - De la balada popular norteamericana "John Henry, the Steel-Driving Man"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_STEEL_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Steel[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Ironclads[COLOR_REVERT], enables the [COLOR_HIGHLIGHT_TEXT]Industrialism[COLOR_REVERT] Civic and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Steel Industry[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Drydock[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Ironworks[COLOR_REVERT] National Wonder and the [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] World Wonders.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SUPERCONDUCTOR_QUOTE</Tag>
+  <English>"What is happiness? The feeling that power is growing, that resistance is overcome." - Friedrich Nietzsche</English>
+  <French>"Qu'est-ce que le bonheur ? Le sentiment que la puissance cro&#238;t, qu'une r&#233;sistance est surmont&#233;e." - Friedrich Nietzsche</French>
+  <German>"Was ist Gl&#252;ck? Das Gef&#252;hl davon, dass die Macht w&#228;chst, dass ein Widerstand &#252;berwunden wird." - Friedrich Nietzsche</German>
+  <Italian>"Cos'&#232; la felicit&#224;? La sensazione che la potenza cresce e che si sta superando una resistenza." - Friedrich Nietzsche</Italian>
+  <Spanish>"&#191;Qu&#233; es la felicidad? La sensaci&#243;n de que el poder est&#225; creciendo y se superan las dificultades". - Friedrich Nietzsche</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SUPERCONDUCTORS</Tag>
+  <English>Superconductors</English>
+  <French>
+   <Text>Supraconducteurs</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Supraleiter</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Superconduttori</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Superconductores</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_SUPERCONDUCTORS_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] allow the construction of the [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] Spaceship Part.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_THE_WHEEL</Tag>
+  <English>The Wheel</English>
+  <French>
+   <Text>La roue</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Das Rad</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ruota</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Rueda</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_THE_WHEEL_QUOTE</Tag>
+  <English>"Put your shoulder to the wheel." - Aesop</English>
+  <French>"La roue de la fortune tourne plus vite que celle du moulin." - Miguel de Cervant&#232;s</French>
+  <German>"Das Rad der Zeit l&#228;sst sich nicht zur&#252;ckdrehen." - Sprichwort</German>
+  <Italian>"Mettiti al lavoro di buona lena." - Esopo</Italian>
+  <Spanish>"Arrima el hombro a la rueda." - Esopo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_THE_WHEEL_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]The Wheel[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Chariots[COLOR_REVERT] and allows the construction of [COLOR_HIGHLIGHT_TEXT]Roads[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_THEOLOGY</Tag>
+  <English>Theology</English>
+  <French>
+   <Text>Th&#233;ologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Theologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Teologia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Teolog&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_THEOLOGY_QUOTE</Tag>
+  <English>"Two cities have been formed by two loves: the earthly by the love of self; the heavenly by the love of God." - St. Augustine</English>
+  <French>"Deux amours ont fait deux cit&#233;s : l'amour de soi, la cit&#233; terrestre ; l'amour de Dieu, la cit&#233; c&#233;leste." - Saint-Augustin</French>
+  <German>"Es gibt zwei St&#228;dte auf der Welt. Die eine ist auf der Liebe zu sich selbst, die andere auf der Liebe zu Gott errichtet." - Augustinus</German>
+  <Italian>"Esistono due tipi di citt&#224;, fondate su due tipi d'amore: quello terreno per s&#233; stessi e quello celeste per di Dio." - Sant'Agostino</Italian>
+  <Spanish>"Dos amores han fundado dos ciudades: el amor a uno mismo, la terrenal; y el amor a Dios, la celestial." - San Agust&#237;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_THEOLOGY_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Theology[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] civic and allows the construction of the [COLOR_BUILDING_TEXT]Apostolic Palace[COLOR_REVERT] and [COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] World Wonders. It also obsoletes the [COLOR_WARNING_TEXT]Parthenon[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Statue of Zeus[COLOR_REVERT].  The first player to discover [COLOR_TECH_TEXT]Theology[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT].</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_UTOPIA</Tag>
+  <English>Communism</English>
+  <French>
+   <Text>Communisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kommunismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Comunismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Comunismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_UTOPIA_QUOTE</Tag>
+  <English>"When I give food to the poor, they call me a saint. When I ask why the poor have no food, they call me a communist." - Dom Helder Camara</English>
+  <French>"Je nourris un pauvre et l'on me dit que je suis un saint. Je demande pourquoi le pauvre n'a pas de quoi se nourrir et l'on me traite de communiste !" - Dom Helder Camara</French>
+  <German>"Gebe ich den Armen zu essen, nennen sie mich einen Heiligen. Frage ich, warum sie nichts zu essen haben, nennen sie mich einen Kommunisten!" - Dom Helder Camara</German>
+  <Italian>"Quando offro il cibo ai poveri, mi chiamano santo. Quando chiedo perch&#233; i poveri non hanno cibo, mi chiamano comunista." - Dom Helder Camara</Italian>
+  <Spanish>"Cuando doy comida a un pobre me llaman santo. Cuando pregunto por qu&#233; un pobre no tiene comida me llaman comunista." - Dom H&#233;lder C&#226;mara</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_UTOPIA_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Communism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Central Planning[COLOR_REVERT] Civic and obsoletes [COLOR_WARNING_TEXT]St. Basils Cathedral[COLOR_REVERT]. It also allows construction of the [COLOR_BUILDING_TEXT]Intelligence Agency[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Security Bureau[COLOR_REVERT] Buildings and the [COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] World Wonder. The first to research [COLOR_TECH_TEXT]Communism[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Spy[COLOR_REVERT] unit.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_WRITING</Tag>
+  <English>Writing</English>
+  <French>
+   <Text>Ecriture</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Schrift</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Scrittura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Escritura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_WRITING_QUOTE</Tag>
+  <English>"True glory consists in doing what deserves to be written; in writing what deserves to be read." - Pliny the Elder</English>
+  <French>"La gloire s'acquiert en accomplissant ce qui m&#233;rite d'&#234;tre &#233;crit et en &#233;crivant ce qui m&#233;rite d'&#234;tre lu." - Pline l'Ancien</French>
+  <German>"Gl&#252;cklich sind jene, die Taten vollbringen, die es wert sind, aufgezeichnet zu werden, oder Schriften verfassen, die es wert sind, gelesen zu werden." - Plinius der &#196;ltere</German>
+  <Italian>"La vera gloria consiste nel fare ci&#242; che merita di essere scritto e nello scrivere ci&#242; che merita di essere letto." - Plinio il Vecchio</Italian>
+  <Spanish>"La verdadera gloria consiste en hacer lo que merece escribirse y en escribir lo que merece leerse." - Plinio el Viejo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TECH_WRITING_STRATEGY</Tag>
+  <English>[COLOR_TECH_TEXT]Writing[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT] Building and enables [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT].</English>
+ </TEXT>
+</Civ4GameText>

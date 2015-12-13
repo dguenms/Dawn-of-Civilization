@@ -25,10 +25,7 @@
 			<fRangedDeathTime>0.28</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BEAR</Type>
@@ -49,11 +46,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
-		</UnitArtInfo>
+			<AudioRunSounds/>		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PANTHER</Type>
 			<Button>,Art/Interface/Buttons/Units/Panther.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,5</Button>
@@ -73,10 +66,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WOLF</Type>
@@ -97,10 +87,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WORKER</Type>
@@ -121,10 +108,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WORKERMODERN</Type>
@@ -145,10 +129,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_INDIAN_FAST_WORKER</Type>
@@ -169,10 +150,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SCOUT</Type>
@@ -193,10 +171,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_EXPLORER</Type>
@@ -217,10 +192,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ANCIENT_SPY</Type>
@@ -241,10 +213,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPY</Type>
@@ -265,10 +234,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<SelectionSound>AS3D_UN_SPY_SURR_VOX</SelectionSound>
 			<ActionSound>AS3D_UN_SPY_SURR_VOX</ActionSound>
 		</UnitArtInfo>
@@ -291,10 +257,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CHRISTIAN_MISSIONARY</Type>
@@ -315,10 +278,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ISLAMIC_MISSIONARY</Type>
@@ -339,10 +299,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HINDU_MISSIONARY</Type>
@@ -363,10 +320,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BUDDHIST_MISSIONARY</Type>
@@ -387,10 +341,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CONFUCIAN_MISSIONARY</Type>
@@ -411,10 +362,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TAOIST_MISSIONARY</Type>
@@ -435,10 +383,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WARRIOR</Type>
@@ -459,10 +404,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_INCAN_QUECHUA</Type>
@@ -483,10 +425,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SWORDSMAN</Type>
@@ -507,10 +446,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AZTEC_JAGUAR</Type>
@@ -531,14 +467,10 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ROME_PRAETORIAN</Type>
-			<!--Rhye-->
 			<Button>,Art/Interface/Buttons/Units/Praetorian.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,6,6</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -555,11 +487,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AXEMAN</Type>
@@ -580,10 +509,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SUMERIAN_VULTURE</Type>
@@ -603,11 +529,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_NATIVE_AMERICA_DOG_SOLDIER</Type>
@@ -627,11 +550,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MACEMAN</Type>
@@ -652,10 +572,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MACEMAN_MIDDLE_EAST</Type>
@@ -676,10 +593,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MACEMAN_CHINESE</Type>
@@ -700,10 +614,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MACEMAN_MESOAMERICA</Type>
@@ -724,10 +635,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_JAPAN_SAMURAI</Type>
@@ -748,10 +656,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GREEK_PHALANX</Type>
@@ -772,10 +677,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPEARMAN</Type>
@@ -796,10 +698,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MAYA_HOLKAN</Type>
@@ -819,11 +718,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MAYA_HOLKAN_SPEARTHROWER</Type>
@@ -844,10 +740,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIKEMAN</Type>
@@ -868,10 +761,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HOLY_ROMAN_LANDSKNECHT</Type>
@@ -891,11 +781,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MUSKETMAN</Type>
@@ -916,10 +803,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FRENCH_MUSKETEER</Type>
@@ -940,10 +824,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ETHIOPIAN_OROMO_WARRIOR_ORANGE</Type>
@@ -963,11 +844,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ETHIOPIAN_OROMO_WARRIOR_BLUE</Type>
@@ -987,11 +865,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ETHIOPIAN_OROMO_WARRIOR_GREEN</Type>
@@ -1011,11 +886,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_RIFLEMAN</Type>
@@ -1036,10 +908,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ENGLISH_REDCOAT</Type>
@@ -1060,10 +929,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GRENADIER</Type>
@@ -1084,10 +950,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AT_INFANTRY</Type>
@@ -1108,10 +971,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_INFANTRY</Type>
@@ -1132,10 +992,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SAM_INFANTRY</Type>
@@ -1156,10 +1013,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MARINE</Type>
@@ -1180,10 +1034,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AMERICAN_NAVY_SEAL</Type>
@@ -1204,10 +1055,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PARATROOPER</Type>
@@ -1228,10 +1076,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MECHANIZED_INFANTRY</Type>
@@ -1285,10 +1130,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN</Type>
@@ -1308,11 +1150,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_BACK_KNOT</Type>
@@ -1332,11 +1171,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_NOBLE</Type>
@@ -1356,11 +1192,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MALI_SKIRMISHER</Type>
@@ -1381,10 +1214,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BABYLON_BOWMAN</Type>
@@ -1404,11 +1234,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_LONGBOWMAN</Type>
@@ -1429,10 +1256,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_BROWN_SHIRT</Type>
@@ -1452,11 +1276,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_CHAINMAIL</Type>
@@ -1476,11 +1297,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_PARTIAL_SCALE</Type>
@@ -1500,11 +1318,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CROSSBOWMAN</Type>
@@ -1525,10 +1340,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CHINA_CHOKONU</Type>
@@ -1549,10 +1361,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CHARIOT</Type>
@@ -1618,9 +1427,8 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PERSIA_IMMORTAL</Type>
-			<!--Rhye -start-->
 			<Button>,Art/Interface/Buttons/Units/Immortal.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,2</Button>
-			<fScale>0.44</fScale> 
+			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -1636,11 +1444,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
-			<!--Rhye - end-->
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HORSE_ARCHER</Type>
@@ -1661,10 +1465,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MONGOL_KESHIK</Type>
@@ -1685,10 +1486,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KNIGHT</Type>
@@ -1709,10 +1507,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BYZANTINE_CATAPHRACT</Type>
@@ -1732,11 +1527,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARABIA_CAMELARCHER</Type>
@@ -1757,10 +1549,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPANISH_CONQUISTADOR</Type>
@@ -1781,10 +1570,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CUIRASSIER</Type>
@@ -1804,11 +1590,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CAVALRY</Type>
@@ -1829,10 +1612,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_RUSSIA_COSSACK</Type>
@@ -1853,10 +1633,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WAR_ELEPHANT</Type>
@@ -1877,10 +1654,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KHMER_BALLISTA_ELEPHANT</Type>
@@ -1900,11 +1674,8 @@
 			<fBattleDistance>0.45</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TANK</Type>
@@ -2104,8 +1875,7 @@
 				<AudioRunTypeEnd>ENDSTEP_WHEELS</AudioRunTypeEnd>
 			</AudioRunSounds>
 		</UnitArtInfo>
-
-		<UnitArtInfo>						<!-- imported from RFC Europe by Leoreth -->
+		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FRENCH_HEAVY_CANNON</Type>
 			<Button>Art/Interface/Buttons/Units/EarlyCannon3.dds</Button>
 			<fScale>0.53</fScale>
@@ -2131,13 +1901,12 @@
 			<fBattleDistance>0.5</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
 			<AudioRunSounds>
 				<AudioRunTypeLoop>LOOPSTEP_WHEELS</AudioRunTypeLoop>
 				<AudioRunTypeEnd>ENDSTEP_WHEELS</AudioRunTypeEnd>
 			</AudioRunSounds>
-		</UnitArtInfo>		
-
+		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MACHINE_GUN</Type>
 			<Button>,Art/Interface/Buttons/Units/MachineGun.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,6</Button>
@@ -2157,10 +1926,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARTILLERY</Type>
@@ -2199,7 +1965,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WORKBOAT</Type>
 			<Button>,Art/Interface/Buttons/Units/WorkBoat.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,4,9</Button>
-			<!-- Rhye -->
 			<fScale>0.18</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2237,7 +2002,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WORKBOAT_MODERN</Type>
 			<Button>,Art/Interface/Buttons/Units/WorkBoat.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,4,9</Button>
-			<!-- Rhye -->
 			<fScale>0.20</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2275,7 +2039,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GALLEY</Type>
 			<Button>,Art/Interface/Buttons/Units/Galley.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,9</Button>
-			<!-- Rhye -->
 			<fScale>0.17</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2315,7 +2078,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CARAVEL</Type>
 			<Button>,Art/Interface/Buttons/Units/Caravel.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,9</Button>
-			<!-- Rhye -->
 			<fScale>0.21</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2355,7 +2117,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PORTUGAL_CARRACK</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,11</Button>
-			<!-- Rhye -->
 			<fScale>0.21</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2384,7 +2145,7 @@
 			<fBankRate>.4</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
 			<AudioRunSounds>
 				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
 				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
@@ -2395,7 +2156,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GALLEON</Type>
 			<Button>,Art/Interface/Buttons/Units/Galleon.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,9</Button>
-			<!-- Rhye -->
 			<fScale>0.17</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2435,7 +2195,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_NETHERLANDS_OOSTINDIEVAARDER</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,10</Button>
-			<!-- Rhye -->
 			<fScale>0.18</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2464,7 +2223,7 @@
 			<fBankRate>.3</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
 			<AudioRunSounds>
 				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
 				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
@@ -2514,7 +2273,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FRIGATE</Type>
 			<Button>,Art/Interface/Buttons/Units/Frigate.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,9</Button>
-			<!-- Rhye -->
 			<fScale>0.20</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2554,7 +2312,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SHIP_OF_THE_LINE</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,12</Button>
-			<!-- Rhye -->
 			<fScale>0.21</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2594,7 +2351,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_IRONCLAD</Type>
 			<Button>,Art/Interface/Buttons/Units/Ironclad.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,9</Button>
-			<!-- Rhye -->
 			<fScale>0.56</fScale>
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2634,7 +2390,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TRANSPORT</Type>
 			<Button>,Art/Interface/Buttons/Units/Transport.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,10</Button>
-			<!-- Rhye -->
 			<fScale>0.9</fScale>
 			<fInterfaceScale>1.3</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2674,7 +2429,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_DESTROYER</Type>
 			<Button>,Art/Interface/Buttons/Units/Destroyer.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,9</Button>
-			<!-- Rhye -->
 			<fScale>0.7</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2714,7 +2468,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CORVETTE</Type>
 			<Button>Art/Interface/Buttons/Units/corvette_btn.dds</Button>
-			<!-- Rhye -->
 			<fScale>0.7</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2743,7 +2496,7 @@
 			<fBankRate>.2</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
 			<AudioRunSounds>
 				<AudioRunTypeLoop>LOOPSTEP_DESTOYER</AudioRunTypeLoop>
 				<AudioRunTypeEnd>ENDSTEP_DESTROYER</AudioRunTypeEnd>
@@ -2754,7 +2507,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_STEALTH_DESTROYER</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,12</Button>
-			<!-- Rhye -->
 			<fScale>0.6</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2794,7 +2546,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BATTLESHIP</Type>
 			<Button>,Art/Interface/Buttons/Units/Battleship.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,10</Button>
-			<!-- Rhye -->
 			<fScale>0.82</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2834,7 +2585,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SUBMARINE</Type>
 			<Button>,Art/Interface/Buttons/Units/Submarine.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,6,9</Button>
-			<!-- Rhye -->
 			<fScale>0.60</fScale>
 			<fInterfaceScale>1.3</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2865,7 +2615,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ATTACK_SUBMARINE</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,4,12</Button>
-			<!-- Rhye -->
 			<fScale>0.48</fScale>
 			<fInterfaceScale>1.3</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2896,7 +2645,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CARRIER</Type>
 			<Button>,Art/Interface/Buttons/Units/Carrier.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,10</Button>
-			<!-- Rhye -->
 			<fScale>0.9</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2936,7 +2684,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AIRSHIP</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,12</Button>
-			<!-- Rhye -->
 			<fScale>0.35</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -2957,10 +2704,7 @@
 			<fBankRate>0.35</fBankRate>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop> </AudioRunTypeLoop>
-				<AudioRunTypeEnd> </AudioRunTypeEnd>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<PatrolSound>AS3D_UN_AIRSHIP_PATROL</PatrolSound>
 			<SelectionSound>AS3D_UN_AIRSHIP_COMMAND_PATROL</SelectionSound>
 			<ActionSound>AS3D_UN_AIRSHIP_COMMAND_PATROL</ActionSound>
@@ -2987,10 +2731,7 @@
 			<fBankRate>0.35</fBankRate>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<PatrolSound>AS3D_UN_FIGHTER_PATROL</PatrolSound>
 			<SelectionSound>AS3D_UN_FIGHTER_COMMAND_PATROL</SelectionSound>
 			<ActionSound>AS3D_UN_FIGHTER_COMMAND_PATROL</ActionSound>
@@ -3017,10 +2758,7 @@
 			<fBankRate>0.35</fBankRate>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<PatrolSound>AS3D_UN_JET_PATROL</PatrolSound>
 			<SelectionSound>AS3D_UN_JET_COMMAND_PATROL</SelectionSound>
 			<ActionSound>AS3D_UN_JET_COMMAND_PATROL</ActionSound>
@@ -3047,10 +2785,7 @@
 			<fBankRate>0.35</fBankRate>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<PatrolSound>AS3D_UN_FIGHTER_PATROL</PatrolSound>
 			<SelectionSound>AS3D_UN_FIGHTER_COMMAND_PATROL</SelectionSound>
 			<ActionSound>AS3D_UN_FIGHTER_COMMAND_PATROL</ActionSound>
@@ -3077,10 +2812,7 @@
 			<fBankRate>0.35</fBankRate>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<PatrolSound>AS3D_UN_JET_PATROL</PatrolSound>
 			<SelectionSound>AS3D_UN_JET_COMMAND_PATROL</SelectionSound>
 			<ActionSound>AS3D_UN_JET_COMMAND_PATROL</ActionSound>
@@ -3106,10 +2838,7 @@
 			<fBankRate>0.35</fBankRate>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<SelectionSound>AS3D_UN_ICBM_SELECT</SelectionSound>
 			<ActionSound>AS3D_UN_ICBM_SELECT</ActionSound>
 		</UnitArtInfo>
@@ -3134,10 +2863,7 @@
 			<fBankRate>0.35</fBankRate>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<SelectionSound>AS3D_UN_ICBM_SELECT</SelectionSound>
 			<ActionSound>AS3D_UN_ICBM_SELECT</ActionSound>
 		</UnitArtInfo>
@@ -3161,10 +2887,7 @@
 			<fBankRate>0.35</fBankRate>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<SelectionSound>AS3D_UN_ICBM_SELECT</SelectionSound>
 			<ActionSound>AS3D_UN_ICBM_SELECT</ActionSound>
 		</UnitArtInfo>
@@ -3187,10 +2910,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARTIST</Type>
@@ -3211,10 +2931,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARTIST_MODERN</Type>
@@ -3235,10 +2952,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SCIENTIST</Type>
@@ -3259,10 +2973,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SCIENTIST_MODERN</Type>
@@ -3283,10 +2994,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MERCHANT</Type>
@@ -3307,10 +3015,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MERCHANT_MODERN</Type>
@@ -3331,10 +3036,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CEO_1</Type>
@@ -3355,10 +3057,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CEO_2</Type>
@@ -3379,10 +3078,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CEO_3</Type>
@@ -3403,10 +3099,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CEO_4</Type>
@@ -3427,10 +3120,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CEO_5</Type>
@@ -3451,10 +3141,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CEO_6</Type>
@@ -3475,10 +3162,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CEO_7</Type>
@@ -3499,10 +3183,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ENGINEER</Type>
@@ -3523,10 +3204,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ENGINEER_MODERN</Type>
@@ -3547,10 +3225,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ANCIENT_GREAT_SPY</Type>
@@ -3571,10 +3246,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GREAT_SPY</Type>
@@ -3595,10 +3267,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_MALE</Type>
@@ -3619,10 +3288,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_FEMALE</Type>
@@ -3643,10 +3309,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_CHILD</Type>
@@ -3668,10 +3331,7 @@
 			<bCombatExempt>1</bCombatExempt>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WARLORD_ANCIENT</Type>
@@ -3692,10 +3352,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WARLORD_MEDIEVAL</Type>
@@ -3716,10 +3373,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WARLORD_MODERN</Type>
@@ -3740,10 +3394,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ZULU_SPEARMAN</Type>
@@ -3764,10 +3415,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CELTIC_BARBARIAN</Type>
@@ -3788,10 +3436,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_VIKING_BESERKER</Type>
@@ -3812,10 +3457,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CARTHAGE_NUMIDIAN_CAVALRY</Type>
@@ -3836,10 +3478,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_OTTOMAN_JANISSARY</Type>
@@ -3860,10 +3499,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TREBUCHET</Type>
@@ -3937,7 +3573,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TRIREME</Type>
 			<Button>,Art/Interface/Buttons/Units/Galley.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,8,8</Button>
-			<!-- Rhye -->
 			<fScale>0.13</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -4002,10 +3637,7 @@
 			<fExchangeAngle>-38.0</fExchangeAngle>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MOBILE_ARTILLERY</Type>
@@ -4076,7 +3708,6 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MISSILE_CRUISER</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,12</Button>
-			<!-- Rhye -->
 			<fScale>0.55</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -4132,10 +3763,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AXEMAN_EGYPTIAN</Type>
@@ -4156,10 +3784,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HORSE_ARCHER_EGYPTIAN</Type>
@@ -4180,10 +3805,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARCHER_CHINESE</Type>
@@ -4204,10 +3826,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPEARMAN_CHINESE</Type>
@@ -4228,10 +3847,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SWORDSMAN_CHINESE</Type>
@@ -4252,10 +3868,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CHARIOT_CHINESE</Type>
@@ -4311,10 +3924,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ASIAN_WAR_GALLEY</Type>
@@ -4374,10 +3984,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPEARMAN_EURASIAN</Type>
@@ -4398,10 +4005,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HORSEMAN_EURASIAN</Type>
@@ -4422,10 +4026,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CHARIOT_CELTIC</Type>
@@ -4481,10 +4082,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PELTAST</Type>
@@ -4505,10 +4103,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HORSE_ARCHER_ROMAN</Type>
@@ -4529,10 +4124,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CARTHAGE_WAR_ELEPHANT</Type>
@@ -4553,10 +4145,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARCHER_ASIAN</Type>
@@ -4577,10 +4166,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AXEMAN_ASIAN</Type>
@@ -4601,10 +4187,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CROSSBOWMAN_ASIAN</Type>
@@ -4625,10 +4208,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KNIGHT_ASIAN</Type>
@@ -4649,10 +4229,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MACEMAN_ASIAN</Type>
@@ -4673,10 +4250,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIKEMAN_ASIAN</Type>
@@ -4697,10 +4271,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SCOUT_ASIAN</Type>
@@ -4721,10 +4292,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_CHILD_ASIAN</Type>
@@ -4746,10 +4314,7 @@
 			<bCombatExempt>1</bCombatExempt>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_ELDER_ASIAN</Type>
@@ -4770,10 +4335,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_FEMALE_ASIAN</Type>
@@ -4794,10 +4356,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WAR_ELEPHANT_ASIAN</Type>
@@ -4818,10 +4377,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WARRIOR_ASIAN</Type>
@@ -4842,10 +4398,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WORKER_ASIAN</Type>
@@ -4866,10 +4419,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARCHER_EUROPEAN</Type>
@@ -4890,10 +4440,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<SelectionSound>AS3D_UN_SPY_SURR_VOX</SelectionSound>
 			<ActionSound>AS3D_UN_SPY_SURR_VOX</ActionSound>
 		</UnitArtInfo>
@@ -4916,10 +4463,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CHARIOT_EUROPEAN</Type>
@@ -4975,10 +4519,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 			<SelectionSound>AS3D_UN_SPY_SURR_VOX</SelectionSound>
 			<ActionSound>AS3D_UN_SPY_SURR_VOX</ActionSound>
 		</UnitArtInfo>
@@ -5001,10 +4542,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MACEMAN_EUROPEAN</Type>
@@ -5025,10 +4563,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIKEMAN_EUROPEAN</Type>
@@ -5049,10 +4584,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SCOUT_EUROPEAN</Type>
@@ -5073,10 +4605,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_EUROPEAN</Type>
@@ -5097,10 +4626,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_FEMALE_EUROPEAN</Type>
@@ -5121,10 +4647,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_CHILD_EUROPEAN</Type>
@@ -5146,10 +4669,7 @@
 			<bCombatExempt>1</bCombatExempt>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPEARMAN_EUROPEAN</Type>
@@ -5169,11 +4689,8 @@
 			<fBattleDistance>0.4</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SWORDSMAN_EUROPEAN</Type>
@@ -5194,10 +4711,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WAR_ELEPHANT_EUROPEAN</Type>
@@ -5218,10 +4732,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WORKER_EUROPEAN</Type>
@@ -5242,10 +4753,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CROSSBOWMAN_GRECO_ROMAN</Type>
@@ -5266,10 +4774,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_LONGBOWMAN_GRECO_ROMAN</Type>
@@ -5290,10 +4795,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SCOUT_GRECO_ROMAN</Type>
@@ -5314,10 +4816,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPEARMAN_GRECO_ROMAN</Type>
@@ -5338,10 +4837,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WAR_ELEPHANT_GRECO_ROMAN</Type>
@@ -5362,10 +4858,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WARRIOR_GRECO_ROMAN</Type>
@@ -5386,10 +4879,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARCHER_MIDDLE_EAST</Type>
@@ -5410,10 +4900,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AXEMAN_MIDDLE_EAST</Type>
@@ -5434,10 +4921,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CHARIOT_MIDDLE_EAST</Type>
@@ -5460,7 +4944,7 @@
 			<fAngleInterpRate>360.0</fAngleInterpRate>
 			<fExchangeAngle>-30.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
 			<AudioRunSounds>
 				<AudioRunTypeLoop>LOOPSTEP_WHEELS_2</AudioRunTypeLoop>
 				<AudioRunTypeEnd>ENDSTEP_WHEELS_2</AudioRunTypeEnd>
@@ -5485,10 +4969,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HORSE_ARCHER_MIDDLE_EAST</Type>
@@ -5509,10 +4990,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_LONGBOWMAN_MIDDLE_EAST</Type>
@@ -5533,10 +5011,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KNIGHT_MIDDLE_EAST</Type>
@@ -5557,35 +5032,8 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
-		<!--UnitArtInfo>
-			<Type>ART_DEF_UNIT_MACEMAN_MIDDLE_EAST</Type>
-			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,2</Button>
-			<fScale>0.44</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<bActAsLand>0</bActAsLand>
-			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Maceman_Middle_East/Maceman_Middle_East.nif</NIF>
-			<KFM>Art/Units/Maceman_Middle_East/warrior.kfm</KFM>
-			<SHADERNIF>Art/Units/Maceman_Middle_East/Maceman_Middle_East_fx.nif</SHADERNIF>
-			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
-				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
-				<fShadowScale>1.0</fShadowScale>
-			</ShadowDef>
-			<fBattleDistance>0.35</fBattleDistance>
-			<fRangedDeathTime>0.31</fRangedDeathTime>
-			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
-		</UnitArtInfo-->
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIKEMAN_MIDDLE_EAST</Type>
 			<Button>,Art/Interface/Buttons/Units/Pikeman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,1</Button>
@@ -5604,11 +5052,8 @@
 			<fBattleDistance>0.4</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SCOUT_MIDDLE_EAST</Type>
@@ -5629,10 +5074,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_CHILD_MIDDLE_EAST</Type>
@@ -5654,10 +5096,7 @@
 			<bCombatExempt>1</bCombatExempt>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_FEMALE_MIDDLE_EAST</Type>
@@ -5678,10 +5117,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_MIDDLE_EAST</Type>
@@ -5702,10 +5138,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPEARMAN_MIDDLE_EAST</Type>
@@ -5725,11 +5158,8 @@
 			<fBattleDistance>0.4</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SWORDSMAN_MIDDLE_EAST</Type>
@@ -5750,10 +5180,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WAR_ELEPHANT_MIDDLE_EAST</Type>
@@ -5774,10 +5201,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WARRIOR_MIDDLE_EAST</Type>
@@ -5798,10 +5222,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WORKER_MIDDLE_EAST</Type>
@@ -5822,10 +5243,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARCHER_SOUTH_AMERICA</Type>
@@ -5846,10 +5264,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AXEMAN_SOUTH_AMERICA</Type>
@@ -5869,11 +5284,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CHARIOT_SOUTH_AMERICA</Type>
@@ -5929,10 +5341,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HORSE_ARCHER_SOUTH_AMERICA</Type>
@@ -5953,10 +5362,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KNIGHT_SOUTH_AMERICA</Type>
@@ -5977,10 +5383,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_LONGBOWMAN_SOUTH_AMERICA</Type>
@@ -6001,10 +5404,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MACEMAN_SOUTH_AMERICA</Type>
@@ -6025,10 +5425,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIKEMAN_SOUTH_AMERICA</Type>
@@ -6049,10 +5446,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_CHILD_SOUTH_AMERICA</Type>
@@ -6074,10 +5468,7 @@
 			<bCombatExempt>1</bCombatExempt>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_SOUTH_AMERICA</Type>
@@ -6098,10 +5489,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SETTLER_FEMALE_SOUTH_AMERICA</Type>
@@ -6122,10 +5510,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SPEARMAN_SOUTH_AMERICA</Type>
@@ -6145,11 +5530,8 @@
 			<fBattleDistance>0.4</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SWORDSMAN_SOUTH_AMERICA</Type>
@@ -6170,10 +5552,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WAR_ELEPHANT_SOUTH_AMERICA</Type>
@@ -6194,10 +5573,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WARRIOR_SOUTH_AMERICA</Type>
@@ -6218,10 +5594,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WORKER_SOUTH_AMERICA</Type>
@@ -6242,15 +5615,11 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PHOENICIAN_BIREME</Type>
 			<Button>Art/Interface/Buttons/Units/Venice_Galleas.dds</Button>
-			<!-- Rhye -->
 			<fScale>0.13</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
@@ -6305,11 +5674,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_LEVY</Type>
@@ -6330,10 +5696,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_INDONESIA_SILAT</Type>
@@ -6353,11 +5716,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SELJUK_GHULAM_WARRIOR</Type>
@@ -6377,11 +5737,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_INDONESIAN_ORANG_LAUT</Type>
@@ -6414,7 +5771,7 @@
 			<fBankRate>.4</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
 			<AudioRunSounds>
 				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
 				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
@@ -6441,10 +5798,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_QIZILBASH</Type>
@@ -6465,10 +5819,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MUGHAL_SIEGE_ELEPHANT</Type>
@@ -6489,10 +5840,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ZORO_MISSIONARY</Type>
@@ -6513,10 +5861,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BOMBARD</Type>
@@ -6569,10 +5914,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TAMIL_DHARANI</Type>
@@ -6631,11 +5973,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_POLISH_WINGED_HUSSAR</Type>
@@ -6656,10 +5995,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KONGO_POMBOS</Type>
@@ -6680,10 +6016,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MOORISH_CAMEL_GUNNER</Type>
@@ -6703,11 +6036,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SLAVE</Type>
@@ -6728,10 +6058,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_AFRICAN_SLAVE</Type>
@@ -6752,10 +6079,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CIDAINH_CELTIC</Type>
@@ -6846,10 +6170,7 @@
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ASVAKA_KUSHAN</Type>
@@ -6870,10 +6191,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FARARI_MANDE</Type>
@@ -6893,11 +6211,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MEDJAY_NUBIAN</Type>
@@ -6918,10 +6233,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MOUNTED_BRAVE_SIOUX</Type>
@@ -6942,10 +6254,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_VIKING_HUSCARL</Type>
@@ -6966,10 +6275,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WAR_ELEPHANT_CARTHAGE</Type>
@@ -6989,11 +6295,8 @@
 			<fBattleDistance>0.45</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MINUTEMAN</Type>
@@ -7013,11 +6316,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MEXICO_RURALES</Type>
@@ -7038,10 +6338,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ARGENTINE_GRENADIER_CAVALRY</Type>
@@ -7062,10 +6359,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ALBION_LEGION</Type>
@@ -7085,11 +6379,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.05</fRangedDeathTime>
 			<bActAsRanged>1</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BRAZILIAN_MADEIREIRO</Type>
@@ -7109,11 +6400,8 @@
 			<fBattleDistance>0.35</fBattleDistance>
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_MOORISH_CORSAIR</Type>
@@ -7183,7 +6471,7 @@
 			<fAngleInterpRate>720.0</fAngleInterpRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
-			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<TrainSound>AS2D_UNIT_BUILD_UNIQUE_UNIT</TrainSound>
 			<AudioRunSounds>
 				<AudioRunTypeLoop>LOOPSTEP_OCEAN1</AudioRunTypeLoop>
 				<AudioRunTypeEnd>ENDSTEP_OCEAN1</AudioRunTypeEnd>
@@ -7210,10 +6498,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_PROPHET</Type>
@@ -7242,10 +6527,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ARTIST</Type>
@@ -7266,10 +6548,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ARTIST_MODERN</Type>
@@ -7290,10 +6569,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_SCIENTIST</Type>
@@ -7314,10 +6590,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_SCIENTIST_MODERN</Type>
@@ -7338,10 +6611,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_MERCHANT</Type>
@@ -7362,10 +6632,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_MERCHANT_MODERN</Type>
@@ -7394,10 +6661,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ANCIENT_GREAT_SPY</Type>
@@ -7418,10 +6682,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_GREAT_SPY</Type>
@@ -7442,10 +6703,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ENGINEER</Type>
@@ -7466,10 +6724,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_ENGINEER_MODERN</Type>
@@ -7490,10 +6745,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_WARLORD_ANCIENT</Type>
@@ -7514,10 +6766,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_WARLORD_MEDIEVAL</Type>
@@ -7538,10 +6787,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_WARLORD_MODERN</Type>
@@ -7562,10 +6808,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_FEMALE_STATESMAN</Type>
@@ -7586,10 +6829,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PERSECUTOR_BLACK</Type>
@@ -7610,10 +6850,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds>
-				<AudioRunTypeLoop/>
-				<AudioRunTypeEnd/>
-			</AudioRunSounds>
+			<AudioRunSounds/>
 		</UnitArtInfo>
 	</UnitArtInfos>
 </Civ4ArtDefines>

@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_PEDIA_BACK</Tag>
+  <English>Back</English>
+  <French>Retour</French>
+  <German>Zur&#252;ck</German>
+  <Italian>Indietro</Italian>
+  <Spanish>Atr&#225;s</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_PEDIA_FORWARD</Tag>
+  <English>Forward</English>
+  <French>Avancer</French>
+  <German>Vor</German>
+  <Italian>Avanti</Italian>
+  <Spanish>Adelante</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_ADVISOR</Tag>
+  <English>Advisor</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_AIR_RANGE</Tag>
+  <English>Range</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_ALL_GROUPS</Tag>
+  <English>All Groups</English>
+  <French>Tous les groupes</French>
+  <German>Alle Gruppen</German>
+  <Italian>Tutti i gruppi</Italian>
+  <Spanish>Todos los grupos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_ALL_UNITS</Tag>
+  <English>All Units</English>
+  <French>Toutes les unit&#233;s</French>
+  <German>Alle Einheiten</German>
+  <Italian>Tutte le unit&#224;</Italian>
+  <Spanish>Todas las unidades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_ALLOWS</Tag>
+  <English>Allows</English>
+  <French>Permet[SPACE]</French>
+  <German>Erlaubt</German>
+  <Italian>Permette</Italian>
+  <Spanish>Permite</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_ANKGOR_WAT_ARTIST_HIRE</Tag>
+  <English>Can use Priest Slots</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_APPEARS</Tag>
+  <English>Appears</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_ATTITUDE</Tag>
+  <English>Base Attitude: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BONUS_APPEARANCE</Tag>
+  <English>Reveals</English>
+  <French>R&#233;v&#232;le</French>
+  <German>Enth&#252;llt</German>
+  <Italian>Rivela</Italian>
+  <Spanish>Revela</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BONUS_PLAYER_TRADE</Tag>
+  <English>Trade</English>
+  <German>Handel</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BONUS_TRADE</Tag>
+  <English>Enables</English>
+  <French>Active</French>
+  <German>Erm&#246;glicht</German>
+  <Italian>Abilita</Italian>
+  <Spanish>Permite</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BONUS_YIELDS</Tag>
+  <English>Bonus Yields</English>
+  <French>Rendement bonus</French>
+  <German>Bonusertr&#228;ge</German>
+  <Italian>Prodotti bonus</Italian>
+  <Spanish>Rendim. bonif.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BOOSTS</Tag>
+  <English>Changes</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILD_TIME</Tag>
+  <English>Build Time: %d1_Num</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILD_TIME2</Tag>
+  <English>Build Time</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILD_TIME3</Tag>
+  <English>Build Time: 3 Turns</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILD_TIME4</Tag>
+  <English>Build Time: 4 Turns</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILD_TIME6</Tag>
+  <English>Removal Time: 6 Turns</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILD_TIME_PART_2</Tag>
+  <English>[SPACE]Turns</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILDING_CLASS_PREREQ</Tag>
+  <English>Building Class Prereq</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILDING_CONCEPT</Tag>
+  <English>Building</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_BUILDINGS_ENABLED</Tag>
+  <English>Buildings Enabled</English>
+  <French>Nouveaux b&#226;timents</French>
+  <German>Geb&#228;ude freigegeben</German>
+  <Italian>Edifici abilitati</Italian>
+  <Spanish>Edificios permitidos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CAPACITY</Tag>
+  <English>Capacity</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_BCHART</Tag>
+  <English>Building Chart</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_BONUS</Tag>
+  <English>Resources</English>
+  <French>
+   <Text>Ressources</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Ressourcen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Risorse</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Recursos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_BUILDING</Tag>
+  <English>Buildings</English>
+  <French>
+   <Text>B&#226;timents</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Geb&#228;ude</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Edifici</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Edificios</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_CIV</Tag>
+  <English>Civilizations</English>
+  <French>
+   <Text>Civilisations</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Zivilisationen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Civilt&#224;</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Civilizaciones</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_CIVIC</Tag>
+  <English>Civics</English>
+  <French>
+   <Text>Doctrines</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Staatsformen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Forme di governo</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Principios</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT</Tag>
+  <English>RFC Concepts</English>
+  <French>
+   <Text>Concepts du RFC</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>RFC-Konzepte</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Nozioni di RFC</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Conceptos de RFC</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT_NEW</Tag>
+  <English>BTS Concepts</English>
+  <French>Conceptes BTS</French>
+  <German>Beyond the Sword-Konzepte</German>
+  <Italian>Concetti di BTS</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT_PEDIA</Tag>
+  <English>Concept</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_CULTURE_LEVEL</Tag>
+  <English>Culture Level</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_FEATURE</Tag>
+  <English>Terrain Features</English>
+  <French>
+   <Text>Caract&#233;ristiques du terrain</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Gel&#228;ndeeigenschaften</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Caratteristiche del terreno</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Accidentes del terreno</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_GAME_INFO</Tag>
+  <English>Game Info</English>
+  <French>Info jeu</French>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_GAME_SPEED</Tag>
+  <English>Game Speed</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_GREAT_WONDERS</Tag>
+  <English>World Wonders</English>
+  <French>Merveilles Mondiales</French>
+  <German>Weltwunder</German>
+  <Italian>Grandi Merav.</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_HINTS</Tag>
+  <English>Hints</English>
+  <French>
+   <Text>Conseils</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Tipps</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Suggerimenti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Consejos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_IMPROVEMENT</Tag>
+  <English>Improvements</English>
+  <French>
+   <Text>Am&#233;nagements</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Modernisierungen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Miglioramenti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mejoras</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_INDEX</Tag>
+  <English>Index</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_LEADER</Tag>
+  <English>Leaders</English>
+  <French>
+   <Text>H&#233;ros</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Staatsoberh&#228;upter</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Leader</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>L&#237;deres</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_MOVIES</Tag>
+  <English>Movies</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_NATIONAL_WONDERS</Tag>
+  <English>National Wonders</English>
+  <French>Merveilles Nationales</French>
+  <German>Nationalwunder</German>
+  <Italian>Merav. Naz.</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_PROCESS</Tag>
+  <English>Processes</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_PROJECT</Tag>
+  <English>Projects</English>
+  <French>
+   <Text>Projets</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Projekte</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Progetti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Proyectos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_PROMOTION</Tag>
+  <English>Promotions</English>
+  <French>
+   <Text>Promotions</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Bef&#246;rderungen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Promozioni</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ascensos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_PROMOTION_TREE</Tag>
+  <English>Promotion Tree</English>
+  <French>Arborescence des Promotions</French>
+  <German>Bef&#246;rderungsbaum</German>
+  <Italian>Albero Promoz.</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_RELIGION</Tag>
+  <English>Religions</English>
+  <French>
+   <Text>Religions</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Religionen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Religioni</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Religiones</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_ROUTE</Tag>
+  <English>Routes</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_SHORTCUTS</Tag>
+  <English>Shortcuts</English>
+  <French>Raccourcis</French>
+  <German>Referenz&#252;bersichten</German>
+  <Italian>Scorciatoie</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_SPECIALIST</Tag>
+  <English>Specialists</English>
+  <French>
+   <Text>Sp&#233;cialistes</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Spezialisten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Specialisti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Especialistas</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_STRATEGY</Tag>
+  <English>Strategy Guides</English>
+  <German>Strategien</German>
+  <Italian>Guide Strategiche</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_TECH</Tag>
+  <English>Technologies</English>
+  <French>
+   <Text>Technologies</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Technologien</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tecnologie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tecnolog&#237;as</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_TERRAIN</Tag>
+  <English>Base Terrain</English>
+  <French>
+   <Text>Terrains de base</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gel&#228;ndearten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Terreno base</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Terreno base</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_UNIT</Tag>
+  <English>Units</English>
+  <French>
+   <Text>Unit&#233;s</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Einheiten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Unit&#224;</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Unidades</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_UNIT_COMBAT</Tag>
+  <English>Unit Categories</English>
+  <French>
+   <Text>Cat&#233;gories d'unit&#233;s</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Einheitenkategorien</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tipi di unit&#224;</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Categor&#237;as de unidades</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_UNIT_UPGRADES</Tag>
+  <English>Unit Upgrades</English>
+  <French>Am&#233;liorations des Unit&#233;s</French>
+  <German>Modernisierungen</German>
+  <Italian>Avanzamenti</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_UPGRADES</Tag>
+  <English>Unit Upgrades</English>
+  <French>Am&#233;liorations d'unit&#233;s</French>
+  <German>Einheitenbef&#246;rderungen</German>
+  <Italian>Aggiornamento delle unit&#224;</Italian>
+  <Spanish>Modernizaci&#243;n de unidades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_UPKEEP</Tag>
+  <English>Upkeep</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_WORLD</Tag>
+  <English>World Size</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_CATEGORY_WORLD_PROJECT</Tag>
+  <English>World Projects</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_COST</Tag>
+  <English>Cost: %d1_Num</English>
+  <French>Co&#251;t : %d1_Num</French>
+  <German>Kosten: %d1_Num</German>
+  <Italian>Costo: %d1_Num</Italian>
+  <Spanish>Coste: %d1_Num</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_COST_HUNDRED</Tag>
+  <English>Cost: 100</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_DEFAULT_PLAYERS</Tag>
+  <English>Default Players</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_DEFENSE</Tag>
+  <English>Defense</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_DISTANCE</Tag>
+  <English>Distance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_DISTANCE_POWER_RATIO</Tag>
+  <English>[ICON_BULLET]Distance Power Ratio: %d1%%[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_DOGPILE</Tag>
+  <English>Dogpile War: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_DOMAIN</Tag>
+  <English>Domain</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_EFFECTS</Tag>
+  <English>Effects</English>
+  <French>Effets</French>
+  <German>Effekte</German>
+  <Italian>Effetti</Italian>
+  <Spanish>Efectos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_ESPIONAGE_WEIGHT</Tag>
+  <English>Espionage Weight: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FASTER_PRODUCTION</Tag>
+  <English>Faster Production</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FAV_CIVIC</Tag>
+  <English>Favorite Civics</English>
+  <French>Doctrines pr&#233;f&#233;r&#233;es</French>
+  <German>Bevorzugte Staatsformen</German>
+  <Italian>Forme di governo preferite</Italian>
+  <Spanish>Principios favoritos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FAV_CIVIC_AND_RELIGION</Tag>
+  <English>Favorite Civic and Religion</English>
+  <French>Doctrine et Religion Pr&#233;f&#233;r&#233;e</French>
+  <German>Bevorzugte Staatsform und Religion</German>
+  <Italian>Forme di governo e Religioni preferite</Italian>
+  <Spanish>Principio y religi&#243;n favoritos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FAVOURITES</Tag>
+  <English>Favourites</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FEATURE_GRAIN_CHANGE</Tag>
+  <English>Feature Grain Change</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FIRST_BENEFITS</Tag>
+  <English>First Benefits</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FLAT_COST</Tag>
+  <English>Flat Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FLEXIBLE</Tag>
+  <English>%s1 Flexible</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FREE_BUILDING_BONUS</Tag>
+  <English>Free Building Bonuses</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FREE_PRIEST_1</Tag>
+  <English>+1 Free</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FREE_PRIEST_2</Tag>
+  <English>+2 Free</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FREE_SCIENTIST_2</Tag>
+  <English>+2 Free</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FREE_SPECIALIST_1</Tag>
+  <English>+1 Free Specialist</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FREE_SPECIALIST_2</Tag>
+  <English>+2 Free Specialists</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_FREE_SPECIALIST_PER</Tag>
+  <English>+1 Free Specialist per Forest Preserve</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_GREAT_PEOPLE</Tag>
+  <English>Great People: %D1</English>
+  <French>Personnages illustres : %D1</French>
+  <German>Gro&#223;e Pers&#246;nlichkeiten: %D1</German>
+  <Italian>Grandi Personaggi: %D1</Italian>
+  <Spanish>Grandes personajes: %D1</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_GRID_HEIGHT</Tag>
+  <English>Grid Height</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_GRID_WIDTH</Tag>
+  <English>Grid Width</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HANDICAP_ATTITUDE</Tag>
+  <English>[ICON_BULLET]Attitude Change: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HANDICAP_BARB_FREE_WINS</Tag>
+  <English>[ICON_BULLET]Free Wins VS Barbs: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HANDICAP_BARB_INITIAL_UNITS</Tag>
+  <English>[ICON_BULLET]Barbarian Initial Units: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HANDICAP_FREE_UNITS</Tag>
+  <English>[ICON_BULLET]Free Units: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HANDICAP_PER_ERA_AI</Tag>
+  <English>[ICON_BULLET]Era Modifier: %d1%%[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HAPPY</Tag>
+  <English>Happy: %D1</English>
+  <French>Heureux : %D1</French>
+  <German>Gl&#252;cklich: %D1</German>
+  <Italian>Felici: %D1</Italian>
+  <Spanish>Felices: %D1</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HEALTHY</Tag>
+  <English>Healthy: %D1</English>
+  <French>En bonne sant&#233; : %D1</French>
+  <German>Gesund: %D1</German>
+  <Italian>Sani: %D1</Italian>
+  <Spanish>Saludables: %D1</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HIDE_INACTIVE</Tag>
+  <English>Hide Inactive</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_HILLS_YIELD</Tag>
+  <English>%s1: %D2%F3 (on Hills)</English>
+  <French>%s1 : %D2%F3 (sur les collines)</French>
+  <German>Modernisierung %s1: %D2%F3 (auf H&#252;geln)</German>
+  <Italian>%s1: %D2%F3 (sulle colline)</Italian>
+  <Spanish>%s1: %D2 %F3 (en colinas)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_IMPROVEMENT_AIR_DEFENSE</Tag>
+  <English>[ICON_BULLET]+%d1% Air Defense</English>
+  <French>[ICON_BULLET]+%d1% D&#233;fense a&#233;rienne</French>
+  <German>[ICON_BULLET]+%d1% Luftverteidigung</German>
+  <Spanish>[ICON_BULLET]+%d1% Defensa Aerea</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_IMPROVEMENT_BUILD_OUTSIDE_BORDERS</Tag>
+  <English>[ICON_BULLET]Can be built outside cultural borders</English>
+  <French>[ICON_BULLET]Peut &#234;tre construit en dehors du territoire</French>
+  <German>[ICON_BULLET]Kann au&#223;erhalb der Kulturgrenzen errichtet werden</German>
+  <Spanish>[ICON_BULLET]Puede ser construido fuera de las fronteras culturales</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_IMPROVEMENT_FRESHWATER_VALID</Tag>
+  <English>[ICON_BULLET]Valid with Fresh Water</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_INFLATION_OFFSET</Tag>
+  <English>Inflation Offset</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_IRRIGATED_YIELD</Tag>
+  <English>%s1: %D2%F3 (with [LINK=CONCEPT_IRRIGATION]Irrigation[\LINK])</English>
+  <French>%s1: %D2%F3 (avec [LINK=CONCEPT_IRRIGATION]irrigation[\LINK])</French>
+  <German>Modernisierung %s1: %D2%F3 (mit [LINK=CONCEPT_IRRIGATION]Bew&#228;sserung[\LINK])</German>
+  <Italian>%s1: %D2%F3 (con [LINK=CONCEPT_IRRIGATION]irrigazione[\LINK])</Italian>
+  <Spanish>%s1: %D2 %F3 (con [LINK=CONCEPT_IRRIGATION]riego[\LINK])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_LEADS_TO</Tag>
+  <English>Leads To</English>
+  <French>M&#232;ne &#224; :</French>
+  <German>F&#252;hrt zu</German>
+  <Italian>Conduce a</Italian>
+  <Spanish>Lleva a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_LIMITED_WAR</Tag>
+  <English>Limited War: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_MAKE_PEACE</Tag>
+  <English>Make Peace: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_MAP_VISIBLE</Tag>
+  <English>Map Visible</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_MAX_CONSCRIPT</Tag>
+  <English>Max Conscript</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_MAX_WAR</Tag>
+  <English>Max War: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_MIN_ADJACENT_LAND</Tag>
+  <English>[ICON_BULLET]Min Adjacent Land: %d1%%[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_MOVE_COST</Tag>
+  <English>Move Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_MOVEMENT</Tag>
+  <English>Movement: %d1_Num</English>
+  <French>Mouvement : %d1_Num</French>
+  <German>Fortbewegung: %d1_Num</German>
+  <Italian>Movimento: %d1_Num</Italian>
+  <Spanish>Movimiento: %d1_Num</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_MULTIPLIER</Tag>
+  <English>Multiplier</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_NATIONAL_UNIT</Tag>
+  <English>National Unit</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_NATIONAL_WONDER</Tag>
+  <English>National Wonder</English>
+  <French>Merveille nationale</French>
+  <German>Nationales Wunder</German>
+  <Italian>Meraviglia Nazionale</Italian>
+  <Spanish>Maravilla nacional</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_NEARBY_POWER_RATIO</Tag>
+  <English>[ICON_BULLET]Nearby Power Ratio: %d1%%[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_NUM_CITIES_ANARCHY</Tag>
+  <English>Number of Cities Anarchy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_OBSOLETE</Tag>
+  <English>Obsoletes</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_PEACE_WEIGHT</Tag>
+  <English>Peace Weight: %d1 + %d2 (Random)[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_PEACE_WEIGHT_EVIL</Tag>
+  <English>Alignment: Evil (%d1 + 0-%d2)[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_PEACE_WEIGHT_GOOD</Tag>
+  <English>Alignment: Good (%d1 + 0-%d2)[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_PEACE_WEIGHT_NEUTRAL</Tag>
+  <English>Alignment: Neutral (%d1 + 0-%d2)[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_POWER_RATIO</Tag>
+  <English>[ICON_BULLET]Power Ratio: %d1%%[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_PROCESS_CONVERT</Tag>
+  <English>[ICON_BULLET]Converts %d1%% of [ICON_PRODUCTION] to[SPACE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_PROMOTION_UNITS</Tag>
+  <English>Available To</English>
+  <French>Disponible pour :</French>
+  <German>Verf&#252;gbar f&#252;r</German>
+  <Italian>Disponibile a</Italian>
+  <Spanish>Disponible para</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_PROVIDES_EMPLOYMENT</Tag>
+  <English>Provides</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_PROVIDES_POWER</Tag>
+  <English>Provides [ICON_POWER]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_QUOTE</Tag>
+  <English>Quote</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_RANGE</Tag>
+  <English>Range: %d1_Num</English>
+  <French>Port&#233;e : %d1_Num</French>
+  <German>Reichweite: %d1_Num</German>
+  <Italian>Raggio d'azione: %d1_Num</Italian>
+  <Spanish>Alcance: %d1_Num</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_RANGE_UNLIMITED</Tag>
+  <English>Range: Infinite[ICON_TRADE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_RAZE_CITY_PROB</Tag>
+  <English>Razing Probability: %d1%[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_RELIGIOUS_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_REMOVES_ACCESS</Tag>
+  <English>Removes Access</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_REQUIRES</Tag>
+  <English>Requires</English>
+  <French>Requiert</French>
+  <German>Erfordert</German>
+  <Italian>Richiede</Italian>
+  <Spanish>Requiere</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_RESOLUTION</Tag>
+  <English>Resolutions</English>
+  <French>R&#233;solutions</French>
+  <German>Resolutionen</German>
+  <Italian>Risoluzione</Italian>
+  <Spanish>Resoluciones</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_RIVER_YIELD</Tag>
+  <English>%s1: %D2%F3 (next to River)</English>
+  <French>%s1 : %D2%F3 (pr&#232;s des fleuves)</French>
+  <German>Modernisierung %s1: %D2%F3 (an einem Fluss)</German>
+  <Italian>%s1: %D2%F3 (vicino a un fiume)</Italian>
+  <Spanish>%s1: %D2 %F3 (junto a un r&#237;o)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_ROUTE_YIELD</Tag>
+  <English>%s1: %D2%F3 (with [LINK=CONCEPT_MOVEMENT]%s4[\LINK])</English>
+  <French>%s1 :  %D2%F3 (avec [LINK=CONCEPT_MOVEMENT]%s4[\LINK])</French>
+  <German>Modernisierung %s1: %D2%F3 (mit Bonusgut [LINK=CONCEPT_MOVEMENT]%s4[\LINK])</German>
+  <Italian>%s1: %D2%F3 (con [LINK=CONCEPT_MOVEMENT]%s4[\LINK])</Italian>
+  <Spanish>%s1: %D2 %F3 (con [LINK=CONCEPT_MOVEMENT]%s4[\LINK])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SCREEN_BACK</Tag>
+  <English>Back</English>
+  <French>Retour</French>
+  <German>Zur&#252;ck</German>
+  <Italian>Indietro</Italian>
+  <Spanish>Atr&#225;s</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SCREEN_CONTENTS</Tag>
+  <English>Contents</English>
+  <French>Mati&#232;res</French>
+  <German>Inhalt</German>
+  <Italian>Contenuto</Italian>
+  <Spanish>Contenido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SCREEN_EXIT</Tag>
+  <English>Exit</English>
+  <French>Quitter</French>
+  <German>Beenden</German>
+  <Italian>Esci</Italian>
+  <Spanish>Salir</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SCREEN_FORWARD</Tag>
+  <English>Next</English>
+  <French>Suivant</French>
+  <German>Weiter</German>
+  <Italian>Successivo</Italian>
+  <Spanish>Siguiente</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SCREEN_INDEX</Tag>
+  <English>Index</English>
+  <Italian>[SPACE][SPACE][SPACE][SPACE][SPACE]Indice</Italian>
+  <Spanish>Indice</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SCREEN_TOP</Tag>
+  <English>Top</English>
+  <French>Haut</French>
+  <German>Nach oben</German>
+  <Italian>Torna a civilopedia</Italian>
+  <Spanish>Inicio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SPECIAL_ABILITIES</Tag>
+  <English>Special Abilities</English>
+  <French>Comp&#233;tences sp&#233;ciales</French>
+  <German>Spezialf&#228;higkeiten</German>
+  <Italian>Abilit&#224; speciali</Italian>
+  <Spanish>Capacidades especiales</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SPECIAL_BUILDING</Tag>
+  <English>Special</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SPECIAL_UNIT</Tag>
+  <English>Special</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SPREAD</Tag>
+  <English>Spread</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_START_ERA_FREE_BUILDINGS</Tag>
+  <English>[ICON_BULLET]Free Era Buildings[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_START_ERA_MAX_START_WONDERS</Tag>
+  <English>[ICON_BULLET]Max Start Wonders[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_START_ERA_NO_BARB_CITY</Tag>
+  <English>[ICON_BULLET]No Barb Cities[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_START_ERA_NO_BARB_UNITS</Tag>
+  <English>[ICON_BULLET]No Barb Units[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_STATS</Tag>
+  <English>Personality</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_STRENGTH</Tag>
+  <English>Strength: %d1_Num</English>
+  <French>Puissance : %d1_Num</French>
+  <German>St&#228;rke: %d1_Num</German>
+  <Italian>Forza: %d1_Num</Italian>
+  <Spanish>Fuerza: %d1_Num</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_SUPPLY</Tag>
+  <English>Supply</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TARGET_NUM_CITIES</Tag>
+  <English>Target Number of Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TEAM_PROJECT</Tag>
+  <English>National Project</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TEAM_UNIT</Tag>
+  <English>Team Unit</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TEAM_WONDER</Tag>
+  <English>Team Wonder</English>
+  <French>Merveille d'&#233;quipe</French>
+  <German>Teamwunder</German>
+  <Italian>Meraviglia di squadra</Italian>
+  <Spanish>Maravilla de equipo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TECH_YIELD</Tag>
+  <English>%s1: %D2%F3 (with [LINK=literal]%s4[\LINK])</English>
+  <French>%s1 :  %D2%F3 (avec [LINK=literal]%s4[\LINK])</French>
+  <German>Modernisierung %s1: %D2%F3 (mit Bonusgut [LINK=literal]%s4[\LINK])</German>
+  <Italian>%s1: %D2%F3 (con [LINK=literal]%s4[\LINK])</Italian>
+  <Spanish>%s1: %D2 %F3 (con [LINK=literal]%s4[\LINK])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TERRAIN_GRAIN_CHANGE</Tag>
+  <English>Terrain Grain Change</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TRAIN_UNIT_PROB</Tag>
+  <English>Unit Training: %d1%</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TRAITS</Tag>
+  <English>Traits</English>
+  <French>Traits de caract&#232;re</French>
+  <German>Merkmale</German>
+  <Italian>Punti di forza</Italian>
+  <Spanish>Rasgos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_TREE</Tag>
+  <English>Upgrade Tree</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UNHAPPY</Tag>
+  <English>Unhappy: %D1</English>
+  <French>Malheureux : %D1</French>
+  <German>Unzufrieden: %D1</German>
+  <Italian>Infelici: %D1</Italian>
+  <Spanish>Infelices: %D1</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UNHEALTHY</Tag>
+  <English>Unhealthy: %D1</English>
+  <French>Malades : %D1</French>
+  <German>Krank: %D1</German>
+  <Italian>Malati: %D1</Italian>
+  <Spanish>Insalubres: %D1</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UNIT_NAME</Tag>
+  <English>Unit Name</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UNIT_STATE_RELIGION</Tag>
+  <English>[NEWLINE][COLOR_WARNING_TEXT]Requires %s1 as State Religion[COLOR_REVERT]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UNITS_ENABLED</Tag>
+  <English>Units Enabled</English>
+  <French>Nouvelles unit&#233;s</French>
+  <German>Einheiten freigegeben</German>
+  <Italian>Unit&#224; abilitate</Italian>
+  <Spanish>Unidades permitidas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UNLIMITED</Tag>
+  <English>Unlimited</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UNLIMITED_SLOTS</Tag>
+  <English>Doubled Slots</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UPGRADE</Tag>
+  <English>Upgrade</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_UPGRADES_TO</Tag>
+  <English>Upgrades To</English>
+  <French>S'am&#233;liore en :</French>
+  <German>Verbessert sich zu</German>
+  <Italian>Migliora in</Italian>
+  <Spanish>Se moderniza a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_VICTORY_DELAY</Tag>
+  <English>Victory Delay</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_WARMONGER_RESPECT</Tag>
+  <English>Warmonger Respect: %d1[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_WITHDRAWAL</Tag>
+  <English>Withdrawal</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_WONDER_CONSTRUCTION</Tag>
+  <English>Wonder Construction: %d1%%[NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_WONDER_INSTANCES</Tag>
+  <English>(%d1 Allowed)</English>
+  <French>(limite : %d1)</French>
+  <German>(%d1 zul&#228;ssig)</German>
+  <Italian>(%d1 [NUM1:consentito:consentita])</Italian>
+  <Spanish>(%d1 [NUM1:permitida:permitidas])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_WORK_RATE</Tag>
+  <English>Work Rate</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_WORLD_PROJECT</Tag>
+  <English>World Project</English>
+  <French>Projet mondial</French>
+  <German>Weltprojekt</German>
+  <Italian>Progetto mondiale</Italian>
+  <Spanish>Proyecto mundial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_WORLD_UNIT</Tag>
+  <English>World Unit</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_WORLD_WONDER</Tag>
+  <English>World Wonder</English>
+  <French>Merveille mondiale</French>
+  <German>Weltwunder</German>
+  <Italian>Grande Meraviglia</Italian>
+  <Spanish>Maravilla del mundo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PEDIA_YIELDS</Tag>
+  <English>Yields</English>
+  <French>Produit</French>
+  <German>Ertr&#228;ge</German>
+  <Italian>Prodotti</Italian>
+  <Spanish>Rendim.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UNIQUE_BUILDINGS_PEDIA_PEDIA</Tag>
+  <English>Buildings Enabled</English>
+ </TEXT>
+</Civ4GameText>

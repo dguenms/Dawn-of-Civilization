@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>CHANGED_TXT_KEY_CORPORATION_2</Tag>
+  <English>Sid's Sushi Co</English>
+  <French>
+   <Text>Sid's Sushi Co</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Sid's Sushi Co.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Sid Sushi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Sid's Sushi</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_ALL_CITIES</Tag>
+  <English>[ICON_BULLET]All Cities: %s1_yield_symbols per resource consumed</English>
+  <French>[ICON_BULLET]Toutes les villes : %s1_yield_symbols par ressource consomm&#233;e</French>
+  <German>[ICON_BULLET]Alle St&#228;dte: %s1_yield_symbols pro verbrauchter Ressource</German>
+  <Italian>[ICON_BULLET]Tutte le citt&#224;: %s1_yield_symbols per risorse consumate</Italian>
+  <Spanish>[ICON_BULLET]Todas las ciudades: %s1_yield_symbols por recurso consumido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_ALL_CITIES2</Tag>
+  <English>%s1_yield_symbols[SPACE]</English>
+  <French>%s1_yield_symbols[SPACE]</French>
+  <German>%s1_yield_symbols[SPACE]</German>
+  <Italian>%s1_yield_symbols[SPACE]</Italian>
+  <Spanish>%s1_yield_symbols[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_BONUS_PRODUCED</Tag>
+  <English>[ICON_BULLET]Generates: %F1_bonus</English>
+  <French>[ICON_BULLET]G&#233;n&#232;re : %F1_bonus</French>
+  <German>[ICON_BULLET]Erzeugt: %F1_bonus</German>
+  <Italian>[ICON_BULLET]Genera: %F1_bonus</Italian>
+  <Spanish>[ICON_BULLET]Genera: %F1_bonus</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_BONUS_REQUIRED</Tag>
+  <English>[ICON_BULLET]Consumes:[SPACE]</English>
+  <French>[ICON_BULLET]Consomme :[SPACE]</French>
+  <German>[ICON_BULLET]Ben&#246;tigt:[SPACE]</German>
+  <Italian>[ICON_BULLET]Consuma:[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]Consume:[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_CEREAL_INDUSTRY</Tag>
+  <English>Cereal Industry</English>
+  <German>
+   <Text>Getreideindustrie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_CEREAL_INDUSTRY_STRATEGY</Tag>
+  <English>[BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civic[NEWLINE][ICON_BULLET][LINK=BUILDING_GRANARY]Granaries[\LINK], [LINK=BUILDING_GROCER]Grocers[\LINK] and [LINK=BUILDING_SUPERMARKET]Supermarkets[\LINK][NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Competition with the [LINK=CORPORATION_4]Fishing Industry[\LINK] company[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_COMPETES</Tag>
+  <English>[NEWLINE][ICON_BULLET]Competes with[SPACE]</English>
+  <French>[NEWLINE][ICON_BULLET]Est en concurrence avec[SPACE]</French>
+  <German>[NEWLINE][ICON_BULLET]Konkurriert mit[SPACE]</German>
+  <Italian>[NEWLINE][ICON_BULLET]Compete con[SPACE]</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]Compite con[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_COMPUTERS_INDUSTRY</Tag>
+  <English>Computer Industry</English>
+  <German>
+   <Text>Computerindustrie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_COMPUTERS_INDUSTRY_STRATEGY</Tag>
+  <English>[BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civic[NEWLINE][ICON_BULLET][LINK=BUILDING_FACTORY]Factories[\LINK], [LINK=BUILDING_LABORATORY]Laboratories[\LINK], [LINK=BUILDING_UNIVERSITY]Universities[\LINK] and the [LINK=BUILDING_CERN]CERN Research Complex[\LINK] World Wonder[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Competition with the [LINK=CORPORATION_7]Oil Industry[\LINK] company[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_FISHING_INDUSTRY</Tag>
+  <English>Fishing Industry</English>
+  <German>
+   <Text>Fischereiindustrie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_FISHING_INDUSTRY_STRATEGY</Tag>
+  <English>[BOLD]Additional Requirements:[\BOLD][NEWLINE][ICON_BULLET]Can only spread into [LINK=TERRAIN_COAST]coastal[\LINK] cities[NEWLINE][BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civic[NEWLINE][ICON_BULLET][LINK=BUILDING_LIGHTHOUSE]Lighthouses[\LINK], [LINK=BUILDING_HARBOR]Harbors[\LINK] and [LINK=BUILDING_SUPERMARKET]Supermarkets[\LINK][NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Competition with the [LINK=CORPORATION_3]Cereal Industry[\LINK] company[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_FOUNDED_FIRST</Tag>
+  <English>[ICON_BULLET]Spread allowed by [COLOR_TECH_TEXT][LINK=literal]%s1_TechName[\LINK][COLOR_REVERT]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_HEADQUARTERS</Tag>
+  <English>Headquarters</English>
+  <French>Si&#232;ge</French>
+  <German>Unternehmenssitz</German>
+  <Italian>Quartier generale</Italian>
+  <Spanish>Sede</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_0</Tag>
+  <English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities on the historical route[NEWLINE][ICON_BULLET]Cannot spread after 1500 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources (especially Silk resources)[NEWLINE][ICON_BULLET]Adopting the Tribalism or Free Market civics[NEWLINE][ICON_BULLET]Being the Mongolian civilization[NEWLINE][ICON_BULLET]Markets, Grocers[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Being the Chinese civilization[NEWLINE][ICON_BULLET]Coastal cities without a Harbor[NEWLINE][ICON_BULLET]Christian state religion[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_1</Tag>
+  <English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread to cities belonging to the Spanish, French, English, Portuguese, Dutch or Viking civilizations[NEWLINE][ICON_BULLET]Cannot spread after 1800 AD[NEWLINE][ICON_BULLET]Can only spread to cities in the Caribbean, Sub-Saharan Africa, South Asia or cities that have the Trading Corporation National Wonder[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Mercantilism or Free Market civic[NEWLINE][ICON_BULLET]Being the Dutch civilization[NEWLINE][ICON_BULLET]Harbors, Customs Houses, Banks, Trading Company (National Wonder)[NEWLINE][ICON_BULLET]Cities in the Caribbean[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_2</Tag>
+  <English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Granaries, Grocers, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Fishing Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_3</Tag>
+  <English>Additional Requirements:[NEWLINE][ICON_BULLET]Can only spread into coastal cities[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Lighthouses, Harbors, Supermarkets[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Cereal Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] in your cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_4</Tag>
+  <English>Additional Requirements:[NEWLINE][ICON_BULLET]Cannot spread after 1920 AD[NEWLINE][NEWLINE]Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Markets, Factories[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Steel Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_5</Tag>
+  <English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Factories, Coal Plants, Industrial Parks, Ironworks[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Textile Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_6</Tag>
+  <English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Banks, Industrial Parks, Stock Market[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Computer Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_7</Tag>
+  <English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Factories, Theatres, Broadcast Towers, National Gallery[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_INFLUENCES_8</Tag>
+  <English>Attracted by:[NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the Free Market civic[NEWLINE][ICON_BULLET]Factories, Laboratories, Universities, CERN Research Complex[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][NEWLINE]Deterred by:[NEWLINE][ICON_BULLET]Competition with the Oil Industry company[NEWLINE][ICON_BULLET]Too many other companies present[NEWLINE][NEWLINE]Side effects:[NEWLINE][ICON_BULLET]Can cause [ICON_UNHAPPY] and [ICON_UNHEALTHY] in your cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_LUXURY_INDUSTRY</Tag>
+  <English>Luxury Industry</English>
+  <German>
+   <Text>Luxusindustrie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_LUXURY_INDUSTRY_STRATEGY</Tag>
+  <English>[BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civic[NEWLINE][ICON_BULLET][LINK=BUILDING_FACTORY]Factories[\LINK], [LINK=BUILDING_THEATRE]Theatres[\LINK], [LINK=BUILDING_BROADCAST_TOWER]Broadcast Towers[\LINK] and the [LINK=BUILDING_HERMITAGE]National Gallery[\LINK] National Wonder[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HAPPINESS_1</Tag>
+  <English>+0.10[ICON_UNHAPPY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HAPPINESS_2</Tag>
+  <English>+0.20[ICON_UNHAPPY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HAPPINESS_3</Tag>
+  <English>+0.30[ICON_UNHAPPY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HAPPINESS_4</Tag>
+  <English>+0.40[ICON_UNHAPPY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HAPPINESS_6</Tag>
+  <English>+0.60[ICON_UNHAPPY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HEALTH_1</Tag>
+  <English>+0.10[ICON_UNHEALTHY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HEALTH_2</Tag>
+  <English>+0.20[ICON_UNHEALTHY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HEALTH_3</Tag>
+  <English>+0.30[ICON_UNHEALTHY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HEALTH_4</Tag>
+  <English>+0.40[ICON_UNHEALTHY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_NEGATIVE_HEALTH_6</Tag>
+  <English>+0.60[ICON_UNHEALTHY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_OIL_INDUSTRY</Tag>
+  <English>Oil Industry</English>
+  <German>
+   <Text>&#214;lindustrie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_OIL_INDUSTRY_STRATEGY</Tag>
+  <English>[BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civic[NEWLINE][ICON_BULLET][LINK=BUILDING_BANK]Banks[\LINK], [LINK=BUILDING_INDUSTRIAL_PARK]Industrial Parks[\LINK] and the [LINK=BUILDING_WALL_STREET]Stock Market[\LINK] National Wonder[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Competition with the [LINK=CORPORATION_9]Computer Industry[\LINK] company[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_PER_RESOURCE</Tag>
+  <English>per resource consumed</English>
+  <French>par ressource consomm&#233;e</French>
+  <German>pro verbrauchter Ressource</German>
+  <Italian>per risorse consumate</Italian>
+  <Spanish>por recurso consumido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_PER_RESOURCE_CONSUMED</Tag>
+  <English>per resource consumed</English>
+  <French>par ressource consomm&#233;e</French>
+  <German>pro verbrauchter Ressource</German>
+  <Italian>per risorse consumate</Italian>
+  <Spanish>por recurso consumido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_SCREEN_HEADQUARTERS</Tag>
+  <English>Headquarters:</English>
+  <French>Quartier g&#233;n&#233;ral :</French>
+  <German>Unternehmenssitze:</German>
+  <Italian>Quartier generale:</Italian>
+  <Spanish>Sede:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_SCREEN_TITLE</Tag>
+  <English>Corporation Advisor</English>
+  <French>Conseiller commercial</French>
+  <German>Unternehmensberater</German>
+  <Italian>Consigliere corporativo</Italian>
+  <Spanish>Consejero de corporaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_SILK_ROUTE</Tag>
+  <English>Silk Route</English>
+  <German>
+   <Text>Seidenstra&#223;e</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_SILK_ROUTE_STRATEGY</Tag>
+  <English>[BOLD]Additional Requirements:[\BOLD][NEWLINE][ICON_BULLET]Can only spread to cities on the historical route[NEWLINE][ICON_BULLET]Cannot spread after 1500 AD[NEWLINE][BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources (especially [LINK=BONUS_SILK]Silk[\LINK] resources)[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_TRIBALISM]Tribalism[\LINK] or [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civics[NEWLINE][ICON_BULLET]Being the [LINK=CIVILIZATION_MONGOL]Mongolian[\LINK] civilization[NEWLINE][ICON_BULLET][LINK=BUILDING_MARKET]Markets[\LINK] and [LINK=BUILDING_GROCER]Grocers[\LINK][NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Being the [LINK=CIVILIZATION_CHINA]Chinese[\LINK] civilization[NEWLINE][ICON_BULLET][LINK=TERRAIN_COAST]Coastal[\LINK] cities without a [LINK=BUILDING_HARBOR]Harbor[\LINK][NEWLINE][ICON_BULLET][LINK=RELIGION_CHRISTIANITY]Catholic[\LINK], [LINK=RELIGION_ORTHODOXY]Orthodox[\LINK] or [LINK=RELIGION_JUDAISM]Protestant[\LINK] state religion[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_STEEL_INDUSTRY</Tag>
+  <English>Steel Industry</English>
+  <German>
+   <Text>Stahlindustrie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_STEEL_INDUSTRY_STRATEGY</Tag>
+  <English>[BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civic[NEWLINE][ICON_BULLET][LINK=BUILDING_FACTORY]Factories[\LINK], [LINK=BUILDING_COAL_PLANT]Coal Plants[\LINK], [LINK=BUILDING_INDUSTRIAL_PARK]Industrial Parks[\LINK] and the [LINK=BUILDING_IRON_WORKS]Ironworks[\LINK] National Wonder[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Competition with the [LINK=CORPORATION_5]Textile Industry[\LINK] company[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY</Tag>
+  <English>Textile Industry</English>
+  <German>
+   <Text>Textilindustrie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY_STRATEGY</Tag>
+  <English>[BOLD]Additional Requirements:[\BOLD][NEWLINE][ICON_BULLET]Cannot spread after 1920 AD[NEWLINE][BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civic[NEWLINE][ICON_BULLET][LINK=BUILDING_MARKET]Markets[\LINK] and [LINK=BUILDING_FACTORY]Factories[\LINK][NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Competition with the [LINK=CORPORATION_6]Steel Industry[\LINK] company[NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_TRADING_COMPANY</Tag>
+  <English>Trading Company</English>
+  <German>
+   <Text>Handelskompanie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CORPORATION_TRADING_COMPANY_STRATEGY</Tag>
+  <English>[BOLD]Additional Requirements:[\BOLD][NEWLINE][ICON_BULLET]Can only spread to cities belonging to the [LINK=CIVILIZATION_SPAIN]Spanish[\LINK], [LINK=CIVILIZATION_FRANCE]French[\LINK], [LINK=CIVILIZATION_ENGLAND]English[\LINK], [LINK=CIVILIZATION_PORTUGAL]Portuguese[\LINK], [LINK=CIVILIZATION_NETHERLANDS]Dutch[\LINK] or [LINK=CIVILIZATION_VIKING]Viking[\LINK] civilizations[NEWLINE][ICON_BULLET]Cannot spread after 1800 AD[NEWLINE][ICON_BULLET]Can only spread to cities in the Caribbean, Sub-Saharan Africa, South Asia or cities that have the [LINK=BUILDING_TRADING_COMPANY]Trading Corporation[\LINK] National Wonder[NEWLINE][ICON_BULLET]Can only spread into [LINK=TERRAIN_COAST]coastal[\LINK] cities[NEWLINE][BOLD]Attracted by:[\BOLD][NEWLINE][ICON_BULLET]Additional company resources[NEWLINE][ICON_BULLET]Adopting the [LINK=CIVIC_MERCANTILISM]Mercantilism[\LINK] or [LINK=CIVIC_FREE_MARKET]Free Market[\LINK] civic[NEWLINE][ICON_BULLET]Being the [LINK=CIVILIZATION_NETHERLANDS]Dutch[\LINK] civilization[NEWLINE][ICON_BULLET][LINK=BUILDING_HARBOR]Harbors[\LINK], [LINK=BUILDING_CUSTOM_HOUSE]Customs Houses[\LINK], [LINK=BUILDING_BANK]Banks[\LINK] and the [LINK=BUILDING_TRADING_COMPANY]Trading Company[\LINK] National Wonder[NEWLINE][ICON_BULLET]Cities in the Caribbean[NEWLINE][ICON_BULLET]Trade routes[NEWLINE][BOLD]Deterred by:[\BOLD][NEWLINE][ICON_BULLET]Too many other companies present</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_CORPORATION_FAILED_TO_SPREAD</Tag>
+  <English>Your %s1_UnitName has failed to expand %F2_RelIcon into %s3_CityName!</English>
+  <French>Votre %s1_UnitName n'a pas r&#233;ussi &#224; d&#233;velopper la religion : %F2_RelIcon &#224; %s3_CityName !</French>
+  <German>%F2_RelIcon konnte von Eurer Einheit %s1_UnitName nicht nach %s3_CityName expandiert werden!</German>
+  <Italian>La tua unit&#224; %s1_UnitName non &#232; riuscita a diffondere la religione %F2_RelIcon a %s3_CityName!</Italian>
+  <Spanish>[NUM1:Vuestro:Vuestra:Vuestros:Vuestras] %s1_UnitName [NUM1:no ha logrado:no ha logrado:no han logrado:no han logrado] expandir el %F2_RelIcon en %s3_CityName.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_CORPORATION_FOUNDED</Tag>
+  <English>%s1_CorpName has been incorporated in %s2_CityName!</English>
+  <French>La soci&#233;t&#233; commerciale %s1_CorpName a &#233;t&#233; fond&#233;e &#224; %s2_CityName !</French>
+  <German>Die Kapitalgesellschaft %s1_CorpName wurde in %s2_CityName gegr&#252;ndet!</German>
+  <Italian>La %s1_CorpName &#232; stata fondata a %s2_CityName!</Italian>
+  <Spanish>&#161;%s1_CorpName se ha incorporado a %s2_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_CORPORATION_FOUNDED_UNKNOWN</Tag>
+  <English>%s1_CorpName has been incorporated in a distant land!</English>
+  <French>La soci&#233;t&#233; commerciale %s1_CorpName a &#233;t&#233; fond&#233;e dans un pays lointain !</French>
+  <German>Die Kapitalgesellschaft %s1_CorpName wurde in einem entfernten Land gegr&#252;ndet!</German>
+  <Italian>La %s1_CorpName &#232; stata fondata in terre lontane!</Italian>
+  <Spanish>&#161;%s1_CorpName se ha incorporado a una tierra lejana!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_CORPORATION_HEADQUARTER_COMMERCE</Tag>
+  <English>[ICON_BULLET]%D1%F2 from each city with [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s3_corporation[\LINK][COLOR_REVERT]</English>
+  <French>[ICON_BULLET]%D1%F2 pour chaque ville avec [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s3_corporation[\LINK][COLOR_REVERT]</French>
+  <German>[ICON_BULLET]%D1%F2 von jeder Stadt mit der Kapitalgesellschaft [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s3_corporation[\LINK][COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET]%D1%F2 da ogni citt&#224; in cui si trova la [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s3_corporation[\LINK][COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]%D1 %F2 por cada ciudad con [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s3_corporation[\LINK][COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_CORPORATION_MAINT_FLOAT</Tag>
+  <English>%s1_MaintNum [ICON_GOLD]: Corporation payments</English>
+  <French>%s1_MaintNum [ICON_GOLD] : paiements de soci&#233;t&#233; commerciale</French>
+  <German>%s1_MaintNum [ICON_GOLD]: Unternehmenszahlungen</German>
+  <Italian>%s1_MaintNum [ICON_GOLD]: pagamenti corporativi</Italian>
+  <Spanish>%s1_MaintNum [ICON_GOLD]: Pagos a la corporaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_CORPORATION_REMOVED</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_CORPORATION_SPREAD</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has expanded into %s2_CityName.</English>
+  <French>[COLOR_HIGHLIGHT_TEXT]La soci&#233;t&#233; commerciale %s1_CorpName[COLOR_REVERT] s'est d&#233;velopp&#233;e &#224; %s2_CityName.</French>
+  <German>Die Kapitalgesellschaft [COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] hat nach %s2_CityName expandiert.</German>
+  <Italian>La [COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] si &#232; estesa a %s2_CityName.</Italian>
+  <Spanish>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] se ha expandido a %s2_CityName.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISC_CORPORATION_SPREAD_BONUS</Tag>
+  <English>%s1_corporation has brought %s2_bonus to %s3_city. Increase this bonus by acquiring more %s4_bonus_list.</English>
+  <French>%s1_corporation a amen&#233; un bonus en %s2_bonus &#224; %s3_city. Augmentez ce bonus en obtenant une quantit&#233; en %s4_bonus_list plus importante.</French>
+  <German>%s1_corporation hat %s3_city den Bonus %s2_bonus verschafft. Steigern Sie diesen Bonus, indem Sie mehr %s4_bonus_list erwerben.</German>
+  <Italian>%s1_corporation ha portato %s2_bonus a %s3_city. Incrementa il bonus acquisendo altri %s4_bonus_list.</Italian>
+  <Spanish>La %s1_corporation ha llevado %s2_bonus a %s3_city. Para aumentar esta bonificaci&#243;n, adquiere m&#225;s %s4_bonus_list.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ALL_CITIES</Tag>
+  <English>All Cities (if State [ICON_RELIGION])</English>
+  <French>Toutes les villes (si [ICON_RELIGION] d'&#233;tat)[SPACE]</French>
+  <German>Alle St&#228;dte (bei Staatsreligion [ICON_RELIGION])</German>
+  <Italian>Tutte le citt&#224; (se c'&#232; la religione ufficiale [ICON_RELIGION])</Italian>
+  <Spanish>Todas las ciudades (si hay [ICON_RELIGION])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_BIRTH_RATE_MOD</Tag>
+  <English>%D1%% [ICON_GREATPEOPLE] Birth Rate</English>
+  <French>Taux de natalit&#233; [ICON_GREATPEOPLE] %D1%%</French>
+  <German>%D1%% Geburtenrate [ICON_GREATPEOPLE]</German>
+  <Italian>%D1%% [ICON_GREATPEOPLE] tasso di natalit&#224;</Italian>
+  <Spanish>%D1%% a la tasa de natalidad de [ICON_GREATPEOPLE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_BUDDHISM</Tag>
+  <English>Buddhism</English>
+  <French>
+   <Text>Bouddhisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Buddhismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Buddhismo:Buddhista</Text>
+   <Gender>Male:Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Budismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_BUDDHISM_ADJECTIVE</Tag>
+  <English>
+   <Text>Buddhist</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>bouddhiste:bouddhiste:bouddhistes:bouddhistes</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Buddhistisch:buddhistischen:buddhistische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>buddhista:buddhista:buddhisti:buddhiste</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>budista:budista:budistas:budistas</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_BUDDHISM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Sila: Be at peace for 100 turns[NEWLINE][ICON_BULLET]Nirvana: Have the highest approval rating in the world for 100 turns[NEWLINE][ICON_BULLET]Middle Way: Have cautious or better relations with all civilizations</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_BUILDING_PROD_MOD</Tag>
+  <English>%D1%%[ICON_PRODUCTION] for Buildings</English>
+  <French>%D1%%[ICON_PRODUCTION] pour les b&#226;timents</French>
+  <German>%D1%%[ICON_PRODUCTION] f&#252;r Geb&#228;ude</German>
+  <Italian>%D1%%[ICON_PRODUCTION] per gli edifici</Italian>
+  <Spanish>%D1%% a la [ICON_PRODUCTION] de edificios</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_CATHOLICISM</Tag>
+  <English>Catholicism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Tag>
+  <English>
+   <Text>Catholic</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <German>
+   <Text>Katholisch:katholischen:katholische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_CATHOLICISM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Holy See: Be [LINK=BUILDING_APOSTOLIC_PALACE]Pope[\LINK] for 100 turns[NEWLINE][ICON_BULLET]Holy Land: Control the [LINK=BUILDING_CHRISTIAN_SHRINE]Church of the Holy Sepulchre[\LINK] and make sure that at least 12 [LINK=SPECIALIST_GREAT_PRIEST]Great Prophets[\LINK] are settled in Catholic civilizations[NEWLINE][ICON_BULLET]Holy Mission: Make sure at least 50% of the world's territory is controlled by Catholic civilizations</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_CONFUCIANISM</Tag>
+  <English>Confucianism</English>
+  <French>
+   <Text>Confucianisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Konfuzianismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Confucianesimo:Confuciana</Text>
+   <Gender>Male:Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Confucianismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_CONFUCIANISM_ADJECTIVE</Tag>
+  <English>
+   <Text>Confucian</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>confuc&#233;en:confuc&#233;enne:confuc&#233;ens:confuc&#233;ennes</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Konfuzianisch:konfuzianischen:konfuzianische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>confuciano:confuciane:confuciani:confuciane</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>confuciano:confuciana:confucianos:confucianas</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_CONFUCIANISM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Harmony: Have friendly relations with five civilizations[NEWLINE][ICON_BULLET]Ritual: Have five wonders in the Confucian holy city[NEWLINE][ICON_BULLET]Loyalty: Control an army of 200 non-obsolete [LINK=UNITCOMBAT_MELEE]Melee[\LINK] or [LINK=UNITCOMBAT_GUN]Gunpowder[\LINK] units</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_CONVERT</Tag>
+  <English>Convert</English>
+  <French>Convertir</French>
+  <German>Konvertieren</German>
+  <Italian>Conversione</Italian>
+  <Spanish>Convertir</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_FOUND_BUDDHISM</Tag>
+  <English>[ICON_BULLET]Founded by First to Build a [COLOR_BUILDING_TEXT]Hindu Temple[COLOR_REVERT]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_FOUND_ORTHODOXY</Tag>
+  <English>[ICON_BULLET]Founded when the Apostolic Palace is built</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_FOUND_ORTHODOXY2</Tag>
+  <English>[ICON_BULLET]Founded by First to Build the [COLOR_BUILDING_TEXT]Apostolic Palace[COLOR_REVERT][NEWLINE][ICON_BULLET]Founding Orthodoxy triggers the Great Schism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_FOUNDED_FIRST</Tag>
+  <English>[ICON_BULLET]Founded by First to Discover [COLOR_TECH_TEXT]%s1_TechName[COLOR_REVERT]</English>
+  <French>[ICON_BULLET]Religion fond&#233;e par le premier &#224; d&#233;couvrir : [COLOR_TECH_TEXT]%s1_TechName[COLOR_REVERT]</French>
+  <German>[ICON_BULLET]Durch den ersten Entdecker der Technologie [COLOR_TECH_TEXT]%s1_TechName[COLOR_REVERT] gegr&#252;ndet</German>
+  <Italian>[ICON_BULLET]Fondato dalla prima civilit&#224; che scopre [NUM1:il:la:i:le] [COLOR_TECH_TEXT]%s1_TechName[COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]Fundado por el primero en descubrir [NUM1:el:la:los:las] [COLOR_TECH_TEXT]%s1_TechName[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_FOUNDER_RECEIVES</Tag>
+  <English>[ICON_BULLET]Founder Receives a %s1_UnitName</English>
+  <French>[ICON_BULLET]Le fondateur re&#231;oit 1 %s1_UnitName</French>
+  <German>[ICON_BULLET]Der Gr&#252;nder erh&#228;lt eine Einheit: %s1_UnitName</German>
+  <Italian>[ICON_BULLET]Il fondatore riceve [NUM1:un:una:dei:delle] %s1_UnitName</Italian>
+  <Spanish>[ICON_BULLET]El que lo funda recibe [NUM1:un:una:unos:unas] %s1_UnitName</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_FOUNDER_RECEIVES_NUM</Tag>
+  <English>[ICON_BULLET]Founder Receives [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] (%d2_num)</English>
+  <French>[ICON_BULLET]L'arm&#233;e du fondateur s'enrichit de l'unit&#233; : [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] (%d2_num)</French>
+  <German>[ICON_BULLET]Begr&#252;nder erh&#228;lt die Einheit [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] (%d2_num)</German>
+  <Italian>[ICON_BULLET]Il fondatore riceve l'unit&#224; [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] (%d2_num)</Italian>
+  <Spanish>[ICON_BULLET]El fundador recibe [COLOR_UNIT_TEXT]%s1_UnitName[COLOR_REVERT] (%d2_num)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_FREE_XP</Tag>
+  <English>%D1 XP</English>
+  <French>%D1 EXP</French>
+  <German>%D1 EP</German>
+  <Spanish>%D1 PX</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_HINDUISM</Tag>
+  <English>Hinduism</English>
+  <French>
+   <Text>Hindouisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Hinduismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Induismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Hinduismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_HINDUISM_ADJECTIVE</Tag>
+  <English>
+   <Text>Hindu</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>hindou:hindoue:hindous:hindoues</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Hinduistisch:hinduistischen:hinduistische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>induista:induista:induisti:induiste</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>hind&#250;:hind&#250;:hind&#250;es:hind&#250;es</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_HINDUISM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Varna: Settle five different [LINK=CONCEPT_GREAT_PEOPLE_REDIRECT]Great People[\LINK] in the Hindu holy city[NEWLINE][ICON_BULLET]Artha: Experience 24 turns of golden age[NEWLINE][ICON_BULLET]Kama: Make sure the five largest cities in the world are Hindu</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_HOLY_CITY</Tag>
+  <English>Holy City (if State [ICON_RELIGION])</English>
+  <French>Ville sainte (si [ICON_RELIGION] d'&#233;tat)[SPACE]</French>
+  <German>Heilige Stadt (bei Staatsreligion [ICON_RELIGION])</German>
+  <Italian>Citt&#224; Santa (se c'&#232; la religione ufficiale [ICON_RELIGION])</Italian>
+  <Spanish>Ciudad santa (si hay [ICON_RELIGION] oficial)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ISLAM</Tag>
+  <English>Islam</English>
+  <French>
+   <Text>Islam</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Islam</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Islamismo:Islamica</Text>
+   <Gender>Male:Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Islamismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ISLAM_ADJECTIVE</Tag>
+  <English>
+   <Text>Islamic</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>musulman:musulmane:musulmans:musulmanes</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Islamisch:islamischen:islamische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>musulmano:musulmana:musulmani:musulmane</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>isl&#225;mico:isl&#225;mica:isl&#225;micos:isl&#225;micas</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ISLAM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Shahada: Spread Islam to 50%[NEWLINE][ICON_BULLET]Hajj: Settle seven [LINK=CONCEPT_GREAT_PEOPLE_REDIRECT]Great People[\LINK] in the Muslim holy city[NEWLINE][ICON_BULLET]Jihad: Control five [LINK=CONCEPT_SHRINES_REDIRECT]Shrines[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ORTHODOXY</Tag>
+  <English>Orthodoxy</English>
+  <German>Orthodoxie</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Tag>
+  <English>
+   <Text>Orthodox</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <German>
+   <Text>Orthodox:orthodoxen:orthodoxe</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ORTHODOXY_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Patriarchates: Build four [LINK=BUILDING_ORTHODOX_CATHEDRAL]Orthodox Cathedrals[\LINK][NEWLINE][ICON_BULLET]Iconography: Make sure the five most cultured cities in the world are Orthodox[NEWLINE][ICON_BULLET]Communion: Make sure there are no [LINK=RELIGION_CHRISTIANITY]Catholic[\LINK] civilizations in the world</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_PROTESTANTISM</Tag>
+  <English>Protestantism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_PROTESTANTISM_ADJECTIVE</Tag>
+  <English>Protestant</English>
+  <German>
+   <Text>J&#252;disch:j&#252;dischen:j&#252;dische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_PROTESTANTISM_FOUNDING</Tag>
+  <English>[ICON_BULLET]Founded by First [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] Nation to Discover [COLOR_TECH_TEXT]Printing Press[COLOR_REVERT]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_PROTESTANTISM_FOUNDING_LINK</Tag>
+  <English>[ICON_BULLET]Founded by First [LINK=RELIGION_CHRISTIANITY]Catholic[\LINK] Nation to Discover [LINK=TECH_PRINTING_PRESS]Printing Press[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_PROTESTANTISM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Enlightenment: Be first to discover [LINK=TECH_LIBERALISM]Liberalism[\LINK], [LINK=TECH_CONSTITUTION]Constitution[\LINK] and [LINK=TECH_ECONOMICS]Economics[\LINK][NEWLINE][ICON_BULLET]Work Ethic: Make sure five [LINK=SPECIALIST_GREAT_MERCHANT]Great Merchants[\LINK] and five [LINK=SPECIALIST_GREAT_ENGINEER]Great Engineers[\LINK] are settled in Protestant civilizations[NEWLINE][ICON_BULLET]Religious Freedom: Make sure at least half of all civilizations are Protestant or [LINK=CIVIC_SECULARISM]Secular[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_REFORMATION</Tag>
+  <English>[ICON_BULLET]Founding Protestantism triggers the Reformation</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_SCREEN_DATE_FOUNDED</Tag>
+  <English>Founded:</English>
+  <German>Gegr&#252;ndet:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_SCREEN_HOLY_CITY</Tag>
+  <English>Holy City:</English>
+  <French>Ville sainte :</French>
+  <German>Heilige Stadt:</German>
+  <Italian>Citt&#224; Santa:</Italian>
+  <Spanish>Ciudad santa</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_SCREEN_INFLUENCE</Tag>
+  <English>Influence:</English>
+  <French>Influence :</French>
+  <German>Einfluss:</German>
+  <Italian>Influenza:</Italian>
+  <Spanish>Influencia:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_SCREEN_NO_STATE</Tag>
+  <English>No State</English>
+  <French>Aucune religion</French>
+  <German>Keine Religion</German>
+  <Italian>Ness. relig. uff.</Italian>
+  <Spanish>No oficial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_SCREEN_NOT_FOUNDED</Tag>
+  <English>Not Founded</English>
+  <French>Non fond&#233;e</French>
+  <German>Nicht gegr&#252;ndet</German>
+  <Italian>Non fondata</Italian>
+  <Spanish>Sin fundar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_SCREEN_TITLE</Tag>
+  <English>Religion Advisor</English>
+  <French>Conseiller religieux</French>
+  <German>Religionsberater</German>
+  <Italian>Consigliere religioso</Italian>
+  <Spanish>Consejero religioso</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_TAOISM</Tag>
+  <English>Taoism</English>
+  <French>
+   <Text>Tao&#239;sme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Taoismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Taoismo:Taoista</Text>
+   <Gender>Male:Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tao&#237;smo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_TAOISM_ADJECTIVE</Tag>
+  <English>
+   <Text>Taoist</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+  <French>
+   <Text>tao&#239;ste:tao&#239;ste:tao&#239;stes:tao&#239;stes</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Taoistisch:taoistischen:taoistische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>taoista:taoista:taoisti:taoiste</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>tao&#237;sta:tao&#237;sta:tao&#237;stas:tao&#237;stas</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_TAOISM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Compassion: Have the highest life expectancy rating in the world for 100 turns[NEWLINE][ICON_BULLET]Moderation: Control the [LINK=BUILDING_CONFUCIAN_SHRINE]Kong Lin[\LINK] and the [LINK=BUILDING_TAOIST_SHRINE]Dai Miao[\LINK] and combine their income to 40 gold[NEWLINE][ICON_BULLET]Humility: Have legendary culture in the Taoist holy city</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_UNIT_PROD_MOD</Tag>
+  <English>%D1%%[ICON_PRODUCTION] for Units</English>
+  <French>%D1%%[ICON_PRODUCTION] pour les unit&#233;s</French>
+  <German>%D1%%[ICON_PRODUCTION] f&#252;r Einheiten</German>
+  <Italian>%D1%%[ICON_PRODUCTION] per le unit&#224;</Italian>
+  <Spanish>%D1%% a la [ICON_PRODUCTION] de unidades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_UNKNOWN</Tag>
+  <English>a Religion</English>
+  <French>une religion</French>
+  <German>eine Religion</German>
+  <Italian>una religione</Italian>
+  <Spanish>una religi&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ZOROASTRIANISM</Tag>
+  <English>Zoroastrianism</English>
+  <French>
+   <Text>Zoroastrisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Zoroastrismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Zoroastrismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Zoroastrismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Tag>
+  <English>
+   <Text>Zoroastrian</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ZOROASTRIANISM_HELP</Tag>
+  <English>[ICON_BULLET]Doesn't spread after 1000 AD</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_RELIGION_ZOROASTRIANISM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Adar: Acquire six [LINK=BONUS_INCENSE]Incense[\LINK] resources[NEWLINE][ICON_BULLET]Mathra: Spread Zoroastrianism to 20%[NEWLINE][ICON_BULLET]Shahnameh: Have legendary culture in the Zoroastrian holy city</English>
+ </TEXT>
+</Civ4GameText>

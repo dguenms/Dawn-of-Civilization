@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_VICTORY_CONQUEST_PEDIA</Tag>
+  <English>[ICON_BULLET]Requires that you are the only Major Civilization in the World</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_VICTORY_CULTURAL_PEDIA</Tag>
+  <English>[ICON_BULLET]Requires that you own 3 cities with the [LINK=CULTURELEVEL_LEGENDARY]Legendary[\LINK] Culture Level</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_VICTORY_DIPLOMATIC_PEDIA</Tag>
+  <English>[ICON_BULLET]Requires that you successfully win a Religious Leader Election (Diplomatic Victory) in the [LINK=BUILDING_APOSTOLIC_PALACE]Apostolic Palace[\LINK] or that you successfully win a U.N. Election (Diplomatic Victory) Vote in the [LINK=BUILDING_UNITED_NATIONS]United Nations[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_VICTORY_DOMINATION_PEDIA</Tag>
+  <English>[ICON_BULLET]Requires that you control 52% of the total land area[NEWLINE][ICON_BULLET]Requires that you have a 20% population lead on the largest rival civilization's population percentage</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_VICTORY_HISTORICAL_PEDIA</Tag>
+  <English>[ICON_BULLET]Requires that you fulfill your Civilization's Historical Victory Goals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_VICTORY_RELIGIOUS_PEDIA</Tag>
+  <English>[ICON_BULLET]Requires that you fulfill your Religion's Religious Victory Goals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_VICTORY_SPACE_RACE_PEDIA</Tag>
+  <English>[ICON_BULLET]Requires that the Spaceship is launched (10 Turns later victory will be granted if your capital is not captured in that time)[NEWLINE][ICON_BULLET]The Spaceship requires that you build 1-5 [LINK=PROJECT_SS_CASING]SS Casings[\LINK], 1 [LINK=PROJECT_SS_COCKPIT]SS Cockpit[\LINK], 1 [LINK=PROJECT_SS_DOCKING_BAY]SS Docking Bay[\LINK], 1-2 [LINK=PROJECT_SS_ENGINE]SS Engines[\LINK], 1 [LINK=PROJECT_SS_LIFE_SUPPORT]SS Life Support[\LINK], 1 [LINK=PROJECT_SS_STASIS_CHAMBER]SS Stasis Chamber[\LINK] and 1-5 [LINK=PROJECT_SS_THRUSTERS]SS Thrusters[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_VICTORY_TIME_PEDIA</Tag>
+  <English>[ICON_BULLET]Requires your Score to be the highest in the game when the game reaches 2050 AD (Turn 500)</English>
+ </TEXT>
+</Civ4GameText>

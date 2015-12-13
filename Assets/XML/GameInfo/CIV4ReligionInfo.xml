@@ -8,9 +8,9 @@
 	<ReligionInfos>
 		<ReligionInfo>
 			<Type>RELIGION_JUDAISM</Type>
-			<Description>TXT_KEY_RELIGION_JUDAISM</Description>
-			<Adjective>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_RELIGION_JUDAISM_PEDIA</Civilopedia>
+			<Description>TXT_KEY_RELIGION_PROTESTANTISM</Description>
+			<Adjective>TXT_KEY_RELIGION_PROTESTANTISM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_RELIGION_PROTESTANTISM_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_JEWISH_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
@@ -23,7 +23,6 @@
 			<HolyCityCommerces>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
-				<!-- Rhye -->
 				<iHolyCityCommerce>3</iHolyCityCommerce>
 			</HolyCityCommerces>
 			<StateReligionCommerces>
@@ -32,7 +31,6 @@
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Christian.dds</Button>
-			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/Theology.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Christianity.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,1,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Christianity/Chr_Found.nif</MovieFile>
@@ -41,9 +39,9 @@
 		</ReligionInfo>
 		<ReligionInfo>
 			<Type>RELIGION_CHRISTIANITY</Type>
-			<Description>TXT_KEY_RELIGION_CHRISTIANITY</Description>
-			<Adjective>TXT_KEY_RELIGION_CHRISTIANITY_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_RELIGION_CHRISTIANITY_PEDIA</Civilopedia>
+			<Description>TXT_KEY_RELIGION_CATHOLICISM</Description>
+			<Adjective>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_RELIGION_CATHOLICISM_PEDIA</Civilopedia>
 			<TechPrereq>TECH_THEOLOGY</TechPrereq>
 			<FreeUnitClass>UNITCLASS_CHRISTIAN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
@@ -56,7 +54,6 @@
 			<HolyCityCommerces>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
-				<!-- Rhye -->
 				<iHolyCityCommerce>3</iHolyCityCommerce>
 			</HolyCityCommerces>
 			<StateReligionCommerces>
@@ -65,7 +62,6 @@
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Catholicism.dds</Button>
-			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/Theology.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Christianity.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,1,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Christianity/Chr_Found.nif</MovieFile>
@@ -111,7 +107,7 @@
 			<TechPrereq>TECH_DIVINE_RIGHT</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ISLAMIC_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
-			<iSpreadFactor>150</iSpreadFactor> <!-- Rhye -->
+			<iSpreadFactor>150</iSpreadFactor>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
@@ -120,7 +116,6 @@
 			<HolyCityCommerces>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
-				<!-- Rhye -->
 				<iHolyCityCommerce>3</iHolyCityCommerce>
 			</HolyCityCommerces>
 			<StateReligionCommerces>
@@ -129,7 +124,6 @@
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Islam.dds</Button>
-			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/divine right.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Islam.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,6,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Islam/Isl_Found.nif</MovieFile>
@@ -141,11 +135,10 @@
 			<Description>TXT_KEY_RELIGION_HINDUISM</Description>
 			<Adjective>TXT_KEY_RELIGION_HINDUISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_HINDUISM_PEDIA</Civilopedia>
-			<!-- Rhye -->
 			<TechPrereq>TECH_MEDITATION</TechPrereq>
 			<FreeUnitClass>UNITCLASS_HINDU_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
-			<iSpreadFactor>80</iSpreadFactor> <!-- Rhye -->
+			<iSpreadFactor>80</iSpreadFactor>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
@@ -154,7 +147,6 @@
 			<HolyCityCommerces>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
-				<!-- Rhye -->
 				<iHolyCityCommerce>3</iHolyCityCommerce>
 			</HolyCityCommerces>
 			<StateReligionCommerces>
@@ -163,7 +155,6 @@
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Hinduism.dds</Button>
-			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/Meditation.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Hinduism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,2,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Hinduism/Hin_Found.nif</MovieFile>
@@ -175,11 +166,10 @@
 			<Description>TXT_KEY_RELIGION_BUDDHISM</Description>
 			<Adjective>TXT_KEY_RELIGION_BUDDHISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_BUDDHISM_PEDIA</Civilopedia>
-			<!-- Rhye -->
 			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_BUDDHIST_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>2</iFreeUnits>
-			<iSpreadFactor>140</iSpreadFactor> <!-- Rhye -->
+			<iSpreadFactor>140</iSpreadFactor>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
@@ -188,7 +178,6 @@
 			<HolyCityCommerces>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
-				<!-- Rhye -->
 				<iHolyCityCommerce>3</iHolyCityCommerce>
 			</HolyCityCommerces>
 			<StateReligionCommerces>
@@ -197,7 +186,6 @@
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Buddhism.dds</Button>
-			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/Priesthood.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Buddhism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,5,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Buddhism/Bud_Found.nif</MovieFile>
@@ -209,11 +197,10 @@
 			<Description>TXT_KEY_RELIGION_CONFUCIANISM</Description>
 			<Adjective>TXT_KEY_RELIGION_CONFUCIANISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_CONFUCIANISM_PEDIA</Civilopedia>
-			<!-- Rhye -->
 			<TechPrereq>TECH_MATHEMATICS</TechPrereq>
 			<FreeUnitClass>UNITCLASS_CONFUCIAN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
-			<iSpreadFactor>70</iSpreadFactor> <!-- Rhye -->
+			<iSpreadFactor>70</iSpreadFactor>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
@@ -222,7 +209,6 @@
 			<HolyCityCommerces>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
-				<!-- Rhye -->
 				<iHolyCityCommerce>3</iHolyCityCommerce>
 			</HolyCityCommerces>
 			<StateReligionCommerces>
@@ -231,7 +217,6 @@
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Confuscianism.dds</Button>
-			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/mathematics.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Confucianism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,7,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Confucianism/Con_Found.nif</MovieFile>
@@ -243,11 +228,10 @@
 			<Description>TXT_KEY_RELIGION_TAOISM</Description>
 			<Adjective>TXT_KEY_RELIGION_TAOISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_TAOISM_PEDIA</Civilopedia>
-			<!-- Rhye -->
 			<TechPrereq>TECH_CALENDAR</TechPrereq>
 			<FreeUnitClass>UNITCLASS_TAOIST_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
-			<iSpreadFactor>70</iSpreadFactor> <!-- Rhye -->
+			<iSpreadFactor>70</iSpreadFactor>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
@@ -256,7 +240,6 @@
 			<HolyCityCommerces>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
-				<!-- Rhye -->
 				<iHolyCityCommerce>3</iHolyCityCommerce>
 			</HolyCityCommerces>
 			<StateReligionCommerces>
@@ -265,7 +248,6 @@
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Taoism.dds</Button>
-			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/calendar.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Taoism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,3,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Taoism/Tao_Found.nif</MovieFile>
@@ -277,11 +259,10 @@
 			<Description>TXT_KEY_RELIGION_ZOROASTRIANISM</Description>
 			<Adjective>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ZOROASTRIANISM_PEDIA</Civilopedia>
-			<!-- Rhye -->
 			<TechPrereq>TECH_MONOTHEISM</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ZOROASTRIAN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
-			<iSpreadFactor>50</iSpreadFactor> <!-- Rhye -->
+			<iSpreadFactor>50</iSpreadFactor>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
@@ -290,7 +271,6 @@
 			<HolyCityCommerces>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
 				<iHolyCityCommerce>0</iHolyCityCommerce>
-				<!-- Rhye -->
 				<iHolyCityCommerce>3</iHolyCityCommerce>
 			</HolyCityCommerces>
 			<StateReligionCommerces>
@@ -299,12 +279,11 @@
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
 			<Button>Art/Interface/Buttons/Religions/Zoroaster.dds</Button>
-			<!-- Rhye -->
 			<TechButton>Art/Interface/Buttons/TechTree/monotheism.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Confucianism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,7,3</GenericTechButton>
 			<MovieFile>Art/Movies/Zoroastrianism/Tao_Found.nif</MovieFile>
 			<MovieSound>AS2D_BUILD_ZORO_MOVIE</MovieSound>
 			<Sound>AS2D_BUILD_ZORO</Sound>
-		</ReligionInfo>	
+		</ReligionInfo>
 	</ReligionInfos>
 </Civ4ReligionInfo>

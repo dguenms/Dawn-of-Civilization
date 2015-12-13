@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_DOMAIN_AIR_PEDIA</Tag>
+  <English>Air Units</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_DOMAIN_IMMOBILE_PEDIA</Tag>
+  <English>Immobile Units</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_DOMAIN_LAND_PEDIA</Tag>
+  <English>Land Units</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_DOMAIN_SEA_PEDIA</Tag>
+  <English>Water Units</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ERA_ANCIENT_PEDIA</Tag>
+  <English>[H1]Stone Age[\H1][NEWLINE]The 10th millennium BC is the earliest given date for the invention of agriculture and the beginning of the ancient era. G&#246;bekli Tepe was erected by hunter-gatherers in the 10th millennium BC (c. 11,500 years ago), before the advent of sedentism. Together with Nevali &#199;ori, it has revolutionized understanding of the Eurasian Neolithic. In the 7th millennium BC, Jiahu culture began in China. By the 5th millennium BC, the late Neolithic civilizations saw the invention of the wheel and the spread of proto-writing. In the 4th millennium BC, the Cucuteni-Trypillian culture in the Ukraine-Moldova-Romania region develops. By 3400 BC, "proto-literate" cuneiform is spread in the Middle East. The 30th century BC, referred to as the Early Bronze Age II, saw the beginning of the literate period in Mesopotamia and Ancient Egypt. Around the 27th century BC, the Old Kingdom of Egypt and the First Dynasty of Uruk are founded, according to the earliest reliable regnal eras.[NEWLINE][NEWLINE][H1]Bronze Age[\H1][NEWLINE]The Bronze Age forms part of the three-age system. It follows the Neolithic Age in some areas of the world.[PARAGRAPH:2]In the 24th century BC, the Akkadian Empire was founded in Mesopotamia.[PARAGRAPH:2]The First Intermediate Period of Egypt of the 22nd century BC was followed by the Middle Kingdom of Egypt between the 21st to 17th centuries BC. The Sumerian Renaissance also developed c. the 21st century BC in Ur. Around the 18th century BC, the Second Intermediate Period of Egypt began.[PARAGRAPH:2]By 1600 BC, Mycenaean Greece developed. The beginning of the Shang Dynasty emerged in China in this period, and there was evidence of a fully developed Chinese writing system. The beginning of Hittite dominance of the Eastern Mediterranean region is also seen in the 1600s BC. The time from the 16th to the 11th centuries BC around the Nile is called the New Kingdom of Egypt. Between 1550 BC and 1292 BC, the Amarna Period developed in Egypt.[NEWLINE][NEWLINE][H1]Iron Age[\H1][NEWLINE]The Iron Age is the last principal period in the three-age system, preceded by the Bronze Age. Its date and context vary depending on the country or geographical region.[PARAGRAPH:2]During the 13th to 12th centuries BC, the Ramesside Period occurred in Egypt. Around 1200 BC, the Trojan War was thought to have taken place. By around 1180 BC, the disintegration of the Hittite Empire was under way.[PARAGRAPH:2]In 1046 BC, the Zhou force, led by King Wu of Zhou, overthrew the last king of the Shang Dynasty. The Zhou Dynasty was established in China shortly thereafter.[PARAGRAPH:2]Pirak is an early iron-age site in Balochistan, Pakistan, going back to about 1200 BC. This period is believed to be the beginning of the Iron Age in India and the subcontinent.[PARAGRAPH:2]In 1000 BC, the Mannaean Kingdom began in Western Asia. Around the 10th to 7th centuries BC, the Neo-Assyrian Empire developed in Mesopotamia. In 800 BC, the rise of Greek city-states began. In 776 BC, the first recorded Olympic Games were held.[NEWLINE][NEWLINE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ERA_CLASSICAL_PEDIA</Tag>
+  <English>Classical antiquity is a broad term for a long period of cultural history centered around the Mediterranean Sea, which begins roughly with the earliest-recorded Greek poetry of Homer (9th century BC), and continues through the rise of Christianity and the fall of the Western Roman Empire (5th century AD), ending in the dissolution of classical culture with the close of Late Antiquity.[PARAGRAPH:2]Such a wide sampling of history and territory covers many rather disparate cultures and periods. "Classical antiquity" typically refers to an idealized vision of later people, of what was, in Edgar Allan Poe's words, "the glory that was Greece, the grandeur that was Rome!" In the 18th and 19th centuries AD, reverence for classical antiquity was much greater in Europe and the United States than it is today. Respect for the ancients of Greece and Rome affected politics, philosophy, sculpture, literature, theater, education, and even architecture and sexuality.[PARAGRAPH:2]In politics, the presence of a Roman Emperor was felt to be desirable long after the empire fell. This tendency reached its peak when Charlemagne was crowned "Roman Emperor" in the year 800, an act which led to the formation of the Holy Roman Empire. The notion that an emperor is a monarch who outranks a mere king dates from this period. In this political ideal, there would always be a Roman Empire, a state whose jurisdiction extended to the entire civilized world.[PARAGRAPH:2]Epic poetry in Latin continued to be written and circulated well into the 19th century. John Milton and even Arthur Rimbaud received their first poetic educations in Latin. Genres like epic poetry, pastoral verse, and the endless use of characters and themes from Greek mythology left a deep mark on Western literature.[PARAGRAPH:2]In architecture, there have been several Greek Revivals, (though while apparently more inspired in retrospect by Roman architecture than Greek). Still, one needs only to look at Washington, DC to see a city filled with large marble buildings with facades made out to look like Roman temples, with columns constructed in the classical orders of architecture.[PARAGRAPH:2]In philosophy, the efforts of St Thomas Aquinas were derived largely from the thought of Aristotle, despite the intervening change in religion from paganism to Christianity. Greek and Roman authorities such as Hippocrates and Galen formed the foundation of the practice of medicine even longer than Greek thought prevailed in philosophy. In the French theatre, tragedians such as Moli&#232;re and Racine wrote plays on mythological or classical historical subjects and subjected them to the strict rules of the classical unities derived from Aristotle's Poetics. The desire to dance like a latter-day vision of how the ancient Greeks did it moved Isadora Duncan to create her brand of ballet. The Renaissance was partly caused by the rediscovery of classic antiquity.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ERA_FUTURE_PEDIA</Tag>
+  <English>The future is what will happen in the time after the present. Its arrival is considered inevitable due to the existence of time and the laws of physics. Due to the apparent nature of reality and the unavoidability of the future, everything that currently exists and will exist can be categorized as either permanent, meaning that it will exist forever, or temporary, meaning that it will end. The future and the concept of eternity have been major subjects of philosophy, religion, and science, and defining them non-controversially has consistently eluded the greatest of minds. In the Occidental view, which uses a linear conception of time, the future is the portion of the projected time line that is anticipated to occur. In special relativity, the future is considered absolute future, or the future light cone.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ERA_INDUSTRIAL_PEDIA</Tag>
+  <English>The Industrial Revolution was the transition to new manufacturing processes in the period from about 1760 to sometime between 1820 and 1840. This transition included going from hand production methods to machines, new chemical manufacturing and iron production processes, improved efficiency of water power, the increasing use of steam power, and the development of machine tools. It also included the change from wood and other bio-fuels to coal. Textiles were the dominant industry of the Industrial Revolution in terms of employment, value of output and capital invested; the textile industry was also the first to use modern production methods.[PARAGRAPH:2]The Industrial Revolution marks a major turning point in history; almost every aspect of daily life was influenced in some way. In particular, average income and population began to exhibit unprecedented sustained growth. Some economists say that the major impact of the Industrial Revolution was that the standard of living for the general population began to increase consistently for the first time in history, although others have said that it did not begin to meaningfully improve until the late 19th and 20th centuries.[PARAGRAPH:2]The Industrial Revolution began in Great Britain, and spread to Western Europe and North America within a few decades. The precise start and end of the Industrial Revolution is still debated among historians, as is the pace of economic and social changes. GDP per capita was broadly stable before the Industrial Revolution and the emergence of the modern capitalist economy, while the Industrial Revolution began an era of per-capita economic growth in capitalist economies. Economic historians are in agreement that the onset of the Industrial Revolution is the most important event in the history of humanity since the domestication of animals, plants and fire.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ERA_MEDIEVAL_PEDIA</Tag>
+  <English>In European history, the Middle Ages, or Medieval period, lasted from the 5th to the 15th century. It began with the collapse of the Western Roman Empire and merged into the Renaissance and the Age of Discovery. The Middle Ages is the middle period of the three traditional divisions of Western history: Antiquity, Medieval period, and Modern period. The Medieval period is itself subdivided into the Early, the High, and the Late Middle Ages.[PARAGRAPH:2]Depopulation, deurbanisation, invasion, and movement of peoples, which had begun in Late Antiquity, continued in the Early Middle Ages. The barbarian invaders, including various Germanic peoples, formed new kingdoms in what remained of the Western Roman Empire. In the 7th century, North Africa and the Middle East-once part of the Eastern Roman Empire-came under the rule of the Caliphate, an Islamic empire, after conquest by Muhammad's successors. Although there were substantial changes in society and political structures, the break with Antiquity was not complete. The still-sizable Byzantine Empire survived in the east and remained a major power. The empire's law code, the Code of Justinian, was rediscovered in Northern Italy in 1070 and became widely admired later in the Middle Ages. In the West, most kingdoms incorporated the few extant Roman institutions. Monasteries were founded as campaigns to Christianize pagan Europe continued. The Franks, under the Carolingian dynasty, briefly established an empire covering much of Western Europe; the Carolingian Empire during the later 8th and early 9th century, but it later succumbed to the pressures of internal civil wars combined with external invasions-Vikings from the north, Magyars from the east, and Saracens from the south.[PARAGRAPH:2]During the High Middle Ages, which began after AD 1000, the population of Europe increased greatly as technological and agricultural innovations allowed trade to flourish and the Medieval Warm Period climate change allowed crop yields to increase. Manorialism, the organization of peasants into villages that owed rent and labor services to the nobles, and feudalism, the political structure whereby knights and lower-status nobles owed military service to their overlords in return for the right to rent from lands and manors, were two of the ways society was organized in the High Middle Ages. The Crusades, first preached in 1095, were military attempts by Western European Christians to regain control of the Middle Eastern Holy Land from the Muslims. Kings became the heads of centralized nation states, reducing crime and violence but making the ideal of a unified Christendom more distant. Intellectual life was marked by scholasticism, a philosophy that emphasized joining faith to reason, and by the founding of universities. The theology of Thomas Aquinas, the paintings of Giotto, the poetry of Dante and Chaucer, the travels of Marco Polo, and the architecture of Gothic cathedrals such as Chartres are among the outstanding achievements of this period.[PARAGRAPH:2]The Late Middle Ages was marked by difficulties and calamities including famine, plague, and war, which much diminished the population of Western Europe; between 1347 and 1350, the Black Death killed about a third of Europeans. Controversy, heresy, and schism within the Church paralleled the interstate conflict, civil strife, and peasant revolts that occurred in the kingdoms. Cultural and technological developments transformed European society, concluding the Late Middle Ages and beginning the early modern period.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ERA_MODERN_PEDIA</Tag>
+  <English>The Modern Era begins in the 19th century, and includes the World Wars era (encompassing World War I and World War II) and the emergence of socialist countries that led to the Cold War. It also includes the contemporary era follows shortly afterward with the explosion of research and increase of knowledge known as the Information Age in the latter 20th and the early 21st century.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ERA_RENAISSANCE_PEDIA</Tag>
+  <English>The Renaissance is a period from the 14th to the 17th century, considered the bridge between the Middle Ages and modern history. It started as a cultural movement in Italy in the Late Medieval period and later spread to the rest of Europe. Some good early examples were the development of perspective in oil painting and the recycled knowledge of how to make concrete. Although the invention of metal movable type sped the dissemination of ideas from the later 15th century, the changes of the Renaissance were not uniformly experienced across Europe.[PARAGRAPH:2]As a cultural movement, it encompassed innovative flowering of Latin and vernacular literatures, beginning with the 14th century resurgence of learning based on classical sources, which contemporaries credited to Petrarch; the development of linear perspective and other techniques of rendering a more natural reality in painting; and, gradual but widespread educational reform.[PARAGRAPH:2]In politics, the Renaissance contributed the development of the conventions of diplomacy, and in science an increased reliance on observation. Although the Renaissance saw revolutions in many intellectual pursuits, as well as social and political upheaval, it is perhaps best known for its artistic developments and the contributions of such polymaths as Leonardo da Vinci and Michelangelo, who inspired the term "Renaissance man".</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PROCESS_CULTURE_PEDIA</Tag>
+  <English>[BOLD]Background:[\BOLD][PARAGRAPH:1]In Civilization IV, "culture" refers to a civilization's accomplishments in literature, the arts, and so forth. Civilizations with high cultures are respected or envied by lesser civilizations. These civilizations tend to intellectually dominate their neighbors, which can be very useful when two civilizations are striving for control over limited terrain.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PROCESS_CULTURE_POOR_PEDIA</Tag>
+  <English>[ICON_BULLET]1[ICON_CULTURE]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PROCESS_RESEARCH_PEDIA</Tag>
+  <English>[BOLD]Background:[\BOLD][PARAGRAPH:1]To survive, your civilization must advance and grow technologically. Being backwards is suicide; advanced civilizations have huge advantages in expansion, growth, commerce, production, and, of course, in military units available to them. Your army may outnumber mine by ten to one, but if your army consists of archers and spearmen and mine of musketmen and macemen, you are going to get your butt seriously kicked. A small technological edge is powerful, while a large one is killer.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PROCESS_WEALTH_PEDIA</Tag>
+  <English>[BOLD]Background:[\BOLD][PARAGRAPH:1]Time and again, history shows us the importance of managing wealth properly. In the 16th century, Spain had access to the nearly limitless gold and silver of Central and South America, yet so much of this wealth was lost through corruption and mismanagement that Spain was unable to finance the ships and soldiers to protect her American possessions, leaving them vulnerable to attack by enemy nations and pirates. At the end of the First World War, Germany was bankrupt and shorn of her overseas colonies; yet in twenty years she acquired enough wealth to build and support the mightiest military machine yet seen in the world.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ROUTE_RAILROAD_PEDIA</Tag>
+  <English>[BOLD]Background:[\BOLD][NEWLINE][TAB]Rail transport is a means of conveyance of passengers and goods, by way of wheeled vehicles running on rails. It is also commonly referred to as train transport. In contrast to road transport, where vehicles run on a prepared flat surface, rail vehicles are also directionally guided by the tracks on which they run. Track usually consists of steel rails, installed on ties (sleepers) and ballast, on which the rolling stock, usually fitted with metal wheels, moves. However, other variations are also possible, such as slab track where the rails are fastened to a concrete foundation resting on a prepared subsurface.[PARAGRAPH:1]Rolling stock in railway transport systems generally has lower frictional resistance when compared with highway vehicles and the passenger and freight cars (carriages and wagons) can be coupled into longer trains. The operation is carried out by a railway company, providing transport between train stations or freight customer facilities. Power is provided by locomotives which either draw electrical power from a railway electrification system or produce their own power, usually by diesel engines. Most tracks are accompanied by a signaling system. Railways are a safe land transport system when compared to other forms of transport. Railway transport is capable of high levels of passenger and cargo utilization and energy efficiency, but is often less flexible and more capital-intensive than highway transport is, when lower traffic levels are considered.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ROUTE_ROAD_PEDIA</Tag>
+  <English>[BOLD]Background:[\BOLD][NEWLINE][TAB]A road is a thoroughfare, route, or way on land between two places that has been paved or otherwise improved to allow travel by some conveyance, including a horse, cart, bicycle, or motor vehicle.[PARAGRAPH:1]Roads consist of one or two roadways, each with one or more lanes and any associated sidewalks and road verges.[PARAGRAPH:1]Roads that are available for use by the public may be referred to as public roads or as highways.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ROUTE_ROMAN_ROAD_PEDIA</Tag>
+  <English>[BOLD]Background:[\BOLD][NEWLINE][TAB]Roman roads were physical infrastructure vital to the maintenance and development of the Roman state, and were built from about 500 BC through the expansion and consolidation of the Roman Republic and the Roman Empire. They provided efficient means for the overland movement of armies, officials, and civilians, and the inland carriage of official communications and trade goods. Roman roads were of several kinds, ranging from small local roads to broad, long-distance highways built to connect cities, major towns and military bases. These major roads were often stone-paved and metaled, cambered for drainage, and were flanked by footpaths, bridleways and drainage ditches. They were laid along accurately surveyed courses, and some were cut through hills, or conducted over rivers and ravines on bridgework. Sections could be supported over marshy ground on rafted or piled foundations.[PARAGRAPH:1]At the peak of Rome's development, no fewer than 29 great military highways radiated from the capital, and the late Empire's 113 provinces were interconnected by 372 great roads. The whole comprised more than 400,000 km of roads, of which over 80,500 kilometres (50,000 mi) were stone-paved. In Gaul alone, no less than 21,000 kilometers (13,000 mi) of roadways are said to have been improved, and in Britain at least 4,000 kilometres (2,500 mi). The courses (and sometimes the surfaces) of many Roman roads survived for millennia. Some are overlaid by modern roads.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALBUILDING_CATHEDRAL_PEDIA</Tag>
+  <English>Cathedrals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALBUILDING_MONASTERY_PEDIA</Tag>
+  <English>Monasteries</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALBUILDING_TEMPLE_PEDIA</Tag>
+  <English>Temples</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_ARTIST_PEDIA</Tag>
+  <English>[TAB]An artist is a person engaged in one or more of any of a broad spectrum of activities related to creating art, practicing the arts, and/or demonstrating an art. The common usage in both everyday speech and academic discourse is a practitioner in the visual arts only. The term is often used in the entertainment business, especially in a business context, for musicians and other performers (less often for actors). "Artiste" (the French for artist) is a variant used in English only in this context. Use of the term to describe writers, for example, is certainly valid, but less common, and mostly restricted to contexts like criticism.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_CITIZEN_PEDIA</Tag>
+  <English>[TAB]Citizenship is the status of a person recognized under the custom or law of a state that bestows on that person (called a citizen) the rights and the duties of citizenship. That may include the right to vote, work and live in the country, the right to return to the country, the right to own real estate, legal protections against the country's government, and protection through the military or diplomacy. A citizen may also be subject to certain duties, such as a duty to follow the country's law, to pay taxes, or to serve in the military. A person may have multiple citizenships and a person who does not have citizenship of any state is said to be stateless. Nationality is often used as a synonym for citizenship in English - notably in international law - although the term is sometimes understood as denoting a person's membership of a nation (a large ethnic group). In some countries, e.g. the United States, the United Kingdom, nationality and citizenship can have different meanings.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_ENGINEER_PEDIA</Tag>
+  <English>[TAB]An engineer is a professional practitioner of engineering, concerned with applying scientific knowledge, mathematics, and ingenuity to develop solutions for technical, societal and commercial problems. Engineers design materials, structures, and systems while considering the limitations imposed by practicality, regulation, safety, and cost.[PARAGRAPH:1]The work of engineers forms the link between scientific discoveries and their subsequent applications to human needs and quality of life.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_GREAT_ARTIST_PEDIA</Tag>
+  <English>[TAB]An artist is a person engaged in one or more of any of a broad spectrum of activities related to creating art, practicing the arts, and/or demonstrating an art. The common usage in both everyday speech and academic discourse is a practitioner in the visual arts only. The term is often used in the entertainment business, especially in a business context, for musicians and other performers (less often for actors). "Artiste" (the French for artist) is a variant used in English only in this context. Use of the term to describe writers, for example, is certainly valid, but less common, and mostly restricted to contexts like criticism.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_GREAT_ENGINEERS_PEDIA</Tag>
+  <English>[TAB]An engineer is a professional practitioner of engineering, concerned with applying scientific knowledge, mathematics, and ingenuity to develop solutions for technical, societal and commercial problems. Engineers design materials, structures, and systems while considering the limitations imposed by practicality, regulation, safety, and cost.[PARAGRAPH:1]The work of engineers forms the link between scientific discoveries and their subsequent applications to human needs and quality of life.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_GREAT_GENERALS_PEDIA</Tag>
+  <English>[TAB]A general, without prefix or suffix (and sometimes referred to informally as a "full general"), is usually the most senior type of general, above lieutenant general and directly below field marshal. Usually it is the most senior peacetime rank, with more senior ranks (for example, field marshal, air chief marshal, fleet admiral) being used only in wartime, or as honorary titles.[PARAGRAPH:1]In some armies, however, the rank of captain general, general of the army, army general or colonel general occupied or occupies this position. Depending on circumstances and the army in question, these ranks may be considered to be equivalent to a "full" general or to a field marshal.[PARAGRAPH:1]The rank of general came about as a "captain-general", the captain of an army in general (i.e., the whole army). The rank of captain-general began appearing around the time of the organisation of professional armies in the 17th century. In most countries "captain-general" contracted to just "general".</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_GREAT_MERCHANT_PEDIA</Tag>
+  <English>[TAB]A merchant is a businessperson who trades in commodities produced by others, in order to earn a profit. The status of the merchant has varied during different periods of history and amongst different societies. Merchants have often been the subject of works of art.[PARAGRAPH:1]A merchant class characterizes many pre-modern societies. Its status can range from high (the members even eventually achieving titles such as that of Merchant Prince or Nabob) to low, as in Chinese culture, owing to the presumed distastefulness of profiting from "mere" trade rather than from labor or the labor of others as in agriculture and craftsmanship.[PARAGRAPH:1]In the Greco-Roman world merchants typically did not have high social status, though they may have enjoyed great wealth, and there were exceptions, such as in Syria and Palestine in late antiquity, where merchants did have a high social position.[PARAGRAPH:1]Medieval attitudes toward merchants in the West were strongly influenced by criticism of their activities by the Christian church, which closely associated their activities with the sin of usury.[PARAGRAPH:1]From around 1300 to the 1800s a large number of European Chartered and Merchant Companies were established to utilize international trading opportunities, for instance the Company of Merchant Adventurers of London, Chartered in 1407.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_GREAT_PRIEST_PEDIA</Tag>
+  <English>[TAB]A priest is a person authorized to perform the sacred rituals of a religion, especially as a mediatory agent between humans and one or more deities. They also have the authority or power to administer religious rites; in particular, rites of sacrifice to, and propitiation of, a deity or deities. Their office or position is the priesthood, a term which also may apply to such persons collectively.[PARAGRAPH:1]Priests have existed since the earliest of times (see Proto-indo-European trifunctional hypothesis) and in the simplest societies, most likely as a result of agricultural surplus and consequent social stratification. The necessity to read sacred texts and keep temple or church records helped foster literacy in many early societies. Priests exist in many religions today, such as all or some branches of Judaism, Christianity, Shintoism, Hinduism. They are generally regarded as having positive contact with the deity or deities of the religion to which they subscribe, often interpreting the meaning of events and performing the rituals of the religion. There is no common definition of the duties of priesthood between faiths; but generally it includes mediating the relationship between one's congregation, worshippers, and other members of the religious body, and its deity or deities, and administering religious rituals and rites. These often include blessing worshipers with prayers of joy at marriages, after a birth, and at consecrations, teaching the wisdom and dogma of the faith at any regular worship service, and mediating and easing the experience of grief and death at funerals - maintaining a spiritual connection to the afterlife in faiths where such a concept exists. Administering religious building grounds and office affairs and papers, including any religious library or collection of sacred texts, is also commonly a responsibility - for example, the modern term for clerical duties in a secular office refers originally to the duties of a cleric. The question of which religions have a "priest" depends on how the titles of leaders are used or translated into English. In some cases, leaders are more like those that other believers will often turn for advice on spiritual matters, and less of a "person authorized to perform the sacred rituals" For example, clergy in Roman Catholicism and Orthodox Christianity are priests, but in Protestant Christianity they are typically minister and pastor. The terms priest and priestess are sufficiently generic that they may be used in an anthropological sense to describe the religious mediators of an unknown or otherwise unspecified religion.[PARAGRAPH:1]In many religions, being a priest or priestess is a full-time position, ruling out any other career. Many Christian priests and pastors choose or are mandated to dedicate themselves to their churches and receive their living directly from their churches. In other cases it is a part-time role. For example in the early history of Iceland the chieftains were titled go&#240;i, a word meaning "priest". As seen in the saga of Hrafnkell Freysgo&#240;i, however, being a priest consisted merely of offering periodic sacrifices to the Norse gods and goddesses; it was not a full-time role, nor did it involve ordination.[PARAGRAPH:1]In some religions, being a priest or priestess is by human election or human choice. In Judaism the priesthood is inherited in familial lines.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_GREAT_SCIENTIST_PEDIA</Tag>
+  <English>[TAB]A scientist, in a broad sense, is one engaging in a systematic activity to acquire knowledge. In a more restricted sense, a scientist may refer to an individual who uses the scientific method. The person may be an expert in one or more areas of science. This article focuses on the more restricted use of the word. Scientists perform research toward a more comprehensive understanding of nature, including physical, mathematical and social realms.[PARAGRAPH:1]Philosophy can be seen as a distinct activity and which many consider not to be a science. It is aimed towards a more comprehensive understanding of intangible aspects of reality and experience that cannot be physically measured.[PARAGRAPH:1]Scientists are also distinct from engineers, those who design, build and maintain devices for particular situations. When science is done with a goal toward practical utility, it is called applied science. An applied scientist may not be designing something in particular, but rather is conducting research with the aim of developing new technologies and practical methods. When science is done with an inclusion of intangible aspects of reality it is called natural philosophy.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_GREAT_SPY_PEDIA</Tag>
+  <English>[TAB]Espionage is often part of an institutional effort by a government or commercial concern. However, the term is generally associated with state spying on potential or actual enemies primarily for military purposes. Spying involving corporations is known as industrial espionage.[PARAGRAPH:1]One of the most effective ways to gather data and information about the enemy (or potential enemy) is by infiltrating the enemy's ranks. This is the job of the spy (espionage agent). Spies can bring back all sorts of information concerning the size and strength of an enemy army. They can also find dissidents within the enemy's forces and influence them to defect. In times of crisis, spies can also be used to steal technology and to sabotage the enemy in various ways. Counterintelligence operatives can feed false information to enemy spies, protecting important domestic secrets, and preventing attempts at subversion. Nearly every country has very strict laws concerning espionage, and the penalty for being caught is often severe. However, the benefits that can be gained through espionage are generally great enough that most governments and many large corporations make use of it to varying degrees.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_GREAT_STATESMAN_PEDIA</Tag>
+  <English>[TAB]A statesman is usually a politician, diplomat or other notable public figure who has had a long and respected career at the national or international level.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_MERCHANT_PEDIA</Tag>
+  <English>[TAB]A merchant is a businessperson who trades in commodities produced by others, in order to earn a profit. The status of the merchant has varied during different periods of history and amongst different societies. Merchants have often been the subject of works of art.[PARAGRAPH:1]A merchant class characterizes many pre-modern societies. Its status can range from high (the members even eventually achieving titles such as that of Merchant Prince or Nabob) to low, as in Chinese culture, owing to the presumed distastefulness of profiting from "mere" trade rather than from labor or the labor of others as in agriculture and craftsmanship.[PARAGRAPH:1]In the Greco-Roman world merchants typically did not have high social status, though they may have enjoyed great wealth, and there were exceptions, such as in Syria and Palestine in late antiquity, where merchants did have a high social position.[PARAGRAPH:1]Medieval attitudes toward merchants in the West were strongly influenced by criticism of their activities by the Christian church, which closely associated their activities with the sin of usury.[PARAGRAPH:1]From around 1300 to the 1800s a large number of European Chartered and Merchant Companies were established to utilize international trading opportunities, for instance the Company of Merchant Adventurers of London, Chartered in 1407.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_PRIEST_PEDIA</Tag>
+  <English>[TAB]A priest is a person authorized to perform the sacred rituals of a religion, especially as a mediatory agent between humans and one or more deities. They also have the authority or power to administer religious rites; in particular, rites of sacrifice to, and propitiation of, a deity or deities. Their office or position is the priesthood, a term which also may apply to such persons collectively.[PARAGRAPH:1]Priests have existed since the earliest of times (see Proto-indo-European trifunctional hypothesis) and in the simplest societies, most likely as a result of agricultural surplus and consequent social stratification. The necessity to read sacred texts and keep temple or church records helped foster literacy in many early societies. Priests exist in many religions today, such as all or some branches of Judaism, Christianity, Shintoism, Hinduism. They are generally regarded as having positive contact with the deity or deities of the religion to which they subscribe, often interpreting the meaning of events and performing the rituals of the religion. There is no common definition of the duties of priesthood between faiths; but generally it includes mediating the relationship between one's congregation, worshippers, and other members of the religious body, and its deity or deities, and administering religious rituals and rites. These often include blessing worshipers with prayers of joy at marriages, after a birth, and at consecrations, teaching the wisdom and dogma of the faith at any regular worship service, and mediating and easing the experience of grief and death at funerals - maintaining a spiritual connection to the afterlife in faiths where such a concept exists. Administering religious building grounds and office affairs and papers, including any religious library or collection of sacred texts, is also commonly a responsibility - for example, the modern term for clerical duties in a secular office refers originally to the duties of a cleric. The question of which religions have a "priest" depends on how the titles of leaders are used or translated into English. In some cases, leaders are more like those that other believers will often turn for advice on spiritual matters, and less of a "person authorized to perform the sacred rituals" For example, clergy in Roman Catholicism and Orthodox Christianity are priests, but in Protestant Christianity they are typically minister and pastor. The terms priest and priestess are sufficiently generic that they may be used in an anthropological sense to describe the religious mediators of an unknown or otherwise unspecified religion.[PARAGRAPH:1]In many religions, being a priest or priestess is a full-time position, ruling out any other career. Many Christian priests and pastors choose or are mandated to dedicate themselves to their churches and receive their living directly from their churches. In other cases it is a part-time role. For example in the early history of Iceland the chieftains were titled go&#240;i, a word meaning "priest". As seen in the saga of Hrafnkell Freysgo&#240;i, however, being a priest consisted merely of offering periodic sacrifices to the Norse gods and goddesses; it was not a full-time role, nor did it involve ordination.[PARAGRAPH:1]In some religions, being a priest or priestess is by human election or human choice. In Judaism the priesthood is inherited in familial lines.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_SCIENTIST_PEDIA</Tag>
+  <English>[TAB]A scientist, in a broad sense, is one engaging in a systematic activity to acquire knowledge. In a more restricted sense, a scientist may refer to an individual who uses the scientific method. The person may be an expert in one or more areas of science. This article focuses on the more restricted use of the word. Scientists perform research toward a more comprehensive understanding of nature, including physical, mathematical and social realms.[PARAGRAPH:1]Philosophy can be seen as a distinct activity and which many consider not to be a science. It is aimed towards a more comprehensive understanding of intangible aspects of reality and experience that cannot be physically measured.[PARAGRAPH:1]Scientists are also distinct from engineers, those who design, build and maintain devices for particular situations. When science is done with a goal toward practical utility, it is called applied science. An applied scientist may not be designing something in particular, but rather is conducting research with the aim of developing new technologies and practical methods. When science is done with an inclusion of intangible aspects of reality it is called natural philosophy.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_SLAVE_PEDIA</Tag>
+  <English>[TAB]Though laws and systems vary, as property, slaves may be bought and sold. Slaves can be held from the time of their capture, purchase or birth, and deprived of the right to leave, to refuse to work, or to demand compensation. Historically, slavery was institutionally recognized by most societies; in more recent times, slavery has been outlawed in all countries, but it continues through the practices of debt bondage, serfdom, domestic servants kept in captivity, certain adoptions in which children are forced to work as slaves, child soldiers, and forced marriage. Slavery is officially illegal in all countries, but there are still an estimated 20 million to 36 million slaves worldwide. Mauritania was the last jurisdiction to officially outlaw slavery (in 1981/2007), but about 10% to 20% of its population is estimated to live in slavery.[PARAGRAPH:1]Slavery has existed before written history and has existed in many cultures. Most slaves today are debt slaves, largely in South Asia, who are under debt bondage incurred by lenders, sometimes even for generations. Human trafficking is primarily used for forcing women and children into sex industries.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_SPY_PEDIA</Tag>
+  <English>[TAB]Espionage is often part of an institutional effort by a government or commercial concern. However, the term is generally associated with state spying on potential or actual enemies primarily for military purposes. Spying involving corporations is known as industrial espionage.[PARAGRAPH:1]One of the most effective ways to gather data and information about the enemy (or potential enemy) is by infiltrating the enemy's ranks. This is the job of the spy (espionage agent). Spies can bring back all sorts of information concerning the size and strength of an enemy army. They can also find dissidents within the enemy's forces and influence them to defect. In times of crisis, spies can also be used to steal technology and to sabotage the enemy in various ways. Counterintelligence operatives can feed false information to enemy spies, protecting important domestic secrets, and preventing attempts at subversion. Nearly every country has very strict laws concerning espionage, and the penalty for being caught is often severe. However, the benefits that can be gained through espionage are generally great enough that most governments and many large corporations make use of it to varying degrees.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALIST_STATESMAN_PEDIA</Tag>
+  <English>[TAB]A statesman is usually a politician, diplomat or other notable public figure who has had a long and respected career at the national or international level.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_CARRY_FIGHTER_PEDIA</Tag>
+  <English>Can Transport Fighters</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_CARRY_MISSILE_PEDIA</Tag>
+  <English>Can Transport Missiles</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_CARRY_PEOPLE_PEDIA</Tag>
+  <English>Can Transport People</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_FIGHTER_PEDIA</Tag>
+  <English>Fighters</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_MISSILE_PEDIA</Tag>
+  <English>Missiles</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_PEOPLE_PEDIA</Tag>
+  <English>People</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_SEE_STEALTH_PEDIA</Tag>
+  <English>Can See Stealth Ships</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_SEE_SUBMARINE_PEDIA</Tag>
+  <English>Can See Submarines</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_STEALTH_PEDIA</Tag>
+  <English>Stealth Ships</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SPECIALUNIT_SUBMARINE_PEDIA</Tag>
+  <English>Submarines</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_WHALING_BOATS_PEDIA</Tag>
+  <English>[TAB]Whaling is the hunting of whales mainly for meat and oil. Its earliest forms date to at least 3000 BC. Various coastal communities have long histories of sustenance whaling and harvesting beached whales. Industrial whaling emerged with organized fleets in the 17th century; competitive national whaling industries in the 18th and 19th centuries; and the introduction of factory ships along with the concept of whale harvesting in the first half of the 20th century.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_BUILDING_STUFF</Tag>
+  <English>Building Resources</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_ERA</Tag>
+  <English>Era</English>
+  <French>&#232;re</French>
+  <German>&#196;ra</German>
+  <Italian>%s1</Italian>
+  <Spanish>%s1</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_LAND_FEATURE</Tag>
+  <English>Land Features</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_LAND_STUFF</Tag>
+  <English>Land %s1</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_NATIONAL_STUFF</Tag>
+  <English>National %s1</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_NON_COMBAT</Tag>
+  <English>Non-Combat Units</English>
+  <French>Unit&#233;s sans type de combat</French>
+  <German>Zivile Einheiten</German>
+  <Italian>Unit?non da combattimento</Italian>
+  <Spanish>Unidades sin tipo de combate</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_SEA_FEATURE</Tag>
+  <English>Sea Features</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_SEA_STUFF</Tag>
+  <English>Sea %s1</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_TEAM_STUFF</Tag>
+  <English>Team %s1</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_PEDIA_WORLD_STUFF</Tag>
+  <English>World %s1</English>
+ </TEXT>
+</Civ4GameText>

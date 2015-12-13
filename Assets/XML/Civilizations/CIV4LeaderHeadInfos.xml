@@ -227,7 +227,6 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
-			<!-- Rhye -->
 			<iRazeCityProb>15</iRazeCityProb>
 			<iBuildUnitProb>35</iBuildUnitProb>
 			<iBaseAttackOddsChange>4</iBaseAttackOddsChange>
@@ -271,17 +270,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -815,17 +811,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -1304,7 +1297,6 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-		<!-- Leoreth: modified for less wonders, more units, more wars -->
 		<LeaderHeadInfo>
 			<Type>LEADER_AUGUSTUS</Type>
 			<Description>TXT_KEY_LEADER_AUGUSTUS</Description>
@@ -1332,7 +1324,6 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>60</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
-			<!-- Rhye -->
 			<iRazeCityProb>10</iRazeCityProb>
 			<iBuildUnitProb>50</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
@@ -1376,17 +1367,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -1924,17 +1912,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -2474,16 +2459,13 @@
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
-			<!-- Rhye -->
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_PLEASED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ANIMISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -3026,17 +3008,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ANIMISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -3583,17 +3562,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_ANNOYED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -4127,17 +4103,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -4675,17 +4648,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_EGALITARIANISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -5178,7 +5148,6 @@
 			<iTechTradeKnownPercent>20</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>10</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
-			<!-- Rhye -->
 			<iMaxWarRand>50</iMaxWarRand>
 			<iMaxWarNearbyPowerRatio>120</iMaxWarNearbyPowerRatio>
 			<iMaxWarDistantPowerRatio>80</iMaxWarDistantPowerRatio>
@@ -5233,17 +5202,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ZOROASTRIANISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -5793,17 +5759,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ZOROASTRIANISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -6349,17 +6312,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -6902,17 +6862,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SECULARISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -7459,17 +7416,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SECULARISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -8014,17 +7968,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_EGALITARIANISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -8494,7 +8445,7 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>20</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>50</iDemandRebukedWarProb>
-			<iRazeCityProb>0</iRazeCityProb><!-- Leoreth: 75 before, test to allow better expansion -->
+			<iRazeCityProb>0</iRazeCityProb>
 			<iBuildUnitProb>35</iBuildUnitProb>
 			<iBaseAttackOddsChange>6</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>16</iAttackOddsChangeRand>
@@ -8537,17 +8488,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -9086,17 +9034,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -9634,17 +9579,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_PANTHEON</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -10199,17 +10141,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_MERCENARIES</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -10758,17 +10697,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_PANTHEON</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -11308,17 +11244,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -11820,7 +11753,6 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>60</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
-			<!-- Rhye -->
 			<iRazeCityProb>40</iRazeCityProb>
 			<iBuildUnitProb>25</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
@@ -11864,17 +11796,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -12425,16 +12354,13 @@
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_MERCANTILISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -12911,7 +12837,6 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-		<!-- Leoreth: more units, more wars -->
 		<LeaderHeadInfo>
 			<Type>LEADER_JULIUS_CAESAR</Type>
 			<Description>TXT_KEY_LEADER_JULIUS_CAESAR</Description>
@@ -12939,7 +12864,6 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>10</iDemandRebukedWarProb>
-			<!-- Rhye -->
 			<iRazeCityProb>20</iRazeCityProb>
 			<iBuildUnitProb>50</iBuildUnitProb>
 			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
@@ -12983,17 +12907,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CITY_STATES</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -13535,17 +13456,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -14040,7 +13958,7 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>10</iDemandRebukedWarProb>
-			<iRazeCityProb>0</iRazeCityProb><!-- 25 before, removed to test if it helps their expansion -->
+			<iRazeCityProb>0</iRazeCityProb>
 			<iBuildUnitProb>25</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
 			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
@@ -14083,17 +14001,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_GUILDS</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -14636,17 +14551,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -15197,17 +15109,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -15741,17 +15650,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_FURIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_ANNOYED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_GUILDS</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -16298,17 +16204,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CENTRAL_PLANNING</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -16851,17 +16754,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_PLEASED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -17410,17 +17310,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>40</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CITY_STATES</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -17965,17 +17862,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -18522,17 +18416,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ANIMISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -19079,17 +18970,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CITY_STATES</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -19640,17 +19528,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AGRARIANISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -20204,17 +20089,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SLAVERY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -20705,7 +20587,6 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>20</iDemandRebukedWarProb>
-			<!-- Rhye -->
 			<iRazeCityProb>40</iRazeCityProb>
 			<iBuildUnitProb>20</iBuildUnitProb>
 			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
@@ -20749,17 +20630,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_PANTHEON</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -21304,17 +21182,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -21851,17 +21726,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CAPITALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -22399,17 +22271,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -22886,7 +22755,7 @@
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
 			<Type>LEADER_SHAKA</Type>
-			<Description>TXT_KEY_LEADER_SHAKA</Description>
+			<Description>TXT_KEY_LEADER_NATIVE</Description>
 			<Civilopedia>TXT_KEY_LEADER_SHAKA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_SHAKA</ArtDefineTag>
 			<iWonderConstructRand>10</iWonderConstructRand>
@@ -22954,17 +22823,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_TYRANNY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -23501,17 +23367,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ENVIRONMENTALISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -24049,17 +23912,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CENTRAL_PLANNING</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -24613,17 +24473,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -25188,17 +25045,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -25752,17 +25606,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_PLEASED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_MERCANTILISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -26322,17 +26173,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -26887,17 +26735,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -27458,17 +27303,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -28039,16 +27881,13 @@
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -28611,17 +28450,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_ANNOYED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -29105,11 +28941,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
-		<!-- added by Leoreth -->
-
 		<LeaderHeadInfo>
-			<Type>LEADER_JIMMU</Type>				<!-- personality: Pericles -->
+			<Type>LEADER_JIMMU</Type> <!-- Personality: Pericles -->
 			<Description>TXT_KEY_LEADER_JIMMU</Description>
 			<Civilopedia>TXT_KEY_LEADER_JIMMU_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_JIMMU</ArtDefineTag>
@@ -29178,17 +29011,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -29667,9 +29497,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
-			<Type>LEADER_MEIJI</Type>				<!-- used predefined personality -->
+			<Type>LEADER_MEIJI</Type> <!-- Personality: Zara Yaqob -->
 			<Description>TXT_KEY_LEADER_MEIJI</Description>
 			<Civilopedia>TXT_KEY_LEADER_MEIJI_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_MEIJI</ArtDefineTag>
@@ -30236,9 +30065,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
-			<Type>LEADER_AKBAR</Type>					<!-- personality: Kublai Khan -->
+			<Type>LEADER_AKBAR</Type> <!-- Personality: Kublai Khan -->
 			<Description>TXT_KEY_LEADER_AKBAR</Description>
 			<Civilopedia>TXT_KEY_LEADER_AKBAR_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_AKBAR</ArtDefineTag>
@@ -30307,17 +30135,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SCHOLASTICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -30785,9 +30610,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
-			<Type>LEADER_HIRAM</Type>					<!-- personality: Willem -->
+			<Type>LEADER_HIRAM</Type> <!-- Personality: Willem Van Oranje-->
 			<Description>TXT_KEY_LEADER_HIRAM</Description>
 			<Civilopedia>TXT_KEY_LEADER_HIRAM_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_HIRAM</ArtDefineTag>
@@ -30857,16 +30681,13 @@
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_PANTHEON</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -31359,9 +31180,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
-			<Type>LEADER_HAILE_SELASSIE</Type>			<!-- personality: Asoka -->
+			<Type>LEADER_HAILE_SELASSIE</Type> <!-- Personality: Asoka -->
 			<Description>TXT_KEY_LEADER_HAILE_SELASSIE</Description>
 			<Civilopedia>TXT_KEY_LEADER_HAILE_SELASSIE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_HAILE_SELASSIE</ArtDefineTag>
@@ -31430,17 +31250,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -31908,9 +31725,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
-		<LeaderHeadInfo>				<!-- predefined personality -->
-			<Type>LEADER_GUSTAV</Type>
+		<LeaderHeadInfo>
+			<Type>LEADER_GUSTAV</Type> <!-- Personality: Justinian -->
 			<Description>TXT_KEY_LEADER_GUSTAV</Description>
 			<Civilopedia>TXT_KEY_LEADER_GUSTAV_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_GUSTAV</ArtDefineTag>
@@ -32221,242 +32037,241 @@
 					<MemoryType>MEMORY_HIRED_WAR_ALLY</MemoryType>
 					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_NUKED_US</MemoryType>
-				<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_NUKED_FRIEND</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_RAZED_CITY</MemoryType>
-				<iMemoryAttitudePercent>-250</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
-				<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_GIVE_HELP</MemoryType>
-				<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
-				<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
-				<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
-				<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-				<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_MADE_DEMAND</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
-				<iMemoryAttitudePercent>15</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
-				<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
-				<iMemoryAttitudePercent>200</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
-				<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
-				<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-			<MemoryAttitudePercent>
-				<MemoryType>MEMORY_LIBERATED_CITIES</MemoryType>
-				<iMemoryAttitudePercent>150</iMemoryAttitudePercent>
-			</MemoryAttitudePercent>
-		</MemoryAttitudePercents>
-		<NoWarAttitudeProbs>
-			<NoWarAttitudeProb>
-				<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
-				<iNoWarProb>30</iNoWarProb>
-			</NoWarAttitudeProb>
-			<NoWarAttitudeProb>
-				<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
-				<iNoWarProb>80</iNoWarProb>
-			</NoWarAttitudeProb>
-			<NoWarAttitudeProb>
-				<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
-				<iNoWarProb>100</iNoWarProb>
-			</NoWarAttitudeProb>
-			<NoWarAttitudeProb>
-				<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
-				<iNoWarProb>100</iNoWarProb>
-			</NoWarAttitudeProb>
-		</NoWarAttitudeProbs>
-		<UnitAIWeightModifiers>
-			<UnitAIWeightModifier>
-				<UnitAIType>UNITAI_ATTACK</UnitAIType>
-				<iWeightModifier>100</iWeightModifier>
-			</UnitAIWeightModifier>
-		</UnitAIWeightModifiers>
-		<ImprovementWeightModifiers/>
-		<DiplomacyIntroMusicPeace>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_ANCIENT</EraType>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_CLASSICAL</EraType>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_MEDIEVAL</EraType>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_RENAISSANCE</EraType>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_INDUSTRIAL</EraType>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_MODERN</EraType>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_FUTURE</EraType>
-			</DiploMusicPeaceEra>
-		</DiplomacyIntroMusicPeace>
-		<DiplomacyMusicPeace>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_ANCIENT</EraType>
-				<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_CLASSICAL</EraType>
-				<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_MEDIEVAL</EraType>
-				<DiploScriptId>AS2D_DIPLO_RAGNAR_MIDDLE</DiploScriptId>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_RENAISSANCE</EraType>
-				<DiploScriptId>AS2D_DIPLO_RAGNAR_MIDDLE</DiploScriptId>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_INDUSTRIAL</EraType>
-				<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_MODERN</EraType>
-				<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
-			</DiploMusicPeaceEra>
-			<DiploMusicPeaceEra>
-				<EraType>ERA_FUTURE</EraType>
-				<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
-			</DiploMusicPeaceEra>
-		</DiplomacyMusicPeace>
-		<DiplomacyIntroMusicWar>
-			<DiploMusicWarEra>
-				<EraType>ERA_ANCIENT</EraType>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_CLASSICAL</EraType>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_MEDIEVAL</EraType>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_RENAISSANCE</EraType>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_INDUSTRIAL</EraType>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_MODERN</EraType>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_FUTURE</EraType>
-			</DiploMusicWarEra>
-		</DiplomacyIntroMusicWar>
-		<DiplomacyMusicWar>
-			<DiploMusicWarEra>
-				<EraType>ERA_ANCIENT</EraType>
-				<DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_CLASSICAL</EraType>
-				<DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_MEDIEVAL</EraType>
-				<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_RENAISSANCE</EraType>
-				<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_INDUSTRIAL</EraType>
-				<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_MODERN</EraType>
-				<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
-			</DiploMusicWarEra>
-			<DiploMusicWarEra>
-				<EraType>ERA_FUTURE</EraType>
-				<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
-			</DiploMusicWarEra>
-		</DiplomacyMusicWar>
-	</LeaderHeadInfo>
-
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_NUKED_US</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_NUKED_FRIEND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_RAZED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-250</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
+					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_MADE_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
+					<iMemoryAttitudePercent>15</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
+					<iMemoryAttitudePercent>200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_LIBERATED_CITIES</MemoryType>
+					<iMemoryAttitudePercent>150</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+			</MemoryAttitudePercents>
+			<NoWarAttitudeProbs>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+					<iNoWarProb>30</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
+					<iNoWarProb>80</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
+					<iNoWarProb>100</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
+					<iNoWarProb>100</iNoWarProb>
+				</NoWarAttitudeProb>
+			</NoWarAttitudeProbs>
+			<UnitAIWeightModifiers>
+				<UnitAIWeightModifier>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<iWeightModifier>100</iWeightModifier>
+				</UnitAIWeightModifier>
+			</UnitAIWeightModifiers>
+			<ImprovementWeightModifiers/>
+			<DiplomacyIntroMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MODERN</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_FUTURE</EraType>
+				</DiploMusicPeaceEra>
+			</DiplomacyIntroMusicPeace>
+			<DiplomacyMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_EARLY</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_MIDDLE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_MIDDLE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MODERN</EraType>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_FUTURE</EraType>
+					<DiploScriptId>AS2D_DIPLO_RAGNAR_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+			</DiplomacyMusicPeace>
+			<DiplomacyIntroMusicWar>
+				<DiploMusicWarEra>
+					<EraType>ERA_ANCIENT</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_CLASSICAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MODERN</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_FUTURE</EraType>
+				</DiploMusicWarEra>
+			</DiplomacyIntroMusicWar>
+			<DiplomacyMusicWar>
+				<DiploMusicWarEra>
+					<EraType>ERA_ANCIENT</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_CLASSICAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MODERN</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_FUTURE</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
+				</DiploMusicWarEra>
+			</DiplomacyMusicWar>
+		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_ABU_BAKR</Type>				<!-- personality: Shaka -->
+			<Type>LEADER_ABU_BAKR</Type> <!-- Personality: Shaka -->
 			<Description>TXT_KEY_LEADER_ABU_BAKR</Description>
 			<Civilopedia>TXT_KEY_LEADER_ABU_BAKR_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_ABU_BAKR</ArtDefineTag>
@@ -32525,17 +32340,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_ANNOYED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -33011,9 +32823,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
-			<Type>LEADER_MONGKUT</Type>			<!-- personality: Sitting Bull -->
+			<Type>LEADER_MONGKUT</Type> <!-- Personality: Sitting Bull -->
 			<Description>TXT_KEY_LEADER_MONGKUT</Description>
 			<Civilopedia>TXT_KEY_LEADER_MONGKUT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_MONGKUT</ArtDefineTag>
@@ -33082,17 +32893,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -33561,8 +33369,8 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_ELISHAT</Type>				<!-- personality: Catherine -->
-			<Description>TXT_KEY_LEADER_ELISHAT</Description>	<!-- maybe change to Boudicca -->
+			<Type>LEADER_ELISHAT</Type> <!-- Personality: Catherine -->
+			<Description>TXT_KEY_LEADER_ELISHAT</Description>
 			<Civilopedia>TXT_KEY_LEADER_ELISHAT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_ELISHAT</ArtDefineTag>
 			<iWonderConstructRand>30</iWonderConstructRand>
@@ -33630,17 +33438,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_ANNOYED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -34105,7 +33910,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_FILIPE</Type>
+			<Type>LEADER_FILIPE</Type> <!-- Personality: Montezuma -->
 			<Description>TXT_KEY_LEADER_FILIPE</Description>
 			<Civilopedia>TXT_KEY_LEADER_FILIPE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_FILIPE</ArtDefineTag>
@@ -34174,17 +33979,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_PLEASED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -34665,7 +34467,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_BARBAROSSA</Type>					<!-- personality: Augustus -->			
+			<Type>LEADER_BARBAROSSA</Type> <!-- Personality: Augustus -->
 			<Description>TXT_KEY_LEADER_BARBAROSSA</Description>
 			<Civilopedia>TXT_KEY_LEADER_BARBAROSSA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_BARBAROSSA</ArtDefineTag>
@@ -34691,7 +34493,6 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>60</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
-			<!-- Rhye -->
 			<iRazeCityProb>10</iRazeCityProb>
 			<iBuildUnitProb>25</iBuildUnitProb>
 			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
@@ -34735,17 +34536,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -35213,9 +35011,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
-			<Type>LEADER_CHARLES</Type>				<!-- personality: Charlemagne -->
+			<Type>LEADER_CHARLES</Type> <!-- Personality: Charlemagne -->
 			<Description>TXT_KEY_LEADER_CHARLES</Description>
 			<Civilopedia>TXT_KEY_LEADER_CHARLES_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_CHARLES</ArtDefineTag>
@@ -35284,17 +35081,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -35762,9 +35556,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
-		<LeaderHeadInfo>					<!-- personality: Lincoln -->
-			<Type>LEADER_FRANCIS</Type>
+		<LeaderHeadInfo>
+			<Type>LEADER_FRANCIS</Type> <!-- Personality: Lincoln -->
 			<Description>TXT_KEY_LEADER_FRANCIS</Description>
 			<Civilopedia>TXT_KEY_LEADER_FRANCIS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_FRANCIS</ArtDefineTag>
@@ -35833,17 +35626,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -36320,9 +36110,8 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
-		<LeaderHeadInfo>					<!-- personality: Alexander -->
-			<Type>LEADER_YAROSLAV</Type>
+		<LeaderHeadInfo>
+			<Type>LEADER_YAROSLAV</Type> <!-- Personality: Alexander -->
 			<Description>TXT_KEY_LEADER_YAROSLAV</Description>
 			<Civilopedia>TXT_KEY_LEADER_YAROSLAV_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_YAROSLAV</ArtDefineTag>
@@ -36348,7 +36137,6 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>25</iDemandRebukedWarProb>
-			<!-- Rhye -->
 			<iRazeCityProb>40</iRazeCityProb>
 			<iBuildUnitProb>35</iBuildUnitProb>
 			<iBaseAttackOddsChange>4</iBaseAttackOddsChange>
@@ -36392,17 +36180,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -36873,1115 +36658,562 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
-		<LeaderHeadInfo>			<!-- predefined personality -->
-      <Type>LEADER_AFONSO</Type>
-      <Description>TXT_KEY_LEADER_AFONSO</Description>
-      <Civilopedia>TXT_KEY_LEADER_AFONSO_PEDIA</Civilopedia>
-      <ArtDefineTag>ART_DEF_LEADER_AFONSO</ArtDefineTag>
-      <iWonderConstructRand>40</iWonderConstructRand>
-      <iBaseAttitude>0</iBaseAttitude>
-      <iBasePeaceWeight>2</iBasePeaceWeight>
-      <iPeaceWeightRand>3</iPeaceWeightRand>
-      <iWarmongerRespect>0</iWarmongerRespect>
-      <iEspionageWeight>100</iEspionageWeight>
-      <iRefuseToTalkWarThreshold>6</iRefuseToTalkWarThreshold>
-      <iNoTechTradeThreshold>5</iNoTechTradeThreshold>
-      <iTechTradeKnownPercent>50</iTechTradeKnownPercent>
-      <iMaxGoldTradePercent>15</iMaxGoldTradePercent>
-      <iMaxGoldPerTurnTradePercent>15</iMaxGoldPerTurnTradePercent>
-      <iMaxWarRand>300</iMaxWarRand>
-      <iMaxWarNearbyPowerRatio>90</iMaxWarNearbyPowerRatio>
-      <iMaxWarDistantPowerRatio>50</iMaxWarDistantPowerRatio>
-      <iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
-      <iLimitedWarRand>100</iLimitedWarRand>
-      <iLimitedWarPowerRatio>100</iLimitedWarPowerRatio>
-      <iDogpileWarRand>100</iDogpileWarRand>
-      <iMakePeaceRand>10</iMakePeaceRand>
-      <iDeclareWarTradeRand>60</iDeclareWarTradeRand>
-      <iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
-      <iDemandRebukedWarProb>0</iDemandRebukedWarProb>
-      <iRazeCityProb>10</iRazeCityProb>
-      <iBuildUnitProb>25</iBuildUnitProb>
-      <iBaseAttackOddsChange>0</iBaseAttackOddsChange>
-      <iAttackOddsChangeRand>8</iAttackOddsChangeRand>
-      <iWorseRankDifferenceAttitudeChange>-1</iWorseRankDifferenceAttitudeChange>
-      <iBetterRankDifferenceAttitudeChange>2</iBetterRankDifferenceAttitudeChange>
-      <iCloseBordersAttitudeChange>-2</iCloseBordersAttitudeChange>
-      <iLostWarAttitudeChange>-1</iLostWarAttitudeChange>
-      <iAtWarAttitudeDivisor>-5</iAtWarAttitudeDivisor>
-      <iAtWarAttitudeChangeLimit>5</iAtWarAttitudeChangeLimit>
-      <iAtPeaceAttitudeDivisor>60</iAtPeaceAttitudeDivisor>
-      <iAtPeaceAttitudeChangeLimit>1</iAtPeaceAttitudeChangeLimit>
-      <iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
-      <iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
-      <iSameReligionAttitudeChangeLimit>5</iSameReligionAttitudeChangeLimit>
-      <iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
-      <iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
-      <iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
-      <iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
-      <iBonusTradeAttitudeChangeLimit>2</iBonusTradeAttitudeChangeLimit>
-      <iOpenBordersAttitudeDivisor>25</iOpenBordersAttitudeDivisor>
-      <iOpenBordersAttitudeChangeLimit>2</iOpenBordersAttitudeChangeLimit>
-      <iDefensivePactAttitudeDivisor>12</iDefensivePactAttitudeDivisor>
-      <iDefensivePactAttitudeChangeLimit>2</iDefensivePactAttitudeChangeLimit>
-      <iShareWarAttitudeChange>1</iShareWarAttitudeChange>
-      <iShareWarAttitudeDivisor>8</iShareWarAttitudeDivisor>
-      <iShareWarAttitudeChangeLimit>3</iShareWarAttitudeChangeLimit>
-      <iFavoriteCivicAttitudeChange>1</iFavoriteCivicAttitudeChange>
-      <iFavoriteCivicAttitudeDivisor>10</iFavoriteCivicAttitudeDivisor>
-      <iFavoriteCivicAttitudeChangeLimit>5</iFavoriteCivicAttitudeChangeLimit>
-      <DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
-      <NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
-      <TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
-      <StrategicBonusRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StrategicBonusRefuseAttitudeThreshold>
-      <HappinessBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HappinessBonusRefuseAttitudeThreshold>
-      <HealthBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HealthBonusRefuseAttitudeThreshold>
-      <MapRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</MapRefuseAttitudeThreshold>
-      <DeclareWarRefuseAttitudeThreshold>ATTITUDE_PLEASED</DeclareWarRefuseAttitudeThreshold>
-      <DeclareWarThemRefuseAttitudeThreshold>ATTITUDE_PLEASED</DeclareWarThemRefuseAttitudeThreshold>
-      <StopTradingRefuseAttitudeThreshold>ATTITUDE_PLEASED</StopTradingRefuseAttitudeThreshold>
-      <StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
-      <AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
-      <ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-      <OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
-      <DefensivePactRefuseAttitudeThreshold>ATTITUDE_PLEASED</DefensivePactRefuseAttitudeThreshold>
-      <PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
-      <VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-      <iVassalPowerModifier>0</iVassalPowerModifier>
-      <iFreedomAppreciation>10</iFreedomAppreciation>
-      <FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
-      <FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-      <Traits/>
-      <Flavors>
-        <Flavor>
-          <FlavorType>FLAVOR_RELIGION</FlavorType>
-          <iFlavor>3</iFlavor>
-        </Flavor>
-        <Flavor>
-          <FlavorType>FLAVOR_SCIENCE</FlavorType>
-          <iFlavor>6</iFlavor>
-        </Flavor>
-      </Flavors>
-      <ContactRands>
-        <ContactRand>
-          <ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
-          <iContactRand>250</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
-          <iContactRand>250</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_JOIN_WAR</ContactType>
-          <iContactRand>20</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_STOP_TRADING</ContactType>
-          <iContactRand>50</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_GIVE_HELP</ContactType>
-          <iContactRand>250</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_ASK_FOR_HELP</ContactType>
-          <iContactRand>100</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
-          <iContactRand>250</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_OPEN_BORDERS</ContactType>
-          <iContactRand>20</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
-          <iContactRand>80</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
-          <iContactRand>80</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_PEACE_TREATY</ContactType>
-          <iContactRand>20</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_TRADE_TECH</ContactType>
-          <iContactRand>5</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_TRADE_BONUS</ContactType>
-          <iContactRand>5</iContactRand>
-        </ContactRand>
-        <ContactRand>
-          <ContactType>CONTACT_TRADE_MAP</ContactType>
-          <iContactRand>20</iContactRand>
-        </ContactRand>
+		<LeaderHeadInfo>
+			<Type>LEADER_AFONSO</Type> <!-- Personality: Pacal -->
+			<Description>TXT_KEY_LEADER_AFONSO</Description>
+			<Civilopedia>TXT_KEY_LEADER_AFONSO_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_AFONSO</ArtDefineTag>
+			<iWonderConstructRand>40</iWonderConstructRand>
+			<iBaseAttitude>0</iBaseAttitude>
+			<iBasePeaceWeight>2</iBasePeaceWeight>
+			<iPeaceWeightRand>3</iPeaceWeightRand>
+			<iWarmongerRespect>0</iWarmongerRespect>
+			<iEspionageWeight>100</iEspionageWeight>
+			<iRefuseToTalkWarThreshold>6</iRefuseToTalkWarThreshold>
+			<iNoTechTradeThreshold>5</iNoTechTradeThreshold>
+			<iTechTradeKnownPercent>50</iTechTradeKnownPercent>
+			<iMaxGoldTradePercent>15</iMaxGoldTradePercent>
+			<iMaxGoldPerTurnTradePercent>15</iMaxGoldPerTurnTradePercent>
+			<iMaxWarRand>300</iMaxWarRand>
+			<iMaxWarNearbyPowerRatio>90</iMaxWarNearbyPowerRatio>
+			<iMaxWarDistantPowerRatio>50</iMaxWarDistantPowerRatio>
+			<iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent>
+			<iLimitedWarRand>100</iLimitedWarRand>
+			<iLimitedWarPowerRatio>100</iLimitedWarPowerRatio>
+			<iDogpileWarRand>100</iDogpileWarRand>
+			<iMakePeaceRand>10</iMakePeaceRand>
+			<iDeclareWarTradeRand>60</iDeclareWarTradeRand>
+			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
+			<iDemandRebukedWarProb>0</iDemandRebukedWarProb>
+			<iRazeCityProb>10</iRazeCityProb>
+			<iBuildUnitProb>25</iBuildUnitProb>
+			<iBaseAttackOddsChange>0</iBaseAttackOddsChange>
+			<iAttackOddsChangeRand>8</iAttackOddsChangeRand>
+			<iWorseRankDifferenceAttitudeChange>-1</iWorseRankDifferenceAttitudeChange>
+			<iBetterRankDifferenceAttitudeChange>2</iBetterRankDifferenceAttitudeChange>
+			<iCloseBordersAttitudeChange>-2</iCloseBordersAttitudeChange>
+			<iLostWarAttitudeChange>-1</iLostWarAttitudeChange>
+			<iAtWarAttitudeDivisor>-5</iAtWarAttitudeDivisor>
+			<iAtWarAttitudeChangeLimit>5</iAtWarAttitudeChangeLimit>
+			<iAtPeaceAttitudeDivisor>60</iAtPeaceAttitudeDivisor>
+			<iAtPeaceAttitudeChangeLimit>1</iAtPeaceAttitudeChangeLimit>
+			<iSameReligionAttitudeChange>1</iSameReligionAttitudeChange>
+			<iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor>
+			<iSameReligionAttitudeChangeLimit>5</iSameReligionAttitudeChangeLimit>
+			<iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange>
+			<iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor>
+			<iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit>
+			<iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor>
+			<iBonusTradeAttitudeChangeLimit>2</iBonusTradeAttitudeChangeLimit>
+			<iOpenBordersAttitudeDivisor>25</iOpenBordersAttitudeDivisor>
+			<iOpenBordersAttitudeChangeLimit>2</iOpenBordersAttitudeChangeLimit>
+			<iDefensivePactAttitudeDivisor>12</iDefensivePactAttitudeDivisor>
+			<iDefensivePactAttitudeChangeLimit>2</iDefensivePactAttitudeChangeLimit>
+			<iShareWarAttitudeChange>1</iShareWarAttitudeChange>
+			<iShareWarAttitudeDivisor>8</iShareWarAttitudeDivisor>
+			<iShareWarAttitudeChangeLimit>3</iShareWarAttitudeChangeLimit>
+			<iFavoriteCivicAttitudeChange>1</iFavoriteCivicAttitudeChange>
+			<iFavoriteCivicAttitudeDivisor>10</iFavoriteCivicAttitudeDivisor>
+			<iFavoriteCivicAttitudeChangeLimit>5</iFavoriteCivicAttitudeChangeLimit>
+			<DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold>
+			<NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold>
+			<TechRefuseAttitudeThreshold>ATTITUDE_ANNOYED</TechRefuseAttitudeThreshold>
+			<StrategicBonusRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StrategicBonusRefuseAttitudeThreshold>
+			<HappinessBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HappinessBonusRefuseAttitudeThreshold>
+			<HealthBonusRefuseAttitudeThreshold>ATTITUDE_FURIOUS</HealthBonusRefuseAttitudeThreshold>
+			<MapRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</MapRefuseAttitudeThreshold>
+			<DeclareWarRefuseAttitudeThreshold>ATTITUDE_PLEASED</DeclareWarRefuseAttitudeThreshold>
+			<DeclareWarThemRefuseAttitudeThreshold>ATTITUDE_PLEASED</DeclareWarThemRefuseAttitudeThreshold>
+			<StopTradingRefuseAttitudeThreshold>ATTITUDE_PLEASED</StopTradingRefuseAttitudeThreshold>
+			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
+			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
+			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
+			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
+			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_PLEASED</DefensivePactRefuseAttitudeThreshold>
+			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
+			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
+			<iVassalPowerModifier>0</iVassalPowerModifier>
+			<iFreedomAppreciation>10</iFreedomAppreciation>
+			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<Traits/>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+			</Flavors>
+			<ContactRands>
+				<ContactRand>
+					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
+					<iContactRand>250</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
+					<iContactRand>250</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_JOIN_WAR</ContactType>
+					<iContactRand>20</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_STOP_TRADING</ContactType>
+					<iContactRand>50</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_GIVE_HELP</ContactType>
+					<iContactRand>250</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
+					<iContactRand>100</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
+					<iContactRand>250</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
+					<iContactRand>20</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
+					<iContactRand>80</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
+					<iContactRand>80</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_PEACE_TREATY</ContactType>
+					<iContactRand>20</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_TRADE_TECH</ContactType>
+					<iContactRand>5</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_TRADE_BONUS</ContactType>
+					<iContactRand>5</iContactRand>
+				</ContactRand>
+				<ContactRand>
+					<ContactType>CONTACT_TRADE_MAP</ContactType>
+					<iContactRand>20</iContactRand>
+				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
 					<iContactRand>10</iContactRand>
 				</ContactRand>
-      </ContactRands>
-      <ContactDelays>
-        <ContactDelay>
-          <ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
-          <iContactDelay>50</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
-          <iContactDelay>50</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_JOIN_WAR</ContactType>
-          <iContactDelay>20</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_STOP_TRADING</ContactType>
-          <iContactDelay>20</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_GIVE_HELP</ContactType>
-          <iContactDelay>50</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_ASK_FOR_HELP</ContactType>
-          <iContactDelay>50</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
-          <iContactDelay>50</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_OPEN_BORDERS</ContactType>
-          <iContactDelay>20</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
-          <iContactDelay>20</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
-          <iContactDelay>20</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_PEACE_TREATY</ContactType>
-          <iContactDelay>10</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_TRADE_TECH</ContactType>
-          <iContactDelay>30</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_TRADE_BONUS</ContactType>
-          <iContactDelay>20</iContactDelay>
-        </ContactDelay>
-        <ContactDelay>
-          <ContactType>CONTACT_TRADE_MAP</ContactType>
-          <iContactDelay>50</iContactDelay>
-        </ContactDelay>
+			</ContactRands>
+			<ContactDelays>
+				<ContactDelay>
+					<ContactType>CONTACT_RELIGION_PRESSURE</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_CIVIC_PRESSURE</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_JOIN_WAR</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_STOP_TRADING</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_GIVE_HELP</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_ASK_FOR_HELP</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_DEMAND_TRIBUTE</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_OPEN_BORDERS</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_DEFENSIVE_PACT</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_PEACE_TREATY</ContactType>
+					<iContactDelay>10</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_TRADE_TECH</ContactType>
+					<iContactDelay>30</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_TRADE_BONUS</ContactType>
+					<iContactDelay>20</iContactDelay>
+				</ContactDelay>
+				<ContactDelay>
+					<ContactType>CONTACT_TRADE_MAP</ContactType>
+					<iContactDelay>50</iContactDelay>
+				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_SLAVE</ContactType>
 					<iContactDelay>20</iContactDelay>
 				</ContactDelay>
-      </ContactDelays>
-      <MemoryDecays>
-        <MemoryDecay>
-          <MemoryType>MEMORY_GIVE_HELP</MemoryType>
-          <iMemoryRand>200</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_REFUSED_HELP</MemoryType>
-          <iMemoryRand>100</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
-          <iMemoryRand>50</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
-          <iMemoryRand>150</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
-          <iMemoryRand>100</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
-          <iMemoryRand>50</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
-          <iMemoryRand>100</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
-          <iMemoryRand>50</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_ACCEPTED_JOIN_WAR</MemoryType>
-          <iMemoryRand>150</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
-          <iMemoryRand>100</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-          <iMemoryRand>100</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
-          <iMemoryRand>50</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_STOPPED_TRADING_RECENT</MemoryType>
-          <iMemoryRand>30</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_MADE_DEMAND_RECENT</MemoryType>
-          <iMemoryRand>20</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_CANCELLED_OPEN_BORDERS</MemoryType>
-          <iMemoryRand>10</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
-          <iMemoryRand>100</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_RECEIVED_TECH_FROM_ANY</MemoryType>
-          <iMemoryRand>20</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
-          <iMemoryRand>20</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
-          <iMemoryRand>20</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
-          <iMemoryRand>50</iMemoryRand>
-        </MemoryDecay>
-        <MemoryDecay>
-          <MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
-          <iMemoryRand>50</iMemoryRand>
-        </MemoryDecay>
-      </MemoryDecays>
-      <MemoryAttitudePercents>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_DECLARED_WAR</MemoryType>
-          <iMemoryAttitudePercent>-300</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_DECLARED_WAR_ON_FRIEND</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_HIRED_WAR_ALLY</MemoryType>
-          <iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_NUKED_US</MemoryType>
-          <iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_NUKED_FRIEND</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_RAZED_CITY</MemoryType>
-          <iMemoryAttitudePercent>-250</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
-          <iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_GIVE_HELP</MemoryType>
-          <iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_REFUSED_HELP</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
-          <iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
-          <iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
-          <iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-          <iMemoryAttitudePercent>50</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_MADE_DEMAND</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
-          <iMemoryAttitudePercent>10</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
-          <iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
-          <iMemoryAttitudePercent>200</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
-          <iMemoryAttitudePercent>100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
-          <iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-        <MemoryAttitudePercent>
-          <MemoryType>MEMORY_LIBERATED_CITIES</MemoryType>
-          <iMemoryAttitudePercent>150</iMemoryAttitudePercent>
-        </MemoryAttitudePercent>
-      </MemoryAttitudePercents>
-      <NoWarAttitudeProbs>
-        <NoWarAttitudeProb>
-          <AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
-          <iNoWarProb>10</iNoWarProb>
-        </NoWarAttitudeProb>
-        <NoWarAttitudeProb>
-          <AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
-          <iNoWarProb>50</iNoWarProb>
-        </NoWarAttitudeProb>
-        <NoWarAttitudeProb>
-          <AttitudeType>ATTITUDE_PLEASED</AttitudeType>
-          <iNoWarProb>90</iNoWarProb>
-        </NoWarAttitudeProb>
-        <NoWarAttitudeProb>
-          <AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
-          <iNoWarProb>100</iNoWarProb>
-        </NoWarAttitudeProb>
-      </NoWarAttitudeProbs>
-      <UnitAIWeightModifiers>
-        <UnitAIWeightModifier>
-          <UnitAIType>UNITAI_WORKER</UnitAIType>
-          <iWeightModifier>100</iWeightModifier>
-        </UnitAIWeightModifier>
-      </UnitAIWeightModifiers>
-      <ImprovementWeightModifiers>
-        <ImprovementWeightModifier>
-          <ImprovementType>IMPROVEMENT_FARM</ImprovementType>
-          <iWeightModifier>20</iWeightModifier>
-        </ImprovementWeightModifier>
-        <ImprovementWeightModifier>
-          <ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
-          <iWeightModifier>20</iWeightModifier>
-        </ImprovementWeightModifier>
-      </ImprovementWeightModifiers>
-      <DiplomacyIntroMusicPeace>
-	<DiploMusicPeaceEra>
-		<EraType>ERA_ANCIENT</EraType>
-	</DiploMusicPeaceEra>
-	<DiploMusicPeaceEra>
-		<EraType>ERA_CLASSICAL</EraType>
-	</DiploMusicPeaceEra>
-	<DiploMusicPeaceEra>
-		<EraType>ERA_MEDIEVAL</EraType>
-	</DiploMusicPeaceEra>
-	<DiploMusicPeaceEra>
-		<EraType>ERA_RENAISSANCE</EraType>
-	</DiploMusicPeaceEra>
-	<DiploMusicPeaceEra>
-		<EraType>ERA_INDUSTRIAL</EraType>
-	</DiploMusicPeaceEra>
-	<DiploMusicPeaceEra>
-		<EraType>ERA_MODERN</EraType>
-	</DiploMusicPeaceEra>
-	<DiploMusicPeaceEra>
-		<EraType>ERA_FUTURE</EraType>
-	</DiploMusicPeaceEra>
-      </DiplomacyIntroMusicPeace>
-      <DiplomacyMusicPeace>
-        <DiploMusicPeaceEra>
-          <EraType>ERA_ANCIENT</EraType>
-          <DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
-        </DiploMusicPeaceEra>
-        <DiploMusicPeaceEra>
-          <EraType>ERA_CLASSICAL</EraType>
-          <DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
-        </DiploMusicPeaceEra>
-        <DiploMusicPeaceEra>
-          <EraType>ERA_MEDIEVAL</EraType>
-          <DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
-        </DiploMusicPeaceEra>
-        <DiploMusicPeaceEra>
-          <EraType>ERA_RENAISSANCE</EraType>
-          <DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
-        </DiploMusicPeaceEra>
-        <DiploMusicPeaceEra>
-          <EraType>ERA_INDUSTRIAL</EraType>
-          <DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
-        </DiploMusicPeaceEra>
-        <DiploMusicPeaceEra>
-          <EraType>ERA_MODERN</EraType>
-          <DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
-        </DiploMusicPeaceEra>
-        <DiploMusicPeaceEra>
-          <EraType>ERA_FUTURE</EraType>
-          <DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
-        </DiploMusicPeaceEra>
-      </DiplomacyMusicPeace>
-      <DiplomacyIntroMusicWar>
-        <DiploMusicWarEra>
-          <EraType>ERA_ANCIENT</EraType>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_CLASSICAL</EraType>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_MEDIEVAL</EraType>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_RENAISSANCE</EraType>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_INDUSTRIAL</EraType>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_MODERN</EraType>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_FUTURE</EraType>
-        </DiploMusicWarEra>
-      </DiplomacyIntroMusicWar>
-      <DiplomacyMusicWar>
-        <DiploMusicWarEra>
-          <EraType>ERA_ANCIENT</EraType>
-          <DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_CLASSICAL</EraType>
-          <DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_MEDIEVAL</EraType>
-          <DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_RENAISSANCE</EraType>
-          <DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_INDUSTRIAL</EraType>
-          <DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_MODERN</EraType>
-          <DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
-        </DiploMusicWarEra>
-        <DiploMusicWarEra>
-          <EraType>ERA_FUTURE</EraType>
-          <DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
-        </DiploMusicWarEra>
-      </DiplomacyMusicWar>
-    </LeaderHeadInfo>
-
-   <!--
-   <LeaderHeadInfo> 			
-   <Type>LEADER_ATATURK</Type> 			
-   <Description>TXT_KEY_LEADER_ATATURK</Description> 			
-   <Civilopedia>TXT_KEY_LEADER_ATATURK_PEDIA</Civilopedia> 			
-   <ArtDefineTag>ART_DEF_LEADER_ATATURK</ArtDefineTag> 			
-   <iWonderConstructRand>20</iWonderConstructRand> 			
-   <iBaseAttitude>1</iBaseAttitude> 			
-   <iBasePeaceWeight>9</iBasePeaceWeight> 			
-   <iPeaceWeightRand>3</iPeaceWeightRand> 			
-   <iWarmongerRespect>0</iWarmongerRespect> 			
-   <iEspionageWeight>60</iEspionageWeight> 			
-   <iRefuseToTalkWarThreshold>6</iRefuseToTalkWarThreshold> 			
-   <iNoTechTradeThreshold>20</iNoTechTradeThreshold> 			
-   <iTechTradeKnownPercent>0</iTechTradeKnownPercent> 			
-   <iMaxGoldTradePercent>20</iMaxGoldTradePercent> 			
-   <iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent> 			
-   <iMaxWarRand>400</iMaxWarRand> 			
-   <iMaxWarNearbyPowerRatio>100</iMaxWarNearbyPowerRatio> 			
-   <iMaxWarDistantPowerRatio>50</iMaxWarDistantPowerRatio> 			
-   <iMaxWarMinAdjacentLandPercent>1</iMaxWarMinAdjacentLandPercent> 			
-   <iLimitedWarRand>200</iLimitedWarRand> 			
-   <iLimitedWarPowerRatio>90</iLimitedWarPowerRatio> 			
-   <iDogpileWarRand>50</iDogpileWarRand> 			
-   <iMakePeaceRand>20</iMakePeaceRand> 			
-   <iDeclareWarTradeRand>40</iDeclareWarTradeRand> 			
-   <iDemandRebukedSneakProb>20</iDemandRebukedSneakProb> 			
-   <iDemandRebukedWarProb>5</iDemandRebukedWarProb> 			
-   <iRazeCityProb>0</iRazeCityProb> 			
-   <iBuildUnitProb>25</iBuildUnitProb> 			
-   <iBaseAttackOddsChange>0</iBaseAttackOddsChange> 			
-   <iAttackOddsChangeRand>8</iAttackOddsChangeRand> 			
-   <iWorseRankDifferenceAttitudeChange>0</iWorseRankDifferenceAttitudeChange> 			
-   <iBetterRankDifferenceAttitudeChange>4</iBetterRankDifferenceAttitudeChange> 			
-   <iCloseBordersAttitudeChange>-2</iCloseBordersAttitudeChange> 			
-   <iLostWarAttitudeChange>-1</iLostWarAttitudeChange> 			
-   <iAtWarAttitudeDivisor>-5</iAtWarAttitudeDivisor> 			
-   <iAtWarAttitudeChangeLimit>5</iAtWarAttitudeChangeLimit> 			
-   <iAtPeaceAttitudeDivisor>60</iAtPeaceAttitudeDivisor> 			
-   <iAtPeaceAttitudeChangeLimit>1</iAtPeaceAttitudeChangeLimit> 			
-   <iSameReligionAttitudeChange>1</iSameReligionAttitudeChange> 			
-   <iSameReligionAttitudeDivisor>10</iSameReligionAttitudeDivisor> 			
-   <iSameReligionAttitudeChangeLimit>6</iSameReligionAttitudeChangeLimit> 			
-   <iDifferentReligionAttitudeChange>-2</iDifferentReligionAttitudeChange> 			
-   <iDifferentReligionAttitudeDivisor>-5</iDifferentReligionAttitudeDivisor> 			
-   <iDifferentReligionAttitudeChangeLimit>-1</iDifferentReligionAttitudeChangeLimit> 			
-   <iBonusTradeAttitudeDivisor>50</iBonusTradeAttitudeDivisor> 			
-   <iBonusTradeAttitudeChangeLimit>2</iBonusTradeAttitudeChangeLimit> 			
-   <iOpenBordersAttitudeDivisor>25</iOpenBordersAttitudeDivisor> 			
-   <iOpenBordersAttitudeChangeLimit>2</iOpenBordersAttitudeChangeLimit> 			
-   <iDefensivePactAttitudeDivisor>12</iDefensivePactAttitudeDivisor> 			
-   <iDefensivePactAttitudeChangeLimit>2</iDefensivePactAttitudeChangeLimit> 			
-   <iShareWarAttitudeChange>1</iShareWarAttitudeChange> 			
-   <iShareWarAttitudeDivisor>8</iShareWarAttitudeDivisor> 			
-   <iShareWarAttitudeChangeLimit>3</iShareWarAttitudeChangeLimit> 			
-   <iFavoriteCivicAttitudeChange>1</iFavoriteCivicAttitudeChange> 			
-   <iFavoriteCivicAttitudeDivisor>10</iFavoriteCivicAttitudeDivisor> 			
-   <iFavoriteCivicAttitudeChangeLimit>4</iFavoriteCivicAttitudeChangeLimit> 			
-   <DemandTributeAttitudeThreshold>ATTITUDE_CAUTIOUS</DemandTributeAttitudeThreshold> 			
-   <NoGiveHelpAttitudeThreshold>ATTITUDE_CAUTIOUS</NoGiveHelpAttitudeThreshold> 			
-   <TechRefuseAttitudeThreshold>ATTITUDE_FURIOUS</TechRefuseAttitudeThreshold> 			
-   <StrategicBonusRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StrategicBonusRefuseAttitudeThreshold> 			
-   <HappinessBonusRefuseAttitudeThreshold>NONE</HappinessBonusRefuseAttitudeThreshold> 			
-   <HealthBonusRefuseAttitudeThreshold>NONE</HealthBonusRefuseAttitudeThreshold> 			
-   <MapRefuseAttitudeThreshold>ATTITUDE_ANNOYED</MapRefuseAttitudeThreshold> 			
-   <DeclareWarRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DeclareWarRefuseAttitudeThreshold> 			
-   <DeclareWarThemRefuseAttitudeThreshold>ATTITUDE_PLEASED</DeclareWarThemRefuseAttitudeThreshold> 			
-   <StopTradingRefuseAttitudeThreshold>ATTITUDE_PLEASED</StopTradingRefuseAttitudeThreshold> 			
-   <StopTradingThemRefuseAttitudeThreshold>ATTITUDE_FURIOUS</StopTradingThemRefuseAttitudeThreshold> 			
-   <AdoptCivicRefuseAttitudeThreshold>ATTITUDE_ANNOYED</AdoptCivicRefuseAttitudeThreshold> 			
-   <OpenBordersRefuseAttitudeThreshold>ATTITUDE_PLEASED</OpenBordersRefuseAttitudeThreshold>
-   <DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
-   <PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
-   <VassalRefuseAttitudeThreshold>ATTITUDE_FURIOUS</VassalRefuseAttitudeThreshold>			
-   <VassalRefuseAttitudeThreshold>ATTITUDE_ANNOYED</VassalRefuseAttitudeThreshold> 			
-   <iVassalPowerModifier>-20</iVassalPowerModifier> 			
-   <iFreedomAppreciation>10</iFreedomAppreciation> 			
-   <FavoriteCivic>CIVIC_FREE_RELIGION</FavoriteCivic> 			
-   <FavoriteReligion>RELIGION_ISLAM</FavoriteReligion> 			
-   <Traits/>		
-   <Flavors> 				
-   <Flavor> 					
-   <FlavorType>FLAVOR_GROWTH</FlavorType> 					
-   <iFlavor>2</iFlavor> 				
-   </Flavor> 				
-   <Flavor> 					
-   <FlavorType>FLAVOR_MILITARY</FlavorType> 					
-   <iFlavor>5</iFlavor> 				
-   </Flavor> 			
-   </Flavors> 			
-   <ContactRands> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_RELIGION_PRESSURE</ContactType> 					
-   <iContactRand>100</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_CIVIC_PRESSURE</ContactType> 					
-   <iContactRand>250</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_JOIN_WAR</ContactType> 					
-   <iContactRand>20</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_STOP_TRADING</ContactType> 					
-   <iContactRand>50</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_GIVE_HELP</ContactType> 					
-   <iContactRand>50</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_ASK_FOR_HELP</ContactType> 					
-   <iContactRand>50</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_DEMAND_TRIBUTE</ContactType> 					
-   <iContactRand>500</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_OPEN_BORDERS</ContactType> 					
-   <iContactRand>20</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_DEFENSIVE_PACT</ContactType> 					
-   <iContactRand>80</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType> 					
-   <iContactRand>80</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_PEACE_TREATY</ContactType> 					
-   <iContactRand>20</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_TRADE_TECH</ContactType> 					
-   <iContactRand>1</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_TRADE_BONUS</ContactType> 					
-   <iContactRand>1</iContactRand> 				
-   </ContactRand> 				
-   <ContactRand> 					
-   <ContactType>CONTACT_TRADE_MAP</ContactType> 					
-   <iContactRand>20</iContactRand> 				
-   </ContactRand> 			
-   </ContactRands> 			
-   <ContactDelays> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_RELIGION_PRESSURE</ContactType> 					
-   <iContactDelay>50</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_CIVIC_PRESSURE</ContactType> 					
-   <iContactDelay>50</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_JOIN_WAR</ContactType> 					
-   <iContactDelay>20</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_STOP_TRADING</ContactType> 					
-   <iContactDelay>20</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_GIVE_HELP</ContactType> 					
-   <iContactDelay>50</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_ASK_FOR_HELP</ContactType> 					
-   <iContactDelay>50</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_DEMAND_TRIBUTE</ContactType> 					
-   <iContactDelay>50</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_OPEN_BORDERS</ContactType> 					
-   <iContactDelay>20</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_DEFENSIVE_PACT</ContactType> 					
-   <iContactDelay>20</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_PERMANENT_ALLIANCE</ContactType> 					
-   <iContactDelay>20</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_PEACE_TREATY</ContactType> 					
-   <iContactDelay>10</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_TRADE_TECH</ContactType> 					
-   <iContactDelay>30</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_TRADE_BONUS</ContactType> 					
-   <iContactDelay>20</iContactDelay> 				
-   </ContactDelay> 				
-   <ContactDelay> 					
-   <ContactType>CONTACT_TRADE_MAP</ContactType> 					
-   <iContactDelay>50</iContactDelay> 				
-   </ContactDelay> 			
-   </ContactDelays> 			
-   <MemoryDecays> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_GIVE_HELP</MemoryType> 					
-   <iMemoryRand>200</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_REFUSED_HELP</MemoryType> 					
-   <iMemoryRand>100</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType> 					
-   <iMemoryRand>50</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_REJECTED_DEMAND</MemoryType> 					
-   <iMemoryRand>150</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType> 					
-   <iMemoryRand>100</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_DENIED_RELIGION</MemoryType> 					
-   <iMemoryRand>50</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType> 					
-   <iMemoryRand>100</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_DENIED_CIVIC</MemoryType> 					
-   <iMemoryRand>50</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_ACCEPTED_JOIN_WAR</MemoryType> 					
-   <iMemoryRand>150</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType> 					
-   <iMemoryRand>100</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType> 					
-   <iMemoryRand>100</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType> 					
-   <iMemoryRand>50</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_STOPPED_TRADING_RECENT</MemoryType> 					
-   <iMemoryRand>30</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_MADE_DEMAND_RECENT</MemoryType> 					
-   <iMemoryRand>20</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_CANCELLED_OPEN_BORDERS</MemoryType> 					
-   <iMemoryRand>10</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType> 					
-   <iMemoryRand>100</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_RECEIVED_TECH_FROM_ANY</MemoryType> 					
-   <iMemoryRand>20</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType> 					
-   <iMemoryRand>10</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_VOTED_FOR_US</MemoryType> 					
-   <iMemoryRand>10</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType> 					
-   <iMemoryRand>50</iMemoryRand> 				
-   </MemoryDecay> 				
-   <MemoryDecay> 					
-   <MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType> 					
-   <iMemoryRand>50</iMemoryRand> 				
-   </MemoryDecay> 			
-   </MemoryDecays> 			
-   <MemoryAttitudePercents> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_DECLARED_WAR</MemoryType> 					
-   <iMemoryAttitudePercent>-300</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_DECLARED_WAR_ON_FRIEND</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_HIRED_WAR_ALLY</MemoryType> 					
-   <iMemoryAttitudePercent>-200</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_NUKED_US</MemoryType> 					
-   <iMemoryAttitudePercent>-200</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_NUKED_FRIEND</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_RAZED_CITY</MemoryType> 					
-   <iMemoryAttitudePercent>-250</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType> 					
-   <iMemoryAttitudePercent>-200</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_SPY_CAUGHT</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 			
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_GIVE_HELP</MemoryType> 					
-   <iMemoryAttitudePercent>100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_REFUSED_HELP</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType> 					
-   <iMemoryAttitudePercent>100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_REJECTED_DEMAND</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType> 					
-   <iMemoryAttitudePercent>100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_DENIED_RELIGION</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType> 					
-   <iMemoryAttitudePercent>100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_DENIED_CIVIC</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType> 					
-   <iMemoryAttitudePercent>50</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_STOPPED_TRADING</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_MADE_DEMAND</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType> 					
-   <iMemoryAttitudePercent>20</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType> 					
-   <iMemoryAttitudePercent>-200</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_VOTED_FOR_US</MemoryType> 					
-   <iMemoryAttitudePercent>200</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType> 					
-   <iMemoryAttitudePercent>100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType> 					
-   <iMemoryAttitudePercent>-100</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 				
-   <MemoryAttitudePercent> 					
-   <MemoryType>MEMORY_LIBERATED_CITIES</MemoryType> 					
-   <iMemoryAttitudePercent>150</iMemoryAttitudePercent> 				
-   </MemoryAttitudePercent> 			
-   </MemoryAttitudePercents> 			
-   <NoWarAttitudeProbs> 				
-   <NoWarAttitudeProb> 					
-   <AttitudeType>ATTITUDE_ANNOYED</AttitudeType> 					
-   <iNoWarProb>10</iNoWarProb> 				
-   </NoWarAttitudeProb> 				
-   <NoWarAttitudeProb> 					
-   <AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType> 					
-   <iNoWarProb>50</iNoWarProb> 				
-   </NoWarAttitudeProb> 				
-   <NoWarAttitudeProb> 					
-   <AttitudeType>ATTITUDE_PLEASED</AttitudeType> 					
-   <iNoWarProb>90</iNoWarProb> 				
-   </NoWarAttitudeProb> 				
-   <NoWarAttitudeProb> 					
-   <AttitudeType>ATTITUDE_FRIENDLY</AttitudeType> 					
-   <iNoWarProb>100</iNoWarProb> 				
-   </NoWarAttitudeProb> 			
-   </NoWarAttitudeProbs> 			
-   <UnitAIWeightModifiers> 				
-   <UnitAIWeightModifier> 					
-   <UnitAIType>UNITAI_EXPLORE</UnitAIType> 					
-   <iWeightModifier>100</iWeightModifier> 				
-   </UnitAIWeightModifier> 			
-   </UnitAIWeightModifiers> 			
-   <ImprovementWeightModifiers> 				
-   <ImprovementWeightModifier> 					
-   <ImprovementType>IMPROVEMENT_TOWN</ImprovementType> 					
-   <iWeightModifier>20</iWeightModifier> 				
-   </ImprovementWeightModifier> 				
-   <ImprovementWeightModifier> 					
-   <ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType> 					
-   <iWeightModifier>20</iWeightModifier> 				
-   </ImprovementWeightModifier> 			
-   </ImprovementWeightModifiers> 			
-   <DiplomacyIntroMusicPeace> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_ANCIENT</EraType> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_CLASSICAL</EraType> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_MEDIEVAL</EraType> 					
-   <DiploScriptId/> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_RENAISSANCE</EraType> 					
-   <DiploScriptId/> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_INDUSTRIAL</EraType> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_MODERN</EraType> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_FUTURE</EraType> 				
-   </DiploMusicPeaceEra> 			
-   </DiplomacyIntroMusicPeace> 			
-   <DiplomacyMusicPeace> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_ANCIENT</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_MEHMED_EARLY</DiploScriptId> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_CLASSICAL</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_MEHMED_EARLY</DiploScriptId> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_MEDIEVAL</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_MEHMED_MIDDLE</DiploScriptId> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_RENAISSANCE</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_MEHMED_MIDDLE</DiploScriptId> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_INDUSTRIAL</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_MODERN</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId> 				
-   </DiploMusicPeaceEra> 				
-   <DiploMusicPeaceEra> 					
-   <EraType>ERA_FUTURE</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId> 				
-   </DiploMusicPeaceEra> 			
-   </DiplomacyMusicPeace> 			
-   <DiplomacyIntroMusicWar> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_ANCIENT</EraType> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_CLASSICAL</EraType> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_MEDIEVAL</EraType> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_RENAISSANCE</EraType> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_INDUSTRIAL</EraType> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_MODERN</EraType> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_FUTURE</EraType> 				
-   </DiploMusicWarEra> 			
-   </DiplomacyIntroMusicWar> 			
-   <DiplomacyMusicWar> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_ANCIENT</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY   </DiploScriptId> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_CLASSICAL</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY   </DiploScriptId> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_MEDIEVAL</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE   </DiploScriptId> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_RENAISSANCE</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE   </DiploScriptId> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_INDUSTRIAL</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE   </DiploScriptId> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_MODERN</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE   </DiploScriptId> 				
-   </DiploMusicWarEra> 				
-   <DiploMusicWarEra> 					
-   <EraType>ERA_FUTURE</EraType> 					
-   <DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE   </DiploScriptId> 				
-   </DiploMusicWarEra> 			
-   </DiplomacyMusicWar> 		
-   </LeaderHeadInfo>
-	-->
-
-	<LeaderHeadInfo>
-			<Type>LEADER_ATATURK</Type>
+			</ContactDelays>
+			<MemoryDecays>
+				<MemoryDecay>
+					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
+					<iMemoryRand>200</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
+					<iMemoryRand>150</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPTED_JOIN_WAR</MemoryType>
+					<iMemoryRand>150</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_STOPPED_TRADING_RECENT</MemoryType>
+					<iMemoryRand>30</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_MADE_DEMAND_RECENT</MemoryType>
+					<iMemoryRand>20</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_CANCELLED_OPEN_BORDERS</MemoryType>
+					<iMemoryRand>10</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
+					<iMemoryRand>100</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_RECEIVED_TECH_FROM_ANY</MemoryType>
+					<iMemoryRand>20</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
+					<iMemoryRand>20</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
+					<iMemoryRand>20</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+				<MemoryDecay>
+					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
+					<iMemoryRand>50</iMemoryRand>
+				</MemoryDecay>
+			</MemoryDecays>
+			<MemoryAttitudePercents>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DECLARED_WAR</MemoryType>
+					<iMemoryAttitudePercent>-300</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DECLARED_WAR_ON_FRIEND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_HIRED_WAR_ALLY</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_NUKED_US</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_NUKED_FRIEND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_RAZED_CITY</MemoryType>
+					<iMemoryAttitudePercent>-250</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_RAZED_HOLY_CITY</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_SPY_CAUGHT</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_GIVE_HELP</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_REFUSED_HELP</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPT_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_REJECTED_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_RELIGION</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_RELIGION</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_CIVIC</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_CIVIC</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_JOIN_WAR</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
+					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_STOPPED_TRADING</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_HIRED_TRADE_EMBARGO</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_MADE_DEMAND</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
+					<iMemoryAttitudePercent>10</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_VOTED_AGAINST_US</MemoryType>
+					<iMemoryAttitudePercent>-200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_VOTED_FOR_US</MemoryType>
+					<iMemoryAttitudePercent>200</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_EVENT_GOOD_TO_US</MemoryType>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_EVENT_BAD_TO_US</MemoryType>
+					<iMemoryAttitudePercent>-100</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+				<MemoryAttitudePercent>
+					<MemoryType>MEMORY_LIBERATED_CITIES</MemoryType>
+					<iMemoryAttitudePercent>150</iMemoryAttitudePercent>
+				</MemoryAttitudePercent>
+			</MemoryAttitudePercents>
+			<NoWarAttitudeProbs>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
+					<iNoWarProb>10</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_CAUTIOUS</AttitudeType>
+					<iNoWarProb>50</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_PLEASED</AttitudeType>
+					<iNoWarProb>90</iNoWarProb>
+				</NoWarAttitudeProb>
+				<NoWarAttitudeProb>
+					<AttitudeType>ATTITUDE_FRIENDLY</AttitudeType>
+					<iNoWarProb>100</iNoWarProb>
+				</NoWarAttitudeProb>
+			</NoWarAttitudeProbs>
+			<UnitAIWeightModifiers>
+				<UnitAIWeightModifier>
+					<UnitAIType>UNITAI_WORKER</UnitAIType>
+					<iWeightModifier>100</iWeightModifier>
+				</UnitAIWeightModifier>
+			</UnitAIWeightModifiers>
+			<ImprovementWeightModifiers>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
+					<iWeightModifier>20</iWeightModifier>
+				</ImprovementWeightModifier>
+				<ImprovementWeightModifier>
+					<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
+					<iWeightModifier>20</iWeightModifier>
+				</ImprovementWeightModifier>
+			</ImprovementWeightModifiers>
+			<DiplomacyIntroMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MODERN</EraType>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_FUTURE</EraType>
+				</DiploMusicPeaceEra>
+			</DiplomacyIntroMusicPeace>
+			<DiplomacyMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+					<DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+					<DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MODERN</EraType>
+					<DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_FUTURE</EraType>
+					<DiploScriptId>AS2D_DIPLO_AFONSO</DiploScriptId>
+				</DiploMusicPeaceEra>
+			</DiplomacyMusicPeace>
+			<DiplomacyIntroMusicWar>
+				<DiploMusicWarEra>
+					<EraType>ERA_ANCIENT</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_CLASSICAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MODERN</EraType>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_FUTURE</EraType>
+				</DiploMusicWarEra>
+			</DiplomacyIntroMusicWar>
+			<DiplomacyMusicWar>
+				<DiploMusicWarEra>
+					<EraType>ERA_ANCIENT</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_CLASSICAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_EARLY</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_MIDDLE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_MODERN</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
+				</DiploMusicWarEra>
+				<DiploMusicWarEra>
+					<EraType>ERA_FUTURE</EraType>
+					<DiploScriptId>AS2D_DIPLO_WARDRUMS_LATE</DiploScriptId>
+				</DiploMusicWarEra>
+			</DiplomacyMusicWar>
+		</LeaderHeadInfo>
+		<LeaderHeadInfo>
+			<Type>LEADER_ATATURK</Type> <!-- Personality: Hannibal -->
 			<Description>TXT_KEY_LEADER_ATATURK</Description>
 			<Civilopedia>TXT_KEY_LEADER_ATATURK_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_ATATURK</ArtDefineTag>
@@ -38050,17 +37282,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SECULARISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -38459,36 +37688,36 @@
 					<EraType>ERA_FUTURE</EraType>
 				</DiploMusicPeaceEra>
 			</DiplomacyIntroMusicPeace>
-			<DiplomacyMusicPeace> 				
-   				<DiploMusicPeaceEra> 					
-   					<EraType>ERA_ANCIENT</EraType> 					
-   					<DiploScriptId>AS2D_DIPLO_MEHMED_EARLY</DiploScriptId> 				
-   				</DiploMusicPeaceEra> 				
-   				<DiploMusicPeaceEra> 					
-   					<EraType>ERA_CLASSICAL</EraType> 					
-  					<DiploScriptId>AS2D_DIPLO_MEHMED_EARLY</DiploScriptId> 				
-   				</DiploMusicPeaceEra> 				
-   				<DiploMusicPeaceEra> 					
-   					<EraType>ERA_MEDIEVAL</EraType> 					
-   					<DiploScriptId>AS2D_DIPLO_MEHMED_MIDDLE</DiploScriptId> 				
-   				</DiploMusicPeaceEra> 				
-   				<DiploMusicPeaceEra> 					
-   					<EraType>ERA_RENAISSANCE</EraType> 					
-   					<DiploScriptId>AS2D_DIPLO_MEHMED_MIDDLE</DiploScriptId> 				
-   				</DiploMusicPeaceEra> 				
-   				<DiploMusicPeaceEra> 					
-   					<EraType>ERA_INDUSTRIAL</EraType> 					
-   					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId> 				
-   				</DiploMusicPeaceEra> 				
-   				<DiploMusicPeaceEra> 					
-   					<EraType>ERA_MODERN</EraType> 					
-   					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId> 				
-   				</DiploMusicPeaceEra> 				
-   				<DiploMusicPeaceEra> 					
-   					<EraType>ERA_FUTURE</EraType> 					
-   					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId> 				
-   				</DiploMusicPeaceEra> 			
-   			</DiplomacyMusicPeace> 
+			<DiplomacyMusicPeace>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_ANCIENT</EraType>
+					<DiploScriptId>AS2D_DIPLO_MEHMED_EARLY</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_CLASSICAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_MEHMED_EARLY</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MEDIEVAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_MEHMED_MIDDLE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_RENAISSANCE</EraType>
+					<DiploScriptId>AS2D_DIPLO_MEHMED_MIDDLE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_INDUSTRIAL</EraType>
+					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_MODERN</EraType>
+					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+				<DiploMusicPeaceEra>
+					<EraType>ERA_FUTURE</EraType>
+					<DiploScriptId>AS2D_DIPLO_MEHMED_LATE</DiploScriptId>
+				</DiploMusicPeaceEra>
+			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
 				<DiploMusicWarEra>
 					<EraType>ERA_ANCIENT</EraType>
@@ -38543,7 +37772,6 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-		
 		<LeaderHeadInfo>
 			<Type>LEADER_MARIA_II</Type>
 			<Description>TXT_KEY_LEADER_MARIA_II</Description>
@@ -39098,7 +38326,6 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
 			<Type>LEADER_HITLER</Type>
 			<Description>TXT_KEY_LEADER_HITLER</Description>
@@ -39169,17 +38396,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_TOTALITARIANISM</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -39646,7 +38870,6 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
 			<Type>LEADER_FRANCO</Type>
 			<Description>TXT_KEY_LEADER_FRANCO</Description>
@@ -39674,7 +38897,6 @@
 			<iDeclareWarTradeRand>40</iDeclareWarTradeRand>
 			<iDemandRebukedSneakProb>40</iDemandRebukedSneakProb>
 			<iDemandRebukedWarProb>20</iDemandRebukedWarProb>
-			<!-- Rhye -->
 			<iRazeCityProb>40</iRazeCityProb>
 			<iBuildUnitProb>20</iBuildUnitProb>
 			<iBaseAttackOddsChange>2</iBaseAttackOddsChange>
@@ -39718,17 +38940,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -40821,17 +40040,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_ANNOYED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_MERCANTILISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -41295,7 +40511,6 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
-
 		<LeaderHeadInfo>
 			<Type>LEADER_CHIANG_KAISHEK</Type>
 			<Description>TXT_KEY_LEADER_CHIANG_KAISHEK</Description>
@@ -41366,17 +40581,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_FURIOUS</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -41919,17 +41131,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_PLEASED</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -42923,7 +42132,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_KHOMEINI</Type>	<!-- personality: Montezuma -->
+			<Type>LEADER_KHOMEINI</Type> <!-- Personality: Montezuma -->
 			<Description>TXT_KEY_LEADER_KHOMEINI</Description>
 			<Civilopedia>TXT_KEY_LEADER_KHOMEINI_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_KHOMEINI</ArtDefineTag>
@@ -42992,17 +42201,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_FANATICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -43420,7 +42626,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_TAIZONG</Type>				<!-- based on Asoka -->
+			<Type>LEADER_TAIZONG</Type> <!-- Personality: Asoka -->
 			<Description>TXT_KEY_LEADER_TAIZONG</Description>
 			<Civilopedia>TXT_KEY_LEADER_TAIZONG_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_TAIZONG</ArtDefineTag>
@@ -43489,17 +42695,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_GUILDS</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -43968,7 +43171,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_HONGWU</Type>					<!-- inofficial modular Taizong -->
+			<Type>LEADER_HONGWU</Type>
 			<Description>TXT_KEY_LEADER_HONGWU</Description>
 			<Civilopedia>TXT_KEY_LEADER_HONGWU_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_HONGWU</ArtDefineTag>
@@ -46137,7 +45340,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_SHIVAJI</Type><!-- Leoreth: Sitting Bull -->
+			<Type>LEADER_SHIVAJI</Type> <!-- Personality: Sitting Bull -->
 			<Description>TXT_KEY_LEADER_SHIVAJI</Description>
 			<Civilopedia>TXT_KEY_LEADER_SHIVAJI_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_SHIVAJI</ArtDefineTag>
@@ -46206,17 +45409,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -46756,17 +45956,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -47261,8 +46458,8 @@
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
 			<Type>LEADER_ALP</Type>
-			<Description>Alp Arslan</Description>
-			<Civilopedia>TXT_KEY_LEADER_BARBARIAN_PEDIA</Civilopedia>
+			<Description>TXT_KEY_LEADER_ALP_ARSLAN</Description>
+			<Civilopedia>TXT_KEY_LEADER_ALP_ARSLAN_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_BARBARIAN</ArtDefineTag>
 			<iWonderConstructRand>20</iWonderConstructRand>
 			<iBaseAttitude>0</iBaseAttitude>
@@ -48089,17 +47286,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>-10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -48648,17 +47842,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -49197,17 +48388,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -49746,17 +48934,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SCHOLASTICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -50227,7 +49412,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_IBN_TUGHLUQ</Type>					<!-- personality: Kublai Khan -->
+			<Type>LEADER_IBN_TUGHLUQ</Type> <!-- Personality: Kublai Khan -->
 			<Description>TXT_KEY_LEADER_IBN_TUGHLUQ</Description>
 			<Civilopedia>TXT_KEY_LEADER_IBN_TUGHLUQ_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_IBN_TUGHLUQ</ArtDefineTag>
@@ -50296,17 +49481,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_ANNOYED</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_FANATICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -50844,17 +50026,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_ANNOYED</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_FURIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -52932,7 +52111,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_SOBIESKI</Type>
+			<Type>LEADER_SOBIESKI</Type> <!-- Personality: Hannibal -->
 			<Description>TXT_KEY_LEADER_SOBIESKI</Description>
 			<Civilopedia>TXT_KEY_LEADER_SOBIESKI_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_SOBIESKI</ArtDefineTag>
@@ -53567,8 +52746,7 @@
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CITY_STATES</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<Traits>
-			</Traits>
+			<Traits/>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -56196,7 +55374,7 @@
 				</DiploMusicWarEra>
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
- 		<LeaderHeadInfo>
+		<LeaderHeadInfo>
 			<Type>LEADER_YAQUB</Type>
 			<Description>TXT_KEY_LEADER_YAQUB</Description>
 			<Civilopedia>TXT_KEY_LEADER_YAQUB_PEDIA</Civilopedia>
@@ -59598,17 +58776,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -60706,17 +59881,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -61797,17 +60969,14 @@
 			<StopTradingThemRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</StopTradingThemRefuseAttitudeThreshold>
 			<AdoptCivicRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</AdoptCivicRefuseAttitudeThreshold>
 			<ConvertReligionRefuseAttitudeThreshold>ATTITUDE_PLEASED</ConvertReligionRefuseAttitudeThreshold>
-			<!-- Rhye - start -->
 			<OpenBordersRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</OpenBordersRefuseAttitudeThreshold>
 			<DefensivePactRefuseAttitudeThreshold>ATTITUDE_ANNOYED</DefensivePactRefuseAttitudeThreshold>
 			<PermanentAllianceRefuseAttitudeThreshold>ATTITUDE_PLEASED</PermanentAllianceRefuseAttitudeThreshold>
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
-			<!-- Rhye - end -->
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_STANDING_ARMY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
-			<!-- Rhye -->
 			<Traits/>
 			<Flavors>
 				<Flavor>

@@ -14174,7 +14174,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_AESTHETICS</ObsoleteTech> <!--obsolete Classical era-->
+				<ObsoleteTech>TECH_AESTHETICS</ObsoleteTech><!--obsolete Classical era-->
 				<ObsoleteTech>TECH_HORSEBACK_RIDING</ObsoleteTech>
 				<ObsoleteTech>TECH_CODE_OF_LAWS</ObsoleteTech>
 				<ObsoleteTech>TECH_MATHEMATICS</ObsoleteTech>
@@ -14266,7 +14266,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_AESTHETICS</ObsoleteTech> <!--obsolete Classical era-->
+				<ObsoleteTech>TECH_AESTHETICS</ObsoleteTech><!--obsolete Classical era-->
 				<ObsoleteTech>TECH_HORSEBACK_RIDING</ObsoleteTech>
 				<ObsoleteTech>TECH_CODE_OF_LAWS</ObsoleteTech>
 				<ObsoleteTech>TECH_MATHEMATICS</ObsoleteTech>
@@ -14969,7 +14969,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech> <!--when curissars are available-->
+				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech><!--when curissars are available-->
 				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech>
 				<ObsoleteTech>TECH_RIFLING</ObsoleteTech>
 			</ObsoleteTechs>

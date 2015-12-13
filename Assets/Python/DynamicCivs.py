@@ -201,658 +201,659 @@ class DynamicCivs:
                                      'GERMANY', 'RUSSIA', 'NETHERLANDS', 'MALI', 'PORTUGAL', 'INCA', 'MONGOLIA', 'AZTECS', 'TURKEY', 'AMERICA']
                 
                 self.defaultNames = {
-                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_DEFAULT",
-                        iIndia : "TXT_KEY_CIV_INDIA_DESC_DEFAULT",
-                        iChina : "TXT_KEY_CIV_CHINA_DESC_DEFAULT",
-                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_DEFAULT",
-			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_DEFAULT",
-                        iGreece : "TXT_KEY_CIV_GREECE_DESC_DEFAULT",
-                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEFAULT",
-                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEFAULT",
-			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_DEFAULT",
-                        iRome : "TXT_KEY_CIV_ROME_DESC_DEFAULT",
-                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEFAULT",
-			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEFAULT",
-                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_DEFAULT",
-                        iKorea : "TXT_KEY_CIV_KOREA_DESC_DEFAULT",
-                        iMaya : "TXT_KEY_CIV_MAYA_DESC_DEFAULT",
-                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT",
-                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_DEFAULT",
-                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_DEFAULT",
-			iTibet : "TXT_KEY_CIV_TIBET_DESC_DEFAULT",
-                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_DEFAULT",
-                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_DEFAULT",
-			iMoors : "TXT_KEY_CIV_MOORS_DESC_DEFAULT",
-                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_DEFAULT",
-                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_DEFAULT",
-                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_DEFAULT",
-                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_DEFAULT",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_DEFAULT",
-                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_DEFAULT",
-                        iMali : "TXT_KEY_CIV_MALI_DESC_DEFAULT",
-			iPoland : "TXT_KEY_CIV_POLAND_DESC_DEFAULT",
-                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_DEFAULT",
-                        iInca : "TXT_KEY_CIV_INCA_DESC_DEFAULT",
-			iItaly : "TXT_KEY_CIV_ITALY_DESC_DEFAULT",
-                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_DEFAULT",
-                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_DEFAULT",
-			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_DEFAULT",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_DEFAULT",
-			iThailand : "TXT_KEY_CIV_THAILAND_DESC_DEFAULT",
-			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEFAULT",
-			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEFAULT",
-                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEFAULT",
-			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_DEFAULT",
-			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEFAULT",
-			iCanada : "TXT_KEY_CIV_CANADA_DESC_DEFAULT",
+                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_DEFAULT",	# Kingdom of Egypt
+                        iIndia : "TXT_KEY_CIV_INDIA_DESC_DEFAULT",	# Maharajate of India
+                        iChina : "TXT_KEY_CIV_CHINA_DESC_DEFAULT",	# Middle Kingdom of China
+                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_DEFAULT",	# Babylonian Empire
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_DEFAULT",	# Indus Valley City States
+                        iGreece : "TXT_KEY_CIV_GREECE_DESC_DEFAULT",	# Kingdom of Greece
+                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEFAULT",	# Persian Shahdom
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEFAULT",	# Kingdom of Carthage
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_DEFAULT",	# Kingdom of Tonga
+                        iRome : "TXT_KEY_CIV_ROME_DESC_DEFAULT",	# Roman Kingdom
+                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEFAULT",	# Japanese Shogunate
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEFAULT",	# Chola Kingdom
+                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_DEFAULT",	# Kingdom of Ethiopia
+                        iKorea : "TXT_KEY_CIV_KOREA_DESC_DEFAULT",	# Three Kingdoms of Korea
+                        iMaya : "TXT_KEY_CIV_MAYA_DESC_DEFAULT",	# Mayan City-States
+                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT",	# Byzantine Empire
+                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_DEFAULT",	# Viking Union
+                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_DEFAULT",	# Arabian Sultanates
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_DEFAULT",	# Kingdom of Tibet
+                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_DEFAULT",	# Kingdom of Cambodia
+                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_DEFAULT",	# Kingdom of Indonesia
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_DEFAULT",	# Kingdom of Morocco
+                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_DEFAULT",	# Kingdom of Spain
+                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_DEFAULT",	# Kingdom of France
+                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_DEFAULT",	# Kingdom of England
+                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_DEFAULT",	# Kingdom of Germany
+                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_DEFAULT",	# Tsardom of Russia
+                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_DEFAULT",	# Kingdom of the Netherlands
+                        iMali : "TXT_KEY_CIV_MALI_DESC_DEFAULT",	# Mali Empire
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_DEFAULT",	# Kingdom of Poland
+                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_DEFAULT",	# Kingdom of Portugal
+                        iInca : "TXT_KEY_CIV_INCA_DESC_DEFAULT",	# Kingdom of Cuzco
+			iItaly : "TXT_KEY_CIV_ITALY_DESC_DEFAULT",	# Kingdom of Italy
+                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_DEFAULT",	# Mongol State
+                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_DEFAULT",	# Aztec Triple Alliance
+			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_DEFAULT",	# Mughal Empire
+                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_DEFAULT",	# Ottoman Sultanate
+			iThailand : "TXT_KEY_CIV_THAILAND_DESC_DEFAULT",	# Kingdom of Siam
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEFAULT",	# Kingdom of Kongo
+			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEFAULT",	# Kingdom of Prussia
+                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEFAULT",	# Empire of Columbia
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_DEFAULT",	# United Provinces of the River Plate
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEFAULT",	# Kingdom of Brazil
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_DEFAULT",	# Dominion of Canada
                 }
 		
 		self.peopleNames = {
-                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_PEOPLES",
-                        iIndia : "TXT_KEY_CIV_INDIA_DESC_PEOPLES",
-                        iChina : "TXT_KEY_CIV_CHINA_DESC_PEOPLES",
-                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_PEOPLES",
-			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_PEOPLES",
-                        iGreece : "TXT_KEY_CIV_GREECE_DESC_PEOPLES",
-                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_PEOPLES",
-                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES",
-			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_PEOPLES",
-                        iRome : "TXT_KEY_CIV_ROME_DESC_PEOPLES",
-                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_PEOPLES",
-			iTamils : "TXT_KEY_CIV_TAMILS_DESC_PEOPLES",
-                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_PEOPLES",
-                        iKorea : "TXT_KEY_CIV_KOREA_DESC_PEOPLES",
-                        iMaya : "TXT_KEY_CIV_MAYA_DESC_PEOPLES",
-                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_PEOPLES",
-                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_PEOPLES",
-                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_PEOPLES",
-			iTibet : "TXT_KEY_CIV_TIBET_DESC_PEOPLES",
-                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_PEOPLES",
-                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_PEOPLES",
-			iMoors : "TXT_KEY_CIV_MOORS_DESC_PEOPLES",
-                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_PEOPLES",
-                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_PEOPLES",
-                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_PEOPLES",
-                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_PEOPLES",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_PEOPLES",
-                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_PEOPLES",
-                        iMali : "TXT_KEY_CIV_MALI_DESC_PEOPLES",
-			iPoland : "TXT_KEY_CIV_POLAND_DESC_PEOPLES",
-                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_PEOPLES",
-                        iInca : "TXT_KEY_CIV_INCA_DESC_PEOPLES",
-			iItaly : "TXT_KEY_CIV_ITALY_DESC_PEOPLES",
-                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_PEOPLES",
-                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_PEOPLES",
-			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_PEOPLES",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_PEOPLES",
-			iThailand : "TXT_KEY_CIV_THAILAND_DESC_PEOPLES",
-			iCongo : "TXT_KEY_CIV_CONGO_DESC_PEOPLES",
-			iGermany : "TXT_KEY_CIV_GERMANY_DESC_PEOPLES",
-                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_PEOPLES",
-			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_PEOPLES",
-			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_PEOPLES",
-			iCanada : "TXT_KEY_CIV_CANADA_DESC_PEOPLES",
+                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_PEOPLES",	# Peoples of the Nile
+                        iIndia : "TXT_KEY_CIV_INDIA_DESC_PEOPLES",	# Indo-Aryan Peoples
+                        iChina : "TXT_KEY_CIV_CHINA_DESC_PEOPLES",	# Han Peoples
+                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_PEOPLES",	# Mesopotamian Peoples
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_PEOPLES",	# Indus Valley Peoples
+                        iGreece : "TXT_KEY_CIV_GREECE_DESC_PEOPLES",	# Mycenean Peoples
+                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_PEOPLES",	# Parsi Peoples
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES",	# Canaanite Peoples
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_PEOPLES",	# Polynesian Peoples
+                        iRome : "TXT_KEY_CIV_ROME_DESC_PEOPLES",	# Italic Peoples
+                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_PEOPLES",	# Yamato Peoples
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_PEOPLES",	# Dravidian Peoples
+                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_PEOPLES",	# Abyssinian Peoples
+                        iKorea : "TXT_KEY_CIV_KOREA_DESC_PEOPLES",	# Korean Peoples
+                        iMaya : "TXT_KEY_CIV_MAYA_DESC_PEOPLES",	# Maya Peoples
+                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_PEOPLES",	# Byzantine Peoples
+                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_PEOPLES",	# Norse Peoples
+                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_PEOPLES",	# Bedouin Peoples
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_PEOPLES",	# Tibetan Peoples
+                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_PEOPLES",	# Khmer Peoples
+                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_PEOPLES",	# Malay Peoples
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_PEOPLES",	# Andalusian Peoples
+                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_PEOPLES",	# Asturian Peoples
+                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_PEOPLES",	# Frankish Peoples
+                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_PEOPLES",	# Anglo-Saxon Peoples
+                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_PEOPLES",	# Germanic Peoples
+                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_PEOPLES",	# Slavic Peoples
+                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_PEOPLES",	# Dutch Peoples
+                        iMali : "TXT_KEY_CIV_MALI_DESC_PEOPLES",	# Mandinka Peoples
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_PEOPLES",	# Polish Peoples
+                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_PEOPLES",	# Lusitanian Peoples
+                        iInca : "TXT_KEY_CIV_INCA_DESC_PEOPLES",	# Andean Peoples
+			iItaly : "TXT_KEY_CIV_ITALY_DESC_PEOPLES",	# Lombard Peoples
+                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_PEOPLES",	# Mongolian Peoples
+                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_PEOPLES",	# Mexica Peoples
+			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_PEOPLES",	# Ghorid Peoples
+                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_PEOPLES",	# Turkish Peoples
+			iThailand : "TXT_KEY_CIV_THAILAND_DESC_PEOPLES",	# Thai Peoples
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_PEOPLES",	# Congolese Peoples
+			iGermany : "TXT_KEY_CIV_GERMANY_DESC_PEOPLES",	# Prussian Peoples
+                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_PEOPLES",	# American Peoples
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_PEOPLES",	# Argentine Peoples
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_PEOPLES",	# Brazilian Peoples
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_PEOPLES",	# Canadian Peoples
                 }
 				
 		self.specificVassalNames = {
 			iEgypt : {
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_EGYPTIAN_VASSAL",	# Retenu
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_EGYPTIAN_VASSAL"},	# Punt
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_EGYPTIAN_VASSAL",	# Province of Retjenu
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_EGYPTIAN_VASSAL"},	# Kingdom of Punt
 			#iIndia - none so far
 			iChina : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_CHINESE_VASSAL",
-				iIndia : "TXT_KEY_CIV_INDIA_CHINESE_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_CHINESE_VASSAL",
-				iGreece : "TXT_KEY_CIV_GREECE_CHINESE_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_CHINESE_VASSAL",
-				iCarthage : "TXT_KEY_CIV_CARTHAGE_CHINESE_VASSAL",
-				iRome : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
-				iJapan : "TXT_KEY_CIV_JAPAN_CHINESE_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_CHINESE_VASSAL",
-				iKorea : "TXT_KEY_CIV_KOREA_CHINESE_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_CHINESE_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_CHINESE_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_CHINESE_VASSAL",
-				iArabia : "TXT_KEY_CIV_ARABIA_CHINESE_VASSAL",
-				iTibet : "TXT_KEY_CIV_TIBET_CHINESE_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_CHINESE_VASSAL",
-				iIndonesia : "TXT_KEY_CIV_INDONESIA_CHINESE_VASSAL",
-				iSpain : "TXT_KEY_CIV_SPAIN_CHINESE_VASSAL",
-				iFrance : "TXT_KEY_CIV_FRANCE_CHINESE_VASSAL",
-				iEngland : "TXT_KEY_CIV_ENGLAND_CHINESE_VASSAL",
-				iHolyRome : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
-				iRussia : "TXT_KEY_CIV_RUSSIA_CHINESE_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_CHINESE_VASSAL",
-				iMali : "TXT_KEY_CIV_MALI_CHINESE_VASSAL",
-				iPortugal : "TXT_KEY_CIV_PORTUGAL_CHINESE_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_CHINESE_VASSAL",
-				iItaly : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
-				iMongolia : "TXT_KEY_CIV_MONGOLIA_CHINESE_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_CHINESE_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_CHINESE_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_CHINESE_VASSAL",
-				iThailand : "TXT_KEY_CIV_THAILAND_CHINESE_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",
-				iAmerica : "TXT_KEY_CIV_AMERICA_CHINESE_VASSAL"},
+				iEgypt : "TXT_KEY_CIV_EGYPT_CHINESE_VASSAL",	# Tributary Haixi State
+				iIndia : "TXT_KEY_CIV_INDIA_CHINESE_VASSAL",	# Tributary Shendu State
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_CHINESE_VASSAL",	# Tributary Tiaozhi State
+				iGreece : "TXT_KEY_CIV_GREECE_CHINESE_VASSAL",	# Tributary Greek State
+				iPersia : "TXT_KEY_CIV_PERSIA_CHINESE_VASSAL",	# Tributary Anxi State
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_CHINESE_VASSAL",	# Tributary Phoenician State
+				iRome : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",	# Tributary Daqin State
+				iJapan : "TXT_KEY_CIV_JAPAN_CHINESE_VASSAL",	# Tributary Wo State
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_CHINESE_VASSAL",	# Tributary Ethiopian State
+				iKorea : "TXT_KEY_CIV_KOREA_CHINESE_VASSAL",	# Tributary Chaoxian State
+				iMaya : "TXT_KEY_CIV_MAYA_CHINESE_VASSAL",	# Tributary Mayan State
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_CHINESE_VASSAL",	# Tributary Daqin State
+				iVikings : "TXT_KEY_CIV_VIKINGS_CHINESE_VASSAL",	# Tributary Viking State
+				iArabia : "TXT_KEY_CIV_ARABIA_CHINESE_VASSAL",	# Tributary Dashi State
+				iTibet : "TXT_KEY_CIV_TIBET_CHINESE_VASSAL",	# Tributary Xizang State
+				iKhmer : "TXT_KEY_CIV_KHMER_CHINESE_VASSAL",	# Tributary Gaomian State
+				iIndonesia : "TXT_KEY_CIV_INDONESIA_CHINESE_VASSAL",	# Tributary Indonesian State
+				iSpain : "TXT_KEY_CIV_SPAIN_CHINESE_VASSAL",	# Tributary Spanish State
+				iFrance : "TXT_KEY_CIV_FRANCE_CHINESE_VASSAL",	# Tributary French State
+				iEngland : "TXT_KEY_CIV_ENGLAND_CHINESE_VASSAL",	# Tributary English State
+				iHolyRome : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",	# Tributary German State
+				iRussia : "TXT_KEY_CIV_RUSSIA_CHINESE_VASSAL",	# Tributary Russian State
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_CHINESE_VASSAL",	# Tributary Dutch State
+				iMali : "TXT_KEY_CIV_MALI_CHINESE_VASSAL",	# Tributary Malian State
+				iPortugal : "TXT_KEY_CIV_PORTUGAL_CHINESE_VASSAL",	# Tributary Portuguese State
+				iInca : "TXT_KEY_CIV_INCA_CHINESE_VASSAL",	# Tributary Incan State
+				iItaly : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",	# Tributary Daqin State
+				iMongolia : "TXT_KEY_CIV_MONGOLIA_CHINESE_VASSAL",	# Tributary Meng State
+				iAztecs : "TXT_KEY_CIV_AZTECS_CHINESE_VASSAL",	# Tributary Aztec State
+				iTurkey : "TXT_KEY_CIV_TURKEY_CHINESE_VASSAL",	# Tributary Tujue State
+				iMughals : "TXT_KEY_CIV_MUGHALS_CHINESE_VASSAL",	# Tributary Mughal State
+				iThailand : "TXT_KEY_CIV_THAILAND_CHINESE_VASSAL",	# Tributary Thai State
+				iGermany : "TXT_KEY_CIV_GERMANY_CHINESE_VASSAL",	# Tributary German State
+				iAmerica : "TXT_KEY_CIV_AMERICA_CHINESE_VASSAL"},	# Tributary American State
 			iBabylonia : {
 				iPhoenicia : "TXT_KEY_CIV_PHOENICIA_BABYLONIAN_VASSAL"},	# Babylonian Phoenicia
 			iGreece : {
-				iIndia : "TXT_KEY_CIV_INDIA_GREEK_VASSAL",	# Greco-Bactrians
-				iEgypt : "TXT_KEY_CIV_EGYPT_GREEK_VASSAL",	#  Ptolemaic Egypt
-				iPersia : "TXT_KEY_CIV_PERSIA_GREEK_VASSAL"},	# Seleucid Babylonia
+				iIndia : "TXT_KEY_CIV_INDIA_GREEK_VASSAL",	# Greco-Bactrian Kingdom
+				iEgypt : "TXT_KEY_CIV_EGYPT_GREEK_VASSAL",	#  Ptolemid Empire
+				iPersia : "TXT_KEY_CIV_PERSIA_GREEK_VASSAL"},	# Seleucid Empire
 			iPersia : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_PERSIAN_VASSAL",
-				iIndia : "TXT_KEY_CIV_INDIA_PERSIAN_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_PERSIAN_VASSAL",
-				iGreece : "TXT_KEY_CIV_GREECE_PERSIAN_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_PERSIAN_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_PERSIAN_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_PERSIAN_VASSAL",
-				iArabia : "TXT_KEY_CIV_ARABIA_PERSIAN_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_PERSIAN_VASSAL",
-				iIndonesia : "TXT_KEY_CIV_INDONESIA_PERSIAN_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_PERSIAN_VASSAL",
-				iMongolia : "TXT_KEY_CIV_MONGOLIA_PERSIAN_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_PERSIAN_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_PERSIAN_VASSAL"},
+				iEgypt : "TXT_KEY_CIV_EGYPT_PERSIAN_VASSAL",	# Ninth Satrapy
+				iIndia : "TXT_KEY_CIV_INDIA_PERSIAN_VASSAL",	# Twentieth Satrapy
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_PERSIAN_VASSAL",	# Sixth Satrapy
+				iGreece : "TXT_KEY_CIV_GREECE_PERSIAN_VASSAL",	# First Satrapy
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_PERSIAN_VASSAL",	# Seventeenth Satrapy
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_PERSIAN_VASSAL",	# Satrapy of Anatolia
+				iVikings : "TXT_KEY_CIV_VIKINGS_PERSIAN_VASSAL",	# Satrapy of Scandinavia
+				iArabia : "TXT_KEY_CIV_ARABIA_PERSIAN_VASSAL",	# Fifth Satrapy
+				iKhmer : "TXT_KEY_CIV_KHMER_PERSIAN_VASSAL",	# Satrapy of Kampuchea
+				iIndonesia : "TXT_KEY_CIV_INDONESIA_PERSIAN_VASSAL",	# Satrapy of Malacca
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_PERSIAN_VASSAL",	# Satrapy of the Netherlands
+				iMongolia : "TXT_KEY_CIV_MONGOLIA_PERSIAN_VASSAL",	# Fifteenth Satrapy
+				iAztecs : "TXT_KEY_CIV_AZTECS_PERSIAN_VASSAL",	# Satrapy of Mexico
+				iTurkey : "TXT_KEY_CIV_TURKEY_PERSIAN_VASSAL"},	# Fourth Satrapy
 			#iCarthage - none so far
 			#iPolynesia - none so far
 			iRome : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_ROMAN_VASSAL",
-				iChina : "TXT_KEY_CIV_CHINA_ROMAN_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ROMAN_VASSAL",
-				iGreece : "TXT_KEY_CIV_GREECE_ROMAN_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_ROMAN_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_ROMAN_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ROMAN_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ROMAN_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_ROMAN_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_ROMAN_VASSAL",
-				iSpain : "TXT_KEY_CIV_SPAIN_ROMAN_VASSAL",
-				iFrance : "TXT_KEY_CIV_FRANCE_ROMAN_VASSAL",
-				iEngland : "TXT_KEY_CIV_ENGLAND_ROMAN_VASSAL",
-				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_ROMAN_VASSAL",
-				iRussia : "TXT_KEY_CIV_RUSSIA_ROMAN_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ROMAN_VASSAL",
-				iMali : "TXT_KEY_CIV_MALI_ROMAN_VASSAL",
-				iPortugal : "TXT_KEY_CIV_PORTUGAL_ROMAN_VASSAL",
-				iMongolia : "TXT_KEY_CIV_MONGOLIA_ROMAN_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_ROMAN_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_ROMAN_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_ROMAN_VASSAL",
-				iThailand : "TXT_KEY_CIV_THAILAND_ROMAN_VASSAL",},
+				iEgypt : "TXT_KEY_CIV_EGYPT_ROMAN_VASSAL",	# Province of Aegyptus
+				iChina : "TXT_KEY_CIV_CHINA_ROMAN_VASSAL",	# Province of Sinae
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ROMAN_VASSAL",	# Province of Mesopotamia
+				iGreece : "TXT_KEY_CIV_GREECE_ROMAN_VASSAL",	# Province of Achaea
+				iPersia : "TXT_KEY_CIV_PERSIA_ROMAN_VASSAL",	# Province of Parthia
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_ROMAN_VASSAL",	# Province of Syria
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ROMAN_VASSAL",	# Province of Aethiopia
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ROMAN_VASSAL",	# Province of Thracia
+				iVikings : "TXT_KEY_CIV_VIKINGS_ROMAN_VASSAL",	# Province of Scandia
+				iKhmer : "TXT_KEY_CIV_KHMER_ROMAN_VASSAL",	# Province of Aurea Chersonesus
+				iSpain : "TXT_KEY_CIV_SPAIN_ROMAN_VASSAL",	# Province of Hispania
+				iFrance : "TXT_KEY_CIV_FRANCE_ROMAN_VASSAL",	# Province of Gaul
+				iEngland : "TXT_KEY_CIV_ENGLAND_ROMAN_VASSAL",	# Province of Britannia
+				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_ROMAN_VASSAL",	# Province of Germania
+				iRussia : "TXT_KEY_CIV_RUSSIA_ROMAN_VASSAL",	# Province of Sarmatia
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ROMAN_VASSAL",	# Province of Belgica
+				iMali : "TXT_KEY_CIV_MALI_ROMAN_VASSAL",	# Province of Gaetulia
+				iPortugal : "TXT_KEY_CIV_PORTUGAL_ROMAN_VASSAL",	# Province of Lusitania
+				iMongolia : "TXT_KEY_CIV_MONGOLIA_ROMAN_VASSAL",	# Province of Serica
+				iAztecs : "TXT_KEY_CIV_AZTECS_ROMAN_VASSAL",	# Province of Mexico
+				iTurkey : "TXT_KEY_CIV_TURKEY_ROMAN_VASSAL",	# Province of Asia Minor
+				iGermany : "TXT_KEY_CIV_GERMANY_ROMAN_VASSAL",	# Province of Borussia
+				iThailand : "TXT_KEY_CIV_THAILAND_ROMAN_VASSAL",},	# Province of Siam
 			iJapan : {
-				iChina : "TXT_KEY_CIV_CHINA_JAPANESE_VASSAL",
-				iKorea : "TXT_KEY_CIV_KOREA_JAPANESE_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_JAPANESE_VASSAL",
-				iMongolia : "TXT_KEY_CIV_MONGOLIA_JAPANESE_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_JAPANESE_VASSAL",},
+				iChina : "TXT_KEY_CIV_CHINA_JAPANESE_VASSAL",	# Reorganized National Government of China
+				iKorea : "TXT_KEY_CIV_KOREA_JAPANESE_VASSAL",	# Governor-General of Chosen
+				iKhmer : "TXT_KEY_CIV_KHMER_JAPANESE_VASSAL",	# Co-Prosperity Kampuchea
+				iMongolia : "TXT_KEY_CIV_MONGOLIA_JAPANESE_VASSAL",	# Mengjiang United Autonomous Government
+				iAztecs : "TXT_KEY_CIV_AZTECS_JAPANESE_VASSAL",},	# Co-Prosperity Mexico
 			#iTamils - none so far
 			#iEthiopia - none so far
 			#iKorea - none so far
 			#iMaya - none so far
 			iByzantium : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_BYZANTINE_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_BYZANTINE_VASSAL",
-				iGreece : "TXT_KEY_CIV_GREECE_BYZANTINE_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_BYZANTINE_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_BYZANTINE_VASSAL",
-				iRome : "TXT_KEY_CIV_ROME_BYZANTINE_VASSAL",
-				iSpain : "TXT_KEY_CIV_SPAIN_BYZANTINE_VASSAL"},
+				iEgypt : "TXT_KEY_CIV_EGYPT_BYZANTINE_VASSAL",	# Exarchate of Alexandria
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_BYZANTINE_VASSAL",	# Exarchate of Ctesiphon
+				iGreece : "TXT_KEY_CIV_GREECE_BYZANTINE_VASSAL",	# Exarchate of Achaia
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_BYZANTINE_VASSAL",	# Exarchate of Africa
+				iPersia : "TXT_KEY_CIV_PERSIA_BYZANTINE_VASSAL",	# Exarchate of Parthia
+				iRome : "TXT_KEY_CIV_ROME_BYZANTINE_VASSAL",	# Exarchate of Ravenna
+				iSpain : "TXT_KEY_CIV_SPAIN_BYZANTINE_VASSAL"},	# Exarchate of Spania
 			iVikings : {
-				iEngland : "TXT_KEY_CIV_ENGLAND_VIKING_VASSAL",
-				iRussia : "TXT_KEY_CIV_RUSSIA_VIKING_VASSAL"},
+				iEngland : "TXT_KEY_CIV_ENGLAND_VIKING_VASSAL",	# Danelaw
+				iRussia : "TXT_KEY_CIV_RUSSIA_VIKING_VASSAL"},	# Varangian Principalities
 			iArabia : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_ARABIAN_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ARABIAN_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_ARABIAN_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_ARABIAN_VASSAL",
-				iRome : "TXT_KEY_CIV_ROME_ARABIAN_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ARABIAN_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ARABIAN_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_ARABIAN_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_ARABIAN_VASSAL",
-				iMoors : "TXT_KEY_CIV_MOORS_ARABIAN_VASSAL",
-				iSpain : "TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARABIAN_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_ARABIAN_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_ARABIAN_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_ARABIAN_VASSAL",
-				iThailand : "TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL",},
+				iEgypt : "TXT_KEY_CIV_EGYPT_ARABIAN_VASSAL",	# Emirate of Misr
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ARABIAN_VASSAL",	# Emirate of Iraq
+				iPersia : "TXT_KEY_CIV_PERSIA_ARABIAN_VASSAL",	# Emirate of Fars
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_ARABIAN_VASSAL",	# Emirate of Ifriqiya
+				iRome : "TXT_KEY_CIV_ROME_ARABIAN_VASSAL",	# Emirate of Italiya
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ARABIAN_VASSAL",	# Emirate of Abyssinia
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ARABIAN_VASSAL",	# Emirate of Rum
+				iVikings : "TXT_KEY_CIV_VIKINGS_ARABIAN_VASSAL",	# Emirate of Scandinavia
+				iKhmer : "TXT_KEY_CIV_KHMER_ARABIAN_VASSAL",	# Emirate of Kampuchea
+				iMoors : "TXT_KEY_CIV_MOORS_ARABIAN_VASSAL",	# Emirate of Al-Andalus
+				iSpain : "TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL",	# Emirate of Esbanya
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARABIAN_VASSAL",	# Emirate of the Netherlands
+				iAztecs : "TXT_KEY_CIV_AZTECS_ARABIAN_VASSAL",	# Emirate of Mexico
+				iTurkey : "TXT_KEY_CIV_TURKEY_ARABIAN_VASSAL",	# Ottoman Sultanate
+				iMughals : "TXT_KEY_CIV_MUGHALS_ARABIAN_VASSAL",	# Emirate of Delhi
+				iThailand : "TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL",},	# Emirate of Siam
 			#iTibet - none so far
 			#iKhmer - none so far
 			#iIndonesia - none so far
 			iMoors : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_ARABIAN_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ARABIAN_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_ARABIAN_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_ARABIAN_VASSAL",
-				iRome : "TXT_KEY_CIV_ROME_ARABIAN_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ARABIAN_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ARABIAN_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_ARABIAN_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_ARABIAN_VASSAL",
-				iMoors : "TXT_KEY_CIV_ARABIA_MOORISH_VASSAL",
-				iSpain : "TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARABIAN_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_ARABIAN_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_ARABIAN_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_ARABIAN_VASSAL",
-				iThailand : "TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL",},
+				iEgypt : "TXT_KEY_CIV_EGYPT_ARABIAN_VASSAL",	# Emirate of Misr
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ARABIAN_VASSAL",	# Emirate of Iraq
+				iPersia : "TXT_KEY_CIV_PERSIA_ARABIAN_VASSAL",	# Emirate of Fars
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_ARABIAN_VASSAL",	# Emirate of Ifriqiya
+				iRome : "TXT_KEY_CIV_ROME_ARABIAN_VASSAL",	# Emirate of Italiya
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ARABIAN_VASSAL",	# Emirate of Abyssinia
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ARABIAN_VASSAL",	# Emirate of R&#251;m
+				iVikings : "TXT_KEY_CIV_VIKINGS_ARABIAN_VASSAL",	# Emirate of Scandinavia
+				iKhmer : "TXT_KEY_CIV_KHMER_ARABIAN_VASSAL",	# Emirate of Kampuchea
+				iMoors : "TXT_KEY_CIV_ARABIA_MOORISH_VASSAL",	# Arabian Sultanates
+				iSpain : "TXT_KEY_CIV_SPAIN_ARABIAN_VASSAL",	# Emirate of Esbanya
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARABIAN_VASSAL",	# Emirate of the Netherlands
+				iAztecs : "TXT_KEY_CIV_AZTECS_ARABIAN_VASSAL",	# Emirate of Mexico
+				iTurkey : "TXT_KEY_CIV_TURKEY_ARABIAN_VASSAL",	# Ottoman Sultanate
+				iMughals : "TXT_KEY_CIV_MUGHALS_ARABIAN_VASSAL",	# Emirate of Delhi
+				iThailand : "TXT_KEY_CIV_THAILAND_ARABIAN_VASSAL",},	# Emirate of Siam
 			iSpain : {
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_SPANISH_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_SPANISH_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_SPANISH_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_SPANISH_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_SPANISH_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_SPANISH_VASSAL",
-				iIndonesia : "TXT_KEY_CIV_INDONESIA_SPANISH_VASSAL",
-				iMoors : "TXT_KEY_CIV_MOORS_SPANISH_VASSAL",
-				iFrance : "TXT_KEY_CIV_FRANCE_SPANISH_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_SPANISH_VASSAL",
-				iMali : "TXT_KEY_CIV_MALI_SPANISH_VASSAL",
-				iPortugal : "TXT_KEY_CIV_PORTUGAL_SPANISH_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_SPANISH_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_SPANISH_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_SPANISH_VASSAL",
-				iThailand : "TXT_KEY_CIV_THAILAND_SPANISH_VASSAL",
-				iAmerica : "TXT_KEY_CIV_AMERICA_SPANISH_VASSAL",
-				iArgentina : "TXT_KEY_CIV_ARGENTINA_SPANISH_VASSAL"},
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_SPANISH_VASSAL",	# Spanish Lebanon
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_SPANISH_VASSAL",	# Spanish East Africa
+				iMaya : "TXT_KEY_CIV_MAYA_SPANISH_VASSAL",	# Dicesis of Yucatan
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_SPANISH_VASSAL",	# Latin Empire
+				iVikings : "TXT_KEY_CIV_VIKINGS_SPANISH_VASSAL",	# Viceroyalty of Scandinavia
+				iKhmer : "TXT_KEY_CIV_KHMER_SPANISH_VASSAL",	# Viceroyalty of Indochina
+				iIndonesia : "TXT_KEY_CIV_INDONESIA_SPANISH_VASSAL",	# Spanish East Indies
+				iMoors : "TXT_KEY_CIV_MOORS_SPANISH_VASSAL",	# Spanish Protectorate of Morocco
+				iFrance : "TXT_KEY_CIV_FRANCE_SPANISH_VASSAL",	# Autonomous Community of France
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_SPANISH_VASSAL",	# Spanish Netherlands
+				iMali : "TXT_KEY_CIV_MALI_SPANISH_VASSAL",	# Spanish West Africa
+				iPortugal : "TXT_KEY_CIV_PORTUGAL_SPANISH_VASSAL",	# Autonomous Community of Portugal
+				iInca : "TXT_KEY_CIV_INCA_SPANISH_VASSAL",	# Viceroyalty of Peru
+				iAztecs : "TXT_KEY_CIV_AZTECS_SPANISH_VASSAL",	# Viceroyalty of New Spain
+				iMughals : "TXT_KEY_CIV_MUGHALS_SPANISH_VASSAL",	# Viceroyalty of West India
+				iThailand : "TXT_KEY_CIV_THAILAND_SPANISH_VASSAL",	# Viceroyalty of Siam
+				iAmerica : "TXT_KEY_CIV_AMERICA_SPANISH_VASSAL",	# Province of New Mexico
+				iArgentina : "TXT_KEY_CIV_ARGENTINA_SPANISH_VASSAL"},	# Viceroyalty of the Rio de la Plata
 			iFrance : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_FRENCH_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_FRENCH_VASSAL",
-				iGreece : "TXT_KEY_CIV_GREECE_FRENCH_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_FRENCH_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_FRENCH_VASSAL",
-				iRome : "TXT_KEY_CIV_ROME_FRENCH_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_FRENCH_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_FRENCH_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_FRENCH_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_FRENCH_VASSAL",
-				iArabia : "TXT_KEY_CIV_ARABIA_FRENCH_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_FRENCH_VASSAL",
-				iSpain : "TXT_KEY_CIV_SPAIN_FRENCH_VASSAL",
-				iEngland : "TXT_KEY_CIV_ENGLAND_FRENCH_VASSAL",
-				iHolyRome : "TXT_KEY_CIV_GERMANY_FRENCH_VASSAL",
-				iRussia : "TXT_KEY_CIV_RUSSIA_FRENCH_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_FRENCH_VASSAL",
-				iPoland : "TXT_KEY_CIV_POLAND_FRENCH_VASSAL",
-				iMali : "TXT_KEY_CIV_MALI_FRENCH_VASSAL",
-				iPortugal : "TXT_KEY_CIV_PORTUGAL_FRENCH_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_FRENCH_VASSAL",
-				iItaly : "TXT_KEY_CIV_ROME_FRENCH_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_FRENCH_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_FRENCH_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_FRENCH_VASSAL",
-				iThailand : "TXT_KEY_CIV_THAILAND_FRENCH_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_FRENCH_VASSAL",
-				iAmerica : "TXT_KEY_CIV_AMERICA_FRENCH_VASSAL"},
+				iEgypt : "TXT_KEY_CIV_EGYPT_FRENCH_VASSAL",	# French Mandate of Egypt
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_FRENCH_VASSAL",	# French Mandate of Mesopotamia
+				iGreece : "TXT_KEY_CIV_GREECE_FRENCH_VASSAL",	# Departments of Greece
+				iPersia : "TXT_KEY_CIV_PERSIA_FRENCH_VASSAL",	# French Mandate of Persia
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_FRENCH_VASSAL",	# French Mandate of Lebanon
+				iRome : "TXT_KEY_CIV_ROME_FRENCH_VASSAL",	# Cisalpine Republic
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_FRENCH_VASSAL",	# French East Africa
+				iMaya : "TXT_KEY_CIV_MAYA_FRENCH_VASSAL",	# French Yucatan
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_FRENCH_VASSAL",	# Latin Empire
+				iVikings : "TXT_KEY_CIV_VIKINGS_FRENCH_VASSAL",	# Department of Scandinavia
+				iArabia : "TXT_KEY_CIV_ARABIA_FRENCH_VASSAL",	# French Mandate of Arabia
+				iKhmer : "TXT_KEY_CIV_KHMER_FRENCH_VASSAL",	# French Indochina
+				iSpain : "TXT_KEY_CIV_SPAIN_FRENCH_VASSAL",	# Spanish March
+				iEngland : "TXT_KEY_CIV_ENGLAND_FRENCH_VASSAL",	# Duchy of Normandy
+				iHolyRome : "TXT_KEY_CIV_GERMANY_FRENCH_VASSAL",	# Confederation of the Rhine
+				iRussia : "TXT_KEY_CIV_RUSSIA_FRENCH_VASSAL",	# Departments of Russia
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_FRENCH_VASSAL",	# Batavian Republic
+				iPoland : "TXT_KEY_CIV_POLAND_FRENCH_VASSAL",	# Duchy of Warsaw
+				iMali : "TXT_KEY_CIV_MALI_FRENCH_VASSAL",	# French West Africa
+				iPortugal : "TXT_KEY_CIV_PORTUGAL_FRENCH_VASSAL",	# Department of Portugal
+				iInca : "TXT_KEY_CIV_INCA_FRENCH_VASSAL",	# Andean France
+				iItaly : "TXT_KEY_CIV_ROME_FRENCH_VASSAL",	# Cisalpine Republic
+				iAztecs : "TXT_KEY_CIV_AZTECS_FRENCH_VASSAL",	# Mesoamerican France
+				iMughals : "TXT_KEY_CIV_MUGHALS_FRENCH_VASSAL",	# French Mandate of West India
+				iTurkey : "TXT_KEY_CIV_TURKEY_FRENCH_VASSAL",	# French Mandate of Turkey
+				iThailand : "TXT_KEY_CIV_THAILAND_FRENCH_VASSAL",	# French Siam
+				iGermany : "TXT_KEY_CIV_GERMANY_FRENCH_VASSAL",	# Confederation of the Rhine
+				iAmerica : "TXT_KEY_CIV_AMERICA_FRENCH_VASSAL"},	# New France
 			iEngland : {
-				iEgypt : "TXT_KEY_CIV_EGYPT_ENGLISH_VASSAL",
-				iIndia : "TXT_KEY_CIV_INDIA_ENGLISH_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ENGLISH_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_ENGLISH_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_ENGLISH_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ENGLISH_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_ENGLISH_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ENGLISH_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_ENGLISH_VASSAL",
-				iArabia : "TXT_KEY_CIV_ARABIA_ENGLISH_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_ENGLISH_VASSAL",
-				iFrance : "TXT_KEY_CIV_FRANCE_ENGLISH_VASSAL",
-				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_ENGLISH_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ENGLISH_VASSAL",
-				iMali : "TXT_KEY_CIV_MALI_ENGLISH_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_ENGLISH_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_ENGLISH_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_ENGLISH_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_ENGLISH_VASSAL",
-				iThailand : "TXT_KEY_CIV_THAILAND_ENGLISH_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_ENGLISH_VASSAL",
-				iAmerica : "TXT_KEY_CIV_AMERICA_ENGLISH_VASSAL"},
+				iEgypt : "TXT_KEY_CIV_EGYPT_ENGLISH_VASSAL",	# British Mandate of Egypt
+				iIndia : "TXT_KEY_CIV_INDIA_ENGLISH_VASSAL",	# British Raj
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_ENGLISH_VASSAL",	# British Mandate of Mesopotamia
+				iPersia : "TXT_KEY_CIV_PERSIA_ENGLISH_VASSAL",	# British Mandate of Persia
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_ENGLISH_VASSAL",	# British Mandate of Lebanon
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_ENGLISH_VASSAL",	# British East Africa
+				iMaya : "TXT_KEY_CIV_MAYA_ENGLISH_VASSAL",	# Colony of British Honduras
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_ENGLISH_VASSAL",	# Latin Empire
+				iVikings : "TXT_KEY_CIV_VIKINGS_ENGLISH_VASSAL",	# Duchy of Scandinavia
+				iArabia : "TXT_KEY_CIV_ARABIA_ENGLISH_VASSAL",	# British Mandate of Arabia
+				iKhmer : "TXT_KEY_CIV_KHMER_ENGLISH_VASSAL",	# Dominion of Indochina
+				iFrance : "TXT_KEY_CIV_FRANCE_ENGLISH_VASSAL",	# Duchy of Anjou
+				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_ENGLISH_VASSAL",	# Duchy of Hanover
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ENGLISH_VASSAL",	# Duchy of Flanders
+				iMali : "TXT_KEY_CIV_MALI_ENGLISH_VASSAL",	# British West Africa
+				iInca : "TXT_KEY_CIV_INCA_ENGLISH_VASSAL",	# Dominion of Peru
+				iAztecs : "TXT_KEY_CIV_AZTECS_ENGLISH_VASSAL",	# Dominion of Mexico
+				iTurkey : "TXT_KEY_CIV_TURKEY_ENGLISH_VASSAL",	# British Mandate of Turkey
+				iMughals : "TXT_KEY_CIV_MUGHALS_ENGLISH_VASSAL",	# Dominion of Pakistan
+				iThailand : "TXT_KEY_CIV_THAILAND_ENGLISH_VASSAL",	# British Siam
+				iGermany : "TXT_KEY_CIV_GERMANY_ENGLISH_VASSAL",	# British-Occupied Germany
+				iAmerica : "TXT_KEY_CIV_AMERICA_ENGLISH_VASSAL"},	# Thirteen Colonies
 			iHolyRome : {
-				iRome : "TXT_KEY_CIV_ROME_HOLY_ROMAN_VASSAL",
-				iFrance : "TXT_KEY_CIV_FRANCE_HOLY_ROMAN_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_HOLY_ROMAN_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_HOLY_ROMAN_VASSAL",
-				iItaly : "TXT_KEY_CIV_ITALY_HOLY_ROMAN_VASSAL",
-				iPoland : "TXT_KEY_CIV_POLAND_HOLY_ROMAN_VASSAL"},
+				iRome : "TXT_KEY_CIV_ROME_HOLY_ROMAN_VASSAL",	# Crown of Italy
+				iFrance : "TXT_KEY_CIV_FRANCE_HOLY_ROMAN_VASSAL",	# West Francia
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_HOLY_ROMAN_VASSAL",	# Duchy of Brabant
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_HOLY_ROMAN_VASSAL",	# Latin Empire
+				iItaly : "TXT_KEY_CIV_ITALY_HOLY_ROMAN_VASSAL",	# Grand Duchy of Tuscany
+				iPoland : "TXT_KEY_CIV_POLAND_HOLY_ROMAN_VASSAL"},	# Duchy of Poland
 			iNetherlands : {
-				iIndonesia : "TXT_KEY_CIV_INDONESIA_DUTCH_VASSAL",
-				iMali : "TXT_KEY_CIV_MALI_DUTCH_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DUTCH_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_DUTCH_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_DUTCH_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_DUTCH_VASSAL"},
+				iIndonesia : "TXT_KEY_CIV_INDONESIA_DUTCH_VASSAL",	# Dutch East Indies
+				iMali : "TXT_KEY_CIV_MALI_DUTCH_VASSAL",	# Dutch West Africa
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DUTCH_VASSAL",	# Dutch East Africa
+				iAztecs : "TXT_KEY_CIV_AZTECS_DUTCH_VASSAL",	# Dutch Mexico
+				iMaya : "TXT_KEY_CIV_MAYA_DUTCH_VASSAL",	# Dutch Yucatan
+				iInca : "TXT_KEY_CIV_INCA_DUTCH_VASSAL"},	# Dutch Peru
 			iRussia: {
-				iAmerica : "TXT_KEY_CIV_AMERICA_RUSSIAN_VASSAL",
-				iPoland : "TXT_KEY_CIV_POLAND_RUSSIAN_VASSAL"},
+				iAmerica : "TXT_KEY_CIV_AMERICA_RUSSIAN_VASSAL",	# Russian America
+				iPoland : "TXT_KEY_CIV_POLAND_RUSSIAN_VASSAL"},	# Congress Poland
 			iPortugal : {
-				iIndia : "TXT_KEY_CIV_INDIA_PORTUGUESE_VASSAL",
-				iIndonesia : "TXT_KEY_CIV_INDONESIA_PORTUGUESE_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_PORTUGUESE_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_PORTUGUESE_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_PORTUGUESE_VASSAL"},
+				iIndia : "TXT_KEY_CIV_INDIA_PORTUGUESE_VASSAL",	# Viceroyalty of Portuguese India
+				iIndonesia : "TXT_KEY_CIV_INDONESIA_PORTUGUESE_VASSAL",	# Portuguese East Indies
+				iAztecs : "TXT_KEY_CIV_AZTECS_PORTUGUESE_VASSAL",	# Portuguese Mexico
+				iInca : "TXT_KEY_CIV_INCA_PORTUGUESE_VASSAL",	# Portuguese Peru
+				iMaya : "TXT_KEY_CIV_MAYA_PORTUGUESE_VASSAL"},	# Portuguese Yucatan
 			#iMali - none so far
 			#iPoland - none so far
 			#iInca - none so far
 			iMongolia : {
-				iThailand : "TXT_KEY_CIV_THAILAND_MONGOL_VASSAL",
-				iEgypt : "TXT_KEY_CIV_EGYPT_MONGOL_VASSAL",
-				iChina : "TXT_KEY_CIV_CHINA_MONGOL_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_MONGOL_VASSAL",
-				iGreece : "TXT_KEY_CIV_GREECE_MONGOL_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_MONGOL_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_MONGOL_VASSAL",
-				iRome : "TXT_KEY_CIV_ROME_MONGOL_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_MONGOL_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_MONGOL_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_MONGOL_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_MONGOL_VASSAL",
-				iRussia : "TXT_KEY_CIV_RUSSIA_MONGOL_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_MONGOL_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_MONGOL_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_MONGOL_VASSAL",
-				iTurkey : "TXT_KEY_CIV_TURKEY_MONGOL_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_MONGOL_VASSAL"},
+				iThailand : "TXT_KEY_CIV_THAILAND_MONGOL_VASSAL",	# Khanate of Siam
+				iEgypt : "TXT_KEY_CIV_EGYPT_MONGOL_VASSAL",	# Ilkhanate of Egypt
+				iChina : "TXT_KEY_CIV_CHINA_MONGOL_VASSAL",	# Yuan Khanate
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_MONGOL_VASSAL",	# Ilkhanate of Mesopotamia
+				iGreece : "TXT_KEY_CIV_GREECE_MONGOL_VASSAL",	# Ilkhanate of Greece
+				iPersia : "TXT_KEY_CIV_PERSIA_MONGOL_VASSAL",	# Ilkhanate of Persia
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_MONGOL_VASSAL",	# Ilkhanate of Syria
+				iRome : "TXT_KEY_CIV_ROME_MONGOL_VASSAL",	# Ilkhanate of Rome
+				iItaly : "TXT_KEY_CIV_ITALY_MONGOL_VASSAL",	# Ilkhanate of Italy
+				iMaya : "TXT_KEY_CIV_MAYA_MONGOL_VASSAL",	# Khanate of Yucatan
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_MONGOL_VASSAL",	# Khanate of Anatolia
+				iVikings : "TXT_KEY_CIV_VIKINGS_MONGOL_VASSAL",	# Khanate of Scandinavia
+				iKhmer : "TXT_KEY_CIV_KHMER_MONGOL_VASSAL",	# Khanate of Kampuchea
+				iRussia : "TXT_KEY_CIV_RUSSIA_MONGOL_VASSAL",	# Khanate of the Golden Horde
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_MONGOL_VASSAL",	# Khanate of the Netherlands
+				iInca : "TXT_KEY_CIV_INCA_MONGOL_VASSAL",	# Khanate of Peru
+				iAztecs : "TXT_KEY_CIV_AZTECS_MONGOL_VASSAL",	# Khanate of Mexico
+				iTurkey : "TXT_KEY_CIV_TURKEY_MONGOL_VASSAL",	# Khanate of Turkestan
+				iMughals : "TXT_KEY_CIV_MUGHALS_MONGOL_VASSAL"},	# Khanate of Delhi
 			#iAztecs - none so far
 			iTurkey : {
-				iThailand : "TXT_KEY_CIV_THAILAND_TURKISH_VASSAL",
-				iEgypt : "TXT_KEY_CIV_EGYPT_TURKISH_VASSAL",
-				iBabylonia : "TXT_KEY_CIV_BABYLONIA_TURKISH_VASSAL",
-				iPersia : "TXT_KEY_CIV_PERSIA_TURKISH_VASSAL",
-				iGreece : "TXT_KEY_CIV_GREECE_TURKISH_VASSAL",
-				iCarthage : "TXT_KEY_CIV_PHOENICIA_TURKISH_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_TURKISH_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_TURKISH_VASSAL",
-				iByzantium : "TXT_KEY_CIV_BYZANTIUM_TURKISH_VASSAL",
-				iVikings : "TXT_KEY_CIV_VIKINGS_TURKISH_VASSAL",
-				iArabia : "TXT_KEY_CIV_ARABIA_TURKISH_VASSAL",
-				iKhmer : "TXT_KEY_CIV_KHMER_TURKISH_VASSAL",
-				iRussia : "TXT_KEY_CIV_RUSSIA_TURKISH_VASSAL",
-				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_TURKISH_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_TURKISH_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_TURKISH_VASSAL",
-				iMughals : "TXT_KEY_CIV_MUGHALS_TURKISH_VASSAL"},
+				iThailand : "TXT_KEY_CIV_THAILAND_TURKISH_VASSAL",	# Eyalet of Siam
+				iEgypt : "TXT_KEY_CIV_EGYPT_TURKISH_VASSAL",	# Khedivate of Egypt
+				iBabylonia : "TXT_KEY_CIV_BABYLONIA_TURKISH_VASSAL",	# Eyalet of Mesopotamia
+				iPersia : "TXT_KEY_CIV_PERSIA_TURKISH_VASSAL",	# Eyalet of Sharazor
+				iGreece : "TXT_KEY_CIV_GREECE_TURKISH_VASSAL",	# Eyalet of Rumelia
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_TURKISH_VASSAL",	# Eyalet of Syria
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_TURKISH_VASSAL",	# Eyalet of Habes
+				iMaya : "TXT_KEY_CIV_MAYA_TURKISH_VASSAL",	# Eyalet of Yucatan
+				iByzantium : "TXT_KEY_CIV_BYZANTIUM_TURKISH_VASSAL",	# Eyalet of R&#251;m
+				iVikings : "TXT_KEY_CIV_VIKINGS_TURKISH_VASSAL",	# Eyalet of Scandinavia
+				iArabia : "TXT_KEY_CIV_ARABIA_TURKISH_VASSAL",	# Sharifate of Mekke
+				iKhmer : "TXT_KEY_CIV_KHMER_TURKISH_VASSAL",	# Eyalet of Kampuchea
+				iRussia : "TXT_KEY_CIV_RUSSIA_TURKISH_VASSAL",	# Eyalet of Yedisan
+				iNetherlands : "TXT_KEY_CIV_NETHERLANDS_TURKISH_VASSAL",	# Eyalet of the Netherlands
+				iAztecs : "TXT_KEY_CIV_AZTECS_TURKISH_VASSAL",	# Eyalet of Mexico
+				iInca : "TXT_KEY_CIV_INCA_TURKISH_VASSAL",	# Eyalet of Peru
+				iMughals : "TXT_KEY_CIV_MUGHALS_TURKISH_VASSAL"},	# Eyalet of Pakistan
 			iMughals : {
-				iIndia : "TXT_KEY_CIV_INDIA_MUGHAL_VASSAL"},
+				iIndia : "TXT_KEY_CIV_INDIA_MUGHAL_VASSAL"},	# Deccan Sultanates
 			#iThailand - none so far
 			#iCongo - none so far
 			iGermany : {
-				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_GERMAN_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_GERMAN_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_GERMAN_VASSAL",
-				iInca : "TXT_KEY_CIV_INCA_GERMAN_VASSAL",
-				iMali : "TXT_KEY_CIV_MALI_GERMAN_VASSAL",
-				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_GERMAN_VASSAL",
-				iPoland : "TXT_KEY_CIV_POLAND_GERMAN_VASSAL"},
+				iHolyRome : "TXT_KEY_CIV_HOLY_ROME_GERMAN_VASSAL",	# State of German Austria
+				iMaya : "TXT_KEY_CIV_MAYA_GERMAN_VASSAL",	# German Yucatan
+				iAztecs : "TXT_KEY_CIV_AZTECS_GERMAN_VASSAL",	# German Mexico
+				iInca : "TXT_KEY_CIV_INCA_GERMAN_VASSAL",	# German Peru
+				iMali : "TXT_KEY_CIV_MALI_GERMAN_VASSAL",	# German West Africa
+				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_GERMAN_VASSAL",	# German East Africa
+				iPoland : "TXT_KEY_CIV_POLAND_GERMAN_VASSAL"},	# South Prussia
 			iAmerica : {
-				iEngland : "TXT_KEY_CIV_ENGLAND_AMERICAN_VASSAL",
-				iJapan : "TXT_KEY_CIV_JAPAN_AMERICAN_VASSAL",
-				iGermany : "TXT_KEY_CIV_GERMANY_AMERICAN_VASSAL",
-				iMaya : "TXT_KEY_CIV_MAYA_AMERICAN_VASSAL",
-				iKorea : "TXT_KEY_CIV_KOREA_AMERICAN_VASSAL",
-				iAztecs : "TXT_KEY_CIV_AZTECS_AMERICAN_VASSAL",},
+				iEngland : "TXT_KEY_CIV_ENGLAND_AMERICAN_VASSAL",	# Airstrip One
+				iJapan : "TXT_KEY_CIV_JAPAN_AMERICAN_VASSAL",	# Allied Council for Japan
+				iGermany : "TXT_KEY_CIV_GERMANY_AMERICAN_VASSAL",	# US-Occupied Germany
+				iMaya : "TXT_KEY_CIV_MAYA_AMERICAN_VASSAL",	# American Yucatan
+				iKorea : "TXT_KEY_CIV_KOREA_AMERICAN_VASSAL",	# Commander Naval Forces Korea
+				iAztecs : "TXT_KEY_CIV_AZTECS_AMERICAN_VASSAL",},	# New Mexico
 			# Argentina - none so far
 			iBrazil : {
-				iArgentina : "TXT_KEY_CIV_ARGENTINA_BRAZILIAN_VASSAL",},
+				iArgentina : "TXT_KEY_CIV_ARGENTINA_BRAZILIAN_VASSAL",},	# Transplatine Province
 		}
 		
 		self.genericVassalNames = {
-			iPersia : "TXT_KEY_CIV_PERSIAN_VASSAL_GENERIC",
-			iRome : "TXT_KEY_CIV_ROMAN_VASSAL_GENERIC",
-			iJapan : "TXT_KEY_CIV_JAPANESE_VASSAL_GENERIC",
-			iByzantium : "TXT_KEY_CIV_BYZANTINE_VASSAL_GENERIC",
-			iArabia : "TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC",
-			iMoors : "TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC",
-			iSpain : "TXT_KEY_CIV_SPANISH_VASSAL_GENERIC",
-			iFrance : "TXT_KEY_CIV_FRENCH_VASSAL_GENERIC",
-			iEngland : "TXT_KEY_CIV_ENGLISH_VASSAL_GENERIC",
-			iMongolia : "TXT_KEY_CIV_MONGOL_VASSAL_GENERIC",
-			iTurkey : "TXT_KEY_CIV_TURKISH_VASSAL_GENERIC"
+			iPersia : "TXT_KEY_CIV_PERSIAN_VASSAL_GENERIC",	# Satrapy of %s1
+			iRome : "TXT_KEY_CIV_ROMAN_VASSAL_GENERIC",	# Province of %s1
+			iJapan : "TXT_KEY_CIV_JAPANESE_VASSAL_GENERIC",	# Co-Prosperity %s1
+			iByzantium : "TXT_KEY_CIV_BYZANTINE_VASSAL_GENERIC",	# Exarchate of %s1
+			iArabia : "TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC",	# Emirate of %s1
+			iMoors : "TXT_KEY_CIV_ARABIAN_VASSAL_GENERIC",	# Emirate of %s1
+			iSpain : "TXT_KEY_CIV_SPANISH_VASSAL_GENERIC",	# Viceroyalty of %s1
+			iFrance : "TXT_KEY_CIV_FRENCH_VASSAL_GENERIC",	# French %s1
+			iEngland : "TXT_KEY_CIV_ENGLISH_VASSAL_GENERIC",	# Dominion of %s1
+			iMongolia : "TXT_KEY_CIV_MONGOL_VASSAL_GENERIC",	# Khanate of %s1
+			iTurkey : "TXT_KEY_CIV_TURKISH_VASSAL_GENERIC"	# Eyalet of %s1
 		}
 				
 		self.sovietVassals = {
-                        iEgypt : "TXT_KEY_CIV_EGYPT_SOVIET_VASSAL",
-                        iIndia : "TXT_KEY_CIV_INDIA_SOVIET_VASSAL",
-                        iChina : "TXT_KEY_CIV_CHINA_SOVIET_VASSAL",
-                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_SOVIET_VASSAL",
-			iHarappa : "TXT_KEY_CIV_HARAPPA_SOVIET_VASSAL",
-                        iGreece : "TXT_KEY_CIV_GREECE_SOVIET_VASSAL",
-                        iPersia : "TXT_KEY_CIV_PERSIA_SOVIET_VASSAL",
-                        iCarthage : "TXT_KEY_CIV_PHOENICIA_SOVIET_VASSAL",
-			iPolynesia : "TXT_KEY_CIV_POLYNESIA_SOVIET_VASSAL",
-                        iRome : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
-			iItaly : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",
-                        iJapan : "TXT_KEY_CIV_JAPAN_SOVIET_VASSAL",
-			iTamils : "TXT_KEY_CIV_TAMILS_SOVIET_VASSAL",
-                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_SOVIET_VASSAL",
-                        iKorea : "TXT_KEY_CIV_KOREA_SOVIET_VASSAL",
-                        iMaya : "TXT_KEY_CIV_MAYA_SOVIET_VASSAL",
-                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_SOVIET_VASSAL",
-                        iVikings : "TXT_KEY_CIV_VIKINGS_SOVIET_VASSAL",
-                        iArabia : "TXT_KEY_CIV_ARABIA_SOVIET_VASSAL",
-                        iKhmer : "TXT_KEY_CIV_KHMER_SOVIET_VASSAL",
-			iTibet : "TXT_KEY_CIV_TIBET_SOVIET_VASSAL",
-                        iIndonesia : "TXT_KEY_CIV_INDONESIA_SOVIET_VASSAL",
-			iMoors : "TXT_KEY_CIV_MOORS_SOVIET_VASSAL",
-                        iSpain : "TXT_KEY_CIV_SPAIN_SOVIET_VASSAL",
-                        iFrance : "TXT_KEY_CIV_FRANCE_SOVIET_VASSAL",
-                        iEngland : "TXT_KEY_CIV_ENGLAND_SOVIET_VASSAL",
-                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_SOVIET_VASSAL",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_SOVIET_VASSAL",
-                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_SOVIET_VASSAL",
-                        iMali : "TXT_KEY_CIV_MALI_SOVIET_VASSAL",
-			iPoland : "TXT_KEY_CIV_POLAND_SOVIET_VASSAL",
-                        iPortugal : "TXT_KEY_CIV_PORTUGAL_SOVIET_VASSAL",
-                        iInca : "TXT_KEY_CIV_INCA_SOVIET_VASSAL",
-                        iMongolia : "TXT_KEY_CIV_MONGOLIA_SOVIET_VASSAL",
-                        iAztecs : "TXT_KEY_CIV_AZTECS_SOVIET_VASSAL",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_SOVIET_VASSAL",
-			iMughals : "TXT_KEY_CIV_MUGHALS_SOVIET_VASSAL",
-			iThailand : "TXT_KEY_CIV_THAILAND_SOVIET_VASSAL",
-			iCongo : "TXT_KEY_CIV_CONGO_SOVIET_VASSAL",
-			iGermany : "TXT_KEY_CIV_GERMANY_SOVIET_VASSAL",
-                        iAmerica : "TXT_KEY_CIV_AMERICA_SOVIET_VASSAL",
-			iArgentina : "TXT_KEY_CIV_ARGENTINA_SOVIET_VASSAL",
-			iBrazil : "TXT_KEY_CIV_BRAZIL_SOVIET_VASSAL",
-			iCanada : "TXT_KEY_CIV_CANADA_SOVIET_VASSAL",
+                        iEgypt : "TXT_KEY_CIV_EGYPT_SOVIET_VASSAL",	# Soviet Egypt
+                        iIndia : "TXT_KEY_CIV_INDIA_SOVIET_VASSAL",	# Soviet India
+                        iChina : "TXT_KEY_CIV_CHINA_SOVIET_VASSAL",	# Chinese Soviet Republic
+                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_SOVIET_VASSAL",	# Soviet Mesopotamia
+			iHarappa : "TXT_KEY_CIV_HARAPPA_SOVIET_VASSAL",	# Soviet Indus
+                        iGreece : "TXT_KEY_CIV_GREECE_SOVIET_VASSAL",	# Soviet Greece
+                        iPersia : "TXT_KEY_CIV_PERSIA_SOVIET_VASSAL",	# Soviet Gilan
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_SOVIET_VASSAL",	# Soviet Lebanon
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_SOVIET_VASSAL",	# Soviet Polynesia
+                        iRome : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",	# Soviet Italy
+			iItaly : "TXT_KEY_CIV_ROME_SOVIET_VASSAL",	# Soviet Italy
+                        iJapan : "TXT_KEY_CIV_JAPAN_SOVIET_VASSAL",	# Far Eastern Republic
+			iTamils : "TXT_KEY_CIV_TAMILS_SOVIET_VASSAL",	# Soviet Dravida
+                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_SOVIET_VASSAL",	# Soviet Ethiopia
+                        iKorea : "TXT_KEY_CIV_KOREA_SOVIET_VASSAL",	# Soviet Korea
+                        iMaya : "TXT_KEY_CIV_MAYA_SOVIET_VASSAL",	# Soviet Yucatan
+                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_SOVIET_VASSAL",	# Soviet Byzantium
+                        iVikings : "TXT_KEY_CIV_VIKINGS_SOVIET_VASSAL",	# Soviet Scandinavia
+                        iArabia : "TXT_KEY_CIV_ARABIA_SOVIET_VASSAL",	# Soviet Arabia
+                        iKhmer : "TXT_KEY_CIV_KHMER_SOVIET_VASSAL",	# Soviet Kampuchea
+			iTibet : "TXT_KEY_CIV_TIBET_SOVIET_VASSAL",	# Soviet Tibet
+                        iIndonesia : "TXT_KEY_CIV_INDONESIA_SOVIET_VASSAL",	# Soviet Indonesia
+			iMoors : "TXT_KEY_CIV_MOORS_SOVIET_VASSAL",	# Soviet Morocco
+                        iSpain : "TXT_KEY_CIV_SPAIN_SOVIET_VASSAL",	# Soviet Spain
+                        iFrance : "TXT_KEY_CIV_FRANCE_SOVIET_VASSAL",	# Soviet France
+                        iEngland : "TXT_KEY_CIV_ENGLAND_SOVIET_VASSAL",	# Soviet England
+                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_SOVIET_VASSAL",	# Soviet Austria
+                        iRussia : "NONE",
+                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_SOVIET_VASSAL",	# Soviet Netherlands
+                        iMali : "TXT_KEY_CIV_MALI_SOVIET_VASSAL",	# Soviet Mali
+			iPoland : "TXT_KEY_CIV_POLAND_SOVIET_VASSAL",	# Soviet Poland
+                        iPortugal : "TXT_KEY_CIV_PORTUGAL_SOVIET_VASSAL",	# Soviet Portugal
+                        iInca : "TXT_KEY_CIV_INCA_SOVIET_VASSAL",	# Soviet Peru
+                        iMongolia : "TXT_KEY_CIV_MONGOLIA_SOVIET_VASSAL",	# Soviet Mongolia
+                        iAztecs : "TXT_KEY_CIV_AZTECS_SOVIET_VASSAL",	# Soviet Mexico
+                        iTurkey : "TXT_KEY_CIV_TURKEY_SOVIET_VASSAL",	# Transcaucasian Socialist Federative Soviet Republic
+			iMughals : "TXT_KEY_CIV_MUGHALS_SOVIET_VASSAL",	# Soviet Pakistan
+			iThailand : "TXT_KEY_CIV_THAILAND_SOVIET_VASSAL",	# Soviet Thailand
+			iCongo : "TXT_KEY_CIV_CONGO_SOVIET_VASSAL",	# Soviet Congo
+			iGermany : "TXT_KEY_CIV_GERMANY_SOVIET_VASSAL",	# German Democratic Republic
+                        iAmerica : "TXT_KEY_CIV_AMERICA_SOVIET_VASSAL",	# Soviet America
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_SOVIET_VASSAL",	# Soviet Argentina
+			iBrazil : "TXT_KEY_CIV_BRAZIL_SOVIET_VASSAL",	# Soviet Brazil
+			iCanada : "TXT_KEY_CIV_CANADA_SOVIET_VASSAL",	# Soviet Canada
                 }
 		
 		self.naziVassals = {
-                        iEgypt : "TXT_KEY_CIV_EGYPT_NAZI_VASSAL",
-                        iIndia : "TXT_KEY_CIV_INDIA_NAZI_VASSAL",
-                        iChina : "TXT_KEY_CIV_CHINA_NAZI_VASSAL",
-                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_NAZI_VASSAL",
-			iHarappa : "TXT_KEY_CIV_HARAPPA_NAZI_VASSAL",
-                        iGreece : "TXT_KEY_CIV_GREECE_NAZI_VASSAL",
-                        iPersia : "TXT_KEY_CIV_PERSIA_NAZI_VASSAL",
-                        iCarthage : "TXT_KEY_CIV_PHOENICIA_NAZI_VASSAL",
-			iPolynesia : "TXT_KEY_CIV_POLYNESIA_NAZI_VASSAL",
-                        iRome : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
-			iItaly : "TXT_KEY_CIV_ROME_NAZI_VASSAL",
-                        iJapan : "TXT_KEY_CIV_JAPAN_NAZI_VASSAL",
-			iTamils : "TXT_KEY_CIV_TAMILS_NAZI_VASSAL",
-                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_NAZI_VASSAL",
-                        iKorea : "TXT_KEY_CIV_KOREA_NAZI_VASSAL",
-                        iMaya : "TXT_KEY_CIV_MAYA_NAZI_VASSAL",
-                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_NAZI_VASSAL",
-                        iVikings : "TXT_KEY_CIV_VIKINGS_NAZI_VASSAL",
-                        iArabia : "TXT_KEY_CIV_ARABIA_NAZI_VASSAL",
-			iTibet : "TXT_KEY_CIV_TIBET_NAZI_VASSAL",
-                        iKhmer : "TXT_KEY_CIV_KHMER_NAZI_VASSAL",
-                        iIndonesia : "TXT_KEY_CIV_INDONESIA_NAZI_VASSAL",
-			iMoors : "TXT_KEY_CIV_MOORS_NAZI_VASSAL",
-                        iSpain : "TXT_KEY_CIV_SPAIN_NAZI_VASSAL",
-                        iFrance : "TXT_KEY_CIV_FRANCE_NAZI_VASSAL",
-                        iEngland : "TXT_KEY_CIV_ENGLAND_NAZI_VASSAL",
-                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_NAZI_VASSAL",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_NAZI_VASSAL",
-                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_NAZI_VASSAL",
-                        iMali : "TXT_KEY_CIV_MALI_NAZI_VASSAL",
-			iPoland : "TXT_KEY_CIV_POLAND_NAZI_VASSAL",
-                        iPortugal : "TXT_KEY_CIV_PORTUGAL_NAZI_VASSAL",
-                        iInca : "TXT_KEY_CIV_INCA_NAZI_VASSAL",
-                        iMongolia : "TXT_KEY_CIV_MONGOLIA_NAZI_VASSAL",
-                        iAztecs : "TXT_KEY_CIV_AZTECS_NAZI_VASSAL",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_NAZI_VASSAL",
-			iMughals : "TXT_KEY_CIV_MUGHALS_NAZI_VASSAL",
-			iThailand : "TXT_KEY_CIV_THAILAND_NAZI_VASSAL",
-			iCongo : "TXT_KEY_CIV_CONGO_NAZI_VASSAL",
-			iGermany : "TXT_KEY_CIV_GERMANY_NAZI_VASSAL",
-                        iAmerica : "TXT_KEY_CIV_AMERICA_NAZI_VASSAL",
-			iArgentina : "TXT_KEY_CIV_ARGENTINA_NAZI_VASSAL",
-			iBrazil : "TXT_KEY_CIV_BRAZIL_NAZI_VASSAL",
-			iCanada : "TXT_KEY_CIV_CANADA_NAZI_VASSAL",
+                        iEgypt : "TXT_KEY_CIV_EGYPT_NAZI_VASSAL",	# Reichsprotektorat Egypt
+                        iIndia : "TXT_KEY_CIV_INDIA_NAZI_VASSAL",	# German India
+                        iChina : "TXT_KEY_CIV_CHINA_NAZI_VASSAL",	# Reichskommissariat China
+                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_NAZI_VASSAL",	# German Mesopotamia
+			iHarappa : "TXT_KEY_CIV_HARAPPA_NAZI_VASSAL",	# German Indus
+                        iGreece : "TXT_KEY_CIV_GREECE_NAZI_VASSAL",	# Hellenic State
+                        iPersia : "TXT_KEY_CIV_PERSIA_NAZI_VASSAL",	# German Persia
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_NAZI_VASSAL",	# Reichskommissariat Lebanon
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_NAZI_VASSAL",	# Nazi Polynesia
+                        iRome : "TXT_KEY_CIV_ROME_NAZI_VASSAL",	# Italian Social Republic
+			iItaly : "TXT_KEY_CIV_ROME_NAZI_VASSAL",	# Italian Social Republic
+                        iJapan : "TXT_KEY_CIV_JAPAN_NAZI_VASSAL",	# German Japan
+			iTamils : "TXT_KEY_CIV_TAMILS_NAZI_VASSAL",	# German Dravida
+                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_NAZI_VASSAL",	# German East Africa
+                        iKorea : "TXT_KEY_CIV_KOREA_NAZI_VASSAL",	# German Korea
+                        iMaya : "TXT_KEY_CIV_MAYA_NAZI_VASSAL",	# German Yucatan
+                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_NAZI_VASSAL",	# Reichskommissariat Bosphorus
+                        iVikings : "TXT_KEY_CIV_VIKINGS_NAZI_VASSAL",	# Reichskommissariat Nordland
+                        iArabia : "TXT_KEY_CIV_ARABIA_NAZI_VASSAL",	# German Arabia
+			iTibet : "TXT_KEY_CIV_TIBET_NAZI_VASSAL",	# German Tibet
+                        iKhmer : "TXT_KEY_CIV_KHMER_NAZI_VASSAL",	# German Indochina
+                        iIndonesia : "TXT_KEY_CIV_INDONESIA_NAZI_VASSAL",	# German Indonesia
+			iMoors : "TXT_KEY_CIV_MOORS_NAZI_VASSAL",	# German Maghreb
+                        iSpain : "TXT_KEY_CIV_SPAIN_NAZI_VASSAL",	# Reichskommissariat Spain
+                        iFrance : "TXT_KEY_CIV_FRANCE_NAZI_VASSAL",	# Vichy France
+                        iEngland : "TXT_KEY_CIV_ENGLAND_NAZI_VASSAL",	# Reichskommissariat England
+                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_NAZI_VASSAL",	# Ostmark
+                        iRussia : "TXT_KEY_CIV_RUSSIA_NAZI_VASSAL",	# Reichskommissariat Moskowien
+                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_NAZI_VASSAL",	# Reichsgau Holland
+                        iMali : "TXT_KEY_CIV_MALI_NAZI_VASSAL",	# German West Africa
+			iPoland : "TXT_KEY_CIV_POLAND_NAZI_VASSAL",	# General Government
+                        iPortugal : "TXT_KEY_CIV_PORTUGAL_NAZI_VASSAL",	# Reichskommissariat Portugal
+                        iInca : "TXT_KEY_CIV_INCA_NAZI_VASSAL",	# German Peru
+                        iMongolia : "TXT_KEY_CIV_MONGOLIA_NAZI_VASSAL",	# German Mongolia
+                        iAztecs : "TXT_KEY_CIV_AZTECS_NAZI_VASSAL",	# German Mexico
+                        iTurkey : "TXT_KEY_CIV_TURKEY_NAZI_VASSAL",	# Reichskommissariat Turkey
+			iMughals : "TXT_KEY_CIV_MUGHALS_NAZI_VASSAL",	# German West India
+			iThailand : "TXT_KEY_CIV_THAILAND_NAZI_VASSAL",	# German Thailand
+			iCongo : "TXT_KEY_CIV_CONGO_NAZI_VASSAL",	# German Congo
+			iGermany : "NONE",
+                        iAmerica : "TXT_KEY_CIV_AMERICA_NAZI_VASSAL",	# German America
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_NAZI_VASSAL",	# German Argentina
+			iBrazil : "TXT_KEY_CIV_BRAZIL_NAZI_VASSAL",	# German Brazil
+			iCanada : "TXT_KEY_CIV_CANADA_NAZI_VASSAL",	# Reichskommissariat Kanada
                 }
 
                 self.fascistNames = {
-                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_FASCIST",
-                        iIndia : "TXT_KEY_CIV_INDIA_DESC_FASCIST",
-                        iChina : "TXT_KEY_CIV_CHINA_DESC_FASCIST",
-                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_FASCIST",
-			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_FASCIST",
-                        iGreece : "TXT_KEY_CIV_GREECE_DESC_FASCIST",
-                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_FASCIST",
-                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_FASCIST",
-			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_FASCIST",
-                        iRome : "TXT_KEY_CIV_ROME_DESC_FASCIST",
-                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_FASCIST",
-			iTamils : "TXT_KEY_CIV_TAMILS_DESC_FASCIST",
-                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_FASCIST",
-                        iKorea : "TXT_KEY_CIV_KOREA_DESC_FASCIST",
-                        iMaya : "TXT_KEY_CIV_MAYA_DESC_FASCIST",
-                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_FASCIST",
-                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_FASCIST",
-                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_FASCIST",
-			iTibet : "TXT_KEY_CIV_TIBET_DESC_FASCIST",
-                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_FASCIST",
-                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_FASCIST",
-			iMoors : "TXT_KEY_CIV_MOORS_DESC_FASCIST",
-                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_FASCIST",
-                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_FASCIST",
-                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_FASCIST",
-                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_FASCIST",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_FASCIST",
-                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_FASCIST",
-                        iMali : "TXT_KEY_CIV_MALI_DESC_FASCIST",
-			iPoland : "TXT_KEY_CIV_POLAND_DESC_FASCIST",
-                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_FASCIST",
-                        iInca : "TXT_KEY_CIV_INCA_DESC_FASCIST",
-			iItaly : "TXT_KEY_CIV_ROME_DESC_FASCIST",
-                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_FASCIST",
-                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_FASCIST",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_FASCIST",
-			iMughals: "TXT_KEY_CIV_MUGHALS_DESC_FASCIST",
-			iThailand : "TXT_KEY_CIV_THAILAND_DESC_FASCIST",
-			iCongo : "TXT_KEY_CIV_CONGO_DESC_FASCIST",
-			iGermany : "TXT_KEY_CIV_GERMANY_DESC_FASCIST",
-                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_FASCIST",
-			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_FASCIST",
-			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_FASCIST",
-			iCanada : "TXT_KEY_CIV_CANADA_DESC_FASCIST",
+                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_FASCIST",	# Officers' Egypt
+                        iIndia : "TXT_KEY_CIV_INDIA_DESC_FASCIST",	# Undivided India
+                        iChina : "TXT_KEY_CIV_CHINA_DESC_FASCIST",	# Nationalist China
+                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_FASCIST",	# Baathist Babylonia
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_FASCIST",	# National Republic of the Indus
+                        iGreece : "TXT_KEY_CIV_GREECE_DESC_FASCIST",	# Greek Junta
+                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_FASCIST",	# Persian Empire
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_FASCIST",	# National Lebanon
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_FASCIST",	# Oceania
+                        iRome : "TXT_KEY_CIV_ROME_DESC_FASCIST",	# New Roman Empire
+                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_FASCIST",	# Empire of Greater Japan
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_FASCIST",	# Dravidian Empire
+                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_FASCIST",	# Ethiopian Junta
+                        iKorea : "TXT_KEY_CIV_KOREA_DESC_FASCIST",	# Supreme Council for National Reconstruction
+                        iMaya : "TXT_KEY_CIV_MAYA_DESC_FASCIST",	# Mayan Junta
+                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_FASCIST",	# Despotate of Byzantium
+                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_FASCIST",	# National Gathering of Scandinavia
+                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_FASCIST",	# Pan Arab State
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_FASCIST",	# Tibetan Empire
+                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_FASCIST",	# Nationalist Kampuchea
+                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_FASCIST",	# Indonesian New Order
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_FASCIST",	# Moroccan State
+                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_FASCIST",	# Spanish State
+                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_FASCIST",	# French State
+                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_FASCIST",	# British Union
+                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_FASCIST",	# Greater Austrian Empire
+                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_FASCIST",	# Panslavic Empire
+                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_FASCIST",	# Dutch Empire
+                        iMali : "TXT_KEY_CIV_MALI_DESC_FASCIST",	# Military Comittee of Mali
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_FASCIST",	# Sanacja Poland
+                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_FASCIST",	# New State of Portugal
+                        iInca : "TXT_KEY_CIV_INCA_DESC_FASCIST",	# Government of the Incan Armed Forces
+			iItaly : "TXT_KEY_CIV_ROME_DESC_FASCIST",	# New Roman Empire
+                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_FASCIST",	# Nationalist Mongolia
+                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_FASCIST",	# Mexican Empire
+                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_FASCIST",	# Turkish Junta
+			iMughals: "TXT_KEY_CIV_MUGHALS_DESC_FASCIST",	# Pakistani Military Government
+			iThailand : "TXT_KEY_CIV_THAILAND_DESC_FASCIST",	# Thai Junta
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_FASCIST",	# Republic of Zaire
+			iGermany : "TXT_KEY_CIV_GERMANY_DESC_FASCIST",	# Third Reich
+                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_FASCIST",	# 
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_FASCIST",	# New World Order
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_FASCIST",	# United States of Brazil
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_FASCIST",	# Canadian Empire
                 }
 
                 self.communistNames = {
-                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_COMMUNIST",
-                        iIndia : "TXT_KEY_CIV_INDIA_DESC_COMMUNIST",
-                        iChina : "TXT_KEY_CIV_CHINA_DESC_COMMUNIST",
-                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_COMMUNIST",
-			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_COMMUNIST",
-                        iGreece : "TXT_KEY_CIV_GREECE_DESC_COMMUNIST",
-                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_COMMUNIST",
-                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST",
-			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_COMMUNIST",
-                        iRome : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",
-                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_COMMUNIST",
-			iTamils : "TXT_KEY_CIV_TAMILS_DESC_COMMUNIST",
-                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_COMMUNIST",
-                        iKorea : "TXT_KEY_CIV_KOREA_DESC_COMMUNIST",
-                        iMaya : "TXT_KEY_CIV_MAYA_DESC_COMMUNIST",
-                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_COMMUNIST",
-                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_COMMUNIST",
-                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_COMMUNIST",
-			iTibet : "TXT_KEY_CIV_TIBET_DESC_COMMUNIST",
-                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_COMMUNIST",
-                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_COMMUNIST",
-			iMoors : "TXT_KEY_CIV_MOORS_DESC_COMMUNIST",
-                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_COMMUNIST",
-                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_COMMUNIST",
-                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_COMMUNIST",
-                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_COMMUNIST",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_COMMUNIST",
-                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_COMMUNIST",
-                        iMali : "TXT_KEY_CIV_MALI_DESC_COMMUNIST",
-			iPoland : "TXT_KEY_CIV_POLAND_DESC_COMMUNIST",
-                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_COMMUNIST",
-                        iInca : "TXT_KEY_CIV_INCA_DESC_COMMUNIST",
-			iItaly : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",
-                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_COMMUNIST",
-                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_COMMUNIST",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_COMMUNIST",
-			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_COMMUNIST",
-			iThailand : "TXT_KEY_CIV_THAILAND_DESC_COMMUNIST",
-			iCongo : "TXT_KEY_CIV_CONGO_DESC_COMMUNIST",
-			iGermany : "TXT_KEY_CIV_GERMANY_DESC_COMMUNIST",
-                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_COMMUNIST",
-			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_COMMUNIST",
-			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_COMMUNIST",
-			iCanada : "TXT_KEY_CIV_CANADA_DESC_COMMUNIST",
+                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_COMMUNIST",	# Liberation Rally of Egypt
+                        iIndia : "TXT_KEY_CIV_INDIA_DESC_COMMUNIST",	# People's Republic of India
+                        iChina : "TXT_KEY_CIV_CHINA_DESC_COMMUNIST",	# People's Republic of China
+                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_COMMUNIST",	# Babylonian Golden Square
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_COMMUNIST",	# Democratic Republic of the Indus
+                        iGreece : "TXT_KEY_CIV_GREECE_DESC_COMMUNIST",	# Democratic Army of Greece
+                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_COMMUNIST",	# Persian Socialist Republic
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST",	# People's Republic of Lebanon
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_COMMUNIST",	# People's Republic of Polynesia
+                        iRome : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",	# People's Republic of Italy
+                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_COMMUNIST",	# People's Republic of Japan
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_COMMUNIST",	# Tamil People's Republic
+                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_COMMUNIST",	# People's Democratic Republic of Ethiopia
+                        iKorea : "TXT_KEY_CIV_KOREA_DESC_COMMUNIST",	# Democratic People's Republic of Korea
+                        iMaya : "TXT_KEY_CIV_MAYA_DESC_COMMUNIST",	# Mayan Free State
+                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_COMMUNIST",	# Byzantine People's Republic
+                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_COMMUNIST",	# Democratic Republic of Scandinavia
+                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_COMMUNIST",	# Baathist Arabia
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_COMMUNIST",	# People's Republic of Tibet
+                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_COMMUNIST",	# Democratic Kampuchea
+                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_COMMUNIST",	# People's Republic of Indonesia
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_COMMUNIST",	# Socialist Republic of Morocco
+                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_COMMUNIST",	# Spanish Republic
+                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_COMMUNIST",	# French Commune
+                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_COMMUNIST",	# British Worker's Commonwealth
+                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_COMMUNIST",	# Socialist Republic of Austria
+                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_COMMUNIST",	# Union of Soviet Socialist Republics
+                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_COMMUNIST",	# Democratic Republic of the Netherlands
+                        iMali : "TXT_KEY_CIV_MALI_DESC_COMMUNIST",	# People's Republic of Mali
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_COMMUNIST",	# People's Republic of Poland
+                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_COMMUNIST",	# Portuguese Continuing Revolutionary Process
+                        iInca : "TXT_KEY_CIV_INCA_DESC_COMMUNIST",	# Incan Revolutionary Movement
+			iItaly : "TXT_KEY_CIV_ROME_DESC_COMMUNIST",	# People's Republic of Italy
+                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_COMMUNIST",	# Mongolian People's Republic
+                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_COMMUNIST",	# Anti-Reelectionist Mexico
+                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_COMMUNIST",	# National Democratic Popular Turkey
+			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_COMMUNIST",	# People's Republic of Pakistan
+			iThailand : "TXT_KEY_CIV_THAILAND_DESC_COMMUNIST",	# People's Republic of Thailand
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_COMMUNIST",	# People's Republic of the Congo
+			iGermany : "TXT_KEY_CIV_GERMANY_DESC_COMMUNIST",	# Free Socialist Republic of Germany
+                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_COMMUNIST",	# United Socialist States of America
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_COMMUNIST",	# Argentine Socialist Republic
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_COMMUNIST",	# Socialist Republic of Brazil
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_COMMUNIST",	# Canadian Worker's Commonwealth
                 }
 
                 self.democraticNames = {
-                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_DEMOCRATIC",
-                        iIndia : "TXT_KEY_CIV_INDIA_DESC_DEMOCRATIC",
-                        iChina : "TXT_KEY_CIV_CHINA_DESC_DEMOCRATIC",
-                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_DEMOCRATIC",
-			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_DEMOCRATIC",
-                        iGreece : "TXT_KEY_CIV_GREECE_DESC_DEMOCRATIC",
-                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEMOCRATIC",
-                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEMOCRATIC",
-			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_DEMOCRATIC",
-                        iRome : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",
-                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEMOCRATIC",
-			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEMOCRATIC",
-                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_DEMOCRATIC",
-                        iKorea : "TXT_KEY_CIV_KOREA_DESC_DEMOCRATIC",
-                        iMaya : "TXT_KEY_CIV_MAYA_DESC_DEMOCRATIC",
-                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_DEMOCRATIC",
-                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_DEMOCRATIC",
-                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_DEMOCRATIC",
-			iTibet : "TXT_KEY_CIV_TIBET_DESC_DEMOCRATIC",
-                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_DEMOCRATIC",
-                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_DEMOCRATIC",
-			iMoors : "TXT_KEY_CIV_MOORS_DESC_DEMOCRATIC",
-                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_DEMOCRATIC",
-                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_DEMOCRATIC",
-                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_DEMOCRATIC",
-                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_DEMOCRATIC",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_DEMOCRATIC",
-                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_DEMOCRATIC",
-                        iMali : "TXT_KEY_CIV_MALI_DESC_DEMOCRATIC",
-			iPoland : "TXT_KEY_CIV_POLAND_DESC_DEMOCRATIC",
-                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_DEMOCRATIC",
-                        iInca : "TXT_KEY_CIV_INCA_DESC_DEMOCRATIC",
-			iItaly : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",
-                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_DEMOCRATIC",
-                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_DEMOCRATIC",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_DEMOCRATIC",
-			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_DEMOCRATIC",
-			iThailand : "TXT_KEY_CIV_THAILAND_DESC_DEMOCRATIC",
-			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEMOCRATIC",
-			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEMOCRATIC",
-                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEMOCRATIC",
-			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_DEMOCRATIC",
-			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEMOCRATIC",
-			iCanada : "TXT_KEY_CIV_CANADA_DESC_DEMOCRATIC",
+                        iEgypt : "TXT_KEY_CIV_EGYPT_DESC_DEMOCRATIC",	# Republic of Egypt
+                        iIndia : "TXT_KEY_CIV_INDIA_DESC_DEMOCRATIC",	# Republic of India
+                        iChina : "TXT_KEY_CIV_CHINA_DESC_DEMOCRATIC",	# Republic of China
+                        iBabylonia : "TXT_KEY_CIV_BABYLONIA_DESC_DEMOCRATIC",	# Babylonian Republic
+			iHarappa : "TXT_KEY_CIV_HARAPPA_DESC_DEMOCRATIC",	# Indus River Republic
+                        iGreece : "TXT_KEY_CIV_GREECE_DESC_DEMOCRATIC",	# Hellenic Republic
+                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_DEMOCRATIC",	# Republic of Persia
+                        iCarthage : "TXT_KEY_CIV_PHOENICIA_DESC_DEMOCRATIC",	# Republic of Lebanon
+			iPolynesia : "TXT_KEY_CIV_POLYNESIA_DESC_DEMOCRATIC",	# Polynesian Republics
+                        iRome : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",	# Italian Republic
+                        iJapan : "TXT_KEY_CIV_JAPAN_DESC_DEMOCRATIC",	# Republic of Japan
+			iTamils : "TXT_KEY_CIV_TAMILS_DESC_DEMOCRATIC",	# Republic of Tamil Nadu
+                        iEthiopia : "TXT_KEY_CIV_ETHIOPIA_DESC_DEMOCRATIC",	# Republic of Ethiopia
+                        iKorea : "TXT_KEY_CIV_KOREA_DESC_DEMOCRATIC",	# Republic of Korea
+                        iMaya : "TXT_KEY_CIV_MAYA_DESC_DEMOCRATIC",	# Mayan Federal Republic
+                        iByzantium : "TXT_KEY_CIV_BYZANTIUM_DESC_DEMOCRATIC",	# Republic of Rhomania
+                        iVikings : "TXT_KEY_CIV_VIKINGS_DESC_DEMOCRATIC",	# Republic of Scandinavia
+                        iArabia : "TXT_KEY_CIV_ARABIA_DESC_DEMOCRATIC",	# Arab League
+			iTibet : "TXT_KEY_CIV_TIBET_DESC_DEMOCRATIC",	# Republic of Tibet
+                        iKhmer : "TXT_KEY_CIV_KHMER_DESC_DEMOCRATIC",	# Republic of Cambodia
+                        iIndonesia : "TXT_KEY_CIV_INDONESIA_DESC_DEMOCRATIC",	# Republic of Indonesia
+			iMoors : "TXT_KEY_CIV_MOORS_DESC_DEMOCRATIC",	# Moroccan Republic
+                        iSpain : "TXT_KEY_CIV_SPAIN_DESC_DEMOCRATIC",	# Spanish Republic
+                        iFrance : "TXT_KEY_CIV_FRANCE_DESC_DEMOCRATIC",	# French Republic
+                        iEngland : "TXT_KEY_CIV_ENGLAND_DESC_DEMOCRATIC",	# Commonwealth of England
+                        iHolyRome : "TXT_KEY_CIV_HOLY_ROME_DESC_DEMOCRATIC",	# Republic of Austria
+                        iRussia : "TXT_KEY_CIV_RUSSIA_DESC_DEMOCRATIC",	# Russian Federation
+                        iNetherlands : "TXT_KEY_CIV_NETHERLANDS_DESC_DEMOCRATIC",	# Republic of the Seven United Netherlands
+                        iMali : "TXT_KEY_CIV_MALI_DESC_DEMOCRATIC",	# Republic of Mali
+			iPoland : "TXT_KEY_CIV_POLAND_DESC_DEMOCRATIC",	# Republic of Poland
+                        iPortugal : "TXT_KEY_CIV_PORTUGAL_DESC_DEMOCRATIC",	# Portuguese Republic
+                        iInca : "TXT_KEY_CIV_INCA_DESC_DEMOCRATIC",	# Incan Republic
+			iItaly : "TXT_KEY_CIV_ROME_DESC_DEMOCRATIC",	# Italian Republic
+                        iMongolia : "TXT_KEY_CIV_MONGOLIA_DESC_DEMOCRATIC",	# United Mongolia
+                        iAztecs : "TXT_KEY_CIV_AZTECS_DESC_DEMOCRATIC",	# United Mexican States
+                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_DEMOCRATIC",	# Republic of Turkey
+			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_DEMOCRATIC",	# Republic of Pakistan
+			iThailand : "TXT_KEY_CIV_THAILAND_DESC_DEMOCRATIC",	# Republic of Thailand
+			iCongo : "TXT_KEY_CIV_CONGO_DESC_DEMOCRATIC",	# Democratic Republic of the Congo
+			iGermany : "TXT_KEY_CIV_GERMANY_DESC_DEMOCRATIC",	# Federal Republic of Germany
+                        iAmerica : "TXT_KEY_CIV_AMERICA_DESC_DEMOCRATIC",	# United States of America
+			iArgentina : "TXT_KEY_CIV_ARGENTINA_DESC_DEMOCRATIC",	# Argentine Republic
+			iBrazil : "TXT_KEY_CIV_BRAZIL_DESC_DEMOCRATIC",	# Federative Republic of Brazil
+			iCanada : "TXT_KEY_CIV_CANADA_DESC_DEMOCRATIC",	# Commonwealth of Canada
                 }
 		
 		self.modernIslamNames = {
-                        iIndia : "TXT_KEY_CIV_INDIA_DESC_ISLAMIC_MODERN",
-                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_ISLAMIC_MODERN",
-                        iMali : "TXT_KEY_CIV_MALI_DESC_ISLAMIC_MODERN",
-                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_ISLAMIC_MODERN",
-			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_ISLAMIC_MODERN",
+                        iIndia : "TXT_KEY_CIV_INDIA_DESC_ISLAMIC_MODERN",	# Islamic Republic of India
+                        iPersia : "TXT_KEY_CIV_PERSIA_DESC_ISLAMIC_MODERN",	# Islamic Republic of Persia
+                        iMali : "TXT_KEY_CIV_MALI_DESC_ISLAMIC_MODERN",	# Islamic Republic of Mali
+                        iTurkey : "TXT_KEY_CIV_TURKEY_DESC_ISLAMIC_MODERN",	# Islamic Turkish Democracy
+			iMughals : "TXT_KEY_CIV_MUGHALS_DESC_ISLAMIC_MODERN",	# Islamic Republic of Pakistan
                 }
 		
 		self.startingLeaders = {
@@ -981,7 +982,7 @@ class DynamicCivs:
 			
 		if utils.getScenario() == con.i600AD:
 			self.changeAnarchyTurns(iChina, 3)
-			self.setCivDesc(iByzantium, "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT")
+			self.setCivDesc(iByzantium, "TXT_KEY_CIV_BYZANTIUM_DESC_DEFAULT")	# Byzantine Empire
 		elif utils.getScenario() == con.i1700AD:
 			self.changeResurrections(iEgypt, 1)
 			
@@ -1117,18 +1118,51 @@ class DynamicCivs:
 				
 			# special cases
 			if iMaster == iRome and iPlayer == iCarthage and capital.getX() < 73:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ROMAN_VASSAL")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ROMAN_VASSAL")	# Province of Africa
+				return
+			if iMaster == iTurkey and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_TURKISH_VASSAL")	# Eyalet of Tunisia
+				return
+			if iMaster == iSpain and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_SPANISH_VASSAL")	# Spanish North Africa
+				return
+			if iMaster == iMongolia and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_MONGOL_VASSAL")	# Khanate of Carthage
+				return
+			if iMaster == iFrance and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_FRENCH_VASSAL")	# French North Africa
+				return
+			if iMaster == iEngland and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ENGLISH_VASSAL")	# English North Africa
+				return
+			if iMaster == iByzantium and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_BYZANTINE_VASSAL")	# Exarchate of Africa
+				return
+			if iMaster == iBabylonia and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_BABYLONIAN_VASSAL")	# Babylonian Carthage
+				return
+			if iMaster == iArabia and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ARABIAN_VASSAL")	# Emirate of Ifriqiya
+				return
+			if iMaster == iChina and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_CHINESE_VASSAL")	# Tributary Carthaginian State
+				return
+			if iMaster == iRussia and pMasterPlayer.getCivics(3) == con.iCivicCentralPlanning and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_SOVIET_VASSAL")	# Soviet Tunisia
+				return
+			if iMaster == iGermany and pMasterPlayer.getCivics(1) == con.iCivicTotalitarianism and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_NAZI_VASSAL")	# Reichskommissariat North Africa
 				return
 			if iMaster == iHolyRome and iPlayer == iPoland and iGameEra >= con.iIndustrial:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_AUSTRIAN_VASSAL")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_AUSTRIAN_VASSAL")	# Kingdom of Galicia and Lodomeria
 				return
 			if iMaster == iEngland and iPlayer == iMughals and not gc.getPlayer(iIndia).isAlive():
 				self.setCivDesc(iPlayer, self.specificVassalNames[iEngland][iIndia])
 				return
 			if iMaster == iSpain and iPlayer == iMaya and bReborn:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_SPANISH_VASSAL")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_SPANISH_VASSAL")	# Viceroyalty of New Granada
 				return
-			if iMaster == iPersia and pMasterPlayer.isReborn():
+			if iMaster == iPersia and pMasterPlayer.isReborn():	# Protectorate of %s1
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE", pPlayer.getCivilizationShortDescriptionKey())
 				return
 			
@@ -1141,20 +1175,20 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, self.genericVassalNames[iMaster], pPlayer.getCivilizationShortDescriptionKey())
 				return
 				
-			if iPlayer in [iMali, iEthiopia, iCongo, iAztecs, iInca, iMaya]:
+			if iPlayer in [iMali, iEthiopia, iCongo, iAztecs, iInca, iMaya]:	# Colony of %s1
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_COLONY", pPlayer.getCivilizationShortDescriptionKey())
 				return
-				
+																				# Protectorate of %s1
 			self.setCivDesc(iPlayer, "TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE", pPlayer.getCivilizationShortDescriptionKey())
 			return
 		
 		# Communism
 		if self.isCommunist(iPlayer):
 			if iPlayer == iMaya and bReborn:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_COMMUNIST")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_COMMUNIST")	# Socialist Republic of Colombia
 				return
 			if iPlayer == iCarthage and capital.getX() < 73:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_COMMUNIST")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_COMMUNIST")	# Punic People's Republic
 				return
 			if iPlayer in self.communistNames:
 				self.setCivDesc(iPlayer, self.communistNames[iPlayer])
@@ -1163,10 +1197,10 @@ class DynamicCivs:
 		# Fascism
 		if self.isFascist(iPlayer):
 			if iPlayer == iMaya and bReborn:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_FASCIST")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_FASCIST")	# Colombian Junta
 				return
 			if iPlayer == iCarthage and capital.getX() < 73:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_FASCIST")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_FASCIST")	# New Carthaginian Empire
 				return
 			if iPlayer in self.fascistNames:
 				self.setCivDesc(iPlayer, self.fascistNames[iPlayer])
@@ -1176,34 +1210,34 @@ class DynamicCivs:
 		if self.isDemocratic(iPlayer):
 			if iPlayer == iMughals:
 				if iEra <= con.iRenaissance:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MUGHALS_REPUBLIC_MEDIEVAL")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MUGHALS_REPUBLIC_MEDIEVAL")	# Republic of Delhi
 					return
 			elif iPlayer == iVikings:
 				if capital.getName() == "Stockholm":
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_SWEDEN_REPUBLIC")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_SWEDEN_REPUBLIC")	# Republic of Sweden
 					return
 				elif capital.getName() == "Kobenhavn":
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK_REPUBLIC")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK_REPUBLIC")	# Republic of Denmark
 					return
 			elif iPlayer == iPoland:
 				if iEra <= con.iIndustrial:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_EMPIRE")	# Polish-Lithuanian Commonwealth
 					return
 			elif iPlayer == iAmerica:
 				if iCivic2 == con.iCivicAgrarianism or iCivic2 == con.iCivicSlavery:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")	# Confederate States of America
 					return
 			elif iPlayer == iHolyRome:
 				if iGameTurn < getTurnForYear(1700):
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_GERMAN_CONFEDERATION")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_GERMAN_CONFEDERATION")	# German Confederation
 					return
 			elif iPlayer == iCarthage:
 				if capital.getX() < 73:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_DEMOCRATIC")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_DESC_DEMOCRATIC")	# Punic Republic
 					return
 			elif iPlayer == iMaya:
 				if bReborn:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_DEMOCRATIC")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_DEMOCRATIC")	# Republic of Colombia
 					return
 		
 		
@@ -1220,151 +1254,151 @@ class DynamicCivs:
 				if bTheocracy and iReligion == con.iIslam:
 					if iEra <= iIndustrial:
 						if tPlayer.isHasTech(con.iGunpowder):
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_CALIPHATE")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_CALIPHATE")	# Mamluk Caliphate
 						elif pArabia.isAlive():
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_FATIMID_CALIPHATE")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_FATIMID_CALIPHATE")	# Fatimid Caliphate
 						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_AYYUBID_CALIPHATE")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_AYYUBID_CALIPHATE")	# Ayyubid Caliphate
 						return
 				elif iReligion == con.iIslam:
 					if iEra <= iIndustrial:
 						if tPlayer.isHasTech(con.iGunpowder):
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_SULTANATE")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MAMLUK_SULTANATE")	# Mamluk Sultanate
 						elif pArabia.isAlive():
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_FATIMID_SULTANATE")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_FATIMID_SULTANATE")	# Fatimid Sultanate
 						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_AYYUBID_SULTANATE")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_AYYUBID_SULTANATE")	# Ayyubid Sultanate
 						return
 				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_COPTIC")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_COPTIC")	# Coptic Kingdom
 					return
 			else:
 				if iGreece in lPreviousOwners:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_PTOLEMAIC")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_PTOLEMAIC")	# Ptolemaic Empire
 					return
 		
 				if bCityStates:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_CITY_STATES")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_CITY_STATES")	# Egyptian City-States
 					return
 				
 				if iEra == iAncient:
 					if iAnarchyTurns == 0:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_OLD_KINGDOM")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_OLD_KINGDOM")	# Old Kingdom of Egypt
 					elif iAnarchyTurns == 1:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM")	# Middle Kingdom of Egypt
 					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_NEW_KINGDOM")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_NEW_KINGDOM")	# New Kingdom of Egypt
 					return
 				elif iEra == iClassical:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_NEW_KINGDOM")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_EGYPT_NEW_KINGDOM")	# New Kingdom of Egypt
 					return
 					
 		elif iPlayer == iIndia:
 			if iReligion == con.iIslam:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_SULTANATE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_SULTANATE")	# Sultanate of India
 				return
 				
 			if bEmpire and iEra <= iClassical:
 				if iReligion == con.iBuddhism:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MAURYA")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MAURYA")	# Maurya Empire
 					return
 				elif iReligion == con.iHinduism:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_GUPTA")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_GUPTA")	# Gupta Empire
 					return
 		
 			if bCityStates:
 				if iEra <= iClassical:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MAHAJANAPADAS")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MAHAJANAPADAS")	# Indian Mahajanapadas
 					return
 					
 			if bEmpire and iEra == iMedieval:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_PALA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_PALA")	# Pala Empire
 				return
 				
 			if iEra >= iRenaissance:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA_EMPIRE")	# Maratha Empire
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDIA_MARATHA")	# Maratha Confederacy
 				return
 				
 		elif iPlayer == iChina:
 			if not bResurrected:
 				if bEmpire:
 					if iEra >= iIndustrial or utils.getScenario() == con.i1700AD:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")	# Empire of the Great Qing
 						return
 						
 					if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")	# Empire of the Great Ming
 						return
 						
 					if iEra == iMedieval:
 						#if iAnarchyTurns <= 2:
 						#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
 						if teamChina.isHasTech(con.iPaper) and teamChina.isHasTech(con.iGunpowder):
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SONG")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SONG")	# Song Empire
 						elif iGameTurn >= getTurnForYear(600):
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_TANG")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_TANG")	# Tang Empire
 						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SUI")	# Sui Empire
 						return
 						
 					if iEra == iClassical:
 						if iGameTurn < getTurnForYear(0):
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QIN")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QIN")	# Qin Empire
 						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_HAN")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_HAN")	# Han Empire
 						return
 				
 					if iEra == iAncient:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_ZHOU")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_ZHOU")	# Zhou Empire
 						return
 			else:
 				if bEmpire:
 					if iGameTurn < getTurnForYear(con.tBirth[con.iMongolia]):
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SONG")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_SONG")	# Song Empire
 					elif iEra <= iRenaissance:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_MING")	# Empire of the Great Ming
 					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_CHINA_QING")	# Empire of the Great Qing
 					return
 					
 		elif iPlayer == iBabylonia:
 			if bCityStates and not bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_CITY_STATES")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_CITY_STATES")	# Mesopotamian City-States
 				return
 		
 			if capital.getName() == "Ninova" or capital.getName() == "Kalhu":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_ASSYRIA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_ASSYRIA")	# Assyrian Empire
 				return
 		
 			if bEmpire and iEra > iAncient:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE")	# Neo-Babylonian Empire
 				return
 				
 		elif iPlayer == iGreece:
 			if bCityStates:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_EMPIRE")	# Greek Empire
 					return
 					
 				if bWar:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_LEAGUE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_LEAGUE")	# Greek League
 				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_CITY_STATES")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_CITY_STATES")	# Greek City-States
 				return
 				
 			if iEra <= iClassical:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_MACEDONIA_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_MACEDONIA_EMPIRE")	# Macedonian Empire
 				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_MACEDONIA_KINGDOM")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_MACEDONIA_KINGDOM")	# Kingdom of Macedonia
 				return
 				
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_GREECE_EMPIRE")	# Greek Empire
 				return
 				
 		elif iPlayer == iPersia:
@@ -1372,122 +1406,122 @@ class DynamicCivs:
 				if bEmpire and iReligion == con.iZoroastrianism:
 					if iGameEra < iMedieval:
 						if bResurrected:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_PARTHIA")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_PARTHIA")	# Parthian Empire
 						else:
-							self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_ACHAEMENID")
+							self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_ACHAEMENID")	# Achaemenid Empire
 						return
 					elif iGameEra == iMedieval:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_SASSANID")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_SASSANID")	# Sassanid Empire
 						return
 					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_EMPIRE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_EMPIRE")	# Persian Empire
 						return
 			else:
 				if bEmpire:
 					if iEra <= iRenaissance:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_SAFAVID_EMPIRE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_SAFAVID_EMPIRE")	# Safavid Empire
 					elif iEra == iIndustrial:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_QAJAR_EMPIRE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_QAJAR_EMPIRE")	# Qajar Empire
 					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_PAHLAVI_EMPIRE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_PERSIA_PAHLAVI_EMPIRE")	# Pahlavi Empire
 					return
 					
 		elif iPlayer == iCarthage:	# change adjectives and short desc here too
 			if capital.getX() >= 66:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PHOENICIA_CITY_STATES")
-				self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_PHOENICIA_SHORT_DESC")
-				self.setCivAdjective(iPlayer, "TXT_KEY_CIV_PHOENICIA_ADJECTIVE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PHOENICIA_CITY_STATES")	# Phoenician City-States
+				self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_PHOENICIA_SHORT_DESC")	# Phoenicia
+				self.setCivAdjective(iPlayer, "TXT_KEY_CIV_PHOENICIA_ADJECTIVE")	# Phoenician
 				return
 				
-			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_SHORT_DESC")
-			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
+			self.setCivShortDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_SHORT_DESC")	# Carthage
+			self.setCivAdjective(iPlayer, "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")	# Carthaginian
 				
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_EMPIRE")	# Carthaginian Empire
 				return
 		
 			if bCityStates:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_CITY_STATES")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_CITY_STATES")	# Carthaginian City-States
 				return
 			# make Carthaginian Kingdom default
 			
 		elif iPlayer == iPolynesia:
 			if capital.getName() in ["Kaua'i", "O'ahu", "Maui"]:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_HAWAII")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_HAWAII")	# Kingdom of Hawaii
 				return
 			
 			if bEmpire:
-				if capital.getName() == "Manu'a": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_EMPIRE_SAMOA")
-				else: self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_EMPIRE")
+				if capital.getName() == "Manu'a": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_EMPIRE_SAMOA")	# Tu'i Manu'a Empire
+				else: self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_EMPIRE")	# Tu'i Tonga Empire
 				return
 				
-			if capital.getName() == "Manu'a": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_SAMOA")
-			elif capital.getName() == "Niue": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_NIUE")
+			if capital.getName() == "Manu'a": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_SAMOA")	# Kingdom of Samoa
+			elif capital.getName() == "Niue": self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLYNESIA_NIUE")	# Kingdom of Niue
 			
 			# Kingdom of Tonga as default
 			
 		elif iPlayer == iRome:
 			if pByzantium.isAlive():
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_WESTERN_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_WESTERN_EMPIRE")	# Western Roman Empire
 				return
 		
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_EMPIRE")	# Roman Empire
 				return
 				
 			if bCityStates:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ROME_REPUBLIC")	# Roman Republic
 				return
 					
 		elif iPlayer == iJapan:
 			if bEmpire or iCivic1 == con.iCivicAbsolutism or iEra >= iIndustrial: # Absolutism
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_JAPAN_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_JAPAN_EMPIRE")	# Empire of Japan
 				return
 				
 			# make Shogunate default
 			
 		elif iPlayer == iTamils:
 			if iEra >= iRenaissance:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_MYSORE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_MYSORE")	# Kingdom of Mysore
 				return
 				
 			if iEra >= iMedieval:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_VIJAYANAGARA_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_VIJAYANAGARA_EMPIRE")	# Vijayanagara Empire
 					return
 			
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_VIJAYANAGARA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_VIJAYANAGARA")	# Kingdom of Vijayanagara
 				return
 				
 			if bEmpire:
 				if capital.getName() in ["Madurai", "Thiruvananthapuram"]:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_PANDYAN_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_PANDYAN_EMPIRE")	# Pandyan Empire
 					return
 					
 				if capital.getName() in ["Cochin", "Kozhikode"]:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHERA_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHERA_EMPIRE")	# Chera Empire
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHOLA_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHOLA_EMPIRE")	# Chola Empire
 				return
 				
 			if capital.getName() in ["Madurai", "Thiruvananthapuram"]:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_PANDYAN_KINGDOM")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_PANDYAN_KINGDOM")	# Pandyan Kingdom
 				return
 				
 			if capital.getName() in ["Cochin", "Kozhikode"]:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHERA_KINGDOM")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TAMILS_CHERA_KINGDOM")	# Chera Kingdom
 				return
 				
 			# Chola Kingdom default
 				
 		elif iPlayer == iEthiopia:
 			if not gc.getGame().isReligionFounded(con.iIslam):
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ETHIOPIA_AKSUM")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ETHIOPIA_AKSUM")	# Kingdom of Aksum
 				return
 				
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ETHIOPIA_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ETHIOPIA_EMPIRE")	# Ethiopian Empire
 				return
 				
 			# make Ethiopian Kingdom default
@@ -1495,120 +1529,120 @@ class DynamicCivs:
 		elif iPlayer == iKorea:		# difference Goryeo and Joseon with religion?
 			if iEra < iMedieval:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_GOGURYEO")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_GOGURYEO")	# Kingdom of Goguryeo
 					return
 			if iEra < iRenaissance:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_GORYEO")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_GORYEO")	# Kingdom of Goryeo
 				return
 			else:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_EMPIRE")	# Korean Empire
 				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_JOSEON")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_KOREA_JOSEON")	# Kingdom of Greater Joseon
 				return
 				
 		#elif iPlayer == iMaya: # city states are default
 		elif iPlayer == iMaya:
 			if bReborn:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_EMPIRE")	# Empire of Gran Colombia
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_DEFAULT")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_COLOMBIA_DESC_DEFAULT")	# Kingdom of New Granada
 				return
 				
 		elif iPlayer == iByzantium:
 			if pRome.isAlive() and not pRome.isReborn():
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_EASTERN_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_EASTERN_EMPIRE")	# Eastern Roman Empire
 				return
 				
 			if capital.getName() == "Trapezounta":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_TREBIZOND_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_TREBIZOND_EMPIRE")	# Empire of Trebizond
 				return
 			elif capital.getName() == "Dyrrachion":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_EPIRUS_DESPOTATE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_EPIRUS_DESPOTATE")	# Despotate of Epirus
 				return
 			elif capital.getName() == "Athina":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_MOREA_DESPOTATE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_MOREA_DESPOTATE")	# Despotate of the Morea
 				return
 			elif capital.getName() != "Konstantinoupolis":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_NICAEA_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BYZANTIUM_NICAEA_EMPIRE")	# Empire of Nicaea
 				return
 				
 		elif iPlayer == iVikings:
 			if iReligion == -1 and not teamVikings.isHasTech(con.iLiberalism):
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS")	# Norse Kingdoms
 				return
 			else:
 				if bEmpire:
 					if iEra <= iMedieval:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_KALMAR_UNION")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_KALMAR_UNION")	# Kalmar Union
 					elif iEra == iRenaissance or capital.getName() == "Stockholm":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_SWEDISH_EMPIRE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_SWEDISH_EMPIRE")	# Swedish Empire
 					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY")	# Kingdom of Denmark-Norway
 					return
 				else:
 					if capital.getName() == "Oslo" or capital.getName() == "Trondheim" or capital.getName() == "Nidaros":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_NORWAY")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_NORWAY")	# Kingdom of Norway
 						return
 					elif capital.getName() == "Stockholm" or capital.getName() == "Kalmar":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_SWEDEN")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_SWEDEN")	# Kingdom of Sweden
 						return
 					elif capital.getName() == "Kobenhavn" or capital.getName() == "Roskilde":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_VIKINGS_DENMARK")	# Kingdom of Denmark
 						return
 						
 		elif iPlayer == iArabia:
 			if bResurrected:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARABIA_SAUDI")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARABIA_SAUDI")	# Kingdom of Saudi-Arabia
 				return
 		
 			if iReligion == con.iIslam and bTheocracy:
 				if not bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARABIA_RASHIDUN_CALIPHATE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARABIA_RASHIDUN_CALIPHATE")	# Rashidun Caliphate
 				else:
 					if capital.getName() == "Dimashq":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARABIA_UMMAYAD_CALIPHATE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARABIA_UMMAYAD_CALIPHATE")	# Ummayad Caliphate
 					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARABIA_ABBASID_CALIPHATE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARABIA_ABBASID_CALIPHATE")	# Abbasid Caliphate
 				return
 				
 			# Arabian Sultanates as default, Arabian leaders should prefer Theocracy
 			
 		elif iPlayer == iTibet:
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TIBET_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TIBET_EMPIRE")	# Tibetan Empire
 				return
 				
 			# Kingdom of Tibet as default
 			
 		elif iPlayer == iKhmer:
 			if iEra <= iRenaissance and capital.getName() == "Angkor":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KHMER_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KHMER_EMPIRE")	# Khmer Empire
 				return
 			elif capital.getName() == "Hanoi":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KHMER_VIETNAM")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KHMER_VIETNAM")	# Dai Viet
 				return
 			elif capital.getName() == "Pagan":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KHMER_BURMA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KHMER_BURMA")	# Kingdom of Burma
 				return
 			elif capital.getName() == "Dali":
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KHMER_NANZHAO")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_KHMER_NANZHAO")	# Kingdom of Nanzhao
 				return
 				
 			# Kingdom of Cambodia default
 				
 		elif iPlayer == iIndonesia:
 			if iReligion == con.iIslam:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDONESIA_MATARAM")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDONESIA_MATARAM")	# Sultanate of Mataram
 				return
 		
 			if iEra <= iRenaissance:
 				if not bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDONESIA_SRIVIJAYA")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDONESIA_SRIVIJAYA")	# Kingdom of Srivijaya
 				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDONESIA_MAJAPAHIT")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INDONESIA_MAJAPAHIT")	# Kingdom of Majapahit
 				return
 			
 			# generic name as default
@@ -1617,30 +1651,30 @@ class DynamicCivs:
 			bAndalusia = utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR)
 			
 			if bCityStates:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_TAIFAS")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_TAIFAS")	# Andalusian Taifas
 				return
 				
 			if bAndalusia:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CALIPHATE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CALIPHATE")	# Caliphate of C&#243;rdoba
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CORDOBA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_CORDOBA")	# Emirate of Cordoba
 				return
 				
 			if bEmpire and iEra <= iRenaissance:
 				if bTheocracy and iReligion == con.iIslam:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_CALIPHATE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_CALIPHATE")	# Almohad Caliphate
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MOORS_ALMOHAD_EMPIRE")	# Almohad Empire
 				return
 				
 			# Kingdom of Morocco as default
 
 		elif iPlayer == iSpain:
 			if iReligion == con.iIslam:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_SULTANATE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_SULTANATE")	# Sultanate of Al-Andalus
 				return
 				
 			bSpain = True
@@ -1651,14 +1685,14 @@ class DynamicCivs:
 				
 			if bEmpire and iEra > iMedieval:
 				if bSpain:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_EMPIRE")	# Spanish Empire
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_CASTILIAN_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_CASTILIAN_EMPIRE")	# Castilian Empire
 				return
 				
 			if (capital.getName() == "Barcelona" or capital.getName() == "Valencia") and iEra == iMedieval:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_ARAGON")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_ARAGON")	# Crown of Aragon
 				return
 				
 			bSpain = True
@@ -1669,67 +1703,67 @@ class DynamicCivs:
 			
 			if iGameTurn > getTurnForYear(con.tBirth[iPortugal]):
 				if not pPortugal.isAlive() and bSpain:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")	# Kingdom of Iberia
 					return
 			
 				pPortugueseCapital = gc.getPlayer(iPortugal).getCapitalCity()	
 				if not utils.isPlotInArea((pPortugueseCapital.getX(), pPortugueseCapital.getY()), con.tCoreAreasTL[0][iPortugal], con.tCoreAreasBR[0][iPortugal], con.tExceptions[0][iPortugal]) and bSpain:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_IBERIA")	# Kingdom of Iberia
 					return
 		
 			if not bSpain:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_CASTILLE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_SPAIN_CASTILLE")	# Kingdom of Castille
 				return
 				
 		elif iPlayer == iFrance:
 			#if capital.getName() == "Nouvelle Orl&#233;ans":
-			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_LOUISIANA")
+			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_LOUISIANA")	# Kingdom of Louisiana
 			#	return
 				
 			#if utils.isPlotInArea(tCapitalCoords, tNCAmericaTL, tNCAmericaBR):
-			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_QUEBEC")
+			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_QUEBEC")	# Kingdom of Qu&#233;bec
 			#	return
 		
 			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iFrance], con.tCoreAreasBR[0][iFrance], con.tExceptions[0][iFrance]):
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EXILE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EXILE")	# Free France
 				return
 		
 			if (iEra > iRenaissance and bEmpire) or iCivic0 == con.iCivicAutocracy:	# Autocracy
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_EMPIRE")	# French Empire
 				return
 				
 			if not pHolyRome.isAlive() and iEra == iMedieval:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_FRANKISH_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_FRANKISH_EMPIRE")	# Frankish Empire
 				return
 				
 		elif iPlayer == iEngland:
 			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iEngland], con.tCoreAreasBR[0][iEngland], con.tExceptions[0][iEngland]):
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_EXILE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_EXILE")	# British Government in Exile
 				return
 		
 			if iEra < iIndustrial:
 				if utils.getMaster(iFrance) == iEngland:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE")	# Angevin Empire
 					return
 			
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN")	# Kingdom of Great Britain
 					return
 			else:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_EMPIRE")	# British Empire
 				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM")	# United Kingdom of Great Britain
 				return
 				
 		elif iPlayer == iHolyRome:
 			if bEmpire:
 				if pGermany.isAlive():
 					if iCivic1 == con.iCivicRepresentation:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_HUNGARY")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_HUNGARY")	# Austro-Hungarian Empire
 						return
 						
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_EMPIRE")	# Austrian Empire
 					return
 					
 				lEuroCivs = [iVikings, iSpain, iFrance, iEngland, iRome, iItaly, iPoland, iPortugal, iNetherlands]
@@ -1740,81 +1774,81 @@ class DynamicCivs:
 						iCounter += 1
 						
 				if iCounter >= 2:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_HABSBURG_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_HABSBURG_EMPIRE")	# Habsburg Empire
 					return
 				
 				if iEra <= con.iRenaissance:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_HRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_HRE")	# Holy Roman Empire
 					return
 			
 			if pGermany.isAlive():
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_ARCHDUCHY")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_HOLY_ROME_AUSTRIA_ARCHDUCHY")	# Archduchy of Austria
 				return
 				
 			# Kingdom of Germany as default
 			
 		elif iPlayer == iRussia:
 			if bEmpire and iEra > iMedieval:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_RUSSIA_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_RUSSIA_EMPIRE")	# Russian Empire
 				return
 		
 			if iEra == iMedieval and not bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_RUSSIA_MUSCOVY")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_RUSSIA_MUSCOVY")	# Grand Duchy of Muscovy
 				return
 				
 		elif iPlayer == iNetherlands:
 			if bCityStates:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_DESC_DEMOCRATIC")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_DESC_DEMOCRATIC")	# Republic of the Seven United Netherlands
 				return
 		
 			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iNetherlands], con.tCoreAreasBR[0][iNetherlands], con.tExceptions[0][iNetherlands]):
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_EXILE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_EXILE")	# Dutch Government in Exile
 				return
 		
 			if iEra < iIndustrial:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_UNITED_KINGDOM")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_UNITED_KINGDOM")	# United Kingdom of the Netherlands
 					return
 			else:
 				if bEmpire and not bCityStates:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_EMPIRE")	# Dutch Empire
 					return
 		
 			if bCityStates:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_DESC_DEMOCRATIC")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_NETHERLANDS_DESC_DEMOCRATIC")	# Republic of the Seven United Netherlands
 				return
 
 			# Kingdom as default
 			
 		elif iPlayer == iMali:
 			if bResurrected:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MALI_SONGHAI")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MALI_SONGHAI")	# Songhai Empire
 				return
 				
 			# Empire as default
 			
 		elif iPlayer == iPoland:
 			if bEmpire and iEra >= con.iRenaissance:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_EMPIRE")	# Polish-Lithuanian Commonwealth
 				return
 				
 			if capital.getName() == 'Kowno' or capital.getName() == 'Medvegalis' or capital.getName() == 'Klajpeda' or capital.getName == 'Wilno' or capital.getName() == 'Riga':
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_LITHUANIA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_LITHUANIA")	# Grand Duchy of Lithuania
 				return
 				
 			# Kingdom as default
 			
 		elif iPlayer == iPortugal:
 			if utils.isPlotInArea(tCapitalCoords, tBrazilTL, tBrazilBR) and not gc.getPlayer(iBrazil).isAlive():
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_BRAZIL")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_BRAZIL")	# United Kingdom of Portugal and Brazil
 				return
 				
 			if not utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR):
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_EXILE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_EXILE")	# Portuguese Government in Exile
 				return
 		
 			if bEmpire and iEra > iRenaissance:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_PORTUGAL_EMPIRE")	# Portuguese Empire
 				return
 				
 			# Kingdom as default
@@ -1822,14 +1856,14 @@ class DynamicCivs:
 		elif iPlayer == iInca:
 			if bResurrected:
 				if capital.getName() == 'La Paz':
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_BOLIVIA")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_BOLIVIA")	# Republic of Bolivia
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_PERU")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_PERU")	# Republic of Peru
 				return
 		
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_INCA_EMPIRE")	# Four Incan Regions
 				return
 				
 			# Kingdom of Cuzco as default
@@ -1838,68 +1872,68 @@ class DynamicCivs:
 			if bCityStates:
 				if bWar:
 					if bEmpire:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_ITALIAN_LEAGUE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_ITALIAN_LEAGUE")	# Italian League
 					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_LOMBARD_LEAGUE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_LOMBARD_LEAGUE")	# Lombard League
 				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS")	# Italian Maritime Republics
 				return
 			else:
 				if bEmpire or bResurrected:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")	# Kingdom of Italy
 				else:
 					if capital.getName() == "Fiorenza" or capital.getName() == "Firenze":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_TUSCANY")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_TUSCANY")	# Duchy of Tuscany
 					elif capital.getName() == "Venezia":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_VENICE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_VENICE")	# Duchy of Venice
 					elif capital.getName() == "Milano":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_MILAN")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_DUCHY_MILAN")	# Duchy of Milan
 					elif capital.getName() == "Roma":
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_PAPAL_STATE")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_PAPAL_STATE")	# Papal States
 					else:
-						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")
+						self.setCivDesc(iPlayer, "TXT_KEY_CIV_ITALY_KINGDOM")	# Kingdom of Italy
 				return
 			
 		elif iPlayer == iMongolia:
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_EMPIRE")	# Mongol Empire
 				return
 				
 			if capital.getX() >= 99 and capital.getY() <= 43:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_YUAN")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_YUAN")	# Yuan Empire
 				return
 				
 			if capital.getName() == 'Samarkand' or capital.getName() == 'Samarqand' or capital.getName() == 'Merv' or capital.getName() == 'Marv':
 				if pMongolia.getStateReligion() == con.iIslam:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_TIMURID")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_TIMURID")	# Timurid Empire
 				else:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_CHAGATAI")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_CHAGATAI")	# Chagatai Khanate
 				return
 		
 			if iEra == iMedieval:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_KHAMAG")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MONGOLIA_KHAMAG")	# Khamag Mongol
 				return
 					
 			# Mongol State as default
 			
 		elif iPlayer == iAztecs:
 			if bResurrected:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MEXICO_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MEXICO_EMPIRE")	# Mexican Empire
 				return
 		
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AZTECS_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AZTECS_EMPIRE")	# Aztec Empire
 				return
 		
 			if bCityStates:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AZTECS_ALTEPETL")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AZTECS_ALTEPETL")	# Mexican Altepetl
 				return
 				
 			# Triple Alliance as default
 			
 		elif iPlayer == iMughals:
 			if iEra == iMedieval and not bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MUGHALS_DELHI")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_MUGHALS_DELHI")	# Delhi Sultanate
 				return
 				
 			# Mughal Empire as default
@@ -1907,29 +1941,29 @@ class DynamicCivs:
 		elif iPlayer == iTurkey:
 			if iReligion != con.iIslam:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TURKEY_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_TURKEY_EMPIRE")	# Turkish Empire
 					return
 			
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TURKEY_OTTOMAN_STATE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TURKEY_OTTOMAN_STATE")	# Sublime Ottoman State
 				return
 		
 			if bTheocracy:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TURKEY_OTTOMAN_CALIPHATE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TURKEY_OTTOMAN_CALIPHATE")	# Ottoman Caliphate
 				return
 				
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TURKEY_OTTOMAN_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_TURKEY_OTTOMAN_EMPIRE")	# Ottoman Empire
 				return
 				
 			# Ottoman Sultanate as default
 			
 		elif iPlayer == iThailand:
 			if iEra <= iRenaissance:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_THAILAND_AYUTTHAYA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_THAILAND_AYUTTHAYA")	# Kingdom of Ayutthaya
 				return
 			else:
 				if bEmpire:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_THAILAND_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_THAILAND_EMPIRE")	# Empire of Siam
 					return
 					
 			# Siam as default
@@ -1937,39 +1971,39 @@ class DynamicCivs:
 		elif iPlayer == iGermany:
 			if bEmpire and iEra > con.iRenaissance:
 				if utils.getMaster(iHolyRome) == iGermany:
-					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GERMANY_GREATER_EMPIRE")
+					self.setCivDesc(iPlayer, "TXT_KEY_CIV_GERMANY_GREATER_EMPIRE")	# Greater German Empire
 					return
 					
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_GERMANY_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_GERMANY_EMPIRE")	# German Empire
 				return
 				
 			# Kingdom of Prussia as default
 			
 		elif iPlayer == iAmerica:
 			if iCivic2 == con.iCivicSlavery or iCivic2 == con.iCivicAgrarianism:	# Slavery/Agrarianism
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_AMERICA_CSA")	# Confederate States of America
 				return
 				
 			# Empire of Columbia as default
 			
 		elif iPlayer == iArgentina:
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARGENTINA_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARGENTINA_EMPIRE")	# Argentine Empire
 				return
 				
 			if tCapitalCoords != con.tCapitals[0][iArgentina]:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARGENTINA_CONFEDERATION")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_ARGENTINA_CONFEDERATION")	# Argentine Empire
 				return
 			
 			
 		elif iPlayer == iBrazil:
 			if bEmpire:
-				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BRAZIL_EMPIRE")
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BRAZIL_EMPIRE")	# Empire of Brazil
 				return
 		
-		#if iPlayer == iCarthage:
+		#if iPlayer == iCarthage:									# Carthage							# Carthaginian
 		#	self.setCivName(iPlayer, self.defaultNames[iPlayer], "TXT_KEY_CIV_CARTHAGE_SHORT_DESC", "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
-		#elif iPlayer == iHolyRome:
+		#elif iPlayer == iHolyRome:									# Germany							# German
 		#	self.setCivName(iPlayer, self.defaultNames[iPlayer], "TXT_KEY_CIV_GERMANY_SHORT_DESC", "TXT_KEY_CIV_GERMANY_ADJECTIVE")
 			
 		self.setCivDesc(iPlayer, self.defaultNames[iPlayer])
