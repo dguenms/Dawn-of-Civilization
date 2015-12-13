@@ -136,7 +136,7 @@ def getWidgetHelp(argsList):
 	
 ## Religion Screen ##
 	if eWidgetType == WidgetTypes.WIDGET_HELP_RELIGION:
-		if iData1 == -1:
+		if iData1 == 0:
 			return CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ())
 
 ## Platy WorldBuilder ##
@@ -445,6 +445,14 @@ def getWidgetHelp(argsList):
 				sText += "\n" + CyTranslator().getText("TXT_KEY_CIVICS_SCREEN_NO_UPKEEP", ())
 			return sText
 ## Ultrapack ##
+
+		#Merijn functions
+		elif iData1 == 22001:
+			if iData2 == 0:
+				sText = CyTranslator().getText("TXT_KEY_WB_ENABLE_CIV", ())
+			else:
+				sText = CyTranslator().getText("TXT_KEY_WB_DISABLE_CIV", ())
+			return sText
 
 	return u""
 
