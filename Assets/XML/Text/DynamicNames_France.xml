@@ -9,24 +9,20 @@
 		<English>The French</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_FRANCE_PEOPLES</Tag>
 		<English>Frankish Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_DESC_DEFAULT</Tag>
-		<English>Kingdom of France</English>
+		<Tag>TXT_KEY_CIV_FRANCE_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_DESC_DEMOCRATIC</Tag>
-		<English>French Republic</English>
+		<Tag>TXT_KEY_CIV_FRANCE_COMMUNIST</Tag>
+		<English>%s2 Commune</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_DESC_COMMUNIST</Tag>
-		<English>French Commune</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_DESC_FASCIST</Tag>
-		<English>French State</English>
+		<Tag>TXT_KEY_CIV_FRANCE_FASCIST</Tag>
+		<English>%s2 State</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_EMPIRE</Tag>
@@ -38,130 +34,86 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_EXILE</Tag>
-		<English>Free France</English>
+		<English>Free %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_LOUISIANA</Tag>
-		<English>Kingdom of Louisiana</English>
+		<English>Louisiana</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_QUEBEC</Tag>
-		<English>Kingdom of Québec</English>
+		<English>Québec</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_NAZI_VASSAL</Tag>
-		<English>Vichy France</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_SOVIET_VASSAL</Tag>
-		<English>Soviet France</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_FRENCH_VASSAL_GENERIC</Tag>
-		<English>French %s1</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_FRENCH_VASSAL</Tag>
-		<English>French Mandate of Egypt</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_BABYLONIA</Tag>
 		<English>French Mandate of Mesopotamia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_FRENCH_VASSAL</Tag>
-		<English>Departments of Greece</English>
+		<Tag>TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF</Tag>
+		<English>Départements of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_FRENCH_VASSAL</Tag>
-		<English>French Mandate of Persia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_PHOENICIA</Tag>
 		<English>French Mandate of Lebanon</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_ITALY</Tag>
 		<English>Cisalpine Republic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_FRENCH_VASSAL</Tag>
-		<English>French East Africa</English>
+		<Tag>TXT_KEY_CIV_FRENCH_ETHIOPIA</Tag>
+		<English>%s2 East Africa</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_FRENCH_VASSAL</Tag>
-		<English>French Yucat&#225;n</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_BYZANTIUM</Tag>
 		<English>Latin Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_FRENCH_VASSAL</Tag>
-		<English>Department of Scandinavia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_FRENCH_VASSAL</Tag>
-		<English>French Mandate of Arabia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_ENGLAND</Tag>
 		<English>Duchy of Normandy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_FRENCH_VASSAL</Tag>
-		<English>French Indochina</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_SPAIN_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_SPAIN</Tag>
 		<English>Spanish March</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GERMANY_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_HOLY_ROME</Tag>
 		<English>Confederation of the Rhine</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_RUSSIA_FRENCH_VASSAL</Tag>
-		<English>Departments of Russia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_NETHERLANDS_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_NETHERLANDS</Tag>
 		<English>Batavian Republic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_FRENCH_VASSAL</Tag>
-		<English>French West Africa</English>
+		<Tag>TXT_KEY_CIV_FRENCH_MALI</Tag>
+		<English>%s2 West Africa</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_POLAND_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_POLAND</Tag>
 		<English>Duchy of Warsaw</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_FRENCH_VASSAL</Tag>
-		<English>Department of Portugal</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_INCA</Tag>
 		<English>Andean France</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_AZTECS</Tag>
 		<English>Mesoamerican France</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_FRENCH_VASSAL</Tag>
-		<English>French Mandate of West India</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_FRENCH_VASSAL</Tag>
-		<English>French Mandate of Turkey</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_FRENCH_VASSAL</Tag>
-		<English>French Siam</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_FRENCH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_FRENCH_AMERICA</Tag>
 		<English>New France</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NAME_KHMER</Tag>
+		<English>Indochina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NAME_KHMER</Tag>
+		<English>Indochina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NAME_MUGHALS</Tag>
+		<English>West India</English>
 	</TEXT>
 </Civ4GameText>

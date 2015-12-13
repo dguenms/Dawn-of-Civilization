@@ -33,6 +33,10 @@
 		<English>Kingdom of Ayutthaya</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_SIAM</Tag>
+		<English>Siam</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_EMPIRE</Tag>
 		<English>Empire of Siam</English>
 	</TEXT>

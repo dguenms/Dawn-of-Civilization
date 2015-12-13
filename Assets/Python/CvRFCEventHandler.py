@@ -566,6 +566,7 @@ class CvRFCEventHandler:
 			
 		if iBuildingType == con.iPalace:
 			sta.onPalaceMoved(iOwner)
+			dc.onPalaceMoved(iOwner)
 			
 			if city.isHasRealBuilding(con.iSummerPalace): city.setHasRealBuilding(con.iSummerPalace, False)
 

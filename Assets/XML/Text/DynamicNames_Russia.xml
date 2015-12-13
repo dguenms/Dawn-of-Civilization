@@ -52,4 +52,12 @@
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE</Tag>
 		<English>%s2 Soviet Republic</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIAN_NAME_PERSIA</Tag>
+		<English>Gilan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_JAPAN</Tag>
+		<English>Far Eastern Republic</English>
+	</TEXT>
 </Civ4GameText>

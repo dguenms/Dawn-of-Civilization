@@ -72,4 +72,8 @@
 		<Tag>TXT_KEY_CIV_MAYA_DUTCH_VASSAL</Tag>
 		<English>Dutch Yucat&#225;n</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_ARTICLE</Tag>
+		<English>the Netherlands</English>
+	</TEXT>
 </Civ4GameText>
