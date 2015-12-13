@@ -9,55 +9,31 @@
 		<English>The Moors</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_MOORS_PEOPLES</Tag>
 		<English>Andalusian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_DESC_DEFAULT</Tag>
-		<English>Kingdom of Morocco</English>
+		<Tag>TXT_KEY_CIV_MOORS_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_DESC_DEMOCRATIC</Tag>
-		<English>Moroccan Republic</English>
+		<Tag>TXT_KEY_CIV_MOORS_FASCIST</Tag>
+		<English>%s2 State</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_DESC_COMMUNIST</Tag>
-		<English>Socialist Republic of Morocco</English>
+		<Tag>TXT_KEY_CIV_MOORS_ALMOHAD</Tag>
+		<English>Almohad</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_DESC_FASCIST</Tag>
-		<English>Moroccan State</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_NAZI_VASSAL</Tag>
-		<English>German Maghreb</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_SOVIET_VASSAL</Tag>
-		<English>Soviet Morocco</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_CALIPHATE</Tag>
-		<English>Caliphate of Córdoba</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_ALMOHAD_EMPIRE</Tag>
-		<English>Almohad Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_ALMOHAD_CALIPHATE</Tag>
-		<English>Almohad Caliphate</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MOORS_CORDOBA</Tag>
-		<English>Emirate of Cordoba</English>
+		<Tag>TXT_KEY_CIV_MOORS_MOROCCO</Tag>
+		<English>Morocco</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MOORS_TAIFAS</Tag>
 		<English>Andalusian Taifas</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_MOORISH_VASSAL</Tag>
-		<English>Emirate of Hejaz</English>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ARABIA</Tag>
+		<English>Hejaz</English>
 	</TEXT>
 </Civ4GameText>

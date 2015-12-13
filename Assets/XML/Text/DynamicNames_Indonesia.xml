@@ -9,43 +9,27 @@
 		<English>The Indonesians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_INDONESIA_PEOPLES</Tag>
 		<English>Malay Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_DESC_DEFAULT</Tag>
-		<English>Kingdom of Indonesia</English>
+		<Tag>TXT_KEY_CIV_INDONESIA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Indonesia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_DESC_COMMUNIST</Tag>
-		<English>People's Republic of Indonesia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_DESC_FASCIST</Tag>
-		<English>Indonesian New Order</English>
+		<Tag>TXT_KEY_CIV_INDONESIA_FASCIST</Tag>
+		<English>%s2 New Order</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_MATARAM</Tag>
-		<English>Sultanate of Mataram</English>
+		<English>Mataram</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_SRIVIJAYA</Tag>
-		<English>Kingdom of Srivijaya</English>
+		<English>Srivijaya</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_MAJAPAHIT</Tag>
-		<English>Kingdom of Majapahit</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_SOVIET_VASSAL</Tag>
-		<English>Soviet Indonesia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_NAZI_VASSAL</Tag>
-		<English>German Indonesia</English>
+		<English>Majapahit</English>
 	</TEXT>
 </Civ4GameText>

@@ -65,11 +65,35 @@
 		<English>German West Africa</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMAN_NAME_MOORS</Tag>
+		<English>Maghreb</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_REICHSPROTEKTORAT</Tag>
 		<English>Reichsprotektorat %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GERMANY_REICHSKOMMISSARIAT</Tag>
 		<English>Reichskommissariat %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_NAZI_GREECE</Tag>
+		<English>Hellenic State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_NAZI_ETHIOPIA</Tag>
+		<English>%s2 East Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_NAZI_BYZANTIUM</Tag>
+		<English>Reichskommissariat Bosporus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_NAZI_VIKINGS</Tag>
+		<English>Reichskommissariat Nordland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GERMANY_NAZI_FRANCE</Tag>
+		<English>Vichy %s1</English>
 	</TEXT>
 </Civ4GameText>

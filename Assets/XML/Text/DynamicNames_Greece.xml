@@ -9,60 +9,36 @@
 		<English>The Greeks</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_GREECE_PEOPLES</Tag>
 		<English>Mycenean Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_DESC_DEFAULT</Tag>
-		<English>Kingdom of Greece</English>
+		<Tag>TXT_KEY_CIV_GREECE_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_DESC_DEMOCRATIC</Tag>
+		<Tag>TXT_KEY_CIV_GREECE_REPUBLIC</Tag>
 		<English>Hellenic Republic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_DESC_COMMUNIST</Tag>
-		<English>Democratic Army of Greece</English>
+		<Tag>TXT_KEY_CIV_GREECE_COMMUNIST</Tag>
+		<English>Democratic Army of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_DESC_FASCIST</Tag>
-		<English>Greek Junta</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_EMPIRE</Tag>
-		<English>Greek Empire</English>
+		<Tag>TXT_KEY_CIV_GREECE_FASCIST</Tag>
+		<English>%s2 Junta</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_LEAGUE</Tag>
-		<English>Greek League</English>
+		<English>%s2 League</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_CITY_STATES</Tag>
-		<English>Greek City-States</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_MACEDONIA_EMPIRE</Tag>
-		<English>Macedonian Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_MACEDONIA_KINGDOM</Tag>
-		<English>Kingdom of Macedonia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_SOVIET_VASSAL</Tag>
-		<English>Soviet Greece</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_NAZI_VASSAL</Tag>
-		<English>Hellenic State</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_GREEK_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_GREEK_PERSIA</Tag>
 		<English>Seleucid Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_GREEK_VASSAL</Tag>
-		<English>Ptolemid Empire</English>
+		<Tag>TXT_KEY_CIV_GREEK_EGYPT</Tag>
+		<English>Ptolemaic Kingdom</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_GREEK_VASSAL</Tag>

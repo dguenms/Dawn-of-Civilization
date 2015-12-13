@@ -9,39 +9,15 @@
 		<English>The Ethiopians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_PEOPLES</Tag>
 		<English>Abyssinian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_DESC_DEFAULT</Tag>
-		<English>Kingdom of Ethiopia</English>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Ethiopia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_DESC_COMMUNIST</Tag>
-		<English>People's Democratic Republic of Ethiopia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_DESC_FASCIST</Tag>
-		<English>Ethiopian Junta</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_EMPIRE</Tag>
-		<English>Ethiopian Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_AKSUM</Tag>
-		<English>Kingdom of Aksum</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_SOVIET_VASSAL</Tag>
-		<English>Soviet Ethiopia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_NAZI_VASSAL</Tag>
-		<English>German East Africa</English>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_FASCIST</Tag>
+		<English>%s2 Junta</English>
 	</TEXT>
 </Civ4GameText>
