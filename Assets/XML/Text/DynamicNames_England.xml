@@ -9,44 +9,32 @@
 		<English>The English</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BRITAIN_SHORT_DESC</Tag>
-		<English>Britain</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BRITAIN_ADJECTIVE</Tag>
-		<English>British</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_DESC_PEOPLES</Tag>
 		<English>Anglo-Saxon Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_DESC_DEFAULT</Tag>
-		<English>Kingdom of England</English>
+		<Tag>TXT_KEY_CIV_ENGLAND_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_DESC_DEMOCRATIC</Tag>
-		<English>Commonwealth of England</English>
+		<Tag>TXT_KEY_CIV_ENGLAND_REPUBLIC</Tag>
+		<English>Commonwealth of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_DESC_COMMUNIST</Tag>
-		<English>British Worker's Commonwealth</English>
+		<Tag>TXT_KEY_CIV_ENGLAND_COMMUNIST</Tag>
+		<English>%s2 Worker's Commonwealth</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_DESC_FASCIST</Tag>
-		<English>British Union</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_EMPIRE</Tag>
-		<English>British Empire</English>
+		<Tag>TXT_KEY_CIV_ENGLAND_FASCIST</Tag>
+		<English>%s2 Union</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN</Tag>
-		<English>Kingdom of Great Britain</English>
+		<English>Great Britain</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM</Tag>
-		<English>United Kingdom of Great Britain</English>
+		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF</Tag>
+		<English>United Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE</Tag>
@@ -54,106 +42,70 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_EXILE</Tag>
-		<English>British Government in Exile</English>
+		<English>%s2 Government in Exile</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_NAZI_VASSAL</Tag>
-		<English>Reichskommissariat England</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_SOVIET_VASSAL</Tag>
-		<English>Soviet England</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLISH_VASSAL_GENERIC</Tag>
+		<Tag>TXT_KEY_CIV_ENGLISH_VASSAL</Tag>
 		<English>Dominion of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_ENGLISH_VASSAL</Tag>
-		<English>British Mandate of Egypt</English>
+		<Tag>TXT_KEY_CIV_ENGLISH_INDIA</Tag>
+		<English>%s2 Raj</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_ENGLISH_VASSAL</Tag>
-		<English>British Raj</English>
+		<Tag>TXT_KEY_CIV_ENGLISH_BABYLONIA</Tag>
+		<English>%s2 Mandate of Mesopotamia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_ENGLISH_VASSAL</Tag>
-		<English>British Mandate of Mesopotamia</English>
+		<Tag>TXT_KEY_CIV_ENGLISH_PHOENICIA</Tag>
+		<English>%s2 Mandate of Lebanon</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_ENGLISH_VASSAL</Tag>
-		<English>British Mandate of Persia</English>
+		<Tag>TXT_KEY_CIV_ENGLISH_ETHIOPIA</Tag>
+		<English>%s2 East Africa</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_ENGLISH_VASSAL</Tag>
-		<English>British Mandate of Lebanon</English>
+		<Tag>TXT_KEY_CIV_ENGLISH_MAYA</Tag>
+		<English>Colony of %s2 Honduras</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_ENGLISH_VASSAL</Tag>
-		<English>British East Africa</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_ENGLISH_VASSAL</Tag>
-		<English>Colony of British Honduras</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_ENGLISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_ENGLISH_BYZANTIUM</Tag>
 		<English>Latin Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_ENGLISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_ENGLISH_VIKINGS</Tag>
 		<English>Duchy of Scandinavia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_ENGLISH_VASSAL</Tag>
-		<English>British Mandate of Arabia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_ENGLISH_VASSAL</Tag>
-		<English>Dominion of Indochina</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_ENGLISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_ENGLISH_FRANCE</Tag>
 		<English>Duchy of Anjou</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_ENGLISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_ENGLISH_HOLY_ROME</Tag>
 		<English>Duchy of Hanover</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GERMANY_ENGLISH_VASSAL</Tag>
-		<English>British-Occupied Germany</English>
+		<Tag>TXT_KEY_CIV_ENGLISH_GERMANY</Tag>
+		<English>%s2-Occupied Germany</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_NETHERLANDS_ENGLISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_ENGLISH_NETHERLANDS</Tag>
 		<English>Duchy of Flanders</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_ENGLISH_VASSAL</Tag>
-		<English>British West Africa</English>
+		<Tag>TXT_KEY_CIV_ENGLISH_MALI</Tag>
+		<English>%s2 West Africa</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_ENGLISH_VASSAL</Tag>
-		<English>Dominion of Peru</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_ENGLISH_VASSAL</Tag>
-		<English>Dominion of Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_ENGLISH_VASSAL</Tag>
-		<English>British Mandate of Turkey</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_ENGLISH_VASSAL</Tag>
-		<English>Dominion of Pakistan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_ENGLISH_VASSAL</Tag>
-		<English>British Siam</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_ENGLISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_ENGLISH_AMERICA</Tag>
 		<English>Thirteen Colonies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_NAME_KHMER</Tag>
+		<English>Indochina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_NAME_MUGHALS</Tag>
+		<English>Pakistan</English>
 	</TEXT>
 </Civ4GameText>
