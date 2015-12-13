@@ -637,7 +637,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_CLAM</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>TECH_FISHING</TechCityTrade>
+			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
@@ -786,7 +786,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_CRAB</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>TECH_FISHING</TechCityTrade>
+			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
@@ -892,7 +892,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_FISH</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>TECH_FISHING</TechCityTrade>
+			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
@@ -1612,7 +1612,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_PEARL</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>TECH_FISHING</TechCityTrade>
+			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>TECH_PLASTICS</TechObsolete>
 			<YieldChanges>
@@ -2079,7 +2079,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_WHALE</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>TECH_OPTICS</TechCityTrade>
+			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>TECH_COMBUSTION</TechObsolete>
 			<YieldChanges>
@@ -2127,7 +2127,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_DRAMA</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>TECH_RADIO</TechCityTrade>
+			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges/>
@@ -2168,7 +2168,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_MUSIC</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>TECH_RADIO</TechCityTrade>
+			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges/>
@@ -2209,7 +2209,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_MOVIES</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
-			<TechCityTrade>TECH_MASS_MEDIA</TechCityTrade>
+			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges/>

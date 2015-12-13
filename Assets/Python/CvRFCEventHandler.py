@@ -884,6 +884,7 @@ class CvRFCEventHandler:
 	def onEndPlayerTurn(self, argsList):
 		iGameTurn, iPlayer = argsList
 		
+		self.rnf.endTurn(iPlayer)
 		sta.endTurn(iPlayer)
 
         def onKbdEvent(self, argsList):

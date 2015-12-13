@@ -46,8 +46,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
-			<AudioRunSounds/>
-		</UnitArtInfo>
+			<AudioRunSounds/>		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PANTHER</Type>
 			<Button>,Art/Interface/Buttons/Units/Panther.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,5</Button>

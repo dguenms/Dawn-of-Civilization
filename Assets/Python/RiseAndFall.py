@@ -609,7 +609,7 @@ class RiseAndFall:
 		if iButton >= len(targetList): return
 		
 		unit, iCost = targetList[iButton]
-		closestCity = gc.getMap().findCity(unit.getX(), unit.getY(), iByzantium, TeamTypes.NO_TEAM, True, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+		closestCity = gc.getMap().findCity(unit.getX(), unit.getY(), iByzantium, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 		
 		newUnit = utils.makeUnit(unit.getUnitType(), iByzantium, (closestCity.plot().getX(), closestCity.plot().getY()), 1)
 		gc.getPlayer(iByzantium).changeGold(-iCost)
@@ -1334,6 +1334,12 @@ class RiseAndFall:
 					self.rebirthFirstTurn(iCiv)
 				if iGameTurn == getTurnForYear(con.tRebirth[iCiv])+1 and gc.getPlayer(iCiv).isAlive() and utils.isReborn(iCiv):
 					self.rebirthSecondTurn(iCiv)
+					
+	def endTurn(self, iPlayer):
+		for tTimedConquest in sd.getTimedConquests():
+			iConqueror, x, y = tTimedConquest
+			utils.colonialConquest(iConqueror, x, y)
+		sd.resetTimedConquests()
 
 	def rebirthFirstTurn(self, iCiv):
 		pCiv = gc.getPlayer(iCiv)
@@ -2616,6 +2622,7 @@ class RiseAndFall:
                                                 gc.getMap().plot(28, 31).setFeatureType(-1, 0)
                                                 gc.getMap().plot(31, 13).setPlotType(PlotTypes.PLOT_HILLS, True, True) 
 						gc.getMap().plot(32, 19).setPlotType(PlotTypes.PLOT_HILLS, True, True)
+						gc.getMap().plot(27, 29).setPlotType(PlotTypes.PLOT_HILLS, True, True) #Bogota
                                         if (iNewWorldCiv == iAztecs):
                                                 gc.getMap().plot(40, 66).setPlotType(PlotTypes.PLOT_HILLS, True, True)
 						
@@ -2897,7 +2904,8 @@ class RiseAndFall:
 							utils.colonialAcquisition(iPlayer, x, y)
 							gc.getPlayer(iTargetCiv).changeGold(200)
 						else:
-							utils.colonialConquest(iPlayer, x, y)
+							#utils.colonialConquest(iPlayer, x, y)
+							sd.timedConquest(iPlayer, x, y)
 						targetList.remove(tPlot)
 
 		pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
@@ -2907,7 +2915,8 @@ class RiseAndFall:
 
 		for tPlot in targetList:
 			x, y = tPlot
-			utils.colonialConquest(iPlayer, x, y)
+			#utils.colonialConquest(iPlayer, x, y)
+			sd.timedConquest(iPlayer, x, y)
 
 		tSeaPlot = -1
 		x, y = targetList[0]
@@ -5214,7 +5223,7 @@ class RiseAndFall:
 			for iTech in lGermanTechs:
 				teamGermany.setHasTech(iTech, True, iCiv, False, False)
 		if (iCiv == iAmerica):
-			for x in range(con.iDemocracy+1):
+			for x in range(con.iDemocracy):
 					teamAmerica.setHasTech(x, True, iCiv, False, False)
 			for x in range(con.iFishing, con.iChemistry+1):
 					teamAmerica.setHasTech(x, True, iCiv, False, False)

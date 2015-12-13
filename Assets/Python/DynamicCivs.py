@@ -1717,11 +1717,11 @@ class DynamicCivs:
 				
 		elif iPlayer == iFrance:
 			#if capital.getName() == "Nouvelle Orl&#233;ans":
-			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_LOUISIANA")
+			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_LOUISIANA")	# Kingdom of Louisiana
 			#	return
 				
 			#if utils.isPlotInArea(tCapitalCoords, tNCAmericaTL, tNCAmericaBR):
-			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_QUEBEC")
+			#	self.setCivDesc(iPlayer, "TXT_KEY_CIV_FRANCE_QUEBEC")	# Kingdom of Qu&#233;bec
 			#	return
 		
 			if not utils.isPlotInArea(tCapitalCoords, con.tCoreAreasTL[0][iFrance], con.tCoreAreasBR[0][iFrance], con.tExceptions[0][iFrance]):
@@ -2001,9 +2001,9 @@ class DynamicCivs:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_BRAZIL_EMPIRE")	# Empire of Brazil
 				return
 		
-		#if iPlayer == iCarthage:
+		#if iPlayer == iCarthage:									# Carthage							# Carthaginian
 		#	self.setCivName(iPlayer, self.defaultNames[iPlayer], "TXT_KEY_CIV_CARTHAGE_SHORT_DESC", "TXT_KEY_CIV_CARTHAGE_ADJECTIVE")
-		#elif iPlayer == iHolyRome:
+		#elif iPlayer == iHolyRome:									# Germany							# German
 		#	self.setCivName(iPlayer, self.defaultNames[iPlayer], "TXT_KEY_CIV_GERMANY_SHORT_DESC", "TXT_KEY_CIV_GERMANY_ADJECTIVE")
 			
 		self.setCivDesc(iPlayer, self.defaultNames[iPlayer])

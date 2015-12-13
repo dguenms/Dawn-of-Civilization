@@ -5762,6 +5762,10 @@
 			<bHiddenNationality>0</bHiddenNationality>
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_MACEMAN</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
 			</UnitClassUpgrades>
 			<UnitClassTargets/>
 			<UnitCombatTargets/>
@@ -5799,10 +5803,10 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_BRONZE_WORKING-->
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
-			<PrereqBonuses/>
+			<PrereqBonuses/> <!--BONUS_COPPER, BONUS_IRON-->
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
@@ -6001,7 +6005,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_BRONZE_WORKING
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -7470,10 +7474,10 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_HUNTING-->
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
-			<PrereqBonuses/>
+			<PrereqBonuses/> <!--BONUS_COPPER,BONUS_IRON-->
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
@@ -8893,7 +8897,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_GUNPOWDER-->
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -9001,7 +9005,7 @@
 			<UniqueNames/>
 			<Special>NONE</Special>
 			<Capture>NONE</Capture>
-			<Combat>NONE</Combat>
+			<Combat>NONE</Combat> <!--UNITCOMBAT_GUN-->
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
@@ -9086,7 +9090,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_GUNPOWDER-->
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -11394,7 +11398,7 @@
 			<UniqueNames/>
 			<Special>NONE</Special>
 			<Capture>NONE</Capture>
-			<Combat>NONE</Combat>
+			<Combat>NONE</Combat> <!--UNITCOMBAT_GUN-->
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
@@ -11474,8 +11478,8 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
-			<TechTypes/>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_INDUSTRIALISM-->
+			<TechTypes/> <!--TECH_RIFLING-->
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
@@ -12811,7 +12815,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_ARCHERY-->
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -14214,9 +14218,9 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_THE_WHEEL-->
 			<TechTypes/>
-			<BonusType>NONE</BonusType>
+			<BonusType>NONE</BonusType> <!--BONUS_HORSE-->
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
@@ -14331,7 +14335,7 @@
 			<UniqueNames/>
 			<Special>NONE</Special>
 			<Capture>NONE</Capture>
-			<Combat>NONE</Combat>
+			<Combat>NONE</Combat> <!--UNITCOMBAT_MOUNTED-->
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
@@ -14412,9 +14416,9 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_THE_WHEEL-->
 			<TechTypes/>
-			<BonusType>NONE</BonusType>
+			<BonusType>NONE</BonusType> <!--BONUS_HORSE-->
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
@@ -15016,9 +15020,9 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
-			<TechTypes/>
-			<BonusType>NONE</BonusType>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_HORSEBACK_RIDING-->
+			<TechTypes/> <1--TECH_ARCHERY-->
+			<BonusType>NONE</BonusType> <!--BONUS_HORSE-->
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
@@ -15237,10 +15241,10 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
-			<TechTypes/>
-			<BonusType>NONE</BonusType>
-			<PrereqBonuses/>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_HORSEBACK_RIDING-->
+			<TechTypes/> <!--TECH_METAL_CASTING-->
+			<BonusType>NONE</BonusType> <!--BONUS_HORSE-->
+			<PrereqBonuses/> <!--BONUS_COPPER,BONUS_IRON-->
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
@@ -16674,10 +16678,10 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_FEUDALISM-->
 			<TechTypes/>
-			<BonusType>NONE</BonusType>
-			<PrereqBonuses/>
+			<BonusType>NONE</BonusType> <!--BONUS_HORSE-->
+			<PrereqBonuses/> <!--BONUS_IRON-->
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
@@ -17187,10 +17191,6 @@
 					<UnitClassType>UNITCLASS_MACEMAN</UnitClassType>
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
-				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_WARRIOR</UnitClassType>
-					<iUnitClassMod>50</iUnitClassMod>
-				</UnitClassAttackMod>
 			</UnitClassAttackMods>
 			<UnitClassDefenseMods/>
 			<UnitCombatMods/>
@@ -17548,10 +17548,10 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
-			<TechTypes/>
-			<BonusType>NONE</BonusType>
-			<PrereqBonuses/>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_MILITARY_TRADITION-->
+			<TechTypes/> <!--TECH_GUNPOWDER,TECH_HORSEBACK_RIDING-->
+			<BonusType>NONE</BonusType> <!--BONUS_HORSE-->
+			<PrereqBonuses/> <!--BONUS_IRON-->
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
@@ -17660,7 +17660,7 @@
 			<UniqueNames/>
 			<Special>NONE</Special>
 			<Capture>NONE</Capture>
-			<Combat>NONE</Combat>
+			<Combat>NONE</Combat> <!--UNITCOMBAT_MOUNTED-->
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
@@ -17754,8 +17754,8 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
-			<TechTypes/>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_GUNPOWDER-->
+			<TechTypes/> <!--TECH_HORSEBACK_RIDING-->
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
@@ -19969,18 +19969,6 @@
 			<UnitClassDefenders/>
 			<UnitCombatDefenders/>
 			<FlankingStrikes>
-				<FlankingStrike>
-					<FlankingStrikeUnitClass>UNITCLASS_CATAPULT</FlankingStrikeUnitClass>
-					<iFlankingStrength>100</iFlankingStrength>
-				</FlankingStrike>
-				<FlankingStrike>
-					<FlankingStrikeUnitClass>UNITCLASS_TREBUCHET</FlankingStrikeUnitClass>
-					<iFlankingStrength>100</iFlankingStrength>
-				</FlankingStrike>
-				<FlankingStrike>
-					<FlankingStrikeUnitClass>UNITCLASS_BOMBARD</FlankingStrikeUnitClass>
-					<iFlankingStrength>100</iFlankingStrength>
-				</FlankingStrike>
 				<FlankingStrike>
 					<FlankingStrikeUnitClass>UNITCLASS_CANNON</FlankingStrikeUnitClass>
 					<iFlankingStrength>100</iFlankingStrength>
@@ -22708,7 +22696,7 @@
 			<UniqueNames/>
 			<Special>NONE</Special>
 			<Capture>NONE</Capture>
-			<Combat>NONE</Combat>
+			<Combat>NONE</Combat> <!--UNITCOMBAT_NAVAL-->
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
@@ -22786,7 +22774,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>NONE</PrereqTech>
+			<PrereqTech>NONE</PrereqTech> <!--TECH_SAILING-->
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>

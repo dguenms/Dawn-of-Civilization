@@ -479,7 +479,7 @@
   <English>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
  </TEXT>
  <TEXT>
-  <Tag>TXT_KEY_BUILDING_ASTRONOMY_HELP</Tag>
+  <Tag>TXT_KEY_TECH_ASTRONOMY_HELP</Tag>
   <English>[ICON_BULLET]Allows [COLOR_HIGHLIGHT_TEXT][LINK=UNIT_SETTLER]Settlers[\LINK][COLOR_REVERT] to be built on any continent</English>
  </TEXT>
  <TEXT>
