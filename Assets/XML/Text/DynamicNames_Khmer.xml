@@ -18,11 +18,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_COMMUNIST</Tag>
-		<English>Democratic Kampuchea</English>
+		<English>Democratic %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_FASCIST</Tag>
-		<English>Nationalist Kampuchea</English>
+		<English>Nationalist %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KHMER_DAI_VIET</Tag>

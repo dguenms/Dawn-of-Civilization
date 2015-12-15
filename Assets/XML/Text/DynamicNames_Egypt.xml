@@ -45,6 +45,18 @@
 		<English>Coptic Kingdom</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_MAMLUK</Tag>
+		<English>Mamluk</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_FATIMID</Tag>
+		<English>Fatimid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_AYYUBID</Tag>
+		<English>Ayyubid</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPTIAN_PHOENICIA</Tag>
 		<English>Province of Retjenu</English>
 	</TEXT>
