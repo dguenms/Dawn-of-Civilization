@@ -45,6 +45,10 @@
 		<English>Nicaea</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_EPIRUS</Tag>
+		<English>Epirus</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTINE_VASSAL</Tag>
 		<English>Exarchate of %s1</English>
 	</TEXT>
