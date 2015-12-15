@@ -44,4 +44,12 @@
 		<Tag>TXT_KEY_CIV_INDIA_GREEK_VASSAL</Tag>
 		<English>Greco-Bactrian Kingdom</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GREECE_MACEDONIA</Tag>
+		<English>Macedonia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_</Tag>
+		<English>Macedonian</English>
+	</TEXT>
 </Civ4GameText>
