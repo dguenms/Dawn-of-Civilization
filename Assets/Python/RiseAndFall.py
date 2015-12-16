@@ -824,7 +824,7 @@ class RiseAndFall:
 		
 			# Byzantium
 			tCapital = con.tCapitals[0][iByzantium]
-			lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, con.iGrocer, \
+			lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, \
 				      con.iOrthodoxTemple, con.iByzantineHippodrome, con.iOrthodoxShrine, con.iTheodosianWalls]
 			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [con.iChristianity, con.iOrthodoxy])
 			gc.getGame().setHolyCity(con.iOrthodoxy, city, False)
@@ -5429,7 +5429,7 @@ class RiseAndFall:
 			for y in range(tTL[1], tBR[1]+1):
 				plot = gc.getMap().plot(x,y)
 				if plot.isFlatlands() or plot.isHills():
-					if plot.getFeatureType() != gc.getInfoTypeForString("FEATURE_MUD"):
+					if plot.getFeatureType() != con.iMud:
 						if plot.getOwner() < 0:
 							plotList.append((x,y))
 		
