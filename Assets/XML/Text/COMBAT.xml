@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_ACO_AttackModifiers</Tag>
+  <English>[NEWLINE][COLOR_POSITIVE_TEXT]Attack modifiers:[COLOR_REVERT]</English>
+  <French>[NEWLINE][COLOR_POSITIVE_TEXT]Modificateurs d'Attaque:[COLOR_REVERT]</French>
+  <German>[NEWLINE][COLOR_POSITIVE_TEXT]Angriffsmodifikatoren:[COLOR_REVERT]</German>
+  <Italian>[NEWLINE][COLOR_POSITIVE_TEXT]Modificatori offensivi:[COLOR_REVERT]</Italian>
+  <Spanish>[NEWLINE][COLOR_POSITIVE_TEXT]Modificadores de ataque:[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_AverageHP</Tag>
+  <English>[NEWLINE]Average HP:[SPACE]</English>
+  <French>[NEWLINE]PV Moyen:[SPACE]</French>
+  <German>[NEWLINE]Mittlere TP:[SPACE]</German>
+  <Italian>[NEWLINE]PV medi:[SPACE]</Italian>
+  <Spanish>[NEWLINE]PG promedio:[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_BarbFreeWinsLeft</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]Barbarian free wins left:[SPACE][COLOR_REVERT]</English>
+  <French>[COLOR_HIGHLIGHT_TEXT]Nombre de victoire garantie contre les barbares:[SPACE][COLOR_REVERT]</French>
+  <German>[COLOR_HIGHLIGHT_TEXT]&#220;brige sichere Siege gegen Barbaren:[SPACE][COLOR_REVERT]</German>
+  <Italian>[COLOR_HIGHLIGHT_TEXT]Vittorie barbariche garantite rimaste:[SPACE][COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_HIGHLIGHT_TEXT]N&#250;mero de victorias garantizadas contra los b&#225;rbaros:[SPACE][COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_Defeat</Tag>
+  <English>[COLOR_NEGATIVE_TEXT]Defeat[COLOR_REVERT]</English>
+  <French>[COLOR_NEGATIVE_TEXT]D&#233;faite[COLOR_REVERT]</French>
+  <German>[COLOR_NEGATIVE_TEXT]Niederlage[COLOR_REVERT]</German>
+  <Italian>[COLOR_NEGATIVE_TEXT]Sconfitta[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_NEGATIVE_TEXT]Derrota[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_DefenseModifiers</Tag>
+  <English>[NEWLINE][COLOR_NEGATIVE_TEXT]Defense modifiers:[COLOR_REVERT]</English>
+  <French>[NEWLINE][COLOR_NEGATIVE_TEXT]Modificateurs de D&#233;fense:[COLOR_REVERT]</French>
+  <German>[NEWLINE][COLOR_NEGATIVE_TEXT]Verteidigungsmodifikatoren:[COLOR_REVERT]</German>
+  <Italian>[NEWLINE][COLOR_NEGATIVE_TEXT]Modificatori difensivi:[COLOR_REVERT]</Italian>
+  <Spanish>[NEWLINE][COLOR_NEGATIVE_TEXT]Modificadores defensivos:[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_GuaranteedNoDefenderHit</Tag>
+  <English>[NEWLINE][COLOR_HIGHLIGHT_TEXT]Guaranteed! Defender cannot score a hit.[COLOR_REVERT]</English>
+  <French>[NEWLINE][COLOR_HIGHLIGHT_TEXT]C'est garantie! L'unit&#233; d&#233;fensive ne peut marquer de coup.[COLOR_REVERT]</French>
+  <German>[NEWLINE][COLOR_HIGHLIGHT_TEXT]Sicher! Der Verteidiger kann keinen Treffer landen.[COLOR_REVERT]</German>
+  <Italian>[NEWLINE][COLOR_HIGHLIGHT_TEXT]Certa! I difensori non possono colpire neppure una volta.[COLOR_REVERT]</Italian>
+  <Spanish>[NEWLINE][COLOR_HIGHLIGHT_TEXT]&#161;Garantizado! El defensor no puede dar en el blanco.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_HitsAt</Tag>
+  <English>hits at</English>
+  <French>frappe &#224;</French>
+  <German>trifft</German>
+  <Italian>colpisce a</Italian>
+  <Spanish>golpea a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_HP</Tag>
+  <English>HP</English>
+  <French>PV</French>
+  <German>TP</German>
+  <Italian>PV</Italian>
+  <Spanish>PG</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_HP_NEUTRAL</Tag>
+  <English>[COLOR_UNIT_TEXT]HP[COLOR_REVERT]</English>
+  <French>[COLOR_UNIT_TEXT]PV[COLOR_REVERT]</French>
+  <German>[COLOR_UNIT_TEXT]TP[COLOR_REVERT]</German>
+  <Italian>[COLOR_UNIT_TEXT]PV[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_UNIT_TEXT]PG[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_INJURED_HP</Tag>
+  <English>%d1/%d2HP</English>
+  <French>%d1/%d2PV</French>
+  <German>%d1/%d2TP</German>
+  <Italian>%d1/%d2PV</Italian>
+  <Spanish>%d1/%d2PG</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_MULTIPLY</Tag>
+  <English>&#215;</English>
+  <French>&#215;</French>
+  <German>&#215;</German>
+  <Italian>&#215;</Italian>
+  <Spanish>&#215;</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_PressSHIFT</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]Press SHIFT for more detail[COLOR_REVERT]</English>
+  <French>[COLOR_HIGHLIGHT_TEXT]Pesez sur  MAJ pour plus de d&#233;tails[COLOR_REVERT]</French>
+  <German>[COLOR_HIGHLIGHT_TEXT]&lt;Umschalt> dr&#252;cken f&#252;r mehr Einzelheiten[COLOR_REVERT]</German>
+  <Italian>[COLOR_HIGHLIGHT_TEXT]Tieni premuto SHIFT per maggiori dettagli[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_HIGHLIGHT_TEXT]Oprima SHIFT para m&#225;s detalles[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_Retreat</Tag>
+  <English>[COLOR_UNIT_TEXT]Retreat[COLOR_REVERT]</English>
+  <French>[COLOR_UNIT_TEXT]Retraite[COLOR_REVERT]</French>
+  <German>[COLOR_UNIT_TEXT]R&#252;ckzug[COLOR_REVERT]</German>
+  <Italian>[COLOR_UNIT_TEXT]Ritirata[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_UNIT_TEXT]Retirada[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_SurvivalGuaranteed</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]Survival Guaranteed![COLOR_REVERT]</English>
+  <French>[COLOR_HIGHLIGHT_TEXT]Survie Garantie![COLOR_REVERT]</French>
+  <German>[COLOR_HIGHLIGHT_TEXT]Sicheres &#220;berleben![COLOR_REVERT]</German>
+  <Italian>[COLOR_HIGHLIGHT_TEXT]Sopravvivenza certa![COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_HIGHLIGHT_TEXT]&#161;Sobrevivencia garantizada![COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_SurvivalOdds</Tag>
+  <English>Survival odds:[SPACE]</English>
+  <French>Chances de survie:[SPACE]</French>
+  <German>&#220;berlebenschance:[SPACE]</German>
+  <Italian>Probabilit&#224; di sopravvivenza:[SPACE]</Italian>
+  <Spanish>Probabilidad de sobrevivencia:[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_TotalDefenseModifier</Tag>
+  <English>[NEWLINE]Total defense modifier:[SPACE]</English>
+  <French>[NEWLINE]Modificateur Total de defense:[SPACE]</French>
+  <German>[NEWLINE]Verteidigungsmodifikator absolut:[SPACE]</German>
+  <Italian>[NEWLINE]Modificatore difensivo totale:[SPACE]</Italian>
+  <Spanish>[NEWLINE]Modificador defensivo total:[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_Unharmed</Tag>
+  <English>[NEWLINE]Unharmed:[SPACE]</English>
+  <French>[NEWLINE]Indemne:[SPACE]</French>
+  <German>[NEWLINE]Unversehrt:[SPACE]</German>
+  <Italian>[NEWLINE]Disarmato:[SPACE]</Italian>
+  <Spanish>[NEWLINE]Ileso:[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_UnroundedXP</Tag>
+  <English>[NEWLINE]Unrounded XP:[SPACE]</English>
+  <French>[NEWLINE]EXP Non-arrondit:[SPACE]</French>
+  <German>[NEWLINE]Ungerundete EP:[SPACE]</German>
+  <Italian>[NEWLINE]XP non arrotondati:[SPACE]</Italian>
+  <Spanish>[NEWLINE]XP no redondeados:[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_Victory</Tag>
+  <English>[COLOR_POSITIVE_TEXT]Victory[COLOR_REVERT]</English>
+  <French>[COLOR_POSITIVE_TEXT]Victoire[COLOR_REVERT]</French>
+  <German>[COLOR_POSITIVE_TEXT]Sieg[COLOR_REVERT]</German>
+  <Italian>[COLOR_POSITIVE_TEXT]Vittoria[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_POSITIVE_TEXT]Victoria[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_VS</Tag>
+  <English>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] vs. [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</English>
+  <French>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] contro [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</French>
+  <German>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] gegen [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</German>
+  <Italian>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] contro [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] contra [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_Withdraw</Tag>
+  <English>[COLOR_POSITIVE_TEXT]Withdraw[COLOR_REVERT]</English>
+  <French>[COLOR_POSITIVE_TEXT]Se retirer[COLOR_REVERT]</French>
+  <German>[COLOR_POSITIVE_TEXT]Flucht[COLOR_REVERT]</German>
+  <Italian>[COLOR_POSITIVE_TEXT]Fuga[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_POSITIVE_TEXT]Repliegue[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_ACO_XP</Tag>
+  <English>XP</English>
+  <French>EXP</French>
+  <German>EP</German>
+  <Italian>XP</Italian>
+  <Spanish>XP</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_KAMIKAZE_MOD</Tag>
+  <English>[ICON_BULLET]%D1_percent%% for Self-Destruction</English>
+  <French>[ICON_BULLET]Autodestruction %D1_percent%%</French>
+  <German>[ICON_BULLET]%D1_percent%% f&#252;r Selbstzerst&#246;rung</German>
+  <Italian>[ICON_BULLET]%D1_percent%% per l'autodistruzione</Italian>
+  <Spanish>[ICON_BULLET]%D1_percent%% de autodestruirse</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_AI_ANIMAL_COMBAT</Tag>
+  <English>(AI Animal Combat: %D1%%)</English>
+  <French>(Combat animal IA : %D1%%)</French>
+  <German>(KI-Tierkampf: %D1%%)</German>
+  <Italian>(Combattimento IA animali: %D1%%)</Italian>
+  <Spanish>(Combate del animal de la IA: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_ANIMAL_COMBAT</Tag>
+  <English>(Animal Combat: %D1%%)</English>
+  <French>(Combat animal : %D1%%)</French>
+  <German>(Tierkampf: %D1%%)</German>
+  <Italian>(Combattimento animali: %D1%%)</Italian>
+  <Spanish>(Combate del animal: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_BARBARIAN_AI_COMBAT</Tag>
+  <English>(AI Barbarian Combat: %D1%%)</English>
+  <French>(Combat barbare AI : %D1%%)</French>
+  <German>(KI-Barbarenkampf: %D1%%)</German>
+  <Italian>(Combattimento IA Barbari: %D1%%)</Italian>
+  <Spanish>(Combate del b&#225;rbaro de la IA: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_BARBARIAN_COMBAT</Tag>
+  <English>(Barbarian Combat: %D1%%)</English>
+  <French>(Combat barbare : %D1%%)</French>
+  <German>(Barbarenkampf: %D1%%)</German>
+  <Italian>(Combattimento Barbari: %D1%%)</Italian>
+  <Spanish>(Combate del b&#225;rbaro: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CITY_ATTACK</Tag>
+  <English>(City Attack: %D1%%)</English>
+  <French>(Attaque ville : %D1%%)</French>
+  <German>(Stadtangriff: %D1%%)</German>
+  <Italian>(Attacco citt&#224;: %D1%%)</Italian>
+  <Spanish>(Ataque a la ciudad: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CITY_BARBARIAN_DEFENSE</Tag>
+  <English>(City Barbarian Defense: %D1%%)</English>
+  <French>(D&#233;fense ville barbare : %D1%%)</French>
+  <German>(Stadtverteidigung Barbaren: %D1%%)</German>
+  <Italian>(Difesa citt&#224; Barbare: %D1%%)</Italian>
+  <Spanish>(Defensa de la ciudad contra b&#225;rbaros: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CITY_DEFENSE</Tag>
+  <English>(City Defense: %D1%%)</English>
+  <French>(D&#233;fense ville : %D1%%)</French>
+  <German>(Stadtverteidigung: %D1%%)</German>
+  <Italian>(Difesa citt&#224;: %D1%%)</Italian>
+  <Spanish>(Defensa de la ciudad: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CLASS_AMPHIB_ATTACK</Tag>
+  <English>(Amphibious Attack: %D1%%)</English>
+  <French>(Attaque amphibie : %D1%%)</French>
+  <German>(Amphibienangriff: %D1%%)</German>
+  <Italian>(Attacco anfibio: %D1%%)</Italian>
+  <Spanish>(Ataque anfibio: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CLASS_ANIMAL_COMBAT</Tag>
+  <English>(Class Animal Combat: %D1%%)</English>
+  <French>(Combat animal groupe : %D1%%)</French>
+  <German>(Tierkampf Einheitentyp: %D1%%)</German>
+  <Italian>(Combattimento classe animali: %D1%%)</Italian>
+  <Spanish>(Clase de combate del animal: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CLASS_ATTACK</Tag>
+  <English>(Class Attack: %D1%%)</English>
+  <French>(Attaque groupe : %D1%%)</French>
+  <German>(Angriff Einheitentyp: %D1%%)</German>
+  <Italian>(Attacco classe: %D1%%)</Italian>
+  <Spanish>(Clase de ataque: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CLASS_COMBAT</Tag>
+  <English>(Combat: %D1%%)</English>
+  <French>(Combat : %D1%%)</French>
+  <German>(Kampf: %D1%%)</German>
+  <Italian>(Combattimento: %D1%%)</Italian>
+  <Spanish>(Combate: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CLASS_DEFENSE</Tag>
+  <English>(Class Defense: %D1%%)</English>
+  <French>(D&#233;fense groupe : %D1%%)</French>
+  <German>(Verteidigung Einheitentyp: %D1%%)</German>
+  <Italian>(Difesa classe: %D1%%)</Italian>
+  <Spanish>(Clase de defensa: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CLASS_DOMAIN</Tag>
+  <English>(Domain: %D1%%)</English>
+  <French>(Domaine : %D1%%)</French>
+  <German>(Gesamt: %D1%%)</German>
+  <Italian>(Dominio: %D1%%)</Italian>
+  <Spanish>(Posesi&#243;n: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CLASS_KAMIKAZE_ATTACK</Tag>
+  <English>(Kamikaze Attack: %D1%%)</English>
+  <French>(Attaque kamikaze : %D1%%)</French>
+  <German>(Kamikaze-Angriff: %D1%%)</German>
+  <Italian>(Attacco kamikaze: %D1%%)</Italian>
+  <Spanish>(Ataque kamikaze: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_CLASS_RIVER_ATTACK</Tag>
+  <English>(River Attack: %D1%%)</English>
+  <French>(Attaque rivi&#232;re: %D1%%)</French>
+  <German>(Flussangriff: %D1%%)</German>
+  <Italian>(Attacco fiume: %D1%%)</Italian>
+  <Spanish>(Ataque por r&#237;o: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_DEFEATED</Tag>
+  <English>%[s1_CivName]'s %[s2_UnitName] has defeated %[s3_CivName]'s %[s4_UnitName]!</English>
+  <French>Les %[s1_CivName] (%[s2_UnitName]) ont vaincu l'unit&#233; des %[s3_CivName] (%[s4_UnitName]) !</French>
+  <German>%[s1_CivName]s Einheit %[s2_UnitName] hat %[s3_CivName]s Einheit %[s4_UnitName] besiegt!</German>
+  <Italian>L'unit&#224; %[s2_UnitName] dell'%[s1_CivName] ha sconfitto l'unit&#224; %[s4_UnitName] dell'%[s3_CivName]!</Italian>
+  <Spanish>[NUM2:Un:Una:Unos:Unas] %[s2_UnitName] del %[s1_CivName] [NUM2:ha:ha:han:han] derrotado a [NUM3:un:una:unos:unas] %[s3_UnitName] del %[s4_CivName].</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_DOMAIN_DEFENSE</Tag>
+  <English>(Domain Defense: %D1%%)</English>
+  <French>(D&#233;fense domaine : %D1%%)</French>
+  <German>(Verteidigung gesamt: %D1%%)</German>
+  <Italian>(Difesa dominio: %D1%%)</Italian>
+  <Spanish>(Defensa de la posesi&#243;n: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_EXTRA_COMBAT_PERCENT</Tag>
+  <English>(Extra Combat: %D1%%)</English>
+  <French>(Combat suppl&#233;mentaire : %D1%%)</French>
+  <German>(Extrakampf: %D1%%)</German>
+  <Italian>(Combattimento extra: %D1%%)</Italian>
+  <Spanish>(Combate adicional: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_FEATURE</Tag>
+  <English>(Feature Defense: %D1%%)</English>
+  <French>(D&#233;fense caract&#233;ristique : %D1%%</French>
+  <German>(Gel&#228;ndeart-Verteidigung: %D1%%)</German>
+  <Italian>(Difesa da caratteristiche: %D1%%)</Italian>
+  <Spanish>(Defender accidente: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_FEATURE_ATTACK</Tag>
+  <English>(Feature Attack: %D1%%)</English>
+  <French>(Attaque caract&#233;ristique : %D1%%)</French>
+  <German>(Gel&#228;ndeart-Angriff: %D1%%)</German>
+  <Italian>(Attacco da caratteristiche: %D1%%)</Italian>
+  <Spanish>(Ataque a accidente: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_FORTIFY</Tag>
+  <English>(Fortify: %D1%%)</English>
+  <French>(Se retrancher : %D1%%)</French>
+  <German>(Verschanzen: %D1%%)</German>
+  <Italian>(Fortifica: %D1%%)</Italian>
+  <Spanish>(Fortificar: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_HILLS</Tag>
+  <English>(Hills Defense: %D1%%)</English>
+  <French>(D&#233;fense collines : %D1%%)</French>
+  <German>(H&#252;gel-Verteidigung: %D1%%)</German>
+  <Italian>(Difesa in collina: %D1%%)</Italian>
+  <Spanish>(Defender colinas: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_HILLS_ATTACK</Tag>
+  <English>(Hills Attack: %D1%%)</English>
+  <French>(Attaque collines : %D1%%)</French>
+  <German>(H&#252;gel-Angriff: %D1%%)</German>
+  <Italian>(Attacco in collina: %D1%%)</Italian>
+  <Spanish>(Ataque a colinas: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_HIT</Tag>
+  <English>%[s1_CivName]'s %[s2_UnitName] is hit for %[d3_damage] (%[d4]/%[d5]HP)</English>
+  <French>Les %[s1_CivName] (%[s2_UnitName]) infligent %[d3] points de d&#233;g&#226;ts (%[d4]/%[d5]PV)) !</French>
+  <German>%[s1_CivName]s Einheit %[s2_UnitName] f&#252;gt Einheit %[d3] (%[d4]/%[d5]TP)</German>
+  <Italian>L'unit&#224; %[s2_UnitName] dell'%[s1_CivName] viene colpita subendo %[d3] punti di danno (%[d4]/%[d5]PV)</Italian>
+  <Spanish>[NUM2:Un:Una:Unos:Unas] %[s2_UnitName] del %[s1_CivName] (con %[d3]/%[d4] PG) [NUM2:ha alcanzado:ha alcanzado:han alcanzado:han alcanzado] a [NUM6:un:una:unos:unas] %[s6_UnitName] del %[s5_CivName] (con %[d7]/%[d8] PG) y [NUM6:le han infligido:le han infligido:les han infligido:les han infligido] %[d9] de da&#241;o.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_LOG</Tag>
+  <English>Combat Log</English>
+  <French>Journal de combat</French>
+  <German>Kampf-Log</German>
+  <Italian>Registro combattimenti</Italian>
+  <Spanish>Historial del combate</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_ODDS</Tag>
+  <English>Combat Odds:</English>
+  <French>Probabilit&#233; de conflit :</French>
+  <German>Kampfchancen:</German>
+  <Italian>Probabilit&#224; di combattimento:</Italian>
+  <Spanish>Probabilidades del combate:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_PLOT_DEFENSE</Tag>
+  <English>(Plot Defense: %D1%%)</English>
+  <French>(D&#233;fense case : %D1%%)</French>
+  <German>(Gel&#228;ndefeldverteidigung: %D1%%)</German>
+  <Italian>(Difesa territorio: %D1%%)</Italian>
+  <Spanish>(Defensa de la casilla: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_STRENGTH_ABBR</Tag>
+  <English>Str</English>
+  <French>Pui</French>
+  <German>Strk</German>
+  <Italian>For</Italian>
+  <Spanish>Fue</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_TERRAIN</Tag>
+  <English>(Terrain Defense: %d1%%)</English>
+  <French>(D&#233;fense terrain : %d1%%)</French>
+  <German>(Gel&#228;ndeverteidigung: %d1%%)</German>
+  <Italian>(Difesa da terreno: %d1%%)</Italian>
+  <Spanish>(Defender terreno: %d1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_TERRAIN_ATTACK</Tag>
+  <English>(Terrain Attack: %D1%%)</English>
+  <French>(Attaque terrain : %D1%%)</French>
+  <German>(Gel&#228;ndeangriff: %D1%%)</German>
+  <Italian>(Attacco da terreno: %D1%%)</Italian>
+  <Spanish>(Ataque a terreno: %D1%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_MESSAGE_VS</Tag>
+  <English>vs</English>
+  <Italian>contro</Italian>
+  <Spanish>contra</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_AMPHIB_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% from Amphibious Landing</English>
+  <French>[ICON_BULLET]%D1_Bonus%% en raison de d&#233;barquement amphibie</French>
+  <German>[ICON_BULLET]%D1_Bonus%% durch amphibische Landung</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% per l'atterraggio anfibio</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% por desembarco anfibio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_CITY_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% from City (Unit Ability)</English>
+  <French>[ICON_BULLET]%D1_Bonus%% dans la ville (comp&#233;tence unit&#233;)</French>
+  <German>[ICON_BULLET]%D1_Bonus%% durch Stadt (Einheitenf&#228;higkeit)</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% dalla citt&#224; (abilit&#224; dell'unit&#224;)</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% por ciudad (capacidad de unidad)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_EXTRA_STRENGTH</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% Strength</English>
+  <French>[ICON_BULLET]%D1_Bonus%% de force</French>
+  <German>[ICON_BULLET]%D1_Bonus%% St&#228;rke</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% di forza</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% a la fuerza</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_FORTIFY_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% from Unit Fortify</English>
+  <French>[ICON_BULLET]%D1_Bonus%% en raison du retranchement</French>
+  <German>[ICON_BULLET]%D1_Bonus%% durch Einheitenverschanzung</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% per la fortificazione dell'unit&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% por fortificaci&#243;n de unidades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_HILLS_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% from Hills (Unit Ability)</English>
+  <French>[ICON_BULLET]%D1_Bonus%% dans les collines (comp&#233;tence unit&#233;)</French>
+  <German>[ICON_BULLET]%D1_Bonus%% durch H&#252;gel (Einheitenf&#228;higkeit)</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% dalle colline (abilit&#224; dell'unit&#224;)</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% por colinas (capacidad de unidad)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_HP</Tag>
+  <English>%[d1]/%[d2]HP</English>
+  <French>%[d1]/%[d2]PV</French>
+  <German>%[d1]/%[d2]TP</German>
+  <Italian>%[d1]/%[d2]PV</Italian>
+  <Spanish>%[d1]/%[d2]PG</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_MOD_VS_TYPE</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% vs. %s2_Type</English>
+  <French>[ICON_BULLET]%D1_Bonus%% contre %s2_Type</French>
+  <German>[ICON_BULLET]%D1_Bonus%% gegen %s2_Type</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% contro %s2_Type</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% contra %s2:2_Type</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_ODDS</Tag>
+  <English>Combat Odds: %s1%%</English>
+  <French>Probabilit&#233; de victoire : %s1%%</French>
+  <German>Kampfchancen: %s1%%</German>
+  <Italian>Probabilit&#224; di combattimento: %s1%%</Italian>
+  <Spanish>Probabilidades del combate: %s1%%</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_ODDS_RETREAT</Tag>
+  <English>Retreat odds: %s1%%</English>
+  <French>Chances de retraite : %s1 %%</French>
+  <German>R&#252;ckzugschance: %s1%%</German>
+  <Italian>Probabilit&#224; di ritirata: %s1%%</Italian>
+  <Spanish>Probabilidades de retirada: %s1%%</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_ODDS_VS</Tag>
+  <English>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] vs. [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</English>
+  <French>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] contre [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</French>
+  <German>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] gegen [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</German>
+  <Italian>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] contro [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] / [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_RIVER_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% from Crossing River</English>
+  <French>[ICON_BULLET]%D1_Bonus%% en raison de franchissement de fleuve</French>
+  <German>[ICON_BULLET]%D1_Bonus%% durch Fluss&#252;berquerung</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% per il guado del fiume</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% por cruzar un r&#237;o</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_TILE_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% from Tile Defense</English>
+  <French>[ICON_BULLET]%D1_Bonus%% (d&#233;fense terrain)</French>
+  <German>[ICON_BULLET]%D1_Bonus%% durch Gel&#228;ndefeld-Verteidigung</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% dalla difesa della casella</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% por defensa de la casilla</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_COMBAT_PLOT_UNIT_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Bonus%% from %s2_TerrOrFeat (Unit Ability)</English>
+  <French>[ICON_BULLET]%D1_Bonus%% sur les cases de %s2_TerrOrFeat (comp&#233;tence unit&#233;)</French>
+  <German>[ICON_BULLET]%D1_Bonus%% durch %s2_TerrOrFeat (Einheitenf&#228;higkeit)</German>
+  <Italian>[ICON_BULLET]%D1_Bonus%% per %s2_TerrOrFeat (abilit&#224; dell'unit&#224;)</Italian>
+  <Spanish>[ICON_BULLET]%D1_Bonus%% por %s2_TerrOrFeat (capacidad de unidad)</Spanish>
+ </TEXT>
+</Civ4GameText>

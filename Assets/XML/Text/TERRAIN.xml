@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_ADDS_FRESH_WATER</Tag>
+  <English>[NEWLINE][ICON_BULLET]Acts as a source of fresh water</English>
+  <French>[NEWLINE][ICON_BULLET]Agit comme une source d'eau douce</French>
+  <German>[NEWLINE][ICON_BULLET]Dient als S&#252;&#223;wasserquelle</German>
+  <Italian>[NEWLINE][ICON_BULLET]Funge da fonte di acqua dolce</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]Sirve como fuente de agua dulce</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_BAD_HEALTH</Tag>
+  <English>[NEWLINE][ICON_BULLET]+%s1[ICON_UNHEALTHY] in nearby cities</English>
+  <French>[NEWLINE][ICON_BULLET]+%s1[ICON_UNHEALTHY] dans les villes voisines</French>
+  <German>[NEWLINE][ICON_BULLET]+%s1[ICON_UNHEALTHY] in umliegenden St&#228;dten</German>
+  <Italian>[NEWLINE][ICON_BULLET]+%s1[ICON_UNHEALTHY] nelle citt&#224; vicine</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]+%s1 [ICON_UNHEALTHY] a las ciudades cercanas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_CAPE_COAST</Tag>
+  <English>Cape</English>
+  <German>
+   <Text>Kap</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_EVERGREEN</Tag>
+  <English>Evergreen</English>
+  <French>
+   <Text>R&#233;sineux</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gr&#252;nland</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Sempreverde</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Bosque:Bosques</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_FALLOUT</Tag>
+  <English>Fallout</English>
+  <French>
+   <Text>Pollution</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Fallout</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Scoria radioattiva:Scorie radioattive</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Lluvia radiactiva:Lluvias radiactivas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_FLOOD_PLAINS</Tag>
+  <English>Flood Plains</English>
+  <French>
+   <Text>Plaines inondables</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Schwemmland</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Terreno allagato:Terreni allagati</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Terreno de aluvi&#243;n:Terrenos de aluvi&#243;n</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_FOREST</Tag>
+  <English>Forest</English>
+  <French>
+   <Text>For&#234;t</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Wald</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Foresta:Foreste</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Bosque:Bosques</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_GOOD_HEALTH</Tag>
+  <English>[NEWLINE][ICON_BULLET]+%s1[ICON_HEALTHY] in nearby cities</English>
+  <French>[NEWLINE][ICON_BULLET]+%s1[ICON_HEALTHY] dans les villes voisines</French>
+  <German>[NEWLINE][ICON_BULLET]+%s1[ICON_HEALTHY] in umliegenden St&#228;dten</German>
+  <Italian>[NEWLINE][ICON_BULLET]+%s1[ICON_HEALTHY] nelle citt&#224; vicine</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]+%s1 [ICON_HEALTHY] a las ciudades cercanas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_ICE</Tag>
+  <English>Ice</English>
+  <French>
+   <Text>Glace</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Eis</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ghiaccio:Ghiacci</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Hielo:Hielos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_ISLANDS</Tag>
+  <English>Islands</English>
+  <German>Inseln</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_JUNGLE</Tag>
+  <English>Jungle</English>
+  <French>
+   <Text>Jungle</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Dschungel</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Giungla:Giungle</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Selva:Selvas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_MARSH</Tag>
+  <English>Marsh</English>
+  <French>
+   <Text>Mar&#233;cage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Sumpf</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Palude</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ci&#233;naga</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_MOVEMENT_COST</Tag>
+  <English>[NEWLINE][ICON_BULLET]Added movement Cost: %d1</English>
+  <French>[NEWLINE][ICON_BULLET]Co&#251;t de mouvement suppl. : %d1</French>
+  <German>[NEWLINE][ICON_BULLET]Kosten f&#252;r zus&#228;tzliche Fortbewegung: %d1</German>
+  <Italian>[NEWLINE][ICON_BULLET]Costo di movimento supplementare: %d1</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]Coste a&#241;adido al movimiento: %d1</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_NO_IMPROVEMENT</Tag>
+  <English>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_OASIS</Tag>
+  <English>Oasis</English>
+  <French>
+   <Text>Oasis</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Oase</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Oasi:Oasi</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Oasis:Oasis</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_PRODUCTION_MODIFIER</Tag>
+  <English>[ICON_BULLET]Workers Produce %D1_Change%% [ICON_PRODUCTION] from Chopping</English>
+  <French>[ICON_BULLET]Les ouvriers produisent %D1_Change%% [ICON_PRODUCTION] en coupant du bois</French>
+  <German>[ICON_BULLET]Bautrupps produzieren %D1_Change%% [ICON_PRODUCTION] durch Abholzung</German>
+  <Italian>[ICON_BULLET]I lavoratori producono %D1_Change%% [ICON_PRODUCTION] dal legname</Italian>
+  <Spanish>[ICON_BULLET]Los trabajadores obtienen un %D1_Change%% de [ICON_PRODUCTION] de la tala</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_RAINFOREST</Tag>
+  <English>Rainforest</English>
+  <German>Regenwald</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_FEATURE_SNOWY_EVERGREEN</Tag>
+  <English>Snowy Evergreen</English>
+  <French>
+   <Text>R&#233;sineux enneig&#233;s</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Verschneites Gr&#252;nland</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Sempreverde nevoso</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Bosque:Bosques</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_BONUS</Tag>
+  <English>[ICON_BULLET]Requires a Valid Resource</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_COTTAGE</Tag>
+  <English>[ICON_BULLET]Requires [LINK=TERRAIN_GRASS]Grassland[\LINK], [LINK=TERRAIN_PLAINS]Plains[\LINK], [LINK=FEATURE_FLOOD_PLAINS]Floodplains[\LINK] or [LINK=FEATURE_OASIS]Oasis[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_FARM</Tag>
+  <English>[ICON_BULLET]Requires a valid resource or Flatland and fresh water and [LINK=TERRAIN_GRASS]Grassland[\LINK], [LINK=TERRAIN_PLAINS]Plains[\LINK] or [LINK=FEATURE_FLOOD_PLAINS]Floodplains[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_FARM_MEXICO</Tag>
+  <English>[ICON_BULLET]Requires a valid resource or fresh water and [LINK=TERRAIN_GRASS]Grassland[\LINK], [LINK=TERRAIN_PLAINS]Plains[\LINK] or [LINK=FEATURE_FLOOD_PLAINS]Floodplains[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_FISHING_BOATS</Tag>
+  <English>[ICON_BULLET]Requires [LINK=TERRAIN_COAST]Coast[\LINK] and a valid resource</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_FOREST_PRESERVE</Tag>
+  <English>[ICON_BULLET]Requires [LINK=FEATURE_FOREST]Forest[\LINK], [LINK=FEATURE_JUNGLE]Jungle[\LINK] or [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_HAMLET</Tag>
+  <English>[ICON_BULLET]Grows from [LINK=IMPROVEMENT_COTTAGE]Cottages[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_HIGH_SEA_FISHING_BOATS</Tag>
+  <English>[ICON_BULLET]Requires [LINK=TERRAIN_OCEAN]Ocean[\LINK] and a valid resource</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_LUMBERMILL</Tag>
+  <English>[ICON_BULLET]Requires [LINK=FEATURE_FOREST]Forest[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_MINE</Tag>
+  <English>[ICON_BULLET]Requires [LINK=FEATURE_HILLS]Hills[\LINK] or a valid resource</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_OFFSHORE_PLATFORM</Tag>
+  <English>[ICON_BULLET]Requires Water and a valid resource</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_SLAVE_PLANTATION</Tag>
+  <English>[ICON_BULLET]Requires [LINK=IMPROVEMENT_PLANTATION]Plantation[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_TOWN</Tag>
+  <English>[ICON_BULLET]Grows from [LINK=IMPROVEMENT_VILLAGE]Villages[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_VILLAGE</Tag>
+  <English>[ICON_BULLET]Grows from [LINK=IMPROVEMENT_HAMLET]Hamlets[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_WATER</Tag>
+  <English>[ICON_BULLET]Built only in Water</English>
+  <French>[ICON_BULLET]Construction uniquement dans l'eau</French>
+  <German>[ICON_BULLET]Kann nur im Wasser errichtet werden</German>
+  <Italian>[ICON_BULLET]Si pu&#242; costruire solo in acqua</Italian>
+  <Spanish>[ICON_BULLET]Solo se construye en el agua</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_WATERMILL</Tag>
+  <English>[ICON_BULLET]Requires [LINK=FEATURE_RIVERS]River[\LINK] and Flatland</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_WHALING_BOATS</Tag>
+  <English>[ICON_BULLET]Requires Water and a valid resource</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_WINDMILL</Tag>
+  <English>[ICON_BULLET]Requires [LINK=FEATURE_HILLS]Hills[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUILD_ONLY_WORKSHOP</Tag>
+  <English>[ICON_BULLET]Requires Flatland and [LINK=TERRAIN_GRASS]Grassland[\LINK], [LINK=TERRAIN_PLAINS]Plains[\LINK] or [LINK=FEATURE_FLOOD_PLAINS]Floodplains[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUOY</Tag>
+  <English>Sea Route</English>
+  <French>
+   <Text>Route maritime:Routes maritimes</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </French>
+  <German>
+   <Text>Seeweg</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Rotta navale:Rotte navali</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ruta mar&#237;tima:Rutas mar&#237;timas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_BUOY_PILLAGED</Tag>
+  <English>Plundered Route</English>
+  <French>
+   <Text>Route pill&#233;e:Routes pill&#233;es</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </French>
+  <German>
+   <Text>Blockierter Seeweg</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Rotta saccheggiata:Rotte saccheggiate</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ruta saqueada:Rutas saqueadas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_CAMP</Tag>
+  <English>Camp</English>
+  <French>
+   <Text>Camp</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Lager</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Campo:Campi</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Campamento:Campamentos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_CARRIES_IRRIGATION</Tag>
+  <English>[ICON_BULLET]Spreads [LINK=CONCEPT_IRRIGATION]Irrigation[\LINK] (with [LINK=TECH_CIVIL_SERVICE]Civil Service[\LINK])</English>
+  <French>[ICON_BULLET]R&#233;pandent [LINK=CONCEPT_IRRIGATION]l'irrigation[\LINK] (avec [LINK=TECH_CIVIL_SERVICE]Administration[\LINK])</French>
+  <German>[ICON_BULLET]Verbreiten [LINK=CONCEPT_IRRIGATION]Bew&#228;sserung[\LINK] (mit [LINK=TECH_CIVIL_SERVICE]&#214;ffentliche Verwaltung[\LINK])</German>
+  <Italian>[ICON_BULLET]Diffondono [LINK=CONCEPT_IRRIGATION]l'irrigazione[\LINK] (con [LINK=TECH_CIVIL_SERVICE]Pubblica amministrazione[\LINK])</Italian>
+  <Spanish>[ICON_BULLET]Propagan el [LINK=CONCEPT_IRRIGATION]riego[\LINK] (con [LINK=TECH_CIVIL_SERVICE]Administraci&#243;n p&#250;blica[\LINK])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_CHANCE_DISCOVER</Tag>
+  <English>[ICON_BULLET]Small chance of discovering[SPACE]</English>
+  <French>[ICON_BULLET]Faibles chances de d&#233;couvrir :[SPACE]</French>
+  <German>[ICON_BULLET]Geringe Entdeckungschance[SPACE]</German>
+  <Italian>[ICON_BULLET]Una piccola probabilit&#224; di scoprire[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]Peque&#241;a probabilidad de descubrir[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_CITY_RUINS</Tag>
+  <English>City Ruins</English>
+  <French>
+   <Text>Ruines</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Stadtruinen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Rovina cittadina:Rovine cittadine</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ruina de ciudad:Ruinas de ciudad</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_COTTAGE</Tag>
+  <English>Cottage</English>
+  <French>
+   <Text>Cottage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>H&#252;tte</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Villetta:Villette</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Villa:Villas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_DEFENSE_MODIFIER</Tag>
+  <English>[ICON_BULLET]%D1%% Tile Defense</English>
+  <French>[ICON_BULLET]D&#233;fense de la case %D1%%</French>
+  <German>[ICON_BULLET]%D1%% Gel&#228;ndefeld-Verteidigung</German>
+  <Italian>[ICON_BULLET]%D1%% difensiva della casella</Italian>
+  <Spanish>[ICON_BULLET]%D1%% a la defensa de la casilla</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_DEFENSE_MODIFIER_EXTRA</Tag>
+  <English>[ICON_BULLET]Acts as a city for combat purposes</English>
+  <French>[ICON_BULLET]Agit comme une ville pour les combats</French>
+  <German>[ICON_BULLET]Dient als Standort f&#252;r milit&#228;rische Zwecke</German>
+  <Italian>[ICON_BULLET]Ai fini dei combattimenti, equivalgono a una citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]Hace las veces de ciudad a efectos de combate.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_EVOLVES</Tag>
+  <English>[ICON_BULLET]Becomes a [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_ImpName[\LINK][COLOR_REVERT] in %d2_Num [NUM2:Turn:Turns]</English>
+  <French>[ICON_BULLET]Se transforme en : [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_ImpName[\LINK][COLOR_REVERT] apr&#232;s %d2_Num [NUM2:tour:tours]</French>
+  <German>[ICON_BULLET]Wird in %d2_Num [NUM2:Runde:Runden] zu der Modernisierung [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_ImpName[\LINK][COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET]Diventa [NUM1:un:una] [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_ImpName[\LINK][COLOR_REVERT] in %d2_Num [NUM2:Turno:Turni]</Italian>
+  <Spanish>[ICON_BULLET]Se convierte en [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_ImpName[\LINK][COLOR_REVERT] en %d2_Num [NUM2:turno:turnos]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FARM</Tag>
+  <English>Farm</English>
+  <French>
+   <Text>Ferme[SPACE]</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bauernhof</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Fattoria:Fattorie</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Granja:Granjas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FISHING_BOATS</Tag>
+  <English>Fishing Boats</English>
+  <French>
+   <Text>Bateaux de p&#234;che</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Fischerboote</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Peschereccio:Pescherecci</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Barco pesquero:Barcos pesqueros</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FOREST_PRESERVE</Tag>
+  <English>Forest Preserve</English>
+  <French>
+   <Text>R&#233;serve bois&#233;e:R&#233;serves bois&#233;es</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </French>
+  <German>
+   <Text>Aufforstungsgebiet</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Riserva forestale:Riserve forestali</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Reserva forestal:Reservas forestales</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_FORT</Tag>
+  <English>Fort</English>
+  <French>
+   <Text>Fort</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Festung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Fortezza:Fortezze</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Fuerte:Fuertes</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_GOODY_HUT</Tag>
+  <English>Tribal Village</English>
+  <French>
+   <Text>Village tribal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Stammesdorf</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Villaggio tribale:Villaggi tribali</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Aldea tribal:Aldeas tribales</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_GOODY_HUT_CONCEPT</Tag>
+  <English>Tribal Village Bonuses</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_HAMLET</Tag>
+  <English>Hamlet</English>
+  <French>
+   <Text>Hameau</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Weiler</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Casale:Casali</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Caser&#237;o:Caser&#237;os</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_HIGH_SEA_FISHING_BOATS</Tag>
+  <English>High Sea Fishing Boats</English>
+  <German>Hochsee-Fischerboot</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_LAND_WORKED</Tag>
+  <English>Land Worked</English>
+  <French>
+   <Text>En travaux</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bearbeitetes Land</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Terreno bonificato:Terreni bonificati</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tierra trabajada:Tierras trabajadas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_LUMBERMILL</Tag>
+  <English>Lumbermill</English>
+  <French>
+   <Text>Scierie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>S&#228;gewerk</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Segheria:Segherie</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Aserradero:Aserraderos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_MINE</Tag>
+  <English>Mine</English>
+  <French>
+   <Text>Mine</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Mine</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Miniera:Miniere</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mina:Minas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_MORE_GROWTH</Tag>
+  <English>[ICON_BULLET]Gives terrain a higher chance to spread</English>
+  <French>[ICON_BULLET]Augmente les chances de d&#233;veloppement du terrain</French>
+  <German>[ICON_BULLET]Gel&#228;nde hat eine h&#246;here Ausbreitungsschance</German>
+  <Italian>[ICON_BULLET]D&#224; al terreno una maggiore probabilit&#224; di espandersi</Italian>
+  <Spanish>[ICON_BULLET]Da m&#225;s posibilidades de propagarse a un terreno</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_NO_BUILD_FRESH_WATER</Tag>
+  <English>[ICON_BULLET]Cannot be built near Fresh Water</English>
+  <French>[ICON_BULLET]Construction impossible pr&#232;s de l'eau douce</French>
+  <German>[ICON_BULLET]Kann nicht in der N&#228;he von S&#252;&#223;wassergebieten errichtet werden</German>
+  <Italian>[ICON_BULLET]Non pu&#242; essere costruito vicino all'acqua dolce</Italian>
+  <Spanish>[ICON_BULLET]No se puede construir cerca de agua dulce</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_OFFSHORE_PLATFORM</Tag>
+  <English>Offshore Platform</English>
+  <French>
+   <Text>Plate-forme offshore</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bohrinsel</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Piattaforma petrolifera:Piattaforme petrolifere</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Plataforma petrol&#237;fera:Plataformas petrol&#237;feras</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_ONLY_BUILD_FLATLANDS</Tag>
+  <English>[ICON_BULLET]Can only be built on Flatlands</English>
+  <French>[ICON_BULLET]Construction uniquement sur les plaines</French>
+  <German>[ICON_BULLET]Kann nur im Flachland errichtet werden</German>
+  <Italian>[ICON_BULLET]Si pu&#242; costruire solo in pianura</Italian>
+  <Spanish>[ICON_BULLET]Solo se puede construir en llanos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_PASTURE</Tag>
+  <English>Pasture</English>
+  <French>
+   <Text>P&#226;turage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Weide</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pascolo:Pascoli</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pastizal:Pastizales</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_PILLAGE_YIELDS</Tag>
+  <English>[ICON_BULLET]Pillage yields %d1_Num[ICON_GOLD] on average</English>
+  <French>[ICON_BULLET]Le pillage rapporte en moyenne %d1_Num[ICON_GOLD].</French>
+  <German>[ICON_BULLET]Eine Pl&#252;nderung erzielt durchschnittlich %d1_Num[ICON_GOLD]</German>
+  <Italian>[ICON_BULLET]Saccheggia in media %d1_Num[ICON_GOLD] prodotti</Italian>
+  <Spanish>[ICON_BULLET]El saqueo reporta %d1_Num [ICON_GOLD] de media</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_PLANTATION</Tag>
+  <English>Plantation</English>
+  <French>
+   <Text>Plantation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Plantage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Piantagione:Piantagioni</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Plantaci&#243;n:Plantaciones</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_QUARRY</Tag>
+  <English>Quarry</English>
+  <French>
+   <Text>Carri&#232;re</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Steinbruch</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Cava:Cave</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Cantera:Canteras</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_REQUIRES_RIVER</Tag>
+  <English>[ICON_BULLET]Requires River</English>
+  <French>[ICON_BULLET]Requiert une rivi&#232;re</French>
+  <German>[ICON_BULLET]Erfordert einen Fluss</German>
+  <Italian>[ICON_BULLET]Richiede un fiume</Italian>
+  <Spanish>[ICON_BULLET]Requiere un r&#237;o</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION</Tag>
+  <English>Slave Plantation</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_TOWN</Tag>
+  <English>Town</English>
+  <French>
+   <Text>Ville[SPACE]</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gemeinde</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Paese:Paesi</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pueblo:Pueblos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_TRADE_NETWORK</Tag>
+  <English>Connects tile to the trade network</English>
+  <French>Relie la case au r&#233;seau commercial</French>
+  <German>Verbindet Gel&#228;ndefelder mit dem Handelsnetz</German>
+  <Italian>Connetti questa casella alla rete commerciale</Italian>
+  <Spanish>Conecta la casilla a la red comercial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_VILLAGE</Tag>
+  <English>Village</English>
+  <French>
+   <Text>Village[SPACE]</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Dorf</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Villaggio:Villaggi</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Aldea:Aldeas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WATER_WORKED</Tag>
+  <English>Water Worked</English>
+  <French>
+   <Text>En travaux</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Bearbeitetes Wasser</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Irrigazione:Irrigazioni</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Agua faenada:Aguas faenadas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WATERMILL</Tag>
+  <English>Watermill</English>
+  <French>
+   <Text>Moulin &#224; eau[SPACE]</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Wasserm&#252;hle</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mulino ad acqua:Mulini ad acqua</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Molino de agua:Molinos de agua</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WELL</Tag>
+  <English>Well</English>
+  <French>
+   <Text>Puits</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Quelle</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pozzo:Pozzi</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pozo:Pozos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WHALING_BOATS</Tag>
+  <English>Whaling Boats</English>
+  <French>
+   <Text>Baleiniers</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Walf&#228;nger</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Baleniera:Baleniere</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Barco ballenero:Barcos balleneros</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WINDMILL</Tag>
+  <English>Windmill</English>
+  <French>
+   <Text>Moulin &#224; vent[SPACE]</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Windm&#252;hle</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mulino a vento:Mulini a vento</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Molino de viento:Molinos de viento</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WINERY</Tag>
+  <English>Winery</English>
+  <French>
+   <Text>Exploitation vinicole</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Weingut</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Azienda vinicola:Aziende vinicole</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Bodega:Bodegas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WITH_TECH</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_YieldIcon with [COLOR_TECH_TEXT]%s3_TechName[COLOR_REVERT]</English>
+  <French>[ICON_BULLET]%D1_Change%F2_YieldIcon avec : [COLOR_TECH_TEXT]%s3_TechName[COLOR_REVERT]</French>
+  <German>[ICON_BULLET]%D1_Change%F2_YieldIcon mit der Technologie [COLOR_TECH_TEXT]%s3_TechName[COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_YieldIcon con [NUM3:il:la:gli:le] [COLOR_TECH_TEXT]%s3_TechName[COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_YieldIcon con [NUM3:el:la:los:las] [COLOR_TECH_TEXT]%s3_TechName[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_IMPROVEMENT_WORKSHOP</Tag>
+  <English>Workshop</English>
+  <French>
+   <Text>Atelier[SPACE]</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Werkstatt</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Bottega:Botteghe</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Taller:Talleres</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_BUILD_MODIFIER</Tag>
+  <English>[NEWLINE][ICON_BULLET]Improvements take %D1%% time to build</English>
+  <French>[NEWLINE][ICON_BULLET]La construction d'am&#233;nagements prend %D1%% tours</French>
+  <German>[NEWLINE][ICON_BULLET]Die Fertigstellung von Modernisierungen erfordert %D1%% Zeit</German>
+  <Italian>[NEWLINE][ICON_BULLET]I miglioramenti impiegheranno %D1%% per essere realizzati</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]Construir mejoras cuesta un %D1%% del tiempo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_COAST</Tag>
+  <English>Coast</English>
+  <French>
+   <Text>C&#244;te</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>K&#252;ste</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Costa:Coste</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Costa:Costas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_COASTAL_CITIES</Tag>
+  <English>unless they are [LINK=TERRAIN_COAST]coastal[\LINK]</English>
+  <French>sauf sur une [LINK=TERRAIN_COAST]c&#244;te[\LINK]</French>
+  <German>es sei denn, sie liegen an der [LINK=TERRAIN_COAST]K&#252;ste[\LINK]</German>
+  <Italian>a meno che non vi siano caselle [LINK=TERRAIN_COAST]costiere[\LINK]</Italian>
+  <Spanish>a menos que sean [LINK=TERRAIN_COAST]costeras[\LINK]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_COASTAL_FRESH_WATER_CITIES</Tag>
+  <English>[SPACE]or near fresh water</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_DEFENSE_MODIFIER</Tag>
+  <English>[NEWLINE][ICON_BULLET]Defending units get %D1%% strength</English>
+  <French>[NEWLINE][ICON_BULLET]Les unit&#233;s en d&#233;fense gagnent %D1%% en puissance</French>
+  <German>[NEWLINE][ICON_BULLET]Verteidigungseinheiten erhalten %D1%% St&#228;rke</German>
+  <Italian>[NEWLINE][ICON_BULLET]Le unit&#224; che difendono ottengono il %D1%% di forza</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]Las unidades defensoras obtienen un %D1%% de fuerza</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_DESERT</Tag>
+  <English>Desert</English>
+  <French>
+   <Text>D&#233;sert</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>W&#252;ste</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Deserto:Deserti</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Desierto:Desiertos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_FRESH_WATER_CITIES</Tag>
+  <English>unless they are near fresh water</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_GRASS</Tag>
+  <English>Grassland</English>
+  <French>
+   <Text>Prairie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Grasland</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Prateria:Praterie</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pradera:Praderas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_HILL</Tag>
+  <English>Hill</English>
+  <French>
+   <Text>Colline</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>H&#252;gel</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Collina:Colline</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Colina:Colinas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_HILL_HELP1</Tag>
+  <English>[NEWLINE][ICON_BULLET]Movement Cost: 2[ICON_MOVES][NEWLINE][ICON_BULLET]Defending units get +25% strength[NEWLINE][ICON_BULLET]Units get +1 Visibility Range</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_HILL_HELP2</Tag>
+  <English>[NEWLINE][ICON_BULLET]-1[ICON_FOOD], +1[ICON_PRODUCTION]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_HILL_HELP3</Tag>
+  <English>FOOD: -1[ICON_FOOD][NEWLINE]PRODUCTION: +1[ICON_PRODUCTION]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_ICE</Tag>
+  <English>Ice</English>
+  <French>
+   <Text>Glace</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Eis</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ghiaccio:Ghiacci</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Hielo:Hielos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_IMPASSABLE</Tag>
+  <English>[NEWLINE][ICON_BULLET]Impassable terrain</English>
+  <French>[NEWLINE][ICON_BULLET]Terrain infranchissable</French>
+  <German>[NEWLINE][ICON_BULLET]Unpassierbares Gel&#228;nde</German>
+  <Italian>[NEWLINE][ICON_BULLET]Terreno invalicabile</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]Terreno infranqueable</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_LAKE</Tag>
+  <English>Fresh Water Lake</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_LAKE_HELP1</Tag>
+  <English>[ICON_BULLET]Acts as a source of fresh water[NEWLINE][ICON_BULLET]Defending units get +10% strength[NEWLINE][ICON_BULLET]Cannot build cities here</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_LAKE_HELP2</Tag>
+  <English>[NEWLINE][ICON_BULLET]Acts as a source of fresh water[NEWLINE][ICON_BULLET]Defending units get +10% strength[NEWLINE][ICON_BULLET]Cannot build cities here</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_LAKE_HELP3</Tag>
+  <English>[BOLD]Yields:[NEWLINE]+2[ICON_FOOD]+2[ICON_COMMERCE][\BOLD]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_MARSH</Tag>
+  <English>Marsh</English>
+  <French>
+   <Text>Mar&#233;cage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Sumpf</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Palude</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ci&#233;naga</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_MOUNTAIN_HELP</Tag>
+  <English>[ICON_BULLET]Impassable terrain</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_MOVEMENT_COST</Tag>
+  <English>[NEWLINE][ICON_BULLET]Movement Cost: %d1[ICON_MOVES]</English>
+  <French>[NEWLINE][ICON_BULLET]Co&#251;t du mouvement : %d1[ICON_MOVES]</French>
+  <German>[NEWLINE][ICON_BULLET]Fortbewegungskosten: %d1[ICON_MOVES]</German>
+  <Italian>[NEWLINE][ICON_BULLET]Costo movimento: %d1[ICON_MOVES]</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]Coste del movimiento: %d1 [ICON_MOVES]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_NEXT_TO_RIVER</Tag>
+  <English>[SPACE]adjacent to [LINK=FEATURE_RIVERS]river[\LINK] when there is no feature on the terrain (except [LINK=FEATURE_FLOOD_PLAINS]Floodplains[\LINK] and [LINK=FEATURE_HILLS]Hills[\LINK])</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_NO_CITIES</Tag>
+  <English>[NEWLINE][ICON_BULLET]Cannot build cities here[SPACE]</English>
+  <French>[NEWLINE][ICON_BULLET]Impossible de construire une ville ici[SPACE]</French>
+  <German>[NEWLINE][ICON_BULLET]Hier k&#246;nnen keine St&#228;dte errichtet werden[SPACE]</German>
+  <Italian>[NEWLINE][ICON_BULLET]Qui &#232; impossibile costruire una citt&#224;[SPACE]</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]Aqu&#237; no se pueden construir ciudades[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_NO_COASTAL_CITIES</Tag>
+  <English>[NEWLINE][ICON_BULLET]Cities cannot be founded near [LINK=TERRAIN_COAST]coast[\LINK]</English>
+  <French>[NEWLINE][ICON_BULLET]Impossible de construire des villes pr&#232;s de la [LINK=TERRAIN_COAST]c&#244;te[\LINK]</French>
+  <German>[NEWLINE][ICON_BULLET]Es k&#246;nnen keine St&#228;dte in [LINK=TERRAIN_COAST]K&#252;stenn&#228;he[\LINK] errichtet werden</German>
+  <Italian>[NEWLINE][ICON_BULLET]Le citt&#224; non possono essere fondate vicino alla [LINK=TERRAIN_COAST]costa[\LINK]</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]No se pueden fundar ciudades al lado de la [LINK=TERRAIN_COAST]costa[\LINK]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_NO_FRESH_WATER_CITIES</Tag>
+  <English>[NEWLINE][ICON_BULLET]Cities cannot be founded near fresh water</English>
+  <French>[NEWLINE][ICON_BULLET]Impossible de construire des villes pr&#232;s de l'eau douce</French>
+  <German>[NEWLINE][ICON_BULLET]Es k&#246;nnen keine St&#228;dte in der N&#228;he von S&#252;&#223;wasser errichtet werden</German>
+  <Italian>[NEWLINE][ICON_BULLET]Le citt&#224; non possono essere fondate vicino all'acqua dolce</Italian>
+  <Spanish>[NEWLINE][ICON_BULLET]No se pueden fundar ciudades al lado de agua dulce</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_OCEAN</Tag>
+  <English>Ocean</English>
+  <French>
+   <Text>Oc&#233;an</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Ozean</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Oceano:Oceani</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Oc&#233;ano:Oc&#233;anos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_OCEAN_HELP</Tag>
+  <English>[ICON_BULLET]Movement Cost: 1/2[ICON_MOVES]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_ON_HILLS</Tag>
+  <English>[SPACE]on hills</English>
+  <French>[SPACE]sur des collines</French>
+  <German>[SPACE]auf H&#252;geln</German>
+  <Italian>[SPACE]sulle colline</Italian>
+  <Spanish>[SPACE]en una colina</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_PEAK</Tag>
+  <English>Peak</English>
+  <French>
+   <Text>Pic</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gipfel</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Montagna:Montagne</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pico:Picos</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_PLAINS</Tag>
+  <English>Plains</English>
+  <French>
+   <Text>Plaines</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Ebene</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pianura:Pianure</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Llanura:Llanuras</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_RIVER</Tag>
+  <English>River</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_RIVER_HELP</Tag>
+  <English>[NEWLINE][ICON_BULLET][LINK=ROUTE_ROAD]Roads[\LINK] and [LINK=ROUTE_ROMAN_ROAD]Roman Roads[\LINK] have no effect across rivers until [LINK=TECH_CONSTRUCTION]Construction[\LINK][NEWLINE][ICON_BULLET]Acts as a source of fresh water[NEWLINE][ICON_BULLET]Units lose 25% strength when attacking over a River[NEWLINE][ICON_BULLET]+1[ICON_COMMERCE] to adjacent [LINK=TERRAIN_GRASS]Grassland[\LINK], [LINK=TERRAIN_PLAINS]Plains[\LINK], [LINK=TERRAIN_TUNDRA]Tundra[\LINK] and [LINK=TERRAIN_DESERT]Desert[\LINK] that don't have a feature on them (except [LINK=FEATURE_FLOOD_PLAINS]Floodplains[\LINK] and [LINK=FEATURE_HILLS]Hills[\LINK])</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_TUNDRA</Tag>
+  <English>Tundra</English>
+  <French>
+   <Text>Toundra</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Tundra</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tundra:Tundre</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tundra:Tundras</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_UNTIL_TECH</Tag>
+  <English>[LINK=literal]%s1_terrain[\LINK] (until %s2_technology)</English>
+  <French>[LINK=literal]%s1_terrain[\LINK] (jusqu'&#224; %s2_technology)</French>
+  <German>[LINK=literal]%s1_terrain[\LINK] (bis zur Technologie %s2_technology)</German>
+  <Italian>[LINK=literal]%s1_terrain[\LINK] (fino a %s2_technology)</Italian>
+  <Spanish>[LINK=literal]%s1_terrain[\LINK] (hasta %s2_technology)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_TERRAIN_WETLAND</Tag>
+  <English>Wetland</English>
+ </TEXT>
+</Civ4GameText>

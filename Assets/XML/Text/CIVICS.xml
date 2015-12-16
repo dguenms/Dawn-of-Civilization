@@ -1,0 +1,2133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>MOD_TXT_KEY_CIVIC_PRIMITIVISM</Tag>
+  <English>Primitivism</English>
+  <French>
+   <Text>Primitivisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Primitivismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Primitivismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Primitivismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ABSOLUTISM</Tag>
+  <English>Absolutism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ABSOLUTISM_STRATEGY</Tag>
+  <English>Increases production and commerce in your capital city</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_AGRARIANISM</Tag>
+  <English>Agrarianism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_AGRARIANISM_STRATEGY</Tag>
+  <English>Workers build improvements faster; extra production from pastures; extra commerce from farms</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</English>
+  <German>[ICON_BULLET]%D1_Change%F2_HappyOrUn In Allen St&#228;dten</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
+  <English>Animism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ANIMISM_STRATEGY</Tag>
+  <English>Extra unhappiness from non-state religions</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_AUTOCRACY</Tag>
+  <English>Autocracy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_AUTOCRACY_STRATEGY</Tag>
+  <English>Increases great general emergence; can draft two units per turn; extra happiness from barracks'</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BARBARISM</Tag>
+  <English>Barbarism</English>
+  <French>
+   <Text>Barbarisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Barbarei</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Barbarismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Barbarie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BARBARISM_STRATEGY</Tag>
+  <English>The most primitive legal civic</English>
+  <French>La forme la plus primitive de doctrine l&#233;gale.</French>
+  <German>Die einfachste Rechts-Staatsform des Spiels.</German>
+  <Italian>La forma di Sistema legale pi&#249; primitiva</Italian>
+  <Spanish>El principio legal m&#225;s primitivo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BUILD_MISSIONARIES</Tag>
+  <English>[ICON_BULLET]Can Build Missionaries without [COLOR_BUILDING_TEXT]%s1_Building[COLOR_REVERT]</English>
+  <French>[ICON_BULLET]Peut cr&#233;er des missionnaires sans [COLOR_BUILDING_TEXT]%s1_Building[COLOR_REVERT]</French>
+  <German>[ICON_BULLET]Kann ohne das Geb&#228;ude [COLOR_BUILDING_TEXT]%s1_Building[COLOR_REVERT] Missionare errichten</German>
+  <Italian>[ICON_BULLET]Permette di realizzare missionari senza [COLOR_BUILDING_TEXT]%s1_Building[COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]No se pueden construir misioneros sin [NUM1:un:una:unos:unas] [COLOR_BUILDING_TEXT]%s1_Building[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION</Tag>
+  <English>[ICON_BULLET]Double Production Speed for [LINK=literal]%s1_unit_or_building[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_BUILDING</Tag>
+  <English>[LINK=literal]%s1_unit_or_building[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BUILDING_DOUBLE_PRODUCTION_START</Tag>
+  <English>[ICON_BULLET]Double Production Speed for</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BUILDING_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappOrUnhapp from [COLOR_BUILDING_TEXT][LINK=literal]%s3_Building[\LINK][COLOR_REVERT]</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HappOrUnhapp : [COLOR_BUILDING_TEXT][LINK=literal]%s3_Building[\LINK][COLOR_REVERT]</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HappOrUnhapp durch das Geb&#228;ude [COLOR_BUILDING_TEXT][LINK=literal]%s3_Building[\LINK][COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_HappOrUnhapp da [COLOR_BUILDING_TEXT][LINK=literal]%s3_Building[\LINK][COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HappOrUnhapp por [COLOR_BUILDING_TEXT][LINK=literal]%s3_Building[\LINK][COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BUILDING_PRODUCTION_MODIFIER</Tag>
+  <English>[ICON_BULLET]Builds [LINK=literal]%s2_unit_or_building[\LINK] %d1_Mod%% Faster</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BUREAUCRACY</Tag>
+  <English>Bureaucracy</English>
+  <French>
+   <Text>Bureaucratie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>B&#252;rokratie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Burocrazia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Burocracia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_BUREAUCRACY_STRATEGY</Tag>
+  <English>Increases production and commerce in your capital city</English>
+  <French>Augmente la production et le commerce dans votre capitale.</French>
+  <German>Steigert die Produktion und st&#228;rkt die Wirtschaft in Ihrer Hauptstadt.</German>
+  <Italian>Aumenta la produzione e il commercio della capitale</Italian>
+  <Spanish>Aumentan la producci&#243;n y el comercio en la capital.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CAPITAL_TRADE_MODIFIER</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] going through your Capital</English>
+  <German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] durch die Hauptstadt</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CAPITALISM</Tag>
+  <English>Capitalism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CAPITALISM_STRATEGY</Tag>
+  <English>Increased commerce in all cities; extra commerce from towns; can spend gold to finish production of buildings</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CASTE_SYSTEM</Tag>
+  <English>Caste System</English>
+  <French>
+   <Text>Syst&#232;me de castes</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kastensystem</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Sistema a caste</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Sistema de castas</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CASTE_SYSTEM_STRATEGY</Tag>
+  <English>You may assign unlimited artist, scientist, and merchant specialists in your cities.</English>
+  <French>Vous pouvez assigner un nombre illimit&#233; d'artistes, de savants et de marchands &#224; vos villes.</French>
+  <German>Sie k&#246;nnen in Ihren St&#228;dten beliebig viele K&#252;nstler-, Wissenschaftler- und H&#228;ndler-Spezialisten zuweisen.</German>
+  <Italian>Possibilit&#224; di assegnare artisti, scienziati e mercanti specialisti illimitati alle citt&#224;</Italian>
+  <Spanish>Se pueden asignar sin l&#237;mite artistas, cient&#237;ficos y mercaderes especialistas a las ciudades.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING</Tag>
+  <English>Central Planning</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Tag>
+  <English>Extra production from specialists; extra food from workshops and watermills; less commerce from windmills, watermills and towns; double production speed for factories and coal plants</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CITY_STATES</Tag>
+  <English>City States</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Tag>
+  <English>Increased maintenance from number of cities; specialists produce food if city works less than seven tiles</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CLASSICAL_WONDERS</Tag>
+  <English>[ICON_BULLET]Allows construction of classical wonders</English>
+  <German>[ICON_BULLET]Erlaubt die Errichtung klassischer Wunder</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_COMMERCE_BONUS</Tag>
+  <English>[ICON_BULLET]No negative Stability Points for low amount of traded resources</English>
+  <French>[ICON_BULLET]Pas de points de stabilit&#233; n&#233;gatifs pour un faible niveau de ressources &#233;chang&#233;es</French>
+  <German>[ICON_BULLET]Keine Stabilit&#228;tspunktabz&#252;ge durch eine geringe Anzahl gehandelter Ressourcen</German>
+  <Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di scarso commercio di risorse.</Italian>
+  <Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_COMMONWEALTH</Tag>
+  <English>Commonwealth</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_COMMONWEALTH_STRATEGY</Tag>
+  <English>No negative Stability Points for low amount of traded resources; no negative Stability Points for poor economy</English>
+  <French>Pas de points de stabilit&#233; n&#233;gatifs pour un faible niveau de ressources &#233;chang&#233;es ; pas de points de stabilit&#233; n&#233;gatifs pour une &#233;conomie pauvre</French>
+  <German>Keine Stabilit&#228;tspunktabz&#252;ge durch geringf&#252;gig gehandelte Ressourcen; keine Stabilit&#228;tspunktabz&#252;ge durch schlechte Wirtschaftslage</German>
+  <Italian>Nessun punto stabilit&#224; negativo in caso di scarso commercio di risorse; nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
+  <Spanish>No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados; no hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CONQUEST_BONUS</Tag>
+  <English>[ICON_BULLET]+2 additional Stability Points on city conquest</English>
+  <French>[ICON_BULLET]+2 points de stabilit&#233; &#224; la conqu&#234;te d'une ville</French>
+  <German>[ICON_BULLET]+2 zus&#228;tzliche Stabilit&#228;tspunkte bei Stadteroberung</German>
+  <Italian>[ICON_BULLET]+2 punti stabilit&#224; addizionali conquistando una citt&#224;.</Italian>
+  <Spanish>[ICON_BULLET]+2 puntos de estabilidad adicionales por conquista de ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CONSCRIPTION</Tag>
+  <English>[ICON_BULLET]Can [LINK=CONCEPT_DRAFT]Draft[\LINK] %d1_Num [NUM1:Unit:Units] per Turn</English>
+  <French>[ICON_BULLET]Peut [LINK=CONCEPT_DRAFT]enr&#244;ler[\LINK] %d1_Num [NUM1:Unit&#233;:Unit&#233;s] par tour</French>
+  <German>[ICON_BULLET]Kann %d1_Num [NUM1:Einheit:Einheiten] pro Runde [LINK=CONCEPT_DRAFT]rekrutieren[\LINK]</German>
+  <Italian>[ICON_BULLET]Pu&#242; [LINK=CONCEPT_DRAFT]richiamare[\LINK] alla leva %d1_Num unit&#224; per turno</Italian>
+  <Spanish>[ICON_BULLET]Puede [LINK=CONCEPT_DRAFT]reclutar[\LINK] %d1_Num [NUM1:unidad:unidades] por turno</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS</Tag>
+  <English>[ICON_BULLET]%D1_Change free specialist for all cities within the third ring of your capital</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_CORPORATION_COMMERCE</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Corporation Commerce</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DECENTRALIZATION</Tag>
+  <English>Decentralization</English>
+  <French>
+   <Text>D&#233;centralisation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Dezentralisierung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Decentralizzazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Descentralizaci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DECENTRALIZATION_STRATEGY</Tag>
+  <English>The most primitive economy civic</English>
+  <French>La forme la plus primitive de doctrine &#233;conomique.</French>
+  <German>Die einfachste Wirtschafts-Staatsform</German>
+  <Italian>La forma di economia pi&#249; primitiva</Italian>
+  <Spanish>El principio econ&#243;mico m&#225;s primitivo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DEFENSIVE_PACT_TRADE_MODIFIER</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</English>
+  <German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] mit Verteidigungsb&#252;ndnispartnern</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DEMOCRACY</Tag>
+  <English>[ICON_BULLET]Temporary instability caused by transition to Democracy</English>
+  <French>[ICON_BULLET]Instabilit&#233; temporaire caus&#233;e par la transition vers la D&#233;mocratie</French>
+  <German>[ICON_BULLET]Vor&#252;bergehende Instabilit&#228;t durch Wechsel zur Demokratie</German>
+  <Italian>[ICON_BULLET]Instabilit&#224; temporanea causata dal passaggio alla democrazia.</Italian>
+  <Spanish>[ICON_BULLET]Inestabilidad temporal causada por la transici&#243;n a la democracia</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DEPRESSION</Tag>
+  <English>[ICON_BULLET]Risk of Great Depression</English>
+  <French>[ICON_BULLET]Risque de Grande D&#233;pression</French>
+  <German>[ICON_BULLET]Risiko einer Gro&#223;en Depression</German>
+  <Italian>[ICON_BULLET]Rischio di Grande Depressione.</Italian>
+  <Spanish>[ICON_BULLET]Riesgo de Gran Depresi&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DESPOTISM</Tag>
+  <English>Despotism</English>
+  <French>
+   <Text>Despotisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Despotismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Dispotismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Despotismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DESPOTISM_STRATEGY</Tag>
+  <English>The most primitive government civic</English>
+  <French>La forme la plus primitive de doctrine politique.</French>
+  <German>Die einfachste Regierungs-Staatsform des Spiels.</German>
+  <Italian>La forma di Governo pi&#249; primitiva</Italian>
+  <Spanish>El principio de gobierno m&#225;s primitivo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DIRECT_RULE</Tag>
+  <English>Direct Rule</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DIRECT_RULE_STRATEGY</Tag>
+  <English>The most primitive organization civic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DISTANCE_MAINT</Tag>
+  <English>[ICON_BULLET]No Maintenance Costs from Distance to Palace</English>
+  <French>[ICON_BULLET]Aucun co&#251;t d'entretien d&#251; &#224; l'&#233;loignement du palais</French>
+  <German>[ICON_BULLET]Keine Unterhaltskosten wegen Entfernung zum Palast</German>
+  <Italian>[ICON_BULLET]Nessun costo di mantenimento per la distanza dal palazzo</Italian>
+  <Spanish>[ICON_BULLET]Sin costes de mantenimiento por lejan&#237;a con palacio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DISTANCE_MAINT_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Maintenance Costs from Distance to Palace</English>
+  <French>[ICON_BULLET]Co&#251;t d'entretien %D1_Mod%% d&#251; &#224; l'&#233;loignement du palais</French>
+  <German>[ICON_BULLET]%D1_Mod%% Unterhaltskosten wegen Entfernung zum Palast</German>
+  <Italian>[ICON_BULLET]%D1_Mod%% costi di mantenimento per la distanza dal palazzo</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% a los costes de mantenimiento por lejan&#237;a con palacio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Production For All %s2</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION_AIR</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Production For All [LINK=UNITCOMBAT_AIR]Air Units[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION_LAND</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Production For All Land Units</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION_SEA</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Production For All [LINK=UNITCOMBAT_NAVAL]Naval Units[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DOMAIN_XP</Tag>
+  <English>[ICON_BULLET]+%d1 Experience For All %s2</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DOMAIN_XP_AIR</Tag>
+  <English>[ICON_BULLET]+%d1 Experience For All [LINK=UNITCOMBAT_AIR]Air Units[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DOMAIN_XP_LAND</Tag>
+  <English>[ICON_BULLET]+%d1 Experience For All Land Units</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DOMAIN_XP_SEA</Tag>
+  <English>[ICON_BULLET]+%d1 Experience For All [LINK=UNITCOMBAT_NAVAL]Naval Units[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DYNASTICISM</Tag>
+  <English>Dynasticism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_DYNASTICISM_STRATEGY</Tag>
+  <English>Military units in cities increase happiness to a maximum of +6</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ECONOMY_BONUS</Tag>
+  <English>[ICON_BULLET]No negative Stability Points for poor economy</English>
+  <French>[ICON_BULLET]Pas de points de stabilit&#233; n&#233;gatifs pour une &#233;conomie pauvre</French>
+  <German>[ICON_BULLET]Keine Stabilit&#228;tspunktabz&#252;ge durch schlechte Wirtschaftslage</German>
+  <Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
+  <Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_EGALITARIANISM</Tag>
+  <English>Egalitarianism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_EGALITARIANISM_HELP</Tag>
+  <English>[ICON_BULLET]Unable to Use Slaves[NEWLINE][ICON_BULLET][ICON_UNHAPPY] Penalty for Slaves in Civs without [LINK=literal]Egalitarianism[\LINK]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_EGALITARIANISM_STRATEGY</Tag>
+  <English>May hire double the amount of artists, scientists and merchants; unhappiness penalty for all civilizations without egalitarianism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_EMANCIPATION</Tag>
+  <English>Emancipation</English>
+  <French>
+   <Text>Emancipation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Emanzipation</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Emancipazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Emancipaci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_EMANCIPATION_STRATEGY</Tag>
+  <English>Causes unhappiness in civilizations without emancipation; cottages develop faster</English>
+  <French>Provoque le m&#233;contentement des civilisations ne connaissant pas l'&#233;mancipation. Les cottages se d&#233;veloppent plus vite.</French>
+  <German>F&#252;hrt in Zivilisationen ohne Emanzipation zu Unzufriedenheit. H&#252;tten werden schneller fertig.</German>
+  <Italian>Causa infelicit&#224; nelle civilt&#224; senza emancipazione; le villette si sviluppano pi&#249; velocemente</Italian>
+  <Spanish>Provoca infelicidad en las ciudades sin emancipaci&#243;n. Las villas se desarrollan m&#225;s r&#225;pido.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM</Tag>
+  <English>Environmentalism</English>
+  <French>
+   <Text>Environnementalisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Umweltschutz</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ambientalismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ecologismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_HELP</Tag>
+  <English>[ICON_BULLET]No stability penalty for economic stagnation</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_STRATEGY</Tag>
+  <English>Reduced unhealthiness in all cities; extra commerce from windmills, watermills and forest preserves; extra happiness from public transportation; double production speed for recycling centers and hydro plants; no stability penalty from economic stagnation</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_EXPERIENCE_IN_BORDERS</Tag>
+  <English>[ICON_BULLET]%D1%% Experience gained from Combat within own Borders</English>
+  <French>[ICON_BULLET]Exp&#233;rience obtenue suite au combat dans vos fronti&#232;res : %D1%%</French>
+  <German>[ICON_BULLET]%D1%% Erfahrungszuwachs durch K&#228;mpfe innerhalb der eigenen Grenzen</German>
+  <Italian>[ICON_BULLET]%D1%% di esperienza per i combattimenti sul proprio territorio</Italian>
+  <Spanish>[ICON_BULLET]%D1%% de experiencia obtenida por combatir dentro de las fronteras propias.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_EXTRA_HEALTH</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HealthOrUn in All Cities</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HealthOrUn dans toutes les villes</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HealthOrUn in allen St&#228;dten</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_HealthOrUn in tutte le citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HealthOrUn en todas las ciudades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_EXTRA_WAR_WEARINESS</Tag>
+  <English>[ICON_BULLET]%D1_WarWearMod%% War [ICON_UNHAPPY]</English>
+  <French>[ICON_BULLET]%D1_WarWearMod%% [ICON_UNHAPPY] d&#251; &#224; la guerre</French>
+  <German>[ICON_BULLET]%D1_WarWearMod%% [ICON_UNHAPPY] wegen Krieg</German>
+  <Italian>[ICON_BULLET]%D1_WarWearMod%% di [ICON_UNHAPPY] per la guerra</Italian>
+  <Spanish>[ICON_BULLET]%D1_WarWearMod%% al [ICON_UNHAPPY] b&#233;lico</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FANATICISM</Tag>
+  <English>Fanaticism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FANATICISM_STRATEGY</Tag>
+  <English>Extra unhappiness from non-state religions; cities with state religion train units faster; no spread of non-state religions</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FEATURE_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappOrUnhapp from[SPACE]</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HappOrUnhapp[SPACE]</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HappOrUnhapp durch Gel&#228;ndeart[SPACE]</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_HappOrUnhapp per[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HappOrUnhapp por[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FORCED_LABOR</Tag>
+  <English>Forced Labor</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FORCED_LABOR_STRATEGY</Tag>
+  <English>Extra commerce from plantations and slave plantations, can sacrifice city population to finish production</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FOUND_BONUS</Tag>
+  <English>[ICON_BULLET]+2 additional Stability Points for each city founded at least 15 tiles from the capital</English>
+  <French>[ICON_BULLET]+2 points de stabilit&#233; par ville fond&#233;e &#224; 15 cases ou plus de la capitale</French>
+  <German>[ICON_BULLET]+2 zus&#228;tzliche Stabilit&#228;tspunkte f&#252;r jede Stadt, die mindestens 15 Gel&#228;ndefelder von der Hauptstadt entfernt gegr&#252;ndet wurde</German>
+  <Italian>[ICON_BULLET]+2 punti stabilit&#224; addizionali per ogni citt&#224; fondata ad almeno 15 caselle dalla capitale.</Italian>
+  <Spanish>[ICON_BULLET]+2 puntos de estabilidad adicionales por cada ciudad fundada al menos a 15 casillas de la capital</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_MARKET</Tag>
+  <English>Free Market</English>
+  <French>
+   <Text>Economie de march&#233;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Freie Marktwirt.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Libero mercato</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mercado libre</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_MARKET_HELP</Tag>
+  <English>[ICON_BULLET]Increased chance of spreading corporations</English>
+  <German>[ICON_BULLET]Erh&#246;hte Chance, Kapitalgesellschaften zu verbreiten</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_MARKET_STRATEGY</Tag>
+  <English>Extra trade route in all cities; increased corporation commerce</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_MILITARY_UNITS</Tag>
+  <English>[ICON_BULLET]%D1_Num Free Military Units</English>
+  <French>[ICON_BULLET]%D1_Num unit&#233;s militaires gratuites</French>
+  <German>[ICON_BULLET]%D1_Num freie Milit&#228;reinheiten</German>
+  <Italian>[ICON_BULLET]%D1_Num unit&#224; militari gratis</Italian>
+  <Spanish>[ICON_BULLET]%D1_Num unidades militares gratis</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_RELIGION</Tag>
+  <English>Free Religion</English>
+  <French>
+   <Text>Libert&#233; de culte</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Religionsfreiheit</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Libert&#224; religiosa</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Libertad religiosa</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_RELIGION_STRATEGY</Tag>
+  <English>No state religion. Happiness from all religions in each city; increased scientific research</English>
+  <French>Aucune religion d'&#233;tat. Toutes les religions augmentent le bonheur dans chaque ville. Acc&#233;l&#232;re la recherche scientifique.</French>
+  <German>Keine Staatsreligion. Zufriedenheit aller Religionen in allen St&#228;dten. Verst&#228;rkte Forschung.</German>
+  <Italian>Nessuna religione di stato. Sviluppa felicit&#224; da tutte le religioni nelle citt&#224;; aumenta la ricerca scientifica</Italian>
+  <Spanish>No hay religi&#243;n oficial. En las ciudades hay felicidad por todas las religiones. Aumenta la investigaci&#243;n cient&#237;fica. </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_SPECIALISTS</Tag>
+  <English>[ICON_BULLET]%D1_Change Free [NUM1:Specialist:Specialists] per City</English>
+  <French>[ICON_BULLET]%D1_Change sp&#233;cialistes gratuits par ville</French>
+  <German>[ICON_BULLET]%D1_Change freie Spezialisten pro Stadt</German>
+  <Italian>[ICON_BULLET]%D1_Change specialisti gratis per citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change especialistas gratis por ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_SPEECH</Tag>
+  <English>Free Speech</English>
+  <French>
+   <Text>Libert&#233; d'expression</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Meinungsfreiheit</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Libert&#224; di parola</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Lib. expresi&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_SPEECH_STRATEGY</Tag>
+  <English>Extra commerce from towns; increases cultural output of all cities</English>
+  <French>Augmente le commerce des petites villes et am&#233;liore la culture g&#233;n&#233;r&#233;e par toutes les villes.</French>
+  <German>H&#246;here Wirtschaftsertr&#228;ge in Gemeinden. Steigerung der Kulturproduktion aller St&#228;dte.</German>
+  <Italian>Commercio extra dai paesi; aumenta la cultura in tutte le citt&#224;</Italian>
+  <Spanish>Comercio adicional en los pueblos, aumenta la producci&#243;n cultural en todas las ciudades.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_UNITS</Tag>
+  <English>[ICON_BULLET]%D1_Num Free Units</English>
+  <French>[ICON_BULLET]%D1_Num unit&#233;s gratuites</French>
+  <German>[ICON_BULLET]%D1_Num freie Einheiten</German>
+  <Italian>[ICON_BULLET]%D1_Num unit&#224; gratis</Italian>
+  <Spanish>[ICON_BULLET]%D1_Num unidades gratis</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREE_XP</Tag>
+  <English>[ICON_BULLET]New Units Receive %D1_Change Experience Points</English>
+  <French>[ICON_BULLET]Les nouvelles unit&#233;s re&#231;oivent %D1_Change XP</French>
+  <German>[ICON_BULLET]Neue Einheiten erhalten %D1_Change Erfahrungspunkte</German>
+  <Italian>[ICON_BULLET]Le nuove unit&#224; ricevono %D1_Change punti esperienza</Italian>
+  <Spanish>[ICON_BULLET]Las nuevas unidades reciben %D1_Change puntos de experiencia</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FREEDOM_ANGER</Tag>
+  <English>[ICON_BULLET][ICON_UNHAPPY] Penalty for Civs without [LINK=literal]%s1_CivicName[\LINK]</English>
+  <French>[ICON_BULLET][ICON_UNHAPPY] P&#233;nalit&#233; pour les civilisations sans [LINK=literal]%s1_CivicName[\LINK]</French>
+  <German>[ICON_BULLET][ICON_UNHAPPY] Strafe f&#252;r Zivs ohne Staatsform [LINK=literal]%s1_CivicName[\LINK]</German>
+  <Italian>[ICON_BULLET][ICON_UNHAPPY] Penalit&#224; per le civilt&#224; senza la forma di governo [LINK=literal]%s1_CivicName[\LINK]</Italian>
+  <Spanish>[ICON_BULLET]Penalizaci&#243;n de [ICON_UNHAPPY] a las civilizaciones sin [LINK=literal]%s1_CivicName[\LINK]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_FROM_TRADE_ROUTES</Tag>
+  <English>[SPACE]from Trade Routes ([ICON_TRADE])</English>
+  <French>[SPACE]des routes commerciales ([ICON_TRADE])</French>
+  <German>[SPACE]von Handelswegen ([ICON_TRADE])</German>
+  <Italian>[SPACE]dalle rotte commerciali ([ICON_TRADE])</Italian>
+  <Spanish>[SPACE]por rutas comerciales ([ICON_TRADE])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_GREAT_GENERAL_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Great General Emergence</English>
+  <French>[ICON_BULLET]Emergence d'un G&#233;n&#233;ral illustre %D1_Mod%%</French>
+  <German>[NEWLINE][SPACE][SPACE][ICON_BULLET]%D1%% Produktion Gro&#223;er Gener&#228;le</German>
+  <Italian>[ICON_BULLET]%D1_Mod%% comparsa di un Grande Generale</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% a la aparici&#243;n de Gran general</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_GREAT_PEOPLE_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Birth Rate</English>
+  <French>[ICON_BULLET]Taux de natalit&#233; %D1_Mod%%[ICON_GREATPEOPLE]</French>
+  <German>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Geburtenrate</German>
+  <Italian>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Tasso di natalit&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% a la tasa de natalidad de [ICON_GREATPEOPLE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_GREAT_PEOPLE_MOD_RELIGION</Tag>
+  <English>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Birth Rate in Cities with %F2_Religion</English>
+  <French>[ICON_BULLET]Taux de natalit&#233; %D1_Mod%%[ICON_GREATPEOPLE] dans les villes pratiquant : %F2_Religion</French>
+  <German>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Geburtenrate in St&#228;dten mit der Religion %F2_Religion</German>
+  <Italian>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Tasso di natalit&#224; nelle citt&#224; con la religione %F2_Religion</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% a la tasa de natalidad de [ICON_GREATPEOPLE] en ciudades que sigan el %F2_Religion</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_GREAT_PEOPLE_MOD_STATE_RELIGION</Tag>
+  <English>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Birth Rate in Cities with State %F2_Religion</English>
+  <French>[ICON_BULLET]Taux de natalit&#233; %D1_Mod%%[ICON_GREATPEOPLE] dans les villes ayant comme religion d'&#233;tat : F2_Religion</French>
+  <German>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Geburtenrate in St&#228;dten mit der Staatsreligion %F2_Religion</German>
+  <Italian>[ICON_BULLET]%D1_Mod%%[ICON_GREATPEOPLE] Tasso di natalit&#224; nelle citt&#224; con la religione ufficiale %F2_Religion</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% a la tasa de natalidad de [ICON_GREATPEOPLE] en ciudades que tengan el %F2_Religion como religi&#243;n oficial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_GUILDS</Tag>
+  <English>Guilds</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_GUILDS_STRATEGY</Tag>
+  <English>Extra commerce from workshops and watermills; extra unhappiness from banks; double production speed for forges, markets and grocers</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_HEREDITARY_RULE</Tag>
+  <English>Hereditary Rule</English>
+  <French>
+   <Text>Droit h&#233;r&#233;ditaire</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Erbrecht</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Governo ereditario</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Gob. hereditario</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_HEREDITARY_RULE_STRATEGY</Tag>
+  <English>Military units in cities increase happiness</English>
+  <French>Les unit&#233;s militaires stationn&#233;es dans les villes augmentent le bonheur.</French>
+  <German>Milit&#228;reinheiten in St&#228;dten steigern die Zufriedenheit.</German>
+  <Italian>Le unit&#224; militari nelle citt&#224; aumentano la felicit&#224;</Italian>
+  <Spanish>Las unidades militares aumentan la felicidad de las ciudades.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_IMPERIALISM</Tag>
+  <English>Imperialism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_IMPERIALISM_HELP</Tag>
+  <English>[ICON_BULLET]Extra stability for controlling foreign cores[NEWLINE][ICON_BULLET]Reduced likeliness of respawns on your territory</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_IMPERIALISM_STRATEGY</Tag>
+  <English>Extra stability from controlling foreign cores; reduced likeliness of respawns on your territory</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_IMPROVEMENT_UPGRADE</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Growth for[SPACE]</English>
+  <French>[ICON_BULLET]%D1_Mod%% de croissance pour[SPACE]</French>
+  <German>[ICON_BULLET]%D1_Mod%% Wachstum f&#252;r[SPACE]</German>
+  <Italian>[ICON_BULLET]%D1_Mod%% miglioramento sulla crescita[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% al crecimiento por[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_IMPROVEMENT_YIELD_CHANGE</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_Icon from[SPACE]</English>
+  <French>[ICON_BULLET]%D1_Change%F2_Icon :[SPACE]</French>
+  <German>[ICON_BULLET]%D1_Change%F2_Icon durch die Modernisierung[SPACE]</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_Icon da[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_Icon por[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_IN_ALL_CITIES</Tag>
+  <English>[SPACE]in All Cities</English>
+  <French>[SPACE]dans toutes les villes</French>
+  <German>[SPACE]in allen St&#228;dten</German>
+  <Italian>[SPACE]in tutte le citt&#224;</Italian>
+  <Spanish>[SPACE]en todas las ciudades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_IN_CAPITAL</Tag>
+  <English>[SPACE]in Capital</English>
+  <French>[SPACE]dans la capitale</French>
+  <German>[SPACE]in der Hauptstadt</German>
+  <Italian>[SPACE]nella capitale</Italian>
+  <Spanish>[SPACE]en la capital</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_INDUSTRIALISM</Tag>
+  <English>Industrialism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_INDUSTRIALISM_STRATEGY</Tag>
+  <English>May hire double the amount of engineers; increased production in all cities; extra production from workshops and watermills</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_LARGEST_CITIES_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappyOrUn in %d3_NumCities Largest Cities</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HappyOrUn dans les %d3_NumCities plus grandes villes</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HappyOrUn in den %d3_NumCities gr&#246;&#223;ten St&#228;dten</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_HappyOrUn nelle %d3_NumCities citt&#224; pi&#249; grandi</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HappyOrUn en las %d3_NumCities mayores ciudades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_LEVY_ARMIES</Tag>
+  <English>Levy Armies</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_LEVY_ARMIES_STRATEGY</Tag>
+  <English>Lower unit support costs; military units produced with food; double production speed for castles</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_LIMITED_UNIT_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per Military Unit Stationed in a City up to a Maximum of %D3</English>
+  <German>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad pro in einer Stadt stationierter Milit&#228;reinheit bis zu einem Maximum von %D3</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MERCANTILISM</Tag>
+  <English>Mercantilism</English>
+  <French>
+   <Text>Mercantilisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Merkantilismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mercantilismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mercantilismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP</Tag>
+  <English>[ICON_BULLET]Reduced expansion penalty for overseas colonies</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP2</Tag>
+  <English>[ICON_BULLET]Increased chance of spreading Trading Company</English>
+  <German>[ICON_BULLET]Erh&#246;hte Chance, Handelsgesellschaften zu verbreiten</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MERCANTILISM_STRATEGY</Tag>
+  <English>No additional income from foreign trade routes; +50% income from trade routes to and from capital; extra commerce from plantations and slave plantations; double production speed for customs houses; reduced expansion penalty for overseas colonies</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MERCENARIES</Tag>
+  <English>Mercenaries</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MERCENARIES_HELP</Tag>
+  <English>[ICON_BULLET]Hurried Units Start with the [LINK=literal]Mercenary[\LINK] promotion</English>
+  <German>[ICON_BULLET]Beschleunigte Einheiten starten mit der [LINK=literal]S&#246;ldner[\LINK]-Bef&#246;rderung</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MERCENARIES_STRATEGY</Tag>
+  <English>Double production speed for walls; can spend gold to finish production of units; hurried units start with the mercenary promotion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MILITARY_FOOD</Tag>
+  <English>[ICON_BULLET]Military Units Produced with [ICON_FOOD]</English>
+  <French>[ICON_BULLET]Unit&#233;s militaires produites avec : [ICON_FOOD]</French>
+  <German>[ICON_BULLET]Mit [ICON_FOOD] produzierte Milit&#228;reinheiten</German>
+  <Italian>[ICON_BULLET]Unit&#224; militari prodotte con [ICON_FOOD]</Italian>
+  <Spanish>[ICON_BULLET]Las unidades militares se producen con [ICON_FOOD]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MILITARY_PRODUCTION</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Military Unit Production</English>
+  <French>[ICON_BULLET]%D1_Mod%% de production d'unit&#233;s militaires</French>
+  <German>[ICON_BULLET]%D1_Mod%% Produktion von Milit&#228;reinheiten</German>
+  <Italian>[ICON_BULLET]%D1_Mod%% di produzione nelle unit&#224; militari</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% a la producci&#243;n de unidades militares</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MILITARY_SUPPORT_COSTS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_Icon Support Cost per Military Unit</English>
+  <French>[ICON_BULLET]%D1_Change%F2_Icon Co&#251;t de ravitaillement par unit&#233; militaire</French>
+  <German>[ICON_BULLET]%D1_Change%F2_Icon Unterhaltskosten pro Milit&#228;reinheit</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_Icon Costo di supporto per le unit&#224; militari</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_Icon de coste de abastecimiento por cada unidad militar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MILITARY_UNIT_SUPPORT</Tag>
+  <English>[ICON_BULLET]Lower Military Unit Support Costs</English>
+  <French>[ICON_BULLET]Co&#251;ts d'entretien des unit&#233;s militaires plus faible</French>
+  <German>[ICON_BULLET]Geringere Unterhaltskosten f&#252;r Milit&#228;reinheiten</German>
+  <Italian>[ICON_BULLET]Costi di supporto delle unit&#224; militari ridotti</Italian>
+  <Spanish>[ICON_BULLET]Menores costes de abastecimiento de las unidades militares</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MILITIA</Tag>
+  <English>Militia</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MILITIA_STRATEGY</Tag>
+  <English>The most primitive military civic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MULTILATERALISM</Tag>
+  <English>Multilateralism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_MULTILATERALISM_STRATEGY</Tag>
+  <English>Increased war weariness; free specialist in all cities; +25% income from trade routes with defensive pact partners; increased upkeep for military units</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NATIONHOOD</Tag>
+  <English>Nationhood</English>
+  <French>
+   <Text>Nation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Nat. Selbstst&#228;ndigk.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Identit&#224; nazionale</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Patria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NATIONHOOD_STRATEGY</Tag>
+  <English>Can draft three units per turn; barracks produce extra happiness</English>
+  <French>Permet de mobiliser 3 unit&#233;s par tour, la caserne accro&#238;t le bonheur.</French>
+  <German>Erm&#246;glicht die Rekrutierung von drei Einheiten/Runde. Erh&#246;ht den Kulturaussto&#223; aller St&#228;dte.</German>
+  <Italian>Pu&#242; reclutare tre unit&#224; per turno; le caserme producono felicit&#224; extra</Italian>
+  <Spanish>Se pueden reclutar tres unidades por turno, los cuarteles generan felicidad adicional.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY</Tag>
+  <English>Naval Supremacy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY_STRATEGY</Tag>
+  <English>Extra experience for naval units; increased production speed for naval units; extra production from fishing boats and high sea fishing boats; double production speed for drydocks</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY_TITLE</Tag>
+  <English>Naval Dominance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_BUILDING_UNHEALTHY</Tag>
+  <English>[ICON_BULLET]No [ICON_UNHEALTHY] from Buildings</English>
+  <French>[ICON_BULLET]Pas de [ICON_UNHEALTHY] en raison des b&#226;timents</French>
+  <German>[ICON_BULLET]Nicht [ICON_UNHEALTHY] durch Geb&#228;ude</German>
+  <Italian>[ICON_BULLET]Nessun [ICON_UNHEALTHY] dagli edifici</Italian>
+  <Spanish>[ICON_BULLET]No hay [ICON_UNHEALTHY] por edificios</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_CORPORATIONS</Tag>
+  <English>[ICON_BULLET]Corporations have no effect</English>
+  <French>[ICON_BULLET]Les soci&#233;t&#233;s commerciales n'ont aucun effet</French>
+  <German>[ICON_BULLET]Kapitalgesellschaften haben keine Auswirkung</German>
+  <Italian>[ICON_BULLET]Le corporazioni non hanno effetto</Italian>
+  <Spanish>[ICON_BULLET]Las corporaciones no tienen efecto</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_FOREIGN_CORPORATIONS</Tag>
+  <English>[ICON_BULLET]Foreign Corporations have no effect</English>
+  <French>[ICON_BULLET]Les soci&#233;t&#233;s commerciales &#233;trang&#232;res n'ont aucun effet</French>
+  <German>[ICON_BULLET]Fremde Kapitalgesellschaften haben keine Auswirkung</German>
+  <Italian>[ICON_BULLET]Le corporazioni straniere non hanno effetto</Italian>
+  <Spanish>[ICON_BULLET]Las corporaciones extranjeras no tienen efecto</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_FOREIGN_TRADE</Tag>
+  <English>[ICON_BULLET]No Foreign Trade Routes ([ICON_TRADE])</English>
+  <French>[ICON_BULLET]Aucune route commerciale &#233;trang&#232;re</French>
+  <German>[ICON_BULLET]Keine fremden Handelswege ([ICON_TRADE])</German>
+  <Italian>[ICON_BULLET]Nessuna rotta commerciale estera ([ICON_TRADE])</Italian>
+  <Spanish>[ICON_BULLET]Sin rutas comerciales extranjeras ([ICON_TRADE])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_FOREIGN_TRADE_MODIFIER</Tag>
+  <English>[ICON_BULLET]No Additional Income from Foreign Trade Routes</English>
+  <German>[ICON_BULLET]Kein zus&#228;tzliches Einkommen durch ausl&#228;ndische Handelsrouten</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_MAINT_CORPORATION</Tag>
+  <English>[ICON_BULLET]No Maintenance Costs from Corporations</English>
+  <French>[ICON_BULLET]Pas de co&#251;t d'entretien des Soci&#233;t&#233;s commerciales</French>
+  <German>[ICON_BULLET]Keine Unterhaltskosten von Kapitalgesellschaften</German>
+  <Italian>[ICON_BULLET]Nessun costo di manutenzione da Corporazioni</Italian>
+  <Spanish>[ICON_BULLET]Sin costes de mantenimiento de las corporaciones</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_MAINT_CORPORATION_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Maintenance Costs from Corporations</English>
+  <French>[ICON_BULLET]%D1_Mod%% Co&#251;ts d'entretien des Soci&#233;t&#233;s commerciales</French>
+  <German>[ICON_BULLET]%D1_Mod%% Unterhaltskosten von Kapitalgesellschaften</German>
+  <Italian>[ICON_BULLET]%D1_Mod%% costi di manutenzione da Corporazioni</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% a los costes de mantenimiento de las corporaciones</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_MAINT_NUM_CITIES</Tag>
+  <English>[ICON_BULLET]No Maintenance Costs from Number of Cities</English>
+  <French>[ICON_BULLET]Aucun co&#251;t d'entretien d&#251; au nombre de villes</French>
+  <German>[ICON_BULLET]Keine Unterhaltskosten f&#252;r Anzahl der St&#228;dte</German>
+  <Italian>[ICON_BULLET]Nessun costo di mantenimento per il numero di citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]Sin costes de mantenimiento por cantidad de ciudades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_MAINT_NUM_CITIES_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% Maintenance Costs from Number of Cities</English>
+  <French>[ICON_BULLET]Co&#251;t d'entretien %D1_Mod%% d&#251; au nombre de villes</French>
+  <German>[ICON_BULLET]%D1_Mod%% Unterhaltskosten von Anzahl der St&#228;dte</German>
+  <Italian>[ICON_BULLET]%D1_Mod%% costo di mantenimento per il numero di citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Mod%% a los costes de mantenimiento por cantidad de ciudades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_NON_STATE_SPREAD</Tag>
+  <English>[ICON_BULLET]No Non-State [ICON_RELIGION] Spread</English>
+  <French>[ICON_BULLET]Aucune [ICON_RELIGION] propag&#233;e</French>
+  <German>[ICON_BULLET]Keine nichtstaatliche Religion [ICON_RELIGION] verbreitet</German>
+  <Italian>[ICON_BULLET]Nessuna diffusione di [ICON_RELIGION] non ufficiale</Italian>
+  <Spanish>[ICON_BULLET]No se propaga ninguna [ICON_RELIGION] que no sea la oficial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_POP_UNHEALTHY</Tag>
+  <English>[ICON_BULLET]No [ICON_UNHEALTHY] from City Population</English>
+  <French>[ICON_BULLET]Pas de [ICON_UNHEALTHY] en raison de la population de la ville</French>
+  <German>[ICON_BULLET]Nicht [ICON_UNHEALTHY] durch Stadtbev&#246;lkerung</German>
+  <Italian>[ICON_BULLET]Nessun [ICON_UNHEALTHY] dalla popolazione della citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]No hay [ICON_UNHEALTHY] por poblaci&#243;n de la ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_STATE_RELIGION</Tag>
+  <English>[ICON_BULLET]No State [ICON_RELIGION]</English>
+  <French>[ICON_BULLET]Aucune [ICON_RELIGION] d'&#233;tat</French>
+  <German>[ICON_BULLET]Keine Staatsreligion [ICON_RELIGION]</German>
+  <Italian>[ICON_BULLET]Nessuna [ICON_RELIGION] ufficiale</Italian>
+  <Spanish>[ICON_BULLET]Sin [ICON_RELIGION] oficial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_UNHAPPINESS_CORPORATION</Tag>
+  <English>[ICON_BULLET]No [ICON_UNHAPPY] from Corporations</English>
+  <German>[ICON_BULLET]Kein [ICON_UNHAPPY] durch Kapitalgesellschaften</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_UNHAPPINESS_CORPORATION_MOD</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] from Corporations</English>
+  <German>[ICON_BULLET]%D1_Mod%% [ICON_UNHAPPY] durch Kapitalgesellschaften</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NO_WAR_WEARINESS</Tag>
+  <English>[ICON_BULLET]No War [ICON_UNHAPPY]</English>
+  <French>[ICON_BULLET]Pas de [ICON_UNHAPPY] d&#251; &#224; la guerre</French>
+  <German>[ICON_BULLET]Keine [ICON_UNHAPPY] wegen Krieg</German>
+  <Italian>[ICON_BULLET]Nessuna guerra [ICON_UNHAPPY]</Italian>
+  <Spanish>[ICON_BULLET]Sin [ICON_UNHAPPY] b&#233;lico</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NON_STATE_REL_HAPPINESS_NO_STATE</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per [ICON_RELIGION] in a City</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HappyOrUn par [ICON_RELIGION] dans une ville</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HappyOrUn je [ICON_RELIGION]-Religion in einer Stadt</German>
+  <Italian>[ICON_BULLET]%D1_Change di %F2_HappyOrUn per [ICON_RELIGION] in una citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HappyOrUn por cada [ICON_RELIGION] en cada ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_NON_STATE_REL_HAPPINESS_WITH_STATE</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Non-State [ICON_RELIGION] in a City</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HappyOrUn par [ICON_RELIGION] non officielle dans une ville</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HappyOrUn je nichtstaatlicher Religion [ICON_RELIGION] in einer Stadt</German>
+  <Italian>[ICON_BULLET]%D1_Change di %F2_HappyOrUn per [ICON_RELIGION] non ufficiale di una citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HappyOrUn por cada [ICON_RELIGION] no oficial en cada ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_OCCUPATION</Tag>
+  <English>Occupation</English>
+  <German>Besatzung</German>
+  <Italian>Occupazione</Italian>
+  <Spanish>Ocupaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_OCCUPATION_BONUS</Tag>
+  <English>[ICON_BULLET]No negative Stability Points from cities under occupation</English>
+  <French>[ICON_BULLET]Pas de points de stabilit&#233; n&#233;gatifs pour les villes occup&#233;es</French>
+  <German>[ICON_BULLET]Keine Stabilit&#228;tspunktabz&#252;ge durch besetzte St&#228;dte</German>
+  <Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di citt&#224; occupate.</Italian>
+  <Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_OCCUPATION_STRATEGY</Tag>
+  <English>Adds a Stability Points bonus on city conquest; no negative Stability Points from cities under occupation</English>
+  <French>Ajoute un bonus de points de stabilit&#233; par ville conquise ; pas de points de stabilit&#233; n&#233;gatifs pour les villes occup&#233;es</French>
+  <German>Stabilit&#228;tspunktbonus bei Stadteroberung; keine Stabilit&#228;tspunktabz&#252;ge durch besetzte St&#228;dte</German>
+  <Italian>Aggiunge un bonus di punti stabilit&#224; per la conquista di citt&#224;; nessun punto stabilit&#224; negativo in caso di citt&#224; occupate.</Italian>
+  <Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por conquista de ciudades; no hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION</Tag>
+  <English>Organized Religion</English>
+  <French>
+   <Text>Religion organis&#233;e</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Organisierte Religion</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Relig. organizzata</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Religi&#243;n organizada</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Tag>
+  <English>Extra unhappiness from non-state religions; cities with state religion construct buildings faster</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PACIFISM</Tag>
+  <English>Pacifism</English>
+  <French>
+   <Text>Pacifisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Pazifismus</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Pacifismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pacifismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PACIFISM_STRATEGY</Tag>
+  <English>Increases great people birth rate in cities with state religion; increases support costs for military units</English>
+  <French>Augmente le taux de natalit&#233; des personnages illustres dans les villes ayant une religion d'&#233;tat ainsi que le co&#251;t de ravitaillement des unit&#233;s militaires.</French>
+  <German>Zus&#228;tzliche Gro&#223;e Pers&#246;nlichkeiten in St&#228;dten mit Staatsreligion. H&#246;here Unterhaltskosten f&#252;r Milit&#228;reinheiten.</German>
+  <Italian>Aumenta il ritmo di nascita dei Grandi Personaggi nelle citt&#224; dotate di religione di stato; aumenta i costi di supporto per le unit&#224; militari</Italian>
+  <Spanish>Aumenta la tasa de natalidad de grandes personajes en las ciudades con la religi&#243;n oficial. Aumenta el coste de abastecimiento de las unidades militares. </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PAGANISM</Tag>
+  <English>Paganism</English>
+  <French>
+   <Text>Paganisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Heidentum</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Paganesimo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Paganismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PAGANISM_STRATEGY</Tag>
+  <English>The most primitive Religion civic</English>
+  <French>La forme la plus primitive de doctrine religieuse.</French>
+  <German>Die einfachste Religions-Staatsform.</German>
+  <Italian>La forma di Religione pi&#249; primitiva</Italian>
+  <Spanish>El principio religioso m&#225;s primitivo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PANTHEON</Tag>
+  <English>Pantheon</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PANTHEON_HELP</Tag>
+  <English>[ICON_BULLET]Allows construction of classical wonders</English>
+  <German>[ICON_BULLET]Erlaubt die Errichtung klassischer Wunder</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PANTHEON_STRATEGY</Tag>
+  <English>No state religion; extra unhappiness from non-state religions; extra happiness from pagan temples; can build classical wonders</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PANTHEON_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Make sure there are 15 [LINK=BUILDING_OBELI]Pagan Temples[\LINK] in the world[NEWLINE][ICON_BULLET]Control ten wonders that require no state religion[NEWLINE][ICON_BULLET]Don't allow more than half of your cities to have a religion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PER_SPECIALIST</Tag>
+  <English>[SPACE]per Specialist</English>
+  <French>[SPACE]par sp&#233;cialiste</French>
+  <German>[SPACE]pro Spezialist</German>
+  <Italian>[SPACE]per specialista</Italian>
+  <Spanish>[SPACE]por cada especialista</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD</Tag>
+  <English>[SPACE]per Specialist for every city that works at most %d1 land tiles</English>
+  <German>[SPACE]pro Spezialist f&#252;r jede Stadt, die h&#246;chstens %d1 Landfelder bearbeitet</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_POLICE_STATE</Tag>
+  <English>Police State</English>
+  <French>
+   <Text>Etat policier</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Polizeistaat</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Stato di polizia</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Estado policial</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_POLICE_STATE_STRATEGY</Tag>
+  <English>Faster military unit production; less war anger; increased espionage output</English>
+  <French>Acc&#233;l&#232;re la production des unit&#233;s militaires. R&#233;duit le m&#233;contentement d&#251; &#224; la guerre. Augmente la production de l'espionnage.</French>
+  <German>Beschleunigte Produktion von Milit&#228;reinheiten, geringere Kriegsm&#252;digkeit, bessere Spionageleistungen</German>
+  <Italian>Produzione delle unit&#224; militari pi&#249; veloce; ridotta stanchezza della guerra; maggiore resa dello spionaggio.</Italian>
+  <Spanish>Producci&#243;n m&#225;s r&#225;pida de unidades militares, menor hast&#237;o b&#233;lico, mayor rendimiento del espionaje</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_POLLUTION_MODIFIER</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% [ICON_UNHEALTHY]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_POST_COMMUNISM</Tag>
+  <English>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Post-communist crisis in case of economic system switch</English>
+  <German>[ICON_BULLET]Maximal eine Kapitalgesellschaft pro Stadt[ICON_BULLET][ICON_BULLET]Post-kommunistische Krise im Falle eines Wirtschaftssystemwechsels</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PROCESS_MODIFIER</Tag>
+  <English>[ICON_BULLET]Can convert production to commerce with %D1_Mod%% efficiency</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE</Tag>
+  <English>Public Welfare</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE_STRATEGY</Tag>
+  <English>Decreased unhappiness from corporations, extra research from specialists, double production speed for hospitals and universities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_REL_BUILDING_BONUS</Tag>
+  <English>[ICON_BULLET]Cities with %F1_RelIcon Construct Buildings %D2_Mod%% Faster</English>
+  <French>[ICON_BULLET]Vitesse de construction des b&#226;timents pour les villes ayant la religion %F1_RelIcon : %D2_Mod%% </French>
+  <German>[ICON_BULLET]St&#228;dte mit der Religion %F1_RelIcon errichten Geb&#228;ude %D2_Mod%% schneller</German>
+  <Italian>[ICON_BULLET]Le citt&#224; con %F1_RelIcon costruiscono il %D2_Mod%% pi&#249; velocemente</Italian>
+  <Spanish>[ICON_BULLET]Las ciudades con %F1_RelIcon construyen edificios un %D2_Mod%% m&#225;s r&#225;pido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_REL_FREE_XP</Tag>
+  <English>[ICON_BULLET]%D1_XP Experience Points in Cities with %F2_RelIcon</English>
+  <French>[ICON_BULLET]%D1_XP EXP dans les villes ayant pour religion : %F2_RelIcon</French>
+  <German>[ICON_BULLET]%D1_XP Erfahrungspunkte in St&#228;dten mit der Religion %F2_RelIcon</German>
+  <Italian>[ICON_BULLET]%D1_XP punti esperienza esperienza nelle citt&#224; con %F2_RelIcon</Italian>
+  <Spanish>[ICON_BULLET]%D1_XP puntos de experiencia en las ciudades con %F2_RelIcon</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_REL_TRAIN_BONUS</Tag>
+  <English>[ICON_BULLET]Cities with %F1_RelIcon Train Units %D2_Mod%% Faster</English>
+  <French>[ICON_BULLET]Les villes dont la religion est la suivante entra&#238;nent les unit&#233;s %D2_Mod%% plus vite : %F1_RelIcon</French>
+  <German>[ICON_BULLET]St&#228;dte mit der Religion %F1_RelIcon bilden Einheiten %D2_Mod%% schneller aus</German>
+  <Italian>[ICON_BULLET]Le citt&#224; con %F1_RelIcon addestrano le unit&#224; il %D2_Mod%% pi&#249; rapidamente</Italian>
+  <Spanish>[ICON_BULLET]Las ciudades con %F1_RelIcon entrenan unidades un %D2_Mod%% m&#225;s r&#225;pido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_RELIGION_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappyOrUn in Cities with State [ICON_RELIGION]</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HappyOrUn dans les villes ayant comme religion  d'&#233;tat [ICON_RELIGION]</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HappyOrUn in St&#228;dten mit der Staatsreligion [ICON_RELIGION]</German>
+  <Italian>[ICON_BULLET]%D1_Change di %F2_HappyOrUn nelle citt&#224; con la religione di stato [ICON_RELIGION]</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HappyOrUn en las ciudades con [ICON_RELIGION] oficial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_REPRESENTATION</Tag>
+  <English>Representation</English>
+  <French>
+   <Text>Repr&#233;sentation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Repr&#228;sentation</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Rappresentanza</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Representatividad</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_REPRESENTATION_STRATEGY</Tag>
+  <English>May hire double the amount of statesmen; increased happiness in six largest cities; extra happiness from courthouses</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_REPUBLIC</Tag>
+  <English>Republic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_REPUBLIC_STRATEGY</Tag>
+  <English>Increases great people birth rate; cottages, hamlets and villages develop faster</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_REQUIRES</Tag>
+  <English>[COLOR_RED]Reqs [LINK=literal]%s1_TechName[\LINK][COLOR_REVERT]</English>
+  <French>[COLOR_RED]Req. [LINK=literal]%s1_TechName[\LINK][COLOR_REVERT]</French>
+  <German>[COLOR_RED]Erfordert die Technologie [LINK=literal]%s1_TechName[\LINK][COLOR_REVERT]</German>
+  <Italian>[COLOR_RED]Richiede [LINK=literal]%s1_TechName[\LINK][COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_RED]Requiere [NUM1:el:la:los:las] [LINK=literal]%s1_TechName[\LINK][COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_RESETTLEMENT</Tag>
+  <English>Resettlement</English>
+  <French>Repeuplement</French>
+  <German>Umsiedlung</German>
+  <Italian>Risistemazione</Italian>
+  <Spanish>Reasentamiento</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_RESETTLEMENT_STRATEGY</Tag>
+  <English>Adds a Stability Points bonus for each city founded at least 15 tiles from the capital</English>
+  <French>Ajoute un bonus de points de stabilit&#233; par ville fond&#233;e &#224; 15 cases ou plus de la capitale</French>
+  <German>Stabilit&#228;tspunktbonus f&#252;r jede Stadt, die mindestens 15 Gel&#228;ndefelder von der Hauptstadt entfernt gegr&#252;ndet wurde</German>
+  <Italian>Aggiunge un bonus di punti stabilit&#224; per ogni citt&#224; fondata ad almeno 15 caselle dalla capitale.</Italian>
+  <Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada ciudad fundada al menos a 15 casillas de la capital</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SCHOLASTICISM</Tag>
+  <English>Scholasticism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SCHOLASTICISM_STRATEGY</Tag>
+  <English>Can build missionaries without monasteries; increases great people birth rate in cities with state religion; extra unhappiness from non-state religions</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SCREEN_UPKEEP</Tag>
+  <English>Upkeep: %d1[ICON_GOLD] per turn</English>
+  <French>Entretien : %d1[ICON_GOLD] par tour</French>
+  <German>Unterhalt: %d1[ICON_GOLD] pro Runde</German>
+  <Italian>Mantenimento: %d1[ICON_GOLD] per turno</Italian>
+  <Spanish>Mantenimiento: %d1 [ICON_GOLD] por turno</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SECULARISM</Tag>
+  <English>Secularism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SECULARISM_HELP</Tag>
+  <English>[ICON_BULLET]Can Build All Wonders that Require a State Religion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Tag>
+  <English>No state religion; increases science in all cities; can build wonders that require a state religion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SECULARISM_VICTORY</Tag>
+  <English>[BOLD]Religious Victory:[\BOLD][NEWLINE][ICON_BULLET]Tolerance: Control the [LINK=CONCEPT_TEMPLES_REDIRECT]Temples[\LINK] of seven different religions[NEWLINE][ICON_BULLET]Humanism: Make sure there are 20 [LINK=BUILDING_UNIVERSITY]Universities[\LINK] controlled by Secular civilizations[NEWLINE][ICON_BULLET]Modernization: Be the first to enter the Industrial and Modern eras</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SERFDOM</Tag>
+  <English>Serfdom</English>
+  <French>
+   <Text>Servage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Leibeigenschaft</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Servit&#249;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Servidumbre</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SERFDOM_STRATEGY</Tag>
+  <English>Workers build improvements faster</English>
+  <French>Les ouvriers construisent les am&#233;nagements plus rapidement.</French>
+  <German>Bautrupps stellen Modernisierungen schneller fertig.</German>
+  <Italian>I lavoratori costruiscono i miglioramenti pi&#249; velocemente</Italian>
+  <Spanish>Los trabajadores construyen mejoras m&#225;s r&#225;pido.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SLAVERY</Tag>
+  <English>Slavery</English>
+  <French>
+   <Text>Esclavage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Sklaverei</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Schiavismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Esclavitud</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Tag>
+  <English>Can sacrifice city population to finish production</English>
+  <French>Permet de sacrifier la population de la ville pour achever la production en cours.</French>
+  <German>Opfert Bev&#246;lkerung, um die Produktion zu beschleunigen.</German>
+  <Italian>Possibilit&#224; di sacrificare la popolazione cittadina per completare la produzione</Italian>
+  <Spanish>Se puede sacrificar poblaci&#243;n de la ciudad para terminar la producci&#243;n.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_STANDING_ARMY</Tag>
+  <English>Standing Army</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Tag>
+  <English>Extra experience for land units; extra production from forts; double production speed for barracks' and stables</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_STATE_PROPERTY</Tag>
+  <English>State Property</English>
+  <French>
+   <Text>Nationalisation</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Staatseigentum</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Propriet&#224; statale</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Propiedad estatal</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_STATE_PROPERTY_STRATEGY</Tag>
+  <English>Extra production from specialists, extra food from workshops and watermills, double production speed for factories and coal plants</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_STATE_REL_BUILDING_BONUS</Tag>
+  <English>[ICON_BULLET]Cities with State [ICON_RELIGION] Construct Buildings %D1_Mod%% Faster</English>
+  <French>[ICON_BULLET]Vitesse de construction des b&#226;timents pour les villes ayant une [ICON_RELIGION] d'&#233;tat : %D1_Mod%%</French>
+  <German>[ICON_BULLET]St&#228;dte mit der Staatsreligion [ICON_RELIGION] errichten Geb&#228;ude %D1_Mod%% schneller</German>
+  <Italian>[ICON_BULLET]Le citt&#224; con la [ICON_RELIGION] ufficiale costruiscono gli edifici il %D1_Mod%% pi&#249; velocemente</Italian>
+  <Spanish>[ICON_BULLET]Las ciudades con [ICON_RELIGION] oficial construyen edificios un %D1_Mod%% m&#225;s r&#225;pido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_STATE_REL_FREE_XP</Tag>
+  <English>[ICON_BULLET]%D1_XP Experience Points in Cities with State [ICON_RELIGION]</English>
+  <French>[ICON_BULLET]%D1_XP EXP dans les villes ayant une [ICON_RELIGION] d'&#233;tat</French>
+  <German>[ICON_BULLET]%D1_XP Erfahrungspunkte in St&#228;dten mit der Staatsreligion [ICON_RELIGION]</German>
+  <Italian>[ICON_BULLET]%D1_XP [NUM1:punto esperienza:punti esperienza] nelle citt&#224; con [ICON_RELIGION] ufficiale</Italian>
+  <Spanish>[ICON_BULLET]%D1_XP [NUM1:punto de experiencia:puntos de experiencia] en las ciudades con [ICON_RELIGION] oficial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_STATE_REL_TRAIN_BONUS</Tag>
+  <English>[ICON_BULLET]Cities with State [ICON_RELIGION] Train Units %D1_Mod%% Faster</English>
+  <French>[ICON_BULLET]Les villes ayant une [ICON_RELIGION] d'&#233;tat entra&#238;nent les unit&#233;s %D1_Mod%% plus vite</French>
+  <German>[ICON_BULLET]St&#228;dte mit der Staatsreligion [ICON_RELIGION] bilden Einheiten  %D1_Mod%% schneller aus</German>
+  <Italian>[ICON_BULLET]Le citt&#224; con la [ICON_RELIGION] ufficiale addestrano le unit&#224; il %D1_Mod%% pi&#249; rapidamente</Italian>
+  <Spanish>[ICON_BULLET]Las ciudades con [ICON_RELIGION] oficial entrenan unidades un %D1_Mod%% m&#225;s r&#225;pido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_STATE_RELIGION_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappyOrUn in Cities with %F3_RelIcon</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HappyOrUn dans les villes ayant pour religion %F3_RelIcon</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HappyOrUn in St&#228;dten mit der Religion %F3_RelIcon</German>
+  <Italian>[ICON_BULLET]%D1_Change di %F2_HappyOrUn nelle citt&#224; con %F3_RelIcon</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HappyOrUn en las ciudades con %F3_RelIcon</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SUBJUGATION</Tag>
+  <English>Subjugation</English>
+  <French>Assujettissement</French>
+  <German>Unterwerfung</German>
+  <Italian>Sottomissione</Italian>
+  <Spanish>Subyugaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SUBSISTENCE</Tag>
+  <English>Subsistence</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SUBSISTENCE_STRATEGY</Tag>
+  <English>The most primitive economy civic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SUPPORT_COSTS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_Icon Support Cost per Unit</English>
+  <French>[ICON_BULLET]%D1_Change%F2_Icon Co&#251;t d'entretien par unit&#233;</French>
+  <German>[ICON_BULLET]%D1_Change%F2_Icon Unterhaltskosten pro Einheit</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_Icon Costo di supporto per unit&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_Icon de coste de abastecimiento por cada unidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL</Tag>
+  <English>Supreme Council</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL_STRATEGY</Tag>
+  <English>No maintenance penalty for distance to Palace</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_THEOCRACY</Tag>
+  <English>Theocracy</English>
+  <French>
+   <Text>Th&#233;ocratie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Theokratie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Teocrazia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Teocracia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
+  <English>May hire double the amount of priests; extra happiness from state religion; extra unhappiness from non-state religions; cities with state religion give extra experience</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_TOTALITARIANISM</Tag>
+  <English>Totalitarianism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_TOTALITARIANISM_HELP</Tag>
+  <English>[ICON_BULLET]No stability penalty for conquered cities or minority culture</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_TOTALITARIANISM_STRATEGY</Tag>
+  <English>No maintenance cost from distance to palace; military units in cities increase happiness to a limit of +4; extra espionage from specialists; no stability penalty for conquered cities or from minority cultures</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_TRADE_ROUTES</Tag>
+  <English>[ICON_BULLET]%D1_Change Trade Routes ([ICON_TRADE]) per City</English>
+  <French>[ICON_BULLET]%D1_Change routes commerciales par ville</French>
+  <German>[ICON_BULLET]%D1_Change Handelswege ([ICON_TRADE]) pro Stadt</German>
+  <Italian>[ICON_BULLET]%D1_Change rotte commerciali ([ICON_TRADE]) per citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change rutas comerciales ([ICON_TRADE]) por ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_TRIBALISM</Tag>
+  <English>Tribalism</English>
+  <French>
+   <Text>Tribalisme</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Stammessystem</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Organiz. tribale</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tribalismo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_TRIBALISM_STRATEGY</Tag>
+  <English>The most primitive Society civic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_TYRANNY</Tag>
+  <English>Tyranny</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_TYRANNY_STRATEGY</Tag>
+  <English>The most primitive Government civic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_UNIT_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per Military Unit Stationed in a City</English>
+  <French>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad par unit&#233; militaire en garnison dans une ville</French>
+  <German>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad pro in einer Stadt stationierter Milit&#228;reinheit</German>
+  <Italian>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per le unit&#224; militari stazionate in citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]%D1_PerUnit %F2_HappyOrSad por cada unidad militar destacada en la ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_UNIT_SUPPORT</Tag>
+  <English>[ICON_BULLET]Lower Unit Support Costs</English>
+  <French>[ICON_BULLET]Co&#251;ts d'entretien des unit&#233;s plus faible</French>
+  <German>[ICON_BULLET]Geringere Unterhaltskosten f&#252;r Einheiten</German>
+  <Italian>[ICON_BULLET]Costi di supporto delle unit&#224; ridotti</Italian>
+  <Spanish>[ICON_BULLET]Menores costes de abastecimiento de las unidades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_UNIVERSAL_SUFFRAGE</Tag>
+  <English>Universal Suffrage</English>
+  <French>
+   <Text>Suffrage universel</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Allg. Wahlrecht</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Suffragio universale</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Sufragio universal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_UNIVERSAL_SUFFRAGE_STRATEGY</Tag>
+  <English>Extra happiness in largest cities; extra production from towns</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_UNLIMTED</Tag>
+  <English>[ICON_BULLET]Doubled slots for[SPACE]</English>
+  <German>[ICON_BULLET]Erlaubt doppelt soviele[SPACE]</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_URBANIZATION</Tag>
+  <English>Urbanization</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_URBANIZATION_STRATEGY</Tag>
+  <English>Workers build improvements faster; more production from workshops</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_VASSAL_BONUS</Tag>
+  <English>[ICON_BULLET]+4 Stability Points for each vassal</English>
+  <French>[ICON_BULLET]+4 points de stabilit&#233; par vassal</French>
+  <German>[ICON_BULLET]+4 Stabilit&#228;tspunkte f&#252;r jeden Vasallen</German>
+  <Italian>[ICON_BULLET]+4 punti stabilit&#224; per ogni vassallo.</Italian>
+  <Spanish>[ICON_BULLET]+4 puntos de estabilidad por cada vasallo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_VASSAL_BONUS_VANILLA</Tag>
+  <English>[ICON_BULLET]+4 Stability Points for each civilization starting point controlled</English>
+  <French>[ICON_BULLET]+4 points de stabilit&#233; par point de d&#233;part de civilisation contr&#244;l&#233;</French>
+  <German>[ICON_BULLET]+4 Stabilit&#228;tspunkte f&#252;r jeden kontrollierten Zivilisationsstartpunkt</German>
+  <Italian>[ICON_BULLET]+4 punti stabilit&#224; per ogni punto di avvio di civilt&#224; controllato.</Italian>
+  <Spanish>[ICON_BULLET]+4 puntos de estabilidad por cada punto de inicio de civilizaci&#243;n controlado</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_VASSALAGE</Tag>
+  <English>Vassalage</English>
+  <French>
+   <Text>Vassalit&#233;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Vasallentum</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Vassallaggio</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Vasallaje</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_VASSALAGE_HELP</Tag>
+  <English>[ICON_BULLET]Additional stability for every vassal</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Tag>
+  <English>Extra experience for all units; extra commerce from forts; extra happiness from castles; extra stability from vassals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_VICEROYALTY</Tag>
+  <English>Viceroyalty</English>
+  <French>Vice-royaut&#233;</French>
+  <German>Vizek&#246;nigtum</German>
+  <Italian>Vicereame</Italian>
+  <Spanish>Virreinato</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_VICEROYALTY_STRATEGY</Tag>
+  <English>Adds a Stability Points bonus for each vassal</English>
+  <French>Ajoute un bonus de points de stabilit&#233; par vassal</French>
+  <German>Stabilit&#228;tspunktbonus f&#252;r jeden Vasallen</German>
+  <Italian>Aggiunge un punto stabilit&#224; per ogni vassallo.</Italian>
+  <Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada vasallo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_VICEROYALTY_VANILLA_STRATEGY</Tag>
+  <English>Adds a Stability Points bonus for each civilization starting point controlled</English>
+  <French>Ajoute un bonus de points de stabilit&#233; par point de d&#233;part de civilisation contr&#244;l&#233;</French>
+  <German>Stabilit&#228;tspunktbonus f&#252;r jeden kontrollierten Zivilisationsstartpunkt</German>
+  <Italian>Aggiunge un punto stabilit&#224; per ogni punto di avvio di civilt&#224; controllato.</Italian>
+  <Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada punto de inicio de civilizaci&#243;n controlado</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WARRIOR_CODE</Tag>
+  <English>Warrior Code</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WARRIOR_CODE_HELP</Tag>
+  <English>[ICON_BULLET]No stability penalty for conquered cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WARRIOR_CODE_STRATEGY</Tag>
+  <English>Decreased war unhappiness, double production speed of Barracks' and stables, no stability penalty for conquered cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WE_LOVE_CONSUL</Tag>
+  <English>"We Love the Consul Day"</English>
+  <German>"Konsul-Feiertag"</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WE_LOVE_DESPOT</Tag>
+  <English>"We Love the Despot Day"</English>
+  <French>"La f&#234;te du Despote"</French>
+  <German>"Despoten-Feiertag"</German>
+  <Italian>"Viva il giorno del despota"</Italian>
+  <Spanish>"Adoramos al d&#233;spota"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WE_LOVE_DICTATOR</Tag>
+  <English>"We Love the Dictator Day"</English>
+  <French>"La f&#234;te du Dictateur"</French>
+  <German>"Diktatoren-Feiertag"</German>
+  <Italian>"Viva il giorno del dittatore"</Italian>
+  <Spanish>"Adoramos al dictador"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WE_LOVE_MONARCH</Tag>
+  <English>"We Love the Monarch Day"</English>
+  <French>"La f&#234;te du Monarque"</French>
+  <German>"Monarchen-Feiertag"</German>
+  <Italian>"Viva il giorno del re"</Italian>
+  <Spanish>"Adoramos al monarca"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WE_LOVE_PRESIDENT</Tag>
+  <English>"We Love the President Day"</English>
+  <French>"La f&#234;te du Pr&#233;sident"</French>
+  <German>"Pr&#228;sidenten-Feiertag"</German>
+  <Italian>"Viva il giorno del presidente"</Italian>
+  <Spanish>"Adoramos al presidente"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WE_LOVE_PRIME_MINISTER</Tag>
+  <English>"We Love the Prime Minister Day"</English>
+  <French>"La f&#234;te du premier ministre"</French>
+  <German>"Premierminister-Feiertag"</German>
+  <Italian>"Viva il giorno del primo ministro"</Italian>
+  <Spanish>"Adoramos al primer ministro"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WONDER_PRODUCTION</Tag>
+  <English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] when building Wonders</English>
+  <German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] beim Bau von Wundern</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_WORKER_SPEED</Tag>
+  <English>[ICON_BULLET]Workers Build Improvements %D1_Mod%% Faster</English>
+  <French>[ICON_BULLET]Vitesse de construction des am&#233;nagements : %D1_Mod%%</French>
+  <German>[ICON_BULLET]Bautrupps errichten Modernisierungen %D1_Mod%% schneller</German>
+  <Italian>[ICON_BULLET]I lavoratori costruiscono i miglioramenti il %D1_Mod%% pi&#249; rapidamente</Italian>
+  <Spanish>[ICON_BULLET]Los trabajadores construyen mejoras un %D1_Mod%% m&#225;s r&#225;pido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_ABBR_ECONOMY</Tag>
+  <English>Econ</English>
+  <German>&#214;konomie</German>
+  <Italian>Economia</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_ABBR_GOVERNMENT</Tag>
+  <English>Govt</English>
+  <German>Regierung</German>
+  <Italian>Governo</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_ABBR_LABOR</Tag>
+  <English>Labor</English>
+  <French>
+   <Text>Travail</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Arbeit</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Lavoro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Condc. laborales</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_ABBR_LEGAL</Tag>
+  <English>Legal</English>
+  <French>
+   <Text>Justice</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Recht</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Sistema legale</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Sistema legal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_ABBR_RELIGION</Tag>
+  <English>Religion</English>
+  <French>
+   <Text>Religion</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Religion</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Religione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Religi&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_ECONOMY</Tag>
+  <English>Economy</English>
+  <French>
+   <Text>Economie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>&#214;konomie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Economia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Econom&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_EXPANSION</Tag>
+  <English>Expansion</English>
+  <Italian>Espansione</Italian>
+  <Spanish>Expansi&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_GOVERNMENT</Tag>
+  <English>Government</English>
+  <French>
+   <Text>Gouvernement</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Regierung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Governo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Gobierno</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_LABOR</Tag>
+  <English>Labor</English>
+  <French>
+   <Text>Travail</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Arbeit</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Lavoro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Condc. laborales</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_LEGAL</Tag>
+  <English>Legal</English>
+  <French>
+   <Text>Justice</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Recht</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Sistema legale</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Sistema legal</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_MILITARY</Tag>
+  <English>Military</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
+  <English>Organization</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_RELIGION</Tag>
+  <English>Religion</English>
+  <French>
+   <Text>Religion</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Religion</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Religione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Religi&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICOPTION_SOCIETY</Tag>
+  <English>Society</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICS_SCREEN_NO_UPKEEP</Tag>
+  <English>No Upkeep</English>
+  <French>Aucun entretien</French>
+  <German>Kein Unterhalt</German>
+  <Italian>Nessun mantenimento</Italian>
+  <Spanish>Sin mantenimiento</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICS_SCREEN_NO_UPKEEP_LINK</Tag>
+  <English>[LINK=UPKEEP_LOW]No Upkeep[\LINK]</English>
+  <French>[LINK=UPKEEP_LOW]Aucun entretien[\LINK]</French>
+  <German>[LINK=UPKEEP_LOW]Kein Unterhalt[\LINK]</German>
+  <Italian>[LINK=UPKEEP_LOW]Nessun mantenimento[\LINK]</Italian>
+  <Spanish>[LINK=UPKEEP_LOW]Sin mantenimiento[\LINK]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVICS_SCREEN_TITLE</Tag>
+  <English>Civics</English>
+  <French>Doctrines</French>
+  <German>Staatsformen</German>
+  <Italian>Forme di governo</Italian>
+  <Spanish>Principios</Spanish>
+ </TEXT>
+</Civ4GameText>

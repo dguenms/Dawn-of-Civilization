@@ -1,0 +1,2224 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>CONCEPT_APOSTOLIC_PALACE</Tag>
+  <English>Apostolic Palace / United Nations</English>
+  <French>Palais apostolique / Nations Unies</French>
+  <German>Apostolischer Palast / Vereinte Nationen</German>
+  <Italian>Palazzo Apostolico/Nazioni Unite</Italian>
+  <Spanish>El Palacio Apost&#243;lico/las Naciones Unidas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BTS_BUILDINGS</Tag>
+  <English>Beyond the Sword Buildings</English>
+  <French>B&#226;timents de Beyond The Sword</French>
+  <German>Beyond The Sword-Geb&#228;ude</German>
+  <Italian>Edifici di Beyond the Sword</Italian>
+  <Spanish>Edificios de "Beyond The Sword"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BTS_CIVS</Tag>
+  <English>Beyond the Sword Civilizations</English>
+  <French>Civilisations de Beyond The Sword</French>
+  <German>Beyond The Sword-Zivilisationen</German>
+  <Italian>Civilt&#224; di Beyond the Sword</Italian>
+  <Spanish>Civilizaciones de "Beyond The Sword"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BTS_FOREST_PRESERVE</Tag>
+  <English>Forest Preserve</English>
+  <French>
+   <Text>R&#233;serve bois&#233;e:R&#233;serves bois&#233;es</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </French>
+  <German>
+   <Text>Aufforstungsgebiet</Text>
+   <Gender>Neuter</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Riserva forestale</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Reserva forestal</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BTS_LEADERS</Tag>
+  <English>Beyond the Sword Leaders</English>
+  <French>Dirigeants de Beyond The Sword</French>
+  <German>Beyond The Sword-Staatsoberh&#228;upter</German>
+  <Italian>Leader di Beyond the Sword</Italian>
+  <Spanish>L&#237;deres de "Beyond The Sword"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BTS_RULES_CHANGES</Tag>
+  <English>Beyond the Sword Rules Changes</English>
+  <French>R&#232;gles modifi&#233;es de Beyond The Sword</French>
+  <German>Beyond The Sword-Regel&#228;nderungen</German>
+  <Italian>Cambiamenti delle regole di Beyond the Sword</Italian>
+  <Spanish>Cambios en las reglas de "Beyond The Sword"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BTS_TECHS</Tag>
+  <English>Beyond the Sword Technologies</English>
+  <French>Technologies de Beyond The Sword</French>
+  <German>Beyond The Sword-Technologien</German>
+  <Italian>Tecnologie di Beyond the Sword</Italian>
+  <Spanish>Tecnolog&#237;as de "Beyond The Sword"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BTS_UNITS</Tag>
+  <English>Beyond the Sword Units</English>
+  <French>Unit&#233;s de Beyond The Sword</French>
+  <German>Beyond The Sword-Einheiten</German>
+  <Italian>Unit&#224; di Beyond the Sword</Italian>
+  <Spanish>Unidades de "Beyond The Sword"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BTS_WONDERS</Tag>
+  <English>Beyond the Sword Wonders</English>
+  <French>Merveilles de Beyond The Sword</French>
+  <German>Beyond The Sword-Wunder</German>
+  <Italian>Meraviglie di Beyond the Sword</Italian>
+  <Spanish>Maravillas de "Beyond The Sword"</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_</Tag>
+  <English></English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_AIR_COMBAT</Tag>
+  <English>Air Combat</English>
+  <French>
+   <Text>Combat a&#233;rien</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Luftkampf</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Combattimento aereo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Combate a&#233;reo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_AIR_PROMOTIONS</Tag>
+  <English>Air Unit Promotions</English>
+  <French>
+   <Text>Promotions d'unit&#233;s a&#233;riennes</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Bef&#246;rderungen Lufteinheiten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Promozioni unit&#224; aeree</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ascensos de las unidades a&#233;reas</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_AIR_UNITS</Tag>
+  <English>Air Units</English>
+  <French>
+   <Text>Unit&#233;s a&#233;riennes</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Lufteinheiten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Unit&#224; aerea:Unit&#224; aeree</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Unidad a&#233;rea:Unidades a&#233;reas</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_AIR_UNITS_REDIRECT</Tag>
+  <English>Domain Type (Air Units) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_ALL_TILES</Tag>
+  <English>All Tiles (%d1)</English>
+  <German>Gel&#228;ndefelder: %d1</German>
+  <Italian>Tutte le caselle (%d1)</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_ANARCHY_LENGTH</Tag>
+  <English>Anarchy Length</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_ANIMALS</Tag>
+  <English>Animals</English>
+  <French>
+   <Text>Animaux</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Tiere</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Animali</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Animales</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_APOSTOLIC_PALACE</Tag>
+  <English>Apostolic Palace and UN</English>
+  <French>Palais apostolique et Nations Unies</French>
+  <German>Apostolischer Palast und Vereinte Nationen</German>
+  <Italian>Palazzo Apostolico e Nazioni Unite</Italian>
+  <Spanish>Palacio Apost&#243;lico y ONU</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_BARBARIANS</Tag>
+  <English>Barbarians</English>
+  <French>
+   <Text>Barbares</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Barbaren</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Barbari</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>B&#225;rbaros</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_BASE_MODIFIER</Tag>
+  <English>Modifiers (%D1%%)</English>
+  <German>Modifikatoren: %D1%%</German>
+  <Italian>Modificatori (%D1%%)</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_BONUS_ANIMALS</Tag>
+  <English>Bonus against Animals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_BONUS_BARBARIANS</Tag>
+  <English>Bonus against Barbarians</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_BORDERS</Tag>
+  <English>Borders</English>
+  <French>
+   <Text>Fronti&#232;res</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Grenzen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Confini</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Fronteras</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_BUILDING_COST</Tag>
+  <English>Building Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_BUILDINGS</Tag>
+  <English>Buildings</English>
+  <French>
+   <Text>B&#226;timents</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Geb&#228;ude</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Edifici</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Edificios</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CATHEDRALS_REDIRECT</Tag>
+  <English>Building Type (Cathedrals) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CHRISTIAN_CATHEDRALS_REDIRECT</Tag>
+  <English>Christian Cathedrals (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CHRISTIANITY_REDIRECT</Tag>
+  <English>Christianity (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CITIES</Tag>
+  <English>Cities</English>
+  <French>
+   <Text>Villes</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>St&#228;dte</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Citt&#224;</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ciudades</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CITIES_MAINTENANCE</Tag>
+  <English>Number of Cities Maintenance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CITY_NETWORK</Tag>
+  <English>City Network</English>
+  <French>
+   <Text>R&#233;seau urbain</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>St&#228;dtenetz</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Rete cittadina</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Red de ciudades</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CITY_TILES</Tag>
+  <English>Cities Tiles (%d1)</English>
+  <German>Gel&#228;ndefelder: %d1</German>
+  <Italian>Caselle della Citt&#224; (%d1)</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CIVIC_CITY_HAPPINESS</Tag>
+  <English>Civic Happiness Number of Largest Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CIVIC_MAINTENANCE</Tag>
+  <English>Civic Upkeep</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CIVICS</Tag>
+  <English>Civics</English>
+  <French>
+   <Text>Doctrine</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Staatsformen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Forme di governo</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Principios</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_COLONIES</Tag>
+  <English>Colonies</English>
+  <French>
+   <Text>Colonies</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Kolonien</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Colonie</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Colonias</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_COLONIES_MAINTENANCE</Tag>
+  <English>Colonial Maintenance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_COLONIES_MAX</Tag>
+  <English>Max Colonial Maintenance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_COMBAT</Tag>
+  <English>Combat</English>
+  <French>
+   <Text>Combat</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kampf</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Combattimento</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Combate</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_COMMERCE</Tag>
+  <English>Commerce</English>
+  <French>
+   <Text>Commerce</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Wirtschaft</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Commercio</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Comercio</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS</Tag>
+  <English>Conditional Spawns</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CONGRESSES</Tag>
+  <English>Congresses</English>
+  <French>Congr&#232;s</French>
+  <German>Kongresse</German>
+  <Italian>Congressi</Italian>
+  <Spanish>Congresos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CONTINENTS</Tag>
+  <English>Continents, Countries and Unique Historical Victories</English>
+  <French>Continents, pays et victoires historiques uniques</French>
+  <German>Kontinente, L&#228;nder und Einzigartige Historische Siege</German>
+  <Italian>Continenti, paesi e Vittorie Storiche uniche</Italian>
+  <Spanish>Continentes, pa&#237;ses y victorias hist&#243;ricas &#250;nicas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CORPORATION_MAINTENANCE</Tag>
+  <English>Corporation Maintenance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CORPORATIONS</Tag>
+  <English>Corporations</English>
+  <French>
+   <Text>Soci&#233;t&#233;s commerciales</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Kapitalgesellschaften</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Corporazioni</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Corporaciones</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CULTURE</Tag>
+  <English>Culture</English>
+  <French>
+   <Text>Culture</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kultur</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Cultura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Cultura</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_CULTURE_COST</Tag>
+  <English>Cultural Level Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_DECLARE_WAR_CHANCE</Tag>
+  <English>Probability of Declaring War</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_DIPLOMACY</Tag>
+  <English>Diplomacy</English>
+  <French>
+   <Text>Diplomatie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Diplomatie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Diplomazia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Diplomacia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_DIPLOMATIC_INSTITUTIONS</Tag>
+  <English>Diplomatic Institutions</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_DISTANCE_MAINTENANCE</Tag>
+  <English>Distance from Capital Maintenance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_DOC_ODDS</Tag>
+  <English>Odds and Ends in DoC</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_DOMESTIC_TRADE</Tag>
+  <English>Domestic Trade</English>
+  <French>Commerce Domestique</French>
+  <German>Binnenhandel</German>
+  <Italian>Commercio Interno</Italian>
+  <Spanish>Comercio Dom&#233;stico</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_DRAFT</Tag>
+  <English>Draft</English>
+  <French>
+   <Text>Conscription</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Rekrutieren</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Leva</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Reclut.</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_EARTH_CIVILIZATIONS</Tag>
+  <English>Earth Civilizations: 45</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_EARTH_HEIGHT</Tag>
+  <English>Earth Longitude: 68 Tiles</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_EARTH_WIDTH</Tag>
+  <English>Earth Latitude: 124 Tiles</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_EMBASSIES</Tag>
+  <English>Embassies</English>
+  <French>Ambassades</French>
+  <German>Botschaften</German>
+  <Italian>Ambasciate</Italian>
+  <Spanish>Embajadas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_EUROPEAN_REDIRECT</Tag>
+  <English>European Civilizations (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_EVENTS</Tag>
+  <English>Events</English>
+  <French>
+   <Text>Ev&#233;nements</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Ereignisse</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Eventi</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Sucesos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_EXPLORATION</Tag>
+  <English>Exploration</English>
+  <French>
+   <Text>Exploration</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Erkundung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Esplorazione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Exploraci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_FIGHTERS_REDIRECT</Tag>
+  <English>Unit Type (Fighters) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_FLANK_ATTACK</Tag>
+  <English>Improved Siege Combat</English>
+  <French>
+   <Text>Techniques de si&#232;ge avanc&#233;es</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Fortgeschrittener Belagerungskampf</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Combattimento d'assedio migliorato</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Combate de asedio mejorado</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_FOOD</Tag>
+  <English>Food</English>
+  <French>
+   <Text>Nourriture</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Nahrung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Cibo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Alimentos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_FOREIGN_OVERSEAS_TRADE</Tag>
+  <English>Overseas Trade</English>
+  <French>Commerce d'outre-mer</French>
+  <German>&#220;berseehandel</German>
+  <Italian>Commercio d'oltreoceano</Italian>
+  <Spanish>Comercio de Ultramar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_FOREIGN_TRADE</Tag>
+  <English>Foreign Trade</English>
+  <French>Commerce Ext&#233;rieur</French>
+  <German>Au&#223;enhandel</German>
+  <Italian>Commercio Estero</Italian>
+  <Spanish>Comercio Exterior</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_FOREST_PRODUCTION</Tag>
+  <English>Production and Gold from Features</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_FORT</Tag>
+  <English>Updated Forts</English>
+  <French>Forts mis &#224; jour</French>
+  <German>Verbesserte Festungen</German>
+  <Italian>Fortini aggiornati</Italian>
+  <Spanish>Fuertes actualizados</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GOLDEN_AGE</Tag>
+  <English>Golden Age</English>
+  <French>
+   <Text>Age d'or</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Goldenes Zeitalter</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Et&#224; dell'oro</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Edad de oro</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GOLDEN_AGE_LENGTH</Tag>
+  <English>Golden Age Length</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GOODY_HUT_COST</Tag>
+  <English>Tribal Village Gold</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_GENERALS</Tag>
+  <English>Great Generals</English>
+  <French>G&#233;n&#233;raux illustres</French>
+  <German>Gro&#223;e Gener&#228;le</German>
+  <Italian>Grandi Generali</Italian>
+  <Spanish>Los grandes generales</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_PEOPLE</Tag>
+  <English>Great People</English>
+  <French>
+   <Text>Personnages illustres</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Gro&#223;e Pers&#246;nlichkeiten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Grandi personaggi</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Grandes personajes</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_PEOPLE_COST</Tag>
+  <English>Great People Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_PEOPLE_CULTURE</Tag>
+  <English>Great Artist Great Work Culture</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_PEOPLE_PRODUCTION</Tag>
+  <English>Great Engineer Hurry Production Amount</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_PEOPLE_REDIRECT</Tag>
+  <English>Great People (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_PEOPLE_RESEARCH</Tag>
+  <English>Great People Research Amount</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_PEOPLE_TRADE</Tag>
+  <English>Great Merchant Trade Mission Gold</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GREAT_SPY</Tag>
+  <English>Great Spy / Spy Specialist</English>
+  <French>
+   <Text>Espion illustre / Sp&#233;cialiste de l'espionnage:Espions illustres / Sp&#233;cialistes de l'espionnages</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </French>
+  <German>
+   <Text>Gro&#223;er Spion/Spion-Spezialist</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Grande Spia/Spia specialista</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Gran esp&#237;a/esp&#237;a especialista</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_GROWTH_COST</Tag>
+  <English>Growth Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_HAPPINESS</Tag>
+  <English>Happiness</English>
+  <French>
+   <Text>Bonheur</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Zufriedenheit</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Felicit&#224;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Felicidad</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_HAPPY_BONUSES_REDIRECT</Tag>
+  <English>Happiness Resources (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_HEALTH</Tag>
+  <English>Health</English>
+  <French>
+   <Text>Sant&#233;</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gesundheit</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Salute</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Salud</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_HISTORICALSTARTS</Tag>
+  <English>Historical Starts</English>
+  <French>D&#233;buts historiques</French>
+  <German>Historische Starts</German>
+  <Italian>Avvii storici</Italian>
+  <Spanish>Comienzos hist&#243;ricos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_HURRY_PRODUCTION</Tag>
+  <English>Hurry Production</English>
+  <French>
+   <Text>Production acc&#233;l&#233;r&#233;e</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Produktion beschleunigen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Produzione accelerata</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Acelerar la producci&#243;n</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_HURRY_PRODUCTION_COST</Tag>
+  <English>Hurry Production Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_HURRY_PRODUCTION_UNHAPPINESS_COST</Tag>
+  <English>Slaving and Drafting Unhappiness Length</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_IMMOBILE_UNITS_REDIRECT</Tag>
+  <English>Domain Type (Immobile Units) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_IMPROVEMENT_COST</Tag>
+  <English>Worker Speed</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_IMPROVEMENT_COST2</Tag>
+  <English>Improvement Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_IMPROVEMENT_GROWTH_COST</Tag>
+  <English>Improvement Growth Speed</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_IMPROVEMENTS</Tag>
+  <English>Improvements</English>
+  <French>
+   <Text>Am&#233;nagements</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Modernisierungen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Miglioramenti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mejoras</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_IRRIGATION</Tag>
+  <English>Irrigation</English>
+  <German>Bew&#228;sserung</German>
+  <Italian>Irrigazione</Italian>
+  <Spanish>Riego</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_LAND_UNITS_REDIRECT</Tag>
+  <English>Domain Type (Land Units) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_LATE_START</Tag>
+  <English>Advanced Start</English>
+  <French>D&#233;part avanc&#233;</French>
+  <German>Fortgeschrittener Start</German>
+  <Italian>Avvio avanzato</Italian>
+  <Spanish>Inicio avanzado</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_LEADERS</Tag>
+  <English>Leaders</English>
+  <French>
+   <Text>H&#233;ros</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Staatsoberh&#228;upter</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Leader</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>L&#237;deres</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_LIBERATION</Tag>
+  <English>City Liberation</English>
+  <French>Lib&#233;ration de ville</French>
+  <German>Stadtbefreiung</German>
+  <Italian>Liberazione cittadina</Italian>
+  <Spanish>Liberaci&#243;n de ciudades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MAINTENANCE</Tag>
+  <English>Maintenance</English>
+  <French>
+   <Text>Entretien </Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Unterhalt</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mantenimento</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mantenimiento</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MAPS</Tag>
+  <English>Maps</English>
+  <French>
+   <Text>Cartes</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Karten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Mappe</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mapas</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MAX_CONSCRIPTION</Tag>
+  <English>Number of Drafts</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MERCENARIES</Tag>
+  <English>Mercenaries</English>
+  <French>
+   <Text>Mercenaires</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>S&#246;ldner</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </German>
+  <Italian>
+   <Text>Mercenari</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Mercenarios</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MILITARY_HAPPINESS_REDIRECT</Tag>
+  <English>Military Happiness producing Civics (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MISSILE_UNITS_REDIRECT</Tag>
+  <English>Unit Type (Missile Units) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MISSIONARIES_REDIRECT</Tag>
+  <English>Unit Type (Missionaries) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MONASTERIES_REDIRECT</Tag>
+  <English>Building Type (Monasteries) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_MOVEMENT</Tag>
+  <English>Movement</English>
+  <French>
+   <Text>Mouvement</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Fortbewegung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Movimento</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Movimiento</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_NEW_CORPORATIONS</Tag>
+  <English>Corporations in DoC</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_NEW_STUFF</Tag>
+  <English>New Stuff</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_NUKES</Tag>
+  <English>Nukes</English>
+  <French>
+   <Text>Armes nucl&#233;aires</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Atomraketen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Bombe nucleari</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Armas nucleares</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_ODDS</Tag>
+  <English>Odds and Ends</English>
+  <French>Pr&#233;cisions</French>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_OWNED_TILES</Tag>
+  <English>Owned Tiles (%d1)</English>
+  <German>Gel&#228;ndefelder: %d1</German>
+  <Italian>Caselle possedute (%d1)</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_PEOPLE_UNITS_REDIRECT</Tag>
+  <English>Unit Type (People Units) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_PLAGUE</Tag>
+  <English>Plague</English>
+  <French>Peste</French>
+  <German>Pest</German>
+  <Italian>Peste</Italian>
+  <Spanish>Peste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_PRODUCTION</Tag>
+  <English>Production</English>
+  <French>
+   <Text>Production</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Produktion</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Produzione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Producci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_PRODUCTION_MODIFIER</Tag>
+  <English>%s1 (%D2%%)</English>
+  <French>%s1 (%D2%%)</French>
+  <German>%s1 (%D2%%)</German>
+  <Italian>%s1 (%D2%%)</Italian>
+  <Spanish>%s1 (%D2%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_PROJECT_COST</Tag>
+  <English>Project Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_PROMOTIONS</Tag>
+  <English>Promotions</English>
+  <French>
+   <Text>Promotions</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Bef&#246;rderungen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Promozioni</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Ascensos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_REFORMATION</Tag>
+  <English>Reformation</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_RELIGION</Tag>
+  <English>Religion</English>
+  <French>
+   <Text>Religion</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Religion</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Religione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Religi&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_RELIGIOUS_SHRINES</Tag>
+  <English>Religious Shrines</English>
+  <French>Lieux Saints</French>
+  <German>Schreine</German>
+  <Italian>Santuari</Italian>
+  <Spanish>Santuarios</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_RESEARCH</Tag>
+  <English>Research</English>
+  <French>
+   <Text>Recherche</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Forschung</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ricerca</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Investigaci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_RESEARCH_COST</Tag>
+  <English>Technology Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_RESISTANCE</Tag>
+  <English>Resistance</English>
+  <French>
+   <Text>R&#233;sistance</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Widerstand</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Resistenza</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Resistencia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_RESOURCES</Tag>
+  <English>Resources</English>
+  <French>
+   <Text>Ressources</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Ressourcen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Risorse</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Recursos</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_RESPAWNS</Tag>
+  <English>Respawns in DoC</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_REVOLUTION</Tag>
+  <English>Revolution</English>
+  <French>
+   <Text>R&#233;volution</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Revolution</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Rivoluzione</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Revoluci&#243;n</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_RFCINTRO</Tag>
+  <English>Welcome to Rhye's and Fall of Civilization</English>
+  <French>Bienvenue &#224; "Rhye's and Fall of Civilization"</French>
+  <German>Willkommen zu Rhye's and Fall of Civilization</German>
+  <Italian>Benvenuto a Rhye's and Fall</Italian>
+  <Spanish>Bienvenido a &amp;quot;Rhye's and Fall of Civilization&amp;quot;</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SCHISM</Tag>
+  <English>Great Christian Schism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SEA_TRADE</Tag>
+  <English>Naval Trade Routes</English>
+  <French>
+   <Text>Routes commerciales navales</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Marinehandelswege</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Rotte commerciali navali</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Rutas comerciales navales</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SETTLED_SPECIALISTS</Tag>
+  <English>Settled Specialists</English>
+  <French>
+   <Text>Sp&#233;cialistes</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Spezialisten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Specialisti</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Especialistas</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SHRINES_REDIRECT</Tag>
+  <English>Building Type (Shrines) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SLAVERY</Tag>
+  <English>Slavery</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SPACE_SHIP_LENGTH</Tag>
+  <English>Space Ship Travel Time</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SPACESHIP</Tag>
+  <English>Spaceship</English>
+  <French>
+   <Text>Vaisseau spatial</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Raumschiff</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Astronave</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Nave espacial</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SPECIALISTS</Tag>
+  <English>Specialists</English>
+  <French>
+   <Text>Sp&#233;cialistes</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Spezialisten</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Specialisti</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Especialistas</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SPIES</Tag>
+  <English>Spies</English>
+  <French>
+   <Text>Espions</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Spione</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Spie</Text>
+   <Gender>Female</Gender>
+   <Plural>0:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Esp&#237;as</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_STABILITY</Tag>
+  <English>Stability</English>
+  <French>Stabilit&#233;</French>
+  <German>Stabilit&#228;t</German>
+  <Italian>Stabilit&#224;</Italian>
+  <Spanish>Estabilidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_STABILITY_INFLUENCES</Tag>
+  <English>Stability Influence Factors</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Tag>
+  <English>Tile Stability Display</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_STARTING_POPULATION</Tag>
+  <English>Starting Population</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_SUBTOTAL</Tag>
+  <English>Subtotal</English>
+  <French>Total Partiel</French>
+  <German>Zwischensumme</German>
+  <Italian>Totale Parziale</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TECHNOLOGY</Tag>
+  <English>Technology</English>
+  <French>
+   <Text>Technologie</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Technologie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tecnologia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tecnolog&#237;a</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TEMPLES_REDIRECT</Tag>
+  <English>Building Type (Temples) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TERRAIN</Tag>
+  <English>Terrain</English>
+  <French>
+   <Text>Terrain</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Gel&#228;nde</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Terreno</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Terreno</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TOTAL</Tag>
+  <English>Total</English>
+  <German>Summe</German>
+  <Italian>Totale</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TRADE</Tag>
+  <English>Trade</English>
+  <French>
+   <Text>Echanges</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Handel</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Scambi commerciali</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Intercambio</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TRADE_ROUTE_PROFIT</Tag>
+  <English>Trade Route Profit</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS</Tag>
+  <English>Trading Companies</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TRANSPORT</Tag>
+  <English>Transport</English>
+  <French>
+   <Text>Transport</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Transport</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Trasporto</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Transporte</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_TREASURY</Tag>
+  <English>Treasury</English>
+  <French>
+   <Text>Tr&#233;sor</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Schatzkammer</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Tesoro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Tesoro</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_UNIT_COST</Tag>
+  <English>Unit Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_UNIT_SUPPLY_COST</Tag>
+  <English>Unit Supply Maintenance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_UNIT_UPGRADE_COST</Tag>
+  <English>Unit Upgrade Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_UNIT_UPKEEP_COST</Tag>
+  <English>Unit Maintenance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_UNITED_NATIONS</Tag>
+  <English>United Nations</English>
+  <French>
+   <Text>Nations Unies</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Vereinte Nationen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Nazioni Unite</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Naciones Unidas</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_UNITS</Tag>
+  <English>Units</English>
+  <French>
+   <Text>Unit&#233;s</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Einheiten</Text>
+   <Gender>Male:Male</Gender>
+   <Plural>0:1</Plural>
+  </German>
+  <Italian>
+   <Text>Unit&#224;</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Unidades</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_UP_UHV</Tag>
+  <English>Unique Powers and Historical Victories</English>
+  <French>Victoires historiques et pouvoirs uniques </French>
+  <German>Einzigartige M&#228;chte und Historische Siege</German>
+  <Italian>Poteri Unici e Vittorie Storiche</Italian>
+  <Spanish>Poderes &#250;nicos y victorias hist&#243;ricas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_VASSAL_STATES</Tag>
+  <English>Vassal States</English>
+  <French>Etats vassaux</French>
+  <German>Vasallenstaaten</German>
+  <Italian>Stati vassalli</Italian>
+  <Spanish>Los estados vasallos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_VICTORY</Tag>
+  <English>Victory</English>
+  <French>
+   <Text>Victoire</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Sieg</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Vittoria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Victoria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_WAR</Tag>
+  <English>War</English>
+  <French>
+   <Text>Guerre</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Krieg</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Guerra</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Guerra</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_WAR_WEARINESS</Tag>
+  <English>War Weariness</English>
+  <French>
+   <Text>Lassitude de la guerre</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Kriegsm&#252;digkeit</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Stanchezza della guerra</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Hast&#237;o b&#233;lico</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_WATER_UNITS_REDIRECT</Tag>
+  <English>Domain Type (Water Units) (Redirect Page)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_WEALTH</Tag>
+  <English>Wealth</English>
+  <French>
+   <Text>Richesse</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Wohlstand</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Ricchezza</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Riqueza</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_WONDER_COST</Tag>
+  <English>World Wonder Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_WONDERS</Tag>
+  <English>Wonders</English>
+  <French>
+   <Text>Merveilles</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Wunder</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Meraviglie</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Maravillas</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_WORKED_TILES</Tag>
+  <English>Worked Tiles (%d1)</English>
+  <French>Cases Travaill&#233;es (%d1)</French>
+  <German>Gel&#228;ndefelder: %d1</German>
+  <Italian>Caselle lavorate (%d1)</Italian>
+  <Spanish>Azulejos Trabajados (%d1)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CONCEPT_WORLD_PROJECT_COST</Tag>
+  <English>World Project Cost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_ADVISORS</Tag>
+  <English>Advisors</English>
+  <French>Adviseurs</French>
+  <German>Berater</German>
+  <Italian>Consiglieri</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_BUG</Tag>
+  <English>BUG Mod</English>
+  <French>Mod BUG</French>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_CAMERA</Tag>
+  <English>Camera</English>
+  <French>Cam&#233;ra</French>
+  <German>Kamerasteuerung</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_CITYSCREEN</Tag>
+  <English>City Screen</English>
+  <French>Ecran de Ville</French>
+  <German>Stadt-Bildschirm</German>
+  <Italian>Schermata cittadina</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_GAME</Tag>
+  <English>Game</English>
+  <French>Jeu</French>
+  <German>Allgemein</German>
+  <Italian>Gioco</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_MAP</Tag>
+  <English>Map</English>
+  <French>Carte</French>
+  <German>Hauptbildschirm</German>
+  <Italian>Mappa</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_MOUSE</Tag>
+  <English>Mouse</English>
+  <French>Souris</French>
+  <German>Maussteuerung</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_MP</Tag>
+  <English>Multi-Player</English>
+  <French>Multi-Joueur</French>
+  <German>Multiplayer</German>
+  <Italian>Multiplayer</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_SHORTCUTS_UNITS</Tag>
+  <English>Units</English>
+  <French>Unit&#233;s</French>
+  <German>Einheiten</German>
+  <Italian>Unit&#224;</Italian>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_10_FAQS</Tag>
+  <English>(B) - 10 Questions Before War</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_BEGINNER_CIVICS</Tag>
+  <English>(B) - A Guide to Civics </English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_CITY_GROWTH</Tag>
+  <English>(M) - City Growth Explained</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_CITY_SPECALIZATION</Tag>
+  <English>(E) - Specialization of Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_CITY_UPKEEP</Tag>
+  <English>(M) - City Upkeep Explained</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_CIVIC_UPKEEP</Tag>
+  <English>(M) - Civic Upkeep Explained</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_CONQUEST_DIPLO</Tag>
+  <English>(W) - Conquest Diplomacy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_CORP_MAINT</Tag>
+  <English>(M) - Corporation Maintenance</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_CULTURAL_MECHS</Tag>
+  <English>(M) - Cultural Mechanics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_CULTURAL_VICTORY</Tag>
+  <English>(V) - Cultural Victory</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_DEFICIT_RESEARCH</Tag>
+  <English>(E) - Deficit Research</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_DEMOGRAPHICS_MECHS</Tag>
+  <English>(M) - Demographics Mechanics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_EARLY_GROWTH</Tag>
+  <English>(E) - Optimum Early Growth</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_EMPEROR_DIFFICULTY</Tag>
+  <English>(D) - Emperor Difficulty</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_GODOTNUT</Tag>
+  <English>(D) - Godotnut's Peaceful Deity Guide</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_GP_FARMS</Tag>
+  <English>(M) - Great Person Farms</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_GP_POINTS</Tag>
+  <English>(M) - Great Person Points Explained</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_GROWTH_WAR</Tag>
+  <English>(B) - Balancing Growth and Warfare</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_HEALING</Tag>
+  <English>(W) - Unit Healing</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_HYBRID</Tag>
+  <English>(E) - Hybrid Economy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_INTRO</Tag>
+  <English>(*) - Introduction</English>
+  <German>(*) - Einleitung</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_MODERN_WAR</Tag>
+  <English>(W) - Modern-Era Warfare </English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_MONARCH_DIFFICULTY</Tag>
+  <English>(D) - Monarch Difficulty</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_MONGOL</Tag>
+  <English>(C) - Mongol Strategy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_NAVAL</Tag>
+  <English>(W) - Modern Naval Strategy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_OCC</Tag>
+  <English>(V) - OCC Guide</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_PRINCE_DIFFICULTY</Tag>
+  <English>(D) - Prince Difficulty</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_RESEARCH_MECHS</Tag>
+  <English>(M) - Research Mechanics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_ROME</Tag>
+  <English>(C) - Roman Strategy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_SE</Tag>
+  <English>(E) - Guide to the Specialist Economy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_SYNERGY</Tag>
+  <English>(B) - Synergy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_TANK</Tag>
+  <English>(W) - Tank Warfare</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_TRADE_ROUTES</Tag>
+  <English>(M) - Trade Routes Explained</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_TRADING</Tag>
+  <English>(M) - Aggressive Trading</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_TRAITS</Tag>
+  <English>(B) - Analysis of the Civilization Traits</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_TRIANGLE</Tag>
+  <English>(E) - Triangle Diplomacy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_UB</Tag>
+  <English>(E) - Unique Buildings</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_UNIT_MAINT</Tag>
+  <English>(M) - Unit Maintance Explained</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_UU</Tag>
+  <English>(W) - Unique Unit Guide</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_VASSALAGE_MECHS</Tag>
+  <English>(M) - Vassalge Mechanics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_WAR_WEARINESS</Tag>
+  <English>(M) - War Weariness</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_WAYS_HEALTHY</Tag>
+  <English>(E) - Ways into Health</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_WAYS_PRODUCTION</Tag>
+  <English>(E) - Ways into Production</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_WK</Tag>
+  <English>(B) - WK's Strategy Guide</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STRATEGY_WORLD_WAR</Tag>
+  <English>(W) - Let's have a World War</English>
+ </TEXT>
+</Civ4GameText>
