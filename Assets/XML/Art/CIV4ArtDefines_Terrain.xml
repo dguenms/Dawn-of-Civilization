@@ -222,7 +222,6 @@
 			<TextureBlend05>13,0</TextureBlend05>
 			<TextureBlend15>15,0 16,0</TextureBlend15>
 		</TerrainArtInfo>
-		<!-- Rhye - start -->
 		<TerrainArtInfo>
 			<Type>ART_DEF_TERRAIN_MARSH</Type>
 			<Path>Art/Terrain/Textures/MarshBLEND.dds</Path>
@@ -247,6 +246,5 @@
 			<TextureBlend05>2,90  6,0   10,90  14,0   18,90  22,0   26,90</TextureBlend05>
 			<TextureBlend15>29,0 </TextureBlend15>
 		</TerrainArtInfo>
-		<!-- Rhye - end -->
 	</TerrainArtInfos>
 </Civ4ArtDefines>

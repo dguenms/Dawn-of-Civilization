@@ -162,10 +162,8 @@
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_OFFSHORE_PLATFORM</Type>
 			<bExtraAnimations>0</bExtraAnimations>
-			<!-- Rhye - start -->
 			<fScale>0.5</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<!-- Rhye - end -->
 			<NIF>Art/Structures/Improvements/OilRig/OilRig.nif</NIF>
 			<KFM>Art/Structures/Improvements/OilRig/OilRig.kfm</KFM>
 			<Button>,Art/Interface/Buttons/Builds/BuildOffshorePlatform.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,4,9</Button>
