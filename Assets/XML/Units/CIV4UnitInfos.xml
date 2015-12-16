@@ -1206,6 +1206,10 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
+					<BuildType>BUILD_REMOVE_RAINFOREST</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
 					<BuildType>BUILD_REMOVE_FOREST</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -1458,6 +1462,10 @@
 				</Build>
 				<Build>
 					<BuildType>BUILD_DEFORESTATION</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_DEFORESTATION_RAINFOREST</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -1720,6 +1728,10 @@
 				</Build>
 				<Build>
 					<BuildType>BUILD_REMOVE_JUNGLE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_REMOVE_RAINFOREST</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
