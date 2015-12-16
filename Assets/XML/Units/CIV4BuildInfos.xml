@@ -819,7 +819,7 @@
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_DEFORESTATION</Type>
-			<Description>TXT_KEY_BUILD_DEFORESTATION</Description>
+			<Description>TXT_KEY_BUILD_REMOVE_JUNGLE</Description>
 			<Help/>
 			<PrereqTech>NONE</PrereqTech>
 			<iTime>0</iTime>
@@ -836,6 +836,27 @@
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_C</HotKey>
+			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildInfo>
+		<BuildInfo>
+			<Type>BUILD_DEFORESTATION_RAINFOREST</Type>
+			<Description>TXT_KEY_BUILD_REMOVE_RAINFOREST</Description>
+			<Help/>
+			<PrereqTech>NONE</PrereqTech>
+			<iTime>0</iTime>
+			<iCost>0</iCost>
+			<bKill>0</bKill>
+			<ImprovementType>NONE</ImprovementType>
+			<RouteType>NONE</RouteType>
+			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
+			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
