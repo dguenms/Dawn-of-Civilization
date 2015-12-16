@@ -429,8 +429,7 @@
 			<KFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Zara Yaqob/Zara_Yaqob_NONSHADER.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Zara Yaqob/Zara Yaqob_BG.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>		
-		<!-- added by Leoreth -->
+		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_JIMMU</Type>
 			<Button>Art/leaderheads/Jimmu/Jimmu.dds</Button>
@@ -574,7 +573,7 @@
 			<KFM>Art/LeaderHeads/Hitler/alexander.kfm</KFM>
 			<NoShaderNIF>Art/leaderheads/Hitler/hitler_nonshader.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Hitler/Hitler_BG.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>		
+		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_FRANCO</Type>
 			<Button>Art/leaderheads/Franco/Franco.dds</Button>
