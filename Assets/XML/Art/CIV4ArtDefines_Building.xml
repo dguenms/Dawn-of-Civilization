@@ -2177,16 +2177,6 @@
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Shrine_Jewish.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,14</Button>
 		</BuildingArtInfo>
-		<!--BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_THEODOSIAN_WALLS</Type>
-			<LSystem>LSYSTEM_HIGH_WALLS</LSystem>
-			<bAnimated>1</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Great_Wall/Great_Wall_civlopedia.nif</NIF>
-			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Byzantium_Walls.dds</Button>
-		</BuildingArtInfo-->
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_THEODOSIAN_WALLS</Type>
 			<LSystem>LSYSTEM_THEODOSIAN_WALLS</LSystem>
