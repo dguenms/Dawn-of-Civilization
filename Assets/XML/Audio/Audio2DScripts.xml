@@ -3179,7 +3179,6 @@
 		<fMinWetLevel>0.0</fMinWetLevel>
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
-	<!-- Rhye - start -->
 	</Script2DSound>
 	<Script2DSound>
 		<ScriptID>AS2D_R_F_C</ScriptID>
@@ -3203,7 +3202,6 @@
 		<fMinWetLevel>0.0</fMinWetLevel>
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
-	<!-- Rhye - end -->
 	</Script2DSound>
 	<Script2DSound>
 		<ScriptID>AS2D_FULL_MOON_DIRGE</ScriptID>
