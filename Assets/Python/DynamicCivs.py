@@ -305,7 +305,7 @@ class DynamicCivs:
 				iBabylonia : "TXT_KEY_CIV_BABYLONIA_CHINESE_VASSAL",
 				iGreece : "TXT_KEY_CIV_GREECE_CHINESE_VASSAL",
 				iPersia : "TXT_KEY_CIV_PERSIA_CHINESE_VASSAL",
-				iCarthage : "TXT_KEY_CIV_CARTHAGE_CHINESE_VASSAL",
+				iCarthage : "TXT_KEY_CIV_PHOENICIA_CHINESE_VASSAL",
 				iRome : "TXT_KEY_CIV_ROME_CHINESE_VASSAL",
 				iJapan : "TXT_KEY_CIV_JAPAN_CHINESE_VASSAL",
 				iEthiopia : "TXT_KEY_CIV_ETHIOPIA_CHINESE_VASSAL",
@@ -545,6 +545,7 @@ class DynamicCivs:
 				iPersia : "TXT_KEY_CIV_PERSIA_MONGOL_VASSAL",
 				iCarthage : "TXT_KEY_CIV_PHOENICIA_MONGOL_VASSAL",
 				iRome : "TXT_KEY_CIV_ROME_MONGOL_VASSAL",
+				iItaly : "TXT_KEY_CIV_ITALY_MONGOL_VASSAL",
 				iMaya : "TXT_KEY_CIV_MAYA_MONGOL_VASSAL",
 				iByzantium : "TXT_KEY_CIV_BYZANTIUM_MONGOL_VASSAL",
 				iVikings : "TXT_KEY_CIV_VIKINGS_MONGOL_VASSAL",
@@ -640,7 +641,7 @@ class DynamicCivs:
                         iFrance : "TXT_KEY_CIV_FRANCE_SOVIET_VASSAL",
                         iEngland : "TXT_KEY_CIV_ENGLAND_SOVIET_VASSAL",
                         iHolyRome : "TXT_KEY_CIV_HOLY_ROME_SOVIET_VASSAL",
-                        iRussia : "TXT_KEY_CIV_RUSSIA_SOVIET_VASSAL",
+                        iRussia : "NONE",
                         iNetherlands : "TXT_KEY_CIV_NETHERLANDS_SOVIET_VASSAL",
                         iMali : "TXT_KEY_CIV_MALI_SOVIET_VASSAL",
 			iPoland : "TXT_KEY_CIV_POLAND_SOVIET_VASSAL",
@@ -699,7 +700,7 @@ class DynamicCivs:
 			iMughals : "TXT_KEY_CIV_MUGHALS_NAZI_VASSAL",
 			iThailand : "TXT_KEY_CIV_THAILAND_NAZI_VASSAL",
 			iCongo : "TXT_KEY_CIV_CONGO_NAZI_VASSAL",
-			iGermany : "TXT_KEY_CIV_GERMANY_NAZI_VASSAL",
+			iGermany : "NONE",
                         iAmerica : "TXT_KEY_CIV_AMERICA_NAZI_VASSAL",
 			iArgentina : "TXT_KEY_CIV_ARGENTINA_NAZI_VASSAL",
 			iBrazil : "TXT_KEY_CIV_BRAZIL_NAZI_VASSAL",
@@ -1118,6 +1119,39 @@ class DynamicCivs:
 			# special cases
 			if iMaster == iRome and iPlayer == iCarthage and capital.getX() < 73:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ROMAN_VASSAL")
+				return
+			if iMaster == iTurkey and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_TURKISH_VASSAL")
+				return
+			if iMaster == iSpain and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_SPANISH_VASSAL")
+				return
+			if iMaster == iMongolia and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_MONGOL_VASSAL")
+				return
+			if iMaster == iFrance and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_FRENCH_VASSAL")
+				return
+			if iMaster == iEngland and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ENGLISH_VASSAL")
+				return
+			if iMaster == iByzantium and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_BYZANTINE_VASSAL")
+				return
+			if iMaster == iBabylonia and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_BABYLONIAN_VASSAL")
+				return
+			if iMaster == iArabia and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_ARABIAN_VASSAL")
+				return
+			if iMaster == iChina and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_CHINESE_VASSAL")
+				return
+			if iMaster == iRussia and pMasterPlayer.getCivics(3) == con.iCivicCentralPlanning and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_SOVIET_VASSAL")
+				return
+			if iMaster == iGermany and pMasterPlayer.getCivics(1) == con.iCivicTotalitarianism and iPlayer == iCarthage and capital.getX() < 73:
+				self.setCivDesc(iPlayer, "TXT_KEY_CIV_CARTHAGE_NAZI_VASSAL")
 				return
 			if iMaster == iHolyRome and iPlayer == iPoland and iGameEra >= con.iIndustrial:
 				self.setCivDesc(iPlayer, "TXT_KEY_CIV_POLAND_AUSTRIAN_VASSAL")
