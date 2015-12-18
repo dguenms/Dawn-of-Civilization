@@ -1316,10 +1316,13 @@
 			<Type>INTERFACE_AUTOMATE</Type>
 			<Path>Art/Interface/Buttons/Actions/Automate.dds</Path>
 		</InterfaceArtInfo>
+<!-- BUG - PLE - start -->
+		<!-- General -->
 		<InterfaceArtInfo>
 			<Type>PLE_BUTTON_HILITE</Type>
 			<Path>Art/PlotListEnhancements/PLE_button_select.dds</Path>
 		</InterfaceArtInfo>
+		<!-- Group Modes -->
 		<InterfaceArtInfo>
 			<Type>PLE_GRP_UPGRADE</Type>
 			<Path>Art/PlotListEnhancements/PLE_GRP_UPGRADE_32.dds</Path>
@@ -1336,6 +1339,7 @@
 			<Type>PLE_GRP_UNITTYPE</Type>
 			<Path>Art/PlotListEnhancements/PLE_GRP_UNITTYPE_32.dds</Path>
 		</InterfaceArtInfo>
+		<!-- Filters -->
 		<InterfaceArtInfo>
 			<Type>PLE_RESET_FILTERS</Type>
 			<Path>Art/PlotListEnhancements/PLE_RESET_FILTERS.dds</Path>
@@ -1384,6 +1388,7 @@
 			<Type>PLE_FILTER_CANTMOVE</Type>
 			<Path>Art/PlotListEnhancements/PLE_FILTER_CANTMOVE_32.dds</Path>
 		</InterfaceArtInfo>
+		<!-- Arrows -->
 		<InterfaceArtInfo>
 			<Type>PLE_ARROW_DOWN</Type>
 			<Path>Art/PlotListEnhancements/arrowdown.dds</Path>
@@ -1392,6 +1397,7 @@
 			<Type>PLE_ARROW_UP</Type>
 			<Path>Art/PlotListEnhancements/arrowup.dds</Path>
 		</InterfaceArtInfo>
+		<!-- View Modes -->
 		<InterfaceArtInfo>
 			<Type>PLE_MODE_STACK_VERT</Type>
 			<Path>Art/PlotListEnhancements/PLE_MODE_STACK_VERT.dds</Path>
@@ -1408,6 +1414,7 @@
 			<Type>PLE_MODE_MULTILINE</Type>
 			<Path>Art/PlotListEnhancements/PLE_MODE_MULTILINE.dds</Path>
 		</InterfaceArtInfo>
+		<!-- Icon Adornments -->
 		<InterfaceArtInfo>
 			<Type>OVERLAY_PROMOTION_FRAME</Type>
 			<Path>Art/PlotListEnhancements/frame_promo.dds</Path>
@@ -1416,6 +1423,7 @@
 			<Type>OVERLAY_UPGRADE</Type>
 			<Path>Art/PlotListEnhancements/PLE_overlay_upgrade.dds</Path>
 		</InterfaceArtInfo>
+		<!-- Mission Tags -->
 		<InterfaceArtInfo>
 			<Type>OVERLAY_ACTION_SKIP</Type>
 			<Path>Art/PlotListEnhancements/medallion_action_skip.dds</Path>
@@ -1476,6 +1484,7 @@
 			<Type>OVERLAY_ACTION_PLUNDER</Type>
 			<Path>Art/PlotListEnhancements/medallion_action_blockade.dds</Path>
 		</InterfaceArtInfo>
+		<!-- Movement Dots -->
 		<InterfaceArtInfo>
 			<Type>OVERLAY_MOVE_INJURED</Type>
 			<Path>Art/PlotListEnhancements/Medallion_canmove_injured.dds</Path>
@@ -1524,10 +1533,14 @@
 			<Type>OVERLAY_FORTIFY_INJURED_GG</Type>
 			<Path>Art/PlotListEnhancements/medallion_fortify_injured_GG.dds</Path>
 		</InterfaceArtInfo>
+<!-- BUG - PLE - end -->
+<!-- BUG - Tech Advisor - start -->
 		<InterfaceArtInfo>
 			<Type>DISCOVER_TECHNOLOGY_BUTTON</Type>
 			<Path>Art/Interface/Buttons/Actions/Discover.dds</Path>
 		</InterfaceArtInfo>
+<!-- BUG - Tech Advisor - end -->
+<!-- BUG - Sevopedia - start -->
 		<InterfaceArtInfo>
 			<Type>LINE_TLBR</Type>
 			<Path>Art/Interface/UnitUpgradesGraph/line-tlbr.dds</Path>
@@ -1544,6 +1557,8 @@
 			<Type>LINE_ARROW</Type>
 			<Path>Art/Interface/UnitUpgradesGraph/line-arrow.dds</Path>
 		</InterfaceArtInfo>
+<!-- BUG - Sevopedia - end -->
+<!-- BUG - specialists  - start  -->
 		<InterfaceArtInfo>
 			<Type>OVERLAY_CHEVRON5</Type>
 			<Path>Art/Interface/screens/medallion_Chevron5.dds</Path>
@@ -1556,6 +1571,8 @@
 			<Type>OVERLAY_CHEVRON20</Type>
 			<Path>Art/Interface/screens/medallion_Chevron20.dds</Path>
 		</InterfaceArtInfo>
+<!-- BUG - specialists  - end  -->
+<!-- BUG - Raw Yields - start -->
 		<InterfaceArtInfo>
 			<Type>RAW_YIELDS_TRADE</Type>
 			<Path>Art/Interface/RawYields/button_trade.dds</Path>
@@ -1592,6 +1609,8 @@
 			<Type>RAW_YIELDS_HIGHLIGHT</Type>
 			<Path>Art/Interface/RawYields/button_highlight.dds</Path>
 		</InterfaceArtInfo>
+<!-- BUG - Raw Yields - end -->
+<!-- BUG - Wonders Tab - start -->
 		<InterfaceArtInfo>
 			<Type>BUG_WORLDWONDER_OFF</Type>
 			<Path>Art/BUG/World_Off.dds</Path>
@@ -1616,10 +1635,13 @@
 			<Type>BUG_PROJECT_ON</Type>
 			<Path>Art/BUG/Projects_On.dds</Path>
 		</InterfaceArtInfo>
+<!-- BUG - Wonders Tab - end -->
+<!-- BUG - Main Interface - BUG Options Screen - Start -->
 		<InterfaceArtInfo>
 			<Type>BUG_OPTIONS_SCREEN_BUTTON</Type>
 			<Path>Art/BUG/BUGMantis.dds</Path>
 		</InterfaceArtInfo>
+<!-- BUG - Main Interface - BUG Options Screen - end -->
 		<InterfaceArtInfo>
 			<Type>QUESTION_MARK</Type>
 			<Path>Art/BUG/QuestionMark.dds</Path>
