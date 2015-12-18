@@ -13,8 +13,6 @@
 			<ArtDefineTag>ART_DEF_TERRAIN_GRASS</ArtDefineTag>
 			<Yields>
 				<iYield>2</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
 			</Yields>
 			<RiverYieldChange>
 				<iYield>0</iYield>
@@ -170,7 +168,6 @@
 			<Yields>
 				<iYield>1</iYield>
 				<iYield>1</iYield>
-				<iYield>0</iYield>
 			</Yields>
 			<RiverYieldChange>
 				<iYield>0</iYield>
@@ -476,12 +473,7 @@
 			<Description>TXT_KEY_TERRAIN_TUNDRA</Description>
 			<Civilopedia>TXT_KEY_TERRAIN_TUNDRA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_TERRAIN_TUNDRA</ArtDefineTag>
-			<Yields>
-				<!-- Rhye -->
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-			</Yields>
+			<Yields/>
 			<RiverYieldChange>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
@@ -490,10 +482,8 @@
 			<HillsYieldChange/>
 			<bWater>0</bWater>
 			<bImpassable>0</bImpassable>
-			<!-- Rhye - start -->
 			<bFound>0</bFound>
 			<bFoundCoast>1</bFoundCoast>
-			<!-- Rhye - end -->
 			<bFoundFreshWater>0</bFoundFreshWater>
 			<iMovement>1</iMovement>
 			<iSeeFrom>1</iSeeFrom>
@@ -641,7 +631,6 @@
 			<HillsYieldChange/>
 			<bWater>0</bWater>
 			<bImpassable>0</bImpassable>
-			<!-- Rhye -->
 			<bFound>0</bFound>
 			<bFoundCoast>0</bFoundCoast>
 			<bFoundFreshWater>0</bFoundFreshWater>
@@ -1380,22 +1369,17 @@
 			</FootstepSounds>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</TerrainInfo>
-		<!-- Rhye - start -->
 		<TerrainInfo>
 			<Type>TERRAIN_MARSH</Type>
-			<Description>TXT_KEY_TERRAIN_MARSH</Description>
-			<Civilopedia>TXT_KEY_TERRAIN_MARSH_PEDIA</Civilopedia>
+			<Description>TXT_KEY_TERRAIN_WETLAND</Description>
+			<Civilopedia>TXT_KEY_TERRAIN_WETLAND_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_TERRAIN_MARSH</ArtDefineTag>
-			<Yields>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-			</Yields>
+			<Yields/>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
 			<bWater>0</bWater>
 			<bImpassable>0</bImpassable>
-			<bFound>1</bFound>
+			<bFound>0</bFound>
 			<bFoundCoast>0</bFoundCoast>
 			<bFoundFreshWater>0</bFoundFreshWater>
 			<iMovement>2</iMovement>
@@ -1403,7 +1387,7 @@
 			<iSeeThrough>0</iSeeThrough>
 			<iBuildModifier>0</iBuildModifier>
 			<iDefense>0</iDefense>
-			<iCultureCost>5</iCultureCost> <!-- counters bonus -->
+			<iCultureCost>5</iCultureCost>
 			<Button>Art/Interface/Buttons/BaseTerrain/Marsh.dds</Button>
 			<FootstepSounds>
 				<FootstepSound>
@@ -1534,6 +1518,5 @@
 			<WorldSoundscapeAudioScript>ASSS_OCEAN_SELECT_AMB</WorldSoundscapeAudioScript>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</TerrainInfo>
-		<!-- Rhye - end -->
 	</TerrainInfos>
 </Civ4TerrainInfos>
