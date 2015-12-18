@@ -180,7 +180,6 @@
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
-		<!-- Rhye - start -->
 		</SoundData>
 		<SoundData>
 			<SoundID>SONG_R_F_C</SoundID>
@@ -188,7 +187,6 @@
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
-		<!-- Rhye - end -->
 		</SoundData>
 		<SoundData>
 			<SoundID>SONG_FULL_MOON_DIRGE</SoundID>
