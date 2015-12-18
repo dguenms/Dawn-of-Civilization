@@ -15,7 +15,6 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_BLUE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_BLUE</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_BLUE_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -28,7 +27,6 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_CYAN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_CYAN</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_DARKER_GRAY</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -41,14 +39,12 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_CYAN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_CYAN</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_GREEN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_GREEN</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -61,7 +57,6 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_PURPLE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_PURPLE</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_PURPLE_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -74,7 +69,6 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_YELLOW</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_YELLOW</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_RED</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_YELLOW_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -93,7 +87,6 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_ORANGE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_ORANGE</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_BLACK</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_ORANGE_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -106,7 +99,6 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_PINK</Type>
 			<ColorTypePrimary>COLOR_PLAYER_PINK</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_DARKER_GRAY</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_PINK_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -131,14 +123,12 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_YELLOW</Type>
 			<ColorTypePrimary>COLOR_PLAYER_YELLOW</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_BLUE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_YELLOW_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_LIGHT_GREEN</Type>
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_GREEN</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_GREEN</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_GREEN_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -172,7 +162,6 @@
 			<ColorTypeSecondary>COLOR_PLAYER_PERSIA_RED</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_ORANGE_TEXT</TextColorType>
 		</PlayerColorInfo>
-		<!-- Rhye - start -->
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_VERYDARK_BLUE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_VERYDARK_BLUE</ColorTypePrimary>
@@ -209,7 +198,6 @@
 			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_GRAY_TEXT</TextColorType>
 		</PlayerColorInfo>
-		<!-- Rhye - end -->
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_MIDDLE_PURPLE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_MIDDLE_PURPLE</ColorTypePrimary>
@@ -219,7 +207,6 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_GRAY</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_GRAY</ColorTypePrimary>
-			<!-- Rhye  -->
 			<ColorTypeSecondary>COLOR_PLAYER_PALE_RED</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_GRAY_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -256,7 +243,6 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_DARK_ORANGE</Type>
 			<ColorTypePrimary>COLOR_PLAYER_DARK_ORANGE</ColorTypePrimary>
-			<!-- Rhye -->
 			<ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_DARK_ORANGE_TEXT</TextColorType>
 		</PlayerColorInfo>
@@ -332,7 +318,6 @@
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_GREEN</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_ORANGE_TEXT</TextColorType>
 		</PlayerColorInfo>
-		<!-- Rhye - start -->
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_LIME</Type>
 			<ColorTypePrimary>COLOR_PLAYER_LIME</ColorTypePrimary>
@@ -351,7 +336,6 @@
 			<ColorTypeSecondary>COLOR_PLAYER_DARK_BLUE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_GREYISH_CYAN_TEXT</TextColorType>
 		</PlayerColorInfo>
-		<!-- Rhye - end -->
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_KOREA</Type>
 			<ColorTypePrimary>COLOR_PLAYER_PALE_RED</ColorTypePrimary>
