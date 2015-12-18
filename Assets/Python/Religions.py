@@ -149,7 +149,7 @@ class Religions:
                                                 bChristianResult = self.foundReligion(tCity, iChristianity)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tJewishTL, tJewishBR, iCeltia)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)                                                
+                                                bChristianResult = self.foundReligion(tCity, iChristianity)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityReligionCiv(iJudaism, iBarbarian)
                                                 bChristianResult = self.foundReligion(tCity, iChristianity)
@@ -169,7 +169,7 @@ class Religions:
                                                 tCity = self.selectRandomCityAreaCiv(tEuropeTL, tEuropeBR, iBarbarian)
                                                 bChristianResult = self.foundReligion(tCity, iChristianity)
                                         if (bChristianResult == True):
-                                                self.spreadReligion(tCity, 3, iChristianMissionary)  
+                                                self.spreadReligion(tCity, 3, iChristianMissionary)
 
 		# Leoreth: make sure Buddhism is founded before the Korean spawn
 		if iGameTurn == getTurnForYear(-400):
