@@ -27012,7 +27012,7 @@
 			<iEspionageDefense>0</iEspionageDefense>
 			<iAsset>12</iAsset>
 			<iPower>0</iPower>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<fVisibilityPriority>100.0</fVisibilityPriority>
 			<SeaPlotYieldChanges/>
 			<RiverPlotYieldChanges/>
 			<GlobalSeaPlotYieldChanges/>
