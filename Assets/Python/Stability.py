@@ -5,12 +5,11 @@ from CvPythonExtensions import *
 from StoredData import sd # edead
 import Consts as con
 import RFCUtils
-import DynamicCivs
+import DynamicCivs as dc
 from operator import itemgetter
 import math
 
 utils = RFCUtils.RFCUtils()
-dc = DynamicCivs.DynamicCivs()
 
 # globals
 gc = CyGlobalContext()
