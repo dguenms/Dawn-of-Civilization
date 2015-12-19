@@ -9,31 +9,27 @@
 		<English>The Harappans</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_HARAPPA_PEOPLES</Tag>
 		<English>Indus Valley Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPA_DESC_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_HARAPPA_DEFAULT</Tag>
 		<English>Indus Valley City States</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPA_DESC_DEMOCRATIC</Tag>
+		<Tag>TXT_KEY_CIV_HARAPPA_DEMOCRATIC</Tag>
 		<English>Indus River Republic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPA_DESC_COMMUNIST</Tag>
+		<Tag>TXT_KEY_CIV_HARAPPA_COMMUNIST</Tag>
 		<English>Democratic Republic of the Indus</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPA_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_HARAPPA_FASCIST</Tag>
 		<English>National Republic of the Indus</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPA_NAZI_VASSAL</Tag>
-		<English>German Indus</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPA_SOVIET_VASSAL</Tag>
-		<English>Soviet Indus</English>
+		<Tag>TXT_KEY_CIV_HARAPPA_INDUS</Tag>
+		<English>Indus</English>
 	</TEXT>
 </Civ4GameText>

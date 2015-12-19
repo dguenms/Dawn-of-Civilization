@@ -163,7 +163,7 @@ def findLocations(iPlayer, sName):
 	
 	for x in range(iWorldX):
 		for y in range(iWorldY):
-			if getFoundName(iPlayer, (x,y)) == sName:
+			if getFoundName(iPlayer, (x,y)) == sName or getFoundName(iEngland, (x,y)) == sName:
 				lLocations.append((x,y))
 				
 	return lLocations

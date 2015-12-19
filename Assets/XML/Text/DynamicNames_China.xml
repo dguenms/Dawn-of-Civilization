@@ -17,6 +17,10 @@
 		<English>Middle Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINA_FASCIST</Tag>
+		<English>Nationalist %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_ZHOU</Tag>
 		<English>Zhou</English>
 	</TEXT>

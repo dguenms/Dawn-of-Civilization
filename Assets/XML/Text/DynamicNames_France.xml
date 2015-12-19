@@ -25,12 +25,12 @@
 		<English>%s2 State</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_EMPIRE</Tag>
-		<English>French Empire</English>
+		<Tag>TXT_KEY_CIV_FRANCE_FRANKISH</Tag>
+		<English>Francia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_FRANKISH_EMPIRE</Tag>
-		<English>Frankish Empire</English>
+		<Tag>TXT_KEY_CIV_FRANCE_FRANCIA</Tag>
+		<English>Frankish</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_EXILE</Tag>

@@ -25,28 +25,24 @@
 		<English>Greater %s2 Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_HRE</Tag>
-		<English>Holy Roman Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_AUSTRIA_EMPIRE</Tag>
-		<English>Austrian Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_AUSTRIA_HUNGARY</Tag>
-		<English>Austro-Hungarian Empire</English>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_AUSTRO_HUNGARIAN</Tag>
+		<English>Austro-Hungarian</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_ARCHDUCHY_OF</Tag>
 		<English>Archduchy of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_HABSBURG_EMPIRE</Tag>
-		<English>Habsburg Empire</English>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_HABSBURG</Tag>
+		<English>Habsburg</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMAN_CONFEDERATION</Tag>
-		<English>German Confederation</English>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMANY</Tag>
+		<English>Germany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMAN</Tag>
+		<English>German</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_SHORT_DESC</Tag>
