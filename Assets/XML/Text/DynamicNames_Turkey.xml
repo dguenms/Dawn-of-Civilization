@@ -9,123 +9,67 @@
 		<English>The Turks</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_PEOPLES</Tag>
 		<English>Turkish Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_DESC_DEFAULT</Tag>
-		<English>Ottoman Sultanate</English>
+		<Tag>TXT_KEY_CIV_TURKEY_DEFAULT</Tag>
+		<English>Sublime %s2 State</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Turkey</English>
+		<Tag>TXT_KEY_CIV_TURKEY_COMMUNIST</Tag>
+		<English>National Democratic Popular %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_DESC_COMMUNIST</Tag>
-		<English>National Democratic Popular Turkey</English>
+		<Tag>TXT_KEY_CIV_TURKEY_FASCIST</Tag>
+		<English>%s2 Junta</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_DESC_FASCIST</Tag>
-		<English>Turkish Junta</English>
+		<Tag>TXT_KEY_CIV_TURKEY_OTTOMAN</Tag>
+		<English>Ottoman</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_DESC_ISLAMIC_MODERN</Tag>
-		<English>Islamic Turkish Democracy</English>
+		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
+		<English>Islamic %s2 Democracy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_EMPIRE</Tag>
-		<English>Turkish Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_OTTOMAN_STATE</Tag>
-		<English>Sublime Ottoman State</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_OTTOMAN_CALIPHATE</Tag>
-		<English>Ottoman Caliphate</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_OTTOMAN_EMPIRE</Tag>
-		<English>Ottoman Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_SOVIET_VASSAL</Tag>
-		<English>Transcaucasian Socialist Federative Soviet Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_NAZI_VASSAL</Tag>
-		<English>Reichskommissariat Turkey</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKISH_VASSAL_GENERIC</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_VASSAL</Tag>
 		<English>Eyalet of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_TURKISH_VASSAL</Tag>
-		<English>Eyalet of Siam</English>
+		<Tag>TXT_KEY_CIV_TURKISH_EGYPT</Tag>
+		<English>Khedivate of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_TURKISH_VASSAL</Tag>
-		<English>Khedivate of Egypt</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_BABYLONIA</Tag>
 		<English>Eyalet of Mesopotamia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_PERSIA</Tag>
 		<English>Eyalet of Sharazor</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_GREECE</Tag>
 		<English>Eyalet of Rumelia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_PHOENICIA</Tag>
 		<English>Eyalet of Syria</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_ETHIOPIA</Tag>
 		<English>Eyalet of Habes</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_TURKISH_VASSAL</Tag>
-		<English>Eyalet of Yucat&#225;n</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_BYZANTIUM</Tag>
 		<English>Eyalet of R&#251;m</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_TURKISH_VASSAL</Tag>
-		<English>Eyalet of Scandinavia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_ARABIA</Tag>
 		<English>Sharifate of Mekke</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_TURKISH_VASSAL</Tag>
-		<English>Eyalet of Kampuchea</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_RUSSIA_TURKISH_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_TURKISH_RUSSIA</Tag>
 		<English>Eyalet of Yedisan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_NETHERLANDS_TURKISH_VASSAL</Tag>
-		<English>Eyalet of the Netherlands</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_TURKISH_VASSAL</Tag>
-		<English>Eyalet of Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_TURKISH_VASSAL</Tag>
-		<English>Eyalet of Peru</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_TURKISH_VASSAL</Tag>
-		<English>Eyalet of Pakistan</English>
 	</TEXT>
 </Civ4GameText>

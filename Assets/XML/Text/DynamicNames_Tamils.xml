@@ -9,67 +9,47 @@
 		<English>The Tamils</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_PEOPLES</Tag>
 		<English>Dravidian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_DESC_DEFAULT</Tag>
-		<English>Chola Kingdom</English>
+		<Tag>TXT_KEY_CIV_TAMILS_DEFAULT</Tag>
+		<English>%s2 Kingdom</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_DESC_DEMOCRATIC</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_REPUBLIC</Tag>
 		<English>Republic of Tamil Nadu</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_DESC_COMMUNIST</Tag>
-		<English>Tamil People's Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_FASCIST</Tag>
 		<English>Dravidian Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_NAZI_VASSAL</Tag>
-		<English>German Dravida</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_SOVIET_VASSAL</Tag>
-		<English>Soviet Dravida</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA</Tag>
-		<English>Kingdom of Vijayanagara</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA_EMPIRE</Tag>
-		<English>Vijayanagara Empire</English>
+		<English>Vijayanagara</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_MYSORE</Tag>
-		<English>Kingdom of Mysore</English>
+		<English>Mysore</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_CHOLA_EMPIRE</Tag>
-		<English>Chola Empire</English>
+		<Tag>TXT_KEY_CIV_TAMILS_CHOLA</Tag>
+		<English>Chola</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_PANDYAN_EMPIRE</Tag>
-		<English>Pandyan Empire</English>
+		<Tag>TXT_KEY_CIV_TAMILS_PANDYAN</Tag>
+		<English>Pandyan</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_CHERA_EMPIRE</Tag>
-		<English>Chera Empire</English>
+		<Tag>TXT_KEY_CIV_TAMILS_CHERA</Tag>
+		<English>Chera</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_PANDYAN_KINGDOM</Tag>
-		<English>Pandyan Kingdom</English>
+		<Tag>TXT_KEY_CIV_TAMILS_DRAVIDA</Tag>
+		<English>Dravida</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_CHERA_KINGDOM</Tag>
-		<English>Chera Kingdom</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_</Tag>
-		<English></English>
+		<Tag>TXT_KEY_CIV_TAMILS_DRAVIDA</Tag>
+		<English>Tamil Nadu</English>
 	</TEXT>
 </Civ4GameText>

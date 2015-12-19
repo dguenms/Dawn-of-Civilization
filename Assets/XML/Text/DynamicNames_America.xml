@@ -9,59 +9,51 @@
 		<English>The Americans</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_AMERICA_PEOPLES</Tag>
 		<English>American Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_DESC_DEFAULT</Tag>
-		<English>Empire of Columbia</English>		<!-- better as a monarchist name -->
+		<Tag>TXT_KEY_CIV_AMERICA_DEFAULT</Tag>
+		<English>United Principalities of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_DESC_DEMOCRATIC</Tag>
-		<English>United States of America</English>
+		<Tag>TXT_KEY_CIV_AMERICA_REPUBLIC</Tag>
+		<English>United States of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_DESC_COMMUNIST</Tag>
-		<English>United Socialist States of America</English>
+		<Tag>TXT_KEY_CIV_AMERICA_COMMUNIST</Tag>
+		<English>United Socialist States of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_DESC_FASCIST</Tag>
-		<English>New World Order</English>		<!-- Empire of Columbia previously -->
+		<Tag>TXT_KEY_CIV_AMERICA_FASCIST</Tag>
+		<English>New World Order</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_CSA</Tag>
-		<English>Confederate States of America</English>
+		<English>Confederate States of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_SOVIET_VASSAL</Tag>
-		<English>Soviet America</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AMERICA_NAZI_VASSAL</Tag>
-		<English>German America</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_AMERICAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_AMERICAN_ENGLAND</Tag>
 		<English>Airstrip One</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_AMERICAN_VASSAL</Tag>
-		<English>Allied Council for Japan</English>
+		<Tag>TXT_KEY_CIV_AMERICAN_JAPAN</Tag>
+		<English>Allied Council for %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GERMANY_AMERICAN_VASSAL</Tag>
-		<English>US-Occupied Germany</English>
+		<Tag>TXT_KEY_CIV_AMERICAN_GERMANY</Tag>
+		<English>US-Occupied %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_AMERICAN_VASSAL</Tag>
-		<English>Commander Naval Forces Korea</English>
+		<Tag>TXT_KEY_CIV_AMERICAN_KOREA</Tag>
+		<English>Commander Naval Forces %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_AMERICAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_AMERICAN_MEXICO</Tag>
 		<English>New Mexico</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_AMERICAN_VASSAL</Tag>
-		<English>American Yucatán</English>
+		<Tag>TXT_KEY_CIV_AMERICAN_MAYA</Tag>
+		<English>%s2 Yucatán</English>
 	</TEXT>
 </Civ4GameText>

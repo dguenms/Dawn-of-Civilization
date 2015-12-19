@@ -157,6 +157,16 @@ def updateCityNamesFound(iCiv):
 		sNewName = getFoundName(iCiv, (city.getX(), city.getY()))
 		if sNewName != "-1":
 			city.setName(sNewName, False)
+			
+def findLocations(iPlayer, sName):
+	lLocations = []
+	
+	for x in range(iWorldX):
+		for y in range(iWorldY):
+			if getFoundName(iPlayer, (x,y)) == sName or getFoundName(iEngland, (x,y)) == sName:
+				lLocations.append((x,y))
+				
+	return lLocations
 	
 def onCityBuilt(city):
 	iOwner = city.getOwner()

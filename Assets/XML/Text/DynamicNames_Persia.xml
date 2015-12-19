@@ -9,135 +9,83 @@
 		<English>The Persians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_PERSIA_PEOPLES</Tag>
 		<English>Parsi Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_DESC_DEFAULT</Tag>
-		<English>Persian Shahdom</English>
+		<Tag>TXT_KEY_CIV_PERSIA_DEFAULT</Tag>
+		<English>%s2 Shahdom</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Persia</English>
+		<Tag>TXT_KEY_CIV_PERSIA_FASCIST</Tag>
+		<English>%s2 Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_DESC_COMMUNIST</Tag>
-		<English>Persian Socialist Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_DESC_FASCIST</Tag>
-		<English>Persian Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_DESC_ISLAMIC_MODERN</Tag>
-		<English>Islamic Republic of Persia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_PARTHIA</Tag>
-		<English>Parthian Empire</English>
+		<Tag>TXT_KEY_CIV_PERSIA_PARTHIAN</Tag>
+		<English>Parthian</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_ACHAEMENID</Tag>
-		<English>Achaemenid Empire</English>
+		<English>Achaemenid</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_SASSANID</Tag>
-		<English>Sassanid Empire</English>
+		<English>Sassanid</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_EMPIRE</Tag>
-		<English>Persian Empire</English>
+		<Tag>TXT_KEY_CIV_PERSIA_SAFAVID</Tag>
+		<English>Safavid</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_SAFAVID_CALIPHATE</Tag>
-		<English>Safavid Caliphate</English>
+		<Tag>TXT_KEY_CIV_PERSIA_QAJAR</Tag>
+		<English>Qajar</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_QAJAR_CALIPHATE</Tag>
-		<English>Qajar Caliphate</English>
+		<Tag>TXT_KEY_CIV_PERSIA_PAHLAVI</Tag>
+		<English>Pahlavi</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_PAHLAVI_CALIPHATE</Tag>
-		<English>Pahlavi Caliphate</English>
+		<Tag>TXT_KEY_CIV_PERSIAN_VASSAL</Tag>
+		<English>Satrapy of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_SAFAVID_EMPIRE</Tag>
-		<English>Safavid Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_QAJAR_EMPIRE</Tag>
-		<English>Qajar Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_PAHLAVI_EMPIRE</Tag>
-		<English>Pahlavi Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_SOVIET_VASSAL</Tag>
-		<English>Soviet Gilan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_NAZI_VASSAL</Tag>
-		<English>German Persia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_PERSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_PERSIAN_EGYPT</Tag>
 		<English>Ninth Satrapy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_PERSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_PERSIAN_INDIA</Tag>
 		<English>Twentieth Satrapy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_PERSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_PERSIAN_BABYLONIA</Tag>
 		<English>Sixth Satrapy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_PERSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_PERSIAN_GREECE</Tag>
 		<English>First Satrapy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_PERSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_PERSIAN_ETHIOPIA</Tag>
 		<English>Seventeenth Satrapy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_PERSIAN_VASSAL</Tag>
-		<English>Satrapy of Anatolia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_PERSIAN_VASSAL</Tag>
-		<English>Satrapy of Scandinavia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ARABIA_PERSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_PERSIAN_ARABIA</Tag>
 		<English>Fifth Satrapy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_PERSIAN_VASSAL</Tag>
-		<English>Satrapy of Kampuchea</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDONESIA_PERSIAN_VASSAL</Tag>
-		<English>Satrapy of Malacca</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_NETHERLANDS_PERSIAN_VASSAL</Tag>
-		<English>Satrapy of the Netherlands</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MONGOLIA_PERSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_PERSIAN_MONGOLIA</Tag>
 		<English>Fifteenth Satrapy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_PERSIAN_VASSAL</Tag>
-		<English>Satrapy of Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_PERSIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_PERSIAN_TURKEY</Tag>
 		<English>Fourth Satrapy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIAN_VASSAL_GENERIC</Tag>
-		<English>Satrapy of %s1</English>
+		<Tag>TXT_KEY_CIV_PERSIAN_NAME_BYZANTIUM</Tag>
+		<English>Anatolia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERSIAN_NAME_INDONESIA</Tag>
+		<English>Malacca</English>
 	</TEXT>
 </Civ4GameText>

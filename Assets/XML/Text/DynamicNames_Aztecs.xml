@@ -9,24 +9,16 @@
 		<English>The Aztecs</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_PEOPLES</Tag>
 		<English>Mexica Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_DESC_DEFAULT</Tag>
-		<English>Aztec Triple Alliance</English>
+		<Tag>TXT_KEY_CIV_AZTECS_DEFAULT</Tag>
+		<English>%s2 Triple Alliance</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_DESC_DEMOCRATIC</Tag>
-		<English>United Mexican States</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_DESC_COMMUNIST</Tag>
-		<English>Anti-Reelectionist Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_DESC_FASCIST</Tag>
-		<English>Mexican Empire</English>
+		<Tag>TXT_KEY_CIV_AZTECS_FASCIST</Tag>
+		<English>New Mexica Empire</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_SHORT_DESC</Tag>
@@ -43,17 +35,5 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_EMPIRE</Tag>
 		<English>Aztec Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MEXICO_EMPIRE</Tag>
-		<English>Mexican Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_SOVIET_VASSAL</Tag>
-		<English>Soviet Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_NAZI_VASSAL</Tag>
-		<English>German Mexico</English>
 	</TEXT>
 </Civ4GameText>

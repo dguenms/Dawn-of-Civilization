@@ -17,55 +17,39 @@
 		<English>Phoenician</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_PHOENICIA_PEOPLES</Tag>
 		<English>Canaanite Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_DESC_DEFAULT</Tag>
-		<English>Kingdom of Carthage</English>
+		<Tag>TXT_KEY_CIV_PHOENICIA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_DESC_DEMOCRATIC</Tag>
+		<Tag>TXT_KEY_CIV_PHOENICIA_REPUBLIC</Tag>
 		<English>Republic of Lebanon</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_DESC_COMMUNIST</Tag>
+		<Tag>TXT_KEY_CIV_PHOENICIA_COMMUNIST</Tag>
 		<English>People's Republic of Lebanon</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_PHOENICIA_FASCIST</Tag>
 		<English>National Lebanon</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CARTHAGE_DESC_DEMOCRATIC</Tag>
+		<Tag>TXT_KEY_CIV_CARTHAGE_REPUBLIC</Tag>
 		<English>Punic Republic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CARTHAGE_DESC_COMMUNIST</Tag>
+		<Tag>TXT_KEY_CIV_CARTHAGE_COMMUNIST</Tag>
 		<English>Punic People's Republic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CARTHAGE_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_CARTHAGE_FASCIST</Tag>
 		<English>New Carthaginian Empire</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_EMPIRE</Tag>
 		<English>Carthaginian Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_CITY_STATES</Tag>
-		<English>Phoenician City-States</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_CARTHAGE_CITY_STATES</Tag>
-		<English>Carthaginian City-States</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_SOVIET_VASSAL</Tag>
-		<English>Soviet Lebanon</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_NAZI_VASSAL</Tag>
-		<English>Reichskommissariat Lebanon</English>
 	</TEXT>
 </Civ4GameText>

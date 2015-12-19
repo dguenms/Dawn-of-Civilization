@@ -9,39 +9,27 @@
 		<English>The Thais</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_THAILAND_PEOPLES</Tag>
 		<English>Thai Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_DESC_DEFAULT</Tag>
-		<English>Kingdom of Siam</English>
+		<Tag>TXT_KEY_CIV_THAILAND_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Thailand</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_DESC_COMMUNIST</Tag>
-		<English>People's Republic of Thailand</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_DESC_FASCIST</Tag>
-		<English>Thai Junta</English>
+		<Tag>TXT_KEY_CIV_THAILAND_FASCIST</Tag>
+		<English>%s2 Junta</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_AYUTTHAYA</Tag>
-		<English>Kingdom of Ayutthaya</English>
+		<English>Ayutthaya</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_EMPIRE</Tag>
-		<English>Empire of Siam</English>
+		<Tag>TXT_KEY_CIV_THAILAND_SIAM</Tag>
+		<English>Siam</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_SOVIET_VASSAL</Tag>
-		<English>Soviet Thailand</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_NAZI_VASSAL</Tag>
-		<English>German Thailand</English>
+		<Tag>TXT_KEY_CIV_THAILAND_SIAMESE</Tag>
+		<English>Siamese</English>
 	</TEXT>
 </Civ4GameText>

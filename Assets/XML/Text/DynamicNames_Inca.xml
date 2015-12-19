@@ -9,24 +9,32 @@
 		<English>The Inca</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_INCA_PEOPLES</Tag>
 		<English>Andean Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_DESC_DEFAULT</Tag>
-		<English>Kingdom of Cuzco</English>
+		<Tag>TXT_KEY_CIV_INCA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_DESC_DEMOCRATIC</Tag>
-		<English>Incan Republic</English>
+		<Tag>TXT_KEY_CIV_INCA_COMMUNIST</Tag>
+		<English>%s2 Revolutionary Movement</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_DESC_COMMUNIST</Tag>
-		<English>Incan Revolutionary Movement</English>
+		<Tag>TXT_KEY_CIV_INCA_FASCIST</Tag>
+		<English>Government of the %s2 Armed Forces</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_DESC_FASCIST</Tag>
-		<English>Government of the Incan Armed Forces</English>
+		<Tag>TXT_KEY_CIV_PERU_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_COMMUNIST</Tag>
+		<English>%s2 Revolutionary Movement</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_FASCIST</Tag>
+		<English>Government of the %s2 Armed Forces</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_SHORT_DESC</Tag>
@@ -37,23 +45,11 @@
 		<English>Peruvian</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_EMPIRE</Tag>
-		<English>Four Incan Regions</English>
+		<Tag>TXT_KEY_CIV_INCA_FOUR_REGIONS</Tag>
+		<English>Four %s2 Regions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_BOLIVIA</Tag>
-		<English>Republic of Bolivia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_PERU</Tag>
-		<English>Republic of Peru</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_NAZI_VASSAL</Tag>
-		<English>German Peru</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_SOVIET_VASSAL</Tag>
-		<English>Soviet Peru</English>
+		<English>Bolivia</English>
 	</TEXT>
 </Civ4GameText>
