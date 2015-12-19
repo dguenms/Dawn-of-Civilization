@@ -641,18 +641,8 @@ def key(iPlayer, sSuffix):
 def text(sTextKey, tInput=()):
 	return localText.getText(str(sTextKey), tInput)
 	
-def lazytext(sTextKey, iPlayer, name, adjective):
-	sName = lazyeval(name, iPlayer, "[name]", sTextKey)
-	sAdjective = lazyeval(adjective, iPlayer, "[adj]", sTextKey)
-	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
-	
-def lazyeval(function, iPlayer, key, string):
-	print "if " + key + " not in " + text(string, ("[name]", "[adj]")) + ": return"
-	if key not in text(string): return ""
-	return function(iPlayer)
-	
 def desc(iPlayer, sTextKey=str("%s1")):
-	return lazytext(sTextKey, iPlayer, name, adjective)
+	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
 
 def short(iPlayer):
 	return gc.getPlayer(iPlayer).getCivilizationShortDescription(0)
@@ -665,7 +655,9 @@ def civAdjective(iPlayer):
 
 def capitalName(iPlayer):
 	capital = gc.getPlayer(iPlayer).getCapitalCity()
-	if capital: return cnm.getRenameName(iEngland, capital.getName())
+	if capital: 
+		sCapitalName = cnm.getRenameName(iEngland, capital.getName())
+		if sCapitalName: return sCapitalName
 	
 	return short(iPlayer)
 	

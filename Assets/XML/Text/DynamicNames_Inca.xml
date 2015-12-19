@@ -25,6 +25,18 @@
 		<English>Government of the %s2 Armed Forces</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_COMMUNIST</Tag>
+		<English>%s2 Revolutionary Movement</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_FASCIST</Tag>
+		<English>Government of the %s2 Armed Forces</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_SHORT_DESC</Tag>
 		<English>Peru</English>
 	</TEXT>
