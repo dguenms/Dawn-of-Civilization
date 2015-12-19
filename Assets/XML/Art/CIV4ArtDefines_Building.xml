@@ -80,7 +80,6 @@
 			<Type>ART_DEF_BUILDING_BARRACKS</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<!-- Rhye -->
 			<fScale>1.37</fScale>
 			<fInterfaceScale>0.52</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Barracks/Barracks.nif</NIF>
@@ -532,7 +531,6 @@
 			<Type>ART_DEF_BUILDING_COLOSSEUM</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<!-- Rhye -->
 			<fScale>1.80</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Colosseum/Colosseum.nif</NIF>
@@ -743,7 +741,6 @@
 			<Type>ART_DEF_BUILDING_INTELLIGENCE_AGENCY</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<!-- Rhye -->
 			<fScale>0.4</fScale>
 			<fInterfaceScale>0.42</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Intelligence_Agency/Intelligence_Agency.nif</NIF>
@@ -754,7 +751,6 @@
 			<Type>ART_DEF_BUILDING_NATIONAL_SECURITY</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<!-- Rhye -->
 			<fScale>0.3</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/NSA_Headquarters/NSA_Headquarters.nif</NIF>
@@ -1112,7 +1108,6 @@
 			<Button>Art/Interface/Buttons/Buildings/Shrine_Zoroastrian.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<!-- Rhye - start -->
 			<Type>ART_DEF_BUILDING_FLAVIAN_AMPHITHEATRE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
@@ -1121,13 +1116,11 @@
 			<NIF>Art/Structures/Buildings/FlavianAmphitheatre/Colosseum_new.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Flavian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,3</Button>
-			<!-- Rhye - end -->
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_NATIONAL_EPIC</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
-			<!-- Rhye -->
 			<fScale>1.76</fScale>
 			<fInterfaceScale>0.48</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/NationalEpic/NationalEpic.nif</NIF>
@@ -1155,7 +1148,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/Hermitage.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<!-- Rhye - start -->
 			<Type>ART_DEF_BUILDING_CHANNEL_TUNNEL</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
@@ -1164,7 +1156,6 @@
 			<NIF>Art/Structures/Buildings/Station/station.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/OxfordUniversity.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,5</Button>
-			<!-- Rhye - end -->
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_WALL_STREET</Type>
@@ -1187,7 +1178,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/IronWorks.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,4</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<!-- Rhye - start -->
 			<Type>ART_DEF_BUILDING_TRADING_COMPANY</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
@@ -1196,13 +1186,11 @@
 			<NIF>Art/Structures/Buildings/Inn/inn.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/WestPoint.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,11</Button>
-			<!-- Rhye - end -->
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MT_RUSHMORE</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<!-- Rhye -->
 			<fScale>1.21</fScale>
 			<fInterfaceScale>0.54</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/MtRushmore/MtRushmore.nif</NIF>
@@ -1223,7 +1211,6 @@
 			<Type>ART_DEF_BUILDING_SCOTLAND_YARD</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<!-- Rhye -->
 			<fScale>1.65</fScale>
 			<fInterfaceScale>0.34</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/ScotlandYard/ScotlandYard.nif</NIF>
@@ -1284,7 +1271,6 @@
 			<Type>ART_DEF_BUILDING_COLOSSUS</Type>
 			<LSystem>LSYSTEM_WATER</LSystem>
 			<bAnimated>1</bAnimated>
-			<!-- Rhye -->
 			<fScale>1.10</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Colossus/Colossus.nif</NIF>
@@ -1412,7 +1398,6 @@
 			<Button>,Art/Interface/Buttons/Buildings/StatueOfLiberty.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,10</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<!-- Rhye - start -->
 			<Type>ART_DEF_BUILDING_BROADWAY</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
@@ -1421,7 +1406,6 @@
 			<NIF>Art/Structures/Buildings/Wembley/wembley03.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Broadway.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,8</Button>
-			<!-- Rhye - end -->
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ROCKNROLL</Type>
@@ -1713,7 +1697,6 @@
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/ApostolicPalace.dds</Button>
 		</BuildingArtInfo>
-		<!-- Rhye - start -->
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_LEANING_TOWER</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
@@ -2174,7 +2157,6 @@
 			<KFM/>
 			<Button>Art/Interface/Buttons/Civilizations/Canada.dds</Button>
 		</BuildingArtInfo>
-		<!-- Rhye - end -->
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CHINESE_ACADEMY</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
