@@ -9,44 +9,36 @@
 		<English>The Babylonians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_BABYLONIA_PEOPLES</Tag>
 		<English>Mesopotamian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_DESC_DEFAULT</Tag>
-		<English>Babylonian Empire</English>
+		<Tag>TXT_KEY_CIV_BABYLONIA_DEFAULT</Tag>
+		<English>%s2 Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_DESC_FASCIST</Tag>
-		<English>Baathist Babylonia</English>
+		<Tag>TXT_KEY_CIV_BABYLONIA_FASCIST</Tag>
+		<English>Baathist %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_DESC_COMMUNIST</Tag>
-		<English>Babylonian Golden Square</English>
+		<Tag>TXT_KEY_CIV_BABYLONIA_COMMUNIST</Tag>
+		<English>%s2 Golden Square</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_DESC_DEMOCRATIC</Tag>
-		<English>Babylonian Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_CITY_STATES</Tag>
-		<English>Mesopotamian City-States</English>
+		<Tag>TXT_KEY_CIV_BABYLONIA_MESOPOTAMIAN</Tag>
+		<English>Mesopotamian</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_ASSYRIA</Tag>
-		<English>Assyrian Empire</English>
+		<English>Assyria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BABYLONIA_ASSYRIA_ADJECTIVE</Tag>
+		<English>Assyrian</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_NEO_EMPIRE</Tag>
-		<English>Neo-Babylonian Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_SOVIET_VASSAL</Tag>
-		<English>Soviet Mesopotamia</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_NAZI_VASSAL</Tag>
-		<English>German Mesopotamia</English>
+		<English>Neo-%s2 Empire</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_BABYLONIAN_VASSAL</Tag>

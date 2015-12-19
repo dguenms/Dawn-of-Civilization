@@ -9,59 +9,31 @@
 		<English>The Japanese</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_JAPAN_PEOPLES</Tag>
 		<English>Yamato Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_DESC_DEFAULT</Tag>
-		<English>Japanese Shogunate</English>
+		<Tag>TXT_KEY_CIV_JAPAN_DEFAULT</Tag>
+		<English>%s2 Shogunate</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Japan</English>
+		<Tag>TXT_KEY_CIV_JAPAN_FASCIST</Tag>
+		<English>Empire of Greater %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_DESC_FASCIST</Tag>
-		<English>Empire of Greater Japan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_DESC_COMMUNIST</Tag>
-		<English>People's Republic of Japan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_EMPIRE</Tag>
-		<English>Empire of Japan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPANESE_VASSAL_GENERIC</Tag>
+		<Tag>TXT_KEY_CIV_JAPANESE_VASSAL</Tag>
 		<English>Co-Prosperity %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CHINA_JAPANESE_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_JAPANESE_CHINA</Tag>
 		<English>Reorganized National Government of China</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_JAPANESE_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_JAPANESE_KOREA</Tag>
 		<English>Governor-General of Chosen</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_JAPANESE_VASSAL</Tag>
-		<English>Co-Prosperity Kampuchea</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_JAPANESE_VASSAL</Tag>
-		<English>Co-Prosperity Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MONGOLIA_JAPANESE_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_JAPANESE_MONGOLIA</Tag>
 		<English>Mengjiang United Autonomous Government</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_SOVIET_VASSAL</Tag>
-		<English>Far Eastern Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_JAPAN_NAZI_VASSAL</Tag>
-		<English>German Japan</English>
 	</TEXT>
 </Civ4GameText>

@@ -95,5 +95,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getEspionageExperience", &CyPlayer::getEspionageExperience, "int ()")
 		.def("setEspionageExperience", &CyPlayer::setEspionageExperience, "void (int iNewValue)")
 		.def("greatSpyThreshold", &CyPlayer::greatSpyThreshold, "int ()")
+		.def("setLeaderName", &CyPlayer::setLeaderName, "void (str name)")
 		;
 }

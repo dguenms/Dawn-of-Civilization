@@ -9,31 +9,27 @@
 		<English>The Maya</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_MAYA_PEOPLES</Tag>
 		<English>Maya Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_DESC_DEFAULT</Tag>
-		<English>Mayan City-States</English>
+		<Tag>TXT_KEY_CIV_MAYA_DEFAULT</Tag>
+		<English>%s2 City-States</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_DESC_DEMOCRATIC</Tag>
-		<English>Mayan Federal Republic</English>
+		<Tag>TXT_KEY_CIV_MAYA_REPUBLIC</Tag>
+		<English>%s2 Federal Republic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_DESC_COMMUNIST</Tag>
-		<English>Mayan Free State</English>
+		<Tag>TXT_KEY_CIV_MAYA_COMMUNIST</Tag>
+		<English>%s2 Free State</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_DESC_FASCIST</Tag>
-		<English>Mayan Junta</English>
+		<Tag>TXT_KEY_CIV_MAYA_FASCIST</Tag>
+		<English>%s2 Junta</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_SOVIET_VASSAL</Tag>
-		<English>Soviet Yucat&#225;n</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MAYA_NAZI_VASSAL</Tag>
-		<English>German Yucat&#225;n</English>
+		<Tag>TXT_KEY_CIV_MAYA_YUCATAN</Tag>
+		<English>Yucat&#225;n</English>
 	</TEXT>
 </Civ4GameText>

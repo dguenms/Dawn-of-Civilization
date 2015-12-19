@@ -9,187 +9,111 @@
 		<English>The Romans</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_ROME_PEOPLES</Tag>
 		<English>Italic Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_DESC_DEFAULT</Tag>
-		<English>Roman Kingdom</English>
+		<Tag>TXT_KEY_CIV_ROME_DEFAULT</Tag>
+		<English>%s2 Kingdom</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_DESC_DEMOCRATIC</Tag>
-		<English>Italian Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_DESC_COMMUNIST</Tag>
-		<English>People's Republic of Italy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_ROME_FASCIST</Tag>
 		<English>New Roman Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_WESTERN_EMPIRE</Tag>
-		<English>Western Roman Empire</English>
+		<Tag>TXT_KEY_CIV_ROME_WESTERN</Tag>
+		<English>Western Roman</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_REPUBLIC</Tag>
-		<English>Roman Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_EMPIRE</Tag>
-		<English>Roman Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_DESC_PEOPLES</Tag>
-		<English>Lombard Peoples</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_DESC_DEFAULT</Tag>
-		<English>Kingdom of Italy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_ITALIAN_LEAGUE</Tag>
-		<English>Italian League</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_LOMBARD_LEAGUE</Tag>
-		<English>Lombard League</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS</Tag>
-		<English>Italian Maritime Republics</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_KINGDOM</Tag>
-		<English>Kingdom of Italy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_DUCHY_TUSCANY</Tag>
-		<English>Duchy of Tuscany</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_DUCHY_VENICE</Tag>
-		<English>Duchy of Venice</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_DUCHY_MILAN</Tag>
-		<English>Duchy of Milan</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_PAPAL_STATE</Tag>
-		<English>Papal States</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_HOLY_ROMAN_VASSAL</Tag>
-		<English>Grand Duchy of Tuscany</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_ROMAN_VASSAL_GENERIC</Tag>
+		<Tag>TXT_KEY_CIV_ROMAN_VASSAL</Tag>
 		<English>Province of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_SOVIET_VASSAL</Tag>
-		<English>Soviet Italy</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_EGYPT</Tag>
+		<English>Aegyptus</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ROME_NAZI_VASSAL</Tag>
-		<English>Italian Social Republic</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_CHINA</Tag>
+		<English>Sinae</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_ROMAN_VASSAL</Tag>
-		<English>Province of Aegyptus</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_BABYLONIA</Tag>
+		<English>Mesopotamia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CHINA_ROMAN_VASSAL</Tag>
-		<English>Province of Sinae</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_GREECE</Tag>
+		<English>Magna Graecia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BABYLONIA_ROMAN_VASSAL</Tag>
-		<English>Province of Mesopotamia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_PERSIA</Tag>
+		<English>Parthia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GREECE_ROMAN_VASSAL</Tag>
-		<English>Province of Achaea</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_PHOENICIA</Tag>
+		<English>Syria</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PERSIA_ROMAN_VASSAL</Tag>
-		<English>Province of Parthia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_CARTHAGE</Tag>
+		<English>Africa</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_ROMAN_VASSAL</Tag>
-		<English>Province of Syria</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_ETHIOPIA</Tag>
+		<English>Aethiopia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CARTHAGE_ROMAN_VASSAL</Tag>
-		<English>Province of Africa</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_BYZANTIUM</Tag>
+		<English>Thracia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_ROMAN_VASSAL</Tag>
-		<English>Province of Aethiopia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_VIKINGS</Tag>
+		<English>Scandia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_BYZANTIUM_ROMAN_VASSAL</Tag>
-		<English>Province of Thracia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_KHMER</Tag>
+		<English>Aurea Chersonesus</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKINGS_ROMAN_VASSAL</Tag>
-		<English>Province of Scandia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_SPAIN</Tag>
+		<English>Hispania</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KHMER_ROMAN_VASSAL</Tag>
-		<English>Province of Aurea Chersonesus</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_FRANCE</Tag>
+		<English>Gaul</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_SPAIN_ROMAN_VASSAL</Tag>
-		<English>Province of Hispania</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_ENGLAND</Tag>
+		<English>Britannia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_FRANCE_ROMAN_VASSAL</Tag>
-		<English>Province of Gaul</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_HOLY_ROME</Tag>
+		<English>Germania</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ENGLAND_ROMAN_VASSAL</Tag>
-		<English>Province of Britannia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_GERMANY</Tag>
+		<English>Borussia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROME_ROMAN_VASSAL</Tag>
-		<English>Province of Germania</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_RUSSIA</Tag>
+		<English>Sarmatia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_GERMANY_ROMAN_VASSAL</Tag>
-		<English>Province of Borussia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_NETHERLANDS</Tag>
+		<English>Belgica</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_RUSSIA_ROMAN_VASSAL</Tag>
-		<English>Province of Sarmatia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_MALI</Tag>
+		<English>Gaetulia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_NETHERLANDS_ROMAN_VASSAL</Tag>
-		<English>Province of Belgica</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_PORTUGAL</Tag>
+		<English>Lusitania</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MALI_ROMAN_VASSAL</Tag>
-		<English>Province of Gaetulia</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_MONGOLIA</Tag>
+		<English>Serica</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PORTUGAL_ROMAN_VASSAL</Tag>
-		<English>Province of Lusitania</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MONGOLIA_ROMAN_VASSAL</Tag>
-		<English>Province of Serica</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_ROMAN_VASSAL</Tag>
-		<English>Province of Mexico</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TURKEY_ROMAN_VASSAL</Tag>
-		<English>Province of Asia Minor</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_THAILAND_ROMAN_VASSAL</Tag>
-		<English>Province of Siam</English>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_TURKEY</Tag>
+		<English>Asia Minor</English>
 	</TEXT>
 </Civ4GameText>

@@ -9,47 +9,31 @@
 		<English>The Koreans</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_DESC_DEFAULT</Tag>
-		<English>Three Kingdoms of Korea</English>
+		<Tag>TXT_KEY_CIV_KOREA_DEFAULT</Tag>
+		<English>Three Kingdoms of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_KOREA_PEOPLES</Tag>
 		<English>Korean Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Korea</English>
+		<Tag>TXT_KEY_CIV_KOREA_COMMUNIST</Tag>
+		<English>Democratic People's Republic of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_DESC_COMMUNIST</Tag>
-		<English>Democratic People's Republic of Korea</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_DESC_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_KOREA_FASCIST</Tag>
 		<English>Supreme Council for National Reconstruction</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_GORYEO</Tag>
-		<English>Kingdom of Goryeo</English>
+		<English>Goryeo</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_GOGURYEO</Tag>
-		<English>Kingdom of Goguryeo</English>
+		<English>Goguryeo</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KOREA_JOSEON</Tag>
-		<English>Kingdom of Greater Joseon</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_EMPIRE</Tag>
-		<English>Korean Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_SOVIET_VASSAL</Tag>
-		<English>Soviet Korea</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_KOREA_NAZI_VASSAL</Tag>
-		<English>German Korea</English>
+		<English>Greater Joseon</English>
 	</TEXT>
 </Civ4GameText>

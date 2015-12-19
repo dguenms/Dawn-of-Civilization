@@ -9,87 +9,59 @@
 		<English>The Egyptians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_EGYPT_PEOPLES</Tag>
 		<English>Peoples of the Nile</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_DESC_DEFAULT</Tag>
-		<English>Kingdom of Egypt</English>
+		<Tag>TXT_KEY_CIV_EGYPT_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_DESC_FASCIST</Tag>
-		<English>Officers' Egypt</English>
+		<Tag>TXT_KEY_CIV_EGYPT_FASCIST</Tag>
+		<English>Officers' %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_DESC_COMMUNIST</Tag>
-		<English>Liberation Rally of Egypt</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_DESC_DEMOCRATIC</Tag>
-		<English>Republic of Egypt</English>
+		<Tag>TXT_KEY_CIV_EGYPT_COMMUNIST</Tag>
+		<English>Liberation Rally of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_PTOLEMAIC</Tag>
 		<English>Ptolemaic Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_CITY_STATES</Tag>
-		<English>Egyptian City-States</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_OLD_KINGDOM</Tag>
-		<English>Old Kingdom of Egypt</English>
+		<English>Old Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM</Tag>
-		<English>Middle Kingdom of Egypt</English>
+		<English>Middle Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_NEW_KINGDOM</Tag>
-		<English>New Kingdom of Egypt</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_FATIMID_CALIPHATE</Tag>
-		<English>Fatimid Caliphate</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_AYYUBID_CALIPHATE</Tag>
-		<English>Ayyubid Caliphate</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_MAMLUK_CALIPHATE</Tag>
-		<English>Mamluk Caliphate</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_FATIMID_SULTANATE</Tag>
-		<English>Fatimid Sultanate</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_AYYUBID_SULTANATE</Tag>
-		<English>Ayyubid Sultanate</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_MAMLUK_SULTANATE</Tag>
-		<English>Mamluk Sultanate</English>
+		<English>New Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_EGYPT_COPTIC</Tag>
 		<English>Coptic Kingdom</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_SOVIET_VASSAL</Tag>
-		<English>Soviet Egypt</English>
+		<Tag>TXT_KEY_CIV_EGYPT_MAMLUK</Tag>
+		<English>Mamluk</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_EGYPT_NAZI_VASSAL</Tag>
-		<English>Reichsprotektorat Egypt</English>
+		<Tag>TXT_KEY_CIV_EGYPT_FATIMID</Tag>
+		<English>Fatimid</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_PHOENICIA_EGYPTIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_EGYPT_AYYUBID</Tag>
+		<English>Ayyubid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPTIAN_PHOENICIA</Tag>
 		<English>Province of Retjenu</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ETHIOPIA_EGYPTIAN_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_EGYPTIAN_ETHIOPIA</Tag>
 		<English>Kingdom of Punt</English>
 	</TEXT>
 </Civ4GameText>

@@ -535,6 +535,7 @@ public:
 	int getSettlersMaps(int y, int x); //Rhye
 	void setFlag(std::wstring s); //Rhye
 	void setLeader(int i); //Rhye
+	void setLeaderName(std::wstring name);
 	int /*LeaderHeadTypes*/ getLeader(); //Rhye
 
 	//Leoreth
