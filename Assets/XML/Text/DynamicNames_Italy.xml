@@ -21,6 +21,14 @@
 		<English>%s2 League</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_LOMBARD</Tag>
+		<English>Lombard</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_TUSCANY</Tag>
+		<English>Tuscany</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS</Tag>
 		<English>%s2 Maritime Republics</English>
 	</TEXT>

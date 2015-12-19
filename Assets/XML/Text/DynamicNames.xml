@@ -61,18 +61,6 @@
 		<English>%s2 People's Republic</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PEOPLES_DEMOCRATIC_REPUBLIC_OF</Tag>
-		<English>People's Democratic Republic of %s1</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PEOPLES_DEMOCRATIC_REPUBLIC_ADJECTIVE</Tag>
-		<English>%s2 People's Democratic Republic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_NATIONALIST_OF</Tag>
-		<English>Nationalist %s1</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CITY_STATES_OF</Tag>
 		<English>City States of %s1</English>
 	</TEXT>
@@ -115,6 +103,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_MANDATE_OF</Tag>
 		<English>%s2 Mandate of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONFEDERATION_ADJECTIVE</Tag>
+		<English>%s2 Confederation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROTECTORATE_OF</Tag>
+		<English></English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLONY_OF</Tag>
+		<English></English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
