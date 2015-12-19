@@ -11,7 +11,7 @@ import RFCUtils
 import Consts as con
 import CityNameManager as cnm
 import Victory as vic
-import DynamicCivs
+import DynamicCivs as dc
 from operator import itemgetter
 import Stability as sta
 
@@ -23,7 +23,6 @@ import Stability as sta
 gc = CyGlobalContext()  # LOQ
 PyPlayer = PyHelpers.PyPlayer   # LOQ
 utils = RFCUtils.RFCUtils()
-dc = DynamicCivs.DynamicCivs()
 
 iCheatersPeriod = 12
 iBetrayalPeriod = 8
@@ -2311,7 +2310,7 @@ class RiseAndFall:
 				utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
 				
 				# notify dynamic names
-				dc.onCityAcquired((iCiv, iOwner, gc.getMap().plot(tCapital[0], tCapital[1]).getPlotCity(), False, True))
+				dc.onCityAcquired(iCiv, iOwner)
 				
 				self.createStartingWorkers(iCiv, tCapital)
 
@@ -5342,8 +5341,8 @@ class RiseAndFall:
 			
 		pHolyRome.setReborn(True)
 		
-		dc.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
-		dc.setCivAdjective(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
+		dc.nameChange(iHolyRome)
+		dc.adjectiveChange(iHolyRome)
 		
 	def holyRomanSpawn(self):
 		plot = gc.getMap().plot(60, 56)

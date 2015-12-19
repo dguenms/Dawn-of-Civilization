@@ -576,16 +576,20 @@ class StoredData:
 	# DYNAMIC NAMES
 	
 	def getAnarchyTurns(self, iPlayer):
+		if iPlayer >= con.iNumPlayers: return 0
 		return sd.scriptDict['lAnarchyTurns'][iPlayer]
 		
 	def changeAnarchyTurns(self, iPlayer, iChange):
-		sd.scriptDict['lAnarchyTurns'][iPlayer] += iChange
+		if iPlayer < con.iNumPlayers:
+			sd.scriptDict['lAnarchyTurns'][iPlayer] += iChange
 		
 	def getResurrections(self, iPlayer):
+		if iPlayer >= con.iNumPlayers: return 0
 		return sd.scriptDict['lResurrections'][iPlayer]
 		
 	def changeResurrections(self, iPlayer, iChange):
-		sd.scriptDict['lResurrections'][iPlayer] += iChange
+		if iPlayer < con.iNumPlayers:
+			sd.scriptDict['lResurrections'][iPlayer] += iChange
 		
 # All modules import the following single instance, not the class
 

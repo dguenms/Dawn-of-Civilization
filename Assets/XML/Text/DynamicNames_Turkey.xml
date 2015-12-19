@@ -25,6 +25,10 @@
 		<English>%s2 Junta</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_OTTOMAN</Tag>
+		<English>Ottoman</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
 		<English>Islamic %s2 Democracy</English>
 	</TEXT>

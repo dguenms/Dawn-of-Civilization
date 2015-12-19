@@ -9,11 +9,11 @@
 		<English>The Inca</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_INCA_PEOPLES</Tag>
 		<English>Andean Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_DESC_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_INCA_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>

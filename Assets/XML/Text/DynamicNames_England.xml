@@ -33,6 +33,10 @@
 		<English>Great Britain</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_BRITISH</Tag>
+		<English>British</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF</Tag>
 		<English>United Kingdom of %s1</English>
 	</TEXT>

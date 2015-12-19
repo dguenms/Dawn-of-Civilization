@@ -37,6 +37,10 @@
 		<English>Iberia</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SPAIN_IBERIAN</Tag>
+		<English>Iberian</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CROWN_OF</Tag>
 		<English>Crown of %s1</English>
 	</TEXT>

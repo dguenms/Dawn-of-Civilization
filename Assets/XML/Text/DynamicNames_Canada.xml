@@ -9,35 +9,23 @@
 		<English>The Canadians</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CANADA_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_CANADA_PEOPLES</Tag>
 		<English>Canadian Peoples</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CANADA_DESC_DEFAULT</Tag>
-		<English>Dominion of Canada</English>
+		<Tag>TXT_KEY_CIV_CANADA_DEFAULT</Tag>
+		<English>Dominion of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CANADA_DESC_DEMOCRATIC</Tag>
-		<English>Commonwealth of Canada</English>
+		<Tag>TXT_KEY_CIV_CANADA_REPUBLIC</Tag>
+		<English>Commonwealth of %s1</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CANADA_DESC_COMMUNIST</Tag>
-		<English>Canadian Worker's Commonwealth</English>
+		<Tag>TXT_KEY_CIV_CANADA_COMMUNIST</Tag>
+		<English>%s2 Worker's Commonwealth</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CANADA_DESC_FASCIST</Tag>
-		<English>Canadian Empire</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_CANADA_EMPIRE</Tag>
-		<English>Dominion of Canada</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_CANADA_NAZI_VASSAL</Tag>
-		<English>Reichskommissariat Kanada</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_CANADA_SOVIET_VASSAL</Tag>
-		<English>Soviet Canada</English>
+		<Tag>TXT_KEY_CIV_CANADA_FASCIST</Tag>
+		<English>%s2 Empire</English>
 	</TEXT>
 </Civ4GameText>

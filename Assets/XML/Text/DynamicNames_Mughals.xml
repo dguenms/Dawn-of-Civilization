@@ -22,7 +22,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DEFAULT</Tag>
-		<English>%s1 Empire</English>
+		<English>%s2 Empire</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_FASCIST</Tag>
@@ -30,11 +30,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_DELHI</Tag>
-		<English>Delhi Sultanate</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_REPUBLIC_MEDIEVAL</Tag>
-		<English>Republic of Delhi</English>
+		<English>Delhi</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_INDIA</Tag>

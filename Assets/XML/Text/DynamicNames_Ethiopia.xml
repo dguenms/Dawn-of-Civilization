@@ -21,6 +21,10 @@
 		<English>%s2 Junta</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_REPUBLIC</Tag>
+		<English>People's Democratic Republic of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_AKSUM</Tag>
 		<English>Aksum</English>
 	</TEXT>
