@@ -24220,6 +24220,10 @@
   <Spanish>Direcci&#243;n</Spanish>
  </TEXT>
  <TEXT>
+  <Tag>TXT_KEY_WB_DISABLE_CIV</Tag>
+  <English>This civ is disabled. (Click to enable)</English>
+ </TEXT>
+ <TEXT>
   <Tag>TXT_KEY_WB_DONE</Tag>
   <English>Done</English>
  </TEXT>
@@ -24242,6 +24246,10 @@
   <German>Einheitenmodus bearbeiten</German>
   <Italian>Modifica modalit&#224; unit&#224;</Italian>
   <Spanish>Modo Editar unidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_WB_ENABLE_CIV</Tag>
+  <English>This civ is enabled. (Click to disable)</English>
  </TEXT>
  <TEXT>
   <Tag>TXT_KEY_WB_ENEMY_WAR_WEARINESS</Tag>
@@ -25525,13 +25533,5 @@
   <German>SCH&#220;TZEN SIE IHRE ZIVILISATION</German>
   <Italian>PROTEGGI LA TUA CIVILT&#192;</Italian>
   <Spanish>PROTEGE TU CIVILIZACI&#211;N</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_WB_ENABLE_CIV</Tag>
-  <English>This civ is enabled. (Click to disable)</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_WB_DISABLE_CIV</Tag>
-  <English>This civ is disabled. (Click to enable)</English>
  </TEXT>
 </Civ4GameText>

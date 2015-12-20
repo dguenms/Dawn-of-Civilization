@@ -4,7 +4,7 @@
   <Tag>TXT_KEY_DOMAIN_AIR_PEDIA</Tag>
   <English>Air Units</English>
   <French>
-   <Text>Unités aériennes</Text>
+   <Text>Unit&#233;s a&#233;riennes</Text>
    <Gender>Female</Gender>
    <Plural>1</Plural>
   </French>
@@ -14,12 +14,12 @@
    <Plural>0</Plural>
   </German>
   <Italian>
-   <Text>Unità aerea:Unità aeree</Text>
+   <Text>Unit&#224; aerea:Unit&#224; aeree</Text>
    <Gender>Female</Gender>
    <Plural>0:1</Plural>
   </Italian>
   <Spanish>
-   <Text>Unidad aérea:Unidades aéreas</Text>
+   <Text>Unidad a&#233;rea:Unidades a&#233;reas</Text>
    <Gender>Female</Gender>
    <Plural>0:1</Plural>
   </Spanish>
@@ -162,10 +162,12 @@
   <Italian>
    <Text>Cattedrali</Text>
    <Gender>Female</Gender>
+   <Plural>1</Plural>
   </Italian>
   <Spanish>
    <Text>Catedrales</Text>
    <Gender>Female</Gender>
+   <Plural>1</Plural>
   </Spanish>
  </TEXT>
  <TEXT>
@@ -174,6 +176,7 @@
   <Italian>
    <Text>Monasteri</Text>
    <Gender>Male</Gender>
+   <Plural>1</Plural>
   </Italian>
  </TEXT>
  <TEXT>
@@ -182,10 +185,12 @@
   <Italian>
    <Text>Templi</Text>
    <Gender>Male</Gender>
+   <Plural>1</Plural>
   </Italian>
   <Spanish>
    <Text>Templos</Text>
    <Gender>Male</Gender>
+   <Plural>1</Plural>
   </Spanish>
  </TEXT>
  <TEXT>

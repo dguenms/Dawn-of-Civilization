@@ -337,6 +337,10 @@
   </Spanish>
  </TEXT>
  <TEXT>
+  <Tag>TXT_KEY_TECH_ASTRONOMY_HELP</Tag>
+  <English>[ICON_BULLET]Allows [COLOR_HIGHLIGHT_TEXT][LINK=UNIT_SETTLER]Settlers[\LINK][COLOR_REVERT] to be built on any continent</English>
+ </TEXT>
+ <TEXT>
   <Tag>TXT_KEY_TECH_ASTRONOMY_QUOTE</Tag>
   <English>"Astronomy compels the soul to look upwards and leads us from this world to another." - Plato</English>
   <French>"L'astronomie oblige l'&#226;me &#224; se tourner vers les cieux et nous guide de ce monde vers un autre." - Platon </French>

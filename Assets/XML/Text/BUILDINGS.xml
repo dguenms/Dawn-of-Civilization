@@ -479,10 +479,6 @@
   <English>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
  </TEXT>
  <TEXT>
-  <Tag>TXT_KEY_TECH_ASTRONOMY_HELP</Tag>
-  <English>[ICON_BULLET]Allows [COLOR_HIGHLIGHT_TEXT][LINK=UNIT_SETTLER]Settlers[\LINK][COLOR_REVERT] to be built on any continent</English>
- </TEXT>
- <TEXT>
   <Tag>TXT_KEY_BUILDING_AZT_EMBASSY</Tag>
   <English>Aztec Embassy</English>
   <French>Ambassade azt&#232;que</French>
@@ -2938,7 +2934,7 @@
  <TEXT>
   <Tag>TXT_KEY_BUILDING_HIMEJI_CASTLE</Tag>
   <English>Himeji Castle</English>
-  <French>Château d'Himeji</French>
+  <French>Ch&#226;teau d'Himeji</French>
   <German>Die Burg von Himeji</German>
   <Italian>Castello Himeji</Italian>
   <Spanish>Castillo Himeji</Spanish>
@@ -5944,7 +5940,7 @@
  <TEXT>
   <Tag>TXT_KEY_BUILDING_SUMMER_PALACE</Tag>
   <English>Summer Palace</English>
-  <French>Palais d'été</French>
+  <French>Palais d'&#233;t&#233;</French>
   <German>
    <Text>Sommerresidenz</Text>
    <Gender>Male</Gender>
@@ -6177,7 +6173,7 @@
    <Plural>0</Plural>
   </Italian>
   <Spanish>
-   <Text>Templo de Salomón</Text>
+   <Text>Templo de Salom&#243;n</Text>
    <Gender>Male</Gender>
    <Plural>0</Plural>
   </Spanish>
@@ -6194,7 +6190,7 @@
  <TEXT>
   <Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY</Tag>
   <English>Terracotta Army</English>
-  <French>Armée en terre-cuite</French>
+  <French>Arm&#233;e en terre-cuite</French>
   <German>
    <Text>Terracotta-Armee</Text>
    <Gender>Male</Gender>
