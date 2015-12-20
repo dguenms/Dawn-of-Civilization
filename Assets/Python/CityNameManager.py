@@ -4308,6 +4308,7 @@ dIdentifiers = {
 	'Iuliomagus'		:	'Angers',
 	'Karkhedon'		:	'Qart-Hadasht',
 	'C&#243;rdova'		:	'Qurtubah',
+	'Cordoba'		:	'Qurtubah',
 	'Ninova'		:	'Ninua',
 	'Attaleia'		:	'Attaleia',
 	'Kiew'			:	'Kyiv',
@@ -5010,6 +5011,7 @@ dIdentifiers = {
 	'Surru'			:	'Sur',
 	"Sana'a"		:	"Sana'a",
 	'Auzalites'		:	"Sana'a",
+	'Trebizond'		:	'Trapezon',
 }
 
 	
@@ -6187,6 +6189,8 @@ tRenames = (
 	'Mahishuru'		:	'Mysore',
 	'Hong Kong'		:	'Hong Kong',
 	'Guangzhou'		:	'Canton',
+	'Qurtubah'		:	'Cordoba',
+	'Trapezon'		:	'Trebizond',
 },
 #Language: German
 {
