@@ -326,8 +326,12 @@ class StoredData:
 	def changeBarbarianLosses(self, iPlayer, iChange):
 		self.scriptDict['lBarbarianLosses'][iPlayer] += iChange
 		
-	def getSecedingCities(self):
-		return self.scriptDict['dSecedingCities']
+	def getSecedingCities(self, iPlayer):
+		if iPlayer not in self.scriptDict['dSecedingCities']: return []
+		return [gc.getPlayer(iPlayer).getCity(i) for i in self.scriptDict['dSecedingCities'][iPlayer]]
+	
+	def setSecedingCities(self, iPlayer, lCities):
+		self.scriptDict['dSecedingCities'][iPlayer] = [city.getID() for city in lCities]
 		
 	# AIWARS
 		
