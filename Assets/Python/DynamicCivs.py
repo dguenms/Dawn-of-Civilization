@@ -10,7 +10,8 @@ import RFCUtils
 import CityNameManager as cnm
 utils = RFCUtils.RFCUtils()
 
-# globals
+### Constants ###
+
 gc = CyGlobalContext()
 localText = CyTranslator()
 
@@ -25,6 +26,15 @@ tBritainBR = (54, 60)
 tEuropeanRussiaTL = (68, 50)
 tEuropeanRussiaBR = (80, 62)
 tEuropeanRussiaExceptions = ((68, 59), (68, 60), (68, 61), (68, 62))
+	
+### Setup methods ###
+
+def findCapitalLocations(dCapitals):
+	dLocations = {}
+	for iPlayer in dCapitals:
+		for sCapital in dCapitals[iPlayer]:
+			dLocations[sCapital] = cnm.findLocations(iPlayer, sCapital)
+	return dLocations
 
 ### Dictionaries with text keys
 
@@ -437,7 +447,7 @@ dCapitals = {
 	iPoland : ["Kowno", "Medvegalis", "Wilno", "Ryga"],
 }
 
-dCapitalLocations = {}
+dCapitalLocations = findCapitalLocations(dCapitals)
 
 dStartingLeaders = [
 # 3000 BC
@@ -515,6 +525,12 @@ dStartingLeaders = [
 def setup():			
 	iScenario = utils.getScenario()
 	
+	if iScenario == i600AD:
+		sd.changeAnarchyTurns(iChina, 3)
+		
+	elif iScenario == i1700AD:
+		sd.changeResurrections(iEgypt, 1)
+	
 	for iPlayer in range(iNumPlayers):	
 		setDesc(iPlayer, peoplesName(iPlayer))
 		
@@ -523,14 +539,6 @@ def setup():
 		
 		if not gc.getPlayer(iPlayer).isHuman():
 			setLeader(iPlayer, startingLeader(iPlayer))
-	
-	if iScenario == i600AD:
-		sd.changeAnarchyTurns(iChina, 3)
-		
-	elif iScenario == i1700AD:
-		sd.changeResurrections(iEgypt, 1)
-		
-	initCapitalLocations()
 		
 def onCivRespawn(iPlayer, tOriginalOwners):
 	sd.changeResurrections(iPlayer, 1)
@@ -599,13 +607,6 @@ def checkLeader(iPlayer):
 	if iPlayer >= iNumPlayers: return
 	setLeader(iPlayer, leader(iPlayer))
 	setLeaderName(iPlayer, leaderName(iPlayer))
-	
-### Setup methods ###
-
-def initCapitalLocations():
-	for iPlayer in dCapitals:
-		for sCapital in dCapitals[iPlayer]:
-			dCapitalLocations[sCapital] = cnm.findLocations(iPlayer, sCapital)
 
 ### Setter methods for player object ###
 
@@ -658,6 +659,7 @@ def capitalName(iPlayer):
 	if capital: 
 		sCapitalName = cnm.getRenameName(iEngland, capital.getName())
 		if sCapitalName: return sCapitalName
+		else: return capital.getName()
 	
 	return short(iPlayer)
 	
@@ -941,8 +943,11 @@ def specificName(iPlayer):
 			if not pPortugal.isAlive() or getMaster(iPortugal) == iPlayer or not utils.isPlotInArea(capitalCoords(iPortugal), vic.tIberiaTL, vic.tIberiaBR):
 				return "TXT_KEY_CIV_SPAIN_IBERIA"
 			
-		if not bSpain:
+		if isCapital(iPlayer, ["Barcelona", "Valencia"]):
 			return "TXT_KEY_CIV_SPAIN_ARAGON"
+			
+		if not bSpain:
+			return "TXT_KEY_CIV_SPAIN_CASTILE"
 			
 	elif iPlayer == iFrance:
 		if iEra == iMedieval and not pHolyRome.isAlive():
@@ -996,8 +1001,8 @@ def adjective(iPlayer):
 	sSpecificAdjective = specificAdjective(iPlayer)
 	if sSpecificAdjective: return sSpecificAdjective
 	
-	sDefaultInsertAdjective = getOrElse(dDefaultInsertAdjectives, iPlayer)
-	if sDefaultInsertAdjective: return sDefaultInsertAdjective
+	#sDefaultInsertAdjective = getOrElse(dDefaultInsertAdjectives, iPlayer)
+	#if sDefaultInsertAdjective: return sDefaultInsertAdjective
 	
 	return gc.getPlayer(iPlayer).getCivilizationAdjective(0)
 	
@@ -1167,8 +1172,11 @@ def specificAdjective(iPlayer):
 			if not pPortugal.isAlive() or getMaster(iPortugal) == iPlayer or not utils.isPlotInArea(capitalCoords(iPortugal), vic.tIberiaTL, vic.tIberiaBR):
 				return "TXT_KEY_CIV_SPAIN_IBERIAN"
 			
-		if not bSpain:
+		if isCapital(iPlayer, ["Barcelona", "Valencia"]):
 			return "TXT_KEY_CIV_SPAIN_ARAGONESE"
+			
+		if not bSpain:
+			return "TXT_KEY_CIV_SPAIN_CASTILIAN"
 			
 	elif iPlayer == iFrance:
 		if iEra == iMedieval and not pHolyRome.isAlive():
@@ -1470,7 +1478,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
 			
 	elif iPlayer == iByzantium:
-		if capital.getRegionID() != rAnatolia:
+		if capital.getRegionID() != rAnatolia and tCapitalCoords != tCapitals[0][iPlayer]:
 			return "TXT_KEY_CIV_BYZANTIUM_DESPOTATE"
 		
 		if not isCapital(iPlayer, ["Konstantinoupolis"]):
@@ -1558,7 +1566,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
+		if tPlayer.isHasTech(iConstitution) and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
 			return "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF"
 			
 	elif iPlayer == iHolyRome:
@@ -1700,7 +1708,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 def startingLeader(iPlayer):
 	if iPlayer in dStartingLeaders[utils.getScenario()]: return dStartingLeaders[utils.getScenario()][iPlayer]
 	
-	return dStartingLeaders[utils.getScenario()][iPlayer]
+	return dStartingLeaders[i3000BC][iPlayer]
 	
 def leader(iPlayer):
 	if iPlayer >= iNumPlayers: return None
