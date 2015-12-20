@@ -71,11 +71,11 @@ def checkTurn(iGameTurn):
 		sd.setHumanStability(calculateStability(utils.getHumanID()))
 		
 def endTurn(iPlayer):
-	dSecedingCities = sd.getSecedingCities()
+	lSecedingCities = sd.getSecedingCities(iPlayer)
 	
-	if iPlayer in dSecedingCities:
-		secedeCities(iPlayer, dSecedingCities[iPlayer])
-		del dSecedingCities[iPlayer]
+	if lSecedingCities:
+		secedeCities(iPlayer, lSecedingCities)
+		sd.setSecedingCities(iPlayer, [])
 		
 def triggerCollapse(iPlayer):
 	sd.setTurnsToCollapse(iPlayer, 1)
@@ -509,8 +509,7 @@ def getPossibleMinors(iPlayer):
 	return [con.iIndependent, con.iIndependent2]
 	
 def secession(iPlayer, lCities):
-	dSecedingCities = sd.getSecedingCities()
-	dSecedingCities[iPlayer] = lCities
+	sd.setSecedingCities(iPlayer, lCities)
 	
 def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	lPossibleMinors = getPossibleMinors(iPlayer)
