@@ -21,6 +21,14 @@
 		<English>%s2 Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_IRAN_DEFAULT</Tag>
+		<English>%s2 Shahdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_IRAN_FASCIST</Tag>
+		<English>%s2 Empire</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_PARTHIAN</Tag>
 		<English>Parthian</English>
 	</TEXT>
