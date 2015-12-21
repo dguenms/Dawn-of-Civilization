@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BULL Miscellaneous Hovers
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+
+<!-- Leaderhead -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__LEADERHEADHIDDENATTITUDE_TEXT</Tag>
+		<English>Hidden Attitude</English>
+		<French>Hidden Attitude</French>
+		<German>Verborgene Modifikatoren</German>
+		<Italian>Hidden Attitude</Italian>
+		<Spanish>Hidden Attitude</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__LEADERHEADHIDDENATTITUDE_HOVER</Tag>
+		<English>When checked, displays the hidden attitude modifiers (possibly spoiler).</English>
+		<French>When checked, displays the hidden attitude modifiers (possibly spoiler).</French>
+		<German>Zeigt die verborgenen Beziehungsmodifikatoren anderer Oberhäupter an (möglicher Spoiler)</German>
+		<Italian>When checked, displays the hidden attitude modifiers (possibly spoiler).</Italian>
+		<Spanish>When checked, displays the hidden attitude modifiers (possibly spoiler).</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__LEADERHEADWORSTENEMY_TEXT</Tag>
+		<English>Worst Enemy</English>
+		<French>Worst Enemy</French>
+		<German>Erzfeind</German>
+		<Italian>Worst Enemy</Italian>
+		<Spanish>Worst Enemy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__LEADERHEADWORSTENEMY_HOVER</Tag>
+		<English>When checked, the worst enemy of each AI rival is shown in the hover text for their icon.</English>
+		<French>When checked, the worst enemy of each AI rival is shown in the hover text for their icon.</French>
+		<German>Zeigt den Erzfeind jedes Gegenspielers an, wenn der Mauszeiger über desssen Symbol bewegt wird</German>
+		<Italian>When checked, the worst enemy of each AI rival is shown in the hover text for their icon.</Italian>
+		<Spanish>When checked, the worst enemy of each AI rival is shown in the hover text for their icon.</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__LEADERHEADDEFENSIVEPACTS_TEXT</Tag>
+		<English>Defensive Pacts</English>
+		<French>Defensive Pacts</French>
+		<German>Verteidigungsbündnisse</German>
+		<Italian>Defensive Pacts</Italian>
+		<Spanish>Defensive Pacts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__LEADERHEADDEFENSIVEPACTS_HOVER</Tag>
+		<English>When checked, the defensive pacts of each rival are shown in the hover text for their icon.</English>
+		<French>When checked, the defensive pacts of each rival are shown in the hover text for their icon.</French>
+		<German>Zeigt die Verteidigungsbündnisse jedes Gegenspielers an, wenn der Mauszeiger über desssen Symbol bewegt wird</German>
+		<Italian>When checked, the defensive pacts of each rival are shown in the hover text for their icon.</Italian>
+		<Spanish>When checked, the defensive pacts of each rival are shown in the hover text for their icon.</Spanish>
+	</TEXT>
+
+<!-- Plot -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__LATLONGCOORDS_TEXT</Tag>
+		<English>Longitude / Latitude</English>
+		<French>Longitude / Latitude</French>
+		<German>Längengrad / Breitengrad</German>
+		<Italian>Longitude / Latitude</Italian>
+		<Spanish>Longitude / Latitude</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__LATLONGCOORDS_HOVER</Tag>
+		<English>When checked, the longitude and latitude are shown when hovering over a plot once you have centered the map.</English>
+		<French>When checked, the longitude and latitude are shown when hovering over a plot once you have centered the map.</French>
+		<German>Zeigt bei zentrierter Karte den Längen- und Breitengrad eines Geländefeldes an, wenn der Mauszeiger darüber bewegt wird</German>
+		<Italian>When checked, the longitude and latitude are shown when hovering over a plot once you have centered the map.</Italian>
+		<Spanish>When checked, the longitude and latitude are shown when hovering over a plot once you have centered the map.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__PARTIALBUILDS_TEXT</Tag>
+		<English>Partial Builds</English>
+		<French>Partial Builds</French>
+		<German>Unvollständige Bauten</German>
+		<Italian>Costruzione parziale</Italian>
+		<Spanish>Partial Builds</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__PARTIALBUILDS_HOVER</Tag>
+		<English>When checked, hovering over a plot that has partially-completed builds (improvements, routes, and chops) will show how many worker turns are required to complete them as long as your workers can actually do so.</English>
+		<French>When checked, hovering over a plot that has partially-completed builds (improvements, routes, and chops) will show how many worker turns are required to complete them as long as your workers can actually do so.</French>
+		<German>Zeigt, wenn der Mauszeiger über ein Geländefeld mit teilweise fertig gestellten Bauten (Modernisierungen, Straßen und Waldrodungen) bewegt wird, an, wie viele Runden ein Bautrupp noch benötigt, um sie fertig zu stellen, wenn der Bautrupp diese Aktionen beherrscht</German>
+		<Italian>Quando è selezionato, posizionare il cursore su una casella che contiene costruzioni (miglioramenti, strade, eccetera) parzialmente completate mostrerà quanti turni di lavoro sono necessari per completare l'opera.</Italian>
+		<Spanish>When checked, hovering over a plot that has partially-completed builds (improvements, routes, and chops) will show how many worker turns are required to complete them as long as your workers can actually do so.</Spanish>
+	</TEXT>
+
+<!-- Unit -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__UPDATEUNITNAMEONUPGRADE_TEXT</Tag>
+		<English>Upgrade Name</English>
+		<French>Upgrade Name</French>
+		<German>Modernisierung berücksichtigen</German>
+		<Italian>Aggiornamento del nome</Italian>
+		<Spanish>Upgrade Name</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__UPDATEUNITNAMEONUPGRADE_HOVER</Tag>
+		<English>When checked, if a unit's name contains its type (e.g. "Swordsman 5 of London"), it is replaced by the new type when upgrading (e.g. "Maceman 5 of London").</English>
+		<French>When checked, if a unit's name contains its type (e.g. "Swordsman 5 of London"), it is replaced by the new type when upgrading (e.g. "Maceman 5 of London").</French>
+		<German>Falls der Einheitentyp im Namen einer Einheit vorkommt, wird dieser bei einer Modernisierung mit der neuen Bezeichnung ersetzt (beispielsweise wird aus "Schwertkämpfer 5 aus London" dann "Axtkämpfer 5 aus London")</German>
+		<Italian>Quando è selezionato, se il nome di una Unità contiene il suo tipo (p. es. "Arciere I di Roma"), questo viene rimpiazzato dal nuovo tipo quando l'Unità viene aggiornata (p. es. "Balestriere I di Roma").</Italian>
+		<Spanish>When checked, if a unit's name contains its type (e.g. "Swordsman 5 of London"), it is replaced by the new type when upgrading (e.g. "Maceman 5 of London").</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__UNITEXPERIENCE_TEXT</Tag>
+		<English>Starting Experience</English>
+		<French>Starting Experience</French>
+		<German>Anfängliche Erfahrung</German>
+		<Italian>Starting Experience</Italian>
+		<Spanish>Starting Experience</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__UNITEXPERIENCE_HOVER</Tag>
+		<English>When checked, displays the experience points and number of available promotions a new unit will receive in the Train Unit button hover.</English>
+		<French>When checked, displays the experience points and number of available promotions a new unit will receive in the Train Unit button hover.</French>
+		<German>Zeigt die Erfahrungspunkte und die Anzahl der verfügbaren Beförderungen an, die eine neue Einheit erhalten wird, wenn der Mauszeiger im Baumenü einer Stadt über diese bewegt wird</German>
+		<Italian>When checked, displays the experience points and number of available promotions a new unit will receive in the Train Unit button hover.</Italian>
+		<Spanish>When checked, displays the experience points and number of available promotions a new unit will receive in the Train Unit button hover.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__UNITEXPERIENCEMODIFIERS_TEXT</Tag>
+		<English>Starting Experience Modifiers</English>
+		<French>Starting Experience Modifiers</French>
+		<German>Anfängliche Erfahrung (Modifikatoren)</German>
+		<Italian>Starting Experience Modifiers</Italian>
+		<Spanish>Starting Experience Modifiers</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__UNITEXPERIENCEMODIFIERS_HOVER</Tag>
+		<English>When checked, displays the experience point modifiers (buildings, military instructors, civics, and wonders) in the Train Unit button hover.</English>
+		<French>When checked, displays the experience point modifiers (buildings, military instructors, civics, and wonders) in the Train Unit button hover.</French>
+		<German>Zeigt die Erfahrungspunkt-Modifikatoren (Gebäude, Militärausbilder, Gesellschaftsformen und Wunder) an, wenn der Mauszeiger im Baumenü einer Stadt über eine Einheit bewegt wird</German>
+		<Italian>When checked, displays the experience point modifiers (buildings, military instructors, civics, and wonders) in the Train Unit button hover.</Italian>
+		<Spanish>When checked, displays the experience point modifiers (buildings, military instructors, civics, and wonders) in the Train Unit button hover.</Spanish>
+	</TEXT>
+
+<!-- Building -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGACTUALEFFECTS_TEXT</Tag>
+		<English>Building</English>
+		<French>Building</French>
+		<German>Gebäude</German>
+		<Italian>Edifici</Italian>
+		<Spanish>Building</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGACTUALEFFECTS_HOVER</Tag>
+		<English>When checked, the actual yield of [ICON_COMMERCE], [ICON_HAPPY], [ICON_HEALTHY], [ICON_GREATPEOPLE], and [ICON_DEFENSE] the building will produce for the city are displayed in the building hover text.</English>
+		<French>When checked, the actual yield of [ICON_COMMERCE], [ICON_HAPPY], [ICON_HEALTHY], [ICON_GREATPEOPLE], and [ICON_DEFENSE] the building will produce for the city are displayed in the building hover text.</French>
+		<German>Zeigt die tatsächlichen Erträge von [ICON_COMMERCE], [ICON_HAPPY], [ICON_HEALTHY], ICON_GREATPEOPLE] und [ICON_DEFENSE] an, die ein Gebäude für eine Stadt erzeugt, wenn der Mauszeiger über ein Gebäudesymbol bewegt wird</German>
+		<Italian>Quando è selezionato, nel testo a comparsa degli Edifici della Città viene mostrata la resa effettiva in [ICON_COMMERCE], [ICON_HAPPY], [ICON_HEALTHY], [ICON_GREATPEOPLE] e [ICON_DEFENSE] prodotta dagli edifici stessi.</Italian>
+		<Spanish>When checked, the actual yield of [ICON_COMMERCE], [ICON_HAPPY], [ICON_HEALTHY], [ICON_GREATPEOPLE], and [ICON_DEFENSE] the building will produce for the city are displayed in the building hover text.</Spanish>
+	</TEXT>
+
+<!-- Tech -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__SPEDUPTECHS_TEXT</Tag>
+		<English>Speeds Up ...</English>
+		<French>Speeds Up ...</French>
+		<German>Beschleunigt ...</German>
+		<Italian>Accelera ...</Italian>
+		<Spanish>Speeds Up ...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__SPEDUPTECHS_HOVER</Tag>
+		<English>When checked, displays the technologies that will be sped up by acquiring the technology you are hovering over (e.g. Animal Husbandry would be shown for Agriculture once you have acquired Hunting).</English>
+		<French>When checked, displays the technologies that will be sped up by acquiring the technology you are hovering over (e.g. Animal Husbandry would be shown for Agriculture once you have acquired Hunting).</French>
+		<German>Zeigt Technologien an, die durch das Vorhandensein der Technologie beschleunigt würden, über der sich der Mauszeiger befindet (beispielsweise würde "Tierzucht" bei "Landwirtschaft" erscheinen, wenn bereits "Jagd" erforscht wäre)</German>
+		<Italian>Quando è selezionato, nel testo a comparsa di una Tecnologia vengono mostrate le Tecnologie che risultano accelerate dall'acquisizione della Tecnologia in questione (p. es. una volta acquisita la tecnologia 'Caccia', se posizionerete il cursore sulla tecnologia 'Agricoltura' vi verrà ricordato che questa accelererà la tecnologia 'Allevamento di animali').</Italian>
+		<Spanish>When checked, displays the technologies that will be sped up by acquiring the technology you are hovering over (e.g. Animal Husbandry would be shown for Agriculture once you have acquired Hunting).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__TECHTRADEDENIAL_TEXT</Tag>
+		<English>Technology Trade Denial</English>
+		<French>Technology Trade Denial</French>
+		<German>Verweigerung von Technologien</German>
+		<Italian>Rifiuto di commercio di Tecnologie</Italian>
+		<Spanish>Technology Trade Denial</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__TECHTRADEDENIAL_HOVER</Tag>
+		<English>When checked, hovering over a technology in the "Won't Trade" column of the Foreign Advisor's TECHS page will show you the AI's reason for denying the trade.</English>
+		<French>When checked, hovering over a technology in the "Won't Trade" column of the Foreign Advisor's TECHS page will show you the AI's reason for denying the trade.</French>
+		<German>Zeigt die Gründe für die Verweigerung eines Handels an, wenn der Mauszeiger über eine Technologie in der Spalte "Unverhandelbar" auf der Seite "Technologien" des Auslandsberaters bewegt wird</German>
+		<Italian>Quando è selezionato, posizionando il cursore su una Tecnologia nella colonna 'Non commercia' della pagina delle Tecnologie del Consigliere Estero verrà visualizzata la ragione per cui l'AI rifiuta di commerciare tale Tecnologia.</Italian>
+		<Spanish>When checked, hovering over a technology in the "Won't Trade" column of the Foreign Advisor's TECHS page will show you the AI's reason for denying the trade.</Spanish>
+	</TEXT>
+
+<!-- Bonus -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BONUSTRADEDENIAL_TEXT</Tag>
+		<English>Resource Trade Denial</English>
+		<French>Resource Trade Denial</French>
+		<German>Verweigerung von Ressourcen</German>
+		<Italian>Rifiuto di commercio di Risosre</Italian>
+		<Spanish>Resource Trade Denial</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BONUSTRADEDENIAL_HOVER</Tag>
+		<English>When checked, hovering over a resource in the "Won't Trade" column of the Foreign Advisor's RESOURCES page will show you the AI's reason for denying the trade.</English>
+		<French>When checked, hovering over a resource in the "Won't Trade" column of the Foreign Advisor's RESOURCES page will show you the AI's reason for denying the trade.</French>
+		<German>Zeigt die Gründe für die Verweigerung eines Handels an, wenn der Mauszeiger über eine Ressource in der Spalte "Unverhandelbar" auf der Seite "Ressourcen" des Auslandsberaters bewegt wird</German>
+		<Italian>Quando è selezionato, posizionando il cursore su una Risorsa nella colonna 'Non commercia' della pagina delle Risorse del Consigliere Estero verrà visualizzata la ragione per cui l'AI rifiuta di commerciare tale Risorsa.</Italian>
+		<Spanish>When checked, hovering over a resource in the "Won't Trade" column of the Foreign Advisor's RESOURCES page will show you the AI's reason for denying the trade.</Spanish>
+	</TEXT>
+	
+
+<!-- City Screen -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BASECOMMERCE_TEXT</Tag>
+		<English>Commerce Subtotals</English>
+		<French>Commerce Subtotals</French>
+		<German>Einkommen mit Zwischensummen</German>
+		<Italian>Subtotali del Commercio</Italian>
+		<Spanish>Commerce Subtotals</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BASECOMMERCE_HOVER</Tag>
+		<English>When checked, the subtotal (total before modifiers) is shown when necessary for each commerce type in its hover.</English>
+		<French>When checked, the subtotal (total before modifiers) is shown when necessary for each commerce type in its hover.</French>
+		<German>Zeigt im Tooltip jeder Einkommensart eine Zwischensumme (Gesamtertrag vor Modifikatoren) an, falls dies erforderlich ist</German>
+		<Italian>Quando è selezionato, nel testo a comparsa di ogni tipo di Commercio viene mostrato (quando necessario) il relativo subtotale (il totale prima dei modificatori).</Italian>
+		<Spanish>When checked, the subtotal (total before modifiers) is shown when necessary for each commerce type in its hover.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__GREATPEOPLERATEBREAKDOWN_TEXT</Tag>
+		<English>Rate Breakdown</English>
+		<French>Rate Breakdown</French>
+		<German>Aufschlüsselung der Rate</German>
+		<Italian>Natalità dei Grandi Personaggi</Italian>
+		<Spanish>Rate Breakdown</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__GREATPEOPLERATEBREAKDOWN_HOVER</Tag>
+		<English>When checked, displays the individual [ICON_GREATPEOPLE] rate per turn for each type in the hover.</English>
+		<French>When checked, displays the individual [ICON_GREATPEOPLE] rate per turn for each type in the hover.</French>
+		<German>Zeigt im Tooltip die [ICON_GREATPEOPLE]/Runde für jede einzelne Art Große Persönlichkeit an</German>
+		<Italian>Quando è selezionato, nel testo a comparsa di ogni tipo di Grande Personaggio viene mostrato il tasso individuale di [ICON_GREATPEOPLE] per turno.</Italian>
+		<Spanish>When checked, displays the individual [ICON_GREATPEOPLE] rate per turn for each type in the hover.</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGSAVEDMAINTENANCE_TEXT</Tag>
+		<English>Maintenance</English>
+		<French>Maintenance</French>
+		<German>Unterhaltskosten</German>
+		<Italian>Mantenimento</Italian>
+		<Spanish>Maintenance</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGSAVEDMAINTENANCE_HOVER</Tag>
+		<English>When checked, displays the buildings that will affect maintenance costs ([ICON_GOLD]) and by how much.</English>
+		<French>When checked, displays the buildings that will affect maintenance costs ([ICON_GOLD]) and by how much.</French>
+		<German>Zeigt die Gebäude an, die Einfluss auf die Unterhaltskosten ([ICON_GOLD]) haben und welchen genau</German>
+		<Italian>Quando è selezionato, vengono visualizzati gli edifici che influenzano il mantenimento ([ICON_GOLD]) e l'ammontare con cui lo fanno.</Italian>
+		<Spanish>When checked, displays the buildings that will affect maintenance costs ([ICON_GOLD]) and by how much.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALFOOD_TEXT</Tag>
+		<English>Food</English>
+		<French>Food</French>
+		<German>Nahrung</German>
+		<Italian>Cibo</Italian>
+		<Spanish>Food</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALFOOD_HOVER</Tag>
+		<English>When checked, displays the buildings that will affect the [ICON_FOOD] rate and by how much.</English>
+		<French>When checked, displays the buildings that will affect the [ICON_FOOD] rate and by how much.</French>
+		<German>Zeigt die Gebäude an, die Einfluss auf [ICON_FOOD]/Runde haben und welchen genau</German>
+		<Italian>Quando è selezionato, vengono visualizzati gli edifici che influenzano la crescita alimentare ([ICON_FOOD]) e l'ammontare con cui lo fanno.</Italian>
+		<Spanish>When checked, displays the buildings that will affect the [ICON_FOOD] rate and by how much.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALPRODUCTION_TEXT</Tag>
+		<English>Production</English>
+		<French>Production</French>
+		<German>Produktion</German>
+		<Italian>Produzione</Italian>
+		<Spanish>Production</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALPRODUCTION_HOVER</Tag>
+		<English>When checked, displays the buildings that will affect the [ICON_PRODUCTION] rate and by how much.</English>
+		<French>When checked, displays the buildings that will affect the [ICON_PRODUCTION] rate and by how much.</French>
+		<German>Zeigt die Gebäude an, die Einfluss auf [ICON_PRODUCTION]/Runde haben und welchen genau</German>
+		<Italian>Quando è selezionato, vengono visualizzati gli edifici che influenzano la produzione ([ICON_PRODUCTION]) e l'ammontare con cui lo fanno.</Italian>
+		<Spanish>When checked, displays the buildings that will affect the [ICON_PRODUCTION] rate and by how much.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALCOMMERCE_TEXT</Tag>
+		<English>Commerce</English>
+		<French>Commerce</French>
+		<German>Einkommen</German>
+		<Italian>Commercio</Italian>
+		<Spanish>Commerce</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALCOMMERCE_HOVER</Tag>
+		<English>When checked, displays the buildings that will affect the [ICON_COMMERCE], [ICON_GOLD], [ICON_RESEARCH], [ICON_CULTURE], and [ICON_ESPIONAGE] rates and by how much.</English>
+		<French>When checked, displays the buildings that will affect the [ICON_COMMERCE], [ICON_GOLD], [ICON_RESEARCH], [ICON_CULTURE], and [ICON_ESPIONAGE] rates and by how much.</French>
+		<German>Zeigt die Gebäude an, die Einfluss auf [ICON_COMMERCE]/Runde, [ICON_GOLD]/Runde, [ICON_RESEARCH]/Runde, [ICON_CULTURE]/Runde und [ICON_ESPIONAGE]/Runde haben und welchen genau</German>
+		<Italian>Quando è selezionato, vengono visualizzati gli edifici che influenzano la crescita commerciale ([ICON_COMMERCE], [ICON_GOLD]), scientifica ([ICON_RESEARCH]), culturale ([ICON_CULTURE]) e spionistica ([ICON_ESPIONAGE]) e l'ammontare con cui lo fanno.</Italian>
+		<Spanish>When checked, displays the buildings that will affect the [ICON_COMMERCE], [ICON_GOLD], [ICON_RESEARCH], [ICON_CULTURE], and [ICON_ESPIONAGE] rates and by how much.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALHEALTH_TEXT</Tag>
+		<English>Health</English>
+		<French>Health</French>
+		<German>Gesundheit</German>
+		<Italian>Salute</Italian>
+		<Spanish>Health</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALHEALTH_HOVER</Tag>
+		<English>When checked, displays the buildings that will affect the [ICON_HEALTHY] and [ICON_UNHEALTHY] rates and by how much.</English>
+		<French>When checked, displays the buildings that will affect the [ICON_HEALTHY] and [ICON_UNHEALTHY] rates and by how much.</French>
+		<German>Zeigt die Gebäude an, die Einfluss auf [ICON_HEALTHY]/Runde und [ICON_UNHEALTHY]/Runde haben und welchen genau</German>
+		<Italian>Quando è selezionato, vengono visualizzati gli edifici che influenzano la situazione sanitaria ([ICON_HEALTHY] e [ICON_UNHEALTHY]) e l'ammontare con cui lo fanno.</Italian>
+		<Spanish>When checked, displays the buildings that will affect the [ICON_HEALTHY] and [ICON_UNHEALTHY] rates and by how much.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALHAPPINESS_TEXT</Tag>
+		<English>Happiness</English>
+		<French>Happiness</French>
+		<German>Zufriedenheit</German>
+		<Italian>Felicità</Italian>
+		<Spanish>Happiness</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALHAPPINESS_HOVER</Tag>
+		<English>When checked, displays the buildings that will affect the [ICON_HAPPY] and [ICON_UNHAPPY] rates and by how much.</English>
+		<French>When checked, displays the buildings that will affect the [ICON_HAPPY] and [ICON_UNHAPPY] rates and by how much.</French>
+		<German>Zeigt die Gebäude an, die Einfluss auf [ICON_HAPPY]/Runde und [ICON_UNHAPPY]/Runde haben und welchen genau</German>
+		<Italian>Quando è selezionato, vengono visualizzati gli edifici che influenzano il gradimento ([ICON_HAPPY] e [ICON_UNHAPPY]) e l'ammontare con cui lo fanno.</Italian>
+		<Spanish>When checked, displays the buildings that will affect the [ICON_HAPPY] and [ICON_UNHAPPY] rates and by how much.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALGREATPEOPLE_TEXT</Tag>
+		<English>Great People</English>
+		<French>Great People</French>
+		<German>Große Persönlichkeiten</German>
+		<Italian>Grandi Personaggi</Italian>
+		<Spanish>Great People</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALGREATPEOPLE_HOVER</Tag>
+		<English>When checked, displays the buildings that will affect the [ICON_GREATPEOPLE] rate and by how much.</English>
+		<French>When checked, displays the buildings that will affect the [ICON_GREATPEOPLE] rate and by how much.</French>
+		<German>Zeigt die Gebäude an, die Einfluss auf [ICON_GREATPEOPLE]/Runde haben und welchen genau</German>
+		<Italian>Quando è selezionato, vengono visualizzati gli edifici che influenzano la natalità dei Grandi Personaggi ([ICON_GREATPEOPLE]) e l'ammontare con cui lo fanno.</Italian>
+		<Spanish>When checked, displays the buildings that will affect the [ICON_GREATPEOPLE] rate and by how much.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALDEFENSE_TEXT</Tag>
+		<English>City Defense</English>
+		<French>City Defense</French>
+		<German>Stadtverteidigung</German>
+		<Italian>Difesa citt&#224;</Italian>
+		<Spanish>City Defense</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__BUILDINGADDITIONALDEFENSE_HOVER</Tag>
+		<English>When checked, displays the buildings that will affect the [ICON_DEFENSE] of the city and from bombardment and by how much.</English>
+		<French>When checked, displays the buildings that will affect the [ICON_DEFENSE] of the city and from bombardment and by how much.</French>
+		<German>Zeigt die Gebäude an, die Einfluss auf [ICON_DEFENSE] einer Stadt und ihren Schutz gegen Bomabardierungen haben und welchen genau</German>
+		<Italian>Quando è selezionato, vengono visualizzati gli edifici che influenzano la natalità dei Grandi Personaggi ([ICON_DEFENSE]) e l'ammontare con cui lo fanno.</Italian>
+		<Spanish>When checked, displays the buildings that will affect the [ICON_DEFENSE] of the city and from bombardment and by how much.</Spanish>
+	</TEXT>
+
+
+<!-- Action Buttons -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__CONSCRIPTUNIT_TEXT</Tag>
+		<English>Draft Unit Details</English>
+		<French>Draft Unit Details</French>
+		<German>Zwangsrekrutierung (Info)</German>
+		<Italian>Draft Unit Details</Italian>
+		<Spanish>Draft Unit Details</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__CONSCRIPTUNIT_HOVER</Tag>
+		<English>When checked, displays the full details of the unit that will be drafted in the Draft button hover.</English>
+		<French>When checked, displays the full details of the unit that will be drafted in the Draft button hover.</French>
+		<German>Zeigt alle Informationen über die Einheit an, die in einer Stadt rekrutiert werden kann, wenn der Mauszeiger über die entsprechende Schaltfläche im Stadt-Bildschirm bewegt wird</German>
+		<Italian>When checked, displays the full details of the unit that will be drafted in the Draft button hover.</Italian>
+		<Spanish>When checked, displays the full details of the unit that will be drafted in the Draft button hover.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__CONSCRIPTLIMIT_TEXT</Tag>
+		<English>Draft Limit</English>
+		<French>Draft Limit</French>
+		<German>Zwangsrekrutierung (Obergrenze)</German>
+		<Italian>Draft Limit</Italian>
+		<Spanish>Draft Limit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__CONSCRIPTLIMIT_HOVER</Tag>
+		<English>When checked, displays the number of units you can draft this turn and whether the city has already drafted in the Draft button hover.</English>
+		<French>When checked, displays the number of units you can draft this turn and whether the city has already drafted in the Draft button hover.</French>
+		<German>Zeigt die Anzahl der Einheiten an, die in dieser Runde rekrutiert werden können, und ob eine Stadt bereits rekrutiert hat, wenn der Mauszeiger über die entsprechende Schaltfläche im Stadt-Bildschirm bewegt wird</German>
+		<Italian>When checked, displays the number of units you can draft this turn and whether the city has already drafted in the Draft button hover.</Italian>
+		<Spanish>When checked, displays the number of units you can draft this turn and whether the city has already drafted in the Draft button hover.</Spanish>
+	</TEXT>
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__HURRYOVERFLOW_TEXT</Tag>
+		<English>Whip Button</English>
+		<French>Whip Button</French>
+		<German>Zwangsarbeit-Schaltfläche</German>
+		<Italian>Bottone dei sacrifici</Italian>
+		<Spanish>Whip Button</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__HURRYOVERFLOW_HOVER</Tag>
+		<English>When checked, the Whip Button hover includes the overflow ([ICON_PRODUCTION] and [ICON_GOLD]) created by applying the whip.</English>
+		<French>When checked, the Whip Button hover includes the overflow ([ICON_PRODUCTION] and [ICON_GOLD]) created by applying the whip.</French>
+		<German>Zeigt im Tooltip der Schaltfläche für den Einsatz von Zwangsarbeit zur Produktionsbeschleunigung den Überschuss an ([ICON_PRODUCTION] und [ICON_GOLD]), der durch deren Einsatz erzeugt wird</German>
+		<Italian>Quando è selezionato, il testo a comparsa del Bottone dei Sacrifici mostra il surplus ([ICON_PRODUCTION] e [ICON_GOLD]) generato dall'accelerazione mediante sacrifici.</Italian>
+		<Spanish>When checked, the Whip Button hover includes the overflow ([ICON_PRODUCTION] and [ICON_GOLD]) created by applying the whip.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__HURRYOVERFLOWINCLUDECURRENT_TEXT</Tag>
+		<English>Include Current</English>
+		<French>Include Current</French>
+		<German>Aktuelle Runde einbeziehen</German>
+		<Italian>Includi corrente</Italian>
+		<Spanish>Include Current</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__HURRYOVERFLOWINCLUDECURRENT_HOVER</Tag>
+		<English>When checked, the whip overflow calculation includes the current [ICON_PRODUCTION] rate. Since applying the whip usually affects the rate, the actual overflow may be different.</English>
+		<French>When checked, the whip overflow calculation includes the current [ICON_PRODUCTION] rate. Since applying the whip usually affects the rate, the actual overflow may be different.</French>
+		<German>Bezieht [ICON_PRODUCTION]/Runde einer Stadt aus der aktuellen Runde in die Berechnung des Produktionsüberschusses ein, da der Einsatz von Zwangsarbeit normalerweise die Rate beeinflusst und damit auch den tatsächlichen Überschuss verändern kann</German>
+		<Italian>Quando è selezionato, il calcolo del surplus da sacrifici include il tasso di produzione ([ICON_PRODUCTION]) corrente. Poichè l'accelerazione solitamente influenza tale tasso, il surplus effettivo può differire da quello mostrato.</Italian>
+		<Spanish>When checked, the whip overflow calculation includes the current [ICON_PRODUCTION] rate. Since applying the whip usually affects the rate, the actual overflow may be different.</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__REMOVESPECIALIST_TEXT</Tag>
+		<English>Remove Specialist Button</English>
+		<French>Remove Specialist Button</French>
+		<German>"Spezialist entfernen"-Schaltfläche</German>
+		<Italian>Bottone rimozione Specialisti</Italian>
+		<Spanish>Remove Specialist Button</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__REMOVESPECIALIST_HOVER</Tag>
+		<English>When checked, the hover text for the Remove Specialist button includes the same specialist information shown on the Add Specialist button.</English>
+		<French>When checked, the hover text for the Remove Specialist button includes the same specialist information shown on the Add Specialist button.</French>
+		<German>Zeigt im Tooltip der Schaltfläche "Spezialist entfernen" dieselben Informationen über einen Spezialisten an wie bei der Schaltfläche "Spezialist hinzufügen"</German>
+		<Italian>Quando è selezionato, il testo a comparsa del Bottone di rimozione degli Specialisti include le stesse informazioni mostrate da quello del Bottone di aggiunta degli Specialisti.</Italian>
+		<Spanish>When checked, the hover text for the Remove Specialist button includes the same specialist information shown on the Add Specialist button.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__CDAZOOMCITYDETAILS_TEXT</Tag>
+		<English>Zoom to City Details</English>
+		<French>Zoom to City Details</French>
+		<German>Zur Stadt zoomen</German>
+		<Italian>Bottone di Zoom Cittadino</Italian>
+		<Spanish>Zoom to City Details</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MISCHOVER__CDAZOOMCITYDETAILS_HOVER</Tag>
+		<English>When checked, the Zoom to City button includes detailed information about the city as when hovering over a city bar on the map.</English>
+		<French>When checked, the Zoom to City button includes detailed information about the city as when hovering over a city bar on the map.</French>
+		<German>Zeigt im Tooltip der Schaltfläche "Zur Stadt zoomen" dieselben ausführlichen Informationen an, wie wenn der Mauszeiger über einen Stadtbalken auf der Karte bewegt würde</German>
+		<Italian>Quando è selezionato, il testo a comparsa del Bottone di Zoom Cittadino nella schermata del 'Consigliere Interno' include informazioni dettagliate sulla Città, come quelle visualizzate quando si posiziona il cursore sulla Barra Cittadina sulla mappa.</Italian>
+		<Spanish>When checked, the Zoom to City button includes detailed information about the city as when hovering over a city bar on the map.</Spanish>
+	</TEXT>
+
+</Civ4GameText>

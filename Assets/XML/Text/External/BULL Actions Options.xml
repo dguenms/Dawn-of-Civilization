@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	BULL Actions
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	
+<!-- Ask Declare War -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__ASKDECLAREWARUNITS_TEXT</Tag>
+		<English>Offer to Declare War</English>
+		<French>Offer to Declare War</French>
+		<German>Kriegserklärung anbieten</German>
+		<Italian>Offer to Declare War</Italian>
+		<Spanish>Offer to Declare War</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__ASKDECLAREWARUNITS_HOVER</Tag>
+		<English>When checked, gives you the option to declare war when moving into a tile containing a rival unit. Always gives the option when moving into rival territory without open borders.</English>
+		<French>When checked, gives you the option to declare war when moving into a tile containing a rival unit. Always gives the option when moving into rival territory without open borders.</French>
+		<German>Bietet bei Betreten eines Geländefeldes die Möglichkeit einer Kriegserklärung an, wenn sich auf diesem eine gegnerische Einheit befindet (wird bei Betreten eines gegnerischen Geländefeldes ohne Vertrag über Offene Grenzen immer abgefragt)</German>
+		<Italian>When checked, gives you the option to declare war when moving into a tile containing a rival unit. Always gives the option when moving into rival territory without open borders.</Italian>
+		<Spanish>When checked, gives you the option to declare war when moving into a tile containing a rival unit. Always gives the option when moving into rival territory without open borders.</Spanish>
+	</TEXT>
+
+<!-- Sentry Healing -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__SENTRYHEALING_TEXT</Tag>
+		<English>Sentry While Healing</English>
+		<French>Sentry While Healing</French>
+		<German>Wache bei Heilung</German>
+		<Italian>Sentinella durante la guarigione</Italian>
+		<Spanish>Sentry While Healing</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__SENTRYHEALING_HOVER</Tag>
+		<English>When checked, units ordered to heal will awaken when they spot danger, acting like sentries.</English>
+		<French>When checked, units ordered to heal will awaken when they spot danger, acting like sentries.</French>
+		<German>Veranlasst Einheiten, die sich gerade heilen, bei Gefahr aktiv zu werden</German>
+		<Italian>Quando è selezionato, le Unità che hanno ricevuto l'ordine di curarsi si riattiveranno quando avvertono un pericolo, fungendo da sentinelle.</Italian>
+		<Spanish>When checked, units ordered to heal will awaken when they spot danger, acting like sentries.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__SENTRYHEALINGONLYNEUTRAL_TEXT</Tag>
+		<English>Only Neutral Territory</English>
+		<French>Only Neutral Territory</French>
+		<German>Nur in neutralem Gebiet</German>
+		<Italian>Solo in territorio neutrale</Italian>
+		<Spanish>Only Neutral Territory</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__SENTRYHEALINGONLYNEUTRAL_HOVER</Tag>
+		<English>When checked, if Sentry While Healing is enabled, units will awaken to danger only when in neutral territory. This stops your attacking force from waking up each turn outside an enemy city or your defenders inside friendly territory.</English>
+		<French>When checked, if Sentry While Healing is enabled, units will awaken to danger only when in neutral territory. This stops your attacking force from waking up each turn outside an enemy city or your defenders inside friendly territory.</French>
+		<German>Falls die Option "Wache bei Heilung" gewählt wurde, werden Einheiten nur bei Gefahr aktiv, wenn sie sich in neutralem Gebiet befinden (verhindert beispielsweise, dass sich heilende Einheiten während eines Angriffs auf eine feindliche Stadt oder verteidigende Einheiten in befreundetem Gebiet jede Runde wieder aktiv werden)</German>
+		<Italian>Quando è selezionato, se è stata abilitata l'opzione 'Sentinella durante la guarigione', le Unità che hanno ricevuto l'ordine di curarsi si riattiveranno quando avvertono un pericolo solamente se si trovano in territorio neutrale. Ciò vi eviterà alle vostre forze d'attacco di attivarsi ogni turno in prossimità di una Città nemica ed alle vostre forze di difesa di riattivarsi in territorio nemico.</Italian>
+		<Spanish>When checked, if Sentry While Healing is enabled, units will awaken to danger only when in neutral territory. This stops your attacking force from waking up each turn outside an enemy city or your defenders inside friendly territory.</Spanish>
+	</TEXT>
+
+<!-- Ignore Harmless Barbarians -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__IGNOREHARMLESSBARBARIANS_TEXT</Tag>
+		<English>Ignore Harmless Barbarians</English>
+		<French>Ignore Harmless Barbarians</French>
+		<German>Harmlose Barbaren ignorieren</German>
+		<Italian>Ignore Harmless Barbarians</Italian>
+		<Spanish>Ignore Harmless Barbarians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__IGNOREHARMLESSBARBARIANS_HOVER</Tag>
+		<English>When checked, barbarian units adjacent to your borders will not trigger a warning if they cannot enter.</English>
+		<French>When checked, barbarian units adjacent to your borders will not trigger a warning if they cannot enter.</French>
+		<German>Lässt keine Warnung erscheinen, wenn sich Barbaren nahe der eigenen Grenzen befinden, diese aber nicht überqueren können</German>
+		<Italian>When checked, barbarian units adjacent to your borders will not trigger a warning if they cannot enter.</Italian>
+		<Spanish>When checked, barbarian units adjacent to your borders will not trigger a warning if they cannot enter.</Spanish>
+	</TEXT>
+
+<!-- PreChop -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__PRECHOPFORESTS_TEXT</Tag>
+		<English>PreChop Forests</English>
+		<French>PreChop Forests</French>
+		<German>Warten vor Abholzung</German>
+		<Italian>Disboscamento incompleto</Italian>
+		<Spanish>PreChop Forests</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__PRECHOPFORESTS_HOVER</Tag>
+		<English>When checked, Workers ordered to chop a forest will stop with 1 turn remaining. Issue the order again to finish the chop.</English>
+		<French>When checked, Workers ordered to chop a forest will stop with 1 turn remaining. Issue the order again to finish the chop.</French>
+		<German>Stoppt Bautrupps, die die Aktion "Wald abholzen" ausführen, 1 Runde, bevor die Aktion beendet wird, und lässt sie auf einen weiteren Befehl warten</German>
+		<Italian>Quando è selezionato, i Lavoratori a cui è stato ordinato di tagliare una Foresta si fermeranno quando mancherà un turno al completamento dell'incarico. Per terminare il disboscamento è necessario impartire nuovamente l'ordine.</Italian>
+		<Spanish>When checked, Workers ordered to chop a forest will stop with 1 turn remaining. Issue the order again to finish the chop.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__PRECHOPIMPROVEMENTS_TEXT</Tag>
+		<English>PreChop Improvements</English>
+		<French>PreChop Improvements</French>
+		<German>Warten vor Fertigstellung</German>
+		<Italian>Miglioramento con disboscamento incompleto</Italian>
+		<Spanish>PreChop Improvements</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ACTIONS__PRECHOPIMPROVEMENTS_HOVER</Tag>
+		<English>When checked, Workers ordered to build an improvement that will remove a forest will stop with 1 turn remaining. Issue the order again to finish the improvement.</English>
+		<French>When checked, Workers ordered to build an improvement that will remove a forest will stop with 1 turn remaining. Issue the order again to finish the improvement.</French>
+		<German>Stoppt Bautrupps, die eine Modernisierung auf einem Wald-Geländefeld errichten und diesen damit entfernen würden, 1 Runde, bevor die Aktion beendet wird, und lässt sie auf einen weiteren Befehl warten</German>
+		<Italian>Quando è selezionato, i Lavoratori a cui è stato ordinato di tagliare una Foresta e successivamente costruire un miglioramento si fermeranno quando mancherà un turno al completamento dell'incarico. Per terminare la costruzione è necessario impartire nuovamente l'ordine.</Italian>
+		<Spanish>When checked, Workers ordered to build an improvement that will remove a forest will stop with 1 turn remaining. Issue the order again to finish the improvement.</Spanish>
+	</TEXT>
+
+</Civ4GameText>
