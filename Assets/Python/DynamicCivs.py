@@ -239,8 +239,8 @@ dMasterTitles = {
 	iEngland : "TXT_KEY_CIV_ENGLISH_VASSAL",
 	iNetherlands : "TXT_KEY_ADJECTIVE_TITLE",
 	iPortugal : "TXT_KEY_ADJECTIVE_TITLE",
-	iMongolia : "TXT_KEY_MONGOL_VASSAL",
-	iTurkey : "TXT_KEY_TURKISH_VASSAL",
+	iMongolia : "TXT_KEY_CIV_MONGOL_VASSAL",
+	iTurkey : "TXT_KEY_CIV_TURKISH_VASSAL",
 }
 
 dCommunistVassalTitlesGeneric = {
@@ -1278,7 +1278,7 @@ def vassalTitle(iPlayer, iMaster):
 	if iMaster == iSpain and short(iPlayer) == "Colombia":
 		return "TXT_KEY_CIV_SPANISH_COLOMBIA"
 
-	if not gc.getPlayer(iMaster).isReborn() and iMaster in lRebirths:
+	if iMaster not in lRebirths or not gc.getPlayer(iMaster).isReborn():
 		sSpecificTitle = getOrElse(getOrElse(dSpecificVassalTitles, iMaster, {}), iPlayer)
 		if sSpecificTitle: return sSpecificTitle
 	
