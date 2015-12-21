@@ -1168,19 +1168,19 @@ class CvEventManager(object):
 		cityName = popupReturn.getEditBoxString(0)
 		city.setName(cityName, not userData[1])
 		if CyGame().GetWorldBuilderMode() and not CyGame().isInAdvancedStart():
-			WBCityEditScreen.WBCityEditScreen().placeStats()
+			WBCityEditScreen.WBCityEditScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeStats()
 
 	def __eventWBPlayerScriptPopupApply(self, playerID, userData, popupReturn):
 		sScript = popupReturn.getEditBoxString(0)
 		gc.getPlayer(userData[0]).setScriptData(CvUtil.convertToStr(sScript))
-		WBPlayerScreen.WBPlayerScreen().placeScript()
+		WBPlayerScreen.WBPlayerScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
 		return
 
 	def __eventWBCityScriptPopupApply(self, playerID, userData, popupReturn):
 		sScript = popupReturn.getEditBoxString(0)
 		pCity = gc.getPlayer(userData[0]).getCity(userData[1])
 		pCity.setScriptData(CvUtil.convertToStr(sScript))
-		WBCityEditScreen.WBCityEditScreen().placeScript()
+		WBCityEditScreen.WBCityEditScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
 		return
 
 	def __eventWBUnitScriptPopupApply(self, playerID, userData, popupReturn):
@@ -1203,7 +1203,7 @@ class CvEventManager(object):
 		sScript = popupReturn.getEditBoxString(0)
 		pPlot = CyMap().plot(userData[0], userData[1])
 		pPlot.setScriptData(CvUtil.convertToStr(sScript))
-		WBPlotScreen.WBPlotScreen().placeScript()
+		WBPlotScreen.WBPlotScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
 		return
 
 	def __eventWBLandmarkPopupApply(self, playerID, userData, popupReturn):
