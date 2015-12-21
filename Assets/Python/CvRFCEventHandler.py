@@ -234,6 +234,9 @@ class CvRFCEventHandler:
 		iPlayer, city = argsList
 		iOwner = city.getPreviousOwner()
 		
+		if city.isCapital():
+			self.rnf.createStartingWorkers(iPlayer, (city.getX(), city.getY()))
+		
 		#utils.debugTextPopup('City acquired and kept: ' + city.getName() + '\nPlayer: ' + gc.getPlayer(iPlayer).getCivilizationShortDescription(0) + '\nOwner: ' + gc.getPlayer(iOwner).getCivilizationShortDescription(0))
 		
 		lTradingCompanyList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
@@ -262,7 +265,7 @@ class CvRFCEventHandler:
                         cnm.onCityBuilt(city)
 			
 		# starting workers
-		if gc.getPlayer(iOwner).getNumCities() == 1:
+		if city.isCapital():
 			self.rnf.createStartingWorkers(iOwner, (city.getX(), city.getY()))
 
 		#Rhye - delete culture of barbs and minor civs to prevent weird unhappiness
