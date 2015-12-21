@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Text strings for MapFinder
+
+	Copyright (c) 2009 The BUG Mod.
+  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+
+	<!-- Error Messages -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_REQUIRES_BULL</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]MapFinder requires BULL to function[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]MapFinder requires BULL to function[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]MapFinder benötigt BULL, um zu funktionieren[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]MapFinder richiede il Mod BULL per funzionare[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]MapFinder requires BULL to function[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_CANNOT_REGENERATE</Tag>
+		<English>[COLOR_WARNING_TEXT]MapFinder cannot regenerate the map[COLOR_REVERT][NEWLINE]Exit to the main menu, start a new game, and try again.</English>
+		<French>[COLOR_WARNING_TEXT]MapFinder cannot regenerate the map[COLOR_REVERT][NEWLINE]Exit to the main menu, start a new game, and try again.</French>
+		<German>[COLOR_WARNING_TEXT]MapFinder: Neuerstellung der Karte nicht möglich[COLOR_REVERT][NEWLINE]Gehen Sie zurück zum Hauptmenü, beginnen Sie eine neue Partie und versuchen Sie es erneut.</German>
+		<Italian>[COLOR_WARNING_TEXT]MapFinder non può rigenerare la mappa[COLOR_REVERT][NEWLINE]Esci al menù principale, inizia una nuova partita e riprova.</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]MapFinder cannot regenerate the map[COLOR_REVERT][NEWLINE]Exit to the main menu, start a new game, and try again.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_REGENERATE_FAILED</Tag>
+		<English>[COLOR_WARNING_TEXT]MapFinder failed to regenerate the map[COLOR_REVERT][NEWLINE]Exit to the main menu, start a new game, and try again.</English>
+		<French>[COLOR_WARNING_TEXT]MapFinder failed to regenerate the map[COLOR_REVERT][NEWLINE]Exit to the main menu, start a new game, and try again.</French>
+		<German>[COLOR_WARNING_TEXT]MapFinder: Neuerstellung der Karte fehlgeschlagen[COLOR_REVERT][NEWLINE]Gehen Sie zurück zum Hauptmenü, beginnen Sie eine neue Partie und versuchen Sie es erneut.</German>
+		<Italian>[COLOR_WARNING_TEXT]MapFinder non è riuscito a rigenerare la mappa[COLOR_REVERT][NEWLINE]Esci al menù principale, inizia una nuova partita e riprova.</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]MapFinder failed to regenerate the map[COLOR_REVERT][NEWLINE]Exit to the main menu, start a new game, and try again.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_INVALID_PATH</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]MapFinder path is invalid: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]MapFinder path is invalid: %s1[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]MapFinder-Dateipfad ist ungültig: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]Il percorso di MapFinder non è valido: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]MapFinder path is invalid: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_INVALID_SYSTEM_FILE</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]MapFinder system file not found: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]MapFinder system file not found: %s1[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]MapFinder-Systemdatei nicht gefunden: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]Il file di sistema di MapFinder non è stato trovato: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]MapFinder system file not found: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_INVALID_RULE_FILE</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]MapFinder rule file not found: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]MapFinder rule file not found: %s1[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]MapFinder-Regeldatei nicht gefunden: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]Il file delle regole di MapFinder non è stato trovato: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]MapFinder rule file not found: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_INVALID_SAVE_PATH</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]MapFinder save file path is invalid: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]MapFinder save file path is invalid: %s1[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]MapFinder-Dateipfad ist ungültig: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]Il percorso di MapFinder non è valido: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]MapFinder save file path is invalid: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<!-- Status Screen -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_SCREEN_TITLE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]MapFinder[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]MapFinder[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]MapFinder[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]MapFinder[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]MapFinder[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_TOTAL_MAPS</Tag>
+		<English>Maps</English>
+		<French>Cartes</French>
+		<German>Karten</German>
+		<Italian>Mappe</Italian>
+		<Spanish>Mapas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_TOTAL_SAVES</Tag>
+		<English>Saves</English>
+		<French>Sauves</French>
+		<German>Spielstände</German>
+		<Italian>Salvataggi</Italian>
+		<Spanish>Ahorras</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_STOP_SHORTCUT</Tag>
+		<English>ALT + CTRL + SHIFT + G to Stop</English>
+		<French>ALT + CTRL + SHIFT + G pour arrêter</French>
+		<German>Drücken Sie [STRG + ALT + UMSCHALT + G], um MapFinder zu beenden.</German>
+		<Italian>ALT + CTRL + SHIFT + G per arrestare</Italian>
+		<Spanish>ALT + CTRL + SHIFT + G para parar</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_REGNERATING</Tag>
+		<English>Regenerating Map...</English>
+		<French>Regenerating Map...</French>
+		<German>Neuerstellung der Karte...</German>
+		<Italian>Rigenerazione Mappa...</Italian>
+		<Spanish>Regenerating Map...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_SAVING</Tag>
+		<English>Saving Game...</English>
+		<French>Saving Game...</French>
+		<German>Speicherung der Partie...</German>
+		<Italian>Salvataggio partita...</Italian>
+		<Spanish>Saving Game...</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_ALREADY_RUNNING</Tag>
+		<English>[COLOR_WARNING_TEXT]MapFinder is already running[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]MapFinder est déjà lancé[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]MapFinder wird bereits ausgeführt[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]MapFinder è già in esecuzione[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]MapFinder ya está en ejecución[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_NOT_RUNNING</Tag>
+		<English>[COLOR_WARNING_TEXT]MapFinder is not running[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]MapFinder n'est pas en marche[COLOR_REVERT]</French>
+		<German>M[COLOR_WARNING_TEXT]MapFinder wird nicht ausgeführt[COLOR_REVERT]</German>
+		<Italian>M[COLOR_WARNING_TEXT]apFinder non è in esecuzione[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]MapFinder no está funcionando[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAPFINDER_STOPPED</Tag>
+		<English>MapFinder stopped</English>
+		<French>MapFinder arrêté</French>
+		<German>MapFinder wurde beendet</German>
+		<Italian>MapFinder arrestato</Italian>
+		<Spanish>MapFinder paró</Spanish>
+	</TEXT>
+
+</Civ4GameText>
