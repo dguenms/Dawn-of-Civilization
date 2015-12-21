@@ -9,6 +9,18 @@
 		<English>The Vikings</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_DESC</Tag>
+		<English>The Swedish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_SHORT_DESC</Tag>
+		<English>Sweden</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SWEDEN_ADJECTIVE</Tag>
+		<English>Swedish</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_PEOPLES</Tag>
 		<English>Norse Peoples</English>
 	</TEXT>

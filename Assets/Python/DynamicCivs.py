@@ -1184,7 +1184,7 @@ def specificAdjective(iPlayer):
 			
 	elif iPlayer == iEngland:
 		if tPlayer.isHasTech(iConstitution) and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
-			return "TXT_LEY_CIV_ENGLAND_BRITISH"
+			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 			
 	elif iPlayer == iHolyRome:
 		if pGermany.isAlive() and iCivicOrganization == iCivicRepresentation:
