@@ -110,9 +110,12 @@ class Religions:
 					pHolyCity.setHasRealBuilding(iChristianShrine, True)
 					bFound = False
 					while not bFound:
-						pApostolicCity = self.selectRandomCityReligion(iChristianity)
-						if pApostolicCity.getPopulation() > 4 and gc.getPlayer(pApostolicCity.getOwner()).getStateReligion() == iChristianity:
-							bFound = True
+						tCity = self.selectRandomCityReligion(iChristianity)
+						if tCity:
+							x, y = tCity
+							pApostolicCity = gc.getMap().plot(x, y).getPlotCity()
+							if pApostolicCity.getPopulation() > 4 and gc.getPlayer(pApostolicCity.getOwner()).getStateReligion() == iChristianity:
+								bFound = True
 					pApostolicCity.setHasRealBuilding(iApostolicPalace, True)
 					gc.getGame().setHolyCity(iChristianity, pApostolicCity, False)
 
