@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CONGO_DESC</Tag>
+		<English>The Congolese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CONGO_PEOPLES</Tag>
+		<English>Congolese Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CONGO_DEFAULT</Tag>
+		<English>Kingdom of Kongo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CONGO_REPUBLIC</Tag>
+		<English>Democratic Republic of the Congo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CONGO_FASCIST</Tag>
+		<English>Republic of Zaire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CONGO_ARTICLE</Tag>
+		<English>the Congo</English>
+	</TEXT>
+</Civ4GameText>
