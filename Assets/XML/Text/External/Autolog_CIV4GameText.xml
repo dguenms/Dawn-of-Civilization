@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by Hazem Shams al'Din (Baraka Designs) -->
+<!--
+    BUG Option Screen Text
+
+    Copyright (c) 2007, BUG Mod.
+
+    This file is part of Civilization IV BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_BC</Tag>
+        <English>[SPACE]BC</English>
+        <French>[SPACE]BC</French>
+        <German>[SPACE]v.Chr.</German>
+        <Italian>[SPACE]a.C.</Italian>
+        <Spanish>[SPACE]BC</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_AD</Tag>
+        <English>[SPACE]AD</English>
+        <French>[SPACE]AD</French>
+        <German>[SPACE]n.Chr.</German>
+        <Italian>[SPACE]d.C.</Italian>
+        <Spanish>[SPACE]AD</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_TURN</Tag>
+        <English>Turn %s1 (%s2) [%s3]</English>
+        <French>Turn %s1 (%s2) [%s3]</French>
+        <German>Runde %s1 (%s2) [%s3]</German>
+        <Italian>Turno %s1 (%s2) [%s3]</Italian>
+        <Spanish>Turn %s1 (%s2) [%s3]</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_LOGGING_GAME</Tag>
+        <English>Logging Game to File: %s1</English>
+        <French>Logging Game to File: %s1</French>
+        <German>Protokolliere Partie in Datei: %s1</German>
+        <Italian>Partita registrata nel file: %s1</Italian>
+        <Spanish>Logging Game to File: %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_POPUP_QUESTION</Tag>
+        <English>Do you want to log this game?</English>
+        <French>Do you want to log this game?</French>
+        <German>Möchten Sie diese Partie protokollieren?</German>
+        <Italian>Vuoi registrare questa partita?</Italian>
+        <Spanish>Do you want to log this game?</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_POPUP_ANSWERS</Tag>
+        <English>OK for YES, Cancel for NO</English>
+        <French>OK for YES, Cancel for NO</French>
+        <German>Klicken Sie auf "Weiter" für JA und auf "Abbruch" für NEIN</German>
+        <Italian>Clicca su OK se la risposta è SI, su Cancel se è NO</Italian>
+        <Spanish>OK for YES, Cancel for NO</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_ENTER_LOG_NAME</Tag>
+        <English>Enter new or existing log file name</English>
+        <French>Enter new or existing log file name</French>
+        <German>Geben Sie einen neuen oder bereits existierenden Namen für die Protokolldatei ein</German>
+        <Italian>Inserisci il nome di un file (nuovo o già esistente) per il Registro</Italian>
+        <Spanish>Enter new or existing log file name</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_NO_LOGGING</Tag>
+        <English>No Logging of this Game</English>
+        <French>No Logging of this Game</French>
+        <German>Diese Partie wird nicht protokolliert</German>
+        <Italian>Questa partita non viene registrata</Italian>
+        <Spanish>No Logging of this Game</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CUSTOM_ENTRY</Tag>
+        <English>Enter custom log entry</English>
+        <French>Enter custom log entry</French>
+        <German>Geben sie einen eigenen Protokolleintrag ein</German>
+        <Italian>Inserisci una nota personalizzata nel Registro</Italian>
+        <Spanish>Enter custom log entry</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_BATTLE_STATS</Tag>
+        <English>Battle Stats:</English>
+        <French>Battle Stats:</French>
+        <German>Kampfstatistiken:</German>
+        <Italian>Statistiche di combattimento:</Italian>
+        <Spanish>Battle Stats:</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_UNITS_VICTORIOUS_ATTACKING</Tag>
+        <English>Units victorious while attacking: %d1</English>
+        <French>Units victorious while attacking: %d1</French>
+        <German>Siegreiche angreifende Einheiten: %d1</German>
+        <Italian>Unità vittoriose in attacco: %d1</Italian>
+        <Spanish>Units victorious while attacking: %d1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_UNITS_VICTORIOUS_DEFENDING</Tag>
+        <English>Units victorious while defending: %d1</English>
+        <French>Units victorious while defending: %d1</French>
+        <German>Siegreiche verteidigende Einheiten: %d1</German>
+        <Italian>Unità vittoriose in difesa: %d1</Italian>
+        <Spanish>Units victorious while defending: %d1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_UNITS_WITHDRAWING_ATTACKING</Tag>
+        <English>Units withdrawing while attacking: %d1</English>
+        <French>Units withdrawing while attacking: %d1</French>
+        <German>Zurückgezogene angreifende Einheiten: %d1</German>
+        <Italian>Unità in ritirata: %d1</Italian>
+        <Spanish>Units withdrawing while attacking: %d1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_UNITS_DEFEATED_ATTACKING</Tag>
+        <English>Units defeated while attacking: %d1</English>
+        <French>Units defeated while attacking: %d1</French>
+        <German>Besiegte angreifende Einheiten: %d1</German>
+        <Italian>Unità sconfitte in attacco: %d1</Italian>
+        <Spanish>Units defeated while attacking: %d1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_UNITS_DEFEATED_DEFENDING</Tag>
+        <English>Units defeated while defending: %d1</English>
+        <French>Units defeated while defending: %d1</French>
+        <German>Besiegte verteidigende Einheiten: %d1</German>
+        <Italian>Unità sconfitte in difesa: %d1</Italian>
+        <Spanish>Units defeated while defending: %d1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_UNITS_ESCAPING_ATTACKING</Tag>
+        <English>Units escaping while attacking: %d1</English>
+        <French>Units escaping while attacking: %d1</French>
+        <German>Geflohene angreifende Einheiten: %d1</German>
+        <Italian>Unità in fuga: %d1</Italian>
+        <Spanish>Units escaping while attacking: %d1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_BATTLE_STATS_WRITTEN</Tag>
+        <English>Battle stats written to log and reset</English>
+        <French>Battle stats written to log and reset</French>
+        <German>Kampfstatistiken im Protokoll verzeichnet und zurückgesetzt</German>
+        <Italian>Statistiche di combattimento scritte nel Registro</Italian>
+        <Spanish>Battle stats written to log and reset</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_AFTER_END_TURN</Tag>
+        <English>After End Turn:</English>
+        <French>After End Turn:</French>
+        <German>Nach dem Beenden der Runde:</German>
+        <Italian>Dopo la fine del turno:</Italian>
+        <Spanish>After End Turn:</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_WHIP_APPLIED</Tag>
+        <English>The whip was applied in %s1</English>
+        <French>The whip was applied in %s1</French>
+        <German>Zwangsarbeit wurde in %s1 eingesetzt</German>
+        <Italian>Produzione accelerata a %s1</Italian>
+        <Spanish>The whip was applied in %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CONSCRIPT</Tag>
+        <English>A %s1 was drafted in %s2</English>
+        <French>A %s1 was drafted in %s2</French>
+        <German>[NUM1:Ein:Eine:Ein:Einige:Einige:Einige] %s1 wurd[NUM1:e:en] in %s2 aufgestellt</German>
+        <Italian>Un'unità %s1 è stata coscritta a %s2</Italian>
+        <Spanish>A %s1 was drafted in %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_WHIP_ANGER_DECREASED</Tag>
+        <English>Whip anger has decreased in %s1</English>
+        <French>Whip anger has decreased in %s1</French>
+        <German>Unzufriedenheit über Zwangsarbeit in %s1 hat sich verringert</German>
+        <Italian>L'infelicità da sacrifici è diminuita a %s1</Italian>
+        <Spanish>Whip anger has decreased in %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DRAFT_ANGER_DECREASED</Tag>
+        <English>Draft anger has decreased in %s1</English>
+        <French>Draft anger has decreased in %s1</French>
+        <German>Unzufriedenheit über Zwangsrekrutierung in %s1 hat sich verringert</German>
+        <Italian>L'infelicità da coscrizione è diminuita a %s1</Italian>
+        <Spanish>Draft anger has decreased in %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_OTHER_PLAYER_ACTIONS</Tag>
+        <English>Other Player Actions:</English>
+        <French>Other Player Actions:</French>
+        <German>Andere Aktionen der Spieler:</German>
+        <Italian>Azioni degli altri giocatori:</Italian>
+        <Spanish>Other Player Actions:</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_FIRST_CONTACT_TEAM</Tag>
+        <English>Team contact made: %s1</English>
+        <French>Team contact made: %s1</French>
+        <German>Kontakt aufgenommen (Team): %s1</German>
+        <Italian>Squadra contattata: %s1</Italian>
+        <Spanish>Team contact made: %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_FIRST_CONTACT_PLAYER</Tag>
+        <English>Player contact made: %s1 of %s2</English>
+        <French>Player contact made: %s1 of %s2</French>
+        <German>Kontakt aufgenommen (Spieler): %s1 (%s2)</German>
+        <Italian>Giocatore contattato: %s1 (%s2)</Italian>
+        <Spanish>Player contact made: %s1 of %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_COMMERCE_GOLD_SLIDERS</Tag>
+        <English>%d1%% %s2: %d3 per turn, %d4 in the bank</English>
+        <French>%d1%% %s2: %d3 per turn, %d4 in the bank</French>
+        <German>%d1%% %s2: %d3 pro Runde, %d4 Goldvorrat</German>
+        <Italian>%d1%% %s2: %d3 per turno, %d4 in banca</Italian>
+        <Spanish>%d1%% %s2: %d3 per turn, %d4 in the bank</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_COMMERCE_OTHER_SLIDERS</Tag>
+        <English>%d1%% %s2: %d3 per turn</English>
+        <French>%d1%% %s2: %d3 per turn</French>
+        <German>%d1%% %s2: %d3 pro Runde</German>
+        <Italian>%d1%% %s2: %d3 per turno</Italian>
+        <Spanish>%d1%% %s2: %d3 per turn</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_WHILE_ATTACKING_DEFEATS</Tag>
+        <English>While attacking %s1, %s2 (%s3/%d4) defeats %s5 %s6 (Prob Victory: %s7%s8)</English>
+        <French>While attacking %s1, %s2 (%s3/%d4) defeats %s5 %s6 (Prob Victory: %s7%s8)</French>
+        <German>[NUM2:Angreifender:Angreifende:Angreifendes:Angreifende:Angreifende:Angreifende] %s2:1_UnitName (%s3/%d4) [NUM2:besiegte:besiegten] %s1 %[s5_civ_adjective][NUM6:en:e:es:e:e:e] %s6:4_EnUName (Erfolgsaussicht: %s7%s8)</German>
+        <Italian>Attaccando %s1, l'unità %s2 (%s3/%d4) ha sconfitto %s6 %s5 (probabilità di vittoria: %s7%s8)</Italian>
+        <Spanish>While attacking %s1, %s2 (%s3/%d4) defeats %s5 %s6 (Prob Victory: %s7%s8)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_WHILE_DEFENDING_DEFEATS</Tag>
+        <English>While defending %s1, %s2 (%s3/%d4) defeats %s5 %s6 (Prob Victory: %s7%s8)</English>
+        <French>While defending %s1, %s2 (%s3/%d4) defeats %s5 %s6 (Prob Victory: %s7%s8)</French>
+        <German>[NUM2:Verteidigender:Verteidigende:Verteidigendes:Verteidigende:Verteidigenden:Verteidigende] %s2:1_UnitName (%s3/%d4) [NUM2:besiegte:besiegten] %s1 %[s5_civ_adjective][NUM6:en:e:es:e:e:e] %s6:4_EnUName (Erfolgsaussicht: %s7%s8)</German>
+        <Italian>Difendendo %s1, l'unità %s2 (%s3/%d4) ha sconfitto %s6 %s5 (probabilità di vittoria: %s7%s8)</Italian>
+        <Spanish>While defending %s1, %s2 (%s3/%d4) defeats %s5 %s6 (Prob Victory: %s7%s8)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_WHILE_ATTACKING_LOSES</Tag>
+        <English>While attacking %s1, %s2 loses to %s3 %s4 (%s5/%d6) (Prob Victory: %s7%s8)</English>
+        <French>While attacking %s1, %s2 loses to %s3 %s4 (%s5/%d6) (Prob Victory: %s7%s8)</French>
+        <German>[NUM2:Angreifender:Angreifende:Angreifendes:Angreifende:Angreifende:Angreifende] %s2:1_UnitName [NUM2:wurde:wurden] %s1 von %[s3_civ_adjective][NUM4:em:er:em:en:en:en] %s4:3_EnUName (%s5/%d6) besiegt (Erfolgsaussicht: %s7%s8)</German>
+        <Italian>Attaccando %s1, l'unità %s2 è stata sconfitta da %s4 %s3 (%s5/%d6) (probabilità di vittoria: %s7%s8)</Italian>
+        <Spanish>While attacking %s1, %s2 loses to %s3 %s4 (%s5/%d6) (Prob Victory: %s7%s8)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_WHILE_DEFENDING_LOSES</Tag>
+        <English>While defending %s1, %s2 loses to %s3 %s4 (%s5/%d6) (Prob Victory: %s7%s8)</English>
+        <French>While defending %s1, %s2 loses to %s3 %s4 (%s5/%d6) (Prob Victory: %s7%s8)</French>
+        <German>[NUM2:Verteidigender:Verteidigende:Verteidigendes:Verteidigende:Verteidigenden:Verteidigende] %s2:1_UnitName [NUM2:wurde:wurden] %s1 von %[s3_civ_adjective][NUM4:em:er:em:en:en:en] %s4:3_EnUName (%s5/%d6) besiegt (Erfolgsaussicht: %s7%s8)</German>
+        <Italian>Difendendo %s1, l'unità %s2 è stata sconfitta da %s4 %s3 (%s5/%d6) (probabilità di vittoria: %s7%s8)</Italian>
+        <Spanish>While defending %s1, %s2 loses to %s3 %s4 (%s5/%d6) (Prob Victory: %s7%s8)</Spanish>
+    </TEXT>   
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_WHILE_ATTACKING_ESCAPES</Tag>
+        <English>While attacking, %s1 escapes from %s2 %s3 (Prob Victory: %s4%s5)</English>
+        <French>While attacking, %s1 escapes from %s2 %s3 (Prob Victory: %s4%s5)</French>
+        <German>[NUM1:Angreifender:Angreifende:Angreifendes:Angreifende:Angreifende:Angreifende] %s1:1_UnitName [NUM1:floh:flohen] aus dem Kampf gegen %[s2_civ_adjective][NUM3:en:e:es:e:e:e] %s3:4_EnUName (Erfolgsaussicht: %s4%s5)</German>
+        <Italian>Attaccando, l'unità %s1 si è ritirata davanti all'unità %s3 %s2 (probabilità di vittoria: %s4%s5)</Italian>
+        <Spanish>While attacking, %s1 escapes from %s2 %s3 (Prob Victory: %s4%s5)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_WHILE_ATTACKING_DECIMATES</Tag>
+        <English>While attacking, %s1 decimates %s2 %s3 (Prob Victory: %s4%s5)</English>
+        <French>While attacking, %s1 decimates %s2 %s3 (Prob Victory: %s4%s5)</French>
+        <German>[NUM1:Angreifender:Angreifende:Angreifendes:Angreifende:Angreifende:Angreifende] %s1:1_UnitName [NUM1:hat:haben] %[s2_civ_adjective][NUM3:en:e:es:e:e:e] %s3:4_EnUName dezimiert (Erfolgsaussicht: %s4%s5)</German>
+        <Italian>Attaccando, l'unità %s1 ha decimato l'unità %s3 %s2 (probabilità di vittoria: %s4%s5)</Italian>
+        <Spanish>While attacking, %s1 decimates %s2 %s3 (Prob Victory: %s4%s5)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_ON_A_LAKE</Tag>
+        <English>on a lake</English>
+        <French>on a lake</French>
+        <German>an einem See</German>
+        <Italian>sul lago</Italian>
+        <Spanish>on a lake</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_JUST_OFF_SHORE</Tag>
+        <English>just off shore</English>
+        <French>just off shore</French>
+        <German>vor der Küste</German>
+        <Italian>sulla costa</Italian>
+        <Spanish>just off shore</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_ON_THE_HIGH_SEAS</Tag>
+        <English>on the high seas</English>
+        <French>on the high seas</French>
+        <German>auf hoher See</German>
+        <Italian>in alto mare</Italian>
+        <Spanish>on the high seas</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IN_THE_WILD</Tag>
+        <English>in the wild</English>
+        <French>in the wild</French>
+        <German>in der Wildnis</German>
+        <Italian>in territorio selvaggio</Italian>
+        <Spanish>in the wild</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IN_TERRITORY</Tag>
+        <English>in %s1 territory</English>
+        <French>in %s1 territory</French>
+        <German>in %[s1]em Hoheitsgebiet</German>
+        <Italian>in territorio %s1</Italian>
+        <Spanish>in %s1 territory</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IN_TERRITORY_AT</Tag>
+        <English>%s1 at %s2</English>
+        <French>%s1 at %s2</French>
+        <German>%s1 bei %s2</German>
+        <Italian>%s1, a %s2</Italian>
+        <Spanish>%s1 at %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IN_TERRITORY_NEAR</Tag>
+        <English>%s1 near %s2</English>
+        <French>%s1 near %s2</French>
+        <German>%s1 nahe %s2</German>
+        <Italian>%s1, presso %s2</Italian>
+        <Spanish>%s1 near %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_FINISH_BUILDING</Tag>
+        <English>%s1 finishes: %s2</English>
+        <French>%s1 finishes: %s2</French>
+        <German>%s1 hat errichtet: %s2</German>
+        <Italian>%s1 ha completato l'edificio %s2</Italian>
+        <Spanish>%s1 finishes: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_FINISH_PROJECT</Tag>
+        <English>%s1 finishes: %s2</English>
+        <French>%s1 finishes: %s2</French>
+        <German>%s1 hat errichtet: %s2</German>
+        <Italian>%s1 ha completato il progetto %s2</Italian>
+        <Spanish>%s1 finishes: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_FINISH_UNIT</Tag>
+        <English>%s1 finishes: %s2</English>
+        <French>%s1 finishes: %s2</French>
+        <German>%s1 hat aufgestellt: %s2</German>
+        <Italian>%s1 ha completato l'unità %s2</Italian>
+        <Spanish>%s1 finishes: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_PROMOTION</Tag>
+        <English>%s1 promoted: %s2</English>
+        <French>%s1 promoted: %s2</French>
+        <German>Beförderung für %s1: %s2</German>
+        <Italian>L'unità %s1 è stata promossa (%s2)</Italian>
+        <Spanish>%s1 promoted: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT</Tag>
+        <English>Tribal village results: %s1</English>
+        <French>Tribal village results: %s1</French>
+        <German>Geschenk eines Stammesdorfes: %s1</German>
+        <Italian>Scoperto un villaggio tribale: %s1</Italian>
+        <Spanish>Tribal village results: %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_NOTHING</Tag>
+        <English>nothing</English>
+        <French>nothing</French>
+        <German>nichts</German>
+        <Italian>nessun beneficio ricevuto</Italian>
+        <Spanish>nothing</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_LITTLEGOLD</Tag>
+        <English>a little gold</English>
+        <French>a little gold</French>
+        <German>etwas Gold</German>
+        <Italian>ricevuta una piccola quantità d'oro</Italian>
+        <Spanish>a little gold</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_LOTSOFGOLD</Tag>
+        <English>lots of gold</English>
+        <French>lots of gold</French>
+        <German>viel Gold</German>
+        <Italian>ricevuta una grossa quantità d'oro</Italian>
+        <Spanish>lots of gold</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_MAP</Tag>
+        <English>map</English>
+        <French>map</French>
+        <German>Karte</German>
+        <Italian>ricevuta una mappa locale</Italian>
+        <Spanish>map</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_SETTLER</Tag>
+        <English>settler</English>
+        <French>settler</French>
+        <German>Siedler</German>
+        <Italian>ricevuto un Colono</Italian>
+        <Spanish>settler</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_WARRIOR</Tag>
+        <English>warrior</English>
+        <French>warrior</French>
+        <German>Krieger</German>
+        <Italian>ricevuto un Guerriero</Italian>
+        <Spanish>warrior</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_SCOUT</Tag>
+        <English>scout</English>
+        <French>scout</French>
+        <German>Späher</German>
+        <Italian>ricevuto uno Scout</Italian>
+        <Spanish>scout</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_WORKER</Tag>
+        <English>worker</English>
+        <French>worker</French>
+        <German>Bautrupp</German>
+        <Italian>ricevuto uno Lavoratore</Italian>
+        <Spanish>worker</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_XP</Tag>
+        <English>experience</English>
+        <French>experience</French>
+        <German>Erfahrung</German>
+        <Italian>l'unità ha guadagnato esperienza</Italian>
+        <Spanish>experience</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_HEALING</Tag>
+        <English>healing</English>
+        <French>healing</French>
+        <German>Heilung</German>
+        <Italian>l'unità è stata curata</Italian>
+        <Spanish>healing</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_TECH</Tag>
+        <English>technology</English>
+        <French>technology</French>
+        <German>Technologie</German>
+        <Italian>ricevuta una Tecnologia</Italian>
+        <Spanish>technology</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_WEAKHOSTILES</Tag>
+        <English>weak hostiles</English>
+        <French>weak hostiles</French>
+        <German>schwache Barbaren</German>
+        <Italian>alcuni abitanti si sono rivelati ostili</Italian>
+        <Spanish>weak hostiles</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VILLAGE_RESULT_STRONGHOSTILES</Tag>
+        <English>strong hostiles</English>
+        <French>strong hostiles</French>
+        <German>starke Barbaren</German>
+        <Italian>molti abitanti si sono rivelati ostili</Italian>
+        <Spanish>strong hostiles</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_GP_BORN</Tag>
+        <English>%s1 born in %s2</English>
+        <French>%s1 born in %s2</French>
+        <German>%s1 wurde in %s2 geboren</German>
+        <Italian>%s1 è nato a %s2</Italian>
+        <Spanish>%s1 born in %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_TECH_RESEARCHED</Tag>
+        <English>Tech research finished: %s1</English>
+        <French>Tech research finished: %s1</French>
+        <German>Forschung beendet: %s1</German>
+        <Italian>Ricerca della tecnologia %s1 completata</Italian>
+        <Spanish>Tech research finished: %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_TECH_ACQUIRED</Tag>
+        <English>Tech acquired (trade, lightbulb, hut, espionage): %s1</English>
+        <French>Tech acquired (trade, lightbulb, hut, espionage): %s1</French>
+        <German>Technologie erhalten (durch Handel, Große Persönlichkeit, Stammesdorf, Spionage): %s1</German>
+        <Italian>E' stata acquisita la tecnologia %s1</Italian>
+        <Spanish>Tech acquired (trade, lightbulb, hut, espionage): %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_TECH_TRADED</Tag>
+        <English>Tech traded to %s1: %s2</English>
+        <French>Tech traded to %s1: %s2</French>
+        <German>Technologie mit %s1 gehandelt: %s2</German>
+        <Italian>La tecnologia %s2 è stata commerciata con %s1</Italian>
+        <Spanish>Tech traded to %s1: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_RESEARCH_BEGUN</Tag>
+        <English>Research begun: %s1 (%d2 Turns)</English>
+        <French>Research begun: %s1 (%d2 Turns)</French>
+        <German>Forschung begonnen: %s1 (Dauer: %d2 [NUM2:Runde:Runden])</German>
+        <Italian>Ricerca della tecnologia %s1 iniziata (necessari %d2 turni)</Italian>
+        <Spanish>Research begun: %s1 (%d2 Turns)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DISTANT_LAND</Tag>
+        <English>a distant land</English>
+        <French>a distant land</French>
+        <German>einem fernen Land</German>
+        <Italian>una terra lontana</Italian>
+        <Spanish>a distant land</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_RELIGION_FOUNDED</Tag>
+        <English>%s1 founded in %s2</English>
+        <French>%s1 founded in %s2</French>
+        <German>%s1 wurde in %s2 begründet</German>
+        <Italian>%s1 è stato fondato a %s2</Italian>
+        <Spanish>%s1 founded in %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_RELIGION_SPREAD_IN</Tag>
+        <English>%s1 has spread: %s2</English>
+        <French>%s1 has spread: %s2</French>
+        <German>%s1 wurde verbreitet in: %s2</German>
+        <Italian>%s1 si è diffuso a %s2</Italian>
+        <Spanish>%s1 has spread: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_RELIGION_SPREAD_OUT</Tag>
+        <English>%s1 has spread: %s2 (%s3)</English>
+        <French>%s1 has spread: %s2 (%s3)</French>
+        <German>%s1 wurde verbreitet in: %s2 (%s3)</German>
+        <Italian>%s1 si è diffuso a %s2 (%s3)</Italian>
+        <Spanish>%s1 has spread: %s2 (%s3)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_RELIGION_REMOVED_IN</Tag>
+        <English>%s1 has been removed: %s2</English>
+        <French>%s1 has been removed: %s2</French>
+        <German>%s1 wurde verbannt aus: %s2</German>
+        <Italian>%s1 non è più presente a %s2</Italian>
+        <Spanish>%s1 has been removed: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_RELIGION_REMOVED_OUT</Tag>
+        <English>%s1 has been removed: %s2 (%s3)</English>
+        <French>%s1 has been removed: %s2 (%s3)</French>
+        <German>%s1 wurde verbannt aus: %s2 (%s3)</German>
+        <Italian>%s1 non è più presente a %s2 (%s3)</Italian>
+        <Spanish>%s1 has been removed: %s2 (%s3)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CORP_FOUNDED</Tag>
+        <English>%s1 founded in %s2</English>
+        <French>%s1 founded in %s2</French>
+        <German>%s1 wurde in %s2 gegründet</German>
+        <Italian>La corporazione %s1 è stata costituita a %s2</Italian>
+        <Spanish>%s1 founded in %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CORP_SPREAD_IN</Tag>
+        <English>%s1 has spread: %s2</English>
+        <French>%s1 has spread: %s2</French>
+        <German>%s1 wurde verbreitet in: %s2</German>
+        <Italian>La corporazione %s1 ha aperto una filiale a %s2</Italian>
+        <Spanish>%s1 has spread: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CORP_SPREAD_OUT</Tag>
+        <English>%s1 has spread: %s2 (%s3)</English>
+        <French>%s1 has spread: %s2 (%s3)</French>
+        <German>%s1 wurde verbreitet in: %s2 (%s3)</German>
+        <Italian>La corporazione %s1 ha aperto una filiale a %s2 (%s3)</Italian>
+        <Spanish>%s1 has spread: %s2 (%s3)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CORP_REMOVED_IN</Tag>
+        <English>%s1 has been removed: %s2</English>
+        <French>%s1 has been removed: %s2</French>
+        <German>%s1 wurde entfernt aus: %s2</German>
+        <Italian>La corporazione %s1 non è più presente a %s2</Italian>
+        <Spanish>%s1 has been removed: %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CORP_REMOVED_OUT</Tag>
+        <English>%s1 has been removed: %s2 (%s3)</English>
+        <French>%s1 has been removed: %s2 (%s3)</French>
+        <German>%s1 wurde entfernt aus: %s2 (%s3)</German>
+        <Italian>La corporazione %s1 non è più presente a %s2 (%s3)</Italian>
+        <Spanish>%s1 has been removed: %s2 (%s3)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_GOLDENAGE_BEGINS</Tag>
+        <English>Golden Age begins</English>
+        <French>Golden Age begins</French>
+        <German>Beginn eines Goldenen Zeitalters</German>
+        <Italian>Inizio dell'Età dell'Oro</Italian>
+        <Spanish>Golden Age begins</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_GOLDENAGE_ENDS</Tag>
+        <English>Golden Age ends</English>
+        <French>Golden Age ends</French>
+        <German>Ende eines Goldenen Zeitalters</German>
+        <Italian>Fine dell'Età dell'Oro</Italian>
+        <Spanish>Golden Age ends</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DECLARES_WAR</Tag>
+        <English>%s1 declares war on %s2</English>
+        <French>%s1 declares war on %s2</French>
+        <German>%s1 hat %s2 den Krieg erklärt</German>
+        <Italian>%s1 ha dichiarato guerra a %s2</Italian>
+        <Spanish>%s1 declares war on %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_PEACE_TREATY</Tag>
+        <English>%s1 and %s2 have signed a peace treaty</English>
+        <French>%s1 and %s2 have signed a peace treaty</French>
+        <German>%s1 und %s2 haben einen Friedensvertrag unterzeichnet</German>
+        <Italian>%s1 e %s2 hanno siglato un trattato di pace</Italian>
+        <Spanish>%s1 and %s2 have signed a peace treaty</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CIV_ELIMINATED</Tag>
+        <English>%s1 has been eliminated</English>
+        <French>%s1 has been eliminated</French>
+        <German>%s1 wurde ausgelöscht</German>
+        <Italian>La civiltà %s1 è scomparsa</Italian>
+        <Spanish>%s1 has been eliminated</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_ANOTHER_CIV_ELIMINATED</Tag>
+        <English>Another civilization has been eliminated</English>
+        <French>Another civilization has been eliminated</French>
+        <German>Eine weitere Zivilisation wurde ausgelöscht</German>
+        <Italian>Un'altra civiltà è scomparsa</Italian>
+        <Spanish>Another civilization has been eliminated</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_FOUNDED</Tag>
+        <English>%s1 founded</English>
+        <French>%s1 founded</French>
+        <German>%s1 wurde gegründet</German>
+        <Italian>La città di %s1 è stata fondata</Italian>
+        <Spanish>%s1 founded</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_RAZED</Tag>
+        <English>Razed %s1</English>
+        <French>Razed %s1</French>
+        <German>%s1 wurde zerstört</German>
+        <Italian>La città di %s1 è stata razziata</Italian>
+        <Spanish>Razed %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_RAZED_BY</Tag>
+        <English>%s1 razed by %s2</English>
+        <French>%s1 razed by %s2</French>
+        <German>%s1 wurde von %s2 zerstört</German>
+        <Italian>La città di %s1 è stata razziata da %s2</Italian>
+        <Spanish>%s1 razed by %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_CAPTURED</Tag>
+        <English>Captured %s1 (%s2)</English>
+        <French>Captured %s1 (%s2)</French>
+        <German>%s1 (%s2) wurde erobert</German>
+        <Italian>La città di %s1 (%s2) è stata conquistata militarmente</Italian>
+        <Spanish>Captured %s1 (%s2)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_TRADED</Tag>
+        <English>Traded for %s1 (%s2)</English>
+        <French>Traded for %s1 (%s2)</French>
+        <German>%s1 (%s2) wurde durch Handel eingetauscht</German>
+        <Italian>La città di %s1 (%s2) è stata ottenuta diplomaticamente</Italian>
+        <Spanish>Traded for %s1 (%s2)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_FLIPPED</Tag>
+        <English>%s1 (%s2) culture flips</English>
+        <French>%s1 (%s2) culture flips</French>
+        <German>%s1 (%s2) geriet unter den Einfluss einer fremden Kultur</German>
+        <Italian>La città di %s1 (%s2) è stata conquistata culturalmente</Italian>
+        <Spanish>%s1 (%s2) culture flips</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_LOST</Tag>
+        <English>%s1 lost</English>
+        <French>%s1 lost</French>
+        <German>%s1 wurde verloren</German>
+        <Italian>La città di %s1 è stata persa</Italian>
+        <Spanish>%s1 lost</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_EXPANDED</Tag>
+        <English>%s1's borders expand</English>
+        <French>%s1's borders expand</French>
+        <German>Die Stadtgrenzen von %s1 haben sich erweitert</German>
+        <Italian>I confini culturali della città di %s1 si sono espansi</Italian>
+        <Spanish>%s1's borders expand</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_GROWS</Tag>
+        <English>%s1 grows to size %d2</English>
+        <French>%s1 grows to size %d2</French>
+        <German>Die Bevölkerung von %s1 ist auf %d2 gewachsen</German>
+        <Italian>La città di %s1 è cresciuta a dimensione %d2</Italian>
+        <Spanish>%s1 grows to size %d2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_PRODUCES_UNIT</Tag>
+        <English>%s1 begins: %s2 (%d3 turns)</English>
+        <French>%s1 begins: %s2 (%d3 turns)</French>
+        <German>%s1 beginnt mit der Aufstellung von: %s2 (Dauer: %d3 [NUM3:Runde:Runden])</German>
+        <Italian>La città di %s1 ha iniziato a produrre l'unità %s2 (necessari %d3 turni)</Italian>
+        <Spanish>%s1 begins: %s2 (%d3 turns)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CITY_PRODUCES_BUILDING</Tag>
+        <English>%s1 begins: %s2 (%d3 turns)</English>
+        <French>%s1 begins: %s2 (%d3 turns)</French>
+        <German>%s1 beginnt mit der Errichtung von: %s2 (Dauer: %d3 [NUM3:Runde:Runden])</German>
+        <Italian>La città di %s1 ha iniziato a produrre l'edificio %s2 (necessari %d3 turni)</Italian>
+        <Spanish>%s1 begins: %s2 (%d3 turns)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IMPROVEMENT_BUILT</Tag>
+        <English>A %s1 was built</English>
+        <French>A %s1 was built</French>
+        <German>[NUM1:Ein:Eine:Ein:Einige:Einige:Einige] %s1:1 wurde errichtet</German>
+        <Italian>E' stato costruito un miglioramento %s1</Italian>
+        <Spanish>A %s1 was built</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_NEAR</Tag>
+        <English>[SPACE]near %s1</English>
+        <French>[SPACE]near %s1</French>
+        <German>[SPACE]nahe %s1</German>
+        <Italian>[SPACE]presso %s1</Italian>
+        <Spanish>[SPACE]near %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IMPROVEMENT_DESTROYED</Tag>
+        <English>A %s1 was destroyed</English>
+        <French>A %s1 was destroyed</French>
+        <German>[NUM1:Ein:Eine:Ein:Einige:Einige:Einige] %s1:1 wurde zerstört</German>
+        <Italian>E' stato distrutto un miglioramento %s1</Italian>
+        <Spanish>A %s1 was destroyed</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IMPROVEMENT</Tag>
+        <English>A %s1</English>
+        <French>A %s1</French>
+        <German>[NUM1:Ein:Eine:Ein:Einige:Einige:Einige] %s1:1</German>
+        <Italian>Un miglioramento %s1</Italian>
+        <Spanish>A %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_ROUTE</Tag>
+        <English>A %s1</English>
+        <French>A %s1</French>
+        <German>[NUM1:Ein:Eine:Ein:Einige:Einige:Einige] %s1:1</German>
+        <Italian>Una %s1</Italian>
+        <Spanish>A %s1</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IMPROVEMENT_UNKNOWN</Tag>
+        <English>An improvement</English>
+        <French>An improvement</French>
+        <German>Eine Modernisierung</German>
+        <Italian>Un miglioramento</Italian>
+        <Spanish>An improvement</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IMPROVEMENT_DESTROYED_BY_GOLD</Tag>
+        <English>[SPACE]was destroyed by %s1 %s2 (%d3 gold)</English>
+        <French>[SPACE]was destroyed by %s1 %s2 (%d3 gold)</French>
+        <German>[SPACE]wurde von [NUM2:einem:einer:einem:einigen:einigen:einigen] %[s1_civ_adjective]en %s2:3_UnitName zerstört (%d3 Gold)</German>
+        <Italian>[SPACE]è stato distrutto da %s2 %s1 (%d3 gold)</Italian>
+        <Spanish>[SPACE]was destroyed by %s1 %s2 (%d3 gold)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_IMPROVEMENT_DESTROYED_BY_NOGOLD</Tag>
+        <English>[SPACE]was destroyed by %s1 %s2</English>
+        <French>[SPACE]was destroyed by %s1 %s2</French>
+        <German>[SPACE]wurde von [NUM2:einem:einer:einem:einigen:einigen:einigen] %[s1_civ_adjective]en %s2:3_UnitName zerstört</German>
+        <Italian>[SPACE]è stato distrutto da %s2 %s1</Italian>
+        <Spanish>[SPACE]was destroyed by %s1 %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VASSAL_BECOMES</Tag>
+        <English>%s1 becomes a Vassal State of %s2</English>
+        <French>%s1 becomes a Vassal State of %s2</French>
+        <German>%s1 wurde zu einem Vasallen von %s2</German>
+        <Italian>%s1 è divenuto vassallo di %s2</Italian>
+        <Spanish>%s1 becomes a Vassal State of %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_VASSAL_REVOLTS</Tag>
+        <English>%s1 revolts and is no longer a Vassal State of %s2</English>
+        <French>%s1 revolts and is no longer a Vassal State of %s2</French>
+        <German>%s1 rebellierte und ist nicht länger ein Vasall von %s2</German>
+        <Italian>%s1 si è rivoltato e non è più un vassallo di %s2</Italian>
+        <Spanish>%s1 revolts and is no longer a Vassal State of %s2</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_NO_STATE_RELIGION</Tag>
+        <English>no State Religion</English>
+        <French>no State Religion</French>
+        <German>keine Staatsreligion</German>
+        <Italian>nessuna Religione di Stato</Italian>
+        <Spanish>no State Religion</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_RELIGION_CHANGE</Tag>
+        <English>State Religion Change: %s1 from '%s2' to '%s3'</English>
+        <French>State Religion Change: %s1 from '%s2' to '%s3'</French>
+        <German>Wechsel der Staatsreligion: %s1 wechselt von '%s2' zu '%s3'</German>
+        <Italian>%s1 ha cambiato la Religione di Stato da '%s2' a '%s3'</Italian>
+        <Spanish>State Religion Change: %s1 from '%s2' to '%s3'</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_ATTITUDE_CHANGE</Tag>
+        <English>Attitude Change: %s1 towards %s2, from '%s3' to '%s4'</English>
+        <French>Attitude Change: %s1 towards %s2, from '%s3' to '%s4'</French>
+        <German>Veränderung der Einstellung von %s1 gegenüber %s2: von '%s3' zu '%s4'</German>
+        <Italian>%s1 ha mutato il suo atteggiamento nei confronti di %s2 da '%s3' a '%s4'</Italian>
+        <Spanish>Attitude Change: %s1 towards %s2, from '%s3' to '%s4'</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_CIVIC_CHANGE</Tag>
+        <English>Civics Change: %s1 from '%s2' to '%s3'</English>
+        <French>Civics Change: %s1 from '%s2' to '%s3'</French>
+        <German>Wechsel der Staatsform: %s1 wechselt von '%s2' zu '%s3'</German>
+        <Italian>%s1 ha cambiato la Forma di Governo da '%s2' a '%s3'</Italian>
+        <Spanish>Civics Change: %s1 from '%s2' to '%s3'</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_DEAL_OFFER</Tag>
+        <English>Diplomacy: %s1 (%s2) offers to trade %s3 to %s4 (%s5) for %s6</English>
+        <French>Diplomacy: %s1 (%s2) offers to trade %s3 to %s4 (%s5) for %s6</French>
+        <German>Diplomatie: %s1 (%s2) bietet %s4 (%s5) einen Handel an (%s3 gegen %s6)</German>
+        <Italian>%s1 (%s2) ha offerto a %s4 (%s5) %s3 in cambio di %s6</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) offers to trade %s3 to %s4 (%s5) for %s6</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_CITY_OFFER</Tag>
+        <English>Diplomacy: %s1 (%s2) offers to give the city %s3 to %s4 (%s5)</English>
+        <French>Diplomacy: %s1 (%s2) offers to give the city %s3 to %s4 (%s5)</French>
+        <German>Diplomatie: %s1 (%s2) bietet %s4 (%s5) die Stadt %s3 an</German>
+        <Italian>%s1 (%s2) ha offerto a %s4 (%s5) la Città di %s3</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) offers to give the city %s3 to %s4 (%s5)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_HELP_OFFER</Tag>
+        <English>Diplomacy: %s1 (%s2) offers to give help (%s3) to %s4 (%s5)</English>
+        <French>Diplomacy: %s1 (%s2) offers to give help (%s3) to %s4 (%s5)</French>
+        <German>Diplomatie: %s1 (%s2) bietet %s4 (%s5) Hilfe (%s3) an</German>
+        <Italian>%s1 (%s2) ha offerto a %s4 (%s5) il suo aiuto (%s3)</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) offers to give help (%s3) to %s4 (%s5)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_PEACE_OFFER</Tag>
+        <English>Diplomacy: %s1 (%s2) offers to make peace with %s3 (%s4)</English>
+        <French>Diplomacy: %s1 (%s2) offers to make peace with %s3 (%s4)</French>
+        <German>Diplomatie: %s1 (%s2) bietet %s3 (%s4) einen Friedensvertrag an</German>
+        <Italian>%s1 (%s2) ha fatto una proposta di pace a %s3 (%s4)</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) offers to make peace with %s3 (%s4)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_VASSAL_OFFER</Tag>
+        <English>Diplomacy: %s1 (%s2) offers to become a vassal of %s3 (%s4)</English>
+        <French>Diplomacy: %s1 (%s2) offers to become a vassal of %s3 (%s4)</French>
+        <German>Diplomatie: %s1 (%s2) bietet %s3 (%s4) an, ein Vasall zu werden</German>
+        <Italian>%s1 (%s2) si è offerto di diventare Vassallo di %s3 (%s4)</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) offers to become a vassal of %s3 (%s4)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_DEAL_CANCEL</Tag>
+        <English>Diplomacy: %s1 (%s2) cancels trade of %s3 to %s4 (%s5) for %s6</English>
+        <French>Diplomacy: %s1 (%s2) cancels trade of %s3 to %s4 (%s5) for %s6</French>
+        <German>Diplomatie: %s1 (%s2) beendet den Handel mit %s4 (%s5) (%s3 gegen %s6)</German>
+        <Italian>%s1 (%s2) ha cancellato il suo accordo commerciale con %s4 (%s5) sullo scambio di %s3 per %s6</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) cancels trade of %s3 to %s4 (%s5) for %s6</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_GIFT_CANCEL</Tag>
+        <English>Diplomacy: %s1 (%s2) cancels gift of %s3 to %s4 (%s5)</English>
+        <French>Diplomacy: %s1 (%s2) cancels gift of %s3 to %s4 (%s5)</French>
+        <German>Diplomatie: %s1 (%s2) zieht sein Geschenk (%s3) an %s4 (%s5) zurück</German>
+        <Italian>%s1 (%s2) ha cancellato la sua donazione di %s3 a %s4 (%s5)</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) cancels gift of %s3 to %s4 (%s5)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_DEAL_ACCEPT</Tag>
+        <English>Diplomacy: %s1 (%s2) accepts trade of %s3 to %s4 (%s5) for %s6</English>
+        <French>Diplomacy: %s1 (%s2) accepts trade of %s3 to %s4 (%s5) for %s6</French>
+        <German>Diplomatie: %s1 (%s2) stimmt Handel mit %s4 (%s5) zu (%s3 gegen %s6)</German>
+        <Italian>%s1 (%s2) ha accettato l'accordo con %s4 (%s5) per lo scambio di %s3 per %s6</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) accepts trade of %s3 to %s4 (%s5) for %s6</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_GIFT_ACCEPT</Tag>
+        <English>Diplomacy: %s1 (%s2) accepts gift of %s3 from %s4 (%s5)</English>
+        <French>Diplomacy: %s1 (%s2) accepts gift of %s3 from %s4 (%s5)</French>
+        <German>Diplomatie: %s1 (%s2) nimmt das Geschenk (%s3) von %s4 (%s5) an</German>
+        <Italian>%s1 (%s2) ha accettato la donazione di %s3 da parte di %s4 (%s5)</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) accepts gift of %s3 from %s4 (%s5)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_DEAL_REJECT</Tag>
+        <English>Diplomacy: %s1 (%s2) rejects trade of %s3 to %s4 (%s5) for %s6</English>
+        <French>Diplomacy: %s1 (%s2) rejects trade of %s3 to %s4 (%s5) for %s6</French>
+        <German>Diplomatie: %s1 (%s2) lehnt Handel mit %s4 (%s5) ab (%s3 gegen %s6)</German>
+        <Italian>%s1 (%s2) ha rifiutato l'accordo con %s4 (%s5) per lo scambio di %s3 per %s6</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) rejects trade of %s3 to %s4 (%s5) for %s6</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_GIFT_REJECT</Tag>
+        <English>Diplomacy: %s1 (%s2) rejects gift of %s3 from %s4 (%s5)</English>
+        <French>Diplomacy: %s1 (%s2) rejects gift of %s3 from %s4 (%s5)</French>
+        <German>Diplomatie: %s1 (%s2) lehnt das Geschenk (%s3) von %s4 (%s5) ab</German>
+        <Italian>%s1 (%s2) ha accettato la donazione di %s3 da parte di %s4 (%s5)</Italian>
+        <Spanish>Diplomacy: %s1 (%s2) rejects gift of %s3 from %s4 (%s5)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_GENERIC_ACCEPT</Tag>
+        <English>; %s1 AGREES.</English>
+        <French>; %s1 AGREES.</French>
+        <German>; %s1 STIMMT ZU.</German>
+        <Italian>; %s1 ha accettato.</Italian>
+        <Spanish>; %s1 AGREES.</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_GENERIC_REJECT</Tag>
+        <English>; %s1 REFUSES.</English>
+        <French>; %s1 REFUSES.</French>
+        <German>; %s1 LEHNT AB.</German>
+        <Italian>; %s1 ha rifiutato.</Italian>
+        <Spanish>; %s1 REFUSES.</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_HELP_DEMAND</Tag>
+        <English>Diplomacy (Help Request): %s1 (%s2) asks %s3 (%s4) for %s5</English>
+        <French>Diplomacy (Help Request): %s1 (%s2) asks %s3 (%s4) for %s5</French>
+        <German>Diplomatie: %s1 (%s2) fordert von %s3 (%s4) Hilfe (%s5)</German>
+        <Italian>%s1 (%s2) ha supplicato %s3 (%s4) di aiutarlo donandogli %s5</Italian>
+        <Spanish>Diplomacy (Help Request): %s1 (%s2) asks %s3 (%s4) for %s5</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_TRIBUTE_DEMAND</Tag>
+        <English>Diplomacy (Tribute Demand): %s1 (%s2) demands that %s3 (%s4) gives %s5</English>
+        <French>Diplomacy (Tribute Demand): %s1 (%s2) demands that %s3 (%s4) gives %s5</French>
+        <German>Diplomatie: %s1 (%s2) fordert von %s3 (%s4) Tribut (%s5)</German>
+        <Italian> %s1 (%s2) ha chiesto a %s3 (%s4) il pagamento di un tributo consistente in %s5</Italian>
+        <Spanish>Diplomacy (Tribute Demand): %s1 (%s2) demands that %s3 (%s4) gives %s5</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_RELIGION_DEMAND</Tag>
+        <English>Diplomacy (Religion Request): %s1 (%s2) asks %s3 (%s4) to convert to %s5</English>
+        <French>Diplomacy (Religion Request): %s1 (%s2) asks %s3 (%s4) to convert to %s5</French>
+        <German>Diplomatie: %s1 (%s2) fordert %s3 (%s4) auf, [NUM5:zum:zur:zum:zu den:zu den:zu den] %s5:3 zu konvertieren</German>
+        <Italian>%s1 (%s2) ha chiesto a %s3 (%s4) di convertirsi al %s5</Italian>
+        <Spanish>Diplomacy (Religion Request): %s1 (%s2) asks %s3 (%s4) to convert to %s5</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_CIVIC_DEMAND</Tag>
+        <English>Diplomacy (Civic Request): %s1 (%s2) asks %s3 (%s4) to switch to %s5</English>
+        <French>Diplomacy (Civic Request): %s1 (%s2) asks %s3 (%s4) to switch to %s5</French>
+        <German>Diplomatie: %s1 (%s2) fordert %s3 (%s4) auf, [NUM5:zum:zur:zum:zu den:zu den:zu den] %s5:3 zu wechseln</German>
+        <Italian>%s1 (%s2) ha chiesto a %s3 (%s4) di passare alla Forma di governo %s5</Italian>
+        <Spanish>Diplomacy (Civic Request): %s1 (%s2) asks %s3 (%s4) to switch to %s5</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_WAR_DEMAND</Tag>
+        <English>Diplomacy (War Request): %s1 (%s2) asks %s3 (%s4) to declare war on %s5 (%s6)</English>
+        <French>Diplomacy (War Request): %s1 (%s2) asks %s3 (%s4) to declare war on %s5 (%s6)</French>
+        <German>Diplomatie: %s1 (%s2) fordert %s3 (%s4) auf, %s5 (%s6) den Krieg zu erklären</German>
+        <Italian>%s1 (%s2) ha chiesto a %s3 (%s4) di dichiarare guerra a %s5 (%s6)</Italian>
+        <Spanish>Diplomacy (War Request): %s1 (%s2) asks %s3 (%s4) to declare war on %s5 (%s6)</Spanish>
+    </TEXT> 
+    <TEXT>
+        <Tag>TXT_KEY_AUTOLOG_DIPLO_EMBARGO_DEMAND</Tag>
+        <English>Diplomacy (Embargo Request): %s1 (%s2) asks %s3 (%s4) to stop trading with %s5 (%s6)</English>
+        <French>Diplomacy (Embargo Request): %s1 (%s2) asks %s3 (%s4) to stop trading with %s5 (%s6)</French>
+        <German>Diplomatie: %s1 (%s2) fordert %s3 (%s4) auf, den Handel mit %s5 (%s6) einzustellen</German>
+        <Italian>%s1 (%s2) ha chiesto a %s3 (%s4) di cessare ogni scambio commerciale con %s5 (%s6)</Italian>
+        <Spanish>Diplomacy (Embargo Request): %s1 (%s2) asks %s3 (%s4) to stop trading with %s5 (%s6)</Spanish>
+    </TEXT> 
+</Civ4GameText>

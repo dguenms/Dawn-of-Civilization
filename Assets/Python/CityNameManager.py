@@ -157,6 +157,16 @@ def updateCityNamesFound(iCiv):
 		sNewName = getFoundName(iCiv, (city.getX(), city.getY()))
 		if sNewName != "-1":
 			city.setName(sNewName, False)
+			
+def findLocations(iPlayer, sName):
+	lLocations = []
+	
+	for x in range(iWorldX):
+		for y in range(iWorldY):
+			if getFoundName(iPlayer, (x,y)) == sName or getFoundName(iEngland, (x,y)) == sName:
+				lLocations.append((x,y))
+				
+	return lLocations
 	
 def onCityBuilt(city):
 	iOwner = city.getOwner()
@@ -4298,6 +4308,7 @@ dIdentifiers = {
 	'Iuliomagus'		:	'Angers',
 	'Karkhedon'		:	'Qart-Hadasht',
 	'C&#243;rdova'		:	'Qurtubah',
+	'Cordoba'		:	'Qurtubah',
 	'Ninova'		:	'Ninua',
 	'Attaleia'		:	'Attaleia',
 	'Kiew'			:	'Kyiv',
@@ -5000,6 +5011,7 @@ dIdentifiers = {
 	'Surru'			:	'Sur',
 	"Sana'a"		:	"Sana'a",
 	'Auzalites'		:	"Sana'a",
+	'Trebizond'		:	'Trapezon',
 }
 
 	
@@ -6177,6 +6189,8 @@ tRenames = (
 	'Mahishuru'		:	'Mysore',
 	'Hong Kong'		:	'Hong Kong',
 	'Guangzhou'		:	'Canton',
+	'Qurtubah'		:	'Cordoba',
+	'Trapezon'		:	'Trebizond',
 },
 #Language: German
 {

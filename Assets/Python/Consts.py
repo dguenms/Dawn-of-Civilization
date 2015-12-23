@@ -2801,7 +2801,7 @@ iEducation, iPrintingPress, iEconomics, iAstronomy, iChemistry, iScientificMetho
 iCombustion, iFission, iFlight, iAdvancedFlight, iPlastics, iComposites, iStealth, iGenetics, iFiberOptics, iFusion,
 iHunting, iMining, iArchery, iMasonry, iAnimalHusbandry, iBronzeWorking, iHorsebackRiding, iIronWorking, iMetalCasting, iCompass, 
 iConstruction, iMachinery, iEngineering, iOptics, iGunpowder, iReplaceableParts, iMilitaryScience, iRifling, iSteamPower, iSteel, 
-iAssemblyLine, iRailroad, iArtillery, iIndustrialism, iRadio, iRefrigeration, iSuperconfuctors, iComputers, iLaser, iRocketry, 
+iAssemblyLine, iRailroad, iTechArtillery, iIndustrialism, iRadio, iRefrigeration, iSuperconfuctors, iComputers, iLaser, iRocketry, 
 iSatellites, iRobotics, iFutureTech) = range(iNumTechs)
 
 iUtopia = iCommunism
@@ -3031,7 +3031,7 @@ iMehmed, iMontezuma, iNapoleon, iPacal, iPericles, iPeter, iQinShiHuang, iRamess
 iSaladin, iShaka, iSittingBull, iStalin, iSuleiman, iSuryavarman, iTokugawa, iVictoria, iWangKon, iWashington, iWillemVanOranje, 
 iZaraYaqob, iJimmu, iMeiji, iAkbar, iHiram, iHaileSelassie, iGustav, iAbuBakr, iMongkut, iElishat,
 iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonso, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
-iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShivaji,
+iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShahuji,
 iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, iRahman, iRajendra, iLobsangGyatso,
 iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, iLorenzo, iSantaAnna, iJuarez, iCardenas, iDomPedro, 
 iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya) = range(iNumLeaders)
@@ -3042,7 +3042,7 @@ iOdaNobunaga = iTokugawa
 
 resurrectionLeaders = {
 	iChina : iHongwu,
-	iIndia : iShivaji,
+	iIndia : iShahuji,
 	iEgypt : iBaibars,
 }
 

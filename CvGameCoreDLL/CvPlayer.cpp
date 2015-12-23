@@ -18545,9 +18545,17 @@ void CvPlayer::setFlag(CvWString s)
 
 void CvPlayer::setLeader(int i)
 {
-	GC.getInitCore().setLeader((PlayerTypes)getID(), (LeaderHeadTypes)i );
-	GC.getInitCore().setLeaderName(getID(), GC.getLeaderHeadInfo(getLeaderType()).getDescription(0));
-	setPersonalityType((LeaderHeadTypes)i); //Rhye
+	if ((LeaderHeadTypes)i != getLeader())
+	{
+		GC.getInitCore().setLeader((PlayerTypes)getID(), (LeaderHeadTypes)i );
+		GC.getInitCore().setLeaderName(getID(), GC.getLeaderHeadInfo(getLeaderType()).getDescription(0));
+		setPersonalityType((LeaderHeadTypes)i); //Rhye
+	}
+}
+
+void CvPlayer::setLeaderName(CvWString name)
+{
+	GC.getInitCore().setLeaderName(getID(), name);
 }
 
 LeaderHeadTypes CvPlayer::getLeader()

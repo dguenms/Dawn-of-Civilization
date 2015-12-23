@@ -11,7 +11,7 @@ import RFCUtils
 import Consts as con
 import CityNameManager as cnm
 import Victory as vic
-import DynamicCivs
+import DynamicCivs as dc
 from operator import itemgetter
 import Stability as sta
 
@@ -23,7 +23,6 @@ import Stability as sta
 gc = CyGlobalContext()  # LOQ
 PyPlayer = PyHelpers.PyPlayer   # LOQ
 utils = RFCUtils.RFCUtils()
-dc = DynamicCivs.DynamicCivs()
 
 iCheatersPeriod = 12
 iBetrayalPeriod = 8
@@ -824,7 +823,7 @@ class RiseAndFall:
 		
 			# Byzantium
 			tCapital = con.tCapitals[0][iByzantium]
-			lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, con.iGrocer, \
+			lBuildings = [con.iWalls, con.iCastle, con.iBarracks, con.iStable, con.iGranary, con.iLibrary, con.iMarket, \
 				      con.iOrthodoxTemple, con.iByzantineHippodrome, con.iOrthodoxShrine, con.iTheodosianWalls]
 			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [con.iChristianity, con.iOrthodoxy])
 			gc.getGame().setHolyCity(con.iOrthodoxy, city, False)
@@ -2311,7 +2310,7 @@ class RiseAndFall:
 				utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
 				
 				# notify dynamic names
-				dc.onCityAcquired((iCiv, iOwner, gc.getMap().plot(tCapital[0], tCapital[1]).getPlotCity(), False, True))
+				dc.onCityAcquired(iCiv, iOwner)
 				
 				self.createStartingWorkers(iCiv, tCapital)
 
@@ -5342,8 +5341,8 @@ class RiseAndFall:
 			
 		pHolyRome.setReborn(True)
 		
-		dc.setCivShortDesc(iHolyRome, "TXT_KEY_CIV_AUSTRIA_SHORT_DESC")
-		dc.setCivAdjective(iHolyRome, "TXT_KEY_CIV_AUSTRIA_ADJECTIVE")
+		dc.nameChange(iHolyRome)
+		dc.adjectiveChange(iHolyRome)
 		
 	def holyRomanSpawn(self):
 		plot = gc.getMap().plot(60, 56)
@@ -5429,7 +5428,7 @@ class RiseAndFall:
 			for y in range(tTL[1], tBR[1]+1):
 				plot = gc.getMap().plot(x,y)
 				if plot.isFlatlands() or plot.isHills():
-					if plot.getFeatureType() != gc.getInfoTypeForString("FEATURE_MUD"):
+					if plot.getFeatureType() != con.iMud:
 						if plot.getOwner() < 0:
 							plotList.append((x,y))
 		

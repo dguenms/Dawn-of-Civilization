@@ -2389,6 +2389,12 @@ void CyPlayer::setLeader(int i)
 		m_pPlayer->setLeader(i);
 }
 
+void CyPlayer::setLeaderName(std::wstring name)
+{
+	if (m_pPlayer)
+		m_pPlayer->setLeaderName(name);
+}
+
 int /*LeaderHeadTypes*/ CyPlayer::getLeader()
 {
 	return m_pPlayer ? m_pPlayer->getLeader() : -1;
