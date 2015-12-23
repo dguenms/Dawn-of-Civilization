@@ -328,7 +328,7 @@ class StoredData:
 		
 	def getSecedingCities(self, iPlayer):
 		if iPlayer not in self.scriptDict['dSecedingCities']: return []
-		return [gc.getPlayer(iPlayer).getCity(i) for i in self.scriptDict['dSecedingCities'][iPlayer]]
+		return [city for city in [gc.getPlayer(iPlayer).getCity(i) for i in self.scriptDict['dSecedingCities'][iPlayer]] if (city.getX(), city.getY()) != (-1, -1)]
 	
 	def setSecedingCities(self, iPlayer, lCities):
 		self.scriptDict['dSecedingCities'][iPlayer] = [city.getID() for city in lCities]
