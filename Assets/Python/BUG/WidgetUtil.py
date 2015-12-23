@@ -445,13 +445,59 @@ def getWidgetHelp(argsList):
 				sText += "\n" + CyTranslator().getText("TXT_KEY_CIVICS_SCREEN_NO_UPKEEP", ())
 			return sText
 ## Ultrapack ##
-
+		
 		#Merijn functions
 		elif iData1 == 22001:
 			if iData2 == 0:
 				sText = CyTranslator().getText("TXT_KEY_WB_ENABLE_CIV", ())
 			else:
 				sText = CyTranslator().getText("TXT_KEY_WB_DISABLE_CIV", ())
+			return sText
+			
+		elif iData1 >= 22100 and iData1 < 22170:
+			if iData2 == 1:
+				return CyTranslator().getText("TXT_KEY_WB_TOGGLE_EXTENDED", ())
+			elif iData2 == 2000:
+				return CyTranslator().getText("TXT_KEY_WB_VIEW_STABMAP", ())
+			elif iData2 == 2001:
+				return CyTranslator().getText("TXT_KEY_WB_VIEW_FLIPZONE", ())
+		elif iData1 == 22205:
+			return CyTranslator().getText("TXT_KEY_WB_MULTITILE", ())
+		elif iData1 == 22206:
+			return CyTranslator().getText("TXT_KEY_WB_AI_FORBIDDEN", ())
+		elif iData1 == 22207:
+			if iData2 == 0:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_ADD_CORE", ())
+			elif iData2 == 1:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_REMOVE_CORE", ())
+			elif iData2 == 2:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_REPLACE_CORE", ())
+			elif iData2 == 3:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_SETTLERVALUE", ())
+		elif iData1 == 22208:
+			if iData2 == 0:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_ADD_SPAWN", ())
+			elif iData2 == 1:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_REMOVE_SPAWN", ())
+			elif iData2 == 2:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_REPLACE_SPAWN", ())
+		elif iData1 == 22171:
+			return CyTranslator().getText("TXT_KEY_WB_CHANGE_CORE", ())
+		elif iData1 == 22172:
+			return CyTranslator().getText("TXT_KEY_WB_CHANGE_SETTLERVALUE", ())
+		elif iData1 == 22199:
+			return CyTranslator().getText("TXT_KEY_WB_KABOOM", ())
+		elif iData1 == 22176:
+			return CyTranslator().getText("TXT_KEY_WB_CHANGE_FLIP", ())
+		
+		elif (iData1 == 22201 or iData1 == 22202 or iData1 == 22203 or iData1 == 22204):
+			return str(iData2)
+			
+		elif iData1 == 22301:
+			sText = "-" + str(iData2)
+			return sText
+		elif iData1 == 22302:
+			sText = "+" + str(iData2)
 			return sText
 
 	return u""
