@@ -3633,7 +3633,7 @@ dIdentifiers = {
 	'Ragha'			:	'Ragha',
 	'Split'			:	'Split',
 	'Chengdu'		:	'Chengdu',
-	'Cheingtu'		:	'Cheingtu'
+	'Cheingtu'		:	'Cheingtu',
 	'Iconium'		:	'Ikonion',
 	'Naissos'		:	'Naissos',
 	'Reims'			:	'Reims',

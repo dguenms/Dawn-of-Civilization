@@ -9786,12 +9786,14 @@ m_iNumLeaders(0),
 m_iSelectionSoundScriptId(0),
 m_iActionSoundScriptId(0),
 m_iDerivativeCiv(NO_CIVILIZATION),
+m_iStartingYear(0), // Leoreth
 m_bPlayable(false),
 m_bAIPlayable(false),
 m_piCivilizationBuildings(NULL),
 m_piCivilizationUnits(NULL),
 m_piCivilizationFreeUnitsClass(NULL),
 m_piCivilizationInitialCivics(NULL),
+m_piLoadingTime(NULL), // Leoreth
 m_pbLeaders(NULL),
 m_pbCivilizationFreeBuildingClass(NULL),
 m_pbCivilizationFreeTechs(NULL),
@@ -9813,6 +9815,7 @@ CvCivilizationInfo::~CvCivilizationInfo()
 	SAFE_DELETE_ARRAY(m_piCivilizationUnits);
 	SAFE_DELETE_ARRAY(m_piCivilizationFreeUnitsClass);
 	SAFE_DELETE_ARRAY(m_piCivilizationInitialCivics);
+	SAFE_DELETE_ARRAY(m_piLoadingTime); // Leoreth
 	SAFE_DELETE_ARRAY(m_pbLeaders);
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeBuildingClass);
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeTechs);
@@ -10003,6 +10006,22 @@ void CvCivilizationInfo::setDerivativeCiv(int iCiv)
 	m_iDerivativeCiv = iCiv;
 }
 
+// Leoreth
+int CvCivilizationInfo::getStartingYear() const
+{
+	return m_iStartingYear;
+}
+
+int CvCivilizationInfo::getLoadingTime(ScenarioTypes eScenario) const
+{
+	return m_piLoadingTime[eScenario];
+}
+
+const wchar* CvCivilizationInfo::getIdentifier() const
+{
+	return m_szIdentifier;
+}
+
 void CvCivilizationInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
@@ -10018,6 +10037,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iSelectionSoundScriptId);
 	stream->Read(&m_iActionSoundScriptId);
 	stream->Read(&m_iDerivativeCiv);
+	stream->Read(&m_iStartingYear); // Leoreth
 
 	stream->Read(&m_bAIPlayable);
 	stream->Read(&m_bPlayable);
@@ -10025,6 +10045,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->ReadString(m_szArtDefineTag);
 	stream->ReadString(m_szShortDescriptionKey);
 	stream->ReadString(m_szAdjectiveKey);
+	stream->ReadString(m_szIdentifier); // Leoreth
 
 	// Arrays
 
@@ -10043,6 +10064,11 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piCivilizationInitialCivics);
 	m_piCivilizationInitialCivics = new int[GC.getNumCivicOptionInfos()];
 	stream->Read(GC.getNumCivicOptionInfos(), m_piCivilizationInitialCivics);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piLoadingTime);
+	m_piLoadingTime = new int[NUM_SCENARIO_TYPES];
+	stream->Read(NUM_SCENARIO_TYPES, m_piLoadingTime);
 
 	SAFE_DELETE_ARRAY(m_pbLeaders);
 	m_pbLeaders = new bool[GC.getNumLeaderHeadInfos()];
@@ -10080,6 +10106,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iSelectionSoundScriptId);
 	stream->Write(m_iActionSoundScriptId);
 	stream->Write(m_iDerivativeCiv);
+	stream->Write(m_iStartingYear); // Leoreth
 
 	stream->Write(m_bAIPlayable);
 	stream->Write(m_bPlayable);
@@ -10087,6 +10114,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->WriteString(m_szArtDefineTag);
 	stream->WriteString(m_szShortDescriptionKey);
 	stream->WriteString(m_szAdjectiveKey);
+	stream->WriteString(m_szIdentifier); // Leoreth
 
 	// Arrays
 
@@ -10094,6 +10122,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumUnitClassInfos(), m_piCivilizationUnits);
 	stream->Write(GC.getNumUnitClassInfos(), m_piCivilizationFreeUnitsClass);
 	stream->Write(GC.getNumCivicOptionInfos(), m_piCivilizationInitialCivics);
+	stream->Write(NUM_SCENARIO_TYPES, m_piLoadingTime); // Leoreth
 	stream->Write(GC.getNumLeaderHeadInfos(), m_pbLeaders);
 	stream->Write(GC.getNumBuildingClassInfos(), m_pbCivilizationFreeBuildingClass);
 	stream->Write(GC.getNumTechInfos(), m_pbCivilizationFreeTechs);
@@ -10119,6 +10148,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(m_szAdjectiveKey, "Adjective");
 	// Get the Text from Text/Civ4GameTextXML.xml
 
+	// Leoreth
+	pXML->GetChildXmlValByName(m_szIdentifier, "Identifier");
+
 	pXML->GetChildXmlValByName(szTextVal, "DefaultPlayerColor");
 	m_iDefaultPlayerColor = pXML->FindInInfoClass(szTextVal);
 
@@ -10135,6 +10167,8 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	m_iSelectionSoundScriptId = (szTextVal.GetLength() > 0) ? gDLL->getAudioTagIndex( szTextVal.GetCString(), AUDIOTAG_3DSCRIPT ) : -1;
 	pXML->GetChildXmlValByName(szTextVal, "CivilizationActionSound");
 	m_iActionSoundScriptId = (szTextVal.GetLength() > 0) ? gDLL->getAudioTagIndex( szTextVal.GetCString(), AUDIOTAG_3DSCRIPT ) : -1;
+
+	pXML->GetChildXmlValByName(&m_iStartingYear, "iStartingYear");
 
 	// set the current xml node to it's next sibling and then
 	pXML->GetChildXmlValByName(&m_bPlayable, "bPlayable");
@@ -10263,6 +10297,38 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 		}
 
 		// set the current xml node to it's parent node
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"LoadingTimes"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			int iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			FAssertMsg(0 < NUM_SCENARIO_TYPES, "Allocating zero or less memory in CvCivilizationInfo::read");
+			pXML->InitList(&m_piLoadingTime, NUM_SCENARIO_TYPES, -1);
+
+			if (0 < iNumSibs)
+			{
+				int iTemp;
+				if (pXML->GetChildXmlVal(&iTemp))
+				{
+					FAssertMsg((iNumSibs <= NUM_SCENARIO_TYPES) , "There are more siblings than memory allocated for them in CvCivilizationInfo::read");
+					for (int j=0; j<iNumSibs; ++j)
+					{
+						m_piLoadingTime[j] = iTemp;
+						if (!pXML->GetNextXmlVal(&iTemp))
+						{
+							break;
+						}
+					}
+
+					gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+				}
+			}
+		}
+
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
 

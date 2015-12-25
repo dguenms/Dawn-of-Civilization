@@ -305,16 +305,6 @@ enum ECSArtStyles
 
 extern int startingTurn[];
 extern int startingTurnYear[]; // edead
-//extern int fallTurnYear[];
-extern char loadingTime[NUM_CIVS][4];
-extern char loadingTime600AD[NUM_CIVS][4];
-extern char loadingTime1700AD[NUM_CIVS][4];
-extern char startingYear[NUM_CIVS][6];
-extern bool startingEra[NUM_CIVS];
-extern char startingYear600AD[NUM_CIVS][6];
-extern bool startingEra600AD[NUM_CIVS];
-extern char startingYear1700AD[NUM_CIVS][6];
-extern bool startingEra1700AD[NUM_CIVS];
 
 extern int takenTiles[NUM_PL];
 extern int distanceSubtrahend[NUM_PL];
