@@ -298,6 +298,9 @@ private:
 
 	void setCityPlotYieldValueString(CvWStringBuffer &szString, CvCity* pCity, int iIndex, bool bAvoidGrowth, bool bIgnoreGrowth, bool bIgnoreFood = false);
 	void setYieldValueString(CvWStringBuffer &szString, int iValue, bool bActive = false, bool bMakeWhitespace = false);
+
+	// Leoreth
+	CvWString createStars(int iNumStars);
 };
 
 // Singleton Accessor

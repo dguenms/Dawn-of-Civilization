@@ -28,11 +28,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LOADING_TIME_MINUTES</Tag>
-		<English>(Estimated loading time: %d1 minutes)</English>
-		<French>(Temps de chargement estimé : %d1 minutes)</French>
-		<German>(Geschätzte Ladezeit: %d1 Minuten)</German>
-		<Italian>(Tempo stimato di caricamento: %d1 minuti)</Italian>
-		<Spanish>(Tiempo estimado de carga: %d1 minuto/s)</Spanish>
+		<English>(Estimated loading time: %d1 minutes)[NEWLINE]</English>
+		<French>(Temps de chargement estimé : %d1 minutes)[NEWLINE]</French>
+		<German>(Geschätzte Ladezeit: %d1 Minuten)[NEWLINE]</German>
+		<Italian>(Tempo stimato di caricamento: %d1 minuti)[NEWLINE]</Italian>
+		<Spanish>(Tiempo estimado de carga: %d1 minuto/s)[NEWLINE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FLIP_TO_US</Tag>

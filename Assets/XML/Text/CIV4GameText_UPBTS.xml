@@ -5,7 +5,7 @@
 <!-- Game Text - Unit Upgrades for Civilopedia -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_UP_ETH</Tag>
+		<Tag>TXT_KEY_UP_ETH_TITLE</Tag>
 		<English>The Power of Sovereignty:</English>
 		<French>Le Pouvoir de la Souveraineté :</French>
 		<German>Die Macht der Souveränität:</German>
@@ -13,7 +13,7 @@
 		<Spanish>El poder de la soberan&#237;a:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ETH2</Tag>
+		<Tag>TXT_KEY_UP_ETH</Tag>
 		<English>Land units receive +10% additional strength within cultural borders</English>
 		<French>Les villes éthiopiennes ne peuvent pas être exigées dans un congrès</French>
 		<German>Landeinheiten erhalten +10% zusätzliche Stärke innerhalb kultureller Grenzen</German>
@@ -21,7 +21,7 @@
 		<Spanish>No se pueden pedir ciudades et&#237;opes en un Congreso</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MAY</Tag>
+		<Tag>TXT_KEY_UP_MAY_TITLE</Tag>
 		<English>The Power of Astronomy:</English>
 		<French>Le Pouvoir de l'Astronomie :</French>
 		<German>Die Macht der Astronomie:</German>
@@ -29,7 +29,7 @@
 		<Spanish>El poder de la astronom&#237;a:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MAY2</Tag>
+		<Tag>TXT_KEY_UP_MAY</Tag>
 		<English>-40% research cost until beginning of the Middle Ages</English>
 		<French>-40% sur les coûts de recherche jusqu'à la fin du Moyen Age</French>
 		<German>-40% Forschungskosten bis zum Anfang des Mittelalters</German>
@@ -37,7 +37,7 @@
 		<Spanish>-40% al coste de investigaci&#243;n hasta el final de la Edad Media</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_KHM</Tag>
+		<Tag>TXT_KEY_UP_KHM_TITLE</Tag>
 		<English>The Power of Monsoons:</English>
 		<French>Le Pouvoir des Moussons :</French>
 		<German>Die Macht des Monsuns:</German>
@@ -45,7 +45,7 @@
 		<Spanish>El poder de los monzones:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_KHM2</Tag>
+		<Tag>TXT_KEY_UP_KHM</Tag>
 		<English>All land units can move through jungles and rainforests, can build farms on rainforest</English>
 		<French>Toutes les unités terrestres peuvent se déplacer à travers la jungle</French>
 		<German>Landeinheiten können Dschungel und Regenwald durchqueren, kann Farmen in Regenwald errichten</German>
@@ -53,7 +53,7 @@
 		<Spanish>Todas las unidades terrestres se pueden mover a trav&#233;s de las junglas</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_HOL</Tag>
+		<Tag>TXT_KEY_UP_HOL_TITLE</Tag>
 		<English>The Power of Trading Companies:</English>
 		<French>Le Pouvoir des Entreprises Commerciales :</French>
 		<German>Die Macht der Handelsgesellschaften:</German>
@@ -61,7 +61,7 @@
 		<Spanish>El poder de la Compa&#241;&#237;a de las Indias:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_HOL2</Tag>
+		<Tag>TXT_KEY_UP_HOL</Tag>
 		<English>Doubled yield and commerce from the trading company corporation</English>
 		<French>Toutes les unités en mer peuvent entrer sur un territoire ennemi</French>
 		<German>Doppeltes Einkommen durch Handelsgesellschaften</German>
@@ -69,7 +69,7 @@
 		<Spanish>Todas las unidades mar&#237;timas pueden entrar en territorio enemigo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_POR</Tag>
+		<Tag>TXT_KEY_UP_POR_TITLE</Tag>
 		<English>The Power of Exploration:</English>
 		<French>Le Pouvoir de l'Exploration :</French>
 		<German>Die Macht des Kundschaftens:</German>
@@ -77,7 +77,7 @@
 		<Spanish>El poder de la exploraci&#243;n:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_POR2</Tag>
+		<Tag>TXT_KEY_UP_POR</Tag>
 		<English>Ocean Trade allowed with Optics, reduced instability for overseas colonies</English>
 		<French>Toutes les unités en mer ont un champ de vision élargi</French>
 		<German>Ozeanhandel ermöglicht durch Optik, verringerte Instabilität durch Übersee-Kolonien</German>
@@ -85,197 +85,197 @@
 		<Spanish>Todas las unidades mar&#237;timas tienen un alcance de visibilidad superior</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ITA</Tag>
+		<Tag>TXT_KEY_UP_ITA_TITLE</Tag>
 		<English>The Power of Renaissance:</English>
 		<German>Die Macht der Renaissance:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ITA2</Tag>
+		<Tag>TXT_KEY_UP_ITA</Tag>
 		<English>Free specialist in all of your cities until the Industrial Age</English>
 		<German>Zusätzlicher Spezialist in allen Städten bis zum Industriezeitalter</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_BYZ</Tag>
+		<Tag>TXT_KEY_UP_BYZ_TITLE</Tag>
 		<English>The Power of Bribery:</English>
 		<German>Die Macht der Bestechung:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_BYZ2</Tag>
+		<Tag>TXT_KEY_UP_BYZ</Tag>
 		<English>Double gold value in trades, spies can bribe barbarian units</English>
 		<German>Doppelter Wert von Gold beim Handeln, Spione können barbarische Einheiten bestechen</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_KOR</Tag>
+		<Tag>TXT_KEY_UP_KOR_TITLE</Tag>
 		<English>The Power of Kobuksons:</English>
 		<German>Die Macht der Kobuksons:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_KOR2</Tag>
+		<Tag>TXT_KEY_UP_KOR</Tag>
 		<English>Free Drill I and Drill II promotions for all naval units</English>
 		<German>Alle Marineeinheiten erhalten die Drill I und Drill II Beförderung</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_INO</Tag>
+		<Tag>TXT_KEY_UP_INO_TITLE</Tag>
 		<English>The Power of Straits:</English>
 		<German>Die Macht der Meerengen:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_INO2</Tag>
+		<Tag>TXT_KEY_UP_INO</Tag>
 		<English>Additional gold from foreign ships passing through your core</English>
 		<German>Zusätzliches Gold von ausländischen Schiffen, die unser Kerngebiet passieren</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_THA</Tag>
+		<Tag>TXT_KEY_UP_THA_TITLE</Tag>
 		<English>The Power of Father Governs Children:</English>
 		<German>Die Macht von Vater Regiert Kinder:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_THA2</Tag>
+		<Tag>TXT_KEY_UP_THA</Tag>
 		<English>Can use twice as many units to generate military happiness</English>
 		<German>Kann zweimal soviele militärische Einheiten einsetzen, um Zufriedenheit zu generieren</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_IRA</Tag>
+		<Tag>TXT_KEY_UP_IRA_TITLE</Tag>
 		<English>The Power of Safaviyya:</English>
 		<German>Die Macht der Safaviyya:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_IRA2</Tag>
+		<Tag>TXT_KEY_UP_IRA</Tag>
 		<English>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</English>
 		<German>Religiöse Gebäude produzieren +2 [ICON_CULTUE] und +2 [ICON_RESEARCH]</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_HRE</Tag>
+		<Tag>TXT_KEY_UP_HRE_TITLE</Tag>
 		<English>The Power of Investiture:</English>
 		<German>Die Macht der Investitur:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_HRE2</Tag>
+		<Tag>TXT_KEY_UP_HRE</Tag>
 		<English>Double construction speed of state religion buildings</English>
 		<German>Doppelte Baugeschwindigkeit für Gebäude der Staatsreligion</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MUG</Tag>
+		<Tag>TXT_KEY_UP_MUG_TITLE</Tag>
 		<English>The Power of Tolerance:</English>
 		<German>Die Macht der Toleranz:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MUG2</Tag>
+		<Tag>TXT_KEY_UP_MUG</Tag>
 		<English>No unhappiness from non-state religions</English>
 		<German>Keine Unzufriedenheit durch Nicht-Staatsreligionen</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TAM</Tag>
+		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Thalassocracy:</English>
 		<German>Die Macht der Thalassokratie:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TAM2</Tag>
+		<Tag>TXT_KEY_UP_TAM</Tag>
 		<English>Extra commerce on coast and ocean tiles</English>
 		<German>Zusätzlicher Kommerz auf Küsten- und Ozeanfeldern</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_POL</Tag>
+		<Tag>TXT_KEY_UP_POL_TITLE</Tag>
 		<English>The Power of Golden Liberty:</English>
 		<German>Die Macht der Goldenen Freiheit:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_POL2</Tag>
+		<Tag>TXT_KEY_UP_POL</Tag>
 		<English>Additional food and commerce during Golden Ages</English>
 		<German>Zusätzliche Nahrung und Kommerz durch Goldene Zeitalter</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MOO</Tag>
+		<Tag>TXT_KEY_UP_MOO_TITLE</Tag>
 		<English>The Power of Irrigation:</English>
 		<German>Die Macht der Bewässerung:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MOO2</Tag>
+		<Tag>TXT_KEY_UP_MOO</Tag>
 		<English>Improvements that yield food give one extra food on plains tiles until the Renaissance</English>
 		<German>Verbesserungen, die Nahrung produzieren, geben eine zusätzliche Nahrungseinheit auf Ebenenfeldern bis zur Renaissance</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_KON</Tag>
+		<Tag>TXT_KEY_UP_KON_TITLE</Tag>
 		<English>The Power of the Tropics:</English>
 		<German>Die Macht der Tropen:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_KON2</Tag>
+		<Tag>TXT_KEY_UP_KON</Tag>
 		<English>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</English>
 		<German>Dschungel, Regenwälder und Marschen geben zusätzliche Nahrung und Produktion und verursachen keine Krankheit</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TIB</Tag>
+		<Tag>TXT_KEY_UP_TIB_TITLE</Tag>
 		<English>The Power of Missionaries:</English>
 		<German>Die Macht der Missionare:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TIB2</Tag>
+		<Tag>TXT_KEY_UP_TIB</Tag>
 		<English>Can train unlimited missionaries; Missionaries can enter foreign territory</English>
 		<German>Kann unbegrenzt Missionare ausbilden; Missionare können fremdes Territorium betreten</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MEX</Tag>
+		<Tag>TXT_KEY_UP_MEX_TITLE</Tag>
 		<English>The Power of Arid Agriculture:</English>
 		<German>Die Macht der Ariden Landwirtschaft:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MEX2</Tag>
+		<Tag>TXT_KEY_UP_MEX</Tag>
 		<English>Can build farms on hills</English>
 		<German>Kann Farmen auf Hügeln errichten</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_BRA</Tag>
+		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
 		<English>The Power of Ethanol:</English>
 		<German>Die Macht des Ethanols:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_BRA2</Tag>
+		<Tag>TXT_KEY_UP_BRA</Tag>
 		<English>Sugar counts as oil for Oil Industry</English>
 		<German>Zucker zählt als Öl für die Ölindustrie</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ARG</Tag>
+		<Tag>TXT_KEY_UP_ARG_TITLE</Tag>
 		<English>The Power of Juntas:</English>
 		<German>Die Macht der Juntas:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ARG2</Tag>
+		<Tag>TXT_KEY_UP_ARG</Tag>
 		<English>Great Generals can start Golden Ages</English>
 		<German>Große Generäle können Goldene Zeitalter auslösen</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_COL</Tag>
+		<Tag>TXT_KEY_UP_COL_TITLE</Tag>
 		<English>The Power of the Liberator:</English>
 		<German>Die Macht des Befreiers:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_COL2</Tag>
+		<Tag>TXT_KEY_UP_COL</Tag>
 		<English>No City Resistance on Conquest in Latin America</English>
 		<German>Keinen Widerstand in eroberten Städten in Lateinamerika</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_CAN</Tag>
+		<Tag>TXT_KEY_UP_CAN_TITLE</Tag>
 		<English>The Power of Multiculturalism:</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_CAN2</Tag>
+		<Tag>TXT_KEY_UP_CAN</Tag>
 		<English>Immigrants bring [ICON_GREATPEOPLE] to your cities</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_PLY</Tag>
+		<Tag>TXT_KEY_UP_PLY_TITLE</Tag>
 		<English>The Power of Navigation:</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_PLY2</Tag>
+		<Tag>TXT_KEY_UP_PLY</Tag>
 		<English>No penalties for cultural expansion over Ocean tiles</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_HAR</Tag>
+		<Tag>TXT_KEY_UP_HAR_TITLE</Tag>
 		<English>The Power of Sanitation:</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_HAR2</Tag>
+		<Tag>TXT_KEY_UP_HAR</Tag>
 		<English>Positive health contributes to city growth during the Ancient era</English>
 	</TEXT>
 </Civ4GameText>

@@ -262,6 +262,14 @@
 		<Spanish>%F1_HealthOrUn</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_RATING_STAR</Tag>
+		<English>[ICON_STAR]</English>
+		<French>[ICON_STAR]</French>
+		<German>[ICON_STAR]</German>
+		<Italian>[ICON_STAR]</Italian>
+		<Spanish>[ICON_STAR]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_RATING</Tag>
 		<English>Rating</English>
 		<French>Evaluation</French>

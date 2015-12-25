@@ -433,6 +433,18 @@
 	<ElementType name="LoadingTimes" content="eltOnly">
 		<element type="LoadingTime"/>
 	</ElementType>
+	<ElementType name="Trade" content="textOnly" dt:type="int"/>
+	<ElementType name="Production" content="textOnly" dt:type="int"/>
+	<ElementType name="Culture" content="textOnly" dt:type="int"/>
+	<ElementType name="Growth" content="textOnly" dt:type="int"/>
+	<ElementType name="Start" content="textOnly" dt:type="int"/>
+	<ElementType name="Rating" content="eltOnly">
+		<element type="Trade"/>
+		<element type="Production"/>
+		<element type="Culture"/>
+		<element type="Growth"/>
+		<element type="Start"/>
+	</ElementType>
 	<ElementType name="CivilizationSelectionSound" content="textOnly"/>
 	<ElementType name="CivilizationActionSound" content="textOnly"/>
 	<ElementType name="UnitArtStyleType" content="textOnly"/>
@@ -449,6 +461,7 @@
 		<element type="Identifier"/> <!-- Leoreth -->
 		<element type="StartingYear"/> <!-- Leoreth -->
 		<element type="LoadingTimes"/> <!-- Leoreth -->
+		<element type="Rating"/> <!-- Leoreth -->
 		<element type="bPlayable"/>
 		<element type="bAIPlayable"/>
 		<element type="Cities"/>

@@ -6268,21 +6268,21 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());*/
 
 		/*if (bDawnOfMan)
-		{*/
+		{
 			szText = gDLL->getText(uniquePower[eCivilization][0]);
 			swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
-		/*}
+		}
 		else
 		{
 			szText = gDLL->getSymbolID(BULLET_CHAR) + gDLL->getText(uniquePower[eCivilization][0]);
 			swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
 		}*/
+
+		swprintf(szTempString, L"%s" NEWLINE, gDLL->getText("TXT_KEY_UP_" + GC.getCivilizationInfo(eCivilization).getIdentifier() + "_TITLE").GetCString());
 		szInfoText.append(szTempString);
 
-		szText = gDLL->getText(uniquePower[eCivilization][1]);
-		swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
+		swprintf(szTempString, L"%s" NEWLINE, gDLL->getText("TXT_KEY_UP_" + GC.getCivilizationInfo(eCivilization).getIdentifier()).GetCString());
 		szInfoText.append(szTempString);
-
 
 		// Historical Victory goals
 		if (bDawnOfMan)
@@ -6297,16 +6297,15 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 		szInfoText.append(szTempString);
 
-		if (bDawnOfMan)
-			szText = L"  ";
-		else
-			szText = L"";
+		std::string szIdentifier = GC.getCivilizationInfo(eCivilization).getIdentifier();
+
+		szText = bDawnOfMan ? L"  " : L"";
 		szText += gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText(uniqueGoals[eCivilization][0]);
+		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "1");
 		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText(uniqueGoals[eCivilization][1]);
+		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "2");
 		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText(uniqueGoals[eCivilization][2]);
+		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "3");
 		szText += NEWLINE L"  ";
 
 		if (bDawnOfMan)
@@ -6332,31 +6331,18 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 		szInfoText.append(szTempString);
 
-		if (bDawnOfMan)
-			szText = L"  ";
-		else
-			szText = L"";
-		szText += gDLL->getText("TXT_KEY_MM_TRADE");
-		szText += gDLL->getText(rating[eCivilization][0], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_PRODUCTION");
-		szText += gDLL->getText(rating[eCivilization][1], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_CULTURE");
-		szText += gDLL->getText(rating[eCivilization][2], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_GROWTH");
-		szText += gDLL->getText(rating[eCivilization][3], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_STARTING_SITUATION");
-		szText += gDLL->getText(rating[eCivilization][4], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
+		szText = bDawnOfMan ? L"  " : L"";
 
+		szText += gDLL->getText("TXT_KEY_MM_TRADE") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_TRADE));
+		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_PRODUCTION") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_PRODUCTION));
+		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_CULTURE") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_CULTURE));
+		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_GROWTH") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_GROWTH));
+		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_STARTING_SITUATION") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_START));
 
-		if (bDawnOfMan)
-		{
-			swprintf(szTempString, L"%s", szText.GetCString());
-		}
-		else
-		{
-			swprintf(szTempString, L"%s  %s", NEWLINE, szText.GetCString());
-		}
-			szInfoText.append(szTempString);
+		if (bDawnOfMan) swprintf(szTempString, L"%s", szText.GetCString());
+		else swprintf(szTempString, L"%s  %s", NEWLINE, szText.GetCString());
+		
+		szInfoText.append(szTempString);
 	}
 	else
 	{
@@ -6367,6 +6353,17 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		//Rhye - end
 
 //	return szInfoText;
+}
+
+// Leoreth
+CvWString CvGameTextMgr::createStars(int iNumStars)
+{
+	CvWString sStars = "";
+	for (int i = 0; i < iNumStars; i++)
+	{
+		sStars += gDLL->getText("TXT_KEY_RATING_STAR");
+	}
+	return sStars;
 }
 
 
