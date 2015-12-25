@@ -6091,44 +6091,22 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		if (bDawnOfMan)
 		{
 			swprintf(szBuffer, SETCOLR L"%s: " ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
-				}
+		}
 		else
 		{
 			swprintf(szBuffer, NEWLINE SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_ALT_HIGHLIGHT_TEXT"), szText.GetCString());
-			}
+		}
 		szInfoText.append(szBuffer);
 
-		if (getScenario() == SCENARIO_3000BC)
-		{
-			szText = startingYear[eCivilization];
-			if (startingEra[eCivilization])
-				szText += gDLL->getText("TXT_KEY_AD");
-			else
-				szText += gDLL->getText("TXT_KEY_BC");
-		}
-		else if (getScenario() == SCENARIO_600AD)
-		{
-			szText = startingYear600AD[eCivilization];
-			if (startingEra600AD[eCivilization])
-				szText += gDLL->getText("TXT_KEY_AD");
-			else
-				szText += gDLL->getText("TXT_KEY_BC");
-		}
-		else
-		{
-			szText = startingYear1700AD[eCivilization];
-			if (startingEra1700AD[eCivilization])
-				szText += gDLL->getText("TXT_KEY_AD");
-			else
-				szText += gDLL->getText("TXT_KEY_BC");
-		}
+		int iStartingYear = std::max(GC.getCivilizationInfo(eCivilization).getStartingYear(), getScenarioStartYear());
+		szText = gDLL->getText(iStartingYear >= 0 ? "TXT_KEY_YEAR_AD" : "TXT_KEY_YEAR_BC", std::abs(iStartingYear));
 
 		szText += NEWLINE;
 		if (bDawnOfMan)
-			{
+		{
 			swprintf(szBuffer, L"%s", szText.GetCString());
-				szInfoText.append(szBuffer);
-			}
+			szInfoText.append(szBuffer);
+		}
 		else
 		{
 			swprintf(szBuffer, L"%s  %c%s", NEWLINE, gDLL->getSymbolID(BULLET_CHAR), szText.GetCString());
@@ -6137,19 +6115,9 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 
 		if (bDawnOfMan)
 		{
-			szText = gDLL->getText("TXT_KEY_LOADING_TIME") + " ";
-			if (getScenario() == SCENARIO_3000BC) //late start condition
-				szText = szText + loadingTime[eCivilization];
-			else if (getScenario() == SCENARIO_600AD)
-				szText = szText + loadingTime600AD[eCivilization];
-			else
-				szText = szText + loadingTime1700AD[eCivilization];
-			szText += " " + gDLL->getText("TXT_KEY_MINUTES");
-			szText += NEWLINE;
-			swprintf(szBuffer, L"%s", szText.GetCString());
+			swprintf(szBuffer, L"%s", gDLL->getText("TXT_KEY_LOADING_TIME_MINUTES", GC.getCivilizationInfo(eCivilization).getLoadingTime(getScenario())).GetCString());
 			szInfoText.append(szBuffer);
 		}
-
 
 		//Rhye - end
 

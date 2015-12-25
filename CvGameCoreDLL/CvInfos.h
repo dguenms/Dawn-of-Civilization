@@ -2268,6 +2268,11 @@ public:
 	DllExport int getCivilizationFreeUnitsClass(int i) const;				// Exposed to Python
 	DllExport int getCivilizationInitialCivics(int i) const;				// Exposed to Python
 
+	// Leoreth
+	int getLoadingTime(ScenarioTypes eScenario) const;
+	int getStartingYear() const;
+	const wchar* getIdentifier() const;
+
 	DllExport bool isLeaders(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeBuildingClass(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeTechs(int i) const;				// Exposed to Python
@@ -2299,18 +2304,23 @@ protected:
 	int m_iActionSoundScriptId;
 	int m_iDerivativeCiv;
 
+	int m_iStartingYear; // Leoreth
+
 	bool m_bAIPlayable;
 	bool m_bPlayable;
 
 	CvString m_szArtDefineTag;
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
+	CvWString m_szIdentifier; // Leoreth
 	// Arrays
 
 	int* m_piCivilizationBuildings;
 	int* m_piCivilizationUnits;
 	int* m_piCivilizationFreeUnitsClass;
 	int* m_piCivilizationInitialCivics;
+
+	int* m_piLoadingTime; // Leoreth
 
 	bool* m_pbLeaders;
 	bool* m_pbCivilizationFreeBuildingClass;

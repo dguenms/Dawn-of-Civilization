@@ -27,20 +27,12 @@
 		<Spanish>Objetivos históricos conseguidos:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LOADING_TIME</Tag>
-		<English>(Estimated loading time:</English>
-		<French>(Temps de chargement estimé :</French>
-		<German>(Geschätzte Ladezeit:</German>
-		<Italian>(Tempo stimato di caricamento:</Italian>
-		<Spanish>(Tiempo estimado de carga:</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_MINUTES</Tag>
-		<English>minutes)</English>
-		<French>minutes)</French>
-		<German>Minuten)</German>
-		<Italian>minuti)</Italian>
-		<Spanish>minuto/s)</Spanish>
+		<Tag>TXT_KEY_LOADING_TIME_MINUTES</Tag>
+		<English>(Estimated loading time: %d1 minutes)</English>
+		<French>(Temps de chargement estimé : %d1 minutes)</French>
+		<German>(Geschätzte Ladezeit: %d1 Minuten)</German>
+		<Italian>(Tempo stimato di caricamento: %d1 minuti)</Italian>
+		<Spanish>(Tiempo estimado de carga: %d1 minuto/s)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FLIP_TO_US</Tag>
