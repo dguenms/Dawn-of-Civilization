@@ -24,6 +24,13 @@
 				<LoadingTime>30</LoadingTime>
 				<LoadingTime>10</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>5</Production>
+				<Culture>1</Culture>
+				<Growth>5</Growth>
+				<Start>1</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -153,6 +160,13 @@
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>1</Production>
+				<Culture>5</Culture>
+				<Growth>1</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -271,6 +285,13 @@
 				<LoadingTime>45</LoadingTime>
 				<LoadingTime>20</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -391,6 +412,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>1</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -530,6 +558,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -668,6 +703,13 @@
 				<LoadingTime>45</LoadingTime>
 				<LoadingTime>25</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -790,6 +832,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>5</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -916,6 +965,13 @@
 				<LoadingTime>45</LoadingTime>
 				<LoadingTime>20</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -1040,6 +1096,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>2</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -1175,6 +1238,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -1294,6 +1364,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>4</Production>
+				<Culture>5</Culture>
+				<Growth>2</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -1443,6 +1520,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>3</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -1547,6 +1631,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>1</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>			
 			<Cities>
@@ -1711,6 +1802,13 @@
 				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -1848,6 +1946,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>2</Production>
+				<Culture>3</Culture>
+				<Growth>3</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -1986,6 +2091,13 @@
 				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -2117,6 +2229,13 @@
 				<LoadingTime>25</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>5</Production>
+				<Culture>3</Culture>
+				<Growth>3</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -2268,6 +2387,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>5</Culture>
+				<Growth>2</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -2418,6 +2544,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>1</Production>
+				<Culture>3</Culture>
+				<Growth>5</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -2523,6 +2656,13 @@
 				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>5</Production>
+				<Culture>2</Culture>
+				<Growth>5</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -2673,6 +2813,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>4</Growth>
+				<Start>1</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -2802,6 +2949,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>1</Production>
+				<Culture>5</Culture>
+				<Growth>1</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -2957,6 +3111,13 @@
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>1</Production>
+				<Culture>3</Culture>
+				<Growth>5</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -3082,6 +3243,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>2</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -3218,6 +3386,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -3341,6 +3516,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -3474,6 +3656,13 @@
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -3605,6 +3794,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -3739,6 +3935,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>1</Production>
+				<Culture>3</Culture>
+				<Growth>5</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -3855,6 +4058,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>5</Trade>
+				<Production>1</Production>
+				<Culture>3</Culture>
+				<Growth>3</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -3996,6 +4206,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>3</Growth>
+				<Start>1</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -4134,6 +4351,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>4</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -4255,6 +4479,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>1</Trade>
+				<Production>4</Production>
+				<Culture>2</Culture>
+				<Growth>4</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -4377,6 +4608,13 @@
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -4522,6 +4760,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>5</Growth>
+				<Start>5</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -4669,6 +4914,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -4791,6 +5043,13 @@
 				<LoadingTime>20</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>5</Growth>
+				<Start>1</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -4928,6 +5187,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>5</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -5059,6 +5325,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>2</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -5213,6 +5486,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -5359,6 +5639,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>1</Production>
+				<Culture>3</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -5469,6 +5756,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>4</Trade>
+				<Production>2</Production>
+				<Culture>2</Culture>
+				<Growth>5</Growth>
+				<Start>1</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -5613,6 +5907,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -5758,6 +6059,13 @@
 				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>1</Trade>
+				<Production>4</Production>
+				<Culture>2</Culture>
+				<Growth>4</Growth>
+				<Start>5</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -5883,6 +6191,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>0</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -5952,6 +6267,13 @@
 				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>3</Production>
+				<Culture>3</Culture>
+				<Growth>4</Growth>
+				<Start>3</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -6083,6 +6405,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -6199,6 +6528,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>5</Trade>
+				<Production>1</Production>
+				<Culture>4</Culture>
+				<Growth>3</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -6333,6 +6669,13 @@
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>3</Trade>
+				<Production>2</Production>
+				<Culture>4</Culture>
+				<Growth>4</Growth>
+				<Start>2</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -6467,6 +6810,13 @@
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>3</Production>
+				<Culture>4</Culture>
+				<Growth>1</Growth>
+				<Start>1</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -6620,6 +6970,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>2</Trade>
+				<Production>3</Production>
+				<Culture>2</Culture>
+				<Growth>3</Growth>
+				<Start>4</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -6745,6 +7102,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -6852,6 +7216,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -6945,6 +7316,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -7042,6 +7420,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
@@ -7150,6 +7535,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>0</bPlayable>
 			<bAIPlayable>0</bAIPlayable>
 			<Cities>
@@ -7295,6 +7687,13 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
+			<Rating>
+				<Trade>0</Trade>
+				<Production>0</Production>
+				<Culture>0</Culture>
+				<Growth>0</Growth>
+				<Start>0</Start>
+			</Rating>
 			<bPlayable>0</bPlayable>
 			<bAIPlayable>0</bAIPlayable>
 			<Cities>

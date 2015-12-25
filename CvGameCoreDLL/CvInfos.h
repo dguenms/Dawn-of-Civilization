@@ -2270,8 +2270,9 @@ public:
 
 	// Leoreth
 	int getLoadingTime(ScenarioTypes eScenario) const;
+	int getRating(RatingTypes eRating) const;
 	int getStartingYear() const;
-	const wchar* getIdentifier() const;
+	const std::string getIdentifier() const;
 
 	DllExport bool isLeaders(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeBuildingClass(int i) const;				// Exposed to Python
@@ -2312,7 +2313,7 @@ protected:
 	CvString m_szArtDefineTag;
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
-	CvWString m_szIdentifier; // Leoreth
+	std::string m_szIdentifier; // Leoreth
 	// Arrays
 
 	int* m_piCivilizationBuildings;
@@ -2321,6 +2322,7 @@ protected:
 	int* m_piCivilizationInitialCivics;
 
 	int* m_piLoadingTime; // Leoreth
+	int* m_piRatings; // Leoreth
 
 	bool* m_pbLeaders;
 	bool* m_pbCivilizationFreeBuildingClass;

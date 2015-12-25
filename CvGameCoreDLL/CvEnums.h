@@ -3037,4 +3037,15 @@ enum ScenarioTypes
 	NUM_SCENARIO_TYPES,
 };
 
+// Leoreth
+enum RatingTypes
+{
+	RATING_TRADE,
+	RATING_PRODUCTION,
+	RATING_CULTURE,
+	RATING_GROWTH,
+	RATING_START,
+	NUM_RATING_TYPES,
+};
+
 #endif	// CVENUMS_h

@@ -342,10 +342,6 @@ extern int currentEra1700AD[NUM_PL];
 extern int growthThreshold[NUM_PL];
 extern int religiousTolerance[NUM_PL];
 
-extern char uniquePower[NUM_CIVS][2][16];
-extern char uniqueGoals[NUM_CIVS][3][18];
-extern char rating[NUM_CIVS][6][15];
-
 extern int lTechLeaderPenalty[NUM_ERAS];
 extern int lTechBackwardsBonus[NUM_ERAS];
 
