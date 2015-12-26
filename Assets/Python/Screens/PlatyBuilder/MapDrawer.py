@@ -171,18 +171,21 @@ def export():
 	# popup which files have been created
 	popup = PyPopup.PyPopup()
 	sText = "The following maps have been created.\n\nCore:"
-	for sName in lChangedCivCores:
-		sText += "\n"+sName
+	if lChangedCivCores:
+		for sName in lChangedCivCores:
+			sText += "\n"+sName
 	else:
 		sText += "\nNo Civ"
 	sText += "\n\nFlipzones:"
-	for sName in lChangedCivFlipzones:
-		sText += "\n"+sName
+	if lChangedCivFlipzones:
+		for sName in lChangedCivFlipzones:
+			sText += "\n"+sName
 	else:
 		sText += "\nNo Civ"
 	sText += "\n\nSettlerMaps:"
-	for sName in lChangedCivSettlerValues:
-		sText += "\n"+sName
+	if lChangedCivSettlerValues:
+		for sName in lChangedCivSettlerValues:
+			sText += "\n"+sName
 	else:
 		sText += "\nNo Civ"
 	popup.setBodyString(sText)
