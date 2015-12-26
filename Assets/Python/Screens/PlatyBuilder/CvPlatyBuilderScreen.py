@@ -1077,6 +1077,7 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("FlipButton")
 			screen.deleteWidget("CoreButton")
 			screen.deleteWidget("SettlerValueButton")
+			screen.deleteWidget("PresetValue")
 			screen.deleteWidget("UtilButtonPanel")
 			screen.deleteWidget("RevertChangesText")
 			screen.deleteWidget("ClearCore")
