@@ -838,19 +838,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPAWN_MAPS</Tag>
-		<English>Spawn Zone Maps</English>
-		<French>Spawn Zone Maps</French>
-		<German>Spawn Zone Maps</German>
-		<Italian>Spawn Zone Maps</Italian>
-		<Spanish>Spawn Zone Maps</Spanish>
+		<English>Flipzone Maps</English>
+		<French>Flipzone Maps</French>
+		<German>Flipzone Maps</German>
+		<Italian>Flipzone Maps</Italian>
+		<Spanish>Flipzone Maps</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IN_SPAWN</Tag>
-		<English>Spawn</English>
-		<French>Spawn</French>
-		<German>Spawn</German>
-		<Italian>Spawn</Italian>
-		<Spanish>Spawn</Spanish>
+		<English>Flipzone</English>
+		<French>Flipzone</French>
+		<German>Flipzone</German>
+		<Italian>Flipzone</Italian>
+		<Spanish>Flipzone</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CORE</Tag>
@@ -902,27 +902,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CHANGE_CORE</Tag>
-		<English>Add/Remove current tile to/from core (doesn't work yet)</English>
-		<French>Add/Remove current tile to/from core (doesn't work yet)</French>
-		<German>Add/Remove current tile to/from core (doesn't work yet)</German>
-		<Italian>Add/Remove current tile to/from core (doesn't work yet)</Italian>
-		<Spanish>Add/Remove current tile to/from core (doesn't work yet)</Spanish>
+		<English>Add/Remove current tile to/from core</English>
+		<French>Add/Remove current tile to/from core</French>
+		<German>Add/Remove current tile to/from core</German>
+		<Italian>Add/Remove current tile to/from core</Italian>
+		<Spanish>Add/Remove current tile to/from core</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CHANGE_FLIP</Tag>
-		<English>Add/Remove current tile to/from flipzone (doesn't work yet)</English>
-		<French>Add/Remove current tile to/from flipzone (doesn't work yet)</French>
-		<German>Add/Remove current tile to/from flipzone (doesn't work yet)</German>
-		<Italian>Add/Remove current tile to/from flipzone (doesn't work yet)</Italian>
-		<Spanish>Add/Remove current tile to/from flipzone (doesn't work yet)</Spanish>
+		<English>Add/Remove current tile to/from flipzone</English>
+		<French>Add/Remove current tile to/from flipzone</French>
+		<German>Add/Remove current tile to/from flipzone</German>
+		<Italian>Add/Remove current tile to/from flipzone</Italian>
+		<Spanish>Add/Remove current tile to/from flipzone</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CHANGE_SETTLERVALUE</Tag>
-		<English>Change settlervalue (doesn't work yet)</English>
-		<French>Change settlervalue (doesn't work yet)</French>
-		<German>Change settlervalue (doesn't work yet)</German>
-		<Italian>Change settlervalue (doesn't work yet)</Italian>
-		<Spanish>Change settlervalue (doesn't work yet)</Spanish>
+		<English>Change settlervalue</English>
+		<French>Change settlervalue</French>
+		<German>Change settlervalue</German>
+		<Italian>Change settlervalue</Italian>
+		<Spanish>Change settlervalue</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_VIEW_FLIPZONE</Tag>
@@ -931,6 +931,14 @@
 		<German>View/Hide Flipzone</German>
 		<Italian>View/Hide Flipzone</Italian>
 		<Spanish>View/Hide Flipzone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_FLIP</Tag>
+		<English>Flip</English>
+		<French>Flip</French>
+		<German>Flip</German>
+		<Italian>Flip</Italian>
+		<Spanish>Flip</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_TOGGLE_AI_FORBIDDEN</Tag>
@@ -998,67 +1006,67 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_KABOOM</Tag>
-		<English>Completely randomizes all settlermaps and flipzones (doesn't work yet)</English>
-		<French>Completely randomizes all settlermaps and flipzones (doesn't work yet)</French>
-		<German>Completely randomizes all settlermaps and flipzones (doesn't work yet)</German>
-		<Italian>Completely randomizes all settlermaps and flipzones (doesn't work yet)</Italian>
-		<Spanish>Completely randomizes all settlermaps and flipzones (doesn't work yet)</Spanish>
+		<English>Completely randomizes the settlermap, coremap and flipzone of the selected civ</English>
+		<French>Completely randomizes the settlermap, coremap and flipzone of the selected civ</French>
+		<German>Completely randomizes the settlermap, coremap and flipzone of the selected civ</German>
+		<Italian>Completely randomizes the settlermap, coremap and flipzone of the selected civ</Italian>
+		<Spanish>Completely randomizes the settlermap, coremap and flipzone of the selected civ</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MULTI_ADD_CORE</Tag>
-		<English>Add selected tiles to core (doesn't work yet)</English>
-		<French>Add selected tiles to core (doesn't work yet)</French>
-		<German>Add selected tiles to core (doesn't work yet)</German>
-		<Italian>Add selected tiles to core (doesn't work yet)</Italian>
-		<Spanish>Add selected tiles to core (doesn't work yet)</Spanish>
+		<English>Add selected tiles to core</English>
+		<French>Add selected tiles to core</French>
+		<German>Add selected tiles to core</German>
+		<Italian>Add selected tiles to core</Italian>
+		<Spanish>Add selected tiles to core</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MULTI_REMOVE_CORE</Tag>
-		<English>Remove selected tiles from core (doesn't work yet)</English>
-		<French>Remove selected tiles from core (doesn't work yet)</French>
-		<German>Remove selected tiles from core (doesn't work yet)</German>
-		<Italian>Remove selected tiles from core (doesn't work yet)</Italian>
-		<Spanish>Remove selected tiles from core (doesn't work yet)</Spanish>
+		<English>Remove selected tiles from core</English>
+		<French>Remove selected tiles from core</French>
+		<German>Remove selected tiles from core</German>
+		<Italian>Remove selected tiles from core</Italian>
+		<Spanish>Remove selected tiles from core</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MULTI_REPLACE_CORE</Tag>
-		<English>Replaces current core with selected tiles (doesn't work yet)</English>
-		<French>Replaces current core with selected tiles (doesn't work yet)</French>
-		<German>Replaces current core with selected tiles (doesn't work yet)</German>
-		<Italian>Replaces current core with selected tiles (doesn't work yet)</Italian>
-		<Spanish>Replaces current core with selected tiles (doesn't work yet)</Spanish>
+		<English>Replaces current core with selected tiles</English>
+		<French>Replaces current core with selected tiles</French>
+		<German>Replaces current core with selected tiles</German>
+		<Italian>Replaces current core with selected tiles</Italian>
+		<Spanish>Replaces current core with selected tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MULTI_SETTLERVALUE</Tag>
-		<English>Change the settler value of all selected tiles (doesn't work yet)</English>
-		<French>Change the settler value of all selected tiles (doesn't work yet)</French>
-		<German>Change the settler value of all selected tiles (doesn't work yet)</German>
-		<Italian>Change the settler value of all selected tiles (doesn't work yet)</Italian>
-		<Spanish>Change the settler value of all selected tiles (doesn't work yet)</Spanish>
+		<English>Change the settler value of all selected tiles</English>
+		<French>Change the settler value of all selected tiles</French>
+		<German>Change the settler value of all selected tiles</German>
+		<Italian>Change the settler value of all selected tiles</Italian>
+		<Spanish>Change the settler value of all selected tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MULTI_ADD_SPAWN</Tag>
-		<English>Add selected tiles to spawn zone (doesn't work yet)</English>
-		<French>Add selected tiles to spawn zone (doesn't work yet)</French>
-		<German>Add selected tiles to spawn zone (doesn't work yet)</German>
-		<Italian>Add selected tiles to spawn zone (doesn't work yet)</Italian>
-		<Spanish>Add selected tiles to spawn zone (doesn't work yet)</Spanish>
+		<English>Add selected tiles to spawn zone</English>
+		<French>Add selected tiles to spawn zone</French>
+		<German>Add selected tiles to spawn zone</German>
+		<Italian>Add selected tiles to spawn zone</Italian>
+		<Spanish>Add selected tiles to spawn zone</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MULTI_REMOVE_SPAWN</Tag>
-		<English>Remove selected tiles from spawn zone (doesn't work yet)</English>
-		<French>Remove selected tiles from spawn zone (doesn't work yet)</French>
-		<German>Remove selected tiles from spawn zone (doesn't work yet)</German>
-		<Italian>Remove selected tiles from spawn zone (doesn't work yet)</Italian>
-		<Spanish>Remove selected tiles from spawn zone (doesn't work yet)</Spanish>
+		<English>Remove selected tiles from spawn zone</English>
+		<French>Remove selected tiles from spawn zone</French>
+		<German>Remove selected tiles from spawn zone</German>
+		<Italian>Remove selected tiles from spawn zone</Italian>
+		<Spanish>Remove selected tiles from spawn zone</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_MULTI_REPLACE_SPAWN</Tag>
-		<English>Replaces current spawn zone with selected tiles (doesn't work yet)</English>
-		<French>Replaces current spawn zone with selected tiles (doesn't work yet)</French>
-		<German>Replaces current spawn zone with selected tiles (doesn't work yet)</German>
-		<Italian>Replaces current spawn zone with selected tiles (doesn't work yet)</Italian>
-		<Spanish>Replaces current spawn zone with selected tiles (doesn't work yet)</Spanish>
+		<English>Replaces current spawn zone with selected tiles</English>
+		<French>Replaces current spawn zone with selected tiles</French>
+		<German>Replaces current spawn zone with selected tiles</German>
+		<Italian>Replaces current spawn zone with selected tiles</Italian>
+		<Spanish>Replaces current spawn zone with selected tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_AI_FORBIDDEN</Tag>
@@ -1067,5 +1075,37 @@
 		<German>Show/Hide areas in which the AI is forbidden to settle</German>
 		<Italian>Show/Hide areas in which the AI is forbidden to settle</Italian>
 		<Spanish>Show/Hide areas in which the AI is forbidden to settle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_EXPORT</Tag>
+		<English>Export</English>
+		<French>Export</French>
+		<German>Export</German>
+		<Italian>Export</Italian>
+		<Spanish>Export</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REVERT_CHANGES</Tag>
+		<English>Revert changes</English>
+		<French>Revert changes</French>
+		<German>Revert changes</German>
+		<Italian>Revert changes</Italian>
+		<Spanish>Revert changes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SELECTED_CIV</Tag>
+		<English>Selected Civ</English>
+		<French>Selected Civ</French>
+		<German>Selected Civ</German>
+		<Italian>Selected Civ</Italian>
+		<Spanish>Selected Civ</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ALL_CIVS</Tag>
+		<English>All Civs</English>
+		<French>All Civs</French>
+		<German>All Civs</German>
+		<Italian>All Civs</Italian>
+		<Spanish>All Civs</Spanish>
 	</TEXT>
 </Civ4GameText>
