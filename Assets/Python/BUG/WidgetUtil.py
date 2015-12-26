@@ -192,7 +192,7 @@ def getWidgetHelp(argsList):
 			elif iData2 == 8:
 				return CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_BUILDING",())
 			elif iData2 == 9:
-				return "Platy Builder\nVersion: 4.17"
+				return "Platy Builder\nVersion: 4.17\nWith merijn_v1 DoC features"
 			elif iData2 == 10:
 				return CyTranslator().getText("TXT_KEY_CONCEPT_EVENTS",())
 			elif iData2 == 11:
@@ -239,6 +239,12 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_INFO_SCREEN", ())
 			elif iData2 == 34:
 				return CyTranslator().getText("TXT_KEY_CONCEPT_TRADE", ())
+			elif iData2 == 35:
+				return CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ())
+			elif iData2 == 36:
+				return CyTranslator().getText("TXT_KEY_WB_CORE", ())
+			elif iData2 == 37:
+				return CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"
@@ -461,8 +467,6 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_VIEW_STABMAP", ())
 			elif iData2 == 2001:
 				return CyTranslator().getText("TXT_KEY_WB_VIEW_FLIPZONE", ())
-		elif iData1 == 22205:
-			return CyTranslator().getText("TXT_KEY_WB_MULTITILE", ())
 		elif iData1 == 22206:
 			return CyTranslator().getText("TXT_KEY_WB_AI_FORBIDDEN", ())
 		elif iData1 == 22207:
@@ -499,6 +503,10 @@ def getWidgetHelp(argsList):
 		elif iData1 == 22302:
 			sText = "+" + str(iData2)
 			return sText
+		elif iData1 == 22310:
+			return CyTranslator().getText("TXT_KEY_WB_SELECTED_CIV", ())
+		elif iData1 == 22311:
+			return CyTranslator().getText("TXT_KEY_WB_ALL_CIVS", ())
 
 	return u""
 
