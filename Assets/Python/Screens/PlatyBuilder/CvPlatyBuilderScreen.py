@@ -26,11 +26,17 @@ import WBTradeScreen
 import CvEventManager
 import Popup
 
+import Consts as con
+import RFCUtils
+utils = RFCUtils.RFCUtils()
+import MapDrawer as md
+
 gc = CyGlobalContext()
 iChange = 1
 bPython = True
 bHideInactive = True
 Activities = ["AWAKE", "HOLD", "SLEEP", "HEAL", "SENTRY", "INTERCEPT", "MISSION", "PATROL", "PLUNDER"]
+iSetValue = 3
 
 class CvWorldBuilderScreen:
 
@@ -67,7 +73,7 @@ class CvWorldBuilderScreen:
 
 ## Platy Builder ##
 		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot"]
-		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features"]
+		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features", "Flip", "Core", "SettlerValue"]
 		self.RevealMode = ["RevealPlot", "INVISIBLE_SUBMARINE", "INVISIBLE_STEALTH", "Blockade"]
 		self.iBrushWidth = 1
 		self.iBrushHeight = 1
@@ -81,6 +87,8 @@ class CvWorldBuilderScreen:
 		self.iTargetPlotY = -1
 		self.TempInfo = []
 ## Platy Builder ##
+
+		self.lPresetValues = [3, 20, 90, 200, 500, 700]
 
 	def interfaceScreen (self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
@@ -98,7 +106,7 @@ class CvWorldBuilderScreen:
 		screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, True)
 		screen.setForcedRedraw(True)
 
-	def killScreen(self):			
+	def killScreen(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
 		screen.hideScreen()
 		CyEngine().clearColoredPlots(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_REVEALED_PLOTS)
@@ -200,9 +208,7 @@ class CvWorldBuilderScreen:
 			pPlayerX = gc.getPlayer(iPlayerX)
 			pPlot = pPlayerX.getStartingPlot()
 			if not pPlot.isNone():
-				sColor = "COLOR_MAGENTA"
-				if iPlayerX == self.m_iCurrentPlayer:
-					sColor = "COLOR_BLACK"
+				sColor = gc.getColorInfo(gc.getPlayerColorInfo(pPlayerX.getPlayerColor()).getColorTypePrimary()).getType()
 				CyEngine().fillAreaBorderPlotAlt(pPlot.getX(), pPlot.getY(), AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sColor, 1.0)
 	
 	########################################################
@@ -488,6 +494,18 @@ class CvWorldBuilderScreen:
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
 			else:
 				self.m_pRiverStartPlot = self.m_pCurrentPlot
+		elif self.iPlayerAddMode == "Flip":
+			tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			md.changeFlipForce(self.m_iCurrentPlayer, tPlot, True)
+			self.showFlipZone()
+		elif self.iPlayerAddMode == "Core":
+			tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			md.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
+			self.showCoreZone()
+		elif self.iPlayerAddMode == "SettlerValue":
+			tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			md.changeSettlerValue(self.m_iCurrentPlayer, tPlot, iSetValue)
+			self.showSettlerValues()
 		return 1
 
 	def removeObject( self ):
@@ -497,7 +515,7 @@ class CvWorldBuilderScreen:
 			pPlayer = gc.getPlayer(self.m_iCurrentPlayer)
 			pPlot = CyMap().plot(self.m_iCurrentX, self.m_iCurrentY)
 			iActiveTeam = CyGame().getActiveTeam()
-			if self.m_pCurrentPlot.isRevealed(iActiveTeam, False):		
+			if self.m_pCurrentPlot.isRevealed(iActiveTeam, False):
 				# City Tab
 				if (self.m_advancedStartTabCtrl.getActiveTab() == self.m_iASCityTabID):
 					# City List
@@ -589,6 +607,14 @@ class CvWorldBuilderScreen:
 				self.m_pCurrentPlot.setWOfRiver(False, CardinalDirectionTypes.NO_CARDINALDIRECTION)
 		elif self.iPlayerAddMode == "AddLandMark":
 			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
+		elif self.iPlayerAddMode == "Flip":
+			tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			md.changeFlipForce(self.m_iCurrentPlayer, tPlot, False)
+			self.showFlipZone()
+		elif self.iPlayerAddMode == "Core":
+			tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			md.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
+			self.showCoreZone()
 		return 1
 		
 	def placeRiverNW ( self, bUseCurrent ):
@@ -874,6 +900,12 @@ class CvWorldBuilderScreen:
 			return True
 		if self.iPlayerAddMode == "Features":
 			return True
+		if self.iPlayerAddMode == "Flip":
+			return True
+		if self.iPlayerAddMode == "Core":
+			return True
+		if self.iPlayerAddMode == "SettlerValue":
+			return True
 		return False
 
 	def setSideMenu(self):
@@ -943,7 +975,7 @@ class CvWorldBuilderScreen:
 			screen.setStyle("EditEspionage", "Button_HUDAdvisorEspionage_Style")
 			iX += iAdjust
 			screen.setImageButton("TradeScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 34)
-			screen.setStyle("TradeScreen", "Button_HUDAdvisorFinance_Style")	
+			screen.setStyle("TradeScreen", "Button_HUDAdvisorFinance_Style")
 			
 			iX = iXStart + 8
 			iY += iAdjust
@@ -957,10 +989,10 @@ class CvWorldBuilderScreen:
 				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_REVEAL_TAB_MODE_BUTTON, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL)
 			iX += iAdjust
 			screen.addCheckBoxGFC("PythonEffectButton", ",Art/Interface/Buttons/Units/Warrior.dds,Art/Interface/Buttons/FinalFrontier2_Atlas.dds,3,4", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
-				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 0, ButtonStyles.BUTTON_STYLE_LABEL)	
+				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 0, ButtonStyles.BUTTON_STYLE_LABEL)
 			iX += iAdjust
 			screen.addCheckBoxGFC("HideInactive", ",Art/Interface/Buttons/Units/Warrior.dds,Art/Interface/Buttons/GodsOfOld_Atlas.dds,8,3", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
-				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 31, ButtonStyles.BUTTON_STYLE_LABEL)	
+				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 31, ButtonStyles.BUTTON_STYLE_LABEL)
 			iX += iAdjust
 			screen.setImageButton("InfoScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 33)
 			screen.setStyle("InfoScreen", "Button_HUDAdvisorRecord_Style")
@@ -969,10 +1001,10 @@ class CvWorldBuilderScreen:
 			iY += iAdjust
 
 			screen.addCheckBoxGFC("EditUnitData", ",Art/Interface/Buttons/Units/Warrior.dds,Art/Interface/Buttons/Afterworld_Atlas.dds,4,9", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
-				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_UNIT_EDIT_BUTTON, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL)	
+				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_UNIT_EDIT_BUTTON, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL)
 			iX += iAdjust
 			screen.addCheckBoxGFC("EditPromotions", ",Art/Interface/Buttons/Promotions/Combat1.dds,Art/Interface/Buttons/Promotions_Atlas.dds,8,2", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
-				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 6, ButtonStyles.BUTTON_STYLE_LABEL)	
+				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 6, ButtonStyles.BUTTON_STYLE_LABEL)
 			iX += iAdjust
 			screen.addCheckBoxGFC("EditCityDataI", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_TOGGLE_CITY_EDIT_MODE").getPath(), CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 				 iX, iY, iButtonWidth, iButtonWidth,WidgetTypes.WIDGET_WB_CITY_EDIT_BUTTON, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL)
@@ -1042,13 +1074,27 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("BrushWidth")
 			screen.deleteWidget("BrushHeight")
 			screen.deleteWidget("SensibilityCheck")
+			screen.deleteWidget("FlipButton")
+			screen.deleteWidget("CoreButton")
+			screen.deleteWidget("SettlerValueButton")
+			screen.deleteWidget("UtilButtonPanel")
+			screen.deleteWidget("RevertChangesText")
+			screen.deleteWidget("ClearCore")
+			screen.deleteWidget("ClearCoreAll")
+			screen.deleteWidget("ClearFlip")
+			screen.deleteWidget("ClearFlipAll")
+			screen.deleteWidget("ClearSettler")
+			screen.deleteWidget("ClearSettlerAll")
+			screen.deleteWidget("Export")
 ## Panel Screen ##
 			nRows = 1
-			if self.iPlayerAddMode in self.PlayerMode or self.iPlayerAddMode in self.RevealMode or self.iPlayerAddMode in self.MapMode:
+			if self.iPlayerAddMode in self.PlayerMode or self.iPlayerAddMode in self.RevealMode:
 				nRows = 3
+			elif self.iPlayerAddMode in self.MapMode:
+				nRows = 4
 			iHeight = 16 + iAdjust * nRows
 			iXStart = screen.getXResolution() - iScreenWidth
-			screen.addPanel("WorldBuilderBackgroundBottomPanel", "", "", True, True, iXStart, iScreenHeight - 10, iScreenWidth, iHeight, PanelStyles.PANEL_STYLE_MAIN )		
+			screen.addPanel("WorldBuilderBackgroundBottomPanel", "", "", True, True, iXStart, iScreenHeight - 10, iScreenWidth, iHeight, PanelStyles.PANEL_STYLE_MAIN )
 			iY = iScreenHeight
 			if self.iPlayerAddMode in self.PlayerMode:
 				iX = iXStart + 8
@@ -1159,6 +1205,37 @@ class CvWorldBuilderScreen:
 					screen.addPullDownString("BrushHeight", "H: " + str(i), i, i, self.iBrushHeight == i)
 				screen.addPullDownString("BrushHeight", "H: " + "--", -1, -1, self.iBrushHeight == -1)
 
+				iX = iXStart + 8
+				iY += iAdjust
+				screen.addCheckBoxGFC("FlipButton", ",-,Art/Interface/Buttons/GodsOfOld_Atlas.dds,4,1", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), 
+					iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 35, ButtonStyles.BUTTON_STYLE_LABEL)
+				iX += iAdjust
+				screen.addCheckBoxGFC("CoreButton", ",-,Art/Interface/Buttons/GodsOfOld_Atlas.dds,5,1", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), 
+					iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 36, ButtonStyles.BUTTON_STYLE_LABEL)
+				iX += iAdjust
+				screen.addCheckBoxGFC("SettlerValueButton", ",-,Art/Interface/Buttons/GodsOfOld_Atlas.dds,7,1", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), 
+					iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 37, ButtonStyles.BUTTON_STYLE_LABEL)
+				iX	 += iAdjust			
+				screen.addDropDownBoxGFC("PresetValue", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+				for i in range(len(self.lPresetValues)):
+					screen.addPullDownString("PresetValue", str(self.lPresetValues[i]), i, self.lPresetValues[i], self.lPresetValues[i] == iSetValue)
+
+				if self.iPlayerAddMode in ["Flip", "Core", "SettlerValue"]:
+					iX = iXStart + 8
+					iButtonWidth2 = 3*iButtonWidth + 2*3
+					iXx = iX + 3 + iButtonWidth2
+					iScreenHeight += iHeight - 10
+					iHeight += iAdjust
+					screen.addPanel("UtilButtonPanel", "", "", True, True, iXStart, iScreenHeight - 10, iScreenWidth, iHeight, PanelStyles.PANEL_STYLE_MAIN)
+					screen.setText("RevertChangesText", "", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), -1, iXStart + iScreenWidth/2, iScreenHeight + iAdjust/2, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					screen.setButtonGFC("ClearCore", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iX, iScreenHeight + iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22310, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearCoreAll", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXx, iScreenHeight + iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22311, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearFlip", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iX, iScreenHeight + 2*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22310, 3, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearFlipAll", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXx, iScreenHeight + 2*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22311, 4, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearSettler", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iX, iScreenHeight + 3*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22310, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearSettlerAll", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXx, iScreenHeight + 3*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22311, 6, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iScreenHeight + 4*iAdjust, 2*iButtonWidth2 + 3, iButtonWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+
 			elif self.iPlayerAddMode in self.RevealMode:
 				iX = iXStart + 8
 				screen.addDropDownBoxGFC("RevealMode", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
@@ -1242,6 +1319,9 @@ class CvWorldBuilderScreen:
 		screen.setState("PythonEffectButton", bPython)
 		screen.setState("HideInactive", bHideInactive)
 		screen.setState("SensibilityCheck", self.bSensibility)
+		screen.setState("FlipButton", self.iPlayerAddMode == "Flip")
+		screen.setState("CoreButton", self.iPlayerAddMode == "Core")
+		screen.setState("SettlerValueButton", self.iPlayerAddMode == "SettlerValue")
 
 	def setSelectionTable(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN)
@@ -1527,7 +1607,32 @@ class CvWorldBuilderScreen:
 		return
 ## Platy Reveal Mode End ##
 
-	def Exit(self):		
+	def showFlipZone(self):
+		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
+		sColor = "COLOR_MAGENTA"
+		for tPlot in md.getFlipPlotList(self.m_iCurrentPlayer):
+			CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sColor, 1.0)
+
+	def showCoreZone(self):
+		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
+		sColor = "COLOR_PLAYER_DARK_GREEN"
+		for tPlot in md.getCorePlotList(self.m_iCurrentPlayer):
+			CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sColor, 1.0)
+
+	def showSettlerValues(self):
+		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
+		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS+10)
+		sForbiddenColor = "COLOR_PLAYER_LIGHT_PURPLE"
+		sHistoricalColor = "COLOR_GREEN"
+		for x in range(con.iWorldX):
+			for y in range(con.iWorldY):
+				iSettlerValue = md.getSettlerValue(self.m_iCurrentPlayer, (x, y))
+				if iSettlerValue >= 90:
+					CyEngine().fillAreaBorderPlotAlt(x, y, AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sHistoricalColor, 1.0)
+				elif iSettlerValue == 3:
+					CyEngine().fillAreaBorderPlotAlt(x, y, AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS+10, sForbiddenColor, 1.0)
+
+	def Exit(self):
 		CyInterface().setWorldBuilder(False)
 		return
 
@@ -1805,6 +1910,10 @@ class CvWorldBuilderScreen:
 		global iChange
 		global bPython
 		global bHideInactive
+		global iSetValue
+
+		if inputClass.getFunctionName() != "Export" and inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED:
+			CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS+10)
 
 		if inputClass.getFunctionName() == "WorldBuilderEraseAll":
 			for i in xrange(CyMap().numPlots()):
@@ -1852,6 +1961,12 @@ class CvWorldBuilderScreen:
 				self.refreshReveal()
 			elif self.iPlayerAddMode == "StartingPlot":
 				self.refreshStartingPlots()
+			elif self.iPlayerAddMode == "Flip":
+				self.showFlipZone()
+			elif self.iPlayerAddMode == "Core":
+				self.showCoreZone()
+			elif self.iPlayerAddMode == "SettlerValue":
+				self.showSettlerValues()
 
 		elif inputClass.getFunctionName() == "ChangeBy":
 			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
@@ -1936,6 +2051,52 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "AddRiverButton":
 			self.iPlayerAddMode = "River"
 			self.refreshSideMenu()
+
+		elif inputClass.getFunctionName() == "FlipButton":
+			self.iPlayerAddMode = "Flip"
+			self.refreshSideMenu()
+			self.showFlipZone()
+
+		elif inputClass.getFunctionName() == "CoreButton":
+			self.iPlayerAddMode = "Core"
+			self.refreshSideMenu()
+			self.showCoreZone()
+
+		elif inputClass.getFunctionName() == "SettlerValueButton":
+			self.iPlayerAddMode = "SettlerValue"
+			self.refreshSideMenu()
+			self.showSettlerValues()
+
+		elif inputClass.getFunctionName() in ["ClearCore", "ClearFlip", "ClearSettler", "ClearCoreAll", "ClearFlipAll", "ClearSettlerAll"]:
+			iData2 = inputClass.getData2()
+			if (iData2 % 2) == 1:
+				if iData2 == 1:
+					md.resetCore(self.m_iCurrentPlayer)
+				elif iData2 == 3:
+					md.resetFlip(self.m_iCurrentPlayer)
+				elif iData2 == 5:
+					md.resetSettler(self.m_iCurrentPlayer)
+			elif (iData2 % 2) == 0:
+				for iPlayer in range(con.iNumPlayers):
+					if iData2 == 2:
+						md.resetCore(iPlayer)
+					elif iData2 == 4:
+						md.resetFlip(iPlayer)
+					elif iData2 == 6:
+						md.resetSettler(iPlayer)
+			if self.iPlayerAddMode == "Flip":
+				self.showFlipZone()
+			elif self.iPlayerAddMode == "Core":
+				self.showCoreZone()
+			elif self.iPlayerAddMode == "SettlerValue":
+				self.showSettlerValues()
+
+		elif inputClass.getFunctionName() == "Export":
+			md.export()
+
+		elif inputClass.getFunctionName() == "PresetValue":
+			iSetValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))
+			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 
 		elif inputClass.getFunctionName() == "WBSelectClass":
 			self.iSelectClass = screen.getPullDownData("WBSelectClass", screen.getSelectedPullDownID("WBSelectClass"))

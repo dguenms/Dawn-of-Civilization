@@ -16,6 +16,7 @@ gc = CyGlobalContext()
 import Consts as con
 import RFCUtils
 utils = RFCUtils.RFCUtils()
+import MapDrawer as md
 
 iMode = 0
 iSelectedPlayer = -1
@@ -26,7 +27,7 @@ lSelectedItem = [-1, -1]
 # Merijn
 iChange = 1
 iChangeType = 1
-iSetValue = 0
+iSetValue = 3
 tCurrentPlot = -1
 bHideForbidden = True
 lSquareSelection = [-1, -1, False]
@@ -53,7 +54,7 @@ class WBInfoScreen:
 				gc.getTechInfo,
 				gc.getProjectInfo,
 				]
-				
+
 		# Merijn StabMap colors
 		self.iColorSpawn = "COLOR_PLAYER_DARK_PINK"
 		self.iColorSpawnWater = "COLOR_PLAYER_GREYISH_CYAN"
@@ -95,7 +96,7 @@ class WBInfoScreen:
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_PROJECT", ()), 13, 13, 13 == iMode)
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_STABILITY_MAPS", ()), 14, 14, 14 == iMode)
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_SPAWN_MAPS", ()), 15, 15, 15 == iMode)
-		
+
 		if iMode < 14:
 			screen.addDropDownBoxGFC("CurrentPlayer", iX + iWidth/2, iY, iWidth/2, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 			for i in xrange(gc.getMAX_PLAYERS()):
@@ -112,7 +113,7 @@ class WBInfoScreen:
 					i *= 5
 				else:
 					i *= 2
-					
+
 			screen.addDropDownBoxGFC("ChangeType", iX + iWidth/4*3, iY, iWidth/4, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 			screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), 1, 1, 1 == iChangeType)
 			screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), 0, 0, 0 == iChangeType)
@@ -145,7 +146,7 @@ class WBInfoScreen:
 			pCity = gc.getPlayer(iPlayer).getCity(iCity)
 			if pCity:
 				sText += pCity.getName()
-				sText += u" (%d,%d)" %(pCity.getX(), pCity.getY())			
+				sText += u" (%d,%d)" %(pCity.getX(), pCity.getY())
 		elif iMode < 11:
 			sText += CyTranslator().getText("TXT_KEY_WB_PLOT_DATA", ())
 			if lSelectedItem[0] > -1 and lSelectedItem[1] > -1:
@@ -160,69 +161,73 @@ class WBInfoScreen:
 			sText += pTeam.getName()
 		else:
 			sText += u" (%d,%d)" %(tCurrentPlot[0], tCurrentPlot[1])
-			
+
 		sText += "</color></font>"
 		screen.setText("PlotData", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, iX, iY, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 	def mapButtons(self):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
-		iXx = screen.getXResolution()/3 + 20
-		iYy = self.iTable_Y
+		iX = screen.getXResolution()/3 + 20
+		iY = self.iTable_Y
 		iWidth = screen.getXResolution() * 2/3 - 40
-		iMaxHeight = screen.getYResolution() * 2/3 - iYy
-		
+		iMaxHeight = screen.getYResolution() * 2/3 - iY
+
 		iHeight = iWidth * CyMap().getGridHeight() / CyMap().getGridWidth()
 		if iHeight > iMaxHeight:
 			iWidth = iMaxHeight * CyMap().getGridWidth() / CyMap().getGridHeight()
 			iHeight = iMaxHeight
-		
-		iGap = 48 + 10
-		iXxx = iXx + iWidth - 5*iGap
-		iYyy = iYy + iHeight + 30
-		screen.addPanel("PlotMovePanel", "", "", False, False, iXxx - 10, iYyy - 10, 5*iGap + 10, 5*iGap + 10, PanelStyles.PANEL_STYLE_IN)
-		screen.setButtonGFC("MovePlotUpFive", "", "Art/Interface/Buttons/WorldBuilder/Up5.dds", iXxx + 2*iGap, iYyy, 48, 48, WidgetTypes.WIDGET_PYTHON, 22201, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("MovePlotUpOne", "", "Art/Interface/Buttons/WorldBuilder/Up.dds", iXxx + 2*iGap, iYyy + iGap, 48, 48, WidgetTypes.WIDGET_PYTHON, 22201, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("MovePlotDownOne", "", "Art/Interface/Buttons/WorldBuilder/Down.dds", iXxx + 2*iGap, iYyy + 3*iGap, 48, 48, WidgetTypes.WIDGET_PYTHON, 22202, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("MovePlotDownFive", "", "Art/Interface/Buttons/WorldBuilder/Down5.dds", iXxx + 2*iGap, iYyy + 4*iGap, 48, 48, WidgetTypes.WIDGET_PYTHON, 22202, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("Sonic", "", "", iXxx + 2*iGap, iYyy + 2*iGap, 48, 48, WidgetTypes.WIDGET_PYTHON, iXxx + 2*iGap, iYyy + 2*iGap, ButtonStyles.BUTTON_STYLE_TOOL)
-		screen.setButtonGFC("MovePlotLeftFive", "", "Art/Interface/Buttons/WorldBuilder/Left5.dds", iXxx, iYyy + 2*iGap, 48, 48, WidgetTypes.WIDGET_PYTHON, 22203, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("MovePlotLeftOne", "", "Art/Interface/Buttons/WorldBuilder/Left.dds", iXxx + iGap, iYyy + 2*iGap, 48, 48, WidgetTypes.WIDGET_PYTHON, 22203, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("MovePlotRightOne", "", "Art/Interface/Buttons/WorldBuilder/Right.dds", iXxx + 3*iGap, iYyy + 2*iGap, 48, 48, WidgetTypes.WIDGET_PYTHON, 22204, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("MovePlotRightFive", "", "Art/Interface/Buttons/WorldBuilder/Right5.dds", iXxx + 4*iGap, iYyy + 2*iGap, 48, 48, WidgetTypes.WIDGET_PYTHON, 22204, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
-		
-		self.multiPlotButtons()
-		
-	def multiPlotButtons(self):
-		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
-		iXx = screen.getXResolution()/3 + 20
-		iYy = self.iTable_Y
-		iWidth = screen.getXResolution() * 2/3 - 40
-		iMaxHeight = screen.getYResolution() * 2/3 - iYy
-		
-		iHeight = iWidth * CyMap().getGridHeight() / CyMap().getGridWidth()
-		if iHeight > iMaxHeight:
-			iWidth = iMaxHeight * CyMap().getGridWidth() / CyMap().getGridHeight()
-			iHeight = iMaxHeight
-		
-		iGap = 40 + 10
-		iXxx = iXx + iWidth - 5*48 - 2*10 - 4*20 - 5*iGap
-		iYyy = iYy + iHeight + 30 + 5*8
+
+		iButtonSize = 48
+		iAdjust = 10
+		iGap = iButtonSize + iAdjust
+		iXx = iX + iWidth - 5*iGap
+		iYy = iY + iHeight + 30
+		screen.addPanel("PlotMovePanel", "", "", False, False, iXx - iAdjust, iYy - iAdjust, 5*iGap + iAdjust, 5*iGap + iAdjust, PanelStyles.PANEL_STYLE_IN)
+		screen.setButtonGFC("MovePlotUpFive", "", "Art/Interface/Buttons/WorldBuilder/Up5.dds", iXx + 2*iGap, iYy, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22201, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("MovePlotUpOne", "", "Art/Interface/Buttons/WorldBuilder/Up.dds", iXx + 2*iGap, iYy + iGap, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22201, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("MovePlotDownOne", "", "Art/Interface/Buttons/WorldBuilder/Down.dds", iXx + 2*iGap, iYy + 3*iGap, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22202, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("MovePlotDownFive", "", "Art/Interface/Buttons/WorldBuilder/Down5.dds", iXx + 2*iGap, iYy + 4*iGap, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22202, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("Sonic", "", "", iXx + 2*iGap, iYy + 2*iGap, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, iXx + 2*iGap, iYy + 2*iGap, ButtonStyles.BUTTON_STYLE_TOOL)
+		screen.setButtonGFC("MovePlotLeftFive", "", "Art/Interface/Buttons/WorldBuilder/Left5.dds", iXx, iYy + 2*iGap, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22203, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("MovePlotLeftOne", "", "Art/Interface/Buttons/WorldBuilder/Left.dds", iXx + iGap, iYy + 2*iGap, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22203, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("MovePlotRightOne", "", "Art/Interface/Buttons/WorldBuilder/Right.dds", iXx + 3*iGap, iYy + 2*iGap, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22204, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("MovePlotRightFive", "", "Art/Interface/Buttons/WorldBuilder/Right5.dds", iXx + 4*iGap, iYy + 2*iGap, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22204, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
+
+		# Multiplot buttons
 		iWidthButtons = 100
-		screen.addPanel("MultiPlotPanel", "", "", False, False, iXxx - 10, iYyy - 10, 2*iWidthButtons + 3*10, 5*iGap + 10, PanelStyles.PANEL_STYLE_IN)
-		screen.setButtonGFC("StartMultiTile", CyTranslator().getText("TXT_KEY_WB_START", ()), "", iXxx, iYyy, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22205, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("EndMultiTile", CyTranslator().getText("TXT_KEY_WB_END", ()), "", iXxx, iYyy + iGap, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22205, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("ResetMultiTile", CyTranslator().getText("TXT_KEY_WB_RESET", ()), "", iXxx, iYyy + 2*iGap, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22205, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		
+		iXx = iXx - 2*iWidthButtons - 2*20
+		iXxx = iXx + iWidthButtons + iAdjust
+		iYy = iYy + iGap
+		iPanelWidth = 2*iWidthButtons + 3*iAdjust
+		screen.setText("MultiPlotText", "", CyTranslator().getText("TXT_KEY_WB_MULTITILE", ()), -1, iXx - iAdjust + iPanelWidth/2, iYy - 25, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		screen.addPanel("MultiPlotPanel", "", "", False, False, iXx - iAdjust, iYy - iAdjust, iPanelWidth, 4*iGap + iAdjust, PanelStyles.PANEL_STYLE_IN)
+		screen.setButtonGFC("StartMultiTile", CyTranslator().getText("TXT_KEY_WB_START", ()), "", iXx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("EndMultiTile", CyTranslator().getText("TXT_KEY_WB_END", ()), "", iXx, iYy + iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ResetMultiTile", CyTranslator().getText("TXT_KEY_WB_RESET", ()), "", iXx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+
 		if iMode == 14:
-			screen.setButtonGFC("MultiAdd", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), "", iXxx + iWidthButtons + 10, iYyy, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22207, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
-			screen.setButtonGFC("MultiRemove", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), "", iXxx + iWidthButtons + 10, iYyy + iGap, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22207, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-			screen.setButtonGFC("MultiSet", CyTranslator().getText("TXT_KEY_WB_REPLACE", ()), "", iXxx + iWidthButtons + 10, iYyy + 2*iGap, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22207, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
-			screen.setButtonGFC("MultiChangeSettlerValue", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXxx + iWidthButtons + 10, iYyy + 3*iGap, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22207, 3, ButtonStyles.BUTTON_STYLE_STANDARD)
+			screen.setButtonGFC("MultiAdd", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), "", iXxx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22207, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
+			screen.setButtonGFC("MultiRemove", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), "", iXxx, iYy + iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22207, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+			screen.setButtonGFC("MultiReplace", CyTranslator().getText("TXT_KEY_WB_REPLACE", ()), "", iXxx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22207, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
+			screen.setButtonGFC("MultiChangeSettlerValue", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXxx, iYy + 3*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22207, 3, ButtonStyles.BUTTON_STYLE_STANDARD)
 		else:
-			screen.setButtonGFC("MultiAdd", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), "", iXxx + iWidthButtons + 10, iYyy, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22208, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
-			screen.setButtonGFC("MultiRemove", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), "", iXxx + iWidthButtons + 10, iYyy + iGap, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22208, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-			screen.setButtonGFC("MultiSet", CyTranslator().getText("TXT_KEY_WB_REPLACE", ()), "", iXxx + iWidthButtons + 10, iYyy + 2*iGap, iWidthButtons, 48, WidgetTypes.WIDGET_PYTHON, 22208, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
-		
+			screen.setButtonGFC("MultiAdd", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), "", iXxx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22208, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
+			screen.setButtonGFC("MultiRemove", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), "", iXxx, iYy + iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22208, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+			screen.setButtonGFC("MultiReplace", CyTranslator().getText("TXT_KEY_WB_REPLACE", ()), "", iXxx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22208, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
+
+		# Revert and export buttons
+		iXx = iXx - 2*iWidthButtons - 2*20
+		iXxx = iXx + iWidthButtons + iAdjust
+		screen.setText("RevertChangesText", "", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), -1, iXx - iAdjust + iPanelWidth/2, iYy - 25, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		screen.addPanel("UtilsPanel", "", "", False, False, iXx - iAdjust, iYy - iAdjust, 2*iWidthButtons + 3*iAdjust, 4*iGap + iAdjust, PanelStyles.PANEL_STYLE_IN)
+		screen.setButtonGFC("ClearCore", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22310, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearCoreAll", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXxx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22311, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearFlip", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXx, iYy + 1*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22310, 3, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearFlipAll", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXxx, iYy + 1*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22311, 4, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearSettler", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22310, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearSettlerAll", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXxx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22311, 6, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iXx, iYy + 3*iGap, 2*iWidthButtons + iAdjust, iButtonSize, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+
 	def placeMap(self):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
 		iX = screen.getXResolution()/3 + 20
@@ -343,7 +348,7 @@ class WBInfoScreen:
 				screen.setTableText("PlotTable", iColumn, iRow, "<font=3>" + sText + "</color></font>", sButton, WidgetTypes.WIDGET_PYTHON, 7200 + iPlayer, iCity, CvUtil.FONT_LEFT_JUSTIFY)
 				screen.minimapFlashPlot(iX, iY, iColorB, -1)
 				if lSelectedItem == lPlots:
-					screen.minimapFlashPlot(iX, iY, iColorA, -1)			
+					screen.minimapFlashPlot(iX, iY, iColorA, -1)
 		elif iMode < 11:
 			for lPlots in lItems[iItem][5]:
 				iX = lPlots[0]
@@ -390,16 +395,16 @@ class WBInfoScreen:
 				iPlayer = iItem
 				iReborn = utils.getReborn(iPlayer)
 				tCapital = con.tCapitals[iReborn][iPlayer]
-				lCorePlots = utils.getPlotList(con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer])
-				lForeignCorePlots = self.getForeignCorePlots(iPlayer)
+				lCorePlots = md.getCorePlotList(iPlayer)
+				lForeignCorePlots = utils.getForeignCorePlots(iPlayer)
 				for x in range(con.iWorldX):
 					for y in range(con.iWorldY):
 						plot = gc.getMap().plot(x, y)
 						if plot.isWater(): continue
 						if (x, y) in lCorePlots:
 							iPlotType = 0
-						else:							
-							iSettlerValue = getSettlerMapValue(iPlayer, iReborn, x, con.iWorldY-y-1)
+						else:
+							iSettlerValue = md.getSettlerValue(iPlayer, (x, y))
 							if iSettlerValue == 3:
 								if bHideForbidden: continue
 								iPlotType = 5
@@ -413,28 +418,20 @@ class WBInfoScreen:
 						if iPlotType != -1:
 							iColor = gc.getInfoTypeForString(self.lColors[iPlotType])
 							screen.minimapFlashPlot(x, y, iColor, -1)
-				
+
 			elif iMode == 15 and iItem != -1:
 				iColorS = gc.getInfoTypeForString(self.iColorSpawn)
 				iColorSW = gc.getInfoTypeForString(self.iColorSpawnWater)
 				iColorC = gc.getInfoTypeForString(self.lColors[2])
 				iPlayer = iItem
 				iReborn = utils.getReborn(iPlayer)
-				lFlipzonePlots = []
-				if iReborn == 0:
-					lFlipzonePlots = utils.getPlotList(con.tBirthAreaTL[iPlayer], con.tBirthAreaBR[iPlayer], con.tBirthAreaExceptions[iPlayer])
-				else:
-					tRebirthExceptions = ()
-					if iPlayer in con.dRebirthExceptions: tRebirthExceptions = con.dRebirthExceptions[iPlayer]
-					lFlipzonePlots = utils.getPlotList(con.tRebirthArea[iPlayer][0], con.tRebirthArea[iPlayer][1], tRebirthExceptions)
-					
-				for tPlot in lFlipzonePlots:
+				for tPlot in md.getFlipPlotList(iPlayer):
 					plot = gc.getMap().plot(tPlot[0], tPlot[1])
 					if plot.isWater():  screen.minimapFlashPlot(tPlot[0], tPlot[1], iColorSW, -1)
 					else: screen.minimapFlashPlot(tPlot[0], tPlot[1], iColorS, -1)
 				tCapital = con.tCapitals[iReborn][iPlayer]
 				screen.minimapFlashPlot(tCapital[0], tCapital[1], iColorC, -1)
-		
+
 			if lSquareSelection[2]:
 				if lSquareSelection[1] == -1:
 					tEndPlot = tCurrentPlot
@@ -449,7 +446,7 @@ class WBInfoScreen:
 					iColor = gc.getInfoTypeForString(self.lColors[1])
 				for tPlot in lPlotList:
 					screen.minimapFlashPlot(tPlot[0], tPlot[1], iColor, -1)
-		
+
 			screen.minimapFlashPlot(tCurrentPlot[0], tCurrentPlot[1], iColorB, -1)
 
 	def placeItems(self):
@@ -719,7 +716,7 @@ class WBInfoScreen:
 		iHeight = (screen.getYResolution() - iY - 40) / 24 * 24 + 2
 		global tCurrentPlot
 		global iChangeType
-		
+
 		# Merijn StabMap
 		if iMode == 14:
 			screen.addTableControlGFC("InfoTable", 5, iX, iY, iWidth, iHeight, True, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
@@ -728,22 +725,18 @@ class WBInfoScreen:
 			screen.setTableColumnHeader("InfoTable", 2, "<font=3>" + CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()) + "</font>", iWidth/20*3-5)
 			screen.setTableColumnHeader("InfoTable", 3, "<font=3>" + CyTranslator().getText("TXT_KEY_WB_RESULT", ()) + "</font>", iWidth/20*7-5)
 			screen.setTableColumnHeader("InfoTable", 4, "<font=3>" + CyTranslator().getText("TXT_KEY_WB_EXTENDED_MAP", ()) + "</font>", iWidth/10*3-75)
-			
+
 			for iPlayer in range(con.iNumPlayers):
 				iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-				
-				bCore = utils.isPlotInCore(iPlayer, tCurrentPlot)
+				bCore = tCurrentPlot in md.getCorePlotList(iPlayer)
 				iReborn = utils.getReborn(iPlayer)
-				iSettlerValue = getSettlerMapValue(iPlayer, iReborn, tCurrentPlot[0], con.iWorldY-tCurrentPlot[1]-1)
+				iSettlerValue = md.getSettlerValue(iPlayer, tCurrentPlot)
 				if bCore:
 					sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
-					tCore = (sCore, 1)
 					iPlotType = 0
 				else:
 					sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
-					tCore = (sCore, 0)
-					
-					bForeignCore = tCurrentPlot in self.getForeignCorePlots(iPlayer)
+					bForeignCore = tCurrentPlot in utils.getForeignCorePlots(iPlayer)
 					if iSettlerValue >= 90:
 						if bForeignCore:
 							iPlotType = 2
@@ -753,13 +746,13 @@ class WBInfoScreen:
 						iPlotType = 3
 					else:
 						iPlotType = 4
-				
+
 				iColor = gc.getInfoTypeForString(self.lColors[iPlotType])
 				sPlotText = CyTranslator().changeTextColor(self.lPlotNumberText[iPlotType], iColor)
 				if not bHideForbidden and iSettlerValue == 3:
 					iColor = gc.getInfoTypeForString(self.lColors[5])
 					sPlotText += CyTranslator().changeTextColor(self.lPlotNumberText[5], iColor)
-				
+
 				lExtended = [con.iTurkey, con.iByzantium, con.iCarthage, con.iMongolia, con.iSpain, con.iMoors, con.iItaly, con.iArabia, con.iJapan, con.iGermany, con.iHolyRome, con.iKhmer, con.iGreece, con.iChina] 
 				if iPlayer not in lExtended:
 					tExtend = ("", 0)
@@ -768,46 +761,36 @@ class WBInfoScreen:
 						tExtend = (u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR)), 1)
 					else:
 						tExtend = (u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR)), 1)
-						
+
 				iRow = screen.appendTableRow("InfoTable")
 				screen.setTableText("InfoTable", 0, iRow, "<font=3>" + gc.getCivilizationInfo(iCiv).getShortDescription(0) + "</font>", gc.getCivilizationInfo(iCiv).getButton(), WidgetTypes.WIDGET_PYTHON, 22100 + iPlayer, 2000, CvUtil.FONT_LEFT_JUSTIFY)
-				screen.setTableText("InfoTable", 1, iRow, tCore[0], "", WidgetTypes.WIDGET_PYTHON, 22171, tCore[1], CvUtil.FONT_CENTER_JUSTIFY)
-				screen.setTableInt("InfoTable", 2, iRow, "<font=3>" + str(iSettlerValue) + "</font>", "", WidgetTypes.WIDGET_PYTHON, 22172, -1, CvUtil.FONT_CENTER_JUSTIFY)
+				screen.setTableText("InfoTable", 1, iRow, sCore, "", WidgetTypes.WIDGET_PYTHON, 22171, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
+				screen.setTableInt("InfoTable", 2, iRow, "<font=3>" + str(iSettlerValue) + "</font>", "", WidgetTypes.WIDGET_PYTHON, 22172, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
 				screen.setTableText("InfoTable", 3, iRow, "<font=3>" + sPlotText + "</font>", "", WidgetTypes.WIDGET_PYTHON, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 				screen.setTableText("InfoTable", 4, iRow, tExtend[0], "", WidgetTypes.WIDGET_PYTHON, 22100 + iPlayer, tExtend[1], CvUtil.FONT_CENTER_JUSTIFY)
-							
+
 			self.placeValueChanger()
-							
+
 		# Merijn Spawnmap
 		else:
 			screen.addTableControlGFC("InfoTable", 2, iX, iY, iWidth, iHeight, True, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 			screen.setTableColumnHeader("InfoTable", 0, "<font=3>" + CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIV", ()) + "</font>", iWidth/2)
 			screen.setTableColumnHeader("InfoTable", 1, "<font=3>" + CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()) + "</font>", iWidth/2-18)
-			
+
 			for iPlayer in range(con.iNumPlayers):
 				iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-				if utils.getReborn(iPlayer) == 0:
-					lFlipzonePlots = utils.getPlotList(con.tBirthAreaTL[iPlayer], con.tBirthAreaBR[iPlayer], con.tBirthAreaExceptions[iPlayer])
-				elif con.tRebirthArea[iPlayer] == -1:
-					lFlipzonePlots = utils.getPlotList(con.tBirthAreaTL[iPlayer], con.tBirthAreaBR[iPlayer], con.tBirthAreaExceptions[iPlayer])
-				else:
-					tRebirthExceptions = ()
-					if iPlayer in con.dRebirthExceptions: tRebirthExceptions = con.dRebirthExceptions[iPlayer]
-					lFlipzonePlots = utils.getPlotList(con.tRebirthArea[iPlayer][0], con.tRebirthArea[iPlayer][1], tRebirthExceptions)
-				if tCurrentPlot in lFlipzonePlots:
+				if tCurrentPlot in md.getFlipPlotList(iPlayer):
 					sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
-					tSpawn = (sSpawn, 1)
 				else:
 					sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
-					tSpawn = (sSpawn, 0)
-					
+
 				iRow = screen.appendTableRow("InfoTable")
 				screen.setTableText("InfoTable", 0, iRow, "<font=3>" + gc.getCivilizationInfo(iCiv).getShortDescription(0) + "</font>", gc.getCivilizationInfo(iCiv).getButton(), WidgetTypes.WIDGET_PYTHON, 22100 + iPlayer, 2001, CvUtil.FONT_LEFT_JUSTIFY)
-				screen.setTableText("InfoTable", 1, iRow, tSpawn[0], "", WidgetTypes.WIDGET_PYTHON, 22176, tSpawn[1], CvUtil.FONT_CENTER_JUSTIFY)
-				
+				screen.setTableText("InfoTable", 1, iRow, sSpawn, "", WidgetTypes.WIDGET_PYTHON, 22176, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
+
 	def placeValueChanger(self):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
-		
+
 		iX = screen.getXResolution()/3 + 20
 		iY = self.iTable_Y
 		iWidth = screen.getXResolution() * 2/3 - 40
@@ -816,46 +799,22 @@ class WBInfoScreen:
 		if iHeight > iMaxHeight:
 			iWidth = iMaxHeight * CyMap().getGridWidth() / CyMap().getGridHeight()
 			iHeight = iMaxHeight
-		
+
 		iYy = iY + iHeight + 10
 		screen.setButtonGFC("HideForbidden", CyTranslator().getText("TXT_KEY_WB_TOGGLE_AI_FORBIDDEN", ()), "", iX, iYy, 160, 35, WidgetTypes.WIDGET_PYTHON, 22206, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		
+
 		if iChangeType == 2:
 			screen.addTableControlGFC("SetValueBox", 1, iX + 30, iYy + 40, 100, 26, False, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 			screen.setTableColumnHeader("SetValueBox", 1, "", 100)
 			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-					
+
 			screen.setButtonGFC("SetValueDecrease", "", "", iX, iYy + 40, 26, 26, WidgetTypes.WIDGET_PYTHON, 22301, iChange, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
 			screen.setButtonGFC("SetValueIncrease", "", "", iX + 30 + 100 + 4, iYy + 40, 26, 26, WidgetTypes.WIDGET_PYTHON, 22302, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
-			
+
 			screen.addDropDownBoxGFC("PresetValue", iX, iYy + 30 + 40, 160, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 			for i in range(len(self.lPresetValues)):
 				screen.addPullDownString("PresetValue", str(self.lPresetValues[i]), i, self.lPresetValues[i], False)
-			
-	def getForeignCorePlots(self, iPlayer):
-		lForeignCorePlots = []
-		iGameTurn = gc.getGame().getGameTurn()
 
-		for iLoopPlayer in reversed(range(con.iNumPlayers)):
-			if iPlayer == iLoopPlayer: continue
-			if gc.getPlayer(iLoopPlayer).isAlive() or (utils.canEverRespawn(iLoopPlayer, iGameTurn) or getTurnForYear(con.tBirth[iLoopPlayer]) > iGameTurn):
-				iReborn = utils.getReborn(iLoopPlayer)
-				iCiv = gc.getPlayer(iLoopPlayer).getCivilizationType()
-
-				#Hides DoC civs if disabled
-				if iLoopPlayer in con.lSecondaryCivs:
-					if not utils.getPlayerEnabled(iLoopPlayer):
-						continue
-				elif iCiv == con.iCivMexico and gc.getDefineINT("PLAYER_REBIRTH_MEXICO") == 0: continue
-				elif iCiv == con.iCivColombia and gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") == 0: continue
-
-				for tPlot in utils.getPlotList(con.tCoreAreasTL[iReborn][iLoopPlayer], con.tCoreAreasBR[iReborn][iLoopPlayer], con.tExceptions[iReborn][iLoopPlayer]):
-					plot = gc.getMap().plot(tPlot[0], tPlot[1])
-					if plot.isWater(): continue
-					if not tPlot in lForeignCorePlots:
-						lForeignCorePlots.append(tPlot)
-		return lForeignCorePlots
-			
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
 		global iSelectedPlayer
@@ -870,7 +829,7 @@ class WBInfoScreen:
 		global iSetValue
 		global bHideForbidden
 		global lSquareSelection
-		
+
 		if inputClass.getFunctionName() == "ChangeBy":
 			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
 			if iChangeType == 2:
@@ -889,12 +848,12 @@ class WBInfoScreen:
 			iSetValue += iChange
 			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 		elif inputClass.getFunctionName() == "SetValueDecrease":
-			iSetValue = max(iSetValue-iChange,0)	
+			iSetValue = max(iSetValue-iChange,0)
 			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 		elif inputClass.getFunctionName() == "PresetValue":
 			iSetValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))
 			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-		
+
 		elif inputClass.getFunctionName() == "PlotData":
 			if iMode == 0:
 				pUnit = gc.getPlayer(lSelectedItem[0]).getUnit(lSelectedItem[1])
@@ -907,7 +866,7 @@ class WBInfoScreen:
 			elif iMode < 6:
 				pCity = gc.getPlayer(lSelectedItem[0]).getCity(lSelectedItem[1])
 				if pCity:
-					WBCityEditScreen.WBCityEditScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).interfaceScreen(pCity)				
+					WBCityEditScreen.WBCityEditScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).interfaceScreen(pCity)
 			elif iMode < 11:
 				pPlot = CyMap().plot(lSelectedItem[0], lSelectedItem[1])
 				if not pPlot.isNone():
@@ -935,22 +894,46 @@ class WBInfoScreen:
 				iItem = inputClass.getData2()
 				self.refreshMap()
 			else:
-				iPlayer = inputClass.getData1()-22100
-				iData2 = inputClass.getData2()
-				if iData2 == 1:
-					if utils.getReborn(iPlayer) == 0:
-						gc.getPlayer(iPlayer).setReborn(True)
-					else:
-						gc.getPlayer(iPlayer).setReborn(False)
+				iData1 = inputClass.getData1()
+				if iData1 == 22171:
+					iPlayer = inputClass.getData2()
+					md.changeCore(iPlayer, tCurrentPlot)
 					self.placeItemsStabMap()
+					self.refreshMap()
+				elif iData1 == 22172:
+					iPlayer = inputClass.getData2()
+					if iChangeType == 0:
+						iValue = md.getSettlerValue(iPlayer, tCurrentPlot) - iChange
+					elif iChangeType == 1:
+						iValue = md.getSettlerValue(iPlayer, tCurrentPlot) + iChange
+					elif iChangeType == 2:
+						iValue = iSetValue
+					md.changeSettlerValue(iPlayer, tCurrentPlot, iValue)
+					screen.setTableInt("InfoTable", 2, iPlayer, "<font=3>" + str(iValue) + "</font>", "", WidgetTypes.WIDGET_PYTHON, 22172, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
 					if iItem == iPlayer:
 						self.refreshMap()
-				elif iData2 == 2000 or iData2 == 2001:
-					if iItem == iPlayer:
-						iItem = -1
-					else:
-						iItem = iPlayer
+				elif iData1 == 22176:
+					iPlayer = inputClass.getData2()
+					md.changeFlip(iPlayer, tCurrentPlot)
+					self.placeItemsStabMap()
 					self.refreshMap()
+				else:
+					iPlayer = iData1-22100
+					iData2 = inputClass.getData2()
+					if iData2 == 1:
+						if utils.getReborn(iPlayer) == 0:
+							gc.getPlayer(iPlayer).setReborn(True)
+						else:
+							gc.getPlayer(iPlayer).setReborn(False)
+						self.placeItemsStabMap()
+						if iItem == iPlayer:
+							self.refreshMap()
+					elif iData2 == 2000 or iData2 == 2001:
+						if iItem == iPlayer:
+							iItem = -1
+						else:
+							iItem = iPlayer
+						self.refreshMap()
 
 		elif inputClass.getFunctionName() == "PlotTable":
 			iColorA = gc.getInfoTypeForString(self.iColorA)
@@ -991,7 +974,7 @@ class WBInfoScreen:
 				iPlayerX = inputClass.getData2() /10000
 				lSelectedItem = [gc.getPlayer(iPlayerX).getTeam(), -1]
 			self.placePlotData()
-			
+
 		elif inputClass.getFunctionName() in ["MovePlotUpOne", "MovePlotUpFive", "MovePlotDownOne", "MovePlotDownFive", "MovePlotLeftOne", "MovePlotLeftFive", "MovePlotRightOne", "MovePlotRightFive"]:
 			iColorB = gc.getInfoTypeForString(self.iColorB)
 			iData1 = inputClass.getData1()
@@ -1020,13 +1003,126 @@ class WBInfoScreen:
 		elif inputClass.getFunctionName() == "ResetMultiTile":
 			lSquareSelection = [-1, -1, False]
 			self.refreshMap()
-			
+		elif inputClass.getFunctionName()  in ["MultiAdd", "MultiRemove", "MultiReplace", "MultiChangeSettlerValue"]:
+			if iItem != -1 and lSquareSelection[1] != -1:
+				iData2 = inputClass.getData2()
+				tBL = (min(lSquareSelection[0][0], lSquareSelection[1][0]), min(lSquareSelection[0][1], lSquareSelection[1][1]))
+				tTR = (max(lSquareSelection[0][0], lSquareSelection[1][0]), max(lSquareSelection[0][1], lSquareSelection[1][1]))
+				lPlotList = utils.getPlotList(tBL, tTR)
+				if iMode == 14:
+					if iData2 == 0:
+						for tPlot in lPlotList:
+							md.changeCoreForce(iItem, tPlot, True)
+					elif iData2 == 1:
+						for tPlot in lPlotList:
+							md.changeCoreForce(iItem, tPlot, False)
+					elif iData2 == 2:
+						lOldCore = md.getCorePlotList(iItem)
+						for tPlot in lOldCore:
+							md.changeCoreForce(iItem, tPlot, False)
+						for tPlot in lPlotList:
+							md.changeCoreForce(iItem, tPlot, True)
+					elif iData2 == 3:
+						for tPlot in lPlotList:
+							if iChangeType == 0:
+								iValue = md.getSettlerValue(iItem, tPlot) - iChange
+							elif iChangeType == 1:
+								iValue = md.getSettlerValue(iItem, tPlot) + iChange
+							elif iChangeType == 2:
+								iValue = iSetValue
+							md.changeSettlerValue(iItem, tPlot, iValue)
+				elif iMode == 15:
+					if iData2 == 0:
+						for tPlot in lPlotList:
+							md.changeFlipForce(iItem, tPlot, True)
+					elif iData2 == 1:
+						for tPlot in lPlotList:
+							md.changeFlipForce(iItem, tPlot, False)
+					elif iData2 == 2:
+						lOldFlip = md.getFlipPlotList(iItem)
+						for tPlot in lOldFlip:
+							md.changeFlipForce(iItem, tPlot, False)
+						for tPlot in lPlotList:
+							md.changeFlipForce(iItem, tPlot, True)
+				lSquareSelection = [-1, -1, False]
+				self.placeItemsStabMap()
+				self.refreshMap()
+
 		elif inputClass.getFunctionName() == "HideForbidden":
 			bHideForbidden ^= True
 			self.placeItemsStabMap()
 			if iItem != -1:
 				self.refreshMap()
-			
+		elif inputClass.getFunctionName() in ["ClearCore", "ClearFlip", "ClearSettler", "ClearCoreAll", "ClearFlipAll", "ClearSettlerAll"]:
+			iData2 = inputClass.getData2()
+			if iItem != -1 and (iData2 % 2) == 1:
+				if iData2 == 1:
+					md.resetCore(iItem)
+				elif iData2 == 3:
+					md.resetFlip(iItem)
+				elif iData2 == 5:
+					md.resetSettler(iItem)
+				self.placeItemsStabMap()
+			elif (iData2 % 2) == 0:
+				for iPlayer in range(con.iNumPlayers):
+					if iData2 == 2:
+						md.resetCore(iPlayer)
+					elif iData2 == 4:
+						md.resetFlip(iPlayer)
+					elif iData2 == 6:
+						md.resetSettler(iPlayer)
+				self.placeItemsStabMap()
+		elif inputClass.getFunctionName() == "Export":
+			md.export()
+
+		elif inputClass.getFunctionName() == "Randomizer":
+			if iItem != -1:
+				# Find  a plot
+				bGoodPlot = False
+				while not bGoodPlot:
+					iX = gc.getGame().getSorenRandNum(con.iWorldX, 'X coord')
+					iY = gc.getGame().getSorenRandNum(con.iWorldY, 'Y coord')
+					plot = gc.getMap().plot(iX, iY)
+					if not plot.isWater() and not plot.isPeak():
+						bGoodPlot = True
+				# Reset old maps
+				lOldCore = md.getCorePlotList(iItem)
+				for tPlot in lOldCore:
+					md.changeCoreForce(iItem, tPlot, False)
+				lOldFlip = md.getFlipPlotList(iItem)
+				for tPlot in lOldFlip:
+					md.changeFlipForce(iItem, tPlot, False)
+				for x in range(con.iWorldX):
+					for y in range(con.iWorldY):
+						md.changeSettlerValue(iItem, (x, y), 20)
+				# Create new maps
+				for x in range(con.iWorldX):
+					for y in range(con.iWorldY):
+						plot = gc.getMap().plot(x, y)
+						if plot.isWater() or plot.isPeak(): continue
+						iRand = gc.getGame().getSorenRandNum(100, 'PlotValue')
+						if iRand == 1 or iRand == 2:
+							iGetValue = gc.getGame().getSorenRandNum(4, 'GetValue') + 2
+							iValue = self.lPresetValues[iGetValue]
+							for xx in range(-1, 2):
+								for yy in range(-1, 2):
+									plot = gc.getMap().plot(x + xx, y + yy)
+									if not plot.isNone() and not plot.isWater() and not plot.isPeak():
+										md.changeSettlerValue(iItem, (x + xx, y + yy), iValue)
+						elif iRand == 3:
+							for xx in range(-1, 2):
+								for yy in range(-1, 2):
+									plot = gc.getMap().plot(x + xx, y + yy)
+									if not plot.isNone() and not plot.isWater() and not plot.isPeak():
+										md.changeSettlerValue(iItem, (x + xx, y + yy), 3)
+				for x in range(iX-3, iX + 3 + 1):
+					for y in range(iY-3, iY + 3 + 1):
+						md.changeCoreForce(iItem, (x, y), True)
+						md.changeFlipForce(iItem, (x, y), True)
+						md.changeSettlerValue(iItem, (x, y), 500)
+				md.changeSettlerValue(iItem, (iX, iY), 700)
+				self.placeItemsStabMap()
+				self.refreshMap()
 
 	def update(self, fDelta):
 		return 1
