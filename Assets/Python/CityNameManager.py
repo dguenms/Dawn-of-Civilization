@@ -6975,4 +6975,7 @@ tRenames = (
 #Language: Polynesian
 {
 },
+#Language: Harappan
+{
+},
 )

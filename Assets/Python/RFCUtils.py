@@ -282,7 +282,7 @@ class RFCUtils:
 			if iExp > 0:
 				unit.changeExperience(iExp, 100, False, False, False)
 				
-		return unit
+		#return unit
 
 	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum, sAdj=""): #by LOQ, modified by Leoreth
                 'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
