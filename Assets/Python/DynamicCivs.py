@@ -1784,6 +1784,10 @@ def leader(iPlayer):
 	elif iPlayer == iRome:
 		if not bEmpire and not bCityStates: return iAugustus
 		
+	elif iPlayer == iMaya:
+		if bReborn:
+			return iBolivar
+		
 	elif iPlayer == iJapan:
 		if iEra >= iIndustrial: return iMeiji
 		

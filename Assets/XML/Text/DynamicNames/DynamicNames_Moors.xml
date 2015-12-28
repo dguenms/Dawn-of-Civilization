@@ -40,4 +40,8 @@
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ARABIA</Tag>
 		<English>Hejaz</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_EMIRATE_OF</Tag>
+		<English>Emirate of Cordoba</English>
+	</TEXT>
 </Civ4GameText>
