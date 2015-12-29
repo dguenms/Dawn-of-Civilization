@@ -11,7 +11,6 @@
 			<Description>TXT_KEY_BUILD_ROAD</Description>
 			<Help/>
 			<PrereqTech>TECH_THE_WHEEL</PrereqTech>
-			<!-- Rhye -->
 			<iTime>300</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -28,10 +27,9 @@
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_ROMAN_ROAD</Type>
-			<Description>TXT_KEY_BUILD_ROAD</Description>
+			<Description>TXT_KEY_BUILD_ROMAN_ROAD</Description>
 			<Help/>
 			<PrereqTech>TECH_THE_WHEEL</PrereqTech>
-			<!-- Rhye -->
 			<iTime>300</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -52,7 +50,6 @@
 			<Description>TXT_KEY_BUILD_RAILROAD</Description>
 			<Help/>
 			<PrereqTech>TECH_RAILROAD</PrereqTech>
-			<!-- Rhye -->
 			<iTime>400</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -72,7 +69,6 @@
 			<Description>TXT_KEY_BUILD_FARM</Description>
 			<Help/>
 			<PrereqTech>TECH_AGRICULTURE</PrereqTech>
-			<!-- Rhye -->
 			<iTime>600</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -178,7 +174,6 @@
 			<Description>TXT_KEY_BUILD_MINE</Description>
 			<Help/>
 			<PrereqTech>TECH_MINING</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -261,7 +256,6 @@
 			<Description>TXT_KEY_BUILD_LUMBERMILL</Description>
 			<Help/>
 			<PrereqTech>TECH_GUILDS</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>900</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -281,7 +275,6 @@
 			<Description>TXT_KEY_BUILD_WINDMILL</Description>
 			<Help/>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>600</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -323,7 +316,6 @@
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
 			<Help/>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>900</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -406,7 +398,6 @@
 			<Description>TXT_KEY_BUILD_SLAVE_PLANTATION</Description>
 			<Help/>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>0</iTime>
 			<iCost>0</iCost>
 			<bKill>1</bKill>
@@ -516,7 +507,6 @@
 			<Description>TXT_KEY_BUILD_CAMP</Description>
 			<Help/>
 			<PrereqTech>TECH_HUNTING</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -596,7 +586,6 @@
 			<Description>TXT_KEY_BUILD_WINERY</Description>
 			<Help/>
 			<PrereqTech>TECH_MONARCHY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>600</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -638,7 +627,6 @@
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
 			<Help/>
 			<PrereqTech>TECH_POTTERY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>700</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -721,6 +709,26 @@
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_C</HotKey>
+			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
+		</BuildInfo>
+		<BuildInfo>
+			<Type>BUILD_REMOVE_RAINFOREST</Type>
+			<Description>TXT_KEY_BUILD_REMOVE_RAINFOREST</Description>
+			<Help/>
+			<PrereqTech>NONE</PrereqTech>
+			<iTime>0</iTime>
+			<iCost>0</iCost>
+			<bKill>0</bKill>
+			<ImprovementType>NONE</ImprovementType>
+			<RouteType>NONE</RouteType>
+			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
+			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
@@ -811,7 +819,7 @@
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_DEFORESTATION</Type>
-			<Description>TXT_KEY_BUILD_DEFORESTATION</Description>
+			<Description>TXT_KEY_BUILD_REMOVE_JUNGLE</Description>
 			<Help/>
 			<PrereqTech>NONE</PrereqTech>
 			<iTime>0</iTime>
@@ -828,6 +836,27 @@
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_C</HotKey>
+			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildInfo>
+		<BuildInfo>
+			<Type>BUILD_DEFORESTATION_RAINFOREST</Type>
+			<Description>TXT_KEY_BUILD_REMOVE_RAINFOREST</Description>
+			<Help/>
+			<PrereqTech>NONE</PrereqTech>
+			<iTime>0</iTime>
+			<iCost>0</iCost>
+			<bKill>0</bKill>
+			<ImprovementType>NONE</ImprovementType>
+			<RouteType>NONE</RouteType>
+			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
+			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
@@ -849,7 +878,6 @@
 			<Description>TXT_KEY_BUILD_FARM</Description>
 			<Help/>
 			<PrereqTech>TECH_AGRICULTURE</PrereqTech>
-			<!-- Rhye -->
 			<iTime>600</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -879,13 +907,11 @@
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
-					<!-- Rhye - start -->
 					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<iTime>500</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
-					<!-- Rhye - end -->
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_I</HotKey>
@@ -901,7 +927,6 @@
 			<Description>TXT_KEY_BUILD_MINE</Description>
 			<Help/>
 			<PrereqTech>TECH_MINING</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -986,7 +1011,6 @@
 			<Description>TXT_KEY_BUILD_WINDMILL</Description>
 			<Help/>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>600</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -1029,7 +1053,6 @@
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
 			<Help/>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>900</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -1072,7 +1095,6 @@
 			<Description>TXT_KEY_BUILD_PLANTATION</Description>
 			<Help/>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>700</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -1157,7 +1179,6 @@
 			<Description>TXT_KEY_BUILD_PASTURE</Description>
 			<Help/>
 			<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>500</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -1242,7 +1263,6 @@
 			<Description>TXT_KEY_BUILD_WINERY</Description>
 			<Help/>
 			<PrereqTech>TECH_MONARCHY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>600</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
@@ -1285,7 +1305,6 @@
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
 			<Help/>
 			<PrereqTech>TECH_POTTERY</PrereqTech>
-			<!-- Rhye  -->
 			<iTime>700</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>
