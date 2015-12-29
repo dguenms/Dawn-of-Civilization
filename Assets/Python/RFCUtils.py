@@ -8,6 +8,7 @@ import Consts as con
 #import cPickle as pickle
 from StoredData import sd
 import BugCore
+import CvScreenEnums
 
 # globals
 MainOpt = BugCore.game.MainInterface
@@ -37,6 +38,7 @@ lChineseCities = [(102, 47), (103, 44), (103, 43), (106, 44), (107, 43), (105, 3
 # Beijing, Kaifeng, Luoyang, Shanghai, Hangzhou, Guangzhou, Haojing
 
 class RFCUtils:
+	bStabilityOverlay = False
 
 	#Rise and fall, stability
         def getLastTurnAlive( self, iCiv ):
@@ -1964,3 +1966,72 @@ class RFCUtils:
 			
 	def getWonderList():
 		return [i for i in range(iNumBuildings) if isWorldWonderClass(gc.getBuildingInfo(i).getBuildingClassType())]
+
+	def getForeignCorePlots(self, iPlayer):
+		import MapDrawer as md
+		lForeignCorePlots = []
+		iGameTurn = gc.getGame().getGameTurn()
+
+		for iLoopPlayer in reversed(range(con.iNumPlayers)):
+			if iPlayer == iLoopPlayer: continue
+			if gc.getPlayer(iLoopPlayer).isAlive() or (self.canEverRespawn(iLoopPlayer, iGameTurn) or getTurnForYear(con.tBirth[iLoopPlayer]) > iGameTurn):
+				iCiv = gc.getPlayer(iLoopPlayer).getCivilizationType()
+
+				#Hides DoC civs if disabled
+				if iLoopPlayer in con.lSecondaryCivs:
+					if not self.getPlayerEnabled(iLoopPlayer):
+						continue
+				elif iCiv == con.iCivMexico and gc.getDefineINT("PLAYER_REBIRTH_MEXICO") == 0: continue
+				elif iCiv == con.iCivColombia and gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") == 0: continue
+
+				for tPlot in md.getCorePlotList(iLoopPlayer):
+					plot = gc.getMap().plot(tPlot[0], tPlot[1])
+					if plot.isWater(): continue
+					if not tPlot in lForeignCorePlots:
+						lForeignCorePlots.append(tPlot)
+		return lForeignCorePlots
+
+	def toggleStabilityOverlay(self):
+		import MapDrawer as md
+		engine = CyEngine()
+		map = CyMap()
+
+		# clear the highlight
+		engine.clearColoredPlots(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_WORLD_BUILDER)
+
+		if self.bStabilityOverlay:
+			self.bStabilityOverlay = False
+			CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
+			return
+
+		self.bStabilityOverlay = True
+		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", True)
+
+		colors = ["COLOR_PLAYER_DARK_GREEN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED"]
+		iHuman = self.getHumanID()
+		iHumanTeam = gc.getPlayer(iHuman).getTeam()
+		lForeignCorePlots = self.getForeignCorePlots(iHuman)
+		lCorePlots = md.getCorePlotList(iHuman)
+
+		# apply the highlight
+		for i in range(map.numPlots()):
+			plot = map.plotByIndex(i)
+			tPlot = (plot.getX(), plot.getY())
+			if gc.getGame().isDebugMode() or plot.isRevealed(iHumanTeam, False):
+				if plot.isWater(): continue
+				if tPlot in lCorePlots:
+					iPlotType = 0
+				else:
+					iSettlerValue = md.getSettlerValue(iHuman, tPlot)
+					if iSettlerValue >= 90:
+						if tPlot in lForeignCorePlots:
+							iPlotType = 2
+						else:
+							iPlotType = 1
+					elif tPlot in lForeignCorePlots:
+						iPlotType = 3
+					else:
+						iPlotType = -1
+				if iPlotType != -1:
+					szColor = colors[iPlotType]
+					engine.addColoredPlotAlt(plot.getX(), plot.getY(), int(PlotStyles.PLOT_STYLE_BOX_FILL), int(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_WORLD_BUILDER), szColor, .2)
