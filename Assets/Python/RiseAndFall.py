@@ -644,6 +644,7 @@ class RiseAndFall:
 			
 		self.foundCapitals()
 		self.flipStartingTerritory()
+		
 	
 		if utils.getScenario() == con.i3000BC:
 			self.create4000BCstartingUnits()
