@@ -5485,7 +5485,7 @@ class CvMainInterface:
 		if ( CyInterface().isCityScreenUp() ):
 			bVisible = False
 		
-		kMainButtons = ["UnitIcons", "Grid", "BareMap", "Yields", "ScoresVisible", "ResourceIcons"]
+		kMainButtons = ["UnitIcons", "Grid", "BareMap", "Yields", "ScoresVisible", "ResourceIcons", "StabilityOverlay"] #edead
 		kGlobeButtons = []
 		for i in range(kGLM.getNumLayers()):
 			szButtonID = "GlobeLayer" + str(i)
@@ -5515,10 +5515,10 @@ class CvMainInterface:
 			iY = yResolution - iMinimapButtonsY_Regular
 			iGlobeY = yResolution - iGlobeButtonY_Regular
 			
-		iBtnX = xResolution - 39
+		iBtnX = xResolution - 37 # edead 39
 		screen.moveItem("GlobeToggle", iBtnX, iGlobeY, 0.0)
 		
-		iBtnAdvance = 28
+		iBtnAdvance = 24 # edead: 28
 		iBtnX = iBtnX - len(kShow)*iBtnAdvance - 10
 		if len(kShow) > 0:		
 			i = 0
@@ -5588,7 +5588,13 @@ class CvMainInterface:
 		screen.setStyle( "ResourceIcons", "Button_HUDBtnResources_Style" )
 		screen.setState( "ResourceIcons", False )
 		screen.hide( "ResourceIcons" )
-		
+
+		#screen.addCheckBoxGFC( "StabilityOverlay", "", "", 0, 0, 28, 28, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_STABILITY_OVERLAY).getActionInfoIndex(), -1, ButtonStyles.BUTTON_STYLE_LABEL )
+		screen.addCheckBoxGFC( "StabilityOverlay", "", "", 0, 0, 28, 28, WidgetTypes.WIDGET_ACTION, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL )
+		screen.setStyle( "StabilityOverlay", "Button_HUDGlobeStrategy_Style" )
+		screen.setState( "StabilityOverlay", False )
+		screen.hide( "StabilityOverlay" )
+
 		screen.addCheckBoxGFC( "GlobeToggle", "", "", -1, -1, 36, 36, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_GLOBELAYER).getActionInfoIndex(), -1, ButtonStyles.BUTTON_STYLE_LABEL )
 		screen.setStyle( "GlobeToggle", "Button_HUDZoom_Style" )
 		screen.setState( "GlobeToggle", False )
@@ -5664,6 +5670,9 @@ class CvMainInterface:
 		if inputClass.getNotifyCode() == 11 and inputClass.getData1() == 10001:
 			utils.doByzantineBribery(g_pSelectedUnit)
 		# Leoreth: end
+
+		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() == "StabilityOverlay":
+			utils.toggleStabilityOverlay()
 
 		return 0
 	
