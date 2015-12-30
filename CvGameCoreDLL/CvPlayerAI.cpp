@@ -1785,7 +1785,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int tempY = pPlot->getY_INLINE();
     int reborn = GET_PLAYER(getID()).getReborn();
 
-    int iSettlerMapValue = settlersMaps[reborn][getID()][EARTH_Y - 1 - iY][iX];
+    int iSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(iX, iY);
 
     // Leoreth: settler map entry of 1000 (never used by Rhye) to force a city no matter the environment
     //if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] == 1000)
@@ -3302,12 +3302,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	//Rhye - start
 
-	iValue *= settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX];
+	int iTempSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(tempX, tempY);
+
+	iValue *= iTempSettlerMapValue;
 	iValue /= 100;
 
-	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] <= 3)
+	if (iTempSettlerMapValue <= 3)
 		return 0;
-	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] <= 60)
+	if (iTempSettlerMapValue <= 60)
 		iValue /= 2;
 	/*if (settlersMaps[getID()][EARTH_Y - 1 - tempY][tempX] >= 200) {
 		iValue *= 11;
@@ -3317,7 +3319,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		iValue *= 11;
 		iValue /= 10;
 	}*/
-	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] > 60)
+	if (iTempSettlerMapValue > 60)
 	//	iValue += GC.getGameINLINE().getSorenRandNum(1000, "Random Value");
 	{
 		//iValue *= 100 + GC.getASyncRand().get(40, "Random Value");
@@ -3456,14 +3458,15 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	}
 
 	//Rhye - start
+	int iSettlerMapValue = pCity->plot()->getSettlerValue(getID());
 
-	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] <= 3)
+	if (iSettlerMapValue <= 3)
 		iValue -= 2;
-	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] <= 20)
+	else if (iSettlerMapValue <= 20)
 		iValue -= 1;
-	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 500) //500-700
+	else if (iSettlerMapValue >= 500) //500-700
 		iValue += 2; // Leoreth: lowered because of war maps influence
-	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 300) //300-400
+	else if (iSettlerMapValue >= 300) //300-400
 		iValue += 1; // Leoreth: lowered because of war maps influence
 
 	/* Leoreth: take out because of war map influence
@@ -3473,12 +3476,12 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 1;*/
 
 	//Leoreth: take war maps into account here as well
-	iValue += warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] / 2;
+	iValue += pCity->plot()->getWarValue(getID()) / 2;
 
 	// Leoreth: don't conquer independents in regions you're not supposed to
 	if (pCity->getOwner() >= NUM_PL)
 	{
-		if (warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] == 0)
+		if (pCity->plot()->getWarValue(getID()) == 0)
 		{
 			iValue /= 2;
 		}
@@ -3524,7 +3527,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
 	{
 		// Leoreth: the AI has to follow expansion patterns when picking independent cities as targets
-		if (isMinorCiv() || pCity->plot()->getSettlerMapValue(getID()) >= 90 || pCity->plot()->getWarMapValue(getID()) > 0)
+		if (isMinorCiv() || pCity->plot()->getSettlerValue(getID()) >= 90 || pCity->plot()->getWarValue(getID()) > 0)
 		{
 			iValue += 2;
 		}
@@ -9246,7 +9249,8 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 
 
 	if (GET_PLAYER(pCity->getOwnerINLINE()).getNumCities() > 12)
-		if (settlersMaps[reborn][pCity->getOwnerINLINE()][EARTH_Y -1 - pCity->getY()][pCity->getX()] < 500) { //not in core area
+		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500) 
+		{
 			iValue *= 2;
 			iValue /= 3;
 		}
@@ -19495,7 +19499,7 @@ void CvPlayerAI::AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int
 	CvPlot* pLoopPlot;
 	int iLoopX, iLoopY;
 	int iValue;
-	int iSettlerMapValue = settlersMaps[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][EARTH_Y - 1 - iY][iX];
+	int iSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(iX, iY);
 
 	for (iLoopX = -iOuterRadius; iLoopX <= iOuterRadius; iLoopX++)
 	{
@@ -19595,23 +19599,23 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 			CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 			if (pLoopPlot->isRevealed(getTeam(), false))
 			{
-				if (settlersMaps[reborn][getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] > 90) //Rhye
+				if (pLoopPlot->getSettlerValue(getID()) > 90) //Rhye
 				{ //Rhye
-				iValue = pLoopPlot->getFoundValue(getID());
+					iValue = pLoopPlot->getFoundValue(getID());
 
-				if (iValue > iMinFoundValueThreshold)
-				{
-					if (!AI_isPlotCitySite(pLoopPlot))
+					if (iValue > iMinFoundValueThreshold)
 					{
-						iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
-
-						if (iValue > iBestFoundValue)
+						if (!AI_isPlotCitySite(pLoopPlot))
 						{
-							iBestFoundValue = iValue;
-							pBestFoundPlot = pLoopPlot;
+							iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
+
+							if (iValue > iBestFoundValue)
+							{
+								iBestFoundValue = iValue;
+								pBestFoundPlot = pLoopPlot;
+							}
 						}
 					}
-				}
 				} //Rhye
 			}
 		}
@@ -19666,35 +19670,35 @@ int CvPlayerAI::AI_browseStep(int iMinFoundValueThreshold, int iBestFoundValue, 
 
 	for (iI = 0; iI < EARTH_X; iI++)
 	{
-	for (iJ = 0; iJ < EARTH_Y; iJ++)
-	{
-		CvPlot* pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
-		if (settlersMaps[reborn][getID()][EARTH_Y -1 -iJ][iI] == iModifier)
-
-	/*for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
-	{
-		CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
-		if (settlersMaps[getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] == iModifier)*/
+		for (iJ = 0; iJ < EARTH_Y; iJ++)
 		{
-			if (pLoopPlot->isRevealed(getTeam(), false))
-			{
-				iValue = pLoopPlot->getFoundValue(getID());
-				if (iValue > iMinFoundValueThreshold)
-				{
-					if (!AI_isPlotCitySite(pLoopPlot))
-					{
-						iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
+			CvPlot* pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
+			if (pLoopPlot->getSettlerValue(getID()) == iModifier)
 
-						if (iValue > iBestFoundValue)
+		/*for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+		{
+			CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
+			if (settlersMaps[getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] == iModifier)*/
+			{
+				if (pLoopPlot->isRevealed(getTeam(), false))
+				{
+					iValue = pLoopPlot->getFoundValue(getID());
+					if (iValue > iMinFoundValueThreshold)
+					{
+						if (!AI_isPlotCitySite(pLoopPlot))
 						{
-							iBestFoundValue = iValue;
-							pBestFoundPlot = pLoopPlot;
+							iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
+
+							if (iValue > iBestFoundValue)
+							{
+								iBestFoundValue = iValue;
+								pBestFoundPlot = pLoopPlot;
+							}
 						}
 					}
 				}
 			}
 		}
-	}
 	}
 	return iBestFoundValue;
 }

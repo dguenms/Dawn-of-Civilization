@@ -18493,7 +18493,7 @@ int CvPlayer::verifySettlersHalt(int threshold)
 				{
 					if (!(pLoopPlot->isOwned()))
 					{
-						if (settlersMaps[getReborn()][getID()][EARTH_Y -1 -iJ][iI] >= threshold)
+						if (pLoopPlot->getSettlerValue(getID()) >= threshold)
 						{
 							count++;
 
@@ -18514,9 +18514,9 @@ int CvPlayer::verifySettlersHalt(int threshold)
 }
 
 
-int CvPlayer::getSettlersMaps(int y, int x)
+int CvPlayer::getSettlerValue(int x, int y)
 {
-	return settlersMaps[getReborn()][getID()][y][x];
+	return GC.getMap().plot(x, y)->getSettlerValue(getID());
 }
 
 // Leoreth - return civic preference, see CvRhyes
@@ -25117,9 +25117,9 @@ void CvPlayer::setReborn(bool bNewValue)
 	m_bReborn = bNewValue;
 }
 
-int CvPlayer::getWarMapValue(int x, int y)
+int CvPlayer::getWarValue(int x, int y)
 {
-	return warMaps[getReborn()][getID()][EARTH_Y-1-y][x];
+	return GC.getMap().plot(x, y)->getWarValue(getID());
 }
 
 bool CvPlayer::isHasBuilding(BuildingTypes eIndex) const

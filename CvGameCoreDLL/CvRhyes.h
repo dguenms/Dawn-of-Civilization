@@ -345,16 +345,12 @@ extern int religiousTolerance[NUM_PL];
 extern int lTechLeaderPenalty[NUM_ERAS];
 extern int lTechBackwardsBonus[NUM_ERAS];
 
-extern int regionSpreadFactor[NUM_REGIONS][NUM_RELIGIONS];
-
 extern int turnPlayed[NUM_PL+NUM_MINORS]; 
 extern int civSpreadFactor[NUM_PL+NUM_MINORS][NUM_RELIGIONS];
 extern int borders[NUM_PL][NUM_PL];
 extern int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1];
 extern int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS];
 extern int regionMap[68][124];
-extern int settlersMaps[2][NUM_PL][68][124];
-extern int warMaps[2][NUM_PL][68][124];
 
 inline int getStartingEra(PlayerTypes ePlayer, bool bAstronomy = true)
 {

@@ -12736,7 +12736,7 @@ bool CvUnitAI::AI_found()
 		CvPlot* pCitySitePlot = GET_PLAYER(getOwnerINLINE()).AI_getCitySite(iI);
 
 		//Rhye - start
-		if (settlersMaps[GET_PLAYER(getOwnerINLINE()).getReborn()][getOwnerINLINE()][EARTH_Y -1 -pCitySitePlot->getY_INLINE()][pCitySitePlot->getX_INLINE()] < 90) //so high?
+		if (pCitySitePlot->getSettlerValue(getOwnerINLINE()) < 90) //so high?
 			return false;
 		//Rhye - end
 
@@ -12815,7 +12815,7 @@ bool CvUnitAI::AI_found_map(int modifier)
 		{
 			pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
 
-			if (settlersMaps[GET_PLAYER(getOwnerINLINE()).getReborn()][getOwnerINLINE()][EARTH_Y -1 -iJ][iI] == modifier)
+			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) == modifier)
 			{
 				if (pLoopPlot != NULL)
 				{
@@ -12909,7 +12909,7 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 				{
 					if (canFound(pLoopPlot))
 					{
-						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || settlersMaps[GET_PLAYER(getOwnerINLINE()).getReborn()][getOwnerINLINE()][EARTH_Y -1 - (iDY+getY_INLINE())][(iDX+getX_INLINE())] >= 60) //Rhye
+						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || GET_PLAYER(getOwnerINLINE()).getSettlerValue(iDX + getX_INLINE(), iDY + getY_INLINE()) >= 60) //Rhye
 						{ //Rhye
 
 						iValue = pLoopPlot->getFoundValue(getOwnerINLINE());

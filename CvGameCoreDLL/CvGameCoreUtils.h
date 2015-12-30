@@ -367,9 +367,6 @@ ScenarioTypes getScenario(); // Leoreth
 int getScenarioStartYear(); // Leoreth
 int getScenarioStartTurn(); // Leoreth
 
-int getSettlerMapValue(int iPlayer, int iReborn, int x, int y); // Leoreth
-
-int getRegionSpreadFactor(int iRegionID, ReligionTypes eReligion); // Leoreth
 int getCivSpreadFactor(PlayerTypes ePlayer, ReligionTypes eReligion); // Leoreth
 
 BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth
