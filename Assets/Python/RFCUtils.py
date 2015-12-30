@@ -8,6 +8,10 @@ import Consts as con
 #import cPickle as pickle
 from StoredData import sd
 import BugCore
+import Areas
+import SettlerMaps
+import WarMaps
+
 
 # globals
 MainOpt = BugCore.game.MainInterface
@@ -155,7 +159,7 @@ class RFCUtils:
                         if (result):                                                        
                         	return ((result.getX(), result.getY()))
 		# if no plot is found, return that player's capital
-                return con.tCapitals[0][iPlayer]
+                return Areas.getCapital(iPlayer)
 
 
 
@@ -236,7 +240,7 @@ class RFCUtils:
                         y = city.getY()
                         for iActiveCiv in range( iNumActivePlayers ):
                                 if (gc.getPlayer(iActiveCiv).isAlive() and not gc.getPlayer(iActiveCiv).isHuman()):
-                                        if (gc.getPlayer(iActiveCiv).getSettlersMaps( 67-y, x ) >= 90 or gc.getPlayer(iActiveCiv).getWarMapValue(x, y) >= 6):
+                                        if (gc.getPlayer(iActiveCiv).getSettlerValue(x, y) >= 90 or gc.getPlayer(iActiveCiv).getWarValue(x, y) >= 6):
                                                 if (not teamMinor.isAtWar(iActiveCiv)):
                                                         teamMinor.declareWar(iActiveCiv, False, WarPlanTypes.WARPLAN_LIMITED)
                                                         print ("Minor war", city.getName(), gc.getPlayer(iActiveCiv).getCivilizationAdjective(0))
@@ -346,17 +350,18 @@ class RFCUtils:
                 gc.getMap().plot(122, 65).setRevealed(iCiv, False, True, -1);
                 gc.getMap().plot(123, 65).setRevealed(iCiv, False, True, -1);
 
-        def killUnitsInArea(self, tTopLeft, tBottomRight, iCiv):
-                for x in range(tTopLeft[0], tBottomRight[0]+1):
-                        for y in range(tTopLeft[1], tBottomRight[1]+1):
-                                killPlot = gc.getMap().plot(x,y)
-                                iNumUnitsInAPlot = killPlot.getNumUnits()
-                                if (iNumUnitsInAPlot):
-                                        for i in range(iNumUnitsInAPlot):                                                        
-                                                unit = killPlot.getUnit(0)
-                                                if (unit.getOwner() == iCiv):
-                                                        unit.kill(False, con.iBarbarian)
-
+        def killUnitsInArea(self, iPlayer, lPlots):
+		for (x, y) in lPlots:
+			lUnits = []
+			plot = gc.getMap().plot(x, y)
+			iNumUnits = plot.getNumUnits()
+			if iNumUnits > 0:
+				for i in range(iNumUnits):
+					unit = plot.getUnit(i)
+					if unit.getOwner() == iPlayer:
+						lUnits.append(unit)
+			for unit in lUnits:
+				unit.kill(False, con.iBarbarian)
                                                         
         #RiseAndFall
         def flipUnitsInArea(self, tTopLeft, tBottomRight, iNewOwner, iOldOwner, bSkipPlotCity, bKillSettlers, lExceptions=[]):
@@ -577,9 +582,9 @@ class RFCUtils:
                                         if (city.getOwner() >= iNumMajorPlayers):
                                                 iMinor = city.getOwner()
                                                 iDen = 25
-                                                if (gc.getPlayer(iMajorCiv).getSettlersMaps( 67-y, x ) >= 400):
+                                                if (gc.getPlayer(iMajorCiv).getSettlerValue(x, y) >= 400):
                                                         iDen = 10
-                                                elif (gc.getPlayer(iMajorCiv).getSettlersMaps( 67-y, x ) >= 150):
+                                                elif (gc.getPlayer(iMajorCiv).getSettlerValue(x, y) >= 150):
                                                         iDen = 15
                                                         
                                                 iMinorCityCulture = city.getCulture(iMinor)
@@ -709,29 +714,28 @@ class RFCUtils:
 				unit.kill(False, iOldOwner)
 				
 	def removeCoreUnits(self, iPlayer):
-		for x in range(con.tBirthAreaTL[iPlayer][0], con.tBirthAreaBR[iPlayer][0]+1):
-			for y in range(con.tBirthAreaTL[iPlayer][1], con.tBirthAreaBR[iPlayer][1]+1):
-				plot = gc.getMap().plot(x, y)
-				if plot.isCity():
-					pCity = plot.getPlotCity()
-					if pCity.getOwner() != iPlayer:
-						x = pCity.getX()
-						y = pCity.getY()
-						self.relocateGarrisons((x,y), pCity.getOwner())
-						self.relocateSeaGarrisons((x,y), pCity.getOwner())
-						self.createGarrisons((x,y), pCity.getOwner(), 2)
-				else:
-					iNumUnits = plot.getNumUnits()
-					j = 0
-					for i in range(iNumUnits):
-						unit = plot.getUnit(j)
-						iOwner = unit.getOwner()
-						if iOwner < con.iNumPlayers and iOwner != iPlayer:
-							capital = gc.getPlayer(iOwner).getCapitalCity()
-							if capital.getX() != -1 and capital.getY() != -1:
-								unit.setXYOld(capital.getX(), capital.getY())
-						else:
-							j += 1
+		for (x, y) in Areas.getBirthArea(iPlayer):
+			plot = gc.getMap().plot(x, y)
+			if plot.isCity():
+				pCity = plot.getPlotCity()
+				if pCity.getOwner() != iPlayer:
+					x = pCity.getX()
+					y = pCity.getY()
+					self.relocateGarrisons((x,y), pCity.getOwner())
+					self.relocateSeaGarrisons((x,y), pCity.getOwner())
+					self.createGarrisons((x,y), pCity.getOwner(), 2)
+			else:
+				iNumUnits = plot.getNumUnits()
+				j = 0
+				for i in range(iNumUnits):
+					unit = plot.getUnit(j)
+					iOwner = unit.getOwner()
+					if iOwner < con.iNumPlayers and iOwner != iPlayer:
+						capital = gc.getPlayer(iOwner).getCapitalCity()
+						if capital.getX() != -1 and capital.getY() != -1:
+							unit.setXYOld(capital.getX(), capital.getY())
+					else:
+						j += 1
                                 
         #Congresses, RiseAndFall
         def relocateSeaGarrisons(self, tCityPlot, iOldOwner):
@@ -1101,24 +1105,22 @@ class RFCUtils:
 		return gc.getPlayer(iCiv).getReborn()
 
 	# Leoreth
-	def getCoreCityList(self, iCiv, reborn):
+	def getCoreCityList(self, iCiv, bReborn):
 		cityList = []
-		for x in range(con.tCoreAreasTL[reborn][iCiv][0], con.tCoreAreasBR[reborn][iCiv][0]+1):
-			for y in range(con.tCoreAreasTL[reborn][iCiv][1], con.tCoreAreasBR[reborn][iCiv][1]+1):
-				plot = gc.getMap().plot(x,y)
-				if plot.isCity():
-					cityList.append(plot.getPlotCity())
+		for (x, y) in Areas.getCoreArea(iCiv, bReborn):
+			plot = gc.getMap().plot(x, y)
+			if plot.isCity():
+				cityList.append(plot.getPlotCity())
 		return cityList
 
 	# Leoreth
 	def getCoreUnitList(self, iCiv, reborn):
 		unitList = []
-		for x in range(con.tCoreAreasTL[reborn][iCiv][0], con.tCoreAreasBR[reborn][iCiv][0]+1):
-			for y in range(con.tCoreAreasTL[reborn][iCiv][1], con.tCoreAreasBR[reborn][iCiv][1]+1):
-				plot = gc.getMap().plot(x,y)
-				if not plot.isCity():
-					for i in range(plot.getNumUnits()):
-						unitList.append(plot.getUnit(i))
+		for (x, y) in Areas.getCoreArea(iCiv, bReborn):
+			plot = gc.getMap().plot(x,y)
+			if not plot.isCity():
+				for i in range(plot.getNumUnits()):
+					unitList.append(plot.getUnit(i))
 		return unitList
 
 	def getCivRectangleCities(self, iCiv, TopLeft, BottomRight):
@@ -1132,13 +1134,9 @@ class RFCUtils:
 
 	
 
-	def removeReligionByArea(self, tTopLeft, tBottomRight, iReligion):
+	def removeReligionByArea(self, lPlotList, iReligion):
 		lCityList = []
-                for x in range(tTopLeft[0], tBottomRight[0]+1):
-                        for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if gc.getMap().plot(x,y).isCity():
-					lCityList.append(gc.getMap().plot(x,y).getPlotCity())
-		for city in lCityList:
+		for city in self.getAreaCities(lPlotList):
 			if city.isHasReligion(iReligion) and not city.isHolyCity():
 				city.setHasReligion(iReligion, False, False, False)
 			if city.hasBuilding(con.iTemple + iReligion*4):
@@ -1353,24 +1351,18 @@ class RFCUtils:
 		return lPlotList
 		
 	def isPlotInArea(self, tPlot, tTopLeft, tBottomRight, lExceptions=()):
-		x, y = tPlot
-		tlx, tly = tTopLeft
-		brx, bry = tBottomRight
-		
-		return (x >= tlx and x <= brx and y >= tly and y <= bry and tPlot not in lExceptions)
+		return tPlot in self.getPlotList(tTopLeft, tBottomRight, lExceptions)
 		
 	def isPlotInCore(self, iPlayer, tPlot):
-		iReborn = self.getReborn(iPlayer)
-		return self.isPlotInArea(tPlot, con.tCoreAreasTL[iReborn][iPlayer], con.tCoreAreasBR[iReborn][iPlayer], con.tExceptions[iReborn][iPlayer])
+		return tPlot in Areas.getCoreArea(iPlayer)
 		
 	def isPlotInNormal(self, iPlayer, tPlot):
-		iReborn = self.getReborn(iPlayer)
-		return self.isPlotInArea(tPlot, con.tNormalAreasTL[iReborn][iPlayer], con.tNormalAreasBR[iReborn][iPlayer], con.tNormalAreasSubtract[iReborn][iPlayer])
+		return tPlot in Areas.getNormalArea(iPlayer)
 		
 	def relocateCapital(self, iPlayer, newCapital):
 		oldCapital = gc.getPlayer(iPlayer).getCapitalCity()
 		
-		if (oldCapital.getX(), oldCapital.getY()) == con.tNewCapitals[iPlayer]: return
+		if (oldCapital.getX(), oldCapital.getY()) == Areas.getNewCapital(iPlayer): return
 		
 		newCapital.setHasRealBuilding(con.iPalace, True)
 		oldCapital.setHasRealBuilding(con.iPalace, False)
@@ -1561,28 +1553,20 @@ class RFCUtils:
 		return con.iWarrior
 		
 	def getPlotList(self, tTL, tBR, tExceptions=()):
-		lResults = []
+		return [(x, y) for x in range(tTL[0], tBR[0]+1) for y in range(tTL[1], tBR[1]+1) if (x, y) not in tExceptions]
 		
-		for x in range(tTL[0], tBR[0]+1):
-			for y in range(tTL[1], tBR[1]+1):
-				if (x,y) not in tExceptions:
-					lResults.append((x,y))
-					
-		return lResults
-		
-	def getAreaCities(self, tTL, tBR, tExceptions=()):
+	def getAreaCities(self, lPlots):
 		lCities = []
-		lPlotList = self.getPlotList(tTL, tBR, tExceptions)
 		
-		for tPlot in lPlotList:
+		for tPlot in lPlots:
 			x, y = tPlot
 			plot = gc.getMap().plot(x, y)
 			if plot.isCity(): lCities.append(plot.getPlotCity())
 		return lCities
 		
-	def getAreaCitiesCiv(self, iCiv, tTL, tBR, tExceptions=()):
+	def getAreaCitiesCiv(self, iCiv, lPlots):
 		lCities = []
-		for city in self.getAreaCities(tTL, tBR, tExceptions):
+		for city in self.getAreaCities(lPlots):
 			if city.getOwner() == iCiv:
 				lCities.append(city)
 		return lCities
@@ -1663,22 +1647,18 @@ class RFCUtils:
 	def createSettlers(self, iPlayer, iTargetCities):
 		iNumCities = 0
 		bCapital = False
-		tTL = con.tBirthAreaTL[iPlayer]
-		tBR = con.tBirthAreaBR[iPlayer]
-		
-		for x in range(tTL[0], tBR[0]+1):
-			for y in range(tTL[1], tBR[1]+1):
-				if (x,y) not in con.tBirthAreaExceptions[iPlayer]:
-					if gc.getMap().plot(x, y).isCity():
-						iNumCities += 1
 						
-		x, y = con.tCapitals[0][iPlayer]
+		for (x, y) in Areas.getBirthArea(iPlayer):
+			if gc.getMap().plot(x, y).isCity():
+				iNumCities += 1
+						
+		x, y = Areas.getCapital(iPlayer)
 		if gc.getMap().plot(x, y).isCity(): bCapital = True
 		
 		if iNumCities < iTargetCities:
-			self.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], iTargetCities - iNumCities)
+			self.makeUnit(iSettler, iPlayer, (x, y), iTargetCities - iNumCities)
 		else:
-			if not bCapital: self.makeUnit(iSettler, iPlayer, con.tCapitals[0][iPlayer], 1)
+			if not bCapital: self.makeUnit(iSettler, iPlayer, (x, y), 1)
 			
 	def createMissionaries(self, iPlayer, iReligion, iNumUnits):
 		if not gc.getGame().isReligionFounded(iReligion): return
@@ -1686,7 +1666,7 @@ class RFCUtils:
 		# Leoreth: temporarily try less missionaries
 		iNumUnits = 1
 		
-		self.makeUnit(con.iJewishMissionary + iReligion, iPlayer, con.tCapitals[0][iPlayer], iNumUnits)
+		self.makeUnit(con.iJewishMissionary + iReligion, iPlayer, Areas.getCapital(iPlayer), iNumUnits)
 			
 	def getSortedList(self, lList, function, bReverse = False):
 		return sorted(lList, key=lambda element: function(element), reverse=bReverse)
@@ -1700,10 +1680,7 @@ class RFCUtils:
 		return lList.index(lSortedList[0])
 		
 	def getColonyPlayer(self, iCiv):
-		tCoreTL = con.tBirthAreaTL[iCiv]
-		tCoreBR = con.tBirthAreaBR[iCiv]
-		tExceptions = con.tBirthAreaExceptions[iCiv]
-		lCities = self.getAreaCities(tCoreTL, tCoreBR, tExceptions)
+		lCities = self.getAreaCities(Areas.getBirthArea(iCiv))
 		lPlayers = []
 		lPlayerNumbers = [0 for i in range(con.iNumPlayers)]
 		
@@ -1742,13 +1719,6 @@ class RFCUtils:
 		
 	def setStabilityLevel(self, iPlayer, iNewValue):
 		sd.setStabilityLevel(iPlayer, iNewValue)
-		
-	def getRespawnArea(self, iPlayer):
-		if con.tRespawnTL[iPlayer] != -1:
-			return con.tRespawnTL[iPlayer], con.tRespawnBR[iPlayer], []
-			
-		iReborn = self.getReborn(iPlayer)
-		return con.tNormalAreasTL[iReborn][iPlayer], con.tNormalAreasBR[iReborn][iPlayer], con.tNormalAreasSubtract[iReborn][iPlayer]
 		
 	def showPopup(self, popupID, title, message, labels):
                 popup = Popup.PyPopup(popupID, EventContextTypes.EVENTCONTEXT_ALL)
@@ -1964,3 +1934,18 @@ class RFCUtils:
 			
 	def getWonderList():
 		return [i for i in range(iNumBuildings) if isWorldWonderClass(gc.getBuildingInfo(i).getBuildingClassType())]
+		
+	def getOrElse(self, dDictionary, key, default):
+		if key in dDictionary: return dDictionary[key]
+		return default
+		
+	def setReborn(self, iPlayer, bReborn):
+		pPlayer = gc.getPlayer(iPlayer)
+		
+		if pPlayer.isReborn() == bReborn: return
+	
+		pPlayer.setReborn(bReborn)
+		
+		SettlerMaps.updateMap(iPlayer, bReborn)
+		WarMaps.updateMap(iPlayer, bReborn)
+		Areas.updateCore(iPlayer)

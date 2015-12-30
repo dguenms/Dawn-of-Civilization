@@ -9958,7 +9958,7 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 
 								if (NO_PLAYER == pLoopCity->getLiberationPlayer(false))
 								{
-									iCurrentValue = pLoopCity->plot()->getSettlerMapValue(ePlayer);
+									iCurrentValue = pLoopCity->plot()->getSettlerValue(ePlayer);
 									if (iBestID == -1 || iCurrentValue < iBestValue)
 									{
 										iBestID = pLoopCity->getID();

@@ -4503,7 +4503,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	        }
 	        else
 	        {
-	            int iSettlerValue = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getSettlersMaps(67-(pPlot->getY()), (pPlot->getX()));
+				int iSettlerValue = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getSettlerValue(pPlot->getX(), pPlot->getY());
 	            
 				if (iSettlerValue >= 90)
                 {
@@ -4568,11 +4568,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}*/
 
 		//Leoreth: display region, only bugfix purposes
-		/*if (!pPlot->isWater())
+		if (!pPlot->isWater() && gDLL->getChtLvl() > 0)
 		{
 			szString.append(pPlot->getRegionName());
 			szString.append(NEWLINE);
-		}*/
+		}
 
 		// Leoreth: display plot index, only bugfix purposes
 		/*szTempBuffer.Format(L"Index: %d", GC.getMap().plotNum(pPlot->getX(), pPlot->getY()));
@@ -6263,20 +6263,6 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			swprintf(szTempString, NEWLINE SETCOLR L"%s" ENDCOLR NEWLINE, TEXT_COLOR("COLOR_ALT_HIGHLIGHT_TEXT"), szText.GetCString());
 		}
 		szInfoText.append(szTempString);
-
-		/*szText = gDLL->getText(uniquePower[eCivilization][0]) + NEWLINE + gDLL->getText(uniquePower[eCivilization][1]);
-		swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());*/
-
-		/*if (bDawnOfMan)
-		{
-			szText = gDLL->getText(uniquePower[eCivilization][0]);
-			swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
-		}
-		else
-		{
-			szText = gDLL->getSymbolID(BULLET_CHAR) + gDLL->getText(uniquePower[eCivilization][0]);
-			swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
-		}*/
 
 		swprintf(szTempString, L"%s" NEWLINE, gDLL->getText("TXT_KEY_UP_" + GC.getCivilizationInfo(eCivilization).getIdentifier() + "_TITLE").GetCString());
 		szInfoText.append(szTempString);

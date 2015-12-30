@@ -2635,37 +2635,6 @@ int calculateLevel(int iExperience, PlayerTypes ePlayer)
 }
 // BUG - Unit Experience - end
 
-int getSettlerMapValue(int iPlayer, int iReborn, int x, int y)
-{
-	return settlersMaps[iReborn][iPlayer][y][x];
-}
-
-int getRegionSpreadFactor(int iRegionID, ReligionTypes eReligion)
-{
-	int iSpreadFactor = regionSpreadFactor[iRegionID][eReligion];
-
-	if (eReligion == CATHOLICISM)
-	{
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
-		{
-			if (iSpreadFactor < regionSpreadFactor[iRegionID][ORTHODOXY])
-			{
-				iSpreadFactor = regionSpreadFactor[iRegionID][ORTHODOXY];
-			}
-		}
-
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
-		{
-			if (iSpreadFactor < regionSpreadFactor[iRegionID][PROTESTANTISM])
-			{
-				iSpreadFactor = regionSpreadFactor[iRegionID][PROTESTANTISM];
-			}
-		}
-	}
-
-	return iSpreadFactor;
-}
-
 int getCivSpreadFactor(PlayerTypes ePlayer, ReligionTypes eReligion)
 {
 	int iSpreadFactor = civSpreadFactor[ePlayer][eReligion];

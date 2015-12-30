@@ -2371,12 +2371,6 @@ void CyPlayer::addReminder(int iGameTurn, std::wstring szMessage) const
 }
 // BUG - Reminder Mod - end
 
-//Rhye - start
-int CyPlayer::getSettlersMaps(int y, int x)
-{
-	return m_pPlayer ? m_pPlayer->getSettlersMaps(y, x) : -1;
-}
-
 void CyPlayer::setFlag(std::wstring s)
 {
 	if (m_pPlayer)
@@ -2430,11 +2424,6 @@ void CyPlayer::updateMaintenance()
 {
 	if (m_pPlayer)
 		m_pPlayer->updateMaintenance();
-}
-
-int CyPlayer::getWarMapValue(int x, int y)
-{
-	return m_pPlayer ? m_pPlayer->getWarMapValue(x, y) : -1;
 }
 
 void CyPlayer::AI_reset()
@@ -2499,4 +2488,14 @@ void CyPlayer::setEspionageExperience(int iNewValue)
 {
 	if (m_pPlayer)
 		m_pPlayer->setEspionageExperience(iNewValue);
+}
+
+int CyPlayer::getSettlerValue(int x, int y)
+{
+	return m_pPlayer ? m_pPlayer->getSettlerValue(x, y) : -1;
+}
+
+int CyPlayer::getWarValue(int x, int y)
+{
+	return m_pPlayer ? m_pPlayer->getWarValue(x, y) : -1;
 }

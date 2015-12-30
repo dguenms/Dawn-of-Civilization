@@ -8,6 +8,8 @@ import Victory as vic
 from StoredData import sd
 import RFCUtils
 import CityNameManager as cnm
+import Areas
+
 utils = RFCUtils.RFCUtils()
 
 ### Constants ###
@@ -750,10 +752,10 @@ def isCapital(iPlayer, lNames):
 	return False
 	
 def countAreaCities(tTL, tBR, tExceptions=()):
-	return len(utils.getAreaCities(tTL, tBR, tExceptions))
+	return len(utils.getAreaCities(utils.getPlotList(tTL, tBR, tExceptions)))
 	
 def countPlayerAreaCities(iPlayer, tTL, tBR, tExceptions=()):
-	return len(utils.getAreaCitiesCiv(iPlayer, tTL, tBR, tExceptions))
+	return len(utils.getAreaCitiesCiv(iPlayer, utils.getPlotList(tTL, tBR, tExceptions)))
 	
 def isAreaControlled(iPlayer, tTL, tBR, iMinCities=1, tExceptions=()):
 	iTotalCities = countAreaCities(tTL, tBR, tExceptions)
@@ -1478,7 +1480,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
 			
 	elif iPlayer == iByzantium:
-		if capital.getRegionID() != rAnatolia and tCapitalCoords != tCapitals[0][iPlayer]:
+		if capital.getRegionID() != rAnatolia and tCapitalCoords != Areas.getCapital(iPlayer):
 			return "TXT_KEY_CIV_BYZANTIUM_DESPOTATE"
 		
 		if not isCapital(iPlayer, ["Konstantinoupolis"]):
@@ -1694,7 +1696,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if tCapitalCoords != tCapitals[0][iArgentina]:
+		if tCapitalCoords != Areas.getCapital(iPlayer):
 			return "TXT_KEY_CIV_ARGENTINA_CONFEDERATION"
 			
 	elif iPlayer == iBrazil:

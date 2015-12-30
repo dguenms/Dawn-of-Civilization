@@ -532,7 +532,6 @@ public:
 	void addReminder(int iGameTurn, std::wstring szMessage) const;
 // BUG - Reminder Mod - end
 
-	int getSettlersMaps(int y, int x); //Rhye
 	void setFlag(std::wstring s); //Rhye
 	void setLeader(int i); //Rhye
 	void setLeaderName(std::wstring name);
@@ -544,7 +543,6 @@ public:
 	void setReborn(bool bNewValue = true);
 	void updateTradeRoutes();
 	void updateMaintenance();
-	int getWarMapValue(int x, int y);
 	void AI_reset();
 	void setPersecutionCountdown(int iNewValue);
 	bool hasCivic(int iCivic);
@@ -558,6 +556,8 @@ public:
 	bool canRespawn();
 	bool canEverRespawn();
 	void setEspionageExperience(int iNewValue);
+	int getSettlerValue(int x, int y);
+	int getWarValue(int x, int y);
 
 private:
 	CvPlayer* m_pPlayer;

@@ -39,6 +39,11 @@ CvPlot::CvPlot()
 {
 	m_aiYield = new short[NUM_YIELD_TYPES];
 
+	m_abCore = new bool[NUM_MAJOR_PLAYERS];
+	m_aiSettlerValue = new int[NUM_MAJOR_PLAYERS];
+	m_aiWarValue = new int[NUM_MAJOR_PLAYERS];
+	m_aiReligionSpreadFactor = new int[NUM_RELIGIONS];
+
 	m_aiCulture = NULL;
 	m_aiFoundValue = NULL;
 	m_aiPlayerCityRadiusCount = NULL;
@@ -49,8 +54,6 @@ CvPlot::CvPlot()
 	m_aiRevealedOwner = NULL;
 	m_abRiverCrossing = NULL;
 	m_abRevealed = NULL;
-	m_abCore = NULL; // Leoreth
-	m_abRebornCore = NULL; // Leoreth
 	m_aeRevealedImprovementType = NULL;
 	m_aeRevealedRouteType = NULL;
 	m_paiBuildProgress = NULL;
@@ -83,6 +86,12 @@ CvPlot::~CvPlot()
 	uninit();
 
 	SAFE_DELETE_ARRAY(m_aiYield);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_abCore);
+	SAFE_DELETE_ARRAY(m_aiSettlerValue);
+	SAFE_DELETE_ARRAY(m_aiWarValue);
+	SAFE_DELETE_ARRAY(m_aiReligionSpreadFactor);
 }
 
 void CvPlot::init(int iX, int iY)
@@ -128,8 +137,6 @@ void CvPlot::uninit()
 
 	SAFE_DELETE_ARRAY(m_abRiverCrossing);
 	SAFE_DELETE_ARRAY(m_abRevealed);
-	SAFE_DELETE_ARRAY(m_abCore); // Leoreth
-	SAFE_DELETE_ARRAY(m_abRebornCore); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_aeRevealedImprovementType);
 	SAFE_DELETE_ARRAY(m_aeRevealedRouteType);
@@ -193,6 +200,9 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_iReconCount = 0;
 	m_iRiverCrossingCount = 0;
 
+	// Leoreth
+	//m_iRegionID = -1;
+
 	// Leoreth: graphics paging
 	m_iGraphicsPageIndex = -1;
 
@@ -225,6 +235,18 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
 		m_aiYield[iI] = 0;
+	}
+
+	for (iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
+	{
+		m_abCore[iI] = false;
+		m_aiSettlerValue[iI] = 0;
+		m_aiWarValue[iI] = 0;
+	}
+
+	for (iI = 0; iI < NUM_RELIGIONS; ++iI)
+	{
+		m_aiReligionSpreadFactor[iI] = -1;
 	}
 }
 
@@ -7350,7 +7372,7 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return 82393;
 	}
 
-	if ((getX_INLINE() == 101 && getY_INLINE() == 37) || (GET_PLAYER(eIndex).getSettlersMaps(EARTH_Y-1-getY_INLINE(), getX_INLINE()) >= 800))
+	if ((getX_INLINE() == 101 && getY_INLINE() == 37) || (getSettlerValue(eIndex) >= 800))
 	{
 		int iValue = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, false);
 		if (iValue > area()->getBestFoundValue(eIndex))
@@ -9795,23 +9817,6 @@ void CvPlot::read(FDataStreamBase* pStream)
 		pStream->Read(cCount, m_abRevealed);
 	}
 
-	// Leoreth
-	SAFE_DELETE_ARRAY(m_abCore);
-	pStream->Read(&cCount);
-	if (cCount > 0)
-	{
-		m_abCore = new bool[cCount];
-		pStream->Read(cCount, m_abCore);
-	}
-	
-	SAFE_DELETE_ARRAY(m_abRebornCore);
-	pStream->Read(&cCount);
-	if (cCount > 0)
-	{
-		m_abRebornCore = new bool[cCount];
-		pStream->Read(cCount, m_abRebornCore);
-	}
-
 	SAFE_DELETE_ARRAY(m_aeRevealedImprovementType);
 	pStream->Read(&cCount);
 	if (cCount > 0)
@@ -9891,6 +9896,13 @@ void CvPlot::read(FDataStreamBase* pStream)
 			}
 		}
 	}
+
+	// Leoreth
+	pStream->Read(NUM_MAJOR_PLAYERS, m_abCore);
+	pStream->Read(NUM_MAJOR_PLAYERS, m_aiSettlerValue);
+	pStream->Read(NUM_MAJOR_PLAYERS, m_aiWarValue);
+	pStream->Read(NUM_RELIGIONS, m_aiReligionSpreadFactor);
+	pStream->Read(&m_iRegionID);
 
 	// Sanguo Mod Performance, start, added by poyuzhe 08.13.09
 //	if (NULL != m_apaiPlayerDangerCache)
@@ -10081,27 +10093,6 @@ void CvPlot::write(FDataStreamBase* pStream)
 		pStream->Write(MAX_TEAMS, m_abRevealed);
 	}
 
-	// Leoreth
-	if (NULL == m_abCore)
-	{
-		pStream->Write((char)0);
-	}
-	else
-	{
-		pStream->Write((char)NUM_MAJOR_PLAYERS);
-		pStream->Write(NUM_MAJOR_PLAYERS, m_abCore);
-	}
-	
-	if (NULL == m_abRebornCore)
-	{
-		pStream->Write((char)0);
-	}
-	else
-	{
-		pStream->Write((char)NUM_MAJOR_PLAYERS);
-		pStream->Write(NUM_MAJOR_PLAYERS, m_abRebornCore);
-	}
-
 	if (NULL == m_aeRevealedImprovementType)
 	{
 		pStream->Write((char)0);
@@ -10175,6 +10166,13 @@ void CvPlot::write(FDataStreamBase* pStream)
 			}
 		}
 	}
+
+	// Leoreth
+	pStream->Write(NUM_MAJOR_PLAYERS, m_abCore);
+	pStream->Write(NUM_MAJOR_PLAYERS, m_aiSettlerValue);
+	pStream->Write(NUM_MAJOR_PLAYERS, m_aiWarValue);
+	pStream->Write(NUM_RELIGIONS, m_aiReligionSpreadFactor);
+	pStream->Write(m_iRegionID);
 
 	// Sanguo Mod Performance, start, added by poyuzhe 08.13.09
 //	if (NULL == m_apaiPlayerDangerCache)
@@ -11232,14 +11230,19 @@ void CvPlot::invalidatePlayerDangerCache(PlayerTypes ePlayer, int iRange)
 
 int CvPlot::getRegionID() const
 {
-	return regionMap[EARTH_Y-1-getY_INLINE()][getX_INLINE()];
+	return m_iRegionID;
+}
+
+void CvPlot::setRegionID(int iNewValue)
+{
+	m_iRegionID = iNewValue;
 }
 
 CvWString CvPlot::getRegionName() const
 {
 	char szBuffer[20];
 	CvWString szResult;
-	sprintf(szBuffer, "TXT_KEY_REGION_%d", regionMap[EARTH_Y - 1 - getY_INLINE()][getX_INLINE()]);
+	sprintf(szBuffer, "TXT_KEY_REGION_%d", getRegionID());
 	szResult = gDLL->getText(szBuffer);
 	return gDLL->getText(szResult);
 }
@@ -11250,70 +11253,75 @@ bool CvPlot::isCore(PlayerTypes ePlayer) const
 	FAssertMsg(ePlayer >= 0, "eTeam is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "eTeam is expected to be within maximum bounds (invalid Index)");
 
-	if (GET_PLAYER(ePlayer).isReborn())
-	{
-		if (NULL == m_abRebornCore)
-		{
-			return false;
-		}
-
-		return m_abRebornCore[ePlayer];
-	}
-	else
-	{
-		if (NULL == m_abCore)
-		{
-			return false;
-		}
-
-		return m_abCore[ePlayer];
-	}
+	if (ePlayer >= NUM_MAJOR_PLAYERS) return false;
+	return m_abCore[ePlayer];
 }
 
 
-void CvPlot::setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue)
+void CvPlot::setCore(PlayerTypes ePlayer, bool bNewValue)
 {
 	FAssertMsg(ePlayer >= 0, "eTeam is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "eTeam is expected to be within maximum bounds (invalid Index)");
 
-	if (bReborn)
-	{
-		if (NULL == m_abRebornCore)
-		{
-			m_abRebornCore = new bool[NUM_MAJOR_PLAYERS];
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
-			{
-				m_abRebornCore[iI] = false;
-			}
-		}
-
-		m_abRebornCore[ePlayer] = bNewValue;
-	}
-	else
-	{
-		if (NULL == m_abCore)
-		{
-			m_abCore = new bool[NUM_MAJOR_PLAYERS];
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
-			{
-				m_abCore[iI] = false;
-			}
-		}
-
-		m_abCore[ePlayer] = bNewValue;
-	}
+	m_abCore[ePlayer] = bNewValue;
 }
 
 // Leoreth
-int CvPlot::getSettlerMapValue(PlayerTypes ePlayer) const
+int CvPlot::getSettlerValue(PlayerTypes ePlayer) const
 {
-	return GET_PLAYER(ePlayer).getSettlersMaps(67 - getY_INLINE(), getX_INLINE());
+	if (ePlayer >= NUM_MAJOR_PLAYERS) return 0;
+	return m_aiSettlerValue[ePlayer];
 }
 
-int CvPlot::getWarMapValue(PlayerTypes ePlayer) const
+void CvPlot::setSettlerValue(PlayerTypes ePlayer, int iNewValue)
 {
-	return GET_PLAYER(ePlayer).getWarMapValue(getX_INLINE(), getY_INLINE());
+	m_aiSettlerValue[ePlayer] = iNewValue;
 }
+
+
+int CvPlot::getWarValue(PlayerTypes ePlayer) const
+{
+	if (ePlayer >= NUM_MAJOR_PLAYERS) return 0;
+	return m_aiWarValue[ePlayer];
+}
+
+void CvPlot::setWarValue(PlayerTypes ePlayer, int iNewValue)
+{
+	m_aiWarValue[ePlayer] = iNewValue;
+}
+
+
+int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
+{
+	int iSpreadFactor = m_aiReligionSpreadFactor[eReligion];
+	
+	if (eReligion == CATHOLICISM)
+	{
+		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
+		{
+			if (iSpreadFactor < m_aiReligionSpreadFactor[ORTHODOXY])
+			{
+				iSpreadFactor = m_aiReligionSpreadFactor[ORTHODOXY];
+			}
+		}
+
+		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
+		{
+			if (iSpreadFactor < m_aiReligionSpreadFactor[PROTESTANTISM])
+			{
+				iSpreadFactor = m_aiReligionSpreadFactor[PROTESTANTISM];
+			}
+		}
+	}
+
+	return iSpreadFactor;
+}
+
+void CvPlot::setSpreadFactor(ReligionTypes eReligion, int iNewValue)
+{
+	m_aiReligionSpreadFactor[eReligion] = iNewValue;
+}
+
 
 // Leoreth
 bool CvPlot::isWithinGreatWall() const

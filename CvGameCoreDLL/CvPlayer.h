@@ -1164,7 +1164,6 @@ public:
 	// Leoreth
 
 	int verifySettlersHalt(int threshold); //Rhye
-	DllExport int getSettlersMaps(int y, int x); //Rhye
 	void setFlag(CvWString s); //Rhye
 	void setLeader(int i); //Rhye
 	void setLeaderName(CvWString name);
@@ -1180,7 +1179,8 @@ public:
     void setReborn(bool bNewValue = true); // Leoreth
     bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
 	bool isHasBuildingEffect(BuildingTypes eIndex) const; // Leoreth
-	DllExport int getWarMapValue(int x, int y); //Leoreth
+	int getSettlerValue(int x, int y); // Leoreth
+	int getWarValue(int x, int y); //Leoreth
 
 	int getLatestRebellionTurn();
 	void setLatestRebellionTurn(int iNewValue);
