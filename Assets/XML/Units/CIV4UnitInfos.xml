@@ -18,8 +18,8 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_LION</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_ANIMALS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ANIMAL_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_LION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_LION_STRATEGY</Strategy>
 			<Advisor>NONE</Advisor>
 			<bAnimal>1</bAnimal>
 			<bFood>0</bFood>
@@ -198,8 +198,8 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_BEAR</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_ANIMALS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ANIMAL_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_BEAR_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_BEAR_STRATEGY</Strategy>
 			<Advisor>NONE</Advisor>
 			<bAnimal>1</bAnimal>
 			<bFood>0</bFood>
@@ -370,8 +370,8 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_PANTHER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_ANIMALS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ANIMAL_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_PANTHER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_PANTHER_STRATEGY</Strategy>
 			<Advisor>NONE</Advisor>
 			<bAnimal>1</bAnimal>
 			<bFood>0</bFood>
@@ -542,8 +542,8 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_WOLF</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_ANIMALS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ANIMAL_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_UNIT_WOLF_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_WOLF_STRATEGY</Strategy>
 			<Advisor>NONE</Advisor>
 			<bAnimal>1</bAnimal>
 			<bFood>0</bFood>
@@ -797,8 +797,7 @@
 			</ProductionTraits>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
-			<iCost>0</iCost> <!--RFGW 41 (100)-->
+			<iCost>0</iCost> <!-- Default: 100 -->
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -903,10 +902,10 @@
 			<DefaultUnitAI>UNITAI_SETTLE</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
-			<Description>TXT_KEY_UNIT_HARAPPAN_SETTLER</Description>
-			<Civilopedia>TXT_KEY_UNIT_SETTLER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_SETTLER_STRATEGY</Strategy>
-			<Help>TXT_KEY_UNIT_HARAPPAN_SETTLER_HELP</Help>
+			<Description>TXT_KEY_UNIT_HARAPPAN_CITY_BUILDER</Description>
+			<Civilopedia>TXT_KEY_UNIT_HARAPPAN_CITY_BUILDER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_HARAPPAN_CITY_BUILDER_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HARAPPAN_CITY_BUILDER_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>1</bFood>
@@ -979,8 +978,7 @@
 			</ProductionTraits>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
-			<iCost>0</iCost> <!--RFGW 41 (100)-->
+			<iCost>0</iCost> <!-- Default: 100 -->
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1203,6 +1201,10 @@
 				</Build>
 				<Build>
 					<BuildType>BUILD_REMOVE_JUNGLE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_REMOVE_RAINFOREST</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -1458,6 +1460,10 @@
 				</Build>
 				<Build>
 					<BuildType>BUILD_DEFORESTATION</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_DEFORESTATION_RAINFOREST</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -1723,6 +1729,10 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
+					<BuildType>BUILD_REMOVE_RAINFOREST</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
 					<BuildType>BUILD_REMOVE_FOREST</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -1935,7 +1945,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>1</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -2205,7 +2214,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_SPY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_ESPIONAGE_PEDIA_SR</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_SPY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_SPY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -2545,9 +2554,9 @@
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
-			<Description>TXT_KEY_UNIT_JEWISH_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
+			<Civilopedia>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -2712,9 +2721,9 @@
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
-			<Description>TXT_KEY_UNIT_CHRISTIAN_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_CHRISTIAN_MISSIONARY_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Description>
+			<Civilopedia>TXT_KEY_UNIT_CATHOLIC_MISSIONARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_CATHOLIC_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -2880,7 +2889,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -3047,7 +3056,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ISLAMIC_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_ISLAMIC_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ISLAMIC_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -3214,7 +3223,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_HINDU_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_HINDU_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_HINDU_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -3381,7 +3390,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_BUDDHIST_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_BUDDHIST_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_BUDDHIST_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -3548,7 +3557,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -3715,7 +3724,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_TAOIST_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_TAOIST_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_TAOIST_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -3882,7 +3891,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_RELIGION_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -4123,7 +4132,6 @@
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>NONE</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>NONE</PrereqTech>
@@ -4154,7 +4162,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -4360,7 +4367,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -4538,7 +4544,6 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
@@ -4567,7 +4572,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
@@ -4576,7 +4580,7 @@
 			</FeatureImpassables>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
-			<iCombat>6</iCombat> <!-- Rhye -->
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iAirCombat>0</iAirCombat>
 			<iAirCombatLimit>0</iAirCombatLimit>
@@ -4775,7 +4779,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -4876,7 +4879,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_CELTIC_GALLIC_WARRIOR</Description>
-			<Civilopedia>TXT_KEY_UNIT_CELTIC_WARRIOR_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_CELTIC_GALLIC_WARRIOR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_CELTIC_GALLIC_WARRIOR_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -4961,8 +4964,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -4988,7 +4989,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -5177,8 +5177,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -5204,7 +5202,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -5393,8 +5390,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -5420,7 +5415,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -5522,7 +5516,6 @@
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
 		<UnitInfo>
-			<!--Rhye - start-->
 			<Class>UNITCLASS_AXEMAN</Class>
 			<Type>UNIT_INCAN_QUECHUA</Type>
 			<UniqueNames/>
@@ -5683,7 +5676,7 @@
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod> <!--Rhye -->
+					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<UnitCombatCollateralImmunes/>
@@ -5830,8 +5823,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -5857,7 +5848,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -6060,7 +6050,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -6242,15 +6231,11 @@
 			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_MACHINERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -6276,7 +6261,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -6458,8 +6442,6 @@
 			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_MACHINERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<PrereqBonuses/>
@@ -6487,7 +6469,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -6588,7 +6569,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_VIKING_BESERKER</Description>
-			<Civilopedia>TXT_KEY_CHANGED_UNIT_VIKING_BESERKER_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_VIKING_BESERKER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_VIKING_BESERKER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -6678,15 +6659,11 @@
 			<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_MACHINERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -6712,7 +6689,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -6899,8 +6875,6 @@
 			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_MACHINERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -6928,7 +6902,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
@@ -7096,8 +7069,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -7123,7 +7094,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -7216,7 +7186,6 @@
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
 		<UnitInfo>
-			<!--Rhye - start-->
 			<Class>UNITCLASS_SPEARMAN</Class>
 			<Type>UNIT_PERSIA_IMMORTAL</Type>
 			<UniqueNames/>
@@ -7313,8 +7282,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -7340,7 +7307,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -7433,7 +7399,6 @@
 			</FreePromotions>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
-			<!--Rhye - end-->
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SPEARMAN</Class>
@@ -7532,8 +7497,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -7758,7 +7721,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -7961,7 +7923,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -8164,7 +8125,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -8358,7 +8318,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -8573,7 +8532,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -8680,9 +8638,9 @@
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
-			<Description>TXT_KEY_UNIT_QIZILBASH</Description>
-			<Civilopedia>TXT_KEY_UNIT_QIZILBASH_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_QIZILBASH_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_IRAN_QIZILBASH</Description>
+			<Civilopedia>TXT_KEY_UNIT_IRAN_QIZILBASH_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_IRAN_QIZILBASH_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -8784,7 +8742,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -9181,7 +9138,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -9375,7 +9331,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -9574,7 +9529,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -9623,10 +9577,6 @@
 					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
 					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
-				<!--UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
-					<iUnitCombatMod>25</iUnitCombatMod>
-				</UnitCombatMod-->
 			</UnitCombatMods>
 			<UnitCombatCollateralImmunes/>
 			<DomainMods/>
@@ -9777,7 +9727,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -9961,9 +9910,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_CHEMISTRY</PrereqTech>
-			<!-- <PrereqTech>TECH_MILITARY_SCIENCE</PrereqTech> -->
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -9991,7 +9938,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -10170,9 +10116,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_CHEMISTRY</PrereqTech>
-			<!-- <PrereqTech>TECH_MILITARY_SCIENCE</PrereqTech> -->
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -10200,7 +10144,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
@@ -10396,7 +10339,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -10579,8 +10521,6 @@
 			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -10608,7 +10548,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -10781,8 +10720,6 @@
 			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -10810,7 +10747,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -11004,7 +10940,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -11171,11 +11106,7 @@
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>TECH_LASER</PrereqTech>
-			<TechTypes>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-			</TechTypes>
+			<TechTypes/>
 			<BonusType>BONUS_OIL</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
@@ -11202,7 +11133,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -11375,8 +11305,6 @@
 			<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -11572,8 +11500,6 @@
 			<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -11763,7 +11689,6 @@
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
 				<PrereqTech>TECH_FLIGHT</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -11791,7 +11716,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -11959,8 +11883,6 @@
 			<PrereqTech>TECH_ROBOTICS</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -11988,7 +11910,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -12166,7 +12087,6 @@
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>35</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -12188,7 +12108,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -12361,7 +12280,6 @@
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>35</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -12567,7 +12485,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -12595,7 +12512,6 @@
 			<iInterceptionProbability>0</iInterceptionProbability>
 			<iEvasionProbability>0</iEvasionProbability>
 			<iWithdrawalProb>0</iWithdrawalProb>
-			<!--Rhye -->
 			<iCollateralDamage>100</iCollateralDamage>
 			<iCollateralDamageLimit>40</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
@@ -12613,7 +12529,6 @@
 			<UnitClassAttackMods/>
 			<UnitClassDefenseMods/>
 			<UnitCombatMods/>
-			<!--Rhye -->
 			<UnitCombatCollateralImmunes/>
 			<DomainMods/>
 			<BonusProductionModifiers/>
@@ -12661,7 +12576,7 @@
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_MAYA_HOLKAN</Description>
 			<Civilopedia>TXT_KEY_UNIT_MAYA_HOLKAN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_HOLKAN_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_MAYA_HOLKAN_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_MAYA_HOLKAN_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -12743,7 +12658,6 @@
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>35</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -12765,7 +12679,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
@@ -13115,15 +13028,12 @@
 			<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>65</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -13145,7 +13055,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -13311,14 +13220,12 @@
 			<TechTypes>
 				<PrereqTech>TECH_CALENDAR</PrereqTech>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>55</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -13340,7 +13247,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
@@ -13526,15 +13432,12 @@
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>70</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -13556,7 +13459,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -13739,7 +13641,6 @@
 			<TechTypes>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
 				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<PrereqBonuses/>
@@ -13767,7 +13668,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -13966,7 +13866,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -14095,7 +13994,7 @@
 			<bCanMoveImpassable>0</bCanMoveImpassable>
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
-			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>  <!--Rhye - not needed, SDK tweak-->
+			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
 			<bNukeImmune>0</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
@@ -14169,7 +14068,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -14744,8 +14642,6 @@
 			<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -14773,7 +14669,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -14950,11 +14845,7 @@
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-			<TechTypes>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-			</TechTypes>
+			<TechTypes/>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
@@ -14981,12 +14872,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
-				<!--FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable-->
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
 					<bFeatureImpassable>1</bFeatureImpassable>
@@ -15155,8 +15041,6 @@
 			<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -15184,7 +15068,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -15598,15 +15481,10 @@
 			<PrereqTech>TECH_GUILDS</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -15632,7 +15510,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -15712,7 +15589,6 @@
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
 		<UnitInfo>
-			<!-- Rhye -->
 			<Class>UNITCLASS_KNIGHT</Class>
 			<Type>UNIT_MONGOL_KESHIK</Type>
 			<UniqueNames/>
@@ -15802,14 +15678,11 @@
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>NONE</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -15837,7 +15710,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -15957,7 +15829,7 @@
 			<bCanMoveImpassable>0</bCanMoveImpassable>
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
-			<bIgnoreTerrainCost>0</bIgnoreTerrainCost> <!--Rhye - not needed, SDK tweak-->
+			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
 			<bNukeImmune>0</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
@@ -16012,7 +15884,6 @@
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -16040,7 +15911,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -16067,7 +15937,7 @@
 			<iChanceFirstStrikes>0</iChanceFirstStrikes>
 			<iInterceptionProbability>0</iInterceptionProbability>
 			<iEvasionProbability>0</iEvasionProbability>
-			<iWithdrawalProb>35</iWithdrawalProb> <!--Rhye-->
+			<iWithdrawalProb>35</iWithdrawalProb>
 			<iCollateralDamage>0</iCollateralDamage>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
@@ -16211,20 +16081,13 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
-			<!-- <PrereqTech>TECH_GUILDS</PrereqTech> -->
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -16250,7 +16113,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -16424,14 +16286,11 @@
 			<ReligionType>NONE</ReligionType>
 			<StateReligion>NONE</StateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCivic>NONE</PrereqCivic>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>TECH_GUILDS</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IVORY</BonusType>
 			<PrereqBonuses/>
@@ -16459,7 +16318,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
@@ -16634,8 +16492,6 @@
 			<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -16663,7 +16519,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -17064,14 +16919,10 @@
 			<TechTypes>
 				<PrereqTech>TECH_GUNPOWDER</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -17097,7 +16948,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -17289,19 +17139,14 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_ASTRONOMY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_GUNPOWDER</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -17513,14 +17358,10 @@
 			<TechTypes>
 				<PrereqTech>TECH_GUNPOWDER</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -17546,7 +17387,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -17738,14 +17578,10 @@
 			<TechTypes>
 				<PrereqTech>TECH_GUNPOWDER</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -17771,7 +17607,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -17953,16 +17788,9 @@
 			<PrereqTech>TECH_GUNPOWDER</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
-			<PrereqBonuses>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-			</PrereqBonuses>
+			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
@@ -17987,7 +17815,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -18175,7 +18002,6 @@
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -18203,7 +18029,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -18391,7 +18216,6 @@
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -18419,7 +18243,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -18612,7 +18435,6 @@
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -18640,7 +18462,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -18829,7 +18650,6 @@
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -19030,8 +18850,6 @@
 			<PrereqTech>TECH_MONARCHY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IVORY</BonusType>
 			<PrereqBonuses/>
@@ -19059,7 +18877,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
@@ -19226,8 +19043,6 @@
 			<PrereqTech>TECH_MONARCHY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IVORY</BonusType>
 			<PrereqBonuses/>
@@ -19255,7 +19070,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
@@ -19442,7 +19256,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_MUD</FeatureType>
@@ -19613,8 +19426,6 @@
 			<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_OIL</BonusType>
 			<PrereqBonuses/>
@@ -19642,7 +19453,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -19816,10 +19626,7 @@
 			<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
-			<!-- Rhye -->
 			<BonusType>BONUS_OIL</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
@@ -19846,7 +19653,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -19888,19 +19694,18 @@
 			<TerrainDefenses/>
 			<FeatureAttacks/>
 			<FeatureDefenses/>
-			<UnitClassAttackMods> 
-				<UnitClassAttackMod> 
+			<UnitClassAttackMods>
+				<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_RIFLEMAN</UnitClassType>
 					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
-				<UnitClassAttackMod> 
+				<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_INFANTRY</UnitClassType>
 					<iUnitClassMod>25</iUnitClassMod>
-					<!--Rhye -->
 				</UnitClassAttackMod>
-			</UnitClassAttackMods> 
+			</UnitClassAttackMods>
 			<UnitClassDefenseMods/>
-			<UnitCombatMods/> 
+			<UnitCombatMods/>
 			<UnitCombatCollateralImmunes/>
 			<DomainMods/>
 			<BonusProductionModifiers/>
@@ -20029,15 +19834,10 @@
 			<PrereqTech>TECH_COMPOSITES</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_COMPUTERS</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
-			<BonusType>BONUS_OIL</BonusType>
+			<BonusType>BONUS_ALUMINUM</BonusType>
 			<PrereqBonuses>
-				<BonusType>BONUS_ALUMINUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
+				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -20063,7 +19863,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -20424,7 +20223,6 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
@@ -20432,7 +20230,6 @@
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>40</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -20454,7 +20251,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -20625,7 +20421,6 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
@@ -20633,7 +20428,6 @@
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>40</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -20655,7 +20449,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -20860,7 +20653,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -21031,8 +20823,8 @@
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses>
-				<BonusType>BONUS_IRON</BonusType>
 				<BonusType>BONUS_COPPER</BonusType>
+				<BonusType>BONUS_IRON</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -21847,7 +21639,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -22047,7 +21838,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -22217,8 +22007,6 @@
 			<PrereqTech>TECH_LASER</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ARTILLERY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_OIL</BonusType>
 			<PrereqBonuses/>
@@ -22246,7 +22034,6 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<!-- Rhye -->
 			<FeatureImpassables>
 				<FeatureImpassable>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
@@ -22637,7 +22424,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>3</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -23031,7 +22817,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>3</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -23246,8 +23031,6 @@
 			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_SAILING</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -23259,7 +23042,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>3</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -23486,7 +23268,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>5</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -23696,7 +23477,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>5</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -23903,7 +23683,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>4</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -24105,7 +23884,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>6</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -24208,7 +23986,6 @@
 			<bOnlyDefensive>0</bOnlyDefensive>
 			<bNoCapture>0</bNoCapture>
 			<bQuickCombat>0</bQuickCombat>
-			<!-- Rhye -->
 			<bRivalTerritory>1</bRivalTerritory>
 			<bMilitaryHappiness>0</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -24292,7 +24069,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>6</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -24347,7 +24123,6 @@
 			<iBombardRate>0</iBombardRate>
 			<SpecialCargo>NONE</SpecialCargo>
 			<DomainCargo>DOMAIN_LAND</DomainCargo>
-			<!-- Rhye -->
 			<iCargo>4</iCargo>
 			<iConscription>0</iConscription>
 			<iCultureGarrison>0</iCultureGarrison>
@@ -24468,20 +24243,14 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_MILITARY_SCIENCE</PrereqTech>
-			<!--  <PrereqTech>TECH_CHEMISTRY</PrereqTech> -->
 			<TechTypes>
 				<PrereqTech>TECH_ASTRONOMY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -24491,7 +24260,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>6</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -24677,8 +24445,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -24901,15 +24667,11 @@
 			<PrereqTech>TECH_GUNPOWDER</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_OPTICS</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -25117,13 +24879,9 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_MILITARY_SCIENCE</PrereqTech>
-			<!--  <PrereqTech>TECH_CHEMISTRY</PrereqTech> -->
 			<TechTypes>
 				<PrereqTech>TECH_ASTRONOMY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<PrereqBonuses/>
@@ -25135,7 +24893,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>6</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -25301,13 +25058,9 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<!-- Rhye -->
 			<PrereqTech>TECH_CHEMISTRY</PrereqTech>
-			<!-- <PrereqTech>TECH_MILITARY_SCIENCE</PrereqTech> -->
 			<TechTypes>
 				<PrereqTech>TECH_ASTRONOMY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<PrereqBonuses/>
@@ -25319,7 +25072,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>5</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -25498,15 +25250,10 @@
 			<PrereqTech>TECH_STEEL</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_STEAM_POWER</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
-			<BonusType>BONUS_IRON</BonusType>
+			<BonusType>BONUS_COAL</BonusType>
 			<PrereqBonuses>
-				<BonusType>BONUS_COAL</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
+				<BonusType>BONUS_IRON</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -25516,7 +25263,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>4</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -25688,8 +25434,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -25699,7 +25443,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>8</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -25874,8 +25617,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -25885,7 +25626,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>11</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -25980,7 +25720,7 @@
 			<SeeInvisible>INVISIBLE_SUBMARINE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_CANADA_CORVETTE</Description>
 			<Civilopedia>TXT_KEY_UNIT_CORVETTE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_DESTROYER_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_CORVETTE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
 			<bFood>0</bFood>
@@ -26060,8 +25800,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -26071,7 +25809,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>13</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -26248,8 +25985,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -26259,7 +25994,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>9</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -26430,8 +26164,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -26441,7 +26173,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>10</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -26613,15 +26344,11 @@
 			<PrereqTech>TECH_STEALTH</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ROBOTICS</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -26631,7 +26358,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>11</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -26797,17 +26523,11 @@
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>TECH_RADIO</PrereqTech>
-			<TechTypes>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-			</TechTypes>
+			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -26817,7 +26537,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>9</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -26990,7 +26709,6 @@
 			<TechTypes>
 				<PrereqTech>TECH_RADIO</PrereqTech>
 				<PrereqTech>TECH_COMBUSTION</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_URANIUM</BonusType>
 			<PrereqBonuses/>
@@ -27002,7 +26720,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>9</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -27175,8 +26892,6 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -27186,7 +26901,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>20</iMinAreaSize>
-			<!-- Rhye -->
 			<iMoves>8</iMoves>
 			<bNoRevealMap>0</bNoRevealMap>
 			<iAirRange>0</iAirRange>
@@ -27696,12 +27410,9 @@
 			<PrereqBuilding>NONE</PrereqBuilding>
 			<PrereqTech>TECH_ADVANCED_FLIGHT</PrereqTech>
 			<TechTypes/>
-			<BonusType>BONUS_OIL</BonusType>
+			<BonusType>BONUS_ALUMINUM</BonusType>
 			<PrereqBonuses>
-				<BonusType>BONUS_ALUMINUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
+				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -27874,8 +27585,6 @@
 			<PrereqTech>TECH_RADIO</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_FLIGHT</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_OIL</BonusType>
 			<PrereqBonuses/>
@@ -28050,14 +27759,10 @@
 			<PrereqTech>TECH_STEALTH</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ROBOTICS</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
-			<BonusType>BONUS_OIL</BonusType>
+			<BonusType>BONUS_ALUMINUM</BonusType>
 			<PrereqBonuses>
-				<BonusType>BONUS_ALUMINUM</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
-				<BonusType>NONE</BonusType>
+				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<Flavors/>
@@ -28230,8 +27935,6 @@
 			<PrereqTech>TECH_ROCKETRY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RADIO</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
@@ -28401,15 +28104,12 @@
 			<PrereqTech>TECH_FISSION</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ROCKETRY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_URANIUM</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>200</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -28573,15 +28273,12 @@
 			<PrereqTech>TECH_FISSION</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ROCKETRY</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
-				<PrereqTech>NONE</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_URANIUM</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<!-- Rhye -->
 			<iCost>400</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -28680,7 +28377,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -28890,7 +28587,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -29068,7 +28765,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -29127,7 +28824,12 @@
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>
-			<Buildings/>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_ACADEMY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<ForceBuildings/>
 			<HolyCity>NONE</HolyCity>
 			<ReligionType>NONE</ReligionType>
@@ -29246,7 +28948,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -29424,7 +29126,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -29602,7 +29304,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -29788,7 +29490,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -30015,7 +29717,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_SPECIALIST_GREAT_SPY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_SPY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SPY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -30198,7 +29900,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -30409,7 +30111,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -30588,7 +30290,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -30772,7 +30474,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -30951,7 +30653,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -31130,7 +30832,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -31317,7 +31019,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -31502,7 +31204,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_SPECIALIST_GREAT_SPY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_SPY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SPY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -32220,7 +31922,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -32439,7 +32141,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -32627,7 +32329,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -32817,7 +32519,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -33003,7 +32705,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -33191,7 +32893,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -33582,7 +33284,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -33799,7 +33501,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -33986,7 +33688,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -34176,7 +33878,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -34360,7 +34062,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -34547,7 +34249,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -34929,7 +34631,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -35144,7 +34846,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -35329,7 +35031,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -35516,7 +35218,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -35699,7 +35401,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -35884,7 +35586,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -36269,7 +35971,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -36488,7 +36190,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -36673,7 +36375,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -36864,7 +36566,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -37048,7 +36750,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -37233,7 +36935,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -37618,7 +37320,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -37838,7 +37540,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -38030,7 +37732,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -38219,7 +37921,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -38405,7 +38107,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -38592,7 +38294,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -38977,7 +38679,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -39194,7 +38896,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -39379,7 +39081,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -39568,7 +39270,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -39752,7 +39454,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -39937,7 +39639,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -40322,7 +40024,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -40540,7 +40242,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -40726,7 +40428,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -40914,7 +40616,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -41098,7 +40800,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -41281,7 +40983,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -41664,7 +41366,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -41881,7 +41583,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -42067,7 +41769,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -42256,7 +41958,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -42440,7 +42142,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -42629,7 +42331,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -43017,7 +42719,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -43236,7 +42938,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -43422,7 +43124,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -43613,7 +43315,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -43801,7 +43503,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -43988,7 +43690,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -44375,7 +44077,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -44592,7 +44294,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -44777,7 +44479,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -44966,7 +44668,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -45149,7 +44851,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -45334,7 +45036,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -45719,7 +45421,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -45939,7 +45641,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -46126,7 +45828,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -46314,7 +46016,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -46498,7 +46200,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -46686,7 +46388,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -47070,7 +46772,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -47288,7 +46990,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -47474,7 +47176,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -47663,7 +47365,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -47847,7 +47549,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -48033,7 +47735,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -48419,7 +48121,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -48638,7 +48340,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -48826,7 +48528,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -49016,7 +48718,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -49200,7 +48902,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -49386,7 +49088,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -49772,7 +49474,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -49990,7 +49692,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -50176,7 +49878,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -50366,7 +50068,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -50550,7 +50252,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -50737,7 +50439,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -51123,7 +50825,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -51340,7 +51042,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -51524,7 +51226,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -51715,7 +51417,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -51899,7 +51601,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -52083,7 +51785,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -52469,7 +52171,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -52683,7 +52385,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -52865,7 +52567,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -53051,7 +52753,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -53236,7 +52938,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -53423,7 +53125,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -53808,7 +53510,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -54026,7 +53728,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -54210,7 +53912,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -54399,7 +54101,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -54584,7 +54286,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -54769,7 +54471,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -55157,7 +54859,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -55381,7 +55083,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -55571,7 +55273,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -55761,7 +55463,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -55948,7 +55650,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -56139,7 +55841,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -56527,7 +56229,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -56749,7 +56451,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -56938,7 +56640,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -57127,7 +56829,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -57313,7 +57015,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -57502,7 +57204,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -57890,7 +57592,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -58111,7 +57813,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -58300,7 +58002,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -58493,7 +58195,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -58681,7 +58383,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -58872,7 +58574,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -59259,7 +58961,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -59478,7 +59180,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -59664,7 +59366,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -59852,7 +59554,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -60039,7 +59741,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -60227,7 +59929,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -60615,7 +60317,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -60830,7 +60532,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -61014,7 +60716,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -61203,7 +60905,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -61388,7 +61090,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -61573,7 +61275,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -61957,7 +61659,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -62175,7 +61877,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -62361,7 +62063,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -62553,7 +62255,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -62737,7 +62439,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -62921,7 +62623,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -63301,7 +63003,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -63517,7 +63219,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -63703,7 +63405,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -63891,7 +63593,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -64076,7 +63778,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -64260,7 +63962,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -64649,7 +64351,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -64872,7 +64574,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -65062,7 +64764,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -65253,7 +64955,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -65438,7 +65140,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -65626,7 +65328,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -66008,7 +65710,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -66224,7 +65926,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -66408,7 +66110,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -66598,7 +66300,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -66782,7 +66484,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -66969,7 +66671,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -67353,7 +67055,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -67571,7 +67273,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -67756,7 +67458,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -67946,7 +67648,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -68131,7 +67833,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -68317,7 +68019,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -68703,7 +68405,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -68921,7 +68623,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -69107,7 +68809,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -69298,7 +69000,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -69484,7 +69186,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -69669,7 +69371,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -70054,7 +69756,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -70270,7 +69972,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -70454,7 +70156,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -70644,7 +70346,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -70828,7 +70530,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -71013,7 +70715,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -71397,7 +71099,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -71615,7 +71317,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -71801,7 +71503,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -71994,7 +71696,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -72177,7 +71879,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -72366,7 +72068,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -72750,7 +72452,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -72973,7 +72675,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -73162,7 +72864,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -73354,7 +73056,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -73543,7 +73245,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -73733,7 +73435,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -74119,7 +73821,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -74334,7 +74036,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -74520,7 +74222,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -74710,7 +74412,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -74895,7 +74597,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -75082,7 +74784,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -75469,7 +75171,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -75685,7 +75387,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -75900,7 +75602,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -76085,7 +75787,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -76273,7 +75975,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -76456,7 +76158,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -76644,7 +76346,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -77022,7 +76724,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -77233,7 +76935,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -77412,7 +77114,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -77596,7 +77298,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -77775,7 +77477,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -77961,7 +77663,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -78336,7 +78038,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -78557,7 +78259,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -78741,7 +78443,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -78932,7 +78634,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -79116,7 +78818,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -79300,7 +79002,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -79684,7 +79386,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -79903,7 +79605,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -80089,7 +79791,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -80278,7 +79980,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -80462,7 +80164,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -80648,7 +80350,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -81034,7 +80736,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -81253,7 +80955,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -81437,7 +81139,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -81625,7 +81327,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -81808,7 +81510,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -81992,7 +81694,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -82377,7 +82079,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -82599,7 +82301,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -82784,7 +82486,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -82976,7 +82678,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -83162,7 +82864,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -83350,7 +83052,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -83731,7 +83433,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_PROPHET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<bAnimal>0</bAnimal>
@@ -83947,7 +83649,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ARTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -84133,7 +83835,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<bAnimal>0</bAnimal>
@@ -84321,7 +84023,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bAnimal>0</bAnimal>
@@ -84505,7 +84207,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -84693,7 +84395,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bAnimal>0</bAnimal>
