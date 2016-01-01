@@ -326,8 +326,12 @@ class StoredData:
 	def changeBarbarianLosses(self, iPlayer, iChange):
 		self.scriptDict['lBarbarianLosses'][iPlayer] += iChange
 		
-	def getSecedingCities(self):
-		return self.scriptDict['dSecedingCities']
+	def getSecedingCities(self, iPlayer):
+		if iPlayer not in self.scriptDict['dSecedingCities']: return []
+		return [city for city in [gc.getPlayer(iPlayer).getCity(i) for i in self.scriptDict['dSecedingCities'][iPlayer]] if (city.getX(), city.getY()) != (-1, -1)]
+	
+	def setSecedingCities(self, iPlayer, lCities):
+		self.scriptDict['dSecedingCities'][iPlayer] = [city.getID() for city in lCities]
 		
 	# AIWARS
 		
@@ -572,6 +576,24 @@ class StoredData:
 		
 	def isFirstWorldColonized(self):
 		return self.getFirstNewWorldColony() != -1
+		
+	# DYNAMIC NAMES
+	
+	def getAnarchyTurns(self, iPlayer):
+		if iPlayer >= con.iNumPlayers: return 0
+		return sd.scriptDict['lAnarchyTurns'][iPlayer]
+		
+	def changeAnarchyTurns(self, iPlayer, iChange):
+		if iPlayer < con.iNumPlayers:
+			sd.scriptDict['lAnarchyTurns'][iPlayer] += iChange
+		
+	def getResurrections(self, iPlayer):
+		if iPlayer >= con.iNumPlayers: return 0
+		return sd.scriptDict['lResurrections'][iPlayer]
+		
+	def changeResurrections(self, iPlayer, iChange):
+		if iPlayer < con.iNumPlayers:
+			sd.scriptDict['lResurrections'][iPlayer] += iChange
 		
 # All modules import the following single instance, not the class
 

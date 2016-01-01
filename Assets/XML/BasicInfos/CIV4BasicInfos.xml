@@ -6,7 +6,6 @@
 <!-- Basic Infos -->
 <Civ4BasicInfos xmlns="x-schema:CIV4BasicInfoSchema.xml">
 	<ConceptInfos>
-		<!-- Rhye - start -->
 		<ConceptInfo>
 			<Type>CONCEPT_RFCINTRO</Type>
 			<Description>TXT_KEY_CONCEPT_RFCINTRO</Description>
@@ -37,69 +36,51 @@
 			<Description>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_STABILITY_TOOLTIP_PEDIA</Civilopedia>
 		</ConceptInfo>
-		<!--ConceptInfo>
-			<Type>CONCEPT_CIVIC_STABILITY</Type>
-			<Description>TXT_KEY_CONCEPT_CIVIC_STABILITY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_CIVIC_STABILITY_PEDIA</Civilopedia>
-		</ConceptInfo-->
 		<ConceptInfo>
 			<Type>CONCEPT_CONGRESSES</Type>
 			<Description>TXT_KEY_CONCEPT_CONGRESSES</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_CONGRESSES_PEDIA</Civilopedia>
 		</ConceptInfo>
 		<ConceptInfo>
-			<Type>CONCEPT_EMBASSIES</Type>
-			<Description>TXT_KEY_CONCEPT_EMBASSIES</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_EMBASSIES_PEDIA</Civilopedia>
-		</ConceptInfo>
-		<ConceptInfo>
 			<Type>CONCEPT_PLAGUE</Type>
 			<Description>TXT_KEY_CONCEPT_PLAGUE</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_PLAGUE_PEDIA</Civilopedia>
 		</ConceptInfo>
-		<!-- Mercenaries Start -->
-		<!--ConceptInfo>
-			<Type>CONCEPT_MERCENARIES</Type>
-			<Description>TXT_KEY_CONCEPT_MERCENARIES</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_MERCENARIES_PEDIA</Civilopedia>
-		</ConceptInfo-->
-		<!-- Mercenaries End   -->		
 		<ConceptInfo>
 			<Type>CONCEPT_ODDS</Type>
 			<Description>TXT_KEY_CONCEPT_ODDS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_ODDS_PEDIA</Civilopedia>
 		</ConceptInfo>
-		<!-- Rhye - end -->		
 		<ConceptInfo>
 			<Type>CONCEPT_REFORMATION</Type>
 			<Description>TXT_KEY_CONCEPT_REFORMATION</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_REFORMATION_PEDIA</Civilopedia>
-		</ConceptInfo>		
+		</ConceptInfo>
 		<ConceptInfo>
 			<Type>CONCEPT_SCHISM</Type>
 			<Description>TXT_KEY_CONCEPT_SCHISM</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_SCHISM_PEDIA</Civilopedia>
-		</ConceptInfo>		
+		</ConceptInfo>
 		<ConceptInfo>
 			<Type>CONCEPT_TRADING_COMPANY_CONQUERORS</Type>
 			<Description>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS_PEDIA</Civilopedia>
-		</ConceptInfo>		
+		</ConceptInfo>
 		<ConceptInfo>
 			<Type>CONCEPT_NEW_CORPORATIONS</Type>
 			<Description>TXT_KEY_CONCEPT_NEW_CORPORATIONS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_NEW_CORPORATIONS_PEDIA</Civilopedia>
-		</ConceptInfo>		
+		</ConceptInfo>
 		<ConceptInfo>
 			<Type>CONCEPT_RESPAWNS</Type>
 			<Description>TXT_KEY_CONCEPT_RESPAWNS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_RESPAWNS_PEDIA</Civilopedia>
-		</ConceptInfo>		
+		</ConceptInfo>
 		<ConceptInfo>
 			<Type>CONCEPT_DOC_ODDS</Type>
 			<Description>TXT_KEY_CONCEPT_DOC_ODDS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_DOC_ODDS_PEDIA</Civilopedia>
-		</ConceptInfo>	
+		</ConceptInfo>
 		<ConceptInfo>
 			<Type>CONCEPT_CONDITIONAL_SPAWNS</Type>
 			<Description>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS</Description>

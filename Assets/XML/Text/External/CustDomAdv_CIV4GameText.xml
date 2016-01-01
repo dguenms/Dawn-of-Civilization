@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Various Interface Label Translations
+
+	Copyright (c) 2007 The BUG Mod.
+  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<!-- These are modified copies of TXT_KEY_RELIGION_FREE_XP 
+			 which remove the plus in front of the number and add
+			 parentheses around everything.
+		  -->
+		<Tag>TXT_KEY_CDA_BASE_XP</Tag>
+		<English>(%d1 XP)</English>
+		<French>(%d1 EXP)</French>
+		<German>(%d1 EP)</German>
+		<Italian>(%d1 XP)</Italian>
+		<Spanish>(%d1 PX)</Spanish>
+	</TEXT>
+	
+	<!-- Button Hovers -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_CDA_SELECT_PAGE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Switch Page[COLOR_REVERT][NEWLINE]Select any page in the list to switch to it</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Switch Page[COLOR_REVERT][NEWLINE]Select any page in the list to switch to it</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Seite wählen[COLOR_REVERT][NEWLINE]Direkt zur gewählten Seite der Liste</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Switch Page[COLOR_REVERT][NEWLINE]Select any page in the list to switch to it</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Switch Page[COLOR_REVERT][NEWLINE]Select any page in the list to switch to it</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_PREV_PAGE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Previous Page[COLOR_REVERT][NEWLINE]Switch to the previous page in the list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Previous Page[COLOR_REVERT][NEWLINE]Switch to the previous page in the list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Vorherige Seite[COLOR_REVERT][NEWLINE]Zur vorherigen Seite der Liste</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Previous Page[COLOR_REVERT][NEWLINE]Switch to the previous page in the list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Previous Page[COLOR_REVERT][NEWLINE]Switch to the previous page in the list</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_NEXT_PAGE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Next Page[COLOR_REVERT][NEWLINE]Switch to the next page in the list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Next Page[COLOR_REVERT][NEWLINE]Switch to the next page in the list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Nächste Seite[COLOR_REVERT][NEWLINE]Zur nächsten Seite der Liste</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Next Page[COLOR_REVERT][NEWLINE]Switch to the next page in the list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Next Page[COLOR_REVERT][NEWLINE]Switch to the next page in the list</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CDA_START_EDITING</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Enter Edit Mode[COLOR_REVERT][NEWLINE]Show the editing controls to be able to add/remove/reorder pages and columns or change whether or not the specialist buttons are displayed</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Enter Edit Mode[COLOR_REVERT][NEWLINE]Show the editing controls to be able to add/remove/reorder pages and columns or change whether or not the specialist buttons are displayed</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Bearbeitungsmodus[COLOR_REVERT][NEWLINE]Ruft die Bearbeitungswerkzeuge zum Hinzufügen/Entfernen/Organisieren von Seiten und Spalten und zum An-/Abschalten der Spezialistenschaltfläche auf</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Enter Edit Mode[COLOR_REVERT][NEWLINE]Show the editing controls to be able to add/remove/reorder pages and columns or change whether or not the specialist buttons are displayed</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Enter Edit Mode[COLOR_REVERT][NEWLINE]Show the editing controls to be able to add/remove/reorder pages and columns or change whether or not the specialist buttons are displayed</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_STOP_EDITING</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Exit Edit Mode[COLOR_REVERT][NEWLINE]Hide the editing controls to be able to see the list of cities. Don't forget to save your changes before exiting the game</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Exit Edit Mode[COLOR_REVERT][NEWLINE]Hide the editing controls to be able to see the list of cities. Don't forget to save your changes before exiting the game</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Bearbeitungsmodus beenden[COLOR_REVERT][NEWLINE]Versteckt die Bearbeitungswerkzeuge und ruft wieder die Stadtliste auf (Veränderungen sollten vor Beenden des Spiels gespeichert werden)</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Exit Edit Mode[COLOR_REVERT][NEWLINE]Hide the editing controls to be able to see the list of cities. Don't forget to save your changes before exiting the game</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Exit Edit Mode[COLOR_REVERT][NEWLINE]Hide the editing controls to be able to see the list of cities. Don't forget to save your changes before exiting the game</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_SAVE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Save[COLOR_REVERT][NEWLINE]Save any changes you have made to disk (CustDomAdv.txt)</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Save[COLOR_REVERT][NEWLINE]Save any changes you have made to disk (CustDomAdv.txt)</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Speichern[COLOR_REVERT][NEWLINE]Speichert die Einstellungen in der Datei CustDomAdv.txt</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Save[COLOR_REVERT][NEWLINE]Save any changes you have made to disk (CustDomAdv.txt)</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Save[COLOR_REVERT][NEWLINE]Save any changes you have made to disk (CustDomAdv.txt)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_RELOAD</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Reload[COLOR_REVERT][NEWLINE]Load the pages from disk to revert any chanes you have made</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Reload[COLOR_REVERT][NEWLINE]Load the pages from disk to revert any chanes you have made</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Neu laden[COLOR_REVERT][NEWLINE]Lädt die gespeicherten Einstellungen und macht die vorgenommenen Veränderungen rückgängig</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Reload[COLOR_REVERT][NEWLINE]Load the pages from disk to revert any chanes you have made</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Reload[COLOR_REVERT][NEWLINE]Load the pages from disk to revert any chanes you have made</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CDA_RENAME_PAGE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Rename Page[COLOR_REVERT][NEWLINE]Enter a new name for the current page</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Rename Page[COLOR_REVERT][NEWLINE]Enter a new name for the current page</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Seite umbenennen[COLOR_REVERT][NEWLINE]Eingabe eines neuen Namens für die aktuell gewählte Seite</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Rename Page[COLOR_REVERT][NEWLINE]Enter a new name for the current page</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Rename Page[COLOR_REVERT][NEWLINE]Enter a new name for the current page</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_ADD_PAGE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Add Page[COLOR_REVERT][NEWLINE]Insert a new page in the list after the current page</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Add Page[COLOR_REVERT][NEWLINE]Insert a new page in the list after the current page</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Seite hinzufügen[COLOR_REVERT][NEWLINE]Fügt der Liste nach der aktuell gewählten Seite eine neue Seite hinzu</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Add Page[COLOR_REVERT][NEWLINE]Insert a new page in the list after the current page</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Add Page[COLOR_REVERT][NEWLINE]Insert a new page in the list after the current page</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_REMOVE_PAGE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Remove Page[COLOR_REVERT][NEWLINE]Remove the current page from the list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Remove Page[COLOR_REVERT][NEWLINE]Remove the current page from the list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Seite entfernen[COLOR_REVERT][NEWLINE]Entfernt die aktuell gewählte Seite aus der Liste</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Remove Page[COLOR_REVERT][NEWLINE]Remove the current page from the list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Remove Page[COLOR_REVERT][NEWLINE]Remove the current page from the list</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_MOVE_PAGE_UP</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Move Page Up[COLOR_REVERT][NEWLINE]Move the current page up in the list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Move Page Up[COLOR_REVERT][NEWLINE]Move the current page up in the list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Seite nach oben verschieben[COLOR_REVERT][NEWLINE]Verschiebt die aktuell gewählte Seite in der Liste nach oben</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Move Page Up[COLOR_REVERT][NEWLINE]Move the current page up in the list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Move Page Up[COLOR_REVERT][NEWLINE]Move the current page up in the list</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_MOVE_PAGE_DOWN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Move Page Down[COLOR_REVERT][NEWLINE]Move the current page down in the list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Move Page Down[COLOR_REVERT][NEWLINE]Move the current page down in the list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Seite nach unten verschieben[COLOR_REVERT][NEWLINE]Verschiebt die aktuell gewählte Seite in der Liste nach unten</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Move Page Down[COLOR_REVERT][NEWLINE]Move the current page down in the list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Move Page Down[COLOR_REVERT][NEWLINE]Move the current page down in the list</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CDA_TOGGLE_SPECIALISTS</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Toggle Specialist[COLOR_REVERT][NEWLINE]Toggle whether or not the selected city's specialists are displayed along with buttons to add/remove them</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Toggle Specialist[COLOR_REVERT][NEWLINE]Toggle whether or not the selected city's specialists are displayed along with buttons to add/remove them</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Spezialistenschaltfläche[COLOR_REVERT][NEWLINE]Schaltet die Übersicht über die Spezialisten der ausgewählten Stadt und Schaltflächen zu deren Verwaltung an oder ab</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Toggle Specialist[COLOR_REVERT][NEWLINE]Toggle whether or not the selected city's specialists are displayed along with buttons to add/remove them</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Toggle Specialist[COLOR_REVERT][NEWLINE]Toggle whether or not the selected city's specialists are displayed along with buttons to add/remove them</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_ADD_COLUMN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Add Column[COLOR_REVERT][NEWLINE]Insert the selected column(s) from the right list into the left list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Add Column[COLOR_REVERT][NEWLINE]Insert the selected column(s) from the right list into the left list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Spalte hinzufügen[COLOR_REVERT][NEWLINE]Fügt eine oder mehrere ausgewählte Spalten aus der rechten Liste in der linken Liste ein</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Add Column[COLOR_REVERT][NEWLINE]Insert the selected column(s) from the right list into the left list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Add Column[COLOR_REVERT][NEWLINE]Insert the selected column(s) from the right list into the left list</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_REMOVE_COLUMN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Remove Column[COLOR_REVERT][NEWLINE]Remove the selected column(s) from the left list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Remove Column[COLOR_REVERT][NEWLINE]Remove the selected column(s) from the left list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Spalte entfernen[COLOR_REVERT][NEWLINE]Entfernt eine oder mehrere ausgewählte Spalten aus der linken Liste</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Remove Column[COLOR_REVERT][NEWLINE]Remove the selected column(s) from the left list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Remove Column[COLOR_REVERT][NEWLINE]Remove the selected column(s) from the left list</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_MOVE_COLUMN_UP</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Move Column Up[COLOR_REVERT][NEWLINE]Move the selected column(s) up in the left list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Move Column Up[COLOR_REVERT][NEWLINE]Move the selected column(s) up in the left list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Spalte nach oben verschieben[COLOR_REVERT][NEWLINE]Verschiebt eine oder mehrere ausgewählte Spalten in der linken Liste nach oben</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Move Column Up[COLOR_REVERT][NEWLINE]Move the selected column(s) up in the left list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Move Column Up[COLOR_REVERT][NEWLINE]Move the selected column(s) up in the left list</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_MOVE_COLUMN_DOWN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Move Column Down[COLOR_REVERT][NEWLINE]Move the selected column(s) down in the left list</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Move Column Down[COLOR_REVERT][NEWLINE]Move the selected column(s) down in the left list</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Spalte nach unten verschieben[COLOR_REVERT][NEWLINE]Verschiebt eine oder mehrere ausgewählte Spalten in der linken Liste nach unten</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Move Column Down[COLOR_REVERT][NEWLINE]Move the selected column(s) down in the left list</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Move Column Down[COLOR_REVERT][NEWLINE]Move the selected column(s) down in the left list</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_SHRINK_COLUMN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Shrink Column[COLOR_REVERT][NEWLINE]Make the selected column(s) narrower</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Shrink Column[COLOR_REVERT][NEWLINE]Make the selected column(s) narrower</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Spalte verkleinern[COLOR_REVERT][NEWLINE]Verkleinert eine oder mehrere ausgewählte Spalten und macht sie schmaler</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Shrink Column[COLOR_REVERT][NEWLINE]Make the selected column(s) narrower</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Shrink Column[COLOR_REVERT][NEWLINE]Make the selected column(s) narrower</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CDA_EXPAND_COLUMN</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Expand Column[COLOR_REVERT][NEWLINE]Make the selected column(s) wider</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Expand Column[COLOR_REVERT][NEWLINE]Make the selected column(s) wider</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Spalte vergrößern[COLOR_REVERT][NEWLINE]Vergrößert eine oder mehrere ausgewählte Spalten und macht sie breiter</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Expand Column[COLOR_REVERT][NEWLINE]Make the selected column(s) wider</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Expand Column[COLOR_REVERT][NEWLINE]Make the selected column(s) wider</Spanish>
+	</TEXT>
+</Civ4GameText>

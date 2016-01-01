@@ -1165,9 +1165,10 @@ public:
 
 	int verifySettlersHalt(int threshold); //Rhye
 	DllExport int getSettlersMaps(int y, int x); //Rhye
-	DllExport void setFlag(CvWString s); //Rhye
-	DllExport void setLeader(int i); //Rhye
-	DllExport LeaderHeadTypes getLeader(); //Rhye
+	void setFlag(CvWString s); //Rhye
+	void setLeader(int i); //Rhye
+	void setLeaderName(CvWString name);
+	LeaderHeadTypes getLeader(); //Rhye
 	void resetRelations( PlayerTypes ePlayer ); //Rhye
 	void reinit( PlayerTypes eID, LeaderHeadTypes prevLeader, bool doReset );  //Rhye
 	void processCivNames(); //Rhye - dynamic civ names - not jdog's

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_DESC</Tag>
+		<English>The Japanese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_PEOPLES</Tag>
+		<English>Yamato Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_DEFAULT</Tag>
+		<English>%s2 Shogunate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_FASCIST</Tag>
+		<English>Empire of Greater %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_VASSAL</Tag>
+		<English>Co-Prosperity %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_CHINA</Tag>
+		<English>Reorganized National Government of China</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_KOREA</Tag>
+		<English>Governor-General of Chosen</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_MONGOLIA</Tag>
+		<English>Mengjiang United Autonomous Government</English>
+	</TEXT>
+</Civ4GameText>
