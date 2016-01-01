@@ -198,6 +198,7 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_INTERFACE_68</Description>
 		</HintInfo>
+		<!-- BUG Interface Hints -->
 		<HintInfo>
 			<Description>TXT_KEY_BUG_HINT_INTERFACE_1</Description>
 		</HintInfo>

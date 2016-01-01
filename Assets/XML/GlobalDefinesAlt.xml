@@ -72,11 +72,11 @@
 		<DefineName>PLAYER_REBIRTH_COLOMBIA</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-<!--
-	BULL User Settings
+
+<!-- BULL User Settings
 	This file is used only when BULL is running without BUG, but it will cause no harm to include it with BUG.
-	Copyright (c) 2009 The BUG Mod.
--->
+	Copyright (c) 2009 The BUG Mod -->
+
 <!-- City Bar -->
 	<Define>
 		<DefineName>BUG_CITYBAR_AIRPORT_ICONS</DefineName>
