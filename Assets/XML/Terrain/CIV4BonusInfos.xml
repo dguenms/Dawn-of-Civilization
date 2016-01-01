@@ -71,7 +71,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COAL</ArtDefineTag>
 			<TechReveal>TECH_STEAM_POWER</TechReveal>
-			<TechCityTrade>NONE</TechCityTrade>
+			<TechCityTrade>TECH_MINING</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
@@ -124,7 +124,7 @@
 			<BonusClassType>BONUSCLASS_RUSH</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COPPER</ArtDefineTag>
 			<TechReveal>TECH_BRONZE_WORKING</TechReveal>
-			<TechCityTrade>NONE</TechCityTrade>
+			<TechCityTrade>TECH_MINING</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
@@ -189,7 +189,7 @@
 			<BonusClassType>BONUSCLASS_RUSH</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_HORSE</ArtDefineTag>
 			<TechReveal>TECH_ANIMAL_HUSBANDRY</TechReveal>
-			<TechCityTrade>NONE</TechCityTrade>
+			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
@@ -246,7 +246,7 @@
 			<BonusClassType>BONUSCLASS_RUSH</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_IRON</ArtDefineTag>
 			<TechReveal>TECH_IRON_WORKING</TechReveal>
-			<TechCityTrade>NONE</TechCityTrade>
+			<TechCityTrade>TECH_MINING</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
