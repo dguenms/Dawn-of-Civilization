@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	AutoSave
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_AUTOSAVE__CREATESTARTSAVE_TEXT</Tag>
+		<English>Start Save</English>
+		<French>Start Save</French>
+		<German>Am Anfang speichern</German>
+		<Italian>Salvataggio iniziale</Italian>
+		<Spanish>Start Save</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_AUTOSAVE__CREATESTARTSAVE_HOVER</Tag>
+		<English>When checked, a saved game is created after (re)generating the map.</English>
+		<French>When checked, a saved game is created after (re)generating the map.</French>
+		<German>Erzeugt einen Spielstand, wenn eine Karte (neu-)erstellt wurde</German>
+		<Italian>Quando è selezionato, viene creato un salvataggio dopo la rigenerazione della mappa.</Italian>
+		<Spanish>When checked, a saved game is created after (re)generating the map.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_AUTOSAVE__CREATEENDSAVE_TEXT</Tag>
+		<English>End Save</English>
+		<French>End Save</French>
+		<German>Am Ende speichern</German>
+		<Italian>Salvataggio finale</Italian>
+		<Spanish>End Save</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_AUTOSAVE__CREATEENDSAVE_HOVER</Tag>
+		<English>When checked, a saved game is created when the game is won/lost.</English>
+		<French>When checked, a saved game is created when the game is won/lost.</French>
+		<German>Erzeugt einen Spielstand, wenn eine Partie gewonnen/verloren wird</German>
+		<Italian>Quando è selezionato, viene creato un salvataggio quando viene vinta/persa la partita.</Italian>
+		<Spanish>When checked, a saved game is created when the game is won/lost.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_AUTOSAVE__CREATEEXITSAVE_TEXT</Tag>
+		<English>Exit Save</English>
+		<French>Exit Save</French>
+		<German>Beim Beenden speichern</German>
+		<Italian>Salvataggio all'uscita</Italian>
+		<Spanish>Exit Save</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_AUTOSAVE__CREATEEXITSAVE_HOVER</Tag>
+		<English>When checked, a saved game is created when you exit using the menu's EXIT TO DESKTOP or EXIT TO MENU commands. [COLOR_YELLOW]The game is not saved automatically if you press ALT + F4.[COLOR_REVERT]</English>
+		<French>When checked, a saved game is created when you exit using the menu's EXIT TO DESKTOP or EXIT TO MENU commands. [COLOR_YELLOW]The game is not saved automatically if you press ALT + F4.[COLOR_REVERT]</French>
+		<German>Erzeugt einen Spielstand, wenn eine Partie über die Menübefehle "Programm beenden" oder "Zurück zum Hauptmenü" verlassen wird ([COLOR_YELLOW]Es wird nicht automatisch gespeichert, wenn das Spiel über die Tastenkombination [ALT + F4] verlassen wird[COLOR_REVERT])</German>
+		<Italian>Quando è selezionato, viene creato un salvataggio quando si esce dal gioco utilizzando le opzioni del menù "Ritorna al desktop" o "ritorna al menù principale". [COLOR_YELLOW]La partita non viene salvata automaticamente se si preme la combinazione di tasti 'ALT + F4'.[COLOR_REVERT]</Italian>
+		<Spanish>When checked, a saved game is created when you exit using the menu's EXIT TO DESKTOP or EXIT TO MENU commands. [COLOR_YELLOW]The game is not saved automatically if you press ALT + F4.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_AUTOSAVE__USEPLAYERNAME_TEXT</Tag>
+		<English>Use Player Name</English>
+		<French>Use Player Name</French>
+		<German>Spielername verwenden</German>
+		<Italian>Utilizza il nome del giocatore</Italian>
+		<Spanish>Use Player Name</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_AUTOSAVE__USEPLAYERNAME_HOVER</Tag>
+		<English>When checked, your player name is used for the saved game name along with the turn year. Otherwise the name is a concatenation of 3-letter versions of Leader Name, Difficulty, Map Size, Map Type, Speed, Era, Year, Climate and Sea Level. This setting does not affect MapFinder saves.</English>
+		<French>When checked, your player name is used for the saved game name along with the turn year. Otherwise the name is a concatenation of 3-letter versions of Leader Name, Difficulty, Map Size, Map Type, Speed, Era, Year, Climate and Sea Level. This setting does not affect MapFinder saves.</French>
+		<German>Verwendet den Spielername zusammen mit dem Spieljahr als Name des Spielstands. Ansonsten besteht der Name aus Dreibuchstabenabkürzungen des Namens des Oberhaupts, des Schwierigkeitsgrades, der Kartengröße, des Kartentyps, der Geschwindigkeit, der Epoche, des Spieljahres, des Klimas und der Meereshöhe (diese Option hat keinen Einfluss auf MapFinder-Spielstände)</German>
+		<Italian>Quando è selezionato, per il nome del file di salvataggio viene utilizzato il tuo nome giocatore insieme all'anno del turno corrente. Altrimenti, il nome del file è una stringa costituita dalle abbreviazioni triletterali del nome del Leader, del livello di difficoltà, della dimensione della Mappa, del tipo di Mappa, della velocità, dell'Era, dell'anno, del clima e del livello marino. Questa impostazione non influenza i salvataggi di MapFinder.</Italian>
+		<Spanish>When checked, your player name is used for the saved game name along with the turn year. Otherwise the name is a concatenation of 3-letter versions of Leader Name, Difficulty, Map Size, Map Type, Speed, Era, Year, Climate and Sea Level. This setting does not affect MapFinder saves.</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -5,12 +5,11 @@ from CvPythonExtensions import *
 from StoredData import sd # edead
 import Consts as con
 import RFCUtils
-import DynamicCivs
+import DynamicCivs as dc
 from operator import itemgetter
 import math
 
 utils = RFCUtils.RFCUtils()
-dc = DynamicCivs.DynamicCivs()
 
 # globals
 gc = CyGlobalContext()
@@ -72,11 +71,11 @@ def checkTurn(iGameTurn):
 		sd.setHumanStability(calculateStability(utils.getHumanID()))
 		
 def endTurn(iPlayer):
-	dSecedingCities = sd.getSecedingCities()
+	lSecedingCities = sd.getSecedingCities(iPlayer)
 	
-	if iPlayer in dSecedingCities:
-		secedeCities(iPlayer, dSecedingCities[iPlayer])
-		del dSecedingCities[iPlayer]
+	if lSecedingCities:
+		secedeCities(iPlayer, lSecedingCities)
+		sd.setSecedingCities(iPlayer, [])
 		
 def triggerCollapse(iPlayer):
 	sd.setTurnsToCollapse(iPlayer, 1)
@@ -348,7 +347,7 @@ def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
 		
 	elif not bPositive:
 		# humans are immune to first stability drop
-		if (bHuman or bHumanVassal) and not sd.isCrisisImminent() and iStabilityLevel < con.iStabilityCollapsing:
+		if (bHuman or bHumanVassal) and not sd.isCrisisImminent() and iStabilityLevel > con.iStabilityCollapsing:
 			if bHuman: sd.setCrisisImminent(True)
 			changeCrisisCountdown(iPlayer, utils.getTurns(5))
 			sText = localText.getText("TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE", (localText.getText(tCrisisLevels[iStabilityLevel], ()),))
@@ -510,8 +509,7 @@ def getPossibleMinors(iPlayer):
 	return [con.iIndependent, con.iIndependent2]
 	
 def secession(iPlayer, lCities):
-	dSecedingCities = sd.getSecedingCities()
-	dSecedingCities[iPlayer] = lCities
+	sd.setSecedingCities(iPlayer, lCities)
 	
 def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	lPossibleMinors = getPossibleMinors(iPlayer)
@@ -1423,7 +1421,7 @@ def calculateStability(iPlayer):
 		if iCivicMilitary == con.iCivicLevyArmies: iCivicStability += 3
 		else: iCivicStability -= 5
 		
-		if iCivicEconomy in [con.iCivicCapitalism, con.iCivicIndustrialism, con.iCivicPublicWelfare]: iCivicStability -= 5
+		if iCivicLabor in [con.iCivicCapitalism, con.iCivicIndustrialism, con.iCivicPublicWelfare]: iCivicStability -= 5
 	
 		if iCurrentEra == con.iMedieval:
 			if iCivicGovernment == con.iCivicDynasticism: iCivicStability += 2

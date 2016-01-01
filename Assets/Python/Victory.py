@@ -2363,7 +2363,8 @@ def isAreaFreeOfCivs(tTopLeft, tBottomRight, lCivs):
 	
 def isAreaOnlyCivs(tTopLeft, tBottomRight, lCivs):
 	for city in utils.getAreaCities(tTopLeft, tBottomRight):
-		if city.getOwner() not in lCivs: return False
+		iOwner = city.getOwner()
+		if iOwner < iNumPlayers and iOwner not in lCivs: return False
 	return True
 	
 def countCitySpecialists(iPlayer, tPlot, iSpecialist):
