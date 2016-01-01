@@ -4184,7 +4184,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Logistics1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Logistics1.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_LOGISTICS2</Type>
@@ -4251,7 +4251,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Logistics2.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Logistics2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_LOGISTICS3</Type>
@@ -4318,7 +4318,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Logistics3.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Logistics3.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_DECEPTION1</Type>
@@ -4385,7 +4385,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Deception1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Deception1.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_DECEPTION2</Type>
@@ -4452,7 +4452,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Deception2.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Deception2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_DECEPTION3</Type>
@@ -4519,7 +4519,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Deception3.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Deception3.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_SECURITY1</Type>
@@ -4586,7 +4586,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Security1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Security1.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_SECURITY2</Type>
@@ -4653,7 +4653,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Security2.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Security2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_SECURITY3</Type>
@@ -4720,7 +4720,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Security3.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Security3.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE1</Type>
@@ -4787,7 +4787,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Improvise1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Improvise1.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE2</Type>
@@ -4854,7 +4854,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Improvise2.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Improvise2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE3</Type>
@@ -4921,7 +4921,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Improvise3.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Improvise3.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE4</Type>
@@ -4988,7 +4988,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Improvise4.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Improvise4.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_IMPROVISE5</Type>
@@ -5055,7 +5055,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Improvise5.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Improvise5.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_LOYALTY</Type>
@@ -5122,7 +5122,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Loyalty.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Loyalty.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_INSTIGATOR1</Type>
@@ -5189,7 +5189,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Instigator1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Instigator1.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_INSTIGATOR2</Type>
@@ -5256,7 +5256,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Instigator2.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Instigator2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_INSTIGATOR3</Type>
@@ -5323,7 +5323,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Instigator3.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Instigator3.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ALCHEMIST1</Type>
@@ -5390,7 +5390,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Alchemist1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Alchemist1.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ALCHEMIST2</Type>
@@ -5457,7 +5457,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Alchemist2.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Alchemist2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ALCHEMIST3</Type>
@@ -5524,7 +5524,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Alchemist3.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Alchemist3.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ESCAPE1</Type>
@@ -5591,7 +5591,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Escape1.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Escape1.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_ESCAPE2</Type>
@@ -5658,7 +5658,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Escape2.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Escape2.dds</Button>
 		</PromotionInfo>
 		<PromotionInfo>
 			<Type>PROMOTION_LEADER</Type>
@@ -6118,7 +6118,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>,Art/Interface/Buttons/Promotions/Mercenary.dds</Button>
+			<Button>Art/Interface/Buttons/Promotions/Mercenary.dds</Button>
 		</PromotionInfo>
 	</PromotionInfos>
 </Civ4PromotionInfos>
