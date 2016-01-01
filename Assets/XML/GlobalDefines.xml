@@ -459,7 +459,7 @@
 	</Define>
 	<Define>
 		<DefineName>FOUND_RELIGION_CITY_RAND</DefineName>
-		<iDefineIntVal>20</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal> <!-- Default: 10 -->
 	</Define>
 	<Define>
 		<DefineName>FOUND_CORPORATION_CITY_RAND</DefineName>
@@ -609,7 +609,7 @@
 		<DefineName>CAPITAL_TRADE_MODIFIER</DefineName>
 		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
-	<Define>
+	<Define><!-- Leoreth: removed for now, introduced a distance modifier in turn -->
 		<DefineName>OVERSEAS_TRADE_MODIFIER</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
@@ -1652,7 +1652,7 @@
 	</Define>
 	<Define>
 		<DefineName>SHIP_BLOCKADE_RANGE</DefineName>
-		<iDefineIntVal>2</iDefineIntVal>
+		<iDefineIntVal>2</iDefineIntVal> <!-- Default: 3 -->
 	</Define>
 	<Define>
 		<DefineName>PATH_DAMAGE_WEIGHT</DefineName>

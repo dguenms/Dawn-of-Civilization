@@ -325,7 +325,7 @@
 	</Fader>
 	<Fader>
 		<Name>CAMERA_MAX_DISTANCE_FADER </Name>
-		<Value>0.85</Value>
+		<Value>0.85</Value> <!-- Default: 0.75-->
 	</Fader>
 	<Fader>
 		<Name>CAMERA_FAR_PLANE_SCALE</Name>
