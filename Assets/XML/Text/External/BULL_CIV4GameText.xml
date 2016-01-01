@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Text strings for the BUG DLL
+
+	Copyright (c) 2009 The BUG Mod.
+  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+
+<!-- City Bar Hover -->
+
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_CTRL_BASE_VALUES</Tag>
+		<English>[NEWLINE]Hold &lt;CTRL&gt; to see base values.</English>
+		<French>[NEWLINE]Hold &lt;CTRL&gt; to see base values.</French>
+		<German>[NEWLINE][BOLD]&lt;STRG&gt;[\BOLD] drücken, um die Basiswerte zu sehen</German>
+		<Italian>[NEWLINE]Tieni premuto &lt;CTRL&gt; per visualizzare i valori base.</Italian>
+		<Spanish>[NEWLINE]Hold &lt;CTRL&gt; to see base values.</Spanish>
+	</TEXT>
+	
+	<!-- Food Assist -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_FOOD_GROW</Tag>
+		<English>[NEWLINE]%d1 [ICON_FOOD]/Turn[NEWLINE]Growing: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:Turn:Turns])</English>
+		<French>[NEWLINE]%d1 [ICON_FOOD]/tour[NEWLINE]Croissance : %d2/%d3 [ICON_FOOD] (%d4 [NUM4:tour:tours])</French>
+		<German>[NEWLINE]%d1 [ICON_FOOD]/Runde[NEWLINE]Wachstum: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:Runde:Runden])</German>
+		<Italian>[NEWLINE]%d1 [ICON_FOOD]/Turno[NEWLINE]Crescita: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turni])</Italian>
+		<Spanish>[NEWLINE]%d1 [ICON_FOOD]/turno[NEWLINE]Creciendo: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turnos])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_FOOD_STAGNATE</Tag>
+		<English>[NEWLINE]Stagnant: %d1/%d2 [ICON_FOOD]</English>
+		<French>[NEWLINE]Pas de croissance : %d1/%d2 [ICON_FOOD]</French>
+		<German>[NEWLINE]Stagnation: %d1/%d2 [ICON_FOOD]</German>
+		<Italian>[NEWLINE]Stagnante: %d1/%d2 [ICON_FOOD]</Italian>
+		<Spanish>[NEWLINE]Estancada: %d1/%d2 [ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_FOOD_SHRINK</Tag>
+		<English>[NEWLINE]%d1 [ICON_BAD_FOOD]/Turn[NEWLINE][COLOR_YELLOW]Shrinking: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:Turn:Turns])[COLOR_REVERT]</English>
+		<French>[NEWLINE]%d1 [ICON_BAD_FOOD]/tour[NEWLINE][COLOR_YELLOW]Rétrécissement : %d2/%d3 [ICON_FOOD] (%d4 [NUM4:tour:tours])[COLOR_REVERT]</French>
+		<German>[NEWLINE]%d1 [ICON_BAD_FOOD]/Runde[NEWLINE][COLOR_YELLOW]Schrumpfung: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:Runde:Runden])[COLOR_REVERT]</German>
+		<Italian>[NEWLINE]%d1 [ICON_BAD_FOOD]/Turno[NEWLINE][COLOR_YELLOW]Crescita: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turni])[COLOR_REVERT]</Italian>
+		<Spanish>[NEWLINE]%d1 [ICON_BAD_FOOD]/turno[NEWLINE][COLOR_YELLOW]Crecimiento: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turnos])[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_FOOD_STARVE</Tag>
+		<English>[NEWLINE]%d1 [ICON_BAD_FOOD]/Turn[NEWLINE][COLOR_WARNING_TEXT]STARVATION: %d2/%d3 [ICON_FOOD][COLOR_REVERT]</English>
+		<French>[NEWLINE]%d1 [ICON_BAD_FOOD]/tour[NEWLINE][COLOR_WARNING_TEXT]FAMINE : %d2/%d3 [ICON_FOOD][COLOR_REVERT]</French>
+		<German>[NEWLINE]%d1 [ICON_BAD_FOOD]/Runde[NEWLINE][COLOR_WARNING_TEXT]HUNGERSNOT: %d2/%d3 [ICON_FOOD][COLOR_REVERT]</German>
+		<Italian>[NEWLINE]%d1 [ICON_BAD_FOOD]/Turno[NEWLINE][COLOR_WARNING_TEXT]CARESTIA: %d2/%d3 [ICON_FOOD][COLOR_REVERT]</Italian>
+		<Spanish>[NEWLINE]%d1 [ICON_BAD_FOOD]/turno[NEWLINE][COLOR_WARNING_TEXT]&#161;HAMBRUNA: %d2/%d3 [ICON_FOOD][COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<!-- Base Production -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_HAMMER_PRODUCTION_WITH_BASE</Tag>
+		<English>[NEWLINE]%d1 [ICON_PRODUCTION]/Turn (%d6 [ICON_PRODUCTION]/Turn)[NEWLINE]%s2: %d3/%d4 [ICON_PRODUCTION] (%d5 [NUM5:Turn:Turns])</English>
+		<French>[NEWLINE]%d1 [ICON_PRODUCTION]/tour (%d6 [ICON_PRODUCTION]/tour)[NEWLINE]%s2 : %d3/%d4 [ICON_PRODUCTION] (%d5 [NUM5:tour:tours])</French>
+		<German>[NEWLINE]%d1 [ICON_PRODUCTION]/Runde (%d6 [ICON_PRODUCTION]/Runde)[NEWLINE]%s2: %d3/%d4 [ICON_PRODUCTION] (%d5 [NUM5:Runde:Runden])</German>
+		<Italian>[NEWLINE]%d1 [ICON_PRODUCTION]/Turno (%d6 [ICON_PRODUCTION]/Turno)[NEWLINE]%s2: %d3/%d4 [ICON_PRODUCTION] (%d5 [NUM5:turno:turni])</Italian>
+		<Spanish>[NEWLINE]%d1 [ICON_PRODUCTION]/turno (%d6 [ICON_PRODUCTION]/turno)[NEWLINE]%s2: %d3/%d4 [ICON_PRODUCTION] (%d5 [NUM5:turno:turnos])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_FOOD_HAMMER_PRODUCTION_WITH_BASE</Tag>
+		<English>[NEWLINE]%d1 [ICON_FOOD] + %d2 [ICON_PRODUCTION]/Turn (%d7 [ICON_PRODUCTION]/Turn)[NEWLINE]%s3: %d4/%d5 [ICON_PRODUCTION] (%d6 [NUM6:Turn:Turns])</English>
+		<French>[NEWLINE]%d1 [ICON_FOOD] + %d2 [ICON_PRODUCTION]/tour (%d7 [ICON_PRODUCTION]/tour)[NEWLINE]%s3 : %d4/%d5 [ICON_PRODUCTION] (%d6 [NUM6:tour:tours])</French>
+		<German>[NEWLINE]%d1 [ICON_FOOD] + %d2 [ICON_PRODUCTION]/Runde (%d7 [ICON_PRODUCTION]/Runde)[NEWLINE]%s3: %d4/%d5 [ICON_PRODUCTION] (%d6 [NUM6:Runde:Runden])</German>
+		<Italian>[NEWLINE]%d1 [ICON_FOOD] + %d2 [ICON_PRODUCTION]/Turno (%d7 [ICON_PRODUCTION]/Turno)[NEWLINE]%s3: %d4/%d5 [ICON_PRODUCTION] (%d6 [NUM6:turno:turni])</Italian>
+		<Spanish>[NEWLINE]%d1 [ICON_FOOD] + %d2 [ICON_PRODUCTION]/turno (%d7 [ICON_PRODUCTION]/turno)[NEWLINE]%s3: %d4/%d5 [ICON_PRODUCTION] (%d6 [NUM6:turno:turnos])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_BASE_PRODUCTION</Tag>
+		<English>[NEWLINE]%d1 [ICON_PRODUCTION]/Turn</English>
+		<French>[NEWLINE]%d1 [ICON_PRODUCTION]/tour</French>
+		<German>[NEWLINE]%d1 [ICON_PRODUCTION]/Runde</German>
+		<Italian>[NEWLINE]%d1 [ICON_PRODUCTION]/Turno</Italian>
+		<Spanish>[NEWLINE]%d1 [ICON_PRODUCTION]/turno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_BASE_PRODUCTION_WITH_OVERFLOW</Tag>
+		<English>[NEWLINE]%d1 [ICON_PRODUCTION] (%d2 [ICON_PRODUCTION]/Turn)</English>
+		<French>[NEWLINE]%d1 [ICON_PRODUCTION] (%d2 [ICON_PRODUCTION]/tour)</French>
+		<German>[NEWLINE]%d1 [ICON_PRODUCTION] (%d2 [ICON_PRODUCTION]/Runde)</German>
+		<Italian>[NEWLINE]%d1 [ICON_PRODUCTION] (%d2 [ICON_PRODUCTION]/Turno)</Italian>
+		<Spanish>[NEWLINE]%d1 [ICON_PRODUCTION] (%d2 [ICON_PRODUCTION]/turno)</Spanish>
+	</TEXT>
+	
+	<!-- Culture Turns -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_CULTURE_NO_LEVEL</Tag>
+		<English>[NEWLINE][ICON_CULTURE]: %d1/%d2</English>
+		<French>[NEWLINE][ICON_CULTURE] : %d1/%d2</French>
+		<German>[NEWLINE][ICON_CULTURE]: %d1/%d2</German>
+		<Italian>[NEWLINE][ICON_CULTURE]: %d1/%d2</Italian>
+		<Spanish>[NEWLINE][ICON_CULTURE]: %d1/%d2</Spanish>
+	</TEXT>
+	
+<!-- Finance Advisor -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_FINANCIAL_ADVISOR_DOMESTIC_TRADE</Tag>
+		<English>The Total Commerce from Domestic Trade Routes</English>
+		<French>The Total Commerce from Domestic Trade Routes</French>
+		<German>Gesamteinkommen durch inländische Handelsverbindungen</German>
+		<Italian>Commercio totale dalle rotte commerciali interne</Italian>
+		<Spanish>The Total Commerce from Domestic Trade Routes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_FINANCIAL_ADVISOR_FOREIGN_TRADE</Tag>
+		<English>The Total Commerce from Foreign Trade Routes</English>
+		<French>The Total Commerce from Foreign Trade Routes</French>
+		<German>Gesamteinkommen durch ausländische Handelsverbindungen</German>
+		<Italian>Commercio totale dalle rotte commerciali estere</Italian>
+		<Spanish>The Total Commerce from Foreign Trade Routes</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_FINANCIAL_ADVISOR_SPECIALISTS</Tag>
+		<English>The Total Gold from Specialists</English>
+		<French>The Total Gold from Specialists</French>
+		<German>Gesamteinkommen durch Spezialisten</German>
+		<Italian>Oro totale dagli Specialisti</Italian>
+		<Spanish>The Total Gold from Specialists</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_FINANCIAL_ADVISOR_SPECIALIST_GOLD</Tag>
+		<English>[NEWLINE]%d1[ICON_GOLD]: %s3 (%d2)</English>
+		<French>[NEWLINE]%d1[ICON_GOLD]: %s3 (%d2)</French>
+		<German>[NEWLINE]%d1[ICON_GOLD]: %s3 (%d2)</German>
+		<Italian>[NEWLINE]%d1[ICON_GOLD]: %s3 (%d2)</Italian>
+		<Spanish>[NEWLINE]%d1[ICON_GOLD]: %s3 (%d2)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_FINANCIAL_ADVISOR_SPECIALIST_TOTAL_GOLD</Tag>
+		<English>[NEWLINE]------------------------[NEWLINE]TOTAL SPECIALISTS: %d1[ICON_GOLD]</English>
+		<French>[NEWLINE]------------------------[NEWLINE]SP&#xC9;CIALISTES TOTAL : %d1[ICON_GOLD]</French>
+		<German>[NEWLINE]------------------------[NEWLINE]SPEZIALISTEN GESAMT: %d1[ICON_GOLD]</German>
+		<Italian>[NEWLINE]------------------------[NEWLINE]TOTALE SPECIALISTI: %d1[ICON_GOLD]</Italian>
+		<Spanish>[NEWLINE]------------------------[NEWLINE]ESPECIALISTAS TOTAL: %d1 [ICON_GOLD]</Spanish>
+	</TEXT>
+
+<!-- Production Decay -->
+
+	<TEXT>
+		<Tag>TXT_KEY_PRODUCTION_DECAY</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]Will lose %d1[ICON_PRODUCTION] this turn[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]Will lose %d1[ICON_PRODUCTION] this turn[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]%d1[ICON_PRODUCTION] gehen in dieser Runde verloren[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]Perderà %d1[ICON_PRODUCTION] questo turno[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]Will lose %d1[ICON_PRODUCTION] this turn[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PRODUCTION_DECAY_PRODUCING</Tag>
+		<English>[COLOR_WARNING_TEXT]Will lose %d1[ICON_PRODUCTION] if not produced this turn[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Will lose %d1[ICON_PRODUCTION] if not produced this turn[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]%d1[ICON_PRODUCTION] gehen verloren, falls nicht in dieser Runde produziert wird[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Perderà %d1[ICON_PRODUCTION] se non viene prodotto questo turno [COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Will lose %d1[ICON_PRODUCTION] if not produced this turn[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PRODUCTION_DECAY_TURNS</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]Will lose %d1[ICON_PRODUCTION] in %d2 [NUM2:turn:turns][COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]Will lose %d1[ICON_PRODUCTION] in %d2 [NUM2:turn:turns][COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]%d1[ICON_PRODUCTION] gehen in %d2 [NUM2:Runde:Runden] verloren[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]Perderà %d1[ICON_PRODUCTION] in %d2 [NUM2:turno:turni][COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]Will lose %d1[ICON_PRODUCTION] in %d2 [NUM2:turn:turns][COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PRODUCTION_DECAY_TURNS_PRODUCING</Tag>
+		<English>[COLOR_WARNING_TEXT]Will lose %d1[ICON_PRODUCTION] if not produced for %d2 [NUM2:turn:turns][COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Will lose %d1[ICON_PRODUCTION] if not produced for %d2 [NUM2:turn:turns][COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]%d1[ICON_PRODUCTION] gehen verloren, falls für %d2 [NUM2:Runde:Runden] nicht produziert wird[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Perderà  %d1[ICON_PRODUCTION] se non viene prodotto per %d2 [NUM2:turno:turni][COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Will lose %d1[ICON_PRODUCTION] if not produced for %d2 [NUM2:turn:turns][COLOR_REVERT]</Spanish>
+	</TEXT>
+
+<!-- Leaderhead Hover -->
+
+	<TEXT>
+		<Tag>TXT_KEY_AT_WAR_WITH</Tag>
+		<English>[ICON_BULLET][COLOR_YELLOW]War with %s1_player[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_YELLOW]Guerre avec %s1_player[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_YELLOW]Im Krieg mit %s1_player[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_YELLOW]Guerra con %s1_player[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_YELLOW]Guerra con %s1_player[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AT_WAR_WITH_YOU</Tag>
+		<English>[ICON_BULLET][COLOR_YELLOW]You are at war![COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_YELLOW]Vous êtes en guerre![COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_YELLOW]Im Krieg mit Euch![COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_YELLOW]Si è in guerra![COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_YELLOW]Usted está en guerra![COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_PEACE_TREATY_WITH</Tag>
+		<English>[ICON_BULLET][COLOR_CYAN]Peace Treaty with %s1_player[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_CYAN]Trait&#233; de paix avec %s1_player[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_CYAN]Friedensvertrag mit %s1_player[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_CYAN]Trattato di pace con %s1_player[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_CYAN]Tratado de paz con %s1_player[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEACE_TREATY_WITH_YOU</Tag>
+		<English>[ICON_BULLET][COLOR_CYAN]You have a Peace Treaty[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_CYAN]Vous disposez d'un trait&#233; de paix[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_CYAN]Friedensvertrag mit Euch[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_CYAN]Si dispone di un trattato di pace[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_CYAN]Ustedes tiene un tratado de paz[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_WORST_ENEMY_OF</Tag>
+		<English>[ICON_BULLET][COLOR_YELLOW]Worst Enemy of %s1_player[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_YELLOW]Pire ennemi de %s1_player[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_YELLOW]Erzfeind von %s1_player[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_YELLOW]Peggiore ostile di %s1_player[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_YELLOW]Peor enemigo de %s1_player[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WORST_ENEMY_IS</Tag>
+		<English>[ICON_BULLET][COLOR_YELLOW]%s1_player is Worst Enemy[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_YELLOW]%s1_player est pire ennemi[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_YELLOW]Erzfeind: %s1_player[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_YELLOW]%s1_player è peggiore ostile[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_YELLOW]%s1_player es peor enemigo[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WORST_ENEMY_IS_YOU</Tag>
+		<English>[ICON_BULLET][COLOR_YELLOW]You are Worst Enemy[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_YELLOW]Vous êtes pire ennemi[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_YELLOW]Euer Erzfeind[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_YELLOW]Tu sei peggiore ostile[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_YELLOW]Usted es peor enemigo[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_DEFENSIVE_PACT_WITH</Tag>
+		<English>[ICON_BULLET][COLOR_BLUE]Defensive Pact with %s1_player[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_BLUE]Défensive pacte avec %s1_player[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_BLUE]Verteidigungsbündnis mit %s1_player[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_BLUE]Difensive patto con %s1_player[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_BLUE]Pacto defensivo con %s1_player[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DEFENSIVE_PACT_WITH_YOU</Tag>
+		<English>[ICON_BULLET][COLOR_BLUE]You have a Defensive Pact[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_BLUE]Vous disposez d'un pacte défensif[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_BLUE]Verteidigungsbündnis mit Euch[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_BLUE]Si dispone di un patto di difesa[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_BLUE]Ustedes tiene un pacto defensivo[COLOR_REVERT]</Spanish>
+	</TEXT>
+	
+<!-- Tech Hover -->
+
+	<TEXT>
+		<Tag>TXT_KEY_MISC_SPEEDS_UP</Tag>
+		<English>[NEWLINE][ICON_BULLET]Speeds up[SPACE]</English>
+		<French>[NEWLINE][ICON_BULLET]Accélère[SPACE]</French>
+		<German>[NEWLINE][ICON_BULLET]Beschleunigt[SPACE]</German>
+		<Italian>[NEWLINE][ICON_BULLET]Accelera[SPACE]</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Acelera[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_SPED_UP_BY</Tag>
+		<English>[NEWLINE][ICON_BULLET]Sped up by[SPACE]</English>
+		<French>[NEWLINE][ICON_BULLET]Accélérée par[SPACE]</French>
+		<German>[NEWLINE][ICON_BULLET]Beschleunigt durch[SPACE]</German>
+		<Italian>[NEWLINE][ICON_BULLET]Accelerato da[SPACE]</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Acelerado por[SPACE]</Spanish>
+	</TEXT>
+
+<!-- Actual Effects -->
+
+	<TEXT>
+		<Tag>TXT_KEY_ACTUAL_EFFECTS</Tag>
+		<English>Actual</English>
+		<French>Actual</French>
+		<German>Effektiv</German>
+		<Italian>Effettivo</Italian>
+		<Spanish>Actual</Spanish>
+	</TEXT>
+
+<!-- Min/Max Commerce Rate Buttons -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_MISC_SET_RATE</Tag>
+		<English>Set %s1_CmrcType Rate to %d2_Value%%</English>
+		<French>Augmente la production (Taux : %s1_CmrcType) de %d2_Value%%</French>
+		<German>Anteil für %s1_CmrcType auf %d2_Value%% ändern</German>
+		<Italian>Aumenta il %s1_CmrcType del %d2_Value%%</Italian>
+		<Spanish>Aumentar ritmo de %s1_CmrcType a %d2_Value%%</Spanish>
+	</TEXT>
+
+<!-- Lat/Long Coordinates -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_LATLONG</Tag>
+		<English>%d1&#176;%d2'[SPACE]</English>
+		<French>%d1&#176;%d2'[SPACE]</French>
+		<German>%d1&#176;%d2'[SPACE]</German>
+		<Italian>%d1&#176;%d2'[SPACE]</Italian>
+		<Spanish>%d1&#176;%d2'[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LATLONG_NORTH</Tag>
+		<English>N</English>
+		<French>N</French>
+		<German>N</German>
+		<Italian>N</Italian>
+		<Spanish>N</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LATLONG_EAST</Tag>
+		<English>E</English>
+		<French>E</French>
+		<German>O</German>
+		<Italian>E</Italian>
+		<Spanish>E</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LATLONG_SOUTH</Tag>
+		<English>S</English>
+		<French>S</French>
+		<German>S</German>
+		<Italian>S</Italian>
+		<Spanish>S</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LATLONG_WEST</Tag>
+		<English>W</English>
+		<French>W</French>
+		<German>W</German>
+		<Italian>W</Italian>
+		<Spanish>W</Spanish>
+	</TEXT>
+
+<!-- City Screen -->
+	
+	<!-- Yield Hovers -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_WORKED_TILES_YIELD</Tag>
+		<English>[ICON_BULLET]%D1%F2 from Worked Tiles</English>
+		<French>[ICON_BULLET]%D1%F2 en raison des Cases Travaillées</French>
+		<German>[ICON_BULLET]%D1%F2 durch bearbeitete Geländefelder</German>
+		<Italian>[ICON_BULLET]%D1%F2 dalle caselle lavorate</Italian>
+		<Spanish>[ICON_BULLET]%D1 %F2 por Azulejos Trabajados</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_TOTAL_YIELD</Tag>
+		<English>-----------------------[NEWLINE]Total %s1_yield_type: %d2%F3</English>
+		<French>-----------------------[NEWLINE]Total %s1_yield_type : %d2%F3</French>
+		<German>-----------------------[NEWLINE]Gesamtertrag %s1_yield_type: %d2%F3</German>
+		<Italian>-----------------------[NEWLINE]%s1_yield_type totale: %d2%F3</Italian>
+		<Spanish>-----------------------[NEWLINE]Total %s1_yield_type: %d2%F3</Spanish>
+	</TEXT>
+
+	<!-- Food Hover -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_EATEN_FOOD</Tag>
+		<English>[ICON_BULLET]%D1[ICON_EATENFOOD] for Population</English>
+		<French>[ICON_BULLET]%D1[ICON_EATENFOOD] pour la population</French>
+		<German>[ICON_BULLET]%D1[ICON_EATENFOOD] für Bevölkerung</German>
+		<Italian>[ICON_BULLET]%D1[ICON_EATENFOOD] per la popolazione</Italian>
+		<Spanish>[ICON_BULLET]%D1[ICON_EATENFOOD] Por poblaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_SPOILED_FOOD</Tag>
+		<English>[ICON_BULLET]%D1[ICON_EATENFOOD] for Health</English>
+		<French>[ICON_BULLET]%D1[ICON_EATENFOOD] pour la Sant&#233;</French>
+		<German>[ICON_BULLET]%D1[ICON_EATENFOOD] für Gesundheit</German>
+		<Italian>[ICON_BULLET]%D1[ICON_EATENFOOD] per la salute</Italian>
+		<Spanish>[ICON_BULLET]%D1[ICON_EATENFOOD] Por salud</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_BASE_FOOD_PRODUCED</Tag>
+		<English>-----------------------[NEWLINE]Base Food Produced: %d1[ICON_FOOD]</English>
+		<French>-----------------------[NEWLINE]Nourriture totale partiel produit : %d1[ICON_FOOD]</French>
+		<German>-----------------------[NEWLINE]Grundertrag produzierte Nahrung: %d1[ICON_FOOD]</German>
+		<Italian>-----------------------[NEWLINE]Cibo totale parziale prodotto: %d1[ICON_FOOD]</Italian>
+		<Spanish>-----------------------[NEWLINE]Alimento subtotal produjo: %d1[ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_TOTAL_FOOD_PRODUCED</Tag>
+		<English>-----------------------[NEWLINE]Total Food Produced: %d1[ICON_FOOD]</English>
+		<French>-----------------------[NEWLINE]Nourriture totale produit : %d1[ICON_FOOD]</French>
+		<German>-----------------------[NEWLINE]Insgesamt produzierte Nahrung: %d1[ICON_FOOD]</German>
+		<Italian>-----------------------[NEWLINE]Cibo totale prodotto: %d1[ICON_FOOD]</Italian>
+		<Spanish>-----------------------[NEWLINE]Alimento total produjo: %d1[ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_TOTAL_FOOD_CONSUMED</Tag>
+		<English>-----------------------[NEWLINE]Total Food Consumed: %d1[ICON_EATENFOOD]</English>
+		<French>-----------------------[NEWLINE]Nourriture totale consommé : %d1[ICON_EATENFOOD]</French>
+		<German>-----------------------[NEWLINE]Insgesamt verbrauchte Nahrung: %d1[ICON_EATENFOOD]</German>
+		<Italian>-----------------------[NEWLINE]Cibo totale consumato: %d1[ICON_EATENFOOD]</Italian>
+		<Spanish>-----------------------[NEWLINE]Alimento total consumido: %d1[ICON_EATENFOOD]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_NET_FOOD_GROW</Tag>
+		<English>Net Food: %D1[ICON_FOOD]</English>
+		<French>Nourriture nette : %D1[ICON_FOOD]</French>
+		<German>Nettoertrag Nahrung: %D1[ICON_FOOD]</German>
+		<Italian>Cibo netto: %D1[ICON_FOOD]</Italian>
+		<Spanish>Alimento neto: %D1[ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_NET_FOOD_SHRINK</Tag>
+		<English>Net Food: [COLOR_NEGATIVE_TEXT]%D1[COLOR_REVERT][ICON_BAD_FOOD]</English>
+		<French>Nourriture nette : [COLOR_NEGATIVE_TEXT]%D1[COLOR_REVERT][ICON_BAD_FOOD]</French>
+		<German>Nettoertrag Nahrung: [COLOR_NEGATIVE_TEXT]%D1[COLOR_REVERT][ICON_BAD_FOOD]</German>
+		<Italian>Cibo netto: [COLOR_NEGATIVE_TEXT]%D1[COLOR_REVERT][ICON_BAD_FOOD]</Italian>
+		<Spanish>Alimento neto: [COLOR_NEGATIVE_TEXT]%D1[COLOR_REVERT][ICON_BAD_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_NET_FOOD_STAGNATE</Tag>
+		<English>Net Food: +0[ICON_FOOD]</English>
+		<French>Nourriture nette : +0[ICON_FOOD]</French>
+		<German>Nettoertrag Nahrung: +0[ICON_FOOD]</German>
+		<Italian>Cibo netto: +0[ICON_FOOD]</Italian>
+		<Spanish>Alimento neto: +0[ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_NET_FOOD_PRODUCTION</Tag>
+		<English>Net Food: %D1[ICON_FOOD] for %s2_production_type</English>
+		<French>Nourriture nette : %D1[ICON_FOOD] pour %s2_production_type</French>
+		<German>Nettoertrag Nahrung: %D1[ICON_FOOD] für %s2_production_type</German>
+		<Italian>Cibo netto: %D1[ICON_FOOD] per %s2_production_type</Italian>
+		<Spanish>Alimento neto: %D1[ICON_FOOD] por %s2_production_type</Spanish>
+	</TEXT>
+
+	<!-- Commerce Hovers -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_COMMERCE_SUBTOTAL_YIELD_FLOAT</Tag>
+		<English>-----------------------[NEWLINE]Base %s1_commerce_type: %s2%F3</English>
+		<French>-----------------------[NEWLINE]Total partiel %s1_commerce_type : %s2%F3</French>
+		<German>-----------------------[NEWLINE]Grundertrag %s1_commerce_type: %s2%F3</German>
+		<Italian>-----------------------[NEWLINE]%s1_commerce_type totale parziale: %s2%F3</Italian>
+		<Spanish>-----------------------[NEWLINE]Subtotal %s1_commerce_type: %s2%F3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_SLIDER_PERCENT_FLOAT</Tag>
+		<English>-----------------------[NEWLINE]%d1%% of %d2[ICON_COMMERCE] = %s3%F4</English>
+		<French>-----------------------[NEWLINE]%d1%% sur %d2[ICON_COMMERCE] = %s3%F4</French>
+		<German>-----------------------[NEWLINE]%d1%% von %d2[ICON_COMMERCE] = %s3%F4</German>
+		<Italian>-----------------------[NEWLINE]%d1%% di %d2[ICON_COMMERCE] = %s3%F4</Italian>
+		<Spanish>-----------------------[NEWLINE]%d1%% de %d2 [ICON_COMMERCE] = %s3%F4</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_COMMERCE_FINAL_YIELD_FLOAT</Tag>
+		<English>-----------------------[NEWLINE]Total %s1_commerce_type: %s2%F3</English>
+		<French>-----------------------[NEWLINE]Total %s1_commerce_type : %s2%F3</French>
+		<German>-----------------------[NEWLINE]Gesamtertrag %s1_commerce_type: %s2%F3</German>
+		<Italian>-----------------------[NEWLINE]%s1_commerce_type totale: %s2%F3</Italian>
+		<Spanish>-----------------------[NEWLINE]Total %s1_commerce_type: %s2%F3</Spanish>
+	</TEXT>
+	
+	<!-- Defense Hover -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_BUILDING_DEFENSE</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_DEFENSE] from Buildings</English>
+		<French>[ICON_BULLET]%D1%%[ICON_DEFENSE] en raison des b&#226;timents</French>
+		<German>[ICON_BULLET]%D1%%[ICON_DEFENSE] durch Gebäude</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_DEFENSE] dagli edifici</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_DEFENSE] por edificios</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_CULTURE_DEFENSE</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_DEFENSE] from Culture</English>
+		<French>[ICON_BULLET]%D1%%[ICON_DEFENSE] en raison des Culture</French>
+		<German>[ICON_BULLET]%D1%%[ICON_DEFENSE] durch Kultur</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_DEFENSE] dagli Cultura</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_DEFENSE] por Cultura</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_CULTURE_DEFENSE_PARTIAL</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_DEFENSE] from Culture (%d2%%)</English>
+		<French>[ICON_BULLET]%D1%%[ICON_DEFENSE] en raison des Culture (%d2%%)</French>
+		<German>[ICON_BULLET]%D1%%[ICON_DEFENSE] durch Kultur (%d2%%)</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_DEFENSE] dagli Cultura (%d2%%)</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_DEFENSE] por Cultura (%d2%%)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_WONDER_DEFENSE</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_DEFENSE] from Wonders</English>
+		<French>[ICON_BULLET]%D1%%[ICON_DEFENSE] pour Merveilles</French>
+		<German>[ICON_BULLET]%D1%%[ICON_DEFENSE] durch Wunder</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_DEFENSE] dalle Meraviglie</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_DEFENSE] por maravillas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_TOTAL_DEFENSE</Tag>
+		<English>Total Defense: %D1%%[ICON_DEFENSE]</English>
+		<French>D&#233;fense totale : %D1%%[ICON_DEFENSE]</French>
+		<German>Brutto-Verteidigungswert: %D1%%[ICON_DEFENSE]</German>
+		<Italian>Difesa totale: %D1%%[ICON_DEFENSE]</Italian>
+		<Spanish>Defensa total: %D1%%[ICON_DEFENSE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_DEFENSE_DAMAGE</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_DEFENSE] from Bombardment</English>
+		<French>[ICON_BULLET]%D1%%[ICON_DEFENSE] pour Merveilles</French>
+		<German>[ICON_BULLET]%D1%%[ICON_DEFENSE] durch Wunder</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_DEFENSE] dalle Meraviglie</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_DEFENSE] por maravillas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_NET_DEFENSE</Tag>
+		<English>Net Defense: %D1%%[ICON_DEFENSE]</English>
+		<French>D&#233;fense nette : %D1%%[ICON_DEFENSE]</French>
+		<German>Netto-Verteidigungswert: %D1%%[ICON_DEFENSE]</German>
+		<Italian>Difesa netto: %D1%%[ICON_DEFENSE]</Italian>
+		<Spanish>Defensa neto: %D1%%[ICON_DEFENSE]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_TOTAL_BOMBARD_DEFENSE</Tag>
+		<English>Total Bombard Defense: %d1%%[ICON_DEFENSE]</English>
+		<French>D&#233;fense bombardement totale : %d1%%[ICON_DEFENSE]</French>
+		<German>Brutto-Verteidigungswert (Bombardierung): %d1%%[ICON_DEFENSE]</German>
+		<Italian>Difesa bombardmento totale: %d1%%[ICON_DEFENSE]</Italian>
+		<Spanish>Defensa bombardear total: %d1%%[ICON_DEFENSE]</Spanish>
+	</TEXT>
+
+<!-- Hurry Hover -->
+
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HURRY_OVERFLOW</Tag>
+		<English>[ICON_BULLET]%s1 Overflow</English>
+		<French>[ICON_BULLET]%s1 Exc&#233;dent</French>
+		<German>[ICON_BULLET]%s1 Überschuss</German>
+		<Italian>[ICON_BULLET]%s1 Eccedenza</Italian>
+		<Spanish>[ICON_BULLET]%s1 Exceso</Spanish>
+	</TEXT>
+
+<!-- Trade Hover -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_TRADE_HEADING</Tag>
+		<English>Trade</English>
+		<French>Commerce</French>
+		<German>Handel</German>
+		<Italian>Commercio</Italian>
+		<Spanish>Comercio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_DOMESTIC_TRADE_HEADING</Tag>
+		<English>Domestic Trade</English>
+		<French>Commerce Domestique</French>
+		<German>Binnenhandel</German>
+		<Italian>Commercio Domestico</Italian>
+		<Spanish>Comercio Doméstico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_FOREIGN_TRADE_HEADING</Tag>
+		<English>Trade with %s1_PlyrName of %s2_CivName</English>
+		<French>Commerce avec %%s1_PlyrName of %s2_CivName</French>
+		<German>Handel mit %%s1_PlyrName (%s2_CivName)</German>
+		<Italian>Commercio con %%s1_PlyrName (%s2_CivName)</Italian>
+		<Spanish>Comercio con %%s1_PlyrName of %s2_CivName</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_CANNOT_TRADE_HEADING</Tag>
+		<English>No Trade with %s1_PlyrName of %s2_CivName</English>
+		<French>Pas de Commerce avec %%s1_PlyrName of %s2_CivName</French>
+		<German>Kein Handel mit %%s1_PlyrName (%s2_CivName)</German>
+		<Italian>Nessun commercio con %%s1_PlyrName (%s2_CivName)</Italian>
+		<Spanish>Ningún Comercio con %%s1_PlyrName of %s2_CivName</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_TOTAL_TRADE_YIELD</Tag>
+		<English>[NEWLINE]Total Yield: %s1[ICON_COMMERCE]</English>
+		<French>[NEWLINE]Total Yield: %s1[ICON_COMMERCE]</French>
+		<German>[NEWLINE]Gesamteinkommen: %s1[ICON_COMMERCE]</German>
+		<Italian>[NEWLINE]Total Yield: %s1[ICON_COMMERCE]</Italian>
+		<Spanish>[NEWLINE]Total Yield: %s1[ICON_COMMERCE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_TOTAL_TRADE_ROUTES</Tag>
+		<English>[NEWLINE]Number of Routes: %d1</English>
+		<French>[NEWLINE]Number of Routes: %d1</French>
+		<German>[NEWLINE]Anzahl der Handelsverbindungen: %d1</German>
+		<Italian>[NEWLINE]Number of Routes: %d1</Italian>
+		<Spanish>[NEWLINE]Number of Routes: %d1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_AVERAGE_TRADE_YIELD</Tag>
+		<English>[NEWLINE]Average Yield: %s1[ICON_COMMERCE]</English>
+		<French>[NEWLINE]Average Yield: %s1[ICON_COMMERCE]</French>
+		<German>[NEWLINE]Durchschnittliches Einkommen: %s1[ICON_COMMERCE]</German>
+		<Italian>[NEWLINE]Average Yield: %s1[ICON_COMMERCE]</Italian>
+		<Spanish>[NEWLINE]Average Yield: %s1[ICON_COMMERCE]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_CANNOT_TRADE_DEAD</Tag>
+		<English>[NEWLINE][ICON_BULLET]They are dead</English>
+		<French>[NEWLINE][ICON_BULLET]They are dead</French>
+		<German>[NEWLINE][ICON_BULLET]Zivilisation ist ausgelöscht</German>
+		<Italian>[NEWLINE][ICON_BULLET]Scomparsi</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]They are dead</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_CANNOT_TRADE_NETWORK_NOT_CONNECTED</Tag>
+		<English>[NEWLINE][ICON_BULLET]Your Trade Networks are not connected</English>
+		<French>[NEWLINE][ICON_BULLET]Your Trade Networks are not connected</French>
+		<German>[NEWLINE][ICON_BULLET]Keine Handelsverbindungen</German>
+		<Italian>[NEWLINE][ICON_BULLET]Le vostre reti commerciali non sono collegate</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Your Trade Networks are not connected</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_CANNOT_TRADE_CLOSED_BORDERS</Tag>
+		<English>[NEWLINE][ICON_BULLET]You have not signed an Open Borders agreement</English>
+		<French>[NEWLINE][ICON_BULLET]You have not signed an Open Borders agreement</French>
+		<German>[NEWLINE][ICON_BULLET]Kein Abkommen über "Offene Grenzen"</German>
+		<Italian>[NEWLINE][ICON_BULLET]Non avete siglato un Accordo di Libero Scambio</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]You have not signed an Open Borders agreement</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_CANNOT_TRADE_FOREIGN_YOU</Tag>
+		<English>[NEWLINE][ICON_BULLET]Your Civics don't allow Foreign Trade</English>
+		<French>[NEWLINE][ICON_BULLET]Your Civics don't allow Foreign Trade</French>
+		<German>[NEWLINE][ICON_BULLET]Eure Gesellschaftsform erlaubt keinen Außenhandel</German>
+		<Italian>[NEWLINE][ICON_BULLET]La tua Forma di Governo non consente il Commercio Estero</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Your civics don't allow Foreign Trade</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_CANNOT_TRADE_FOREIGN_THEM</Tag>
+		<English>[NEWLINE][ICON_BULLET]Their Civics don't allow Foreign Trade</English>
+		<French>[NEWLINE][ICON_BULLET]Their Civics don't allow Foreign Trade</French>
+		<German>[NEWLINE][ICON_BULLET]Deren Gesellschaftsform erlaubt keinen Außenhandel</German>
+		<Italian>[NEWLINE][ICON_BULLET]La loro Forma di Governo non consente il Commercio Estero</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]Their Civics don't allow Foreign Trade</Spanish>
+	</TEXT>
+
+<!-- Unit Hover -->
+
+	<TEXT>
+		<Tag>TXT_KEY_MISC_EXPERIENCE</Tag>
+		<English>%d1 XP</English>
+		<French>%d1 EXP</French>
+		<German>%d1 EP</German>
+		<Italian>%d1 XP</Italian>
+		<Spanish>%d1 PE</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_PROMOTIONS</Tag>
+		<English>%d1[ICON_STAR]</English>
+		<French>%d1[ICON_STAR]</French>
+		<German>%d1[ICON_STAR]</German>
+		<Italian>%d1[ICON_STAR]</Italian>
+		<Spanish>%d1[ICON_STAR]</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_CITY_FREE_EXPERIENCE</Tag>
+		<English>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from City[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EXP from City[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EP durch Stadt[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from City[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 PE from City[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_FREE_EXPERIENCE</Tag>
+		<English>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from Wonders and Civics[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EXP from Wonders and Civics[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EP durch Wunder und Gesellschaftsformen[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from Wonders and Civics[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 PE from Wonders and Civics[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_FREE_EXPERIENCE</Tag>
+		<English>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from Specialists[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EXP from Specialists[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EP durch Spezialisten[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from Specialists[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 PE from Specialists[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FREE_EXPERIENCE</Tag>
+		<English>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from %s2_building[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EXP from %s2_building[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EP durch %s2_building[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from %s2_building[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 PE from %s2_building[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NO_BUILDING_FREE_EXPERIENCE</Tag>
+		<English>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 XP with %s2_building[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 EXP with %s2_building[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 EP mit %s2_building[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 XP with %s2_building[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 PE with %s2_building[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STATE_RELIGION_FREE_EXPERIENCE</Tag>
+		<English>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from State Religion[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EXP from State Religion[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EP durch Staatsreligion[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from State Religion[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 PE from State Religion[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NO_STATE_RELIGION_FREE_EXPERIENCE</Tag>
+		<English>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 XP with State Religion[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 EXP with State Religion[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 EP mit Staatsreligion[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 XP with State Religion[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_NEGATIVE_TEXT]%D1 PE with State Religion[COLOR_REVERT]</Spanish>
+	</TEXT>
+
+<!-- Conscript Hover -->
+
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CITY_HAS_CONSCRIPTED</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]City cannot draft another unit this turn[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]City cannot draft another unit this turn[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]Die Stadt kann in dieser Runde keine weitere Einheit rekrutieren[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]City cannot draft another unit this turn[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]City cannot draft another unit this turn[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CONSCRIPT_UNITS_LEFT</Tag>
+		<English>You can draft %d1 [NUM1:unit:units] this turn</English>
+		<French>You can draft %d1 [NUM1:unit:units] this turn</French>
+		<German>Ihr könnt in dieser Runde noch %d1 [NUM1:Einheit:Einheiten] rekrutieren</German>
+		<Italian>You can draft %d1 [NUM1:unit:units] this turn</Italian>
+		<Spanish>You can draft %d1 [NUM1:unit:units] this turn</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_NO_CONSCRIPT_UNITS_LEFT</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]You cannot draft any more units this turn[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]You cannot draft any more units this turn[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]Ihr könnt in dieser Runde keine weitere Einheit rekrutieren[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]You cannot draft any more units this turn[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]You cannot draft any more units this turn[COLOR_REVERT]</Spanish>
+	</TEXT>
+
+<!-- Pre-Chop -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_PRECLEARING_FEATURE_BONUS</Tag>
+		<English>Clearing a %s1_FeatName will create %d2_Num [ICON_PRODUCTION] for %s3_CityName.</English>
+		<French>Le d&#233;frichage de %s1_FeatName fera rapport %d2_Num [ICON_PRODUCTION] &#224; %s3_CityName.</French>
+		<German>Bei Entfernung der Geländeart %s1_FeatName wird die Stadt %s3_CityName %d2_Num [ICON_PRODUCTION] erhalten.</German>
+		<Italian>Sgombrando una casella di %s1_FeatName si &#232; creerà %d2_Num [ICON_PRODUCTION] per %s3_CityName.</Italian>
+		<Spanish>Despejar [NUM1:el:la:los:las] %s1_FeatName generará %d2_Num [ICON_PRODUCTION] para %s3_CityName.</Spanish>
+	</TEXT>
+
+<!-- Delete/Fortify/Sleep All Units Actions -->
+	
+	<TEXT>
+		<Tag>TXT_KEY_SAME_UNITS_TYPE</Tag>
+		<English>[SPACE](&lt;ALT&gt; for All Units of the active unit's type)</English>
+		<French>[SPACE](&lt;ALT&gt; for All Units of the active unit's type)</French>
+		<German>[SPACE](&lt;ALT&gt; für alle Einheiten des aktiven Einheitentyps)</German>
+		<Italian>[SPACE](&lt;ALT&gt; per tutte le Unità del tipo dell'Unità attiva)</Italian>
+		<Spanish>[SPACE](&lt;ALT&gt; para todas las unidades del mismo tipo que la unidad activa)</Spanish>
+	</TEXT>
+
+
+<!-- Fractional Trade -->
+
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_TOTAL_FRACTIONAL</Tag>
+		<English>%s1 [ICON_COMMERCE]: Total</English>
+		<French>%s1 [ICON_COMMERCE] : total</French>
+		<German>%s1 [ICON_COMMERCE]: Gesamteinkommen</German>
+		<Italian>%s1 [ICON_COMMERCE]: totale</Italian>
+		<Spanish>%s1 [ICON_COMMERCE]: Total</Spanish>
+	</TEXT>
+
+<!-- Free Tech Popup Fix -->
+
+	<TEXT>
+		<Tag>TXT_KEY_CHEATERS_NEVER_PROSPER</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]You have already chosen your free tech(s)[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]You have already chosen your free tech(s)[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]Freie Technologie(n) schon gewählt[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]You have already chosen your free tech(s)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]You have already chosen your free tech(s)[COLOR_REVERT]</Spanish>
+	</TEXT>
+
+<!-- Optional Compile-Time Components -->
+
+	<TEXT>
+		<Tag>TXT_KEY_MOD_FRACTRADE</Tag>
+		<English>Fractional Trade Routes</English>
+		<French>Fractional Trade Routes</French>
+		<German>Gestückelte Handelsverbindungen</German>
+		<Italian>Fractional Trade Routes</Italian>
+		<Spanish>Fractional Trade Routes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_SENTRY</Tag>
+		<English>New Sentry Actions</English>
+		<French>New Sentry Actions</French>
+		<German>Neue Wach-Befehle</German>
+		<Italian>New Sentry Actions</Italian>
+		<Spanish>New Sentry Actions</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_GOVWORKERS</Tag>
+		<English>City Governors Build Workers</English>
+		<French>City Governors Build Workers</French>
+		<German>Stadtverwalter: Bautrupp aufstellen</German>
+		<Italian>City Governors Build Workers</Italian>
+		<Spanish>City Governors Build Workers</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_AIAUTOPLAY</Tag>
+		<English>AI AutoPlay</English>
+		<French>AI AutoPlay</French>
+		<German>Selbstablaufende Partie</German>
+		<Italian>AI AutoPlay</Italian>
+		<Spanish>AI AutoPlay</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_GWARM</Tag>
+		<English>Global Warming</English>
+		<French>Global Warming</French>
+		<German>Globale Erwärmung</German>
+		<Italian>Global Warming</Italian>
+		<Spanish>Global Warming</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_SHAM_SPOILER</Tag>
+		<English>Show Hidden Attitudes [spoiler]</English>
+		<French>Show Hidden Attitudes [spoiler]</French>
+		<German>Verborgene Modifikatoren anzeigen [Spoiler]</German>
+		<Italian>Show Hidden Attitudes [spoiler]</Italian>
+		<Spanish>Show Hidden Attitudes [spoiler]</Spanish>
+	</TEXT>
+
+</Civ4GameText>
