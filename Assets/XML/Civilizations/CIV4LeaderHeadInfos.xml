@@ -29498,7 +29498,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_MEIJI</Type> <!-- Personality: Zara Yaqob -->
+			<Type>LEADER_MEIJI</Type> <!-- Predefined Personality -->
 			<Description>TXT_KEY_LEADER_MEIJI</Description>
 			<Civilopedia>TXT_KEY_LEADER_MEIJI_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_MEIJI</ArtDefineTag>
@@ -31726,7 +31726,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_GUSTAV</Type> <!-- Personality: Justinian -->
+			<Type>LEADER_GUSTAV</Type> <!-- Predefined Personality -->
 			<Description>TXT_KEY_LEADER_GUSTAV</Description>
 			<Civilopedia>TXT_KEY_LEADER_GUSTAV_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_GUSTAV</ArtDefineTag>
@@ -33910,7 +33910,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_FILIPE</Type> <!-- Personality: Montezuma -->
+			<Type>LEADER_FILIPE</Type>
 			<Description>TXT_KEY_LEADER_FILIPE</Description>
 			<Civilopedia>TXT_KEY_LEADER_FILIPE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_FILIPE</ArtDefineTag>
@@ -34467,7 +34467,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_BARBAROSSA</Type> <!-- Personality: Augustus -->
+			<Type>LEADER_BARBAROSSA</Type>
 			<Description>TXT_KEY_LEADER_BARBAROSSA</Description>
 			<Civilopedia>TXT_KEY_LEADER_BARBAROSSA_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_BARBAROSSA</ArtDefineTag>
@@ -36659,7 +36659,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_AFONSO</Type> <!-- Personality: Pacal -->
+			<Type>LEADER_AFONSO</Type> <!-- Predefined Personality -->
 			<Description>TXT_KEY_LEADER_AFONSO</Description>
 			<Civilopedia>TXT_KEY_LEADER_AFONSO_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_AFONSO</ArtDefineTag>
@@ -37213,7 +37213,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_ATATURK</Type> <!-- Personality: Hannibal -->
+			<Type>LEADER_ATATURK</Type>
 			<Description>TXT_KEY_LEADER_ATATURK</Description>
 			<Civilopedia>TXT_KEY_LEADER_ATATURK_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_ATATURK</ArtDefineTag>
@@ -52111,7 +52111,7 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_SOBIESKI</Type> <!-- Personality: Hannibal -->
+			<Type>LEADER_SOBIESKI</Type>
 			<Description>TXT_KEY_LEADER_SOBIESKI</Description>
 			<Civilopedia>TXT_KEY_LEADER_SOBIESKI_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_SOBIESKI</ArtDefineTag>
