@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_DESC</Tag>
+		<English>The Russians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_PEOPLES</Tag>
+		<English>Slavic Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_DEFAULT</Tag>
+		<English>Grand Duchy of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_REPUBLIC</Tag>
+		<English>%s2 Federation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_COMMUNIST</Tag>
+		<English>Union of Soviet Socialist Republics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RUSSIA_TSARDOM_OF</Tag>
+		<English>Tsardom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_FASCIST</Tag>
+		<English>Panslavic Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_MUSCOVY</Tag>
+		<English>Muscovy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIAN_POLAND</Tag>
+		<English>Congress %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET</Tag>
+		<English>Soviet %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 Soviet Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIAN_NAME_PERSIA</Tag>
+		<English>Gilan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_JAPAN</Tag>
+		<English>Far Eastern Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_TURKEY</Tag>
+		<English>Transcaucasian Socialist Federative Soviet Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_GERMANY</Tag>
+		<English>%s2 Democratic Republic</English>
+	</TEXT>
+</Civ4GameText>
