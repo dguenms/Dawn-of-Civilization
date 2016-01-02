@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_PROJECT_PERSECUTION</Tag>
+  <English>Persecution</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_PROJECT_PERSECUTION_HELP</Tag>
+  <English>[ICON_BULLET]Removes one non-state religion from this city[NEWLINE][ICON_BULLET]Causes temporary disorder and unhappiness</English>
+ </TEXT>
+</Civ4GameText>
