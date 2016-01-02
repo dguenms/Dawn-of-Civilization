@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
-<!-- Sid Meier's Civilization 4 -->
-<!-- -->
-<!-- Game Text - Unit Upgrades for Civilopedia -->
+<!-- Tibet -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TIBET_DESC</Tag>
@@ -19,5 +16,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TIBET_FASCIST</Tag>
 		<English>%s2 Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBET_ADJECTIVE</Tag>
+		<English>Tibetan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TIBET_SHORT_DESC</Tag>
+		<English>Tibet</English>
 	</TEXT>
 </Civ4GameText>

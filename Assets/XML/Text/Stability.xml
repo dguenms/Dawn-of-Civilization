@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_0</Tag>
+  <English>Diplomacy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_1</Tag>
+  <English>Neighbors</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_10</Tag>
+  <English>Civic Number of Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_11</Tag>
+  <English>Civic Cap</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_12</Tag>
+  <English>Civic Techs</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_13</Tag>
+  <English>Foreign Core Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_14</Tag>
+  <English>City Happiness</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_15</Tag>
+  <English>City Civics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_16</Tag>
+  <English>City Culture</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_17</Tag>
+  <English>Total City Stability</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_18</Tag>
+  <English>Trade</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_19</Tag>
+  <English>Economy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_2</Tag>
+  <English>Vassals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_20</Tag>
+  <English>Happiness</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_21</Tag>
+  <English>Economy Extra</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_22</Tag>
+  <English>Great Depression</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_23</Tag>
+  <English>Foreign Great Depression</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_24</Tag>
+  <English>Post-Communist Crisis</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_25</Tag>
+  <English>Transition to Democracy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_26</Tag>
+  <English>Number of Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_27</Tag>
+  <English>Combat</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_28</Tag>
+  <English>Combat Extra</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_29</Tag>
+  <English>Anarchy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_3</Tag>
+  <English>Imperialism</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_30</Tag>
+  <English>Golden Age</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_31</Tag>
+  <English>Fall</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_32</Tag>
+  <English>Base Stability</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_4</Tag>
+  <English>Contacts</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_5</Tag>
+  <English>Expansion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_6</Tag>
+  <English>Outer Expansion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_7</Tag>
+  <English>Occupied Core</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_8</Tag>
+  <English>Civic Combinations</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_9</Tag>
+  <English>Civic Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_ADVISOR_TITLE</Tag>
+  <English>STABILITY: </English>
+  <French>STABILITE : </French>
+  <German>STABILIT&#196;T: </German>
+  <Italian>STABILIT&#192;: </Italian>
+  <Spanish>ESTABILIDAD: </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_ANARCHY</Tag>
+  <English>Anarchy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_BAD_RELATIONS</Tag>
+  <English>Bad Relations</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_BARBARIAN_LOSSES</Tag>
+  <English>Lost Battles to Barbarians</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_BASE</Tag>
+  <English>Base Stability</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_BUILDINGS</Tag>
+  <English>Buildings</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CANCEL_CAPITULATION</Tag>
+  <English>%s1 no longer recognizes our overlordship and declares sovereignty!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CANCEL_DEFENSIVE_PACT</Tag>
+  <English>%s1 has canceled their defensive pact with us!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CANCEL_PEACE_VASSAL</Tag>
+  <English>%s1 no longer wishes to be our vassal!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CANCEL_TRADE</Tag>
+  <English>%s1 has canceled their open borders agreement with us!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CAP</Tag>
+  <English>Stability Limits</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CATEGORY_DOMESTIC</Tag>
+  <English>Domestic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CATEGORY_ECONOMY</Tag>
+  <English>Economy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CATEGORY_EXPANSION</Tag>
+  <English>Expansion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CATEGORY_FOREIGN</Tag>
+  <English>Foreign</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CATEGORY_MILITARY</Tag>
+  <English>Military</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CENTRAL_PLANNING_TRADE_FREE_MARKET</Tag>
+  <English>Central Planning: Trade with Free Market Civilizations</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CHECKF2</Tag>
+  <English>Check the Interior Advisor (F2) for details</English>
+  <French>Consulter le Conseiller aux affaires int&#233;rieures (F2) pour de plus amples d&#233;tails</French>
+  <German>Einzelheiten im Inlandsberater (F2)</German>
+  <Italian>Per avere ulteriori dettagli consulta il Consigliere per gli interni (F2)</Italian>
+  <Spanish>Revisa el Consejero de Interior [F2] para obtener m&#225;s detalles.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITIES_BUILT</Tag>
+  <English>Cities Built</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITIES_CONQUERED</Tag>
+  <English>Cities Conquered</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITIES_LOST</Tag>
+  <English>Cities Lost</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITIES_RAZED</Tag>
+  <English>Cities Razed</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITIES_TITLE</Tag>
+  <English>CITIES</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITY_CHANGED_OWNER</Tag>
+  <English>%s1 has joined the %s2 civilization!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITY_CHANGED_OWNER_US</Tag>
+  <English>%s1 has joined our civilization!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITY_CIVICS</Tag>
+  <English>Civics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITY_CULTURE</Tag>
+  <English>Culture</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITY_HAPPINESS</Tag>
+  <English>Happiness</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITY_INDEPENDENCE</Tag>
+  <English>%s1 has declared independence!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CITY_TERRITORY</Tag>
+  <English>City Territory</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CIVIC_COMBINATIONS</Tag>
+  <English>Combinations</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CIVIC_ERA</Tag>
+  <English>Era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CIVIC_NUMBER_CITIES</Tag>
+  <English>Number of Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CIVIC_TECH</Tag>
+  <English>Technologies</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CIVICS_TITLE</Tag>
+  <English>CIVICS</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CIVILWAR</Tag>
+  <English>is descending into civil war!</English>
+  <French>entre en guerre civile !</French>
+  <German>steht vor einem B&#252;rgerkrieg!</German>
+  <Italian>sta cadendo nella guerra civile!</Italian>
+  <Spanish>est&#225; sufriendo una guerra civil.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CIVILWAR_HUMAN</Tag>
+  <English>Your empire is descending into civil war!</English>
+  <French>Votre empire entre en guerre civile !</French>
+  <German>Euer Reich steht vor einem B&#252;rgerkrieg!</German>
+  <Italian>Il tuo impero sta per cadere nella guerra civile!</Italian>
+  <Spanish>&#161;Tu imperio est&#225; sufriendo una guerra civil!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_COLLAPSE_TO_CORE</Tag>
+  <English>We are losing control over our entire empire!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_COLLAPSING</Tag>
+  <English>Collapsing</English>
+  <French>En chute</French>
+  <German>Zerfallend</German>
+  <Italian>Collasso</Italian>
+  <Spanish>Al borde del colapso</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_COMBAT</Tag>
+  <English>Combat</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_COMPATIBLE_CIVICS</Tag>
+  <English>Compatible Civics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_COMPLETE_COLLAPSE</Tag>
+  <English>The %s1 civilization has collapsed!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CONQUERED_CITIES</Tag>
+  <English>Conquered Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CONTACTS</Tag>
+  <English>Contacts</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CONTEMPORARY_CIVICS</Tag>
+  <English>Contemporary Civics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CONTESTED_AREA</Tag>
+  <English>Contested Area</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CORE_AREA</Tag>
+  <English>Core Area</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CORE_PERIPHERY_INFO</Tag>
+  <English>Expansion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CORE_PERIPHERY_NEGATIVE</Tag>
+  <English>Overextension</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_IMMINENT</Tag>
+  <English>If our stability does not improve, we will experience a crisis at the next stability check!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE</Tag>
+  <English>A %s1 crisis is imminent!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_MINOR</Tag>
+  <English>minor</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_MODERATE</Tag>
+  <English>moderate</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_SEVERE</Tag>
+  <English>severe</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_LEVEL_TERMINAL</Tag>
+  <English>terminal</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_MESSAGE</Tag>
+  <English>Our civilization is experiencing a %s1 %s2 crisis!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_TYPE_DOMESTIC</Tag>
+  <English>domestic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_TYPE_ECONOMY</Tag>
+  <English>economic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_TYPE_EXPANSION</Tag>
+  <English>territorial</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_TYPE_FOREIGN</Tag>
+  <English>diplomatic</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_CRISIS_TYPE_MILITARY</Tag>
+  <English>military</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DAMAGE_RELATIONS</Tag>
+  <English>Our relations with %s1 have deteriorated!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DEFENSIVE_PACTS</Tag>
+  <English>Defensive Pacts</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DEMOCRACY</Tag>
+  <English>instability caused by transition to democracy!</English>
+  <French>d'instabilit&#233; caus&#233;e par la transition d&#233;mocratique !</French>
+  <German>Instabilit&#228;t, verursacht durch den Wechsel zur Demokratie!</German>
+  <Italian>instabilit&#224;, causata dal passaggio alla democrazia!</Italian>
+  <Spanish>inestabilidad causada por la transici&#243;n a la democracia.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DEMOCRACY_TRANSITION</Tag>
+  <English>Transition to Democracy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DIFFICULTY</Tag>
+  <English>Difficulty Level</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DIPLOMACY</Tag>
+  <English>Diplomacy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DIPLOMACY_TITLE</Tag>
+  <English>FOREIGN</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DOMESTIC_CRISIS</Tag>
+  <English>Our civilization is descending into a period of civil war!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_DOWNGRADE_COTTAGES</Tag>
+  <English>The economic crisis is impeding our cottage growth!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_ECONOMIC_CRISIS</Tag>
+  <English>The economic crisis is paralyzing our civilization!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_ECONOMIC_DECLINE</Tag>
+  <English>Recession</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_ECONOMIC_GROWTH</Tag>
+  <English>Economic Growth</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_ECONOMIC_STAGNATION</Tag>
+  <English>Economic Stagnation</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_ECONOMY</Tag>
+  <English>Economy</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_ECONOMY_TITLE</Tag>
+  <English>ECONOMY</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_EXPANSION_TITLE</Tag>
+  <English>EXPANSION</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_FALL</Tag>
+  <English>Historicity</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_FOREIGN_AREA</Tag>
+  <English>Foreign Area</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_FOREIGN_CORE_AREA</Tag>
+  <English>Foreign Core Area</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_FOREIGN_GREAT_DEPRESSION</Tag>
+  <English>Great Depression (foreign)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_FOREIGN_SECESSION</Tag>
+  <English>We are losing control over our foreign territory!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_GOLDEN_AGE</Tag>
+  <English>Golden Age</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_GOOD_RELATIONS</Tag>
+  <English>Good Relations</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION</Tag>
+  <English>Great Depression</English>
+  <French>de Grande D&#233;pression</French>
+  <German>Gro&#223;en Depression</German>
+  <Italian>Grande Depressione</Italian>
+  <Spanish>Gran Depresi&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE</Tag>
+  <English>The period of Great Depression in the %s1 is negatively influencing our economy!</English>
+  <French>La p&#233;riode de Grande D&#233;pression en %s1influence n&#233;gativement notre &#233;conomie ! </French>
+  <German>Die Phase der Gro&#223;en Depression im %s1:2 Reich hat negative Auswirkungen auf unsere Wirtschaft!</German>
+  <Italian>Il periodo di Grande Depressione nell'%s1 sta influenzando negativamente la nostra economia!</Italian>
+  <Spanish>&#161;El periodo de Gran Depresi&#243;n de %s1 est&#225; afectando negativamente a nuestra econom&#237;a!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE1</Tag>
+  <English>The period of Great Depression in the</English>
+  <French>La p&#233;riode de Grande D&#233;pression en</French>
+  <German>Die Phase der Gro&#223;en Depression in</German>
+  <Italian>Il periodo di Grande Depressione nel</Italian>
+  <Spanish>El periodo de Gran Depresi&#243;n del</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_GREAT_DEPRESSION_INFLUENCE2</Tag>
+  <English>is negatively influencing our economy!</English>
+  <French>influence n&#233;gativement notre &#233;conomie !</French>
+  <German>hat negative Auswirkungen auf unsere Wirtschaft!</German>
+  <Italian>sta influenzando negativamente la nostra economia!</Italian>
+  <Spanish>est&#225; afectando negativamente a nuestra econom&#237;a.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_HAPPINESS</Tag>
+  <English>Happiness</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_HISTORICAL_AREA</Tag>
+  <English>Historical Area</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_IMMOBILIZED_UNITS</Tag>
+  <English>Due to the military crisis, we have temporarily lost control over our units!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_INCOMPATIBLE_CIVICS</Tag>
+  <English>Incompatible Civics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_INSUFFICIENT_TRADE</Tag>
+  <English>Economic Isolation</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_LOSING_WARS</Tag>
+  <English>Losing Wars</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_LOST_BATTLES</Tag>
+  <English>Lost Battles</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_LOST_CITIES</Tag>
+  <English>Lost Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_LOST_COMMERCE</Tag>
+  <English>Due to our economic crisis we have lost %d1[ICON_GOLD] and %d2[ICON_RESEARCH]!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_LOST_TERRITORY</Tag>
+  <English>We have lost control over our territory around %s1!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_MERCANTILISM_TRADE_RICHER</Tag>
+  <English>Mercantilism: Trade with Wealthier Civilizations</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_MISC_TITLE</Tag>
+  <English>MISCELLANEOUS</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_NEIGHBORS</Tag>
+  <English>Collapsing Neighbors</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_NEIGHBORS_OLD</Tag>
+  <English>Neighbors</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_NO_CRISIS_IMMINENT</Tag>
+  <English>If our stability remains constant, we will not experience a crisis at the next stability check.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_NORMALIZATION</Tag>
+  <English>Normalization</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_OCCUPIED_CORE</Tag>
+  <English>Occupied Core</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_OCCUPIED_FOREIGN_CORE</Tag>
+  <English>Occupied Foreign Core</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_OUTDATED_CIVICS</Tag>
+  <English>Outdated Civics</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_OUTER_TERRITORY</Tag>
+  <English>Outer Territory</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_OVERALL</Tag>
+  <English>Overall Stability</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_PARAMETER_CITIES</Tag>
+  <English>CITIES</English>
+  <French>VILLES</French>
+  <German>ST&#196;DTE</German>
+  <Italian>CITT&#192;</Italian>
+  <Spanish>CIUDADES</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_PARAMETER_CIVICS</Tag>
+  <English>CIVICS</English>
+  <French>REGIME</French>
+  <German>STAATSFORMEN</German>
+  <Italian>FORME DI GOVERNO</Italian>
+  <Spanish>PRINCIPIOS</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_PARAMETER_ECONOMY</Tag>
+  <English>ECONOMY</English>
+  <French>ECONOMIE</French>
+  <German>WIRTSCHAFT</German>
+  <Italian>ECONOMIA</Italian>
+  <Spanish>ECONOM&#205;A</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_PARAMETER_EXPANSION</Tag>
+  <English>EXPANSION</English>
+  <French>EXPANSION</French>
+  <German>EXPANSION</German>
+  <Italian>ESPANSIONE</Italian>
+  <Spanish>EXPANSI&#211;N</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_PARAMETER_FOREIGN</Tag>
+  <English>FOREIGN</English>
+  <French>ETRANGER</French>
+  <German>AUSLAND</German>
+  <Italian>ESTERO</Italian>
+  <Spanish>ASUNTOS EXTERIORES</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_PERIOD</Tag>
+  <English>Your empire is experiencing a period of</English>
+  <French>Votre empire conna&#238;t une p&#233;riode</French>
+  <German>Euer Reich durchlebt eine Phase der</German>
+  <Italian>Il tuo impero sta vivendo un periodo di</Italian>
+  <Spanish>Tu imperio est&#225; pasando por un periodo de</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_POST_COMMUNISM</Tag>
+  <English>Post-Communist Crisis</English>
+  <French>de Crise Post-Communiste</French>
+  <German>Post-Kommunistischen Krise</German>
+  <Italian>Crisi Post-Comunista</Italian>
+  <Spanish>Crisis Post-Comunista</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_RAZED_CITIES</Tag>
+  <English>Razed Cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_RELIGION</Tag>
+  <English>Religion</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_RELIGIOUS_DISUNITY</Tag>
+  <English>Religious Disunity</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_RELIGIOUS_UNITY</Tag>
+  <English>Religious Unity</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_REMOVE_DEFENSES</Tag>
+  <English>The military crisis leaves our cities without effective defenses!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_REMOVE_GPP</Tag>
+  <English>The economic crisis is preventing the emergence of great people!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_SECEDE_UNHAPPY</Tag>
+  <English>Unhappy cities are leaving our civilization!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_SECESSION</Tag>
+  <English>has declared its independence!</English>
+  <French>a d&#233;clar&#233; son ind&#233;pendance !</French>
+  <German>hat seine Unabh&#228;ngigkeit erkl&#228;rt!</German>
+  <Italian>ha dichiarato la propria indipendenza!</Italian>
+  <Spanish>ha declarado su independencia.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_SHAKY</Tag>
+  <English>Shaky</English>
+  <French>Agit&#233;</French>
+  <German>Wankend</German>
+  <Italian>Traballante</Italian>
+  <Spanish>Incierta</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_SOCIETY_TITLE</Tag>
+  <English>SOCIETY</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_SOLID</Tag>
+  <English>Solid</English>
+  <French>Solide</French>
+  <German>Solide</German>
+  <Italian>Solido</Italian>
+  <Spanish>S&#243;lida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_STABLE</Tag>
+  <English>Stable</English>
+  <French>Stable</French>
+  <German>Stabil</German>
+  <Italian>Stabile</Italian>
+  <Spanish>Estable</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_STABLE_VASSALS</Tag>
+  <English>Stable Vassals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_SUMMARY_TITLE</Tag>
+  <English>SUMMARY</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_TARGET_CITY_UNREST</Tag>
+  <English>Cities sympathetic to the enemy are in open revolt!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_TECH</Tag>
+  <English>Technology</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_TITLE</Tag>
+  <English>STABILITY: %s1</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_TRADE</Tag>
+  <English>Trade</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_UNHAPPINESS</Tag>
+  <English>Unhappiness</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_UNIT_DESERTION</Tag>
+  <English>The military crisis led to the desertion of %d1 units!</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_UNSTABLE</Tag>
+  <English>Unstable</English>
+  <French>Instable</French>
+  <German>Instabil</German>
+  <Italian>Instabile</Italian>
+  <Spanish>Inestable</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_UNSTABLE_VASSALS</Tag>
+  <English>Unstable Vassals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_VASSALS</Tag>
+  <English>Vassals</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_VERYSOLID</Tag>
+  <English>Very Solid</English>
+  <French>Tr&#232;s solide</French>
+  <German>Sehr solide</German>
+  <Italian>Molto solido</Italian>
+  <Spanish>Muy s&#243;lida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_WAR_WEARINESS</Tag>
+  <English>War Weariness</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_WARFARE_TITLE</Tag>
+  <English>WARFARE</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_WARS_AUTOCRACY</Tag>
+  <English>Autocracy: Waging Wars</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_WARS_BROTHERS_OF_FAITH</Tag>
+  <English>Fanaticism: Fighting Brothers of Faith</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_WARS_HEATHENS</Tag>
+  <English>Fanaticism: Fighting Heathens</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_WARS_MULTILATERALISM</Tag>
+  <English>Multilateralism: Being at War</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_WINNING_WARS</Tag>
+  <English>Winning Wars</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_STABILITY_WON_BATTLES</Tag>
+  <English>Won Battles</English>
+ </TEXT>
+</Civ4GameText>

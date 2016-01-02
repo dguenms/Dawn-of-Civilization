@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_BARBARIAN_ADJECTIVE</Tag>
+  <English>Barbarian</English>
+  <French>
+   <Text>barbare:barbare:barbares:barbares</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Barbarisch:barbarischen:barbarische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>barbaro:barbari:barbara:barbare</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>b&#225;rbaro:b&#225;rbara:b&#225;rbaros:b&#225;rbaras</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_BARBARIAN_SHORT_DESC</Tag>
+  <English>Barbarians</English>
+  <French>
+   <Text>Barbares</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Barbarenland</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Territorio barbaro</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Barbaria</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_CELT_ADJECTIVE</Tag>
+  <English>
+   <Text>Celtic:Celts</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </English>
+  <French>
+   <Text>celte:celtique:celtes:celtiques</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Keltisch:keltischen:keltische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>celtico:celtica:celtici:celtiche</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>celta:celta:celtas:celtas</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_CELT_DESC</Tag>
+  <English>Celtic peoples</English>
+  <French>
+   <Text>Peuples celtes</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Keltenv&#246;lkerreich:Keltenv&#246;lkerreich:Keltenv&#246;lkerreich</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>Popoli celtici</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pueblo Celta</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_CELT_SHORT_DESC</Tag>
+  <English>Celtia</English>
+  <French>
+   <Text>Celtes</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Keltenland</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Celti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Celtia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_INDEPENDENT_ADJECTIVE</Tag>
+  <English>Independent</English>
+  <French>
+   <Text>ind&#233;pendant:ind&#233;pendante:ind&#233;pendants:ind&#233;pendantes</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Unabh&#228;ngig:unabh&#228;ngigen:unabh&#228;ngige</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>indipendente:indipendente:indipendenti:indipendenti</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>aut&#243;nomo:aut&#243;noma:aut&#243;nomos:aut&#243;nomas</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_INDEPENDENT_DESC</Tag>
+  <English>Independent Cities</English>
+  <French>
+   <Text>Villes ind&#233;pendantes</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Unabh&#228;ngiges St&#228;dtereich:Unabh&#228;ngige St&#228;dtereich:Unabh&#228;ngigen St&#228;dtereich</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>Citt&#224; indipendenti</Text>
+   <Gender>Female</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Grupo de las ciudades aut&#243;nomas</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_INDEPENDENT_SHORT_DESC</Tag>
+  <English>Independents</English>
+  <French>
+   <Text>Ind&#233;pendants</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Land der Unabh&#228;ngigen</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Indipendenti</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Autonolandia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_NATIVE_ADJECTIVE</Tag>
+  <English>Native</English>
+  <French>
+   <Text>natif:native:natifs:natives</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Eingeboren:eingeborenen:eingeborene</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>nativo:nativa:nativi:native</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>nativo:nativa:nativos:nativas</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_NATIVE_DESC</Tag>
+  <English>Native peoples</English>
+  <French>
+   <Text>Peuples natifs</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Eingeborenenreich:Eingeborenenreich:Eingeborenenreich</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>Popoli nativi</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Pueblo Nativo</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_NATIVE_SHORT_DESC</Tag>
+  <English>Natives</English>
+  <French>
+   <Text>Natifs</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </French>
+  <German>
+   <Text>Eingeborenenland</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>Nativi</Text>
+   <Gender>Male</Gender>
+   <Plural>1</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Nativolandia</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_SELJUK_ADJECTIVE</Tag>
+  <English>Seljuk</English>
+  <French>in French</French>
+  <German>Seldschukisch</German>
+  <Italian>in Italian</Italian>
+  <Spanish>in Spanish</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_SELJUK_DESC</Tag>
+  <English>Seljuk Empire</English>
+  <French>in French</French>
+  <German>Seldschukenreich</German>
+  <Italian>in Italian</Italian>
+  <Spanish>in Spanish</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_SELJUK_SHORT_DESC</Tag>
+  <English>Seljuks</English>
+  <French>in French</French>
+  <German>Seldschuken</German>
+  <Italian>in Italian</Italian>
+  <Spanish>in Spanish</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIV_ZULU_ADJECTIVE</Tag>
+  <English>
+   <Text>Zulu:Zulu</Text>
+   <Gender>Male</Gender>
+   <Plural>0:1</Plural>
+  </English>
+  <French>
+   <Text>zoulou:zouloue:zoulous:zouloues</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </French>
+  <German>
+   <Text>Zulul&#228;ndisch:zulul&#228;ndischen:zulul&#228;ndische</Text>
+   <Gender>Neuter:Neuter:Neuter</Gender>
+   <Plural>0:0:0</Plural>
+  </German>
+  <Italian>
+   <Text>zulu</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>zul&#250;.zul&#250;:zul&#250;es:zul&#250;es</Text>
+   <Gender>Male:Female:Male:Female</Gender>
+   <Plural>0:0:1:1</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_AME</Tag>
+  <English>The Power of the American Dream:</English>
+  <French>Le Pouvoir du R&#234;ve Am&#233;ricain :</French>
+  <German>Die Macht des Amerikanischen Traums:</German>
+  <Italian>Il potere del sogno americano:</Italian>
+  <Spanish>El poder del sue&#241;o americano:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_AME2</Tag>
+  <English>Additional happiness from running Republic, Capitalism and Free Market</English>
+  <French>Les populations des autres civilisations migrent vers les villes am&#233;ricaines</French>
+  <German>Zus&#228;tzliche Zufriedenheit unter Republik, Kapitalismus und Freiem Markt</German>
+  <Italian>La popolazione migra dalle altre civilt&#224; nelle citt&#224; americane</Italian>
+  <Spanish>La poblaci&#243;n emigra de otras civilizaciones a las ciudades estadounidenses</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS</Tag>
+  <English>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</English>
+  <French>[ICON_BULLET]%D1_Change%F2_HappyOrUn</French>
+  <German>[ICON_BULLET]%D1_Change%F2_HappyOrUn In Allen St&#228;dten</German>
+  <Italian>[ICON_BULLET]%D1_Change%F2_HappyOrUn</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change %F2_HappyOrUn</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ARA</Tag>
+  <English>The Power of Faith:</English>
+  <French>Le Pouvoir de la Foi :</French>
+  <German>Die Macht des Glaubens:</German>
+  <Italian>Il potere della fede:</Italian>
+  <Spanish>El poder de la fe:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ARA2</Tag>
+  <English>State religion spreads with temples to conquered cities</English>
+  <French>La religion d'&#233;tat se r&#233;pand dans les petits et grands lieux de culte pour conqu&#233;rir les villes</French>
+  <German>Ausbreitung der Staatsreligion inklusive Tempeln in eroberten St&#228;dten</German>
+  <Italian>La religione di stato si diffonde con templi e cattedrali nelle citt&#224; conquistate</Italian>
+  <Spanish>La religi&#243;n oficial se propaga con los templos y catedrales a las ciudades conquistadas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ARG</Tag>
+  <English>The Power of Juntas:</English>
+  <German>Die Macht der Juntas:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ARG2</Tag>
+  <English>Great Generals can start Golden Ages</English>
+  <German>Gro&#223;e Gener&#228;le k&#246;nnen Goldene Zeitalter ausl&#246;sen</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_AZT</Tag>
+  <English>The Power of Flower Wars:</English>
+  <French>Le Pouvoir du Sacrifice :</French>
+  <German>Die Macht der Blumenkriege:</German>
+  <Italian>Il potere del sacrificio:</Italian>
+  <Spanish>El poder del sacrificio:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_AZT2</Tag>
+  <English>Military units can enslave defeated enemy units, can sacrifice slaves to increase city happiness</English>
+  <French>Les unit&#233;s militaires peuvent asservir les unit&#233;s ennemies vaincues</French>
+  <German>Versklavung besiegter feindlicher Einheiten durch Milit&#228;reinheiten, can Sklaven opfern, um Zufriedenheit in St&#228;dten zu erh&#246;hen</German>
+  <Italian>Le unit&#224; militari possono schiavizzare le unit&#224; nemiche sconfitte</Italian>
+  <Spanish>Las unidades militares pueden esclavizar a las unidades enemigas derrotadas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_BAB</Tag>
+  <English>The Power of the Cradle of Civilization:</English>
+  <French>Le Pouvoir de la Loi :</French>
+  <German>Die Macht der Wiege der Zivilisation:</German>
+  <Italian>Il potere della legge:</Italian>
+  <Spanish>El poder de la ley:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_BAB2</Tag>
+  <English>Begins the game with the knowledge of Animal Husbandry, Pottery and Archery</English>
+  <French>Pas de r&#233;sistance dans les villes conquises</French>
+  <German>Beginnt das Spiel mit dem Wissen &#252;ber Tierzucht, Keramik und Bogenschie&#223;en</German>
+  <Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
+  <Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_BRA</Tag>
+  <English>The Power of Ethanol:</English>
+  <German>Die Macht des Ethanols:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_BRA2</Tag>
+  <English>Sugar counts as oil for Oil Industry</English>
+  <German>Zucker z&#228;hlt als &#214;l f&#252;r die &#214;lindustrie</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_BYZ</Tag>
+  <English>The Power of Bribery:</English>
+  <German>Die Macht der Bestechung:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_BYZ2</Tag>
+  <English>Double gold value in trades, spies can bribe barbarian units</English>
+  <German>Doppelter Wert von Gold beim Handeln, Spione k&#246;nnen barbarische Einheiten bestechen</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_BYZANTINE_UP</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BYZANTINE_UP_BODY</Tag>
+  <English>Choose the barbarian unit you wish to bribe:</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BYZANTINE_UP_BUTTON</Tag>
+  <English>%s1 (%d2 gold)</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BYZANTINE_UP_BUTTON_NONE</Tag>
+  <English>None</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_BYZANTINE_UP_TITLE</Tag>
+  <English>Bribing Barbarians</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_CAN</Tag>
+  <English>The Power of Multiculturalism:</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_CAN2</Tag>
+  <English>Immigrants bring [ICON_GREATPEOPLE] to your cities</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_CAR</Tag>
+  <English>The Power of Mercenaries:</English>
+  <French>Le Pouvoir des Mercenaires :</French>
+  <German>Die Macht der S&#246;ldner:</German>
+  <Italian>Il potere dei mercenari:</Italian>
+  <Spanish>El poder de los mercenarios:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_CAR2</Tag>
+  <English>Halved costs and no extra upkeep for hurried units</English>
+  <French>Co&#251;ts de recrutement et d'entretien des mercenaires divis&#233;s par deux</French>
+  <German>Halbierte Kosten und kein zus&#228;tzlicher Unterhalt f&#252;r beschleunigte Einheiten</German>
+  <Italian>Dimezzati i costi di assunzione e mantenimento dei mercenari</Italian>
+  <Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_CHI</Tag>
+  <English>The Power of Invention:</English>
+  <French>Le Pouvoir de Invention :</French>
+  <German>Die Macht der Erfindung:</German>
+  <Italian>Il potere del invenzione:</Italian>
+  <Spanish>El poder del invento:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_CHI2</Tag>
+  <English>Faster research of techologies that nobody has discovered yet until the Renaissance</English>
+  <French>1.5X Vitesse d'entra&#238;nement des unit&#233;s de combat rapproch&#233; et &#233;quip&#233;es d'armes &#224; feu</French>
+  <German>Schnellere Forschung von Technologien, die bisher niemand entdeckt hat, bis zum Beginn der Renaissance</German>
+  <Italian>Velocit&#224; di addestramento 1,5X per le unit&#224; da mischia e con armi da fuoco</Italian>
+  <Spanish>Velocidad de entrenamiento de unidades de cuerpo a cuerpo y con armas de p&#243;lvora multiplicada x1,5</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_COL</Tag>
+  <English>The Power of the Liberator:</English>
+  <German>Die Macht des Befreiers:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_COL2</Tag>
+  <English>No City Resistance on Conquest in Latin America</English>
+  <German>Keinen Widerstand in eroberten St&#228;dten in Lateinamerika</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_CONQUESTS_TARGET</Tag>
+  <English>%s1 has fielded an army to conquer our civilization!</English>
+  <German>%s1 hat eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_EGY</Tag>
+  <English>The Power of the Pharaoh:</English>
+  <French>Le Pouvoir du Pharaon :</French>
+  <German>Die Macht des Pharaos:</German>
+  <Italian>Il potere del faraone:</Italian>
+  <Spanish>El poder del fara&#243;n:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_EGY2</Tag>
+  <English>Dynasticism, Slavery and Pantheon are enabled at start</English>
+  <French>Le droit h&#233;r&#233;ditaire et l'esclavage sont disponibles au d&#233;part</French>
+  <German>Aktivierung von Dynastizismus, Sklaverei und Pantheon beim Spielstart</German>
+  <Italian>All'avvio sono abilitati governo ereditario e schiavit&#249;</Italian>
+  <Spanish>Gobierno hereditario y Esclavitud est&#225;n activados al principio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_EMIGRATION</Tag>
+  <English>A part of our population from %s1 is emigrating to the New World!</English>
+  <French>Une partie de notre population &#233;migre en Am&#233;rique !</French>
+  <German>Ein Teil unserer Bev&#246;lkerung aus %s1 wandert in die Neue Welt aus!</German>
+  <Italian>Parte della nostra popolazione emigra in America!</Italian>
+  <Spanish>&#161;Parte de nuestra poblaci&#243;n est&#225; emigrando a Estados Unidos!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ENG</Tag>
+  <English>The Power of Indirect Rule:</English>
+  <French>Le Pouvoir de la Royal Navy :</French>
+  <German>Die Macht der Indirekten Herrschaft:</German>
+  <Italian>Il potere della marina reale:</Italian>
+  <Spanish>El poder de la Royal Navy:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ENG2</Tag>
+  <English>Faraway Cities incur no extra Maintenance</English>
+  <French>Les unit&#233;s navales ont 2 chances de premi&#232;re attaque suppl&#233;mentaires</French>
+  <German>Weit entfernte St&#228;dte kosten keinen zus&#228;tzlichen Unterhalt</German>
+  <Italian>Le unit&#224; navali hanno 2 possibilit&#224; di Attacchi improvvisi supplementari</Italian>
+  <Spanish>Las unidades navales tienen 2 posibilidades adicionales de ataque de iniciativa</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ENSLAVE_LOSE</Tag>
+  <English>Your unit has been enslaved!</English>
+  <French>Votre unit&#233; a &#233;t&#233; asservie !</French>
+  <German>Eure Einheit wurde versklavt!</German>
+  <Italian>La tua unit&#224; &#232; stata schiavizzata!</Italian>
+  <Spanish>&#161;Tu unidad ha sido esclavizada!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ENSLAVE_WIN</Tag>
+  <English>An enemy unit has been enslaved!</English>
+  <French>Une unit&#233; ennemie a &#233;t&#233; asservie !</French>
+  <German>Eine feindliche Einheit wurde versklavt!</German>
+  <Italian>Un'unit&#224; nemica &#232; stata schiavizzata!</Italian>
+  <Spanish>&#161;Una unidad enemiga ha sido esclavizada!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ETH</Tag>
+  <English>The Power of Sovereignty:</English>
+  <French>Le Pouvoir de la Souverainet&#233; :</French>
+  <German>Die Macht der Souver&#228;nit&#228;t:</German>
+  <Italian>Il potere della sovranit&#224;:</Italian>
+  <Spanish>El poder de la soberan&#237;a:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ETH2</Tag>
+  <English>Land units receive +10% additional strength within cultural borders</English>
+  <French>Les villes &#233;thiopiennes ne peuvent pas &#234;tre exig&#233;es dans un congr&#232;s</French>
+  <German>Landeinheiten erhalten +10% zus&#228;tzliche St&#228;rke innerhalb kultureller Grenzen</German>
+  <Italian>Le citt&#224; etiopi non possono essere richieste durante un congresso</Italian>
+  <Spanish>No se pueden pedir ciudades et&#237;opes en un Congreso</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_FRA</Tag>
+  <English>The Power of Diplomacy:</English>
+  <French>Le Pouvoir de l'Entente :</French>
+  <German>Die Macht der Diplomatie:</German>
+  <Italian>Il potere dell'entente:</Italian>
+  <Spanish>El poder de la entente:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_FRA2</Tag>
+  <English>Diplomatic penalties expire faster, more likely to be voted for in congresses</English>
+  <French>Les autres civilisations ont une attitude plus amicale</French>
+  <German>Diplomatische Mali verfallen schneller; h&#246;here Wahrscheinlichkeit, Stimmen in Kongressen zu erhalten</German>
+  <Italian>Le altre civilt&#224; hanno un atteggiamento pi&#249; amichevole</Italian>
+  <Spanish>Las dem&#225;s civilizaciones mantienen una actitud m&#225;s amistosa</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_GER</Tag>
+  <English>The Power of Technique:</English>
+  <French>Le Pouvoir de la Technique :</French>
+  <German>Die Macht der Technik:</German>
+  <Italian>Il potere della tecnica:</Italian>
+  <Spanish>El poder de la t&#233;cnica:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_GER2</Tag>
+  <English>Free unit upgrades</English>
+  <French>Les unit&#233;s gratuites s'am&#233;liorent apr&#232;s la d&#233;couverte de l'Industrialisation</French>
+  <German>Gratis Einheitenaufwertung</German>
+  <Italian>Aggiornamenti gratuiti per le unit&#224; dopo la scoperta dell'industrialismo</Italian>
+  <Spanish>Modernizaci&#243;n de unidades gratuita tras el descubrimiento del Industrialismo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_GRE</Tag>
+  <English>The Power of Philosophy:</English>
+  <French>Le Pouvoir de la Philosophie :</French>
+  <German>Die Macht der Philosophie:</German>
+  <Italian>Il potere della filosofia:</Italian>
+  <Spanish>El poder de la filosof&#237;a:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_GRE2</Tag>
+  <English>+150% Great People birth rate until the end of the Classical Era</English>
+  <French>+150 % Taux de natalit&#233; des personnages illustres jusqu'&#224; la fin du Moyen Age</French>
+  <German>+150% Geburtenrate von Gro&#223;en Pers&#246;nlichkeiten bis zum Ende des klassischen Zeitalters</German>
+  <Italian>+150% tasso di natalit&#224; dei Grandi Personaggi fino alla fine del Medioevo</Italian>
+  <Spanish>+100% a la tasa de natalidad de grandes personajes hasta el final de la Edad Media</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_GREEK_CONQUESTS_TARGET</Tag>
+  <English>The Greeks have fielded an army to conquer our civilization!</English>
+  <German>Die Griechen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_HAR</Tag>
+  <English>The Power of Sanitation:</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_HAR2</Tag>
+  <English>Positive health contributes to city growth during the Ancient era</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_HOL</Tag>
+  <English>The Power of Trading Companies:</English>
+  <French>Le Pouvoir des Entreprises Commerciales :</French>
+  <German>Die Macht der Handelsgesellschaften:</German>
+  <Italian>Il potere delle compagnie commerciali:</Italian>
+  <Spanish>El poder de la Compa&#241;&#237;a de las Indias:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_HOL2</Tag>
+  <English>Doubled yield and commerce from the trading company corporation</English>
+  <French>Toutes les unit&#233;s en mer peuvent entrer sur un territoire ennemi</French>
+  <German>Doppeltes Einkommen durch Handelsgesellschaften</German>
+  <Italian>Tutte le unit&#224; marittime possono entrare in territorio nemico</Italian>
+  <Spanish>Todas las unidades mar&#237;timas pueden entrar en territorio enemigo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_HRE</Tag>
+  <English>The Power of Investiture:</English>
+  <German>Die Macht der Investitur:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_HRE2</Tag>
+  <English>Double construction speed of state religion buildings</English>
+  <German>Doppelte Baugeschwindigkeit f&#252;r Geb&#228;ude der Staatsreligion</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_IMMIGRATION</Tag>
+  <English>Our population in %s1 is growing due to immigrants from the Old World!</English>
+  <French>Notre population augmente gr&#226;ce aux immigrants du Vieux Monde !</French>
+  <German>Unsere Bev&#246;lkerung in %s1 w&#228;chst durch Einwanderer aus der Alten Welt!</German>
+  <Italian>La nostra popolazione sta crescendo grazie agli immigranti dal vecchio mondo!</Italian>
+  <Spanish>&#161;Nuestra poblaci&#243;n est&#225; creciendo como consecuencia de la inmigraci&#243;n procedente del Viejo Mundo!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_INC</Tag>
+  <English>The Power of Terraces:</English>
+  <French>Le Pouvoir des Terrasses :</French>
+  <German>Die Macht der Terrassen:</German>
+  <Italian>Il potere delle terrazze:</Italian>
+  <Spanish>El poder de las terrazas:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_INC2</Tag>
+  <English>Mountains produce 2 food and 1 hammer</English>
+  <French>Les montagnes produisent 2 de nourriture et 1 marteau</French>
+  <German>Berge gew&#228;hren 2 Nahrung und 1 Hammer</German>
+  <Italian>Le montagne producono 2 cibo e 1 scudo</Italian>
+  <Spanish>Las monta&#241;as producen 2 alimentos y 1 martillo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_IND</Tag>
+  <English>The Power of Purity:</English>
+  <French>Le Pouvoir de la Spiritualit&#233; :</French>
+  <German>Die Macht der Reinheit:</German>
+  <Italian>Il potere della spiritualit&#224;:</Italian>
+  <Spanish>El poder de la espiritualidad:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_IND2</Tag>
+  <English>One extra [ICON_HEALTHY] for every three excess [ICON_HAPPY]</English>
+  <French>Pas d'anarchie lors des r&#233;volutions</French>
+  <German>Eine zus&#228;tzliche [ICON_HAPPY] pro zwei &#252;berz&#228;hlige [ICON_HEALTHY]</German>
+  <Italian>Niente anarchia durante le rivoluzioni</Italian>
+  <Spanish>No hay anarqu&#237;a por las revoluciones</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_INO</Tag>
+  <English>The Power of Straits:</English>
+  <German>Die Macht der Meerengen:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_INO2</Tag>
+  <English>Additional gold from foreign ships passing through your core</English>
+  <German>Zus&#228;tzliches Gold von ausl&#228;ndischen Schiffen, die unser Kerngebiet passieren</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_IRA</Tag>
+  <English>The Power of Safaviyya:</English>
+  <German>Die Macht der Safaviyya:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_IRA2</Tag>
+  <English>Religious buildings produce +2 [ICON_CULTURE] and +2 [ICON_RESEARCH]</English>
+  <German>Religi&#246;se Geb&#228;ude produzieren +2 [ICON_CULTUE] und +2 [ICON_RESEARCH]</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ITA</Tag>
+  <English>The Power of Renaissance:</English>
+  <German>Die Macht der Renaissance:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ITA2</Tag>
+  <English>Free specialist in all of your cities until the Industrial Age</English>
+  <German>Zus&#228;tzlicher Spezialist in allen St&#228;dten bis zum Industriezeitalter</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_JAP</Tag>
+  <English>The Power of Modernization:</English>
+  <French>Le Pouvoir de l'Honneur :</French>
+  <German>Die Macht der Modernisierung:</German>
+  <Italian>Il potere dell'onore:</Italian>
+  <Spanish>El poder del honor:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_JAP2</Tag>
+  <English>After discovering all medieval techs, every tech three other civilizations are willing to trade costs -50% [ICON_RESEARCH]</English>
+  <French>Toutes les unit&#233;s terrestres ont un bonus de d&#233;fense des villes</French>
+  <German>Nachdem alle Technologien des Mittelalters entdeckt wurden, kostet jede Technologie -50% [ICON_RESEARCH], die drei andere Zivilisationen zu tauschen bereit sind</German>
+  <Italian>Tutte le unit&#224; militari terrestri hanno un bonus in difesa delle citt&#224;</Italian>
+  <Spanish>Todas las unidades militares terrestres tienen una bonificaci&#243;n al defender ciudades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_KHM</Tag>
+  <English>The Power of Monsoons:</English>
+  <French>Le Pouvoir des Moussons :</French>
+  <German>Die Macht des Monsuns:</German>
+  <Italian>Il potere dei monsoni:</Italian>
+  <Spanish>El poder de los monzones:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_KHM2</Tag>
+  <English>All land units can move through jungles and rainforests, can build farms on rainforest</English>
+  <French>Toutes les unit&#233;s terrestres peuvent se d&#233;placer &#224; travers la jungle</French>
+  <German>Landeinheiten k&#246;nnen Dschungel und Regenwald durchqueren, kann Farmen in Regenwald errichten</German>
+  <Italian>Tutte le unit&#224; di terra si possono muovere attraverso la giungla</Italian>
+  <Spanish>Todas las unidades terrestres se pueden mover a trav&#233;s de las junglas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_KON</Tag>
+  <English>The Power of the Tropics:</English>
+  <German>Die Macht der Tropen:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_KON2</Tag>
+  <English>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</English>
+  <German>Dschungel, Regenw&#228;lder und Marschen geben zus&#228;tzliche Nahrung und Produktion und verursachen keine Krankheit</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_KOR</Tag>
+  <English>The Power of Kobuksons:</English>
+  <German>Die Macht der Kobuksons:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_KOR2</Tag>
+  <English>Free Drill I and Drill II promotions for all naval units</English>
+  <German>Alle Marineeinheiten erhalten die Drill I und Drill II Bef&#246;rderung</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MAL</Tag>
+  <English>The Power of Wealth:</English>
+  <French>Le Pouvoir de la Richesse :</French>
+  <German>Die Macht des Wohlstands:</German>
+  <Italian>Il potere della ricchezza:</Italian>
+  <Spanish>El poder de la riqueza:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MAL2</Tag>
+  <English>+1 commerce in every land plot</English>
+  <French>+1 commerce sur toutes les cases de terre</French>
+  <German>+1 Kommerz auf jedem Land-Gel&#228;ndefeld</German>
+  <Italian>+1 commercio in ogni casella di terra</Italian>
+  <Spanish>+1 intercambio en cada casilla de tierra</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MAY</Tag>
+  <English>The Power of Astronomy:</English>
+  <French>Le Pouvoir de l'Astronomie :</French>
+  <German>Die Macht der Astronomie:</German>
+  <Italian>Il potere dell'astronomia:</Italian>
+  <Spanish>El poder de la astronom&#237;a:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MAY2</Tag>
+  <English>-40% research cost until beginning of the Middle Ages</English>
+  <French>-40% sur les co&#251;ts de recherche jusqu'&#224; la fin du Moyen Age</French>
+  <German>-40% Forschungskosten bis zum Anfang des Mittelalters</German>
+  <Italian>-40% ai costi di ricerca fino alla fine del Medioevo</Italian>
+  <Spanish>-40% al coste de investigaci&#243;n hasta el final de la Edad Media</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MEX</Tag>
+  <English>The Power of Arid Agriculture:</English>
+  <German>Die Macht der Ariden Landwirtschaft:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MEX2</Tag>
+  <English>Can build farms on hills</English>
+  <German>Kann Farmen auf H&#252;geln errichten</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MON</Tag>
+  <English>The Power of Terror:</English>
+  <French>Le Pouvoir de la Horde :</French>
+  <German>Die Macht des Schreckens:</German>
+  <Italian>Il potere dell'orda:</Italian>
+  <Spanish>El poder de la horda:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MON2</Tag>
+  <English>Cities threatened by your armies descend into unrest</English>
+  <French>Chaque ville ras&#233;e entra&#238;ne la reddition des villes ennemies voisines si elles sont approch&#233;es</French>
+  <German>Von Ihren Streitkr&#228;ften bedrohte St&#228;dte verfallen in Unruhe</German>
+  <Italian>Ogni citt&#224; distrutta fa s&#236; che le citt&#224; nemiche vicine si arrendano, se avvicinate</Italian>
+  <Spanish>Una ciudad arrasada provoca que las ciudades enemigas cercanas se rindan al aproximarse</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MONGOL_HORDE</Tag>
+  <English>Your successful conquests have made your horde grow!</English>
+  <German>Eure erfolgreichen Eroberungen haben Eure Horde wachsen lassen!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MONGOL_TERROR</Tag>
+  <English>The citizens of %s1 tremble in fear before our approaching armies!</English>
+  <German>Die B&#252;rger von %s1 erzittern vor Furcht vor unseren anr&#252;ckenden Truppen!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MONGOL_TERROR_US</Tag>
+  <English>Frightened by the approaching Mongol armies, the citizens of %s1 have abandoned their defenses!</English>
+  <German>Aus Furcht vor den anr&#252;ckenden mongolischen Armeen haben die B&#252;rger von %s1 ihre Stellungen aufgegeben!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MOO</Tag>
+  <English>The Power of Irrigation:</English>
+  <German>Die Macht der Bew&#228;sserung:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MOO2</Tag>
+  <English>Improvements that yield food give one extra food on plains tiles until the Renaissance</English>
+  <German>Verbesserungen, die Nahrung produzieren, geben eine zus&#228;tzliche Nahrungseinheit auf Ebenenfeldern bis zur Renaissance</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MUG</Tag>
+  <English>The Power of Tolerance:</English>
+  <German>Die Macht der Toleranz:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MUG2</Tag>
+  <English>No unhappiness from non-state religions</English>
+  <German>Keine Unzufriedenheit durch Nicht-Staatsreligionen</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_MULTICULTURALISM</Tag>
+  <English>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_PER</Tag>
+  <English>The Power of Satrapy:</English>
+  <French>Le Pouvoir de la Satrapie :</French>
+  <German>Die Macht der Satrapie:</German>
+  <Italian>Il potere della satrapia:</Italian>
+  <Spanish>El poder de la satrap&#237;a:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_PER2</Tag>
+  <English>No stability penalties for controlling cities with foreign culture</English>
+  <French>+2 points de stabilit&#233; par ville conquise</French>
+  <German>Keine Stabilit&#228;ts-Mali f&#252;r die Kontrolle von St&#228;dten mit fremder Kultur</German>
+  <Italian>+2 punti stabilit&#224; addizionali per ogni citt&#224; conquistata</Italian>
+  <Spanish>+2 puntos de estabilidad adicionales por cada ciudad conquistada</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_PLY</Tag>
+  <English>The Power of Navigation:</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_PLY2</Tag>
+  <English>No penalties for cultural expansion over Ocean tiles</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_POL</Tag>
+  <English>The Power of Golden Liberty:</English>
+  <German>Die Macht der Goldenen Freiheit:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_POL2</Tag>
+  <English>Additional food and commerce during Golden Ages</English>
+  <German>Zus&#228;tzliche Nahrung und Kommerz durch Goldene Zeitalter</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_POR</Tag>
+  <English>The Power of Exploration:</English>
+  <French>Le Pouvoir de l'Exploration :</French>
+  <German>Die Macht des Kundschaftens:</German>
+  <Italian>Il potere dell'esplorazione:</Italian>
+  <Spanish>El poder de la exploraci&#243;n:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_POR2</Tag>
+  <English>Ocean Trade allowed with Optics, reduced instability for overseas colonies</English>
+  <French>Toutes les unit&#233;s en mer ont un champ de vision &#233;largi</French>
+  <German>Ozeanhandel erm&#246;glicht durch Optik, verringerte Instabilit&#228;t durch &#220;bersee-Kolonien</German>
+  <Italian>Tutte le unit&#224; marine hanno un raggio visivo pi&#249; ampio</Italian>
+  <Spanish>Todas las unidades mar&#237;timas tienen un alcance de visibilidad superior</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ROM</Tag>
+  <English>The Power of Infrastructure:</English>
+  <French>Le Pouvoir de l'Infrastructure :</French>
+  <German>Die Macht der Infrastruktur:</German>
+  <Italian>Il potere delle infrastrutture:</Italian>
+  <Spanish>El poder de la infraestructura:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ROM2</Tag>
+  <English>Buildings that already exist in your capital receive +30% construction speed.</English>
+  <French>Les routes &#224; l'int&#233;rieur des fronti&#232;res romaines permettent aux unit&#233;s un mouvement 4X au lieu de 2X.</French>
+  <German>Geb&#228;ude, die bereits in der Hauptstadt errichtet wurden, erhalten +30% Baugeschwindigkeit.</German>
+  <Italian>Le strade all'interno dei confini romani permettono movimento delle unit&#224; 4X invece di 2X</Italian>
+  <Spanish>Las carreteras dentro de las fronteras romanas permiten un movimiento de unidades multiplicado x4 en lugar de x2</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ROMAN_CONQUESTS</Tag>
+  <English>An army has been fielded to attack %s1_civ_adjective!</English>
+  <German>Eine Armee wurde zusammengestellt zum Angriff auf %s1_civ_adjective!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ROMAN_CONQUESTS_TARGET</Tag>
+  <English>The Romans have fielded an army to conquer our civilization!</English>
+  <German>Die R&#246;mer haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ROMAN_TRIUMPH</Tag>
+  <English>Your triumphant victories have enabled you to field another legion!</English>
+  <German>Eure triumphalen Siege haben Euch erm&#246;glicht, eine weitere Legion auszuheben!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_RUS</Tag>
+  <English>The Power of General Winter:</English>
+  <French>Le Pouvoir du G&#233;n&#233;ral Hiver :</French>
+  <German>Die Macht von "General Winter":</German>
+  <Italian>Il potere del Generale Inverno:</Italian>
+  <Spanish>El poder del General Invierno:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_RUS2</Tag>
+  <English>Enemy units in Russia take damage every turn</English>
+  <French>Les unit&#233;s ennemies en Russie subissent des dommages &#224; chaque tour</French>
+  <German>Schaden in jeder Runde f&#252;r feindliche Einheiten in Russland</German>
+  <Italian>Le unit&#224; nemiche in Russia subiscono danni a ogni turno</Italian>
+  <Spanish>Las unidades enemigas en Rusia sufren da&#241;os cada turno</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_SPA</Tag>
+  <English>The Power of Discovery:</English>
+  <French>Le Pouvoir de la D&#233;couverte :</French>
+  <German>Die Macht der Entdeckungen:</German>
+  <Italian>Il potere della scoperta:</Italian>
+  <Spanish>El poder del descubrimiento:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_SPA2</Tag>
+  <English>Naval units receive +2 movement points</English>
+  <French>Les unit&#233;s navales re&#231;oivent +2 points de mouvement</French>
+  <German>2 zus&#228;tzliche Fortbewegungspunkte f&#252;r Marineeinheiten</German>
+  <Italian>Le unit&#224; navali ricevono +2 punti di movimento</Italian>
+  <Spanish>Las unidades navales nuevas reciben +2 puntos de movimiento</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TAM</Tag>
+  <English>The Power of Thalassocracy:</English>
+  <German>Die Macht der Thalassokratie:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TAM2</Tag>
+  <English>Extra commerce on coast and ocean tiles</English>
+  <German>Zus&#228;tzlicher Kommerz auf K&#252;sten- und Ozeanfeldern</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TAMIL_CONQUESTS_TARGET</Tag>
+  <English>The Tamils have fielded an army to conquer our civilization!</English>
+  <German>Die Tamilen haben eine Armee zum Angriff auf unsere Zivilisation zusammengestellt!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TERROR1</Tag>
+  <English>Citizens of</English>
+  <French>Les citoyens de</French>
+  <German>Die B&#252;rger von</German>
+  <Italian>I cittadini di</Italian>
+  <Spanish>Los ciudadanos de</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TERROR2</Tag>
+  <English>fear the same fate of their neighbour inhabitants and surrender!</English>
+  <French>craignent de subir le m&#234;me sort que leurs voisins et se rendent !</French>
+  <German>f&#252;rchten, dass sie dasselbe Schicksal ereilt wie ihre Nachbarn, und kapitulieren!</German>
+  <Italian>temono di subire lo stesso fato dei vicini e si arrendono!</Italian>
+  <Spanish>temen sufrir el mismo destino que sus vecinos y se rinden.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_THA</Tag>
+  <English>The Power of Father Governs Children:</English>
+  <German>Die Macht von Vater Regiert Kinder:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_THA2</Tag>
+  <English>Can use twice as many units to generate military happiness</English>
+  <German>Kann zweimal soviele milit&#228;rische Einheiten einsetzen, um Zufriedenheit zu generieren</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TIB</Tag>
+  <English>The Power of Missionaries:</English>
+  <German>Die Macht der Missionare:</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TIB2</Tag>
+  <English>Can train unlimited missionaries; Missionaries can enter foreign territory</English>
+  <German>Kann unbegrenzt Missionare ausbilden; Missionare k&#246;nnen fremdes Territorium betreten</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TUR</Tag>
+  <English>The Power of Devshirme:</English>
+  <French>Le Pouvoir de l'Assimilation :</French>
+  <German>Die Macht der Devshirme:</German>
+  <Italian>Il potere dell'assimilazione:</Italian>
+  <Spanish>El poder de la asimilaci&#243;n:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_TUR2</Tag>
+  <English>Can Conscript two extra Units in Cities with Non-State Religions</English>
+  <French>La plus grande partie de la culture &#233;trang&#232;re dans les villes turques est convertie &#224; la culture turque</French>
+  <German>Kann zwei zus&#228;tzliche Einheiten in St&#228;dten mit Nicht-Staatsreligionen rekrutieren</German>
+  <Italian>La maggioranza di cultura straniera nelle citt&#224; turche &#232; convertita in cultura turca</Italian>
+  <Spanish>La mayor parte de la cultura extranjera en ciudades turcas se convierte a cultura turca</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_VIK</Tag>
+  <English>The Power of Raid:</English>
+  <French>Le Pouvoir du Pillage :</French>
+  <German>Die Macht des Raubens:</German>
+  <Italian>Il potere dell'incursione:</Italian>
+  <Spanish>El poder del pillaje:</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_VIK2</Tag>
+  <English>Additional gold from pillaging, conquering cities and sinking ships during the Middle Ages</English>
+  <French>5X Or obtenu par le pillage</French>
+  <German>Zus&#228;tzliches gold durch Pl&#252;nderung, Stadteroberung und das Versenken von Schiffen w&#228;hrend des Mittelalters</German>
+  <Italian>5X oro ottenuto dai saccheggi</Italian>
+  <Spanish>Se obtiene oro x5 del pillaje</Spanish>
+ </TEXT>
+</Civ4GameText>

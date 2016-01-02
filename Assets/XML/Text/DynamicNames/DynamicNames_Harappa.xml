@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
-<!-- Sid Meier's Civilization 4 -->
-<!-- -->
-<!-- Game Text - Unit Upgrades for Civilopedia -->
+<!-- Harappa -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_DESC</Tag>
@@ -31,5 +28,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HARAPPA_INDUS</Tag>
 		<English>Indus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HARAPPANS_ADJECTIVE</Tag>
+		<English>Harappan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HARAPPANS_DESC</Tag>
+		<English>The Harappans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HARAPPANS_SHORT_DESC</Tag>
+		<English>Harappa</English>
 	</TEXT>
 </Civ4GameText>

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
-<!-- Sid Meier's Civilization 4 -->
-<!-- -->
-<!-- Game Text - Unit Upgrades for Civilopedia -->
+<!-- Generic Dynamic Names -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_PEOPLES_OF</Tag>
@@ -115,6 +112,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_COLONY_OF</Tag>
 		<English></English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_COLONY</Tag>
+		<English>Colony of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE</Tag>
+		<English>Protectorate of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
