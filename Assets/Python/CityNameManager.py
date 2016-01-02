@@ -7,36 +7,12 @@ import Popup
 from Consts import *
 import RFCUtils
 from StoredData import sd
-from cityNameLists import cityNameLists
+from CityFoundingMapsWrapper import *
 
 # globals
 gc = CyGlobalContext()
 utils = RFCUtils.RFCUtils()
 PyPlayer = PyHelpers.PyPlayer
-
-iNumLanguages = 41
-(iLangEgyptian, iLangEgyptianArabic, iLangIndian, iLangChinese, iLangTibetan, 
-iLangBabylonian, iLangPersian, iLangGreek, iLangPhoenician, iLangLatin, 
-iLangJapanese, iLangEthiopian, iLangKorean, iLangMayan, iLangByzantine, 
-iLangViking, iLangArabian, iLangKhmer, iLangIndonesian, iLangSpanish, 
-iLangFrench, iLangEnglish, iLangGerman, iLangRussian, iLangDutch, 
-iLangMalian, iLangPolish, iLangPortuguese, iLangQuechua, iLangItalian, 
-iLangMongolian, iLangAztec, iLangTurkish, iLangThai, iLangCongolese, 
-iLangPrussian, iLangAmerican, iLangCeltic, iLangMexican, iLangPolynesian,
-iLangHarappan) = range(iNumLanguages)
-
-#Hugh_Mann: We have to hardcode the list of city founding names here to be passed into the instantiation of cityNameLists.py class 
-#they live in /Python/CityNameLists/*.csv
-sLanguageList = ["American","Arabian","Aztec","Babylonian","Byzantine","Chinese","Congolese","Dutch","Egyptian","English","Ethiopian",\
-"French","German","Greek","Harappan","Indian","Indonesian","Italian","Japanese","Khmer","Korean","Latin","Malian","Mayan","Mexican","Mongolian","Persian",\
-"Phoenician","Polish","Polynesian","Portuguese","Prussian","Quechua","Russian","Spanish","Thai","Tibetan","Turkish","Viking"];
-#And the matching list of integers taken from iNumLanguages
-iLangList = [iLangAmerican,iLangArabian,iLangAztec,iLangBabylonian,iLangByzantine,iLangChinese,iLangCongolese,iLangDutch,iLangEgyptian,iLangEnglish,iLangEthiopian,\
-iLangFrench,iLangGerman,iLangGreek,iLangHarappan,iLangIndian,iLangIndonesian,iLangItalian,iLangJapanese,iLangKhmer,iLangKorean,iLangLatin,iLangMalian,iLangMayan,iLangMexican,iLangMongolian,iLangPersian,\
-iLangPhoenician,iLangPolish,iLangPolynesian,iLangPortuguese,iLangPrussian,iLangQuechua,iLangRussian,iLangSpanish,iLangThai,iLangTibetan,iLangTurkish,iLangViking]
-
-theLists   = cityNameLists(sLanguageList,iLangList);
-dFoundMaps = theLists.dictionary;
 
 # methods
 
@@ -344,6 +320,7 @@ def onRevolution(iCiv):
 
 	if iCiv == iEgypt:
 		updateCityNames(iCiv)
+
 
 # city coordinates
 
