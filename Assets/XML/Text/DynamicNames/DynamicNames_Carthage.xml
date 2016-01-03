@@ -12,6 +12,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_ADJECTIVE</Tag>
 		<English>Phoenician</English>
+		<German>
+			<Text>Ph&#246;nizisch:ph&#246;nizischen:ph&#246;nizische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_PEOPLES</Tag>
@@ -52,9 +57,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_ADJECTIVE</Tag>
 		<English>
-			<Text>Phoenician</Text>
+			<Text>Carthaginian:Carthaginians</Text>
 			<Gender>Male</Gender>
-			<Plural>0</Plural>
+			<Plural>0:1</Plural>
 		</English>
 		<French>
 			<Text>carthaginois:carthaginoise:carthaginois:carthaginoises</Text>
@@ -62,7 +67,7 @@
 			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
-			<Text>Ph&#246;nizisch:ph&#246;nizischen:ph&#246;nizische</Text>
+			<Text>Karthagisch:karthagischen:karthagische</Text>
 			<Gender>Neuter:Neuter:Neuter</Gender>
 			<Plural>0:0:0</Plural>
 		</German>
@@ -75,6 +80,30 @@
 			<Text>cartagin&#233;s:cartaginesa:cartagineses:cartaginesas</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_SHORT_DESC</Tag>
+		<English>Carthage</English>
+		<French>
+			<Text>Carthaginois</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Karthago</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Cartaginesi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cartago</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
 </Civ4GameText>
