@@ -25,6 +25,7 @@ import WBInfoScreen
 import WBTradeScreen
 import CvEventManager
 import Popup
+import CityNameManager as cnm
 
 import Consts as con
 import RFCUtils
@@ -73,7 +74,7 @@ class CvWorldBuilderScreen:
 
 ## Platy Builder ##
 		self.PlayerMode = ["Ownership", "Units", "Buildings", "City", "StartingPlot"]
-		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features", "Flip", "Core", "SettlerValue"]
+		self.MapMode = ["AddLandMark", "PlotData", "River", "Improvements", "Bonus", "PlotType", "Terrain", "Routes", "Features", "CNM", "Flip", "Core", "SettlerValue"]
 		self.RevealMode = ["RevealPlot", "INVISIBLE_SUBMARINE", "INVISIBLE_STEALTH", "Blockade"]
 		self.iBrushWidth = 1
 		self.iBrushHeight = 1
@@ -122,6 +123,10 @@ class CvWorldBuilderScreen:
 		if not CyInterface().isInAdvancedStart():
 			sText = "<font=3b>%s, X: %d, Y: %d</font>" %(CyTranslator().getText("TXT_KEY_WB_LATITUDE",(self.m_pCurrentPlot.getLatitude(),)), self.m_iCurrentX, self.m_iCurrentY)
 			screen.setLabel( "WBCoords", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 6, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+			if self.iPlayerAddMode == "CNM":
+				sName = cnm.getFoundName(self.m_iCurrentPlayer, (self.m_iCurrentX, self.m_iCurrentY))
+				sName = "<font=4b>%s</font>" % sName
+				screen.setLabel("CNMName", "Background", sName, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 35, -0.3, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 		
 		if self.iPlayerAddMode in self.RevealMode:
 			if CyInterface().isLeftMouseDown():
@@ -1079,6 +1084,7 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("BrushWidth")
 			screen.deleteWidget("BrushHeight")
 			screen.deleteWidget("SensibilityCheck")
+			screen.deleteWidget("CNMButton")
 			screen.deleteWidget("FlipButton")
 			screen.deleteWidget("CoreButton")
 			screen.deleteWidget("SettlerValueButton")
@@ -1221,7 +1227,10 @@ class CvWorldBuilderScreen:
 				iX += iAdjust
 				screen.addCheckBoxGFC("SettlerValueButton", ",-,Art/Interface/Buttons/GodsOfOld_Atlas.dds,7,1", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), 
 					iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 37, ButtonStyles.BUTTON_STYLE_LABEL)
-				iX	 += iAdjust			
+				iX	 += iAdjust	
+				screen.addCheckBoxGFC("CNMButton", gc.getMissionInfo(gc.getInfoTypeForString("MISSION_FOUND")).getButton(), CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
+					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 38, ButtonStyles.BUTTON_STYLE_LABEL)
+				iX += iAdjust				
 				screen.addDropDownBoxGFC("PresetValue", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 				for i in range(len(self.lPresetValues)):
 					screen.addPullDownString("PresetValue", str(self.lPresetValues[i]), i, self.lPresetValues[i], self.lPresetValues[i] == iSetValue)
@@ -1325,6 +1334,7 @@ class CvWorldBuilderScreen:
 		screen.setState("PythonEffectButton", bPython)
 		screen.setState("HideInactive", bHideInactive)
 		screen.setState("SensibilityCheck", self.bSensibility)
+		screen.setState("CNMButton", self.iPlayerAddMode == "CNM")
 		screen.setState("FlipButton", self.iPlayerAddMode == "Flip")
 		screen.setState("CoreButton", self.iPlayerAddMode == "Core")
 		screen.setState("SettlerValueButton", self.iPlayerAddMode == "SettlerValue")
@@ -2060,6 +2070,10 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "AddRiverButton":
 			self.iPlayerAddMode = "River"
 			self.refreshSideMenu()
+			
+		elif inputClass.getFunctionName() == "CNMButton":
+			self.iPlayerAddMode = "CNM"
+			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "FlipButton":
 			self.iPlayerAddMode = "Flip"
@@ -2141,4 +2155,7 @@ class CvWorldBuilderScreen:
 			
 		elif inputClass.getFunctionName() == "WorldBuilderConvertSave":
 			import ConvertSave
+		
+		screen.deleteWidget("CNMName")
+		
 		return 1

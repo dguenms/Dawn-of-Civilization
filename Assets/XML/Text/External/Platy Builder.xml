@@ -1252,4 +1252,12 @@
 		<Italian>All Civs</Italian>
 		<Spanish>All Civs</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CNM</Tag>
+		<English>City Name Manager</English>
+		<French>City Name Manager</French>
+		<German>City Name Manager</German>
+		<Italian>City Name Manager</Italian>
+		<Spanish>City Name Manager</Spanish>
+	</TEXT>
 </Civ4GameText>
