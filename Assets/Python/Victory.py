@@ -1849,12 +1849,16 @@ def onGreatPersonBorn(iPlayer, unit):
 				if pAztecs.getGreatGeneralsCreated() >= 3:
 					win(iAztecs, 1)
 					
-def onUnitPillage(iPlayer, iGold):
+def onUnitPillage(iPlayer, iGold, iUnit):
 
 	# third Viking goal: acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
 	if iPlayer == iVikings:
 		if isPossible(iVikings, 2):
 			sd.changeVikingGold(iGold)
+			
+	elif iPlayer == iMoors:
+		if isPossible(iMoors, 2) and iUnit == iMoorishCorsair:
+			sd.changeMoorishGold(iGold)
 		
 def onCityCaptureGold(iPlayer, iGold):
 
