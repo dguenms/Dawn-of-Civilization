@@ -52,4 +52,56 @@
 		<Tag>TXT_KEY_CIV_CARTHAGE_EMPIRE</Tag>
 		<English>Carthaginian Empire</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_ADJECTIVE</Tag>
+		<English>
+			<Text>Carthaginian:Carthaginians</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>Carthaginois</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Karthagisch:karthagischen:karthagische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>del popolo cartaginese</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>cartagin&#233;s:cartaginesa:cartagineses:cartaginesas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CARTHAGE_SHORT_DESC</Tag>
+		<English>Carthage</English>
+		<French>
+			<Text>Carthaginois</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Karthago</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Cartaginesi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cartago</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
 </Civ4GameText>
