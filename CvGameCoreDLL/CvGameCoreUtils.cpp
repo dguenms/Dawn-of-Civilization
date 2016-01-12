@@ -2635,32 +2635,6 @@ int calculateLevel(int iExperience, PlayerTypes ePlayer)
 }
 // BUG - Unit Experience - end
 
-int getCivSpreadFactor(PlayerTypes ePlayer, ReligionTypes eReligion)
-{
-	int iSpreadFactor = civSpreadFactor[ePlayer][eReligion];
-
-	if (eReligion == CATHOLICISM)
-	{
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
-		{
-			if (iSpreadFactor < civSpreadFactor[ePlayer][ORTHODOXY])
-			{
-				iSpreadFactor = civSpreadFactor[ePlayer][ORTHODOXY];
-			}
-		}
-
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
-		{
-			if (iSpreadFactor < civSpreadFactor[ePlayer][PROTESTANTISM])
-			{
-				iSpreadFactor = civSpreadFactor[ePlayer][PROTESTANTISM];
-			}
-		}
-	}
-
-	return iSpreadFactor;
-}
-
 BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding)
 {
 	return (BuildingTypes)GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(GC.getBuildingInfo(eBuilding).getBuildingClassType());
