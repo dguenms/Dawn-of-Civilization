@@ -97,7 +97,7 @@ def getNativeLanguages(tPlot):
 	lCorePlayers = [i for i in range(iNumPlayers) if plot.isCore(i)]
 	if not lCorePlayers: lCorePlayers = [i for i in range(iNumPlayers)]
 	
-	iNativePlayer = utils.getHighestIndex(lCorePlayers, lambda x: plot.getSettlerMapValue(x))
+	iNativePlayer = utils.getHighestIndex(lCorePlayers, lambda x: plot.getSettlerValue(x))
 	
 	return getLanguages(iNativePlayer)
 

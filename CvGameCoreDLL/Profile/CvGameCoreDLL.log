@@ -1,0 +1,210 @@
+﻿Build started 30.12.2015 01:01:28.
+     1>Project "E:\Spiele\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword\Mods\RFC Dawn of Civilization\CvGameCoreDLL\CvGameCoreDLL.vcxproj" on node 2 (rebuild target(s)).
+     1>CoreClean:
+         set TARGET=Profile
+         nmake clean
+         
+         
+         Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+       PrepareForBuild:
+         Creating directory "obj\Win32\Profile\".
+       Rebuild:
+         set TARGET=Profile
+         nmake clean
+         nmake source_list
+         nmake fastdep
+         nmake dll
+         
+         
+         Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         
+         Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Building source list
+         
+         Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Running fastdep
+         
+         Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         _precompile.cpp
+         CvArea.cpp
+         CvArtFileMgr.cpp
+         CvBugOptions.cpp
+         CvCity.cpp
+     1>CvCity.cpp(14818): warning C4101: 'bStateReligion' : unreferenced local variable
+     1>CvCity.cpp(14821): warning C4101: 'iSpreadFactor' : unreferenced local variable
+     1>CvCity.cpp(14819): warning C4101: 'bDistanceReduction' : unreferenced local variable
+     1>CvCity.cpp(14816): warning C4101: 'eReligion' : unreferenced local variable
+     1>CvCity.cpp(14821): warning C4101: 'iRegionFactor' : unreferenced local variable
+     1>CvCity.cpp(14817): warning C4101: 'ePlayer' : unreferenced local variable
+         CvCityAI.cpp
+         CvDeal.cpp
+         CvDiploParameters.cpp
+         CvDLLButtonPopup.cpp
+         CvDLLEntity.cpp
+         CvDLLPython.cpp
+         CvDllPythonEvents.cpp
+         CvDllTranslator.cpp
+         CvDLLWidgetData.cpp
+         CvEventReporter.cpp
+         CvFractal.cpp
+         CvGame.cpp
+         CvGameAI.cpp
+         CvGameCoreDLL.cpp
+         CvGameCoreUtils.cpp
+         CvGameInterface.cpp
+         CvGameTextMgr.cpp
+     1>CvGameTextMgr.cpp(4664): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4664): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4664): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4666): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4670): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4730): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4730): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4730): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4732): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4734): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4737): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4739): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4743): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4745): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4801): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4801): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4801): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+     1>CvGameTextMgr.cpp(4803): warning C4288: nonstandard extension used : 'iI' : loop control variable declared in the for-loop is used outside the for-loop scope; it conflicts with the declaration in the outer scope
+                 CvGameTextMgr.cpp(4482) : definition of 'iI' used
+                 CvGameTextMgr.cpp(3807) : definition of 'iI' ignored
+         CvGlobals.cpp
+         CvHallOfFameInfo.cpp
+         CvInfos.cpp
+         CvInfoWater.cpp
+         CvInitCore.cpp
+         CvMap.cpp
+         CvMapGenerator.cpp
+         CvMessageControl.cpp
+         CvMessageData.cpp
+         CvPlayer.cpp
+         CvPlayerAI.cpp
+         CvPlot.cpp
+         CvPlotGroup.cpp
+         CvPopupInfo.cpp
+         CvPopupReturn.cpp
+         CvRandom.cpp
+         CvReplayInfo.cpp
+         CvReplayMessage.cpp
+         CvRhyes.cpp
+         CvSelectionGroup.cpp
+         CvSelectionGroupAI.cpp
+         CvStatistics.cpp
+         CvStructs.cpp
+         CvTalkingHeadMessage.cpp
+         CvTeam.cpp
+         CvTeamAI.cpp
+         CvUnit.cpp
+         CvUnitAI.cpp
+         CvXMLLoadUtility.cpp
+         CvXMLLoadUtilityGet.cpp
+         CvXMLLoadUtilityInit.cpp
+         CvXMLLoadUtilitySet.cpp
+         CyArea.cpp
+         CyAreaInterface.cpp
+         CyArgsList.cpp
+         CyArtFileMgr.cpp
+         CyArtFileMgrInterface.cpp
+         CyCity.cpp
+         CyCityInterface1.cpp
+         CyCityInterface2.cpp
+         CyDeal.cpp
+         CyEnumsInterface.cpp
+         CyGame.cpp
+         CyGameCoreUtils.cpp
+         CyGameCoreUtilsInterface.cpp
+         CyGameInterface.cpp
+         CyGameTextMgr.cpp
+         CyGameTextMgrInterface.cpp
+         CyGlobalContext.cpp
+         CyGlobalContextInterface1.cpp
+         CyGlobalContextInterface2.cpp
+         CyGlobalContextInterface3.cpp
+         CyGlobalContextInterface4.cpp
+         CyHallOfFameInfo.cpp
+         CyHallOfFameInterface.cpp
+         CyInfoInterface1.cpp
+         CyInfoInterface2.cpp
+         CyInfoInterface3.cpp
+         CyMap.cpp
+         CyMapGenerator.cpp
+         CyMapGeneratorInterface.cpp
+         CyMapInterface.cpp
+         CyMessageControl.cpp
+         CyMessageControlInterface.cpp
+         CyPlayer.cpp
+         CyPlayerInterface1.cpp
+         CyPlayerInterface2.cpp
+         CyPlot.cpp
+         CyPlotInterface1.cpp
+         CyRandomInterface.cpp
+         CyReplayInfo.cpp
+         CySelectionGroup.cpp
+         CySelectionGroupInterface.cpp
+         CyStructsInterface1.cpp
+         CyTeam.cpp
+         CyTeamInterface.cpp
+         CyUnit.cpp
+         CyUnitInterface1.cpp
+         FAssert.cpp
+         FDialogTemplate.cpp
+         Linking DLL
+            Creating library temp_files\Profile\CvGameCoreDLL.lib and object temp_files\Profile\CvGameCoreDLL.exp
+         	COPY "temp_files\Profile\CvGameCoreDLL.dll" "Profile\CvGameCoreDLL.dll"
+                 1 Datei(en) kopiert.
+         	COPY "Profile\CvGameCoreDLL.dll" "..\Assets\."
+                 1 Datei(en) kopiert.
+     1>Done Building Project "E:\Spiele\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword\Mods\RFC Dawn of Civilization\CvGameCoreDLL\CvGameCoreDLL.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:02:46.41
