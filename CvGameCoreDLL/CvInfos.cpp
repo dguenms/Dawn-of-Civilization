@@ -10751,130 +10751,24 @@ int CvHandicapInfo::getUnitCostPercent() const
 }
 
 //Rhye - start switch
-int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
+int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes ePlayer) const
 {
-	int result = m_iUnitCostPercent;
+	int iUnitCost = m_iUnitCostPercent;
 
-	if (getScenario() >= SCENARIO_600AD) { //late start condition
-		if (pl < VIKING) {
-			result *= 90;
-			result /= 100;
-		}
-	}
-	/*switch (pl)
-	{
-	case EGYPT:
-		return result*125/100;
-	case INDIA:
-		return result*115/100;
-	case CHINA:
-		return result*10/10;   //10 before the addition of chinese UP //11 before removal of UP
-	case BABYLONIA:
-		return result*12/10;
-	case GREECE:
-		return result*11/10;   //11 before removal of Aggressive trait
-	case PERSIA:
-		return result*100/100;
-	case CARTHAGE:
-		return result*125/100;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            return result*11/10;
-        else
-            return result*10/10;  // Italy
-	case JAPAN:
-		return result*113/100;   //11 before removal of Aggressive trait
-	case ETHIOPIA:
-		return result*100/100;
-    case KOREA:
-        return result*113/100;
-	case MAYA:
-		return result*110/100;
-    case BYZANTIUM:
-        return result*110/100;
-	case VIKING:
-		return result*9/10;
-	case ARABIA:
-		return result*105/100;
-	case KHMER:
-		return result*90/100;
-	case INDONESIA:
-		return result*9/10;
-	case SPAIN:
-		return result*11/10;
-	case FRANCE:
-		return result*97/100;
-	case ENGLAND:
-		return result*10/10;
-	case GERMANY:
-		return result*75/100;
-	case RUSSIA:
-		return result*75/100;
-	case NETHERLANDS:
-		return result*90/100;
-	case MALI:
-		return result*95/100;
-	case TURKEY:
-		return result*8/10;
-	case PORTUGAL:
-		return result*93/100;
-	case INCA:
-		return result*100/100;   //10 before removal of Aggressive trait
-	case MONGOLIA:
-		return result*75/100;   //11 before removal of Aggressive trait
-	case AZTEC:
-		return result*95/100;   //10 before removal of Aggressive trait
-	case AMERICA:
-		return result*75/100;
-	case INDEPENDENT:
-		return result*13/10;
-	case INDEPENDENT2:
-		return result*13/10;
-	default:
-		return result;
-		break;
-	}*/
-
-	int iFinalResult;
-
-	if (pl < NUM_MAJOR_PLAYERS)
-	{
-		iFinalResult = result * unitCostModifier[pl] / 100;
-	}else if (pl == INDEPENDENT || pl == INDEPENDENT2)
-	{
-		iFinalResult = 0;
-	}else if (pl == SELJUKS)
-	{
-		iFinalResult = 50 / 100;
-	}else
-	{
-		iFinalResult = result;
-	}
-
-	// handle reborn civs explicitly (overwrite)
-	if (GET_PLAYER((PlayerTypes)pl).isReborn())
-	{
-		//if (pl == ROME)
-			//iFinalResult = result * 100 / 100;
-		if (pl == PERSIA)
-			iFinalResult = result * 90 / 100;
-		else if (pl == AZTEC)
-			iFinalResult = result * 90 / 100;
-		else if (pl == MAYA)
-			iFinalResult = result * 90 / 100;
-	}
+	iUnitCost *= GET_PLAYER(ePlayer).getModifier(MODIFIER_UNIT_UPKEEP);
+	iUnitCost /= 100;
 
 	// bonus for Netherlands and Germany in the beginning
-	if (pl == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
+	if (ePlayer == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
 	{
-	    iFinalResult /= 2;
+	    iUnitCost /= 2;
 	}
-	else if (pl == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
+	else if (ePlayer == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
 	{
-	    iFinalResult /= 2;
+	    iUnitCost /= 2;
 	}
 
-	return iFinalResult;
+	return iUnitCost;
 }
 //Rhye - end
 
@@ -10939,7 +10833,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 
 	// reduce tech costs before the human players enter the game
 	// Leoreth: limit this effect to a constant period, otherwise the effect scales too much with late spawns
-	if (getTurnForYear(startingTurnYear[eHuman]) - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn <= getTurnForYear(startingTurnYear[eHuman]))
+	if (GET_PLAYER(eHuman).getBirthTurn() - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn <= GET_PLAYER(eHuman).getBirthTurn())
 	{
 		iResearchPercent *= iHumanSpawnModifier;
 		iResearchPercent /= 100;
@@ -10955,112 +10849,14 @@ int CvHandicapInfo::getDistanceMaintenancePercent() const
 }
 
 //Rhye - start switch
-int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
+int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes ePlayer) const
 {
-	int result = m_iDistanceMaintenancePercent;
+	int iDistanceMaintenance = m_iDistanceMaintenancePercent;
 
-	if (getScenario() >= SCENARIO_600AD) //late start condition
-		if (pl < VIKING) {
-			result *= 85;
-			result /= 100;
-		}
+	iDistanceMaintenance *= GET_PLAYER(ePlayer).getModifier(MODIFIER_DISTANCE_MAINTENANCE);
+	iDistanceMaintenance /= 100;
 
-	/*switch (pl)
-	{
-	case EGYPT:
-		return result*10/10;
-	case INDIA:
-		return result*10/10;
-	case CHINA:
-		return result*10/10;
-	case BABYLONIA:
-		return result*11/10;
-	case GREECE:
-		return result*90/100;
-	case PERSIA:
-		// start UP - old
-		return result*10/10;
-		//return result*0;
-		// end UP
-	case CARTHAGE:
-		return result*75/100;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            return result*75/100;
-        else
-            return result*7/10;     // Leoreth - Renaissance Italy
-	case JAPAN:
-		return result*95/100;
-	case ETHIOPIA:
-		return result*10/10;
-    case KOREA:
-        return result*10/10;
-	case MAYA:
-		return result*10/10;
-    case BYZANTIUM:
-        return result*8/10;
-	case VIKING:
-		return result*7/10;
-	case ARABIA:
-		return result*7/10;
-	case KHMER:
-		return result*8/10;
-	case INDONESIA:
-		return result*8/10;
-	case SPAIN:
-		return result*5/10;
-	case FRANCE:
-		return result*5/10;
-	case ENGLAND:
-		return result*25/100; //50 before new UP (Leoreth)
-	case GERMANY:
-		return result*6/10;
-	case RUSSIA:
-		return result*5/10;
-	case NETHERLANDS:
-		return result*45/100; // Leoreth: slightly lowered, 50 before
-	case MALI:
-		return result*80/100;  //70 before new UP
-	case TURKEY:
-		return result*6/10;
-	case PORTUGAL:
-		return result*5/10;
-	case INCA:
-		return result*6/10;
-	case MONGOLIA:
-		return result*58/100;
-	case AZTEC:
-		return result*7/10;
-	case AMERICA:
-		return result*6/10;
-	default:
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-			return result*5/10;
-		else
-			return result*2/10;
-	}*/
-
-	int iFinalResult;
-
-	if (pl < NUM_MAJOR_PLAYERS)
-	{
-		iFinalResult = result * distanceMaintenanceModifier[pl] / 100;
-	}else
-	{
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-			iFinalResult = result * 50 / 100;
-		else
-			iFinalResult = result * 20 / 100;
-	}
-
-	// handle respawns explicitly here (overwrite)
-	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
-	{
-		if (pl == ROME)
-			iFinalResult = result * 70 / 100;
-	}*/
-
-	return iFinalResult;
+	return iDistanceMaintenance;
 }
 //Rhye - end
 
@@ -11073,41 +10869,9 @@ int CvHandicapInfo::getNumCitiesMaintenancePercent() const
 int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes ePlayer) const
 {
 	int iMaintenance = m_iNumCitiesMaintenancePercent;
-
-	if (getScenario() >= SCENARIO_600AD && ePlayer < VIKING)
-	{
-		iMaintenance *= 80;
-		iMaintenance /= 100;
-	}
 	
-	if (ePlayer < NUM_MAJOR_PLAYERS)
-	{
-		iMaintenance *= numMaintenanceModifier[ePlayer];
-		iMaintenance /= 100;
-	}
-	else
-	{
-		if (getScenario() == SCENARIO_3000BC)
-		{
-			iMaintenance *= 60;
-			iMaintenance /= 100;
-		}
-		else
-		{
-			iMaintenance *= 30;
-			iMaintenance /= 100;
-		}
-	}
-
-	// handle respawned civs explicitly here (overwrite)
-	if (ePlayer == MAYA)
-	{
-		if (GET_PLAYER(ePlayer).isReborn())
-		{
-			iMaintenance *= 85;
-			iMaintenance /= 100;
-		}
-	}
+	iMaintenance *= GET_PLAYER(ePlayer).getModifier(MODIFIER_CITIES_MAINTENANCE);
+	iMaintenance /= 100;
 
 	// Leoreth: additional maintenance for high population
 	int iTotalPopulation = GET_PLAYER(ePlayer).getTotalPopulation();
@@ -11150,116 +10914,16 @@ int CvHandicapInfo::getCivicUpkeepPercent() const
 {
 	return m_iCivicUpkeepPercent;
 }
-//Rhye - start switch
-int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
+
+int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes ePlayer) const
 {
-	int result = m_iCivicUpkeepPercent;
+	int iCivicUpkeep = m_iCivicUpkeepPercent;
 
-	if (getScenario() >= SCENARIO_600AD) //late start condition
-		if (pl < VIKING) {
-			result *= 90;
-			result /= 100;
-		}
+	iCivicUpkeep *= GET_PLAYER(ePlayer).getModifier(MODIFIER_CIVIC_UPKEEP);
+	iCivicUpkeep /= 100;
 
-	/*switch (pl)
-	{
-	case EGYPT:
-		return result*11/10;
-	case INDIA:
-		return result*102/100;   //10 before removal of Organized trait
-	case CHINA:
-		return result*105/100;
-	case BABYLONIA:
-		return result*10/10;
-	case GREECE:
-		return result*8/10;
-	case PERSIA:
-		return result*7/10;
-	case CARTHAGE:
-		return result*7/10;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-        {
-            return result*75/100;   //8 before removal of Organized trait
-        }
-        else
-        {
-            return result*8/10;    // Leoreth - Renaissance Italy
-        }
-	case JAPAN:
-		return result*8/10;   //11 before removal of Organized trait
-	case ETHIOPIA:
-		return result*8/10;
-    case KOREA:
-        return result*10/10;
-	case MAYA:
-		return result*8/10;
-    case BYZANTIUM:
-        return result*9/10;
-	case VIKING:
-		return result*8/10;
-	case ARABIA:
-		return result*9/10;
-	case KHMER:
-		return result*10/10;
-	case INDONESIA:
-		return result*10/10;
-	case SPAIN:
-		return result*6/10;
-	case FRANCE:
-		return result*8/10;
-	case ENGLAND:
-		return result*6/10;
-	case GERMANY:
-		return result*7/10;
-	case RUSSIA:
-		return result*70/100;
-	case NETHERLANDS:
-		return result*6/10; // Leoreth: reduced, 7 before
-	case MALI:
-		return result*8/10; //6 before new UP
-	case TURKEY:
-		return result*7/10;
-	case PORTUGAL:
-		return result*72/100;
-	case INCA:
-		return result*5/10;
-	case MONGOLIA:
-		return result*64/100;
-	case AZTEC:
-		return result*6/10;
-	case AMERICA:
-		return result*5/10;   //6 before removal of Organized trait
-	default:
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-			return result*9/10;
-		else
-			return result*7/10;
-	}*/
-
-	int iFinalResult;
-
-	if (pl < NUM_MAJOR_PLAYERS)
-	{
-		iFinalResult = result * civicUpkeepModifier[pl] / 100;
-	}else
-	{
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-			iFinalResult = result * 90 / 100;
-		else
-			iFinalResult = result * 70 / 100;
-	}
-
-	// handle respawns explicitly here (overwrite)
-	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
-	{
-		if (pl == ROME)
-			iFinalResult = result * 80 / 100;
-	}*/
-
-	return iFinalResult;
+	return iCivicUpkeep;
 }
-//Rhye - end
 
 int CvHandicapInfo::getInflationPercent() const
 {
@@ -11272,130 +10936,20 @@ int CvHandicapInfo::getHealthBonus() const
 }
 
 //Rhye - start switch
-int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
+int CvHandicapInfo::getHealthBonusByID(PlayerTypes ePlayer) const
 {
-	int result = m_iHealthBonus;
+	int iHealthBonus = m_iHealthBonus;
 
-	/*switch (pl)
-	{
-	case EGYPT:
-		result = m_iHealthBonus*2;
-		break;
-	case INDIA:
-		result = m_iHealthBonus-1;
-		break;
-	case CHINA:
-		result = m_iHealthBonus;
-		break;
-	case BABYLONIA:
-		result = m_iHealthBonus*2;
-		break;
-	case GREECE:
-		result = m_iHealthBonus*4;
-		break;
-	case PERSIA:
-		result = m_iHealthBonus*5;   //4 before removal of Expansive trait
-		break;
-	case CARTHAGE:
-		result = m_iHealthBonus*7;
-		break;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            result = m_iHealthBonus*7;   //4 before removal of Expansive trait
-        else
-            result = m_iHealthBonus*6;   // Leoreth - Renaissance Italy
-		break;
-	case JAPAN:
-		result = m_iHealthBonus*3;
-		break;
-	case ETHIOPIA:
-		result = m_iHealthBonus*6;
-		break;
-    case KOREA:
-        result = m_iHealthBonus*3;
-        break;
-	case MAYA:
-		result = m_iHealthBonus*6;
-		break;
-    case BYZANTIUM:
-        result = m_iHealthBonus*6;
-        break;
-	case VIKING:
-		result = m_iHealthBonus*6;
-		break;
-	case ARABIA:
-		result = m_iHealthBonus*3;
-		break;
-	case KHMER:
-		result = m_iHealthBonus*6;
-		break;
-	case INDONESIA:
-		result = m_iHealthBonus*6;
-		break;
-	case FRANCE:
-		result = m_iHealthBonus*4;
-		break;
-	case SPAIN:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case ENGLAND:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case GERMANY:
-		result = m_iHealthBonus*7;   //4 before removal of Expansive trait
-		break;
-	case NETHERLANDS:
-		result = m_iHealthBonus*6;
-		break;
-	case RUSSIA:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case MALI:
-		result = m_iHealthBonus*4;
-		break;
-	case TURKEY:
-		result = m_iHealthBonus*6;
-		break;
-	case PORTUGAL:
-		result = m_iHealthBonus*6;
-		break;
-	case INCA:
-		result = m_iHealthBonus*4;
-		break;
-	case MONGOLIA:
-		result = m_iHealthBonus*6;  //7 //4 before removal of Expansive trait
-		break;
-	case AZTEC:
-		result = m_iHealthBonus*4;
-		break;
-	case AMERICA:
-		result = m_iHealthBonus*4;
-		break;
-	default:
-		result = m_iHealthBonus;
-		break;
-	}*/
+	iHealthBonus += GET_PLAYER(ePlayer).getModifier(MODIFIER_HEALTH);
 
-	if (pl < NUM_MAJOR_PLAYERS)
+	// help early civs in late scenarios
+	if (getScenario() >= SCENARIO_600AD)
 	{
-		result = m_iHealthBonus + healthModifier[pl];
+		if (ePlayer < VIKING && iHealthBonus < 5) iHealthBonus += 1;
+		if (ePlayer < BABYLONIA && iHealthBonus < 5) iHealthBonus += 1;
 	}
 
-	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
-	{
-		if (pl == ROME)
-			result = m_iHealthBonus * 6;
-	}*/
-
-	if (getScenario() >= SCENARIO_600AD) { //late start condition
-		if (pl < VIKING && result < 5) {
-			result += 1;
-		}
-		if (pl < BABYLONIA) {
-			result += 1;
-		}
-	}
-	return result;
+	return iHealthBonus;
 }
 //Rhye - end
 

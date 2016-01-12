@@ -294,180 +294,30 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	{
 		iExtraPop = GC.getEraInfo(GC.getGameINLINE().getStartEra()).getFreePopulation();
 	}*/
-	//Rhye - start switch
-	//changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + GC.getEraInfo(GC.getGameINLINE().getStartEra()).getFreePopulation());
-	int eraModifier = 0;
-	/*switch (getOwnerINLINE())
-	{
-	case EGYPT:
-		eraModifier = 0;
-		break;
-	case INDIA:
-		eraModifier = 0;
-		break;
-	case CHINA:
-		eraModifier = 0;
-		break;
-	case BABYLONIA:
-		eraModifier = 0;
-		break;
-	case GREECE:
-		eraModifier = 0;
-		break;
-	case PERSIA:
-		eraModifier = 0;
-		break;
-	case CARTHAGE:
-		eraModifier = 0;
-		break;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)getOwnerINLINE()).isReborn())
-            eraModifier = 0;
-        else
-        {                       // Renaissance Italy respawn
-            eraModifier = 1;
-            if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-                eraModifier = 2;
-        }
-		break;
-	case JAPAN:
-		eraModifier = 0;
-		break;
-	case ETHIOPIA:
-		eraModifier = 0;
-		break;
-    case KOREA:
-        eraModifier = 0;
-        break;
-	case MAYA:
-		eraModifier = 0;
-		break;
-    case BYZANTIUM:
-        eraModifier = 1;
-        break;
-	case VIKING:
-		eraModifier = 1;
-		break;
-	case ARABIA:
-		eraModifier = 1;
-		break;
-	case KHMER:
-		eraModifier = 1;
-		break;
-	case INDONESIA:
-		eraModifier = 1;
-		break;
-	case SPAIN:
-		eraModifier = 1;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-			eraModifier = 2;
-		break;
-	case FRANCE:
-		eraModifier = 1;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-			eraModifier = 2;
-		break;
-	case ENGLAND:
-		eraModifier = 1;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-			eraModifier = 2;
-		break;
-	case GERMANY:
-		eraModifier = 1;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-			eraModifier = 2;
-		break;
-	case RUSSIA:
-		eraModifier = 1;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-			eraModifier = 2;
-		break;
-	case NETHERLANDS:
-		eraModifier = 2;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-			eraModifier = 2;
-		break;
-	case MALI:
-		eraModifier = 2;
-		break;
-	case TURKEY:
-		eraModifier = 2;
-		break;
-	case PORTUGAL:
-		eraModifier = 2;
-		break;
-	case INCA:
-		eraModifier = 2;
-		break;
-	case MONGOLIA:
-		eraModifier = 2;
-		break;
-	case AZTEC:
-		eraModifier = 2;
-		break;
-	case AMERICA:
-		eraModifier = 3;
-		break;
-	default:
-		eraModifier = 0;
-		break;
-	}*/
 
-	if (getOwnerINLINE() < NUM_MAJOR_PLAYERS)
-	{
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
-		{
-			eraModifier = eraModifierInitAstronomy[getOwnerINLINE()];
-		}else
-		{
-			eraModifier = eraModifierInit[getOwnerINLINE()];
-		}
-	}
+	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
+	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra - 1 : 0;
 
-	// handle respawned civs explicitly here
-	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).isReborn())
+	if (GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)ASTRONOMY))
 	{
-		if (getOwnerINLINE() == PERSIA)
+		if (eOwner == SPAIN || eOwner == FRANCE || eOwner == PORTUGAL || eOwner == NETHERLANDS)
 		{
-			if (GET_TEAM((TeamTypes)PERSIA).isHasTech((TechTypes)ASTRONOMY))
-			{
-				eraModifier = 3;
-			}else
-			{
-				eraModifier = 2;
-			}
+			iExtraPopulation += 1;
 		}
 
-		if (getOwnerINLINE() == AZTEC)
-			eraModifier = 3;
-
-		if (getOwnerINLINE() == MAYA)
-			eraModifier = 3;
-	}
-
-	if (getScenario() == SCENARIO_600AD) //late start condition
-	{
-		if (getOwnerINLINE() < VIKING) 
+		if (eOwner == ENGLAND)
 		{
-			eraModifier = 1;
-		}
-	}
-
-	if (getScenario() == SCENARIO_1700AD)
-	{
-		if (getOwnerINLINE() < GERMANY)
-		{
-			eraModifier = 2;
+			iExtraPopulation += 2;
 		}
 	}
 
     // Leoreth: Harappan UU (City Builder)
 	if (getOwnerINLINE() == HARAPPA)
 	{
-		eraModifier++;
+		iExtraPopulation += 1;
 	}
 
-	changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + eraModifier);
+	changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + iExtraPopulation);
 	//changePopulation(GC.getDefineINT("INITIAL_CITY_POPULATION") + iExtraPop);
 	//Rhye - end switch
 
@@ -1137,6 +987,11 @@ void CvCity::doTurn()
 {
 	PROFILE("CvCity::doTurn()");
 
+	if (GC.getGame().getActivePlayer() == getOwner())
+	{		
+		GC.getGame().logMsg("CvCity::doTurn(): %d", GC.getGame().getGameTurn());
+	}
+
 	CvPlot* pLoopPlot;
 	int iI;
 
@@ -1263,6 +1118,12 @@ void CvCity::doTurn()
 
 	// Leoreth: update art style type once per turn
 	updateArtStyleType();
+
+	
+	if (GC.getGame().getActivePlayer() == getOwner())
+	{		
+		GC.getGame().logMsg("End CvCity::doTurn(): %d", GC.getGame().getGameTurn());
+	}
 
 	// ONEVENT - Do turn
 /*************************************************************************************************/
@@ -14247,55 +14108,14 @@ void CvCity::doGrowth()
 
 void CvCity::doCulture()
 {
-	//Rhye
-	//changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
 	if 	(getCommerceRate(COMMERCE_CULTURE) <= 4)
 	{
 		changeCultureTimes100(getOwnerINLINE(), getCommerceRateTimes100(COMMERCE_CULTURE), false, true);
 		return;
 	}
 
-	int iCultureModifier = 100;
 	PlayerTypes eOwner = getOwnerINLINE();
-
-	if (eOwner < NUM_MAJOR_PLAYERS)
-	{
-		iCultureModifier = cultureModifier[eOwner];
-	}
-
-	if (GET_PLAYER((PlayerTypes)eOwner).isReborn())
-	{
-		if (eOwner == PERSIA) iCultureModifier = 135;
-		else if (eOwner == AZTEC) iCultureModifier = 140;
-		else if (eOwner == MAYA) iCultureModifier = 140;
-	}
-
-	if (eOwner == INDEPENDENT || eOwner == INDEPENDENT2)
-	{
-		iCultureModifier = 15;
-		if (getScenario() >= SCENARIO_600AD)
-		{
-			if (getX_INLINE() == 57 && getY_INLINE() == 46 && getCulture(eOwner) < 1) iCultureModifier = 15; // Marseilles
-			else if (getX_INLINE() == 60 && getY_INLINE() == 44 && getCulture(eOwner) < 50) iCultureModifier = 15; // Rome
-		}
-	}
-
-	if (eOwner == NATIVE)
-	{
-		if (hasActiveWorldWonder() && getCulture(eOwner) < 50) iCultureModifier = 15;
-		else if (getCulture(eOwner) < 5) iCultureModifier = 15;
-	}
-
-	if (eOwner == CELTIA || eOwner == SELJUKS)
-	{
-		iCultureModifier = 50;
-	}
-
-	if (eOwner == BARBARIAN)
-	{
-		iCultureModifier = 30;
-	}
-	//Rhye - end
+	int iCultureModifier = GET_PLAYER(eOwner).getModifier(MODIFIER_CULTURE);
 
 	changeCultureTimes100(eOwner, getCommerceRateTimes100(COMMERCE_CULTURE) * iCultureModifier / 100, false, true);
 
@@ -14419,7 +14239,7 @@ void CvCity::doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate)
 									for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 									{
 										// Leoreth: only for civs that have already spawned yet
-										if (GC.getGame().getGameTurnYear() < startingTurnYear[iI]) continue;
+										if (GC.getGame().getGameTurnYear() < GET_PLAYER((PlayerTypes)iI).getBirthYear()) continue;
 
 										if (pLoopPlot->isCore((PlayerTypes)iI) && !plot()->isCore((PlayerTypes)iI)) bCanSpreadCore = false;
 
@@ -14863,7 +14683,7 @@ void CvCity::doReligion()
 						{
 							iSpread = pLoopCity->getReligionInfluence(eReligion);
 
-							iSpreadFactor = getCivSpreadFactor(getOwnerINLINE(), eReligion) * GC.getReligionInfo(eReligion).getSpreadFactor() / 100;
+							iSpreadFactor = getSpreadFactor(eReligion) * GC.getReligionInfo(eReligion).getSpreadFactor() / 100;
 							iSpread *= iSpreadFactor;
 
 							if (iSpread > 0)
@@ -14920,12 +14740,7 @@ void CvCity::doReligion()
 									//Rhye - start
 									//iSpread *= GC.getReligionInfo((ReligionTypes)iI).getSpreadFactor();
 									int iBaseSpreadFactor = GC.getReligionInfo((ReligionTypes)iI).getSpreadFactor();
-									int iSpreadFactor = civSpreadFactor[getOwnerINLINE()][iI] * iBaseSpreadFactor / 100;
-
-									if (iI == CATHOLICISM && !GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
-									{
-										iSpreadFactor = std::max(civSpreadFactor[getOwnerINLINE()][ORTHODOXY], civSpreadFactor[getOwnerINLINE()][CATHOLICISM]) * iBaseSpreadFactor / 100;
-									}
+									int iSpreadFactor = GET_PLAYER(getOwnerINLINE()).getSpreadFactor((ReligionTypes)iI) * iBaseSpreadFactor / 100;
 
 									iSpread *= iSpreadFactor;
 

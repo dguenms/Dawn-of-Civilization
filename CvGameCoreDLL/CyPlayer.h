@@ -558,6 +558,21 @@ public:
 	void setEspionageExperience(int iNewValue);
 	int getSettlerValue(int x, int y);
 	int getWarValue(int x, int y);
+	int getModifier(int eModifierType);
+	void setModifier(int eModifierType, int iNewValue);
+	int getStartingEra();
+	void setStartingEra(int iNewValue);
+	int getSpreadFactor(int eReligionType);
+	void setSpreadFactor(int eReligionType, int iNewValue);
+	void setTakenTilesThreshold(int iNewValue);
+	void setDistanceSubtrahend(int iNewValue);
+	void setDistanceFactor(int iNewValue);
+	void setCompactnessModifier(int iNewValue);
+	void setTargetDistanceValueModifier(int iNewValue);
+	void setReligiousTolerance(int iNewValue);
+	int getBirthYear();
+	int getBirthTurn();
+	void setBirthYear(int iNewValue);
 
 private:
 	CvPlayer* m_pPlayer;

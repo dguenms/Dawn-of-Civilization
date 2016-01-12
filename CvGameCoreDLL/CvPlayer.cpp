@@ -59,9 +59,12 @@ CvPlayer::CvPlayer()
 	m_aiGoldPerTurnByPlayer = new int[MAX_PLAYERS];
 	m_aiEspionageSpendingWeightAgainstTeam = new int[MAX_TEAMS];
 
-	m_aiDomainProductionModifiers = new int[NUM_DOMAIN_TYPES]; // Leoreth
-	m_aiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES]; // Leoreth
-	m_aiStabilityParameters = new int[NUM_PARAMETERS]; // Leoreth
+	// Leoreth
+	m_aiDomainProductionModifiers = new int[NUM_DOMAIN_TYPES];
+	m_aiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES];
+	m_aiStabilityParameters = new int[NUM_PARAMETERS];
+	m_aiModifiers = new int[NUM_MODIFIER_TYPES];
+	m_aiSpreadFactors = new int[NUM_RELIGIONS];
 
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
@@ -134,6 +137,8 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiDomainProductionModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiDomainExperienceModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiStabilityParameters); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiModifiers); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiSpreadFactors); // Leoreth
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
 }
@@ -532,6 +537,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bStrike = false;
 	m_bOlympics = false; //Rhye
 
+	m_bTurnPlayed = false;
+
 	// Rhye (jdog) - start ---------------------
 	//m_szName.clear();
 	m_szCivDesc.clear();
@@ -544,6 +551,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bReborn = false;
 	m_iLatestRebellionTurn = 0;
 	m_iNoAnarchyTurns = 0;
+	m_iBirthYear = -1;
+
+	m_iTakenTilesThreshold = 0;
+	m_iDistanceSubtrahend = 0;
+	m_iDistanceFactor = 0;
+	m_iCompactnessModifier = 0;
+	m_iTargetDistanceValueModifier = 0;
+	m_iReligiousTolerance = 0;
 
 	m_eID = eID;
 	updateTeamType();
@@ -558,6 +573,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_ePersonalityType = NO_LEADER;
 	}
 	m_eCurrentEra = ((EraTypes)0);  //??? Is this repeated data???
+	m_eStartingEra = ((EraTypes)0); // Leoreth
 	m_eLastStateReligion = NO_RELIGION;
 	m_eParent = NO_PLAYER;
 
@@ -594,6 +610,18 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	for (iI = 0; iI < NUM_PARAMETERS; iI++)
 	{
 		m_aiStabilityParameters[iI] = 0;
+	}
+
+	// Leoreth
+	for (iI = 0; iI < NUM_MODIFIER_TYPES; iI++)
+	{
+		m_aiModifiers[iI] = 0;
+	}
+
+	// Leoreth
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		m_aiSpreadFactors[iI] = 0;
 	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -2809,10 +2837,11 @@ void CvPlayer::doTurn()
 	PROFILE_FUNC();
 	//GC.getGameINLINE().logMsg("player doTurn: %d", getID()); //Rhye
 
-	//Rhye - start
-	if (turnPlayed[getID()] == 1)
+	//Rhye
+	if (m_bTurnPlayed)
+	{
 		return;
-	//Rhye - end
+	}
 
 	CvCity* pLoopCity;
 	int iLoop;
@@ -2821,12 +2850,6 @@ void CvPlayer::doTurn()
 	FAssertMsg(!hasBusyUnit() || GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS)  || GC.getGameINLINE().isSimultaneousTeamTurns(), "End of turn with busy units in a sequential-turn game");
 
 	CvEventReporter::getInstance().beginPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
-
-	// Leoreth
-	/*GC.getGameINLINE().logMsg("Initiate player stability.");
-	if (isAlive() && getID() < NUM_MAJOR_PLAYERS && getNumCities() > 0)
-		doStability();
-	GC.getGameINLINE().logMsg("Finish player stability.");*/
 
 	doUpdateCacheOnTurn();
 
@@ -2905,9 +2928,7 @@ void CvPlayer::doTurn()
 	}
 
 	CvEventReporter::getInstance().endPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
-
-	turnPlayed[getID()] = 1; //Rhye
-	//GC.getGameINLINE().logMsg("player end turn: %d", getID()); //Rhye
+	m_bTurnPlayed = 1; //Rhye
 }
 
 
@@ -5563,7 +5584,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	}
 
 	// Leoreth: America/France don't care about Canada until the Canadians spawn
-	if (getID() != GC.getGame().getActivePlayer() && GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[CANADA]) + getTurns(5))
+	if (getID() != GC.getGame().getActivePlayer() && GC.getGameINLINE().getGameTurn() < GET_PLAYER(CANADA).getBirthTurn() + getTurns(5))
 	{
 		if (getID() == AMERICA && iY >= 51) return false;
 		if (getID() == FRANCE && iX <= 24 && iY >= 51) return false;
@@ -5617,187 +5638,10 @@ void CvPlayer::found(int iX, int iY)
 			//if (GC.getBuildingInfo(eLoopBuilding).getFreeStartEra() != NO_ERA && (!GC.getGameINLINE().isOption(GAMEOPTION_ADVANCED_START) || isHuman()))		// AdvancedStartAI //Rhye
 			if (GC.getBuildingInfo(eLoopBuilding).getFreeStartEra() != NO_ERA) //Rhye
 			{
-				//Rhye - start switch
-				int startingEra;
-				/*switch (getID())
-				{
-				case EGYPT:
-					startingEra = 0;
-					break;
-				case INDIA:
-					if (!GET_PLAYER((PlayerTypes)INDIA).isReborn())
-						startingEra = 0;
-					else
-						startingEra = 4;
-					break;
-				case CHINA:
-					startingEra = 0;
-					if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-						startingEra = 2;
-					break;
-				case BABYLONIA:
-					startingEra = 0;
-					break;
-				case GREECE:
-					startingEra = 1;
-					break;
-				case PERSIA:
-                    if (!GET_PLAYER((PlayerTypes)PERSIA).isReborn())
-                        startingEra = 1;
-                    else
-                        startingEra = 3;    //Leoreth: Safavid Persia
-					break;
-				case CARTHAGE:
-					startingEra = 1;
-					break;
-				case ROME:
-                    if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                        startingEra = 1;
-                    else
-                    {                       // Leoreth - Renaissance Italy
-                        startingEra = 2;
-                        if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-                            startingEra = 3;
-                    }
-					break;
-				case JAPAN:
-					startingEra = 2;
-					if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-						startingEra = 2;
-					break;
-				case ETHIOPIA:
-					startingEra = 1;
-					break;
-                case KOREA:
-                    startingEra = 1;
-                    if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-                        startingEra = 2;
-                    break;
-				case MAYA:
-					startingEra = 1;
-					break;
-                case BYZANTIUM:
-                    startingEra = 2;
-                    break;
-				case VIKING:
-					startingEra = 2;
-					break;
-				case KHMER:
-					startingEra = 2;
-					break;
-				case INDONESIA:
-					startingEra = 2;
-					break;
-				case ARABIA:
-					startingEra = 2;
-					break;
-				case SPAIN:
-					startingEra = 2;
-					if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-						startingEra = 3;
-					break;
-				case FRANCE:
-					startingEra = 2;
-					if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-						startingEra = 3;
-					break;
-				case ENGLAND:
-					startingEra = 2;
-					if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-						startingEra = 3;
-					break;
-				case GERMANY:
-					startingEra = 2;
-					if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-						startingEra = 3;
-					break;
-				case RUSSIA:
-					startingEra = 2;
-					if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-						startingEra = 3;
-					break;
-				case NETHERLANDS:
-					startingEra = 4;
-					break;
-				case MALI:
-					startingEra = 3;
-					break;
-				case TURKEY:
-					startingEra = 3;
-					break;
-				case PORTUGAL:
-					startingEra = 3;
-					break;
-				case INCA:
-					startingEra = 3;
-					break;
-				case MONGOLIA:
-					startingEra = 3;
-					break;
-				case AZTEC:
-					startingEra = 3;
-					break;
-				case AMERICA:
-					startingEra = 4;
-					break;
-				default:
-					startingEra = 0;
-					break;
-				}*/
+				int iStartingEra = getCurrentEra() > 0 ? getCurrentEra() - 1 : 0;
 
-				if (getID() < NUM_MAJOR_PLAYERS)
-				{
-				    if (GET_PLAYER((PlayerTypes)getID()).isReborn() || GET_PLAYER((PlayerTypes)getID()).getLatestRebellionTurn() > getTurnForYear(startingTurnYear[getID()])+5)
-				    {
-				        startingEra = startingEraRespawn[getID()];
-				    }
-					else 
-					{
-						if (getScenario() == SCENARIO_1700AD)
-							startingEra = startingEraFound1700AD[getID()];
-						else if (getScenario() == SCENARIO_600AD)
-							startingEra = startingEraFound600AD[getID()];
-						else
-							startingEra = startingEraFound[getID()];
-					}
-
-					if (GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
-					{
-						if (startingEraFoundAstronomy[getID()] > startingEra)
-						{
-							startingEra = startingEraFoundAstronomy[getID()];
-						}
-					}
-
-					// Leoreth: at least one after the current era
-					if (getCurrentEra()-1 > startingEra)
-					{
-						startingEra = getCurrentEra()-1;
-					}
-				}
-				else
-				{
-					startingEra = 0;
-				}
-
-				// handle respawns explicitly here (overwrite)
-				/*if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-				{
-					/*if (getID() == ROME)
-					{
-						if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-							startingEra = 3;
-						else
-							startingEra = 2;
-					}
-
-					if (getID() == PERSIA)
-						startingEra = 3;
-				}*/
-
-				if (startingEra >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
+				if (iStartingEra >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
 				//if (GC.getGameINLINE().getStartEra() >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
-				//Rhye - end switch
 				{
 					if (pCity->canConstruct(eLoopBuilding))
 					{
@@ -6132,66 +5976,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 
 	if (GC.getBuildingInfo(eBuilding).getMaxStartEra() != NO_ERA)
 	{
-		int startingEra;
-		if (getID() < NUM_MAJOR_PLAYERS)
-		{
-			if (getScenario() == SCENARIO_1700AD)
-			{
-				startingEra = currentEra1700AD[getID()];
-			}
-            else if (getScenario() == SCENARIO_600AD)
-            {
-                startingEra = currentEra600AD[getID()];
-            }
-			else
-            {
-                startingEra = currentEra[getID()];
-            }
-		}
-		else if (getID() == NATIVE)
-		{
-			startingEra = 0;
-		}
-		else
-		{
-			if (getScenario() == SCENARIO_1700AD)
-				startingEra = 3;
-			else if (getScenario() == SCENARIO_600AD)
-				startingEra = 2;
-			else
-				startingEra = 0;
-		}
-
-		// handle respawns explicitly here (overwrite)
-		if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-		{
-			if (getID() == ROME)
-			{
-				if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-					startingEra = 3;
-				else
-					startingEra = 2;
-			}
-
-			if (getID() == PERSIA)
-				startingEra = 3;
-
-			if (getID() == AZTEC)
-				startingEra = 4;
-
-			if (getID() == MAYA)
-				startingEra = 4;
-		}
-
-		if (getScenario() == SCENARIO_1700AD)
-			if (getID() < GERMANY)
-				startingEra = 3;
-
-		if (getScenario() == SCENARIO_600AD) //late start condition
-			if (getID() < VIKING)
-				startingEra = 2;
-
-		if (startingEra > GC.getBuildingInfo(eBuilding).getMaxStartEra())
+		if (getStartingEra() > GC.getBuildingInfo(eBuilding).getMaxStartEra())
 		{
 			return false;
 		}
@@ -6346,7 +6131,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		{
 			if (GET_PLAYER((PlayerTypes)FRANCE).isHuman())
 			{
-				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[FRANCE])+5)
+				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(FRANCE).getBirthTurn()+5)
 				{
 					return false;
 				}
@@ -6356,7 +6141,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		{
 			if (GET_PLAYER((PlayerTypes)TURKEY).isHuman())
 			{
-				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[TURKEY])+5)
+				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(TURKEY).getBirthTurn()+5)
 				{
 					return false;
 				}
@@ -6366,7 +6151,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		{
 			if (GET_PLAYER((PlayerTypes)AMERICA).isHuman())
 			{
-				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[AMERICA])+5)
+				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(AMERICA).getBirthTurn()+5)
 				{
 					return false;
 				}
@@ -6376,7 +6161,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		{
 			if (GET_PLAYER((PlayerTypes)ITALY).isHuman())
 			{
-				if (GC.getGameINLINE().getGameTurn() < getTurnForYear(startingTurnYear[ITALY])+5)
+				if (GC.getGameINLINE().getGameTurn() < GET_PLAYER(ITALY).getBirthTurn()+5)
 				{
 					return false;
 				}
@@ -6618,7 +6403,7 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 	iProductionNeeded += getUnitExtraCost(eUnitClass);
 
 	// Python cost modifier
-	if(GC.getUSE_GET_UNIT_COST_MOD_CALLBACK())
+	if (GC.getUSE_GET_UNIT_COST_MOD_CALLBACK())
 	{
 		CyArgsList argsList;
 		argsList.add(getID());	// Player ID
@@ -6633,52 +6418,32 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 		}
 	}
 
-	int iCivModifier = 100;
+	int iCostModifier = getModifier(MODIFIER_UNIT_COST);
 
+	// units produced with food use growth modifier instead
 	if (GC.getUnitInfo(eUnit).isFoodProduction())
 	{
-		if (getID() < NUM_MAJOR_PLAYERS)
-		{
-			if (growthThreshold[getID()] > 100) iCivModifier = growthThreshold[getID()];
-		}
+		if (getModifier(MODIFIER_GROWTH_THRESHOLD) > 100) iCostModifier = getModifier(MODIFIER_GROWTH_THRESHOLD);
+	}
+
+	iProductionNeeded *= iCostModifier;
+	iProductionNeeded /= 100;
+
+	// increase unit cost with era
+	int iEraModifier = 100;
+	if (GC.getUnitInfo(eUnit).isFoodProduction())
+	{
+		iEraModifier += 5 * getCurrentEra();
+
+		if (getCurrentEra() > ERA_RENAISSANCE) iEraModifier += 5 * getCurrentEra();
 	}
 	else
 	{
-		if (getID() < NUM_MAJOR_PLAYERS) iCivModifier = unitCostModifier2[getID()];
-		else if (getID() == INDEPENDENT || getID() == INDEPENDENT2) iCivModifier = 200;
-		else if (getID() == CELTIA || getID() == NATIVE) iCivModifier = 150;
-		else if (getID() == BARBARIAN) iCivModifier = 140;
-
-		if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-		{
-			if (getID() == PERSIA) iCivModifier = 90;
-			if (getID() == AZTEC) iCivModifier = 85;
-			if (getID() == MAYA) iCivModifier = 85;
-		}
+		if (getCurrentEra() > 0) iEraModifier += 10 * (getCurrentEra()-1);
 	}
 
-	iProductionNeeded *= iCivModifier;
+	iProductionNeeded *= iEraModifier;
 	iProductionNeeded /= 100;
-
-	// increase settler and worker cost
-	int iModifier = 0;
-	if (eUnit == 4 || eUnit == 5)
-	{
-		iModifier += 5 * getCurrentEra();
-
-		if (getCurrentEra() > ERA_RENAISSANCE) iModifier += 5 * getCurrentEra();
-
-		iProductionNeeded *= (100 + iModifier);
-		iProductionNeeded /= 100;
-	}
-	// other units
-	else 
-	{
-		if (getCurrentEra() > 0) iModifier += 10 * (getCurrentEra()-1);
-
-		iProductionNeeded *= (100 + iModifier);
-		iProductionNeeded /= 100;
-	}
 
 	return std::max(1, iProductionNeeded);
 }
@@ -6716,174 +6481,13 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 		iProductionNeeded /= 100;
 	}
 
-	//Rhye - start switch
+	int iCivModifier = 100;
+
 	if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo(eBuilding).getBuildingClassType())))
 	{
-		/*switch (getID())
-		{
-			case EGYPT:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case INDIA:
-				iProductionNeeded *= 115;
-				iProductionNeeded /= 100;
-				break;
-			case CHINA:
-				iProductionNeeded *= 80;   //120 before removal of Industrious trait
-				iProductionNeeded /= 100;
-				break;
-			case BABYLONIA:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case GREECE:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case PERSIA:
-				iProductionNeeded *= 85;
-				iProductionNeeded /= 100;
-				break;
-			case CARTHAGE:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case ROME:
-				iProductionNeeded *= 90;    // Leoreth - Renaissance Italy would have the same values
-				iProductionNeeded /= 100;
-				break;
-			case JAPAN:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-			case ETHIOPIA:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-            case KOREA:
-                iProductionNeeded *= 100;
-                iProductionNeeded /= 100;
-                break;
-			case MAYA:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-            case BYZANTIUM:
-                iProductionNeeded *= 110;
-                iProductionNeeded /= 100;
-                break;
-			case VIKING:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case ARABIA:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case KHMER:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case INDONESIA:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case SPAIN:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case FRANCE:
-				iProductionNeeded *= 70;   //90 before removal of Industrious trait
-				iProductionNeeded /= 100;
-				break;
-			case ENGLAND:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case GERMANY:
-				iProductionNeeded *= 100;   //100 before removal of Industrious trait
-				iProductionNeeded /= 100;
-				break;
-			case RUSSIA:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-			case NETHERLANDS:
-				iProductionNeeded *= 80;    // Leoreth: made cheaper to allow for a better Amsterdam faster, 90 before
-				iProductionNeeded /= 100;
-				break;
-			case MALI:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case TURKEY:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case PORTUGAL:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case INCA:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case MONGOLIA:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case AZTEC:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case AMERICA:
-				iProductionNeeded *= 70;   //80 before removal of Industrious trait
-				iProductionNeeded /= 100;
-				break;
-			case INDEPENDENT:
-				iProductionNeeded *= 150;
-				iProductionNeeded /= 100;
-				break;
-			case INDEPENDENT2:
-				iProductionNeeded *= 150;
-				iProductionNeeded /= 100;
-				break;
-			case NATIVE:
-				iProductionNeeded *= 150;
-				iProductionNeeded /= 100;
-				break;
-			default:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-		}*/
+		iCivModifier = getModifier(MODIFIER_WONDER_COST);
 
-		if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-		{
-			if (getID() == ROME)
-				iProductionNeeded = iProductionNeeded * 90 / 100;
-			if (getID() == PERSIA)
-				iProductionNeeded = iProductionNeeded * 85 / 100;
-			if (getID() == AZTEC)
-				iProductionNeeded = iProductionNeeded * 90 / 100;
-			if (getID() == MAYA)
-				iProductionNeeded = iProductionNeeded * 90 / 100;
-		}else
-		{
-			if (getID() < NUM_MAJOR_PLAYERS)
-			{
-				iProductionNeeded = iProductionNeeded * wonderCostModifier[getID()] / 100;
-			}else if (getID() == INDEPENDENT || getID() == INDEPENDENT2 || getID() == NATIVE)
-			{
-				iProductionNeeded = iProductionNeeded * 150 / 100;
-			}else
-			{
-				iProductionNeeded = iProductionNeeded * 100 / 100;
-			}
-		}
-
-		//Leoreth
+		// Leoreth
 		if (!GET_PLAYER((PlayerTypes)getID()).isHuman())
 		{
 			iProductionNeeded = iProductionNeeded * 3 / 4;
@@ -6897,166 +6501,11 @@ int CvPlayer::getProductionNeeded(BuildingTypes eBuilding) const
 	}
 	else
 	{
-		/*switch (getID())
-		{
-			case EGYPT:
-				iProductionNeeded *= 110;
-				iProductionNeeded /= 100;
-				break;
-			case INDIA:
-				iProductionNeeded *= 120;
-				iProductionNeeded /= 100;
-				break;
-			case CHINA:
-				iProductionNeeded *= 120;
-				iProductionNeeded /= 100;
-				break;
-			case BABYLONIA:
-				iProductionNeeded *= 110;
-				iProductionNeeded /= 100;
-				break;
-			case GREECE:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-			case PERSIA:
-				iProductionNeeded *= 110;
-				iProductionNeeded /= 100;
-				break;
-			case CARTHAGE:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case ROME:
-                if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                    iProductionNeeded *= 90;
-                else
-                    iProductionNeeded *= 80;    // Leoreth - Renaissance Italy
-                iProductionNeeded /= 100;
-				break;
-			case JAPAN:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-			case ETHIOPIA:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-            case KOREA:
-                iProductionNeeded *= 100;
-                iProductionNeeded /= 100;
-                break;
-			case MAYA:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-            case BYZANTIUM:
-                iProductionNeeded *= 110;
-                iProductionNeeded /= 100;
-                break;
-			case VIKING:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case ARABIA:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-			case KHMER:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-			case INDONESIA:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case SPAIN:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case FRANCE:
-				iProductionNeeded *= 85;
-				iProductionNeeded /= 100;
-				break;
-			case ENGLAND:
-				iProductionNeeded *= 90;
-				iProductionNeeded /= 100;
-				break;
-			case GERMANY:
-				iProductionNeeded *= 70;
-				iProductionNeeded /= 100;
-				break;
-			case RUSSIA:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-			case NETHERLANDS:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case MALI:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case TURKEY:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case PORTUGAL:
-				iProductionNeeded *= 85;
-				iProductionNeeded /= 100;
-				break;
-			case INCA:
-				iProductionNeeded *= 70;
-				iProductionNeeded /= 100;
-				break;
-			case MONGOLIA:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case AZTEC:
-				iProductionNeeded *= 80;
-				iProductionNeeded /= 100;
-				break;
-			case AMERICA:
-				iProductionNeeded *= 70;
-				iProductionNeeded /= 100;
-				break;
-			case NATIVE:
-				iProductionNeeded *= 150;
-				iProductionNeeded /= 100;
-				break;
-			default:
-				iProductionNeeded *= 100;
-				iProductionNeeded /= 100;
-				break;
-		}*/
-
-		if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-		{
-			if (getID() == ROME)
-				iProductionNeeded = iProductionNeeded * 80 / 100;
-			if (getID() == PERSIA)
-				iProductionNeeded = iProductionNeeded * 80 / 100;
-			if (getID() == AZTEC)
-				iProductionNeeded = iProductionNeeded * 80 / 100;
-			if (getID() == MAYA)
-				iProductionNeeded = iProductionNeeded * 80 / 100;
-		}else
-		{
-			if (getID() < NUM_MAJOR_PLAYERS)
-			{
-				iProductionNeeded = iProductionNeeded * buildingCostModifier[getID()] / 100;
-			}else if (getID() == NATIVE)
-			{
-				iProductionNeeded = iProductionNeeded * 150 / 100;
-			}else
-			{
-				iProductionNeeded = iProductionNeeded * 100 / 100;
-			}
-		}
+		iCivModifier = getModifier(MODIFIER_BUILDING_COST);
 	}
-	//Rhye - end
+
+	iProductionNeeded *= iCivModifier;
+	iProductionNeeded /= 100;
 
 	// Leoreth: cheaper palace in earlier eras, more expensive later
 	if (eBuilding == GC.getInfoTypeForString("BUILDING_PALACE"))
@@ -7675,7 +7124,7 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 	// Leoreth: help AIs, especially those that start with large stacks, so they don't disband them
 	if (!isHuman())
 	{
-		if (GC.getGame().getGameTurn() < getTurnForYear(startingTurnYear[getID()]) + getTurns(20))
+		if (GC.getGame().getGameTurn() < getBirthTurn() + getTurns(20))
 		{
 			return 0;
 		}
@@ -7863,196 +7312,13 @@ int CvPlayer::calculateInflationRate() const
 	// Keep up to second order terms in binomial series
 	int iRatePercent = (iTurns * iInflationPerTurnTimes10000) / 100;
 	iRatePercent += (iTurns * (iTurns - 1) * iInflationPerTurnTimes10000 * iInflationPerTurnTimes10000) / 2000000;
-	//Rhye - start switch
-	int iRate = iRatePercent;
-	/*switch (getID())
-	{
-		case EGYPT:
-			iRate *= 133;
-			iRate /= 100;
-			break;
-		case INDIA:
-			iRate *= 137;
-			iRate /= 100;
-			break;
-		case CHINA:
-			iRate *= 125;   //+10 before removal of Financian trait
-			iRate /= 100;
-			break;
-		case BABYLONIA:
-			iRate *= 132;
-			iRate /= 100;
-			break;
-		case GREECE:
-			iRate *= 130;
-			iRate /= 100;
-			break;
-		case PERSIA:
-			iRate *= 132;
-			iRate /= 100;
-			break;
-		case CARTHAGE:
-			iRate *= 132;
-			iRate /= 100;
-			break;
-		case ROME:
-            if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                iRate *= 130;
-            else
-                iRate *= 84;    // Leoreth - Renaissance Italy
-			iRate /= 100;
-			break;
-		case JAPAN:
-			iRate *= 81;
-			iRate /= 100;
-			break;
-		case ETHIOPIA:
-			iRate *= 132;
-			iRate /= 100;
-			break;
-        case KOREA:
-            iRate *= 90;
-            iRate /= 100;
-            break;
-		case MAYA:
-			iRate *= 125;
-			iRate /= 100;
-			break;
-        case BYZANTIUM:
-            iRate *= 120;
-            iRate /= 100;
-            break;
-		case VIKING:
-			iRate *= 72;
-			iRate /= 100;
-			break;
-		case ARABIA:
-			iRate *= 85;
-			iRate /= 100;
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) {
-				iRate *= 115; //96
-				iRate /= 100;
-			}
-			break;
-		case KHMER:
-			iRate *= 100;
-			iRate /= 100;
-			break;
-		case INDONESIA:
-			iRate *= 90;
-			iRate /= 100;
-			break;
-		case SPAIN:
-			iRate *= 80;
-			iRate /= 100;
-			break;
-		case FRANCE:
-			iRate *= 75;
-			iRate /= 100;
-			break;
-		case ENGLAND:
-			iRate *= 67;   //80 before removal of Financian trait
-			iRate /= 100;
-			break;
-		case GERMANY:
-			iRate *= 70;
-			iRate /= 100;
-			break;
-		case RUSSIA:
-			iRate *= 67;  //should be 70 but low commerce makes them too slow
-			iRate /= 100;
-			break;
-		case NETHERLANDS:
-			iRate *= 74;
-			iRate /= 100;
-			break;
-		case MALI:
-			iRate *= 115; //130 before No tech brokering   //80 before removal of Financian trait //higher to counter its UP
-			iRate /= 100;
-			break;
-		case TURKEY:
-			iRate *= 79;
-			iRate /= 100;
-			break;
-		case PORTUGAL:
-			iRate *= 84; //gets super strong thanks to Brazil
-			iRate /= 100;
-			break;
-		case INCA:
-			iRate *= 80;   //80 before removal of Financian trait
-			iRate /= 100;
-			break;
-		case MONGOLIA:
-			iRate *= 89;
-			iRate /= 100;
-			break;
-		case AZTEC:
-			iRate *= 80;
-			iRate /= 100;
-			break;
-		case AMERICA:
-			iRate *= 63;
-			iRate /= 100;
-			break;
-		default:
-			iRate *= 95;
-			iRate /= 100;
-			break;
-	}*/
 
-	if (getID() < NUM_MAJOR_PLAYERS)
-	{
-		iRate = iRatePercent * inflationRateModifier[getID()] / 100;
-	}else
-	{
-		iRate = iRatePercent * 95 / 100;
-	}
-
-	// handle several special effects explicitly here (overwrite)
-	/*if (getScenario() == SCENARIO_600AD)
-	{
-		if (getID() == ARABIA)
-			iRate = iRatePercent * 115 / 100;
-	}*/
-
-	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-	{
-		if (getID() == ROME)
-			iRate = iRatePercent * 84 / 100;
-		if (getID() == PERSIA)
-			iRate = iRatePercent * 75 / 100;
-		if (getID() == AZTEC)
-			iRate = iRatePercent * 67 / 100;
-		if (getID() == MAYA)
-			iRate = iRatePercent * 67 / 100;
-	}
-
-	//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-	//if (GC.getGameINLINE().getGameTurn() >=181 )
-	if (GC.getGameINLINE().getGameTurn() >= getTurnForYear(600) ) // edead: epic/marathon
-	{
-		if (getID() < VIKING)
-		{
-			iRate *= 85;
-			iRate /= 100;
-		}
-	}
-
-	// Leoreth: apply large empire penalty
-	/*int iSizeThreshold = 6 + 3 * getCurrentEra();
-	int iMultiplier = isHuman() ? 5 : 5;
-	int iNumCities = getTotalPopulation() / iSizeThreshold;
-
-	if (iNumCities > 10)
-	{
-		iRate *= 100 + iMultiplier * (iNumCities - 10);
-		iRate /= 100;
-	}*/
+	iRatePercent *= getModifier(MODIFIER_INFLATION_RATE);
+	iRatePercent /= 100;
 
 	FAssert(iRate >= 0);
 
-	return iRate;
-	//Rhye - end
+	return iRatePercent;
 }
 
 
@@ -9396,38 +8662,14 @@ int CvPlayer::greatSpyThreshold() const
 // Leoreth
 int CvPlayer::greatPeopleModifier() const
 {
-	int iModifier = 100;
-	
-	if (getID() < NUM_MAJOR_PLAYERS)
-	{
-		iModifier = greatPeopleThresholdArray[getID()];
-	}
+	int iModifier = getModifier(MODIFIER_GREAT_PEOPLE_THRESHOLD);
 
-	// handle respawns and era buffs explicitly here (overwrite)
-	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-	{
-		if (getID() == ROME)
-			iModifier = 77;
-		else if (getID() == PERSIA)
-			iModifier = 80;
-		else if (getID() == AZTEC)
-			iModifier = 80;
-	}
-
+	// help Ethiopia with its UHV
 	if (getID() == ETHIOPIA)
 	{
 		if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() <= 2)
 		{
 			iModifier *= 80;
-			iModifier /= 100;
-		}
-	}
-
-	if (getScenario() >= SCENARIO_600AD)
-	{
-		if (getID() < VIKING) 
-		{
-			iModifier *= 87;
 			iModifier /= 100;
 		}
 	}
@@ -12460,133 +11702,8 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 			gDLL->getInterfaceIFace()->setDirty(Soundtrack_DIRTY_BIT, true);
 		}
 
-		//Rhye - start switch (for multiple new era splashes
-		int startEra;
-		/*switch (getID())
-		{
-		case EGYPT:
-			startEra = 0;
-			break;
-		case INDIA:
-			startEra = 0;
-			break;
-		case CHINA:
-			startEra = 0;
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-				startEra = 2;
-			break;
-		case BABYLONIA:
-			startEra = 0;
-			break;
-		case GREECE:
-			startEra = 1;
-			break;
-		case PERSIA:
-			startEra = 1;
-			break;
-		case CARTHAGE:
-			startEra = 1;
-			break;
-		case ROME:              // Leoreth - doesn't matter for Italy respawn
-			startEra = 1;
-			break;
-		case JAPAN:
-			startEra = 2;
-			if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-				startEra = 2;
-			break;
-		case ETHIOPIA:
-			startEra = 1;
-			break;
-        case KOREA:
-            startEra = 1;
-            if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-                startEra = 2;
-            break;
-		case MAYA:
-			startEra = 1;
-			break;
-        case BYZANTIUM:
-            startEra = 2;
-            break;
-		case VIKING:
-			startEra = 2;
-			break;
-		case KHMER:
-			startEra = 2;
-			break;
-		case INDONESIA:
-			startEra = 2;
-			break;
-		case ARABIA:
-			startEra = 2;
-			break;
-		case SPAIN:
-			startEra = 2;
-			break;
-		case FRANCE:
-			startEra = 2;
-			break;
-		case ENGLAND:
-			startEra = 2;
-			break;
-		case GERMANY:
-			startEra = 2;
-			break;
-		case RUSSIA:
-			startEra = 2;
-			break;
-		case NETHERLANDS:
-			startEra = 3;
-			break;
-		case MALI:
-			startEra = 2;
-			break;
-		case TURKEY:
-			startEra = 2;
-			break;
-		case PORTUGAL:
-			startEra = 2;
-			break;
-		case INCA:
-			startEra = 2;
-			break;
-		case MONGOLIA:
-			startEra = 2;
-			break;
-		case AZTEC:
-			startEra = 2;
-			break;
-		case AMERICA:
-			startEra = 3;
-			break;
-		default:
-			startEra = 0;
-			break;
-		}*/
-
-		if (getID() < NUM_MAJOR_PLAYERS)
-		{
-			if (getScenario() == SCENARIO_1700AD)
-			{
-				startEra = currentEra1700AD[getID()];
-			}
-			else if (getScenario() == SCENARIO_600AD)
-			{
-				startEra = currentEra600AD[getID()];
-			}
-			else
-			{
-				startEra = currentEra[getID()];
-			}
-		}else
-		{
-			startEra = 0;
-		}
-
-		if (isHuman() && (getCurrentEra() >= startEra) && !GC.getGameINLINE().isNetworkMultiPlayer())
-		//if (isHuman() && (getCurrentEra() != GC.getGameINLINE().getStartEra()) && !GC.getGameINLINE().isNetworkMultiPlayer())
-		//Rhye - end switch
+		int iGameTurn = GC.getGame().getGameTurn();
+		if (isHuman() && (iGameTurn > getBirthTurn()) && (iGameTurn > getScenarioStartTurn()) && !GC.getGameINLINE().isNetworkMultiPlayer())
 		{
 			if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
 			{
@@ -18803,10 +17920,19 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bReborn);
 	pStream->Read(&m_iLatestRebellionTurn);
 	pStream->Read(&m_iNoAnarchyTurns);
+	pStream->Read(&m_iBirthYear);
+
+	pStream->Read(&m_iTakenTilesThreshold);
+	pStream->Read(&m_iDistanceSubtrahend);
+	pStream->Read(&m_iDistanceFactor);
+	pStream->Read(&m_iCompactnessModifier);
+	pStream->Read(&m_iTargetDistanceValueModifier);
+	pStream->Read(&m_iReligiousTolerance);
 
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
 	pStream->Read((int*)&m_eCurrentEra);
+	pStream->Read((int*)&m_eStartingEra); // Leoreth
 	pStream->Read((int*)&m_eLastStateReligion);
 	pStream->Read((int*)&m_eParent);
 	updateTeamType(); //m_eTeamType not saved
@@ -18832,6 +17958,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainProductionModifiers);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
 	pStream->Read(NUM_PARAMETERS, m_aiStabilityParameters);
+	pStream->Read(NUM_MODIFIER_TYPES, m_aiModifiers);
+	pStream->Read(NUM_RELIGIONS, m_aiSpreadFactors);
 
 	pStream->Read(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Read(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -19317,10 +18445,19 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bReborn);
 	pStream->Write(m_iLatestRebellionTurn);
 	pStream->Write(m_iNoAnarchyTurns);
+	pStream->Write(m_iBirthYear);
+
+	pStream->Write(m_iTakenTilesThreshold);
+	pStream->Write(m_iDistanceSubtrahend);
+	pStream->Write(m_iDistanceFactor);
+	pStream->Write(m_iCompactnessModifier);
+	pStream->Write(m_iTargetDistanceValueModifier);
+	pStream->Write(m_iReligiousTolerance);
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);
 	pStream->Write(m_eCurrentEra);
+	pStream->Write(m_eStartingEra); // Leoreth
 	pStream->Write(m_eLastStateReligion);
 	pStream->Write(m_eParent);
 	//m_eTeamType not saved
@@ -19345,6 +18482,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainProductionModifiers);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
 	pStream->Write(NUM_PARAMETERS, m_aiStabilityParameters);
+	pStream->Write(NUM_MODIFIER_TYPES, m_aiModifiers);
+	pStream->Write(NUM_RELIGIONS, m_aiSpreadFactors);
 
 	pStream->Write(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Write(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -23808,174 +22947,14 @@ int CvPlayer::getGrowthThreshold(int iPopulation) const
 		iThreshold *= GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIGrowthPercent();
 		iThreshold /= 100;
 
-		//Rhye - start
+		//Rhye
 		//iThreshold *= std::max(0, ((GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIPerEraModifier() * getCurrentEra()) + 100));
 		iThreshold *= std::max(0, ((-1 * getCurrentEra()) + 100));
-		//Rhye - end
 		iThreshold /= 100;
 	}
 
-	//Rhye - start switch
-	/*switch (getID())
-	{
-		case EGYPT:
-			iThreshold *= 148;
-			iThreshold /= 100;
-			break;
-		case INDIA:
-			iThreshold *= 134;
-			iThreshold /= 100;
-			break;
-		case CHINA:
-			iThreshold *= 132;
-			iThreshold /= 100;
-			break;
-		case BABYLONIA:
-			iThreshold *= 138;
-			iThreshold /= 100;
-			break;
-		case GREECE:
-			iThreshold *= 130;
-			iThreshold /= 100;
-			break;
-		case PERSIA:
-			iThreshold *= 130;
-			iThreshold /= 100;
-			break;
-		case CARTHAGE:
-			iThreshold *= 120;
-			iThreshold /= 100;
-			break;
-		case ROME:
-            if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                iThreshold *= 120;
-            else
-                iThreshold *= 73;   // Leoreth - Renaissance Italy
-			iThreshold /= 100;
-			break;
-		case JAPAN:
-			iThreshold *= 112;
-			iThreshold /= 100;
-			break;
-		case ETHIOPIA:
-			iThreshold *= 100;
-			iThreshold /= 100;
-			break;
-        case KOREA:
-            iThreshold *= 112;
-            iThreshold /= 100;
-            break;
-		case MAYA:
-			iThreshold *= 110;
-			iThreshold /= 100;
-			break;
-        case BYZANTIUM:
-            iThreshold *= 80;
-            iThreshold /= 100;
-            break;
-		case VIKING:
-			iThreshold *= 80;
-			iThreshold /= 100;
-			break;
-		case KHMER:
-			iThreshold *= 80;
-			iThreshold /= 100;
-			break;
-		case INDONESIA:
-			iThreshold *= 80;
-			iThreshold /= 100;
-			break;
-		case ARABIA:
-			iThreshold *= 76;
-			iThreshold /= 100;
-			break;
-		case FRANCE:
-			iThreshold *= 69;
-			iThreshold /= 100;
-			break;
-		case SPAIN:
-			iThreshold *= 68;
-			iThreshold /= 100;
-			break;
-		case ENGLAND:
-			iThreshold *= 67;
-			iThreshold /= 100;
-			break;
-		case GERMANY:
-			iThreshold *= 67;
-			iThreshold /= 100;
-			break;
-		case RUSSIA:
-			iThreshold *= 70;
-			iThreshold /= 100;
-			break;
-		case NETHERLANDS:
-			iThreshold *= 73; //Amsterdam is a powerhouse anyway
-			iThreshold /= 100;
-			break;
-		case MALI:
-			iThreshold *= 78;
-			iThreshold /= 100;
-			break;
-		case TURKEY:
-			iThreshold *= 69;
-			iThreshold /= 100;
-			break;
-		case PORTUGAL:
-			iThreshold *= 76; //Lisbon and Brazil too
-			iThreshold /= 100;
-			break;
-		case INCA:
-			iThreshold *= 69;
-			iThreshold /= 100;
-			break;
-		case MONGOLIA:
-			iThreshold *= 74;
-			iThreshold /= 100;
-			break;
-		case AZTEC:
-			iThreshold *= 68;
-			iThreshold /= 100;
-			break;
-		case AMERICA:
-			iThreshold *= 64;
-			iThreshold /= 100;
-			break;
-		default:
-			iThreshold *= 130;
-			iThreshold /= 100;
-			break;
-	}*/
-
-	if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-	{
-		if (getID() == ROME)
-			iThreshold = iThreshold * 73 / 100;
-		else if (getID() == PERSIA)
-			iThreshold = iThreshold * 72 / 100;
-		else if (getID() == AZTEC)
-			iThreshold = iThreshold * 68 / 100;
-		else if (getID() == MAYA)
-			iThreshold = iThreshold * 68 / 100;
-		else
-			iThreshold = iThreshold * 130 / 100;
-	}else
-	{
-		if (getID() < NUM_MAJOR_PLAYERS)
-		{
-			iThreshold = iThreshold * growthThreshold[getID()] / 100;
-		}else
-		{
-			iThreshold = iThreshold * 130 / 100;
-		}
-	}
-
-	if (getScenario() >= SCENARIO_600AD) //late start condition
-		if (getID() < VIKING) {
-			iThreshold *= 80;
-			iThreshold /= 100;
-		}
-	//Rhye - end
+	iThreshold *= getModifier(MODIFIER_GROWTH_THRESHOLD);
+	iThreshold /= 100;
 
 	return std::max(1, iThreshold);
 }
@@ -25761,4 +24740,159 @@ int CvPlayer::countCoreCities() const
 bool CvPlayer::canTradeBonus(BonusTypes eBonus) const
 {
 	return (GC.getBonusInfo(eBonus).getTechPlayerTrade() == NO_TECH || GET_TEAM(getTeam()).isHasTech((TechTypes)GC.getBonusInfo(eBonus).getTechPlayerTrade()));
+}
+
+int CvPlayer::getModifier(ModifierTypes eModifier) const
+{
+	return m_aiModifiers[eModifier];
+}
+
+void CvPlayer::setModifier(ModifierTypes eModifier, int iNewValue)
+{
+	m_aiModifiers[eModifier] = iNewValue;
+}
+
+EraTypes CvPlayer::getStartingEra() const
+{
+	return m_eStartingEra;
+}
+
+void CvPlayer::setStartingEra(EraTypes eNewValue)
+{
+	m_eStartingEra = eNewValue;
+}
+
+int CvPlayer::getSpreadFactor(ReligionTypes eReligion) const
+{
+	int iSpreadFactor = m_aiSpreadFactors[eReligion];
+
+	if (eReligion == CATHOLICISM)
+	{
+		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
+		{
+			if (iSpreadFactor < m_aiSpreadFactors[ORTHODOXY])
+			{
+				iSpreadFactor = m_aiSpreadFactors[ORTHODOXY];
+			}
+		}
+
+		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
+		{
+			if (iSpreadFactor < m_aiSpreadFactors[PROTESTANTISM])
+			{
+				iSpreadFactor = m_aiSpreadFactors[PROTESTANTISM];
+			}
+		}
+	}
+
+	return iSpreadFactor;
+}
+
+void CvPlayer::setSpreadFactor(ReligionTypes eReligion, int iNewValue)
+{
+	m_aiSpreadFactors[eReligion] = iNewValue;
+}
+
+int CvPlayer::distance(PlayerTypes ePlayer)
+{
+	CvCity* pOurCity = getCapitalCity();
+
+	if (pOurCity == NULL) return -1;
+
+	// find their closest city
+	CvCity* pTheirCity = GC.getMap().findCity(pOurCity->getX(), pOurCity->getY(), ePlayer);
+
+	if (pTheirCity == NULL) return -1;
+
+	// find our closest city to their closest city
+	pOurCity = GC.getMap().findCity(pTheirCity->getX(), pTheirCity->getY(), getID());
+
+	return stepDistance(pOurCity->getX(), pOurCity->getY(), pTheirCity->getX(), pTheirCity->getY());
+}
+
+bool CvPlayer::isDistant(PlayerTypes ePlayer)
+{
+	int iDistance = std::min(distance(ePlayer), GET_PLAYER(ePlayer).distance(getID()));
+
+	return (iDistance > GC.getMap().maxStepDistance() / 2);
+}
+
+bool CvPlayer::isNeighbor(PlayerTypes ePlayer)
+{
+	return (GET_PLAYER(getID()).AI_calculateStolenCityRadiusPlots(ePlayer) > 0 || GET_PLAYER(ePlayer).AI_calculateStolenCityRadiusPlots(getID()) > 0);
+}
+
+int CvPlayer::AI_getTakenTilesThreshold() const
+{
+	return m_iTakenTilesThreshold;
+}
+
+void CvPlayer::setTakenTilesThreshold(int iNewValue)
+{
+	m_iTakenTilesThreshold = iNewValue;
+}
+
+int CvPlayer::AI_getDistanceSubtrahend() const
+{
+	return m_iDistanceSubtrahend;
+}
+
+void CvPlayer::setDistanceSubtrahend(int iNewValue)
+{
+	m_iDistanceSubtrahend = iNewValue;
+}
+
+int CvPlayer::AI_getDistanceFactor() const
+{
+	return m_iDistanceFactor;
+}
+
+void CvPlayer::setDistanceFactor(int iNewValue)
+{
+	m_iDistanceFactor = iNewValue;
+}
+
+int CvPlayer::AI_getCompactnessModifier() const
+{
+	return m_iCompactnessModifier;
+}
+
+void CvPlayer::setCompactnessModifier(int iNewValue)
+{
+	m_iCompactnessModifier = iNewValue;
+}
+
+int CvPlayer::AI_getTargetDistanceValueModifier() const
+{
+	return m_iTargetDistanceValueModifier;
+}
+
+void CvPlayer::setTargetDistanceValueModifier(int iNewValue)
+{
+	m_iTargetDistanceValueModifier = iNewValue;
+}
+
+int CvPlayer::getBirthYear() const
+{
+	return m_iBirthYear;
+}
+
+int CvPlayer::getBirthTurn() const
+{
+	return getTurnForYear(m_iBirthYear);
+}
+
+void CvPlayer::setBirthYear(int iNewValue)
+{
+	m_iBirthYear = iNewValue;
+}
+
+int CvPlayer::AI_getReligiousTolerance() const
+{
+	return m_iReligiousTolerance;
+}
+
+void CvPlayer::setReligiousTolerance(int iNewValue)
+{
+	m_iReligiousTolerance = iNewValue;
 }

@@ -367,8 +367,6 @@ ScenarioTypes getScenario(); // Leoreth
 int getScenarioStartYear(); // Leoreth
 int getScenarioStartTurn(); // Leoreth
 
-int getCivSpreadFactor(PlayerTypes ePlayer, ReligionTypes eReligion); // Leoreth
-
 BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth
 UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // Leoreth
 

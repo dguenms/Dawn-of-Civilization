@@ -22,10 +22,13 @@ import Plague
 import Communications
 import Companies
 import DynamicCivs as dc
+import Modifiers
 import SettlerMaps
 import WarMaps
 import RegionMap
 import Areas
+import Civilizations
+import AIParameters
 
 gc = CyGlobalContext()        
 PyPlayer = PyHelpers.PyPlayer
@@ -103,10 +106,13 @@ class CvRFCEventHandler:
 		cong.setup()
 		
 		# Leoreth: set DLL core values
+		Modifiers.init()
 		SettlerMaps.init()
 		WarMaps.init()
 		RegionMap.init()
 		Areas.init()
+		Civilizations.init()
+		AIParameters.init()
 		
                 return 0
 
@@ -593,6 +599,10 @@ class CvRFCEventHandler:
 		if iGameTurn % 10 == 0:
                         dc.checkTurn(iGameTurn)
 			
+		if utils.getScenario() == i3000BC and iGameTurn == getTurnForYear(600):
+			for iPlayer in range(iVikings):
+				Modifiers.adjustInflationModifier(iPlayer)
+			
                 return 0
 
         def onBeginPlayerTurn(self, argsList):        
@@ -685,6 +695,7 @@ class CvRFCEventHandler:
 			return
 			
 		sta.onTechAcquired(iPlayer, iTech)
+		AIParameters.onTechAcquired(iPlayer, iTech)
 		
                 if (gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer])):
                 	vic.onTechAcquired(iPlayer, iTech)

@@ -24,7 +24,6 @@ typedef list<char*> LISTCHAR;
 #define NUM_BUILDINGTYPES_PLAGUE	(131) // increment when a building class is created except embassies
 
 #define NUM_MAJOR_PLAYERS		(44)
-#define NUM_PL					(44)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(52)
 
@@ -302,62 +301,43 @@ enum ECSArtStyles
 
 #endif	// CVRHYES_H
 
+static const int lTechLeaderPenalty[NUM_ERAS] = {0, 0, 5, 10, 20, 20, 20};
+static const int lTechBackwardsBonus[NUM_ERAS] = {0, 5, 10, 15, 25, 25, 25};
 
-extern int startingTurn[];
-extern int startingTurnYear[]; // edead
-
-extern int takenTiles[NUM_PL];
-extern int distanceSubtrahend[NUM_PL];
-extern int distanceSubtrahendAstronomy[NUM_PL];
-extern int distanceMultiply[NUM_PL];
-extern int distanceMultiplyAstronomy[NUM_PL];
-extern int compactEmpireModifierArray[NUM_PL];
-extern int compactEmpireModifierAstronomy[NUM_PL];
-extern int targetCityValueDivisor[NUM_PL];
-
-extern int eraModifierInit[NUM_PL];
-extern int eraModifierInitAstronomy[NUM_PL];
-extern int cultureModifier[NUM_PL];
-
-extern int unitCostModifier[NUM_PL];
-extern int researchModifier[NUM_PL];
-extern int distanceMaintenanceModifier[NUM_PL];
-extern int numMaintenanceModifier[NUM_PL];
-extern int civicUpkeepModifier[NUM_PL];
-extern int healthModifier[NUM_PL];
-
-extern int startingEraFound[NUM_PL];
-extern int startingEraFound600AD[NUM_PL];
-extern int startingEraFound1700AD[NUM_PL];
-extern int startingEraFoundAstronomy[NUM_PL];
-extern int startingEraRespawn[NUM_PL];
-extern int unitCostModifier2[NUM_PL];
-extern int wonderCostModifier[NUM_PL];
-extern int buildingCostModifier[NUM_PL];
-extern int inflationRateModifier[NUM_PL];
-extern int greatPeopleThresholdArray[NUM_PL];
-extern int currentEra[NUM_PL];
-extern int currentEra600AD[NUM_PL];
-extern int currentEra1700AD[NUM_PL];
-extern int growthThreshold[NUM_PL];
-extern int religiousTolerance[NUM_PL];
-
-extern int lTechLeaderPenalty[NUM_ERAS];
-extern int lTechBackwardsBonus[NUM_ERAS];
-
-extern int turnPlayed[NUM_PL+NUM_MINORS]; 
-extern int civSpreadFactor[NUM_PL+NUM_MINORS][NUM_RELIGIONS];
-extern int borders[NUM_PL][NUM_PL];
-extern int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1];
-extern int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS];
-extern int regionMap[68][124];
-
-inline int getStartingEra(PlayerTypes ePlayer, bool bAstronomy = true)
+// Leoreth: order of persecution
+static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] = 
 {
-	if (GET_PLAYER(ePlayer).isReborn()) return startingEraRespawn[ePlayer];
-	else if (bAstronomy && GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)ASTRONOMY)) return startingEraFoundAstronomy[ePlayer];
-	else if (getScenario() == SCENARIO_1700AD) return startingEraFound1700AD[ePlayer];
-	else if (getScenario() == SCENARIO_600AD) return startingEraFound600AD[ePlayer];
+	// Protestantism
+	{ISLAM, CATHOLICISM, ORTHODOXY, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Catholicism
+	{ISLAM, PROTESTANTISM, ORTHODOXY, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Orthodoxy
+	{ISLAM, PROTESTANTISM, ORTHODOXY, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Islam
+	{ZOROASTRIANISM, HINDUISM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Hinduism
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, CONFUCIANISM, TAOISM, ZOROASTRIANISM, BUDDHISM},
+	// Buddhism
+	{ORTHODOXY, PROTESTANTISM, CATHOLICISM, ZOROASTRIANISM, TAOISM, ISLAM, CONFUCIANISM, HINDUISM},
+	// Confucianism
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, TAOISM},
+	// Taoism
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM},
+	// Zoroastrianism
+	{ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+};
 
-	return startingEraFound[ePlayer];
-}
+// Leoreth: persecution priority
+static const int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS] =
+{
+	// PRO CAT ORT ISL HIN BUD CON TAO ZOR
+	{  -1,  3,  2,  4,  1,  1,  1,  1,  2 }, // Protestantism
+	{   3, -1,  2,  4,  1,  1,  1,  1,  2 }, // Catholicism
+	{   3,  3, -1,  4,  1,  1,  1,  1,  2 }, // Orthodoxy
+	{   2,  2,  2, -1,  3,  1,  1,  1,  4 }, // Islam
+	{   3,  3,  3,  4, -1,  0,  1,  1,  2 }, // Hinduism
+	{   3,  3,  3,  4,  0, -1,  1,  1,  2 }, // Buddhism
+	{   2,  2,  2,  3,  1,  1, -1,  0,  1 }, // Confucianism
+	{   2,  2,  2,  3,  1,  1,  0, -1,  1 }, // Taoism
+	{   3,  3,  3,  4,  1,  1,  1,  1, -1 }, // Zoroastrianism
+};

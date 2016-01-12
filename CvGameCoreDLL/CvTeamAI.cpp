@@ -1407,12 +1407,12 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 
 	//Rhye - start (no trading the first turns, for the exploit)
 	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[getID()]+2)
-	if (GC.getGameINLINE().getGameTurn() <= getTurnForYear(startingTurnYear[getID()])+2) // edead
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn()+2) // edead
 	{
 		return DENIAL_TECH_MONOPOLY;
 	}
 	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[eTeam]+2)
-	if (GC.getGameINLINE().getGameTurn() <= getTurnForYear(startingTurnYear[eTeam])+2) // edead
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getBirthTurn()+2) // edead
 	{
 		return DENIAL_TECH_WHORE;
 	}
@@ -1933,7 +1933,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 	//Rhye - start (lower the first turns)
 	//if (GC.getGameINLINE().getGameTurn() <= startingTurn[getID()]+5)
-	if (GC.getGameINLINE().getGameTurn() <= getTurnForYear(startingTurnYear[getID()])+5) // edead
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn()+5) // edead
 	{
 		iMasterPower /= 2;
 	}
@@ -2062,9 +2062,9 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			{
 				return DENIAL_TOO_FAR;
 			}
-            // edead: do not allow vassals with borders value of 5 (CvRhyes.cpp) - too distant or insignificant
+            // edead: do not allow far away vassals
             // Leoreth: only before Astronomy
-			if (!kMasterTeam.isHasTech((TechTypes)ASTRONOMY) && (borders[(int)kMasterTeam.getID()][(int)getID()]) >= 5)
+			if (!kMasterTeam.isHasTech((TechTypes)ASTRONOMY) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
 			{
 				return DENIAL_TOO_FAR;
 			}
@@ -2644,9 +2644,10 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	//Rhye - start
 	//due to easier pact trading, there's a cap of civs alliances
 	//exploring the pacts tree without recursion
-	int civsArray[NUM_PL] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	civsArray[getID()] = 1;
-	civsArray[eTeam] = 1;
+	vector<int> players(NUM_MAJOR_PLAYERS, 0);
+
+	players[getID()] = 1;
+	players[eTeam] = 1;
 	int iJ;
 	bool bContinue = true;
 	int targetFlag = 1;
@@ -2654,7 +2655,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 		bContinue = false;
 		for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 		{
-			if (civsArray[iI] == targetFlag)
+			if (players[iI] == targetFlag)
 			{
 				if (GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
@@ -2662,9 +2663,9 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 					{
 						if (iI != iJ && GET_PLAYER((PlayerTypes)iJ).isAlive())
 						{
-							if (GET_TEAM((TeamTypes)iI).isDefensivePact((TeamTypes)iJ) && civsArray[iJ] == 0)
+							if (GET_TEAM((TeamTypes)iI).isDefensivePact((TeamTypes)iJ) && players[iJ] == 0)
 							{
-								civsArray[iJ] = targetFlag + 1;
+								players[iJ] = targetFlag + 1;
 								bContinue = true;
 								/*char buf4[50];
 								sprintf(buf4, "iI = %d; iJ = %d; targetFlag: %d;", iI, iJ, targetFlag);
@@ -2682,7 +2683,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	int maxNumVassalsPlayer = 0;
 	int iMaxEra = 0;
 	for (int iK = 0; iK < NUM_MAJOR_PLAYERS; iK++) {
-		if (civsArray[iK] > 0) {
+		if (players[iK] > 0) {
 			totalNodes++;
 			if (GET_PLAYER((PlayerTypes)iK).getCurrentEra() > iMaxEra)
 				iMaxEra = GET_PLAYER((PlayerTypes)iK).getCurrentEra();
@@ -2705,7 +2706,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	}
 	bool bTech = false;
 	for (int iK = 0; iK < NUM_MAJOR_PLAYERS; iK++) {
-		if (civsArray[iK] > 0) {
+		if (players[iK] > 0) {
 			if (GET_TEAM((TeamTypes)iK).isHasTech((TechTypes)FASCISM) || isHasTech((TechTypes)FISSION)) {
 				bTech = true;
 				break;
@@ -2914,12 +2915,15 @@ void CvTeamAI::AI_updateWorstEnemy()
 					if (AI_getAttitude(eLoopTeam) < ATTITUDE_CAUTIOUS)
 					{
 						// Leoreth: far away civs shouldn't be enemies
-						int iBorders = borders[getID()][iI];
+						int iModifier = 3;
 
-						// independents don't have a borders modifier
-						if (getID() >= NUM_MAJOR_PLAYERS) iBorders = 1;
+						if (getID() < NUM_MAJOR_PLAYERS)
+						{
+							if (GET_PLAYER(GET_TEAM(eLoopTeam).getLeaderID()).isNeighbor(getLeaderID())) iModifier = 1;
+							else if (GET_PLAYER(GET_TEAM(eLoopTeam).getLeaderID()).isDistant(getLeaderID())) iModifier = 5;
+						}
 
-						int iValue = AI_getAttitudeVal(eLoopTeam) * 100 / ((iBorders == 0) || GC.getGame().isNeighbors((PlayerTypes)getID(), (PlayerTypes)eLoopTeam) ? 1 : iBorders);
+						int iValue = AI_getAttitudeVal(eLoopTeam) * 100 / iModifier;
 						if (iValue < iBestValue)
 						{
 							iBestValue = iValue;
