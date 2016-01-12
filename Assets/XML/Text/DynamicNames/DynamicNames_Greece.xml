@@ -41,7 +41,7 @@
 		<English>Ptolemaic Kingdom</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_GREEK_VASSAL</Tag>
+		<Tag>TXT_KEY_CIV_GREEK_INDIA</Tag>
 		<English>Greco-Bactrian Kingdom</English>
 	</TEXT>
 	<TEXT>
@@ -49,7 +49,7 @@
 		<English>Macedonia</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_</Tag>
+		<Tag>TXT_KEY_CIV_GREECE_MACEDONIAN</Tag>
 		<English>Macedonian</English>
 	</TEXT>
 </Civ4GameText>
