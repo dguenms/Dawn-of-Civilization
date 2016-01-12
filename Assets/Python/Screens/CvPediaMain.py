@@ -510,7 +510,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         tList.pop(con.iCivSumeria) #sumeria                        
                         tList.pop(con.iCivNativeAmericans) #nat.Am.
                         #tList.pop(con.iCivKorea) #korea                  
-                        #tList.pop(con.iCivHolyRoman) #hre
+                        #tList.pop(con.iCivHolyRome) #hre
 			tList.pop(con.iCivHarappa)
                        	tList.pop(con.iCivCelt) #celts
                         #tList.pop(con.iCivByzantium) #byzantium

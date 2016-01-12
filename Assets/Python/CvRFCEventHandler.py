@@ -22,6 +22,13 @@ import Plague
 import Communications
 import Companies
 import DynamicCivs as dc
+import Modifiers
+import SettlerMaps
+import WarMaps
+import RegionMap
+import Areas
+import Civilizations
+import AIParameters
 
 gc = CyGlobalContext()        
 PyPlayer = PyHelpers.PyPlayer
@@ -98,33 +105,15 @@ class CvRFCEventHandler:
 		vic.setup()
 		cong.setup()
 		
-		# area debug
-		#sContinentDebug = ""
-		#for y in range(iWorldY-1, 0, -1):
-		#	for x in range(iWorldX):
-		#		sContinentDebug += str(gc.getMap().plot(x, y).getArea()) + ", "
-		#	sContinentDebug += "\n"
-		##print sContinentDebug
-		
-		
-
-		for i in range(iNumUnits):
-			print gc.getUnitInfo(i).getText()
-			
-		for i in range(iNumBuildings):
-			print gc.getBuildingInfo(i).getText()
-		
 		# Leoreth: set DLL core values
-		for x in range(124):
-			for y in range(68):
-				plot = gc.getMap().plot(x, y)
-				if plot.isWater(): continue
-				for iPlayer in range(iNumPlayers):
-					if utils.isPlotInArea((x, y), tCoreAreasTL[0][iPlayer], tCoreAreasBR[0][iPlayer], tExceptions[0][iPlayer]):
-						plot.setCore(iPlayer, False, True)
-					if utils.isPlotInArea((x, y), tCoreAreasTL[1][iPlayer], tCoreAreasBR[1][iPlayer], tExceptions[1][iPlayer]):
-						plot.setCore(iPlayer, True, True)
-                
+		Modifiers.init()
+		SettlerMaps.init()
+		WarMaps.init()
+		RegionMap.init()
+		Areas.init()
+		Civilizations.init()
+		AIParameters.init()
+		
                 return 0
 
 
@@ -173,18 +162,18 @@ class CvRFCEventHandler:
 		if utils.getHumanID() != iPlayer and iPlayer < iNumPlayers:
 			tCity = (city.getX(), city.getY())
 			if sd.scriptDict['lResurrections'][iPlayer] == 0:
-				if tCity == tCapitals[utils.getReborn(iPlayer)][iPlayer]:
+				if Areas.getCapital(iPlayer) == tCity:
 					utils.relocateCapital(iPlayer, city)
 			else:
-				if tCity == tRespawnCapitals[iPlayer]:
+				if Areas.getRespawnCapital(iPlayer) == tCity:
 					utils.relocateCapital(iPlayer, city)
 					
 		# Leoreth: conquering Constantinople adds it to the Turkish core + Rumelia
 		if iPlayer == iTurkey and (city.getX(), city.getY()) == (68, 45):
-			if not utils.isReborn(iTurkey): gc.getPlayer(iTurkey).setReborn(True)
+			utils.setReborn(iTurkey, True)
 					
 		# Leoreth: help Byzantium/Constantinople
-		if iPlayer == iByzantium and (city.getX(), city.getY()) == tCapitals[0][iByzantium] and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
+		if iPlayer == iByzantium and (city.getX(), city.getY()) == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -213,7 +202,7 @@ class CvRFCEventHandler:
 				
 			# Byzantium reduced to four cities: core shrinks to Constantinople
 			if iOwner == iByzantium and gc.getPlayer(iByzantium).getNumCities <= 4:
-				gc.getPlayer(iByzantium).setReborn(True)
+				utils.setReborn(iByzantium, True)
 					
 		if bTrade:
 			for i in range(iNumBuildings):
@@ -299,9 +288,9 @@ class CvRFCEventHandler:
 					utils.makeUnitAI(iGalley, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
 					utils.makeUnitAI(iSettler, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
 					
-				if not utils.isReborn(iOwner): gc.getPlayer(iCarthage).setReborn(True)
+				utils.setReborn(iCarthage, True)
 				
-		if iOwner == iByzantium and (city.getX(), city.getY()) == tCapitals[0][iByzantium] and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
+		if iOwner == iByzantium and (city.getX(), city.getY()) == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
 			if city.getPopulation() < 5:
 				city.setPopulation(5)
 				
@@ -315,7 +304,7 @@ class CvRFCEventHandler:
 			
 			city.setHasRealBuilding(iJewishTemple + 4*gc.getPlayer(iOwner).getStateReligion(), True)
 			
-		if iOwner == iNetherlands and (city.getX(), city.getY()) == tCapitals[0][iNetherlands] and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
+		if iOwner == iNetherlands and (city.getX(), city.getY()) == Areas.getCapital(iNetherlands) and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
 			city.setPopulation(9)
 			
 			for iBuilding in [iLibrary, iBarracks, iGrocer, iBank, iColosseum, iTheatre, iJewishTemple+4*gc.getPlayer(iNetherlands).getStateReligion()]:
@@ -323,7 +312,7 @@ class CvRFCEventHandler:
 				
 			gc.getPlayer(iNetherlands).AI_updateFoundValues(False)
 			
-		if iOwner == iItaly and (city.getX(), city.getY()) == tCapitals[0][iItaly] and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iItaly])+3:
+		if iOwner == iItaly and (city.getX(), city.getY()) == Areas.getCapital(iItaly) and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iItaly])+3:
 			city.setPopulation(7)
 			
 			for iBuilding in [iLibrary, iGrocer, iTemple+4*gc.getPlayer(iItaly).getStateReligion(), iMarket, iItalianArtStudio, iAqueduct, iCourthouse, iWalls]:
@@ -418,11 +407,11 @@ class CvRFCEventHandler:
 			sta.onVassalState(iMaster, iVassal)
 		
 		if iVassal == iInca:
-			gc.getPlayer(iInca).setReborn(True)
+			utils.setReborn(iInca, True)
 			
 		# move Mongolia's core south in case they vassalize China
 		if bCapitulated and iVassal == iChina and iMaster == iMongolia:
-			gc.getPlayer(iMongolia).setReborn(True)
+			utils.setReborn(iMongolia, True)
 		
 		dc.onVassalState(iVassal)
 
@@ -567,7 +556,7 @@ class CvRFCEventHandler:
 		# Leoreth: in case human Phoenicia moves palace to Carthage
 		if iBuildingType == iPalace:
 			if iOwner == iCarthage and city.getX() == 58 and city.getY() == 39:
-				if not utils.isReborn(iOwner): gc.getPlayer(iCarthage).setReborn(True)
+				utils.setReborn(iCarthage, True)
 			
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList
@@ -609,6 +598,10 @@ class CvRFCEventHandler:
 		
 		if iGameTurn % 10 == 0:
                         dc.checkTurn(iGameTurn)
+			
+		if utils.getScenario() == i3000BC and iGameTurn == getTurnForYear(600):
+			for iPlayer in range(iVikings):
+				Modifiers.adjustInflationModifier(iPlayer)
 			
                 return 0
 
@@ -702,6 +695,7 @@ class CvRFCEventHandler:
 			return
 			
 		sta.onTechAcquired(iPlayer, iTech)
+		AIParameters.onTechAcquired(iPlayer, iTech)
 		
                 if (gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer])):
                 	vic.onTechAcquired(iPlayer, iTech)
@@ -757,24 +751,24 @@ class CvRFCEventHandler:
 					if city.plot().getRegionID() == rIberia:
 						bNoMoors = False
 			if bNoMoors:
-				gc.getPlayer(iSpain).setReborn(True)
-				gc.getPlayer(iMoors).setReborn(True)
+				utils.setReborn(iSpain, True)
+				utils.setReborn(iMoors, True)
 				
 		# Italy's core extends when reaching the Industrial era
 		if iPlayer == iItaly and iEra == iIndustrial:
-			gc.getPlayer(iItaly).setReborn(True)
+			utils.setReborn(iItaly, True)
 			
 		# Arabia's core moves to Iraq when Philosophy is discovered
 		if iPlayer == iArabia and iTech == iPhilosophy:
-			gc.getPlayer(iArabia).setReborn(True)
+			utils.setReborn(iArabia, True)
 			
 		# Japan's core extends when reaching the Industrial era
 		if iPlayer == iJapan and iEra == iIndustrial:
-			gc.getPlayer(iJapan).setReborn(True)
+			utils.setReborn(iJapan, True)
 			
 		# Germany's core shrinks when reaching the Modern era
 		if iPlayer == iGermany and iEra == iModern:
-			gc.getPlayer(iGermany).setReborn(True)
+			utils.setReborn(iGermany, True)
                 
 
         def onPreSave(self, argsList):

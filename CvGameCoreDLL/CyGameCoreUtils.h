@@ -83,6 +83,6 @@ int cyGetTurnYearForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ eC
 int cyGetTurnMonthForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed);
 // edead: end
 
-int cyGetSettlerMapValue(int iPlayer, int iReborn, int x, int y);
+int cyGetSettlerValue(int iPlayer, int x, int y);
 
 #endif	// CyGameCoreUtils_h
