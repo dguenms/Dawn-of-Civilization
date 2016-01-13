@@ -120,8 +120,6 @@
 			<ArtDefineTag>ART_DEF_FEATURE_JUNGLE</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
@@ -132,7 +130,6 @@
 			<iCultureCost>10</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>
-			<!-- Rhye -->
 			<iGrowth>0</iGrowth>
 			<iTurnDamage>0</iTurnDamage>
 			<bNoCoast>0</bNoCoast>
@@ -142,7 +139,6 @@
 			<bRequiresRiver>0</bRequiresRiver>
 			<bAddsFreshWater>0</bAddsFreshWater>
 			<bImpassable>0</bImpassable>
-			<!-- Rhye -->
 			<bNoCity>1</bNoCity>
 			<bNoImprovement>0</bNoImprovement>
 			<bVisibleAlways>0</bVisibleAlways>
@@ -350,8 +346,6 @@
 			<ArtDefineTag>ART_DEF_FEATURE_FLOOD_PLAINS</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>3</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<RiverYieldChange>
 				<iYield>0</iYield>
@@ -468,7 +462,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
@@ -479,7 +472,6 @@
 			<iCultureCost>0</iCultureCost>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>
-			<!-- Rhye -->
 			<iGrowth>3</iGrowth>
 			<iTurnDamage>0</iTurnDamage>
 			<bNoCoast>0</bNoCoast>
@@ -583,17 +575,12 @@
 			<iEffectProbability>15</iEffectProbability>
 			<iAdvancedStartRemoveCost>0</iAdvancedStartRemoveCost>
 		</FeatureInfo>
-		<!-- Rhye - start -->
 		<FeatureInfo>
 			<Type>FEATURE_MUD</Type>
-			<Description>TXT_KEY_TERRAIN_MARSH</Description>
-			<Civilopedia>TXT_KEY_FEATURE_MUD_PEDIA</Civilopedia>
+			<Description>TXT_KEY_FEATURE_MARSH</Description>
+			<Civilopedia>TXT_KEY_FEATURE_MARSH_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_MARSH</ArtDefineTag>
-			<YieldChanges>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-			</YieldChanges>
+			<YieldChanges/>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
 			<iMovement>2</iMovement>
@@ -615,7 +602,7 @@
 			<bNoCity>1</bNoCity>
 			<bNoImprovement>1</bNoImprovement>
 			<bVisibleAlways>0</bVisibleAlways>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<OnUnitChangeTo/>
 			<TerrainBooleans>
 				<TerrainBoolean>
@@ -698,7 +685,6 @@
 			<iEffectProbability>0</iEffectProbability>
 			<iAdvancedStartRemoveCost>0</iAdvancedStartRemoveCost>
 		</FeatureInfo>
-		<!-- Rhye - end -->
 		<FeatureInfo>
 			<Type>FEATURE_CAPE_COAST</Type>
 			<Description>TXT_KEY_FEATURE_CAPE_COAST</Description>
@@ -722,10 +708,10 @@
 			<bRequiresRiver>0</bRequiresRiver>
 			<bAddsFreshWater>0</bAddsFreshWater>
 			<bImpassable>0</bImpassable>
-			<bNoCity>0</bNoCity>
+			<bNoCity>1</bNoCity>
 			<bNoImprovement>0</bNoImprovement>
 			<bVisibleAlways>0</bVisibleAlways>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<OnUnitChangeTo/>
 			<TerrainBooleans>
 				<TerrainBoolean>
@@ -819,7 +805,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
@@ -839,10 +824,10 @@
 			<bRequiresRiver>0</bRequiresRiver>
 			<bAddsFreshWater>0</bAddsFreshWater>
 			<bImpassable>0</bImpassable>
-			<bNoCity>0</bNoCity>
+			<bNoCity>1</bNoCity>
 			<bNoImprovement>0</bNoImprovement>
 			<bVisibleAlways>0</bVisibleAlways>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<OnUnitChangeTo/>
 			<TerrainBooleans>
 				<TerrainBoolean>
@@ -915,8 +900,6 @@
 			<ArtDefineTag>ART_DEF_FEATURE_RAINFOREST</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
