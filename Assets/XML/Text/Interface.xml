@@ -2,6 +2,30 @@
 <!-- Interface -->
 <Civ4GameText>
  <TEXT>
+  <Tag>TXT_KEY_UP_ENSLAVE_LOSE</Tag>
+  <English>Your unit has been enslaved!</English>
+  <French>Votre unit&#233; a &#233;t&#233; asservie !</French>
+  <German>Eure Einheit wurde versklavt!</German>
+  <Italian>La tua unit&#224; &#232; stata schiavizzata!</Italian>
+  <Spanish>&#161;Tu unidad ha sido esclavizada!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_ENSLAVE_WIN</Tag>
+  <English>An enemy unit has been enslaved!</English>
+  <French>Une unit&#233; ennemie a &#233;t&#233; asservie !</French>
+  <German>Eine feindliche Einheit wurde versklavt!</German>
+  <Italian>Un'unit&#224; nemica &#232; stata schiavizzata!</Italian>
+  <Spanish>&#161;Una unidad enemiga ha sido esclavizada!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_UP_EMIGRATION</Tag>
+  <English>A part of our population from %s1 is emigrating to the New World!</English>
+  <French>Une partie de notre population &#233;migre en Am&#233;rique !</French>
+  <German>Ein Teil unserer Bev&#246;lkerung aus %s1 wandert in die Neue Welt aus!</German>
+  <Italian>Parte della nostra popolazione emigra in America!</Italian>
+  <Spanish>&#161;Parte de nuestra poblaci&#243;n est&#225; emigrando a Estados Unidos!</Spanish>
+ </TEXT>
+ <TEXT>
   <Tag>TXT_KEY_TECH_BASE_COST</Tag>
   <English> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Base Cost:[COLOR_REVERT]</English>
   <German> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Grundkosten:[COLOR_REVERT]</German>
@@ -328,6 +352,14 @@
   <Spanish>Modernizaci&#243;n de unidades</Spanish>
  </TEXT>
  <TEXT>
+  <Tag>TXT_KEY_RATING_STAR</Tag>
+  <English>[ICON_STAR]</English>
+  <French>[ICON_STAR]</French>
+  <German>[ICON_STAR]</German>
+  <Italian>[ICON_STAR]</Italian>
+  <Spanish>[ICON_STAR]</Spanish>
+ </TEXT>
+ <TEXT>
   <Tag>TXT_KEY_1STAR</Tag>
   <English>%F1_HealthOrUn</English>
   <French>%F1_HealthOrUn%F2_HealthOrUn</French>
@@ -372,6 +404,14 @@
   <English>Removing a %s1 near your city of %s2 has created %d3 [ICON_GOLD] for your treasury.</English>
  </TEXT>
  <TEXT>
+  <Tag>TXT_KEY_BC</Tag>
+  <English>BC</English>
+  <French>av. J.-C.</French>
+  <German>v. Chr.</German>
+  <Italian>a.C.</Italian>
+  <Spanish>a.C.</Spanish>
+ </TEXT>
+ <TEXT>
   <Tag>TXT_KEY_AD</Tag>
   <English>AD</English>
   <French>ap. J.-C.</French>
@@ -380,12 +420,20 @@
   <Spanish>d.C.</Spanish>
  </TEXT>
  <TEXT>
-  <Tag>TXT_KEY_BC</Tag>
-  <English>BC</English>
-  <French>av. J.-C.</French>
-  <German>v. Chr.</German>
-  <Italian>a.C.</Italian>
-  <Spanish>a.C.</Spanish>
+  <Tag>TXT_KEY_YEAR_BC</Tag>
+  <English>%d1 BC</English>
+  <French>%d1 av. J.-C.</French>
+  <German>%d1 v. Chr.</German>
+  <Italian>%d1 a.C.</Italian>
+  <Spanish>%d1 a.C.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_YEAR_AD</Tag>
+  <English>%d1 AD</English>
+  <French>%d1 ap. J.-C.</French>
+  <German>%d1 n. Chr.</German>
+  <Italian>%d1 d.C.</Italian>
+  <Spanish>%d1 d.C.</Spanish>
  </TEXT>
  <TEXT>
   <Tag>TXT_KEY_AGE_BRONZE</Tag>
@@ -764,12 +812,12 @@
   <German>%s1 Armeen sind in unser Territorium eingefallen!</German>
  </TEXT>
  <TEXT>
-  <Tag>TXT_KEY_LOADING_TIME</Tag>
-  <English>(Estimated loading time:</English>
-  <French>(Temps de chargement estim&#233; :</French>
-  <German>(Gesch&#228;tzte Ladezeit:</German>
-  <Italian>(Tempo stimato di caricamento:</Italian>
-  <Spanish>(Tiempo estimado de carga:</Spanish>
+  <Tag>TXT_KEY_LOADING_TIME_MINUTES</Tag>
+  <English>(Estimated loading time: %d1 minutes)[NEWLINE]</English>
+  <French>(Temps de chargement estimé : %d1 minutes)[NEWLINE]</French>
+  <German>(Geschätzte Ladezeit: %d1 Minuten)[NEWLINE]</German>
+  <Italian>(Tempo stimato di caricamento: %d1 minuti)[NEWLINE]</Italian>
+  <Spanish>(Tiempo estimado de carga: %d1 minuto/s)[NEWLINE]</Spanish>
  </TEXT>
  <TEXT>
   <Tag>TXT_KEY_MAYA_HOLKAN_EFFECT</Tag>
@@ -851,14 +899,6 @@
   <Tag>TXT_KEY_MEZQUITA_FREE_GP</Tag>
   <English>A %s1 has been born after the construction of La Mezquita in %s2!</English>
   <German>Ein %s1 wurde nach der Errichtung der La Mezquita in %s2 geboren!</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_MINUTES</Tag>
-  <English>minutes)</English>
-  <French>minutes)</French>
-  <German>Minuten)</German>
-  <Italian>minuti)</Italian>
-  <Spanish>minuto/s)</Spanish>
  </TEXT>
  <TEXT>
   <Tag>TXT_KEY_MISC_BONUS_PLAYER_TRADE</Tag>

@@ -304,7 +304,7 @@ int cyGetTurnMonthForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ e
 }
 // edead: end
 
-int cyGetSettlerMapValue(int iPlayer, int iReborn, int x, int y)
+int cyGetSettlerValue(int iPlayer, int x, int y)
 {
-	return getSettlerMapValue(iPlayer, iReborn, x, y);
+	return GET_PLAYER((PlayerTypes)iPlayer).getSettlerValue(x, y);
 }

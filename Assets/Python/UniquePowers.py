@@ -34,6 +34,7 @@ from StoredData import sd # edead
 import Consts as con
 import RFCUtils
 from operator import itemgetter
+import Areas
 utils = RFCUtils.RFCUtils()
 
 # globals
@@ -807,7 +808,7 @@ class UniquePowers:
 	# Indonesian UP: additional gold for foreign ships in your core
 	def indonesianUP(self):
 		iNumUnits = 0
-		for (x, y) in utils.getPlotList(con.tCoreAreasTL[0][iIndonesia], con.tCoreAreasBR[0][iIndonesia]):
+		for (x, y) in Areas.getCoreArea(iIndonesia):
 			plot = gc.getMap().plot(x, y)
 			if plot.getOwner() == iIndonesia:
 				for iUnit in range(plot.getNumUnits()):

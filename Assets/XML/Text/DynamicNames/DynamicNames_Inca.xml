@@ -50,6 +50,10 @@
 		<English>Bolivia</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_BOLIVIAN</Tag>
+		<English>Bolivian</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_ADJECTIVE</Tag>
 		<English>Incan</English>
 		<French>
@@ -96,9 +100,5 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INCA_BOLIVIAN</Tag>
-		<English>Bolivian</English>
 	</TEXT>
 </Civ4GameText>
