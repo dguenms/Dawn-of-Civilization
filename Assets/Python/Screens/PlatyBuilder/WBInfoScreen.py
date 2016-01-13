@@ -17,6 +17,8 @@ import Consts as con
 import RFCUtils
 utils = RFCUtils.RFCUtils()
 import MapDrawer as md
+import Areas
+import SettlerMaps
 
 iMode = 0
 iSelectedPlayer = -1
@@ -123,7 +125,7 @@ class WBInfoScreen:
 		if iMode < 14:
 			self.placeItems()
 		else:
-			if tCurrentPlot == -1: tCurrentPlot = con.tCapitals[0][utils.getHumanID()]
+			if tCurrentPlot == -1: tCurrentPlot = Areas.getCapital(utils.getHumanID())
 			self.placeItemsStabMap()
 			self.mapButtons()
 		self.refreshMap()
@@ -393,10 +395,10 @@ class WBInfoScreen:
 		else:
 			if iMode == 14 and iItem != -1:
 				iPlayer = iItem
-				iReborn = utils.getReborn(iPlayer)
-				tCapital = con.tCapitals[iReborn][iPlayer]
-				lCorePlots = md.getCorePlotList(iPlayer)
-				lForeignCorePlots = utils.getForeignCorePlots(iPlayer)
+				tCapital = Areas.getCapital(iPlayer)
+				lCorePlots = Areas.getCoreArea(iPlayer)
+				lForeignCorePlots = Areas.getForeignCores(iPlayer)
+				iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 				for x in range(con.iWorldX):
 					for y in range(con.iWorldY):
 						plot = gc.getMap().plot(x, y)
@@ -404,7 +406,7 @@ class WBInfoScreen:
 						if (x, y) in lCorePlots:
 							iPlotType = 0
 						else:
-							iSettlerValue = md.getSettlerValue(iPlayer, (x, y))
+							iSettlerValue = SettlerMaps.getMapValue(iCiv, x, y)
 							if iSettlerValue == 3:
 								if bHideForbidden: continue
 								iPlotType = 5
@@ -424,13 +426,12 @@ class WBInfoScreen:
 				iColorSW = gc.getInfoTypeForString(self.iColorSpawnWater)
 				iColorC = gc.getInfoTypeForString(self.lColors[2])
 				iPlayer = iItem
-				iReborn = utils.getReborn(iPlayer)
-				for tPlot in md.getFlipPlotList(iPlayer):
+				for tPlot in Areas.getBirthArea(iPlayer):
 					plot = gc.getMap().plot(tPlot[0], tPlot[1])
 					if plot.isWater():  screen.minimapFlashPlot(tPlot[0], tPlot[1], iColorSW, -1)
 					else: screen.minimapFlashPlot(tPlot[0], tPlot[1], iColorS, -1)
-				tCapital = con.tCapitals[iReborn][iPlayer]
-				screen.minimapFlashPlot(tCapital[0], tCapital[1], iColorC, -1)
+				x, y = Areas.getCapital(iPlayer)
+				screen.minimapFlashPlot(x, y, iColorC, -1)
 
 			if lSquareSelection[2]:
 				if lSquareSelection[1] == -1:
@@ -728,15 +729,14 @@ class WBInfoScreen:
 
 			for iPlayer in range(con.iNumPlayers):
 				iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-				bCore = tCurrentPlot in md.getCorePlotList(iPlayer)
-				iReborn = utils.getReborn(iPlayer)
-				iSettlerValue = md.getSettlerValue(iPlayer, tCurrentPlot)
+				bCore = tCurrentPlot in Areas.getCoreArea(iPlayer)
+				iSettlerValue = SettlerMaps.getMapValue(iCiv, tCurrentPlot[0], tCurrentPlot[1])
 				if bCore:
 					sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 					iPlotType = 0
 				else:
 					sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
-					bForeignCore = tCurrentPlot in utils.getForeignCorePlots(iPlayer)
+					bForeignCore = tCurrentPlot in Areas.getForeignCores(iPlayer)
 					if iSettlerValue >= 90:
 						if bForeignCore:
 							iPlotType = 2
@@ -779,7 +779,7 @@ class WBInfoScreen:
 
 			for iPlayer in range(con.iNumPlayers):
 				iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-				if tCurrentPlot in md.getFlipPlotList(iPlayer):
+				if tCurrentPlot in Areas.getBirthArea(iPlayer):
 					sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 				else:
 					sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
@@ -902,10 +902,11 @@ class WBInfoScreen:
 					self.refreshMap()
 				elif iData1 == 22172:
 					iPlayer = inputClass.getData2()
+					iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 					if iChangeType == 0:
-						iValue = md.getSettlerValue(iPlayer, tCurrentPlot) - iChange
+						iValue = SettlerMaps.getMapValue(iCiv, tCurrentPlot[0], tCurrentPlot[1]) - iChange
 					elif iChangeType == 1:
-						iValue = md.getSettlerValue(iPlayer, tCurrentPlot) + iChange
+						iValue = SettlerMaps.getMapValue(iCiv, tCurrentPlot[0], tCurrentPlot[1]) + iChange
 					elif iChangeType == 2:
 						iValue = iSetValue
 					md.changeSettlerValue(iPlayer, tCurrentPlot, iValue)
@@ -1017,17 +1018,18 @@ class WBInfoScreen:
 						for tPlot in lPlotList:
 							md.changeCoreForce(iItem, tPlot, False)
 					elif iData2 == 2:
-						lOldCore = md.getCorePlotList(iItem)
+						lOldCore = Areas.getCoreArea(iItem)
 						for tPlot in lOldCore:
 							md.changeCoreForce(iItem, tPlot, False)
 						for tPlot in lPlotList:
 							md.changeCoreForce(iItem, tPlot, True)
 					elif iData2 == 3:
+						iCiv = gc.getPlayer(iItem).getCivilizationType()
 						for tPlot in lPlotList:
 							if iChangeType == 0:
-								iValue = md.getSettlerValue(iItem, tPlot) - iChange
+								iValue = SettlerMaps.getMapValue(iCiv, tPlot[0], tPlot[1]) - iChange
 							elif iChangeType == 1:
-								iValue = md.getSettlerValue(iItem, tPlot) + iChange
+								iValue = SettlerMaps.getMapValue(iCiv, tPlot[0], tPlot[1]) + iChange
 							elif iChangeType == 2:
 								iValue = iSetValue
 							md.changeSettlerValue(iItem, tPlot, iValue)
@@ -1039,7 +1041,7 @@ class WBInfoScreen:
 						for tPlot in lPlotList:
 							md.changeFlipForce(iItem, tPlot, False)
 					elif iData2 == 2:
-						lOldFlip = md.getFlipPlotList(iItem)
+						lOldFlip = Areas.getBirthArea(iItem)
 						for tPlot in lOldFlip:
 							md.changeFlipForce(iItem, tPlot, False)
 						for tPlot in lPlotList:
@@ -1086,10 +1088,10 @@ class WBInfoScreen:
 					if not plot.isWater() and not plot.isPeak():
 						bGoodPlot = True
 				# Reset old maps
-				lOldCore = md.getCorePlotList(iItem)
+				lOldCore = Areas.getCoreArea(iItem)
 				for tPlot in lOldCore:
 					md.changeCoreForce(iItem, tPlot, False)
-				lOldFlip = md.getFlipPlotList(iItem)
+				lOldFlip = Areas.getBirthArea(iItem)
 				for tPlot in lOldFlip:
 					md.changeFlipForce(iItem, tPlot, False)
 				for x in range(con.iWorldX):

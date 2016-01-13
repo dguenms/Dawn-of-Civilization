@@ -3,6 +3,8 @@ from Consts import *
 import RFCUtils
 import csv
 import Popup as PyPopup
+import Areas
+import SettlerMaps
 
 IMAGE_LOCATION = "D:\Documents\My Games\Beyond the Sword\Doc Export Maps"
 
@@ -26,7 +28,7 @@ def changeCoreForce(iPlayer, tPlot, bAdd):
 	
 def getCorePlotList(iPlayer):
 	iReborn = utils.getReborn(iPlayer)
-	lPlotList = utils.getPlotList(tCoreAreasTL[iReborn][iPlayer], tCoreAreasBR[iReborn][iPlayer], tExceptions[iReborn][iPlayer])
+	lPlotList = Areas.getCoreArea(iPlayer)
 	lRemovePlots = []
 	for (x, y) in lChangedCoreTiles[iPlayer]:
 		if lChangedCoreTiles[iPlayer][(x, y)]:
@@ -51,13 +53,7 @@ def changeFlipForce(iPlayer, tPlot, bAdd):
 	lChangedFlipTiles[iPlayer][tPlot] = bAdd
 		
 def getFlipPlotList(iPlayer):
-	iReborn = utils.getReborn(iPlayer)
-	if iReborn == 0:
-		lFlipzonePlots = utils.getPlotList(tBirthAreaTL[iPlayer], tBirthAreaBR[iPlayer], tBirthAreaExceptions[iPlayer])
-	else:
-		tRebirthExceptions = ()
-		if iPlayer in dRebirthExceptions: tRebirthExceptions = dRebirthExceptions[iPlayer]
-		lFlipzonePlots = utils.getPlotList(tRebirthArea[iPlayer][0], tRebirthArea[iPlayer][1], tRebirthExceptions)
+	lFlipzonePlots = Areas.getBirthArea(iPlayer)
 	lRemovePlots = []
 	for (x, y) in lChangedFlipTiles[iPlayer]:
 		if lChangedFlipTiles[iPlayer][(x, y)]:
@@ -78,18 +74,18 @@ def changeSettlerValue(iPlayer, tPlot, iValue):
 	lChangedSettlerValueTiles[iPlayer][tPlot] = iValue
 
 def getSettlerValue(iPlayer, tPlot):
+	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	iReborn = utils.getReborn(iPlayer)
 	lRemovePlots = []
 	for (x, y) in lChangedSettlerValueTiles[iPlayer]:
-		iSettlerValue = getSettlerMapValue(iPlayer, iReborn, x, iWorldY-y-1)
+		iSettlerValue = SettlerMaps.getMapValue(iCiv, x, y)
 		if lChangedSettlerValueTiles[iPlayer][(x, y)] == iSettlerValue:
 			lRemovePlots.append((x, y))
 	for tPlot in lRemovePlots:
 		del lChangedSettlerValueTiles[iPlayer][tPlot]
 	if tPlot in lChangedSettlerValueTiles[iPlayer]:
 		return lChangedSettlerValueTiles[iPlayer][tPlot]
-	iReborn = utils.getReborn(iPlayer)
-	return getSettlerMapValue(iPlayer, iReborn, tPlot[0], iWorldY-tPlot[1]-1)
+	return SettlerMaps.getMapValue(iCiv, x, y)
 
 def resetCore(iPlayer):
 	lRemovePlots = []

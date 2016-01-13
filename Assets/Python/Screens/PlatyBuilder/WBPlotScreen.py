@@ -17,6 +17,8 @@ import Consts as con
 import RFCUtils
 utils = RFCUtils.RFCUtils()
 import MapDrawer as md
+import Areas
+import SettlerMaps
 
 bSensibility = True
 iEditType = 0
@@ -212,21 +214,20 @@ class WBPlotScreen:
 				iRow = screen.appendTableRow("WBSigns")
 				iCivilization = pPlayerX.getCivilizationType()
 				iLeader = pPlayerX.getLeaderType()
-				iReborn = utils.getReborn(iPlayerX)
 				screen.setTableText("WBSigns", 0, iRow, "", gc.getCivilizationInfo(iCivilization).getButton(), WidgetTypes.WIDGET_PYTHON, 7872, iPlayerX * 10000 + iCivilization, CvUtil.FONT_LEFT_JUSTIFY )
 				screen.setTableText("WBSigns", 1, iRow, "", gc.getLeaderHeadInfo(iLeader).getButton(), WidgetTypes.WIDGET_PYTHON, 7876, iPlayerX * 10000 + iLeader, CvUtil.FONT_LEFT_JUSTIFY )
 				sText = "<font=3>" + CvPlatyBuilderScreen.CvWorldBuilderScreen().addComma(pPlot.getCulture(iPlayerX)) + CyTranslator().getText("[ICON_CULTURE]", ()) + "</font>"
 				screen.setTableText("WBSigns", 2, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
 				if iPlayerX < con.iNumPlayers:
-					if tPlot in md.getCorePlotList(iPlayerX):
+					if tPlot in Areas.getCoreArea(iPlayerX):
 						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 					else:
 						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
 					screen.setTableText("WBSigns", 3, iRow, sCore, "", WidgetTypes.WIDGET_PYTHON, 22171, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
-					iSettlerValue = md.getSettlerValue(iPlayerX, tPlot)
+					iCiv = gc.getPlayer(iPlayerX).getCivilizationType()
+					iSettlerValue = SettlerMaps.getMapValue(iCiv, tPlot[0], tPlot[1])
 					screen.setTableText("WBSigns", 4, iRow, str(iSettlerValue), "", WidgetTypes.WIDGET_PYTHON, 22172, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
-					lFlipzonePlots = utils.getPlotList(con.tBirthAreaTL[iPlayerX], con.tBirthAreaBR[iPlayerX], con.tBirthAreaExceptions[iPlayerX])
-					if tPlot in md.getFlipPlotList(iPlayerX):
+					if tPlot in Areas.getBirthArea(iPlayerX):
 						sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 					else:
 						sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
@@ -684,9 +685,9 @@ class WBPlotScreen:
 				iPlayer = inputClass.getData2()
 				tPlot = (pPlot.getX(), pPlot.getY())
 				if iChangeType == 0:
-					iValue = md.getSettlerValue(iPlayer, tPlot) - iChange
+					iValue = SettlerMaps.getMapValue(iPlayer, tPlot[0], tPlot[1]) - iChange
 				elif iChangeType == 1:
-					iValue = md.getSettlerValue(iPlayer, tPlot) + iChange
+					iValue = SettlerMaps.getMapValue(iPlayer, tPlot[0], tPlot[1]) + iChange
 				elif iChangeType == 2:
 					iValue = iSetValue
 				md.changeSettlerValue(iPlayer, tPlot, iValue)
