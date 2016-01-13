@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Features -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_CAPE_COAST</Tag>
+		<English>Cape</English>
+		<French>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kap</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_ISLANDS</Tag>
+		<English>Islands</English>
+		<German>Inseln</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_RAINFOREST</Tag>
+		<English>Rainforest</English>
+		<German>Regenwald</German>
+	</TEXT>
+</Civ4GameText>

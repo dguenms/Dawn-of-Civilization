@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Cities -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_ARACAJU</Tag>
+		<English>Aracaju</English>
+		<French>Aracaju</French>
+		<German>Aracaju</German>
+		<Italian>Aracaju</Italian>
+		<Spanish>Aracaju</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BELEM</Tag>
+		<English>Bel&#233;m</English>
+		<French>Bel&#233;m</French>
+		<German>Bel&#233;m</German>
+		<Italian>Bel&#233;m</Italian>
+		<Spanish>Bel&#233;m</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BELO_HORIZONTE</Tag>
+		<English>Belo Horizonte</English>
+		<French>Belo Horizonte</French>
+		<German>Belo Horizonte</German>
+		<Italian>Belo Horizonte</Italian>
+		<Spanish>Belo Horizonte</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BOA_VISTA</Tag>
+		<English>Boa Vista</English>
+		<French>Boa Vista</French>
+		<German>Boa Vista</German>
+		<Italian>Boa Vista</Italian>
+		<Spanish>Boa Vista</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BRASILIA</Tag>
+		<English>Brasilia</English>
+		<French>Brasilia</French>
+		<German>Brasilia</German>
+		<Italian>Brasilia</Italian>
+		<Spanish>Brasilia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_CAMPINAS</Tag>
+		<English>Campinas</English>
+		<French>Campinas</French>
+		<German>Campinas</German>
+		<Italian>Campinas</Italian>
+		<Spanish>Campinas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_CUIABA</Tag>
+		<English>Cuiab&#225;</English>
+		<French>Cuiab&#225;</French>
+		<German>Cuiab&#225;</German>
+		<Italian>Cuiab&#225;</Italian>
+		<Spanish>Cuiab&#225;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_CURITIBA</Tag>
+		<English>Curitiba</English>
+		<French>Curitiba</French>
+		<German>Curitiba</German>
+		<Italian>Curitiba</Italian>
+		<Spanish>Curitiba</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_DUQUE_DE_CAXIAS</Tag>
+		<English>Duque de Caxias</English>
+		<French>Duque de Caxias</French>
+		<German>Duque de Caxias</German>
+		<Italian>Duque de Caxias</Italian>
+		<Spanish>Duque de Caxias</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_FLORIANOPOLIS</Tag>
+		<English>Florian&#243;polis</English>
+		<French>Florian&#243;polis</French>
+		<German>Florian&#243;polis</German>
+		<Italian>Florian&#243;polis</Italian>
+		<Spanish>Florian&#243;polis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_FORTALEZA</Tag>
+		<English>Fortaleza</English>
+		<French>Fortaleza</French>
+		<German>Fortaleza</German>
+		<Italian>Fortaleza</Italian>
+		<Spanish>Fortaleza</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_GOIANIA</Tag>
+		<English>Goi&#226;nia</English>
+		<French>Goi&#226;nia</French>
+		<German>Goi&#226;nia</German>
+		<Italian>Goi&#226;nia</Italian>
+		<Spanish>Goi&#226;nia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_GUARULHOS</Tag>
+		<English>Guarulhos</English>
+		<French>Guarulhos</French>
+		<German>Guarulhos</German>
+		<Italian>Guarulhos</Italian>
+		<Spanish>Guarulhos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_MACAPA</Tag>
+		<English>Macap&#225;</English>
+		<French>Macap&#225;</French>
+		<German>Macap&#225;</German>
+		<Italian>Macap&#225;</Italian>
+		<Spanish>Macap&#225;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_MANAUS</Tag>
+		<English>Manaus</English>
+		<French>Manaus</French>
+		<German>Manaus</German>
+		<Italian>Manaus</Italian>
+		<Spanish>Manaus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_ANCONA</Tag>
+		<English>Ancona</English>
+		<French>Anc&#244;ne</French>
+		<German>Ancona</German>
+		<Italian>Ancona</Italian>
+		<Spanish>Ancona</Spanish>
+		<Hungarian>Ancona</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_AVELLINO</Tag>
+		<English>Avellino</English>
+		<French>Avellino</French>
+		<German>Avellino</German>
+		<Italian>Avellino</Italian>
+		<Spanish>Avellino</Spanish>
+		<Hungarian>Avellino</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_BARI</Tag>
+		<English>Bari</English>
+		<French>Bari</French>
+		<German>Bari</German>
+		<Italian>Bari</Italian>
+		<Spanish>Bari</Spanish>
+		<Hungarian>Bari</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_BENEVENTO</Tag>
+		<English>Benevento</English>
+		<French>B&#233;n&#233;vent</French>
+		<German>Benevento</German>
+		<Italian>Benevento</Italian>
+		<Spanish>Benevento</Spanish>
+		<Hungarian>Benevento</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_BOLOGNA</Tag>
+		<English>Bologna</English>
+		<French>Bologne</French>
+		<German>Bologna</German>
+		<Italian>Bologna</Italian>
+		<Spanish>Bolonia</Spanish>
+		<Hungarian>Bologna</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_CAGLIARI</Tag>
+		<English>Cagliari</English>
+		<French>Cagliari</French>
+		<German>Cagliari</German>
+		<Italian>Cagliari</Italian>
+		<Spanish>Cagliari</Spanish>
+		<Hungarian>Cagliari</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_FANO</Tag>
+		<English>Fano</English>
+		<French>Fano</French>
+		<German>Fano</German>
+		<Italian>Fano</Italian>
+		<Spanish>Fano</Spanish>
+		<Hungarian>Fano</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_FERRARA</Tag>
+		<English>Ferrara</English>
+		<French>Ferrare</French>
+		<German>Ferrara</German>
+		<Italian>Ferrara</Italian>
+		<Spanish>Ferrara</Spanish>
+		<Hungarian>Ferrara</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_FORLI</Tag>
+		<English>Forl&#236;</English>
+		<French>Forl&#236;</French>
+		<German>Forl&#236;</German>
+		<Italian>Forl&#236;</Italian>
+		<Spanish>Forl&#236;</Spanish>
+		<Hungarian>Forl&#236;</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_LATINA</Tag>
+		<English>Latina</English>
+		<French>Latina</French>
+		<German>Latina</German>
+		<Italian>Latina</Italian>
+		<Spanish>Latina</Spanish>
+		<Hungarian>Latina</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_LEGNANO</Tag>
+		<English>Legnano</English>
+		<French>Legnano</French>
+		<German>Legnano</German>
+		<Italian>Legnano</Italian>
+		<Spanish>Legnano</Spanish>
+		<Hungarian>Legnano</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_MANTUA</Tag>
+		<English>Mantua</English>
+		<French>Mantoue</French>
+		<German>Mantua</German>
+		<Italian>Mantova</Italian>
+		<Spanish>Mantua</Spanish>
+		<Hungarian>Mantova</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_MESSINA</Tag>
+		<English>Messina</English>
+		<French>Messine</French>
+		<German>Messina</German>
+		<Italian>Messina</Italian>
+		<Spanish>Micina</Spanish>
+		<Hungarian>Messina</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_MILAN</Tag>
+		<English>Milan</English>
+		<French>Milan</French>
+		<German>Mailand</German>
+		<Italian>Milano</Italian>
+		<Spanish>Mil&#225;n</Spanish>
+		<Hungarian>M&#237;l&#225;no</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_MODENA</Tag>
+		<English>Modena</English>
+		<French>Mod&#232;ne</French>
+		<German>Modena</German>
+		<Italian>Modena</Italian>
+		<Spanish>M&#243;dena</Spanish>
+		<Hungarian>Modena</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_MONZA</Tag>
+		<English>Monza</English>
+		<French>Monza</French>
+		<German>Monza</German>
+		<Italian>Monza</Italian>
+		<Spanish>Monza</Spanish>
+		<Hungarian>Monza</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_NAPLES</Tag>
+		<English>Naples</English>
+		<French>Naples</French>
+		<German>Neapel</German>
+		<Italian>Napoli</Italian>
+		<Spanish>N&#225;poles</Spanish>
+		<Hungarian>N&#225;poly</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_PADUA</Tag>
+		<English>Padua</English>
+		<French>Padoue</French>
+		<German>Padua</German>
+		<Italian>Padova</Italian>
+		<Spanish>Padua</Spanish>
+		<Hungarian>Padova</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_PALERMO</Tag>
+		<English>Palermo</English>
+		<French>Palerme</French>
+		<German>Palermo</German>
+		<Italian>Palermo</Italian>
+		<Spanish>Palermo</Spanish>
+		<Hungarian>Palermo</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_PARMA</Tag>
+		<English>Parma</English>
+		<French>Parme</French>
+		<German>Parma</German>
+		<Italian>Parma</Italian>
+		<Spanish>Parma</Spanish>
+		<Hungarian>Parma</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_PAVIA</Tag>
+		<English>Pavia</English>
+		<French>Pavie</French>
+		<German>Pavia</German>
+		<Italian>Pavia</Italian>
+		<Spanish>Pav&#237;a</Spanish>
+		<Hungarian>P&#225;via</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_PERUGIA</Tag>
+		<English>Perugia</English>
+		<French>P&#233;rouse</French>
+		<German>Perugia</German>
+		<Italian>Perugia</Italian>
+		<Spanish>Perugia</Spanish>
+		<Hungarian>Perugia</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_PESARO</Tag>
+		<English>Pesaro</English>
+		<French>Pesaro</French>
+		<German>Pesaro</German>
+		<Italian>Pesaro</Italian>
+		<Spanish>P&#233;saro</Spanish>
+		<Hungarian>Pesaro</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_RAVENNA</Tag>
+		<English>Ravenna</English>
+		<French>Ravenna</French>
+		<German>Ravenna</German>
+		<Italian>Ravenna</Italian>
+		<Spanish>R&#225;vena</Spanish>
+		<Hungarian>Ravenna</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_REGGIOEMILIA</Tag>
+		<English>Reggio Emilia</English>
+		<French>Reggio d'&#233;milie</French>
+		<German>Reggio Emilia</German>
+		<Italian>Reggio Emilia</Italian>
+		<Spanish>Reggio Emilia</Spanish>
+		<Hungarian>Reggio Emilia</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_RIMINI</Tag>
+		<English>Rimini</English>
+		<French>Rimini</French>
+		<German>Rimini</German>
+		<Italian>Rimini</Italian>
+		<Spanish>Rimini</Spanish>
+		<Hungarian>Rimini</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_TRIESTE</Tag>
+		<English>Trieste</English>
+		<French>Trieste</French>
+		<German>Triest</German>
+		<Italian>Trieste</Italian>
+		<Spanish>Trieste</Spanish>
+		<Hungarian>Trieszt</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_TURIN</Tag>
+		<English>Turin</English>
+		<French>Turin</French>
+		<German>Turin</German>
+		<Italian>Torino</Italian>
+		<Spanish>Tur&#237;n</Spanish>
+		<Hungarian>Torino</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_URBINO</Tag>
+		<English>Urbino</English>
+		<French>Urbin</French>
+		<German>Urbino</German>
+		<Italian>Urbino</Italian>
+		<Spanish>Urbino</Spanish>
+		<Hungarian>Urbino</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_VENICE</Tag>
+		<English>Venice</English>
+		<French>Venise</French>
+		<German>Venedig</German>
+		<Italian>Venezia</Italian>
+		<Spanish>Venecia</Spanish>
+		<Hungarian>Velence</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_VICENZA</Tag>
+		<English>Vicenza</English>
+		<French>Vicenza</French>
+		<German>Vicenza</German>
+		<Italian>Vicenza</Italian>
+		<Spanish>Vicenza</Spanish>
+		<Hungarian>Vicenza</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NATAL</Tag>
+		<English>Natal</English>
+		<French>Natal</French>
+		<German>Natal</German>
+		<Italian>Natal</Italian>
+		<Spanish>Natal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NITEROI</Tag>
+		<English>Niter&#243;i</English>
+		<French>Niter&#243;i</French>
+		<German>Niter&#243;i</German>
+		<Italian>Niter&#243;i</Italian>
+		<Spanish>Niter&#243;i</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_PORTO_ALEGRE</Tag>
+		<English>Porto Alegre</English>
+		<French>Porto Alegre</French>
+		<German>Porto Alegre</German>
+		<Italian>Porto Alegre</Italian>
+		<Spanish>Porto Alegre</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_PORTO_VELHO</Tag>
+		<English>Porto Velho</English>
+		<French>Porto Velho</French>
+		<German>Porto Velho</German>
+		<Italian>Porto Velho</Italian>
+		<Spanish>Porto Velho</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_RECIFE</Tag>
+		<English>Recife</English>
+		<French>Recife</French>
+		<German>Recife</German>
+		<Italian>Recife</Italian>
+		<Spanish>Recife</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_RIO_BRANCO</Tag>
+		<English>Rio Branco</English>
+		<French>Rio Branco</French>
+		<German>Rio Branco</German>
+		<Italian>Rio Branco</Italian>
+		<Spanish>Rio Branco</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_SALVADOR</Tag>
+		<English>Salvador</English>
+		<French>Salvador</French>
+		<German>Salvador</German>
+		<Italian>Salvador</Italian>
+		<Spanish>Salvador</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_SAO_JOSE</Tag>
+		<English>S&#227;o Jos&#233;</English>
+		<French>S&#227;o Jos&#233;</French>
+		<German>S&#227;o Jos&#233;</German>
+		<Italian>S&#227;o Jos&#233;</Italian>
+		<Spanish>S&#227;o Jos&#233;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_SAO_LUIS</Tag>
+		<English>S&#227;o Lu&#237;s</English>
+		<French>S&#227;o Lu&#237;s</French>
+		<German>S&#227;o Lu&#237;s</German>
+		<Italian>S&#227;o Lu&#237;s</Italian>
+		<Spanish>S&#227;o Lu&#237;s</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_SOROCABA</Tag>
+		<English>Sorocaba</English>
+		<French>Sorocaba</French>
+		<German>Sorocaba</German>
+		<Italian>Sorocaba</Italian>
+		<Spanish>Sorocaba</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_VILA_VELHA</Tag>
+		<English>Vila Velha</English>
+		<French>Vila Velha</French>
+		<German>Vila Velha</German>
+		<Italian>Vila Velha</Italian>
+		<Spanish>Vila Velha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_VITORIA</Tag>
+		<English>Vit&#243;ria</English>
+		<French>Vit&#243;ria</French>
+		<German>Vit&#243;ria</German>
+		<Italian>Vit&#243;ria</Italian>
+		<Spanish>Vit&#243;ria</Spanish>
+	</TEXT>
+</Civ4GameText>
