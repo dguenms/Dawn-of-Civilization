@@ -546,7 +546,6 @@
 				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Fallout.dds</VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
-		<!-- Rhye - start -->
 		<FeatureArtInfo>
 			<Type>ART_DEF_FEATURE_MUD</Type>
 			<bAnimated>0</bAnimated>
@@ -558,17 +557,16 @@
 			<Button>,Art/Interface/Buttons/BaseTerrain/Marsh.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,2,2</Button>
 			<FeatureVariety>
 				<FeatureArtPieces>
-               		<FeatureArtPiece>
-                  		<ModelFile>Art/Terrain/Features/Floodplain/FloodPlain_baseALL.dds</ModelFile>
-                  		<Connections/>
-               		</FeatureArtPiece>
-            	</FeatureArtPieces> 
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Floodplain/FloodPlain_baseALL.dds</ModelFile>
+						<Connections/>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
 				<FeatureDummyNodes/>
 				<bGenerateRotations>0</bGenerateRotations>
 				<VarietyButton>Art/Interface/Buttons/BaseTerrain/Marsh.dd</VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
-		<!-- Rhye - end -->
 		<FeatureArtInfo>
 			<Type>ART_DEF_FEATURE_CAPE_COAST</Type>
 			<bAnimated>0</bAnimated>
@@ -590,7 +588,6 @@
 				<VarietyButton></VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
-		
 		<FeatureArtInfo>
 			<Type>ART_DEF_FEATURE_MARSH</Type>
 			<bAnimated>0</bAnimated>
@@ -606,7 +603,7 @@
 						<ModelFile>Art/Terrain/Features/Marsh/marsh_1.nif</ModelFile>
 						<Connections/>
 					</FeatureArtPiece>
-				</FeatureArtPieces> 
+				</FeatureArtPieces>
 				<FeatureDummyNodes/>
 				<bGenerateRotations>0</bGenerateRotations>
 				<VarietyButton>Art/Interface/Buttons/BaseTerrain/Marsh.dds</VarietyButton>
@@ -617,7 +614,7 @@
 						<ModelFile>Art/Terrain/Features/Marsh/marsh_2.nif</ModelFile>
 						<Connections/>
 					</FeatureArtPiece>
-				</FeatureArtPieces> 
+				</FeatureArtPieces>
 				<FeatureDummyNodes/>
 				<bGenerateRotations>0</bGenerateRotations>
 				<VarietyButton>Art/Interface/Buttons/BaseTerrain/Marsh.dds</VarietyButton>
@@ -628,13 +625,12 @@
 						<ModelFile>Art/Terrain/Features/Marsh/marsh_3.nif</ModelFile>
 						<Connections/>
 					</FeatureArtPiece>
-				</FeatureArtPieces> 
+				</FeatureArtPieces>
 				<FeatureDummyNodes/>
 				<bGenerateRotations>0</bGenerateRotations>
 				<VarietyButton>Art/Interface/Buttons/BaseTerrain/Marsh.dds</VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
-
 		<FeatureArtInfo>
 			<Type>ART_DEF_FEATURE_ISLANDS</Type>
 			<bAnimated>0</bAnimated>

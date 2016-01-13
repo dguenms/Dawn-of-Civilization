@@ -69,7 +69,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("addReminder", &CyPlayer::addReminder, "void (int iGameTurn, string szMessage)")
 // BUG - Reminder Mod - end
 
-		.def("getSettlersMaps", &CyPlayer::getSettlersMaps, "int (int i, int j)") //Rhye
 		.def("setFlag", &CyPlayer::setFlag, "void (str s)") //Rhye
 		.def("setLeader", &CyPlayer::setLeader, "void (int i)") //Rhye
 		.def("getLeader", &CyPlayer::getLeader, "int /*LeaderHeadTypes*/ ()") //Rhye
@@ -80,7 +79,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("setReborn", &CyPlayer::setReborn, "void ()")
 		.def("updateTradeRoutes", &CyPlayer::updateTradeRoutes, "void ()")
 		.def("updateMaintenance", &CyPlayer::updateMaintenance, "void ()")
-		.def("getWarMapValue", &CyPlayer::getWarMapValue, "void (int x, int y)")
 		.def("AI_reset", &CyPlayer::AI_reset, "void ()")
 		.def("hasCivic", &CyPlayer::hasCivic, "bool (int iCivic)")
 		.def("getWorstEnemy", &CyPlayer::getWorstEnemy, "int ()")
@@ -95,5 +93,21 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("getEspionageExperience", &CyPlayer::getEspionageExperience, "int ()")
 		.def("setEspionageExperience", &CyPlayer::setEspionageExperience, "void (int iNewValue)")
 		.def("greatSpyThreshold", &CyPlayer::greatSpyThreshold, "int ()")
+		.def("setLeaderName", &CyPlayer::setLeaderName, "void (str name)")
+		.def("getSettlerValue", &CyPlayer::getSettlerValue, "int (int x, int y)")
+		.def("getWarValue", &CyPlayer::getWarValue, "int (int x, int y)")
+		.def("getModifier", &CyPlayer::getModifier, "int (int iModifierType)")
+		.def("setModifier", &CyPlayer::setModifier, "void (int iModifierType, int iNewValue)")
+		.def("getStartingEra", &CyPlayer::getStartingEra, "int ()")
+		.def("setStartingEra", &CyPlayer::setStartingEra, "void (int iNewValue)")
+		.def("getSpreadFactor", &CyPlayer::getSpreadFactor, "int (int eReligion)")
+		.def("setSpreadFactor", &CyPlayer::setSpreadFactor, "void (int eReligion, int iNewValue)")
+		.def("setTakenTilesThreshold", &CyPlayer::setTakenTilesThreshold, "void (int iNewValue)")
+		.def("setDistanceSubtrahend", &CyPlayer::setDistanceSubtrahend, "void (int iNewValue)")
+		.def("setDistanceFactor", &CyPlayer::setDistanceFactor, "void (int iNewValue)")
+		.def("setCompactnessModifier", &CyPlayer::setCompactnessModifier, "void (int iNewValue)")
+		.def("setTargetDistanceValueModifier", &CyPlayer::setTargetDistanceValueModifier, "void (int iNewValue)")
+		.def("setReligiousTolerance", &CyPlayer::setReligiousTolerance, "void (int iNewValue)")
+		.def("setBirthYear", &CyPlayer::setBirthYear, "void (int iNewValue)")
 		;
 }

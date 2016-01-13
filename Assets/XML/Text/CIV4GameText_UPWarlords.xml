@@ -5,7 +5,7 @@
 <!-- Game Text - Unit Upgrades for Civilopedia -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_UP_BAB</Tag>
+		<Tag>TXT_KEY_UP_BAB_TITLE</Tag>
 		<English>The Power of the Cradle of Civilization:</English>
 		<French>Le Pouvoir de la Loi :</French>
 		<German>Die Macht der Wiege der Zivilisation:</German>
@@ -13,7 +13,7 @@
 		<Spanish>El poder de la ley:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_BAB2</Tag>
+		<Tag>TXT_KEY_UP_BAB</Tag>
 		<English>Begins the game with the knowledge of Animal Husbandry, Pottery and Archery</English>
 		<French>Pas de résistance dans les villes conquises</French>
 		<German>Beginnt das Spiel mit dem Wissen über Tierzucht, Keramik und Bogenschießen</German>
@@ -21,7 +21,7 @@
 		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_CAR</Tag>
+		<Tag>TXT_KEY_UP_CAR_TITLE</Tag>
 		<English>The Power of Mercenaries:</English>
 		<French>Le Pouvoir des Mercenaires :</French>
 		<German>Die Macht der Söldner:</German>
@@ -29,7 +29,7 @@
 		<Spanish>El poder de los mercenarios:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_CAR2</Tag>
+		<Tag>TXT_KEY_UP_CAR</Tag>
 		<English>Halved costs and no extra upkeep for hurried units</English>
 		<French>Coûts de recrutement et d'entretien des mercenaires divisés par deux</French>
 		<German>Halbierte Kosten und kein zusätzlicher Unterhalt für beschleunigte Einheiten</German>
@@ -37,7 +37,7 @@
 		<Spanish>Se reducen a la mitad los costes de contrataci&#243;n y mantenimiento de mercenarios</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_VIK</Tag>
+		<Tag>TXT_KEY_UP_VIK_TITLE</Tag>
 		<English>The Power of Raid:</English>
 		<French>Le Pouvoir du Pillage :</French>
 		<German>Die Macht des Raubens:</German>
@@ -45,7 +45,7 @@
 		<Spanish>El poder del pillaje:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_VIK2</Tag>
+		<Tag>TXT_KEY_UP_VIK</Tag>
 		<English>Additional gold from pillaging, conquering cities and sinking ships during the Middle Ages</English>
 		<French>5X Or obtenu par le pillage</French>
 		<German>Zusätzliches gold durch Plünderung, Stadteroberung und das Versenken von Schiffen während des Mittelalters</German>
@@ -58,7 +58,7 @@
 		<German>Sie haben %s1 [ICON_GOLD] durch das Versenken eines %s2 %s3.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TUR</Tag>
+		<Tag>TXT_KEY_UP_TUR_TITLE</Tag>
 		<English>The Power of Devshirme:</English>
 		<French>Le Pouvoir de l'Assimilation :</French>
 		<German>Die Macht der Devshirme:</German>
@@ -66,7 +66,7 @@
 		<Spanish>El poder de la asimilaci&#243;n:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_TUR2</Tag>
+		<Tag>TXT_KEY_UP_TUR</Tag>
 		<English>Can Conscript two extra Units in Cities with Non-State Religions</English>
 		<French>La plus grande partie de la culture étrangère dans les villes turques est convertie à la culture turque</French>
 		<German>Kann zwei zusätzliche Einheiten in Städten mit Nicht-Staatsreligionen rekrutieren</German>

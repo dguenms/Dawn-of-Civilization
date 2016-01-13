@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_DESC</Tag>
+		<English>The Romans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_PEOPLES</Tag>
+		<English>Italic Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_DEFAULT</Tag>
+		<English>%s2 Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_FASCIST</Tag>
+		<English>New Roman Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_WESTERN</Tag>
+		<English>Western Roman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_VASSAL</Tag>
+		<English>Province of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_EGYPT</Tag>
+		<English>Aegyptus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_CHINA</Tag>
+		<English>Sinae</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_BABYLONIA</Tag>
+		<English>Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_GREECE</Tag>
+		<English>Magna Graecia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_PERSIA</Tag>
+		<English>Parthia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_PHOENICIA</Tag>
+		<English>Syria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_CARTHAGE</Tag>
+		<English>Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_ETHIOPIA</Tag>
+		<English>Aethiopia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_BYZANTIUM</Tag>
+		<English>Thracia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_VIKINGS</Tag>
+		<English>Scandia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_KHMER</Tag>
+		<English>Aurea Chersonesus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_SPAIN</Tag>
+		<English>Hispania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_FRANCE</Tag>
+		<English>Gaul</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_ENGLAND</Tag>
+		<English>Britannia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_HOLY_ROME</Tag>
+		<English>Germania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_GERMANY</Tag>
+		<English>Borussia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_RUSSIA</Tag>
+		<English>Sarmatia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_NETHERLANDS</Tag>
+		<English>Belgica</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_MALI</Tag>
+		<English>Gaetulia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_PORTUGAL</Tag>
+		<English>Lusitania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_MONGOLIA</Tag>
+		<English>Serica</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ROMAN_NAME_TURKEY</Tag>
+		<English>Asia Minor</English>
+	</TEXT>
+</Civ4GameText>

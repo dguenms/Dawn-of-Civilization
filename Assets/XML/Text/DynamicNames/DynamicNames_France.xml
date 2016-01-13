@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_DESC</Tag>
+		<English>The French</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_PEOPLES</Tag>
+		<English>Frankish Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_COMMUNIST</Tag>
+		<English>%s2 Commune</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_FASCIST</Tag>
+		<English>%s2 State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_FRANKISH</Tag>
+		<English>Francia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_FRANCIA</Tag>
+		<English>Frankish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_EXILE</Tag>
+		<English>Free %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_LOUISIANA</Tag>
+		<English>Louisiana</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_QUEBEC</Tag>
+		<English>Québec</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_BABYLONIA</Tag>
+		<English>French Mandate of Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF</Tag>
+		<English>Départements of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_PHOENICIA</Tag>
+		<English>French Mandate of Lebanon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_ITALY</Tag>
+		<English>Cisalpine Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_ETHIOPIA</Tag>
+		<English>%s2 East Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_BYZANTIUM</Tag>
+		<English>Latin Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_ENGLAND</Tag>
+		<English>Duchy of Normandy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_SPAIN</Tag>
+		<English>Spanish March</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_HOLY_ROME</Tag>
+		<English>Confederation of the Rhine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NETHERLANDS</Tag>
+		<English>Batavian Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_MALI</Tag>
+		<English>%s2 West Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_POLAND</Tag>
+		<English>Duchy of Warsaw</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_INCA</Tag>
+		<English>Andean France</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_AZTECS</Tag>
+		<English>Mesoamerican France</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_AMERICA</Tag>
+		<English>New France</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NAME_KHMER</Tag>
+		<English>Indochina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NAME_MUGHALS</Tag>
+		<English>West India</English>
+	</TEXT>
+</Civ4GameText>

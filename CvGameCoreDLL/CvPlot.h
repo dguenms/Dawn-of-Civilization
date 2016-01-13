@@ -503,11 +503,21 @@ public:
 
 	// Leoreth
 	int getRegionID() const;
+	void setRegionID(int iNewValue);
 	CvWString getRegionName() const;
+
 	bool isCore(PlayerTypes ePlayer) const;
-	void setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue);
-	int getSettlerMapValue(PlayerTypes ePlayer) const;
-	int getWarMapValue(PlayerTypes ePlayer) const;
+	void setCore(PlayerTypes ePlayer, bool bNewValue);
+
+	int getSettlerValue(PlayerTypes ePlayer) const;
+	void setSettlerValue(PlayerTypes ePlayer, int iNewValue);
+
+	int getWarValue(PlayerTypes ePlayer) const;
+	void setWarValue(PlayerTypes ePlayer, int iNewValue);
+
+	int getSpreadFactor(ReligionTypes eReligion) const;
+	void setSpreadFactor(ReligionTypes eReligion, int iNewValue);
+
 	bool isWithinGreatWall() const;
 	void setWithinGreatWall(bool bNewValue);
 	void cameraLookAt();
@@ -580,7 +590,10 @@ protected:
 
 	// Leoreth: initialized by Python at the beginning of the game
 	bool* m_abCore;
-	bool* m_abRebornCore;
+	int* m_aiSettlerValue;
+	int* m_aiWarValue;
+	int* m_aiReligionSpreadFactor;
+	int m_iRegionID;
 
 	// Leoreth
 	bool m_bWithinGreatWall;
