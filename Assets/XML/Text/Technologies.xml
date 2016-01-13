@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- Technologies -->
 <Civ4GameText>
- <TEXT>
-  <Tag>TXT_KEY_TECH_MONOTHEISM_STRATEGY</Tag>
-  <English>[COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic. </English>
-  <French>[COLOR_TECH_TEXT]Monoth&#233;isme[COLOR_REVERT] permet d'instaurer la [COLOR_HIGHLIGHT_TEXT]religion organis&#233;e[COLOR_REVERT].</French>
-  <German>Dar&#252;ber hinaus erm&#246;glicht sie die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT].</German>
-  <Italian>[COLOR_TECH_TEXT]Monoteismo[COLOR_REVERT] permette la realizzazione della forma di governo [COLOR_HIGHLIGHT_TEXT]Religione organizzata[COLOR_REVERT].</Italian>
-  <Spanish>[COLOR_TECH_TEXT]Monote&#237;smo[COLOR_REVERT] activa el principio de la [COLOR_HIGHLIGHT_TEXT]Religi&#243;n organizada[COLOR_REVERT]. </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_TECH_PATRONAGE</Tag>
-  <English>Patronage</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_TECH_PATRONAGE_QUOTE</Tag>
-  <English>"Art, as far as it is able, follows nature, as a pupil imitates his master; thus your art must be, as it were, God's grandchild." - Dante Alighieri</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_TECH_PATRONAGE_STRATEGY</Tag>
-  <English>Allows to build Versailles, the Sistine Chapel and the Leaning Tower.</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_TECH_REFORMATION</Tag>
-  <English>Reformation</English>
-  <French>
-   <Text>Mysticisme</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Mystik</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Misticismo</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Misticismo</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_TECH_REFORMATION_QUOTE</Tag>
-  <English>"Peace if possible, truth at all costs." - Martin Luther</English>
-  <French>"Une soci&#233;t&#233; pr&#234;te &#224; sacrifier un peu de libert&#233; contre un peu de s&#233;curit&#233; ne m&#233;rite ni l'une ni l'autre et finit par perdre les deux !" - Benjamin Franklin</French>
-  <German>"Eine Gesellschaft, die ihre Freiheit zugunsten der Sicherheit opfert, hat beides nicht verdient." - Benjamin Franklin</German>
-  <Italian>"Qualsiasi societ&#224; che sacrifica un po' di libert&#224; per una maggiore sicurezza non si merita nessuna delle due cose e le perde entrambe." - Benjamin Franklin</Italian>
-  <Spanish>"Cualquier sociedad que renuncie a un poco de libertad para obtener algo de seguridad no se merece ni una ni otra y acabar&#225; perdiendo ambas." - Benjamin Franklin</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_TECH_REFORMATION_STRATEGY</Tag>
-  <English>The [COLOR_TECH_TEXT]Reformation[COLOR_REVERT] sparks a great schism in Christianity!</English>
-  <French>Le [COLOR_TECH_TEXT]mysticisme[COLOR_REVERT] permet de construire l'[COLOR_BUILDING_TEXT]Ob&#233;lisque[COLOR_REVERT] et [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Il m&#232;ne aussi &#224; la [COLOR_TECH_TEXT]m&#233;ditation[COLOR_REVERT] et au [COLOR_TECH_TEXT]polyth&#233;isme[COLOR_REVERT], ces deux technologies permettant au joueur en ayant fait la d&#233;couverte en premier de fonder une religion.</French>
-  <German>Die [COLOR_TECH_TEXT]Mystik[COLOR_REVERT] erm&#246;glicht den Bau von [COLOR_BUILDING_TEXT]Obelisken[COLOR_REVERT] und des Wunders von [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Dar&#252;ber hinaus legt sie den Grundstein f&#252;r die [COLOR_TECH_TEXT]Meditation[COLOR_REVERT] und den [COLOR_TECH_TEXT]Polytheismus[COLOR_REVERT]. Der Entdecker des Polytheismus bzw. der Meditation erh&#228;lt eine Religion.</German>
-  <Italian>Il [COLOR_TECH_TEXT]Misticismo[COLOR_REVERT] permette la realizzazione di [COLOR_BUILDING_TEXT]obelischi[COLOR_REVERT] e della Meraviglia [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Inoltre, conduce alla [COLOR_TECH_TEXT]Meditazione[COLOR_REVERT] e al [COLOR_TECH_TEXT]Politeismo[COLOR_REVERT], ciascuno delle quali fornisce una religione alla civilt&#224; che le scopre per prima.</Italian>
-  <Spanish>El [COLOR_TECH_TEXT]Misticismo[COLOR_REVERT] permite los [COLOR_BUILDING_TEXT]Obeliscos[COLOR_REVERT] y la maravilla de [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Tambi&#233;n lleva a la [COLOR_TECH_TEXT]Meditaci&#243;n[COLOR_REVERT] y al [COLOR_TECH_TEXT]Polite&#237;smo[COLOR_REVERT], cada uno de los cuales proporciona una religi&#243;n al primero que lo descubra.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_TECH_THEOLOGY_STRATEGY</Tag>
-  <English>The first to research this tech founds [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. It enables the [COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] civic and allows construction of the [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] wonder.</English>
-  <French>La premi&#232;re civilisation qui atteint cette technologie fonde le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT], qui permet d'instaurer la [COLOR_HIGHLIGHT_TEXT]th&#233;ocratie[COLOR_REVERT] et de construire la [COLOR_BUILDING_TEXT]Chapelle Sixtine[COLOR_REVERT].</French>
-  <German>Wer diese Technologie zuerst erforscht, begr&#252;ndet das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Letzteres ist die Voraussetzung f&#252;r die Staatsform [COLOR_HIGHLIGHT_TEXT]Theokratie[COLOR_REVERT] und erm&#246;glicht den Bau der [COLOR_BUILDING_TEXT]Sixtinischen Kapelle[COLOR_REVERT].</German>
-  <Italian>Chi ricerca per primo questa tecnologia scopre il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Inoltre, permette la realizzazione della forma di governo [COLOR_HIGHLIGHT_TEXT]Teocrazia[COLOR_REVERT] e la costruzione della Meraviglia [COLOR_BUILDING_TEXT]Cappella Sistina[COLOR_REVERT].</Italian>
-  <Spanish>El primero en investigar esta tecnolog&#237;a fundar&#225; el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. &#201;ste activa el principio de [COLOR_HIGHLIGHT_TEXT]Teocracia[COLOR_REVERT] y permite la construcci&#243;n de la maravilla de la [COLOR_BUILDING_TEXT]Capilla Sixtina[COLOR_REVERT].</Spanish>
- </TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MONOTHEISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic. </English>
+		<French>[COLOR_TECH_TEXT]Monoth&#233;isme[COLOR_REVERT] permet d'instaurer la [COLOR_HIGHLIGHT_TEXT]religion organis&#233;e[COLOR_REVERT].</French>
+		<German>Dar&#252;ber hinaus erm&#246;glicht sie die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT].</German>
+		<Italian>[COLOR_TECH_TEXT]Monoteismo[COLOR_REVERT] permette la realizzazione della forma di governo [COLOR_HIGHLIGHT_TEXT]Religione organizzata[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Monote&#237;smo[COLOR_REVERT] activa el principio de la [COLOR_HIGHLIGHT_TEXT]Religi&#243;n organizada[COLOR_REVERT]. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PATRONAGE</Tag>
+		<English>Patronage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PATRONAGE_QUOTE</Tag>
+		<English>"Art, as far as it is able, follows nature, as a pupil imitates his master; thus your art must be, as it were, God's grandchild." - Dante Alighieri</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PATRONAGE_STRATEGY</Tag>
+		<English>Allows to build Versailles, the Sistine Chapel and the Leaning Tower.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFORMATION</Tag>
+		<English>Reformation</English>
+		<French>
+			<Text>Mysticisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Mystik</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Misticismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Misticismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFORMATION_QUOTE</Tag>
+		<English>"Peace if possible, truth at all costs." - Martin Luther</English>
+		<French>"Une soci&#233;t&#233; pr&#234;te &#224; sacrifier un peu de libert&#233; contre un peu de s&#233;curit&#233; ne m&#233;rite ni l'une ni l'autre et finit par perdre les deux !" - Benjamin Franklin</French>
+		<German>"Eine Gesellschaft, die ihre Freiheit zugunsten der Sicherheit opfert, hat beides nicht verdient." - Benjamin Franklin</German>
+		<Italian>"Qualsiasi societ&#224; che sacrifica un po' di libert&#224; per una maggiore sicurezza non si merita nessuna delle due cose e le perde entrambe." - Benjamin Franklin</Italian>
+		<Spanish>"Cualquier sociedad que renuncie a un poco de libertad para obtener algo de seguridad no se merece ni una ni otra y acabar&#225; perdiendo ambas." - Benjamin Franklin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFORMATION_STRATEGY</Tag>
+		<English>The [COLOR_TECH_TEXT]Reformation[COLOR_REVERT] sparks a great schism in Christianity!</English>
+		<French>Le [COLOR_TECH_TEXT]mysticisme[COLOR_REVERT] permet de construire l'[COLOR_BUILDING_TEXT]Ob&#233;lisque[COLOR_REVERT] et [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Il m&#232;ne aussi &#224; la [COLOR_TECH_TEXT]m&#233;ditation[COLOR_REVERT] et au [COLOR_TECH_TEXT]polyth&#233;isme[COLOR_REVERT], ces deux technologies permettant au joueur en ayant fait la d&#233;couverte en premier de fonder une religion.</French>
+		<German>Die [COLOR_TECH_TEXT]Mystik[COLOR_REVERT] erm&#246;glicht den Bau von [COLOR_BUILDING_TEXT]Obelisken[COLOR_REVERT] und des Wunders von [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Dar&#252;ber hinaus legt sie den Grundstein f&#252;r die [COLOR_TECH_TEXT]Meditation[COLOR_REVERT] und den [COLOR_TECH_TEXT]Polytheismus[COLOR_REVERT]. Der Entdecker des Polytheismus bzw. der Meditation erh&#228;lt eine Religion.</German>
+		<Italian>Il [COLOR_TECH_TEXT]Misticismo[COLOR_REVERT] permette la realizzazione di [COLOR_BUILDING_TEXT]obelischi[COLOR_REVERT] e della Meraviglia [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Inoltre, conduce alla [COLOR_TECH_TEXT]Meditazione[COLOR_REVERT] e al [COLOR_TECH_TEXT]Politeismo[COLOR_REVERT], ciascuno delle quali fornisce una religione alla civilt&#224; che le scopre per prima.</Italian>
+		<Spanish>El [COLOR_TECH_TEXT]Misticismo[COLOR_REVERT] permite los [COLOR_BUILDING_TEXT]Obeliscos[COLOR_REVERT] y la maravilla de [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Tambi&#233;n lleva a la [COLOR_TECH_TEXT]Meditaci&#243;n[COLOR_REVERT] y al [COLOR_TECH_TEXT]Polite&#237;smo[COLOR_REVERT], cada uno de los cuales proporciona una religi&#243;n al primero que lo descubra.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THEOLOGY_STRATEGY</Tag>
+		<English>The first to research this tech founds [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. It enables the [COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] civic and allows construction of the [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] wonder.</English>
+		<French>La premi&#232;re civilisation qui atteint cette technologie fonde le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT], qui permet d'instaurer la [COLOR_HIGHLIGHT_TEXT]th&#233;ocratie[COLOR_REVERT] et de construire la [COLOR_BUILDING_TEXT]Chapelle Sixtine[COLOR_REVERT].</French>
+		<German>Wer diese Technologie zuerst erforscht, begr&#252;ndet das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Letzteres ist die Voraussetzung f&#252;r die Staatsform [COLOR_HIGHLIGHT_TEXT]Theokratie[COLOR_REVERT] und erm&#246;glicht den Bau der [COLOR_BUILDING_TEXT]Sixtinischen Kapelle[COLOR_REVERT].</German>
+		<Italian>Chi ricerca per primo questa tecnologia scopre il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Inoltre, permette la realizzazione della forma di governo [COLOR_HIGHLIGHT_TEXT]Teocrazia[COLOR_REVERT] e la costruzione della Meraviglia [COLOR_BUILDING_TEXT]Cappella Sistina[COLOR_REVERT].</Italian>
+		<Spanish>El primero en investigar esta tecnolog&#237;a fundar&#225; el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. &#201;ste activa el principio de [COLOR_HIGHLIGHT_TEXT]Teocracia[COLOR_REVERT] y permite la construcci&#243;n de la maravilla de la [COLOR_BUILDING_TEXT]Capilla Sixtina[COLOR_REVERT].</Spanish>
+	</TEXT>
 </Civ4GameText>

@@ -1,140 +1,140 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- Strategies -->
 <Civ4GameText>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_</Tag>
-  <English></English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS</Tag>
-  <English>Conditional Spawns</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_CONGRESSES</Tag>
-  <English>Congresses</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_CONTINENTS</Tag>
-  <English>Continents, Countries and Unique Historical Victories</English>
-  <French>Continents, pays et victoires historiques uniques</French>
-  <German>Kontinente, L&#228;nder und Einzigartige Historische Siege</German>
-  <Italian>Continenti, paesi e Vittorie Storiche uniche</Italian>
-  <Spanish>Continentes, pa&#237;ses y victorias hist&#243;ricas &#250;nicas</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_DIPLOMATIC_INSTITUTIONS</Tag>
-  <English>Diplomatic Institutions</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_DOC_ODDS</Tag>
-  <English>Odds and Ends in DoC</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_EMBASSIES</Tag>
-  <English>Embassies</English>
-  <French>Ambassades</French>
-  <German>Botschaften</German>
-  <Italian>Ambasciate</Italian>
-  <Spanish>Embajadas</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_HISTORICALSTARTS</Tag>
-  <English>Historical Starts</English>
-  <French>D&#233;buts historiques</French>
-  <German>Historische Starts</German>
-  <Italian>Avvii storici</Italian>
-  <Spanish>Comienzos hist&#243;ricos</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_MERCENARIES</Tag>
-  <English>Mercenaries</English>
-  <French>
-   <Text>Mercenaires</Text>
-   <Gender>Male</Gender>
-   <Plural>1</Plural>
-  </French>
-  <German>
-   <Text>S&#246;ldner</Text>
-   <Gender>Male</Gender>
-   <Plural>1</Plural>
-  </German>
-  <Italian>
-   <Text>Mercenari</Text>
-   <Gender>Male</Gender>
-   <Plural>1</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Mercenarios</Text>
-   <Gender>Male</Gender>
-   <Plural>1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_NEW_CORPORATIONS</Tag>
-  <English>Corporations in DoC</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_ODDS</Tag>
-  <English>Odds and Ends</English>
-  <French>Pr&#233;cisions</French>
-  <German></German>
-  <Italian></Italian>
-  <Spanish></Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_PLAGUE</Tag>
-  <English>Plague</English>
-  <French>Peste</French>
-  <German>Pest</German>
-  <Italian>Peste</Italian>
-  <Spanish>Peste</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_REFORMATION</Tag>
-  <English>Reformation</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_RESPAWNS</Tag>
-  <English>Respawns in DoC</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_RFCINTRO</Tag>
-  <English>Welcome to Rhye's and Fall of Civilization</English>
-  <French>Bienvenue &#224; "Rhye's and Fall of Civilization"</French>
-  <German>Willkommen zu Rhye's and Fall of Civilization</German>
-  <Italian>Benvenuto a Rhye's and Fall</Italian>
-  <Spanish>Bienvenido a &amp;quot;Rhye's and Fall of Civilization&amp;quot;</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_SCHISM</Tag>
-  <English>Great Christian Schism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_SLAVERY</Tag>
-  <English>Slavery</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_STABILITY</Tag>
-  <English>Stability</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_STABILITY_INFLUENCES</Tag>
-  <English>Stability Influence Factors</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Tag>
-  <English>Tile Stability Display</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS</Tag>
-  <English>Trading Companies</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CONCEPT_UP_UHV</Tag>
-  <English>Unique Powers and Historical Victories</English>
-  <French>Victoires historiques et pouvoirs uniques </French>
-  <German>Einzigartige M&#228;chte und Historische Siege</German>
-  <Italian>Poteri Unici e Vittorie Storiche</Italian>
-  <Spanish>Poderes &#250;nicos y victorias hist&#243;ricas</Spanish>
- </TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_</Tag>
+		<English></English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CONDITIONAL_SPAWNS</Tag>
+		<English>Conditional Spawns</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CONGRESSES</Tag>
+		<English>Congresses</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CONTINENTS</Tag>
+		<English>Continents, Countries and Unique Historical Victories</English>
+		<French>Continents, pays et victoires historiques uniques</French>
+		<German>Kontinente, L&#228;nder und Einzigartige Historische Siege</German>
+		<Italian>Continenti, paesi e Vittorie Storiche uniche</Italian>
+		<Spanish>Continentes, pa&#237;ses y victorias hist&#243;ricas &#250;nicas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_DIPLOMATIC_INSTITUTIONS</Tag>
+		<English>Diplomatic Institutions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_DOC_ODDS</Tag>
+		<English>Odds and Ends in DoC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_EMBASSIES</Tag>
+		<English>Embassies</English>
+		<French>Ambassades</French>
+		<German>Botschaften</German>
+		<Italian>Ambasciate</Italian>
+		<Spanish>Embajadas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_HISTORICALSTARTS</Tag>
+		<English>Historical Starts</English>
+		<French>D&#233;buts historiques</French>
+		<German>Historische Starts</German>
+		<Italian>Avvii storici</Italian>
+		<Spanish>Comienzos hist&#243;ricos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_MERCENARIES</Tag>
+		<English>Mercenaries</English>
+		<French>
+			<Text>Mercenaires</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>S&#246;ldner</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Mercenari</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mercenarios</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_NEW_CORPORATIONS</Tag>
+		<English>Corporations in DoC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_ODDS</Tag>
+		<English>Odds and Ends</English>
+		<French>Pr&#233;cisions</French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_PLAGUE</Tag>
+		<English>Plague</English>
+		<French>Peste</French>
+		<German>Pest</German>
+		<Italian>Peste</Italian>
+		<Spanish>Peste</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_REFORMATION</Tag>
+		<English>Reformation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RESPAWNS</Tag>
+		<English>Respawns in DoC</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RFCINTRO</Tag>
+		<English>Welcome to Rhye's and Fall of Civilization</English>
+		<French>Bienvenue &#224; "Rhye's and Fall of Civilization"</French>
+		<German>Willkommen zu Rhye's and Fall of Civilization</German>
+		<Italian>Benvenuto a Rhye's and Fall</Italian>
+		<Spanish>Bienvenido a &amp;quot;Rhye's and Fall of Civilization&amp;quot;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_SCHISM</Tag>
+		<English>Great Christian Schism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_SLAVERY</Tag>
+		<English>Slavery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_STABILITY</Tag>
+		<English>Stability</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_STABILITY_INFLUENCES</Tag>
+		<English>Stability Influence Factors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_STABILITY_TOOLTIP</Tag>
+		<English>Tile Stability Display</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_TRADING_COMPANY_CONQUERORS</Tag>
+		<English>Trading Companies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_UP_UHV</Tag>
+		<English>Unique Powers and Historical Victories</English>
+		<French>Victoires historiques et pouvoirs uniques </French>
+		<German>Einzigartige M&#228;chte und Historische Siege</German>
+		<Italian>Poteri Unici e Vittorie Storiche</Italian>
+		<Spanish>Poderes &#250;nicos y victorias hist&#243;ricas</Spanish>
+	</TEXT>
 </Civ4GameText>

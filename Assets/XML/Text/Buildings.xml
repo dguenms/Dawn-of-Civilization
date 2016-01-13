@@ -1,1123 +1,1123 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- Buildings -->
 <Civ4GameText>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ADMIN_CENTER</Tag>
-  <English>Administrative Center</English>
-  <German>Verwaltungszentrum</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_AME_EMBASSY</Tag>
-  <English>American Embassy</English>
-  <French>Ambassade am&#233;ricaine</French>
-  <German>Amerikanische Botschaft</German>
-  <Italian>Ambasciata americana</Italian>
-  <Spanish>Embajada estadounidense</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ARA_EMBASSY</Tag>
-  <English>Arabian Embassy</English>
-  <French>Ambassade arabe</French>
-  <German>Arabische Botschaft</German>
-  <Italian>Ambasciata araba</Italian>
-  <Spanish>Embajada &#225;rabe</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ARG_EMBASSY</Tag>
-  <English>Argentine Embassy</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ARGENTINE_REFRIGERATION_PLANT</Tag>
-  <English>Cold Storage Plant</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ARGENTINE_REFRIGERATION_PLANT_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Cold Storage Plant[COLOR_REVERT], the Argentine replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], gives extra gold and health if the city has access to [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT].</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_AZT_EMBASSY</Tag>
-  <English>Aztec Embassy</English>
-  <French>Ambassade azt&#232;que</French>
-  <German>Aztekische Botschaft</German>
-  <Italian>Ambasciata azteca</Italian>
-  <Spanish>Embajada azteca</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_BAB_EMBASSY</Tag>
-  <English>Babylonian Embassy</English>
-  <French>Ambassade babylonienne</French>
-  <German>Babylonische Botschaft</German>
-  <Italian>Ambasciata babilonese</Italian>
-  <Spanish>Embajada babilonia</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_BABYLONIAN_EDUBBA</Tag>
-  <English>Edubba</English>
-  <French>
-   <Text>Edubba</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Edubba</Text>
-   <Gender>Neuter</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Edubba</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Edubba:Edubbas</Text>
-   <Gender>Female</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_BRA_EMBASSY</Tag>
-  <English>Brazilian Embassy</English>
-  <French>Brazilian Embassy</French>
-  <German>Brazilian Embassy</German>
-  <Italian>Brazilian Embassy</Italian>
-  <Spanish>Brazilian Embassy</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA</Tag>
-  <English>Fazenda</English>
-  <French>Fazenda</French>
-  <German>Fazenda</German>
-  <Italian>Fazenda</Italian>
-  <Spanish>Fazenda</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT], the Brazilian replacement for the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT], increases a city's wealth. It also increases the city's health and wealth with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT]. A [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is required to build [COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT].</English>
-  <French>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</French>
-  <German>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</German>
-  <Italian>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</Italian>
-  <Spanish>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_BYZ_EMBASSY</Tag>
-  <English>Byzantine Embassy</English>
-  <French>Ambassade byzantine</French>
-  <German>Byzantinische Botschaft</German>
-  <Italian>Ambasciata bizantina</Italian>
-  <Spanish>Embajada bizantina</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CANADA_RCMP</Tag>
-  <English>Royal Mounted Police</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CAR_EMBASSY</Tag>
-  <English>Carthaginian Embassy</English>
-  <French>Ambassade carthaginoise</French>
-  <German>Karthagische Botschaft</German>
-  <Italian>Ambasciata cartaginese</Italian>
-  <Spanish>Embajada cartaginesa</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CARAVANSERAI</Tag>
-  <English>Caravanserai</English>
-  <French>Caravanserai</French>
-  <German>Caravanserai</German>
-  <Italian>Caravanserai</Italian>
-  <Spanish>Caravanserai</Spanish>
-  <Hungarian>Caravanserai</Hungarian>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CARAVANSERAI_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's wealth as well as providing an extra trade route. They also increase the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Fur[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Whales[COLOR_REVERT].</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CHI_EMBASSY</Tag>
-  <English>Chinese Embassy</English>
-  <French>Ambassade chinoise</French>
-  <German>Chinesische Botschaft</German>
-  <Italian>Ambasciata cinese</Italian>
-  <Spanish>Embajada china</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CHINESE_ACADEMY</Tag>
-  <English>Confucian Academy</English>
-  <French>
-   <Text></Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Konfuzianische Akademie</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text></Text>
-   <Gender>Female</Gender>
-   <Plural>0:1</Plural>
-  </Italian>
-  <Spanish>
-   <Text></Text>
-   <Gender>Female</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL</Tag>
-  <English>Taixue</English>
-  <German>Taixue</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], boosts your city's research, provides culture and allows more [COLOR_HIGHLIGHT_TEXT]Scientists[COLOR_REVERT] than a regular[COLOR_BUILDING_TEXT]Library[COLOR_REVERT]. They are required to build [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT].</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL</Tag>
-  <English>Catholic Cathedral</English>
-  <French>
-   <Text>Catholic Cathedral</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Katholische Kathedrale</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Catholic Cathedral:Catholic Cathedral</Text>
-   <Gender>Female</Gender>
-   <Plural>0:1</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Catholic Cathedral:Catholic Cathedral</Text>
-   <Gender>Female</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion).</English>
-  <French>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] augmente nettement la production de culture d'une ville. Elle rend les citoyens de la ville heureux (si le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] est la religion d'&#233;tat).</French>
-  <German>Die [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] erh&#246;ht den kulturellen Aussto&#223; einer Stadt deutlich. Ist das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in einer Stadt Staatsreligion, steigt die Zufriedenheit der Bev&#246;lkerung.</German>
-  <Italian>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] aumenta notevolmente la produzione culturale della citt&#224;. Inoltre, genera felicit&#224; tra i cittadini (se il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] &#232; la religione di stato).</Italian>
-  <Spanish>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] aumenta mucho la producci&#243;n cultural de la ciudad. Tambi&#233;n hace felices a los habitantes de la ciudad (si el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] es la religi&#243;n oficial).</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY</Tag>
-  <English>Catholic Monastery</English>
-  <French>
-   <Text>Catholic Monastery</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Katholisches Kloster</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Catholic Monastery:Catholic Monastery</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Catholic Monastery:Catholic Monastery</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE</Tag>
-  <English>Catholic Church</English>
-  <French>
-   <Text>Catholic Temple</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Katholische Kirche</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Catholic Temple:Catholic Temple</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Catholic Temple:Catholic Temple</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_COL_EMBASSY</Tag>
-  <English>Colombian Embassy</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA</Tag>
-  <English>Hacienda</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT], increases a city's wealth and provides additional gold with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT]. It also increases the city's health with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT]. A [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT] is required to build [COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT].</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
-  <English>Amphitheatre</English>
-  <French>
-   <Text>Amphith&#233;&#226;tre</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Amphitheater</Text>
-   <Gender>Neuter</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Anfiteatro</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Anfiteatro:Anfiteatros</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_CON_EMBASSY</Tag>
-  <English>Congolese Embassy</English>
-  <German>Kongolesische Botschaft</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_EGY_EMBASSY</Tag>
-  <English>Egyptian Embassy</English>
-  <French>Ambassade &#233;gyptienne</French>
-  <German>&#196;gyptische Botschaft</German>
-  <Italian>Ambasciata egiziana</Italian>
-  <Spanish>Embajada egipcia</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_EGYPTIAN_OBELISK_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Obelisk[COLOR_REVERT], the Egyptian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides a major bonus to Culture output in your city.</English>
-  <French>L'[COLOR_BUILDING_TEXT]ob&#233;lisque &#233;gyptien[COLOR_REVERT], c'est-&#224;-dire le [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT] &#233;gyptien, conf&#232;re am&#233;liore nettement la production culturelle dans votre ville.</French>
-  <German>Der [COLOR_BUILDING_TEXT]&#196;gyptische Obelisk[COLOR_REVERT], die &#228;gyptische Variante des [COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT],gew&#228;hrt einen gro&#223;en Kulturbonus.</German>
-  <Italian>L'[COLOR_BUILDING_TEXT]Obelisco egizio[COLOR_REVERT], l'equivalente egizio del[COLOR_BUILDING_TEXT]monumento[COLOR_REVERT], fornisce un grosso bonus alla cultura nella tua citt&#224;.</Italian>
-  <Spanish>El [COLOR_BUILDING_TEXT]Obelisco egipcio[COLOR_REVERT], que reemplaza al [COLOR_BUILDING_TEXT]Monumento[COLOR_REVERT], proporciona una importante bonificaci&#243;n al rendimiento cultural de vuestra ciudad.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_EMBASSY_ABILITY</Tag>
-  <English>[ICON_BULLET] Establishes permanent contact with this civilization</English>
-  <French>[ICON_BULLET] Etablit un contact permanent avec cette civilisation</French>
-  <German>[ICON_BULLET] Gew&#228;hrleistet den st&#228;ndigen Kontakt mit dieser Zivilisation</German>
-  <Italian>[ICON_BULLET] Stabilisce un contatto permanente con questa civilt&#224;.</Italian>
-  <Spanish>[ICON_BULLET] Establece contacto permanente con esta civilizaci&#243;n</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_EMBASSY_EP</Tag>
-  <English>[ICON_BULLET] Requires 10 [ICON_ESPIONAGE] against this civilization</English>
-  <French>[ICON_BULLET] N&#233;cessite 10 [ICON_ESPIONAGE] contre cette civilisation</French>
-  <German>[ICON_BULLET] Erfordert 10 [ICON_ESPIONAGE] gegen diese Zivilisation</German>
-  <Italian>[ICON_BULLET] Richiede 10 [ICON_ESPIONAGE] contro questa civilt&#224;.</Italian>
-  <Spanish>[ICON_BULLET] Se necesitan 10 [ICON_ESPIONAGE] contra esta civilizaci&#243;n</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_EMBASSY_GENERIC</Tag>
-  <English>Embassy</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_EMBASSY_STRATEGY</Tag>
-  <English>Establishes permanent contact with other civilizations</English>
-  <French>Etablit un contact permanent avec d'autres civilisations</French>
-  <German>Gew&#228;hrleistet den st&#228;ndigen Kontakt mit anderen Zivilisationen</German>
-  <Italian>Stabilisce un contatto permanente con altre civilt&#224;.</Italian>
-  <Spanish>Establece contacto permanente con otras civilizaciones</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ENG_EMBASSY</Tag>
-  <English>English Embassy</English>
-  <French>Ambassade anglaise</French>
-  <German>Englische Botschaft</German>
-  <Italian>Ambasciata inglese</Italian>
-  <Spanish>Embajada inglesa</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE</Tag>
-  <English>Royal Exchange</English>
-  <French>Bourse Royale</French>
-  <German>K&#246;nigliche B&#246;rse</German>
-  <Italian>Borsa Reale</Italian>
-  <Spanish>Bolsa Real</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE_STRATEGY</Tag>
-  <English>A [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's production of wealth even more than a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT].</English>
-  <French>La [COLOR_BUILDING_TEXT]Bourse Royale[COLOR_REVERT], version anglaise de la [COLOR_BUILDING_TEXT]banque[COLOR_REVERT], augmente la production de richesse d'une ville davantage que la [COLOR_BUILDING_TEXT]banque[COLOR_REVERT].</French>
-  <German>Die englische [COLOR_BUILDING_TEXT]K&#246;nigliche B&#246;rse[COLOR_REVERT] ersetzt die [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], bewirkt jedoch einen noch gr&#246;&#223;eren Anstieg des Wohlstands einer Stadt.</German>
-  <Italian>La [COLOR_BUILDING_TEXT]Borsa reale[COLOR_REVERT], l'equivalente inglese della [COLOR_BUILDING_TEXT]Banca[COLOR_REVERT], incrementa la produzione di ricchezza della citt&#224; ancor pi&#249; della [COLOR_BUILDING_TEXT]banca[COLOR_REVERT] stessa.</Italian>
-  <Spanish>El [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], el equivalente ingl&#233;s del [COLOR_BUILDING_TEXT]Banco[COLOR_REVERT], aumenta la producci&#243;n de riqueza de la ciudad a&#250;n m&#225;s que este &#250;ltimo.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ETH_EMBASSY</Tag>
-  <English>Ethiopian Embassy</English>
-  <French>Ambassade &#233;thiopienne</French>
-  <German>&#196;thiopische Botschaft</German>
-  <Italian>Ambasciata etiope</Italian>
-  <Spanish>Embajada et&#237;ope</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ETHIOPIAN_STELE_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides its city with a small amount of culture and also allow you to employ 2 priest specialists.</English>
-  <French>La [COLOR_BUILDING_TEXT]St&#232;le[COLOR_REVERT], monument &#233;thiopien qui remplace le [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], fournit &#224; la ville une petite quantit&#233; de culture et lui permet d'avoir 2 pr&#234;tres.</French>
-  <German>Die [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT] ist die &#228;thiopische Variante des [COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] und bewirkt einen leichten Anstieg des kulturellen Werts einer Stadt und erm&#246;glicht die Existenz von 2 Priester-Spezialisten in der jeweiligen Stadt.</German>
-  <Italian>La [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], l'equivalente etiope del [COLOR_BUILDING_TEXT]Monumento[COLOR_REVERT], fornisce alla citt&#224; un piccolo contributo in cultura e permette alla citt&#224; stessa di avere fino a due sacerdoti.</Italian>
-  <Spanish>La [COLOR_BUILDING_TEXT]Estela[COLOR_REVERT], el sustituto et&#237;ope del [COLOR_BUILDING_TEXT]Monumento[COLOR_REVERT], proporciona a su ciudad una peque&#241;a cantidad de cultura y tambi&#233;n le permite tener 2 sacerdotes especialistas.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_FRA_EMBASSY</Tag>
-  <English>French Embassy</English>
-  <French>Ambassade fran&#231;aise</French>
-  <German>Franz&#246;sische Botschaft</German>
-  <Italian>Ambasciata francese</Italian>
-  <Spanish>Embajada francesa</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_FRENCH_SALON_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Salon[COLOR_REVERT], the French replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers a city's war weariness and increases a city's espionage output significantly. It also provides a cultural bonus, a happiness bonus if the city has access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It also increases the birthrate of [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT].</English>
-  <French>Le [COLOR_BUILDING_TEXT]salon[COLOR_REVERT], version fran&#231;aise de l'[COLOR_BUILDING_TEXT]observatoire[COLOR_REVERT], am&#233;liore la recherche scientifique d'une ville et augmente ses chances de g&#233;n&#233;rer un [COLOR_HIGHLIGHT_TEXT]artiste illustre[COLOR_REVERT].</French>
-  <German>Der franz&#246;sische [COLOR_BUILDING_TEXT]Salon[COLOR_REVERT] ersetzt das [COLOR_BUILDING_TEXT]Observatorium[COLOR_REVERT]. Er beschleunigt die wissenschaftliche Forschung einer Stadt und erh&#246;ht die Wahrscheinlichkeit f&#252;r die Entstehung eines [COLOR_HIGHLIGHT_TEXT]Gro&#223;en K&#252;nstlers[COLOR_REVERT].</German>
-  <Italian>Il [COLOR_BUILDING_TEXT]salotto[COLOR_REVERT], l'equivalente francese dell'[COLOR_BUILDING_TEXT]osservatorio[COLOR_REVERT], incrementa la ricerca scientifica delle citt&#224; nonch&#233; le probabilit&#224; che in citt&#224; nasca un [COLOR_HIGHLIGHT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
-  <Spanish>El [COLOR_BUILDING_TEXT]Sal&#243;n[COLOR_REVERT], el equivalente franc&#233;s del [COLOR_BUILDING_TEXT]Observatorio[COLOR_REVERT], aumenta la investigaci&#243;n cient&#237;fica de la ciudad y las posibilidades de &#233;sta de generar un [COLOR_HIGHLIGHT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_FRIGORIFICO_STRATEGY</Tag>
-  <English>Unique Argentinian building which replaces the supermarket. Provides additional gold with cow, pig and sheep.</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_GER_EMBASSY</Tag>
-  <English>German Embassy</English>
-  <French>Ambassade allemande</French>
-  <German>Deutsche Botschaft</German>
-  <Italian>Ambasciata tedesca</Italian>
-  <Spanish>Embajada alemana</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_GRE_EMBASSY</Tag>
-  <English>Greek Embassy</English>
-  <French>Ambassade grecque</French>
-  <German>Griechische Botschaft</German>
-  <Italian>Ambasciata greca</Italian>
-  <Spanish>Embajada griega</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_HARAPPAN_BATH</Tag>
-  <English>Bath</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_HOL_EMBASSY</Tag>
-  <English>Dutch Embassy</English>
-  <French>Ambassade n&#233;erlandaise</French>
-  <German>Holl&#228;ndische Botschaft</German>
-  <Italian>Ambasciata olandese</Italian>
-  <Spanish>Embajada holandesa</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_HRE_EMBASSY</Tag>
-  <English>Holy Roman Embassy</English>
-  <German>Heilig-R&#246;mische Botschaft</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INC_EMBASSY</Tag>
-  <English>Incan Embassy</English>
-  <French>Ambassade inca</French>
-  <German>Inka-Botschaft</German>
-  <Italian>Ambasciata inca</Italian>
-  <Spanish>Embajada inca</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INCAN_TAMBO</Tag>
-  <English>Tambo</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Tambo[COLOR_REVERT], the Incan replacement for the [COLOR_BUILDING_TEXT]Castle[COLOR_REVERT], increases a city's defenses against pre-gunpowder units, increases espionage amount, generates more culture than a regular [COLOR_BUILDING_TEXT]Castle[COLOR_REVERT] and is also available sooner than a regular [COLOR_BUILDING_TEXT]Castle[COLOR_REVERT]</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_IND_EMBASSY</Tag>
-  <English>Indian Embassy</English>
-  <French>Ambassade indienne</French>
-  <German>Indische Botschaft</German>
-  <Italian>Ambasciata indiana</Italian>
-  <Spanish>Embajada india</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INDIAN_EDICT</Tag>
-  <English>Edict</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INDIAN_STEPWELL</Tag>
-  <English>Stepwell</English>
-  <German>Stufenbrunnen</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INDIAN_STEPWELL_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], improves a city's health. It's also available sooner than a regular [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT]</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI</Tag>
-  <English>Candi</English>
-  <French>Candi</French>
-  <German>Candi</German>
-  <Italian>Candi</Italian>
-  <Spanish>Candi</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with a small production and culture boost.</English>
-  <French>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with +1 production as well as giving them a small culture-boost.</French>
-  <German>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with +1 production as well as giving them a small culture-boost.</German>
-  <Italian>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with +1 production as well as giving them a small culture-boost.</Italian>
-  <Spanish>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with +1 production as well as giving them a small culture-boost.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_INO_EMBASSY</Tag>
-  <English>Indonesian Embassy</English>
-  <French>Ambassade indon&#233;sienne</French>
-  <German>Indonesische Botschaft</German>
-  <Italian>Ambasciata indonesiana</Italian>
-  <Spanish>Embajada indonesia</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ITA_EMBASSY</Tag>
-  <English>Italian Embassy</English>
-  <German>Italienische Botschaft</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO</Tag>
-  <English>Art Studio</English>
-  <French>Atelier</French>
-  <German>Atelier</German>
-  <Italian>Art Studio</Italian>
-  <Spanish>Art Studio</Spanish>
-  <Hungarian>Art Studio</Hungarian>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Art Studio[COLOR_REVERT], the Italian replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a big culture boost and increases production, but also adds unhealthiness in cities. [COLOR_BUILDING_TEXT]Art Studios[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT], and [COLOR_BUILDING_TEXT]Statue of LIberty[COLOR_REVERT] world wonders, and the [COLOR_BUILDING_TEXT]Ironworks[COLOR_REVERT] national wonder.</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JAP_EMBASSY</Tag>
-  <English>Japanese Embassy</English>
-  <French>Ambassade japonaise</French>
-  <German>Japanische Botschaft</German>
-  <Italian>Ambasciata giapponese</Italian>
-  <Spanish>Embajada japonesa</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JAPANESE_SHALE_PLANT</Tag>
-  <English>Kaizen Plant</English>
-  <German>Kaizen-Kraftwerk</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JAPANESE_SHALE_PLANT_STRATEGY</Tag>
-  <English>[COLOR_BUILDING_TEXT]Kaizen Plants[COLOR_REVERT], the Japanese replacements for [COLOR_BUILDING_TEXT]Coal Plants[COLOR_REVERT], provide power for the Factory, although the pollution will hurt your city's health. It provides a free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and a small production bonus.</English>
-  <French>L'[COLOR_BUILDING_TEXT]usine de schistes[COLOR_REVERT], version japonaise de la [COLOR_BUILDING_TEXT]centrale thermique[COLOR_REVERT], fournit de l'&#233;nergie aux usines, mais la pollution d&#233;t&#233;riore la sant&#233; de vos citoyens.</French>
-  <German>Die japanischen [COLOR_BUILDING_TEXT]Schieferwerke[COLOR_REVERT] ersetzen die [COLOR_BUILDING_TEXT]Kohlekraftwerke[COLOR_REVERT] und versorgen Fabriken mit Energie, allerdings wirkt sich die von ihnen verursachte Luftverschmutzung negativ auf die Gesundheit der Stadtbev&#246;lkerung aus.</German>
-  <Italian>Le [COLOR_BUILDING_TEXT]fabbriche di bitume[COLOR_REVERT], l'equivalente giapponese delle [COLOR_BUILDING_TEXT]centrali a carbone[COLOR_REVERT], forniscono energia alla fabbrica, anche su producono molto inquinamento e riducono la salute della citt&#224;.</Italian>
-  <Spanish>Las [COLOR_BUILDING_TEXT]Plantas de esquisto[COLOR_REVERT], los equivalentes japoneses de las [COLOR_BUILDING_TEXT]Centrales t&#233;rmicas[COLOR_REVERT], alimentan las f&#225;bricas, aunque la contaminaci&#243;n perjudicar&#225; la salud de la ciudad.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JAPANESE_ZAIBATSU</Tag>
-  <English>Zaibatsu</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
-  <English>Protestant Cathedral</English>
-  <French>
-   <Text>Protestant Cathedral</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Protestantische Kathedrale</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Protestant Cathedral:Protestant Cathedral</Text>
-   <Gender>Female</Gender>
-   <Plural>0:1</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Protestant Cathedral:Protestant Cathedral</Text>
-   <Gender>Female</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion).</English>
-  <French>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] augmente nettement la production de culture d'une ville. Elle rend les citoyens de la ville heureux (si le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] est la religion d'&#233;tat).</French>
-  <German>Die [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] erh&#246;ht den kulturellen Aussto&#223; einer Stadt deutlich. Ist das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in einer Stadt Staatsreligion, steigt die Zufriedenheit der Bev&#246;lkerung.</German>
-  <Italian>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] aumenta notevolmente la produzione culturale della citt&#224;. Inoltre, genera felicit&#224; tra i cittadini (se il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] &#232; la religione di stato).</Italian>
-  <Spanish>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] aumenta mucho la producci&#243;n cultural de la ciudad. Tambi&#233;n hace felices a sus habitantes (si el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] es la religi&#243;n oficial).</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
-  <English>Protestant Monastery</English>
-  <French>
-   <Text>Protestant Monastery</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Protestantisches Kloster</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Protestant Monastery:Protestant Monastery</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Protestant Monastery:Protestant Monastery</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JEWISH_SHRINE</Tag>
-  <English>All Saints' Church</English>
-  <French>
-   <Text>All Saints' Church</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>All Saints' Church</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>All Saints' Church</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>All Saints' Church</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JEWISH_SHRINE_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-  <French>Le [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]sanctuaire Protestant[COLOR_REVERT]) produit 1 unit&#233; d'or par tour pour chaque ville pratiquant le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Il r&#233;pand &#233;galement le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] dans le monde et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]proph&#232;te illustre[COLOR_REVERT].</French>
-  <German>[COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] praktizieren, 1 Gold/Runde. Au&#223;erdem verbreitet er das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
-  <Italian>Il [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] (il [COLOR_BUILDING_TEXT]santuario Protestant[COLOR_REVERT]) produce un'unit&#224; d'oro a turno per ogni citt&#224; nel mondo che pratica il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Inoltre, diffonde nel mondo il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] e aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Profeta[COLOR_REVERT].</Italian>
-  <Spanish>El [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] (el [COLOR_BUILDING_TEXT]santuario Protestant[COLOR_REVERT]) produce uno de oro cada turno por cada ciudad del mundo en la que se practique el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Tambi&#233;n propaga el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] por el globo y aumenta las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran profeta[COLOR_REVERT].</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
-  <English>Protestant Church</English>
-  <French>
-   <Text>Protestant Temple</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Protestantische Kirche</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Protestant Temple:Protestant Temple</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Protestant Temple:Protestant Temple</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_KHM_EMBASSY</Tag>
-  <English>Khmer Embassy</English>
-  <French>Ambassade khm&#232;re</French>
-  <German>Khmerische Botschaft</German>
-  <Italian>Ambasciata khmer</Italian>
-  <Spanish>Embajada j&#233;mer</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_KONGO_MBWADI</Tag>
-  <English>Mbwadi</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_KONGO_MBWADI_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Mbwadi[COLOR_REVERT], the Congolese replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increase a city's wealth and provides additional gold with access to [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Cotton[COLOR_REVERT]. They also increase the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Fur[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Whales[COLOR_REVERT].</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_KOR_EMBASSY</Tag>
-  <English>Korean Embassy</English>
-  <French>Ambassade &#233;thiopienne</French>
-  <German>Koreanische Botschaft</German>
-  <Italian>Ambasciata etiope</Italian>
-  <Spanish>Embajada et&#237;ope</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_KOREAN_SEOWON_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT], the Korean replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], increases a city's research and provides culture. It's also available sooner than a regular [COLOR_BUILDING_TEXT]University[COLOR_REVERT] and is required to build [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] world wonder</English>
-  <French>Le [COLOR_BUILDING_TEXT]sowon[COLOR_REVERT], version cor&#233;enne de l'[COLOR_BUILDING_TEXT]universit&#233;[COLOR_REVERT], am&#233;liore la recherche davantage que les [COLOR_BUILDING_TEXT]universit&#233;s[COLOR_REVERT] et produit de la culture.</French>
-  <German>Das koreanische [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT] ersetzt die [COLOR_BUILDING_TEXT]Universit&#228;t[COLOR_REVERT], beschleunigt aber in h&#246;herem Ma&#223;e die Forschung und erh&#246;ht zudem den kulturellen Wert einer Stadt.</German>
-  <Italian>Il [COLOR_BUILDING_TEXT]seowon[COLOR_REVERT], l'equivalente coreano dell'[COLOR_BUILDING_TEXT]universit&#224;[COLOR_REVERT], velocizza la ricerca nelle citt&#224; ancor pi&#249; dell'[COLOR_BUILDING_TEXT]universit&#224;[COLOR_REVERT] stessa e produce cultura.</Italian>
-  <Spanish>La [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT], el equivalente coreano de la [COLOR_BUILDING_TEXT]Universidad[COLOR_REVERT], aumenta la investigaci&#243;n en la ciudad a&#250;n m&#225;s que la [COLOR_BUILDING_TEXT]Universidad[COLOR_REVERT] y proporciona cultura.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MAL_EMBASSY</Tag>
-  <English>Malinese Embassy</English>
-  <French>Ambassade malienne</French>
-  <German>Malinesische Botschaft</German>
-  <Italian>Ambasciata malinese</Italian>
-  <Spanish>Embajada mal&#237;</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MAY_EMBASSY</Tag>
-  <English>Mayan Embassy</English>
-  <French>Ambassade maya</French>
-  <German>Maya-Botschaft</German>
-  <Italian>Ambasciata maya</Italian>
-  <Spanish>Embajada maya</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MAYA_BALL_COURT_STRATEGY</Tag>
-  <English>Build the [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], to provide cities with an extra happiness and it provides extra experience to melee and archery units.</English>
-  <French>Construire le [COLOR_BUILDING_TEXT]terrain de jeu de balle[COLOR_REVERT], b&#226;timent maya qui remplace le [COLOR_BUILDING_TEXT]Colis&#233;e[COLOR_REVERT], permet de conf&#233;rer aux villes trois visages heureux au lieu d'un.</French>
-  <German>Durch den Bau des [COLOR_BUILDING_TEXT]Ballplatzes[COLOR_REVERT], die Maya-Variante des [COLOR_BUILDING_TEXT]Kolosseums[COLOR_REVERT], erh&#246;ht sich die Zufriedenheit einer Stadt auf 3 (statt 1).</German>
-  <Italian>Costruisci il [COLOR_BUILDING_TEXT]Campo da palla[COLOR_REVERT], che per i Maya sostituisce il [COLOR_BUILDING_TEXT]Colosseo[COLOR_REVERT], per dare alle citt&#224; tre risorse di felicit&#224; invece di una sola.</Italian>
-  <Spanish>Construye el [COLOR_BUILDING_TEXT]Campo del juego de pelota[COLOR_REVERT], el sustituto maya del [COLOR_BUILDING_TEXT]Coliseo[COLOR_REVERT], para darles a las ciudades 3 de felicidad en vez de 1.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA</Tag>
-  <English>Charreada Arena</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA_STRATEGY</Tag>
-  <English>A [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT] (the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT]) increases a city's happiness and its happiness output from using the culture slider. It will also provide extra experience to your mounted units.</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MON_EMBASSY</Tag>
-  <English>Mongolian Embassy</English>
-  <French>Ambassade mongole</French>
-  <German>Mongolische Botschaft</German>
-  <Italian>Ambasciata mongola</Italian>
-  <Spanish>Embajada mongola</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MONUMENT</Tag>
-  <English>Pagan Temple</English>
-  <German>
-   <Text>Heidnischer Tempel</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
-  <English>[COLOR_BUILDING_TEXT]Pagan Temples[COLOR_REVERT] provide a small amount of culture.</English>
-  <French>Les [COLOR_BUILDING_TEXT]monuments[COLOR_REVERT] fournissent une petite quantit&#233; de culture, et sont utiles pour agrandir vos fronti&#232;res culturelles au d&#233;but du jeu.</French>
-  <German>[COLOR_BUILDING_TEXT]Monumente[COLOR_REVERT] erh&#246;hen den kulturellen Wert einer Stadt und erm&#246;glichen die fr&#252;hzeitige Ausdehnung der Stadtgrenzen. </German>
-  <Italian>I [COLOR_BUILDING_TEXT]monumenti[COLOR_REVERT] forniscono una piccola quantit&#224; di cultura e servono a espandere velocemente i confini della citt&#224; nelle fasi iniziali della partita. </Italian>
-  <Spanish>Los [COLOR_BUILDING_TEXT]Monumentos[COLOR_REVERT] proporcionan una peque&#241;a cantidad de cultura y son una buena manera de ampliar las fronteras de una ciudad en los primeros tiempos. </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MOO_EMBASSY</Tag>
-  <English>Moorish Embassy</English>
-  <German>Maurische Botschaft</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MOORISH_NORIA</Tag>
-  <English>Noria</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MOORISH_NORIA_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides a production bonus, in addition to the usual health bonus.</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_MUG_EMBASSY</Tag>
-  <English>Mughal Embassy</English>
-  <German>Mogul-Botschaft</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL</Tag>
-  <English>Orthodox Cathedral</English>
-  <German>Orthodoxe Kathedrale</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion).</English>
-  <French>La [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] augmente nettement la production de culture d'une ville. Elle rend les citoyens de la ville heureux (si le [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] est la religion d'&#233;tat).</French>
-  <German>Die [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] erh&#246;ht den kulturellen Aussto&#223; einer Stadt deutlich. Ist das [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in einer Stadt Staatsreligion, steigt die Zufriedenheit der Bev&#246;lkerung.</German>
-  <Italian>La [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] aumenta notevolmente la produzione culturale della citt&#224;. Inoltre, genera felicit&#224; tra i cittadini (se il [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] &#232; la religione di stato).</Italian>
-  <Spanish>La [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] aumenta mucho la producci&#243;n cultural de la ciudad. Tambi&#233;n hace felices a sus habitantes (si el [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] es la religi&#243;n oficial).</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ORTHODOX_MONASTERY</Tag>
-  <English>Orthodox Monastery</English>
-  <German>Orthodoxes Kloster</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ORTHODOX_TEMPLE</Tag>
-  <English>Orthodox Church</English>
-  <German>Orthodoxe Kirche</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_PER_EMBASSY</Tag>
-  <English>Persian Embassy</English>
-  <French>Ambassade perse</French>
-  <German>Persische Botschaft</German>
-  <Italian>Ambasciata persiana</Italian>
-  <Spanish>Embajada persa</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER</Tag>
-  <English>Glassmaker</English>
-  <French>
-   <Text></Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Glasmacher</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>:</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Italian>
-  <Spanish>
-   <Text>:</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Glassmaker[COLOR_REVERT] ,the Phoenician replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's wealth as well as increasing trade route yield. They also increase the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Fur[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Whales[COLOR_REVERT].</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_PLAGUE</Tag>
-  <English>Plague</English>
-  <French>Peste</French>
-  <German>Pest</German>
-  <Italian>Peste</Italian>
-  <Spanish>Peste</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_POL_EMBASSY</Tag>
-  <English>Polish Embassy</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_POLISH_SEJMIK</Tag>
-  <English>Sejmik</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_POLISH_SEJMIK_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT], lower city maintenance costs, provide you with a bonus to espionage and provides a small cash and happiness bonus. The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Summer Palace[COLOR_REVERT] national wonder.</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_POLYNESIAN_MARAE</Tag>
-  <English>Mala'e</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_POR_EMBASSY</Tag>
-  <English>Portuguese Embassy</English>
-  <French>Ambassade portugaise</French>
-  <German>Portugiesische Botschaft</German>
-  <Italian>Ambasciata portoghese</Italian>
-  <Spanish>Embajada portuguesa</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ROM_EMBASSY</Tag>
-  <English>Roman Embassy</English>
-  <French>Ambassade romaine</French>
-  <German>R&#246;mische Botschaft</German>
-  <Italian>Ambasciata romana</Italian>
-  <Spanish>Embajada romana</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_RUS_EMBASSY</Tag>
-  <English>Russian Embassy</English>
-  <French>Ambassade russe</French>
-  <German>Russische Botschaft</German>
-  <Italian>Ambasciata russa</Italian>
-  <Spanish>Embajada rusa</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_SMOKEHOUSE</Tag>
-  <English>Smokehouse</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_SPA_EMBASSY</Tag>
-  <English>Spanish Embassy</English>
-  <French>Ambassade espagnole</French>
-  <German>Spanische Botschaft</German>
-  <Italian>Ambasciata spagnola</Italian>
-  <Spanish>Embajada espa&#241;ola</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_SUMMER_PALACE</Tag>
-  <English>Summer Palace</English>
-  <French>
-   <Text>Palais d'&#233;t&#233;</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Sommerresidenz</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Palazzo d'estate</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>el Palacio de Verano</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_SUMMER_PALACE_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Summer Palace[COLOR_REVERT] reduces the maintenance costs in nearby cities. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Spy[COLOR_REVERT].</English>
-  <French>Le [COLOR_BUILDING_TEXT]Palais d'&#233;t&#233;[COLOR_REVERT] r&#233;duit le co&#251;t d'entretien des villes voisines et agit comme une seconde [COLOR_BUILDING_TEXT]Cit&#233; interdite[COLOR_REVERT]. Il augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]Espion illustre[COLOR_REVERT].</French>
-  <German>Der [COLOR_BUILDING_TEXT]Sommerresidenz[COLOR_REVERT] verringert die Unterhaltskosten aller nahe gelegenen St&#228;dte und entspricht einer zweiten [COLOR_BUILDING_TEXT]Verbotenen Stadt[COLOR_REVERT]. Dar&#252;ber hinaus erh&#246;ht es die Chance auf einen [COLOR_UNIT_TEXT]Gro&#223;er Spion[COLOR_REVERT].</German>
-  <Italian>Il [COLOR_BUILDING_TEXT]Palazzo d'estate[COLOR_REVERT] riduce il mantenimento delle citt&#224; vicine e funge da secondo [COLOR_BUILDING_TEXT]Palazzo Proibito[COLOR_REVERT]. Aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Spia[COLOR_REVERT].</Italian>
-  <Spanish>El [COLOR_BUILDING_TEXT]Palacio de Verano[COLOR_REVERT] reduce los costes de mantenimiento de todas las ciudades cercanas y funciona como una segunda [COLOR_BUILDING_TEXT]Ciudad Prohibida[COLOR_REVERT]. Adem&#225;s, aumenta las posibilidades de generar un [COLOR_UNIT_TEXT]Gran esp&#237;a[COLOR_REVERT].</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_SUMERIAN_ZIGGURAT_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides more culture than a [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] and gives a small science and culture boost.</English>
-  <French>Construire la [COLOR_BUILDING_TEXT]Ziggourat[COLOR_REVERT], b&#226;timent sum&#233;rien qui remplace le [COLOR_BUILDING_TEXT]tribunal[COLOR_REVERT], n&#233;cessite moins de marteaux que ce dernier.</French>
-  <German>Die [COLOR_BUILDING_TEXT]Zikkurat[COLOR_REVERT] ist die sumerische Variante des [COLOR_BUILDING_TEXT]Gerichtsgeb&#228;udes[COLOR_REVERT], erfordert aber weniger Produktionseinheiten.</German>
-  <Italian>Per costruire la [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], l'equivalente sumero del [COLOR_BUILDING_TEXT]Palazzo di giustizia[COLOR_REVERT], ci vogliono meno scudi che per la controparte generica.</Italian>
-  <Spanish>Construir el [COLOR_BUILDING_TEXT]Zigurat[COLOR_REVERT], el sustituto sumerio de la [COLOR_BUILDING_TEXT]Delegaci&#243;n[COLOR_REVERT], requiere menos martillos que su equivalente gen&#233;rico.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TAM_EMBASSY</Tag>
-  <English>Tamil Embassy</English>
-  <German>Tamilische Botschaft</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TAMIL_SANGAM</Tag>
-  <English>Sangam</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TAMIL_SANGAM_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Tamil replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], boosts your city's research, provides an extra cultural boost and provides culture. The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT] is required to build [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT].</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_THA_EMBASSY</Tag>
-  <English>Thai Embassy</English>
-  <German>Thai-Botschaft</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_THAI_HO_TRAI</Tag>
-  <English>Ho Trai</English>
-  <German>Ho Trai</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_THAI_HO_TRAI_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Ho Trai[COLOR_REVERT], the Thai replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], boosts your city's research and provides culture. It's also cheaper, provides extra happiness and is required to build [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT]</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TIB_EMB</Tag>
-  <English>Tibetan Embassy</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TIB_EMBASSY</Tag>
-  <English>Tibetan Embassy</English>
-  <German>Tibetische Botschaft</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA</Tag>
-  <English>Gompa</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Gompa[COLOR_REVERT] ,the Tibetan replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], increases a city's research, provides culture, provides a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and a defensive bonus. It's also available sooner than a regular [COLOR_BUILDING_TEXT]University[COLOR_REVERT] and is required to build [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] world wonder.</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TUR_EMBASSY</Tag>
-  <English>Turkish Embassy</English>
-  <French>Ambassade turque</French>
-  <German>T&#252;rkische Botschaft</German>
-  <Italian>Ambasciata turca</Italian>
-  <Spanish>Embajada turca</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_VIK_EMBASSY</Tag>
-  <English>Viking Embassy</English>
-  <French>Ambassade viking</French>
-  <German>Wikinger-Botschaft</German>
-  <Italian>Ambasciata vichinga</Italian>
-  <Spanish>Embajada vikinga</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
-  <English>Zoroastrian Royal Fire</English>
-  <French>
-   <Text></Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Zoroastrisches K&#246;nigsfeuer</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text></Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>:</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Zoroastrian Royal Fire[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion).</English>
-  <French>No translation yet</French>
-  <German>No translation yet</German>
-  <Italian>No translation yet</Italian>
-  <Spanish>No translation yet</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>
-  <English>Zoroastrian Monastery</English>
-  <French>
-   <Text></Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Zoroastrisches Kloster</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text></Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>:</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_STRATEGY</Tag>
-  <English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
-  <French>Les [COLOR_BUILDING_TEXT]monast&#232;res[COLOR_REVERT] permettent de former des [COLOR_UNIT_TEXT]missionnaires[COLOR_REVERT] qui peuvent propager la foi dans les autres villes. Ils am&#233;liorent aussi la culture d'une ville et acc&#233;l&#232;rent l&#233;g&#232;rement sa recherche.</French>
-  <German>[COLOR_BUILDING_TEXT]Kl&#246;ster[COLOR_REVERT] erm&#246;glichen die Ausbildung von [COLOR_UNIT_TEXT]Missionaren[COLOR_REVERT]. Diese verk&#252;nden in anderen St&#228;dten Ihren Glauben, steigern den kulturellen Wert und beschleunigen die Forschung.</German>
-  <Italian>I [COLOR_BUILDING_TEXT]monasteri[COLOR_REVERT] permettono la realizzazione dei [COLOR_UNIT_TEXT]missionari[COLOR_REVERT], in grado di diffondere la fede in altre citt&#224;. Inoltre, forniscono cultura e un piccolo aumento di ricerca.</Italian>
-  <Spanish>Los [COLOR_BUILDING_TEXT]Monasterios[COLOR_REVERT] permiten crear [COLOR_UNIT_TEXT]Misioneros[COLOR_REVERT], que pueden propagar la fe por otras ciudades. Tambi&#233;n proporcionan cultura y un cierto empuje a la investigaci&#243;n.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE</Tag>
-  <English>Zoroastrian Temple</English>
-  <French>
-   <Text></Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Zoroastrischer Tempel</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text></Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>:</Text>
-   <Gender>Male</Gender>
-   <Plural>0:1</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE_STRATEGY</Tag>
-  <English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture.</English>
-  <French>Les [COLOR_BUILDING_TEXT]petites synagogues[COLOR_REVERT] am&#233;liorent le bonheur et la culture des villes. Elles sont notamment utiles pour agrandir vos fronti&#232;res culturelles au d&#233;but du jeu.</French>
-  <German>[COLOR_BUILDING_TEXT]Tempel[COLOR_REVERT] steigern die Zufriedenheit und Kultur einer Stadt. Sie eignen sich hervorragend, um Ihre Zivilisation bereits in der Fr&#252;hphase des Spiels zu vergr&#246;&#223;ern.</German>
-  <Italian>I [COLOR_BUILDING_TEXT]templi[COLOR_REVERT] aumentano la felicit&#224; e la cultura della citt&#224;. Sono particolarmente indicati per espandere i confini della tua civilt&#224; durante le fasi iniziali della partita.</Italian>
-  <Spanish>Los [COLOR_BUILDING_TEXT]Templos[COLOR_REVERT] aumentan la felicidad y cultura de la ciudad. Son especialmente &#250;tiles para expandir las fronteras de la civilizaci&#243;n al principio de la partida.</Spanish>
- </TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ADMIN_CENTER</Tag>
+		<English>Administrative Center</English>
+		<German>Verwaltungszentrum</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AME_EMBASSY</Tag>
+		<English>American Embassy</English>
+		<French>Ambassade am&#233;ricaine</French>
+		<German>Amerikanische Botschaft</German>
+		<Italian>Ambasciata americana</Italian>
+		<Spanish>Embajada estadounidense</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARA_EMBASSY</Tag>
+		<English>Arabian Embassy</English>
+		<French>Ambassade arabe</French>
+		<German>Arabische Botschaft</German>
+		<Italian>Ambasciata araba</Italian>
+		<Spanish>Embajada &#225;rabe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARG_EMBASSY</Tag>
+		<English>Argentine Embassy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARGENTINE_REFRIGERATION_PLANT</Tag>
+		<English>Cold Storage Plant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARGENTINE_REFRIGERATION_PLANT_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Cold Storage Plant[COLOR_REVERT], the Argentine replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], gives extra gold and health if the city has access to [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT].</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AZT_EMBASSY</Tag>
+		<English>Aztec Embassy</English>
+		<French>Ambassade azt&#232;que</French>
+		<German>Aztekische Botschaft</German>
+		<Italian>Ambasciata azteca</Italian>
+		<Spanish>Embajada azteca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAB_EMBASSY</Tag>
+		<English>Babylonian Embassy</English>
+		<French>Ambassade babylonienne</French>
+		<German>Babylonische Botschaft</German>
+		<Italian>Ambasciata babilonese</Italian>
+		<Spanish>Embajada babilonia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_EDUBBA</Tag>
+		<English>Edubba</English>
+		<French>
+			<Text>Edubba</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Edubba</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Edubba</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Edubba:Edubbas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRA_EMBASSY</Tag>
+		<English>Brazilian Embassy</English>
+		<French>Brazilian Embassy</French>
+		<German>Brazilian Embassy</German>
+		<Italian>Brazilian Embassy</Italian>
+		<Spanish>Brazilian Embassy</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA</Tag>
+		<English>Fazenda</English>
+		<French>Fazenda</French>
+		<German>Fazenda</German>
+		<Italian>Fazenda</Italian>
+		<Spanish>Fazenda</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT], the Brazilian replacement for the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT], increases a city's wealth. It also increases the city's health and wealth with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT]. A [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is required to build [COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT].</English>
+		<French>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</French>
+		<German>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</German>
+		<Italian>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</Italian>
+		<Spanish>The Brazilian [COLOR_BUILDING_TEXT]Fazenda[COLOR_REVERT] is a [COLOR_BUILDING_TEXT]Grocery[COLOR_REVERT] that grants 1 free happiness, 1 trade route, and slightly increases the city's wealth.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BYZ_EMBASSY</Tag>
+		<English>Byzantine Embassy</English>
+		<French>Ambassade byzantine</French>
+		<German>Byzantinische Botschaft</German>
+		<Italian>Ambasciata bizantina</Italian>
+		<Spanish>Embajada bizantina</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CANADA_RCMP</Tag>
+		<English>Royal Mounted Police</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CAR_EMBASSY</Tag>
+		<English>Carthaginian Embassy</English>
+		<French>Ambassade carthaginoise</French>
+		<German>Karthagische Botschaft</German>
+		<Italian>Ambasciata cartaginese</Italian>
+		<Spanish>Embajada cartaginesa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CARAVANSERAI</Tag>
+		<English>Caravanserai</English>
+		<French>Caravanserai</French>
+		<German>Caravanserai</German>
+		<Italian>Caravanserai</Italian>
+		<Spanish>Caravanserai</Spanish>
+		<Hungarian>Caravanserai</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CARAVANSERAI_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's wealth as well as providing an extra trade route. They also increase the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Fur[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Whales[COLOR_REVERT].</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHI_EMBASSY</Tag>
+		<English>Chinese Embassy</English>
+		<French>Ambassade chinoise</French>
+		<German>Chinesische Botschaft</German>
+		<Italian>Ambasciata cinese</Italian>
+		<Spanish>Embajada china</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHINESE_ACADEMY</Tag>
+		<English>Confucian Academy</English>
+		<French>
+			<Text></Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Konfuzianische Akademie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text></Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text></Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL</Tag>
+		<English>Taixue</English>
+		<German>Taixue</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], boosts your city's research, provides culture and allows more [COLOR_HIGHLIGHT_TEXT]Scientists[COLOR_REVERT] than a regular[COLOR_BUILDING_TEXT]Library[COLOR_REVERT]. They are required to build [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT].</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL</Tag>
+		<English>Catholic Cathedral</English>
+		<French>
+			<Text>Catholic Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Katholische Kathedrale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Catholic Cathedral:Catholic Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Catholic Cathedral:Catholic Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion).</English>
+		<French>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] augmente nettement la production de culture d'une ville. Elle rend les citoyens de la ville heureux (si le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] est la religion d'&#233;tat).</French>
+		<German>Die [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] erh&#246;ht den kulturellen Aussto&#223; einer Stadt deutlich. Ist das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in einer Stadt Staatsreligion, steigt die Zufriedenheit der Bev&#246;lkerung.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] aumenta notevolmente la produzione culturale della citt&#224;. Inoltre, genera felicit&#224; tra i cittadini (se il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] &#232; la religione di stato).</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] aumenta mucho la producci&#243;n cultural de la ciudad. Tambi&#233;n hace felices a los habitantes de la ciudad (si el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] es la religi&#243;n oficial).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY</Tag>
+		<English>Catholic Monastery</English>
+		<French>
+			<Text>Catholic Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Katholisches Kloster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Catholic Monastery:Catholic Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Catholic Monastery:Catholic Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE</Tag>
+		<English>Catholic Church</English>
+		<French>
+			<Text>Catholic Temple</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Katholische Kirche</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Catholic Temple:Catholic Temple</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Catholic Temple:Catholic Temple</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COL_EMBASSY</Tag>
+		<English>Colombian Embassy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA</Tag>
+		<English>Hacienda</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT], increases a city's wealth and provides additional gold with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT]. It also increases the city's health with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT]. A [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT] is required to build [COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
+		<English>Amphitheatre</English>
+		<French>
+			<Text>Amphith&#233;&#226;tre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Amphitheater</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Anfiteatro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Anfiteatro:Anfiteatros</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CON_EMBASSY</Tag>
+		<English>Congolese Embassy</English>
+		<German>Kongolesische Botschaft</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EGY_EMBASSY</Tag>
+		<English>Egyptian Embassy</English>
+		<French>Ambassade &#233;gyptienne</French>
+		<German>&#196;gyptische Botschaft</German>
+		<Italian>Ambasciata egiziana</Italian>
+		<Spanish>Embajada egipcia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EGYPTIAN_OBELISK_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Obelisk[COLOR_REVERT], the Egyptian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides a major bonus to Culture output in your city.</English>
+		<French>L'[COLOR_BUILDING_TEXT]ob&#233;lisque &#233;gyptien[COLOR_REVERT], c'est-&#224;-dire le [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT] &#233;gyptien, conf&#232;re am&#233;liore nettement la production culturelle dans votre ville.</French>
+		<German>Der [COLOR_BUILDING_TEXT]&#196;gyptische Obelisk[COLOR_REVERT], die &#228;gyptische Variante des [COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT],gew&#228;hrt einen gro&#223;en Kulturbonus.</German>
+		<Italian>L'[COLOR_BUILDING_TEXT]Obelisco egizio[COLOR_REVERT], l'equivalente egizio del[COLOR_BUILDING_TEXT]monumento[COLOR_REVERT], fornisce un grosso bonus alla cultura nella tua citt&#224;.</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]Obelisco egipcio[COLOR_REVERT], que reemplaza al [COLOR_BUILDING_TEXT]Monumento[COLOR_REVERT], proporciona una importante bonificaci&#243;n al rendimiento cultural de vuestra ciudad.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMBASSY_ABILITY</Tag>
+		<English>[ICON_BULLET] Establishes permanent contact with this civilization</English>
+		<French>[ICON_BULLET] Etablit un contact permanent avec cette civilisation</French>
+		<German>[ICON_BULLET] Gew&#228;hrleistet den st&#228;ndigen Kontakt mit dieser Zivilisation</German>
+		<Italian>[ICON_BULLET] Stabilisce un contatto permanente con questa civilt&#224;.</Italian>
+		<Spanish>[ICON_BULLET] Establece contacto permanente con esta civilizaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMBASSY_EP</Tag>
+		<English>[ICON_BULLET] Requires 10 [ICON_ESPIONAGE] against this civilization</English>
+		<French>[ICON_BULLET] N&#233;cessite 10 [ICON_ESPIONAGE] contre cette civilisation</French>
+		<German>[ICON_BULLET] Erfordert 10 [ICON_ESPIONAGE] gegen diese Zivilisation</German>
+		<Italian>[ICON_BULLET] Richiede 10 [ICON_ESPIONAGE] contro questa civilt&#224;.</Italian>
+		<Spanish>[ICON_BULLET] Se necesitan 10 [ICON_ESPIONAGE] contra esta civilizaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMBASSY_GENERIC</Tag>
+		<English>Embassy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_EMBASSY_STRATEGY</Tag>
+		<English>Establishes permanent contact with other civilizations</English>
+		<French>Etablit un contact permanent avec d'autres civilisations</French>
+		<German>Gew&#228;hrleistet den st&#228;ndigen Kontakt mit anderen Zivilisationen</German>
+		<Italian>Stabilisce un contatto permanente con altre civilt&#224;.</Italian>
+		<Spanish>Establece contacto permanente con otras civilizaciones</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ENG_EMBASSY</Tag>
+		<English>English Embassy</English>
+		<French>Ambassade anglaise</French>
+		<German>Englische Botschaft</German>
+		<Italian>Ambasciata inglese</Italian>
+		<Spanish>Embajada inglesa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE</Tag>
+		<English>Royal Exchange</English>
+		<French>Bourse Royale</French>
+		<German>K&#246;nigliche B&#246;rse</German>
+		<Italian>Borsa Reale</Italian>
+		<Spanish>Bolsa Real</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE_STRATEGY</Tag>
+		<English>A [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's production of wealth even more than a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]Bourse Royale[COLOR_REVERT], version anglaise de la [COLOR_BUILDING_TEXT]banque[COLOR_REVERT], augmente la production de richesse d'une ville davantage que la [COLOR_BUILDING_TEXT]banque[COLOR_REVERT].</French>
+		<German>Die englische [COLOR_BUILDING_TEXT]K&#246;nigliche B&#246;rse[COLOR_REVERT] ersetzt die [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], bewirkt jedoch einen noch gr&#246;&#223;eren Anstieg des Wohlstands einer Stadt.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Borsa reale[COLOR_REVERT], l'equivalente inglese della [COLOR_BUILDING_TEXT]Banca[COLOR_REVERT], incrementa la produzione di ricchezza della citt&#224; ancor pi&#249; della [COLOR_BUILDING_TEXT]banca[COLOR_REVERT] stessa.</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], el equivalente ingl&#233;s del [COLOR_BUILDING_TEXT]Banco[COLOR_REVERT], aumenta la producci&#243;n de riqueza de la ciudad a&#250;n m&#225;s que este &#250;ltimo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ETH_EMBASSY</Tag>
+		<English>Ethiopian Embassy</English>
+		<French>Ambassade &#233;thiopienne</French>
+		<German>&#196;thiopische Botschaft</German>
+		<Italian>Ambasciata etiope</Italian>
+		<Spanish>Embajada et&#237;ope</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ETHIOPIAN_STELE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], the Ethiopian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides its city with a small amount of culture and also allow you to employ 2 priest specialists.</English>
+		<French>La [COLOR_BUILDING_TEXT]St&#232;le[COLOR_REVERT], monument &#233;thiopien qui remplace le [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], fournit &#224; la ville une petite quantit&#233; de culture et lui permet d'avoir 2 pr&#234;tres.</French>
+		<German>Die [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT] ist die &#228;thiopische Variante des [COLOR_BUILDING_TEXT]Monuments[COLOR_REVERT] und bewirkt einen leichten Anstieg des kulturellen Werts einer Stadt und erm&#246;glicht die Existenz von 2 Priester-Spezialisten in der jeweiligen Stadt.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Stele[COLOR_REVERT], l'equivalente etiope del [COLOR_BUILDING_TEXT]Monumento[COLOR_REVERT], fornisce alla citt&#224; un piccolo contributo in cultura e permette alla citt&#224; stessa di avere fino a due sacerdoti.</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Estela[COLOR_REVERT], el sustituto et&#237;ope del [COLOR_BUILDING_TEXT]Monumento[COLOR_REVERT], proporciona a su ciudad una peque&#241;a cantidad de cultura y tambi&#233;n le permite tener 2 sacerdotes especialistas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FRA_EMBASSY</Tag>
+		<English>French Embassy</English>
+		<French>Ambassade fran&#231;aise</French>
+		<German>Franz&#246;sische Botschaft</German>
+		<Italian>Ambasciata francese</Italian>
+		<Spanish>Embajada francesa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FRENCH_SALON_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Salon[COLOR_REVERT], the French replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], lowers a city's war weariness and increases a city's espionage output significantly. It also provides a cultural bonus, a happiness bonus if the city has access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It also increases the birthrate of [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]salon[COLOR_REVERT], version fran&#231;aise de l'[COLOR_BUILDING_TEXT]observatoire[COLOR_REVERT], am&#233;liore la recherche scientifique d'une ville et augmente ses chances de g&#233;n&#233;rer un [COLOR_HIGHLIGHT_TEXT]artiste illustre[COLOR_REVERT].</French>
+		<German>Der franz&#246;sische [COLOR_BUILDING_TEXT]Salon[COLOR_REVERT] ersetzt das [COLOR_BUILDING_TEXT]Observatorium[COLOR_REVERT]. Er beschleunigt die wissenschaftliche Forschung einer Stadt und erh&#246;ht die Wahrscheinlichkeit f&#252;r die Entstehung eines [COLOR_HIGHLIGHT_TEXT]Gro&#223;en K&#252;nstlers[COLOR_REVERT].</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]salotto[COLOR_REVERT], l'equivalente francese dell'[COLOR_BUILDING_TEXT]osservatorio[COLOR_REVERT], incrementa la ricerca scientifica delle citt&#224; nonch&#233; le probabilit&#224; che in citt&#224; nasca un [COLOR_HIGHLIGHT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]Sal&#243;n[COLOR_REVERT], el equivalente franc&#233;s del [COLOR_BUILDING_TEXT]Observatorio[COLOR_REVERT], aumenta la investigaci&#243;n cient&#237;fica de la ciudad y las posibilidades de &#233;sta de generar un [COLOR_HIGHLIGHT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FRIGORIFICO_STRATEGY</Tag>
+		<English>Unique Argentinian building which replaces the supermarket. Provides additional gold with cow, pig and sheep.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GER_EMBASSY</Tag>
+		<English>German Embassy</English>
+		<French>Ambassade allemande</French>
+		<German>Deutsche Botschaft</German>
+		<Italian>Ambasciata tedesca</Italian>
+		<Spanish>Embajada alemana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GRE_EMBASSY</Tag>
+		<English>Greek Embassy</English>
+		<French>Ambassade grecque</French>
+		<German>Griechische Botschaft</German>
+		<Italian>Ambasciata greca</Italian>
+		<Spanish>Embajada griega</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HARAPPAN_BATH</Tag>
+		<English>Bath</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HOL_EMBASSY</Tag>
+		<English>Dutch Embassy</English>
+		<French>Ambassade n&#233;erlandaise</French>
+		<German>Holl&#228;ndische Botschaft</German>
+		<Italian>Ambasciata olandese</Italian>
+		<Spanish>Embajada holandesa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HRE_EMBASSY</Tag>
+		<English>Holy Roman Embassy</English>
+		<German>Heilig-R&#246;mische Botschaft</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INC_EMBASSY</Tag>
+		<English>Incan Embassy</English>
+		<French>Ambassade inca</French>
+		<German>Inka-Botschaft</German>
+		<Italian>Ambasciata inca</Italian>
+		<Spanish>Embajada inca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INCAN_TAMBO</Tag>
+		<English>Tambo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Tambo[COLOR_REVERT], the Incan replacement for the [COLOR_BUILDING_TEXT]Castle[COLOR_REVERT], increases a city's defenses against pre-gunpowder units, increases espionage amount, generates more culture than a regular [COLOR_BUILDING_TEXT]Castle[COLOR_REVERT] and is also available sooner than a regular [COLOR_BUILDING_TEXT]Castle[COLOR_REVERT]</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IND_EMBASSY</Tag>
+		<English>Indian Embassy</English>
+		<French>Ambassade indienne</French>
+		<German>Indische Botschaft</German>
+		<Italian>Ambasciata indiana</Italian>
+		<Spanish>Embajada india</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT</Tag>
+		<English>Edict</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDIAN_STEPWELL</Tag>
+		<English>Stepwell</English>
+		<German>Stufenbrunnen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDIAN_STEPWELL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], improves a city's health. It's also available sooner than a regular [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT]</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI</Tag>
+		<English>Candi</English>
+		<French>Candi</French>
+		<German>Candi</German>
+		<Italian>Candi</Italian>
+		<Spanish>Candi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDONESIAN_CANDI_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with a small production and culture boost.</English>
+		<French>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with +1 production as well as giving them a small culture-boost.</French>
+		<German>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with +1 production as well as giving them a small culture-boost.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with +1 production as well as giving them a small culture-boost.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Candi[COLOR_REVERT], which replaces the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides the Indonesians with +1 production as well as giving them a small culture-boost.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INO_EMBASSY</Tag>
+		<English>Indonesian Embassy</English>
+		<French>Ambassade indon&#233;sienne</French>
+		<German>Indonesische Botschaft</German>
+		<Italian>Ambasciata indonesiana</Italian>
+		<Spanish>Embajada indonesia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ITA_EMBASSY</Tag>
+		<English>Italian Embassy</English>
+		<German>Italienische Botschaft</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO</Tag>
+		<English>Art Studio</English>
+		<French>Atelier</French>
+		<German>Atelier</German>
+		<Italian>Art Studio</Italian>
+		<Spanish>Art Studio</Spanish>
+		<Hungarian>Art Studio</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Art Studio[COLOR_REVERT], the Italian replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a big culture boost and increases production, but also adds unhealthiness in cities. [COLOR_BUILDING_TEXT]Art Studios[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT], and [COLOR_BUILDING_TEXT]Statue of LIberty[COLOR_REVERT] world wonders, and the [COLOR_BUILDING_TEXT]Ironworks[COLOR_REVERT] national wonder.</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAP_EMBASSY</Tag>
+		<English>Japanese Embassy</English>
+		<French>Ambassade japonaise</French>
+		<German>Japanische Botschaft</German>
+		<Italian>Ambasciata giapponese</Italian>
+		<Spanish>Embajada japonesa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAPANESE_SHALE_PLANT</Tag>
+		<English>Kaizen Plant</English>
+		<German>Kaizen-Kraftwerk</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAPANESE_SHALE_PLANT_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Kaizen Plants[COLOR_REVERT], the Japanese replacements for [COLOR_BUILDING_TEXT]Coal Plants[COLOR_REVERT], provide power for the Factory, although the pollution will hurt your city's health. It provides a free [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] specialist and a small production bonus.</English>
+		<French>L'[COLOR_BUILDING_TEXT]usine de schistes[COLOR_REVERT], version japonaise de la [COLOR_BUILDING_TEXT]centrale thermique[COLOR_REVERT], fournit de l'&#233;nergie aux usines, mais la pollution d&#233;t&#233;riore la sant&#233; de vos citoyens.</French>
+		<German>Die japanischen [COLOR_BUILDING_TEXT]Schieferwerke[COLOR_REVERT] ersetzen die [COLOR_BUILDING_TEXT]Kohlekraftwerke[COLOR_REVERT] und versorgen Fabriken mit Energie, allerdings wirkt sich die von ihnen verursachte Luftverschmutzung negativ auf die Gesundheit der Stadtbev&#246;lkerung aus.</German>
+		<Italian>Le [COLOR_BUILDING_TEXT]fabbriche di bitume[COLOR_REVERT], l'equivalente giapponese delle [COLOR_BUILDING_TEXT]centrali a carbone[COLOR_REVERT], forniscono energia alla fabbrica, anche su producono molto inquinamento e riducono la salute della citt&#224;.</Italian>
+		<Spanish>Las [COLOR_BUILDING_TEXT]Plantas de esquisto[COLOR_REVERT], los equivalentes japoneses de las [COLOR_BUILDING_TEXT]Centrales t&#233;rmicas[COLOR_REVERT], alimentan las f&#225;bricas, aunque la contaminaci&#243;n perjudicar&#225; la salud de la ciudad.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAPANESE_ZAIBATSU</Tag>
+		<English>Zaibatsu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
+		<English>Protestant Cathedral</English>
+		<French>
+			<Text>Protestant Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protestantische Kathedrale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Protestant Cathedral:Protestant Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protestant Cathedral:Protestant Cathedral</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion).</English>
+		<French>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] augmente nettement la production de culture d'une ville. Elle rend les citoyens de la ville heureux (si le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] est la religion d'&#233;tat).</French>
+		<German>Die [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] erh&#246;ht den kulturellen Aussto&#223; einer Stadt deutlich. Ist das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in einer Stadt Staatsreligion, steigt die Zufriedenheit der Bev&#246;lkerung.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] aumenta notevolmente la produzione culturale della citt&#224;. Inoltre, genera felicit&#224; tra i cittadini (se il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] &#232; la religione di stato).</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] aumenta mucho la producci&#243;n cultural de la ciudad. Tambi&#233;n hace felices a sus habitantes (si el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] es la religi&#243;n oficial).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
+		<English>Protestant Monastery</English>
+		<French>
+			<Text>Protestant Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protestantisches Kloster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Protestant Monastery:Protestant Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protestant Monastery:Protestant Monastery</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_SHRINE</Tag>
+		<English>All Saints' Church</English>
+		<French>
+			<Text>All Saints' Church</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>All Saints' Church</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>All Saints' Church</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>All Saints' Church</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]sanctuaire Protestant[COLOR_REVERT]) produit 1 unit&#233; d'or par tour pour chaque ville pratiquant le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Il r&#233;pand &#233;galement le [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] dans le monde et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]proph&#232;te illustre[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] praktizieren, 1 Gold/Runde. Au&#223;erdem verbreitet er das [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] (il [COLOR_BUILDING_TEXT]santuario Protestant[COLOR_REVERT]) produce un'unit&#224; d'oro a turno per ogni citt&#224; nel mondo che pratica il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Inoltre, diffonde nel mondo il [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] e aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Profeta[COLOR_REVERT].</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] (el [COLOR_BUILDING_TEXT]santuario Protestant[COLOR_REVERT]) produce uno de oro cada turno por cada ciudad del mundo en la que se practique el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT]. Tambi&#233;n propaga el [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] por el globo y aumenta las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran profeta[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
+		<English>Protestant Church</English>
+		<French>
+			<Text>Protestant Temple</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protestantische Kirche</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Protestant Temple:Protestant Temple</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protestant Temple:Protestant Temple</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KHM_EMBASSY</Tag>
+		<English>Khmer Embassy</English>
+		<French>Ambassade khm&#232;re</French>
+		<German>Khmerische Botschaft</German>
+		<Italian>Ambasciata khmer</Italian>
+		<Spanish>Embajada j&#233;mer</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KONGO_MBWADI</Tag>
+		<English>Mbwadi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KONGO_MBWADI_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Mbwadi[COLOR_REVERT], the Congolese replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increase a city's wealth and provides additional gold with access to [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Cotton[COLOR_REVERT]. They also increase the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Fur[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Whales[COLOR_REVERT].</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KOR_EMBASSY</Tag>
+		<English>Korean Embassy</English>
+		<French>Ambassade &#233;thiopienne</French>
+		<German>Koreanische Botschaft</German>
+		<Italian>Ambasciata etiope</Italian>
+		<Spanish>Embajada et&#237;ope</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KOREAN_SEOWON_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT], the Korean replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], increases a city's research and provides culture. It's also available sooner than a regular [COLOR_BUILDING_TEXT]University[COLOR_REVERT] and is required to build [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] world wonder</English>
+		<French>Le [COLOR_BUILDING_TEXT]sowon[COLOR_REVERT], version cor&#233;enne de l'[COLOR_BUILDING_TEXT]universit&#233;[COLOR_REVERT], am&#233;liore la recherche davantage que les [COLOR_BUILDING_TEXT]universit&#233;s[COLOR_REVERT] et produit de la culture.</French>
+		<German>Das koreanische [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT] ersetzt die [COLOR_BUILDING_TEXT]Universit&#228;t[COLOR_REVERT], beschleunigt aber in h&#246;herem Ma&#223;e die Forschung und erh&#246;ht zudem den kulturellen Wert einer Stadt.</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]seowon[COLOR_REVERT], l'equivalente coreano dell'[COLOR_BUILDING_TEXT]universit&#224;[COLOR_REVERT], velocizza la ricerca nelle citt&#224; ancor pi&#249; dell'[COLOR_BUILDING_TEXT]universit&#224;[COLOR_REVERT] stessa e produce cultura.</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Seowon[COLOR_REVERT], el equivalente coreano de la [COLOR_BUILDING_TEXT]Universidad[COLOR_REVERT], aumenta la investigaci&#243;n en la ciudad a&#250;n m&#225;s que la [COLOR_BUILDING_TEXT]Universidad[COLOR_REVERT] y proporciona cultura.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAL_EMBASSY</Tag>
+		<English>Malinese Embassy</English>
+		<French>Ambassade malienne</French>
+		<German>Malinesische Botschaft</German>
+		<Italian>Ambasciata malinese</Italian>
+		<Spanish>Embajada mal&#237;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAY_EMBASSY</Tag>
+		<English>Mayan Embassy</English>
+		<French>Ambassade maya</French>
+		<German>Maya-Botschaft</German>
+		<Italian>Ambasciata maya</Italian>
+		<Spanish>Embajada maya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAYA_BALL_COURT_STRATEGY</Tag>
+		<English>Build the [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], to provide cities with an extra happiness and it provides extra experience to melee and archery units.</English>
+		<French>Construire le [COLOR_BUILDING_TEXT]terrain de jeu de balle[COLOR_REVERT], b&#226;timent maya qui remplace le [COLOR_BUILDING_TEXT]Colis&#233;e[COLOR_REVERT], permet de conf&#233;rer aux villes trois visages heureux au lieu d'un.</French>
+		<German>Durch den Bau des [COLOR_BUILDING_TEXT]Ballplatzes[COLOR_REVERT], die Maya-Variante des [COLOR_BUILDING_TEXT]Kolosseums[COLOR_REVERT], erh&#246;ht sich die Zufriedenheit einer Stadt auf 3 (statt 1).</German>
+		<Italian>Costruisci il [COLOR_BUILDING_TEXT]Campo da palla[COLOR_REVERT], che per i Maya sostituisce il [COLOR_BUILDING_TEXT]Colosseo[COLOR_REVERT], per dare alle citt&#224; tre risorse di felicit&#224; invece di una sola.</Italian>
+		<Spanish>Construye el [COLOR_BUILDING_TEXT]Campo del juego de pelota[COLOR_REVERT], el sustituto maya del [COLOR_BUILDING_TEXT]Coliseo[COLOR_REVERT], para darles a las ciudades 3 de felicidad en vez de 1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA</Tag>
+		<English>Charreada Arena</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA_STRATEGY</Tag>
+		<English>A [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT] (the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT]) increases a city's happiness and its happiness output from using the culture slider. It will also provide extra experience to your mounted units.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MON_EMBASSY</Tag>
+		<English>Mongolian Embassy</English>
+		<French>Ambassade mongole</French>
+		<German>Mongolische Botschaft</German>
+		<Italian>Ambasciata mongola</Italian>
+		<Spanish>Embajada mongola</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MONUMENT</Tag>
+		<English>Pagan Temple</English>
+		<German>
+			<Text>Heidnischer Tempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Pagan Temples[COLOR_REVERT] provide a small amount of culture.</English>
+		<French>Les [COLOR_BUILDING_TEXT]monuments[COLOR_REVERT] fournissent une petite quantit&#233; de culture, et sont utiles pour agrandir vos fronti&#232;res culturelles au d&#233;but du jeu.</French>
+		<German>[COLOR_BUILDING_TEXT]Monumente[COLOR_REVERT] erh&#246;hen den kulturellen Wert einer Stadt und erm&#246;glichen die fr&#252;hzeitige Ausdehnung der Stadtgrenzen. </German>
+		<Italian>I [COLOR_BUILDING_TEXT]monumenti[COLOR_REVERT] forniscono una piccola quantit&#224; di cultura e servono a espandere velocemente i confini della citt&#224; nelle fasi iniziali della partita. </Italian>
+		<Spanish>Los [COLOR_BUILDING_TEXT]Monumentos[COLOR_REVERT] proporcionan una peque&#241;a cantidad de cultura y son una buena manera de ampliar las fronteras de una ciudad en los primeros tiempos. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOO_EMBASSY</Tag>
+		<English>Moorish Embassy</English>
+		<German>Maurische Botschaft</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOORISH_NORIA</Tag>
+		<English>Noria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MOORISH_NORIA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides a production bonus, in addition to the usual health bonus.</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUG_EMBASSY</Tag>
+		<English>Mughal Embassy</English>
+		<German>Mogul-Botschaft</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL</Tag>
+		<English>Orthodox Cathedral</English>
+		<German>Orthodoxe Kathedrale</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion).</English>
+		<French>La [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] augmente nettement la production de culture d'une ville. Elle rend les citoyens de la ville heureux (si le [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] est la religion d'&#233;tat).</French>
+		<German>Die [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] erh&#246;ht den kulturellen Aussto&#223; einer Stadt deutlich. Ist das [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in einer Stadt Staatsreligion, steigt die Zufriedenheit der Bev&#246;lkerung.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] aumenta notevolmente la produzione culturale della citt&#224;. Inoltre, genera felicit&#224; tra i cittadini (se il [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] &#232; la religione di stato).</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] aumenta mucho la producci&#243;n cultural de la ciudad. Tambi&#233;n hace felices a sus habitantes (si el [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] es la religi&#243;n oficial).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_MONASTERY</Tag>
+		<English>Orthodox Monastery</English>
+		<German>Orthodoxes Kloster</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_TEMPLE</Tag>
+		<English>Orthodox Church</English>
+		<German>Orthodoxe Kirche</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PER_EMBASSY</Tag>
+		<English>Persian Embassy</English>
+		<French>Ambassade perse</French>
+		<German>Persische Botschaft</German>
+		<Italian>Ambasciata persiana</Italian>
+		<Spanish>Embajada persa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER</Tag>
+		<English>Glassmaker</English>
+		<French>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Glasmacher</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Glassmaker[COLOR_REVERT] ,the Phoenician replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's wealth as well as increasing trade route yield. They also increase the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Fur[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Whales[COLOR_REVERT].</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PLAGUE</Tag>
+		<English>Plague</English>
+		<French>Peste</French>
+		<German>Pest</German>
+		<Italian>Peste</Italian>
+		<Spanish>Peste</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POL_EMBASSY</Tag>
+		<English>Polish Embassy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POLISH_SEJMIK</Tag>
+		<English>Sejmik</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POLISH_SEJMIK_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT], lower city maintenance costs, provide you with a bonus to espionage and provides a small cash and happiness bonus. The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Summer Palace[COLOR_REVERT] national wonder.</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MARAE</Tag>
+		<English>Mala'e</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POR_EMBASSY</Tag>
+		<English>Portuguese Embassy</English>
+		<French>Ambassade portugaise</French>
+		<German>Portugiesische Botschaft</German>
+		<Italian>Ambasciata portoghese</Italian>
+		<Spanish>Embajada portuguesa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ROM_EMBASSY</Tag>
+		<English>Roman Embassy</English>
+		<French>Ambassade romaine</French>
+		<German>R&#246;mische Botschaft</German>
+		<Italian>Ambasciata romana</Italian>
+		<Spanish>Embajada romana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RUS_EMBASSY</Tag>
+		<English>Russian Embassy</English>
+		<French>Ambassade russe</French>
+		<German>Russische Botschaft</German>
+		<Italian>Ambasciata russa</Italian>
+		<Spanish>Embajada rusa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SMOKEHOUSE</Tag>
+		<English>Smokehouse</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPA_EMBASSY</Tag>
+		<English>Spanish Embassy</English>
+		<French>Ambassade espagnole</French>
+		<German>Spanische Botschaft</German>
+		<Italian>Ambasciata spagnola</Italian>
+		<Spanish>Embajada espa&#241;ola</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUMMER_PALACE</Tag>
+		<English>Summer Palace</English>
+		<French>
+			<Text>Palais d'&#233;t&#233;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sommerresidenz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Palazzo d'estate</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Palacio de Verano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUMMER_PALACE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Summer Palace[COLOR_REVERT] reduces the maintenance costs in nearby cities. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Spy[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Palais d'&#233;t&#233;[COLOR_REVERT] r&#233;duit le co&#251;t d'entretien des villes voisines et agit comme une seconde [COLOR_BUILDING_TEXT]Cit&#233; interdite[COLOR_REVERT]. Il augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]Espion illustre[COLOR_REVERT].</French>
+		<German>Der [COLOR_BUILDING_TEXT]Sommerresidenz[COLOR_REVERT] verringert die Unterhaltskosten aller nahe gelegenen St&#228;dte und entspricht einer zweiten [COLOR_BUILDING_TEXT]Verbotenen Stadt[COLOR_REVERT]. Dar&#252;ber hinaus erh&#246;ht es die Chance auf einen [COLOR_UNIT_TEXT]Gro&#223;er Spion[COLOR_REVERT].</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]Palazzo d'estate[COLOR_REVERT] riduce il mantenimento delle citt&#224; vicine e funge da secondo [COLOR_BUILDING_TEXT]Palazzo Proibito[COLOR_REVERT]. Aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Spia[COLOR_REVERT].</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]Palacio de Verano[COLOR_REVERT] reduce los costes de mantenimiento de todas las ciudades cercanas y funciona como una segunda [COLOR_BUILDING_TEXT]Ciudad Prohibida[COLOR_REVERT]. Adem&#225;s, aumenta las posibilidades de generar un [COLOR_UNIT_TEXT]Gran esp&#237;a[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SUMERIAN_ZIGGURAT_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], provides more culture than a [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] and gives a small science and culture boost.</English>
+		<French>Construire la [COLOR_BUILDING_TEXT]Ziggourat[COLOR_REVERT], b&#226;timent sum&#233;rien qui remplace le [COLOR_BUILDING_TEXT]tribunal[COLOR_REVERT], n&#233;cessite moins de marteaux que ce dernier.</French>
+		<German>Die [COLOR_BUILDING_TEXT]Zikkurat[COLOR_REVERT] ist die sumerische Variante des [COLOR_BUILDING_TEXT]Gerichtsgeb&#228;udes[COLOR_REVERT], erfordert aber weniger Produktionseinheiten.</German>
+		<Italian>Per costruire la [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], l'equivalente sumero del [COLOR_BUILDING_TEXT]Palazzo di giustizia[COLOR_REVERT], ci vogliono meno scudi che per la controparte generica.</Italian>
+		<Spanish>Construir el [COLOR_BUILDING_TEXT]Zigurat[COLOR_REVERT], el sustituto sumerio de la [COLOR_BUILDING_TEXT]Delegaci&#243;n[COLOR_REVERT], requiere menos martillos que su equivalente gen&#233;rico.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAM_EMBASSY</Tag>
+		<English>Tamil Embassy</English>
+		<German>Tamilische Botschaft</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAMIL_SANGAM</Tag>
+		<English>Sangam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAMIL_SANGAM_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Tamil replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], boosts your city's research, provides an extra cultural boost and provides culture. The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT] is required to build [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT].</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THA_EMBASSY</Tag>
+		<English>Thai Embassy</English>
+		<German>Thai-Botschaft</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THAI_HO_TRAI</Tag>
+		<English>Ho Trai</English>
+		<German>Ho Trai</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THAI_HO_TRAI_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ho Trai[COLOR_REVERT], the Thai replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], boosts your city's research and provides culture. It's also cheaper, provides extra happiness and is required to build [COLOR_BUILDING_TEXT]Universities[COLOR_REVERT]</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIB_EMB</Tag>
+		<English>Tibetan Embassy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIB_EMBASSY</Tag>
+		<English>Tibetan Embassy</English>
+		<German>Tibetische Botschaft</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA</Tag>
+		<English>Gompa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TIBETAN_GOMPA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Gompa[COLOR_REVERT] ,the Tibetan replacement for the [COLOR_BUILDING_TEXT]University[COLOR_REVERT], increases a city's research, provides culture, provides a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and a defensive bonus. It's also available sooner than a regular [COLOR_BUILDING_TEXT]University[COLOR_REVERT] and is required to build [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] world wonder.</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TUR_EMBASSY</Tag>
+		<English>Turkish Embassy</English>
+		<French>Ambassade turque</French>
+		<German>T&#252;rkische Botschaft</German>
+		<Italian>Ambasciata turca</Italian>
+		<Spanish>Embajada turca</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VIK_EMBASSY</Tag>
+		<English>Viking Embassy</English>
+		<French>Ambassade viking</French>
+		<German>Wikinger-Botschaft</German>
+		<Italian>Ambasciata vichinga</Italian>
+		<Spanish>Embajada vikinga</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
+		<English>Zoroastrian Royal Fire</English>
+		<French>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zoroastrisches K&#246;nigsfeuer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Zoroastrian Royal Fire[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It makes a city's citizens happy (if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion).</English>
+		<French>No translation yet</French>
+		<German>No translation yet</German>
+		<Italian>No translation yet</Italian>
+		<Spanish>No translation yet</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>
+		<English>Zoroastrian Monastery</English>
+		<French>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zoroastrisches Kloster</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<French>Les [COLOR_BUILDING_TEXT]monast&#232;res[COLOR_REVERT] permettent de former des [COLOR_UNIT_TEXT]missionnaires[COLOR_REVERT] qui peuvent propager la foi dans les autres villes. Ils am&#233;liorent aussi la culture d'une ville et acc&#233;l&#232;rent l&#233;g&#232;rement sa recherche.</French>
+		<German>[COLOR_BUILDING_TEXT]Kl&#246;ster[COLOR_REVERT] erm&#246;glichen die Ausbildung von [COLOR_UNIT_TEXT]Missionaren[COLOR_REVERT]. Diese verk&#252;nden in anderen St&#228;dten Ihren Glauben, steigern den kulturellen Wert und beschleunigen die Forschung.</German>
+		<Italian>I [COLOR_BUILDING_TEXT]monasteri[COLOR_REVERT] permettono la realizzazione dei [COLOR_UNIT_TEXT]missionari[COLOR_REVERT], in grado di diffondere la fede in altre citt&#224;. Inoltre, forniscono cultura e un piccolo aumento di ricerca.</Italian>
+		<Spanish>Los [COLOR_BUILDING_TEXT]Monasterios[COLOR_REVERT] permiten crear [COLOR_UNIT_TEXT]Misioneros[COLOR_REVERT], que pueden propagar la fe por otras ciudades. Tambi&#233;n proporcionan cultura y un cierto empuje a la investigaci&#243;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE</Tag>
+		<English>Zoroastrian Temple</English>
+		<French>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zoroastrischer Tempel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text></Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>:</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Temples[COLOR_REVERT] increase a city's happiness and culture.</English>
+		<French>Les [COLOR_BUILDING_TEXT]petites synagogues[COLOR_REVERT] am&#233;liorent le bonheur et la culture des villes. Elles sont notamment utiles pour agrandir vos fronti&#232;res culturelles au d&#233;but du jeu.</French>
+		<German>[COLOR_BUILDING_TEXT]Tempel[COLOR_REVERT] steigern die Zufriedenheit und Kultur einer Stadt. Sie eignen sich hervorragend, um Ihre Zivilisation bereits in der Fr&#252;hphase des Spiels zu vergr&#246;&#223;ern.</German>
+		<Italian>I [COLOR_BUILDING_TEXT]templi[COLOR_REVERT] aumentano la felicit&#224; e la cultura della citt&#224;. Sono particolarmente indicati per espandere i confini della tua civilt&#224; durante le fasi iniziali della partita.</Italian>
+		<Spanish>Los [COLOR_BUILDING_TEXT]Templos[COLOR_REVERT] aumentan la felicidad y cultura de la ciudad. Son especialmente &#250;tiles para expandir las fronteras de la civilizaci&#243;n al principio de la partida.</Spanish>
+	</TEXT>
 </Civ4GameText>

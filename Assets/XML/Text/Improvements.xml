@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- Improvements -->
 <Civ4GameText>
- <TEXT>
-  <Tag>TXT_KEY_IMPROVEMENT_HIGH_SEA_FISHING_BOATS</Tag>
-  <English>High Sea Fishing Boats</English>
-  <German>Hochsee-Fischerboot</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION</Tag>
-  <English>Slave Plantation</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_ROUTE_ROMAN_ROAD</Tag>
-  <English>Roman Road</English>
- </TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_HIGH_SEA_FISHING_BOATS</Tag>
+		<English>High Sea Fishing Boats</English>
+		<German>Hochsee-Fischerboot</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION</Tag>
+		<English>Slave Plantation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ROUTE_ROMAN_ROAD</Tag>
+		<English>Roman Road</English>
+	</TEXT>
 </Civ4GameText>

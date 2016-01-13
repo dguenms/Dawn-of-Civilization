@@ -1,276 +1,276 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- National Wonders -->
 <Civ4GameText>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_GLOBE_THEATRE</Tag>
-  <English>Opera House</English>
-  <French>
-   <Text>Op&#233;ra</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Opernhaus</Text>
-   <Gender>Neuter</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Teatro dell'opera</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>el Teatro de la &#211;pera</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_GLOBE_THEATRE_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] increases the cultural ouput of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-  <French>Le [COLOR_BUILDING_TEXT]Op&#233;ra[COLOR_REVERT] supprime tout m&#233;contentement dans la ville o&#249; il est construit. Il augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
-  <German>In St&#228;dten mit dem [COLOR_BUILDING_TEXT]Opernhaus[COLOR_REVERT] herrscht keine Unzufriedenheit. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
-  <Italian>Il [COLOR_BUILDING_TEXT]Teatro dell'opera[COLOR_REVERT] rimuove tutta l'infelicit&#224; dalla citt&#224; in cui viene costruito. Aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
-  <Spanish>El [COLOR_BUILDING_TEXT]Teatro de la &#211;pera[COLOR_REVERT] elimina toda la infelicidad de la ciudad en la que se construya. Tambi&#233;n aumenta las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_HERMITAGE</Tag>
-  <English>National Gallery</English>
-  <French>
-   <Text>Galerie nationale</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Nationalgalerie</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Galleria nazionale</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>La Galeria Nacional</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_HERMITAGE_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-  <French>La [COLOR_BUILDING_TEXT]Galerie Nationale[COLOR_REVERT] double la production de culture de la ville qui l'abrite et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
-  <German>Die [COLOR_BUILDING_TEXT]Nationalgalerie[COLOR_REVERT] verdoppelt den kulturellen Aussto&#223; einer Stadt. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
-  <Italian>La [COLOR_BUILDING_TEXT]Galleria Nazionale[COLOR_REVERT] raddoppia la produzione culturale della citt&#224; e aumenta le probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
-  <Spanish>La [COLOR_BUILDING_TEXT]Galer&#237;a Nacional[COLOR_REVERT] dobla la producci&#243;n cultural de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_HEROIC_EPIC_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT]. The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] requires you to have the Pantheon civic active.</English>
-  <French>L'[COLOR_BUILDING_TEXT]Epop&#233;e h&#233;ro&#239;que[COLOR_REVERT] double la production d'unit&#233;s militaires de la ville, ce qui est tr&#232;s utile si vous avez de nombreux combats &#224; livrer. Elle augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
-  <German>Das [COLOR_BUILDING_TEXT]Heldenepos[COLOR_REVERT] verdoppelt in einer Stadt die Produktion von Milit&#228;reinheiten. Dies ist n&#252;tzlich, wenn Sie heftige K&#228;mpfe erwarten. Dar&#252;ber hinaus erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
-  <Italian>Il [COLOR_BUILDING_TEXT]Poema Epico[COLOR_REVERT] raddoppia la produzione della citt&#224; per la realizzazione di unit&#224; militari. Ci&#242; risulter&#224; particolarmente utile in caso di combattimenti numerosi. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
-  <Spanish>La [COLOR_BUILDING_TEXT]Epopeya heroica[COLOR_REVERT] dobla la producci&#243;n de la ciudad cuando crea unidades militares. Esto es &#250;til cuando se tiene planeado combatir mucho. Tambi&#233;n aumenta las posibilidades de que la ciudad genere un [COLOR_UNIT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_NATIONAL_EPIC</Tag>
-  <English>Triumphal Arch</English>
-  <French>
-   <Text>Arc de Triomphe</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Triumphbogen</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Arco di trionfo</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>Arco de Triunfo</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins an immediate [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</English>
-  <French>La construction du [COLOR_BUILDING_TEXT]Arc de Triomphe[COLOR_REVERT] d&#233;clenche le d&#233;but d'un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il augmente la production d'unit&#233;s militaires de la ville</French>
-  <German>Nach dem Bau des [COLOR_BUILDING_TEXT]Triumphbogen[COLOR_REVERT] bricht f&#252;r Ihre Zivilisation umgehend ein [COLOR_HIGHLIGHT_TEXT]goldenes Zeitalter[COLOR_REVERT] an. Dar&#252;ber hinaus erh&#246;ht es in einer Stadt die Produktion von Milit&#228;reinheiten.</German>
-  <Italian>Costruendo il [COLOR_BUILDING_TEXT]Arco di Trionfo[COLOR_REVERT], darai immediatamente inizio all'[COLOR_HIGHLIGHT_TEXT]et&#224; dell'oro[COLOR_REVERT] per la tua civilt&#224;. Inoltre, aumenta la produzione della citt&#224; per la realizzazione di unit&#224; militari.</Italian>
-  <Spanish>Construir el [COLOR_BUILDING_TEXT]Arco de Triunfo[COLOR_REVERT] hace que comience de inmediato una [COLOR_HIGHLIGHT_TEXT]Edad de oro[COLOR_REVERT] para esa civilizaci&#243;n. Tambi&#233;n aumenta la producci&#243;n de la ciudad cuando crea unidades militares.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_NATIONAL_PARK_STRATEGY</Tag>
-  <English>Build the [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] to greatly increase the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chances that a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT] might appear in your city.</English>
-  <French>Construisez le [COLOR_BUILDING_TEXT]parc national[COLOR_REVERT] pour &#233;liminer toute pr&#233;sence de maladie dans votre ville. Il conf&#232;re &#233;galement un sp&#233;cialiste gratuit pour chaque [COLOR_HIGHLIGHT_TEXT]r&#233;serve bois&#233;e[COLOR_REVERT] pr&#233;sente dans son rayon et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]scientifique illustre[COLOR_REVERT] dans votre ville.</French>
-  <German>Der [COLOR_BUILDING_TEXT]Nationalpark[COLOR_REVERT] befreit die Bev&#246;lkerung einer Stadt von allen Krankheiten. Dar&#252;ber hinaus gew&#228;hrt er einen Spezialisten f&#252;r jeden [COLOR_HIGHLIGHT_TEXT]Naturpark[COLOR_REVERT] innerhalb des Stadtgebiets und erh&#246;ht die Chancen auf den Erhalt eines [COLOR_UNIT_TEXT]Gro&#223;en Wissenschaftlers[COLOR_REVERT].</German>
-  <Italian>Costruisci il [COLOR_BUILDING_TEXT]Parco nazionale[COLOR_REVERT] per far fronte alla mancanza di salute della popolazione della tua citt&#224;. Fornisce inoltre uno specialista per ogni [COLOR_HIGHLIGHT_TEXT]Riserva forestale[COLOR_REVERT] nel raggio della citt&#224; e aumenta le probabilit&#224; che appaia un [COLOR_UNIT_TEXT]Grande Scienziato[COLOR_REVERT] nella tua citt&#224;.</Italian>
-  <Spanish>Construye el [COLOR_BUILDING_TEXT]Parque nacional[COLOR_REVERT] para eliminar toda la insalubridad de la poblaci&#243;n de la ciudad. Tambi&#233;n proporciona un especialista gratis por cada [COLOR_HIGHLIGHT_TEXT]Reserva forestal[COLOR_REVERT] que haya en su radio urbano y aumenta la probabilidad de que pueda aparecer un [COLOR_UNIT_TEXT]gran cient&#237;fico[COLOR_REVERT] en la ciudad.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_OLYMPIC_PARK</Tag>
-  <English>Olympic Park</English>
-  <French>
-   <Text>Parc olympique</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Olympiapark</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Parco olimpico</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>el Estadio Ol&#237;mpico</Text>
-   <Gender>Male</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_OLYMPIC_PARK_STRATEGY</Tag>
-  <English>Building the [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins an immediate [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</English>
-  <French>La construction du [COLOR_BUILDING_TEXT]Parc Olympique[COLOR_REVERT] d&#233;clenche le d&#233;but d'un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
-  <German>Nach dem Bau des [COLOR_BUILDING_TEXT]Olympiapark[COLOR_REVERT] bricht f&#252;r Ihre Zivilisation umgehend ein [COLOR_HIGHLIGHT_TEXT]goldenes Zeitalter[COLOR_REVERT] an. Dar&#252;ber hinaus erh&#246;ht es die Chancen der Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] hervorzubringen.</German>
-  <Italian>Costruendo il [COLOR_BUILDING_TEXT]Parco Olympico[COLOR_REVERT], darai immediatamente inizio all'[COLOR_HIGHLIGHT_TEXT]et&#224; dell'oro[COLOR_REVERT] per la tua civilt&#224;. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Mercante[COLOR_REVERT].</Italian>
-  <Spanish>Construir el [COLOR_BUILDING_TEXT]Estadio Ol&#237;mpico[COLOR_REVERT] hace que comience de inmediato una [COLOR_HIGHLIGHT_TEXT]Edad de oro[COLOR_REVERT] para esa civilizaci&#243;n. Tambi&#233;n aumenta las probabilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_SCOTLAND_YARD</Tag>
-  <English>Interpol</English>
-  <French>
-   <Text>Interpol</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Interpol</Text>
-   <Gender>Neuter</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Interpol</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>la Interpol</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_SCOTLAND_YARD_STRATEGY</Tag>
-  <English>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] doubles its city's espionage output.</English>
-  <French>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] double votre production d'espionnage.</French>
-  <German>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] gew&#228;hrt einen +100%% Bonus auf Spionageleistungen.</German>
-  <Italian>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] d&#224; un bonus del +100%% alla resa dello spionaggio.</Italian>
-  <Spanish>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] proporciona una bonificaci&#243;n del +100% al rendimiento del Espionaje.</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TRADING_COMPANY</Tag>
-  <English>Trading Company</English>
-  <French>
-   <Text>Compagnie marchande</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Handelsgesellschaft</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Compagnia commerciale</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>la Compa&#241;&#237;a de las Indias</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health and happiness for several colonial resources. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</English>
-  <French></French>
-  <German></German>
-  <Italian></Italian>
-  <Spanish></Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARC_HELP</Tag>
-  <English>[COLOR_WARNING_TEXT]Is automatically built on achievement of 2 Historical Goals out of 3[COLOR_REVERT]</English>
-  <French>[COLOR_WARNING_TEXT]Est automatiquement construit lorsque 2 objectifs historiques sur 3 sont atteints[COLOR_REVERT]</French>
-  <German>[COLOR_WARNING_TEXT]Wird bei Erf&#252;llung von 2 von 3 Historischen Siegbedingungen automatisch erbaut[COLOR_REVERT]</German>
-  <Italian>[COLOR_WARNING_TEXT]Viene automaticamente costruito al raggiungimento di 2 obiettivi storici su 3[COLOR_REVERT]</Italian>
-  <Spanish>[COLOR_WARNING_TEXT]Se construye autom&#225;ticamente tras la consecuci&#243;n de 2 de los 3 objetivos hist&#243;ricos[COLOR_REVERT]</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_WALL_STREET</Tag>
-  <English>Stock Exchange</English>
-  <French>
-   <Text>Bourse</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>B&#246;rse</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>Borsa</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>la Bolsa</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_WALL_STREET_STRATEGY</Tag>
-  <English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] doubles its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
-  <French>La [COLOR_BUILDING_TEXT]Bourse[COLOR_REVERT] double la production de richesse de la ville et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
-  <German>Die [COLOR_BUILDING_TEXT]B&#246;rse[COLOR_REVERT] verdoppelt die Wohlstandsproduktion einer Stadt und erh&#246;ht die Chance, einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] hervorzubringen.</German>
-  <Italian>La [COLOR_BUILDING_TEXT]Borsa[COLOR_REVERT] raddoppia la produzione di ricchezza della citt&#224; e aumenta le probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Mercante[COLOR_REVERT].</Italian>
-  <Spanish>La [COLOR_BUILDING_TEXT]Bolsa[COLOR_REVERT] dobla la producci&#243;n de riqueza de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_BUILDING_WEST_POINT</Tag>
-  <English>The Bastille</English>
-  <French>
-   <Text>La Bastille</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </French>
-  <German>
-   <Text>Die Bastille</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </German>
-  <Italian>
-   <Text>La Bastiglia</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Italian>
-  <Spanish>
-   <Text>la Bastilla</Text>
-   <Gender>Female</Gender>
-   <Plural>0</Plural>
-  </Spanish>
- </TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE</Tag>
+		<English>Opera House</English>
+		<French>
+			<Text>Op&#233;ra</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Opernhaus</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Teatro dell'opera</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Teatro de la &#211;pera</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] increases the cultural ouput of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>Le [COLOR_BUILDING_TEXT]Op&#233;ra[COLOR_REVERT] supprime tout m&#233;contentement dans la ville o&#249; il est construit. Il augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
+		<German>In St&#228;dten mit dem [COLOR_BUILDING_TEXT]Opernhaus[COLOR_REVERT] herrscht keine Unzufriedenheit. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]Teatro dell'opera[COLOR_REVERT] rimuove tutta l'infelicit&#224; dalla citt&#224; in cui viene costruito. Aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
+		<Spanish>El [COLOR_BUILDING_TEXT]Teatro de la &#211;pera[COLOR_REVERT] elimina toda la infelicidad de la ciudad en la que se construya. Tambi&#233;n aumenta las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE</Tag>
+		<English>National Gallery</English>
+		<French>
+			<Text>Galerie nationale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationalgalerie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Galleria nazionale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>La Galeria Nacional</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]Galerie Nationale[COLOR_REVERT] double la production de culture de la ville qui l'abrite et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
+		<German>Die [COLOR_BUILDING_TEXT]Nationalgalerie[COLOR_REVERT] verdoppelt den kulturellen Aussto&#223; einer Stadt. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Galleria Nazionale[COLOR_REVERT] raddoppia la produzione culturale della citt&#224; e aumenta le probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Galer&#237;a Nacional[COLOR_REVERT] dobla la producci&#243;n cultural de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HEROIC_EPIC_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT]. The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] requires you to have the Pantheon civic active.</English>
+		<French>L'[COLOR_BUILDING_TEXT]Epop&#233;e h&#233;ro&#239;que[COLOR_REVERT] double la production d'unit&#233;s militaires de la ville, ce qui est tr&#232;s utile si vous avez de nombreux combats &#224; livrer. Elle augmente aussi les chances d'apparition d'un [COLOR_UNIT_TEXT]artiste illustre[COLOR_REVERT].</French>
+		<German>Das [COLOR_BUILDING_TEXT]Heldenepos[COLOR_REVERT] verdoppelt in einer Stadt die Produktion von Milit&#228;reinheiten. Dies ist n&#252;tzlich, wenn Sie heftige K&#228;mpfe erwarten. Dar&#252;ber hinaus erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>Il [COLOR_BUILDING_TEXT]Poema Epico[COLOR_REVERT] raddoppia la produzione della citt&#224; per la realizzazione di unit&#224; militari. Ci&#242; risulter&#224; particolarmente utile in caso di combattimenti numerosi. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Artista[COLOR_REVERT].</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Epopeya heroica[COLOR_REVERT] dobla la producci&#243;n de la ciudad cuando crea unidades militares. Esto es &#250;til cuando se tiene planeado combatir mucho. Tambi&#233;n aumenta las posibilidades de que la ciudad genere un [COLOR_UNIT_TEXT]Gran artista[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC</Tag>
+		<English>Triumphal Arch</English>
+		<French>
+			<Text>Arc de Triomphe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Triumphbogen</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Arco di trionfo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Arco de Triunfo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins an immediate [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</English>
+		<French>La construction du [COLOR_BUILDING_TEXT]Arc de Triomphe[COLOR_REVERT] d&#233;clenche le d&#233;but d'un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il augmente la production d'unit&#233;s militaires de la ville</French>
+		<German>Nach dem Bau des [COLOR_BUILDING_TEXT]Triumphbogen[COLOR_REVERT] bricht f&#252;r Ihre Zivilisation umgehend ein [COLOR_HIGHLIGHT_TEXT]goldenes Zeitalter[COLOR_REVERT] an. Dar&#252;ber hinaus erh&#246;ht es in einer Stadt die Produktion von Milit&#228;reinheiten.</German>
+		<Italian>Costruendo il [COLOR_BUILDING_TEXT]Arco di Trionfo[COLOR_REVERT], darai immediatamente inizio all'[COLOR_HIGHLIGHT_TEXT]et&#224; dell'oro[COLOR_REVERT] per la tua civilt&#224;. Inoltre, aumenta la produzione della citt&#224; per la realizzazione di unit&#224; militari.</Italian>
+		<Spanish>Construir el [COLOR_BUILDING_TEXT]Arco de Triunfo[COLOR_REVERT] hace que comience de inmediato una [COLOR_HIGHLIGHT_TEXT]Edad de oro[COLOR_REVERT] para esa civilizaci&#243;n. Tambi&#233;n aumenta la producci&#243;n de la ciudad cuando crea unidades militares.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_PARK_STRATEGY</Tag>
+		<English>Build the [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] to greatly increase the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chances that a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT] might appear in your city.</English>
+		<French>Construisez le [COLOR_BUILDING_TEXT]parc national[COLOR_REVERT] pour &#233;liminer toute pr&#233;sence de maladie dans votre ville. Il conf&#232;re &#233;galement un sp&#233;cialiste gratuit pour chaque [COLOR_HIGHLIGHT_TEXT]r&#233;serve bois&#233;e[COLOR_REVERT] pr&#233;sente dans son rayon et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]scientifique illustre[COLOR_REVERT] dans votre ville.</French>
+		<German>Der [COLOR_BUILDING_TEXT]Nationalpark[COLOR_REVERT] befreit die Bev&#246;lkerung einer Stadt von allen Krankheiten. Dar&#252;ber hinaus gew&#228;hrt er einen Spezialisten f&#252;r jeden [COLOR_HIGHLIGHT_TEXT]Naturpark[COLOR_REVERT] innerhalb des Stadtgebiets und erh&#246;ht die Chancen auf den Erhalt eines [COLOR_UNIT_TEXT]Gro&#223;en Wissenschaftlers[COLOR_REVERT].</German>
+		<Italian>Costruisci il [COLOR_BUILDING_TEXT]Parco nazionale[COLOR_REVERT] per far fronte alla mancanza di salute della popolazione della tua citt&#224;. Fornisce inoltre uno specialista per ogni [COLOR_HIGHLIGHT_TEXT]Riserva forestale[COLOR_REVERT] nel raggio della citt&#224; e aumenta le probabilit&#224; che appaia un [COLOR_UNIT_TEXT]Grande Scienziato[COLOR_REVERT] nella tua citt&#224;.</Italian>
+		<Spanish>Construye el [COLOR_BUILDING_TEXT]Parque nacional[COLOR_REVERT] para eliminar toda la insalubridad de la poblaci&#243;n de la ciudad. Tambi&#233;n proporciona un especialista gratis por cada [COLOR_HIGHLIGHT_TEXT]Reserva forestal[COLOR_REVERT] que haya en su radio urbano y aumenta la probabilidad de que pueda aparecer un [COLOR_UNIT_TEXT]gran cient&#237;fico[COLOR_REVERT] en la ciudad.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK</Tag>
+		<English>Olympic Park</English>
+		<French>
+			<Text>Parc olympique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Olympiapark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Parco olimpico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Estadio Ol&#237;mpico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK_STRATEGY</Tag>
+		<English>Building the [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins an immediate [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</English>
+		<French>La construction du [COLOR_BUILDING_TEXT]Parc Olympique[COLOR_REVERT] d&#233;clenche le d&#233;but d'un [COLOR_HIGHLIGHT_TEXT]&#226;ge d'or[COLOR_REVERT] pour votre civilisation. Il augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
+		<German>Nach dem Bau des [COLOR_BUILDING_TEXT]Olympiapark[COLOR_REVERT] bricht f&#252;r Ihre Zivilisation umgehend ein [COLOR_HIGHLIGHT_TEXT]goldenes Zeitalter[COLOR_REVERT] an. Dar&#252;ber hinaus erh&#246;ht es die Chancen der Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>Costruendo il [COLOR_BUILDING_TEXT]Parco Olympico[COLOR_REVERT], darai immediatamente inizio all'[COLOR_HIGHLIGHT_TEXT]et&#224; dell'oro[COLOR_REVERT] per la tua civilt&#224;. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Mercante[COLOR_REVERT].</Italian>
+		<Spanish>Construir el [COLOR_BUILDING_TEXT]Estadio Ol&#237;mpico[COLOR_REVERT] hace que comience de inmediato una [COLOR_HIGHLIGHT_TEXT]Edad de oro[COLOR_REVERT] para esa civilizaci&#243;n. Tambi&#233;n aumenta las probabilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD</Tag>
+		<English>Interpol</English>
+		<French>
+			<Text>Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Interpol</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] doubles its city's espionage output.</English>
+		<French>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] double votre production d'espionnage.</French>
+		<German>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] gew&#228;hrt einen +100%% Bonus auf Spionageleistungen.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] d&#224; un bonus del +100%% alla resa dello spionaggio.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] proporciona una bonificaci&#243;n del +100% al rendimiento del Espionaje.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY</Tag>
+		<English>Trading Company</English>
+		<French>
+			<Text>Compagnie marchande</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Handelsgesellschaft</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Compagnia commerciale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Compa&#241;&#237;a de las Indias</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health and happiness for several colonial resources. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARC_HELP</Tag>
+		<English>[COLOR_WARNING_TEXT]Is automatically built on achievement of 2 Historical Goals out of 3[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Est automatiquement construit lorsque 2 objectifs historiques sur 3 sont atteints[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Wird bei Erf&#252;llung von 2 von 3 Historischen Siegbedingungen automatisch erbaut[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Viene automaticamente costruito al raggiungimento di 2 obiettivi storici su 3[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Se construye autom&#225;ticamente tras la consecuci&#243;n de 2 de los 3 objetivos hist&#243;ricos[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WALL_STREET</Tag>
+		<English>Stock Exchange</English>
+		<French>
+			<Text>Bourse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>B&#246;rse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Borsa</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Bolsa</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WALL_STREET_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] doubles its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]Bourse[COLOR_REVERT] double la production de richesse de la ville et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]marchand illustre[COLOR_REVERT].</French>
+		<German>Die [COLOR_BUILDING_TEXT]B&#246;rse[COLOR_REVERT] verdoppelt die Wohlstandsproduktion einer Stadt und erh&#246;ht die Chance, einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Borsa[COLOR_REVERT] raddoppia la produzione di ricchezza della citt&#224; e aumenta le probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Mercante[COLOR_REVERT].</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Bolsa[COLOR_REVERT] dobla la producci&#243;n de riqueza de su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran mercader[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WEST_POINT</Tag>
+		<English>The Bastille</English>
+		<French>
+			<Text>La Bastille</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Die Bastille</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>La Bastiglia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Bastilla</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
 </Civ4GameText>

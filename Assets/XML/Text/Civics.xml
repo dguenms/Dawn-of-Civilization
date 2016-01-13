@@ -1,467 +1,467 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- Civics -->
 <Civ4GameText>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_ABSOLUTISM</Tag>
-  <English>Absolutism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_ABSOLUTISM_STRATEGY</Tag>
-  <English>Extra production and commerce in your Capital</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_AGRARIANISM</Tag>
-  <English>Agrarianism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_AGRARIANISM_STRATEGY</Tag>
-  <English>Increased Worker work rate, extra production from Pastures, extra commerce from Farms</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
-  <English>Animism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_ANIMISM_STRATEGY</Tag>
-  <English>Extra unhappiness from non-state religions</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_AUTOCRACY</Tag>
-  <English>Autocracy</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_AUTOCRACY_STRATEGY</Tag>
-  <English>Can draft two units per turn, increased Great General birth rate, extra happiness from Barracks</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_CAPITALISM</Tag>
-  <English>Capitalism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_CAPITALISM_STRATEGY</Tag>
-  <English>Extra commerce from Towns, extra trade route yield, can spend gold to finish building construction</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING</Tag>
-  <English>Central Planning</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Tag>
-  <English>Extra production from specialists, extra food from Workshops and Watermills, reduced commerce from Workshops, Watermills and Towns, faster construction of Factories and Coal Plants</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_CITY_STATES</Tag>
-  <English>City States</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Tag>
-  <English>Extra food from specialists if city works less than seven tiles, increased number of cities maintenance</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_COMMONWEALTH</Tag>
-  <English>Commonwealth</English>
-  <French>Commonwealth</French>
-  <German>Commonwealth</German>
-  <Italian>Commonwealth</Italian>
-  <Spanish>Commonwealth</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_COMMONWEALTH_STRATEGY</Tag>
-  <English>No negative Stability Points for low amount of traded resources; no negative Stability Points for poor economy</English>
-  <French>Pas de points de stabilit&#233; n&#233;gatifs pour un faible niveau de ressources &#233;chang&#233;es ; pas de points de stabilit&#233; n&#233;gatifs pour une &#233;conomie pauvre</French>
-  <German>Keine Stabilit&#228;tspunktabz&#252;ge durch geringf&#252;gig gehandelte Ressourcen; keine Stabilit&#228;tspunktabz&#252;ge durch schlechte Wirtschaftslage</German>
-  <Italian>Nessun punto stabilit&#224; negativo in caso di scarso commercio di risorse; nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
-  <Spanish>No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados; no hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_DIRECT_RULE</Tag>
-  <English>Direct Rule</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_DIRECT_RULE_STRATEGY</Tag>
-  <English>The most primitive Organization civic</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION</Tag>
-  <English>[ICON_BULLET]%D1_Mod%% Production For All %s2</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_DOMAIN_XP</Tag>
-  <English>[ICON_BULLET]+%d1 Experience For All %s2</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_DYNASTICISM</Tag>
-  <English>Dynasticism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_DYNASTICISM_STRATEGY</Tag>
-  <English>Extra happiness from military units, faster construction of Wonders</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_ECONOMY_BONUS</Tag>
-  <English>[ICON_BULLET]No negative Stability Points for poor economy</English>
-  <French>[ICON_BULLET]Pas de points de stabilit&#233; n&#233;gatifs pour une &#233;conomie pauvre</French>
-  <German>[ICON_BULLET]Keine Stabilit&#228;tspunktabz&#252;ge durch schlechte Wirtschaftslage</German>
-  <Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
-  <Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_EGALITARIANISM</Tag>
-  <English>Egalitarianism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_EGALITARIANISM_HELP</Tag>
-  <English>[ICON_BULLET]Unable to Use Slaves[NEWLINE][ICON_BULLET][ICON_UNHAPPY] Penalty for Slaves in Civs without [LINK=literal]Egalitarianism[\LINK]</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_EGALITARIANISM_STRATEGY</Tag>
-  <English>May hire double the amount of Artists, Scientists, Engineers, extra production from Towns, unhappiness from civs without Egalitarianism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_HELP</Tag>
-  <English>[ICON_BULLET]No stability penalty for economic stagnation</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_STRATEGY</Tag>
-  <English>Reduced unhealthiness in all cities, extra commerce from Windmills, Watermills, Forest Preserves, extra happiness from Public Transportation, faster construction of Recycling Centers and Hydro Plants</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_FANATICISM</Tag>
-  <English>Fanaticism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_FANATICISM_STRATEGY</Tag>
-  <English>Cities with state religion train units faster, no spread of non-state religions, extra unhappiness from non-state religions</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_FORCED_LABOR</Tag>
-  <English>Forced Labor</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_FREE_MARKET_HELP</Tag>
-  <English>[ICON_BULLET]Increased chance of spreading corporations</English>
-  <German>[ICON_BULLET]Erh&#246;hte Chance, Kapitalgesellschaften zu verbreiten</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_FREE_MARKET_STRATEGY</Tag>
-  <English>Extra trade route in all cities, increased corporation commerce</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_GUILDS</Tag>
-  <English>Guilds</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_GUILDS_STRATEGY</Tag>
-  <English>Extra commerce from Workshops and Watermills, extra unhappiness from Banks, faster construction of Forges, Markets, Grocers</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_IMPERIALISM</Tag>
-  <English>Imperialism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_IMPERIALISM_HELP</Tag>
-  <English>[ICON_BULLET]Extra stability for controlling foreign cores[NEWLINE][ICON_BULLET]Reduced likeliness of respawns on your territory</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_IMPERIALISM_STRATEGY</Tag>
-  <English>Extra stability from controlling foreign cores; reduced likeliness of respawns on your territory</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_INDUSTRIALISM</Tag>
-  <English>Industrialism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_INDUSTRIALISM_STRATEGY</Tag>
-  <English>May hire double the amount of Engineers, increased production in all cities, extra production from Workshops and Watermills</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_LEVY_ARMIES</Tag>
-  <English>Levy Armies</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_LEVY_ARMIES_STRATEGY</Tag>
-  <English>Extra free units, military units produced with food, faster construction of Castles</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP</Tag>
-  <English>[ICON_BULLET]Increased chance of spreading Trading Company</English>
-  <German>[ICON_BULLET]Erh&#246;hte Chance, Handelsgesellschaften zu verbreiten</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP_OLD</Tag>
-  <English>[ICON_BULLET]Reduced expansion penalty for overseas colonies</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MERCANTILISM_STRATEGY</Tag>
-  <English>No additional income from foreign trade routes, extra income from trade through your Capital, extra commerce from Plantations, faster construction of Customs Houses</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MERCENARIES</Tag>
-  <English>Mercenaries</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MERCENARIES_HELP</Tag>
-  <English>[ICON_BULLET]Hurried Units Start with the [LINK=literal]Mercenary[\LINK] promotion</English>
-  <German>[ICON_BULLET]Beschleunigte Einheiten starten mit der [LINK=literal]S&#246;ldner[\LINK]-Bef&#246;rderung</German>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MERCENARIES_STRATEGY</Tag>
-  <English>Can spend gold to finish production of units, hurried units start with the mercenary promotion, faster construction of Walls</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MILITIA</Tag>
-  <English>Militia</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MILITIA_STRATEGY</Tag>
-  <English>The most primitive Military civic</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_MULTILATERALISM</Tag>
-  <English>Multilateralism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY</Tag>
-  <English>Naval Supremacy</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY_STRATEGY</Tag>
-  <English>Extra experience for Naval units, increased production speed for Naval units, double production speed of Harbors, Lighthouses and Drydocks, extra production from Fishing Boats</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_OCCUPATION</Tag>
-  <English>Occupation</English>
-  <French>Occupation</French>
-  <German>Besatzung</German>
-  <Italian>Occupazione</Italian>
-  <Spanish>Ocupaci&#243;n</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_OCCUPATION_BONUS</Tag>
-  <English>[ICON_BULLET]No negative Stability Points from cities under occupation</English>
-  <French>[ICON_BULLET]Pas de points de stabilit&#233; n&#233;gatifs pour les villes occup&#233;es</French>
-  <German>[ICON_BULLET]Keine Stabilit&#228;tspunktabz&#252;ge durch besetzte St&#228;dte</German>
-  <Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di citt&#224; occupate.</Italian>
-  <Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_OCCUPATION_STRATEGY</Tag>
-  <English>Adds a Stability Points bonus on city conquest; no negative Stability Points from cities under occupation</English>
-  <French>Ajoute un bonus de points de stabilit&#233; par ville conquise ; pas de points de stabilit&#233; n&#233;gatifs pour les villes occup&#233;es</French>
-  <German>Stabilit&#228;tspunktbonus bei Stadteroberung; keine Stabilit&#228;tspunktabz&#252;ge durch besetzte St&#228;dte</German>
-  <Italian>Aggiunge un bonus di punti stabilit&#224; per la conquista di citt&#224;; nessun punto stabilit&#224; negativo in caso di citt&#224; occupate.</Italian>
-  <Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por conquista de ciudades; no hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Tag>
-  <English>Cities with state religion construct buildings faster, extra unhappiness from non-state religions</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_PANTHEON</Tag>
-  <English>Pantheon</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_PANTHEON_STRATEGY</Tag>
-  <English>Can build classical wonders, extra happiness from Pagan Temples, extra unhappiness from non-state religions</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE</Tag>
-  <English>Public Welfare</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE_STRATEGY</Tag>
-  <English>Reduced unhappiness from Corporations, extra research from specialists, faster construction of Hospitals and Universities</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_REPRESENTATION_STRATEGY</Tag>
-  <English>May hire double the amount of Statesmen, extra happiness in the largest cities, extra happiness from Courthouses</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_REPUBLIC</Tag>
-  <English>Republic</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_REPUBLIC_STRATEGY</Tag>
-  <English>Increased Great People birth rate, increased Cottage growth</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_RESETTLEMENT</Tag>
-  <English>Resettlement</English>
-  <French>Repeuplement</French>
-  <German>Umsiedlung</German>
-  <Italian>Risistemazione</Italian>
-  <Spanish>Reasentamiento</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_RESETTLEMENT_STRATEGY</Tag>
-  <English>Adds a Stability Points bonus for each city founded at least 15 tiles from the capital</English>
-  <French>Ajoute un bonus de points de stabilit&#233; par ville fond&#233;e &#224; 15 cases ou plus de la capitale</French>
-  <German>Stabilit&#228;tspunktbonus f&#252;r jede Stadt, die mindestens 15 Gel&#228;ndefelder von der Hauptstadt entfernt gegr&#252;ndet wurde</German>
-  <Italian>Aggiunge un bonus di punti stabilit&#224; per ogni citt&#224; fondata ad almeno 15 caselle dalla capitale.</Italian>
-  <Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada ciudad fundada al menos a 15 casillas de la capital</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SCHOLASTICISM</Tag>
-  <English>Scholasticism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SCHOLASTICISM_STRATEGY</Tag>
-  <English>Increased Great People birth rate in cities with state religion, can train Missionaries without Monasteries, extra unhappiness from non-state religions</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SECULARISM</Tag>
-  <English>Secularism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SECULARISM_HELP</Tag>
-  <English>[ICON_BULLET]Can Build All Wonders that Require a State Religion</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Tag>
-  <English>No state religion, no unhappiness from non-state religions, increased scientific research</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Tag>
-  <English>Can sacrifice city population to finish production</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_STANDING_ARMY</Tag>
-  <English>Standing Army</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Tag>
-  <English>Extra experience for land units, extra production from Forts, faster construction of Barracks and Stables</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_STATE_PROPERTY_STRATEGY</Tag>
-  <English>Increased food production from workshops and watermills; extra production from specialists; production converted into more commerce</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SUBJUGATION</Tag>
-  <English>Subjugation</English>
-  <French>Assujettissement</French>
-  <German>Unterwerfung</German>
-  <Italian>Sottomissione</Italian>
-  <Spanish>Subyugaci&#243;n</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SUBJUGATION_STRATEGY</Tag>
-  <English></English>
-  <French></French>
-  <German></German>
-  <Italian></Italian>
-  <Spanish></Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SUBSISTENCE</Tag>
-  <English>Subsistence</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SUBSISTENCE_STRATEGY</Tag>
-  <English>The most primitive Economy civic</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL</Tag>
-  <English>Supreme Council</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL_STRATEGY</Tag>
-  <English>No maintenance penalty for distance to Palace</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
-  <English>May hire double the amount of Priest specialists, extra unit experiences in cities with state religion, extra happiness in cities with state religion, extra unhappiness from non-state religions</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_TOTALITARIANISM</Tag>
-  <English>Totalitarianism</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_TOTALITARIANISM_HELP</Tag>
-  <English>[ICON_BULLET]No stability penalty for conquered cities or minority culture</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_TOTALITARIANISM_STRATEGY</Tag>
-  <English>No city distance maintenance, extra happiness from military units, extra espionage from specialists</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_TRIBALISM_STRATEGY</Tag>
-  <English>The most primitive Society civic</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_TYRANNY</Tag>
-  <English>Tyranny</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_TYRANNY_STRATEGY</Tag>
-  <English>The most primitive Government civic</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_URBANIZATION</Tag>
-  <English>Urbanization</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_VASSALAGE_HELP</Tag>
-  <English>[ICON_BULLET]Additional stability for every vassal</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Tag>
-  <English>Extra experience for units, extra commerce from Forts, extra happiness from Castles</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_VICEROYALTY</Tag>
-  <English>Viceroyalty</English>
-  <French>Vice-royaut&#233;</French>
-  <German>Vizek&#246;nigtum</German>
-  <Italian>Vicereame</Italian>
-  <Spanish>Virreinato</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_VICEROYALTY_STRATEGY</Tag>
-  <English>Adds a Stability Points bonus for each vassal</English>
-  <French>Ajoute un bonus de points de stabilit&#233; par vassal</French>
-  <German>Stabilit&#228;tspunktbonus f&#252;r jeden Vasallen</German>
-  <Italian>Aggiunge un punto stabilit&#224; per ogni vassallo.</Italian>
-  <Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada vasallo</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_VICEROYALTY_VANILLA_STRATEGY</Tag>
-  <English>Adds a Stability Points bonus for each civilization starting point controlled</English>
-  <French>Ajoute un bonus de points de stabilit&#233; par point de d&#233;part de civilisation contr&#244;l&#233;</French>
-  <German>Stabilit&#228;tspunktbonus f&#252;r jeden kontrollierten Zivilisationsstartpunkt</German>
-  <Italian>Aggiunge un punto stabilit&#224; per ogni punto di avvio di civilt&#224; controllato.</Italian>
-  <Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada punto de inicio de civilizaci&#243;n controlado</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_WARRIOR_CODE</Tag>
-  <English>Warrior Code</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_WARRIOR_CODE_HELP</Tag>
-  <English>[ICON_BULLET]No stability penalty for conquered cities</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVIC_WARRIOR_CODE_STRATEGY</Tag>
-  <English>Decreased war unhappiness, double production speed of Barracks' and stables, no stability penalty for conquered cities</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVICOPTION_EXPANSION</Tag>
-  <English>Expansion</English>
-  <French>Expansion</French>
-  <German>Expansion</German>
-  <Italian>Espansione</Italian>
-  <Spanish>Expansi&#243;n</Spanish>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVICOPTION_MILITARY</Tag>
-  <English>Military</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
-  <English>Organization</English>
- </TEXT>
- <TEXT>
-  <Tag>TXT_KEY_CIVICOPTION_SOCIETY</Tag>
-  <English>Society</English>
- </TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ABSOLUTISM</Tag>
+		<English>Absolutism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ABSOLUTISM_STRATEGY</Tag>
+		<English>Extra production and commerce in your Capital</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AGRARIANISM</Tag>
+		<English>Agrarianism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AGRARIANISM_STRATEGY</Tag>
+		<English>Increased Worker work rate, extra production from Pastures, extra commerce from Farms</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
+		<English>Animism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ANIMISM_STRATEGY</Tag>
+		<English>Extra unhappiness from non-state religions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AUTOCRACY</Tag>
+		<English>Autocracy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AUTOCRACY_STRATEGY</Tag>
+		<English>Can draft two units per turn, increased Great General birth rate, extra happiness from Barracks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPITALISM</Tag>
+		<English>Capitalism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPITALISM_STRATEGY</Tag>
+		<English>Extra commerce from Towns, extra trade route yield, can spend gold to finish building construction</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING</Tag>
+		<English>Central Planning</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Tag>
+		<English>Extra production from specialists, extra food from Workshops and Watermills, reduced commerce from Workshops, Watermills and Towns, faster construction of Factories and Coal Plants</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CITY_STATES</Tag>
+		<English>City States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Tag>
+		<English>Extra food from specialists if city works less than seven tiles, increased number of cities maintenance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_COMMONWEALTH</Tag>
+		<English>Commonwealth</English>
+		<French>Commonwealth</French>
+		<German>Commonwealth</German>
+		<Italian>Commonwealth</Italian>
+		<Spanish>Commonwealth</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_COMMONWEALTH_STRATEGY</Tag>
+		<English>No negative Stability Points for low amount of traded resources; no negative Stability Points for poor economy</English>
+		<French>Pas de points de stabilit&#233; n&#233;gatifs pour un faible niveau de ressources &#233;chang&#233;es ; pas de points de stabilit&#233; n&#233;gatifs pour une &#233;conomie pauvre</French>
+		<German>Keine Stabilit&#228;tspunktabz&#252;ge durch geringf&#252;gig gehandelte Ressourcen; keine Stabilit&#228;tspunktabz&#252;ge durch schlechte Wirtschaftslage</German>
+		<Italian>Nessun punto stabilit&#224; negativo in caso di scarso commercio di risorse; nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
+		<Spanish>No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados; no hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DIRECT_RULE</Tag>
+		<English>Direct Rule</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DIRECT_RULE_STRATEGY</Tag>
+		<English>The most primitive Organization civic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Production For All %s2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DOMAIN_XP</Tag>
+		<English>[ICON_BULLET]+%d1 Experience For All %s2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DYNASTICISM</Tag>
+		<English>Dynasticism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DYNASTICISM_STRATEGY</Tag>
+		<English>Extra happiness from military units, faster construction of Wonders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ECONOMY_BONUS</Tag>
+		<English>[ICON_BULLET]No negative Stability Points for poor economy</English>
+		<French>[ICON_BULLET]Pas de points de stabilit&#233; n&#233;gatifs pour une &#233;conomie pauvre</French>
+		<German>[ICON_BULLET]Keine Stabilit&#228;tspunktabz&#252;ge durch schlechte Wirtschaftslage</German>
+		<Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di scarsa economia.</Italian>
+		<Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_EGALITARIANISM</Tag>
+		<English>Egalitarianism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_EGALITARIANISM_HELP</Tag>
+		<English>[ICON_BULLET]Unable to Use Slaves[NEWLINE][ICON_BULLET][ICON_UNHAPPY] Penalty for Slaves in Civs without [LINK=literal]Egalitarianism[\LINK]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_EGALITARIANISM_STRATEGY</Tag>
+		<English>May hire double the amount of Artists, Scientists, Engineers, extra production from Towns, unhappiness from civs without Egalitarianism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_HELP</Tag>
+		<English>[ICON_BULLET]No stability penalty for economic stagnation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_STRATEGY</Tag>
+		<English>Reduced unhealthiness in all cities, extra commerce from Windmills, Watermills, Forest Preserves, extra happiness from Public Transportation, faster construction of Recycling Centers and Hydro Plants</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FANATICISM</Tag>
+		<English>Fanaticism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FANATICISM_STRATEGY</Tag>
+		<English>Cities with state religion train units faster, no spread of non-state religions, extra unhappiness from non-state religions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FORCED_LABOR</Tag>
+		<English>Forced Labor</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_MARKET_HELP</Tag>
+		<English>[ICON_BULLET]Increased chance of spreading corporations</English>
+		<German>[ICON_BULLET]Erh&#246;hte Chance, Kapitalgesellschaften zu verbreiten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_MARKET_STRATEGY</Tag>
+		<English>Extra trade route in all cities, increased corporation commerce</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_GUILDS</Tag>
+		<English>Guilds</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_GUILDS_STRATEGY</Tag>
+		<English>Extra commerce from Workshops and Watermills, extra unhappiness from Banks, faster construction of Forges, Markets, Grocers</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_IMPERIALISM</Tag>
+		<English>Imperialism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_IMPERIALISM_HELP</Tag>
+		<English>[ICON_BULLET]Extra stability for controlling foreign cores[NEWLINE][ICON_BULLET]Reduced likeliness of respawns on your territory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_IMPERIALISM_STRATEGY</Tag>
+		<English>Extra stability from controlling foreign cores; reduced likeliness of respawns on your territory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_INDUSTRIALISM</Tag>
+		<English>Industrialism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_INDUSTRIALISM_STRATEGY</Tag>
+		<English>May hire double the amount of Engineers, increased production in all cities, extra production from Workshops and Watermills</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_LEVY_ARMIES</Tag>
+		<English>Levy Armies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_LEVY_ARMIES_STRATEGY</Tag>
+		<English>Extra free units, military units produced with food, faster construction of Castles</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP</Tag>
+		<English>[ICON_BULLET]Increased chance of spreading Trading Company</English>
+		<German>[ICON_BULLET]Erh&#246;hte Chance, Handelsgesellschaften zu verbreiten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP_OLD</Tag>
+		<English>[ICON_BULLET]Reduced expansion penalty for overseas colonies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCANTILISM_STRATEGY</Tag>
+		<English>No additional income from foreign trade routes, extra income from trade through your Capital, extra commerce from Plantations, faster construction of Customs Houses</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCENARIES</Tag>
+		<English>Mercenaries</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCENARIES_HELP</Tag>
+		<English>[ICON_BULLET]Hurried Units Start with the [LINK=literal]Mercenary[\LINK] promotion</English>
+		<German>[ICON_BULLET]Beschleunigte Einheiten starten mit der [LINK=literal]S&#246;ldner[\LINK]-Bef&#246;rderung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCENARIES_STRATEGY</Tag>
+		<English>Can spend gold to finish production of units, hurried units start with the mercenary promotion, faster construction of Walls</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MILITIA</Tag>
+		<English>Militia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MILITIA_STRATEGY</Tag>
+		<English>The most primitive Military civic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MULTILATERALISM</Tag>
+		<English>Multilateralism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY</Tag>
+		<English>Naval Supremacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY_STRATEGY</Tag>
+		<English>Extra experience for Naval units, increased production speed for Naval units, double production speed of Harbors, Lighthouses and Drydocks, extra production from Fishing Boats</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OCCUPATION</Tag>
+		<English>Occupation</English>
+		<French>Occupation</French>
+		<German>Besatzung</German>
+		<Italian>Occupazione</Italian>
+		<Spanish>Ocupaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OCCUPATION_BONUS</Tag>
+		<English>[ICON_BULLET]No negative Stability Points from cities under occupation</English>
+		<French>[ICON_BULLET]Pas de points de stabilit&#233; n&#233;gatifs pour les villes occup&#233;es</French>
+		<German>[ICON_BULLET]Keine Stabilit&#228;tspunktabz&#252;ge durch besetzte St&#228;dte</German>
+		<Italian>[ICON_BULLET]Nessun punto stabilit&#224; negativo in caso di citt&#224; occupate.</Italian>
+		<Spanish>[ICON_BULLET]No hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OCCUPATION_STRATEGY</Tag>
+		<English>Adds a Stability Points bonus on city conquest; no negative Stability Points from cities under occupation</English>
+		<French>Ajoute un bonus de points de stabilit&#233; par ville conquise ; pas de points de stabilit&#233; n&#233;gatifs pour les villes occup&#233;es</French>
+		<German>Stabilit&#228;tspunktbonus bei Stadteroberung; keine Stabilit&#228;tspunktabz&#252;ge durch besetzte St&#228;dte</German>
+		<Italian>Aggiunge un bonus di punti stabilit&#224; per la conquista di citt&#224;; nessun punto stabilit&#224; negativo in caso di citt&#224; occupate.</Italian>
+		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por conquista de ciudades; no hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Tag>
+		<English>Cities with state religion construct buildings faster, extra unhappiness from non-state religions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PANTHEON</Tag>
+		<English>Pantheon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PANTHEON_STRATEGY</Tag>
+		<English>Can build classical wonders, extra happiness from Pagan Temples, extra unhappiness from non-state religions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE</Tag>
+		<English>Public Welfare</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE_STRATEGY</Tag>
+		<English>Reduced unhappiness from Corporations, extra research from specialists, faster construction of Hospitals and Universities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_REPRESENTATION_STRATEGY</Tag>
+		<English>May hire double the amount of Statesmen, extra happiness in the largest cities, extra happiness from Courthouses</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_REPUBLIC</Tag>
+		<English>Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_REPUBLIC_STRATEGY</Tag>
+		<English>Increased Great People birth rate, increased Cottage growth</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_RESETTLEMENT</Tag>
+		<English>Resettlement</English>
+		<French>Repeuplement</French>
+		<German>Umsiedlung</German>
+		<Italian>Risistemazione</Italian>
+		<Spanish>Reasentamiento</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_RESETTLEMENT_STRATEGY</Tag>
+		<English>Adds a Stability Points bonus for each city founded at least 15 tiles from the capital</English>
+		<French>Ajoute un bonus de points de stabilit&#233; par ville fond&#233;e &#224; 15 cases ou plus de la capitale</French>
+		<German>Stabilit&#228;tspunktbonus f&#252;r jede Stadt, die mindestens 15 Gel&#228;ndefelder von der Hauptstadt entfernt gegr&#252;ndet wurde</German>
+		<Italian>Aggiunge un bonus di punti stabilit&#224; per ogni citt&#224; fondata ad almeno 15 caselle dalla capitale.</Italian>
+		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada ciudad fundada al menos a 15 casillas de la capital</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SCHOLASTICISM</Tag>
+		<English>Scholasticism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SCHOLASTICISM_STRATEGY</Tag>
+		<English>Increased Great People birth rate in cities with state religion, can train Missionaries without Monasteries, extra unhappiness from non-state religions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SECULARISM</Tag>
+		<English>Secularism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SECULARISM_HELP</Tag>
+		<English>[ICON_BULLET]Can Build All Wonders that Require a State Religion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Tag>
+		<English>No state religion, no unhappiness from non-state religions, increased scientific research</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Tag>
+		<English>Can sacrifice city population to finish production</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_STANDING_ARMY</Tag>
+		<English>Standing Army</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Tag>
+		<English>Extra experience for land units, extra production from Forts, faster construction of Barracks and Stables</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_STATE_PROPERTY_STRATEGY</Tag>
+		<English>Increased food production from workshops and watermills; extra production from specialists; production converted into more commerce</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SUBJUGATION</Tag>
+		<English>Subjugation</English>
+		<French>Assujettissement</French>
+		<German>Unterwerfung</German>
+		<Italian>Sottomissione</Italian>
+		<Spanish>Subyugaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SUBJUGATION_STRATEGY</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SUBSISTENCE</Tag>
+		<English>Subsistence</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SUBSISTENCE_STRATEGY</Tag>
+		<English>The most primitive Economy civic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL</Tag>
+		<English>Supreme Council</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL_STRATEGY</Tag>
+		<English>No maintenance penalty for distance to Palace</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
+		<English>May hire double the amount of Priest specialists, extra unit experiences in cities with state religion, extra happiness in cities with state religion, extra unhappiness from non-state religions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM</Tag>
+		<English>Totalitarianism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM_HELP</Tag>
+		<English>[ICON_BULLET]No stability penalty for conquered cities or minority culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM_STRATEGY</Tag>
+		<English>No city distance maintenance, extra happiness from military units, extra espionage from specialists</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TRIBALISM_STRATEGY</Tag>
+		<English>The most primitive Society civic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TYRANNY</Tag>
+		<English>Tyranny</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TYRANNY_STRATEGY</Tag>
+		<English>The most primitive Government civic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_URBANIZATION</Tag>
+		<English>Urbanization</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VASSALAGE_HELP</Tag>
+		<English>[ICON_BULLET]Additional stability for every vassal</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Tag>
+		<English>Extra experience for units, extra commerce from Forts, extra happiness from Castles</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VICEROYALTY</Tag>
+		<English>Viceroyalty</English>
+		<French>Vice-royaut&#233;</French>
+		<German>Vizek&#246;nigtum</German>
+		<Italian>Vicereame</Italian>
+		<Spanish>Virreinato</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VICEROYALTY_STRATEGY</Tag>
+		<English>Adds a Stability Points bonus for each vassal</English>
+		<French>Ajoute un bonus de points de stabilit&#233; par vassal</French>
+		<German>Stabilit&#228;tspunktbonus f&#252;r jeden Vasallen</German>
+		<Italian>Aggiunge un punto stabilit&#224; per ogni vassallo.</Italian>
+		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada vasallo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VICEROYALTY_VANILLA_STRATEGY</Tag>
+		<English>Adds a Stability Points bonus for each civilization starting point controlled</English>
+		<French>Ajoute un bonus de points de stabilit&#233; par point de d&#233;part de civilisation contr&#244;l&#233;</French>
+		<German>Stabilit&#228;tspunktbonus f&#252;r jeden kontrollierten Zivilisationsstartpunkt</German>
+		<Italian>Aggiunge un punto stabilit&#224; per ogni punto di avvio di civilt&#224; controllato.</Italian>
+		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por cada punto de inicio de civilizaci&#243;n controlado</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WARRIOR_CODE</Tag>
+		<English>Warrior Code</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WARRIOR_CODE_HELP</Tag>
+		<English>[ICON_BULLET]No stability penalty for conquered cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WARRIOR_CODE_STRATEGY</Tag>
+		<English>Decreased war unhappiness, double production speed of Barracks' and stables, no stability penalty for conquered cities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_EXPANSION</Tag>
+		<English>Expansion</English>
+		<French>Expansion</French>
+		<German>Expansion</German>
+		<Italian>Espansione</Italian>
+		<Spanish>Expansi&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_MILITARY</Tag>
+		<English>Military</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
+		<English>Organization</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_SOCIETY</Tag>
+		<English>Society</English>
+	</TEXT>
 </Civ4GameText>
