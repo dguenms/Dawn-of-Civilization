@@ -13,7 +13,7 @@
 		<Spanish>Poder único:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_EGY</Tag>
+		<Tag>TXT_KEY_UP_EGY_TITLE</Tag>
 		<English>The Power of the Pharaoh:</English>
 		<French>Le Pouvoir du Pharaon :</French>
 		<German>Die Macht des Pharaos:</German>
@@ -21,7 +21,7 @@
 		<Spanish>El poder del fara&#243;n:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_EGY2</Tag>
+		<Tag>TXT_KEY_UP_EGY</Tag>
 		<English>Dynasticism, Slavery and Pantheon are enabled at start</English>
 		<French>Le droit héréditaire et l'esclavage sont disponibles au départ</French>
 		<German>Aktivierung von Dynastizismus, Sklaverei und Pantheon beim Spielstart</German>
@@ -29,7 +29,7 @@
 		<Spanish>Gobierno hereditario y Esclavitud est&#225;n activados al principio</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_IND</Tag>
+		<Tag>TXT_KEY_UP_IND_TITLE</Tag>
 		<English>The Power of Purity:</English>
 		<French>Le Pouvoir de la Spiritualité :</French>
 		<German>Die Macht der Reinheit:</German>
@@ -37,7 +37,7 @@
 		<Spanish>El poder de la espiritualidad:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_IND2</Tag>
+		<Tag>TXT_KEY_UP_IND</Tag>
 		<English>One extra [ICON_HEALTHY] for every three excess [ICON_HAPPY]</English>
 		<French>Pas d'anarchie lors des révolutions</French>
 		<German>Eine zusätzliche [ICON_HAPPY] pro zwei überzählige [ICON_HEALTHY]</German>
@@ -45,7 +45,7 @@
 		<Spanish>No hay anarqu&#237;a por las revoluciones</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_CHI</Tag>
+		<Tag>TXT_KEY_UP_CHI_TITLE</Tag>
 		<English>The Power of Invention:</English>
 		<French>Le Pouvoir de Invention :</French>
 		<German>Die Macht der Erfindung:</German>
@@ -53,7 +53,7 @@
 		<Spanish>El poder del invento:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_CHI2</Tag>
+		<Tag>TXT_KEY_UP_CHI</Tag>
 		<English>Faster research of techologies that nobody has discovered yet until the Renaissance</English>
 		<French>1.5X Vitesse d'entraînement des unités de combat rapproché et équipées d'armes à feu</French>
 		<German>Schnellere Forschung von Technologien, die bisher niemand entdeckt hat, bis zum Beginn der Renaissance</German>
@@ -61,7 +61,7 @@
 		<Spanish>Velocidad de entrenamiento de unidades de cuerpo a cuerpo y con armas de p&#243;lvora multiplicada x1,5</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_GRE</Tag>
+		<Tag>TXT_KEY_UP_GRE_TITLE</Tag>
 		<English>The Power of Philosophy:</English>
 		<French>Le Pouvoir de la Philosophie :</French>
 		<German>Die Macht der Philosophie:</German>
@@ -69,7 +69,7 @@
 		<Spanish>El poder de la filosof&#237;a:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_GRE2</Tag>
+		<Tag>TXT_KEY_UP_GRE</Tag>
 		<English>+150% Great People birth rate until the end of the Classical Era</English>
 		<French>+150 % Taux de natalité des personnages illustres jusqu'à la fin du Moyen Age</French>
 		<German>+150% Geburtenrate von Großen Persönlichkeiten bis zum Ende des klassischen Zeitalters</German>
@@ -77,7 +77,7 @@
 		<Spanish>+100% a la tasa de natalidad de grandes personajes hasta el final de la Edad Media</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_PER</Tag>
+		<Tag>TXT_KEY_UP_PER_TITLE</Tag>
 		<English>The Power of Satrapy:</English>
 		<French>Le Pouvoir de la Satrapie :</French>
 		<German>Die Macht der Satrapie:</German>
@@ -85,7 +85,7 @@
 		<Spanish>El poder de la satrap&#237;a:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_PER2</Tag>
+		<Tag>TXT_KEY_UP_PER</Tag>
 		<English>No stability penalties for controlling cities with foreign culture</English>
 		<French>+2 points de stabilité par ville conquise</French>
 		<German>Keine Stabilitäts-Mali für die Kontrolle von Städten mit fremder Kultur</German>
@@ -93,7 +93,7 @@
 		<Spanish>+2 puntos de estabilidad adicionales por cada ciudad conquistada</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ROM</Tag>
+		<Tag>TXT_KEY_UP_ROM_TITLE</Tag>
 		<English>The Power of Infrastructure:</English>
 		<French>Le Pouvoir de l'Infrastructure :</French>
 		<German>Die Macht der Infrastruktur:</German>
@@ -101,7 +101,7 @@
 		<Spanish>El poder de la infraestructura:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ROM2</Tag>
+		<Tag>TXT_KEY_UP_ROM</Tag>
 		<English>Buildings that already exist in your capital receive +30% construction speed.</English>
 		<French>Les routes à l'intérieur des frontières romaines permettent aux unités un mouvement 4X au lieu de 2X.</French>
 		<German>Gebäude, die bereits in der Hauptstadt errichtet wurden, erhalten +30% Baugeschwindigkeit.</German>
@@ -109,7 +109,7 @@
 		<Spanish>Las carreteras dentro de las fronteras romanas permiten un movimiento de unidades multiplicado x4 en lugar de x2</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_JAP</Tag>
+		<Tag>TXT_KEY_UP_JAP_TITLE</Tag>
 		<English>The Power of Modernization:</English>
 		<French>Le Pouvoir de l'Honneur :</French>
 		<German>Die Macht der Modernisierung:</German>
@@ -117,7 +117,7 @@
 		<Spanish>El poder del honor:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_JAP2</Tag>
+		<Tag>TXT_KEY_UP_JAP</Tag>
 		<English>After discovering all medieval techs, every tech three other civilizations are willing to trade costs -50% [ICON_RESEARCH]</English>
 		<French>Toutes les unités terrestres ont un bonus de défense des villes</French>
 		<German>Nachdem alle Technologien des Mittelalters entdeckt wurden, kostet jede Technologie -50% [ICON_RESEARCH], die drei andere Zivilisationen zu tauschen bereit sind</German>
@@ -125,7 +125,7 @@
 		<Spanish>Todas las unidades militares terrestres tienen una bonificaci&#243;n al defender ciudades</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ARA</Tag>
+		<Tag>TXT_KEY_UP_ARA_TITLE</Tag>
 		<English>The Power of Faith:</English>
 		<French>Le Pouvoir de la Foi :</French>
 		<German>Die Macht des Glaubens:</German>
@@ -133,7 +133,7 @@
 		<Spanish>El poder de la fe:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ARA2</Tag>
+		<Tag>TXT_KEY_UP_ARA</Tag>
 		<English>State religion spreads with temples to conquered cities</English>
 		<French>La religion d'état se répand dans les petits et grands lieux de culte pour conquérir les villes</French>
 		<German>Ausbreitung der Staatsreligion inklusive Tempeln in eroberten Städten</German>
@@ -141,7 +141,7 @@
 		<Spanish>La religi&#243;n oficial se propaga con los templos y catedrales a las ciudades conquistadas</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_SPA</Tag>
+		<Tag>TXT_KEY_UP_SPA_TITLE</Tag>
 		<English>The Power of Discovery:</English>
 		<French>Le Pouvoir de la Découverte :</French>
 		<German>Die Macht der Entdeckungen:</German>
@@ -149,7 +149,7 @@
 		<Spanish>El poder del descubrimiento:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_SPA2</Tag>
+		<Tag>TXT_KEY_UP_SPA</Tag>
 		<English>Naval units receive +2 movement points</English>
 		<French>Les unités navales reçoivent +2 points de mouvement</French>
 		<German>2 zusätzliche Fortbewegungspunkte für Marineeinheiten</German>
@@ -157,7 +157,7 @@
 		<Spanish>Las unidades navales nuevas reciben +2 puntos de movimiento</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_FRA</Tag>
+		<Tag>TXT_KEY_UP_FRA_TITLE</Tag>
 		<English>The Power of Diplomacy:</English>
 		<French>Le Pouvoir de l'Entente :</French>
 		<German>Die Macht der Diplomatie:</German>
@@ -165,7 +165,7 @@
 		<Spanish>El poder de la entente:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_FRA2</Tag>
+		<Tag>TXT_KEY_UP_FRA</Tag>
 		<English>Diplomatic penalties expire faster, more likely to be voted for in congresses</English>
 		<French>Les autres civilisations ont une attitude plus amicale</French>
 		<German>Diplomatische Mali verfallen schneller; höhere Wahrscheinlichkeit, Stimmen in Kongressen zu erhalten</German>
@@ -173,7 +173,7 @@
 		<Spanish>Las dem&#225;s civilizaciones mantienen una actitud m&#225;s amistosa</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ENG</Tag>
+		<Tag>TXT_KEY_UP_ENG_TITLE</Tag>
 		<English>The Power of Indirect Rule:</English>
 		<French>Le Pouvoir de la Royal Navy :</French>
 		<German>Die Macht der Indirekten Herrschaft:</German>
@@ -181,7 +181,7 @@
 		<Spanish>El poder de la Royal Navy:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_ENG2</Tag>
+		<Tag>TXT_KEY_UP_ENG</Tag>
 		<English>Faraway Cities incur no extra Maintenance</English>
 		<French>Les unités navales ont 2 chances de première attaque supplémentaires</French>
 		<German>Weit entfernte Städte kosten keinen zusätzlichen Unterhalt</German>
@@ -189,7 +189,7 @@
 		<Spanish>Las unidades navales tienen 2 posibilidades adicionales de ataque de iniciativa</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_GER</Tag>
+		<Tag>TXT_KEY_UP_GER_TITLE</Tag>
 		<English>The Power of Technique:</English>
 		<French>Le Pouvoir de la Technique :</French>
 		<German>Die Macht der Technik:</German>
@@ -197,7 +197,7 @@
 		<Spanish>El poder de la t&#233;cnica:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_GER2</Tag>
+		<Tag>TXT_KEY_UP_GER</Tag>
 		<English>Free unit upgrades</English>
 		<French>Les unités gratuites s'améliorent après la découverte de l'Industrialisation</French>
 		<German>Gratis Einheitenaufwertung</German>
@@ -205,7 +205,7 @@
 		<Spanish>Modernizaci&#243;n de unidades gratuita tras el descubrimiento del Industrialismo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_RUS</Tag>
+		<Tag>TXT_KEY_UP_RUS_TITLE</Tag>
 		<English>The Power of General Winter:</English>
 		<French>Le Pouvoir du Général Hiver :</French>
 		<German>Die Macht von "General Winter":</German>
@@ -213,7 +213,7 @@
 		<Spanish>El poder del General Invierno:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_RUS2</Tag>
+		<Tag>TXT_KEY_UP_RUS</Tag>
 		<English>Enemy units in Russia take damage every turn</English>
 		<French>Les unités ennemies en Russie subissent des dommages à chaque tour</French>
 		<German>Schaden in jeder Runde für feindliche Einheiten in Russland</German>
@@ -221,7 +221,7 @@
 		<Spanish>Las unidades enemigas en Rusia sufren da&#241;os cada turno</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MAL</Tag>
+		<Tag>TXT_KEY_UP_MAL_TITLE</Tag>
 		<English>The Power of Wealth:</English>
 		<French>Le Pouvoir de la Richesse :</French>
 		<German>Die Macht des Wohlstands:</German>
@@ -229,7 +229,7 @@
 		<Spanish>El poder de la riqueza:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MAL2</Tag>
+		<Tag>TXT_KEY_UP_MAL</Tag>
 		<English>+1 commerce in every land plot</English>
 		<French>+1 commerce sur toutes les cases de terre</French>
 		<German>+1 Kommerz auf jedem Land-Geländefeld</German>
@@ -237,7 +237,7 @@
 		<Spanish>+1 intercambio en cada casilla de tierra</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_INC</Tag>
+		<Tag>TXT_KEY_UP_INC_TITLE</Tag>
 		<English>The Power of Terraces:</English>
 		<French>Le Pouvoir des Terrasses :</French>
 		<German>Die Macht der Terrassen:</German>
@@ -245,7 +245,7 @@
 		<Spanish>El poder de las terrazas:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_INC2</Tag>
+		<Tag>TXT_KEY_UP_INC</Tag>
 		<English>Mountains produce 2 food and 1 hammer</English>
 		<French>Les montagnes produisent 2 de nourriture et 1 marteau</French>
 		<German>Berge gewähren 2 Nahrung und 1 Hammer</German>
@@ -253,7 +253,7 @@
 		<Spanish>Las monta&#241;as producen 2 alimentos y 1 martillo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MON</Tag>
+		<Tag>TXT_KEY_UP_MON_TITLE</Tag>
 		<English>The Power of Terror:</English>
 		<French>Le Pouvoir de la Horde :</French>
 		<German>Die Macht des Schreckens:</German>
@@ -261,7 +261,7 @@
 		<Spanish>El poder de la horda:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_MON2</Tag>
+		<Tag>TXT_KEY_UP_MON</Tag>
 		<English>Cities threatened by your armies descend into unrest</English>
 		<French>Chaque ville rasée entraîne la reddition des villes ennemies voisines si elles sont approchées</French>
 		<German>Von Ihren Streitkräften bedrohte Städte verfallen in Unruhe</German>
@@ -269,7 +269,7 @@
 		<Spanish>Una ciudad arrasada provoca que las ciudades enemigas cercanas se rindan al aproximarse</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_AZT</Tag>
+		<Tag>TXT_KEY_UP_AZT_TITLE</Tag>
 		<English>The Power of Flower Wars:</English>
 		<French>Le Pouvoir du Sacrifice :</French>
 		<German>Die Macht der Blumenkriege:</German>
@@ -277,7 +277,7 @@
 		<Spanish>El poder del sacrificio:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_AZT2</Tag>
+		<Tag>TXT_KEY_UP_AZT</Tag>
 		<English>Military units can enslave defeated enemy units, can sacrifice slaves to increase city happiness</English>
 		<French>Les unités militaires peuvent asservir les unités ennemies vaincues</French>
 		<German>Versklavung besiegter feindlicher Einheiten durch Militäreinheiten, can Sklaven opfern, um Zufriedenheit in Städten zu erhöhen</German>
@@ -285,7 +285,7 @@
 		<Spanish>Las unidades militares pueden esclavizar a las unidades enemigas derrotadas</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_AME</Tag>
+		<Tag>TXT_KEY_UP_AME_TITLE</Tag>
 		<English>The Power of the American Dream:</English>
 		<French>Le Pouvoir du Rêve Américain :</French>
 		<German>Die Macht des Amerikanischen Traums:</German>
@@ -293,7 +293,7 @@
 		<Spanish>El poder del sue&#241;o americano:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_AME2</Tag>
+		<Tag>TXT_KEY_UP_AME</Tag>
 		<English>Additional happiness from running Republic, Capitalism and Free Market</English>
 		<French>Les populations des autres civilisations migrent vers les villes américaines</French>
 		<German>Zusätzliche Zufriedenheit unter Republik, Kapitalismus und Freiem Markt</German>

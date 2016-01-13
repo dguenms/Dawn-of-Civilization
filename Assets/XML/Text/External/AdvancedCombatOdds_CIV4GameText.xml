@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by XMLSPY 2004 Professional Ed. Release 2, Installed Multi + SMP for 3 users (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text Infos -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_ACO_VS</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] vs. [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] vs. [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] gegen [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] vs. [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1[COLOR_REVERT] vs. [COLOR_NEGATIVE_TEXT]%s2[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_BarbFreeWinsLeft</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Barbarian free wins left:[SPACE][COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Nombre de victoire garantie contre les barbares:[SPACE][COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Übrige sichere Siege gegen Barbaren:[SPACE][COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Vittorie barbariche garantite rimaste:[SPACE][COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Número de victorias garantizadas contra los bárbaros:[SPACE][COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_PressSHIFT</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Press SHIFT for more detail[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Pesez sur  MAJ pour plus de détails[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]&lt;Umschalt&gt; drücken für mehr Einzelheiten[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Tieni premuto SHIFT per maggiori dettagli[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Oprima SHIFT para más detalles[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_SurvivalOdds</Tag>
+		<English>Survival odds:[SPACE]</English>
+		<French>Chances de survie:[SPACE]</French>
+		<German>Überlebenschance:[SPACE]</German>
+		<Italian>Probabilità di sopravvivenza:[SPACE]</Italian>
+		<Spanish>Probabilidad de sobrevivencia:[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_SurvivalGuaranteed</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Survival Guaranteed![COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Survie Garantie![COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Sicheres Überleben![COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Sopravvivenza certa![COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]¡Sobrevivencia garantizada![COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_Victory</Tag>
+		<English>[COLOR_POSITIVE_TEXT]Victory[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]Victoire[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Sieg[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]Vittoria[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]Victoria[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_Defeat</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]Defeat[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]Défaite[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]Niederlage[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]Sconfitta[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]Derrota[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_Withdraw</Tag>
+		<English>[COLOR_POSITIVE_TEXT]Withdraw[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]Se retirer[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Flucht[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]Fuga[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]Repliegue[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_Retreat</Tag>
+		<English>[COLOR_UNIT_TEXT]Retreat[COLOR_REVERT]</English>
+		<French>[COLOR_UNIT_TEXT]Retraite[COLOR_REVERT]</French>
+		<German>[COLOR_UNIT_TEXT]Rückzug[COLOR_REVERT]</German>
+		<Italian>[COLOR_UNIT_TEXT]Ritirata[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_UNIT_TEXT]Retirada[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_AverageHP</Tag>
+		<English>[NEWLINE]Average HP:[SPACE]</English>
+		<French>[NEWLINE]PV Moyen:[SPACE]</French>
+		<German>[NEWLINE]Mittlere TP:[SPACE]</German>
+		<Italian>[NEWLINE]PV medi:[SPACE]</Italian>
+		<Spanish>[NEWLINE]PG promedio:[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_Unharmed</Tag>
+		<English>[NEWLINE]Unharmed:[SPACE]</English>
+		<French>[NEWLINE]Indemne:[SPACE]</French>
+		<German>[NEWLINE]Unversehrt:[SPACE]</German>
+		<Italian>[NEWLINE]Disarmato:[SPACE]</Italian>
+		<Spanish>[NEWLINE]Ileso:[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_UnroundedXP</Tag>
+		<English>[NEWLINE]Unrounded XP:[SPACE]</English>
+		<French>[NEWLINE]EXP Non-arrondit:[SPACE]</French>
+		<German>[NEWLINE]Ungerundete EP:[SPACE]</German>
+		<Italian>[NEWLINE]XP non arrotondati:[SPACE]</Italian>
+		<Spanish>[NEWLINE]XP no redondeados:[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_TotalDefenseModifier</Tag>
+		<English>[NEWLINE]Total defense modifier:[SPACE]</English>
+		<French>[NEWLINE]Modificateur Total de defense:[SPACE]</French>
+		<German>[NEWLINE]Verteidigungsmodifikator absolut:[SPACE]</German>
+		<Italian>[NEWLINE]Modificatore difensivo totale:[SPACE]</Italian>
+		<Spanish>[NEWLINE]Modificador defensivo total:[SPACE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_AttackModifiers</Tag>
+		<English>[NEWLINE][COLOR_POSITIVE_TEXT]Attack modifiers:[COLOR_REVERT]</English>
+		<French>[NEWLINE][COLOR_POSITIVE_TEXT]Modificateurs d'Attaque:[COLOR_REVERT]</French>
+		<German>[NEWLINE][COLOR_POSITIVE_TEXT]Angriffsmodifikatoren:[COLOR_REVERT]</German>
+		<Italian>[NEWLINE][COLOR_POSITIVE_TEXT]Modificatori offensivi:[COLOR_REVERT]</Italian>
+		<Spanish>[NEWLINE][COLOR_POSITIVE_TEXT]Modificadores de ataque:[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_DefenseModifiers</Tag>
+		<English>[NEWLINE][COLOR_NEGATIVE_TEXT]Defense modifiers:[COLOR_REVERT]</English>
+		<French>[NEWLINE][COLOR_NEGATIVE_TEXT]Modificateurs de Défense:[COLOR_REVERT]</French>
+		<German>[NEWLINE][COLOR_NEGATIVE_TEXT]Verteidigungsmodifikatoren:[COLOR_REVERT]</German>
+		<Italian>[NEWLINE][COLOR_NEGATIVE_TEXT]Modificatori difensivi:[COLOR_REVERT]</Italian>
+		<Spanish>[NEWLINE][COLOR_NEGATIVE_TEXT]Modificadores defensivos:[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_GuaranteedNoDefenderHit</Tag>
+		<English>[NEWLINE][COLOR_HIGHLIGHT_TEXT]Guaranteed! Defender cannot score a hit.[COLOR_REVERT]</English>
+		<French>[NEWLINE][COLOR_HIGHLIGHT_TEXT]C'est garantie! L'unité défensive ne peut marquer de coup.[COLOR_REVERT]</French>
+		<German>[NEWLINE][COLOR_HIGHLIGHT_TEXT]Sicher! Der Verteidiger kann keinen Treffer landen.[COLOR_REVERT]</German>
+		<Italian>[NEWLINE][COLOR_HIGHLIGHT_TEXT]Certa! I difensori non possono colpire neppure una volta.[COLOR_REVERT]</Italian>
+		<Spanish>[NEWLINE][COLOR_HIGHLIGHT_TEXT]¡Garantizado! El defensor no puede dar en el blanco.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_HitsAt</Tag>
+		<English>hits at</English>
+		<French>frappe à</French>
+		<German>trifft</German>
+		<Italian>colpisce a</Italian>
+		<Spanish>golpea a</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_HP</Tag>
+		<English>HP</English>
+		<French>PV</French>
+		<German>TP</German>
+		<Italian>PV</Italian>
+		<Spanish>PG</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_INJURED_HP</Tag>
+		<English>%d1/%d2HP</English>
+		<French>%d1/%d2PV</French>
+		<German>%d1/%d2TP</German>
+		<Italian>%d1/%d2PV</Italian>
+		<Spanish>%d1/%d2PG</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_HP_NEUTRAL</Tag>
+		<English>[COLOR_UNIT_TEXT]HP[COLOR_REVERT]</English>
+		<French>[COLOR_UNIT_TEXT]PV[COLOR_REVERT]</French>
+		<German>[COLOR_UNIT_TEXT]TP[COLOR_REVERT]</German>
+		<Italian>[COLOR_UNIT_TEXT]PV[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_UNIT_TEXT]PG[COLOR_REVERT]</Spanish>
+	</TEXT>	
+	<TEXT>
+		<Tag>TXT_ACO_XP</Tag>
+		<English>XP</English>
+		<French>EXP</French>
+		<German>EP</German>
+		<Italian>XP</Italian>
+		<Spanish>XP</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_ACO_MULTIPLY</Tag>
+		<English>&#x0D7;</English>
+		<French>&#x0D7;</French>
+		<German>&#x0D7;</German>
+		<Italian>&#x0D7;</Italian>
+		<Spanish>&#x0D7;</Spanish>
+	</TEXT>
+</Civ4GameText>
