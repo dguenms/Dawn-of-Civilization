@@ -6,6 +6,7 @@ import PyHelpers        # LOQ
 import Popup
 #import cPickle as pickle
 import Consts as con
+import Areas
 import RFCUtils
 import UniquePowers
 from StoredData import sd # edead
@@ -186,7 +187,7 @@ class AIWars:
 		iID, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest
 	
 		iNumMinorCities = 0
-		lAreaCities = utils.getAreaCities(tTL, tBR)
+		lAreaCities = utils.getAreaCities(utils.getPlotList(tTL, tBR))
 		for city in lAreaCities:
 			if city.getOwner() in [iIndependent, iIndependent2, con.iBarbarian, con.iNative]: iNumMinorCities += 1
 			elif city.getOwner() != iPlayer: return False
@@ -197,7 +198,7 @@ class AIWars:
 			
 	def spawnConquerors(self, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan = WarPlanTypes.WARPLAN_TOTAL):
 		lCities = []
-		for city in utils.getAreaCities(tTL, tBR):
+		for city in utils.getAreaCities(utils.getPlotList(tTL, tBR)):
 			if city.getOwner() != iPlayer and not gc.getTeam(city.getOwner()).isVassal(iPlayer):
 				lCities.append(city)
 				
@@ -327,7 +328,7 @@ class AIWars:
 			for j in range(68):
 				iOwner = gc.getMap().plot(i,j).getOwner()
 				if iOwner in lPotentialTargets:
-					lTargetValues[iOwner] += pPlayer.getWarMapValue(i, j)
+					lTargetValues[iOwner] += pPlayer.getWarValue(i, j)
 					
 		# hard to attack with lost contact
 		for iLoopPlayer in lPotentialTargets:

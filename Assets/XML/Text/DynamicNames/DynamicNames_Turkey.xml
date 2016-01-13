@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_OTTOMAN_DESC</Tag>
+		<English>The Turks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_PEOPLES</Tag>
+		<English>Turkish Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_DEFAULT</Tag>
+		<English>Sublime %s2 State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_COMMUNIST</Tag>
+		<English>National Democratic Popular %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_FASCIST</Tag>
+		<English>%s2 Junta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_OTTOMAN</Tag>
+		<English>Ottoman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKEY_ISLAMIC_REPUBLIC</Tag>
+		<English>Islamic %s2 Democracy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_VASSAL</Tag>
+		<English>Eyalet of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_EGYPT</Tag>
+		<English>Khedivate of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_BABYLONIA</Tag>
+		<English>Eyalet of Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_PERSIA</Tag>
+		<English>Eyalet of Sharazor</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_GREECE</Tag>
+		<English>Eyalet of Rumelia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_PHOENICIA</Tag>
+		<English>Eyalet of Syria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_ETHIOPIA</Tag>
+		<English>Eyalet of Habes</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_BYZANTIUM</Tag>
+		<English>Eyalet of R&#251;m</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_ARABIA</Tag>
+		<English>Sharifate of Mekke</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKISH_RUSSIA</Tag>
+		<English>Eyalet of Yedisan</English>
+	</TEXT>
+</Civ4GameText>

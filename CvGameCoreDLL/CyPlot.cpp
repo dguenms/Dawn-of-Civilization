@@ -1058,25 +1058,54 @@ int CyPlot::getRegionID()
 	return m_pPlot ? m_pPlot->getRegionID() : -1;
 }
 
+void CyPlot::setRegionID(int iNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setRegionID(iNewValue);
+}
+
 bool CyPlot::isCore(int ePlayer)
 {
 	return m_pPlot ? m_pPlot->isCore((PlayerTypes)ePlayer) : -1;
 }
 
-void CyPlot::setCore(int ePlayer, bool bReborn, bool bNewValue)
+void CyPlot::setCore(int ePlayer, bool bNewValue)
 {
 	if (m_pPlot)
-		m_pPlot->setCore((PlayerTypes)ePlayer, bReborn, bNewValue);
+		m_pPlot->setCore((PlayerTypes)ePlayer, bNewValue);
 }
 
-int CyPlot::getSettlerMapValue(int ePlayer)
+int CyPlot::getSettlerValue(int ePlayer)
 {
-	return m_pPlot ? m_pPlot->getSettlerMapValue((PlayerTypes)ePlayer) : -1;
+	return m_pPlot ? m_pPlot->getSettlerValue((PlayerTypes)ePlayer) : -1;
 }
 
-int CyPlot::getWarMapValue(int ePlayer)
+void CyPlot::setSettlerValue(int ePlayer, int iNewValue)
 {
-	return m_pPlot ? m_pPlot->getWarMapValue((PlayerTypes)ePlayer) : -1;
+	if (m_pPlot)
+		m_pPlot->setSettlerValue((PlayerTypes)ePlayer, iNewValue);
+}
+
+int CyPlot::getWarValue(int ePlayer)
+{
+	return m_pPlot ? m_pPlot->getWarValue((PlayerTypes)ePlayer) : -1;
+}
+
+void CyPlot::setWarValue(int ePlayer, int iNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setWarValue((PlayerTypes)ePlayer, iNewValue);
+}
+
+int CyPlot::getSpreadFactor(int eReligion)
+{
+	return m_pPlot ? m_pPlot->getSpreadFactor((ReligionTypes)eReligion) : -1;
+}
+
+void CyPlot::setSpreadFactor(int eReligion, int iNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setSpreadFactor((ReligionTypes)eReligion, iNewValue);
 }
 
 bool CyPlot::isWithinGreatWall()

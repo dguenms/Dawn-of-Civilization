@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_DESC</Tag>
+		<English>The Inca</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_PEOPLES</Tag>
+		<English>Andean Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_COMMUNIST</Tag>
+		<English>%s2 Revolutionary Movement</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_FASCIST</Tag>
+		<English>Government of the %s2 Armed Forces</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_COMMUNIST</Tag>
+		<English>%s2 Revolutionary Movement</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_FASCIST</Tag>
+		<English>Government of the %s2 Armed Forces</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_SHORT_DESC</Tag>
+		<English>Peru</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERU_ADJECTIVE</Tag>
+		<English>Peruvian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_FOUR_REGIONS</Tag>
+		<English>Four %s2 Regions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_BOLIVIA</Tag>
+		<English>Bolivia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_INCA_BOLIVIAN</Tag>
+		<English>Bolivian</English>
+	</TEXT>
+</Civ4GameText>
