@@ -5650,7 +5650,7 @@ bool CvUnit::spread(ReligionTypes eReligion)
 		{
 			//iSpreadProb /= 2;
 			// Leoreth: use civ specific spread probabilities instead, should prevent unrealistic spread through missionaries
-			iSpreadProb *= civSpreadFactor[(int)pCity->getTeam()][(int)eReligion];
+			iSpreadProb *= GET_PLAYER(pCity->getOwner()).getSpreadFactor(eReligion);
 			iSpreadProb /= 400;
 		}
 
@@ -13738,7 +13738,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_MAGHREB)
 	{
-		if (GC.getGameINLINE().getGameTurnYear() > startingTurnYear[ARABIA])
+		if (GC.getGameINLINE().getGameTurnYear() > GET_PLAYER(ARABIA).getBirthYear())
 		{
 			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ARABIA).getCivilizationType()).getUnitArtStyleType();
 		}
@@ -13784,7 +13784,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_EGYPT)
 	{
-		if (GC.getGameINLINE().getGameTurnYear() > startingTurnYear[ARABIA])
+		if (GC.getGameINLINE().getGameTurnYear() > GET_PLAYER(ARABIA).getBirthYear())
 		{
 			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ARABIA).getCivilizationType()).getUnitArtStyleType();
 		}

@@ -8,6 +8,8 @@ import Victory as vic
 from StoredData import sd
 import RFCUtils
 import CityNameManager as cnm
+import Areas
+
 utils = RFCUtils.RFCUtils()
 
 ### Constants ###
@@ -197,7 +199,7 @@ dSpecificVassalTitles = {
 	},
 	iTurkey : {
 		iEgypt : "TXT_KEY_CIV_TURKISH_EGYPT",
-		iBabylonia : "TXT_KEY_CIV_TURKSIH_BABYLONIA",
+		iBabylonia : "TXT_KEY_CIV_TURKISH_BABYLONIA",
 		iPersia : "TXT_KEY_CIV_TURKISH_PERSIA",
 		iGreece : "TXT_KEY_CIV_TURKISH_GREECE",
 		iPhoenicia : "TXT_KEY_CIV_TURKISH_PHOENICIA",
@@ -219,7 +221,6 @@ dSpecificVassalTitles = {
 		iAztecs : "TXT_KEY_CIV_AMERICAN_MEXICO",
 		iMaya : "TXT_KEY_CIV_AMERICAN_MAYA",
 		iKorea : "TXT_KEY_CIV_AMERICAN_KOREA",
-		iAztecs : "TXT_KEY_CIV_AMERICAN_MEXICO",
 	},
 	iBrazil : {
 		iArgentina : "TXT_KEY_CIV_BRAZILIAN_ARGENTINA",
@@ -329,7 +330,7 @@ dForeignNames = {
 		iPortugal : "TXT_KEY_CIV_ROMAN_NAME_PORTUGAL",
 		iMongolia : "TXT_KEY_CIV_ROMAN_NAME_MONGOLIA",
 		iTurkey : "TXT_KEY_CIV_ROMAN_NAME_TURKEY",
-		iThailand : "TXT_KEY_CIV_ROMAN_NAME_THAILAND",
+		iThailand : "TXT_KEY_CIV_THAILAND_SIAM",
 	},
 	iArabia : {
 		iEgypt : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
@@ -750,10 +751,10 @@ def isCapital(iPlayer, lNames):
 	return False
 	
 def countAreaCities(tTL, tBR, tExceptions=()):
-	return len(utils.getAreaCities(tTL, tBR, tExceptions))
+	return len(utils.getAreaCities(utils.getPlotList(tTL, tBR, tExceptions)))
 	
 def countPlayerAreaCities(iPlayer, tTL, tBR, tExceptions=()):
-	return len(utils.getAreaCitiesCiv(iPlayer, tTL, tBR, tExceptions))
+	return len(utils.getAreaCitiesCiv(iPlayer, utils.getPlotList(tTL, tBR, tExceptions)))
 	
 def isAreaControlled(iPlayer, tTL, tBR, iMinCities=1, tExceptions=()):
 	iTotalCities = countAreaCities(tTL, tBR, tExceptions)
@@ -1073,7 +1074,7 @@ def specificAdjective(iPlayer):
 	elif iPlayer == iChina:
 		if bMonarchy:
 			if bResurrected:
-				return "TXT_KEY_CIV_SONG"
+				return "TXT_KEY_CIV_CHINA_SONG"
 		
 			if iEra == iMedieval:
 				if tPlayer.isHasTech(iPaper) and tPlayer.isHasTech(iGunpowder):
@@ -1292,9 +1293,9 @@ def vassalTitle(iPlayer, iMaster):
 	
 def communistTitle(iPlayer):
 	if iPlayer in lSocialistRepublicOf: return "TXT_KEY_SOCIALIST_REPUBLIC_OF"
-	if iPlayer in lSocialistRepublicAdj: return "TXT_KEY_SOCIALIST_REPUBLIC_ADJ"
+	if iPlayer in lSocialistRepublicAdj: return "TXT_KEY_SOCIALIST_REPUBLIC_ADJECTIVE"
 	if iPlayer in lPeoplesRepublicOf: return "TXT_KEY_PEOPLES_REPUBLIC_OF"
-	if iPlayer in lPeoplesRepublicAdj: return "TXT_KEY_PEOPLES_REPUBLIC_ADJ"
+	if iPlayer in lPeoplesRepublicAdj: return "TXT_KEY_PEOPLES_REPUBLIC_ADJECTIVE"
 
 	return key(iPlayer, "COMMUNIST")
 	
@@ -1478,7 +1479,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_CIV_COLOMBIA_EMPIRE"
 			
 	elif iPlayer == iByzantium:
-		if capital.getRegionID() != rAnatolia and tCapitalCoords != tCapitals[0][iPlayer]:
+		if capital.getRegionID() != rAnatolia and tCapitalCoords != Areas.getCapital(iPlayer):
 			return "TXT_KEY_CIV_BYZANTIUM_DESPOTATE"
 		
 		if not isCapital(iPlayer, ["Konstantinoupolis"]):
@@ -1525,7 +1526,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if bEmpire:
 				return "TXT_KEY_CALIPHATE_OF"
 				
-			return "TXT_KEY_CIV_MOORS_EMIRATE_OF"
+			return "TXT_KEY_CIV_ARABIAN_VASSAL"
 			
 		if bEmpire and iEra <= iRenaissance:
 			if iReligion == iIslam and bTheocracy:
@@ -1694,7 +1695,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if tCapitalCoords != tCapitals[0][iArgentina]:
+		if tCapitalCoords != Areas.getCapital(iPlayer):
 			return "TXT_KEY_CIV_ARGENTINA_CONFEDERATION"
 			
 	elif iPlayer == iBrazil:
