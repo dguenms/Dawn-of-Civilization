@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	MapFinder
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__ENABLED_TEXT</Tag>
+		<English>Enabled</English>
+		<French>Activé</French>
+		<German>Aktivieren</German>
+		<Italian>Attivato</Italian>
+		<Spanish>Enabled</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__ENABLED_HOVER</Tag>
+		<English>When checked, the shortcut keys for regenerating the map (ALT + G) and starting/stopping MapFinder (ALT + CTRL + G) are active.</English>
+		<French>When checked, the shortcut keys for regenerating the map (ALT + G) and starting/stopping MapFinder (ALT + CTRL + G) are active.</French>
+		<German>Aktiviert die Tastenkombinationen, um eine Karte neu erstellen zu lassen ([ALT + G]) und den MapFinder zu starten/stoppen ([STRG + ALT + G])</German>
+		<Italian>Quando è selezionato, sono attive le scorciatoie da tastiera per rigenerare la mappa (ALT + G) e per lanciare/fermare MapFinder (ALT + CTRL + G).</Italian>
+		<Spanish>When checked, the shortcut keys for regenerating the map (ALT + G) and starting/stopping MapFinder (ALT + CTRL + G) are active.</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__PATH_TEXT</Tag>
+		<English>Path</English>
+		<French>Path</French>
+		<German>Pfad</German>
+		<Italian>Percorso</Italian>
+		<Spanish>Path</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__PATH_HOVER</Tag>
+		<English>Enter the full path to the MapFinder directory. It must contain the "Rules" folder.</English>
+		<French>Enter the full path to the MapFinder directory. It must contain the "Rules" folder.</French>
+		<German>Eingabe des vollständigen Pfades zum MapFinder-Verzeichnis, in dem sich das Verzeichnis "Rules" befinden muss</German>
+		<Italian>Inserisci il percorso completo della cartella di MapFinder; deve contenere le cartel "Rules".</Italian>
+		<Spanish>Enter the full path to the MapFinder directory. It must contain the "Rules" folder.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__SAVEPATH_TEXT</Tag>
+		<English>Save Path</English>
+		<French>Save Path</French>
+		<German>Speicherort</German>
+		<Italian>Save Percorso</Italian>
+		<Spanish>Save Path</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__SAVEPATH_HOVER</Tag>
+		<English>Enter the full path where maps matching your rules should be saved.</English>
+		<French>Enter the full path where maps matching your rules should be saved.</French>
+		<German>Eingabe des vollständigen Pfades zu dem Verzeichnis, in dem Karten, die den definierten Regeln entsprechen, gespeichert werden sollen</German>
+		<Italian>Enter the full path where maps matching your rules should be saved.</Italian>
+		<Spanish>Enter the full path where maps matching your rules should be saved.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__RULEFILE_TEXT</Tag>
+		<English>Rule File</English>
+		<French>Rule File</French>
+		<German>Regeldatei</German>
+		<Italian>File delle regole</Italian>
+		<Spanish>Rule File</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__RULEFILE_HOVER</Tag>
+		<English>Enter the name of the rule file to use for checking maps for save-worthiness, e.g. "Precious Metals.rul".</English>
+		<French>Enter the name of the rule file to use for checking maps for save-worthiness, e.g. "Precious Metals.rul".</French>
+		<German>Eingabe des Namens der Regeldatei, die verwendet werden soll, um Karten auf ihre Speicherwürdigkeit zu prüfen (beispielsweise "Precious Metals.rul")</German>
+		<Italian>Inserisci il nome (completo di estensione) del file delle regole da usare per controllare le mappe (ad es. "Precious Metals.rul").</Italian>
+		<Spanish>Enter the name of the rule file to use for checking maps for save-worthiness, e.g. "Precious Metals.rul".</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__REGENERATIONDELAY_TEXT</Tag>
+		<English>Regenerate Delay</English>
+		<French>Regenerate Delay</French>
+		<German>Verzögerung vor Neuerstellung</German>
+		<Italian>Ritardo di rigenerazione</Italian>
+		<Spanish>Regenerate Delay</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__REGENERATIONDELAY_HOVER</Tag>
+		<English>Enter the number of seconds to delay before the map is regenerated each time through the MapFinder cycle (default value is 0.0).</English>
+		<French>Enter the number of seconds to delay before the map is regenerated each time through the MapFinder cycle (default value is 0.0).</French>
+		<German>Eingabe der Anzahl von Sekunden, die gewartet werden soll, bevor eine Karte während eines MapFinder-Durchlaufs neu erstellt wird (der Standardwert ist 0.0)</German>
+		<Italian>Inserisci il numero di secondi di attesa prima che la mappa venga rigenerata dal ciclo di MapFinder (il valore di default è 0.0).</Italian>
+		<Spanish>Enter the number of seconds to delay before the map is regenerated each time through the MapFinder cycle (default value is 0.0).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__SKIPDELAY_TEXT</Tag>
+		<English>Skip Delay</English>
+		<French>Skip Delay</French>
+		<German>Verzögerung vor Überspringen</German>
+		<Italian>Pausa fra i cicli</Italian>
+		<Spanish>Skip Delay</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__SKIPDELAY_HOVER</Tag>
+		<English>Enter the number of seconds to pause before starting the next MapFinder cycle when a map fails to pass the rules and is skipped (default value is 0.25).</English>
+		<French>Enter the number of seconds to pause before starting the next MapFinder cycle when a map fails to pass the rules and is skipped (default value is 0.25).</French>
+		<German>Eingabe der Anzahl von Sekunden, die gewartet werden soll, bevor der nächste MapFinder-Durchlauf gestartet wird, wenn eine Karte die Regeln nicht erfüllt und übersprungen wird (der Standardwert ist 0.25)</German>
+		<Italian>Inserisci il numero di secondi di attesa prima di dare inizio al successivo ciclo di MapFinder quando una mappa non soddisfa le regole (il valore di default è 0.25).</Italian>
+		<Spanish>Enter the number of seconds to pause before starting the next MapFinder cycle when a map fails to pass the rules and is skipped (default value is 0.25).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__SAVEDELAY_TEXT</Tag>
+		<English>Save Delay</English>
+		<French>Save Delay</French>
+		<German>Verzögerung vor Speicherung</German>
+		<Italian>Ritardo di salvataggio</Italian>
+		<Spanish>Save Delay</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__SAVEDELAY_HOVER</Tag>
+		<English>Enter the number of seconds to pause before taking the screenshot and saving the map when it passes the rules. Note that there may be an enforced minimum to allow time for the fog of war to recover previously-revealed tiles before taking the screenshot (default value is 2.0).</English>
+		<French>Enter the number of seconds to pause before taking the screenshot and saving the map when it passes the rules. Note that there may be an enforced minimum to allow time for the fog of war to recover previously-revealed tiles before taking the screenshot (default value is 2.0).</French>
+		<German>Eingabe der Anzahl von Sekunden, die gewartet werden soll, bevor ein Screenshot erstellt und eine Karte gespeichert wird, wenn sie die Regeln erfüllt. Es sollte beachtet werden, dass möglicherweise ein erzwungener Minimalwert existiert, um zuvor enthüllte Geländefelder wieder mit dem Nebel des Krieges zu bedecken, bevor ein Screenshot erstellt wird (der Standardwert ist 2.0)</German>
+		<Italian>Inserisci il numero di secondi di attesa prima di catturare la schermata e salvare la mappa quando questa soddisfa le regole. Si noti che può essere necessario del tempo perchè la fog-of-war ritorni allo stato originario prima di catturare la schermata (il valore di default è 2.0).</Italian>
+		<Spanish>Enter the number of seconds to pause before taking the screenshot and saving the map when it passes the rules. Note that there may be an enforced minimum to allow time for the fog of war to recover previously-revealed tiles before taking the screenshot (default value is 2.0).</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__REGENERATIONLIMIT_TEXT</Tag>
+		<English>Regenerate Limit</English>
+		<French>Regenerate Limit</French>
+		<German>Obergrenze für Neuerstellungen</German>
+		<Italian>Limite di rigenerazione</Italian>
+		<Spanish>Regenerate Limit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__REGENERATIONLIMIT_HOVER</Tag>
+		<English>Enter the maximum number of times MapFinder will regenerate the map before stopping automatically (default value is 1000).</English>
+		<French>Enter the maximum number of times MapFinder will regenerate the map before stopping automatically (default value is 1000).</French>
+		<German>Eingabe der maximalen Anzahl von Neuerstellungen einer Karte, bevor MapFinder automatisch stoppt (der Standardwert ist 1000)</German>
+		<Italian>Inserire il massimo numero di volte che MapFinder deve rigenerare la mappa prima di fermarsi automaticamente (il valore di default è 1000).</Italian>
+		<Spanish>Enter the maximum number of times MapFinder will regenerate the map before stopping automatically (default value is 1000).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__SAVELIMIT_TEXT</Tag>
+		<English>Save Limit</English>
+		<French>Save Limit</French>
+		<German>Obergrenze für Speicherungen</German>
+		<Italian>Limite di salvataggio</Italian>
+		<Spanish>Save Limit</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAPFINDER__SAVELIMIT_HOVER</Tag>
+		<English>Enter the maximum number of times MapFinder will save the map before stopping automatically (default value is 1000).</English>
+		<French>Enter the maximum number of times MapFinder will save the map before stopping automatically (default value is 1000).</French>
+		<German>Eingabe der maximalen Anzahl von Speicherungen einer Karte, bevor MapFinder automatisch stoppt (der Standardwert ist 1000)</German>
+		<Italian>Inserire il massimo numero di volte che MapFinder deve salvare la mappa prima di fermarsi automaticamente (il valore di default è 1000)</Italian>
+		<Spanish>Enter the maximum number of times MapFinder will save the map before stopping automatically (default value is 1000).</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Sid Meier's Civilization 4 -->
+<!-- -->
+<!-- Game Text - Unit Upgrades for Civilopedia -->
+
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_SEVOPEDIA_TITLE</Tag>
+		<English>SEVOPEDIA</English>
+		<French>SEVOPEDIA</French>
+		<German>SEVOPEDIA</German>
+		<Italian>SEVOPEDIA</Italian>
+		<Spanish>SEVOPEDIA</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_SCREEN_INDEX</Tag>
+		<English>Index</English>
+		<French>Index</French>
+		<German>Index</German>
+		<Italian>[SPACE][SPACE][SPACE][SPACE][SPACE]Indice</Italian>
+		<Spanish>Indice</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_SCREEN_CONTENTS</Tag>
+		<English>Contents</English>
+		<French>Matières</French>
+		<German>Inhalt</German>
+		<Italian>Contenuto</Italian>
+		<Spanish>Contenido</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIT_UPGRADES</Tag>
+		<English>Unit Upgrades</English>
+		<French>Améliorations des Unités</French>
+		<German>Modernisierungen</German>
+		<Italian>Avanzamenti</Italian>
+		<Spanish>Unit Upgrades</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_PROMOTION_TREE</Tag>
+		<English>Promotion Tree</English>
+		<French>Arborescence des Promotions</French>
+		<German>Beförderungsbaum</German>
+		<Italian>Albero Promoz.</Italian>
+		<Spanish>Promotion Tree</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_NATIONAL_WONDERS</Tag>
+		<English>National Wonders</English>
+		<French>Merveilles Nationales</French>
+		<German>Nationalwunder</German>
+		<Italian>Merav. Naz.</Italian>
+		<Spanish>National Wonders</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_GREAT_WONDERS</Tag>
+		<English>Great Wonders</English>
+		<French>Merveilles Mondiales</French>
+		<German>Weltwunder</German>
+		<Italian>Grandi Merav.</Italian>
+		<Spanish>Great Wonders</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT_NEW</Tag>
+		<English>BTS Concepts</English>
+		<French>Conceptes BTS</French>
+		<German>Beyond the Sword-Konzepte</German>
+		<Italian>Concetti di BTS</Italian>
+		<Spanish>BTS Concepts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIQUE_BUILDINGS</Tag>
+		<English>Unique Buildings</English>
+		<French>Bâtiments Uniques</French>
+		<German>Einzigartige Gebäude</German>
+		<Italian>Edifici Unici</Italian>
+		<Spanish>Unique Buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_FAV_CIVIC_AND_RELIGION</Tag>
+		<English>Favorite Civic and Religion</English>
+		<French>Doctrine et Religion Préférée</French>
+		<German>Bevorzugte Staatsform und Religion</German>
+		<Italian>Forme di governo e Religioni preferite</Italian>
+		<Spanish>Principio y religi&#243;n favoritos</Spanish>
+	</TEXT>
+</Civ4GameText>

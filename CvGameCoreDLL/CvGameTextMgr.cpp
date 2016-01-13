@@ -247,7 +247,7 @@ void CvGameTextMgr::setDateStr(CvWString& szString, int iGameTurn, bool bSave, C
 //Rhye - start
 void CvGameTextMgr::setDateStrPlayer(CvWString& szString, int iGameTurn, bool bSave, CalendarTypes eCalendar, int iStartYear, GameSpeedTypes eSpeed, PlayerTypes ePlayer)
 {
-	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)CALENDAR) || iGameTurn < getTurnForYear(startingTurnYear[ePlayer]))
+	if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)CALENDAR) || iGameTurn < GET_PLAYER(ePlayer).getBirthTurn())
 		setDateStr(szString, iGameTurn, bSave, eCalendar, iStartYear, eSpeed);
 	else if (GET_PLAYER(ePlayer).getCurrentEra() >= 3)
 		szString = gDLL->getText("TXT_KEY_AGE_RENAISSANCE");
@@ -4503,7 +4503,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	        }
 	        else
 	        {
-	            int iSettlerValue = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getSettlersMaps(67-(pPlot->getY()), (pPlot->getX()));
+				int iSettlerValue = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getSettlerValue(pPlot->getX(), pPlot->getY());
 	            
 				if (iSettlerValue >= 90)
                 {
@@ -4568,11 +4568,11 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}*/
 
 		//Leoreth: display region, only bugfix purposes
-		/*if (!pPlot->isWater())
+		if (!pPlot->isWater() && gDLL->getChtLvl() > 0)
 		{
 			szString.append(pPlot->getRegionName());
 			szString.append(NEWLINE);
-		}*/
+		}
 
 		// Leoreth: display plot index, only bugfix purposes
 		/*szTempBuffer.Format(L"Index: %d", GC.getMap().plotNum(pPlot->getX(), pPlot->getY()));
@@ -6091,44 +6091,22 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		if (bDawnOfMan)
 		{
 			swprintf(szBuffer, SETCOLR L"%s: " ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szText.GetCString());
-				}
+		}
 		else
 		{
 			swprintf(szBuffer, NEWLINE SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_ALT_HIGHLIGHT_TEXT"), szText.GetCString());
-			}
+		}
 		szInfoText.append(szBuffer);
 
-		if (getScenario() == SCENARIO_3000BC)
-		{
-			szText = startingYear[eCivilization];
-			if (startingEra[eCivilization])
-				szText += gDLL->getText("TXT_KEY_AD");
-			else
-				szText += gDLL->getText("TXT_KEY_BC");
-		}
-		else if (getScenario() == SCENARIO_600AD)
-		{
-			szText = startingYear600AD[eCivilization];
-			if (startingEra600AD[eCivilization])
-				szText += gDLL->getText("TXT_KEY_AD");
-			else
-				szText += gDLL->getText("TXT_KEY_BC");
-		}
-		else
-		{
-			szText = startingYear1700AD[eCivilization];
-			if (startingEra1700AD[eCivilization])
-				szText += gDLL->getText("TXT_KEY_AD");
-			else
-				szText += gDLL->getText("TXT_KEY_BC");
-		}
+		int iStartingYear = std::max(GC.getCivilizationInfo(eCivilization).getStartingYear(), getScenarioStartYear());
+		szText = gDLL->getText(iStartingYear >= 0 ? "TXT_KEY_YEAR_AD" : "TXT_KEY_YEAR_BC", std::abs(iStartingYear));
 
 		szText += NEWLINE;
 		if (bDawnOfMan)
-			{
+		{
 			swprintf(szBuffer, L"%s", szText.GetCString());
-				szInfoText.append(szBuffer);
-			}
+			szInfoText.append(szBuffer);
+		}
 		else
 		{
 			swprintf(szBuffer, L"%s  %c%s", NEWLINE, gDLL->getSymbolID(BULLET_CHAR), szText.GetCString());
@@ -6137,19 +6115,9 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 
 		if (bDawnOfMan)
 		{
-			szText = gDLL->getText("TXT_KEY_LOADING_TIME") + " ";
-			if (getScenario() == SCENARIO_3000BC) //late start condition
-				szText = szText + loadingTime[eCivilization];
-			else if (getScenario() == SCENARIO_600AD)
-				szText = szText + loadingTime600AD[eCivilization];
-			else
-				szText = szText + loadingTime1700AD[eCivilization];
-			szText += " " + gDLL->getText("TXT_KEY_MINUTES");
-			szText += NEWLINE;
-			swprintf(szBuffer, L"%s", szText.GetCString());
+			swprintf(szBuffer, L"%s", gDLL->getText("TXT_KEY_LOADING_TIME_MINUTES", GC.getCivilizationInfo(eCivilization).getLoadingTime(getScenario())).GetCString());
 			szInfoText.append(szBuffer);
 		}
-
 
 		//Rhye - end
 
@@ -6296,25 +6264,11 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 		szInfoText.append(szTempString);
 
-		/*szText = gDLL->getText(uniquePower[eCivilization][0]) + NEWLINE + gDLL->getText(uniquePower[eCivilization][1]);
-		swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());*/
-
-		/*if (bDawnOfMan)
-		{*/
-			szText = gDLL->getText(uniquePower[eCivilization][0]);
-			swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
-		/*}
-		else
-		{
-			szText = gDLL->getSymbolID(BULLET_CHAR) + gDLL->getText(uniquePower[eCivilization][0]);
-			swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
-		}*/
+		swprintf(szTempString, L"%s" NEWLINE, gDLL->getText("TXT_KEY_UP_" + GC.getCivilizationInfo(eCivilization).getIdentifier() + "_TITLE").GetCString());
 		szInfoText.append(szTempString);
 
-		szText = gDLL->getText(uniquePower[eCivilization][1]);
-		swprintf(szTempString, L"%s" NEWLINE, szText.GetCString());
+		swprintf(szTempString, L"%s" NEWLINE, gDLL->getText("TXT_KEY_UP_" + GC.getCivilizationInfo(eCivilization).getIdentifier()).GetCString());
 		szInfoText.append(szTempString);
-
 
 		// Historical Victory goals
 		if (bDawnOfMan)
@@ -6329,16 +6283,15 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 		szInfoText.append(szTempString);
 
-		if (bDawnOfMan)
-			szText = L"  ";
-		else
-			szText = L"";
+		std::string szIdentifier = GC.getCivilizationInfo(eCivilization).getIdentifier();
+
+		szText = bDawnOfMan ? L"  " : L"";
 		szText += gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText(uniqueGoals[eCivilization][0]);
+		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "1");
 		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText(uniqueGoals[eCivilization][1]);
+		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "2");
 		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_ICON_BULLET");
-		szText += gDLL->getText(uniqueGoals[eCivilization][2]);
+		szText += gDLL->getText("TXT_KEY_UHV_" + szIdentifier + "3");
 		szText += NEWLINE L"  ";
 
 		if (bDawnOfMan)
@@ -6364,31 +6317,18 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 		szInfoText.append(szTempString);
 
-		if (bDawnOfMan)
-			szText = L"  ";
-		else
-			szText = L"";
-		szText += gDLL->getText("TXT_KEY_MM_TRADE");
-		szText += gDLL->getText(rating[eCivilization][0], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_PRODUCTION");
-		szText += gDLL->getText(rating[eCivilization][1], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_CULTURE");
-		szText += gDLL->getText(rating[eCivilization][2], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_GROWTH");
-		szText += gDLL->getText(rating[eCivilization][3], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
-		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_STARTING_SITUATION");
-		szText += gDLL->getText(rating[eCivilization][4], gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR), gDLL->getSymbolID(STAR_CHAR));
+		szText = bDawnOfMan ? L"  " : L"";
 
+		szText += gDLL->getText("TXT_KEY_MM_TRADE") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_TRADE));
+		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_PRODUCTION") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_PRODUCTION));
+		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_CULTURE") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_CULTURE));
+		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_GROWTH") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_GROWTH));
+		szText += NEWLINE L"  " + gDLL->getText("TXT_KEY_MM_STARTING_SITUATION") + createStars(GC.getCivilizationInfo(eCivilization).getRating(RATING_START));
 
-		if (bDawnOfMan)
-		{
-			swprintf(szTempString, L"%s", szText.GetCString());
-		}
-		else
-		{
-			swprintf(szTempString, L"%s  %s", NEWLINE, szText.GetCString());
-		}
-			szInfoText.append(szTempString);
+		if (bDawnOfMan) swprintf(szTempString, L"%s", szText.GetCString());
+		else swprintf(szTempString, L"%s  %s", NEWLINE, szText.GetCString());
+		
+		szInfoText.append(szTempString);
 	}
 	else
 	{
@@ -6399,6 +6339,17 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		//Rhye - end
 
 //	return szInfoText;
+}
+
+// Leoreth
+CvWString CvGameTextMgr::createStars(int iNumStars)
+{
+	CvWString sStars = "";
+	for (int i = 0; i < iNumStars; i++)
+	{
+		sStars += gDLL->getText("TXT_KEY_RATING_STAR");
+	}
+	return sStars;
 }
 
 
@@ -13532,6 +13483,12 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 
 			szBuffer.append(CvWString::format(L"%c", GC.getBonusInfo((BonusTypes)kCorporation.getPrereqBonus(i)).getChar()));
 		}
+	}
+
+	// Leoreth: display sugar consumption in the tooltip
+	if (GC.getGame().getActivePlayer() == BRAZIL && eCorporation == (CorporationTypes)6)
+	{
+		szBuffer.append(CvWString::format(L"%s", GC.getBonusInfo(BONUS_SUGAR).getChar()));
 	}
 
 	if (kCorporation.getBonusProduced() != NO_BONUS)

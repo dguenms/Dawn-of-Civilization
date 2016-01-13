@@ -85,5 +85,5 @@ void CyGameCoreUtilsPythonInterface()
 	python::def("getTurnMonthForGame", cyGetTurnMonthForGame, "int (int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
 	// edead: end
 
-	python::def("getSettlerMapValue", cyGetSettlerMapValue, "int (int iPlayer, int iReborn, int x, int y)");
+	python::def("getSettlerValue", cyGetSettlerValue, "int (int iPlayer, int x, int y)");
 }

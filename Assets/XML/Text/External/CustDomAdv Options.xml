@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Customizable Domestic Advisor
+	Options Game Text
+
+	Copyright (c) 2009 The BUG Mod.
+-->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__ENABLED_TEXT</Tag>
+		<English>Customizable</English>
+		<French>Personnalisable</French>
+		<German>CDA aktivieren</German>
+		<Italian>Personalizzabile</Italian>
+		<Spanish>Customizable</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__ENABLED_HOVER</Tag>
+		<English>When checked, uses the Customizable Domestic Advisor (requires restart).</English>
+		<French>En activant, utilise le Customizable Domestic Advisor (requièrt un redémarrage).</French>
+		<German>Aktiviert den anpassbaren Inlandsberater (verwendet Cammagnos "Customizable Domestic Advisor Pages"-Mod; erfordert Neustart)</German>
+		<Italian>Quando è selezionato, utilizza il Consigliere Interno personalizzabile del Customizable Domestic Advisor Mod (è richiesto un riavvio perchè il cambio abbia effetto).</Italian>
+		<Spanish>When checked, uses the Customizable Domestic Advisor (requires restart).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__SPACETOP_TEXT</Tag>
+		<English>Space Above</English>
+		<French>Space Above</French>
+		<German>Oberer Abstand</German>
+		<Italian>Spazio superiore</Italian>
+		<Spanish>Space Above</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__SPACETOP_LIST</Tag>
+		<English>None|Small|Medium|Large</English>
+		<French>None|Small|Medium|Large</French>
+		<German>Keiner|Schmal|Mittel|Groß</German>
+		<Italian>Nessuno|Piccolo|Medio|Ampio</Italian>
+		<Spanish>None|Small|Medium|Large</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__SPACETOP_HOVER</Tag>
+		<English>Select the amount of space to leave above the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No space at all.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Small[COLOR_REVERT] - Enough space to show the turn indicator and treasury.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Medium[COLOR_REVERT] - Enough space to show the advisor buttons.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large[COLOR_REVERT] - Enough space to show all the culture sliders.</English>
+		<French>Select the amount of space to leave above the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No space at all.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Small[COLOR_REVERT] - Enough space to show the turn indicator and treasury.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Medium[COLOR_REVERT] - Enough space to show the advisor buttons.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large[COLOR_REVERT] - Enough space to show all the culture sliders.</French>
+		<German>Bestimmt den Abstand, den der anpassbare Inlandsberater zum oberen Bildschirmrand einhalten soll:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Keiner[COLOR_REVERT] - Kein Abstand[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Schmal[COLOR_REVERT] - Genug Platz, um die aktuelle Runde und die Goldmenge zu sehen[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Mittel[COLOR_REVERT] - Genug Platz, um die Schaltflächen für die Berater zu sehen[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Groß[COLOR_REVERT] - Genug Platz, um die Einstellungen für die Investitionsanteile zu sehen</German>
+		<Italian>Seleziona la quantità di spazio da lasciare al di sopra della schermata del Consigliere Interno:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Nessuno[COLOR_REVERT] - non viene lasciato alcuno spazio;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Piccolo[COLOR_REVERT] - viene lasciato spazio a sufficienza per mostrare l'orologio ed il tesoro;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Medio[COLOR_REVERT] - viene lasciato spazio a sufficienza per mostrare i pulsanti dei consiglieri;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Ampio[COLOR_REVERT] - viene lasciato spazio a sufficienza per mostrare i regolatori percentuali.</Italian>
+		<Spanish>Select the amount of space to leave above the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No space at all.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Small[COLOR_REVERT] - Enough space to show the turn indicator and treasury.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Medium[COLOR_REVERT] - Enough space to show the advisor buttons.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large[COLOR_REVERT] - Enough space to show all the culture sliders.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__SPACESIDES_TEXT</Tag>
+		<English>Space to Sides</English>
+		<French>Space to Sides</French>
+		<German>Seitenabstand</German>
+		<Italian>Spazio laterale</Italian>
+		<Spanish>Space to Sides</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__SPACESIDES_LIST</Tag>
+		<English>None|Small|Medium|Large|Large Left</English>
+		<French>None|Small|Medium|Large|Large Left</French>
+		<German>Keiner|Schmal|Mittel|Groß|Nur Links</German>
+		<Italian>Nessuno|Piccolo|Medio|Ampio|Ampio a sin.</Italian>
+		<Spanish>None|Small|Medium|Large|Large Left</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__SPACESIDES_HOVER</Tag>
+		<English>Select the amount of space to leave to the sides of the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No space at all.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Small[COLOR_REVERT] - Same amount of space as Foreign and Military Advisors.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Medium[COLOR_REVERT] - Twice the space as Foreign and Military Advisors.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large[COLOR_REVERT] - Enough space to show all the culture sliders on the left and same amount of space on the right.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large Left[COLOR_REVERT] - Enough space to show all the culture sliders to the left but just a small amount of space on the right.</English>
+		<French>Select the amount of space to leave to the sides of the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No space at all.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Small[COLOR_REVERT] - Same amount of space as Foreign and Military Advisors.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Medium[COLOR_REVERT] - Twice the space as Foreign and Military Advisors.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large[COLOR_REVERT] - Enough space to show all the culture sliders on the left and same amount of space on the right.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large Left[COLOR_REVERT] - Enough space to show all the culture sliders to the left but just a small amount of space on the right.</French>
+		<German>Bestimmt den Abstand, den der anpassbare Inlandsberater zum linken und rechten Bildschirmrand einhalten soll:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Keiner[COLOR_REVERT] - Kein Abstand[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Schmal[COLOR_REVERT] - Entspricht dem gleichen Abstand wie bei Auslands- und Militärberater[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Mittel[COLOR_REVERT] - Entspricht dem doppelten Abstand wie bei Auslands- und Militärberater[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Groß[COLOR_REVERT] - Genug Platz, um links die Einstellungen für die Investitionsanteile zu sehen, wobei rechts der gleiche Abstand gelassen wird[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Nur Links[COLOR_REVERT] - Genug Platz, um die Einstellungen für die Investitionsanteile zu sehen, wobei rechts nur ein geringer Abstand gelassen wird</German>
+		<Italian>Seleziona la quantità di spazio da lasciare lateralmente alla schermata del Consigliere Interno:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Nessuno[COLOR_REVERT] - non viene lasciato alcuno spazio;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Piccolo[COLOR_REVERT] - viene lasciata la stessa quantità di spazio delle schermate del Consigliere Estero e del Consigliere Militare;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Medio[COLOR_REVERT] - viene lasciato il doppio della quantità di spazio delle schermate del Consigliere Estero e del Consigliere Militare;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Ampio[COLOR_REVERT] - viene lasciato spazio a sufficienza per mostrare i regolatori percentuali sulla sinistra e una quantità uguale sulla destra;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Ampio a sin.[COLOR_REVERT] - viene lasciato spazio a sufficienza per mostrare i regolatori percentuali sulla sinistra, mentre sulla destra viene lasciato la stessa quantità di spazio delle schermate del Consigliere Estero e del Consigliere Militare.</Italian>
+		<Spanish>Select the amount of space to leave to the sides of the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No space at all.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Small[COLOR_REVERT] - Same amount of space as Foreign and Military Advisors.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Medium[COLOR_REVERT] - Twice the space as Foreign and Military Advisors.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large[COLOR_REVERT] - Enough space to show all the culture sliders on the left and same amount of space on the right.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Large Left[COLOR_REVERT] - Enough space to show all the culture sliders to the left but just a small amount of space on the right.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__PRODUCTIONGROUPING_TEXT</Tag>
+		<English>Production Grouping</English>
+		<French>Production Grouping</French>
+		<German>Produktgruppen</German>
+		<Italian>Produzione</Italian>
+		<Spanish>Production Grouping</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__PRODUCTIONGROUPING_LIST</Tag>
+		<English>None|Icons|Colors|Both</English>
+		<French>None|Icons|Colors|Both</French>
+		<German>Keine|Symbole|Farben|Beides</German>
+		<Italian>Nulla|Icone|Colori|Entrambi</Italian>
+		<Spanish>None|Icons|Colors|Both</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CUSTDOMADV__PRODUCTIONGROUPING_HOVER</Tag>
+		<English>Select grouping options for the production list on the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No special grouping.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Icons[COLOR_REVERT] - Production items prefaced by icons denoting the type of item which keeps them grouped together when sorting.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Colors[COLOR_REVERT] - Production items colored based on the type of item.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Both[COLOR_REVERT] - Production items prefaced by icons and colored based on the type of item.</English>
+		<French>Select grouping options for the production list on the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No special grouping.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Icons[COLOR_REVERT] - Production items prefaced by icons denoting the type of item which keeps them grouped together when sorting.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Colors[COLOR_REVERT] - Production items colored based on the type of item.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Both[COLOR_REVERT] - Production items prefaced by icons and colored based on the type of item.</French>
+		<German>Bestimmt die Gruppierungseinstellungen für die Spalte "Produktion" im "Customizable Domestic Advisor" (CDA):[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Keine[COLOR_REVERT] - Keine besondere Gruppierung[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Symbole[COLOR_REVERT] - Produzierte Objekte erhalten entsprechend ihrer Art vorangestellte Symbole, wobei die Gruppierung auch nach einer Sortierung erhalten bleibt[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Farben[COLOR_REVERT] - Produzierte Objekte werden entsprechend ihrer Art eingefärbt[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Beides[COLOR_REVERT] - Produzierte Objekte erhalten entsprechend ihrer Art vorangestellte Symbole und werden gleichzeitig eingefärbt</German>
+		<Italian>Seleziona l'opzione di raggruppamento per la lista di produzione nella schermata del Consigliere Interno Personalizzabile (CDA):[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Nulla[COLOR_REVERT] - Nessun raggruppamento.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Icone[COLOR_REVERT] - Gli oggetti in produzione vengono preceduti da icone che mostrano il tipo di oggetto e mantengono insieme gli oggetti dello stesso tipo quando il Pannello del Punteggio viene ordinato in base a questo parametro.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Colori[COLOR_REVERT] - Il nome degli oggetti in produzione viene colorato in base al tipo di oggetto.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Entrambi[COLOR_REVERT] - Il nome degli oggetti in produzione viene colorato in base al tipo dell'oggetto e preceduto da una icona opportuna.</Italian>
+		<Spanish>Select grouping options for the production list on the Customizable Domestic Advisor screen:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]None[COLOR_REVERT] - No special grouping.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Icons[COLOR_REVERT] - Production items prefaced by icons denoting the type of item which keeps them grouped together when sorting.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Colors[COLOR_REVERT] - Production items colored based on the type of item.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Both[COLOR_REVERT] - Production items prefaced by icons and colored based on the type of item.</Spanish>
+	</TEXT>
+</Civ4GameText>
