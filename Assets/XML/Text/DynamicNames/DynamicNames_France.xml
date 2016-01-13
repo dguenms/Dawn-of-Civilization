@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
-<!-- Sid Meier's Civilization 4 -->
-<!-- -->
-<!-- Game Text - Unit Upgrades for Civilopedia -->
+<!-- France -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_DESC</Tag>
@@ -111,5 +108,53 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_NAME_MUGHALS</Tag>
 		<English>West India</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_ADJECTIVE</Tag>
+		<English>French</English>
+		<French>
+			<Text>fran&#231;ais:fran&#231;aise:fran&#231;ais:fran&#231;aises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Franz&#246;sisch:franz&#246;sischen:franz&#246;sische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>francese:francese:francesi:francesi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>franc&#233;s:francesa:franceses:francesas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_SHORT_DESC</Tag>
+		<English>France</English>
+		<French>
+			<Text>France</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Frankreich</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Francia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Francia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 </Civ4GameText>

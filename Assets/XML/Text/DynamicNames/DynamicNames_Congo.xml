@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
-<!-- Sid Meier's Civilization 4 -->
-<!-- -->
-<!-- Game Text - Unit Upgrades for Civilopedia -->
+<!-- Congo -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_DESC</Tag>
@@ -27,5 +24,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CONGO_ARTICLE</Tag>
 		<English>the Congo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KONGO_ADJECTIVE</Tag>
+		<English>Congolese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KONGO_DESC</Tag>
+		<English>The Congolese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KONGO_SHORT_DESC</Tag>
+		<English>Congo</English>
 	</TEXT>
 </Civ4GameText>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Actions -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_DEFORESTATION</Tag>
+		<English>Deforestation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_HIGH_SEA_FISHING_BOATS</Tag>
+		<English>Create [LINK=IMPROVEMENT_HIGH_SEA_FISHING_BOATS]High Sea Fishing Boats[\LINK]</English>
+		<German>Create [LINK=IMPROVEMENT_HIGH_SEA_FISHING_BOATS]High Sea Fishing Boats[\LINK]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_SLAVE_PLANTATION</Tag>
+		<English>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Sacrifice[COLOR_REVERT][NEWLINE]+1 [ICON_HAPPY] for %d1 turns.[NEWLINE]This order sacrifice the slave, leading to extra happiness and celebrations in the city for %d2 turns. This will consume the slave.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_PEACE</Tag>
+		<English>The Great Person will make another civilization forget your past transgressions and improve your relations. It consumes the Great Person.</English>
+		<German>Die Gro&#223;e Pers&#246;nlichkeit wird eine andere Zivilisation eure Vergehen aus der Vergangenheit vergessen lassen und eure Beziehungen verbessern. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_WAR</Tag>
+		<English>The Great Person will broker an immediate peace treaty between you and your enemy. It consumes the Great Person.</English>
+		<German>Die Gro&#223;e Pers&#246;nlichkeit wird einen unmittelbaren Friedensvertrag zwischen Euch und Eurem Feind aushandeln. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_PERSECUTION</Tag>
+		<English>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</English>
+		<French>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</French>
+		<German>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</German>
+		<Italian>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Italian>
+		<Spanish>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_REFORM_GOVERNMENT</Tag>
+		<English>This will order the Great Person to reform your government, allowing you to change civics this turn without any anarchy. It consumes the Great Person.</English>
+		<German>Dies wird die Gro&#223;en Pers&#246;nlichkeit veranlassen, Eure Regierung zu reformieren, was Euch erlaubt diese Runde Staatsformen ohne jegliche Anarchie zu wechseln. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ACTION_RESOLVE_CRISIS</Tag>
+		<English>This will order the Great Person to end the anarchy in your civilization and the unrest in all your cities. It consumes the Great Person.</English>
+		<German>Dies wird die Gro&#223;e Pers&#246;nlichkeit veranlassen, the Anarchie in Eurer Zivilisation sowie den Aufruhr in all Euren St&#228;dten zu beenden. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_DIPLOMATIC_MISSION</Tag>
+		<English>Diplomatic Mission</English>
+		<German>Diplomatische Mission</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_PERSECUTE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_REFORM_GOVERNMENT</Tag>
+		<English>Reform Government</English>
+		<German>Regierung Reformieren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_RESOLVE_CRISIS</Tag>
+		<English>Resolve Crisis</English>
+		<German>Krise &#220;berwinden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_START_GOLDENAGE_HELP</Tag>
+		<English>This order will consume one or more Great People (of different types) and initiate a Golden Age (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</English>
+		<French>Cette ordre consommera plusieurs personnages illustres (de types diff&#233;rents) et d&#233;clenchera un &#226;ge d'or ([ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE] suppl&#233;mentaires).</French>
+		<German>Opfern Sie eine oder mehrere Gro&#223;e Pers&#246;nlichkeiten (unterschiedlicher Klassen), um ein Goldenes Zeitalter (zus&#228;tzliche [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE], keine Anarchie) zu begr&#252;nden.</German>
+		<Italian>Con questo ordine si consumano uno o pi&#249; Grandi Personaggi (di tipi differenti) e si avvia un'Et&#224; dell'Oro (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</Italian>
+		<Spanish>Esta orden consume uno o m&#225;s grandes personajes (de diferentes tipos) e inicia una edad de oro (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</Spanish>
+	</TEXT>
+</Civ4GameText>

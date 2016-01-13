@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
-<!-- Sid Meier's Civilization 4 -->
-<!-- -->
-<!-- Game Text - Unit Upgrades for Civilopedia -->
+<!-- Carthage -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_DESC</Tag>
@@ -15,6 +12,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_ADJECTIVE</Tag>
 		<English>Phoenician</English>
+		<German>
+			<Text>Ph&#246;nizisch:ph&#246;nizischen:ph&#246;nizische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_PEOPLES</Tag>
@@ -60,9 +62,9 @@
 			<Plural>0:1</Plural>
 		</English>
 		<French>
-			<Text>Carthaginois</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
+			<Text>carthaginois:carthaginoise:carthaginois:carthaginoises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</French>
 		<German>
 			<Text>Karthagisch:karthagischen:karthagische</Text>
@@ -70,9 +72,9 @@
 			<Plural>0:0:0</Plural>
 		</German>
 		<Italian>
-			<Text>del popolo cartaginese</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
+			<Text>cartaginese:cartaginese:cartaginesi:cartaginesi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</Italian>
 		<Spanish>
 			<Text>cartagin&#233;s:cartaginesa:cartagineses:cartaginesas</Text>

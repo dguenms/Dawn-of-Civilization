@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by lcollins (Firaxis Games) -->
-<!-- Sid Meier's Civilization 4 -->
-<!-- -->
-<!-- Game Text - Unit Upgrades for Civilopedia -->
+<!-- Poland -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_DESC</Tag>
@@ -27,5 +24,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_POLAND_GRAND_DUCHY_OF</Tag>
 		<English>Grand Duchy of Lithuania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_ADJECTIVE</Tag>
+		<English>Polish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POLAND_SHORT_DESC</Tag>
+		<English>Poland</English>
 	</TEXT>
 </Civ4GameText>
