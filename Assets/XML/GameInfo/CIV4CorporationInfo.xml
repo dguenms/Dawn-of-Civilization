@@ -8,8 +8,8 @@
 	<CorporationInfos>
 		<CorporationInfo>
 			<Type>CORPORATION_1</Type>	<!-- Silk Route -->
-			<Description>TXT_KEY_CORPORATION_1</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_1_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_SILK_ROUTE</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_SILK_ROUTE_PEDIA</Civilopedia>
 			<TechPrereq>TECH_CURRENCY</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -18,9 +18,9 @@
 			<iHappiness>0</iHappiness>
 			<iHealth>0</iHealth>
 			<PrereqBonuses>
-				<BonusType>BONUS_SILK</BonusType>
 				<BonusType>BONUS_COTTON</BonusType>
 				<BonusType>BONUS_INCENSE</BonusType>
+				<BonusType>BONUS_SILK</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
@@ -39,8 +39,8 @@
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_2</Type>	<!-- Trading Company -->
-			<Description>TXT_KEY_CORPORATION_2</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_2_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_TRADING_COMPANY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_TRADING_COMPANY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_ASTRONOMY</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -49,10 +49,10 @@
 			<iHappiness>0</iHappiness>
 			<iHealth>0</iHealth>
 			<PrereqBonuses>
-				<BonusType>BONUS_SPICES</BonusType>
-				<BonusType>BONUS_SUGAR</BonusType>
 				<BonusType>BONUS_BANANA</BonusType>
 				<BonusType>BONUS_COFFEE</BonusType>
+				<BonusType>BONUS_SPICES</BonusType>
+				<BonusType>BONUS_SUGAR</BonusType>
 				<BonusType>BONUS_TEA</BonusType>
 				<BonusType>BONUS_TOBACCO</BonusType>
 			</PrereqBonuses>
@@ -73,8 +73,8 @@
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_3</Type>	<!-- Cereal Industry -->
-			<Description>TXT_KEY_CORPORATION_3</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_3_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_CEREAL_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_CEREAL_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_BIOLOGY</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -83,9 +83,9 @@
 			<iHappiness>-2</iHappiness>
 			<iHealth>0</iHealth>
 			<PrereqBonuses>
-				<BonusType>BONUS_WHEAT</BonusType>
 				<BonusType>BONUS_CORN</BonusType>
 				<BonusType>BONUS_RICE</BonusType>
+				<BonusType>BONUS_WHEAT</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
@@ -106,8 +106,8 @@
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_4</Type>	<!-- Fishing Industry -->
-			<Description>CHANGED_TXT_KEY_CORPORATION_4</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_4_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_FISHING_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_FISHING_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_REFRIGERATION</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -116,8 +116,8 @@
 			<iHappiness>-2</iHappiness>
 			<iHealth>0</iHealth>
 			<PrereqBonuses>
-				<BonusType>BONUS_CRAB</BonusType>
 				<BonusType>BONUS_CLAM</BonusType>
+				<BonusType>BONUS_CRAB</BonusType>
 				<BonusType>BONUS_FISH</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
@@ -143,8 +143,8 @@
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_5</Type>	<!-- Textile Industry -->
-			<Description>TXT_KEY_CORPORATION_5</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_5_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_STEAM_POWER</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -155,9 +155,9 @@
 			<PrereqBonuses>
 				<BonusType>BONUS_SHEEP</BonusType>
 				<BonusType>BONUS_COTTON</BonusType>
-				<BonusType>BONUS_SILK</BonusType>
-				<BonusType>BONUS_FUR</BonusType>
 				<BonusType>BONUS_DYE</BonusType>
+				<BonusType>BONUS_FUR</BonusType>
+				<BonusType>BONUS_SILK</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
@@ -181,8 +181,8 @@
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_6</Type>	<!-- Steel Industry -->
-			<Description>TXT_KEY_CORPORATION_6</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_6_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_STEEL_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_STEEL_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_STEEL</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -191,10 +191,10 @@
 			<iHappiness>-2</iHappiness>
 			<iHealth>-2</iHealth>
 			<PrereqBonuses>
+				<BonusType>BONUS_ALUMINUM</BonusType>
 				<BonusType>BONUS_COAL</BonusType>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
-				<BonusType>BONUS_ALUMINUM</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
@@ -218,8 +218,8 @@
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_7</Type>	<!-- Oil Industry -->
-			<Description>TXT_KEY_CORPORATION_7</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_7_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_OIL_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_OIL_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_COMBUSTION</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -250,8 +250,8 @@
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_8</Type>	<!-- Luxury Industry -->
-			<Description>TXT_KEY_CORPORATION_8</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_8_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_LUXURY_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_LUXURY_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_ELECTRICITY</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -260,11 +260,11 @@
 			<iHappiness>-3</iHappiness>
 			<iHealth>-2</iHealth>
 			<PrereqBonuses>
-				<BonusType>BONUS_GOLD</BonusType>
-				<BonusType>BONUS_SILVER</BonusType>
-				<BonusType>BONUS_GEMS</BonusType>
 				<BonusType>BONUS_MARBLE</BonusType>
+				<BonusType>BONUS_GOLD</BonusType>
+				<BonusType>BONUS_GEMS</BonusType>
 				<BonusType>BONUS_PEARL</BonusType>
+				<BonusType>BONUS_SILVER</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
@@ -287,8 +287,8 @@
 		</CorporationInfo>
 		<CorporationInfo>
 			<Type>CORPORATION_9</Type>	<!-- Computers Industry -->
-			<Description>TXT_KEY_CORPORATION_9</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_9_PEDIA</Civilopedia>
+			<Description>TXT_KEY_CORPORATION_COMPUTERS_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_COMPUTERS_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_COMPUTERS</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
@@ -297,8 +297,8 @@
 			<iHappiness>-3</iHappiness>
 			<iHealth>-2</iHealth>
 			<PrereqBonuses>
-				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_ALUMINUM</BonusType>
+				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_OIL</BonusType>
 			</PrereqBonuses>
 			<HeadquarterCommerces>

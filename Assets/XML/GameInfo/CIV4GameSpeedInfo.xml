@@ -7,16 +7,15 @@
 <!-- NOTE: If you remove any of these you need to update GameInfo/CultureLevelInfos.xml. Also you will need to update the GlobalDefines.xml if you remove GAMESPEED_STANDARD -->
 <Civ4GameSpeedInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
 	<GameSpeedInfos>
-		<!-- Rhye - start -->
 		<GameSpeedInfo>
 			<Type>GAMESPEED_MARATHON</Type>
 			<Description>TXT_KEY_GAMESPEED_MARATHON</Description>
 			<Help>TXT_KEY_GAMESPEED_MARATHON_HELP</Help>
 			<iGrowthPercent>300</iGrowthPercent>
-			<iTrainPercent>200</iTrainPercent><!--default: 180-->
+			<iTrainPercent>200</iTrainPercent> <!-- Default: 180 -->
 			<iConstructPercent>300</iConstructPercent>
 			<iCreatePercent>300</iCreatePercent>
-			<iResearchPercent>350</iResearchPercent><!--default:320; grows by up to 20% as the game progresses-->
+			<iResearchPercent>350</iResearchPercent><!-- Default: 320; grows by up to 20% as the game progresses -->
 			<iBuildPercent>300</iBuildPercent>
 			<iImprovementPercent>300</iImprovementPercent>
 			<iGreatPeoplePercent>300</iGreatPeoplePercent>
@@ -28,7 +27,7 @@
 			<iUnitHurryPercent>300</iUnitHurryPercent>
 			<iUnitTradePercent>300</iUnitTradePercent>
 			<iUnitGreatWorkPercent>300</iUnitGreatWorkPercent>
-			<iGoldenAgePercent>300</iGoldenAgePercent> <!-- Leoreth: up from 200 -->
+			<iGoldenAgePercent>300</iGoldenAgePercent> <!-- Default: 200 -->
 			<iHurryPercent>33</iHurryPercent>
 			<iHurryConscriptAngerPercent>300</iHurryConscriptAngerPercent>
 			<iInflationPercent>23</iInflationPercent>
@@ -79,10 +78,10 @@
 			<Description>TXT_KEY_GAMESPEED_EPIC</Description>
 			<Help>TXT_KEY_GAMESPEED_EPIC_HELP</Help>
 			<iGrowthPercent>150</iGrowthPercent>
-			<iTrainPercent>140</iTrainPercent><!--default: 135-->
+			<iTrainPercent>140</iTrainPercent> <!-- Default: 135 -->
 			<iConstructPercent>150</iConstructPercent>
 			<iCreatePercent>150</iCreatePercent>
-			<iResearchPercent>175</iResearchPercent><!--default: 160; grows by up to 20% as the game progresses-->
+			<iResearchPercent>175</iResearchPercent> <!-- Default: 160; grows by up to 20% as the game progresses -->
 			<iBuildPercent>150</iBuildPercent>
 			<iImprovementPercent>150</iImprovementPercent>
 			<iGreatPeoplePercent>150</iGreatPeoplePercent>
@@ -94,7 +93,7 @@
 			<iUnitHurryPercent>150</iUnitHurryPercent>
 			<iUnitTradePercent>150</iUnitTradePercent>
 			<iUnitGreatWorkPercent>150</iUnitGreatWorkPercent>
-			<iGoldenAgePercent>150</iGoldenAgePercent> <!-- Leoreth: up from 150 -->
+			<iGoldenAgePercent>150</iGoldenAgePercent> <!-- Default: 150 -->
 			<iHurryPercent>66</iHurryPercent>
 			<iHurryConscriptAngerPercent>150</iHurryConscriptAngerPercent>
 			<iInflationPercent>30</iInflationPercent>
@@ -202,6 +201,5 @@
 				<!-- 500 turns = 5020 years -->
 			</GameTurnInfos>
 		</GameSpeedInfo>
-		<!-- Rhye - end -->
 	</GameSpeedInfos>
 </Civ4GameSpeedInfo>
