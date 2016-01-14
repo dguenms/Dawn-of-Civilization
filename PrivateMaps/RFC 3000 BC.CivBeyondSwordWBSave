@@ -196,7 +196,8 @@ BeginPlayer
 	LeaderType=LEADER_AUGUSTUS
 	CivType=CIVILIZATION_ROME                 
 	Team=9                 
-	PlayableCiv=1                               
+	PlayableCiv=1                   
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON         
 	Handicap=HANDICAP_REGENT                 
