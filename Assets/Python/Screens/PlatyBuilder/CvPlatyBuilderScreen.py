@@ -956,7 +956,7 @@ class CvWorldBuilderScreen:
 
 			screen.setImageButton("Version", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_GENERAL_QUESTIONMARK").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 9)
 			iX += iAdjust
-			screen.setImageButton("WorldBuilderConvertSave", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_REVEAL_ALL_TILES").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22400, -1)
+			screen.setImageButton("WorldBuilderConvertSave", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_REVEAL_ALL_TILES").getPath(), iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22500, -1)
 			iX += iAdjust
 			screen.addCheckBoxGFC("WorldBuilderEraseButton", CyArtFileMgr().getInterfaceArtInfo("WORLDBUILDER_ERASE").getPath(), CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
 				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_WB_ERASE_BUTTON, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL)
@@ -1244,12 +1244,12 @@ class CvWorldBuilderScreen:
 					iHeight += iAdjust
 					screen.addPanel("UtilButtonPanel", "", "", True, True, iXStart, iScreenHeight - 10, iScreenWidth, iHeight, PanelStyles.PANEL_STYLE_MAIN)
 					screen.setText("RevertChangesText", "", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), -1, iXStart + iScreenWidth/2, iScreenHeight + iAdjust/2, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-					screen.setButtonGFC("ClearCore", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iX, iScreenHeight + iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22310, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-					screen.setButtonGFC("ClearCoreAll", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXx, iScreenHeight + iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22311, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
-					screen.setButtonGFC("ClearFlip", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iX, iScreenHeight + 2*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22310, 3, ButtonStyles.BUTTON_STYLE_STANDARD)
-					screen.setButtonGFC("ClearFlipAll", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXx, iScreenHeight + 2*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22311, 4, ButtonStyles.BUTTON_STYLE_STANDARD)
-					screen.setButtonGFC("ClearSettler", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iX, iScreenHeight + 3*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22310, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
-					screen.setButtonGFC("ClearSettlerAll", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXx, iScreenHeight + 3*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22311, 6, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearCore", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iX, iScreenHeight + iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22350, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearCoreAll", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXx, iScreenHeight + iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22351, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearFlip", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iX, iScreenHeight + 2*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22350, 3, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearFlipAll", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXx, iScreenHeight + 2*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22351, 4, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearSettler", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iX, iScreenHeight + 3*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22350, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("ClearSettlerAll", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXx, iScreenHeight + 3*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 22351, 6, ButtonStyles.BUTTON_STYLE_STANDARD)
 					screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iScreenHeight + 4*iAdjust, 2*iButtonWidth2 + 3, iButtonWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 			elif self.iPlayerAddMode in self.RevealMode:
