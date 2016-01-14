@@ -18,7 +18,6 @@ import RFCUtils
 utils = RFCUtils.RFCUtils()
 import MapDrawer as md
 import Areas
-import SettlerMaps
 
 bSensibility = True
 iEditType = 0
@@ -219,13 +218,12 @@ class WBPlotScreen:
 				sText = "<font=3>" + CvPlatyBuilderScreen.CvWorldBuilderScreen().addComma(pPlot.getCulture(iPlayerX)) + CyTranslator().getText("[ICON_CULTURE]", ()) + "</font>"
 				screen.setTableText("WBSigns", 2, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
 				if iPlayerX < con.iNumPlayers:
-					if tPlot in Areas.getCoreArea(iPlayerX):
+					if gc.getMap().plot(tPlot[0], tPlot[1]).isCore(iPlayerX):
 						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 					else:
 						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
 					screen.setTableText("WBSigns", 3, iRow, sCore, "", WidgetTypes.WIDGET_PYTHON, 22171, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
-					iCiv = gc.getPlayer(iPlayerX).getCivilizationType()
-					iSettlerValue = SettlerMaps.getMapValue(iCiv, tPlot[0], tPlot[1])
+					iSettlerValue = md.getSettlerValue(iPlayerX, tPlot)
 					screen.setTableText("WBSigns", 4, iRow, str(iSettlerValue), "", WidgetTypes.WIDGET_PYTHON, 22172, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
 					if tPlot in Areas.getBirthArea(iPlayerX):
 						sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
@@ -685,9 +683,9 @@ class WBPlotScreen:
 				iPlayer = inputClass.getData2()
 				tPlot = (pPlot.getX(), pPlot.getY())
 				if iChangeType == 0:
-					iValue = SettlerMaps.getMapValue(iPlayer, tPlot[0], tPlot[1]) - iChange
+					iValue = md.getSettlerValue(iPlayer, tPlot) - iChange
 				elif iChangeType == 1:
-					iValue = SettlerMaps.getMapValue(iPlayer, tPlot[0], tPlot[1]) + iChange
+					iValue = md.getSettlerValue(iPlayer, tPlot) + iChange
 				elif iChangeType == 2:
 					iValue = iSetValue
 				md.changeSettlerValue(iPlayer, tPlot, iValue)

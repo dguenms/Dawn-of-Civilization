@@ -1969,7 +1969,6 @@ class RFCUtils:
 		colors = ["COLOR_PLAYER_DARK_GREEN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED"]
 		iHuman = self.getHumanID()
 		iHumanTeam = gc.getPlayer(iHuman).getTeam()
-		lCorePlots = Areas.getCoreArea(iHuman)
 		lForeignCorePlots = Areas.getForeignCores(iHuman)
 
 		# apply the highlight
@@ -1979,10 +1978,10 @@ class RFCUtils:
 			tPlot = (plot.getX(), plot.getY())
 			if gc.getGame().isDebugMode() or plot.isRevealed(iHumanTeam, False):
 				if plot.isWater(): continue
-				if tPlot in lCorePlots:
+				if plot.isCore(iHuman):
 					iPlotType = 0
 				else:
-					iSettlerValue = SettlerMaps.getMapValue(iCiv, tPlot[0], tPlot[1])
+					iSettlerValue = plot.getSettlerValue(iHuman)
 					if iSettlerValue >= 90:
 						if tPlot in lForeignCorePlots:
 							iPlotType = 2
@@ -1994,7 +1993,7 @@ class RFCUtils:
 						iPlotType = -1
 				if iPlotType != -1:
 					szColor = colors[iPlotType]
-					engine.addColoredPlotAlt(plot.getX(), plot.getY(), int(PlotStyles.PLOT_STYLE_BOX_FILL), int(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_WORLD_BUILDER), szColor, .2)		return [i for i in range(iNumBuildings) if isWorldWonderClass(gc.getBuildingInfo(i).getBuildingClassType())]
+					engine.addColoredPlotAlt(plot.getX(), plot.getY(), int(PlotStyles.PLOT_STYLE_BOX_FILL), int(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_WORLD_BUILDER), szColor, .2)
 
 
 utils = RFCUtils()

@@ -18,7 +18,6 @@ import RFCUtils
 utils = RFCUtils.RFCUtils()
 import MapDrawer as md
 import Areas
-import SettlerMaps
 
 iMode = 0
 iSelectedPlayer = -1
@@ -396,17 +395,15 @@ class WBInfoScreen:
 			if iMode == 14 and iItem != -1:
 				iPlayer = iItem
 				tCapital = Areas.getCapital(iPlayer)
-				lCorePlots = Areas.getCoreArea(iPlayer)
 				lForeignCorePlots = Areas.getForeignCores(iPlayer)
-				iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 				for x in range(con.iWorldX):
 					for y in range(con.iWorldY):
 						plot = gc.getMap().plot(x, y)
 						if plot.isWater(): continue
-						if (x, y) in lCorePlots:
+						if gc.getMap().plot(x, y).isCore(iPlayer):
 							iPlotType = 0
 						else:
-							iSettlerValue = SettlerMaps.getMapValue(iCiv, x, y)
+							iSettlerValue = md.getSettlerValue(iPlayer, (x, y))
 							if iSettlerValue == 3:
 								if bHideForbidden: continue
 								iPlotType = 5
@@ -729,9 +726,8 @@ class WBInfoScreen:
 
 			for iPlayer in range(con.iNumPlayers):
 				iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-				bCore = tCurrentPlot in Areas.getCoreArea(iPlayer)
-				iSettlerValue = SettlerMaps.getMapValue(iCiv, tCurrentPlot[0], tCurrentPlot[1])
-				if bCore:
+				iSettlerValue = md.getSettlerValue(iPlayer, tCurrentPlot)
+				if gc.getMap().plot(tCurrentPlot[0], tCurrentPlot[1]).isCore(iPlayer):
 					sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 					iPlotType = 0
 				else:
@@ -902,11 +898,11 @@ class WBInfoScreen:
 					self.refreshMap()
 				elif iData1 == 22172:
 					iPlayer = inputClass.getData2()
-					iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+					x, y = tCurrentPlot
 					if iChangeType == 0:
-						iValue = SettlerMaps.getMapValue(iCiv, tCurrentPlot[0], tCurrentPlot[1]) - iChange
+						iValue = md.getSettlerValue(iItem, (x, y)) - iChange
 					elif iChangeType == 1:
-						iValue = SettlerMaps.getMapValue(iCiv, tCurrentPlot[0], tCurrentPlot[1]) + iChange
+						iValue = md.getSettlerValue(iItem, (x, y)) + iChange
 					elif iChangeType == 2:
 						iValue = iSetValue
 					md.changeSettlerValue(iPlayer, tCurrentPlot, iValue)
@@ -1018,18 +1014,18 @@ class WBInfoScreen:
 						for tPlot in lPlotList:
 							md.changeCoreForce(iItem, tPlot, False)
 					elif iData2 == 2:
-						lOldCore = Areas.getCoreArea(iItem)
-						for tPlot in lOldCore:
-							md.changeCoreForce(iItem, tPlot, False)
+						for x in range(iWorldX):
+							for y in range(iWorldY):
+								md.changeCoreForce(iItem, (x, y), False)
 						for tPlot in lPlotList:
 							md.changeCoreForce(iItem, tPlot, True)
 					elif iData2 == 3:
-						iCiv = gc.getPlayer(iItem).getCivilizationType()
 						for tPlot in lPlotList:
+							x, y = tPlot
 							if iChangeType == 0:
-								iValue = SettlerMaps.getMapValue(iCiv, tPlot[0], tPlot[1]) - iChange
+								iValue = md.getSettlerValue(iItem, (x, y)) - iChange
 							elif iChangeType == 1:
-								iValue = SettlerMaps.getMapValue(iCiv, tPlot[0], tPlot[1]) + iChange
+								iValue = md.getSettlerValue(iItem, (x, y)) + iChange
 							elif iChangeType == 2:
 								iValue = iSetValue
 							md.changeSettlerValue(iItem, tPlot, iValue)
@@ -1064,7 +1060,7 @@ class WBInfoScreen:
 					md.resetFlip(iItem)
 				elif iData2 == 5:
 					md.resetSettler(iItem)
-				self.placeItemsStabMap()
+				self.refreshMap()
 			elif (iData2 % 2) == 0:
 				for iPlayer in range(con.iNumPlayers):
 					if iData2 == 2:
@@ -1073,7 +1069,9 @@ class WBInfoScreen:
 						md.resetFlip(iPlayer)
 					elif iData2 == 6:
 						md.resetSettler(iPlayer)
-				self.placeItemsStabMap()
+				if iItem != -1:
+					self.refreshMap()
+			self.placeItemsStabMap()
 		elif inputClass.getFunctionName() == "Export":
 			md.export()
 
@@ -1088,9 +1086,9 @@ class WBInfoScreen:
 					if not plot.isWater() and not plot.isPeak():
 						bGoodPlot = True
 				# Reset old maps
-				lOldCore = Areas.getCoreArea(iItem)
-				for tPlot in lOldCore:
-					md.changeCoreForce(iItem, tPlot, False)
+				for x in range(iWorldX):
+					for y in range(iWorldY):
+						gc.getMap().plot(x, y).setCore(iItem, False)
 				lOldFlip = Areas.getBirthArea(iItem)
 				for tPlot in lOldFlip:
 					md.changeFlipForce(iItem, tPlot, False)

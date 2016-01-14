@@ -32,7 +32,6 @@ import RFCUtils
 utils = RFCUtils.RFCUtils()
 import MapDrawer as md
 import Areas
-import SettlerMaps
 
 gc = CyGlobalContext()
 iChange = 1
@@ -1636,8 +1635,10 @@ class CvWorldBuilderScreen:
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
 		if self.m_iCurrentPlayer < con.iNumPlayers:
 			sColor = "COLOR_PLAYER_DARK_GREEN"
-			for tPlot in Areas.getCoreArea(self.m_iCurrentPlayer):
-				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sColor, 1.0)
+			for x in range(con.iWorldX):
+				for y in range(con.iWorldY):
+					if gc.getMap().plot(x, y).isCore(self.m_iCurrentPlayer):
+						CyEngine().fillAreaBorderPlotAlt(x, y, AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sColor, 1.0)
 
 	def showSettlerValues(self):
 		CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS)
@@ -1645,10 +1646,9 @@ class CvWorldBuilderScreen:
 		if self.m_iCurrentPlayer < con.iNumPlayers:
 			sForbiddenColor = "COLOR_PLAYER_LIGHT_PURPLE"
 			sHistoricalColor = "COLOR_GREEN"
-			iCiv = gc.getPlayer(self.m_iCurrentPlayer).getCivilizationType()
 			for x in range(con.iWorldX):
 				for y in range(con.iWorldY):
-					iSettlerValue = SettlerMaps.getMapValue(iCiv, x, y)
+					iSettlerValue = md.getSettlerValue(self.m_iCurrentPlayer, (x, y))
 					if iSettlerValue >= 90:
 						CyEngine().fillAreaBorderPlotAlt(x, y, AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sHistoricalColor, 1.0)
 					elif iSettlerValue == 3:
