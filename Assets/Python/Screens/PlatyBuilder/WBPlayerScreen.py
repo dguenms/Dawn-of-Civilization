@@ -438,14 +438,14 @@ class WBPlayerScreen:
 			if pPlayer.canDoCivics(iCivic):
 				pPlayer.setCivics(gc.getCivicInfo(iCivic).getCivicOptionType(), iCivic)
 			self.interfaceScreen(iPlayer)
-			
+
 		elif inputClass.getFunctionName() == "CivEnabledButton":
 			if utils.getPlayerEnabled(iPlayer):
 				utils.setPlayerEnabled(iPlayer, False)
 			else:
 				utils.setPlayerEnabled(iPlayer, True)
 			self.interfaceScreen(iPlayer)
-			
+
 		elif inputClass.getFunctionName() == "PlayerEditScriptData":
 			popup = Popup.PyPopup(1111, EventContextTypes.EVENTCONTEXT_ALL)
 			popup.setHeaderString(CyTranslator().getText("TXT_KEY_WB_SCRIPT", ()))
