@@ -499,17 +499,17 @@ def getWidgetHelp(argsList):
 		elif (iData1 == 22201 or iData1 == 22202 or iData1 == 22203 or iData1 == 22204):
 			return str(iData2)
 			
-		elif iData1 == 22301:
+		elif iData1 >= 22300 and iData1 < 22325:
 			sText = "-" + str(iData2)
 			return sText
-		elif iData1 == 22302:
+		elif iData1 >= 22400 and iData1 < 22425:
 			sText = "+" + str(iData2)
 			return sText
-		elif iData1 == 22310:
+		elif iData1 == 22350:
 			return CyTranslator().getText("TXT_KEY_WB_SELECTED_CIV", ())
-		elif iData1 == 22311:
+		elif iData1 == 22351:
 			return CyTranslator().getText("TXT_KEY_WB_ALL_CIVS", ())
-		elif iData1 == 22400:
+		elif iData1 == 22500:
 			return "ConvertSave"
 
 	return u""

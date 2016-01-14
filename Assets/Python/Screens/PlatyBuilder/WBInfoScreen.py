@@ -221,12 +221,12 @@ class WBInfoScreen:
 		iXxx = iXx + iWidthButtons + iAdjust
 		screen.setText("RevertChangesText", "", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), -1, iXx - iAdjust + iPanelWidth/2, iYy - 25, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		screen.addPanel("UtilsPanel", "", "", False, False, iXx - iAdjust, iYy - iAdjust, 2*iWidthButtons + 3*iAdjust, 4*iGap + iAdjust, PanelStyles.PANEL_STYLE_IN)
-		screen.setButtonGFC("ClearCore", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22310, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("ClearCoreAll", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXxx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22311, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("ClearFlip", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXx, iYy + 1*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22310, 3, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("ClearFlipAll", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXxx, iYy + 1*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22311, 4, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("ClearSettler", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22310, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("ClearSettlerAll", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXxx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22311, 6, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearCore", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22350, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearCoreAll", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXxx, iYy, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22351, 2, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearFlip", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXx, iYy + 1*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22350, 3, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearFlipAll", CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ()), "", iXxx, iYy + 1*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22351, 4, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearSettler", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22350, 5, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ClearSettlerAll", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXxx, iYy + 2*iGap, iWidthButtons, iButtonSize, WidgetTypes.WIDGET_PYTHON, 22351, 6, ButtonStyles.BUTTON_STYLE_STANDARD)
 		screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iXx, iYy + 3*iGap, 2*iWidthButtons + iAdjust, iButtonSize, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 	def placeMap(self):
@@ -803,8 +803,8 @@ class WBInfoScreen:
 			screen.setTableColumnHeader("SetValueBox", 1, "", 100)
 			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 
-			screen.setButtonGFC("SetValueDecrease", "", "", iX, iYy + 40, 26, 26, WidgetTypes.WIDGET_PYTHON, 22301, iChange, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
-			screen.setButtonGFC("SetValueIncrease", "", "", iX + 30 + 100 + 4, iYy + 40, 26, 26, WidgetTypes.WIDGET_PYTHON, 22302, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+			screen.setButtonGFC("SetValueDecrease", "", "", iX, iYy + 40, 26, 26, WidgetTypes.WIDGET_PYTHON, 22300, iChange, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+			screen.setButtonGFC("SetValueIncrease", "", "", iX + 30 + 100 + 4, iYy + 40, 26, 26, WidgetTypes.WIDGET_PYTHON, 22400, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 
 			screen.addDropDownBoxGFC("PresetValue", iX, iYy + 30 + 40, 160, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 			for i in range(len(self.lPresetValues)):
