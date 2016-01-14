@@ -17,6 +17,8 @@ iChange = 1
 import RFCUtils
 utils = RFCUtils.RFCUtils()
 import Consts as con
+import Modifiers
+localText = CyTranslator()
 
 class WBPlayerScreen:
 
@@ -89,6 +91,7 @@ class WBPlayerScreen:
 		self.placeReligions()
 		self.placeResearch()
 		self.placeScript()
+		self.placeModifiers()
 
 	def placeStats(self):
 		screen = CyGInterfaceScreen( "WBPlayerScreen", CvScreenEnums.WB_PLAYER)
@@ -173,9 +176,9 @@ class WBPlayerScreen:
 
 	def placeScript(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
-		iX = screen.getXResolution()/4
-		iY = screen.getYResolution()/2 - 55
-		iWidth = screen.getXResolution()/2
+		iX = screen.getXResolution()/4 - 25
+		iY = screen.getYResolution()/2 - 55 + 24
+		iWidth = screen.getXResolution()/2 + 25
 		iHeight = 50
 		sText = CyTranslator().getText("[COLOR_SELECTED_TEXT]", ()) + "<font=3b>" + CyTranslator().getText("TXT_KEY_WB_SCRIPT_DATA", ()) + "</color></font>"
 		screen.setText("PlayerEditScriptData", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, iY, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -184,10 +187,10 @@ class WBPlayerScreen:
 
 	def placeResearch(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
-		iX = screen.getXResolution()/4
+		iX = screen.getXResolution()/4 - 25
 		iY = 110 + self.iIconSize
-		iWidth = screen.getXResolution()/2
-		iHeight = (screen.getYResolution()/2 - 55 - iY)/24 * 24 + 2
+		iWidth = screen.getXResolution()/2 - 300
+		iHeight = (screen.getYResolution()/2 - 55 - iY)/24 * 24 + 2 + 24
 		nColumns = iWidth/240
 		screen.addTableControlGFC("WBPlayerResearch", nColumns, iX, iY, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 		for i in xrange(nColumns):
@@ -223,6 +226,26 @@ class WBPlayerScreen:
 			screen.setButtonGFC("CurrentResearchPlus", "", "", iX + iWidth - 50, iY - 30, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 			screen.setButtonGFC("CurrentResearchMinus", "", "", iX + iWidth - 25, iY - 30, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
 		screen.setLabel("CurrentProgressText", "Background", "<font=3b>" + sCurrentTech + "</font>", CvUtil.FONT_CENTER_JUSTIFY, iX + iWidth/2, iY - 30, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		
+	def placeModifiers(self):
+		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
+		iX = screen.getXResolution()/4 + screen.getXResolution()/2 - 300
+		iY = 110 + self.iIconSize
+		iWidth = 300-2*24
+		iHeight = (screen.getYResolution()/2 - 55 - iY)/24 * 24 + 2 + 24
+		iXx = iX + iWidth
+		screen.addTableControlGFC("WBPlayerModifiers", 2, iX, iY, iWidth, iHeight, False, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
+		screen.setTableColumnHeader("WBPlayerModifiers", 0, "", iWidth/3*2)
+		screen.setTableColumnHeader("WBPlayerModifiers", 1, "", iWidth/3)
+		for iModifier in range(Modifiers.iNumModifiers):
+			iRow = screen.appendTableRow("WBPlayerModifiers")
+			sText = localText.getText("TXT_KEY_MODIFIERS_"+str(iModifier), ())
+			iValue = pPlayer.getModifier(iModifier)
+			screen.setTableText("WBPlayerModifiers", 0, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+			screen.setTableText("WBPlayerModifiers", 1, iRow, str(iValue), "", WidgetTypes.WIDGET_PYTHON, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+			screen.setButtonGFC("ModifierButtonDecrease"+str(iRow), "", "", iXx, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 22300+iModifier, iChange, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+			screen.setButtonGFC("ModifierButtonIncrease"+str(iRow), "", "", iXx+24, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 22400+iModifier, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+			
 
 	def placeReligions(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
@@ -269,7 +292,7 @@ class WBPlayerScreen:
 	def placeCivics(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
 		iX = 20
-		iY = screen.getYResolution()/2 + 30
+		iY = screen.getYResolution()/2 + 30 + 24
 		iWidth = screen.getXResolution() - 40
 		screen.setLabel("CivicsHeader", "Background", "<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIVIC",()) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, iX + iWidth/2, iY, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
@@ -315,6 +338,7 @@ class WBPlayerScreen:
 
 		if inputClass.getFunctionName() == "ChangeBy":
 			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			self.placeModifiers()
 
 		elif inputClass.getFunctionName() == "CurrentPage":
 			iIndex = screen.getPullDownData("CurrentPage", screen.getSelectedPullDownID("CurrentPage"))
@@ -453,6 +477,18 @@ class WBPlayerScreen:
 			popup.createEditBox(pPlayer.getScriptData())
 			popup.launch()
 			return
+			
+		elif inputClass.getFunctionName().find("ModifierButton") > -1:
+			iData1 = inputClass.getData1()
+			if iData1 >= 22300 and iData1 < 22325:
+				iModifier = iData1 - 22300
+				iModifierValue = pPlayer.getModifier(iModifier)
+				pPlayer.setModifier(iModifier, iModifierValue - iChange)
+			elif iData1 >= 22400 and iData1 < 22425:
+				iModifier = iData1 - 22400
+				iModifierValue = pPlayer.getModifier(iModifier)
+				pPlayer.setModifier(iModifier, iModifierValue + iChange)
+			self.placeModifiers()
 
 		return 1
 
