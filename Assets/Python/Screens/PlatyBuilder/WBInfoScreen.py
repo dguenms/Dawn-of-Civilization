@@ -395,7 +395,6 @@ class WBInfoScreen:
 			if iMode == 14 and iItem != -1:
 				iPlayer = iItem
 				tCapital = Areas.getCapital(iPlayer)
-				lForeignCorePlots = Areas.getForeignCores(iPlayer)
 				for x in range(con.iWorldX):
 					for y in range(con.iWorldY):
 						plot = gc.getMap().plot(x, y)
@@ -408,7 +407,7 @@ class WBInfoScreen:
 								if bHideForbidden: continue
 								iPlotType = 5
 							elif iSettlerValue >= 90:
-								if (x, y) in lForeignCorePlots:
+								if Areas.isForeignCore(iPlayer, (x, y)):
 									iPlotType = 2
 								else:
 									iPlotType = 1
@@ -732,7 +731,7 @@ class WBInfoScreen:
 					iPlotType = 0
 				else:
 					sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
-					bForeignCore = tCurrentPlot in Areas.getForeignCores(iPlayer)
+					bForeignCore = Areas.isForeignCore(iPlayer, tCurrentPlot)
 					if iSettlerValue >= 90:
 						if bForeignCore:
 							iPlotType = 2
