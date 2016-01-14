@@ -1205,8 +1205,12 @@ def getUHVTileInfo(argsList):
 			
 		if utils.isPlotInArea((x, y), vic.tEasterIslandTL, vic.tEasterIslandBR):
 			return 68
+			
+	elif iPlayer == iMongolia:
+		if (x, y) in Areas.getNormalArea(iChina, False):
+			return 69
 				
-		# continue with ID 69
+		# continue with ID 70
 			
 	return -1
 		
