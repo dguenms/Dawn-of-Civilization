@@ -60,18 +60,13 @@ def updateCore(iPlayer):
 		for y in range(iWorldY):
 			gc.getMap().plot(x, y).setCore(iPlayer, (x, y) in lCore)
 			
-def getForeignCores(iPlayer):
-	lForeignCores = []
-	for x in range(iWorldX):
-		for y in range(iWorldY):
-			plot = gc.getMap().plot(x, y)
-			if plot.isCore(iPlayer): continue
-			for iLoopPlayer in range(iNumPlayers):
-				if iLoopPlayer == iPlayer: continue
-				if plot.isCore(iLoopPlayer):
-					lForeignCores.append((x, y))
-					break
-	return lForeignCores
+def isForeignCore(iPlayer, tPlot):
+	plot = gc.getMap().plot(tPlot[0], tPlot[1])
+	for iLoopPlayer in range(iNumPlayers):
+		if iLoopPlayer == iPlayer: continue
+		if plot.isCore(iLoopPlayer):
+			return True
+	return False
 			
 def init():
 	for iPlayer in range(iNumPlayers):

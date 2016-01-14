@@ -1969,7 +1969,6 @@ class RFCUtils:
 		colors = ["COLOR_PLAYER_DARK_GREEN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED"]
 		iHuman = self.getHumanID()
 		iHumanTeam = gc.getPlayer(iHuman).getTeam()
-		lForeignCorePlots = Areas.getForeignCores(iHuman)
 
 		# apply the highlight
 		iCiv = gc.getPlayer(iHuman).getCivilizationType()
@@ -1983,11 +1982,11 @@ class RFCUtils:
 				else:
 					iSettlerValue = plot.getSettlerValue(iHuman)
 					if iSettlerValue >= 90:
-						if tPlot in lForeignCorePlots:
+						if Areas.isForeignCore(iHuman, tPlot):
 							iPlotType = 2
 						else:
 							iPlotType = 1
-					elif tPlot in lForeignCorePlots:
+					elif Areas.isForeignCore(iHuman, tPlot):
 						iPlotType = 3
 					else:
 						iPlotType = -1
