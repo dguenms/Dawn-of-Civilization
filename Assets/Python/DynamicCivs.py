@@ -554,6 +554,7 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	
 def onVassalState(iVassal):
 	if iVassal in lVassalNameChanges:
+		sd.changeResurrections(iPlayer, 1)
 		setShort(iVassal, text(dNameChanges[iVassal]))
 		setAdjective(iVassal, text(dAdjectiveChanges[iVassal]))
 		
@@ -561,6 +562,7 @@ def onVassalState(iVassal):
 	
 def onPlayerChangeStateReligion(iPlayer, iReligion):
 	if iPlayer in lChristianityNameChanges and iReligion in lChristianity:
+		sd.changeResurrections(iPlayer, 1)
 		setShort(iPlayer, text(dNameChanges[iPlayer]))
 		setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
 		
@@ -1058,7 +1060,7 @@ def specificAdjective(iPlayer):
 				return "TXT_KEY_CIV_EGYPT_AYYUBID"
 			
 	elif iPlayer == iIndia:
-		if bMonarchy:
+		if bMonarchy and not bCityStates:
 			if iEra >= iRenaissance:
 				return "TXT_KEY_CIV_INDIA_MARATHA"
 			
@@ -1545,7 +1547,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_SPAIN_CROWN_OF"
 			
 	elif iPlayer == iFrance:
-		if not utils.isPlotInCore(iPlayer, tCapitalCoords):
+		if not tCapitalCoords in Areas.getNormalArea(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_EXILE"
 			
 		if iEra >= iIndustrial and bEmpire:
