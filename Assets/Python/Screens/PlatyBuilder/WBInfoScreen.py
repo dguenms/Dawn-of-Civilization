@@ -1085,8 +1085,8 @@ class WBInfoScreen:
 					if not plot.isWater() and not plot.isPeak():
 						bGoodPlot = True
 				# Reset old maps
-				for x in range(iWorldX):
-					for y in range(iWorldY):
+				for x in range(con.iWorldX):
+					for y in range(con.iWorldY):
 						gc.getMap().plot(x, y).setCore(iItem, False)
 				lOldFlip = Areas.getBirthArea(iItem)
 				for tPlot in lOldFlip:
