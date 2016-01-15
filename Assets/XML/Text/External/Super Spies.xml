@@ -332,17 +332,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED_NEAR_CITY</Tag>
 		<English>A %s1_ThingName was destroyed by enemy infiltrators near %s2_CityName!</English>
-		<French></French>
 		<German>Eine %s1_ThingName nahe %s2_CityName wurde durch einen feindlichen Geheimdienst zerstört!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_ASSASSINATED</Tag>
 		<English>A %s1_ThingName was assassinated by enemy infiltrators at %s2_CityName!</English>
 		<French>Un %s1_ThingName a été assassiné par les envahisseurs ennemis à %s2_CityName!</French>
 		<German>Ein %s1_ThingName wurde durch einen feindlichen Geheimdienst in %s2_CityName ermordet!</German>
-		<Italian>A %s1_ThingName was assassinated by enemy infiltrators at %s2_CityName!</Italian>
 		<Spanish>Un %s1_ThingName fue asesinado por los infiltrados enemigos en %s2_CityName!</Spanish>
 	</TEXT>
 	<TEXT>

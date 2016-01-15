@@ -665,10 +665,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FREE_EXPERIENCE</Tag>
 		<English>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from %s2_building[COLOR_REVERT]</English>
-		<French>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EXP from %s2_building[COLOR_REVERT]</French>
 		<German>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EP durch %s2_building[COLOR_REVERT]</German>
-		<Italian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from %s2_building[COLOR_REVERT]</Italian>
-		<Spanish>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 PE from %s2_building[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NO_BUILDING_FREE_EXPERIENCE</Tag>
