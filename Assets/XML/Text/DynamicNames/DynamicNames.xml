@@ -107,19 +107,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROTECTORATE_OF</Tag>
-		<English></English>
+		<English>Protectorate of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_COLONY_OF</Tag>
-		<English></English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_COLONY</Tag>
 		<English>Colony of %s1</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_VASSAL_GENERIC_PROTECTORATE</Tag>
-		<English>Protectorate of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_</Tag>
