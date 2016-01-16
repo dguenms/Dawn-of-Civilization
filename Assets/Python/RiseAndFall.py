@@ -291,17 +291,7 @@ class RiseAndFall:
 		
 		iNumCities = gc.getPlayer(iNewCivFlip).getNumCities()
 
-                humanCityList = []
-                for x in range(tTopLeft[0], tBottomRight[0]+1):
-                        for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if not (x,y) in tExceptions[utils.getReborn(iNewCivFlip)][iNewCivFlip]:
-	                                pCurrent = gc.getMap().plot( x, y )
-        	                        if ( pCurrent.isCity()):
-						if pCurrent.isCore(pCurrent.getOwner()) and not pCurrent.isCore(iNewCivFlip): continue
-                	                        city = pCurrent.getPlotCity()
-                        	                if (city.getOwner() == iHuman):
-                                        	        if not ((x,y) == Areas.getCapital(iHuman) and pCurrent.getPlotCity.isCapital()):
-                                                	        humanCityList.append(city)
+                humanCityList = [city for city in self.getConvertedCities(iNewCivFlip, tTopLeft, tBottomRight) if city.getOwner() == iHuman]
                 
                 if( popupReturn.getButtonClicked() == 0 ): # 1st button
                         print ("Flip agreed")
