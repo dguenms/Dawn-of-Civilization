@@ -370,6 +370,8 @@ int getScenarioStartTurn(); // Leoreth
 BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth
 UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // Leoreth
 
+void log(char* format, ...);
+
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);
