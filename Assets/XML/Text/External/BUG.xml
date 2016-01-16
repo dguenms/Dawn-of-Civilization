@@ -2925,26 +2925,6 @@
 	</TEXT>
 	<!-- Victory Screen -->
 	<TEXT>
-		<Tag>TXT_KEY_PROJECT_APOLLO_PROGRAM</Tag>
-		<English>Apollo Program</English>
-		<French>
-			<Text>Programme Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German><Text>Apollo-Programm</Text><Gender>Neuter</Gender><Plural>0</Plural></German>
-		<Italian>
-			<Text>Programma Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>el Programa Apollo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUG_VICTORY_TURNS_NEXT_VOTE</Tag>
 		<English>Turns until next Vote: %d1</English>
 		<French>Turns until next Vote: %d1</French>
@@ -3088,24 +3068,18 @@
 		<English>Missions</English>
 		<French>Missions</French>
 		<German>Missionen</German>
-		<Italian>Missions</Italian>
-		<Spanish>Missions</Spanish>
+		<Italian>Missioni</Italian>
+		<Spanish>Misiones</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ESPIONAGE_SPYVSPY_TAB</Tag>
 		<English>Spy v Spy</English>
-		<French>Spy v Spy</French>
 		<German>Gegenspionage</German>
-		<Italian>Spy v Spy</Italian>
-		<Spanish>Spy v Spy</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ESPIONAGE_AI_SPENDING_TOGGLE</Tag>
 		<English>Show AI Espionage</English>
-		<French>Show AI Espionage</French>
 		<German>KI-Spionage</German>
-		<Italian>Show AI Espionage</Italian>
-		<Spanish>Show AI Espionage</Spanish>
 	</TEXT>
 	<!-- BUG Finance Advisor -->
 	<TEXT>
