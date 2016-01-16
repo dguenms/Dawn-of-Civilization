@@ -2002,7 +2002,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 					lFlippingCities.append(city)
 					
 		# if only up to two cities wouldn't flip, they flip as well (but at least one city has to flip already, else the respawn fails)
-		if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0 and not bFromCollapse:
+		if len(lFlippingCities) + 2 >= len(lPotentialCities) and len(lFlippingCities) > 0 and len(FlippingCities) * 2 >= len(lPotentialCities) and not bFromCollapse:
 			lFlippingCities = []
 			# cities in core are not affected by this
 			for city in lPotentialCities:
