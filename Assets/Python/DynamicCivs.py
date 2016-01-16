@@ -6,11 +6,9 @@ import PyHelpers
 from Consts import *
 import Victory as vic
 from StoredData import sd
-import RFCUtils
+from RFCUtils import utils
 import CityNameManager as cnm
 import Areas
-
-utils = RFCUtils.RFCUtils()
 
 ### Constants ###
 
@@ -535,7 +533,7 @@ def setup():
 	for iPlayer in range(iNumPlayers):	
 		setDesc(iPlayer, peoplesName(iPlayer))
 		
-		if iScenario > i3000BC and gc.getPlayer(iPlayer).isAlive():
+		if gc.getPlayer(iPlayer).getNumCities() > 0:
 			checkName(iPlayer)
 		
 		if not gc.getPlayer(iPlayer).isHuman():
