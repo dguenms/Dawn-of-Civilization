@@ -5436,6 +5436,7 @@
 				<PrereqTech>TECH_COMPASS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
+				<PrereqTech>TECH_MACHINERY</PrereqTech>
 				<PrereqTech>TECH_GUILDS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_OPTICS_QUOTE</Quote>
