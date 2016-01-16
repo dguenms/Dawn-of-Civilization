@@ -1373,6 +1373,7 @@ bool CvGame::canDoControl(ControlTypes eControl) const
 	case CONTROL_YIELDS:
 	case CONTROL_RESOURCE_ALL:
 	case CONTROL_UNIT_ICONS:
+	case CONTROL_STABILITY_OVERLAY: //edead
 	case CONTROL_GLOBELAYER:
 	case CONTROL_SCORES:
 	case CONTROL_FREE_COLONY:
@@ -1921,6 +1922,12 @@ void CvGame::doControl(ControlTypes eControl)
 			gDLL->getInterfaceIFace()->addPopup(pInfo);
 		}
 		break;
+
+	// edead: start
+	case CONTROL_STABILITY_OVERLAY:
+		gDLL->getPythonIFace()->callFunction(PYScreensModule, "toggleStabilityOverlay");
+		break;
+	// edead: end
 
 	default:
 		FAssertMsg(false, "eControl did not match any valid options");
