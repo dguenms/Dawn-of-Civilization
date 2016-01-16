@@ -31,10 +31,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_PERSECUTION</Tag>
 		<English>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</English>
-		<French>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</French>
-		<German>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</German>
-		<Italian>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Italian>
-		<Spanish>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACTION_REFORM_GOVERNMENT</Tag>
@@ -54,10 +50,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_PERSECUTE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_REFORM_GOVERNMENT</Tag>
