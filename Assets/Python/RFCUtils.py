@@ -824,12 +824,12 @@ class RFCUtils:
         #Barbs, RiseAndFall
         def outerInvasion( self, tCoords, result, argsList ):
                 """Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-                Plot is valid if it's hill or flatlands, it isn't marsh, jungle or rainforest, it isn't occupied by a unit or city and if it isn't a civ's territory"""
+                Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
                 bPaint = True
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                         if (pCurrent.countTotalCulture() == 0 ):
                                                 # this is a good plot, so paint it and continue search
@@ -901,13 +901,13 @@ class RFCUtils:
         #Barbs
         def outerSpawn( self, tCoords, result, argsList ):
                 """Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-                Plot is valid if it's hill or flatlands, it isn't marsh, jungle or rainforest, it isn't occupied by a unit or city and if it isn't a civ's territory.
+                Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory.
                 Unit check extended to adjacent plots"""
                 bPaint = True
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                         iClean = 0
                                         for x in range(tCoords[0] - 1, tCoords[0] + 2):        # from x-1 to x+1
@@ -924,12 +924,12 @@ class RFCUtils:
         #RiseAndFall
         def innerInvasion( self, tCoords, result, argsList ):
                 """Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-                Plot is valid if it's hill or flatlands, it isn't marsh, jungle or rainforest, it isn't occupied by a unit or city and if it isn't a civ's territory"""
+                Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
                 bPaint = True
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                         if (pCurrent.getOwner() in argsList ):
                                                 # this is a good plot, so paint it and continue search
@@ -943,19 +943,19 @@ class RFCUtils:
 		bContinue = True
 		pCurrent = gc.getMap().plot(tCoords[0], tCoords[1])
 		if pCurrent.isHills() or pCurrent.isFlatlands():
-			if pCurrent.getTerrainType() != con.iMarsh and pCurrent.getFeatureType() != con.iJungle and pCurrent.getFeatureType() != con.iRainforest:
+			if pCurrent.getTerrainType() != con.iMarsh and pCurrent.getFeatureType() != con.iJungle:
 				if not pCurrent.isCity() and not pCurrent.isUnit():
 					return (None, bPaint, bContinue)
 		return (None, not bPaint, bContinue)
             
         def innerSpawn( self, tCoords, result, argsList ):
                 """Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-                Plot is valid if it's hill or flatlands, it isn't marsh, jungle or rainforest, it isn't occupied by a unit or city and if it isn't a civ's territory"""
+                Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
                 bPaint = True
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                         iClean = 0
                                         for x in range(tCoords[0] - 1, tCoords[0] + 2):        # from x-1 to x+1
@@ -972,7 +972,7 @@ class RFCUtils:
         #RiseAndFall
         def goodPlots( self, tCoords, result, argsList ):
                 """Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-                Plot is valid if it's hill or flatlands, it isn't desert, tundra, marsh, jungle or rainforest; it isn't occupied by a unit or city and if it isn't a civ's territory.
+                Plot is valid if it's hill or flatlands, it isn't desert, tundra, marsh or jungle; it isn't occupied by a unit or city and if it isn't a civ's territory.
                 Unit check extended to adjacent plots"""
                 bPaint = True
                 bContinue = True
@@ -980,7 +980,7 @@ class RFCUtils:
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
                         if ( not pCurrent.isImpassable()):
                                 if ( not pCurrent.isUnit() ):
-                                        if (pCurrent.getTerrainType() != con.iDesert) and (pCurrent.getTerrainType() != con.iTundra) and (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
+                                        if (pCurrent.getTerrainType() != con.iDesert) and (pCurrent.getTerrainType() != con.iTundra) and (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
                                                 if (pCurrent.countTotalCulture() == 0 ):
                                                         # this is a good plot, so paint it and continue search
                                                         return (None, bPaint, bContinue)
@@ -1050,12 +1050,12 @@ class RFCUtils:
 
         def goodOwnedPlots( self, tCoords, result, argsList ):
                 """Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
-                Plot is valid if it's hill or flatlands; it isn't marsh, jungle or rainforest, it isn't occupied by a unit and if it is in civ's territory."""
+                Plot is valid if it's hill or flatlands; it isn't marsh or jungle, it isn't occupied by a unit and if it is in civ's territory."""
                 bPaint = True
                 bContinue = True
                 pCurrent = gc.getMap().plot( tCoords[0], tCoords[1] )
                 if ( pCurrent.isHills() or pCurrent.isFlatlands() ):
-                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle) and (pCurrent.getFeatureType() != con.iRainforest):
+                        if (pCurrent.getTerrainType() != con.iMarsh) and (pCurrent.getFeatureType() != con.iJungle):
                                 if ( not pCurrent.isCity() and not pCurrent.isUnit() ):
                                             if (pCurrent.getOwner() == argsList ):
                                                     # this is a good plot, so paint it and continue search
@@ -1190,7 +1190,7 @@ class RFCUtils:
 			for j in range(y-1, y+2):
 				current = gc.getMap().plot(i, j)
 				if not current.isCity() and not current.isPeak() and not current.isWater():
-					#if not current.getFeatureType() == con.iJungle and not current.getTerrainType() == con.iMarsh and not current.getTerrainType() == con.iRainforest:
+					#if not current.getFeatureType() == con.iJungle and not current.getTerrainType() == con.iMarsh:
 					lFreePlots.append((i,j))
 					
 		if iTargetCiv != -1 and not gc.getTeam(iCiv).isAtWar(iTargetCiv):
@@ -1450,8 +1450,8 @@ class RFCUtils:
 			for y in range(68):
 				plot = gc.getMap().plot(x, y)
 				if plot.getOwner() == iPlayer:
-					if plot.getImprovementType() == con.iSlavePlantation:
-						plot.setImprovementType(con.iPlantation)
+					if plot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"):
+						plot.setImprovementType(gc.getInfoTypeForString("IMPROVEMENT_PLANTATION"))
 					if plot.isCity():
 						self.removeSlaves(plot.getPlotCity())
 						
@@ -1464,12 +1464,12 @@ class RFCUtils:
 			slave.kill(con.iBarbarian, False)
 			
 	def removeSlaves(self, city):
-		city.setFreeSpecialistCount(con.iSettledSlave, 0)
+		city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
 		
 	def freeSlaves(self, city, iPlayer):
-		iNumSlaves = city.getFreeSpecialistCount(con.iSettledSlave)
+		iNumSlaves = city.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"))
 		if iNumSlaves > 0:
-			city.setFreeSpecialistCount(con.iSettledSlave, 0)
+			city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
 			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(con.iSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
 		
 	def getRandomEntry(self, list):
