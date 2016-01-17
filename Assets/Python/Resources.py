@@ -44,7 +44,7 @@ iCottage = con.iCottage
 iSilk = con.iSilk
 iRoad = 0
 #Orka: Silk Road road locations
-tSilkRoute = ((85,48), (86,49), (87,48), (88,47), (89,46), (90,47),(90,45),  (91,47),(91,45),  (92,48),(92,45),  (93,48),(93,46),  (94,47), (95,47), (96,47), (97,47), (98,47), (99,46))
+lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
 lNewfoundlandCapes = [(34, 52), (34, 53), (34, 54), (35, 52), (36, 52), (35, 55), (35, 56), (35, 57), (36, 51), (36, 58), (36, 59)]
 
 class Resources:
@@ -87,8 +87,8 @@ class Resources:
 
                 #Orka: Silk Road
                 if (iGameTurn == getTurnForYear(-200)): 
-                        for i in range( len(tSilkRoute) ):
-                            gc.getMap().plot(tSilkRoute[i][0], tSilkRoute[i][1]).setRouteType(iRoad)
+                        for i in range( len(lSilkRoute) ):
+                            gc.getMap().plot(lSilkRoute[i][0], lSilkRoute[i][1]).setRouteType(iRoad)
                 
                 #Orka: Silk Road
                 if (iGameTurn == getTurnForYear(-100)):
@@ -207,7 +207,7 @@ class Resources:
 			self.createResource(96, 36, iFish) # Calcutta, Dhaka, Pagan
 
 		if iGameTurn == getTurnForYear(1350):
-			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove jungle in Vietnam
+			gc.getMap().plot(102, 35).setFeatureType(-1, 0) #remove rainforest in Vietnam
 
 		if (iGameTurn == getTurnForYear(1500)):
 			gc.getMap().plot(35, 54).setFeatureType(-1, 0) # remove Marsh in case it had been placed

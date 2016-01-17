@@ -1164,10 +1164,10 @@ public:
 	// Leoreth
 
 	int verifySettlersHalt(int threshold); //Rhye
-	DllExport int getSettlersMaps(int y, int x); //Rhye
-	DllExport void setFlag(CvWString s); //Rhye
-	DllExport void setLeader(int i); //Rhye
-	DllExport LeaderHeadTypes getLeader(); //Rhye
+	void setFlag(CvWString s); //Rhye
+	void setLeader(int i); //Rhye
+	void setLeaderName(CvWString name);
+	LeaderHeadTypes getLeader(); //Rhye
 	void resetRelations( PlayerTypes ePlayer ); //Rhye
 	void reinit( PlayerTypes eID, LeaderHeadTypes prevLeader, bool doReset );  //Rhye
 	void processCivNames(); //Rhye - dynamic civ names - not jdog's
@@ -1179,7 +1179,26 @@ public:
     void setReborn(bool bNewValue = true); // Leoreth
     bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
 	bool isHasBuildingEffect(BuildingTypes eIndex) const; // Leoreth
-	DllExport int getWarMapValue(int x, int y); //Leoreth
+	int getSettlerValue(int x, int y); // Leoreth
+	int getWarValue(int x, int y); //Leoreth
+	
+	EraTypes getStartingEra() const;
+	void setStartingEra(EraTypes eNewValue);
+
+	// Leoreth
+	int getModifier(ModifierTypes eModifier) const;
+	void setModifier(ModifierTypes eModifier, int iNewValue);
+
+	int getSpreadFactor(ReligionTypes eReligion) const;
+	void setSpreadFactor(ReligionTypes eReligion, int iNewValue);
+
+	int getBirthYear() const;
+	int getBirthTurn() const;
+	void setBirthYear(int iNewValue);
+
+	int distance(PlayerTypes ePlayer);
+	bool isDistant(PlayerTypes ePlayer);
+	bool isNeighbor(PlayerTypes ePlayer);
 
 	int getLatestRebellionTurn();
 	void setLatestRebellionTurn(int iNewValue);
@@ -1201,6 +1220,19 @@ public:
 	int getStabilityParameter(ParameterTypes eParameter) const;
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);
 
+	int AI_getTakenTilesThreshold() const;
+	void setTakenTilesThreshold(int iNewValue);
+	int AI_getDistanceSubtrahend() const;
+	void setDistanceSubtrahend(int iNewValue);
+	int AI_getDistanceFactor() const;
+	void setDistanceFactor(int iNewValue);
+	int AI_getCompactnessModifier() const;
+	void setCompactnessModifier(int iNewValue);
+	int AI_getTargetDistanceValueModifier() const;
+	void setTargetDistanceValueModifier(int iNewValue);
+	int AI_getReligiousTolerance() const;
+	void setReligiousTolerance(int iNewValue);
+
 	bool canRespawn() const;
 	bool canEverRespawn() const;
 
@@ -1211,6 +1243,8 @@ public:
 	int countCoreCities() const;
 
 	bool canTradeBonus(BonusTypes eBonus) const;
+
+	bool m_bTurnPlayed;
 
 protected:
 
@@ -1363,10 +1397,19 @@ protected:
 	int m_iLatestRebellionTurn;
 	int m_iPersecutionCountdown;
 	int m_iNoAnarchyTurns;
+	int m_iBirthYear;
+
+	int m_iTakenTilesThreshold;
+	int m_iDistanceSubtrahend;
+	int m_iDistanceFactor;
+	int m_iCompactnessModifier;
+	int m_iTargetDistanceValueModifier;
+	int m_iReligiousTolerance;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;
 	EraTypes m_eCurrentEra;
+	EraTypes m_eStartingEra; // Leoreth
 	ReligionTypes m_eLastStateReligion;
 	PlayerTypes m_eParent;
 	TeamTypes m_eTeamType;
@@ -1393,6 +1436,8 @@ protected:
 	int* m_aiDomainExperienceModifiers;
 
 	int* m_aiStabilityParameters;
+	int* m_aiModifiers;
+	int* m_aiSpreadFactors;
 
 	bool* m_abFeatAccomplished;
 	bool* m_abOptions;

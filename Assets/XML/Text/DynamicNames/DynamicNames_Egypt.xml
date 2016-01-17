@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Egypt -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_DESC</Tag>
+		<English>The Egyptians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_PEOPLES</Tag>
+		<English>Peoples of the Nile</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_FASCIST</Tag>
+		<English>Officers' %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_COMMUNIST</Tag>
+		<English>Liberation Rally of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_PTOLEMAIC</Tag>
+		<English>Ptolemaic Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_OLD_KINGDOM</Tag>
+		<English>Old Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM</Tag>
+		<English>Middle Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_NEW_KINGDOM</Tag>
+		<English>New Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_COPTIC</Tag>
+		<English>Coptic Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_MAMLUK</Tag>
+		<English>Mamluk</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_FATIMID</Tag>
+		<English>Fatimid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_AYYUBID</Tag>
+		<English>Ayyubid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPTIAN_PHOENICIA</Tag>
+		<English>Province of Retjenu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPTIAN_ETHIOPIA</Tag>
+		<English>Kingdom of Punt</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_ADJECTIVE</Tag>
+		<English>Egyptian</English>
+		<French>
+			<Text>&#233;gyptien:&#233;gyptienne:&#233;gyptiens:&#233;gyptiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>&#196;gyptisch:&#228;gyptischen:&#228;gyptische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>egiziano:egiziana:egiziani:egiziane</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>egipcio:egipcia:egipcios:egipcias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EGYPT_SHORT_DESC</Tag>
+		<English>Egypt</English>
+		<French>
+			<Text>&#201;gypte</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>&#196;gypten</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Egitto</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Egipto</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Byzantium -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_DESC</Tag>
+		<English>The Byzantines</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_PEOPLES</Tag>
+		<English>Byzantine Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_DEFAULT</Tag>
+		<English>%s2 Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_REPUBLIC</Tag>
+		<English>Republic of Rhomania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_FASCIST</Tag>
+		<English>Despotate of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_EASTERN</Tag>
+		<English>Eastern Roman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_TREBIZOND</Tag>
+		<English>Trebizond</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_DESPOTATE</Tag>
+		<English>Despotate of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_MOREA</Tag>
+		<English>the Morea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_NICAEA</Tag>
+		<English>Nicaea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_EPIRUS</Tag>
+		<English>Epirus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTINE_VASSAL</Tag>
+		<English>Exarchate of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTINE_EGYPT</Tag>
+		<English>Exarchate of Alexandria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTINE_BABYLONIA</Tag>
+		<English>Exarchate of Ctesiphon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTINE_GREECE</Tag>
+		<English>Exarchate of Achaia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTINE_CARTHAGE</Tag>
+		<English>Exarchate of Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTINE_PERSIA</Tag>
+		<English>Exarchate of Parthia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTINE_ROME</Tag>
+		<English>Exarchate of Ravenna</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTINE_SPAIN</Tag>
+		<English>Exarchate of Spania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_ADJECTIVE</Tag>
+		<English>
+			<Text>Byzantine:Byzantines</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>byzantin:byzantine;byzantins:bizantines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Byzantinisch:byzantinischen:byzantinische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>bizantino:bizantina:bizantini:bizantine</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>bizantino:bizantina:bizantinos:bizantinas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_SHORT_DESC</Tag>
+		<English>Byzantium</English>
+		<French>
+			<Text>Byzance</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Byzanz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Bisanzio</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Bizancio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

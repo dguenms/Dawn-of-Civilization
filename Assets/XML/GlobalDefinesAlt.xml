@@ -63,7 +63,6 @@
 		<DefineName>PLAYER_OCCURRENCE_HARAPPA</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
 	</Define>
-	
 	<!-- Disable the respawn by setting the value to 0 -->
 	<Define>
 		<DefineName>PLAYER_REBIRTH_MEXICO</DefineName>
@@ -74,16 +73,11 @@
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
 
-<!--
-	BULL User Settings
-	
+<!-- BULL User Settings
 	This file is used only when BULL is running without BUG, but it will cause no harm to include it with BUG.
-
-	Copyright (c) 2009 The BUG Mod.
--->
+	Copyright (c) 2009 The BUG Mod -->
 
 <!-- City Bar -->
-	
 	<Define>
 		<DefineName>BUG_CITYBAR_AIRPORT_ICONS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
@@ -92,9 +86,7 @@
 		<DefineName>BUG_CITYBAR_STARVATION_TURNS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-
 <!-- City Bar Hover -->
-	
 	<Define>
 		<DefineName>BUG_CITYBAR_BASE_VALUES</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
@@ -167,9 +159,7 @@
 		<DefineName>BUG_CITYBAR_HIDE_INSTRUCTIONS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 <!-- Miscellaneous Hovers -->
-	
 	<!-- Production Decay (Buildings/Units) -->
 	<Define>
 		<DefineName>BUG_PRODUCTION_DECAY_HOVER</DefineName>
@@ -183,7 +173,6 @@
 		<DefineName>BUG_PRODUCTION_DECAY_HOVER_UNIT_THRESHOLD</DefineName>
 		<iDefineIntVal>5</iDefineIntVal>
 	</Define>
-	
 	<!-- Leaderhead -->
 	<Define>
 		<DefineName>BUG_LEADERHEAD_HOVER_HIDDEN_ATTITUDE</DefineName>
@@ -197,7 +186,6 @@
 		<DefineName>BUG_LEADERHEAD_HOVER_DEFENSIVE_PACTS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Plot -->
 	<Define>
 		<DefineName>BUG_PLOT_HOVER_LAT_LONG</DefineName>
@@ -207,13 +195,11 @@
 		<DefineName>BUG_PLOT_HOVER_PARTIAL_BUILDS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Building -->
 	<Define>
 		<DefineName>BUG_BUILDING_HOVER_ACTUAL_EFFECTS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Unit -->
 	<Define>
 		<DefineName>BUG_UPDATE_UNIT_NAME_ON_UPGRADE</DefineName>
@@ -227,13 +213,11 @@
 		<DefineName>BUG_UNIT_EXPERIENCE_MODIFIERS_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-
 	<!-- Specialist -->
 	<Define>
 		<DefineName>BUG_SPECIALIST_HOVER_ACTUAL_EFFECTS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Tech -->
 	<Define>
 		<DefineName>BUG_SPED_UP_TECHS_HOVER</DefineName>
@@ -243,13 +227,11 @@
 		<DefineName>BUG_TECH_TRADE_DENIAL_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Bonus -->
 	<Define>
 		<DefineName>BUG_BONUS_TRADE_DENIAL_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Action Buttons -->
 	<Define>
 		<DefineName>BUG_CONSCRIPT_UNIT_HOVER</DefineName>
@@ -259,7 +241,6 @@
 		<DefineName>BUG_CONSCRIPT_LIMIT_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>BUG_HURRY_OVERFLOW_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
@@ -268,17 +249,14 @@
 		<DefineName>BUG_HURRY_OVERFLOW_HOVER_INCLUDE_CURRENT</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>BUG_CITY_SCREEN_REMOVE_SPECIALIST_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>BUG_CDA_ZOOM_CITY_DETAILS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- City Screen -->
 	<Define>
 		<DefineName>BUG_CITY_SCREEN_BASE_COMMERCE_HOVER</DefineName>
@@ -288,7 +266,6 @@
 		<DefineName>BUG_GREAT_PEOPLE_RATE_BREAKDOWN_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>BUG_BUILDING_SAVED_MAINTENANCE_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
@@ -321,9 +298,7 @@
 		<DefineName>BUG_BUILDING_ADDITIONAL_DEFENSE_HOVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Production Popup Unit Training -->
-	
 	<Define>
 		<DefineName>BUG_PRODUCTION_POPUP_TRAIN_CIVILIAN_UNITS_FOREVER</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
@@ -332,15 +307,12 @@
 		<DefineName>BUG_PRODUCTION_POPUP_TRAIN_MILITARY_UNITS_FOREVER</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-
 	<!-- Actions -->
-
 	<!-- Ask Declare War -->
 	<Define>
 		<DefineName>BUG_ASK_DECLARE_WAR_UNITS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Sentry Healing -->
 	<Define>
 		<DefineName>BUG_SENTRY_HEALING</DefineName>
@@ -350,13 +322,11 @@
 		<DefineName>BUG_SENTRY_HEALING_ONLY_NEUTRAL</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Ignore Harmless Barbarians -->
 	<Define>
 		<DefineName>BUG_IGNORE_HARMLESS_BARBARIANS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-	
 	<!-- Pre-Chop -->
 	<Define>
 		<DefineName>BUG_PRECHOP_FORESTS</DefineName>
@@ -366,9 +336,7 @@
 		<DefineName>BUG_PRECHOP_IMPROVEMENTS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
-
 <!-- Advanced Combat Odds -->
-	
 	<Define>
 		<DefineName>ACO_ENABLED</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
@@ -377,7 +345,6 @@
 		<DefineName>ACO_DEBUG</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>ACO_FORCE_ORIGINAL_ODDS</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
@@ -386,7 +353,6 @@
 		<DefineName>ACO_IGNORE_BARB_FREE_WINS</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>ACO_SWAP_VIEWS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
@@ -399,9 +365,7 @@
 		<DefineName>ACO_SHOW_MODIFIER_LABELS</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
-	
 	<!-- The following use 0 for hidden, 1 for view A, 2 for view B, and 3 for both views -->
-	
 	<Define>
 		<DefineName>ACO_SHOW_BASIC_INFO</DefineName>
 		<iDefineIntVal>3</iDefineIntVal>
@@ -414,7 +378,6 @@
 		<DefineName>ACO_SHOW_DEFENDER_INFO</DefineName>
 		<iDefineIntVal>3</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>ACO_SHOW_SURVIVAL_ODDS</DefineName>
 		<iDefineIntVal>3</iDefineIntVal>
@@ -435,7 +398,6 @@
 		<DefineName>ACO_SHOW_DEFENDER_HEALTH_BARS</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>ACO_SHOW_UNROUNDED_EXPERIENCE</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
@@ -444,7 +406,6 @@
 		<DefineName>ACO_SHOW_EXPERIENCE_RANGE</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>ACO_SHOW_DEFENSE_MODIFIERS</DefineName>
 		<iDefineIntVal>3</iDefineIntVal>
@@ -453,7 +414,6 @@
 		<DefineName>ACO_SHOW_TOTAL_DEFENSE_MODIFIER</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
-	
 	<Define>
 		<DefineName>ACO_SHOW_SHIFT_INSTRUCTIONS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>

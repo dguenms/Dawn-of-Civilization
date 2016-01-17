@@ -61,6 +61,7 @@ g_bIsScreenActive = -1
 #Rhye - start
 from StoredData import sd
 from Consts import *
+import Areas
 import RFCUtils
 import Victory as vic
 import CityNameManager as cnm
@@ -895,7 +896,7 @@ def isCorePlot(argsList):
 	iCiv = argsList[2]
 	reborn = utils.getReborn(iCiv)
 	if iCiv < iNumPlayers:
-		if (x >= tCoreAreasTL[reborn][iCiv][0] and x <= tCoreAreasBR[reborn][iCiv][0] and y >= tCoreAreasTL[reborn][iCiv][1] and y <= tCoreAreasBR[reborn][iCiv][1] and not (x, y) in tExceptions[reborn][iCiv]):
+		if (x, y) in Areas.getCoreArea(iCiv):
 			return 1
 	return 0
 
@@ -905,7 +906,7 @@ def isNormalPlot(argsList):
 	y = argsList[1]
 	iCiv = argsList[2]
 	if iCiv < iNumPlayers:
-		if (x >= tNormalAreasTL[utils.getReborn(iCiv)][iCiv][0] and x <= tNormalAreasBR[utils.getReborn(iCiv)][iCiv][0] and y >= tNormalAreasTL[utils.getReborn(iCiv)][iCiv][1] and y <= tNormalAreasBR[utils.getReborn(iCiv)][iCiv][1] and not (x, y) in tNormalAreasSubtract[utils.getReborn(iCiv)][iCiv]):
+		if (x, y) in Areas.getNormalArea(iCiv):
 			return 1
 	return 0
 
@@ -916,8 +917,7 @@ def isForeignCorePlot(argsList):
 	iResult = 0
 	for iCiv in range(iNumPlayers):
 		if CyGlobalContext().getGame().getGameTurn() >= getTurnForYear(tBirth[iCiv]):
-			reborn = utils.getReborn(iCiv)
-			if (x >= tCoreAreasTL[reborn][iCiv][0] and x <= tCoreAreasBR[reborn][iCiv][0] and y >= tCoreAreasTL[reborn][iCiv][1] and y <= tCoreAreasBR[reborn][iCiv][1] and not (x, y) in tExceptions[reborn][iCiv]):
+			if (x, y) in Areas.getCoreArea(iCiv):
 				iResult = 1
 				break
 	return iResult
@@ -929,7 +929,7 @@ def isBroaderPlot(argsList):
 	iCiv = argsList[2]
 	reborn = utils.getReborn(iCiv)
 	if iCiv < iNumPlayers:
-		if (x >= tBroaderAreasTL[reborn][iCiv][0] and x <= tBroaderAreasBR[reborn][iCiv][0] and y >= tBroaderAreasTL[reborn][iCiv][1] and y <= tBroaderAreasBR[reborn][iCiv][1]):
+		if (x, y) in Areas.getBroaderArea(iCiv):
 			return 1
 	return 0
 
@@ -953,16 +953,16 @@ def getUHVTileInfo(argsList):
 	iPlayer = argsList[2]
 	
 	if iPlayer == iGreece:
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iEgypt], tNormalAreasBR[0][iEgypt], tExceptions[0][iEgypt]):
+		if (x, y) in Areas.getNormalArea(iEgypt, False):
 			return 0
 			
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iCarthage], tNormalAreasBR[0][iCarthage], tExceptions[0][iCarthage]):
+		if (x, y) in Areas.getNormalArea(iCarthage, False):
 			return 1
 			
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iBabylonia], tNormalAreasBR[0][iBabylonia], tExceptions[0][iBabylonia]):
+		if (x, y) in Areas.getNormalArea(iBabylonia, False):
 			return 2
 			
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iPersia], tNormalAreasBR[0][iPersia], tExceptions[0][iPersia]):
+		if (x, y) in Areas.getNormalArea(iPersia, False):
 			return 3
 			
 	elif iPlayer == iPersia and CyGlobalContext().getPlayer(iPersia).isReborn():
@@ -976,10 +976,10 @@ def getUHVTileInfo(argsList):
 			return 6
 			
 	elif iPlayer == iCarthage:
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iItaly], tNormalAreasBR[0][iItaly], [(62, 47), (63, 47), (63, 46)]):
+		if utils.isPlotInArea((x, y), Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]):
 			return 37
-			
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iSpain], tNormalAreasBR[0][iSpain]):
+		
+		if (x, y) in Areas.getNormalArea(iSpain, False):
 			return 8
 			
 	elif iPlayer == iItaly:
@@ -987,22 +987,22 @@ def getUHVTileInfo(argsList):
 			return 7
 			
 	elif iPlayer == iRome:
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iSpain], tNormalAreasBR[0][iSpain]):
+		if (x, y) in Areas.getNormalArea(iSpain, False):
 			return 8
 				
-		if utils.isPlotInArea((x, y), vic.tFranceTL, tNormalAreasBR[0][iFrance]):
+		if utils.isPlotInArea((x, y), vic.tFranceTL, Areas.tNormalArea[iFrance][1]):
 			return 9
 				
-		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iEngland], tCoreAreasBR[0][iEngland]):
+		if (x, y) in Areas.getCoreArea(iEngland, False):
 			return 10
 				
 		if utils.isPlotInArea((x, y), vic.tCarthageTL, vic.tCarthageBR):
 			return 11
 				
-		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iByzantium], tCoreAreasBR[0][iByzantium]):
+		if (x, y) in Areas.getCoreArea(iByzantium, False):
 			return 12
 			
-		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt]):
+		if (x, y) in Areas.getCoreArea(iEgypt, False):
 			return 13
 
 	elif iPlayer == iJapan:
@@ -1039,19 +1039,19 @@ def getUHVTileInfo(argsList):
 			return 23
 			
 	elif iPlayer == iArabia:
-		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iEgypt], tCoreAreasBR[0][iEgypt]):
+		if (x, y) in Areas.getCoreArea(iEgypt, False):
 			return 24
 				
 		if utils.isPlotInArea((x, y), vic.tCarthageTL, vic.tCarthageBR):
 			return 25
-				
-		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iBabylonia], tCoreAreasBR[0][iBabylonia]):
+		
+		if (x, y) in Areas.getCoreArea(iBabylonia, False):
 			return 26
 				
-		if utils.isPlotInArea((x, y), tCoreAreasTL[0][iPersia], tCoreAreasBR[0][iPersia]):
+		if (x, y) in Areas.getCoreArea(iPersia, False):
 			return 27
-				
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iSpain], tNormalAreasBR[0][iSpain]):
+		
+		if (x, y) in Areas.getNormalArea(iSpain, False):
 			return 28
 			
 	elif iPlayer == iSpain:
@@ -1082,19 +1082,19 @@ def getUHVTileInfo(argsList):
 			return 35
 			
 	elif iPlayer == iGermany:
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iFrance], tNormalAreasBR[0][iFrance]):
+		if (x, y) in Areas.getNormalArea(iFrance, False):
 			return 36
-			
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iItaly], tNormalAreasBR[0][iItaly]):
+		
+		if (x, y) in Areas.getNormalArea(iItaly, False):
 			return 37
-			
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iRussia], tNormalAreasBR[0][iRussia]):
+		
+		if (x, y) in Areas.getNormalArea(iRussia, False):
 			return 38
-			
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iEngland], tNormalAreasBR[0][iEngland]):
+		
+		if (x, y) in Areas.getNormalArea(iEngland, False):
 			return 39
-			
-		if utils.isPlotInArea((x, y), tNormalAreasTL[0][iVikings], tNormalAreasBR[0][iVikings]):
+		
+		if (x, y) in Areas.getNormalArea(iVikings, False):
 			return 40
 			
 	elif iPlayer == iRussia:
@@ -1205,8 +1205,12 @@ def getUHVTileInfo(argsList):
 			
 		if utils.isPlotInArea((x, y), vic.tEasterIslandTL, vic.tEasterIslandBR):
 			return 68
+			
+	elif iPlayer == iMongolia:
+		if (x, y) in Areas.getNormalArea(iChina, False):
+			return 69
 				
-		# continue with ID 69
+		# continue with ID 70
 			
 	return -1
 		

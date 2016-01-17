@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Italy -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DESC_PEOPLES</Tag>
+		<English>Lombard Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_FASCIST</Tag>
+		<English>National Fascist %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_LEAGUE</Tag>
+		<English>%s2 League</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_LOMBARD</Tag>
+		<English>Lombard</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_TUSCANY</Tag>
+		<English>Tuscany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS</Tag>
+		<English>%s2 Maritime Republics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DUCHY_OF</Tag>
+		<English>Duchy of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_PAPAL_STATES</Tag>
+		<English>Papal States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_ADJECTIVE</Tag>
+		<English>Italian</English>
+		<French>Italien</French>
+		<German>Italienisch</German>
+		<Italian>Italiano</Italian>
+		<Spanish>Italiano</Spanish>
+		<Hungarian>olasz</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DESC</Tag>
+		<English>The Italians</English>
+		<French>The Italians</French>
+		<German>The Italians</German>
+		<Italian>The Italians</Italian>
+		<Spanish>The Italians</Spanish>
+		<Hungarian>The Italians</Hungarian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_SHORT_DESC</Tag>
+		<English>Italy</English>
+		<French>Italie</French>
+		<German>Italien</German>
+		<Italian>L'Italia</Italian>
+		<Spanish>Italia</Spanish>
+		<Hungarian>Olaszorsz&#225;g</Hungarian>
+	</TEXT>
+</Civ4GameText>

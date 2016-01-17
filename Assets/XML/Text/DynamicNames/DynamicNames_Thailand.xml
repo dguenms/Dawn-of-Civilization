@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Thailand -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_DESC</Tag>
+		<English>The Thais</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_PEOPLES</Tag>
+		<English>Thai Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_FASCIST</Tag>
+		<English>%s2 Junta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_AYUTTHAYA</Tag>
+		<English>Ayutthaya</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_SIAM</Tag>
+		<English>Siam</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_SIAMESE</Tag>
+		<English>Siamese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_ADJECTIVE</Tag>
+		<English>Thai</English>
+		<German>Thai</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THAILAND_SHORT_DESC</Tag>
+		<English>Thailand</English>
+		<German>Thailand</German>
+	</TEXT>
+</Civ4GameText>

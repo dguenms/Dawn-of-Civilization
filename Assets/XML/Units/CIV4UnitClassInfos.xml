@@ -98,7 +98,7 @@
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_JEWISH_MISSIONARY</Type>
-			<Description>TXT_KEY_UNIT_JEWISH_MISSIONARY</Description>
+			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
@@ -107,7 +107,7 @@
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CHRISTIAN_MISSIONARY</Type>
-			<Description>TXT_KEY_UNIT_CHRISTIAN_MISSIONARY</Description>
+			<Description>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mexico -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_DESC</Tag>
+		<English>The Mexicans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_SHORT_DESC</Tag>
+		<English>Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_ADJECTIVE</Tag>
+		<English>Mexican</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_PEOPLES</Tag>
+		<English>Mexican Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_REPUBLIC</Tag>
+		<English>United %s2 States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_COMMUNIST</Tag>
+		<English>Anti-Reelectionist %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_FASCIST</Tag>
+		<English>%s2 Empire</English>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Portugal -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_DESC</Tag>
+		<English>The Portuguese</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_PEOPLES</Tag>
+		<English>Lusitanian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_COMMUNIST</Tag>
+		<English>%s2 Continuing Revolutionary Process</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_FASCIST</Tag>
+		<English>New State of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_EMPIRE</Tag>
+		<English>Portuguese Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_BRAZIL</Tag>
+		<English>United Kingdom of %s1 and Brazil</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_EXILE</Tag>
+		<English>%s2 Government in Exile</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGUESE_INDIA</Tag>
+		<English>Viceroyalty of %s2 %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGUESE_INDONESIA</Tag>
+		<English>%s2 East Indies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_ADJECTIVE</Tag>
+		<English>
+			<Text>Portuguese:Portuguese</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>portugais:portugaise:portugais:portugaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Portugiesisch:portugiesischen:portugiesische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>portoghese:portoghese:portoghesi:portoghesi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>portugu&#233;s:portuguesa:portugueses:portuguesas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PORTUGAL_SHORT_DESC</Tag>
+		<English>Portugal</English>
+		<French>
+			<Text>Portugal</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Portugal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Portogallo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Portugal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

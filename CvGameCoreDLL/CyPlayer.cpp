@@ -2371,12 +2371,6 @@ void CyPlayer::addReminder(int iGameTurn, std::wstring szMessage) const
 }
 // BUG - Reminder Mod - end
 
-//Rhye - start
-int CyPlayer::getSettlersMaps(int y, int x)
-{
-	return m_pPlayer ? m_pPlayer->getSettlersMaps(y, x) : -1;
-}
-
 void CyPlayer::setFlag(std::wstring s)
 {
 	if (m_pPlayer)
@@ -2387,6 +2381,12 @@ void CyPlayer::setLeader(int i)
 {
 	if (m_pPlayer)
 		m_pPlayer->setLeader(i);
+}
+
+void CyPlayer::setLeaderName(std::wstring name)
+{
+	if (m_pPlayer)
+		m_pPlayer->setLeaderName(name);
 }
 
 int /*LeaderHeadTypes*/ CyPlayer::getLeader()
@@ -2424,11 +2424,6 @@ void CyPlayer::updateMaintenance()
 {
 	if (m_pPlayer)
 		m_pPlayer->updateMaintenance();
-}
-
-int CyPlayer::getWarMapValue(int x, int y)
-{
-	return m_pPlayer ? m_pPlayer->getWarMapValue(x, y) : -1;
 }
 
 void CyPlayer::AI_reset()
@@ -2493,4 +2488,99 @@ void CyPlayer::setEspionageExperience(int iNewValue)
 {
 	if (m_pPlayer)
 		m_pPlayer->setEspionageExperience(iNewValue);
+}
+
+int CyPlayer::getSettlerValue(int x, int y)
+{
+	return m_pPlayer ? m_pPlayer->getSettlerValue(x, y) : -1;
+}
+
+int CyPlayer::getWarValue(int x, int y)
+{
+	return m_pPlayer ? m_pPlayer->getWarValue(x, y) : -1;
+}
+
+int CyPlayer::getModifier(int eModifierType)
+{
+	return m_pPlayer ? m_pPlayer->getModifier((ModifierTypes)eModifierType) : 0;
+}
+
+void CyPlayer::setModifier(int eModifierType, int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setModifier((ModifierTypes)eModifierType, iNewValue);
+}
+
+int CyPlayer::getStartingEra()
+{
+	return m_pPlayer ? m_pPlayer->getStartingEra() : 0;
+}
+
+void CyPlayer::setStartingEra(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setStartingEra((EraTypes)iNewValue);
+}
+
+int CyPlayer::getSpreadFactor(int eReligion)
+{
+	return m_pPlayer ? m_pPlayer->getSpreadFactor((ReligionTypes)eReligion) : 0;
+}
+
+void CyPlayer::setSpreadFactor(int eReligion, int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setSpreadFactor((ReligionTypes)eReligion, iNewValue);
+}
+
+void CyPlayer::setTakenTilesThreshold(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setTakenTilesThreshold(iNewValue);
+}
+
+void CyPlayer::setDistanceSubtrahend(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setDistanceSubtrahend(iNewValue);
+}
+
+void CyPlayer::setDistanceFactor(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setDistanceFactor(iNewValue);
+}
+
+void CyPlayer::setCompactnessModifier(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setCompactnessModifier(iNewValue);
+}
+
+void CyPlayer::setTargetDistanceValueModifier(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setTargetDistanceValueModifier(iNewValue);
+}
+
+void CyPlayer::setReligiousTolerance(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setReligiousTolerance(iNewValue);
+}
+
+int CyPlayer::getBirthYear() 
+{
+	return m_pPlayer ? m_pPlayer->getBirthYear() : -1;
+}
+
+int CyPlayer::getBirthTurn()
+{
+	return m_pPlayer ? m_pPlayer->getBirthTurn() : -1;
+}
+
+void CyPlayer::setBirthYear(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setBirthYear(iNewValue);
 }

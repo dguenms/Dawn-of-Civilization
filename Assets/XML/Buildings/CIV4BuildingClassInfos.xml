@@ -20,7 +20,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GREAT_PALACE</Type>
-			<Description>TXT_KEY_BUILDING_GREAT_PALACE</Description>
+			<Description>TXT_KEY_BUILDING_ADMIN_CENTER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -308,7 +308,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_OBELISK</Type>
-			<Description>TXT_KEY_BUILDING_OBELISK</Description>
+			<Description>TXT_KEY_BUILDING_PAGAN_TEMPLE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -524,7 +524,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_NATIONAL_SECURITY</Type>
-			<Description>TXT_KEY_BUILDING_NATIONAL_SECURITY</Description>
+			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -536,7 +536,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_JEWISH_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_JEWISH_TEMPLE</Description>
+			<Description>TXT_KEY_BUILDING_PROTESTANT_TEMPLE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -548,7 +548,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_JEWISH_CATHEDRAL</Type>
-			<Description>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Description>
+			<Description>TXT_KEY_BUILDING_PROTESTANT_CATHEDRAL</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -560,7 +560,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_JEWISH_MONASTERY</Type>
-			<Description>TXT_KEY_BUILDING_JEWISH_MONASTERY</Description>
+			<Description>TXT_KEY_BUILDING_PROTESTANT_MONASTERY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -572,7 +572,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_JEWISH_SHRINE</Type>
-			<Description>TXT_KEY_BUILDING_JEWISH_SHRINE</Description>
+			<Description>TXT_KEY_BUILDING_PROTESTANT_SHRINE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -584,7 +584,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CHRISTIAN_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE</Description>
+			<Description>TXT_KEY_BUILDING_CATHOLIC_TEMPLE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -596,7 +596,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CHRISTIAN_CATHEDRAL</Type>
-			<Description>TXT_KEY_BUILDING_CHRISTIAN_CATHEDRAL</Description>
+			<Description>TXT_KEY_BUILDING_CATHOLIC_CATHEDRAL</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -608,7 +608,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CHRISTIAN_MONASTERY</Type>
-			<Description>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY</Description>
+			<Description>TXT_KEY_BUILDING_CATHOLIC_MONASTERY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -620,7 +620,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CHRISTIAN_SHRINE</Type>
-			<Description>TXT_KEY_BUILDING_CHRISTIAN_SHRINE</Description>
+			<Description>TXT_KEY_BUILDING_CATHOLIC_SHRINE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -967,7 +967,6 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<!-- Rhye - start -->
 			<Type>BUILDINGCLASS_FLAVIAN_AMPHITHEATRE</Type>
 			<Description>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -978,11 +977,10 @@
 			<bMonument>1</bMonument>
 			<DefaultBuilding>BUILDING_FLAVIAN_AMPHITHEATRE</DefaultBuilding>
 			<VictoryThresholds/>
-			<!-- Rhye - end -->
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_NATIONAL_EPIC</Type>
-			<Description>TXT_KEY_BUILDING_NATIONAL_EPIC</Description>
+			<Description>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>
@@ -1029,7 +1027,6 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<!-- Rhye - start -->
 			<Type>BUILDINGCLASS_CERN</Type>
 			<Description>TXT_KEY_BUILDING_CERN</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1040,7 +1037,6 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_CERN</DefaultBuilding>
 			<VictoryThresholds/>
-			<!-- Rhye - end -->
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_WALL_STREET</Type>
@@ -1056,7 +1052,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_IRON_WORKS</Type>
-			<Description>TXT_KEY_BUILDING_IRONWORKS</Description>
+			<Description>TXT_KEY_BUILDING_IRON_WORKS</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>
@@ -1067,7 +1063,6 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<!-- Rhye - start -->
 			<Type>BUILDINGCLASS_TRADING_COMPANY</Type>
 			<Description>TXT_KEY_BUILDING_TRADING_COMPANY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -1078,10 +1073,8 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_TRADING_COMPANY</DefaultBuilding>
 			<VictoryThresholds/>
-			<!-- Rhye - end -->
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<!-- Rhye - start -->
 			<Type>BUILDINGCLASS_MT_RUSHMORE</Type>
 			<Description>TXT_KEY_BUILDING_MT_RUSHMORE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1092,7 +1085,6 @@
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_MT_RUSHMORE</DefaultBuilding>
 			<VictoryThresholds/>
-			<!-- Rhye - end -->
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_RED_CROSS</Type>
@@ -1132,7 +1124,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_STONEHENGE</Type>
-			<Description>TXT_KEY_BUILDING_STONEHENGE</Description>
+			<Description>TXT_KEY_BUILDING_SPHINX</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1226,18 +1218,6 @@
 			<DefaultBuilding>BUILDING_ANGKOR_WAT</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<!--BuildingClassInfo>
-			<Type>BUILDINGCLASS_HAGIA_SOPHIA</Type>
-			<Description>TXT_KEY_BUILDING_HAGIA_SOPHIA</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_HAGIA_SOPHIA</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo-->
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CHICHEN_ITZA</Type>
 			<Description>TXT_KEY_BUILDING_CHICHEN_ITZA</Description>
@@ -1372,7 +1352,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GREAT_DAM</Type>
-			<Description>TXT_KEY_BUILDING_GREAT_DAM</Description>
+			<Description>TXT_KEY_BUILDING_THREE_GORGES_DAM</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
@@ -1517,11 +1497,9 @@
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GREAT_COTHON</Type>
 			<Description>TXT_KEY_BUILDING_GREAT_COTHON</Description>
-			<!-- Rhye - start -->
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<!-- Rhye - end -->
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
@@ -1531,101 +1509,15 @@
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MOAI_STATUES</Type>
 			<Description>TXT_KEY_BUILDING_MOAI_STATUES</Description>
-			<!-- Rhye - start -->
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<!-- Rhye - end -->
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_MOAI_STATUES</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<!--BuildingClassInfo>
-			<Type>BUILDINGCLASS_CORPORATION_1</Type>
-			<Description>TXT_KEY_CORPORATION_1</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CORPORATION_1</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CORPORATION_2</Type>
-			<Description>CHANGED_TXT_KEY_CORPORATION_2</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CORPORATION_2</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CORPORATION_3</Type>
-			<Description>TXT_KEY_CORPORATION_3</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CORPORATION_3</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CORPORATION_4</Type>
-			<Description>TXT_KEY_CORPORATION_4</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CORPORATION_4</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CORPORATION_5</Type>
-			<Description>TXT_KEY_CORPORATION_5</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CORPORATION_5</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CORPORATION_6</Type>
-			<Description>TXT_KEY_CORPORATION_6</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CORPORATION_6</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CORPORATION_7</Type>
-			<Description>TXT_KEY_CORPORATION_7</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CORPORATION_7</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo-->
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_APOSTOLIC_PALACE</Type>
 			<Description>TXT_KEY_BUILDING_APOSTOLIC_PALACE</Description>
@@ -1638,7 +1530,6 @@
 			<DefaultBuilding>BUILDING_APOSTOLIC_PALACE</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
-		<!-- Rhye - start -->
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_LEANING_TOWER</Type>
 			<Description>TXT_KEY_BUILDING_LEANING_TOWER</Description>
@@ -1677,7 +1568,7 @@
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TEMPLE_OF_SALOMON</Type>
-			<Description>TXT_KEY_BUILDING_TEMPLE_OF_SALOMON</Description>
+			<Description>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
