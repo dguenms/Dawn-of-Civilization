@@ -16,7 +16,7 @@ gc = CyGlobalContext()
 import Consts as con
 import RFCUtils
 utils = RFCUtils.RFCUtils()
-import MapDrawer as md
+import MapEditorTools as met
 import Areas
 
 bSensibility = True
@@ -223,7 +223,7 @@ class WBPlotScreen:
 					else:
 						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
 					screen.setTableText("WBSigns", 3, iRow, sCore, "", WidgetTypes.WIDGET_PYTHON, 22171, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
-					iSettlerValue = md.getSettlerValue(iPlayerX, tPlot)
+					iSettlerValue = met.getSettlerValue(iPlayerX, tPlot)
 					screen.setTableText("WBSigns", 4, iRow, str(iSettlerValue), "", WidgetTypes.WIDGET_PYTHON, 22172, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
 					if tPlot in Areas.getBirthArea(iPlayerX):
 						sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
@@ -677,23 +677,23 @@ class WBPlotScreen:
 			elif iData1 == 22171:
 				iPlayer = inputClass.getData2()
 				tPlot = (pPlot.getX(), pPlot.getY())
-				md.changeCore(iPlayer, tPlot)
+				met.changeCore(iPlayer, tPlot)
 				self.placeSigns()
 			elif iData1 == 22172:
 				iPlayer = inputClass.getData2()
 				tPlot = (pPlot.getX(), pPlot.getY())
 				if iChangeType == 0:
-					iValue = md.getSettlerValue(iPlayer, tPlot) - iChange
+					iValue = met.getSettlerValue(iPlayer, tPlot) - iChange
 				elif iChangeType == 1:
-					iValue = md.getSettlerValue(iPlayer, tPlot) + iChange
+					iValue = met.getSettlerValue(iPlayer, tPlot) + iChange
 				elif iChangeType == 2:
 					iValue = iSetValue
-				md.changeSettlerValue(iPlayer, tPlot, iValue)
+				met.changeSettlerValue(iPlayer, tPlot, iValue)
 				screen.setTableText("WBSigns", 4, iPlayer, str(iValue), "", WidgetTypes.WIDGET_PYTHON, 22172, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
 			elif iData1 == 22176:
 				iPlayer = inputClass.getData2()
 				tPlot = (pPlot.getX(), pPlot.getY())
-				md.changeFlip(iPlayer, tPlot)
+				met.changeFlip(iPlayer, tPlot)
 				self.placeSigns()
 
 		elif inputClass.getFunctionName().find("EditCulture") > -1:
@@ -874,7 +874,7 @@ class WBPlotScreen:
 			iSetValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))
 			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 		elif inputClass.getFunctionName() == "Export":
-			md.export()
+			met.export()
 
 		return 1
 

@@ -16,7 +16,7 @@ gc = CyGlobalContext()
 import Consts as con
 import RFCUtils
 utils = RFCUtils.RFCUtils()
-import MapDrawer as md
+import MapEditorTools as met
 import Areas
 
 iMode = 0
@@ -402,7 +402,7 @@ class WBInfoScreen:
 						if gc.getMap().plot(x, y).isCore(iPlayer):
 							iPlotType = 0
 						else:
-							iSettlerValue = md.getSettlerValue(iPlayer, (x, y))
+							iSettlerValue = met.getSettlerValue(iPlayer, (x, y))
 							if iSettlerValue == 3:
 								if bHideForbidden: continue
 								iPlotType = 5
@@ -725,7 +725,7 @@ class WBInfoScreen:
 
 			for iPlayer in range(con.iNumPlayers):
 				iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-				iSettlerValue = md.getSettlerValue(iPlayer, tCurrentPlot)
+				iSettlerValue = met.getSettlerValue(iPlayer, tCurrentPlot)
 				if gc.getMap().plot(tCurrentPlot[0], tCurrentPlot[1]).isCore(iPlayer):
 					sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 					iPlotType = 0
@@ -892,25 +892,25 @@ class WBInfoScreen:
 				iData1 = inputClass.getData1()
 				if iData1 == 22171:
 					iPlayer = inputClass.getData2()
-					md.changeCore(iPlayer, tCurrentPlot)
+					met.changeCore(iPlayer, tCurrentPlot)
 					self.placeItemsStabMap()
 					self.refreshMap()
 				elif iData1 == 22172:
 					iPlayer = inputClass.getData2()
 					x, y = tCurrentPlot
 					if iChangeType == 0:
-						iValue = md.getSettlerValue(iPlayer, (x, y)) - iChange
+						iValue = met.getSettlerValue(iPlayer, (x, y)) - iChange
 					elif iChangeType == 1:
-						iValue = md.getSettlerValue(iPlayer, (x, y)) + iChange
+						iValue = met.getSettlerValue(iPlayer, (x, y)) + iChange
 					elif iChangeType == 2:
 						iValue = iSetValue
-					md.changeSettlerValue(iPlayer, tCurrentPlot, iValue)
+					met.changeSettlerValue(iPlayer, tCurrentPlot, iValue)
 					screen.setTableInt("InfoTable", 2, iPlayer, "<font=3>" + str(iValue) + "</font>", "", WidgetTypes.WIDGET_PYTHON, 22172, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
 					if iItem == iPlayer:
 						self.refreshMap()
 				elif iData1 == 22176:
 					iPlayer = inputClass.getData2()
-					md.changeFlip(iPlayer, tCurrentPlot)
+					met.changeFlip(iPlayer, tCurrentPlot)
 					self.placeItemsStabMap()
 					self.refreshMap()
 				else:
@@ -1008,39 +1008,39 @@ class WBInfoScreen:
 				if iMode == 14:
 					if iData2 == 0:
 						for tPlot in lPlotList:
-							md.changeCoreForce(iItem, tPlot, True)
+							met.changeCoreForce(iItem, tPlot, True)
 					elif iData2 == 1:
 						for tPlot in lPlotList:
-							md.changeCoreForce(iItem, tPlot, False)
+							met.changeCoreForce(iItem, tPlot, False)
 					elif iData2 == 2:
 						for x in range(iWorldX):
 							for y in range(iWorldY):
-								md.changeCoreForce(iItem, (x, y), False)
+								met.changeCoreForce(iItem, (x, y), False)
 						for tPlot in lPlotList:
-							md.changeCoreForce(iItem, tPlot, True)
+							met.changeCoreForce(iItem, tPlot, True)
 					elif iData2 == 3:
 						for tPlot in lPlotList:
 							x, y = tPlot
 							if iChangeType == 0:
-								iValue = md.getSettlerValue(iItem, (x, y)) - iChange
+								iValue = met.getSettlerValue(iItem, (x, y)) - iChange
 							elif iChangeType == 1:
-								iValue = md.getSettlerValue(iItem, (x, y)) + iChange
+								iValue = met.getSettlerValue(iItem, (x, y)) + iChange
 							elif iChangeType == 2:
 								iValue = iSetValue
-							md.changeSettlerValue(iItem, tPlot, iValue)
+							met.changeSettlerValue(iItem, tPlot, iValue)
 				elif iMode == 15:
 					if iData2 == 0:
 						for tPlot in lPlotList:
-							md.changeFlipForce(iItem, tPlot, True)
+							met.changeFlipForce(iItem, tPlot, True)
 					elif iData2 == 1:
 						for tPlot in lPlotList:
-							md.changeFlipForce(iItem, tPlot, False)
+							met.changeFlipForce(iItem, tPlot, False)
 					elif iData2 == 2:
 						lOldFlip = Areas.getBirthArea(iItem)
 						for tPlot in lOldFlip:
-							md.changeFlipForce(iItem, tPlot, False)
+							met.changeFlipForce(iItem, tPlot, False)
 						for tPlot in lPlotList:
-							md.changeFlipForce(iItem, tPlot, True)
+							met.changeFlipForce(iItem, tPlot, True)
 				lSquareSelection = [-1, -1, False]
 				self.placeItemsStabMap()
 				self.refreshMap()
@@ -1054,25 +1054,25 @@ class WBInfoScreen:
 			iData2 = inputClass.getData2()
 			if iItem != -1 and (iData2 % 2) == 1:
 				if iData2 == 1:
-					md.resetCore(iItem)
+					met.resetCore(iItem)
 				elif iData2 == 3:
-					md.resetFlip(iItem)
+					met.resetFlip(iItem)
 				elif iData2 == 5:
-					md.resetSettler(iItem)
+					met.resetSettler(iItem)
 				self.refreshMap()
 			elif (iData2 % 2) == 0:
 				for iPlayer in range(con.iNumPlayers):
 					if iData2 == 2:
-						md.resetCore(iPlayer)
+						met.resetCore(iPlayer)
 					elif iData2 == 4:
-						md.resetFlip(iPlayer)
+						met.resetFlip(iPlayer)
 					elif iData2 == 6:
-						md.resetSettler(iPlayer)
+						met.resetSettler(iPlayer)
 				if iItem != -1:
 					self.refreshMap()
 			self.placeItemsStabMap()
 		elif inputClass.getFunctionName() == "Export":
-			md.export()
+			met.export()
 
 		elif inputClass.getFunctionName() == "Randomizer":
 			if iItem != -1:
@@ -1090,10 +1090,10 @@ class WBInfoScreen:
 						gc.getMap().plot(x, y).setCore(iItem, False)
 				lOldFlip = Areas.getBirthArea(iItem)
 				for tPlot in lOldFlip:
-					md.changeFlipForce(iItem, tPlot, False)
+					met.changeFlipForce(iItem, tPlot, False)
 				for x in range(con.iWorldX):
 					for y in range(con.iWorldY):
-						md.changeSettlerValue(iItem, (x, y), 20)
+						met.changeSettlerValue(iItem, (x, y), 20)
 				# Create new maps
 				for x in range(con.iWorldX):
 					for y in range(con.iWorldY):
@@ -1107,19 +1107,19 @@ class WBInfoScreen:
 								for yy in range(-1, 2):
 									plot = gc.getMap().plot(x + xx, y + yy)
 									if not plot.isNone() and not plot.isWater() and not plot.isPeak():
-										md.changeSettlerValue(iItem, (x + xx, y + yy), iValue)
+										met.changeSettlerValue(iItem, (x + xx, y + yy), iValue)
 						elif iRand == 3:
 							for xx in range(-1, 2):
 								for yy in range(-1, 2):
 									plot = gc.getMap().plot(x + xx, y + yy)
 									if not plot.isNone() and not plot.isWater() and not plot.isPeak():
-										md.changeSettlerValue(iItem, (x + xx, y + yy), 3)
+										met.changeSettlerValue(iItem, (x + xx, y + yy), 3)
 				for x in range(iX-3, iX + 3 + 1):
 					for y in range(iY-3, iY + 3 + 1):
-						md.changeCoreForce(iItem, (x, y), True)
-						md.changeFlipForce(iItem, (x, y), True)
-						md.changeSettlerValue(iItem, (x, y), 500)
-				md.changeSettlerValue(iItem, (iX, iY), 700)
+						met.changeCoreForce(iItem, (x, y), True)
+						met.changeFlipForce(iItem, (x, y), True)
+						met.changeSettlerValue(iItem, (x, y), 500)
+				met.changeSettlerValue(iItem, (iX, iY), 700)
 				self.placeItemsStabMap()
 				self.refreshMap()
 

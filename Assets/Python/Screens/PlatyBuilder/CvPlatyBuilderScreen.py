@@ -30,7 +30,7 @@ import CityNameManager as cnm
 import Consts as con
 import RFCUtils
 utils = RFCUtils.RFCUtils()
-import MapDrawer as md
+import MapEditorTools as met
 import Areas
 
 gc = CyGlobalContext()
@@ -503,17 +503,17 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "Flip":
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				md.changeFlipForce(self.m_iCurrentPlayer, tPlot, True)
+				met.changeFlipForce(self.m_iCurrentPlayer, tPlot, True)
 				self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				md.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
+				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
 				self.showCoreZone()
 		elif self.iPlayerAddMode == "SettlerValue":
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				md.changeSettlerValue(self.m_iCurrentPlayer, tPlot, iSetValue)
+				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, iSetValue)
 				self.showSettlerValues()
 		return 1
 
@@ -619,12 +619,12 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "Flip":
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				md.changeFlipForce(self.m_iCurrentPlayer, tPlot, False)
+				met.changeFlipForce(self.m_iCurrentPlayer, tPlot, False)
 				self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				md.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
+				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
 				self.showCoreZone()
 		return 1
 		
@@ -1648,7 +1648,7 @@ class CvWorldBuilderScreen:
 			sHistoricalColor = "COLOR_GREEN"
 			for x in range(con.iWorldX):
 				for y in range(con.iWorldY):
-					iSettlerValue = md.getSettlerValue(self.m_iCurrentPlayer, (x, y))
+					iSettlerValue = met.getSettlerValue(self.m_iCurrentPlayer, (x, y))
 					if iSettlerValue >= 90:
 						CyEngine().fillAreaBorderPlotAlt(x, y, AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sHistoricalColor, 1.0)
 					elif iSettlerValue == 3:
@@ -2097,19 +2097,19 @@ class CvWorldBuilderScreen:
 			iData2 = inputClass.getData2()
 			if (iData2 % 2) == 1:
 				if iData2 == 1:
-					md.resetCore(self.m_iCurrentPlayer)
+					met.resetCore(self.m_iCurrentPlayer)
 				elif iData2 == 3:
-					md.resetFlip(self.m_iCurrentPlayer)
+					met.resetFlip(self.m_iCurrentPlayer)
 				elif iData2 == 5:
-					md.resetSettler(self.m_iCurrentPlayer)
+					met.resetSettler(self.m_iCurrentPlayer)
 			elif (iData2 % 2) == 0:
 				for iPlayer in range(con.iNumPlayers):
 					if iData2 == 2:
-						md.resetCore(iPlayer)
+						met.resetCore(iPlayer)
 					elif iData2 == 4:
-						md.resetFlip(iPlayer)
+						met.resetFlip(iPlayer)
 					elif iData2 == 6:
-						md.resetSettler(iPlayer)
+						met.resetSettler(iPlayer)
 			if self.iPlayerAddMode == "Flip":
 				self.showFlipZone()
 			elif self.iPlayerAddMode == "Core":
@@ -2118,7 +2118,7 @@ class CvWorldBuilderScreen:
 				self.showSettlerValues()
 
 		elif inputClass.getFunctionName() == "Export":
-			md.export()
+			met.export()
 
 		elif inputClass.getFunctionName() == "PresetValue":
 			iSetValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))
