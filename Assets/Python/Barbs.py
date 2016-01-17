@@ -530,7 +530,7 @@ class Barbs:
 			for y in range(tTL[1], tBR[1]+1):
 				plot = gc.getMap().plot(x,y)
 				if plot.isHills() or plot.isFlatlands():
-					if plot.getTerrainType() != con.iMarsh and (bJungle or plot.getFeatureType() != con.iJungle):
+					if plot.getTerrainType() != con.iMarsh and (bJungle or plot.getFeatureType() != con.iJungle) and (plot.getFeatureType() != con.iRainforest):
 						if not plot.isUnit() and not plot.isCity():
 							bClear = True
 							for i in range(x-1, x+2):

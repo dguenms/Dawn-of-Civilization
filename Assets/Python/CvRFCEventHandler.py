@@ -567,6 +567,7 @@ class CvRFCEventHandler:
 			
 			if iFeature == iForest: iGold = 15
 			elif iFeature == iJungle: iGold = 20
+			elif iFeature == iRainforest: iGold = 20
 			
 			if iGold > 0:
 				gc.getPlayer(iBrazil).changeGold(iGold)
