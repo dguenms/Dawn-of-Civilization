@@ -29,11 +29,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FORTIFY</Tag>
-		<English>Forifying</English>
-		<French>Forifying</French>
-		<German>Forifying</German>
-		<Italian>Forifying</Italian>
-		<Spanish>Forifying</Spanish>
+		<English>Fortifying</English>
+		<French>Fortifying</French>
+		<German>Fortifying</German>
+		<Italian>Fortifying</Italian>
+		<Spanish>Fortifying</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_DONE</Tag>
@@ -968,5 +968,295 @@
 		<German>Zivile Einheiten</German>
 		<Italian>Unit?non da combattimento</Italian>
 		<Spanish>Unidades sin tipo de combate</Spanish>
+	</TEXT>
+	
+	<!-- Merijn WB Texts -->
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_MAPS</Tag>
+		<English>Stability Maps</English>
+		<French>Stability Maps</French>
+		<German>Stability Maps</German>
+		<Italian>Stability Maps</Italian>
+		<Spanish>Stability Maps</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPAWN_MAPS</Tag>
+		<English>Flipzone Maps</English>
+		<French>Flipzone Maps</French>
+		<German>Flipzone Maps</German>
+		<Italian>Flipzone Maps</Italian>
+		<Spanish>Flipzone Maps</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_IN_SPAWN</Tag>
+		<English>Flipzone</English>
+		<French>Flipzone</French>
+		<German>Flipzone</German>
+		<Italian>Flipzone</Italian>
+		<Spanish>Flipzone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CORE</Tag>
+		<English>Core</English>
+		<French>Core</French>
+		<German>Core</German>
+		<Italian>Core</Italian>
+		<Spanish>Core</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SETTLERVALUE</Tag>
+		<English>Settlervalue</English>
+		<French>Settlervalue</French>
+		<German>Settlervalue</German>
+		<Italian>Settlervalue</Italian>
+		<Spanish>Settlervalue</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RESULT</Tag>
+		<English>Result</English>
+		<French>Result</French>
+		<German>Result</German>
+		<Italian>Result</Italian>
+		<Spanish>Result</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_EXTENDED_MAP</Tag>
+		<English>Extended Map</English>
+		<French>Extended Map</French>
+		<German>Extended Map</German>
+		<Italian>Extended Map</Italian>
+		<Spanish>Extended Map</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_TOGGLE_EXTENDED</Tag>
+		<English>Switch between vanilla map and extended map</English>
+		<French>Switch between vanilla map and extended map</French>
+		<German>Switch between vanilla map and extended map</German>
+		<Italian>Switch between vanilla map and extended map</Italian>
+		<Spanish>Switch between vanilla map and extended map</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_VIEW_STABMAP</Tag>
+		<English>View/Hide Stabilitymap</English>
+		<French>View/Hide Stabilitymap</French>
+		<German>View/Hide Stabilitymap</German>
+		<Italian>View/Hide Stabilitymap</Italian>
+		<Spanish>View/Hide Stabilitymap</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CHANGE_CORE</Tag>
+		<English>Add/Remove current tile to/from core</English>
+		<French>Add/Remove current tile to/from core</French>
+		<German>Add/Remove current tile to/from core</German>
+		<Italian>Add/Remove current tile to/from core</Italian>
+		<Spanish>Add/Remove current tile to/from core</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CHANGE_FLIP</Tag>
+		<English>Add/Remove current tile to/from flipzone</English>
+		<French>Add/Remove current tile to/from flipzone</French>
+		<German>Add/Remove current tile to/from flipzone</German>
+		<Italian>Add/Remove current tile to/from flipzone</Italian>
+		<Spanish>Add/Remove current tile to/from flipzone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CHANGE_SETTLERVALUE</Tag>
+		<English>Change settlervalue</English>
+		<French>Change settlervalue</French>
+		<German>Change settlervalue</German>
+		<Italian>Change settlervalue</Italian>
+		<Spanish>Change settlervalue</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_VIEW_FLIPZONE</Tag>
+		<English>View/Hide Flipzone</English>
+		<French>View/Hide Flipzone</French>
+		<German>View/Hide Flipzone</German>
+		<Italian>View/Hide Flipzone</Italian>
+		<Spanish>View/Hide Flipzone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_FLIP</Tag>
+		<English>Flip</English>
+		<French>Flip</French>
+		<German>Flip</German>
+		<Italian>Flip</Italian>
+		<Spanish>Flip</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_TOGGLE_AI_FORBIDDEN</Tag>
+		<English>Toggle AI forbidden</English>
+		<French>Toggle AI forbidden</French>
+		<German>Toggle AI forbidden</German>
+		<Italian>Toggle AI forbidden</Italian>
+		<Spanish>Toggle AI forbidden</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SET_VALUE</Tag>
+		<English>Set Value</English>
+		<French>Set Value</French>
+		<German>Set Value</German>
+		<Italian>Set Value</Italian>
+		<Spanish>Set Value</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_START</Tag>
+		<English>Start</English>
+		<French>Start</French>
+		<German>Start</German>
+		<Italian>Start</Italian>
+		<Spanish>Start</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_END</Tag>
+		<English>End</English>
+		<French>End</French>
+		<German>End</German>
+		<Italian>End</Italian>
+		<Spanish>End</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RESET</Tag>
+		<English>Reset</English>
+		<French>Reset</French>
+		<German>Reset</German>
+		<Italian>Reset</Italian>
+		<Spanish>Reset</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MULTITILE</Tag>
+		<English>Multitile selection</English>
+		<French>Multitile selection</French>
+		<German>Multitile selection</German>
+		<Italian>Multitile selection</Italian>
+		<Spanish>Multitile selection</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REPLACE</Tag>
+		<English>Replace</English>
+		<French>Replace</French>
+		<German>Replace</German>
+		<Italian>Replace</Italian>
+		<Spanish>Replace</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SONIC</Tag>
+		<English>You found an easteregg! Get yourself a cookie.</English>
+		<French>You found an easteregg! Get yourself a cookie.</French>
+		<German>You found an easteregg! Get yourself a cookie.</German>
+		<Italian>You found an easteregg! Get yourself a cookie.</Italian>
+		<Spanish>You found an easteregg! Get yourself a cookie.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_KABOOM</Tag>
+		<English>Completely randomizes the settlermap, coremap and flipzone of the selected civ</English>
+		<French>Completely randomizes the settlermap, coremap and flipzone of the selected civ</French>
+		<German>Completely randomizes the settlermap, coremap and flipzone of the selected civ</German>
+		<Italian>Completely randomizes the settlermap, coremap and flipzone of the selected civ</Italian>
+		<Spanish>Completely randomizes the settlermap, coremap and flipzone of the selected civ</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MULTI_ADD_CORE</Tag>
+		<English>Add selected tiles to core</English>
+		<French>Add selected tiles to core</French>
+		<German>Add selected tiles to core</German>
+		<Italian>Add selected tiles to core</Italian>
+		<Spanish>Add selected tiles to core</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MULTI_REMOVE_CORE</Tag>
+		<English>Remove selected tiles from core</English>
+		<French>Remove selected tiles from core</French>
+		<German>Remove selected tiles from core</German>
+		<Italian>Remove selected tiles from core</Italian>
+		<Spanish>Remove selected tiles from core</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MULTI_REPLACE_CORE</Tag>
+		<English>Replaces current core with selected tiles</English>
+		<French>Replaces current core with selected tiles</French>
+		<German>Replaces current core with selected tiles</German>
+		<Italian>Replaces current core with selected tiles</Italian>
+		<Spanish>Replaces current core with selected tiles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MULTI_SETTLERVALUE</Tag>
+		<English>Change the settler value of all selected tiles</English>
+		<French>Change the settler value of all selected tiles</French>
+		<German>Change the settler value of all selected tiles</German>
+		<Italian>Change the settler value of all selected tiles</Italian>
+		<Spanish>Change the settler value of all selected tiles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MULTI_ADD_SPAWN</Tag>
+		<English>Add selected tiles to spawn zone</English>
+		<French>Add selected tiles to spawn zone</French>
+		<German>Add selected tiles to spawn zone</German>
+		<Italian>Add selected tiles to spawn zone</Italian>
+		<Spanish>Add selected tiles to spawn zone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MULTI_REMOVE_SPAWN</Tag>
+		<English>Remove selected tiles from spawn zone</English>
+		<French>Remove selected tiles from spawn zone</French>
+		<German>Remove selected tiles from spawn zone</German>
+		<Italian>Remove selected tiles from spawn zone</Italian>
+		<Spanish>Remove selected tiles from spawn zone</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MULTI_REPLACE_SPAWN</Tag>
+		<English>Replaces current spawn zone with selected tiles</English>
+		<French>Replaces current spawn zone with selected tiles</French>
+		<German>Replaces current spawn zone with selected tiles</German>
+		<Italian>Replaces current spawn zone with selected tiles</Italian>
+		<Spanish>Replaces current spawn zone with selected tiles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_AI_FORBIDDEN</Tag>
+		<English>Show/Hide areas in which the AI is forbidden to settle</English>
+		<French>Show/Hide areas in which the AI is forbidden to settle</French>
+		<German>Show/Hide areas in which the AI is forbidden to settle</German>
+		<Italian>Show/Hide areas in which the AI is forbidden to settle</Italian>
+		<Spanish>Show/Hide areas in which the AI is forbidden to settle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_EXPORT</Tag>
+		<English>Export</English>
+		<French>Export</French>
+		<German>Export</German>
+		<Italian>Export</Italian>
+		<Spanish>Export</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REVERT_CHANGES</Tag>
+		<English>Revert changes</English>
+		<French>Revert changes</French>
+		<German>Revert changes</German>
+		<Italian>Revert changes</Italian>
+		<Spanish>Revert changes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SELECTED_CIV</Tag>
+		<English>Selected Civ</English>
+		<French>Selected Civ</French>
+		<German>Selected Civ</German>
+		<Italian>Selected Civ</Italian>
+		<Spanish>Selected Civ</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ALL_CIVS</Tag>
+		<English>All Civs</English>
+		<French>All Civs</French>
+		<German>All Civs</German>
+		<Italian>All Civs</Italian>
+		<Spanish>All Civs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CNM</Tag>
+		<English>City Name Manager</English>
+		<French>City Name Manager</French>
+		<German>City Name Manager</German>
+		<Italian>City Name Manager</Italian>
+		<Spanish>City Name Manager</Spanish>
 	</TEXT>
 </Civ4GameText>

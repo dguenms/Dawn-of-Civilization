@@ -192,7 +192,7 @@ def getWidgetHelp(argsList):
 			elif iData2 == 8:
 				return CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_BUILDING",())
 			elif iData2 == 9:
-				return "Platy Builder\nVersion: 4.17"
+				return "Platy Builder\nVersion: 4.17\nWith merijn_v1 DoC features"
 			elif iData2 == 10:
 				return CyTranslator().getText("TXT_KEY_CONCEPT_EVENTS",())
 			elif iData2 == 11:
@@ -239,6 +239,14 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_INFO_SCREEN", ())
 			elif iData2 == 34:
 				return CyTranslator().getText("TXT_KEY_CONCEPT_TRADE", ())
+			elif iData2 == 35:
+				return CyTranslator().getText("TXT_KEY_WB_IN_SPAWN", ())
+			elif iData2 == 36:
+				return CyTranslator().getText("TXT_KEY_WB_CORE", ())
+			elif iData2 == 37:
+				return CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ())
+			elif iData2 == 38:
+				return CyTranslator().getText("TXT_KEY_WB_CNM", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"
@@ -445,7 +453,7 @@ def getWidgetHelp(argsList):
 				sText += "\n" + CyTranslator().getText("TXT_KEY_CIVICS_SCREEN_NO_UPKEEP", ())
 			return sText
 ## Ultrapack ##
-
+		
 		#Merijn functions
 		elif iData1 == 22001:
 			if iData2 == 0:
@@ -453,6 +461,56 @@ def getWidgetHelp(argsList):
 			else:
 				sText = CyTranslator().getText("TXT_KEY_WB_DISABLE_CIV", ())
 			return sText
+			
+		elif iData1 >= 22100 and iData1 < 22170:
+			if iData2 == 1:
+				return CyTranslator().getText("TXT_KEY_WB_TOGGLE_EXTENDED", ())
+			elif iData2 == 2000:
+				return CyTranslator().getText("TXT_KEY_WB_VIEW_STABMAP", ())
+			elif iData2 == 2001:
+				return CyTranslator().getText("TXT_KEY_WB_VIEW_FLIPZONE", ())
+		elif iData1 == 22206:
+			return CyTranslator().getText("TXT_KEY_WB_AI_FORBIDDEN", ())
+		elif iData1 == 22207:
+			if iData2 == 0:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_ADD_CORE", ())
+			elif iData2 == 1:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_REMOVE_CORE", ())
+			elif iData2 == 2:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_REPLACE_CORE", ())
+			elif iData2 == 3:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_SETTLERVALUE", ())
+		elif iData1 == 22208:
+			if iData2 == 0:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_ADD_SPAWN", ())
+			elif iData2 == 1:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_REMOVE_SPAWN", ())
+			elif iData2 == 2:
+				return CyTranslator().getText("TXT_KEY_WB_MULTI_REPLACE_SPAWN", ())
+		elif iData1 == 22171:
+			return CyTranslator().getText("TXT_KEY_WB_CHANGE_CORE", ())
+		elif iData1 == 22172:
+			return CyTranslator().getText("TXT_KEY_WB_CHANGE_SETTLERVALUE", ())
+		elif iData1 == 22199:
+			return CyTranslator().getText("TXT_KEY_WB_KABOOM", ())
+		elif iData1 == 22176:
+			return CyTranslator().getText("TXT_KEY_WB_CHANGE_FLIP", ())
+		
+		elif (iData1 == 22201 or iData1 == 22202 or iData1 == 22203 or iData1 == 22204):
+			return str(iData2)
+			
+		elif iData1 >= 22300 and iData1 < 22325:
+			sText = "-" + str(iData2)
+			return sText
+		elif iData1 >= 22400 and iData1 < 22425:
+			sText = "+" + str(iData2)
+			return sText
+		elif iData1 == 22350:
+			return CyTranslator().getText("TXT_KEY_WB_SELECTED_CIV", ())
+		elif iData1 == 22351:
+			return CyTranslator().getText("TXT_KEY_WB_ALL_CIVS", ())
+		elif iData1 == 22500:
+			return "ConvertSave"
 
 	return u""
 
