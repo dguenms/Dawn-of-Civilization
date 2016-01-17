@@ -789,12 +789,7 @@
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
-			<ProductionTraits>
-				<ProductionTrait>
-					<ProductionTraitType>TRAIT_IMPERIALIST</ProductionTraitType>
-					<iProductionTrait>50</iProductionTrait>
-				</ProductionTrait>
-			</ProductionTraits>
+			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
 			<iCost>0</iCost> <!-- Default: 100 -->
@@ -970,12 +965,7 @@
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
-			<ProductionTraits>
-				<ProductionTrait>
-					<ProductionTraitType>TRAIT_IMPERIALIST</ProductionTraitType>
-					<iProductionTrait>50</iProductionTrait>
-				</ProductionTrait>
-			</ProductionTraits>
+			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
 			<iCost>0</iCost> <!-- Default: 100 -->
@@ -1235,12 +1225,7 @@
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
-			<ProductionTraits>
-				<ProductionTrait>
-					<ProductionTraitType>TRAIT_EXPANSIVE</ProductionTraitType>
-					<iProductionTrait>25</iProductionTrait>
-				</ProductionTrait>
-			</ProductionTraits>
+			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
 			<iCost>60</iCost>
@@ -1494,12 +1479,7 @@
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
-			<ProductionTraits>
-				<ProductionTrait>
-					<ProductionTraitType>TRAIT_EXPANSIVE</ProductionTraitType>
-					<iProductionTrait>25</iProductionTrait>
-				</ProductionTrait>
-			</ProductionTraits>
+			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
 			<iCost>60</iCost>
@@ -1585,10 +1565,6 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<FreePromotions>
-				<FreePromotion>
-					<PromotionType>PROMOTION_WOODSMAN1</PromotionType>
-					<bFreePromotion>1</bFreePromotion>
-				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_WOODSMAN2</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
@@ -1760,12 +1736,7 @@
 			<TechTypes/>
 			<BonusType>NONE</BonusType>
 			<PrereqBonuses/>
-			<ProductionTraits>
-				<ProductionTrait>
-					<ProductionTraitType>TRAIT_EXPANSIVE</ProductionTraitType>
-					<iProductionTrait>25</iProductionTrait>
-				</ProductionTrait>
-			</ProductionTraits>
+			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
 			<iCost>60</iCost>
@@ -1853,6 +1824,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCOUT</Class>
@@ -9215,6 +9187,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_RIFLEMAN</Class>
@@ -14546,6 +14519,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_HORSE_ARCHER</Class>
@@ -15739,7 +15713,7 @@
 			<iWithdrawalProb>0</iWithdrawalProb>
 			<iCollateralDamage>50</iCollateralDamage>
 			<iCollateralDamageLimit>60</iCollateralDamageLimit>
-			<iCollateralDamageMaxUnits>5</iCollateralDamageMaxUnits>
+			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
 			<iCityAttack>0</iCityAttack>
 			<iCityDefense>0</iCityDefense>
 			<iAnimalCombat>0</iAnimalCombat>
@@ -16489,9 +16463,9 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>NONE</PrereqBuilding>
-			<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
+			<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			<TechTypes>
-				<PrereqTech>TECH_ARCHERY</PrereqTech>
+				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses/>
@@ -17063,7 +17037,7 @@
 			<bInvisible>0</bInvisible>
 			<bFirstStrikeImmune>1</bFirstStrikeImmune>
 			<bNoDefensiveBonus>0</bNoDefensiveBonus>
-			<bIgnoreBuildingDefense>0</bIgnoreBuildingDefense>
+			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<bCanMoveImpassable>0</bCanMoveImpassable>
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
@@ -17897,6 +17871,7 @@
 			<FreePromotions/>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_CAVALRY</Class>
@@ -21223,7 +21198,7 @@
 			<iAIWeight>0</iAIWeight>
 			<iCost>120</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
-			<iAdvancedStartCost>120</iAdvancedStartCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
@@ -21417,7 +21392,7 @@
 			<iAIWeight>0</iAIWeight>
 			<iCost>120</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
-			<iAdvancedStartCost>120</iAdvancedStartCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
@@ -26264,7 +26239,7 @@
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_RESERVE_SEA</DefaultUnitAI>
 			<Invisible>INVISIBLE_STEALTH</Invisible>
-			<SeeInvisible>INVISIBLE_SUBMARINE</SeeInvisible>
+			<SeeInvisible>INVISIBLE_SUBMARINE,INVISIBLE_STEALTH</SeeInvisible>
 			<Description>TXT_KEY_UNIT_STEALTH_DESTROYER</Description>
 			<Civilopedia>TXT_KEY_UNIT_STEALTH_DESTROYER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_STEALTH_DESTROYER_STRATEGY</Strategy>
@@ -28407,7 +28382,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -28443,6 +28418,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -28617,7 +28596,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -28795,7 +28774,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -28978,7 +28957,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -29156,7 +29135,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -29337,7 +29316,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -29520,7 +29499,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -29747,7 +29726,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -29930,7 +29909,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -29966,6 +29945,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -30141,7 +30124,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -30320,7 +30303,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -30504,7 +30487,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -30683,7 +30666,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -30865,7 +30848,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -31049,7 +31032,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -31234,7 +31217,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -31469,7 +31452,7 @@
 			<iAIWeight>0</iAIWeight>
 			<iCost>60</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
@@ -31637,7 +31620,7 @@
 			<iAIWeight>0</iAIWeight>
 			<iCost>60</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
@@ -31816,7 +31799,7 @@
 			<iAIWeight>0</iAIWeight>
 			<iCost>60</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
@@ -31952,7 +31935,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -31988,6 +31971,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -32171,7 +32158,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -32359,7 +32346,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -32549,7 +32536,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -32735,7 +32722,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -32926,7 +32913,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -33089,7 +33076,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -33119,7 +33106,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -33314,7 +33301,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -33350,6 +33337,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -33531,7 +33522,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -33718,7 +33709,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -33908,7 +33899,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -34092,7 +34083,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -34282,7 +34273,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -34443,7 +34434,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -34473,7 +34464,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -34661,7 +34652,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -34697,6 +34688,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -34876,7 +34871,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -35061,7 +35056,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -35248,7 +35243,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -35431,7 +35426,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -35619,7 +35614,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -35778,7 +35773,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -35808,7 +35803,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -36001,7 +35996,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -36037,6 +36032,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -36220,7 +36219,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -36405,7 +36404,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -36596,7 +36595,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -36780,7 +36779,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -36968,7 +36967,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -37129,7 +37128,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -37159,7 +37158,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -37350,7 +37349,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -37386,6 +37385,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -37570,7 +37573,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -37762,7 +37765,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -37951,7 +37954,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -38137,7 +38140,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -38327,7 +38330,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -38489,7 +38492,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -38519,7 +38522,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -38709,7 +38712,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -38745,6 +38748,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -38926,7 +38933,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -39111,7 +39118,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -39300,7 +39307,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -39484,7 +39491,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -39672,7 +39679,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -39832,7 +39839,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -39862,7 +39869,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -40054,7 +40061,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -40090,6 +40097,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -40272,7 +40283,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -40458,7 +40469,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -40646,7 +40657,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -40830,7 +40841,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -41016,7 +41027,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -41176,7 +41187,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -41206,7 +41217,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -41396,7 +41407,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -41432,6 +41443,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -41613,7 +41628,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -41799,7 +41814,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -41988,7 +42003,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -42172,7 +42187,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -42364,7 +42379,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -42527,7 +42542,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -42557,7 +42572,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -42749,7 +42764,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -42785,6 +42800,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -42928,7 +42947,7 @@
 				<UniqueName>Toshusai Sharaku</UniqueName> <!-- 18th -->
 				<UniqueName>Katsushika Hokusai</UniqueName> <!-- 18th -->
 				<UniqueName>Utagawa Hiroshige</UniqueName> <!-- 19th -->
-				<UniqueName>Taro Okamoto</UniqueName> <!-- Contest Reward -->
+				<UniqueName>Toro Okamoto</UniqueName> <!-- Contest Reward -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -42968,7 +42987,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -43154,7 +43173,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -43345,7 +43364,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -43533,7 +43552,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -43723,7 +43742,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -43886,7 +43905,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -43916,7 +43935,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -44107,7 +44126,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -44143,6 +44162,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -44324,7 +44347,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -44509,7 +44532,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -44698,7 +44721,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -44881,7 +44904,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -45069,7 +45092,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -45231,7 +45254,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -45261,7 +45284,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -45451,7 +45474,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -45487,6 +45510,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -45671,7 +45698,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -45858,7 +45885,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -46046,7 +46073,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -46230,7 +46257,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -46421,7 +46448,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -46580,7 +46607,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -46610,7 +46637,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -46802,7 +46829,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -46838,6 +46865,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -47020,7 +47051,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -47206,7 +47237,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -47395,7 +47426,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -47579,7 +47610,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -47768,7 +47799,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -47931,7 +47962,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -47961,7 +47992,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -48151,7 +48182,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -48187,6 +48218,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -48370,7 +48405,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -48558,7 +48593,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -48748,7 +48783,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -48932,7 +48967,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -49121,7 +49156,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -49282,7 +49317,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -49312,7 +49347,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -49504,7 +49539,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -49540,6 +49575,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -49722,7 +49761,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -49908,7 +49947,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -50098,7 +50137,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -50282,7 +50321,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -50472,7 +50511,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -50635,7 +50674,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -50665,7 +50704,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -50855,7 +50894,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -50891,6 +50930,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -51072,7 +51115,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -51256,7 +51299,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -51447,7 +51490,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -51631,7 +51674,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -51818,7 +51861,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -51979,7 +52022,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -52009,7 +52052,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -52201,7 +52244,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -52237,6 +52280,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -52415,7 +52462,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -52597,7 +52644,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -52783,7 +52830,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -52968,7 +53015,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -53158,7 +53205,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -53318,7 +53365,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -53348,7 +53395,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -53540,7 +53587,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -53576,6 +53623,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -53758,7 +53809,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -53942,7 +53993,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -54131,7 +54182,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -54316,7 +54367,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -54504,7 +54555,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -54666,7 +54717,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -54696,7 +54747,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -54889,7 +54940,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -54925,6 +54976,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -55113,7 +55168,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -55303,7 +55358,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -55493,7 +55548,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -55680,7 +55735,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -55874,7 +55929,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -56037,7 +56092,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -56067,7 +56122,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -56259,7 +56314,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -56295,6 +56350,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -56481,7 +56540,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -56670,7 +56729,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -56859,7 +56918,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -57045,7 +57104,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -57237,7 +57296,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -57399,7 +57458,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -57429,7 +57488,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -57622,7 +57681,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -57658,6 +57717,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -57804,6 +57867,7 @@
 				<UniqueName>Friedrich Schiller</UniqueName> <!-- 18th -->
 				<UniqueName>fClara Schumann</UniqueName> <!-- 19th -->
 				<UniqueName>fLeni Riefenstahl</UniqueName> <!-- 20th -->
+				<UniqueName>Leoreth</UniqueName> <!-- 20th -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Capture>NONE</Capture>
@@ -57843,7 +57907,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -58032,7 +58096,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -58225,7 +58289,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -58413,7 +58477,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -58607,7 +58671,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -58769,7 +58833,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -58799,7 +58863,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -58991,7 +59055,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -59027,6 +59091,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -59210,7 +59278,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -59396,7 +59464,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -59584,7 +59652,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -59771,7 +59839,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -59962,7 +60030,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -60127,7 +60195,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -60157,7 +60225,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -60347,7 +60415,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -60383,6 +60451,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -60562,7 +60634,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -60746,7 +60818,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -60935,7 +61007,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -61120,7 +61192,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -61308,7 +61380,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -61469,7 +61541,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -61499,7 +61571,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -61689,7 +61761,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -61725,6 +61797,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -61907,7 +61983,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -62093,7 +62169,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -62285,7 +62361,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -62469,7 +62545,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -62656,7 +62732,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -62815,7 +62891,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -62845,7 +62921,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -63033,7 +63109,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -63069,6 +63145,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -63249,7 +63329,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -63435,7 +63515,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -63623,7 +63703,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -63808,7 +63888,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -63995,7 +64075,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -64158,7 +64238,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -64188,7 +64268,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -64381,7 +64461,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -64417,6 +64497,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -64604,7 +64688,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -64794,7 +64878,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -64985,7 +65069,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -65170,7 +65254,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -65361,7 +65445,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -65520,7 +65604,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -65550,7 +65634,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -65740,7 +65824,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -65776,6 +65860,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -65956,7 +66044,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -66140,7 +66228,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -66330,7 +66418,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -66514,7 +66602,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -66704,7 +66792,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -66864,7 +66952,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -66894,7 +66982,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -67085,7 +67173,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -67121,6 +67209,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -67303,7 +67395,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -67488,7 +67580,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -67678,7 +67770,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -67863,7 +67955,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -68052,7 +68144,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -68213,7 +68305,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -68243,7 +68335,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -68435,7 +68527,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -68471,6 +68563,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -68653,7 +68749,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -68839,7 +68935,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -69030,7 +69126,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -69216,7 +69312,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -69404,7 +69500,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -69566,7 +69662,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -69596,7 +69692,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -69786,7 +69882,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -69822,6 +69918,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -70002,7 +70102,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -70187,7 +70287,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -70377,7 +70477,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -70561,7 +70661,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -70749,7 +70849,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -70910,7 +71010,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -70940,7 +71040,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -71130,7 +71230,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -71166,6 +71266,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -71348,7 +71452,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -71534,7 +71638,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -71727,7 +71831,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -71910,7 +72014,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -72102,7 +72206,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -72261,7 +72365,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -72291,7 +72395,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -72483,7 +72587,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -72519,6 +72623,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -72706,7 +72814,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -72895,7 +73003,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -73087,7 +73195,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -73276,7 +73384,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -73469,7 +73577,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -73630,7 +73738,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -73660,7 +73768,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -73852,7 +73960,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -73888,6 +73996,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -74021,7 +74133,7 @@
 			<Class>UNITCLASS_ARTIST</Class>
 			<Type>UNIT_IRANIAN_ARTIST</Type>
 			<UniqueNames>
-				<UniqueName>Shaykh‐i Bahaʾi</UniqueName> <!-- 16th -->
+				<UniqueName>Shaykh-i Bahaʾi</UniqueName> <!-- 16th -->
 				<UniqueName>Reza Abbasi</UniqueName> <!-- 16th -->
 				<UniqueName>Ustad Mirza Shirazi</UniqueName> <!-- 18thth -->
 				<UniqueName>Mihr 'Ali</UniqueName> <!-- 19th -->
@@ -74067,7 +74179,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -74253,7 +74365,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -74443,7 +74555,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -74628,7 +74740,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -74818,7 +74930,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -74980,7 +75092,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -75010,7 +75122,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -75202,7 +75314,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -75238,6 +75350,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -75418,7 +75534,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -75454,6 +75570,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -75633,7 +75753,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -75818,7 +75938,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -76006,7 +76126,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -76189,7 +76309,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -76380,7 +76500,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -76540,7 +76660,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -76570,7 +76690,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -76755,7 +76875,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -76791,6 +76911,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -76966,7 +77090,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -77145,7 +77269,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -77329,7 +77453,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -77508,7 +77632,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -77697,7 +77821,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -77851,7 +77975,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -77881,7 +78005,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -78069,7 +78193,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -78105,6 +78229,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -78290,7 +78418,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -78474,7 +78602,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -78665,7 +78793,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -78849,7 +78977,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -79036,7 +79164,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -79196,7 +79324,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -79226,7 +79354,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -79417,7 +79545,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -79453,6 +79581,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -79636,7 +79768,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -79822,7 +79954,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -80011,7 +80143,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -80195,7 +80327,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -80384,7 +80516,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -80545,7 +80677,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -80575,7 +80707,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -80767,7 +80899,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -80803,6 +80935,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -80986,7 +81122,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -81170,7 +81306,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -81358,7 +81494,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -81541,7 +81677,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -81728,7 +81864,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -81886,7 +82022,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -81916,7 +82052,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -82110,7 +82246,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -82146,6 +82282,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_CHRISTIAN_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -82332,7 +82472,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -82517,7 +82657,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -82709,7 +82849,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -82895,7 +83035,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -83086,7 +83226,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -83247,7 +83387,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -83277,7 +83417,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -83464,7 +83604,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -83680,7 +83820,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -83866,7 +84006,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -84054,7 +84194,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -84238,7 +84378,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -84379,10 +84519,10 @@
 			<Class>UNITCLASS_STATESMAN</Class>
 			<Type>UNIT_CANADIAN_STATESMAN</Type>
 			<UniqueNames>
-				<UniqueName>John A. Macdonald</UniqueName> <!-- 19th -->
+				<UniqueName>John A Macdonald</UniqueName> <!-- 19th -->
 				<UniqueName>George-&#233;tienne Cartier</UniqueName> <!-- 19th -->
 				<UniqueName>Louis Riel</UniqueName> <!-- 19th -->
-				<UniqueName>Lester B. Pearson</UniqueName> <!-- 20th -->
+				<UniqueName>Lester B Pearson</UniqueName> <!-- 20th -->
 				<UniqueName>fEmily Murphy</UniqueName> <!-- 20th -->
 				<UniqueName>fNellie McClung</UniqueName> <!-- 20th -->
 				<UniqueName>Rene Levesque</UniqueName> <!-- 20th -->
@@ -84429,7 +84569,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
@@ -84585,7 +84725,7 @@
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_GREAT_PEOPLE</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GREAT_GENERAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -84615,7 +84755,7 @@
 			<bCanMoveAllTerrain>0</bCanMoveAllTerrain>
 			<bFlatMovementCost>0</bFlatMovementCost>
 			<bIgnoreTerrainCost>0</bIgnoreTerrainCost>
-			<bNukeImmune>0</bNukeImmune>
+			<bNukeImmune>1</bNukeImmune>
 			<bPrereqBonuses>0</bPrereqBonuses>
 			<bPrereqReligion>0</bPrereqReligion>
 			<bMechanized>0</bMechanized>
