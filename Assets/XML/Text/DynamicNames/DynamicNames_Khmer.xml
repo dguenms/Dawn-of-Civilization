@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Khmer -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_DESC</Tag>
+		<English>The Khmer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_PEOPLES</Tag>
+		<English>Khmer Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_COMMUNIST</Tag>
+		<English>Democratic %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_FASCIST</Tag>
+		<English>Nationalist %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_DAI_VIET</Tag>
+		<English>Dai Viet</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_BURMA</Tag>
+		<English>Burma</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_NANZHAO</Tag>
+		<English>Nanzhao</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_KAMPUCHEA</Tag>
+		<English>Kampuchea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_KAMPUCHEAN</Tag>
+		<English>Kampuchean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KHMER_ADJECTIVE</Tag>
+		<English>
+			<Text>Khmer:Khmer</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>khmer:khmer:khmers:khmers</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Khmerisch:khmerischen:khmerische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>khmer:khmer</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>j&#233;mer:j&#233;mer:j&#233;meres:j&#233;meres</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

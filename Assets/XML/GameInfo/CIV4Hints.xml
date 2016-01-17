@@ -94,15 +94,6 @@
 			<Description>TXT_KEY_HINT_INTERFACE_29</Description>
 		</HintInfo>
 		<HintInfo>
-			<Description>TXT_KEY_HINT_INTERFACE_30</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_INTERFACE_31</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_INTERFACE_32</Description>
-		</HintInfo>
-		<HintInfo>
 			<Description>TXT_KEY_HINT_INTERFACE_33</Description>
 		</HintInfo>
 		<HintInfo>
@@ -202,17 +193,12 @@
 			<Description>TXT_KEY_HINT_INTERFACE_65</Description>
 		</HintInfo>
 		<HintInfo>
-			<Description>TXT_KEY_HINT_INTERFACE_66</Description>
-		</HintInfo>
-		<HintInfo>
 			<Description>TXT_KEY_HINT_INTERFACE_67</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_INTERFACE_68</Description>
 		</HintInfo>
-		
 		<!-- BUG Interface Hints -->
-		
 		<HintInfo>
 			<Description>TXT_KEY_BUG_HINT_INTERFACE_1</Description>
 		</HintInfo>
@@ -234,51 +220,12 @@
 		<HintInfo>
 			<Description>TXT_KEY_BUG_HINT_INTERFACE_7</Description>
 		</HintInfo>
-		
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_1</Description>
-		</HintInfo-->
-		<!-- Rhye - start -->
-		<!--
-		<HintInfo>
-			<Description>TXT_KEY_HINT_2</Description>
-		</HintInfo>
-		-->
-		<!-- Rhye - end -->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_3</Description>
-		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_4</Description>
 		</HintInfo>
-		<!-- Rhye - start -->
-		<!--
-		<HintInfo>
-			<Description>TXT_KEY_HINT_5</Description>
-		</HintInfo>
-		-->
-		<!-- Rhye - end -->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_6</Description>
 		</HintInfo>
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_7</Description>
-		</HintInfo-->
-		<HintInfo>
-			<Description>TXT_KEY_HINT_8</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_9</Description>
-		</HintInfo>
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_10</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_11</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_12</Description>
-		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_13</Description>
 		</HintInfo>
@@ -297,12 +244,6 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_18</Description>
 		</HintInfo>
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_19</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_20</Description>
-		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_21</Description>
 		</HintInfo>
@@ -330,25 +271,12 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_29</Description>
 		</HintInfo>
-		<!-- Rhye - start -->
-		<!--
-		<HintInfo>
-			<Description>TXT_KEY_HINT_30</Description>
-		</HintInfo>
-		-->
-		<!-- Rhye - end -->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_31</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_32</Description>
 		</HintInfo>
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_33</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_34</Description>
-		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_35</Description>
 		</HintInfo>
@@ -364,25 +292,6 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_39</Description>
 		</HintInfo>
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_40</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_41</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_42</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_43</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_44</Description>
-		</HintInfo-->
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_45</Description>
-		</HintInfo-->
-		<!-- Rhye - start -->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_47</Description>
 		</HintInfo>
@@ -407,7 +316,6 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_58</Description>
 		</HintInfo>
-		<!-- Rhye - end -->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_61</Description>
 		</HintInfo>
@@ -423,9 +331,6 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_65</Description>
 		</HintInfo>
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_67</Description>
-		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_68</Description>
 		</HintInfo>
@@ -438,12 +343,6 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_71</Description>
 		</HintInfo>
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_72</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_72</Description>
-		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_1</Description>
 		</HintInfo>
@@ -471,9 +370,6 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_9</Description>
 		</HintInfo>
-
-		<!-- BUG Hints -->
-		
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_10</Description>
 		</HintInfo>
@@ -483,9 +379,6 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_12</Description>
 		</HintInfo>
-		<!--HintInfo>
-			<Description>TXT_KEY_HINT_DOC_13</Description>
-		</HintInfo-->
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_14</Description>
 		</HintInfo>

@@ -11,7 +11,7 @@ gc = CyGlobalContext()
 class CvCivicsScreen:
 	'Civics Screen'
 	def __init__(self):
-		self.W_SCREEN = 1200
+		self.W_SCREEN = 1024
 		self.H_SCREEN = 680
 
 		self.W_TOP_PANEL = self.W_SCREEN

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- National Wonders -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE</Tag>
+		<English>Opera House</English>
+		<French>
+			<Text>Op&#233;ra</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Opernhaus</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Teatro dell'opera</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Teatro de la &#211;pera</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE</Tag>
+		<English>National Gallery</English>
+		<French>
+			<Text>Galerie nationale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationalgalerie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Galleria nazionale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>La Galeria Nacional</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HERMITAGE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<German>Die [COLOR_BUILDING_TEXT]Nationalgalerie[COLOR_REVERT] verdoppelt den kulturellen Aussto&#223; einer Stadt. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_PARK_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] greatly increases the health in your city. It also provides a free specialist for each [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] in its city radius and increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK</Tag>
+		<English>Olympic Park</English>
+		<French>
+			<Text>Parc olympique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Olympiapark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Parco olimpico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>el Estadio Ol&#237;mpico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIC_PARK_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD</Tag>
+		<English>Interpol</English>
+		<French>
+			<Text>Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Interpol</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Interpol</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] doubles its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RED_CROSS_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Red Cross[COLOR_REVERT] gives all units built in its city the [COLOR_HIGHLIGHT_TEXT]Medic I[COLOR_REVERT] promotion, and it increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<French>La [COLOR_BUILDING_TEXT]Croix-Rouge[COLOR_REVERT] attribue &#224; toutes les unit&#233;s form&#233;e dans la ville une promotion de [COLOR_HIGHLIGHT_TEXT]M&#233;decin I[COLOR_REVERT] et augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]savant illustre[COLOR_REVERT].</French>
+		<German>Hat eine Stadt das [COLOR_BUILDING_TEXT]Rote Kreuz[COLOR_REVERT], erhalten alle dort gebauten Einheiten die Bef&#246;rderung [COLOR_HIGHLIGHT_TEXT]Sanit&#228;ter I[COLOR_REVERT]. Dar&#252;ber hinaus erh&#246;hen sich die Chancen der Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Wissenschaftler[COLOR_REVERT] hervorzubringen.</German>
+		<Italian>La [COLOR_BUILDING_TEXT]Croce Rossa[COLOR_REVERT] dona a tutte le unit&#224; realizzate nella citt&#224; la promozione [COLOR_HIGHLIGHT_TEXT]Medico I[COLOR_REVERT] e aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Scienziato[COLOR_REVERT].</Italian>
+		<Spanish>La [COLOR_BUILDING_TEXT]Cruz Roja[COLOR_REVERT] otorga el ascenso de [COLOR_HIGHLIGHT_TEXT]M&#233;dica I[COLOR_REVERT] a todas las unidades que se construyan en su ciudad y aumenta las posibilidades de que &#233;sta genere un [COLOR_UNIT_TEXT]Gran cient&#237;fico[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY</Tag>
+		<English>Trading Company</English>
+		<French>
+			<Text>Compagnie marchande</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Handelsgesellschaft</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Compagnia commerciale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Compa&#241;&#237;a de las Indias</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] generates income for each city with Trading Company has spread to. It generates health for its city with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT] and happiness for its city with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT]. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merhant[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Tag>
+		<English>Triumphal Arch</English>
+		<French>
+			<Text>Arc de Triomphe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Triumphbogen</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Arco di trionfo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Arco de Triunfo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Tag>
+		<English>[COLOR_WARNING_TEXT]Is automatically built on achievement of 2 Historical Goals out of 3[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Est automatiquement construit lorsque 2 objectifs historiques sur 3 sont atteints[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Wird bei Erf&#252;llung von 2 von 3 Historischen Siegbedingungen automatisch erbaut[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Viene automaticamente costruito al raggiungimento di 2 obiettivi storici su 3[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Se construye autom&#225;ticamente tras la consecuci&#243;n de 2 de los 3 objetivos hist&#243;ricos[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WALL_STREET</Tag>
+		<English>Stock Exchange</English>
+		<French>
+			<Text>Bourse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>B&#246;rse</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Borsa</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Bolsa</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WALL_STREET_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] doubles its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WEST_POINT</Tag>
+		<English>The Bastille</English>
+		<French>
+			<Text>La Bastille</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Die Bastille</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>La Bastiglia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>la Bastilla</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

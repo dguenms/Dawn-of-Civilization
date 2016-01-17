@@ -20,7 +20,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>10</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -78,7 +77,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -132,7 +130,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>10</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -198,7 +195,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -256,7 +252,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>10</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -322,7 +317,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -380,7 +374,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>20</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -452,7 +445,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -503,11 +495,7 @@
 			<TechCityTrade>TECH_FISSION</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
-			<YieldChanges>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-			</YieldChanges>
+			<YieldChanges/>
 			<iAITradeModifier>30</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
 			<iHealth>0</iHealth>
@@ -600,9 +588,7 @@
 			<TechPlayerTrade>NONE</TechPlayerTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
-				<iYieldChange>2</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -656,8 +642,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -706,8 +690,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -757,8 +739,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -811,8 +791,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -861,8 +839,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -921,8 +897,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -975,8 +949,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -1035,8 +1007,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -1095,8 +1065,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -1149,8 +1117,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -1186,7 +1152,6 @@
 			</TerrainBooleans>
 			<FeatureBooleans/>
 			<FeatureTerrainBooleans/>
-			<bUseLSystem>0</bUseLSystem>
 		</BonusInfo>
 		<BonusInfo>
 			<Type>BONUS_COFFEE</Type>
@@ -1593,7 +1558,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -1879,8 +1843,6 @@
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>
@@ -2121,8 +2083,6 @@
 			<TechObsolete>TECH_COMBUSTION</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iAIObjective>0</iAIObjective>

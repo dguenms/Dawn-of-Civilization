@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Moors -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_DESC</Tag>
+		<English>The Moors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_PEOPLES</Tag>
+		<English>Andalusian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_FASCIST</Tag>
+		<English>%s2 State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_ALMOHAD</Tag>
+		<English>Almohad</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_MOROCCO</Tag>
+		<English>Morocco</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_MOROCCAN</Tag>
+		<English>Moroccan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_TAIFAS</Tag>
+		<English>Andalusian Taifas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ARABIA</Tag>
+		<English>Hejaz</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_ADJECTIVE</Tag>
+		<English>Moorish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_SHORT_DESC</Tag>
+		<English>Moors</English>
+	</TEXT>
+</Civ4GameText>

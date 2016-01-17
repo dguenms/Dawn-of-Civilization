@@ -683,12 +683,10 @@
 	<ElementType name="iStateReligionUnitProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionBuildingProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionFreeExperience" content="textOnly" dt:type="int"/>
-	<!-- Rhye - start -->
 	<ElementType name="bStabilityVassalBonus" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bStabilityFoundBonus" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bStabilityConquestBonus" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bStabilityCommerceBonus" content="textOnly" dt:type="boolean"/>
-	<!-- Rhye - end -->
 	<ElementType name="Upkeep" content="textOnly"/>
 	<ElementType name="iYield" content="textOnly" dt:type="int"/>
 	<ElementType name="YieldModifiers" content="eltOnly">
@@ -762,7 +760,7 @@
 	<ElementType name="BuildingHealthChanges" content="eltOnly">
 		<element type="BuildingHealthChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<!-- Leoreth -->
+	<!-- Leoreth start -->
 	<ElementType name="iProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="BuildingProductionModifier" content="eltOnly">
 		<element type="BuildingType"/>
@@ -771,7 +769,7 @@
 	<ElementType name="BuildingProductionModifiers" content="eltOnly">
 		<element type="BuildingProductionModifier" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<!-- Leoreth -->
+	<!-- Leoreth end -->
 	<ElementType name="FeatureType" content="textOnly"/>
 	<ElementType name="FeatureHappinessChange" content="eltOnly">
 		<element type="FeatureType"/>
@@ -871,12 +869,10 @@
 		<element type="iStateReligionUnitProductionModifier"/>
 		<element type="iStateReligionBuildingProductionModifier"/>
 		<element type="iStateReligionFreeExperience"/>
-		<!-- Rhye - start -->
 		<element type="bStabilityVassalBonus"/>
 		<element type="bStabilityFoundBonus"/>
 		<element type="bStabilityConquestBonus"/>
 		<element type="bStabilityCommerceBonus"/>
-		<!-- Rhye - end -->
 		<element type="YieldModifiers"/>
 		<element type="CapitalYieldModifiers"/>
 		<element type="TradeYieldModifiers"/>

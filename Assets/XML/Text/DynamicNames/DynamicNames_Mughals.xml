@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mughals -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DESC</Tag>
+		<English>The Mughals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PAKISTAN_ADJECTIVE</Tag>
+		<English>Pakistani</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PAKISTAN_SHORT_DESC</Tag>
+		<English>Pakistan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_PEOPLES</Tag>
+		<English>Ghorid Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DEFAULT</Tag>
+		<English>%s2 Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_FASCIST</Tag>
+		<English>%s2 Military Government</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PAKISTAN_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PAKISTAN_FASCIST</Tag>
+		<English>%s2 Military Government</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_DELHI</Tag>
+		<English>Delhi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHAL_INDIA</Tag>
+		<English>Deccan Sultanates</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_ADJECTIVE</Tag>
+		<English>Mughal</English>
+		<German>Mogul</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_SHORT_DESC</Tag>
+		<English>Mughals</English>
+		<German>Moguln</German>
+	</TEXT>
+</Civ4GameText>

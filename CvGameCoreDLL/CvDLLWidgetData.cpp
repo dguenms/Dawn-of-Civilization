@@ -2984,8 +2984,13 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_CHANGE_PRODUCTION", iProduction, pCity->getNameKey()));
 						}
 
-						szBuffer.append(NEWLINE);
-						szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REMOVE_FEATURE", GC.getFeatureInfo(pMissionPlot->getFeatureType()).getTextKeyWide()));
+						bool bKhmerUP = GC.getGame().getActivePlayer() == KHMER && GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_FARM") && pMissionPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST");
+
+						if (!bKhmerUP)
+						{
+							szBuffer.append(NEWLINE);
+							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REMOVE_FEATURE", GC.getFeatureInfo(pMissionPlot->getFeatureType()).getTextKeyWide()));
+						}
 					}
 
 				}

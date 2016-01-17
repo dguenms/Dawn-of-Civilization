@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--Civ4lerts
+	Options Game Text
+	Copyright (c) 2009 The BUG Mod
+
+	Copyright (c) 2005-2006, Gillmer J. Derge.
+
+	This file is part of Civilization IV Alerts mod.
+
+	Civilization IV Alerts mod is free software; you can redistribute
+	it and/or modify it under the terms of the GNU General Public
+	License as published by the Free Software Foundation; either
+	version 2 of the License, or (at your option) any later version.
+
+	Civilization IV Alerts mod is distributed in the hope that it will
+	be useful, but WITHOUT ANY WARRANTY; without even the implied
+	warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+	See the GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with Civilization IV Alerts mod; if not, write to the Free
+	Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+	02110-1301 USA -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+<!-- Civ4lerts Options -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__ENABLED_TEXT</Tag>
+		<English>Enable Civ4lerts</English>
+		<French>Activer Civ4lerts</French>
+		<German>Civ4lerts aktivieren</German>
+		<Italian>Abilita Avvisi</Italian>
+		<Spanish>Enable Civ4lerts</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__ENABLED_HOVER</Tag>
+		<English>When checked, messages are displayed to alert you to various pending and existing conditions using Dr. Elmer Jiggle's Civ4lerts mod.</English>
+		<French>En activant, des messages apparaissent pour vous informer de l'état de plusieurs éléments du jeu, grâce au mod Civ4lerts de Dr. Elmer Jiggle.</French>
+		<German>Lässt Warnungen erscheinen, die bevorstehende oder bereits eingetretene Ereignisse melden (verwendet Dr. Elmer Jiggles "Civ4lerts"-Mod)</German>
+		<Italian>Quando è selezionato, vengono visualizzati dei messaggi per avvertirti di varie condizioni presenti o imminenti (utilizzando il Civ4lerts Mod di Dr. Elmer Jiggle's).</Italian>
+		<Spanish>When checked, messages are displayed to alert you to various pending and existing conditions using Dr. Elmer Jiggle's Civ4lerts mod.</Spanish>
+	</TEXT>
+<!-- Cities -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYPENDINGGROWTH_TEXT</Tag>
+		<English>Pending</English>
+		<French>Prochain tour</French>
+		<German>Bevorstehendes</German>
+		<Italian>Imminente</Italian>
+		<Spanish>Pending</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYPENDINGGROWTH_HOVER</Tag>
+		<English>When checked, displays an alert when a city's population will grow or shrink next turn.</English>
+		<French>En activant, une alerte sera montrée quand la population d'une ville grandira ou retrécira au prochain tour.</French>
+		<German>Lässt eine Warnung erscheinen, wenn die Bevölkerung einer Stadt in der nächsten Runde wächst oder schrumpft</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando la popolazione di una città crescerà o si ridurrà al turno successivo.</Italian>
+		<Spanish>When checked, displays an alert when a city's population will grow or shrink next turn.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYGROWTH_TEXT</Tag>
+		<English>Growth</English>
+		<French>Taille</French>
+		<German>Wachstum</German>
+		<Italian>Crescita</Italian>
+		<Spanish>Growth</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYGROWTH_HOVER</Tag>
+		<English>When checked, displays an alert when a city's population has grown or shrunk.</English>
+		<French>En activant, une alerte sera montrée quand la population d'une ville a grandie ou retrécie.</French>
+		<German>Lässt eine Warnung erscheinen, wenn die Bevölkerung einer Stadt gewachsen oder geschrumpft ist</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando la popolazione di una città cresce o si riduce.</Italian>
+		<Spanish>When checked, displays an alert when a city's population has grown or shrunk.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYPENDINGHAPPINESS_TEXT</Tag>
+		<English>Pending</English>
+		<French>Prochain tour</French>
+		<German>Bevorstehende</German>
+		<Italian>Imminente</Italian>
+		<Spanish>Pending</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYPENDINGHAPPINESS_HOVER</Tag>
+		<English>When checked, displays an alert when a city will become happy or unhappy next turn.</English>
+		<French>En activant, une alerte sera montrée quand une ville deviendra heureuse ou malheureuse au prochain tour.</French>
+		<German>Lässt eine Warnung erscheinen, wenn sich die Zufriedenheit der Bevölkerung einer Stadt in der nächsten Runde verbessert oder verschlechtert</German>
+		<Italian>Quando è selezionato,viene visualizzato un avviso quando la popolazione di una città diverrà felice o infelice al turno successivo.</Italian>
+		<Spanish>When checked, displays an alert when a city will become happy or unhappy next turn.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYHAPPINESS_TEXT</Tag>
+		<English>Happiness</English>
+		<French>Bonheur</French>
+		<German>Zufriedenheit</German>
+		<Italian>Felicità</Italian>
+		<Spanish>Happiness</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYHAPPINESS_HOVER</Tag>
+		<English>When checked, displays an alert when a city has become happy or unhappy.</English>
+		<French>En activant, une alerte sera montrée quand une ville est devenue heureuse ou malheureuse.</French>
+		<German>Lässt eine Warnung erscheinen, wenn sich die Zufriedenheit der Bevölkerung einer Stadt verbessert oder verschlechtert hat</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando la popolazione di una città diviene felice o infelice.</Italian>
+		<Spanish>When checked, displays an alert when a city has become happy or unhappy.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYPENDINGHEALTHINESS_TEXT</Tag>
+		<English>Pending</English>
+		<French>Prochain tour</French>
+		<German>Bevorstehende</German>
+		<Italian>Imminente</Italian>
+		<Spanish>Pending</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYPENDINGHEALTHINESS_HOVER</Tag>
+		<English>When checked, displays an alert when a city will become healthy or unhealthy next turn.</English>
+		<French>En activant, une alerte sera montrée quand une ville deviendra saine ou malsaine au prochain tour.</French>
+		<German>Lässt eine Warnung erscheinen, wenn sich die Gesundheit der Bevölkerung einer Stadt in der nächsten Runde verbessert oder verschlechtert</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una città diverrà salubre o insalubre al turno successivo.</Italian>
+		<Spanish>When checked, displays an alert when a city will become healthy or unhealthy next turn.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYHEALTHINESS_TEXT</Tag>
+		<English>Healthiness</English>
+		<French>Santé</French>
+		<German>Gesundheit</German>
+		<Italian>Salute</Italian>
+		<Spanish>Healthiness</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYHEALTHINESS_HOVER</Tag>
+		<English>When checked, displays an alert when a city has become healthy or unhealthy.</English>
+		<French>En activant, une alerte sera montrée quand une ville est devenue saine ou malsaine.</French>
+		<German>Lässt eine Warnung erscheinen, wenn sich die Gesundheit der Bevölkerung einer Stadt verbessert oder verschlechtert hat</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una città diviene salubre o insalubre.</Italian>
+		<Spanish>When checked, displays an alert when a city has become healthy or unhealthy.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYPENDINGOCCUPATION_TEXT</Tag>
+		<English>Pending</English>
+		<French>Prochain tour</French>
+		<German>Bevorstehende</German>
+		<Italian>Imminente</Italian>
+		<Spanish>Pending</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYPENDINGOCCUPATION_HOVER</Tag>
+		<English>When checked, displays an alert when a city will be pacified next turn, ending occupation.</English>
+		<French>When checked, displays an alert when a city will be pacified next turn, ending occupation.</French>
+		<German>Lässt eine Warnung erscheinen, wenn die Unruhen in einer (eroberten) Stadt in der nächsten Runde enden</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una città verrà pacificata al turno successivo, ponendo fine al periodo di occupazione.</Italian>
+		<Spanish>When checked, displays an alert when a city will be pacified next turn, ending occupation.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYOCCUPATION_TEXT</Tag>
+		<English>Pacification</English>
+		<French>Pacification</French>
+		<German>Beruhigung</German>
+		<Italian>Pacificazione</Italian>
+		<Spanish>Pacification</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYOCCUPATION_HOVER</Tag>
+		<English>When checked, displays an alert when a city has been pacified, ending occupation.</English>
+		<French>When checked, displays an alert when a city has been pacified, ending occupation.</French>
+		<German>Lässt eine Warnung erscheinen, wenn die Unruhen in einer (eroberten) Stadt enden</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una città viene pacificata, ponendo fine al periodo di occupazione.</Italian>
+		<Spanish>When checked, displays an alert when a city has been pacified, ending occupation.</Spanish>
+	</TEXT>
+<!-- Hurry -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYCANHURRYPOP_TEXT</Tag>
+		<English>Can Hurry with Population</English>
+		<French>Précipiter à cout de Population</French>
+		<German>Zwangsarbeit möglich</German>
+		<Italian>Accelerazione con sacrifici</Italian>
+		<Spanish>Can Hurry with Population</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYCANHURRYPOP_HOVER</Tag>
+		<English>When checked, displays an alert once a city can hurry the item it's building with the whip.</English>
+		<French>En activant, une alerte sera montrée quand une ville peut précipiter sa construction avec le fouet.</French>
+		<German>Lässt eine Warnung erscheinen, wenn die Produktion einer Stadt durch Opferung eines Teils der Bevölkerung beschleunigt werden kann</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una città può accelerare la produzione attuale mediante sacrifici di Popolazione.</Italian>
+		<Spanish>When checked, displays an alert once a city can hurry the item it's building with the whip.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYCANHURRYGOLD_TEXT</Tag>
+		<English>Can Hurry with Gold</English>
+		<French>Précipiter à cout d'or</French>
+		<German>Goldzahlung möglich</German>
+		<Italian>Accelerazione con pagamenti</Italian>
+		<Spanish>Can Hurry with Gold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__CITYCANHURRYGOLD_HOVER</Tag>
+		<English>When checked, displays an alert once a city can hurry the item it's building with gold.</English>
+		<French>En activant, une alerte sera montrée quand une ville peut précipiter sa construction avec de l'or.</French>
+		<German>Lässt eine Warnung erscheinen, wenn die Produktion einer Stadt durch Zahlung von Gold beschleunigt werden kann</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una città può accelerare la produzione attuale mediante pagamenti in Oro.</Italian>
+		<Spanish>When checked, displays an alert once a city can hurry the item it's building with gold.</Spanish>
+	</TEXT>
+<!-- Diplomacy -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__REFUSESTOTALK_TEXT</Tag>
+		<English>Refuses to Talk</English>
+		<French>Refuse de vous parler</French>
+		<German>Gesprächsbereitschaft</German>
+		<Italian>Rifiuta di parlare</Italian>
+		<Spanish>Se niega a hablar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__REFUSESTOTALK_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization changes their willingness to negotiate.</English>
+		<French>When checked, displays an alert when a civilization changes their willingness to negotiate.</French>
+		<German>Lässt eine Warnung erscheinen, wenn sich die Gesprächsbereitschaft einer Zivilisation ändert</German>
+		<Italian>When checked, displays an alert when a civilization changes their willingness to negotiate.</Italian>
+		<Spanish>When checked, displays an alert when a civilization changes their willingness to negotiate.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__WORSTENEMY_TEXT</Tag>
+		<English>Worst Enemy</English>
+		<French>Pire Ennemi</French>
+		<German>Erzfeind</German>
+		<Italian>Peggiori Nemici</Italian>
+		<Spanish>Peor Enemigo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__WORSTENEMY_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization's worst enemy changes.</English>
+		<French>When checked, displays an alert when a civilization's worst enemy changes.</French>
+		<German>Lässt eine Warnung erscheinen, wenn der Erzfeind einer Zivilisation wechselt</German>
+		<Italian>When checked, displays an alert when a civilization's worst enemy changes.</Italian>
+		<Spanish>When checked, displays an alert when a civilization's worst enemy changes.</Spanish>
+	</TEXT>
+<!-- Trade -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDTRADE_TEXT</Tag>
+		<English>Gold</English>
+		<French>Or</French>
+		<German>Goldbetrag</German>
+		<Italian>Oro</Italian>
+		<Spanish>Gold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization can trade a specified amount of gold.</English>
+		<French>When checked, displays an alert when a civilization can trade a specified amount of gold.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation eine bestimmte Menge Gold zum Handeln zur Verfügung hat</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a commerciare un ammontare d'oro predefinito.</Italian>
+		<Spanish>When checked, displays an alert when a civilization can trade a specified amount of gold.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDTRADETHRESH_TEXT</Tag>
+		<English>Threshold</English>
+		<French>Seuil</French>
+		<German>Schwelle</German>
+		<Italian>Quantità</Italian>
+		<Spanish>Threshold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDTRADETHRESH_HOVER</Tag>
+		<English>Determines the threshold for the amount of gold that will display an alert.</English>
+		<French>Determines the threshold for the amount of gold that will display an alert.</French>
+		<German>Bestimmt die Schwelle für den Goldbetrag, ab der eine Meldung ausgegeben wird</German>
+		<Italian>Determina la quantità d'oro che costituisce il limite per la visualizzazione dell'avviso.</Italian>
+		<Spanish>Determines the threshold for the amount of gold that will display an alert.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDPERTURNTRADE_TEXT</Tag>
+		<English>Gold Per Turn</English>
+		<French>Or Par Tour</French>
+		<German>Gold pro Runde</German>
+		<Italian>Oro per turno</Italian>
+		<Spanish>Gold Per Turn</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDPERTURNTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization can trade a specified amount of gold per turn.</English>
+		<French>When checked, displays an alert when a civilization can trade a specified amount of gold per turn.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation eine bestimmte Menge Gold pro Runde zum Handeln zur Verfügung hat</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a commerciare un ammontare d'oro per turno predefinito.</Italian>
+		<Spanish>When checked, displays an alert when a civilization can trade a specified amount of gold per turn.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDPERTURNTRADETHRESH_TEXT</Tag>
+		<English>Threshold</English>
+		<French>Seuil</French>
+		<German>Schwelle</German>
+		<Italian>Quantità</Italian>
+		<Spanish>Threshold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CIV4LERTS__GOLDPERTURNTRADETHRESH_HOVER</Tag>
+		<English>Determines the threshold for gold per turn that will display an alert.</English>
+		<French>Determines the threshold for gold per turn that will display an alert.</French>
+		<German>Bestimmt die Schwelle für die Menge Gold pro Runde, ab der eine Meldung ausgegeben wird</German>
+		<Italian>Determina la quantità d'oro per turno che costituisce il limite per la visualizzazione dell'avviso.</Italian>
+		<Spanish>Determines the threshold for gold per turn that will display an alert.</Spanish>
+	</TEXT>
+
+<!-- Civ4lerts_CIV4GameText -->
+
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_REFUSES_TO_TALK</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]%s1 refuses to talk.[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]%s1 refuse de vous parler.[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]%s1 ist nicht gesprächsbereit.[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]%s1 rifiuta di parlare.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]%s1 se niega a hablar.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_WILLING_TO_TALK</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 is willing to negotiate.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 est disposé à négocier.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]%s1 ist bereit zu verhandeln.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 è disposto a negoziare.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 está dispuesto a negociar.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_YOU_WORST_ENEMY</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]You are the worst enemy of %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]You are the worst enemy of %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]Ihr seid der Erzfeind von %s1.[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]You are the worst enemy of %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]You are the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_WORST_ENEMY</Tag>
+		<English>[COLOR_YIELD_FOOD]%s2 is the worst enemy of %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s2 is the worst enemy of %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s2 ist der Erzfeind von %s1.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s2 is the worst enemy of %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s2 is the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY_FROM_YOU</Tag>
+		<English>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was you).[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was you).[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s2 ist der neue Erzfeind von %s1 (statt Euch).[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was you).[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was you).[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY_TO_YOU</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]You are the new worst enemy of %s1 (was %s2).[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT]You are the new worst enemy of %s1 (was %s2).[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT]Ihr seid der neue Erzfeind von %s1 (statt %s2).[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT]You are the new worst enemy of %s1 (was %s2).[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT]You are the new worst enemy of %s1 (was %s2).[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_SWITCH_WORST_ENEMY</Tag>
+		<English>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was %s3).[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was %s3).[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s2 ist der neue Erzfeind von %s1 (statt %s3).[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was %s3).[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s2 is the new worst enemy of %s1 (was %s3).[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_NO_WORST_ENEMY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s2 is no longer the worst enemy of %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s2 is no longer the worst enemy of %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]%s2 ist nicht mehr der Erzfeind von %s1.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s2 is no longer the worst enemy of %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s2 is no longer the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_YOU_NO_WORST_ENEMY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Ihr seid nicht mehr der Erzfeind von %s1.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]You are no longer the worst enemy of %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_GOLD_TRADE</Tag>
+		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 gold available for trade.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_COMMERCE]%s1 a %d2 pièces d'or disponible pour le commerce.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_COMMERCE]%s1 hat %d2 Gold zum Handeln.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_COMMERCE]%s1 ha %d2 oro disponibile per il commercio.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_COMMERCE]%s1 tiene %d2 de oro disponible para el comercio.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_SLAVE_TRADE</Tag>
+		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 slaves available for trade.[COLOR_REVERT]</English>
+		<German>[COLOR_YIELD_COMMERCE]%s1 hat %d2 Sklaven zum Handeln.[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_GOLD_PER_TURN_TRADE</Tag>
+		<English>[COLOR_YIELD_COMMERCE]%s1 has %d2 gold per turn available for trade.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_COMMERCE]%s1 a %d2 pièces d'or par tour disponible pour le commerce.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_COMMERCE]%s1 hat %d2 Gold pro Runde zum Handeln.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_COMMERCE]%s1 ha %d2 oro per turno disponibile per il commercio.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_COMMERCE]%s1 tiene %d2 de oro por turno disponible para el comercio.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_GROWTH</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 will grow to size %d2 on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 atteindra la taille %d2 au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]Die Bevölkerung von %s1 wächst nächste Runde auf %d2 an.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 crescerà a grandezza %d2 al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 alcanzará tamaño %d2 el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_SHRINKAGE</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 will shrink to size %d2 on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 retrécira à la taille %d2 au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 schrumpft nächste Runde auf %d2.[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 si ridurrà a grandezza %d2 al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se reducirá tamaño %d2 el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHEALTHY</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 will become unhealthy on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 deviendra malsain au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 wird nächste Runde krank.[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 diventerà insalubre al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se volverá insalubre el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_HEALTHY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 will become healthy on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 deviendra sain au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Bevölkerung von %s1 wird nächste Runde gesund.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 diventerà salubre al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se volverá sano el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_UNHAPPY</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 will become unhappy on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 deviendra malheureux au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 wird nächste Runde unzufrieden.[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 diventerà infelice al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se volverá infeliz el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_HAPPY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 will become happy on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 deviendra heureux au prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Bevölkerung von %s1 wird nächste Runde zufrieden.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 diventerà felice al prossimo turno.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se volverá feliz el próximo turno.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_UNHEALTHY</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 has become unhealthy.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 est devenu malsain.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 ist krank![COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 è diventata insalubre.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se ha vuelto insalubre.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_HEALTHY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 has become healthy.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 est devenu sain.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Bevölkerung von %s1 ist gesund![COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 è diventata salubre.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se ha vuelto sano.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_UNHAPPY</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 has become unhappy.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 est devenu malheureux.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 ist unzufrieden![COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 è diventata infelice.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se ha vuelto infeliz.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_HAPPY</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 has become happy.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 est devenu heureux.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Bevölkerung von %s1 ist zufrieden![COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 è diventata felice.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 se ha vuelto feliz.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_GROWTH</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 has grown to size %d2.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 a grandi jusqu'à la taille %d2.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]Die Bevölkerung von %s1 ist auf %d2 gewachsen![COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 è cresciuta a grandezza %d2.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 ha alcanzado tamaño %d2.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_SHRINKAGE</Tag>
+		<English>[COLOR_WARNING_TEXT]%s1 has shrunk to size %d2.[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]%s1 à retréci jusqu'à la taille %d2.[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Die Bevölkerung von %s1 ist auf %d2 geschrumpft![COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]%s1 si è ridotta a grandezza %d2.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]%s1 se ha reducido tamaño %d2.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PENDING_PACIFIED</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 will be pacified on the next turn.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 sera apaisée sur le prochain tour.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Unruhen in %s1 werden nächste Runde enden.[COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 sarà pacificata al turno seguente.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]%s1 será pacificado en la vuelta siguiente.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_PACIFIED</Tag>
+		<English>[COLOR_POSITIVE_TEXT]%s1 has been pacified.[COLOR_REVERT]</English>
+		<French>[COLOR_POSITIVE_TEXT]%s1 a été apaisée.[COLOR_REVERT]</French>
+		<German>[COLOR_POSITIVE_TEXT]Die Unruhen in %s1 sind beendet![COLOR_REVERT]</German>
+		<Italian>[COLOR_POSITIVE_TEXT]%s1 è stata pacificata.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_POSITIVE_TEXT]Se ha pacificado %s1.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_CAN_HURRY_POP</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_ANGRYPOP] with %d4[ICON_PRODUCTION] overflow and +1[ICON_UNHAPPY] for %d5 turns.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 peut précipiter %s2 pour %d3[ICON_ANGRYPOP] avec %d4[ICON_PRODUCTION] de débordement et +1[ICON_UNHAPPY] por %d5 tour.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s1 kann das Bauprojekt "%s2" unter Einsatz von %d3[ICON_ANGRYPOP] beschleunigen (Überschuss: %d4[ICON_PRODUCTION]), wobei für %d5 Runden +1[ICON_UNHAPPY] in der Stadt verursacht wird.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 può accelerare %s2 per %d3[ICON_ANGRYPOP] con un surplus di %d4[ICON_PRODUCTION] e 1[ICON_UNHAPPY] per %d5 turni.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 puede acelerar %s2 para %d3[ICON_ANGRYPOP] con %d4[ICON_PRODUCTION] de desbordamiento y +1[ICON_UNHAPPY] para %d5 turnos.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_CAN_HURRY_POP_PLUS_GOLD</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_ANGRYPOP] with %d4[ICON_PRODUCTION] overflow, %d6[ICON_GOLD] added to the treasury, and +1[ICON_UNHAPPY] for %d5 turns.[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_ANGRYPOP] with %d4[ICON_PRODUCTION] overflow, %d6[ICON_GOLD] added to the treasury, and +1[ICON_UNHAPPY] for %d5 turns.[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s1 kann das Bauprojekt "%s2" unter Einsatz von %d3[ICON_ANGRYPOP] beschleunigen (Überschuss: %d4[ICON_PRODUCTION] + %d6[ICON_GOLD] für die Staatskasse), wobei für %d5 Runden +1[ICON_UNHAPPY] in der Stadt verursacht wird.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 può accelerare %s2 per %d3[ICON_ANGRYPOP] con un surplus di %d4[ICON_PRODUCTION], un aumento del tesoro di %d6[ICON_GOLD] e +1[ICON_UNHAPPY] per %d5 turni.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_ANGRYPOP] with %d4[ICON_PRODUCTION] overflow, %d6[ICON_GOLD] added to the treasury, and +1[ICON_UNHAPPY] for %d5 turns.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV4LERTS_ON_CITY_CAN_HURRY_GOLD</Tag>
+		<English>[COLOR_YIELD_FOOD]%s1 can hurry %s2 for %d3[ICON_GOLD].[COLOR_REVERT]</English>
+		<French>[COLOR_YIELD_FOOD]%s1 peut précipiter %s2 pour %d3[ICON_GOLD].[COLOR_REVERT]</French>
+		<German>[COLOR_YIELD_FOOD]%s1 kann das Bauprojekt "%s2" unter Einsatz von %d3[ICON_GOLD] beschleunigen.[COLOR_REVERT]</German>
+		<Italian>[COLOR_YIELD_FOOD]%s1 può accelerare %s2 per %d3[ICON_GOLD].[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YIELD_FOOD]%s1 puede acelerar %s2 para %d3[ICON_GOLD].[COLOR_REVERT]</Spanish>
+	</TEXT>
+
+<!-- MoreCiv4alerts Options -->
+
+<!-- Cities -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__CITYFOUNDED_TEXT</Tag>
+		<English>City Founded by Rival</English>
+		<French>City Founded by Rival</French>
+		<German>Gegnerische Stadtgründungen</German>
+		<Italian>Città fondate dagli avversari</Italian>
+		<Spanish>City Founded by Rival</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__CITYFOUNDED_HOVER</Tag>
+		<English>When checked, displays an alert when a rival founds a city.</English>
+		<French>When checked, displays an alert when a rival founds a city.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine gegnerische Zivilisation eine Stadt gründet</German>
+		<Italian>Quando è selezionato,  viene visualizzato un avviso quando una Civiltà avversaria fonda una Città.</Italian>
+		<Spanish>When checked, displays an alert when a rival founds a city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__CITYPENDINGBORDEREXPANSION_TEXT</Tag>
+		<English>Pending Border Expansion</English>
+		<French>Expansion Culturelle</French>
+		<German>Bevorstehende Grenzerweiterung</German>
+		<Italian>Espansione dei confini imminente</Italian>
+		<Spanish>Pending Border Expansion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__CITYPENDINGBORDEREXPANSION_HOVER</Tag>
+		<English>When checked, displays an alert when a city will expand its cultural borders next turn.</English>
+		<French>En activant, une alerte sera montrée quand les frontières culturelles d'une ville s'aggrandiront au prochain tour.</French>
+		<German>Lässt eine Warnung erscheinen, wenn sich die Kulturgrenzen einer Stadt in der nächsten Runde erweitern</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una città espanderà i suoi confini culturali al turno successivo.</Italian>
+		<Spanish>When checked, displays an alert when a city will expand its cultural borders next turn.</Spanish>
+	</TEXT>
+<!-- Diplomacy -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__OPENBORDERSTRADE_TEXT</Tag>
+		<English>Open Borders</English>
+		<French>Frontières Ouvertes</French>
+		<German>Offene Grenzen</German>
+		<Italian>Libero Accesso</Italian>
+		<Spanish>Open Borders</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__OPENBORDERSTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to sign an "Open Borders" agreement.</English>
+		<French>When checked, displays an alert when a civilization is willing to sign an "Open Borders" agreement.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation einem Abkommen über "Offene Grenzen" zustimmen wird</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a firmare un trattato di Libero Accesso.</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to sign an "Open Borders" agreement.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DEFENSIVEPACTTRADE_TEXT</Tag>
+		<English>Defensive Pact</English>
+		<French>Pacte Défensif</French>
+		<German>Verteidigungsbündnis</German>
+		<Italian>Patto Difensivo</Italian>
+		<Spanish>Defensive Pact</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DEFENSIVEPACTTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to sign a "Defensive Pact" agreement.</English>
+		<French>When checked, displays an alert when a civilization is willing to sign a "Defensive Pact" agreement.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation einem "Verteidigungsbündnis" zustimmen wird</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a firmare un Patto Difensivo.</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to sign a "Defensive Pact" agreement.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__PERMANENTALLIANCETRADE_TEXT</Tag>
+		<English>Permanent Alliance</English>
+		<French>Alliance Permanente</French>
+		<German>Allianz</German>
+		<Italian>Alleanza Permanente</Italian>
+		<Spanish>Permanent Alliance</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__PERMANENTALLIANCETRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to sign a "Permanent Alliance" agreement.</English>
+		<French>When checked, displays an alert when a civilization is willing to sign a "Permanent Alliance" agreement.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation einer "Allianz" zustimmen wird</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a firmare una Alleanza Permanente.</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to sign a "Permanent Alliance" agreement.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__VASSALTRADE_TEXT</Tag>
+		<English>Vassal</English>
+		<French>Vassal</French>
+		<German>Vasall</German>
+		<Italian>Vassallaggio</Italian>
+		<Spanish>Vassal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__VASSALTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to become your vassal.</English>
+		<French>When checked, displays an alert when a civilization is willing to become your vassal.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation bereit ist, zu einem Vasallen der eigenen Zivilisation zu werden</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a diventare Vassallo del giocatore.</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to become your vassal.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__PEACETRADE_TEXT</Tag>
+		<English>Peace Treaty</English>
+		<French>Peace Treaty</French>
+		<German>Friedensvertrag</German>
+		<Italian>Trattato di Pace</Italian>
+		<Spanish>Peace Treaty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__PEACETRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to sign a Peace Treaty.</English>
+		<French>When checked, displays an alert when a civilization is willing to sign a Peace Treaty.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation einem "Friedensvertrag" zustimmen wird</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a firmare un Trattato di Pace.</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to sign a Peace Treaty.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SURRENDERTRADE_TEXT</Tag>
+		<English>Capitulation</English>
+		<French>Capitulation</French>
+		<German>Kapitulation</German>
+		<Italian>Capitolazione</Italian>
+		<Spanish>Capitulation</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__SURRENDERTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to capitulate during war.</English>
+		<French>When checked, displays an alert when a civilization is willing to capitulate during war.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation bereit ist, einen Krieg durch eine Kapitulation zu beenden</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a firmare un Atto di Capitolazione</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to capitulate during war.</Spanish>
+	</TEXT>
+<!-- Trade -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__TECHTRADE_TEXT</Tag>
+		<English>Technologies</English>
+		<French>Technologies</French>
+		<German>Technologien</German>
+		<Italian>Tecnologie</Italian>
+		<Spanish>Technologies</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__TECHTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to trade technologies.</English>
+		<French>When checked, displays an alert when a civilization is willing to trade technologies.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation Technologien handeln möchte</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a commerciare Tecnologie.</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to trade technologies.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__BONUSTRADE_TEXT</Tag>
+		<English>Resources</English>
+		<French>Resources</French>
+		<German>Ressourcen</German>
+		<Italian>Resources</Italian>
+		<Spanish>Resources</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__BONUSTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to trade resources.</English>
+		<French>When checked, displays an alert when a civilization is willing to trade resources.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation Ressourcen handeln möchte</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a commerciare Risorse.</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to trade resources.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__MAPTRADE_TEXT</Tag>
+		<English>Maps</English>
+		<French>Cartes</French>
+		<German>Karten</German>
+		<Italian>Cartas</Italian>
+		<Spanish>Cartas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__MAPTRADE_HOVER</Tag>
+		<English>When checked, displays an alert when a civilization is willing to trade their map.</English>
+		<French>When checked, displays an alert when a civilization is willing to trade their map.</French>
+		<German>Lässt eine Warnung erscheinen, wenn eine Zivilisation ihre Karte handeln möchte</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando una Civiltà è disponibile a commerciare Cartas.</Italian>
+		<Spanish>When checked, displays an alert when a civilization is willing to trade their map.</Spanish>
+	</TEXT>
+<!-- Victory -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DOMPOP_TEXT</Tag>
+		<English>Domination: Population</English>
+		<French>Domination: Population</French>
+		<German>Bevölkerung</German>
+		<Italian>Populazione</Italian>
+		<Spanish>Domination: Population</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DOMPOP_HOVER</Tag>
+		<English>When checked, displays an alert when your population is close to or exceeds the limit for a Domination victory.</English>
+		<French>When checked, displays an alert when your population is close to or exceeds the limit for a Domination victory.</French>
+		<German>Lässt eine Warnung erscheinen, wenn sich die eigene Bevölkerungszahl dem Grenzbereich für einen Vorherrschafts-Sieg nähert oder ihn überschreitet</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando la tua Popolazione è vicina al limite (o oltre) per una Vittoria di Dominazione.</Italian>
+		<Spanish>When checked, displays an alert when your population is close to or exceeds the limit for a Domination victory.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DOMPOPTHRESH_TEXT</Tag>
+		<English>Pop Threshold</English>
+		<French>Seuil de Population</French>
+		<German>Grenzbereich Bev.</German>
+		<Italian>Limite di popolazione</Italian>
+		<Spanish>Pop Threshold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DOMPOPTHRESH_HOVER</Tag>
+		<English>Population threshold for Domination victory.</English>
+		<French>Seuil de Population pour une Victoire par Domination.</French>
+		<German>Bestimmt den Grenzbereich für die Bevölkerungszahl, ab dem eine Warnung vor einem Vorherrschafts-Sieg erscheint</German>
+		<Italian>Livello limite di popolazione per una Vittoria di Dominazione.</Italian>
+		<Spanish>Population threshold for Domination victory.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DOMLAND_TEXT</Tag>
+		<English>Domination: Land</English>
+		<French>Domination: Territoire</French>
+		<German>Landmasse</German>
+		<Italian>Territorio</Italian>
+		<Spanish>Domination: Land</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DOMLAND_HOVER</Tag>
+		<English>When checked, displays an alert when your land area is close to or exceeds the limit for a Domination victory.</English>
+		<French>When checked, displays an alert when your land area is close to or exceeds the limit for a Domination victory.</French>
+		<German>Lässt eine Warnung erscheinen, wenn sich die eigene Landmasse dem Grenzbereich für einen Vorherrschafts-Sieg nähert oder ihn überschreitet</German>
+		<Italian>Quando è selezionato, viene visualizzato un avviso quando il tuo Territorio è vicino al limite (o oltre) per una Vittoria di Dominazione.</Italian>
+		<Spanish>When checked, displays an alert when your land area is close to or exceeds the limit for a Domination victory.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DOMLANDTHRESH_TEXT</Tag>
+		<English>Land Threshold</English>
+		<French>Seuil de Territoire</French>
+		<German>Grenzbereich Land</German>
+		<Italian>Limite di territorio</Italian>
+		<Spanish>Land Threshold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MORECIV4LERTS__DOMLANDTHRESH_HOVER</Tag>
+		<English>Land threshold for Domination victory.</English>
+		<French>Seuil de Territoire pour une Victoire par Domination.</French>
+		<German>Bestimmt den Grenzbereich für die Größe der Landmasse, ab dem eine Warnung vor einem Vorherrschafts-Sieg erscheint</German>
+		<Italian>Livello limite di popolazione per una Vittoria di Dominazione.</Italian>
+		<Spanish>Land threshold for Domination victory.</Spanish>
+	</TEXT>
+
+	<!-- MoreCiv4lerts_CIV4GameText -->
+
+	<TEXT>
+		<Tag>TXT_KEY_MISC_BORDERS_EXPANDED</Tag>
+		<English>[COLOR_MAGENTA]The borders of %s1_CityName have expanded![COLOR_REVERT]</English>
+		<French>[COLOR_MAGENTA]Les fronti&#232;res de %s1_CityName se sont &#233;tendues ![COLOR_REVERT]</French>
+		<German>[COLOR_MAGENTA]Die Stadtgrenzen von %s1_CityName haben sich erweitert![COLOR_REVERT]</German>
+		<Italian>[COLOR_MAGENTA]I confini di %s1_CityName si sono espansi![COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_MAGENTA]Las fronteras de %s1_CityName se han ampliado.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_CITY_TO_EXPAND</Tag>
+		<English>[COLOR_MAGENTA]The borders of %s1 are about to expand.[COLOR_REVERT]</English>
+		<French>[COLOR_MAGENTA]La frontière culturelle de %s1's est sur le point de s'étendre.[COLOR_REVERT]</French>
+		<German>[COLOR_MAGENTA]Die Stadtgrenzen von %s1 werden sich in der nächsten Runde erweitern.[COLOR_REVERT]</German>
+		<Italian>[COLOR_MAGENTA]Il confine culturale di %s1 sta per espandersi.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_MAGENTA]El límite cultural de %s1's es alrededor ampliarse.[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_CITY_NEXT_CULTURE_LEVEL</Tag>
+		<English>[COLOR_MAGENTA]%s1 is about to reach a new culture level.[COLOR_REVERT]</English>
+		<German>[COLOR_MAGENTA]%s1 wird in der nächsten Runde eine neue Kulturstufe erreichen.[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_CITY_FOUNDED</Tag>
+		<English>%s1_Player has founded %s2_City.</English>
+		<French>%s1_Player has founded %s2_City.</French>
+		<German>%s1_Player hat die Stadt %s2_City gegründet.</German>
+		<Italian>%s1_Player ha fondato %s2_City.</Italian>
+		<Spanish>%s1_Player has founded %s2_City.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_CITY_FOUNDED_UNSEEN</Tag>
+		<English>%s1_Player has founded %s2_City in a distant land.</English>
+		<French>%s1_Player has founded %s2_City in a distant land.</French>
+		<German>%s1_Player hat in einem fernen Land die Stadt %s2_City gegründet.</German>
+		<Italian>%s1_Player ha fondato %s2_City in una terra lontana.</Italian>
+		<Spanish>%s1_Player has founded %s2_City in a distant land.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_POP_EXCEEDS_LIMIT</Tag>
+		<English>[COLOR_WARNING_TEXT]Your population: %d1 (%s2) exceeds the Domination Limit: %d3 (%s4)[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Votre population : %d1 (%s2) dépasse la limite de domination : %d3 (%s4)[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Eure Bevölkerung: %d1 (%s2) überschreitet die Schwelle für einen Herrschaftssieg: %d3 (%s4)[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]La tua popolazione: %d1 (%s2) eccede il limite di dominazione: %d3 (%s4)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Su población: %d1 (%s2) excede el límite de la dominación: %d3 (%s4)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_POP_CLOSE_TO_LIMIT</Tag>
+		<English>[COLOR_WARNING_TEXT]Your population: %d1 (%s2) is close to the Domination Limit: %d3 (%s4)[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Votre population : %d1 (%s2) est près de la limite de domination : %d3 (%s4)[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Eure Bevölkerung: %d1 (%s2) überschreitet beinahe die Schwelle für einen Herrschaftssieg: %d3 (%s4)[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]La tua popolazione: %d1 (%s2) è vicina al limite di dominazione: %d3 (%s4)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Su población: %d1 (%s2) está cerca del límite de la dominación: %d3 (%s4)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_POP_GROWTH_EXCEEDS_LIMIT</Tag>
+		<English>[COLOR_WARNING_TEXT]Your population: %d1, plus growth: %d2 (%s3) will exceed the Domination Limit: %d4 (%s5)[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Votre population : %d1, plus la croissance : %d2 (%s3) dépassera la limite de domination : %d4 (%s5)[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Eure Bevölkerung: %d1, plus Wachstum: %d2 (%s3) überschreitet die Schwelle für einen Herrschaftssieg: %d4 (%s5)[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]La tua popolazione: %d1, più crescita: %d2 (%s3) eccederà il limite di dominazione: %d4 (%s5)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Su población: %d1, más crecimiento: %d2 (%s3) excederá el límite de la dominación: %d4 (%s5)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_POP_GROWTH_CLOSE_TO_LIMIT</Tag>
+		<English>[COLOR_WARNING_TEXT]Your population: %d1, plus growth: %d2 (%s3) will put close to the Domination Limit: %d4 (%s5)[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Votre population : %d1, plus la croissance : %d2 (%s3) vous mettra près de la limite de domination : %d4 (%s5)[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Eure Bevölkerung: %d1, plus Wachstum: %d2 (%s3) überschreitet beinahe die Schwelle für einen Herrschaftssieg: %d4 (%s5)[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]La tua popolazione: %d1, più crescita: %d2 (%s3) sarà vicina al limite di dominazione: %d4 (%s5)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Su población: %d1, más crecimiento: %d2 (%s3) pondrá cerca del límite de la dominación: %d4 (%s5)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_LAND_EXCEEDS_LIMIT</Tag>
+		<English>[COLOR_WARNING_TEXT]Your land area: %d1 (%s2) exceeds the Domination Limit: %d3 (%s4)[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Votre territoire : %d1 (%s2) dépasse la limite de domination : %d3 (%s4)[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Eure Landmasse: %d1 (%s2) überschreitet die Schwelle für einen Herrschaftssieg: %d3 (%s4)[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Il tuo territorio: %d1 (%s2) eccede il limite di dominazione: %d3 (%s4)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Su área de la tierra: %d1 (%s2) excede el límite de la dominación: %d3 (%s4)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_LAND_CLOSE_TO_LIMIT</Tag>
+		<English>[COLOR_WARNING_TEXT]Your land area: %d1 (%s2) is close to the Domination Limit: %d3 (%s4)[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Votre territoire : %d1 (%s2) est près de la limite de domination : %d3 (%s4)[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Eure Landmasse: %d1 (%s2) überschreitet beinahe die Schwelle für einen Herrschaftssieg: %d3 (%s4)[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Il tuo territorio: %d1 (%s2) è vicino al limite di dominazione: %d3 (%s4)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Su área de la tierra: %d1 (%s2) está cerca del límite de la dominación: %d3 (%s4)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_NEW_TECH_AVAIL</Tag>
+		<English>[COLOR_TECH_TEXT]%s1 will trade %s2[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]%s1 veut échanger %s2[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]%s1 hat neue Technologie(n) zum Handeln: %s2[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]%s1 commercerà %s2[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]%s1 will trade %s2[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_TECH_NOT_AVAIL</Tag>
+		<English>[COLOR_TECH_TEXT]%s1 won't trade %s2[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]%s1 ne veut pas échanger %s2[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]%s1 hat Technologie(n) vom Handel ausgeschlossen: %s2[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]%s1 non commercerà %s2[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]%s1 won't trade %s2[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_NEW_BONUS_AVAIL</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]%s1 will trade %s2[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]%s1 veut échanger %s2[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]%s1 hat Ressourcen zum Handeln: %s2[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1 commercerà %s2[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1 will trade %s2[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_BONUS_NOT_AVAIL</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]%s1 won't trade %s2[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]%s1 ne veut pas échanger %s2[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]%s1 hat Ressourcen vom Handel ausgeschlossen: %s2[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1 non commercerà %s2[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1 won't trade %s2[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_MAP</Tag>
+		<English>[COLOR_TECH_TEXT]Will Trade Map: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]Will Trade Map : %s1[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]Wird Karten handeln: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]Will Trade Map: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Will Trade Map: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_OPEN_BORDERS</Tag>
+		<English>[COLOR_TECH_TEXT]Will Sign Open Borders: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]Signera les Frontières Ouvertes : %s1[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]Wird "Offenen Grenzen" zustimmen: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]Firmerà un Trattato di Libero Accesso: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Firmará las Fronteras Abiertas: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_DEFENSIVE_PACT</Tag>
+		<English>[COLOR_TECH_TEXT]Will Sign a Defensive Pact: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]Signera un Pacte Défensif : %s1[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]Wird einem "Verteidigungsbündnis" zustimmen: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]Firmerà un Patto Difensivo: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Firmará un Pacto Defensivo: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_PERMANENT_ALLIANCE</Tag>
+		<English>[COLOR_TECH_TEXT]Will Sign a Permanent Alliance: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]Signera une Alliance Permanente : %s1[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]Wird einer "Allianz" zustimmen: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]Firmerà un'Alleanza Permanente: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Firmará una Alianza Permanente: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_VASSAL</Tag>
+		<English>[COLOR_TECH_TEXT]Will Become a Vassal: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]Will Become a Vassal: %s1[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]Wird zu einem Vasallen werden: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]Diverrà Vassallo: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Will Become a Vassal: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_SURRENDER</Tag>
+		<English>[COLOR_TECH_TEXT]Will Capitulate: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]Will Capitulate: %s1[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]Wird kapitulieren: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]Capitolerà: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Will Capitulate: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MORECIV4LERTS_PEACE_TREATY</Tag>
+		<English>[COLOR_TECH_TEXT]Will Sign Peace Treaty: %s1[COLOR_REVERT]</English>
+		<French>[COLOR_TECH_TEXT]Will Sign Peace Treaty: %s1[COLOR_REVERT]</French>
+		<German>[COLOR_TECH_TEXT]Wird einem "Friedensvertrag" zustimmen: %s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_TECH_TEXT]Firmerà un Trattato di Pace: %s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_TECH_TEXT]Will Sign Peace Treaty: %s1[COLOR_REVERT]</Spanish>
+	</TEXT>
+</Civ4GameText>

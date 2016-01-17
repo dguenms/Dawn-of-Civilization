@@ -13,7 +13,6 @@
 	</Fader>
 	<Fader>
 		<Name>DF_SKY</Name>
-		<!-- Rhye - start -->
 		<Key>7000, 0.00</Key>
 		<Key>7400, 1.0</Key>
 		<Key>%CAMERA_MAX_DISTANCE, 1.00</Key>
@@ -34,7 +33,6 @@
 		<Key>1500.0, 1.1</Key>
 		<Key>3000.0, 1.4</Key>
 		<Key>5000.0, 1.7</Key>
-		<!-- Rhye - end -->
 	</Fader>
 	<Fader>
 		<Name>CITY_LAYOUT_UNIT_CUT_RADIUS</Name>
@@ -43,12 +41,10 @@
 	</Fader>
 	<Fader>
 		<Name>FLAG_SCALE</Name>
-		<!-- Rhye - start -->
 		<Key>700.0,  0.8</Key>
 		<Key>1500.0, 0.9</Key>
 		<Key>3000.0, 1.1</Key>
 		<Key>5000.0, 1.4</Key>
-		<!-- Rhye - end -->
 	</Fader>
 	<Fader>
 		<Name>F_PLOTINDICATOR_SCALE</Name>
@@ -74,7 +70,7 @@
 		<Key>700,	 1.5</Key>
 		<Key>2500,   1.0</Key>
 		<Key>6000,   0.67</Key>
-		<Key>25000,   0.40</Key> <!-- Rhye -->
+		<Key>25000,   0.40</Key>
 	</Fader>
 	<Fader>
 		<Name>CITYBILLBOARD_HEIGHT</Name>
@@ -329,7 +325,7 @@
 	</Fader>
 	<Fader>
 		<Name>CAMERA_MAX_DISTANCE_FADER </Name>
-		<Value>0.85</Value> <!--Rhye 0.75-->
+		<Value>0.85</Value> <!-- Default: 0.75-->
 	</Fader>
 	<Fader>
 		<Name>CAMERA_FAR_PLANE_SCALE</Name>
@@ -390,7 +386,6 @@
 		<Name>AQUEDUCT_HEIGHT_CUTOFF</Name> <!-- points in the aqueduct won't be created above this altitutde -->
 		<Value>100</Value>
 	</Fader>
-
 	<!-- controllers for how the path between source and sink is found ... 
 		we recursively split the line between source and sink until it reaches and ideal length,
 		adding noise to each split vertex in the tangent (X) and normal (Y) directions -->

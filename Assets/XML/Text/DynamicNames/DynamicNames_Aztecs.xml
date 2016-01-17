@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Aztecs -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTEC_DESC</Tag>
+		<English>The Aztecs</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_PEOPLES</Tag>
+		<English>Mexica Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_DEFAULT</Tag>
+		<English>%s2 Triple Alliance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_FASCIST</Tag>
+		<English>New Mexica Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_SHORT_DESC</Tag>
+		<English>Mexico</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEXICO_ADJECTIVE</Tag>
+		<English>Mexican</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_ALTEPETL</Tag>
+		<English>Mexican Altepetl</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTECS_EMPIRE</Tag>
+		<English>Aztec Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTEC_ADJECTIVE</Tag>
+		<English>Aztec</English>
+		<French>
+			<Text>azt&#232;que:azt&#232;que:azt&#232;ques:azt&#232;ques</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Aztekisch:aztekischen:aztekische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>azteco:azteca:aztechi:azteche</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>azteca:azteca:aztecas:aztecas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AZTEC_SHORT_DESC</Tag>
+		<English>Aztec</English>
+		<French>
+			<Text>Azt&#232;ques</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Aztekenland</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Aztechi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Aztecas</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Ethiopia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_DESC</Tag>
+		<English>The Ethiopians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_PEOPLES</Tag>
+		<English>Abyssinian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_FASCIST</Tag>
+		<English>%s2 Junta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_REPUBLIC</Tag>
+		<English>People's Democratic Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_AKSUM</Tag>
+		<English>Aksum</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_ADJECTIVE</Tag>
+		<English>
+			<Text>Ethiopian:Ethiopians</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>&#233;thiopien:&#233;thiopienne:&#233;thiopiens:&#233;thiopiennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>&#196;thiopisch:&#228;thiopischen:&#228;thiopische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>etiope:etiope:etiopi:etiopi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>et&#237;ope:et&#237;ope:et&#237;opes:et&#237;opes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_SHORT_DESC</Tag>
+		<English>Ethiopia</English>
+		<French>
+			<Text>&#201;thiopie</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>&#196;thiopien</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Etiopia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Etiop&#237;a</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

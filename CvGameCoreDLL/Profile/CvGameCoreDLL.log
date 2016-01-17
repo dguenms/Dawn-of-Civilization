@@ -1,0 +1,33 @@
+﻿Build started 16.01.2016 16:07:51.
+     1>Project "E:\Spiele\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword\Mods\RFC Dawn of Civilization\CvGameCoreDLL\CvGameCoreDLL.vcxproj" on node 2 (build target(s)).
+     1>Build:
+         set TARGET=Profile
+         nmake source_list
+         nmake fastdep
+         nmake dll
+         
+         Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Building source list
+         
+         Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Running fastdep
+         
+         Microsoft (R) Program Maintenance Utility Version 10.00.30319.01
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         CvPlayer.cpp
+         CyPlayer.cpp
+         Linking DLL
+         	COPY "temp_files\Profile\CvGameCoreDLL.dll" "Profile\CvGameCoreDLL.dll"
+                 1 Datei(en) kopiert.
+         	COPY "Profile\CvGameCoreDLL.dll" "..\Assets\."
+                 1 Datei(en) kopiert.
+     1>Done Building Project "E:\Spiele\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword\Mods\RFC Dawn of Civilization\CvGameCoreDLL\CvGameCoreDLL.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:10.77

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Colombia -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_DESC</Tag>
+		<English>The Colombians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_PEOPLES</Tag>
+		<English>Colombian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_DEFAULT</Tag>
+		<English>Kingdom of New Granada</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_REPUBLIC</Tag>
+		<English>Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_COMMUNIST</Tag>
+		<English>Socialist Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_FASCIST</Tag>
+		<English>%s2 Junta</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_EMPIRE</Tag>
+		<English>Empire of Gran Colombia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_ADJECTIVE</Tag>
+		<English>Colombian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_COLOMBIA_SHORT_DESC</Tag>
+		<English>Colombia</English>
+	</TEXT>
+</Civ4GameText>

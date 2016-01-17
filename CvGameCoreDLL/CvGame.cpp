@@ -2278,7 +2278,7 @@ void CvGame::update()
 		if (getTurnSlice() == 0)
 		{
 			// edead: disable autosave during autoplay
-			if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < getGameTurnForYear(startingTurnYear[getActivePlayer()], getStartYear(), getCalendar(), getGameSpeedType()))))
+			if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < getGameTurnForYear(GET_PLAYER(getActivePlayer()).getBirthYear(), getStartYear(), getCalendar(), getGameSpeedType()))))
 			{
 				gDLL->getEngineIFace()->AutoSave(true);
 			}
@@ -2323,124 +2323,16 @@ void CvGame::update()
 			gDLL->getInterfaceIFace()->setInAdvancedStart(true);
 			gDLL->getInterfaceIFace()->setWorldBuilder(true);
 		}
-		//Rhye - start switch - Version B (late human starts)
-		/*int iHuman = MAX_PLAYERS;
-		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+		
+		// Leoreth
+		if (getGameTurn() == getScenarioStartTurn() && GET_PLAYER(getActivePlayer()).getBirthTurn() > getScenarioStartTurn())
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).isHuman())
-				{
-					iHuman = iI;
-					break;
-				}
-			}
-		}*/
-		int iHuman = getActivePlayer();
-
-		//an IF here causes a CRASH
-		switch (iHuman)
-		{
-		case EGYPT:
-			break;
-		case CHINA:
-			break;
-		case BABYLONIA:
-			break;
-		case HARAPPA:
-			break;
-		case KOREA:
-            if (getScenario() >= SCENARIO_600AD) //late start condition
-                break;
-		case BYZANTIUM:
-            if (getScenario() == SCENARIO_600AD) //late start condition
-				break;
-		case JAPAN:
-			if (getScenario() >= SCENARIO_600AD) //late start condition
-				break;
-		case VIKING:
-			if (getScenario() >= SCENARIO_600AD) //late start condition
-				break;
-		//case ARABIA:
-			//if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-				//break;
-		case GREECE:
-		case INDIA:
-			//break;
-		case CARTHAGE:
-		case POLYNESIA:
-		case PERSIA:
-		case ROME:
-		case TAMILS:
-		case ETHIOPIA:
-		case MAYA:
-		case ARABIA:
-		case TIBET:
-		case KHMER:
-		case INDONESIA:
-		case MOORS:
-		case SPAIN:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case FRANCE:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case ENGLAND:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case HOLY_ROME:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case RUSSIA:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case NETHERLANDS:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case MALI:
-		case POLAND:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case TURKEY:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case PORTUGAL:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case INCA:
-		case ITALY:
-		case MONGOLIA:
-		case MUGHALS:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case AZTEC:
-		case THAILAND:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case CONGO:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case GERMANY:
-			if (getScenario() == SCENARIO_1700AD)
-				break;
-		case AMERICA:
-		case ARGENTINA:
-		case BRAZIL:
-		case CANADA:
-			//if (getGameTurn() == 0 || (getGameTurn() == 181 && !GET_PLAYER((PlayerTypes)EGYPT).isPlayable())) //late start condition
-			//if (getGameTurn() == 0 || (getGameTurn() == getTurnForYear(600) && getScenario() == SCENARIO_600AD)) //late start condition // edead
-			if (getGameTurn() == getScenarioStartTurn())
-			{
-				setAIAutoPlay(1);
-			}
-			//else if (getGameTurn() <= startingTurn[iHuman])
-			else if (getGameTurn() <= getTurnForYear(startingTurnYear[iHuman])) // edead
-			{
-				setAIAutoPlayCatapult(1);
-			}
-			break;
+			setAIAutoPlay(1);
 		}
-		//Rhye - end
+		else if (getGameTurn() <= GET_PLAYER(getActivePlayer()).getBirthTurn())
+		{
+			setAIAutoPlayCatapult(1);
+		}
 	}
 }
 
@@ -6258,10 +6150,11 @@ void CvGame::doTurn()
 	int iLoopPlayer;
 	int iI;
 
-	//Rhye - start
+	//Rhye
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
-		turnPlayed[iI] = 0;
-	//Rhye - end
+	{
+		GET_PLAYER((PlayerTypes)iI).m_bTurnPlayed = false;
+	}
 
 	// END OF TURN
 	CvEventReporter::getInstance().beginGameTurn( getGameTurn() );
@@ -6382,7 +6275,7 @@ void CvGame::doTurn()
 	stopProfilingDLL();
 
 	// edead: disable autosave during autoplay
-	if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < getGameTurnForYear(startingTurnYear[getActivePlayer()], getStartYear(), getCalendar(), getGameSpeedType()))))
+	if ((GC.getDefineINT("NO_AUTOSAVE_DURING_AUTOPLAY") == 0) || ((getGameTurn() > 0) && !(getGameTurn() < getGameTurnForYear(GET_PLAYER(getActivePlayer()).getBirthYear(), getStartYear(), getCalendar(), getGameSpeedType()))))
 	{
 		gDLL->getEngineIFace()->AutoSave();
 	}
@@ -9958,7 +9851,7 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 
 								if (NO_PLAYER == pLoopCity->getLiberationPlayer(false))
 								{
-									iCurrentValue = pLoopCity->plot()->getSettlerMapValue(ePlayer);
+									iCurrentValue = pLoopCity->plot()->getSettlerValue(ePlayer);
 									if (iBestID == -1 || iCurrentValue < iBestValue)
 									{
 										iBestID = pLoopCity->getID();

@@ -9,7 +9,6 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SEE_DEMOGRAPHICS</Type>
 			<Description>TXT_KEY_ESPIONAGE_CAN_SEE_DEMOGRAPHICS</Description>
-			<!-- Rhye -->
 			<iCost>15</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
@@ -45,13 +44,11 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_VISIBILITY</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_VISIBILITY</Description>
-			<!-- Rhye -->
 			<iCost>160</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
 			<bSelectPlot>0</bSelectPlot>
-			<!-- Rhye -->
 			<TechPrereq>TECH_ELECTRICITY</TechPrereq>
 			<iVisibilityLevel>1</iVisibilityLevel>
 			<bInvestigateCity>0</bInvestigateCity>
@@ -117,7 +114,6 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SEE_RESEARCH</Type>
 			<Description>TXT_KEY_ESPIONAGE_SEE_RESEARCH</Description>
-			<!-- Rhye -->
 			<iCost>130</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
@@ -468,8 +464,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_REVOLT</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_REVOLT</Description>
-			<!-- Rhye 650 -->
-			<iCost>750</iCost>
+			<iCost>750</iCost> <!-- Default: 650 -->
 			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
@@ -565,8 +560,7 @@
 			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
 			<iCityRevoltCounter>0</iCityRevoltCounter>
 			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<!-- Rhye 60000 -->
-			<iSwitchCivicCostFactor>100000</iSwitchCivicCostFactor>
+			<iSwitchCivicCostFactor>100000</iSwitchCivicCostFactor> <!-- Default: 60000 -->
 			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
 			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
 			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
@@ -602,8 +596,7 @@
 			<iCityRevoltCounter>0</iCityRevoltCounter>
 			<iBuyTechCostFactor>0</iBuyTechCostFactor>
 			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<!-- Rhye 60000 -->
-			<iSwitchReligionCostFactor>100000</iSwitchReligionCostFactor>
+			<iSwitchReligionCostFactor>100000</iSwitchReligionCostFactor> <!-- Default: 60000 -->
 			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
 			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
 			<iCounterespionageMod>0</iCounterespionageMod>

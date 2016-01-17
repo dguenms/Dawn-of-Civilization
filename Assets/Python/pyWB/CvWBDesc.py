@@ -2101,7 +2101,7 @@ class CvWBDesc:
 		f=file(fileName+ext, "r")# open text file
 
 	## Platy Builder ##
-		self.bSpecial = 1
+		self.bSpecial = 0
 		parser = CvWBParser()
 		filePos = f.tell()
 		iNumPlayers = gc.getMAX_CIV_PLAYERS()

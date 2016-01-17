@@ -302,7 +302,6 @@
 		<!-- Villages, etc -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::1x1_01</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -312,7 +311,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::1x1_02</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -322,7 +320,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::1x1_03</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -332,7 +329,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::1x1_04</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -342,7 +338,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::1x1_05</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -352,7 +347,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::1x1_06</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -387,7 +381,6 @@
 		<!-- MEDIEVAL -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x1x1_01</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -397,7 +390,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x1x1_02</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -407,7 +399,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x1x2_01</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -417,7 +408,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x1x2_02</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -427,7 +417,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x1x2_03</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -435,7 +424,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- ORIENTAL -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -482,12 +470,9 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
-		
 		<!-- RENAISSANCE -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::park_1x1</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -497,7 +482,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::1x1_02</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -507,7 +491,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::1x1_03</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -517,7 +500,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::1x1_04</Attribute>
 			<Attribute Class="Improvement">IMPROVEMENT_COTTAGE,IMPROVEMENT_HAMLET,IMPROVEMENT_VILLAGE,IMPROVEMENT_TOWN</Attribute>
@@ -525,8 +507,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ren_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
-		<!-- Rhye - start -->
 		<!-- MESO -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -573,7 +553,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ind_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<!-- AFRICAN -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -620,8 +599,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
-
 		<!-- INDUSTRIAL -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
@@ -663,7 +640,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ind_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<!-- modern -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_MODERN,ERA_FUTURE</Attribute>
@@ -705,7 +681,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_mod_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<!-- Asian -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -752,7 +727,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_mod_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<!-- Greco Roman -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -790,7 +764,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_mod_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<!-- Other stuff -->
 		<ArtRef Name="goal:IMPROVEMENT_COTTAGE">
 			<Attribute Class="Scalar">bPlace:0</Attribute>
@@ -859,7 +832,6 @@
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Scale>0.8</Scale>
 		</ArtRef>
-		
 		<!-- villages -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT</Attribute>
@@ -897,10 +869,8 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_an_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::1x2_01</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -911,7 +881,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::1x2_02</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -922,7 +891,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::2x1_01</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -933,7 +901,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::2x1_02</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -944,7 +911,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::2x1_03</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -955,7 +921,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/an_eu.nif::2x1_04</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -964,11 +929,9 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_an_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-			
 		<!-- medieval -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x2x2_01</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -979,7 +942,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x2x2_02</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -990,7 +952,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x2x2_03</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1001,7 +962,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x2x2_04</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1012,7 +972,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::1x2x2_05</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1021,10 +980,8 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::2x1x2_01</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1035,7 +992,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::2x1x2_02</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1046,7 +1002,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::2x1x2_03</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1057,7 +1012,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/med_eu.nif::2x1x2_04</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1066,7 +1020,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- Oriental -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -1118,7 +1071,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="ArtStyle">ARTSTYLE_MIDDLE_EAST</Attribute>
@@ -1159,12 +1111,9 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
-
 		<!-- renaissance -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::park_2x1</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1176,7 +1125,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::1x2_01</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1187,7 +1135,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::1x2_02</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1198,7 +1145,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::1x2_03</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1209,7 +1155,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::1x2_04</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1220,7 +1165,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::1x2_05</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -1229,10 +1173,8 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ren_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::park_2x1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1240,10 +1182,9 @@
 			<Attribute Class="Scalar">szForceContourNode:BUILDING</Attribute>
 			<Attribute Class="Scalar">szBatchGroup:buildings_ren_eu</Attribute>
 			<Scale>0.35</Scale>
-		</ArtRef>		
+		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::park_2x1_05</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1254,7 +1195,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::2x1_01</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1265,7 +1205,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::2x1_02</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1276,7 +1215,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::2x1_03</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1287,7 +1225,6 @@
 		</ArtRef>
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ren_eu.nif::2x1_04</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -1296,7 +1233,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ren_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- MESO -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -1328,7 +1264,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ind_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="ArtStyle">ARTSTYLE_SOUTH_AMERICA</Attribute>
@@ -1369,7 +1304,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ind_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<!-- AFRICAN -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -1421,7 +1355,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="ArtStyle">ARTSTYLE_AFRICAN</Attribute>
@@ -1462,8 +1395,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_med_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
-
 		<!-- industrial -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
@@ -1492,7 +1423,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ind_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/ind_eu.nif::2x1_01</Attribute>
@@ -1529,7 +1459,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_ind_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<!-- modern -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_MODERN,ERA_FUTURE</Attribute>
@@ -1577,8 +1506,6 @@
 			<Scale>0.35</Scale>
 			<Rotate>90</Rotate>
 		</ArtRef>
-
-
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_MODERN,ERA_FUTURE</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Cities/mod_eu.nif::2x1_01</Attribute>
@@ -1615,7 +1542,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_mod_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<!-- Asian -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -1657,7 +1583,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_an_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="ArtStyle">ARTSTYLE_ASIAN</Attribute>
@@ -1698,7 +1623,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_an_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<!-- Greco Roman -->
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -1740,7 +1664,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_an_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<ArtRef Name="art:building">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="ArtStyle">ARTSTYLE_GRECO_ROMAN</Attribute>
@@ -1781,7 +1704,6 @@
 			<Attribute Class="Scalar">szBatchGroup:buildings_an_eu</Attribute>
 			<Scale>0.35</Scale>
 		</ArtRef>
-		
 		<!-- corn -->
 		<ArtRef Name="art:corn_crop">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Corn/crops.nif::2x1_01</Attribute>
@@ -2976,7 +2898,6 @@
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
-
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- unworked ancient sugar plantation -->
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
@@ -3438,8 +3359,6 @@
 			<Rotate>-45</Rotate>
 			<Scale>0.5</Scale>
 		</ArtRef>
-
-		
 		<!--- corn crop -->
 		<ArtRef Name="goal:BONUS_CORN">
 			<Attribute Class="Bonus">BONUS_CORN</Attribute>
@@ -3480,7 +3399,6 @@
 			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Whalingboat_Modern/WhalingBoat_Modern.kfm</Attribute>
 		</ArtRef>
 	</LNode>
-	
 	<LNode Name="Leaf_LandImprovement_4x4">
 		<Width>4</Width>
 		<Height>4</Height>
@@ -3592,9 +3510,7 @@
 			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/WindMill/WindMill_mod.nif</Attribute>
 			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/WindMill/WindMill_mod.kfm</Attribute>
 		</ArtRef>
-
 	</LNode>
-
 	<!-- *************************************************************************** -->
 	<!-- *************************************************************************** -->
 	<!-- *************************************************************************** -->
@@ -3609,7 +3525,6 @@
 	<!-- *************************************************************************** -->
 	<!-- *************************************************************************** -->
 	<!-- *************************************************************************** -->
-
 	<LProduction From="PLOT_ROOT">
 		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_WATER_WORKED,!IMPROVEMENT_MINE,!IMPROVEMENT_PASTURE,!IMPROVEMENT_QUARRY,!IMPROVEMENT_WHALING_BOATS,!IMPROVEMENT_WINDMILL,!IMPROVEMENT_FORT</Attribute>
 		<To Name="Node_12x12"/>
@@ -3621,20 +3536,17 @@
 		<To Name="Leaf_LandImprovement_4x4"/>
 	</LProduction>
 	<!-- *************************************************************************** -->
-	
 	<LProduction From="PLOT_ROOT" Name="LandImprovementProd">
 		<Attribute Class="Improvement">IMPROVEMENT_MINE,IMPROVEMENT_WINDMILL,IMPROVEMENT_FORT</Attribute>
 		<Attribute Class="Bonus">NO_BONUS</Attribute>
 		<Attribute Class="Scalar">bNotBFS:1</Attribute>
 		<To Name="Leaf_LandImprovement_4x4"/>
 	</LProduction>
-	
 	<LProduction From="PLOT_ROOT" Name="LandImprovementProd">
 		<Attribute Class="Improvement">IMPROVEMENT_PASTURE,IMPROVEMENT_QUARRY</Attribute>
 		<Attribute Class="Scalar">bNotBFS:1</Attribute>
 		<To Name="Leaf_LandImprovement_4x4"/>
 	</LProduction>
-	
 	<LProduction From="PLOT_ROOT" Name="WaterImprovementProd">
 		<Attribute Class="Improvement">IMPROVEMENT_WHALING_BOATS</Attribute>
 		<Attribute Class="Scalar">bNotBFS:1</Attribute>
@@ -3642,7 +3554,6 @@
 			<Translate>0,0</Translate>
 		</To>
 	</LProduction>
-
 	<LProduction From="PLOT_ROOT" Name="WaterWorkedProd">
 		<Attribute Class="Improvement">IMPROVEMENT_WATER_WORKED</Attribute>
 		<Attribute Class="Scalar">bNotBFS:1</Attribute>
