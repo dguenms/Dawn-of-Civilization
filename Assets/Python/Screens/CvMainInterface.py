@@ -5589,8 +5589,8 @@ class CvMainInterface:
 		screen.setState( "ResourceIcons", False )
 		screen.hide( "ResourceIcons" )
 
-		#screen.addCheckBoxGFC( "StabilityOverlay", "", "", 0, 0, 28, 28, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_STABILITY_OVERLAY).getActionInfoIndex(), -1, ButtonStyles.BUTTON_STYLE_LABEL )
-		screen.addCheckBoxGFC( "StabilityOverlay", "", "", 0, 0, 28, 28, WidgetTypes.WIDGET_ACTION, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL )
+		screen.addCheckBoxGFC( "StabilityOverlay", "", "", 0, 0, 28, 28, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_STABILITY_OVERLAY).getActionInfoIndex(), -1, ButtonStyles.BUTTON_STYLE_LABEL )
+		#screen.addCheckBoxGFC( "StabilityOverlay", "", "", 0, 0, 28, 28, WidgetTypes.WIDGET_ACTION, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL )
 		screen.setStyle( "StabilityOverlay", "Button_HUDGlobeStrategy_Style" )
 		screen.setState( "StabilityOverlay", False )
 		screen.hide( "StabilityOverlay" )
