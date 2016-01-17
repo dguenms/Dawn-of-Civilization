@@ -1648,7 +1648,7 @@ class CvWorldBuilderScreen:
 			sHistoricalColor = "COLOR_GREEN"
 			for x in range(con.iWorldX):
 				for y in range(con.iWorldY):
-					iSettlerValue = md.getSettlerValue(self.m_iCurrentPlayer, (x, y))
+					iSettlerValue = md.getSettlerValue(self.m_iCurrentPlayer, x, y)
 					if iSettlerValue >= 90:
 						CyEngine().fillAreaBorderPlotAlt(x, y, AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS, sHistoricalColor, 1.0)
 					elif iSettlerValue == 3:
