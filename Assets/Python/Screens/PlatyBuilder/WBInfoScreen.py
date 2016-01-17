@@ -899,9 +899,9 @@ class WBInfoScreen:
 					iPlayer = inputClass.getData2()
 					x, y = tCurrentPlot
 					if iChangeType == 0:
-						iValue = md.getSettlerValue(iItem, (x, y)) - iChange
+						iValue = md.getSettlerValue(iPlayer, (x, y)) - iChange
 					elif iChangeType == 1:
-						iValue = md.getSettlerValue(iItem, (x, y)) + iChange
+						iValue = md.getSettlerValue(iPlayer, (x, y)) + iChange
 					elif iChangeType == 2:
 						iValue = iSetValue
 					md.changeSettlerValue(iPlayer, tCurrentPlot, iValue)
