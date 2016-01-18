@@ -199,15 +199,6 @@
 		<English>Lower unit support costs; military units produced with food; double production speed for castles</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP</Tag>
-		<English>[ICON_BULLET]Increased chance of spreading Trading Company</English>
-		<German>[ICON_BULLET]Erh&#246;hte Chance, Handelsgesellschaften zu verbreiten</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP_OLD</Tag>
-		<English>[ICON_BULLET]Reduced expansion penalty for overseas colonies</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCANTILISM_STRATEGY</Tag>
 		<English>No additional income from foreign trade routes; +50% income from trade routes to and from capital; extra commerce from plantations and slave plantations; double production speed for customs houses; reduced expansion penalty for overseas colonies</English>
 	</TEXT>
