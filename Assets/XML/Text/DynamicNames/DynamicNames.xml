@@ -44,6 +44,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNITED_STATES_OF</Tag>
 		<English>United States of %s1</English>
+		<French>
+			<Text>Etats Unis d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Vereinigte Staaten von %s1:Vereinigten Staaten von %s1:Vereinigten Staaten von %s1</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Stati Uniti d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estados Unidos de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITED_STATES_ADJECTIVE</Tag>

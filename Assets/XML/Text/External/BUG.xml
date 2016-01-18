@@ -3165,41 +3165,85 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ABBR_GOVERNMENT</Tag>
 		<English>Govt</English>
-		<French>Govt</French>
 		<German>Regierung</German>
 		<Italian>Governo</Italian>
-		<Spanish>Govt</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ABBR_LEGAL</Tag>
 		<English>Legal</English>
-		<French>Justice</French>
-		<German>Recht</German>
-		<Italian>S. Legale</Italian>
-		<Spanish>Legal</Spanish>
+		<French>
+			<Text>Justice</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Recht</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>legale</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>legal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ABBR_LABOR</Tag>
 		<English>Labor</English>
-		<French>Travail</French>
-		<German>Arbeit</German>
-		<Italian>Lavoro</Italian>
-		<Spanish>Labor</Spanish>
+		<French>
+			<Text>Travail</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Arbeit</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Lavoro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>labor</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ABBR_ECONOMY</Tag>
 		<English>Econ</English>
-		<French>Econ</French>
 		<German>Ökonomie</German>
 		<Italian>Economia</Italian>
-		<Spanish>Econ</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_ABBR_RELIGION</Tag>
 		<English>Religion</English>
-		<French>Religion</French>
-		<German>Religion</German>
-		<Italian>Religione</Italian>
-		<Spanish>Religi&#243;n</Spanish>
+		<French>
+			<Text>Religion</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Religion</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Religione</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Religi&#243;n</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 </Civ4GameText>

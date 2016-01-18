@@ -96,6 +96,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_AMERICA</Tag>
 		<English>Province of New Mexico</English>
+		<French>
+			<Text>Province du Nouveau M&#233;xique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Provinz Neu-Mexiko:Provinz Neu-Mexiko:Provinz Neu-Mexiko</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Provincia del Nuovo Messico</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Provincia de M&#233;xico Nuevo</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_ARGENTINA</Tag>

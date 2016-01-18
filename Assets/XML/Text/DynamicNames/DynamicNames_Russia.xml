@@ -40,6 +40,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET</Tag>
 		<English>Soviet %s1</English>
+		<French>
+			<Text>%s1 Sovi&#233;tique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sowjet %s1:Sowjet %s1:Sowjet %s1</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 Sovietica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 Sovi&#233;tica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET_REPUBLIC_ADJECTIVE</Tag>

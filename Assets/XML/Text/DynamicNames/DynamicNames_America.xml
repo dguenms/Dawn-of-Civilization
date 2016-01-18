@@ -4,10 +4,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_DESC</Tag>
 		<English>The Americans</English>
+		<French>
+			<Text>Les Am&#233;ricains</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Amerikaner:Die Amerikaner:den Amerikanern</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Gli Americani</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Americanos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_PEOPLES</Tag>
 		<English>American Peoples</English>
+		<French>
+			<Text>Peuplades Am&#233;ricaines</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>V&#246;lker Amerikas:V&#246;lker Amerikas:V&#246;lkern Amerikas</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Americani</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Americanos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AMERICA_DEFAULT</Tag>
