@@ -845,65 +845,65 @@
 		<element type="Type"/>
 		<element type="Description"/>
 		<element type="Help" minOccurs="0" maxOccurs="*"/>
-		<element type="Sound"/>
-		<element type="LayerAnimationPath"/>
-		<element type="PromotionPrereq"/>
-		<element type="PromotionPrereqOr1"/>
-		<element type="PromotionPrereqOr2"/>
-		<element type="TechPrereq"/>
-		<element type="StateReligionPrereq"/>
-		<element type="bLeader"/>
-		<element type="bBlitz"/>
-		<element type="bAmphib"/>
-		<element type="bRiver"/>
-		<element type="bEnemyRoute"/>
-		<element type="bAlwaysHeal"/>
-		<element type="bHillsDoubleMove"/>
-		<element type="bImmuneToFirstStrikes"/>
+		<element type="Sound" minOccurs="0"/>
+		<element type="LayerAnimationPath" minOccurs="0"/>
+		<element type="PromotionPrereq" minOccurs="0"/>
+		<element type="PromotionPrereqOr1" minOccurs="0"/>
+		<element type="PromotionPrereqOr2" minOccurs="0"/>
+		<element type="TechPrereq" minOccurs="0"/>
+		<element type="StateReligionPrereq" minOccurs="0"/>
+		<element type="bLeader" minOccurs="0"/>
+		<element type="bBlitz" minOccurs="0"/>
+		<element type="bAmphib" minOccurs="0"/>
+		<element type="bRiver" minOccurs="0"/>
+		<element type="bEnemyRoute" minOccurs="0"/>
+		<element type="bAlwaysHeal" minOccurs="0"/>
+		<element type="bHillsDoubleMove" minOccurs="0"/>
+		<element type="bImmuneToFirstStrikes" minOccurs="0"/>
 		<element type="bNoUpgrade" minOccurs="0"/>
-		<element type="iVisibilityChange"/>
-		<element type="iMovesChange"/>
-		<element type="iMoveDiscountChange"/>
-		<element type="iAirRangeChange"/>
-		<element type="iInterceptChange"/>
-		<element type="iEvasionChange"/>
-		<element type="iWithdrawalChange"/>
-		<element type="iCargoChange"/>
-		<element type="iCollateralDamageChange"/>
-		<element type="iBombardRateChange"/>
-		<element type="iFirstStrikesChange"/>
-		<element type="iChanceFirstStrikesChange"/>
-		<element type="iEnemyHealChange"/>
-		<element type="iNeutralHealChange"/>
-		<element type="iFriendlyHealChange"/>
-		<element type="iSameTileHealChange"/>
-		<element type="iAdjacentTileHealChange"/>
-		<element type="iCombatPercent"/>
-		<element type="iCityAttack"/>
-		<element type="iCityDefense"/>
-		<element type="iHillsAttack"/>
-		<element type="iHillsDefense"/>
-		<element type="iKamikazePercent"/>
-		<element type="iRevoltProtection"/>
-		<element type="iCollateralDamageProtection"/>
-		<element type="iPillageChange"/>
-		<element type="iUpgradeDiscount"/>
-		<element type="iExperiencePercent"/>
+		<element type="iVisibilityChange" minOccurs="0"/>
+		<element type="iMovesChange" minOccurs="0"/>
+		<element type="iMoveDiscountChange" minOccurs="0"/>
+		<element type="iAirRangeChange" minOccurs="0"/>
+		<element type="iInterceptChange" minOccurs="0"/>
+		<element type="iEvasionChange" minOccurs="0"/>
+		<element type="iWithdrawalChange" minOccurs="0"/>
+		<element type="iCargoChange" minOccurs="0"/>
+		<element type="iCollateralDamageChange" minOccurs="0"/>
+		<element type="iBombardRateChange" minOccurs="0"/>
+		<element type="iFirstStrikesChange" minOccurs="0"/>
+		<element type="iChanceFirstStrikesChange" minOccurs="0"/>
+		<element type="iEnemyHealChange" minOccurs="0"/>
+		<element type="iNeutralHealChange" minOccurs="0"/>
+		<element type="iFriendlyHealChange" minOccurs="0"/>
+		<element type="iSameTileHealChange" minOccurs="0"/>
+		<element type="iAdjacentTileHealChange" minOccurs="0"/>
+		<element type="iCombatPercent" minOccurs="0"/>
+		<element type="iCityAttack" minOccurs="0"/>
+		<element type="iCityDefense" minOccurs="0"/>
+		<element type="iHillsAttack" minOccurs="0"/>
+		<element type="iHillsDefense" minOccurs="0"/>
+		<element type="iKamikazePercent" minOccurs="0"/>
+		<element type="iRevoltProtection" minOccurs="0"/>
+		<element type="iCollateralDamageProtection" minOccurs="0"/>
+		<element type="iPillageChange" minOccurs="0"/>
+		<element type="iUpgradeDiscount" minOccurs="0"/>
+		<element type="iExperiencePercent" minOccurs="0"/>
 		<element type="iExtraUpkeep" minOccurs="0"/>
-		<element type="TerrainAttacks"/>
-		<element type="TerrainDefenses"/>
-		<element type="FeatureAttacks"/>
-		<element type="FeatureDefenses"/>
-		<element type="UnitCombatMods"/>
-		<element type="DomainMods"/>
-		<element type="TerrainDoubleMoves"/>
-		<element type="FeatureDoubleMoves"/>
-		<element type="UnitCombats"/>
-		<element type="HotKey"/>
-		<element type="bAltDown"/>
-		<element type="bShiftDown"/>
-		<element type="bCtrlDown"/>
-		<element type="iHotKeyPriority"/>
+		<element type="TerrainAttacks" minOccurs="0"/>
+		<element type="TerrainDefenses" minOccurs="0"/>
+		<element type="FeatureAttacks" minOccurs="0"/>
+		<element type="FeatureDefenses" minOccurs="0"/>
+		<element type="UnitCombatMods" minOccurs="0"/>
+		<element type="DomainMods" minOccurs="0"/>
+		<element type="TerrainDoubleMoves" minOccurs="0"/>
+		<element type="FeatureDoubleMoves" minOccurs="0"/>
+		<element type="UnitCombats" minOccurs="0"/>
+		<element type="HotKey" minOccurs="0"/>
+		<element type="bAltDown" minOccurs="0"/>
+		<element type="bShiftDown" minOccurs="0"/>
+		<element type="bCtrlDown" minOccurs="0"/>
+		<element type="iHotKeyPriority" minOccurs="0"/>
 		<element type="Button" maxOccurs="*"/>
 		<element type="iOrderPriority" minOccurs="0"/>
 	</ElementType>
