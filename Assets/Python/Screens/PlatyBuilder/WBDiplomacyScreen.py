@@ -417,13 +417,13 @@ class WBDiplomacyScreen:
 		if CvPlatyBuilderScreen.bPython:
 			if iNewStatus == 2:
 				if iOldStatus == 3:
-					CvEventManager.CvEventManager().onVassalState([iTeam1, iTeam2, False])
+					CvEventManager.CvEventManager().onVassalState([iTeam1, iTeam2, False, False])
 				else:
-					CvEventManager.CvEventManager().onVassalState([iTeam2, iTeam1, False])
+					CvEventManager.CvEventManager().onVassalState([iTeam2, iTeam1, False, False])
 			elif iNewStatus == 3:
-				CvEventManager.CvEventManager().onVassalState([iTeam1, iTeam2, True])
+				CvEventManager.CvEventManager().onVassalState([iTeam1, iTeam2, True, True])
 			else:
-				CvEventManager.CvEventManager().onVassalState([iTeam2, iTeam1, True])
+				CvEventManager.CvEventManager().onVassalState([iTeam2, iTeam1, True, iNewStatus == 0])
 
 	def editContact(self, iTeam):
 		if not bRemove:
