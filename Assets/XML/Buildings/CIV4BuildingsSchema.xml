@@ -408,171 +408,171 @@
 	<ElementType name="BuildingInfo" content="eltOnly">
 		<element type="BuildingClass"/>
 		<element type="Type"/>
-		<element type="SpecialBuildingType"/>
+		<element type="SpecialBuildingType" minOccurs="0"/>
 		<element type="Description"/>
 		<element type="Civilopedia"/>
 		<element type="Strategy"/>
 		<element type="Help" minOccurs="0"/>
-		<element type="Advisor"/>
+		<element type="Advisor" minOccurs="0"/>
 		<element type="ArtDefineTag"/>
-		<element type="MovieDefineTag"/>
-		<element type="HolyCity"/>
-		<element type="ReligionType"/>
-		<element type="StateReligion"/>
+		<element type="MovieDefineTag" minOccurs="0"/>
+		<element type="HolyCity" minOccurs="0"/>
+		<element type="ReligionType" minOccurs="0"/>
+		<element type="StateReligion" minOccurs="0"/>
 		<element type="OrStateReligion" minOccurs="0"/>
-		<element type="bStateReligion"/>
-		<element type="PrereqReligion"/>
+		<element type="bStateReligion" minOccurs="0"/>
+		<element type="PrereqReligion" minOccurs="0"/>
 		<element type="OrPrereqReligion" minOccurs="0"/>
 		<element type="PrereqCivic" minOccurs="0"/>
-		<element type="PrereqCorporation"/>
-		<element type="FoundsCorporation"/>
-		<element type="GlobalReligionCommerce"/>
-		<element type="GlobalCorporationCommerce"/>
-		<element type="VictoryPrereq"/>
-		<element type="FreeStartEra"/>
-		<element type="MaxStartEra"/>
-		<element type="ObsoleteTech"/>
-		<element type="PrereqTech"/>
-		<element type="TechTypes"/>
-		<element type="Bonus"/>
-		<element type="PrereqBonuses"/>
-		<element type="ProductionTraits"/>
-		<element type="HappinessTraits"/>
-		<element type="NoBonus"/>
-		<element type="PowerBonus"/>
-		<element type="FreeBonus"/>
-		<element type="iNumFreeBonuses"/>
-		<element type="FreeBuilding"/>
-		<element type="FreePromotion"/>
-		<element type="CivicOption"/>
-		<element type="GreatPeopleUnitClass"/>
-		<element type="iGreatPeopleRateChange"/>
-		<element type="iHurryAngerModifier"/>
-		<element type="bBorderObstacle"/>
-		<element type="bTeamShare"/>
-		<element type="bWater"/>
-		<element type="bRiver"/>
-		<element type="bPower"/>
-		<element type="bDirtyPower"/>
-		<element type="bAreaCleanPower"/>
-		<element type="DiploVoteType"/>
-		<element type="bForceTeamVoteEligible"/>
-		<element type="bCapital"/>
-		<element type="bGovernmentCenter"/>
-		<element type="bGoldenAge"/>
-		<element type="bAllowsNukes"/>
-		<element type="bMapCentering"/>
-		<element type="bNoUnhappiness"/>
-		<element type="bNoUnhealthyPopulation"/>
-		<element type="bBuildingOnlyHealthy"/>
-		<element type="bNeverCapture"/>
-		<element type="bNukeImmune"/>
-		<element type="bPrereqReligion"/>
-		<element type="bCenterInCity"/>
-		<element type="iAIWeight"/>
-		<element type="iCost"/>
-		<element type="iHurryCostModifier"/>
-		<element type="iAdvancedStartCost"/>
-		<element type="iAdvancedStartCostIncrease"/>
-		<element type="iMinAreaSize"/>
-		<element type="iConquestProb"/>
-		<element type="iCitiesPrereq"/>
+		<element type="PrereqCorporation" minOccurs="0"/>
+		<element type="FoundsCorporation" minOccurs="0"/>
+		<element type="GlobalReligionCommerce" minOccurs="0"/>
+		<element type="GlobalCorporationCommerce" minOccurs="0"/>
+		<element type="VictoryPrereq" minOccurs="0"/>
+		<element type="FreeStartEra" minOccurs="0"/>
+		<element type="MaxStartEra" minOccurs="0"/>
+		<element type="ObsoleteTech" minOccurs="0"/>
+		<element type="PrereqTech" minOccurs="0"/>
+		<element type="TechTypes" minOccurs="0"/>
+		<element type="Bonus" minOccurs="0"/>
+		<element type="PrereqBonuses" minOccurs="0"/>
+		<element type="ProductionTraits" minOccurs="0"/>
+		<element type="HappinessTraits" minOccurs="0"/>
+		<element type="NoBonus" minOccurs="0"/>
+		<element type="PowerBonus" minOccurs="0"/>
+		<element type="FreeBonus" minOccurs="0"/>
+		<element type="iNumFreeBonuses" minOccurs="0"/>
+		<element type="FreeBuilding" minOccurs="0"/>
+		<element type="FreePromotion" minOccurs="0"/>
+		<element type="CivicOption" minOccurs="0"/>
+		<element type="GreatPeopleUnitClass" minOccurs="0"/>
+		<element type="iGreatPeopleRateChange" minOccurs="0"/>
+		<element type="iHurryAngerModifier" minOccurs="0"/>
+		<element type="bBorderObstacle" minOccurs="0"/>
+		<element type="bTeamShare" minOccurs="0"/>
+		<element type="bWater" minOccurs="0"/>
+		<element type="bRiver" minOccurs="0"/>
+		<element type="bPower" minOccurs="0"/>
+		<element type="bDirtyPower" minOccurs="0"/>
+		<element type="bAreaCleanPower" minOccurs="0"/>
+		<element type="DiploVoteType" minOccurs="0"/>
+		<element type="bForceTeamVoteEligible" minOccurs="0"/>
+		<element type="bCapital" minOccurs="0"/>
+		<element type="bGovernmentCenter" minOccurs="0"/>
+		<element type="bGoldenAge" minOccurs="0"/>
+		<element type="bAllowsNukes" minOccurs="0"/>
+		<element type="bMapCentering" minOccurs="0"/>
+		<element type="bNoUnhappiness" minOccurs="0"/>
+		<element type="bNoUnhealthyPopulation" minOccurs="0"/>
+		<element type="bBuildingOnlyHealthy" minOccurs="0"/>
+		<element type="bNeverCapture" minOccurs="0"/>
+		<element type="bNukeImmune" minOccurs="0"/>
+		<element type="bPrereqReligion" minOccurs="0"/>
+		<element type="bCenterInCity" minOccurs="0"/>
+		<element type="iAIWeight" minOccurs="0"/>
+		<element type="iCost" minOccurs="0"/>
+		<element type="iHurryCostModifier" minOccurs="0"/>
+		<element type="iAdvancedStartCost" minOccurs="0"/>
+		<element type="iAdvancedStartCostIncrease" minOccurs="0"/>
+		<element type="iMinAreaSize" minOccurs="0"/>
+		<element type="iConquestProb" minOccurs="0"/>
+		<element type="iCitiesPrereq" minOccurs="0"/>
 		<element type="iColoniesPrereq" minOccurs="0"/> <!-- Leoreth -->
-		<element type="iTeamsPrereq"/>
-		<element type="iLevelPrereq"/>
-		<element type="iMinLatitude"/>
-		<element type="iMaxLatitude"/>
-		<element type="iGreatPeopleRateModifier"/>
-		<element type="iGreatGeneralRateModifier"/>
-		<element type="iDomesticGreatGeneralRateModifier"/>
-		<element type="iGlobalGreatPeopleRateModifier"/>
-		<element type="iAnarchyModifier"/>
-		<element type="iGoldenAgeModifier"/>
-		<element type="iGlobalHurryModifier"/>
-		<element type="iExperience"/>
-		<element type="iGlobalExperience"/>
-		<element type="iFoodKept"/>
-		<element type="iAirlift"/>
-		<element type="iAirModifier"/>
-		<element type="iAirUnitCapacity"/>
-		<element type="iNukeModifier"/>
-		<element type="iNukeExplosionRand"/>
-		<element type="iFreeSpecialist"/>
-		<element type="iAreaFreeSpecialist"/>
-		<element type="iGlobalFreeSpecialist"/>
-		<element type="iMaintenanceModifier"/>
-		<element type="iWarWearinessModifier"/>
-		<element type="iGlobalWarWearinessModifier"/>
-		<element type="iEnemyWarWearinessModifier"/>
-		<element type="iHealRateChange"/>
-		<element type="iHealth"/>
-		<element type="iAreaHealth"/>
-		<element type="iGlobalHealth"/>
-		<element type="iHappiness"/>
-		<element type="iAreaHappiness"/>
-		<element type="iGlobalHappiness"/>
-		<element type="iStateReligionHappiness"/>
-		<element type="iWorkerSpeedModifier"/>
-		<element type="iMilitaryProductionModifier"/>
-		<element type="iSpaceProductionModifier"/>
-		<element type="iGlobalSpaceProductionModifier"/>
-		<element type="iTradeRoutes"/>
-		<element type="iCoastalTradeRoutes"/>
-		<element type="iGlobalTradeRoutes"/>
-		<element type="iTradeRouteModifier"/>
-		<element type="iForeignTradeRouteModifier"/>
-		<element type="iGlobalPopulationChange"/>
-		<element type="iFreeTechs"/>
-		<element type="iDefense"/>
-		<element type="iBombardDefense"/>
-		<element type="iAllCityDefense"/>
-		<element type="iEspionageDefense"/>
-		<element type="iAsset"/>
-		<element type="iPower"/>
-		<element type="fVisibilityPriority"/>
-		<element type="SeaPlotYieldChanges"/>
-		<element type="RiverPlotYieldChanges"/>
-		<element type="GlobalSeaPlotYieldChanges"/>
-		<element type="YieldChanges"/>
+		<element type="iTeamsPrereq" minOccurs="0"/>
+		<element type="iLevelPrereq" minOccurs="0"/>
+		<element type="iMinLatitude" minOccurs="0"/>
+		<element type="iMaxLatitude" minOccurs="0"/>
+		<element type="iGreatPeopleRateModifier" minOccurs="0"/>
+		<element type="iGreatGeneralRateModifier" minOccurs="0"/>
+		<element type="iDomesticGreatGeneralRateModifier" minOccurs="0"/>
+		<element type="iGlobalGreatPeopleRateModifier" minOccurs="0"/>
+		<element type="iAnarchyModifier" minOccurs="0"/>
+		<element type="iGoldenAgeModifier" minOccurs="0"/>
+		<element type="iGlobalHurryModifier" minOccurs="0"/>
+		<element type="iExperience" minOccurs="0"/>
+		<element type="iGlobalExperience" minOccurs="0"/>
+		<element type="iFoodKept" minOccurs="0"/>
+		<element type="iAirlift" minOccurs="0"/>
+		<element type="iAirModifier" minOccurs="0"/>
+		<element type="iAirUnitCapacity" minOccurs="0"/>
+		<element type="iNukeModifier" minOccurs="0"/>
+		<element type="iNukeExplosionRand" minOccurs="0"/>
+		<element type="iFreeSpecialist" minOccurs="0"/>
+		<element type="iAreaFreeSpecialist" minOccurs="0"/>
+		<element type="iGlobalFreeSpecialist" minOccurs="0"/>
+		<element type="iMaintenanceModifier" minOccurs="0"/>
+		<element type="iWarWearinessModifier" minOccurs="0"/>
+		<element type="iGlobalWarWearinessModifier" minOccurs="0"/>
+		<element type="iEnemyWarWearinessModifier" minOccurs="0"/>
+		<element type="iHealRateChange" minOccurs="0"/>
+		<element type="iHealth" minOccurs="0"/>
+		<element type="iAreaHealth" minOccurs="0"/>
+		<element type="iGlobalHealth" minOccurs="0"/>
+		<element type="iHappiness" minOccurs="0"/>
+		<element type="iAreaHappiness" minOccurs="0"/>
+		<element type="iGlobalHappiness" minOccurs="0"/>
+		<element type="iStateReligionHappiness" minOccurs="0"/>
+		<element type="iWorkerSpeedModifier" minOccurs="0"/>
+		<element type="iMilitaryProductionModifier" minOccurs="0"/>
+		<element type="iSpaceProductionModifier" minOccurs="0"/>
+		<element type="iGlobalSpaceProductionModifier" minOccurs="0"/>
+		<element type="iTradeRoutes" minOccurs="0"/>
+		<element type="iCoastalTradeRoutes" minOccurs="0"/>
+		<element type="iGlobalTradeRoutes" minOccurs="0"/>
+		<element type="iTradeRouteModifier" minOccurs="0"/>
+		<element type="iForeignTradeRouteModifier" minOccurs="0"/>
+		<element type="iGlobalPopulationChange" minOccurs="0"/>
+		<element type="iFreeTechs" minOccurs="0"/>
+		<element type="iDefense" minOccurs="0"/>
+		<element type="iBombardDefense" minOccurs="0"/>
+		<element type="iAllCityDefense" minOccurs="0"/>
+		<element type="iEspionageDefense" minOccurs="0"/>
+		<element type="iAsset" minOccurs="0"/>
+		<element type="iPower" minOccurs="0"/>
+		<element type="fVisibilityPriority" minOccurs="0"/>
+		<element type="SeaPlotYieldChanges" minOccurs="0"/>
+		<element type="RiverPlotYieldChanges" minOccurs="0"/>
+		<element type="GlobalSeaPlotYieldChanges" minOccurs="0"/>
+		<element type="YieldChanges" minOccurs="0"/>
 		<element type="YieldModifiers" minOccurs="0"/>
 		<element type="PowerYieldModifiers" minOccurs="0"/>
 		<element type="AreaYieldModifiers" minOccurs="0"/>
 		<element type="GlobalYieldModifiers" minOccurs="0"/>
-		<element type="CommerceChanges"/>
-		<element type="ObsoleteSafeCommerceChanges"/>
-		<element type="CommerceChangeDoubleTimes"/>
-		<element type="CommerceModifiers"/>
-		<element type="GlobalCommerceModifiers"/>
-		<element type="SpecialistExtraCommerces"/>
-		<element type="StateReligionCommerces"/>
-		<element type="CommerceHappinesses"/>
-		<element type="ReligionChanges"/>
-		<element type="SpecialistCounts"/>
-		<element type="FreeSpecialistCounts"/>
-		<element type="CommerceFlexibles"/>
-		<element type="CommerceChangeOriginalOwners"/>
-		<element type="ConstructSound"/>
-		<element type="BonusHealthChanges"/>
-		<element type="BonusHappinessChanges"/>
-		<element type="BonusProductionModifiers"/>
-		<element type="UnitCombatFreeExperiences"/>
-		<element type="DomainFreeExperiences"/>
-		<element type="DomainProductionModifiers"/>
-		<element type="BuildingHappinessChanges"/>
-		<element type="PrereqBuildingClasses"/>
+		<element type="CommerceChanges" minOccurs="0"/>
+		<element type="ObsoleteSafeCommerceChanges" minOccurs="0"/>
+		<element type="CommerceChangeDoubleTimes" minOccurs="0"/>
+		<element type="CommerceModifiers" minOccurs="0"/>
+		<element type="GlobalCommerceModifiers" minOccurs="0"/>
+		<element type="SpecialistExtraCommerces" minOccurs="0"/>
+		<element type="StateReligionCommerces" minOccurs="0"/>
+		<element type="CommerceHappinesses" minOccurs="0"/>
+		<element type="ReligionChanges" minOccurs="0"/>
+		<element type="SpecialistCounts" minOccurs="0"/>
+		<element type="FreeSpecialistCounts" minOccurs="0"/>
+		<element type="CommerceFlexibles" minOccurs="0"/>
+		<element type="CommerceChangeOriginalOwners" minOccurs="0"/>
+		<element type="ConstructSound" minOccurs="0"/>
+		<element type="BonusHealthChanges" minOccurs="0"/>
+		<element type="BonusHappinessChanges" minOccurs="0"/>
+		<element type="BonusProductionModifiers" minOccurs="0"/>
+		<element type="UnitCombatFreeExperiences" minOccurs="0"/>
+		<element type="DomainFreeExperiences" minOccurs="0"/>
+		<element type="DomainProductionModifiers" minOccurs="0"/>
+		<element type="BuildingHappinessChanges" minOccurs="0"/>
+		<element type="PrereqBuildingClasses" minOccurs="0"/>
 		<element type="PrereqBuildingClassPercents" minOccurs="0"/>
-		<element type="BuildingClassNeededs"/>
-		<element type="SpecialistYieldChanges"/>
-		<element type="BonusYieldModifiers"/>
+		<element type="BuildingClassNeededs" minOccurs="0"/>
+		<element type="SpecialistYieldChanges" minOccurs="0"/>
+		<element type="BonusYieldModifiers" minOccurs="0"/>
 		<element type="BonusCommerceModifiers" minOccurs="0"/>
 		<element type="BonusYieldChanges" minOccurs="0"/>
-		<element type="ImprovementFreeSpecialists"/>
-		<element type="Flavors"/>
-		<element type="HotKey"/>
-		<element type="bAltDown"/>
-		<element type="bShiftDown"/>
-		<element type="bCtrlDown"/>
-		<element type="iHotKeyPriority"/>
+		<element type="ImprovementFreeSpecialists" minOccurs="0"/>
+		<element type="Flavors" minOccurs="0"/>
+		<element type="HotKey" minOccurs="0"/>
+		<element type="bAltDown" minOccurs="0"/>
+		<element type="bShiftDown" minOccurs="0"/>
+		<element type="bCtrlDown" minOccurs="0"/>
+		<element type="iHotKeyPriority" minOccurs="0"/>
 		<element type="iOrderPriority" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="BuildingInfos" content="eltOnly">
