@@ -39,6 +39,7 @@ class CvRFCEventHandler:
 	def __init__(self, eventManager):
 
                 self.EventKeyDown=6
+		self.bStabilityOverlay = False
 
                 # initialize base class
                 eventManager.addEventHandler("GameStart", self.onGameStart) #Stability
@@ -842,3 +843,6 @@ class CvRFCEventHandler:
                 if self.rnf.getCheatMode() and theKey == int(InputTypes.KB_S) and self.eventManager.bAlt and self.eventManager.bShift:
                         print("SHIFT-ALT-S") #increases stability by one level
 			utils.setStabilityLevel(utils.getHumanID(), min(5, utils.getStabilityLevel(utils.getHumanID()) + 1))
+			
+		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_W) and self.eventManager.bCtrl:
+			CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS+10) # Remove AI forbidden area overlay when exiting WB by ctrl+b
