@@ -1237,6 +1237,9 @@ def canEverRespawn(argsList):
 	if utils.canEverRespawn(iPlayer, iGameTurn): return 1
 	
 	return 0
+
+def toggleStabilityOverlay():
+	utils.toggleStabilityOverlay()
 		
 def applyClaimCityEvent(argsList):
 	sd.getCurrentCongress().applyClaimCityEvent(argsList[0])
