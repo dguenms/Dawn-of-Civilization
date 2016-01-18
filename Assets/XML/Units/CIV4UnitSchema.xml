@@ -519,163 +519,163 @@
 	<ElementType name="UnitInfo" content="eltOnly">
 		<element type="Class"/>
 		<element type="Type"/>
-		<element type="UniqueNames"/>
-		<element type="Special"/>
-		<element type="Capture"/>
-		<element type="Combat"/>
+		<element type="UniqueNames" minOccurs="0"/>
+		<element type="Special" minOccurs="0"/>
+		<element type="Capture" minOccurs="0"/>
+		<element type="Combat" minOccurs="0"/>
 		<element type="Domain"/>
-		<element type="DefaultUnitAI"/>
-		<element type="Invisible"/>
-		<element type="SeeInvisible"/>
+		<element type="DefaultUnitAI" minOccurs="0"/>
+		<element type="Invisible" minOccurs="0"/>
+		<element type="SeeInvisible" minOccurs="0"/>
 		<element type="Description"/>
 		<element type="Civilopedia"/>
 		<element type="Strategy"/>
 		<element type="Help" minOccurs="0"/>
-		<element type="Advisor"/>
-		<element type="bAnimal"/>
-		<element type="bFood"/>
-		<element type="bNoBadGoodies"/>
-		<element type="bOnlyDefensive"/>
-		<element type="bNoCapture"/>
-		<element type="bQuickCombat"/>
-		<element type="bRivalTerritory"/>
-		<element type="bMilitaryHappiness"/>
-		<element type="bMilitarySupport"/>
-		<element type="bMilitaryProduction"/>
-		<element type="bPillage"/>
-		<element type="bSpy"/>
-		<element type="bSabotage"/>
-		<element type="bDestroy"/>
-		<element type="bStealPlans"/>
-		<element type="bInvestigate"/>
-		<element type="bCounterSpy"/>
-		<element type="bFound"/>
-		<element type="bGoldenAge"/>
+		<element type="Advisor" minOccurs="0"/>
+		<element type="bAnimal" minOccurs="0"/>
+		<element type="bFood" minOccurs="0"/>
+		<element type="bNoBadGoodies" minOccurs="0"/>
+		<element type="bOnlyDefensive" minOccurs="0"/>
+		<element type="bNoCapture" minOccurs="0"/>
+		<element type="bQuickCombat" minOccurs="0"/>
+		<element type="bRivalTerritory" minOccurs="0"/>
+		<element type="bMilitaryHappiness" minOccurs="0"/>
+		<element type="bMilitarySupport" minOccurs="0"/>
+		<element type="bMilitaryProduction" minOccurs="0"/>
+		<element type="bPillage" minOccurs="0"/>
+		<element type="bSpy" minOccurs="0"/>
+		<element type="bSabotage" minOccurs="0"/>
+		<element type="bDestroy" minOccurs="0"/>
+		<element type="bStealPlans" minOccurs="0"/>
+		<element type="bInvestigate" minOccurs="0"/>
+		<element type="bCounterSpy" minOccurs="0"/>
+		<element type="bFound" minOccurs="0"/>
+		<element type="bGoldenAge" minOccurs="0"/>
 		<element type="bReformGovernment" minOccurs="0"/>
 		<element type="bResolveCrisis" minOccurs="0"/>
 		<element type="bDiplomaticMission" minOccurs="0"/>
 		<element type="bPersecute" minOccurs="0"/>
-		<element type="bInvisible"/>
-		<element type="bFirstStrikeImmune"/>
-		<element type="bNoDefensiveBonus"/>
-		<element type="bIgnoreBuildingDefense"/>
-		<element type="bCanMoveImpassable"/>
-		<element type="bCanMoveAllTerrain"/>
-		<element type="bFlatMovementCost"/>
-		<element type="bIgnoreTerrainCost"/>
-		<element type="bNukeImmune"/>
-		<element type="bPrereqBonuses"/>
-		<element type="bPrereqReligion"/>
-		<element type="bMechanized"/>
+		<element type="bInvisible" minOccurs="0"/>
+		<element type="bFirstStrikeImmune" minOccurs="0"/>
+		<element type="bNoDefensiveBonus" minOccurs="0"/>
+		<element type="bIgnoreBuildingDefense" minOccurs="0"/>
+		<element type="bCanMoveImpassable" minOccurs="0"/>
+		<element type="bCanMoveAllTerrain" minOccurs="0"/>
+		<element type="bFlatMovementCost" minOccurs="0"/>
+		<element type="bIgnoreTerrainCost" minOccurs="0"/>
+		<element type="bNukeImmune" minOccurs="0"/>
+		<element type="bPrereqBonuses" minOccurs="0"/>
+		<element type="bPrereqReligion" minOccurs="0"/>
+		<element type="bMechanized" minOccurs="0"/>
 		<element type="bRenderBelowWater" minOccurs="0"/>
 		<element type="bRenderAlways" minOccurs="0"/>
-		<element type="bSuicide"/>
+		<element type="bSuicide" minOccurs="0"/>
 		<element type="bLineOfSight" minOccurs="0"/>
-		<element type="bHiddenNationality"/>
-		<element type="bAlwaysHostile"/>
-		<element type="UnitClassUpgrades"/>
-		<element type="UnitClassTargets"/>
-		<element type="UnitCombatTargets"/>
-		<element type="UnitClassDefenders"/>
-		<element type="UnitCombatDefenders"/>
-		<element type="FlankingStrikes"/>
-		<element type="UnitAIs"/>
-		<element type="NotUnitAIs"/>
-		<element type="Builds"/>
-		<element type="ReligionSpreads"/>
-		<element type="CorporationSpreads"/>
-		<element type="GreatPeoples"/>
-		<element type="Buildings"/>
-		<element type="ForceBuildings"/>
-		<element type="HolyCity"/>
-		<element type="ReligionType"/>
-		<element type="StateReligion"/>
-		<element type="PrereqReligion"/>
+		<element type="bHiddenNationality" minOccurs="0"/>
+		<element type="bAlwaysHostile" minOccurs="0"/>
+		<element type="UnitClassUpgrades" minOccurs="0"/>
+		<element type="UnitClassTargets" minOccurs="0"/>
+		<element type="UnitCombatTargets" minOccurs="0"/>
+		<element type="UnitClassDefenders" minOccurs="0"/>
+		<element type="UnitCombatDefenders" minOccurs="0"/>
+		<element type="FlankingStrikes" minOccurs="0"/>
+		<element type="UnitAIs" minOccurs="0"/>
+		<element type="NotUnitAIs" minOccurs="0"/>
+		<element type="Builds" minOccurs="0"/>
+		<element type="ReligionSpreads" minOccurs="0"/>
+		<element type="CorporationSpreads" minOccurs="0"/>
+		<element type="GreatPeoples" minOccurs="0"/>
+		<element type="Buildings" minOccurs="0"/>
+		<element type="ForceBuildings" minOccurs="0"/>
+		<element type="HolyCity" minOccurs="0"/>
+		<element type="ReligionType" minOccurs="0"/>
+		<element type="StateReligion" minOccurs="0"/>
+		<element type="PrereqReligion" minOccurs="0"/>
 		<element type="PrereqCivic" minOccurs="0"/>
-		<element type="PrereqCorporation"/>
-		<element type="PrereqBuilding"/>
-		<element type="PrereqTech"/>
-		<element type="TechTypes"/>
-		<element type="BonusType"/>
-		<element type="PrereqBonuses"/>
-		<element type="ProductionTraits"/>
-		<element type="Flavors"/>
-		<element type="iAIWeight"/>
-		<element type="iCost"/>
-		<element type="iHurryCostModifier"/>
-		<element type="iAdvancedStartCost"/>
-		<element type="iAdvancedStartCostIncrease"/>
-		<element type="iMinAreaSize"/>
-		<element type="iMoves"/>
-		<element type="bNoRevealMap"/>
-		<element type="iAirRange"/>
-		<element type="iAirUnitCap"/>
-		<element type="iDropRange"/>
-		<element type="iNukeRange"/>
-		<element type="iWorkRate"/>
-		<element type="iBaseDiscover"/>
-		<element type="iDiscoverMultiplier"/>
-		<element type="iBaseHurry"/>
-		<element type="iHurryMultiplier"/>
-		<element type="iBaseTrade"/>
-		<element type="iTradeMultiplier"/>
-		<element type="iGreatWorkCulture"/>
-		<element type="iEspionagePoints"/>
-		<element type="TerrainImpassables"/>
-		<element type="FeatureImpassables"/>
-		<element type="TerrainPassableTechs"/>
-		<element type="FeaturePassableTechs"/>
-		<element type="iCombat"/>
-		<element type="iCombatLimit"/>
-		<element type="iAirCombat"/>
-		<element type="iAirCombatLimit"/>
-		<element type="iXPValueAttack"/>
-		<element type="iXPValueDefense"/>
-		<element type="iFirstStrikes"/>
-		<element type="iChanceFirstStrikes"/>
-		<element type="iInterceptionProbability"/>
-		<element type="iEvasionProbability"/>
-		<element type="iWithdrawalProb"/>
-		<element type="iCollateralDamage"/>
-		<element type="iCollateralDamageLimit"/>
-		<element type="iCollateralDamageMaxUnits"/>
-		<element type="iCityAttack"/>
-		<element type="iCityDefense"/>
-		<element type="iAnimalCombat"/>
-		<element type="iHillsAttack"/>
-		<element type="iHillsDefense"/>
-		<element type="TerrainNatives"/>
-		<element type="FeatureNatives"/>
-		<element type="TerrainAttacks"/>
-		<element type="TerrainDefenses"/>
-		<element type="FeatureAttacks"/>
-		<element type="FeatureDefenses"/>
-		<element type="UnitClassAttackMods"/>
-		<element type="UnitClassDefenseMods"/>
-		<element type="UnitCombatMods"/>
-		<element type="UnitCombatCollateralImmunes"/>
-		<element type="DomainMods"/>
-		<element type="BonusProductionModifiers"/>
-		<element type="iBombRate"/>
-		<element type="iBombardRate"/>
-		<element type="SpecialCargo"/>
-		<element type="DomainCargo"/>
-		<element type="iCargo"/>
-		<element type="iConscription"/>
-		<element type="iCultureGarrison"/>
-		<element type="iExtraCost"/>
-		<element type="iAsset"/>
-		<element type="iPower"/>
-		<element type="UnitMeshGroups"/>
-		<element type="FormationType"/>
-		<element type="HotKey"/>
-		<element type="bAltDown"/>
-		<element type="bShiftDown"/>
-		<element type="bCtrlDown"/>
-		<element type="iHotKeyPriority"/>
-		<element type="FreePromotions"/>
-		<element type="LeaderPromotion"/>
-		<element type="iLeaderExperience"/>
+		<element type="PrereqCorporation" minOccurs="0"/>
+		<element type="PrereqBuilding" minOccurs="0"/>
+		<element type="PrereqTech" minOccurs="0"/>
+		<element type="TechTypes" minOccurs="0"/>
+		<element type="BonusType" minOccurs="0"/>
+		<element type="PrereqBonuses" minOccurs="0"/>
+		<element type="ProductionTraits" minOccurs="0"/>
+		<element type="Flavors" minOccurs="0"/>
+		<element type="iAIWeight" minOccurs="0"/>
+		<element type="iCost" minOccurs="0"/>
+		<element type="iHurryCostModifier" minOccurs="0"/>
+		<element type="iAdvancedStartCost" minOccurs="0"/>
+		<element type="iAdvancedStartCostIncrease" minOccurs="0"/>
+		<element type="iMinAreaSize" minOccurs="0"/>
+		<element type="iMoves" minOccurs="0"/>
+		<element type="bNoRevealMap" minOccurs="0"/>
+		<element type="iAirRange" minOccurs="0"/>
+		<element type="iAirUnitCap" minOccurs="0"/>
+		<element type="iDropRange" minOccurs="0"/>
+		<element type="iNukeRange" minOccurs="0"/>
+		<element type="iWorkRate" minOccurs="0"/>
+		<element type="iBaseDiscover" minOccurs="0"/>
+		<element type="iDiscoverMultiplier" minOccurs="0"/>
+		<element type="iBaseHurry" minOccurs="0"/>
+		<element type="iHurryMultiplier" minOccurs="0"/>
+		<element type="iBaseTrade" minOccurs="0"/>
+		<element type="iTradeMultiplier" minOccurs="0"/>
+		<element type="iGreatWorkCulture" minOccurs="0"/>
+		<element type="iEspionagePoints" minOccurs="0"/>
+		<element type="TerrainImpassables" minOccurs="0"/>
+		<element type="FeatureImpassables" minOccurs="0"/>
+		<element type="TerrainPassableTechs" minOccurs="0"/>
+		<element type="FeaturePassableTechs" minOccurs="0"/>
+		<element type="iCombat" minOccurs="0"/>
+		<element type="iCombatLimit" minOccurs="0"/>
+		<element type="iAirCombat" minOccurs="0"/>
+		<element type="iAirCombatLimit" minOccurs="0"/>
+		<element type="iXPValueAttack" minOccurs="0"/>
+		<element type="iXPValueDefense" minOccurs="0"/>
+		<element type="iFirstStrikes" minOccurs="0"/>
+		<element type="iChanceFirstStrikes" minOccurs="0"/>
+		<element type="iInterceptionProbability" minOccurs="0"/>
+		<element type="iEvasionProbability" minOccurs="0"/>
+		<element type="iWithdrawalProb" minOccurs="0"/>
+		<element type="iCollateralDamage" minOccurs="0"/>
+		<element type="iCollateralDamageLimit" minOccurs="0"/>
+		<element type="iCollateralDamageMaxUnits" minOccurs="0"/>
+		<element type="iCityAttack" minOccurs="0"/>
+		<element type="iCityDefense" minOccurs="0"/>
+		<element type="iAnimalCombat" minOccurs="0"/>
+		<element type="iHillsAttack" minOccurs="0"/>
+		<element type="iHillsDefense" minOccurs="0"/>
+		<element type="TerrainNatives" minOccurs="0"/>
+		<element type="FeatureNatives" minOccurs="0"/>
+		<element type="TerrainAttacks" minOccurs="0"/>
+		<element type="TerrainDefenses" minOccurs="0"/>
+		<element type="FeatureAttacks" minOccurs="0"/>
+		<element type="FeatureDefenses" minOccurs="0"/>
+		<element type="UnitClassAttackMods" minOccurs="0"/>
+		<element type="UnitClassDefenseMods" minOccurs="0"/>
+		<element type="UnitCombatMods" minOccurs="0"/>
+		<element type="UnitCombatCollateralImmunes" minOccurs="0"/>
+		<element type="DomainMods" minOccurs="0"/>
+		<element type="BonusProductionModifiers" minOccurs="0"/>
+		<element type="iBombRate" minOccurs="0"/>
+		<element type="iBombardRate" minOccurs="0"/>
+		<element type="SpecialCargo" minOccurs="0"/>
+		<element type="DomainCargo" minOccurs="0"/>
+		<element type="iCargo" minOccurs="0"/>
+		<element type="iConscription" minOccurs="0"/>
+		<element type="iCultureGarrison" minOccurs="0"/>
+		<element type="iExtraCost" minOccurs="0"/>
+		<element type="iAsset" minOccurs="0"/>
+		<element type="iPower" minOccurs="0"/>
+		<element type="UnitMeshGroups" minOccurs="0"/>
+		<element type="FormationType" minOccurs="0"/>
+		<element type="HotKey" minOccurs="0"/>
+		<element type="bAltDown" minOccurs="0"/>
+		<element type="bShiftDown" minOccurs="0"/>
+		<element type="bCtrlDown" minOccurs="0"/>
+		<element type="iHotKeyPriority" minOccurs="0"/>
+		<element type="FreePromotions" minOccurs="0"/>
+		<element type="LeaderPromotion" minOccurs="0"/>
+		<element type="iLeaderExperience" minOccurs="0"/>
 		<element type="iOrderPriority" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="UnitInfos" content="eltOnly">
