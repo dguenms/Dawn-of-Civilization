@@ -7,7 +7,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ABSOLUTISM_STRATEGY</Tag>
-		<English>Extra production and commerce in your Capital</English>
+		<English>Increased production and commerce in your capital</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AGRARIANISM</Tag>
@@ -15,7 +15,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AGRARIANISM_STRATEGY</Tag>
-		<English>Increased Worker work rate, extra production from Pastures, extra commerce from Farms</English>
+		<English>Increased Worker work rate; extra production from pastures; extra commerce from farms</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
@@ -31,7 +31,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AUTOCRACY_STRATEGY</Tag>
-		<English>Can draft two units per turn, increased Great General birth rate, extra happiness from Barracks</English>
+		<English>Increases great general emergence; can draft two units per turn; extra happiness from barracks'</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_BARBARISM_STRATEGY</Tag>
+		<English>The most primitive legal civic</English>
+		<French>La forme la plus primitive de doctrine l&#233;gale.</French>
+		<German>Die einfachste Rechts-Staatsform des Spiels.</German>
+		<Italian>La forma di Sistema legale pi&#249; primitiva</Italian>
+		<Spanish>El principio legal m&#225;s primitivo.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPITALISM</Tag>
@@ -39,7 +47,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPITALISM_STRATEGY</Tag>
-		<English>Extra commerce from Towns, extra trade route yield, can spend gold to finish building construction</English>
+		<English>Increased commerce in all cities; extra commerce from towns; can spend gold to finish production of buildings</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING</Tag>
@@ -47,7 +55,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Tag>
-		<English>Extra production from specialists, extra food from Workshops and Watermills, reduced commerce from Workshops, Watermills and Towns, faster construction of Factories and Coal Plants</English>
+		<English>Extra production from specialists; extra food from workshops and watermills; less commerce from windmills, watermills and towns; double production speed for factories and coal plants</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CITY_STATES</Tag>
@@ -55,15 +63,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Tag>
-		<English>Extra food from specialists if city works less than seven tiles, increased number of cities maintenance</English>
+		<English>Increased maintenance from number of cities; specialists produce food if city works less than seven tiles</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COMMONWEALTH</Tag>
 		<English>Commonwealth</English>
-		<French>Commonwealth</French>
-		<German>Commonwealth</German>
-		<Italian>Commonwealth</Italian>
-		<Spanish>Commonwealth</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_COMMONWEALTH_STRATEGY</Tag>
@@ -74,20 +78,28 @@
 		<Spanish>No hay puntos de estabilidad negativos por baja cantidad de recursos intercambiados; no hay puntos de estabilidad negativos por econom&#237;a d&#233;bil</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DECENTRALIZATION_STRATEGY</Tag>
+		<English>The most primitive economy civic</English>
+		<French>La forme la plus primitive de doctrine &#233;conomique.</French>
+		<German>Die einfachste Wirtschafts-Staatsform</German>
+		<Italian>La forma di economia pi&#249; primitiva</Italian>
+		<Spanish>El principio econ&#243;mico m&#225;s primitivo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DESPOTISM_STRATEGY</Tag>
+		<English>The most primitive government civic</English>
+		<French>La forme la plus primitive de doctrine politique.</French>
+		<German>Die einfachste Regierungs-Staatsform des Spiels.</German>
+		<Italian>La forma di Governo pi&#249; primitiva</Italian>
+		<Spanish>El principio de gobierno m&#225;s primitivo.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DIRECT_RULE</Tag>
 		<English>Direct Rule</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DIRECT_RULE_STRATEGY</Tag>
-		<English>The most primitive Organization civic</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION</Tag>
-		<English>[ICON_BULLET]%D1_Mod%% Production For All %s2</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_DOMAIN_XP</Tag>
-		<English>[ICON_BULLET]+%d1 Experience For All %s2</English>
+		<English>The most primitive organization civic</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DYNASTICISM</Tag>
@@ -95,7 +107,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DYNASTICISM_STRATEGY</Tag>
-		<English>Extra happiness from military units, faster construction of Wonders</English>
+		<English>Military units in cities increase happiness to a maximum of +6</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ECONOMY_BONUS</Tag>
@@ -115,7 +127,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_EGALITARIANISM_STRATEGY</Tag>
-		<English>May hire double the amount of Artists, Scientists, Engineers, extra production from Towns, unhappiness from civs without Egalitarianism</English>
+		<English>May hire double the amount of artists, scientists and merchants; unhappiness penalty for all civilizations without egalitarianism</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_HELP</Tag>
@@ -123,7 +135,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ENVIRONMENTALISM_STRATEGY</Tag>
-		<English>Reduced unhealthiness in all cities, extra commerce from Windmills, Watermills, Forest Preserves, extra happiness from Public Transportation, faster construction of Recycling Centers and Hydro Plants</English>
+		<English>Reduced unhealthiness in all cities; extra commerce from windmills, watermills and forest preserves; extra happiness from public transportation; double production speed for recycling centers and hydro plants; no stability penalty from economic stagnation</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FANATICISM</Tag>
@@ -131,11 +143,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FANATICISM_STRATEGY</Tag>
-		<English>Cities with state religion train units faster, no spread of non-state religions, extra unhappiness from non-state religions</English>
+		<English>Extra unhappiness from non-state religions; cities with state religion train units faster; no spread of non-state religions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FORCED_LABOR</Tag>
 		<English>Forced Labor</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FORCED_LABOR_STRATEGY</Tag>
+		<English>Extra commerce from plantations and slave plantations, can sacrifice city population to finish production</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FREE_MARKET_HELP</Tag>
@@ -144,7 +160,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_FREE_MARKET_STRATEGY</Tag>
-		<English>Extra trade route in all cities, increased corporation commerce</English>
+		<English>Extra trade route in all cities; increased corporation commerce</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_GUILDS</Tag>
@@ -152,7 +168,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_GUILDS_STRATEGY</Tag>
-		<English>Extra commerce from Workshops and Watermills, extra unhappiness from Banks, faster construction of Forges, Markets, Grocers</English>
+		<English>Extra commerce from workshops and watermills; extra unhappiness from banks; double production speed for forges, markets and grocers</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_IMPERIALISM</Tag>
@@ -172,7 +188,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_INDUSTRIALISM_STRATEGY</Tag>
-		<English>May hire double the amount of Engineers, increased production in all cities, extra production from Workshops and Watermills</English>
+		<English>May hire double the amount of engineers; increased production in all cities; extra production from workshops and watermills</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LEVY_ARMIES</Tag>
@@ -180,7 +196,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LEVY_ARMIES_STRATEGY</Tag>
-		<English>Extra free units, military units produced with food, faster construction of Castles</English>
+		<English>Lower unit support costs; military units produced with food; double production speed for castles</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCANTILISM_HELP</Tag>
@@ -193,7 +209,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCANTILISM_STRATEGY</Tag>
-		<English>No additional income from foreign trade routes, extra income from trade through your Capital, extra commerce from Plantations, faster construction of Customs Houses</English>
+		<English>No additional income from foreign trade routes; +50% income from trade routes to and from capital; extra commerce from plantations and slave plantations; double production speed for customs houses; reduced expansion penalty for overseas colonies</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCENARIES</Tag>
@@ -206,7 +222,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MERCENARIES_STRATEGY</Tag>
-		<English>Can spend gold to finish production of units, hurried units start with the mercenary promotion, faster construction of Walls</English>
+		<English>Double production speed for walls; can spend gold to finish production of units; hurried units start with the mercenary promotion</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MILITIA</Tag>
@@ -214,11 +230,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MILITIA_STRATEGY</Tag>
-		<English>The most primitive Military civic</English>
+		<English>The most primitive military civic</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_MULTILATERALISM</Tag>
 		<English>Multilateralism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MULTILATERALISM_STRATEGY</Tag>
+		<English>Increased war weariness; free specialist in all cities; +25% income from trade routes with defensive pact partners; increased upkeep for military units</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY</Tag>
@@ -226,12 +246,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_NAVAL_SUPREMACY_STRATEGY</Tag>
-		<English>Extra experience for Naval units, increased production speed for Naval units, double production speed of Harbors, Lighthouses and Drydocks, extra production from Fishing Boats</English>
+		<English>Extra experience for naval units; increased production speed for naval units; extra production from fishing boats and high sea fishing boats; double production speed for drydocks</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_OCCUPATION</Tag>
 		<English>Occupation</English>
-		<French>Occupation</French>
 		<German>Besatzung</German>
 		<Italian>Occupazione</Italian>
 		<Spanish>Ocupaci&#243;n</Spanish>
@@ -254,7 +273,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Tag>
-		<English>Cities with state religion construct buildings faster, extra unhappiness from non-state religions</English>
+		<English>Extra unhappiness from non-state religions; cities with state religion construct buildings faster</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PANTHEON</Tag>
@@ -262,7 +281,12 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PANTHEON_STRATEGY</Tag>
-		<English>Can build classical wonders, extra happiness from Pagan Temples, extra unhappiness from non-state religions</English>
+		<English>No state religion; extra unhappiness from non-state religions; extra happiness from pagan temples; can build classical wonders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PANTHEON_HELP</Tag>
+		<English>[ICON_BULLET]Allows construction of classical wonders</English>
+		<German>[ICON_BULLET]Erlaubt die Errichtung klassischer Wunder</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE</Tag>
@@ -270,11 +294,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PUBLIC_WELFARE_STRATEGY</Tag>
-		<English>Reduced unhappiness from Corporations, extra research from specialists, faster construction of Hospitals and Universities</English>
+		<English>Decreased unhappiness from corporations, extra research from specialists, double production speed for hospitals and universities</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REPRESENTATION_STRATEGY</Tag>
-		<English>May hire double the amount of Statesmen, extra happiness in the largest cities, extra happiness from Courthouses</English>
+		<English>May hire double the amount of statesmen; increased happiness in six largest cities; extra happiness from courthouses</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REPUBLIC</Tag>
@@ -282,7 +306,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_REPUBLIC_STRATEGY</Tag>
-		<English>Increased Great People birth rate, increased Cottage growth</English>
+		<English>Increases great people birth rate; cottages, hamlets and villages develop faster</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_RESETTLEMENT</Tag>
@@ -306,7 +330,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SCHOLASTICISM_STRATEGY</Tag>
-		<English>Increased Great People birth rate in cities with state religion, can train Missionaries without Monasteries, extra unhappiness from non-state religions</English>
+		<English>Can build missionaries without monasteries; increases great people birth rate in cities with state religion; extra unhappiness from non-state religions</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SECULARISM</Tag>
@@ -318,11 +342,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Tag>
-		<English>No state religion, no unhappiness from non-state religions, increased scientific research</English>
+		<English>No state religion; increases science in all cities; can build wonders that require a state religion</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Tag>
 		<English>Can sacrifice city population to finish production</English>
+		<French>Permet de sacrifier la population de la ville pour achever la production en cours.</French>
+		<German>Opfert Bev&#246;lkerung, um die Produktion zu beschleunigen.</German>
+		<Italian>Possibilit&#224; di sacrificare la popolazione cittadina per completare la produzione</Italian>
+		<Spanish>Se puede sacrificar poblaci&#243;n de la ciudad para terminar la producci&#243;n.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_STANDING_ARMY</Tag>
@@ -330,11 +358,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Tag>
-		<English>Extra experience for land units, extra production from Forts, faster construction of Barracks and Stables</English>
+		<English>Extra experience for land units; extra production from forts; double production speed for barracks' and stables</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_STATE_PROPERTY_STRATEGY</Tag>
-		<English>Increased food production from workshops and watermills; extra production from specialists; production converted into more commerce</English>
+		<English>Extra production from specialists, extra food from workshops and watermills, double production speed for factories and coal plants</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SUBJUGATION</Tag>
@@ -345,20 +373,12 @@
 		<Spanish>Subyugaci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_SUBJUGATION_STRATEGY</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SUBSISTENCE</Tag>
 		<English>Subsistence</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SUBSISTENCE_STRATEGY</Tag>
-		<English>The most primitive Economy civic</English>
+		<English>The most primitive economy civic</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SUPREME_COUNCIL</Tag>
@@ -370,7 +390,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Tag>
-		<English>May hire double the amount of Priest specialists, extra unit experiences in cities with state religion, extra happiness in cities with state religion, extra unhappiness from non-state religions</English>
+		<English>May hire double the amount of priests; extra happiness from state religion; extra unhappiness from non-state religions; cities with state religion give extra experience</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM</Tag>
@@ -382,7 +402,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOTALITARIANISM_STRATEGY</Tag>
-		<English>No city distance maintenance, extra happiness from military units, extra espionage from specialists</English>
+		<English>No maintenance cost from distance to palace; military units in cities increase happiness to a limit of +4; extra espionage from specialists; no stability penalty for conquered cities or from minority cultures</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TRIBALISM_STRATEGY</Tag>
@@ -401,12 +421,16 @@
 		<English>Urbanization</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_UNIVERSAL_SUFFRAGE_STRATEGY</Tag>
+		<English>Extra happiness in largest cities; extra production from towns</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSALAGE_HELP</Tag>
 		<English>[ICON_BULLET]Additional stability for every vassal</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Tag>
-		<English>Extra experience for units, extra commerce from Forts, extra happiness from Castles</English>
+		<English>Extra experience for all units; extra commerce from forts; extra happiness from castles; extra stability from vassals</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VICEROYALTY</Tag>
@@ -447,8 +471,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_EXPANSION</Tag>
 		<English>Expansion</English>
-		<French>Expansion</French>
-		<German>Expansion</German>
 		<Italian>Espansione</Italian>
 		<Spanish>Expansi&#243;n</Spanish>
 	</TEXT>

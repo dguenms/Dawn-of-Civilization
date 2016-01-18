@@ -4,6 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_DESC</Tag>
 		<English>The Arabs</English>
+		<French>
+			<Text>Les Arabes</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Araber:Die Araber:den Arabern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Gli Arabi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los &#193;rabes</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_PEOPLES</Tag>
