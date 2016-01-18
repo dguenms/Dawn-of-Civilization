@@ -31,10 +31,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_CITY_BAR_CTRL_BASE_VALUES</Tag>
 		<English>[NEWLINE]Hold &lt;CTRL&gt; to see base values.</English>
-		<French>[NEWLINE]Hold &lt;CTRL&gt; to see base values.</French>
 		<German>[NEWLINE][BOLD]&lt;STRG&gt;[\BOLD] drücken, um die Basiswerte zu sehen</German>
 		<Italian>[NEWLINE]Tieni premuto &lt;CTRL&gt; per visualizzare i valori base.</Italian>
-		<Spanish>[NEWLINE]Hold &lt;CTRL&gt; to see base values.</Spanish>
 	</TEXT>
 	<!-- Food Assist -->
 	<TEXT>
@@ -641,10 +639,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CITY_FREE_EXPERIENCE</Tag>
 		<English>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from City[COLOR_REVERT]</English>
-		<French>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EXP from City[COLOR_REVERT]</French>
 		<German>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 EP durch Stadt[COLOR_REVERT]</German>
-		<Italian>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 XP from City[COLOR_REVERT]</Italian>
-		<Spanish>[ICON_BULLET][COLOR_POSITIVE_TEXT]%D1 PE from City[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLAYER_FREE_EXPERIENCE</Tag>

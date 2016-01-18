@@ -100,6 +100,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_AMERICA</Tag>
 		<English>New France</English>
+		<French>
+			<Text>Nouvelle France</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Neu-Frankreich:Neu-Frankreich:Neu-Frankreich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Nuova Francia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Nueva Francia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_FRENCH_NAME_KHMER</Tag>

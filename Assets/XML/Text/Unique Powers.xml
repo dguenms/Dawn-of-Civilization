@@ -20,10 +20,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn In All Cities</English>
-		<French>[ICON_BULLET]%D1_Change%F2_HappyOrUn</French>
 		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn In Allen St&#228;dten</German>
-		<Italian>[ICON_BULLET]%D1_Change%F2_HappyOrUn</Italian>
-		<Spanish>[ICON_BULLET]%D1_Change %F2_HappyOrUn</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ARA_TITLE</Tag>

@@ -100,6 +100,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_AMERICA</Tag>
 		<English>Thirteen Colonies</English>
+		<French>
+			<Text>Treize Colonies</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Dreizehn Kolonien:Dreizehn Kolonien:Dreizehn Kolonien</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Tredici Colonie</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Trece Colonias</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_NAME_KHMER</Tag>

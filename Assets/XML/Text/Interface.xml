@@ -145,10 +145,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LIMITED_UNIT_HAPPINESS</Tag>
 		<English>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per Military Unit Stationed in a City up to a Maximum of %D3</English>
-		<French>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad par unit&#233; militaire en garnison dans une ville</French>
 		<German>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad pro in einer Stadt stationierter Milit&#228;reinheit bis zu einem Maximum von %D3</German>
-		<Italian>[ICON_BULLET]%D1_PerUnit%F2_HappyOrSad per le unit&#224; militari stazionate in citt&#224;</Italian>
-		<Spanish>[ICON_BULLET]%D1_PerUnit %F2_HappyOrSad por cada unidad militar destacada en la ciudad</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_WE_LOVE_CONSUL</Tag>
@@ -179,18 +176,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_UNLIMTED</Tag>
 		<English>[ICON_BULLET]Doubled slots for[SPACE]</English>
-		<French>[ICON_BULLET]Sans limite[SPACE]</French>
 		<German>[ICON_BULLET]Erlaubt doppelt soviele[SPACE]</German>
-		<Italian>[ICON_BULLET]Illimitato[SPACE]</Italian>
-		<Spanish>[ICON_BULLET]Sin l&#237;mite[SPACE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POST_COMMUNISM</Tag>
 		<English>[ICON_BULLET]No more than one corporation per city[NEWLINE][ICON_BULLET]Post-communist crisis in case of economic system switch</English>
-		<French>[ICON_BULLET]Crise post-communiste en cas de changement de syst&#232;me &#233;conomique</French>
 		<German>[ICON_BULLET]Maximal eine Kapitalgesellschaft pro Stadt[ICON_BULLET][ICON_BULLET]Post-kommunistische Krise im Falle eines Wirtschaftssystemwechsels</German>
-		<Italian>[ICON_BULLET]Crisi post-comunista in caso di cambio di sistema economico.</Italian>
-		<Spanish>[ICON_BULLET]Crisis post-comunista en caso de cambio de sistema econ&#243;mico</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_PROCESS_MODIFIER</Tag>
@@ -254,12 +245,12 @@
 		<Spanish>[ICON_BULLET]Riesgo de Gran Depresi&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CLASSICAL_WONDERS</Tag>
-		<English>[ICON_BULLET]Allows construction of classical wonders</English>
-		<French>[ICON_BULLET]Allows construction of classical wonders</French>
-		<German>[ICON_BULLET]Erlaubt die Errichtung klassischer Wunder</German>
-		<Italian>[ICON_BULLET]Allows construction of classical wonders</Italian>
-		<Spanish>[ICON_BULLET]Allows construction of classical wonders</Spanish>
+		<Tag>TXT_KEY_CIVIC_DOMAIN_PRODUCTION</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Production For All %s2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DOMAIN_XP</Tag>
+		<English>[ICON_BULLET]+%d1 Experience For All %s2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CAPITAL_TRADE_MODIFIER</Tag>
