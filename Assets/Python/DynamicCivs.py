@@ -552,7 +552,7 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	
 def onVassalState(iVassal):
 	if iVassal in lVassalNameChanges:
-		sd.changeResurrections(iPlayer, 1)
+		sd.changeResurrections(iVassal, 1)
 		setShort(iVassal, text(dNameChanges[iVassal]))
 		setAdjective(iVassal, text(dAdjectiveChanges[iVassal]))
 		

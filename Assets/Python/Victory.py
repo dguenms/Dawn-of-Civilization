@@ -2286,7 +2286,7 @@ def checkOwnedCiv(iPlayer, iOwnedPlayer):
 	
 def isControlled(iPlayer, lPlots):
 	lOwners = []
-	for city in utils.getAreaCities(utils.getPlotList(tTopLeft, tBottomRight, tExceptions)):
+	for city in utils.getAreaCities(lPlots):
 		iOwner = city.getOwner()
 		if iOwner not in lOwners and iOwner < iNumPlayers:
 			lOwners.append(iOwner)
