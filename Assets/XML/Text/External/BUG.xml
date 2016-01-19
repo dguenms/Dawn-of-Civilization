@@ -1936,22 +1936,6 @@
 	</TEXT>
 	<!-- Missing Civ4 Entries -->
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MINOR_PEDIA</Tag>
-		<English>No description provided.</English>
-		<French>Description non fournie.</French>
-		<German>Keine Informationen verfügbar.</German>
-		<Italian>Nessuna descrizione fornita.</Italian>
-		<Spanish>Ninguna descripciòn proporcionada.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_LEADER_BARBARIAN_PEDIA</Tag>
-		<English>No description provided.</English>
-		<French>Description non fournie.</French>
-		<German>Keine Informationen verfügbar.</German>
-		<Italian>Nessuna descrizione fornita.</Italian>
-		<Spanish>Ninguna descripciòn proporcionada.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUG_RELIGIOUS_CITY</Tag>
 		<English>Cities</English>
 		<French>Cities</French>
@@ -2877,10 +2861,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_LOGSCALE</Tag>
 		<English>Log Scale</English>
-		<French>Log Scale</French>
 		<German>Log-Skala</German>
 		<Italian>Scala logaritmica</Italian>
-		<Spanish>Log Scale</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_CHART_HELP</Tag>
@@ -3015,10 +2997,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_GRAPH_SMOOTHING</Tag>
 		<English>Smooth Factor %d1_Num</English>
-		<French>Smooth Factor %d1_Num</French>
 		<German>Glättungsstufe %d1_Num</German>
 		<Italian>Fattore di smoothing %d1_Num</Italian>
-		<Spanish>Smooth Factor %d1_Num</Spanish>
 	</TEXT>
 	<!-- Maze Map Stuff -->
 	<TEXT>
@@ -3040,27 +3020,19 @@
 	<TEXT>
 		<Tag>TXT_KEY_FALSE</Tag>
 		<English>False</English>
-		<French>False</French>
 		<German>Nein</German>
-		<Italian>Falso</Italian>
-		<Spanish>False</Spanish>
+		<Italian>Falso</Italian>>
 	</TEXT>
 	<!-- Hall of Fame Screen: Win/Loss Result -->
 	<TEXT>
 		<Tag>TXT_KEY_HOF_WINLOSS_WIN</Tag>
 		<English>W-</English>
-		<French>W-</French>
 		<German>S-</German>
-		<Italian>W-</Italian>
-		<Spanish>W-</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HOF_WINLOSS_LOSS</Tag>
 		<English>L-</English>
-		<French>L-</French>
 		<German>N-</German>
-		<Italian>L-</Italian>
-		<Spanish>L-</Spanish>
 	</TEXT>
 	<!-- Espionage Advisor -->
 	<TEXT>

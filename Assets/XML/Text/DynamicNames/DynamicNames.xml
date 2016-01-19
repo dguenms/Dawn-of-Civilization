@@ -193,8 +193,4 @@
 		<Tag>TXT_KEY_COLONY_OF</Tag>
 		<English>Colony of %s1</English>
 	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_</Tag>
-		<English></English>
-	</TEXT>
 </Civ4GameText>

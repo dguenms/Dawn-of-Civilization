@@ -280,7 +280,6 @@
 		<English>Reveal Plot</English>
 		<French>R&#233;v&#233;ler case</French>
 		<German>Feld sichtbar</German>
-		<Italian>Reveal Plot</Italian>
 		<Spanish>Revelar casilla</Spanish>
 	</TEXT>
 	<TEXT>
@@ -288,7 +287,6 @@
 		<English>Reveal Submarine</English>
 		<French>R&#233;v&#233;ler sous-marin</French>
 		<German>U-Boote sichtbar</German>
-		<Italian>Reveal Submarine</Italian>
 		<Spanish>Revelar submarinos</Spanish>
 	</TEXT>
 	<TEXT>
@@ -296,7 +294,6 @@
 		<English>Reveal Stealth</English>
 		<French>R&#233;v&#233;ler furtivit&#233;</French>
 		<German>Tarnzerstörer sichtbar</German>
-		<Italian>Reveal Stealth</Italian>
 		<Spanish>Revelar unidades invisibles</Spanish>
 	</TEXT>
 	<TEXT>
@@ -922,26 +919,14 @@
 	<TEXT>
 		<Tag>TXT_PEDIA_NATIONAL_STUFF</Tag>
 		<English>National %s1</English>
-		<French>National %s1</French>
-		<German>National %s1</German>
-		<Italian>National %s1</Italian>
-		<Spanish>National %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_TEAM_STUFF</Tag>
 		<English>Team %s1</English>
-		<French>Team %s1</French>
-		<German>Team %s1</German>
-		<Italian>Team %s1</Italian>
-		<Spanish>Team %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_WORLD_STUFF</Tag>
 		<English>World %s1</English>
-		<French>World %s1</French>
-		<German>World %s1</German>
-		<Italian>World %s1</Italian>
-		<Spanish>World %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_NON_COMBAT</Tag>
