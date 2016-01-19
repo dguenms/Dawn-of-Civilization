@@ -118,7 +118,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HONGWU
-	LeaderName=Kangxi
+	LeaderName=TXT_KEY_LEADER_KANGXI
 	CivType=CIVILIZATION_CHINA                 
 	Team=1                 
 	PlayableCiv=1                       
@@ -203,7 +203,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_KRISHNA_DEVA_RAYA
-	LeaderName=Tipu Sultan
+	LeaderName=TXT_KEY_LEADER_TIPU_SULTAN
 	CivType=CIVILIZATION_TAMILS
 	Team=10
 	PlayableCiv=1
@@ -600,8 +600,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer                 
-	LeaderName=TXT_KEY_LEADER_INDEPENDENT
-	LeaderType=LEADER_PETER
+	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT                 
 	Team=44      
 	PlayableCiv=0                 
@@ -609,8 +608,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer                 
-	LeaderName=TXT_KEY_LEADER_INDEPENDENT
-	LeaderType=LEADER_PETER
+	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2                 
 	Team=45
 	PlayableCiv=0                 
@@ -619,8 +617,7 @@ BeginPlayer
 	StateReligion=RELIGION_CHRISTIANITY  	
 EndPlayer
 BeginPlayer                 
-	LeaderName=TXT_KEY_LEADER_NATIVE
-	LeaderType=LEADER_SHAKA
+	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE                 
 	Team=46       
 	PlayableCiv=0                 
