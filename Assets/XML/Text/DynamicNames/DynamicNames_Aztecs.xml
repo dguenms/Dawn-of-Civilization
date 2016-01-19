@@ -4,14 +4,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTEC_DESC</Tag>
 		<English>The Aztecs</English>
+		<French>
+			<Text>Les Azt&#232;ques</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Azteken:Die Azteken:den Azteken</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Gli Aztechi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Aztecas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_PEOPLES</Tag>
 		<English>Mexica Peoples</English>
+		<French>
+			<Text>Peuplades Mexica</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Mexicav&#246;lker:Mexicav&#246;lker:Mexicav&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Mexica</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Mexica</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_DEFAULT</Tag>
 		<English>%s2 Triple Alliance</English>
+		<French>
+			<Text>Triple Alliance %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Dreibund:%s2 Dreibund:%s2 Dreibund</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Triplice Alleanza %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Triple Alianza %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_FASCIST</Tag>
@@ -20,10 +80,41 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_SHORT_DESC</Tag>
 		<English>Mexico</English>
+		<French>
+			<Text>Mexique</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Mexiko</German>
+		<Italian>
+			<Text>Messico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>M&#233;xico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_ADJECTIVE</Tag>
 		<English>Mexican</English>
+		<French>
+			<Text>Mexicains</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<Italian>
+			<Text>Messicani</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mexicanos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_ALTEPETL</Tag>

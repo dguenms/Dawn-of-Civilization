@@ -577,7 +577,7 @@ class SevoPediaMain(CvPediaScreen.CvPediaScreen):
 		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER, gc.getLeaderHeadInfo)
 	
 	def getLeaderList(self):
-		lExceptions = [con.iAlpArslan, con.iLeaderBarbarian, con.iBoudica, con.iBrennus, con.iChiangKaishek, con.iCixi, con.iElishat, con.iShaka, con.iSittingBull]
+		lExceptions = [con.iAlpArslan, con.iLeaderBarbarian, con.iBoudica, con.iBrennus, con.iChiangKaishek, con.iCixi, con.iElishat, con.iNativeLeader, con.iSittingBull, con.iIndependentLeader]
 		return self.getSortedList(gc.getNumLeaderHeadInfos(), gc.getLeaderHeadInfo, False, lExceptions)
 
 	def placeTraits(self):

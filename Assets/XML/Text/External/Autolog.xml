@@ -676,18 +676,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_BC</Tag>
 		<English>[SPACE]BC</English>
-		<French>[SPACE]BC</French>
+		<French>[SPACE]av. J.-C.</French>
 		<German>[SPACE]v.Chr.</German>
 		<Italian>[SPACE]a.C.</Italian>
-		<Spanish>[SPACE]BC</Spanish>
+		<Spanish>[SPACE]a. C.</Spanish>
 	</TEXT> 
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_AD</Tag>
 		<English>[SPACE]AD</English>
-		<French>[SPACE]AD</French>
+		<French>[SPACE]ap. J.-C.</French>
 		<German>[SPACE]n.Chr.</German>
 		<Italian>[SPACE]d.C.</Italian>
-		<Spanish>[SPACE]AD</Spanish>
+		<Spanish>[SPACE]d. C.</Spanish>
 	</TEXT> 
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_TURN</Tag>
@@ -748,10 +748,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_BATTLE_STATS</Tag>
 		<English>Battle Stats:</English>
-		<French>Battle Stats:</French>
 		<German>Kampfstatistiken:</German>
 		<Italian>Statistiche di combattimento:</Italian>
-		<Spanish>Battle Stats:</Spanish>
 	</TEXT> 
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_UNITS_VICTORIOUS_ATTACKING</Tag>
@@ -804,18 +802,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_BATTLE_STATS_WRITTEN</Tag>
 		<English>Battle stats written to log and reset</English>
-		<French>Battle stats written to log and reset</French>
 		<German>Kampfstatistiken im Protokoll verzeichnet und zurückgesetzt</German>
 		<Italian>Statistiche di combattimento scritte nel Registro</Italian>
-		<Spanish>Battle stats written to log and reset</Spanish>
 	</TEXT> 
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_AFTER_END_TURN</Tag>
 		<English>After End Turn:</English>
-		<French>After End Turn:</French>
 		<German>Nach dem Beenden der Runde:</German>
 		<Italian>Dopo la fine del turno:</Italian>
-		<Spanish>After End Turn:</Spanish>
 	</TEXT> 
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_WHIP_APPLIED</Tag>
@@ -1308,10 +1302,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_ANOTHER_CIV_ELIMINATED</Tag>
 		<English>Another civilization has been eliminated</English>
-		<French>Another civilization has been eliminated</French>
 		<German>Eine weitere Zivilisation wurde ausgelöscht</German>
 		<Italian>Un'altra civiltà è scomparsa</Italian>
-		<Spanish>Another civilization has been eliminated</Spanish>
 	</TEXT> 
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_CITY_FOUNDED</Tag>
@@ -1500,10 +1492,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_ATTITUDE_CHANGE</Tag>
 		<English>Attitude Change: %s1 towards %s2, from '%s3' to '%s4'</English>
-		<French>Attitude Change: %s1 towards %s2, from '%s3' to '%s4'</French>
 		<German>Veränderung der Einstellung von %s1 gegenüber %s2: von '%s3' zu '%s4'</German>
 		<Italian>%s1 ha mutato il suo atteggiamento nei confronti di %s2 da '%s3' a '%s4'</Italian>
-		<Spanish>Attitude Change: %s1 towards %s2, from '%s3' to '%s4'</Spanish>
 	</TEXT> 
 	<TEXT>
 		<Tag>TXT_KEY_AUTOLOG_CIVIC_CHANGE</Tag>

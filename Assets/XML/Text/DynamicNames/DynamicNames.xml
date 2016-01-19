@@ -16,6 +16,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_EMPIRE_ADJECTIVE</Tag>
 		<English>%s2 Empire</English>
+		<French>
+			<Text>Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_KINGDOM_OF</Tag>
@@ -68,6 +88,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNITED_STATES_ADJECTIVE</Tag>
 		<English>United %s2 States</English>
+		<French>
+			<Text>Etats %s2 Unis</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Vereinigte %s2 Staaten:Vereinigten %s2 Staaten:Vereinigten %s2 Staaten</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Stati Uniti %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estados Unidos %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEOPLES_REPUBLIC_OF</Tag>
@@ -120,6 +160,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_MANDATE_OF</Tag>
 		<English>%s2 Mandate of %s1</English>
+		<French>
+			<Text>Mandat %s2 %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Mandat %s1:%s2 Mandat %s1:%s2 Mandat %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Mandato %s2 dell'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mandato %s2 de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONFEDERATION_ADJECTIVE</Tag>

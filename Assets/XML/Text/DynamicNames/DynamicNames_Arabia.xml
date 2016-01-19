@@ -28,6 +28,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_PEOPLES</Tag>
 		<English>Bedouin Peoples</English>
+		<French>
+			<Text>Peuplades B&#233;douins</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Beduinische V&#246;lker:Beduinischen V&#246;lker:Beduinischen V&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Beduini</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Beduinos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_DEFAULT</Tag>
@@ -36,14 +56,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_REPUBLIC</Tag>
 		<English>Arab League</English>
+		<French>
+			<Text>Ligue Arabe</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Arabische Liga:Arabische Liga:Arabischen Liga</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Lega Araba</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Liga &#193;rabe</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_FASCIST</Tag>
 		<English>Pan Arab State</English>
+		<French>
+			<Text>Etat Pan-Arabe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Panarabischer Staat:Panarabische Staat:Panarabischen Staat</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Stato Pan-Arabo</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estado Pan-&#193;rabo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_COMMUNIST</Tag>
 		<English>Baathist %s1</English>
+		<French>
+			<Text>%s1 Baasiste</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Baathistisches %s1:Baathistische %s1:Baathistischen %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 Baathista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 Baazista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_SAUDI</Tag>

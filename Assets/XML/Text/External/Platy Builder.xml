@@ -841,8 +841,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_SCREEN_INDEX</Tag>
 		<English>Index</English>
-		<French>Index</French>
-		<German>Index</German>
 		<Italian>[SPACE][SPACE][SPACE][SPACE][SPACE]Indice</Italian>
 		<Spanish>Indice</Spanish>
 	</TEXT>
@@ -860,7 +858,6 @@
 		<French>Améliorations des Unités</French>
 		<German>Modernisierungen</German>
 		<Italian>Avanzamenti</Italian>
-		<Spanish>Unit Upgrades</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_PROMOTION_TREE</Tag>
@@ -868,7 +865,6 @@
 		<French>Arborescence des Promotions</French>
 		<German>Beförderungsbaum</German>
 		<Italian>Albero Promoz.</Italian>
-		<Spanish>Promotion Tree</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_NATIONAL_WONDERS</Tag>
@@ -876,7 +872,6 @@
 		<French>Merveilles Nationales</French>
 		<German>Nationalwunder</German>
 		<Italian>Merav. Naz.</Italian>
-		<Spanish>National Wonders</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_GREAT_WONDERS</Tag>
@@ -884,7 +879,6 @@
 		<French>Merveilles Mondiales</French>
 		<German>Weltwunder</German>
 		<Italian>Grandi Merav.</Italian>
-		<Spanish>Great Wonders</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT_NEW</Tag>
@@ -916,26 +910,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HIDE_INACTIVE</Tag>
 		<English>Hide Inactive</English>
-		<French>Hide Inactive</French>
-		<German>Hide Inactive</German>
-		<Italian>Hide Inactive</Italian>
-		<Spanish>Hide Inactive</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_ROUTE</Tag>
 		<English>Routes</English>
-		<French>Routes</French>
-		<German>Routes</German>
-		<Italian>Routes</Italian>
-		<Spanish>Routes</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_DOMAIN</Tag>
 		<English>Domain</English>
-		<French>Domain</French>
-		<German>Domain</German>
-		<Italian>Domain</Italian>
-		<Spanish>Domain</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_PEDIA_NATIONAL_STUFF</Tag>
