@@ -8,11 +8,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HIGH_SEA_FISHING_BOATS</Tag>
 		<English>Create [LINK=IMPROVEMENT_HIGH_SEA_FISHING_BOATS]High Sea Fishing Boats[\LINK]</English>
-		<German>Create [LINK=IMPROVEMENT_HIGH_SEA_FISHING_BOATS]High Sea Fishing Boats[\LINK]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_SLAVE_PLANTATION</Tag>
 		<English>Create [LINK=IMPROVEMENT_SLAVE_PLANTATION]Slave Plantation[\LINK]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_REMOVE_RAINFOREST</Tag>
+		<English>Remove [LINK=FEATURE_RAINFOREST]Rainforest[\LINK]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_ROMAN_ROAD</Tag>
+		<English>Build a [LINK=CONCEPT_MOVEMENT]Roman Road[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>

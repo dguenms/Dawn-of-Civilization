@@ -2,220 +2,85 @@
 <!-- Corporations -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_1</Tag>
+		<Tag>TXT_KEY_CORPORATION_SILK_ROUTE</Tag>
 		<English>Silk Route</English>
-		<French>
-			<Text>Silk Route</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
 		<German>
 			<Text>Seidenstra&#195;&#159;e</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Silk Route</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Silk Route</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_2</Tag>
+		<Tag>TXT_KEY_CORPORATION_TRADING_COMPANY</Tag>
 		<English>Trading Company</English>
-		<French>
-			<Text>Trading Company</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
 		<German>
 			<Text>Handelskompanie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Trading Company</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Trading Company</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_3</Tag>
+		<Tag>TXT_KEY_CORPORATION_CEREAL_INDUSTRY</Tag>
 		<English>Cereal Industry</English>
-		<French>
-			<Text>Cereal Industry</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
 		<German>
 			<Text>Getreideindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Cereal Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Cereal Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>CHANGED_TXT_KEY_CORPORATION_4</Tag>
+		<Tag>TXT_KEY_CORPORATION_FISHING_INDUSTRY</Tag>
 		<English>Fishing Industry</English>
-		<French>
-			<Text>Fishing Industry</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
 		<German>
 			<Text>Fischereiindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Fishing Industry</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Fishing Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_5</Tag>
+		<Tag>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY</Tag>
 		<English>Textile Industry</English>
-		<French>
-			<Text>Textile Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
 		<German>
 			<Text>Textilindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Textile Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Textile Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_6</Tag>
+		<Tag>TXT_KEY_CORPORATION_STEEL_INDUSTRY</Tag>
 		<English>Steel Industry</English>
-		<French>
-			<Text>Steel Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
 		<German>
 			<Text>Stahlindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Steel Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Steel Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_7</Tag>
+		<Tag>TXT_KEY_CORPORATION_OIL_INDUSTRY</Tag>
 		<English>Oil Industry</English>
-		<French>
-			<Text>Oil Industry</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
 		<German>
 			<Text>&#195;&#150;lindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Oil Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Oil Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_8</Tag>
+		<Tag>TXT_KEY_CORPORATION_LUXURY_INDUSTRY</Tag>
 		<English>Luxury Industry</English>
-		<French>
-			<Text>Luxury Industry</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
 		<German>
 			<Text>Luxusindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Luxury Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Luxury Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CORPORATION_9</Tag>
+		<Tag>TXT_KEY_CORPORATION_COMPUTERS_INDUSTRY</Tag>
 		<English>Computer Industry</English>
-		<French>
-			<Text>Computer Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
 		<German>
 			<Text>Computerindustrie</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>Computer Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Computer Industry</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_INFLUENCES_0</Tag>
@@ -256,9 +121,5 @@
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CORPORATION_REMOVED</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]%s1_CorpName[COLOR_REVERT] has left %s2_CityName.</Spanish>
 	</TEXT>
 </Civ4GameText>

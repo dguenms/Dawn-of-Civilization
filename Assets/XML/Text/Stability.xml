@@ -636,8 +636,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_PARAMETER_EXPANSION</Tag>
 		<English>EXPANSION</English>
-		<French>EXPANSION</French>
-		<German>EXPANSION</German>
 		<Italian>ESPANSIONE</Italian>
 		<Spanish>EXPANSI&#211;N</Spanish>
 	</TEXT>
@@ -724,7 +722,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_STABILITY_STABLE</Tag>
 		<English>Stable</English>
-		<French>Stable</French>
 		<German>Stabil</German>
 		<Italian>Stabile</Italian>
 		<Spanish>Estable</Spanish>
