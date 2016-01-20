@@ -2,7 +2,7 @@
 <!-- Terrain -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_TERRAIN_MARSH</Tag>
+		<Tag>TXT_KEY_TERRAIN_WETLAND</Tag>
 		<English>Marsh</English>
 		<French>
 			<Text>Mar&#233;cage</Text>

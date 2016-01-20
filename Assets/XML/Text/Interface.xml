@@ -2,6 +2,14 @@
 <!-- Interface -->
 <Civ4GameText>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_FIRST_FREE_TECH</Tag>
+		<English>[ICON_BULLET]First to Discover Receives a [COLOR_TECH_TEXT]Free Technology[COLOR_REVERT] from your current or earlier Era</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FIRST_FREE_TECHS</Tag>
+		<English>[ICON_BULLET]First to Discover Receives [COLOR_TECH_TEXT]%d1_Num Free Technologies[COLOR_REVERT] from your current or earlier Era</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_ENSLAVE_LOSE</Tag>
 		<English>Your unit has been enslaved!</English>
 		<French>Votre unit&#233; a &#233;t&#233; asservie !</French>
