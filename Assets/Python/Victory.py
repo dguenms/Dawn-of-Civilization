@@ -954,7 +954,7 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# first goal: found seven cities in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
 		if iGameTurn == getTurnForYear(1700):
-			if getNumFoundedCitiesInArea(iRussia, tSiberiaTL, tSiberiaBR) < 7:
+			if getNumFoundedCitiesInArea(iRussia, utils.getPlotList(tSiberiaTL, tSiberiaBR)) < 7:
 				lose(iRussia, 0)
 				
 		if isPossible(iRussia, 0):
@@ -3321,7 +3321,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iRussia:
 		if iGoal == 0:
-			iSiberia = getNumFoundedCitiesInArea(iRussia, tSiberiaTL, tSiberiaBR)
+			iSiberia = getNumFoundedCitiesInArea(iRussia, utils.getPlotList(tSiberiaTL, tSiberiaBR))
 			bSiberianRailway = isConnectedByRailroad(iRussia, Areas.getCapital(iRussia), lSiberianCoast)
 			aHelp.append(getIcon(iSiberia >= 7) + localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", (iSiberia, 7)) + ' ' + getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()))
 		elif iGoal == 1:
