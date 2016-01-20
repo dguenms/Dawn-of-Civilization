@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Civilizations -->
-<Civ4GameText>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BARBARIAN_ADJECTIVE</Tag>
-		<English>Barbarian</English>
-		<French>
-			<Text>barbare:barbare:barbares:barbares</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</French>
-		<German>
-			<Text>Barbarisch:barbarischen:barbarische</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>barbaro:barbari:barbara:barbare</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>b&#225;rbaro:b&#225;rbara:b&#225;rbaros:b&#225;rbaras</Text>
-			<Gender>Male:Female:Male:Female</Gender>
-			<Plural>0:0:1:1</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_BARBARIAN_SHORT_DESC</Tag>
-		<English>Barbarians</English>
-		<French>
-			<Text>Barbares</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Barbarenland</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Territorio barbaro</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Barbaria</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
+<!-- Computers -->
+<Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CELT_ADJECTIVE</Tag>
 		<English>
@@ -79,7 +31,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CELT_DESC</Tag>
-		<English>Celtic peoples</English>
+		<English>Celtic Peoples</English>
 		<French>
 			<Text>Peuples celtes</Text>
 			<Gender>Male</Gender>
@@ -223,7 +175,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_NATIVE_DESC</Tag>
-		<English>Native peoples</English>
+		<English>Native Peoples</English>
 		<French>
 			<Text>Peuples natifs</Text>
 			<Gender>Male</Gender>
@@ -319,6 +271,78 @@
 			<Text>zul&#250;.zul&#250;:zul&#250;es:zul&#250;es</Text>
 			<Gender>Male:Female:Male:Female</Gender>
 			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BARBARIAN_ADJECTIVE</Tag>
+		<English>Barbarian</English>
+		<French>
+			<Text>barbare:barbare:barbares:barbares</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Barbarisch:barbarischen:barbarische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>barbaro:barbari:barbara:barbare</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>b&#225;rbaro:b&#225;rbara:b&#225;rbaros:b&#225;rbaras</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BARBARIAN_DESC</Tag>
+		<English>Barbarian State</English>
+		<French>
+			<Text>Empire barbare</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Barbarenreich:Barbarenreich:Barbarenreich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Territorio Barbaro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Territorio de los b&#225;rbaros</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BARBARIAN_SHORT_DESC</Tag>
+		<English>Barbarians</English>
+		<French>
+			<Text>Barbares</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Barbarenland</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Territorio barbaro</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Barbaria</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
 </Civ4GameText>
