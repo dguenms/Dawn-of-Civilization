@@ -275,7 +275,7 @@ class WBPlayerScreen:
 			if pPlayer.hasHolyCity(item[1]):
 				sChar = ItemInfo.getHolyCityChar()
 			sText = u"<font=4>%c <font=3>%s</font>" %(sChar, item[0])
-			screen.setTableText("WBPlayerReligions", 0, iRow, sColor + sText + "</color>", "", WidgetTypes.WIDGET_HELP_RELIGION, item[1]+1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			screen.setTableText("WBPlayerReligions", 0, iRow, sColor + sText + "</color>", "", WidgetTypes.WIDGET_HELP_RELIGION, item[1], -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 		iY += iHeight
 		screen.setButtonGFC("StateReligionUnitPlus", "", "", iX, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
