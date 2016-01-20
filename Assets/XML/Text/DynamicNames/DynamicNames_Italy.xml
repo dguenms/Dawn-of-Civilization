@@ -64,7 +64,6 @@
 		<German>Italienisch</German>
 		<Italian>Italiano</Italian>
 		<Spanish>Italiano</Spanish>
-		<Hungarian>olasz</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DESC</Tag>
@@ -73,7 +72,6 @@
 		<German>The Italians</German>
 		<Italian>The Italians</Italian>
 		<Spanish>The Italians</Spanish>
-		<Hungarian>The Italians</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_SHORT_DESC</Tag>
@@ -82,6 +80,5 @@
 		<German>Italien</German>
 		<Italian>L'Italia</Italian>
 		<Spanish>Italia</Spanish>
-		<Hungarian>Olaszorsz&#225;g</Hungarian>
 	</TEXT>
 </Civ4GameText>

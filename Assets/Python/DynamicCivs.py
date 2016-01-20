@@ -1919,11 +1919,11 @@ def leaderName(iPlayer):
 	if iPlayer == iChina:
 		if iLeader == iHongwu:
 			if iGameTurn >= getTurnForYear(1700):
-				return "Kangxi"
+				return "TXT_KEY_LEADER_KANGXI"
 				
 	elif iPlayer == iIndia:
 		if iLeader == iKrishnaDevaRaya:
 			if iGameTurn >= getTurnForYear(1700):
-				return "Tipu Sultan"
+				return "TXT_KEY_LEADER_TIPU_SULTAN"
 				
 	return None
