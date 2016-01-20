@@ -33,7 +33,6 @@ class WBPlotScreen:
 
 	def __init__(self):
 		self.iTable_Y = 110
-		self.lPresetValues = [3, 20, 90, 200, 500, 700]
 
 	def interfaceScreen(self, pPlotX):
 		screen = CyGInterfaceScreen( "WBPlotScreen", CvScreenEnums.WB_PLOT)
@@ -254,8 +253,8 @@ class WBPlotScreen:
 			screen.setButtonGFC("SetValueIncrease", "", "", iX + 4 + 100,  iY - 30, 26, 26, WidgetTypes.WIDGET_PYTHON, 22400, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 
 			screen.addDropDownBoxGFC("PresetValue", iX + 135,  iY - 32, 160, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-			for i in range(len(self.lPresetValues)):
-				screen.addPullDownString("PresetValue", str(self.lPresetValues[i]), i, self.lPresetValues[i], False)
+			for i in range(len(con.lPresetValues)):
+				screen.addPullDownString("PresetValue", str(con.lPresetValues[i]), i, con.lPresetValues[i], False)
 		else:
 			screen.deleteWidget("SetValueBox")
 			screen.deleteWidget("SetValueDecrease")
