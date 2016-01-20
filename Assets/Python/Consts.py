@@ -1555,7 +1555,7 @@ iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConf
 iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral,
 iZoroastrianMonastery, iZoroastrianShrine, iTriumphalArch, iGlobeTheatre, iTradingCompany, iIberianTradingCompany, iWallStreet, iOlympicPark, iNationalGallery,
 iIronWorks, iInterpol, iNationalPark, iRedCross, iStonehenge, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iArtemis,
-iPyramid, iHangingGarden, iOracle, iMoaiStatues, iIshtarGate, iTempleOfSalomon, iColossus, iParthenon, iStatueOfZeus,
+iPyramid, iHangingGarden, iOracle, iMoaiStatues, iIshtarGate, iTempleOfSolomon, iColossus, iParthenon, iStatueOfZeus,
 iShwedagonPaya, iKhajuraho, iGreatLibrary, iMausoleumOfMaussollos, iFloatingGardens, iFlavianAmphitheatre,
 iGreatWall, iTheodosianWalls, iMachuPicchu, iBorobudur, iGrandCanal, iNotreDame, iTempleOfKukulkan, iHimejiCastle,
 iBlueMosque, iAngkorWat, iTopkapiPalace, iApostolicPalace, iMezquita, iSistineChapel, iLeaningTower, iRedFort,
