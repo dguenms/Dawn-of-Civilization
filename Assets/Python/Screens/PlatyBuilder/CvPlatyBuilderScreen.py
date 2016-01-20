@@ -512,12 +512,14 @@ class CvWorldBuilderScreen:
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
-				self.showStabilityOverlay()
+				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
+					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "SettlerValue":
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, iSetValue)
-				self.showStabilityOverlay()
+				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
+					self.showStabilityOverlay()
 		return 1
 
 	def removeObject( self ):
@@ -623,7 +625,8 @@ class CvWorldBuilderScreen:
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
-				self.showStabilityOverlay()
+				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
+					self.showStabilityOverlay()
 		return 1
 		
 	def placeRiverNW ( self, bUseCurrent ):
@@ -851,6 +854,8 @@ class CvWorldBuilderScreen:
 						self.placeObject()
 				else:
 					self.placeObject()
+		if self.iPlayerAddMode in ["Core", "SettlerValue"]:
+			self.showStabilityOverlay()	
 		self.m_pCurrentPlot = permCurrentPlot
 		return
 
@@ -862,6 +867,8 @@ class CvWorldBuilderScreen:
 				self.m_pCurrentPlot = CyMap().plot(x,y)
 				if self.m_pCurrentPlot.isNone(): continue
 				self.removeObject()
+		if self.iPlayerAddMode in ["Core", "SettlerValue"]:
+			self.showStabilityOverlay()	
 		self.m_pCurrentPlot = permCurrentPlot
 		return
 
@@ -1086,12 +1093,8 @@ class CvWorldBuilderScreen:
 			screen.deleteWidget("SettlerValueButton")
 			screen.deleteWidget("PresetValue")
 			screen.deleteWidget("UtilButtonPanel")
-			screen.deleteWidget("RevertChangesText")
-			screen.deleteWidget("ExportText")
-			screen.deleteWidget("ClearCore")
-			screen.deleteWidget("ClearSettler")
-			screen.deleteWidget("ExportCore")
-			screen.deleteWidget("ExportSettler")
+			screen.deleteWidget("ClearChanges")
+			screen.deleteWidget("Export")
 			screen.deleteWidget("SwitchReborn")
 ## Panel Screen ##
 			nRows = 1
@@ -1099,6 +1102,12 @@ class CvWorldBuilderScreen:
 				nRows = 3
 			elif self.iPlayerAddMode in self.MapMode:
 				nRows = 4
+				if self.iPlayerAddMode in ["Core", "SettlerValue"]:
+					nRows += 1
+					bExtended = self.m_iCurrentPlayer in [con.iTurkey, con.iByzantium, con.iCarthage, con.iMongolia, con.iSpain, con.iMoors, con.iItaly, con.iArabia, con.iJapan, con.iGermany, con.iHolyRome, con.iKhmer, con.iGreece, con.iChina]
+					if bExtended:
+						nRows += 1
+
 			iHeight = 16 + iAdjust * nRows
 			iXStart = screen.getXResolution() - iScreenWidth
 			screen.addPanel("WorldBuilderBackgroundBottomPanel", "", "", True, True, iXStart, iScreenHeight - 10, iScreenWidth, iHeight, PanelStyles.PANEL_STYLE_MAIN )
@@ -1228,24 +1237,15 @@ class CvWorldBuilderScreen:
 					screen.addPullDownString("PresetValue", str(self.lPresetValues[i]), i, self.lPresetValues[i], self.lPresetValues[i] == iSetValue)
 
 				if self.iPlayerAddMode in ["Core", "SettlerValue"]:
-					bExtended = self.m_iCurrentPlayer in [con.iTurkey, con.iByzantium, con.iCarthage, con.iMongolia, con.iSpain, con.iMoors, con.iItaly, con.iArabia, con.iJapan, con.iGermany, con.iHolyRome, con.iKhmer, con.iGreece, con.iChina] 
 					iX = iXStart + 8
 					iButtonWidth2 = 3*iButtonWidth + 2*3
 					iXx = iX + 3 + iButtonWidth2
-					iScreenHeight += iHeight - 10
-					if not bExtended:
-						iHeight -= iAdjust
-					screen.addPanel("UtilButtonPanel", "", "", True, True, iXStart, iScreenHeight - 10, iScreenWidth, iHeight, PanelStyles.PANEL_STYLE_MAIN)
-					sTextReset = "<font=3b>%s</font>" % CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ())
-					sTextExport = "<font=3b>%s</font>" % CyTranslator().getText("TXT_KEY_WB_EXPORT", ())
-					screen.setLabel("RevertChangesText", "UtilButtonPanel", sTextReset, -1, iXStart + iScreenWidth/4, iScreenHeight + iAdjust/2, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-					screen.setLabel("ExportText", "UtilButtonPanel", sTextExport, -1, iXStart + iScreenWidth/4*3, iScreenHeight + iAdjust/2, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-					screen.setButtonGFC("ClearCore", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iX, iScreenHeight + iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-					screen.setButtonGFC("ClearSettler", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iX, iScreenHeight + 2*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-					screen.setButtonGFC("ExportCore", CyTranslator().getText("TXT_KEY_WB_CORE", ()), "", iXx, iScreenHeight + iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-					screen.setButtonGFC("ExportSettler", CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), "", iXx, iScreenHeight + 2*iAdjust, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+					iY += iAdjust
+					screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+					screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iXx, iY, iButtonWidth2, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 					if bExtended:
-						screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iScreenHeight + 3*iAdjust, iButtonWidth2*2+3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+						iY += iAdjust
+						screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, iButtonWidth2*2+3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 					
 			elif self.iPlayerAddMode in self.RevealMode:
 				iX = iXStart + 8
@@ -2065,20 +2065,18 @@ class CvWorldBuilderScreen:
 			self.refreshSideMenu()
 			self.showStabilityOverlay()
 
-		elif inputClass.getFunctionName() == "ClearCore":
-			met.resetCore(self.m_iCurrentPlayer)
-			self.showStabilityOverlay()
-			
-		elif inputClass.getFunctionName() == "ClearSettler":
-			met.resetSettler(self.m_iCurrentPlayer)
+		elif inputClass.getFunctionName() == "ClearChanges":
+			if self.iPlayerAddMode == "Core":
+				met.resetCore(self.m_iCurrentPlayer)
+			else:
+				met.resetSettler(self.m_iCurrentPlayer)
 			self.showStabilityOverlay()
 		
-		elif inputClass.getFunctionName() == "ExportCore":
-			met.exportCore(self.m_iCurrentPlayer)
-			self.showStabilityOverlay()
-			
-		elif inputClass.getFunctionName() == "ExportSettler":
-			met.exportSettlerMap(self.m_iCurrentPlayer)
+		elif inputClass.getFunctionName() == "Export":
+			if self.iPlayerAddMode == "Core":
+				met.exportCore(self.m_iCurrentPlayer)
+			else:
+				met.exportSettlerMap(self.m_iCurrentPlayer)
 			self.showStabilityOverlay()
 			
 		elif inputClass.getFunctionName() == "SwitchReborn":
@@ -2124,7 +2122,7 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "WorldBuilderConvertSave":
 			import ConvertSave
 			
-		if inputClass.getFunctionName() not in ["CoreButton", "SettlerValueButton", "ClearCore", "ClearSettler", "ExportCore", "ExportSettler", "WorldBuilderPlayerChoice", "SwitchReborn"]:
+		if inputClass.getFunctionName() not in ["CoreButton", "SettlerValueButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight"]:
 			self.deleteOverLay()
 		
 		return 1
