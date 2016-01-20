@@ -1976,7 +1976,6 @@ class RFCUtils:
 		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", True)
 
 		colors = ["COLOR_CYAN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED", "COLOR_PLAYER_LIGHT_PURPLE"]
-		#colors = ["COLOR_PLAYER_DARK_GREEN_STABILITY_TEXT", "COLOR_PLAYER_GREEN_TEXT", "COLOR_PLAYER_YELLOW_TEXT", "COLOR_PLAYER_DARK_RED_TEXT", "COLOR_PLAYER_LIGHT_PURPLE"]
 		iTeam = gc.getPlayer(iPlayer).getTeam()
 
 		# apply the highlight

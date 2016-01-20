@@ -700,7 +700,6 @@ class WBPlotScreen:
 					screen.setTableText("WBSigns", 4, iPlayer, str(iValue), "", WidgetTypes.WIDGET_PYTHON, 22003, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
 				else:
 					popup = Popup.PyPopup(6666, EventContextTypes.EVENTCONTEXT_ALL)
-					#popup.setHeaderString(CyTranslator().getText("TXT_KEY_WB_LANDMARKS", ()))
 					popup.setUserData((iPlayer, -1))
 					sText = str(met.getSettlerValue(iPlayer, tPlot))
 					popup.createEditBox(sText)
