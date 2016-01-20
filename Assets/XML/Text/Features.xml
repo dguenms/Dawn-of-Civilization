@@ -4,26 +4,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_CAPE_COAST</Tag>
 		<English>Cape</English>
-		<French>
-			<Text></Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
 		<German>
 			<Text>Kap</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
-		<Italian>
-			<Text>:</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>:</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_ISLANDS</Tag>
@@ -34,5 +19,33 @@
 		<Tag>TXT_KEY_FEATURE_RAINFOREST</Tag>
 		<English>Rainforest</English>
 		<German>Regenwald</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_MARSH</Tag>
+		<English>Marsh</English>
+		<French>
+			<Text>Mar&#233;cage</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sumpf</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Palude</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ci&#233;naga</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_NO_IMPROVEMENT</Tag>
+		<English>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</English>
 	</TEXT>
 </Civ4GameText>
