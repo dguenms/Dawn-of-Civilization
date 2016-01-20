@@ -90,8 +90,6 @@ class CvWorldBuilderScreen:
 		self.TempInfo = []
 ## Platy Builder ##
 
-		self.lPresetValues = [3, 20, 90, 200, 500, 700]
-
 	def interfaceScreen (self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
 		self.__init__()
@@ -1233,8 +1231,8 @@ class CvWorldBuilderScreen:
 					iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 37, ButtonStyles.BUTTON_STYLE_LABEL)
 				iX += iAdjust				
 				screen.addDropDownBoxGFC("PresetValue", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-				for i in range(len(self.lPresetValues)):
-					screen.addPullDownString("PresetValue", str(self.lPresetValues[i]), i, self.lPresetValues[i], self.lPresetValues[i] == iSetValue)
+				for i in range(len(con.lPresetValues)):
+					screen.addPullDownString("PresetValue", str(con.lPresetValues[i]), i, con.lPresetValues[i], con.lPresetValues[i] == iSetValue)
 
 				if self.iPlayerAddMode in ["Core", "SettlerValue"]:
 					iX = iXStart + 8

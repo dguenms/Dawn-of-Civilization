@@ -22,6 +22,8 @@ iSelectedPlayer = -1
 iItem = -1
 lItems = []
 lSelectedItem = [-1, -1]
+bShowAIForbidden = False
+bShowForeignCores = False
 
 class WBInfoScreen:
 
@@ -49,8 +51,6 @@ class WBInfoScreen:
 		# Merijn StabMap colors
 		self.iColorSpawn = "COLOR_PLAYER_DARK_PINK"
 		self.iColorSpawnWater = "COLOR_PLAYER_GREYISH_CYAN"
-		self.lPlotNumberText = ["Core", "Historical", "Contested", "Foreign Core", "Normal Tile", "/AI forbidden"]
-		self.lColors = ["COLOR_PLAYER_DARK_GREEN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED", "COLOR_WHITE_TEXT", "COLOR_PLAYER_LIGHT_PURPLE"]
 
 	def interfaceScreen(self, iPlayerX):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
@@ -302,24 +302,29 @@ class WBInfoScreen:
 					plot = gc.getMap().plot(x, y)
 					if plot.isWater(): continue
 					if gc.getMap().plot(x, y).isCore(iPlayer):
-						iPlotType = 0
+						iPlotType = con.iCore
 					else:
+						bForeignCore = Areas.isForeignCore(iPlayer, (x, y))
 						iSettlerValue = met.getSettlerValue(iPlayer, (x, y))
 						if iSettlerValue >= 90:
-							if Areas.isForeignCore(iPlayer, (x, y)):
-								iPlotType = 2
+							if bForeignCore:
+								iPlotType = con.iContest
 							else:
-								iPlotType = 1
+								iPlotType = con.iHistorical
+						elif iSettlerValue == 3 and bShowAIForbidden:
+							iPlotType = con.iAIForbidden
+						elif bForeignCore and bShowForeignCores:
+							iPlotType = con.iForeignCore
 						else:
 							iPlotType = -1
 					if iPlotType != -1:
-						iColor = gc.getInfoTypeForString(self.lColors[iPlotType])
+						iColor = gc.getInfoTypeForString(con.lStabilityColors[iPlotType])
 						screen.minimapFlashPlot(x, y, iColor, -1)
 
 		elif iMode == 15 and iItem != -1:
 			iColorS = gc.getInfoTypeForString(self.iColorSpawn)
 			iColorSW = gc.getInfoTypeForString(self.iColorSpawnWater)
-			iColorC = gc.getInfoTypeForString(self.lColors[2])
+			iColorC = gc.getInfoTypeForString(con.lStabilityColors[2])
 			iPlayer = iItem
 			for tPlot in Areas.getBirthArea(iPlayer):
 				plot = gc.getMap().plot(tPlot[0], tPlot[1])
@@ -600,10 +605,24 @@ class WBInfoScreen:
 		screen.setTableColumnHeader("InfoTable", 0, "<font=3>" + CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIV", ()) + "</font>", iWidth)
 
 		for iPlayer in range(con.iNumPlayers):
-			print(iPlayer)
 			iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 			iRow = screen.appendTableRow("InfoTable")
 			screen.setTableText("InfoTable", 0, iRow, "<font=3>" + gc.getCivilizationInfo(iCiv).getShortDescription(0) + "</font>", gc.getCivilizationInfo(iCiv).getButton(), WidgetTypes.WIDGET_PYTHON, 22005, iPlayer, CvUtil.FONT_LEFT_JUSTIFY)
+
+		if iMode == 14:
+			self.placeStabMapButtons()
+		else:
+			screen.deleteWidget("ToggleForeignCore")
+			screen.deleteWidget("ToggleAIForbidden")
+
+	def placeStabMapButtons(self):
+		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
+		iX = screen.getXResolution()/3 + 20
+		iY = screen.getYResolution() *2/3 + 30
+		iButtonWidth = 200
+		iButtonHeight = 45
+		screen.setButtonGFC("ToggleForeignCore", CyTranslator().getText("TXT_KEY_WB_TOGGLE_FOREIGN_CORES", ()), "", iX, iY, iButtonWidth, iButtonHeight, WidgetTypes.WIDGET_PYTHON, 22006, int(not bShowForeignCores), ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC("ToggleAIForbidden", CyTranslator().getText("TXT_KEY_WB_TOGGLE_AI_FORBIDDEN", ()), "", iX + iButtonWidth + 20, iY, iButtonWidth, iButtonHeight, WidgetTypes.WIDGET_PYTHON, 22006, int(not bShowAIForbidden), ButtonStyles.BUTTON_STYLE_STANDARD)
 
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
@@ -611,6 +630,8 @@ class WBInfoScreen:
 		global iItem
 		global iMode
 		global lSelectedItem
+		global bShowAIForbidden
+		global bShowForeignCores
 
 		if inputClass.getFunctionName() == "PlotData":
 			if iMode == 0:
@@ -688,6 +709,15 @@ class WBInfoScreen:
 				iPlayerX = inputClass.getData2() /10000
 				lSelectedItem = [gc.getPlayer(iPlayerX).getTeam(), -1]
 			self.placePlotData()
+
+		elif inputClass.getFunctionName() == "ToggleForeignCore":
+			bShowForeignCores ^= True
+			self.placeStabMapButtons()
+			self.refreshMap()
+		elif inputClass.getFunctionName() == "ToggleAIForbidden":
+			bShowAIForbidden ^= True
+			self.placeStabMapButtons()
+			self.refreshMap()
 
 	def update(self, fDelta):
 		return 1

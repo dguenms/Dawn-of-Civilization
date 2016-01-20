@@ -479,7 +479,10 @@ def getWidgetHelp(argsList):
 		elif iData1 == 22005:
 			return " "
 		elif iData1 == 22006:
-			return " "
+			if iData2 == 1:
+				return CyTranslator().getText("TXT_KEY_WB_SHOW", ())
+			else:
+				return CyTranslator().getText("TXT_KEY_WB_HIDE", ())
 
 	return u""
 

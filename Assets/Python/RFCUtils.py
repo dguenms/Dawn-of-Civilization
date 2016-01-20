@@ -1961,10 +1961,8 @@ class RFCUtils:
 		else:
 			bWB = True
 			
-		iNumPlotTypes = 5
-		(iCore, iHistorical, iContest, iForeignCore, iAIForbidden) = range(iNumPlotTypes)
 		# clear the highlight
-		for i in range(iNumPlotTypes):
+		for i in range(con.iNumPlotStabilityTypes):
 			engine.clearAreaBorderPlots(1000+i)
 
 		if self.bStabilityOverlay and not bWB:
@@ -1975,7 +1973,6 @@ class RFCUtils:
 		self.bStabilityOverlay = True
 		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", True)
 
-		colors = ["COLOR_CYAN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED", "COLOR_PLAYER_LIGHT_PURPLE"]
 		iTeam = gc.getPlayer(iPlayer).getTeam()
 
 		# apply the highlight
@@ -1985,22 +1982,22 @@ class RFCUtils:
 			if gc.getGame().isDebugMode() or plot.isRevealed(iTeam, False):
 				if plot.isWater(): continue
 				if plot.isCore(iPlayer):
-					iPlotType = iCore
+					iPlotType = con.iCore
 				else:
 					iSettlerValue = plot.getSettlerValue(iPlayer)
 					if bWB and iSettlerValue == 3:
-						iPlotType = iAIForbidden
+						iPlotType = con.iAIForbidden
 					elif iSettlerValue >= 90:
 						if Areas.isForeignCore(iPlayer, tPlot):
-							iPlotType = iContest
+							iPlotType = con.iContest
 						else:
-							iPlotType = iHistorical
+							iPlotType = con.iHistorical
 					elif Areas.isForeignCore(iPlayer, tPlot):
-						iPlotType = iForeignCore
+						iPlotType = con.iForeignCore
 					else:
 						iPlotType = -1
 				if iPlotType != -1:
-					szColor = colors[iPlotType]
+					szColor = con.lStabilityColors[iPlotType]
 					engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType, szColor, 0.7)
 
 

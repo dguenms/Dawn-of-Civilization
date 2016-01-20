@@ -820,4 +820,36 @@
 		<Tag>TXT_KEY_STABILITY_OVERLAY_HELP</Tag>
 		<English>Dark green: core area[NEWLINE]Green: historical area[NEWLINE]Yellow: contested area[NEWLINE]Red: foreign core</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_TOGGLE_FOREIGN_CORES</Tag>
+		<English>Toggle Foreign Cores</English>
+		<French>Toggle Foreign Cores</French>
+		<German>Toggle Foreign Cores</German>
+		<Italian>Toggle Foreign Cores</Italian>
+		<Spanish>Toggle Foreign Cores</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_TOGGLE_AI_FORBIDDEN</Tag>
+		<English>Toggle AI Forbidden</English>
+		<French>Toggle AI Forbidden</French>
+		<German>Toggle AI Forbidden</German>
+		<Italian>Toggle AI Forbidden</Italian>
+		<Spanish>Toggle AI Forbidden</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SHOW</Tag>
+		<English>Show</English>
+		<French>Show</French>
+		<German>Show</German>
+		<Italian>Show</Italian>
+		<Spanish>Show</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_HIDE</Tag>
+		<English>Hide</English>
+		<French>Hide</French>
+		<German>Hide</German>
+		<Italian>Hide</Italian>
+		<Spanish>Hide</Spanish>
+	</TEXT>
 </Civ4GameText>
