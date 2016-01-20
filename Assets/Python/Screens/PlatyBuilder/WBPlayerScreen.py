@@ -14,8 +14,7 @@ import Popup
 gc = CyGlobalContext()
 iChange = 1
 
-import RFCUtils
-utils = RFCUtils.RFCUtils()
+from RFCUtils import utils
 import Consts as con
 import Modifiers
 localText = CyTranslator()
@@ -261,7 +260,7 @@ class WBPlayerScreen:
 		if pPlayer.getStateReligion() > -1:
 			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
 		screen.appendTableRow("WBPlayerReligions")
-		screen.setTableText("WBPlayerReligions", 0, 0, "<font=3>" + sColor + CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ()) + "</font></color>", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), WidgetTypes.WIDGET_HELP_RELIGION, 0, -1, CvUtil.FONT_LEFT_JUSTIFY )
+		screen.setTableText("WBPlayerReligions", 0, 0, "<font=3>" + sColor + CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ()) + "</font></color>", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), WidgetTypes.WIDGET_HELP_RELIGION, -1, -1, CvUtil.FONT_LEFT_JUSTIFY )
 		for item in lReligions:
 			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
 			if pPlayer.getStateReligion() == item[1]:
@@ -440,7 +439,7 @@ class WBPlayerScreen:
 
 		elif inputClass.getFunctionName() == "WBPlayerReligions":
 			iReligion = inputClass.getData1()
-			pPlayer.setLastStateReligion(inputClass.getData1()-1)
+			pPlayer.setLastStateReligion(inputClass.getData1())
 			self.placeReligions()
 
 		elif inputClass.getFunctionName().find("StateReligionUnit") > -1:

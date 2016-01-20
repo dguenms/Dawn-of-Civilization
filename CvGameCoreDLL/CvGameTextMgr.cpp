@@ -4498,7 +4498,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	    {
 	        if (bCore)
 	        {
-	            szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_GREEN_STABILITY_TEXT")));
+	            szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_CYAN")));
 	            szString.append(gDLL->getText("TXT_KEY_STABILITY_CORE_AREA"));
 	        }
 	        else

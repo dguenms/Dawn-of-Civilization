@@ -1951,14 +1951,23 @@ class RFCUtils:
 		WarMaps.updateMap(iPlayer, bReborn)
 		Areas.updateCore(iPlayer)
 
-	def toggleStabilityOverlay(self):
+	def toggleStabilityOverlay(self, iPlayer = -1):
 		engine = CyEngine()
 		map = CyMap()
 
+		bWB = False
+		if iPlayer == -1:
+			iPlayer = self.getHumanID()
+		else:
+			bWB = True
+			
+		iNumPlotTypes = 5
+		(iCore, iHistorical, iContest, iForeignCore, iAIForbidden) = range(iNumPlotTypes)
 		# clear the highlight
-		engine.clearColoredPlots(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_WORLD_BUILDER)
+		for i in range(iNumPlotTypes):
+			engine.clearAreaBorderPlots(1000+i)
 
-		if self.bStabilityOverlay:
+		if self.bStabilityOverlay and not bWB:
 			self.bStabilityOverlay = False
 			CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
 			return
@@ -1966,33 +1975,34 @@ class RFCUtils:
 		self.bStabilityOverlay = True
 		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", True)
 
-		colors = ["COLOR_PLAYER_DARK_GREEN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED"]
-		iHuman = self.getHumanID()
-		iHumanTeam = gc.getPlayer(iHuman).getTeam()
+		colors = ["COLOR_CYAN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED", "COLOR_PLAYER_LIGHT_PURPLE"]
+		#colors = ["COLOR_PLAYER_DARK_GREEN_STABILITY_TEXT", "COLOR_PLAYER_GREEN_TEXT", "COLOR_PLAYER_YELLOW_TEXT", "COLOR_PLAYER_DARK_RED_TEXT", "COLOR_PLAYER_LIGHT_PURPLE"]
+		iTeam = gc.getPlayer(iPlayer).getTeam()
 
 		# apply the highlight
-		iCiv = gc.getPlayer(iHuman).getCivilizationType()
 		for i in range(map.numPlots()):
 			plot = map.plotByIndex(i)
 			tPlot = (plot.getX(), plot.getY())
-			if gc.getGame().isDebugMode() or plot.isRevealed(iHumanTeam, False):
+			if gc.getGame().isDebugMode() or plot.isRevealed(iTeam, False):
 				if plot.isWater(): continue
-				if plot.isCore(iHuman):
-					iPlotType = 0
+				if plot.isCore(iPlayer):
+					iPlotType = iCore
 				else:
-					iSettlerValue = plot.getSettlerValue(iHuman)
-					if iSettlerValue >= 90:
-						if Areas.isForeignCore(iHuman, tPlot):
-							iPlotType = 2
+					iSettlerValue = plot.getSettlerValue(iPlayer)
+					if bWB and iSettlerValue == 3:
+						iPlotType = iAIForbidden
+					elif iSettlerValue >= 90:
+						if Areas.isForeignCore(iPlayer, tPlot):
+							iPlotType = iContest
 						else:
-							iPlotType = 1
-					elif Areas.isForeignCore(iHuman, tPlot):
-						iPlotType = 3
+							iPlotType = iHistorical
+					elif Areas.isForeignCore(iPlayer, tPlot):
+						iPlotType = iForeignCore
 					else:
 						iPlotType = -1
 				if iPlotType != -1:
 					szColor = colors[iPlotType]
-					engine.addColoredPlotAlt(plot.getX(), plot.getY(), int(PlotStyles.PLOT_STYLE_BOX_FILL), int(PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_WORLD_BUILDER), szColor, .2)
+					engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType, szColor, 0.7)
 
 
 utils = RFCUtils()
