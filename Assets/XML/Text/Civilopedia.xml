@@ -2360,7 +2360,166 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_STABILITY_INFLUENCES_PEDIA</Tag>
-		<English>[H1]Stability Influence Factors[\H1][NEWLINE][BOLD]EXPANSION[\BOLD][NEWLINE][BOLD]Overextension[\BOLD]Overextension is the main factor of expansion stability. It depends on two scores:[ICON_BULLET]core population score[ICON_BULLET]periphery population score[NEWLINE]Without taking modifiers into account, they are just the population in your core and the population outside of your core, respectively. As long as your periphery population score is below your core population score, everything is fine. Once the periphery score exceeds 100% of the core population score, you will receive an expansion stability penalty according to a formula which I will explain later. The scores are affected by a number of modifiers and therefore aren't only based on city population.[NEWLINE]The [BOLD]core population score[\BOLD] is multiplied by your current era plus one. Since the modifier is era-based, your ability to support a large periphery grows during the game.[NEWLINE]The [BOLD]periphery population score[\BOLD] for every city is based on many different factors. Since a lower periphery score is better for stability, negative modifiers are desired.+2 if the city is not on historical territory (so it makes sense to mainly control historical tiles)+1 if you are not the original owner of this city (unless you are running Totalitarianism or Warrior Code, or the city is under your control for more than 25 turns)+1 if you have less than 50% culture in this city+1 if you have less than 20% culture in this city (those two penalties are cumulative, for a total of +2 if you are below 20%. Culture counts double within their civilization's own cores. Persia is immune to culture-based penalties due to their UP)+2 when running City States (this civic is only meant for small civilizations)+1 if it is a historical overseas city an you are running Totalitarianism (to discourage Totalitarianism for maintaining colonial empires)-1 if the city has a Courthouse-1 if the city has a Jail-1 if it is an overseas city and you are running Mercantilism-1 if it is an overseas city and you are Portugal (their UP)[NEWLINE]The expansion penalty can be at most -25, and grows faster right after the periphery score exceeds the core score than later on. This allows a diminishing yet growing effect of expansion stability that allows playing Domination games without making expansion stability irrelevant in more historical games.[NEWLINE]Between stability checks, the overextension penalty can only increase by at most 5 negative points. For instance, if you had a penalty of 0 in the last check and the calculation results in -10, you will still only get a penalty of -5 until the next check.[NEWLINE][BOLD]Razing[\BOLD]Razing cities is the other contributing factor to expansion stability. The score here is very straightforward. You get a -10 stability penalty for every city you have razed. This penalty decays by 2 points every 5 turns. This penalty is global, that means if you accrue -20 raze stability from razing two cities, it still decays by 2 points every 5 turns, instead of by 4. The exception to this rule are smaller cities. If the city has a population of less than 5, the penalty is -2 * [city population] instead. This exception does not apply to another civilizations capital, which always gives a -10 penalty when razed.[NEWLINE][BOLD]ECONOMY[\BOLD][NEWLINE][BOLD]Economic Growth[\BOLD]The economic growth score is updated every third turn, in which the total amount of commerce produced is compared to the amount from three turns earlier. Has it grown by more than 5%, the score increases, has it shrunk by more than 5%, it decreases. Otherwise the score slowly moves towards 0 again. At every stability check the score is directly applied to the economy stability. Some of your civics influence your economic growth stability:[ICON_BULLET]you receive extra points during economic growth when running Free Market[ICON_BULLET]you receive no penalties during economic stagnation when running Environmentalism[ICON_BULLET]you receive less penalties during economic decline when running Public Welfare[NEWLINE][BOLD]Trade[\BOLD]Your cities have trade routes to other cities generating commerce (exports). Other cities have trade routes to your cities also generating commerce (imports). For all civilizations, their total trade volume is calculated, which usually is the sum of exports and imports, but for Mercantilist civs it is twice their export volume instead. The trade volume is divided by your number of cities, then subtracted a modifier that increases with your era. Effectively, you can achieve a positive score by increasing the trade yield in your cities and securing trade routes with foreign cities. The trade stability is capped at +10 and -10 respectively.[NEWLINE][BOLD]Economic Systems[\BOLD]Civilizations running Mercantilism receive a -2 penalty for having open borders with a civilization with a higher commerce output.Civilizations running Central Planning receive a -2 penalty for having open borders with a civilization that runs Free Market.[NEWLINE][BOLD]DOMESTIC[\BOLD][NEWLINE][BOLD]Happiness[\BOLD]Happiness stability works similar to economic growth stability in that it is accumulating every third turn depending on the situation of your civilization. To that end, the happy and unhappy cities in a civilization are counted based on the following criteria:[NEWLINE][BOLD]Happy city:[\BOLD] currently celebrates the "We Love the King" day OR its happiness exceeds its unhappiness by at least a quarter of your empire's average city size and it has at least the average city size of your empire[BOLD]Unhappy city:[\BOLD] the city has more unhappiness than happiness OR the extra unhappiness (from all factors except population) exceeds a fifth of the city's population[NEWLINE]Note that it is possible for a city to not fulfill either of these criteria, in which case it doesn't count at all for the purposes of happiness stability. A city can also both fulfill the criteria for being happy and unhappy, in which case it counts as happy. Your happiness stability grows every third turn if you have more happy than unhappy cities, and declines if you have more unhappy than happy cities. This factor cannot exceed -10 or 10, respectively. If the amount of happy and unhappy cities is exactly the same, the value slowly approaches 0 again.[NEWLINE][BOLD]Religion[\BOLD]For religions, two or three percentages are calculated:[ICON_BULLET]the percentage of cities that have your state religion (believer ratio)[ICON_BULLET]the percentage of cities that have at least one non-state religion (heathen ratio)[ICON_BULLET]if you are running Theocracy, the percentage of cities that have ONLY your state religion[NEWLINE]Some non-state religions are ignored for the purposes of the second and third ratios ("tolerance").[ICON_BULLET]civs with Secularism tolerate all non-state religions[ICON_BULLET]Mughals tolerate all non-state religions because of their UP[ICON_BULLET]Hinduism and Buddhism tolerate each other[ICON_BULLET]Confucianism and Taoism tolerate each other[NEWLINE][BOLD]Heathen ratio:[\BOLD] You incur neither penalties nor bonuses if your ratio is 30%. Otherwise, you receive -1 stability for every 10% over 30% and +1 stability for every 10% below 30%.[BOLD]Believer ratio:[\BOLD] You incur neither penalties nor bonuses if your ratio is 75%. Otherwise, you receive -1 stability for every 5% below 75% (up to a maximum of -10) and +1 stability for every 5% over 75%.[BOLD]Theocracy bonus:[\BOLD] if you are running Theocracy, you also receive +1 stability for every 20% of your cities that only have your state religion.[NEWLINE]Note that while the other factors require you to have a state religion, the religion stability from the heathen ratio also applies when you don't have a state religion.[NEWLINE][BOLD]Civics[\BOLD]Civics stability comes either from running a certain combination of civics or from running specific civics in a certain era or after discovering a certain technology.Totalitarianism + Autocracy: +5Totalitarianism + Central Planning: +3Totalitarianism + [any religious civic except Secularism]: -5Central Planning + Industrialism: +2Central Planning + [any labor civic except Industrialism or Public Welfare]: -5Egalitarianism + Republic: +2Egalitarianism + [any labor civic except Public Welfare]: -3Egalitarianism + Environmentalism: +2Egalitarianism + Secularism: +2Capitalism + Representation: +2Capitalism + Free Market: +3Capitalism + Guilds: -5Environmentalism + Industrialism: -5Theocracy + Fanaticism: +5Theocracy + Organized Religion: +3Theocracy + Secularism: -7Theocracy + Egalitarianism: -3Vassalage + Warrior Code or Levy Armies: +3Vassalage + [any other military civic]: -5Vassalage + Capitalism or Industrialism or Public Welfare: -5Vassalage + Dynasticism: +2 in the Middle AgesVassalage + Agrarianism: +3 in the Middle AgesCity States + Vassalage or Absolutism or Egalitarianism: -3City States + Guilds: +2City States + [any economic civic except Self-Sufficiency, Guilds and Mercantilism]: -5City States + Militia or Mercenaries: +2City States + [any military civic except Militia, Mercenaries and Naval Dominance]: -3Absolutism + Republic: -5Absolutism + Mercantilism: +3Absolutism + Organized Religion: +2Absolutism + Dynasticism: +2 in the RenaissanceRepublic + Representation: +2Warrior Code + Dynasticism: +2Warrior Code + Fanaticism: +2Autocracy + Standing Army: +3Vassalage in the Middle Ages: +2Vassalage in the Industrial Era or later: -5Theocracy in the Industrial Era or later: -5Pantheon in the Classical Era or earlier: +2Pantheon in the Middle Ages or later: -2 * [current era]City States in the Classical Era or earlier: +2City States in the Industrial Era or later: -5Direct Rule or Vassalage or Absolutism after the discovery of Democracy: -5Slavery or Agrarianism after the discovery of Democracy, unless running Totalitarianism: -5Any Organization civic except Totalitarianism and Egalitarianism after the discovery of Communism: -5Self-Sufficiency or Guilds after the discovery of Corporation: -5Slavery after the discovery of Economics, unless running Totalitarianism: -5Mercenaries after the discovery of Nationalism: -5Warrior Code after the discovery of Military Science: -7[NEWLINE][BOLD]FOREIGN[\BOLD][NEWLINE]A couple of factors contribute to your foreign stability rating:For every neighboring collapsing civ that you have open borders with: -3For every collapsing vassal: -5For every unstable vassal: -2For every solid vassal: +3For every vassal when running Vassalage: +2For every defensive pact with a higher ranked civilization: +5For every open borders treaty with a civ with your state religion: +1For every open borders treaty with a civ with a different state religion: +2For every second civilization you can contact: -1Being the worst enemy of a higher ranked civilization: -4For every neighbor you are at war with while running Autocracy: +2For every civilization with different state religion you are at war with while running Fanaticism: +3For every civilization with the same state religion you are at war with while running Fanaticism: -2[NEWLINE][BOLD]MILITARY[\BOLD][NEWLINE]All military scores are calculated for each war your civilization is in.[NEWLINE][BOLD]Conquest Stability[\BOLD]This factor depends on the number of cities you have conquered from this civ compared to those you have lost to it. Cities are worth more if the owner has less of them, i.e. losing a city has a larger impact if you don't have a lot of them in the first place.[NEWLINE][BOLD]Battle Stability[\BOLD]Similar to conquest stability, the battles you have won are compared to the battles you have lost. In either case, a battle is "worth" as much as the defeated unit's power rating. How much battle stability you get or lose depends on your overall military strength - the stronger you are, the less of an impact a singular battle has in either way. Battle stability decays while a war lasts.[NEWLINE][BOLD]War Weariness Stability[\BOLD]Your war weariness is compared to your enemy's. If it is larger, you receive a penalty proportional to the difference. This penalty also decays while the war lasts.[NEWLINE][BOLD]Barbarian Losses Stability[\BOLD]You receive a -1 stability penalty for every battle you lose against a barbarian unit. This penalty also decays over time.</English>
+		<English>[H1]Stability Influence Factors[\H1]
+[NEWLINE][BOLD]EXPANSION[\BOLD]
+[NEWLINE][BOLD]Overextension[\BOLD]
+Overextension is the main factor of expansion stability. It depends on two scores:
+[ICON_BULLET]core population score
+[ICON_BULLET]periphery population score
+[NEWLINE]Without taking modifiers into account, they are just the population in your core and the population outside of your core, respectively. As long as your periphery population score is below your core population score, everything is fine. Once the periphery score exceeds 100% of the core population score, you will receive an expansion stability penalty according to a formula which I will explain later. The scores are affected by a number of modifiers and therefore aren't only based on city population.
+[NEWLINE]The [BOLD]core population score[\BOLD] is multiplied by your current era plus one. Since the modifier is era-based, your ability to support a large periphery grows during the game.
+[NEWLINE]The [BOLD]periphery population score[\BOLD] for every city is based on many different factors. Since a lower periphery score is better for stability, negative modifiers are desired.
++2 if the city is not on historical territory (so it makes sense to mainly control historical tiles)
++1 if you are not the original owner of this city (unless you are running Totalitarianism or Warrior Code, or the city is under your control for more than 25 turns)
++1 if you have less than 50% culture in this city
++1 if you have less than 20% culture in this city (those two penalties are cumulative, for a total of +2 if you are below 20%. Culture counts double within their civilization's own cores. Persia is immune to culture-based penalties due to their UP)
++2 when running City States (this civic is only meant for small civilizations)
++1 if it is a historical overseas city an you are running Totalitarianism (to discourage Totalitarianism for maintaining colonial empires)
+-1 if the city has a Courthouse
+-1 if the city has a Jail
+-1 if it is an overseas city and you are running Mercantilism
+-1 if it is an overseas city and you are Portugal (their UP)
+[NEWLINE]The expansion penalty can be at most -25, and grows faster right after the periphery score exceeds the core score than later on. This allows a diminishing yet growing effect of expansion stability that allows playing Domination games without making expansion stability irrelevant in more historical games.
+[NEWLINE]Between stability checks, the overextension penalty can only increase by at most 5 negative points. For instance, if you had a penalty of 0 in the last check and the calculation results in -10, you will still only get a penalty of -5 until the next check.
+[NEWLINE][BOLD]Razing[\BOLD]
+Razing cities is the other contributing factor to expansion stability. The score here is very straightforward. You get a -10 stability penalty for every city you have razed. This penalty decays by 2 points every 5 turns. This penalty is global, that means if you accrue -20 raze stability from razing two cities, it still decays by 2 points every 5 turns, instead of by 4. The exception to this rule are smaller cities. If the city has a population of less than 5, the penalty is -2 * [city population] instead. This exception does not apply to another civilizations capital, which always gives a -10 penalty when razed.
+[NEWLINE][BOLD]ECONOMY[\BOLD]
+[NEWLINE][BOLD]Economic Growth[\BOLD]
+The economic growth score is updated every third turn, in which the total amount of commerce produced is compared to the amount from three turns earlier. Has it grown by more than 5%, the score increases, has it shrunk by more than 5%, it decreases. Otherwise the score slowly moves towards 0 again. At every stability check the score is directly applied to the economy stability. Some of your civics influence your economic growth stability:
+[ICON_BULLET]you receive extra points during economic growth when running Free Market
+[ICON_BULLET]you receive no penalties during economic stagnation when running Environmentalism
+[ICON_BULLET]you receive less penalties during economic decline when running Public Welfare
+[NEWLINE][BOLD]Trade[\BOLD]
+Your cities have trade routes to other cities generating commerce (exports). Other cities have trade routes to your cities also generating commerce (imports). For all civilizations, their total trade volume is calculated, which usually is the sum of exports and imports, but for Mercantilist civs it is twice their export volume instead. The trade volume is divided by your number of cities, then subtracted a modifier that increases with your era. Effectively, you can achieve a positive score by increasing the trade yield in your cities and securing trade routes with foreign cities. The trade stability is capped at +10 and -10 respectively.
+[NEWLINE][BOLD]Economic Systems[\BOLD]
+Civilizations running Mercantilism receive a -2 penalty for having open borders with a civilization with a higher commerce output.
+Civilizations running Central Planning receive a -2 penalty for having open borders with a civilization that runs Free Market.
+[NEWLINE][BOLD]DOMESTIC[\BOLD]
+[NEWLINE][BOLD]Happiness[\BOLD]
+Happiness stability works similar to economic growth stability in that it is accumulating every third turn depending on the situation of your civilization. To that end, the happy and unhappy cities in a civilization are counted based on the following criteria:
+[NEWLINE][BOLD]Happy city:[\BOLD] currently celebrates the "We Love the King" day OR its happiness exceeds its unhappiness by at least a quarter of your empire's average city size and it has at least the average city size of your empire
+[BOLD]Unhappy city:[\BOLD] the city has more unhappiness than happiness OR the extra unhappiness (from all factors except population) exceeds a fifth of the city's population
+[NEWLINE]Note that it is possible for a city to not fulfill either of these criteria, in which case it doesn't count at all for the purposes of happiness stability. A city can also both fulfill the criteria for being happy and unhappy, in which case it counts as happy. Your happiness stability grows every third turn if you have more happy than unhappy cities, and declines if you have more unhappy than happy cities. This factor cannot exceed -10 or 10, respectively. If the amount of happy and unhappy cities is exactly the same, the value slowly approaches 0 again.
+[NEWLINE][BOLD]Religion[\BOLD]
+For religions, two or three percentages are calculated:
+[ICON_BULLET]the percentage of cities that have your state religion (believer ratio)
+[ICON_BULLET]the percentage of cities that have at least one non-state religion (heathen ratio)
+[ICON_BULLET]if you are running Theocracy, the percentage of cities that have ONLY your state religion
+[NEWLINE]Some non-state religions are ignored for the purposes of the second and third ratios ("tolerance").
+[ICON_BULLET]civs with Secularism tolerate all non-state religions
+[ICON_BULLET]Mughals tolerate all non-state religions because of their UP
+[ICON_BULLET]Hinduism and Buddhism tolerate each other
+[ICON_BULLET]Confucianism and Taoism tolerate each other
+[NEWLINE][BOLD]Heathen ratio:[\BOLD] You incur neither penalties nor bonuses if your ratio is 30%. Otherwise, you receive -1 stability for every 10% over 30% and +1 stability for every 10% below 30%.
+[BOLD]Believer ratio:[\BOLD] You incur neither penalties nor bonuses if your ratio is 75%. Otherwise, you receive -1 stability for every 5% below 75% (up to a maximum of -10) and +1 stability for every 5% over 75%.
+[BOLD]Theocracy bonus:[\BOLD] if you are running Theocracy, you also receive +1 stability for every 20% of your cities that only have your state religion.
+[NEWLINE]Note that while the other factors require you to have a state religion, the religion stability from the heathen ratio also applies when you don't have a state religion.
+[NEWLINE][BOLD]Civics[\BOLD]
+Civics stability comes either from running a certain combination of civics or from running specific civics in a certain era or after discovering a certain technology.
+
+Totalitarianism + Autocracy: +5
+Totalitarianism + Central Planning: +3
+Totalitarianism + [any religious civic except Secularism]: -5
+
+Central Planning + Industrialism: +2
+Central Planning + [any labor civic except Industrialism or Public Welfare]: -5
+
+Egalitarianism + Republic: +2
+Egalitarianism + [any labor civic except Public Welfare]: -3
+Egalitarianism + Environmentalism: +2
+Egalitarianism + Secularism: +2
+
+Capitalism + Representation: +2
+Capitalism + Free Market: +3
+Capitalism + Guilds: -5
+
+Environmentalism + Industrialism: -5
+
+Theocracy + Fanaticism: +5
+Theocracy + Organized Religion: +3
+Theocracy + Secularism: -7
+Theocracy + Egalitarianism: -3
+
+Vassalage + Levy Armies: +3
+Vassalage + [any other military civic]: -5
+Vassalage + Capitalism or Industrialism or Public Welfare: -5
+Vassalage + Dynasticism: +2 in the Middle Ages
+Vassalage + Agrarianism: +3 in the Middle Ages
+
+City States + Vassalage or Absolutism or Egalitarianism: -3
+City States + Guilds: +2
+City States + Free Market, Central Planning, or Environmentalism: -5
+City States + Militia or Mercenaries: +2
+City States + [any military civic except Militia, Mercenaries and Naval Dominance]: -3
+
+Absolutism + Republic: -5
+Absolutism + Mercantilism: +3
+Absolutism + Organized Religion: +2
+Absolutism + Dynasticism: +2 in the Renaissance
+
+Republic + Representation: +2
+
+Autocracy + Standing Army: +3
+
+Multilateralism + Autocracy: -2
+Multilateralism + Totalitarianism: -3
+Multilateralism + Fanaticism: -3
+Multilateralism + Egalitarianism: +2
+
+Vassalage in the Middle Ages: +2
+Vassalage in the Industrial Era or later: -5
+
+Theocracy in the Industrial Era or later: -5
+
+Pantheon in the Classical Era or earlier: +2
+Pantheon in the Middle Ages or later: -2 * [current era]
+
+City States in the Classical Era or earlier: +2
+City States in the Industrial Era or later: -5
+
+Direct Rule or Vassalage or Absolutism after the discovery of Democracy: -5
+Slavery or Agrarianism after the discovery of Democracy, unless running Totalitarianism: -5
+
+Any Organization civic except Totalitarianism and Egalitarianism after the discovery of Communism: -5
+
+Self-Sufficiency or Guilds after the discovery of Corporation: -5
+
+Slavery after the discovery of Economics, unless running Totalitarianism: -5
+
+Mercenaries after the discovery of Nationalism: -5
+[NEWLINE][BOLD]FOREIGN[\BOLD]
+[NEWLINE]A couple of factors contribute to your foreign stability rating:
+
+For every neighboring collapsing civ that you have open borders with: -3
+
+For every collapsing vassal: -5
+For every unstable vassal: -2
+For every solid vassal: +3
+For every vassal when running Vassalage: +2
+
+For every defensive pact with a higher ranked civilization: +5
+For every defensive pact with another civilization while running Multilateralism: +3
+
+For every open borders treaty with a civ with your state religion: +1
+For every open borders treaty with a civ with a different state religion: +2
+For every second civilization you can contact: -1
+
+Being the worst enemy of a higher ranked civilization: -4
+
+For every neighbor you are at war with while running Autocracy: +2
+For every civilization you are at war with while running Multilateralism: -2
+For every civilization with different state religion you are at war with while running Fanaticism: +3
+For every civilization with the same state religion you are at war with while running Fanaticism: -2
+[NEWLINE][BOLD]MILITARY[\BOLD]
+[NEWLINE]All military scores are calculated for each war your civilization is in.
+[NEWLINE][BOLD]Conquest Stability[\BOLD]
+This factor depends on the number of cities you have conquered from this civ compared to those you have lost to it. Cities are worth more if the owner has less of them, i.e. losing a city has a larger impact if you don't have a lot of them in the first place.
+[NEWLINE][BOLD]Battle Stability[\BOLD]
+Similar to conquest stability, the battles you have won are compared to the battles you have lost. In either case, a battle is "worth" as much as the defeated unit's power rating. How much battle stability you get or lose depends on your overall military strength - the stronger you are, the less of an impact a singular battle has in either way. Battle stability decays while a war lasts.
+[NEWLINE][BOLD]War Weariness Stability[\BOLD]
+Your war weariness is compared to your enemy's. If it is larger, you receive a penalty proportional to the difference. This penalty also decays while the war lasts.
+[NEWLINE][BOLD]Barbarian Losses Stability[\BOLD]
+You receive a -1 stability penalty for every battle you lose against a barbarian unit. This penalty also decays over time.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_STABILITY_PEDIA</Tag>
