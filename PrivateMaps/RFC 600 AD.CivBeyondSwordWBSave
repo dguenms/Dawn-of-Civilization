@@ -583,7 +583,8 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer                 
-	LeaderType=LEADER_INDEPENDENT
+	LeaderName=TXT_KEY_LEADER_INDEPENDENT
+	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT                 
 	Team=44      
 	PlayableCiv=0                 
@@ -591,7 +592,8 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer                 
-	LeaderType=LEADER_INDEPENDENT
+	LeaderName=TXT_KEY_LEADER_INDEPENDENT
+	LeaderType=LEADER_PETER
 	CivType=CIVILIZATION_INDEPENDENT2                 
 	Team=45
 	PlayableCiv=0                 
@@ -600,7 +602,8 @@ BeginPlayer
 	StateReligion=RELIGION_CHRISTIANITY  	
 EndPlayer
 BeginPlayer                 
-	LeaderType=LEADER_NATIVE
+	LeaderName=TXT_KEY_LEADER_NATIVE
+	LeaderType=LEADER_SHAKA
 	CivType=CIVILIZATION_NATIVE                 
 	Team=46       
 	PlayableCiv=0                 
