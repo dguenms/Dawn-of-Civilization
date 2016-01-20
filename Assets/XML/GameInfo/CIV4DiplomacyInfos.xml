@@ -663,7 +663,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_NATIVE</LeaderType>
+							<LeaderType>LEADER_SHAKA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -1616,7 +1616,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_NATIVE</LeaderType>
+							<LeaderType>LEADER_SHAKA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -2442,7 +2442,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_NATIVE</LeaderType>
+							<LeaderType>LEADER_SHAKA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -3713,7 +3713,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_NATIVE</LeaderType>
+							<LeaderType>LEADER_SHAKA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -5164,7 +5164,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_NATIVE</LeaderType>
+							<LeaderType>LEADER_SHAKA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7031,7 +7031,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_NATIVE</LeaderType>
+							<LeaderType>LEADER_SHAKA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8043,7 +8043,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_NATIVE</LeaderType>
+							<LeaderType>LEADER_SHAKA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -9018,7 +9018,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_NATIVE</LeaderType>
+							<LeaderType>LEADER_SHAKA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>

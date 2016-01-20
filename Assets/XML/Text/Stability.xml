@@ -578,10 +578,6 @@
 		<English>Collapsing Neighbors</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_NEIGHBORS_OLD</Tag>
-		<English>Neighbors</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_STABILITY_NO_CRISIS_IMMINENT</Tag>
 		<English>If our stability remains constant, we will not experience a crisis at the next stability check.</English>
 	</TEXT>

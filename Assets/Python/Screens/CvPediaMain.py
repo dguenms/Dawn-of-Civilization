@@ -494,8 +494,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 			tList.pop(con.iAbuBakr)
                         #tList.pop(con.iWangKon) #wang kon
                         tList.pop(con.iSittingBull) #sitt.b.
-                        tList.pop(con.iNativeLeader) #shaka   
-						tList.pop(con.iIndependentLeader)
+                        tList.pop(con.iShaka) #shaka   
                         #tList.pop(con.iJustinian) #justinian 
                         #tList.pop(con.iHatshepsut) #hatshepsut
                         tList.pop(con.iGilgamesh) #gilgamesh
