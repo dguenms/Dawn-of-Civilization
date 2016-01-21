@@ -22,15 +22,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME1_TITLE</Tag>
 		<English>Manifest Destiny</English>
-		<German>Manifest Destiny</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME1</Tag>
 		<English>Allow no European colonies in the North and Central America and in the Caribbean and control or vassalize Mexico in 1900 AD</English>
-		<French>Aucune colonie europ&#233;enne en Am&#233;rique septentrionale et centrale ou dans les Cara&#239;bes en 1930 ap. J.-C.</French>
 		<German>Lassen Sie im Jahr 1900 n. Chr. keine europ&#228;ischen St&#228;dte in Nord- und Zentralamerika und in der Karibik zu und kontrollieren oder vassalisieren Sie Mexiko</German>
-		<Italian>Non permettere alcuna colonia europea in Nord e Centro America e nei Caraibi nel 1930 d.C.</Italian>
-		<Spanish>No permitir colonias europeas en Norte y Centro America y el Caribe en el 1930 d.C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME2_TITLE</Tag>
@@ -40,10 +36,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME2</Tag>
 		<English>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</English>
-		<French>Construire l'ONU, la Statue de la Libert&#233; et le Pentagone avant 2000 ap. J.-C.</French>
 		<German>Errichten Sie bis zum Jahr 1950 n. Chr. die Freiheitsstatue, das Empire State Building, das Pentagon und the Vereinten Nationen</German>
-		<Italian>Devi costruire le Nazioni Unite, la Statua della Libert&#224; e il Pentagono entro il 2000 d.C.</Italian>
-		<Spanish>Construir las Naciones Unidas, la Estatua de la Libertad y el Pent&#225;gono antes del 2000 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME3_TITLE</Tag>
@@ -52,7 +45,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AME3</Tag>
-		<English>Secure 10 oil resources by 2000 AD</English>
+		<English>Secure 10 Oil resources by 2000 AD</English>
 		<French>S&#233;curiser 10 gisements de p&#233;trole avant 2000 ap. J.-C.</French>
 		<German>Sichern Sie sich bis zum Jahr 2000 n. Chr. 10 &#214;l-Vorkommen</German>
 		<Italian>Assicurati 10 fonti di petrolio entro il 2000 d.C.</Italian>
@@ -1176,19 +1169,14 @@
 		<German>Haben Sie im Jahr 1800 n. Chr. eine Stadt mit mindestens 20000 Kulturpunkten</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ITA1</Tag>
-		<English>Build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD</English>
-		<German>Bauen Sie bis zum Jahr 1500 n. Chr. die San Marco Basilica, die Sixtinische Kapelle und den Schiefen Turm</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA1_TITLE</Tag>
 		<English>Renaissance Architecture</English>
 		<German>Architektur der Renaissance</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ITA2</Tag>
-		<English>Have three cities with influential culture by 1600 AD</English>
-		<German>Haben Sie drei St&#228;dte mit einflussreicher Kultur bis zum Jahr 1600 n. Chr.</German>
+		<Tag>TXT_KEY_UHV_ITA1</Tag>
+		<English>Build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD</English>
+		<German>Bauen Sie bis zum Jahr 1500 n. Chr. die San Marco Basilica, die Sixtinische Kapelle und den Schiefen Turm</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA2_TITLE</Tag>
@@ -1196,14 +1184,24 @@
 		<German>Kunst der Renaissance</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ITA3</Tag>
-		<English>Control 65% of the Mediterranean by 1930 AD</English>
-		<German>Kontrollieren Sie 65% der Mittelmeerk&#252;ste bis zum Jahr 1930 n. Chr.</German>
+		<Tag>TXT_KEY_UHV_ITA2</Tag>
+		<English>Have three cities with influential culture by 1600 AD</English>
+		<German>Haben Sie drei St&#228;dte mit einflussreicher Kultur bis zum Jahr 1600 n. Chr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA3_TITLE</Tag>
 		<English>Mare Nostrum</English>
 		<German>Mare Nostrum</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ITA3</Tag>
+		<English>Control 65% of the Mediterranean by 1930 AD</English>
+		<German>Kontrollieren Sie 65% der Mittelmeerk&#252;ste bis zum Jahr 1930 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP1_TITLE</Tag>
+		<English>Tranquility and Peace</English>
+		<German>Ruhe und Frieden</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP1</Tag>
@@ -1230,9 +1228,9 @@
 		<Spanish>Conseguir una cultura superior a 54.000 en el 1600 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_JAP1_TITLE</Tag>
-		<English>Tranquility and Peace</English>
-		<German>Ruhe und Frieden</German>
+		<Tag>TXT_KEY_UHV_JAP2_TITLE</Tag>
+		<English>All the World Under One Roof</English>
+		<German>Die gesamte Welt unter einem Dach</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP2</Tag>
@@ -1243,9 +1241,9 @@
 		<Spanish>Tener la puntuaci&#243;n m&#225;s alta en el 1930 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_JAP2_TITLE</Tag>
-		<English>All the World Under One Roof</English>
-		<German>Die gesamte Welt unter einem Dach</German>
+		<Tag>TXT_KEY_UHV_JAP3_TITLE</Tag>
+		<English>Flying Geese Paradigm</English>
+		<German>Flugg&#228;nsemodell</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP3</Tag>
@@ -1256,9 +1254,9 @@
 		<Spanish>Ser el primero en completar el &#225;rbol tecnol&#243;gico</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_JAP3_TITLE</Tag>
-		<English>Flying Geese Paradigm</English>
-		<German>Flugg&#228;nsemodell</German>
+		<Tag>TXT_KEY_UHV_KHM1_TITLE</Tag>
+		<English>Angkor Wat</English>
+		<German>Angkor Wat</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM1</Tag>
@@ -1285,9 +1283,9 @@
 		<Spanish>Conseguir una cultura superior a 36.000 en el 1450 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KHM1_TITLE</Tag>
-		<English>Angkor Wat</English>
-		<German>Angkor Wat</German>
+		<Tag>TXT_KEY_UHV_KHM2_TITLE</Tag>
+		<English>Thom Baray</English>
+		<German>Thom Baray</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM2</Tag>
@@ -1298,9 +1296,9 @@
 		<Spanish>Tener un tama&#241;o medio de las ciudades de 10 o m&#225;s en el 1450 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KHM2_TITLE</Tag>
-		<English>Thom Baray</English>
-		<German>Thom Baray</German>
+		<Tag>TXT_KEY_UHV_KHM3_TITLE</Tag>
+		<English>Preah Srei</English>
+		<German>Preah Srei</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM3</Tag>
@@ -1327,9 +1325,9 @@
 		<Spanish>Propagar el Budismo al 30%</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KHM3_TITLE</Tag>
-		<English>Preah Srei</English>
-		<German>Preah Srei</German>
+		<Tag>TXT_KEY_UHV_KON1_TITLE</Tag>
+		<English>Catholic Congo</English>
+		<German>Katholisches Kongo</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KON1</Tag>
@@ -1337,9 +1335,9 @@
 		<German>Erreichen sie bis zum Jahr 1650 n. Chr. 15% der Stimmen im Apostolischen Palast</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON1_TITLE</Tag>
-		<English>Catholic Congo</English>
-		<German>Katholisches Kongo</German>
+		<Tag>TXT_KEY_UHV_KON2_TITLE</Tag>
+		<English>The Middle Passage</English>
+		<German>Die Mittlere Passage</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KON2</Tag>
@@ -1357,9 +1355,9 @@
 		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 4500 Gold durch Sklavenhandel</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON2_TITLE</Tag>
-		<English>The Middle Passage</English>
-		<German>Die Mittlere Passage</German>
+		<Tag>TXT_KEY_UHV_KON3_TITLE</Tag>
+		<English>Industrial Africa</English>
+		<German>Industrielles Afrika</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KON3</Tag>
@@ -1367,9 +1365,9 @@
 		<German>Erreichen sie das Industriezeitalter, bevor irgendjemand die Moderne erreicht</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON3_TITLE</Tag>
-		<English>Industrial Africa</English>
-		<German>Industrielles Afrika</German>
+		<Tag>TXT_KEY_UHV_KOR1_TITLE</Tag>
+		<English>Palman Daejanggyeong and Gukjagam</English>
+		<German>Palman Daejanggyeong und Gukjagam</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR1</Tag>
@@ -1377,9 +1375,9 @@
 		<German>Bauen Sie eine Buddhistische Stupa und eine Konfuzianische Akademie bis zum Jahr 1200 n. Chr.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR1_TITLE</Tag>
-		<English>Palman Daejanggyeong and Gukjagam</English>
-		<German>Palman Daejanggyeong und Gukjagam</German>
+		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
+		<English>Choe Yun-ui</English>
+		<German>Choe Yun-ui</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR2</Tag>
@@ -1387,9 +1385,9 @@
 		<German>Erforschen Sie als Erster die Druckerpresse</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
-		<English>Choe Yun-ui</English>
-		<German>Choe Yun-ui</German>
+		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
+		<English>Yi Sun-sin</English>
+		<German>Yi Sun-sin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR3</Tag>
@@ -1397,9 +1395,9 @@
 		<German>Versenken Sie 20 gegnerische Schiffe</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
-		<English>Yi Sun-sin</English>
-		<German>Yi Sun-sin</German>
+		<Tag>TXT_KEY_UHV_MAL1_TITLE</Tag>
+		<English>The Great Hajj</English>
+		<German>Die gro&#223;e Hadsch</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL1</Tag>
@@ -1410,9 +1408,9 @@
 		<Spanish>Tener m&#225;s oro que nadie en el 1300 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MAL1_TITLE</Tag>
-		<English>The Great Hajj</English>
-		<German>Die gro&#223;e Hadsch</German>
+		<Tag>TXT_KEY_UHV_MAL2_TITLE</Tag>
+		<English>The Madrassah of Timbuktu</English>
+		<German>Die Madrasah von Timbuktu</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL2</Tag>
@@ -1423,9 +1421,9 @@
 		<Spanish>Tener 4.000 monedas de oro en el 1500 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MAL2_TITLE</Tag>
-		<English>The Madrassah of Timbuktu</English>
-		<German>Die Madrasah von Timbuktu</German>
+		<Tag>TXT_KEY_UHV_MAL3_TITLE</Tag>
+		<English>Caravans of the Sahara</English>
+		<German>Karawanen der Sahara</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAL3</Tag>
@@ -1452,9 +1450,9 @@
 		<Spanish>Tener 16.000 monedas de oro en el 1700 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MAL3_TITLE</Tag>
-		<English>Caravans of the Sahara</English>
-		<German>Karawanen der Sahara</German>
+		<Tag>TXT_KEY_UHV_MAY1_TITLE</Tag>
+		<English>The Sun</English>
+		<German>Die Sonne</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY1</Tag>
@@ -1489,9 +1487,9 @@
 		<Spanish>Descubrir el Calendario antes del 600 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MAY1_TITLE</Tag>
-		<English>The Sun</English>
-		<German>Die Sonne</German>
+		<Tag>TXT_KEY_UHV_MAY2_TITLE</Tag>
+		<English>The Gods</English>
+		<German>Die G&#246;tter</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY2</Tag>
@@ -1502,9 +1500,9 @@
 		<Spanish>Construir el Templo de Kukulc&#225;n antes del 900 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MAY2_TITLE</Tag>
-		<English>The Gods</English>
-		<German>Die G&#246;tter</German>
+		<Tag>TXT_KEY_UHV_MAY3_TITLE</Tag>
+		<English>The Stars</English>
+		<German>Die Sterne</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MAY3</Tag>
@@ -1515,9 +1513,9 @@
 		<Spanish>No perder una ciudad antes del 1745 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MAY3_TITLE</Tag>
-		<English>The Stars</English>
-		<German>Die Sterne</German>
+		<Tag>TXT_KEY_UHV_MEX1_TITLE</Tag>
+		<English>Church and State</English>
+		<German>Kirche und Staat</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX1</Tag>
@@ -1525,9 +1523,9 @@
 		<German>Bauen Sie bis zum Jahr 1880 n. Chr. drei Kathedralen Ihrer Staatsreligion</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MEX1_TITLE</Tag>
-		<English>Church and State</English>
-		<German>Kirche und Staat</German>
+		<Tag>TXT_KEY_UHV_MEX2_TITLE</Tag>
+		<English>Revolutionary Leaders</English>
+		<German>Revolutionsf&#252;hrer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX2</Tag>
@@ -1535,9 +1533,9 @@
 		<German>Erstellen Sie bis zum Jahr 1940 n. Chr. drei Gro&#223;e Gener&#228;le</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MEX2_TITLE</Tag>
-		<English>Revolutionary Leaders</English>
-		<German>Revolutionsf&#252;hrer</German>
+		<Tag>TXT_KEY_UHV_MEX3_TITLE</Tag>
+		<English>The City of Palaces</English>
+		<German>Die Stadt der Pal&#228;ste</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MEX3</Tag>
@@ -1545,9 +1543,9 @@
 		<German>Machen Sie Mexico-Stadt im Jahr 1960 n. Chr. zur gr&#246;&#223;ten Stadt der Welt</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MEX3_TITLE</Tag>
-		<English>The City of Palaces</English>
-		<German>Die Stadt der Pal&#228;ste</German>
+		<Tag>TXT_KEY_UHV_MON1_TITLE</Tag>
+		<English>The Yuan Dynasty</English>
+		<German>Die Yuan-Dynastie</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MON1</Tag>
@@ -1558,9 +1556,9 @@
 		<Spanish>Controlar China en el 1300 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MON1_TITLE</Tag>
-		<English>The Yuan Dynasty</English>
-		<German>Die Yuan-Dynastie</German>
+		<Tag>TXT_KEY_UHV_MON2_TITLE</Tag>
+		<English>The Scourge of God</English>
+		<German>Die Gei&#223;el Gottes</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MON2</Tag>
@@ -1571,9 +1569,9 @@
 		<Spanish>Arrasar al menos 7 ciudades</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MON2_TITLE</Tag>
-		<English>The Scourge of God</English>
-		<German>Die Gei&#223;el Gottes</German>
+		<Tag>TXT_KEY_UHV_MON3_TITLE</Tag>
+		<English>Pax Mongolica</English>
+		<German>Pax Mongolica</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MON3</Tag>
@@ -1584,9 +1582,9 @@
 		<Spanish>Controlar el 12% del territorio mundial en el 1500 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MON3_TITLE</Tag>
-		<English>Pax Mongolica</English>
-		<German>Pax Mongolica</German>
+		<Tag>TXT_KEY_UHV_MOO1_TITLE</Tag>
+		<English>Caliphate of Al-Andalus</English>
+		<German>Kaliphat von Al-Andalus</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO1</Tag>
@@ -1594,9 +1592,9 @@
 		<German>Kontrollieren Sie im Jahr 1200 n. Chr. drei St&#228;dte in Iberien, dem Maghreb und Westafrika</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MOO1_TITLE</Tag>
-		<English>Caliphate of Al-Andalus</English>
-		<German>Kaliphat von Al-Andalus</German>
+		<Tag>TXT_KEY_UHV_MOO2_TITLE</Tag>
+		<English>Jewel of the World</English>
+		<German>Juwel der Welt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO2</Tag>
@@ -1604,9 +1602,9 @@
 		<German>Siedeln Sie bis zum Jahr 1300 n. Chr. insgesamt f&#252;nf gro&#223;e Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MOO2_TITLE</Tag>
-		<English>Jewel of the World</English>
-		<German>Juwel der Welt</German>
+		<Tag>TXT_KEY_UHV_MOO3_TITLE</Tag>
+		<English>Barbary Corsairs</English>
+		<German>Korsaren der Barbareskenk&#252;ste</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MOO3</Tag>
@@ -1624,9 +1622,9 @@
 		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 9000 Gold durch Piraterie</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MOO3_TITLE</Tag>
-		<English>Barbary Corsairs</English>
-		<German>Korsaren der Barbareskenk&#252;ste</German>
+		<Tag>TXT_KEY_UHV_MUG1_TITLE</Tag>
+		<English>Muhammad ibn Tughluq</English>
+		<German>Muhammad ibn Tughluq</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1</Tag>
@@ -1634,9 +1632,9 @@
 		<German>Bauen Sie drei Islamische Moscheen bis zum Jahr 1500 n. Chr.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MUG1_TITLE</Tag>
-		<English>Muhammad ibn Tughluq</English>
-		<German>Muhammad ibn Tughluq</German>
+		<Tag>TXT_KEY_UHV_MUG2_TITLE</Tag>
+		<English>Shah Akbar</English>
+		<German>Schah Akbar</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2</Tag>
@@ -1644,9 +1642,9 @@
 		<German>Vollenden Sie bis zum Jahr 1660 n. Chr. das Rote Fort, Harmandir Sahib und den Taj Mahal.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MUG2_TITLE</Tag>
-		<English>Shah Akbar</English>
-		<German>Schah Akbar</German>
+		<Tag>TXT_KEY_UHV_MUG3_TITLE</Tag>
+		<English>Shah Jahan</English>
+		<German>Schah Dschahan</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG3</Tag>
@@ -1664,9 +1662,9 @@
 		<German>Haben Sie mehr als 150000 Kulturpunkte im Jahr 1750 n. Chr.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_MUG3_TITLE</Tag>
-		<English>Shah Jahan</English>
-		<German>Schah Dschahan</German>
+		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
+		<English>The First Empire</English>
+		<German>Das erste Gro&#223;reich</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER1</Tag>
@@ -1701,9 +1699,9 @@
 		<Spanish>Controlar el 8% del territorio mundial antes del 140 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
-		<English>The First Empire</English>
-		<German>Das erste Gro&#223;reich</German>
+		<Tag>TXT_KEY_UHV_PER2_TITLE</Tag>
+		<English>Seven Wonders of the World</English>
+		<German>Die Sieben Weltwunder</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER2</Tag>
@@ -1738,9 +1736,9 @@
 		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PER2_TITLE</Tag>
-		<English>Seven Wonders of the World</English>
-		<German>Die Sieben Weltwunder</German>
+		<Tag>TXT_KEY_UHV_PER3_TITLE</Tag>
+		<English>Land of Religions</English>
+		<German>Land der Religionen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PER3</Tag>
@@ -1775,9 +1773,9 @@
 		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PER3_TITLE</Tag>
-		<English>Land of Religions</English>
-		<German>Land der Religionen</German>
+		<Tag>TXT_KEY_UHV_PLY1_TITLE</Tag>
+		<English>Oceanic Navigators</English>
+		<German></German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY1</Tag>
@@ -1785,8 +1783,8 @@
 		<German>Besiedeln Sie bis zum Jahr 800 n. Chr. die folgenden Inselgruppen: Hawaii, Neuseeland, Marquesas und die Osterinsel</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PLY1_TITLE</Tag>
-		<English>Oceanic Navigators</English>
+		<Tag>TXT_KEY_UHV_PLY2_TITLE</Tag>
+		<English>The Polynesian Triangle</English>
 		<German></German>
 	</TEXT>
 	<TEXT>
@@ -1795,8 +1793,8 @@
 		<German>Besiedeln Sie bis zum Jahr 1000 n. Chr. Hawaii, Neuseeland, Marquesas und die Osterinsel</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PLY2_TITLE</Tag>
-		<English>The Polynesian Triangle</English>
+		<Tag>TXT_KEY_UHV_PLY3_TITLE</Tag>
+		<English>Rano Raraku</English>
 		<German></German>
 	</TEXT>
 	<TEXT>
@@ -1805,9 +1803,9 @@
 		<German>Bauen Sie bis zum Jahr 1200 n. Chr. die Moai-Statuen</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_PLY3_TITLE</Tag>
-		<English>Rano Raraku</English>
-		<German></German>
+		<Tag>TXT_KEY_UHV_POL1_TITLE</Tag>
+		<English>The Folwark System</English>
+		<German>Das Folwark-System</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL1</Tag>
@@ -1815,9 +1813,9 @@
 		<German>Haben Sie bis zum Jahr 1400 n. Chr. drei St&#228;dte mit mindestens Gr&#246;&#223;e 12</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_POL1_TITLE</Tag>
-		<English>The Folwark System</English>
-		<German>Das Folwark-System</German>
+		<Tag>TXT_KEY_UHV_POL2_TITLE</Tag>
+		<English>Golden Liberty</English>
+		<German>Goldene Freiheit</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL2</Tag>
@@ -1825,9 +1823,9 @@
 		<German>Entdecken Sie als erster den Liberalismus</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_POL2_TITLE</Tag>
-		<English>Golden Liberty</English>
-		<German>Goldene Freiheit</German>
+		<Tag>TXT_KEY_UHV_POL3_TITLE</Tag>
+		<English>The Commonwealth</English>
+		<German>Die Adelsrepublik</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POL3</Tag>
@@ -1835,9 +1833,9 @@
 		<German>Bauen Sie bis zum Jahr 1600 n. Chr. drei christliche Kathedralen</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_POL3_TITLE</Tag>
-		<English>The Commonwealth</English>
-		<German>Die Adelsrepublik</German>
+		<Tag>TXT_KEY_UHV_POR1_TITLE</Tag>
+		<English>Cartaz</English>
+		<German>Cartaz</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR1</Tag>
@@ -1848,9 +1846,9 @@
 		<Spanish>Tener un acuerdo de apertura de fronteras con otras 14 civilizaciones en el 1550 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_POR1_TITLE</Tag>
-		<English>Cartaz</English>
-		<German>Cartaz</German>
+		<Tag>TXT_KEY_UHV_POR2_TITLE</Tag>
+		<English>Age of Discovery</English>
+		<German>Zeitalter der Entdeckungen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR2</Tag>
@@ -1861,9 +1859,9 @@
 		<Spanish>Ser la civilizaci&#243;n con m&#225;s terreno del mapa revelado en el 1500 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_POR2_TITLE</Tag>
-		<English>Age of Discovery</English>
-		<German>Zeitalter der Entdeckungen</German>
+		<Tag>TXT_KEY_UHV_POR3_TITLE</Tag>
+		<English>Treaty of Tordesilhas</English>
+		<German>Vertrag von Tordesilhas</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR3</Tag>
@@ -1874,9 +1872,9 @@
 		<Spanish>Fundar 15 colonias fuera de Europa</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_POR3_TITLE</Tag>
-		<English>Treaty of Tordesilhas</English>
-		<German>Vertrag von Tordesilhas</German>
+		<Tag>TXT_KEY_UHV_ROM1_TITLE</Tag>
+		<English>Bread and Circuses</English>
+		<German>Brot und Spiele</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM1</Tag>
@@ -1911,9 +1909,9 @@
 		<Spanish>Construir 5 cuarteles, 5 acueductos y 5 anfiteatros antes del 200 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM1_TITLE</Tag>
-		<English>Bread and Circuses</English>
-		<German>Brot und Spiele</German>
+		<Tag>TXT_KEY_UHV_ROM2_TITLE</Tag>
+		<English>Pax Romana</English>
+		<German>Pax Romana</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2</Tag>
@@ -1948,9 +1946,9 @@
 		<Spanish>Controlar toda la zona conocida hist&#243;ricamente como Imperio Romano de occidente en el 470 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM2_TITLE</Tag>
-		<English>Pax Romana</English>
-		<German>Pax Romana</German>
+		<Tag>TXT_KEY_UHV_ROM3_TITLE</Tag>
+		<English>Classical Scholarship</English>
+		<German>Klassisches Gelehrtentum</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3</Tag>
@@ -1961,9 +1959,9 @@
 		<Spanish>No perder una ciudad a manos de los b&#225;rbaros antes del 1000 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_ROM3_TITLE</Tag>
-		<English>Classical Scholarship</English>
-		<German>Klassisches Gelehrtentum</German>
+		<Tag>TXT_KEY_UHV_RUS1_TITLE</Tag>
+		<English>Eastward Expansion</English>
+		<German>Expansion nach Osten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS1</Tag>
@@ -1974,9 +1972,9 @@
 		<Spanish>Colonizar Siberia (7 ciudades) antes del 1700 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_RUS1_TITLE</Tag>
-		<English>Eastward Expansion</English>
-		<German>Expansion nach Osten</German>
+		<Tag>TXT_KEY_UHV_RUS2_TITLE</Tag>
+		<English>The Cold War</English>
+		<German>Der Kalte Krieg</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS2</Tag>
@@ -1987,11 +1985,11 @@
 		<Spanish>Concluir el Programa Apollo antes del 1950 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_RUS2_TITLE</Tag>
-		<English>The Cold War</English>
-		<German>Der Kalte Krieg</German>
-	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_RUS3_TITLE</Tag>
+		<English>The Iron Curtain</English>
+		<German>Der Eiserne Vorhang</German>
+	</TEXT>
 		<Tag>TXT_KEY_UHV_RUS3</Tag>
 		<English>Have friendly relations with 5 communist civilisations by 1950 AD</English>
 		<French>Ne perdre aucune ville avant 1950 ap. J.-C.</French>
@@ -2000,9 +1998,9 @@
 		<Spanish>No perder una ciudad hasta el 1950 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_RUS3_TITLE</Tag>
-		<English>The Iron Curtain</English>
-		<German>Der Eiserne Vorhang</German>
+		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
+		<English>Plus Ultra</English>
+		<German>Plus Ultra</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA1</Tag>
@@ -2013,9 +2011,9 @@
 		<Spanish>Ser el primero en fundar una ciudad en Am&#233;rica</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
-		<English>Plus Ultra</English>
-		<German>Plus Ultra</German>
+		<Tag>TXT_KEY_UHV_SPA2_TITLE</Tag>
+		<English>The Treasure Fleet</English>
+		<German>Die Schatzflotte</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA2</Tag>
@@ -2026,9 +2024,9 @@
 		<Spanish>Controlar todo el territorio azteca e inca en el 1700 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_SPA2_TITLE</Tag>
-		<English>The Treasure Fleet</English>
-		<German>Die Schatzflotte</German>
+		<Tag>TXT_KEY_UHV_SPA3_TITLE</Tag>
+		<English>Soldiers of God</English>
+		<German>Soldaten Gottes</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA3</Tag>
@@ -2039,9 +2037,9 @@
 		<Spanish>Asegurarse de que no haya ciudades inglesas, francesas o holandesas en Am&#233;rica en el 1700 d.C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_SPA3_TITLE</Tag>
-		<English>Soldiers of God</English>
-		<German>Soldaten Gottes</German>
+		<Tag>TXT_KEY_UHV_TAM1_TITLE</Tag>
+		<English>The Sangam Period</English>
+		<German>Die Sangam-&#196;ra</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1</Tag>
@@ -2059,9 +2057,9 @@
 		<German>Haben Sie im Jahr 800 n. Chr. 9000 Gold und 6000 Kultur</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TAM1_TITLE</Tag>
-		<English>The Sangam Period</English>
-		<German>Die Sangam-&#196;ra</German>
+		<Tag>TXT_KEY_UHV_TAM2_TITLE</Tag>
+		<English>The Chola Empire</English>
+		<German>Das Chola-Reich</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM2</Tag>
@@ -2069,9 +2067,9 @@
 		<German>Kontrollieren Sie im Jahr 1000 n. Chr. Srivijaya und den Dekkan direkt oder per Vasall</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TAM2_TITLE</Tag>
-		<English>The Chola Empire</English>
-		<German>Das Chola-Reich</German>
+		<Tag>TXT_KEY_UHV_TAM3_TITLE</Tag>
+		<English>Indian Ocean Trade</English>
+		<German>Der Indische Ozean-Handel</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM3</Tag>
@@ -2089,9 +2087,9 @@
 		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 12000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TAM3_TITLE</Tag>
-		<English>Indian Ocean Trade</English>
-		<German>Der Indische Ozean-Handel</German>
+		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
+		<English>The King and I</English>
+		<German>Der K&#246;nig und ich</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA1</Tag>
@@ -2099,9 +2097,9 @@
 		<German>Haben Sie bis zum Jahr 1650 n. Chr. offene Grenzen mit 10 Zivilisationen</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
-		<English>The King and I</English>
-		<German>Der K&#246;nig und ich</German>
+		<Tag>TXT_KEY_UHV_THA2_TITLE</Tag>
+		<English>Venice of the East</English>
+		<German>Venedig des Ostens</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA2</Tag>
@@ -2109,9 +2107,9 @@
 		<German>Machen Sie Ayutthaya zur bev&#246;lkerungsreichsten Stadt der Welt im Jahr 1700 n. Chr.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_THA2_TITLE</Tag>
-		<English>Venice of the East</English>
-		<German>Venedig des Ostens</German>
+		<Tag>TXT_KEY_UHV_THA3_TITLE</Tag>
+		<English>The Circle of Power</English>
+		<German>Der Kreis der Macht</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_THA3</Tag>
@@ -2119,9 +2117,9 @@
 		<German>Lassen Sie im Jahr 1900 n. Chr. keine ausl&#228;ndischen M&#228;chte im s&#252;dlichen Asien zu</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_THA3_TITLE</Tag>
-		<English>The Circle of Power</English>
-		<German>Der Kreis der Macht</German>
+		<Tag>TXT_KEY_UHV_TIB1_TITLE</Tag>
+		<English>The Tibetan Empire</English>
+		<German>Das tibetanische Reich</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB1</Tag>
@@ -2129,9 +2127,9 @@
 		<German>Erlangen Sie bis zum Jahr 1000 n. Chr. 5 St&#228;dte</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TIB1_TITLE</Tag>
-		<English>The Tibetan Empire</English>
-		<German>Das tibetanische Reich</German>
+		<Tag>TXT_KEY_UHV_TIB2_TITLE</Tag>
+		<English>Tibetan Buddhism</English>
+		<German>Tibetan Buddhism</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB2</Tag>
@@ -2139,9 +2137,9 @@
 		<German>Verbreiten Sie bis zum Jahr 1400 n. Chr. den Buddhismus auf 30%</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TIB2_TITLE</Tag>
-		<English>Tibetan Buddhism</English>
-		<German>Tibetan Buddhism</German>
+		<Tag>TXT_KEY_UHV_TIB3_TITLE</Tag>
+		<English>The Dalai Lamas</English>
+		<German>Die Dalai Lamas</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB3</Tag>
@@ -2149,9 +2147,9 @@
 		<German>Siedeln Sie bis zum Jahr 1700 n. Chr. 5 gro&#223;e Propheten in Lhasa an</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TIB3_TITLE</Tag>
-		<English>The Dalai Lamas</English>
-		<German>Die Dalai Lamas</German>
+		<Tag>TXT_KEY_UHV_TUR1_TITLE</Tag>
+		<English>The Golden Apple</English>
+		<German>Der Goldene Apfel</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR1</Tag>
@@ -2162,9 +2160,9 @@
 		<Spanish>Controlar el B&#243;sforo (el estrecho de Estambul) en el 1500 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TUR1_TITLE</Tag>
-		<English>The Golden Apple</English>
-		<German>Der Goldene Apfel</German>
+		<Tag>TXT_KEY_UHV_TUR2_TITLE</Tag>
+		<English>Empire on three Continents</English>
+		<German>Reich der drei Kontinente</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR2</Tag>
@@ -2175,9 +2173,9 @@
 		<Spanish>Controlar los Balcanes, el Mar Negro y Mesopotamia en el 1700 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TUR2_TITLE</Tag>
-		<English>Empire on three Continents</English>
-		<German>Reich der drei Kontinente</German>
+		<Tag>TXT_KEY_UHV_TUR3_TITLE</Tag>
+		<English>The Tulip Period</English>
+		<German>Die Tulpen-&#196;ra</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TUR3</Tag>
@@ -2188,9 +2186,9 @@
 		<Spanish>Tener al menos tres estados vasallos en el 1870 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_TUR3_TITLE</Tag>
-		<English>The Tulip Period</English>
-		<German>Die Tulpen-&#196;ra</German>
+		<Tag>TXT_KEY_UHV_VIK1_TITLE</Tag>
+		<English>Norman Conquests</English>
+		<German>Normannische Eroberungen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK1</Tag>
@@ -2201,9 +2199,9 @@
 		<Spanish>Tener 5.000 monedas de oro en el 1500 d. C.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_VIK1_TITLE</Tag>
-		<English>Norman Conquests</English>
-		<German>Normannische Eroberungen</German>
+		<Tag>TXT_KEY_UHV_VIK2_TITLE</Tag>
+		<English>Vinland Saga</English>
+		<German>Die Vinland-Saga</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK2</Tag>
@@ -2214,9 +2212,9 @@
 		<Spanish>Hundir 25 barcos</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_VIK2_TITLE</Tag>
-		<English>Vinland Saga</English>
-		<German>Die Vinland-Saga</German>
+		<Tag>TXT_KEY_UHV_VIK3_TITLE</Tag>
+		<English>Danegeld</English>
+		<German>Danegeld</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3</Tag>
@@ -2243,11 +2241,6 @@
 		<Spanish>Ser el primero en fundar una ciudad en Am&#233;rica</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_VIK3_TITLE</Tag>
-		<English>Danegeld</English>
-		<German>Danegeld</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>
 		<English>Sila: Be at peace for 100 turns</English>
 		<German>Sila: Haben Sie 100 Runden lang Frieden</German>
@@ -2261,11 +2254,6 @@
 		<Tag>TXT_KEY_URV_BUD1_MARATHON</Tag>
 		<English>Sila: Be at peace for 300 turns</English>
 		<German>Sila: Haben Sie 300 Runden lang Frieden</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_BUD2</Tag>
-		<English>Nirvana: Have the highest approval rating in the world for 100 turns</English>
-		<German>Nirwana: Haben Sie 100 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD2_EPIC</Tag>
