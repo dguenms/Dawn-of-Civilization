@@ -2256,6 +2256,11 @@
 		<German>Sila: Haben Sie 300 Runden lang Frieden</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_BUD2</Tag>
+		<English>Nirvana: Have the highest approval rating in the world for 100 turns</English>
+		<German>Nirwana: Haben Sie 100 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_BUD2_EPIC</Tag>
 		<English>Nirvana: Have the highest approval rating in the world for 150 turns</English>
 		<German>Nirwana: Haben Sie 150 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
