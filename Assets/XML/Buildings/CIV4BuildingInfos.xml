@@ -1990,6 +1990,7 @@
 			<Strategy>TXT_KEY_BUILDING_ARABIAN_MADRASSA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ARABIAN_MADRASSA</ArtDefineTag>
+			<ReligionType>RELIGION_ISLAM</ReligionType>
 			<FreeStartEra>ERA_MODERN</FreeStartEra>
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
