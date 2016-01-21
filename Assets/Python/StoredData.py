@@ -6,7 +6,6 @@ import PyHelpers
 import Popup
 import cPickle as pickle
 import Consts as con
-from WarStatus import WarStatus
 
 # globals
 gc = CyGlobalContext()
@@ -19,13 +18,11 @@ class StoredData:
 
         def load(self):
                 """Loads and unpickles script data"""
-                self.scriptDict = pickle.loads(gc.getPlayer(con.iBarbarian).getScriptData())
-		#self.scriptDict = dict(BugData.getTable("StoredData").data)
+                self.scriptDict.update(pickle.loads(gc.getPlayer(con.iBarbarian).getScriptData()))
 
         def save(self):
                 """Pickles and saves script data"""
 		gc.getPlayer(con.iBarbarian).setScriptData(pickle.dumps(self.scriptDict))
-		#BugData.getTable("StoredData").setData(self.scriptDict)
 
         def setup(self):
                 """Initialise the global script data dictionary for usage."""
