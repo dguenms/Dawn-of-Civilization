@@ -230,6 +230,7 @@
 				</SpecialistCount>
 			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
+			<BonusProductionModifiers/>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
@@ -1758,6 +1759,7 @@
 			<Strategy>TXT_KEY_BUILDING_INDONESIAN_CANDI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INDONESIAN_CANDI</ArtDefineTag>
+			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
@@ -1796,6 +1798,7 @@
 			<Strategy>TXT_KEY_BUILDING_INDIAN_EDICT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INDIAN_EDICT</ArtDefineTag>
+			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
@@ -1831,6 +1834,7 @@
 			<Strategy>TXT_KEY_BUILDING_SUMERIAN_ZIGGURAT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SUMERIAN_ZIGGURAT</ArtDefineTag>
+			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_POLYTHEISM</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
@@ -1870,7 +1874,7 @@
 			<Strategy>TXT_KEY_BUILDING_NATIVE_AMERICA_TOTEM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIVE_AMERICA_TOTEM</ArtDefineTag>
-			<ObsoleteTech>TECH_CALENDAR</ObsoleteTech>
+			<ObsoleteTech>TECH_DIVINE_RIGHT</ObsoleteTech>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
@@ -2306,6 +2310,7 @@
 				</FreeSpecialistCount>
 			</FreeSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_UNIVERSITY</ConstructSound>
+			<BuildingClassNeededs/>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
@@ -10077,6 +10082,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
+			<iMinLatitude>0</iMinLatitude>
 			<iMaxLatitude>30</iMaxLatitude>
 			<iGlobalSpaceProductionModifier>50</iGlobalSpaceProductionModifier>
 			<iAsset>20</iAsset>
