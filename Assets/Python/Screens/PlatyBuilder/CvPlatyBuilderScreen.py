@@ -1625,10 +1625,6 @@ class CvWorldBuilderScreen:
 
 	def showStabilityOverlay(self):
 		utils.toggleStabilityOverlay(self.m_iCurrentPlayer)
-						
-	def deleteOverLay(self):
-		for i in range(5):
-			CyEngine().clearAreaBorderPlots(1000+i)
 
 	def Exit(self):
 		CyInterface().setWorldBuilder(False)
@@ -1910,9 +1906,6 @@ class CvWorldBuilderScreen:
 		global bHideInactive
 		global iSetValue
 
-		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED:
-			CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS+10)
-
 		if inputClass.getFunctionName() == "WorldBuilderEraseAll":
 			for i in xrange(CyMap().numPlots()):
 				self.m_pCurrentPlot = CyMap().plotByIndex(i)
@@ -2120,7 +2113,7 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "WorldBuilderConvertSave":
 			import ConvertSave
 			
-		if inputClass.getFunctionName() not in ["CoreButton", "SettlerValueButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight"]:
-			self.deleteOverLay()
+		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() not in ["CoreButton", "SettlerValueButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight"]:
+			utils.removeStabilityOverlay()
 		
 		return 1

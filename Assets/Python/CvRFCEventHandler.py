@@ -844,5 +844,5 @@ class CvRFCEventHandler:
                         print("SHIFT-ALT-S") #increases stability by one level
 			utils.setStabilityLevel(utils.getHumanID(), min(5, utils.getStabilityLevel(utils.getHumanID()) + 1))
 			
-		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_W) and self.eventManager.bCtrl:
-			CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS+10) # Remove AI forbidden area overlay when exiting WB by ctrl+b
+		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_W) and self.eventManager.bCtrl and CyGame().GetWorldBuilderMode():
+			utils.removeStabilityOverlay() # Remove AI forbidden area overlay when exiting WB by ctrl+w
