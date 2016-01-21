@@ -1961,10 +1961,8 @@ class RFCUtils:
 		else:
 			bWB = True
 			
-		# clear the highlight
-		for i in range(con.iNumPlotStabilityTypes):
-			engine.clearAreaBorderPlots(1000+i)
-
+		self.removeStabilityOverlay()
+			
 		if self.bStabilityOverlay and not bWB:
 			self.bStabilityOverlay = False
 			CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
@@ -1999,6 +1997,11 @@ class RFCUtils:
 				if iPlotType != -1:
 					szColor = con.lStabilityColors[iPlotType]
 					engine.fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType, szColor, 0.7)
-
+					
+	def removeStabilityOverlay(self):
+		engine = CyEngine()
+		# clear the highlight
+		for i in range(con.iNumPlotStabilityTypes):
+			engine.clearAreaBorderPlots(1000+i)
 
 utils = RFCUtils()
