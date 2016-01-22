@@ -4,12 +4,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV__TITLE</Tag>
 		<English></English>
+		<French></French>
 		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_</Tag>
 		<English></English>
+		<French></French>
 		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GOALS</Tag>
@@ -80,7 +86,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARA3_TITLE</Tag>
 		<English>Dawah</English>
-		<German>Dawah</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARA3</Tag>
@@ -269,7 +274,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA2_TITLE</Tag>
 		<English>Maracana, Cristo Redentor, Itaipu</English>
-		<German>Maracana, Cristo Redentor, Itaipu</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA2</Tag>
@@ -279,7 +283,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA3_TITLE</Tag>
 		<English>Pindorama</English>
-		<German>Pindorama</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BRA3</Tag>
@@ -518,7 +521,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_COL3_TITLE</Tag>
 		<English>Auge del Caf&#233;</English>
-		<German>Auge del Caf&#233;</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_COL3</Tag>
@@ -638,7 +640,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG2_TITLE</Tag>
 		<English>Britannia Rule the Waves</English>
-		<German>Britannia Rule the Waves</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG2</Tag>
@@ -719,7 +720,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1_TITLE</Tag>
 		<English>Ancien Regime</English>
-		<German>Ancien Regime</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_FRA1</Tag>
@@ -774,7 +774,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GER1_TITLE</Tag>
 		<English>Dichter und Denker</English>
-		<German>Dichter und Denker</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GER1</Tag>
@@ -787,7 +786,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GER2_TITLE</Tag>
 		<English>Lebensraum</English>
-		<German>Lebensraum</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GER2</Tag>
@@ -800,7 +798,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GER3_TITLE</Tag>
 		<English>Vorsprung durch Technik</English>
-		<German>Vorsprung durch Technik</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GER3</Tag>
@@ -892,7 +889,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR1_TITLE</Tag>
 		<English>Trade Networks</English>
-		<German></German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR1</Tag>
@@ -902,7 +898,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR2_TITLE</Tag>
 		<English>Architecture</English>
-		<German></German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR2</Tag>
@@ -912,7 +907,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR3_TITLE</Tag>
 		<English>Urban Planning</English>
-		<German></German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR3</Tag>
@@ -961,7 +955,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1_TITLE</Tag>
 		<English>Translatio Imperii</English>
-		<German>Translatio Imperii</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1</Tag>
@@ -1004,7 +997,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC2_TITLE</Tag>
 		<English>Sierra de la Plata</English>
-		<German>Sierra de la Plata</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_INC2</Tag>
@@ -1191,7 +1183,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA3_TITLE</Tag>
 		<English>Mare Nostrum</English>
-		<German>Mare Nostrum</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ITA3</Tag>
@@ -1256,7 +1247,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM1_TITLE</Tag>
 		<English>Angkor Wat</English>
-		<German>Angkor Wat</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM1</Tag>
@@ -1285,7 +1275,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM2_TITLE</Tag>
 		<English>Thom Baray</English>
-		<German>Thom Baray</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM2</Tag>
@@ -1298,7 +1287,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM3_TITLE</Tag>
 		<English>Preah Srei</English>
-		<German>Preah Srei</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM3</Tag>
@@ -1377,7 +1365,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
 		<English>Choe Yun-ui</English>
-		<German>Choe Yun-ui</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR2</Tag>
@@ -1387,7 +1374,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
 		<English>Yi Sun-sin</English>
-		<German>Yi Sun-sin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR3</Tag>
@@ -1571,7 +1557,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MON3_TITLE</Tag>
 		<English>Pax Mongolica</English>
-		<German>Pax Mongolica</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MON3</Tag>
@@ -1624,7 +1609,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1_TITLE</Tag>
 		<English>Muhammad ibn Tughluq</English>
-		<German>Muhammad ibn Tughluq</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1</Tag>
@@ -1775,7 +1759,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY1_TITLE</Tag>
 		<English>Oceanic Navigators</English>
-		<German></German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY1</Tag>
@@ -1785,7 +1768,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY2_TITLE</Tag>
 		<English>The Polynesian Triangle</English>
-		<German></German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY2</Tag>
@@ -1795,7 +1777,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY3_TITLE</Tag>
 		<English>Rano Raraku</English>
-		<German></German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_PLY3</Tag>
@@ -1835,7 +1816,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR1_TITLE</Tag>
 		<English>Cartaz</English>
-		<German>Cartaz</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_POR1</Tag>
@@ -1911,7 +1891,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_TITLE</Tag>
 		<English>Pax Romana</English>
-		<German>Pax Romana</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2</Tag>
@@ -2000,7 +1979,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
 		<English>Plus Ultra</English>
-		<German>Plus Ultra</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA1</Tag>
@@ -2129,7 +2107,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB2_TITLE</Tag>
 		<English>Tibetan Buddhism</English>
-		<German>Tibetan Buddhism</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB2</Tag>
@@ -2214,7 +2191,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3_TITLE</Tag>
 		<English>Danegeld</English>
-		<German>Danegeld</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_VIK3</Tag>
@@ -3195,8 +3171,6 @@
 		<English>NO</English>
 		<French>NON</French>
 		<German>NEIN</German>
-		<Italian>NO</Italian>
-		<Spanish>NO</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SCREEN_NOTYET</Tag>

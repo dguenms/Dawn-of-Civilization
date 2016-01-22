@@ -100,11 +100,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_BASIL</Tag>
-		<French>
-			<Text>Basil II</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
+		<English>Basil II</English>
 		<German>Basileios II.</German>
 		<Italian>
 			<Text>Basilio II</Text>
@@ -340,7 +336,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_KRISHNA_DEVA_RAYA</Tag>
 		<English>Krishna Deva Raya</English>
-		<German>Krishna Deva Raya</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_LOBSANG_GYATSO</Tag>

@@ -55,7 +55,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOROBUDUR</Tag>
 		<English>Borobudur</English>
-		<German>Borobudur</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BOROBUDUR_STRATEGY</Tag>
@@ -347,7 +346,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Tag>
 		<English>Harmandir Sahib</English>
-		<German>Harmandir Sahib</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARMANDIR_SAHIB_STRATEGY</Tag>
@@ -417,7 +415,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_SHRINE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Masjid al-Haram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>	<TEXT>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KREMLIN</Tag>
 		<English>St. Basil's Cathedral</English>
 		<German>
