@@ -213,6 +213,70 @@
 		<Spanish>Pod?is iros al cuerno.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_REFUSE_TO_TALK_LEADER_NATIVE_1</Tag>
+		<English>Your words are but the grunts of a diseased pig, [CT_NAME]. I do not hear them.</English>
+		<French>Vos paroles sonnent &#224; mes oreilles tels d'horribles grognements d'un porc agonisant, [CT_NAME]. Je ne les &#233;couterai pas plus longtemps.</French>
+		<German>Ihr sprecht mit gespaltener Zunge, [CT_NAME], und ich will es nicht hören!</German>
+		<Italian>Le tue parole risuonano come i grugniti di un maiale morente, [CT_NAME]. Un rumore fastidioso che non voglio udire.</Italian>
+		<Spanish>Vuestras palabras no son más que gruñidos de un cerdo enfermo, [CT_NAME]. Como tales, no las escucho.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_NATIVE_1</Tag>
+		<English>Give me this, [CT_NAME] and perhaps our two nations can live in peace for a while longer.</English>
+		<French>Donnez-moi ce que je demande, [CT_NAME], et peut-&#234;tre nos deux nations pourront-elles cohabiter en paix quelques temps encore.</French>
+		<German>Gebt uns, was wir verlangen, [CT_NAME], dann besteht die Chance, dass unsere Zivilisationen noch eine Weile in Frieden miteinander leben!</German>
+		<Italian>Dammi questo, [CT_NAME], e forse le nostre due nazioni vivranno in pace per un altro po'.</Italian>
+		<Spanish>Dadme esto, [CT_NAME], y es posible que nuestras naciones puedan vivir en paz un poco más.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_NATIVE_1</Tag>
+		<English>Hand this over, [CT_NAME], and I might let you continue to exist for a short while longer.</English>
+		<French>Donnez-nous ce tribut, [CT_NAME], et il est possible que je vous laisse vivre... quelques temps, en tout cas.</French>
+		<German>Her damit, [CT_NAME]! Dann werde ich Euch vielleicht noch eine Weile verschonen!</German>
+		<Italian>Dammelo, [CT_NAME], e potrei lasciarti continuare a esistere ancora un po'.</Italian>
+		<Spanish>Entregadnos esto, [CT_NAME] y puede que os deje perdurar un poco más.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_NATIVE_1</Tag>
+		<English>Unlikely as it may seem, it appears that your puny civilization has something that we want. I suggest you hand it over quickly. </English>
+		<French>Aussi ahurissant que cela puisse para&#238;tre, il semblerait que votre ridicule petite civilisation dispose de quelque chose qui pourrait nous &#234;tre utile. Je vous sugg&#232;re de nous le d&#233;livrer au plus vite.</French>
+		<German>So unglaublich es auch klingen mag: Eure mickrige Zivilisation scheint tatsächlich etwas zu haben, was wir wollen. Ihr wärt gut beraten, es uns schnellstens zu überlassen! </German>
+		<Italian>Per quanto possa apparire improbabile, a quanto pare la tua insignificante civiltà possiede qualcosa che vogliamo. Ti consiglio di darcelo subito. </Italian>
+		<Spanish>Por extraño que suene, parece que vuestra civilización tiene algo que queremos. Os sugiero que nos lo deis rápidamente. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FR_LEADER_NATIVE_1</Tag>
+		<English>Welcome, [CT_NAME]. And how is that undefended civilization of your coming along?</English>
+		<French>Bienvenue, [CT_NAME]. Alors, comment &#233;volue donc la situation dans votre petite civilisation si vuln&#233;rable ?</French>
+		<German>Willkommen, [CT_NAME]! Und, wie stehen die Dinge in Eurer hilflosen kleinen Zivilisation?</German>
+		<Italian>Salve, [CT_NAME]. Come vanno le cose per la tua civiltà indifesa?</Italian>
+		<Spanish>Saludos, [CT_NAME]. ¿Cómo está esa civilización indefensa de la que venís?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_NO_PEACE_LEADER_NATIVE_1</Tag>
+		<English>Not a chance. The mighty [OUR_CIV_ADJ] people do not care to make peace with cattle-stealing brigands like you.</English>
+		<French>N'y comptez pas ! Le puissant peuple des [OUR_CIV_ADJ] ne souhaite pas faire la paix avec des vils voleurs de b&#233;tail de votre esp&#232;ce.</French>
+		<German>Keine Chance! Das mächtige [OUR_CIV_ADJ:3] Volk hat kein Interesse daran, mit miesen Viehdieben wie Euch Frieden zu schließen! </German>
+		<Italian>Neanche per idea. Al potente sovrano [OUR_CIV_ADJ] non può interessare la pace con briganti ladri di bestiame come voi. </Italian>
+		<Spanish>Ni en broma. El poderoso pueblo [OUR_CIV_ADJ:1] no se molesta ni en hacer las paces con cuatreros bergantes como vosotros. </Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_NATIVE_1</Tag>
+		<English>Greetings, [CT_NAME]! The [OUR_CIV_ADJ] people always enjoy meeting vulnerable and undefended new civilizations!</English>
+		<French>Mes hommages, [CT_NAME] ! Le peuple des [OUR_CIV_ADJ] est toujours enchant&#233; de rencontrer de nouvelles civilisations vuln&#233;rables et sans d&#233;fense !</French>
+		<German>Seid gegrüßt, [CT_NAME]! Das [OUR_CIV_ADJ:3] Volk ist stets hoch erfreut, die Bekanntschaft schutz- und wehrloser neuer Zivilisationen zu machen!</German>
+		<Italian>Salve, [CT_NAME]! Il sovrano [OUR_CIV_ADJ] è sempre lieto di incontrare nuove civiltà vulnerabili e indifese!</Italian>
+		<Spanish>¡Saludos, [CT_NAME]! El pueblo [OUR_CIV_ADJ:1] siempre se congratula de encontrarse con civilizaciones vulnerables e indefensas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_CHANGED_GREETINGS_ATT_FUR_LEADER_NATIVE_1</Tag>
+		<English>So you have emerged from your fetid country and come to me, [CT_NAME]. To what do I owe this extremely dubious honor?</English>
+		<French>Vous avez enfin r&#233;ussi &#224; sortir de cet horrible pays pour venir me voir, [CT_NAME]. Que me vaut un pareil honneur ?</French>
+		<German>Oha, Ihr habt Euer stinkendes Land verlassen, um mich zu besuchen, [CT_NAME]? Was verschafft mir denn diese zweifelhafte Ehre?</German>
+		<Italian>E così hai lasciato quel tuo fetido paese e sei venuto da me, [CT_NAME]. E a cosa devo questo dubbio onore?</Italian>
+		<Spanish>Así que hab&#233;is salido de vuestro f&#233;tido país y hab&#233;is venido a verme, [CT_NAME]. ¿A qu&#233; debo tan dudoso honor?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRADE_DEFENSIVE_PACT</Tag>
 		<English>A Mutual Protection Pact - Each Party Agrees to Automatically Declare War if the Other Party is Attacked.</English>
 		<French>Pacte d'assistance mutuelle : chaque partie accepte de d&#233;clarer automatiquement la guerre si l'autre est attaqu&#233;e.</French>
