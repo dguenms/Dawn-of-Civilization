@@ -2069,7 +2069,6 @@
 		<Tag>TXT_KEY_EVENT_INDEPENDENTFILMS_HELP_1</Tag>
 		<English>[ICON_BULLET]%D1%F2 in %s3_city</English>
 		<French>[ICON_BULLET]%D1%F2 &#224; %s3_city</French>
-		<German>[ICON_BULLET]%D1%F2 in %s3_city</German>
 		<Italian>[ICON_BULLET]%D1%F2 a %s3_city</Italian>
 		<Spanish>[ICON_BULLET]%D1 %F2 en %s3_city</Spanish>
 	</TEXT>

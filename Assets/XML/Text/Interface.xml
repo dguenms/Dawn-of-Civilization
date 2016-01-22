@@ -355,9 +355,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_1STAR</Tag>
 		<English>%F1_HealthOrUn</English>
-		<French>%F1_HealthOrUn%F2_HealthOrUn</French>
-		<German>%F1_HealthOrUn%F2_HealthOrUn</German>
-		<Italian>%F1_HealthOrUn%F2_HealthOrUn</Italian>
+		<French>%F1_HealthOrUn</French>
+		<German>%F1_HealthOrUn</German>
+		<Italian>%F1_HealthOrUn</Italian>
 		<Spanish>%F1_HealthOrUn</Spanish>
 	</TEXT>
 	<TEXT>
@@ -802,8 +802,8 @@
 	<TEXT>
 		<Tag>TXT_KEY_LOADING_TIME_MINUTES</Tag>
 		<English>(Estimated loading time: %d1 minutes)[NEWLINE]</English>
-		<French>(Temps de chargement estimé : %d1 minutes)[NEWLINE]</French>
-		<German>(Geschätzte Ladezeit: %d1 Minuten)[NEWLINE]</German>
+		<French>(Temps de chargement estim&#233; : %d1 minutes)[NEWLINE]</French>
+		<German>(Gesch&#228;tzte Ladezeit: %d1 Minuten)[NEWLINE]</German>
 		<Italian>(Tempo stimato di caricamento: %d1 minuti)[NEWLINE]</Italian>
 		<Spanish>(Tiempo estimado de carga: %d1 minuto/s)[NEWLINE]</Spanish>
 	</TEXT>
@@ -870,18 +870,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_PERSECUTION</Tag>
 		<English>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</English>
-		<French>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</French>
-		<German>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</German>
-		<Italian>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</Italian>
-		<Spanish>Your persecutor has successfully purged %s2_religion from %s1_city and confiscated %d3_gold[ICON_GOLD] from the victims.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_PERSECUTION_FAIL</Tag>
 		<English>Your persecutor in %s1_city was unsuccessful.</English>
-		<French>Your persecutor in %s1_city was unsuccessful.</French>
-		<German>Your persecutor in %s1_city was unsuccessful.</German>
-		<Italian>Your persecutor in %s1_city was unsuccessful.</Italian>
-		<Spanish>Your persecutor in %s1_city was unsuccessful.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MEZQUITA_FREE_GP</Tag>
@@ -1040,8 +1032,6 @@
 		<English>%s1 has traded %s2 to you.</English>
 		<French>%s1 vous a vendu [NUM2:un:une:des:des] %s2.</French>
 		<German>%s1 hat %s2 an Dich verkauft.</German>
-		<Italian>%s1 has traded %s2 to you.</Italian>
-		<Spanish>%s1 has traded %s2 to you.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MM_CULTURE</Tag>
@@ -1055,7 +1045,6 @@
 		<Tag>TXT_KEY_MM_GOLD</Tag>
 		<English>[ICON_BULLET]Gold: </English>
 		<French>[ICON_BULLET]Or : </French>
-		<German>[ICON_BULLET]Gold: </German>
 		<Italian>[ICON_BULLET]Oro: </Italian>
 		<Spanish>[ICON_BULLET]Oro: </Spanish>
 	</TEXT>
@@ -1177,7 +1166,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_OVERFLOW</Tag>
 		<English>Overflow in (%d1, %d2), method: %s3</English>
-		<German>Overflow in (%d1, %d2), method: %s3</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAGAN_TEMPLE_REMOVED</Tag>
@@ -1190,10 +1178,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_PANTHEON_REQUIREMENT</Tag>
 		<English>[ICON_BULLET]Requires [LINK=literal]Pantheon[\LINK]</English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PERSECUTION_MESSAGE</Tag>
@@ -1318,18 +1302,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_REFORMATION_MESSAGE</Tag>
 		<English>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</English>
-		<French>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</French>
-		<German>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</German>
-		<Italian>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</Italian>
-		<Spanish>The invention of the Printing Press has unleashed a wave of new doctrines. Protestant churches are opposing the power of the Pope over Christian affairs. Shall we embrace the Reformation? All our Catholic cities and buildings will be converted to the new religion. If we convert now, we will receive a bonus of 500 gold for rapidly taking control of Church assets.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REFORMATION_TITLE</Tag>
 		<English>The Reformation!</English>
-		<French>The Reformation!</French>
-		<German>The Reformation!</German>
-		<Italian>The Reformation!</Italian>
-		<Spanish>The Reformation!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_RELEASE_CIVILIZATION</Tag>
@@ -1374,12 +1350,18 @@
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_BAD_HAPPINESS</Tag>
 		<English>, %D1_Change[ICON_UNHAPPY]</English>
+		<French>, %D1_Change[ICON_UNHAPPY]</French>
 		<German>, %D1_Change[ICON_UNHAPPY]</German>
+		<Italian>, %D1_Change[ICON_UNHAPPY]</Italian>
+		<Spanish>, %D1_Change[ICON_UNHAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_GOOD_HAPPINESS</Tag>
 		<English>, %D1_Change[ICON_HAPPY]</English>
+		<French>, %D1_Change[ICON_UNHAPPY]</French>
 		<German>, %D1_Change[ICON_HAPPY]</German>
+		<Italian>, %D1_Change[ICON_UNHAPPY]</Italian>
+		<Spanish>, %D1_Change[ICON_UNHAPPY]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALIST_GREAT_STATESMAN</Tag>

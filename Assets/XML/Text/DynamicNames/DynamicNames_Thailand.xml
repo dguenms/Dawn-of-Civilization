@@ -32,11 +32,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_ADJECTIVE</Tag>
 		<English>Thai</English>
-		<German>Thai</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_SHORT_DESC</Tag>
 		<English>Thailand</English>
-		<German>Thailand</German>
 	</TEXT>
 </Civ4GameText>

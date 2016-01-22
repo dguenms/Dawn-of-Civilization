@@ -28,17 +28,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_ADJECTIVE</Tag>
 		<English>Brazilian</English>
-		<French>Brazilian</French>
-		<German>Brazilian</German>
-		<Italian>Brazilian</Italian>
-		<Spanish>Brazilian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BRAZIL_SHORT_DESC</Tag>
 		<English>Brazil</English>
-		<French>Brazil</French>
-		<German>Brazil</German>
-		<Italian>Brazil</Italian>
-		<Spanish>Brazil</Spanish>
 	</TEXT>
 </Civ4GameText>

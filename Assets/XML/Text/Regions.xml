@@ -4,7 +4,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_REGION_</Tag>
 		<English></English>
+		<French></French>
 		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_0</Tag>
@@ -161,7 +164,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_</Tag>
 		<English></English>
+		<French></French>
 		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_0</Tag>
@@ -236,7 +242,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_14</Tag>
 		<English>Korea</English>
-		<German>Korea</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_15</Tag>
@@ -246,12 +251,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_16</Tag>
 		<English>China</English>
-		<German>China</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_17</Tag>
 		<English>Indochina</English>
-		<German>Indochina</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_18</Tag>
@@ -291,7 +294,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_25</Tag>
 		<English>Maghreb</English>
-		<German>Maghreb</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_26</Tag>
@@ -361,7 +363,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_39</Tag>
 		<English>England</English>
-		<German>England</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_40</Tag>
@@ -446,7 +447,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_56</Tag>
 		<English>Srivijaya</English>
-		<German>Srivijaya</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_57</Tag>
@@ -456,7 +456,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_58</Tag>
 		<English>Maghreb</English>
-		<German>Maghreb</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_59</Tag>
@@ -491,7 +490,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_65</Tag>
 		<English>Hawaii</English>
-		<German>Hawaii</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_66</Tag>
@@ -501,7 +499,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_67</Tag>
 		<English>Marquesas</English>
-		<German>Marquesas</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_68</Tag>
@@ -511,6 +508,5 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
-		<German>China</German>
 	</TEXT>
 </Civ4GameText>
