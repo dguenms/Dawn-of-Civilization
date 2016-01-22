@@ -1418,6 +1418,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
+			<BonusType>NONE</BonusType>
 			<iCost>35</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -1535,6 +1536,7 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<iCityAttack>0</iCityAttack>
 			<UnitClassAttackMods>
 				<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
@@ -1905,6 +1907,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_MINING</PrereqTech>
+			<BonusType>NONE</BonusType>
 			<iCost>35</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -2089,6 +2092,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
+			<BonusType>NONE</BonusType>
 			<iCost>35</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -2483,11 +2487,13 @@
 			<TechTypes>
 				<PrereqTech>TECH_MACHINERY</PrereqTech>
 			</TechTypes>
+			<BonusType>NONE</BonusType>
 			<iCost>70</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
 			<iNukeRange>-1</iNukeRange>
+			<FeatureImpassables/>
 			<iCombat>8</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
@@ -2767,6 +2773,7 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
+			<FeatureImpassables/>
 			<iCombat>4</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
@@ -3375,6 +3382,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
 			<iNukeRange>-1</iNukeRange>
+			<FeatureImpassables/>
 			<iCombat>9</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
@@ -4772,6 +4780,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
 			<iNukeRange>-1</iNukeRange>
+			<FeatureImpassables/>
 			<iCombat>4</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
@@ -5879,6 +5888,7 @@
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
 			<iCityAttack>50</iCityAttack>
+			<UnitClassAttackMods/>
 			<iCultureGarrison>5</iCultureGarrison>
 			<iAsset>2</iAsset>
 			<iPower>6</iPower>
@@ -6088,6 +6098,7 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<iWithdrawalProb>0</iWithdrawalProb>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
 			<UnitClassAttackMods>
@@ -6286,7 +6297,7 @@
 			<iFirstStrikes>1</iFirstStrikes>
 			<iCollateralDamage>50</iCollateralDamage>
 			<iCollateralDamageLimit>60</iCollateralDamageLimit>
-			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
+			<iCollateralDamageMaxUnits>5</iCollateralDamageMaxUnits>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>3</iAsset>
 			<iPower>10</iPower>
@@ -6350,6 +6361,7 @@
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 				<PrereqTech>TECH_ARCHERY</PrereqTech>
 			</TechTypes>
+			<BonusType>NONE</BonusType>
 			<iCost>90</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -6406,6 +6418,7 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
+			<bFirstStrikeImmune>0</bFirstStrikeImmune>
 			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
@@ -6892,6 +6905,7 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
 			<bFirstStrikeImmune>1</bFirstStrikeImmune>
+			<bNoDefensiveBonus>0</bNoDefensiveBonus>
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
@@ -6955,6 +6969,7 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>2</iMoves>
 			<iNukeRange>-1</iNukeRange>
+			<FeatureImpassables/>
 			<iCombat>12</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
@@ -7265,6 +7280,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			</TechTypes>
+			<BonusType>NONE</BonusType>
 			<iCost>100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -7542,6 +7558,7 @@
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bPillage>1</bPillage>
+			<bNoDefensiveBonus>0</bNoDefensiveBonus>
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
@@ -7666,6 +7683,10 @@
 				</FlankingStrike>
 				<FlankingStrike>
 					<FlankingStrikeUnitClass>UNITCLASS_TREBUCHET</FlankingStrikeUnitClass>
+					<iFlankingStrength>100</iFlankingStrength>
+				</FlankingStrike>
+				<FlankingStrike>
+					<FlankingStrikeUnitClass>UNITCLASS_BOMBARD</FlankingStrikeUnitClass>
 					<iFlankingStrength>100</iFlankingStrength>
 				</FlankingStrike>
 				<FlankingStrike>
@@ -7872,6 +7893,7 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<iCityAttack>0</iCityAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
@@ -8700,6 +8722,7 @@
 			<bPillage>1</bPillage>
 			<bNoDefensiveBonus>1</bNoDefensiveBonus>
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
+			<bMechanized>0</bMechanized>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
 					<UnitClassUpgradeType>UNITCLASS_CANNON</UnitClassUpgradeType>
@@ -9814,6 +9837,7 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<SpecialCargo>NONE</SpecialCargo>
 			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iCargo>2</iCargo>
 			<iAsset>2</iAsset>
@@ -9927,6 +9951,7 @@
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iFirstStrikes>2</iFirstStrikes>
+			<SpecialCargo>NONE</SpecialCargo>
 			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iCargo>2</iCargo>
 			<iAsset>2</iAsset>
@@ -10766,6 +10791,7 @@
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iInterceptionProbability>30</iInterceptionProbability>
+			<iBombardRate>0</iBombardRate>
 			<iAsset>5</iAsset>
 			<iPower>30</iPower>
 			<UnitMeshGroups>
@@ -12735,6 +12761,8 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<Builds/>
+			<GreatPeoples/>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
