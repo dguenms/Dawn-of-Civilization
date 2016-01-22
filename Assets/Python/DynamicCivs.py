@@ -601,6 +601,7 @@ def checkTurn(iGameTurn):
 def checkName(iPlayer):
 	if not gc.getPlayer(iPlayer).isAlive(): return
 	if iPlayer >= iNumPlayers: return
+	if gc.getPlayer(iPlayer).getNumCities() == 0: return
 	setDesc(iPlayer, desc(iPlayer, title(iPlayer)))
 	
 def checkLeader(iPlayer):
