@@ -3644,8 +3644,8 @@ class RiseAndFall:
 		utils.makeUnit(iRifleman, iGermany, tCapital, 8)
 		utils.makeUnit(iCannon, iGermany, tCapital, 3)
 		
-		for iPlayer in [iAmerica, iArgentina, iBrazil, iCanada]:
-			if utils.getHumanID() == iPlayer:
+		for iPlayer in range(iNumPlayers):
+			if tBirth[iPlayer] > utils.getScenarioStartYear() and utils.getHumanID() == iPlayer:
 				utils.makeUnit(iSettler, iPlayer, Areas.getCapital(iPlayer), 1)
 				utils.makeUnit(iWarrior, iPlayer, Areas.getCapital(iPlayer), 1)
 
@@ -3721,7 +3721,7 @@ class RiseAndFall:
 			utils.makeUnit(iMaceman, iKorea, tCapital, 2)
 			
 		for iPlayer in range(iNumPlayers):
-			if iPlayer >= iArabia and gc.getPlayer(iPlayer).isHuman():
+			if tBirth[iPlayer] > utils.getScenarioStartYear() and gc.getPlayer(iPlayer).isHuman():
 				tCapital = Areas.getCapital(iPlayer)
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
@@ -3731,7 +3731,7 @@ class RiseAndFall:
 	
 		for iPlayer in range(iNumPlayers):
 			tCapital = Areas.getCapital(iPlayer)
-			if iPlayer in [iEgypt, iChina, iBabylonia]:
+			if tBirth[iPlayer] == utils.getScenarioStartYear():
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 			elif iPlayer == iHarappa and (self.getPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
