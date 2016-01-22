@@ -663,14 +663,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_SHAKA</LeaderType>
+							<LeaderType>LEADER_NATIVE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_SHAKA_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1616,14 +1616,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_SHAKA</LeaderType>
+							<LeaderType>LEADER_NATIVE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_SHAKA_1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2442,14 +2442,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_SHAKA</LeaderType>
+							<LeaderType>LEADER_NATIVE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_SHAKA_1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3713,7 +3713,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_SHAKA</LeaderType>
+							<LeaderType>LEADER_NATIVE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -3733,7 +3733,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_SHAKA_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -5164,7 +5164,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_SHAKA</LeaderType>
+							<LeaderType>LEADER_NATIVE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -5180,7 +5180,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_CHANGED_GREETINGS_ATT_FUR_LEADER_SHAKA_1</Text>
+						<Text>AI_DIPLO_CHANGED_GREETINGS_ATT_FUR_LEADER_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -7031,7 +7031,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_SHAKA</LeaderType>
+							<LeaderType>LEADER_NATIVE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7043,7 +7043,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_SHAKA_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -8043,7 +8043,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_SHAKA</LeaderType>
+							<LeaderType>LEADER_NATIVE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8055,7 +8055,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_SHAKA_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -9018,7 +9018,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_SHAKA</LeaderType>
+							<LeaderType>LEADER_NATIVE</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -9030,7 +9030,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_SHAKA_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
