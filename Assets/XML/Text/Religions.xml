@@ -110,31 +110,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_CHRISTIANITY</Tag>
+		<Tag>TXT_KEY_RELIGION_CATHOLICISM</Tag>
 		<English>Catholicism</English>
-		<French>
-			<Text>Catholicism</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Catholicism</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Catholicism:Catholicism</Text>
-			<Gender>Male:Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Catholicism</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_CHRISTIANITY_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Tag>
 		<English>
 			<Text>Catholic</Text>
 			<Gender>Male</Gender>
@@ -164,9 +144,9 @@
 			<Plural>0:0:0</Plural>
 		</German>
 		<Italian>
-			<Text>dei confuciani</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
+			<Text>confuciano:confuciane:confuciani:confuciane</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
 		</Italian>
 		<Spanish>
 			<Text>confuciano:confuciana:confucianos:confucianas</Text>
@@ -231,31 +211,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_JUDAISM</Tag>
+		<Tag>TXT_KEY_RELIGION_PROTESTANTISM</Tag>
 		<English>Protestantism</English>
-		<French>
-			<Text>Protestantisme</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Protestantismus</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Protestantesimo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Protestantismo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_RELIGION_PROTESTANTISM_ADJECTIVE</Tag>
 		<English>Protestant</English>
 		<German>
 			<Text>J&#252;disch:j&#252;dischen:j&#252;dische</Text>

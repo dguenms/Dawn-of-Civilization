@@ -879,7 +879,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
@@ -916,7 +916,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_CATHOLIC_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_CATHOLIC_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
@@ -953,7 +953,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
@@ -990,7 +990,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ISLAMIC_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_ISLAMIC_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ISLAMIC_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
@@ -1027,7 +1027,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HINDU_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_HINDU_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_HINDU_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
@@ -1064,7 +1064,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BUDDHIST_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_BUDDHIST_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_BUDDHIST_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
@@ -1101,7 +1101,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
@@ -1138,7 +1138,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_TAOIST_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_TAOIST_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_TAOIST_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
@@ -1175,7 +1175,7 @@
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Description>
-			<Civilopedia>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>

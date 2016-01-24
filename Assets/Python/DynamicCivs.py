@@ -328,7 +328,7 @@ dForeignNames = {
 		iPortugal : "TXT_KEY_CIV_ROMAN_NAME_PORTUGAL",
 		iMongolia : "TXT_KEY_CIV_ROMAN_NAME_MONGOLIA",
 		iTurkey : "TXT_KEY_CIV_ROMAN_NAME_TURKEY",
-		iThailand : "TXT_KEY_CIV_THAILAND_SIAM",
+		iThailand : "TXT_KEY_CIV_ROMAN_NAME_THAILAND",
 	},
 	iArabia : {
 		iEgypt : "TXT_KEY_CIV_ARABIAN_NAME_EGYPT",
@@ -1527,7 +1527,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if bEmpire:
 				return "TXT_KEY_CALIPHATE_OF"
 				
-			return "TXT_KEY_CIV_ARABIAN_VASSAL"
+			return "TXT_KEY_CIV_MOORS_EMIRATE_OF"
 			
 		if bEmpire and iEra <= iRenaissance:
 			if iReligion == iIslam and bTheocracy:
@@ -1920,11 +1920,11 @@ def leaderName(iPlayer):
 	if iPlayer == iChina:
 		if iLeader == iHongwu:
 			if iGameTurn >= getTurnForYear(1700):
-				return "Kangxi"
+				return "TXT_KEY_LEADER_KANGXI"
 				
 	elif iPlayer == iIndia:
 		if iLeader == iKrishnaDevaRaya:
 			if iGameTurn >= getTurnForYear(1700):
-				return "Tipu Sultan"
+				return "TXT_KEY_LEADER_TIPU_SULTAN"
 				
 	return None

@@ -2,9 +2,12 @@
 <!-- Regions -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_</Tag>
+		<Tag>TXT_KEY_REGION_</Tag>
 		<English></English>
+		<French></French>
 		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REGION_0</Tag>
@@ -159,6 +162,14 @@
 		<English>Colombia</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_0</Tag>
 		<English>Egypt</English>
 		<German>&#196;gypten</German>
@@ -167,6 +178,46 @@
 		<Tag>TXT_KEY_UHV_AREA_1</Tag>
 		<English>Phoenicia</English>
 		<German>Ph&#246;nizien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_2</Tag>
+		<English>Babylonia</English>
+		<German>Babylonien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_3</Tag>
+		<English>Persia</English>
+		<German>Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_4</Tag>
+		<English>Mesopotamia</English>
+		<German>Mesopotamien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_5</Tag>
+		<English>Transoxania</English>
+		<German>Transoxanien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_6</Tag>
+		<English>Northwest India</English>
+		<German>Nordwestindien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_7</Tag>
+		<English>Mediterranean</English>
+		<German>Mittelmeerk&#252;ste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_8</Tag>
+		<English>Iberia</English>
+		<German>Iberien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AREA_9</Tag>
+		<English>Gaul</English>
+		<German>Gallien</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_10</Tag>
@@ -191,7 +242,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_14</Tag>
 		<English>Korea</English>
-		<German>Korea</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_15</Tag>
@@ -201,12 +251,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_16</Tag>
 		<English>China</English>
-		<German>China</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_17</Tag>
 		<English>Indochina</English>
-		<German>Indochina</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_18</Tag>
@@ -217,11 +265,6 @@
 		<Tag>TXT_KEY_UHV_AREA_19</Tag>
 		<English>Philippines</English>
 		<German>Philippinen</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_2</Tag>
-		<English>Babylonia</English>
-		<German>Babylonien</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_20</Tag>
@@ -251,7 +294,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_25</Tag>
 		<English>Maghreb</English>
-		<German>Maghreb</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_26</Tag>
@@ -272,11 +314,6 @@
 		<Tag>TXT_KEY_UHV_AREA_29</Tag>
 		<English>Europe</English>
 		<German>Europa</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_3</Tag>
-		<English>Persia</English>
-		<German>Persien</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_30</Tag>
@@ -326,12 +363,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_39</Tag>
 		<English>England</English>
-		<German>England</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_4</Tag>
-		<English>Mesopotamia</English>
-		<German>Mesopotamien</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_40</Tag>
@@ -384,11 +415,6 @@
 		<German>Kairo</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_5</Tag>
-		<English>Transoxania</English>
-		<German>Transoxanien</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_50</Tag>
 		<English>Mecca</English>
 		<German>Mekka</German>
@@ -421,7 +447,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_56</Tag>
 		<English>Srivijaya</English>
-		<German>Srivijaya</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_57</Tag>
@@ -431,17 +456,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_58</Tag>
 		<English>Maghreb</English>
-		<German>Maghreb</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_59</Tag>
 		<English>West Africa</English>
 		<German>Westafrika</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_6</Tag>
-		<English>Northwest India</English>
-		<German>Nordwestindien</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_60</Tag>
@@ -471,7 +490,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_65</Tag>
 		<English>Hawaii</English>
-		<German>Hawaii</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_66</Tag>
@@ -481,7 +499,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_67</Tag>
 		<English>Marquesas</English>
-		<German>Marquesas</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_68</Tag>
@@ -491,21 +508,5 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AREA_69</Tag>
 		<English>China</English>
-		<German>China</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_7</Tag>
-		<English>Mediterranean</English>
-		<German>Mittelmeerk&#252;ste</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_8</Tag>
-		<English>Iberia</English>
-		<German>Iberien</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_AREA_9</Tag>
-		<English>Gaul</English>
-		<German>Gallien</German>
 	</TEXT>
 </Civ4GameText>

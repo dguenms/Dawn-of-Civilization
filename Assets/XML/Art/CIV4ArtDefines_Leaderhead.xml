@@ -247,7 +247,7 @@
 			<BackgroundKFM>art/LeaderHeads/Stalin/josef_stalin_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_SHAKA</Type>
+			<Type>ART_DEF_LEADER_NATIVE</Type>
 			<Button>,Art/interface/LeaderHeads/Btn_LH_America_Washington.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,3,7</Button>
 			<NIF>art/LeaderHeads/Shaka/shaka.nif</NIF>
 			<KFM>art/LeaderHeads/Shaka/shaka.kfm</KFM>

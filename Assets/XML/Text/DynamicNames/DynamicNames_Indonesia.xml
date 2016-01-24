@@ -32,17 +32,11 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_ADJECTIVE</Tag>
 		<English>Indonesian</English>
-		<French>Indonesian</French>
 		<German>Indonesisch</German>
-		<Italian>Indonesian</Italian>
-		<Spanish>Indonesian</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_SHORT_DESC</Tag>
 		<English>Indonesia</English>
-		<French>Indonesia</French>
 		<German>Indonesien</German>
-		<Italian>Indonesia</Italian>
-		<Spanish>Indonesia</Spanish>
 	</TEXT>
 </Civ4GameText>
