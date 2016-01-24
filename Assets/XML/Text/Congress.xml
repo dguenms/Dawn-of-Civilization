@@ -194,7 +194,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_INVITE</Tag>
 		<English>[NEWLINE][ICON_BULLET]%s1</English>
+		<French>[NEWLINE][ICON_BULLET]%s1</French>
 		<German>[NEWLINE][ICON_BULLET]%s1</German>
+		<Italian>[NEWLINE][ICON_BULLET]%s1</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET]%s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_MANIPULATION</Tag>
@@ -278,9 +281,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_OK</Tag>
 		<English>OK</English>
-		<French>OK</French>
-		<German>OK</German>
-		<Italian>OK</Italian>
 		<Spanish>Aceptar</Spanish>
 	</TEXT>
 	<TEXT>

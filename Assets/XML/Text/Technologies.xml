@@ -3,11 +3,7 @@
 <Civ4GameText>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MONOTHEISM_STRATEGY</Tag>
-		<English>[COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] civic. </English>
-		<French>[COLOR_TECH_TEXT]Monoth&#233;isme[COLOR_REVERT] permet d'instaurer la [COLOR_HIGHLIGHT_TEXT]religion organis&#233;e[COLOR_REVERT].</French>
-		<German>Dar&#252;ber hinaus erm&#246;glicht sie die Staatsform [COLOR_HIGHLIGHT_TEXT]Organisierte Religion[COLOR_REVERT].</German>
-		<Italian>[COLOR_TECH_TEXT]Monoteismo[COLOR_REVERT] permette la realizzazione della forma di governo [COLOR_HIGHLIGHT_TEXT]Religione organizzata[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_TECH_TEXT]Monote&#237;smo[COLOR_REVERT] activa el principio de la [COLOR_HIGHLIGHT_TEXT]Religi&#243;n organizada[COLOR_REVERT]. </Spanish>
+		<English>[COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] Civic and allows the construction of the [COLOR_BUILDING_TEXT]Temple of Solomon[COLOR_REVERT]. The first player to discover [COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PATRONAGE</Tag>
@@ -19,54 +15,454 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PATRONAGE_STRATEGY</Tag>
-		<English>Allows to build Versailles, the Sistine Chapel and the Leaning Tower.</English>
+		<English>[COLOR_TECH_TEXT]Patronage[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] World Wonders. The first to research [COLOR_TECH_TEXT]Patronage[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT] unit.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REFORMATION</Tag>
 		<English>Reformation</English>
-		<French>
-			<Text>Mysticisme</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Mystik</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Misticismo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Misticismo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REFORMATION_QUOTE</Tag>
 		<English>"Peace if possible, truth at all costs." - Martin Luther</English>
-		<French>"Une soci&#233;t&#233; pr&#234;te &#224; sacrifier un peu de libert&#233; contre un peu de s&#233;curit&#233; ne m&#233;rite ni l'une ni l'autre et finit par perdre les deux !" - Benjamin Franklin</French>
-		<German>"Eine Gesellschaft, die ihre Freiheit zugunsten der Sicherheit opfert, hat beides nicht verdient." - Benjamin Franklin</German>
-		<Italian>"Qualsiasi societ&#224; che sacrifica un po' di libert&#224; per una maggiore sicurezza non si merita nessuna delle due cose e le perde entrambe." - Benjamin Franklin</Italian>
-		<Spanish>"Cualquier sociedad que renuncie a un poco de libertad para obtener algo de seguridad no se merece ni una ni otra y acabar&#225; perdiendo ambas." - Benjamin Franklin</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REFORMATION_STRATEGY</Tag>
 		<English>The [COLOR_TECH_TEXT]Reformation[COLOR_REVERT] sparks a great schism in Christianity!</English>
-		<French>Le [COLOR_TECH_TEXT]mysticisme[COLOR_REVERT] permet de construire l'[COLOR_BUILDING_TEXT]Ob&#233;lisque[COLOR_REVERT] et [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Il m&#232;ne aussi &#224; la [COLOR_TECH_TEXT]m&#233;ditation[COLOR_REVERT] et au [COLOR_TECH_TEXT]polyth&#233;isme[COLOR_REVERT], ces deux technologies permettant au joueur en ayant fait la d&#233;couverte en premier de fonder une religion.</French>
-		<German>Die [COLOR_TECH_TEXT]Mystik[COLOR_REVERT] erm&#246;glicht den Bau von [COLOR_BUILDING_TEXT]Obelisken[COLOR_REVERT] und des Wunders von [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Dar&#252;ber hinaus legt sie den Grundstein f&#252;r die [COLOR_TECH_TEXT]Meditation[COLOR_REVERT] und den [COLOR_TECH_TEXT]Polytheismus[COLOR_REVERT]. Der Entdecker des Polytheismus bzw. der Meditation erh&#228;lt eine Religion.</German>
-		<Italian>Il [COLOR_TECH_TEXT]Misticismo[COLOR_REVERT] permette la realizzazione di [COLOR_BUILDING_TEXT]obelischi[COLOR_REVERT] e della Meraviglia [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Inoltre, conduce alla [COLOR_TECH_TEXT]Meditazione[COLOR_REVERT] e al [COLOR_TECH_TEXT]Politeismo[COLOR_REVERT], ciascuno delle quali fornisce una religione alla civilt&#224; che le scopre per prima.</Italian>
-		<Spanish>El [COLOR_TECH_TEXT]Misticismo[COLOR_REVERT] permite los [COLOR_BUILDING_TEXT]Obeliscos[COLOR_REVERT] y la maravilla de [COLOR_BUILDING_TEXT]Stonehenge[COLOR_REVERT]. Tambi&#233;n lleva a la [COLOR_TECH_TEXT]Meditaci&#243;n[COLOR_REVERT] y al [COLOR_TECH_TEXT]Polite&#237;smo[COLOR_REVERT], cada uno de los cuales proporciona una religi&#243;n al primero que lo descubra.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ADVANCED_FLIGHT_QUOTE</Tag>
+		<English>"Oh! I have slipped the surly bonds of Earth - Put out my hand and touched the Face of God." - John Gillespie Magee, Junior</English>
+		<French>"Je me suis lib&#233;r&#233; des emprises de la terre. - J'ai tendu la main et j'ai caress&#233; le visage de Dieu." - John Gillespie Magee, Junior</French>
+		<German>"Ach! Ich bin den rauen Banden der Erde entglitten - ich streckte meine Hand aus und ber&#252;hrte das Antlitz Gottes." - John Gillespie Magee, Junior</German>
+		<Italian>"Oh! Sono scivolato via dai rozzi legami della Terra - Ho allungato la mano e ho toccato il Volto di Dio." - John Gillespie Magee, Junior</Italian>
+		<Spanish>"&#161;Oh! Me he librado de las amargas cadenas de la Tierra. - He estirado la mano y tocado el rostro de Dios". - John Gillespie Magee Junior</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ADVANCED_FLIGHT_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Advanced Flight[COLOR_REVERT] allows the training of [COLOR_UNIT_TEXT]Gunships[COLOR_REVERT] and [COLOR_UNIT_TEXT]Jet Fighters[COLOR_REVERT]. It also obsoletes the [COLOR_WARNING_TEXT]Stable[COLOR_REVERT] Building.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AESTHETICS_QUOTE</Tag>
+		<English>"Art for art's sake is an empty phrase. Art for the sake of truth, art for the sake of the good and the beautiful, that is the faith I am searching for." - George Sand</English>
+		<French>"L'art pour l'art est un mot creux. L'art pour la v&#233;rit&#233;, l'art pour le Bien et le beau, voil&#224; la foi que je recherche." - George Sand</French>
+		<German>"Kunst um der Kunst Willen ist eine leere Floskel. Kunst um der Wahrheit Willen, Kunst um des Guten und des Sch&#246;nen Willen, das ist der Glaube, nach dem ich suche." - George Sand</German>
+		<Italian>"Arte per amore dell'arte &#232; una frase senza senso. Arte per amore della verit&#224;, arte per amore del buono e del bello, questa &#232; la fede che vado cercando". - George Sand</Italian>
+		<Spanish>"Hablar del arte por el arte es no decir nada. El arte existe por la verdad, por el bien y por la belleza, y &#233;sa es la fe que yo busco". - George Sand</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AESTHETICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Aesthetics[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Statue of Zeus[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT], and the [COLOR_BUILDING_TEXT]Khajuraho[COLOR_REVERT] World Wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AGRICULTURE_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Agriculture[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Farm[COLOR_REVERT] Improvement and the [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ALPHABET_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Alphabet[COLOR_REVERT] allows you to trade technologies with other civilizations and allows you to train [COLOR_UNIT_TEXT]Spies[COLOR_REVERT]. It also enables the [COLOR_HIGHLIGHT_TEXT]City States[COLOR_REVERT] Civic.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ANIMAL_HUSBANDRY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Animal Husbandry[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Pasture[COLOR_REVERT] Improvement and reveals the [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT] Resource.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARCHERY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Archery[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Archers[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARTILLERY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Artillery[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASSEMBLY_LINE_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Assembly Line[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Factory[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Pentagon[COLOR_REVERT] World Wonder and obsoletes [COLOR_WARNING_TEXT]Trading Company[COLOR_REVERT] National Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASTRONOMY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Galleons[COLOR_REVERT], [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT], [COLOR_UNIT_TEXT]Frigates[COLOR_REVERT] and [COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT]. It allows [COLOR_UNIT_TEXT]Settlers[COLOR_REVERT] to be built on any continent, enables trading on the ocean, allows the spread of [COLOR_HIGHLIGHT_TEXT]Trading Companies[COLOR_REVERT], allows the construction of the [COLOR_BUILDING_TEXT]Observatory[COLOR_REVERT] Building and allows the construction of the [COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Colossus[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Moai Statues[COLOR_REVERT] World Wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BANKING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Banking[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT] Building. It allows the construction of the [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Mercantilism[COLOR_REVERT] Civic and obsoletes the [COLOR_WARNING_TEXT]Temple of Solomon[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BIOLOGY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Biology[COLOR_REVERT] allows the construction of [COLOR_HIGHLIGHT_TEXT]Farms[COLOR_REVERT] without [COLOR_HIGHLIGHT_TEXT]Irrigation[COLOR_REVERT] as well as the [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] National Wonder. It increases the food production of all [COLOR_HIGHLIGHT_TEXT]Farm[COLOR_REVERT] Improvements by 1, allows the removal of Jungles and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Cereal Industry[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BRONZE_WORKING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Bronze Working[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource, allows you to train [COLOR_UNIT_TEXT]Axemen[COLOR_REVERT] and allows the removal of Forests.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CALENDAR_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Calendar[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Plantation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Slave Plantation[COLOR_REVERT] Improvements. It allows the construction of the [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Chinampa[COLOR_REVERT] World Wonders. It also centers the World Map and enables the [COLOR_HIGHLIGHT_TEXT]Agrarianism[COLOR_REVERT] Civic. The first player to discover [COLOR_TECH_TEXT]Calendar[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHEMISTRY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Chemistry[COLOR_REVERT] allows the training of [COLOR_UNIT_TEXT]Grenadiers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Ship of the Lines[COLOR_REVERT]. It increases production from all [COLOR_HIGHLIGHT_TEXT]Workshops[COLOR_REVERT] by 1 and allows the construction of the [COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_SERVICE_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Civil Service[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Absolutism[COLOR_REVERT] Civic and allows you to train [COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT]. It allows [COLOR_HIGHLIGHT_TEXT]Farms[COLOR_REVERT] to spread [COLOR_HIGHLIGHT_TEXT]Irrigation[COLOR_REVERT] and allows the construction of the [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CODE_OF_LAWS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Code of Laws[COLOR_REVERT] allows construction of the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMBUSTION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Combustion[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Transports[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Airships[COLOR_REVERT]. Allows the construction of the [COLOR_BUILDING_TEXT]Public Transportation[COLOR_REVERT] Building, the construction of the [COLOR_HIGHLIGHT_TEXT]Well[COLOR_REVERT] Improvement and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Oil Industry[COLOR_REVERT]. It obsoletes the [COLOR_WARNING_TEXT]Whale[COLOR_REVERT] Resource and the [COLOR_WARNING_TEXT]Trafalgar Square[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPASS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Compass[COLOR_REVERT] allows the training of [COLOR_UNIT_TEXT]Explorers[COLOR_REVERT]. It allows the construction of the [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT] Improvement and allows the construction of the [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT] Building. It obsoletes the [COLOR_WARNING_TEXT]Great Lighthouse[COLOR_REVERT] Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPOSITES_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Composites[COLOR_REVERT] allow you to train [COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT] and allows the [COLOR_HIGHLIGHT_TEXT]Alchemist III[COLOR_REVERT] Promotion. It also allows the construction of the [COLOR_BUILDING_TEXT]SS Casing[COLOR_REVERT] Spaceship Part.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPUTERS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Computers[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT], allows the construction of the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] Building, allows the construction of the [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] Project and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Computer Industry[COLOR_REVERT]. It also obsoletes the [COLOR_WARNING_TEXT]Spiral Minaret[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CONSTITUTION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Constitution[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Representation[COLOR_REVERT] civic, allows the construction of the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]La Mezquita[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CONSTRUCTION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Construction[COLOR_REVERT] allows the construction of [COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT], allows Bridge Building and allows the construction of the [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT], [COLOR_BUILDING_TEXT]Great Wall[COLOR_REVERT], [COLOR_BUILDING_TEXT]Theodosian Walls[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Machu Picchu[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CORPORATION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Corporation[COLOR_REVERT] adds an additional trade route to all cities, enables the [COLOR_HIGHLIGHT_TEXT]Free Market[COLOR_REVERT] Civic and allows construction of the [COLOR_BUILDING_TEXT]Stock Market[COLOR_REVERT] National Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CURRENCY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Currency[COLOR_REVERT] adds an additional trade route to all cities and allows the construction of the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT] Building. It also enables the [COLOR_HIGHLIGHT_TEXT]Mercenaries[COLOR_REVERT] Civic, allows you to trade gold with other civilizations and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Silk Route[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DEMOCRACY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Democracy[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Egalitarianism[COLOR_REVERT] Civic. It also allows the construction of the [COLOR_BUILDING_TEXT]Statue of Liberty[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] World Wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DIVINE_RIGHT_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Divine Right[COLOR_REVERT] enables [COLOR_HIGHLIGHT_TEXT]Fanaticism[COLOR_REVERT], obsoletes the [COLOR_WARNING_TEXT]Pagan Temple[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Great Library[COLOR_REVERT]. It allows the construction of the [COLOR_BUILDING_TEXT]Forbidden Palace[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Spiral Minaret[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Versailles[COLOR_REVERT] World Wonders. It also allows the training of the [COLOR_PROJECT_TEXT]Religious Persecutor[COLOR_REVERT] Unit. The first player to discover [COLOR_TECH_TEXT]Divine Right[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DRAMA_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Drama[COLOR_REVERT] allows you to adjust the [COLOR_HIGHLIGHT_TEXT]Culture[COLOR_REVERT] slider and allows the construction of the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] National Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Great Sphinx[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ECOLOGY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Ecology[COLOR_REVERT] allows you to Scrub [COLOR_HIGHLIGHT_TEXT]Fallout[COLOR_REVERT] and enables the [COLOR_HIGHLIGHT_TEXT]Environmentalism[COLOR_REVERT] Civic. It also allows the construction of the [COLOR_BUILDING_TEXT]Recycling Center[COLOR_REVERT] Building and the [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT] Spaceship Part.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ECONOMICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Economics[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Capitalism[COLOR_REVERT] Civic, allows the [COLOR_BUILDING_TEXT]Customs House[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Trading Company[COLOR_REVERT] National Wonder. The first to research [COLOR_TECH_TEXT]Economics[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT] unit.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EDUCATION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Education[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]University[COLOR_REVERT] Building and obsoletes the [COLOR_WARNING_TEXT]University of Sankore[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ELECTRICITY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Electricity[COLOR_REVERT] increases commerce output of all [COLOR_HIGHLIGHT_TEXT]Windmills[COLOR_REVERT] by 1 and all [COLOR_HIGHLIGHT_TEXT]Watermills[COLOR_REVERT] by 2 and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Luxury Industry[COLOR_REVERT]. It allows the construction of the [COLOR_BUILDING_TEXT]Bunker[COLOR_REVERT], [COLOR_BUILDING_TEXT]Bomb Shelter[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Coal Plant[COLOR_REVERT] Buildings and the [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ENGINEERING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Engineering[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Pikemen[COLOR_REVERT] and [COLOR_UNIT_TEXT]Trebuchets[COLOR_REVERT]. It also increases [COLOR_HIGHLIGHT_TEXT]Road[COLOR_REVERT] movement and allows the construction of the [COLOR_BUILDING_TEXT]Castle[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Notre Dame[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] World Wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FASCISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Fascism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Totalitarianism[COLOR_REVERT] Civic, allows you to train [COLOR_UNIT_TEXT]Paratroopers[COLOR_REVERT] and allows the construction of the [COLOR_BUILDING_TEXT]Mount Rushmore[COLOR_REVERT] World Wonder. The first to research [COLOR_TECH_TEXT]Fascism[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] unit</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FEUDALISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Longbowmen[COLOR_REVERT] and allows the construction of the [COLOR_BUILDING_TEXT]Himeji Castle[COLOR_REVERT]. It also enables the [COLOR_HIGHLIGHT_TEXT]Vassalage[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Levy Armies[COLOR_REVERT] Civics and obsoletes the [COLOR_WARNING_TEXT]Colosseum[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Great Pyramids[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FIBER_OPTICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Fiber Optics[COLOR_REVERT] allows you to construct the [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT] Spaceship Part. It also obsoletes the [COLOR_WARNING_TEXT]Westminster Palace[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FISHING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Fishing[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Work Boats[COLOR_REVERT], allows cities to work water tiles and allows the construction of [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FISSION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Fission[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Nuclear Plant[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] World Wonder and the [COLOR_PROJECT_TEXT]Manhattan Project[COLOR_REVERT]. It also allows you to train [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FLIGHT_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Flight[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Paratroopers[COLOR_REVERT], [COLOR_UNIT_TEXT]Carriers[COLOR_REVERT], [COLOR_UNIT_TEXT]Fighters[COLOR_REVERT] and [COLOR_UNIT_TEXT]Bombers[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Airport[COLOR_REVERT] Building.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FUSION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Fusion[COLOR_REVERT] allows you to construct the [COLOR_PROJECT_TEXT]SS Engine[COLOR_REVERT] Spaceship Part. The first to research [COLOR_TECH_TEXT]Fusion[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT] unit</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FUTURE_TECH_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Future Tech[COLOR_REVERT] increases health and happiness in all your cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GENETICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Genetics[COLOR_REVERT] increases the health of all your cities. It allows you to construct the [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT] Spaceship Part.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GUILDS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Guilds[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Knights[COLOR_REVERT], allow you to construct the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT] Building, enables the [COLOR_HIGHLIGHT_TEXT]Guilds[COLOR_REVERT] Civic and allows you to construct the [COLOR_HIGHLIGHT_TEXT]Lumbermill[COLOR_REVERT] Improvement. It increases production from all workshops by 1 and reveals the [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT] Resource.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GUNPOWDER_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT], [COLOR_UNIT_TEXT]Cuirassiers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Bombards[COLOR_REVERT]. It also allows the [COLOR_HIGHLIGHT_TEXT]Pinch[COLOR_REVERT] Promotion.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HORSEBACK_RIDING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Horseback Riding[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Horse Archers[COLOR_REVERT] and [COLOR_UNIT_TEXT]War Elephants[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Stable[COLOR_REVERT] Building.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HUNTING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Hunting[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Scouts[COLOR_REVERT] and [COLOR_UNIT_TEXT]Spearmen[COLOR_REVERT]. It also allows you to construct the [COLOR_HIGHLIGHT_TEXT]Camp[COLOR_REVERT] Improvement.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_INDUSTRIALISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Industrialism[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Marines[COLOR_REVERT], [COLOR_UNIT_TEXT]Tanks[COLOR_REVERT] and [COLOR_UNIT_TEXT]Battleships[COLOR_REVERT], allows you to construct the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] World Wonder. It also reveals the [COLOR_HIGHLIGHT_TEXT]Aluminum[COLOR_REVERT] Resource, obsoletes the [COLOR_WARNING_TEXT]Ivory[COLOR_REVERT] Resource and enables the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] Promotion.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_IRON_WORKING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Iron Working[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] Resource and allows you to train [COLOR_UNIT_TEXT]Swordsmen[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LASER_QUOTE</Tag>
+		<English>"Nothing travels faster than the speed of light with the possible exception of bad news, which obeys its own special laws." - Douglas Adams</English>
+		<French>"Rien ne voyage plus vite que la lumi&#232;re, sauf &#233;ventuellement les mauvaises nouvelles, qui ob&#233;issent &#224; leurs propres lois." - Douglas Adams</French>
+		<German>"Nichts bewegt sich schneller als das Licht, au&#223;er m&#246;glicherweise schlechte Nachrichten, die ihren eigenen, besonderen Gesetzen gehorchen." - Douglas Adams</German>
+		<Italian>"Niente viaggia pi&#249; veloce della luce, con la possibile eccezione delle cattive notizie, che obbediscono a proprie leggi speciali." - Douglas Adams</Italian>
+		<Spanish>"Nada viaja m&#225;s deprisa que la luz, con la posible excepci&#243;n de las malas noticias, que obedecen sus propias leyes". - Douglas Adams</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LASER_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Laser[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Mobile SAMs[COLOR_REVERT] and [COLOR_UNIT_TEXT]Mobile Artillery[COLOR_REVERT]. It also allows you to construct the [COLOR_PROJECT_TEXT]SDI[COLOR_REVERT] Project.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LIBERALISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Liberalism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Republic[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Secularism[COLOR_REVERT] Civics. The first to discover [COLOR_TECH_TEXT]Liberalism[COLOR_REVERT] receives a free technology from you current or earlier era.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LITERATURE_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Literature[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Academy[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Great Library[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MACHINERY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Machinery[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT] and [COLOR_UNIT_TEXT]Crossbowmen[COLOR_REVERT]. It also allows the construction of the [COLOR_HIGHLIGHT_TEXT]Windmill[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Watermill[COLOR_REVERT] Improvement, allows the construction of [COLOR_BUILDING_TEXT]Borobudur[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Grand Canal[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MASONRY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Masonry[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Quarry[COLOR_REVERT] Improvement and enables the [COLOR_HIGHLIGHT_TEXT]Slavery[COLOR_REVERT] Civic. It also allows the construction of the [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Great Pyramids[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] World Wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MASS_MEDIA_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Mass Media[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] Building, [COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT], the [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Public Welfare[COLOR_REVERT] Civic.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MATHEMATICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] Building, allows the construction of the [COLOR_HIGHLIGHT_TEXT]Fort[COLOR_REVERT] Improvement and allows you to train [COLOR_UNIT_TEXT]Catapults[COLOR_REVERT]. It also increases the production gained from chopping forests. The first player to discover [COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MEDICINE_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Medicine[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Hospital[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Red Cross Society[COLOR_REVERT] National Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MEDITATION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Meditation[COLOR_REVERT] allows you to construct Religious [COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT]. The first player to discover [COLOR_TECH_TEXT]Meditation[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METAL_CASTING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Metal Casting[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] World Wonder. It also allows the construction of the [COLOR_HIGHLIGHT_TEXT]Workshop[COLOR_REVERT] Improvement and allows you to train [COLOR_UNIT_TEXT]Triremes[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILITARY_SCIENCE_QUOTE</Tag>
+		<English>"I must study politics and war that my sons may have liberty to study mathematics and philosophy." - John Adams</English>
+		<French>"Je dois &#233;tudier la politique et me battre pour que mes fils puissent &#234;tre libres d'&#233;tudier les math&#233;matiques et la philosophie." - John Adams</French>
+		<German>"Ich muss Politik und Krieg studieren, damit meine S&#246;hne die Freiheit haben, Mathematik und Philosophie zu studieren." - John Adams</German>
+		<Italian>"Devo studiare politica e arte della guerra in modo che i miei figli possano avere la libert&#224; di studiare matematica e filosofia". - John Adams</Italian>
+		<Spanish>"Debo estudiar las artes de la pol&#237;tica y la guerra para que mis hijos puedan estudiar las de las matem&#225;ticas y la filosof&#237;a". - John Adams</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILITARY_SCIENCE_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Military Science[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Frigates[COLOR_REVERT] and allows you to construct the [COLOR_BUILDING_TEXT]Military Academy[COLOR_REVERT] Building. It also enables the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Commando[COLOR_REVERT] Promotions and enables the [COLOR_HIGHLIGHT_TEXT]Naval Dominance[COLOR_REVERT] Civic.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILITARY_TRADITION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Military Tradition[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Cuirassier[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], allows you to construct [COLOR_BUILDING_TEXT]St. Basil's Cathedral[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Harmandir Sahib[COLOR_REVERT] World Wonders. It enables [COLOR_HIGHLIGHT_TEXT]Defensive Pacts[COLOR_REVERT], enables the [COLOR_HIGHLIGHT_TEXT]Standing Army[COLOR_REVERT] Civic and obsoletes the [COLOR_WARNING_TEXT]Great Wall[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MINING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Mining[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Mine[COLOR_REVERT] Improvement.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MONARCHY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Monarchy[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]War Elephants[COLOR_REVERT], enables the [COLOR_HIGHLIGHT_TEXT]Dynasticism[COLOR_REVERT] Civic, allows [COLOR_HIGHLIGHT_TEXT]Vassal States[COLOR_REVERT] and allows the construction of the [COLOR_HIGHLIGHT_TEXT]Winery[COLOR_REVERT] Improvement.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MUSIC</Tag>
+		<English>Music</English>
+		<French>
+			<Text>Musique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Musik</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Musica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>M&#250;sica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MUSIC_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Music[COLOR_REVERT] allows the construction of Religious [COLOR_BUILDING_TEXT]Cathedrals[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Blue Mosque[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MYSTICISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] World Wonder.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THEOLOGY_STRATEGY</Tag>
-		<English>The first to research this tech founds [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. It enables the [COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] civic and allows construction of the [COLOR_BUILDING_TEXT]Sistine Chapel[COLOR_REVERT] wonder.</English>
-		<French>La premi&#232;re civilisation qui atteint cette technologie fonde le [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT], qui permet d'instaurer la [COLOR_HIGHLIGHT_TEXT]th&#233;ocratie[COLOR_REVERT] et de construire la [COLOR_BUILDING_TEXT]Chapelle Sixtine[COLOR_REVERT].</French>
-		<German>Wer diese Technologie zuerst erforscht, begr&#252;ndet das [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Letzteres ist die Voraussetzung f&#252;r die Staatsform [COLOR_HIGHLIGHT_TEXT]Theokratie[COLOR_REVERT] und erm&#246;glicht den Bau der [COLOR_BUILDING_TEXT]Sixtinischen Kapelle[COLOR_REVERT].</German>
-		<Italian>Chi ricerca per primo questa tecnologia scopre il [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. Inoltre, permette la realizzazione della forma di governo [COLOR_HIGHLIGHT_TEXT]Teocrazia[COLOR_REVERT] e la costruzione della Meraviglia [COLOR_BUILDING_TEXT]Cappella Sistina[COLOR_REVERT].</Italian>
-		<Spanish>El primero en investigar esta tecnolog&#237;a fundar&#225; el [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. &#201;ste activa el principio de [COLOR_HIGHLIGHT_TEXT]Teocracia[COLOR_REVERT] y permite la construcci&#243;n de la maravilla de la [COLOR_BUILDING_TEXT]Capilla Sixtina[COLOR_REVERT].</Spanish>
+		<English>[COLOR_TECH_TEXT]Theology[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Theocracy[COLOR_REVERT] civic and allows the construction of the [COLOR_BUILDING_TEXT]Apostolic Palace[COLOR_REVERT] and [COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] World Wonders. It also obsoletes the [COLOR_WARNING_TEXT]Parthenon[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Statue of Zeus[COLOR_REVERT]. The first player to discover [COLOR_TECH_TEXT]Theology[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NATIONALISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Nationalism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Autocracy[COLOR_REVERT] Civic, allows the construction of the [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] National Wonder, the [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] World Wonders. It also obsoletes the [COLOR_WARNING_TEXT]Apostolic Palace[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_OPTICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Optics[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT], allows you to construct the [COLOR_HIGHLIGHT_TEXT]Whaling Boats[COLOR_REVERT] Improvement. It also increases your sight distance across water.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PAPER_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Paper[COLOR_REVERT] allows you to trade world maps with other civilizations and allows the construction of the [COLOR_BUILDING_TEXT]University of Sankore[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHILOSOPHY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Philosophy[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Scholasticism[COLOR_REVERT] Civic and allows the construction of the [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Leaning Tower[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHYSICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Physics[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] Resource. The first to research [COLOR_TECH_TEXT]Physics[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT] unit.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PLASTICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Plastics[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Offshore Platform[COLOR_REVERT] Improvement, allows the construction of the [COLOR_BUILDING_TEXT]Hydro Plant[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Three Gorges Dam[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Fur[COLOR_REVERT] and [COLOR_WARNING_TEXT]Pearls[COLOR_REVERT] Resources.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_POLYTHEISM_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Pantheon[COLOR_REVERT] Civic.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_POTTERY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Pottery[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Cottage[COLOR_REVERT] Improvement, allows the construction of the [COLOR_BUILDING_TEXT]Granary[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Terracotta Army[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PRIESTHOOD_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Priesthood[COLOR_REVERT] allows you to build Religious [COLOR_BUILDING_TEXT]Temples[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Shrine of Apollo[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Moai Statues[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] World Wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PRINTING_PRESS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Printing Press[COLOR_REVERT] increases the gold output of all [COLOR_HIGHLIGHT_TEXT]Village[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Town[COLOR_REVERT] Improvements by 1. The first catholic player to discover [COLOR_TECH_TEXT]Printing Press[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RADIO_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Radio[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Submarines[COLOR_REVERT] and [COLOR_UNIT_TEXT]Bombers[COLOR_REVERT], allows you to construct the [COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT], [COLOR_BUILDING_TEXT]Graceland[COLOR_REVERT] and [COLOR_BUILDING_TEXT]Cristo Redentor[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Multilateralism[COLOR_REVERT] Civic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RAILROAD_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Railroad[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Machine Gunners[COLOR_REVERT] and allows you to construct the [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] World Wonder. It also allows you to construct the [COLOR_HIGHLIGHT_TEXT]Railroad[COLOR_REVERT] Improvement.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFRIGERATION_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Refrigeration[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT] Building. It increases the food production of all [COLOR_HIGHLIGHT_TEXT]Pasture[COLOR_REVERT] Improvements by 1 and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Fishing Industry[COLOR_REVERT]. It also increases your water units' movement speed.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REPLACEABLE_PARTS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Replaceable Parts[COLOR_REVERT] increases the production output of all [COLOR_HIGHLIGHT_TEXT]Windmill[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Watermill[COLOR_REVERT] Improvements by 1. It also obsoletes the [COLOR_WARNING_TEXT]Grand Canal[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RIFLING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Rifling[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Riflemen[COLOR_REVERT], [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cannons[COLOR_REVERT], allows you to construct the [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Walls[COLOR_REVERT], [COLOR_WARNING_TEXT]Temple of Kukulkan[COLOR_REVERT] and the [COLOR_WARNING_TEXT]Himeji Castle[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ROBOTICS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Robotics[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Mechanized Infantry[COLOR_REVERT], [COLOR_UNIT_TEXT]Missile Cruisers[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Stealth Bombers[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Space Elevator[COLOR_REVERT] World Wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ROCKETRY_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Rocketry[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Anti-Tanks[COLOR_REVERT], [COLOR_UNIT_TEXT]Sam Infantry[COLOR_REVERT], [COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT], [COLOR_UNIT_TEXT]Guided Missiles[COLOR_REVERT], [COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] and [COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT]. It allows the construction of the [COLOR_PROJECT_TEXT]Space Program[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SAILING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Sailing[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Galleys[COLOR_REVERT] and [COLOR_UNIT_TEXT]Triremes[COLOR_REVERT]. It also enables trading along coasts and rivers, allows the construction of the [COLOR_BUILDING_TEXT]Harbor[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] World Wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SATELLITES_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Satellites[COLOR_REVERT] reveals the world map. It allows the construction of the [COLOR_PROJECT_TEXT]Space Elevator[COLOR_REVERT] World Wonder and allows you to construct the [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT] Spaceship Part.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SCIENTIFIC_METHOD_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Scientific Method[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] Resource, allows the construction of the [COLOR_HIGHLIGHT_TEXT]Forest Preserve[COLOR_REVERT] Improvement and allows the construction of the [COLOR_BUILDING_TEXT]Observatory[COLOR_REVERT] Building. It also obsoletes the [COLOR_WARNING_TEXT]Wat Preah Pisnulok[COLOR_REVERT], the [COLOR_WARNING_TEXT]Temple of Artemis[COLOR_REVERT], [COLOR_WARNING_TEXT]Borobudur[COLOR_REVERT], the [COLOR_WARNING_TEXT]Red Fort[COLOR_REVERT] and [COLOR_WARNING_TEXT]Monasteries[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEALTH_QUOTE</Tag>
+		<English>"Behind a veil, unseen yet present, I was the forceful soul that moved this mighty body." - Jean Racine</English>
+		<French>"Derri&#232;re un voile, invisible et pr&#233;sente, j'&#233;tais de ce grand corps l'&#226;me toute-puissante." - Jean Racine</French>
+		<German>"Hinter einem Schleier, unsichtbar aber doch vorhanden, war ich der m&#228;chtige Geist, der diesen kr&#228;ftigen K&#246;rper bewegte." - Jean Racine</German>
+		<Italian>"Dietro un velo, invisibile ma presente, ero la vigorosa anima che muoveva questo poderoso corpo." - Jean Racine</Italian>
+		<Spanish>"Tras un velo, invisible m&#225;s que presente, yo era el alma rectora que mov&#237;a este poderoso cuerpo". - Jean Racine</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEALTH_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Stealth[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Stealth Bombers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEAM_POWER_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Steam Power[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT] Resource, causes workers to build improvements 50% faster and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Textile Industry[COLOR_REVERT]. It also allows you to train [COLOR_UNIT_TEXT]Ironclads[COLOR_REVERT] and allows you to construct the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT] Building.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEEL_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Steel[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Ironclads[COLOR_REVERT], enables the [COLOR_HIGHLIGHT_TEXT]Industrialism[COLOR_REVERT] Civic and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Steel Industry[COLOR_REVERT]. It also allows the construction of the [COLOR_BUILDING_TEXT]Drydock[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Ironworks[COLOR_REVERT] National Wonder and the [COLOR_BUILDING_TEXT]Eiffel Tower[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] World Wonders.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SUPERCONDUCTOR_QUOTE</Tag>
+		<English>"What is happiness? The feeling that power is growing, that resistance is overcome." - Friedrich Nietzsche</English>
+		<French>"Qu'est-ce que le bonheur ? Le sentiment que la puissance cro&#238;t, qu'une r&#233;sistance est surmont&#233;e." - Friedrich Nietzsche</French>
+		<German>"Was ist Gl&#252;ck? Das Gef&#252;hl davon, dass die Macht w&#228;chst, dass ein Widerstand &#252;berwunden wird." - Friedrich Nietzsche</German>
+		<Italian>"Cos'&#232; la felicit&#224;? La sensazione che la potenza cresce e che si sta superando una resistenza." - Friedrich Nietzsche</Italian>
+		<Spanish>"&#191;Qu&#233; es la felicidad? La sensaci&#243;n de que el poder est&#225; creciendo y se superan las dificultades". - Friedrich Nietzsche</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SUPERCONDUCTORS_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] allow the construction of the [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] Spaceship Part.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THE_WHEEL_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]The Wheel[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Chariots[COLOR_REVERT] and allows the construction of [COLOR_HIGHLIGHT_TEXT]Roads[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_UTOPIA_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Communism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Central Planning[COLOR_REVERT] Civic and obsoletes [COLOR_WARNING_TEXT]St. Basils Cathedral[COLOR_REVERT]. It also allows construction of the [COLOR_BUILDING_TEXT]Intelligence Agency[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Security Bureau[COLOR_REVERT] Buildings and the [COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] World Wonder. The first to research [COLOR_TECH_TEXT]Communism[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Spy[COLOR_REVERT] unit.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WRITING_STRATEGY</Tag>
+		<English>[COLOR_TECH_TEXT]Writing[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT] Building and enables [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT].</English>
 	</TEXT>
 </Civ4GameText>

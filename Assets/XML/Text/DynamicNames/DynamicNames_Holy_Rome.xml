@@ -40,6 +40,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_GERMAN</Tag>
 		<English>German</English>
+		<French>
+			<Text>allemand:allemande:allemands:allemandes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Deutsch:deutschen:deutsche</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>tedesco:tedesca:tedeschi:tedesche</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>alem&#225;n:alemana:alemanes:alemanas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_SHORT_DESC</Tag>

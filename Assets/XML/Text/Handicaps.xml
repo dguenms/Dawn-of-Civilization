@@ -24,7 +24,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_PARAGON</Tag>
 		<English>Paragon</English>
-		<German>Paragon</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_PARAGON_HELP</Tag>
@@ -34,7 +33,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_REGENT</Tag>
 		<English>Regent</English>
-		<German>Regent</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HANDICAP_REGENT_HELP</Tag>

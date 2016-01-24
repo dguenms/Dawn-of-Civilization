@@ -16,6 +16,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_LEAGUE</Tag>
 		<English>%s2 League</English>
+		<French>
+			<Text>Ligue %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Liga:%s2 Liga:%s2 Liga</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Lega %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Liga %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_LOMBARD</Tag>
@@ -44,16 +64,10 @@
 		<German>Italienisch</German>
 		<Italian>Italiano</Italian>
 		<Spanish>Italiano</Spanish>
-		<Hungarian>olasz</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_DESC</Tag>
 		<English>The Italians</English>
-		<French>The Italians</French>
-		<German>The Italians</German>
-		<Italian>The Italians</Italian>
-		<Spanish>The Italians</Spanish>
-		<Hungarian>The Italians</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_SHORT_DESC</Tag>
@@ -62,6 +76,5 @@
 		<German>Italien</German>
 		<Italian>L'Italia</Italian>
 		<Spanish>Italia</Spanish>
-		<Hungarian>Olaszorsz&#225;g</Hungarian>
 	</TEXT>
 </Civ4GameText>

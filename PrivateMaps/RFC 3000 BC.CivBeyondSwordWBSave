@@ -607,8 +607,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer                 
-	LeaderName=TXT_KEY_LEADER_INDEPENDENT
-	LeaderType=LEADER_PETER
+	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT                 
 	Team=44      
 	PlayableCiv=0                 
@@ -616,8 +615,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer                 
-	LeaderName=TXT_KEY_LEADER_INDEPENDENT
-	LeaderType=LEADER_PETER
+	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2                 
 	Team=45
 	PlayableCiv=0                 
@@ -625,8 +623,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer                 
-	LeaderName=TXT_KEY_LEADER_NATIVE
-	LeaderType=LEADER_SHAKA
+	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE                 
 	Team=46       
 	PlayableCiv=0                 
