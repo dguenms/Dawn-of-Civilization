@@ -1946,7 +1946,7 @@
 			<Strategy>TXT_KEY_BUILDING_LIBRARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LIBRARY</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>90</iCost>
