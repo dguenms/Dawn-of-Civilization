@@ -4174,6 +4174,7 @@ tRenames = (
 # Polynesia (settler map only)
 {},
 # Harappa (settler map only)
+{},
 )
 
 tLanguages = (
