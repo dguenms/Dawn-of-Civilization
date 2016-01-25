@@ -245,6 +245,8 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_CORE", ())
 			elif iData2 == 37:
 				return CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ())
+			elif iData2 == 38:
+				return CyTranslator().getText("TXT_KEY_WB_WARVALUE", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"
@@ -473,8 +475,6 @@ def getWidgetHelp(argsList):
 		elif iData1 >= 22400 and iData1 < 22425:
 			sText = "+" + str(iData2)
 			return sText
-		elif iData1 == 22004:
-			return "ConvertSave"
 			
 		elif iData1 == 22005:
 			return " "

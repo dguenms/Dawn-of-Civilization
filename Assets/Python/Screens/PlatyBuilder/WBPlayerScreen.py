@@ -225,26 +225,40 @@ class WBPlayerScreen:
 			screen.setButtonGFC("CurrentResearchPlus", "", "", iX + iWidth - 50, iY - 30, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 			screen.setButtonGFC("CurrentResearchMinus", "", "", iX + iWidth - 25, iY - 30, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
 		screen.setLabel("CurrentProgressText", "Background", "<font=3b>" + sCurrentTech + "</font>", CvUtil.FONT_CENTER_JUSTIFY, iX + iWidth/2, iY - 30, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-		
-	def placeModifiers(self):
+
+	def placeModifiers(self, bRevert = False):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
 		iX = screen.getXResolution()/4 + screen.getXResolution()/2 - 300
 		iY = 110 + self.iIconSize
 		iWidth = 300-2*24
 		iHeight = (screen.getYResolution()/2 - 55 - iY)/24 * 24 + 2 + 24
 		iXx = iX + iWidth
+		iXxx = iX + iWidth/3*2
+		iWidth2 = iXx + 2*24 - iXxx
+
 		screen.addTableControlGFC("WBPlayerModifiers", 2, iX, iY, iWidth, iHeight, False, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 		screen.setTableColumnHeader("WBPlayerModifiers", 0, "", iWidth/3*2)
 		screen.setTableColumnHeader("WBPlayerModifiers", 1, "", iWidth/3)
+		if not bRevert:
+			screen.setButtonGFC("ModifierResetButton", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iXxx, iY - 40, iWidth2, 35, WidgetTypes.WIDGET_GENERAL, 1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+		else:
+			screen.setButtonGFC("ModifierResetButton", localText.getText("TXT_KEY_SCREEN_CANCEL", ()), "", iXxx, iY - 40, iWidth2, 35, WidgetTypes.WIDGET_GENERAL, 0, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 		for iModifier in range(Modifiers.iNumModifiers):
 			iRow = screen.appendTableRow("WBPlayerModifiers")
+			screen.deleteWidget("ModifierButtonDecrease"+str(iRow))
+			screen.deleteWidget("ModifierRevertButton"+str(iRow))
 			sText = localText.getText("TXT_KEY_MODIFIERS_"+str(iModifier), ())
 			iValue = pPlayer.getModifier(iModifier)
 			screen.setTableText("WBPlayerModifiers", 0, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 			screen.setTableText("WBPlayerModifiers", 1, iRow, str(iValue), "", WidgetTypes.WIDGET_PYTHON, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-			screen.setButtonGFC("ModifierButtonDecrease"+str(iRow), "", "", iXx, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 22300+iModifier, iChange, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
-			screen.setButtonGFC("ModifierButtonIncrease"+str(iRow), "", "", iXx+24, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 22400+iModifier, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
-			
+			if not bRevert:
+				screen.setButtonGFC("ModifierButtonDecrease"+str(iRow), "", "", iXx, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 22300+iModifier, iChange, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+				screen.setButtonGFC("ModifierButtonIncrease"+str(iRow), "", "", iXx+24, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 22400+iModifier, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+			else:
+				if not iValue == Modifiers.getModifier(iPlayer, iModifier):
+					screen.setButtonGFC("ModifierRevertButton"+str(iRow), "I", "", iXx, iY + iRow*24, 2*24, 24, WidgetTypes.WIDGET_PYTHON, iModifier, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+				else:
+					screen.setButtonGFC("ModifierRevertButton"+str(iRow), "O", "", iXx, iY + iRow*24, 2*24, 24, WidgetTypes.WIDGET_PYTHON, iModifier, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 	def placeReligions(self):
 		screen = CyGInterfaceScreen("WBPlayerScreen", CvScreenEnums.WB_PLAYER)
@@ -488,6 +502,18 @@ class WBPlayerScreen:
 				iModifierValue = pPlayer.getModifier(iModifier)
 				pPlayer.setModifier(iModifier, iModifierValue + iChange)
 			self.placeModifiers()
+
+		elif inputClass.getFunctionName() == "ModifierResetButton":
+			if inputClass.getData1() == 1:
+				self.placeModifiers(True)
+			else:
+				self.placeModifiers(False)
+
+		elif inputClass.getFunctionName().find("ModifierRevertButton") > -1:
+			iModifier = inputClass.getData1()
+			iModifierValue = Modifiers.getModifier(iPlayer, iModifier)
+			pPlayer.setModifier(iModifier, iModifierValue)
+			self.placeModifiers(True)
 
 		return 1
 
