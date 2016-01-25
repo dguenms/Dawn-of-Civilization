@@ -2086,7 +2086,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		
 		# Leoreth: rebuild some city infrastructure
 		for iBuilding in range(iNumBuildings):
-			if pPlayer.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not utils.isUniqueBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getPrereqReligion() == -1:
+			if pPlayer.canConstruct(iBuilding, True, False, False) and newCity.canConstruct(iBuilding, True, False, False) and pPlayer.getCurrentEra() >= gc.getBuildingInfo(iBuilding).getFreeStartEra() and not utils.isUniqueBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getPrereqReligion() == -1:
 				newCity.setHasRealBuilding(iBuilding, True)
 			
 		if bCapital and iOwner < iNumPlayers:
