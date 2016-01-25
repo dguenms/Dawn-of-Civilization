@@ -291,7 +291,7 @@ class RiseAndFall:
 		
 		iNumCities = gc.getPlayer(iNewCivFlip).getNumCities()
 
-                humanCityList = [city for city in self.getConvertedCities(iNewCivFlip, tTopLeft, tBottomRight) if city.getOwner() == iHuman]
+                humanCityList = [city for city in self.getConvertedCities(iNewCivFlip, utils.getPlotList(tTopLeft, tBottomRight)) if city.getOwner() == iHuman]
                 
                 if( popupReturn.getButtonClicked() == 0 ): # 1st button
                         print ("Flip agreed")
