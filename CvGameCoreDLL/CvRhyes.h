@@ -20,8 +20,8 @@ typedef list<char*> LISTCHAR;
 
 #define BEGIN_WONDERS				(134) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
-#define NUM_BUILDINGS_PLAGUE		(210) // always increment when a building is added except embassies
-#define NUM_BUILDINGTYPES_PLAGUE	(131) // increment when a building class is created except embassies
+#define NUM_BUILDINGS_PLAGUE		(210) // always increment when a building is added
+#define NUM_BUILDINGTYPES_PLAGUE	(131) // increment when a building class is added
 
 #define NUM_MAJOR_PLAYERS		(44)
 #define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
