@@ -1,6 +1,6 @@
 from CvPythonExtensions import *
 from Consts import *
-import RFCUtils
+from RFCUtils import utils
 import Popup as PyPopup
 import Areas
 import SettlerMaps
@@ -10,7 +10,6 @@ import os
 IMAGE_LOCATION = os.getcwd() + "\Mods\\RFC Dawn of Civilization\\Export"
 
 gc = CyGlobalContext()
-utils = RFCUtils.RFCUtils()
 
 bAutoWater = True
 bAutoPeak = True
@@ -26,7 +25,9 @@ def changeCore(iPlayer, tPlot):
 	
 def changeCoreForce(iPlayer, tPlot, bAdd):
 	x, y = tPlot
-	gc.getMap().plot(x, y).setCore(iPlayer, bAdd)
+	plot = gc.getMap().plot(x, y)
+	if (plot.isWater() and bAutoWater) or (plot.isPeak() and bAutoPeak and tPlot not in lPeakExceptions): return
+	plot.setCore(iPlayer, bAdd)
 	
 def changeSettlerValue(iPlayer, tPlot, iValue):
 	x, y = tPlot
@@ -60,6 +61,10 @@ def resetWarMap(iPlayer):
 def exportCore(iPlayer):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+	if iPlayer == iHolyRome:
+		sName = "HolyRome"
+	elif iPlayer == iAztecs:
+		sName = "Aztecs"
 	
 	lCorePlotList = Areas.getCoreArea(iPlayer)
 	bCoreChanged = False
@@ -69,6 +74,8 @@ def exportCore(iPlayer):
 			if gc.getMap().plot(x, y).isCore(iPlayer) != bOldCore:
 				bCoreChanged = True
 				break
+		if bCoreChanged:
+			break
 	if bCoreChanged:
 		Bottom = iWorldY
 		Top = 0
@@ -91,7 +98,8 @@ def exportCore(iPlayer):
 		lExceptions = []
 		for x in range(BL[0], TR[0]+1):
 			for y in range(BL[1], TR[1]+1):
-				if not gc.getMap().plot(x, y).isCore(iPlayer):
+				plot = gc.getMap().plot(x, y)
+				if not plot.isCore(iPlayer) or (plot.isWater() and bAutoWater) or (plot.isPeak() and bAutoPeak and (x, y) not in lPeakExceptions):
 					lExceptions.append((x, y))
 
 		file = open(IMAGE_LOCATION + "\Cores\\" + sName, 'wt')
@@ -113,6 +121,10 @@ def exportCore(iPlayer):
 def exportSettlerMap(iPlayer):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+	if iPlayer == iHolyRome:
+		sName = "HolyRome"
+	elif iPlayer == iAztecs:
+		sName = "Aztecs"
 		
 	bSettlerValueChanged = False
 	for x in range(iWorldX):
@@ -120,6 +132,8 @@ def exportSettlerMap(iPlayer):
 			if getSettlerValue(iPlayer, (x, y)) != SettlerMaps.getMapValue(iCiv, x, y):
 				bSettlerValueChanged = True
 				break
+		if bSettlerValueChanged:
+			break
 	if bSettlerValueChanged:
 		file = open(IMAGE_LOCATION + "\SettlerValues\\" + sName, 'wt')
 		try:
@@ -150,6 +164,10 @@ def exportSettlerMap(iPlayer):
 def exportWarMap(iPlayer):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+	if iPlayer == iHolyRome:
+		sName = "HolyRome"
+	elif iPlayer == iAztecs:
+		sName = "Aztecs"
 		
 	bWarMapChanged = False
 	for x in range(iWorldX):
@@ -157,6 +175,8 @@ def exportWarMap(iPlayer):
 			if getWarValue(iPlayer, (x, y)) != WarMaps.getMapValue(iCiv, x, y):
 				bWarMapChanged = True
 				break
+		if bWarMapChanged:
+			break
 	if bWarMapChanged:
 		file = open(IMAGE_LOCATION + "\WarMaps\\" + sName, 'wt')
 		try:
