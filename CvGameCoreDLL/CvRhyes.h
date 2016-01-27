@@ -16,8 +16,6 @@ typedef list<char*> LISTCHAR;
 //#define VERSAILLES				(2)
 //#define FORBIDDENPALACE			(2)
 
-#define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
-
 #define BEGIN_WONDERS				(128) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
 #define NUM_BUILDINGS_PLAGUE		(204) // always increment when a building is added except embassies
@@ -28,6 +26,13 @@ typedef list<char*> LISTCHAR;
 #define NUM_CIVS				(52)
 
 #define NUM_ERAS				(ERA_FUTURE+1)
+
+static const int PAGAN_TEMPLE = GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE");
+
+static const int PROMOTION_DRILL1 = GC.getInfoTypeForString("PROMOTION_DRILL1");
+static const int PROMOTION_DRILL2 = GC.getInfoTypeForString("PROMOTION_DRILL2");
+static const int PROMOTION_NAVIGATION1 = GC.getInfoTypeForString("PROMOTION_NAVIGATION1");
+static const int PROMOTION_NAVIGATION2 = GC.getInfoTypeForString("PROMOTION_NAVIGATION2");
 
 enum MyTechs
 {

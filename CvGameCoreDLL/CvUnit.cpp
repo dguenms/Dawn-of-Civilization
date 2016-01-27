@@ -237,15 +237,15 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
     case KOREA:
         if (getUnitCombatType() == 8) //naval
             {
-                setHasPromotion(((PromotionTypes)29), true); //Drill1
-                setHasPromotion(((PromotionTypes)30), true); //Drill2
+                setHasPromotion((PromotionTypes)PROMOTION_DRILL1, true);
+                setHasPromotion((PromotionTypes)PROMOTION_DRILL2, true);
             }
         break;
 	case SPAIN:
 		if (getUnitCombatType() == 8) //naval
 			{
-				setHasPromotion(((PromotionTypes)41), true); //navigation1
-				setHasPromotion(((PromotionTypes)42), true); //navigation2
+				setHasPromotion((PromotionTypes)PROMOTION_NAVIGATION1, true);
+				setHasPromotion((PromotionTypes)PROMOTION_NAVIGATION2, true);
 			}
 		break;
 	default:
