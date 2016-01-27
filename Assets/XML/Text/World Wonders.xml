@@ -2,7 +2,7 @@
 <!-- World Wonders -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ANGKOR_WAT</Tag>
+		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Tag>
 		<English>Wat Preah Pisnulok</English>
 		<French>
 			<Text>Vat Preah Pisnulok</Text>
@@ -26,12 +26,12 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ANGKOR_WAT_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_HELP</Tag>
 		<English>[ICON_BULLET]Artists can also be hired using Priest slots.</English>
 		<German>[ICON_BULLET]K&#252;nstler k&#246;nnen auch mithilfe von Priesterstellen eingestellt werden.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ANGKOR_WAT_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities. Further, it allows Artists to be hired using Priest slots. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -89,7 +89,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] doubles the amount of great general points you receive inside your cultural borders. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_BROADWAY</Tag>
+		<Tag>TXT_KEY_BUILDING_WEMBLEY</Tag>
 		<English>Wembley</English>
 		<French>
 			<Text>Stade de Wembley</Text>
@@ -113,7 +113,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_BROADWAY_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_WEMBLEY_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -121,7 +121,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Mahabodhi[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] throughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CERN</Tag>
+		<Tag>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX</Tag>
 		<English>CERN Research Complex</English>
 		<French>
 			<Text>CERN</Text>
@@ -145,35 +145,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CERN_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] greatly increases the scientific output of its city. It also allows you to hire three [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialists and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CHANNEL_TUNNEL</Tag>
-		<English>Channel Tunnel</English>
-		<French>
-			<Text>Tunnel sous la Manche</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Eurotunnel</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Canale della Manica</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>el Eurot&#250;nel</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CHICHEN_ITZA</Tag>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN</Tag>
 		<English>Temple of Kukulkan</English>
 		<French>
 			<Text>Temple de Quetzalc&#243;atl</Text>
@@ -197,7 +173,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CHICHEN_ITZA_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] increases all cities' defenses by 25%%. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -241,7 +217,7 @@
 		<English>The [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_DOME_ROCK</Tag>
+		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK</Tag>
 		<English>Dome of the Rock</English>
 		<German>
 			<Text>Felsendom</Text>
@@ -250,21 +226,21 @@
 		</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_DOME_ROCK_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] decreases war weariness in all cities in your civilization and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE</Tag>
+		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING</Tag>
 		<English>The Empire State Building</English>
 		<German>Das Empire State Building</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_HELP</Tag>
 		<English>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population.</English>
 		<German>[ICON_BULLET]Produziert [ICON_GOLD] entsprechend der Bev&#246;lkerung seiner Stadt.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] provides a gold bonus equal to the population of the city in which it's built. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
@@ -281,7 +257,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in your coastal cities. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Tag>
+		<Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
 		<English>The Colosseum</English>
 		<French>
 			<Text>Le Colis&#233;e</Text>
@@ -305,7 +281,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_COLOSSEUM_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Colosseum[COLOR_REVERT] increases its city's production when creating military units and grants experience points to units built in this city. It also increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -401,11 +377,11 @@
 		<Spanish>Puerta de Istar</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_KGB</Tag>
+		<Tag>TXT_KEY_BUILDING_LUBYANKA</Tag>
 		<English>Lubyanka</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_KGB_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_LUBYANKA_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] adds additional espionage to all of your specialists. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -417,7 +393,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Masjid al-Haram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_KREMLIN</Tag>
+		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Tag>
 		<English>St. Basil's Cathedral</English>
 		<German>
 			<Text>Basilius-Kathedrale</Text>
@@ -426,7 +402,7 @@
 		</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_KREMLIN_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]St. Basil's Cathedral[COLOR_REVERT] adds additional espionage to all buildings of your state religion and it increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -474,7 +450,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Mausoleum of Maussollos[COLOR_REVERT] increases the length of your Golden Ages by fifty percent. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MEZQUITA</Tag>
+		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA</Tag>
 		<English>La Mezquita</English>
 	</TEXT>
 	<TEXT>
@@ -518,12 +494,12 @@
 		<English>The [COLOR_BUILDING_TEXT]Oracle[COLOR_REVERT] gives one free technology of your current or previous era, and it increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MEZQUITA_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA_HELP</Tag>
 		<English>[ICON_BULLET]Builder Receives a Great Person</English>
 		<German>[ICON_BULLET]Erbauer erh&#228;lt eine gro&#223;e Pers&#246;nlichkeit</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MEZQUITA_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_LA_MEZQUITA_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]La Mezquita[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists and grants the builder a free great person. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -551,7 +527,31 @@
 		<English>[COLOR_BUILDING_TEXT]Himeji Castle[COLOR_REVERT] makes city defence increases culture output and makes all fully fortified units provide +1 culture. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HANGING_GARDEN_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS</Tag>
+		<English>The Hanging Gardens</English>
+		<French>
+			<Text>Jardins suspendus</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Die H&#228;ngenden G&#228;rten</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>I Giardini Pensili</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>los Jardines Colgantes:los Jardines Colgantes</Text>
+			<Gender>Male</Gender>
+			<Plural>1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] improves the health of your city and adds an additional population point in all cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -630,12 +630,36 @@
 		<English>The [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists and counts all trade routes in your civilization as foreign. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PYRAMID_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_PYRAMIDS</Tag>
+		<English>The Pyramids</English>
+		<French>
+			<Text>Pyramides</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Die Pyramiden</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Le Piramidi</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>las Pir&#225;mides:las Pir&#225;mides</Text>
+			<Gender>Female</Gender>
+			<Plural>1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PYRAMIDS_HELP</Tag>
 		<English>[ICON_BULLET]Hurry Unhappiness Does Not Increase with the Amount of Sacrificed Population</English>
 		<German>[ICON_BULLET]Die Unzufriedenheit durch Sklaverei steigt nicht mit der Anzahl der geopferten Bev&#246;lkerung</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PYRAMID_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] makes slavery unhappiness not increase with the amount of population sacrificed, makes workers build improvements faster and centers the world map. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -648,7 +672,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] gives 2 free specialists. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ROCKNROLL</Tag>
+		<Tag>TXT_KEY_BUILDING_GRACELAND</Tag>
 		<English>Graceland</English>
 		<French>
 			<Text>Graceland</Text>
@@ -672,15 +696,15 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ROCKNROLL_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_GRACELAND_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Graceland[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will create a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SAN_MARCO</Tag>
+		<Tag>TXT_KEY_BUILDING_SAN_MARCO_BASILICA</Tag>
 		<English>San Marco Basilica</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SAN_MARCO_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_SAN_MARCO_BASILICA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] gives 2 trade routes and increases trade route yield by fifty percent. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -713,7 +737,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Statue of Zeus[COLOR_REVERT] removes city resistance on conquest and increases military production speed in cities with pagan temples. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SPHINX</Tag>
+		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX</Tag>
 		<English>Great Sphinx</English>
 		<German>
 			<Text>Die Gro&#223;e Sphinx</Text>
@@ -722,12 +746,12 @@
 		</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SPHINX_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Tag>
 		<English>[ICON_BULLET]Great prophets can create great works like great artists.</English>
 		<German>[ICON_BULLET]Gro&#223;e Propheten k&#246;nnen gro&#223;e Kunstwerke erstellen, genau wie gro&#223;e K&#252;nstler.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SPHINX_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows Great Prophets to create Great Works. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -735,7 +759,31 @@
 		<English>The [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ARTEMIS_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS</Tag>
+		<English>The Temple of Artemis</English>
+		<French>
+			<Text>Temple d'Art&#233;mis</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Artemis-Tempel</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Tempio di Artemide</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Templo de Artemisa:Templos de Artemisa</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -771,7 +819,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Temple of Solomon[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_SALOMON_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_HELP</Tag>
 		<English>[ICON_BULLET]Doubles the revenue limit of all your shrines</English>
 		<German>[ICON_BULLET]Verdoppelt die Einnahmegrenze aller Ihrer Schreine</German>
 	</TEXT>
@@ -874,7 +922,31 @@
 		<English>[COLOR_BUILDING_TEXT]Trafalgar Square[COLOR_REVERT] enables ships to be built much faster and the ships start off with additional experience points. It also increase its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SANKORE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE</Tag>
+		<English>University of Sankore</English>
+		<French>
+			<Text>Universit&#233; de Sankor&#233;</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Universit&#228;t von Sankore</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Universit&#224; di Sankore</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Universidad de Sankore:Universidades de Sankore</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]University of Sankore[COLOR_REVERT] gives all buildings of your state religion a research bonus. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -886,7 +958,7 @@
 		<English>The [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] triggers [COLOR_HIGHLIGHT_TEXT]Diplomatic Victory[COLOR_REVERT] elections. It guarantees that you will be a candidate in those elections and increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_WESTMINSTER</Tag>
+		<Tag>TXT_KEY_BUILDING_WESTMINSTER_PALACE</Tag>
 		<English>Westminster Palace</English>
 		<German>
 			<Text>Palast von Westminster</Text>
@@ -895,7 +967,7 @@
 		</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_WESTMINSTER_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_WESTMINSTER_PALACE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] reduces the cost of hurrying production and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>

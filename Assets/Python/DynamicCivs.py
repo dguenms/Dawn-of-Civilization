@@ -454,25 +454,25 @@ dStartingLeaders = [
 	iEgypt : iRamesses,
 	iIndia : iAsoka,
 	iChina : iQinShiHuang,
-	iBabylonia : iGilgamesh,
+	iBabylonia : iSargon,
 	iHarappa : iVatavelli,
 	iGreece : iPericles,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
 	iPolynesia : iAhoeitu,
 	iRome : iJuliusCaesar,
-	iJapan : iJimmu,
-	iTamils : iRajendra,
+	iJapan : iKammu,
+	iTamils : iRajendraChola,
 	iEthiopia : iZaraYaqob,
 	iKorea : iWangKon,
 	iMaya : iPacal,
 	iByzantium : iJustinian,
 	iVikings : iRagnar,
-	iArabia : iHarun,
-	iTibet : iSongtsen,
+	iArabia : iHarunAlRashid,
+	iTibet : iSongtsenGampo,
 	iKhmer : iSuryavarman,
 	iIndonesia : iDharmasetu,
-	iMoors : iRahman,
+	iMoors : iAbdArRahman,
 	iSpain : iIsabella,
 	iFrance : iCharlemagne,
 	iEngland : iAlfred,
@@ -481,32 +481,32 @@ dStartingLeaders = [
 	iNetherlands : iWillemVanOranje,
 	iMali : iMansaMusa,
 	iPoland : iCasimir,
-	iPortugal : iAfonso,
+	iPortugal : iAfonsoHenriques,
 	iInca : iHuaynaCapac,
-	iItaly : iLorenzo,
+	iItaly : iLorenzoDeMedici,
 	iMongolia : iGenghisKhan,
 	iAztecs : iMontezuma,
-	iMughals : iTughluq,
+	iMughals : iMuhammadibnTughluq,
 	iTurkey : iMehmed,
 	iThailand : iNaresuan,
 	iCongo : iMbemba,
 	iGermany : iFrederick,
 	iAmerica : iWashington,
 	iArgentina : iSanMartin,
-	iBrazil : iDomPedro,
+	iBrazil : iPedro,
 	iCanada : iTrudeau,
 },
 # 600 AD
 {
-	iChina : iTaizong,
+	iChina : iTangTaizong,
 },
 # 1700 AD
 {
 	iChina : iHongwu,
 	iIndia : iShahuji,
 	iPersia : iAbbas,
-	iJapan : iTokugawa,
-	iVikings : iGustav,
+	iJapan : iOdaNobunaga,
+	iVikings : iGustavAdolph,
 	iSpain : iPhilip,
 	iFrance : iLouis,
 	iEngland : iVictoria,
@@ -1751,7 +1751,7 @@ def leader(iPlayer):
 		if tPlayer.isHasTech(iCurrency): return iChandragupta
 		
 	elif iPlayer == iChina:
-		if isCommunist(iPlayer) or isRepublic(iPlayer) and iEra >= iIndustrial: return iMao
+		if isCommunist(iPlayer) or isRepublic(iPlayer) and iEra >= iIndustrial: return iMaoZedong
 			
 		if iEra >= iRenaissance and iGameTurn >= getTurnForYear(1400): return iHongwu
 	
@@ -1759,7 +1759,7 @@ def leader(iPlayer):
 		
 		if utils.getScenario() >= i1700AD: return iHongwu
 		
-		if iEra >= iMedieval: return iTaizong
+		if iEra >= iMedieval: return iTangTaizong
 		
 	elif iPlayer == iBabylonia:
 		if iGameTurn >= getTurnForYear(-1600): return iHammurabi
@@ -1784,7 +1784,7 @@ def leader(iPlayer):
 		if capital.getRegionID() not in [rMesopotamia, rAnatolia]: return iHannibal
 		
 	elif iPlayer == iRome:
-		if not bEmpire and not bCityStates: return iAugustus
+		if not bEmpire and not bCityStates: return iAugustusCaesar
 		
 	elif iPlayer == iMaya:
 		if bReborn:
@@ -1805,7 +1805,7 @@ def leader(iPlayer):
 		if iGameTurn >= getTurnForYear(1000): return iBasil
 		
 	elif iPlayer == iVikings:
-		if iEra >= iRenaissance: return iGustav
+		if iEra >= iRenaissance: return iGustavAdolph
 		
 	elif iPlayer == iArabia:
 		if iGameTurn >= getTurnForYear(1000): return iSaladin
@@ -1819,7 +1819,7 @@ def leader(iPlayer):
 		if bEmpire: return iHayamWuruk
 		
 	elif iPlayer == iMoors:
-		if not utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR): return iYaqub
+		if not utils.isPlotInArea(tCapitalCoords, vic.tIberiaTL, vic.tIberiaBR): return iYaqubAlMansur
 		
 	elif iPlayer == iSpain:
 		if isFascist(iPlayer): return iFranco
@@ -1902,7 +1902,7 @@ def leader(iPlayer):
 		if tPlayer.isHasTech(iNationalism): return iBismarck
 		
 	elif iPlayer == iAmerica:
-		if iEra >= iModern: return iFranklinRoosevelt
+		if iEra >= iModern: return iRoosevelt
 		
 		if iGameTurn >= getTurnForYear(1850): return iLincoln
 		

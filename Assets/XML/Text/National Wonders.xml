@@ -2,7 +2,7 @@
 <!-- National Wonders -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE</Tag>
+		<Tag>TXT_KEY_BUILDING_OPERA_HOUSE</Tag>
 		<English>Opera House</English>
 		<French>
 			<Text>Op&#233;ra</Text>
@@ -26,11 +26,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_GLOBE_THEATRE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_OPERA_HOUSE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HERMITAGE</Tag>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_GALLERY</Tag>
 		<English>National Gallery</English>
 		<French>
 			<Text>Galerie nationale</Text>
@@ -54,7 +54,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HERMITAGE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_GALLERY_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]National Gallery[COLOR_REVERT] doubles its city's cultural output and increases its chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 		<German>Die [COLOR_BUILDING_TEXT]Nationalgalerie[COLOR_REVERT] verdoppelt den kulturellen Aussto&#223; einer Stadt. Au&#223;erdem erh&#246;ht es die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en K&#252;nstler[COLOR_REVERT] hervorzubringen.</German>
 	</TEXT>
@@ -91,7 +91,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD</Tag>
+		<Tag>TXT_KEY_BUILDING_INTERPOL</Tag>
 		<English>Interpol</English>
 		<French>
 			<Text>Interpol</Text>
@@ -115,7 +115,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SCOTLAND_YARD_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_INTERPOL_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] doubles its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</English>
 	</TEXT>
 	<TEXT>
@@ -191,7 +191,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Triumphal Arch[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's production when creating military units.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_WALL_STREET</Tag>
+		<Tag>TXT_KEY_BUILDING_STOCK_EXCHANGE</Tag>
 		<English>Stock Exchange</English>
 		<French>
 			<Text>Bourse</Text>
@@ -215,7 +215,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_WALL_STREET_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_STOCK_EXCHANGE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] doubles its city's production of wealth and increases its chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>

@@ -250,7 +250,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION 
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_MERCENARIES
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -340,7 +340,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
-	StateReligion=RELIGION_CHRISTIANITY                       
+	StateReligion=RELIGION_CATHOLICISM                       
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -353,7 +353,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
-	StateReligion=RELIGION_CHRISTIANITY                       
+	StateReligion=RELIGION_CATHOLICISM                       
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -366,7 +366,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
-	StateReligion=RELIGION_CHRISTIANITY                      
+	StateReligion=RELIGION_CATHOLICISM                      
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -379,7 +379,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
-	StateReligion=RELIGION_CHRISTIANITY                       
+	StateReligion=RELIGION_CATHOLICISM                       
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -414,7 +414,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -428,7 +428,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
-	StateReligion=RELIGION_CHRISTIANITY                       
+	StateReligion=RELIGION_CATHOLICISM                       
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -452,7 +452,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -533,7 +533,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_MERCENARIES
-	StateReligion=RELIGION_CHRISTIANITY                         
+	StateReligion=RELIGION_CATHOLICISM                         
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -547,7 +547,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_JUDAISM
+	StateReligion=RELIGION_PROTESTANTISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -561,7 +561,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_JUDAISM
+	StateReligion=RELIGION_PROTESTANTISM
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -575,7 +575,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -589,7 +589,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -603,7 +603,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_JUDAISM
+	StateReligion=RELIGION_PROTESTANTISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer                 
@@ -9252,7 +9252,7 @@ BeginPlot
 	x=23,y=43
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -9995,7 +9995,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=44
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -11011,7 +11011,7 @@ BeginPlot
 	x=28,y=26
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -11387,7 +11387,7 @@ BeginPlot
 	x=29,y=26
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -11403,7 +11403,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -11411,7 +11411,7 @@ BeginPlot
 	x=29,y=29
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -11769,7 +11769,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -11783,7 +11783,7 @@ BeginPlot
 	x=30,y=26
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -11813,7 +11813,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12168,13 +12168,13 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=31,y=25
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12462,7 +12462,7 @@ BeginPlot
 	x=32,y=9
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12554,7 +12554,7 @@ BeginPlot
 	x=32,y=25
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12562,7 +12562,7 @@ BeginPlot
 	x=32,y=26
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12570,7 +12570,7 @@ BeginPlot
 	x=32,y=27
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12845,7 +12845,7 @@ BeginPlot
 	x=33,y=9
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12870,7 +12870,7 @@ BeginPlot
 	x=33,y=13
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12925,7 +12925,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=22
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12949,7 +12949,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12959,7 +12959,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13267,13 +13267,13 @@ BeginPlot
 	x=34,y=13
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=34,y=14
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13315,7 +13315,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=21
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13327,7 +13327,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=23
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13345,7 +13345,7 @@ BeginPlot
 	x=34,y=25
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13663,7 +13663,7 @@ BeginPlot
 	x=35,y=15
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13671,7 +13671,7 @@ BeginPlot
 	x=35,y=16
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13688,7 +13688,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13696,7 +13696,7 @@ BeginPlot
 	x=35,y=19
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13726,7 +13726,7 @@ BeginPlot
 	x=35,y=23
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13742,7 +13742,7 @@ BeginPlot
 	x=35,y=25
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13750,7 +13750,7 @@ BeginPlot
 	x=35,y=26
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -14060,7 +14060,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -14079,7 +14079,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=19
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -14110,7 +14110,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -14489,7 +14489,7 @@ BeginPlot
 	x=37,y=24
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -19843,7 +19843,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=29
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -23538,7 +23538,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -23552,7 +23552,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=23
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -23927,7 +23927,7 @@ BeginPlot
 	x=63,y=22
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -23937,7 +23937,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -23945,7 +23945,7 @@ BeginPlot
 	x=63,y=24
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -23953,7 +23953,7 @@ BeginPlot
 	x=63,y=25
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -24328,7 +24328,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -24336,13 +24336,13 @@ BeginPlot
 	x=64,y=24
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=64,y=25
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -24691,7 +24691,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=18
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -24701,7 +24701,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -24726,7 +24726,7 @@ BeginPlot
 	x=65,y=22
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -24738,7 +24738,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -24746,7 +24746,7 @@ BeginPlot
 	x=65,y=25
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -25532,7 +25532,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=20
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -25766,13 +25766,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=61
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=67,y=62
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -25939,7 +25939,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -25955,7 +25955,7 @@ BeginPlot
 	x=68,y=26
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -25965,7 +25965,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -25973,7 +25973,7 @@ BeginPlot
 	x=68,y=28
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -26362,19 +26362,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=26
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=27
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=28
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -31762,7 +31762,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -31770,7 +31770,7 @@ BeginPlot
 	x=83,y=54
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -31807,7 +31807,7 @@ BeginPlot
 	x=83,y=60
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -31815,7 +31815,7 @@ BeginPlot
 	x=83,y=61
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32142,7 +32142,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=54
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32174,7 +32174,7 @@ BeginPlot
 	x=84,y=58
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32182,7 +32182,7 @@ BeginPlot
 	x=84,y=59
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32190,13 +32190,13 @@ BeginPlot
 	x=84,y=60
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=84,y=61
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32531,7 +32531,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=55
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32539,13 +32539,13 @@ BeginPlot
 	x=85,y=56
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=85,y=57
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32559,13 +32559,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=59
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=85,y=60
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32898,7 +32898,7 @@ BeginPlot
 	x=86,y=54
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32906,7 +32906,7 @@ BeginPlot
 	x=86,y=55
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -32914,13 +32914,13 @@ BeginPlot
 	x=86,y=56
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=86,y=57
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -33276,7 +33276,7 @@ BeginPlot
 	x=87,y=54
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -33294,7 +33294,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=57
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -33302,7 +33302,7 @@ BeginPlot
 	x=87,y=58
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -33668,7 +33668,7 @@ BeginPlot
 	x=88,y=56
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -33684,7 +33684,7 @@ BeginPlot
 	x=88,y=58
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -34049,7 +34049,7 @@ BeginPlot
 	x=89,y=55
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -34057,7 +34057,7 @@ BeginPlot
 	x=89,y=56
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -34088,7 +34088,7 @@ BeginPlot
 	x=89,y=61
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -34447,13 +34447,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=57
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=90,y=58
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -34470,7 +34470,7 @@ BeginPlot
 	x=90,y=60
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -34848,7 +34848,7 @@ BeginPlot
 	x=91,y=57
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -34856,7 +34856,7 @@ BeginPlot
 	x=91,y=58
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -34870,7 +34870,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=60
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -38120,7 +38120,7 @@ BeginPlot
 	x=100,y=36
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -38266,7 +38266,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=58
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -38515,7 +38515,7 @@ BeginPlot
 	x=101,y=36
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -38662,13 +38662,13 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=59
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -38897,7 +38897,7 @@ BeginPlot
 	x=102,y=34
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -39055,7 +39055,7 @@ BeginPlot
 	x=102,y=59
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -39846,7 +39846,7 @@ BeginPlot
 	x=104,y=60
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -39854,7 +39854,7 @@ BeginPlot
 	x=104,y=61
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -40235,7 +40235,7 @@ BeginPlot
 	x=105,y=60
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -40925,7 +40925,7 @@ BeginPlot
 	x=107,y=50
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -41319,7 +41319,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=52
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -41327,7 +41327,7 @@ BeginPlot
 	x=108,y=53
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -41335,7 +41335,7 @@ BeginPlot
 	x=108,y=54
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -41714,7 +41714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=54
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -41901,7 +41901,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=20
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -42084,7 +42084,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -42271,7 +42271,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=20
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -42445,13 +42445,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=52
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=111,y=53
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -42817,7 +42817,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=54
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -43033,7 +43033,7 @@ BeginPlot
 	x=113,y=25
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -43398,7 +43398,7 @@ BeginPlot
 	x=114,y=25
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -44157,7 +44157,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot

@@ -576,7 +576,7 @@
 			<iAdvancedStartRemoveCost>0</iAdvancedStartRemoveCost>
 		</FeatureInfo>
 		<FeatureInfo>
-			<Type>FEATURE_MUD</Type>
+			<Type>FEATURE_MARSH</Type>
 			<Description>TXT_KEY_FEATURE_MARSH</Description>
 			<Civilopedia>TXT_KEY_FEATURE_MARSH_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_MARSH</ArtDefineTag>
