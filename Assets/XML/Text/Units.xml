@@ -1005,7 +1005,31 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PERIA_IMMORTAL_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_PERSIAN_IMMORTAL</Tag>
+		<English>Immortal</English>
+		<French>
+			<Text>Immortel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Krumms&#228;belk&#228;mpfer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Immortale:Immortali</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Inmortal:Inmortales</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PERSIAN_IMMORTAL_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Immortal[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Archers[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
