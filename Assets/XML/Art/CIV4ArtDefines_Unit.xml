@@ -112,7 +112,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORKERMODERN</Type>
+			<Type>ART_DEF_UNIT_MODERN_WORKER</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,5</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -133,7 +133,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_INDIAN_FAST_WORKER</Type>
+			<Type>ART_DEF_UNIT_INDIAN_PUNJABI_WORKER</Type>
 			<Button>,Art/Interface/Buttons/Units/FastWorker.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,4</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -240,7 +240,7 @@
 			<ActionSound>AS3D_UN_SPY_SURR_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_JEWISH_MISSIONARY</Type>
+			<Type>ART_DEF_UNIT_PROTESTANT_MISSIONARY</Type>
 			<Button>,Art/Interface/Buttons/Units/Missionary_Christian.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,3</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -261,7 +261,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_CHRISTIAN_MISSIONARY</Type>
+			<Type>ART_DEF_UNIT_CATHOLIC_MISSIONARY</Type>
 			<Button>,Art/Interface/Buttons/Units/Missionary_Christian.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,3</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -408,7 +408,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_INCAN_QUECHUA</Type>
+			<Type>ART_DEF_UNIT_INCAN_AUCAC</Type>
 			<Button>,Art/Interface/Buttons/Units/Quechua.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,4</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -471,7 +471,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ROME_PRAETORIAN</Type>
+			<Type>ART_DEF_UNIT_ROMAN_LEGION</Type>
 			<Button>,Art/Interface/Buttons/Units/Praetorian.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,6,6</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -513,7 +513,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_SUMERIAN_VULTURE</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_VULTURE</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,11</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -534,7 +534,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_NATIVE_AMERICA_DOG_SOLDIER</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_DOG_SOLDIER</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -555,7 +555,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MACEMAN</Type>
+			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -576,7 +576,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MACEMAN_MIDDLE_EAST</Type>
+			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_MIDDLE_EASTERN</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -597,7 +597,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MACEMAN_CHINESE</Type>
+			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_CHINESE</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -618,7 +618,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MACEMAN_MESOAMERICA</Type>
+			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_MESOAMERICAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -639,7 +639,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_JAPAN_SAMURAI</Type>
+			<Type>ART_DEF_UNIT_JAPANESE_SAMURAI</Type>
 			<Button>,Art/Interface/Buttons/Units/Samurai.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,6</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -660,7 +660,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_GREEK_PHALANX</Type>
+			<Type>ART_DEF_UNIT_GREEK_HOPLITE</Type>
 			<Button>,Art/Interface/Buttons/Units/Spearman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,5</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -702,7 +702,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MAYA_HOLKAN</Type>
+			<Type>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,6,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -723,7 +723,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MAYA_HOLKAN_SPEARTHROWER</Type>
+			<Type>ART_DEF_UNIT_MAYAN_HOLKAN</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,6,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -828,7 +828,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ETHIOPIAN_OROMO_WARRIOR_ORANGE</Type>
+			<Type>ART_DEF_UNIT_ETHIOPIAN_ASKARI_ORANGE</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -849,7 +849,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ETHIOPIAN_OROMO_WARRIOR_BLUE</Type>
+			<Type>ART_DEF_UNIT_ETHIOPIAN_ASKARI_BLUE</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -870,7 +870,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ETHIOPIAN_OROMO_WARRIOR_GREEN</Type>
+			<Type>ART_DEF_UNIT_ETHIOPIAN_ASKARI_GREEN</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1134,7 +1134,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN</Type>
+			<Type>ART_DEF_UNIT_INDIAN_PATIYODHA</Type>
 			<Button>Art/Interface/Buttons/Units/patiyodha_btn.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1155,7 +1155,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_BACK_KNOT</Type>
+			<Type>ART_DEF_UNIT_INDIAN_PATIYODHA_BACK_KNOT</Type>
 			<Button>Art/Interface/Buttons/Units/patiyodha_btn.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1176,7 +1176,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_NOBLE</Type>
+			<Type>ART_DEF_UNIT_INDIAN_PATIYODHA_NOBLE</Type>
 			<Button>Art/Interface/Buttons/Units/patiyodha_btn.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1197,7 +1197,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MALI_SKIRMISHER</Type>
+			<Type>ART_DEF_UNIT_MANDE_SKIRMISHER</Type>
 			<Button>,Art/Interface/Buttons/Units/Skirmisher.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,7</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1218,7 +1218,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BABYLON_BOWMAN</Type>
+			<Type>ART_DEF_UNIT_BABYLONIAN_ASHARITTU_BOWMAN</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1260,7 +1260,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_BROWN_SHIRT</Type>
+			<Type>ART_DEF_UNIT_INDIAN_PATIYODHA_BROWN_SHIRT</Type>
 			<Button>Art/Interface/Buttons/Units/patiyodha_btn.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1281,7 +1281,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_CHAINMAIL</Type>
+			<Type>ART_DEF_UNIT_INDIAN_PATIYODHA_CHAINMAIL</Type>
 			<Button>Art/Interface/Buttons/Units/patiyodha_btn.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1302,7 +1302,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BAMBOO_BOWMAN_PARTIAL_SCALE</Type>
+			<Type>ART_DEF_UNIT_INDIAN_PATIYODHA_PARTIAL_SCALE</Type>
 			<Button>Art/Interface/Buttons/Units/patiyodha_btn.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1344,7 +1344,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_CHINA_CHOKONU</Type>
+			<Type>ART_DEF_UNIT_CHINESE_CHOKONU</Type>
 			<Button>,Art/Interface/Buttons/Units/ChoKoNu.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,6</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1400,7 +1400,7 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_EGYPT_WARCHARIOT</Type>
+			<Type>ART_DEF_UNIT_EGYPTIAN_WARCHARIOT</Type>
 			<Button>,Art/Interface/Buttons/Units/Chariot_WarChariot.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,6,7</Button>
 			<fScale>0.37</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
@@ -1427,7 +1427,7 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PERSIA_IMMORTAL</Type>
+			<Type>ART_DEF_UNIT_PERSIAN_IMMORTAL</Type>
 			<Button>,Art/Interface/Buttons/Units/Immortal.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1469,7 +1469,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MONGOL_KESHIK</Type>
+			<Type>ART_DEF_UNIT_MONGOLIAN_KESHIK</Type>
 			<Button>,Art/Interface/Buttons/Units/Keshik.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,2</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -1532,7 +1532,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ARABIA_CAMELARCHER</Type>
+			<Type>ART_DEF_UNIT_ARABIAN_CAMEL_ARCHER</Type>
 			<Button>,Art/Interface/Buttons/Units/CamelArcher.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,8</Button>
 			<fScale>0.39</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
@@ -1616,7 +1616,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_RUSSIA_COSSACK</Type>
+			<Type>ART_DEF_UNIT_RUSSIAN_COSSACK</Type>
 			<Button>,Art/Interface/Buttons/Units/Cossack.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,6,4</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1749,7 +1749,7 @@
 			<ActionSound>AS3D_UN_TANK_FORT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MODERN_ARMOR</Type>
+			<Type>ART_DEF_UNIT_MAIN_BATTLE_TANK</Type>
 			<Button>,Art/Interface/Buttons/Units/ModernArmor.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,11</Button>
 			<fScale>0.57</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -1964,7 +1964,7 @@
 			<ActionSound>AS3D_UN_ARTILLERY_FORT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORKBOAT</Type>
+			<Type>ART_DEF_UNIT_WORK_BOAT</Type>
 			<Button>,Art/Interface/Buttons/Units/WorkBoat.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,4,9</Button>
 			<fScale>0.18</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -2001,7 +2001,7 @@
 			<ActionSound>AS3D_UN_WRK_BOAT_ANC_FORT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORKBOAT_MODERN</Type>
+			<Type>ART_DEF_UNIT_WORK_BOAT_MODERN</Type>
 			<Button>,Art/Interface/Buttons/Units/WorkBoat.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,4,9</Button>
 			<fScale>0.20</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -2116,7 +2116,7 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PORTUGAL_CARRACK</Type>
+			<Type>ART_DEF_UNIT_PORTUGUESE_CARRACK</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,11</Button>
 			<fScale>0.21</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
@@ -2194,7 +2194,7 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_NETHERLANDS_OOSTINDIEVAARDER</Type>
+			<Type>ART_DEF_UNIT_DUTCH_EAST_INDIAMAN</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,10</Button>
 			<fScale>0.18</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
@@ -2467,7 +2467,7 @@
 			<ActionSound>AS3D_UN_DESTROYER_FORT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_CORVETTE</Type>
+			<Type>ART_DEF_UNIT_CANADIAN_CORVETTE</Type>
 			<Button>Art/Interface/Buttons/Units/corvette_btn.dds</Button>
 			<fScale>0.7</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
@@ -3398,7 +3398,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ZULU_SPEARMAN</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_IMPI</Type>
 			<Button>,Art/Interface/Buttons/Units/Spearman.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,8,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3419,7 +3419,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_CELTIC_BARBARIAN</Type>
+			<Type>ART_DEF_UNIT_CELTIC_GALLIC_WARRIOR</Type>
 			<Button>,Art/Interface/Buttons/Units/Swordsman.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3440,7 +3440,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_VIKING_BESERKER</Type>
+			<Type>ART_DEF_UNIT_VIKING_HUSKARL</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3461,7 +3461,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_CARTHAGE_NUMIDIAN_CAVALRY</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_NUMIDIAN_CAVALRY</Type>
 			<Button>,Art/Interface/Buttons/Units/HorseArcher.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,8</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -4233,7 +4233,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MACEMAN_ASIAN</Type>
+			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_ASIAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -4546,7 +4546,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MACEMAN_EUROPEAN</Type>
+			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_EUROPEAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -5408,7 +5408,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MACEMAN_SOUTH_AMERICA</Type>
+			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_SOUTH_AMERICAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -5658,7 +5658,7 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ITALY_BERSAGLIERE</Type>
+			<Type>ART_DEF_UNIT_ITALIAN_BERSAGLIERE</Type>
 			<Button>,Art/Interface/Buttons/Units/Infantry.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,3</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -5802,7 +5802,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_QIZILBASH</Type>
+			<Type>ART_DEF_UNIT_IRANIAN_QIZILBASH</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -5844,7 +5844,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ZORO_MISSIONARY</Type>
+			<Type>ART_DEF_UNIT_ZOROASTRIAN_MISSIONARY</Type>
 			<Button>art/Interface/Buttons/Units/Zoro_missionary.dds</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -5999,7 +5999,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_KONGO_POMBOS</Type>
+			<Type>ART_DEF_UNIT_CONGOLESE_POMBOS</Type>
 			<Button>Art/Units/Kongolese Pombos/Button_Pombos.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6118,7 +6118,7 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_HULUGANNI_HITTITE</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_HULUGANNI</Type>
 			<Button>Art/Units/Hittite Huluganni/Huluganni.dds</Button>
 			<fScale>0.35</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -6153,7 +6153,7 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MOHAWK_IROQUOIS</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_MOHAWK</Type>
 			<Button>Art/Units/Iroquois Mohawk/Mohawk.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6174,7 +6174,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ASVAKA_KUSHAN</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_ASVAKA</Type>
 			<Button>Art/Units/Kushan Asvaka/Button_Asvaka.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -6195,7 +6195,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FARARI_MANDE</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_FARARI</Type>
 			<Button>Art/Units/Mande Farari/Farari.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -6216,7 +6216,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MEDJAY_NUBIAN</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_MEDJAY</Type>
 			<Button>Art/Units/Nubian Medjay/btn_medjay.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6237,7 +6237,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MOUNTED_BRAVE_SIOUX</Type>
+			<Type>ART_DEF_UNIT_BARBARIAN_MOUNTED_BRAVE</Type>
 			<Button>Art/Units/Sioux Mounted Brave/Mounted Brave.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6279,7 +6279,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WAR_ELEPHANT_CARTHAGE</Type>
+			<Type>ART_DEF_UNIT_PHOENICIAN_WAR_ELEPHANT</Type>
 			<Button>,Art/Interface/Buttons/Units/WarElephant.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,2</Button>
 			<fScale>0.34</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
@@ -6300,7 +6300,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MINUTEMAN</Type>
+			<Type>ART_DEF_UNIT_AMERICAN_MINUTEMAN</Type>
 			<Button>Art/Units/Minuteman/Minuteman.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6321,7 +6321,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MEXICO_RURALES</Type>
+			<Type>ART_DEF_UNIT_MEXICAN_RURALES</Type>
 			<Button>,Art/Interface/Buttons/Units/Cavalry.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,6,2</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6363,7 +6363,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ALBION_LEGION</Type>
+			<Type>ART_DEF_UNIT_COLOMBIAN_ALBION_LEGION</Type>
 			<Button>Art/Units/Albion Legion/Albion.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6833,7 +6833,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PERSECUTOR_BLACK</Type>
+			<Type>ART_DEF_UNIT_PERSECUTOR</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,3,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>

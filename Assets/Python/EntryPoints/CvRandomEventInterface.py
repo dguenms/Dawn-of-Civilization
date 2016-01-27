@@ -1383,10 +1383,10 @@ def canTriggerAncientOlympics(argsList):
 
 	stateReligion = player.getStateReligion()
 	
-	if stateReligion == CvUtil.findInfoTypeNum(gc.getReligionInfo,gc.getNumReligionInfos(),'RELIGION_JUDAISM'):
+	if stateReligion == CvUtil.findInfoTypeNum(gc.getReligionInfo,gc.getNumReligionInfos(),'RELIGION_PROTESTANTISM'):
 		return false
 
-	if stateReligion == CvUtil.findInfoTypeNum(gc.getReligionInfo,gc.getNumReligionInfos(),'RELIGION_CHRISTIANITY'):
+	if stateReligion == CvUtil.findInfoTypeNum(gc.getReligionInfo,gc.getNumReligionInfos(),'RELIGION_CATHOLICISM'):
 		return false
 
 	if stateReligion == CvUtil.findInfoTypeNum(gc.getReligionInfo,gc.getNumReligionInfos(),'RELIGION_ISLAM'):
@@ -2916,7 +2916,7 @@ def canTriggerSportsLeagueDone(argsList):
 	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCastle = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_COLOSSEUM')
+	iCastle = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_AMPHITHEATRE')
 
 	#Rhye - start
 	#iBuildingsRequired = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers()
@@ -4493,7 +4493,7 @@ def doTradingCompanyConquerors2(argsList):
 
 	if tSeaPlot != -1:
 		if iPlayer == con.iNetherlands:
-			utils.makeUnit(con.iNetherlandsOostindievaarder, iPlayer, tSeaPlot, 1)
+			utils.makeUnit(con.iDutchEastIndiaman, iPlayer, tSeaPlot, 1)
 		else:
 			utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
 	
@@ -4509,23 +4509,23 @@ def canTriggerReformation(argsList):
 	
 	bCatholicCity = False
 	for city in PyHelpers.PyPlayer(iPlayer).getCityList():
-		if city.GetCy().isHasReligion(con.iChristianity):
+		if city.GetCy().isHasReligion(con.iCatholicism):
 			bCatholicCity = True
 			break
 			
 	if not bCatholicCity: return False
 	
-	if gc.getGame().isReligionFounded(con.iJudaism):
-		if gc.getGame().getReligionGameTurnFounded(con.iJudaism)+2 < gc.getGame().getGameTurn():
+	if gc.getGame().isReligionFounded(con.iProtestantism):
+		if gc.getGame().getReligionGameTurnFounded(con.iProtestantism)+2 < gc.getGame().getGameTurn():
 			return False
 
-	return gc.getGame().isReligionFounded(con.iJudaism)
+	return gc.getGame().isReligionFounded(con.iProtestantism)
 
 def canChooseReformation1(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	return (gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity)
+	return (gc.getPlayer(iPlayer).getStateReligion() == con.iCatholicism)
 	
 def getReformation1HelpText(argsList):
 	kTriggeredData = argsList[1]
@@ -4534,7 +4534,7 @@ def getReformation1HelpText(argsList):
 	iNumCatholicCities = 0
 	cityList = PyHelpers.PyPlayer(iPlayer).getCityList()
 	for city in cityList:
-		if city.GetCy().isHasReligion(con.iChristianity):
+		if city.GetCy().isHasReligion(con.iCatholicism):
 			iNumCatholicCities += 1
 
 	return localText.getText("TXT_KEY_EVENT_REFORMATION_EMBRACE", (iNumCatholicCities * 100,))
@@ -4545,9 +4545,9 @@ def doReformation1(argsList):
 	
 	rel.embraceReformation(iPlayer)
 	
-	pHolyCity = gc.getGame().getHolyCity(con.iJudaism)
+	pHolyCity = gc.getGame().getHolyCity(con.iProtestantism)
 	if pHolyCity.getOwner() == iPlayer:
-		pHolyCity.setNumRealBuilding(con.iJewishShrine, 1)
+		pHolyCity.setNumRealBuilding(con.iProtestantShrine, 1)
 	
 	if iPlayer != con.iNetherlands:
 		for iCiv in range(con.iNumPlayers):
@@ -4561,7 +4561,7 @@ def getReformation2HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 
-	if gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity:
+	if gc.getPlayer(iPlayer).getStateReligion() == con.iCatholicism:
 		return localText.getText("TXT_KEY_EVENT_REFORMATION_TOLERATE_STATE", ())
 		
 	return localText.getText("TXT_KEY_EVENT_REFORMATION_TOLERATE", ())
@@ -4576,7 +4576,7 @@ def canChooseReformation3(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	return (gc.getPlayer(iPlayer).getStateReligion() == con.iChristianity)
+	return (gc.getPlayer(iPlayer).getStateReligion() == con.iCatholicism)
 	
 def getReformation3HelpText(argsList):
 	kTriggeredData = argsList[1]

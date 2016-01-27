@@ -2479,7 +2479,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -3024,7 +3024,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -5215,7 +5215,7 @@
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -5760,7 +5760,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_EGALITARIANISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -7424,7 +7424,7 @@
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -7974,7 +7974,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SECULARISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -8528,7 +8528,7 @@
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_SECULARISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -12908,7 +12908,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -13465,7 +13465,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_MERCANTILISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -15663,7 +15663,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -16221,7 +16221,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -18974,7 +18974,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -22294,7 +22294,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -22838,7 +22838,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CAPITALISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -26741,7 +26741,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -27871,7 +27871,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -28448,7 +28448,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -32363,7 +32363,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
-			<FavoriteReligion>RELIGION_JUDAISM</FavoriteReligion>
+			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -34006,7 +34006,7 @@
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -34547,7 +34547,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -35104,7 +35104,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -35649,7 +35649,7 @@
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -36194,7 +36194,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ABSOLUTISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -37296,7 +37296,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -38410,7 +38410,7 @@
 			<iVassalPowerModifier>-5</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -39508,7 +39508,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -41699,7 +41699,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -48410,7 +48410,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -48956,7 +48956,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -52748,7 +52748,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -53854,7 +53854,7 @@
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -55460,7 +55460,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -56564,7 +56564,7 @@
 			<iVassalPowerModifier>-10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_CITY_STATES</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -57109,7 +57109,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -57663,7 +57663,7 @@
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -58233,7 +58233,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_EGALITARIANISM</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -58799,7 +58799,7 @@
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_REPRESENTATION</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>
@@ -60449,7 +60449,7 @@
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
 			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
-			<FavoriteReligion>RELIGION_CHRISTIANITY</FavoriteReligion>
+			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
 				<Flavor>

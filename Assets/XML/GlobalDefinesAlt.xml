@@ -20,13 +20,11 @@
 		<DefineName>AI_SLAVE_VALUE</DefineName>
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
-	<!--
-		Leoreth: define how often these optional civs should appear
+	<!--Leoreth: define how often these optional civs should appear
 			value=0	Civilization never appears
 			value>0	Civilization roughly appears in every i-th game, where i is the entered value
 				(so to make this civilization appear every time, enter 1)
-		Note that if certain civilizations are controlled by the player, these civs will spawn regardless to provide a historical opponent
-	-->
+		Note that if certain civilizations are controlled by the player, these civs will spawn regardless to provide a historical opponent -->
 	<Define>
 		<DefineName>PLAYER_OCCURRENCE_TAMILS</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>			<!-- default: 1 -->

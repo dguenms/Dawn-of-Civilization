@@ -192,7 +192,7 @@ class RFCUtils:
 
         def isDefenderUnit(self, unit):
                 iUnitType = unit.getUnitType()
-                if (iUnitType >= con.iSpearman and iUnitType <= con.iChinaChokonu):
+                if (iUnitType >= con.iSpearman and iUnitType <= con.iChineseChokonu):
                         return True
                 return False
 
@@ -403,7 +403,7 @@ class RFCUtils:
 										continue
 										
 									# Leoreth: ignore workers as well
-									if unit.getUnitType() in [con.iWorker, con.iIndianFastWorker, con.iBrazilianLenhador]:
+									if unit.getUnitType() in [con.iWorker, con.iIndianPunjabiWorker, con.iBrazilianMadeireiro]:
 										continue
 									
 									if (bKillSettlers):
@@ -1235,7 +1235,7 @@ class RFCUtils:
 			if iInfantry:
 				self.makeUnit(iInfantry, iCiv, (x,y), iNumUnits)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+				self.makeUnit(con.iProtestantMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 		else:
 			gc.getMap().plot(x,y).setCulture(iCiv, 10, True)
 			gc.getMap().plot(x,y).setOwner(iCiv)
@@ -1248,7 +1248,7 @@ class RFCUtils:
 			if iInfantry:
 				self.makeUnit(iInfantry, iCiv, (x,y), 2)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(con.iJewishMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+				self.makeUnit(con.iProtestantMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 
 	def getColonialTargets(self, iPlayer, bEmpty=False):
 		if iPlayer == con.iSpain or iPlayer == con.iFrance:
@@ -1497,7 +1497,7 @@ class RFCUtils:
 		
 	def getBestInfantry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lInfantryList = [con.iInfantry, con.iRifleman, con.iMusketman, con.iMaceman, con.iCrossbowman, con.iSwordsman, con.iAxeman, con.iWarrior]
+		lInfantryList = [con.iInfantry, con.iRifleman, con.iMusketman, con.iHeavySwordsman, con.iCrossbowman, con.iSwordsman, con.iAxeman, con.iWarrior]
 		
 		for iBaseUnit in lInfantryList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1667,7 +1667,7 @@ class RFCUtils:
 		# Leoreth: temporarily try less missionaries
 		iNumUnits = 1
 		
-		self.makeUnit(con.iJewishMissionary + iReligion, iPlayer, Areas.getCapital(iPlayer), iNumUnits)
+		self.makeUnit(con.iProtestantMissionary + iReligion, iPlayer, Areas.getCapital(iPlayer), iNumUnits)
 			
 	def getSortedList(self, lList, function, bReverse = False):
 		return sorted(lList, key=lambda element: function(element), reverse=bReverse)

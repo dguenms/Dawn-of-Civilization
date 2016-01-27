@@ -1371,8 +1371,8 @@
 		</TerrainInfo>
 		<TerrainInfo>
 			<Type>TERRAIN_MARSH</Type>
-			<Description>TXT_KEY_TERRAIN_WETLAND</Description>
-			<Civilopedia>TXT_KEY_TERRAIN_WETLAND_PEDIA</Civilopedia>
+			<Description>TXT_KEY_TERRAIN_MARSH</Description>
+			<Civilopedia>TXT_KEY_TERRAIN_MARSH_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_TERRAIN_MARSH</ArtDefineTag>
 			<Yields/>
 			<RiverYieldChange/>

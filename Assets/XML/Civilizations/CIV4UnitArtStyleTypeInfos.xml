@@ -125,16 +125,16 @@
 					<UnitType>UNIT_WORKER</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_ASIAN</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_WORKERMODERN</LateArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_ASIAN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_MACEMAN</UnitType>
+					<UnitType>UNIT_HEAVY_SWORDSMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_MACEMAN_CHINESE</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_MACEMAN_CHINESE</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_MACEMAN_CHINESE</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_CHINESE</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_CHINESE</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_CHINESE</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
@@ -198,7 +198,7 @@
 					<UnitType>UNIT_WORKER</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_EUROPEAN</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_WORKERMODERN</LateArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_EUROPEAN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
@@ -396,16 +396,16 @@
 					<UnitType>UNIT_WORKER</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_MIDDLE_EAST</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_WORKERMODERN</LateArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_MIDDLE_EAST</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_MACEMAN</UnitType>
+					<UnitType>UNIT_HEAVY_SWORDSMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_MACEMAN_MIDDLE_EAST</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_MACEMAN_MIDDLE_EAST</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_MACEMAN_MIDDLE_EAST</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MIDDLE_EASTERN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MIDDLE_EASTERN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MIDDLE_EASTERN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
@@ -497,16 +497,16 @@
 					<UnitType>UNIT_WORKER</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_SOUTH_AMERICA</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_WORKERMODERN</LateArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_SOUTH_AMERICA</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_MACEMAN</UnitType>
+					<UnitType>UNIT_HEAVY_SWORDSMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_MACEMAN_MESOAMERICA</EarlyArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_MACEMAN_MESOAMERICA</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_MACEMAN_MESOAMERICA</MiddleArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MESOAMERICAN</EarlyArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MESOAMERICAN</LateArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MESOAMERICAN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>

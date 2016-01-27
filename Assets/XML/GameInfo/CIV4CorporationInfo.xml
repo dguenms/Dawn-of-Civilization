@@ -7,7 +7,7 @@
 <Civ4CorporationInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
 	<CorporationInfos>
 		<CorporationInfo>
-			<Type>CORPORATION_1</Type>	<!-- Silk Route -->
+			<Type>CORPORATION_SILK_ROUTE</Type>
 			<Description>TXT_KEY_CORPORATION_SILK_ROUTE</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_SILK_ROUTE_PEDIA</Civilopedia>
 			<TechPrereq>TECH_CURRENCY</TechPrereq>
@@ -38,7 +38,7 @@
 			<Sound>AS2D_BUILD_MARKET</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_2</Type>	<!-- Trading Company -->
+			<Type>CORPORATION_TRADING_COMPANY</Type>
 			<Description>TXT_KEY_CORPORATION_TRADING_COMPANY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_TRADING_COMPANY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_ASTRONOMY</TechPrereq>
@@ -72,7 +72,7 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_3</Type>	<!-- Cereal Industry -->
+			<Type>CORPORATION_CEREAL_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_CEREAL_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_CEREAL_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_BIOLOGY</TechPrereq>
@@ -105,7 +105,7 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_4</Type>	<!-- Fishing Industry -->
+			<Type>CORPORATION_FISHING_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_FISHING_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_FISHING_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_REFRIGERATION</TechPrereq>
@@ -142,7 +142,7 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_5</Type>	<!-- Textile Industry -->
+			<Type>CORPORATION_TEXTILE_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_STEAM_POWER</TechPrereq>
@@ -180,7 +180,7 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_6</Type>	<!-- Steel Industry -->
+			<Type>CORPORATION_STEEL_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_STEEL_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_STEEL_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_STEEL</TechPrereq>
@@ -217,7 +217,7 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_7</Type>	<!-- Oil Industry -->
+			<Type>CORPORATION_OIL_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_OIL_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_OIL_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_COMBUSTION</TechPrereq>
@@ -249,7 +249,7 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_8</Type>	<!-- Luxury Industry -->
+			<Type>CORPORATION_LUXURY_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_LUXURY_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_LUXURY_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_ELECTRICITY</TechPrereq>
@@ -286,9 +286,9 @@
 			<Sound>AS2D_BUILD_BANK</Sound>
 		</CorporationInfo>
 		<CorporationInfo>
-			<Type>CORPORATION_9</Type>	<!-- Computers Industry -->
-			<Description>TXT_KEY_CORPORATION_COMPUTERS_INDUSTRY</Description>
-			<Civilopedia>TXT_KEY_CORPORATION_COMPUTERS_INDUSTRY_PEDIA</Civilopedia>
+			<Type>CORPORATION_COMPUTER_INDUSTRY</Type>
+			<Description>TXT_KEY_CORPORATION_COMPUTER_INDUSTRY</Description>
+			<Civilopedia>TXT_KEY_CORPORATION_COMPUTER_INDUSTRY_PEDIA</Civilopedia>
 			<TechPrereq>TECH_COMPUTERS</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>

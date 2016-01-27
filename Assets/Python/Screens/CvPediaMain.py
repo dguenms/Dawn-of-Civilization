@@ -494,11 +494,11 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 			tList.pop(con.iAbuBakr)
                         #tList.pop(con.iWangKon) #wang kon
                         tList.pop(con.iSittingBull) #sitt.b.
-                        tList.pop(con.iNativeLeader) #shaka   
+                        tList.pop(con.iNativeLeader)
                         tList.pop(con.iIndependentLeader)
                         #tList.pop(con.iJustinian) #justinian 
-                        #tList.pop(con.iHatshepsut) #hatshepsut
-                        tList.pop(con.iGilgamesh) #gilgamesh
+                        #tList.pop(con.iCleopatra) #hatshepsut
+                        tList.pop(con.iSargon) #gilgamesh
                         #tList.pop(con.iCharlemagne) #charlemagne
                         tList.pop(con.iBrennus) #brennus
                         tList.pop(con.iBoudica) #boudica
@@ -524,8 +524,6 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
 			tList.pop(con.iAztecSlave)
 			tList.pop(con.iNativeSlave)
-			tList.pop(con.iBireme)
-			tList.pop(con.iAmericanNavySeal)
                         tList.pop(con.iCelticGallicWarrior) #GallicWarrior
 			tList.pop(con.iHarappanMilitia)
                         pass

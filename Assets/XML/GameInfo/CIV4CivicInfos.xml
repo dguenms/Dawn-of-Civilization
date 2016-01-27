@@ -632,7 +632,7 @@
 			<iNonStateReligionHappiness>-1</iNonStateReligionHappiness>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
-					<BuildingType>BUILDINGCLASS_OBELISK</BuildingType>
+					<BuildingType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingType>
 					<iHappinessChange>1</iHappinessChange>
 				</BuildingHappinessChange>
 			</BuildingHappinessChanges>

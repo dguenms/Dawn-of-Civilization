@@ -97,22 +97,22 @@
 			<DefaultUnit>UNIT_PERSECUTOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_JEWISH_MISSIONARY</Type>
+			<Type>UNITCLASS_PROTESTANT_MISSIONARY</Type>
 			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_JEWISH_MISSIONARY</DefaultUnit>
+			<DefaultUnit>UNIT_PROTESTANT_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_CHRISTIAN_MISSIONARY</Type>
+			<Type>UNITCLASS_CATHOLIC_MISSIONARY</Type>
 			<Description>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_CHRISTIAN_MISSIONARY</DefaultUnit>
+			<DefaultUnit>UNIT_CATHOLIC_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_ORTHODOX_MISSIONARY</Type>
@@ -205,13 +205,13 @@
 			<DefaultUnit>UNIT_AXEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_MACEMAN</Type>
-			<Description>TXT_KEY_UNIT_MACEMAN</Description>
+			<Type>UNITCLASS_HEAVY_SWORDSMAN</Type>
+			<Description>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_MACEMAN</DefaultUnit>
+			<DefaultUnit>UNIT_HEAVY_SWORDSMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SPEARMAN</Type>
@@ -412,13 +412,13 @@
 			<DefaultUnit>UNIT_TANK</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_MODERN_ARMOR</Type>
-			<Description>TXT_KEY_UNIT_MODERN_ARMOR</Description>
+			<Type>UNITCLASS_MAIN_BATTLE_TANK</Type>
+			<Description>TXT_KEY_UNIT_MAIN_BATTLE_TANK</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_MODERN_ARMOR</DefaultUnit>
+			<DefaultUnit>UNIT_MAIN_BATTLE_TANK</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_GUNSHIP</Type>
@@ -493,13 +493,13 @@
 			<DefaultUnit>UNIT_MOBILE_ARTILLERY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_WORKBOAT</Type>
+			<Type>UNITCLASS_WORK_BOAT</Type>
 			<Description>TXT_KEY_UNIT_WORK_BOAT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_WORKBOAT</DefaultUnit>
+			<DefaultUnit>UNIT_WORK_BOAT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_GALLEY</Type>

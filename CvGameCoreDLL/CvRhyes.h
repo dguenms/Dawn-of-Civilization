@@ -11,16 +11,16 @@ typedef list<char*> LISTCHAR;
 
 #define MAX_COM_SHRINE			(20)
 
-#define GREATPALACE				(98)
-#define SUMMERPALACE			(98)
+#define GREATPALACE				(92)
+#define SUMMERPALACE			(92)
 //#define VERSAILLES				(2)
 //#define FORBIDDENPALACE			(2)
 
-#define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
+#define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
 
-#define BEGIN_WONDERS				(134) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(128) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
-#define NUM_BUILDINGS_PLAGUE		(210) // always increment when a building is added except embassies
+#define NUM_BUILDINGS_PLAGUE		(204) // always increment when a building is added except embassies
 #define NUM_BUILDINGTYPES_PLAGUE	(131) // increment when a building class is created except embassies
 
 #define NUM_MAJOR_PLAYERS		(44)
