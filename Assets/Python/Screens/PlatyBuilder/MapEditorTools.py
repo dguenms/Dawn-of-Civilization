@@ -102,7 +102,7 @@ def exportCore(iPlayer):
 				if not plot.isCore(iPlayer) or (plot.isWater() and bAutoWater) or (plot.isPeak() and bAutoPeak and (x, y) not in lPeakExceptions):
 					lExceptions.append((x, y))
 
-		file = open(IMAGE_LOCATION + "\Cores\\" + sName, 'wt')
+		file = open(IMAGE_LOCATION + "\Cores\\" + sName + ".txt", 'wt')
 		try:
 			file.write("# tCoreArea\n")
 			file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
@@ -135,7 +135,7 @@ def exportSettlerMap(iPlayer):
 		if bSettlerValueChanged:
 			break
 	if bSettlerValueChanged:
-		file = open(IMAGE_LOCATION + "\SettlerValues\\" + sName, 'wt')
+		file = open(IMAGE_LOCATION + "\SettlerValues\\" + sName + ".txt", 'wt')
 		try:
 			file.write("(")
 			for y in reversed(range(iWorldY)):
@@ -178,7 +178,7 @@ def exportWarMap(iPlayer):
 		if bWarMapChanged:
 			break
 	if bWarMapChanged:
-		file = open(IMAGE_LOCATION + "\WarMaps\\" + sName, 'wt')
+		file = open(IMAGE_LOCATION + "\WarMaps\\" + sName + ".txt", 'wt')
 		try:
 			file.write("(")
 			for y in reversed(range(iWorldY)):
