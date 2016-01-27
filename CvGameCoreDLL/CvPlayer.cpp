@@ -5638,9 +5638,7 @@ void CvPlayer::found(int iX, int iY)
 			//if (GC.getBuildingInfo(eLoopBuilding).getFreeStartEra() != NO_ERA && (!GC.getGameINLINE().isOption(GAMEOPTION_ADVANCED_START) || isHuman()))		// AdvancedStartAI //Rhye
 			if (GC.getBuildingInfo(eLoopBuilding).getFreeStartEra() != NO_ERA) //Rhye
 			{
-				int iStartingEra = getCurrentEra() > 0 ? getCurrentEra() - 1 : 0;
-
-				if (iStartingEra >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
+				if (getCurrentEra() >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
 				//if (GC.getGameINLINE().getStartEra() >= GC.getBuildingInfo(eLoopBuilding).getFreeStartEra())
 				{
 					if (pCity->canConstruct(eLoopBuilding))
