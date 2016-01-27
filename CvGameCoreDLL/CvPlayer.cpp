@@ -5983,7 +5983,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	//Rhye - start
 	if (getScenario() >= SCENARIO_600AD) //late start condition
 	{
-		if ((eBuilding >= PYRAMIDS && eBuilding <= PARTHENON) || eBuilding == ARTEMIS || eBuilding == STATUE_OF_ZEUS || eBuilding == MAUSOLLOS || eBuilding == KHAJURAHO || iI == ISHTAR_GATE)
+		if ((eBuilding >= SPHYNX && eBuilding <= MAUSOLLOS))
 		{
 			return false;
 		}
