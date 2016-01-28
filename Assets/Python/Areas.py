@@ -61,9 +61,11 @@ def updateCore(iPlayer):
 			gc.getMap().plot(x, y).setCore(iPlayer, (x, y) in lCore)
 			
 def isForeignCore(iPlayer, tPlot):
-	plot = gc.getMap().plot(tPlot[0], tPlot[1])
+	x, y =  tPlot
+	plot = gc.getMap().plot(x, y)
 	for iLoopPlayer in range(iNumPlayers):
 		if iLoopPlayer == iPlayer: continue
+		if plot.isWater() or plot.isPeak(): continue
 		if plot.isCore(iLoopPlayer):
 			return True
 	return False

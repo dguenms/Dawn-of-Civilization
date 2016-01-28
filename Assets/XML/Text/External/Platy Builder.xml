@@ -678,7 +678,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IN_SPAWN</Tag>
-		<English>Flipzone</English>
+		<English>Flipzone[NEWLINE](view only)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CORE</Tag>
@@ -689,108 +689,32 @@
 		<English>Settlervalue</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_RESULT</Tag>
-		<English>Result</English>
+		<Tag>TXT_KEY_WB_EXTENDED</Tag>
+		<English>Toggle reborn map</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_EXTENDED_MAP</Tag>
-		<English>Extended Map</English>
+		<Tag>TXT_KEY_WB_CORE_ADD</Tag>
+		<English>Add current tile to core</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_TOGGLE_EXTENDED</Tag>
-		<English>Switch between vanilla map and extended map</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_VIEW_STABMAP</Tag>
-		<English>View/Hide Stabilitymap</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_CHANGE_CORE</Tag>
-		<English>Add/Remove current tile to/from core</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_CHANGE_FLIP</Tag>
-		<English>Add/Remove current tile to/from flipzone</English>
+		<Tag>TXT_KEY_WB_CORE_REMOVE</Tag>
+		<English>Remove current tile from core</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CHANGE_SETTLERVALUE</Tag>
 		<English>Change settlervalue</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_VIEW_FLIPZONE</Tag>
-		<English>View/Hide Flipzone</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_WB_FLIP</Tag>
 		<English>Flip</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_TOGGLE_AI_FORBIDDEN</Tag>
-		<English>Toggle AI forbidden</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SET_VALUE</Tag>
 		<English>Set Value</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_START</Tag>
-		<English>Start</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_END</Tag>
-		<English>End</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_RESET</Tag>
-		<English>Reset</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_MULTITILE</Tag>
-		<English>Multitile selection</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_REPLACE</Tag>
-		<English>Replace</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_SONIC</Tag>
-		<English>You found an easteregg! Get yourself a cookie.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_KABOOM</Tag>
-		<English>Completely randomizes the settlermap, coremap and flipzone of the selected civ</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_MULTI_ADD_CORE</Tag>
-		<English>Add selected tiles to core</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_MULTI_REMOVE_CORE</Tag>
-		<English>Remove selected tiles from core</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_MULTI_REPLACE_CORE</Tag>
-		<English>Replaces current core with selected tiles</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_MULTI_SETTLERVALUE</Tag>
-		<English>Change the settler value of all selected tiles</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_MULTI_ADD_SPAWN</Tag>
-		<English>Add selected tiles to spawn zone</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_MULTI_REMOVE_SPAWN</Tag>
-		<English>Remove selected tiles from spawn zone</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_MULTI_REPLACE_SPAWN</Tag>
-		<English>Replaces current spawn zone with selected tiles</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_AI_FORBIDDEN</Tag>
-		<English>Show/Hide areas in which the AI is forbidden to settle</English>
+		<Tag>TXT_KEY_WB_INPUT</Tag>
+		<English>Keyboard input</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_EXPORT</Tag>
@@ -798,26 +722,26 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_REVERT_CHANGES</Tag>
-		<English>Revert changes</English>
+		<English>Reset</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_SELECTED_CIV</Tag>
-		<English>Selected Civ</English>
+		<Tag>TXT_KEY_WB_TOGGLE_FOREIGN_CORES</Tag>
+		<English>Toggle Foreign Cores</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_ALL_CIVS</Tag>
-		<English>All Civs</English>
+		<Tag>TXT_KEY_WB_TOGGLE_AI_FORBIDDEN</Tag>
+		<English>Toggle AI Forbidden</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_CNM</Tag>
-		<English>City Name Manager</English>
+		<Tag>TXT_KEY_WB_SHOW</Tag>
+		<English>Show</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_OVERLAY_WIDGET</Tag>
-		<English>Toggle Stability Display</English>
+		<Tag>TXT_KEY_WB_HIDE</Tag>
+		<English>Hide</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_STABILITY_OVERLAY_HELP</Tag>
-		<English>Dark green: core area[NEWLINE]Green: historical area[NEWLINE]Yellow: contested area[NEWLINE]Red: foreign core</English>
+		<Tag>TXT_KEY_WB_WARVALUE</Tag>
+		<English>Warvalue</English>
 	</TEXT>
 </Civ4GameText>

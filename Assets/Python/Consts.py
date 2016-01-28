@@ -1746,3 +1746,11 @@ tTradingCompanyPlotLists = (
 lSecondaryCivs = [iHarappa, iPolynesia, iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
 
 (i3000BC, i600AD, i1700AD) = range(3)
+
+# Stability overlay and editor
+iNumPlotStabilityTypes = 5
+(iCore, iHistorical, iContest, iForeignCore, iAIForbidden) = range(iNumPlotStabilityTypes)
+lStabilityColors = ["COLOR_CYAN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED", "COLOR_PLAYER_LIGHT_PURPLE"]
+lPresetValues = [3, 20, 90, 200, 500, 700]
+
+lWarMapColors = ["COLOR_RED", "COLOR_PLAYER_ORANGE", "COLOR_YELLOW", "COLOR_GREEN", "COLOR_PLAYER_DARK_GREEN"]

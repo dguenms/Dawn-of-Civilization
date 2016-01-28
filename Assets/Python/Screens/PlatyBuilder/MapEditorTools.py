@@ -1,148 +1,205 @@
 from CvPythonExtensions import *
 from Consts import *
-import RFCUtils
-import csv
+from RFCUtils import utils
 import Popup as PyPopup
 import Areas
 import SettlerMaps
+import WarMaps
+import os
 
-IMAGE_LOCATION = "D:\Documents\My Games\Beyond the Sword\Doc Export Maps"
+IMAGE_LOCATION = os.getcwd() + "\Mods\\RFC Dawn of Civilization\\Export"
 
 gc = CyGlobalContext()
-utils = RFCUtils.RFCUtils()
 
 bAutoWater = True
 bAutoPeak = True
+bMinCoreValue = True
 lPeakExceptions = [(31, 13), (32, 19), (27, 29), (88, 47), (40, 66)]
 
 def changeCore(iPlayer, tPlot):
 	x, y = tPlot
 	bCore = gc.getMap().plot(x, y).isCore(iPlayer)
-	gc.getMap().plot(x, y).setCore(iPlayer, not bCore)
+	plot = gc.getMap().plot(x, y)
+	if (plot.isWater() and bAutoWater) or (plot.isPeak() and bAutoPeak and tPlot not in lPeakExceptions): return
+	plot.setCore(iPlayer, not bCore)
 	
 def changeCoreForce(iPlayer, tPlot, bAdd):
 	x, y = tPlot
-	gc.getMap().plot(x, y).setCore(iPlayer, bAdd)
-	
-def changeFlip(iPlayer, tPlot):
-	return
-	bFlip = tPlot in getFlipPlotList(iPlayer)
-	lChangedFlipTiles[iPlayer][tPlot] = not bFlip
-		
-def changeFlipForce(iPlayer, tPlot, bAdd):
-	return
-	lChangedFlipTiles[iPlayer][tPlot] = bAdd
+	plot = gc.getMap().plot(x, y)
+	if (plot.isWater() and bAutoWater) or (plot.isPeak() and bAutoPeak and tPlot not in lPeakExceptions): return
+	plot.setCore(iPlayer, bAdd)
 	
 def changeSettlerValue(iPlayer, tPlot, iValue):
 	x, y = tPlot
-	gc.getMap().plot(x, y).setSettlerValue(iPlayer, iValue)
+	plot = gc.getMap().plot(x, y)
+	if (plot.isWater() and bAutoWater) or (plot.isPeak() and bAutoPeak and tPlot not in lPeakExceptions): return
+	plot.setSettlerValue(iPlayer, iValue)
 	
 def getSettlerValue(iPlayer, tPlot):
 	x, y = tPlot
 	return gc.getMap().plot(x, y).getSettlerValue(iPlayer)
 
+def changeWarValue(iPlayer, tPlot, iValue):
+	x, y = tPlot
+	plot = gc.getMap().plot(x, y)
+	if (plot.isWater() and bAutoWater) or (plot.isPeak() and bAutoPeak and tPlot not in lPeakExceptions): return
+	plot.setWarValue(iPlayer, iValue)
+
+def getWarValue(iPlayer, tPlot):
+	x, y = tPlot
+	return gc.getMap().plot(x, y).getWarValue(iPlayer)
+
 def resetCore(iPlayer):
 	Areas.updateCore(iPlayer)
-			
-def resetFlip(iPlayer):
-	return
-	lRemovePlots = []
-	for (x, y) in lChangedFlipTiles[iPlayer]:
-		lRemovePlots.append((x, y))
-	for tPlot in lRemovePlots:
-		del lChangedFlipTiles[iPlayer][tPlot]
 
 def resetSettler(iPlayer):
 	SettlerMaps.updateMap(iPlayer)
+
+def resetWarMap(iPlayer):
+	WarMaps.updateMap(iPlayer)
+
+def exportCore(iPlayer):
+	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+	if iPlayer == iHolyRome:
+		sName = "HolyRome"
+	elif iPlayer == iAztecs:
+		sName = "Aztecs"
 	
-def export():
-	lChangedCivCores = []
-	lChangedCivFlipzones = []
-	lChangedCivSettlerValues = []
-	
-	for iPlayer in range(iNumPlayers):
-		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-		sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
-		
-		# Core plots
-		lCorePlotList = Areas.getCoreArea(iPlayer)
-		bCoreChanged = False
-		for x in range(iWorldX):
-			for y in range(iWorldY):
-				bOldCore = (x, y) in lCorePlotList
-				if gc.getMap().plot(x, y).isCore(iPlayer) != bOldCore:
-					bCoreChanged = True
-					break
+	lCorePlotList = Areas.getCoreArea(iPlayer)
+	bCoreChanged = False
+	for x in range(iWorldX):
+		for y in range(iWorldY):
+			bOldCore = (x, y) in lCorePlotList
+			if gc.getMap().plot(x, y).isCore(iPlayer) != bOldCore:
+				bCoreChanged = True
+				break
 		if bCoreChanged:
-			lChangedCivCores.append(sName)
-			file = open(IMAGE_LOCATION + "\Cores\\" + sName, 'wt')
-			try:
-				writer = csv.writer(file)
-				for y in reversed(range(iWorldY)):
-					lRow = []
-					for x in range(iWorldX):
-						if gc.getMap().plot(x, y).isCore(iPlayer): lRow.append(1)
-						else: lRow.append(0)
-					writer.writerow(lRow)
-			finally:
-				file.close()
-		
-		# lFlipPlotList = getFlipPlotList(iPlayer)
-		# if lChangedFlipTiles[iPlayer]:
-			# lChangedCivFlipzones.append(sName)
-			# file = open(IMAGE_LOCATION + "\Flipzones\\" + sName, 'wt')
-			# try:
-				# writer = csv.writer(file)
-				# for y in reversed(range(iWorldY)):
-					# lRow = []
-					# for x in range(iWorldX):
-						# if (x, y) in lFlipPlotList: lRow.append(1)
-						# else: lRow.append(0)
-					# writer.writerow(lRow)
-			# finally:
-				# file.close()
-				
-		bSettlerValueChanged = False
+			break
+	if bCoreChanged:
+		Bottom = iWorldY
+		Top = 0
+		Left = iWorldX
+		Right = 0
 		for x in range(iWorldX):
 			for y in range(iWorldY):
-				if getSettlerValue(iPlayer, (x, y)) != SettlerMaps.getMapValue(iCiv, x, y):
-					bSettlerValueChanged = True
-					break
-		if bSettlerValueChanged:
-			lChangedCivSettlerValues.append(sName)
-			file = open(IMAGE_LOCATION + "\SettlerValues\\" + sName, 'wt')
-			try:
-				writer = csv.writer(file)
-				for y in reversed(range(iWorldY)):
-					lRow = []
-					for x in range(iWorldX):
-						plot = gc.getMap().plot(x, y)
-						if plot.isWater() and bAutoWater: lRow.append(20); continue
-						if plot.isPeak() and bAutoPeak and (x, y) not in lPeakExceptions: lRow.append(20); continue
-						lRow.append(getSettlerValue(iPlayer, (x, y)))
-					writer.writerow(lRow)
-			finally:
-				file.close()
-	
-	# popup which files have been created
+				if gc.getMap().plot(x, y).isCore(iPlayer):
+					if x < Left:
+						Left = x
+					if x > Right:
+						Right = x
+					if y < Bottom:
+						Bottom = y
+					if y > Top:
+						Top = y
+		BL = (Left, Bottom)
+		TR = (Right, Top)
+
+		lExceptions = []
+		for x in range(BL[0], TR[0]+1):
+			for y in range(BL[1], TR[1]+1):
+				plot = gc.getMap().plot(x, y)
+				if not plot.isCore(iPlayer) or (plot.isWater() and bAutoWater) or (plot.isPeak() and bAutoPeak and (x, y) not in lPeakExceptions):
+					lExceptions.append((x, y))
+
+		file = open(IMAGE_LOCATION + "\Cores\\" + sName + ".txt", 'wt')
+		try:
+			file.write("# tCoreArea\n")
+			file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
+			if lExceptions:
+				file.write("\n\n# dCoreAreaExceptions\n")
+				file.write("i" + sName + " : " + str(lExceptions) + ",")
+		finally:
+			file.close()
+		sText = "Core map of %s exported" %sName
+	else:
+		sText = "No changes between current core and core defined in python"
 	popup = PyPopup.PyPopup()
-	sText = "The following maps have been created.\n\nCore:"
-	if lChangedCivCores:
-		for sName in lChangedCivCores:
-			sText += "\n"+sName
+	popup.setBodyString(sText)
+	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+	
+def exportSettlerMap(iPlayer):
+	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+	if iPlayer == iHolyRome:
+		sName = "HolyRome"
+	elif iPlayer == iAztecs:
+		sName = "Aztecs"
+		
+	bSettlerValueChanged = False
+	for x in range(iWorldX):
+		for y in range(iWorldY):
+			if getSettlerValue(iPlayer, (x, y)) != SettlerMaps.getMapValue(iCiv, x, y):
+				bSettlerValueChanged = True
+				break
+		if bSettlerValueChanged:
+			break
+	if bSettlerValueChanged:
+		file = open(IMAGE_LOCATION + "\SettlerValues\\" + sName + ".txt", 'wt')
+		try:
+			file.write("(")
+			for y in reversed(range(iWorldY)):
+				sLine = "(\t"
+				for x in range(iWorldX):
+					plot = gc.getMap().plot(x, y)
+					if plot.isWater() and bAutoWater: iValue = 20
+					elif plot.isPeak() and bAutoPeak and (x, y) not in lPeakExceptions: iValue = 20
+					elif plot.isCore(iPlayer) and bMinCoreValue: iValue = max(500, getSettlerValue(iPlayer, (x, y)))
+					else: iValue = getSettlerValue(iPlayer, (x, y))
+					sLine += "%d,\t" %iValue
+				if y == 0:
+					sLine += ")),"
+				else:
+					sLine += "),\n"
+				file.write(sLine)
+		finally:
+			file.close()
+		sText = "Settlermap of %s exported" %sName
 	else:
-		sText += "\nNo Civ"
-	sText += "\n\nFlipzones:"
-	if lChangedCivFlipzones:
-		for sName in lChangedCivFlipzones:
-			sText += "\n"+sName
+		sText = "No changes between current settlervalues and values defined in python"
+	popup = PyPopup.PyPopup()
+	popup.setBodyString(sText)
+	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+
+def exportWarMap(iPlayer):
+	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+	if iPlayer == iHolyRome:
+		sName = "HolyRome"
+	elif iPlayer == iAztecs:
+		sName = "Aztecs"
+		
+	bWarMapChanged = False
+	for x in range(iWorldX):
+		for y in range(iWorldY):
+			if getWarValue(iPlayer, (x, y)) != WarMaps.getMapValue(iCiv, x, y):
+				bWarMapChanged = True
+				break
+		if bWarMapChanged:
+			break
+	if bWarMapChanged:
+		file = open(IMAGE_LOCATION + "\WarMaps\\" + sName + ".txt", 'wt')
+		try:
+			file.write("(")
+			for y in reversed(range(iWorldY)):
+				sLine = "(\t"
+				for x in range(iWorldX):
+					plot = gc.getMap().plot(x, y)
+					if plot.isWater() and bAutoWater: iValue = 0
+					elif plot.isPeak() and bAutoPeak and (x, y) not in lPeakExceptions: iValue = 0
+					elif plot.isCore(iPlayer) and bMinCoreValue: iValue = max(8, getWarValue(iPlayer, (x, y)))
+					else: iValue = getWarValue(iPlayer, (x, y))
+					sLine += "%d,\t" %iValue
+				if y == 0:
+					sLine += ")),"
+				else:
+					sLine += "),\n"
+				file.write(sLine)
+		finally:
+			file.close()
+		sText = "Warmap of %s exported" %sName
 	else:
-		sText += "\nNo Civ"
-	sText += "\n\nSettlerMaps:"
-	if lChangedCivSettlerValues:
-		for sName in lChangedCivSettlerValues:
-			sText += "\n"+sName
-	else:
-		sText += "\nNo Civ"
+		sText = "No changes between current warvalues and values defined in python"
+	popup = PyPopup.PyPopup()
 	popup.setBodyString(sText)
 	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
