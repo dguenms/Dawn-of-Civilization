@@ -6194,6 +6194,18 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			 (NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity()) )
 		{
 			updatePlotGroup();
+
+			// Leoreth: update culture costs
+			CvPlot* pLoopPlot;
+			for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+			{
+				pLoopPlot = plotCity3(getX(), getY(), iI);
+				if (pLoopPlot != NULL && pLoopPlot->isCity()) 
+				{
+					pLoopPlot->getPlotCity()->updateCultureCosts();
+					pLoopPlot->getPlotCity()->updateCoveredPlots(true);
+				}
+			}
 		}
 
 		if (NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity())
@@ -6227,50 +6239,6 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 
 			}
 		}
-
-		// Leoreth: forts allow to cover a tile
-		if ((eNewValue != NO_IMPROVEMENT && GC.getImprovementInfo(eNewValue).isActsAsCity()) || (eOldImprovement != NO_IMPROVEMENT && GC.getImprovementInfo(eOldImprovement).isActsAsCity()))
-		{
-			int iX, iY;
-			for (iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
-			{
-				iX = getX() + GC.getCityPlot3X()[iI];
-				iY = getY() + GC.getCityPlot3Y()[iI];
-
-				if (GC.getMap().isPlot(iX, iY) && GC.getMap().plot(iX, iY)->isCity())
-				{
-					GC.getMap().plot(iX, iY)->getPlotCity()->updateCultureCosts();
-					GC.getMap().plot(iX, iY)->getPlotCity()->updateCoveredPlots(true);
-				}
-			}
-		}
-
-		/*if (eNewValue != NO_IMPROVEMENT && GC.getImprovementInfo(eNewValue).isActsAsCity())
-		{
-			if (getOwner() != NO_PLAYER) // other case already handled in changeBuildProgress
-			{
-				changeCultureRangeCities(getOwner(), 0, 1, true);
-			}
-		}*/
-
-		/*if (eOldImprovement != NO_IMPROVEMENT && GC.getImprovementInfo(eOldImprovement).isActsAsCity())
-		{
-			if (getOwner() != NO_PLAYER)
-			{
-				if (getCultureRangeCities(getOwner(), 0) > 0) changeCultureRangeCities(getOwner(), 0, -1, true);
-			}
-			else
-			{
-				for (iI = 0; iI < MAX_PLAYERS; iI++)
-				{
-					// since there is no city on the plot, the distance 0 city can only be the fort
-					if (getCultureRangeCities((PlayerTypes)iI, 0) > 0) 
-					{
-						changeCultureRangeCities((PlayerTypes)iI, 0, -1, true);
-					}
-				}
-			}
-		}*/
 
 		gDLL->getInterfaceIFace()->setDirty(CitizenButtons_DIRTY_BIT, true);
 	}
