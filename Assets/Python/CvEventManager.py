@@ -194,6 +194,7 @@ class CvEventManager(object):
 			3333 : ('WBUnitScript', self.__eventWBUnitScriptPopupApply, self.__eventWBScriptPopupBegin),
 			4444 : ('WBGameScript', self.__eventWBGameScriptPopupApply, self.__eventWBScriptPopupBegin),
 			5555 : ('WBPlotScript', self.__eventWBPlotScriptPopupApply, self.__eventWBScriptPopupBegin),
+			6666 : ('WBSettlerValue', self.__eventWBSettlerValuePopupApply, self.__eventWBScriptPopupBegin),
 ## Platy Builder ##
 		}	
 #################### EVENT STARTERS ######################
@@ -544,16 +545,7 @@ class CvEventManager(object):
 		game = gc.getGame()
 		if ((not gc.getGame().isNetworkMultiPlayer()) and (pCity.getOwner() == gc.getGame().getActivePlayer()) and isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType())):
 			# If this is a wonder...
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
-			popupInfo.setData1(iBuildingType)
-			popupInfo.setData2(pCity.getID())
-			popupInfo.setData3(0)
-			popupInfo.setText(u"showWonderMovie")
-			popupInfo.addPopup(pCity.getOwner())
-	## Platy Builder ##
-			if not CyGame().GetWorldBuilderMode():
-	## Platy Builder ##
+			if not CyGame().GetWorldBuilderMode():	## Platy Builder ##
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
 				popupInfo.setData1(iBuildingType)
@@ -1204,6 +1196,18 @@ class CvEventManager(object):
 		pPlot = CyMap().plot(userData[0], userData[1])
 		pPlot.setScriptData(CvUtil.convertToStr(sScript))
 		WBPlotScreen.WBPlotScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
+		return
+		
+	def __eventWBSettlerValuePopupApply(self, playerID, userData, popupReturn):
+		sScript = popupReturn.getEditBoxString(0)
+		try:
+			int(sScript)
+			bInt = True
+		except ValueError:
+			bInt = False
+		if bInt:
+			iValue = int(sScript)
+			WBPlotScreen.WBPlotScreen().changeSettlerValuePopup(userData[0], iValue)
 		return
 
 	def __eventWBLandmarkPopupApply(self, playerID, userData, popupReturn):
