@@ -39,7 +39,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Priest.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields>
 				<iYield>0</iYield>
@@ -68,7 +68,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Artist.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields/>
 			<Commerces>
@@ -93,7 +93,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/scientist.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields/>
 			<Commerces>
@@ -118,7 +118,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/merchant.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields/>
 			<Commerces>
@@ -143,7 +143,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/engineer.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields>
 				<iYield>0</iYield>
@@ -168,7 +168,7 @@
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Statesman.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields>
 				<iYield>0</iYield>

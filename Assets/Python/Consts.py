@@ -1488,32 +1488,32 @@ iSatellites, iRobotics, iFutureTech) = range(iNumTechs)
 # initialise unit variables to unit indices from XML
 
 iNumUnits = 158
-(iLion, iBear, iPanther, iWolf, iSettler, iHarappanCityBuilder, iWorker, iBrazilianMadeireiro, iIndianPunjabiWorker, iScout, iExplorer, iSpy, iProsecutor,
+(iLion, iBear, iPanther, iWolf, iSettler, iHarappanCityBuilder, iWorker, iBrazilianMadeireiro, iIndianPunjabiWorker, iScout, iExplorer, iSpy, iReligiousPersecutor,
 iProtestantMissionary, iCatholicMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary,
 iTaoistMissionary, iZoroastrianMissionary, iWarrior, iSwordsman, iAztecJaguar, iRomanLegion, iCelticGallicWarrior,
-iAxeman, iGreekHoplite, iIncanAucac, iBarbarianVulture, iBarbarianDogSoldier, iHeavySwordsman, iJapaneseSamurai, iVikingHuskarl, iCongolesePombos,
-iSpearman, iPersianImmortal, iBarbarianImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iOttomanJanissary, iEthiopianAskari, 
-iIranianQizilbash, iBarbarianMohawk, iRifleman, iEnglishRedcoat, iAmericanMinuteman, iGrenadier, iColombianAlbionLegion, iAtInfantry, iInfantry, iItalianBersagliere,
-iSamInfantry, iMobileSam, iMarine, iParatrooper, iMechanizedInfantry, iArcher, iMandeSkirmisher, iBabylonAsharittuBowman, iMayanHolkan, iBarbarianMedjay,
-iLongbowman, iIndianPatiyodha, iCrossbowman, iChineseChokonu, iChariot, iEgyptianWarChariot, iBarbarianHuluganni, iHorseArcher, iTibetanKhampa,
-iBarbarianNumidianCavalry, iBarbarianAsvaka, iKnight, iMongolianKeshik, iArabianCamelArcher, iByzantineCataphract, iThaiChangSuek, iSeljukGhulamWarrior,
-iBarbarianFarari, iCuirassier, iSpanishConquistador, iPolishWingedHussar, iBarbarianMountedBrave, iCavalry, iRussianCossack, iMexicanRurales,
-iArgentineGrenadierCavalry, iWarElephant, iKhmerBallistaElephant, iPhoenicianWarElephant, iTank, iGermanPanzer, iMainBattleTank, iGunship, iCatapult, iKoreanHwacha,
+iAxeman, iGreekHoplite, iIncanAucac, iSumerianVulture, iNativeAmericanDogSoldier, iHeavySwordsman, iJapaneseSamurai, iVikingHuscarl, iCongolesePombos,
+iSpearman, iPersianImmortal, iZuluImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iOttomanJanissary, iEthiopianAskari, 
+iIranianQizilbash, iIroquoisMohawk, iRifleman, iEnglishRedcoat, iAmericanMinuteman, iGrenadier, iColombianAlbionLegion, iAtInfantry, iInfantry, iItalianBersagliere,
+iSamInfantry, iMobileSam, iMarine, iParatrooper, iMechanizedInfantry, iArcher, iMandeSkirmisher, iBabylonAsharittuBowman, iMayanHolkan, iNubianMedjay,
+iLongbowman, iIndianPatiyodha, iCrossbowman, iChineseChokonu, iChariot, iEgyptianWarChariot, iHittiteHuluganni, iHorseArcher, iTibetanKhampa,
+iNumidianNumidianCavalry, iKushanAsvaka, iKnight, iMongolianKeshik, iArabianCamelArcher, iByzantineCataphract, iThaiChangSuek, iSeljukGhulamWarrior,
+iMandeFarari, iCuirassier, iSpanishConquistador, iPolishWingedHussar, iSiouxMountedBrave, iCavalry, iRussianCossack, iMexicanRurales,
+iArgentineGrenadierCavalry, iWarElephant, iKhmerBallistaElephant, iPhoenicianAfricanWarElephant, iTank, iGermanPanzer, iMainBattleTank, iGunship, iCatapult, iKoreanHwacha,
 iTrebuchet, iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iPolynesianWaka, iTrireme,
 iCaravel, iPortugalCarrack, iTamilDharani, iGalleon, iDutchEastIndiaman, iPrivateer, iIndonesianOrangLaut, iMoorishCorsair, iFrigate,
 iShipOfTheLine, iIronclad, iTransport, iDestroyer, iCanadianCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter,
-iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iProphet, iArtist, iScientist, iMerchant, iEngineer, iStatesman, iGreatGeneralUnit,
-iGreatSpy, iFemaleProphet, iFemaleArtist, iFemaleScientist, iFemaleMerchant, iFemaleEngineer, iFemaleStatesman, iFemaleGreatGeneral,
+iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral,
+iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral,
 iFemaleGreatSpy, iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
 
 dFemaleGreatPeople = {
-iProphet : iFemaleProphet,
-iArtist : iFemaleArtist,
-iScientist : iFemaleScientist,
-iMerchant : iFemaleMerchant,
-iEngineer : iFemaleEngineer,
-iStatesman : iFemaleStatesman,
-iGreatGeneralUnit : iFemaleGreatGeneral,
+iGreatProphet : iFemaleGreatProphet,
+iGreatArtist : iFemaleGreatArtist,
+iGreatScientist : iFemaleGreatScientist,
+iGreatMerchant : iFemaleGreatMerchant,
+iGreatEngineer : iFemaleGreatEngineer,
+iGreatStatesman : iFemaleGreatStatesman,
+iGreatGeneral : iFemaleGreatGeneral,
 iGreatSpy : iFemaleGreatSpy,
 }
 
@@ -1572,8 +1572,8 @@ iCivicMilitia, iCivicMercenaries, iCivicLevyArmies, iCivicStandingArmy, iCivicNa
 
 #Specialists
 iNumSpecialists = 17
-(iCitizen, iSpecialistPriest, iSpecialistArtist, iSpecialistScientist, iSpecialistMerchant, iSpecialistEngineer, iSpecialistStatesman, iSpecialistSpy,
-iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iSpecialistGreatSpy, iSettledSlave) = range(iNumSpecialists)
+(iSpecialistCitizen, iSpecialistPriest, iSpecialistArtist, iSpecialistScientist, iSpecialistMerchant, iSpecialistEngineer, iSpecialistStatesman, iSpecialistSpy,
+iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy, iSpecialistSlave) = range(iNumSpecialists)
 
 #Stability Levels
 iNumStabilityLevels = 5
@@ -1682,16 +1682,16 @@ iVictorySecularism = 10
 #leaders
 
 iNumLeaders = 114
-(iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexander, iAsoka, iAugustusCaesar, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
+(iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
 iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, iHammurabi, iHannibal, iCleopatra,
-iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, iLouis, iMansaMusa, iMaoZedong,
+iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, iLouis, iMansaMusa, iMao,
 iMehmed, iMontezuma, iNapoleon, iPacal, iPericles, iPeter, iQinShiHuang, iRamesses, iRagnar, iRoosevelt,
 iSaladin, iSittingBull, iStalin, iSuleiman, iSuryavarman, iOdaNobunaga, iVictoria, iWangKon, iWashington, iWillemVanOranje, 
-iZaraYaqob, iKammu, iMeiji, iAkbar, iHiram, iHaileSelassie, iGustavAdolph, iAbuBakr, iMongkut, iElishat,
-iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonsoHenriques, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
-iChiangKaishek, iCavour, iAbbas, iKhomeini, iTangTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShahuji,
-iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iMuhammadibnTughluq, iBasil, iAbdArRahman, iRajendraChola, iLobsangGyatso,
-iSobieski, iVatavelli, iMbemba, iHarunAlRashid, iSongtsenGampo, iCasimir, iYaqubAlMansur, iLorenzoDeMedici, iSantaAnna, iJuarez, iCardenas, iPedro, 
+iZaraYaqob, iKammu, iMeiji, iAkbar, iHiram, iHaileSelassie, iGustav, iAbuBakr, iMongkut, iElishat,
+iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonso, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
+iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShahuji,
+iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, iRahman, iRajendra, iLobsangGyatso,
+iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, 
 iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya) = range(iNumLeaders)
 
 resurrectionLeaders = {
@@ -1717,3 +1717,11 @@ tTradingCompanyPlotLists = (
 lSecondaryCivs = [iHarappa, iPolynesia, iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
 
 (i3000BC, i600AD, i1700AD) = range(3)
+
+# Stability overlay and editor
+iNumPlotStabilityTypes = 5
+(iCore, iHistorical, iContest, iForeignCore, iAIForbidden) = range(iNumPlotStabilityTypes)
+lStabilityColors = ["COLOR_CYAN", "COLOR_GREEN", "COLOR_YELLOW", "COLOR_RED", "COLOR_PLAYER_LIGHT_PURPLE"]
+lPresetValues = [3, 20, 90, 200, 500, 700]
+
+lWarMapColors = ["COLOR_RED", "COLOR_PLAYER_ORANGE", "COLOR_YELLOW", "COLOR_GREEN", "COLOR_PLAYER_DARK_GREEN"]

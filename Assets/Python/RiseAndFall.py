@@ -634,63 +634,63 @@ class RiseAndFall:
 			# London
 			x, y = Areas.getCapital(iEngland)
 			pLondon = gc.getMap().plot(x, y).getPlotCity()
-			pLondon.setFreeSpecialistCount(iGreatMerchant, 1)
+			pLondon.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
 			
 			# Paris
 			x, y = Areas.getCapital(iFrance)
 			pParis = gc.getMap().plot(x, y).getPlotCity()
-			pParis.setFreeSpecialistCount(iGreatScientist, 1)
+			pParis.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
 			
 			# Netherlands
 			x, y = Areas.getCapital(iNetherlands)
 			pAmsterdam = gc.getMap().plot(x, y).getPlotCity()
-			pAmsterdam.setFreeSpecialistCount(iGreatMerchant, 2)
+			pAmsterdam.setFreeSpecialistCount(iSpecialistGreatMerchant, 2)
 			
 			# Hamburg
 			x, y = tHamburg
 			pHamburg = gc.getMap().plot(x, y).getPlotCity()
-			pHamburg.setFreeSpecialistCount(iGreatMerchant, 1)
+			pHamburg.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
 			pHamburg.setCulture(iNetherlands, 0, True)
 			gc.getMap().plot(x, y).setCulture(iNetherlands, 0, True)
 			
 			# Milan
 			x, y = tMilan
 			pMilan = gc.getMap().plot(x, y).getPlotCity()
-			pMilan.setFreeSpecialistCount(iGreatMerchant, 2)
-			pMilan.setFreeSpecialistCount(iGreatEngineer, 1)
+			pMilan.setFreeSpecialistCount(iSpecialistGreatMerchant, 2)
+			pMilan.setFreeSpecialistCount(iSpecialistGreatEngineer, 1)
 			
 			# Kyoto
 			x, y = Areas.getCapital(iJapan)
 			pKyoto = gc.getMap().plot(x, y).getPlotCity()
-			pKyoto.setFreeSpecialistCount(iGreatMerchant, 1)
+			pKyoto.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
 			
 			# Mecca
 			pMecca = gc.getGame().getHolyCity(iIslam)
-			pMecca.setFreeSpecialistCount(iGreatProphet, 2)
+			pMecca.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
 			
 			# Rome
 			x, y = Areas.getCapital(iRome)
 			pRome = gc.getMap().plot(x, y).getPlotCity()
-			pRome.setFreeSpecialistCount(iGreatProphet, 1)
+			pRome.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
 			
 			# Baghdad
 			x, y = tBaghdad
 			pBaghdad = gc.getMap().plot(x, y).getPlotCity()
-			pBaghdad.setFreeSpecialistCount(iGreatProphet, 1)
+			pBaghdad.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
 			
 			# Pataliputra
 			pPataliputra = gc.getGame().getHolyCity(iHinduism)
-			pPataliputra.setFreeSpecialistCount(iGreatProphet, 2)
+			pPataliputra.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
 			
 			# Lhasa
 			x, y = Areas.getCapital(iTibet)
 			pLhasa = gc.getMap().plot(x, y).getPlotCity()
-			pLhasa.setFreeSpecialistCount(iGreatProphet, 2)
+			pLhasa.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
 			
 			# Ayutthaya
 			x, y = Areas.getCapital(iThailand)
 			pAyutthaya = gc.getMap().plot(x, y).getPlotCity()
-			pAyutthaya.setFreeSpecialistCount(iGreatProphet, 1)
+			pAyutthaya.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
 			
 			# Chengdu
 			pChengdu = gc.getMap().plot(99, 41).getPlotCity()
@@ -698,7 +698,7 @@ class RiseAndFall:
 			
 			# Mumbai
 			pMumbai = gc.getMap().plot(88, 34).getPlotCity()
-			pMumbai.setFreeSpecialistCount(iGreatGeneral, 1)
+			pMumbai.setFreeSpecialistCount(iSpecialistGreatGeneral, 1)
 			
 	def flipStartingTerritory(self):
 	
@@ -892,7 +892,7 @@ class RiseAndFall:
                         utils.makeUnit(iSettler, iCarthage, (58, 39), 1)
                         utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
                         utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
-                        utils.makeUnit(iPhoenicianWarElephant, iCarthage, (58, 39), 2)
+                        utils.makeUnit(iPhoenicianAfricanWarElephant, iCarthage, (58, 39), 2)
 			
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
@@ -2288,8 +2288,8 @@ class RiseAndFall:
                                                 gc.getPlayer(iCiv).initUnit(iGalley, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                                                 if (teamCiv.isHasTech(iCivilService)):
                                                         if (iCiv == iVikings):
-                                                                gc.getPlayer(iCiv).initUnit(iVikingHuskarl, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-                                                                gc.getPlayer(iCiv).initUnit(iVikingHuskarl, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
+                                                                gc.getPlayer(iCiv).initUnit(iVikingHuscarl, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+                                                                gc.getPlayer(iCiv).initUnit(iVikingHuscarl, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
                                                         else:
                                                                 gc.getPlayer(iCiv).initUnit(iHeavySwordsman, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
                                                                 gc.getPlayer(iCiv).initUnit(iHeavySwordsman, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
@@ -2862,7 +2862,7 @@ class RiseAndFall:
                 if (iCiv == iPersia):
                         utils.makeUnit(iPersianImmortal, iCiv, tPlot, 4)
                 if (iCiv == iCarthage):
-                        utils.makeUnit(iPhoenicianWarElephant, iCiv, tPlot, 1)
+                        utils.makeUnit(iPhoenicianAfricanWarElephant, iCiv, tPlot, 1)
 		if iCiv == iPolynesia:
 			utils.makeUnit(iWarrior, iCiv, tPlot, 2)
                 if (iCiv == iRome):

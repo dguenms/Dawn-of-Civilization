@@ -736,15 +736,15 @@ class UniquePowers:
 		
 		lProgress = []
 		bAllZero = True
-		for iSpecialist in [con.iProphet, con.iArtist, con.iScientist, con.iMerchant, con.iEngineer, con.iGreatGeneral, con.iGreatSpy]:
+		for iSpecialist in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
 			iProgress = city.getGreatPeopleUnitProgress(utils.getUniqueUnit(city.getOwner(), iSpecialist))
 			if iProgress > 0: bAllZero = False
 			lProgress.append(iProgress)
 			
 		if bAllZero:
-			iGreatPerson = utils.getRandomEntry([con.iProphet, con.iArtist, con.iScientist, con.iMerchant, con.iEngineer, con.iGreatSpy])
+			iGreatPerson = utils.getRandomEntry([con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatSpy])
 		else:
-			iGreatPerson = utils.getHighestIndex(lProgress) + con.iProphet
+			iGreatPerson = utils.getHighestIndex(lProgress) + con.iGreatProphet
 			
 		iGreatPerson = utils.getUniqueUnit(city.getOwner(), iGreatPerson)
 		

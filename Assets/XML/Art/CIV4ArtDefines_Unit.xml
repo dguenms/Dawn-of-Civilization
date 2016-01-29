@@ -91,7 +91,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORKER</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_WORKER</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,5</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -217,7 +217,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_SPY</Type>
+			<Type>ART_DEF_UNIT_MODERN_SPY</Type>
 			<Button>,Art/Interface/Buttons/Units/Spy.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,7</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
@@ -513,7 +513,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_VULTURE</Type>
+			<Type>ART_DEF_UNIT_SUMERIAN_VULTURE</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,11</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -534,7 +534,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_DOG_SOLDIER</Type>
+			<Type>ART_DEF_UNIT_NATIVE_AMERICAN_DOG_SOLDIER</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1964,7 +1964,7 @@
 			<ActionSound>AS3D_UN_ARTILLERY_FORT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORK_BOAT</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_WORK_BOAT</Type>
 			<Button>,Art/Interface/Buttons/Units/WorkBoat.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,4,9</Button>
 			<fScale>0.18</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -2001,7 +2001,7 @@
 			<ActionSound>AS3D_UN_WRK_BOAT_ANC_FORT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORK_BOAT_MODERN</Type>
+			<Type>ART_DEF_UNIT_MODERN_WORK_BOAT</Type>
 			<Button>,Art/Interface/Buttons/Units/WorkBoat.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,4,9</Button>
 			<fScale>0.20</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -2893,7 +2893,7 @@
 			<ActionSound>AS3D_UN_ICBM_SELECT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PROPHET</Type>
+			<Type>ART_DEF_UNIT_GREAT_PROPHET</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatProphet.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,1</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -2914,7 +2914,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ARTIST</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatArtist.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,4</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -2935,7 +2935,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ARTIST_MODERN</Type>
+			<Type>ART_DEF_UNIT_MODERN_GREAT_ARTIST</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatArtist.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,4</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -2956,7 +2956,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_SCIENTIST</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatScientist.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,4</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -2977,7 +2977,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_SCIENTIST_MODERN</Type>
+			<Type>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatScientist.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,4</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -2998,7 +2998,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MERCHANT</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatTycoon.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,4</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
@@ -3019,7 +3019,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_MERCHANT_MODERN</Type>
+			<Type>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatTycoon.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,4</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3187,7 +3187,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ENGINEER</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,8</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3208,7 +3208,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ENGINEER_MODERN</Type>
+			<Type>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,8</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3250,7 +3250,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_GREAT_SPY</Type>
+			<Type>ART_DEF_UNIT_MODERN_GREAT_SPY</Type>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,12</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
@@ -3335,7 +3335,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WARLORD_ANCIENT</Type>
+			<Type>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3356,7 +3356,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WARLORD_MEDIEVAL</Type>
+			<Type>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3377,7 +3377,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WARLORD_MODERN</Type>
+			<Type>ART_DEF_UNIT_GREAT_GENERAL_MODERN</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3398,7 +3398,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_IMPI</Type>
+			<Type>ART_DEF_UNIT_ZULU_IMPI</Type>
 			<Button>,Art/Interface/Buttons/Units/Spearman.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,8,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3440,7 +3440,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_VIKING_HUSKARL</Type>
+			<Type>ART_DEF_UNIT_VIKING_HUSCARL</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,10</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3461,7 +3461,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_NUMIDIAN_CAVALRY</Type>
+			<Type>ART_DEF_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</Type>
 			<Button>,Art/Interface/Buttons/Units/HorseArcher.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,8</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -4402,7 +4402,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORKER_ASIAN</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_WORKER_ASIAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,5</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -4736,7 +4736,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORKER_EUROPEAN</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_WORKER_EUROPEAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,5</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -5226,7 +5226,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORKER_MIDDLE_EAST</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_WORKER_MIDDLE_EAST</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,5</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -5598,7 +5598,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_WORKER_SOUTH_AMERICA</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_WORKER_SOUTH_AMERICA</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,5</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6118,7 +6118,7 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_HULUGANNI</Type>
+			<Type>ART_DEF_UNIT_HITTITE_HULUGANNI</Type>
 			<Button>Art/Units/Hittite Huluganni/Huluganni.dds</Button>
 			<fScale>0.35</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -6153,7 +6153,7 @@
 			</AudioRunSounds>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_MOHAWK</Type>
+			<Type>ART_DEF_UNIT_IROQUOIS_MOHAWK</Type>
 			<Button>Art/Units/Iroquois Mohawk/Mohawk.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6174,7 +6174,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_ASVAKA</Type>
+			<Type>ART_DEF_UNIT_KUSHAN_ASVAKA</Type>
 			<Button>Art/Units/Kushan Asvaka/Button_Asvaka.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -6195,7 +6195,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_FARARI</Type>
+			<Type>ART_DEF_UNIT_MANDE_FARARI</Type>
 			<Button>Art/Units/Mande Farari/Farari.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -6216,7 +6216,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_MEDJAY</Type>
+			<Type>ART_DEF_UNIT_NUBIAN_MEDJAY</Type>
 			<Button>Art/Units/Nubian Medjay/btn_medjay.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6237,7 +6237,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_BARBARIAN_MOUNTED_BRAVE</Type>
+			<Type>ART_DEF_UNIT_SIOUX_MOUNTED_BRAVE</Type>
 			<Button>Art/Units/Sioux Mounted Brave/Mounted Brave.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6279,7 +6279,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PHOENICIAN_WAR_ELEPHANT</Type>
+			<Type>ART_DEF_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</Type>
 			<Button>,Art/Interface/Buttons/Units/WarElephant.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,2</Button>
 			<fScale>0.34</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
@@ -6481,7 +6481,7 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_STATESMAN</Type>
+			<Type>ART_DEF_UNIT_GREAT_STATESMAN</Type>
 			<Button>Art/Interface/Buttons/Units/Statesman.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6502,7 +6502,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_PROPHET</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_PROPHET</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Prophet.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6531,7 +6531,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_ARTIST</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_ARTIST</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Artist.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6552,7 +6552,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_ARTIST_MODERN</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_ARTIST_MODERN</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Artist_Modern.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6573,7 +6573,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_SCIENTIST</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_SCIENTIST</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Scientist.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6594,7 +6594,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_SCIENTIST_MODERN</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_SCIENTIST_MODERN</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Scientist_Modern.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6615,7 +6615,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_MERCHANT</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_MERCHANT</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Merchant.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
@@ -6636,7 +6636,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_MERCHANT_MODERN</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_MERCHANT_MODERN</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Merchant_Modern.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6686,7 +6686,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_GREAT_SPY</Type>
+			<Type>ART_DEF_UNIT_FEMALE_MODERN_GREAT_SPY</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Spy_Modern.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6707,7 +6707,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_ENGINEER</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_ENGINEER</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Engineer.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6728,7 +6728,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_ENGINEER_MODERN</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_ENGINEER_MODERN</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Great_Engineer_Modern.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6749,7 +6749,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_WARLORD_ANCIENT</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_GENERAL_ANCIENT</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Warlord_Ancient.dds</Button>
 			<fScale>0.48</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6770,7 +6770,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_WARLORD_MEDIEVAL</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_GENERAL_MEDIEVAL</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Warlord_MiddleAge.dds</Button>
 			<fScale>0.48</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6791,7 +6791,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_WARLORD_MODERN</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_GENERAL_MODERN</Type>
 			<Button>Art/Interface/Buttons/Units/Female_Warlord_Modern.dds</Button>
 			<fScale>0.48</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6812,7 +6812,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_FEMALE_STATESMAN</Type>
+			<Type>ART_DEF_UNIT_FEMALE_GREAT_STATESMAN</Type>
 			<Button>Art/Interface/Buttons/Units/Noble_Woman.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6833,7 +6833,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PERSECUTOR</Type>
+			<Type>ART_DEF_UNIT_RELIGIOUS_PERSECUTOR</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,3,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>

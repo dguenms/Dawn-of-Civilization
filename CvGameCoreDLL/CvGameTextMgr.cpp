@@ -4498,7 +4498,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 	    {
 	        if (bCore)
 	        {
-	            szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_GREEN_STABILITY_TEXT")));
+	            szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_CYAN")));
 	            szString.append(gDLL->getText("TXT_KEY_STABILITY_CORE_AREA"));
 	        }
 	        else
@@ -8623,7 +8623,7 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 		if (GC.getUnitInfo(eUnit).getFeatureImpassable(iI))
 		{
 			CvWString szFeature;
-			TechTypes eTech = (TechTypes)GC.getUnitInfo(eUnit).getTerrainPassableTech(iI);
+			TechTypes eTech = (TechTypes)GC.getUnitInfo(eUnit).getFeaturePassableTech(iI);
 			if (NO_TECH == eTech)
 			{
 				szFeature.Format(L"<link=literal>%s</link>", GC.getFeatureInfo((FeatureTypes)iI).getDescription());

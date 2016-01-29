@@ -372,7 +372,7 @@ class CvRFCEventHandler:
 		sta.onCombatResult(pWinningUnit.getOwner(), pLosingUnit.getOwner(), iUnitPower)
 		
 		# catch slaves by defeating native and barbarian Pombos or Impis
-		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iBarbarianImpi, iCongolesePombos]:
+		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iZuluImpi, iCongolesePombos]:
 			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
 				if gc.getPlayer(pWinningUnit.getOwner()).getCivics(2) == iCivicSlavery:
 					iRand = gc.getGame().getSorenRandNum(5, "Caught slaves?")
@@ -545,9 +545,9 @@ class CvRFCEventHandler:
 			lGPList = [0, 0, 0, 0, 0, 0, 0]
 			for city in utils.getCityList(iOwner):
 				for i in range(7):
-					iSpecialistUnit = utils.getUniqueUnit(iOwner, iProphet + i)
+					iSpecialistUnit = utils.getUniqueUnit(iOwner, iGreatProphet + i)
 					lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
-			iGPType = utils.getUniqueUnit(iOwner, iProphet + utils.getHighestIndex(lGPList))
+			iGPType = utils.getUniqueUnit(iOwner, iGreatProphet + utils.getHighestIndex(lGPList))
 			utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
 			CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
 
@@ -844,5 +844,5 @@ class CvRFCEventHandler:
                         print("SHIFT-ALT-S") #increases stability by one level
 			utils.setStabilityLevel(utils.getHumanID(), min(5, utils.getStabilityLevel(utils.getHumanID()) + 1))
 			
-		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_W) and self.eventManager.bCtrl:
-			CyEngine().clearAreaBorderPlots(AreaBorderLayers.AREA_BORDER_LAYER_REVEALED_PLOTS+10) # Remove AI forbidden area overlay when exiting WB by ctrl+b
+		if eventType == self.EventKeyDown and theKey == int(InputTypes.KB_W) and self.eventManager.bCtrl and CyGame().GetWorldBuilderMode():
+			utils.removeStabilityOverlay() # Remove AI forbidden area overlay when exiting WB by ctrl+w

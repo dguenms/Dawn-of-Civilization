@@ -6272,9 +6272,9 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture = m_pUnitInfo->getGreatWorkCulture();
 
 	// Leoreth: new Sphinx effect: great priests can create great works
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)SPHYNX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)SPHYNX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"))
 	{
-		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_ARTIST"))).getGreatWorkCulture();
+		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_ARTIST"))).getGreatWorkCulture();
 	}
 
 	// Leoreth: 800 culture per era

@@ -810,4 +810,12 @@
 		<Tag>TXT_KEY_STABILITY_WON_BATTLES</Tag>
 		<English>Won Battles</English>
 	</TEXT>
+	<TEXT> <!-- Merijn, by edead -->
+		<Tag>TXT_KEY_STABILITY_OVERLAY_WIDGET</Tag>
+		<English>Toggle Stability Display</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STABILITY_OVERLAY_HELP</Tag>
+		<English>[COLOR_PLAYER_CYAN]Cyan[COLOR_REVERT]: core area[NEWLINE][COLOR_PLAYER_GREEN_TEXT]Green[COLOR_REVERT]: historical area[NEWLINE][COLOR_PLAYER_YELLOW_TEXT]Yellow[COLOR_REVERT]: contested area[NEWLINE][COLOR_PLAYER_DARK_RED_TEXT]Red[COLOR_REVERT]: foreign core</English>
+	</TEXT>
 </Civ4GameText>

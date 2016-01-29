@@ -491,8 +491,8 @@
 	<ElementType name="UnitMeshGroup" content="eltOnly">
 		<element type="iRequired" maxOccurs="1" minOccurs="1"/>
 		<element type="EarlyArtDefineTag" maxOccurs="1" minOccurs="1"/>
-		<element type="LateArtDefineTag" maxOccurs="1" minOccurs="0"/>
 		<element type="MiddleArtDefineTag" maxOccurs="1" minOccurs="0"/>
+		<element type="LateArtDefineTag" maxOccurs="1" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="UnitMeshGroups" content="eltOnly">
 		<element type="iGroupSize" maxOccurs="1" minOccurs="1"/>

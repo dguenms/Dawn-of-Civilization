@@ -88,13 +88,13 @@
 			<DefaultUnit>UNIT_SPY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_PERSECUTOR</Type>
-			<Description>TXT_KEY_UNIT_PERSECUTOR</Description>
+			<Type>UNITCLASS_RELIGIOUS_PERSECUTOR</Type>
+			<Description>TXT_KEY_UNIT_RELIGIOUS_PERSECUTOR</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_PERSECUTOR</DefaultUnit>
+			<DefaultUnit>UNIT_RELIGIOUS_PERSECUTOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_PROTESTANT_MISSIONARY</Type>
@@ -718,58 +718,58 @@
 			<DefaultUnit>UNIT_TACTICAL_NUKE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_PROPHET</Type>
+			<Type>UNITCLASS_GREAT_PROPHET</Type>
 			<Description>TXT_KEY_UNIT_GREAT_PROPHET</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_PROPHET</DefaultUnit>
+			<DefaultUnit>UNIT_GREAT_PROPHET</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_ARTIST</Type>
+			<Type>UNITCLASS_GREAT_ARTIST</Type>
 			<Description>TXT_KEY_UNIT_GREAT_ARTIST</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_ARTIST</DefaultUnit>
+			<DefaultUnit>UNIT_GREAT_ARTIST</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_SCIENTIST</Type>
+			<Type>UNITCLASS_GREAT_SCIENTIST</Type>
 			<Description>TXT_KEY_UNIT_GREAT_SCIENTIST</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_SCIENTIST</DefaultUnit>
+			<DefaultUnit>UNIT_GREAT_SCIENTIST</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_MERCHANT</Type>
-			<Description>TXT_KEY_UNIT_GREAT_TYCOON</Description>
+			<Type>UNITCLASS_GREAT_MERCHANT</Type>
+			<Description>TXT_KEY_UNIT_GREAT_MERCHANT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_MERCHANT</DefaultUnit>
+			<DefaultUnit>UNIT_GREAT_MERCHANT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_ENGINEER</Type>
+			<Type>UNITCLASS_GREAT_ENGINEER</Type>
 			<Description>TXT_KEY_UNIT_GREAT_ENGINEER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_ENGINEER</DefaultUnit>
+			<DefaultUnit>UNIT_GREAT_ENGINEER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_STATESMAN</Type>
+			<Type>UNITCLASS_GREAT_STATESMAN</Type>
 			<Description>TXT_KEY_UNIT_GREAT_STATESMAN</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_STATESMAN</DefaultUnit>
+			<DefaultUnit>UNIT_GREAT_STATESMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_GREAT_GENERAL</Type>
