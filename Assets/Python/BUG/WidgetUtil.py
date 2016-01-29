@@ -136,7 +136,7 @@ def getWidgetHelp(argsList):
 	
 ## Religion Screen ##
 	if eWidgetType == WidgetTypes.WIDGET_HELP_RELIGION:
-		if iData1 == 0:
+		if iData1 == -1:
 			return CyTranslator().getText("TXT_KEY_CULTURELEVEL_NONE", ())
 
 ## Platy WorldBuilder ##
@@ -246,7 +246,7 @@ def getWidgetHelp(argsList):
 			elif iData2 == 37:
 				return CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ())
 			elif iData2 == 38:
-				return CyTranslator().getText("TXT_KEY_WB_CNM", ())
+				return CyTranslator().getText("TXT_KEY_WB_WARVALUE", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"
@@ -462,42 +462,12 @@ def getWidgetHelp(argsList):
 				sText = CyTranslator().getText("TXT_KEY_WB_DISABLE_CIV", ())
 			return sText
 			
-		elif iData1 >= 22100 and iData1 < 22170:
-			if iData2 == 1:
-				return CyTranslator().getText("TXT_KEY_WB_TOGGLE_EXTENDED", ())
-			elif iData2 == 2000:
-				return CyTranslator().getText("TXT_KEY_WB_VIEW_STABMAP", ())
-			elif iData2 == 2001:
-				return CyTranslator().getText("TXT_KEY_WB_VIEW_FLIPZONE", ())
-		elif iData1 == 22206:
-			return CyTranslator().getText("TXT_KEY_WB_AI_FORBIDDEN", ())
-		elif iData1 == 22207:
-			if iData2 == 0:
-				return CyTranslator().getText("TXT_KEY_WB_MULTI_ADD_CORE", ())
-			elif iData2 == 1:
-				return CyTranslator().getText("TXT_KEY_WB_MULTI_REMOVE_CORE", ())
-			elif iData2 == 2:
-				return CyTranslator().getText("TXT_KEY_WB_MULTI_REPLACE_CORE", ())
-			elif iData2 == 3:
-				return CyTranslator().getText("TXT_KEY_WB_MULTI_SETTLERVALUE", ())
-		elif iData1 == 22208:
-			if iData2 == 0:
-				return CyTranslator().getText("TXT_KEY_WB_MULTI_ADD_SPAWN", ())
-			elif iData2 == 1:
-				return CyTranslator().getText("TXT_KEY_WB_MULTI_REMOVE_SPAWN", ())
-			elif iData2 == 2:
-				return CyTranslator().getText("TXT_KEY_WB_MULTI_REPLACE_SPAWN", ())
-		elif iData1 == 22171:
-			return CyTranslator().getText("TXT_KEY_WB_CHANGE_CORE", ())
-		elif iData1 == 22172:
+		elif iData1 == 22011:
+			return CyTranslator().getText("TXT_KEY_WB_CORE_ADD", ())
+		elif iData1 == 22012:
+			return CyTranslator().getText("TXT_KEY_WB_CORE_REMOVE", ())
+		elif iData1 == 22003:
 			return CyTranslator().getText("TXT_KEY_WB_CHANGE_SETTLERVALUE", ())
-		elif iData1 == 22199:
-			return CyTranslator().getText("TXT_KEY_WB_KABOOM", ())
-		elif iData1 == 22176:
-			return CyTranslator().getText("TXT_KEY_WB_CHANGE_FLIP", ())
-		
-		elif (iData1 == 22201 or iData1 == 22202 or iData1 == 22203 or iData1 == 22204):
-			return str(iData2)
 			
 		elif iData1 >= 22300 and iData1 < 22325:
 			sText = "-" + str(iData2)
@@ -505,12 +475,14 @@ def getWidgetHelp(argsList):
 		elif iData1 >= 22400 and iData1 < 22425:
 			sText = "+" + str(iData2)
 			return sText
-		elif iData1 == 22350:
-			return CyTranslator().getText("TXT_KEY_WB_SELECTED_CIV", ())
-		elif iData1 == 22351:
-			return CyTranslator().getText("TXT_KEY_WB_ALL_CIVS", ())
-		elif iData1 == 22500:
-			return "ConvertSave"
+			
+		elif iData1 == 22005:
+			return " "
+		elif iData1 == 22006:
+			if iData2 == 1:
+				return CyTranslator().getText("TXT_KEY_WB_SHOW", ())
+			else:
+				return CyTranslator().getText("TXT_KEY_WB_HIDE", ())
 
 	return u""
 

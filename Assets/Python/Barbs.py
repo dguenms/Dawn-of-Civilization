@@ -70,9 +70,9 @@ tMinorCities = (
 (900, (25, 23), iNative, 'Chan Chan', 2, con.iArcher, 2),		# Chan Chan
 (900, (69, 52), iIndependent, 'Kyiv', 2, con.iLongbowman, 2),		# Kiev
 (990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
-(1000, (61, 63), iIndependent2, 'Nidaros', 1, con.iVikingHuskarl, 1),	# Trondheim
-(1000, (71, 17), iNative, 'Quelimane', 1, con.iBarbarianImpi, 1),		# Quelimane
-(1100, (71, 20), iNative, 'Mombasa', 1, con.iBarbarianImpi, 1),		# Mombasa
+(1000, (61, 63), iIndependent2, 'Nidaros', 1, con.iVikingHuscarl, 1),	# Trondheim
+(1000, (71, 17), iNative, 'Quelimane', 1, con.iZuluImpi, 1),		# Quelimane
+(1100, (71, 20), iNative, 'Mombasa', 1, con.iZuluImpi, 1),		# Mombasa
 (1200, (77, 55), iBarbarian, 'Qazan', 2, con.iHorseArcher, 1),		# Kazan
 (1400, (104, 33), iIndependent, 'Saigon', 5, con.iLongbowman, 3),	# Saigon
 (1483, (62, 20), iNative, 'Mbanza Kongo', 1, con.iCongolesePombos, 1),	# Mbanza Kongo
@@ -210,7 +210,7 @@ class Barbs:
 
 		# Leoreth: Barbarians in Anatolia (Hittites), replace Hattusas spawn
 		if (iGameTurn >= getTurnForYear(-2000) and iGameTurn <= getTurnForYear(-800)):
-			self.checkSpawn(iBarbarian, con.iBarbarianHuluganni, 1 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 16, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
+			self.checkSpawn(iBarbarian, con.iHittiteHuluganni, 1 + iHandicap, (68, 42), (74, 45), self.spawnInvaders, iGameTurn, 16, 0, ["TXT_KEY_ADJECTIVE_HITTITE"])
                         
                 #barbarians in europe
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn <= getTurnForYear(470)):
@@ -234,9 +234,9 @@ class Barbs:
 			
 		#barbarians in central asia
                 if (iGameTurn >= getTurnForYear(-1600) and iGameTurn < getTurnForYear(-850)):
-                        self.checkSpawn(iBarbarian, con.iBarbarianVulture, 1, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+                        self.checkSpawn(iBarbarian, con.iSumerianVulture, 1, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
                 if (iGameTurn >= getTurnForYear(-850) and iGameTurn < getTurnForYear(300)):
-                        self.checkSpawn(iBarbarian, con.iBarbarianVulture, 1, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
+                        self.checkSpawn(iBarbarian, con.iSumerianVulture, 1, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
 			if not gc.getPlayer(con.iPersia).isAlive():
 				self.checkSpawn(iBarbarian, con.iHorseArcher, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
                 if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(700)):
@@ -252,10 +252,10 @@ class Barbs:
 
                 #barbarians in north africa
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn < getTurnForYear(50)):
-                        self.checkSpawn(iBarbarian, con.iBarbarianNumidianCavalry, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
+                        self.checkSpawn(iBarbarian, con.iKushanAsvaka, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
                 if (iGameTurn >= getTurnForYear(50) and iGameTurn < getTurnForYear(900)):
                         if utils.getScenario() == con.i3000BC:  #late start condition
-				self.checkSpawn(iBarbarian, con.iBarbarianNumidianCavalry, 3 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
+				self.checkSpawn(iBarbarian, con.iKushanAsvaka, 3 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
                 if (iGameTurn >= getTurnForYear(900) and iGameTurn <= getTurnForYear(1800)):
                         self.checkSpawn(iBarbarian, con.iArabianCamelArcher, 1, (54, 27), (67, 35), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_BERBER"])
                         
@@ -266,12 +266,12 @@ class Barbs:
 			iNumUnits = iHandicap
 			if utils.getScenario() == con.i3000BC: iNumUnits += 1
 			if iGameTurn >= getTurnForYear(400): iNumUnits += 2
-			self.checkSpawn(iBarbarian, con.iBarbarianMedjay, iNumUnits, (66, 28), (71, 34), self.spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
+			self.checkSpawn(iBarbarian, con.iNubianMedjay, iNumUnits, (66, 28), (71, 34), self.spawnUprising, iGameTurn, 12, 4, ["TXT_KEY_ADJECTIVE_NUBIAN"])
                 if (iGameTurn >= getTurnForYear(450) and iGameTurn <= getTurnForYear(1600)):
                         if utils.getScenario() == con.i3000BC:
-                                self.checkSpawn(iNative, con.iBarbarianImpi, 2 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 10, 4)
+                                self.checkSpawn(iNative, con.iZuluImpi, 2 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 10, 4)
                         else:
-                                self.checkSpawn(iNative, con.iBarbarianImpi, 2 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 15, 4)
+                                self.checkSpawn(iNative, con.iZuluImpi, 2 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 15, 4)
 		if iGameTurn >= getTurnForYear(1600) and iGameTurn <= getTurnForYear(1800):
 			self.checkSpawn(iNative, con.iCongolesePombos, 2 + iHandicap, (60, 10), (72, 27), self.spawnNatives, iGameTurn, 10, 4)
 			
@@ -281,34 +281,34 @@ class Barbs:
 				sAdj = ["TXT_KEY_ADJECTIVE_GHANAIAN"]
 			else:
 				sAdj = ["TXT_KEY_ADJECTIVE_SONGHAI"]
-			self.checkSpawn(iBarbarian, con.iBarbarianFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
-			self.checkSpawn(iBarbarian, con.iBarbarianImpi, 2, (48, 22), (63, 29), self.spawnMinors, iGameTurn, 16, 10, sAdj)
+			self.checkSpawn(iBarbarian, con.iMandeFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
+			self.checkSpawn(iBarbarian, con.iZuluImpi, 2, (48, 22), (63, 29), self.spawnMinors, iGameTurn, 16, 10, sAdj)
 
                 #American natives
                 if (iGameTurn >= getTurnForYear(600) and iGameTurn <= getTurnForYear(1100)):
-                        self.checkSpawn(iBarbarian, con.iBarbarianDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
+                        self.checkSpawn(iBarbarian, con.iNativeAmericanDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
                         if utils.getScenario() == con.i3000BC:  #late start condition
                                 self.checkSpawn(iBarbarian, con.iAztecJaguar, 3, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
                         else:  #late start condition
                                 self.checkSpawn(iBarbarian, con.iAztecJaguar, 2, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
                 if (iGameTurn >= getTurnForYear(1300) and iGameTurn <= getTurnForYear(1600)):
-                        self.checkSpawn(iBarbarian, con.iBarbarianDogSoldier, 2 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 8, 0)
+                        self.checkSpawn(iBarbarian, con.iNativeAmericanDogSoldier, 2 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 8, 0)
                 if (iGameTurn >= getTurnForYear(1400) and iGameTurn <= getTurnForYear(1800)):
-                        self.checkSpawn(iBarbarian, con.iBarbarianDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 0)
-			self.checkSpawn(iBarbarian, con.iBarbarianDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 6)
+                        self.checkSpawn(iBarbarian, con.iNativeAmericanDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 0)
+			self.checkSpawn(iBarbarian, con.iNativeAmericanDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 6)
                 if (iGameTurn >= getTurnForYear(1300) and iGameTurn <= getTurnForYear(1600)):
                         if (iGameTurn % 18 == 0):
                                 if (gc.getMap().plot(27, 29).getNumUnits() == 0):
-                                        self.makeUnit(con.iBarbarianDogSoldier, iBarbarian, (27, 29), 3 + iHandicap, 1)
+                                        self.makeUnit(con.iNativeAmericanDogSoldier, iBarbarian, (27, 29), 3 + iHandicap, 1)
                         if (iGameTurn % 18 == 9):
                                 if (gc.getMap().plot(30, 13).getNumUnits() == 0):
-                                        self.makeUnit(con.iBarbarianDogSoldier, iBarbarian, (30, 13), 3 + iHandicap, 1)
+                                        self.makeUnit(con.iNativeAmericanDogSoldier, iBarbarian, (30, 13), 3 + iHandicap, 1)
 		
 		if iGameTurn >= getTurnForYear(1700) and iGameTurn <= getTurnForYear(1900):
-			self.checkSpawn(iBarbarian, con.iBarbarianMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
+			self.checkSpawn(iBarbarian, con.iSiouxMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
 			
 		if iGameTurn >= getTurnForYear(1500) and iGameTurn <= getTurnForYear(1850):
-			self.checkSpawn(iBarbarian, con.iBarbarianMohawk, 2 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
+			self.checkSpawn(iBarbarian, con.iIroquoisMohawk, 2 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
 				
                 #pirates in the Caribbean
                 if (iGameTurn >= getTurnForYear(1600) and iGameTurn <= getTurnForYear(1800)):

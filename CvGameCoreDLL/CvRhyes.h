@@ -27,12 +27,7 @@ typedef list<char*> LISTCHAR;
 
 #define NUM_ERAS				(ERA_FUTURE+1)
 
-static const int PAGAN_TEMPLE = GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE");
-
-static const int PROMOTION_DRILL1 = GC.getInfoTypeForString("PROMOTION_DRILL1");
-static const int PROMOTION_DRILL2 = GC.getInfoTypeForString("PROMOTION_DRILL2");
-static const int PROMOTION_NAVIGATION1 = GC.getInfoTypeForString("PROMOTION_NAVIGATION1");
-static const int PROMOTION_NAVIGATION2 = GC.getInfoTypeForString("PROMOTION_NAVIGATION2");
+#define PAGAN_TEMPLE (GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
 
 enum MyTechs
 {

@@ -36,12 +36,12 @@ g_gpIcon = None
 # Unit Type of each great person that can gain GP points
 g_gpBarList = (
 	"UNIT_GREAT_SPY",
-	"UNIT_ENGINEER",
-	"UNIT_MERCHANT",
-	"UNIT_SCIENTIST",
-	"UNIT_ARTIST",
-	"UNIT_STATESMAN",
-	"UNIT_PROPHET",
+	"UNIT_GREAT_ENGINEER",
+	"UNIT_GREAT_MERCHANT",
+	"UNIT_GREAT_SCIENTIST",
+	"UNIT_GREAT_ARTIST",
+	"UNIT_GREAT_STATESMAN",
+	"UNIT_GREAT_PROPHET",
 	"UNIT_GREAT_GENERAL",
 # MOD: specify the unit type (XML key) for each new great person (1)
 	#"UNIT_DOCTOR",

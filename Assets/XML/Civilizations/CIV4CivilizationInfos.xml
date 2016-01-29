@@ -70,28 +70,28 @@
 					<UnitType>UNIT_AMERICAN_MINUTEMAN</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_AMERICAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_AMERICAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_AMERICAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_AMERICAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_AMERICAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_AMERICAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_AMERICAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_AMERICAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_AMERICAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_AMERICAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_AMERICAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_AMERICAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -191,28 +191,28 @@
 					<UnitType>UNIT_ARABIAN_CAMEL_ARCHER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_ARABIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ARABIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_ARABIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_ARABIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ARABIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_ARABIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -318,28 +318,28 @@
 					<UnitType>UNIT_ARGENTINE_GRENADIER_CAVALRY</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_ARGENTINE_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ARGENTINE_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_ARGENTINE_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_ARGENTINE_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ARGENTINE_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_ARGENTINE_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -458,28 +458,28 @@
 					<UnitType>UNIT_AZTEC_JAGUAR</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_AZTEC_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_AZTEC_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_AZTEC_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_AZTEC_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_AZTEC_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_AZTEC_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -587,28 +587,28 @@
 					<UnitType>UNIT_BABYLONIAN_ASHARITTU_BOWMAN</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_BABYLONIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_BABYLONIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_BABYLONIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_BABYLONIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_BABYLONIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_BABYLONIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_BABYLONIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_BABYLONIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_BABYLONIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_BABYLONIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_BABYLONIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_BABYLONIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -720,28 +720,28 @@
 					<UnitType>UNIT_BRAZILIAN_MADEIREIRO</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_BRAZILIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_BRAZILIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_BRAZILIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_BRAZILIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_BRAZILIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_BRAZILIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_BRAZILIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_BRAZILIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_BRAZILIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_BRAZILIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_BRAZILIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_BRAZILIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -846,28 +846,28 @@
 					<UnitType>UNIT_BYZANTINE_CATAPHRACT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_BYZANTINE_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_BYZANTINE_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_BYZANTINE_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_BYZANTINE_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_BYZANTINE_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_BYZANTINE_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_BYZANTINE_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -979,28 +979,28 @@
 					<UnitType>UNIT_CANADIAN_CORVETTE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_CANADIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_CANADIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_CANADIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_CANADIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_CANADIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_CANADIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_CANADIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_CANADIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_CANADIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_CANADIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_CANADIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_CANADIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -1105,31 +1105,31 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_WAR_ELEPHANT</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_WAR_ELEPHANT</UnitType>
+					<UnitType>UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_PHOENICIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -1361,7 +1361,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PERSECUTOR</UnitClassType>
+					<UnitClassType>UNITCLASS_RELIGIOUS_PERSECUTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -1467,28 +1467,28 @@
 					<UnitType>UNIT_CHINESE_CHOKONU</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_CHINESE_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_CHINESE_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_CHINESE_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_CHINESE_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_CHINESE_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_CHINESE_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -1590,28 +1590,28 @@
 					<UnitType>UNIT_COLOMBIAN_ALBION_LEGION</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_COLOMBIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_COLOMBIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_COLOMBIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_COLOMBIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_COLOMBIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_COLOMBIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_COLOMBIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -1736,28 +1736,28 @@
 					<UnitType>UNIT_EGYPTIAN_WARCHARIOT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_EGYPTIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_EGYPTIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_EGYPTIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_EGYPTIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_EGYPTIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_EGYPTIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_EGYPTIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_EGYPTIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_EGYPTIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_EGYPTIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_EGYPTIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_EGYPTIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -1874,28 +1874,28 @@
 					<UnitType>UNIT_ENGLISH_REDCOAT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_ENGLISH_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_ENGLISH_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ENGLISH_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_ENGLISH_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_ENGLISH_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ENGLISH_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_ENGLISH_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ENGLISH_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ENGLISH_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ENGLISH_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_ENGLISH_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ENGLISH_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2019,28 +2019,28 @@
 					<UnitType>UNIT_ETHIOPIAN_ASKARI</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_ETHIOPIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ETHIOPIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_ETHIOPIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_ETHIOPIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ETHIOPIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_ETHIOPIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ETHIOPIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2149,28 +2149,28 @@
 					<UnitType>UNIT_FRENCH_HEAVY_CANNON</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_FRENCH_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_FRENCH_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_FRENCH_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_FRENCH_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_FRENCH_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_FRENCH_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_FRENCH_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_FRENCH_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_FRENCH_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_FRENCH_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_FRENCH_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_FRENCH_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2306,28 +2306,28 @@
 					<UnitType>UNIT_GERMAN_PANZER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_GERMAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_GERMAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_GERMAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_GERMAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_GERMAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_GERMAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2463,28 +2463,28 @@
 					<UnitType>UNIT_GREEK_HOPLITE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_GREEK_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_GREEK_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_GREEK_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_GREEK_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_GREEK_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_GREEK_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_GREEK_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_GREEK_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_GREEK_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_GREEK_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_GREEK_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_GREEK_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2581,31 +2581,31 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
-					<UnitType>UNIT_HARAPPAN_SETTLER</UnitType>
+					<UnitType>UNIT_HARAPPAN_CITY_BUILDER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_INDIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_INDIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_INDIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_INDIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_INDIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2730,28 +2730,28 @@
 					<UnitType>UNIT_HOLY_ROMAN_LANDSKNECHT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_GERMAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_GERMAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_GERMAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_GERMAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_GERMAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_GERMAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_GERMAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -2868,28 +2868,28 @@
 					<UnitType>UNIT_INCAN_AUCAC</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_INCAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_INCAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_INCAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_INCAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_INCAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_INCAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_INCAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_INCAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_INCAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_INCAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_INCAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INCAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3006,28 +3006,28 @@
 					<UnitType>UNIT_INDIAN_PATIYODHA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_INDIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_INDIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_INDIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_INDIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_INDIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3142,28 +3142,28 @@
 					<UnitType>UNIT_INDONESIAN_ORANG_LAUT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_INDONESIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INDONESIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3285,28 +3285,28 @@
 					<UnitType>UNIT_IRANIAN_QIZILBASH</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_IRANIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_IRANIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_IRANIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_IRANIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_IRANIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_IRANIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_IRANIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_IRANIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_IRANIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_IRANIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_IRANIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_IRANIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3412,28 +3412,28 @@
 					<UnitType>UNIT_ITALIAN_BERSAGLIERE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_ITALIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_ITALIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ITALIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_ITALIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_ITALIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ITALIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_ITALIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ITALIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ITALIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ITALIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_ITALIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ITALIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3543,28 +3543,28 @@
 					<UnitType>UNIT_JAPANESE_SAMURAI</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_JAPANESE_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_JAPANESE_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_JAPANESE_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_JAPANESE_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_JAPANESE_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_JAPANESE_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_JAPANESE_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_JAPANESE_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_JAPANESE_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_JAPANESE_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_JAPANESE_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_JAPANESE_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3684,28 +3684,28 @@
 					<UnitType>UNIT_KHMER_BALLISTA_ELEPHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_KHMER_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_KHMER_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_KHMER_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_KHMER_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_KHMER_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_KHMER_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3823,28 +3823,28 @@
 					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_CONGOLESE_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_CONGOLESE_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_CONGOLESE_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_CONGOLESE_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_CONGOLESE_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_CONGOLESE_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_CONGOLESE_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -3945,28 +3945,28 @@
 					<UnitType>UNIT_KOREAN_HWACHA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_KOREAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_KOREAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_KOREAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_KOREAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_KOREAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_KOREAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_KOREAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_KOREAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_KOREAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_KOREAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_KOREAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_KOREAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4084,32 +4084,32 @@
 					<UnitType>UNIT_MANDE_SKIRMISHER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_MALI_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_MANDE_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_MALI_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_MANDE_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_MALI_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_MANDE_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_MALI_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_MANDE_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_MALI_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_MANDE_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_MALI_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_MANDE_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
-					<UnitType>UNIT_MALI_GREAT_GENERAL</UnitType>
+					<UnitType>UNIT_MANDE_GREAT_GENERAL</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
@@ -4229,28 +4229,28 @@
 					<UnitType>UNIT_MAYAN_HOLKAN</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_AZTEC_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_AZTEC_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_AZTEC_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_AZTEC_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_AZTEC_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_AZTEC_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_AZTEC_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4353,28 +4353,28 @@
 					<UnitType>UNIT_MEXICAN_RURALES</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_MEXICAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_MEXICAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_MEXICAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_MEXICAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_MEXICAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_MEXICAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_MEXICAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_MEXICAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_MEXICAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_MEXICAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_MEXICAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_MEXICAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4475,28 +4475,28 @@
 					<UnitType>UNIT_MONGOLIAN_KESHIK</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_MONGOLIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_MONGOLIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_MONGOLIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_MONGOLIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_MONGOLIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_MONGOLIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_MONGOLIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4625,28 +4625,28 @@
 					<UnitType>UNIT_MOORISH_CORSAIR</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_ARABIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ARABIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_ARABIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_ARABIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ARABIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_ARABIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ARABIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -4767,28 +4767,28 @@
 					<UnitType>UNIT_MUGHAL_SIEGE_ELEPHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_MUGHAL_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_MUGHAL_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_MUGHAL_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_MUGHAL_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_MUGHAL_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_MUGHAL_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_MUGHAL_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_MUGHAL_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_MUGHAL_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_MUGHAL_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_MUGHAL_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_MUGHAL_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5027,28 +5027,28 @@
 					<UnitType>UNIT_DUTCH_EAST_INDIAMAN</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_DUTCH_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_DUTCH_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_DUTCH_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_DUTCH_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_DUTCH_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_DUTCH_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_DUTCH_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_DUTCH_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_DUTCH_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_DUTCH_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_DUTCH_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_DUTCH_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5152,28 +5152,28 @@
 					<UnitType>UNIT_OTTOMAN_JANISSARY</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_TURKISH_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_TURKISH_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_TURKISH_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_TURKISH_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_TURKISH_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_TURKISH_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_TURKISH_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_TURKISH_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_TURKISH_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_TURKISH_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_TURKISH_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_TURKISH_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5301,28 +5301,28 @@
 					<UnitType>UNIT_PERSIAN_IMMORTAL</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_PERSIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_PERSIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_PERSIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_PERSIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_PERSIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_PERSIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_PERSIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_PERSIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_PERSIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_PERSIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_PERSIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_PERSIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5452,28 +5452,28 @@
 					<UnitType>UNIT_POLISH_WINGED_HUSSAR</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_POLISH_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_POLISH_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_POLISH_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_POLISH_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_POLISH_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_POLISH_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_POLISH_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_POLISH_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_POLISH_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_POLISH_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_POLISH_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_POLISH_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5711,28 +5711,28 @@
 					<UnitType>UNIT_PORTUGUESE_CARRACK</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_PORTUGUESE_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_PORTUGUESE_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_PORTUGUESE_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_PORTUGUESE_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_PORTUGUESE_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_PORTUGUESE_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_PORTUGUESE_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5862,28 +5862,28 @@
 					<UnitType>UNIT_ROMAN_LEGION</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_ROMAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_ROMAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_ROMAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_ROMAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_ROMAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_ROMAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_ROMAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_ROMAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_ROMAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_ROMAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_ROMAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_ROMAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -5978,28 +5978,28 @@
 					<UnitType>UNIT_RUSSIAN_COSSACK</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_RUSSIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_RUSSIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -6219,7 +6219,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PERSECUTOR</UnitClassType>
+					<UnitClassType>UNITCLASS_RELIGIOUS_PERSECUTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -6324,28 +6324,28 @@
 					<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_SPANISH_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_SPANISH_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_SPANISH_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_SPANISH_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_SPANISH_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_SPANISH_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_SPANISH_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_SPANISH_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_SPANISH_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_SPANISH_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_SPANISH_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_SPANISH_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -6571,28 +6571,28 @@
 					<UnitType>UNIT_TAMIL_DHARANI</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_INDIAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_INDIAN_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_INDIAN_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_INDIAN_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_INDIAN_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_INDIAN_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_INDIAN_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -6708,28 +6708,28 @@
 					<UnitType>UNIT_THAI_CHANG_SUEK</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_KHMER_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_KHMER_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_KHMER_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_KHMER_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_KHMER_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_KHMER_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_KHMER_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -6866,28 +6866,28 @@
 					<UnitType>UNIT_TIBETAN_KHAMPA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_TIBETAN_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_TIBETAN_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_CHINESE_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_CHINESE_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_CHINESE_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_CHINESE_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_CHINESE_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_CHINESE_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
@@ -6990,35 +6990,35 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_VIKING_HUSKARL</UnitType>
+					<UnitType>UNIT_VIKING_HUSCARL</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
-					<UnitType>UNIT_NORSE_PROPHET</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
+					<UnitType>UNIT_VIKING_GREAT_PROPHET</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
-					<UnitType>UNIT_NORSE_ARTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
+					<UnitType>UNIT_VIKING_GREAT_ARTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
-					<UnitType>UNIT_NORSE_SCIENTIST</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
+					<UnitType>UNIT_VIKING_GREAT_SCIENTIST</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
-					<UnitType>UNIT_NORSE_MERCHANT</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
+					<UnitType>UNIT_VIKING_GREAT_MERCHANT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
-					<UnitType>UNIT_NORSE_ENGINEER</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
+					<UnitType>UNIT_VIKING_GREAT_ENGINEER</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
-					<UnitType>UNIT_NORSE_STATESMAN</UnitType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
+					<UnitType>UNIT_VIKING_GREAT_STATESMAN</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
-					<UnitType>UNIT_NORSE_GREAT_GENERAL</UnitType>
+					<UnitType>UNIT_VIKING_GREAT_GENERAL</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -7359,7 +7359,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PERSECUTOR</UnitClassType>
+					<UnitClassType>UNITCLASS_RELIGIOUS_PERSECUTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -7592,7 +7592,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PERSECUTOR</UnitClassType>
+					<UnitClassType>UNITCLASS_RELIGIOUS_PERSECUTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -7797,7 +7797,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PERSECUTOR</UnitClassType>
+					<UnitClassType>UNITCLASS_RELIGIOUS_PERSECUTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -8157,7 +8157,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PERSECUTOR</UnitClassType>
+					<UnitClassType>UNITCLASS_RELIGIOUS_PERSECUTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -8201,27 +8201,27 @@
 					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PROPHET</UnitClassType>
+					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARTIST</UnitClassType>
+					<UnitClassType>UNITCLASS_GREAT_ARTIST</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType>
+					<UnitClassType>UNITCLASS_GREAT_SCIENTIST</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_MERCHANT</UnitClassType>
+					<UnitClassType>UNITCLASS_GREAT_MERCHANT</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ENGINEER</UnitClassType>
+					<UnitClassType>UNITCLASS_GREAT_ENGINEER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_STATESMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_GREAT_STATESMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>

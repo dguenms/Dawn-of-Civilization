@@ -124,9 +124,9 @@
 				<StyleUnit>
 					<UnitType>UNIT_WORKER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_ASIAN</EarlyArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER_ASIAN</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_ASIAN</MiddleArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER_ASIAN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -197,9 +197,9 @@
 				<StyleUnit>
 					<UnitType>UNIT_WORKER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_EUROPEAN</EarlyArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER_EUROPEAN</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_EUROPEAN</MiddleArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER_EUROPEAN</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
@@ -395,9 +395,9 @@
 				<StyleUnit>
 					<UnitType>UNIT_WORKER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_MIDDLE_EAST</EarlyArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER_MIDDLE_EAST</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_MIDDLE_EAST</MiddleArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER_MIDDLE_EAST</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -496,9 +496,9 @@
 				<StyleUnit>
 					<UnitType>UNIT_WORKER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_SOUTH_AMERICA</EarlyArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER_SOUTH_AMERICA</EarlyArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_WORKER_SOUTH_AMERICA</MiddleArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER_SOUTH_AMERICA</MiddleArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>

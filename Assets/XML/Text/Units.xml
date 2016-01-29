@@ -66,7 +66,7 @@
 		<English>The [COLOR_UNIT_TEXT]Jaguar[COLOR_REVERT], the Aztec replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Bronze Working[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Iron Working[COLOR_REVERT] technology, is cheaper, doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_ASVAKA</Tag>
+		<Tag>TXT_KEY_UNIT_KUSHAN_ASVAKA</Tag>
 		<English>Asvaka</English>
 	</TEXT>
 	<TEXT>
@@ -82,7 +82,7 @@
 		<English>[COLOR_UNIT_TEXT]Anti-Tanks[COLOR_REVERT] can intercept aircraft, have a combat bonus against [COLOR_UNIT_TEXT]Armored Units[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_ASVAKA_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_KUSHAN_ASVAKA_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Asvaka[COLOR_REVERT] is a barbarian unit that spawns in Central Asia from 30 to 220 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -201,7 +201,7 @@
 		<English>Corvette</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_NUMIDIAN_CAVALRY</Tag>
+		<Tag>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</Tag>
 		<English>Numidian Cavalry</English>
 		<French>
 			<Text>Cavalerie numide</Text>
@@ -253,11 +253,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PHOENICIAN_WAR_ELEPHANT_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]African War Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Monarchy[COLOR_REVERT] technology and begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PHOENICIAN_WAR_ELEPHANT</Tag>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</Tag>
 		<English>African War Elephant</English>
 	</TEXT>
 	<TEXT>
@@ -397,7 +397,7 @@
 		<English>[COLOR_UNIT_TEXT]Explorers[COLOR_REVERT] is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gain only positive bonuses from Tribal villages, can only defend, ignores terrain movement costs and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_FARARI</Tag>
+		<Tag>TXT_KEY_UNIT_MANDE_FARARI</Tag>
 		<English>Farari</English>
 	</TEXT>
 	<TEXT>
@@ -405,11 +405,11 @@
 		<English>[COLOR_UNIT_TEXT]Fighters[COLOR_REVERT] can intercept enemy air units, destroy improvements, bomb city defenses, perform recon missions and damage enemy units.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_FARARI_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_MANDE_FARARI_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_NUMIDIAN_CAVALRY_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -541,7 +541,7 @@
 		<English>The [COLOR_UNIT_TEXT]City Builder[COLOR_REVERT], the Harappan replacement for the [COLOR_UNIT_TEXT]Settler[COLOR_REVERT], can found new cities that start with additional population.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_MEDJAY_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_NUBIAN_MEDJAY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Medjay[COLOR_REVERT] is a barbarian unit that spawns in Egypt from 800 BC to 1300 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -589,7 +589,7 @@
 		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Monarchy[COLOR_REVERT] and [COLOR_TECH_TEXT]Calendar[COLOR_REVERT] technologies, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_HULUGANNI</Tag>
+		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI</Tag>
 		<English>Huluganni</English>
 	</TEXT>
 	<TEXT>
@@ -601,7 +601,7 @@
 		<English>[COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT] can nuke enemy lands and cannot be moved from the city it is constructed in.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_HULUGANNI_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Huluganni[COLOR_REVERT] is a barbarian unit that spawns in Asia Minor from 2000 to 800 BC.</English>
 	</TEXT>
 	<TEXT>
@@ -787,7 +787,7 @@
 		<English>[ICON_BULLET]Receives [ICON_FOOD] for Defeating Enemy Units</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_MEDJAY</Tag>
+		<Tag>TXT_KEY_UNIT_NUBIAN_MEDJAY</Tag>
 		<English>Medjay</English>
 	</TEXT>
 	<TEXT>
@@ -831,7 +831,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_MOHAWK</Tag>
+		<Tag>TXT_KEY_UNIT_IROQUOIS_MOHAWK</Tag>
 		<English>Mohawk</English>
 	</TEXT>
 	<TEXT>
@@ -859,7 +859,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_MOHAWK_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_IROQUOIS_MOHAWK_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Mohawk[COLOR_REVERT] is a barbarian unit that spawns in Western North America from 1500 to 1850 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -883,11 +883,11 @@
 		<English>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] and [COLOR_TECH_TEXT]Optics[COLOR_REVERT] technologies, doesn't require the [COLOR_TECH_TEXT]Military Science[COLOR_REVERT] and [COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] technologies, has one less movement point, has two less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_MOUNTED_BRAVE</Tag>
+		<Tag>TXT_KEY_UNIT_SIOUX_MOUNTED_BRAVE</Tag>
 		<English>Mounted Brave</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_MOUNTED_BRAVE_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_SIOUX_MOUNTED_BRAVE_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Mounted Brave[COLOR_REVERT] is a barbarian unit that spawns in Central North America from 1700 to 1900 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -935,7 +935,7 @@
 		<English>The [COLOR_UNIT_TEXT]East Indianman[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_DOG_SOLDIER</Tag>
+		<Tag>TXT_KEY_UNIT_NATIVE_AMERICAN_DOG_SOLDIER</Tag>
 		<English>Dog Soldier</English>
 		<French>
 			<Text>Soldat chien:Soldats chiens</Text>
@@ -959,7 +959,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_DOG_SOLDIER_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_NATIVE_AMERICAN_DOG_SOLDIER_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Dog Soldier[COLOR_REVERT] is a Barbarian unit that spawns in Central North America and the Andes Mountains from 600 - 1800 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -1033,11 +1033,11 @@
 		<English>The [COLOR_UNIT_TEXT]Immortal[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Archers[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PERSECUTOR</Tag>
+		<Tag>TXT_KEY_UNIT_RELIGIOUS_PERSECUTOR</Tag>
 		<English>Religious Persecutor</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PERSECUTOR_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_RELIGIOUS_PERSECUTOR_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Religious Persecutors[COLOR_REVERT] can remove non-state religions from a city.</English>
 	</TEXT>
 	<TEXT>
@@ -1210,7 +1210,7 @@
 		<English>[COLOR_UNIT_TEXT]Swordsmen[COLOR_REVERT] have a attack bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_VULTURE</Tag>
+		<Tag>TXT_KEY_UNIT_SUMERIAN_VULTURE</Tag>
 		<English>Vulture</English>
 		<French>
 			<Text>Vautour:Vautours</Text>
@@ -1234,7 +1234,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_VULTURE_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_SUMERIAN_VULTURE_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Vulture[COLOR_REVERT] is a Barbarian unit that spawns in the Middle East from 1600 BC to 300 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -1318,7 +1318,7 @@
 		<English>The [COLOR_UNIT_TEXT]Khampa[COLOR_REVERT], the Tibetan replacement for the the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], is more expensive, doesn't require the [COLOR_TECH_TEXT]Archery[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], can explore rival territory and has an attack bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_VIKING_HUSKARL</Tag>
+		<Tag>TXT_KEY_UNIT_VIKING_HUSCARL</Tag>
 		<English>Huscarl</English>
 	</TEXT>
 	<TEXT>
@@ -1330,7 +1330,7 @@
 		<English>[COLOR_UNIT_TEXT]Work Boats[COLOR_REVERT] can create [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Whaling boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Offshore Platforms[COLOR_REVERT], cannot enter the ocean until [COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Optics[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_VIKING_HUSKARL_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_VIKING_HUSCARL_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an attack bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
@@ -1359,7 +1359,7 @@
 		<English>[COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_IMPI</Tag>
+		<Tag>TXT_KEY_UNIT_ZULU_IMPI</Tag>
 		<English>Impi</English>
 		<French>
 			<Text>Impi</Text>
@@ -1383,7 +1383,31 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARBARIAN_IMPI_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_ZULU_IMPI_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Impi[COLOR_REVERT] is a Barbarian unit that spawns in the Sahara and in Sub-Equatorial Africa from 450 to 1700 AD.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GREAT_SPY</Tag>
+		<English>Great Spy</English>
+		<French>
+			<Text>Espion illustre:Espions illustres</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Gro&#223;er Spion</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Grande Spia:Grandi Spie</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Gran esp&#237;a:Grandes esp&#237;as</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
 	</TEXT>
 </Civ4GameText>
