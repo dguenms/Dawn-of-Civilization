@@ -100,11 +100,18 @@ def exportCore(iPlayer, bForce = False):
 
 		file = open(IMAGE_LOCATION + "\Cores\\" + sName + ".txt", 'wt')
 		try:
-			file.write("# tCoreArea\n")
-			file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
-			if lExceptions:
-				file.write("\n\n# dCoreAreaExceptions\n")
-				file.write("i" + sName + " : " + str(lExceptions) + ",")
+			if not utils.isReborn(iPlayer):
+				file.write("# tCoreArea\n")
+				file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
+				if lExceptions:
+					file.write("\n\n# dCoreAreaExceptions\n")
+					file.write("i" + sName + " : " + str(lExceptions) + ",")
+			else:
+				file.write("# dChangedCoreArea\n")
+					file.write("i" + sName + " : " "("+ str(BL) + ",\t" + str(TR) + "),")
+				if lExceptions:
+					file.write("\n\n# dChangedCoreAreaExceptions\n")
+					file.write("i" + sName + " : " + str(lExceptions) + ",")
 		finally:
 			file.close()
 		sText = "Core map of %s exported" %sName
