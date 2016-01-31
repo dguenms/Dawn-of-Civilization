@@ -26859,7 +26859,7 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClass> <!--I changed the event to feature the Temple of Solomon instead of a Jewish Monastery--> 
+					<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>8</iExtraCommerce>
 				</BuildingExtraCommerce>
@@ -28216,6 +28216,21 @@
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>
 				<BuildingExtraCommerce>
+					<BuildingClass>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClass>
+					<CommerceType>COMMERCE_GOLD</CommerceType>
+					<iExtraCommerce>2</iExtraCommerce>
+				</BuildingExtraCommerce>
+				<BuildingExtraCommerce>
+					<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
+					<CommerceType>COMMERCE_GOLD</CommerceType>
+					<iExtraCommerce>2</iExtraCommerce>
+				</BuildingExtraCommerce>
+				<BuildingExtraCommerce>
+					<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
+					<CommerceType>COMMERCE_GOLD</CommerceType>
+					<iExtraCommerce>2</iExtraCommerce>
+				</BuildingExtraCommerce>
+				<BuildingExtraCommerce>
 					<BuildingClass>BUILDINGCLASS_HINDU_CATHEDRAL</BuildingClass>
 					<CommerceType>COMMERCE_GOLD</CommerceType>
 					<iExtraCommerce>2</iExtraCommerce>
@@ -28231,22 +28246,7 @@
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClass>
-					<CommerceType>COMMERCE_GOLD</CommerceType>
-					<iExtraCommerce>2</iExtraCommerce>
-				</BuildingExtraCommerce>
-				<BuildingExtraCommerce>
 					<BuildingClass>BUILDINGCLASS_TAOIST_CATHEDRAL</BuildingClass>
-					<CommerceType>COMMERCE_GOLD</CommerceType>
-					<iExtraCommerce>2</iExtraCommerce>
-				</BuildingExtraCommerce>
-				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
-					<CommerceType>COMMERCE_GOLD</CommerceType>
-					<iExtraCommerce>2</iExtraCommerce>
-				</BuildingExtraCommerce>
-				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 					<CommerceType>COMMERCE_GOLD</CommerceType>
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>

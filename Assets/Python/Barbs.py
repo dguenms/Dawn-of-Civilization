@@ -180,7 +180,7 @@ class Barbs:
 
 		#Kushana
 		if iGameTurn >= getTurnForYear(30) and iGameTurn <= getTurnForYear(220):
-			self.checkSpawn(iBarbarian, con.iBarbarianAsvaka, 3+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 8, 3, ["TXT_KEY_ADJECTIVE_KUSHANA"])
+			self.checkSpawn(iBarbarian, con.iKushanAsvaka, 3+iHandicap, (84, 40), (89, 43), self.spawnInvaders, iGameTurn, 8, 3, ["TXT_KEY_ADJECTIVE_KUSHANA"])
 
 		#Hephtalites
 		if iGameTurn >= getTurnForYear(400) and iGameTurn <= getTurnForYear(550):
@@ -252,10 +252,10 @@ class Barbs:
 
                 #barbarians in north africa
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn < getTurnForYear(50)):
-                        self.checkSpawn(iBarbarian, con.iKushanAsvaka, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
+                        self.checkSpawn(iBarbarian, con.iNumidianNumidianCavalry, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
                 if (iGameTurn >= getTurnForYear(50) and iGameTurn < getTurnForYear(900)):
                         if utils.getScenario() == con.i3000BC:  #late start condition
-				self.checkSpawn(iBarbarian, con.iKushanAsvaka, 3 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
+				self.checkSpawn(iBarbarian, con.iNumidianNumidianCavalry, 3 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
                 if (iGameTurn >= getTurnForYear(900) and iGameTurn <= getTurnForYear(1800)):
                         self.checkSpawn(iBarbarian, con.iArabianCamelArcher, 1, (54, 27), (67, 35), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_BERBER"])
                         

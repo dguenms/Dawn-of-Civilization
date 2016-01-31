@@ -1487,19 +1487,19 @@ iSatellites, iRobotics, iFutureTech) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 158
+iNumUnits = 163
 (iLion, iBear, iPanther, iWolf, iSettler, iHarappanCityBuilder, iWorker, iBrazilianMadeireiro, iIndianPunjabiWorker, iScout, iExplorer, iSpy, iReligiousPersecutor,
 iProtestantMissionary, iCatholicMissionary, iOrthodoxMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary,
 iTaoistMissionary, iZoroastrianMissionary, iWarrior, iSwordsman, iAztecJaguar, iRomanLegion, iCelticGallicWarrior,
 iAxeman, iGreekHoplite, iIncanAucac, iSumerianVulture, iNativeAmericanDogSoldier, iHeavySwordsman, iJapaneseSamurai, iVikingHuscarl, iCongolesePombos,
 iSpearman, iPersianImmortal, iZuluImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iOttomanJanissary, iEthiopianAskari, 
-iIranianQizilbash, iIroquoisMohawk, iRifleman, iEnglishRedcoat, iAmericanMinuteman, iGrenadier, iColombianAlbionLegion, iAtInfantry, iInfantry, iItalianBersagliere,
-iSamInfantry, iMobileSam, iMarine, iParatrooper, iMechanizedInfantry, iArcher, iMandeSkirmisher, iBabylonAsharittuBowman, iMayanHolkan, iNubianMedjay,
-iLongbowman, iIndianPatiyodha, iCrossbowman, iChineseChokonu, iChariot, iEgyptianWarChariot, iHittiteHuluganni, iHorseArcher, iTibetanKhampa,
+iIranianQizilbash, iIroquoisMohawk, iFrenchMusketeer, iRifleman, iEnglishRedcoat, iAmericanMinuteman, iGrenadier, iColombianAlbionLegion, iAtInfantry, iInfantry, iItalianBersagliere,
+iSamInfantry, iMobileSam, iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMandeSkirmisher, iBabylonAsharittuBowman, iMayanHolkan, iNubianMedjay,
+iLongbowman, iIndianPatiyodha, iCrossbowman, iChineseChokonu, iChariot, iEgyptianWarChariot, iHittiteHuluganni, iCelticCidainh, iHorseArcher, iTibetanKhampa,
 iNumidianNumidianCavalry, iKushanAsvaka, iKnight, iMongolianKeshik, iArabianCamelArcher, iByzantineCataphract, iThaiChangSuek, iSeljukGhulamWarrior,
-iMandeFarari, iCuirassier, iSpanishConquistador, iPolishWingedHussar, iSiouxMountedBrave, iCavalry, iRussianCossack, iMexicanRurales,
+iMandeFarari, iCuirassier, iSpanishConquistador, iPolishWingedHussar, iSiouxMountedBrave, iMoorishCamelGunner, iCavalry, iRussianCossack, iMexicanRurales,
 iArgentineGrenadierCavalry, iWarElephant, iKhmerBallistaElephant, iPhoenicianAfricanWarElephant, iTank, iGermanPanzer, iMainBattleTank, iGunship, iCatapult, iKoreanHwacha,
-iTrebuchet, iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iPolynesianWaka, iTrireme,
+iTrebuchet, iBombard, iMughalSiegeElephant, iCannon, iFrenchHeavyCannon, iMachineGun, iArtillery, iMobileArtillery, iWorkboat, iGalley, iPolynesianWaka, iPhoenicianBireme, iTrireme,
 iCaravel, iPortugalCarrack, iTamilDharani, iGalleon, iDutchEastIndiaman, iPrivateer, iIndonesianOrangLaut, iMoorishCorsair, iFrigate,
 iShipOfTheLine, iIronclad, iTransport, iDestroyer, iCanadianCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iAttackSubmarine, iCarrier, iAirship, iFighter,
 iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral,
@@ -1525,15 +1525,15 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 203
-(iPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iStable,
-iMongolianGer, iBunker, iBombShelter, iGranary, iSmokehouse, iAqueduct, iOttomanHammam, iKhmerBaray, iMoorishNoria, iHarappanBath,
+iNumBuildings = 209
+(iPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
+iMongolianGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iOttomanHammam, iKhmerBaray, iMoorishNoria, iHarappanBath, iIndianStepwell,
 iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugueseFeitoria, iDrydock, iAirport,
 iForge, iMandeMint, iItalianArtStudio, iFactory, iGermanAssemblyPlant, iJapaneseZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant,
-iIndustrialPark, iPaganTemple, iEgyptianObelisk, iEthiopianStele, iIndonesianCandi, iIndianEdict, iBabylonianZiggurat, iPublicTransportation,
+iIndustrialPark, iPaganTemple, iEgyptianObelisk, iEthiopianStele, iIndonesianCandi, iIndianEdict, iBabylonianZiggurat, iNativeAmericanTotemPole, iPublicTransportation,
 iLibrary, iArabianMadrassa, iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, 
-iRussianResearchInstitute, iTheatre, iGreekOdeon, iByzantineHippodrome, iAmphitheatre, iMayanBallCourt, iMexicanCharreada, 
-iPolynesianMalae, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iCongoleseMbwadi, iPhoenicianGlassmaker, 
+iRussianResearchInstitute, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavillion, iAmphitheatre, iMayanBallCourt, iMexicanCharreada, 
+iPolynesianMalae, iBabylonianGarden, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iCongoleseMbwadi, iPhoenicianGlassmaker, 
 iGrocer, iBrazilianFazenda, iColombianHacienda, iBank, iEnglishRoyalExchange, iSupermarket, iAmericanMall, iArgentineRefrigerationPlant, iCourthouse,
 iAztecSacrificialAltar, iHolyRomanRathaus, iPolishSejmik, iJail, iFrenchSalon, iMughalMausoleum, iCanadianRoyalMountedPolice, iLevee, 
 iDutchDike, iIntelligenceAgency, iSecurityBureau, iAcademy, iMilitaryAcademy, iAdministrativeCenter, iProtestantTemple, iProtestantCathedral, iProtestantMonastery, iProtestantShrine, iCatholicTemple, iCatholicCathedral, 

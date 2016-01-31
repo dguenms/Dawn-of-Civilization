@@ -495,8 +495,8 @@
 	<ElementType name="MiddleArtDefineTag" content="textOnly"/>
 	<ElementType name="UnitMeshGroup" content="eltOnly">
 		<element type="EarlyArtDefineTag" minOccurs="0"/>
-		<element type="LateArtDefineTag" minOccurs="0"/>
 		<element type="MiddleArtDefineTag" minOccurs="0"/>
+		<element type="LateArtDefineTag" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="StyleUnit" content="eltOnly">
 		<element type="UnitType"/>
