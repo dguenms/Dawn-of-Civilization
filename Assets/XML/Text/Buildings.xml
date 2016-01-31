@@ -67,6 +67,38 @@
 		<English>[COLOR_BUILDING_TEXT]Banks[COLOR_REVERT] greatly increase a city's production of wealth. [COLOR_BUILDING_TEXT]Banks[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] national wonder.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INCAN_TERRACE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Terrace[COLOR_REVERT], the Incan replacement for the [COLOR_BUILDING_TEXT]Granary[COLOR_REVERT], provides culture.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIVE_AMERICAN_TOTEM_POLE</Tag>
+		<English>Totem Pole</English>
+		<French>
+			<Text>Totem:Totems</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Totempfahl</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Totem:Totem</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>T&#243;tem:T&#243;tems</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIVE_AMERICAN_TOTEM_POLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Totem Pole[COLOR_REVERT], the Native American replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], grants archery units three bonus experience.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BARRACKS_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT] grant experience points to [COLOR_UNIT_TEXT]Land Units[COLOR_REVERT] built in its city.</English>
 	</TEXT>
@@ -627,38 +659,6 @@
 		<English>The [COLOR_BUILDING_TEXT]Art Studio[COLOR_REVERT], the Italian replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a big culture boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_IRONWORKS</Tag>
-		<English>Ironworks</English>
-		<French>
-			<Text>Usine sid&#233;rurgique</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Eisenbearbeitung</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Ferriera</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>la Metalurgia:las Metalurgias</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_IRONWORKS_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ironworks[COLOR_REVERT] increases a city's production if that city has access to coal and/or iron, but also adds unhealthiness. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>L'[COLOR_BUILDING_TEXT]usine sid&#233;rurgique[COLOR_REVERT] augmente la production d'une ville si celle-ci dispose de charbon et/ou de fer, mais aux d&#233;pens de la sant&#233; des habitants. Elle augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]ing&#233;nieur illustre[COLOR_REVERT].</French>
-		<German>Die [COLOR_BUILDING_TEXT]Eisenverarbeitung[COLOR_REVERT] steigert in St&#228;dten mit Zugriff auf Kohle und/oder Eisen die Produktion, wirkt sich aber negativ auf die Gesundheit der Bev&#246;lkerung aus. Dar&#252;ber hinaus erh&#246;ht sie die Chancen der Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
-		<Italian>La [COLOR_BUILDING_TEXT]Ferrieria[COLOR_REVERT] aumenta la produzione della citt&#224; se ha accesso a carbone e/o ferro, ma genera infelicit&#224;. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Ingegnere[COLOR_REVERT].</Italian>
-		<Spanish>La [COLOR_BUILDING_TEXT]Metalurgia[COLOR_REVERT] aumenta la producci&#243;n de la ciudad si &#233;sta tiene acceso a carb&#243;n o hierro, pero tambi&#233;n aumenta su insalubridad. Incrementa tambi&#233;n las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran ingeniero[COLOR_REVERT].</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_CATHEDRAL_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Mosque[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
@@ -1188,6 +1188,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAMIL_SANGAM_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Tamil replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides an extra cultural boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZULU_IKHANDA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ikhanda[COLOR_REVERT], the Zulu replacement for the [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT], are more expensive and lower city maintenance costs.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHINESE_PAVILLION_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Pavillion[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], provides an extra cultural boost</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_CATHEDRAL_STRATEGY</Tag>

@@ -3335,7 +3335,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</Type>
+			<Type>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3356,7 +3356,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</Type>
+			<Type>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -3377,7 +3377,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_GREAT_GENERAL_MODERN</Type>
+			<Type>ART_DEF_UNIT_MODERN_GREAT_GENERAL</Type>
 			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10</Button>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -6083,7 +6083,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_CIDAINH_CELTIC</Type>
+			<Type>ART_DEF_UNIT_CELTIC_CIDAINH</Type>
 			<Button>Art/Units/Celtic Cidainh/Button_Cidainh.dds</Button>
 			<fScale>0.35</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>

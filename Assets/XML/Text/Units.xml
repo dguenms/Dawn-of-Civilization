@@ -289,7 +289,7 @@
 		<English>[COLOR_UNIT_TEXT]Catholic Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CIDAINH</Tag>
+		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH</Tag>
 		<English>Cidainh</English>
 	</TEXT>
 	<TEXT>
@@ -297,7 +297,7 @@
 		<English>[COLOR_UNIT_TEXT]Crossbowmen[COLOR_REVERT] have one first strike and have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CIDAINH_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Cidainh[COLOR_REVERT] is a barbarian unit roaming in Gaul.</English>
 	</TEXT>
 	<TEXT>

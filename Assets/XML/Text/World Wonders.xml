@@ -573,6 +573,34 @@
 		<German>Schwimmende G&#228;rten</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Tag>
+		<English>Garden</English>
+		<French>
+			<Text>Jardin:Jardins</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Garten</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Giardino:Giardini</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Jard&#237;n:Jardines</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Garden[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Ampitheatre[COLOR_REVERT], provides bonus health.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FLOATING_GARDENS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Floating Gardens[COLOR_REVERT] give a large food bonus as well as increasing its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
