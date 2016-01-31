@@ -3731,7 +3731,7 @@ class RiseAndFall:
 	
 		for iPlayer in range(iNumPlayers):
 			tCapital = Areas.getCapital(iPlayer)
-			if tBirth[iPlayer] == utils.getScenarioStartYear():
+			if tBirth[iPlayer] == utils.getScenarioStartYear() and iPlayer != iHarappa:
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 			elif iPlayer == iHarappa and (self.getPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
