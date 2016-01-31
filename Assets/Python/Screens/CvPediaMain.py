@@ -502,6 +502,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
                         tList.pop(con.iCivZulu)
                         tList.pop(con.iCivSumeria)
                         tList.pop(con.iCivNativeAmericans)
+                        tList.pop(con.iCivSeljuks)
                        	tList.pop(con.iCivCelt) #celts
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING): #all -3 because there aren't palaces in the list
@@ -512,18 +513,17 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
 			tList.pop(con.iAztecSlave)
 			tList.pop(con.iNativeSlave)
-#			tList.pop(con.iPhoenicianBireme)
-#			tList.pop(con.iMoorishCamelGunner)
-#			tList.pop(con.iCelticCidainh)
-#			tList.pop(con.iAmericanNavySeal)
-#			tList.pop(con.iFrenchMusketeer)
+			tList.pop(con.iPhoenicianBireme)
+			tList.pop(con.iMoorishCamelGunner)
+			tList.pop(con.iCelticCidainh)
+			tList.pop(con.iAmericanNavySeal)
+			tList.pop(con.iFrenchMusketeer)
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT):
                         tList.pop(1) #water worked
                         tList.pop(0) #land worked
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_TERRAIN):
-#                        tList.pop(9) #marsh
                         tList.pop(8) #hill
                         tList.pop(7) #peak
                         pass                  

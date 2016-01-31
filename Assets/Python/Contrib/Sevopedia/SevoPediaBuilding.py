@@ -289,7 +289,7 @@ class SevoPediaBuilding:
 		numInfos = 0
 		for iBuilding in range(gc.getNumBuildingInfos()):
 			if gc.getBuildingInfo(iBuilding).isGraphicalOnly() or iBuilding >= con.iNumBuildings: continue
-#			if iBuilding in [con.iZuluIkhanda, con.iIncanTerrace, con.iIndianStepwell, con.iNativeAmericanTotemPole, con.iChinesePavillion, con.iBabylonianGarden]: continue
+			if iBuilding in [con.iZuluIkhanda, con.iIncanTerrace, con.iIndianStepwell, con.iNativeAmericanTotemPole, con.iChinesePavillion, con.iBabylonianGarden]: continue
 			if (self.getBuildingType(iBuilding) == iBuildingType):
 				list1.append(iBuilding)
 				numInfos += 1
