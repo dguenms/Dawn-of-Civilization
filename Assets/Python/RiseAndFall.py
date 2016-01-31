@@ -3003,7 +3003,7 @@ class RiseAndFall:
                         utils.makeUnit(iSpearman, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 2)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
                                 pCarthage.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
                                 utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
@@ -3014,14 +3014,14 @@ class RiseAndFall:
 			utils.makeUnit(iSettler, iCiv, tPlot, 1)
 			utils.makeUnit(iPolynesianWaka, iCiv, tSeaPlot, 1)
 			utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-			utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 1)
+			utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
                 if (iCiv == iRome):
 			utils.createSettlers(iCiv, 3)
                         utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
                         utils.makeUnit(iRomanLegion, iCiv, tPlot, 4)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 1)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
                                 pRome.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 pRome.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
                 if (iCiv == iJapan):
@@ -3032,7 +3032,7 @@ class RiseAndFall:
                 	utils.makeUnit(iWorker, iJapan, tPlot, 2)
                 	tSeaPlot = self.findSeaPlots(tPlot, 1, iJapan)
                 	if (tSeaPlot):                                
-                        	utils.makeUnit(iWorkBoat, iJapan, tSeaPlot, 2)
+                        	utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
 			if utils.getHumanID() != iJapan:
 				utils.makeUnit(iCrossbowman, iJapan, tPlot, 2)
 				utils.makeUnit(iJapaneseSamurai, iJapan, tPlot, 3)
@@ -3047,7 +3047,7 @@ class RiseAndFall:
 				utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iTamils)
 			if (tSeaPlot):
-				utils.makeUnit(iWorkBoat, iTamils, tSeaPlot, 1)
+				utils.makeUnit(iWorkboat, iTamils, tSeaPlot, 1)
 				utils.makeUnit(iGalley, iTamils, tSeaPlot, 1)
 				utils.makeUnit(iSettler, iTamils, tSeaPlot, 1)
 				utils.makeUnit(iArcher, iTamils, tSeaPlot, 1)
@@ -3058,7 +3058,7 @@ class RiseAndFall:
                         utils.makeUnit(iAxeman, iCiv, tPlot, 1)
                         tSeaPlot = (74, 29)
                         if (tSeaPlot):                                
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 1)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iTrireme, iCiv, tSeaPlot, 1)
 		if (iCiv == iKorea):
 			utils.createSettlers(iCiv, 1)
@@ -3088,7 +3088,7 @@ class RiseAndFall:
 				utils.makeUnit(iGalley, iByzantium, tSeaPlot, 2)
 				utils.makeUnit(iTrireme, iByzantium, tSeaPlot, 2)
 				if utils.getScenario() == i3000BC:
-					utils.makeUnit(iWorkBoat, iByzantium, tSeaPlot, 1)
+					utils.makeUnit(iWorkboat, iByzantium, tSeaPlot, 1)
                 if (iCiv == iVikings):
 			utils.createSettlers(iCiv, 2)
                         utils.makeUnitAI(iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
@@ -3098,7 +3098,7 @@ class RiseAndFall:
                         utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 1)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
                                 pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
                                 utils.makeUnit(iLongbowman, iCiv, tSeaPlot, 1)
@@ -3111,7 +3111,7 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 1)    
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
-				utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 		if iCiv == iTibet:
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
@@ -3125,7 +3125,7 @@ class RiseAndFall:
                         utils.createMissionaries(iCiv, iBuddhism, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 2, iCiv)
                         if (tSeaPlot):                                
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 1)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
                                 pKhmer.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
                                 utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
@@ -3135,7 +3135,7 @@ class RiseAndFall:
 			utils.createMissionaries(iCiv, iBuddhism, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if (tSeaPlot):
-				utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iTrireme, iCiv, tSeaPlot, 1)
 				pIndonesia.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				pIndonesia.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
@@ -3188,7 +3188,7 @@ class RiseAndFall:
 			utils.createMissionaries(iCiv, iCatholicism, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 2)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
                                 pEngland.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(iSettler, iCiv, tPlot, 1)
                                 utils.makeUnit(iLongbowman, iCiv, tPlot, 1)
@@ -3213,7 +3213,7 @@ class RiseAndFall:
 			utils.createMissionaries(iCiv, gc.getPlayer(iCiv).getStateReligion(), 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 2)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
                                 pNetherlands.initUnit(iDutchEastIndiaman, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
                                 utils.makeUnit(iLongbowman, iCiv, tSeaPlot, 1)
@@ -3256,7 +3256,7 @@ class RiseAndFall:
 			utils.createMissionaries(iCiv, iCatholicism, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):                                
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 2)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
                                 pPortugal.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
                                 utils.makeUnit(iSettler, iCiv, tPlot, 1)
                                 utils.makeUnit(iLongbowman, iCiv, tPlot, 1)
@@ -3333,7 +3333,7 @@ class RiseAndFall:
                         self.addMissionary(iCiv, (23, 40), (33, 52), tPlot, 1)
                         tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
                         if (tSeaPlot):  
-                                utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 2)
+                                utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
                                 utils.makeUnit(iGalleon, iCiv, tSeaPlot, 2)
                                 utils.makeUnit(iFrigate, iCiv, tSeaPlot, 1)
 			if utils.getHumanID() != iAmerica:
@@ -3359,7 +3359,7 @@ class RiseAndFall:
 			utils.makeUnit(iCannon, iCiv, tPlot, 2)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
-				utils.makeUnit(iWorkBoat, iCiv, tSeaPlot, 2)
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
 				utils.makeUnit(iGalleon, iCiv, tSeaPlot, 2)
 				utils.makeUnit(iFrigate, iCiv, tSeaPlot, 3)
 			if utils.getHumanID() != iBrazil:
@@ -3670,7 +3670,7 @@ class RiseAndFall:
                 utils.makeUnit(iArcher, iJapan, tCapital, 2)
                 tSeaPlot = self.findSeaPlots(tCapital, 1, iJapan)
                 if (tSeaPlot):                                
-                        utils.makeUnit(iWorkBoat, iJapan, tSeaPlot, 2)
+                        utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
 
 		if utils.getHumanID() != iJapan:
 			utils.makeUnit(iCrossbowman, iJapan, tCapital, 2)
@@ -3685,7 +3685,7 @@ class RiseAndFall:
                 utils.makeUnit(iSwordsman, iVikings, tCapital, 1)                                
                 tSeaPlot = self.findSeaPlots(tCapital, 1, iVikings)
                 if (tSeaPlot):                                
-                        utils.makeUnit(iWorkBoat, iVikings, tSeaPlot, 1)
+                        utils.makeUnit(iWorkboat, iVikings, tSeaPlot, 1)
                         pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 			if utils.getHumanID() == iVikings:
 				utils.makeUnit(iSettler, iVikings, tSeaPlot, 1)
