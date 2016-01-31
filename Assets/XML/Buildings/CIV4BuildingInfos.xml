@@ -269,7 +269,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_INCAN_TAMBO_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TERRACE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TAMBO</ArtDefineTag>
 			<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
@@ -433,12 +433,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_STABLE</BuildingClass>
-			<Type>BUILDING_MONGOL_GER</Type>
-			<Description>TXT_KEY_BUILDING_MONGOL_GER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_MONGOL_GER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MONGOL_GER_STRATEGY</Strategy>
+			<Type>BUILDING_MONGOLIAN_GER</Type>
+			<Description>TXT_KEY_BUILDING_MONGOLIAN_GER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MONGOLIAN_GER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MONGOLIAN_GER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MONGOL_GER</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_MONGOLIAN_GER</ArtDefineTag>
 			<ObsoleteTech>TECH_ADVANCED_FLIGHT</ObsoleteTech>
 			<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
@@ -563,7 +563,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_INCAN_TERRACE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_INCAN_TERRACE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TERRACE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TAMBO</ArtDefineTag>
 			<FreeStartEra>ERA_MEDIEVAL</FreeStartEra>
 			<PrereqTech>TECH_POTTERY</PrereqTech>
 			<iCost>60</iCost>
@@ -995,12 +995,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClass>
-			<Type>BUILDING_CUSTOM_HOUSE</Type>
-			<Description>TXT_KEY_BUILDING_CUSTOM_HOUSE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CUSTOM_HOUSE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CUSTOM_HOUSE_STRATEGY</Strategy>
+			<Type>BUILDING_CUSTOMS_HOUSE</Type>
+			<Description>TXT_KEY_BUILDING_CUSTOMS_HOUSE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CUSTOMS_HOUSE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CUSTOMS_HOUSE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CUSTOM_HOUSE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_CUSTOMS_HOUSE</ArtDefineTag>
 			<PrereqTech>TECH_ECONOMICS</PrereqTech>
 			<bWater>1</bWater>
 			<iCost>180</iCost>
@@ -1026,12 +1026,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClass>
-			<Type>BUILDING_PORTUGAL_FEITORIA</Type>
-			<Description>TXT_KEY_BUILDING_PORTUGAL_FEITORIA</Description>
-			<Civilopedia>TXT_KEY_BUILDING_PORTUGAL_FEITORIA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_PORTUGAL_FEITORIA_STRATEGY</Strategy>
+			<Type>BUILDING_PORTUGUESE_FEITORIA</Type>
+			<Description>TXT_KEY_BUILDING_PORTUGUESE_FEITORIA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PORTUGUESE_FEITORIA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PORTUGUESE_FEITORIA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PORTUGAL_FEITORIA</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_PORTUGUESE_FEITORIA</ArtDefineTag>
 			<PrereqTech>TECH_BANKING</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ASTRONOMY</PrereqTech>
@@ -1186,12 +1186,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_FORGE</BuildingClass>
-			<Type>BUILDING_MALI_MINT</Type>
-			<Description>TXT_KEY_BUILDING_MALI_MINT</Description>
-			<Civilopedia>TXT_KEY_BUILDING_MALI_MINT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MALI_MINT_STRATEGY</Strategy>
+			<Type>BUILDING_MANDE_MINT</Type>
+			<Description>TXT_KEY_BUILDING_MANDE_MINT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MANDE_MINT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MANDE_MINT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MALI_MINT</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_MANDE_MINT</ArtDefineTag>
 			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
 			<iCost>120</iCost>
@@ -1424,7 +1424,7 @@
 			<Civilopedia>TXT_KEY_BUILDING_JAPANESE_ZAIBATSU_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JAPANESE_ZAIBATSU_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_JAPANESE_SHALE_PLANT</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_JAPANESE_ZAIBATSU</ArtDefineTag>
 			<FreeStartEra>ERA_FUTURE</FreeStartEra>
 			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
 			<iCost>125</iCost>
@@ -1630,13 +1630,13 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
-			<Type>BUILDING_OBELISK</Type>
+			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
+			<Type>BUILDING_PAGAN_TEMPLE</Type>
 			<Description>TXT_KEY_BUILDING_PAGAN_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PAGAN_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PAGAN_TEMPLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MONUMENT</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_PAGAN_TEMPLE</ArtDefineTag>
 			<ObsoleteTech>TECH_DIVINE_RIGHT</ObsoleteTech>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
@@ -1665,7 +1665,7 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_EGYPTIAN_OBELISK</Type>
 			<Description>TXT_KEY_BUILDING_EGYPTIAN_OBELISK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_EGYPTIAN_OBELISK_PEDIA</Civilopedia>
@@ -1711,7 +1711,7 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_ETHIOPIAN_STELE</Type>
 			<Description>TXT_KEY_BUILDING_ETHIOPIAN_STELE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ETHIOPIAN_STELE_PEDIA</Civilopedia>
@@ -1752,7 +1752,7 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_INDONESIAN_CANDI</Type>
 			<Description>TXT_KEY_BUILDING_INDONESIAN_CANDI</Description>
 			<Civilopedia>TXT_KEY_BUILDING_INDONESIAN_CANDI_PEDIA</Civilopedia>
@@ -1791,7 +1791,7 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_INDIAN_EDICT</Type>
 			<Description>TXT_KEY_BUILDING_INDIAN_EDICT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_INDIAN_EDICT_PEDIA</Civilopedia>
@@ -1827,13 +1827,13 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
-			<Type>BUILDING_SUMERIAN_ZIGGURAT</Type>
-			<Description>TXT_KEY_BUILDING_SUMERIAN_ZIGGURAT</Description>
-			<Civilopedia>TXT_KEY_BUILDING_SUMERIAN_ZIGGURAT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_SUMERIAN_ZIGGURAT_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
+			<Type>BUILDING_BABYLONIAN_ZIGGURAT</Type>
+			<Description>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SUMERIAN_ZIGGURAT</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_BABYLONIAN_ZIGGURAT</ArtDefineTag>
 			<ObsoleteTech>NONE</ObsoleteTech>
 			<PrereqTech>TECH_POLYTHEISM</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
@@ -1867,13 +1867,13 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
-			<Type>BUILDING_NATIVE_AMERICA_TOTEM</Type>
-			<Description>TXT_KEY_BUILDING_NATIVE_AMERICA_TOTEM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_NATIVE_AMERICA_TOTEM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NATIVE_AMERICA_TOTEM_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
+			<Type>BUILDING_NATIVE_AMERICAN_TOTEM_POLE</Type>
+			<Description>TXT_KEY_BUILDING_NATIVE_AMERICAN_TOTEM_POLE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_NATIVE_AMERICAN_TOTEM_POLE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_NATIVE_AMERICAN_TOTEM_POLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_NATIVE_AMERICA_TOTEM</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_NATIVE_AMERICAN_TOTEM_POLE</ArtDefineTag>
 			<ObsoleteTech>TECH_DIVINE_RIGHT</ObsoleteTech>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
@@ -2033,12 +2033,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LIBRARY</BuildingClass>
-			<Type>BUILDING_CHINESE_EXAMINATION_HALL</Type>
-			<Description>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL_STRATEGY</Strategy>
+			<Type>BUILDING_CHINESE_TAIXUE</Type>
+			<Description>TXT_KEY_BUILDING_CHINESE_TAIXUE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CHINESE_TAIXUE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CHINESE_TAIXUE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CHINESE_EXAMINATION_HALL</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_CHINESE_TAIXUE</ArtDefineTag>
 			<FreeStartEra>ERA_MODERN</FreeStartEra>
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
@@ -2658,13 +2658,13 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
-			<Type>BUILDING_COLOSSEUM</Type>
-			<Description>TXT_KEY_BUILDING_COLOSSEUM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_COLOSSEUM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_COLOSSEUM_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<Type>BUILDING_AMPHITHEATRE</Type>
+			<Description>TXT_KEY_BUILDING_AMPHITHEATRE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_AMPHITHEATRE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_AMPHITHEATRE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_COLOSSEUM</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_AMPHITHEATRE</ArtDefineTag>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2681,13 +2681,13 @@
 			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
-			<Type>BUILDING_MAYA_BALL_COURT</Type>
-			<Description>TXT_KEY_BUILDING_MAYA_BALL_COURT</Description>
-			<Civilopedia>TXT_KEY_BUILDING_MAYA_BALL_COURT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MAYA_BALL_COURT_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<Type>BUILDING_MAYAN_BALL_COURT</Type>
+			<Description>TXT_KEY_BUILDING_MAYAN_BALL_COURT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MAYAN_BALL_COURT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MAYAN_BALL_COURT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MAYA_BALL_COURT</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_MAYAN_BALL_COURT</ArtDefineTag>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2714,13 +2714,13 @@
 			</UnitCombatFreeExperiences>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
-			<Type>BUILDING_MEXICO_CHARREADA</Type>
-			<Description>TXT_KEY_BUILDING_MEXICO_CHARREADA</Description>
-			<Civilopedia>TXT_KEY_BUILDING_MEXICO_CHARREADA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MEXICO_CHARREADA_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<Type>BUILDING_MEXICAN_CHARREADA</Type>
+			<Description>TXT_KEY_BUILDING_MEXICAN_CHARREADA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MEXICAN_CHARREADA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MEXICAN_CHARREADA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MEXICO_CHARREADA</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_MEXICAN_CHARREADA</ArtDefineTag>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2749,13 +2749,13 @@
 			</UnitCombatFreeExperiences>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
-			<Type>BUILDING_POLYNESIAN_MARAE</Type>
-			<Description>TXT_KEY_BUILDING_POLYNESIAN_MARAE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_POLYNESIAN_MARAE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_POLYNESIAN_MARAE_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<Type>BUILDING_POLYNESIAN_MALAE</Type>
+			<Description>TXT_KEY_BUILDING_POLYNESIAN_MALAE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_POLYNESIAN_MALAE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_POLYNESIAN_MALAE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_POLYNESIAN_MARAE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_POLYNESIAN_MALAE</ArtDefineTag>
 			<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
 			<iCost>40</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2792,13 +2792,13 @@
 			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
-			<Type>BUILDING_BABYLON_GARDEN</Type>
-			<Description>TXT_KEY_BUILDING_BABYLON_GARDEN</Description>
-			<Civilopedia>TXT_KEY_BUILDING_BABYLON_GARDEN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_BABYLON_GARDEN_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
+			<Type>BUILDING_BABYLONIAN_GARDEN</Type>
+			<Description>TXT_KEY_BUILDING_BABYLONIAN_GARDEN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BABYLONIAN_GARDEN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BABYLON_GARDEN</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_BABYLONIAN_GARDEN</ArtDefineTag>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3049,12 +3049,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
-			<Type>BUILDING_CARAVANSERAI</Type>
-			<Description>TXT_KEY_BUILDING_IRAN_CARAVANSERAI</Description>
-			<Civilopedia>TXT_KEY_BUILDING_IRAN_CARAVANSERAI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_IRAN_CARAVANSERAI_STRATEGY</Strategy>
+			<Type>BUILDING_IRANIAN_CARAVANSERAI</Type>
+			<Description>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI</Description>
+			<Civilopedia>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CARAVANSERAI</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_IRANIAN_CARAVANSERAI</ArtDefineTag>
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
 			<PrereqTech>TECH_CURRENCY</PrereqTech>
 			<iCost>150</iCost>
@@ -3121,12 +3121,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_MARKET</BuildingClass>
-			<Type>BUILDING_KONGO_MBWADI</Type>
-			<Description>TXT_KEY_BUILDING_KONGO_MBWADI</Description>
-			<Civilopedia>TXT_KEY_BUILDING_KONGO_MBWADI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_KONGO_MBWADI_STRATEGY</Strategy>
+			<Type>BUILDING_CONGOLESE_MBWADI</Type>
+			<Description>TXT_KEY_BUILDING_CONGOLESE_MBWADI</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CONGOLESE_MBWADI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CONGOLESE_MBWADI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_KONGO_MBWADI</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_CONGOLESE_MBWADI</ArtDefineTag>
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
 			<PrereqTech>TECH_CURRENCY</PrereqTech>
 			<iCost>150</iCost>
@@ -3485,12 +3485,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BANK</BuildingClass>
-			<Type>BUILDING_ENGLISH_STOCK_EXCHANGE</Type>
-			<Description>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE_STRATEGY</Strategy>
+			<Type>BUILDING_ENGLISH_ROYAL_EXCHANGE</Type>
+			<Description>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ENGLISH_STOCK_EXCHANGE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_ENGLISH_ROYAL_EXCHANGE</ArtDefineTag>
 			<PrereqTech>TECH_BANKING</PrereqTech>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3988,12 +3988,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_JAIL</BuildingClass>
-			<Type>BUILDING_INDIAN_MAUSOLEUM</Type>
-			<Description>TXT_KEY_BUILDING_INDIAN_MAUSOLEUM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_INDIAN_MAUSOLEUM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_INDIAN_MAUSOLEUM_STRATEGY</Strategy>
+			<Type>BUILDING_MUGHAL_MAUSOLEUM</Type>
+			<Description>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_INDIAN_MAUSOLEUM</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_MUGHAL_MAUSOLEUM</ArtDefineTag>
 			<FreeStartEra>ERA_MODERN</FreeStartEra>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
 			<iCost>120</iCost>
@@ -4044,12 +4044,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_JAIL</BuildingClass>
-			<Type>BUILDING_CANADA_RCMP</Type>
-			<Description>TXT_KEY_BUILDING_CANADA_RCMP</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CANADA_RCMP_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CANADA_RCMP_STRATEGY</Strategy>
+			<Type>BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Type>
+			<Description>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CANADA_RCMP</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</ArtDefineTag>
 			<FreeStartEra>ERA_MODERN</FreeStartEra>
 			<PrereqTech>TECH_CONSTITUTION</PrereqTech>
 			<iCost>120</iCost>
@@ -4129,12 +4129,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_LEVEE</BuildingClass>
-			<Type>BUILDING_NETHERLANDS_DIKE</Type>
-			<Description>TXT_KEY_BUILDING_NETHERLANDS_DIKE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_NETHERLANDS_DIKE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_NETHERLANDS_DIKE_STRATEGY</Strategy>
+			<Type>BUILDING_DUTCH_DIKE</Type>
+			<Description>TXT_KEY_BUILDING_DUTCH_DIKE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DUTCH_DIKE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DUTCH_DIKE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_NETHERLANDS_DIKE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_DUTCH_DIKE</ArtDefineTag>
 			<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
 			<bWater>1</bWater>
 			<bRiver>1</bRiver>
@@ -4203,13 +4203,13 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_NATIONAL_SECURITY</BuildingClass>
-			<Type>BUILDING_NATIONAL_SECURITY</Type>
+			<BuildingClass>BUILDINGCLASS_SECURITY_BUREAU</BuildingClass>
+			<Type>BUILDING_SECURITY_BUREAU</Type>
 			<Description>TXT_KEY_BUILDING_SECURITY_BUREAU</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SECURITY_BUREAU_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SECURITY_BUREAU_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_SECURITY</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_SECURITY_BUREAU</ArtDefineTag>
 			<PrereqTech>TECH_UTOPIA</PrereqTech>
 			<FreePromotion>PROMOTION_SECURITY1</FreePromotion>
 			<iCost>220</iCost>
@@ -4315,15 +4315,15 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_GREAT_PALACE</BuildingClass>
-			<Type>BUILDING_GREAT_PALACE</Type>
-			<Description>TXT_KEY_BUILDING_ADMIN_CENTER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ADMIN_CENTER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_ADMIN_CENTER_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_ADMINISTRATIVE_CENTER</BuildingClass>
+			<Type>BUILDING_ADMINISTRATIVE_CENTER</Type>
+			<Description>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PALACE</ArtDefineTag>
 			<PrereqTech>TECH_CODE_OF_LAWS</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<iCost>-1</iCost>
@@ -4378,16 +4378,16 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_JEWISH_TEMPLE</BuildingClass>
-			<Type>BUILDING_JEWISH_TEMPLE</Type>
+			<BuildingClass>BUILDINGCLASS_PROTESTANT_TEMPLE</BuildingClass>
+			<Type>BUILDING_PROTESTANT_TEMPLE</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_PROTESTANT_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PROTESTANT_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PROTESTANT_TEMPLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_TEMPLE</ArtDefineTag>
-			<ReligionType>RELIGION_JUDAISM</ReligionType>
-			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
+			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_TEMPLE</ArtDefineTag>
+			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -4420,16 +4420,16 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_JEWISH_CATHEDRAL</BuildingClass>
-			<Type>BUILDING_JEWISH_CATHEDRAL</Type>
+			<BuildingClass>BUILDINGCLASS_PROTESTANT_CATHEDRAL</BuildingClass>
+			<Type>BUILDING_PROTESTANT_CATHEDRAL</Type>
 			<SpecialBuildingType>SPECIALBUILDING_CATHEDRAL</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_PROTESTANT_CATHEDRAL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PROTESTANT_CATHEDRAL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PROTESTANT_CATHEDRAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_CATHEDRAL</ArtDefineTag>
-			<ReligionType>RELIGION_JUDAISM</ReligionType>
-			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
+			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_CATHEDRAL</ArtDefineTag>
+			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -4463,7 +4463,7 @@
 			</BonusProductionModifiers>
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_JEWISH_TEMPLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_PROTESTANT_TEMPLE</BuildingClassType>
 					<iNumBuildingNeeded>2</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
@@ -4475,16 +4475,16 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
-			<Type>BUILDING_JEWISH_MONASTERY</Type>
+			<BuildingClass>BUILDINGCLASS_PROTESTANT_MONASTERY</BuildingClass>
+			<Type>BUILDING_PROTESTANT_MONASTERY</Type>
 			<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_PROTESTANT_MONASTERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PROTESTANT_MONASTERY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PROTESTANT_MONASTERY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_MONASTERY</ArtDefineTag>
-			<ReligionType>RELIGION_JUDAISM</ReligionType>
-			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
+			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_MONASTERY</ArtDefineTag>
+			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -4514,18 +4514,18 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_JEWISH_SHRINE</BuildingClass>
-			<Type>BUILDING_JEWISH_SHRINE</Type>
+			<BuildingClass>BUILDINGCLASS_PROTESTANT_SHRINE</BuildingClass>
+			<Type>BUILDING_PROTESTANT_SHRINE</Type>
 			<Description>TXT_KEY_BUILDING_PROTESTANT_SHRINE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PROTESTANT_SHRINE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PROTESTANT_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_JEWISH</MovieDefineTag>
-			<HolyCity>RELIGION_JUDAISM</HolyCity>
-			<ReligionType>RELIGION_JUDAISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_JUDAISM</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_SHRINE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_PROTESTANT</MovieDefineTag>
+			<HolyCity>RELIGION_PROTESTANTISM</HolyCity>
+			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+			<GlobalReligionCommerce>RELIGION_PROTESTANTISM</GlobalReligionCommerce>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -4548,7 +4548,7 @@
 			</CommerceChangeDoubleTimes>
 			<ReligionChanges>
 				<ReligionChange>
-					<ReligionType>RELIGION_JUDAISM</ReligionType>
+					<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
@@ -4572,16 +4572,16 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CHRISTIAN_TEMPLE</BuildingClass>
-			<Type>BUILDING_CHRISTIAN_TEMPLE</Type>
+			<BuildingClass>BUILDINGCLASS_CATHOLIC_TEMPLE</BuildingClass>
+			<Type>BUILDING_CATHOLIC_TEMPLE</Type>
 			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_CATHOLIC_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CATHOLIC_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CATHOLIC_TEMPLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CHRISTIAN_TEMPLE</ArtDefineTag>
-			<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_TEMPLE</ArtDefineTag>
+			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -4614,16 +4614,16 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CHRISTIAN_CATHEDRAL</BuildingClass>
-			<Type>BUILDING_CHRISTIAN_CATHEDRAL</Type>
+			<BuildingClass>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClass>
+			<Type>BUILDING_CATHOLIC_CATHEDRAL</Type>
 			<SpecialBuildingType>SPECIALBUILDING_CATHEDRAL</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_CATHOLIC_CATHEDRAL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CATHOLIC_CATHEDRAL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CATHOLIC_CATHEDRAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CHRISTIAN_CATHEDRAL</ArtDefineTag>
-			<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_CATHEDRAL</ArtDefineTag>
+			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>300</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -4657,7 +4657,7 @@
 			</BonusProductionModifiers>
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
-					<BuildingClassType>BUILDINGCLASS_CHRISTIAN_TEMPLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_CATHOLIC_TEMPLE</BuildingClassType>
 					<iNumBuildingNeeded>2</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
@@ -4669,16 +4669,16 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
-			<Type>BUILDING_CHRISTIAN_MONASTERY</Type>
+			<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
+			<Type>BUILDING_CATHOLIC_MONASTERY</Type>
 			<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_CATHOLIC_MONASTERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CATHOLIC_MONASTERY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CATHOLIC_MONASTERY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CHRISTIAN_MONASTERY</ArtDefineTag>
-			<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_MONASTERY</ArtDefineTag>
+			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -4708,18 +4708,18 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CHRISTIAN_SHRINE</BuildingClass>
-			<Type>BUILDING_CHRISTIAN_SHRINE</Type>
+			<BuildingClass>BUILDINGCLASS_CATHOLIC_SHRINE</BuildingClass>
+			<Type>BUILDING_CATHOLIC_SHRINE</Type>
 			<Description>TXT_KEY_BUILDING_CATHOLIC_SHRINE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CATHOLIC_SHRINE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CATHOLIC_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CHRISTIAN_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_CHRISTIAN</MovieDefineTag>
-			<HolyCity>RELIGION_CHRISTIANITY</HolyCity>
-			<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
-			<GlobalReligionCommerce>RELIGION_CHRISTIANITY</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_SHRINE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_CATHOLIC</MovieDefineTag>
+			<HolyCity>RELIGION_CATHOLICISM</HolyCity>
+			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
+			<GlobalReligionCommerce>RELIGION_CATHOLICISM</GlobalReligionCommerce>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -4742,7 +4742,7 @@
 			</CommerceChangeDoubleTimes>
 			<ReligionChanges>
 				<ReligionChange>
-					<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
+					<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
@@ -4908,12 +4908,12 @@
 			<Civilopedia>TXT_KEY_BUILDING_ORTHODOX_SHRINE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ORTHODOX_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HAGIA_SOPHIA</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_HAGIA_SOPHIA</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_SHRINE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_ORTHODOX</MovieDefineTag>
 			<HolyCity>RELIGION_ORTHODOXY</HolyCity>
 			<ReligionType>RELIGION_ORTHODOXY</ReligionType>
 			<GlobalReligionCommerce>RELIGION_ORTHODOXY</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -5107,7 +5107,7 @@
 			<HolyCity>RELIGION_ISLAM</HolyCity>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_ISLAM</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -5301,7 +5301,7 @@
 			<HolyCity>RELIGION_HINDUISM</HolyCity>
 			<ReligionType>RELIGION_HINDUISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_HINDUISM</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -5495,7 +5495,7 @@
 			<HolyCity>RELIGION_BUDDHISM</HolyCity>
 			<ReligionType>RELIGION_BUDDHISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_BUDDHISM</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -5689,7 +5689,7 @@
 			<HolyCity>RELIGION_CONFUCIANISM</HolyCity>
 			<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_CONFUCIANISM</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -5883,7 +5883,7 @@
 			<HolyCity>RELIGION_TAOISM</HolyCity>
 			<ReligionType>RELIGION_TAOISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_TAOISM</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -6073,11 +6073,11 @@
 			<Strategy>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ZOROASTRIAN_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_JEWISH</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_PROTESTANT</MovieDefineTag>
 			<HolyCity>RELIGION_ZOROASTRIANISM</HolyCity>
 			<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_ZOROASTRIANISM</GlobalReligionCommerce>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -6124,14 +6124,14 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_NATIONAL_EPIC</BuildingClass>
-			<Type>BUILDING_NATIONAL_EPIC</Type>
+			<BuildingClass>BUILDINGCLASS_TRIUMPHAL_ARCH</BuildingClass>
+			<Type>BUILDING_TRIUMPHAL_ARCH</Type>
 			<Description>TXT_KEY_BUILDING_TRIUMPHAL_ARCH</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_TRIUMPHAL_ARCH_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_EPIC</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TRIUMPHAL_ARCH</ArtDefineTag>
 			<VictoryPrereq>VICTORY_HISTORICAL</VictoryPrereq>
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
@@ -6161,15 +6161,15 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_GLOBE_THEATRE</BuildingClass>
-			<Type>BUILDING_GLOBE_THEATRE</Type>
-			<Description>TXT_KEY_BUILDING_GLOBE_THEATRE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_GLOBE_THEATRE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_GLOBE_THEATRE_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_OPERA_HOUSE</BuildingClass>
+			<Type>BUILDING_OPERA_HOUSE</Type>
+			<Description>TXT_KEY_BUILDING_OPERA_HOUSE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_OPERA_HOUSE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_OPERA_HOUSE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_GLOBE_THEATRE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_OPERA_HOUSE</ArtDefineTag>
 			<PrereqTech>TECH_DRAMA</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iAIWeight>-50</iAIWeight>
 			<iCost>200</iCost>
@@ -6227,10 +6227,10 @@
 			<Strategy>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TRADING_COMPANY</ArtDefineTag>
-			<GlobalCorporationCommerce>CORPORATION_2</GlobalCorporationCommerce>
+			<GlobalCorporationCommerce>CORPORATION_TRADING_COMPANY</GlobalCorporationCommerce>
 			<ObsoleteTech>TECH_ASSEMBLY_LINE</ObsoleteTech>
 			<PrereqTech>TECH_ECONOMICS</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>450</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
@@ -6280,10 +6280,10 @@
 			<Strategy>TXT_KEY_BUILDING_TRADING_COMPANY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TRADING_COMPANY</ArtDefineTag>
-			<GlobalCorporationCommerce>CORPORATION_2</GlobalCorporationCommerce>
+			<GlobalCorporationCommerce>CORPORATION_TRADING_COMPANY</GlobalCorporationCommerce>
 			<ObsoleteTech>TECH_ASSEMBLY_LINE</ObsoleteTech>
 			<PrereqTech>TECH_ASTRONOMY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>450</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
@@ -6326,15 +6326,15 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_WALL_STREET</BuildingClass>
-			<Type>BUILDING_WALL_STREET</Type>
-			<Description>TXT_KEY_BUILDING_WALL_STREET</Description>
-			<Civilopedia>TXT_KEY_BUILDING_WALL_STREET_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_WALL_STREET_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_STOCK_EXCHANGE</BuildingClass>
+			<Type>BUILDING_STOCK_EXCHANGE</Type>
+			<Description>TXT_KEY_BUILDING_STOCK_EXCHANGE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_STOCK_EXCHANGE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_STOCK_EXCHANGE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_WALL_STREET</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_STOCK_EXCHANGE</ArtDefineTag>
 			<PrereqTech>TECH_CORPORATION</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>600</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
@@ -6380,7 +6380,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_OLYMPIC_PARK</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_OLYMPIC_PARK</MovieDefineTag>
 			<PrereqTech>TECH_NATIONALISM</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bGoldenAge>1</bGoldenAge>
 			<iCost>600</iCost>
@@ -6407,15 +6407,15 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_HERMITAGE</BuildingClass>
-			<Type>BUILDING_HERMITAGE</Type>
-			<Description>TXT_KEY_BUILDING_HERMITAGE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_HERMITAGE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HERMITAGE_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_NATIONAL_GALLERY</BuildingClass>
+			<Type>BUILDING_NATIONAL_GALLERY</Type>
+			<Description>TXT_KEY_BUILDING_NATIONAL_GALLERY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_GALLERY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_NATIONAL_GALLERY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HERMITAGE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_GALLERY</ArtDefineTag>
 			<PrereqTech>TECH_NATIONALISM</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>300</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
@@ -6442,15 +6442,15 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_IRON_WORKS</BuildingClass>
-			<Type>BUILDING_IRON_WORKS</Type>
-			<Description>TXT_KEY_BUILDING_IRON_WORKS</Description>
-			<Civilopedia>TXT_KEY_BUILDING_IRON_WORKS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_IRON_WORKS_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_IRONWORKS</BuildingClass>
+			<Type>BUILDING_IRONWORKS</Type>
+			<Description>TXT_KEY_BUILDING_IRONWORKS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_IRONWORKS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_IRONWORKS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_IRON_WORKS</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_IRONWORKS</ArtDefineTag>
 			<PrereqTech>TECH_STEEL</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>700</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
@@ -6503,13 +6503,13 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_SCOTLAND_YARD</BuildingClass>
-			<Type>BUILDING_SCOTLAND_YARD</Type>
-			<Description>TXT_KEY_BUILDING_SCOTLAND_YARD</Description>
-			<Civilopedia>TXT_KEY_BUILDING_SCOTLAND_YARD_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_SCOTLAND_YARD_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_INTERPOL</BuildingClass>
+			<Type>BUILDING_INTERPOL</Type>
+			<Description>TXT_KEY_BUILDING_INTERPOL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_INTERPOL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_INTERPOL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SCOTLAND_YARD</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_INTERPOL</ArtDefineTag>
 			<iCost>-1</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -6546,7 +6546,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_PARK</ArtDefineTag>
 			<PrereqTech>TECH_BIOLOGY</PrereqTech>
 			<NoBonus>BONUS_COAL</NoBonus>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>300</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
@@ -6588,7 +6588,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_RED_CROSS</ArtDefineTag>
 			<PrereqTech>TECH_MEDICINE</PrereqTech>
 			<FreePromotion>PROMOTION_MEDIC1</FreePromotion>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>600</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
@@ -6621,20 +6621,20 @@
 			</BuildingClassNeededs>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_STONEHENGE</BuildingClass>
-			<Type>BUILDING_STONEHENGE</Type>
-			<Description>TXT_KEY_BUILDING_SPHINX</Description>
-			<Civilopedia>TXT_KEY_BUILDING_SPHINX_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_SPHINX_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_SPHINX_HELP</Help>
+			<BuildingClass>BUILDINGCLASS_GREAT_SPHINX</BuildingClass>
+			<Type>BUILDING_GREAT_SPHINX</Type>
+			<Description>TXT_KEY_BUILDING_GREAT_SPHINX</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GREAT_SPHINX_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Help>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_STONEHENGE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SPHINX</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_GREAT_SPHINX</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_GREAT_SPHINX</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_DRAMA</ObsoleteTech>
 			<PrereqTech>TECH_MYSTICISM</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -6691,7 +6691,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_MASONRY</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
@@ -6743,7 +6743,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_MASONRY</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
@@ -6804,7 +6804,7 @@
 			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_POTTERY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -6841,19 +6841,19 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_ARTEMIS</BuildingClass>
-			<Type>BUILDING_ARTEMIS</Type>
-			<Description>TXT_KEY_BUILDING_ARTEMIS</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ARTEMIS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_ARTEMIS_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_TEMPLE_OF_ARTEMIS</BuildingClass>
+			<Type>BUILDING_TEMPLE_OF_ARTEMIS</Type>
+			<Description>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ARTEMIS</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_ARTEMIS</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_ARTEMIS</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_TEMPLE_OF_ARTEMIS</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
 			<PrereqTech>TECH_POLYTHEISM</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -6900,20 +6900,20 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_PYRAMID</BuildingClass>
-			<Type>BUILDING_PYRAMID</Type>
-			<Description>TXT_KEY_BUILDING_PYRAMID</Description>
-			<Civilopedia>TXT_KEY_BUILDING_PYRAMID_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_PYRAMID_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_PYRAMID_HELP</Help>
+			<BuildingClass>BUILDINGCLASS_PYRAMIDS</BuildingClass>
+			<Type>BUILDING_PYRAMIDS</Type>
+			<Description>TXT_KEY_BUILDING_PYRAMIDS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PYRAMIDS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_PYRAMIDS_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_PYRAMID</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_PYRAMIDS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PYRAMIDS</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 			<PrereqTech>TECH_MASONRY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bMapCentering>1</bMapCentering>
@@ -6957,13 +6957,13 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_HANGING_GARDEN</BuildingClass>
-			<Type>BUILDING_HANGING_GARDEN</Type>
-			<Description>TXT_KEY_BUILDING_HANGING_GARDEN</Description>
-			<Civilopedia>TXT_KEY_BUILDING_HANGING_GARDEN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HANGING_GARDEN_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_HANGING_GARDENS</BuildingClass>
+			<Type>BUILDING_HANGING_GARDENS</Type>
+			<Description>TXT_KEY_BUILDING_HANGING_GARDENS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_HANGING_GARDENS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HANGING_GARDENS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HANGING_GARDEN</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_HANGING_GARDENS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HANGING_GARDENS</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
@@ -6971,7 +6971,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_AGRICULTURE</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7025,7 +7025,7 @@
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7080,7 +7080,7 @@
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_ASTRONOMY</ObsoleteTech>
 			<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
@@ -7134,7 +7134,7 @@
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7176,18 +7176,18 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClass>
-			<Type>BUILDING_TEMPLE_OF_SALOMON</Type>
+			<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClass>
+			<Type>BUILDING_TEMPLE_OF_SOLOMON</Type>
 			<Description>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_SALOMON</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_SOLOMON</ArtDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_BANKING</ObsoleteTech>
 			<PrereqTech>TECH_MONOTHEISM</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7246,7 +7246,7 @@
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_ASTRONOMY</ObsoleteTech>
 			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
@@ -7309,7 +7309,7 @@
 				<PrereqTech>TECH_POLYTHEISM</PrereqTech>
 			</TechTypes>
 			<CivicOption>CIVICOPTION_GOVERNMENT</CivicOption>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7357,7 +7357,7 @@
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
 			<PrereqTech>TECH_AESTHETICS</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7416,7 +7416,7 @@
 				<PrereqTech>TECH_MEDITATION</PrereqTech>
 			</TechTypes>
 			<CivicOption>CIVICOPTION_RELIGION</CivicOption>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7473,7 +7473,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_MONOTHEISM</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7527,7 +7527,7 @@
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_DIVINE_RIGHT</ObsoleteTech>
 			<PrereqTech>TECH_LITERATURE</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7585,7 +7585,7 @@
 			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7631,7 +7631,7 @@
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bRiver>1</bRiver>
@@ -7676,19 +7676,19 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_FLAVIAN_AMPHITHEATRE</BuildingClass>
-			<Type>BUILDING_FLAVIAN_AMPHITHEATRE</Type>
-			<Description>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_FLAVIAN_AMPHITHEATRE_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
+			<Type>BUILDING_COLOSSEUM</Type>
+			<Description>TXT_KEY_BUILDING_COLOSSEUM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_COLOSSEUM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_COLOSSEUM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_FLAVIAN_AMPHITHEATRE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_FLAVIAN_AMPHITHEATRE</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_COLOSSEUM</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_COLOSSEUM</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7748,7 +7748,7 @@
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bBorderObstacle>1</bBorderObstacle>
 			<bTeamShare>1</bTeamShare>
@@ -7803,7 +7803,7 @@
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7859,7 +7859,7 @@
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7916,7 +7916,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_AESTHETICS</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -7990,7 +7990,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_CALENDAR</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bRiver>1</bRiver>
@@ -8038,11 +8038,11 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NOTRE_DAME</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_NOTRE_DAME</MovieDefineTag>
-			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8083,20 +8083,20 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CHICHEN_ITZA</BuildingClass>
-			<Type>BUILDING_CHICHEN_ITZA</Type>
-			<Description>TXT_KEY_BUILDING_CHICHEN_ITZA</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CHICHEN_ITZA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CHICHEN_ITZA_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_TEMPLE_OF_KUKULKAN</BuildingClass>
+			<Type>BUILDING_TEMPLE_OF_KUKULKAN</Type>
+			<Description>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CHICHEN_ITZA</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_CHICHEN_ITZA</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_KUKULKAN</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_TEMPLE_OF_KUKULKAN</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<ObsoleteTech>TECH_RIFLING</ObsoleteTech>
 			<PrereqTech>TECH_CODE_OF_LAWS</PrereqTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8152,7 +8152,7 @@
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<ObsoleteTech>TECH_RIFLING</ObsoleteTech>
 			<PrereqTech>TECH_FEUDALISM</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8209,7 +8209,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_ENGINEERING</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNoUnhappiness>1</bNoUnhappiness>
@@ -8250,22 +8250,22 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_ANGKOR_WAT</BuildingClass>
-			<Type>BUILDING_ANGKOR_WAT</Type>
-			<Description>TXT_KEY_BUILDING_ANGKOR_WAT</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ANGKOR_WAT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_ANGKOR_WAT_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_ANGKOR_WAT_HELP</Help>
+			<BuildingClass>BUILDINGCLASS_WAT_PREAH_PISNULOK</BuildingClass>
+			<Type>BUILDING_WAT_PREAH_PISNULOK</Type>
+			<Description>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ANGKOR_WAT</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_ANGKOR_WAT</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_WAT_PREAH_PISNULOK</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</MovieDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<OrStateReligion>RELIGION_BUDDHISM</OrStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
 			<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8331,7 +8331,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_ENGINEERING</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8380,14 +8380,14 @@
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_APOSTOLIC_PALACE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_APOSTOLIC_PALACE</MovieDefineTag>
-			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<bStateReligion>1</bStateReligion>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<VictoryPrereq>VICTORY_DIPLOMATIC</VictoryPrereq>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			<PrereqTech>TECH_THEOLOGY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<DiploVoteType>DIPLOVOTE_POPE</DiploVoteType>
@@ -8414,7 +8414,7 @@
 			</CommerceChangeDoubleTimes>
 			<ReligionChanges>
 				<ReligionChange>
-					<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
+					<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
@@ -8435,15 +8435,15 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_MEZQUITA</BuildingClass>
-			<Type>BUILDING_MEZQUITA</Type>
-			<Description>TXT_KEY_BUILDING_MEZQUITA</Description>
-			<Civilopedia>TXT_KEY_BUILDING_MEZQUITA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_MEZQUITA_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_MEZQUITA_HELP</Help>
+			<BuildingClass>BUILDINGCLASS_LA_MEZQUITA</BuildingClass>
+			<Type>BUILDING_LA_MEZQUITA</Type>
+			<Description>TXT_KEY_BUILDING_LA_MEZQUITA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_LA_MEZQUITA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_LA_MEZQUITA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_LA_MEZQUITA_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_MEZQUITA</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_MEZQUITA</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_LA_MEZQUITA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_LA_MEZQUITA</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
@@ -8452,7 +8452,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8520,11 +8520,11 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SISTINE_CHAPEL</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_SISTINE_CHAPEL</MovieDefineTag>
-			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8582,14 +8582,14 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LEANING_TOWER</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_LEANING_TOWER</MovieDefineTag>
-			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8646,7 +8646,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_ENGINEERING</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8704,14 +8704,14 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_VERSAILLES</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_VERSAILLES</MovieDefineTag>
-			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_DIVINE_RIGHT</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bGoldenAge>1</bGoldenAge>
@@ -8767,7 +8767,7 @@
 			<Strategy>TXT_KEY_BUILDING_FORBIDDEN_PALACE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_FORBIDDEN_PALACE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_GREAT_PALACE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_FORBIDDEN_PALACE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_FORBIDDEN_PALACE</MovieDefineTag>
 			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
 			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
@@ -8775,7 +8775,7 @@
 			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_DIVINE_RIGHT</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8823,7 +8823,7 @@
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<ObsoleteTech>TECH_COMPUTERS</ObsoleteTech>
 			<PrereqTech>TECH_DIVINE_RIGHT</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8866,18 +8866,18 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_DOME_ROCK</BuildingClass>
-			<Type>BUILDING_DOME_ROCK</Type>
-			<Description>TXT_KEY_BUILDING_DOME_ROCK</Description>
-			<Civilopedia>TXT_KEY_BUILDING_DOME_ROCK_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_DOME_ROCK_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_DOME_OF_THE_ROCK</BuildingClass>
+			<Type>BUILDING_DOME_OF_THE_ROCK</Type>
+			<Description>TXT_KEY_BUILDING_DOME_OF_THE_ROCK</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_DOME_ROCK</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_DOME_ROCK</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_DOME_OF_THE_ROCK</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_DOME_OF_THE_ROCK</MovieDefineTag>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_DIVINE_RIGHT</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8913,7 +8913,7 @@
 			</BonusProductionModifiers>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
@@ -8925,20 +8925,20 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_SANKORE</BuildingClass>
-			<Type>BUILDING_SANKORE</Type>
-			<Description>TXT_KEY_BUILDING_SANKORE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_SANKORE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_SANKORE_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_UNIVERSITY_OF_SANKORE</BuildingClass>
+			<Type>BUILDING_UNIVERSITY_OF_SANKORE</Type>
+			<Description>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SANKORE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_UNIVERSITY_SANKORE</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_UNIVERSITY_OF_SANKORE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_UNIVERSITY_OF_SANKORE</MovieDefineTag>
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 			<PrereqTech>TECH_PAPER</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -8994,7 +8994,7 @@
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_CONSTITUTION</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bGoldenAge>1</bGoldenAge>
@@ -9035,19 +9035,19 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_SAN_MARCO</BuildingClass>
-			<Type>BUILDING_SAN_MARCO</Type>
-			<Description>TXT_KEY_BUILDING_SAN_MARCO</Description>
-			<Civilopedia>TXT_KEY_BUILDING_SAN_MARCO_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_SAN_MARCO_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_SAN_MARCO_BASILICA</BuildingClass>
+			<Type>BUILDING_SAN_MARCO_BASILICA</Type>
+			<Description>TXT_KEY_BUILDING_SAN_MARCO_BASILICA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SAN_MARCO_BASILICA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SAN_MARCO_BASILICA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SAN_MARCO</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SAN_MARCO</MovieDefineTag>
-			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
+			<ArtDefineTag>ART_DEF_BUILDING_SAN_MARCO_BASILICA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_SAN_MARCO_BASILICA</MovieDefineTag>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_BANKING</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9105,7 +9105,7 @@
 			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_BANKING</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9145,19 +9145,19 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_KREMLIN</BuildingClass>
-			<Type>BUILDING_KREMLIN</Type>
-			<Description>TXT_KEY_BUILDING_KREMLIN</Description>
-			<Civilopedia>TXT_KEY_BUILDING_KREMLIN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_KREMLIN_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_ST_BASILS_CATHEDRAL</BuildingClass>
+			<Type>BUILDING_ST_BASILS_CATHEDRAL</Type>
+			<Description>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_KREMLIN</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_KREMLIN</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_ST_BASILS_CATHEDRAL</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ST_BASILS_CATHEDRAL</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<ObsoleteTech>TECH_UTOPIA</ObsoleteTech>
 			<PrereqTech>TECH_MILITARY_TRADITION</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9211,7 +9211,7 @@
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_MILITARY_TRADITION</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9268,7 +9268,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_ASTRONOMY</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9339,7 +9339,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_RIFLING</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9386,7 +9386,7 @@
 			<PrereqCivic>CIVIC_REPUBLIC</PrereqCivic>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_DEMOCRACY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
@@ -9443,7 +9443,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_PENTAGON</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PENTAGON</MovieDefineTag>
 			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9463,16 +9463,16 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_KGB</BuildingClass>
-			<Type>BUILDING_KGB</Type>
-			<Description>TXT_KEY_BUILDING_KGB</Description>
-			<Civilopedia>TXT_KEY_BUILDING_KGB_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_KGB_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_LUBYANKA</BuildingClass>
+			<Type>BUILDING_LUBYANKA</Type>
+			<Description>TXT_KEY_BUILDING_LUBYANKA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_LUBYANKA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_LUBYANKA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_KGB</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_KGB</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_LUBYANKA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_LUBYANKA</MovieDefineTag>
 			<PrereqTech>TECH_UTOPIA</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9498,7 +9498,7 @@
 			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_NATIONAL_SECURITY</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_SECURITY_BUREAU</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
@@ -9514,21 +9514,21 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_WESTMINSTER</BuildingClass>
-			<Type>BUILDING_WESTMINSTER</Type>
-			<Description>TXT_KEY_BUILDING_WESTMINSTER</Description>
-			<Civilopedia>TXT_KEY_BUILDING_WESTMINSTER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_WESTMINSTER_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_WESTMINSTER_PALACE</BuildingClass>
+			<Type>BUILDING_WESTMINSTER_PALACE</Type>
+			<Description>TXT_KEY_BUILDING_WESTMINSTER_PALACE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_WESTMINSTER_PALACE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_WESTMINSTER_PALACE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_WESTMINSTER</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_WESTMINSTER</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_WESTMINSTER_PALACE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_WESTMINSTER_PALACE</MovieDefineTag>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<ObsoleteTech>TECH_FIBER_OPTICS</ObsoleteTech>
 			<PrereqTech>TECH_RAILROAD</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_DEMOCRACY</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9573,7 +9573,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_MT_RUSHMORE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_MT_RUSHMORE</MovieDefineTag>
 			<PrereqTech>TECH_FASCISM</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9628,7 +9628,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_STEEL</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9680,21 +9680,21 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_EMPIRE_STATE</BuildingClass>
-			<Type>BUILDING_EMPIRE_STATE</Type>
-			<Description>TXT_KEY_BUILDING_EMPIRE_STATE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_EMPIRE_STATE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_EMPIRE_STATE_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_EMPIRE_STATE_HELP</Help>
+			<BuildingClass>BUILDINGCLASS_EMPIRE_STATE_BUILDING</BuildingClass>
+			<Type>BUILDING_EMPIRE_STATE_BUILDING</Type>
+			<Description>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING</Description>
+			<Civilopedia>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_EMPIRE_STATE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_EMPIRE_STATE</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_EMPIRE_STATE_BUILDING</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_EMPIRE_STATE_BUILDING</MovieDefineTag>
 			<MaxStartEra>ERA_FUTURE</MaxStartEra>
 			<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_STEEL</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9728,16 +9728,16 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CERN</BuildingClass>
-			<Type>BUILDING_CERN</Type>
-			<Description>TXT_KEY_BUILDING_CERN</Description>
-			<Civilopedia>TXT_KEY_BUILDING_CERN_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_CERN_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_CERN_RESEARCH_COMPLEX</BuildingClass>
+			<Type>BUILDING_CERN_RESEARCH_COMPLEX</Type>
+			<Description>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_CERN</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_CERN</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_CERN_RESEARCH_COMPLEX</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CERN_RESEARCH_COMPLEX</MovieDefineTag>
 			<PrereqTech>TECH_FISSION</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9793,18 +9793,18 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_BROADWAY</BuildingClass>
-			<Type>BUILDING_BROADWAY</Type>
-			<Description>TXT_KEY_BUILDING_BROADWAY</Description>
-			<Civilopedia>TXT_KEY_BUILDING_BROADWAY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_BROADWAY_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_WEMBLEY</BuildingClass>
+			<Type>BUILDING_WEMBLEY</Type>
+			<Description>TXT_KEY_BUILDING_WEMBLEY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_WEMBLEY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_WEMBLEY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_BROADWAY</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_BROADWAY</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_WEMBLEY</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_WEMBLEY</MovieDefineTag>
 			<PrereqTech>TECH_RADIO</PrereqTech>
 			<FreeBonus>BONUS_DRAMA</FreeBonus>
 			<iNumFreeBonuses>-1</iNumFreeBonuses>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9833,18 +9833,18 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_ROCKNROLL</BuildingClass>
-			<Type>BUILDING_ROCKNROLL</Type>
-			<Description>TXT_KEY_BUILDING_ROCKNROLL</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ROCKNROLL_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_ROCKNROLL_STRATEGY</Strategy>
+			<BuildingClass>BUILDINGCLASS_GRACELAND</BuildingClass>
+			<Type>BUILDING_GRACELAND</Type>
+			<Description>TXT_KEY_BUILDING_GRACELAND</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GRACELAND_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GRACELAND_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ROCKNROLL</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_ROCK_AND_ROLL</MovieDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_GRACELAND</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_GRACELAND</MovieDefineTag>
 			<PrereqTech>TECH_RADIO</PrereqTech>
 			<FreeBonus>BONUS_MUSIC</FreeBonus>
 			<iNumFreeBonuses>-1</iNumFreeBonuses>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9880,13 +9880,13 @@
 			<Strategy>TXT_KEY_BUILDING_CRISTO_REDENTOR_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CRISTO_REDENTOR</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_CHRIST_THE_REDEEMER</MovieDefineTag>
-			<StateReligion>RELIGION_CHRISTIANITY</StateReligion>
-			<OrStateReligion>RELIGION_JUDAISM</OrStateReligion>
-			<PrereqReligion>RELIGION_CHRISTIANITY</PrereqReligion>
-			<OrPrereqReligion>RELIGION_JUDAISM</OrPrereqReligion>
+			<MovieDefineTag>ART_DEF_MOVIE_CRISTO_REDENTOR</MovieDefineTag>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<OrStateReligion>RELIGION_PROTESTANTISM</OrStateReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
+			<OrPrereqReligion>RELIGION_PROTESTANTISM</OrPrereqReligion>
 			<PrereqTech>TECH_RADIO</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9916,16 +9916,16 @@
 			</CommerceChangeOriginalOwners>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_GREAT_DAM</BuildingClass>
-			<Type>BUILDING_GREAT_DAM</Type>
+			<BuildingClass>BUILDINGCLASS_THREE_GORGES_DAM</BuildingClass>
+			<Type>BUILDING_THREE_GORGES_DAM</Type>
 			<Description>TXT_KEY_BUILDING_THREE_GORGES_DAM</Description>
 			<Civilopedia>TXT_KEY_BUILDING_THREE_GORGES_DAM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_THREE_GORGES_DAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_GREAT_DAM</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_THREE_GORGES_DAM</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_THREE_GORGES_DAM</MovieDefineTag>
 			<PrereqTech>TECH_PLASTICS</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bRiver>1</bRiver>
@@ -9957,7 +9957,7 @@
 			<PrereqTech>TECH_MASS_MEDIA</PrereqTech>
 			<FreeBonus>BONUS_MOVIES</FreeBonus>
 			<iNumFreeBonuses>-1</iNumFreeBonuses>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -9996,7 +9996,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_UNITED_NATIONS</MovieDefineTag>
 			<VictoryPrereq>VICTORY_DIPLOMATIC</VictoryPrereq>
 			<PrereqTech>TECH_MASS_MEDIA</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<DiploVoteType>DIPLOVOTE_UN</DiploVoteType>
@@ -10022,7 +10022,7 @@
 			<MaxStartEra>ERA_MODERN</MaxStartEra>
 			<PrereqTech>TECH_MASS_MEDIA</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_BROADCAST_TOWER</FreeBuilding>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
@@ -10073,7 +10073,7 @@
 			<TechTypes>
 				<PrereqTech>TECH_SATELLITES</PrereqTech>
 			</TechTypes>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>

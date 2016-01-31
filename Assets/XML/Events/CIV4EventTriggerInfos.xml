@@ -781,8 +781,8 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_JEWISH_CATHEDRAL</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_HINDU_CATHEDRAL</BuildingClass>
@@ -1697,9 +1697,9 @@
 			<BonusesRequired/>
 			<RoutesRequired/>
 			<ReligionsRequired>
-				<ReligionType>RELIGION_JUDAISM</ReligionType>
+				<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+				<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 				<ReligionType>RELIGION_ORTHODOXY</ReligionType>
-				<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
 				<ReligionType>RELIGION_ISLAM</ReligionType>
 				<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
 			</ReligionsRequired>
@@ -7249,13 +7249,13 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ORTHODOX_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_MONASTERY</BuildingClass>
 			</BuildingsRequired>
@@ -9786,14 +9786,14 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_BUDDHIST_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ISLAMIC_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_HINDU_TEMPLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_JEWISH_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_BUDDHIST_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CONFUCIAN_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_TEMPLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_TEMPLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_ISLAMIC_TEMPLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_ORTHODOX_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_TEMPLE</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
@@ -10159,15 +10159,15 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_JEWISH_CATHEDRAL</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_HINDU_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_BUDDHIST_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CONFUCIAN_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_CATHEDRAL</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -12597,7 +12597,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -12685,14 +12685,14 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ORTHODOX_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_MONASTERY</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
@@ -16532,7 +16532,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -16718,7 +16718,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -16731,7 +16731,7 @@
 			<BonusesRequired/>
 			<RoutesRequired/>
 			<ReligionsRequired>
-				<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
+				<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 			</ReligionsRequired>
 			<iNumReligions>1</iNumReligions>
 			<CorporationsRequired/>
@@ -16892,7 +16892,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>

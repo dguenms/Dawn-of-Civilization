@@ -7035,7 +7035,7 @@ void CvCity::updateFeatureHealth()
 				else
 				{
 					// Leoreth: Congo UP: no unhealthiness from jungle and marsh
-					if (!(getOwnerINLINE() == CONGO && (eFeature == GC.getInfoTypeForString("FEATURE_JUNGLE") || eFeature == GC.getInfoTypeForString("FEATURE_MUD"))))
+					if (!(getOwnerINLINE() == CONGO && (eFeature == GC.getInfoTypeForString("FEATURE_JUNGLE") || eFeature == GC.getInfoTypeForString("FEATURE_MARSH"))))
 						iNewBadHealth += GC.getFeatureInfo(eFeature).getHealthPercent();
 				}
 			}

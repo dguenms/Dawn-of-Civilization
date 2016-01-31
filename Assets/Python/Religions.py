@@ -105,19 +105,19 @@ class Religions:
 		#Leoreth: script the Apostolic Palace and Church of the Holy Sepulchre for the player HRE victory in the 3000 BC scenario
 		if iGameTurn == getTurnForYear(840) - 5 - utils.getSeed() % 10:
 			if utils.getScenario() == i3000BC and utils.getHumanID() == iHolyRome:
-				pHolyCity = gc.getGame().getHolyCity(iChristianity)
+				pHolyCity = gc.getGame().getHolyCity(iCatholicism)
 				if not pHolyCity.isHasRealBuilding(iApostolicPalace):
-					pHolyCity.setHasRealBuilding(iChristianShrine, True)
+					pHolyCity.setHasRealBuilding(iCatholicShrine, True)
 					bFound = False
 					while not bFound:
-						tCity = self.selectRandomCityReligion(iChristianity)
+						tCity = self.selectRandomCityReligion(iCatholicism)
 						if tCity:
 							x, y = tCity
 							pApostolicCity = gc.getMap().plot(x, y).getPlotCity()
-							if pApostolicCity.getPopulation() > 4 and gc.getPlayer(pApostolicCity.getOwner()).getStateReligion() == iChristianity:
+							if pApostolicCity.getPopulation() > 4 and gc.getPlayer(pApostolicCity.getOwner()).getStateReligion() == iCatholicism:
 								bFound = True
 					pApostolicCity.setHasRealBuilding(iApostolicPalace, True)
-					gc.getGame().setHolyCity(iChristianity, pApostolicCity, False)
+					gc.getGame().setHolyCity(iCatholicism, pApostolicCity, False)
 
 		if utils.getHumanID() != iIndia:
 			if iGameTurn == getTurnForYear(-2000)+1:
@@ -125,7 +125,7 @@ class Religions:
 					if not gc.getMap().plot(92, 39).getPlotCity().isNone():
 						self.foundReligion((92, 39), iHinduism)
 
-                if (not gc.getGame().isReligionFounded(iChristianity)):
+                if (not gc.getGame().isReligionFounded(iCatholicism)):
                         iEthiopianModifier = 0
                         if (gc.getPlayer(iEthiopia).isHuman()):
                                 iEthiopianModifier = 15 #for the UHV
@@ -133,46 +133,46 @@ class Religions:
                                 pJerusalem = gc.getMap().plot(tJerusalem[0], tJerusalem[1])                
                                 if (not pJerusalem.getPlotCity().isNone()):  
                                         if (pJerusalem.getPlotCity().getOwner() == iIndependent or pJerusalem.getPlotCity().getOwner() == iIndependent2 or pJerusalem.getPlotCity().getOwner() == iBarbarian):
-                                                bChristianResult = self.foundReligion(tJerusalem, iChristianity)
+                                                bChristianResult = self.foundReligion(tJerusalem, iCatholicism)
                                                 tCity = tJerusalem
                                         else:
-                                                tCity = self.selectRandomCityReligionCiv(iJudaism, iIndependent)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                tCity = self.selectRandomCityReligionCiv(iProtestantism, iIndependent)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
-                                                tCity = self.selectRandomCityReligionCiv(iJudaism, iIndependent2)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                tCity = self.selectRandomCityReligionCiv(iProtestantism, iIndependent2)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tJewishTL, tJewishBR, iIndependent)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tJewishTL, tJewishBR, iIndependent2)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
-                                                tCity = self.selectRandomCityReligionCiv(iJudaism, iCeltia)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                tCity = self.selectRandomCityReligionCiv(iProtestantism, iCeltia)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tJewishTL, tJewishBR, iCeltia)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
-                                                tCity = self.selectRandomCityReligionCiv(iJudaism, iBarbarian)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                tCity = self.selectRandomCityReligionCiv(iProtestantism, iBarbarian)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tJewishTL, tJewishBR, iBarbarian)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tEuropeTL, tEuropeBR, iIndependent)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tEuropeTL, tEuropeBR, iIndependent2)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tEuropeTL, tEuropeBR, iCeltia)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == False):
                                                 tCity = self.selectRandomCityAreaCiv(tEuropeTL, tEuropeBR, iBarbarian)
-                                                bChristianResult = self.foundReligion(tCity, iChristianity)
+                                                bChristianResult = self.foundReligion(tCity, iCatholicism)
                                         if (bChristianResult == True):
-                                                self.spreadReligion(tCity, 3, iChristianMissionary)
+                                                self.spreadReligion(tCity, 3, iCatholicMissionary)
 
 		# Leoreth: make sure Buddhism is founded before the Korean spawn
 		if iGameTurn == getTurnForYear(-400):
@@ -211,8 +211,8 @@ class Religions:
                 #                                self.foundReligion(tMecca, iIslam)
 
 		if iGameTurn == getTurnForYear(1500):
-			#if gc.getGame().isReligionFounded(iJudaism):	# Protestantism founded
-			#	gc.getPlayer(iNetherlands).setLastStateReligion(iJudaism) # make Protestantism Dutch state religion if already founded at their spawn
+			#if gc.getGame().isReligionFounded(iProtestantism):	# Protestantism founded
+			#	gc.getPlayer(iNetherlands).setLastStateReligion(iProtestantism) # make Protestantism Dutch state religion if already founded at their spawn
 			#	utils.makeUnit(iMissionary_Jewish, iNetherlands, tCapitals[0][iNetherlands], 1)
 			#else:
 			#	utils.makeUnit(iMissionary_Christian, iNetherlands, tCapitals[0][iNetherlands], 1)
@@ -272,10 +272,10 @@ class Religions:
 		
 		
 	def onReligionFounded(self, iReligion, iFounder):
-		if iReligion == iChristianity:
+		if iReligion == iCatholicism:
 			for iCiv in lCatholicCivs:
 				if utils.getHumanID() != iCiv and gc.getPlayer(iCiv).isAlive():
-					self.spreadReligion(self.selectRandomCityCiv(iCiv), 1, iChristianMissionary)
+					self.spreadReligion(self.selectRandomCityCiv(iCiv), 1, iCatholicMissionary)
 
 
         def selectRandomCityCiv(self, iCiv):
@@ -366,16 +366,16 @@ class Religions:
 ##ORTHODOXY
 
 	def canFoundOrthodoxy(self, iPlayer):
-		return gc.getPlayer(iPlayer).isAlive() and gc.getPlayer(iPlayer).getStateReligion() == iChristianity and gc.getPlayer(iPlayer).countNumBuildings(iApostolicPalace) == 0
+		return gc.getPlayer(iPlayer).isAlive() and gc.getPlayer(iPlayer).getStateReligion() == iCatholicism and gc.getPlayer(iPlayer).countNumBuildings(iApostolicPalace) == 0
 
 	def foundOrthodoxy(self, iPopeCiv):
 		if gc.getGame().isReligionFounded(iOrthodoxy): return
 	
-		iOwner = gc.getGame().getHolyCity(iChristianity).getOwner()
+		iOwner = gc.getGame().getHolyCity(iCatholicism).getOwner()
 		pOwner = gc.getPlayer(iOwner)
 		iFounder = iPopeCiv
 		
-		#if iOwner != iPopeCiv and iOwner < iNumPlayers and pOwner.getStateReligion() == iChristianity:
+		#if iOwner != iPopeCiv and iOwner < iNumPlayers and pOwner.getStateReligion() == iCatholicism:
 		#	iFounder = iOwner
 		#	print "Set Orthodoxy founder: "+str(iFounder)
 		#else:
@@ -394,7 +394,7 @@ class Religions:
                 gc.getPlayer(iFounder).foundReligion(iOrthodoxy, iOrthodoxy, True)
                 gc.getPlayer(iFounder).getCapitalCity().setNumRealBuilding(iOrthodoxShrine, 1)
 		
-		if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]) and gc.getPlayer(utils.getHumanID()).getStateReligion() == iChristianity:
+		if gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]) and gc.getPlayer(utils.getHumanID()).getStateReligion() == iCatholicism:
 			self.showPopup(7626, CyTranslator().getText("TXT_KEY_SCHISM_TITLE", ()), CyTranslator().getText("TXT_KEY_SCHISM_MESSAGE", ()), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
 		
 		if iFounder in lOrthodoxEast:
@@ -422,23 +422,23 @@ class Religions:
 		cityList = PyPlayer(iPlayer).getCityList()
 		for city in cityList:
 			pCity = city.GetCy()
-			if pCity.isHasReligion(iChristianity):
-				if not pCity.isHolyCityByType(iChristianity):
-					pCity.setHasReligion(iChristianity, False, False, False)
+			if pCity.isHasReligion(iCatholicism):
+				if not pCity.isHolyCityByType(iCatholicism):
+					pCity.setHasReligion(iCatholicism, False, False, False)
 			
 				for iBuilding in [iTemple, iCathedral, iMonastery]:
-					if pCity.isHasBuilding(iBuilding + 4*iChristianity):
-						pCity.setHasRealBuilding(iBuilding + 4*iChristianity, False)
+					if pCity.isHasBuilding(iBuilding + 4*iCatholicism):
+						pCity.setHasRealBuilding(iBuilding + 4*iCatholicism, False)
 						pCity.setHasRealBuilding(iBuilding + 4*iOrthodoxy, True)
 						
 				if pCity.getPopulation() > 7:
 					iRand = gc.getGame().getSorenRandNum(100, 'RemainingCatholics')
 					if iRand <= 50:
-						pCity.setHasReligion(iChristianity, True, False, False)
+						pCity.setHasReligion(iCatholicism, True, False, False)
 						
 				pCity.setHasReligion(iOrthodoxy, True, False, False)
 				
-		if gc.getPlayer(iPlayer).getStateReligion() == iChristianity:
+		if gc.getPlayer(iPlayer).getStateReligion() == iCatholicism:
 			gc.getPlayer(iPlayer).setLastStateReligion(iOrthodoxy)
 				
 		
@@ -471,10 +471,10 @@ class Religions:
 			return
 	
                 if (iTech == iPrintingPress):
-                        if (gc.getPlayer(iPlayer).getStateReligion() == iChristianity):
-                                if (not gc.getGame().isReligionFounded(iJudaism)):
-					gc.getPlayer(iPlayer).foundReligion(iJudaism, iJudaism, True)
-                                        #gc.getPlayer(iPlayer).getCapitalCity().setNumRealBuilding(iJewishShrine,1)
+                        if (gc.getPlayer(iPlayer).getStateReligion() == iCatholicism):
+                                if (not gc.getGame().isReligionFounded(iProtestantism)):
+					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
+                                        #gc.getPlayer(iPlayer).getCapitalCity().setNumRealBuilding(iProtestantShrine,1)
                                         self.reformation()
 					
 	def chooseProtestantism(self, iCiv):
@@ -487,12 +487,12 @@ class Religions:
 
         def reformation(self):
                 for iCiv in range(iNumTotalPlayers):
-			#if gc.getPlayer(iCiv).getStateReligion() == iChristianity:
+			#if gc.getPlayer(iCiv).getStateReligion() == iCatholicism:
 			#	self.reformationchoice(iCiv)
                         cityList = PyPlayer(iCiv).getCityList()
 			bCatholic = False
                         for city in cityList:
-                                if city.hasReligion(iChristianity):
+                                if city.hasReligion(iCatholicism):
 					bCatholic = True
 			if bCatholic:
 				self.reformationchoice(iCiv)
@@ -512,9 +512,9 @@ class Religions:
 						gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
 						print "Religious war: "+str(iCiv)+" declares war on "+str(iTargetCiv)
 						
-		pHolyCity = gc.getGame().getHolyCity(iJudaism)
+		pHolyCity = gc.getGame().getHolyCity(iProtestantism)
 		if self.getReformationDecision(pHolyCity.getOwner()) == 0:
-			pHolyCity.setNumRealBuilding(iJewishShrine, 1)
+			pHolyCity.setNumRealBuilding(iProtestantShrine, 1)
 			
 		# Make Netherlands spawn as Protestant if it's already founded
 		if gc.getGame().getGameTurn() < getTurnForYear(tBirth[iNetherlands]):
@@ -525,7 +525,7 @@ class Religions:
 		
 		if utils.getHumanID() == iCiv: return
 	
-		if pPlayer.getStateReligion() == iChristianity:
+		if pPlayer.getStateReligion() == iCatholicism:
 			if self.chooseProtestantism(iCiv):
 				self.embraceReformation(iCiv)
 			else:
@@ -541,27 +541,27 @@ class Religions:
 		iNumCatholicCities = 0
 		for city in cityList:
 			pCity = city.GetCy()
-			if pCity.isHasReligion(iChristianity):
+			if pCity.isHasReligion(iCatholicism):
 				iNumCatholicCities += 1
 			
-				if not pCity.isHolyCityByType(iChristianity):
-					pCity.setHasReligion(iChristianity, False, False, False)
+				if not pCity.isHolyCityByType(iCatholicism):
+					pCity.setHasReligion(iCatholicism, False, False, False)
 			
 				for iBuilding in [iTemple, iCathedral, iMonastery]:
-					if pCity.isHasBuilding(iBuilding + 4*iChristianity):
-						pCity.setHasRealBuilding(iBuilding + 4*iChristianity, False)
-						pCity.setHasRealBuilding(iBuilding + 4*iJudaism, True)
+					if pCity.isHasBuilding(iBuilding + 4*iCatholicism):
+						pCity.setHasRealBuilding(iBuilding + 4*iCatholicism, False)
+						pCity.setHasRealBuilding(iBuilding + 4*iProtestantism, True)
 						
 				if pCity.getPopulation() > 7:
 					if not self.chooseProtestantism(iCiv):
-						pCity.setHasReligion(iChristianity, True, False, False)
+						pCity.setHasReligion(iCatholicism, True, False, False)
 								
-				pCity.setHasReligion(iJudaism, True, False, False)
+				pCity.setHasReligion(iProtestantism, True, False, False)
 				
 		pPlayer = gc.getPlayer(iCiv)
 		pPlayer.changeGold(iNumCatholicCities*100)
 		
-		pPlayer.setLastStateReligion(iJudaism)
+		pPlayer.setLastStateReligion(iProtestantism)
 		pPlayer.setConversionTimer(10)
 		
 		if iCiv < iNumPlayers:
@@ -571,11 +571,11 @@ class Religions:
 		cityList = PyPlayer(iCiv).getCityList()
 		for city in cityList:
 			pCity = city.GetCy()
-			if pCity.isHasReligion(iChristianity):
+			if pCity.isHasReligion(iCatholicism):
 				if self.isProtestantAnyway(iCiv):
-					if pCity.getPopulation() <= 9 and not pCity.isHolyCityByType(iChristianity):
-						pCity.setHasReligion(iChristianity, False, False, False)
-					pCity.setHasReligion(iJudaism, True, False, False)
+					if pCity.getPopulation() <= 9 and not pCity.isHolyCityByType(iCatholicism):
+						pCity.setHasReligion(iCatholicism, False, False, False)
+					pCity.setHasReligion(iProtestantism, True, False, False)
 		
 		if iCiv < iNumPlayers:
 			self.setReformationDecision(iCiv, 1)
@@ -584,12 +584,12 @@ class Religions:
 		cityList = PyPlayer(iCiv).getCityList()
 		for city in cityList:
 			pCity = city.GetCy()
-			if pCity.isHasReligion(iChristianity):
+			if pCity.isHasReligion(iCatholicism):
 				if self.chooseProtestantism(iCiv):
 					if pCity.getPopulation() > 6:
-						pCity.setHasReligion(iJudaism, True, False, False)
+						pCity.setHasReligion(iProtestantism, True, False, False)
 						
-			#pCity.changeBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_CHRISTIAN_MONASTERY"), 1, 2)
+			#pCity.changeBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_CATHOLIC_MONASTERY"), 1, 2)
 		
 		if iCiv < iNumPlayers:
 			self.setReformationDecision(iCiv, 2)
@@ -599,15 +599,15 @@ class Religions:
                 cityList = PyPlayer(iCiv).getCityList()
                 for city in cityList:
                         if(city.city.isHasReligion(1)):
-                                if(city.hasBuilding(iChristianTemple)):
-                                        city.city.setHasRealBuilding(iChristianTemple, False)
-                                        city.city.setHasRealBuilding(iJewishTemple, True)
-                                if(city.hasBuilding(iChristianMonastery)):
-                                        city.city.setHasRealBuilding(iChristianMonastery, False)
-                                        city.city.setHasRealBuilding(iJewishMonastery, True)
-                                if(city.hasBuilding(iChristianTemple)):
-                                        city.city.setHasRealBuilding(iChristianCathedral, False)
-                                        city.city.setHasRealBuilding(iJewishCathedral, True)
+                                if(city.hasBuilding(iCatholicTemple)):
+                                        city.city.setHasRealBuilding(iCatholicTemple, False)
+                                        city.city.setHasRealBuilding(iProtestantTemple, True)
+                                if(city.hasBuilding(iCatholicMonastery)):
+                                        city.city.setHasRealBuilding(iCatholicMonastery, False)
+                                        city.city.setHasRealBuilding(iProtestantMonastery, True)
+                                if(city.hasBuilding(iCatholicTemple)):
+                                        city.city.setHasRealBuilding(iCatholicCathedral, False)
+                                        city.city.setHasRealBuilding(iProtestantCathedral, True)
                                 if(not city.city.isHolyCityByType(1)):
                                         city.city.setHasReligion(1,False,False,False)
                                 if(city.city.getPopulation() > 7):

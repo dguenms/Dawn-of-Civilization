@@ -1435,7 +1435,7 @@
 			<iTechCostPercent>0</iTechCostPercent>
 			<iTechMinTurnsLeft>0</iTechMinTurnsLeft>
 			<PrereqTech>NONE</PrereqTech>
-			<UnitClass>UNITCLASS_ARTIST</UnitClass>
+			<UnitClass>UNITCLASS_GREAT_ARTIST</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
@@ -2517,7 +2517,7 @@
 			<iTechCostPercent>0</iTechCostPercent>
 			<iTechMinTurnsLeft>0</iTechMinTurnsLeft>
 			<PrereqTech>NONE</PrereqTech>
-			<UnitClass>UNITCLASS_PROPHET</UnitClass>
+			<UnitClass>UNITCLASS_GREAT_PROPHET</UnitClass>
 			<iNumFreeUnits>1</iNumFreeUnits>
 			<bDisbandUnit>0</bDisbandUnit>
 			<iUnitExperience>0</iUnitExperience>
@@ -17909,7 +17909,7 @@
 			<BuildingExtraCommerces/>
 			<BuildingExtraHappies>
 				<BuildingExtraHappy>
-					<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
 					<iHappy>1</iHappy>
 				</BuildingExtraHappy>
 			</BuildingExtraHappies>
@@ -17999,7 +17999,7 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>4</iExtraCommerce>
 				</BuildingExtraCommerce>
@@ -18939,7 +18939,7 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>
@@ -26859,12 +26859,12 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClass> <!--I changed the event to feature the Temple of Solomon instead of a Jewish Monastery--> 
+					<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>8</iExtraCommerce>
 				</BuildingExtraCommerce>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClass>
 					<CommerceType>COMMERCE_GOLD</CommerceType>
 					<iExtraCommerce>5</iExtraCommerce>
 				</BuildingExtraCommerce>
@@ -27200,7 +27200,7 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>
@@ -27287,12 +27287,12 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 					<CommerceType>COMMERCE_RESEARCH</CommerceType>
 					<iExtraCommerce>4</iExtraCommerce>
 				</BuildingExtraCommerce>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 					<CommerceType>COMMERCE_CULTURE</CommerceType>
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>
@@ -28211,7 +28211,22 @@
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_JEWISH_CATHEDRAL</BuildingClass>
+					<BuildingClass>BUILDINGCLASS_PROTESTANT_CATHEDRAL</BuildingClass>
+					<CommerceType>COMMERCE_GOLD</CommerceType>
+					<iExtraCommerce>2</iExtraCommerce>
+				</BuildingExtraCommerce>
+				<BuildingExtraCommerce>
+					<BuildingClass>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClass>
+					<CommerceType>COMMERCE_GOLD</CommerceType>
+					<iExtraCommerce>2</iExtraCommerce>
+				</BuildingExtraCommerce>
+				<BuildingExtraCommerce>
+					<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
+					<CommerceType>COMMERCE_GOLD</CommerceType>
+					<iExtraCommerce>2</iExtraCommerce>
+				</BuildingExtraCommerce>
+				<BuildingExtraCommerce>
+					<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
 					<CommerceType>COMMERCE_GOLD</CommerceType>
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>
@@ -28231,22 +28246,7 @@
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>
 				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_CHRISTIAN_CATHEDRAL</BuildingClass>
-					<CommerceType>COMMERCE_GOLD</CommerceType>
-					<iExtraCommerce>2</iExtraCommerce>
-				</BuildingExtraCommerce>
-				<BuildingExtraCommerce>
 					<BuildingClass>BUILDINGCLASS_TAOIST_CATHEDRAL</BuildingClass>
-					<CommerceType>COMMERCE_GOLD</CommerceType>
-					<iExtraCommerce>2</iExtraCommerce>
-				</BuildingExtraCommerce>
-				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
-					<CommerceType>COMMERCE_GOLD</CommerceType>
-					<iExtraCommerce>2</iExtraCommerce>
-				</BuildingExtraCommerce>
-				<BuildingExtraCommerce>
-					<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 					<CommerceType>COMMERCE_GOLD</CommerceType>
 					<iExtraCommerce>2</iExtraCommerce>
 				</BuildingExtraCommerce>

@@ -3208,7 +3208,7 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	else
 	{
 	//Rhye - start (some units ignore desert cost)
-		if (((pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_EGYPT_WARCHARIOT")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_PERSIA_IMMORTAL")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_CARTHAGE_NUMIDIAN_CAVALRY")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_ARABIA_CAMELARCHER")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_MOORISH_CAMEL_GUNNER"))) && (getTerrainType() == 2)) //war chariot, immortal, numidian cavalry and camel archer in desert
+		if (((pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_EGYPTIAN_WARCHARIOT")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_PERSIAN_IMMORTAL")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_NUMIDIAN_NUMIDIAN_CAVALRY")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_ARABIAN_CAMEL_ARCHER")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_MOORISH_CAMEL_GUNNER"))) && (getTerrainType() == 2)) //war chariot, immortal, numidian cavalry, camel archer and camel gunner in desert
 		{
 			iRegularCost = 1;
 		}
@@ -6723,7 +6723,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			{
 				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
 					getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST") ||
-					getFeatureType() == GC.getInfoTypeForString("FEATURE_MUD"))
+					getFeatureType() == GC.getInfoTypeForString("FEATURE_MARSH"))
 				{
 					if ((int)eYield == 0 || (int)eYield == 1)
 					{
