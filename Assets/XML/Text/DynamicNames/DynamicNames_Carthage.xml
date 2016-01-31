@@ -57,9 +57,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_ADJECTIVE</Tag>
 		<English>
-			<Text>Carthaginian:Carthaginians</Text>
-			<Gender>Male:Male</Gender>
-			<Plural>0:1</Plural>
+			<Text>Carthaginian</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
 		</English>
 		<French>
 			<Text>carthaginois:carthaginoise:carthaginois:carthaginoises</Text>
