@@ -15161,7 +15161,7 @@
 				<UniqueName>Kimon</UniqueName> <!-- 5th BC -->
 				<UniqueName>Isokrates</UniqueName> <!-- 4th BC -->
 				<UniqueName>Aresteides</UniqueName> <!-- 4th BC -->
-				<UniqueName>Eleftherios Venizelos</UniqueName> <!-- 19th BC -->
+				<UniqueName>Eleftherios Venizelos</UniqueName> <!-- 19th AD -->
 			</UniqueNames>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Domain>DOMAIN_LAND</Domain>
