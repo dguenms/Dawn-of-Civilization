@@ -2810,6 +2810,10 @@ class RiseAndFall:
                                 self.unitsBetrayal(iCiv, iHuman, tTL, tBR, result, utils.getOrElse(Areas.dBirthAreaExceptions, iCiv, []))
 
         def initBetrayal( self ):
+		iFlipPlayer = self.getNewCivFlip()
+		if not gc.getPlayer(iFlipPlayer).isAlive() or not gc.getTeam(iFlipPlayer).isAtWar(utils.getHumanID()):
+			return
+	
                 iHuman = utils.getHumanID()
                 turnsLeft = self.getBetrayalTurns()
                 dummy, plotList = utils.squareSearch( self.getTempTopLeft(), self.getTempBottomRight(), utils.outerInvasion, [] )
