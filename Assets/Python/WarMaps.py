@@ -1,4 +1,5 @@
 from Consts import *
+import Areas
 
 def getMapValue(iCiv, x, y, bChanged = False):
 	if bChanged and iCiv in dChangedWarMaps:
@@ -12,7 +13,13 @@ def getMapValue(iCiv, x, y, bChanged = False):
 def applyMap(iPlayer, iCiv, bChanged = False):
 	for x in range(iWorldX):
 		for y in range(iWorldY):
-			gc.getMap().plot(x, y).setWarValue(iPlayer, getMapValue(iCiv, x, y, bChanged))
+			plot = gc.getMap().plot(x, y)
+			if plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions):
+				plot.setWarValue(iPlayer, 0)
+			elif plot.isCore(iPlayer):
+				plot.setWarValue(iPlayer, max(8, getMapValue(iCiv, x, y, bChanged)))
+			else:
+				plot.setWarValue(iPlayer, getMapValue(iCiv, x, y, bChanged))
 			
 def updateMap(iPlayer, bChanged = False):
 	applyMap(iPlayer, gc.getPlayer(iPlayer).getCivilizationType(), bChanged)

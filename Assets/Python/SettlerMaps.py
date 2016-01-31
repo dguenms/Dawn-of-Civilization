@@ -1,4 +1,5 @@
 from Consts import *
+import Areas
 
 def getMapValue(iCiv, x, y, bChanged = False):
 	if bChanged and iCiv in dChangedSettlerMaps:
@@ -12,7 +13,11 @@ def getMapValue(iCiv, x, y, bChanged = False):
 def applyMap(iPlayer, iCiv, bChanged = False):
 	for x in range(iWorldX):
 		for y in range(iWorldY):
-			gc.getMap().plot(x, y).setSettlerValue(iPlayer, getMapValue(iCiv, x, y, bChanged))
+			plot = gc.getMap().plot(x, y)
+			if plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions):
+				plot.setSettlerValue(iPlayer, 20)
+			else:
+				plot.setSettlerValue(iPlayer, getMapValue(iCiv, x, y, bChanged))
 			
 def updateMap(iPlayer, bChanged = False):
 	applyMap(iPlayer, gc.getPlayer(iPlayer).getCivilizationType(), bChanged)
