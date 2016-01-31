@@ -17,7 +17,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Palace.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,5</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_GREAT_PALACE</Type>
+			<Type>ART_DEF_BUILDING_FORBIDDEN_PALACE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.1</fScale>
@@ -107,7 +107,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Barracks.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,1</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MONGOL_GER</Type>
+			<Type>ART_DEF_BUILDING_MONGOLIAN_GER</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.88</fScale>
@@ -157,7 +157,7 @@
 			<Button>Art/Structures/Buildings/Smokehouse/Button_Smokehouse.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_INCAN_TERRACE</Type>
+			<Type>ART_DEF_BUILDING_INCAN_TAMBO</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.2</fScale>
@@ -258,7 +258,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Harbor.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CUSTOM_HOUSE</Type>
+			<Type>ART_DEF_BUILDING_CUSTOMS_HOUSE</Type>
 			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.16</fScale>
@@ -308,7 +308,7 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,16</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MALI_MINT</Type>
+			<Type>ART_DEF_BUILDING_MANDE_MINT</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>1.32</fScale>
@@ -348,7 +348,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/CoalPlant.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,15</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_JAPANESE_SHALE_PLANT</Type>
+			<Type>ART_DEF_BUILDING_JAPANESE_ZAIBATSU</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.7</fScale>
@@ -528,7 +528,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Colosseum.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,7</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_COLOSSEUM</Type>
+			<Type>ART_DEF_BUILDING_AMPHITHEATRE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.80</fScale>
@@ -548,7 +548,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Colosseum.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,1</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MAYA_BALL_COURT</Type>
+			<Type>ART_DEF_BUILDING_MAYAN_BALL_COURT</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.9</fScale>
@@ -558,7 +558,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Colosseum.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,6,7</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_BABYLON_GARDEN</Type>
+			<Type>ART_DEF_BUILDING_BABYLONIAN_GARDEN</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>1.3</fScale>
@@ -618,7 +618,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Market.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_PORTUGAL_FEITORIA</Type>
+			<Type>ART_DEF_BUILDING_PORTUGUESE_FEITORIA</Type>
 			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -658,7 +658,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Bank.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,1</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ENGLISH_STOCK_EXCHANGE</Type>
+			<Type>ART_DEF_BUILDING_ENGLISH_ROYAL_EXCHANGE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
@@ -688,7 +688,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Courthouse.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,2</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CANADA_RCMP</Type>
+			<Type>ART_DEF_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.8</fScale>
@@ -718,7 +718,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Courthouse.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,7</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SUMERIAN_ZIGGURAT</Type>
+			<Type>ART_DEF_BUILDING_BABYLONIAN_ZIGGURAT</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -748,7 +748,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/ScotlandYard.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_NATIONAL_SECURITY</Type>
+			<Type>ART_DEF_BUILDING_SECURITY_BUREAU</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>0.3</fScale>
@@ -758,7 +758,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/ScotlandYard.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,4,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_INDIAN_MAUSOLEUM</Type>
+			<Type>ART_DEF_BUILDING_MUGHAL_MAUSOLEUM</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.65</fScale>
@@ -778,7 +778,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Wall.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_NETHERLANDS_DIKE</Type>
+			<Type>ART_DEF_BUILDING_DUTCH_DIKE</Type>
 			<LSystem>LSYSTEM_COAST</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -788,7 +788,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Wall.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_JEWISH_TEMPLE</Type>
+			<Type>ART_DEF_BUILDING_PROTESTANT_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>2.0</fScale>
@@ -798,7 +798,7 @@
 			<Button>Art/Interface/Buttons/Buildings/ProtestantTemple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_JEWISH_CATHEDRAL</Type>
+			<Type>ART_DEF_BUILDING_PROTESTANT_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.49</fScale>
@@ -808,7 +808,7 @@
 			<Button>Art/Interface/Buttons/Buildings/ProtestantCathedral.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_JEWISH_MONASTERY</Type>
+			<Type>ART_DEF_BUILDING_PROTESTANT_MONASTERY</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>2.63</fScale>
@@ -818,7 +818,7 @@
 			<Button>Art/Interface/Buttons/Buildings/ProtestantMonastery.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_JEWISH_SHRINE</Type>
+			<Type>ART_DEF_BUILDING_PROTESTANT_SHRINE</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>3.0</fScale>
@@ -828,7 +828,7 @@
 			<Button>Art/Interface/Buttons/Buildings/Wittenberg.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CHRISTIAN_TEMPLE</Type>
+			<Type>ART_DEF_BUILDING_CATHOLIC_TEMPLE</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>2.0</fScale>
@@ -838,7 +838,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Temple_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,13</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CHRISTIAN_CATHEDRAL</Type>
+			<Type>ART_DEF_BUILDING_CATHOLIC_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.49</fScale>
@@ -848,7 +848,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Cathedral_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,13</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CHRISTIAN_MONASTERY</Type>
+			<Type>ART_DEF_BUILDING_CATHOLIC_MONASTERY</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>2.63</fScale>
@@ -858,7 +858,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Monastery_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,13</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CHRISTIAN_SHRINE</Type>
+			<Type>ART_DEF_BUILDING_CATHOLIC_SHRINE</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.31</fScale>
@@ -1108,7 +1108,7 @@
 			<Button>Art/Interface/Buttons/Buildings/Shrine_Zoroastrian.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_FLAVIAN_AMPHITHEATRE</Type>
+			<Type>ART_DEF_BUILDING_COLOSSEUM</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
@@ -1118,7 +1118,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Flavian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_NATIONAL_EPIC</Type>
+			<Type>ART_DEF_BUILDING_TRIUMPHAL_ARCH</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.76</fScale>
@@ -1128,7 +1128,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/NationalEpic.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_GLOBE_THEATRE</Type>
+			<Type>ART_DEF_BUILDING_OPERA_HOUSE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
@@ -1138,7 +1138,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/GlobeTheatre.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,9</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_HERMITAGE</Type>
+			<Type>ART_DEF_BUILDING_NATIONAL_GALLERY</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.25</fScale>
@@ -1158,7 +1158,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/OxfordUniversity.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,5</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_WALL_STREET</Type>
+			<Type>ART_DEF_BUILDING_STOCK_EXCHANGE</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
@@ -1168,7 +1168,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/WallStreet.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,11</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_IRON_WORKS</Type>
+			<Type>ART_DEF_BUILDING_IRONWORKS</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.93</fScale>
@@ -1208,7 +1208,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/RedCross.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,9</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SCOTLAND_YARD</Type>
+			<Type>ART_DEF_BUILDING_INTERPOL</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>1.65</fScale>
@@ -1218,7 +1218,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/ScotlandYard.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,11</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_PYRAMID</Type>
+			<Type>ART_DEF_BUILDING_PYRAMIDS</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>3.03</fScale>
@@ -1228,7 +1228,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Pyramid.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,9</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_STONEHENGE</Type>
+			<Type>ART_DEF_BUILDING_GREAT_SPHINX</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.75</fScale>
@@ -1258,7 +1258,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/GreatLighthouse.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,15</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_HANGING_GARDEN</Type>
+			<Type>ART_DEF_BUILDING_HANGING_GARDENS</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>1.66</fScale>
@@ -1298,7 +1298,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Parthenon.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,5</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ANGKOR_WAT</Type>
+			<Type>ART_DEF_BUILDING_WAT_PREAH_PISNULOK</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.25</fScale>
@@ -1308,7 +1308,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/AngkorWat.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,1</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_HAGIA_SOPHIA</Type>
+			<Type>ART_DEF_BUILDING_ORTHODOX_SHRINE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
@@ -1318,7 +1318,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/HagiaSophia.dds,Art/Interface/Buttons/mem_buildings_atlas.dds,5,1</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CHICHEN_ITZA</Type>
+			<Type>ART_DEF_BUILDING_TEMPLE_OF_KUKULKAN</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.33</fScale>
@@ -1368,7 +1368,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/TajMahal.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,7</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_KREMLIN</Type>
+			<Type>ART_DEF_BUILDING_ST_BASILS_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.21</fScale>
@@ -1398,7 +1398,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/StatueOfLiberty.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,10</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_BROADWAY</Type>
+			<Type>ART_DEF_BUILDING_WEMBLEY</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.95</fScale>
@@ -1408,7 +1408,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Broadway.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ROCKNROLL</Type>
+			<Type>ART_DEF_BUILDING_GRACELAND</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>1.53</fScale>
@@ -1428,7 +1428,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Hollywood.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_GREAT_DAM</Type>
+			<Type>ART_DEF_BUILDING_THREE_GORGES_DAM</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>0.98</fScale>
@@ -1468,7 +1468,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/SpaceElevator.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,9</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ARTEMIS</Type>
+			<Type>ART_DEF_BUILDING_TEMPLE_OF_ARTEMIS</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>1.7</fScale>
@@ -1488,7 +1488,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/SpaceElevator.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,2,5</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SANKORE</Type>
+			<Type>ART_DEF_BUILDING_UNIVERSITY_OF_SANKORE</Type>
 			<LSystem>LSYSTEM_2x3</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>2.53</fScale>
@@ -1508,7 +1508,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/WestPoint.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,1</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MONUMENT</Type>
+			<Type>ART_DEF_BUILDING_PAGAN_TEMPLE</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -1528,7 +1528,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Obelisk.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_NATIVE_AMERICA_TOTEM</Type>
+			<Type>ART_DEF_BUILDING_NATIVE_AMERICAN_TOTEM_POLE</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.6</fScale>
@@ -2168,7 +2168,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Cathedral_Confuscianist.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,12</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_TEMPLE_OF_SALOMON</Type>
+			<Type>ART_DEF_BUILDING_TEMPLE_OF_SOLOMON</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -2198,7 +2198,7 @@
 			<Button>Art/Interface/Buttons/Buildings/Byzantium_Walls.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MEZQUITA</Type>
+			<Type>ART_DEF_BUILDING_LA_MEZQUITA</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -2208,7 +2208,7 @@
 			<Button>Art/Structures/Wonders/La_Mezquita/mezquita_BTN.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_DOME_ROCK</Type>
+			<Type>ART_DEF_BUILDING_DOME_OF_THE_ROCK</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -2258,7 +2258,7 @@
 			<Button>Art/Structures/Wonders/Terracotta/TerraCotta.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SAN_MARCO</Type>
+			<Type>ART_DEF_BUILDING_SAN_MARCO_BASILICA</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.45</fScale>
@@ -2268,7 +2268,7 @@
 			<Button>Art/Structures/Wonders/San_Marco/BTN_SanMarco.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_WESTMINSTER</Type>
+			<Type>ART_DEF_BUILDING_WESTMINSTER_PALACE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.2</fScale>
@@ -2278,7 +2278,7 @@
 			<Button>Art/Interface/Buttons/Wonders/BigBen.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CERN</Type>
+			<Type>ART_DEF_BUILDING_CERN_RESEARCH_COMPLEX</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -2358,7 +2358,7 @@
 			<Button>Art/Structures/Buildings/Candi/Candi_btn.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CHINESE_EXAMINATION_HALL</Type>
+			<Type>ART_DEF_BUILDING_CHINESE_TAIXUE</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
@@ -2408,7 +2408,7 @@
 			<Button>Art/Structures/Wonders/RedFort/RedFort.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CARAVANSERAI</Type>
+			<Type>ART_DEF_BUILDING_IRANIAN_CARAVANSERAI</Type>
 			<LSystem>LSYSTEM_3x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.1</fScale>
@@ -2458,7 +2458,7 @@
 			<Button>Art/Structures/Wonders/Trafalgar_Square/trafalgar_square_button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_EMPIRE_STATE</Type>
+			<Type>ART_DEF_BUILDING_EMPIRE_STATE_BUILDING</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.00</fScale>
@@ -2488,7 +2488,7 @@
 			<Button>Art/Interface/Buttons/Wonders/grand_canal.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_KGB</Type>
+			<Type>ART_DEF_BUILDING_LUBYANKA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.25</fScale>
@@ -2538,7 +2538,7 @@
 			<Button>Art/Structures/Buildings/Sejmik/Button_Sejmik.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_KONGO_MBWADI</Type>
+			<Type>ART_DEF_BUILDING_CONGOLESE_MBWADI</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.0</fScale>
@@ -2558,7 +2558,7 @@
 			<Button>Art/Structures/Buildings/Bath/Button_Bath.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MEXICO_CHARREADA</Type>
+			<Type>ART_DEF_BUILDING_MEXICAN_CHARREADA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.85</fScale>
@@ -2608,7 +2608,7 @@
 			<Button>Art/Structures/Buildings/RefrigerationPlant/RefrigerationPlant.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_POLYNESIAN_MARAE</Type>
+			<Type>ART_DEF_BUILDING_POLYNESIAN_MALAE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>5.0</fScale>

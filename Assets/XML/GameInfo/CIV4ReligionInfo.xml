@@ -7,12 +7,12 @@
 <Civ4ReligionInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
 	<ReligionInfos>
 		<ReligionInfo>
-			<Type>RELIGION_JUDAISM</Type>
+			<Type>RELIGION_PROTESTANTISM</Type>
 			<Description>TXT_KEY_RELIGION_PROTESTANTISM</Description>
 			<Adjective>TXT_KEY_RELIGION_PROTESTANTISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_PROTESTANTISM_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
-			<FreeUnitClass>UNITCLASS_JEWISH_MISSIONARY</FreeUnitClass>
+			<FreeUnitClass>UNITCLASS_PROTESTANT_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
 			<iSpreadFactor>100</iSpreadFactor>
 			<GlobalReligionCommerces>
@@ -38,12 +38,12 @@
 			<Sound>AS2D_BUILD_CHRISTIAN</Sound>
 		</ReligionInfo>
 		<ReligionInfo>
-			<Type>RELIGION_CHRISTIANITY</Type>
+			<Type>RELIGION_CATHOLICISM</Type>
 			<Description>TXT_KEY_RELIGION_CATHOLICISM</Description>
 			<Adjective>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_CATHOLICISM_PEDIA</Civilopedia>
 			<TechPrereq>TECH_THEOLOGY</TechPrereq>
-			<FreeUnitClass>UNITCLASS_CHRISTIAN_MISSIONARY</FreeUnitClass>
+			<FreeUnitClass>UNITCLASS_CATHOLIC_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>100</iSpreadFactor>
 			<GlobalReligionCommerces>

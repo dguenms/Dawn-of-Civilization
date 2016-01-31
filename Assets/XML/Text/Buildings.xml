@@ -6,7 +6,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Academy[COLOR_REVERT] increases a city's scientific research as well as providing a small amount of culture.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ADMIN_CENTER</Tag>
+		<Tag>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER</Tag>
 		<English>Administrative Center</English>
 		<German>Verwaltungszentrum</German>
 	</TEXT>
@@ -19,7 +19,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Mall[COLOR_REVERT], the American replacement for the [COLOR_BUILDING_TEXT]Supermarket[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Electricity[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Refrigeration[COLOR_REVERT] technology, increases the city's commerce output, allows you to hire a [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialist and increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Hit Football Events[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Hit Singles[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Hit Movies[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ADMIN_CENTER_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_ADMINISTRATIVE_CENTER_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] reduces the maintenance costs in nearby cities. It increases the chances of creating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -65,6 +65,38 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BANK_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Banks[COLOR_REVERT] greatly increase a city's production of wealth. [COLOR_BUILDING_TEXT]Banks[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Stock Exchange[COLOR_REVERT] national wonder.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INCAN_TERRACE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Terrace[COLOR_REVERT], the Incan replacement for the [COLOR_BUILDING_TEXT]Granary[COLOR_REVERT], provides culture.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIVE_AMERICAN_TOTEM_POLE</Tag>
+		<English>Totem Pole</English>
+		<French>
+			<Text>Totem:Totems</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Totempfahl</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Totem:Totem</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>T&#243;tem:T&#243;tems</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIVE_AMERICAN_TOTEM_POLE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Totem Pole[COLOR_REVERT], the Native American replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], grants archery units three bonus experience.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BARRACKS_STRATEGY</Tag>
@@ -131,7 +163,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Stupa[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CANADA_RCMP_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Royal Mounted Police[COLOR_REVERT], the Canadian replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], provides extra happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -139,7 +171,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Hippodrome[COLOR_REVERT], the Byzantine replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], increases happiness, increases the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], doubles the happiness output from using the culture slider and loses one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CANADA_RCMP</Tag>
+		<Tag>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Tag>
 		<English>Royal Mounted Police</English>
 	</TEXT>
 	<TEXT>
@@ -172,11 +204,11 @@
 		<English>[COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] increase your cities' defense against pre-gunpowder units, increase espionage output, generate a small amount of culture and also provide one extra trade route.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL</Tag>
+		<Tag>TXT_KEY_BUILDING_CHINESE_TAIXUE</Tag>
 		<English>Taixue</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CHINESE_EXAMINATION_HALL_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_CHINESE_TAIXUE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Taixue[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides extra culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
@@ -235,7 +267,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Hacienda[COLOR_REVERT], the Colombian replacement for the [COLOR_BUILDING_TEXT]Grocer[COLOR_REVERT], increases the city's health with access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT] and also increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
+		<Tag>TXT_KEY_BUILDING_AMPHITHEATRE</Tag>
 		<English>Amphitheatre</English>
 		<French>
 			<Text>Amphith&#233;&#226;tre</Text>
@@ -259,7 +291,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_COLOSSEUM_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_AMPHITHEATRE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Amphitheatres[COLOR_REVERT] increase a city's happiness and its happiness output from using the culture slider.</English>
 	</TEXT>
 	<TEXT>
@@ -284,7 +316,31 @@
 		<English>[COLOR_BUILDING_TEXT]Courthouses[COLOR_REVERT] lower city maintenance costs, provide you with a bonus to espionage and are required to build [COLOR_BUILDING_TEXT]Administrative Centers[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CUSTOM_HOUSE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_CUSTOMS_HOUSE</Tag>
+		<English>Customs House</English>
+		<French>
+			<Text>Poste de douane:Postes de douane</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Zollamt</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Dogana:Dogane</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Aduana:Aduanas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CUSTOMS_HOUSE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Customs Houses[COLOR_REVERT] increase the commerce generated by a city's Foreign Trade Routes.</English>
 	</TEXT>
 	<TEXT>
@@ -368,7 +424,7 @@
 		<Spanish>Embajada inglesa</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE</Tag>
+		<Tag>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE</Tag>
 		<English>Royal Exchange</English>
 		<French>Bourse Royale</French>
 		<German>K&#246;nigliche B&#246;rse</German>
@@ -376,7 +432,7 @@
 		<Spanish>Bolsa Real</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ENGLISH_STOCK_EXCHANGE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_ENGLISH_ROYAL_EXCHANGE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Royal Exchange[COLOR_REVERT], the English replacement for a [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], increases a city's production of wealth more.</English>
 	</TEXT>
 	<TEXT>
@@ -412,11 +468,11 @@
 		<English>[COLOR_BUILDING_TEXT]Intelligence Agencies[COLOR_REVERT] increase the espionage points created by the city and grant experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in their city.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_IRAN_CARAVANSERAI</Tag>
+		<Tag>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI</Tag>
 		<English>Caravanserai</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_IRAN_CARAVANSERAI_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_IRANIAN_CARAVANSERAI_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Caravanserai[COLOR_REVERT], the Iranian replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], provides an extra trade route, increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -448,7 +504,15 @@
 		<Spanish>Embajada alemana</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MONGOL_GER_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_MONGOLIAN_GER</Tag>
+		<English>Ger</English>
+		<French>Yourte</French>
+		<German>Jurte</German>
+		<Italian>Ger</Italian>
+		<Spanish>Ger:Gers</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MONGOLIAN_GER_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ger[COLOR_REVERT], the Mongol replacement for the [COLOR_BUILDING_TEXT]Stable[COLOR_REVERT], grant even more experience points to [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] built in its city. It also increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Cows[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Sheep[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -545,7 +609,15 @@
 		<English>The [COLOR_BUILDING_TEXT]Edict[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], lowers city maintenance costs and never goes obsolete.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_INDIAN_MAUSOLEUM_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM</Tag>
+		<English>Mausoleum</English>
+		<French>Mausol&#233;e</French>
+		<German>Mausoleum</German>
+		<Italian>Mausoleo</Italian>
+		<Spanish>Mausoleo:Mausoleos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Mausoleum[COLOR_REVERT], the Mughal replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Patronage[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Constitution[COLOR_REVERT] technology, provides a free [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] and allows you to hire one extra [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
@@ -585,38 +657,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Art Studio[COLOR_REVERT], the Italian replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a big culture boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_IRON_WORKS</Tag>
-		<English>Ironworks</English>
-		<French>
-			<Text>Usine sid&#233;rurgique</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Eisenbearbeitung</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Ferriera</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>la Metalurgia:las Metalurgias</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_IRON_WORKS_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ironworks[COLOR_REVERT] increases a city's production if that city has access to coal and/or iron, but also adds unhealthiness. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<French>L'[COLOR_BUILDING_TEXT]usine sid&#233;rurgique[COLOR_REVERT] augmente la production d'une ville si celle-ci dispose de charbon et/ou de fer, mais aux d&#233;pens de la sant&#233; des habitants. Elle augmente les chances d'apparition d'un [COLOR_UNIT_TEXT]ing&#233;nieur illustre[COLOR_REVERT].</French>
-		<German>Die [COLOR_BUILDING_TEXT]Eisenverarbeitung[COLOR_REVERT] steigert in St&#228;dten mit Zugriff auf Kohle und/oder Eisen die Produktion, wirkt sich aber negativ auf die Gesundheit der Bev&#246;lkerung aus. Dar&#252;ber hinaus erh&#246;ht sie die Chancen der Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
-		<Italian>La [COLOR_BUILDING_TEXT]Ferrieria[COLOR_REVERT] aumenta la produzione della citt&#224; se ha accesso a carbone e/o ferro, ma genera infelicit&#224;. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Ingegnere[COLOR_REVERT].</Italian>
-		<Spanish>La [COLOR_BUILDING_TEXT]Metalurgia[COLOR_REVERT] aumenta la producci&#243;n de la ciudad si &#233;sta tiene acceso a carb&#243;n o hierro, pero tambi&#233;n aumenta su insalubridad. Incrementa tambi&#233;n las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran ingeniero[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_CATHEDRAL_STRATEGY</Tag>
@@ -671,7 +711,7 @@
 		<Spanish>Embajada j&#233;mer</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_KONGO_MBWADI</Tag>
+		<Tag>TXT_KEY_BUILDING_CONGOLESE_MBWADI</Tag>
 		<English>Mbwadi</English>
 	</TEXT>
 	<TEXT>
@@ -679,7 +719,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Baray[COLOR_REVERT], the Khmer replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides one extra food.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_KONGO_MBWADI_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_CONGOLESE_MBWADI_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Mbwadi[COLOR_REVERT], the Congolese replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases the improved tile yield of [COLOR_HIGHLIGHT_TEXT]Cotton[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -695,7 +735,15 @@
 		<English>[COLOR_BUILDING_TEXT]Markets[COLOR_REVERT] increase a city's wealth. They also increase the city's happiness with access to [COLOR_HIGHLIGHT_TEXT]Fur[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Silk[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Whales[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MALI_MINT_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_MANDE_MINT</Tag>
+		<English>Mint</English>
+		<French>H&#244;tel de la Monnaie</French>
+		<German>M&#252;nzanstalt</German>
+		<Italian>Zecca</Italian>
+		<Spanish>Ceca:Cecas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MANDE_MINT_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Mint[COLOR_REVERT], the Mandinka replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], provides a small increase in wealth.</English>
 	</TEXT>
 	<TEXT>
@@ -743,15 +791,39 @@
 		<Spanish>Embajada maya</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MAYA_BALL_COURT_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_MAYAN_BALL_COURT</Tag>
+		<English>Ball Court</English>
+		<French>
+			<Text>Terrain de jeu de balle:Terrains de jeu de balle</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Ballplatz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Campo da palla:Campi da palla</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Campo del juego de pelota:Campos del juego de pelota</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAYAN_BALL_COURT_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ball Court[COLOR_REVERT], the Mayan replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], provides one extra happiness, requires the [COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Construction[COLOR_REVERT] technology and grants experience points to melee and archery units built in its city.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA</Tag>
+		<Tag>TXT_KEY_BUILDING_MEXICAN_CHARREADA</Tag>
 		<English>Charreada Arena</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MEXICO_CHARREADA_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_MEXICAN_CHARREADA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -780,7 +852,31 @@
 		<English>The [COLOR_BUILDING_TEXT]Noria[COLOR_REVERT], the Moorish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], provides a production bonus and is cheaper.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_NETHERLANDS_DIKE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_DUTCH_DIKE</Tag>
+		<English>Dike</English>
+		<French>
+			<Text>Digue:Digues</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Deich</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Diga:Dighe</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Dijk:Dijken</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DUTCH_DIKE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Dike[COLOR_REVERT], the Dutch replacement for the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Replaceable Parts[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Steam Power[COLOR_REVERT] technology and provides a production bonus from all water tiles worked by a city.</English>
 	</TEXT>
 	<TEXT>
@@ -874,8 +970,32 @@
 		<English>Polish Embassy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PORTUGAL_FEITORIA_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_PORTUGUESE_FEITORIA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Feitoria[COLOR_REVERT], the Portuguese replacement for the [COLOR_BUILDING_TEXT]Customs House[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Banking[COLOR_REVERT] and [COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] technologies, doesn't require the [COLOR_TECH_TEXT]Economics[COLOR_REVERT] technology and improves the commerce output of water plots.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PORTUGUESE_FEITORIA</Tag>
+		<English>Feitoria</English>
+		<French>
+			<Text>Feitoria:Feitorias</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Feitoria</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Feitoria:Feitoria</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Feitoria:Feitorias</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_POLISH_SEJMIK</Tag>
@@ -886,11 +1006,11 @@
 		<English>The [COLOR_BUILDING_TEXT]Sejmik[COLOR_REVERT], the Polish replacement for the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT], provides a small cash and happiness bonus.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MARAE</Tag>
+		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MALAE</Tag>
 		<English>Mala'e</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MARAE_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_POLYNESIAN_MALAE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Mala'e[COLOR_REVERT], the Polynesian replacement for the [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Priesthood[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Construction[COLOR_REVERT] technology, is cheaper, provides culture and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] and one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
 	</TEXT>
 	<TEXT>
@@ -1025,7 +1145,31 @@
 		<English>The [COLOR_BUILDING_TEXT]Forum[COLOR_REVERT], the Roman replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], increases a city's [COLOR_HIGHLIGHT_TEXT]Great Person[COLOR_REVERT] birth rate and allows you to hire two [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] specialists.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SUMERIAN_ZIGGURAT_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT</Tag>
+		<English>Ziggurat</English>
+		<French>
+			<Text>Ziggourat:Ziggourats</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Zikkurat</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Ziggurat:Ziggurat</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Zigurat:Zigurats</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ziggurat[COLOR_REVERT], the Babylonian replacement for the [COLOR_BUILDING_TEXT]Pagan Temple[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Polytheism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Mysticism[COLOR_REVERT] technology, provides extra culture and gives a small science and culture boost.</English>
 	</TEXT>
 	<TEXT>
@@ -1044,6 +1188,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAMIL_SANGAM_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Sangam[COLOR_REVERT], the Tamil replacement the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides an extra cultural boost and allows you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZULU_IKHANDA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Ikhanda[COLOR_REVERT], the Zulu replacement for the [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT], are more expensive and lower city maintenance costs.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CHINESE_PAVILLION_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Pavillion[COLOR_REVERT], the Chinese replacement for the [COLOR_BUILDING_TEXT]Theatre[COLOR_REVERT], provides an extra cultural boost</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_CATHEDRAL_STRATEGY</Tag>

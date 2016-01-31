@@ -454,14 +454,14 @@ dStartingLeaders = [
 	iEgypt : iRamesses,
 	iIndia : iAsoka,
 	iChina : iQinShiHuang,
-	iBabylonia : iGilgamesh,
+	iBabylonia : iSargon,
 	iHarappa : iVatavelli,
 	iGreece : iPericles,
 	iPersia : iCyrus,
 	iCarthage : iHiram,
 	iPolynesia : iAhoeitu,
 	iRome : iJuliusCaesar,
-	iJapan : iJimmu,
+	iJapan : iKammu,
 	iTamils : iRajendra,
 	iEthiopia : iZaraYaqob,
 	iKorea : iWangKon,
@@ -493,7 +493,7 @@ dStartingLeaders = [
 	iGermany : iFrederick,
 	iAmerica : iWashington,
 	iArgentina : iSanMartin,
-	iBrazil : iDomPedro,
+	iBrazil : iPedro,
 	iCanada : iTrudeau,
 },
 # 600 AD
@@ -505,7 +505,7 @@ dStartingLeaders = [
 	iChina : iHongwu,
 	iIndia : iShahuji,
 	iPersia : iAbbas,
-	iJapan : iTokugawa,
+	iJapan : iOdaNobunaga,
 	iVikings : iGustav,
 	iSpain : iPhilip,
 	iFrance : iLouis,
@@ -1902,7 +1902,7 @@ def leader(iPlayer):
 		if tPlayer.isHasTech(iNationalism): return iBismarck
 		
 	elif iPlayer == iAmerica:
-		if iEra >= iModern: return iFranklinRoosevelt
+		if iEra >= iModern: return iRoosevelt
 		
 		if iGameTurn >= getTurnForYear(1850): return iLincoln
 		

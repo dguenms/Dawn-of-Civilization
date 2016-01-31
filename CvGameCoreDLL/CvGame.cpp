@@ -4599,7 +4599,7 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelecti
 				bOffensiveCrusade = true;
 			}
 
-			if (kPlayer.countNumBuildings((BuildingTypes)GC.getInfoTypeForString("BUILDING_CHRISTIAN_SHRINE")) > 0)
+			if (kPlayer.countNumBuildings((BuildingTypes)GC.getInfoTypeForString("BUILDING_CATHOLIC_SHRINE")) > 0)
 			{
 				bOffensiveCrusade = true;
 			}

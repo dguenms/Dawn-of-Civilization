@@ -481,40 +481,29 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 		iNumRows = 0
 		
                 #Rhye - start
-                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
-                        tList.pop(con.iNumBonuses) #marsh
+#                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
+#                        tList.pop(con.iNumBonuses) #marsh
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
-			tList.pop(con.iVatavelli)
 			tList.pop(con.iAlpArslan)
 			tList.pop(con.iChiangKaishek)
 			tList.pop(con.iCixi)
-			#tList.pop(con.iFrancis)
-			#tList.pop(con.iBarbarossa)
 			tList.pop(con.iElishat)
 			tList.pop(con.iAbuBakr)
-                        #tList.pop(con.iWangKon) #wang kon
-                        tList.pop(con.iSittingBull) #sitt.b.
-                        tList.pop(con.iNativeLeader) #shaka   
+                        tList.pop(con.iSittingBull)
+                        tList.pop(con.iNativeLeader)
                         tList.pop(con.iIndependentLeader)
-                        #tList.pop(con.iJustinian) #justinian 
-                        #tList.pop(con.iHatshepsut) #hatshepsut
-                        tList.pop(con.iGilgamesh) #gilgamesh
-                        #tList.pop(con.iCharlemagne) #charlemagne
-                        tList.pop(con.iBrennus) #brennus
-                        tList.pop(con.iBoudica) #boudica
-                        tList.pop(con.iLeaderBarbarian) #barbarian
+                        tList.pop(con.iBrennus)
+                        tList.pop(con.iBoudica)
+                        tList.pop(con.iLeaderBarbarian)
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):
-                        tList.pop(con.iCivNative) #natives
-                        tList.pop(con.iCivIndependent2) #independent2
-                        tList.pop(con.iCivIndependent) #independent
-                        tList.pop(con.iCivZulu) #zulu
-                        tList.pop(con.iCivSumeria) #sumeria                        
-                        tList.pop(con.iCivNativeAmericans) #nat.Am.
-                        #tList.pop(con.iCivKorea) #korea                  
-                        #tList.pop(con.iCivHolyRome) #hre
-			tList.pop(con.iCivHarappa)
+                        tList.pop(con.iCivNative)
+                        tList.pop(con.iCivIndependent2)
+                        tList.pop(con.iCivIndependent)
+                        tList.pop(con.iCivZulu)
+                        tList.pop(con.iCivSumeria)
+                        tList.pop(con.iCivNativeAmericans)
+                        tList.pop(con.iCivSeljuks)
                        	tList.pop(con.iCivCelt) #celts
-                        #tList.pop(con.iCivByzantium) #byzantium
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING): #all -3 because there aren't palaces in the list
                         #removed in CvPediaBuilding.py
@@ -524,17 +513,17 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
 			tList.pop(con.iAztecSlave)
 			tList.pop(con.iNativeSlave)
-			tList.pop(con.iBireme)
+			tList.pop(con.iPhoenicianBireme)
+			tList.pop(con.iMoorishCamelGunner)
+			tList.pop(con.iCelticCidainh)
 			tList.pop(con.iAmericanNavySeal)
-                        tList.pop(con.iCelticGallicWarrior) #GallicWarrior
-			tList.pop(con.iHarappanMilitia)
+			tList.pop(con.iFrenchMusketeer)
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT):
                         tList.pop(1) #water worked
                         tList.pop(0) #land worked
                         pass
                 if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_TERRAIN):
-                        tList.pop(9) #marsh
                         tList.pop(8) #hill
                         tList.pop(7) #peak
                         pass                  

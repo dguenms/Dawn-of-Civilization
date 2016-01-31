@@ -188,7 +188,7 @@ class CvRFCEventHandler:
 			
 			city.setName("Konstantinoupolis", False)
 			
-			city.setHasRealBuilding(iJewishTemple + 4*gc.getPlayer(iPlayer).getStateReligion(), True)
+			city.setHasRealBuilding(iProtestantTemple + 4*gc.getPlayer(iPlayer).getStateReligion(), True)
 			
 		if bConquest:
 
@@ -303,12 +303,12 @@ class CvRFCEventHandler:
 			city.setHasRealBuilding(iHarbor, True)
 			city.setHasRealBuilding(iForge, True)
 			
-			city.setHasRealBuilding(iJewishTemple + 4*gc.getPlayer(iOwner).getStateReligion(), True)
+			city.setHasRealBuilding(iProtestantTemple + 4*gc.getPlayer(iOwner).getStateReligion(), True)
 			
 		if iOwner == iNetherlands and (city.getX(), city.getY()) == Areas.getCapital(iNetherlands) and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
 			city.setPopulation(9)
 			
-			for iBuilding in [iLibrary, iBarracks, iGrocer, iBank, iColosseum, iTheatre, iJewishTemple+4*gc.getPlayer(iNetherlands).getStateReligion()]:
+			for iBuilding in [iLibrary, iBarracks, iGrocer, iBank, iAmphitheatre, iTheatre, iProtestantTemple+4*gc.getPlayer(iNetherlands).getStateReligion()]:
 				city.setHasRealBuilding(iBuilding, True)
 				
 			gc.getPlayer(iNetherlands).AI_updateFoundValues(False)
@@ -372,7 +372,7 @@ class CvRFCEventHandler:
 		sta.onCombatResult(pWinningUnit.getOwner(), pLosingUnit.getOwner(), iUnitPower)
 		
 		# catch slaves by defeating native and barbarian Pombos or Impis
-		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iZuluImpi, iKongoPombos]:
+		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iZuluImpi, iCongolesePombos]:
 			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
 				if gc.getPlayer(pWinningUnit.getOwner()).getCivics(2) == iCivicSlavery:
 					iRand = gc.getGame().getSorenRandNum(5, "Caught slaves?")
@@ -382,7 +382,7 @@ class CvRFCEventHandler:
 						CyInterface().addMessage(pWinningUnit.getOwner(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
 
 		# Maya Holkans give food to closest city on victory
-		if pWinningUnit.getUnitType() == iMayaHolkan:
+		if pWinningUnit.getUnitType() == iMayanHolkan:
 			iOwner = pWinningUnit.getOwner()
 			city = gc.getMap().findCity(pWinningUnit.getX(), pWinningUnit.getY(), iOwner, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 			if city: 
@@ -436,9 +436,9 @@ class CvRFCEventHandler:
 		pCity, iPlayer = argsList
 		
 		# Leoreth/Voyhkah: Empire State Building effect
-		if pCity.isHasRealBuilding(iEmpireState):
+		if pCity.isHasRealBuilding(iEmpireStateBuilding):
                         iPop = pCity.getPopulation()
-                        pCity.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE"), 0, iPop)
+                        pCity.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE_BUILDING"), 0, iPop)
 			
 	def onUnitPillage(self, argsList):
 		unit, iImprovement, iRoute, iPlayer, iGold = argsList
@@ -504,7 +504,7 @@ class CvRFCEventHandler:
 			sta.onPalaceMoved(iOwner)
 			dc.onPalaceMoved(iOwner)
 			
-			if city.isHasRealBuilding(iSummerPalace): city.setHasRealBuilding(iSummerPalace, False)
+			if city.isHasRealBuilding(iAdministrativeCenter): city.setHasRealBuilding(iAdministrativeCenter, False)
 
 		# Leoreth: Apostolic Palace moves holy city
 		if iBuildingType == iApostolicPalace:
@@ -512,18 +512,18 @@ class CvRFCEventHandler:
 			
 			# Leoreth: build shrine in 3000 BC scenario during HRE autoplay to provide a challenge
 			if utils.getScenario() == i3000BC and utils.getHumanID() == iHolyRome and gc.getGame().getGameTurnYear() < 840:
-				gc.getGame().getHolyCity().setHasRealBuilding(iChristianShrine, True)
+				gc.getGame().getHolyCity().setHasRealBuilding(iCatholicShrine, True)
 			
-			gc.getGame().setHolyCity(iChristianity, city, False)
+			gc.getGame().setHolyCity(iCatholicism, city, False)
 
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == iPorcelainTower:
 			gc.getPlayer(iOwner).updateTradeRoutes()
 
 		# Leoreth/Voyhkah: Empire State Building
-		if iBuildingType == iEmpireState:
+		if iBuildingType == iEmpireStateBuilding:
 			iPop = city.getPopulation()
-			city.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE"), 0, iPop)
+			city.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE_BUILDING"), 0, iPop)
 			
 		# Leoreth: Machu Picchu
 		if iBuildingType == iMachuPicchu:
@@ -545,9 +545,9 @@ class CvRFCEventHandler:
 			lGPList = [0, 0, 0, 0, 0, 0, 0]
 			for city in utils.getCityList(iOwner):
 				for i in range(7):
-					iSpecialistUnit = utils.getUniqueUnit(iOwner, iProphet + i)
+					iSpecialistUnit = utils.getUniqueUnit(iOwner, iGreatProphet + i)
 					lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
-			iGPType = utils.getUniqueUnit(iOwner, iProphet + utils.getHighestIndex(lGPList))
+			iGPType = utils.getUniqueUnit(iOwner, iGreatProphet + utils.getHighestIndex(lGPList))
 			utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
 			CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
 
@@ -665,11 +665,11 @@ class CvRFCEventHandler:
 		cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
 
 		#Leoreth: if state religion spreads, pagan temples are replaced with its temple. For other religions, they're simply removed.         
-		if pSpreadCity.isHasBuilding(iObelisk):
-			pSpreadCity.setHasRealBuilding(iObelisk, False)
+		if pSpreadCity.isHasBuilding(iPaganTemple):
+			pSpreadCity.setHasRealBuilding(iPaganTemple, False)
 			if gc.getPlayer(iOwner).getCivics(4) != iCivicPantheon and gc.getPlayer(iOwner).getStateReligion() == iReligion and gc.getTeam(iOwner).isHasTech(iPriesthood):
-				pSpreadCity.setHasRealBuilding(iJewishTemple+4*iReligion, True)
-                                CyInterface().addMessage(iOwner, True, iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REPLACED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()), str(gc.getBuildingInfo(iJewishTemple+4*iReligion).getText()))), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+				pSpreadCity.setHasRealBuilding(iProtestantTemple+4*iReligion, True)
+                                CyInterface().addMessage(iOwner, True, iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REPLACED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()), str(gc.getBuildingInfo(iProtestantTemple+4*iReligion).getText()))), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 			else:
 				CyInterface().addMessage(iOwner, True, iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REMOVED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()))), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 

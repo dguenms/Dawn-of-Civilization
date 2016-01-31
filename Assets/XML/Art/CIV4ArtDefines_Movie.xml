@@ -23,15 +23,15 @@
 			<Path>Art/Movies/Placeholder.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ANGKOR_WAT</Type>
+			<Type>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</Type>
 			<Path>Art/Movies/Wonders/AngkorWat.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_BROADWAY</Type>
+			<Type>ART_DEF_MOVIE_WEMBLEY</Type>
 			<Path>Art/Movies/Wonders/wembley.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_CHICHEN_ITZA</Type>
+			<Type>ART_DEF_MOVIE_TEMPLE_OF_KUKULKAN</Type>
 			<Path>Art/Movies/Wonders/ChichenItza.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -51,7 +51,7 @@
 			<Path>Art/Movies/Wonders/GreatLighthouse.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_HAGIA_SOPHIA</Type>
+			<Type>ART_DEF_MOVIE_SHRINE_ORTHODOX</Type>
 			<Path>Art/Movies/Wonders/HagiaSophia.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -67,7 +67,7 @@
 			<Path>Art/Movies/Wonders/Internet.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_KREMLIN</Type>
+			<Type>ART_DEF_MOVIE_ST_BASILS_CATHEDRAL</Type>
 			<Path>Art/Movies/Wonders/Kremlin.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -95,7 +95,7 @@
 			<Path>Art/Movies/Wonders/GreatPyramids.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ROCK_AND_ROLL</Type>
+			<Type>ART_DEF_MOVIE_GRACELAND</Type>
 			<Path>Art/Movies/Wonders/RockAndRoll.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -135,7 +135,7 @@
 			<Path>Art/Movies/Wonders/Versailles.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ARTEMIS</Type>
+			<Type>ART_DEF_MOVIE_TEMPLE_OF_ARTEMIS</Type>
 			<Path>Art/Movies/Wonders/Artemis.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -143,7 +143,7 @@
 			<Path>Art/Movies/Wonders/GreatWall.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_UNIVERSITY_SANKORE</Type>
+			<Type>ART_DEF_MOVIE_UNIVERSITY_OF_SANKORE</Type>
 			<Path>Art/Movies/Wonders/SankoreUniversity.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -163,11 +163,11 @@
 			<Path>Art/Movies/Victory/Cultural.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_JEWISH</Type>
+			<Type>ART_DEF_MOVIE_SHRINE_PROTESTANT</Type>
 			<Path>Art/Movies/Religion/Christianity/Shrine_Chr_dwg_512.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_CHRISTIAN</Type>
+			<Type>ART_DEF_MOVIE_SHRINE_CATHOLIC</Type>
 			<Path>Art/Movies/Religion/Christianity/Shrine_Chr_dwg_512.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -208,7 +208,7 @@
 			<Path>Art/Movies/Wonders/Shwedagon Paya.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_CHRIST_THE_REDEEMER</Type>
+			<Type>ART_DEF_MOVIE_CRISTO_REDENTOR</Type>
 			<Path>Art/Movies/Wonders/Christ the Redeemer.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -224,7 +224,7 @@
 			<Path>Art/Movies/Wonders/forbidden.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_FLAVIAN_AMPHITHEATRE</Type>
+			<Type>ART_DEF_MOVIE_COLOSSEUM</Type>
 			<Path>Art/Movies/Wonders/flavian.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -244,7 +244,7 @@
 			<Path>Art/Movies/Wonders/TerraCotta.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_CERN</Type>
+			<Type>ART_DEF_MOVIE_CERN_RESEARCH_COMPLEX</Type>
 			<Path>Art/Movies/Wonders/ParticleAccelerator.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -276,7 +276,7 @@
 			<Path>Art/Movies/Wonders/topkapi_palace.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SPHINX</Type>
+			<Type>ART_DEF_MOVIE_GREAT_SPHINX</Type>
 			<Path>Art/Movies/Wonders/sphinx.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -284,7 +284,7 @@
 			<Path>Art/Movies/Wonders/brandenburg.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_DOME_ROCK</Type>
+			<Type>ART_DEF_MOVIE_DOME_OF_THE_ROCK</Type>
 			<Path>Art/Movies/Wonders/Domeofrock.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -300,11 +300,11 @@
 			<Path>Art/Movies/Wonders/Khajuraho.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_MEZQUITA</Type>
+			<Type>ART_DEF_MOVIE_LA_MEZQUITA</Type>
 			<Path>Art/Movies/Wonders/Mezquita.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SAN_MARCO</Type>
+			<Type>ART_DEF_MOVIE_SAN_MARCO_BASILICA</Type>
 			<Path>Art/Movies/Wonders/Sanmarco.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -316,7 +316,7 @@
 			<Path>Art/Movies/Wonders/theodosian.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_WESTMINSTER</Type>
+			<Type>ART_DEF_MOVIE_WESTMINSTER_PALACE</Type>
 			<Path>Art/Movies/Wonders/westminster.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -324,11 +324,11 @@
 			<Path>Art/Movies/Wonders/TrafalgarSquare.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_EMPIRE_STATE</Type>
+			<Type>ART_DEF_MOVIE_EMPIRE_STATE_BUILDING</Type>
 			<Path>Art/Structures/Wonders/EmpireStateBuilding/EmpireStateBuilding.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_KGB</Type>
+			<Type>ART_DEF_MOVIE_LUBYANKA</Type>
 			<Path>Art/Movies/Wonders/KGB.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>

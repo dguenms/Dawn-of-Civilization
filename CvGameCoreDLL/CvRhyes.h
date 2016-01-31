@@ -22,12 +22,12 @@ typedef list<char*> LISTCHAR;
 #define NUM_BUILDINGTYPES_PLAGUE	(131) // increment when a building class is added
 
 #define NUM_MAJOR_PLAYERS		(44)
-#define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
+#define NUM_MINORS				(6)	 // Independent, Independent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(52)
 
 #define NUM_ERAS				(ERA_FUTURE+1)
 
-#define PAGAN_TEMPLE (GC.getInfoTypeForString("BUILDING_OBELISK"))
+#define PAGAN_TEMPLE (GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
 
 enum MyTechs
 {

@@ -280,7 +280,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_JUDAISM
+	StateReligion=RELIGION_PROTESTANTISM
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -334,7 +334,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_CHRISTIANITY                   
+	StateReligion=RELIGION_CATHOLICISM                   
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -348,7 +348,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_CHRISTIANITY                    
+	StateReligion=RELIGION_CATHOLICISM                    
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -362,7 +362,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_NAVAL_SUPREMACY
-	StateReligion=RELIGION_JUDAISM                   
+	StateReligion=RELIGION_PROTESTANTISM                   
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -379,7 +379,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_CHRISTIANITY                  
+	StateReligion=RELIGION_CATHOLICISM                  
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -415,7 +415,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_GUILDS
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -429,7 +429,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_NAVAL_SUPREMACY
-	StateReligion=RELIGION_CHRISTIANITY                     
+	StateReligion=RELIGION_CATHOLICISM                     
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -444,7 +444,7 @@ BeginPlayer
 	CivType=CIVILIZATION_ITALY
 	Team=31
 	PlayableCiv=0
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -512,7 +512,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -526,7 +526,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_NAVAL_SUPREMACY
-	StateReligion=RELIGION_JUDAISM                   
+	StateReligion=RELIGION_PROTESTANTISM                   
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -540,7 +540,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_JUDAISM
+	StateReligion=RELIGION_PROTESTANTISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -554,7 +554,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_JUDAISM                 
+	StateReligion=RELIGION_PROTESTANTISM                 
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
@@ -568,7 +568,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -582,7 +582,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_CHRISTIANITY
+	StateReligion=RELIGION_CATHOLICISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -596,7 +596,7 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
-	StateReligion=RELIGION_JUDAISM
+	StateReligion=RELIGION_PROTESTANTISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer                 
@@ -614,7 +614,7 @@ BeginPlayer
 	PlayableCiv=0                 
 	MinorNationStatus=1                 
 	Handicap=HANDICAP_REGENT                 
-	StateReligion=RELIGION_CHRISTIANITY  	
+	StateReligion=RELIGION_CATHOLICISM  	
 EndPlayer
 BeginPlayer                 
 	LeaderType=LEADER_NATIVE
@@ -627,7 +627,7 @@ EndPlayer
 BeginPlayer
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM    
-	StateReligion=RELIGION_CHRISTIANITY     
+	StateReligion=RELIGION_CATHOLICISM     
 	Team=47
 	PlayableCiv=0                 
 	MinorNationStatus=1               
@@ -6311,8 +6311,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
@@ -6707,8 +6707,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
@@ -7496,9 +7496,9 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_FLOATING_GARDENS
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=100
 	EndCity
 	TeamReveal=22,45,
@@ -7536,8 +7536,8 @@ BeginPlot
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,45,
@@ -9199,8 +9199,8 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=50
 	EndCity
 	TeamReveal=23,45,
@@ -9571,8 +9571,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,24,44,
@@ -9621,8 +9621,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHICHEN_ITZA
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_TEMPLE_OF_KUKULKAN
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,24,44,45,
@@ -9664,7 +9664,7 @@ BeginPlot
 	x=23,y=43
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=23,24,44,45,
@@ -9999,8 +9999,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
@@ -10548,15 +10548,15 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=50
 	EndCity
 	TeamReveal=23,24,44,45,
 EndPlot
 BeginPlot
 	x=25,y=44
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=23,24,44,
@@ -10851,7 +10851,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_COURTHOUSE
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=100
 	EndCity
 	TeamReveal=22,45,
@@ -10994,8 +10994,8 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,24,45,
@@ -11393,8 +11393,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
@@ -11578,8 +11578,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=50
 	EndCity
 	TeamReveal=23,24,44,
@@ -11840,7 +11840,7 @@ BeginPlot
 	x=28,y=26
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -12185,8 +12185,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
@@ -12293,7 +12293,7 @@ BeginPlot
 	x=29,y=26
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -12311,7 +12311,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -12320,7 +12320,7 @@ BeginPlot
 	x=29,y=29
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -12397,8 +12397,8 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=50
 	EndCity
 	TeamReveal=22,23,24,45,
@@ -12763,7 +12763,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,
@@ -12779,7 +12779,7 @@ BeginPlot
 	x=30,y=26
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -12812,7 +12812,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -12838,8 +12838,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,24,44,45,
@@ -12974,8 +12974,8 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=50
 	EndCity
 	TeamReveal=24,44,
@@ -13040,8 +13040,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=50
 	EndCity
 	TeamReveal=23,24,44,
@@ -13273,8 +13273,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
@@ -13317,13 +13317,13 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=31,y=25
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13508,8 +13508,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=50
 	EndCity
 	TeamReveal=23,24,44,
@@ -13668,7 +13668,7 @@ BeginPlot
 	x=32,y=9
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -13778,7 +13778,7 @@ BeginPlot
 	x=32,y=25
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -13786,7 +13786,7 @@ BeginPlot
 	x=32,y=26
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=24,
@@ -13795,7 +13795,7 @@ BeginPlot
 	x=32,y=27
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=24,
@@ -13885,8 +13885,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,23,24,45,
@@ -14124,7 +14124,7 @@ BeginPlot
 	x=33,y=9
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -14160,7 +14160,7 @@ BeginPlot
 	x=33,y=13
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -14226,7 +14226,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=22
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -14252,7 +14252,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -14262,7 +14262,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=24,
@@ -14336,8 +14336,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=50
 	EndCity
 	TeamReveal=22,23,24,44,45,
@@ -14636,8 +14636,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
@@ -14658,14 +14658,14 @@ BeginPlot
 	x=34,y=13
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
 EndPlot
 BeginPlot
 	x=34,y=14
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -14714,7 +14714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=21
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,45,
@@ -14728,7 +14728,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=23
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -14746,7 +14746,7 @@ BeginPlot
 	x=34,y=25
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=23,
@@ -14804,8 +14804,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=50
 	EndCity
 	TeamReveal=22,23,24,44,45,
@@ -15129,7 +15129,7 @@ BeginPlot
 	x=35,y=15
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,29,
@@ -15138,7 +15138,7 @@ BeginPlot
 	x=35,y=16
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,29,
@@ -15157,7 +15157,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,29,
@@ -15166,7 +15166,7 @@ BeginPlot
 	x=35,y=19
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,29,
@@ -15200,7 +15200,7 @@ BeginPlot
 	x=35,y=23
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -15217,7 +15217,7 @@ BeginPlot
 	x=35,y=25
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=23,29,
@@ -15226,7 +15226,7 @@ BeginPlot
 	x=35,y=26
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=23,29,45,
@@ -15564,7 +15564,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=50
 	EndCity
 	TeamReveal=22,45,
@@ -15599,7 +15599,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=29,44,
@@ -15621,7 +15621,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=19
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=29,44,
@@ -15656,7 +15656,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=29,44,
@@ -15862,8 +15862,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=50
 	EndCity
 	TeamReveal=24,
@@ -16107,7 +16107,7 @@ BeginPlot
 	x=37,y=24
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=29,44,
@@ -16157,8 +16157,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=50
 	EndCity
 	TeamReveal=22,23,24,29,44,45,
@@ -16504,8 +16504,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=50
 	EndCity
 	TeamReveal=22,29,44,
@@ -16595,8 +16595,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=50
 	EndCity
 	TeamReveal=22,23,29,44,45,
@@ -17796,15 +17796,15 @@ BeginPlot
 		CityOwner=29
 		CityName=Rio de Janeiro
 		CityPopulation=5
-		BuildingType=BUILDING_GREAT_PALACE
+		BuildingType=BUILDING_ADMINISTRATIVE_CENTER
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=100
 	EndCity
 	TeamReveal=22,29,44,
@@ -18267,8 +18267,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=50
 	EndCity
 	TeamReveal=22,29,44,
@@ -19206,8 +19206,8 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=50
 	EndCity
 	TeamReveal=22,23,24,29,45,
@@ -19741,7 +19741,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
-		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_PROTESTANTISM
 		Player44Culture=10
 	EndCity
 	TeamReveal=16,44,
@@ -20402,8 +20402,8 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,44,45,
@@ -20773,8 +20773,8 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,
@@ -21269,7 +21269,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_PORTUGAL_FEITORIA
+		BuildingType=BUILDING_PORTUGUESE_FEITORIA
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -21277,11 +21277,11 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,29,38,45,
@@ -21326,9 +21326,9 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,29,38,45,
@@ -21410,8 +21410,8 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player24Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,38,45,
@@ -22081,7 +22081,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		BuildingType=BUILDING_SANKORE
+		BuildingType=BUILDING_UNIVERSITY_OF_SANKORE
 		ReligionType=RELIGION_ISLAM
 		Player45Culture=100
 	EndCity
@@ -22243,16 +22243,16 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		BuildingType=BUILDING_MEZQUITA
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		BuildingType=BUILDING_LA_MEZQUITA
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,29,35,38,44,45,
@@ -22605,7 +22605,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=52,y=29
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=38,44,45,
@@ -22732,11 +22732,11 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_IBERIAN_TRADING_COMPANY
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,29,38,45,
@@ -22878,8 +22878,8 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,38,45,
@@ -23141,7 +23141,7 @@ BeginPlot
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_MALI_MINT
+		BuildingType=BUILDING_MANDE_MINT
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
@@ -23315,14 +23315,14 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,29,38,39,44,45,
@@ -23382,7 +23382,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_LIBRARY
@@ -23390,12 +23390,12 @@ BeginPlot
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
-		BuildingType=BUILDING_ENGLISH_STOCK_EXCHANGE
+		BuildingType=BUILDING_ENGLISH_ROYAL_EXCHANGE
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		BuildingType=BUILDING_JEWISH_CATHEDRAL
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_CATHEDRAL
 		BuildingType=BUILDING_TRADING_COMPANY
-		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_PROTESTANTISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player24Culture=250
 	EndCity
@@ -23642,9 +23642,9 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
+		ReligionType=RELIGION_CATHOLICISM
 		Player38Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,45,
@@ -24254,16 +24254,16 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,29,38,44,45,
@@ -24327,18 +24327,18 @@ BeginPlot
 		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_COLOSSEUM
+		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_FRENCH_SALON
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_TRADING_COMPANY
 		BuildingType=BUILDING_NOTRE_DAME
 		BuildingType=BUILDING_VERSAILLES
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_SCIENTIST
 		Player23Culture=250
 	EndCity
@@ -24779,7 +24779,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,29,38,39,44,45,
@@ -25280,7 +25280,7 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -25289,12 +25289,12 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_NETHERLANDS_DIKE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
+		BuildingType=BUILDING_DUTCH_DIKE
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_TRADING_COMPANY
-		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_PROTESTANTISM
+		ReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player38Culture=250
@@ -25822,7 +25822,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
-		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_PROTESTANTISM
 		Player44Culture=100
 	EndCity
 	TeamReveal=16,24,39,44,
@@ -26037,8 +26037,8 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,
@@ -26241,11 +26241,11 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_LEANING_TOWER
-		BuildingType=BUILDING_SAN_MARCO
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_SAN_MARCO_BASILICA
+		ReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_ENGINEER
@@ -26305,19 +26305,19 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
-		BuildingType=BUILDING_COLOSSEUM
+		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		BuildingType=BUILDING_JEWISH_CATHEDRAL
-		BuildingType=BUILDING_JEWISH_SHRINE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_CATHEDRAL
+		BuildingType=BUILDING_PROTESTANT_SHRINE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_MILITARY_ACADEMY
-		ReligionType=RELIGION_JUDAISM
-		HolyCityReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_PROTESTANTISM
+		HolyCityReligionType=RELIGION_PROTESTANTISM
+		ReligionType=RELIGION_CATHOLICISM
 		Player39Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,38,39,45,
@@ -26385,15 +26385,15 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
+		ReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player39Culture=100
@@ -26817,14 +26817,14 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		BuildingType=BUILDING_FLAVIAN_AMPHITHEATRE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		BuildingType=BUILDING_COLOSSEUM
 		BuildingType=BUILDING_SISTINE_CHAPEL
 		BuildingType=BUILDING_APOSTOLIC_PALACE
-		ReligionType=RELIGION_CHRISTIANITY
-		HolyCityReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
+		HolyCityReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player45Culture=250
 	EndCity
@@ -26967,10 +26967,10 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_COLOSSEUM
+		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player44Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,38,39,44,45,
@@ -27030,8 +27030,8 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player44Culture=100
 	EndCity
 	TeamReveal=16,24,39,44,45,
@@ -27575,8 +27575,8 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player44Culture=100
 	EndCity
 	TeamReveal=16,44,
@@ -27740,11 +27740,11 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_KONGO_MBWADI
+		BuildingType=BUILDING_CONGOLESE_MBWADI
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_CATHOLICISM
 		Player37Culture=100
 	EndCity
 	TeamReveal=22,24,29,37,38,
@@ -27755,7 +27755,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=22,24,29,37,38,
@@ -27772,7 +27772,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=23
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
@@ -27922,9 +27922,9 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_CATHOLICISM
 		Player25Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,35,38,39,44,45,
@@ -27994,11 +27994,11 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_MILITARY_ACADEMY
-		ReligionType=RELIGION_CHRISTIANITY
+		ReligionType=RELIGION_CATHOLICISM
 		Player25Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,25,26,28,35,38,39,44,45,
@@ -28048,8 +28048,8 @@ BeginPlot
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player39Culture=250
 	EndCity
 	TeamReveal=16,22,23,24,25,26,28,38,39,44,45,
@@ -28216,7 +28216,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=38
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -28238,8 +28238,8 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player38Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,45,
@@ -28323,7 +28323,7 @@ BeginPlot
 	x=63,y=22
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
@@ -28334,7 +28334,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
@@ -28343,7 +28343,7 @@ BeginPlot
 	x=63,y=24
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
@@ -28352,7 +28352,7 @@ BeginPlot
 	x=63,y=25
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -28605,9 +28605,9 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		BuildingType=BUILDING_JEWISH_CATHEDRAL
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_CATHEDRAL
+		ReligionType=RELIGION_PROTESTANTISM
 		Player16Culture=250
 	EndCity
 	TeamReveal=16,39,44,45,
@@ -28823,7 +28823,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
@@ -28832,14 +28832,14 @@ BeginPlot
 	x=64,y=24
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
 EndPlot
 BeginPlot
 	x=64,y=25
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -29249,7 +29249,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=18
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
@@ -29260,7 +29260,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
@@ -29288,7 +29288,7 @@ BeginPlot
 	x=65,y=22
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=37,
@@ -29302,7 +29302,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -29310,7 +29310,7 @@ BeginPlot
 	x=65,y=25
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -29525,9 +29525,9 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_CATHOLICISM
 		Player25Culture=100
 	EndCity
 	TeamReveal=16,22,23,25,26,28,35,39,44,45,
@@ -29577,10 +29577,10 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_POLISH_SEJMIK
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_CATHEDRAL
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_CATHOLICISM
 		Player28Culture=250
 	EndCity
 	TeamReveal=16,23,25,26,28,38,39,45,
@@ -29617,7 +29617,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_COURTHOUSE
-		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_PROTESTANTISM
 		Player39Culture=100
 	EndCity
 	TeamReveal=16,25,26,28,39,45,
@@ -29690,8 +29690,8 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player16Culture=100
 	EndCity
 	TeamReveal=16,44,45,
@@ -30363,7 +30363,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=20
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=44,
@@ -30551,7 +30551,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_COLOSSEUM
+		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_PARTHENON
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
@@ -30690,9 +30690,9 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_POLISH_SEJMIK
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_MONASTERY
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_CATHOLICISM
 		Player28Culture=100
 	EndCity
 	TeamReveal=16,25,26,28,39,45,
@@ -30743,8 +30743,8 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_COURTHOUSE
-		BuildingType=BUILDING_JEWISH_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_PROTESTANTISM
 		Player16Culture=100
 	EndCity
 	TeamReveal=16,26,28,39,45,
@@ -30757,14 +30757,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=61
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=16,26,44,45,
 EndPlot
 BeginPlot
 	x=67,y=62
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=16,44,45,
@@ -30954,7 +30954,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=24
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=44,
@@ -30972,7 +30972,7 @@ BeginPlot
 	x=68,y=26
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -30982,7 +30982,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -30990,7 +30990,7 @@ BeginPlot
 	x=68,y=28
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -31147,12 +31147,12 @@ BeginPlot
 		BuildingType=BUILDING_OTTOMAN_HAMMAM
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_COLOSSEUM
+		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
@@ -31490,21 +31490,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=26
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=69,y=27
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=44,45,
 EndPlot
 BeginPlot
 	x=69,y=28
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=35,44,45,
@@ -31610,8 +31610,8 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		BuildingType=BUILDING_PYRAMID
-		BuildingType=BUILDING_STONEHENGE
+		BuildingType=BUILDING_PYRAMIDS
+		BuildingType=BUILDING_GREAT_SPHINX
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		Player35Culture=200
@@ -31844,7 +31844,7 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -32490,8 +32490,8 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,44,
@@ -33677,13 +33677,13 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		BuildingType=BUILDING_CHRISTIAN_SHRINE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_SHRINE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		BuildingType=BUILDING_TEMPLE_OF_SALOMON
-		BuildingType=BUILDING_DOME_ROCK
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_TEMPLE_OF_SOLOMON
+		BuildingType=BUILDING_DOME_OF_THE_ROCK
+		ReligionType=RELIGION_CATHOLICISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		Player35Culture=200
@@ -33833,7 +33833,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_CATHEDRAL
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
-		BuildingType=BUILDING_KREMLIN
+		BuildingType=BUILDING_ST_BASILS_CATHEDRAL
 		ReligionType=RELIGION_ORTHODOXY
 		Player26Culture=250
 	EndCity
@@ -37540,7 +37540,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_CARAVANSERAI
+		BuildingType=BUILDING_IRANIAN_CARAVANSERAI
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
@@ -37957,7 +37957,7 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_ISLAM
 		Player44Culture=100
@@ -38008,7 +38008,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CARAVANSERAI
+		BuildingType=BUILDING_IRANIAN_CARAVANSERAI
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
@@ -38567,7 +38567,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -38576,7 +38576,7 @@ BeginPlot
 	x=83,y=54
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -38621,7 +38621,7 @@ BeginPlot
 	x=83,y=60
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -38630,7 +38630,7 @@ BeginPlot
 	x=83,y=61
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -38916,7 +38916,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CARAVANSERAI
+		BuildingType=BUILDING_IRANIAN_CARAVANSERAI
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
@@ -39018,7 +39018,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=54
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39076,7 +39076,7 @@ BeginPlot
 	x=84,y=58
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39085,7 +39085,7 @@ BeginPlot
 	x=84,y=59
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39094,14 +39094,14 @@ BeginPlot
 	x=84,y=60
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=84,y=61
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39535,7 +39535,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=55
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39544,14 +39544,14 @@ BeginPlot
 	x=85,y=56
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=85,y=57
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39569,14 +39569,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=59
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=85,y=60
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39941,7 +39941,7 @@ BeginPlot
 	x=86,y=54
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39950,7 +39950,7 @@ BeginPlot
 	x=86,y=55
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -39959,14 +39959,14 @@ BeginPlot
 	x=86,y=56
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=86,y=57
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -40381,7 +40381,7 @@ BeginPlot
 	x=87,y=54
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -40401,7 +40401,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=57
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -40410,7 +40410,7 @@ BeginPlot
 	x=87,y=58
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -40833,7 +40833,7 @@ BeginPlot
 	x=88,y=56
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -40851,7 +40851,7 @@ BeginPlot
 	x=88,y=58
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -41284,7 +41284,7 @@ BeginPlot
 	x=89,y=55
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -41293,7 +41293,7 @@ BeginPlot
 	x=89,y=56
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -41351,7 +41351,7 @@ BeginPlot
 	x=89,y=61
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -41817,14 +41817,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=57
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=90,y=58
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -41844,7 +41844,7 @@ BeginPlot
 	x=90,y=60
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -42307,7 +42307,7 @@ BeginPlot
 	x=91,y=57
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -42316,7 +42316,7 @@ BeginPlot
 	x=91,y=58
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -42332,7 +42332,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=60
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=26,
@@ -42608,7 +42608,7 @@ BeginPlot
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
-		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_HINDUISM
 		Player24Culture=50
 	EndCity
@@ -43034,7 +43034,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		Player38Culture=50
@@ -44056,7 +44056,7 @@ BeginPlot
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
-		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_HINDUISM
 		Player24Culture=50
 	EndCity
@@ -45815,7 +45815,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
+		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
 		Player1Culture=100
@@ -46254,7 +46254,7 @@ BeginPlot
 	x=100,y=36
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,22,29,36,38,44,
@@ -46340,7 +46340,7 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
+		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -46448,7 +46448,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=58
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -46686,7 +46686,7 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -46739,7 +46739,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		BuildingType=BUILDING_ANGKOR_WAT
+		BuildingType=BUILDING_WAT_PREAH_PISNULOK
 		ReligionType=RELIGION_BUDDHISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player36Culture=250
@@ -46771,7 +46771,7 @@ BeginPlot
 	x=101,y=36
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,22,29,36,38,44,45,
@@ -46988,13 +46988,13 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=101,y=59
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -47235,7 +47235,7 @@ BeginPlot
 	x=102,y=34
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,29,36,38,44,
@@ -47310,7 +47310,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
+		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_CONFUCIANISM
 		Player1Culture=100
@@ -47380,7 +47380,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
+		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_CONFUCIAN_CATHEDRAL
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
@@ -47463,7 +47463,7 @@ BeginPlot
 	x=102,y=59
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -47812,7 +47812,7 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
+		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
@@ -48127,14 +48127,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=38
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ASSAULT_SEA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_NETHERLANDS_OOSTINDIEVAARDER, UnitOwner=38
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -48165,7 +48165,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_BOROBUDUR
-		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
 		Player38Culture=50
@@ -48503,7 +48503,7 @@ BeginPlot
 	x=104,y=60
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -48511,7 +48511,7 @@ BeginPlot
 	x=104,y=61
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -48984,7 +48984,7 @@ BeginPlot
 	x=105,y=60
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -49320,9 +49320,9 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOM_HOUSE
+		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CHINESE_EXAMINATION_HALL
+		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
@@ -49811,7 +49811,7 @@ BeginPlot
 	x=107,y=50
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,12,44,45,
@@ -50317,7 +50317,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=52
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,12,44,
@@ -50326,7 +50326,7 @@ BeginPlot
 	x=108,y=53
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,12,44,
@@ -50335,7 +50335,7 @@ BeginPlot
 	x=108,y=54
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,
@@ -50639,8 +50639,8 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_CHRISTIAN_TEMPLE
-		ReligionType=RELIGION_CHRISTIANITY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
 		Player22Culture=100
 	EndCity
 	TeamReveal=22,29,44,
@@ -50811,7 +50811,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=54
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,
@@ -50999,7 +50999,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=20
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -51221,7 +51221,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=1,15,
@@ -51410,7 +51410,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=20
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
@@ -51637,14 +51637,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=52
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=15,
 EndPlot
 BeginPlot
 	x=111,y=53
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=15,
@@ -52071,7 +52071,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=54
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=15,44,
@@ -52710,7 +52710,7 @@ BeginPlot
 	x=114,y=25
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_MUD, FeatureVariety=0
+	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
 	TeamReveal=38,

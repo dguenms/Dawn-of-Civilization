@@ -18,6 +18,30 @@
 		<English>Grenadier Cavalry</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIAN_CAMEL_ARCHER</Tag>
+		<English>Camel Archer</English>
+		<French>
+			<Text>Archer m&#233;hariste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kamel-Bogensch&#252;tze</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Arciere su cammello:Arcieri su cammello</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Arquero a camello:Arqueros a camello</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ARCHER_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Archers[COLOR_REVERT] have one first strike, have a defensive bonus in cities and have a defensive bonus in hills.</English>
 	</TEXT>
@@ -26,7 +50,7 @@
 		<English>[COLOR_UNIT_TEXT]Airships[COLOR_REVERT] can perform air strikes, perform recon missions and see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ARABIA_CAMELARCHER_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_ARABIAN_CAMEL_ARCHER_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Camel Archer[COLOR_REVERT], the Arabian replacement for the the [COLOR_UNIT_TEXT]Knight[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] and [COLOR_TECH_TEXT]Archery[COLOR_REVERT] technologies, doesn't require the [COLOR_TECH_TEXT]Guilds[COLOR_REVERT] technology, doesn't require the [COLOR_HIGHLIGHT_TEXT]Horse[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resources, is able to withdraw from combat and has double movement in Desert.</English>
 	</TEXT>
 	<TEXT>
@@ -42,7 +66,7 @@
 		<English>The [COLOR_UNIT_TEXT]Jaguar[COLOR_REVERT], the Aztec replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Bronze Working[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Iron Working[COLOR_REVERT] technology, is cheaper, doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ASVAKA</Tag>
+		<Tag>TXT_KEY_UNIT_KUSHAN_ASVAKA</Tag>
 		<English>Asvaka</English>
 	</TEXT>
 	<TEXT>
@@ -58,11 +82,11 @@
 		<English>[COLOR_UNIT_TEXT]Anti-Tanks[COLOR_REVERT] can intercept aircraft, have a combat bonus against [COLOR_UNIT_TEXT]Armored Units[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ASVAKA_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_KUSHAN_ASVAKA_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Asvaka[COLOR_REVERT] is a barbarian unit that spawns in Central Asia from 30 to 220 AD.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BABYLON_BOWMAN</Tag>
+		<Tag>TXT_KEY_UNIT_BABYLONIAN_ASHARITTU_BOWMAN</Tag>
 		<English>Asharittu Bowman</English>
 		<French>
 			<Text>Archer Asharittu:Archers Asharittu</Text>
@@ -94,7 +118,7 @@
 		<English>[COLOR_UNIT_TEXT]Battleships[COLOR_REVERT] can bombard city defenses and causes collateral damage.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BABYLON_BOWMAN_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_BABYLONIAN_ASHARITTU_BOWMAN_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Asharittu Bowman[COLOR_REVERT], the Babylonian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], causes collateral damage when attacking enemy units and is cheaper.</English>
 	</TEXT>
 	<TEXT>
@@ -110,11 +134,11 @@
 		<English>[COLOR_UNIT_TEXT]Bombers[COLOR_REVERT] can destroy improvements, lower city defenses, perform recon missions, damage enemy units, cause collateral damage and have a combat penalty against [COLOR_UNIT_TEXT]Water Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BRAZILIAN_LENHADOR</Tag>
+		<Tag>TXT_KEY_UNIT_BRAZILIAN_MADEIREIRO</Tag>
 		<English>Madeireiro</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BRAZILIAN_LENHADOR_HELP</Tag>
+		<Tag>TXT_KEY_UNIT_BRAZILIAN_MADEIREIRO_HELP</Tag>
 		<English>[ICON_BULLET]Create Production and Gold when Removing Jungles and Forests</English>
 	</TEXT>
 	<TEXT>
@@ -122,7 +146,7 @@
 		<English>[COLOR_UNIT_TEXT]Buddhist Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BRAZILIAN_LENHADOR_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_BRAZILIAN_MADEIREIRO_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Madeireiro[COLOR_REVERT], the Brazilian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Woodsman II[COLOR_REVERT] promotion and provides extra gold and production when it chops jungles and forests.</English>
 	</TEXT>
 	<TEXT>
@@ -173,11 +197,11 @@
 		<German>[ICON_BULLET]Kann eine Krise &#252;berwinden</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CANADA_CORVETTE</Tag>
+		<Tag>TXT_KEY_UNIT_CANADIAN_CORVETTE</Tag>
 		<English>Corvette</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CARTHAGE_NUMIDIAN_CAVALRY</Tag>
+		<Tag>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</Tag>
 		<English>Numidian Cavalry</English>
 		<French>
 			<Text>Cavalerie numide</Text>
@@ -205,11 +229,35 @@
 		<English>[COLOR_UNIT_TEXT]Catapults[COLOR_REVERT] don't receive defensive bonuses, cause collateral damage, are immune to collateral damage from [COLOR_UNIT_TEXT]Siege Weapons[COLOR_REVERT] and can bombard city defenses.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CARTHAGIAN_WAR_ELEPHANT_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_CHINESE_CHOKONU</Tag>
+		<English>Cho-Ko-Nu</English>
+		<French>
+			<Text>Cho-Ko-Nu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Cho-Ko-Nu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Cho-Ko-Nu:Cho-Ko-Nu</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cho-Ko-Nu:Cho-Ko-Nu</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]African War Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Monarchy[COLOR_REVERT] technology and begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CARTHAGINIAN_WAR_ELEPHANT</Tag>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</Tag>
 		<English>African War Elephant</English>
 	</TEXT>
 	<TEXT>
@@ -221,7 +269,7 @@
 		<Spanish>Misionero cat&#243;lico</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CHINA_CHOKONU_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_CHINESE_CHOKONU_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Cho Ko Nu[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Metal Casting[COLOR_REVERT] technology, has an extra first strike, causes collateral damage and has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -241,7 +289,7 @@
 		<English>[COLOR_UNIT_TEXT]Catholic Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CIDAINH</Tag>
+		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH</Tag>
 		<English>Cidainh</English>
 	</TEXT>
 	<TEXT>
@@ -249,7 +297,7 @@
 		<English>[COLOR_UNIT_TEXT]Crossbowmen[COLOR_REVERT] have one first strike and have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CIDAINH_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Cidainh[COLOR_REVERT] is a barbarian unit roaming in Gaul.</English>
 	</TEXT>
 	<TEXT>
@@ -257,7 +305,7 @@
 		<English>[COLOR_UNIT_TEXT]Confucian Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CORVETTE_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_CANADIAN_CORVETTE_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Corvette[COLOR_REVERT], the Canadian replacement for the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], is cheaper, has four less strength points, has two additional movement points, loses the ability to bombard cities and starts with the [COLOR_HIGHLIGHT_TEXT]Sentry[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
@@ -273,7 +321,31 @@
 		<English>[COLOR_UNIT_TEXT]Cuirassiers[COLOR_REVERT] don't receive defensive bonuses, can withdraw from combat and has a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT], [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT], [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT] and [COLOR_UNIT_TEXT]Cannon[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_EGYPT_WARCHARIOT_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_EGYPTIAN_WARCHARIOT</Tag>
+		<English>War Chariot</English>
+		<French>
+			<Text>Char de guerre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kriegsstreitwagen</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Carro da guerra:Carri da guerra</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Carro de guerra:Carros de guerra</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_EGYPTIAN_WARCHARIOT_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]War Chariot[COLOR_REVERT], the Egyptian replacement for the [COLOR_UNIT_TEXT]Chariot[COLOR_REVERT], has an additional strength point, is immune to first strikes and has double movement in Desert.</English>
 	</TEXT>
 	<TEXT>
@@ -285,11 +357,11 @@
 		<English>The [COLOR_UNIT_TEXT]Redcoat[COLOR_REVERT], the English replacement for the [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT], causes collateral damage.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ETHIOPIAN_OROMO_WARRIOR</Tag>
+		<Tag>TXT_KEY_UNIT_ETHIOPIAN_ASKARI</Tag>
 		<English>Askari</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ETHIOPIAN_OROMO_WARRIOR_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_ETHIOPIAN_ASKARI_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Askari[COLOR_REVERT], the Ethiopian replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], is immune to first strikes, has 1 first strike and begins with the [COLOR_HIGHLIGHT_TEXT]Drill I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Drill II[COLOR_REVERT] promotions.</English>
 	</TEXT>
 	<TEXT>
@@ -325,7 +397,7 @@
 		<English>[COLOR_UNIT_TEXT]Explorers[COLOR_REVERT] is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gain only positive bonuses from Tribal villages, can only defend, ignores terrain movement costs and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_FARARI</Tag>
+		<Tag>TXT_KEY_UNIT_MANDE_FARARI</Tag>
 		<English>Farari</English>
 	</TEXT>
 	<TEXT>
@@ -333,11 +405,11 @@
 		<English>[COLOR_UNIT_TEXT]Fighters[COLOR_REVERT] can intercept enemy air units, destroy improvements, bomb city defenses, perform recon missions and damage enemy units.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_FARARI_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_MANDE_FARARI_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Farari[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 450 to 1700 AD.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CARTHAGE_NUMIDIAN_CAVALRY_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Numidian Cavalry[COLOR_REVERT] is a barbarian unit that spawns in the Sahara from 210 BC to 900 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -414,7 +486,7 @@
 		<German>Gro&#223;er Staatsmann</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_GREEK_PHALANX</Tag>
+		<Tag>TXT_KEY_UNIT_GREEK_HOPLITE</Tag>
 		<English>Hoplite</English>
 		<German>
 			<Text>Hoplit</Text>
@@ -445,7 +517,7 @@
 		<English>[COLOR_UNIT_TEXT]Grenadiers[COLOR_REVERT] have a attack bonus against [COLOR_UNIT_TEXT]Rifleman[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_GREEK_PHALANX_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_GREEK_HOPLITE_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Hoplite[COLOR_REVERT], the Greek replacement for the [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -469,7 +541,7 @@
 		<English>The [COLOR_UNIT_TEXT]City Builder[COLOR_REVERT], the Harappan replacement for the [COLOR_UNIT_TEXT]Settler[COLOR_REVERT], can found new cities that start with additional population.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MEDJAY_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_NUBIAN_MEDJAY_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Medjay[COLOR_REVERT] is a barbarian unit that spawns in Egypt from 800 BC to 1300 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -481,23 +553,47 @@
 		<English>[COLOR_UNIT_TEXT]Mechanized Infantry[COLOR_REVERT] can intercept aircraft and begin with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MAYA_HOLKAN_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_MAYAN_HOLKAN</Tag>
+		<English>Holkan</English>
+		<French>
+			<Text>Holkan:Holkans</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Holkan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Holkan:Holkan</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Holkan:Holkanes</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MAYAN_HOLKAN_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Holkan[COLOR_REVERT], the Mayan replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Hunting[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Archery[COLOR_REVERT] technology, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], provides food to the nearest city when it wins a fight and can withdraw from combat.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_FAST_WORKER_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_INDIAN_PUNJABI_WORKER_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Punjabi Worker[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], is faster.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_BAMBOO_BOWMAN_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_INDIAN_PATIYODHA_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Monarchy[COLOR_REVERT] and [COLOR_TECH_TEXT]Calendar[COLOR_REVERT] technologies, doesn't require the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, has one less strength point, is cheaper, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HULUGANNI</Tag>
+		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI</Tag>
 		<English>Huluganni</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INCAN_QUECHUA_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_INCAN_AUCAC_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Aucac[COLOR_REVERT], the Incan replacement for the [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Mining[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Bronze Working[COLOR_REVERT] technology, doesn't require the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resources, has a combat bonus against [COLOR_HIGHLIGHT_TEXT]Archery Units[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
@@ -505,43 +601,19 @@
 		<English>[COLOR_UNIT_TEXT]ICBMs[COLOR_REVERT] can nuke enemy lands and cannot be moved from the city it is constructed in.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HULUGANNI_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Huluganni[COLOR_REVERT] is a barbarian unit that spawns in Asia Minor from 2000 to 800 BC.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INCAN_QUECHUA</Tag>
+		<Tag>TXT_KEY_UNIT_INCAN_AUCAC</Tag>
 		<English>Aucac</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INCAN_QUECHUA_OLD</Tag>
-		<English>Quechua Warrior</English>
-		<French>
-			<Text>Guerrier quechua</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Quechua Krieger</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Guerriero quechua:Guerrieri quechua</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Guerrero quechua:Guerreros quechua</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_BAMBOO_BOWMAN</Tag>
+		<Tag>TXT_KEY_UNIT_INDIAN_PATIYODHA</Tag>
 		<English>Patiyodha</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_FAST_WORKER</Tag>
+		<Tag>TXT_KEY_UNIT_INDIAN_PUNJABI_WORKER</Tag>
 		<English>Punjabi Worker</English>
 		<French>
 			<Text>Ouvrier du Panj&#226;b</Text>
@@ -585,15 +657,39 @@
 		<Spanish>Informaci&#243;n de la unidad</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_JAPAN_SAMURAI_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_JAPANESE_SAMURAI</Tag>
+		<English>Samurai</English>
+		<French>
+			<Text>Samoura&#239;</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Samurai</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Samurai:Samurai</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Samur&#225;i:Samur&#225;is</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JAPANESE_SAMURAI_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Samurai[COLOR_REVERT], the Japanese replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion and cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ITALY_BERSAGLIERE</Tag>
+		<Tag>TXT_KEY_UNIT_ITALIAN_BERSAGLIERE</Tag>
 		<English>Bersagliere</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ITALY_BERSAGLIERE_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_ITALIAN_BERSAGLIERE_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Bersagliere[COLOR_REVERT], the Italian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], has an additional movement point.</English>
 	</TEXT>
 	<TEXT>
@@ -613,11 +709,35 @@
 		<English>[COLOR_UNIT_TEXT]Marines[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Machine Gun[COLOR_REVERT] and [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] units, are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MACEMAN_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MALI_SKIRMISHER_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_MANDE_SKIRMISHER</Tag>
+		<English>Skirmisher</English>
+		<French>
+			<Text>Tirailleur</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Pl&#228;nkler</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Combattente:Combattenti</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Hostigador:Hostigadores</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MANDE_SKIRMISHER_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], has an additional strength point, has a possible extra first strike and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -637,23 +757,15 @@
 		<English>[COLOR_UNIT_TEXT]Lions[COLOR_REVERT] are Barbarian units that spawn in Africa from 3000 to 850 BC.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_KONGO_POMBOS_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_CONGOLESE_POMBOS_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Pombos[COLOR_REVERT], the Congolese replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT] and doesn't require the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resources.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_KONGO_POMBOS</Tag>
+		<Tag>TXT_KEY_UNIT_CONGOLESE_POMBOS</Tag>
 		<English>Pombos</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_KONGO_POMBOS_STRATEGY</Tag>
-		<English>Build this melee combat unit, the Congo replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT] to counter other melee units and early gunpowder units. </English>
-		<French>Produisez cette unit&#233; de combat rapproch&#233; pour contrer d'autres unit&#233;s du m&#234;me type, car elle b&#233;n&#233;ficie alors d'un avantage sur ses adversaires.</French>
-		<German>Diese Nahkampfeinheit ist vor allem im Kampf gegen andere Nahkampfeinheiten &#252;beraus effektiv.</German>
-		<Italian>Realizza questa unit&#224; da combattimento corpo a corpo per contrastare le altre unit&#224; da mischia, poich&#233; ottiene un aumento di forza contro di esse.</Italian>
-		<Spanish>Esta unidad de cuerpo a cuerpo sirve para contrarrestar a otras unidades de ese mismo tipo, pues obtiene una mejora contra ellas. </Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_MODERN_ARMOR_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_MAIN_BATTLE_TANK_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT] have one first strike, don't receive defensive bonuses and begin with the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
@@ -666,28 +778,20 @@
 		<English>[COLOR_UNIT_TEXT]Mobile SAMs[COLOR_REVERT] can intercept aircraft and have a combat bonus against [COLOR_UNIT_TEXT]Helicopter Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MACEMAN</Tag>
+		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
 		<English>Heavy Swordsman</English>
 		<German>Schwerer Schwertk&#228;mpfer</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MAYA_HOLKAN_HELP</Tag>
+		<Tag>TXT_KEY_UNIT_MAYAN_HOLKAN_HELP</Tag>
 		<English>[ICON_BULLET]Receives [ICON_FOOD] for Defeating Enemy Units</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MEDJAY</Tag>
+		<Tag>TXT_KEY_UNIT_NUBIAN_MEDJAY</Tag>
 		<English>Medjay</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MEDJAY_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Medjay[COLOR_REVERT] is a barbarian unit roaming in Nubia.</English>
-		<French>No translation yet</French>
-		<German>No translation yet</German>
-		<Italian>No translation yet</Italian>
-		<Spanish>No translation yet</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_MEXICO_RURALES</Tag>
+		<Tag>TXT_KEY_UNIT_MEXICAN_RURALES</Tag>
 		<English>Rurales</English>
 	</TEXT>
 	<TEXT>
@@ -699,11 +803,11 @@
 		<English>[COLOR_UNIT_TEXT]Missile Cruiser[COLOR_REVERT] can bombard city defenses, causes collateral damage and can carry four [COLOR_UNIT_TEXT]Missile Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MEXICO_RURALES_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_MEXICAN_RURALES_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MODERN_ARMOR</Tag>
+		<Tag>TXT_KEY_UNIT_MAIN_BATTLE_TANK</Tag>
 		<English>Main Battle Tank</English>
 		<French>
 			<Text>Char de combat principal</Text>
@@ -727,15 +831,39 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MOHAWK</Tag>
+		<Tag>TXT_KEY_UNIT_IROQUOIS_MOHAWK</Tag>
 		<English>Mohawk</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MOHAWK_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_MONGOLIAN_KESHIK</Tag>
+		<English>Keshik</English>
+		<French>
+			<Text>Keshik</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Keshik</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Keshik:Keshik</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Keshik:Keshik</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_IROQUOIS_MOHAWK_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Mohawk[COLOR_REVERT] is a barbarian unit that spawns in Western North America from 1500 to 1850 AD.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MONGOL_KESHIK_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_MONGOLIAN_KESHIK_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Keshik[COLOR_REVERT], the Mongol replacement for the the [COLOR_UNIT_TEXT]Knight[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Guilds[COLOR_REVERT] technology, doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, has an additional movement point, causes collateral damage and has a first strike.</English>
 	</TEXT>
 	<TEXT>
@@ -755,11 +883,11 @@
 		<English>The [COLOR_UNIT_TEXT]Corsair[COLOR_REVERT], the Moorish replacement for the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT] and [COLOR_TECH_TEXT]Optics[COLOR_REVERT] technologies, doesn't require the [COLOR_TECH_TEXT]Military Science[COLOR_REVERT] and [COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] technologies, has one less movement point, has two less strength points, is cheaper, has a combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT], has a combat bonus against the [COLOR_UNIT_TEXT]Privateer[COLOR_REVERT] unit and provides some gold when sinking enemy ships.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MOUNTED_BRAVE</Tag>
+		<Tag>TXT_KEY_UNIT_SIOUX_MOUNTED_BRAVE</Tag>
 		<English>Mounted Brave</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MOUNTED_BRAVE_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_SIOUX_MOUNTED_BRAVE_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Mounted Brave[COLOR_REVERT] is a barbarian unit that spawns in Central North America from 1700 to 1900 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -779,11 +907,59 @@
 		<English>[COLOR_UNIT_TEXT]Orthodox Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_NETHERLANDS_OOSTINDIEVAARDER_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN</Tag>
+		<English>East Indiaman</English>
+		<French>
+			<Text>East Indiaman</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Ostindienfahrer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>East Indiaman:East Indiaman</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Nav&#237;o de las Indias Orientales:Nav&#237;os de las Indias Orientales</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]East Indianman[COLOR_REVERT], the Dutch replacement for the [COLOR_UNIT_TEXT]Galleon[COLOR_REVERT], has two additional strength points, has an additional cargo space and can explore rival territory.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_NATIVE_AMERICA_DOG_SOLDIER_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_NATIVE_AMERICAN_DOG_SOLDIER</Tag>
+		<English>Dog Soldier</English>
+		<French>
+			<Text>Soldat chien:Soldats chiens</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Dog Soldier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Soldato cane:Soldati cane</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Soldado perro:Soldados perros</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NATIVE_AMERICAN_DOG_SOLDIER_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Dog Soldier[COLOR_REVERT] is a Barbarian unit that spawns in Central North America and the Andes Mountains from 600 - 1800 AD.</English>
 	</TEXT>
 	<TEXT>
@@ -829,15 +1005,39 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PERIA_IMMORTAL_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_PERSIAN_IMMORTAL</Tag>
+		<English>Immortal</English>
+		<French>
+			<Text>Immortel</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Krumms&#228;belk&#228;mpfer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Immortale:Immortali</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Inmortal:Inmortales</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PERSIAN_IMMORTAL_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Immortal[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Spearman[COLOR_REVERT], has an attack bonus against [COLOR_UNIT_TEXT]Archers[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]March[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PERSECUTOR</Tag>
+		<Tag>TXT_KEY_UNIT_RELIGIOUS_PERSECUTOR</Tag>
 		<English>Religious Persecutor</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PERSECUTOR_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_RELIGIOUS_PERSECUTOR_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Religious Persecutors[COLOR_REVERT] can remove non-state religions from a city.</English>
 	</TEXT>
 	<TEXT>
@@ -857,11 +1057,35 @@
 		<English>[COLOR_UNIT_TEXT]SAM Infantry[COLOR_REVERT] can intercept aircraft and have a combat bonus against [COLOR_UNIT_TEXT]Helicopter Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_RUSSIA_COSSACK_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_RUSSIAN_COSSACK</Tag>
+		<English>Cossack</English>
+		<French>
+			<Text>Cosaque</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kosak</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Cosacco:Cosacchi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cosaco:Cosacos</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RUSSIAN_COSSACK_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Cossack[COLOR_REVERT], the Russian replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ROME_PRAETORIAN_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_ROMAN_LEGION_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Legion[COLOR_REVERT], the Roman replacement for the the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], has two additional strength points, is more expensive, loses the attack bonus when attacking cities, has a combat bonus against the [COLOR_UNIT_TEXT]Axeman[COLOR_REVERT] unit, can construct [COLOR_HIGHLIGHT_TEXT]Roman Roads[COLOR_REVERT] and can be trained until the [COLOR_TECH_TEXT]Rifling[COLOR_REVERT] and [COLOR_TECH_TEXT]Chemistry[COLOR_REVERT] technologies have been discovered.</English>
 	</TEXT>
 	<TEXT>
@@ -877,7 +1101,31 @@
 		<English>[COLOR_UNIT_TEXT]Privateers[COLOR_REVERT] has hidden nationality can attack enemy units without declaring war and begins with the [COLOR_HIGHLIGHT_TEXT]Sentry[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PORTUGAL_CARRACK_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_PORTUGUESE_CARRACK</Tag>
+		<English>Carrack</English>
+		<French>
+			<Text>Caraque:Caraques</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Karacke</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Caracca:Caracche</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Carraca:Carracas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PORTUGUESE_CARRACK_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Carrack[COLOR_REVERT], the Portuguese replacement for the the [COLOR_UNIT_TEXT]Caravel[COLOR_REVERT], can transport any unit, has an additional cargo space and begins with the [COLOR_HIGHLIGHT_TEXT]Sentry[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
@@ -901,11 +1149,11 @@
 		<English>Waka</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_IRAN_QIZILBASH</Tag>
+		<Tag>TXT_KEY_UNIT_IRANIAN_QIZILBASH</Tag>
 		<English>Qizilbash</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_IRAN_QIZILBASH_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_IRANIAN_QIZILBASH_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Qizilbash[COLOR_REVERT], the Iranian replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
@@ -917,7 +1165,7 @@
 		<English>[COLOR_UNIT_TEXT]Ironclads[COLOR_REVERT] can bombard city defenses and cannot enter [COLOR_HIGHLIGHT_TEXT]Ocean[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ROME_PRAETORIAN</Tag>
+		<Tag>TXT_KEY_UNIT_ROMAN_LEGION</Tag>
 		<English>Legion</English>
 		<French>
 			<Text>L&#233;gion</Text>
@@ -960,6 +1208,30 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SWORDSMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Swordsmen[COLOR_REVERT] have a attack bonus when attacking cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SUMERIAN_VULTURE</Tag>
+		<English>Vulture</English>
+		<French>
+			<Text>Vautour:Vautours</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Geier</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Avvoltoio:Avvoltoi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Buitre:Buitres</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SUMERIAN_VULTURE_STRATEGY</Tag>
@@ -1046,7 +1318,7 @@
 		<English>The [COLOR_UNIT_TEXT]Khampa[COLOR_REVERT], the Tibetan replacement for the the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], is more expensive, doesn't require the [COLOR_TECH_TEXT]Archery[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], can explore rival territory and has an attack bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_VIKING_BESERKER</Tag>
+		<Tag>TXT_KEY_UNIT_VIKING_HUSCARL</Tag>
 		<English>Huscarl</English>
 	</TEXT>
 	<TEXT>
@@ -1058,7 +1330,7 @@
 		<English>[COLOR_UNIT_TEXT]Work Boats[COLOR_REVERT] can create [COLOR_HIGHLIGHT_TEXT]Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]High Sea Fishing Boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Whaling boats[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Offshore Platforms[COLOR_REVERT], cannot enter the ocean until [COLOR_TECH_TEXT]Astronomy[COLOR_REVERT] and cannot pass capes until [COLOR_TECH_TEXT]Optics[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_VIKING_BESERKER_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_VIKING_HUSCARL_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Huscarl[COLOR_REVERT], the Viking replacement for the [COLOR_UNIT_TEXT]Heavy Swordsman[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and has an attack bonus when attacking cities.</English>
 	</TEXT>
 	<TEXT>
@@ -1087,7 +1359,55 @@
 		<English>[COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZULU_IMPI</Tag>
+		<English>Impi</English>
+		<French>
+			<Text>Impi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Impi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impi:Impi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Impi:Impis</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZULU_IMPI_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Impi[COLOR_REVERT] is a Barbarian unit that spawns in the Sahara and in Sub-Equatorial Africa from 450 to 1700 AD.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GREAT_SPY</Tag>
+		<English>Great Spy</English>
+		<French>
+			<Text>Espion illustre:Espions illustres</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Gro&#223;er Spion</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Grande Spia:Grandi Spie</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Gran esp&#237;a:Grandes esp&#237;as</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
 	</TEXT>
 </Civ4GameText>

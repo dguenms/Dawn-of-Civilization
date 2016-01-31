@@ -290,7 +290,7 @@ class UniquePowers:
 #                        self.increaseRomanVictories()
 #                
 #                if self.getRomanVictories() >= 5:
-#                        utils.makeUnit(con.iRomePraetorian, iRome, (pWinningUnit.getX(), pWinningUnit.getY()), 1)
+#                        utils.makeUnit(con.iRomanLegion, iRome, (pWinningUnit.getX(), pWinningUnit.getY()), 1)
 #                        self.resetRomanVictories()
 #			
 #                        CyInterface().addMessage(iRome, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_TRIUMPH", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
@@ -328,7 +328,7 @@ class UniquePowers:
 				iExtra = 0
 				if utils.getHumanID() != iRome and utils.getHumanID() != iEnemy: iExtra = 1
 				
-				utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2+iExtra)
+				utils.makeUnitAI(con.iRomanLegion, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2+iExtra)
 				utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1+iExtra*2)
 
 		#if (pTargetCity != -1):
@@ -339,14 +339,14 @@ class UniquePowers:
 
 		# weaken the effect if human player is Rome
 		#if (utils.getHumanID() == iRome):
-		#	utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
+		#	utils.makeUnitAI(con.iRomanLegion, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 		#	utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 		#else:
-		#	utils.makeUnitAI(con.iRomePraetorian, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
+		#	utils.makeUnitAI(con.iRomanLegion, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
 		#	utils.makeUnitAI(con.iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 		#print ("Units created.")
 
-		#utils.makeUnit(con.iRomePraetorian, iRome, tPlot, 3)
+		#utils.makeUnit(con.iRomanLegion, iRome, tPlot, 3)
 		#utils.makeUnit(con.iCatapult, iRome, tPlot, 2)
 				
 		#utils.debugTextPopup("Roman conquerors against "+CyTranslator().getText(str(gc.getPlayer(iEnemy).getCivilizationShortDescriptionKey()), ()))
@@ -375,7 +375,7 @@ class UniquePowers:
 				iExtra = 0
 				if utils.getHumanID() != iGreece and utils.getHumanID() != iEnemy: iExtra = 1
 				
-				utils.makeUnitAI(con.iGreekPhalanx, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2+iExtra*2)
+				utils.makeUnitAI(con.iGreekHoplite, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2+iExtra*2)
 				utils.makeUnitAI(con.iCatapult, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1+iExtra*2)
 				
 		CyInterface().addMessage(iEnemy, False, con.iDuration, CyTranslator().getText("TXT_KEY_UP_GREEK_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(con.iWhite), -1, -1, True, True)
@@ -625,9 +625,9 @@ class UniquePowers:
 
 	def mongolUP(self, city):
 		if (city.getPopulation() >= 7):
-			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 2)
+			utils.makeUnitAI(con.iMongolianKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 2)
 		elif (city.getPopulation() >= 4):
-			utils.makeUnitAI(con.iMongolKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 1)
+			utils.makeUnitAI(con.iMongolianKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 1)
 
 		#if utils.getHumanID() != iMongolia:
 		#	utils.makeUnitAI(con.iLongbowman, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_CITY_DEFENSE, 1)
@@ -736,15 +736,15 @@ class UniquePowers:
 		
 		lProgress = []
 		bAllZero = True
-		for iSpecialist in [con.iProphet, con.iArtist, con.iScientist, con.iMerchant, con.iEngineer, con.iGreatGeneral, con.iGreatSpy]:
+		for iSpecialist in [con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatGeneral, con.iGreatSpy]:
 			iProgress = city.getGreatPeopleUnitProgress(utils.getUniqueUnit(city.getOwner(), iSpecialist))
 			if iProgress > 0: bAllZero = False
 			lProgress.append(iProgress)
 			
 		if bAllZero:
-			iGreatPerson = utils.getRandomEntry([con.iProphet, con.iArtist, con.iScientist, con.iMerchant, con.iEngineer, con.iGreatSpy])
+			iGreatPerson = utils.getRandomEntry([con.iGreatProphet, con.iGreatArtist, con.iGreatScientist, con.iGreatMerchant, con.iGreatEngineer, con.iGreatSpy])
 		else:
-			iGreatPerson = utils.getHighestIndex(lProgress) + con.iProphet
+			iGreatPerson = utils.getHighestIndex(lProgress) + con.iGreatProphet
 			
 		iGreatPerson = utils.getUniqueUnit(city.getOwner(), iGreatPerson)
 		
