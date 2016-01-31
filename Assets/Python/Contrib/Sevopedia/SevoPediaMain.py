@@ -529,7 +529,7 @@ class SevoPediaMain(CvPediaScreen.CvPediaScreen):
 		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_SPECIALIST, gc.getSpecialistInfo)
 	
 	def getSpecialistList(self):
-		lExceptions = [] #con.iSpecialistSpy
+		lExceptions = [con.iSpecialistSpy]
 		return self.getSortedList(gc.getNumSpecialistInfos(), gc.getSpecialistInfo, False, lExceptions)
 
 
