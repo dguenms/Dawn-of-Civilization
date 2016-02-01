@@ -5,7 +5,7 @@
 <!-- CityLSystem -->
 <!-- -->
 <!-- When debugging LSystems, refer to Civ4/Logs/LSystem.log for help -->
-<!-- CityLSystems use the follwing ArtRef attributes:
+<!-- CityLSystems use the following ArtRef attributes:
 
         Attribute     Syntax                Meaning
         ____________________________________________________________________________________________________________
@@ -21,7 +21,7 @@
         ArtStyle      ARTSTYLE_ALL          This art reference is allowed regardless of the game era.
                                             This is the default if not otherwise specified.
                       ARTSTYLE_xxx,[...]    A list of art styles, specified in CIV4GlobalTypes, for which
-                                            this art is valid. A ArtStyles are Civilization-sepcific 
+                                            this art is valid. A ArtStyles are Civilization-specific 
                                             and are specified in CIV4CivilizationInfos.xml
   
 		You can add the following items to a node or production...

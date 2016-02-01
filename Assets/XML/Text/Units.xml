@@ -778,11 +778,6 @@
 		<English>[COLOR_UNIT_TEXT]Mobile SAMs[COLOR_REVERT] can intercept aircraft and have a combat bonus against [COLOR_UNIT_TEXT]Helicopter Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
-		<English>Heavy Swordsman</English>
-		<German>Schwerer Schwertk&#228;mpfer</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAYAN_HOLKAN_HELP</Tag>
 		<English>[ICON_BULLET]Receives [ICON_FOOD] for Defeating Enemy Units</English>
 	</TEXT>
@@ -1039,10 +1034,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RELIGIOUS_PERSECUTOR_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Religious Persecutors[COLOR_REVERT] can remove non-state religions from a city.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_PHOENICIAN_BIREME</Tag>
-		<English>Bireme</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHOENICIAN_BIREME</Tag>

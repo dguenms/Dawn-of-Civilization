@@ -78,45 +78,6 @@
 		<English>New Mexica Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MEXICO_SHORT_DESC</Tag>
-		<English>Mexico</English>
-		<French>
-			<Text>Mexique</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Mexiko</German>
-		<Italian>
-			<Text>Messico</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>M&#233;xico</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_MEXICO_ADJECTIVE</Tag>
-		<English>Mexican</English>
-		<French>
-			<Text>Mexicains</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<Italian>
-			<Text>Messicani</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Mexicanos</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_AZTECS_ALTEPETL</Tag>
 		<English>Mexican Altepetl</English>
 	</TEXT>
