@@ -108,7 +108,7 @@ def exportCore(iPlayer, bForce = False):
 					file.write("i" + sName + " : " + str(lExceptions) + ",")
 			else:
 				file.write("# dChangedCoreArea\n")
-					file.write("i" + sName + " : " "("+ str(BL) + ",\t" + str(TR) + "),")
+				file.write("i" + sName + " : " "("+ str(BL) + ",\t" + str(TR) + "),")
 				if lExceptions:
 					file.write("\n\n# dChangedCoreAreaExceptions\n")
 					file.write("i" + sName + " : " + str(lExceptions) + ",")

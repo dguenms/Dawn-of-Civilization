@@ -639,6 +639,12 @@ class CvWorldBuilderScreen:
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
 				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
 					self.showStabilityOverlay()
+		elif self.iPlayerAddMode == "SettlerValue":
+			if self.m_iCurrentPlayer < con.iNumPlayers:
+				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, 20)
+				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
+					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
