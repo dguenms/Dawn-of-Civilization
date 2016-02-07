@@ -16,8 +16,9 @@ def getArea(iPlayer, tRectangle, dExceptions, bReborn=None, dChangedRectangle={}
 	lExceptions = getOrElse(dExceptions, iPlayer, [])
 	
 	if bReborn:
-		if iPlayer in dChangedRectangle: tBL, tTR = dChangedRectangle[iPlayer]
-		if iPlayer in dChangedExceptions: lExceptions = dChangedExceptions[iPlayer]
+		if iPlayer in dChangedRectangle:
+			tBL, tTR = dChangedRectangle[iPlayer]
+			lExceptions = getOrElse(dChangedExceptions, iPlayer, [])
 	
 	left, bottom = tBL
 	right, top = tTR		

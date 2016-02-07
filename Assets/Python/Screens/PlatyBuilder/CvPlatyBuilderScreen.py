@@ -31,6 +31,8 @@ import Consts as con
 from RFCUtils import utils
 import MapEditorTools as met
 import Areas
+import SettlerMaps
+import WarMaps
 localText = CyTranslator()
 
 gc = CyGlobalContext()
@@ -1135,7 +1137,7 @@ class CvWorldBuilderScreen:
 				nRows = 4
 				if self.iPlayerAddMode in ["Core", "SettlerValue", "WarMap"]:
 					nRows += 1
-					bExtended = self.m_iCurrentPlayer in [con.iTurkey, con.iByzantium, con.iCarthage, con.iMongolia, con.iSpain, con.iMoors, con.iItaly, con.iArabia, con.iJapan, con.iGermany, con.iHolyRome, con.iKhmer, con.iGreece, con.iChina]
+					bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
 					if bExtended:
 						nRows += 1
 
@@ -2128,13 +2130,24 @@ class CvWorldBuilderScreen:
 		
 		elif inputClass.getFunctionName() == "Export":
 			if self.iPlayerAddMode == "Core":
-				met.exportCore(self.m_iCurrentPlayer, CyInterface().shiftKey())
+				if CvEventInterface.getEventManager().bAlt:
+					met.exportAllCores()
+				else:
+					met.exportCore(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
-				met.exportSettlerMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
+				if CvEventInterface.getEventManager().bAlt:
+					for iPlayer in range(con.iNumPlayers):
+						met.exportSettlerMap(iPlayer, True, True)
+				else:
+					met.exportSettlerMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showStabilityOverlay()
 			else:
-				met.exportWarMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
+				if CvEventInterface.getEventManager().bAlt:
+					for iPlayer in range(con.iNumPlayers):
+						met.exportWarMap(iPlayer, True, True)
+				else:
+					met.exportWarMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showWarOverlay()
 			
 		elif inputClass.getFunctionName() == "SwitchReborn":
