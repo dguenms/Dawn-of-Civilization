@@ -121,7 +121,64 @@ def exportCore(iPlayer, bForce = False):
 	popup.setBodyString(sText)
 	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
 	
-def exportSettlerMap(iPlayer, bForce = False):
+def exportAllCores():
+	lAllCores = []
+	lAllExceptions = []
+	for iPlayer in range(iNumPlayers):
+		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+		sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+		if iPlayer == iHolyRome:
+			sName = "HolyRome"
+		elif iPlayer == iAztecs:
+			sName = "Aztecs"
+
+		Bottom = iWorldY
+		Top = 0
+		Left = iWorldX
+		Right = 0
+		for x in range(iWorldX):
+			for y in range(iWorldY):
+				if gc.getMap().plot(x, y).isCore(iPlayer):
+					if x < Left:
+						Left = x
+					if x > Right:
+						Right = x
+					if y < Bottom:
+						Bottom = y
+					if y > Top:
+						Top = y
+		BL = (Left, Bottom)
+		TR = (Right, Top)
+
+		lExceptions = []
+		for x in range(BL[0], TR[0]+1):
+			for y in range(BL[1], TR[1]+1):
+				plot = gc.getMap().plot(x, y)
+				if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions)):
+					lExceptions.append((x, y))
+
+		lAllCores.append("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
+		if lExceptions:
+			lAllExceptions.append("i" + sName + " : " + str(lExceptions) + ",")
+
+	file = open(IMAGE_LOCATION + "\Cores\\AllCores.txt", 'wt')
+	try:
+		file.write("tCoreArea = (\n")
+		for sString in lAllCores:
+			file.write(sString + "\n")
+		file.write(")")
+		file.write("\n\ndCoreAreaExceptions = {\n")
+		for sString in lAllExceptions:
+			file.write(sString + "\n")
+		file.write("}")
+	finally:
+		file.close()
+	sText = "All core maps exported"
+	popup = PyPopup.PyPopup()
+	popup.setBodyString(sText)
+	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+
+def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
 	if iPlayer == iHolyRome:
@@ -145,7 +202,12 @@ def exportSettlerMap(iPlayer, bForce = False):
 			for y in reversed(range(iWorldY)):
 				sLine = "(\t"
 				for x in range(iWorldX):
-					sLine += "%d,\t" % getSettlerValue(iPlayer, (x, y))
+					plot = gc.getMap().plot(x, y)
+					if plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions):
+						iValue = 20
+					else:
+						iValue = getSettlerValue(iPlayer, (x, y))
+					sLine += "%d,\t" % iValue
 				if y == 0:
 					sLine += ")),"
 				else:
@@ -156,11 +218,16 @@ def exportSettlerMap(iPlayer, bForce = False):
 		sText = "Settlermap of %s exported" %sName
 	else:
 		sText = "No changes between current settlervalues and values defined in python"
+	if bAll:
+		if iPlayer == iNumPlayers-1:
+			sText = "Settlermaps of all Civs exported"
+		else:
+			return
 	popup = PyPopup.PyPopup()
 	popup.setBodyString(sText)
 	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
 
-def exportWarMap(iPlayer, bForce = False):
+def exportWarMap(iPlayer, bForce = False, bAll = False):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
 	if iPlayer == iHolyRome:
@@ -184,7 +251,14 @@ def exportWarMap(iPlayer, bForce = False):
 			for y in reversed(range(iWorldY)):
 				sLine = "(\t"
 				for x in range(iWorldX):
-					sLine += "%d,\t" % getWarValue(iPlayer, (x, y))
+					plot = gc.getMap().plot(x, y)
+					if plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions):
+						iValue = 0
+					elif plot.isCore(iPlayer):
+						iValue = max(8, getWarValue(iPlayer, (x, y)))
+					else:
+						iValue = getWarValue(iPlayer, (x, y))
+					sLine += "%d,\t" % iValue
 				if y == 0:
 					sLine += ")),"
 				else:
@@ -195,6 +269,11 @@ def exportWarMap(iPlayer, bForce = False):
 		sText = "Warmap of %s exported" %sName
 	else:
 		sText = "No changes between current warvalues and values defined in python"
+	if bAll:
+		if iPlayer == iNumPlayers-1:
+			sText = "Warmaps of all Civs exported"
+		else:
+			return
 	popup = PyPopup.PyPopup()
 	popup.setBodyString(sText)
 	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
