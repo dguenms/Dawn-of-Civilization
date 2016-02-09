@@ -1,5 +1,8 @@
 from Consts import *
 
+# Peak that change to hills during the game, like Bogota
+lPeakExceptions = [(31, 13), (32, 19), (27, 29), (88, 47), (40, 66)]
+
 def isReborn(iPlayer):
 	return gc.getPlayer(iPlayer).isReborn()
 	
@@ -13,8 +16,9 @@ def getArea(iPlayer, tRectangle, dExceptions, bReborn=None, dChangedRectangle={}
 	lExceptions = getOrElse(dExceptions, iPlayer, [])
 	
 	if bReborn:
-		if iPlayer in dChangedRectangle: tBL, tTR = dChangedRectangle[iPlayer]
-		if iPlayer in dChangedExceptions: lExceptions = dChangedExceptions[iPlayer]
+		if iPlayer in dChangedRectangle:
+			tBL, tTR = dChangedRectangle[iPlayer]
+			lExceptions = getOrElse(dChangedExceptions, iPlayer, [])
 	
 	left, bottom = tBL
 	right, top = tTR		
@@ -58,7 +62,9 @@ def updateCore(iPlayer):
 	lCore = getCoreArea(iPlayer)
 	for x in range(iWorldX):
 		for y in range(iWorldY):
-			gc.getMap().plot(x, y).setCore(iPlayer, (x, y) in lCore)
+			plot = gc.getMap().plot(x, y)
+			if plot.isWater() or (plot.isPeak() and (x, y) not in lPeakExceptions): continue
+			plot.setCore(iPlayer, (x, y) in lCore)
 			
 def isForeignCore(iPlayer, tPlot):
 	x, y =  tPlot

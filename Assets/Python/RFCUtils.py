@@ -1947,9 +1947,9 @@ class RFCUtils:
 	
 		pPlayer.setReborn(bReborn)
 		
+		Areas.updateCore(iPlayer)
 		SettlerMaps.updateMap(iPlayer, bReborn)
 		WarMaps.updateMap(iPlayer, bReborn)
-		Areas.updateCore(iPlayer)
 
 	def toggleStabilityOverlay(self, iPlayer = -1):
 		engine = CyEngine()
@@ -2001,7 +2001,7 @@ class RFCUtils:
 	def removeStabilityOverlay(self):
 		engine = CyEngine()
 		# clear the highlight
-		for i in range(con.iNumPlotStabilityTypes):
+		for i in range(max(con.iNumPlotStabilityTypes, con.iMaxWarValue/2)):
 			engine.clearAreaBorderPlots(1000+i)
 
 utils = RFCUtils()
