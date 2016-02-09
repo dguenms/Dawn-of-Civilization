@@ -31,6 +31,8 @@ import Consts as con
 from RFCUtils import utils
 import MapEditorTools as met
 import Areas
+import SettlerMaps
+import WarMaps
 localText = CyTranslator()
 
 gc = CyGlobalContext()
@@ -639,6 +641,12 @@ class CvWorldBuilderScreen:
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
 				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
 					self.showStabilityOverlay()
+		elif self.iPlayerAddMode == "SettlerValue":
+			if self.m_iCurrentPlayer < con.iNumPlayers:
+				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, 20)
+				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
+					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
 			if self.m_iCurrentPlayer < con.iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
@@ -1129,7 +1137,7 @@ class CvWorldBuilderScreen:
 				nRows = 4
 				if self.iPlayerAddMode in ["Core", "SettlerValue", "WarMap"]:
 					nRows += 1
-					bExtended = self.m_iCurrentPlayer in [con.iTurkey, con.iByzantium, con.iCarthage, con.iMongolia, con.iSpain, con.iMoors, con.iItaly, con.iArabia, con.iJapan, con.iGermany, con.iHolyRome, con.iKhmer, con.iGreece, con.iChina]
+					bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
 					if bExtended:
 						nRows += 1
 
@@ -1262,7 +1270,7 @@ class CvWorldBuilderScreen:
 				iX += iAdjust
 				screen.addDropDownBoxGFC("PresetValue", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 				if self.iPlayerAddMode == "WarMap":
-					for i in range(0, 10+1, 2):
+					for i in range(0, con.iMaxWarValue+1, 2):
 						screen.addPullDownString("PresetValue", str(i), i, i, i == iWarValue)
 				else:
 					for i in range(len(con.lPresetValues)):
@@ -2122,18 +2130,32 @@ class CvWorldBuilderScreen:
 		
 		elif inputClass.getFunctionName() == "Export":
 			if self.iPlayerAddMode == "Core":
-				met.exportCore(self.m_iCurrentPlayer)
+				if CvEventInterface.getEventManager().bAlt:
+					met.exportAllCores()
+				else:
+					met.exportCore(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
-				met.exportSettlerMap(self.m_iCurrentPlayer)
+				if CvEventInterface.getEventManager().bAlt:
+					for iPlayer in range(con.iNumPlayers):
+						met.exportSettlerMap(iPlayer, True, True)
+				else:
+					met.exportSettlerMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showStabilityOverlay()
 			else:
-				met.exportWarMap(self.m_iCurrentPlayer)
+				if CvEventInterface.getEventManager().bAlt:
+					for iPlayer in range(con.iNumPlayers):
+						met.exportWarMap(iPlayer, True, True)
+				else:
+					met.exportWarMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showWarOverlay()
 			
 		elif inputClass.getFunctionName() == "SwitchReborn":
 			utils.setReborn(self.m_iCurrentPlayer, not utils.isReborn(self.m_iCurrentPlayer))
-			self.showStabilityOverlay()
+			if self.iPlayerAddMode == "WarMap":
+				self.showWarOverlay()
+			else:
+				self.showStabilityOverlay()
 
 		elif inputClass.getFunctionName() == "PresetValue":
 			if self.iPlayerAddMode == "WarMap":
