@@ -1991,7 +1991,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ARABIAN_MADRASSA</ArtDefineTag>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>90</iCost>
@@ -2039,7 +2039,7 @@
 			<Strategy>TXT_KEY_BUILDING_CHINESE_TAIXUE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CHINESE_TAIXUE</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>90</iCost>
@@ -2087,7 +2087,7 @@
 			<Strategy>TXT_KEY_BUILDING_THAI_HO_TRAI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_THAI_HO_TRAI</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
@@ -2132,7 +2132,7 @@
 			<Strategy>TXT_KEY_BUILDING_TAMIL_SANGAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TAMIL_SANGAM</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_WRITING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>90</iCost>

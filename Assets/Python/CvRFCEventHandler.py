@@ -108,10 +108,10 @@ class CvRFCEventHandler:
 		
 		# Leoreth: set DLL core values
 		Modifiers.init()
+		Areas.init()
 		SettlerMaps.init()
 		WarMaps.init()
 		RegionMap.init()
-		Areas.init()
 		Civilizations.init()
 		AIParameters.init()
 		
