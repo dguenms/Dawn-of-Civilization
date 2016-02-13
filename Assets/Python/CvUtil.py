@@ -8,6 +8,11 @@ import traceback
 import os
 import sys
 
+#Alexius08: import RFC-specific constants and functions for new score calc formula
+import Consts as con
+import RFCUtils
+utils = RFCUtils.RFCUtils()
+
 # For Civ game code access
 from CvPythonExtensions import *
 
@@ -172,7 +177,15 @@ def getScoreComponent(iRawScore, iInitial, iMax, iFactor, bExponential, bFinal, 
 		return 0
 
 	if bFinal and bVictory:
-		fTurnRatio = float(gc.getGame().getGameTurn()) / float(gc.getGame().getEstimateEndTurn())
+		#Alexius08: Begin new score calculation formula
+		iHumanCiv = utils.getHumanID()
+		if utils.isReborn(iHumanCiv):
+			iHumanSpawnTurn = getTurnForYear(con.tRebirth[iHumanCiv]) #Get spawn turn for reborn civs
+		else:
+			iHumanSpawnTurn = getTurnForYear(con.tBirth[iHumanCiv]) #Get spawn turn for others
+		fTurnRatio = float(gc.getGame().getGameTurn() - iHumanSpawnTurn) / float(gc.getGame().getEstimateEndTurn() - iHumanSpawnTurn) #Compensate for player's delayed spawn
+		#End new formula
+		
 		if bExponential and (iInitial != 0):
 			fRatio = iMax / iInitial
 			iMax = iInitial * pow(fRatio, fTurnRatio)
