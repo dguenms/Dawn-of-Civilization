@@ -10,8 +10,6 @@ import sys
 
 #Alexius08: import RFC-specific constants and functions for new score calc formula
 import Consts as con
-import RFCUtils
-utils = RFCUtils.RFCUtils()
 
 # For Civ game code access
 from CvPythonExtensions import *
@@ -178,8 +176,8 @@ def getScoreComponent(iRawScore, iInitial, iMax, iFactor, bExponential, bFinal, 
 
 	if bFinal and bVictory:
 		#Alexius08: Begin new score calculation formula
-		iHumanCiv = utils.getHumanID()
-		if utils.isReborn(iHumanCiv):
+		iHumanCiv = gc.getGame().getActivePlayer()
+		if gc.getPlayer(iHumanCiv).isReborn():
 			iHumanSpawnTurn = getTurnForYear(con.tRebirth[iHumanCiv]) #Get spawn turn for reborn civs
 		else:
 			iHumanSpawnTurn = getTurnForYear(con.tBirth[iHumanCiv]) #Get spawn turn for others
