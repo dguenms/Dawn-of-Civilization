@@ -5906,13 +5906,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_HORSE_ARCHER</Class>
-			<Type>UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</Type>
+			<Type>UNIT_NUMIDIAN_CAVALRY</Type>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</Description>
-			<Civilopedia>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_NUMIDIAN_CAVALRY</Description>
+			<Civilopedia>TXT_KEY_UNIT_NUMIDIAN_CAVALRY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_NUMIDIAN_CAVALRY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -6004,7 +6004,7 @@
 				<iRangedWaveSize>3</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_NUMIDIAN_CAVALRY</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
