@@ -543,7 +543,7 @@ class CvEventManager(object):
 		'Building Completed'
 		pCity, iBuildingType = argsList
 		game = gc.getGame()
-		if ((not gc.getGame().isNetworkMultiPlayer()) and (pCity.getOwner() == gc.getGame().getActivePlayer()) and isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType())):
+		if ((not gc.getGame().isNetworkMultiPlayer()) and (pCity.getOwner() == gc.getGame().getActivePlayer()) and (gc.getPlayer(pCity.getOwner()).countNumBuildings(iBuildingType) <= 1)):
 			# If this is a wonder...
 			if not CyGame().GetWorldBuilderMode():	## Platy Builder ##
 				popupInfo = CyPopupInfo()
@@ -566,16 +566,7 @@ class CvEventManager(object):
 		pCity, iProjectType = argsList
 		game = gc.getGame()
 		if ((not gc.getGame().isNetworkMultiPlayer()) and (pCity.getOwner() == gc.getGame().getActivePlayer())):
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
-			popupInfo.setData1(iProjectType)
-			popupInfo.setData2(pCity.getID())
-			popupInfo.setData3(2)
-			popupInfo.setText(u"showWonderMovie")
-			popupInfo.addPopup(pCity.getOwner())
-	## Platy Builder ##
-			if not CyGame().GetWorldBuilderMode():
-	## Platy Builder ##
+			if not CyGame().GetWorldBuilderMode():	#Platy Builder
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
 				popupInfo.setData1(iProjectType)
