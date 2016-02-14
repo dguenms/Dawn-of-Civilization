@@ -252,10 +252,10 @@ class Barbs:
 
                 #barbarians in north africa
                 if (iGameTurn >= getTurnForYear(-210) and iGameTurn < getTurnForYear(50)):
-                        self.checkSpawn(iBarbarian, con.iNumidianNumidianCavalry, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
+                        self.checkSpawn(iBarbarian, con.iNumidianCavalry, 1, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 9-iHandicap, 3, ["TXT_KEY_ADJECTIVE_BERBER"])
                 if (iGameTurn >= getTurnForYear(50) and iGameTurn < getTurnForYear(900)):
                         if utils.getScenario() == con.i3000BC:  #late start condition
-				self.checkSpawn(iBarbarian, con.iNumidianNumidianCavalry, 3 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
+				self.checkSpawn(iBarbarian, con.iNumidianCavalry, 3 + iHandicap, (54, 31), (67, 35), self.spawnNomads, iGameTurn, 10-iHandicap, 5, ["TXT_KEY_ADJECTIVE_BERBER"])
                 if (iGameTurn >= getTurnForYear(900) and iGameTurn <= getTurnForYear(1800)):
                         self.checkSpawn(iBarbarian, con.iArabianCamelArcher, 1, (54, 27), (67, 35), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_BERBER"])
                         
