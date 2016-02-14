@@ -101,7 +101,7 @@
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<CreateSound/>
-			<MovieDefineTag/>
+			<MovieDefineTag>ART_DEF_MOVIE_SDI</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
 			<Type>PROJECT_APOLLO_PROGRAM</Type>
@@ -133,7 +133,7 @@
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<CreateSound/>
-			<MovieDefineTag/>
+			<MovieDefineTag>ART_DEF_MOVIE_APOLLO_PROGRAM</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
 			<Type>PROJECT_SS_COCKPIT</Type>
