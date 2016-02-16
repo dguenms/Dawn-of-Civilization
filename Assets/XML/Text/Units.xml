@@ -709,6 +709,11 @@
 		<English>[COLOR_UNIT_TEXT]Marines[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Machine Gun[COLOR_REVERT] and [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] units, are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
+		<English>Heavy Swordsman</English>
+		<German>Schwerer Schwertk&#228;mpfer</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
