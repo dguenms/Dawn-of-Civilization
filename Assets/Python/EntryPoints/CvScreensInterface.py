@@ -73,7 +73,7 @@ def getStabilityLevel(argsList):
 	return sd.getStabilityLevel(argsList[0])
 	
 def countAchievedGoals(argsList):
-        return utils.countAchievedGoals(argsList[0])
+	return utils.countAchievedGoals(argsList[0])
 	
 ## World Builder ## Platypedia
 import CvPlatyBuilderScreen

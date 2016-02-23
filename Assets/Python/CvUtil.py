@@ -244,7 +244,7 @@ def getInfo(strInfoType, strInfoName):	# returns info for InfoType
 def AdjustBuilding(add, all, BuildingIdx, pCity): # adds/removes buildings from a city
 	"Function for toggling buildings in cities"
 	if (BuildingIdx!= -1):  
-		if (all):                #Add/Remove ALL
+		if (all):		#Add/Remove ALL
 			for i in range(BuildingIdx):
 				pCity.setNumRealBuildingIdx(i,add)
 		else:
