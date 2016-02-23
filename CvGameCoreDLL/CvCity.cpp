@@ -3809,7 +3809,7 @@ void CvCity::hurry(HurryTypes eHurry)
 	changeProduction(hurryProduction(eHurry));
 
 	// Leoreth: remember if a unit is being hurried to apply the mercenary promotion, includes Phoenician UP
-	if (isProductionUnit() && iHurryGold > 0 && getOwnerINLINE() != CARTHAGE)
+	if (isProductionUnit() && iHurryGold > 0 && getOwnerINLINE() != PHOENICIA)
 	{
 		setUnitHurried(getProductionUnit(), true);
 	}
@@ -5673,7 +5673,7 @@ int CvCity::getHurryGold(HurryTypes eHurry, int iHurryCost) const
 	iGold = (iHurryCost * GC.getHurryInfo(eHurry).getGoldPerProduction());
 	
 	// Phoenician UP: -50% mercenary cost
-	if (getOwnerINLINE() == CARTHAGE && GC.getHurryInfo(eHurry).isUnits())
+	if (getOwnerINLINE() == PHOENICIA && GC.getHurryInfo(eHurry).isUnits())
 	{
 		iGold /= 2;
 	}
@@ -8253,7 +8253,7 @@ int CvCity::getTradeRouteModifier() const
 	int iResult = m_iTradeRouteModifier;
 
     // Leoreth - new Phoenician UP: the power of seafaring, +50% trade route yield.
-    //if (getOwner() == CARTHAGE)
+    //if (getOwner() == PHOENICIA)
     //    iResult += 50;
 
 	//Leoreth: Porcelain Tower effect (removed)

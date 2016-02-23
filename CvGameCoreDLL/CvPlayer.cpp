@@ -5217,7 +5217,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 	{
 // BUG - Goody Hut Log - start
 		// keep messages in event log forever
-		gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getGoodyInfo(eGoody).getSound(), MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getImprovementArtInfo("ART_DEF_IMPROVEMENT_GOODY_HUT")->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+		gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getGoodyInfo(eGoody).getSound(), MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getImprovementArtInfo("ART_DEF_IMPROVEMENT_TRIBAL_VILLAGE")->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 // BUG - Goody Hut Log - end
 	}
 
@@ -7803,7 +7803,7 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 			return true;
 
 	// Phoenician UP: starts with Mercenaries
-	if (getID() == CARTHAGE)
+	if (getID() == PHOENICIA)
 		if (eCivic == CIVIC_MERCENARIES)
 			return true;
 
@@ -24177,7 +24177,7 @@ void CvPlayer::setLatestRebellionTurn(int iNewValue)
 
 	int cityThreshold = 6;
 
-	if (getID() == CARTHAGE) {
+	if (getID() == PHOENICIA) {
 	    cityThreshold = 2;
 	}else if (getID() == KOREA) {
 	    cityThreshold = 3;

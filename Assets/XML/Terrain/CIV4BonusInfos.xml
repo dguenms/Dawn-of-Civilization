@@ -1210,8 +1210,8 @@
 		</BonusInfo>
 		<BonusInfo>
 			<Type>BONUS_COTTON</Type>
-			<Description>MOD_TXT_KEY_RESOURCE_COTTON</Description>
-			<Civilopedia>TXT_KEY_CHINESE_UNIFICATION_BONUS_COTTON_PEDIA</Civilopedia>
+			<Description>TXT_KEY_BONUS_COTTON</Description>
+			<Civilopedia>TXT_KEY_BONUS_COTTON_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COTTON</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
@@ -2120,11 +2120,11 @@
 			<FeatureTerrainBooleans/>
 		</BonusInfo>
 		<BonusInfo>
-			<Type>BONUS_DRAMA</Type>
-			<Description>TXT_KEY_BONUS_DRAMA</Description>
-			<Civilopedia>TXT_KEY_BONUS_DRAMA_PEDIA</Civilopedia>
+			<Type>BONUS_HIT_FOOTBALL_EVENT</Type>
+			<Description>TXT_KEY_BONUS_HIT_FOOTBALL_EVENT</Description>
+			<Civilopedia>TXT_KEY_BONUS_HIT_FOOTBALL_EVENT_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
-			<ArtDefineTag>ART_DEF_BONUS_DRAMA</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BONUS_HIT_FOOTBALL_EVENT</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
@@ -2161,11 +2161,11 @@
 			<FeatureTerrainBooleans/>
 		</BonusInfo>
 		<BonusInfo>
-			<Type>BONUS_MUSIC</Type>
-			<Description>TXT_KEY_BONUS_MUSIC</Description>
-			<Civilopedia>TXT_KEY_BONUS_MUSIC_PEDIA</Civilopedia>
+			<Type>BONUS_HIT_SINGLES</Type>
+			<Description>TXT_KEY_BONUS_HIT_SINGLES</Description>
+			<Civilopedia>TXT_KEY_BONUS_HIT_SINGLES_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
-			<ArtDefineTag>ART_DEF_BONUS_MUSIC</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BONUS_HIT_SINGLES</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>
@@ -2202,11 +2202,11 @@
 			<FeatureTerrainBooleans/>
 		</BonusInfo>
 		<BonusInfo>
-			<Type>BONUS_MOVIES</Type>
-			<Description>TXT_KEY_BONUS_MOVIES</Description>
-			<Civilopedia>TXT_KEY_BONUS_MOVIES_PEDIA</Civilopedia>
+			<Type>BONUS_HIT_MOVIES</Type>
+			<Description>TXT_KEY_BONUS_HIT_MOVIES</Description>
+			<Civilopedia>TXT_KEY_BONUS_HIT_MOVIES_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
-			<ArtDefineTag>ART_DEF_BONUS_MOVIES</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BONUS_HIT_MOVIES</ArtDefineTag>
 			<TechReveal>NONE</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
 			<TechPlayerTrade>NONE</TechPlayerTrade>

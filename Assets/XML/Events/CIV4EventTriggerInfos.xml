@@ -288,7 +288,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -6082,7 +6082,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -8067,7 +8067,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_RIFLING</ObsoleteTech>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -8242,7 +8242,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -8591,7 +8591,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -11414,7 +11414,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -11505,7 +11505,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -12627,7 +12627,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -16660,7 +16660,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech> <!-- Obsolete Industrial Era -->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>

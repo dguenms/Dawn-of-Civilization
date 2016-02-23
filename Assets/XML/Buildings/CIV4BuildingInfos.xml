@@ -2849,15 +2849,15 @@
 			<ConstructSound>AS2D_BUILD_BROADCASTTOWER</ConstructSound>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
-					<BonusType>BONUS_DRAMA</BonusType>
+					<BonusType>BONUS_HIT_FOOTBALL_EVENT</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
-					<BonusType>BONUS_MUSIC</BonusType>
+					<BonusType>BONUS_HIT_SINGLES</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
-					<BonusType>BONUS_MOVIES</BonusType>
+					<BonusType>BONUS_HIT_MOVIES</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
@@ -3601,15 +3601,15 @@
 			</BonusHealthChanges>
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
-					<BonusType>BONUS_DRAMA</BonusType>
+					<BonusType>BONUS_HIT_FOOTBALL_EVENT</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
-					<BonusType>BONUS_MUSIC</BonusType>
+					<BonusType>BONUS_HIT_SINGLES</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 				<BonusHappinessChange>
-					<BonusType>BONUS_MOVIES</BonusType>
+					<BonusType>BONUS_HIT_MOVIES</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
@@ -4169,7 +4169,7 @@
 			<Strategy>TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INTELLIGENCE_AGENCY</ArtDefineTag>
-			<PrereqTech>TECH_UTOPIA</PrereqTech>
+			<PrereqTech>TECH_COMMUNISM</PrereqTech>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -4210,7 +4210,7 @@
 			<Strategy>TXT_KEY_BUILDING_SECURITY_BUREAU_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SECURITY_BUREAU</ArtDefineTag>
-			<PrereqTech>TECH_UTOPIA</PrereqTech>
+			<PrereqTech>TECH_COMMUNISM</PrereqTech>
 			<FreePromotion>PROMOTION_SECURITY1</FreePromotion>
 			<iCost>220</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -9155,7 +9155,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_ST_BASILS_CATHEDRAL</MovieDefineTag>
 			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
-			<ObsoleteTech>TECH_UTOPIA</ObsoleteTech>
+			<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech>
 			<PrereqTech>TECH_MILITARY_TRADITION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -9471,7 +9471,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LUBYANKA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_LUBYANKA</MovieDefineTag>
-			<PrereqTech>TECH_UTOPIA</PrereqTech>
+			<PrereqTech>TECH_COMMUNISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -9802,7 +9802,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_WEMBLEY</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_WEMBLEY</MovieDefineTag>
 			<PrereqTech>TECH_RADIO</PrereqTech>
-			<FreeBonus>BONUS_DRAMA</FreeBonus>
+			<FreeBonus>BONUS_HIT_FOOTBALL_EVENT</FreeBonus>
 			<iNumFreeBonuses>-1</iNumFreeBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -9842,7 +9842,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_GRACELAND</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_GRACELAND</MovieDefineTag>
 			<PrereqTech>TECH_RADIO</PrereqTech>
-			<FreeBonus>BONUS_MUSIC</FreeBonus>
+			<FreeBonus>BONUS_HIT_SINGLES</FreeBonus>
 			<iNumFreeBonuses>-1</iNumFreeBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -9955,7 +9955,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_HOLLYWOOD</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HOLLYWOOD</MovieDefineTag>
 			<PrereqTech>TECH_MASS_MEDIA</PrereqTech>
-			<FreeBonus>BONUS_MOVIES</FreeBonus>
+			<FreeBonus>BONUS_HIT_MOVIES</FreeBonus>
 			<iNumFreeBonuses>-1</iNumFreeBonuses>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>

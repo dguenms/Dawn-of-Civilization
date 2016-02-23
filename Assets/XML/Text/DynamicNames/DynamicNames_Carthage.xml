@@ -2,7 +2,7 @@
 <!-- Carthage -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CARTHAGE_DESC</Tag>
+		<Tag>TXT_KEY_CIV_PHOENICIA_DESC</Tag>
 		<English>The Phoenicians</English>
 	</TEXT>
 	<TEXT>

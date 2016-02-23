@@ -13744,7 +13744,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 		}
 		else
 		{
-			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)CARTHAGE).getCivilizationType()).getUnitArtStyleType();
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)PHOENICIA).getCivilizationType()).getUnitArtStyleType();
 		}
 	}
 	/*else if (id == REGION_ANATOLIA)
