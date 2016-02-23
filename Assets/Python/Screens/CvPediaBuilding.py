@@ -41,12 +41,12 @@ class CvPediaBuilding:
 		self.X_ROTATION_BUILDING_ANIMATION = -20
 		self.Z_ROTATION_BUILDING_ANIMATION = 30
 		self.SCALE_ANIMATION = 0.7
-                
+		
 		self.X_STATS_PANE = self.X_BUILDING_PANE + 110
 		self.Y_STATS_PANE = self.Y_BUILDING_PANE + 17
 		self.W_STATS_PANE = 190
 		self.H_STATS_PANE = 110
-                
+		
 		self.X_ICON = self.X_BUILDING_PANE + 8
 		self.Y_ICON = self.Y_BUILDING_PANE + 8
 		self.W_ICON = 100
@@ -130,7 +130,7 @@ class CvPediaBuilding:
 
 		screen.addListBoxGFC(panelName, "", self.X_STATS_PANE, self.Y_STATS_PANE, self.W_STATS_PANE, self.H_STATS_PANE, TableStyles.TABLE_STYLE_EMPTY)
 		screen.enableSelect(panelName, False)
-                
+		
 		if (isWorldWonderClass(gc.getBuildingInfo(self.iBuilding).getBuildingClassType())):
 			iMaxInstances = gc.getBuildingClassInfo(gc.getBuildingInfo(self.iBuilding).getBuildingClassType()).getMaxGlobalInstances()
 			szBuildingType = localText.getText("TXT_KEY_PEDIA_WORLD_WONDER", ())
@@ -227,7 +227,7 @@ class CvPediaBuilding:
 		
 		panelName = self.top.getNextWidgetName()
 		screen.addPanel( panelName, localText.getText("TXT_KEY_PEDIA_REQUIRES", ()), "", false, true,
-                                 self.X_PREREQ_PANE, self.Y_PREREQ_PANE, self.W_PREREQ_PANE, self.H_PREREQ_PANE, PanelStyles.PANEL_STYLE_BLUE50 )
+				 self.X_PREREQ_PANE, self.Y_PREREQ_PANE, self.W_PREREQ_PANE, self.H_PREREQ_PANE, PanelStyles.PANEL_STYLE_BLUE50 )
 						
 		screen.attachLabel(panelName, "", "  ")
 
@@ -275,7 +275,7 @@ class CvPediaBuilding:
 		
 		panelName = self.top.getNextWidgetName()
 		screen.addPanel( panelName, localText.getText("TXT_KEY_PEDIA_SPECIAL_ABILITIES", ()), "", true, false,
-                                 self.X_SPECIAL_PANE, self.Y_SPECIAL_PANE, self.W_SPECIAL_PANE, self.H_SPECIAL_PANE, PanelStyles.PANEL_STYLE_BLUE50 )
+				 self.X_SPECIAL_PANE, self.Y_SPECIAL_PANE, self.W_SPECIAL_PANE, self.H_SPECIAL_PANE, PanelStyles.PANEL_STYLE_BLUE50 )
 		
 		listName = self.top.getNextWidgetName()
 		
@@ -333,8 +333,8 @@ class CvPediaBuilding:
 		#for iBuilding in range(gc.getNumBuildingInfos()): #Rhye
 		for iBuilding in range(con.iNumBuildings): #Leoreth
 			if (self.getBuildingType(iBuilding) == bWonder and not gc.getBuildingInfo(iBuilding).isGraphicalOnly()):
-                                listBuildings.append(iBuilding)
-                                iCount += 1
+				listBuildings.append(iBuilding)
+				iCount += 1
 		
 		listSorted = [(0,0)] * iCount
 		iI = 0
