@@ -417,8 +417,8 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_WORKER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORKER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_WORKER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_WORKER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -675,7 +675,6 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
-			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SCOUT</Class>
@@ -829,8 +828,8 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_SPY</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_SPY</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SPY_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_SPY_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -5907,13 +5906,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_HORSE_ARCHER</Class>
-			<Type>UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</Type>
+			<Type>UNIT_NUMIDIAN_CAVALRY</Type>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</Description>
-			<Civilopedia>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_NUMIDIAN_CAVALRY</Description>
+			<Civilopedia>TXT_KEY_UNIT_NUMIDIAN_CAVALRY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_NUMIDIAN_CAVALRY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -6005,7 +6004,7 @@
 				<iRangedWaveSize>3</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_NUMIDIAN_NUMIDIAN_CAVALRY</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_NUMIDIAN_CAVALRY</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -9312,8 +9311,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_WORK_BOAT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_WORK_BOAT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_WORK_BOAT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_WORK_BOAT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
@@ -11806,8 +11805,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -11864,8 +11863,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -11919,8 +11918,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -11973,8 +11972,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -12089,9 +12088,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -12194,8 +12193,8 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SPY</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SPY</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SPY_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SPY_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -12989,8 +12988,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13058,8 +13057,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13121,8 +13120,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13184,8 +13183,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13322,9 +13321,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13487,8 +13486,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13555,8 +13554,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13618,8 +13617,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13679,8 +13678,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13814,9 +13813,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -13970,8 +13969,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14036,8 +14035,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14096,8 +14095,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14156,8 +14155,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14287,9 +14286,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14452,8 +14451,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14518,8 +14517,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14582,8 +14581,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14643,8 +14642,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14776,9 +14775,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -14940,8 +14939,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15013,8 +15012,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15075,8 +15074,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15138,8 +15137,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15274,9 +15273,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15434,8 +15433,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15500,8 +15499,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15562,8 +15561,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15623,8 +15622,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15755,9 +15754,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15918,8 +15917,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -15985,8 +15984,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16046,8 +16045,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16107,8 +16106,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16237,9 +16236,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16397,8 +16396,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16464,8 +16463,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16526,8 +16525,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16587,8 +16586,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16726,9 +16725,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16890,8 +16889,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -16957,8 +16956,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17021,8 +17020,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17086,8 +17085,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17223,9 +17222,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17384,8 +17383,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17450,8 +17449,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17512,8 +17511,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17572,8 +17571,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17706,9 +17705,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17869,8 +17868,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17937,8 +17936,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -17998,8 +17997,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18059,8 +18058,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18193,9 +18192,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18356,8 +18355,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18423,8 +18422,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18485,8 +18484,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18546,8 +18545,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18682,9 +18681,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18844,8 +18843,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18913,8 +18912,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18976,8 +18975,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19037,8 +19036,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19171,9 +19170,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19334,8 +19333,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19401,8 +19400,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19464,8 +19463,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19525,8 +19524,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19662,9 +19661,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19822,8 +19821,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19887,8 +19886,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -19951,8 +19950,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20012,8 +20011,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20144,9 +20143,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20303,8 +20302,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20366,8 +20365,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20425,8 +20424,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20487,8 +20486,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20621,9 +20620,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20784,8 +20783,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20849,8 +20848,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20911,8 +20910,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -20973,8 +20972,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21107,9 +21106,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21277,8 +21276,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21348,8 +21347,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21411,8 +21410,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21475,8 +21474,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21616,9 +21615,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21783,8 +21782,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21853,8 +21852,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21915,8 +21914,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -21978,8 +21977,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22116,9 +22115,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22284,8 +22283,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22354,8 +22353,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22420,8 +22419,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22485,8 +22484,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22625,9 +22624,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22789,8 +22788,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22856,8 +22855,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22917,8 +22916,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22981,8 +22980,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23121,9 +23120,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23279,8 +23278,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23344,8 +23343,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23406,8 +23405,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23468,8 +23467,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23601,9 +23600,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23762,8 +23761,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23829,8 +23828,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23894,8 +23893,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -23955,8 +23954,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24085,9 +24084,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24242,8 +24241,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24309,8 +24308,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24370,8 +24369,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24432,8 +24431,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24566,9 +24565,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24735,8 +24734,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24806,8 +24805,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24870,8 +24869,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -24932,8 +24931,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25066,9 +25065,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25225,8 +25224,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25290,8 +25289,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25353,8 +25352,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25414,8 +25413,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25548,9 +25547,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25710,8 +25709,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25776,8 +25775,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25839,8 +25838,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -25901,8 +25900,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26035,9 +26034,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26198,8 +26197,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26265,8 +26264,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26329,8 +26328,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26392,8 +26391,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26526,9 +26525,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26685,8 +26684,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26751,8 +26750,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26814,8 +26813,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -26875,8 +26874,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27008,9 +27007,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27169,8 +27168,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27236,8 +27235,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27302,8 +27301,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27362,8 +27361,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27497,9 +27496,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27665,8 +27664,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27735,8 +27734,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27800,8 +27799,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -27866,8 +27865,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28004,9 +28003,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28164,8 +28163,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28231,8 +28230,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28294,8 +28293,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28356,8 +28355,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28492,9 +28491,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28748,8 +28747,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28814,8 +28813,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28875,8 +28874,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -28935,8 +28934,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29070,9 +29069,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29217,8 +29216,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29276,8 +29275,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29332,8 +29331,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29387,8 +29386,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29513,9 +29512,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29675,8 +29674,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29740,8 +29739,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29804,8 +29803,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29865,8 +29864,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -29997,9 +29996,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30160,8 +30159,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30227,8 +30226,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30289,8 +30288,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30350,8 +30349,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30484,9 +30483,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30648,8 +30647,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30713,8 +30712,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30774,8 +30773,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30834,8 +30833,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -30963,9 +30962,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31132,8 +31131,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31198,8 +31197,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31263,8 +31262,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31326,8 +31325,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31462,9 +31461,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31614,8 +31613,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ARTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ARTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ARTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31681,8 +31680,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_SCIENTIST</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_SCIENTIST</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_SCIENTIST_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31742,8 +31741,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_MERCHANT</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_MERCHANT</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_MERCHANT_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31803,8 +31802,8 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_ENGINEER</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_ENGINEER</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_ANCIENT</EarlyArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_ENGINEER_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -31934,9 +31933,9 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ANCIENT_GREAT_GENERAL</EarlyArtDefineTag>
-					<MiddleArtDefineTag>ART_DEF_UNIT_MEDIEVAL_GREAT_GENERAL</MiddleArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_MODERN_GREAT_GENERAL</LateArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_ANCIENT</EarlyArtDefineTag>
+					<MiddleArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MEDIEVAL</MiddleArtDefineTag>
+					<LateArtDefineTag>ART_DEF_UNIT_GREAT_GENERAL_MODERN</LateArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>

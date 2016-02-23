@@ -2,7 +2,7 @@
 <!-- Italy -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_ITALY_DESC_PEOPLES</Tag>
+		<Tag>TXT_KEY_CIV_ITALY_PEOPLES</Tag>
 		<English>Lombard Peoples</English>
 	</TEXT>
 	<TEXT>

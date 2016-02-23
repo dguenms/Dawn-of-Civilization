@@ -8,7 +8,7 @@
      
      On specific art:	ONE artref is picked as long as it satisfies all the subconstraints below
         Bonus
-        Imporvement
+        Improvement
         Scalars:
 			bApplyRotation	- if set, the art will be rotated according to its cumulative rotation when placed
 			bZMode_Ground	- if set, the builder will try to force the art to not z-write nor z-test
