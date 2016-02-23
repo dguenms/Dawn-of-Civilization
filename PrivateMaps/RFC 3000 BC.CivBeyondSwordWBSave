@@ -13769,6 +13769,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=29
+	BonusType=BONUS_SUGAR
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -21845,6 +21846,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=53
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -32775,6 +32777,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=86,y=33
+	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -33973,6 +33976,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=43
+	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -35479,6 +35483,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=35
+	BonusType=BONUS_COAL
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -38960,6 +38965,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=43
+	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -42961,6 +42967,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot

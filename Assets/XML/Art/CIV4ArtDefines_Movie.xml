@@ -169,26 +169,26 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_CATHOLIC</Type>
 			<Path>Art/Movies/Religion/Christianity/Shrine_Chr_dwg_512.dds</Path>
-		</MovieArtInfo>
+		</MovieArtInfo>	
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_ISLAMIC</Type>
-			<Path>Art/Movies/Religion/Islam/Shrine_Isl_dwg_512.dds</Path>
+			<Path>Art/Movies/Shrines/MasjidAlHaram.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_HINDU</Type>
-			<Path>Art/Movies/Religion/Hinduism/Shrine_Hin_dwg_512.dds</Path>
+			<Path>Art/Movies/Shrines/KashiVishnawath.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_BUDDHIST</Type>
-			<Path>Art/Movies/Religion/Buddhism/Shrine_Bud_Dwg_512.dds</Path>
+			<Path>Art/Movies/Shrines/Mahabodhi.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_CONFUCIAN</Type>
-			<Path>Art/Movies/Religion/Confucianism/Shrine_Con_dwg_512.dds</Path>
+			<Path>Art/Movies/Shrines/KongMiao.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_TAOIST</Type>
-			<Path>Art/Movies/Religion/Taoism/Shrine_Tao_dwg_512.dds</Path>
+			<Path>Art/Movies/Shrines/DaiMiao.bik</Path>
 			<KFM>None</KFM>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -217,11 +217,11 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_MT_RUSHMORE</Type>
-			<Path>Art/Movies/Wonders/rushmore.bik</Path>
+			<Path>Art/Movies/Wonders/Rushmore.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_FORBIDDEN_PALACE</Type>
-			<Path>Art/Movies/Wonders/forbidden.bik</Path>
+			<Path>Art/Movies/Wonders/Forbiddenpalace.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_COLOSSEUM</Type>
@@ -281,7 +281,7 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_BRANDENBURG_GATE</Type>
-			<Path>Art/Movies/Wonders/brandenburg.dds</Path>
+			<Path>Art/Movies/Wonders/Brandenburg.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_DOME_OF_THE_ROCK</Type>
@@ -334,6 +334,58 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_MACHU_PICCHU</Type>
 			<Path>Art/Movies/Wonders/Machu Picchu.bik</Path>
+		</MovieArtInfo>
+				<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_APOLLO_PROGRAM</Type>
+			<Path>Art/Movies/Wonders/ApolloProject.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SDI</Type>
+			<Path>Art/Movies/Wonders/SDI.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_OPERA_HOUSE</Type>
+			<Path>Art/Movies/Wonders/GlobeTheatre.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_NATIONAL_GALLERY</Type>
+			<Path>Art/Movies/Wonders/Hermitage.bik</Path>
+		</MovieArtInfo>
+				<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_IRONWORKS</Type>
+			<Path>Art/Movies/Wonders/IronWorks.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MOAI_STATUES</Type>
+			<Path>Art/Movies/Wonders/Moai.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TRIUMPHAL_ARCH</Type>
+			<Path>Art/Movies/Wonders/NationalEpic.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_NATIONAL_PARK</Type>
+			<Path>Art/Movies/Wonders/NationalPark.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_RED_CROSS</Type>
+			<Path>Art/Movies/Wonders/RedCross.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_INTERPOL</Type>
+			<Path>Art/Movies/Wonders/ScotlandYard.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_STOCK_EXCHANGE</Type>
+			<Path>Art/Movies/Wonders/WallStreet.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ACADEMY</Type>
+			<Path>Art/Movies/Wonders/Academy.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MILITARY_ACADEMY</Type>
+			<Path>Art/Movies/Wonders/MiliaryAcademy.bik</Path>
 		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>
