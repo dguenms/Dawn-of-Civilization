@@ -1060,14 +1060,14 @@ class CvVictoryScreen:
 			landPercent = (ourLand * 100.0) / totalLand
 			#Rhye - start
 			realLandPercent = (ourRealLand * 100.0) / totalLand
-                        vassalsLandPercent = (ourVassalsLand * 100.0) / totalLand
-                        #Rhye - end
+			vassalsLandPercent = (ourVassalsLand * 100.0) / totalLand
+			#Rhye - end
 		else:
 			landPercent = 0.0
 			#Rhye - start
 			realLandPercent = 0.0
-                        vassalsLandPercent = 0.0
-                        #Rhye - end
+			vassalsLandPercent = 0.0
+			#Rhye - end
 			
 		iBestLandTeam = -1
 		bestLand = 0
@@ -1250,7 +1250,7 @@ class CvVictoryScreen:
 						screen.setTableText(szTable, 4, iRow, gc.getPlayer(iBestLandTeam).getCivilizationShortDescription(0) + ":", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 						#Rhye - end
 						screen.setTableText(szTable, 5, iRow, (u"%.2f%%" % (bestLand * 100 / totalLand)), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                        #Rhye - start
+					#Rhye - start
 					Row = screen.appendTableRow(szTable)
 					iRow += 1
 					screen.setTableText(szTable, 3, iRow, percentString, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -1555,30 +1555,30 @@ class CvVictoryScreen:
 							iRow = screen.appendTableRow(szTable)
 					bEntriesFound = True
 					
-                                #Rhye - start
-                                if (iLoopVC == 7):
+				#Rhye - start
+				if (iLoopVC == 7):
 					for i in range(3):
-                                                iRow = screen.appendTableRow(szTable)
+						iRow = screen.appendTableRow(szTable)
 						sGoalTitle = localText.getText(con.tGoals[gc.getPlayer(self.iActivePlayer).getReborn()][2][self.iActivePlayer][i] + "_TITLE", ())
 						sGoalText = localText.getText(con.tGoals[gc.getPlayer(self.iActivePlayer).getReborn()][gc.getGame().getGameSpeedType()][self.iActivePlayer][i], ())
 						sGoalTurn = ''
 						if not gc.getTeam(self.iActivePlayer).isHasTech(con.iCalendar) or gc.getPlayer(self.iActivePlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1):
 							iVictoryYear = con.dVictoryYears[gc.getPlayer(self.iActivePlayer).getCivilizationType()][i]
 							if iVictoryYear != -1: sGoalTurn = ' ' + localText.getText("TXT_KEY_VICTORY_UHV_END_TURN", (getTurnForYear(iVictoryYear) - utils.getScenarioStartTurn(),))
-                                                sGoalDisplay = sGoalText + sGoalTurn
+						sGoalDisplay = sGoalText + sGoalTurn
 						if self.X_EXTRA < 100:
 							screen.setTableText(szTable, 0, iRow, sGoalTitle, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 							iRow = screen.appendTableRow(szTable)
 						else:
 							sGoalDisplay = sGoalTitle + ': ' + sGoalDisplay
 						screen.setTableText(szTable, 0, iRow, sGoalDisplay, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY) # edead - added game speed type
-                                                screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                                if (utils.getGoal(self.iActivePlayer, i) == 1):       
-                                                        screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_YES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                                elif (utils.getGoal(self.iActivePlayer, i) == 0):       
-                                                        screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NO", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                                else:       
-                                                        screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NOTYET", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						if (utils.getGoal(self.iActivePlayer, i) == 1):       
+							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_YES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						elif (utils.getGoal(self.iActivePlayer, i) == 0):       
+							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NO", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						else:       
+							screen.setTableText(szTable, 3, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_NOTYET", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 						# edead: start help text (Leoreth: goal progress display adapted from SoI)
 						aHelpStrings = vic.getUHVHelp(self.iActivePlayer, i)
 						if len(aHelpStrings) > 0:
@@ -1586,8 +1586,8 @@ class CvVictoryScreen:
 								iRow = screen.appendTableRow(szTable)
 								szHelp = "    " + szHelp
 								screen.setTableText(szTable, 0, iRow, szHelp, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-                                        bEntriesFound = True
-                                #Rhye - end
+					bEntriesFound = True
+				#Rhye - end
 				
 				# Leoreth: Religious Victory
 				if iLoopVC == 8:
@@ -1664,8 +1664,8 @@ class CvVictoryScreen:
 # BUG Additions Start
 	def getVotesForWhichCandidate(self, iPlayer, iCand1, iCand2, iVote):
 		# returns are 1 = vote for candidate 1
-		#             2 = vote for candidate 2
-		#            -1 = abstain
+		#	     2 = vote for candidate 2
+		#	    -1 = abstain
 
 		# iVote = 1 means vote for SecGen or Pope
 		# iVote = 2 means vote for diplomatic victory

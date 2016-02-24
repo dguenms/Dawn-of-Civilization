@@ -136,7 +136,7 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 		
 		# add pane and text
 		szLeadsTo = localText.getText("TXT_KEY_PEDIA_LEADS_TO", ())
-                
+		
 		panelName = self.top.getNextWidgetName()
 		screen.addPanel(panelName, szLeadsTo, "", false, true, self.X_LEADS_TO_PANE, self.Y_LEADS_TO_PANE, self.W_LEADS_TO_PANE, self.H_LEADS_TO_PANE, PanelStyles.PANEL_STYLE_BLUE50 )
 		
@@ -146,11 +146,11 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 			for k in range(gc.getNUM_OR_TECH_PREREQS()):
 				iPrereq = gc.getTechInfo(j).getPrereqOrTechs(k)
 				if (iPrereq == self.iTech):
-        				screen.attachImageButton( panelName, "", gc.getTechInfo(j).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_DERIVED_TECH, j, self.iTech, False )
+					screen.attachImageButton( panelName, "", gc.getTechInfo(j).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_DERIVED_TECH, j, self.iTech, False )
 			for k in range(gc.getNUM_AND_TECH_PREREQS()):
 				iPrereq = gc.getTechInfo(j).getPrereqAndTechs(k)
 				if (iPrereq == self.iTech):
-        				screen.attachImageButton( panelName, "", gc.getTechInfo(j).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_DERIVED_TECH, j, self.iTech, False )
+					screen.attachImageButton( panelName, "", gc.getTechInfo(j).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_DERIVED_TECH, j, self.iTech, False )
 
 	# Place prereqs...
 	def placePrereqs(self):
@@ -223,7 +223,7 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 		for eLoopUnit in range(gc.getNumUnitInfos()):
 			if (eLoopUnit != -1):
 				if (isTechRequiredForUnit(self.iTech, eLoopUnit)):
-        				screen.attachImageButton( panelName, "", gc.getUnitInfo(eLoopUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, eLoopUnit, 1, False )
+					screen.attachImageButton( panelName, "", gc.getUnitInfo(eLoopUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, eLoopUnit, 1, False )
 
 	# Place buildings...
 	def placeBuildings(self):
@@ -242,14 +242,14 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 		
 			if (eLoopBuilding != -1 and eLoopBuilding != con.iNumBuildingsPlague):
 				if (isTechRequiredForBuilding(self.iTech, eLoopBuilding)):
-        				screen.attachImageButton( panelName, "", gc.getBuildingInfo(eLoopBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
+					screen.attachImageButton( panelName, "", gc.getBuildingInfo(eLoopBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
 			elif eLoopBuilding == con.iNumBuildingsPlague:
 				if isTechRequiredForBuilding(self.iTech, eLoopBuilding):
 					screen.attachImageButton( panelName, "", gc.getTechInfo(con.iPaper).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
 						
 		for eLoopProject in range(gc.getNumProjectInfos()):
 			if (isTechRequiredForProject(self.iTech, eLoopProject)):
-        			screen.attachImageButton( panelName, "", gc.getProjectInfo(eLoopProject).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROJECT, eLoopProject, 1, False )
+				screen.attachImageButton( panelName, "", gc.getProjectInfo(eLoopProject).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROJECT, eLoopProject, 1, False )
 
 	def placeSpecial(self):
 

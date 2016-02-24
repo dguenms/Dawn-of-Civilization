@@ -2,7 +2,7 @@
 
 from CvPythonExtensions import *
 import CvUtil
-import PyHelpers        # LOQ
+import PyHelpers	# LOQ
 import Popup
 #import cPickle as pickle
 import Consts as con
@@ -98,52 +98,52 @@ tSpainMoorsTL = (50, 40)
 tSpainMoorsBR = (54, 42)
 
 tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 0, iSpainMoorsYear, 10)
-  
+
 class AIWars:
 
-        def getAttackingCivsArray( self, iCiv ):
-                return sd.scriptDict['lAttackingCivsArray'][iCiv]
+	def getAttackingCivsArray( self, iCiv ):
+		return sd.scriptDict['lAttackingCivsArray'][iCiv]
 
-        def setAttackingCivsArray( self, iCiv, iNewValue ):
-                sd.scriptDict['lAttackingCivsArray'][iCiv] = iNewValue
-                
-        def getNextTurnAIWar( self ):
-                return sd.scriptDict['iNextTurnAIWar']
+	def setAttackingCivsArray( self, iCiv, iNewValue ):
+		sd.scriptDict['lAttackingCivsArray'][iCiv] = iNewValue
+		
+	def getNextTurnAIWar( self ):
+		return sd.scriptDict['iNextTurnAIWar']
 
-        def setNextTurnAIWar( self, iNewValue ):
-                sd.scriptDict['iNextTurnAIWar'] = iNewValue
+	def setNextTurnAIWar( self, iNewValue ):
+		sd.scriptDict['iNextTurnAIWar'] = iNewValue
 
 		
-        def setup(self):
-                iTurn = getTurnForYear(-600)
-                if utils.getScenario() == con.i600AD:  #late start condition
-                        iTurn = getTurnForYear(900)
+	def setup(self):
+		iTurn = getTurnForYear(-600)
+		if utils.getScenario() == con.i600AD:  #late start condition
+			iTurn = getTurnForYear(900)
 		elif utils.getScenario() == con.i1700AD:
 			iTurn = getTurnForYear(1720)
-                self.setNextTurnAIWar(iTurn + gc.getGame().getSorenRandNum(iMaxIntervalEarly-iMinIntervalEarly, 'random turn'))
+		self.setNextTurnAIWar(iTurn + gc.getGame().getSorenRandNum(iMaxIntervalEarly-iMinIntervalEarly, 'random turn'))
 
 
 
-        def checkTurn(self, iGameTurn):
+	def checkTurn(self, iGameTurn):
 
 		print "Check AI wars"
 
-                #turn automatically peace on between independent cities and all the major civs
-                if (iGameTurn % 20 == 7):
-                        utils.restorePeaceHuman(con.iIndependent2, False)
-                if (iGameTurn % 20 == 14):
-                        utils.restorePeaceHuman(con.iIndependent, False)
-                if (iGameTurn % 60 == 55 and iGameTurn > utils.getTurns(50)):
-                        utils.restorePeaceAI(con.iIndependent, False)
-                if (iGameTurn % 60 == 30 and iGameTurn > utils.getTurns(50)):
-                        utils.restorePeaceAI(con.iIndependent2, False)
-                #turn automatically war on between independent cities and some AI major civs
-                if (iGameTurn % 13 == 6 and iGameTurn > utils.getTurns(50)): #1 turn after restorePeace()
-                        utils.minorWars(con.iIndependent)
-                if (iGameTurn % 13 == 11 and iGameTurn > utils.getTurns(50)): #1 turn after restorePeace()
-                        utils.minorWars(con.iIndependent2)
-                if (iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50)):
-                        utils.minorWars(con.iCeltia)
+		#turn automatically peace on between independent cities and all the major civs
+		if (iGameTurn % 20 == 7):
+			utils.restorePeaceHuman(con.iIndependent2, False)
+		if (iGameTurn % 20 == 14):
+			utils.restorePeaceHuman(con.iIndependent, False)
+		if (iGameTurn % 60 == 55 and iGameTurn > utils.getTurns(50)):
+			utils.restorePeaceAI(con.iIndependent, False)
+		if (iGameTurn % 60 == 30 and iGameTurn > utils.getTurns(50)):
+			utils.restorePeaceAI(con.iIndependent2, False)
+		#turn automatically war on between independent cities and some AI major civs
+		if (iGameTurn % 13 == 6 and iGameTurn > utils.getTurns(50)): #1 turn after restorePeace()
+			utils.minorWars(con.iIndependent)
+		if (iGameTurn % 13 == 11 and iGameTurn > utils.getTurns(50)): #1 turn after restorePeace()
+			utils.minorWars(con.iIndependent2)
+		if (iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50)):
+			utils.minorWars(con.iCeltia)
 			utils.minorWars(con.iSeljuks)
 		
 		self.checkConquest(tConquestGreeceMesopotamia)
@@ -242,15 +242,15 @@ class AIWars:
 			
 			if iPlayer == con.iTamils:
 				utils.makeUnitAI(con.iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-	    
-        def forgetMemory(self, iTech, iPlayer):
-                if (iTech == con.iCommunism or iTech == con.iMassMedia):
-                        for iLoopCiv in range( iNumPlayers ):
-                                pPlayer = gc.getPlayer(iPlayer)
-                                if (pPlayer.AI_getMemoryCount(iLoopCiv,0) > 0):
-                                        pPlayer.AI_changeMemoryCount(iLoopCiv,0,-1)
-                                if (pPlayer.AI_getMemoryCount(iLoopCiv,1) > 0):
-                                        pPlayer.AI_changeMemoryCount(iLoopCiv,1,-1)
+	
+	def forgetMemory(self, iTech, iPlayer):
+		if (iTech == con.iCommunism or iTech == con.iMassMedia):
+			for iLoopCiv in range( iNumPlayers ):
+				pPlayer = gc.getPlayer(iPlayer)
+				if (pPlayer.AI_getMemoryCount(iLoopCiv,0) > 0):
+					pPlayer.AI_changeMemoryCount(iLoopCiv,0,-1)
+				if (pPlayer.AI_getMemoryCount(iLoopCiv,1) > 0):
+					pPlayer.AI_changeMemoryCount(iLoopCiv,1,-1)
 					
 	def getNextInterval(self, iGameTurn):
 		if iGameTurn > getTurnForYear(1600):
