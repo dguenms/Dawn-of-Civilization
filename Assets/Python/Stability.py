@@ -2246,8 +2246,8 @@ def setStateReligion(iCiv):
 	iHighestEntry = utils.getHighestEntry(lReligions)
 	
 	if iHighestEntry > 0:
-		gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))                                                       
-                                
+		gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))
+
 def rebellionPopup(iRebelCiv):
 	utils.showPopup(7622, CyTranslator().getText("TXT_KEY_REBELLION_TITLE", ()), \
 		       CyTranslator().getText("TXT_KEY_REBELLION_TEXT", (gc.getPlayer(iRebelCiv).getCivilizationAdjectiveKey(),)), \

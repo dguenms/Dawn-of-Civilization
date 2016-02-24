@@ -38,7 +38,7 @@ import CvPediaProject
 import CvPediaReligion
 import CvPediaCorporation
 
-#import UnitUpgradesGraph          #[MOD] UnitUpgrades  #Rhye
+#import UnitUpgradesGraph	  #[MOD] UnitUpgrades  #Rhye
 
 # globals
 gc = CyGlobalContext()
@@ -191,7 +191,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 		self.linkList = [	[0,0,"TECH"],				
 					[1,1,"UNITS"],
 					[2,9,"UNITS"],
-                                        #Rhye - start
+					#Rhye - start
 ##					[3,18,"UNITS"],
 ##					[4,10,"UNITS"],	
 ##					[5,2,"BUILDINGS"],
@@ -223,7 +223,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 					[15,8,"SPECIALISTS"],
 					[16,15,"HINTS"], 
 					[17,17,"HINTS"],
-                                        #Rhye - end
+					#Rhye - end
 					]
 	
 		self.linkListGraphics = { 
@@ -283,7 +283,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 					self.szCategoryCiv, 
 					self.szCategoryLeader,
 					self.szCategoryReligion, 
-				        self.szCategoryCorporation, 
+					self.szCategoryCorporation, 
 					self.szCategoryCivic, 
 					self.szCategoryProject,
 					self.szCategoryConcept,
@@ -480,36 +480,36 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 		iCounter = 0
 		iNumRows = 0
 		
-                #Rhye - start
-#                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
-#                        tList.pop(con.iNumBonuses) #marsh
-                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
+		#Rhye - start
+#		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
+#			tList.pop(con.iNumBonuses) #marsh
+		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
 			tList.pop(con.iAlpArslan)
 			tList.pop(con.iChiangKaishek)
 			tList.pop(con.iCixi)
 			tList.pop(con.iElishat)
 			tList.pop(con.iAbuBakr)
-                        tList.pop(con.iSittingBull)
-                        tList.pop(con.iNativeLeader)
-                        tList.pop(con.iIndependentLeader)
-                        tList.pop(con.iBrennus)
-                        tList.pop(con.iBoudica)
-                        tList.pop(con.iLeaderBarbarian)
-                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):
-                        tList.pop(con.iCivNative)
-                        tList.pop(con.iCivIndependent2)
-                        tList.pop(con.iCivIndependent)
-                        tList.pop(con.iCivZulu)
-                        tList.pop(con.iCivSumeria)
-                        tList.pop(con.iCivNativeAmericans)
-                        tList.pop(con.iCivSeljuks)
-                       	tList.pop(con.iCivCelt) #celts
-                        pass
-                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING): #all -3 because there aren't palaces in the list
-                        #removed in CvPediaBuilding.py
-                        pass
-                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT):
-                    	for i in range(228+1):	#remove unique GPs
+			tList.pop(con.iSittingBull)
+			tList.pop(con.iNativeLeader)
+			tList.pop(con.iIndependentLeader)
+			tList.pop(con.iBrennus)
+			tList.pop(con.iBoudica)
+			tList.pop(con.iLeaderBarbarian)
+		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):
+			tList.pop(con.iCivNative)
+			tList.pop(con.iCivIndependent2)
+			tList.pop(con.iCivIndependent)
+			tList.pop(con.iCivZulu)
+			tList.pop(con.iCivSumeria)
+			tList.pop(con.iCivNativeAmericans)
+			tList.pop(con.iCivSeljuks)
+		       	tList.pop(con.iCivCelt) #celts
+			pass
+		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING): #all -3 because there aren't palaces in the list
+			#removed in CvPediaBuilding.py
+			pass
+		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT):
+			for i in range(228+1):	#remove unique GPs
 				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
 			tList.pop(con.iAztecSlave)
 			tList.pop(con.iNativeSlave)
@@ -518,18 +518,18 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 			tList.pop(con.iCelticCidainh)
 			tList.pop(con.iAmericanNavySeal)
 			tList.pop(con.iFrenchMusketeer)
-                        pass
-                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT):
-                        tList.pop(1) #water worked
-                        tList.pop(0) #land worked
-                        pass
-                if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_TERRAIN):
-                        tList.pop(8) #hill
-                        tList.pop(7) #peak
-                        pass                  
-                    
-                tList.sort()
-                #Rhye - end
+			pass
+		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT):
+			tList.pop(1) #water worked
+			tList.pop(0) #land worked
+			pass
+		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_TERRAIN):
+			tList.pop(8) #hill
+			tList.pop(7) #peak
+			pass		  
+		    
+		tList.sort()
+		#Rhye - end
 
 		
 		for item in tList:
@@ -545,22 +545,22 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 ##			screen.setTableText(self.SUBLIST_ID, iColumn, iRow, u"<font=3>" + item[0] + u"</font>", buttonType(item[1]).getButton(), widgeyType, item[1], 1, CvUtil.FONT_LEFT_JUSTIFY)
 ##			iCounter += 1
 			
-                        if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):                            
-                                if (gc.getCivilizationInfo(item[1]).isPlayable()):
-                                        if iRow >= iNumRows:
-                                                iNumRows += 1
-                                                screen.appendTableRow(self.SUBLIST_ID)
-                                        screen.setTableText(self.SUBLIST_ID, iColumn, iRow, u"<font=3>" + item[0] + u"</font>", gc.getCivilizationInfo(item[1]).getButton(), WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, item[1], 1, CvUtil.FONT_LEFT_JUSTIFY)
-                                        iCounter += 1
-                        else:
-                                if iRow >= iNumRows:
-                                        iNumRows += 1
-                                        screen.appendTableRow(self.SUBLIST_ID)
-                                screen.setTableText(self.SUBLIST_ID, iColumn, iRow, u"<font=3>" + item[0] + u"</font>", buttonType(item[1]).getButton(), widgeyType, item[1], 1, CvUtil.FONT_LEFT_JUSTIFY)
-                                iCounter += 1
-                        #Rhye - end
+			if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):			    
+				if (gc.getCivilizationInfo(item[1]).isPlayable()):
+					if iRow >= iNumRows:
+						iNumRows += 1
+						screen.appendTableRow(self.SUBLIST_ID)
+					screen.setTableText(self.SUBLIST_ID, iColumn, iRow, u"<font=3>" + item[0] + u"</font>", gc.getCivilizationInfo(item[1]).getButton(), WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, item[1], 1, CvUtil.FONT_LEFT_JUSTIFY)
+					iCounter += 1
+			else:
+				if iRow >= iNumRows:
+					iNumRows += 1
+					screen.appendTableRow(self.SUBLIST_ID)
+				screen.setTableText(self.SUBLIST_ID, iColumn, iRow, u"<font=3>" + item[0] + u"</font>", buttonType(item[1]).getButton(), widgeyType, item[1], 1, CvUtil.FONT_LEFT_JUSTIFY)
+				iCounter += 1
+			#Rhye - end
 
-                                    
+				    
 	
 	def placeConcepts(self):
 
@@ -590,7 +590,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 
 		self.szHints = self.getNextWidgetName()
 		screen.addListBoxGFC( self.szHints, "",
-                                      self.X_ITEMS_PANE+20, self.Y_ITEMS_PANE, self.W_ITEMS_PANE + self.W_PEDIA_PAGE-40, self.H_ITEMS_PANE, TableStyles.TABLE_STYLE_STANDARD )
+				      self.X_ITEMS_PANE+20, self.Y_ITEMS_PANE, self.W_ITEMS_PANE + self.W_PEDIA_PAGE-40, self.H_ITEMS_PANE, TableStyles.TABLE_STYLE_STANDARD )
 		
 		szHintsText = CyGameTextMgr().buildHintsList()
 		hintText = string.split( szHintsText, "\n" )
@@ -631,7 +631,7 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 ##						screen.setImageButtonAt("", self.UPGRADES_LIST, gc.getUnitInfo(unit).getButton(), position[0], position[1], self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, unit, 1)
 ##			upgradesGraph.drawGraphArrows(self, graph, layers)
 ##			offset += upgradesGraph.calculateLayerHeight(upgradesGraph.maximumLayerSize(layers), unitHeight, vm) + vm
-                #Rhye - end comment
+		#Rhye - end comment
 	##################### END [MOD: VOVAN] UnitUpgrades #####################
 
 

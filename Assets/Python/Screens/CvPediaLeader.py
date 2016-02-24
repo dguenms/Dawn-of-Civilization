@@ -26,12 +26,12 @@ class CvPediaLeader:
 		self.iLeader = -1
 		self.top = main
 
-                #Rhye - start
+		#Rhye - start
 		self.X_LEADERHEAD_PANE = self.top.X_PEDIA_PAGE + 20
 		self.Y_LEADERHEAD_PANE = 55
 		self.W_LEADERHEAD_PANE = 325
 		self.H_LEADERHEAD_PANE = 390
-                
+		
 		self.W_LEADERHEAD = 320
 		self.H_LEADERHEAD = 380
 		self.X_LEADERHEAD = self.X_LEADERHEAD_PANE + ((self.W_LEADERHEAD_PANE - self.W_LEADERHEAD) / 2)
@@ -57,7 +57,7 @@ class CvPediaLeader:
 		self.W_TRAITS = 1000 - self.X_TRAITS
 		self.H_TRAITS = self.Y_HISTORY - self.Y_TRAITS
 		#Rhye - end
-                
+		
 	# Screen construction function
 	def interfaceScreen(self, iLeader):
 			
@@ -87,10 +87,10 @@ class CvPediaLeader:
 		# Leaderhead
 		leaderPanelWidget = self.top.getNextWidgetName()
 		screen.addPanel( leaderPanelWidget, "", "", true, true,
-                    self.X_LEADERHEAD_PANE, self.Y_LEADERHEAD_PANE, self.W_LEADERHEAD_PANE, self.H_LEADERHEAD_PANE, PanelStyles.PANEL_STYLE_BLUE50 )
+		    self.X_LEADERHEAD_PANE, self.Y_LEADERHEAD_PANE, self.W_LEADERHEAD_PANE, self.H_LEADERHEAD_PANE, PanelStyles.PANEL_STYLE_BLUE50 )
 		self.leaderWidget = self.top.getNextWidgetName()
 		screen.addLeaderheadGFC(self.leaderWidget, self.iLeader, AttitudeTypes.ATTITUDE_PLEASED,
-                    self.X_LEADERHEAD, self.Y_LEADERHEAD, self.W_LEADERHEAD, self.H_LEADERHEAD, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		    self.X_LEADERHEAD, self.Y_LEADERHEAD, self.W_LEADERHEAD, self.H_LEADERHEAD, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		
 		self.placeHistory()
 		#self.placeCivic() #Rhye
@@ -110,7 +110,7 @@ class CvPediaLeader:
 		
 		panelName = self.top.getNextWidgetName()
 		screen.addPanel( panelName, localText.getText("TXT_KEY_PEDIA_TRAITS", ()), "", true, false,
-                                 self.X_TRAITS, self.Y_TRAITS, self.W_TRAITS, self.H_TRAITS, PanelStyles.PANEL_STYLE_BLUE50 )
+				 self.X_TRAITS, self.Y_TRAITS, self.W_TRAITS, self.H_TRAITS, PanelStyles.PANEL_STYLE_BLUE50 )
 				
 		listName = self.top.getNextWidgetName()
 		
@@ -122,7 +122,7 @@ class CvPediaLeader:
 		
 		panelName = self.top.getNextWidgetName()
 		screen.addPanel( panelName, localText.getText("TXT_KEY_PEDIA_FAV_CIVIC", ()), "", true, true,
-                                 self.X_CIVIC, self.Y_CIVIC, self.W_CIVIC, self.H_CIVIC, PanelStyles.PANEL_STYLE_BLUE50 )
+				 self.X_CIVIC, self.Y_CIVIC, self.W_CIVIC, self.H_CIVIC, PanelStyles.PANEL_STYLE_BLUE50 )
 		
 		listName = self.top.getNextWidgetName()
 		screen.attachListBoxGFC( panelName, listName, "", TableStyles.TABLE_STYLE_EMPTY )

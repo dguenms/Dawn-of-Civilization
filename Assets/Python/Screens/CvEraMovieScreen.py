@@ -47,7 +47,7 @@ class CvEraMovieScreen:
 		screen.setRenderInterfaceOnly(False);
 		screen.setSound("AS2D_NEW_ERA")
 		screen.showScreen(PopupStates.POPUPSTATE_MINIMIZED, False)
-                		
+		
 		# Header...
 		szHeader = localText.getText("TXT_KEY_ERA_SPLASH_SCREEN", (gc.getEraInfo(iEra).getTextKey(), ))
 		szHeaderId = "EraTitleHeader" + str(iEra)

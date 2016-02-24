@@ -75,7 +75,7 @@ class Resources:
 		if gc.getMap().plot(iX, iY).getBonusType(-1) == -1: return
 		self.createResource(iX, iY, -1, textKey)
        	
-        def checkTurn(self, iGameTurn):
+	def checkTurn(self, iGameTurn):
 		
 		# Gujarati horses appear later so Harappa cannot benefit too early
 		if iGameTurn == getTurnForYear(-1000):
@@ -85,24 +85,24 @@ class Resources:
 		if iGameTurn == getTurnForYear(-300)-1 and utils.getPlayerEnabled(con.iTamils):
 			self.createResource(90, 28, iFish)
 
-                #Orka: Silk Road
-                if (iGameTurn == getTurnForYear(-200)): 
-                        for i in range( len(lSilkRoute) ):
-                            gc.getMap().plot(lSilkRoute[i][0], lSilkRoute[i][1]).setRouteType(iRoad)
-                
-                #Orka: Silk Road
-                if (iGameTurn == getTurnForYear(-100)):
-                        #CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan    
-                        #gc.getMap().plot(91, 45).setImprovementType(iCottage) #Khotan                               
-                        #CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan    
-                        #gc.getMap().plot(93, 48).setImprovementType(iCottage) #Turfan                            
-                        #gc.getMap().plot(90, 45).setBonusType(iCotton) #Kashgar
-                        #gc.getMap().plot(94, 47).setBonusType(iWheat) #Dunhuang
-                        #gc.getMap().plot(96, 48).setBonusType(iSilk) #Dunhuang
-                        #CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei    
-                        #gc.getMap().plot(97, 47).setImprovementType(iCottage) #Wuwei    
-                        #CyGame().setPlotExtraYield(85, 38, YieldTypes.YIELD_FOOD, 2) #Lanzhou
-                        #gc.getMap().plot(99, 46).setImprovementType(iCottage) #Lanzhou
+		#Orka: Silk Road
+		if (iGameTurn == getTurnForYear(-200)): 
+			for i in range( len(lSilkRoute) ):
+			    gc.getMap().plot(lSilkRoute[i][0], lSilkRoute[i][1]).setRouteType(iRoad)
+		
+		#Orka: Silk Road
+		if (iGameTurn == getTurnForYear(-100)):
+			#CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan    
+			#gc.getMap().plot(91, 45).setImprovementType(iCottage) #Khotan			       
+			#CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan    
+			#gc.getMap().plot(93, 48).setImprovementType(iCottage) #Turfan			    
+			#gc.getMap().plot(90, 45).setBonusType(iCotton) #Kashgar
+			#gc.getMap().plot(94, 47).setBonusType(iWheat) #Dunhuang
+			#gc.getMap().plot(96, 48).setBonusType(iSilk) #Dunhuang
+			#CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei    
+			#gc.getMap().plot(97, 47).setImprovementType(iCottage) #Wuwei    
+			#CyGame().setPlotExtraYield(85, 38, YieldTypes.YIELD_FOOD, 2) #Lanzhou
+			#gc.getMap().plot(99, 46).setImprovementType(iCottage) #Lanzhou
 			#CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
 			#CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
 
@@ -126,11 +126,11 @@ class Resources:
 		#		x, y = tPlot
 		#		gc.getMap().plot(x,y).setFeatureType(3, 0)
 
-                #if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
+		#if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
 		#	self.createResource(53, 51, iDye) # France
 		#	self.createResource(53, 55, iDye) # England
-                #if utils.getScenario() >= con.i600AD: #late start condition
-                #        if (iGameTurn == getTurnForYear(600)):
+		#if utils.getScenario() >= con.i600AD: #late start condition
+		#	if (iGameTurn == getTurnForYear(600)):
 		#		self.createResource(53, 51, iDye)
 		#		self.createResource(53, 55, iDye)
 
@@ -144,9 +144,9 @@ class Resources:
 
 		# Leoreth: replicate silk route in 600 AD
 		#if iGameTurn == getTurnForYear(600) and utils.getScenario() == con.i600AD:
-                #        CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan                               
-                #        CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan
-                #        CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei
+		#	CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan			       
+		#	CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan
+		#	CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei
 		#	CyGame().setPlotExtraYield(95, 47, YieldTypes.YIELD_FOOD, 2) #Dunhuang
 		#	CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
 			
@@ -172,9 +172,9 @@ class Resources:
 		if iGameTurn == getTurnForYear(900):
 			self.removeResource(71, 34)
 			self.createResource(71, 34, iIron)
-                    
-                if (iGameTurn == getTurnForYear(1100)):
-                        #gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt
+		    
+		if (iGameTurn == getTurnForYear(1100)):
+			#gc.getMap().plot(71, 30).setBonusType(iSugar) #Egypt
 			
 			self.createResource(72, 24, iSugar) # East Africa
 			self.createResource(70, 17, iSugar) # Zimbabwe
@@ -202,8 +202,8 @@ class Resources:
 			# silk near Astrakhan
 			self.createResource(78, 51, iSilk)
 
-                if (iGameTurn == getTurnForYear(1250)):
-                        #gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
+		if (iGameTurn == getTurnForYear(1250)):
+			#gc.getMap().plot(57, 52).setBonusType(iWheat) #Amsterdam
 			self.createResource(96, 36, iFish) # Calcutta, Dhaka, Pagan
 
 		if iGameTurn == getTurnForYear(1350):
@@ -220,8 +220,8 @@ class Resources:
 			self.createResource(56, 54, iFish) # Amsterdam
 			self.createResource(57, 52, iWheat) # Amsterdam
 			self.createResource(58, 52, iCow) # Amsterdam
-                        
-                if (iGameTurn == getTurnForYear(1600)):
+			
+		if (iGameTurn == getTurnForYear(1600)):
 			self.createResource(29, 52, iCow) # Montreal
 			self.createResource(18, 53, iCow) # Alberta
 			self.createResource(12, 52, iCow) # British Columbia
@@ -266,9 +266,9 @@ class Resources:
 			for tuple in [(82, 47), (83, 46), (85, 49)]:
 				x, y = tuple
 				gc.getMap().plot(x, y).setFeatureType(-1, 0)
-                       
+		       
 
-                if (iGameTurn == getTurnForYear(1700)):
+		if (iGameTurn == getTurnForYear(1700)):
 			self.createResource(16, 54, iHorse) # Alberta
 			self.createResource(26, 45, iHorse) # Washington area
 			self.createResource(21, 48, iHorse) # Midwest
@@ -318,7 +318,7 @@ class Resources:
 				self.createResource(36, 18, iCorn) # Sao Paulo
 				self.createResource(42, 18, iFish) # Rio de Janeiro
 
-                if (iGameTurn == getTurnForYear(1850)):
+		if (iGameTurn == getTurnForYear(1850)):
 			self.createResource(12, 45, iWine) # California
 			self.createResource(31, 10, iWine) # Andes
 			self.createResource(113, 12, iWine) # Barossa Valley, Australia

@@ -160,7 +160,7 @@ class CvTopCivs:
 		
 		# Loop through all players except the barbs
 		#for iPlayerLoop in range(gc.getMAX_PLAYERS()-1): #Rhye
-                for iPlayerLoop in range(con.iNumMajorPlayers): #Rhye
+		for iPlayerLoop in range(con.iNumMajorPlayers): #Rhye
 				
 			if (gc.getPlayer(iPlayerLoop).isAlive()):
 				
@@ -224,7 +224,7 @@ class CvTopCivs:
 				# Does the Active player know this player exists?
 				if (iPlayer == CyGame().getActivePlayer() or pActivePlayerTeam.isHasMet(iPlayerTeam)):
 					#szCivText = localText.getText("TXT_KEY_TOPCIVS_TEXT3", (szPlayerName, self.RankList[iRankLoop])) #Rhye
-                                        szCivText = gc.getPlayer(iPlayer).getCivilizationDescription(0) #Rhye					
+					szCivText = gc.getPlayer(iPlayer).getCivilizationDescription(0) #Rhye					
 				else:
 					szCivText = localText.getText("TXT_KEY_TOPCIVS_UNKNOWN", ())
 					
