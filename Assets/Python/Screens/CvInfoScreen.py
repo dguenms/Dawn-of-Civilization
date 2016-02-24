@@ -2140,7 +2140,7 @@ class CvInfoScreen:
 				szDateBuilt = ""
 
 				if (iTurnYear != -9999):	# -9999 used for wonders in progress
-                                        #Rhye - start
+					#Rhye - start
 
 ##					if (iTurnYear < 0):
 ##						szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
@@ -2149,30 +2149,30 @@ class CvInfoScreen:
 ##
 ##					szDateBuilt = (", %s" %(szTurnFounded))
 					
-                                        iActivePlayer = CyGame().getActivePlayer()
-                                        pActivePlayer = gc.getPlayer(iActivePlayer)
-                                        tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
-                                        iCalendar = con.iCalendar
-                                        
-                                        if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < con.tBirth[iActivePlayer]):
-                                                if (iTurnYear < 0):
-                                                    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
-                                                else:
-                                                    szTurnFounded = localText.getText("TXT_KEY_TIME_AD", (iTurnYear,))
-                                                
-                                        elif (iTurnYear >= 1500):
-                                                szTurnFounded = localText.getText("TXT_KEY_AGE_RENAISSANCE", ())              
-                                        elif (iTurnYear >= 450):
-                                                szTurnFounded = localText.getText("TXT_KEY_AGE_MEDIEVAL", ())    
-                                        elif (iTurnYear >= -800):
-                                                szTurnFounded = localText.getText("TXT_KEY_AGE_IRON", ())    
-                                        elif (iTurnYear >= -2000):
-                                                szTurnFounded = localText.getText("TXT_KEY_AGE_BRONZE", ())    
-                                        else:
-                                                szTurnFounded = localText.getText("TXT_KEY_AGE_STONE", ())
+					iActivePlayer = CyGame().getActivePlayer()
+					pActivePlayer = gc.getPlayer(iActivePlayer)
+					tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
+					iCalendar = con.iCalendar
+					
+					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < con.tBirth[iActivePlayer]):
+						if (iTurnYear < 0):
+						    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
+						else:
+						    szTurnFounded = localText.getText("TXT_KEY_TIME_AD", (iTurnYear,))
+						
+					elif (iTurnYear >= 1500):
+						szTurnFounded = localText.getText("TXT_KEY_AGE_RENAISSANCE", ())	      
+					elif (iTurnYear >= 450):
+						szTurnFounded = localText.getText("TXT_KEY_AGE_MEDIEVAL", ())    
+					elif (iTurnYear >= -800):
+						szTurnFounded = localText.getText("TXT_KEY_AGE_IRON", ())    
+					elif (iTurnYear >= -2000):
+						szTurnFounded = localText.getText("TXT_KEY_AGE_BRONZE", ())    
+					else:
+						szTurnFounded = localText.getText("TXT_KEY_AGE_STONE", ())
 
-                                        szDateBuilt = (", %s" %(szTurnFounded))
-                                        #Rhye - end
+					szDateBuilt = (", %s" %(szTurnFounded))
+					#Rhye - end
 
 
 
@@ -2568,7 +2568,7 @@ class CvInfoScreen:
 				szCityName = localText.changeTextColor(szCityName, color)
 
 			screen.appendTableRow(self.szWondersTable)
-			screen.setTableText(self.szWondersTable, 0, iWonderLoop, ""             , zoomArt, WidgetTypes.WIDGET_ZOOM_CITY, pCity.getOwner(), pCity.getID(), CvUtil.FONT_LEFT_JUSTIFY)
+			screen.setTableText(self.szWondersTable, 0, iWonderLoop, ""	     			, zoomArt, WidgetTypes.WIDGET_ZOOM_CITY, pCity.getOwner(), pCity.getID(), CvUtil.FONT_LEFT_JUSTIFY)
 			screen.setTableText(self.szWondersTable, 1, iWonderLoop, szWonderName   , "", iWidget, iWonderType, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			screen.setTableInt (self.szWondersTable, 2, iWonderLoop, szTurnYearBuilt, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 			screen.setTableText(self.szWondersTable, 3, iWonderLoop, szWonderBuiltBy, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -2945,37 +2945,37 @@ class CvInfoScreen:
 
 		year = CyGame().getTurnYear(turn)
 
-                year = CyGame().getTurnYear(turn)
+		year = CyGame().getTurnYear(turn)
 
-                #Rhye - start
-##                if (year < 0):
-##                    return localText.getText("TXT_KEY_TIME_BC", (-year,))
-##                else:
-##                    return localText.getText("TXT_KEY_TIME_AD", (year,))
-                    
-                iPlayer = CyGame().getActivePlayer()
-                pPlayer = gc.getPlayer(iPlayer)
-                tPlayer = gc.getTeam(pPlayer.getTeam())
-                iBronzeWorking = con.iBronzeWorking
-                iIronWorking = con.iIronWorking
-                iCalendar = con.iCalendar
-                
-                if (tPlayer.isHasTech(iCalendar) or year < con.tBirth[iPlayer]):  
-                        if (year < 0):
-                            return localText.getText("TXT_KEY_TIME_BC", (-year,))
-                        else:
-                            return localText.getText("TXT_KEY_TIME_AD", (year,))         
-                elif (year >= 1500):
-                        return localText.getText("TXT_KEY_AGE_RENAISSANCE", ())  
-                elif (year >= 450):
-                        return localText.getText("TXT_KEY_AGE_MEDIEVAL", ())    
-                elif (year >= -800):
-                        return localText.getText("TXT_KEY_AGE_IRON", ())    
-                elif (year >= -2000):
-                        return localText.getText("TXT_KEY_AGE_BRONZE", ())    
-                else:
-                        return localText.getText("TXT_KEY_AGE_STONE", ())    
-                #Rhye - end
+		#Rhye - start
+##		if (year < 0):
+##		    return localText.getText("TXT_KEY_TIME_BC", (-year,))
+##		else:
+##		    return localText.getText("TXT_KEY_TIME_AD", (year,))
+		    
+		iPlayer = CyGame().getActivePlayer()
+		pPlayer = gc.getPlayer(iPlayer)
+		tPlayer = gc.getTeam(pPlayer.getTeam())
+		iBronzeWorking = con.iBronzeWorking
+		iIronWorking = con.iIronWorking
+		iCalendar = con.iCalendar
+		
+		if (tPlayer.isHasTech(iCalendar) or year < con.tBirth[iPlayer]):  
+			if (year < 0):
+			    return localText.getText("TXT_KEY_TIME_BC", (-year,))
+			else:
+			    return localText.getText("TXT_KEY_TIME_AD", (year,))	 
+		elif (year >= 1500):
+			return localText.getText("TXT_KEY_AGE_RENAISSANCE", ())  
+		elif (year >= 450):
+			return localText.getText("TXT_KEY_AGE_MEDIEVAL", ())    
+		elif (year >= -800):
+			return localText.getText("TXT_KEY_AGE_IRON", ())    
+		elif (year >= -2000):
+			return localText.getText("TXT_KEY_AGE_BRONZE", ())    
+		else:
+			return localText.getText("TXT_KEY_AGE_STONE", ())    
+		#Rhye - end
 
 
 	def lineName(self,i):
@@ -3307,7 +3307,7 @@ class CvInfoScreen:
 		#					self.pActivePlayer.canDoEspionageMission(iDemographicsMission, iLoopPlayer, None, -1) or
 		#					iEndGame != 0 or
 		#					iLoopPlayerTeam == CyGame().getActiveTeam()
-                 #                                       or CyGame().isDebugMode()): #Rhye
+		 #				       or CyGame().isDebugMode()): #Rhye
 		#				self.aiPlayersMet.append(iLoopPlayer)
 		#				self.iNumPlayersMet += 1
 		

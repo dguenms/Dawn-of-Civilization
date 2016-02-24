@@ -13,46 +13,46 @@ PyPlayer = PyHelpers.PyPlayer
 
 class StoredData:
 
-        def __init__(self):
-                self.setup()
+	def __init__(self):
+		self.setup()
 
-        def load(self):
-                """Loads and unpickles script data"""
-                self.scriptDict.update(pickle.loads(gc.getPlayer(con.iBarbarian).getScriptData()))
+	def load(self):
+		"""Loads and unpickles script data"""
+		self.scriptDict.update(pickle.loads(gc.getPlayer(con.iBarbarian).getScriptData()))
 
-        def save(self):
-                """Pickles and saves script data"""
+	def save(self):
+		"""Pickles and saves script data"""
 		gc.getPlayer(con.iBarbarian).setScriptData(pickle.dumps(self.scriptDict))
 
-        def setup(self):
-                """Initialise the global script data dictionary for usage."""
-                self.scriptDict = {      #------------RiseAndFall
+	def setup(self):
+		"""Initialise the global script data dictionary for usage."""
+		self.scriptDict = {      #------------RiseAndFall
 				    'lTempEventList' : [],
-                                    'lNewCiv': [],
+				    'lNewCiv': [],
 				    'iRespawnCiv' : -1,
-                                    'iNewCivFlip': -1,
-                                    'iOldCivFlip': -1,
-                                    'tTempTopLeft': -1,
-                                    'tTempBottomRight': -1,
-                                    'iSpawnWar': 0, #if 1, add units and declare war. If >=2, do nothing
-                                    'bAlreadySwitched': False,
-                                    'lColonistsAlreadyGiven': [0 for i in range(con.iNumPlayers)], #active players
-                                    'lAstronomyTurn': [1500 for i in range(con.iNumPlayers)], #active players
-                                    'lNumCities': [0 for i in range(con.iNumTotalPlayers)], #total players to contain Byzantium too
-                                    'lLastTurnAlive': [0 for i in range(con.iNumTotalPlayers)], #total players to contain Byzantium too
-                                    'lSpawnDelay': [0 for i in range(con.iNumPlayers)], #active players
-                                    'lFlipsDelay': [0 for i in range(con.iNumPlayers)],
-                                    'iBetrayalTurns': 0,
-                                    'lLatestRebellionTurn': [0 for i in range(con.iNumPlayers)],
-                                    'iRebelCiv': 0,
-                                    'lExileData': [-1, -1, -1, -1, -1],
-                                    'tTempFlippingCity': -1,
-                                    'lCheatersCheck': [0, -1],
-                                    'lBirthTurnModifier': [0 for i in range(con.iNumPlayers)],
-                                    'lDeleteMode': [-1, -1, -1], #first is a bool, the other values are capital coordinates
-                                    'lFirstContactConquerors': [0, 0, 0], #maya, inca, aztecs
+				    'iNewCivFlip': -1,
+				    'iOldCivFlip': -1,
+				    'tTempTopLeft': -1,
+				    'tTempBottomRight': -1,
+				    'iSpawnWar': 0, #if 1, add units and declare war. If >=2, do nothing
+				    'bAlreadySwitched': False,
+				    'lColonistsAlreadyGiven': [0 for i in range(con.iNumPlayers)], #active players
+				    'lAstronomyTurn': [1500 for i in range(con.iNumPlayers)], #active players
+				    'lNumCities': [0 for i in range(con.iNumTotalPlayers)], #total players to contain Byzantium too
+				    'lLastTurnAlive': [0 for i in range(con.iNumTotalPlayers)], #total players to contain Byzantium too
+				    'lSpawnDelay': [0 for i in range(con.iNumPlayers)], #active players
+				    'lFlipsDelay': [0 for i in range(con.iNumPlayers)],
+				    'iBetrayalTurns': 0,
+				    'lLatestRebellionTurn': [0 for i in range(con.iNumPlayers)],
+				    'iRebelCiv': 0,
+				    'lExileData': [-1, -1, -1, -1, -1],
+				    'tTempFlippingCity': -1,
+				    'lCheatersCheck': [0, -1],
+				    'lBirthTurnModifier': [0 for i in range(con.iNumPlayers)],
+				    'lDeleteMode': [-1, -1, -1], #first is a bool, the other values are capital coordinates
+				    'lFirstContactConquerors': [0, 0, 0], #maya, inca, aztecs
 				    'lFirstContactMongols': [0, 0, 0, 0, 0], #india, persia, byzantium, arabia, russia
-                                    'bCheatMode': False,
+				    'bCheatMode': False,
 				    'tTempFlippingCity': (0, 0),
 				    'tTradingCompanyConquerorsTargets': ([], [], [], [], []),
 				    'iOttomanSpawnTurn': -1,
@@ -61,32 +61,32 @@ class StoredData:
 				    'lPlayerEnabled': [True for i in con.lSecondaryCivs],
 				    'lCityFounded': [False for i in range(con.iNumMinorCities)],
 				    'lTimedConquests' : [],
-                                     #------------Religions
-                                    'iSeed': -1,
+				     #------------Religions
+				    'iSeed': -1,
 				    'lReformationDecision': [-1 for i in range(con.iNumPlayers)],
-                                    #------------UP
-                                    'iImmigrationTimer': 0,
-                                    'iLatestFlipTurn': 0,
-                                    'lLatestRazeData': [-1, -1, -1, -1, -1],
+				    #------------UP
+				    'iImmigrationTimer': 0,
+				    'iLatestFlipTurn': 0,
+				    'lLatestRazeData': [-1, -1, -1, -1, -1],
 				    'iRomanVictories': 0,
 				    'lByzantineBribes': [],
 				    #------------AIWars
-                                    'lAttackingCivsArray': [0 for i in range(con.iNumPlayers)], #original RFC had -1 here somewhere??
-                                    'iNextTurnAIWar': -1,
+				    'lAttackingCivsArray': [0 for i in range(con.iNumPlayers)], #original RFC had -1 here somewhere??
+				    'iNextTurnAIWar': -1,
 				    'lAggressionLevels': [0 for i in range(con.iNumPlayers)],
 				    'lConquests' : [False for i in range(con.iNumConquests)],
-                                    #------------Congresses
+				    #------------Congresses
 				    'iGlobalWarAttacker': -1,
 				    'iGlobalWarDefender': -1,
 				    'iCongressTurns': 0,
 				    'iCivsWithNationalism': 0,
 				    'currentCongress': None,
 				    #------------Plague
-                                    'lPlagueCountdown': [0 for i in range(con.iNumTotalPlayersB)], #total players + barbarians
-                                    'lGenericPlagueDates': [-1, -1, -1, -1],# -1],
-                                    'lFirstContactPlague': [False for i in range(con.iNumTotalPlayersB)], #total players + barbarians
-                                     #------------Victories
-                                    'lGoals': [[-1, -1, -1] for i in range(con.iNumPlayers)],
+				    'lPlagueCountdown': [0 for i in range(con.iNumTotalPlayersB)], #total players + barbarians
+				    'lGenericPlagueDates': [-1, -1, -1, -1],# -1],
+				    'lFirstContactPlague': [False for i in range(con.iNumTotalPlayersB)], #total players + barbarians
+				     #------------Victories
+				    'lGoals': [[-1, -1, -1] for i in range(con.iNumPlayers)],
 				    'lHistoricalGoldenAge' : [False for i in range(con.iNumPlayers)],
 				    'bIgnoreAI': False,
 				    
@@ -116,7 +116,7 @@ class StoredData:
 				    'iBuddhistHappinessTurns': 0,
 				    'iTaoistHealthTurns': 0,
 				    'bPolytheismNeverReligion': True,
-                                    #------------Stability
+				    #------------Stability
 				    'lStabilityLevels': [con.iStabilityShaky for i in range(con.iNumPlayers)],
 				    'lTurnsToCollapse': [-1 for i in range(con.iNumPlayers)],
 				    'lCrisisCountdown': [0 for i in range(con.iNumPlayers)],
@@ -136,7 +136,7 @@ class StoredData:
 				    'lWarStartTurn' : [[0 for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
 				    'dSecedingCities' : {},
 				}
-                self.save()
+		self.save()
 		
 	# RISE AND FALL
 	

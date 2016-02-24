@@ -144,7 +144,7 @@ class CvPediaPromotion:
 
 			ePromo = gc.getPromotionInfo(self.iPromotion).getPrereqOrPromotion2()
 			if (ePromo > -1):
-	        		screen.attachTextGFC(panelName, "", localText.getText("TXT_KEY_OR", ()), FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+				screen.attachTextGFC(panelName, "", localText.getText("TXT_KEY_OR", ()), FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 				screen.attachImageButton( panelName, "", gc.getPromotionInfo(ePromo).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, ePromo, 1, False )
 								
 		eTech = gc.getPromotionInfo(self.iPromotion).getTechPrereq()
