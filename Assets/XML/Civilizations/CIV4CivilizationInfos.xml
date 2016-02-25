@@ -5525,7 +5525,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_POLYNESIA</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_POLYNESIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_BARBARIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
 			<Identifier>PLY</Identifier>
 			<StartingYear>-1000</StartingYear>
 			<LoadingTimes>

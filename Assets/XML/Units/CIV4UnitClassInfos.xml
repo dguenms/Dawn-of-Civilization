@@ -12,7 +12,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_LION</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -21,7 +20,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_BEAR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -30,7 +28,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_PANTHER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -39,7 +36,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_WOLF</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -48,7 +44,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SETTLER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -57,7 +52,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_WORKER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -66,7 +60,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SCOUT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -75,7 +68,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_EXPLORER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -84,7 +76,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SPY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -93,7 +84,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_RELIGIOUS_PERSECUTOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -102,7 +92,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_PROTESTANT_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -111,7 +100,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CATHOLIC_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -120,7 +108,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ORTHODOX_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -129,7 +116,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ISLAMIC_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -138,7 +124,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_HINDU_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -147,7 +132,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_BUDDHIST_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -156,7 +140,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CONFUCIAN_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -165,7 +148,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_TAOIST_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -174,7 +156,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ZOROASTRIAN_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -183,7 +164,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_WARRIOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -192,7 +172,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SWORDSMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -201,7 +180,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_AXEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -210,7 +188,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_HEAVY_SWORDSMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -219,7 +196,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SPEARMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -228,7 +204,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_PIKEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -237,7 +212,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MUSKETMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -246,7 +220,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_RIFLEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -255,7 +228,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GRENADIER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -264,7 +236,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_INFANTRY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -273,7 +244,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_AT_INFANTRY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -282,7 +252,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SAM_INFANTRY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -291,7 +260,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MOBILE_SAM</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -300,7 +268,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MARINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -309,7 +276,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_PARATROOPER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -318,7 +284,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MECHANIZED_INFANTRY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -327,7 +292,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ARCHER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -336,7 +300,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_LONGBOWMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -345,7 +308,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CROSSBOWMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -354,7 +316,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CHARIOT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -363,7 +324,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_HORSE_ARCHER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -372,7 +332,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_KNIGHT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -381,7 +340,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CUIRASSIER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -390,7 +348,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CAVALRY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -399,7 +356,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_WAR_ELEPHANT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -408,7 +364,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_TANK</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -417,7 +372,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MAIN_BATTLE_TANK</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -426,7 +380,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GUNSHIP</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -435,7 +388,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CATAPULT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -444,7 +396,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_TREBUCHET</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -453,7 +404,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_BOMBARD</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -462,7 +412,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CANNON</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -471,7 +420,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MACHINE_GUN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -480,7 +428,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ARTILLERY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -489,7 +436,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MOBILE_ARTILLERY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -498,7 +444,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_WORK_BOAT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -507,7 +452,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GALLEY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -516,7 +460,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_TRIREME</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -525,7 +468,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CARAVEL</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -534,7 +476,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GALLEON</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -543,7 +484,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_PRIVATEER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -552,7 +492,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_FRIGATE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -561,7 +500,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SHIP_OF_THE_LINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -570,7 +508,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_IRONCLAD</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -579,7 +516,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_TRANSPORT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -588,7 +524,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_DESTROYER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -597,7 +532,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_STEALTH_DESTROYER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -606,7 +540,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_BATTLESHIP</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -615,7 +548,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MISSILE_CRUISER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -624,7 +556,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SUBMARINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -633,7 +564,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ATTACK_SUBMARINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -642,7 +572,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CARRIER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -651,7 +580,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_AIRSHIP</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -660,7 +588,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_FIGHTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -669,7 +596,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_JET_FIGHTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -678,7 +604,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_BOMBER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -687,7 +612,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_STEALTH_BOMBER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -696,7 +620,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GUIDED_MISSILE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -705,7 +628,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ICBM</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -714,7 +636,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_TACTICAL_NUKE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -723,7 +644,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GREAT_PROPHET</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -732,7 +652,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GREAT_ARTIST</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -741,7 +660,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GREAT_SCIENTIST</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -750,7 +668,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GREAT_MERCHANT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -759,7 +676,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GREAT_ENGINEER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -768,7 +684,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GREAT_STATESMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -777,7 +692,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GREAT_GENERAL</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -786,7 +700,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GREAT_SPY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -795,7 +708,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SLAVE</DefaultUnit>
 		</UnitClassInfo>
 	</UnitClassInfos>

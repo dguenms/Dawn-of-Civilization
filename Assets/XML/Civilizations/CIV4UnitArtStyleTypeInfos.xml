@@ -32,6 +32,11 @@
 						<MiddleArtDefineTag>ART_DEF_UNIT_CHARIOT_ASIAN</MiddleArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_CHARIOT_ASIAN</LateArtDefineTag>
 					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_CHARIOT_ASIAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_CHARIOT_ASIAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_CHARIOT_ASIAN</LateArtDefineTag>
+					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_KNIGHT</UnitType>

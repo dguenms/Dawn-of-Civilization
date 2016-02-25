@@ -286,11 +286,11 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_MALE_INDIAN</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_MALE_MIDDLE_EASTERN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_FEMALE_INDIAN</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SETTLER_FEMALE_MIDDLE_EASTERN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>

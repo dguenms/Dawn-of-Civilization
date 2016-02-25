@@ -9,32 +9,26 @@
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_GOVERNMENT</Type>
 			<Description>TXT_KEY_CIVICOPTION_GOVERNMENT</Description>
-			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_ORGANIZATION</Type>
 			<Description>TXT_KEY_CIVICOPTION_ORGANIZATION</Description>
-			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_LABOR</Type>
 			<Description>TXT_KEY_CIVICOPTION_LABOR</Description>
-			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_ECONOMY</Type>
 			<Description>TXT_KEY_CIVICOPTION_ECONOMY</Description>
-			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_RELIGION</Type>
 			<Description>TXT_KEY_CIVICOPTION_RELIGION</Description>
-			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
 			<Type>CIVICOPTION_MILITARY</Type>
 			<Description>TXT_KEY_CIVICOPTION_MILITARY</Description>
-			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 	</CivicOptionInfos>
 </Civ4CivicOptionInfos>
