@@ -3,6 +3,7 @@ import CvUtil
 import CvScreenEnums
 import CvScreensInterface
 import Consts as con
+import Stability
 
 # Globals
 gc = CyGlobalContext()
@@ -75,51 +76,6 @@ class CvCivicsScreen:
 		self.SelectedCivics = []
 		self.DisplayedCivics = []
 
-		self.dCivicCombos = {
-		# Government
-		con.iCivicTyranny : ([], []),
-		con.iCivicDynasticism : ([], []),
-		con.iCivicCityStates : ([con.iCivicGuilds, con.iCivicMilitia, con.iCivicMercenaries], [con.iCivicVassalage, con.iCivicAbsolutism, con.iCivicEgalitarianism, con.iCivicFreeMarket, con.iCivicCentralPlanning, con.iCivicEnvironmentalism, con.iCivicLevyArmies, con.iCivicStandingArmy, con.iCivicMultilateralism]),
-		con.iCivicTheocracy : ([con.iCivicFanaticism, con.iCivicOrganizedReligion], [con.iCivicSecularism, con.iCivicEgalitarianism]),
-		con.iCivicAutocracy : ([con.iCivicTotalitarianism, con.iCivicStandingArmy], [con.iCivicMultilateralism]),
-		con.iCivicRepublic : ([con.iCivicEgalitarianism, con.iCivicRepresentation], [con.iCivicAbsolutism]),
-		# Organization
-		con.iCivicDirectRule : ([], []),
-		# Medieval bonus 
-		con.iCivicVassalage : ([con.iCivicLevyArmies], [con.iCivicMilitia, con.iCivicMercenaries, con.iCivicStandingArmy, con.iCivicNavalSupremacy, con.iCivicMultilateralism, con.iCivicCapitalism, con.iCivicIndustrialism, con.iCivicPublicWelfare, con.iCivicCityStates]),
-		con.iCivicAbsolutism : ([con.iCivicMercantilism, con.iCivicOrganizedReligion], [con.iCivicCityStates, con.iCivicRepublic]),
-		con.iCivicRepresentation : ([con.iCivicCapitalism, con.iCivicRepublic], []),
-		con.iCivicTotalitarianism : ([con.iCivicAutocracy, con.iCivicCentralPlanning], [con.iCivicAnimism, con.iCivicPantheon, con.iCivicOrganizedReligion, con.iCivicScholasticism, con.iCivicFanaticism, con.iCivicMultilateralism]),
-		con.iCivicEgalitarianism : ([con.iCivicRepublic, con.iCivicEnvironmentalism, con.iCivicSecularism, con.iCivicMultilateralism], [con.iCivicTribalism, con.iCivicSlavery, con.iCivicAgrarianism, con.iCivicCapitalism, con.iCivicIndustrialism, con.iCivicTheocracy, con.iCivicCityStates]),
-		# Labor
-		con.iCivicTribalism : ([], [con.iCivicCentralPlanning, con.iCivicEgalitarianism]),
-		con.iCivicSlavery : ([], [con.iCivicCentralPlanning, con.iCivicEgalitarianism]),
-		con.iCivicAgrarianism : ([], [con.iCivicCentralPlanning, con.iCivicEgalitarianism]),
-		con.iCivicCapitalism : ([con.iCivicRepresentation, con.iCivicFreeMarket], [con.iCivicCentralPlanning, con.iCivicEgalitarianism, con.iCivicGuilds, con.iCivicVassalage]),
-		con.iCivicIndustrialism : ([con.iCivicCentralPlanning], [con.iCivicEgalitarianism, con.iCivicEnvironmentalism, con.iCivicVassalage]),
-		con.iCivicPublicWelfare : ([], [con.iCivicVassalage]),
-		# Economy
-		con.iCivicSubsistence : ([], []),
-		con.iCivicGuilds : ([con.iCivicCityStates], [con.iCivicCapitalism]),
-		con.iCivicMercantilism : ([con.iCivicAbsolutism], []),
-		con.iCivicFreeMarket : ([con.iCivicCapitalism], [con.iCivicCityStates]),
-		con.iCivicCentralPlanning : ([con.iCivicTotalitarianism, con.iCivicIndustrialism], [con.iCivicTribalism, con.iCivicSlavery, con.iCivicAgrarianism, con.iCivicCapitalism, con.iCivicCityStates]),
-		con.iCivicEnvironmentalism : ([con.iCivicEgalitarianism], [con.iCivicIndustrialism, con.iCivicCityStates]),
-		# Religion
-		con.iCivicAnimism : ([], [con.iCivicTotalitarianism]),
-		con.iCivicPantheon : ([], [con.iCivicTotalitarianism]),
-		con.iCivicOrganizedReligion : ([con.iCivicTheocracy, con.iCivicAbsolutism], [con.iCivicTotalitarianism]),
-		con.iCivicScholasticism : ([], [con.iCivicTotalitarianism]),
-		con.iCivicFanaticism : ([con.iCivicTheocracy], [con.iCivicTotalitarianism, con.iCivicMultilateralism]),
-		con.iCivicSecularism : ([con.iCivicEgalitarianism], [con.iCivicTheocracy]),
-		# Military
-		con.iCivicMilitia : ([con.iCivicCityStates], [con.iCivicVassalage]),
-		con.iCivicMercenaries : ([con.iCivicCityStates], [con.iCivicVassalage]),
-		con.iCivicLevyArmies : ([con.iCivicVassalage], [con.iCivicCityStates]),
-		con.iCivicStandingArmy : ([con.iCivicAutocracy], [con.iCivicVassalage, con.iCivicCityStates]),
-		con.iCivicNavalSupremacy : ([], [con.iCivicVassalage]),
-		con.iCivicMultilateralism : ([con.iCivicEgalitarianism], [con.iCivicVassalage, con.iCivicCityStates, con.iCivicAutocracy, con.iCivicTotalitarianism, con.iCivicFanaticism]),
-		}
 
 
 	def getScreen(self):
@@ -389,21 +345,6 @@ class CvCivicsScreen:
 		screen = self.getScreen()
 		player = gc.getPlayer(self.iActivePlayer)
 		iHoverCategory = gc.getCivicInfo(iHoverCivic).getCivicOptionType()
-		lGoodCombo = self.dCivicCombos[iHoverCivic][0]
-		lBadCombo = self.dCivicCombos[iHoverCivic][1]
-		
-		iCurrentEra = player.getCurrentEra()
-		if iHoverCivic in [con.iCivicVassalage, con.iCivicDynasticism, con.iCivicAgrarianism] and iCurrentEra == con.iMedieval:
-			if iHoverCivic == con.iCivicVassalage:
-				lGoodCombo.append(con.iCivicDynasticism)
-				lGoodCombo.append(con.iCivicAgrarianism)
-			else:
-				lGoodCombo.append(con.iCivicVassalage)
-		elif iHoverCivic in [con.iCivicAbsolutism, con.iCivicDynasticism] and iCurrentEra == con.iRenaissance:
-			if iHoverCivic == con.iCivicAbsolutism:
-				lGoodCombo.append(con.iCivicDynasticism)
-			else:
-				lGoodCombo.append(con.iCivicAbsolutism)
 		
 		for iCivic in range(con.iNumCivics):
 			iCategory = gc.getCivicInfo(iCivic).getCivicOptionType()
@@ -415,8 +356,9 @@ class CvCivicsScreen:
 			
 			sName = "CivicName" + str(iCivic)
 			sText = gc.getCivicInfo(iCivic).getDescription()
-			bGood = iCivic in lGoodCombo
-			bBad = iCivic in lBadCombo
+			iCombovalue = Stability.getCivicCombinationStability(self.iActivePlayer, iHoverCivic, iCivic)
+			bGood = iCombovalue > 0
+			bBad = iCombovalue < 0
 			
 			if bHoverOn:
 				if bGood:
