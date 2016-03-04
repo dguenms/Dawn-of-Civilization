@@ -59,6 +59,9 @@ CvCity::CvCity()
 	m_aiNumRevolts = new int[MAX_PLAYERS];
 	m_aiGameTurnPlayerLost = new int[MAX_PLAYERS]; // Leoreth
 
+	m_aiReligionWeight = new int[NUM_RELIGIONS];
+	m_aiTradeReligionInfluence = new int[NUM_RELIGIONS];
+
 	m_abEverOwned = new bool[MAX_PLAYERS];
 	m_abTradeRoute = new bool[MAX_PLAYERS];
 	m_abRevealed = new bool[MAX_TEAMS];
@@ -153,6 +156,8 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiGameTurnPlayerLost); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCulturePlots); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCultureCosts); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiReligionWeight); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiTradeReligionInfluence); // Leoreth
 	SAFE_DELETE_ARRAY(m_abEverOwned);
 	SAFE_DELETE_ARRAY(m_abTradeRoute);
 	SAFE_DELETE_ARRAY(m_abRevealed);
@@ -604,6 +609,12 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
 		m_abEspionageVisibility[iI] = false;
+	}
+
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		m_aiReligionWeight[iI] = 0;
+		m_aiTradeReligionInfluence[iI] = 0;
 	}
 
 	m_szName.clear();
@@ -1108,7 +1119,9 @@ void CvCity::doTurn()
 	else
 	{
 		if (getHappinessTimer() == 0) //Leoreth
+		{
 			setWeLoveTheKingDay(false);
+		}
 	}
 
 	// Leoreth: update art style type once per turn
@@ -13288,6 +13301,11 @@ void CvCity::clearTradeRoutes()
 
 		m_paTradeCities[iI].reset();
 	}
+
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		setTradeReligionInfluence((ReligionTypes)iI, 0);
+	}
 }
 
 
@@ -13370,6 +13388,13 @@ void CvCity::updateTradeRoutes()
 		if (pLoopCity != NULL)
 		{
 			pLoopCity->setTradeRoute(getOwnerINLINE(), true);
+
+			// Leoreth
+			ReligionTypes eMajorityReligion = pLoopCity->getMajorityReligion();
+			if (eMajorityReligion != NO_RELIGION)
+			{
+				changeTradeReligionInfluence(eMajorityReligion, pLoopCity->calculateReligionPressure(this, eMajorityReligion, false));
+			}
 
 // BUG - Fractional Trade Routes - start
 #ifdef _MOD_FRACTRADE
@@ -14625,9 +14650,248 @@ void CvCity::doDecay()
 }
 
 
+// Leoreth
+CvCity* CvCity::findSpreadTarget(ReligionTypes eReligion)
+{
+	CvCity* pCurrentCity; 
+	CvCity* pBestCity;
+	PlayerTypes ePlayer;
+	int iCurrentDistance;
+	int iBestDistance = MAX_INT;
+	int iRegionModifier;
+	int iLoop;
+	int iI;
+	bool bStateReligion;
+
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		ePlayer = (PlayerTypes)iI;
+		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+
+		if (kPlayer.isAlive())
+		{
+			bStateReligion = kPlayer.getStateReligion() == eReligion;
+			if (bStateReligion || !kPlayer.isNoNonStateReligionSpread())
+			{
+				for (pCurrentCity = kPlayer.firstCity(&iLoop); pCurrentCity != NULL; pCurrentCity = kPlayer.nextCity(&iLoop))
+				{
+					if (!pCurrentCity->isHasReligion(eReligion)) continue;
+
+					iRegionModifier = pCurrentCity->plot()->getSpreadFactor(eReligion);
+					if (!bStateReligion)
+					{
+						if (iRegionModifier < 0) continue;
+						if (iRegionModifier == 0 && pCurrentCity->getReligionCount() == 0) continue;
+					}
+
+					if (isConnectedTo(pCurrentCity))
+					{
+						iCurrentDistance = stepDistance(getX(), getY(), pCurrentCity->getX(), pCurrentCity->getY());
+
+						if (iRegionModifier == 2)
+						{
+							if (bStateReligion || kPlayer.getStateReligion() == NO_RELIGION)
+							{
+								iCurrentDistance /= 5;
+							}
+						}
+
+						if (iCurrentDistance < iBestDistance)
+						{
+							pBestCity = pCurrentCity;
+							iBestDistance = iCurrentDistance;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return pBestCity;
+}
+
+
+// Leoreth
+void CvCity::spreadReligions()
+{
+	ReligionTypes eReligion;
+	int iI;
+
+	ReligionTypes eMajorityReligion = getMajorityReligion();
+	if (eMajorityReligion != NO_RELIGION)
+	{
+		spreadReligion(eMajorityReligion);
+	}
+
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		eReligion = (ReligionTypes)iI;
+		if (isHolyCity(eReligion) && eMajorityReligion != eReligion)
+		{
+			spreadReligion(eReligion);
+		}
+	}
+}
+
+
+// Leoreth
+ReligionTypes CvCity::getMajorityReligion()
+{
+	ReligionTypes eReligion;
+	ReligionTypes eMajorityReligion = NO_RELIGION;
+	int iMajorityValue = 0;
+	int iI;
+	
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		eReligion = (ReligionTypes)iI;
+		if (isHasReligion(eReligion) && getReligionWeight(eReligion) > iMajorityValue)
+		{
+			eMajorityReligion = eReligion;
+			iMajorityValue = getReligionWeight(eReligion);
+		}
+	}
+
+	return eMajorityReligion;
+}
+
+
+// Leoreth
+int CvCity::calculateReligionPressure(CvCity* pTargetCity, ReligionTypes eReligion, bool bTradeInfluence) const
+{
+	int iReligionPressure = 0;
+	int iReligionWeight = getReligionWeight(eReligion);
+	int iOverallReligionWeight = 0;
+	int iI;
+
+	int iPopulationModifier = 10;
+	int iBuildingModifier = 50;
+	int iHolyCityModifier = 250;
+	int iStateReligionModifier = 100;
+	int iFoundingTimeModifier = 100;
+
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		iOverallReligionWeight += getReligionWeight((ReligionTypes)iI);
+	}
+		
+	if (iOverallReligionWeight > 0)
+	{
+		iReligionPressure += getPopulation() * iPopulationModifier * iReligionWeight / iOverallReligionWeight;
+	}
+
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+		if (isHasRealBuilding((BuildingTypes)iI))
+		{
+			iReligionPressure += kBuilding.getReligionChange(iI) * iBuildingModifier;
+		}
+	}
+
+	if (isHolyCity(eReligion))
+	{
+		iReligionPressure += iHolyCityModifier;
+	}
+
+	if (GET_PLAYER(pTargetCity->getOwner()).getStateReligion() == eReligion)
+	{
+		iReligionPressure += iStateReligionModifier;
+	}
+
+	if (bTradeInfluence)
+	{
+		iReligionPressure += getTradeReligionInfluence(eReligion);
+	}
+
+	int iCurrentTurn = GC.getGame().getGameTurn();
+	int iTurnFounded = GC.getGame().getReligionGameTurnFounded(eReligion);
+	int iTotalTurns = GC.getGame().getMaxTurns();
+	iReligionPressure += iFoundingTimeModifier * std::max(0, 100 * (iTotalTurns + iTurnFounded - 2 * iCurrentTurn) / (iTotalTurns - iTurnFounded)) / 100;
+
+	// distance modifier still missing here
+
+	return iReligionPressure;
+}
+
+
+// Leoreth
+void CvCity::spreadReligion(ReligionTypes eReligion)
+{
+	CvCity* pTargetCity = findSpreadTarget(eReligion);
+
+	int iReligionPressure;
+	if (pTargetCity != NULL)
+	{
+		iReligionPressure = calculateReligionPressure(pTargetCity, eReligion);
+		log("Spread religion to (%d, %d): %d", pTargetCity->getX(), pTargetCity->getY(), iReligionPressure);
+		pTargetCity->changeReligionWeight(eReligion, iReligionPressure);
+	}
+}
+
+
+// Leoreth
+int CvCity::getReligionWeight(ReligionTypes eReligion) const
+{
+	return m_aiReligionWeight[eReligion];
+}
+
+
+// Leoreth
+void CvCity::setReligionWeight(ReligionTypes eReligion, int iNewValue)
+{
+	m_aiReligionWeight[eReligion] = iNewValue;
+}
+
+
+// Leoreth
+void CvCity::changeReligionWeight(ReligionTypes eReligion, int iChange)
+{
+	m_aiReligionWeight[eReligion] += iChange;
+}
+
+
+// Leoreth
+int CvCity::getTradeReligionInfluence(ReligionTypes eReligion) const
+{
+	return m_aiTradeReligionInfluence[eReligion];
+}
+
+
+// Leoreth
+void CvCity::setTradeReligionInfluence(ReligionTypes eReligion, int iNewValue)
+{
+	m_aiTradeReligionInfluence[eReligion] = iNewValue;
+}
+
+
+// Leoreth
+void CvCity::changeTradeReligionInfluence(ReligionTypes eReligion, int iChange)
+{
+	m_aiTradeReligionInfluence[eReligion] += iChange;
+}
+
+
 void CvCity::doReligion()
 {
-	CvCity* pLoopCity;
+	// include all special cases again
+	
+	ReligionTypes eReligion;
+	int iI;
+
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		eReligion = (ReligionTypes)iI;
+		if (!isHasReligion(eReligion))
+		{
+			if (GC.getGameINLINE().getSorenRandNum(100, "Religion Spread") < getReligionWeight(eReligion))
+			{
+				setHasReligion(eReligion, true, true);
+			}
+		}
+	}
+
+	/*CvCity* pLoopCity;
 	ReligionTypes eReligion;
 	PlayerTypes ePlayer;
 	bool bStateReligion;
@@ -14712,7 +14976,7 @@ void CvCity::doReligion()
 		}
 	}*/
 
-	if (getReligionCount() == 0)
+	/*if (getReligionCount() == 0)
 	{
 		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 		{
@@ -14798,7 +15062,7 @@ void CvCity::doReligion()
 				}
 			}
 		}
-	}
+	}*/
 }
 
 
@@ -15071,6 +15335,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(MAX_PLAYERS, m_aiCulture);
 	pStream->Read(MAX_PLAYERS, m_aiNumRevolts);
 	pStream->Read(MAX_PLAYERS, m_aiGameTurnPlayerLost); // Leoreth
+	pStream->Read(NUM_RELIGIONS, m_aiReligionWeight); // Leoreth
+	pStream->Read(NUM_RELIGIONS, m_aiTradeReligionInfluence); // Leoreth
 
 	pStream->Read(MAX_PLAYERS, m_abEverOwned);
 	pStream->Read(MAX_PLAYERS, m_abTradeRoute);
@@ -15333,6 +15599,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(MAX_PLAYERS, m_aiCulture);
 	pStream->Write(MAX_PLAYERS, m_aiNumRevolts);
 	pStream->Write(MAX_PLAYERS, m_aiGameTurnPlayerLost); // Leoreth
+	pStream->Write(NUM_RELIGIONS, m_aiReligionWeight); // Leoreth
+	pStream->Write(NUM_RELIGIONS, m_aiTradeReligionInfluence); // Leoreth
 
 	pStream->Write(MAX_PLAYERS, m_abEverOwned);
 	pStream->Write(MAX_PLAYERS, m_abTradeRoute);

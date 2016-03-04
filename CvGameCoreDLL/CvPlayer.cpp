@@ -3002,6 +3002,19 @@ void CvPlayer::doTurnUnits()
 }
 
 
+// Leoreth
+void CvPlayer::spreadReligion()
+{
+	CvCity* pLoopCity;
+	int iLoop;
+
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		pLoopCity->spreadReligions();
+	}
+}
+
+
 void CvPlayer::verifyCivics()
 {
 	int iI, iJ;
