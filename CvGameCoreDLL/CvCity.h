@@ -1020,6 +1020,17 @@ public:
 	int getCapitalTradeModifier(CvCity* pOtherCity) const;
 	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
 	int estimateGrowth(int iTurns) const;
+	int getReligionWeight(ReligionTypes eReligion) const;
+	void setReligionWeight(ReligionTypes eReligion, int iNewValue);
+	void changeReligionWeight(ReligionTypes eReligion, int iChange);
+	CvCity* findSpreadTarget(ReligionTypes eReligion);
+	void spreadReligions();
+	void spreadReligion(ReligionTypes eReligion);
+	ReligionTypes getMajorityReligion();
+	int calculateReligionPressure(CvCity* pTargetCity, ReligionTypes eReligion, bool bTradeInfluence = true) const;
+	int getTradeReligionInfluence(ReligionTypes eReligion) const;
+	void changeTradeReligionInfluence(ReligionTypes eReligion, int iChange);
+	void setTradeReligionInfluence(ReligionTypes eReligion, int iNewValue);
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1245,6 +1256,9 @@ protected:
 	int* m_aiGameTurnPlayerLost;
 	int* m_aiCulturePlots;
 	int* m_aiCultureCosts;
+
+	int* m_aiReligionWeight;
+	int* m_aiTradeReligionInfluence;
 
 	bool* m_abEverOwned;
 	bool* m_abTradeRoute;

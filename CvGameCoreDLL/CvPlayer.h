@@ -127,6 +127,8 @@ public:
 
 	void updateTimers();
 
+	void spreadReligion(); // Leoreth
+
 	DllExport bool hasReadyUnit(bool bAny = false) const;
 	DllExport bool hasAutoUnit() const;
 	DllExport bool hasBusyUnit() const;

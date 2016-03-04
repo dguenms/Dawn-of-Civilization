@@ -6165,6 +6165,15 @@ void CvGame::doTurn()
 
 	doDeals();
 
+	// Leoreth
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			GET_PLAYER((PlayerTypes)iI).spreadReligion();
+		}
+	}
+
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
 		if (GET_TEAM((TeamTypes)iI).isAlive())
