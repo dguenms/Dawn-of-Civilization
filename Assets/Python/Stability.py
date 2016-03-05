@@ -6,7 +6,6 @@ from Consts import *
 import RFCUtils
 import DynamicCivs as dc
 from operator import itemgetter
-import itertools
 import math
 import Areas
 
@@ -1386,7 +1385,8 @@ def calculateStability(iPlayer):
 	
 	# Civics (combinations)
 	iCivicStability = 0
-	lCombinations = itertools.combinations([iCivicGovernment, iCivicOrganization, iCivicLabor, iCivicEconomy, iCivicReligion, iCivicMilitary], 2)
+	lCivics = [iCivicGovernment, iCivicOrganization, iCivicLabor, iCivicEconomy, iCivicReligion, iCivicMilitary]
+	lCombinations = [(iCivic1, iCivic2) for iCivic1 in lCivics for iCivic2 in lCivics if iCivic1 < iCivic2]
 	
 	for lCombination in lCombinations:
 		iCivicStability += getCivicCombinationStability(iPlayer, lCombination[0], lCombination[1])
