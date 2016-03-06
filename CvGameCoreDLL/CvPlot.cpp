@@ -3207,36 +3207,26 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	}
 	else
 	{
-	//Rhye - start (some units ignore desert cost)
-		if (((pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_EGYPTIAN_WARCHARIOT")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_PERSIAN_IMMORTAL")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_NUMIDIAN_CAVALRY")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_ARABIAN_CAMEL_ARCHER")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_MOORISH_CAMEL_GUNNER"))) && (getTerrainType() == 2)) //war chariot, immortal, numidian cavalry, camel archer and camel gunner in desert
-		{
-			iRegularCost = 1;
-		}
-		else
-		{
-		//Rhye - end
-			iRegularCost = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getMovementCost() : GC.getFeatureInfo(getFeatureType()).getMovementCost());
+		iRegularCost = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getMovementCost() : GC.getFeatureInfo(getFeatureType()).getMovementCost());
 
-			if (isHills())
+		if (isHills())
+		{
+			iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
+		}
+
+		// Leoreth: Great Wall effect (+1 movement cost for enemies within the great wall)
+		if (isWithinGreatWall() && isOwned())
+		{
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_WALL) && GET_TEAM((TeamTypes)getOwnerINLINE()).isAtWar((TeamTypes)pUnit->getOwner()))
 			{
 				iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
 			}
+		}
 
-			// Leoreth: Great Wall effect (+1 movement cost for enemies within the great wall)
-			if (isWithinGreatWall() && isOwned())
-			{
-				if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_WALL) && GET_TEAM((TeamTypes)getOwnerINLINE()).isAtWar((TeamTypes)pUnit->getOwner()))
-				{
-					iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
-				}
-			}
-
-			if (iRegularCost > 0)
-			{
-				iRegularCost = std::max(1, (iRegularCost - pUnit->getExtraMoveDiscount()));
-			}
-		} 
-		//Rhye
+		if (iRegularCost > 0)
+		{
+			iRegularCost = std::max(1, (iRegularCost - pUnit->getExtraMoveDiscount()));
+		}
 	}
 
 	bool bHasTerrainCost = (iRegularCost > 1);
@@ -3246,7 +3236,6 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	iRegularCost *= GC.getMOVE_DENOMINATOR();
 
 	//Rhye - start
-
 	if (getTerrainType() == TERRAIN_OCEAN)
 	{
 		// Leoreth: reduced movement cost only for units that could enter ocean on their own
@@ -3259,8 +3248,8 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 
 	if (bHasTerrainCost)
 	{
-		if (((getFeatureType() == NO_FEATURE) ? pUnit->isTerrainDoubleMove(getTerrainType()) : pUnit->isFeatureDoubleMove(getFeatureType())) ||
-			(isHills() && pUnit->isHillsDoubleMove()))
+		// Leoreth: terrain double move only when there are no hills
+		if (((getFeatureType() == NO_FEATURE) ? (pUnit->isTerrainDoubleMove(getTerrainType()) && !isHills()) : pUnit->isFeatureDoubleMove(getFeatureType())) || (isHills() && pUnit->isHillsDoubleMove()))
 		{
 			iRegularCost /= 2;
 		}
