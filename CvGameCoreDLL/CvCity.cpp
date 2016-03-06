@@ -296,18 +296,13 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	}*/
 
 	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
-	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra - 1 : 0;
+	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra : 0;
 
 	if (GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)ASTRONOMY))
 	{
-		if (eOwner == SPAIN || eOwner == FRANCE || eOwner == PORTUGAL || eOwner == NETHERLANDS)
+		if (isColony())
 		{
 			iExtraPopulation += 1;
-		}
-
-		if (eOwner == ENGLAND)
-		{
-			iExtraPopulation += 2;
 		}
 	}
 
