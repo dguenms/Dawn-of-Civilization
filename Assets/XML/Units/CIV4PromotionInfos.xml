@@ -1377,6 +1377,18 @@
 			<Button>,Art/Interface/Buttons/Promotions/Mobility1.dds,Art/Interface/Buttons/Promotions_Atlas.dds,5,4</Button>
 		</PromotionInfo>
 		<PromotionInfo>
+			<Type>PROMOTION_DESERT_ADAPTATION</Type>
+			<Description>TXT_KEY_PROMOTION_DESERT_ADAPTATION</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<TerrainDoubleMoves>
+				<TerrainDoubleMove>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainDoubleMove>1</bTerrainDoubleMove>
+				</TerrainDoubleMove>
+			</TerrainDoubleMoves>
+			<Button>Art/Interface/Buttons/Promotions/DesertAdaptation.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>
 			<Type>PROMOTION_NAVIGATION1</Type>
 			<Description>TXT_KEY_PROMOTION_NAVIGATION1</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
