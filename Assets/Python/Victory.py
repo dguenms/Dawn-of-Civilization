@@ -738,11 +738,11 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# second goal: control or vassalize Spain, the Maghreb, Egypt, Mesopotamia and Persia in 1300 AD
 		if iGameTurn == getTurnForYear(1300):
-			bSpain = isControlledOrVassalized(iArabia, Areas.getNormalArea(iSpain, False))
-			bMaghreb = isControlledOrVassalized(iArabia, utils.getPlotList(tCarthageTL, tCarthageBR))
 			bEgypt = isControlledOrVassalized(iArabia, Areas.getCoreArea(iEgypt, False))
-			bMesopotamia = isControlledOrVassalized(iArabia, Areas.getCoreArea(iMesopotamia, False))
+			bMaghreb = isControlledOrVassalized(iArabia, utils.getPlotList(tCarthageTL, tCarthageBR))
+			bMesopotamia = isControlledOrVassalized(iArabia, Areas.getCoreArea(iBabylonia, False))
 			bPersia = isControlledOrVassalized(iArabia, Areas.getCoreArea(iPersia, False))
+			bSpain = isControlledOrVassalized(iArabia, Areas.getNormalArea(iSpain, False))
 			if bSpain and bMaghreb and bEgypt and bMesopotamia and bPersia:
 				win(iArabia, 1)
 			else:
@@ -1222,7 +1222,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# second goal: make Ayutthaya the most populous city in the world in 1700 AD
 		if iGameTurn == getTurnForYear(1700):
-			if isBestCity(iThailand, (101, 33), cityPopulation):
+			if isBestCity(iThailand, (101, 33), cityPopulation) or isBestCity(iThailand, (102, 33), cityPopulation):
 				win(iThailand, 1)
 			else:
 				lose(iThailand, 1)
@@ -3148,7 +3148,7 @@ def getUHVHelp(iPlayer, iGoal):
 				aHelp.append(getIcon(bSouthAmerica) + localText.getText("TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA", ()))
 			elif iGoal == 2:
 				iTradeGold = sd.getColombianTradeGold()
-				aHelp.append(getIcon(iTradeGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES", (iTradeGold, utils.getTurns(5000))))
+				aHelp.append(getIcon(iTradeGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES", (iTradeGold, utils.getTurns(3000))))
 
 	elif iPlayer == iByzantium:
 		if iGoal == 0:
@@ -3481,6 +3481,9 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 1:
 			pBestCity = getBestCity(iThailand, (101, 33), cityPopulation)
 			bBestCity = isBestCity(iThailand, (101, 33), cityPopulation)
+			if not bBestCity:
+				pBestCity = getBestCity(iThailand, (102, 33), cityPopulation)
+				bBestCity = isBestCity(iThailand, (102, 33), cityPopulation)
 			aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
 		elif iGoal == 2:
 			bSouthAsia = isAreaOnlyCivs(tSouthAsiaTL, tSouthAsiaBR, lSouthAsianCivs)
