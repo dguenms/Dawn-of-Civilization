@@ -3010,7 +3010,7 @@ void CvPlayer::spreadReligion()
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		pLoopCity->spreadReligions();
+		pLoopCity->updateReligionSpread();
 	}
 }
 
