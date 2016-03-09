@@ -14837,67 +14837,10 @@ void CvCity::spreadReligion(ReligionTypes eReligion)
 
 
 // Leoreth
-/*int CvCity::calculateReligionInfluence(CvCity* pTargetCity, ReligionTypes eReligion, bool bTradeInfluence) const
-{
-	int iReligionPressure = 0;
-	int iReligionWeight = getReligionWeight(eReligion);
-	int iOverallReligionWeight = 0;
-	int iI;
-
-	int iPopulationModifier = 10;
-	int iBuildingModifier = 50;
-	int iHolyCityModifier = 250;
-	int iStateReligionModifier = 100;
-	int iFoundingTimeModifier = 100;
-
-	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
-	{
-		iOverallReligionWeight += getReligionWeight((ReligionTypes)iI);
-	}
-		
-	if (iOverallReligionWeight > 0)
-	{
-		iReligionPressure += getPopulation() * iPopulationModifier * iReligionWeight / iOverallReligionWeight;
-	}
-
-	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-	{
-		CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
-		if (isHasRealBuilding((BuildingTypes)iI))
-		{
-			iReligionPressure += kBuilding.getReligionChange(iI) * iBuildingModifier;
-		}
-	}
-
-	if (isHolyCity(eReligion))
-	{
-		iReligionPressure += iHolyCityModifier;
-	}
-
-	if (GET_PLAYER(pTargetCity->getOwner()).getStateReligion() == eReligion)
-	{
-		iReligionPressure += iStateReligionModifier;
-	}
-
-	if (bTradeInfluence)
-	{
-		iReligionPressure += getTradeReligionInfluence(eReligion);
-	}
-
-	int iCurrentTurn = GC.getGame().getGameTurn();
-	int iTurnFounded = GC.getGame().getReligionGameTurnFounded(eReligion);
-	int iTotalTurns = GC.getGame().getMaxTurns();
-	iReligionPressure += iFoundingTimeModifier * std::max(0, 100 * (iTotalTurns + iTurnFounded - 2 * iCurrentTurn) / (iTotalTurns - iTurnFounded)) / 100;
-
-	// distance modifier still missing here
-
-	return iReligionPressure;
-}*/
-
-
-// Leoreth
 int CvCity::calculateReligionInfluence(ReligionTypes eReligion, CvCity* pTargetCity) const
 {
+	return 0;
+
 	int iReligionInfluence = 0;
 	int iInfluenceModifier = 100;
 	int iI;
@@ -15005,6 +14948,11 @@ void CvCity::updateFaith()
 
 void CvCity::doReligion()
 {
+	updateReligionWeight();
+	updateFaith();
+
+	return;
+
 	// include all special cases again
 	
 	ReligionTypes eReligion;

@@ -3003,7 +3003,7 @@ void CvPlayer::doTurnUnits()
 
 
 // Leoreth
-void CvPlayer::spreadReligion()
+void CvPlayer::updateReligionSpread()
 {
 	CvCity* pLoopCity;
 	int iLoop;
