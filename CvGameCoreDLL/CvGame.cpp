@@ -6170,7 +6170,7 @@ void CvGame::doTurn()
 	{
 		if (GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
-			GET_PLAYER((PlayerTypes)iI).spreadReligion();
+			GET_PLAYER((PlayerTypes)iI).updateReligionSpread();
 		}
 	}
 
