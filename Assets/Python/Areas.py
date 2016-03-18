@@ -71,7 +71,6 @@ def isForeignCore(iPlayer, tPlot):
 	plot = gc.getMap().plot(x, y)
 	for iLoopPlayer in range(iNumPlayers):
 		if iLoopPlayer == iPlayer: continue
-		if plot.isWater() or plot.isPeak(): continue
 		if plot.isCore(iLoopPlayer):
 			return True
 	return False
@@ -298,6 +297,7 @@ dChangedCoreArea = {
 iChina : 	((99, 41),	(107, 47)),
 iGreece :	((65, 39), 	(69, 42)),
 iIndia : 	((88, 33),	(91, 38)),
+iPhoenicia:	((54, 37),	(60, 39)),
 #iPersia : ((79, 37),	(85, 44)),	# Iran (equal to Persian core rectangle)
 iMaya : 	((24, 26),	(31, 32)),	# Colombia
 iByzantium :	((67, 44),	(69, 46)),
