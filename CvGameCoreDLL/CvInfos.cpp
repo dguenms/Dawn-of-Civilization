@@ -16499,6 +16499,7 @@ m_iFreeUnitClass(NO_UNITCLASS),
 m_iNumFreeUnits(0),
 m_iSpreadFactor(0),
 m_iMissionType(NO_MISSION),
+m_bProselytizing(false),
 m_paiGlobalReligionCommerce(NULL),
 m_paiHolyCityCommerce(NULL),
 m_paiStateReligionCommerce(NULL)
@@ -16646,6 +16647,12 @@ const wchar* CvReligionInfo::getAdjectiveKey() const
 	return m_szAdjectiveKey;
 }
 
+// Leoreth
+bool CvReligionInfo::isProselytizing() const
+{
+	return m_bProselytizing;
+}
+
 // Arrays
 
 int CvReligionInfo::getGlobalReligionCommerce(int i) const
@@ -16703,6 +16710,8 @@ bool CvReligionInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_iNumFreeUnits, "iFreeUnits");
 	pXML->GetChildXmlValByName(&m_iSpreadFactor, "iSpreadFactor");
+
+	pXML->GetChildXmlValByName(&m_bProselytizing, "bProselytizing");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"GlobalReligionCommerces"))
 	{

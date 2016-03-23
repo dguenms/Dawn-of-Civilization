@@ -882,7 +882,9 @@ public:
 	void changeImprovementFreeSpecialists(ImprovementTypes eIndex, int iChange);		// Exposed to Python
 
 	int getReligionInfluence(ReligionTypes eIndex) const;													// Exposed to Python
+	void setReligionInfluence(ReligionTypes eIndex, int iNewValue);
 	void changeReligionInfluence(ReligionTypes eIndex, int iChange);				// Exposed to Python
+	void spreadReligionInfluence(ReligionTypes eReligion, int iRange, int iChange);
 
 	int getCurrentStateReligionHappiness() const;																	// Exposed to Python
 	int getStateReligionHappiness(ReligionTypes eIndex) const;										// Exposed to Python
@@ -1021,28 +1023,10 @@ public:
 	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
 	int estimateGrowth(int iTurns) const;
 
-	int getFaith(ReligionTypes eReligion) const;
-	void setFaith(ReligionTypes eReligion, int iNewValue);
-	void changeFaith(ReligionTypes eReligion, int iChange);
+	bool canSpread(ReligionTypes eReligion) const;
+	int getTurnsToSpread(ReligionTypes eReligion) const;
 
-	int getReligionWeight(ReligionTypes eReligion) const;
-	void setReligionWeight(ReligionTypes eReligion, int iNewValue);
-	void changeReligionWeight(ReligionTypes eReligion, int iChange);
-
-	int getTradeReligionWeight(ReligionTypes eReligion) const;
-	void changeTradeReligionWeight(ReligionTypes eReligion, int iChange);
-	void setTradeReligionWeight(ReligionTypes eReligion, int iNewValue);
-	
-	void updateReligionSpread();
-	void updateReligionWeight();
-	void updateFaith();
-
-	ReligionTypes getMainReligion() const;
-	CvCity* findSpreadTarget(ReligionTypes eReligion);
-	int calculateReligionInfluence(ReligionTypes eReligion, CvCity* pTargetCity = NULL) const;
-	
-	void spreadReligion(ReligionTypes eReligion);
-	int calculateReligionInfluence(CvCity* pTargetCity, ReligionTypes eReligion, bool bTradeInfluence = true) const;
+	bool isHasPrecursor(ReligionTypes eReligion) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1268,10 +1252,6 @@ protected:
 	int* m_aiGameTurnPlayerLost;
 	int* m_aiCulturePlots;
 	int* m_aiCultureCosts;
-	
-	int* m_aiFaith;
-	int* m_aiReligionWeight;
-	int* m_aiTradeReligionWeight;
 
 	bool* m_abEverOwned;
 	bool* m_abTradeRoute;

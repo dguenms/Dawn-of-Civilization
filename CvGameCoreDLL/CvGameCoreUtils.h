@@ -211,6 +211,12 @@ inline DirectionTypes directionXY(const CvPlot* pFromPlot, const CvPlot* pToPlot
 	return directionXY(dxWrap(pToPlot->getX_INLINE() - pFromPlot->getX_INLINE()), dyWrap(pToPlot->getY_INLINE() - pFromPlot->getY_INLINE()));
 }
 
+// Leoreth: parabolic decay of influence: iCenterValue at distance 0, 1 at distance iRange
+inline int distanceInfluence(int iCenterValue, int iRange, int iDistance)
+{
+	return (iCenterValue - 1) * (iDistance - iRange) * (iDistance - iRange) / (iRange * iRange) + 1;
+}
+
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
 CvPlot* plotCity3(int iX, int iY, int iIndex); // Leoreth
 int plotCityXY(int iDX, int iDY);																									// Exposed to Python
@@ -370,7 +376,11 @@ int getScenarioStartTurn(); // Leoreth
 BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth
 UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // Leoreth
 
+bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion); // Leoreth
+
 void log(char* format, ...);
+char* chars(const wchar_t* wchars);
+char* chars(CvWString string);
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);

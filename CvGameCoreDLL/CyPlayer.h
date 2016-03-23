@@ -562,8 +562,6 @@ public:
 	void setModifier(int eModifierType, int iNewValue);
 	int getStartingEra();
 	void setStartingEra(int iNewValue);
-	int getSpreadFactor(int eReligionType);
-	void setSpreadFactor(int eReligionType, int iNewValue);
 	void setTakenTilesThreshold(int iNewValue);
 	void setDistanceSubtrahend(int iNewValue);
 	void setDistanceFactor(int iNewValue);

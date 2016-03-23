@@ -2645,9 +2645,31 @@ UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit)
 	return (UnitTypes)GC.getCivilizationInfo(eCivilization).getCivilizationUnits(GC.getUnitInfo(eUnit).getUnitClassType());
 }
 
+bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion)
+{
+	if (ePrecursor == CONFUCIANISM && eReligion == TAOISM) return true;
+	if (ePrecursor == TAOISM && eReligion == CONFUCIANISM) return true;
+	if (ePrecursor == BUDDHISM && eReligion == HINDUISM) return true;
+	if (ePrecursor == ISLAM && (eReligion == CATHOLICISM || eReligion == ORTHODOXY)) return true;
+
+	return false;
+}
+
 void log(char* format, ...)
 {
 	static char buf[2048];
 	_vsnprintf( buf, 2048-4, format, (char*)(&format+1) );
 	gDLL->logMsg("sdkDbg.log", buf);
+}
+
+char* chars(const wchar_t* wchars)
+{
+	char buf[256];
+	std::wcstombs(buf, wchars, 256);
+	return buf;
+}
+
+char* chars(CvWString string)
+{
+	return chars(string.c_str());
 }

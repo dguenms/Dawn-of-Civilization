@@ -6146,6 +6146,8 @@ void CvGame::doTurn()
 {
 	PROFILE_BEGIN("CvGame::doTurn()");
 
+	log("Turn %d", getGameTurn());
+
 	int aiShuffle[MAX_PLAYERS];
 	int iLoopPlayer;
 	int iI;
@@ -6164,15 +6166,6 @@ void CvGame::doTurn()
 	updateScore();
 
 	doDeals();
-
-	// Leoreth
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			GET_PLAYER((PlayerTypes)iI).updateReligionSpread();
-		}
-	}
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
