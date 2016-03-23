@@ -1290,3 +1290,13 @@ void CyGame::changeYResolution(int iChange)
 {
 	if (m_pGame) m_pGame->changeYResolution(iChange);
 }
+
+void CyGame::addGreatPersonBornName(std::wstring sName)
+{
+	if (m_pGame) m_pGame->addGreatPersonBornName(sName);
+}
+
+bool CyGame::isGreatPersonBorn(std::wstring sName)
+{
+	return m_pGame ? m_pGame->isGreatPersonBorn(CvWString(sName)) : false;
+}

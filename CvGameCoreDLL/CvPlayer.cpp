@@ -64,7 +64,6 @@ CvPlayer::CvPlayer()
 	m_aiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES];
 	m_aiStabilityParameters = new int[NUM_PARAMETERS];
 	m_aiModifiers = new int[NUM_MODIFIER_TYPES];
-	m_aiSpreadFactors = new int[NUM_RELIGIONS];
 
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
@@ -138,7 +137,6 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiDomainExperienceModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiStabilityParameters); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiModifiers); // Leoreth
-	SAFE_DELETE_ARRAY(m_aiSpreadFactors); // Leoreth
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
 }
@@ -616,12 +614,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	for (iI = 0; iI < NUM_MODIFIER_TYPES; iI++)
 	{
 		m_aiModifiers[iI] = 0;
-	}
-
-	// Leoreth
-	for (iI = 0; iI < NUM_RELIGIONS; iI++)
-	{
-		m_aiSpreadFactors[iI] = 0;
 	}
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
@@ -2999,19 +2991,6 @@ void CvPlayer::doTurnUnits()
 	gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
 
 	AI_doTurnUnitsPost();
-}
-
-
-// Leoreth
-void CvPlayer::updateReligionSpread()
-{
-	CvCity* pLoopCity;
-	int iLoop;
-
-	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		pLoopCity->updateReligionSpread();
-	}
 }
 
 
@@ -7327,7 +7306,7 @@ int CvPlayer::calculateInflationRate() const
 	iRatePercent *= getModifier(MODIFIER_INFLATION_RATE);
 	iRatePercent /= 100;
 
-	FAssert(iRate >= 0);
+	FAssert(iRatePercent >= 0);
 
 	return iRatePercent;
 }
@@ -8135,6 +8114,8 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 		return;
 	}
+
+	log("Found religion %d on turn %d", eReligion, GC.getGame().getGameTurn());
 
 	GC.getGameINLINE().setReligionSlotTaken(eSlotReligion, true);
 
@@ -17970,7 +17951,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
 	pStream->Read(NUM_PARAMETERS, m_aiStabilityParameters);
 	pStream->Read(NUM_MODIFIER_TYPES, m_aiModifiers);
-	pStream->Read(NUM_RELIGIONS, m_aiSpreadFactors);
 
 	pStream->Read(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Read(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -18494,7 +18474,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainExperienceModifiers);
 	pStream->Write(NUM_PARAMETERS, m_aiStabilityParameters);
 	pStream->Write(NUM_MODIFIER_TYPES, m_aiModifiers);
-	pStream->Write(NUM_RELIGIONS, m_aiSpreadFactors);
 
 	pStream->Write(NUM_FEAT_TYPES, m_abFeatAccomplished);
 	pStream->Write(NUM_PLAYEROPTION_TYPES, m_abOptions);
@@ -24773,37 +24752,6 @@ void CvPlayer::setStartingEra(EraTypes eNewValue)
 	m_eStartingEra = eNewValue;
 }
 
-int CvPlayer::getSpreadFactor(ReligionTypes eReligion) const
-{
-	int iSpreadFactor = m_aiSpreadFactors[eReligion];
-
-	if (eReligion == CATHOLICISM)
-	{
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
-		{
-			if (iSpreadFactor < m_aiSpreadFactors[ORTHODOXY])
-			{
-				iSpreadFactor = m_aiSpreadFactors[ORTHODOXY];
-			}
-		}
-
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
-		{
-			if (iSpreadFactor < m_aiSpreadFactors[PROTESTANTISM])
-			{
-				iSpreadFactor = m_aiSpreadFactors[PROTESTANTISM];
-			}
-		}
-	}
-
-	return iSpreadFactor;
-}
-
-void CvPlayer::setSpreadFactor(ReligionTypes eReligion, int iNewValue)
-{
-	m_aiSpreadFactors[eReligion] = iNewValue;
-}
-
 int CvPlayer::distance(PlayerTypes ePlayer)
 {
 	CvCity* pOurCity = getCapitalCity();
@@ -24906,4 +24854,16 @@ int CvPlayer::AI_getReligiousTolerance() const
 void CvPlayer::setReligiousTolerance(int iNewValue)
 {
 	m_iReligiousTolerance = iNewValue;
+}
+
+bool CvPlayer::isTolerating(ReligionTypes eReligion) const
+{
+	ReligionTypes eStateReligion = getStateReligion();
+
+	if (eStateReligion == HINDUISM && eReligion == BUDDHISM) return true;
+	if (eStateReligion == BUDDHISM && eReligion == HINDUISM) return true;
+	if (eStateReligion == CONFUCIANISM && eReligion == TAOISM) return true;
+	if (eStateReligion == TAOISM && eReligion == CONFUCIANISM) return true;
+
+	return false;
 }

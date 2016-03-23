@@ -99,7 +99,7 @@ class Religions:
 		self.setSeed()
 		
 	def checkTurn(self, iGameTurn):
-			
+	
 		#Leoreth: script the Apostolic Palace and Church of the Holy Sepulchre for the player HRE victory in the 3000 BC scenario
 		if iGameTurn == getTurnForYear(840) - 5 - utils.getSeed() % 10:
 			if utils.getScenario() == i3000BC and utils.getHumanID() == iHolyRome:
@@ -126,8 +126,9 @@ class Religions:
 		if (not gc.getGame().isReligionFounded(iCatholicism)):
 			iEthiopianModifier = 0
 			if (gc.getPlayer(iEthiopia).isHuman()):
-				iEthiopianModifier = 15 #for the UHV
-			if (iGameTurn == getTurnForYear(33) + utils.getTurns(8*self.getSeed()/100 + iEthiopianModifier)): #Christianity up to 190AD (15 = 330AD)
+				iEthiopianModifier = utils.getTurns(15) #for the UHV
+			iOffset = utils.getTurns(self.getSeed() % 15)
+			if (iGameTurn == getTurnForYear(0) + iOffset + iEthiopianModifier): #Christianity up to 190AD (15 = 330AD)
 				pJerusalem = gc.getMap().plot(tJerusalem[0], tJerusalem[1])		
 				if (not pJerusalem.getPlotCity().isNone()):  
 					if (pJerusalem.getPlotCity().getOwner() == iIndependent or pJerusalem.getPlotCity().getOwner() == iIndependent2 or pJerusalem.getPlotCity().getOwner() == iBarbarian):
@@ -173,24 +174,24 @@ class Religions:
 						self.spreadReligion(tCity, 3, iCatholicMissionary)
 
 		# Leoreth: make sure Buddhism is founded before the Korean spawn
-		if iGameTurn == getTurnForYear(-400):
-			if not gc.getGame().isReligionFounded(iBuddhism):
-				if tBirth[utils.getHumanID()] > -400:
-					if gc.getPlayer(iIndia).isAlive():
-						gc.getPlayer(iIndia).foundReligion(iBuddhism, iBuddhism, True)
-					else:
-						tCity = self.selectRandomCityReligion(iHinduism)
-						self.foundReligion(tCity, iBuddhism)
-						self.spreadReligion(tCity, 3, iBuddhistMissionary)
+		#if iGameTurn == getTurnForYear(-400):
+		#	if not gc.getGame().isReligionFounded(iBuddhism):
+		#		if tBirth[utils.getHumanID()] > -400:
+		#			if gc.getPlayer(iIndia).isAlive():
+		#				gc.getPlayer(iIndia).foundReligion(iBuddhism, iBuddhism, True)
+		#			else:
+		#				tCity = self.selectRandomCityReligion(iHinduism)
+		#				self.foundReligion(tCity, iBuddhism)
+		#				self.spreadReligion(tCity, 3, iBuddhistMissionary)
 						
-		if iGameTurn == getTurnForYear(-100):
-			if not gc.getGame().isReligionFounded(iBuddhism):
-				if gc.getPlayer(iIndia).isAlive():
-					gc.getPlayer(iIndia).foundReligion(iBuddhism, iBuddhism, True)
-				else:
-					tCity = self.selectRandomCityReligion(iHinduism)
-					self.foundReligion(tCity, iBuddhism)
-					self.spreadReligion(tCity, 4, iBuddhistMissionary)
+		#if iGameTurn == getTurnForYear(-100):
+		#	if not gc.getGame().isReligionFounded(iBuddhism):
+		#		if gc.getPlayer(iIndia).isAlive():
+		#			gc.getPlayer(iIndia).foundReligion(iBuddhism, iBuddhism, True)
+		#		else:
+		#			tCity = self.selectRandomCityReligion(iHinduism)
+		#			self.foundReligion(tCity, iBuddhism)
+		#			self.spreadReligion(tCity, 4, iBuddhistMissionary)
 	  
 		#if (iGameTurn == getTurnForYear(622)+1):
 		#	if (gc.getGame().isReligionFounded(iIslam)):

@@ -5091,7 +5091,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case INDIA:
 									if (iI == MEDITATION || iI == PRIESTHOOD)
 										iValue *= 20;
-									if (iI == WRITING  || iI == MONOTHEISM || iI == MONARCHY || iI == CALENDAR || iI == MATHEMATICS)
+									if (iI == MONOTHEISM)
+										iValue /= 10;
+									if (iI == WRITING  || iI == MONARCHY || iI == CALENDAR)
 										iValue /= 3;
 									if (iI == ENGINEERING || iI == THEOLOGY || iI == CIVIL_SERVICE)
 										iValue /= 2;
@@ -6266,7 +6268,7 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 		iAttitude /= 2;
 	}
 
-	// Same with Orthodoxy combined with Catholicism or Protestantism
+	// Same with Orthodoxy combined with Catholicism or PROTESTANTISM
 	if (((getStateReligion() == ORTHODOXY) && (GET_PLAYER(ePlayer).getStateReligion() == CATHOLICISM)) || ((getStateReligion() == CATHOLICISM) && (GET_PLAYER(ePlayer).getStateReligion() == ORTHODOXY)))
 	{
 		iAttitude /= 2;
