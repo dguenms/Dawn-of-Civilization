@@ -293,7 +293,7 @@ static const int lTechBackwardsBonus[NUM_ERAS] = {0, 5, 10, 15, 25, 25, 25};
 // Leoreth: order of persecution
 static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] = 
 {
-	// PROTESTANTISM
+	// Protestantism
 	{ISLAM, CATHOLICISM, ORTHODOXY, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
 	// Catholicism
 	{ISLAM, PROTESTANTISM, ORTHODOXY, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
@@ -317,7 +317,7 @@ static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] =
 static const int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS] =
 {
 	// PRO CAT ORT ISL HIN BUD CON TAO ZOR
-	{  -1,  3,  2,  4,  1,  1,  1,  1,  2 }, // PROTESTANTISM
+	{  -1,  3,  2,  4,  1,  1,  1,  1,  2 }, // Protestantism
 	{   3, -1,  2,  4,  1,  1,  1,  1,  2 }, // Catholicism
 	{   3,  3, -1,  4,  1,  1,  1,  1,  2 }, // Orthodoxy
 	{   2,  2,  2, -1,  3,  1,  1,  1,  4 }, // Islam

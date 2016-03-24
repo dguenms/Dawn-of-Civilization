@@ -8115,8 +8115,6 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 		return;
 	}
 
-	log("Found religion %d on turn %d", eReligion, GC.getGame().getGameTurn());
-
 	GC.getGameINLINE().setReligionSlotTaken(eSlotReligion, true);
 
 	bStarting = ((GC.getReligionInfo(eSlotReligion).getTechPrereq() == NO_TECH) || (GC.getTechInfo((TechTypes) GC.getReligionInfo(eSlotReligion).getTechPrereq()).getEra() < GC.getGameINLINE().getStartEra()));
