@@ -2522,17 +2522,6 @@ void CyPlayer::setStartingEra(int iNewValue)
 		m_pPlayer->setStartingEra((EraTypes)iNewValue);
 }
 
-int CyPlayer::getSpreadFactor(int eReligion)
-{
-	return m_pPlayer ? m_pPlayer->getSpreadFactor((ReligionTypes)eReligion) : 0;
-}
-
-void CyPlayer::setSpreadFactor(int eReligion, int iNewValue)
-{
-	if (m_pPlayer)
-		m_pPlayer->setSpreadFactor((ReligionTypes)eReligion, iNewValue);
-}
-
 void CyPlayer::setTakenTilesThreshold(int iNewValue)
 {
 	if (m_pPlayer)

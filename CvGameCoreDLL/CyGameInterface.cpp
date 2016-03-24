@@ -297,6 +297,9 @@ void CyGamePythonInterface()
 		.def("getYResolution", &CyGame::getYResolution, "int ()")
 		.def("setYResolution", &CyGame::setYResolution, "void (int iNewValue)")
 		.def("changeYResolution", &CyGame::changeYResolution, "void (int iChange)")
+
+		.def("addGreatPersonBornName", &CyGame::addGreatPersonBornName, "void (string sName)")
+		.def("isGreatPersonBorn", &CyGame::isGreatPersonBorn, "bool (string sName)")
 		;
 
 	python::class_<CyDeal>("CyDeal")

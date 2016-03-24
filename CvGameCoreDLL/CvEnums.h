@@ -1853,7 +1853,17 @@ enum SpecialistTypes			// Exposed to Python
 
 enum ReligionTypes				// Exposed to Python
 {
-	NO_RELIGION = -1
+	NO_RELIGION = -1,
+	PROTESTANTISM,
+	CATHOLICISM,
+	ORTHODOXY,
+	ISLAM,
+	HINDUISM,
+	BUDDHISM,
+	CONFUCIANISM,
+	TAOISM,
+	ZOROASTRIANISM,
+	NUM_RELIGIONS,
 };
 
 enum CorporationTypes				// Exposed to Python
