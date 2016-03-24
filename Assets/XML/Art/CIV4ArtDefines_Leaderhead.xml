@@ -472,11 +472,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_GUSTAV</Type>
-			<Button>Art/leaderheads/Gustav/Gustav.dds</Button>
-			<NIF>Art/leaderheads/Gustav/vanderdonk.nif</NIF>
-			<KFM>Art/leaderheads/Gustav/vanderdonk.kfm</KFM>
-			<NoShaderNIF>Art/leaderheads/Gustav/vanderdonk.nif</NoShaderNIF>
-			<BackgroundKFM>Art/leaderheads/Gustav/vanderdonk_BG.kfm</BackgroundKFM>
+			<Button>Art/leaderheads/Gustav adolph/Gustav.dds</Button>
+			<NIF>Art/leaderheads/Gustav adolph/napoleon.nif</NIF>
+			<KFM>Art/leaderheads/Gustav adolph/napoleon.kfm</KFM>
+			<NoShaderNIF>Art/leaderheads/Gustav adolph/napoleon.nif</NoShaderNIF>
+			<BackgroundKFM>Art/leaderheads/Gustav adolph/napoleon_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ABU_BAKR</Type>
@@ -512,11 +512,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_BARBAROSSA</Type>
-			<Button>Art/leaderheads/Arthur/Barbarossa.dds</Button>
-			<NIF>Art/leaderheads/Arthur/arthur.nif</NIF>
-			<KFM>Art/leaderheads/Arthur/Pericles.kfm</KFM>
-			<NoShaderNIF>Art/leaderheads/Arthur/arthur.nif</NoShaderNIF>
-			<BackgroundKFM>Art/leaderheads/Arthur/Pericles_BG.kfm</BackgroundKFM>
+			<Button>Art/leaderheads/Friedrich_Barbarossa/Btn_LH_Barbarossa.dds</Button>
+			<NIF>Art/leaderheads/Friedrich_Barbarossa/Barbarossa.nif</NIF>
+			<KFM>Art/leaderheads/Friedrich_Barbarossa/Barbarossa.kfm</KFM>
+			<NoShaderNIF>Art/leaderheads/Friedrich_Barbarossa/Barbarossa.nif</NoShaderNIF>
+			<BackgroundKFM>Art/leaderheads/Friedrich_Barbarossa/Barbarossa_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CHARLES</Type>
@@ -639,12 +639,20 @@
 			<BackgroundKFM>art/leaderheads/Taizong/mao_tse_tung_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_HONGWU</Type>
+			<Type>ART_DEF_LEADER_SEJONG</Type>
 			<Button>Art/Leaderheads/Sejong/Sejong.dds</Button>
 			<NIF>Art/Leaderheads/Sejong/mao_tse_tung.nif</NIF>
 			<KFM>Art/Leaderheads/Sejong/mao_tse_tung.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/Sejong/mao_noshader.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Sejong/mao_tse_tung_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_HONGWU</Type>
+			<Button>Art/Leaderheads/Hongwu/Button_Hongwu.dds</Button>
+			<NIF>Art/Leaderheads/Hongwu/qin_shi_huang.nif</NIF>
+			<KFM>Art/Leaderheads/Hongwu/qin_shi_huang.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Hongwu/qin_shi_huang.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Hongwu/Tachnechobrus_Background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_HAYAW_WURUK</Type>
@@ -832,11 +840,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CASIMIR</Type>
-			<Button>Art/Leaderheads/Casimir/Btn_LH_Poland_Casimir.dds</Button>
-			<NIF>Art/Leaderheads/Casimir/casimir.nif</NIF>
-			<KFM>Art/Leaderheads/Casimir/casimir.kfm</KFM>
-			<NoShaderNIF>Art/Leaderheads/Casimir/casimir.nif</NoShaderNIF>
-			<BackgroundKFM>Art/Leaderheads/Casimir/casimir_BG.kfm</BackgroundKFM>
+			<Button>Art\leaderheads\casimir iii/casimir.dds</Button>
+			<NIF>Art\leaderheads\casimir iii/brennus.nif</NIF>
+			<KFM>Art\leaderheads\casimir iii/brennus.kfm</KFM>
+			<NoShaderNIF>Art\leaderheads\casimir iii/brennus.nif</NoShaderNIF>
+			<BackgroundKFM>Art\leaderheads\casimir iii/brennus_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_LORENZO</Type>
