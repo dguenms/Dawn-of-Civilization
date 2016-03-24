@@ -508,7 +508,7 @@ class CvRFCEventHandler:
 			if city.isHasRealBuilding(iAdministrativeCenter): city.setHasRealBuilding(iAdministrativeCenter, False)
 
 		# Leoreth: Apostolic Palace moves holy city
-		#if iBuildingType == iApostolicPalace:
+		if iBuildingType == iApostolicPalace:
 			self.rel.foundOrthodoxy(iOwner)
 			
 			# Leoreth: build shrine in 3000 BC scenario during HRE autoplay to provide a challenge

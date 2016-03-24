@@ -6146,8 +6146,6 @@ void CvGame::doTurn()
 {
 	PROFILE_BEGIN("CvGame::doTurn()");
 
-	log("Turn %d", getGameTurn());
-
 	int aiShuffle[MAX_PLAYERS];
 	int iLoopPlayer;
 	int iI;

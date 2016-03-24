@@ -6268,7 +6268,7 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 		iAttitude /= 2;
 	}
 
-	// Same with Orthodoxy combined with Catholicism or PROTESTANTISM
+	// Same with Orthodoxy combined with Catholicism or Protestantism
 	if (((getStateReligion() == ORTHODOXY) && (GET_PLAYER(ePlayer).getStateReligion() == CATHOLICISM)) || ((getStateReligion() == CATHOLICISM) && (GET_PLAYER(ePlayer).getStateReligion() == ORTHODOXY)))
 	{
 		iAttitude /= 2;
