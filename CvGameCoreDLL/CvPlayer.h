@@ -1189,9 +1189,6 @@ public:
 	int getModifier(ModifierTypes eModifier) const;
 	void setModifier(ModifierTypes eModifier, int iNewValue);
 
-	int getSpreadFactor(ReligionTypes eReligion) const;
-	void setSpreadFactor(ReligionTypes eReligion, int iNewValue);
-
 	int getBirthYear() const;
 	int getBirthTurn() const;
 	void setBirthYear(int iNewValue);
@@ -1216,6 +1213,8 @@ public:
 	int countSlaveCities() const;
 	int countRequiredSlaves() const;
 	CvCity* findSlaveCity() const;
+
+	bool isTolerating(ReligionTypes eReligion) const;
 
 	int getStabilityParameter(ParameterTypes eParameter) const;
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);
@@ -1437,7 +1436,6 @@ protected:
 
 	int* m_aiStabilityParameters;
 	int* m_aiModifiers;
-	int* m_aiSpreadFactors;
 
 	bool* m_abFeatAccomplished;
 	bool* m_abOptions;

@@ -4165,6 +4165,9 @@ public:
 	int getMissionType() const;					// Exposed to Python
 	void setMissionType(int iNewType);
 
+	// Leoreth
+	bool isProselytizing() const;
+
 	const TCHAR* getTechButton() const;				// Exposed to Python
 	void setTechButton(const TCHAR* szVal);
 	const TCHAR* getGenericTechButton() const;				// Exposed to Python
@@ -4203,6 +4206,9 @@ protected:
 	int m_iNumFreeUnits;
 	int m_iSpreadFactor;
 	int m_iMissionType;
+
+	// Leoreth
+	bool m_bProselytizing;
 
 	CvString m_szTechButton;
 	CvString m_szGenericTechButton;

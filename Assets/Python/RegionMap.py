@@ -1,8 +1,6 @@
 from Consts import *
 
 def getMapValue(x, y):
-	print len(tRegionMap)
-	print "Get map value: " + str(x) + ", " + str(y)
 	return tRegionMap[iWorldY-1-y][x]
 	
 def getSpreadFactor(iReligion, x, y):
@@ -25,6 +23,7 @@ def updateReligionSpread():
 def init():
 	updateRegionMap()
 	updateReligionSpread()
+				
 
 tRegionMap = (
 (	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	29,	-1,	29,	29,	29,	29,	29,	-1,	29,	-1,	29,	29,	29,	29,	29,	-1,	-1,	5,	5,	5,	5,	5,	5,	5,	5,	5,	5,	5,	5,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	6,	6,	6,	6,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1,	-1),

@@ -882,7 +882,9 @@ public:
 	void changeImprovementFreeSpecialists(ImprovementTypes eIndex, int iChange);		// Exposed to Python
 
 	int getReligionInfluence(ReligionTypes eIndex) const;													// Exposed to Python
+	void setReligionInfluence(ReligionTypes eIndex, int iNewValue);
 	void changeReligionInfluence(ReligionTypes eIndex, int iChange);				// Exposed to Python
+	void spreadReligionInfluence(ReligionTypes eReligion, int iRange, int iChange);
 
 	int getCurrentStateReligionHappiness() const;																	// Exposed to Python
 	int getStateReligionHappiness(ReligionTypes eIndex) const;										// Exposed to Python
@@ -1020,6 +1022,11 @@ public:
 	int getCapitalTradeModifier(CvCity* pOtherCity) const;
 	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
 	int estimateGrowth(int iTurns) const;
+
+	bool canSpread(ReligionTypes eReligion) const;
+	int getTurnsToSpread(ReligionTypes eReligion) const;
+
+	bool isHasPrecursor(ReligionTypes eReligion) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
