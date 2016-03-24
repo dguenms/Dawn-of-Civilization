@@ -17291,7 +17291,11 @@ void CvCity::setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue)
 // Leoreth
 bool CvCity::isColony() const
 {
-	return (GC.getMap().getArea(getArea())->getClosestAreaSize(30) != GC.getMap().getArea(GET_PLAYER(getOwner()).getCapitalCity()->getArea())->getClosestAreaSize(30));
+	CvCity* pCapital = GET_PLAYER(getOwner()).getCapitalCity();
+
+	if (pCapital == NULL) return false;
+
+	return (GC.getMap().getArea(getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCapital->getArea())->getClosestAreaSize(30));
 }
 
 // Leoreth: at most half of the population may be slaves
