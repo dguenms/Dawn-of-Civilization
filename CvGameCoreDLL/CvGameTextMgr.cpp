@@ -13136,6 +13136,8 @@ void CvGameTextMgr::setReligionHelpCity(CvWStringBuffer &szBuffer, ReligionTypes
 	int iProductionModifier;
 	int iFreeExperience;
 	int iGreatPeopleRateModifier;
+	int iFaith;
+	int iWeight;
 
 	if (pCity == NULL)
 	{

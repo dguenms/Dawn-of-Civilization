@@ -142,7 +142,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		}*/
 
 		//Leoreth: names in chronological order, but allow some randomness that increases with the game era
-		int iOffset = GC.getGameINLINE().getSorenRandNum(GET_PLAYER(eOwner).getCurrentEra()/2, "Unit name selection");
+		/*int iOffset = GC.getGameINLINE().getSorenRandNum(GET_PLAYER(eOwner).getCurrentEra()/2, "Unit name selection");
 
 		int iIndex;
 		for (iI = 0; iI < iNumNames; iI++)
@@ -156,7 +156,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 				GC.getGameINLINE().addGreatPersonBornName(szName);
 				break;
 			}
-		}
+		}*/
 	}
 
 	setGameTurnCreated(GC.getGameINLINE().getGameTurn());
@@ -5648,10 +5648,10 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 		if (pCity->getTeam() != getTeam())
 		{
-			//iSpreadProb /= 2;
-			// Leoreth: use civ specific spread probabilities instead, should prevent unrealistic spread through missionaries
-			iSpreadProb *= GET_PLAYER(pCity->getOwner()).getSpreadFactor(eReligion);
-			iSpreadProb /= 400;
+			if (plot()->getSpreadFactor(eReligion) <= 0)
+			{
+				iSpreadProb /= 2;
+			}
 		}
 
 		bool bSuccess;

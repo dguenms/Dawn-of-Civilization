@@ -1108,7 +1108,9 @@ void CvCity::doTurn()
 	else
 	{
 		if (getHappinessTimer() == 0) //Leoreth
+		{
 			setWeLoveTheKingDay(false);
+		}
 	}
 
 	// Leoreth: update art style type once per turn
@@ -10077,21 +10079,6 @@ int CvCity::getCommerceRateTimes100(CommerceTypes eIndex) const
 		}
 	}
 
-	// Leoreth: Himeji Castle effect
-	if (eIndex == COMMERCE_CULTURE && isHasRealBuilding((BuildingTypes)HIMEJI_CASTLE) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
-	{
-		CvUnit* pUnit;
-		for (int i = 0; i < plot()->getNumUnits(); i++)
-		{
-			pUnit = plot()->getUnitByIndex(i);
-
-			if (pUnit->getOwner() == getOwner() && pUnit->isFortifyable() && pUnit->getFortifyTurns() >= GC.getDefineINT("MAX_FORTIFY_TURNS"))
-			{
-				iRate += 100 * pUnit->getLevel();
-			}
-		}
-	}
-
 	return iRate;
 }
 
@@ -10140,6 +10127,21 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 
 	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople() - getFreeSpecialistCount((SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
 	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
+
+	// Leoreth: Himeji Castle effect
+	if (eIndex == COMMERCE_CULTURE && isHasRealBuilding((BuildingTypes)HIMEJI_CASTLE) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
+	{
+		CvUnit* pUnit;
+		for (int i = 0; i < plot()->getNumUnits(); i++)
+		{
+			pUnit = plot()->getUnitByIndex(i);
+
+			if (pUnit->getOwner() == getOwner() && pUnit->isFortifyable() && pUnit->getFortifyTurns() >= GC.getDefineINT("MAX_FORTIFY_TURNS"))
+			{
+				iBaseCommerceRate += 100 * pUnit->getLevel();
+			}
+		}
+	}
 
 	return iBaseCommerceRate;
 }
@@ -12420,20 +12422,58 @@ void CvCity::changeImprovementFreeSpecialists(ImprovementTypes eIndex, int iChan
 	}
 }
 
-int CvCity::getReligionInfluence(ReligionTypes eIndex) const
+int CvCity::getReligionInfluence(ReligionTypes eReligion) const
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < GC.getNumReligionInfos(), "eIndex expected to be < GC.getNumReligionInfos()");
-	return m_paiReligionInfluence[eIndex];
+	FAssertMsg(eReligion >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eReligion < GC.getNumReligionInfos(), "eIndex expected to be < GC.getNumReligionInfos()");
+	return m_paiReligionInfluence[eReligion];
 }
 
 
-void CvCity::changeReligionInfluence(ReligionTypes eIndex, int iChange)
+void CvCity::changeReligionInfluence(ReligionTypes eReligion, int iChange)
 {
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < GC.getNumReligionInfos(), "eIndex expected to be < GC.getNumReligionInfos()");
-	m_paiReligionInfluence[eIndex] = (m_paiReligionInfluence[eIndex] + iChange);
-	FAssert(getReligionInfluence(eIndex) >= 0);
+	FAssertMsg(eReligion >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eReligion < GC.getNumReligionInfos(), "eIndex expected to be < GC.getNumReligionInfos()");
+	setReligionInfluence(eReligion, getReligionInfluence(eReligion) + iChange);
+	FAssert(getReligionInfluence(eReligion) >= 0);
+}
+
+
+void CvCity::setReligionInfluence(ReligionTypes eReligion, int iNewValue)
+{
+	int iOldValue = getReligionInfluence(eReligion);
+
+	if (iOldValue != iNewValue)
+	{
+		m_paiReligionInfluence[eReligion] = iNewValue;
+
+		int iFactor = GC.getReligionInfo(eReligion).isProselytizing() ? 2 : 1;
+
+		spreadReligionInfluence(eReligion, iFactor * iOldValue, -1);
+		spreadReligionInfluence(eReligion, iFactor * iNewValue, 1);
+	}
+}
+
+
+void CvCity::spreadReligionInfluence(ReligionTypes eReligion, int iRange, int iChange)
+{
+	for (int iDX = -iRange; iDX <= iRange; iDX++)
+	{
+		for (int iDY = -iRange; iDY <= iRange; iDY++)
+		{
+			int iDistance = cultureDistance(iDX, iDY);
+
+			if (iDistance <= iRange)
+			{
+				CvPlot* pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+
+				if (pLoopPlot != NULL)
+				{
+					pLoopPlot->changeReligionInfluence(eReligion, iChange);
+				}
+			}
+		}
+	}
 }
 
 
@@ -12979,6 +13019,9 @@ void CvCity::setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce
 		}
 
 		m_pabHasReligion[eIndex] = bNewValue;
+
+		int iReligionInfluenceChange = GC.getDefineINT("RELIGION_PRESENCE_INFLUENCE");
+		changeReligionInfluence(eIndex, bNewValue ? iReligionInfluenceChange : -iReligionInfluenceChange);
 
 		for (int iVoteSource = 0; iVoteSource < GC.getNumVoteSourceInfos(); ++iVoteSource)
 		{
@@ -14624,10 +14667,91 @@ void CvCity::doDecay()
 	}
 }
 
+bool CvCity::canSpread(ReligionTypes eReligion) const
+{
+	bool bStateReligion = GET_PLAYER(getOwner()).getStateReligion() == eReligion;
+	int iSpreadFactor = plot()->getSpreadFactor(eReligion);
+
+	if (!plot()->canSpread(eReligion)) return false;
+
+	if (!bStateReligion)
+	{
+		if (GET_PLAYER(getOwner()).isNoNonStateReligionSpread()) return false;
+		if (iSpreadFactor < 0) return false;
+		if (iSpreadFactor == 0 && getReligionCount() == 0) return false;
+	}
+
+	return true;
+}
+
+int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
+{
+	int iTurns = 50;
+	int iIncrement = 50;
+	int iI;
+
+	bool bStateReligion = GET_PLAYER(getOwner()).getStateReligion() == eReligion;
+	
+	if (bStateReligion) iTurns /= 2;
+
+	int iSpreadFactor = plot()->getSpreadFactor(eReligion);
+
+	ReligionTypes eLoopReligion;
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		eLoopReligion = (ReligionTypes)iI;
+		if (isHasReligion(eLoopReligion) && !GET_PLAYER(getOwner()).isTolerating(eLoopReligion))
+		{
+			iTurns += iIncrement;
+		}
+	}
+
+	if (bStateReligion && isHasPrecursor(eReligion)) iTurns -= iIncrement / 2;
+
+	if (iSpreadFactor == 0 && !isHasPrecursor(eReligion)) iTurns += iIncrement / 2;
+
+	if (iSpreadFactor == 2) iTurns /= 2;
+
+	int iCurrentTurn = GC.getGame().getGameTurn();
+	int iFoundingTurn = GC.getGame().getReligionGameTurnFounded(eReligion);
+
+	if (iCurrentTurn - iFoundingTurn <= getTurns(GC.getDefineINT("RELIGION_FOUNDING_SPREAD_TURNS"))) iTurns /= 2;
+
+	return getTurns(iTurns);
+}
+
+bool CvCity::isHasPrecursor(ReligionTypes eReligion) const
+{
+	if (eReligion == CONFUCIANISM) return isHasReligion(TAOISM);
+	if (eReligion == TAOISM) return isHasReligion(CONFUCIANISM);
+	if (eReligion == BUDDHISM) return isHasReligion(HINDUISM);
+
+	if (eReligion == ISLAM) return isHasReligion(CATHOLICISM) || isHasReligion(ORTHODOXY);
+}
 
 void CvCity::doReligion()
 {
-	CvCity* pLoopCity;
+	int iI;
+	ReligionTypes eReligion;
+	int iReligionInfluence;
+	int iRand;
+
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		eReligion = (ReligionTypes)iI;
+
+		if (!canSpread(eReligion)) continue;
+
+		iReligionInfluence = plot()->getReligionInfluence(eReligion);
+		iRand = GC.getGameINLINE().getSorenRandNum(getTurnsToSpread(eReligion), "Religion spread");
+
+		if (iRand == 0)
+		{
+			setHasReligion(eReligion, true, true, true);
+		}
+	}
+	
+	/*CvCity* pLoopCity;
 	ReligionTypes eReligion;
 	PlayerTypes ePlayer;
 	bool bStateReligion;
@@ -14712,7 +14836,7 @@ void CvCity::doReligion()
 		}
 	}*/
 
-	if (getReligionCount() == 0)
+	/*if (getReligionCount() == 0)
 	{
 		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 		{
@@ -14798,7 +14922,7 @@ void CvCity::doReligion()
 				}
 			}
 		}
-	}
+	}*/
 }
 
 
@@ -17291,7 +17415,11 @@ void CvCity::setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue)
 // Leoreth
 bool CvCity::isColony() const
 {
-	return (GC.getMap().getArea(getArea())->getClosestAreaSize(30) != GC.getMap().getArea(GET_PLAYER(getOwner()).getCapitalCity()->getArea())->getClosestAreaSize(30));
+	CvCity* pCapital = GET_PLAYER(getOwner()).getCapitalCity();
+
+	if (pCapital == NULL) return false;
+
+	return (GC.getMap().getArea(getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCapital->getArea())->getClosestAreaSize(30));
 }
 
 // Leoreth: at most half of the population may be slaves

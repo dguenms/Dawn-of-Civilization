@@ -524,6 +524,12 @@ public:
 	bool canUseSlave(PlayerTypes ePlayer) const;
 	int calculateCultureCost() const;
 
+	int getReligionInfluence(ReligionTypes eReligion) const;
+	void setReligionInfluence(ReligionTypes eReligion, int iNewValue);
+	void changeReligionInfluence(ReligionTypes eReligion, int iChange);
+
+	bool canSpread(ReligionTypes eReligion) const;
+
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();
 	void pageGraphicsOut();
@@ -597,6 +603,8 @@ protected:
 
 	// Leoreth
 	bool m_bWithinGreatWall;
+
+	int* m_aiReligionInfluence;
 
 	// Leoreth: graphics paging
 	short m_iGraphicsPageIndex;

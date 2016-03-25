@@ -588,7 +588,7 @@ def onPalaceMoved(iPlayer):
 			setShort(iPlayer, text(dNameChanges[iPlayer]))
 			setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
 		else:
-			setShort(iPlayer, civShort(iPlayer))
+			setShort(iPlayer, short(iPlayer))
 			setAdjective(iPlayer, civAdjective(iPlayer))
 			
 	#checkName(iPlayer)
@@ -648,9 +648,6 @@ def desc(iPlayer, sTextKey=str("%s1")):
 	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
 
 def short(iPlayer):
-	return gc.getPlayer(iPlayer).getCivilizationShortDescription(0)
-	
-def civShort(iPlayer):
 	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getShortDescription(0)
 	
 def civAdjective(iPlayer):
