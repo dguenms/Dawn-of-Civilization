@@ -34,6 +34,9 @@ def getAvailableNames(iPlayer, iType):
 	iCiv = getAlias(pPlayer.getCivilizationType(), iType)
 	iEra = pPlayer.getCurrentEra()
 	
+	return getEraNames(iCiv, iType, iEra)
+
+def getEraNames(iCiv, iType, iEra):
 	lNames = lGreatPeople[iCiv][iType]
 	
 	iOffset = lOffsets[iCiv][iType][iEra]
@@ -1951,7 +1954,7 @@ iCivPoland : {
 	],
 	iGreatScientist : [
 		"Witelo",
-		"Nikolaj Kopernik",
+		"Mikolaj Kopernik",
 		"Jan Brozek",
 		"Stanislaw Staszic",
 		"fMaria Sklodowska",

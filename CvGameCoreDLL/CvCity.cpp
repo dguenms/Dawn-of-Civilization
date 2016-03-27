@@ -12447,6 +12447,8 @@ void CvCity::setReligionInfluence(ReligionTypes eReligion, int iNewValue)
 	{
 		m_paiReligionInfluence[eReligion] = iNewValue;
 
+		log(CvWString::format(L"Change religion influence in %s from %d to %d", getName().GetCString(), iOldValue, iNewValue));
+
 		int iFactor = GC.getReligionInfo(eReligion).isProselytizing() ? 2 : 1;
 
 		spreadReligionInfluence(eReligion, iFactor * iOldValue, -1);
@@ -12457,17 +12459,18 @@ void CvCity::setReligionInfluence(ReligionTypes eReligion, int iNewValue)
 
 void CvCity::spreadReligionInfluence(ReligionTypes eReligion, int iRange, int iChange)
 {
-	for (int iDX = -iRange; iDX <= iRange; iDX++)
+	int iSpreadRange = 2 * iRange;
+
+	for (int iDX = -iSpreadRange; iDX <= iSpreadRange; iDX++)
 	{
-		for (int iDY = -iRange; iDY <= iRange; iDY++)
+		for (int iDY = -iSpreadRange; iDY <= iSpreadRange; iDY++)
 		{
+			CvPlot* pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
 			int iDistance = cultureDistance(iDX, iDY);
 
-			if (iDistance <= iRange)
+			if (pLoopPlot != NULL)
 			{
-				CvPlot* pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-
-				if (pLoopPlot != NULL)
+				if (iDistance <= iRange || (plot()->getSpreadFactor(eReligion) >= REGION_SPREAD_HISTORICAL && iDistance <= iSpreadRange))
 				{
 					pLoopPlot->changeReligionInfluence(eReligion, iChange);
 				}
@@ -14669,32 +14672,42 @@ void CvCity::doDecay()
 
 bool CvCity::canSpread(ReligionTypes eReligion) const
 {
-	bool bStateReligion = GET_PLAYER(getOwner()).getStateReligion() == eReligion;
-	int iSpreadFactor = plot()->getSpreadFactor(eReligion);
-
 	if (!plot()->canSpread(eReligion)) return false;
 
-	if (!bStateReligion)
-	{
-		if (GET_PLAYER(getOwner()).isNoNonStateReligionSpread()) return false;
-		if (iSpreadFactor < 0) return false;
-		if (iSpreadFactor == 0 && getReligionCount() == 0) return false;
-	}
+	ReligionSpreadTypes eSpread = GET_PLAYER(getOwner()).getSpreadType(plot(), eReligion);
+
+	if (eSpread == RELIGION_SPREAD_NONE) return false;
+
+	if (eSpread == RELIGION_SPREAD_MINORITY && getReligionCount() == 0) return false;
 
 	return true;
 }
 
 int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 {
-	int iTurns = 50;
+	ReligionSpreadTypes eSpread = GET_PLAYER(getOwner()).getSpreadType(plot(), eReligion);
+	ReligionTypes eStateReligion = GET_PLAYER(getOwner()).getStateReligion();
 	int iIncrement = 50;
-	int iI;
-
-	bool bStateReligion = GET_PLAYER(getOwner()).getStateReligion() == eReligion;
 	
-	if (bStateReligion) iTurns /= 2;
+	if (eStateReligion != eReligion && eStateReligion != NO_RELIGION && eSpread != RELIGION_SPREAD_FAST) iIncrement += 20;
 
-	int iSpreadFactor = plot()->getSpreadFactor(eReligion);
+	if (eSpread == RELIGION_SPREAD_FAST)
+	{
+		iIncrement -= 10;
+
+		if (getReligionCount() == 0)
+		{
+			iIncrement -= 10;
+		}
+	}
+
+	int iCurrentTurn = GC.getGame().getGameTurn();
+	int iFoundingTurn = GC.getGame().getReligionGameTurnFounded(eReligion);
+
+	if (iCurrentTurn - iFoundingTurn <= getTurns(GC.getDefineINT("RELIGION_FOUNDING_SPREAD_TURNS"))) iIncrement -= 10;
+
+	int iTurns = iIncrement;
+	int iI;
 
 	ReligionTypes eLoopReligion;
 	for (iI = 0; iI < NUM_RELIGIONS; iI++)
@@ -14706,16 +14719,9 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 		}
 	}
 
-	if (bStateReligion && isHasPrecursor(eReligion)) iTurns -= iIncrement / 2;
+	if (eStateReligion == eReligion && isHasPrecursor(eReligion)) iTurns -= iIncrement / 2;
 
-	if (iSpreadFactor == 0 && !isHasPrecursor(eReligion)) iTurns += iIncrement / 2;
-
-	if (iSpreadFactor == 2) iTurns /= 2;
-
-	int iCurrentTurn = GC.getGame().getGameTurn();
-	int iFoundingTurn = GC.getGame().getReligionGameTurnFounded(eReligion);
-
-	if (iCurrentTurn - iFoundingTurn <= getTurns(GC.getDefineINT("RELIGION_FOUNDING_SPREAD_TURNS"))) iTurns /= 2;
+	if (eSpread == RELIGION_SPREAD_MINORITY) iTurns *= 2;
 
 	return getTurns(iTurns);
 }
@@ -14734,7 +14740,7 @@ void CvCity::doReligion()
 	int iI;
 	ReligionTypes eReligion;
 	int iReligionInfluence;
-	int iRand;
+	int iChance, iRand;
 
 	for (iI = 0; iI < NUM_RELIGIONS; iI++)
 	{
@@ -14743,7 +14749,10 @@ void CvCity::doReligion()
 		if (!canSpread(eReligion)) continue;
 
 		iReligionInfluence = plot()->getReligionInfluence(eReligion);
-		iRand = GC.getGameINLINE().getSorenRandNum(getTurnsToSpread(eReligion), "Religion spread");
+		iChance = getTurnsToSpread(eReligion);
+		iRand = GC.getGameINLINE().getSorenRandNum(iChance, "Religion spread");
+		log(CvWString::format(L"Spread religion %s in %s: 1/%d chance", GC.getReligionInfo(eReligion).getText(), getName().GetCString(), iChance));
+		//log("Spread religion %s in %s: 1/%d chance", chars(GC.getReligionInfo(eReligion).getText()), getName(), iChance);
 
 		if (iRand == 0)
 		{

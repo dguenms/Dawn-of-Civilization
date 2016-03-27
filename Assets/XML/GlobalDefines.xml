@@ -1094,7 +1094,7 @@
 	</Define>
 	<Define>
 		<DefineName>HOLY_CITY_INFLUENCE</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>RELIGION_PRESENCE_INFLUENCE</DefineName>
@@ -1102,7 +1102,7 @@
 	</Define>
 	<Define>
 		<DefineName>RELIGION_FOUNDING_SPREAD_TURNS</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>WE_LOVE_THE_KING_RAND</DefineName>
