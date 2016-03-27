@@ -8186,12 +8186,6 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 				}
 			}
 
-			//Rhye - end
-
-			//Leoreth: exclude 1 population cities because it doesn't make sense to have a religion founded there
-			//if (pLoopCity->getPopulation() == 1)
-            //    iValue = 1;
-
 			iValue = std::max(1, iValue);
 
 			if (iValue > iBestValue)
@@ -24750,6 +24744,17 @@ EraTypes CvPlayer::getStartingEra() const
 void CvPlayer::setStartingEra(EraTypes eNewValue)
 {
 	m_eStartingEra = eNewValue;
+
+	if (eNewValue > ERA_ANCIENT && GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
+	{
+		CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_PYTHON_SCREEN);
+		if (NULL != pInfo)
+		{
+			pInfo->setData1(eNewValue);
+			pInfo->setText(L"showEraMovie");
+			addPopup(pInfo);
+		}
+	}
 }
 
 int CvPlayer::distance(PlayerTypes ePlayer)

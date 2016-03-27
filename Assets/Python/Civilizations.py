@@ -1,8 +1,6 @@
 from Consts import *
 from RFCUtils import utils
 
-import CvEraMovieScreen
-
 ### Starting tech methods ###
 
 def getScenarioTechs(iScenario, iPlayer):
@@ -32,9 +30,6 @@ def initTechs(iPlayer, lTechs):
 	iCurrentEra = pPlayer.getCurrentEra()
 	pPlayer.setStartingEra(iCurrentEra)
 	
-	if pPlayer.isHuman() and iCurrentEra > 0:
-		CvEraMovieScreen.CvEraMovieScreen().interfaceScreen(iCurrentEra)
-		
 def techs(lEraTechs, lExtraTechs=[]):
 	lTechs = list(lEraTechs)
 	lTechs.extend(lExtraTechs)
