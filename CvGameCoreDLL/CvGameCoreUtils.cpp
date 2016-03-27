@@ -2649,8 +2649,8 @@ bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion)
 {
 	if (ePrecursor == CONFUCIANISM && eReligion == TAOISM) return true;
 	if (ePrecursor == TAOISM && eReligion == CONFUCIANISM) return true;
-	if (ePrecursor == BUDDHISM && eReligion == HINDUISM) return true;
-	if (ePrecursor == ISLAM && (eReligion == CATHOLICISM || eReligion == ORTHODOXY)) return true;
+	if (ePrecursor == HINDUISM && eReligion == BUDDHISM) return true;
+	if ((ePrecursor == CATHOLICISM || ePrecursor == ORTHODOXY) && eReligion == ISLAM) return true;
 
 	return false;
 }
@@ -2660,6 +2660,11 @@ void log(char* format, ...)
 	static char buf[2048];
 	_vsnprintf( buf, 2048-4, format, (char*)(&format+1) );
 	gDLL->logMsg("sdkDbg.log", buf);
+}
+
+void log(CvWString message)
+{
+	gDLL->logMsg("sdkDbg.log", CvString(message));
 }
 
 char* chars(const wchar_t* wchars)

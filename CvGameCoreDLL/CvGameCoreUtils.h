@@ -379,6 +379,7 @@ UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // Le
 bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion); // Leoreth
 
 void log(char* format, ...);
+void log(CvWString message);
 char* chars(const wchar_t* wchars);
 char* chars(CvWString string);
 

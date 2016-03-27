@@ -5648,13 +5648,9 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 		if (pCity->getTeam() != getTeam())
 		{
-			if (plot()->getSpreadFactor(eReligion) <= 0)
-			{
-				iSpreadProb /= 2;
-			}
+			iSpreadProb *= 50;
+			iSpreadProb /= pCity->getTurnsToSpread(eReligion);
 		}
-
-		bool bSuccess;
 
 		iSpreadProb += (((GC.getNumReligionInfos() - pCity->getReligionCount()) * (100 - iSpreadProb)) / GC.getNumReligionInfos());
 
@@ -5662,6 +5658,8 @@ bool CvUnit::spread(ReligionTypes eReligion)
 		{
 			iSpreadProb += (100 - iSpreadProb)/2;
 		}
+
+		bool bSuccess;
 
 		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < iSpreadProb)
 		{
