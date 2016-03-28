@@ -14672,6 +14672,8 @@ void CvCity::doDecay()
 
 bool CvCity::canSpread(ReligionTypes eReligion) const
 {
+	if (isHasReligion(eReligion)) return false;
+
 	if (!plot()->canSpread(eReligion)) return false;
 
 	ReligionSpreadTypes eSpread = GET_PLAYER(getOwner()).getSpreadType(plot(), eReligion);
@@ -14746,7 +14748,7 @@ void CvCity::doReligion()
 	{
 		eReligion = (ReligionTypes)iI;
 
-		if (!canSpread(eReligion)) continue;
+		if (!canSpread(eReligion) && !(GET_PLAYER(getOwner()).isDistantSpread(this, eReligion))) continue;
 
 		iReligionInfluence = plot()->getReligionInfluence(eReligion);
 		iChance = getTurnsToSpread(eReligion);
