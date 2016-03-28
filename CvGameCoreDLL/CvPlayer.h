@@ -1215,6 +1215,7 @@ public:
 	CvCity* findSlaveCity() const;
 
 	bool isTolerating(ReligionTypes eReligion) const;
+	bool isDistantSpread(CvCity* pCity, ReligionTypes eReligion) const;
 	ReligionSpreadTypes getSpreadType(CvPlot* pPlot, ReligionTypes eReligion) const;
 
 	int getStabilityParameter(ParameterTypes eParameter) const;

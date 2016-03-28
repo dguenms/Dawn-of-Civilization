@@ -24901,3 +24901,46 @@ ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligi
 
 	return RELIGION_SPREAD_NONE;
 }
+
+bool CvPlayer::isDistantSpread(CvCity* pCity, ReligionTypes eReligion) const
+{
+	if (pCity->plot()->getSpreadFactor(eReligion) < REGION_SPREAD_HISTORICAL) return false;
+
+	if (getStateReligion() == eReligion)
+	{
+		if (pCity->getReligionCount() > 0) return false;
+
+		CvCity* pCapitalCity = getCapitalCity();
+		if (pCapitalCity != NULL)
+		{
+			if (pCapitalCity->getArea() != pCity->getArea())
+			{
+				//if (GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) == 0)
+				if (2 * GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) <= GC.getMap().getArea(pCity->getArea())->getCitiesPerPlayer(getID()))
+				{
+					return true;
+				}
+			}
+		}
+	}
+	else if (getStateReligion() == NO_RELIGION)
+	{
+		if (GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) > 0) return false;
+
+		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		{
+			if (getID() != iI)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
+				{
+					if (canContact((PlayerTypes)iI) && canTradeNetworkWith((PlayerTypes)iI))
+					{
+						return true;
+					}
+				}
+			}
+		}
+	}
+
+	return false;
+}

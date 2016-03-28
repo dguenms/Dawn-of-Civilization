@@ -11698,16 +11698,14 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 				iValue /= 3; //Rhye (4)
 			}
 
-			//Rhye - start
-			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM) { //Christianity
+			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
+			{
 				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == CARTHAGE || getID() == PERSIA)
 				{
-					iValue *= 1;
 					iValue /= 2;
 				}
 			}
-			//Rhye - end
-
+			
 			if (iValue > iBestValue)
 			{
 				iBestValue = iValue;
