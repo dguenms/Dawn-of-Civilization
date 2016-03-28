@@ -11562,8 +11562,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Leoreth: Pantheon civic
 	if (eCivic == CIVIC_PANTHEON)
 	{
-		//GC.getGameINLINE().logMsg("Begin AI pantheon civic.");
-		if (GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getFavoriteReligion() == -1 && GET_PLAYER(getID()).getCurrentEra() < 2 && getID() != MAYA)
+		if (eBestReligion == NO_RELIGION && GET_PLAYER(getID()).getCurrentEra() < 2 && getID() != MAYA)
 		{
 			iValue += GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getWonderConstructRand() * 2;
 		}
@@ -11571,14 +11570,13 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			return 0;
 		}
-		//GC.getGameINLINE().logMsg("End AI pantheon civic.");
 	}
 
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)
 	{
 		if (!kCivic.isStateReligion() || iHighestReligionCount > 0)
 		{
-			iValue *= 5;   // Leoreth: was 5/4 before, lowered because of civicMatrix' additional impact
+			iValue *= 5;
 			iValue /= 4;
 			iValue += 6 * getNumCities();
 			iValue += 20;
@@ -11593,30 +11591,31 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}*/
 
 	// Leoreth - prefer Pantheon if more than half of their cities has no religion
-	if (eCivic == CIVIC_PANTHEON){  // Pantheon
-		//GC.getGameINLINE().logMsg("Pantheon check entered");
-        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME){
+	if (eCivic == CIVIC_PANTHEON)  // Pantheon
+	{
+        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME)
+		{
             int iCityCounter = 0;
-            for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++){
-                for (int iJ = 0; iJ < 8; iJ++){
-					//char cArray[99];
-					//sprintf(cArray, "Checking player %d, city %d, religion %d", getID(), iI, iJ);
-					//GC.getGameINLINE().logMsg(cArray);
+            for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++)
+			{
+                for (int iJ = 0; iJ < 8; iJ++)
+				{
                     if (GET_PLAYER((PlayerTypes)getID()).getCity(iI))
 					{
 						if (GET_PLAYER((PlayerTypes)getID()).getCity(iI)->isHasReligion((ReligionTypes)iJ))
 						{
 							iCityCounter++;
-							//GC.getGameINLINE().logMsg("Counter increased");
 							break;
 						}
 					}
 				}
             }
-            if (2*iCityCounter >= GET_PLAYER((PlayerTypes)getID()).getNumCities())
+
+            if (2 * iCityCounter >= GET_PLAYER((PlayerTypes)getID()).getNumCities())
+			{
                 iValue /= 2;
+			}
         }
-		//GC.getGameINLINE().logMsg("Pantheon check finished");
 	}
 
 	// Leoreth - prefer Vassalage for medieval Eurocivs
