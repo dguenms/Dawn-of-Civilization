@@ -24904,6 +24904,8 @@ ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligi
 
 bool CvPlayer::isDistantSpread(CvCity* pCity, ReligionTypes eReligion) const
 {
+	if (!GC.getGame().isReligionFounded(eReligion)) return false;
+
 	if (pCity->plot()->getSpreadFactor(eReligion) < REGION_SPREAD_HISTORICAL) return false;
 
 	if (getStateReligion() == eReligion)

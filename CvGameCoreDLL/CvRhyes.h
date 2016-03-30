@@ -16,7 +16,7 @@ typedef list<char*> LISTCHAR;
 //#define VERSAILLES				(2)
 //#define FORBIDDENPALACE			(2)
 
-#define BEGIN_WONDERS				(134) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(138) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
 #define NUM_BUILDINGS_PLAGUE		(210) // always increment when a building is added
 #define NUM_BUILDINGTYPES_PLAGUE	(131) // increment when a building class is added
@@ -293,37 +293,40 @@ static const int lTechBackwardsBonus[NUM_ERAS] = {0, 5, 10, 15, 25, 25, 25};
 // Leoreth: order of persecution
 static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] = 
 {
-	// Protestantism
-	{ISLAM, CATHOLICISM, ORTHODOXY, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
-	// Catholicism
-	{ISLAM, PROTESTANTISM, ORTHODOXY, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Judaism
+	{HINDUISM, BUDDHISM, TAOISM, CONFUCIANISM, ZOROASTRIANISM, ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY},
 	// Orthodoxy
-	{ISLAM, PROTESTANTISM, ORTHODOXY, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	{ISLAM, PROTESTANTISM, ORTHODOXY, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Catholicism
+	{ISLAM, PROTESTANTISM, ORTHODOXY, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Protestantism
+	{ISLAM, CATHOLICISM, ORTHODOXY, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
 	// Islam
-	{ZOROASTRIANISM, HINDUISM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, BUDDHISM, CONFUCIANISM, TAOISM},
+	{ZOROASTRIANISM, HINDUISM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, JUDAISM, BUDDHISM, CONFUCIANISM, TAOISM},
 	// Hinduism
-	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, CONFUCIANISM, TAOISM, ZOROASTRIANISM, BUDDHISM},
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, CONFUCIANISM, TAOISM, ZOROASTRIANISM, BUDDHISM},
 	// Buddhism
-	{ORTHODOXY, PROTESTANTISM, CATHOLICISM, ZOROASTRIANISM, TAOISM, ISLAM, CONFUCIANISM, HINDUISM},
+	{ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, TAOISM, ISLAM, CONFUCIANISM, HINDUISM},
 	// Confucianism
-	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, TAOISM},
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, TAOISM},
 	// Taoism
-	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM},
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM},
 	// Zoroastrianism
-	{ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	{ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, JUDAISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
 };
 
 // Leoreth: persecution priority
 static const int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS] =
 {
-	// PRO CAT ORT ISL HIN BUD CON TAO ZOR
-	{  -1,  3,  2,  4,  1,  1,  1,  1,  2 }, // Protestantism
-	{   3, -1,  2,  4,  1,  1,  1,  1,  2 }, // Catholicism
-	{   3,  3, -1,  4,  1,  1,  1,  1,  2 }, // Orthodoxy
-	{   2,  2,  2, -1,  3,  1,  1,  1,  4 }, // Islam
-	{   3,  3,  3,  4, -1,  0,  1,  1,  2 }, // Hinduism
-	{   3,  3,  3,  4,  0, -1,  1,  1,  2 }, // Buddhism
-	{   2,  2,  2,  3,  1,  1, -1,  0,  1 }, // Confucianism
-	{   2,  2,  2,  3,  1,  1,  0, -1,  1 }, // Taoism
-	{   3,  3,  3,  4,  1,  1,  1,  1, -1 }, // Zoroastrianism
+	// JUD ORT CAT PRO ISL HIN BUD CON TAO ZOR
+	{  -1,  1,  1,  1,  1,  1,  1,  1,  1,  1 }, // Judaism
+	{   1, -1,  3,  3,  4,  1,  1,  1,  1,  2 }, // Orthodoxy
+	{   2,  2, -1,  3,  4,  1,  1,  1,  1,  2 }, // Catholicism
+	{   3,  2,  3, -1,  4,  1,  1,  1,  1,  2 }, // Protestantism
+	{   1,  2,  2,  2, -1,  3,  1,  1,  1,  4 }, // Islam
+	{   1,  3,  3,  3,  4, -1,  0,  1,  1,  2 }, // Hinduism
+	{   1,  3,  3,  3,  4,  0, -1,  1,  1,  2 }, // Buddhism
+	{   1,  2,  2,  2,  3,  1,  1, -1,  0,  1 }, // Confucianism
+	{   1,  2,  2,  2,  3,  1,  1,  0, -1,  1 }, // Taoism
+	{   1,  3,  3,  3,  4,  1,  1,  1,  1, -1 }, // Zoroastrianism
 };

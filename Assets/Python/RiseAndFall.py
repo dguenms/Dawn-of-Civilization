@@ -3436,7 +3436,7 @@ class RiseAndFall:
 					iWinnerReligion = iLoopReligion   
 
 		if (iWinnerReligion != -1):
-			utils.makeUnit(iProtestantMissionary + iWinnerReligion, iCiv, tPlot, iNumber)
+			utils.makeUnit(iMissionary + iWinnerReligion, iCiv, tPlot, iNumber)
 			
 
 				

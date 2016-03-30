@@ -11562,7 +11562,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Leoreth: Pantheon civic
 	if (eCivic == CIVIC_PANTHEON)
 	{
-		if (eBestReligion == NO_RELIGION && GET_PLAYER(getID()).getCurrentEra() < 2 && getID() != MAYA)
+		if (eBestReligion == NO_RELIGION && GET_PLAYER(getID()).getCurrentEra() < ERA_MEDIEVAL && getID() != MAYA)
 		{
 			iValue += GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getWonderConstructRand() * 2;
 		}

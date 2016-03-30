@@ -1235,7 +1235,7 @@ class RFCUtils:
 			if iInfantry:
 				self.makeUnit(iInfantry, iCiv, (x,y), iNumUnits)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(con.iProtestantMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+				self.makeUnit(con.iMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 		else:
 			gc.getMap().plot(x,y).setCulture(iCiv, 10, True)
 			gc.getMap().plot(x,y).setOwner(iCiv)
@@ -1248,7 +1248,7 @@ class RFCUtils:
 			if iInfantry:
 				self.makeUnit(iInfantry, iCiv, (x,y), 2)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(con.iProtestantMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+				self.makeUnit(con.iMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 
 	def getColonialTargets(self, iPlayer, bEmpty=False):
 		if iPlayer == con.iSpain or iPlayer == con.iFrance:

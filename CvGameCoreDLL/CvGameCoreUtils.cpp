@@ -2651,6 +2651,8 @@ bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion)
 	if (ePrecursor == TAOISM && eReligion == CONFUCIANISM) return true;
 	if (ePrecursor == HINDUISM && eReligion == BUDDHISM) return true;
 	if ((ePrecursor == CATHOLICISM || ePrecursor == ORTHODOXY) && eReligion == ISLAM) return true;
+	if (ePrecursor == JUDAISM && (eReligion == CATHOLICISM || eReligion == ORTHODOXY)) return true;
+	if (ePrecursor == ZOROASTRIANISM && eReligion == JUDAISM) return true;
 
 	return false;
 }
