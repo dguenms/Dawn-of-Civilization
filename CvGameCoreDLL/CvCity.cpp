@@ -12886,6 +12886,7 @@ void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool b
 					{
 						if (GC.getBuildingInfo(eIndex).getReligionChange(iI) > 0)
 						{
+							log(CvWString::format(L"From building: %s in %s", GC.getReligionInfo((ReligionTypes)iI).getText(), getName().GetCString()));
 							setHasReligion(((ReligionTypes)iI), true, true, true);
 						}
 					}

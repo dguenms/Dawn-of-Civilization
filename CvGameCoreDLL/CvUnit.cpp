@@ -5663,6 +5663,8 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < iSpreadProb)
 		{
+			log(CvWString::format(L"Missionary spread %s to %s", GC.getReligionInfo(eReligion).getText(), pCity->getName().GetCString()));
+
 			pCity->setHasReligion(eReligion, true, true, false);
 			bSuccess = true;
 		}

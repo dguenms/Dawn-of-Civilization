@@ -104,6 +104,10 @@ tRegionMap = (
 
 
 tSpreadFactors = (
+# Judaism
+{
+	iMinority :	[rEgypt, rMesopotamia, rPersia, rAnatolia, rBalkans, rItaly, rIberia, rEurope, rRussia, rBritain, rUnitedStates],
+},
 # Protestantism
 {
 	iCore :		[rEurope, rScandinavia, rUnitedStates],

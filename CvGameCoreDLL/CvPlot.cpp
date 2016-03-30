@@ -11258,6 +11258,14 @@ void CvPlot::setWarValue(PlayerTypes ePlayer, int iNewValue)
 int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 {
 	int iSpreadFactor = m_aiReligionSpreadFactor[eReligion];
+
+	if (eReligion == JUDAISM)
+	{
+		if (!GC.getGameINLINE().isReligionFounded(CATHOLICISM))
+		{
+			return getSpreadFactor(CATHOLICISM);
+		}
+	}
 	
 	if (eReligion == CATHOLICISM)
 	{

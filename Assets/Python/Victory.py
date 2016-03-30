@@ -1683,7 +1683,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	# second Indian goal: build 20 temples by 700 AD
 	elif iPlayer == iIndia:
 		if isPossible(iIndia, 1):
-			lTemples = [iProtestantTemple + i*4 for i in range(iNumReligions)]
+			lTemples = [iTemple + i*4 for i in range(iNumReligions)]
 			if iBuilding in lTemples:
 				iCounter = 0
 				for iTemple in lTemples:
@@ -3025,7 +3025,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bHinduShrine = (getNumBuildings(iIndia, iHinduShrine) > 0)
 			aHelp.append(getIcon(bHinduShrine) + localText.getText("TXT_KEY_VICTORY_HINDU_SHRINE", ()) + ' ' + getIcon(bBuddhistShrine) + localText.getText("TXT_KEY_VICTORY_BUDDHIST_SHRINE", ()))
 		elif iGoal == 1:
-			lTemples = [iProtestantTemple + 4 * i for i in range(iNumReligions)]
+			lTemples = [iTemple + 4 * i for i in range(iNumReligions)]
 			iCounter = 0
 			for iTemple in lTemples:
 				iCounter += getNumBuildings(iIndia, iTemple)
