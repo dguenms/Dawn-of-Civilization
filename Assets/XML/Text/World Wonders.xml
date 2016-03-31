@@ -226,10 +226,6 @@
 		</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] decreases war weariness in all cities in your civilization and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING</Tag>
 		<English>The Empire State Building</English>
 		<German>Das Empire State Building</German>
@@ -843,11 +839,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Temple of Solomon[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_HELP</Tag>
+		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_HELP</Tag>
 		<English>[ICON_BULLET]Doubles the revenue limit of all your shrines</English>
 		<German>[ICON_BULLET]Verdoppelt die Einnahmegrenze aller Ihrer Schreine</German>
 	</TEXT>

@@ -1528,7 +1528,7 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 213
+iNumBuildings = 212
 (iPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
 iMongolianGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iOttomanHammam, iKhmerBaray, iMoorishNoria, iHarappanBath, iIndianStepwell,
 iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugueseFeitoria, iDrydock, iAirport,
@@ -1546,7 +1546,7 @@ iHinduMonastery, iHinduShrine, iBuddhistTemple, iBuddhistCathedral, iBuddhistMon
 iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral,
 iZoroastrianMonastery, iZoroastrianShrine, iTriumphalArch, iOperaHouse, iTradingCompany, iIberianTradingCompany, iStockExchange, iOlympicPark, iNationalGallery,
 iIronWorks, iInterpol, iNationalPark, iRedCross, iGreatSphinx, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iTempleOfArtemis,
-iPyramids, iHangingGardens, iOracle, iMoaiStatues, iIshtarGate, iTempleOfSolomon, iColossus, iParthenon, iStatueOfZeus,
+iPyramids, iHangingGardens, iOracle, iMoaiStatues, iIshtarGate, iColossus, iParthenon, iStatueOfZeus,
 iShwedagonPaya, iKhajuraho, iGreatLibrary, iMausoleumOfMaussollos, iFloatingGardens, iColosseum,
 iGreatWall, iTheodosianWalls, iMachuPicchu, iBorobudur, iGrandCanal, iNotreDame, iTempleOfKukulkan, iHimejiCastle,
 iBlueMosque, iAngkorWat, iTopkapiPalace, iApostolicPalace, iMezquita, iSistineChapel, iLeaningTower, iRedFort,

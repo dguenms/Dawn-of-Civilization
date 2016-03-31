@@ -7506,64 +7506,6 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClass>
-			<Type>BUILDING_TEMPLE_OF_SOLOMON</Type>
-			<Description>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON</Description>
-			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON_HELP</Help>
-			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_SOLOMON</ArtDefineTag>
-			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<ObsoleteTech>TECH_BANKING</ObsoleteTech>
-			<PrereqTech>TECH_MONOTHEISM</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
-			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
-			<bTeamShare>1</bTeamShare>
-			<bNukeImmune>1</bNukeImmune>
-			<iCost>250</iCost>
-			<iHurryCostModifier>100</iHurryCostModifier>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>100</iConquestProb>
-			<iAsset>14</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>5</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<FreeSpecialistCounts>
-				<FreeSpecialistCount>
-					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iFreeSpecialistCount>1</iFreeSpecialistCount>
-				</FreeSpecialistCount>
-			</FreeSpecialistCounts>
-			<CommerceChangeOriginalOwners>
-				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
-				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
-				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
-			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
-			<BonusProductionModifiers>
-				<BonusProductionModifier>
-					<BonusType>BONUS_STONE</BonusType>
-					<iProductonModifier>100</iProductonModifier>
-				</BonusProductionModifier>
-			</BonusProductionModifiers>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_COLOSSUS</BuildingClass>
 			<Type>BUILDING_COLOSSUS</Type>
 			<Description>TXT_KEY_BUILDING_COLOSSUS</Description>
@@ -9201,6 +9143,7 @@
 			<Description>TXT_KEY_BUILDING_DOME_OF_THE_ROCK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DOME_OF_THE_ROCK</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_DOME_OF_THE_ROCK</MovieDefineTag>
@@ -9216,7 +9159,6 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iGlobalWarWearinessModifier>-50</iGlobalWarWearinessModifier>
 			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -9229,6 +9171,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<FreeSpecialistCounts>
+				<FreeSpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iFreeSpecialistCount>1</iFreeSpecialistCount>
+				</FreeSpecialistCount>
+			</FreeSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
@@ -9243,7 +9191,7 @@
 			</BonusProductionModifiers>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_TEMPLE_OF_SOLOMON</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_JEWISH_SHRINE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
