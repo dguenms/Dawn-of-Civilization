@@ -3121,7 +3121,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumIncense = pEthiopia.getNumAvailableBonuses(iIncense)
 			aHelp.append(getIcon(iNumIncense >= 3) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", (iNumIncense, 3)))
 		elif iGoal == 2:
-			bAfrica = isAreaFreeOfCivs(utils.getPlotList(SomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
+			bAfrica = isAreaFreeOfCivs(utils.getPlotList(tSomaliaTL, tSomaliaBR), lCivGroups[0]) and isAreaFreeOfCivs(utils.getPlotList(tSubeqAfricaTL, tSubeqAfricaBR), lCivGroups[0])
 			aHelp.append(getIcon(bAfrica) + localText.getText("TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT", ()))
 
 	elif iPlayer == iKorea:
