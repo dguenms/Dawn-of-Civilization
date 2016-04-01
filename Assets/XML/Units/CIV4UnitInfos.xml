@@ -11754,7 +11754,11 @@
 			</GreatPeoples>
 			<Buildings>
 				<Building>
-					<BuildingType>BUILDING_PROTESTANT_SHRINE</BuildingType>
+					<BuildingType>BUILDING_JEWISH_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -11762,7 +11766,7 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
-					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
+					<BuildingType>BUILDING_PROTESTANT_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>

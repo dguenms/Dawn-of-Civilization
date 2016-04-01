@@ -11261,27 +11261,27 @@ int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 
 	if (eReligion == JUDAISM)
 	{
-		if (!GC.getGameINLINE().isReligionFounded(CATHOLICISM))
+		if (!GC.getGameINLINE().isReligionFounded(ORTHODOXY))
 		{
-			return getSpreadFactor(CATHOLICISM);
+			return getSpreadFactor(ORTHODOXY);
 		}
 	}
 	
-	if (eReligion == CATHOLICISM)
+	if (eReligion == ORTHODOXY)
 	{
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
+		if (!GC.getGameINLINE().isReligionFounded(CATHOLICISM))
 		{
-			if (iSpreadFactor < m_aiReligionSpreadFactor[ORTHODOXY])
+			if (iSpreadFactor < getSpreadFactor(CATHOLICISM))
 			{
-				iSpreadFactor = m_aiReligionSpreadFactor[ORTHODOXY];
+				iSpreadFactor = getSpreadFactor(CATHOLICISM);
 			}
 		}
 
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
+		if (!GC.getGameINLINE().isReligionFounded(PROTESTANTISM))
 		{
-			if (iSpreadFactor < m_aiReligionSpreadFactor[PROTESTANTISM])
+			if (iSpreadFactor < getSpreadFactor(PROTESTANTISM))
 			{
-				iSpreadFactor = m_aiReligionSpreadFactor[PROTESTANTISM];
+				iSpreadFactor = getSpreadFactor(PROTESTANTISM);
 			}
 		}
 	}

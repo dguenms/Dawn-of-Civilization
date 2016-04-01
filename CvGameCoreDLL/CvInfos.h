@@ -1819,6 +1819,9 @@ public:
 	int getBonusYieldChange(int i, int j) const;
 	int* getBonusYieldChangeArray(int i) const;
 
+	int getReligionYieldChange(int i) const;
+	int* getReligionYieldChangeArray() const;
+
 	// Leoreth
 	int getPrereqBuildingClassPercent(int i) const;
 
@@ -1998,6 +2001,7 @@ protected:
 
 	// Leoreth
 	int* m_piPrereqBuildingClassPercent;
+	int* m_piReligionYieldChange;
 
 	bool* m_pbCommerceFlexible;
 	bool* m_pbCommerceChangeOriginalOwner;

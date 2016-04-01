@@ -3047,7 +3047,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == GREAT_WALL) iTempValue *= 8;
 										else if (iI == THREE_GORGES_DAM || iI == TERRACOTTA_ARMY || iI == PORCELAIN_TOWER) iTempValue *= 2;
 										else if (iI == HANGING_GARDENS || iI == HIMEJI_CASTLE || iI == BOROBUDUR || iI == BRANDENBURG_GATE) iTempValue /= 3;
-										else if (iI == APOSTOLIC_PALACE) iTempValue /= 2;
 										break;
 									case BABYLONIA:
 										if (iI == HANGING_GARDENS || iI == ISHTAR_GATE) iTempValue *= 5;
@@ -3073,9 +3072,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == ARTEMIS) iTempValue *= 3;
 										else if (iI == STATUE_OF_ZEUS) iTempValue *= 3;
 										else if (iI == GREAT_COTHON) iTempValue /= 4;
-										//else if (iI == HAGIASOPHIA) iTempValue *= 2;
+										else if (iI == HAGIA_SOPHIA) iTempValue *= 2;
 										else if (iI == OLYMPIC_PARK) iTempValue *= 2;
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 5;
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;
@@ -3108,7 +3106,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 														iTempValue /= 2;
 										}
 										else if (iI == GREAT_COTHON) iTempValue *= 3;
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 2;
 										break;
 									case POLYNESIA:
 										if (iI == MOAI_STATUES) iTempValue *= 3;
@@ -3132,10 +3129,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
                                         if (iI == FLAVIAN_AMPHITHEATRE || iI == LEANING_TOWER || iI == SISTINE_CHAPEL || iI == SAN_MARCO_BASILICA)
                                         {
                                             iTempValue *= 3;
-                                        }
-                                        else if (iI == APOSTOLIC_PALACE)
-                                        {
-                                            iTempValue *= 10;
                                         }
                                         else if (iI == GREAT_WALL)
                                         {
@@ -3176,7 +3169,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == KHAJURAHO) iTempValue *= 2;
 										break;
 									case ETHIOPIA:
-										if (iI == APOSTOLIC_PALACE) iTempValue *= 3;
 										break;
                                     case KOREA:
                                         break;
@@ -3185,22 +3177,20 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
                                     case BYZANTIUM:
                                         if (iI == THEODOSIAN_WALLS) iTempValue *= 3;
+										else if (iI == HAGIA_SOPHIA) iTempValue *= 4;
                                         else if (iI == NOTRE_DAME || iI == SISTINE_CHAPEL) iTempValue /= 2;
                                         break;
 									case JAPAN:
 										if (iI == GREAT_WALL) iTempValue /= 10;
-										else if (iI == APOSTOLIC_PALACE) iTempValue /= 2;
 										else if (iI == HIMEJI_CASTLE) iTempValue *= 3;
 										break;
 									case VIKING:
 										if (iI == CERN) {
-														iTempValue *= 3;
-														iTempValue /= 2;
+											iTempValue *= 3;
+											iTempValue /= 2;
 										}
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 2;
 										break;
 									case ARABIA:
-										//if (iI == HAGIASOPHIA) iTempValue *= 2;
 										if (iI == TOPKAPI_PALACE || iI == MEZQUITA) iTempValue /= 8;
 										else if (iI == SPIRAL_MINARET || iI == DOME_OF_THE_ROCK) iTempValue *= 4;
 										else {
@@ -3239,7 +3229,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										else if (iI == CRISTO_REDENTOR) iTempValue *= 2;
 										else if (iI == WEMBLEY) iTempValue *= 2;
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 2;
 										else if (iI == IBERIAN_TRADING_COMPANY) iTempValue *= 2;
 										break;
 									case FRANCE:
@@ -3247,7 +3236,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == EIFFEL_TOWER || iI == VERSAILLES) iTempValue *= 3;
 										else if (iI == STATUE_OF_LIBERTY) iTempValue *= 2;
 										else if (iI == CERN) iTempValue *= 3;
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 2;
 										else if (iI == TRADING_COMPANY) iTempValue *= 4;
 										else {
 											iTempValue *= 3;
@@ -3258,7 +3246,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == TRADING_COMPANY) iTempValue *= 5;
 										else if (iI == NATIONAL_GALLERY) iTempValue *= 2;
 										else if (iI == WEMBLEY || iI == WESTMINSTER_PALACE || iI == TRAFALGAR_SQUARE) iTempValue *= 3;
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 2;
 										else {
 											iTempValue *= 3;
 											iTempValue /= 4;
@@ -3269,7 +3256,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 														iTempValue *= 3;
 														iTempValue /= 2;
 										}
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 2;
 										break;
 									case RUSSIA:
 										if (iI == BASILS_CATHEDRAL || iI == LUBYANKA) iTempValue *= 4;
@@ -3282,6 +3268,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == SANKORE)	iTempValue *= 4;
 										break;
 									case TURKEY:
+										if (iI == HAGIA_SOPHIA) iTempValue *= 2;
 										if (iI == TOPKAPI_PALACE || iI == BLUE_MOSQUE) iTempValue *= 6;
 										else if (iI == TAJ_MAHAL || iI == RED_FORT || iI == BASILS_CATHEDRAL) iTempValue /= 4;
 										break;
@@ -3294,7 +3281,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										else if (iI == CRISTO_REDENTOR) iTempValue *= 4;
 										else if (iI == WEMBLEY) iTempValue *= 2;
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 2;
 										else if (iI == IBERIAN_TRADING_COMPANY) iTempValue *= 4;
 										break;
 									case INCA:
@@ -3309,10 +3295,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
                                         if (iI == FLAVIAN_AMPHITHEATRE || iI == LEANING_TOWER || iI == SISTINE_CHAPEL || iI == SAN_MARCO_BASILICA)
                                         {
                                             iTempValue *= 3;
-                                        }
-                                        else if (iI == APOSTOLIC_PALACE)
-                                        {
-                                            iTempValue *= 10;
                                         }
 										break;
 									case MONGOLIA:
@@ -3357,7 +3339,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == NATIONAL_GALLERY) iTempValue *= 3;
 										else if (iI == WEMBLEY) iTempValue *= 3;
 										else if (iI == CERN) iTempValue *= 2;
-										else if (iI == APOSTOLIC_PALACE) iTempValue *= 2;
 										else {
 											iTempValue *= 3;
 											iTempValue /= 4;
@@ -3399,7 +3380,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										//if (iI == STONEHENGE) iTempValue *= 4;
 										break;
 									default:
-										if (iI == APOSTOLIC_PALACE) iTempValue *= 10;
 										break;
 									}
 

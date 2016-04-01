@@ -35,15 +35,6 @@
 		<English>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities. Further, it allows Artists to be hired using Priest slots. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_APOSTOLIC_PALACE_HELP</Tag>
-		<English>[ICON_BULLET]Relocates the Catholic holy city</English>
-		<German>[ICON_BULLET]Verlegt die heilige Stadt des Katholizismus</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_APOSTOLIC_PALACE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Apostolic Palace[COLOR_REVERT] triggers [COLOR_HIGHLIGHT_TEXT]Diplomatic[COLOR_REVERT] elections. It guarantees that you will be a candidate in those elections, spreads Catholicism, relocates the Catholic holy city to this city, gives a production bonus to Catholic buildings in all civilizations and founds Orthodoxy. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE</Tag>
 		<English>Blue Mosque</English>
 		<German>Blaue Moschee</German>
@@ -178,31 +169,31 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_SHRINE</Tag>
-		<English>Church of the Holy Sepulchre</English>
+		<English>Saint Peter's Basilica</English>
 		<French>
-			<Text>&#201;glise du Saint-S&#233;pulcre</Text>
-			<Gender>Male</Gender>
+			<Text>Basilique Saint-Pierre</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Grabeskirche</Text>
+			<Text>Petersdom</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
 		<Italian>
-			<Text>Basilica del Santo Sepolcro</Text>
+			<Text>Basilica di San Pietro</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Santo Sepulcro</Text>
-			<Gender>Male</Gender>
+			<Text>Basílica de San Pedro</Text>
+			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Church of the Holy Sepulchre[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>[COLOR_BUILDING_TEXT]Saint Peter's Basilica[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
@@ -454,7 +445,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Pentagon[COLOR_REVERT] grants experience points to troops built in all cities and increases the chance that its city will generate a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ORTHODOX_SHRINE</Tag>
+		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA</Tag>
 		<English>The Hagia Sophia</English>
 		<French>
 			<Text>Sainte-Sophie</Text>
@@ -474,8 +465,12 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ORTHODOX_SHRINE</Tag>
+		<English>Church of the Anastasis</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Orthodox Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Church of the Anastasis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Orthodox Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MT_RUSHMORE_STRATEGY</Tag>
@@ -815,30 +810,6 @@
 		<English>The [COLOR_BUILDING_TEXT]Dai Miao[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON</Tag>
-		<English>Temple of Solomon</English>
-		<French>
-			<Text>Temple de Salomon</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Tempel von Salomon</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Il Tempio di Salomone</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Templo de Salom&#243;n</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
@@ -1001,5 +972,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] throughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RELIGION_BUILDINGS</Tag>
+		<English>All %F1_RelIcon Buildings</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings, and it increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<German>Die [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] erhöht die Produktion aller Gebäude der Staatsreligion und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
 	</TEXT>
 </Civ4GameText>
