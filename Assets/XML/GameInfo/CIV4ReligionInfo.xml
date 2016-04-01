@@ -42,7 +42,7 @@
 			<Description>TXT_KEY_RELIGION_ORTHODOXY</Description>
 			<Adjective>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ORTHODOXY_PEDIA</Civilopedia>
-			<TechPrereq>NONE</TechPrereq>
+			<TechPrereq>TECH_THEOLOGY</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ORTHODOX_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>70</iSpreadFactor>
@@ -74,7 +74,7 @@
 			<Description>TXT_KEY_RELIGION_CATHOLICISM</Description>
 			<Adjective>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_CATHOLICISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_THEOLOGY</TechPrereq>
+			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_CATHOLIC_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>100</iSpreadFactor>

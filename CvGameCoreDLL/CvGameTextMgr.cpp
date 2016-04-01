@@ -10524,6 +10524,9 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_BONUS_PLOTS", GC.getBonusInfo((BonusTypes)iI).getText()).c_str(), L": ", L"", kBuilding.getBonusYieldChangeArray(iI));
 	}
 
+	// Leoreth
+	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_RELIGION_BUILDINGS", (ePlayer == NO_PLAYER || GET_PLAYER(ePlayer).getStateReligion() == NO_RELIGION) ? gDLL->getSymbolID(RELIGION_CHAR) : GC.getReligionInfo(GET_PLAYER(ePlayer).getStateReligion()).getChar()).c_str(), L": ", L"", kBuilding.getReligionYieldChangeArray());
+
 	setYieldChangeHelp(szBuffer, gDLL->getText("TXT_KEY_BUILDING_WATER_PLOTS_ALL_CITIES").c_str(), L": ", L"", kBuilding.getGlobalSeaPlotYieldChangeArray());
 
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerYieldModifierArray(), true);
@@ -10586,14 +10589,14 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		setCommerceChangeHelp(szBuffer, L"", L"", szFirstBuffer, kBuilding.getBonusCommerceModifierArray(iI), true); // Leoreth
 	}
 
-	for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)
+	/*for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)
 	{
 		if (kBuilding.getReligionChange(iI) > 0)
 		{
 			szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_SPREADS_RELIGION", GC.getReligionInfo((ReligionTypes) iI).getChar()).c_str());
 			szBuffer.append(szTempBuffer);
 		}
-	}
+	}*/
 
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); ++iI)
 	{

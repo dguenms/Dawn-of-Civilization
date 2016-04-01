@@ -2122,12 +2122,9 @@ int CvTeam::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 
 bool CvTeam::isVotingMember(VoteSourceTypes eVoteSource) const
 {
-	//Rhye - start
-	if (isMinorCiv() || isBarbarian())
-		return false;
-	//Rhye - end
+	if (isMinorCiv() || isBarbarian()) return false;
 
-	//Leoreth: Apostolic Palace has only full members
+	// Leoreth: Apostolic Palace has only full members
 	if ((int)eVoteSource == 1)
 	{
 		if (!isFullMember(eVoteSource))
@@ -2141,10 +2138,7 @@ bool CvTeam::isVotingMember(VoteSourceTypes eVoteSource) const
 
 bool CvTeam::isFullMember(VoteSourceTypes eVoteSource) const
 {
-	//Rhye - start
-	if (isMinorCiv() || isBarbarian())
-		return false;
-	//Rhye - end
+	if (isMinorCiv() || isBarbarian()) return false;
 
 	if (isForceTeamVoteEligible(eVoteSource))
 	{

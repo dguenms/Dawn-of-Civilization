@@ -220,7 +220,7 @@ dWonderGoals = {
 }
 
 dReligionGoals = {
-	iEthiopia: (0, [iCatholicism]),
+	iEthiopia: (0, [iOrthodoxy]),
 	iHolyRome: (1, [iProtestantism]),
 }
 		
@@ -931,11 +931,11 @@ def checkTurn(iGameTurn, iPlayer):
 		
 	elif iPlayer == iHolyRome:
 	
-		# first goal: control the Apostolic Palace and the Church of the Holy Sepulchre in 1200 AD
+		# first goal: control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD
 		if iGameTurn == getTurnForYear(1200):
-			bApostolicPalace = getNumBuildings(iHolyRome, iApostolicPalace) > 0
-			bHolySepulchre = getNumBuildings(iHolyRome, iCatholicShrine) > 0
-			if bApostolicPalace and bHolySepulchre:
+			bSaintPeters = getNumBuildings(iHolyRome, iCatholicShrine) > 0
+			bAnastasis = getNumBuildings(iHolyRome, iOrthodoxShrine) > 0
+			if bSaintPeters and bAnastasis:
 				win(iHolyRome, 0)
 			else:
 				lose(iHolyRome, 0)
@@ -3312,9 +3312,9 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iHolyRome:
 		if iGoal == 0:
-			bApostolicPalace = getNumBuildings(iHolyRome, iApostolicPalace) > 0
-			bHolySepulchre = getNumBuildings(iHolyRome, iCatholicShrine) > 0
-			aHelp.append(getIcon(bApostolicPalace) + localText.getText("TXT_KEY_BUILDING_APOSTOLIC_PALACE", ()) + ' ' + getIcon(bHolySepulchre) + localText.getText("TXT_KEY_BUILDING_CATHOLIC_SHRINE", ()))
+			bSaintPeters = getNumBuildings(iHolyRome, iCatholicShrine) > 0
+			bAnastasis = getNumBuildings(iHolyRome, iCatholicShrine) > 0
+			aHelp.append(getIcon(bSaintPeters) + localText.getText("TXT_KEY_BUILDING_CATHOLIC_SHRINE", ()) + ' ' + getIcon(bAnastasis) + localText.getText("TXT_KEY_BUILDING_ORTHODOX_SHRINE", ()))
 		elif iGoal == 2:
 			iGreatArtists = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatArtist)
 			aHelp.append(getIcon(iGreatArtists >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_ARTISTS_SETTLED", ('Vienna', iGreatArtists, 3)))

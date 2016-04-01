@@ -64,6 +64,7 @@ CvPlayer::CvPlayer()
 	m_aiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES];
 	m_aiStabilityParameters = new int[NUM_PARAMETERS];
 	m_aiModifiers = new int[NUM_MODIFIER_TYPES];
+	m_aiReligionYieldChange = new int[NUM_YIELD_TYPES];
 
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
@@ -137,6 +138,7 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiDomainExperienceModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiStabilityParameters); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiModifiers); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiReligionYieldChange); // Leoreth
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
 }
@@ -537,13 +539,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 	m_bTurnPlayed = false;
 
-	// Rhye (jdog) - start ---------------------
-	//m_szName.clear();
 	m_szCivDesc.clear();
 	m_szCivDescKey.clear();
-	//m_szCivShort.clear();
-	//m_szCivAdj.clear();
-	// Rhye (jdog) - end -----------------------
 
 	//Leoreth
 	m_bReborn = false;
@@ -582,7 +579,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_aiCapitalYieldRateModifier[iI] = 0;
 		m_aiExtraYieldThreshold[iI] = 0;
 		m_aiTradeYieldModifier[iI] = 0;
-		m_aiSpecialistExtraYield[iI] = 0; //Leoreth
+		m_aiSpecialistExtraYield[iI] = 0; // Leoreth
+		m_aiReligionYieldChange[iI] = 0; // Leoreth
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -1612,6 +1610,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		paiNumRealBuilding[iI] = pOldCity->getNumRealBuilding((BuildingTypes)iI);
 		paiBuildingOriginalOwner[iI] = pOldCity->getBuildingOriginalOwner((BuildingTypes)iI);
 		paiBuildingOriginalTime[iI] = pOldCity->getBuildingOriginalTime((BuildingTypes)iI);
+	}
+
+	// Leoreth: don't copy state religion building effect from previous owner
+	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
+	{
+		pOldCity->changeReligionYieldChange(GET_PLAYER(eOldOwner).getStateReligion(),(YieldTypes)iI, -GET_PLAYER(eOldOwner).getReligionYieldChange((YieldTypes)iI));
 	}
 
 	std::vector<BuildingYieldChange> aBuildingYieldChange;
@@ -6781,6 +6785,7 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		changeSeaPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getGlobalSeaPlotYieldChange(iI) * iChange));
 		pArea->changeYieldRateModifier(getID(), ((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getAreaYieldModifier(iI) * iChange));
 		changeYieldRateModifier(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getGlobalYieldModifier(iI) * iChange));
+		changeReligionYieldChange((YieldTypes)iI, GC.getBuildingInfo(eBuilding).getReligionYieldChange(iI) * iChange);
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -10472,11 +10477,22 @@ void CvPlayer::changeStateReligionCount(int iChange)
 		// religion visibility now part of espionage
 		//GC.getGameINLINE().updateCitySight(false, true);
 
+		bool bOldValue = isStateReligion();
+
 		m_iStateReligionCount = (m_iStateReligionCount + iChange);
 		FAssert(getStateReligionCount() >= 0);
 
 		// religion visibility now part of espionage
 		//GC.getGameINLINE().updateCitySight(true, true);
+
+		// Leoreth: state religion building yield change
+		if (bOldValue != isStateReligion())
+		{
+			for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+			{
+				updateReligionYieldChange(getLastStateReligion(), (YieldTypes)iI, (isStateReligion() ? 1 : -1) * getReligionYieldChange((YieldTypes)iI));
+			}
+		}
 
 		updateMaintenance();
 		updateReligionHappiness();
@@ -11736,6 +11752,12 @@ void CvPlayer::setLastStateReligion(ReligionTypes eNewValue)
 
 		// religion visibility now part of espionage
 		//GC.getGameINLINE().updateCitySight(true, true);
+
+		for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+		{
+			updateReligionYieldChange(eOldReligion, (YieldTypes)iI, -getReligionYieldChange((YieldTypes)iI));
+			updateReligionYieldChange(eNewValue, (YieldTypes)iI, getReligionYieldChange((YieldTypes)iI));
+		}
 
 		updateMaintenance();
 		updateReligionHappiness();
@@ -17929,6 +17951,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_YIELD_TYPES, m_aiCapitalYieldRateModifier);
 	pStream->Read(NUM_YIELD_TYPES, m_aiExtraYieldThreshold);
 	pStream->Read(NUM_YIELD_TYPES, m_aiTradeYieldModifier);
+	pStream->Read(NUM_YIELD_TYPES, m_aiReligionYieldChange); // Leoreth
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiFreeCityCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommercePercent);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRate);
@@ -18452,6 +18475,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_YIELD_TYPES, m_aiCapitalYieldRateModifier);
 	pStream->Write(NUM_YIELD_TYPES, m_aiExtraYieldThreshold);
 	pStream->Write(NUM_YIELD_TYPES, m_aiTradeYieldModifier);
+	pStream->Write(NUM_YIELD_TYPES, m_aiReligionYieldChange); // Leoreth
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiFreeCityCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommercePercent);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRate);
@@ -24945,4 +24969,33 @@ bool CvPlayer::isDistantSpread(CvCity* pCity, ReligionTypes eReligion) const
 	}
 
 	return false;
+}
+
+int CvPlayer::getReligionYieldChange(YieldTypes eYield) const
+{
+	return m_aiReligionYieldChange[eYield];
+}
+
+void CvPlayer::setReligionYieldChange(YieldTypes eYield, int iNewValue)
+{
+	int iOldValue = getReligionYieldChange(eYield);
+
+	m_aiReligionYieldChange[eYield] = iNewValue;
+
+	updateReligionYieldChange(getStateReligion(), eYield, iNewValue - iOldValue);
+}
+
+void CvPlayer::changeReligionYieldChange(YieldTypes eYield, int iChange)
+{
+	setReligionYieldChange(eYield, getReligionYieldChange(eYield) + iChange);
+}
+
+void CvPlayer::updateReligionYieldChange(ReligionTypes eReligion, YieldTypes eYield, int iChange)
+{
+	int iLoop;
+	CvCity* pCity;
+	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		pCity->changeReligionYieldChange(eReligion, eYield, iChange);
+	}
 }

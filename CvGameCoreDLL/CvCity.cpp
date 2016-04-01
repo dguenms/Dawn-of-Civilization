@@ -27,8 +27,8 @@
 #include "CvDLLInterfaceIFaceBase.h"
 #include "CvEventReporter.h"
 
-
 #include "CvRhyes.h" //Rhye
+#include <algorithm>
 
 // Public Functions...
 
@@ -286,14 +286,15 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	GC.getGameINLINE().changeNumCities(1);
 
 	setGameTurnFounded(GC.getGameINLINE().getGameTurn());
-	//setGameTurnAcquired(196); //Rhye
 	setGameTurnAcquired(GC.getGameINLINE().getGameTurn()); //Rhye - infinite loop????
 
-	/*int iExtraPop = 0;   //Rhye
-	if (!GC.getGameINLINE().isOption(GAMEOPTION_ADVANCED_START) || !isHuman())		// AdvancedStartAI
+	
+
+	// Leoreth: apply state religion building yield change
+	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
-		iExtraPop = GC.getEraInfo(GC.getGameINLINE().getStartEra()).getFreePopulation();
-	}*/
+		changeReligionYieldChange(GET_PLAYER(eOwner).getStateReligion(), (YieldTypes)iI, GET_PLAYER(eOwner).getReligionYieldChange((YieldTypes)iI));
+	}
 
 	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
 	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra : 0;
@@ -16494,22 +16495,7 @@ void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldType
 					(*it).iChange = iChange;
 				}
 
-				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
-				if (NO_BUILDING != eBuilding)
-				{
-					if (getNumActiveBuilding(eBuilding) > 0)
-					{
-						changeBaseYieldRate(eYield, (iChange - iOldChange) * getNumActiveBuilding(eBuilding));
-						// Leoreth: catch the overflow bug
-						if (getBaseYieldRate(eYield) < 0 || getBaseYieldRate(eYield) > 1000) {
-							GC.getGame().logMsg("Overflow in (%d, %d) for setBuildingYieldChange()", getX(), getY());
-							gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "setBuildingYieldChange()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-							GC.getGame().setAIAutoPlay(0);
-							GC.getGame().setAIAutoPlayCatapult(0);
-							gDLL->getEngineIFace()->AutoSave(true);
-						}
-					}
-				}
+				updateBuildingYieldChange(eBuildingClass, eYield, iChange - iOldChange);
 			}
 
 			return;
@@ -16524,28 +16510,50 @@ void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldType
 		kChange.iChange = iChange;
 		m_aBuildingYieldChange.push_back(kChange);
 
-		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
-		if (NO_BUILDING != eBuilding)
-		{
-			if (getNumActiveBuilding(eBuilding) > 0)
-			{
-				changeBaseYieldRate(eYield, iChange * getNumActiveBuilding(eBuilding));
-				// Leoreth: catch the overflow bug
-				if (getBaseYieldRate(eYield) < 0 || getBaseYieldRate(eYield) > 1000) {
-					GC.getGame().logMsg("Overflow in (%d, %d) for setBuildingYieldChange2()", getX(), getY());
-					gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "setBuildingYieldChange2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-					GC.getGame().setAIAutoPlay(0);
-					GC.getGame().setAIAutoPlayCatapult(0);
-					gDLL->getEngineIFace()->AutoSave(true);
-				}
-			}
-		}
+		updateBuildingYieldChange(eBuildingClass, eYield, iChange);
 	}
 }
 
 void CvCity::changeBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange)
 {
 	setBuildingYieldChange(eBuildingClass, eYield, getBuildingYieldChange(eBuildingClass, eYield) + iChange);
+}
+
+// Leoreth
+void CvCity::updateBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange)
+{
+	BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+	if (NO_BUILDING != eBuilding)
+	{
+		if (getNumActiveBuilding(eBuilding) > 0)
+		{
+			changeBaseYieldRate(eYield, iChange * getNumActiveBuilding(eBuilding));
+			// Leoreth: catch the overflow bug
+			if (getBaseYieldRate(eYield) < 0 || getBaseYieldRate(eYield) > 1000) {
+				GC.getGame().logMsg("Overflow in (%d, %d) for updateBuildingYieldChange()", getX(), getY());
+				gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "setBuildingYieldChange2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+				GC.getGame().setAIAutoPlay(0);
+				GC.getGame().setAIAutoPlayCatapult(0);
+				gDLL->getEngineIFace()->AutoSave(true);
+			}
+		}
+	}
+}
+
+void CvCity::changeReligionYieldChange(ReligionTypes eReligion, YieldTypes eYield, int iChange)
+{
+	if (eReligion == NO_RELIGION) return;
+
+	int iI;
+	BuildingTypes eBuilding;
+	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	{
+		eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+		if (eBuilding != NO_BUILDING && GC.getBuildingInfo(eBuilding).getReligionType() == eReligion)
+		{
+			changeBuildingYieldChange((BuildingClassTypes)iI, eYield, iChange);
+		}
+	}
 }
 
 int CvCity::getBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce) const
@@ -17743,4 +17751,47 @@ int CvCity::estimateGrowth(int iTurns) const
 	}
 
 	return iPopulation - getPopulation();
+}
+
+void CvCity::replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewReligion)
+{
+	std::vector<int> removedBuildings;
+	int iI;
+	bool bRemoved;
+
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+
+		if (isHasRealBuilding((BuildingTypes)iI) && !isWorldWonderClass((BuildingClassTypes)kBuilding.getBuildingClassType()) && kBuilding.getSpecialBuildingType() != NO_SPECIALBUILDING && kBuilding.getPrereqReligion() == eOldReligion)
+		{
+			removedBuildings.push_back(kBuilding.getSpecialBuildingType());
+			setHasRealBuilding((BuildingTypes)iI, false);
+		}
+	}
+
+	if (!isHolyCity(eOldReligion))
+	{
+		setHasReligion(eOldReligion, false, true, true);
+	}
+
+	if (eNewReligion == NO_RELIGION) return;
+
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
+		bRemoved = std::find(removedBuildings.begin(), removedBuildings.end(), kBuilding.getSpecialBuildingType()) != removedBuildings.end();
+
+		if (bRemoved && kBuilding.getPrereqReligion() == eNewReligion)
+		{
+			setHasRealBuilding((BuildingTypes)iI, true);
+		}
+	}
+
+	setHasReligion(eNewReligion, true, true, true);
+}
+
+void CvCity::removeReligion(ReligionTypes eReligion)
+{
+	replaceReligion(eReligion, NO_RELIGION);
 }

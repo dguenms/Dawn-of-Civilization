@@ -130,5 +130,7 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("updateCultureCosts", &CyCity::updateCultureCosts, "void ()")
 		.def("updateCoveredPlots", &CyCity::updateCoveredPlots, "void ()")
 		.def("updateGreatWall", &CyCity::updateGreatWall, "void ()")
+		.def("replaceReligion", &CyCity::replaceReligion, "void (int eOldReligion, int eNewReligion)")
+		.def("removeReligion", &CyCity::removeReligion, "void (int eReligion)")
 		;
 }

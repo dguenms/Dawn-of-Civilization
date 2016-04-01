@@ -6948,7 +6948,8 @@ m_piBuildingHappinessChanges(NULL),
 m_piPrereqNumOfBuildingClass(NULL),
 m_piFlavorValue(NULL),
 m_piImprovementFreeSpecialist(NULL),
-m_piPrereqBuildingClassPercent(NULL), //Leoreth
+m_piPrereqBuildingClassPercent(NULL), // Leoreth
+m_piReligionYieldChange(NULL), // Leoreth
 m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
@@ -7004,6 +7005,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_pbCommerceFlexible);
 	SAFE_DELETE_ARRAY(m_pbCommerceChangeOriginalOwner);
 	SAFE_DELETE_ARRAY(m_pbBuildingClassNeededInCity);
+	SAFE_DELETE_ARRAY(m_piReligionYieldChange); // Leoreth
 
 	if (m_ppaiSpecialistYieldChange != NULL)
 	{
@@ -8050,6 +8052,19 @@ int* CvBuildingInfo::getBonusYieldChangeArray(int i) const
 }
 
 // Leoreth
+int CvBuildingInfo::getReligionYieldChange(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piReligionYieldChange[i];
+}
+
+int* CvBuildingInfo::getReligionYieldChangeArray() const
+{
+	return m_piReligionYieldChange;
+}
+
+// Leoreth
 int CvBuildingInfo::getPrereqBuildingClassPercent(int i) const
 {
 	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
@@ -8364,6 +8379,11 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	m_piPrereqBuildingClassPercent = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_piPrereqBuildingClassPercent);
 
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piReligionYieldChange);
+	m_piReligionYieldChange = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piReligionYieldChange);
+
 	SAFE_DELETE_ARRAY(m_piFlavorValue);
 	m_piFlavorValue = new int[GC.getNumFlavorTypes()];
 	stream->Read(GC.getNumFlavorTypes(), m_piFlavorValue);
@@ -8614,7 +8634,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_DOMAIN_TYPES, m_piDomainProductionModifier);
 	stream->Write(GC.getNumBuildingClassInfos(), m_piBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_piPrereqNumOfBuildingClass);
-	stream->Write(GC.getNumBuildingClassInfos(), m_piPrereqBuildingClassPercent);
+	stream->Write(GC.getNumBuildingClassInfos(), m_piPrereqBuildingClassPercent); // Leoreth
+	stream->Write(NUM_YIELD_TYPES, m_piReligionYieldChange);
 	stream->Write(GC.getNumFlavorTypes(), m_piFlavorValue);
 	stream->Write(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
 
@@ -9009,6 +9030,17 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piGlobalYieldModifier, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "ReligionYieldChanges"))
+	{
+		pXML->SetYields(&m_piReligionYieldChange);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piReligionYieldChange, NUM_YIELD_TYPES);
 	}
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CommerceChanges"))

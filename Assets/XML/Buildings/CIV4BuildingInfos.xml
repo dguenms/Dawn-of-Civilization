@@ -4963,9 +4963,11 @@
 			<HolyCity>RELIGION_CATHOLICISM</HolyCity>
 			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_CATHOLICISM</GlobalReligionCommerce>
+			<VictoryPrereq>VICTORY_DIPLOMATIC</VictoryPrereq>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
+			<DiploVoteType>DIPLOVOTE_POPE</DiploVoteType>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>-1</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
@@ -8302,6 +8304,64 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_HAGIA_SOPHIA</BuildingClass>
+			<Type>BUILDING_HAGIA_SOPHIA</Type>
+			<Description>TXT_KEY_BUILDING_HAGIA_SOPHIA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_HAGIA_SOPHIA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_HAGIA_SOPHIA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_HAGIA_SOPHIA</MovieDefineTag>
+			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
+			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<ObsoleteTech>TECH_STEAM_POWER</ObsoleteTech>
+			<PrereqTech>TECH_THEOLOGY</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>500</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>12</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MARBLE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ReligionYieldChanges>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</ReligionYieldChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_NOTRE_DAME</BuildingClass>
 			<Type>BUILDING_NOTRE_DAME</Type>
 			<Description>TXT_KEY_BUILDING_NOTRE_DAME</Description>
@@ -8639,70 +8699,6 @@
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>4</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_APOSTOLIC_PALACE</BuildingClass>
-			<Type>BUILDING_APOSTOLIC_PALACE</Type>
-			<Description>TXT_KEY_BUILDING_APOSTOLIC_PALACE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_APOSTOLIC_PALACE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_APOSTOLIC_PALACE_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_APOSTOLIC_PALACE_HELP</Help>
-			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_APOSTOLIC_PALACE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_APOSTOLIC_PALACE</MovieDefineTag>
-			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
-			<bStateReligion>1</bStateReligion>
-			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
-			<VictoryPrereq>VICTORY_DIPLOMATIC</VictoryPrereq>
-			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
-			<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
-			<PrereqTech>TECH_THEOLOGY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
-			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
-			<bTeamShare>1</bTeamShare>
-			<DiploVoteType>DIPLOVOTE_POPE</DiploVoteType>
-			<bForceTeamVoteEligible>1</bForceTeamVoteEligible>
-			<bNukeImmune>1</bNukeImmune>
-			<iAIWeight>200</iAIWeight>
-			<iCost>400</iCost>
-			<iHurryCostModifier>300</iHurryCostModifier>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>3</iAdvancedStartCostIncrease>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>100</iConquestProb>
-			<iAsset>15</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<ReligionChanges>
-				<ReligionChange>
-					<ReligionType>RELIGION_CATHOLICISM</ReligionType>
-					<iReligionChange>1</iReligionChange>
-				</ReligionChange>
-			</ReligionChanges>
-			<CommerceChangeOriginalOwners>
-				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
-				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
-				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
-			</CommerceChangeOriginalOwners>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>7</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
