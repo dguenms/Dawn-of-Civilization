@@ -669,11 +669,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1</Tag>
-		<English>Found Catholicism</English>
-		<French>Fonder une religion</French>
-		<German>Begr&#252;nden Sie den Katholizismus</German>
-		<Italian>Fonda una religione</Italian>
-		<Spanish>Fundar una religi&#243;n</Spanish>
+		<English>Found Orthodoxy</English>
+		<German>Begr&#252;nden Sie die Orthodoxie</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
@@ -958,8 +955,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE1</Tag>
-		<English>Control the Apostolic Palace and the Church of the Holy Sepulchre in 1200 AD</English>
-		<German>Kontrollieren Sie den Apostolischen Palast und die Kirche des heiligen Grabes im Jahr 1200 n. Chr.</German>
+		<English>Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD</English>
+		<German>Kontrollieren Sie den Petersdom und die Kirche der Anastasis im Jahr 1200 n. Chr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HRE2_TITLE</Tag>
