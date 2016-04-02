@@ -17755,6 +17755,8 @@ int CvCity::estimateGrowth(int iTurns) const
 
 void CvCity::replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewReligion)
 {
+	if (!isHasReligion(eOldReligion)) return;
+
 	std::vector<int> removedBuildings;
 	int iI;
 	bool bRemoved;

@@ -161,7 +161,6 @@ tSpreadFactors = (
 # Zoroastrianism
 {
 	iHistorical :	[rPersia],
-	iPeriphery :	[rMesopotamia, rAnatolia],
 	iMinority : 	[rIndia],
 },
 )

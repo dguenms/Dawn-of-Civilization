@@ -7969,6 +7969,11 @@ bool CvPlayer::canDoReligion(ReligionTypes eReligion) const
 		return false;
 	}
 
+	if (eReligion == JUDAISM)
+	{
+		return false;
+	}
+
 	return true;
 }
 
@@ -8165,16 +8170,16 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 					iValue *= 4;
 			}
 			if (pLoopCity->getX() == 72 && pLoopCity->getY() == 29 && pLoopCity->getOwner() == (PlayerTypes)ETHIOPIA) //Aksum
-				if (eReligion == CATHOLICISM)
+				if (eReligion == ORTHODOXY)
 					iValue *= 4;
 			if (eReligion == (ReligionTypes)ZOROASTRIANISM && pLoopCity->getX() == 82 && pLoopCity->getY() == 39) //Parsa
 				iValue *= 8;
 
-			if (eReligion == (ReligionTypes)ORTHODOXY && pLoopCity->isCapital())
-				iValue = 100;
-
-			if (eReligion == (ReligionTypes)ORTHODOXY && !pLoopCity->isCapital())
-				iValue = 5;
+			if (eReligion == ORTHODOXY)
+			{
+				if (pLoopCity->isHasReligion(JUDAISM)) iValue *= 2;
+				if (pLoopCity->isHolyCity(JUDAISM)) iValue *= 2;
+			}
 
 			if (eReligion == (ReligionTypes)PROTESTANTISM)
 			{
