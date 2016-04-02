@@ -269,6 +269,14 @@ class RFCUtils:
 		popup.setBodyString(message)
 		popup.launch()
 
+	def popup(self, title, message, labels):
+		popup = Popup.PyPopup()
+		popup.setHeaderString(title)
+		popup.setBodyString(message)
+		for i in labels:
+		    popup.addButton( i )
+		popup.launch(len(labels) == 0)
+
 	#RiseAndFall
 	def updateMinorTechs( self, iMinorCiv, iMajorCiv):		
 		for t in range(con.iNumTechs):
@@ -1667,7 +1675,7 @@ class RFCUtils:
 		# Leoreth: temporarily try less missionaries
 		iNumUnits = 1
 		
-		self.makeUnit(con.iProtestantMissionary + iReligion, iPlayer, Areas.getCapital(iPlayer), iNumUnits)
+		self.makeUnit(con.iMissionary + iReligion, iPlayer, Areas.getCapital(iPlayer), iNumUnits)
 			
 	def getSortedList(self, lList, function, bReverse = False):
 		return sorted(lList, key=lambda element: function(element), reverse=bReverse)
