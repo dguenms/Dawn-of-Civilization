@@ -322,6 +322,38 @@ int CvArea::countHasReligion(ReligionTypes eReligion, PlayerTypes eOwner) const
 	return iCount;
 }
 
+int CvArea::countCanSpread(ReligionTypes eReligion, PlayerTypes eOwner, bool bMissionary) const
+{
+	CvCity* pLoopCity;
+	int iCount;
+	int iLoop;
+	int iI;
+
+	iCount = 0;
+
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			if ((eOwner == NO_PLAYER) || (iI == eOwner))
+			{
+				for (pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+				{
+					if (pLoopCity->area()->getID() == getID())
+					{
+						if (pLoopCity->canSpread(eReligion, bMissionary))
+						{
+							iCount++;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return iCount;
+}
+
 int CvArea::countHasCorporation(CorporationTypes eCorporation, PlayerTypes eOwner) const
 {
 	int iCount = 0;

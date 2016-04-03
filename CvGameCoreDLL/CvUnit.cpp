@@ -5577,7 +5577,7 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
-	if (pCity->isHasReligion(eReligion))
+	if (!pCity->canSpread(eReligion, true))
 	{
 		return false;
 	}

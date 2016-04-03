@@ -16532,6 +16532,7 @@ m_iNumFreeUnits(0),
 m_iSpreadFactor(0),
 m_iMissionType(NO_MISSION),
 m_bProselytizing(false),
+m_bLocal(false),
 m_paiGlobalReligionCommerce(NULL),
 m_paiHolyCityCommerce(NULL),
 m_paiStateReligionCommerce(NULL)
@@ -16685,6 +16686,11 @@ bool CvReligionInfo::isProselytizing() const
 	return m_bProselytizing;
 }
 
+bool CvReligionInfo::isLocal() const
+{
+	return m_bLocal;
+}
+
 // Arrays
 
 int CvReligionInfo::getGlobalReligionCommerce(int i) const
@@ -16744,6 +16750,7 @@ bool CvReligionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iSpreadFactor, "iSpreadFactor");
 
 	pXML->GetChildXmlValByName(&m_bProselytizing, "bProselytizing");
+	pXML->GetChildXmlValByName(&m_bLocal, "bLocal");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"GlobalReligionCommerces"))
 	{

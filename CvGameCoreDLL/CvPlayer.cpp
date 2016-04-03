@@ -7969,9 +7969,13 @@ bool CvPlayer::canDoReligion(ReligionTypes eReligion) const
 		return false;
 	}
 
-	if (eReligion == JUDAISM)
+	if (GC.getReligionInfo(eReligion).isLocal())
 	{
-		return false;
+		CvCity* pHolyCity = GC.getGame().getHolyCity(eReligion);
+		if (pHolyCity == NULL || pHolyCity->getOwner() != getID())
+		{
+			return false;
+		}
 	}
 
 	return true;
