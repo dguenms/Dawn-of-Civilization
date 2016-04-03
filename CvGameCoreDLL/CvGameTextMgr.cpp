@@ -13112,6 +13112,18 @@ void CvGameTextMgr::setReligionHelp(CvWStringBuffer &szBuffer, ReligionTypes eRe
 		}
 	}
 
+	if (!GC.getReligionInfo(eReligion).isProselytizing())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_RELIGION_CANNOT_SPREAD_UNLESS_STATE"));
+	}
+
+	if (GC.getReligionInfo(eReligion).isLocal())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_RELIGION_CANNOT_CONVERT_UNLESS_HOLY_CITY"));
+	}
+
 	if (eReligion == PROTESTANTISM)
 	{
 		szBuffer.append(NEWLINE);

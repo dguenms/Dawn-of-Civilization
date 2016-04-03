@@ -1029,7 +1029,7 @@ public:
 	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
 	int estimateGrowth(int iTurns) const;
 
-	bool canSpread(ReligionTypes eReligion) const;
+	bool canSpread(ReligionTypes eReligion, bool bMissionary = false) const;
 	int getTurnsToSpread(ReligionTypes eReligion) const;
 
 	bool isHasPrecursor(ReligionTypes eReligion) const;

@@ -4171,6 +4171,7 @@ public:
 
 	// Leoreth
 	bool isProselytizing() const;
+	bool isLocal() const;
 
 	const TCHAR* getTechButton() const;				// Exposed to Python
 	void setTechButton(const TCHAR* szVal);
@@ -4213,6 +4214,7 @@ protected:
 
 	// Leoreth
 	bool m_bProselytizing;
+	bool m_bLocal;
 
 	CvString m_szTechButton;
 	CvString m_szGenericTechButton;

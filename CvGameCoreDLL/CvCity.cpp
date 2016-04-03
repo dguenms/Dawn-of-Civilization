@@ -14672,11 +14672,20 @@ void CvCity::doDecay()
 	}
 }
 
-bool CvCity::canSpread(ReligionTypes eReligion) const
+bool CvCity::canSpread(ReligionTypes eReligion, bool bMissionary) const
 {
 	if (isHasReligion(eReligion)) return false;
 
 	if (!plot()->canSpread(eReligion)) return false;
+
+	if (bMissionary && !GC.getReligionInfo(eReligion).isProselytizing())
+	{
+		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
+		if (eStateReligion != NO_RELIGION && eStateReligion != eReligion)
+		{
+			return false;
+		}
+	}
 
 	ReligionSpreadTypes eSpread = GET_PLAYER(getOwner()).getSpreadType(plot(), eReligion);
 
