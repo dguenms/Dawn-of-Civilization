@@ -17834,6 +17834,31 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 		log(CvWString::format(L"Remove religion %s from %s after spread", GC.getReligionInfo(eDisappearingReligion).getText(), getName().GetCString()));
 		removeReligion(eDisappearingReligion);
 	}
+
+	if (isHasRealBuilding(PAGAN_TEMPLE))
+	{
+		setHasRealBuilding(PAGAN_TEMPLE, false);
+
+		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
+		if (eStateReligion != NO_RELIGION && eStateReligion == eReligion)
+		{
+			for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+			{
+				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
+				if (canConstruct(eBuilding) && GC.getBuildingInfo(eBuilding).getReligionType() == eStateReligion && GC.getBuildingInfo(eBuilding).getSpecialBuildingType() == GC.getInfoTypeForString("SPECIALBUILDING_TEMPLE"))
+				{
+					setHasRealBuilding(eBuilding, true);
+					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_PAGAN_TEMPLE_REPLACED", GC.getReligionInfo(eReligion).getText(), getName(), GC.getBuildingInfo(eBuilding).getText()), GC.getBuildingInfo(eBuilding).getConstructSound(), MESSAGE_TYPE_MAJOR_EVENT, GC.getBuildingInfo(eBuilding).getArtInfo()->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+					break;
+				}
+			}
+		}
+		else
+		{
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_PAGAN_TEMPLE_REMOVED", GC.getReligionInfo(eReligion).getText(), getName()), "", MESSAGE_TYPE_MAJOR_EVENT, "", (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+		}
+	}
 }
 
 ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion) const

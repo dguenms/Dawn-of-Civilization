@@ -27,7 +27,7 @@ typedef list<char*> LISTCHAR;
 
 #define NUM_ERAS				(ERA_FUTURE+1)
 
-#define PAGAN_TEMPLE (GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
+#define PAGAN_TEMPLE ((BuildingTypes)GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
 
 enum MyTechs
 {
