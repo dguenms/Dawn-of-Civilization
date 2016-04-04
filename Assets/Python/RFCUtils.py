@@ -1681,10 +1681,12 @@ class RFCUtils:
 		return sorted(lList, key=lambda element: function(element), reverse=bReverse)
 		
 	def getHighestEntry(self, lList, function = lambda x: x):
+		if not lList: return None
 		lSortedList = self.getSortedList(lList, function, True)
 		return lSortedList[0]
 		
 	def getHighestIndex(self, lList, function = lambda x: x):
+		if not lList: return None
 		lSortedList = self.getSortedList(lList, function, True)
 		return lList.index(lSortedList[0])
 		
@@ -2011,5 +2013,14 @@ class RFCUtils:
 		# clear the highlight
 		for i in range(max(con.iNumPlotStabilityTypes, con.iMaxWarValue/2)):
 			engine.clearAreaBorderPlots(1000+i)
+			
+	def getRegionCities(self, lRegions):
+		lCities = []
+		for (x, y) in [(x, y) for x in range(con.iWorldX) for y in range(con.iWorldY)]:
+			plot = gc.getMap().plot(x, y)
+			if plot.getRegionID() in lRegions and plot.isCity():
+				lCities.append(plot.getPlotCity())
+		return lCities
+		
 
 utils = RFCUtils()

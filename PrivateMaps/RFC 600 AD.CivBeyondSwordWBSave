@@ -21104,6 +21104,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player45Culture=1
 	EndCity
@@ -21495,6 +21496,7 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
+		ReligionType=RELIGION_JUDAISM
 		Player44Culture=1
 	EndCity
 EndPlot
@@ -23028,6 +23030,7 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_CATHOLIC_SHRINE
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		HolyCityReligionType=RELIGION_CATHOLICISM
 		Player45Culture=100
@@ -25857,6 +25860,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
 		BuildingType=BUILDING_GREAT_LIBRARY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_CATHOLICISM
 		Player44Culture=10
@@ -25905,6 +25909,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_GREEK_ODEON
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		BuildingType=BUILDING_PARTHENON
 		Player44Culture=50
@@ -26693,6 +26698,7 @@ BeginPlot
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMIDS
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		Player44Culture=10
 	EndCity
@@ -28702,6 +28708,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_WALLS
 		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_JUDAISM
 		Player44Culture=10
 	EndCity
 EndPlot
