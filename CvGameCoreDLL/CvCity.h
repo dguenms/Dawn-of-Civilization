@@ -923,8 +923,11 @@ public:
 	bool isHasReligion(ReligionTypes eIndex) const;
 	void setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);
 
+	void spreadReligion(ReligionTypes eReligion, bool bMissionary = false);
 	void removeReligion(ReligionTypes eReligion);
 	void replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewReligion);
+
+	ReligionTypes disappearingReligion(ReligionTypes eNewReligion = NO_RELIGION) const;
 
 	bool isHasCorporation(CorporationTypes eIndex) const;
 	void setHasCorporation(CorporationTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);

@@ -5644,7 +5644,7 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 	if (pCity != NULL)
 	{
-		iSpreadProb = m_pUnitInfo->getReligionSpreads(eReligion);
+		/*iSpreadProb = m_pUnitInfo->getReligionSpreads(eReligion);
 
 		if (pCity->getTeam() != getTeam())
 		{
@@ -5657,15 +5657,22 @@ bool CvUnit::spread(ReligionTypes eReligion)
 		if (getOwnerINLINE() == TIBET)
 		{
 			iSpreadProb += (100 - iSpreadProb)/2;
+		}*/
+
+		iSpreadProb = std::max(1, (pCity->getTurnsToSpread(eReligion) - 50) / 50 + (pCity->getTeam() != getTeam()) ? 1 : 0);
+
+		if (getOwnerINLINE() == TIBET)
+		{
+			iSpreadProb = std::max(1, iSpreadProb - 1);
 		}
 
 		bool bSuccess;
 
-		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < iSpreadProb)
+		if (GC.getGameINLINE().getSorenRandNum(iSpreadProb, "Unit Spread Religion") == 0)
 		{
 			log(CvWString::format(L"Missionary spread %s to %s", GC.getReligionInfo(eReligion).getText(), pCity->getName().GetCString()));
 
-			pCity->setHasReligion(eReligion, true, true, false);
+			pCity->spreadReligion(eReligion, true);
 			bSuccess = true;
 		}
 		else

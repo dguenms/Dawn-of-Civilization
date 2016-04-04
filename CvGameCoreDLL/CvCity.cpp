@@ -14751,7 +14751,7 @@ bool CvCity::isHasPrecursor(ReligionTypes eReligion) const
 void CvCity::doReligion()
 {
 	int iI;
-	ReligionTypes eReligion;
+	ReligionTypes eReligion, eDisappearingReligion;
 	int iReligionInfluence;
 	int iChance, iRand;
 
@@ -14765,11 +14765,25 @@ void CvCity::doReligion()
 		iChance = getTurnsToSpread(eReligion);
 		iRand = GC.getGameINLINE().getSorenRandNum(iChance, "Religion spread");
 		log(CvWString::format(L"Spread religion %s in %s: 1/%d chance", GC.getReligionInfo(eReligion).getText(), getName().GetCString(), iChance));
-		//log("Spread religion %s in %s: 1/%d chance", chars(GC.getReligionInfo(eReligion).getText()), getName(), iChance);
+		
+		if (iRand == 0)
+		{
+			spreadReligion(eReligion);
+			return;
+		}
+	}
+
+	eDisappearingReligion = disappearingReligion();
+
+	if (eDisappearingReligion != NO_RELIGION && !GET_PLAYER(getOwner()).isDistantSpread(this, eDisappearingReligion))
+	{
+		iChance = GET_PLAYER(getOwner()).getSpreadType(plot(), eDisappearingReligion) * 25 + 25;
+		iRand = GC.getGame().getSorenRandNum(iChance, "Religion disappearance");
+		log(CvWString::format(L"Disappearing religion %s in %s: 1/%d chance", GC.getReligionInfo(eDisappearingReligion).getText(), getName().GetCString(), iChance));
 
 		if (iRand == 0)
 		{
-			setHasReligion(eReligion, true, true, true);
+			removeReligion(eReligion);
 		}
 	}
 	
@@ -17805,4 +17819,82 @@ void CvCity::replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewRelig
 void CvCity::removeReligion(ReligionTypes eReligion)
 {
 	replaceReligion(eReligion, NO_RELIGION);
+}
+
+void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
+{
+	setHasReligion(eReligion, true, true, !bMissionary);
+
+	ReligionTypes eDisappearingReligion = disappearingReligion(eReligion);
+
+	int iDisappearanceChance = bMissionary ? 2 : 3;
+
+	if (eDisappearingReligion != NO_RELIGION && GC.getGame().getSorenRandNum(iDisappearanceChance, "Religion disappearance") == 0)
+	{
+		log(CvWString::format(L"Remove religion %s from %s after spread", GC.getReligionInfo(eDisappearingReligion).getText(), getName().GetCString()));
+		removeReligion(eDisappearingReligion);
+	}
+}
+
+ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion) const
+{
+	int iI;
+	ReligionTypes eReligion;
+	std::vector<ReligionTypes> religions;
+
+	for (iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		eReligion = (ReligionTypes)iI;
+		if (eReligion != eNewReligion)
+		{
+			if (isHasReligion(eReligion) && GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eReligion) == RELIGION_SPREAD_NONE)
+			{
+				religions.push_back(eReligion);
+			}
+		}
+	}
+
+	if (religions.size() > 0)
+	{
+		return religions[GC.getGame().getSorenRandNum(religions.size(), "Disappearing religion")];
+	}
+
+	int iMaxReligions = std::max(2, 1 + getPopulation() / 5);
+
+	ReligionSpreadTypes eCurrentSpread;
+	ReligionSpreadTypes eNewReligionSpread = GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eReligion);
+	ReligionSpreadTypes eWorstSpread = RELIGION_SPREAD_FAST;
+	religions.clear();
+
+	if (getReligionCount() > iMaxReligions)
+	{
+		for (iI = 0; iI < NUM_RELIGIONS; iI++)
+		{
+			eReligion = (ReligionTypes)iI;
+			if (eReligion != eNewReligion && isHasReligion(eReligion))
+			{
+				eCurrentSpread = GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eReligion);
+				if (eCurrentSpread <= eNewReligionSpread)
+				{
+					if (eCurrentSpread < eWorstSpread)
+					{
+						eWorstSpread = eCurrentSpread;
+						religions.clear();
+						religions.push_back(eReligion);
+					} 
+					else if (eCurrentSpread == eWorstSpread)
+					{
+						religions.push_back(eReligion);
+					}
+				}
+			}
+		}
+
+		if (religions.size() > 0)
+		{
+			return religions[GC.getGame().getSorenRandNum(religions.size(), "Disappearing religion")];
+		}
+	}
+
+	return NO_RELIGION;
 }

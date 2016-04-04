@@ -620,7 +620,7 @@ class RiseAndFall:
 			tCapital = Areas.getCapital(iByzantium)
 			lBuildings = [iWalls, iCastle, iBarracks, iStable, iGranary, iLibrary, iMarket, \
 				      iOrthodoxTemple, iByzantineHippodrome, iHagiaSophia, iTheodosianWalls]
-			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [iCatholicism, iOrthodoxy])
+			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [iJudaism, iCatholicism, iOrthodoxy])
 			
 			# China
 			self.prepareChina()
