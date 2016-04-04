@@ -1492,7 +1492,7 @@ iSatellites, iRobotics, iFutureTech) = range(iNumTechs)
 
 iNumUnits = 164
 (iLion, iBear, iPanther, iWolf, iSettler, iHarappanCityBuilder, iWorker, iBrazilianMadeireiro, iIndianPunjabiWorker, iScout, iExplorer, iSpy, iReligiousPersecutor,
-iJewishMissionary,iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary,
+iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary,
 iTaoistMissionary, iZoroastrianMissionary, iWarrior, iSwordsman, iAztecJaguar, iRomanLegion, iCelticGallicWarrior,
 iAxeman, iGreekHoplite, iIncanAucac, iSumerianVulture, iNativeAmericanDogSoldier, iHeavySwordsman, iJapaneseSamurai, iVikingHuscarl, iCongolesePombos,
 iSpearman, iPersianImmortal, iZuluImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iOttomanJanissary, iEthiopianAskari, 
