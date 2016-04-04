@@ -639,15 +639,6 @@ class CvRFCEventHandler:
 		
 		cnm.onReligionSpread(iReligion, iOwner, pSpreadCity)
 
-		#Leoreth: if state religion spreads, pagan temples are replaced with its temple. For other religions, they're simply removed.	 
-		if pSpreadCity.isHasBuilding(iPaganTemple):
-			pSpreadCity.setHasRealBuilding(iPaganTemple, False)
-			if gc.getPlayer(iOwner).getCivics(4) != iCivicPantheon and gc.getPlayer(iOwner).getStateReligion() == iReligion and gc.getTeam(iOwner).isHasTech(iPriesthood):
-				pSpreadCity.setHasRealBuilding(iTemple+4*iReligion, True)
-				CyInterface().addMessage(iOwner, True, iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REPLACED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()), str(gc.getBuildingInfo(iTemple+4*iReligion).getText()))), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-			else:
-				CyInterface().addMessage(iOwner, True, iDuration, CyTranslator().getText("TXT_KEY_PAGAN_TEMPLE_REMOVED", (str(gc.getReligionInfo(iReligion).getText()), str(pSpreadCity.getName()))), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-
 	def onFirstContact(self, argsList):
 	    
 		iTeamX,iHasMetTeamY = argsList

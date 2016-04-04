@@ -24913,6 +24913,8 @@ ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligi
 
 	if (!bStateReligion && isNoNonStateReligionSpread()) return RELIGION_SPREAD_NONE;
 
+	if ((isMinorCiv() || isBarbarian()) && iSpreadFactor <= REGION_SPREAD_MINORITY) return RELIGION_SPREAD_NONE;
+
 	int iCurrentTurn = GC.getGame().getGameTurn();
 	int iFoundingTurn = GC.getGame().getReligionGameTurnFounded(eReligion);
 
