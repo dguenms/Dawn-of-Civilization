@@ -14,6 +14,10 @@
 		<English>Kingdom of %s1</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_SPAIN_COMMUNIST</Tag>
+		<English>Republic of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_FASCIST</Tag>
 		<English>%s2 State</English>
 		<French>
