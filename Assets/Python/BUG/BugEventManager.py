@@ -217,8 +217,8 @@ class BugEventManager(CvEventManager.CvEventManager):
 		    7623 : ('AskNoCityPopupEvent', self.congEventApply7623, self.congEventBegin7623),
 		    #7624 : ('ReformationEvent', self.relEventApply7624, self.relEventBegin7624),
 		    7625 : ('AskColonialCityEvent', self.rnfEventApply7625, self.rnfEventBegin7625),
-		    7626 : ('OrthodoxyEvent', self.relEventApply7626, self.relEventBegin7626),
-		    7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
+		    #7626 : ('OrthodoxyEvent', self.relEventApply7626, self.relEventBegin7626),
+		    #7627 : ('PersecutionEvent', self.rnfEventApply7627, self.rnfEventBegin7627),
 		    7628 : ('RespawnPopupEvent', self.rnfEventApply7628, self.rnfEventBegin7628),
 		    7629 : ('ByzantineBriberyEvent', self.rnfEventApply7629, self.rnfEventBegin7629),
 		}

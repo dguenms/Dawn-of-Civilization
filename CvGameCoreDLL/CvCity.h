@@ -923,6 +923,12 @@ public:
 	bool isHasReligion(ReligionTypes eIndex) const;
 	void setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);
 
+	void spreadReligion(ReligionTypes eReligion, bool bMissionary = false);
+	void removeReligion(ReligionTypes eReligion);
+	void replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewReligion);
+
+	ReligionTypes disappearingReligion(ReligionTypes eNewReligion = NO_RELIGION) const;
+
 	bool isHasCorporation(CorporationTypes eIndex) const;
 	void setHasCorporation(CorporationTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);
 
@@ -982,6 +988,9 @@ public:
 	int getBuildingHealthChange(BuildingClassTypes eBuildingClass) const;           // Exposed to Python
 	void setBuildingHealthChange(BuildingClassTypes eBuildingClass, int iChange);          // Exposed to Python
 
+	void updateBuildingYieldChange(BuildingClassTypes eBuildingType, YieldTypes eYield, int iChange);
+	void changeReligionYieldChange(ReligionTypes eReligion, YieldTypes eYield, int iChange);
+
 	PlayerTypes getLiberationPlayer(bool bConquest) const;   // Exposed to Python
 	void liberate(bool bConquest);    // Exposed to Python
 
@@ -1023,7 +1032,7 @@ public:
 	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
 	int estimateGrowth(int iTurns) const;
 
-	bool canSpread(ReligionTypes eReligion) const;
+	bool canSpread(ReligionTypes eReligion, bool bMissionary = false) const;
 	int getTurnsToSpread(ReligionTypes eReligion) const;
 
 	bool isHasPrecursor(ReligionTypes eReligion) const;

@@ -619,9 +619,8 @@ class RiseAndFall:
 			# Byzantium
 			tCapital = Areas.getCapital(iByzantium)
 			lBuildings = [iWalls, iCastle, iBarracks, iStable, iGranary, iLibrary, iMarket, \
-				      iOrthodoxTemple, iByzantineHippodrome, iOrthodoxShrine, iTheodosianWalls]
-			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [iCatholicism, iOrthodoxy])
-			gc.getGame().setHolyCity(iOrthodoxy, city, False)
+				      iOrthodoxTemple, iByzantineHippodrome, iHagiaSophia, iTheodosianWalls]
+			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [iJudaism, iCatholicism, iOrthodoxy])
 			
 			# China
 			self.prepareChina()
@@ -3077,12 +3076,7 @@ class RiseAndFall:
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.createSettlers(iCiv, 4)
-			if gc.getGame().isReligionFounded(iOrthodoxy):
-				#utils.createMissionaries(iCiv, iOrthodoxy, 2)
-				utils.createMissionaries(iCiv, iOrthodoxy, 1)
-			else:
-				#utils.createMissionaries(iCiv, iCatholicism, 2)
-				utils.createMissionaries(iCiv, iCatholicism, 1)
+			utils.createMissionaries(iCiv, iOrthodoxy, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iByzantium)
 			if tSeaPlot:
 				utils.makeUnit(iGalley, iByzantium, tSeaPlot, 2)
@@ -3436,7 +3430,7 @@ class RiseAndFall:
 					iWinnerReligion = iLoopReligion   
 
 		if (iWinnerReligion != -1):
-			utils.makeUnit(iProtestantMissionary + iWinnerReligion, iCiv, tPlot, iNumber)
+			utils.makeUnit(iMissionary + iWinnerReligion, iCiv, tPlot, iNumber)
 			
 
 				

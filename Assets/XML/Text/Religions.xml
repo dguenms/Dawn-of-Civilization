@@ -310,4 +310,12 @@
 			<Plural>0</Plural>
 		</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_CANNOT_SPREAD_UNLESS_STATE</Tag>
+		<English>[ICON_BULLET]Missionaries cannot spread in civilizations that have a different state religion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_CANNOT_CONVERT_UNLESS_HOLY_CITY</Tag>
+		<English>[ICON_BULLET]Converting to this religion requires controlling its holy city</English>
+	</TEXT>
 </Civ4GameText>

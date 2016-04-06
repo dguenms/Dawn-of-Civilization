@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Basic Infos -->
+<Civ4VoteSourceInfos xmlns="x-schema:CIV4GameInfoSchema.xml">
+	<VoteSourceInfos>
+		<VoteSourceInfo>
+			<Type>DIPLOVOTE_UN</Type>
+			<Description>TXT_KEY_BUILDING_UNITED_NATIONS</Description>
+			<PopupText>TXT_KEY_POPUP_CHOOSE_ELECTION</PopupText>
+			<SecretaryGeneralText>TXT_KEY_SECRETARY_GENERAL</SecretaryGeneralText>
+			<iVoteInterval>5</iVoteInterval>
+			<FreeSpecialist>NONE</FreeSpecialist>
+			<Civic>NONE</Civic>
+			<ReligionYields/>
+			<ReligionCommerces/>
+		</VoteSourceInfo>
+		<VoteSourceInfo>
+			<Type>DIPLOVOTE_POPE</Type>
+			<Description>TXT_KEY_BUILDING_APOSTOLIC_PALACE</Description>
+			<PopupText>TXT_KEY_POPUP_POPE_ELECTION</PopupText>
+			<SecretaryGeneralText>TXT_KEY_APOSTOLIC_PALACE_RESIDENT</SecretaryGeneralText>
+			<iVoteInterval>9</iVoteInterval>
+			<FreeSpecialist>NONE</FreeSpecialist>
+			<Civic>NONE</Civic>
+			<ReligionYields/>
+			<ReligionCommerces/>
+		</VoteSourceInfo>
+	</VoteSourceInfos>
+</Civ4VoteSourceInfos>

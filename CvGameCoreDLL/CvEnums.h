@@ -1854,9 +1854,10 @@ enum SpecialistTypes			// Exposed to Python
 enum ReligionTypes				// Exposed to Python
 {
 	NO_RELIGION = -1,
-	PROTESTANTISM,
-	CATHOLICISM,
+	JUDAISM,
 	ORTHODOXY,
+	CATHOLICISM,
+	PROTESTANTISM,
 	ISLAM,
 	HINDUISM,
 	BUDDHISM,
