@@ -10267,7 +10267,7 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 				{
 				    // modified by Leoreth to account for Solomon's Temple's effect
 				    int limit;
-				    if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)SOLOMON))
+				    if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)DOME_OF_THE_ROCK))
 				    {
 				        limit = MAX_COM_SHRINE*2;
 				    }
