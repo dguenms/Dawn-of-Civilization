@@ -14746,6 +14746,8 @@ bool CvCity::isHasPrecursor(ReligionTypes eReligion) const
 	if (eReligion == BUDDHISM) return isHasReligion(HINDUISM);
 
 	if (eReligion == ISLAM) return isHasReligion(CATHOLICISM) || isHasReligion(ORTHODOXY);
+
+	if (eReligion == CATHOLICISM || eReligion == ORTHODOXY) return isHasReligion(JUDAISM);
 }
 
 void CvCity::doReligion()
