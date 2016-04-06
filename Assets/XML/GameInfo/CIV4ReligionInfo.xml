@@ -7,14 +7,46 @@
 <Civ4ReligionInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
 	<ReligionInfos>
 		<ReligionInfo>
-			<Type>RELIGION_PROTESTANTISM</Type>
-			<Description>TXT_KEY_RELIGION_PROTESTANTISM</Description>
-			<Adjective>TXT_KEY_RELIGION_PROTESTANTISM_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_RELIGION_PROTESTANTISM_PEDIA</Civilopedia>
+			<Type>RELIGION_JUDAISM</Type>
+			<Description>TXT_KEY_RELIGION_JUDAISM</Description>
+			<Adjective>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_RELIGION_JUDAISM_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
-			<FreeUnitClass>UNITCLASS_PROTESTANT_MISSIONARY</FreeUnitClass>
+			<FreeUnitClass>UNITCLASS_JEWISH_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
-			<iSpreadFactor>100</iSpreadFactor>
+			<iSpreadFactor>50</iSpreadFactor>
+			<bLocal>1</bLocal>
+			<GlobalReligionCommerces>
+				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
+				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
+				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
+			</GlobalReligionCommerces>
+			<HolyCityCommerces>
+				<iHolyCityCommerce>0</iHolyCityCommerce>
+				<iHolyCityCommerce>0</iHolyCityCommerce>
+				<iHolyCityCommerce>3</iHolyCityCommerce>
+			</HolyCityCommerces>
+			<StateReligionCommerces>
+				<iStateReligionCommerce>0</iStateReligionCommerce>
+				<iStateReligionCommerce>0</iStateReligionCommerce>
+				<iStateReligionCommerce>1</iStateReligionCommerce>
+			</StateReligionCommerces>
+			<Button>Art/Interface/Buttons/Religions/Jewish.dds</Button>
+			<TechButton>Art/Interface/Buttons/TechTree/Monotheism.dds</TechButton>
+			<GenericTechButton>,Art/Interface/Buttons/TechTree/Judaism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,4,3</GenericTechButton>
+			<MovieFile>Art/Movies/Religion/Judaism/Jud_Found.nif</MovieFile>
+			<MovieSound>AS2D_BUILD_JEWISH_MOVIE</MovieSound>
+			<Sound>AS2D_BUILD_JEWISH</Sound>
+		</ReligionInfo>
+		<ReligionInfo>
+			<Type>RELIGION_ORTHODOXY</Type>
+			<Description>TXT_KEY_RELIGION_ORTHODOXY</Description>
+			<Adjective>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_RELIGION_ORTHODOXY_PEDIA</Civilopedia>
+			<TechPrereq>TECH_THEOLOGY</TechPrereq>
+			<FreeUnitClass>UNITCLASS_ORTHODOX_MISSIONARY</FreeUnitClass>
+			<iFreeUnits>1</iFreeUnits>
+			<iSpreadFactor>70</iSpreadFactor>
 			<bProselytizing>1</bProselytizing>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
@@ -31,7 +63,7 @@
 				<iStateReligionCommerce>0</iStateReligionCommerce>
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
-			<Button>Art/Interface/Buttons/Religions/Christian.dds</Button>
+			<Button>Art/Interface/Buttons/Religions/Orthodoxy.dds</Button>
 			<TechButton>Art/Interface/Buttons/TechTree/Theology.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Christianity.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,1,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Christianity/Chr_Found.nif</MovieFile>
@@ -43,7 +75,7 @@
 			<Description>TXT_KEY_RELIGION_CATHOLICISM</Description>
 			<Adjective>TXT_KEY_RELIGION_CATHOLICISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_CATHOLICISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_THEOLOGY</TechPrereq>
+			<TechPrereq>NONE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_CATHOLIC_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>100</iSpreadFactor>
@@ -71,14 +103,14 @@
 			<Sound>AS2D_BUILD_CHRISTIAN</Sound>
 		</ReligionInfo>
 		<ReligionInfo>
-			<Type>RELIGION_ORTHODOXY</Type>
-			<Description>TXT_KEY_RELIGION_ORTHODOXY</Description>
-			<Adjective>TXT_KEY_RELIGION_ORTHODOXY_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_RELIGION_ORTHODOXY_PEDIA</Civilopedia>
+			<Type>RELIGION_PROTESTANTISM</Type>
+			<Description>TXT_KEY_RELIGION_PROTESTANTISM</Description>
+			<Adjective>TXT_KEY_RELIGION_PROTESTANTISM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_RELIGION_PROTESTANTISM_PEDIA</Civilopedia>
 			<TechPrereq>NONE</TechPrereq>
-			<FreeUnitClass>UNITCLASS_ORTHODOX_MISSIONARY</FreeUnitClass>
-			<iFreeUnits>1</iFreeUnits>
-			<iSpreadFactor>70</iSpreadFactor>
+			<FreeUnitClass>UNITCLASS_PROTESTANT_MISSIONARY</FreeUnitClass>
+			<iFreeUnits>0</iFreeUnits>
+			<iSpreadFactor>100</iSpreadFactor>
 			<bProselytizing>1</bProselytizing>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
@@ -95,7 +127,7 @@
 				<iStateReligionCommerce>0</iStateReligionCommerce>
 				<iStateReligionCommerce>1</iStateReligionCommerce>
 			</StateReligionCommerces>
-			<Button>Art/Interface/Buttons/Religions/Orthodoxy.dds</Button>
+			<Button>Art/Interface/Buttons/Religions/Christian.dds</Button>
 			<TechButton>Art/Interface/Buttons/TechTree/Theology.dds</TechButton>
 			<GenericTechButton>,Art/Interface/Buttons/TechTree/Christianity.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,1,3</GenericTechButton>
 			<MovieFile>Art/Movies/Religion/Christianity/Chr_Found.nif</MovieFile>
@@ -237,6 +269,7 @@
 			<FreeUnitClass>UNITCLASS_TAOIST_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>70</iSpreadFactor>
+			<bLocal>1</bLocal>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
