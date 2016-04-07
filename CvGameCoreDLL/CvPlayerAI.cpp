@@ -1402,22 +1402,6 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 				iRazeValue -= 30;
 			}
 
-		/*if (getID() == MONGOLIA && iX == 103 && iY == 44)
-		{
-			iRazeValue += 50;
-		}*/
-
-		if (getID() == NATIVE || isBarbarian()) {
-				iRazeValue *= 2;
-				iRazeValue += 30;
-			}
-		else {
-				iRazeValue *= 3;
-				iRazeValue /= 2;
-			}
-
-		//Rhye - end
-
 		if (iRazeValue > 0)
 		{
 			for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
