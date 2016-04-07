@@ -1669,11 +1669,12 @@ class RFCUtils:
 		else:
 			if not bCapital: self.makeUnit(iSettler, iPlayer, (x, y), 1)
 			
-	def createMissionaries(self, iPlayer, iReligion, iNumUnits):
+	def createMissionaries(self, iPlayer, iNumUnits, iReligion=None):
+		if iReligion == None:
+			iReligion = gc.getPlayer(iPlayer).getStateReligion()
+			if iReligion < 0: return
+			
 		if not gc.getGame().isReligionFounded(iReligion): return
-
-		# Leoreth: temporarily try less missionaries
-		iNumUnits = 1
 		
 		self.makeUnit(con.iMissionary + iReligion, iPlayer, Areas.getCapital(iPlayer), iNumUnits)
 			
