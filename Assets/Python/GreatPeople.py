@@ -749,7 +749,7 @@ iCivEthiopia : {
 		"Tewodros", # 19th 
 		"Menelik", # 19th 
 		iModern,
-		u"Mengistu Haile Mariam", # 20th 
+		"Mengistu Haile Mariam", # 20th 
 	],
 	iGreatGeneral : [
 		"fGudit", # 10th 
@@ -2046,7 +2046,7 @@ iCivNetherlands : {
 		"Jan van Riebeeck", # 17th 
 		"Jan Coen", # 17th 
 		iIndustrial,
-		"Brenninkmeijer", # 19th 
+		"Brenninkmeijer Brothers", # 19th 
 		"August Kessler", # 19th 
 		iModern,
 		"Freddy Heineken", # 20th 
