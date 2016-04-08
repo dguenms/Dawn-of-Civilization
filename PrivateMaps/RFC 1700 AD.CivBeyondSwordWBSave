@@ -224,7 +224,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_WANGKON
+	LeaderType=LEADER_SEJONG
 	CivType=CIVILIZATION_KOREA
 	Team=12
 	PlayableCiv=1
@@ -586,7 +586,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_TRUDEAU
+	LeaderType=LEADER_MACDONALD
 	CivType=CIVILIZATION_CANADA
 	Team=43
 	PlayableCiv=1
