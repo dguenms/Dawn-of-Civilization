@@ -5213,7 +5213,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 	{
 // BUG - Goody Hut Log - start
 		// keep messages in event log forever
-		gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getGoodyInfo(eGoody).getSound(), MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getImprovementArtInfo("ART_DEF_IMPROVEMENT_GOODY_HUT")->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+		gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, GC.getGoodyInfo(eGoody).getSound(), MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getImprovementArtInfo("ART_DEF_IMPROVEMENT_TRIBAL_VILLAGE")->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
 // BUG - Goody Hut Log - end
 	}
 
@@ -5979,7 +5979,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	//Rhye - start
 	if (getScenario() >= SCENARIO_600AD) //late start condition
 	{
-		if ((eBuilding >= SPHYNX && eBuilding <= MAUSOLLOS))
+		if ((eBuilding >= GREAT_SPHINX && eBuilding <= MAUSOLEUM_OF_MAUSSOLLOS))
 		{
 			return false;
 		}
@@ -6161,7 +6161,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 				}
 			}
 		}
-		else if (eBuilding == SANKORE)
+		else if (eBuilding == UNIVERSITY_OF_SANKORE)
 		{
 			if (GET_PLAYER((PlayerTypes)MALI).isHuman())
 			{
@@ -7800,7 +7800,7 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 			return true;
 
 	// Phoenician UP: starts with Mercenaries
-	if (getID() == CARTHAGE)
+	if (getID() == PHOENICIA)
 		if (eCivic == CIVIC_MERCENARIES)
 			return true;
 
@@ -13238,7 +13238,7 @@ int CvPlayer::getCivicUpkeep(CivicTypes* paeCivics, bool bIgnoreAnarchy) const
 	}
 
 	// Leoreth: Forbidden Palace effect
-	if (getBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)FORBIDDENPALACE).getBuildingClassType()) > 0)
+	if (getBuildingClassCount((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)FORBIDDEN_PALACE).getBuildingClassType()) > 0)
 	{
 		iTotalUpkeep *= 2;
 		iTotalUpkeep /= 3;
@@ -24196,7 +24196,7 @@ void CvPlayer::setLatestRebellionTurn(int iNewValue)
 
 	int cityThreshold = 6;
 
-	if (getID() == CARTHAGE) {
+	if (getID() == PHOENICIA) {
 	    cityThreshold = 2;
 	}else if (getID() == KOREA) {
 	    cityThreshold = 3;

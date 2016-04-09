@@ -752,7 +752,7 @@ void CvGame::initDiplomacy()
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)INDIA), false, NO_WARPLAN);
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)BABYLONIA), false, NO_WARPLAN);
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)PERSIA), false, NO_WARPLAN);
-				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)CARTHAGE), false, NO_WARPLAN);
+				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)PHOENICIA), false, NO_WARPLAN);
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ETHIOPIA), false, NO_WARPLAN);
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)ARABIA), false, NO_WARPLAN);
 				GET_TEAM((TeamTypes)iI).declareWar(((TeamTypes)MONGOLIA), false, NO_WARPLAN);

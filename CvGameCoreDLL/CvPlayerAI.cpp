@@ -5098,7 +5098,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == ENGINEERING || iI == THEOLOGY || iI == CIVIL_SERVICE)
 										iValue /= 2;
 									break;
-								case CARTHAGE:
+								case PHOENICIA:
 									if (iI == COMPASS)
 										iValue *= 2;
 									if (iI == MONOTHEISM)
@@ -11077,7 +11077,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iValue -= 40;
 		}
 
-		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
+		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
 		{
 			iValue += 40;
 		}
@@ -11121,7 +11121,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iValue -= 40;
 		}
 
-		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
+		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
 		{
 			iValue += 80;
 		}
@@ -11593,7 +11593,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	// Leoreth - prefer Pantheon if more than half of their cities has no religion
 	if (eCivic == CIVIC_PANTHEON)  // Pantheon
 	{
-        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME)
+        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == PHOENICIA || getID() == ROME)
 		{
             int iCityCounter = 0;
             for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++)
@@ -11699,7 +11699,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 
 			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
 			{
-				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == CARTHAGE || getID() == PERSIA)
+				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA)
 				{
 					iValue /= 2;
 				}
