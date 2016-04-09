@@ -642,7 +642,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_CHANGED_FIRST_CONTACT_LEADER_RAGNAR_LODBROK_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_RAGNAR_LODBROK_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -656,7 +656,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_CHANGED_FIRST_CONTACT_LEADER_RAMESSES_II_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_RAMESSES_II_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -5180,7 +5180,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_CHANGED_GREETINGS_ATT_FUR_LEADER_NATIVE_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_NATIVE_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -7998,7 +7998,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_CHANGED_DEMAND_TRIBUTE_POWER_EQUAL_MEHMED_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_MEHMED_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>

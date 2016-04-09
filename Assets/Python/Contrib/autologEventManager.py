@@ -900,7 +900,7 @@ class AutoLogEvent(AbstractAutoLogEvent):
 		'Improvement Built'
 		iImprovement, iX, iY = argsList
 
-		if iImprovement in (-1, gc.getInfoTypeForString("IMPROVEMENT_GOODY_HUT"), gc.getInfoTypeForString("IMPROVEMENT_CITY_RUINS")):  
+		if iImprovement in (-1, gc.getInfoTypeForString("IMPROVEMENT_TRIBAL_VILLAGE"), gc.getInfoTypeForString("IMPROVEMENT_CITY_RUINS")):  
 			return
 
 		pPlot = CyMap().plot(iX,iY)
@@ -923,7 +923,7 @@ class AutoLogEvent(AbstractAutoLogEvent):
 		'Improvement Destroyed'
 		iImprovement, iOwner, iX, iY = argsList
 
-		if iImprovement in (-1, gc.getInfoTypeForString("IMPROVEMENT_GOODY_HUT"), gc.getInfoTypeForString("IMPROVEMENT_CITY_RUINS")):  
+		if iImprovement in (-1, gc.getInfoTypeForString("IMPROVEMENT_TRIBAL_VILLAGE"), gc.getInfoTypeForString("IMPROVEMENT_CITY_RUINS")):  
 			return
 
 		pPlot = CyMap().plot(iX,iY)
