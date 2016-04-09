@@ -158,7 +158,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HANNIBAL
-	CivType=CIVILIZATION_CARTHAGE                 
+	CivType=CIVILIZATION_PHOENICIA                 
 	Team=6                 
 	PlayableCiv=0                 
 	Handicap=HANDICAP_REGENT                 
@@ -492,7 +492,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MBEMBA
-	CivType=CIVILIZATION_KONGO
+	CivType=CIVILIZATION_CONGO
 	Team=37
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -733,7 +733,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=17
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1110,7 +1110,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=23
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1808,7 +1808,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=23
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -8334,7 +8334,7 @@ EndPlot
 BeginPlot
 	x=21,y=16
 	BonusType=BONUS_STONE
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	ImprovementType=IMPROVEMENT_TRIBAL_VILLAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -10289,7 +10289,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	BonusType=BONUS_GOLD
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	ImprovementType=IMPROVEMENT_TRIBAL_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -10933,7 +10933,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=11
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12426,7 +12426,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=2
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14283,25 +14283,25 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=56
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=57
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=58
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=36,y=59
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -17742,7 +17742,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=37
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -18089,7 +18089,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=37
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -18427,13 +18427,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=35
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=48,y=36
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -20598,7 +20598,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=25
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -23640,7 +23640,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=9
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -24047,7 +24047,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=9
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -44669,13 +44669,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=27
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=115,y=28
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -45749,13 +45749,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=23
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=24
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -47130,7 +47130,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=17
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -47172,7 +47172,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=25
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -47482,7 +47482,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=17
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

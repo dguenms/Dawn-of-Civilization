@@ -45,20 +45,20 @@
 	<ElementType name="BuildInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
-		<element type="Help"/>
-		<element type="PrereqTech"/>
-		<element type="iTime"/>
-		<element type="iCost"/>
-		<element type="bKill"/>
-		<element type="ImprovementType"/>
-		<element type="RouteType"/>
-		<element type="EntityEvent"/>
-		<element type="FeatureStructs"/>
-		<element type="HotKey"/>
-		<element type="bAltDown"/>
-		<element type="bShiftDown"/>
-		<element type="bCtrlDown"/>
-		<element type="iHotKeyPriority"/>
+		<element type="Help" minOccurs="0"/>
+		<element type="PrereqTech" minOccurs="0"/>
+		<element type="iTime" minOccurs="0"/>
+		<element type="iCost" minOccurs="0"/>
+		<element type="bKill" minOccurs="0"/>
+		<element type="ImprovementType" minOccurs="0"/>
+		<element type="RouteType" minOccurs="0"/>
+		<element type="EntityEvent" minOccurs="0"/>
+		<element type="FeatureStructs" minOccurs="0"/>
+		<element type="HotKey" minOccurs="0"/>
+		<element type="bAltDown" minOccurs="0"/>
+		<element type="bShiftDown" minOccurs="0"/>
+		<element type="bCtrlDown" minOccurs="0"/>
+		<element type="iHotKeyPriority" minOccurs="0"/>
 		<element type="Button" maxOccurs="*"/>
 		<element type="iOrderPriority" minOccurs="0"/>
 		<element type="bGraphicalOnly" minOccurs="0"/>
@@ -85,7 +85,7 @@
 		<element type="iMaxGlobalInstances"/>
 		<element type="iMaxTeamInstances"/>
 		<element type="iMaxPlayerInstances"/>
-		<element type="iInstanceCostModifier"/>
+		<element type="iInstanceCostModifier" minOccurs="0"/>
 		<element type="DefaultUnit"/>
 	</ElementType>
 	<ElementType name="UnitClassInfos" content="eltOnly">
@@ -689,13 +689,13 @@
 	<ElementType name="MissionInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
-		<element type="Help"/>
-		<element type="Waypoint"/>
+		<element type="Help" minOccurs="0"/>
+		<element type="Waypoint" minOccurs="0"/>
 		<element type="EntityEventType" minOccurs="0"/>
-		<element type="iTime"/>
-		<element type="bTarget"/>
-		<element type="bBuild"/>
-		<element type="bSound"/>
+		<element type="iTime" minOccurs="0"/>
+		<element type="bTarget" minOccurs="0"/>
+		<element type="bBuild" minOccurs="0"/>
+		<element type="bSound" minOccurs="0"/>
 		<element type="HotKey" minOccurs="0"/>
 		<element type="bAltDown" minOccurs="0"/>
 		<element type="bShiftDown" minOccurs="0"/>
@@ -717,7 +717,7 @@
 	<ElementType name="ControlInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
-		<element type="Help"/>
+		<element type="Help" minOccurs="0"/>
 		<element type="HotKey" minOccurs="0"/>
 		<element type="bAltDown" minOccurs="0"/>
 		<element type="bShiftDown" minOccurs="0"/>
