@@ -417,12 +417,12 @@
 		<Spanish>Todas las unidades terrestres se pueden mover a trav&#233;s de las junglas</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_KON_TITLE</Tag>
+		<Tag>TXT_KEY_UP_CON_TITLE</Tag>
 		<English>The Power of the Tropics:</English>
 		<German>Die Macht der Tropen:</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_KON</Tag>
+		<Tag>TXT_KEY_UP_CON</Tag>
 		<English>Jungles, rainforests and marshes yield extra food and production and cause no unhealthiness</English>
 		<German>Dschungel, Regenw&#228;lder und Marschen geben zus&#228;tzliche Nahrung und Produktion und verursachen keine Krankheit</German>
 	</TEXT>
