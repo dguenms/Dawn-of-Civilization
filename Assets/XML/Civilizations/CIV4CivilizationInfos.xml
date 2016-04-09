@@ -119,7 +119,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ARABIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>ARA</Identifier>
 			<StartingYear>620</StartingYear>
 			<LoadingTimes>
@@ -307,7 +307,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_AZTEC</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
 			<Identifier>AZT</Identifier>
 			<StartingYear>1200</StartingYear>
 			<LoadingTimes>
@@ -415,11 +415,11 @@
 			<Description>TXT_KEY_CIV_BABYLONIA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_BABYLONIA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_BABYLONIA_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_CIV_BABYLON_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_CIV_BABYLONIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BABYLON</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>BAB</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -816,13 +816,13 @@
 			<CivilizationActionSound>AS3D_ENGLAND_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
-			<Type>CIVILIZATION_CARTHAGE</Type>
-			<Description>TXT_KEY_CIV_CARTHAGE_DESC</Description>
+			<Type>CIVILIZATION_PHOENICIA</Type>
+			<Description>TXT_KEY_CIV_PHOENICIA_DESC</Description>
 			<ShortDescription>TXT_KEY_CIV_PHOENICIA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_PHOENICIA_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_CIV_CARTHAGE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_CIV_PHOENICIA_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_INDIGO</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_CARTHAGE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_PHOENICIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
 			<Identifier>CAR</Identifier>
@@ -927,7 +927,7 @@
 			<Adjective>TXT_KEY_CIV_CELT_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_CELT_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_GRAY_GREEN</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_CELTS</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_CELT</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
 			<Identifier>CEL</Identifier>
@@ -1351,7 +1351,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_YELLOW</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_EGYPT</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>EGY</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -1591,7 +1591,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIME</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ETHIOPIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>ETH</Identifier>
 			<StartingYear>-295</StartingYear>
 			<LoadingTimes>
@@ -2060,7 +2060,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_PURPLE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HARAPPANS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>HAR</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -2275,7 +2275,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_CYAN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INCA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
 			<Identifier>INC</Identifier>
 			<StartingYear>1150</StartingYear>
 			<LoadingTimes>
@@ -2377,7 +2377,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_PALE_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INDIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>IND</Identifier>
 			<StartingYear>-1500</StartingYear>
 			<LoadingTimes>
@@ -2603,7 +2603,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_IRAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>IRA</Identifier>
 			<StartingYear>1501</StartingYear>
 			<LoadingTimes>
@@ -2713,8 +2713,8 @@
 			<Civilopedia>TXT_KEY_CIV_ITALY_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_ITALY</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ITALY</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
 			<Identifier>ITA</Identifier>
 			<StartingYear>1167</StartingYear>
 			<LoadingTimes>
@@ -3017,15 +3017,15 @@
 			<CivilizationActionSound>AS3D_KHMER_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
-			<Type>CIVILIZATION_KONGO</Type>
-			<Description>TXT_KEY_CIV_KONGO_DESC</Description>
-			<ShortDescription>TXT_KEY_CIV_KONGO_SHORT_DESC</ShortDescription>
-			<Adjective>TXT_KEY_CIV_KONGO_ADJECTIVE</Adjective>
-			<Civilopedia>TXT_KEY_CIV_KONGO_PEDIA</Civilopedia>
+			<Type>CIVILIZATION_CONGO</Type>
+			<Description>TXT_KEY_CIV_CONGO_DESC</Description>
+			<ShortDescription>TXT_KEY_CIV_CONGO_SHORT_DESC</ShortDescription>
+			<Adjective>TXT_KEY_CIV_CONGO_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_CIV_CONGO_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_KHAKI</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_KONGO</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_CONGO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>KON</Identifier>
 			<StartingYear>1390</StartingYear>
 			<LoadingTimes>
@@ -3230,7 +3230,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_PEACH</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MALI</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>MAL</Identifier>
 			<StartingYear>980</StartingYear>
 			<LoadingTimes>
@@ -3345,7 +3345,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_GREYISH_CYAN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MAYA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
 			<Identifier>MAY</Identifier>
 			<StartingYear>65</StartingYear>
 			<LoadingTimes>
@@ -3457,8 +3457,8 @@
 			<Civilopedia>TXT_KEY_CIV_MEXICO_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MEXICO</ArtDefineTag>
-			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICA</UnitArtStyleType>
+			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
 			<Identifier>MEX</Identifier>
 			<StartingYear>1810</StartingYear>
 			<LoadingTimes>
@@ -3652,7 +3652,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BROWN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MOORS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>MOO</Identifier>
 			<StartingYear>711</StartingYear>
 			<LoadingTimes>
@@ -3774,7 +3774,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_ROT_GREEN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MUGHALS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>MUG</Identifier>
 			<StartingYear>1206</StartingYear>
 			<LoadingTimes>
@@ -3888,7 +3888,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BROWN</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NATIVE_AMERICA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICA</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
 			<Identifier>NAT</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
@@ -4114,9 +4114,9 @@
 			<Adjective>TXT_KEY_CIV_OTTOMAN_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_OTTOMAN_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_ORANGE</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_OTTOMANS</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_OTTOMAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>TUR</Identifier>
 			<StartingYear>1280</StartingYear>
 			<LoadingTimes>
@@ -4221,7 +4221,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_ORANGE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PERSIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>PER</Identifier>
 			<StartingYear>-850</StartingYear>
 			<LoadingTimes>
@@ -4461,7 +4461,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_POLYNESIA</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_POLYNESIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_BARBARIAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
 			<Identifier>PLY</Identifier>
 			<StartingYear>-1000</StartingYear>
 			<LoadingTimes>
@@ -4915,7 +4915,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_SELJUK</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SELJUK</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>SEL</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
@@ -5225,7 +5225,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_DARK_INDIGO</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SUMERIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>SUM</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
@@ -5329,7 +5329,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_BLUE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TAMILS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>TAM</Identifier>
 			<StartingYear>-300</StartingYear>
 			<LoadingTimes>
@@ -5677,7 +5677,7 @@
 			<Adjective>TXT_KEY_CIV_VIKING_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_VIKING_PEDIA</Civilopedia>
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_PURPLE</DefaultPlayerColor>
-			<ArtDefineTag>ART_DEF_CIVILIZATION_VIKINGS</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_CIVILIZATION_VIKING</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
 			<Identifier>VIK</Identifier>
@@ -5778,7 +5778,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_LIGHT_YELLOW</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ZULU</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
-			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EAST</UnitArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
 			<Identifier>ZUL</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
@@ -5868,7 +5868,7 @@
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>
-			<DerivativeCiv>CIVILIZATION_KONGO</DerivativeCiv>
+			<DerivativeCiv>CIVILIZATION_CONGO</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_ZULU_SELECT</CivilizationSelectionSound>
 			<CivilizationActionSound>AS3D_ZULU_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
