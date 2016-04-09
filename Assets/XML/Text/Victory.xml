@@ -1151,42 +1151,42 @@
 		<German>Haben Sie bis zum Jahr 1450 n. Chr. 24000 Kulturpunkte</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON1_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_CON1_TITLE</Tag>
 		<English>Catholic Congo</English>
 		<German>Katholisches Kongo</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON1</Tag>
+		<Tag>TXT_KEY_UHV_CON1</Tag>
 		<English>Acquire 15% of the votes in the Apostolic Palace by 1650 AD</English>
 		<German>Erreichen sie bis zum Jahr 1650 n. Chr. 15% der Stimmen im Apostolischen Palast</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON2_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_CON2_TITLE</Tag>
 		<English>The Middle Passage</English>
 		<German>Die Mittlere Passage</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON2</Tag>
+		<Tag>TXT_KEY_UHV_CON2</Tag>
 		<English>Gain 1000 gold through slave trade by 1800 AD</English>
 		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 1500 Gold durch Sklavenhandel</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON2_EPIC</Tag>
+		<Tag>TXT_KEY_UHV_CON2_EPIC</Tag>
 		<English>Gain 1500 gold through slave trade by 1800 AD</English>
 		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 2750 Gold durch Sklavenhandel</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON2_MARATHON</Tag>
+		<Tag>TXT_KEY_UHV_CON2_MARATHON</Tag>
 		<English>Gain 3000 gold through slave trade by 1800 AD</English>
 		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 4500 Gold durch Sklavenhandel</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON3_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_CON3_TITLE</Tag>
 		<English>Industrial Africa</English>
 		<German>Industrielles Afrika</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_KON3</Tag>
+		<Tag>TXT_KEY_UHV_CON3</Tag>
 		<English>Enter the Industrial Era before anyone enters the Modern Era</English>
 		<German>Erreichen sie das Industriezeitalter, bevor irgendjemand die Moderne erreicht</German>
 	</TEXT>
