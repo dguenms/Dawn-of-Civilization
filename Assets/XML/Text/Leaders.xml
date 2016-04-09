@@ -532,15 +532,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_GERHARDSEN</Tag>
-		<English>Einar Gerhardsen</English>
+		<English>Gerhardsen</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_IVAN_IV</Tag>
-		<English>Ivan IV.</English>
+		<English>Ivan IV</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MACDONALD</Tag>
-		<English>John A. MacDonald</English>
+		<English>MacDonald</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_MUSSOLINI</Tag>
@@ -552,14 +552,14 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_PILSUDSKI</Tag>
-		<English>Józef Pilsudski</English>
+		<English>Pilsudski</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_GETULIO</Tag>
-		<English>Getúlio Vargas</English>
+		<English>Vargas</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LEADER_WALESA</Tag>
-		<English>Lech Walesa</English>
+		<English>Walesa</English>
 	</TEXT>
 </Civ4GameText>
