@@ -278,6 +278,10 @@ public:
 	bool canPersecute(const CvPlot* pPlot) const;
 	bool persecute(ReligionTypes eReligion);
 
+	bool canGreatMission(const CvPlot* pPlot) const;
+	bool greatMission();
+	std::vector<CvCity*> getGreatMissionCities(const CvPlot* pPlot) const;
+
 	int upgradePrice(UnitTypes eUnit) const;																											// Exposed to Python
 	bool upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, int iCount = 0) const;					// Exposed to Python
 	bool canUpgrade(UnitTypes eUnit, bool bTestVisible = false) const;														// Exposed to Python
@@ -811,6 +815,8 @@ public:
 	virtual UnitAITypes AI_getUnitAIType() const = 0;																				// Exposed to Python
 	virtual void AI_setUnitAIType(UnitAITypes eNewValue) = 0;
     virtual int AI_sacrificeValue(const CvPlot* pPlot) const = 0;
+	virtual std::pair<CvPlot*, CvPlot*> AI_spreadTarget(ReligionTypes eReligion, bool bGreatMission = false) = 0;
+	virtual CvCity* AI_persecutionTarget() = 0;
 
 	// Leoreth: avoid eternal loop bug
 	int m_iStuckLoopCount;

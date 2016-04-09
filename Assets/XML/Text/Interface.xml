@@ -1480,4 +1480,9 @@
 		<Tag>TXT_KEY_BUILDING_RELIGION_BUILDINGS</Tag>
 		<English>All %F1_RelIcon Buildings</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_RELIGION_DISAPPEARANCE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] has disappeared from %s2_CityName.</English>
+		<German>Die Religion [COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] ist aus %s2_CityName verschwunden.</German>
+	</TEXT>
 </Civ4GameText>

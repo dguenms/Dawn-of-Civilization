@@ -50,6 +50,11 @@
 		<German>Dies wird die Gro&#223;e Pers&#246;nlichkeit veranlassen, the Anarchie in Eurer Zivilisation sowie den Aufruhr in all Euren St&#228;dten zu beenden. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ACTION_GREAT_MISSION</Tag>
+		<English>The Great Person will spread your state religion in several surrounding cities, potentially causing other religions to leave. It consumes the Great Person.</English>
+		<German>Die Gro&#223;e Pers&#246;nlichkeit wird Eure Staatsreligion in mehreren Städten in der Umgebung verbreiten und dabei möglicherweise andere Religionen entfernen. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISSION_DIPLOMATIC_MISSION</Tag>
 		<English>Diplomatic Mission</English>
 		<German>Diplomatische Mission</German>
@@ -67,6 +72,11 @@
 		<Tag>TXT_KEY_MISSION_RESOLVE_CRISIS</Tag>
 		<English>Resolve Crisis</English>
 		<German>Krise &#220;berwinden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_GREAT_MISSION</Tag>
+		<English>Great Mission</English>
+		<German>Große Mission</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_START_GOLDENAGE_HELP</Tag>
