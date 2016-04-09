@@ -4,6 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKING_DESC</Tag>
 		<English>The Vikings</English>
+		<French>
+			<Text>Les Vikings</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Wikinger:Die Wikinger:den Wikingern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Vichinghi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Vikingos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_DESC</Tag>
@@ -24,18 +44,98 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_PEOPLES</Tag>
 		<English>Norse Peoples</English>
+		<French>
+			<Text>Peuplades Nordiques</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Nordische V&#246;lker:Nordischen V&#246;lker:Nordischen V&#246;lkern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Nordici</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos N&#243;rdises</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_COMMUNIST</Tag>
 		<English>Democratic Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique D&#233;mocratique de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Demokratische Republik %s1:Demokratische Republik %s1:Demokratische Republik %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica Democratica della %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica Democratica de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_FASCIST</Tag>
 		<English>National Gathering of %s1</English>
+		<French>
+			<Text>Rassemblement National de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationalversammlung %s1:Nationalversammlung %s1:Nationalversammlung %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Riunione Nazionale della %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reuni&#243;n Nacional de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS</Tag>
@@ -68,6 +168,25 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SCANDINAVIA</Tag>
 		<English>Scandinavia</English>
+		<French>
+			<Text>Scandinavie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Skandinavien:Skandinavien:Skandinavien</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Scandinavia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Escandinavia</Text>
+			<Gender>Female</Gender>
+			<Plural>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SCANDINAVIAN</Tag>

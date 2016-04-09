@@ -2825,38 +2825,6 @@
 		<Spanish>Mira si el cient&#237;fico desea continuar investigando en el monasterio, d&#225;ndole alguna financiaci&#243;n adicional.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_RABBI</Tag>
-		<English>A Rabbi from %s2_city has written a collection of religious works that is of great importance to Judaism worldwide.</English>
-		<French>Un rabbin de %s2_city a termine la redaction de son oeuvre, d'importance majeure pour le judaisme.</French>
-		<German>Ein Rabbi aus der Stadt %s2_city hat eine wertvolle Sammlung religi&#246;ser Schriften verfasst, die von weltweiter Bedeutung f&#252;r das Judentum ist.</German>
-		<Italian>Un rabbino di %s2_city ha scritto una preziosa raccolta di opere religiose di grande importanza per il Giudaismo nel mondo.</Italian>
-		<Spanish>Un rabino de %s2_city ha escrito una colecci&#243;n de obras religiosas de gran valor para el judaismo mundial.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_RABBI_1</Tag>
-		<English>These works should be distributed to cities in our empire and abroad.</English>
-		<French>Cette oeuvre doit etre diffusee dans nos villes et a l'etranger!</French>
-		<German>Lasst die Werke in allen St&#228;dten des Reiches und im Ausland verbreiten.</German>
-		<Italian>Queste opere devono essere diffuse all'interno delle nostre citt&#224; e all'estero</Italian>
-		<Spanish>Estos trabajos deben ser distribuido en las ciudades de nuestro imperio y en el extrangero</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_RABBI_2</Tag>
-		<English>The Rabbi certainly deserves state funding for his endeavours.</English>
-		<French>Le rabbin merite certainement une pension d'Etat pour ce qu'il a entrepris.</French>
-		<German>Sorgt daf&#252;r, dass der Rabbi mit staatlicher F&#246;rderung an weiteren Werken arbeiten kann.</German>
-		<Italian>Il rabbino merita sicuramente un finanziamento statale per i suoi sforzi</Italian>
-		<Spanish>El rabino merece financiaci&#243;n estatal por sus esfuerzos.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENT_RABBI_3</Tag>
-		<English>Works like these can easily make the Temple of Solomon an even bigger site of interest to tourists worldwide.</English>
-		<French>De tels ouvrages peuvent surement faire du monastere local une attraction touristique majeure!</French>
-		<German>Sorgt daf&#252;r, dass das &#246;rtliche Kloster zu einem lohnenden Ziel f&#252;r Pilger und Touristen aus aller Welt wird.</German>
-		<Italian>Opere come queste possono facilmente rendere il monastero locale un'attrazione turistica a livello mondiale</Italian>
-		<Spanish>Trabajos como estos pueden hacer del monasterio local un lugar de interes tur&#237;stico mundial.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENT_REFORMATION_1</Tag>
 		<English>Embrace the Reformation.</English>
 		<German>Nehmt die Reformation an.</German>
@@ -6393,14 +6361,6 @@
 		<German>Ein renommierter Wissenschaftler der Stadt %s2_city predigt im &#246;rtlichen Christlichen Kloster.</German>
 		<Italian>Un rinomato scienziato di %s2_city &#232; diventato un predicatore presso il locale Monastero Cristiano.</Italian>
 		<Spanish>Un reputado cient&#237;fico de %s2_city se ha convertido en predicador en el monasterio cristiano local.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EVENTTRIGGER_RABBI</Tag>
-		<English>A Rabbi from %s2_city has written a valuable collection of religious works.</English>
-		<French>Un rabbin de la ville de %s2_city a termine la redaction de son oeuvre religieuse.</French>
-		<German>Ein Rabbi aus der Stadt %s2_city hat eine wertvolle Sammlung religi&#246;ser Schriften verfasst.</German>
-		<Italian>Un rabbino di %s2_city ha scritto una preziosa raccolta di opere religiose</Italian>
-		<Spanish>Un rabino de %s2_city ha escrito una valiosa colecci&#243;n de obras religiosas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_REFORMATION</Tag>

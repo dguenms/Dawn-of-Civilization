@@ -2700,3 +2700,13 @@ void CyCity::updateGreatWall()
 {
 	if (m_pCity) m_pCity->updateGreatWall();
 }
+
+void CyCity::replaceReligion(int eOldReligion, int eNewReligion)
+{
+	if (m_pCity) m_pCity->replaceReligion((ReligionTypes)eOldReligion, (ReligionTypes)eNewReligion);
+}
+
+void CyCity::removeReligion(int eReligion)
+{
+	if (m_pCity) m_pCity->removeReligion((ReligionTypes)eReligion);
+}

@@ -5577,7 +5577,7 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
-	if (pCity->isHasReligion(eReligion))
+	if (!pCity->canSpread(eReligion, true))
 	{
 		return false;
 	}
@@ -5644,7 +5644,7 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 	if (pCity != NULL)
 	{
-		iSpreadProb = m_pUnitInfo->getReligionSpreads(eReligion);
+		/*iSpreadProb = m_pUnitInfo->getReligionSpreads(eReligion);
 
 		if (pCity->getTeam() != getTeam())
 		{
@@ -5657,13 +5657,22 @@ bool CvUnit::spread(ReligionTypes eReligion)
 		if (getOwnerINLINE() == TIBET)
 		{
 			iSpreadProb += (100 - iSpreadProb)/2;
+		}*/
+
+		iSpreadProb = std::max(1, (pCity->getTurnsToSpread(eReligion) - 50) / 50 + (pCity->getTeam() != getTeam()) ? 1 : 0);
+
+		if (getOwnerINLINE() == TIBET)
+		{
+			iSpreadProb = std::max(1, iSpreadProb - 1);
 		}
 
 		bool bSuccess;
 
-		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < iSpreadProb)
+		if (GC.getGameINLINE().getSorenRandNum(iSpreadProb, "Unit Spread Religion") == 0)
 		{
-			pCity->setHasReligion(eReligion, true, true, false);
+			log(CvWString::format(L"Missionary spread %s to %s", GC.getReligionInfo(eReligion).getText(), pCity->getName().GetCString()));
+
+			pCity->spreadReligion(eReligion, true);
 			bSuccess = true;
 		}
 		else
@@ -6270,7 +6279,7 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture = m_pUnitInfo->getGreatWorkCulture();
 
 	// Leoreth: new Sphinx effect: great priests can create great works
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)SPHYNX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"))
 	{
 		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_ARTIST"))).getGreatWorkCulture();
 	}

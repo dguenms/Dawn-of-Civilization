@@ -168,7 +168,7 @@
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_CATHOLIC</Type>
-			<Path>Art/Movies/Religion/Christianity/Shrine_Chr_dwg_512.dds</Path>
+			<Path>Art/Movies/Wonders/Apostolic Palace.bik</Path>
 		</MovieArtInfo>	
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_ISLAMIC</Type>
@@ -189,11 +189,6 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_TAOIST</Type>
 			<Path>Art/Movies/Shrines/DaiMiao.bik</Path>
-			<KFM>None</KFM>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_APOSTOLIC_PALACE</Type>
-			<Path>Art/Movies/Wonders/Apostolic Palace.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_MAUSOLEUM_OF_MAUSSOLLOS</Type>
@@ -386,6 +381,10 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_MILITARY_ACADEMY</Type>
 			<Path>Art/Movies/Wonders/MiliaryAcademy.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HAGIA_SOPHIA</Type>
+			<Path>Art/Movies/Wonders/HagiaSophia.bik</Path>
 		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

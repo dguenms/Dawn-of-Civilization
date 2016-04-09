@@ -4,10 +4,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_DESC</Tag>
 		<English>The Romans</English>
+		<French>
+			<Text>Les Romains</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>R&#246;mer:Die R&#246;mer:den R&#246;mern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Romani</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Romanos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_PEOPLES</Tag>
 		<English>Italic Peoples</English>
+		<French>
+			<Text>Peuplades Italiques</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Italische V&#246;lker:Italischen V&#246;lker:Italischen V&#246;lkern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Italici</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos It&#225;licos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_DEFAULT</Tag>
@@ -16,6 +56,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_FASCIST</Tag>
 		<English>New Roman Empire</English>
+		<French>
+			<Text>Nouvel Empire Romain</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Neues R&#246;misches Reich:Neue R&#246;mische Reich:Neuen R&#246;mischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Nuovo Impero Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Nuevo Imperio Romano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_WESTERN</Tag>
@@ -24,18 +84,98 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_VASSAL</Tag>
 		<English>Province of %s1</English>
+		<French>
+			<Text>Province des %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Provinz %s1:Provinz %s1:Provinz %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Provincia di %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Provincia de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_EGYPT</Tag>
 		<English>Aegyptus</English>
+		<French>
+			<Text>Aegyptus</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Aegyptus:Aegyptus:Aegyptus</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Aegyptus</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Aegyptus</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_CHINA</Tag>
 		<English>Sinae</English>
+		<French>
+			<Text>Sinae</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sinae:Sinae:Sinae</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sinae</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sinae</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_BABYLONIA</Tag>
 		<English>Mesopotamia</English>
+		<French>
+			<Text>M&#233;sopotamie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Mesopotamia:Mesopotamia:Mesopotamia</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Mesopotamia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mesopotamia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_GREECE</Tag>
@@ -44,6 +184,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_PERSIA</Tag>
 		<English>Parthia</English>
+		<French>
+			<Text>Parthia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Parthia:Parthia:Parthia</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Partia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Parthia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_PHOENICIA</Tag>
@@ -52,10 +212,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_CARTHAGE</Tag>
 		<English>Africa</English>
+		<French>
+			<Text>Afrique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Africa:Africa:Africa</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Africa</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>&#193;frica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_ETHIOPIA</Tag>
 		<English>Aethiopia</English>
+		<French>
+			<Text>Aethiopia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Aethiopia:Aethiopia:Aethiopia</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Aethiopia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Aethiopia</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_BYZANTIUM</Tag>
@@ -64,14 +264,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_VIKINGS</Tag>
 		<English>Scandia</English>
+		<French>
+			<Text>Scandie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Scandia:Scandia:Scandia</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Scandia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Scandia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_KHMER</Tag>
 		<English>Aurea Chersonesus</English>
+		<French>
+			<Text>Aurea Chersonesus</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Aurea Chersonesus:Aurea Chersonesus:Aurea Chersonesus</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Aurea Chersonesus</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Aurea Chersonesus</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_SPAIN</Tag>
 		<English>Hispania</English>
+		<French>
+			<Text>Hispanie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Hispania:Hispania:Hispania</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Hispania</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Hispania</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_THAILAND</Tag>
@@ -84,10 +344,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_ENGLAND</Tag>
 		<English>Britannia</English>
+		<French>
+			<Text>Britannia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Britannia:Britannia:Britannia</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Britannia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Britannia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_HOLY_ROME</Tag>
 		<English>Germania</English>
+		<French>
+			<Text>Germanie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Germania:Germania:Germania</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Germania</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Germania</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_GERMANY</Tag>
@@ -96,26 +396,147 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_RUSSIA</Tag>
 		<English>Sarmatia</English>
+		<French>
+			<Text>Sarmatie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sarmatia:Sarmatia:Sarmatia</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sarmatia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sarmatia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_NETHERLANDS</Tag>
 		<English>Belgica</English>
+		<French>
+			<Text>Belgica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Belgica:Belgica:Belgica</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Belgica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Belgica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_MALI</Tag>
 		<English>Gaetulia</English>
+		<French>
+			<Text>Gaetulia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Gaetulia:Gaetulia:Gaetulia</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Gaetulia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Gaetulia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_PORTUGAL</Tag>
 		<English>Lusitania</English>
+		<French>
+			<Text>Lusitanie</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Lusitania:Lusitania:Lusitania</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Lusitania</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Lusitania</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_MONGOLIA</Tag>
 		<English>Serica</English>
+		<French>
+			<Text>Serica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Serica:Serica:Serica</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Serica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Serica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROMAN_NAME_TURKEY</Tag>
 		<English>Asia Minor</English>
+		<French>
+			<Text>Asie Mineure</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Asia Minor:Asia Minor:Asia Minor</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Asia Minor</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Asia Minor</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_ADJECTIVE</Tag>

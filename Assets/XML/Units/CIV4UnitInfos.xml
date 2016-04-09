@@ -872,23 +872,23 @@
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_PROTESTANT_MISSIONARY</Class>
-			<Type>UNIT_PROTESTANT_MISSIONARY</Type>
+			<Class>UNITCLASS_JEWISH_MISSIONARY</Class>
+			<Type>UNIT_JEWISH_MISSIONARY</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
+			<Description>TXT_KEY_UNIT_JEWISH_MISSIONARY</Description>
 			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
 				<ReligionSpread>
-					<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+					<ReligionType>RELIGION_JUDAISM</ReligionType>
 					<iReligionSpread>40</iReligionSpread>
 				</ReligionSpread>
 			</ReligionSpreads>
-			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
-			<PrereqBuilding>BUILDING_PROTESTANT_MONASTERY</PrereqBuilding>
+			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
+			<PrereqBuilding>BUILDING_JEWISH_MONASTERY</PrereqBuilding>
 			<iCost>40</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -903,7 +903,44 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_PROTESTANT_MISSIONARY</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_JEWISH_MISSIONARY</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+		</UnitInfo>
+		<UnitInfo>
+			<Class>UNITCLASS_ORTHODOX_MISSIONARY</Class>
+			<Type>UNIT_ORTHODOX_MISSIONARY</Type>
+			<Special>SPECIALUNIT_PEOPLE</Special>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Description>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ReligionSpreads>
+				<ReligionSpread>
+					<ReligionType>RELIGION_ORTHODOXY</ReligionType>
+					<iReligionSpread>40</iReligionSpread>
+				</ReligionSpread>
+			</ReligionSpreads>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
+			<PrereqBuilding>BUILDING_ORTHODOX_MONASTERY</PrereqBuilding>
+			<iCost>40</iCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<iAsset>2</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_ORTHODOX_MISSIONARY</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -946,23 +983,23 @@
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_ORTHODOX_MISSIONARY</Class>
-			<Type>UNIT_ORTHODOX_MISSIONARY</Type>
+			<Class>UNITCLASS_PROTESTANT_MISSIONARY</Class>
+			<Type>UNIT_PROTESTANT_MISSIONARY</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Description>
+			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
 			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ReligionSpreads>
 				<ReligionSpread>
-					<ReligionType>RELIGION_ORTHODOXY</ReligionType>
+					<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
 					<iReligionSpread>40</iReligionSpread>
 				</ReligionSpread>
 			</ReligionSpreads>
-			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
-			<PrereqBuilding>BUILDING_ORTHODOX_MONASTERY</PrereqBuilding>
+			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
+			<PrereqBuilding>BUILDING_PROTESTANT_MONASTERY</PrereqBuilding>
 			<iCost>40</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -977,7 +1014,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_ORTHODOX_MISSIONARY</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_PROTESTANT_MISSIONARY</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -11717,7 +11754,11 @@
 			</GreatPeoples>
 			<Buildings>
 				<Building>
-					<BuildingType>BUILDING_PROTESTANT_SHRINE</BuildingType>
+					<BuildingType>BUILDING_JEWISH_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -11725,7 +11766,7 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
-					<BuildingType>BUILDING_ORTHODOX_SHRINE</BuildingType>
+					<BuildingType>BUILDING_PROTESTANT_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>

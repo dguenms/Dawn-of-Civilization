@@ -218,6 +218,7 @@
 	<ElementType name="MovieSound" content="textOnly"/>
 	<ElementType name="Sound" content="textOnly"/>
 	<ElementType name="bProselytizing" content="textOnly"/>
+	<ElementType name="bLocal" content="textOnly"/>
 	<ElementType name="ReligionInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -228,6 +229,7 @@
 		<element type="iFreeUnits"/>
 		<element type="iSpreadFactor"/>
 		<element type="bProselytizing" minOccurs="0"/>
+		<element type="bLocal" minOccurs="0"/>
 		<element type="GlobalReligionCommerces"/>
 		<element type="HolyCityCommerces"/>
 		<element type="StateReligionCommerces"/>

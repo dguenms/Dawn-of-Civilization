@@ -4,30 +4,172 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_DESC</Tag>
 		<English>The Maya</English>
+		<French>
+			<Text>Les Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Maya:Die Maya:den Maya</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_PEOPLES</Tag>
 		<English>Maya Peoples</English>
+		<French>
+			<Text>Peuplades Mayas</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Mayav&#246;lker:Mayav&#246;lker:Mayav&#246;lkern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Maya</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Mayas</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_DEFAULT</Tag>
 		<English>%s2 City-States</English>
+		<French>
+			<Text>Cit&#233;s-Etats %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>%s2-Stadtstaaten:%s2-Stadtstaaten:%s2-Stadtstaaten</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_REPUBLIC</Tag>
 		<English>%s2 Federal Republic</English>
+		<French>
+			<Text>R&#233;publique F&#233;d&#233;rale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Bundesrepublik der %s2:Bundesrepublik der %s2:Bundesrepublik der %s2</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica Federale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica Federal %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_COMMUNIST</Tag>
 		<English>%s2 Free State</English>
+		<French>
+			<Text>Etat Libre %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Freistaat:%s2-Freistaat:%s2-Freistaat</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Stato Libero %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estado Libre %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_FASCIST</Tag>
 		<English>%s2 Junta</English>
+		<French>
+			<Text>Junte %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Junta:%s2 Junta:%s2 Junta</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Giunta %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Junta %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_YUCATAN</Tag>
 		<English>Yucat&#225;n</English>
+		<French>
+			<Text>Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Yucat&#225;n:Yucat&#225;n:Yuc&#225;tan</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_ADJECTIVE</Tag>

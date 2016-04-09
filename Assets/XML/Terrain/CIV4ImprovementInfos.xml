@@ -120,7 +120,7 @@
 		</ImprovementInfo>
 		<ImprovementInfo>
 			<Type>IMPROVEMENT_TRIBAL_VILLAGE</Type>
-			<Description>TXT_KEY_IIMPROVEMENT_TRIBAL_VILLAGE</Description>
+			<Description>TXT_KEY_IMPROVEMENT_TRIBAL_VILLAGE</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_TRIBAL_VILLAGE_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_TRIBAL_VILLAGE</ArtDefineTag>
 			<bActsAsCity>0</bActsAsCity>

@@ -407,6 +407,44 @@
 			<DefaultBuilding>BUILDING_SECURITY_BUREAU</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JEWISH_TEMPLE</Type>
+			<Description>TXT_KEY_BUILDING_JEWISH_TEMPLE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bMonument>1</bMonument>
+			<DefaultBuilding>BUILDING_JEWISH_TEMPLE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JEWISH_CATHEDRAL</Type>
+			<Description>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bMonument>1</bMonument>
+			<DefaultBuilding>BUILDING_JEWISH_CATHEDRAL</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JEWISH_MONASTERY</Type>
+			<Description>TXT_KEY_BUILDING_JEWISH_MONASTERY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_JEWISH_MONASTERY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JEWISH_SHRINE</Type>
+			<Description>TXT_KEY_BUILDING_JEWISH_SHRINE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_JEWISH_SHRINE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PROTESTANT_TEMPLE</Type>
 			<Description>TXT_KEY_BUILDING_PROTESTANT_TEMPLE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -1165,15 +1203,6 @@
 			<DefaultBuilding>BUILDING_MOAI_STATUES</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_APOSTOLIC_PALACE</Type>
-			<Description>TXT_KEY_BUILDING_APOSTOLIC_PALACE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_APOSTOLIC_PALACE</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_LEANING_TOWER</Type>
 			<Description>TXT_KEY_BUILDING_LEANING_TOWER</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1200,15 +1229,6 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_PLAGUE</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_TEMPLE_OF_SOLOMON</Type>
-			<Description>TXT_KEY_BUILDING_TEMPLE_OF_SOLOMON</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_TEMPLE_OF_SOLOMON</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_ISHTAR_GATE</Type>
@@ -1425,6 +1445,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_CN_TOWER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_HAGIA_SOPHIA</Type>
+			<Description>TXT_KEY_BUILDING_HAGIA_SOPHIA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_HAGIA_SOPHIA</DefaultBuilding>
 		</BuildingClassInfo>
 	</BuildingClassInfos>
 </Civ4BuildingClassInfos>

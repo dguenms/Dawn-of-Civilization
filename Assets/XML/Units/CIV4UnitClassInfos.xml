@@ -87,6 +87,14 @@
 			<DefaultUnit>UNIT_RELIGIOUS_PERSECUTOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_JEWISH_MISSIONARY</Type>
+			<Description>TXT_KEY_UNIT_JEWISH_MISSIONARY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>3</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_JEWISH_MISSIONARY</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_PROTESTANT_MISSIONARY</Type>
 			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

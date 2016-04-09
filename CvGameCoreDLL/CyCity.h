@@ -574,6 +574,8 @@ public:
 	void updateCultureCosts();
 	void updateCoveredPlots();
 	void updateGreatWall();
+	void replaceReligion(int eOldReligion, int eNewReligion);
+	void removeReligion(int eReligion);
 
 private:
 	CvCity* m_pCity;

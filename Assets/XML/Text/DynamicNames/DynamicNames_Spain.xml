@@ -4,6 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_DESC</Tag>
 		<English>The Spanish</English>
+		<French>
+			<Text>Les Espagnols</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Spanier:Die Spanier:den Spaniern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Gli Spagnoli</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Espa&#241;oles</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_PEOPLES</Tag>
@@ -12,10 +32,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_COMMUNIST</Tag>
-		<English>%s2 Republic</English>
+		<English>Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Republik %s1:Republik %s1:Republik %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica di %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_FASCIST</Tag>
@@ -44,6 +104,27 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_AL_ANDALUS</Tag>
 		<English>Al-Andalus</English>
+		<French>
+			<Text>Al-Andalus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Al-Andalus:Al-Andalus:Al-Andalus</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Al-Andalus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Al-Andalus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CASTILE</Tag>
@@ -60,6 +141,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_IBERIAN</Tag>
 		<English>Iberian</English>
+		<French>
+			<Text>Ib&#232;res</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Iberische:Iberischen:Iberischen</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Iberici</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ib&#233;ricos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CROWN_OF</Tag>
@@ -76,6 +177,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_VASSAL</Tag>
 		<English>Viceroyalty of %s1</English>
+		<French>
+			<Text>Vice Royaut&#233; de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vizek&#246;nigreich %s1:Vizek&#246;nigreich %s1:Vizek&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Vicereame di %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Virreinato de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_CARTHAGE</Tag>
@@ -84,10 +205,51 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_ETHIOPIA</Tag>
 		<English>%s2 East Africa</English>
+		<French>
+			<Text>Afrique Orientale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Ostafrika:%s2-Ostafrika:%s2-Ostafrika</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Africa Orientale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>&#193;frica Oriental %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_MAYA</Tag>
 		<English>Diocesis of Yucat&#225;n</English>
+		<French>
+			<Text>Dioc&#232;se du Yucat&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Di&#246;zese Yucat&#225;n:Di&#246;zese Yucat&#225;n:Di&#246;zese Yuc&#225;tan</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Diocesi dello Yucat&#225;n</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Diocesis de Yucat&#225;n</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_BYZANTIUM</Tag>
@@ -100,10 +262,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_MOORS</Tag>
 		<English>%s2 Protectorate of %s1</English>
+		<French>
+			<Text>Protectorat %s2 de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Protektorat %s1:%s2 Protektorat %s1:%s2 Protektorat %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Protettorato %s2 di %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protectorado %s2 de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_FRANCE</Tag>
 		<English>Autonomous Community of %s1</English>
+		<French>
+			<Text>Communaut&#233; Autonome du %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Autonome Gemeinschaft %s1:Autonome Gemeinschaft %s1:Autonomen Gemeinschaft %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Comunit&#224; Autonoma del %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Comunidad Aut&#243;noma de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NETHERLANDS</Tag>
@@ -112,10 +314,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_MALI</Tag>
 		<English>%s2 West Africa</English>
+		<French>
+			<Text>Afrique Occidentale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Westafrika:%s2-Westafrika:%s2-Westafrika</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Africa Occidentale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>&#193;frica Occidental %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_PORTUGAL</Tag>
 		<English>Autonomous Community of %s1</English>
+		<French>
+			<Text>Communaut&#233; Autonome du %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Autonome Gemeinschaft %s1:Autonome Gemeinschaft %s1:Autonomen Gemeinschaft %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Comunit&#224; Autonoma del %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Comunidad Aut&#243;noma de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_AMERICA</Tag>
@@ -152,6 +394,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NAME_KHMER</Tag>
 		<English>Indochina</English>
+		<French>
+			<Text>Indochine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Indochina:Indochina:Indochina</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Indocina</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Indochina</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_NAME_AZTECS</Tag>

@@ -25,6 +25,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PHOENICIA_REPUBLIC</Tag>
@@ -53,6 +73,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_EMPIRE</Tag>
 		<English>Carthaginian Empire</English>
+		<French>
+			<Text>Empire Carthaginois</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Karthagisches Reich:Karthagische Reich:Karthagischen Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero Cartaginese</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio Cartagin&#233;s</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CARTHAGE_ADJECTIVE</Tag>
