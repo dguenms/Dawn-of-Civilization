@@ -5565,7 +5565,7 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
-	if (m_pUnitInfo->getReligionSpreads(eReligion) <= 0)
+	if (m_pUnitInfo->getReligionSpreads(eReligion) <= 0 && !m_pUnitInfo->isGreatMission())
 	{
 		return false;
 	}
@@ -7957,6 +7957,7 @@ BuildTypes CvUnit::getBuildType() const
 		case MISSION_REFORM_GOVERNMENT: // Leoreth
 		case MISSION_DIPLOMATIC_MISSION: // Leoreth
 		case MISSION_PERSECUTE: // Leoreth
+		case MISSION_GREAT_MISSION:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -14142,6 +14143,62 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 
 		return true;
 	}
+}
+
+bool CvUnit::canGreatMission(const CvPlot* pPlot) const
+{
+	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) return false;
+
+	if (GET_PLAYER(getOwner()).getStateReligion() == NO_RELIGION) return false;
+
+	if (!pPlot->isCity()) return false;
+
+	return true;
+}
+
+bool CvUnit::greatMission()
+{
+	if (!canGreatMission(plot()))
+	{
+		return false;
+	}
+
+	int iNumCities = 4 + GC.getGame().getSorenRandNum(3, "Great Mission");
+	iNumCities = std::max(iNumCities, GC.getMap().getArea(getArea())->getCitiesPerPlayer(getOwner()));
+	ReligionTypes eReligion = GET_PLAYER(getOwner()).getStateReligion();
+
+	CvPlot* pSpreadPlot;
+	CvCity* pSpreadCity;
+	int iSpreads = 0;
+
+	// spread to eligible cities
+	for (iSpreads; iSpreads < iNumCities; iSpreads++)
+	{
+		pSpreadPlot = AI_spreadTarget(eReligion, true).second;
+		
+		if (pSpreadPlot == NULL || !pSpreadPlot->isCity()) break;
+
+		pSpreadPlot->getPlotCity()->spreadReligion(eReligion, false);
+	}
+
+	// remove from eligible cities
+	for (; iSpreads < iNumCities; iSpreads++)
+	{
+		pSpreadCity = AI_persecutionTarget();
+
+		if (pSpreadCity == NULL) break;
+
+		pSpreadCity->removeReligion(pSpreadCity->AI_getPersecutionReligion());
+	}
+
+	if (plot()->isActiveVisible(false))
+	{
+		NotifyEntity(MISSION_GREAT_MISSION);
+	}
+
+	kill(true);
+
+	return true;
 }
 
 SpecialistTypes CvUnit::getSettledSpecialist() const

@@ -19963,7 +19963,9 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 // Leoreth
 int CvPlayerAI::AI_getPersecutionValue(ReligionTypes eReligion) const
 {
-	if (!isStateReligion()) return 1;
+	if (getStateReligion() == NO_RELIGION) return 1;
+
+	if (getStateReligion() == eReligion) return 0;
 
 	return persecutionValue[getStateReligion()][eReligion] - AI_getReligiousTolerance();
 }
