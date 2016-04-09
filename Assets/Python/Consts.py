@@ -1689,18 +1689,19 @@ iVictorySecularism = 10
 
 #leaders
 
-iNumLeaders = 114
+iNumLeaders = 122
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
 iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, iHammurabi, iHannibal, iCleopatra,
 iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, iLouis, iMansaMusa, iMao,
 iMehmed, iMontezuma, iNapoleon, iPacal, iPericles, iPeter, iQinShiHuang, iRamesses, iRagnar, iRoosevelt,
 iSaladin, iSittingBull, iStalin, iSuleiman, iSuryavarman, iOdaNobunaga, iVictoria, iWangKon, iWashington, iWillemVanOranje, 
 iZaraYaqob, iKammu, iMeiji, iAkbar, iHiram, iHaileSelassie, iGustav, iAbuBakr, iMongkut, iElishat,
-iPhilip, iBarbarossa, iCharles, iFrancis, iYaroslav, iAfonso, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
+iPhilip, iBarbarossa, iCharles, iFrancis, iIvan, iAfonso, iAtaturk, iMaria, iHitler, iFranco, iNicholas, iCixi,
 iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, iShahuji,
-iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, iRahman, iRajendra, iLobsangGyatso,
+iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, iRahman, iRajendra, iLobsangGyatso, 
 iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, 
-iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya) = range(iNumLeaders)
+iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya, iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen,
+iGetulio, iMacDonald) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,

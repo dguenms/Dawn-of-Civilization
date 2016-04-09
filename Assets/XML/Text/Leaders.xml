@@ -527,27 +527,39 @@
 		<English>Yaqub al-Mansur</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_YAROSLAV</Tag>
-		<English>Yaroslav</English>
-		<French>
-			<Text>Iaroslav</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Jaroslaw</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Jaroslav</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Yaroslav</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_LEADER_BHUTTO</Tag>
+		<English>Benazir Bhutto</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_GERHARDSEN</Tag>
+		<English>Gerhardsen</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_IVAN_IV</Tag>
+		<English>Ivan IV</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MACDONALD</Tag>
+		<English>MacDonald</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_MUSSOLINI</Tag>
+		<English>Mussolini</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SEJONG</Tag>
+		<English>Sejong</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_PILSUDSKI</Tag>
+		<English>Pilsudski</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_GETULIO</Tag>
+		<English>Vargas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_WALESA</Tag>
+		<English>Walesa</English>
 	</TEXT>
 </Civ4GameText>
