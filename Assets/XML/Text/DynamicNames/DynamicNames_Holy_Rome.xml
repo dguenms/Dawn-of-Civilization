@@ -4,6 +4,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROMAN_DESC</Tag>
 		<English>The Germans</English>
+		<French>
+			<Text>Les Allemands</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Deutsche:Die Deutschen:den Deutschen</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Tedeschi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Alemanes</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_AUSTRIA_DESC</Tag>
@@ -12,10 +32,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_PEOPLES</Tag>
 		<English>Germanic Peoples</English>
+		<French>
+			<Text>Peuplades Germaniques</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Germanische V&#246;lker:Germanischen V&#246;lker:Germanischen V&#246;lkern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Germanici</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Germ&#225;nicos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_HOLY_ROME_FASCIST</Tag>

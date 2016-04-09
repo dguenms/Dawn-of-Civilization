@@ -4646,7 +4646,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		iUpgradeLeft *= 110;
 		iUpgradeLeft /= 100;
 		break;
-	case CARTHAGE:
+	case PHOENICIA:
 		iUpgradeLeft *= 110;
 		iUpgradeLeft /= 100;
 		break;
@@ -11258,22 +11258,30 @@ void CvPlot::setWarValue(PlayerTypes ePlayer, int iNewValue)
 int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 {
 	int iSpreadFactor = m_aiReligionSpreadFactor[eReligion];
-	
-	if (eReligion == CATHOLICISM)
+
+	if (eReligion == JUDAISM)
 	{
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
+		if (!GC.getGameINLINE().isReligionFounded(ORTHODOXY))
 		{
-			if (iSpreadFactor < m_aiReligionSpreadFactor[ORTHODOXY])
+			return getSpreadFactor(ORTHODOXY);
+		}
+	}
+	
+	if (eReligion == ORTHODOXY)
+	{
+		if (!GC.getGameINLINE().isReligionFounded(CATHOLICISM))
+		{
+			if (iSpreadFactor < getSpreadFactor(CATHOLICISM))
 			{
-				iSpreadFactor = m_aiReligionSpreadFactor[ORTHODOXY];
+				iSpreadFactor = getSpreadFactor(CATHOLICISM);
 			}
 		}
 
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
+		if (!GC.getGameINLINE().isReligionFounded(PROTESTANTISM))
 		{
-			if (iSpreadFactor < m_aiReligionSpreadFactor[PROTESTANTISM])
+			if (iSpreadFactor < getSpreadFactor(PROTESTANTISM))
 			{
-				iSpreadFactor = m_aiReligionSpreadFactor[PROTESTANTISM];
+				iSpreadFactor = getSpreadFactor(PROTESTANTISM);
 			}
 		}
 	}

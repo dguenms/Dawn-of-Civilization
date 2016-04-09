@@ -168,7 +168,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_HANNIBAL
-	CivType=CIVILIZATION_CARTHAGE                 
+	CivType=CIVILIZATION_PHOENICIA                 
 	Team=6                 
 	PlayableCiv=0                 
 	Handicap=HANDICAP_REGENT                 
@@ -505,7 +505,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MBEMBA
-	CivType=CIVILIZATION_KONGO
+	CivType=CIVILIZATION_CONGO
 	Team=37
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
@@ -747,7 +747,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=17
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1124,7 +1124,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=23
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1822,7 +1822,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=23
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -8594,7 +8594,7 @@ EndPlot
 BeginPlot
 	x=21,y=16
 	BonusType=BONUS_STONE
-	ImprovementType=IMPROVEMENT_GOODY_HUT
+	ImprovementType=IMPROVEMENT_TRIBAL_VILLAGE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -11743,7 +11743,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=11
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,45,
@@ -13625,7 +13625,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=2
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -15877,28 +15877,28 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=56
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=24,
 EndPlot
 BeginPlot
 	x=36,y=57
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=24,
 EndPlot
 BeginPlot
 	x=36,y=58
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 	TeamReveal=24,
 EndPlot
 BeginPlot
 	x=36,y=59
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -19985,7 +19985,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=46,y=37
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,45,
@@ -20374,7 +20374,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=37
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,44,45,
@@ -20794,14 +20794,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=48,y=35
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=48,y=36
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,44,45,
@@ -23396,6 +23396,7 @@ BeginPlot
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_CATHEDRAL
 		BuildingType=BUILDING_TRADING_COMPANY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_PROTESTANTISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player24Culture=250
@@ -23618,7 +23619,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=25
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,45,
@@ -24339,6 +24340,7 @@ BeginPlot
 		BuildingType=BUILDING_TRADING_COMPANY
 		BuildingType=BUILDING_NOTRE_DAME
 		BuildingType=BUILDING_VERSAILLES
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_SCIENTIST
 		Player23Culture=250
@@ -25294,6 +25296,7 @@ BeginPlot
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_TRADING_COMPANY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
@@ -26318,6 +26321,7 @@ BeginPlot
 		BuildingType=BUILDING_MILITARY_ACADEMY
 		ReligionType=RELIGION_PROTESTANTISM
 		HolyCityReligionType=RELIGION_PROTESTANTISM
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player39Culture=100
 	EndCity
@@ -26821,9 +26825,10 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		BuildingType=BUILDING_CATHOLIC_SHRINE
 		BuildingType=BUILDING_COLOSSEUM
 		BuildingType=BUILDING_SISTINE_CHAPEL
-		BuildingType=BUILDING_APOSTOLIC_PALACE
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		HolyCityReligionType=RELIGION_CATHOLICISM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
@@ -27658,7 +27663,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=9
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,45,
@@ -27925,6 +27930,7 @@ BeginPlot
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player25Culture=100
 	EndCity
@@ -27999,6 +28005,7 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_MILITARY_ACADEMY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player25Culture=250
 	EndCity
@@ -28050,6 +28057,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_PROTESTANTISM
 		Player39Culture=250
 	EndCity
@@ -28206,7 +28214,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=9
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,45,
@@ -29528,6 +29536,7 @@ BeginPlot
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player25Culture=100
 	EndCity
@@ -29581,6 +29590,7 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player28Culture=250
 	EndCity
@@ -30501,6 +30511,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_GREAT_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		Player35Culture=200
@@ -30554,6 +30565,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_PARTHENON
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		Player35Culture=200
@@ -30693,6 +30705,7 @@ BeginPlot
 		BuildingType=BUILDING_POLISH_SEJMIK
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player28Culture=100
 	EndCity
@@ -31158,16 +31171,16 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
-		BuildingType=BUILDING_ORTHODOX_SHRINE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_MILITARY_ACADEMY
 		BuildingType=BUILDING_THEODOSIAN_WALLS
+		BuildingType=BUILDING_HAGIA_SOPHIA
 		BuildingType=BUILDING_TOPKAPI_PALACE
 		BuildingType=BUILDING_BLUE_MOSQUE
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
-		HolyCityReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		Player35Culture=300
 	EndCity
@@ -31613,6 +31626,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_PYRAMIDS
 		BuildingType=BUILDING_GREAT_SPHINX
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		Player35Culture=200
@@ -31770,6 +31784,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_CATHEDRAL
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		Player26Culture=100
 	EndCity
@@ -33679,14 +33694,16 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
-		BuildingType=BUILDING_CATHOLIC_SHRINE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		BuildingType=BUILDING_ORTHODOX_SHRINE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		BuildingType=BUILDING_TEMPLE_OF_SOLOMON
+		BuildingType=BUILDING_JEWISH_TEMPLE
+		BuildingType=BUILDING_JEWISH_SHRINE
 		BuildingType=BUILDING_DOME_OF_THE_ROCK
 		ReligionType=RELIGION_CATHOLICISM
-		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
+		HolyCityReligionType=RELIGION_JUDAISM
+		HolyCityReligionType=RELIGION_ORTHODOXY
 		Player35Culture=200
 	EndCity
 	TeamReveal=8,35,44,
@@ -33835,6 +33852,7 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_CATHEDRAL
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		BuildingType=BUILDING_ST_BASILS_CATHEDRAL
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		Player26Culture=250
 	EndCity
@@ -34262,13 +34280,13 @@ BeginPlot
 		CityOwner=35
 		CityName=Sam
 		CityPopulation=5
-		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ISLAM
 		Player35Culture=100
 	EndCity
@@ -35733,6 +35751,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_SPIRAL_MINARET
+		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ISLAM
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player35Culture=150
@@ -53143,13 +53162,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=27
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=115,y=28
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=38,
@@ -54306,13 +54325,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=118,y=23
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=118,y=24
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -55715,7 +55734,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=17
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -55757,7 +55776,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=25
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -56067,7 +56086,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=17
-	FeatureType=FEATURE_CAPE_COAST, FeatureVariety=0
+	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

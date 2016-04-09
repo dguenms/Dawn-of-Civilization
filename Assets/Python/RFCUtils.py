@@ -269,6 +269,14 @@ class RFCUtils:
 		popup.setBodyString(message)
 		popup.launch()
 
+	def popup(self, title, message, labels):
+		popup = Popup.PyPopup()
+		popup.setHeaderString(title)
+		popup.setBodyString(message)
+		for i in labels:
+		    popup.addButton( i )
+		popup.launch(len(labels) == 0)
+
 	#RiseAndFall
 	def updateMinorTechs( self, iMinorCiv, iMajorCiv):		
 		for t in range(con.iNumTechs):
@@ -1235,7 +1243,7 @@ class RFCUtils:
 			if iInfantry:
 				self.makeUnit(iInfantry, iCiv, (x,y), iNumUnits)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(con.iProtestantMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+				self.makeUnit(con.iMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 		else:
 			gc.getMap().plot(x,y).setCulture(iCiv, 10, True)
 			gc.getMap().plot(x,y).setOwner(iCiv)
@@ -1248,7 +1256,7 @@ class RFCUtils:
 			if iInfantry:
 				self.makeUnit(iInfantry, iCiv, (x,y), 2)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(con.iProtestantMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+				self.makeUnit(con.iMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
 
 	def getColonialTargets(self, iPlayer, bEmpty=False):
 		if iPlayer == con.iSpain or iPlayer == con.iFrance:
@@ -1667,16 +1675,18 @@ class RFCUtils:
 		# Leoreth: temporarily try less missionaries
 		iNumUnits = 1
 		
-		self.makeUnit(con.iProtestantMissionary + iReligion, iPlayer, Areas.getCapital(iPlayer), iNumUnits)
+		self.makeUnit(con.iMissionary + iReligion, iPlayer, Areas.getCapital(iPlayer), iNumUnits)
 			
 	def getSortedList(self, lList, function, bReverse = False):
 		return sorted(lList, key=lambda element: function(element), reverse=bReverse)
 		
 	def getHighestEntry(self, lList, function = lambda x: x):
+		if not lList: return None
 		lSortedList = self.getSortedList(lList, function, True)
 		return lSortedList[0]
 		
 	def getHighestIndex(self, lList, function = lambda x: x):
+		if not lList: return None
 		lSortedList = self.getSortedList(lList, function, True)
 		return lList.index(lSortedList[0])
 		
@@ -2003,5 +2013,14 @@ class RFCUtils:
 		# clear the highlight
 		for i in range(max(con.iNumPlotStabilityTypes, con.iMaxWarValue/2)):
 			engine.clearAreaBorderPlots(1000+i)
+			
+	def getRegionCities(self, lRegions):
+		lCities = []
+		for (x, y) in [(x, y) for x in range(con.iWorldX) for y in range(con.iWorldY)]:
+			plot = gc.getMap().plot(x, y)
+			if plot.getRegionID() in lRegions and plot.isCity():
+				lCities.append(plot.getPlotCity())
+		return lCities
+		
 
 utils = RFCUtils()

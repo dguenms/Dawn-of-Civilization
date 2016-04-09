@@ -10,6 +10,22 @@
 		<English>This will be of mutual benefit for us both, don't you think so?</English>
 	</TEXT>
 	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_RAGNAR_LODBROK_1</Tag>
+		<English>Hail and well met, [CT_NAME]! I am [OUR_NAME], ruler of the glorious [OUR_CIV_SHORT].  So tell me: does [CT_CIV_SHORT] have a lot of rich and unprotected coastal cities, or what?</English>
+		<French>Bonjour, [CT_NAME], c'est un vrai plaisir ! Je suis [OUR_NAME], chef des glorieux [OUR_CIV_SHORT]. Dites-moi : est-ce que [CT_CIV_SHORT] dispose de nombreuses villes c&#244;ti&#232;res riches et faiblement prot&#233;g&#233;es ?</French>
+		<German>Tag auch, [CT_NAME]! Ich bin [OUR_NAME], Staatsoberhaupt des ruhmreichen Volkes von [OUR_CIV_SHORT]. Nun, dann erz&#228;hlt mal: Besitzt Ihr vielleicht ein paar reiche, schutzlose K&#252;stenst&#228;dte?</German>
+		<Italian>Salute a te, [CT_NAME]! Io sono [OUR_NAME], glorioso sovrano [OUR_CIV_ADJ]. Parliamo, dunque: [CT_CIV_SHORT] ha molte citt&#224; costiere ricche e poco protette, vero?</Italian>
+		<Spanish>Saludos y bienaventuranzas, [CT_NAME]. Soy [OUR_NAME], dirigente de la gloriosa tierra de [OUR_CIV_SHORT].  Decidme, &#191;tiene o no [CT_CIV_SHORT] muchas ciudades costeras pr&#243;speras e indefensas?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_RAMESSES_II_1</Tag>
+		<English>Mighty [OUR_NAME], all-powerful god-king of [OUR_CIV_SHORT] welcomes you, [CT_NAME]! Feel free to grovel in terror and awe if the mood takes you.</English>
+		<French>[OUR_NAME], tout puissant roi et divinit&#233; des [OUR_CIV_SHORT], vous souhaite la bienvenue, [CT_NAME] ! N'h&#233;sitez pas &#224; vous prosterner devant moi ou &#224; vous &#233;taler &#224; mes pieds si le coeur vous en dit !</French>
+		<German>Ich, [OUR_NAME], allmächtiges Staatsoberhaupt des Volkes von [OUR_CIV_SHORT], heiße Euch willkommen, [CT_NAME]! Es steht Euch frei, ehrfürchtig vor mir niederzuknien, wenn Euch danach ist.</German>
+		<Italian>Il potente [OUR_NAME], onnipotente e divino leader [OUR_CIV_ADJ] ti d&#224; il benvenuto, [CT_NAME]! Prostrati pure in preda al terrore e alla meraviglia, se ne hai voglia.</Italian>
+		<Spanish>El gran [OUR_NAME], rey dios todopoderoso de [OUR_CIV_SHORT] os da la bienvenida, [CT_NAME]. Pod&#233;is postraros ante mí presa de un temor reverencial si se os antoja.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_SAN_MARTIN</Tag>
 		<English>Our armies are evenly matched, but I believe in a battle I would win out. So that this does not occur I ask you to meet our demands.</English>
 		<French>Partager, c'est le d?but de l'amiti?, [CT_NAME].</French>
@@ -269,12 +285,20 @@
 		<Spanish>¡Saludos, [CT_NAME]! El pueblo [OUR_CIV_ADJ:1] siempre se congratula de encontrarse con civilizaciones vulnerables e indefensas.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_CHANGED_GREETINGS_ATT_FUR_LEADER_NATIVE_1</Tag>
+		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_NATIVE_1</Tag>
 		<English>So you have emerged from your fetid country and come to me, [CT_NAME]. To what do I owe this extremely dubious honor?</English>
 		<French>Vous avez enfin r&#233;ussi &#224; sortir de cet horrible pays pour venir me voir, [CT_NAME]. Que me vaut un pareil honneur ?</French>
 		<German>Oha, Ihr habt Euer stinkendes Land verlassen, um mich zu besuchen, [CT_NAME]? Was verschafft mir denn diese zweifelhafte Ehre?</German>
 		<Italian>E così hai lasciato quel tuo fetido paese e sei venuto da me, [CT_NAME]. E a cosa devo questo dubbio onore?</Italian>
 		<Spanish>Así que hab&#233;is salido de vuestro f&#233;tido país y hab&#233;is venido a verme, [CT_NAME]. ¿A qu&#233; debo tan dudoso honor?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_MEHMED_1</Tag>
+		<English>We require mighty [CT_CIV_SHORT]'s assistance. I hope you won't disappoint us.</English>
+		<French>Nous avons besoin de l'aide des [CT_CIV_SHORT]. J'esp&#232;re que vous ne nous décevrez pas.</French>
+		<German>Wir könnten die Hilfe des mächtigen Volkes von [CT_CIV_SHORT] brauchen und hoffen doch sehr, dass Ihr uns nicht im Stich lasst!</German>
+		<Italian>Chiediamo aiuto alla tua potente civilt&#224;. Spero che non ci deluderai.</Italian>
+		<Spanish>Necesitamos la ayuda y la fortaleza de [CT_CIV]. Espero que no nos decepcion&#233;is.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_DEFENSIVE_PACT</Tag>

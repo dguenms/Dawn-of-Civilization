@@ -218,6 +218,7 @@
 	<ElementType name="MovieSound" content="textOnly"/>
 	<ElementType name="Sound" content="textOnly"/>
 	<ElementType name="bProselytizing" content="textOnly"/>
+	<ElementType name="bLocal" content="textOnly"/>
 	<ElementType name="ReligionInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -228,6 +229,7 @@
 		<element type="iFreeUnits"/>
 		<element type="iSpreadFactor"/>
 		<element type="bProselytizing" minOccurs="0"/>
+		<element type="bLocal" minOccurs="0"/>
 		<element type="GlobalReligionCommerces"/>
 		<element type="HolyCityCommerces"/>
 		<element type="StateReligionCommerces"/>
@@ -631,7 +633,7 @@
 	<ElementType name="CivicOptionInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
-		<element type="TraitNoUpkeeps"/>
+		<element type="TraitNoUpkeeps" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="CivicOptionInfos" content="eltOnly">
 		<element type="CivicOptionInfo" maxOccurs="*"/>
@@ -1263,37 +1265,37 @@
 	<ElementType name="EspionageMissionInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
-		<element type="iCost"/>
-		<element type="bIsPassive"/>
-		<element type="bIsTwoPhases"/>
-		<element type="bTargetsCity"/>
-		<element type="bSelectPlot"/>
-		<element type="TechPrereq"/>
-		<element type="iVisibilityLevel"/>
-		<element type="bInvestigateCity"/>
-		<element type="bSeeDemographics"/>
-		<element type="bNoActiveMissions"/>
-		<element type="bSeeResearch"/>
-		<element type="bDestroyImprovement"/>
-		<element type="iDifficultyMod"/>
-		<element type="iDestroyBuildingCostFactor"/>
-		<element type="iDestroyUnitCostFactor"/>
-		<element type="iDestroyProjectCostFactor"/>
-		<element type="iDestroyProductionCostFactor"/>
-		<element type="iBuyUnitCostFactor"/>
-		<element type="iBuyCityCostFactor"/>
-		<element type="iStealTreasuryTypes"/>
-		<element type="iCityInsertCultureAmountFactor"/>
-		<element type="iCityInsertCultureCostFactor"/>
-		<element type="iCityPoisonWaterCounter"/>
-		<element type="iCityUnhappinessCounter"/>
-		<element type="iCityRevoltCounter"/>
-		<element type="iBuyTechCostFactor"/>
-		<element type="iSwitchCivicCostFactor"/>
-		<element type="iSwitchReligionCostFactor"/>
-		<element type="iPlayerAnarchyCounter"/>
-		<element type="iCounterespionageNumTurns"/>
-		<element type="iCounterespionageMod"/>
+		<element type="iCost" minOccurs="0"/>
+		<element type="bIsPassive" minOccurs="0"/>
+		<element type="bIsTwoPhases" minOccurs="0"/>
+		<element type="bTargetsCity" minOccurs="0"/>
+		<element type="bSelectPlot" minOccurs="0"/>
+		<element type="TechPrereq" minOccurs="0"/>
+		<element type="iVisibilityLevel" minOccurs="0"/>
+		<element type="bInvestigateCity" minOccurs="0"/>
+		<element type="bSeeDemographics" minOccurs="0"/>
+		<element type="bNoActiveMissions" minOccurs="0"/>
+		<element type="bSeeResearch" minOccurs="0"/>
+		<element type="bDestroyImprovement" minOccurs="0"/>
+		<element type="iDifficultyMod" minOccurs="0"/>
+		<element type="iDestroyBuildingCostFactor" minOccurs="0"/>
+		<element type="iDestroyUnitCostFactor" minOccurs="0"/>
+		<element type="iDestroyProjectCostFactor" minOccurs="0"/>
+		<element type="iDestroyProductionCostFactor" minOccurs="0"/>
+		<element type="iBuyUnitCostFactor" minOccurs="0"/>
+		<element type="iBuyCityCostFactor" minOccurs="0"/>
+		<element type="iStealTreasuryTypes" minOccurs="0"/>
+		<element type="iCityInsertCultureAmountFactor" minOccurs="0"/>
+		<element type="iCityInsertCultureCostFactor" minOccurs="0"/>
+		<element type="iCityPoisonWaterCounter" minOccurs="0"/>
+		<element type="iCityUnhappinessCounter" minOccurs="0"/>
+		<element type="iCityRevoltCounter" minOccurs="0"/>
+		<element type="iBuyTechCostFactor" minOccurs="0"/>
+		<element type="iSwitchCivicCostFactor" minOccurs="0"/>
+		<element type="iSwitchReligionCostFactor" minOccurs="0"/>
+		<element type="iPlayerAnarchyCounter" minOccurs="0"/>
+		<element type="iCounterespionageNumTurns" minOccurs="0"/>
+		<element type="iCounterespionageMod" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="EspionageMissionInfos" content="eltOnly">
 		<element type="EspionageMissionInfo" maxOccurs="*"/>

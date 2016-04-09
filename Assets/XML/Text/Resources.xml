@@ -2,7 +2,7 @@
 <!-- Resources -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>MOD_TXT_KEY_RESOURCE_COTTON</Tag>
+		<Tag>TXT_KEY_BONUS_COTTON</Tag>
 		<English>Cotton</English>
 		<French>
 			<Text>Coton</Text>
@@ -23,6 +23,30 @@
 			<Text>Algod&#243;n</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_HIT_MOVIES</Tag>
+		<English>Hit Movies</English>
+		<French>
+			<Text>Films</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Filmhits</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Film di successo</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pel&#237;culas de &#233;xito</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -54,7 +78,31 @@
 		<English>Coffee</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BONUS_DRAMA</Tag>
+		<Tag>TXT_KEY_BONUS_HIT_SINGLES</Tag>
+		<English>Hit Singles</English>
+		<French>
+			<Text>Chansons</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hitsingles</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Canzoni di successo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Canciones de &#233;xito</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_HIT_FOOTBALL_EVENT</Tag>
 		<English>Hit Football Event</English>
 		<French>
 			<Text>Match de football majeur</Text>

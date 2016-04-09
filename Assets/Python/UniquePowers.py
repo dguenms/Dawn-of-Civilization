@@ -407,6 +407,7 @@ class UniquePowers:
 #------------------ARABIAN U.P.-------------------
 
 	def mughalUP(self, city):
+		return
 		pMughals = gc.getPlayer(iMughals)
 		iStateReligion = pMughals.getStateReligion()
 
@@ -414,6 +415,7 @@ class UniquePowers:
 			city.setHasReligion(iStateReligion, True, True, False)
 
 	def seljukUP(self, city):
+		return
 		pSeljuks = gc.getPlayer(iSeljuks)
 		iStateReligion = pSeljuks.getStateReligion()
 

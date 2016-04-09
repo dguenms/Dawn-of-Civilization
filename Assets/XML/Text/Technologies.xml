@@ -3,7 +3,7 @@
 <Civ4GameText>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MONOTHEISM_STRATEGY</Tag>
-		<English>[COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] Civic and allows the construction of the [COLOR_BUILDING_TEXT]Temple of Solomon[COLOR_REVERT]. The first player to discover [COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT].</English>
+		<English>[COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Organized Religion[COLOR_REVERT] Civic. The first player to discover [COLOR_TECH_TEXT]Monotheism[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PATRONAGE</Tag>
@@ -83,7 +83,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BANKING_STRATEGY</Tag>
-		<English>[COLOR_TECH_TEXT]Banking[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT] Building. It allows the construction of the [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Mercantilism[COLOR_REVERT] Civic and obsoletes the [COLOR_WARNING_TEXT]Temple of Solomon[COLOR_REVERT].</English>
+		<English>[COLOR_TECH_TEXT]Banking[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT] Building. It allows the construction of the [COLOR_BUILDING_TEXT]San Marco Basilica[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Mercantilism[COLOR_REVERT] Civic.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BIOLOGY_STRATEGY</Tag>
@@ -458,8 +458,40 @@
 		<English>[COLOR_TECH_TEXT]The Wheel[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Chariots[COLOR_REVERT] and allows the construction of [COLOR_HIGHLIGHT_TEXT]Roads[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_UTOPIA_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_COMMUNISM_QUOTE</Tag>
+		<English>"When I give food to the poor, they call me a saint. When I ask why the poor have no food, they call me a communist." - Dom Helder Camara</English>
+		<French>"Je nourris un pauvre et l'on me dit que je suis un saint. Je demande pourquoi le pauvre n'a pas de quoi se nourrir et l'on me traite de communiste !" - Dom Helder Camara</French>
+		<German>"Gebe ich den Armen zu essen, nennen sie mich einen Heiligen. Frage ich, warum sie nichts zu essen haben, nennen sie mich einen Kommunisten!" - Dom Helder Camara</German>
+		<Italian>"Quando offro il cibo ai poveri, mi chiamano santo. Quando chiedo perch&#233; i poveri non hanno cibo, mi chiamano comunista." - Dom Helder Camara</Italian>
+		<Spanish>"Cuando doy comida a un pobre me llaman santo. Cuando pregunto por qu&#233; un pobre no tiene comida me llaman comunista." - Dom H&#233;lder C&#226;mara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMMUNISM_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Communism[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Central Planning[COLOR_REVERT] Civic and obsoletes [COLOR_WARNING_TEXT]St. Basils Cathedral[COLOR_REVERT]. It also allows construction of the [COLOR_BUILDING_TEXT]Intelligence Agency[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Security Bureau[COLOR_REVERT] Buildings and the [COLOR_BUILDING_TEXT]Lubyanka[COLOR_REVERT] World Wonder. The first to research [COLOR_TECH_TEXT]Communism[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Spy[COLOR_REVERT] unit.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMMUNISM</Tag>
+		<English>Communism</English>
+		<French>
+			<Text>Communisme</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kommunismus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Comunismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Comunismo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_WRITING_STRATEGY</Tag>

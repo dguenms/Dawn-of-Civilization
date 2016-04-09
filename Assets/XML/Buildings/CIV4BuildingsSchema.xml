@@ -29,10 +29,10 @@
 		<element type="iMaxTeamInstances"/>
 		<element type="iMaxPlayerInstances"/>
 		<element type="iExtraPlayerInstances"/>
-		<element type="bNoLimit"/>
-		<element type="bMonument"/>
+		<element type="bNoLimit" minOccurs="0"/>
+		<element type="bMonument" minOccurs="0"/>
 		<element type="DefaultBuilding"/>
-		<element type="VictoryThresholds"/>
+		<element type="VictoryThresholds" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="BuildingClassInfos" content="eltOnly">
 		<element type="BuildingClassInfo" maxOccurs="*"/>
@@ -374,6 +374,9 @@
 	<ElementType name="BonusYieldChanges" content="eltOnly">
 		<element type="BonusYieldChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="ReligionYieldChanges" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="ImprovementFreeSpecialist" content="eltOnly">
 		<element type="ImprovementType"/>
 		<element type="iFreeSpecialistCount"/>
@@ -566,6 +569,7 @@
 		<element type="BonusYieldModifiers" minOccurs="0"/>
 		<element type="BonusCommerceModifiers" minOccurs="0"/>
 		<element type="BonusYieldChanges" minOccurs="0"/>
+		<element type="ReligionYieldChanges" minOccurs="0"/> <!-- Leoreth -->
 		<element type="ImprovementFreeSpecialists" minOccurs="0"/>
 		<element type="Flavors" minOccurs="0"/>
 		<element type="HotKey" minOccurs="0"/>

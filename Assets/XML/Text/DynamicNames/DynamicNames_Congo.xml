@@ -26,15 +26,15 @@
 		<English>the Congo</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KONGO_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_CONGO_ADJECTIVE</Tag>
 		<English>Congolese</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KONGO_DESC</Tag>
+		<Tag>TXT_KEY_CIV_CONGO_DESC</Tag>
 		<English>The Congolese</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_KONGO_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_CONGO_SHORT_DESC</Tag>
 		<English>Congo</English>
 	</TEXT>
 </Civ4GameText>

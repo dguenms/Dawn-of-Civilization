@@ -5098,7 +5098,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == ENGINEERING || iI == THEOLOGY || iI == CIVIL_SERVICE)
 										iValue /= 2;
 									break;
-								case CARTHAGE:
+								case PHOENICIA:
 									if (iI == COMPASS)
 										iValue *= 2;
 									if (iI == MONOTHEISM)
@@ -10197,7 +10197,7 @@ int CvPlayerAI::AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) co
     //internal spread.
     if (bCultureVictory || bState || bHoly)
     {
-        iCount = std::max(iCount, (pArea->getCitiesPerPlayer(getID()) - pArea->countHasReligion(eReligion, getID())));
+		iCount = std::max(iCount, pArea->countCanSpread(eReligion, getID(), true));
         if (iCount > 0)
         {
             if (!bCultureVictory)
@@ -10211,7 +10211,7 @@ int CvPlayerAI::AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) co
     //external spread.
     if ((bHoly && bState) || (bHoly && !bHolyState && (getStateReligion() != NO_RELIGION)))
     {
-        iCount += ((pArea->getNumCities() * 2) - (pArea->countHasReligion(eReligion) * 3));
+		iCount += pArea->countCanSpread(eReligion, NO_PLAYER, true) / 2;
         iCount /= 16; //Leoreth: /8 before, waste less time spreading religions
 
         iCount = std::max(0, iCount);
@@ -11077,7 +11077,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iValue -= 40;
 		}
 
-		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
+		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
 		{
 			iValue += 40;
 		}
@@ -11121,7 +11121,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iValue -= 40;
 		}
 
-		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
+		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
 		{
 			iValue += 80;
 		}
@@ -11562,7 +11562,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Leoreth: Pantheon civic
 	if (eCivic == CIVIC_PANTHEON)
 	{
-		if (eBestReligion == NO_RELIGION && GET_PLAYER(getID()).getCurrentEra() < 2 && getID() != MAYA)
+		if (eBestReligion == NO_RELIGION && GET_PLAYER(getID()).getCurrentEra() < ERA_MEDIEVAL && getID() != MAYA)
 		{
 			iValue += GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getWonderConstructRand() * 2;
 		}
@@ -11593,7 +11593,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	// Leoreth - prefer Pantheon if more than half of their cities has no religion
 	if (eCivic == CIVIC_PANTHEON)  // Pantheon
 	{
-        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME)
+        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == PHOENICIA || getID() == ROME)
 		{
             int iCityCounter = 0;
             for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++)
@@ -11699,7 +11699,7 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 
 			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
 			{
-				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == CARTHAGE || getID() == PERSIA)
+				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA)
 				{
 					iValue /= 2;
 				}

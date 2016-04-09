@@ -963,9 +963,9 @@ enum BonusTypes						// Exposed to Python
 	BONUS_TOBACCO,
 	BONUS_WINE,
 	BONUS_WHALE,
-	BONUS_DRAMA,
-	BONUS_MUSIC,
-	BONUS_MOVIES,
+	BONUS_HIT_FOOTBALL_EVENT,
+	BONUS_HIT_SINGLES,
+	BONUS_HIT_MOVIES,
 };
 
 enum BonusClassTypes			// Exposed to Python
@@ -1162,7 +1162,7 @@ enum PlayerTypes				// Exposed to Python
 	HARAPPA,
 	GREECE,
 	INDIA,
-	CARTHAGE,
+	PHOENICIA,
 	POLYNESIA,
 	PERSIA,
 	ROME,
@@ -1854,9 +1854,10 @@ enum SpecialistTypes			// Exposed to Python
 enum ReligionTypes				// Exposed to Python
 {
 	NO_RELIGION = -1,
-	PROTESTANTISM,
-	CATHOLICISM,
+	JUDAISM,
 	ORTHODOXY,
+	CATHOLICISM,
+	PROTESTANTISM,
 	ISLAM,
 	HINDUISM,
 	BUDDHISM,
