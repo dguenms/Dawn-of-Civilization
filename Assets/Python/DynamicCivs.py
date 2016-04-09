@@ -477,7 +477,7 @@ dStartingLeaders = [
 	iFrance : iCharlemagne,
 	iEngland : iAlfred,
 	iHolyRome : iBarbarossa,
-	iRussia : iYaroslav,
+	iRussia : iIvan,
 	iNetherlands : iWillemVanOranje,
 	iMali : iMansaMusa,
 	iPoland : iCasimir,
@@ -494,7 +494,7 @@ dStartingLeaders = [
 	iAmerica : iWashington,
 	iArgentina : iSanMartin,
 	iBrazil : iPedro,
-	iCanada : iTrudeau,
+	iCanada : iMacDonald,
 },
 # 600 AD
 {
@@ -1783,6 +1783,11 @@ def leader(iPlayer):
 	elif iPlayer == iRome:
 		if not bEmpire and not bCityStates: return iAugustus
 		
+	elif iPlayer == iKorea:		
+		if iEra >= iRenaissance: return iSejong
+		
+		if utils.getScenario() >= i1700AD: return iSejong
+	
 	elif iPlayer == iMaya:
 		if bReborn:
 			return iBolivar
@@ -1802,6 +1807,8 @@ def leader(iPlayer):
 		if iGameTurn >= getTurnForYear(1000): return iBasil
 		
 	elif iPlayer == iVikings:
+		if iEra >= iModern: return iGerhardsen
+		
 		if iEra >= iRenaissance: return iGustav
 		
 	elif iPlayer == iArabia:
@@ -1860,6 +1867,10 @@ def leader(iPlayer):
 			return iPeter
 			
 	elif iPlayer == iPoland:
+		if iEra >= iModern: return iWalesa
+		
+		if isFascist(iPlayer) or isCommunist(iPlayer): return iPilsudski
+	
 		if iEra >= iRenaissance: return iSobieski
 		
 		if utils.getScenario() == i1700AD: return iSobieski
@@ -1870,6 +1881,8 @@ def leader(iPlayer):
 		if tPlayer.isHasTech(iOptics): return iJoao
 		
 	elif iPlayer == iItaly:
+		if isFascist(iPlayer): return iMussolini
+	
 		if iEra >= iIndustrial: return iCavour
 		
 	elif iPlayer == iMongolia:
@@ -1886,6 +1899,8 @@ def leader(iPlayer):
 			return iJuarez
 			
 	elif iPlayer == iMughals:
+		if iEra >= iModern: return iBhutto
+	
 		if tPlayer.isHasTech(iPatronage): return iAkbar
 		
 	elif iPlayer == iTurkey:
@@ -1905,8 +1920,15 @@ def leader(iPlayer):
 		
 	elif iPlayer == iArgentina:
 		if iEra >= iModern: return iPeron
+	
+	elif iPlayer == iBrazil:
+		if iEra >= iModern: return iGetulio
+		
+	elif iPlayer == iCanada:
+		if iEra >= iModern: return iTrudeau
 		
 	return startingLeader(iPlayer)
+		
 	
 def leaderName(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
