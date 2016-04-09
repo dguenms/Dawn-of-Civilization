@@ -1468,4 +1468,16 @@
 		<Tag>TXT_KEY_VOTE_UN_RELEASE_CIVILIZATION</Tag>
 		<English>Release Civilization</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_CANNOT_SPREAD_UNLESS_STATE</Tag>
+		<English>[ICON_BULLET]Missionaries cannot spread in civilizations that have a different state religion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_CANNOT_CONVERT_UNLESS_HOLY_CITY</Tag>
+		<English>[ICON_BULLET]Converting to this religion requires controlling its holy city</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RELIGION_BUILDINGS</Tag>
+		<English>All %F1_RelIcon Buildings</English>
+	</TEXT>
 </Civ4GameText>

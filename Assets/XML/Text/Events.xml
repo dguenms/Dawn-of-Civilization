@@ -6363,14 +6363,6 @@
 		<Spanish>Un reputado cient&#237;fico de %s2_city se ha convertido en predicador en el monasterio cristiano local.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENTTRIGGER_RABBI</Tag>
-		<English>A Rabbi from %s2_city has written a valuable collection of religious works.</English>
-		<French>Un rabbin de la ville de %s2_city a termine la redaction de son oeuvre religieuse.</French>
-		<German>Ein Rabbi aus der Stadt %s2_city hat eine wertvolle Sammlung religi&#246;ser Schriften verfasst.</German>
-		<Italian>Un rabbino di %s2_city ha scritto una preziosa raccolta di opere religiose</Italian>
-		<Spanish>Un rabino de %s2_city ha escrito una valiosa colecci&#243;n de obras religiosas</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_REFORMATION</Tag>
 		<English>The Reformation has reached the %s1_civ_adjective civilization.</English>
 		<German>Die Reformation hat die %s1:1 Zivilisation erreicht.</German>

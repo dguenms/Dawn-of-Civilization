@@ -1273,6 +1273,10 @@
 		<English>The [COLOR_BUILDING_TEXT]Royal Fire[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Synagogue[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>
 		<English>Zoroastrian Monastery</English>
 		<German>
@@ -1286,6 +1290,10 @@
 		<English>[COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Jewish Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Jewish Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE</Tag>
 		<English>Zoroastrian Temple</English>
 		<German>
@@ -1297,5 +1305,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Zoroastrian Temples[COLOR_REVERT] increase a city's happiness and culture.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Jewish Temples[COLOR_REVERT] increase a city's happiness and culture.</English>
 	</TEXT>
 </Civ4GameText>

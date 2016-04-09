@@ -4646,7 +4646,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		iUpgradeLeft *= 110;
 		iUpgradeLeft /= 100;
 		break;
-	case CARTHAGE:
+	case PHOENICIA:
 		iUpgradeLeft *= 110;
 		iUpgradeLeft /= 100;
 		break;
