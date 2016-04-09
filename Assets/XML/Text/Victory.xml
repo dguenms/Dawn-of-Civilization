@@ -1962,6 +1962,18 @@
 		<German>Erwerben Sie bis 1500 n. Chr. 9000 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_JUD1</Tag>
+		<English>Title: 1st Jewish URV</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD2</Tag>
+		<English>Title: 2nd Jewish URV</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD3</Tag>
+		<English>Title: 3rd Jewish URV</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>
 		<English>Sila: Be at peace for 100 turns</English>
 		<German>Sila: Haben Sie 100 Runden lang Frieden</German>
@@ -2075,18 +2087,6 @@
 		<Tag>TXT_KEY_URV_ISL3</Tag>
 		<English>Jihad: Control five shrines</English>
 		<German>Dschihad: Kontrollieren Sie f&#252;nf Schreine</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD1</Tag>
-		<English>Title: 1st Jewish URV</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD2</Tag>
-		<English>Title: 2nd Jewish URV</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD3</Tag>
-		<English>Title: 3rd Jewish URV</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_ORT1</Tag>
