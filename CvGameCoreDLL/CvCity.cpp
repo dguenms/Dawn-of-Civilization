@@ -14676,7 +14676,7 @@ bool CvCity::canSpread(ReligionTypes eReligion, bool bMissionary) const
 {
 	if (isHasReligion(eReligion)) return false;
 
-	if (!plot()->canSpread(eReligion)) return false;
+	if (!bMissionary && !plot()->canSpread(eReligion)) return false;
 
 	if (bMissionary && !GC.getReligionInfo(eReligion).isProselytizing())
 	{
