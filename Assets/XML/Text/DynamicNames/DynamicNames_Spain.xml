@@ -125,7 +125,6 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
-	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPAIN_CASTILE</Tag>
 		<English>Castile</English>
@@ -225,7 +224,6 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-	</TEXT>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SPANISH_MAYA</Tag>

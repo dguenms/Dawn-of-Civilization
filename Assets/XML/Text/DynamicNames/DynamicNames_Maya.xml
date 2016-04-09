@@ -73,7 +73,6 @@
 			<Plural>1</Plural>
 		</Spanish>
 	</TEXT>
-	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_REPUBLIC</Tag>
 		<English>%s2 Federal Republic</English>
@@ -169,7 +168,6 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-	</TEXT>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MAYA_ADJECTIVE</Tag>

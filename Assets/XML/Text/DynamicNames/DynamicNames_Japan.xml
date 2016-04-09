@@ -25,7 +25,6 @@
 			<Plural>1</Plural>
 		</Spanish>
 	</TEXT>
-	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPAN_PEOPLES</Tag>
 		<English>Yamato Peoples</English>
@@ -73,7 +72,6 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-	</TEXT>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_JAPAN_FASCIST</Tag>

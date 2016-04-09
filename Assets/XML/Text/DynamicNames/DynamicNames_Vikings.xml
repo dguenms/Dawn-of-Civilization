@@ -186,7 +186,8 @@
 		<Spanish>
 			<Text>Escandinavia</Text>
 			<Gender>Female</Gender>
-			<Plural>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_VIKINGS_SCANDINAVIAN</Tag>
