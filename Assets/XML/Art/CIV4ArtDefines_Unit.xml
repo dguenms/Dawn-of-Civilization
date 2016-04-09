@@ -3949,7 +3949,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ASIAN_ASIAN</Type>
+			<Type>ART_DEF_UNIT_ASIAN_WAR_GALLEY</Type>
 			<Button>,Art/Interface/Buttons/Units/Caravel.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,9</Button>
 			<fScale>0.14</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>

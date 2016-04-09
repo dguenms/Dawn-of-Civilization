@@ -20,9 +20,9 @@
 				<StyleUnit>
 					<UnitType>UNIT_CARAVEL</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_ASIAN_ASIAN</EarlyArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_ASIAN_ASIAN</MiddleArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_ASIAN_ASIAN</LateArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_ASIAN_WAR_GALLEY</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_ASIAN_WAR_GALLEY</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_ASIAN_WAR_GALLEY</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
