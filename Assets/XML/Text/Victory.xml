@@ -2077,6 +2077,18 @@
 		<German>Dschihad: Kontrollieren Sie f&#252;nf Schreine</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_JUD1</Tag>
+		<English>Title: 1st Jewish URV</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD2</Tag>
+		<English>Title: 2nd Jewish URV</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD3</Tag>
+		<English>Title: 3rd Jewish URV</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_ORT1</Tag>
 		<English>Patriarchates: Build four Orthodox Cathedrals</English>
 		<German>Patriarchate: Bauen Sie vier orthodoxe Kathedralen</German>
