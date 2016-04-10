@@ -12815,7 +12815,7 @@ void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool b
 							if (GC.getGameINLINE().getVoteSourceReligion((VoteSourceTypes)iI) == NO_RELIGION)
 							{
 								FAssert(GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION);
-								GC.getGameINLINE().setVoteSourceReligion((VoteSourceTypes)iI, GET_PLAYER(getOwnerINLINE()).getStateReligion(), true);
+								GC.getGameINLINE().setVoteSourceReligion((VoteSourceTypes)iI, (ReligionTypes)GC.getBuildingInfo(eIndex).getReligionType(), true);
 							}
 						}
 					}
