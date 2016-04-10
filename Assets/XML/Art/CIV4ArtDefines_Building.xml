@@ -1125,7 +1125,7 @@
 			<fInterfaceScale>0.54</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/ZoroastrianTemple/default.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Temple_Zoroastrian.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Cathedral_Zoroastrian.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZOROASTRIAN_MONASTERY</Type>
@@ -1135,7 +1135,7 @@
 			<fInterfaceScale>0.54</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/ZoroastrianTemple/default.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Temple_Zoroastrian.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Monastery_Zoroastrian.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZOROASTRIAN_SHRINE</Type>
@@ -1355,7 +1355,7 @@
 			<fInterfaceScale>0.48</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Shrine/christian shrine.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Shrine_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,13</Button>
+			<Button>Art\Interface\Buttons\Buildings/Orthodox_Shrine.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TEMPLE_OF_KUKULKAN</Type>
