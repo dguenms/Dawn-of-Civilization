@@ -1974,6 +1974,18 @@
 		<English>Title: 3rd Jewish URV</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_URV_JUD1</Tag>
+		<English>Title: 1st Jewish URV</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD2</Tag>
+		<English>Title: 2nd Jewish URV</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD3</Tag>
+		<English>Title: 3rd Jewish URV</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>
 		<English>Sila: Be at peace for 100 turns</English>
 		<German>Sila: Haben Sie 100 Runden lang Frieden</German>
