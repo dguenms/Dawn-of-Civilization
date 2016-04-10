@@ -1922,7 +1922,7 @@ def leader(iPlayer):
 		if iEra >= iModern: return iPeron
 	
 	elif iPlayer == iBrazil:
-		if iEra >= iModern: return iGetulio
+		if iEra >= iModern: return iVargas
 		
 	elif iPlayer == iCanada:
 		if iEra >= iModern: return iTrudeau
