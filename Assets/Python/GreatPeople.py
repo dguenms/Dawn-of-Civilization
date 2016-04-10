@@ -2046,7 +2046,7 @@ iCivNetherlands : {
 		"Jan van Riebeeck", # 17th 
 		"Jan Coen", # 17th 
 		iIndustrial,
-		"Brenninkmeijer Brothers", # 19th 
+		"Clemens Brenninkmeijer", # 19th 
 		"August Kessler", # 19th 
 		iModern,
 		"Freddy Heineken", # 20th 
