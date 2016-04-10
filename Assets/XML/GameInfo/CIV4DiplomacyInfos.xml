@@ -151,14 +151,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_YAROSLAV</LeaderType>
+							<LeaderType>LEADER_IVAN_IV</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_YAROSLAV_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_IVAN_IV_1</Text>
 					</DiplomacyText>
 				</Response-->
 				<Response>

@@ -199,7 +199,7 @@ WONDERS
 
 LEADERHEADS
 # Added generic first contact texts so leaders are not mute when you meet them
-# Added unique diplomacy texts to Yaroslav, Nicholas II, Cixi, Khomeini, Ataturk
+# Added unique diplomacy texts to Ivan IV, Nicholas II, Cixi, Khomeini, Ataturk
 # Added unique diplomacy music to Maria II and Afonso Henriques
 # China: added Tang Taizong and Hongwu
 # Egypt: added Baibars and Nasser
