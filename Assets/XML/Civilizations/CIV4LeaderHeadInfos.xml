@@ -65261,10 +65261,10 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_GETULIO</Type> <!-- Personality: DeGaulle -->
-			<Description>TXT_KEY_LEADER_GETULIO</Description>
-			<Civilopedia>TXT_KEY_LEADER_GETULIO_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_GETULIO</ArtDefineTag>
+			<Type>LEADER_VARGAS</Type> <!-- Personality: DeGaulle -->
+			<Description>TXT_KEY_LEADER_VARGAS</Description>
+			<Civilopedia>TXT_KEY_LEADER_VARGAS_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_VARGAS</ArtDefineTag>
 			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
