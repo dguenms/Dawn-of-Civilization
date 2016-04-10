@@ -2121,7 +2121,7 @@ iCivAmerica : {
 		"Henry Ford", # 19th 
 		"Charles Goodyear", # 19th 
 		iModern,
-		"Wright Brothers", # 20th 
+		"Orville Wright", # 20th 
 		"fLillian Moller Gilbreth", # 20th 
 		"fHedy Lamarr", # 20th 
 		"fMargaret Hutchinson Rousseau", # 20th 
