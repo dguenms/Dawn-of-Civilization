@@ -95,7 +95,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_EGYPT</Tag>
-		<English>Ninth Satrapy</English>
+		<English>Sixth Satrapy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_INDIA</Tag>
@@ -103,7 +103,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_BABYLONIA</Tag>
-		<English>Sixth Satrapy</English>
+		<English>Ninth Satrapy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIAN_GREECE</Tag>
@@ -153,7 +153,6 @@
 		<Tag>TXT_KEY_CIV_PERSIAN_NAME_INDONESIA</Tag>
 		<English>Malacca</English>
 	</TEXT>
-
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_ADJECTIVE</Tag>
 		<English>Iranian</English>
