@@ -1683,8 +1683,8 @@ iMarsh = 9
 iImmunity = 20
 
 # Victory
-iVictoryPolytheism = 9
-iVictorySecularism = 10
+iVictoryPolytheism = 10
+iVictorySecularism = 11
 
 
 #leaders
