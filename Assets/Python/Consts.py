@@ -1689,7 +1689,7 @@ iVictorySecularism = 10
 
 #leaders
 
-iNumLeaders = 122
+iNumLeaders = 125
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, iCharlemagne, iChurchill,
 iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, iHammurabi, iHannibal, iCleopatra,
 iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, iLouis, iMansaMusa, iMao,
@@ -1701,7 +1701,7 @@ iChiangKaishek, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHay
 iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, iRahman, iRajendra, iLobsangGyatso, 
 iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, 
 iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya, iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen,
-iGetulio, iMacDonald) = range(iNumLeaders)
+iGetulio, iMacDonald, iCastilla, iWilliam, iGeorge) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,
