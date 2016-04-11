@@ -2133,22 +2133,29 @@ def checkReligiousGoal(iPlayer, iGoal):
 			
 	elif iVictoryType == iVictorySecularism:
 	
-		# first Secular goal: control the temples of seven different religions
+		# first Secular goal: control the cathedrals of every religion
 		if iGoal == 0:
 			iCount = 0
 			for iReligion in range(iNumReligions):
-				if getNumBuildings(iPlayer, iTemple + 4*iReligion) > 0:
+				if getNumBuildings(iPlayer, iCathedral + 4*iReligion) > 0:
 					iCount += 1
-			if iCount >= 7: return 1
+			if iCount >= iNumReligions: return 1
 			
-		# second Secular goal: make sure there are 20 universities controlled by secular civilizations
+		# second Secular goal: make sure there are 25 universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations
 		elif iGoal == 1:
-			if countCivicBuildings(4, iCivicSecularism, iUniversity) >= 20: return 1
+			iUniversities = countCivicBuildings(4, iCivicSecularism, iUniversity)
+			iScientists = countCivicSpecialists(4, iCivicSecularism, iSpecialistGreatScientist)
+			iStatesmen = countCivicSpecialists(4, iCivicSecularism, iSpecialistGreatStatesman)
+			if iUniversities >= 25 and iScientists >= 10 and iStatesmen >= 10: return 1
 			
-		# third Secular goal: be first to enter the industrial and modern eras
+		# third Secular goal: make sure the five most advanced civilizations are secular
 		elif iGoal == 2:
-			if checkEraGoal(iPlayer, [iIndustrial, iModern]): return 1
-			elif sd.getFirstEntered(iIndustrial) not in [-1, iPlayer] or sd.getFirstEntered(iModern) not in [-1, iPlayer]: return 0
+			iCount = 0
+			lAdvancedPlayers = utils.getSortedList([iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).isAlive()], lambda iLoopPlayer: gc.getTeam(iLoopPlayer).getTotalTechValue(), True)
+			for iLoopPlayer in lAdvancedPlayers[:5]:
+				if gc.getPlayer(iLoopPlayer).getCivics(4) == iCivicSecularism:
+					iCount += 1
+			if iCount >= 5: return 1
 			
 	return -1
 
@@ -2410,6 +2417,14 @@ def countReligionSpecialists(iReligion, iSpecialist):
 	for iPlayer in range(iNumPlayers):
 		pPlayer = gc.getPlayer(iPlayer)
 		if pPlayer.isAlive() and pPlayer.getStateReligion() == iReligion:
+			iCount += countSpecialists(iPlayer, iSpecialist)
+	return iCount
+	
+def countCivicSpecialists(iCategory, iCivic, iSpecialist):
+	iCount = 0
+	for iPlayer in range(iNumPlayers):
+		pPlayer = gc.getPlayer(iPlayer)
+		if pPlayer.isAlive() and pPlayer.getCivics(iCategory) == iCivic:
 			iCount += countSpecialists(iPlayer, iSpecialist)
 	return iCount
 	
@@ -2966,17 +2981,23 @@ def getURVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iCount = 0
 			for iReligion in range(iNumReligions):
-				if getNumBuildings(iPlayer, iTemple + 4 * iReligion) > 0:
+				if getNumBuildings(iPlayer, iCathedral + 4 * iReligion) > 0:
 					iCount += 1
-			aHelp.append(getIcon(iCount >= 7) + localText.getText("TXT_KEY_VICTORY_DIFFERENT_TEMPLES", (iCount, 7)))
+			aHelp.append(getIcon(iCount >= iNumReligions) + localText.getText("TXT_KEY_VICTORY_DIFFERENT_CATHEDRALS", (iCount, iNumReligions)))
 		elif iGoal == 1:
-			iCount = countCivicBuildings(4, iCivicSecularism, iUniversity)
-			aHelp.append(getIcon(iCount >= 20) + localText.getText("TXT_KEY_VICTORY_SECULAR_UNIVERSITIES", (iCount, 20)))
+			iUniversities = countCivicBuildings(4, iCivicSecularism, iUniversity)
+			iScientists = countCivicSpecialists(4, iCivicSecularism, iSpecialistGreatScientist)
+			iStatesmen = countCivicSpecialists(4, iCivicSecularism, iSpecialistGreatStatesman)
+			aHelp.append(getIcon(iUniversities >= 25) + localText.getText("TXT_KEY_VICTORY_SECULAR_UNIVERSITIES", (iUniversities, 25)))
+			aHelp.append(getIcon(iScientists >= 10) + localText.getText("TXT_KEY_VICTORY_SECULAR_SCIENTISTS", (iScientists, 10)) + ' ' + getIcon(iStatesmen >= 10) + localText.getText("TXT_KEY_VICTORY_SECULAR_STATESMEN", (iStatesmen, 10)))
 		elif iGoal == 2:
-			bIndustrial = sd.getFirstEntered(iIndustrial) == iPlayer
-			bModern = sd.getFirstEntered(iModern) == iPlayer
-			aHelp.append(getIcon(bIndustrial) + localText.getText("TXT_KEY_VICTORY_FIRST_ENTER_INDUSTRIAL", ()) + ' ' + getIcon(bModern) + localText.getText("TXT_KEY_VICTORY_FIRST_ENTER_MODERN", ()))
-
+			sString = ""
+			lAdvancedPlayers = utils.getSortedList([iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).isAlive()], lambda iLoopPlayer: gc.getTeam(iLoopPlayer).getTotalTechValue(), True)
+			for iLoopPlayer in lAdvancedPlayers[:5]:
+				pLoopPlayer = gc.getPlayer(iLoopPlayer)
+				sString += getIcon(pLoopPlayer.getCivics(4) == iCivicSecularism) + pLoopPlayer.getCivilizationShortDescription(0) + ' '
+			aHelp.append(sString)
+				
 	return aHelp
 
 def getUHVHelp(iPlayer, iGoal):
