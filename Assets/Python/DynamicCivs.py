@@ -512,6 +512,7 @@ dStartingLeaders = [
 	iEngland : iVictoria,
 	iHolyRome : iFrancis,
 	iRussia : iPeter,
+	iNetherlands : iWilliam,
 	iPoland : iSobieski,
 	iPortugal : iJoao,
 	iMughals : iAkbar,
@@ -1765,6 +1766,10 @@ def leader(iPlayer):
 		if iGameTurn >= getTurnForYear(-1600): return iHammurabi
 		
 	elif iPlayer == iGreece:
+		if iEra >= iIndustrial: return iGeorge
+		
+		if bResurrected and iGameTurn >= getTurnForYear(1600): return iGeorge
+	
 		if bEmpire: return iAlexander
 		
 		if not bCityStates: return iAlexander
@@ -1868,6 +1873,9 @@ def leader(iPlayer):
 			if iGameTurn >= getTurnForYear(1750): return iCatherine
 			
 			return iPeter
+		
+	elif iPlayer == iNetherlands:
+		if iGameTurn >= getTurnForYear(1650): return iWilliam
 			
 	elif iPlayer == iPoland:
 		if iEra >= iModern: return iWalesa
@@ -1883,6 +1891,11 @@ def leader(iPlayer):
 		
 		if tPlayer.isHasTech(iOptics): return iJoao
 		
+	elif iPlayer == iInca:
+		if iEra >= iIndustrial: return iCastilla
+		
+		if bResurrected and iGameTurn >= getTurnForYear(1600): return iCastilla
+	
 	elif iPlayer == iItaly:
 		if isFascist(iPlayer): return iMussolini
 	
