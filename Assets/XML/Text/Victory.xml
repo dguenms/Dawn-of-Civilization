@@ -2150,18 +2150,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC1</Tag>
-		<English>Tolerance: Control the temples of seven different religions</English>
-		<German>Toleranz: Kontrollieren Sie die Tempel von sieben verschiedenen Religionen</German>
+		<English>Tolerance: Control the Cathedrals of all religions</English>
+		<German>Toleranz: Kontrollieren Sie die Kathedralen aller Religionen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC2</Tag>
-		<English>Humanism: Make sure there are 20 universities controlled by secular civilizations</English>
-		<German>Humanismus: Stellen Sie sicher, dass es 20 von s&#228;kularen Zivilisationen kontrollierte Universit&#228;ten gibt</German>
+		<English>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</English>
+		<German>Humanismus: Stellen Sie sicher, dass es in säkularen Zivilisationen 25 Universitäten, 10 Große Wissenschaftler und 10 Große Staatsmänner gibt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC3</Tag>
-		<English>Modernization: Be the first to enter the Industrial and Modern eras</English>
-		<German>Modernisierung: Erreichen Sie als erster die industrielle und moderne &#196;ras</German>
+		<English>Modernity: Make sure that the five most advanced civilizations are secular</English>
+		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten Zivilisationen säkular sind</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1</Tag>
@@ -2364,8 +2364,8 @@
 		<English>Deccan</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_DIFFERENT_TEMPLES</Tag>
-		<English>Temples of different religions: %d1 / %d2</English>
+		<Tag>TXT_KEY_VICTORY_DIFFERENT_CATHEDRALS</Tag>
+		<English>Cathedrals of different religions: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_EASTER_ISLAND</Tag>
@@ -2967,6 +2967,14 @@
 		<German>JA</German>
 		<Italian>S&#204;</Italian>
 		<Spanish>S&#205;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SECULAR_SCIENTISTS</Tag>
+		<English>Great Scientists in secular civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SECULAR_STATESMEN</Tag>
+		<English>Great Statesmen in secular civilizations: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SECULAR_UNIVERSITIES</Tag>

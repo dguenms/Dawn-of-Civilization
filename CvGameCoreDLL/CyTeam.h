@@ -228,6 +228,7 @@ public:
 	void setOpenBorders(int eTeam, bool bNewValue);
 	void setDefensivePact(int eTeam, bool bNewValue);
 	bool isCapitulated();
+	int getTotalTechValue();
 
 protected:
 
