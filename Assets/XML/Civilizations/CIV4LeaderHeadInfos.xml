@@ -66833,41 +66833,39 @@
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MODERN</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_LATE_INTRO</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_FUTURE</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_LATE_INTRO</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyIntroMusicPeace>
 			<DiplomacyMusicPeace>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_ANCIENT</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BOLIVAR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_CLASSICAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_EARLY</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BOLIVAR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MEDIEVAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BOLIVAR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_RENAISSANCE</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_MIDDLE</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BOLIVAR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_INDUSTRIAL</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_LATE_LP</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BOLIVAR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_MODERN</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_LATE_LP</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BOLIVAR</DiploScriptId>
 				</DiploMusicPeaceEra>
 				<DiploMusicPeaceEra>
 					<EraType>ERA_FUTURE</EraType>
-					<DiploScriptId>AS2D_DIPLO_HUAYNACAPAC_LATE_LP</DiploScriptId>
+					<DiploScriptId>AS2D_DIPLO_BOLIVAR</DiploScriptId>
 				</DiploMusicPeaceEra>
 			</DiplomacyMusicPeace>
 			<DiplomacyIntroMusicWar>
