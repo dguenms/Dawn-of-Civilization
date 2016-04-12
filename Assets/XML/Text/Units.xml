@@ -1355,6 +1355,10 @@
 		<English>[COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Jewish Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZULU_IMPI</Tag>
 		<English>Impi</English>
 		<French>

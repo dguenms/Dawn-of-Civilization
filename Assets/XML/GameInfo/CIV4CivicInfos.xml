@@ -501,7 +501,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_CENTRAL_PLANNING_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Civics/State_Property.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,5,3</Button>
-			<TechPrereq>TECH_UTOPIA</TechPrereq>
+			<TechPrereq>TECH_COMMUNISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<SpecialistExtraYields>

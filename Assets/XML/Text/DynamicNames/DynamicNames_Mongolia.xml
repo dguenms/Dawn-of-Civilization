@@ -4,10 +4,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_DESC</Tag>
 		<English>The Mongols</English>
+		<French>
+			<Text>Les Mongols</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Mongolen:Die Mongolen:den Mongolen</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Mongoli</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Mongoles</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_PEOPLES</Tag>
 		<English>Mongolian Peoples</English>
+		<French>
+			<Text>Peuplades Mongoles</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Mongolische V&#246;lker: Mongolischen V&#246;lker:Mongolischen V&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Mongoli</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Mongoles</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_DEFAULT</Tag>
@@ -60,6 +100,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_FASCIST</Tag>
 		<English>Nationalist %s1</English>
+		<French>
+			<Text>%s1 Nationaliste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationalistisches %s1:Nationalistische %s1:Nationalistischen %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 Nazionalista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 Nacionalista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOLIA_TIMURID</Tag>
@@ -108,6 +168,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_ILKHANATE</Tag>
 		<English>Ilkhanate of %s1</English>
+		<French>
+			<Text>Ilkhanat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Ilkhanat %s1:Ilkhanat %s1:Ilkhanat %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Ilkhanato di %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Iljanato de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_CHINA</Tag>
@@ -124,14 +204,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_BYZANTIUM</Tag>
 		<English>Khanate of Anatolia</English>
+		<French>
+			<Text>Khanat du Anatolie</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Khanat Anatolien:Khanat Anatolien:Khanat Anatolien</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Khanato del Anatolia</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Janato de Anatolia</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_RUSSIA</Tag>
 		<English>Khanate of the Golden Horde</English>
+		<French>
+			<Text>Khanat de la Horde d'Or</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Khanat der Goldenen Horde:Khanat der Goldenen Horde:Khanat der Goldenen Horde</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Khanato dell'Orda d'Oro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Janato de la Horda de Oro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_TURKEY</Tag>
 		<English>Khanate of Turkestan</English>
+		<French>
+			<Text>Khanat du Turkestan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Khanat Turkistan:Khanat Turkistan:Khanat Turkistan</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Khanato di Turkestan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Janato de Turquest&#225;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_MUGHALS</Tag>

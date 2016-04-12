@@ -452,7 +452,11 @@
 			<Gender>Female</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Die Hagia Sophia</German>
+		<German>
+			<Text>Die Hagia Sophia</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
 		<Italian>
 			<Text>Santa Sofia</Text>
 			<Gender>Female</Gender>
@@ -974,12 +978,8 @@
 		<English>The [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] throughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_RELIGION_BUILDINGS</Tag>
-		<English>All %F1_RelIcon Buildings</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings, and it increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 		<German>Die [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] erhöht die Produktion aller Gebäude der Staatsreligion und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
 	</TEXT>
 </Civ4GameText>

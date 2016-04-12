@@ -1342,7 +1342,7 @@ def canTriggerIndependentFilms(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 
 	for i in range(gc.getNumBuildingInfos()):
-		if gc.getBuildingInfo(i).getFreeBonus() == CvUtil.findInfoTypeNum(gc.getBonusInfo,gc.getNumBonusInfos(),'BONUS_MOVIES'):
+		if gc.getBuildingInfo(i).getFreeBonus() == CvUtil.findInfoTypeNum(gc.getBonusInfo,gc.getNumBonusInfos(),'BONUS_HIT_MOVIES'):
 			if player.countNumBuildings(i) > 0:
 				return false
 				
@@ -1355,7 +1355,7 @@ def doIndependentFilms(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	city = player.getCity(kTriggeredData.iCityId)
 
-	iBonus = CvUtil.findInfoTypeNum(gc.getBonusInfo,gc.getNumBonusInfos(),'BONUS_MOVIES')
+	iBonus = CvUtil.findInfoTypeNum(gc.getBonusInfo,gc.getNumBonusInfos(),'BONUS_HIT_MOVIES')
 
 	city.changeFreeBonus(iBonus, 1)
 	
@@ -1368,7 +1368,7 @@ def getHelpIndependentFilms(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	city = player.getCity(kTriggeredData.iCityId)
 
-	iBonus = CvUtil.findInfoTypeNum(gc.getBonusInfo,gc.getNumBonusInfos(),'BONUS_MOVIES')
+	iBonus = CvUtil.findInfoTypeNum(gc.getBonusInfo,gc.getNumBonusInfos(),'BONUS_HIT_MOVIES')
 	
 	szHelp = localText.getText("TXT_KEY_EVENT_INDEPENDENTFILMS_HELP_1", ( 1, gc.getBonusInfo(iBonus).getChar(), city.getNameKey()))
 

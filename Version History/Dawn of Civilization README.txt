@@ -72,7 +72,7 @@ II.6. Leaderhead changes
 # France: moved Charlemagne from Germany to France to represent medieval France. Thus: Charlemagne -> Louis XIV -> Napoleon -> de Gaulle
 # England: added Alfred the Great (represented by Brennus) to represent medieval England. Thus: Alfred -> Elizabeth -> Victoria -> Churchill
 # Germany: added Charles V (personality Charlemagne) to represent medieval/renaissance Germany. Thus: Charles V -> Frederick -> Bismarck
-# Russia: added Yaroslav the Wise (personality: Alexander) to represent medieval Russia. Thus: Yaroslav -> Peter -> Catherine -> Stalin
+# Russia: added Ivan IV (personality: Alexander) to represent medieval Russia. Thus: Ivan IV -> Peter -> Catherine -> Stalin
 # Portugal: added Afonso Henriques to represent medieval Portugal. Thus: Afonso -> Joao
 # Turkey: added Mustafa Kemal Atatürk to represent modern Turkey. Thus: Mehmed -> Suleiman -> Atatürk
 
