@@ -562,4 +562,16 @@
 		<Tag>TXT_KEY_LEADER_WALESA</Tag>
 		<English>Walesa</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_CASTILLA</Tag>
+		<English>Castilla</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_WILLIAM_III</Tag>
+		<English>William III</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_GEORGE_I</Tag>
+		<English>George I</English>
+	</TEXT>
 </Civ4GameText>

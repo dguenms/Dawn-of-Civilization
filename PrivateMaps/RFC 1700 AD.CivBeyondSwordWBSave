@@ -516,7 +516,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_WILLEM_VAN_ORANJE
+	LeaderType=LEADER_WILLIAM_III
 	CivType=CIVILIZATION_NETHERLANDS                 
 	Team=38                 
 	PlayableCiv=1                      
