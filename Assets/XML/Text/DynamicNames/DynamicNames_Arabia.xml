@@ -144,10 +144,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_VASSAL</Tag>
 		<English>Emirate of %s1</English>
+		<French>
+			<Text>Emirat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Emirat von %s1:Emirat von %s1:Emirat von %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Emirato di %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Emirato de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_EGYPT</Tag>
 		<English>Misr</English>
+		<French>
+			<Text>Misr</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Misr:Misr:Misr</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Misr</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Misr</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_BABYLONIA</Tag>
@@ -156,10 +196,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_PERSIA</Tag>
 		<English>Fars</English>
+		<French>
+			<Text>Fars</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Fars:Fars:Fars</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Fars</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Fars</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_CARTHAGE</Tag>
 		<English>Ifriqiya</English>
+		<French>
+			<Text>Ifriqiya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Ifriqiya:Ifriqiya:Ifriqiya</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Ifriqiya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ifriqiya</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ROME</Tag>
@@ -168,6 +248,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ETHIOPIA</Tag>
 		<English>Abyssinia</English>
+		<French>
+			<Text>Abyssinie</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Abessinien:Abessinien:Abessinien</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Abissinia</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Abisinia</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_BYZANTIUM</Tag>
@@ -176,6 +276,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_MOORS</Tag>
 		<English>Al-Andalus</English>
+		<French>
+			<Text>Al-Andalus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Al-Andalus:Al-Andalus:Al-Andalus</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Al-Andalus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Al-Andalus</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_SPAIN</Tag>
@@ -184,6 +304,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_TURKEY</Tag>
 		<English>Ottoman Sultanate</English>
+		<French>
+			<Text>Sultanat Ottoman</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Osmanische Sultanat:Osmanische Sultanat:Osmanischen Sultanat</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sultanato Ottomano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sultanato Otomano</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_MUGHALS</Tag>

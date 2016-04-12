@@ -9,71 +9,41 @@
 		<BuildInfo>
 			<Type>BUILD_ROAD</Type>
 			<Description>TXT_KEY_BUILD_ROAD</Description>
-			<Help/>
 			<PrereqTech>TECH_THE_WHEEL</PrereqTech>
 			<iTime>300</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
 			<RouteType>ROUTE_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_R</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildRoad.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_ROMAN_ROAD</Type>
 			<Description>TXT_KEY_BUILD_ROMAN_ROAD</Description>
-			<Help/>
 			<PrereqTech>TECH_THE_WHEEL</PrereqTech>
 			<iTime>300</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
 			<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_R</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>Art/Interface/Buttons/BuildPavedRoad.dds</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_RAILROAD</Type>
 			<Description>TXT_KEY_BUILD_RAILROAD</Description>
-			<Help/>
 			<PrereqTech>TECH_RAILROAD</PrereqTech>
 			<iTime>400</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
 			<RouteType>ROUTE_RAILROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_RAILROAD</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_R</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildRailroad.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,9</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_FARM</Type>
 			<Description>TXT_KEY_BUILD_FARM</Description>
-			<Help/>
 			<PrereqTech>TECH_AGRICULTURE</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -106,79 +76,51 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_I</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildFarm.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,7</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_FISHING_BOATS</Type>
 			<Description>TXT_KEY_BUILD_FISHING_BOATS</Description>
-			<Help/>
 			<PrereqTech>TECH_FISHING</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_F</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildFishingBoats.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,7</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_HIGH_SEA_FISHING_BOATS</Type>
 			<Description>TXT_KEY_BUILD_HIGH_SEA_FISHING_BOATS</Description>
-			<Help/>
 			<PrereqTech>TECH_COMPASS</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_HIGH_SEA_FISHING_BOATS</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_F</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildFishingBoats.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,7</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WHALING_BOATS</Type>
 			<Description>TXT_KEY_BUILD_WHALING_BOATS</Description>
-			<Help/>
 			<PrereqTech>TECH_OPTICS</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_WHALING_BOATS</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWhalingBoats.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,6,9</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_MINE</Type>
 			<Description>TXT_KEY_BUILD_MINE</Description>
-			<Help/>
 			<PrereqTech>TECH_MINING</PrereqTech>
 			<iTime>500</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -204,22 +146,14 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_M</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildMine.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,6,7</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WORKSHOP</Type>
 			<Description>TXT_KEY_BUILD_WORKSHOP</Description>
-			<Help/>
 			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -245,41 +179,25 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_K</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWorkshop.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_LUMBERMILL</Type>
 			<Description>TXT_KEY_BUILD_LUMBERMILL</Description>
-			<Help/>
 			<PrereqTech>TECH_GUILDS</PrereqTech>
 			<iTime>900</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_L</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildLumberMill.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,5,7</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WINDMILL</Type>
 			<Description>TXT_KEY_BUILD_WINDMILL</Description>
-			<Help/>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -305,22 +223,15 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWindMill.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,5,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WATERMILL</Type>
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
-			<Help/>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<iTime>900</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -346,22 +257,15 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWaterMill.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_PLANTATION</Type>
 			<Description>TXT_KEY_BUILD_PLANTATION</Description>
-			<Help/>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
 			<iTime>700</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -387,22 +291,17 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_P</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildPlantation.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,9</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_SLAVE_PLANTATION</Type>
 			<Description>TXT_KEY_BUILD_SLAVE_PLANTATION</Description>
-			<Help/>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_SLAVE_PLANTATION</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -414,22 +313,16 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_P</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildPlantation.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,9</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_QUARRY</Type>
 			<Description>TXT_KEY_BUILD_QUARRY</Description>
-			<Help/>
 			<PrereqTech>TECH_MASONRY</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -455,22 +348,14 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_Q</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildQuarry.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,2,9</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_PASTURE</Type>
 			<Description>TXT_KEY_BUILD_PASTURE</Description>
-			<Help/>
 			<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
 			<iTime>500</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -496,41 +381,27 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_P</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildPasture.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,7</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_CAMP</Type>
 			<Description>TXT_KEY_BUILD_CAMP</Description>
-			<Help/>
 			<PrereqTech>TECH_HUNTING</PrereqTech>
 			<iTime>500</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_H</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildCamp.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,7</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WELL</Type>
 			<Description>TXT_KEY_BUILD_WELL</Description>
-			<Help/>
 			<PrereqTech>TECH_COMBUSTION</PrereqTech>
 			<iTime>1000</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -556,41 +427,27 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWell.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,4,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_OFFSHORE_PLATFORM</Type>
 			<Description>TXT_KEY_BUILD_OFFSHORE_PLATFORM</Description>
-			<Help/>
 			<PrereqTech>TECH_PLASTICS</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_OFFSHORE_PLATFORM</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_O</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildOffshorePlatform.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,4,9</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WINERY</Type>
 			<Description>TXT_KEY_BUILD_WINERY</Description>
-			<Help/>
 			<PrereqTech>TECH_MONARCHY</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -616,22 +473,16 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWinery.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,6,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_COTTAGE</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
-			<Help/>
 			<PrereqTech>TECH_POTTERY</PrereqTech>
 			<iTime>700</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -657,22 +508,14 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_T</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildCottage.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,2,7</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_FORT</Type>
 			<Description>TXT_KEY_BUILD_FORT</Description>
-			<Help/>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<iTime>1000</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -684,22 +527,13 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_F</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildFort.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,9</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_REMOVE_JUNGLE</Type>
 			<Description>TXT_KEY_BUILD_REMOVE_JUNGLE</Description>
-			<Help/>
-			<PrereqTech>NONE</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -712,21 +546,12 @@
 			</FeatureStructs>
 			<HotKey>KB_C</HotKey>
 			<bAltDown>1</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_REMOVE_RAINFOREST</Type>
 			<Description>TXT_KEY_BUILD_REMOVE_RAINFOREST</Description>
-			<Help/>
-			<PrereqTech>NONE</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -739,21 +564,12 @@
 			</FeatureStructs>
 			<HotKey>KB_C</HotKey>
 			<bAltDown>1</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_REMOVE_FOREST</Type>
 			<Description>TXT_KEY_BUILD_REMOVE_FOREST</Description>
-			<Help/>
-			<PrereqTech>NONE</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -766,21 +582,12 @@
 			</FeatureStructs>
 			<HotKey>KB_C</HotKey>
 			<bAltDown>1</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_SCRUB_FALLOUT</Type>
 			<Description>TXT_KEY_BUILD_SCRUB_FALLOUT</Description>
-			<Help/>
-			<PrereqTech>NONE</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -792,41 +599,25 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_S</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildScrubFallout.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,2,8</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_FOREST_PRESERVE</Type>
 			<Description>TXT_KEY_BUILD_FOREST_PRESERVE</Description>
-			<Help/>
 			<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
 			<iTime>800</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_FOREST_PRESERVE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
-			<FeatureStructs/>
 			<HotKey>KB_F</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/TerrainFeatures/Forest.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,4,14</Button>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_REMOVE_JUNGLE</Description>
-			<Help/>
-			<PrereqTech>NONE</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -839,22 +630,13 @@
 			</FeatureStructs>
 			<HotKey>KB_C</HotKey>
 			<bAltDown>1</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_DEFORESTATION_RAINFOREST</Type>
 			<Description>TXT_KEY_BUILD_REMOVE_RAINFOREST</Description>
-			<Help/>
-			<PrereqTech>NONE</PrereqTech>
 			<iTime>0</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
-			<ImprovementType>NONE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_CHOP</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -867,22 +649,15 @@
 			</FeatureStructs>
 			<HotKey>KB_C</HotKey>
 			<bAltDown>1</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_FARM_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_FARM</Description>
-			<Help/>
 			<PrereqTech>TECH_AGRICULTURE</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_FARM</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -915,23 +690,15 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_I</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildFarm.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,7</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_MINE_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_MINE</Description>
-			<Help/>
 			<PrereqTech>TECH_MINING</PrereqTech>
 			<iTime>500</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -957,23 +724,15 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_M</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildMine.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,6,7</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WORKSHOP_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WORKSHOP</Description>
-			<Help/>
 			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -999,23 +758,15 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_K</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWorkshop.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,8</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WINDMILL_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WINDMILL</Description>
-			<Help/>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -1041,23 +792,16 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWindMill.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,5,8</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_WATERMILL_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
-			<Help/>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<iTime>900</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -1083,23 +827,16 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWaterMill.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,8</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_PLANTATION_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_PLANTATION</Description>
-			<Help/>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
 			<iTime>700</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -1125,9 +862,7 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_P</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildPlantation.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,9</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1135,13 +870,9 @@
 		<BuildInfo>
 			<Type>BUILD_QUARRY_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_QUARRY</Description>
-			<Help/>
 			<PrereqTech>TECH_MASONRY</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -1167,23 +898,15 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_Q</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildQuarry.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,2,9</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
 			<Type>BUILD_PASTURE_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_PASTURE</Description>
-			<Help/>
 			<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
 			<iTime>500</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -1209,9 +932,7 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_P</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildPasture.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,7</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1219,13 +940,9 @@
 		<BuildInfo>
 			<Type>BUILD_WELL_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WELL</Description>
-			<Help/>
 			<PrereqTech>TECH_COMBUSTION</PrereqTech>
 			<iTime>1000</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -1251,9 +968,7 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWell.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,4,8</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1261,13 +976,9 @@
 		<BuildInfo>
 			<Type>BUILD_WINERY_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WINERY</Description>
-			<Help/>
 			<PrereqTech>TECH_MONARCHY</PrereqTech>
 			<iTime>600</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -1293,9 +1004,7 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_W</HotKey>
-			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildWinery.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,6,8</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
@@ -1303,13 +1012,9 @@
 		<BuildInfo>
 			<Type>BUILD_COTTAGE_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
-			<Help/>
 			<PrereqTech>TECH_POTTERY</PrereqTech>
 			<iTime>700</iTime>
-			<iCost>0</iCost>
-			<bKill>0</bKill>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
-			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
@@ -1335,10 +1040,6 @@
 				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_T</HotKey>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildCottage.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,2,7</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>

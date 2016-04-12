@@ -107,8 +107,8 @@ class CvPediaReligion:
 			
 		if self.iReligion == con.iProtestantism:
 			screen.attachImageButton(panelName, "", gc.getTechInfo(con.iPrintingPress).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, con.iPrintingPress, 1, False)	
-		#elif self.iReligion == con.iOrthodoxy:	
-		#	screen.attachImageButton(panelName, "", gc.getBuildingInfo(con.iApostolicPalace).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, con.iApostolicPalace, 1, False)
+#		elif self.iReligion == con.iOrthodoxy:	
+#			screen.attachImageButton(panelName, "", gc.getBuildingInfo(con.iApostolicPalace).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, con.iApostolicPalace, 1, False)
 		elif self.iReligion == con.iBuddhism:
 			screen.attachImageButton(panelName, "", gc.getBuildingInfo(con.iHinduTemple).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, con.iHinduTemple, 1, False)
 			

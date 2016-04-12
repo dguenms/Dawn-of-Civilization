@@ -45,7 +45,7 @@ civilizationNameHash =	{
 								"MID" : ("in","pu","papa","uayey","au","ma","ilopo","u","one","a","ipi","e","ao","alo","uilxo","eo","icome","aha","hua","iuhtli","atiu","anti","acatechu","etecu"),
 								"END" : ("chil","tl","can","tlilton","tab","coatl","lcoati","lotl","chtli","kaax","mqui","lli","chitl","huel","htli","ch","c","co","chamah","tli","catl","tan","kiq","tlan","con","tecuhtil","nal","shtal","u","bs","h","tl","cue")
 							},
-							"CIVILIZATION_CARTHAGE" :
+							"CIVILIZATION_PHOENICIA" :
 							{
 								"PRE" : ("Ap","B","C","Cer","Cerb","D","Fl","J","Jup","M","Merc","Min","Nept","Pl","Pros","S","V","Ur"),
 								"MID" : ("a","acchu","ai","arpi","e","ercu","i","ia","o","u"),

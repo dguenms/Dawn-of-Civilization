@@ -4,10 +4,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_DESC</Tag>
 		<English>The Chinese</English>
+		<French>
+			<Text>Les Chinois</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Chinesen:Die Chinesesen:Chinesen</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Cinesi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Chinos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_PEOPLES</Tag>
 		<English>Han Peoples</English>
+		<French>
+			<Text>Peuplades Han</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hanv&#246;lker:Hanv&#246;lker:Hanv&#246;lkern</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Han</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Han</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_DEFAULT</Tag>
@@ -16,6 +56,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_FASCIST</Tag>
 		<English>Nationalist %s1</English>
+		<French>
+			<Text>%s1 Nationaliste</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Nationalistisches %s1:Nationalistische %s1:Nationalistischen %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>%s1 Nazionalista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>%s1 Nacionalista</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_ZHOU</Tag>
@@ -24,6 +84,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_HAN</Tag>
 		<English>Han</English>
+		<French>
+			<Text>Han</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<Italian>
+			<Text>Han</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Han</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_QIN</Tag>
@@ -80,6 +155,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_INDIA</Tag>
 		<English>Shendu</English>
+		<French>
+			<Text>Shendu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Shendu:Shendu:Shendu</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Shendu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Shendu</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_BABYLONIA</Tag>
@@ -88,14 +183,74 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_PERSIA</Tag>
 		<English>Anxi</English>
+		<French>
+			<Text>Anxi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Anxi:Anxi:Anxi</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Anxi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Anxi</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_ROME</Tag>
 		<English>Daqin</English>
+		<French>
+			<Text>Daqin</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Daqin:Daqin:Daqin</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Daqin</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Daqin</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_JAPAN</Tag>
 		<English>Wo</English>
+		<French>
+			<Text>Wo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Wo:Wo:Wo</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Wo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Wo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_KOREA</Tag>
@@ -104,6 +259,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_BYZANTIUM</Tag>
 		<English>Daqin</English>
+		<French>
+			<Text>Daqin</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Daqin:Daqin:Daqin</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Daqin</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Daqin</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_ARABIA</Tag>
@@ -116,10 +291,34 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_MONGOLIA</Tag>
 		<English>Meng</English>
+		<French>
+			<Text>Meng</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Meng:Meng:Meng</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Meng</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Meng</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_TURKEY</Tag>
 		<English>Tujue</English>
+		<French>Tujue</French>
+		<German>Tujue</German>
+		<Italian>Tujue</Italian>
+		<Spanish>Tujue</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_TIBET</Tag>
