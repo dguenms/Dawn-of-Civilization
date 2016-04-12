@@ -1719,7 +1719,7 @@ iCivItaly : {
 		iModern,
 		"fGrazia Deledda", # 20th 
 		"Gabriele Trovato", # 20th 
-		"Gian Maria Volontè", # Contest Reward 
+		u"Gian Maria Volontè", # Contest Reward 
 	],
 	iGreatScientist : [
 		"fTrotula di Salerno", # 12th 
@@ -2009,9 +2009,11 @@ iCivNetherlands : {
 	iGreatProphet : [
 		"Geert Grote", # 14th 
 		iRenaissance,
-		"Erasmus van Rotterdam", # 16th 
+		"Desiderius Erasmus", # 16th
+		"Baruch Spinoza", # 17th
 		iIndustrial,
 		"Abraham Kuyper", # 19th 
+		"fAletta Jacobs", # 19th 
 		iModern,
 		"fAlida Bosshardt", # 20th 
 	],
@@ -2025,8 +2027,9 @@ iCivNetherlands : {
 		"Vincent van Gogh", # 19th 
 	],
 	iGreatScientist : [
-		"Simon Stevin", # 16th 
+		"Willebrord Snel van Royen", # 16th
 		"Christiaan Huygens", # 17th 
+		"Antonie van Leeuwenhoek", # 17th 
 		"Govert Bidloo", # 17th 
 		"fAnna Maria van Schurman", # 18th 
 		iModern,
@@ -2042,11 +2045,20 @@ iCivNetherlands : {
 		"Pieter Stuyvesant", # 17th 
 		"Jan van Riebeeck", # 17th 
 		"Jan Coen", # 17th 
+		iIndustrial,
+		"Clemens Brenninkmeijer", # 19th 
+		"August Kessler", # 19th 
+		iModern,
+		"Freddy Heineken", # 20th 
 	],
 	iGreatEngineer : [
+		"Simon Stevin", # 16th 
 		"Cornelis Corneliszoon", # 16th 
-		"Antonie van Leeuwenhoek", # 17th 
 		"Jan Leeghwater", # 17th 
+		iIndustrial,
+		"Adolphe Sax", # 19th 
+		iModern,
+		"Frits Philips", # 20th 
 	],
 	iGreatStatesman : [
 		"Desiderius Erasmus", # 16th 
@@ -2066,6 +2078,8 @@ iCivNetherlands : {
 		"Michiel de Ruyter", # 17th 
 		"Frederik Hendrik", # 17th 
 		"Cornelis Tromp", # 17th 
+		iIndustrial,
+		"Henri Winkelman", # 20th 
 	],
 },
 iCivAmerica : {
@@ -2121,7 +2135,7 @@ iCivAmerica : {
 		"Henry Ford", # 19th 
 		"Charles Goodyear", # 19th 
 		iModern,
-		"Wright Brothers", # 20th 
+		"Orville Wright", # 20th 
 		"fLillian Moller Gilbreth", # 20th 
 		"fHedy Lamarr", # 20th 
 		"fMargaret Hutchinson Rousseau", # 20th 

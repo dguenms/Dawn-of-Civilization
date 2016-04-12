@@ -470,6 +470,8 @@ class RiseAndFall:
 		self.assign3000BCGold()	
 		self.invalidateUHVs()
 		
+		gc.getGame().setVoteSourceReligion(1, iCatholicism, False)
+		
 	def updateStartingPlots(self):
 		for iPlayer in range(iNumPlayers):
 			x, y = Areas.getCapital(iPlayer)
