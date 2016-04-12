@@ -990,5 +990,29 @@
 			<NoShaderNIF>art/LeaderHeads/Walesa/fdr.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Walesa/fdr_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_CASTILLA</Type>
+			<Button>art/LeaderHeads/Castilla/Button_Castilla.dds</Button>
+			<NIF>art/LeaderHeads/Castilla/OHiggins.nif</NIF>
+			<KFM>art/LeaderHeads/Castilla/augustus_caesar.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Castilla/OHiggins.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Castilla/augustus_caesar_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_WILLIAM_III</Type>
+			<Button>art/LeaderHeads/William_III/Button_William.dds</Button>
+			<NIF>art/LeaderHeads/William_III/King_English.nif</NIF>
+			<KFM>art/LeaderHeads/William_III/King_English.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/William_III/King_English.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/William_III/King_English_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_GEORGE_I</Type>
+			<Button>art/LeaderHeads/George I/Button_George.dds</Button>
+			<NIF>art/LeaderHeads/George I/ataturk.nif</NIF>
+			<KFM>art/LeaderHeads/George I/ataturk.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/George I/ataturk.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/George I/peter_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

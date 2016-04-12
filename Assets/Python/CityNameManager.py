@@ -5195,6 +5195,7 @@ tRenames = (
 	'Chongjin'		:	'Qingjin',
 	'Wonsan'		:	'Yuanshan',
 	'Chengde'		:	'Chengde',
+	'Manila'		:	'Manila',
 },
 #Language: Tibetan
 {
