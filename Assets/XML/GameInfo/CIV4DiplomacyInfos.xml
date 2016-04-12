@@ -147,7 +147,7 @@
 						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_NICHOLAS_II_1</Text>
 					</DiplomacyText>
 				</Response>
-				<Response>
+				<!--Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
@@ -160,7 +160,7 @@
 					<DiplomacyText>
 						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_YAROSLAV_1</Text>
 					</DiplomacyText>
-				</Response>
+				</Response-->
 				<Response>
 					<Civilizations/>
 					<Leaders>
