@@ -5582,6 +5582,15 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
+	if (!GC.getReligionInfo(eReligion).isProselytizing())
+	{
+		ReligionTypes eStateReligion = GET_PLAYER(pCity->getOwnerINLINE()).getStateReligion();
+		if (getOwner() != pCity->getOwner() && eStateReligion != NO_RELIGION && eStateReligion != eReligion)
+		{
+			return false;
+		}
+	}
+
 	if (!canEnterArea(pPlot->getTeam(), pPlot->area()))
 	{
 		return false;
