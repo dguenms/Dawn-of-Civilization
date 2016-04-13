@@ -14744,6 +14744,21 @@ bool CvCity::isHasPrecursor(ReligionTypes eReligion) const
 	if (eReligion == CATHOLICISM || eReligion == ORTHODOXY) return isHasReligion(JUDAISM);
 }
 
+int CvCity::getReligionPopulation(ReligionTypes eReligion) const
+{
+	if (!isHasReligion(eReligion)) return 0;
+
+	if (getReligionCount() == 1) return getPopulation();
+
+	ReligionTypes eStateReligion = GET_PLAYER(getOwner()).getStateReligion();
+
+	if (eStateReligion == eReligion) return getPopulation() / 2 + getPopulation() / (2 * getReligionCount());
+
+	if (eStateReligion == NO_RELIGION) return getPopulation() / getReligionCount();
+
+	return getPopulation() / (2 * getReligionCount());
+}
+
 void CvCity::doReligion()
 {
 	int iI;
