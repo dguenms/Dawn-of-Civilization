@@ -2151,7 +2151,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 		# third Secular goal: make sure the five most advanced civilizations are secular
 		elif iGoal == 2:
 			iCount = 0
-			lAdvancedPlayers = utils.getSortedList([iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).isAlive()], lambda iLoopPlayer: gc.getTeam(iLoopPlayer).getTotalTechValue(), True)
+			lAdvancedPlayers = utils.getSortedList([iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).isAlive() and not utils.isAVassal(iLoopPlayer)], lambda iLoopPlayer: gc.getTeam(iLoopPlayer).getTotalTechValue(), True)
 			for iLoopPlayer in lAdvancedPlayers[:5]:
 				if gc.getPlayer(iLoopPlayer).getCivics(4) == iCivicSecularism:
 					iCount += 1
@@ -2992,7 +2992,7 @@ def getURVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iScientists >= 10) + localText.getText("TXT_KEY_VICTORY_SECULAR_SCIENTISTS", (iScientists, 10)) + ' ' + getIcon(iStatesmen >= 10) + localText.getText("TXT_KEY_VICTORY_SECULAR_STATESMEN", (iStatesmen, 10)))
 		elif iGoal == 2:
 			sString = ""
-			lAdvancedPlayers = utils.getSortedList([iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).isAlive()], lambda iLoopPlayer: gc.getTeam(iLoopPlayer).getTotalTechValue(), True)
+			lAdvancedPlayers = utils.getSortedList([iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).isAlive() and not utils.isAVassal(iLoopPlayer)], lambda iLoopPlayer: gc.getTeam(iLoopPlayer).getTotalTechValue(), True)
 			for iLoopPlayer in lAdvancedPlayers[:5]:
 				pLoopPlayer = gc.getPlayer(iLoopPlayer)
 				sString += getIcon(pLoopPlayer.getCivics(4) == iCivicSecularism) + pLoopPlayer.getCivilizationShortDescription(0) + ' '
