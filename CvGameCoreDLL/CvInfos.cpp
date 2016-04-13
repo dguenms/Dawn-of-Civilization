@@ -3125,6 +3125,7 @@ m_bResolveCrisis(false), // Leoreth
 m_bReformGovernment(false), // Leoreth
 m_bDiplomaticMission(false), // Leoreth
 m_bPersecute(false), // Leoreth
+m_bGreatMission(false), // Leoreth
 m_fUnitMaxSpeed(0.0f),
 m_fUnitPadTime(0.0f),
 m_pbUpgradeUnitClass(NULL),
@@ -3836,6 +3837,11 @@ bool CvUnitInfo::isPersecute() const
 	return m_bPersecute;
 }
 
+bool CvUnitInfo::isGreatMission() const
+{
+	return m_bGreatMission;
+}
+
 // BUG - Unit Experience - start
 /*
  * Returns true if this unit type is eligible to receive experience points.
@@ -4417,6 +4423,7 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bReformGovernment);
 	stream->Read(&m_bDiplomaticMission);
 	stream->Read(&m_bPersecute); // Leoreth
+	stream->Read(&m_bGreatMission);
 
 	stream->Read(&m_fUnitMaxSpeed);
 	stream->Read(&m_fUnitPadTime);
@@ -4728,6 +4735,7 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bReformGovernment);
 	stream->Write(m_bDiplomaticMission);
 	stream->Write(m_bPersecute);
+	stream->Write(m_bGreatMission);
 
 	stream->Write(m_fUnitMaxSpeed);
 	stream->Write(m_fUnitPadTime);
@@ -4855,6 +4863,7 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bReformGovernment, "bReformGovernment");
 	pXML->GetChildXmlValByName(&m_bDiplomaticMission, "bDiplomaticMission");
 	pXML->GetChildXmlValByName(&m_bPersecute, "bPersecute");
+	pXML->GetChildXmlValByName(&m_bGreatMission, "bGreatMission");
 	pXML->GetChildXmlValByName(&m_bInvisible, "bInvisible");
 	pXML->GetChildXmlValByName(&m_bFirstStrikeImmune, "bFirstStrikeImmune");
 	pXML->GetChildXmlValByName(&m_bNoDefensiveBonus, "bNoDefensiveBonus");

@@ -1009,3 +1009,8 @@ bool CyTeam::canCutContact(int eTeam)
 {
 	return m_pTeam ? m_pTeam->canCutContact((TeamTypes)eTeam) : false;
 }
+
+int CyTeam::getTotalTechValue()
+{
+	return m_pTeam ? m_pTeam->getTotalTechValue() : -1;
+}

@@ -1036,6 +1036,7 @@ public:
 	int getTurnsToSpread(ReligionTypes eReligion) const;
 
 	bool isHasPrecursor(ReligionTypes eReligion) const;
+	int getReligionPopulation(ReligionTypes eReligion) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

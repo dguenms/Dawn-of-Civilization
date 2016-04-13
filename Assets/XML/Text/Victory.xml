@@ -1963,27 +1963,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD1</Tag>
-		<English>Title: 1st Jewish URV</English>
+		<English>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</English>
+		<German>Erwähltes Volk: Haben Sie insgesamt 15 Große Propheten, Wissenschaftler und Staatsmänner in Ihren Städten</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD2</Tag>
-		<English>Title: 2nd Jewish URV</English>
+		<English>Promised Land: Have legendary culture in the Jewish holy city</English>
+		<German>Gelobtes Land: Haben Sie legendäre Kultur in der jüdischen heiligen Stadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD3</Tag>
-		<English>Title: 3rd Jewish URV</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD1</Tag>
-		<English>Title: 1st Jewish URV</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD2</Tag>
-		<English>Title: 2nd Jewish URV</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD3</Tag>
-		<English>Title: 3rd Jewish URV</English>
+		<English>Diaspora: Have friendly relations with six civilizations with a Jewish minority</English>
+		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer jüdischen Minderheit</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_BUD1</Tag>
@@ -2147,18 +2138,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC1</Tag>
-		<English>Tolerance: Control the temples of seven different religions</English>
-		<German>Toleranz: Kontrollieren Sie die Tempel von sieben verschiedenen Religionen</German>
+		<English>Tolerance: Control the Cathedrals of all religions</English>
+		<German>Toleranz: Kontrollieren Sie die Kathedralen aller Religionen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC2</Tag>
-		<English>Humanism: Make sure there are 20 universities controlled by secular civilizations</English>
-		<German>Humanismus: Stellen Sie sicher, dass es 20 von s&#228;kularen Zivilisationen kontrollierte Universit&#228;ten gibt</German>
+		<English>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</English>
+		<German>Humanismus: Stellen Sie sicher, dass es in säkularen Zivilisationen 25 Universitäten, 10 Große Wissenschaftler und 10 Große Staatsmänner gibt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC3</Tag>
-		<English>Modernization: Be the first to enter the Industrial and Modern eras</English>
-		<German>Modernisierung: Erreichen Sie als erster die industrielle und moderne &#196;ras</German>
+		<English>Modernity: Make sure that the five most advanced independent civilizations are secular</English>
+		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten unabhängigen Zivilisationen säkular sind</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1</Tag>
@@ -2361,8 +2352,8 @@
 		<English>Deccan</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_DIFFERENT_TEMPLES</Tag>
-		<English>Temples of different religions: %d1 / %d2</English>
+		<Tag>TXT_KEY_VICTORY_DIFFERENT_CATHEDRALS</Tag>
+		<English>Cathedrals of different religions: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_EASTER_ISLAND</Tag>
@@ -2427,6 +2418,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FRIENDLY_CIVS</Tag>
 		<English>Friendly civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_RELIGION</Tag>
+		<English>Friendly civilizations with %s1 minority: %d2 / %d3</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GOAL_ACCOMPLISHED</Tag>
@@ -2563,6 +2558,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_ITALY</Tag>
 		<English>Italy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_JEWISH_SPECIALISTS</Tag>
+		<English>Great Prophets, Scientists and Statesmen in Jewish cities: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_LARGEST_EMPIRE_CIV</Tag>
@@ -2956,6 +2955,14 @@
 		<German>JA</German>
 		<Italian>S&#204;</Italian>
 		<Spanish>S&#205;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SECULAR_SCIENTISTS</Tag>
+		<English>Great Scientists in secular civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SECULAR_STATESMEN</Tag>
+		<English>Great Statesmen in secular civilizations: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SECULAR_UNIVERSITIES</Tag>

@@ -45,6 +45,9 @@ public:
 
 	int AI_sacrificeValue(const CvPlot* pPlot) const;
 
+	std::pair<CvPlot*, CvPlot*> AI_spreadTarget(ReligionTypes eReligion, bool bGreatMission = false); // Leoreth
+	CvCity* AI_persecutionTarget(); // Leoreth
+
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 
@@ -210,6 +213,7 @@ protected:
 	bool AI_reformGovernment(int iNumChanges);
 	bool AI_diplomaticMission(int iPowerMultiplier);
 	bool AI_persecute();
+	bool AI_greatMission(int iCityPercent);
 
 	bool AI_followBombard();
 

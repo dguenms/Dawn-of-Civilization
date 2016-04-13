@@ -5565,7 +5565,7 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
-	if (m_pUnitInfo->getReligionSpreads(eReligion) <= 0)
+	if (m_pUnitInfo->getReligionSpreads(eReligion) <= 0 && !m_pUnitInfo->isGreatMission())
 	{
 		return false;
 	}
@@ -5642,7 +5642,6 @@ bool CvUnit::spread(ReligionTypes eReligion)
 {
 	CvCity* pCity;
 	CvWString szBuffer;
-	int iSpreadProb;
 
 	if (!canSpread(plot(), eReligion))
 	{
@@ -5653,31 +5652,9 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 	if (pCity != NULL)
 	{
-		/*iSpreadProb = m_pUnitInfo->getReligionSpreads(eReligion);
-
-		if (pCity->getTeam() != getTeam())
-		{
-			iSpreadProb *= 50;
-			iSpreadProb /= pCity->getTurnsToSpread(eReligion);
-		}
-
-		iSpreadProb += (((GC.getNumReligionInfos() - pCity->getReligionCount()) * (100 - iSpreadProb)) / GC.getNumReligionInfos());
-
-		if (getOwnerINLINE() == TIBET)
-		{
-			iSpreadProb += (100 - iSpreadProb)/2;
-		}*/
-
-		iSpreadProb = std::max(1, (pCity->getTurnsToSpread(eReligion) - 50) / 50 + (pCity->getTeam() != getTeam()) ? 1 : 0);
-
-		if (getOwnerINLINE() == TIBET)
-		{
-			iSpreadProb = std::max(1, iSpreadProb - 1);
-		}
-
 		bool bSuccess;
 
-		if (GC.getGameINLINE().getSorenRandNum(iSpreadProb, "Unit Spread Religion") == 0)
+		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < getSpreadChance(eReligion))
 		{
 			log(CvWString::format(L"Missionary spread %s to %s", GC.getReligionInfo(eReligion).getText(), pCity->getName().GetCString()));
 
@@ -5703,6 +5680,41 @@ bool CvUnit::spread(ReligionTypes eReligion)
 	kill(true);
 
 	return true;
+}
+
+
+// Leoreth
+int CvUnit::getSpreadChance(ReligionTypes eReligion) const
+{
+	if (!plot()->isCity()) return 0;
+
+	CvCity* pCity = plot()->getPlotCity();
+	ReligionSpreadTypes eSpreadFactor = GET_PLAYER(plot()->getOwner()).getSpreadType(plot(), eReligion);
+	
+	if (eSpreadFactor == RELIGION_SPREAD_FAST) return 100;
+
+	int iSpreadChance = m_pUnitInfo->getReligionSpreads(eReligion);
+
+	int iOtherReligions = 0;
+	for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		ReligionTypes eLoopReligion = (ReligionTypes)iI;
+		if (pCity->isHasReligion(eLoopReligion) && !GET_PLAYER(plot()->getOwner()).isTolerating(eLoopReligion))
+		{
+			iOtherReligions++;
+		}
+	}
+
+	iSpreadChance += (NUM_RELIGIONS - iOtherReligions) * (100 - iSpreadChance) / NUM_RELIGIONS;
+
+	if (getOwner() == TIBET)
+	{
+		iSpreadChance += (100 - iSpreadChance) / 2;
+	}
+
+	if (eSpreadFactor == RELIGION_SPREAD_MINORITY) iSpreadChance /= 2;
+
+	return iSpreadChance;
 }
 
 
@@ -7957,6 +7969,7 @@ BuildTypes CvUnit::getBuildType() const
 		case MISSION_REFORM_GOVERNMENT: // Leoreth
 		case MISSION_DIPLOMATIC_MISSION: // Leoreth
 		case MISSION_PERSECUTE: // Leoreth
+		case MISSION_GREAT_MISSION:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -14142,6 +14155,62 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 
 		return true;
 	}
+}
+
+bool CvUnit::canGreatMission(const CvPlot* pPlot) const
+{
+	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) return false;
+
+	if (GET_PLAYER(getOwner()).getStateReligion() == NO_RELIGION) return false;
+
+	if (!pPlot->isCity()) return false;
+
+	return true;
+}
+
+bool CvUnit::greatMission()
+{
+	if (!canGreatMission(plot()))
+	{
+		return false;
+	}
+
+	int iNumCities = 4 + GC.getGame().getSorenRandNum(3, "Great Mission");
+	iNumCities = std::max(iNumCities, GC.getMap().getArea(getArea())->getCitiesPerPlayer(getOwner()));
+	ReligionTypes eReligion = GET_PLAYER(getOwner()).getStateReligion();
+
+	CvPlot* pSpreadPlot;
+	CvCity* pSpreadCity;
+	int iSpreads = 0;
+
+	// spread to eligible cities
+	for (iSpreads; iSpreads < iNumCities; iSpreads++)
+	{
+		pSpreadPlot = AI_spreadTarget(eReligion, true).second;
+		
+		if (pSpreadPlot == NULL || !pSpreadPlot->isCity()) break;
+
+		pSpreadPlot->getPlotCity()->spreadReligion(eReligion, false);
+	}
+
+	// remove from eligible cities
+	for (; iSpreads < iNumCities; iSpreads++)
+	{
+		pSpreadCity = AI_persecutionTarget();
+
+		if (pSpreadCity == NULL) break;
+
+		pSpreadCity->removeReligion(pSpreadCity->AI_getPersecutionReligion());
+	}
+
+	if (plot()->isActiveVisible(false))
+	{
+		NotifyEntity(MISSION_GREAT_MISSION);
+	}
+
+	kill(true);
+
+	return true;
 }
 
 SpecialistTypes CvUnit::getSettledSpecialist() const
