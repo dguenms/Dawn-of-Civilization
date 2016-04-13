@@ -1669,24 +1669,10 @@ class CvWorldBuilderScreen:
 				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1000, sColor, 1.0)
 			
 			# Larger AI flipzone
-			tTL, tBR = Areas.tBirthArea[self.m_iCurrentPlayer]
-			if self.m_iCurrentPlayer == con.iMongolia:
-				tTL = (81, 45)
-			elif self.m_iCurrentPlayer == con.iTurkey and not gc.getPlayer(con.iByzantium).isAlive():
-				tTL = (67, 41)
-			elif self.m_iCurrentPlayer == con.iPersia:
-				tTL = (72, 37)
-			elif self.m_iCurrentPlayer == con.iSpain:
-				tBR = (55, 46)
-			elif self.m_iCurrentPlayer == con.iInca:
-				tTL = (26, 19)
-				tBR = (31, 24)
-			elif self.m_iCurrentPlayer == con.iArgentina:	
-				tTL = (29, 3)
-			lAIPlotList = utils.getPlotList(tTL, tBR)
+			tTL, tBR = Areas.getBirthRectangle(self.m_iCurrentPlayer, True)
+			lAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, self.m_iCurrentPlayer, [])) if tPlot not in lHumanPlotList]
 			for tPlot in lAIPlotList:
-				if tPlot not in lHumanPlotList and tPlot not in utils.getOrElse(Areas.dBirthAreaExceptions, self.m_iCurrentPlayer, []):
-					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, sColorAI, 1.0)
+				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, sColorAI, 1.0)
 
 	def showStabilityOverlay(self):
 		utils.removeStabilityOverlay()

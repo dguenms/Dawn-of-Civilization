@@ -1621,7 +1621,7 @@ class RiseAndFall:
 
 		if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
 			reborn = utils.getReborn(iCiv)
-			tTopLeft, tBottomRight = Areas.tBirthArea[iCiv]
+			tTopLeft, tBottomRight = Areas.getBirthRectangle(iCiv)
 			tBroaderTopLeft, tBroaderBottomRight = Areas.tBroaderArea[iCiv]
 			
 			if iCiv == iThailand:
@@ -1646,22 +1646,6 @@ class RiseAndFall:
 				x, y = (104, 33)
 				if gc.getMap().plot(x, y).isCity():
 					gc.getMap().plot(x, y).getPlotCity().setName("Saigon", False)
-				
-			# Larger flipzone for AI
-			# Merijn: Sync with CvPlaytBuilderScreen.py @ showFlipZone
-			if iCiv == iMongolia and utils.getHumanID() != iMongolia:
-				tTopLeft = (81, 45) # 6 more west, 1 more south
-			if iCiv == iTurkey and utils.getHumanID() != iTurkey and not pByzantium.isAlive():
-				tTopLeft = (67, 41) # two more west
-			if iCiv == iPersia and utils.getHumanID() != iPersia:
-				tTopLeft = (72, 37) # include Assyria and Anatolia
-			if iCiv == iSpain and utils.getHumanID() != iSpain:
-				tBottomRight = (55, 46)
-			if iCiv == iInca and utils.getHumanID() != iInca:
-				tTopLeft = (26, 19)
-				tBottomRight = (31, 24)
-			if iCiv == iArgentina and utils.getHumanID() != iArgentina:	
-				tTopLeft = (29, 3)
 				
 			iPreviousOwner = gc.getMap().plot(tCapital[0], tCapital[1]).getOwner()
 				
