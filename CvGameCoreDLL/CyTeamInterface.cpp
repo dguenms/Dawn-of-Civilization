@@ -220,5 +220,6 @@ void CyTeamPythonInterface()
 		.def("setDefensivePact", &CyTeam::setDefensivePact, "void (int eTeam, bool bNewValue")
 		.def("isCapitulated", &CyTeam::isCapitulated, "bool ()")
 		.def("canCutContact", &CyTeam::canCutContact, "bool (int eTeam)")
+		.def("getTotalTechValue", &CyTeam::getTotalTechValue, "int ()")
 		;
 }
