@@ -3400,7 +3400,7 @@ int CvGame::calculateReligionPercent(ReligionTypes eReligion) const
 			{
 				if (pLoopCity->isHasReligion(eReligion))
 				{
-					iCount += ((pLoopCity->getPopulation() + (pLoopCity->getReligionCount() / 2)) / pLoopCity->getReligionCount());
+					iCount += pLoopCity->getReligionPopulation(eReligion);
 				}
 			}
 		}
