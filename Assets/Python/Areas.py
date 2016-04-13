@@ -41,6 +41,12 @@ def getNewCapital(iPlayer, bReborn=None):
 def getBirthArea(iPlayer):
 	return getArea(iPlayer, tBirthArea, dBirthAreaExceptions)
 	
+def getBirthRectangle(iPlayer, bExtended = None):
+	if bExtended is None: bExtended = isExtendedBirth(iPlayer)
+	if iPlayer in dChangedBirthArea and isExtendedBirth(iPlayer):
+		return dChangedBirthArea[iPlayer]
+	return tBirthArea[iPlayer]
+	
 def getCoreArea(iPlayer, bReborn=None):
 	return getArea(iPlayer, tCoreArea, dCoreAreaExceptions, bReborn, dChangedCoreArea, dChangedCoreAreaExceptions)
 	
@@ -74,6 +80,14 @@ def isForeignCore(iPlayer, tPlot):
 		if plot.isCore(iLoopPlayer):
 			return True
 	return False
+	
+def isExtendedBirth(iPlayer):
+	if gc.getGame().getActivePlayer() == iPlayer: return False
+	
+	# add special conditions for extended AI flip zones here
+	if iPlayer == iTurkey and pByzantium.isAlive(): return False
+	
+	return True
 			
 def init():
 	for iPlayer in range(iNumPlayers):
@@ -216,6 +230,15 @@ tBirthArea = (
 ((20, 50), 	(35, 60)), 	# Canada
 )
 
+dChangedBirthArea = {
+iPersia :	((72, 37), 	(85, 44)), 	# includes Assyria and Anatolia
+iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
+iInca : 	((26, 19), 	(31, 24)),
+iMongolia : 	((81, 45), 	(105, 54)), 	# 6 more west, 1 more south
+iTurkey : 	((67, 41), 	(76, 48)), 	# 2 more west
+iArgentina : 	((29, 3), 	(35, 13)), 	# includes Chile
+}
+
 dBirthAreaExceptions = {
 iChina : [(106, 47)],
 iBabylonia : [(78, 41), (78, 42)],
@@ -298,7 +321,6 @@ iChina : 	((99, 41),	(107, 47)),
 iGreece :	((65, 39), 	(69, 42)),
 iIndia : 	((88, 33),	(91, 38)),
 iPhoenicia:	((54, 37),	(60, 39)),
-#iPersia : ((79, 37),	(85, 44)),	# Iran (equal to Persian core rectangle)
 iMaya : 	((24, 26),	(31, 32)),	# Colombia
 iByzantium :	((67, 44),	(69, 46)),
 iJapan : 	((111, 41),	(116, 49)),
@@ -306,7 +328,7 @@ iArabia : 	((73, 38),	(78, 42)),
 iKhmer : 	((97, 35),	(102, 38)),
 iMoors : 	((51, 37),	(56, 39)),
 iSpain : 	((49, 40),	(55, 46)),
-iHolyRome : ((61, 46),	(66, 51)),
+iHolyRome : 	((61, 46),	(66, 51)),
 iItaly : 	((58, 40),	(63, 47)),
 iMongolia : 	((95, 46),	(106, 52)),
 iAztecs : 	((16, 35),	(19, 40)),	# Mexico
