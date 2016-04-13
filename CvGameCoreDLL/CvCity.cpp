@@ -17797,8 +17797,6 @@ void CvCity::replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewRelig
 	int iI;
 	bool bRemoved;
 
-	log("replaceReligion");
-
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
 		CvBuildingInfo& kBuilding = GC.getBuildingInfo((BuildingTypes)iI);
@@ -17810,19 +17808,12 @@ void CvCity::replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewRelig
 		}
 	}
 
-	log("buildings removed");
-
 	if (!isHolyCity(eOldReligion))
 	{
-		log(CvWString::format(L"Has no %s holy city: %s", GC.getReligionInfo(eOldReligion).getText(), getName().GetCString()));
 		setHasReligion(eOldReligion, false, true, true);
 	}
 
-	log("religion removed");
-
 	if (eNewReligion == NO_RELIGION) return;
-
-	log("new religion");
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
