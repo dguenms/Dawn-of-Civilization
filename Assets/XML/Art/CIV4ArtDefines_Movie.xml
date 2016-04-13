@@ -189,7 +189,6 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_SHRINE_TAOIST</Type>
 			<Path>Art/Movies/Shrines/DaiMiao.bik</Path>
-			<KFM>None</KFM>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_MAUSOLEUM_OF_MAUSSOLLOS</Type>
@@ -331,7 +330,7 @@
 			<Type>ART_DEF_MOVIE_MACHU_PICCHU</Type>
 			<Path>Art/Movies/Wonders/Machu Picchu.bik</Path>
 		</MovieArtInfo>
-				<MovieArtInfo>
+		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_APOLLO_PROGRAM</Type>
 			<Path>Art/Movies/Wonders/ApolloProject.bik</Path>
 		</MovieArtInfo>
@@ -347,7 +346,7 @@
 			<Type>ART_DEF_MOVIE_NATIONAL_GALLERY</Type>
 			<Path>Art/Movies/Wonders/Hermitage.bik</Path>
 		</MovieArtInfo>
-				<MovieArtInfo>
+		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_IRONWORKS</Type>
 			<Path>Art/Movies/Wonders/IronWorks.bik</Path>
 		</MovieArtInfo>

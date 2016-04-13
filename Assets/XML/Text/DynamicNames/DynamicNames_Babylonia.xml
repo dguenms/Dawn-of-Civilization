@@ -4,10 +4,50 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_DESC</Tag>
 		<English>The Babylonians</English>
+		<French>
+			<Text>Les Babyloniens</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Babylonier:Die Babylonier:den Babyloniern</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Babilonesi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Babil&#243;nicos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_PEOPLES</Tag>
 		<English>Mesopotamian Peoples</English>
+		<French>
+			<Text>Peuplades M&#233;sopotamiennes</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>V&#246;lker Mesopotamiens:V&#246;lker Mesopotamiens:V&#246;lkern Mesopotamiens</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Mesopotamici</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Mesopot&#225;micos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_DEFAULT</Tag>
@@ -60,6 +100,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_COMMUNIST</Tag>
 		<English>%s2 Golden Square</English>
+		<French>
+			<Text>Carr&#233; d'Or %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Goldenes Quadrat %s2:Goldene Quadrat %s2:Goldenen Quadrat %s2</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Quadrato d'Oro %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cuadrado de Oro %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BABYLONIA_MESOPOTAMIAN</Tag>

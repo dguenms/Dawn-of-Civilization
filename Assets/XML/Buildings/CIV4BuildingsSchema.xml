@@ -29,10 +29,10 @@
 		<element type="iMaxTeamInstances"/>
 		<element type="iMaxPlayerInstances"/>
 		<element type="iExtraPlayerInstances"/>
-		<element type="bNoLimit"/>
-		<element type="bMonument"/>
+		<element type="bNoLimit" minOccurs="0"/>
+		<element type="bMonument" minOccurs="0"/>
 		<element type="DefaultBuilding"/>
-		<element type="VictoryThresholds"/>
+		<element type="VictoryThresholds" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="BuildingClassInfos" content="eltOnly">
 		<element type="BuildingClassInfo" maxOccurs="*"/>
