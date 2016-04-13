@@ -2543,7 +2543,7 @@ def countPlayersWithAttitudeAndReligion(iPlayer, eAttitude, iReligion):
 		pLoopPlayer = gc.getPlayer(iLoopPlayer)
 		if pLoopPlayer.AI_getAttitude(iPlayer) >= eAttitude:
 			for city in utils.getCityList(iLoopPlayer):
-				if city.isHasReligion(iJudaism):
+				if city.isHasReligion(iReligion):
 					iCount += 1
 					break
 	return iCount
