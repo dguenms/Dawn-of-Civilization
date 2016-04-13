@@ -1646,7 +1646,9 @@ class RiseAndFall:
 				x, y = (104, 33)
 				if gc.getMap().plot(x, y).isCity():
 					gc.getMap().plot(x, y).getPlotCity().setName("Saigon", False)
-
+				
+			# Larger flipzone for AI
+			# Merijn: Sync with CvPlaytBuilderScreen.py @ showFlipZone
 			if iCiv == iMongolia and utils.getHumanID() != iMongolia:
 				tTopLeft = (81, 45) # 6 more west, 1 more south
 			if iCiv == iTurkey and utils.getHumanID() != iTurkey and not pByzantium.isAlive():
