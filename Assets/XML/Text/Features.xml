@@ -2,7 +2,7 @@
 <!-- Features -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_FEATURE_CAPE_COAST</Tag>
+		<Tag>TXT_KEY_FEATURE_CAPE</Tag>
 		<English>Cape</English>
 		<German>
 			<Text>Kap</Text>

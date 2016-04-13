@@ -686,10 +686,10 @@
 			<iAdvancedStartRemoveCost>0</iAdvancedStartRemoveCost>
 		</FeatureInfo>
 		<FeatureInfo>
-			<Type>FEATURE_CAPE_COAST</Type>
-			<Description>TXT_KEY_FEATURE_CAPE_COAST</Description>
-			<Civilopedia>TXT_KEY_FEATURE_CAPE_COAST_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_FEATURE_CAPE_COAST</ArtDefineTag>
+			<Type>FEATURE_CAPE</Type>
+			<Description>TXT_KEY_FEATURE_CAPE</Description>
+			<Civilopedia>TXT_KEY_FEATURE_CAPE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_FEATURE_CAPE</ArtDefineTag>
 			<YieldChanges/>
 			<RiverYieldChange/>
 			<HillsYieldChange/>

@@ -14,4 +14,28 @@
 		<Tag>TXT_KEY_ROUTE_ROMAN_ROAD</Tag>
 		<English>Roman Road</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_TRIBAL_VILLAGE</Tag>
+		<English>Tribal Village</English>
+		<French>
+			<Text>Village tribal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Stammesdorf</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Villaggio tribale:Villaggi tribali</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Aldea tribal:Aldeas tribales</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
 </Civ4GameText>

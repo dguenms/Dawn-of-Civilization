@@ -428,7 +428,7 @@ CIVILIZATIONS
 		* Have a total of 25 Frigates and Ships of the Line and sink 50 enemy ships by 1800 AD
 		* Be the first to enter the Industrial and Modern eras
 * Russia
-	* Leaders: Yaroslav, Peter the Great, Catherine the Great, Nicholas II, Stalin
+	* Leaders: Ivan IV, Peter the Great, Catherine the Great, Nicholas II, Stalin
 	* Unique Building: Research Institute (Laboratory): requires Electricity, +1 Scientist Slot, +1 free Scientist
 	* Unique Historical Victory:
 		* Found seven colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
