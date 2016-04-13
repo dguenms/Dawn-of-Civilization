@@ -1963,18 +1963,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_JUD1</Tag>
-		<English>Title: 1st Jewish URV</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD2</Tag>
-		<English>Title: 2nd Jewish URV</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD3</Tag>
-		<English>Title: 3rd Jewish URV</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_URV_JUD1</Tag>
 		<English>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</English>
 		<German>Erwähltes Volk: Haben Sie insgesamt 15 Große Propheten, Wissenschaftler und Staatsmänner in Ihren Städten</German>
 	</TEXT>
@@ -2160,8 +2148,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_SEC3</Tag>
-		<English>Modernity: Make sure that the five most advanced civilizations are secular</English>
-		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten Zivilisationen säkular sind</German>
+		<English>Modernity: Make sure that the five most advanced independent civilizations are secular</English>
+		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten unabhängigen Zivilisationen säkular sind</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_TAO1</Tag>
