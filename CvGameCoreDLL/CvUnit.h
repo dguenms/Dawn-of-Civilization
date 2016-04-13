@@ -281,7 +281,6 @@ public:
 
 	bool canGreatMission(const CvPlot* pPlot) const;
 	bool greatMission();
-	std::vector<CvCity*> getGreatMissionCities(const CvPlot* pPlot) const;
 
 	int upgradePrice(UnitTypes eUnit) const;																											// Exposed to Python
 	bool upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, int iCount = 0) const;					// Exposed to Python
