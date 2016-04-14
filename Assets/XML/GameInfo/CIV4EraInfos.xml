@@ -288,7 +288,7 @@
 			<iTrainPercent>80</iTrainPercent>
 			<iConstructPercent>80</iConstructPercent>
 			<iCreatePercent>80</iCreatePercent>
-			<iResearchPercent>120</iResearchPercent>
+			<iResearchPercent>110</iResearchPercent>
 			<iBuildPercent>80</iBuildPercent>
 			<iImprovementPercent>80</iImprovementPercent>
 			<iGreatPeoplePercent>80</iGreatPeoplePercent>
@@ -352,7 +352,7 @@
 			<iTrainPercent>70</iTrainPercent>
 			<iConstructPercent>70</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>150</iResearchPercent>
+			<iResearchPercent>125</iResearchPercent>
 			<iBuildPercent>70</iBuildPercent>
 			<iImprovementPercent>70</iImprovementPercent>
 			<iGreatPeoplePercent>70</iGreatPeoplePercent>
