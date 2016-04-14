@@ -32,7 +32,7 @@
 			<YieldsProduced>
 				<iYieldProduced>50</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,14</Button>
+			<Button>Art/Interface/Buttons/civics/SilkIndustry.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_MARKET</Sound>
@@ -99,7 +99,7 @@
 			<YieldsProduced>
 				<iYieldProduced>75</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,16</Button>
+			<Button>Art/Interface/Buttons/civics/WheatIndustry.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -136,7 +136,7 @@
 				<iYieldProduced>0</iYieldProduced>
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,6</Button>
+			<Button>Art/Interface/Buttons/civics/FishIndustry.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -174,7 +174,7 @@
 				<iYieldProduced>25</iYieldProduced>
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/WorldBuilder/Spices.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,14</Button>
+			<Button>Art/Interface/Buttons/civics/CottonIndustry.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
@@ -243,7 +243,7 @@
 			<YieldsProduced>
 				<iYieldProduced>0</iYieldProduced>
 			</YieldsProduced>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,15</Button>
+			<Button>Art/Interface/Buttons/civics/OilIndustry.dds</Button>
 			<MovieFile>NONE</MovieFile>
 			<MovieSound>NONE</MovieSound>
 			<Sound>AS2D_BUILD_BANK</Sound>
