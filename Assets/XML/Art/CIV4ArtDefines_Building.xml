@@ -1109,43 +1109,43 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZOROASTRIAN_TEMPLE</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
+			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.49</fScale>
-			<fInterfaceScale>0.54</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/ZoroastrianTemple/default.nif</NIF>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Zoroastrian_Temple/FireTemple.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Temple_Zoroastrian.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_ZOROASTRIAN_CATHEDRAL</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.49</fScale>
-			<fInterfaceScale>0.54</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/ZoroastrianTemple/default.nif</NIF>
-			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Temple_Zoroastrian.dds</Button>
+			<Button>Art/Structures/Buildings/Zoroastrian_Temple/Zoroastrian_Temple_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZOROASTRIAN_MONASTERY</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.49</fScale>
-			<fInterfaceScale>0.54</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/ZoroastrianTemple/default.nif</NIF>
+			<fScale>2.75</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Zoroastrian_Monastery/ZoroMonastery.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Temple_Zoroastrian.dds</Button>
+			<Button>Art/Structures/Buildings/Zoroastrian_Monastery/Zoroastrian_Monastery_Button.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ZOROASTRIAN_CATHEDRAL</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Zoroastrian_Atash_Behram/SurakhanyTemple.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Zoroastrian_Atash_Behram/Zoroastrian_AtashBehram_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZOROASTRIAN_SHRINE</Type>
-			<LSystem>LSYSTEM_2x2</LSystem>
-			<bAnimated>1</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/ZoroastrianShrine/Temple.nif</NIF>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.85</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Adur_Farnbag/FirouzabadTemple.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Shrine_Zoroastrian.dds</Button>
+			<Button>Art/Structures/Buildings/Adur_Farnbag/AdurFarnbag_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_COLOSSEUM</Type>
@@ -1355,7 +1355,7 @@
 			<fInterfaceScale>0.48</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Shrine/christian shrine.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Shrine_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,13</Button>
+			<Button>Art/Interface/Buttons/Buildings/Orthodox_Shrine.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TEMPLE_OF_KUKULKAN</Type>
@@ -2608,7 +2608,7 @@
 			<Button>Art/Structures/Wonders/CN_Tower/cntower.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</Type>
+			<Type>ART_DEF_BUILDING_COLOMBIAN_HACIENDA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.1</fScale>
@@ -2616,6 +2616,16 @@
 			<NIF>Art/Structures/Buildings/BrazilFazenda/BrazilFazenda.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/BrazilFazenda/Fazenda.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/BrazilFazenda/BrazilFazenda.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Fazenda/Button_Fazenda.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ARGENTINE_REFRIGERATION_PLANT</Type>

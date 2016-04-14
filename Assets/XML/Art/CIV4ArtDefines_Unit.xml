@@ -5866,14 +5866,14 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ZOROASTRIAN_MISSIONARY</Type>
-			<Button>art/Interface/Buttons/Units/Zoro_missionary.dds</Button>
+			<Button>art/units/Zoroastrian_Magi/Button_Magi.dds</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>art/units/missionary zoro/Confucian_missionary.nif</NIF>
-			<KFM>art/units/missionary zoro/Confucian_missionary.kfm</KFM>
-			<SHADERNIF>art/units/missionary zoro/Confucian_Missionary_FX.nif</SHADERNIF>
+			<NIF>art/units/Zoroastrian_Magi/greatprophet.nif</NIF>
+			<KFM>art/units/Zoroastrian_Magi/greatprophet.kfm</KFM>
+			<SHADERNIF>art/units/Zoroastrian_Magi/greatprophet.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
