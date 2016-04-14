@@ -373,7 +373,9 @@ class UniquePowers:
 				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iRome)
 				
 				iExtra = 0
-				if utils.getHumanID() != iGreece and utils.getHumanID() != iEnemy: iExtra = 1
+				if utils.getHumanID() != iGreece and utils.getHumanID() != iEnemy: 
+					iExtra = 1
+					if iEnemy == iPersia: iExtra = 2
 				
 				utils.makeUnitAI(con.iGreekHoplite, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2+iExtra*2)
 				utils.makeUnitAI(con.iCatapult, iGreece, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1+iExtra*2)

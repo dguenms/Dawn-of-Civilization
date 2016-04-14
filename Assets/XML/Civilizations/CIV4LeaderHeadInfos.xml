@@ -4610,7 +4610,7 @@
 			<iEspionageWeight>130</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>6</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>15</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>20</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>40</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>100</iMaxWarRand>
@@ -36677,14 +36677,14 @@
 			<Civilopedia>TXT_KEY_LEADER_IVAN_IV_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_LEADER_IVAN_IV</ArtDefineTag>
 			<iWonderConstructRand>20</iWonderConstructRand>
-			<iBaseAttitude>0</iBaseAttitude>
+			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>0</iBasePeaceWeight>
 			<iPeaceWeightRand>3</iPeaceWeightRand>
 			<iWarmongerRespect>2</iWarmongerRespect>
 			<iEspionageWeight>100</iEspionageWeight>
 			<iRefuseToTalkWarThreshold>8</iRefuseToTalkWarThreshold>
 			<iNoTechTradeThreshold>5</iNoTechTradeThreshold>
-			<iTechTradeKnownPercent>30</iTechTradeKnownPercent>
+			<iTechTradeKnownPercent>60</iTechTradeKnownPercent>
 			<iMaxGoldTradePercent>5</iMaxGoldTradePercent>
 			<iMaxGoldPerTurnTradePercent>10</iMaxGoldPerTurnTradePercent>
 			<iMaxWarRand>50</iMaxWarRand>
@@ -36807,7 +36807,7 @@
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactRand>5</iContactRand>
+					<iContactRand>10</iContactRand>
 				</ContactRand>
 				<ContactRand>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>

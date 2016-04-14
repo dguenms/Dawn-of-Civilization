@@ -231,7 +231,7 @@ tBirthArea = (
 )
 
 dChangedBirthArea = {
-iPersia :	((72, 37), 	(85, 44)), 	# includes Assyria and Anatolia
+iPersia :	((74, 37), 	(85, 44)), 	# includes Assyria and Anatolia
 iSpain : 	((49, 43), 	(55, 46)), 	# includes Catalonia
 iInca : 	((26, 19), 	(31, 24)),
 iMongolia : 	((81, 45), 	(105, 54)), 	# 6 more west, 1 more south

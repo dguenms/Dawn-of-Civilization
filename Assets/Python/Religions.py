@@ -325,13 +325,14 @@ class Religions:
 		lCatholicCities = []
 		lCatholicCities.extend(lNoStateReligionCities)
 		lCatholicCities.extend(lMinorCities)
-		pCatholicCapital = utils.getHighestEntry([city for city in lCatholicCities if city.plot().getSpreadFactor(iCatholicism) >= 3], lambda city: city.getPopulation())
+		pCatholicCapital = utils.getHighestEntry([city for city in lCatholicCities if city.plot().getSpreadFactor(iCatholicism) >= 3 and city != pOrthodoxCapital], lambda city: city.getPopulation())
 		
 		if not pCatholicCapital:
 			pCatholicCapital = utils.getHighestEntry(lCatholicCities, lambda city: city.getPopulation())
 		
 		self.foundReligion((pCatholicCapital.getX(), pCatholicCapital.getY()), iCatholicism)
 		
+		print str(lNoStateReligionCities)
 		for city in lNoStateReligionCities:
 			print "Replace Orthodoxy with Catholicism: " + str(city.getName())
 			city.replaceReligion(iOrthodoxy, iCatholicism)
@@ -339,6 +340,7 @@ class Religions:
 		lIndependentCities = []
 		lIndependentCities.extend(lDifferentStateReligionCities)
 		lIndependentCities.extend(lMinorCities)
+		print str(lIndependentCities)
 		for city in lIndependentCities:
 			if stepDistance(city.getX(), city.getY(), pCatholicCapital.getX(), pCatholicCapital.getY()) > stepDistance(city.getX(), city.getY(), pOrthodoxCapital.getX(), pOrthodoxCapital.getY()):
 				print "Replace Orthodoxy with Catholicism: " + str(city.getName())
@@ -346,7 +348,7 @@ class Religions:
 			else:
 				print "Keep Orthodoxy: " + str(city.getName())
 				
-		if gc.getPlayer(utils.getHumanID()).getStateReligion() == iOrthodoxy:
+		if gc.getPlayer(utils.getHumanID()).getStateReligion() == iOrthodoxy and iGameTurn >= getTurnForYear(tBirth[utils.getHumanID()]):
 			utils.popup(CyTranslator().getText("TXT_KEY_SCHISM_TITLE", ()), CyTranslator().getText("TXT_KEY_SCHISM_MESSAGE", (pCatholicCapital.getName(),)), ())		
 
 #REFORMATION

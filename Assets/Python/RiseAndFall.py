@@ -3363,6 +3363,9 @@ class RiseAndFall:
 			utils.makeUnit(iIranianQizilbash, iCiv, tPlot, 6)
 			utils.makeUnit(iBombard, iCiv, tPlot, 3)
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
+			if utils.getHumanID() != iCiv:
+				utils.makeUnit(iIranianQizilbash, iCiv, tPlot, 6)
+				utils.makeUnit(iBombard, iCiv, tPlot, 3)
 		if (iCiv == iIndia):
 			utils.makeUnit(iCuirassier, iCiv, tPlot, 3)
 			utils.makeUnit(iMusketman, iCiv, tPlot, 8)
