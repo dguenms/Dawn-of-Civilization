@@ -2608,7 +2608,7 @@
 			<Button>Art/Structures/Wonders/CN_Tower/cntower.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</Type>
+			<Type>ART_DEF_BUILDING_COLOMBIAN_HACIENDA</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.1</fScale>
@@ -2616,6 +2616,16 @@
 			<NIF>Art/Structures/Buildings/BrazilFazenda/BrazilFazenda.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/BrazilFazenda/Fazenda.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.1</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Fazenda/BrazilFazenda.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Fazenda/Button_Fazenda.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ARGENTINE_REFRIGERATION_PLANT</Type>
