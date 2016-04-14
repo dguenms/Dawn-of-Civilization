@@ -1113,9 +1113,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.75</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Zoroastrian Temple/FireTemple.nif</NIF>
+			<NIF>Art/Structures/Buildings/Zoroastrian_Temple/FireTemple.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Zoroastrian Temple/Zoroastrian_Temple_Button.dds</Button>
+			<Button>Art/Structures/Buildings/Zoroastrian_Temple/Zoroastrian_Temple_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZOROASTRIAN_MONASTERY</Type>
@@ -1123,9 +1123,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.75</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Zoroastrian Monastery/ZoroMonastery.nif</NIF>
+			<NIF>Art/Structures/Buildings/Zoroastrian_Monastery/ZoroMonastery.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Zoroastrian Monastery/Zoroastrian_Monastery_Button.dds</Button>
+			<Button>Art/Structures/Buildings/Zoroastrian_Monastery/Zoroastrian_Monastery_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZOROASTRIAN_CATHEDRAL</Type>
@@ -1133,9 +1133,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.0</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Zoroastrian Atash Behram/SurakhanyTemple.nif</NIF>
+			<NIF>Art/Structures/Buildings/Zoroastrian_Atash_Behram/SurakhanyTemple.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Zoroastrian Atash Behram/Zoroastrian_AtashBehram_Button.dds</Button>
+			<Button>Art/Structures/Buildings/Zoroastrian_Atash_Behram/Zoroastrian_AtashBehram_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZOROASTRIAN_SHRINE</Type>
@@ -1143,9 +1143,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.85</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Adur Farnbag/FirouzabadTemple.nif</NIF>
+			<NIF>Art/Structures/Buildings/Adur_Farnbag/FirouzabadTemple.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Adur Farnbag/AdurFarnbag_Button.dds</Button>
+			<Button>Art/Structures/Buildings/Adur_Farnbag/AdurFarnbag_Button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_COLOSSEUM</Type>
@@ -2623,7 +2623,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.1</fScale>
 			<fInterfaceScale>0.65</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Fazenda/BrazilFazenda.nif</NIF>
+			<NIF>Art/Structures/Buildings/BrazilFazenda/BrazilFazenda.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Fazenda/Button_Fazenda.dds</Button>
 		</BuildingArtInfo>
