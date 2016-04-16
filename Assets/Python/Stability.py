@@ -1664,15 +1664,15 @@ def getCivicCombinationStability(iPlayer, iCivic1, iCivic2):
 	if iCivicTotalitarianism in lCivics:
 		if iCivicAutocracy in lCivics: return 5
 		if iCivicCentralPlanning in lCivics: return 3
-		if set([iCivicAnimism, iCivicPantheon, iCivicOrganizedReligion, iCivicScholasticism, iCivicFanaticism]) & lCivics: return -5
+		if other(lCivics, iCivicSecularism): return -5
 		
 	if iCivicCentralPlanning in lCivics:
 		if iCivicIndustrialism in lCivics: return 2
-		if set([iCivicTribalism, iCivicSlavery, iCivicAgrarianism, iCivicCapitalism]) & lCivics: return -5
+		if other(lCivics, iCivicIndustrialism, iCivicPublicWelfare): return -5
 		
 	if iCivicEgalitarianism in lCivics:
 		if iCivicRepublic in lCivics: return 2
-		if set([iCivicDirectRule, iCivicVassalage, iCivicAbsolutism, iCivicRepresentation, iCivicTotalitarianism]) & lCivics: return -3
+		if other(lCivics, iCivicPublicWelfare): return -3
 		if iCivicEnvironmentalism in lCivics: return 2
 		if iCivicSecularism in lCivics: return 2
 		
@@ -1692,20 +1692,20 @@ def getCivicCombinationStability(iPlayer, iCivic1, iCivic2):
 		
 	if iCivicVassalage in lCivics:
 		if iCivicLevyArmies in lCivics: return 3
-		if set([iCivicMilitia, iCivicMercenaries, iCivicStandingArmy, iCivicNavalSupremacy, iCivicMultilateralism]) & lCivics: return -5
+		if other(lCivics, iCivicLevyArmies): return -5
 		
-		if set([iCivicCapitalism, iCivicIndustrialism, iCivicPublicWelfare]) & lCivics: return -5
+		if only(lCivics, iCivicCapitalism, iCivicIndustrialism, iCivicPublicWelfare): return -5
 		
 		if iCurrentEra == iMedieval:
 			if iCivicDynasticism in lCivics: return 2
 			if iCivicAgrarianism in lCivics: return 3
 			
 	if iCivicCityStates in lCivics:
-		if set([iCivicVassalage, iCivicAbsolutism, iCivicEgalitarianism]) & lCivics: return -3
+		if only(lCivics, iCivicVassalage, iCivicAbsolutism, iCivicEgalitarianism): return -3
 		if iCivicGuilds in lCivics: return 2
-		if set([iCivicFreeMarket, iCivicCentralPlanning, iCivicEnvironmentalism]) & lCivics: return -5
-		if set([iCivicMilitia, iCivicMercenaries]) & lCivics: return 2
-		if set([iCivicLevyArmies, iCivicStandingArmy, iCivicMultilateralism]) & lCivics: return -3
+		if only(lCivics, iCivicFreeMarket, iCivicCentralPlanning, iCivicEnvironmentalism): return -5
+		if only(lCivics, iCivicMilitia, iCivicMercenaries): return 2
+		if only(lCivics, iCivicLevyArmies, iCivicStandingArmy, iCivicMultilateralism): return -3
 		
 	if iCivicAbsolutism in lCivics:
 		if iCivicRepublic in lCivics: return -5
@@ -1728,6 +1728,15 @@ def getCivicCombinationStability(iPlayer, iCivic1, iCivic2):
 		if iCivicFanaticism in lCivics: return -3
 		
 	return 0
+	
+def only(lCombination, *civics):
+	lCivics = [iCivic for iCivic in civics]
+	return set(lCivics) & lCombination
+	
+def other(lCombination, *civics):
+	iCategory = gc.getCivicInfo(civics[0]).getCivicOptionType()
+	lCivics = [iCivic for iCivic in range(iNumCivics) if gc.getCivicInfo(iCivic).getCivicOptionType() == iCategory and iCivic not in civics]
+	return set(lCivics) & lCombination
 
 def sigmoid(x):
 	#return 2.0 / (1 + math.exp(-5*x)) - 1.0
