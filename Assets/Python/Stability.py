@@ -1119,7 +1119,7 @@ def calculateStability(iPlayer):
 	bMercantilism = (iCivicEconomy == iCivicMercantilism)
 	bVassalage = (iCivicOrganization == iCivicVassalage)
 	bEnvironmentalism = (iCivicEconomy == iCivicEnvironmentalism)
-	bFanaticism = (iCivicGovernment == iCivicFanaticism)
+	bFanaticism = (iCivicReligion == iCivicFanaticism)
 	bAutocracy = (iCivicGovernment == iCivicAutocracy)
 	bMultilateralism = (iCivicMilitary == iCivicMultilateralism)
 	
