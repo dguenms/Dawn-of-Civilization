@@ -5529,7 +5529,7 @@ bool CvUnit::found()
 }
 
 
-bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestVisible) const
+bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestVisible, bool bAI) const
 {
 	CvCity* pCity;
 
@@ -5565,7 +5565,7 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
-	if (m_pUnitInfo->getReligionSpreads(eReligion) <= 0 && !m_pUnitInfo->isGreatMission())
+	if (m_pUnitInfo->getReligionSpreads(eReligion) <= 0 && (!bAI || !m_pUnitInfo->isGreatMission()))
 	{
 		return false;
 	}

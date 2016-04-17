@@ -208,7 +208,7 @@ public:
 	bool canFound(const CvPlot* pPlot, bool bTestVisible = false) const;																		// Exposed to Python
 	bool found();
 
-	bool canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestVisible = false) const;					// Exposed to Python
+	bool canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestVisible = false, bool bAI = false) const;					// Exposed to Python
 	bool spread(ReligionTypes eReligion);
 	int getSpreadChance(ReligionTypes eReligion) const;
 

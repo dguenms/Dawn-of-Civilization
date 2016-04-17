@@ -10,96 +10,211 @@
 		<ControlInfo>
 			<Type>CONTROL_CENTERONSELECTION</Type>
 			<Description>TXT_KEY_ACTION_CENTER_SELECTION</Description>
+			<Help/>
 			<HotKey>KB_C</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPAD5</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SELECTYUNITTYPE</Type>
 			<Description>TXT_KEY_ACTION_SELECT_UNIT_TYPE</Description>
+			<Help/>
 			<HotKey>KB_C</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPAD5</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
 			<bCtrlDownAlt>1</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SELECTYUNITALL</Type>
 			<Description>TXT_KEY_ACTION_SELECT_UNIT_ALL</Description>
+			<Help/>
 			<HotKey>KB_C</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPAD5</HotKeyAlt>
 			<bAltDownAlt>1</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SELECTCITY</Type>
 			<Description>TXT_KEY_ACTION_SELECT_CITY</Description>
+			<Help/>
 			<HotKey>KB_INSERT</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SELECTCAPITAL</Type>
 			<Description>TXT_KEY_ACTION_SELECT_CAPITAL</Description>
+			<Help/>
 			<HotKey>KB_F10</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_NEXTCITY</Type>
 			<Description>TXT_KEY_ACTION_NEXT_CITY</Description>
 			<Help>TXT_KEY_ACTION_NEXT_CITY_HELP</Help>
 			<HotKey>KB_HOME</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPADPLUS</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_PREVCITY</Type>
 			<Description>TXT_KEY_ACTION_PREVIOUS_CITY</Description>
 			<Help>TXT_KEY_ACTION_PREVIOUS_CITY_HELP</Help>
 			<HotKey>KB_END</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPADMINUS</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_NEXTUNIT</Type>
 			<Description>TXT_KEY_ACTION_PREVIOUS_PLOT_UNIT_HELP</Description>
 			<Help>TXT_KEY_ACTION_NEXT_UNIT_HELP</Help>
 			<HotKey>KB_PERIOD</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPADSTAR</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_PREVUNIT</Type>
 			<Description>TXT_KEY_ACTION_PREVIOUS_PLOT_UNIT_HELP</Description>
 			<Help>TXT_KEY_ACTION_PREVIOUS_UNIT_HELP</Help>
 			<HotKey>KB_COMMA</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPADSLASH</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CYCLEUNIT</Type>
 			<Description>TXT_KEY_ACTION_CYCLE_UNITS</Description>
 			<Help>TXT_KEY_ACTION_CYCLE_UNITS_HELP</Help>
 			<HotKey>KB_RETURN</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPADENTER</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CYCLEUNIT_ALT</Type>
 			<Description>TXT_KEY_ACTION_CYCLE_UNITS_ALT</Description>
 			<Help>TXT_KEY_ACTION_CYCLE_UNITS_ALT_HELP</Help>
 			<HotKey>KB_W</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPAD5</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CYCLEWORKER</Type>
 			<Description>TXT_KEY_ACTION_CYCLE_WORKERS</Description>
 			<Help>TXT_KEY_ACTION_CYCLE_WORKERS_HELP</Help>
 			<HotKey>KB_SLASH</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_LASTUNIT</Type>
 			<Description>TXT_KEY_ACTION_LASTUNIT</Description>
 			<Help>TXT_KEY_ACTION_LASTUNIT_HELP</Help>
 			<HotKey>KB_BACKSLASH</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_ENDTURN</Type>
 			<Description>TXT_KEY_ACTION_ENDTURN</Description>
 			<Help>TXT_KEY_ACTION_ENDTURN_HELP</Help>
 			<HotKey>KB_RETURN</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>1</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPADENTER</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
 			<iHotKeyPriorityAlt>1</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
@@ -107,28 +222,60 @@
 			<Description>TXT_KEY_ACTION_ENDTURN_ALT</Description>
 			<Help>TXT_KEY_ACTION_ENDTURN_ALT_HELP</Help>
 			<HotKey>KB_SPACE</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_FORCEENDTURN</Type>
 			<Description>TXT_KEY_ACTION_FORCE_ENDTURN</Description>
 			<Help>TXT_KEY_ACTION_FORCE_ENDTURN_HELP</Help>
 			<HotKey>KB_RETURN</HotKey>
+			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_NUMPADENTER</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
 			<bShiftDownAlt>1</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_AUTOMOVES</Type>
 			<Description>TXT_KEY_ACTION_AUTOMOVES</Description>
 			<Help>TXT_KEY_ACTION_AUTOMOVES_HELP</Help>
 			<HotKey>KB_A</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_PING</Type>
 			<Description>TXT_KEY_ACTION_PING</Description>
 			<Help>TXT_KEY_ACTION_PING_HELP</Help>
 			<HotKey>KB_P</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SIGN</Type>
@@ -136,34 +283,74 @@
 			<Help>TXT_KEY_ACTION_SIGN_HELP</Help>
 			<HotKey>KB_S</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_GRID</Type>
 			<Description>TXT_KEY_ACTION_GRID</Description>
 			<Help>TXT_KEY_ACTION_GRID_HELP</Help>
 			<HotKey>KB_T</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_BARE_MAP</Type>
 			<Description>TXT_KEY_ACTION_BARE_MAP</Description>
 			<Help>TXT_KEY_ACTION_BARE_MAP_HELP</Help>
 			<HotKey>KB_B</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_YIELDS</Type>
 			<Description>TXT_KEY_ACTION_YIELDS</Description>
 			<Help>TXT_KEY_ACTION_YIELDS_HELP</Help>
 			<HotKey>KB_Y</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_RESOURCE_ALL</Type>
 			<Description>TXT_KEY_ACTION_RESOURCE_ALL</Description>
 			<Help>TXT_KEY_GLOBELAYER_RESOURCES</Help>
 			<HotKey>KB_R</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_UNIT_ICONS</Type>
@@ -171,32 +358,74 @@
 			<Help>TXT_KEY_GLOBELAYER_UNITS</Help>
 			<HotKey>KB_U</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_GLOBELAYER</Type>
 			<Description>TXT_KEY_GLOBE_VIEW</Description>
 			<Help>TXT_KEY_GLOBEVIEW_TOGGLE</Help>
 			<HotKey></HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SCORES</Type>
 			<Description>TXT_KEY_ACTION_SCORES</Description>
 			<Help>TXT_KEY_ACTION_SCORES_HELP</Help>
 			<HotKey></HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_LOAD_GAME</Type>
 			<Description>TXT_KEY_ACTION_LOAD_GAME</Description>
 			<Help>TXT_KEY_ACTION_LOAD_GAME_HELP</Help>
 			<HotKey>KB_L</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_OPTIONS_SCREEN</Type>
 			<Description>TXT_KEY_ACTION_OPTIONS_SCREEN</Description>
 			<Help>TXT_KEY_ACTION_OPTIONS_SCREEN_HELP</Help>
 			<HotKey>KB_O</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_RETIRE</Type>
@@ -204,6 +433,14 @@
 			<Help>TXT_KEY_ACTION_RETIRE_HELP</Help>
 			<HotKey>KB_Q</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SAVE_GROUP</Type>
@@ -211,211 +448,541 @@
 			<Help>TXT_KEY_ACTION_SAVE_GROUP_HELP</Help>
 			<HotKey>KB_S</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SAVE_NORMAL</Type>
 			<Description>TXT_KEY_ACTION_SAVE_NORMAL</Description>
 			<Help>TXT_KEY_ACTION_SAVE_GAME_HELP</Help>
 			<HotKey>KB_S</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_QUICK_SAVE</Type>
 			<Description>TXT_KEY_ACTION_QUICK_SAVE</Description>
+			<Help/>
 			<HotKey>KB_F5</HotKey>
+			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_QUICK_LOAD</Type>
 			<Description>TXT_KEY_ACTION_QUICK_LOAD</Description>
+			<Help/>
 			<HotKey>KB_F8</HotKey>
+			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_ORTHO_CAMERA</Type>
 			<Description>TXT_KEY_ACTION_ORTHO_CAMERA</Description>
+			<Help/>
 			<HotKey>KB_O</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CYCLE_CAMERA_FLYING_MODES</Type>
 			<Description>TXT_KEY_ACTION_CYCLE_CAMERA_FLYING_MODES</Description>
+			<Help/>
 			<HotKey>KB_BACKSLASH</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_ISOMETRIC_CAMERA_LEFT</Type>
 			<Description>TXT_KEY_ACTION_ISOMETRIC_CAMERA_LEFT</Description>
+			<Help/>
 			<HotKey>KB_LEFT</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_ISOMETRIC_CAMERA_RIGHT</Type>
 			<Description>TXT_KEY_ACTION_ISOMETRIC_CAMERA_RIGHT</Description>
+			<Help/>
 			<HotKey>KB_RIGHT</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_FLYING_CAMERA</Type>
 			<Description>TXT_KEY_ACTION_FLYING_CAMERA</Description>
+			<Help/>
 			<HotKey>KB_F</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_MOUSE_FLYING_CAMERA</Type>
 			<Description>TXT_KEY_ACTION_MOUSE_FLYING_CAMERA</Description>
+			<Help/>
 			<HotKey>KB_F</HotKey>
 			<bAltDown>1</bAltDown>
 			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_TOP_DOWN_CAMERA</Type>
 			<Description>TXT_KEY_ACTION_TOP_DOWN_CAMERA</Description>
+			<Help/>
 			<HotKey>KB_F</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CIVILOPEDIA</Type>
 			<Description>TXT_KEY_WIDGET_HELP</Description>
+			<Help/>
 			<HotKey>KB_F12</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_RELIGION_SCREEN</Type>
 			<Description>TXT_KEY_ACTION_SHOW_RELIGION_SCREEN</Description>
+			<Help/>
 			<HotKey>KB_F7</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CORPORATION_SCREEN</Type>
 			<Description>TXT_KEY_ACTION_SHOW_CORPORATION_SCREEN</Description>
+			<Help/>
 			<HotKey>KB_F7</HotKey>
+			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CIVICS_SCREEN</Type>
 			<Description>TXT_KEY_ACTION_SHOW_CIVICS_SCREEN</Description>
+			<Help/>
 			<HotKey>KB_F3</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_FOREIGN_SCREEN</Type>
 			<Description>TXT_KEY_FOREIGN_ADVISOR_TITLE</Description>
+			<Help/>
 			<HotKey>KB_F4</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_FINANCIAL_SCREEN</Type>
 			<Description>TXT_KEY_FINANCIAL_ADVISOR_TITLE</Description>
+			<Help/>
 			<HotKey>KB_F2</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_MILITARY_SCREEN</Type>
 			<Description>TXT_KEY_MILITARY_ADVISOR_TITLE</Description>
+			<Help/>
 			<HotKey>KB_F5</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_TECH_CHOOSER</Type>
 			<Description>TXT_KEY_TECH_CHOOSER_TITLE</Description>
+			<Help/>
 			<HotKey>KB_F6</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_TURN_LOG</Type>
 			<Description>TXT_KEY_EVENT_LOG</Description>
+			<Help/>
 			<HotKey>KB_TAB</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CHAT_ALL</Type>
 			<Description>TXT_KEY_CHAT_LOG</Description>
+			<Help/>
 			<HotKey>KB_TAB</HotKey>
+			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_CHAT_TEAM</Type>
 			<Description>TXT_KEY_CHAT_LOG</Description>
+			<Help/>
 			<HotKey>KB_TAB</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_DOMESTIC_SCREEN</Type>
 			<Description>TXT_KEY_DOMESTIC_ADVISOR_TITLE</Description>
+			<Help/>
 			<HotKey>KB_F1</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_VICTORY_SCREEN</Type>
 			<Description>TXT_KEY_VICTORY_SCREEN_TITLE</Description>
+			<Help/>
 			<HotKey>KB_F8</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_INFO</Type>
 			<Description>TXT_KEY_INFO_SCREEN</Description>
+			<Help/>
 			<HotKey>KB_F9</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_GLOBE_VIEW</Type>
 			<Description>TXT_KEY_GLOBE_VIEW</Description>
+			<Help/>
 			<HotKey>KB_F11</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_DETAILS</Type>
 			<Description>TXT_KEY_POPUP_DETAILS_TITLE</Description>
+			<Help/>
 			<HotKey>KB_D</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_ADMIN_DETAILS</Type>
 			<Description>TXT_KEY_POPUP_GAME_DETAILS</Description>
+			<Help/>
 			<HotKey>KB_D</HotKey>
 			<bAltDown>1</bAltDown>
 			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_HALL_OF_FAME</Type>
 			<Description>TXT_KEY_MAIN_MENU_HALL_OF_FAME</Description>
+			<Help/>
 			<HotKey>KB_H</HotKey>
+			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_WORLD_BUILDER</Type>
 			<Description>TXT_KEY_WORLD_BUILDER</Description>
+			<Help/>
 			<HotKey>KB_W</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_DIPLOMACY</Type>
 			<Description>TXT_KEY_DIPLOMACY</Description>
+			<Help/>
 			<HotKey>KB_D</HotKey>
+			<bAltDown>0</bAltDown>
 			<bShiftDown>1</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_SELECT_HEALTHY</Type>
 			<Description>TXT_KEY_MAIN_MENU_HALL_OF_FAME</Description>
+			<Help/>
 			<HotKey>KB_H</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_ESPIONAGE_SCREEN</Type>
 			<Description>TXT_KEY_ESPIONAGE_SCREEN</Description>
+			<Help/>
 			<HotKey>KB_E</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_FREE_COLONY</Type>
 			<Description>TXT_KEY_FREE_COLONY</Description>
+			<Help/>
 			<HotKey>KB_F1</HotKey>
 			<bAltDown>1</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 		<ControlInfo>
 			<Type>CONTROL_STABILITY_OVERLAY</Type>
 			<Description>TXT_KEY_STABILITY_OVERLAY_WIDGET</Description>
 			<Help>TXT_KEY_STABILITY_OVERLAY_HELP</Help>
 			<HotKey>KB_K</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
 			<HotKeyAlt>KB_K</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
 			<bCtrlDownAlt>1</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
+		<!-- Rhye -->
+		<!-- Mercenaries Start -->
 		<ControlInfo>
 			<Type>CONTROL_MERCENARIES_MANAGER</Type>
 			<Description>TXT_KEY_MERCENARIES_TITLE</Description>
+			<Help/>
 			<HotKey>KB_M</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
 	</ControlInfos>
 </Civ4ControlInfos>

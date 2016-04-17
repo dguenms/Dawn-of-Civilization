@@ -1928,6 +1928,7 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 					if utils.isPlotInArea((x, y), tNorthAmericaTL, tNorthAmericaBR) or utils.isPlotInArea((x, y), tSouthCentralAmericaTL, tSouthCentralAmericaBR):
 						if gc.getMap().plot(x, y).isRevealed(iEuropean, False):
 							lose(iMaya, 2)
+							return
 			
 def checkReligiousGoals(iPlayer):
 	for i in range(3):

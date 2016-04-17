@@ -1173,7 +1173,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAGAN_TEMPLE_REPLACED</Tag>
-		<English>The spread of %s1 to our city of %s2 caused its citizens to repurpose their Pagan Temple as %s3.</English>
+		<English>The spread of %s1 to our city of %s2 caused its citizens to repurpose their Pagan Temple as a %s3.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PANTHEON_REQUIREMENT</Tag>

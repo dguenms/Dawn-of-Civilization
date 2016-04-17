@@ -278,6 +278,10 @@
 		<English>Khanate of Delhi</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MONGOLIA_MONGOL</Tag>
+		<English>Mongol</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_ADJECTIVE</Tag>
 		<English>Mongolian</English>
 		<French>

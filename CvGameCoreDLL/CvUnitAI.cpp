@@ -9181,7 +9181,7 @@ std::pair<CvPlot*, CvPlot*> CvUnitAI::AI_spreadTarget(ReligionTypes eReligion, b
 				{
 					if (AI_plotValid(pLoopCity->plot()) && pLoopCity->area() == area())
 					{
-						if (canSpread(pLoopCity->plot(), eReligion))
+						if (canSpread(pLoopCity->plot(), eReligion, false, true))
 						{
 							if (!(pLoopCity->plot()->isVisibleEnemyUnit(this)))
 							{
