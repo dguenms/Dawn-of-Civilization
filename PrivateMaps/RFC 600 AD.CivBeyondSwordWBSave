@@ -25549,8 +25549,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=54
-	TerrainType=TERRAIN_GRASS
 	BonusType=BONUS_WHEAT
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -27186,9 +27186,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=52
-	BonusType=BONUS_WHEAT
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_WHEAT
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -27607,7 +27607,7 @@ BeginPlot
 	x=71,y=57
 	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
 BeginPlot
@@ -27988,7 +27988,7 @@ EndPlot
 BeginPlot
 	x=72,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -28021,7 +28021,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -28353,7 +28353,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=48
-	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -28797,7 +28796,7 @@ EndPlot
 BeginPlot
 	x=74,y=53
 	BonusType=BONUS_COW
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -28830,18 +28829,18 @@ EndPlot
 BeginPlot
 	x=74,y=58
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=59
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=60
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -29198,7 +29197,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -29215,7 +29214,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=58
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -29503,7 +29502,7 @@ BeginPlot
 	x=76,y=41
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
-	PlotType=2	
+	PlotType=2
 EndPlot
 BeginPlot
 	x=76,y=42
@@ -29598,7 +29597,7 @@ EndPlot
 BeginPlot
 	x=76,y=57
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -29995,13 +29994,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=58
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=77,y=59
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -31863,7 +31862,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=62
-	BonusType=BONUS_GEMS
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
