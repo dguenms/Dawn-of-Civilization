@@ -66,12 +66,20 @@
 		<English>Jurchen</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_KAZAKH</Tag>
+		<English>Kazakh</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_KHITAN</Tag>
 		<English>Khitan</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_KUSHANA</Tag>
 		<English>Kushan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_NOGAI</Tag>
+		<English>Nogai</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_NORSE</Tag>
@@ -86,8 +94,16 @@
 		<English>Parthian</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_SIBIR</Tag>
+		<English>Sibir</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_SONGHAI</Tag>
 		<English>Songhai</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_TATAR</Tag>
+		<English>Tatar</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_TIBETAN</Tag>
@@ -100,6 +116,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_UIGHUR</Tag>
 		<English>Uighur</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_UZBEK</Tag>
+		<English>Uzbek</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_VISIGOTHIC</Tag>
