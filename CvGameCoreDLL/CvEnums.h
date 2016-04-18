@@ -3171,7 +3171,7 @@ enum ReligionSpreadTypes
 };
 
 // Leoreth
-enum RegíonSpreadTypes
+enum RegionSpreadTypes
 {
 	REGION_SPREAD_NONE,
 	REGION_SPREAD_MINORITY,
