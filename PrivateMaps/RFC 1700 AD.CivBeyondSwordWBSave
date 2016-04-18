@@ -32856,7 +32856,7 @@ BeginPlot
 	x=71,y=57
 	BonusType=BONUS_ALUMINUM
 	ImprovementType=IMPROVEMENT_MINE
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=16,26,28,
 EndPlot
@@ -33311,7 +33311,7 @@ EndPlot
 BeginPlot
 	x=72,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,26,
 EndPlot
@@ -33351,7 +33351,7 @@ BeginPlot
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=16,26,
 EndPlot
@@ -33777,8 +33777,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=48
-	BonusType=BONUS_CLAM
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=26,35,44,45,
@@ -34426,7 +34424,7 @@ BeginPlot
 	x=74,y=53
 	BonusType=BONUS_COW
 	ImprovementType=IMPROVEMENT_PASTURE
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,26,
 EndPlot
@@ -34468,20 +34466,20 @@ BeginPlot
 	x=74,y=58
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=16,26,
 EndPlot
 BeginPlot
 	x=74,y=59
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=16,26,
 EndPlot
 BeginPlot
 	x=74,y=60
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=16,26,
 EndPlot
@@ -34937,7 +34935,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	ImprovementType=IMPROVEMENT_VILLAGE
-	TerrainType=TERRAIN_PLAINS
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=26,
 EndPlot
@@ -34958,7 +34956,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=58
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=26,
 EndPlot
@@ -35414,7 +35412,7 @@ BeginPlot
 	x=76,y=57
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=26,
 EndPlot
@@ -35894,7 +35892,7 @@ EndPlot
 BeginPlot
 	x=77,y=58
 	RouteType=ROUTE_ROAD
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=26
@@ -35924,7 +35922,7 @@ BeginPlot
 	x=77,y=59
 	ImprovementType=IMPROVEMENT_LUMBERMILL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
-	TerrainType=TERRAIN_GRASS
+	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=26,
 EndPlot
@@ -38199,9 +38197,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=62
-	BonusType=BONUS_GEMS
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	TeamReveal=26,
