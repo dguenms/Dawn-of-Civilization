@@ -10,7 +10,7 @@
 			<Type>HANDICAP_HEIR</Type>
 			<Description>TXT_KEY_HANDICAP_HEIR</Description>
 			<Help>TXT_KEY_HANDICAP_HEIR_HELP</Help>
-			<iFreeWinsVsBarbs>6</iFreeWinsVsBarbs>
+			<iFreeWinsVsBarbs>3</iFreeWinsVsBarbs>
 			<iAnimalAttackProb>50</iAnimalAttackProb>
 			<iStartingLocPercent>50</iStartingLocPercent>
 			<iAdvancedStartPointsMod>150</iAdvancedStartPointsMod>
@@ -110,7 +110,7 @@
 			<Type>HANDICAP_REGENT</Type>
 			<Description>TXT_KEY_HANDICAP_REGENT</Description>
 			<Help>TXT_KEY_HANDICAP_REGENT_HELP</Help>
-			<iFreeWinsVsBarbs>4</iFreeWinsVsBarbs>
+			<iFreeWinsVsBarbs>0</iFreeWinsVsBarbs>
 			<iAnimalAttackProb>75</iAnimalAttackProb>
 			<iStartingLocPercent>50</iStartingLocPercent>
 			<iAdvancedStartPointsMod>100</iAdvancedStartPointsMod>
@@ -197,7 +197,7 @@
 			<Type>HANDICAP_MONARCH</Type>
 			<Description>TXT_KEY_HANDICAP_MONARCH</Description>
 			<Help>TXT_KEY_HANDICAP_MONARCH_HELP</Help>
-			<iFreeWinsVsBarbs>4</iFreeWinsVsBarbs>
+			<iFreeWinsVsBarbs>0</iFreeWinsVsBarbs>
 			<iAnimalAttackProb>75</iAnimalAttackProb>
 			<iStartingLocPercent>50</iStartingLocPercent>
 			<iAdvancedStartPointsMod>100</iAdvancedStartPointsMod>
@@ -283,7 +283,7 @@
 			<Type>HANDICAP_EMPEROR</Type>
 			<Description>TXT_KEY_HANDICAP_EMPEROR</Description>
 			<Help>TXT_KEY_HANDICAP_EMPEROR_HELP</Help>
-			<iFreeWinsVsBarbs>2</iFreeWinsVsBarbs>
+			<iFreeWinsVsBarbs>0</iFreeWinsVsBarbs>
 			<iAnimalAttackProb>100</iAnimalAttackProb>
 			<iStartingLocPercent>50</iStartingLocPercent>
 			<iAdvancedStartPointsMod>85</iAdvancedStartPointsMod>
@@ -370,7 +370,7 @@
 			<Type>HANDICAP_PARAGON</Type>
 			<Description>TXT_KEY_HANDICAP_PARAGON</Description>
 			<Help>TXT_KEY_HANDICAP_PARAGON_HELP</Help>
-			<iFreeWinsVsBarbs>2</iFreeWinsVsBarbs>
+			<iFreeWinsVsBarbs>0</iFreeWinsVsBarbs>
 			<iAnimalAttackProb>100</iAnimalAttackProb>
 			<iStartingLocPercent>50</iStartingLocPercent>
 			<iAdvancedStartPointsMod>85</iAdvancedStartPointsMod>
