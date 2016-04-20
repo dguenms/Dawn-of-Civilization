@@ -5689,7 +5689,8 @@ int CvUnit::getSpreadChance(ReligionTypes eReligion) const
 	if (!plot()->isCity()) return 0;
 
 	CvCity* pCity = plot()->getPlotCity();
-	ReligionSpreadTypes eSpreadFactor = GET_PLAYER(plot()->getOwner()).getSpreadType(plot(), eReligion);
+	bool bDistant = GET_PLAYER(plot()->getOwner()).isDistantSpread(pCity, eReligion);
+	ReligionSpreadTypes eSpreadFactor = GET_PLAYER(plot()->getOwner()).getSpreadType(plot(), eReligion, bDistant);
 	
 	if (eSpreadFactor == RELIGION_SPREAD_FAST) return 100;
 

@@ -920,6 +920,16 @@ enum VictoryTypes					// Exposed to Python
 enum FeatureTypes					// Exposed to Python
 {
 	NO_FEATURE = -1,
+	FEATURE_ICE,
+	FEATURE_JUNGLE,
+	FEATURE_OASIS,
+	FEATURE_FOREST,
+	FEATURE_MARSH,
+	FEATURE_CAPE,
+	FEATURE_ISLANDS,
+	FEATURE_RAINFOREST,
+	FEATURE_FALLOUT,
+	NUM_FEATURES
 };
 
 enum BonusTypes						// Exposed to Python

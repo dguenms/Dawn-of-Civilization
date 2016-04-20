@@ -1599,16 +1599,6 @@ iParameterHappiness, iParameterCivicCombinations, iParameterCivicsEraTech, iPara
 iParameterNeighbors, iParameterVassals, iParameterDefensivePacts, iParameterRelations, iParameterAutocracy, iParameterFanaticism, iParameterMultilateralism,	# Foreign
 iParameterWarSuccess, iParameterWarWeariness, iParameterBarbarianLosses) = range(iNumStabilityParameters)							# Military
 
-#Stability Display
-#iNumStabilityTypes = 44
-#(iStabilityDiplomacy, iStabilityNeighbor, iStabilityVassal, iStabilityImperialism, iStabilityContacts, iStabilityExpansion, iStabilityOuterExpansion,
-#iStabilityOccupiedCore, iStabilityCivics, iStabilityCivicEra, iStabilityCivicCities, iStabilityCivicCap, iStabilityCivicTech, iStabilityForeignCoreCities,
-#iStabilityCityHappiness, iStabilityCityCivics, iStabilityCityCulture, iStabilityCityTotal, iStabilityTrade, iStabilityEconomy, iStabilityHappiness,
-#iStabilityEconomyExtra, iStabilityGreatDepression, iStabilityForeignGreatDepression, iStabilityPostCommunism, iStabilityDemocracyTransition, 
-#iStabilityNumCities, iStabilityCombat, iStabilityCombatExtra, iStabilityAnarchy, iStabilityGoldenAge, iStabilityFall, iStabilityBase, iStabilityNormalization,
-#iStabilityCitiesBuilt, iStabilityCitiesLost, iStabilityCitiesConquered, iStabilityCitiesRazed, iStabilityTech, iStabilityBuildings,
-#iStabilityReligion, iStabilityDifficulty, iStabilityCap, iStabilityHit) = range(iNumStabilityTypes)
-
 #Regions
 iNumRegions = 38
 (rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia, rAnatolia, rMesopotamia, rArabia, rEgypt, rMaghreb,

@@ -5543,7 +5543,7 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		{
 			for (iDY = -(iRange); iDY <= iRange; iDY++)
 			{
-				pLoopPlot	= plotXY(pPlot->getX_INLINE(), pPlot->getY_INLINE(), iDX, iDY);
+				pLoopPlot = plotXY(pPlot->getX_INLINE(), pPlot->getY_INLINE(), iDX, iDY);
 
 				if (pLoopPlot != NULL)
 				{
@@ -24913,7 +24913,7 @@ bool CvPlayer::isTolerating(ReligionTypes eReligion) const
 	return false;
 }
 
-ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligion) const
+ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligion, bool bDistant) const
 {
 	bool bStateReligion = getStateReligion() == eReligion;
 	int iSpreadFactor = pPlot->getSpreadFactor(eReligion);
@@ -24921,6 +24921,8 @@ ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligi
 	if (!bStateReligion && isNoNonStateReligionSpread()) return RELIGION_SPREAD_NONE;
 
 	if ((isMinorCiv() || isBarbarian()) && iSpreadFactor <= REGION_SPREAD_MINORITY) return RELIGION_SPREAD_NONE;
+
+	if (bDistant && (bStateReligion || getStateReligion() == NO_RELIGION)) return RELIGION_SPREAD_FAST;
 
 	int iCurrentTurn = GC.getGame().getGameTurn();
 	int iFoundingTurn = GC.getGame().getReligionGameTurnFounded(eReligion);
@@ -24944,30 +24946,13 @@ ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligi
 	return RELIGION_SPREAD_NONE;
 }
 
-bool CvPlayer::isDistantSpread(CvCity* pCity, ReligionTypes eReligion) const
+bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) const
 {
 	if (!GC.getGame().isReligionFounded(eReligion)) return false;
 
 	if (pCity->plot()->getSpreadFactor(eReligion) < REGION_SPREAD_HISTORICAL) return false;
 
-	if (getStateReligion() == eReligion)
-	{
-		if (pCity->getReligionCount() > 0) return false;
-
-		CvCity* pCapitalCity = getCapitalCity();
-		if (pCapitalCity != NULL)
-		{
-			if (pCapitalCity->getArea() != pCity->getArea())
-			{
-				//if (GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) == 0)
-				if (2 * GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) <= GC.getMap().getArea(pCity->getArea())->getCitiesPerPlayer(getID()))
-				{
-					return true;
-				}
-			}
-		}
-	}
-	else if (getStateReligion() == NO_RELIGION)
+	if (getStateReligion() == NO_RELIGION)
 	{
 		if (GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) > 0) return false;
 
@@ -24977,11 +24962,25 @@ bool CvPlayer::isDistantSpread(CvCity* pCity, ReligionTypes eReligion) const
 			{
 				if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
 				{
-					if (canContact((PlayerTypes)iI) && canTradeNetworkWith((PlayerTypes)iI))
+					if (GET_TEAM(getTeam()).isHasEverMet(GET_PLAYER((PlayerTypes)iI).getTeam()) && canTradeNetworkWith((PlayerTypes)iI))
 					{
 						return true;
 					}
 				}
+			}
+		}
+	}
+
+	if (pCity->getReligionCount() > 0) return false;
+
+	CvCity* pCapitalCity = getCapitalCity();
+	if (pCapitalCity != NULL)
+	{
+		if (GC.getMap().getArea(pCapitalCity->getArea())->getClosestAreaSize(30) != GC.getMap().getArea(pCity->getArea())->getClosestAreaSize(30))
+		{
+			if (2 * GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) <= GC.getMap().getArea(pCity->getArea())->getCitiesPerPlayer(getID()))
+			{
+				return true;
 			}
 		}
 	}

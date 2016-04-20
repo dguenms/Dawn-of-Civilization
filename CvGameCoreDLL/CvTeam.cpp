@@ -3906,6 +3906,11 @@ bool CvTeam::isHasMet(TeamTypes eIndex)	const
 	return m_abHasMet[eIndex];
 }
 
+bool CvTeam::isHasEverMet(TeamTypes eIndex) const
+{
+	return m_abHasEverMet[eIndex];
+}
+
 void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 {
 	CvDiploParameters* pDiplo;
@@ -3985,7 +3990,7 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 											if (GET_PLAYER((PlayerTypes)iI).isHuman())
 											{
 												// Rhye
-												if (!m_abHasEverMet[iI]) 
+												if (!isHasEverMet(GET_PLAYER((PlayerTypes)iI).getTeam())) 
 												{	
 													pDiplo = new CvDiploParameters(getLeaderID());
 													FAssertMsg(pDiplo != NULL, "pDiplo must be valid");

@@ -219,6 +219,7 @@ public:
 
 	bool isHasMet(TeamTypes eIndex) const;																		// Exposed to Python
 	void makeHasMet(TeamTypes eIndex, bool bNewDiplo);
+	bool isHasEverMet(TeamTypes eIndex) const;
 	DllExport void cutContact(TeamTypes eIndex);	//Rhye
 	bool canCutContact(TeamTypes eIndex); // Leoreth
 
