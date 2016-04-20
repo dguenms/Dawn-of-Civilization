@@ -14685,14 +14685,15 @@ bool CvCity::canSpread(ReligionTypes eReligion, bool bMissionary) const
 
 	if (eSpread == RELIGION_SPREAD_NONE) return false;
 
-	if (eSpread == RELIGION_SPREAD_MINORITY && getReligionCount() == 0) return false;
+	//if (eSpread == RELIGION_SPREAD_MINORITY && getReligionCount() == 0) return false;
 
 	return true;
 }
 
 int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 {
-	ReligionSpreadTypes eSpread = GET_PLAYER(getOwner()).getSpreadType(plot(), eReligion);
+	bool bDistant = GET_PLAYER(getOwner()).isDistantSpread(this, eReligion);
+	ReligionSpreadTypes eSpread = GET_PLAYER(getOwner()).getSpreadType(plot(), eReligion, bDistant);
 	ReligionTypes eStateReligion = GET_PLAYER(getOwner()).getStateReligion();
 	int iIncrement = 50;
 	
@@ -14729,6 +14730,11 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 	if (eStateReligion == eReligion && isHasPrecursor(eReligion)) iTurns -= iIncrement / 2;
 
 	if (eSpread == RELIGION_SPREAD_MINORITY) iTurns *= 2;
+
+	if (getOwner() == CONGO)
+	{
+		log(CvWString::format(L"Congo: eSpread: %d, iIncrement: %d, iTurns: %d", eSpread, iIncrement, iTurns));
+	}
 
 	return getTurns(iTurns);
 }
@@ -17527,6 +17533,15 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 
 	// Leoreth: Polynesian UP
 	if (getOwnerINLINE() == POLYNESIA && pPlot->getTerrainType() == TERRAIN_OCEAN) iCost -= GC.getTerrainInfo(TERRAIN_OCEAN).getCultureCostModifier();
+
+	// Leoreth: Congolese UP
+	if (getOwnerINLINE() == CONGO)
+	{
+		if (pPlot->getFeatureType() == FEATURE_MARSH || pPlot->getFeatureType() == FEATURE_JUNGLE || pPlot->getFeatureType() == FEATURE_RAINFOREST)
+		{
+			iCost  -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
+		}
+	}
 
 	return bOrdering ? iCost : std::max(0, iCost);
 }

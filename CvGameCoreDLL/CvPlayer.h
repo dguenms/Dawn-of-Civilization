@@ -42,7 +42,6 @@ protected:
 	void uninit();
 
 public:
-
 	void initFreeState();
 	void initFreeUnits();
 	void addFreeUnitAI(UnitAITypes eUnitAI, int iCount);
@@ -1220,8 +1219,8 @@ public:
 	CvCity* findSlaveCity() const;
 
 	bool isTolerating(ReligionTypes eReligion) const;
-	bool isDistantSpread(CvCity* pCity, ReligionTypes eReligion) const;
-	ReligionSpreadTypes getSpreadType(CvPlot* pPlot, ReligionTypes eReligion) const;
+	bool isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) const;
+	ReligionSpreadTypes getSpreadType(CvPlot* pPlot, ReligionTypes eReligion, bool bDistant = false) const;
 
 	int getStabilityParameter(ParameterTypes eParameter) const;
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue);

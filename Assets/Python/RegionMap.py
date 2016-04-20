@@ -106,11 +106,12 @@ tSpreadFactors = (
 {
 	iMinority :	[rEgypt, rMesopotamia, rPersia, rAnatolia, rBalkans, rItaly, rIberia, rEurope, rRussia, rBritain, rUnitedStates],
 },
-# Protestantism
+# Orthodoxy
 {
-	iCore :		[rEurope, rScandinavia, rUnitedStates],
-	iHistorical :	[rBritain, rCanada, rAlaska, rAustralia],
-	iPeriphery :	[rOceania, rSouthAfrica],
+	iCore :		[rRussia, rEthiopia],
+	iHistorical : 	[rBalkans, rAnatolia, rMesopotamia, rEgypt, rSiberia],
+	iPeriphery : 	[rMaghreb, rItaly, rPersia, rAlaska],
+	iMinority :	[rCentralAsia],
 },
 # Catholicism
 {
@@ -118,12 +119,11 @@ tSpreadFactors = (
 	iHistorical :	[rBritain, rScandinavia, rCanada, rAlaska, rUnitedStates, rCaribbean, rMesoamerica, rColombia, rPeru, rBrazil, rArgentina, rSouthAfrica],
 	iPeriphery :	[rBalkans, rAustralia, rOceania, rWestAfrica],
 },
-# Orthodoxy
+# Protestantism
 {
-	iCore :		[rRussia, rEthiopia],
-	iHistorical : 	[rBalkans, rAnatolia, rMesopotamia, rEgypt, rSiberia],
-	iPeriphery : 	[rMaghreb, rItaly, rPersia, rAlaska],
-	iMinority :	[rCentralAsia],
+	iCore :		[rEurope, rScandinavia, rUnitedStates],
+	iHistorical :	[rBritain, rCanada, rAlaska, rAustralia],
+	iPeriphery :	[rOceania, rSouthAfrica],
 },
 # Islam
 {
