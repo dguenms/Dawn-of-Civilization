@@ -13,6 +13,8 @@ typedef list<char*> LISTCHAR;
 
 #define GREATPALACE				(98)
 #define SUMMERPALACE			(98)
+//#define VERSAILLES				(2)
+//#define FORBIDDEN_PALACE			(2)
 
 #define BEGIN_WONDERS				(138) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
@@ -56,7 +58,7 @@ enum MyTechs
  MASS_MEDIA,
  ECOLOGY,
  FISHING,
- WHEEL,
+ THE_WHEEL,
  AGRICULTURE,
  POTTERY,
  AESTHETICS,
@@ -160,6 +162,7 @@ enum MyBuildings
 	MACHU_PICCHU,
 	BOROBUDUR,
 	GRAND_CANAL,
+	HAGIA_SOPHIA,
 	NOTRE_DAME,
 	TEMPLE_OF_KUKULKAN,
 	HIMEJI_CASTLE,
@@ -167,7 +170,6 @@ enum MyBuildings
 	WAT_PREAH_PISNULOK,
 	TOPKAPI_PALACE,
 	LA_MEZQUITA,
-	HAGIA_SOPHIA,
 	SISTINE_CHAPEL,
 	LEANING_TOWER,
 	RED_FORT,
