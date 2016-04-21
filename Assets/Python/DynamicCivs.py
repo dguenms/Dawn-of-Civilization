@@ -1923,7 +1923,10 @@ def leader(iPlayer):
 		if not bMonarchy and iEra >= iIndustrial: return iAtaturk
 		
 		if tPlayer.isHasTech(iPatronage): return iSuleiman
-		
+				
+	elif iPlayer == iThailand:
+		if iEra >= iIndustrial: return iMongkut
+
 	elif iPlayer == iGermany:
 		if isFascist(iPlayer): return iHitler
 		
