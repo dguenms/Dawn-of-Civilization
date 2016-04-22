@@ -1686,8 +1686,8 @@ def onBuildingBuilt(iPlayer, iBuilding):
 			lTemples = [iTemple + i*4 for i in range(iNumReligions)]
 			if iBuilding in lTemples:
 				iCounter = 0
-				for iTemple in lTemples:
-					iCounter += getNumBuildings(iIndia, iTemple)
+				for iGoalTemple in lTemples:
+					iCounter += getNumBuildings(iIndia, iGoalTemple)
 				if iCounter >= 20:
 					win(iIndia, 1)
 					
@@ -3093,8 +3093,8 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 1:
 			lTemples = [iTemple + 4 * i for i in range(iNumReligions)]
 			iCounter = 0
-			for iTemple in lTemples:
-				iCounter += getNumBuildings(iIndia, iTemple)
+			for iGoalTemple in lTemples:
+				iCounter += getNumBuildings(iIndia, iGoalTemple)
 			aHelp.append(getIcon(iCounter >= 20) + localText.getText("TXT_KEY_VICTORY_TEMPLES_BUILT", (iCounter, 20)))
 		elif iGoal == 2:
 			popPercent = getPopulationPercent(iIndia)

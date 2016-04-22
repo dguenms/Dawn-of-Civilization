@@ -14685,7 +14685,7 @@ bool CvCity::canSpread(ReligionTypes eReligion, bool bMissionary) const
 
 	if (eSpread == RELIGION_SPREAD_NONE) return false;
 
-	//if (eSpread == RELIGION_SPREAD_MINORITY && getReligionCount() == 0) return false;
+	if (!bMissionary && eSpread == RELIGION_SPREAD_MINORITY && getReligionCount() == 0) return false;
 
 	return true;
 }
