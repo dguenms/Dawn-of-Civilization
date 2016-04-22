@@ -153,8 +153,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
-					<BuildingType>BUILDING_ARABIAN_MADRASSA</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
+					<BuildingType>BUILDING_ARABIAN_ALCHEMIST</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

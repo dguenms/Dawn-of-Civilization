@@ -142,36 +142,8 @@
 		<English>[ICON_BULLET]Create Production and Gold when Removing Jungles and Forests</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BUDDHIST_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Buddhist Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_BRAZILIAN_MADEIREIRO_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Madeireiro[COLOR_REVERT], the Brazilian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Woodsman II[COLOR_REVERT] promotion and provides extra gold and production when it chops jungles and forests.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_BUDDHIST_MISSIONARY</Tag>
-		<English>Buddhist Missionary</English>
-		<French>
-			<Text>Missionnaire bouddhiste</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Buddhistischer Missionar</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Missionario Buddhista:Missionari Buddhisti</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Misionero budista:Misioneros budistas</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BYZANTINE_CATAPHRACT_STRATEGY</Tag>
@@ -261,14 +233,6 @@
 		<English>African War Elephant</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Tag>
-		<English>Catholic Missionary</English>
-		<French>Missionnaire catholique</French>
-		<German>Katholischer Missionar</German>
-		<Italian>Missionario cattolico</Italian>
-		<Spanish>Misionero cat&#243;lico</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHINESE_CHOKONU_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Cho Ko Nu[COLOR_REVERT], the Chinese replacement for the [COLOR_UNIT_TEXT]Crossbowman[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Metal Casting[COLOR_REVERT] technology, has an extra first strike, causes collateral damage and has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
@@ -285,10 +249,6 @@
 		<English>The [COLOR_UNIT_TEXT]Gallic Warrior[COLOR_REVERT], the Celtic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], requires an [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Catholic Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH</Tag>
 		<English>Cidainh</English>
 	</TEXT>
@@ -299,10 +259,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIC_CIDAINH_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Cidainh[COLOR_REVERT] is a barbarian unit roaming in Gaul.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Confucian Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CANADIAN_CORVETTE_STRATEGY</Tag>
@@ -527,10 +483,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HOLY_ROMAN_LANDSKNECHT_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Landsknecht[COLOR_REVERT], the German replacement for the the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_HINDU_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Hindu Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HARAPPAN_CITY_BUILDER</Tag>
@@ -903,10 +855,6 @@
 		<English>[COLOR_UNIT_TEXT]Panthers[COLOR_REVERT] are Barbarian units that spawn in Africa from 3000 to 850 BC.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Orthodox Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_DUTCH_EAST_INDIAMAN</Tag>
 		<English>East Indiaman</English>
 		<French>
@@ -974,11 +922,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MUGHAL_SIEGE_ELEPHANT_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Siege Elephant[COLOR_REVERT], the Mughal replacement for the [COLOR_UNIT_TEXT]Bombard[COLOR_REVERT], requires the [COLOR_HIGHLIGHT_TEXT]Ivory[COLOR_REVERT] resource, cannot be built with the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource and has a combat bonus when attacking cities.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Tag>
-		<English>Orthodox Missionary</English>
-		<German>Orthodoxer Missionar</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OTTOMAN_JANISSARY</Tag>
@@ -1089,10 +1032,6 @@
 		<English>[COLOR_UNIT_TEXT]Riflemen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Protestant Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_PRIVATEER_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Privateers[COLOR_REVERT] has hidden nationality can attack enemy units without declaring war and begins with the [COLOR_HIGHLIGHT_TEXT]Sentry[COLOR_REVERT] promotion.</English>
 	</TEXT>
@@ -1151,10 +1090,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IRANIAN_QIZILBASH_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Qizilbash[COLOR_REVERT], the Iranian replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Gunpowder Units[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] promotion.</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ISLAMIC_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Islamic Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IRONCLAD_STRATEGY</Tag>
@@ -1274,10 +1209,6 @@
 		<English>Dharani</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TAOIST_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Taoist Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_TANK_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Tanks[COLOR_REVERT] don't receive defensive bonuses and begin with the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotion.</English>
 	</TEXT>
@@ -1342,23 +1273,6 @@
 		<English>[COLOR_UNIT_TEXT]War Elephants[COLOR_REVERT] are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], don't receive defensive bonuses, have a combat penalty when attacking cities and have a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Tag>
-		<English>Zoroastrian Missionary</English>
-		<German>
-			<Text>Zoroastrischer Missionar</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Jewish Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZULU_IMPI</Tag>
 		<English>Impi</English>
 		<French>
@@ -1409,5 +1323,95 @@
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY</Tag>
+		<English>Jewish Rabbi</English>
+		<German>Jüdischer Rabbi</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Rabbis[COLOR_REVERT] ([COLOR_UNIT_TEXT]Jewish Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Tag>
+		<English>Orthodox Missionary</English>
+		<German>Orthodoxer Missionar</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Orthodox Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Tag>
+		<English>Catholic Missionary</English>
+		<German>Katholischer Missionar</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Catholic Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Tag>
+		<English>Protestant Missionary</English>
+		<German>Protestantischer Missionar</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Protestant Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ISLAMIC_MISSIONARY</Tag>
+		<English>Islamic Imam</English>
+		<German>Islamischer Imam</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ISLAMIC_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Imams[COLOR_REVERT] ([COLOR_UNIT_TEXT]Islamic Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HINDU_MISSIONARY</Tag>
+		<English>Hindu Guru</English>
+		<German>Hinduistischer Guru</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HINDU_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Gurus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Hindu Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BUDDHIST_MISSIONARY</Tag>
+		<English>Buddhist Bhikku</English>
+		<German>Buddhistischer Bhikku</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BUDDHIST_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Bhikkus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Buddhist Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY</Tag>
+		<English>Confucian Scholar</English>
+		<German>Konfuzianischer Gelehrter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Scholars[COLOR_REVERT] ([COLOR_UNIT_TEXT]Confucian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TAOIST_MISSIONARY</Tag>
+		<English>Taoist Daoshi</English>
+		<German>Taoistischer Daoshi</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TAOIST_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Daoshis[COLOR_REVERT] ([COLOR_UNIT_TEXT]Taoist Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Tag>
+		<English>Zoroastrian Magu</English>
+		<German>Zoroastrischer Magu</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Magus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 </Civ4GameText>
