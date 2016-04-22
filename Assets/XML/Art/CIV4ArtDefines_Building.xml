@@ -318,6 +318,16 @@
 			<Button>,Art/Interface/Buttons/Buildings/Forge.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ARABIAN_ALCHEMIST</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Alchemist/caravan.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Alchemist/Alchemist.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_FACTORY</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -603,7 +613,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.05</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Market/Market.nif</NIF>
+			<NIF>Art/Structures/Buildings/Glassmaker/ironworks.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/Glass.dds</Button>
 		</BuildingArtInfo>
@@ -1021,9 +1031,9 @@
 			<Type>ART_DEF_BUILDING_BUDDHIST_SHRINE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.9</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Shrine/Buddhist_shrine.nif</NIF>
+			<fScale>1.25</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Mahabodhi/mahabodhi.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Shrine_Buddhist.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,13</Button>
 		</BuildingArtInfo>
@@ -1061,9 +1071,9 @@
 			<Type>ART_DEF_BUILDING_CONFUCIAN_SHRINE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Shrine/confuscian_shrine.nif</NIF>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Kong_Miao/asian_ren_palace.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Shrine_Confuscianist.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,12</Button>
 		</BuildingArtInfo>
@@ -1099,11 +1109,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TAOIST_SHRINE</Type>
-			<LSystem>LSYSTEM_2x2</LSystem>
+			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.26</fScale>
-			<fInterfaceScale>0.83</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Shrine/Taoist_shrine.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Temple_of_Heavens/himmelstempel.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Shrine_Taoist.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,15</Button>
 		</BuildingArtInfo>
@@ -1552,8 +1562,8 @@
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Monument/Monument.nif</NIF>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Temple/Temple.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/Temple.dds</Button>
 		</BuildingArtInfo>
@@ -1603,9 +1613,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Cartheginian Cothon/Cothon.nif</NIF>
+			<NIF>Art/Structures/Wonders/Cothon/harbor.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Harbor.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,3</Button>
+			<Button>Art/Structures/Wonders/Cothon/Cothon.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MOAI_STATUES</Type>
