@@ -75,27 +75,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_FASCIST</Tag>
-		<English>%s2 Empire</English>
-		<French>
-			<Text>Empire %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Impero %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Imperio %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>National-Socialist Workers' %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_DEFAULT</Tag>
@@ -123,27 +103,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_IRAN_FASCIST</Tag>
-		<English>%s2 Empire</English>
-		<French>
-			<Text>Empire %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Impero %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Imperio %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>National-Socialist Workers' %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_PERSIA_MEDIAN</Tag>
+		<English>Median</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_PARTHIAN</Tag>

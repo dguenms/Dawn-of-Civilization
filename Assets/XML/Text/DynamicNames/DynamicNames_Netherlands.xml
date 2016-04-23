@@ -114,32 +114,32 @@
 		<English>%s2 Government in Exile</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_BELGIUM</Tag>
+		<English>Belgium</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_BELGIAN</Tag>
+		<English>Belgian</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_INDONESIA</Tag>
 		<English>%s2 East Indies</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_CONGO</Tag>
+		<English>Congo Free State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_AMERICA</Tag>
+		<English>New Netherlands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_BRAZIL</Tag>
+		<English>New Holland</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_MALI</Tag>
-		<English>%s2 West Africa</English>
-		<French>
-			<Text>Afrique Occidentale %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>%s2-Westafrika:%s2-Westafrika:%s2-Westafrika</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Africa Occidentale %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>&#193;frica Occidental %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>%s2 Gold Coast</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_DUTCH_ETHIOPIA</Tag>

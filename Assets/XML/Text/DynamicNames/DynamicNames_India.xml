@@ -102,6 +102,10 @@
 		<English>Vijayanagara</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_INDIAN_VASSAL</Tag>
+		<English>Janapada of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIA_ADJECTIVE</Tag>
 		<English>Indian</English>
 		<French>

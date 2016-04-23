@@ -286,7 +286,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_KHMER</Tag>
-		<English>Gaomian</English>
+		<English>Jiaozhi</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_MONGOLIA</Tag>
@@ -323,6 +323,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_TIBET</Tag>
 		<English>Xizang</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CHINESE_ADJECTIVE_INDONESIA</Tag>
+		<English>Yindunixiya</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_CHINA_ADJECTIVE</Tag>

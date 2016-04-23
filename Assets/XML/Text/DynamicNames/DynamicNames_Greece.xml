@@ -103,27 +103,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_FASCIST</Tag>
-		<English>%s2 Junta</English>
-		<French>
-			<Text>Junte %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>%s2 Junta:%s2 Junta:%s2 Junta</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Giunta %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Junta %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>Patriotic Alliance of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_LEAGUE</Tag>
@@ -160,6 +140,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREEK_INDIA</Tag>
 		<English>Greco-Bactrian Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GREEK_ROME</Tag>
+		<English>Magna Graecia</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_GREECE_MACEDONIA</Tag>

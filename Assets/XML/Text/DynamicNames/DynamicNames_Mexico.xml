@@ -122,26 +122,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MEXICO_FASCIST</Tag>
-		<English>%s2 Empire</English>
-		<French>
-			<Text>Empire %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Impero %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Imperio %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>National Synarchist Union of %s1</English>
 	</TEXT>
 </Civ4GameText>

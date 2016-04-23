@@ -99,27 +99,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INCA_FASCIST</Tag>
-		<English>Government of the %s2 Armed Forces</English>
-		<French>
-			<Text>Gouvernement des Forces Arm&#233;es %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Regierung der %s2-Streitkr&#228;fte:Regierung der %s2-Streitkr&#228;fte:Regierung der %s2-Streitkr&#228;fte</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>1:1:1</Plural>
-		</German>
-		<Italian>
-			<Text>Governo delle Forze Armate %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Gobierno de las Fuerzas Armadas %s2</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>Revolutionary Union of %s1</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_PERU_DEFAULT</Tag>
