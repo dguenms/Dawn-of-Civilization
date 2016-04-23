@@ -494,7 +494,10 @@ class CvRFCEventHandler:
 	def onBuildingBuilt(self, argsList):
 		city, iBuildingType = argsList
 		iOwner = city.getOwner()
+		
 		vic.onBuildingBuilt(iOwner, iBuildingType)
+		self.rel.onBuildingBuilt(city, iOwner, iBuildingType)
+		
 		if iOwner < iNumPlayers:
 			self.com.onBuildingBuilt(iOwner, iBuildingType, city)
 		
@@ -506,16 +509,6 @@ class CvRFCEventHandler:
 			dc.onPalaceMoved(iOwner)
 			
 			if city.isHasRealBuilding(iAdministrativeCenter): city.setHasRealBuilding(iAdministrativeCenter, False)
-
-		# Leoreth: Apostolic Palace moves holy city
-		#if iBuildingType == iApostolicPalace:
-		#	self.rel.foundOrthodoxy(iOwner)
-			
-			# Leoreth: build shrine in 3000 BC scenario during HRE autoplay to provide a challenge
-		#	if utils.getScenario() == i3000BC and utils.getHumanID() == iHolyRome and gc.getGame().getGameTurnYear() < 840:
-		#		gc.getGame().getHolyCity().setHasRealBuilding(iCatholicShrine, True)
-			
-		#	gc.getGame().setHolyCity(iCatholicism, city, False)
 
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == iPorcelainTower:
@@ -552,10 +545,6 @@ class CvRFCEventHandler:
 			utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
 			CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
 
-		# Leoreth: found Buddhism when a Hindu temple is built
-		if iBuildingType == iHinduTemple:
-			self.rel.foundBuddhism(city)
-			
 		# Leoreth: in case human Phoenicia moves palace to Carthage
 		if iBuildingType == iPalace:
 			if iOwner == iCarthage and city.getX() == 58 and city.getY() == 39:

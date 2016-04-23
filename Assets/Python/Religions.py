@@ -332,24 +332,22 @@ class Religions:
 		
 		self.foundReligion((pCatholicCapital.getX(), pCatholicCapital.getY()), iCatholicism)
 		
-		print str(lNoStateReligionCities)
-		for city in lNoStateReligionCities:
-			print "Replace Orthodoxy with Catholicism: " + str(city.getName())
-			city.replaceReligion(iOrthodoxy, iCatholicism)
-		
 		lIndependentCities = []
 		lIndependentCities.extend(lDifferentStateReligionCities)
 		lIndependentCities.extend(lMinorCities)
-		print str(lIndependentCities)
-		for city in lIndependentCities:
-			if stepDistance(city.getX(), city.getY(), pCatholicCapital.getX(), pCatholicCapital.getY()) > stepDistance(city.getX(), city.getY(), pOrthodoxCapital.getX(), pOrthodoxCapital.getY()):
-				print "Replace Orthodoxy with Catholicism: " + str(city.getName())
-				city.replaceReligion(iOrthodoxy, iCatholicism)
-			else:
-				print "Keep Orthodoxy: " + str(city.getName())
 				
-		if gc.getPlayer(utils.getHumanID()).getStateReligion() == iOrthodoxy and iGameTurn >= getTurnForYear(tBirth[utils.getHumanID()]):
-			utils.popup(CyTranslator().getText("TXT_KEY_SCHISM_TITLE", ()), CyTranslator().getText("TXT_KEY_SCHISM_MESSAGE", (pCatholicCapital.getName(),)), ())		
+		self.schism(pOrthodoxCapital, pCatholicCapital, iNoStateReligionCities, lIndependentCities)
+
+	def schism(self, pOrthodoxCapital, pCatholicCapital, lReplace, lDistance):
+		for city in lReplace:
+			city.replace(iOrthodoxy, iCatholicism)
+			
+		for city in lDistance:
+			if stepDistance(city.getX(), city.getY(), pCatholicCapital.getX(), pCatholicCapital.getY()) <= stepDistance(city.getX(), city.getY(), pOrthodoxCapital.getX(), pOrthodoxCapital.getY()):
+				city.replaceReligion(iOrthodoxy, iCatholicism)
+				
+		if gc.getPlayer(utils.getHumanID()).getStateReligion() == iOrthodoxy and gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]):
+			utils.popup(CyTranslator().getText("TXT_KEY_SCHISM_TITLE", ()), CyTranslator().getText("TXT_KEY_SCHISM_MESSAGE", (pCatholicCapital.getName(),)), ())
 
 #REFORMATION
 
@@ -376,6 +374,13 @@ class Religions:
 	def onTechAcquired(self, iTech, iPlayer):
 		if utils.getScenario() == i1700AD:
 			return
+			
+		if iTech == iDivineRight:
+			bValid = False
+			if [city for city in utils.getCityList(iPlayer) if city.isHasReligion(iOrthodoxy)]:
+				gc.getPlayer(iPlayer).foundReligion(iCatholicism, iCatholicism, True)
+				
+				self.schism(gc.getGame().getHolyCity(iOrthodoxy), gc.getGame().getHolyCity(iCatholicism), [], [city for city in utils.getAllCities() if city.isHasReligion(iOrthodoxy)])
 	
 		if (iTech == iPrintingPress):
 			if (gc.getPlayer(iPlayer).getStateReligion() == iCatholicism):
@@ -383,6 +388,22 @@ class Religions:
 					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
 					#gc.getPlayer(iPlayer).getCapitalCity().setNumRealBuilding(iProtestantShrine,1)
 					self.reformation()
+					
+	def onBuildingBuilt(self, city, iPlayer, iBuilding):
+		if iBuilding == iHinduTemple:
+			if gc.getGame().isReligionFounded(iBuddhism): return
+			self.foundBuddhism(city)
+			
+		if iBuilding == iOrthodoxCathedral:
+			if gc.getGame().isReligionFounded(iCatholicism): return
+		
+			pOrthodoxHolyCity = gc.getGame().getHolyCity(iOrthodoxy)
+			pCatholicHolyCity = gc.getGame().getHolyCity(iCatholicism)
+		
+			if pOrthodoxHolyCity.getOwner() != iPlayer:
+				self.foundReligion((city.getX(), city.getY()), iCatholicism)
+				self.schism(pOrthodoxHolyCity, pCatholicHolyCity, [], [city for city in utils.getAllCities() if city.isHasReligion(iOrthodoxy) and city.getOwner() != pOrthodoxHolyCity.getOwner()])
+				
 					
 	def chooseProtestantism(self, iCiv):
 		iRand = gc.getGame().getSorenRandNum(100, 'Protestantism Choice')
