@@ -3776,6 +3776,7 @@ dIdentifiers = {
 	'Port Solitude'		:	'Puerto Soledad',
 	'Chita'			:	'Chita',
 	'Brussels'		:	'Bruxelles',
+	'Antwerpen'		:	'Antwerpen',
 	'Atenas'		:	'Athinai',
 	'Siehtl'		:	'Seattle',
 	'Vindobona'		:	'Wien',

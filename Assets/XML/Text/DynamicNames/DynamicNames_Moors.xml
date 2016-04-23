@@ -98,6 +98,14 @@
 		<English>Andalusian Taifas</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORISH_ARABIA</Tag>
+		<English>East Umayyad Caliphate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORISH_MALI</Tag>
+		<English>Pashalik of Timbuktu</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ARABIA</Tag>
 		<English>Hejaz</English>
 		<French>

@@ -126,6 +126,10 @@
 		<English>Aksum</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_ADAL</Tag>
+		<English>Adal</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_ADJECTIVE</Tag>
 		<English>
 			<Text>Ethiopian:Ethiopians</Text>

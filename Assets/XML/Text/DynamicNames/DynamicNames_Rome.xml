@@ -54,6 +54,10 @@
 		<English>%s2 Kingdom</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ROME_COMMUNIST</Tag>
+		<English>Plebeian Republic</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ROME_FASCIST</Tag>
 		<English>New Roman Empire</English>
 		<French>

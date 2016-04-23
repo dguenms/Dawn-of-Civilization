@@ -162,6 +162,10 @@
 		<English>Angevin Empire</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_REPUBLIC</Tag>
+		<English>United Republic of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLAND_EXILE</Tag>
 		<English>%s2 Government in Exile</English>
 	</TEXT>
@@ -276,6 +280,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_VIKINGS</Tag>
 		<English>Duchy of Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_INDONESIA</Tag>
+		<English>Federated Malay States</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_FRANCE</Tag>

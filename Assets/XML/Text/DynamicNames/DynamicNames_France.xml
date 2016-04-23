@@ -350,6 +350,10 @@
 		<English>West India</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_CONGO</Tag>
+		<English>%s2 Equatorial Africa</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_FRANCE_ADJECTIVE</Tag>
 		<English>French</English>
 		<French>

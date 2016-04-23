@@ -78,6 +78,10 @@
 		<English>Delhi</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHAL_VASSAL</Tag>
+		<English>Kewab of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHAL_INDIA</Tag>
 		<English>Deccan Sultanates</English>
 	</TEXT>

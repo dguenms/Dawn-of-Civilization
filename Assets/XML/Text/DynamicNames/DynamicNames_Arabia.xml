@@ -135,7 +135,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_UMMAYAD</Tag>
-		<English>Ummayad</English>
+		<English>Umayyad</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIA_ABBASID</Tag>
@@ -246,6 +246,10 @@
 		<English>Italiya</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_INDONESIA</Tag>
+		<English>Zabag</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ETHIOPIA</Tag>
 		<English>Abyssinia</English>
 		<French>
@@ -300,6 +304,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_NAME_SPAIN</Tag>
 		<English>Esbanya</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_PORTUGAL</Tag>
+		<English>Al-Garb</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARABIAN_TURKEY</Tag>

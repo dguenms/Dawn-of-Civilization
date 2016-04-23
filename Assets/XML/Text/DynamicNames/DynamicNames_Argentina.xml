@@ -15,27 +15,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_FASCIST</Tag>
-		<English>%s2 Junta</English>
-		<French>
-			<Text>Junte %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>%s2 Junta:%s2 Junta:%s2 Junta</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Giunta %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Junta %s2</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>Tacuara Nationalist Movement</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ARGENTINA_CONFEDERATION</Tag>

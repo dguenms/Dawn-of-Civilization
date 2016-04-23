@@ -54,6 +54,10 @@
 		<English>Despotate of %s1</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_BYZANTIUM_RUM</Tag>
+		<English>Rûm</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_BYZANTIUM_MOREA</Tag>
 		<English>the Morea</English>
 	</TEXT>

@@ -70,6 +70,10 @@
 		<English>Siamese</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_THAI_VASSAL</Tag>
+		<English>Mueang of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_THAILAND_ADJECTIVE</Tag>
 		<English>Thai</English>
 	</TEXT>

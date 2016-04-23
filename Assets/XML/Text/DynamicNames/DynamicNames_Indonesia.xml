@@ -50,6 +50,10 @@
 		<English>Majapahit</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_INDONESIAN_VASSAL</Tag>
+		<English>Kedatuan of %s1</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_INDONESIA_ADJECTIVE</Tag>
 		<English>Indonesian</English>
 		<German>Indonesisch</German>
