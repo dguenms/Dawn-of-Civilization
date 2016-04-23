@@ -1073,51 +1073,59 @@ iCivKhmer : {
 		"Dien Del", # 20th
 	],
 },
+
+
 iCivIndonesia : {
 	iGreatProphet : [
-		"Batara Guru Dwipayana",
-		"Buddha Pahyien",
-		"Sakyakirti",
-		"fGayatri Rajapatni", # 14th
+		"Maha Rsi Agastya", # 5th
+		"Buddha Pahyien", # 4th
+		"Sakyakirti", #7th
+		"fGayatri Rajapatni", # 14th 
 		iRenaissance,
-		"Sunan Giri", # 15th
-		"Sunan Gunung Jati", # 16th
+		"Sunan Giri", # 15th 
+		"Sunan Gunung Jati", # 16th 
 	],
 	iGreatArtist : [
-		"Asep Sunandar Sunarya",
-		"I Made Sidia",
+		"Asep Sunandar Sunarya", #20th
+		"I Made Sidia", #20th
+                "Ismail Marzuki", #20th
 	],
 	iGreatScientist : [
-		"Jayabaya",
-		"Empu Tantular",
+		"Jayabaya", # 12th
+		"Empu Tantular", #14th
 	],
 	iGreatMerchant : [
-		"Cri Kahulunnan",
+                "Dewawarman", #1st
+		"fCri Kahulunnan", #9th
+		iRenaissance,
+                "Nahkoda Muda", #18th
 	],
 	iGreatEngineer : [
-		"Samaratungga",
-		"Nini Haji Rakryan Sanjiwana",
-		"Rakai Pikatan",
-		"Lokapala",
-		"Pikatan",
+                "Gunadharma" #9th
+		"Samaratungga", #9th
+		"Rakai Pikatan", #9th
 	],
 	iGreatStatesman : [
-		"Gajah Mada", # 14th
-		"Parmeswara", # 14th
+		"Gajah Mada", # 14th 
+		"Parmeswara", # 14th 
 		iIndustrial,
-		"Mahmud Badaruddin", # 19th
-		"fRaden Ayu Kartini", # 19th
+		"Mahmud Badaruddin", # 19th 
+		"fRaden Ayu Kartini", # 19th 
 		iModern,
-		"Sukarno", # 20th
-		"Agus Salim", # 20th
-		"Chep the Magnificent", # Contest Reward
+		"Sukarno", # 20th 
+		"Agus Salim", # 20th 
+		"Chep the Magnificent", # Contest Reward 
 	],
 	iGreatGeneral : [
-		"Dharmawangsa",
-		"Airlangga",
-		"fTribhuwana Vijayatunggwadewi", # 14th
-		"Raden Wijaya",
-		"Ken Dedes",
+		"Dharmawangsa", #10th
+		"Airlangga", #11th
+		"Ken Arok", #12th
+		"Raden Wijaya", #13th
+		"fTribhuwana Vijayatunggadewi", # 14th
+		iRenaissance,
+		"fMalahayati" #16th
+		"fMartha Christina Tiahahu" #18th
+                "Pattimura" #18th
 	],
 },
 iCivSpain : {
