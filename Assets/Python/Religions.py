@@ -375,13 +375,6 @@ class Religions:
 		if utils.getScenario() == i1700AD:
 			return
 			
-		if iTech == iDivineRight:
-			bValid = False
-			if [city for city in utils.getCityList(iPlayer) if city.isHasReligion(iOrthodoxy)]:
-				gc.getPlayer(iPlayer).foundReligion(iCatholicism, iCatholicism, True)
-				
-				self.schism(gc.getGame().getHolyCity(iOrthodoxy), gc.getGame().getHolyCity(iCatholicism), [], [city for city in utils.getAllCities() if city.isHasReligion(iOrthodoxy)])
-	
 		if (iTech == iPrintingPress):
 			if (gc.getPlayer(iPlayer).getStateReligion() == iCatholicism):
 				if (not gc.getGame().isReligionFounded(iProtestantism)):
