@@ -17502,7 +17502,8 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pPlot->getImprovementType()).isActsAsCity()) return 0;
 
 	int iCost = pPlot->calculateCultureCost();
-	int iDistance = plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY());
+	//int iDistance = plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY());
+	int iDistance = std::max(plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY()), GC.getMap().calculatePathDistance(plot(), pPlot));
 
 	if (bOrdering)
 	{
@@ -17524,7 +17525,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal())) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
 	
 	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
-	else iCost += iDistance * GC.getDefineINT("CULTURE_COST_DISTANCE");
+	else iCost += std::max(3, iDistance) * GC.getDefineINT("CULTURE_COST_DISTANCE");
 
 	if (plot()->isRiver() && pPlot->isRiver()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
 
@@ -17542,6 +17543,8 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 			iCost  -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
 		}
 	}
+
+	if (!bOrdering && getOwner() == INDIA) log("Plot: (%d, %d), iDistance: %d, iCost: %d", pPlot->getX(), pPlot->getY(), iDistance, iCost);
 
 	return bOrdering ? iCost : std::max(0, iCost);
 }
