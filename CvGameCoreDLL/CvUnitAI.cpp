@@ -9254,6 +9254,12 @@ std::pair<CvPlot*, CvPlot*> CvUnitAI::AI_spreadTarget(ReligionTypes eReligion, b
 											}
 										}
 
+										// AI prefers spreading in core areas
+										if (!isHuman())
+										{
+											if (pLoopCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE) iValue *= 10;
+										}
+
 										iValue *= 1000;
 
 										iValue /= (iPathTurns + 2);
