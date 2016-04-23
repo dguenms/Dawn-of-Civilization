@@ -336,11 +336,11 @@ class Religions:
 		lIndependentCities.extend(lDifferentStateReligionCities)
 		lIndependentCities.extend(lMinorCities)
 				
-		self.schism(pOrthodoxCapital, pCatholicCapital, iNoStateReligionCities, lIndependentCities)
+		self.schism(pOrthodoxCapital, pCatholicCapital, lNoStateReligionCities, lIndependentCities)
 
 	def schism(self, pOrthodoxCapital, pCatholicCapital, lReplace, lDistance):
 		for city in lReplace:
-			city.replace(iOrthodoxy, iCatholicism)
+			city.replaceReligion(iOrthodoxy, iCatholicism)
 			
 		for city in lDistance:
 			if stepDistance(city.getX(), city.getY(), pCatholicCapital.getX(), pCatholicCapital.getY()) <= stepDistance(city.getX(), city.getY(), pOrthodoxCapital.getX(), pOrthodoxCapital.getY()):
