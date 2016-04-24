@@ -560,27 +560,27 @@
 		<element type="Description"/>
 		<element type="Civilopedia"/>
 		<element type="Strategy"/>
-		<element type="VictoryPrereq"/>
-		<element type="TechPrereq"/>
-		<element type="AnyonePrereqProject"/>
-		<element type="iMaxGlobalInstances"/>
-		<element type="iMaxTeamInstances"/>
+		<element type="VictoryPrereq" minOccurs="0"/>
+		<element type="TechPrereq" minOccurs="0"/>
+		<element type="AnyonePrereqProject" minOccurs="0"/>
+		<element type="iMaxGlobalInstances" minOccurs="0"/>
+		<element type="iMaxTeamInstances" minOccurs="0"/>
 		<element type="iCost"/>
-		<element type="iNukeInterception"/>
-		<element type="iTechShare"/>
-		<element type="EveryoneSpecialUnit"/>
-		<element type="EveryoneSpecialBuilding"/>
-		<element type="bSpaceship"/>
-		<element type="bAllowsNukes"/>
+		<element type="iNukeInterception" minOccurs="0"/>
+		<element type="iTechShare" minOccurs="0"/>
+		<element type="EveryoneSpecialUnit" minOccurs="0"/>
+		<element type="EveryoneSpecialBuilding" minOccurs="0"/>
+		<element type="bSpaceship" minOccurs="0"/>
+		<element type="bAllowsNukes" minOccurs="0"/>
 		<element type="Button"/>
-		<element type="PrereqProjects"/>
-		<element type="VictoryThresholds"/>
-		<element type="VictoryMinThresholds"/>
-		<element type="iVictoryDelayPercent"/>
-		<element type="iSuccessRate"/>
-		<element type="BonusProductionModifiers"/>
-		<element type="CreateSound"/>
-		<element type="MovieDefineTag"/>
+		<element type="PrereqProjects" minOccurs="0"/>
+		<element type="VictoryThresholds" minOccurs="0"/>
+		<element type="VictoryMinThresholds" minOccurs="0"/>
+		<element type="iVictoryDelayPercent" minOccurs="0"/>
+		<element type="iSuccessRate" minOccurs="0"/>
+		<element type="BonusProductionModifiers" minOccurs="0"/>
+		<element type="CreateSound" minOccurs="0"/>
+		<element type="MovieDefineTag" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="ProjectInfos" content="eltOnly">
 		<element type="ProjectInfo" minOccurs="0" maxOccurs="*"/>

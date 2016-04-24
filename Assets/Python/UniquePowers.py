@@ -52,7 +52,7 @@ iChina = con.iChina
 iBabylonia = con.iBabylonia
 iGreece = con.iGreece
 iPersia = con.iPersia
-iCarthage = con.iCarthage
+iPhoenicia = con.iPhoenicia
 iRome = con.iRome
 iTamils = con.iTamils
 iJapan = con.iJapan
@@ -79,7 +79,7 @@ iAmerica = con.iAmerica
 iBrazil = con.iBrazil
 iNumPlayers = con.iNumPlayers
 iNumMajorPlayers = con.iNumMajorPlayers
-#iHolland = con.iHolland
+#iNetherlands = con.iNetherlands
 #iPortugal = con.iPortugal
 iNumActivePlayers = con.iNumActivePlayers
 iIndependent = con.iIndependent
@@ -232,7 +232,7 @@ class UniquePowers:
 
 	def doRomanWar(self, iCiv):
 	
-		if iCiv in [iCarthage, iPersia, iCeltia, iEgypt]:
+		if iCiv in [iPhoenicia, iPersia, iCeltia, iEgypt]:
 			iNumTargets = 2
 			self.romanConquestUP(iCiv, iNumTargets)
 		elif iCiv == iGreece and utils.getHumanID() != iGreece:

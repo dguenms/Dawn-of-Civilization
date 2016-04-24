@@ -411,10 +411,10 @@ lPeoplesRepublicAdj = [iTamils, iByzantium, iMongolia]
 
 lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals]
 
-lCityStatesStart = [iRome, iCarthage, iGreece, iIndia, iMaya, iAztecs]
+lCityStatesStart = [iRome, iPhoenicia, iGreece, iIndia, iMaya, iAztecs]
 
 dEmpireThreshold = {
-	iCarthage : 4,
+	iPhoenicia : 4,
 	iIndonesia : 4,
 	iKorea : 4,
 	iRussia : 8,
@@ -484,7 +484,7 @@ dStartingLeaders = [
 	iHarappa : iVatavelli,
 	iGreece : iPericles,
 	iPersia : iCyrus,
-	iCarthage : iHiram,
+	iPhoenicia : iHiram,
 	iPolynesia : iAhoeitu,
 	iRome : iJuliusCaesar,
 	iJapan : iKammu,

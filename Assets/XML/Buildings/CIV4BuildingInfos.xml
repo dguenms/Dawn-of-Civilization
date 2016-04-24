@@ -665,12 +665,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_AQUEDUCT</BuildingClass>
-			<Type>BUILDING_OTTOMAN_HAMMAM</Type>
-			<Description>TXT_KEY_BUILDING_OTTOMAN_HAMMAM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_OTTOMAN_HAMMAM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_OTTOMAN_HAMMAM_STRATEGY</Strategy>
+			<Type>BUILDING_TURKISH_HAMMAM</Type>
+			<Description>TXT_KEY_BUILDING_TURKISH_HAMMAM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TURKISH_HAMMAM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TURKISH_HAMMAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_OTTOMAN_HAMMAM</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TURKISH_HAMMAM</ArtDefineTag>
 			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<TechTypes>
@@ -994,7 +994,7 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_CUSTOMS_HOUSE</BuildingClass>
 			<Type>BUILDING_CUSTOMS_HOUSE</Type>
 			<Description>TXT_KEY_BUILDING_CUSTOMS_HOUSE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CUSTOMS_HOUSE_PEDIA</Civilopedia>
@@ -1025,7 +1025,7 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CUSTOM_HOUSE</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_CUSTOMS_HOUSE</BuildingClass>
 			<Type>BUILDING_PORTUGUESE_FEITORIA</Type>
 			<Description>TXT_KEY_BUILDING_PORTUGUESE_FEITORIA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PORTUGUESE_FEITORIA_PEDIA</Civilopedia>
@@ -4545,7 +4545,7 @@
 			<Strategy>TXT_KEY_BUILDING_JEWISH_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_JEWISH</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_JEWISH_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_JUDAISM</HolyCity>
 			<ReligionType>RELIGION_JUDAISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_JUDAISM</GlobalReligionCommerce>
@@ -4757,7 +4757,7 @@
 			<Strategy>TXT_KEY_BUILDING_ORTHODOX_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_ORTHODOX</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ORTHODOX_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_ORTHODOXY</HolyCity>
 			<ReligionType>RELIGION_ORTHODOXY</ReligionType>
 			<GlobalReligionCommerce>RELIGION_ORTHODOXY</GlobalReligionCommerce>
@@ -4963,7 +4963,7 @@
 			<Strategy>TXT_KEY_BUILDING_CATHOLIC_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_CATHOLIC</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CATHOLIC_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_CATHOLICISM</HolyCity>
 			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_CATHOLICISM</GlobalReligionCommerce>
@@ -5171,7 +5171,7 @@
 			<Strategy>TXT_KEY_BUILDING_PROTESTANT_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_PROTESTANT</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_PROTESTANT_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_PROTESTANTISM</HolyCity>
 			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_PROTESTANTISM</GlobalReligionCommerce>
@@ -5377,7 +5377,7 @@
 			<Strategy>TXT_KEY_BUILDING_ISLAMIC_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ISLAMIC_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_ISLAMIC</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_ISLAMIC_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_ISLAM</HolyCity>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_ISLAM</GlobalReligionCommerce>
@@ -5583,7 +5583,7 @@
 			<Strategy>TXT_KEY_BUILDING_HINDU_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HINDU_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_HINDU</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_HINDU_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_HINDUISM</HolyCity>
 			<ReligionType>RELIGION_HINDUISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_HINDUISM</GlobalReligionCommerce>
@@ -5789,7 +5789,7 @@
 			<Strategy>TXT_KEY_BUILDING_BUDDHIST_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BUDDHIST_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_BUDDHIST</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_BUDDHIST_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_BUDDHISM</HolyCity>
 			<ReligionType>RELIGION_BUDDHISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_BUDDHISM</GlobalReligionCommerce>
@@ -5995,7 +5995,7 @@
 			<Strategy>TXT_KEY_BUILDING_CONFUCIAN_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CONFUCIAN_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_CONFUCIAN</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_CONFUCIAN_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_CONFUCIANISM</HolyCity>
 			<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_CONFUCIANISM</GlobalReligionCommerce>
@@ -6201,7 +6201,7 @@
 			<Strategy>TXT_KEY_BUILDING_TAOIST_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TAOIST_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_TAOIST</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_TAOIST_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_TAOISM</HolyCity>
 			<ReligionType>RELIGION_TAOISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_TAOISM</GlobalReligionCommerce>
@@ -6407,7 +6407,7 @@
 			<Strategy>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ZOROASTRIAN_SHRINE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_PROTESTANT</MovieDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_PROTESTANT_SHRINE</MovieDefineTag>
 			<HolyCity>RELIGION_ZOROASTRIANISM</HolyCity>
 			<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
 			<GlobalReligionCommerce>RELIGION_ZOROASTRIANISM</GlobalReligionCommerce>
@@ -6709,7 +6709,6 @@
 			<Strategy>TXT_KEY_BUILDING_OLYMPIC_PARK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_OLYMPIC_PARK</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_OLYMPIC_PARK</MovieDefineTag>
 			<PrereqTech>TECH_NATIONALISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
@@ -8308,63 +8307,6 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_HAGIA_SOPHIA</BuildingClass>
-			<Type>BUILDING_HAGIA_SOPHIA</Type>
-			<Description>TXT_KEY_BUILDING_HAGIA_SOPHIA</Description>
-			<Civilopedia>TXT_KEY_BUILDING_HAGIA_SOPHIA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HAGIA_SOPHIA</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_HAGIA_SOPHIA</MovieDefineTag>
-			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
-			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
-			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
-			<ObsoleteTech>TECH_STEAM_POWER</ObsoleteTech>
-			<PrereqTech>TECH_THEOLOGY</PrereqTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
-			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
-			<bTeamShare>1</bTeamShare>
-			<bNukeImmune>1</bNukeImmune>
-			<iCost>500</iCost>
-			<iHurryCostModifier>100</iHurryCostModifier>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>100</iConquestProb>
-			<iAsset>12</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>8</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<CommerceChangeOriginalOwners>
-				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
-				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
-				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
-			</CommerceChangeOriginalOwners>
-			<BonusProductionModifiers>
-				<BonusProductionModifier>
-					<BonusType>BONUS_MARBLE</BonusType>
-					<iProductonModifier>100</iProductonModifier>
-				</BonusProductionModifier>
-			</BonusProductionModifiers>
-			<ReligionYieldChanges>
-				<iYield>0</iYield>
-				<iYield>2</iYield>
-			</ReligionYieldChanges>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_NOTRE_DAME</BuildingClass>
 			<Type>BUILDING_NOTRE_DAME</Type>
 			<Description>TXT_KEY_BUILDING_NOTRE_DAME</Description>
@@ -8779,6 +8721,63 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_HAGIA_SOPHIA</BuildingClass>
+			<Type>BUILDING_HAGIA_SOPHIA</Type>
+			<Description>TXT_KEY_BUILDING_HAGIA_SOPHIA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_HAGIA_SOPHIA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_HAGIA_SOPHIA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_HAGIA_SOPHIA</MovieDefineTag>
+			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
+			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
+			<ObsoleteTech>TECH_STEAM_POWER</ObsoleteTech>
+			<PrereqTech>TECH_THEOLOGY</PrereqTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>500</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>12</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>8</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_MARBLE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ReligionYieldChanges>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</ReligionYieldChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>

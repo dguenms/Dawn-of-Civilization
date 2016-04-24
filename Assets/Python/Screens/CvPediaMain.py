@@ -482,19 +482,16 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 		
 		#Rhye - start
 #		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS):
-#			tList.pop(con.iNumBonuses) #marsh
+#			pass
 		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER):
 			tList.pop(con.iAlpArslan)
-			tList.pop(con.iChiangKaishek)
-			tList.pop(con.iCixi)
-			tList.pop(con.iElishat)
 			tList.pop(con.iAbuBakr)
 			tList.pop(con.iSittingBull)
 			tList.pop(con.iNativeLeader)
 			tList.pop(con.iIndependentLeader)
 			tList.pop(con.iBrennus)
 			tList.pop(con.iBoudica)
-			tList.pop(con.iLeaderBarbarian)
+			tList.pop(con.iBarbarianLeader)
 		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV):
 			tList.pop(con.iCivNative)
 			tList.pop(con.iCivIndependent2)
@@ -503,21 +500,14 @@ class CvPediaMain( CvPediaScreen.CvPediaScreen ):
 			tList.pop(con.iCivSumeria)
 			tList.pop(con.iCivNativeAmericans)
 			tList.pop(con.iCivSeljuks)
-		       	tList.pop(con.iCivCelt) #celts
+			tList.pop(con.iCivCeltia)
+			tList.pop(con.iCivMinor)
+			tList.pop(con.iCivBarbarian)
 			pass
 		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING): #all -3 because there aren't palaces in the list
 			#removed in CvPediaBuilding.py
 			pass
 		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT):
-			for i in range(228+1):	#remove unique GPs
-				tList.pop(con.iNumUnits)	#first unique GP, change when new units are added
-			tList.pop(con.iAztecSlave)
-			tList.pop(con.iNativeSlave)
-			tList.pop(con.iPhoenicianBireme)
-			tList.pop(con.iMoorishCamelGunner)
-			tList.pop(con.iCelticCidainh)
-			tList.pop(con.iAmericanNavySeal)
-			tList.pop(con.iFrenchMusketeer)
 			pass
 		if (widgeyType == WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT):
 			tList.pop(1) #water worked

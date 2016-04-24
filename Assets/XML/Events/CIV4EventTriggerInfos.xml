@@ -5139,7 +5139,7 @@
 			<OrPreReqs/>
 			<AndPreReqs>
 				<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
-				<PrereqTech>TECH_THE_WHEEL</PrereqTech>
+				<PrereqTech>TECH_WHEEL</PrereqTech>
 				<PrereqTech>TECH_MYSTICISM</PrereqTech>
 				<PrereqTech>TECH_HUNTING</PrereqTech>
 			</AndPreReqs>
@@ -14170,7 +14170,7 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_THE_WHEEL</PrereqTech>
+				<PrereqTech>TECH_WHEEL</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
@@ -16544,8 +16544,7 @@
 			<ImprovementsRequired/>
 			<BonusesRequired/>
 			<RoutesRequired/>
-			<ReligionsRequired>
-			</ReligionsRequired>
+			<ReligionsRequired/>
 			<iNumReligions>1</iNumReligions>
 			<CorporationsRequired/>
 			<iNumCorporations>0</iNumCorporations>

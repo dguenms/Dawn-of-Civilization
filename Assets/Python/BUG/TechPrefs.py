@@ -99,7 +99,7 @@ class TechPrefs:
 ##		print self.getNextResearchableFlavorTech(FLAVOR_SCIENCE)
 ##		print self.getNextResearchableFlavorTech(FLAVOR_GOLD)
 ##		techs = set()
-##		techs.add(self.getTechStr("TECH_THE_WHEEL"))
+##		techs.add(self.getTechStr("TECH_WHEEL"))
 ##		techs.add(self.getTechStr("TECH_MYSTICISM"))
 ##		print self.getNextResearchableWithFlavorTech(FLAVOR_RELIGION, techs)
 ##		print self.getNextResearchableWithFlavorTech(FLAVOR_SCIENCE, techs)

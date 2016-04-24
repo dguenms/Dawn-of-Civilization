@@ -5169,7 +5169,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == ROBOTICS)
 										iValue *= 4;
 									break;
-								case VIKING:
+								case VIKINGS:
 									if (iI == MACHINERY || iI == CIVIL_SERVICE)
 										iValue *= 3;
 									if (iI == COMPASS || iI == MILITARY_TRADITION)
@@ -5367,7 +5367,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									}
 									break;
-								case AZTEC:
+								case AZTECS:
 									if (iI == CONSTRUCTION)
 										iValue *= 4;
 									if (iI == LITERATURE || iI == MUSIC)
@@ -5798,7 +5798,7 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 	/*if (ePlayer == FRANCE) {    // Leoreth - unaffected by Italy respawn
 		if ((getID() != ROME) && (getID() != GREECE)
 			&& (getID() != SPAIN) && (getID() != ENGLAND) && (getID() != HOLY_ROME) && (getID() != RUSSIA)
-			&& (getID() != VIKING)
+			&& (getID() != VIKINGS)
 			&& (getID() != NETHERLANDS) && (getID() != PORTUGAL) && (getID() != GERMANY))
 			iAttitude += 8;
 	}*/
@@ -11601,7 +11601,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 	// Leoreth - prefer Vassalage for medieval Eurocivs
 	/*if (eCivic == (CivicTypes)VASSALAGE){
-	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == HOLY_ROME || getID() == VIKING || getID() == PORTUGAL || getID() == RUSSIA){
+	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == HOLY_ROME || getID() == VIKINGS || getID() == PORTUGAL || getID() == RUSSIA){
 	        if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() == 2){
 	            iValue *= 2;
 	        }

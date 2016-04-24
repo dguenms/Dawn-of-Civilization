@@ -63,7 +63,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<LeaderType>LEADER_PEDRO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -109,7 +109,7 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_HARUN</LeaderType>
+							<LeaderType>LEADER_HARUN_AL_RASHID</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -193,28 +193,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CIXI</LeaderType>
+							<LeaderType>LEADER_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_CIXI_1</Text>
-					</DiplomacyText>
-				</Response>
-				<Response>
-					<Civilizations/>
-					<Leaders>
-						<Leader>
-							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-					</Leaders>
-					<Attitudes/>
-					<DiplomacyPowers/>
-					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_FRANKLIN_ROOSEVELT_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_ROOSEVELT_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -267,7 +253,7 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_TAIZONG</LeaderType>
+							<LeaderType>LEADER_TANG_TAIZONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -281,28 +267,28 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_CHINESE_LEADER_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_MAO_ZEDONG_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HATSHEPSUT</LeaderType>
+							<LeaderType>LEADER_CLEOPATRA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_HATSHEPSUT_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_CLEOPATRA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -439,14 +425,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_TOKUGAWA_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_ODA_NOBUNAGA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -565,7 +551,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_AUGUSTUS</LeaderType>
+							<LeaderType>LEADER_AUGUSTUS_CAESAR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -677,7 +663,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_WANGKON</LeaderType>
+							<LeaderType>LEADER_WANG_KON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -915,14 +901,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_GILGAMESH</LeaderType>
+							<LeaderType>LEADER_SARGON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_GILGAMESH_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_SARGON_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -971,7 +957,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_JIMMU</LeaderType>
+							<LeaderType>LEADER_KAMMU</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
@@ -995,15 +981,11 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_GUSTAV</LeaderType>
+							<LeaderType>LEADER_GUSTAV_ADOLPH</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_ELISHAT</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
-							<LeaderType>LEADER_FILIPE</LeaderType>
+							<LeaderType>LEADER_PHILIP</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
@@ -1015,7 +997,7 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_AFONSO</LeaderType>
+							<LeaderType>LEADER_AFONSO_HENRIQUES</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
@@ -1043,7 +1025,7 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_SHIVAJI</LeaderType>
+							<LeaderType>LEADER_SHAHUJI</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
@@ -1067,11 +1049,11 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_IBN_TUGHLUQ</LeaderType>
+							<LeaderType>LEADER_MUHAMMAD_IBN_TUGHLUQ</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_RAJENDRA</LeaderType>
+							<LeaderType>LEADER_RAJENDRA_CHOLA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
@@ -1079,7 +1061,7 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_SONGTSEN</LeaderType>
+							<LeaderType>LEADER_SONGTSEN_GAMPO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
@@ -1091,11 +1073,11 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_RAHMAN</LeaderType>
+							<LeaderType>LEADER_ABD_AR_RAHMAN</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_YAQUB</LeaderType>
+							<LeaderType>LEADER_YAQUB_AL_MANSUR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
@@ -1103,7 +1085,7 @@
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 						<Leader>
-							<LeaderType>LEADER_LORENZO</LeaderType>
+							<LeaderType>LEADER_LORENZO_DE_MEDICI</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -1136,7 +1118,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<LeaderType>LEADER_PEDRO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -1220,28 +1202,28 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_CHINESE_LEADER_1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_MAO_ZEDONG_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HATSHEPSUT</LeaderType>
+							<LeaderType>LEADER_CLEOPATRA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_HATSHEPSUT_1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_CLEOPATRA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1378,14 +1360,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_TOKUGAWA_1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_ODA_NOBUNAGA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1504,28 +1486,28 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
+							<LeaderType>LEADER_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_FRANKLIN_ROOSEVELT_1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_ROOSEVELT_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_AUGUSTUS</LeaderType>
+							<LeaderType>LEADER_AUGUSTUS_CAESAR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1539,7 +1521,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1630,7 +1612,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_WANGKON</LeaderType>
+							<LeaderType>LEADER_WANG_KON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -1882,14 +1864,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_GILGAMESH</LeaderType>
+							<LeaderType>LEADER_SARGON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_GILGAMESH_1</Text>
+						<Text>AI_DIPLO_REFUSE_TO_TALK_LEADER_SARGON_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -1962,7 +1944,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<LeaderType>LEADER_PEDRO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -1990,14 +1972,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
+							<LeaderType>LEADER_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_FRANKLIN_ROOSEVELT_1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_ROOSEVELT_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2060,28 +2042,28 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_CHINESE_LEADER_1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_MAO_ZEDONG_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HATSHEPSUT</LeaderType>
+							<LeaderType>LEADER_CLEOPATRA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_HATSHEPSUT_1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_CLEOPATRA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2218,14 +2200,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_TOKUGAWA_1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_ODA_NOBUNAGA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2344,14 +2326,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_AUGUSTUS</LeaderType>
+							<LeaderType>LEADER_AUGUSTUS_CAESAR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2365,7 +2347,7 @@
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2456,7 +2438,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_WANGKON</LeaderType>
+							<LeaderType>LEADER_WANG_KON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -2694,14 +2676,14 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_GILGAMESH</LeaderType>
+							<LeaderType>LEADER_SARGON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<Attitudes/>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_NO_PEACE_LEADER_GILGAMESH_1</Text>
+						<Text>AI_DIPLO_NO_PEACE_LEADER_SARGON_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2764,7 +2746,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<LeaderType>LEADER_PEDRO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -2872,7 +2854,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
+							<LeaderType>LEADER_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -2892,7 +2874,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_FRANKLIN_ROOSEVELT_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ROOSEVELT_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -2980,7 +2962,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -3000,14 +2982,14 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_CHINESE_LEADER_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_MAO_ZEDONG_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HATSHEPSUT</LeaderType>
+							<LeaderType>LEADER_CLEOPATRA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -3027,7 +3009,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_HATSHEPSUT_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_CLEOPATRA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3281,7 +3263,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -3301,7 +3283,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_TOKUGAWA_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ODA_NOBUNAGA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3524,7 +3506,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_AUGUSTUS</LeaderType>
+							<LeaderType>LEADER_AUGUSTUS_CAESAR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -3544,7 +3526,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3571,7 +3553,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -3740,7 +3722,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_WANGKON</LeaderType>
+							<LeaderType>LEADER_WANG_KON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4222,7 +4204,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_GILGAMESH</LeaderType>
+							<LeaderType>LEADER_SARGON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4242,7 +4224,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_GILGAMESH_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FR_LEADER_SARGON_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -4309,7 +4291,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<LeaderType>LEADER_PEDRO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4401,7 +4383,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
+							<LeaderType>LEADER_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4417,7 +4399,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_FRANKLIN_ROOSEVELT_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ROOSEVELT_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -4493,7 +4475,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4509,14 +4491,14 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CHINESE_LEADER_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_MAO_ZEDONG_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HATSHEPSUT</LeaderType>
+							<LeaderType>LEADER_CLEOPATRA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4532,7 +4514,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_HATSHEPSUT_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CLEOPATRA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -4750,7 +4732,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -4766,7 +4748,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_TOKUGAWA_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ODA_NOBUNAGA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -5003,29 +4985,6 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CIXI</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-					</Leaders>
-					<Attitudes>
-						<Attitude>
-							<AttitudeType>ATTITUDE_ANNOYED</AttitudeType>
-							<bAttitudeType>1</bAttitudeType>
-						</Attitude>
-						<Attitude>
-							<AttitudeType>ATTITUDE_FURIOUS</AttitudeType>
-							<bAttitudeType>1</bAttitudeType>
-						</Attitude>
-					</Attitudes>
-					<DiplomacyPowers/>
-					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CIXI_1</Text>
-					</DiplomacyText>
-				</Response>
-				<Response>
-					<Civilizations/>
-					<Leaders>
-						<Leader>
 							<LeaderType>LEADER_BRENNUS</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
@@ -5042,7 +5001,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -5187,7 +5146,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_WANGKON</LeaderType>
+							<LeaderType>LEADER_WANG_KON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -5578,7 +5537,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_GILGAMESH</LeaderType>
+							<LeaderType>LEADER_SARGON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -5594,7 +5553,7 @@
 					</Attitudes>
 					<DiplomacyPowers/>
 					<DiplomacyText>
-						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_GILGAMESH_1</Text>
+						<Text>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_SARGON_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -6442,7 +6401,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<LeaderType>LEADER_PEDRO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -6480,7 +6439,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
+							<LeaderType>LEADER_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -6492,7 +6451,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_FRANKLIN_ROOSEVELT_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_ROOSEVELT_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -6556,7 +6515,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -6568,14 +6527,14 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_CHINESE_LEADER_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_MAO_ZEDONG_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HATSHEPSUT</LeaderType>
+							<LeaderType>LEADER_CLEOPATRA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -6587,7 +6546,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_HATSHEPSUT_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_CLEOPATRA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -6727,7 +6686,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -6739,7 +6698,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_TOKUGAWA_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_ODA_NOBUNAGA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -6898,7 +6857,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_AUGUSTUS</LeaderType>
+							<LeaderType>LEADER_AUGUSTUS_CAESAR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -6910,7 +6869,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -6929,7 +6888,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -7050,7 +7009,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_WANGKON</LeaderType>
+							<LeaderType>LEADER_WANG_KON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7373,7 +7332,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_GILGAMESH</LeaderType>
+							<LeaderType>LEADER_SARGON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7385,7 +7344,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_GILGAMESH_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_WEAKER_SARGON_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -7431,7 +7390,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<LeaderType>LEADER_PEDRO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7469,7 +7428,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
+							<LeaderType>LEADER_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7481,7 +7440,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_FRANKLIN_ROOSEVELT_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_ROOSEVELT_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -7564,7 +7523,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7576,14 +7535,14 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_CHINESE_LEADER_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_MAO_ZEDONG_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_HATSHEPSUT</LeaderType>
+							<LeaderType>LEADER_CLEOPATRA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7595,7 +7554,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_HATSHEPSUT_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_CLEOPATRA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -7758,7 +7717,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7770,7 +7729,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_TOKUGAWA_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_ODA_NOBUNAGA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -7910,7 +7869,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_AUGUSTUS</LeaderType>
+							<LeaderType>LEADER_AUGUSTUS_CAESAR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -7922,7 +7881,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -7941,7 +7900,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -8062,7 +8021,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_WANGKON</LeaderType>
+							<LeaderType>LEADER_WANG_KON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8385,7 +8344,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_GILGAMESH</LeaderType>
+							<LeaderType>LEADER_SARGON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8397,7 +8356,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_GILGAMESH_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_EQUAL_SARGON_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -8425,7 +8384,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_DOM_PEDRO</LeaderType>
+							<LeaderType>LEADER_PEDRO</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8463,7 +8422,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_FRANKLIN_ROOSEVELT</LeaderType>
+							<LeaderType>LEADER_ROOSEVELT</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8475,7 +8434,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_FRANKLIN_ROOSEVELT_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_ROOSEVELT_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -8577,7 +8536,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_CHINESE_LEADER</LeaderType>
+							<LeaderType>LEADER_MAO_ZEDONG</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8589,7 +8548,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_CHINESE_LEADER_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_MAO_ZEDONG_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -8752,7 +8711,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_TOKUGAWA</LeaderType>
+							<LeaderType>LEADER_ODA_NOBUNAGA</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8764,7 +8723,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_TOKUGAWA_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_ODA_NOBUNAGA_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -8885,7 +8844,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_AUGUSTUS</LeaderType>
+							<LeaderType>LEADER_AUGUSTUS_CAESAR</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -8897,7 +8856,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_ AUGUSTUS_CAESAR _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_AUGUSTUS_CAESAR_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -8916,7 +8875,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_ BRENNUS _1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_BRENNUS_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>
@@ -9037,7 +8996,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_WANGKON</LeaderType>
+							<LeaderType>LEADER_WANG_KON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -9360,7 +9319,7 @@
 					<Civilizations/>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_GILGAMESH</LeaderType>
+							<LeaderType>LEADER_SARGON</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
@@ -9372,7 +9331,7 @@
 						</DiplomacyPower>
 					</DiplomacyPowers>
 					<DiplomacyText>
-						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_GILGAMESH_1</Text>
+						<Text>AI_DIPLO_DEMAND_TRIBUTE_POWER_STRONGER_SARGON_1</Text>
 					</DiplomacyText>
 				</Response>
 			</Responses>

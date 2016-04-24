@@ -889,11 +889,11 @@ class RiseAndFall:
 				utils.updateMinorTechs(iSeljuks, iBarbarian)
 
 		#Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
-		if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) - (utils.getSeed() % 10)):
-			utils.makeUnit(iSettler, iCarthage, (58, 39), 1)
-			utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
-			utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
-			utils.makeUnit(iPhoenicianAfricanWarElephant, iCarthage, (58, 39), 2)
+		if (not pPhoenicia.isHuman() and iGameTurn == getTurnForYear(-820) - (utils.getSeed() % 10)):
+			utils.makeUnit(iSettler, iPhoenicia, (58, 39), 1)
+			utils.makeUnit(iArcher, iPhoenicia, (58, 39), 2)
+			utils.makeUnit(iWorker, iPhoenicia, (58, 39), 2)
+			utils.makeUnit(iPhoenicianAfricanWarElephant, iPhoenicia, (58, 39), 2)
 			
 		if iGameTurn == getTurnForYear(476):
 			if pItaly.isHuman() and pRome.isAlive():
@@ -907,7 +907,7 @@ class RiseAndFall:
 		if (iGameTurn == getTurnForYear(-850)):
 			self.giveEarlyColonists(iGreece)
 		if (iGameTurn == getTurnForYear(-700)): # removed their colonists because of the Qart-Hadasht spawn
-			self.giveEarlyColonists(iCarthage)
+			self.giveEarlyColonists(iPhoenicia)
 			
 		if iGameTurn == getTurnForYear(-600):
 			self.giveEarlyColonists(iRome)
@@ -1692,7 +1692,7 @@ class RiseAndFall:
 									break
 				print ("bDeleteEverything", bDeleteEverything)
 				if (not gc.getMap().plot(tCapital[0], tCapital[1]).isOwned()):
-					if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand or iCiv == iItaly or iCiv == iCarthage): #dangerous starts
+					if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand or iCiv == iItaly or iCiv == iPhoenicia): #dangerous starts
 						self.setDeleteMode(0, iCiv)
 					if bBirthInCapital:
 						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
@@ -1789,7 +1789,7 @@ class RiseAndFall:
 			
 		
 		if (iCurrentPlayer == iCiv):
-			if(iCiv == iCarthage):
+			if(iCiv == iPhoenicia):
 				for x in range(tCapital[0] - 2, tCapital[0] + 2):	# from x-2 to x+1
 					for y in range(tCapital[1] - 1, tCapital[1] + 2):       # from y-1 to y+1
 						pCurrent=gc.getMap().plot(x, y)
@@ -1810,7 +1810,7 @@ class RiseAndFall:
 			return
 		    
 		#print ("iCurrentPlayer", iCurrentPlayer, "iCiv", iCiv)
-		if (iCurrentPlayer != iCiv-1 and not (iCiv == iCarthage and iCurrentPlayer == iGreece)):
+		if (iCurrentPlayer != iCiv-1 and not (iCiv == iPhoenicia and iCurrentPlayer == iGreece)):
 			return
 		
 		bNotOwned = True
@@ -2852,7 +2852,7 @@ class RiseAndFall:
 			utils.makeUnit(iGreekHoplite, iCiv, tPlot, 4)
 		if (iCiv == iPersia):
 			utils.makeUnit(iPersianImmortal, iCiv, tPlot, 4)
-		if (iCiv == iCarthage):
+		if (iCiv == iPhoenicia):
 			utils.makeUnit(iPhoenicianAfricanWarElephant, iCiv, tPlot, 1)
 		if iCiv == iPolynesia:
 			utils.makeUnit(iWarrior, iCiv, tPlot, 2)
@@ -2984,18 +2984,18 @@ class RiseAndFall:
 			utils.makeUnit(iPersianImmortal, iCiv, tPlot, 4)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)
 			utils.makeUnit(iWarElephant, iCiv, tPlot, 1)
-		if (iCiv == iCarthage):
+		if (iCiv == iPhoenicia):
 			utils.createSettlers(iCiv, 1)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iSpearman, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if (tSeaPlot):				
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 2)
-				pCarthage.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+				pPhoenicia.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
-				pCarthage.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
-				pCarthage.initUnit(iTrireme, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
+				pPhoenicia.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
+				pPhoenicia.initUnit(iTrireme, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_ESCORT_SEA, DirectionTypes.DIRECTION_SOUTH)
 		if iCiv == iPolynesia:
 			tSeaPlot = (4, 19)
 			utils.makeUnit(iSettler, iCiv, tPlot, 1)
@@ -3187,7 +3187,7 @@ class RiseAndFall:
 			utils.makeUnitAI(iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 3)
-		if (iCiv == iHolland):
+		if (iCiv == iNetherlands):
 			utils.createSettlers(iCiv, 2)
 			utils.makeUnit(iMusketman, iCiv, tPlot, 6)
 			utils.makeUnit(iBombard, iCiv, tPlot, 2)
@@ -3222,13 +3222,13 @@ class RiseAndFall:
 			utils.makeUnit(iLongbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iKnight, iCiv, tPlot, 3)
-			utils.makeUnit(iOttomanJanissary, iCiv, tPlot, 2)
+			utils.makeUnit(iTurkishJanissary, iCiv, tPlot, 2)
 			utils.makeUnit(iBombard, iCiv, tPlot, 4)
 			utils.makeUnit(iTrebuchet, iCiv, tPlot, 2)
 			utils.createMissionaries(iCiv, 3)
 			if utils.getHumanID() != iTurkey:
 				utils.makeUnit(iBombard, iCiv, tPlot, 4)
-				utils.makeUnit(iOttomanJanissary, iCiv, tPlot, 5)
+				utils.makeUnit(iTurkishJanissary, iCiv, tPlot, 5)
 				utils.makeUnit(iKnight, iCiv, tPlot, 4)
 		if (iCiv == iPortugal):
 			utils.createSettlers(iCiv, 1)
@@ -3433,7 +3433,7 @@ class RiseAndFall:
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		if (iCiv == iPersia):
 			utils.makeUnit(iWorker, iCiv, tPlot, 3)
-		if (iCiv == iCarthage):
+		if (iCiv == iPhoenicia):
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
 		if (iCiv == iRome):
 			utils.makeUnit(iWorker, iCiv, tPlot, 2)
@@ -3603,7 +3603,7 @@ class RiseAndFall:
 		
 		# Turkey
 		tCapital = tIstanbul
-		utils.makeUnit(iOttomanJanissary, iTurkey, tCapital, 10)
+		utils.makeUnit(iTurkishJanissary, iTurkey, tCapital, 10)
 		utils.makeUnit(iCuirassier, iTurkey, tCapital, 4)
 		utils.makeUnit(iBombard, iTurkey, tCapital, 5)
 		

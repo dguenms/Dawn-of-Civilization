@@ -10986,7 +10986,7 @@ int CvHandicapInfo::getHealthBonusByID(PlayerTypes ePlayer) const
 	// help early civs in late scenarios
 	if (getScenario() >= SCENARIO_600AD)
 	{
-		if (ePlayer < VIKING && iHealthBonus < 5) iHealthBonus += 1;
+		if (ePlayer < VIKINGS && iHealthBonus < 5) iHealthBonus += 1;
 		if (ePlayer < BABYLONIA && iHealthBonus < 5) iHealthBonus += 1;
 	}
 

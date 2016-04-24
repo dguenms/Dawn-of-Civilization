@@ -956,7 +956,7 @@ def getUHVTileInfo(argsList):
 		if (x, y) in Areas.getNormalArea(iEgypt, False):
 			return 0
 			
-		if (x, y) in Areas.getNormalArea(iCarthage, False):
+		if (x, y) in Areas.getNormalArea(iPhoenicia, False):
 			return 1
 			
 		if (x, y) in Areas.getNormalArea(iBabylonia, False):
@@ -975,7 +975,7 @@ def getUHVTileInfo(argsList):
 		if utils.isPlotInArea((x, y), vic.tNWIndiaTL, vic.tNWIndiaBR, vic.tNWIndiaExceptions):
 			return 6
 			
-	elif iPlayer == iCarthage:
+	elif iPlayer == iPhoenicia:
 		if utils.isPlotInArea((x, y), Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]):
 			return 37
 		

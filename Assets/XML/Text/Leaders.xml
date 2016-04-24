@@ -7,6 +7,30 @@
 		<German>Abbas I.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_MAO_ZEDONG</Tag>
+		<English>Mao Zedong</English>
+		<French>
+			<Text>Mao Ts&#233;-Tung</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Mao Tse-tung</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Mao Tse Tung</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mao Zedong</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_ABU_BAKR</Tag>
 		<English>Abu Bakr</English>
 		<French>
@@ -31,7 +55,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_AFONSO</Tag>
+		<Tag>LEADER_AFONSO_HENRIQUES</Tag>
 		<English>Afonso Henriques</English>
 		<French>Alphonse Henriques</French>
 		<German>Alfons Henriques</German>
@@ -57,7 +81,7 @@
 		<English>Atat&#252;rk</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_AUGUSTUS</Tag>
+		<Tag>TXT_KEY_LEADER_AUGUSTUS_CAESAR</Tag>
 		<English>Augustus Caesar</English>
 		<French>
 			<Text>C&#233;sar Auguste</Text>
@@ -153,27 +177,15 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_CHIANG_KAISHEK</Tag>
-		<English>Chiang Kai-Shek</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_LEADER_CIXI</Tag>
-		<English>Cixi</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_LEADER_DHARMASETU</Tag>
 		<English>Dharmasetu</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_DOM_PEDRO</Tag>
+		<Tag>TXT_KEY_LEADER_PEDRO</Tag>
 		<English>Pedro II</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_ELISHAT</Tag>
-		<English>Elishat</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_LEADER_FILIPE</Tag>
+		<Tag>TXT_KEY_LEADER_PHILIP</Tag>
 		<English>Philip II</English>
 		<French>
 			<Text>Philippe II</Text>
@@ -225,11 +237,35 @@
 		<English>Franco</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_GILGAMESH</Tag>
+		<Tag>TXT_KEY_LEADER_LOUIS_XIV</Tag>
+		<English>Louis XIV</English>
+		<French>
+			<Text>Louis XIV</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Ludwig XIV.</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Luigi XIV</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Luis XIV</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SARGON</Tag>
 		<English>Sargon</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_GUSTAV</Tag>
+		<Tag>TXT_KEY_LEADER_GUSTAV_ADOLPH</Tag>
 		<English>Gustav Adolph</English>
 	</TEXT>
 	<TEXT>
@@ -261,11 +297,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_HARUN</Tag>
+		<Tag>TXT_KEY_LEADER_HARUN_AL_RASHID</Tag>
 		<English>Harun al-Rashid</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_HATSHEPSUT</Tag>
+		<Tag>TXT_KEY_LEADER_CLEOPATRA</Tag>
 		<English>Cleopatra</English>
 	</TEXT>
 	<TEXT>
@@ -285,7 +321,7 @@
 		<English>Hongwu</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_IBN_TUGHLUQ</Tag>
+		<Tag>TXT_KEY_LEADER_MUHAMMAD_IBN_TUGHLUQ</Tag>
 		<English>Muhammad ibn Tughluq</English>
 	</TEXT>
 	<TEXT>
@@ -317,7 +353,7 @@
 		<English>Kangxi</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_JIMMU</Tag>
+		<Tag>TXT_KEY_LEADER_KAMMU</Tag>
 		<English>Kammu</English>
 	</TEXT>
 	<TEXT>
@@ -338,7 +374,7 @@
 		<English>Lobsang Gyatso</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_LORENZO</Tag>
+		<Tag>TXT_KEY_LEADER_LORENZO_DE_MEDICI</Tag>
 		<English>Lorenzo de' Medici</English>
 	</TEXT>
 	<TEXT>
@@ -423,11 +459,11 @@
 		<English>Per&#243;n</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_RAHMAN</Tag>
+		<Tag>TXT_KEY_LEADER_ABD_AR_RAHMAN</Tag>
 		<English>Abd-ar-Rahman</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_RAJENDRA</Tag>
+		<Tag>TXT_KEY_LEADER_RAJENDRA_CHOLA</Tag>
 		<English>Rajendra Chola</English>
 	</TEXT>
 	<TEXT>
@@ -463,7 +499,7 @@
 		<English>Santa Anna</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_SHIVAJI</Tag>
+		<Tag>TXT_KEY_LEADER_SHAHUJI</Tag>
 		<English>Shahuji</English>
 	</TEXT>
 	<TEXT>
@@ -471,7 +507,7 @@
 		<English>Sobieski</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_SONGTSEN</Tag>
+		<Tag>TXT_KEY_LEADER_SONGTSEN_GAMPO</Tag>
 		<English>Songtsen Gampo</English>
 	</TEXT>
 	<TEXT>
@@ -479,11 +515,11 @@
 		<English>Suharto</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_TAIZONG</Tag>
+		<Tag>TXT_KEY_LEADER_TANG_TAIZONG</Tag>
 		<English>Tang Taizong</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_TOKUGAWA</Tag>
+		<Tag>TXT_KEY_LEADER_ODA_NOBUNAGA</Tag>
 		<English>Oda Nobunaga</English>
 	</TEXT>
 	<TEXT>
@@ -499,7 +535,7 @@
 		<English>Vatavelli</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_WANGKON</Tag>
+		<Tag>TXT_KEY_LEADER_WANG_KON</Tag>
 		<English>Wang Kon</English>
 		<French>
 			<Text>Wang Kon</Text>
@@ -523,11 +559,11 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_YAQUB</Tag>
+		<Tag>TXT_KEY_LEADER_YAQUB_AL_MANSUR</Tag>
 		<English>Yaqub al-Mansur</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_BHUTTO</Tag>
+		<Tag>TXT_KEY_LEADER_BENAZIR_BHUTTO</Tag>
 		<English>Benazir Bhutto</English>
 	</TEXT>
 	<TEXT>

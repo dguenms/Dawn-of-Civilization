@@ -454,7 +454,7 @@
 		<English>[COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] allow the construction of the [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] Spaceship Part.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_THE_WHEEL_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_WHEEL_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]The Wheel[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Chariots[COLOR_REVERT] and allows the construction of [COLOR_HIGHLIGHT_TEXT]Roads[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -496,5 +496,37 @@
 	<TEXT>
 		<Tag>TXT_KEY_TECH_WRITING_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Writing[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT] Building and enables [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT].</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WHEEL</Tag>
+		<English>The Wheel</English>
+		<French>
+			<Text>La roue</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Das Rad</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Ruota</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rueda</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WHEEL_QUOTE</Tag>
+		<English>"Put your shoulder to the wheel." - Aesop</English>
+		<French>"La roue de la fortune tourne plus vite que celle du moulin." - Miguel de Cervant&#232;s</French>
+		<German>"Das Rad der Zeit l&#228;sst sich nicht zur&#252;ckdrehen." - Sprichwort</German>
+		<Italian>"Mettiti al lavoro di buona lena." - Esopo</Italian>
+		<Spanish>"Arrima el hombro a la rueda." - Esopo</Spanish>
 	</TEXT>
 </Civ4GameText>

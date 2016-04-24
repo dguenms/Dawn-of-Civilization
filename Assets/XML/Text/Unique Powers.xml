@@ -133,7 +133,7 @@
 		<English>Immigrants coming to our city of %s1 have brought it %d3 points closer to generating a %s2.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_CAR_TITLE</Tag>
+		<Tag>TXT_KEY_UP_PHO_TITLE</Tag>
 		<English>The Power of Mercenaries:</English>
 		<French>Le Pouvoir des Mercenaires :</French>
 		<German>Die Macht der S&#246;ldner:</German>
@@ -141,7 +141,7 @@
 		<Spanish>El poder de los mercenarios:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_CAR</Tag>
+		<Tag>TXT_KEY_UP_PHO</Tag>
 		<English>Halved costs and no extra upkeep for hurried units</English>
 		<French>Co&#251;ts de recrutement et d'entretien des mercenaires divis&#233;s par deux</French>
 		<German>Halbierte Kosten und kein zus&#228;tzlicher Unterhalt f&#252;r beschleunigte Einheiten</German>

@@ -32,10 +32,6 @@
 		<English>The [COLOR_BUILDING_TEXT]Alchemist[COLOR_REVERT], the Arabian replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], has an additional scientist slot and does not cause unhealthiness.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ARABIAN_MADRASSA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Madrassa[COLOR_REVERT], the Arabian replacement for the [COLOR_BUILDING_TEXT]Library[COLOR_REVERT], provides double the culture and allows you to hire two [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists.</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUEDUCT_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Aqueducts[COLOR_REVERT] improve a city's health.</English>
 	</TEXT>
@@ -295,10 +291,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FRENCH_SALON_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Salon[COLOR_REVERT], the French replacement for the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT], provides a cultural bonus, a happiness bonus if the city has access to [COLOR_HIGHLIGHT_TEXT]Coffee[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Tea[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]Tobacco[COLOR_REVERT] and increases the birthrate of [COLOR_HIGHLIGHT_TEXT]Great People[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_FRIGORIFICO_STRATEGY</Tag>
-		<English>Unique Argentine building which replaces the supermarket. Provides additional gold with cow, pig and sheep.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GERMAN_ASSEMBLY_PLANT_STRATEGY</Tag>
@@ -579,8 +571,16 @@
 		<English>[COLOR_BUILDING_TEXT]Pagan Temples[COLOR_REVERT] provide a small amount of culture.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_OTTOMAN_HAMMAM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Ottoman replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], increases a city's happiness.</English>
+		<Tag>TXT_KEY_BUILDING_TURKISH_HAMMAM</Tag>
+		<English>Hammam</English>
+		<French>Hammam</French>
+		<German>Hamam</German>
+		<Italian>Hammam</Italian>
+		<Spanish>Hammam:Hammams</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TURKISH_HAMMAM_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Hammam[COLOR_REVERT], the Turkish replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], increases a city's happiness.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PHOENICIAN_GLASSMAKER</Tag>
@@ -782,7 +782,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Synagogues[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Temples[COLOR_REVERT]) increase a city's happiness and culture.</English>
+		<English>The [COLOR_BUILDING_TEXT]Synagogue[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Temple[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Synagogue[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Jewish Sanhedrin[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY</Tag>
@@ -791,7 +791,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Yeshivas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Monasteries[COLOR_REVERT]) allow you to create [COLOR_UNIT_TEXT]Jewish Rabbis[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Yeshiva[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Jewish Rabbi[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_CATHEDRAL</Tag>
@@ -803,18 +803,13 @@
 		<English>The [COLOR_BUILDING_TEXT]Sanhedrin[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_JEWISH_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Temple of Solomon[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<German>[COLOR_BUILDING_TEXT]Salomons Tempel[COLOR_REVERT] ([COLOR_BUILDING_TEXT]J&#252;discher Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die das [COLOR_HIGHLIGHT_TEXT]Judentum[COLOR_REVERT] praktizieren, 1 Gold/Runde bis zu einem Maximum von 20 Gold. Au&#223;erdem verbreitet er das [COLOR_HIGHLIGHT_TEXT]Judentum[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_TEMPLE</Tag>
 		<English>Orthodox Church</English>
 		<German>Orthodoxe Kirche</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Churches[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Orthodox Temples[COLOR_REVERT]) increase a city's happiness and culture.</English>
+		<English>The [COLOR_BUILDING_TEXT]Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Orthodox Temple[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Church[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_MONASTERY</Tag>
@@ -823,7 +818,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Orthodox Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Orthodox Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Monastery[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Orthodox Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Orthodox Missionary[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL</Tag>
@@ -832,7 +827,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_CATHEDRAL_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Cathedral[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Orthodox Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_TEMPLE</Tag>
@@ -841,7 +836,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Churches[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Temples[COLOR_REVERT]) increase a city's happiness and culture. They also allows you to hire one [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist.</English>
+		<English>The [COLOR_BUILDING_TEXT]Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Temple[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Church[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_MONASTERY</Tag>
@@ -850,7 +845,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Catholic Monasteries[COLOR_REVERT] allow you to create [COLOR_UNIT_TEXT]Catholic Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Monastery[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Catholic Missionary[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_CATHEDRAL</Tag>
@@ -859,7 +854,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_CATHEDRAL_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Cathedral[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_TEMPLE</Tag>
@@ -868,7 +863,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Churches[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Temples[COLOR_REVERT]) increase a city's happiness and culture.</English>
+		<English>The [COLOR_BUILDING_TEXT]Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Temple[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Church[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_MONASTERY</Tag>
@@ -877,7 +872,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Seminaries[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Monasteries[COLOR_REVERT]) allow you to create [COLOR_UNIT_TEXT]Protestant Missionaries[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Seminary[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Protestant Missionary[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_CATHEDRAL</Tag>
@@ -886,7 +881,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_CATHEDRAL_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT] greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Cathedral[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_TEMPLE</Tag>
@@ -895,7 +890,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Mosques[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Temples[COLOR_REVERT]) increase a city's happiness and culture.</English>
+		<English>The [COLOR_BUILDING_TEXT]Mosque[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Temple[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Mosque[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Islamic Grand Mosque[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_MONASTERY</Tag>
@@ -904,7 +899,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Madrasahs[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Monasteries[COLOR_REVERT]) allow you to create [COLOR_UNIT_TEXT]Islamic Imams[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Madrasah[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Islamic Imam[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_CATHEDRAL</Tag>
@@ -922,7 +917,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Mandirs[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Temples[COLOR_REVERT]) increase a city's happiness and culture. The first player to build a [COLOR_BUILDING_TEXT]Mandir[COLOR_REVERT] founds Buddhism.</English>
+		<English>The [COLOR_BUILDING_TEXT]Mandir[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Temple[COLOR_REVERT]) increases a city's happiness and culture. The first player to build a [COLOR_BUILDING_TEXT]Mandir[COLOR_REVERT] founds Buddhism. The [COLOR_BUILDING_TEXT]Mandir[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Hindu Kshetra[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_MONASTERY</Tag>
@@ -931,7 +926,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Ashrams[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Monasteries[COLOR_REVERT]) allow you to create [COLOR_UNIT_TEXT]Hindu Gurus[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Ashram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Hindu Guru[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_CATHEDRAL</Tag>
@@ -943,23 +938,13 @@
 		<English>The [COLOR_BUILDING_TEXT]Kshetra[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HINDU_SHRINE</Tag>
-		<English>Vishwanath</English>
-		<German>Vishwanath</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HINDU_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Vishwanath[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<German>Der [COLOR_BUILDING_TEXT]Vishwanath[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu-Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die den [COLOR_HIGHLIGHT_TEXT]Hinduismus[COLOR_REVERT] praktizieren, 1 Gold/Runde bis zu einem Maximum von 20 Gold. Au&#223;erdem verbreitet er den [COLOR_HIGHLIGHT_TEXT]Hinduismus[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_TEMPLE</Tag>
 		<English>Buddhist Stupa</English>
 		<German>Buddhistische Stupa</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Stupas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Temples[COLOR_REVERT]) increase a city's happiness and culture.</English>
+		<English>The [COLOR_BUILDING_TEXT]Stupa[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Temple[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Stupa[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Buddhist Chaitya[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_MONASTERY</Tag>
@@ -968,7 +953,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Sanghas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Monasteries[COLOR_REVERT]) allow you to create [COLOR_UNIT_TEXT]Buddhist Bhikkus[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Sangha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Buddhist Bhikku[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_CATHEDRAL</Tag>
@@ -986,7 +971,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Miaos[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Temples[COLOR_REVERT]) increase a city's happiness and culture.</English>
+		<English>The [COLOR_BUILDING_TEXT]Miao[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Temple[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Miao[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Confucian Xue Gong[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_MONASTERY</Tag>
@@ -995,7 +980,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Academies[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Monasteries[COLOR_REVERT]) allow you to create [COLOR_UNIT_TEXT]Confucian Scholars[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Academy[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Confucian Scholar[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL</Tag>
@@ -1007,23 +992,13 @@
 		<English>The [COLOR_BUILDING_TEXT]Xue Gong[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE</Tag>
-		<English>San Kong</English>
-		<German>San Kong</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]San Kong[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<German>Der [COLOR_BUILDING_TEXT]San Kong[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Konfuzianischer Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die den [COLOR_HIGHLIGHT_TEXT]Konfuzianismus[COLOR_REVERT] praktizieren, 1 Gold/Runde bis zu einem Maximum von 20 Gold. Au&#223;erdem verbreitet er den [COLOR_HIGHLIGHT_TEXT]Konfuzianismus[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_TEMPLE</Tag>
 		<English>Taoist Guan</English>
 		<German>Taotischer Guan</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Guans[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Temples[COLOR_REVERT]) increase a city's happiness and culture.</English>
+		<English>The [COLOR_BUILDING_TEXT]Guan[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Temples[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Guan[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Taoist Gong[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_MONASTERY</Tag>
@@ -1032,7 +1007,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Dongtianas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Monasteries[COLOR_REVERT]) allow you to create [COLOR_UNIT_TEXT]Taoist Daoshis[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Dongtian[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Taoist Daoshi[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_CATHEDRAL</Tag>
@@ -1044,23 +1019,13 @@
 		<English>The [COLOR_BUILDING_TEXT]Gong[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TAOIST_SHRINE</Tag>
-		<English>The Temple of Heaven</English>
-		<German>Himmelstempel</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TAOIST_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Temple of Heaven[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-		<German>Der [COLOR_BUILDING_TEXT]Himmelstempel[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoistischer Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die den [COLOR_HIGHLIGHT_TEXT]Taoismus[COLOR_REVERT] praktizieren, 1 Gold/Runde bis zu einem Maximum von 20 Gold. Au&#223;erdem verbreitet er den [COLOR_HIGHLIGHT_TEXT]Taoismus[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE</Tag>
 		<English>Zoroastrian Fire Temple</English>
 		<German>Zoroastrischer Feuertempel</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_TEMPLE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Fire Temples[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Temples[COLOR_REVERT]) increase a city's happiness and culture.</English>
+		<English>The [COLOR_BUILDING_TEXT]Fire Temple[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Temple[COLOR_REVERT]) increases a city's happiness and culture. The [COLOR_BUILDING_TEXT]Fire Temple[COLOR_REVERT] is required to build the [COLOR_BUILDING_TEXT]Zoroastrian Royal Fire[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>
@@ -1069,7 +1034,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Pirs[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magu[COLOR_REVERT], who can spread the faith in other cities. They also provide culture and a slight boost to research.</English>
+		<English>The [COLOR_BUILDING_TEXT]Pir[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monastery[COLOR_REVERT]) allows you to create the [COLOR_UNIT_TEXT]Zoroastrian Magu[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. It also provides culture and a slight boost to research.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>

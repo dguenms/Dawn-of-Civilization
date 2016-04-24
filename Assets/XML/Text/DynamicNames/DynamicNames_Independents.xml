@@ -2,7 +2,7 @@
 <!-- Computers -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CELT_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_CELTIA_ADJECTIVE</Tag>
 		<English>
 			<Text>Celtic:Celts</Text>
 			<Gender>Male</Gender>
@@ -30,7 +30,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CELT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_CELTIA_DESC</Tag>
 		<English>Celtic Peoples</English>
 		<French>
 			<Text>Peuples celtes</Text>
@@ -54,7 +54,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_CELT_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_CELTIA_SHORT_DESC</Tag>
 		<English>Celtia</English>
 		<French>
 			<Text>Celtes</Text>
@@ -222,28 +222,19 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_SELJUK_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_SELJUKS_ADJECTIVE</Tag>
 		<English>Seljuk</English>
-		<French>in French</French>
 		<German>Seldschukisch</German>
-		<Italian>in Italian</Italian>
-		<Spanish>in Spanish</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_SELJUK_DESC</Tag>
+		<Tag>TXT_KEY_CIV_SELJUKS_DESC</Tag>
 		<English>Seljuk Empire</English>
-		<French>in French</French>
 		<German>Seldschukenreich</German>
-		<Italian>in Italian</Italian>
-		<Spanish>in Spanish</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_SELJUK_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_SELJUKS_SHORT_DESC</Tag>
 		<English>Seljuks</English>
-		<French>in French</French>
 		<German>Seldschuken</German>
-		<Italian>in Italian</Italian>
-		<Spanish>in Spanish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ZULU_ADJECTIVE</Tag>

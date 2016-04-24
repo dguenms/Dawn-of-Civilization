@@ -200,8 +200,14 @@
 		<English>CN Tower</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE</Tag>
+		<English>San Kong</English>
+		<German>San Kong</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Kong Miao[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]San Kong[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<German>Der [COLOR_BUILDING_TEXT]San Kong[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Konfuzianischer Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die den [COLOR_HIGHLIGHT_TEXT]Konfuzianismus[COLOR_REVERT] praktizieren, 1 Gold/Runde bis zu einem Maximum von 20 Gold. Au&#223;erdem verbreitet er den [COLOR_HIGHLIGHT_TEXT]Konfuzianismus[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER_STRATEGY</Tag>
@@ -287,7 +293,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It also increases the chances of a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT] appearing. The [COLOR_BUILDING_TEXT]Great Cothan[COLOR_REVERT] requires you to have the Pantheon civic active.</English>
+		<English>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_LIBRARY_STRATEGY</Tag>
@@ -499,7 +505,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_HELP</Tag>
-		<English>Requires 20 Water Tiles in City Radius[NEWLINE][ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements</English>
+		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[REVERT_COLOR]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_STRATEGY</Tag>
@@ -550,8 +556,14 @@
 		<English>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] improves the health of your city and adds an additional population point in all cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HINDU_SHRINE</Tag>
+		<English>Vishwanath</English>
+		<German>Vishwanath</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Kashi Vishwanath[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Vishwanath[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<German>Der [COLOR_BUILDING_TEXT]Vishwanath[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu-Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die den [COLOR_HIGHLIGHT_TEXT]Hinduismus[COLOR_REVERT] praktizieren, 1 Gold/Runde bis zu einem Maximum von 20 Gold. Au&#223;erdem verbreitet er den [COLOR_HIGHLIGHT_TEXT]Hinduismus[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAND_CANAL</Tag>
@@ -810,8 +822,14 @@
 		<English>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAOIST_SHRINE</Tag>
+		<English>The Temple of Heaven</English>
+		<German>Himmelstempel</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Dai Miao[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Temple of Heaven[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<German>Der [COLOR_BUILDING_TEXT]Himmelstempel[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoistischer Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die den [COLOR_HIGHLIGHT_TEXT]Taoismus[COLOR_REVERT] praktizieren, 1 Gold/Runde bis zu einem Maximum von 20 Gold. Au&#223;erdem verbreitet er den [COLOR_HIGHLIGHT_TEXT]Taoismus[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Tag>
@@ -981,5 +999,10 @@
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 		<German>Die [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] erhöht die Produktion aller Gebäude der Staatsreligion und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JEWISH_SHRINE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Temple of Solomon[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<German>[COLOR_BUILDING_TEXT]Salomons Tempel[COLOR_REVERT] ([COLOR_BUILDING_TEXT]J&#252;discher Schrein[COLOR_REVERT]) produziert in allen St&#228;dten, die das [COLOR_HIGHLIGHT_TEXT]Judentum[COLOR_REVERT] praktizieren, 1 Gold/Runde bis zu einem Maximum von 20 Gold. Au&#223;erdem verbreitet er das [COLOR_HIGHLIGHT_TEXT]Judentum[COLOR_REVERT] in aller Welt und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Propheten[COLOR_REVERT] hervorzubringen.</German>
 	</TEXT>
 </Civ4GameText>

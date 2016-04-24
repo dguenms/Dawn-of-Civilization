@@ -207,12 +207,12 @@ dEraGoals = {
 dWonderGoals = {
 	iEgypt: (1, [iPyramids, iGreatLibrary, iGreatLighthouse], True),
 	iGreece: (1, [iOracle, iColossus, iParthenon, iTempleOfArtemis], True),
-	iCarthage: (0, [iGreatCothon], False),
+	iPhoenicia: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
 	iMaya: (1, [iTempleOfKukulkan], True),
 	iKhmer: (0, [iAngkorWat], False),
 	iFrance: (2, [iNotreDame, iVersailles, iStatueOfLiberty, iEiffelTower], True),
-	iMali: (1, [iSankore], False),
+	iMali: (1, [iUniversityofSankore], False),
 	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iLeaningTower], True),
 	iMughals: (1, [iTajMahal, iRedFort, iHarmandirSahib], True),
 	iAmerica: (1, [iStatueOfLiberty, iEmpireStateBuilding, iPentagon, iUnitedNations], True),
@@ -362,7 +362,7 @@ def checkTurn(iGameTurn, iPlayer):
 		# third goal: control Egypt, Phoenicia, Babylonia and Persia in 325 BC
 		if iGameTurn == getTurnForYear(-325):
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
-			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
+			bPhoenicia = checkOwnedCiv(iGreece, iPhoenicia)
 			bBabylonia = checkOwnedCiv(iGreece, iBabylonia)
 			bPersia = checkOwnedCiv(iGreece, iPersia)
 			if bEgypt and bPhoenicia and bBabylonia and bPersia:
@@ -392,33 +392,33 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iIndia, 2)
 				
-	elif iPlayer == iCarthage:
+	elif iPlayer == iPhoenicia:
 	
 		# first goal: build a Palace and the Great Cothon in Carthagee by 300 BC
-		if isPossible(iCarthage, 0):
+		if isPossible(iPhoenicia, 0):
 			bPalace = isBuildingInCity((58, 39), iPalace)
 			bGreatCothon = isBuildingInCity((58, 39), iGreatCothon)
 			if bPalace and bGreatCothon:
-				win(iCarthage, 0)
+				win(iPhoenicia, 0)
 		
 		if iGameTurn == getTurnForYear(-300):
-			expire(iCarthage, 0)
+			expire(iPhoenicia, 0)
 				
 		# second goal: control Italy and Iberia in 100 BC
 		if iGameTurn == getTurnForYear(-100):
-			bItaly = isControlled(iCarthage, utils.getPlotList(Areas.tNormalArea[iItaly], Areas.tNormalArea[iItaly], [(62, 47), (63, 47), (63, 46)]))
-			bIberia = isControlled(iCarthage, Areas.getNormalArea(iSpain, False))
+			bItaly = isControlled(iPhoenicia, utils.getPlotList(Areas.tNormalArea[iItaly], Areas.tNormalArea[iItaly], [(62, 47), (63, 47), (63, 46)]))
+			bIberia = isControlled(iPhoenicia, Areas.getNormalArea(iSpain, False))
 			if bItaly and bIberia:
-				win(iCarthage, 1)
+				win(iPhoenicia, 1)
 			else:
-				lose(iCarthage, 1)
+				lose(iPhoenicia, 1)
 				
 		# third goal: have 5000 gold in 200 AD
 		if iGameTurn == getTurnForYear(200):
-			if pCarthage.getGold() >= utils.getTurns(5000):
-				win(iCarthage, 2)
+			if pPhoenicia.getGold() >= utils.getTurns(5000):
+				win(iPhoenicia, 2)
 			else:
-				lose(iCarthage, 2)
+				lose(iPhoenicia, 2)
 				
 	elif iPlayer == iPolynesia:
 	
@@ -984,7 +984,7 @@ def checkTurn(iGameTurn, iPlayer):
 		# second goal: build the University of Sankore and settle a great prophet in its city by 1500 AD
 		if isPossible(iMali, 1):
 			for city in utils.getCityList(iMali):
-				if city.isHasRealBuilding(iSankore) and city.getFreeSpecialistCount(iSpecialistGreatProphet) >= 1:
+				if city.isHasRealBuilding(iUniversityofSankore) and city.getFreeSpecialistCount(iSpecialistGreatProphet) >= 1:
 					win(iMali, 1)
 		
 		if iGameTurn == getTurnForYear(1500):
@@ -1278,7 +1278,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1900):
 			iCount = 0
 			for iSpecialist in lGreatPeople:
-				iCount += countCitySpecialists(iPrussia, Areas.getCapital(iGermany), iSpecialist)
+				iCount += countCitySpecialists(iGermany, Areas.getCapital(iGermany), iSpecialist)
 			if iCount >= 7:
 				win(iGermany, 0)
 			else:
@@ -2309,7 +2309,7 @@ def checkOwnedCiv(iPlayer, iOwnedPlayer):
 	iPlayerCities = getNumCitiesInArea(iPlayer, Areas.getNormalArea(iOwnedPlayer, False))
 	iOwnedCities = getNumCitiesInArea(iOwnedPlayer, Areas.getNormalArea(iOwnedPlayer, False))
 	
-	return (iPlayerCities >= 2 and iPlayerCities > iOwnedCities) or (iPlayerCities >= 1 and not gc.getPlayer(iOwnedPlayer).isAlive()) or (iPlayerCities >= 1 and iOwnedPlayer == iCarthage)
+	return (iPlayerCities >= 2 and iPlayerCities > iOwnedCities) or (iPlayerCities >= 1 and not gc.getPlayer(iOwnedPlayer).isAlive()) or (iPlayerCities >= 1 and iOwnedPlayer == iPhoenicia)
 	
 def isControlled(iPlayer, lPlots):
 	lOwners = []
@@ -3080,7 +3080,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bOracle) + localText.getText("TXT_KEY_BUILDING_ORACLE", ()) + ' ' + getIcon(bParthenon) + localText.getText("TXT_KEY_BUILDING_PARTHENON", ()) + ' ' + getIcon(bColossus) + localText.getText("TXT_KEY_BUILDING_COLOSSUS", ()) + ' ' + getIcon(bArtemis) + localText.getText("TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS", ()))
 		elif iGoal == 2:
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
-			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
+			bPhoenicia = checkOwnedCiv(iGreece, iPhoenicia)
 			bBabylonia = checkOwnedCiv(iGreece, iBabylonia)
 			bPersia = checkOwnedCiv(iGreece, iPersia)
 			aHelp.append(getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + getIcon(bPhoenicia) + localText.getText("TXT_KEY_CIV_PHOENICIA_SHORT_DESC", ()) + ' ' + getIcon(bBabylonia) + localText.getText("TXT_KEY_CIV_BABYLONIA_SHORT_DESC", ()) + ' ' + getIcon(bPersia) + localText.getText("TXT_KEY_CIV_PERSIA_SHORT_DESC", ()))
@@ -3100,17 +3100,17 @@ def getUHVHelp(iPlayer, iGoal):
 			popPercent = getPopulationPercent(iIndia)
 			aHelp.append(getIcon(popPercent >= 20.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % popPercent), str(20))))
 
-	elif iPlayer == iCarthage:
+	elif iPlayer == iPhoenicia:
 		if iGoal == 0:
 			bPalace = isBuildingInCity((58, 39), iPalace)
 			bGreatCothon = isBuildingInCity((58, 39), iGreatCothon)
 			aHelp.append(getIcon(bPalace) + localText.getText("TXT_KEY_BUILDING_PALACE", ()) + ' ' + getIcon(bGreatCothon) + localText.getText("TXT_KEY_BUILDING_GREAT_COTHON", ()))
 		elif iGoal == 1:
-			bItaly = isControlled(iCarthage, utils.getPlotList(Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]))
-			bIberia = isControlled(iCarthage, Areas.getNormalArea(iSpain, False))
+			bItaly = isControlled(iPhoenicia, utils.getPlotList(Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]))
+			bIberia = isControlled(iPhoenicia, Areas.getNormalArea(iSpain, False))
 			aHelp.append(getIcon(bItaly) + localText.getText("TXT_KEY_VICTORY_ITALY", ()) + ' ' + getIcon(bIberia) + localText.getText("TXT_KEY_VICTORY_IBERIA_CARTHAGE", ()))
 		elif iGoal == 2:
-			iTreasury = pCarthage.getGold()
+			iTreasury = pPhoenicia.getGold()
 			aHelp.append(getIcon(iTreasury >= utils.getTurns(5000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iTreasury, utils.getTurns(5000))))
 
 	elif iPlayer == iPolynesia:
@@ -3403,7 +3403,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bSankore = False
 			iProphets = 0
 			for city in utils.getCityList(iMali):
-				if city.isHasRealBuilding(iSankore):
+				if city.isHasRealBuilding(iUniversityofSankore):
 					bSankore = True
 					iProphets = city.getFreeSpecialistCount(iSpecialistGreatProphet)
 					break
@@ -3578,7 +3578,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iCounter = 0
 			for iSpecialist in lGreatPeople:
-				iCounter += countCitySpecialists(iPrussia, Areas.getCapital(iGermany), iSpecialist)
+				iCounter += countCitySpecialists(iGermany, Areas.getCapital(iGermany), iSpecialist)
 			aHelp.append(getIcon(iCounter >= 7) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY", ("Berlin", iCounter, 7)))
 		elif iGoal == 1:
 			bFrance = checkOwnedCiv(iGermany, iFrance)
