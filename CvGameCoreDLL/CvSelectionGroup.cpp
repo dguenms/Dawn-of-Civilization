@@ -1746,16 +1746,19 @@ void CvSelectionGroup::continueMission(int iSteps)
 					}
 					else
 					{
-						//Leoreth: applying 3Miro's infinite settler loop fix
-						if ( (headMissionQueueNode()!=NULL)&& (headMissionQueueNode()->m_data.eMissionType==MISSION_MOVE_TO)&& ((getX() != headMissionQueueNode()->m_data.iData1) || (getY() != headMissionQueueNode()->m_data.iData2)) )
+						bDone = true;
+
+						// Leoreth: adapt 3Miro's infinite settler loop fix, avoid unintended transport behavior
+						if (headMissionQueueNode() != NULL && headMissionQueueNode()->m_data.eMissionType == MISSION_MOVE_TO)
 						{
-							bDone = true;
-														pushMission(MISSION_SKIP);
-						}else
-						{
-							bDone = true;
-						};
-						//bDone = true; // 3Miro: Original code
+							if (getX() != headMissionQueueNode()->m_data.iData1 || getY() != headMissionQueueNode()->m_data.iData1)
+							{
+								if (!(plot()->isWater() && GC.getMap().plot(headMissionQueueNode()->m_data.iData1, headMissionQueueNode()->m_data.iData2)->isCoastalLand()))
+								{
+									pushMission(MISSION_SKIP);
+								}
+							}
+						}
 					}
 					break;
 
