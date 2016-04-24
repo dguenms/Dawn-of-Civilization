@@ -2552,7 +2552,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	}
 
 	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
-	if (eTeam == AZTEC && GET_PLAYER((PlayerTypes)AZTEC).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
+	if (eTeam == AZTECS && GET_PLAYER((PlayerTypes)AZTECS).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
 	{
 		bMexico = true;
 	}
@@ -4666,7 +4666,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		iUpgradeLeft *= 110;
 		iUpgradeLeft /= 100;
 		break;
-	case VIKING:
+	case VIKINGS:
 		iUpgradeLeft *= 90;
 		iUpgradeLeft /= 100;
 		break;
@@ -4722,7 +4722,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		iUpgradeLeft *= 80;
 		iUpgradeLeft /= 100;
 		break;
-	case AZTEC:
+	case AZTECS:
 		iUpgradeLeft *= 80;
 		iUpgradeLeft /= 100;
 		break;
@@ -4736,7 +4736,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		break;
 	}
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-		if (ePlayer < VIKING) {
+		if (ePlayer < VIKINGS) {
 			iUpgradeLeft *= 90;
 			iUpgradeLeft /= 100;
 		}
@@ -7159,7 +7159,7 @@ int CvPlot::getCulture(PlayerTypes eIndex) const
 		return 0;
 	}
 
-	if (eIndex == VIKING && GC.getGameINLINE().getGameTurnYear() < 1000)
+	if (eIndex == VIKINGS && GC.getGameINLINE().getGameTurnYear() < 1000)
 	{
 		if (getY_INLINE() == 54 && (getX_INLINE() == 59 || getX_INLINE() == 60 || getX_INLINE() == 61))
 		{
