@@ -4824,7 +4824,7 @@ bool CvUnit::pillage()
 			iPillageGold = (int)lPillageGold;
 
 			//Rhye - start UP (Viking)
-			if (getOwnerINLINE() == VIKING && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
+			if (getOwnerINLINE() == VIKINGS && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
 			{
 				iPillageGold *= 5;
 			}
@@ -13748,7 +13748,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_MESOAMERICA || id == REGION_CARIBBEAN)
 	{
-		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)AZTEC).getCivilizationType()).getUnitArtStyleType();
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)AZTECS).getCivilizationType()).getUnitArtStyleType();
 	}
 	else if (id == REGION_BRAZIL || id == REGION_ARGENTINA || id == REGION_PERU || id == REGION_COLOMBIA)
 	{
@@ -13794,7 +13794,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_SCANDINAVIA)
 	{
-		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)VIKING).getCivilizationType()).getUnitArtStyleType();
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)VIKINGS).getCivilizationType()).getUnitArtStyleType();
 	}
 	else if (id == REGION_RUSSIA || id == REGION_SIBERIA)
 	{
