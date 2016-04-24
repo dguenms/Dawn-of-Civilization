@@ -2023,5 +2023,58 @@ class RFCUtils:
 				lCities.append(plot.getPlotCity())
 		return lCities
 		
+	def getAdvisorString(iBuilding):
+		''
+		iAdvisor = gc.getBuildingInfo(iBuilding).getAdvisorType()
+
+		if iAdvisor == 0:
+			return "Military"
+		elif iAdvisor == 1:
+			return "Religious"
+		elif iAdvisor == 2:
+			return "Economy"
+		elif iAdvisor == 3:
+			return "Science"
+		elif iAdvisor == 4:
+			return "Culture"
+		elif iAdvisor == 5:
+			return "Growth"
+
+		return ""
+		
+	def getBuildingCategory(iBuilding):
+		'0 = Building'
+		'1 = Religious Building'
+		'2 = Unique Building'
+		'3 = Unique Wonder'
+		'4 = National Wonder'
+		'5 = World Wonder'
+		'6 = Natural Wonder'
+		'7 = Corporate Headquarters'
+
+		BuildingInfo = gc.getBuildingInfo(iBuilding)
+		if BuildingInfo.getType().find("_NATURAL_WONDER_") > 0:
+			return 6
+		elif BuildingInfo.getArtDefineTag() == "ART_DEF_BUILDING_FAKE" or BuildingInfo.isGraphicalOnly():
+			return -1
+		elif BuildingInfo.getReligionType() > -1:
+			return 1
+		elif BuildingInfo.getFoundsCorporation() > -1:
+			return 7
+		elif isWorldWonderClass(BuildingInfo.getBuildingClassType()) or iBuilding == gc.getInfoTypeForString('BUILDING_OLYMPIC_GAMES'):
+			return 5
+		else:
+			iBuildingClass = BuildingInfo.getBuildingClassType()
+			iDefaultBuilding = gc.getBuildingClassInfo(iBuildingClass).getDefaultBuildingIndex()
+			if isNationalWonderClass(iBuildingClass):
+				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
+					return 3
+				else:
+					return 4
+			else:
+				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
+					return 2
+				else:
+					return 0
 
 utils = RFCUtils()
