@@ -2785,7 +2785,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		}
 	}
 
-	if (GC.getUSE_UNIT_CANNOT_MOVE_INTO_CALLBACK())
+	/*if (GC.getUSE_UNIT_CANNOT_MOVE_INTO_CALLBACK())
 	{
 		// Python Override
 		CyArgsList argsList;
@@ -2800,7 +2800,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		{
 			return false;
 		}
-	}
+	}*/
 
 	return true;
 }
