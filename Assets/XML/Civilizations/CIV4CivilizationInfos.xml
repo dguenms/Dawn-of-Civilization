@@ -33,12 +33,7 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Abdju</City>
-				<City>Nekhen</City>
-				<City>Per-Bastet</City>
 				<City>Akhetaten</City>
-				<City>Zawty</City>
-				<City>Imu</City>
 				<City>Djeba</City>
 				<City>Djedet</City>
 				<City>Mendes</City>
@@ -61,7 +56,6 @@
 				<City>El-Ashmunein</City>
 				<City>Kom Medinet Ghurab</City>
 				<City>Hawara</City>
-				<City>Dashur</City>
 				<City>Raqote</City>
 				<City>Damanhur</City>
 				<City>Merimde</City>
@@ -76,8 +70,6 @@
 				<City>Ombos</City>
 				<City>Amara</City>
 				<City>Soleb</City>
-				<City>Semna</City>
-				<City>Khmun</City>
 				<City>Hermonthis</City>
 			</Cities>
 			<Buildings>
@@ -165,15 +157,11 @@
 			<Cities>
 				<City>Tianjin</City>
 				<City>Shandong</City>
-				<City>Ningbo</City>
 				<City>Baoding</City>
 				<City>Yangzhou</City>
 				<City>Loyang</City>
-				<City>Kunming</City>
-				<City>Shenyang</City>
 				<City>Taiyuan</City>
 				<City>Tainan</City>
-				<City>Dairen</City>
 				<City>Lijiang</City>
 				<City>Wuxi</City>
 				<City>Suzhou</City>
@@ -279,9 +267,6 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Lagash</City>
-				<City>Akkad</City>
-				<City>Uruk</City>
 				<City>Shuruppak</City>
 				<City>Sippar</City>
 				<City>Eridu</City>
@@ -299,9 +284,7 @@
 				<City>Tutub</City>
 				<City>Apisala</City>
 				<City>Kutha</City>
-				<City>Anshan</City>
 				<City>Zabalam</City>
-				<City>Hatra</City>
 				<City>Hilla</City>
 				<City>Tell Wilaya</City>
 			</Cities>
@@ -380,23 +363,31 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Harappa</City>
-				<City>Mohenjo-Daro</City>
-				<City>Sutkagen Dor</City>
-				<City>Sotka Koh</City>
-				<City>Mehrgarh</City>
-				<City>Nausharo</City>
-				<City>Rehman Dheri</City>
-				<City>Manda</City>
-				<City>Kalinganan</City>
-				<City>Banawali</City>
-				<City>Kot Diji</City>
-				<City>Chanhu-Daro</City>
-				<City>Dholavira</City>
-				<City>Surkotada</City>
-				<City>Kuntasi</City>
-				<City>Lothal</City>
-				<City>Rakhigahri</City>
+				<City>Kolhapur</City>
+				<City>Lucknow</City>
+				<City>Rajshahi</City>
+				<City>Cuttack</City>
+				<City>Rawalpindi</City>
+				<City>Howrah</City>
+				<City>Triverapatnam</City>
+				<City>Dakpathar</City>
+				<City>Jaunpur</City>
+				<City>Kodaikanal</City>
+				<City>Vrindavan</City>
+				<City>Guwahati</City>
+				<City>Bhalukpong</City>
+				<City>Sonepur</City>
+				<City>Vaishali</City>
+				<City>Rewalsar</City>
+				<City>Kurukshetra</City>
+				<City>Subarnapur</City>
+				<City>Wadhvan</City>
+				<City>Narkanda</City>
+				<City>Dhanaulti</City>
+				<City>Chitradurga</City>
+				<City>Srikakulam</City>
+				<City>Vijayaweda</City>
+				<City>Banswara</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -469,7 +460,6 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Mykenai</City>
 				<City>Megara</City>
 				<City>Olympia</City>
 				<City>Argos</City>
@@ -480,15 +470,12 @@
 				<City>Pharsalos</City>
 				<City>Eretria</City>
 				<City>Marathon</City>
-				<City>Pergamon</City>
 				<City>Artemision</City>
 				<City>Sicyon</City>
 				<City>Gortyn</City>
 				<City>Mytilene</City>
 				<City>Tegea</City>
-				<City>Apollonia</City>
 				<City>Argos Orestikon</City>
-				<City>Aegae</City>
 				<City>Dion</City>
 				<City>Amphipolis</City>
 				<City>Thasos</City>
@@ -500,7 +487,6 @@
 				<City>Lynkestis</City>
 				<City>Crestone</City>
 				<City>Stageira</City>
-				<City>Beroea</City>
 				<City>Aeani</City>
 				<City>Methoni</City>
 				<City>Ichnai</City>
@@ -599,26 +585,13 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Kolhapur</City>
-				<City>Jaipur</City>
-				<City>Hyderabad</City>
-				<City>Pune</City>
-				<City>Vijayanagara</City>
-				<City>Pataliputra</City>
-				<City>Agra</City>
-				<City>Madurai</City>
 				<City>Lucknow</City>
-				<City>Bhopal</City>
 				<City>Rajshahi</City>
-				<City>Peshawar</City>
-				<City>Darjeeling</City>
 				<City>Cuttack</City>
-				<City>Calicut</City>
 				<City>Rawalpindi</City>
-				<City>Quetta</City>
 				<City>Howrah</City>
 				<City>Triverapatnam</City>
 				<City>Dakpathar</City>
-				<City>Thanjavur</City>
 				<City>Jaunpur</City>
 				<City>Kodaikanal</City>
 				<City>Vrindavan</City>
@@ -721,20 +694,17 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Utica</City>
-				<City>Thapsus</City>
 				<City>Kerkouane</City>
 				<City>Sicca</City>
 				<City>Hadrumetum</City>
 				<City>Thaenae</City>
 				<City>Sexi</City>
 				<City>Baria</City>
-				<City>Carmona</City>
 				<City>Onoba</City>
 				<City>Ibrossim</City>
 				<City>Sarim Batim</City>
 				<City>Tipasa</City>
 				<City>Siga</City>
-				<City>Mogador</City>
 				<City>Motya</City>
 				<City>Solus</City>
 				<City>Lilybaeum</City>
@@ -742,13 +712,11 @@
 				<City>Bithia</City>
 				<City>Sulcis</City>
 				<City>Tharros</City>
-				<City>Olbia</City>
 				<City>Melita</City>
 				<City>Kossyra</City>
 				<City>Abyla</City>
 				<City>Lpqy Parva</City>
 				<City>Toscanos</City>
-				<City>Hippo Diarrhytus</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -827,22 +795,14 @@
 			<Cities>
 				<City>Havaiki</City>
 				<!-- Central Polynesia -->
-				<City>Manu'a</City>
 				<City>Samoa</City>
 				<City>Tonga</City>
 				<City>Rotuma</City>
 				<City>Uvea</City>				<!-- Wallis -->
 				<City>Futuna</City>
-				<City>Tokelau</City>
-				<City>Niue</City>
 				<!-- East Polynesia -->
-				<City>Rarotonga</City>
 				<City>Rai'atea</City>
-				<City>Tahiti</City>
-				<City>Rapanui</City>			<!-- Easter Island -->
 				<!-- North Polynesia -->
-				<City>Hawai'i</City>
-				<City>Maui</City>
 				<City>Oahu</City>
 				<!-- Aotearoa/New Zealand -->
 				<City>Okiato</City>
@@ -942,7 +902,6 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Pathragada</City>
 				<City>Neh</City>
 				<City>Ergili</City>
 				<City>Zohak</City>
@@ -963,12 +922,9 @@
 				<City>Bunyan</City>
 				<City>Charsadda</City>
 				<City>Ura Tyube</City>
-				<City>Dura-Europos</City>
 				<City>Qatna</City>
 				<City>Capisa</City>
 				<City>Kyreskhata</City>
-				<City>Peshawar</City>
-				<City>Van</City>
 				<City>Autiyara</City>
 				<City>Bagastana</City>
 				<City>Darmasa</City>
@@ -1065,18 +1021,12 @@
 				<City>Setia</City>
 				<City>Satricum</City>
 				<City>Ostia</City>
-				<City>Paestum</City>
-				<City>Placentia</City>
-				<City>Senagallica</City>
 				<City>Sipontum</City>
 				<City>Buxentum</City>
-				<City>Florentia</City>
 				<City>Augusta Praetoria</City>
 				<City>Ardea</City>
 				<City>Velitrae</City>
 				<City>Viroconium</City>
-				<City>Aquae Sextiae</City>
-				<City>Narbo Martius</City>
 				<City>Signia</City>
 				<City>Clusium</City>
 				<City>Sutrium</City>
@@ -1085,7 +1035,6 @@
 				<City>Agrippina</City>
 				<City>Corfinium</City>
 				<City>Treveri</City>
-				<City>Sirmium</City>
 				<City>Bagacum</City>
 				<City>Lauriacum</City>
 				<City>Teurnia</City>
@@ -1179,17 +1128,12 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Cholapuram</City>
-				<City>Thanjavur</City>
 				<City>Pazhaiyaarai</City>
-				<City>Madurai</City>
 				<City>Poompuhar</City>
 				<City>Vengi</City>
 				<City>Nagapattinam</City>
 				<City>Urayur</City>
-				<City>Kanchipuram</City>
 				<City>Mabappalam</City>
-				<City>Kalyani</City>
-				<City>Kadaram</City>
 				<City>Polonaruwa</City>
 				<City>Korkai</City>
 				<City>Kandai</City>
@@ -1201,7 +1145,6 @@
 				<City>Sendamangalam</City>
 				<City>Chidambaram</City>
 				<City>Darasuram</City>
-				<City>Tanjore</City>
 				<City>Mamallapuram</City>
 				<City>Sravana</City>
 				<City>Balligave</City>
@@ -1212,7 +1155,6 @@
 				<City>Warangal</City>
 				<City>Kotte</City>
 				<City>Polonnaruva</City>
-				<City>Anuradhapura</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -1289,7 +1231,6 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Gondar</City>
 				<City>Yeha</City>
 				<City>Debre Berhan</City>
 				<City>Qohaito</City>
@@ -1405,13 +1346,11 @@
 				<City>Namp'o</City>
 				<City>Cheju</City>
 				<City>Hyangsan</City>
-				<City>Ulsan</City>
 				<City>P'yongsong</City>
 				<City>Taejon</City>
 				<City>Paegam</City>
 				<City>Manp'o</City>
 				<City>Chonju</City>
-				<City>Sariwon</City>
 				<City>Suwon</City>
 				<City>Haeju</City>
 				<City>Taegu</City>
@@ -1503,11 +1442,9 @@
 				<City>Uxmal</City>
 				<City>Mayapan</City>
 				<City>Oxte'tuun</City>
-				<City>Oxhuitza</City>
 				<City>Xukpi</City>
 				<City>Quirigua</City>
 				<City>Izancanac</City>
-				<City>Yokib</City>
 				<City>Altun Ha</City>
 				<City>Izamal</City>
 				<City>Coba</City>
@@ -1516,7 +1453,6 @@
 				<City>Lamanain</City>
 				<City>Kaminaljuyu</City>
 				<City>Nim Li Punit</City>
-				<City>Mutal</City>
 				<City>Cozumel</City>
 				<City>Oxkintok</City>
 				<City>Becan</City>
@@ -1613,12 +1549,10 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Nicomedia</City>
 				<City>Laodicea</City>
 				<City>Amorium</City>
 				<City>Mistra</City>
 				<City>Theodosiopolis</City>
-				<City>Odessos</City>
 				<City>Mesembria</City>
 				<City>Sardica</City>
 				<City>Philippi</City>
@@ -1626,10 +1560,8 @@
 				<City>Cephalonia</City>
 				<City>Selymbria</City>
 				<City>Callipolis</City>
-				<City>Chandax</City>
 				<City>Lefkosia</City>
 				<City>Famagusta</City>
-				<City>Otranto</City>
 				<City>Chalcedon</City>
 				<City>Neocaesarea</City>
 				<City>Metilene</City>
@@ -1638,7 +1570,6 @@
 				<City>Gangra</City>
 				<City>Ochryd</City>
 				<City>Buthrotum</City>
-				<City>Naissus</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -1716,10 +1647,8 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Satsuma</City>
-				<City>Nara</City>
 				<City>Izumo</City>
 				<City>Shimonoseki</City>
-				<City>Matsuyama</City>
 				<City>Ise</City>
 				<City>Toyama</City>
 				<City>Fukushima</City>
@@ -1733,13 +1662,11 @@
 				<City>Sado</City>
 				<City>Kumamoto</City>
 				<City>Yamagata</City>
-				<City>Kanazawa</City>
 				<City>Himeji</City>
 				<City>Matsue</City>
 				<City>Furano</City>
 				<City>Kobe</City>
 				<City>Takayama</City>
-				<City>Aomori</City>
 				<City>Kamakuro</City>
 				<City>Kochi</City>
 			</Cities>
@@ -1823,7 +1750,6 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Birka</City>
-				<City>Roskilde</City>
 				<City>Sigtuna</City>
 				<City>Odense</City>
 				<City>Ribe</City>
@@ -1930,14 +1856,11 @@
 				<City>Anjar</City>
 				<City>Yamama</City>
 				<City>Mansura</City>
-				<City>Bukhara</City>
 				<City>Aydab</City>
 				<City>Bayt Ras</City>
 				<City>Taif</City>
 				<City>Shihr</City>
 				<City>Abu Dhabi</City>
-				<City>Kairouan</City>
-				<City>Oran</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -2014,14 +1937,11 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Lhasa</City>
-				<City>Xigaze</City>
 				<City>Gyaze</City>
 				<City>Amdo</City>
 				<City>Gar</City>
 				<City>Ladakh</City>
 				<City>Qamdo</City>
-				<City>Golmud</City>
 				<City>Nyingchi</City>
 				<City>Nyalam</City>
 				<City>Nagqu</City>
@@ -2029,7 +1949,6 @@
 				<City>Kangmar</City>
 				<City>Tingri</City>
 				<City>Da Qaidam</City>
-				<City>Zhongba</City>
 				<City>Gerze</City>
 				<City>Dagze</City>
 				<City>Sakya</City>
@@ -2153,7 +2072,6 @@
 				<City>Mahendraparvata</City>
 				<City>Amarendrapura</City>
 				<City>Chiang Rai</City>
-				<City>Kauthara</City>
 				<City>Lavo</City>
 				<City>Preah Vihear</City>
 				<City>Phanom Rung</City>
@@ -2162,11 +2080,9 @@
 				<City>Beng Melea</City>
 				<City>Prasat Bakan</City>
 				<City>Chalieng</City>
-				<City>Sukhothai</City>
 				<City>Viangchan</City>
 				<City>Battambang</City>
 				<City>Suryaparvata</City>
-				<City>Prey Nokor</City>
 				<City>O Keo</City>
 				<City>Aninditapura</City>
 				<City>Isanapura</City>
@@ -2250,29 +2166,21 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Trowulan</City>
-				<City>Jambi</City>
 				<City>Borobudur</City>
 				<City>Chaiya</City>
-				<City>Surabaya</City>
 				<City>Prambanan</City>
 				<City>Kota Gede</City>
 				<City>Malang</City>
 				<City>Surakarta</City>
-				<City>Malacca</City>
 				<City>Bojonegoro</City>
 				<City>Ratu Boko</City>
-				<City>Samarinda</City>
-				<City>Medan</City>
 				<City>Cirebon</City>
 				<City>Bandar</City>
 				<City>Penataran</City>
 				<City>Pajang</City>
 				<City>Demak</City>
-				<City>Bandung</City>
-				<City>Semarang</City>
 				<City>Plaosan</City>
 				<City>Bantam</City>
-				<City>Ternate</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -2357,20 +2265,12 @@
 				<City>Tanjah</City>				<!-- Tingis/Tangier -->
 				<City>Sabta</City>				<!-- Abyla/Septem/Ceuta -->
 				<City>Tamuda</City>				<!-- Tetouan -->
-				<City>Lixus</City>				<!-- Larache -->
-				<City>Sala</City>				<!-- Chellah/Kenitra -->
 				<City>Banasa</City>
 				<City>Walili</City>				<!-- Volubilis -->
-				<City>Mogador</City>			<!-- Essaouira -->
 				<!-- Numidia -->
-				<City>Cirta</City>				<!-- Constantine -->
 				<City>Rusicada</City>			<!-- Skikda -->
 				<City>Timgad</City>				<!-- Batna -->
-				<City>Hippo</City>				<!-- Bona/Annaba -->
 				<City>Thugga</City>				<!-- Dougga -->
-				<City>Tunis</City>
-				<City>Sharshal</City>			<!-- Jol/Caesaria/Cherchell -->
-				<City>Rusadir</City>			<!-- Melilla -->
 				<!-- Interior -->
 				<City>Ghadames</City>
 				<City>Sijilmasa</City>
@@ -2381,17 +2281,14 @@
 				<!-- Morocco -->
 				<City>Anfa</City>				<!-- Casablanca -->
 				<City>Fez</City>
-				<City>Basra</City>
 				<City>Meknes</City>
 				<City>Aghmat</City>
 				<!-- Almoravid -->
-				<City>Marrakesh</City>
 				<City>Rabat</City>
 				<City>Tagrart</City>			<!-- Tlemsen/Timinsan -->
 				<!-- Almohad -->
 				<City>Algiers</City>
 				<City>Uhran</City>				<!-- Oran -->
-				<City>Safaqis</City>			<!-- Sfax -->
 				<City>Mahdia</City>
 				<!-- Later Cities -->
 				<City>Ghardaia</City>
@@ -2475,12 +2372,7 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Murcia</City>
-				<City>Vit&#243;ria</City>
-				<City>Oviedo</City>
 				<City>Alicante</City>
-				<City>Burgos</City>
-				<City>Albacete</City>
 				<City>Jaen</City>
 				<City>Logrono</City>
 				<City>Palma</City>
@@ -2492,11 +2384,8 @@
 				<City>Alcorcon</City>
 				<City>Vigo</City>
 				<City>San Sebastian</City>
-				<City>Huelva</City>
 				<City>Ibiza</City>
 				<City>Las Palmas</City>
-				<City>M&#225;laga</City>
-				<City>Almer&#237;a</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -2584,14 +2473,10 @@
 				<City>Chartres</City>
 				<City>Grenoble</City>
 				<City>Dijon</City>
-				<City>Poitiers</City>
-				<City>Bayonne</City>
 				<City>Carcassonne</City>
 				<City>Toulon</City>
-				<City>Nice</City>
 				<City>Caen</City>
 				<City>Arles</City>
-				<City>Aix-en-Provence</City>
 				<City>Le Havre</City>
 				<City>Montpellier</City>
 				<City>Le Mans</City>
@@ -2601,7 +2486,6 @@
 				<City>Cannes</City>
 				<City>La Rochelle</City>
 				<City>Bourges</City>
-				<City>Calais</City>
 				<City>Saint &#201;tienne</City>
 			</Cities>
 			<Buildings>
@@ -2690,15 +2574,12 @@
 				<City>Cambridge</City>
 				<City>Hastings</City>
 				<City>Coventry</City>
-				<City>Warwick</City>
 				<City>Cardiff</City>
 				<City>Liverpool</City>
 				<City>Dover</City>
 				<City>Brighton</City>
-				<City>Norwich</City>
 				<City>Leeds</City>
 				<City>Reading</City>
-				<City>Richmond</City>
 				<City>Gloucester</City>
 				<City>Bristol</City>
 				<City>Leicester</City>
@@ -2706,12 +2587,9 @@
 				<City>Portsmouth</City>
 				<City>Berwick</City>
 				<City>Middlesbrough</City>
-				<City>Southampton</City>
 				<City>Sheffield</City>
-				<City>Colchester</City>
 				<City>Lancaster</City>
 				<City>Blackpool</City>
-				<City>Winchester</City>
 				<City>Hull</City>
 			</Cities>
 			<Buildings>
@@ -2797,48 +2675,22 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Aachen</City>
 				<City>Prague</City>
-				<City>Vienna</City>
 				<City>Nuremberg</City>
-				<City>Augsburg</City>
-				<City>Mainz</City>
-				<City>Ulm</City>
-				<City>Florence</City>
-				<City>Pisa</City>
-				<City>Luxemburg</City>
 				<City>Strassburg</City>
-				<City>Lubeck</City>
-				<City>Brandenburg</City>
-				<City>Heidelberg</City>
-				<City>Trier</City>
-				<City>Regensburg</City>
-				<City>Magdeburg</City>
 				<City>Worms</City>
-				<City>Constance</City>
 				<City>Basle</City>
-				<City>Zurich</City>
-				<City>Salzburg</City>
 				<City>Innsbruck</City>
 				<City>Trent</City>
-				<City>Genoa</City>
 				<City>Lucca</City>
-				<City>Sienna</City>
-				<City>Arles</City>
 				<City>Besancon</City>
-				<City>Metz</City>
 				<City>Wirten</City>
-				<City>Brussels</City>
 				<City>Antwerp</City>
 				<City>Luttich</City>
-				<City>Stettin</City>
 				<City>Kolberg</City>
-				<City>Breslau</City>
 				<City>Olmutz</City>
 				<City>Pilsen</City>
 				<City>Bamberg</City>
-				<City>Mannheim</City>
-				<City>Goslar</City>
 				<City>Spires</City>
 				<City>Paderborn</City>
 				<City>Passau</City>
@@ -2923,16 +2775,9 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Brjansk</City>
-				<City>Omsk</City>
-				<City>Kursk</City>
 				<City>Vladimir</City>
-				<City>Perm</City>
-				<City>Pskov</City>
 				<City>Starajarussa</City>
 				<City>Suzdal</City>
-				<City>Krasnojarsk</City>
-				<City>Saransk</City>
 				<City>Jelets</City>
 				<City>Ribinsk</City>
 			</Cities>
@@ -3032,7 +2877,6 @@
 				<City>Awkar</City>
 				<City>Kukiya</City>
 				<City>Takrur</City>
-				<City>Arawan</City>
 				<City>Sya</City>
 				<City>Taoudenni</City>
 				<City>Bambouk</City>
@@ -3050,8 +2894,6 @@
 				<City>Wudi</City>
 				<City>Birni Kimi</City>
 				<City>Yamia</City>
-				<City>Eko</City>
-				<City>Oyo</City>
 				<City>Idaban</City>
 				<City>Abeokuta</City>
 				<City>Akure</City>
@@ -3138,21 +2980,12 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Warsaw</City>
-				<City>Krakow</City>
-				<City>Gdansk</City>
-				<City>Poznan</City>
 				<City>Lodz</City>
-				<City>Lublin</City>
 				<City>Gdynia</City>
-				<City>Wroclaw</City>
 				<City>Gniezno</City>
-				<City>Szczecin</City>
 				<City>Bydgoszcz</City>
 				<City>Opole</City>
 				<City>Elblag</City>
-				<City>Plock</City>
-				<City>Breslau</City>
 				<City>Katowice</City>
 				<City>Bialystok</City>
 				<City>Lemburg</City>
@@ -3160,7 +2993,6 @@
 				<City>Legnica</City>
 				<City>Sosnowiec</City>
 				<City>Radom</City>
-				<City>Torun</City>
 				<City>Kielce</City>
 				<City>Gilwice</City>
 				<City>Zabrze</City>
@@ -3178,7 +3010,6 @@
 				<City>Zielona Gora</City>
 				<City>Tarnow</City>
 				<City>Chorzow</City>
-				<City>Kalisz</City>
 				<City>Koszalin</City>
 				<City>Slupsk</City>
 				<City>Jaworzno</City>
@@ -3270,8 +3101,6 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Coimbra</City>
-				<City>Lagos</City>
-				<City>Braga</City>
 				<City>Leiria</City>
 				<City>Braganza</City>
 				<City>Sagres</City>
@@ -3286,7 +3115,6 @@
 				<City>Silves</City>
 				<City>Vila Real</City>
 				<City>Tavira</City>
-				<City>Beja</City>
 				<City>Soure</City>
 				<City>Lamego</City>
 				<City>Palmela</City>
@@ -3387,27 +3215,8 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Ullantaytanpu</City>
 				<City>Corihuayrachina</City>
 				<City>Vilcas</City>
-				<City>Willkapampa</City>
-				<City>Kashamarka</City>
-				<City>Waras</City>
-				<City>Vitcos</City>
-				<City>Andahuailas</City>
-				<City>Ica</City>
-				<City>Lluli</City>
-				<City>Chuqiapu</City>
-				<City>Huanuqupampa</City>
-				<City>Tambuqcucha</City>
-				<City>Cacsamalca</City>
-				<City>Sauza</City>
-				<City>Tampupuca</City>
-				<City>Huaqa</City>
-				<City>Chuitu</City>
-				<City>Acari</City>
-				<City>Lauricucha</City>
-				<City>Tomebamba</City>
 				<City>Riobamba</City>
 				<City>Bomb&#243;n</City>
 				<City>Tumbes</City>
@@ -3493,22 +3302,16 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Ravenna</City>
 				<City>Pavia</City>
-				<City>Palermo</City>
 				<City>Mantua</City>
-				<City>Cremona</City>
 				<City>Legnano</City>
 				<City>Pesaro</City>
 				<City>Urbino</City>
-				<City>Rimini</City>
 				<City>Fano</City>
 				<City>Ferrara</City>
 				<City>Senagallica</City>
 				<City>Sienna</City>
 				<City>Modena</City>
-				<City>Parma</City>
-				<City>Placentia</City>
 				<City>Reggio Emilia</City>
 				<City>Padua</City>
 				<City>Forl&#236;</City>
@@ -3598,7 +3401,6 @@
 			<Cities>
 				<City>Ning-hsia</City>
 				<City>Sanchu</City>
-				<City>Kazan</City>
 				<City>Darhan</City>
 				<City>Mandalgovi</City>
 				<City>Choybalsan</City>
@@ -3613,7 +3415,6 @@
 				<City>Uliastay</City>
 				<City>Har-Ayrag</City>
 				<City>Nalayh</City>
-				<City>Tes</City>
 				<City>Hjargas</City>
 			</Cities>
 			<Buildings>
@@ -3804,26 +3605,13 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Kolhapur</City>
-				<City>Jaipur</City>
-				<City>Hyderabad</City>
-				<City>Pune</City>
-				<City>Vijayanagara</City>
-				<City>Pataliputra</City>
-				<City>Agra</City>
-				<City>Madurai</City>
 				<City>Lucknow</City>
-				<City>Bhopal</City>
 				<City>Rajshahi</City>
-				<City>Peshawar</City>
-				<City>Darjeeling</City>
 				<City>Cuttack</City>
-				<City>Calicut</City>
 				<City>Rawalpindi</City>
-				<City>Quetta</City>
 				<City>Howrah</City>
 				<City>Triverapatnam</City>
 				<City>Dakpathar</City>
-				<City>Thanjavur</City>
 				<City>Jaunpur</City>
 				<City>Kodaikanal</City>
 				<City>Vrindavan</City>
@@ -3930,19 +3718,11 @@
 				<City>Eskisehir</City>
 				<City>Inebolu</City>
 				<City>Artuin</City>
-				<City>Bodrum</City>
-				<City>Eregli</City>
 				<City>Silifke</City>
-				<City>Sivas</City>
-				<City>Amasya</City>
 				<City>Marmaris</City>
-				<City>Iznik</City>
 				<City>Bilecik</City>
-				<City>Efes</City>
-				<City>Bergama</City>
 				<City>Gelibolu</City>
 				<City>Bachcisaraj</City>
-				<City>Kerc</City>
 				<City>Tergoviste</City>
 				<City>Semendre</City>
 				<City>Kastamonu</City>
@@ -4035,7 +3815,6 @@
 				<City>Mahendraparvata</City>
 				<City>Amarendrapura</City>
 				<City>Chiang Rai</City>
-				<City>Kauthara</City>
 				<City>Lavo</City>
 				<City>Preah Vihear</City>
 				<City>Phanom Rung</City>
@@ -4044,11 +3823,9 @@
 				<City>Beng Melea</City>
 				<City>Prasat Bakan</City>
 				<City>Chalieng</City>
-				<City>Sukhothai</City>
 				<City>Viangchan</City>
 				<City>Battambang</City>
 				<City>Suryaparvata</City>
-				<City>Prey Nokor</City>
 				<City>O Keo</City>
 				<City>Aninditapura</City>
 				<City>Isanapura</City>
@@ -4135,13 +3912,6 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Mbanza Kongo</City>
-				<City>Luanda</City>
-				<City>Kinshasa</City>
-				<City>Loubomo</City>
-				<City>Matadi</City>
-				<City>Cabinda</City>
-				<City>Bandundu</City>
 				<City>Madingou</City>
 				<City>Mindouli</City>
 				<City>Kimpese</City>
@@ -4159,12 +3929,10 @@
 				<City>Kutu</City>
 				<City>Bolobo</City>
 				<City>Gamboma</City>
-				<City>Mushie</City>
 				<City>Kasongo-Lunda</City>
 				<City>Popokabaka</City>
 				<City>Idiofa</City>
 				<City>Bulungu</City>
-				<City>Malanje</City>
 				<City>Caxito</City>
 				<City>Inongo</City>
 				<City>Sibiti</City>
@@ -4249,37 +4017,25 @@
 				<City>Tabriz</City>
 				<City>Isfahan</City>
 				<City>Quazvin</City>
-				<City>Herat</City>
 				<City>Mashad</City>
-				<City>Tehran</City>
 				<City>Hamedan</City>
 				<City>Ardabil</City>
 				<City>Maragha</City>
-				<City>Shiraz</City>
 				<City>Karaj</City>
 				<City>Kerman</City>
-				<City>Rasht</City>
-				<City>Baghdad</City>
-				<City>Kandahar</City>
 				<City>Derbent</City>
 				<City>Qom</City>
-				<City>Samarra</City>
 				<City>Ahvaz</City>
 				<City>Karbala</City>
 				<City>Sari</City>
 				<City>Urmia</City>
 				<City>Khoy</City>
-				<City>Najaf</City>
 				<City>Semnan</City>
 				<City>Zaranj</City>
-				<City>Yazd</City>
 				<City>Lahijan</City>
 				<City>Kermanshah</City>
 				<City>Arzinjan</City>
-				<City>Baku</City>
 				<City>Dimdim</City>
-				<City>Amasya</City>
-				<City>Nain</City>
 				<City>Bahrain</City>
 			</Cities>
 			<Buildings>
@@ -4357,14 +4113,12 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>'s-Gravenhage</City>
 				<City>Maastricht</City>
 				<City>Middelburg</City>
 				<City>Delft</City>
 				<City>Leiden</City>
 				<City>Haarlem</City>
 				<City>'s-Hertogenbosch</City>
-				<City>Dorestad</City>
 				<City>Deventer</City>
 				<City>Kampen</City>
 				<City>Leeuwarden</City>
@@ -4476,7 +4230,6 @@
 				<City>Duisburg</City>
 				<City>Bonn</City>
 				<City>Bochum</City>
-				<City>Magdeburg</City>
 				<City>Bielefeld</City>
 				<City>Mannheim</City>
 				<City>Karlsruhe</City>
@@ -4484,20 +4237,15 @@
 				<City>Wiesbaden</City>
 				<City>Munster</City>
 				<City>Chemnitz</City>
-				<City>Braunschweig</City>
 				<City>Halle</City>
 				<City>Monchengladbach</City>
 				<City>Wuppertal</City>
-				<City>Lubeck</City>
 				<City>Hagen</City>
-				<City>Erfurt</City>
 				<City>Heidelberg</City>
-				<City>Kassel</City>
 				<City>Oberhausen</City>
 				<City>Hamm</City>
 				<City>Saarbrucken</City>
 				<City>Krefeld</City>
-				<City>Potsdam</City>
 				<City>Solingen</City>
 				<City>Osnabruck</City>
 				<City>Ludwigshafen</City>
@@ -4508,7 +4256,6 @@
 				<City>Darmstadt</City>
 				<City>Herne</City>
 				<City>Wurzburg</City>
-				<City>Regensburg</City>
 				<City>Recklinghausen</City>
 				<City>Gottingen</City>
 				<City>Wolfsburg</City>
@@ -4597,29 +4344,19 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Portland</City>
-				<City>Pittsburgh</City>
 				<City>Oakland</City>
 				<City>Orlando</City>
 				<City>Tacoma</City>
-				<City>Springfield</City>
 				<City>Centralia</City>
 				<City>Charlotte</City>
 				<City>Madison</City>
-				<City>Providence</City>
-				<City>Hartford</City>
 				<City>Stockton</City>
 				<City>Tampa Bay</City>
-				<City>Birmingham</City>
-				<City>Honolulu</City>
-				<City>Sacramento</City>
 				<City>Boise</City>
 				<City>Monterey</City>
 				<City>Columbus</City>
 				<City>Le Bam</City>
-				<City>San Antonio</City>
 				<City>Santa Monica</City>
-				<City>Santa Cruz</City>
 				<City>Hunt Valley</City>
 			</Cities>
 			<Buildings>
@@ -4701,28 +4438,17 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Buenos Aires</City>
-				<City>Santa Fe</City>
 				<City>La Pampa</City>
 				<City>Entre Rios</City>
-				<City>Cordoba</City>
-				<City>Tucuman</City>
-				<City>Mendoza</City>
-				<City>Corrientes</City>
 				<City>Misiones</City>
 				<City>Chaco</City>
 				<City>Formosa</City>
 				<City>Jujuy</City>
-				<City>Salta</City>
-				<City>San Luis</City>
-				<City>San Juan</City>
 				<City>Santiago del Estero</City>
 				<City>Catamarca</City>
 				<City>La Rioja</City>
 				<City>Neuquen</City>
 				<City>Rio Negro</City>
-				<City>Santa Cruz</City>
-				<City>Chubut</City>
 				<City>Tierra del Fuego</City>
 			</Cities>
 			<Buildings>
@@ -4802,25 +4528,17 @@
 			<Cities>
 				<City>Toluca</City>
 				<City>Queretaro</City>
-				<City>Morelia</City>
 				<City>Villahermosa</City>
 				<City>Culiacan</City>
 				<City>Cancun</City>
-				<City>Matamoros</City>
-				<City>La Paz</City>
-				<City>Mexicali</City>
-				<City>Nogales</City>
 				<City>Leon</City>
 				<City>Los Mochis</City>
 				<City>Reynosa</City>
 				<City>Puerto Vallarta</City>
-				<City>Chetumal</City>
-				<City>Zacatecas</City>
 				<City>Palenque</City>
 				<City>Santa Rosalia</City>
 				<City>Alamos</City>
 				<City>Manzanillo</City>
-				<City>Rosarito</City>
 				<City>San Felipe</City>
 				<City>San Ignacio</City>
 				<City>Cabo San Lucas</City>
@@ -4901,15 +4619,12 @@
 			<Cities>
 				<City>Santo Tomas</City>
 				<City>Magangue</City>
-				<City>Guayaquil</City>
-				<City>Maracaibo</City>
 				<City>Puerto Cabello</City>
 				<City>Popayan</City>
 				<City>Angostura</City>
 				<City>Santiago de Cali</City>
 				<City>Tuja</City>
 				<City>Medellin</City>
-				<City>Santa Marta</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -4982,35 +4697,18 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Rio de Janeiro</City>
-				<City>S&#227;o Paulo</City>
-				<City>Brasilia</City>
-				<City>Porto Alegre</City>
 				<City>Salvador</City>
-				<City>Recife</City>
-				<City>Belo Horizonte</City>
-				<City>Manaus</City>
-				<City>Fortaleza</City>
-				<City>S&#227;o Lu&#237;s</City>
-				<City>Bel&#233;m</City>
-				<City>Curitiba</City>
 				<City>Goi&#226;nia</City>
 				<City>Campinas</City>
 				<City>Duque de Caxias</City>
 				<City>Guarulhos</City>
 				<City>Natal</City>
-				<City>Cuiab&#225;</City>
 				<City>Aracaju</City>
 				<City>S&#227;o Jos&#233;</City>
 				<City>Sorocaba</City>
 				<City>Niter&#243;i</City>
 				<City>Florian&#243;polis</City>
 				<City>Vila Velha</City>
-				<City>Macap&#225;</City>
-				<City>Porto Velho</City>
-				<City>Vit&#243;ria</City>
-				<City>Rio Branco</City>
-				<City>Boa Vista</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -5098,7 +4796,6 @@
 				<City>Moncton</City>
 				<City>Trois-Rivieres</City>
 				<City>Cape Breton</City>
-				<City>Saguenay</City>
 				<City>Iqaluit</City>
 				<City>Barrie</City>
 				<City>Abbotsford</City>
@@ -5195,7 +4892,6 @@
 				<City>Anasazi</City>
 				<City>Teoihuacan</City>
 				<City>Olmec</City>
-				<City>Zapotec</City>
 				<City>Chinook</City>
 				<City>Apache</City>
 				<City>Chehalis</City>
@@ -5432,7 +5128,6 @@
 				<City>Anasazi</City>
 				<City>Teoihuacan</City>
 				<City>Olmec</City>
-				<City>Zapotec</City>
 				<City>Chinook</City>
 				<City>Apache</City>
 				<City>Chehalis</City>
@@ -5876,50 +5571,34 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Bibracte</City>
-				<City>Vienne</City>
-				<City>Tolosa</City>
 				<City>Gergovia</City>
-				<City>Camulodunum</City>
 				<City>Verlamion</City>
 				<City>Durnovaria</City>
 				<City>Isca</City>
 				<City>Durocortorum</City>
-				<City>Bagacum</City>
 				<City>Nemetocenna</City>
 				<City>Calleva</City>
 				<City>Venta</City>
 				<City>Isurium</City>
 				<City>Ratae</City>
-				<City>Lutetia</City>
 				<City>Entremont</City>
-				<City>Burdigala</City>
 				<City>Numausus</City>
-				<City>Samarobriva</City>
 				<City>Brixia</City>
-				<City>Mediolanum</City>
-				<City>Cremona</City>
 				<City>Taurasia</City>
 				<City>Sinigaglia</City>
 				<City>Noviomagus</City>
-				<City>Durovernum</City>
 				<City>Luguvalio</City>
 				<City>Lindinis</City>
 				<City>Okilis</City>
-				<City>Numantia</City>
 				<City>Tiernes</City>
 				<City>Botorrita</City>
 				<City>Moridunum</City>
-				<City>Tara</City>
-				<City>Eblana</City>
 				<City>Alesia</City>
 				<City>Andematunum</City>
 				<City>Ubiorum</City>
-				<City>Geneva</City>
-				<City>Vindobona</City>
 				<City>Pisonium</City>
 				<City>Acquincum</City>
 				<City>Tylis</City>
-				<City>Ancyra</City>
 			</Cities>
 			<Buildings>
 				<Building>
@@ -6111,19 +5790,11 @@
 				<City>Eskisehir</City>
 				<City>Inebolu</City>
 				<City>Artuin</City>
-				<City>Bodrum</City>
-				<City>Eregli</City>
 				<City>Silifke</City>
-				<City>Sivas</City>
-				<City>Amasya</City>
 				<City>Marmaris</City>
-				<City>Iznik</City>
 				<City>Bilecik</City>
-				<City>Efes</City>
-				<City>Bergama</City>
 				<City>Gelibolu</City>
 				<City>Bachcisaraj</City>
-				<City>Kerc</City>
 				<City>Tergoviste</City>
 				<City>Semendre</City>
 				<City>Kastamonu</City>
@@ -6728,27 +6399,16 @@
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
-				<City>Uruk</City>
-				<City>Eridu</City>
-				<City>Kish</City>
-				<City>Lagash</City>
 				<City>Ur</City>
 				<City>Nibru</City>
 				<City>Bad-Tibira</City>
 				<City>Zimbir</City>
-				<City>Shuruppak</City>
-				<City>Umma</City>
-				<City>Larsa</City>
-				<City>Isin</City>
 				<City>Girsu</City>
-				<City>Adab</City>
-				<City>Zabalam</City>
 				<City>Akshak</City>
 				<City>Larak</City>
 				<City>Kisiga</City>
 				<City>Nina</City>
 				<City>Dilbat</City>
-				<City>Kutu</City>
 				<City>Marad</City>
 				<City>Enegi</City>
 				<City>Abu Salabikh</City>
