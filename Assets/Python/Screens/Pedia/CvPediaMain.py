@@ -8,7 +8,6 @@ import ScreenInput
 import CvPediaScreen
 import CvPediaCivilization
 import CvPediaLeader
-import CvPediaTrait
 import CvPediaCivic
 import CvPediaReligion
 import CvPediaCorporation
@@ -110,7 +109,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		self.mapListGenerators = {
 			PEDIA_CIVS					: self.placeCivs,
 			PEDIA_LEADERS				: self.placeLeaders,
-			PEDIA_TRAITS				: self.placeTraits,
 			PEDIA_CIVICS				: self.placeCivics,
 			PEDIA_RELIGIONS				: self.placeReligions,
 			PEDIA_CORPORATIONS			: self.placeCorporations,
@@ -132,7 +130,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_PROJECTS				: self.placeProjects,
 			PEDIA_TERRAINS				: self.placeTerrains,
 			PEDIA_FEATURES				: self.placeFeatures,
-			PEDIA_NATURAL_WONDERS		: self.placeNaturalWonders,
 			PEDIA_RESOURCES				: self.placeResources,
 			PEDIA_IMPROVEMENTS			: self.placeImprovements,
 			PEDIA_CONCEPTS				: self.placeConcepts,
@@ -147,7 +144,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		self.mapScreenFunctions = {
 			PEDIA_CIVS					: CvPediaCivilization.CvPediaCivilization(self),
 			PEDIA_LEADERS				: self.pediaLeader,
-			PEDIA_TRAITS				: CvPediaTrait.CvPediaTrait(self),
 			PEDIA_CIVICS				: CvPediaCivic.CvPediaCivic(self),
 			PEDIA_RELIGIONS				: CvPediaReligion.CvPediaReligion(self),
 			PEDIA_CORPORATIONS			: CvPediaCorporation.CvPediaCorporation(self),
@@ -167,7 +163,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_PROJECTS				: CvPediaProject.CvPediaProject(self),
 			PEDIA_TERRAINS				: CvPediaTerrain.CvPediaTerrain(self),
 			PEDIA_FEATURES				: CvPediaFeature.CvPediaFeature(self),
-			PEDIA_NATURAL_WONDERS		: CvPediaFeature.CvPediaFeature(self),
 			PEDIA_RESOURCES				: CvPediaResource.CvPediaResource(self),
 			PEDIA_IMPROVEMENTS			: CvPediaImprovement.CvPediaImprovement(self),
 			PEDIA_CONCEPTS				: CvPediaConcepts.CvPediaConcepts(self),
@@ -201,9 +196,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 
 		self.szCategoryCivs					= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIV", ())
 		self.szCategoryLeaders				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_LEADER", ())
-		self.szCategoryTraits				= CyTranslator().getText("TXT_KEY_PEDIA_TRAITS", ())
 		self.szCategoryCivics				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIVIC", ())
-		self.szCategoryTenets				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_TENET", ())
 		self.szCategoryReligions			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_RELIGION", ())
 		self.szCategoryCorporations			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CORPORATIONS", ())
 		self.szCategorySpecialists			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_SPECIALIST", ())
@@ -224,7 +217,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		self.szCategoryProjects				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_PROJECT", ())
 		self.szCategoryTerrains				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_TERRAIN", ())
 		self.szCategoryFeatures				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_FEATURE", ())
-		self.szCategoryNaturalWonders		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_NATURAL_WONDERS", ())
 		self.szCategoryBonuses				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_BONUS", ())
 		self.szCategoryImprovements			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_IMPROVEMENT", ())
 		self.szCategoryConcepts				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CONCEPTS", ())
@@ -233,9 +225,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		self.categoryList = [
 			["CIVS",			self.szCategoryCivs],
 			["CIVS",			self.szCategoryLeaders],
-			["CIVS",			self.szCategoryTraits],
 			["CIVICS",			self.szCategoryCivics],
-			["RELIGIONS",		self.szCategoryTenets],
 			["RELIGIONS",		self.szCategoryReligions],
 			["CORPORATIONS",	self.szCategoryCorporations],
 			["SPECIALISTS",		self.szCategorySpecialists],
@@ -246,7 +236,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			["UNITS",			self.szCategoryUnitCategories],
 			["UNITS",			self.szCategoryUnitUpgrades],
 			["PROMOTIONS",		self.szCategoryPromotions],
-			["PROMOTIONS",		self.szCategoryPromotionTree],
 			["BUILDINGS",		self.szCategoryBuildings],
 			["BUILDINGS",		self.szCategoryReligiousBuildings],
 			["BUILDINGS",		self.szCategoryUniqueBuildings],
@@ -256,7 +245,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			["BUILDINGS",		self.szCategoryProjects],
 			["TERRAINS",		self.szCategoryTerrains],
 			["TERRAINS",		self.szCategoryFeatures],
-			["TERRAINS",		self.szCategoryNaturalWonders],
 			["TERRAINS",		self.szCategoryBonuses],
 			["TERRAINS",		self.szCategoryImprovements],
 			["HINTS",			self.szCategoryConcepts],
