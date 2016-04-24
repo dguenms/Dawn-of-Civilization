@@ -2468,7 +2468,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
-	case VIKING:
+	case VIKINGS:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
 		aiUnitAIVal[UNITAI_ATTACK_SEA] *= 3;
@@ -2603,7 +2603,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case MONGOLIA:
 		aiUnitAIVal[UNITAI_ATTACK] *= 2;
 		break;
-	case AZTEC:
+	case AZTECS:
 		aiUnitAIVal[UNITAI_EXPLORE] /= 2;
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
@@ -3184,7 +3184,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										if (iI == GREAT_WALL) iTempValue /= 10;
 										else if (iI == HIMEJI_CASTLE) iTempValue *= 3;
 										break;
-									case VIKING:
+									case VIKINGS:
 										if (iI == CERN_RESEARCH_COMPLEX) {
 											iTempValue *= 3;
 											iTempValue /= 2;
@@ -3299,7 +3299,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case MONGOLIA:
 										break;
-									case AZTEC:
+									case AZTECS:
 										if (iI == TEMPLE_OF_KUKULKAN) iTempValue *= 3;
 										else if (iI == FLOATING_GARDENS)
 										{
@@ -3383,7 +3383,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									}
 
-									if (getOwnerINLINE() >= VIKING) //since it is now enabled for Medieval civs too
+									if (getOwnerINLINE() >= VIKINGS) //since it is now enabled for Medieval civs too
 										if (iI == GREAT_WALL) iTempValue /= 12;
 
 									iValue += (iTempValue - 10);

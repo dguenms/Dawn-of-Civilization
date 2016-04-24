@@ -13,8 +13,6 @@ typedef list<char*> LISTCHAR;
 
 #define GREATPALACE				(98)
 #define SUMMERPALACE			(98)
-//#define VERSAILLES				(2)
-//#define FORBIDDEN_PALACE			(2)
 
 #define BEGIN_WONDERS				(138) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
