@@ -37,16 +37,16 @@ class CvPediaCivic:
 		self.W_EFFECTS = self.top.R_PEDIA_PAGE - self.X_EFFECTS
 		self.H_EFFECTS = 160
 
-		self.X_LEADERS = self.X_INFO_PANE
-		self.W_LEADERS = self.top.R_PEDIA_PAGE - self.X_LEADERS
-		self.H_LEADERS = 110
-		self.Y_LEADERS = self.top.B_PEDIA_PAGE - self.H_LEADERS
+		#self.X_LEADERS = self.X_INFO_PANE
+		#self.W_LEADERS = self.top.R_PEDIA_PAGE - self.X_LEADERS
+		#self.H_LEADERS = 110
+		#self.Y_LEADERS = self.top.B_PEDIA_PAGE - self.H_LEADERS
 
 		self.X_HISTORY = self.X_INFO_PANE
 		self.Y_HISTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
 		self.W_HISTORY = self.top.R_PEDIA_PAGE - self.X_HISTORY
-		self.H_HISTORY = self.Y_LEADERS - self.Y_HISTORY - 10
-
+		#self.H_HISTORY = self.Y_LEADERS - self.Y_HISTORY - 10
+		self.H_HISTORY = self.top.B_PEDIA_PAGE - self.Y_HISTORY
 
 
 	def interfaceScreen(self, iCivic):
@@ -55,7 +55,6 @@ class CvPediaCivic:
 		self.placeRequires()
 		self.placeEffects()
 		self.placeHistory()
-		self.placeLeaders()
 
 
 
@@ -99,7 +98,7 @@ class CvPediaCivic:
 		screen.attachListBoxGFC(panel, text, "", TableStyles.TABLE_STYLE_EMPTY)
 		screen.enableSelect(text, False)
 
-		szText += CyGameTextMgr().parseCivicInfo(self.iCivic, True, False, True).strip()
+		szText = CyGameTextMgr().parseCivicInfo(self.iCivic, True, False, True).strip()
 		for iYield in xrange(YieldTypes.NUM_YIELD_TYPES):
 			oldstring = u"%c from Trade Routes" % (gc.getYieldInfo(iYield).getChar())
 			newstring = u" Trade Route Yield as %c" % (gc.getYieldInfo(iYield).getChar())
@@ -117,28 +116,6 @@ class CvPediaCivic:
 		screen.addPanel(panel, "History", "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
 		szHistory = gc.getCivicInfo(self.iCivic).getCivilopedia()
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-
-
-
-	def placeLeaders(self):
-		screen = self.top.getScreen()
-		panel = self.top.getNextWidgetName()
-
-		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_LEADER", ()), "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_BLUE50)
-		screen.enableSelect(panel, False)
-		screen.attachLabel(panel, "", "  ")
-
-		for iLeader in xrange(gc.getNumLeaderHeadInfos()):
-			if iLeader != gc.getInfoTypeForString('LEADER_BARBARIAN'):
-				LeaderInfo = gc.getLeaderHeadInfo(iLeader)
-				if LeaderInfo.getFavoriteCivic() == self.iCivic:
-					screen.attachImageButton(panel, "", LeaderInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER, iLeader, 1, False)
-
-				LovedTenets = HR_Religion.Tenets().getLovedTenets(iLeader)
-				if LovedTenets != []:
-					if self.iCivic == LovedTenets[0]:
-						screen.attachImageButton(panel, "", LeaderInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER, iLeader, 1, False)
-
 
 
 	def handleInput (self, inputClass):
