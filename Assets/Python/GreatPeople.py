@@ -1654,34 +1654,28 @@ iCivPortugal : {
 },
 iCivInca : {
 	iGreatProphet : [
-		"Guyasuta",
-		"Yahuar Huacac",
+		"Yahuar Huacac", # 14th
 	],
 	iGreatArtist : [
-		"Ah Cacao",
-		"Viracocha",
-		"Ninan Cuyochi",
-		"Ocllo",
+		"Viracocha", # legendary
+		"Ninan Cuyochi", # 16th
+		"fPalla Chimpu Ocllo", # 16th
 	],
 	iGreatScientist : [
-		"Sinchi Roca",
-		"Maita Capac",
-		"Huascar",
-		"Titu Cusi",
-		"Manco Capac",
-		"Ibca Roca",
+		"Sinchi Roca", # 12th
+		"Mayta Qhapaq Inka", # 13th
+		"Manqu Qhapaq", # 13th
+		"Inka Roq'a", # 14th
+		"Waskar Inka", # 16th
+		"Titu Cusi", # 16th
 	],
 	iGreatMerchant : [
-		"Tupa Inca-Yupanqui",
-		"Felipillo",
-		"Quetzal-Macau",
+		"Tupaq Inka Yupanki", # 15th
+		"Felipillo", # 16th
 	],
 	iGreatEngineer : [
-		"Kenu Curaua",
-		"Capac Yupanqui",
-		"Mana-Paoa",
-		"Sipan-Itchi",
-		"Sayri Tupa Inca",
+		"Qhapaq Yunpanki Inka", # 14th
+		"Sayri Tupaq Inka", # 16th
 	],
 	iGreatStatesman : [
 		u"Mayta Cápac", # 14th
@@ -1691,12 +1685,12 @@ iCivInca : {
 		u"Tápac Amaru", # 18th
 	],
 	iGreatGeneral : [
-		"Pachacuti",
-		"Atahualpa",
-		"Manco Inca",
-		"Tupa Amaru",
-		"Chalicuchima",
-		"Quisquis",
+		"Pachakutiq Inka Yupanki", # 15th
+		"Atawallpa", # 16th
+		"Manqu Inka Yupanki", # 16th
+		"Thupaq Amaru", # 16th
+		"Chalcuchimaq", # 16th
+		"Quisquis", # 16th
 		iRenaissance,
 		"fBartolina Sisa", # 18th
 		iIndustrial,
@@ -1838,40 +1832,31 @@ iCivMongols : {
 },
 iCivAztecs : {
 	iGreatProphet : [
-		"Tlacateotl",
-		"Tenoch",
-		"Papantzin",
-		"Yacotzin",
-		"Ixtlilxochitl",
+		"Tenoch", # 14th
+		"Tlacateotl", # 15th
+		"fPapantzin", # 15th
+		"Ixtlilxochitl", # 15th
+		"fYacotzin", # 16th
 	],
 	iGreatArtist : [
-		"Cipactli",
-		"Oxomoco",
-		"Huitzilopochtli",
-		"Techotlalatzin",
-		"Ihuitemotzin",
-		"fMacuilxochitzin",
+		"Techotlalatzin", # 14th
+		"Ihuitemotzin", # 16th
 	],
 	iGreatScientist : [
-		"Chichatoyotl",
-		"Textalatzin",
-		"Axayacatl",
-		"Ixtlilxochitl",
-		"Coanacochtzin",
+		"Axayacatl", # 15th
+		"Ixtlilxochitl", # 15th
+		"Coanacoch", # 16th
 	],
 	iGreatMerchant : [
-		"Cuauhtemoc",
-		"Tlacotzin",
-		"Chak-Mol",
-		"Atlante",
-		"Techichpotzin",
+		"Cuauhtemoc", # 16th
+		"Tlacotzin", # 16th
+		"fTechichpotzin", # 16th
 	],
 	iGreatEngineer : [
-		"Xolotl",
-		"Itzcatl",
-		"Mixcoatl",
-		"Tlacaelel",
-		"Moquihuix",
+		"Jasaw Chan K'awiil", # 8th 
+		"Itzcatl", # 15th
+		"Tlacaelel", # 15th
+		"Moquihuix", # 15th
 	],
 	iGreatStatesman : [
 		"Acamapichtli", # 14th
@@ -1883,54 +1868,55 @@ iCivAztecs : {
 		"fRigoberta Mench&#250;", # 20th
 	],
 	iGreatGeneral : [
-		"Ahuitzotl",
-		"Itzcoatl",
-		"Tezozomoc",
-		"Maxtla",
-		"Huitzilhuitl",
-		"Chimalpopoca",
+		"Tezozomoc", # 14th
+		"Ahuitzotl", # 15th
+		"Itzcoatl", # 15th
+		"Maxtla", # 15th
+		"Huitzilhuitl", # 15th
+		"Chimalpopoca", # 15th
 	],
 },
 iCivMughals : {
 	iGreatProphet : [
-		"Rajah Birbal",
-		"Guru Ram Das",
-		"Guru Arjan",
-		"Hiravijaya ji",
-		"Shah Abdul Latif Bhittai",
-		"Bulleh Shah",
+		"Rajah Birbal", # 16th
+		"Guru Ram Das", # 16th
+		"Guru Arjan", # 16th
+		"Hiravijaya ji", # 16th
+		"Shah Abdul Latif Bhittai", # 18th
+		"Bulleh Shah", # 18th
 	],
 	iGreatArtist : [
-		"Gulbadan Begum",
-		"Shaikh Abu al-Faiz ibn Mubarak",
-		"'Abd al-Samad",
-		"Ustad Mansur",
-		"Govardhan",
-		"Jafar Zatalli",
+		"fShahzadi Gulbadan Begum", # 16th
+		"Abu al-Faiz ibn Mubarak", # 16th
+		"Abd al-Samad", # 16th
+		"Ustad Mansur", # 17th
 	],
 	iGreatScientist : [
-		"Kashmiri ibn Luqman",
-		"Abu al-Fazid ibn Mubarak",
-		"Muhammad Salih Tahtawi",
-		"'Abd-ul-Qadir Bada'uni",
-		"Maharaja Sawai Jai Singh II",
-		"Khwaja Nizam-ud-Din Ahmad",
+		"Ali Kashmiri ibn Luqman", # 16th
+		"Abu al-Faiz ibn Mubarak", # 16th
+		"Abd-ul-Qadir Bada'uni", # 16th
+		"Muhammad Salih Tahtawi", # 17th
+		"Sawai Jai Singh", # 18th
+		iIndustrial,
+		"Khwaja Nizam-ud-Din Ahmad", # 19th
 	],
 	iGreatMerchant : [
-		"Sher Shah Suri",
-		"Raja Todar Mal",
-		"Mir Jumla II",
-		"Yahya Saleh",
-		"Khan 'Alam",
-		"Mian Muhammad Mansha",
+		"Sher Shah Suri", # 16th
+		"Raja Todar Mal", # 16th
+		"Mir Jumla", # 17th
+		"Yahya Saleh", # 16th
+		"Khan Alam", # 18th
+		iModern,
+		"Mian Muhammad Mansha", # 20th
 	],
 	iGreatEngineer : [
-		"Ustad Ahmad Lahauri",
-		"Fathullah Shirazi",
-		"Abdur Rahman Hye",
-		"Abdul Qadeer Khan",
-		"Munir Ahmad Khan",
-		"fYasmeen Lari",
+		"Fathullah Shirazi", # 16th
+		"Ustad Ahmad Lahauri", # 17th
+		iModern,
+		"Abdur Rahman Hye", # 20th
+		"Abdul Qadeer Khan", # 20th
+		"Munir Ahmad Khan", # 20th
+		"fYasmeen Lari", # 20th
 	],
 	iGreatStatesman : [
 		"fRazia Sultana", # 13th
@@ -1942,12 +1928,12 @@ iCivMughals : {
 		"Choudhry Ali", # 20th
 	],
 	iGreatGeneral : [
-		"Zahir-ud-din Muhammad Babur",
-		"Bayram Khan",
-		"Mir Baqi",
-		"Abudullah Khan Barha",
-		"Abul Muzaffar Aurangzeb",
-		"Ali Vardi Khan",
+		"Zahir-ud-din Muhammad Babur", # 15th
+		"Mir Baqi", # 15th
+		"Bayram Khan", # 16th
+		"Abul Muzaffar Aurangzeb", # 17th
+		"Abudullah Khan Barha", # 18th
+		"Ali Vardi Khan", # 18th
 		iIndustrial,
 		"fBegum Hazrat Mahal", # 19th
 	],
@@ -2253,32 +2239,36 @@ iCivTibet : {
 },
 iCivPoland : {
 	iGreatProphet : [
-		"Wojciech",
-		"Stanislaw",
-		"fJadwiga",
-		"Karol Wojtyla",
+		"Wojciech", # 10th
+		"Stanislaw", # 11th
+		"fJadwiga", # 14th
+		iModern,
+		"Karol Wojtyla", # 20th
 	],
 	iGreatArtist : [
-		"Jan Matejko",
-		"Frederic Chopin",
-		"Witold Lutoslawski",
+		"Jan Matejko", # 19th
+		"Fryderyk Chopin", # 19th
+		iModern,
+		"Witold Lutoslawski", # 20th
 	],
 	iGreatScientist : [
-		"Witelo",
-		"Mikolaj Kopernik",
-		"Jan Brozek",
-		"Stanislaw Staszic",
-		"fMaria Sklodowska",
+		"Witelo", # 13th
+		iRenaissance,
+		"Mikolaj Kopernik", # 16th
+		"Jan Brozek", # 17th
+		"Stanislaw Staszic", # 18th
+		"fMaria Sklodowska", # 19th
 	],
 	iGreatMerchant : [
-		"Leopold Kronenberg",
-		"Jan Kulczyk",
-		"Steve Wozniak",
+		"Leopold Kronenberg", # 19th
+		iModern,
+		"Jan Kulczyk", # 20th
 	],
 	iGreatEngineer : [
-		"Tadeusz Sendzimir",
-		"Ignacy Lukasiewicz",
-		"Kasimiersz Proszynski",
+		"Ignacy Lukasiewicz", # 19th
+		iModern,
+		"Kasimiersz Proszynski", # 20th
+		"Tadeusz Sendzimir", # 20th
 	],
 	iGreatStatesman : [
 		"Wladyslaw Lokietek", # 14th
@@ -2293,12 +2283,13 @@ iCivPoland : {
 		"Lech Walesa", # 20th
 	],
 	iGreatGeneral : [
-		"Wladyslaw Jagiello",
-		"Jan Tarnowski",
+		"Wladyslaw Jagiello", # 15th
+		"Jan Tarnowski", # 16th
 		"Tadeusz Kosciuszko", # 18th
 		iIndustrial,
 		"fEmilia Plater", # 19th
-		"Wladyslaw Sikorski",
+		iModern,
+		"Wladyslaw Sikorski", # 20th
 	],
 },
 iCivCongo : {
@@ -2315,39 +2306,44 @@ iCivCongo : {
 },
 iCivArgentina : {
 	iGreatProphet : [
-		"Gauchito Gil",
-		"Jorge Mario Bergoglio",
+		"Gauchito Gil", # 19th
+		iModern,
+		"Jorge Mario Bergoglio", # 20th
 	],
 	iGreatArtist : [
-		"Jose Hernandez",
-		"Carlos Gardel",
+		"Jose Hernandez", # 19th
+		iModern,
+		"Carlos Gardel", # 20th
 		"fGabriela Mistral", # 20th
-		u"fEva Perón",
-		"Jorge Luis Borges",
-		"Antonio Berni",
-		"Daniel Barenboim",
-		u"Juan José Campanella",
-		"Gustavo Cerati",
+		u"fEva Perón", # 20th
+		"Jorge Luis Borges", # 20th
+		"Antonio Berni", # 20th
+		"Daniel Barenboim", # 20th
+		u"Juan José Campanella", # 20th
+		"Gustavo Cerati", # 20th
 	],
 	iGreatScientist : [
-		"Francisco Moreno",
-		"Luis Federico Leloir",
-		u"László Bíró",
-		u"René Favaloro",
+		"Francisco Moreno", # 19th
+		iModern,
+		"Luis Federico Leloir", # 20th
+		u"László Bíró", # 20th
+		u"René Favaloro", # 20th
 	],
 	iGreatMerchant : [
-		u"José ber Gelbard",
-		"Roberto Aleman",
-		"Jorge Wehbe",
-		"Aldo Ferrer",
-		"Antonio Cafiero",
-		"Juan Las Heras",
+		"Juan Las Heras", # 19th
+		iModern,
+		u"José ber Gelbard", # 20th
+		"Roberto Alemann", # 20th
+		"Jorge Wehbe", # 20th
+		"Aldo Ferrer", # 20th
+		"Antonio Cafiero", # 20th
 	],
 	iGreatEngineer : [
-		"Luis Huergo",
-		"Amancio Williams",
-		u"César Pelli",
-		"Clorindo Testa",
+		"Luis Huergo", # 19th
+		iModern
+		"Amancio Williams", # 20th
+		u"César Pelli", # 20th
+		"Clorindo Testa", # 20th
 	],
 	iGreatStatesman : [
 		"Estanislao Zeballos", # 19th
@@ -2357,49 +2353,52 @@ iCivArgentina : {
 		"fEstela Barnes de Carlotto", # 20th
 	],
 	iGreatGeneral : [
-		"Cornelio Saavedra",
-		"Manuel Belgrano",
-		u"Juan José Castelli",
-		u"Martín Miguel de Güemes",
-		u"José Gervasio Artigas",
+		"Cornelio Saavedra", # 18th
+		"Manuel Belgrano", # 18th
+		u"Juan José Castelli", # 18th
+		u"Martín Miguel de Güemes", # 18th
+		u"José Gervasio Artigas", # 19th
 	],
 },
 iCivBrazil : {
 	iGreatProphet : [
-		u"António Conselheiro",
-		u"Hélder Câmara",
+		u"António Conselheiro", # 19th
+		iModern,
+		u"Hélder Câmara", # 20th
 		u"fIrmã Dulce Pontes", # 20th
-		"Chico Xavier",
-		"Edir Macedo",
+		"Chico Xavier", # 20th
+		"Edir Macedo", # 20th
 	],
 	iGreatArtist : [
-		"Aleijadinho",
-		u"António Carlos Gomes",
-		"Machado de Assis",
+		"Aleijadinho", # 18th
+		u"António Carlos Gomes", # 19th
+		"Machado de Assis", # 19th
+		iModern,
 		"fTarsila do Amaral", # 20th
 		"fCarmen Miranda", # 20th
-		"Tom Jobim",
-		"Romero Britto",
+		"Tom Jobim", # 20th
+		"Romero Britto", # 20th
 	],
 	iGreatScientist : [
-		"Oswaldo Cruz",
-		"Carlos Chagas",
-		"Alberto Santos-Dumont",
-		"Urbano Ernesto Stumpf",
-		u"Aziz Ab'Sáber",
-		"Marcelo Gleiser",
+		"Oswaldo Cruz", # 19th
+		"Carlos Chagas", # 19th
+		iModern,
+		"Alberto Santos-Dumont", # 20th
+		"Urbano Ernesto Stumpf", # 20th
+		u"Aziz Ab'Sáber", # 20th
+		"Marcelo Gleiser", # 20th
 	],
 	iGreatMerchant : [
-		"Francesco Matarazzo",
-		"Roberto Marinho",
-		"Jorge Lemann",
-		"Eike Batista",
+		"Roberto Marinho", # 20th
+		"Jorge Lemann", # 20th
+		"Eike Batista", # 20th
 	],
 	iGreatEngineer : [
-		u"André Rebouças",
-		u"Cândido Rondon",
-		"Oscar Niemeyer",
-		"Norberto Odebrecht",
+		u"André Rebouças", # 19th
+		iModern,
+		u"Cândido Rondon", # 20th
+		"Oscar Niemeyer", # 20th
+		"Norberto Odebrecht", # 20th
 	],
 	iGreatStatesman : [
 		u"José Bonifácio de Andrada", # 18th
@@ -2412,47 +2411,47 @@ iCivBrazil : {
 		"Roberto Mangabeira Unger", # 20th
 	],
 	iGreatGeneral : [
-		"Duque de Caxias",
-		u"Almirante Tamandaré",
+		u"Luís Alves de Lima e Silva", # 19th 
+		"Joaquim Marques Lisboa", # 19th
 		u"fMaria Quitéria", # 19th
-		"Mascarenhas de Morais",
-		"Eurico Gaspar Dutra",
-		"Artur da Costa e Silva",
+		iModern,
+		u"João Baptista Mascarenhas de Morais", # 20th
+		"Eurico Gaspar Dutra", # 20th
+		"Artur da Costa e Silva", # 20th
 	],
 },
 iCivColombia : {
 	iGreatProphet : [
-		u"Félix Restrepo Mejía",
-		"Camillo Torres Restrepo",
-		u"Alfonso López Trujillo",
-		u"Julio Enrique Dávila",
-		u"fMaría Luisa Piraquive",
-		u"César Castellanos",
+		u"Félix Restrepo Mejía", # 20th
+		"Camilo Torres Restrepo", # 20th
+		u"Alfonso López Trujillo", # 20th
+		u"Julio Enrique Dávila", # 20th
+		u"fMaría Luisa Piraquive", # 20th
+		u"César Castellanos", # 20th
 	],
 	iGreatArtist : [
-		"Gabriel Garcia Marquez",
-		"Rodrigo Arenas",
-		u"Álvaro Mutis",
-		"Fernando Botero",
-		"Rafael Orozco",
-		"Rodrigo Garcia",
-		"fShakira",
+		"Gabriel Garcia Marquez", # 20th
+		"Rodrigo Arenas", # 20th
+		u"Álvaro Mutis", # 20th
+		"Fernando Botero", # 20th
+		"Rafael Orozco", # 20th
+		"Rodrigo Garcia", # 20th
+		"fShakira", # 20th
 	],
 	iGreatScientist : [
-		u"José Jéronimo Triana",
-		"Julio Garavito Armero",
-		u"Rodolfo Llinás",
-		"Jorge Reynolds Pombo",
+		u"José Jéronimo Triana", # 19th
+		"Julio Garavito Armero", # 19th
+		iModern,
+		u"Rodolfo Llinás", # 20th
+		"Jorge Reynolds Pombo", # 20th
 	],
 	iGreatMerchant : [
-		"Julio Mario Santo Domingo Pumarejo",
-		u"Carlos Ardila Lülle",
-		"Luis Carlos Sarmiento Angulo",
+		"Julio Mario Santo Domingo", # 20th
+		u"Carlos Ardila Lülle", # 20th
+		"Luis Carlos Sarmiento Angulo", # 20th
 	],
 	iGreatEngineer : [
-		"Fray Domingo de Petres",
-		"Rogelio Salmona",
-		"Roswell Garavito Pearl",
+		"Rogelio Salmona", # 20th
 	],
 	iGreatStatesman : [
 		u"Rafael Núñez", # 19th
@@ -2462,57 +2461,59 @@ iCivColombia : {
 		u"Mario Lanserna Pinzón", # 20th
 	],
 	iGreatGeneral : [
-		"Antonia Santos",
-		u"Antonio Nariño",
-		"Francisco de Paula Santander",
+		"fAntonia Santos", # 19th
+		u"Antonio Nariño", # 19th
+		"Francisco de Paula Santander", # 19th
 	],
 },
 iCivMexico : {
 	iGreatProphet : [
-		"Juan Diego",
-		u"Felipe de Jesús",
-		"Francisco Javier Clavijero",
-		u"Rafael Guízar Valencia",
-		u"Cristóbal Magallanes Jara",
-		"Miguel Pro",
-		"Samuel Ruiz",
-		u"Javier Lozano Barragán",
+		"Juan Diego", # 16th
+		"Francisco Javier Clavijero", # 18th
+		u"Cristóbal Magallanes Jara", # 19th
+		iModern,
+		u"Rafael Guízar Valencia", # 20th
+		"Miguel Pro", # 20th
+		"Samuel Ruiz", # 20th
+		u"Javier Lozano Barragán", # 20th
 	],
 	iGreatArtist : [
-		u"José Clemente Orozco",
 		u"fÁngela Peralta", # 19th
-		"Diego Rivera",
-		"fFrida Kahlo",
-		"Octavio Paz",
+		iModern,
+		u"José Clemente Orozco", # 20th
+		"Diego Rivera", # 20th
+		"fFrida Kahlo", # 20th
+		"Octavio Paz", # 20th
 		"fRemedios Varo", # 20th
 		u"fDolores del Río", # 20th
-		"Pedro Infante",
-		"Carlos Fuentes",
-		u"Vicente Fernández",
+		"Pedro Infante", # 20th
+		"Carlos Fuentes", # 20th
+		u"Vicente Fernández", # 20th
 	],
 	iGreatScientist : [
-		"Gabino Barreda",
-		"Manuel Sandoval Vallarta",
-		"Ricardo Miledi",
-		u"Mario José Molina",
-		"Rodolfo Neri Vela",
+		"Gabino Barreda", # 19th
+		u"Lucas Alamán", # 19th
+		iModern,
+		"Manuel Sandoval Vallarta", # 20th
+		"Ricardo Miledi", # 20th
+		u"Mario José Molina", # 20th
+		"Rodolfo Neri Vela", # 20th
 	],
 	iGreatMerchant : [
-		u"Lucas Alamán",
-		u"Víctor Urquidi",
-		u"Jerónimo Arango",
-		"Carlos Slim",
-		"Everardo Elizondo",
-		u"Alberto Baillères",
-		u"Emilio Azcárraga Jean",
+		u"Víctor Urquidi", # 20th
+		u"Jerónimo Arango", # 20th
+		"Carlos Slim", # 20th
+		"Everardo Elizondo", # 20th
+		u"Alberto Baillères", # 20th
+		u"Emilio Azcárraga Jean", # 20th
 	],
 	iGreatEngineer : [
-		u"José Villagrán García",
-		u"Luis Barragán",
-		"Juan O'Gorman",
-		"Mario Pani",
-		u"Pedro Ramírez Vázquez",
-		"Bernardo Quintana Arrioja",
+		u"José Villagrán García", # 20th
+		u"Luis Barragán", # 20th
+		"Juan O'Gorman", # 20th
+		"Mario Pani", # 20th
+		u"Pedro Ramírez Vázquez", # 20th
+		"Bernardo Quintana Arrioja", # 20th
 	],
 	iGreatStatesman : [
 		u"José María Pino Suárez", # 19th
@@ -2526,12 +2527,12 @@ iCivMexico : {
 		u"Gilberto Bosques Saldívar", # 20th
 	],
 	iGreatGeneral : [
-		"Miguel Hidalgo",
-		u"Agustín de Iturbide",
+		"Miguel Hidalgo", # 18th
+		u"Agustín de Iturbide", # 19th
 		u"fJosefa Ortiz de Domínguez", # 19th
-		u"Porfirio Díaz",
-		"Pancho Villa",
-		"Emiliano Zapata Salazar",
+		u"Porfirio Díaz", # 19th
+		"Pancho Villa", # 19th
+		"Emiliano Zapata Salazar", # 19th
 	],
 },
 iCivCanada : {
