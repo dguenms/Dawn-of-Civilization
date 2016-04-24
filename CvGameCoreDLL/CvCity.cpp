@@ -4670,7 +4670,7 @@ void CvCity::updateArtStyleType()
 				break;
 			case REGION_MESOAMERICA:
 			case REGION_CARIBBEAN:
-				if (eHighestCulture == AZTEC || eHighestCulture == MAYA) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_MESO_AMERICA;
+				if (eHighestCulture == AZTECS || eHighestCulture == MAYA) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_MESO_AMERICA;
 				else eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
 				break;
 			case REGION_BRAZIL:
@@ -4751,7 +4751,7 @@ void CvCity::updateArtStyleType()
 		{
 			if (getPopulation() >= 5) eNewArtStyle = GET_PLAYER((PlayerTypes)CHINA).getArtStyleType();
 		}
-		else if (eHighestCulture == AZTEC || eHighestCulture == MAYA || eHighestCulture == INCA)
+		else if (eHighestCulture == AZTECS || eHighestCulture == MAYA || eHighestCulture == INCA)
 		{
 			if (GET_PLAYER(eHighestCulture).getStateReligion() == CATHOLICISM) eNewArtStyle = (ArtStyleTypes)ARTSTYLE_IBERIA;
 		}
