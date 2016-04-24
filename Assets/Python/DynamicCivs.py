@@ -107,7 +107,7 @@ dSpecificVassalTitles = {
 		iArabia : "TXT_KEY_CIV_MOORISH_ARABIA",
 		iMali : "TXT_KEY_CIV_MOORISH_MALI",
 		iPortugal : "TXT_KEY_CIV_MOORISH_PORTUGAL",
-	}
+	},
 	iSpain : {
 		iPhoenicia : "TXT_KEY_CIV_SPANISH_CARTHAGE",
 		iEthiopia : "TXT_KEY_CIV_SPANISH_ETHIOPIA",

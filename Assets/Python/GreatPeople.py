@@ -2340,7 +2340,7 @@ iCivArgentina : {
 	],
 	iGreatEngineer : [
 		"Luis Huergo", # 19th
-		iModern
+		iModern,
 		"Amancio Williams", # 20th
 		u"César Pelli", # 20th
 		"Clorindo Testa", # 20th
