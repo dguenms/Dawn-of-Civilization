@@ -1101,9 +1101,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 					list.pop(j)
 				if gc.getImprovementInfo(j).getDescription() == gc.getImprovementInfo(gc.getInfoTypeForString("IMPROVEMENT_CITY_RUINS")).getDescription():
 					list.pop(j)
-				if gc.getImprovementInfo(j).getDescription() == gc.getImprovementInfo(gc.getInfoTypeForString("IMPROVEMENT_GOODY_HUT")).getDescription():
-					list.pop(j)
-				if gc.getImprovementInfo(j).getDescription() == gc.getImprovementInfo(gc.getInfoTypeForString("IMPROVEMENT_GOODY_ISLAND")).getDescription():
+				if gc.getImprovementInfo(j).getDescription() == gc.getImprovementInfo(gc.getInfoTypeForString("IMPROVEMENT_TRIBAL_VILLAGE")).getDescription():
 					list.pop(j)
 	# END Filters
 
