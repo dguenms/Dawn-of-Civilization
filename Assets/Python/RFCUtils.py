@@ -2023,7 +2023,7 @@ class RFCUtils:
 				lCities.append(plot.getPlotCity())
 		return lCities
 		
-	def getAdvisorString(iBuilding):
+	def getAdvisorString(self, iBuilding):
 		''
 		iAdvisor = gc.getBuildingInfo(iBuilding).getAdvisorType()
 
@@ -2042,7 +2042,7 @@ class RFCUtils:
 
 		return ""
 		
-	def getBuildingCategory(iBuilding):
+	def getBuildingCategory(self, iBuilding):
 		'0 = Building'
 		'1 = Religious Building'
 		'2 = Unique Building'

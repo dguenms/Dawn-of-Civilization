@@ -124,7 +124,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_BUILDINGS				: self.placeBuildings,
 			PEDIA_RELIGIOUS_BUILDINGS	: self.placeReligiousBuildings,
 			PEDIA_UNIQUE_BUILDINGS		: self.placeUniqueBuildings,
-			PEDIA_UNIQUE_WONDERS		: self.placeUniqueWonders,
 			PEDIA_NATIONAL_WONDERS		: self.placeNationalWonders,
 			PEDIA_GREAT_WONDERS			: self.placeGreatWonders,
 			PEDIA_PROJECTS				: self.placeProjects,
@@ -157,7 +156,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_BUILDINGS				: self.pediaBuilding,
 			PEDIA_RELIGIOUS_BUILDINGS	: CvPediaBuilding.CvPediaBuilding(self),
 			PEDIA_UNIQUE_BUILDINGS		: CvPediaBuilding.CvPediaBuilding(self),
-			PEDIA_UNIQUE_WONDERS		: CvPediaBuilding.CvPediaBuilding(self),
 			PEDIA_NATIONAL_WONDERS		: CvPediaBuilding.CvPediaBuilding(self),
 			PEDIA_GREAT_WONDERS			: CvPediaBuilding.CvPediaBuilding(self),
 			PEDIA_PROJECTS				: CvPediaProject.CvPediaProject(self),
@@ -211,7 +209,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		self.szCategoryBuildings			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_BUILDING", ())
 		self.szCategoryReligiousBuildings	= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_RELIGIOUS_BUILDINGS", ())
 		self.szCategoryUniqueBuildings		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_UNIQUE_BUILDINGS", ())
-		self.szCategoryUniqueWonders		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_UNIQUE_WONDERS", ())
 		self.szCategoryNationalWonders		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_NATIONAL_WONDERS", ())
 		self.szCategoryGreatWonders			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_WORLD_WONDERS", ())
 		self.szCategoryProjects				= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_PROJECT", ())
@@ -236,10 +233,10 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			["UNITS",			self.szCategoryUnitCategories],
 			["UNITS",			self.szCategoryUnitUpgrades],
 			["PROMOTIONS",		self.szCategoryPromotions],
+			["PROMOTIONS",		self.szCategoryPromotionTree],
 			["BUILDINGS",		self.szCategoryBuildings],
 			["BUILDINGS",		self.szCategoryReligiousBuildings],
 			["BUILDINGS",		self.szCategoryUniqueBuildings],
-			["BUILDINGS",		self.szCategoryUniqueWonders],
 			["BUILDINGS",		self.szCategoryNationalWonders],
 			["BUILDINGS",		self.szCategoryGreatWonders],
 			["BUILDINGS",		self.szCategoryProjects],
