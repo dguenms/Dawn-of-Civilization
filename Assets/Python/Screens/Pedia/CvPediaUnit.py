@@ -166,7 +166,7 @@ class CvPediaUnit:
 			screen.attachImageButton(panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_HELP_RELIGION, iPrereq, -1, False)
 		iPrereq = gc.getUnitInfo(self.iUnit).getPrereqBuilding()
 		if (iPrereq >= 0):
-			screen.attachImageButton(panel, "", gc.getBuildingInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_HR_BUILDING, iPrereq, -1, False)
+			screen.attachImageButton(panel, "", gc.getBuildingInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iPrereq, -1, False)
 
 
 

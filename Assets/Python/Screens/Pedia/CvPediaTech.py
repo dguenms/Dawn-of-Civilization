@@ -295,6 +295,7 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 				screen.attachImageButton(panel, "", gc.getUnitInfo(iUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_HELP_FREE_UNIT, iUnit, self.iTech, False)
 
 		# Obsolete Buildings
+		lObsoleteSpecialBuildings = []
 		for iBuildingClass in xrange(gc.getNumBuildingClassInfos()):
 			iCivilization = CyGame().getActiveCivilizationType()
 			if iCivilization > -1:
@@ -303,10 +304,13 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 					BuildingInfo = gc.getBuildingInfo(iBuilding)
 					if BuildingInfo.getObsoleteTech() == self.iTech:
 						screen.attachImageButton(panel, "", BuildingInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_HELP_OBSOLETE, iBuilding, 1, False)
+						
 					iSpecial = BuildingInfo.getSpecialBuildingType()
-					if iSpecial > -1:
-						if gc.getSpecialBuildingInfo(iSpecial).getObsoleteTech() == self.iTech:
-							screen.attachImageButton(panel, "", BuildingInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_HELP_OBSOLETE, iBuilding, 1, False)
+					if iSpecial > -1 and gc.getSpecialBuildingInfo(iSpecial).getObsoleteTech() == self.iTech:
+						if iSpecial not in lObsoleteSpecialBuildings: lObsoleteSpecialBuildings.append(iSpecial)
+					
+		for iSpecial in lObsoleteSpecialBuildings:
+			screen.attachImageButton(panel, "", gc.getSpecialBuildingInfo(iSpecial).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_HELP_OBSOLETE_SPECIAL, iSpecial, 1, False)
 
 		# Obsolete Resources
 		for j in xrange(gc.getNumBonusInfos()):
@@ -357,7 +361,7 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 
 			if iBuilding > -1:
 				if isTechRequiredForBuilding(self.iTech, iBuilding):
-					screen.attachImageButton(panel, "", gc.getBuildingInfo(iBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_HR_BUILDING, iBuilding, -1, False)
+					screen.attachImageButton(panel, "", gc.getBuildingInfo(iBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, -1, False)
 
 		# Projects
 		for iProject in xrange(gc.getNumProjectInfos()):
@@ -373,6 +377,10 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 		for iBuild in xrange(gc.getNumBuildInfos()):
 			BuildInfo = gc.getBuildInfo(iBuild)
 			bTechFound = False
+			
+			if BuildInfo.isGraphicalOnly():
+				continue
+			
 			if BuildInfo.getTechPrereq() == self.iTech:
 				bTechFound = True
 			elif BuildInfo.getTechPrereq() == -1:

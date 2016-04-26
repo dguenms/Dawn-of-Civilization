@@ -2046,35 +2046,32 @@ class RFCUtils:
 		'0 = Building'
 		'1 = Religious Building'
 		'2 = Unique Building'
-		'3 = Unique Wonder'
-		'4 = National Wonder'
-		'5 = World Wonder'
-		'6 = Natural Wonder'
-		'7 = Corporate Headquarters'
+		'3 = National Wonder'
+		'4 = World Wonder'
 
 		BuildingInfo = gc.getBuildingInfo(iBuilding)
-		if BuildingInfo.getType().find("_NATURAL_WONDER_") > 0:
-			return 6
-		elif BuildingInfo.getArtDefineTag() == "ART_DEF_BUILDING_FAKE" or BuildingInfo.isGraphicalOnly():
+		if BuildingInfo.isGraphicalOnly():
 			return -1
 		elif BuildingInfo.getReligionType() > -1:
 			return 1
-		elif BuildingInfo.getFoundsCorporation() > -1:
-			return 7
-		elif isWorldWonderClass(BuildingInfo.getBuildingClassType()) or iBuilding == gc.getInfoTypeForString('BUILDING_OLYMPIC_GAMES'):
-			return 5
+		elif isWorldWonderClass(BuildingInfo.getBuildingClassType()):
+			return 4
 		else:
 			iBuildingClass = BuildingInfo.getBuildingClassType()
 			iDefaultBuilding = gc.getBuildingClassInfo(iBuildingClass).getDefaultBuildingIndex()
 			if isNationalWonderClass(iBuildingClass):
-				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
-					return 3
-				else:
-					return 4
+				return 3
 			else:
 				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
 					return 2
 				else:
 					return 0
+					
+	def getLeaderCiv(self, iLeader):
+		for iCiv in range(gc.getNumCivilizationInfos()):
+			civ = gc.getCivilizationInfo(iCiv)
+			if civ.isLeaders(iLeader):
+				return iCiv
+		return None
 
 utils = RFCUtils()

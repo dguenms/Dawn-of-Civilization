@@ -37,15 +37,9 @@ class CvPediaCivic:
 		self.W_EFFECTS = self.top.R_PEDIA_PAGE - self.X_EFFECTS
 		self.H_EFFECTS = 160
 
-		#self.X_LEADERS = self.X_INFO_PANE
-		#self.W_LEADERS = self.top.R_PEDIA_PAGE - self.X_LEADERS
-		#self.H_LEADERS = 110
-		#self.Y_LEADERS = self.top.B_PEDIA_PAGE - self.H_LEADERS
-
 		self.X_HISTORY = self.X_INFO_PANE
 		self.Y_HISTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
 		self.W_HISTORY = self.top.R_PEDIA_PAGE - self.X_HISTORY
-		#self.H_HISTORY = self.Y_LEADERS - self.Y_HISTORY - 10
 		self.H_HISTORY = self.top.B_PEDIA_PAGE - self.Y_HISTORY
 
 

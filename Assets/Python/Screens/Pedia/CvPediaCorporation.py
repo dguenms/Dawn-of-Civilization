@@ -77,7 +77,7 @@ class CvPediaCorporation:
 
 		screen.addListBoxGFC(panel, "", self.X_INFO_TEXT, self.Y_INFO_TEXT, self.W_INFO_TEXT, self.H_INFO_TEXT, TableStyles.TABLE_STYLE_EMPTY)
 		screen.enableSelect(panel, False)
-		screen.appendListBoxString(panel, u"<font=4b>" + CorporationInfo.getDescription() + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.appendListBoxString(panel, u"<font=4b>" + CorporationInfo.getDescription().replace(" ", "\n") + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 		screen.appendListBoxString(panel, u"<font=3>Corporation</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
 
@@ -132,7 +132,7 @@ class CvPediaCorporation:
 		if iEspionageHQ > 0:
 			szSpecialText += CyTranslator().getText('TXT_KEY_CORPORATION_HQ_ESPIONAGE', (iEspionageHQ, ""))
 
-		szSpecialText += "\n"
+		if szSpecialText: szSpecialText += "\n"
 		szSpecialText += CyGameTextMgr().parseCorporationInfo(self.iCorporation, True)[1:]
 		screen.addMultilineText(list, szSpecialText, self.X_EFFECTS + 5, self.Y_EFFECTS + 30, self.W_EFFECTS - 10, self.H_EFFECTS - 35, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 

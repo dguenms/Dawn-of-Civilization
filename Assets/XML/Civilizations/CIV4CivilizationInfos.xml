@@ -895,7 +895,7 @@
 				<Growth>0</Growth>
 				<Start>0</Start>
 			</Rating>
-			<bPlayable>1</bPlayable>
+			<bPlayable>0</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>Bibracte</City>
@@ -3689,8 +3689,8 @@
 				<Growth>0</Growth>
 				<Start>0</Start>
 			</Rating>
-			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
+			<bPlayable>0</bPlayable>
+			<bAIPlayable>0</bAIPlayable>
 			<Cities>
 				<City>Cahokia</City>
 				<City>Poverty Point</City>
@@ -4976,8 +4976,8 @@
 				<Growth>0</Growth>
 				<Start>0</Start>
 			</Rating>
-			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
+			<bPlayable>0</bPlayable>
+			<bAIPlayable>0</bAIPlayable>
 			<Cities>
 				<City>Ur</City>
 				<City>Nibru</City>
@@ -5507,8 +5507,8 @@
 				<Growth>0</Growth>
 				<Start>0</Start>
 			</Rating>
-			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
+			<bPlayable>0</bPlayable>
+			<bAIPlayable>0</bAIPlayable>
 			<Cities>
 				<City>Ulundi</City>
 				<City>uMgungundlovu</City>
@@ -5609,8 +5609,8 @@
 				<Growth>0</Growth>
 				<Start>0</Start>
 			</Rating>
-			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
+			<bPlayable>0</bPlayable>
+			<bAIPlayable>0</bAIPlayable>
 			<Cities>
 				<City>Cherokee</City>
 				<City>Anasazi</City>
@@ -5845,8 +5845,8 @@
 				<Growth>0</Growth>
 				<Start>0</Start>
 			</Rating>
-			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
+			<bPlayable>0</bPlayable>
+			<bAIPlayable>0</bAIPlayable>
 			<Cities>
 				<City>Cherokee</City>
 				<City>Anasazi</City>
@@ -6082,8 +6082,8 @@
 				<Growth>0</Growth>
 				<Start>0</Start>
 			</Rating>
-			<bPlayable>1</bPlayable>
-			<bAIPlayable>1</bAIPlayable>
+			<bPlayable>0</bPlayable>
+			<bAIPlayable>0</bAIPlayable>
 			<Cities>
 				<City>Ulundi</City>
 				<City>uMgungundlovu</City>

@@ -315,7 +315,6 @@ class CvMainInterface:
 # BUG - field of view slider - end
 
 		# Widgets
-		WidgetUtil.createWidget("WIDGET_PEDIA_JUMP_TO_HR_BUILDING")
 		WidgetUtil.createWidget("WIDGET_PEDIA_JUMP_TO_RESOURCE")
 
 		

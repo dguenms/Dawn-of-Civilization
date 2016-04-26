@@ -110,6 +110,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CASTLE</BuildingClass>
@@ -399,6 +400,7 @@
 					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_STABLE</BuildingClass>
@@ -590,6 +592,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SMOKEHOUSE</BuildingClass>
@@ -827,6 +830,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_HOSPITAL</BuildingClass>
@@ -1960,6 +1964,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_PUBLIC_TRANSPORTATION</BuildingClass>
@@ -2660,6 +2665,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
@@ -2818,6 +2824,7 @@
 				<iCommerce>5</iCommerce>
 			</CommerceHappinesses>
 			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BROADCAST_TOWER</BuildingClass>
@@ -6654,6 +6661,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_STOCK_EXCHANGE</BuildingClass>
@@ -10393,6 +10401,7 @@
 			<iHealth>-6</iHealth>
 			<iAsset>20</iAsset>
 			<fVisibilityPriority>10.0</fVisibilityPriority>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
 	</BuildingInfos>
 </Civ4BuildingInfos>

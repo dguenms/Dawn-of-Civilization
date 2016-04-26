@@ -27,29 +27,29 @@ class CvPediaReligion:
 		self.W_INFO_TEXT = 180
 		self.H_INFO_TEXT = self.H_INFO_PANE - 20
 
-		self.X_EFFECTS = self.X_INFO_PANE + self.W_INFO_PANE + 10
+		self.X_REQUIRES = self.X_INFO_PANE + self.W_INFO_PANE + 10
+		self.W_REQUIRES = self.top.R_PEDIA_PAGE - self.X_REQUIRES
+		self.H_REQUIRES = 110
+		self.Y_REQUIRES = self.Y_INFO_PANE + self.H_INFO_PANE - self.H_REQUIRES
+
+		self.X_EFFECTS = self.X_INFO_PANE
+		self.Y_EFFECTS = self.Y_REQUIRES + self.H_REQUIRES + 10
 		self.W_EFFECTS = self.top.R_PEDIA_PAGE - self.X_EFFECTS
 		self.H_EFFECTS = 110
-		self.Y_EFFECTS = self.Y_INFO_PANE + self.H_INFO_PANE - self.H_EFFECTS
-
-		self.X_LEADERS = self.X_INFO_PANE
-		self.W_LEADERS = self.top.R_PEDIA_PAGE - self.X_LEADERS
-		self.H_LEADERS = 110
-		self.Y_LEADERS = self.top.B_PEDIA_PAGE - self.H_LEADERS
 
 		self.X_HISTORY = self.X_INFO_PANE
 		self.Y_HISTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
 		self.W_HISTORY = self.top.R_PEDIA_PAGE - self.X_HISTORY
-		self.H_HISTORY = self.Y_LEADERS - self.Y_HISTORY - 10
+		self.H_HISTORY = self.top.B_PEDIA_PAGE - self.Y_HISTORY - 10
 
 
 
 	def interfaceScreen(self, iReligion):
 		self.iReligion = iReligion
 		self.placeInfo()
+		self.placeRequires()
 		self.placeEffects()
 		self.placeHistory()
-		self.placeLeaders()
 
 
 
@@ -66,6 +66,21 @@ class CvPediaReligion:
 		screen.enableSelect(panel, False)
 		screen.appendListBoxString(panel, u"<font=4b>" + ReligionInfo.getDescription() + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 		
+		
+		
+	def placeRequires(self):
+		screen = self.top.getScreen()
+		panel = self.top.getNextWidgetName()
+
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_REQUIRES", ()), "", False, True, self.X_REQUIRES, self.Y_REQUIRES, self.W_REQUIRES, self.H_REQUIRES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.enableSelect(panel, False)
+		screen.attachLabel(panel, "", "  ")
+
+		iTech = gc.getReligionInfo(self.iReligion).getTechPrereq()
+
+		if iTech > -1:
+			screen.attachImageButton(panel, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
+
 
 
 	def placeEffects(self):
@@ -92,20 +107,6 @@ class CvPediaReligion:
 		screen.addPanel(panel, "History", "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
 		szHistory = gc.getReligionInfo(self.iReligion).getCivilopedia()
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-
-
-
-	def placeLeaders(self):
-		screen = self.top.getScreen()
-		panel = self.top.getNextWidgetName()
-
-		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_LEADER", ()), "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_BLUE50)
-		screen.attachLabel(panel, "", "  ")
-
-		for iLeader in xrange(gc.getNumLeaderHeadInfos()):
-			LeaderInfo = gc.getLeaderHeadInfo(iLeader)
-			if LeaderInfo.getFavoriteReligion() == self.iReligion:
-				screen.attachImageButton(panel, "", LeaderInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER, iLeader, 1, False)
 
 
 
