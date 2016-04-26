@@ -394,6 +394,7 @@
 	<ElementType name="Flavors" content="eltOnly">
 		<element type="Flavor" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="bGraphicalOnly" content="textOnly" dt:type="boolean"/>
 	<ElementType name="HotKey" content="textOnly"/>
 	<ElementType name="bAltDown" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bShiftDown" content="textOnly" dt:type="boolean"/>
@@ -578,6 +579,7 @@
 		<element type="bCtrlDown" minOccurs="0"/>
 		<element type="iHotKeyPriority" minOccurs="0"/>
 		<element type="iOrderPriority" minOccurs="0"/>
+		<element type="bGraphicalOnly" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="BuildingInfos" content="eltOnly">
 		<element type="BuildingInfo" maxOccurs="*"/>

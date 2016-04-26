@@ -2302,7 +2302,7 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.2</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/Westminster/bigben.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Wonders/BigBen.dds</Button>
@@ -2492,7 +2492,7 @@
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.00</fScale>
-			<fInterfaceScale>0.43</fInterfaceScale>
+			<fInterfaceScale>0.25</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/EmpireStateBuilding/empire.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/EmpireStateBuilding/empiremain.dds</Button>
@@ -2611,8 +2611,8 @@
 			<Type>ART_DEF_BUILDING_CN_TOWER</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.25</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/CN_Tower/cn_tower.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/CN_Tower/cntower.dds</Button>
