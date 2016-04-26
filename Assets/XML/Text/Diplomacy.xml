@@ -71,7 +71,7 @@
 		<German>Seid gegr&#252;&#223;t, [CT_NAME]! Ich bin [OUR_NAME], Anf&#252;hrer der gro&#223;en Zivilisation von [OUR_CIV_SHORT].</German>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_ABU_BAKR_1</Tag>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HARUN_1</Tag>
 		<English>Peace be upon you, [CT_NAME] of [CT_CIV_SHORT]. If you would expect the blessings of Allah, be kind to his people, for Allah will help him who moves the ways of Allah.</English>
 		<German>Friede sei mit Euch, [CT_NAME] von [CT_CIV_SHORT]. Falls Ihr die Segnungen Allahs erwartet, seid freundlich zu seinem Volk, denn Allah wird dem helfen, der die Wege Allahs bewegt.</German>
 	</TEXT>
@@ -88,11 +88,6 @@
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CHARLES_1</Tag>
 		<English>Welcome [CT_NAME]. We would welcome friendship with you. Are you greedy of territory, or greedy of piece and quiet?</English>
 		<German>Willkommen, [CT_NAME]. Wir w&#252;rden Freundschaft mit Euch willkommen hei&#223;en. Giert Ihr nach Eroberungen, oder nach Frieden und Ruhe?</German>
-	</TEXT>
-	<TEXT>
-		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_CIXI_1</Tag>
-		<English>Greetings, I am [OUR_NAME], the most clever woman that ever lived, and others cannot compare with me. I have four billion people dependent on my judgement.</English>
-		<German>Gr&#252;&#223;e, ich bin [OUR_NAME], die kl&#252;gste Frau, die jemals gelebt hat, und andere halten keinem Vergleich mit mir stand. Ich habe vier Milliarden Menschen, die von meinem Urteil abh&#228;ngen.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HAILE_SELASSIE_1</Tag>
@@ -159,11 +154,6 @@
 		<German>Seid gegr??t, [CT_NAME]. Nehmt Platz und lasst uns ein wenig plaudern.</German>
 		<Italian>Salve, [CT_NAME]. Siediti e parliamo per un po'.</Italian>
 		<Spanish>Saludos, [CT_NAME]. Sentaos y charlemos un rato.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_CIXI_1</Tag>
-		<English>Under heaven, people with righteousness are not murderers and arsonists like you.</English>
-		<German>Unter dem Himmel sind Menschen von Rechtschaffenheit keine M&#246;rder und Brandstifter wie Ihr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>AI_DIPLO_GREETINGS_ATT_FUR_LEADER_HAILE_SELASSIE_1</Tag>

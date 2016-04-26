@@ -13129,10 +13129,10 @@ void CvGameTextMgr::setReligionHelp(CvWStringBuffer &szBuffer, ReligionTypes eRe
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_RELIGION_REFORMATION"));
 	}
-	else if (eReligion == ORTHODOXY)
+	else if (eReligion == CATHOLICISM)
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_RELIGION_FOUND_ORTHODOXY"));
+		szBuffer.append(gDLL->getText("TXT_KEY_RELIGION_FOUND_CATHOLICISM"));
 	}
 	else if (eReligion == BUDDHISM)
 	{
