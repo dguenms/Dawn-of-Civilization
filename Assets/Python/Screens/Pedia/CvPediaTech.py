@@ -400,7 +400,7 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 		for iResource in xrange(gc.getNumBonusInfos()):
 			ResourceInfo = gc.getBonusInfo(iResource)
 			if self.iTech == ResourceInfo.getTechReveal():
-				screen.attachImageButton(panel, "", ResourceInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE, iResource, 1, False)
+				screen.attachImageButton(panel, "", ResourceInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iResource, 1, False)
 
 		# Processes
 		for iProcess in xrange(gc.getNumProcessInfos()):

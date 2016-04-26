@@ -83,17 +83,6 @@ class CvPediaResource:
 		screen.enableSelect(panel, False)
 		screen.appendListBoxString(panel, u"<font=4b>" + ResourceInfo.getDescription() + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
-		iResourceType = ResourceInfo.getBonusClassType()
-		if iResourceType == 0:
-			szCategory = "Crops"
-		else:
-			szCategory = gc.getBonusClassInfo(iResourceType).getType()
-			szCategory = szCategory[szCategory.find("_") + 1:]
-			szCategory = szCategory.lower()
-			szCategory = szCategory.capitalize()
-
-		screen.appendListBoxString(panel, szCategory, WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
-
 		szStats = u""
 		for iYield in xrange(YieldTypes.NUM_YIELD_TYPES):
 			iYieldChange = ResourceInfo.getYieldChange(iYield)

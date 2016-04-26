@@ -135,7 +135,7 @@ class CvPediaUnit:
 		iPrereq = gc.getUnitInfo(self.iUnit).getPrereqAndBonus()
 		if (iPrereq >= 0):
 			bFirst = False
-			screen.attachImageButton(panel, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE, iPrereq, -1, False)
+			screen.attachImageButton(panel, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iPrereq, -1, False)
 		nOr = 0
 		for j in xrange(gc.getNUM_UNIT_PREREQ_OR_BONUSES()):
 			if (gc.getUnitInfo(self.iUnit).getPrereqOrBonuses(j) > -1):
@@ -158,7 +158,7 @@ class CvPediaUnit:
 					screen.attachLabel(panel, "", CyTranslator().getText("TXT_KEY_OR", ()))
 				else:
 					bFirst = False
-				screen.attachImageButton(panel, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE, eBonus, -1, False)
+				screen.attachImageButton(panel, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, -1, False)
 		if len(szRightDelimeter) > 0:
 			screen.attachLabel(panel, "", szRightDelimeter)
 		iPrereq = gc.getUnitInfo(self.iUnit).getPrereqReligion()

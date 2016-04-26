@@ -148,7 +148,7 @@ class CvPediaCorporation:
 		for i in xrange(gc.getDefineINT("NUM_CORPORATION_PREREQ_BONUSES")):
 			iResource = gc.getCorporationInfo(self.iCorporation).getPrereqBonus(i)
 			if iResource > -1:
-				screen.attachImageButton(panel, "", gc.getBonusInfo(iResource).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE, iResource, 1, False)
+				screen.attachImageButton(panel, "", gc.getBonusInfo(iResource).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iResource, 1, False)
 
 
 
