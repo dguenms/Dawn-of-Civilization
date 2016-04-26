@@ -161,12 +161,12 @@ class CvPediaBuilding:
 
 		iPrereq = gc.getBuildingInfo(self.iBuilding).getPrereqAndBonus()
 		if iPrereq >= 0:
-			screen.attachImageButton(panel, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE, iPrereq, -1, False)
+			screen.attachImageButton(panel, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iPrereq, -1, False)
 
 		for k in range(gc.getNUM_BUILDING_PREREQ_OR_BONUSES()):
 			iPrereq = gc.getBuildingInfo(self.iBuilding).getPrereqOrBonuses(k)
 			if (iPrereq >= 0):
-				screen.attachImageButton( panel, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE, iPrereq, -1, False )
+				screen.attachImageButton( panel, "", gc.getBonusInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iPrereq, -1, False )
 
 		iPrereq = gc.getBuildingInfo(self.iBuilding).getPrereqReligion()
 		if iPrereq >= 0:

@@ -716,11 +716,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			lImprovementResources = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if ImprovementInfo.isBonusTrade(iBonus) and iBonus not in [item for sublist in dResourceMap.values() for item in sublist]]
 			
 			if lImprovementResources:
-				#utils.show(str(ImprovementInfo.getText()) + ": " + str([gc.getBonusInfo(iBonus).getDescription(iBonus).
 				dResourceMap[ImprovementInfo.getText()] = lImprovementResources
-				
-		#utils.show(str([gc.getBonusInfo(iBonus).getDescription() for iBonus in xrange(gc.getNumBonusInfos())]))
-		#utils.show(str([gc.getBonusInfo(iBonus).getDescription() for iBonus in [item for sublist in dResourceMap.values() for item in sublist]]))
 		
 		lOther = [iBonus for iBonus in xrange(gc.getNumBonusInfos()) if iBonus not in [item for sublist in dResourceMap.values() for item in sublist]]
 		if lOther:
@@ -736,7 +732,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 				lResources.append((gc.getBonusInfo(iBonus).getDescription(), iBonus))
 
 		self.list = lResources
-		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE, gc.getBonusInfo)
+		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, gc.getBonusInfo)
 
 
 
@@ -1024,7 +1020,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 
 		if inputClass.getButtonType() == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING:
 			self.pediaJump(PEDIA_BUILDINGS, inputClass.getData1(), True, False)
-		elif inputClass.getButtonType() == WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE:
+		elif inputClass.getButtonType() == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS:
 			self.pediaJump(PEDIA_RESOURCES, inputClass.getData1(), True, True)
 
 		return 0

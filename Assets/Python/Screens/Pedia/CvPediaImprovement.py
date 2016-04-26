@@ -117,7 +117,7 @@ class CvPediaImprovement:
 		screen.attachLabel(panel, "", "  ")
 
 		for iBuild in xrange(gc.getNumBuildInfos()):
-			if gc.getBuildInfo(iBuild).getImprovement() == self.iImprovement:
+			if gc.getBuildInfo(iBuild).getImprovement() == self.iImprovement and not gc.getBuildInfo(iBuild).isGraphicalOnly():
 				iTech = gc.getBuildInfo(iBuild).getTechPrereq()
 				if iTech > -1:
 					screen.attachImageButton(panel, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
@@ -236,7 +236,7 @@ class CvPediaImprovement:
 				childpanel = self.top.getNextWidgetName()
 				screen.attachPanel(panel, childpanel, "", "", False, False, PanelStyles.PANEL_STYLE_EMPTY)
 				screen.attachLabel(childpanel, "", "  ")
-				screen.attachImageButton(childpanel, "", gc.getBonusInfo(iResource).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RESOURCE, iResource, 1, False )
+				screen.attachImageButton(childpanel, "", gc.getBonusInfo(iResource).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iResource, 1, False )
 				screen.attachLabel(childpanel, "", "<font=3>" + szYield + "</font>")
 
 
