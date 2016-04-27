@@ -42,7 +42,7 @@ class CvPediaReligion:
 		self.X_VICTORY = self.X_INFO_PANE
 		self.Y_VICTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
 		self.W_VICTORY = self.top.R_PEDIA_PAGE - self.X_EFFECTS
-		self.H_VICTORY = 113
+		self.H_VICTORY = 120
 		
 		self.X_HISTORY = self.X_INFO_PANE
 		self.Y_HISTORY = self.Y_VICTORY + self.H_VICTORY + 10
