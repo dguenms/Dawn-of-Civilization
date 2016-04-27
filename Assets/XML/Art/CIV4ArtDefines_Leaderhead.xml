@@ -479,28 +479,12 @@
 			<BackgroundKFM>Art/leaderheads/Gustav adolph/napoleon_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_ABU_BAKR</Type>
-			<Button>,Art/Interface/Buttons/Leaderheads/Omani.dds,Art/Interface/Buttons/mem_leaders_atlas.dds,1,3</Button>
-			<NIF>Art/Leaderheads/AbuBakr/abubakr.nif</NIF>
-			<KFM>Art/Leaderheads/AbuBakr/frederick_the_great.kfm</KFM>
-			<NoShaderNIF>Art/Leaderheads/AbuBakr/abubakr.nif</NoShaderNIF>
-			<BackgroundKFM>Art/Leaderheads/AbuBakr/frederick_the_great_bg.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>
-		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_MONGKUT</Type>
 			<Button>Art/leaderheads/Mongkut/MongkutButton.dds</Button>
 			<NIF>Art/leaderheads/Mongkut/Tachnechobrus.nif</NIF>
 			<KFM>Art/leaderheads/Mongkut/Tachnechobrus.kfm</KFM>
 			<NoShaderNIF>Art/leaderheads/Mongkut/Tachnechobrus.nif</NoShaderNIF>
 			<BackgroundKFM>Art/leaderheads/Mongkut/Tachnechobrus_Background.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>
-		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_ELISHAT</Type>
-			<Button>Art/leaderheads/DidoFINAL/Btn_Dido.dds</Button>
-			<NIF>Art/leaderheads/DidoFINAL/catherine.nif</NIF>
-			<KFM>Art/leaderheads/DidoFINAL/catherine.kfm</KFM>
-			<NoShaderNIF>Art/leaderheads/DidoFINAL/catherine.nif</NoShaderNIF>
-			<BackgroundKFM>Art/leaderheads/DidoFINAL/leader_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_FILIPE</Type>
@@ -581,22 +565,6 @@
 			<KFM>Art/LeaderHeads/Franco/josef_stalin.kfm</KFM>
 			<NoShaderNIF/>
 			<BackgroundKFM>Art/leaderheads/Franco/josef_stalin_BG.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>
-		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_CIXI</Type>
-			<Button>Art/leaderheads/Cixi/Btn_LH_Cixi.dds</Button>
-			<NIF>Art/leaderheads/Cixi/Cixi.nif</NIF>
-			<KFM>Art/leaderheads/Cixi/asoka.kfm</KFM>
-			<NoShaderNIF/>
-			<BackgroundKFM>Art/leaderheads/Cixi/asoka_bg.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>
-		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_CHIANG_KAISHEK</Type>
-			<Button>Art/leaderheads/Chiang/Chiang.dds</Button>
-			<NIF>Art/leaderheads/Chiang/chiang2.nif</NIF>
-			<KFM>Art/LeaderHeads/Chiang/wang_kon.kfm</KFM>
-			<NoShaderNIF/>
-			<BackgroundKFM>Art/leaderheads/Chiang/Wang_Kon_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_NICHOLAS_II</Type>

@@ -796,6 +796,7 @@
 			<EffectType>NONE</EffectType>
 			<iEffectProbability>0</iEffectProbability>
 			<iAdvancedStartRemoveCost>0</iAdvancedStartRemoveCost>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</FeatureInfo>
 		<FeatureInfo>
 			<Type>FEATURE_ISLANDS</Type>

@@ -312,6 +312,7 @@ void CyInfoPythonInterface1()
 		.def("isLineOfSight", &CvUnitInfo::isLineOfSight, "bool ()")
 		.def("isHiddenNationality", &CvUnitInfo::isHiddenNationality, "bool ()")
 		.def("isAlwaysHostile", &CvUnitInfo::isAlwaysHostile, "bool ()")
+		.def("isPersecute", &CvUnitInfo::isPersecute, "bool ()")
 
 		.def("getUnitMaxSpeed", &CvUnitInfo::getUnitMaxSpeed, "float ()")
 		.def("getUnitPadTime", &CvUnitInfo::getUnitPadTime, "float ()")

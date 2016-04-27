@@ -312,6 +312,7 @@ void CyInfoPythonInterface2()
 		.def("isGoody", &CvImprovementInfo::isGoody, "bool ()")
 		.def("isPermanent", &CvImprovementInfo::isPermanent, "bool ()")
 		.def("isOutsideBorders", &CvImprovementInfo::isOutsideBorders, "bool ()")
+		.def("isBonusTrade", &CvImprovementInfo::isImprovementBonusTrade, "bool ()")
 
 		.def("getArtDefineTag", &CvImprovementInfo::getArtDefineTag, "string ()")
 
