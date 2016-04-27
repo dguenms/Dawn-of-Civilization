@@ -58,7 +58,7 @@ class CvPediaLeader:
 		self.placeHistory()
 		self.placeFavorites()
 		self.placeCiv()
-		self.placeTraits()
+		#self.placeTraits()
 
 
 

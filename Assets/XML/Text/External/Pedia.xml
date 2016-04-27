@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Platy Builder -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+<!-- Pedia_CIV4GameText -->
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_RELIGIOUS_VICTORY</Tag>
+		<English>Religious victory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_LEADERS</Tag>
+		<English>Leaders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_TERRAIN_FEATURE</Tag>
+		<English>Terrain Feature</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_TERRAIN</Tag>
+		<English>Terrain</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_USED_BY</Tag>
+		<English>Used by</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_SOURCES</Tag>
+		<English>Sources</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ABILITIES</Tag>
+		<English>Abilities</English>
+	</TEXT>
+</Civ4GameText>

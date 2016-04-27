@@ -175,7 +175,7 @@ class CvPediaUnit:
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "Abilities", "", True, False, self.X_ABILITIES, self.Y_ABILITIES, self.W_ABILITIES, self.H_ABILITIES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_ABILITIES", ()), "", True, False, self.X_ABILITIES, self.Y_ABILITIES, self.W_ABILITIES, self.H_ABILITIES, PanelStyles.PANEL_STYLE_BLUE50)
 		szText = CyGameTextMgr().getUnitHelp(self.iUnit, True, False, False, None)[1:]
 
 		UnitInfo = gc.getUnitInfo(self.iUnit)

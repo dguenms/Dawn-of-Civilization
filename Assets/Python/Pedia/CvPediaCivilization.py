@@ -80,7 +80,7 @@ class CvPediaCivilization:
 	def placeLeaders(self):
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
-		screen.addPanel(panel, CyTranslator().getText("Leaders", ()), "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_LEADERS", ()), "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 		for iLeader in xrange(gc.getNumLeaderHeadInfos()):
 			civ = gc.getCivilizationInfo(self.iCivilization)
