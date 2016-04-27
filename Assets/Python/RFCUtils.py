@@ -2023,5 +2023,55 @@ class RFCUtils:
 				lCities.append(plot.getPlotCity())
 		return lCities
 		
+	def getAdvisorString(self, iBuilding):
+		''
+		iAdvisor = gc.getBuildingInfo(iBuilding).getAdvisorType()
+
+		if iAdvisor == 0:
+			return "Military"
+		elif iAdvisor == 1:
+			return "Religious"
+		elif iAdvisor == 2:
+			return "Economy"
+		elif iAdvisor == 3:
+			return "Science"
+		elif iAdvisor == 4:
+			return "Culture"
+		elif iAdvisor == 5:
+			return "Growth"
+
+		return ""
+		
+	def getBuildingCategory(self, iBuilding):
+		'0 = Building'
+		'1 = Religious Building'
+		'2 = Unique Building'
+		'3 = National Wonder'
+		'4 = World Wonder'
+
+		BuildingInfo = gc.getBuildingInfo(iBuilding)
+		if BuildingInfo.isGraphicalOnly():
+			return -1
+		elif BuildingInfo.getReligionType() > -1:
+			return 1
+		elif isWorldWonderClass(BuildingInfo.getBuildingClassType()):
+			return 4
+		else:
+			iBuildingClass = BuildingInfo.getBuildingClassType()
+			iDefaultBuilding = gc.getBuildingClassInfo(iBuildingClass).getDefaultBuildingIndex()
+			if isNationalWonderClass(iBuildingClass):
+				return 3
+			else:
+				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
+					return 2
+				else:
+					return 0
+					
+	def getLeaderCiv(self, iLeader):
+		for iCiv in range(gc.getNumCivilizationInfos()):
+			civ = gc.getCivilizationInfo(iCiv)
+			if civ.isLeaders(iLeader):
+				return iCiv
+		return None
 
 utils = RFCUtils()

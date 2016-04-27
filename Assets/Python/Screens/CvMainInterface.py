@@ -61,6 +61,7 @@ import TradeUtil
 # BUG - Fractional Trade - end
 
 import BugUnitPlot
+import WidgetUtil
 
 # globals
 utils = RFCUtils.RFCUtils() #Rhye
@@ -312,6 +313,9 @@ class CvMainInterface:
 		self.szSliderId = "FieldOfViewSlider"
 		self.iField_View_Prev = -1
 # BUG - field of view slider - end
+
+		# Widgets
+		WidgetUtil.createWidget("WIDGET_PEDIA_JUMP_TO_RESOURCE")
 
 		
 		

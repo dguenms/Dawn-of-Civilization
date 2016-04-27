@@ -76,8 +76,8 @@
 		<English>[ICON_BULLET]Founded when a Hindu Temple is built</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_RELIGION_FOUND_ORTHODOXY</Tag>
-		<English>[ICON_BULLET]Founded when the Apostolic Palace is built</English>
+		<Tag>TXT_KEY_RELIGION_FOUND_CATHOLICISM</Tag>
+		<English>[ICON_BULLET]Founded when Christian civilizations control less than half of all Christian cities[NEWLINE][ICON_BULLET]Alternately founded by the first civilization to build an Orthodox Cathedral without controlling the Orthodox holy city</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_EXTRA_UPKEEP_TEXT</Tag>
