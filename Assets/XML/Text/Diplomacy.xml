@@ -186,7 +186,7 @@
 		<Spanish>&#191;Podr?ais darles esto a unos buenos amigos, [CT_NAME]?</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_FIRST_CONTACT_OTHER_LEADERS</Tag>
+		<Tag>AI_DIPLO_FIRST_CONTACT_GENERIC</Tag>
 		<English>Greetings, [CT_NAME]! I am [OUR_NAME], leader of the great civilization of [OUR_CIV_SHORT].</English>
 		<German>Seid gegr&#252;&#223;t, [CT_NAME]! Ich bin [OUR_NAME], Anf&#252;hrer der gro&#223;en Zivilisation von [OUR_CIV_SHORT].</German>
 	</TEXT>

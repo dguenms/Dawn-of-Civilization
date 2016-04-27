@@ -997,7 +997,7 @@
 						</Leader>
 					</Leaders>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_OTHER_LEADERS</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_GENERIC</Text>
 					</DiplomacyText>
 				</Response>
 			</Responses>
