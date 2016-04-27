@@ -75,7 +75,7 @@ class CvPediaSpecialist:
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "Effects", "", True, False, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_EFFECTS", ()), "", True, False, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
 		SpecialistInfo = gc.getSpecialistInfo(self.iSpecialist)
 		iGPClass = SpecialistInfo.getGreatPeopleUnitClass()
 		szGP = ""

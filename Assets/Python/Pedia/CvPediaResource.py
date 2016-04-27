@@ -112,7 +112,7 @@ class CvPediaResource:
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "Technology", "", False, True, self.X_TECH, self.Y_TECH, self.W_TECH, self.H_TECH, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CONCEPT_TECHNOLOGY", ()), "", False, True, self.X_TECH, self.Y_TECH, self.W_TECH, self.H_TECH, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 
 		iTech = gc.getBonusInfo(self.iResource).getTechReveal()
@@ -214,7 +214,7 @@ class CvPediaResource:
 
 			if iBuilding > -1:
 				BuildingInfo = gc.getBuildingInfo(iBuilding)
-				if BuildingInfo.getArtDefineTag() == "ART_DEF_BUILDING_FAKE" or BuildingInfo.isGraphicalOnly():
+				if BuildingInfo.isGraphicalOnly():
 					continue
 
 				bFound = False
@@ -271,7 +271,7 @@ class CvPediaResource:
 						break
 
 			if bFound:
-				screen.attachImageButton(panel, "", RouteInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_GENERAL, iRoute, 1, False)
+				screen.attachImageButton(panel, "", RouteInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
 
 
 

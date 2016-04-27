@@ -106,14 +106,26 @@ class CvPediaReligion:
 			if len(special) != 0:
 				screen.appendListBoxString(text, special, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
-
+	def placeVictory(self):
+		screen = self.top.getScreen()
+		panel = self.top.getNextWidgetName()
+		text = self.top.getNextWidgetName()
+		
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ()), "", True, False, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.attachListBoxGFC(panel, text, "", TableStyles.TABLE_STYLE_EMPTY)
+		screen.enableSelect(text, False)
+		szSpecialText = CyGameTextMgr().parseReligionInfo(self.iReligion, True)
+		splitText = string.split(szSpecialText, "\n")
+		for special in splitText:
+			if len(special) != 0:
+				screen.appendListBoxString(text, special, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 	def placeHistory(self):
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "History", "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
 		szHistory = gc.getReligionInfo(self.iReligion).getCivilopedia()
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
