@@ -95,7 +95,7 @@ class CvPediaSpecialist:
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "Sources", "", False, True, self.X_SOURCES, self.Y_SOURCES, self.W_SOURCES, self.H_SOURCES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_SOURCES", ()), "", False, True, self.X_SOURCES, self.Y_SOURCES, self.W_SOURCES, self.H_SOURCES, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 
 		for iCivic in xrange(gc.getNumCivicInfos()):
@@ -125,12 +125,7 @@ class CvPediaSpecialist:
 			if iBuilding > -1:
 				BuildingInfo = gc.getBuildingInfo(iBuilding)
 				if BuildingInfo.getSpecialistCount(self.iSpecialist) > 0 or BuildingInfo.getFreeSpecialistCount(self.iSpecialist) > 0:
-					if BuildingInfo.getType().find("_NATURAL_WONDER_") > -1:
-						iFeature = gc.getInfoTypeForString(BuildingInfo.getType().replace("BUILDING_", "FEATURE_"))
-						screen.attachImageButton(panel, "", gc.getFeatureInfo(iFeature).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_FEATURE, iFeature, 1, False)
-
-					else:
-						screen.attachImageButton(panel, "", BuildingInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, -1, False)
+					screen.attachImageButton(panel, "", BuildingInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, -1, False)
 
 
 

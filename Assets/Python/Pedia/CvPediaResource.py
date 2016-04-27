@@ -175,7 +175,7 @@ class CvPediaResource:
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "Used By", "", False, True, self.X_USES, self.Y_USES, self.W_USES, self.H_USES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_USED_BY", ()), "", False, True, self.X_USES, self.Y_USES, self.W_USES, self.H_USES, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 
 		# Units

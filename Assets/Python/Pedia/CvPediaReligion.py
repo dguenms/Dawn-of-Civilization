@@ -39,8 +39,13 @@ class CvPediaReligion:
 		self.W_EFFECTS = self.top.R_PEDIA_PAGE - self.X_EFFECTS
 		self.H_EFFECTS = 110
 
+		self.X_VICTORY = self.X_INFO_PANE
+		self.Y_VICTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
+		self.W_VICTORY = self.top.R_PEDIA_PAGE - self.X_EFFECTS
+		self.H_VICTORY = 113
+		
 		self.X_HISTORY = self.X_INFO_PANE
-		self.Y_HISTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
+		self.Y_HISTORY = self.Y_VICTORY + self.H_VICTORY + 10
 		self.W_HISTORY = self.top.R_PEDIA_PAGE - self.X_HISTORY
 		self.H_HISTORY = self.top.B_PEDIA_PAGE - self.Y_HISTORY - 10
 
@@ -51,6 +56,7 @@ class CvPediaReligion:
 		self.placeInfo()
 		self.placeRequires()
 		self.placeEffects()
+		self.placeVictory()
 		self.placeHistory()
 
 
@@ -111,14 +117,13 @@ class CvPediaReligion:
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 		
-		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ()), "", True, False, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ()), "", True, False, self.X_VICTORY, self.Y_VICTORY, self.W_VICTORY, self.H_VICTORY, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachListBoxGFC(panel, text, "", TableStyles.TABLE_STYLE_EMPTY)
 		screen.enableSelect(text, False)
-		szSpecialText = CyGameTextMgr().parseReligionInfo(self.iReligion, True)
-		splitText = string.split(szSpecialText, "\n")
-		for special in splitText:
-			if len(special) != 0:
-				screen.appendListBoxString(text, special, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		bullet = u"%c" % CyGame().getSymbolID(FontSymbols.BULLET_CHAR)
+		for iGoal in range(3):
+			victorytext = bullet + CyTranslator().getText(tReligiousGoals[0][self.iReligion][iGoal], ())
+			screen.appendListBoxString(text, victorytext, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 	def placeHistory(self):
 		screen = self.top.getScreen()
