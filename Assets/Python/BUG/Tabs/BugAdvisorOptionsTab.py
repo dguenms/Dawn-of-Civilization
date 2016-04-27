@@ -65,11 +65,6 @@ class BugAdvisorOptionsTab(BugOptionsTab.BugOptionsTab):
 		self.addCheckbox(screen, center, "Advisors__BugInfoWonders")
 		self.addCheckbox(screen, center, "Advisors__BugInfoWondersPlayerColor", True)
 
-
-		self.addLabel(screen, right, "Sevopedia", "Sevopedia [F12]:")
-		self.addCheckbox(screen, right, "Advisors__Sevopedia")
-		self.addCheckbox(screen, right, "Advisors__SevopediaSortItemList")
-
 		self.addLabel(screen, right, "Espionage_Screen", "Espionage [CTRL + E]:")
 		self.addCheckbox(screen, right, "BetterEspionage__Enabled")
 		self.addCheckbox(screen, right, "BetterEspionage__ShowCalculatedInformation")
