@@ -1110,11 +1110,11 @@
 		<element type="Text" minOccurs="1" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="Response" content="eltOnly">
-		<element type="Civilizations"/>
-		<element type="Leaders"/>
-		<element type="Attitudes"/>
-		<element type="DiplomacyPowers"/>
-		<element type="DiplomacyText"/>
+		<element type="Civilizations" minOccurs="0"/>
+		<element type="Leaders" minOccurs="0"/>
+		<element type="Attitudes" minOccurs="0"/>
+		<element type="DiplomacyPowers" minOccurs="0"/>
+		<element type="DiplomacyText" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="Responses" content="eltOnly">
 		<element type="Response" maxOccurs="*"/>
