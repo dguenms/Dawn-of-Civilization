@@ -493,14 +493,6 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iRome:
 	
 		# first goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
-		if isPossible(iRome, 0):
-			iNumBarracks = getNumBuildings(iRome, iBarracks)
-			iNumAqueducts = getNumBuildings(iRome, iAqueduct)
-			iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
-			iNumForums = getNumBuildings(iRome, iRomanForum)
-			if iNumBarracks >= 6 and iNumAqueducts >= 5 and iNumAmphitheatres >= 4 and iNumForums >= 3:
-				win(iRome, 0)
-				
 		if iGameTurn == getTurnForYear(100):
 			expire(iRome, 0)
 			
@@ -703,7 +695,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iJapan, 1)
 				
-		# third goal: be the first to complete the tech tree
+		# third goal: be the first to discover 5 modern techs
 		
 	elif iPlayer == iVikings:
 	
@@ -1690,6 +1682,17 @@ def onBuildingBuilt(iPlayer, iBuilding):
 					iCounter += getNumBuildings(iIndia, iGoalTemple)
 				if iCounter >= 20:
 					win(iIndia, 1)
+	
+	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
+	elif iPlayer == iRome:
+		if isPossible(iRome, 0):
+			if iBuilding in [iBarracks, iAqueduct, iAmphitheatre, iRomanForum]:
+				iNumBarracks = getNumBuildings(iRome, iBarracks)
+				iNumAqueducts = getNumBuildings(iRome, iAqueduct)
+				iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
+				iNumForums = getNumBuildings(iRome, iRomanForum)
+				if iNumBarracks >= 6 and iNumAqueducts >= 5 and iNumAmphitheatres >= 4 and iNumForums >= 3:
+					win(iRome, 0)
 					
 	# first Korean goal: build a Confucian and a Buddhist Cathedral
 	elif iPlayer == iKorea:

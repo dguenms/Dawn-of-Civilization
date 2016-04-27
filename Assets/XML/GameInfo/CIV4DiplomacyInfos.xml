@@ -94,16 +94,12 @@
 				<Response>
 					<Leaders>
 						<Leader>
-							<LeaderType>LEADER_ABU_BAKR</LeaderType>
-							<bLeaderType>1</bLeaderType>
-						</Leader>
-						<Leader>
 							<LeaderType>LEADER_HARUN_AL_RASHID</LeaderType>
 							<bLeaderType>1</bLeaderType>
 						</Leader>
 					</Leaders>
 					<DiplomacyText>
-						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_ABU_BAKR_1</Text>
+						<Text>AI_DIPLO_FIRST_CONTACT_LEADER_HARUN_AL_RASHID_1</Text>
 					</DiplomacyText>
 				</Response>
 				<Response>

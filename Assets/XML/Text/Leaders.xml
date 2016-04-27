@@ -31,30 +31,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_LEADER_ABU_BAKR</Tag>
-		<English>Abu Bakr</English>
-		<French>
-			<Text>Abu Bakr</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Abu Bakr</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Abu Bakr</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Abu Bakr</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>LEADER_AFONSO_HENRIQUES</Tag>
 		<English>Afonso Henriques</English>
 		<French>Alphonse Henriques</French>

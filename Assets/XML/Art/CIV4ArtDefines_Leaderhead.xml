@@ -1009,14 +1009,6 @@
 			<NoShaderNIF>art/LeaderHeads/Boudica/Boudica_NONSHADER.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Boudica/Boudica_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
-		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_ABU_BAKR</Type>
-			<Button>,Art/Interface/Buttons/Leaderheads/Omani.dds,Art/Interface/Buttons/mem_leaders_atlas.dds,1,3</Button>
-			<NIF>Art/Leaderheads/AbuBakr/abubakr.nif</NIF>
-			<KFM>Art/Leaderheads/AbuBakr/frederick_the_great.kfm</KFM>
-			<NoShaderNIF>Art/Leaderheads/AbuBakr/abubakr.nif</NoShaderNIF>
-			<BackgroundKFM>Art/Leaderheads/AbuBakr/frederick_the_great_bg.kfm</BackgroundKFM>
-		</LeaderheadArtInfo>
 		<!--LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_HATSHEPSUT</Type>
 			<Button>,Art/interface/LeaderHeads/Btn_LH_Egypt_Hatshepsut.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,11</Button>

@@ -1566,8 +1566,8 @@ iCivicAnimism, iCivicPantheon, iCivicOrganizedReligion, iCivicScholasticism, iCi
 iCivicMilitia, iCivicMercenaries, iCivicLevyArmies, iCivicStandingArmy, iCivicNavalSupremacy, iCivicMultilateralism) = range(iNumCivics)
 
 #Specialists
-iNumSpecialists = 17
-(iSpecialistCitizen, iSpecialistPriest, iSpecialistArtist, iSpecialistScientist, iSpecialistMerchant, iSpecialistEngineer, iSpecialistStatesman, iSpecialistSpy,
+iNumSpecialists = 16
+(iSpecialistCitizen, iSpecialistPriest, iSpecialistArtist, iSpecialistScientist, iSpecialistMerchant, iSpecialistEngineer, iSpecialistStatesman,
 iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatMerchant, iSpecialistGreatEngineer, iSpecialistGreatStatesman, iSpecialistGreatGeneral, iSpecialistGreatSpy, iSpecialistSlave) = range(iNumSpecialists)
 
 #Stability Levels
@@ -1674,7 +1674,7 @@ iSuharto, iRahman, iYaqub, iIsabella, iPhilip, iFranco, iCharlemagne, iLouis, iN
 iCharles, iFrancis, iIvan, iPeter, iCatherine, iNicholas, iStalin, iMansaMusa, iCasimir, iSobieski, iPilsudski, iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac,
 iCastilla, iLorenzo, iCavour, iMussolini, iGenghisKhan, iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, iMehmed, iSuleiman, iAtaturk, iNaresuan, iMongkut, iMbemba,
 iAbbas, iKhomeini, iWillemVanOranje, iWilliam, iFrederick, iBismarck, iHitler, iWashington, iLincoln, iRoosevelt, iSanMartin, iPeron, iSantaAnna, iJuarez, iCardenas, iBolivar,
-iPedro, iVargas, iMacDonald, iTrudeau, iBrennus, iAlpArslan, iNativeLeader, iIndependentLeader, iBarbarianLeader, iSittingBull, iBoudica, iAbuBakr) = range(iNumLeaders)
+iPedro, iVargas, iMacDonald, iTrudeau, iBrennus, iAlpArslan, iNativeLeader, iIndependentLeader, iBarbarianLeader, iSittingBull, iBoudica) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,
