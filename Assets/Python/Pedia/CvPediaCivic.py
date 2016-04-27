@@ -1,6 +1,7 @@
 from CvPythonExtensions import *
 import CvUtil
 import FontUtil
+from Consts import *
 
 gc = CyGlobalContext()
 
@@ -41,6 +42,16 @@ class CvPediaCivic:
 		self.Y_HISTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
 		self.W_HISTORY = self.top.R_PEDIA_PAGE - self.X_HISTORY
 		self.H_HISTORY = self.top.B_PEDIA_PAGE - self.Y_HISTORY
+		
+		self.X_VICTORY = self.X_INFO_PANE
+		self.Y_VICTORY = self.Y_EFFECTS + self.H_EFFECTS + 10
+		self.W_VICTORY = self.top.R_PEDIA_PAGE - self.X_EFFECTS
+		self.H_VICTORY = 120
+				
+		self.X_HISTORY_ALT = self.X_INFO_PANE
+		self.Y_HISTORY_ALT = self.Y_VICTORY + self.H_VICTORY + 10
+		self.W_HISTORY_ALT = self.W_HISTORY
+		self.H_HISTORY_ALT = self.top.B_PEDIA_PAGE - self.Y_HISTORY_ALT
 
 
 	def interfaceScreen(self, iCivic):
@@ -107,9 +118,33 @@ class CvPediaCivic:
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
-		szHistory = gc.getCivicInfo(self.iCivic).getCivilopedia()
-		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		# Place smaller history panel and victory panel for Pantheon and Secularism
+		if self.iCivic in [iCivicPantheon, iCivicSecularism]:
+			screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY_ALT, self.Y_HISTORY_ALT, self.W_HISTORY_ALT, self.H_HISTORY_ALT, PanelStyles.PANEL_STYLE_BLUE50)
+			szHistory = gc.getCivicInfo(self.iCivic).getCivilopedia()
+			screen.addMultilineText(text, szHistory, self.X_HISTORY_ALT + 10, self.Y_HISTORY_ALT + 30, self.W_HISTORY_ALT - 20, self.H_HISTORY_ALT - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			self.placeVictory()
+		else:
+			screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
+			szHistory = gc.getCivicInfo(self.iCivic).getCivilopedia()
+			screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		
+	def placeVictory(self):			
+		screen = self.top.getScreen()
+		panel = self.top.getNextWidgetName()
+		text = self.top.getNextWidgetName()
+		
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ()), "", True, False, self.X_VICTORY, self.Y_VICTORY, self.W_VICTORY, self.H_VICTORY, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.attachListBoxGFC(panel, text, "", TableStyles.TABLE_STYLE_EMPTY)
+		screen.enableSelect(text, False)
+		if self.iCivic == iCivicPantheon:
+			iVictory = iVictoryPolytheism
+		else:
+			iVictory = iVictorySecularism
+		bullet = u"%c" % CyGame().getSymbolID(FontSymbols.BULLET_CHAR)
+		for iGoal in range(3):
+			victorytext = bullet + CyTranslator().getText(tReligiousGoals[0][iVictory][iGoal], ())
+			screen.appendListBoxString(text, victorytext, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 
 	def handleInput (self, inputClass):
