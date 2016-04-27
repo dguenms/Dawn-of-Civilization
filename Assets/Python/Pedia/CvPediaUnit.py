@@ -207,7 +207,7 @@ class CvPediaUnit:
 		for iPromotion in xrange(gc.getNumPromotionInfos()):
 			PromotionInfo = gc.getPromotionInfo(iPromotion)
 			if isPromotionValid(iPromotion, self.iUnit, False):
-				if not PromotionInfo.getTechPrereq() == gc.getInfoTypeForString('TECH_FAKE') or PromotionInfo.isGraphicalOnly():
+				if not PromotionInfo.isGraphicalOnly():
 					screen.appendMultiListButton(list, PromotionInfo.getButton(), 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iPromotion, -1, False)
 
 

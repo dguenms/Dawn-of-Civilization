@@ -73,7 +73,7 @@ class CvPediaCivilization:
 
 		szText = u"<font=4b>" + gc.getCivilizationInfo(self.iCivilization).getDescription() + "</font>\n\n"
 		szText += CyGameTextMgr().parseCivInfos(self.iCivilization, True)
-		screen.addMultilineText(text, szText, self.X_DESC + 10, self.Y_DESC + 10, self.W_DESC - 20, self.H_DESC - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.addMultilineText(text, szText, self.X_DESC + 10, self.Y_DESC + 10, self.W_DESC - 20, self.H_DESC - 20, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 		
 		
