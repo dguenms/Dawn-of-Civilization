@@ -26,6 +26,30 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROJECT_INTERNET</Tag>
+		<English>The Internet</English>
+		<French>
+			<Text>Internet</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Das Internet</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Internet</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Internet</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROJECT_APOLLO_PROGRAM_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]Apollo Program[COLOR_REVERT] is required to create the [COLOR_PROJECT_TEXT]SS Cockpit[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Life Support[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Stasis Chamber[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Docking Bay[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Engines[COLOR_REVERT], [COLOR_PROJECT_TEXT]SS Casings[COLOR_REVERT] and [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT].</English>
 	</TEXT>
@@ -74,7 +98,7 @@
 		<English>[COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] are required to achieve the [COLOR_HIGHLIGHT_TEXT]Space Race[COLOR_REVERT] victory condition. They also increase the speed of the spaceship.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROJECT_THE_INTERNET_STRATEGY</Tag>
+		<Tag>TXT_KEY_PROJECT_INTERNET_STRATEGY</Tag>
 		<English>The [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] grants all technologies that are already discovered by 2 known civilizations.</English>
 	</TEXT>
 </Civ4GameText>

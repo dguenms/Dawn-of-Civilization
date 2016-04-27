@@ -38,7 +38,7 @@ tQufuTL = (102, 44)
 tQufuBR = (106, 46)
 tMecca = (75, 33)
 
-lCatholicCivs = [iCarthage, iRome, iRome, iGreece, iGreece, iByzantium, iByzantium]
+lCatholicCivs = [iPhoenicia, iRome, iRome, iGreece, iGreece, iByzantium, iByzantium]
 
 dCatholicPreference = {
 iEgypt		: 80,
@@ -67,10 +67,10 @@ def getCatholicPreference(iPlayer):
 		return 50
 	return dCatholicPreference[iPlayer]
 
-lOrthodoxFounders = (iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPersia, iBabylonia, iRome)
-lOrthodoxEast = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPersia, iBabylonia]
-lOrthodoxMiddle = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPersia, iBabylonia, iRome, iHolyRome, iVikings]
-lOrthodoxWest = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPersia, iBabylonia, iRome, iHolyRome, iVikings, iFrance, iEngland]
+lOrthodoxFounders = (iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iPhoenicia, iPersia, iBabylonia, iRome)
+lOrthodoxEast = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iPhoenicia, iPersia, iBabylonia]
+lOrthodoxMiddle = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iPhoenicia, iPersia, iBabylonia, iRome, iHolyRome, iVikings]
+lOrthodoxWest = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iPhoenicia, iPersia, iBabylonia, iRome, iHolyRome, iVikings, iFrance, iEngland]
 
 class Religions:
 

@@ -274,23 +274,23 @@ class CvRFCEventHandler:
 		if iOwner == iTurkey:
 			self.up.turkishUP(city, iOwner, -1)
 			
-		if iOwner == iCarthage:
+		if iOwner == iPhoenicia:
 			if city.getX() == 58 and city.getY() == 39:
-				if not gc.getPlayer(iCarthage).isHuman():
-					x = gc.getPlayer(iCarthage).getCapitalCity().getX()
-					y = gc.getPlayer(iCarthage).getCapitalCity().getY()
+				if not gc.getPlayer(iPhoenicia).isHuman():
+					x = gc.getPlayer(iPhoenicia).getCapitalCity().getX()
+					y = gc.getPlayer(iPhoenicia).getCapitalCity().getY()
 					carthage = gc.getMap().plot(58,39).getPlotCity()
 					carthage.setHasRealBuilding(iPalace, True)
 					gc.getMap().plot(x,y).getPlotCity().setHasRealBuilding(iPalace, False)
-					dc.onPalaceMoved(iCarthage)
+					dc.onPalaceMoved(iPhoenicia)
 					
 					carthage.setPopulation(3)
 					
-					utils.makeUnitAI(iWorkboat, iCarthage, (58, 39), UnitAITypes.UNITAI_WORKER_SEA, 1)
-					utils.makeUnitAI(iGalley, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
-					utils.makeUnitAI(iSettler, iCarthage, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
+					utils.makeUnitAI(iWorkboat, iPhoenicia, (58, 39), UnitAITypes.UNITAI_WORKER_SEA, 1)
+					utils.makeUnitAI(iGalley, iPhoenicia, (57, 40), UnitAITypes.UNITAI_SETTLER_SEA, 1)
+					utils.makeUnitAI(iSettler, iPhoenicia, (57, 40), UnitAITypes.UNITAI_SETTLE, 1)
 					
-				utils.setReborn(iCarthage, True)
+				utils.setReborn(iPhoenicia, True)
 				
 		if iOwner == iByzantium and (city.getX(), city.getY()) == Areas.getCapital(iByzantium) and gc.getGame().getGameTurn() <= getTurnForYear(330)+3:
 			if city.getPopulation() < 5:
@@ -535,7 +535,7 @@ class CvRFCEventHandler:
 					plot.setWithinGreatWall(True)
 					
 		# Leoreth: La Mezquita
-		if iBuildingType == iMezquita:
+		if iBuildingType == iLaMezquita:
 			lGPList = [0, 0, 0, 0, 0, 0, 0]
 			for city in utils.getCityList(iOwner):
 				for i in range(7):
@@ -547,8 +547,8 @@ class CvRFCEventHandler:
 
 		# Leoreth: in case human Phoenicia moves palace to Carthage
 		if iBuildingType == iPalace:
-			if iOwner == iCarthage and city.getX() == 58 and city.getY() == 39:
-				utils.setReborn(iCarthage, True)
+			if iOwner == iPhoenicia and city.getX() == 58 and city.getY() == 39:
+				utils.setReborn(iPhoenicia, True)
 			
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList

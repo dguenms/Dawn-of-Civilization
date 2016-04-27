@@ -30,15 +30,15 @@
 		<English>Indus</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPANS_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_HARAPPA_ADJECTIVE</Tag>
 		<English>Harappan</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPANS_DESC</Tag>
+		<Tag>TXT_KEY_CIV_HARAPPA_DESC</Tag>
 		<English>The Harappans</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HARAPPANS_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_HARAPPA_SHORT_DESC</Tag>
 		<English>Harappa</English>
 	</TEXT>
 </Civ4GameText>

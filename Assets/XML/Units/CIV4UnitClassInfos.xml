@@ -95,12 +95,12 @@
 			<DefaultUnit>UNIT_JEWISH_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_PROTESTANT_MISSIONARY</Type>
-			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
+			<Type>UNITCLASS_ORTHODOX_MISSIONARY</Type>
+			<Description>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_PROTESTANT_MISSIONARY</DefaultUnit>
+			<DefaultUnit>UNIT_ORTHODOX_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CATHOLIC_MISSIONARY</Type>
@@ -111,12 +111,12 @@
 			<DefaultUnit>UNIT_CATHOLIC_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_ORTHODOX_MISSIONARY</Type>
-			<Description>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Description>
+			<Type>UNITCLASS_PROTESTANT_MISSIONARY</Type>
+			<Description>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_ORTHODOX_MISSIONARY</DefaultUnit>
+			<DefaultUnit>UNIT_PROTESTANT_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_ISLAMIC_MISSIONARY</Type>
@@ -239,20 +239,20 @@
 			<DefaultUnit>UNIT_GRENADIER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_INFANTRY</Type>
-			<Description>TXT_KEY_UNIT_INFANTRY</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_INFANTRY</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_AT_INFANTRY</Type>
 			<Description>TXT_KEY_UNIT_AT_INFANTRY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_AT_INFANTRY</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_INFANTRY</Type>
+			<Description>TXT_KEY_UNIT_INFANTRY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_INFANTRY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SAM_INFANTRY</Type>
@@ -535,14 +535,6 @@
 			<DefaultUnit>UNIT_DESTROYER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_STEALTH_DESTROYER</Type>
-			<Description>TXT_KEY_UNIT_STEALTH_DESTROYER</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_STEALTH_DESTROYER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_BATTLESHIP</Type>
 			<Description>TXT_KEY_UNIT_BATTLESHIP</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -557,6 +549,14 @@
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_MISSILE_CRUISER</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_STEALTH_DESTROYER</Type>
+			<Description>TXT_KEY_UNIT_STEALTH_DESTROYER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_STEALTH_DESTROYER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SUBMARINE</Type>
@@ -631,20 +631,20 @@
 			<DefaultUnit>UNIT_GUIDED_MISSILE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_ICBM</Type>
-			<Description>TXT_KEY_UNIT_ICBM</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_ICBM</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_TACTICAL_NUKE</Type>
 			<Description>TXT_KEY_UNIT_TACTICAL_NUKE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_TACTICAL_NUKE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_ICBM</Type>
+			<Description>TXT_KEY_UNIT_ICBM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_ICBM</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_GREAT_PROPHET</Type>

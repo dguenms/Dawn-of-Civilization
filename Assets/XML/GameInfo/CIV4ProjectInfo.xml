@@ -12,63 +12,38 @@
 			<Description>TXT_KEY_PROJECT_MANHATTAN_PROJECT</Description>
 			<Civilopedia>TXT_KEY_PROJECT_MANHATTAN_PROJECT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_MANHATTAN_PROJECT_STRATEGY</Strategy>
-			<VictoryPrereq>NONE</VictoryPrereq>
 			<TechPrereq>TECH_FISSION</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iCost>1500</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
 			<EveryoneSpecialBuilding>SPECIALBUILDING_BOMB_SHELTER</EveryoneSpecialBuilding>
-			<bSpaceship>0</bSpaceship>
 			<bAllowsNukes>1</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/ManhattanProject.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,4</Button>
-			<PrereqProjects/>
-			<VictoryThresholds/>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_URANIUM</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag>ART_DEF_MOVIE_MANHATTAN_PROJECT</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
-			<Type>PROJECT_THE_INTERNET</Type>
-			<Description>TXT_KEY_PROJECT_THE_INTERNET</Description>
-			<Civilopedia>TXT_KEY_PROJECT_THE_INTERNET_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_THE_INTERNET_STRATEGY</Strategy>
-			<VictoryPrereq>NONE</VictoryPrereq>
+			<Type>PROJECT_INTERNET</Type>
+			<Description>TXT_KEY_PROJECT_INTERNET</Description>
+			<Civilopedia>TXT_KEY_PROJECT_INTERNET_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROJECT_INTERNET_STRATEGY</Strategy>
 			<TechPrereq>TECH_COMPUTERS</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iCost>2000</iCost>
-			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>2</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
-			<bSpaceship>0</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/Internet.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,4</Button>
-			<PrereqProjects/>
-			<VictoryThresholds/>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_COPPER</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag>ART_DEF_MOVIE_INTERNET</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -76,31 +51,19 @@
 			<Description>TXT_KEY_PROJECT_SDI</Description>
 			<Civilopedia>TXT_KEY_PROJECT_SDI_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_SDI_STRATEGY</Strategy>
-			<VictoryPrereq>NONE</VictoryPrereq>
 			<TechPrereq>TECH_LASER</TechPrereq>
 			<AnyonePrereqProject>PROJECT_MANHATTAN_PROJECT</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>1000</iCost>
 			<iNukeInterception>50</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
-			<bSpaceship>0</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/SDI.dds,Art/Interface/Buttons/Buildings_Atlas.dds,1,6</Button>
-			<PrereqProjects/>
-			<VictoryThresholds/>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_ALUMINUM</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag>ART_DEF_MOVIE_SDI</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -110,29 +73,16 @@
 			<Strategy>TXT_KEY_PROJECT_APOLLO_PROGRAM_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_ROCKETRY</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>1600</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
-			<bSpaceship>0</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/ApolloProgram.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,1</Button>
-			<PrereqProjects/>
-			<VictoryThresholds/>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_ALUMINUM</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag>ART_DEF_MOVIE_APOLLO_PROGRAM</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -142,16 +92,10 @@
 			<Strategy>TXT_KEY_PROJECT_SPACE_COCKPIT_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_FIBER_OPTICS</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>700</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/SS_Cockpit.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,6</Button>
 			<PrereqProjects>
 				<PrereqProject>
@@ -165,16 +109,12 @@
 					<iThreshold>1</iThreshold>
 				</VictoryThreshold>
 			</VictoryThresholds>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_COPPER</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -184,16 +124,10 @@
 			<Strategy>TXT_KEY_PROJECT_SPACE_LIFE_SUPPORT_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_ECOLOGY</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>800</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/SS_LifeSupport.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,10</Button>
 			<PrereqProjects>
 				<PrereqProject>
@@ -207,16 +141,12 @@
 					<iThreshold>1</iThreshold>
 				</VictoryThreshold>
 			</VictoryThresholds>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_COPPER</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -226,16 +156,10 @@
 			<Strategy>TXT_KEY_PROJECT_SPACE_STASIS_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_GENETICS</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>900</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/SS_StasisChamber.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,10</Button>
 			<PrereqProjects>
 				<PrereqProject>
@@ -249,11 +173,6 @@
 					<iThreshold>1</iThreshold>
 				</VictoryThreshold>
 			</VictoryThresholds>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
-			<BonusProductionModifiers/>
-			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -263,16 +182,10 @@
 			<Strategy>TXT_KEY_PROJECT_SPACE_DOCKING_BAY_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_SATELLITES</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>1700</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/SS_DockingBay.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,6</Button>
 			<PrereqProjects>
 				<PrereqProject>
@@ -286,16 +199,12 @@
 					<iThreshold>1</iThreshold>
 				</VictoryThreshold>
 			</VictoryThresholds>
-			<VictoryMinThresholds/>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_ALUMINUM</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -305,16 +214,10 @@
 			<Strategy>TXT_KEY_PROJECT_SPACE_ENGINE_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_FUSION</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>2</iMaxTeamInstances>
 			<iCost>1300</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/SS_Engine.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,6</Button>
 			<PrereqProjects>
 				<PrereqProject>
@@ -335,9 +238,6 @@
 				</VictoryMinThreshold>
 			</VictoryMinThresholds>
 			<iVictoryDelayPercent>50</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
-			<BonusProductionModifiers/>
-			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -347,16 +247,10 @@
 			<Strategy>TXT_KEY_PROJECT_SPACE_CASING_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_COMPOSITES</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>5</iMaxTeamInstances>
 			<iCost>600</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/SS_Casing.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,6</Button>
 			<PrereqProjects>
 				<PrereqProject>
@@ -376,7 +270,6 @@
 					<iThreshold>1</iThreshold>
 				</VictoryMinThreshold>
 			</VictoryMinThresholds>
-			<iVictoryDelayPercent>0</iVictoryDelayPercent>
 			<iSuccessRate>20</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -384,7 +277,6 @@
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 		<ProjectInfo>
@@ -394,16 +286,10 @@
 			<Strategy>TXT_KEY_PROJECT_SPACE_THRUSTERS_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_SUPERCONDUCTORS</TechPrereq>
-			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>5</iMaxTeamInstances>
 			<iCost>900</iCost>
-			<iNukeInterception>0</iNukeInterception>
-			<iTechShare>0</iTechShare>
-			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
-			<EveryoneSpecialBuilding>NONE</EveryoneSpecialBuilding>
 			<bSpaceship>1</bSpaceship>
-			<bAllowsNukes>0</bAllowsNukes>
 			<Button>,Art/Interface/Buttons/Buildings/SS_Thrusters.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,10</Button>
 			<PrereqProjects>
 				<PrereqProject>
@@ -424,14 +310,12 @@
 				</VictoryMinThreshold>
 			</VictoryMinThresholds>
 			<iVictoryDelayPercent>100</iVictoryDelayPercent>
-			<iSuccessRate>0</iSuccessRate>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_ALUMINUM</BonusType>
 					<iProductonModifier>100</iProductonModifier>
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
-			<CreateSound/>
 			<MovieDefineTag/>
 		</ProjectInfo>
 	</ProjectInfos>

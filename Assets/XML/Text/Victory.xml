@@ -342,72 +342,72 @@
 		<German>Beenden Sie bis zum Jahr 2000 n. Chr. zw&#246;lf Kriege durch Diplomatie</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR1_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_PHO1_TITLE</Tag>
 		<English>New Tyre</English>
 		<German>Das neue Tyrus</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR1</Tag>
+		<Tag>TXT_KEY_UHV_PHO1</Tag>
 		<English>Build a Palace and the Great Cothon in Carthage by 300 BC</English>
 		<German>Bauen Sie bis zum Jahr 300 v. Chr. einen Palast und den Gro&#223;en Cothon in Karthago</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR1_EPIC</Tag>
+		<Tag>TXT_KEY_UHV_PHO1_EPIC</Tag>
 		<English>Build a Palace and the Great Cothon in Carthage by 300 BC</English>
 		<German>Bauen Sie bis zum Jahr 300 v. Chr. einen Palast und den Gro&#223;en Cothon in Karthago</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR1_MARATHON</Tag>
+		<Tag>TXT_KEY_UHV_PHO1_MARATHON</Tag>
 		<English>Build a Palace and the Great Cothon in Carthage by 300 BC</English>
 		<German>Bauen Sie bis zum Jahr 300 v. Chr. einen Palast und den Gro&#223;en Cothon in Karthago</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR1_NOTURN</Tag>
-		<English>Control 5 coastal cities in the Mediterranean in 100 BC</English>
-		<German>Kontrollieren Sie im Jahr 100 v. Chr. 7 K&#252;stenst&#228;dte im Mittelmeerraum</German>
+		<Tag>TXT_KEY_UHV_PHO1_NOTURN</Tag>
+		<English>Build a Palace and the Great Cothon in Carthage by 300 BC</English>
+		<German>Bauen Sie bis zum Jahr 300 v. Chr. einen Palast und den Gro&#223;en Cothon in Karthago</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR2_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_PHO2_TITLE</Tag>
 		<English>The Punic Wars</English>
 		<German>Die punischen Kriege</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR2</Tag>
+		<Tag>TXT_KEY_UHV_PHO2</Tag>
 		<English>Control Italy and Iberia in 100 BC</English>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR2_EPIC</Tag>
+		<Tag>TXT_KEY_UHV_PHO2_EPIC</Tag>
 		<English>Control Italy and Iberia in 100 BC</English>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR2_MARATHON</Tag>
+		<Tag>TXT_KEY_UHV_PHO2_MARATHON</Tag>
 		<English>Control Italy and Iberia in 100 BC</English>
 		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR2_NOTURN</Tag>
-		<English>Secure through trade or take control of 4 dye resources by 200 AD</English>
-		<German>Sichern Sie sich bis zum Jahr 200 n. Chr. 4 F&#228;rbemittel-Ressourcen &#252;ber den Handel oder bringen Sie sie unter Ihre Kontrolle</German>
+		<Tag>TXT_KEY_UHV_PHO2_NOTURN</Tag>
+		<English>Control Italy and Iberia in 100 BC</English>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR3_TITLE</Tag>
+		<Tag>TXT_KEY_UHV_PHO3_TITLE</Tag>
 		<English>Traders in Purple</English>
 		<German>Purpurh&#228;ndlers</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR3</Tag>
+		<Tag>TXT_KEY_UHV_PHO3</Tag>
 		<English>Have 5000 gold in 200 AD</English>
 		<German>Verf&#252;gen Sie im Jahr 200 v. Chr. &#252;ber 5000 Gold</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR3_EPIC</Tag>
+		<Tag>TXT_KEY_UHV_PHO3_EPIC</Tag>
 		<English>Have 7500 gold in 200 AD</English>
 		<German>Verf&#252;gen Sie im Jahr 200 v. Chr. &#252;ber 7500 Gold</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_CAR3_MARATHON</Tag>
+		<Tag>TXT_KEY_UHV_PHO3_MARATHON</Tag>
 		<English>Have 15000 gold in 200 AD</English>
 		<German>Verf&#252;gen Sie im Jahr 200 v. Chr. &#252;ber 15000 Gold</German>
 	</TEXT>
@@ -1708,8 +1708,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM2_NOTURN</Tag>
-		<English>Control in 320 AD all the area historically known as the Western Roman Empire</English>
-		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des Westr&#246;mischen Reiches</German>
+		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3_TITLE</Tag>

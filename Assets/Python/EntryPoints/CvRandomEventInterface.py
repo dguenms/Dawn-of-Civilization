@@ -4214,7 +4214,7 @@ def canTriggerToxcatl(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 
-	if (player.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_AZTEC")):
+	if (player.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_AZTECS")):
 		return true
 	return false
 

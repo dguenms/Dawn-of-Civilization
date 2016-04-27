@@ -2,7 +2,7 @@
 <!-- Vikings -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKING_DESC</Tag>
+		<Tag>TXT_KEY_CIV_VIKINGS_DESC</Tag>
 		<English>The Vikings</English>
 		<French>
 			<Text>Les Vikings</Text>
@@ -202,7 +202,7 @@
 		<English>Varangian Principalities</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKING_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_VIKINGS_ADJECTIVE</Tag>
 		<English>Viking</English>
 		<French>
 			<Text>Viking</Text>
@@ -226,7 +226,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_VIKING_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_VIKINGS_SHORT_DESC</Tag>
 		<English>Vikings</English>
 		<French>
 			<Text>Vikings</Text>

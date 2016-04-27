@@ -117,7 +117,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_TAIZONG
+	LeaderType=LEADER_TANG_TAIZONG
 	CivType=CIVILIZATION_CHINA                 
 	Team=1                 
 	PlayableCiv=1                       
@@ -137,7 +137,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_VATAVELLI
-	CivType=CIVILIZATION_HARAPPANS
+	CivType=CIVILIZATION_HARAPPA
 	Team=3
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
@@ -178,14 +178,14 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_AUGUSTUS
+	LeaderType=LEADER_AUGUSTUS_CAESAR
 	CivType=CIVILIZATION_ROME                 
 	Team=9                 
 	PlayableCiv=0                
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_RAJENDRA
+	LeaderType=LEADER_RAJENDRA_CHOLA
 	CivType=CIVILIZATION_TAMILS
 	Team=10
 	PlayableCiv=0
@@ -199,7 +199,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_WANGKON
+	LeaderType=LEADER_WANG_KON
 	CivType=CIVILIZATION_KOREA
 	Team=12
 	PlayableCiv=1
@@ -229,7 +229,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_TOKUGAWA
+	LeaderType=LEADER_ODA_NOBUNAGA
 	CivType=CIVILIZATION_JAPAN                 
 	Team=15                 
 	PlayableCiv=1                     
@@ -241,7 +241,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_RAGNAR
-	CivType=CIVILIZATION_VIKING                 
+	CivType=CIVILIZATION_VIKINGS                 
 	Team=16                 
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
@@ -296,7 +296,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_RAHMAN
+	LeaderType=LEADER_ABD_AR_RAHMAN
 	CivType=CIVILIZATION_MOORS
 	Team=21
 	PlayableCiv=1
@@ -347,7 +347,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_BARBAROSSA
-	CivType=CIVILIZATION_HOLY_ROMAN               
+	CivType=CIVILIZATION_HOLY_ROME               
 	Team=25                 
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY	
@@ -433,7 +433,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_GENGHIS_KHAN
-	CivType=CIVILIZATION_MONGOL                 
+	CivType=CIVILIZATION_MONGOLIA                 
 	Team=32               
 	PlayableCiv=1                       
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
@@ -443,7 +443,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MONTEZUMA
-	CivType=CIVILIZATION_AZTEC                 
+	CivType=CIVILIZATION_AZTECS                 
 	Team=33               
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
@@ -466,7 +466,7 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	LeaderType=LEADER_MEHMED
-	CivType=CIVILIZATION_OTTOMAN                 
+	CivType=CIVILIZATION_TURKEY                 
 	Team=35             
 	PlayableCiv=1                      
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM	
@@ -527,7 +527,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_FRANKLIN_ROOSEVELT
+	LeaderType=LEADER_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA                 
 	Team=40                 
 	PlayableCiv=1                    
@@ -555,7 +555,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_DOM_PEDRO
+	LeaderType=LEADER_PEDRO
 	CivType=CIVILIZATION_BRAZIL
 	Team=42
 	PlayableCiv=1
@@ -617,8 +617,8 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT                 
 EndPlayer
 BeginPlayer
-	LeaderType=LEADER_ALP
-	CivType=CIVILIZATION_SELJUK
+	LeaderType=LEADER_ALP_ARSLAN
+	CivType=CIVILIZATION_SELJUKS
 	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY

@@ -145,7 +145,7 @@ tCapitals = (
 dChangedCapitals = {
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
-iCarthage : (58, 39),	# Carthage
+iPhoenicia : (58, 39),	# Carthage
 iPersia : (81, 41),	# Esfahan (Iran)
 iTamils : (90, 30),	# Vijayanagara
 iMaya : (27, 29),	# Bogota (Colombia)
@@ -423,7 +423,7 @@ tNormalArea = (
 
 dChangedNormalArea = {
 iIndia : 	((96, 42),	(97, 42)),
-iCarthage : 	((71, 39),	(74, 41)),
+iPhoenicia : 	((71, 39),	(74, 41)),
 iMaya : 	((24, 26),	(29, 32)), # Colombia
 iArabia : 	((73, 30),	(82, 38)),
 iHolyRome : 	((61, 46),	(66, 50)),

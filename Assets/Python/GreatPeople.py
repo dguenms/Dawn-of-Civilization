@@ -22,7 +22,7 @@ def create(iPlayer, iUnit, (x, y)):
 def getAlias(iCiv, iType):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivHolyRome: return iCivGermany
-	elif iCiv == iCivMaya: return iCivAztec
+	elif iCiv == iCivMaya: return iCivAztecs
 	elif iCiv == iCivMoors: return iCivArabia
 	elif iCiv == iCivThailand: return iCivKhmer
 	elif iCiv == iCivTibet and iType != lTypes.index(iGreatProphet): return iCivChina
@@ -459,7 +459,7 @@ iCivGreece : {
 		"fArtemisia", # 4th
 	],
 },
-iCivCarthage : {
+iCivPhoenicia : {
 	iGreatProphet : [
 		"Acherbas", # legendary
 		iClassical,
@@ -1073,8 +1073,6 @@ iCivKhmer : {
 		"Dien Del", # 20th
 	],
 },
-
-
 iCivIndonesia : {
 	iGreatProphet : [
 		"Maha Rsi Agastya", # 5th
@@ -1775,7 +1773,7 @@ iCivItaly : {
 		"Giuseppe Garibaldi", # 19th
 	],
 },
-iCivMongols : {
+iCivMongolia : {
 	iGreatProphet : [
 		"Abaqa", # 13th
 		"Arghun", # 13th

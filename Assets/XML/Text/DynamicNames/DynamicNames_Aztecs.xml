@@ -2,7 +2,7 @@
 <!-- Aztecs -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_DESC</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_DESC</Tag>
 		<English>The Aztecs</English>
 		<French>
 			<Text>Les Azt&#232;ques</Text>
@@ -86,7 +86,7 @@
 		<English>Aztec Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_ADJECTIVE</Tag>
 		<English>Aztec</English>
 		<French>
 			<Text>azt&#232;que:azt&#232;que:azt&#232;ques:azt&#232;ques</Text>
@@ -110,7 +110,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTEC_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_AZTECS_SHORT_DESC</Tag>
 		<English>Aztec</English>
 		<French>
 			<Text>Azt&#232;ques</Text>
