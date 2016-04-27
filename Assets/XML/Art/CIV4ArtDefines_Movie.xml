@@ -6,6 +6,7 @@
 <!-- Movie art path information -->
 <Civ4ArtDefines xmlns="x-schema:CIV4ArtDefinesSchema.xml">
 	<MovieArtInfos>
+		<!-- Intro -->
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_INTRO</Type>
 			<Path>Art/Movies/Intros/BTS Intro Final.bik</Path>
@@ -18,329 +19,62 @@
 			<Type>ART_DEF_MOVIE_NVIDIA_INTRO</Type>
 			<Path>Art/Movies/Intros/TheWay_720x486.bik</Path>
 		</MovieArtInfo>
+		<!-- Buildings -->
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_PLACEHOLDER</Type>
-			<Path>Art/Movies/Placeholder.bik</Path>
+			<Type>ART_DEF_MOVIE_ACADEMY</Type>
+			<Path>Art/Movies/Wonders/Academy.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</Type>
-			<Path>Art/Movies/Wonders/AngkorWat.bik</Path>
+			<Type>ART_DEF_MOVIE_MILITARY_ACADEMY</Type>
+			<Path>Art/Movies/Wonders/MiliaryAcademy.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_WEMBLEY</Type>
-			<Path>Art/Movies/Wonders/wembley.bik</Path>
+			<Type>ART_DEF_MOVIE_JEWISH_SHRINE</Type>
+			<Path>Art/Movies/Religion/Judaism/Shrine_Jud_dwg_512.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TEMPLE_OF_KUKULKAN</Type>
-			<Path>Art/Movies/Wonders/ChichenItza.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_COLOSSUS</Type>
-			<Path>Art/Movies/Wonders/Colossus.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_EIFFEL_TOWER</Type>
-			<Path>Art/Movies/Wonders/EiffelTower.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_GREAT_LIBRARY</Type>
-			<Path>Art/Movies/Wonders/GreatLibrary.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_GREAT_LIGHTHOUSE</Type>
-			<Path>Art/Movies/Wonders/GreatLighthouse.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_ORTHODOX</Type>
-			<Path>Art/Movies/Wonders/HagiaSophia.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_HANGING_GARDENS</Type>
-			<Path>Art/Movies/Wonders/HangingGardens.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_HOLLYWOOD</Type>
-			<Path>Art/Movies/Wonders/Hollywood.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_INTERNET</Type>
-			<Path>Art/Movies/Wonders/Internet.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ST_BASILS_CATHEDRAL</Type>
-			<Path>Art/Movies/Wonders/Kremlin.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_MANHATTAN_PROJECT</Type>
-			<Path>Art/Movies/Wonders/ManhattanProject.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_NOTRE_DAME</Type>
-			<Path>Art/Movies/Wonders/NotreDame.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ORACLE</Type>
-			<Path>Art/Movies/Wonders/Oracle.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_PARTHENON</Type>
-			<Path>Art/Movies/Wonders/Parthenon.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_PENTAGON</Type>
-			<Path>Art/Movies/Wonders/Pentagon.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_PYRAMIDS</Type>
-			<Path>Art/Movies/Wonders/GreatPyramids.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_GRACELAND</Type>
-			<Path>Art/Movies/Wonders/RockAndRoll.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SISTINE_CHAPEL</Type>
-			<Path>Art/Movies/Wonders/SistineChapel.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SPACE_ELEVATOR</Type>
-			<Path>Art/Movies/Wonders/SpaceElevator.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SPIRAL_MINARET</Type>
-			<Path>Art/Movies/Wonders/SpiralMinaret.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_STATUE_OF_LIBERTY</Type>
-			<Path>Art/Movies/Wonders/StatueOfLiberty.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_STONEHENGE</Type>
-			<Path>Art/Movies/Wonders/Stonehenge.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TAJ_MAHAL</Type>
-			<Path>Art/Movies/Wonders/TajMahal.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_THREE_GORGES_DAM</Type>
-			<Path>Art/Movies/Wonders/ThreeGorgesDam.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_UNITED_NATIONS</Type>
-			<Path>Art/Movies/Wonders/UnitedNations.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_VERSAILLES</Type>
-			<Path>Art/Movies/Wonders/Versailles.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TEMPLE_OF_ARTEMIS</Type>
-			<Path>Art/Movies/Wonders/Artemis.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_GREAT_WALL</Type>
-			<Path>Art/Movies/Wonders/GreatWall.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_UNIVERSITY_OF_SANKORE</Type>
-			<Path>Art/Movies/Wonders/SankoreUniversity.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_VICTORY_CONQUEST</Type>
-			<Path>Art/Movies/Victory/Conquest.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_VICTORY_DOMINATION</Type>
-			<Path>Art/Movies/Victory/Domination.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_VICTORY_SPACE_RACE</Type>
-			<Path>Art/Movies/Victory/SpaceRace.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_VICTORY_CULTURAL</Type>
-			<Path>Art/Movies/Victory/Cultural.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_PROTESTANT</Type>
+			<Type>ART_DEF_MOVIE_ORTHODOX_SHRINE</Type>
 			<Path>Art/Movies/Religion/Christianity/Shrine_Chr_dwg_512.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_CATHOLIC</Type>
+			<Type>ART_DEF_MOVIE_CATHOLIC_SHRINE</Type>
 			<Path>Art/Movies/Wonders/Apostolic Palace.bik</Path>
-		</MovieArtInfo>	
+		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_ISLAMIC</Type>
+			<Type>ART_DEF_MOVIE_PROTESTANT_SHRINE</Type>
+			<Path>Art/Movies/Religion/Christianity/Shrine_Chr_dwg_512.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ISLAMIC_SHRINE</Type>
 			<Path>Art/Movies/Shrines/MasjidAlHaram.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_HINDU</Type>
+			<Type>ART_DEF_MOVIE_HINDU_SHRINE</Type>
 			<Path>Art/Movies/Shrines/KashiVishnawath.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_BUDDHIST</Type>
+			<Type>ART_DEF_MOVIE_BUDDHIST_SHRINE</Type>
 			<Path>Art/Movies/Shrines/Mahabodhi.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_CONFUCIAN</Type>
+			<Type>ART_DEF_MOVIE_CONFUCIAN_SHRINE</Type>
 			<Path>Art/Movies/Shrines/KongMiao.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHRINE_TAOIST</Type>
+			<Type>ART_DEF_MOVIE_TAOIST_SHRINE</Type>
 			<Path>Art/Movies/Shrines/DaiMiao.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_MAUSOLEUM_OF_MAUSSOLLOS</Type>
-			<Path>Art/Movies/Wonders/Mausoleum.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_STATUE_OF_ZEUS</Type>
-			<Path>Art/Movies/Wonders/Zeus.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SHWEDAGON_PAYA</Type>
-			<Path>Art/Movies/Wonders/Shwedagon Paya.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_CRISTO_REDENTOR</Type>
-			<Path>Art/Movies/Wonders/Christ the Redeemer.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_CHANNEL_TUNNEL</Type>
-			<Path>Art/Movies/Wonders/eurotunnel.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_MT_RUSHMORE</Type>
-			<Path>Art/Movies/Wonders/Rushmore.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_FORBIDDEN_PALACE</Type>
-			<Path>Art/Movies/Wonders/Forbiddenpalace.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_COLOSSEUM</Type>
-			<Path>Art/Movies/Wonders/flavian.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_LEANING_TOWER</Type>
-			<Path>Art/Movies/Wonders/pisa.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_GREAT_COTHON</Type>
-			<Path>Art/Movies/Wonders/Carthage_Port.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ISHTAR</Type>
-			<Path>Art/Movies/Wonders/Ishtar.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TERRACOTTA</Type>
-			<Path>Art/Movies/Wonders/TerraCotta.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_CERN_RESEARCH_COMPLEX</Type>
-			<Path>Art/Movies/Wonders/ParticleAccelerator.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_BOROBUDUR</Type>
-			<Path>Art/Structures/Wonders/Borobudur/Borobudur.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_HIMEJI_CASTLE</Type>
-			<Path>Art/Structures/Wonders/HimejiCastle/HimejiCastle.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_PORCELAIN_TOWER</Type>
-			<Path>Art/Structures/Wonders/PorcelainTower/PorcelainTower.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_GREAT_BATH</Type>
-			<Path>Art/Structure/Wonders/GreatBath/MohenjoDaro.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_BLUE_MOSQUE</Type>
-			<Path>Art/Movies/Wonders/blue_mosque.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_RED_FORT</Type>
-			<Path>Art/Movies/Wonders/red_fort.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TOPKAPI_PALACE</Type>
-			<Path>Art/Movies/Wonders/topkapi_palace.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_GREAT_SPHINX</Type>
-			<Path>Art/Movies/Wonders/sphinx.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_BRANDENBURG_GATE</Type>
-			<Path>Art/Movies/Wonders/Brandenburg.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_DOME_OF_THE_ROCK</Type>
-			<Path>Art/Movies/Wonders/Domeofrock.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_HARMANDIR_SAHIB</Type>
-			<Path>Art/Movies/Wonders/harmandirsahib.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ISHTAR_GATE</Type>
-			<Path>Art/Movies/Wonders/ishtar.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_KHAJURAHO</Type>
-			<Path>Art/Movies/Wonders/Khajuraho.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_LA_MEZQUITA</Type>
-			<Path>Art/Movies/Wonders/Mezquita.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SAN_MARCO_BASILICA</Type>
-			<Path>Art/Movies/Wonders/Sanmarco.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TERRACOTTA_ARMY</Type>
-			<Path>Art/Movies/Wonders/terracotta.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_THEODOSIAN_WALLS</Type>
-			<Path>Art/Movies/Wonders/theodosian.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_WESTMINSTER_PALACE</Type>
-			<Path>Art/Movies/Wonders/westminster.dds</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TRAFALGAR_SQUARE</Type>
-			<Path>Art/Movies/Wonders/TrafalgarSquare.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_EMPIRE_STATE_BUILDING</Type>
-			<Path>Art/Structures/Wonders/EmpireStateBuilding/EmpireStateBuilding.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_LUBYANKA</Type>
-			<Path>Art/Movies/Wonders/KGB.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_MACHU_PICCHU</Type>
-			<Path>Art/Movies/Wonders/Machu Picchu.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_APOLLO_PROGRAM</Type>
-			<Path>Art/Movies/Wonders/ApolloProject.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_SDI</Type>
-			<Path>Art/Movies/Wonders/SDI.bik</Path>
+			<Type>ART_DEF_MOVIE_TRIUMPHAL_ARCH</Type>
+			<Path>Art/Movies/Wonders/NationalEpic.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_OPERA_HOUSE</Type>
 			<Path>Art/Movies/Wonders/GlobeTheatre.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_STOCK_EXCHANGE</Type>
+			<Path>Art/Movies/Wonders/WallStreet.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_NATIONAL_GALLERY</Type>
@@ -351,12 +85,8 @@
 			<Path>Art/Movies/Wonders/IronWorks.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_MOAI_STATUES</Type>
-			<Path>Art/Movies/Wonders/Moai.bik</Path>
-		</MovieArtInfo>
-		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_TRIUMPHAL_ARCH</Type>
-			<Path>Art/Movies/Wonders/NationalEpic.bik</Path>
+			<Type>ART_DEF_MOVIE_INTERPOL</Type>
+			<Path>Art/Movies/Wonders/ScotlandYard.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_NATIONAL_PARK</Type>
@@ -367,24 +97,295 @@
 			<Path>Art/Movies/Wonders/RedCross.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_INTERPOL</Type>
-			<Path>Art/Movies/Wonders/ScotlandYard.bik</Path>
+			<Type>ART_DEF_MOVIE_GREAT_SPHINX</Type>
+			<Path>Art/Movies/Wonders/sphinx.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_STOCK_EXCHANGE</Type>
-			<Path>Art/Movies/Wonders/WallStreet.bik</Path>
+			<Type>ART_DEF_MOVIE_GREAT_LIGHTHOUSE</Type>
+			<Path>Art/Movies/Wonders/GreatLighthouse.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_ACADEMY</Type>
-			<Path>Art/Movies/Wonders/Academy.bik</Path>
+			<Type>ART_DEF_MOVIE_GREAT_COTHON</Type>
+			<Path>Art/Movies/Wonders/Carthage_Port.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_MILITARY_ACADEMY</Type>
-			<Path>Art/Movies/Wonders/MiliaryAcademy.bik</Path>
+			<Type>ART_DEF_MOVIE_TERRACOTTA_ARMY</Type>
+			<Path>Art/Movies/Wonders/TerraCotta.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TEMPLE_OF_ARTEMIS</Type>
+			<Path>Art/Movies/Wonders/Artemis.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PYRAMIDS</Type>
+			<Path>Art/Movies/Wonders/GreatPyramids.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HANGING_GARDENS</Type>
+			<Path>Art/Movies/Wonders/HangingGardens.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ORACLE</Type>
+			<Path>Art/Movies/Wonders/Oracle.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MOAI_STATUES</Type>
+			<Path>Art/Movies/Wonders/Moai.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ISHTAR_GATE</Type>
+			<Path>Art/Movies/Wonders/Ishtar.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_COLOSSUS</Type>
+			<Path>Art/Movies/Wonders/Colossus.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PARTHENON</Type>
+			<Path>Art/Movies/Wonders/Parthenon.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_STATUE_OF_ZEUS</Type>
+			<Path>Art/Movies/Wonders/Zeus.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SHWEDAGON_PAYA</Type>
+			<Path>Art/Movies/Wonders/Shwedagon Paya.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_KHAJURAHO</Type>
+			<Path>Art/Movies/Wonders/Khajuraho.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_LIBRARY</Type>
+			<Path>Art/Movies/Wonders/GreatLibrary.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MAUSOLEUM_OF_MAUSSOLLOS</Type>
+			<Path>Art/Movies/Wonders/Mausoleum.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_COLOSSEUM</Type>
+			<Path>Art/Movies/Wonders/flavian.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_WALL</Type>
+			<Path>Art/Movies/Wonders/GreatWall.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_THEODOSIAN_WALLS</Type>
+			<Path>Art/Movies/Wonders/theodosian.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MACHU_PICCHU</Type>
+			<Path>Art/Movies/Wonders/Machu Picchu.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BOROBUDUR</Type>
+			<Path>Art/Structures/Wonders/Borobudur/Borobudur.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_NOTRE_DAME</Type>
+			<Path>Art/Movies/Wonders/NotreDame.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TEMPLE_OF_KUKULKAN</Type>
+			<Path>Art/Movies/Wonders/ChichenItza.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HIMEJI_CASTLE</Type>
+			<Path>Art/Structures/Wonders/HimejiCastle/HimejiCastle.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BLUE_MOSQUE</Type>
+			<Path>Art/Movies/Wonders/blue_mosque.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</Type>
+			<Path>Art/Movies/Wonders/AngkorWat.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TOPKAPI_PALACE</Type>
+			<Path>Art/Movies/Wonders/topkapi_palace.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_LA_MEZQUITA</Type>
+			<Path>Art/Movies/Wonders/Mezquita.dds</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_HAGIA_SOPHIA</Type>
 			<Path>Art/Movies/Wonders/HagiaSophia.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SISTINE_CHAPEL</Type>
+			<Path>Art/Movies/Wonders/SistineChapel.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_LEANING_TOWER</Type>
+			<Path>Art/Movies/Wonders/pisa.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_RED_FORT</Type>
+			<Path>Art/Movies/Wonders/red_fort.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_VERSAILLES</Type>
+			<Path>Art/Movies/Wonders/Versailles.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_FORBIDDEN_PALACE</Type>
+			<Path>Art/Movies/Wonders/Forbiddenpalace.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SPIRAL_MINARET</Type>
+			<Path>Art/Movies/Wonders/SpiralMinaret.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_DOME_OF_THE_ROCK</Type>
+			<Path>Art/Movies/Wonders/Domeofrock.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_UNIVERSITY_OF_SANKORE</Type>
+			<Path>Art/Movies/Wonders/SankoreUniversity.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TAJ_MAHAL</Type>
+			<Path>Art/Movies/Wonders/TajMahal.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SAN_MARCO_BASILICA</Type>
+			<Path>Art/Movies/Wonders/Sanmarco.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PORCELAIN_TOWER</Type>
+			<Path>Art/Structures/Wonders/PorcelainTower/PorcelainTower.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ST_BASILS_CATHEDRAL</Type>
+			<Path>Art/Movies/Wonders/Kremlin.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HARMANDIR_SAHIB</Type>
+			<Path>Art/Movies/Wonders/harmandirsahib.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_TRAFALGAR_SQUARE</Type>
+			<Path>Art/Movies/Wonders/TrafalgarSquare.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BRANDENBURG_GATE</Type>
+			<Path>Art/Movies/Wonders/Brandenburg.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_STATUE_OF_LIBERTY</Type>
+			<Path>Art/Movies/Wonders/StatueOfLiberty.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PENTAGON</Type>
+			<Path>Art/Movies/Wonders/Pentagon.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_LUBYANKA</Type>
+			<Path>Art/Movies/Wonders/KGB.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_WESTMINSTER_PALACE</Type>
+			<Path>Art/Movies/Wonders/westminster.dds</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MT_RUSHMORE</Type>
+			<Path>Art/Movies/Wonders/Rushmore.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_EIFFEL_TOWER</Type>
+			<Path>Art/Movies/Wonders/EiffelTower.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_EMPIRE_STATE_BUILDING</Type>
+			<Path>Art/Structures/Wonders/EmpireStateBuilding/EmpireStateBuilding.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_CERN_RESEARCH_COMPLEX</Type>
+			<Path>Art/Movies/Wonders/ParticleAccelerator.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_WEMBLEY</Type>
+			<Path>Art/Movies/Wonders/wembley.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GRACELAND</Type>
+			<Path>Art/Movies/Wonders/RockAndRoll.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_CRISTO_REDENTOR</Type>
+			<Path>Art/Movies/Wonders/Christ the Redeemer.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_THREE_GORGES_DAM</Type>
+			<Path>Art/Movies/Wonders/ThreeGorgesDam.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HOLLYWOOD</Type>
+			<Path>Art/Movies/Wonders/Hollywood.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_UNITED_NATIONS</Type>
+			<Path>Art/Movies/Wonders/UnitedNations.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SPACE_ELEVATOR</Type>
+			<Path>Art/Movies/Wonders/SpaceElevator.bik</Path>
+		</MovieArtInfo>
+		<!-- Projects -->
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MANHATTAN_PROJECT</Type>
+			<Path>Art/Movies/Wonders/ManhattanProject.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_INTERNET</Type>
+			<Path>Art/Movies/Wonders/Internet.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_SDI</Type>
+			<Path>Art/Movies/Wonders/SDI.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_APOLLO_PROGRAM</Type>
+			<Path>Art/Movies/Wonders/ApolloProject.bik</Path>
+		</MovieArtInfo>
+		<!-- Victories -->
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_VICTORY_CONQUEST</Type>
+			<Path>Art/Movies/Victory/Conquest.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_VICTORY_DOMINATION</Type>
+			<Path>Art/Movies/Victory/Domination.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_VICTORY_CULTURAL</Type>
+			<Path>Art/Movies/Victory/Cultural.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_VICTORY_SPACE_RACE</Type>
+			<Path>Art/Movies/Victory/SpaceRace.bik</Path>
+		</MovieArtInfo>
+		<!-- Other -->
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_PLACEHOLDER</Type>
+			<Path>Art/Movies/Placeholder.bik</Path>
+		</MovieArtInfo>
+		<!--MovieArtInfo>
+			<Type>ART_DEF_MOVIE_STONEHENGE</Type>
+			<Path>Art/Movies/Wonders/Stonehenge.bik</Path>
+		</MovieArtInfo-->
+		<!--MovieArtInfo>
+			<Type>ART_DEF_MOVIE_CHANNEL_TUNNEL</Type>
+			<Path>Art/Movies/Wonders/eurotunnel.bik</Path>
+		</MovieArtInfo-->
+		<!--MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_BATH</Type>
+			<Path>Art/Structure/Wonders/GreatBath/MohenjoDaro.bik</Path>
+		</MovieArtInfo-->
 	</MovieArtInfos>
 </Civ4ArtDefines>

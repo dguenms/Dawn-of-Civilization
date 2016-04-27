@@ -92,7 +92,7 @@
 			</Goodies>
 			<FreeTechs>
 				<FreeTech>
-					<TechType>TECH_THE_WHEEL</TechType>
+					<TechType>TECH_WHEEL</TechType>
 					<bFreeTech>1</bFreeTech>
 				</FreeTech>
 				<FreeTech>

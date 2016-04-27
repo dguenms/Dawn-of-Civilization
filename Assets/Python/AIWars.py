@@ -33,7 +33,7 @@ iIndependent2 = con.iIndependent2
 iNumTotalPlayers = con.iNumTotalPlayers
 
 iRome = con.iRome
-iCarthage = con.iCarthage
+iPhoenicia = con.iPhoenicia
 iGreece = con.iGreece
 iPersia = con.iPersia
 iCeltia = con.iCeltia
@@ -69,7 +69,7 @@ tRomeEgyptTL = (65, 31)
 tRomeEgyptBR = (72, 36)
 
 # following setup: iPlayer, iPreferredTarget, TL, BR, iNumTargets, iStartYear, iTurnInterval
-tConquestRomeCarthage = (0, iRome, iCarthage, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
+tConquestRomeCarthage = (0, iRome, iPhoenicia, tRomeCarthageTL, tRomeCarthageBR, 2, iRomeCarthageYear, 10)
 tConquestRomeGreece = (1, iRome, iGreece, tRomeGreeceTL, tRomeGreeceBR, 2, iRomeGreeceYear, 10)
 tConquestRomeAnatolia = (2, iRome, iGreece, tRomeAnatoliaTL, tRomeAnatoliaBR, 2, iRomeAnatoliaYear, 10)
 tConquestRomeCelts = (3, iRome, iCeltia, tRomeCeltiaTL, tRomeCeltiaBR, 2, iRomeAnatoliaYear, 10)

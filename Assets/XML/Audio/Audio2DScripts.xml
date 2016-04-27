@@ -12197,8 +12197,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_TECH_THE_WHEEL</ScriptID>
-		<SoundID>SND_TECH_THE_WHEEL</SoundID>
+		<ScriptID>AS2D_TECH_WHEEL</ScriptID>
+		<SoundID>SND_TECH_WHEEL</SoundID>
 		<SoundType>GAME_SPEECH</SoundType>
 		<iMinVolume>100</iMinVolume>
 		<iMaxVolume>100</iMaxVolume>
@@ -14313,8 +14313,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_TECH_MP_THE_WHEEL</ScriptID>
-		<SoundID>SND_TECH_MP_THE_WHEEL</SoundID>
+		<ScriptID>AS2D_TECH_MP_WHEEL</ScriptID>
+		<SoundID>SND_TECH_MP_WHEEL</SoundID>
 		<SoundType>GAME_SPEECH</SoundType>
 		<iMinVolume>100</iMinVolume>
 		<iMaxVolume>100</iMaxVolume>

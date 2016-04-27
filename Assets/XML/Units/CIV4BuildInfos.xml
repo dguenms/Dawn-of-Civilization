@@ -9,7 +9,7 @@
 		<BuildInfo>
 			<Type>BUILD_ROAD</Type>
 			<Description>TXT_KEY_BUILD_ROAD</Description>
-			<PrereqTech>TECH_THE_WHEEL</PrereqTech>
+			<PrereqTech>TECH_WHEEL</PrereqTech>
 			<iTime>300</iTime>
 			<RouteType>ROUTE_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
@@ -19,7 +19,7 @@
 		<BuildInfo>
 			<Type>BUILD_ROMAN_ROAD</Type>
 			<Description>TXT_KEY_BUILD_ROMAN_ROAD</Description>
-			<PrereqTech>TECH_THE_WHEEL</PrereqTech>
+			<PrereqTech>TECH_WHEEL</PrereqTech>
 			<iTime>300</iTime>
 			<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>

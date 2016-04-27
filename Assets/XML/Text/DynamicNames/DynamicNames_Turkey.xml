@@ -2,7 +2,7 @@
 <!-- Turkey -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OTTOMAN_DESC</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_DESC</Tag>
 		<English>The Turks</English>
 		<French>
 			<Text>Les Turques</Text>
@@ -274,7 +274,7 @@
 		<English>Eyalet of Aceh</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OTTOMAN_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_ADJECTIVE</Tag>
 		<English>
 			<Text>Turkish:Turks</Text>
 			<Gender>Male</Gender>
@@ -302,7 +302,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_OTTOMAN_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_TURKEY_SHORT_DESC</Tag>
 		<English>Turkey</English>
 		<French>
 			<Text>Turquie</Text>
