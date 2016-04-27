@@ -163,7 +163,7 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 		panel = self.top.getNextWidgetName()
 		TechInfo = gc.getTechInfo(self.iTech)
 
-		screen.addPanel(panel, "Effects", "", False, True, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_EFFECTS", ()), "", False, True, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 
 		# Worker Speed
@@ -323,7 +323,7 @@ class CvPediaTech(CvPediaScreen.CvPediaScreen):
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "Enables", "", False, True, self.X_ENABLES, self.Y_ENABLES, self.W_ENABLES, self.H_ENABLES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_BONUS_TRADE", ()), "", False, True, self.X_ENABLES, self.Y_ENABLES, self.W_ENABLES, self.H_ENABLES, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 
 		# Civics/Tenets

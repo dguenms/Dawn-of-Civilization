@@ -175,7 +175,7 @@ class CvPediaUnit:
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "Abilities", "", True, False, self.X_ABILITIES, self.Y_ABILITIES, self.W_ABILITIES, self.H_ABILITIES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_ABILITIES", ()), "", True, False, self.X_ABILITIES, self.Y_ABILITIES, self.W_ABILITIES, self.H_ABILITIES, PanelStyles.PANEL_STYLE_BLUE50)
 		szText = CyGameTextMgr().getUnitHelp(self.iUnit, True, False, False, None)[1:]
 
 		UnitInfo = gc.getUnitInfo(self.iUnit)
@@ -207,7 +207,7 @@ class CvPediaUnit:
 		for iPromotion in xrange(gc.getNumPromotionInfos()):
 			PromotionInfo = gc.getPromotionInfo(iPromotion)
 			if isPromotionValid(iPromotion, self.iUnit, False):
-				if not PromotionInfo.getTechPrereq() == gc.getInfoTypeForString('TECH_FAKE') or PromotionInfo.isGraphicalOnly():
+				if not PromotionInfo.isGraphicalOnly():
 					screen.appendMultiListButton(list, PromotionInfo.getButton(), 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iPromotion, -1, False)
 
 

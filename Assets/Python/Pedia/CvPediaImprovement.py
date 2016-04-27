@@ -113,7 +113,7 @@ class CvPediaImprovement:
 		panel = self.top.getNextWidgetName()
 		info = gc.getImprovementInfo(self.iImprovement)
 
-		screen.addPanel(panel, "Requires", "", False, True, self.X_REQUIRES, self.Y_REQUIRES, self.W_REQUIRES, self.H_REQUIRES, PanelStyles.PANEL_STYLE_BLUE50 )
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_REQUIRES", ()), "", False, True, self.X_REQUIRES, self.Y_REQUIRES, self.W_REQUIRES, self.H_REQUIRES, PanelStyles.PANEL_STYLE_BLUE50 )
 		screen.attachLabel(panel, "", "  ")
 
 		for iBuild in xrange(gc.getNumBuildInfos()):
@@ -211,7 +211,7 @@ class CvPediaImprovement:
 		panel = self.top.getNextWidgetName()
 		info = gc.getImprovementInfo(self.iImprovement)
 
-		screen.addPanel(panel, "Resources", "", True, True, self.X_RESOURCES, self.Y_RESOURCES, self.W_RESOURCES, self.H_RESOURCES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CONCEPT_RESOURCES", ()), "", True, True, self.X_RESOURCES, self.Y_RESOURCES, self.W_RESOURCES, self.H_RESOURCES, PanelStyles.PANEL_STYLE_BLUE50)
 
 		for iResource in xrange(gc.getNumBonusInfos()):
 			bFirst = True
