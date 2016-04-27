@@ -30,16 +30,8 @@ import CvWonderMovieScreen
 import CvEraMovieScreen
 import CvSpaceShipScreen
 
-# BUG - Sevopedia - start
-import SevoScreenEnums
-# BUG - Sevopedia - end
-
-# import CvWorldBuilderScreen
-# import CvWorldBuilderDiplomacyScreen
-
 import CvDebugTools
 import CvDebugInfoScreen
-#import CvDiplomacy
 
 import CvUtil
 import CvEventInterface
@@ -304,18 +296,15 @@ def showVictoryScreen():
 	if CyGame().getActivePlayer() > -1:
 		victoryScreen.interfaceScreen()
 
-# BUG - Sevopedia - start
+import CvPediaMain
+import CvPediaHistory
 
 pediaMainScreen = None
-bUsingSevopedia = False
+
 def createCivilopedia():
 	"""Creates the correct Civilopedia based on an option."""
 	global pediaMainScreen
-	global bUsingSevopedia
 	if pediaMainScreen is None:
-		import CvPediaMain
-		import CvPediaHistory
-		bUsingSevopedia = False
 		pediaMainScreen = CvPediaMain.CvPediaMain()
 		HandleInputMap.update(
 							{
@@ -347,32 +336,6 @@ def createCivilopedia():
 								PEDIA_CONCEPTS			: pediaMainScreen,
 								PEDIA_SHORTCUTS 		: pediaMainScreen,
 								PEDIA_BTS_CONCEPTS		: pediaMainScreen,
-								
-								SevoScreenEnums.PEDIA_MAIN		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_TECHS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_UNITS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_UNIT_UPGRADES	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_UNIT_CATEGORIES	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_PROMOTIONS	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_PROMOTION_TREE	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_BUILDINGS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_NATIONAL_WONDERS	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_GREAT_WONDERS	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_PROJECTS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_SPECIALISTS	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_TERRAINS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_FEATURES		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_BONUSES		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_IMPROVEMENTS	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_CIVS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_LEADERS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_CIVICS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_RELIGIONS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_CORPORATIONS	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_CONCEPTS		: pediaMainScreen,
-								SevoScreenEnums.PEDIA_BTS_CONCEPTS	: pediaMainScreen,
-								SevoScreenEnums.PEDIA_HINTS		: pediaMainScreen,
-								#SevoScreenEnums.PEDIA_SHORTCUTS		: pediaMainScreen,
 							})
 		global HandleNavigationMap
 		HandleNavigationMap = {
@@ -405,33 +368,6 @@ def createCivilopedia():
 							PEDIA_CONCEPTS			: pediaMainScreen,
 							PEDIA_SHORTCUTS 		: pediaMainScreen,
 							PEDIA_BTS_CONCEPTS		: pediaMainScreen,
-							
-							SevoScreenEnums.PEDIA_MAIN		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_TECHS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_UNITS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_UNIT_UPGRADES	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_UNIT_CATEGORIES	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_PROMOTIONS	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_PROMOTION_TREE	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_BUILDINGS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_NATIONAL_WONDERS	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_GREAT_WONDERS	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_PROJECTS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_SPECIALISTS	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_TERRAINS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_FEATURES		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_BONUSES		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_IMPROVEMENTS	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_CIVS		 	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_LEADERS		: pediaMainScreen,
-							#SevoScreenEnums.PEDIA_TRAITS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_CIVICS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_RELIGIONS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_CORPORATIONS	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_CONCEPTS		: pediaMainScreen,
-							SevoScreenEnums.PEDIA_BTS_CONCEPTS	: pediaMainScreen,
-							SevoScreenEnums.PEDIA_HINTS			: pediaMainScreen,
-							#SevoScreenEnums.PEDIA_SHORTCUTS		: pediaMainScreen,
 						}
 
 ### PEDIA
@@ -547,8 +483,6 @@ def pediaShowHistorical(argsList):
 		pediaMainScreen.pediaJump(PEDIA_BTS_CONCEPTS, argsList[1], True, False)
 	else:
 		pediaMainScreen.pediaJump(PEDIA_CONCEPTS, argsList[1], True, False)
-
-# BUG - Sevopedia - end
 
 #################################################
 ## Worldbuilder
