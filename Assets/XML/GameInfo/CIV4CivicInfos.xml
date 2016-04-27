@@ -26,7 +26,8 @@
 			<Button>,Art/Interface/Buttons/Civics/Hereditary_Rule.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,3,3</Button>
 			<TechPrereq>TECH_MONARCHY</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
+			<Upkeep>UPKEEP_LOW</Upkeep>
+			<iHappyPerMilitaryUnit>1</iHappyPerMilitaryUnit>
 			<iMilitaryHappinessLimit>6</iMilitaryHappinessLimit>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 		</CivicInfo>
@@ -41,7 +42,8 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iNumCitiesMaintenanceModifier>100</iNumCitiesMaintenanceModifier>
-			<iSpecialistExtraYieldBaseThreshold>7</iSpecialistExtraYieldBaseThreshold>			<iSpecialistExtraYieldEraThreshold>0</iSpecialistExtraYieldEraThreshold>
+			<iSpecialistExtraYieldBaseThreshold>7</iSpecialistExtraYieldBaseThreshold>
+			<iSpecialistExtraYieldEraThreshold>0</iSpecialistExtraYieldEraThreshold>
 			<SpecialistThresholdExtraYields>
 				<iYield>1</iYield>
 			</SpecialistThresholdExtraYields>
@@ -372,7 +374,8 @@
 			<TechPrereq>TECH_MASS_MEDIA</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<iCorporationUnhappinessModifier>-50</iCorporationUnhappinessModifier>			<SpecialistExtraCommerces>
+			<iCorporationUnhappinessModifier>-50</iCorporationUnhappinessModifier>
+			<SpecialistExtraCommerces>
 				<iCommerce>0</iCommerce>
 				<iCommerce>2</iCommerce>
 			</SpecialistExtraCommerces>
@@ -456,10 +459,11 @@
 			<TechPrereq>TECH_BANKING</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iCapitalTradeModifier>50</iCapitalTradeModifier>			<bNoForeignTradeModifier>1</bNoForeignTradeModifier>
+			<iCapitalTradeModifier>50</iCapitalTradeModifier>
+			<bNoForeignTradeModifier>1</bNoForeignTradeModifier>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_CUSTOM_HOUSE</BuildingType>
+					<BuildingType>BUILDINGCLASS_CUSTOMS_HOUSE</BuildingType>
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
@@ -492,7 +496,8 @@
 			<TechPrereq>TECH_CORPORATION</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iCorporationCommerceModifier>25</iCorporationCommerceModifier>			<iTradeRoutes>1</iTradeRoutes>
+			<iCorporationCommerceModifier>25</iCorporationCommerceModifier>
+			<iTradeRoutes>1</iTradeRoutes>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_ECONOMY</CivicOptionType>
@@ -507,7 +512,8 @@
 			<SpecialistExtraYields>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-			</SpecialistExtraYields>			<BuildingProductionModifiers>
+			</SpecialistExtraYields>
+			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_FACTORY</BuildingType>
 					<iProductionModifier>100</iProductionModifier>

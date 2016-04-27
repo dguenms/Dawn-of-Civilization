@@ -1179,10 +1179,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Fishing.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,10</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_THE_WHEEL</Type>
-			<Description>TXT_KEY_TECH_THE_WHEEL</Description>
-			<Civilopedia>TXT_KEY_TECH_THE_WHEEL_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_THE_WHEEL_STRATEGY</Strategy>
+			<Type>TECH_WHEEL</Type>
+			<Description>TXT_KEY_TECH_WHEEL</Description>
+			<Civilopedia>TXT_KEY_TECH_WHEEL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_WHEEL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1215,9 +1215,9 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
-			<Quote>TXT_KEY_TECH_THE_WHEEL_QUOTE</Quote>
-			<Sound>AS2D_TECH_THE_WHEEL</Sound>
-			<SoundMP>AS2D_TECH_MP_THE_WHEEL</SoundMP>
+			<Quote>TXT_KEY_TECH_WHEEL_QUOTE</Quote>
+			<Sound>AS2D_TECH_WHEEL</Sound>
+			<SoundMP>AS2D_TECH_MP_WHEEL</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/The Wheel.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,12</Button>
 		</TechInfo>
 		<TechInfo>
@@ -1294,7 +1294,7 @@
 				<PrereqTech>TECH_FISHING</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_THE_WHEEL</PrereqTech>
+				<PrereqTech>TECH_WHEEL</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_POTTERY_QUOTE</Quote>
 			<Sound>AS2D_TECH_POTTERY</Sound>

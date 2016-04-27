@@ -47,11 +47,11 @@ iModifierInflationRate, iModifierGreatPeopleThreshold, iModifierGrowthThreshold)
 
 ### Sequence of spawns ###
 
-lOrder = [iCivEgypt, iCivChina, iCivBabylonia, iCivHarappa, iCivGreece, iCivIndia, iCivCarthage, iCivPolynesia, iCivPersia, iCivRome, iCivTamils, iCivEthiopia, iCivKorea, iCivMaya, iCivByzantium, iCivJapan, iCivVikings, iCivArabia, iCivTibet, iCivKhmer, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivEngland, iCivHolyRome, iCivRussia, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongols, iCivAztecs, iCivMughals, iCivTurkey, iCivThailand, iCivCongo, iCivIran, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivCanada, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivSeljuks, iCivBarbarian]
+lOrder = [iCivEgypt, iCivChina, iCivBabylonia, iCivHarappa, iCivGreece, iCivIndia, iCivPhoenicia, iCivPolynesia, iCivPersia, iCivRome, iCivTamils, iCivEthiopia, iCivKorea, iCivMaya, iCivByzantium, iCivJapan, iCivVikings, iCivArabia, iCivTibet, iCivKhmer, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivEngland, iCivHolyRome, iCivRussia, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongolia, iCivAztecs, iCivMughals, iCivTurkey, iCivThailand, iCivCongo, iCivIran, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivCanada, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivSeljuks, iCivBarbarian]
 
 ### Modifiers (by civilization!) ###
 
-# 				EGY CHI BAB HAR GRE IND CAR PLY PER ROM TAM ETH KOR MAY BYZ JAP VIK ARA TIB KHM INO MOO SPA FRA ENG HRE RUS MAL POL POR INC ITA MON AZT MUG TUR THA CON IRA NET GER AME ARG MEX COL BRA CAN     IND IND NAT CEL SEL BAR 
+# 				EGY CHI BAB HAR GRE IND PHO PLY PER ROM TAM ETH KOR MAY BYZ JAP VIK ARA TIB KHM INO MOO SPA FRA ENG HRE RUS MAL POL POR INC ITA MON AZT MUG TUR THA CON IRA NET GER AME ARG MEX COL BRA CAN     IND IND NAT CEL SEL BAR 
 
 tCulture =		      (  90, 80, 80, 80,100, 80,100,100,100,100,110, 90, 50,100,100,110,130,110,120,120,120,125,125,160,130,150,130,130,110,147,140,150,135,140,125,150,130,130,135,165,150,140,130,140,140,140,140,     20, 20, 20, 50, 50, 30 )
 

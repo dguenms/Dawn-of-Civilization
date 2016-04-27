@@ -2,7 +2,7 @@
 <!-- Holy Rome -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_HOLY_ROMAN_DESC</Tag>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_DESC</Tag>
 		<English>The Germans</English>
 		<French>
 			<Text>Les Allemands</Text>
@@ -23,6 +23,58 @@
 			<Text>Los Alemanes</Text>
 			<Gender>Male</Gender>
 			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_ADJECTIVE</Tag>
+		<English>
+			<Text>Holy Roman:Holy Romans</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>romain:romaine:romains:romaines</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Heilig-r&#246;misch:heilig-r&#246;mischen:heilig-r&#246;mische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>dei Carolingi:dei Carolingi</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>carolingio:carolingia:carolingios:carolingias</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_HOLY_ROME_SHORT_DESC</Tag>
+		<English>Holy Rome</English>
+		<French>
+			<Text>Romains saints</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hl. Rom</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero carolingio</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Europa Carolingia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
 	<TEXT>

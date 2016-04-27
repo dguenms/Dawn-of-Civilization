@@ -231,7 +231,7 @@ class Companies:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iLaboratory)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iUniversity)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iCERN)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iCERNResearchComplex)): iValue += 3
 
 		# trade routes
 		iValue += city.getTradeRoutes() - 1

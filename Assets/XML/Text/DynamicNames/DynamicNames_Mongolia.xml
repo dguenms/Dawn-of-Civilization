@@ -2,7 +2,7 @@
 <!-- Monoglia -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MONGOL_DESC</Tag>
+		<Tag>TXT_KEY_CIV_MONGOLIA_DESC</Tag>
 		<English>The Mongols</English>
 		<French>
 			<Text>Les Mongols</Text>
@@ -282,7 +282,7 @@
 		<English>Mongol</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MONGOL_ADJECTIVE</Tag>
+		<Tag>TXT_KEY_CIV_MONGOLIA_ADJECTIVE</Tag>
 		<English>Mongolian</English>
 		<French>
 			<Text>mongol:mongole:mongols:mongoles</Text>
@@ -306,7 +306,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MONGOL_SHORT_DESC</Tag>
+		<Tag>TXT_KEY_CIV_MONGOLIA_SHORT_DESC</Tag>
 		<English>Mongolia</English>
 		<French>
 			<Text>Mongolia</Text>

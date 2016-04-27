@@ -196,83 +196,6 @@
 			</FeatureVariety>
 		</FeatureArtInfo>
 		<FeatureArtInfo>
-			<Type>ART_DEF_FEATURE_RAINFOREST</Type>
-			<bAnimated>0</bAnimated>
-			<bRiverArt>0</bRiverArt>
-			<TileArtType>TILE_ART_TYPE_TREES</TileArtType>
-			<LightType>LIGHT_TYPE_SUN</LightType>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<Button>,Art/Interface/Buttons/TerrainFeatures/Jungle.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,5,3</Button>
-			<FeatureVariety>
-				<FeatureArtPieces>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle01_01.nif</ModelFile>
-						<Connections>NW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle02_01.nif</ModelFile>
-						<Connections>NE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle03_01.nif</ModelFile>
-						<Connections>NW NE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle04_01.nif</ModelFile>
-						<Connections>SE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle05_01.nif</ModelFile>
-						<Connections>NW SE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle06_01.nif</ModelFile>
-						<Connections>NE SE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle07_01.nif</ModelFile>
-						<Connections>NW NE SE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle08_01.nif</ModelFile>
-						<Connections>SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle09_01.nif</ModelFile>
-						<Connections>NW SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle10_01.nif</ModelFile>
-						<Connections>NE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle11_01.nif</ModelFile>
-						<Connections>NW NE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle12_01.nif</ModelFile>
-						<Connections>SE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle13_01.nif</ModelFile>
-						<Connections>NW SE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle14_01.nif</ModelFile>
-						<Connections>NE SE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle15_01.nif</ModelFile>
-						<Connections>NW NE SE SW</Connections>
-					</FeatureArtPiece>
-				</FeatureArtPieces>
-				<FeatureDummyNodes/>
-				<bGenerateRotations>0</bGenerateRotations>
-				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Jungle.dds</VarietyButton>
-			</FeatureVariety>
-		</FeatureArtInfo>
-		<FeatureArtInfo>
 			<Type>ART_DEF_FEATURE_OASIS</Type>
 			<bAnimated>1</bAnimated>
 			<bRiverArt>0</bRiverArt>
@@ -526,69 +449,6 @@
 			</FeatureVariety>
 		</FeatureArtInfo>
 		<FeatureArtInfo>
-			<Type>ART_DEF_FEATURE_FALLOUT</Type>
-			<bAnimated>1</bAnimated>
-			<bRiverArt>0</bRiverArt>
-			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
-			<LightType>LIGHT_TYPE_SUN</LightType>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<Button>,Art/Interface/Buttons/TerrainFeatures/Fallout.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,1,3</Button>
-			<FeatureVariety>
-				<FeatureArtPieces>
-					<FeatureArtPiece>
-						<ModelFile>Art/Effects/cities_irradiated/fx_cities_iradiated.nif</ModelFile>
-						<Connections></Connections>
-					</FeatureArtPiece>
-				</FeatureArtPieces>
-				<FeatureDummyNodes/>
-				<bGenerateRotations>0</bGenerateRotations>
-				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Fallout.dds</VarietyButton>
-			</FeatureVariety>
-		</FeatureArtInfo>
-		<FeatureArtInfo>
-			<Type>ART_DEF_FEATURE_MUD</Type>
-			<bAnimated>0</bAnimated>
-			<bRiverArt>1</bRiverArt>
-			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
-			<LightType>LIGHT_TYPE_SUN</LightType>
-			<fScale>1.25</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<Button>,Art/Interface/Buttons/BaseTerrain/Marsh.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,2,2</Button>
-			<FeatureVariety>
-				<FeatureArtPieces>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Floodplain/FloodPlain_baseALL.dds</ModelFile>
-						<Connections/>
-					</FeatureArtPiece>
-				</FeatureArtPieces>
-				<FeatureDummyNodes/>
-				<bGenerateRotations>0</bGenerateRotations>
-				<VarietyButton>Art/Interface/Buttons/BaseTerrain/Marsh.dd</VarietyButton>
-			</FeatureVariety>
-		</FeatureArtInfo>
-		<FeatureArtInfo>
-			<Type>ART_DEF_FEATURE_CAPE</Type>
-			<bAnimated>0</bAnimated>
-			<bRiverArt>0</bRiverArt>
-			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
-			<LightType>LIGHT_TYPE_SUN</LightType>
-			<fScale>0.0001</fScale>
-			<fInterfaceScale>0.0001</fInterfaceScale>
-			<Button></Button>
-			<FeatureVariety>
-				<FeatureArtPieces>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Resources/Oil/Oil.nif</ModelFile>
-						<Connections></Connections>
-					</FeatureArtPiece>
-				</FeatureArtPieces>
-				<FeatureDummyNodes/>
-				<bGenerateRotations>0</bGenerateRotations>
-				<VarietyButton></VarietyButton>
-			</FeatureVariety>
-		</FeatureArtInfo>
-		<FeatureArtInfo>
 			<Type>ART_DEF_FEATURE_MARSH</Type>
 			<bAnimated>0</bAnimated>
 			<bRiverArt>0</bRiverArt>
@@ -629,6 +489,27 @@
 				<FeatureDummyNodes/>
 				<bGenerateRotations>0</bGenerateRotations>
 				<VarietyButton>Art/Interface/Buttons/BaseTerrain/Marsh.dds</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo>
+		<FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_CAPE</Type>
+			<bAnimated>0</bAnimated>
+			<bRiverArt>0</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>0.0001</fScale>
+			<fInterfaceScale>0.0001</fInterfaceScale>
+			<Button></Button>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Resources/Oil/Oil.nif</ModelFile>
+						<Connections></Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton></VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
 		<FeatureArtInfo>
@@ -676,5 +557,124 @@
 				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Button_Islands.dds</VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
+		<FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_RAINFOREST</Type>
+			<bAnimated>0</bAnimated>
+			<bRiverArt>0</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_TREES</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<Button>,Art/Interface/Buttons/TerrainFeatures/Jungle.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,5,3</Button>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Rainforest/Jungle15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Jungle.dds</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo>
+		<FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_FALLOUT</Type>
+			<bAnimated>1</bAnimated>
+			<bRiverArt>0</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<Button>,Art/Interface/Buttons/TerrainFeatures/Fallout.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,1,3</Button>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Effects/cities_irradiated/fx_cities_iradiated.nif</ModelFile>
+						<Connections></Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Fallout.dds</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo>
+		<!--FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_MUD</Type>
+			<bAnimated>0</bAnimated>
+			<bRiverArt>1</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>1.25</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<Button>,Art/Interface/Buttons/BaseTerrain/Marsh.dds,Art/Interface/Buttons/BaseTerrain_TerrainFeatures_Atlas.dds,2,2</Button>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Floodplain/FloodPlain_baseALL.dds</ModelFile>
+						<Connections/>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/BaseTerrain/Marsh.dd</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo-->
 	</FeatureArtInfos>
 </Civ4ArtDefines>

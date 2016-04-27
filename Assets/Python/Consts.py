@@ -9,31 +9,23 @@ iWorldY = 68
 
 # initialise player variables to player IDs from WBS
 iNumPlayers = 44
-(iEgypt, iChina, iBabylonia, iHarappa, iGreece, iIndia, iCarthage, iPolynesia, iPersia, iRome, 
+(iEgypt, iChina, iBabylonia, iHarappa, iGreece, iIndia, iPhoenicia, iPolynesia, iPersia, iRome, 
 iTamils, iEthiopia, iKorea, iMaya, iByzantium, iJapan, iVikings, iArabia, iTibet, iKhmer, 
 iIndonesia, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iMali, iPoland, iPortugal, 
 iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany,
 iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlayers)
 
-(pEgypt, pChina, pBabylonia, pHarappa, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, 
+(pEgypt, pChina, pBabylonia, pHarappa, pGreece, pIndia, pPhoenicia, pPolynesia, pPersia, pRome, 
 pTamils, pEthiopia, pKorea, pMaya, pByzantium, pJapan, pVikings, pArabia, pTibet, pKhmer, 
 pIndonesia, pMoors, pSpain, pFrance, pEngland, pHolyRome, pRussia, pMali, pPoland, pPortugal, 
 pInca, pItaly, pMongolia, pAztecs, pMughals, pTurkey, pThailand, pCongo, pNetherlands, pGermany, 
 pAmerica, pArgentina, pBrazil, pCanada) = [gc.getPlayer(i) for i in range(iNumPlayers)]
 
-(teamEgypt, teamChina, teamBabylonia, teamHarappa, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, 
+(teamEgypt, teamChina, teamBabylonia, teamHarappa, teamGreece, teamIndia, teamPhoenicia, teamPolynesia, teamPersia, teamRome, 
 teamTamils, teamEthiopia, teamKorea, teamMaya, teamByzantium, teamJapan, teamVikings, teamArabia, teamTibet, teamKhmer, 
 teamIndonesia, teamMoors, teamSpain, teamFrance, teamEngland, teamHolyRome, teamRussia, teamMali, teamPoland, teamPortugal, 
 teamInca, teamItaly, teamMongolia, teamAztecs, teamMughals, teamTurkey, teamThailand, teamCongo, teamNetherlands, teamGermany, 
 teamAmerica, teamArgentina, teamBrazil, teamCanada) = [gc.getTeam(i) for i in range(iNumPlayers)]
-
-iHolland = iNetherlands
-iDelhi = iMughals
-iSiam = iThailand
-iPhoenicia = iCarthage
-iHRE = iHolyRome
-iAustria = iHolyRome
-iPrussia = iGermany
 
 iNumMajorPlayers = iNumPlayers
 iNumActivePlayers = iNumPlayers
@@ -58,39 +50,34 @@ lm1Array =      [-1 for i in range(iNumPlayers)]
 
 # civilizations, not players
 iNumCivilizations = 57
-(iCivAmerica, iCivArabia, iCivArgentina, iCivAztec, iCivBabylonia, iCivBrazil, iCivByzantium, iCivCanada, iCivCarthage, iCivCelt, 
-iCivChina, iCivColombia, iCivEgypt, iCivEngland, iCivEthiopia, iCivFrance, iCivGermany, iCivGreece, iCivHarappa, iCivHolyRome, 
-iCivInca, iCivIndia, iCivIndonesia, iCivIran, iCivItaly, iCivJapan, iCivKhmer, iCivKongo, iCivKorea, iCivMali, 
-iCivMaya, iCivMexico, iCivMongols, iCivMoors, iCivMughals, iCivNativeAmericans, iCivNetherlands, iCivOttomans, iCivPersia, iCivPoland, 
-iCivPolynesia, iCivPortugal, iCivRome, iCivRussia, iCivSeljuks, iCivSpain, iCivSumeria, iCivTamils, iCivThailand, iCivTibet, 
-iCivVikings, iCivZulu, iCivIndependent, iCivIndependent2, iCivNative, iCivMinor, iCivBarbarian) = range(iNumCivilizations)
-
-iCivTurkey = iCivOttomans
-iCivCongo = iCivKongo
-iCivAztecs = iCivAztec
-iCivCeltia = iCivCelt
+(iCivEgypt, iCivChina, iCivBabylonia, iCivHarappa, iCivGreece, iCivIndia, iCivPhoenicia, iCivPolynesia, iCivPersia, iCivRome,
+iCivTamils, iCivEthiopia, iCivKorea, iCivMaya, iCivByzantium, iCivJapan, iCivVikings, iCivArabia, iCivTibet, iCivKhmer,
+iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivEngland, iCivHolyRome, iCivRussia, iCivMali, iCivPoland, iCivPortugal,
+iCivInca, iCivItaly, iCivMongolia, iCivAztecs, iCivMughals, iCivTurkey, iCivThailand, iCivCongo, iCivIran, iCivNetherlands, iCivGermany,
+iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivCanada,
+iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivSeljuks, iCivBarbarian, iCivNativeAmericans, iCivSumeria, iCivZulu, iCivMinor) = range(iNumCivilizations)
 
 #for Congresses and Victory
 lCivGroups = [[iGreece, iRome, iByzantium, iVikings, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iItaly, iPoland, iPortugal, iGermany],  #Euros
 		[iIndia, iChina, iHarappa, iPolynesia, iPersia, iJapan, iTamils, iKorea, iByzantium, iTibet, iKhmer, iIndonesia, iRussia, iMongolia, iMughals, iThailand], #Asian
-		[iEgypt, iBabylonia, iPersia, iByzantium, iArabia, iTurkey, iCarthage], #MiddleEastern
-		[iEgypt, iGreece, iCarthage, iRome, iByzantium, iMoors], #Mediterranean
-		[iEgypt, iCarthage, iEthiopia, iMali, iCongo], #African
+		[iEgypt, iBabylonia, iPersia, iByzantium, iArabia, iTurkey, iPhoenicia], #MiddleEastern
+		[iEgypt, iGreece, iPhoenicia, iRome, iByzantium, iMoors], #Mediterranean
+		[iEgypt, iPhoenicia, iEthiopia, iMali, iCongo], #African
 		[iMaya, iInca, iAztecs, iAmerica, iArgentina, iBrazil, iCanada]] #American
 
 lCivStabilityGroups = [[iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany],  #Euros
 		[iIndia, iChina, iHarappa, iPolynesia, iJapan, iKorea, iTibet, iKhmer, iIndonesia, iMongolia, iThailand, iTamils], #Asian
 		[iBabylonia, iPersia, iArabia, iTurkey, iMughals], #MiddleEastern
-		[iEgypt, iGreece, iCarthage, iRome, iEthiopia, iByzantium, iMoors, iMali, iCongo], #Mediterranean
+		[iEgypt, iGreece, iPhoenicia, iRome, iEthiopia, iByzantium, iMoors, iMali, iCongo], #Mediterranean
 		[iMaya, iInca, iAztecs, iAmerica, iArgentina, iBrazil, iCanada]] #American
 		
 lTechGroups = [[iRome, iGreece, iByzantium, iVikings, iSpain, iFrance, iEngland, iHolyRome, iRussia, iNetherlands, iPoland, iPortugal, iItaly, iGermany, iAmerica, iArgentina, iBrazil, iCanada], #Europe and NA
-	       [iEgypt, iBabylonia, iHarappa, iIndia, iCarthage, iPersia, iEthiopia, iArabia, iMoors, iMali, iTurkey, iMughals, iTamils, iCongo], #Middle East
+	       [iEgypt, iBabylonia, iHarappa, iIndia, iPhoenicia, iPersia, iEthiopia, iArabia, iMoors, iMali, iTurkey, iMughals, iTamils, iCongo], #Middle East
 	       [iChina, iKorea, iJapan, iTibet, iKhmer, iIndonesia, iMongolia, iThailand], #Far East
 	       [iPolynesia, iMaya, iInca, iAztecs]] #Native America
 
 
-lCivBioOldWorld = [iEgypt, iIndia, iChina, iBabylonia, iHarappa, iGreece, iPolynesia, iPersia, iCarthage, iRome, iJapan, iTamils, 
+lCivBioOldWorld = [iEgypt, iIndia, iChina, iBabylonia, iHarappa, iGreece, iPolynesia, iPersia, iPhoenicia, iRome, iJapan, iTamils, 
 		   iEthiopia, iKorea, iByzantium, iVikings, iArabia, iTibet, iKhmer, iIndonesia, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, 
 		   iNetherlands, iMali, iTurkey, iPoland, iPortugal, iItaly, iMongolia, iAmerica, iMughals, iThailand, iCongo, iGermany, 
 		   iIndependent, iIndependent2, iCeltia, iBarbarian]
@@ -149,16 +136,16 @@ iNumConquests = 10
 
 #neighbours
 lNeighbours = [
-[iBabylonia, iGreece, iPersia, iCarthage, iRome, iEthiopia, iByzantium, iArabia, iMoors, iTurkey], #Egypt
+[iBabylonia, iGreece, iPersia, iPhoenicia, iRome, iEthiopia, iByzantium, iArabia, iMoors, iTurkey], #Egypt
 [iIndia, iJapan, iKorea, iTibet, iKhmer, iMongolia, iThailand], #China
-[iEgypt, iGreece, iPersia, iTurkey, iMongolia, iCarthage, iByzantium], #Babylonia
+[iEgypt, iGreece, iPersia, iTurkey, iMongolia, iPhoenicia, iByzantium], #Babylonia
 [iIndia, iPersia, iTamils, iTibet, iMughals], #Harappa
-[iPersia, iCarthage, iRome, iByzantium, iHolyRome, iRussia, iTurkey, iItaly], #Greece
+[iPersia, iPhoenicia, iRome, iByzantium, iHolyRome, iRussia, iTurkey, iItaly], #Greece
 [iChina, iHarappa, iPersia, iTamils, iTibet, iKhmer, iMongolia, iMughals, iThailand], #India
 [iEgypt, iGreece, iRome, iSpain, iMali, iPortugal, iBabylonia, iPersia, iArabia, iMoors, iTurkey, iItaly], #Carthage
 [], # Polynesia
-[iIndia, iBabylonia, iHarappa, iGreece, iByzantium, iTurkey, iMongolia, iCarthage, iMughals], #Persia
-[iEgypt, iBabylonia, iGreece, iCarthage, iSpain, iFrance, iHolyRome, iPortugal, iItaly, iGermany], #Rome
+[iIndia, iBabylonia, iHarappa, iGreece, iByzantium, iTurkey, iMongolia, iPhoenicia, iMughals], #Persia
+[iEgypt, iBabylonia, iGreece, iPhoenicia, iSpain, iFrance, iHolyRome, iPortugal, iItaly, iGermany], #Rome
 [iHarappa, iIndia, iKhmer, iIndonesia, iMughals, iThailand], #Tamils
 [iEgypt, iArabia, iMali, iCongo], #Ethiopia
 [iChina, iKorea, iMongolia], #Korea
@@ -166,25 +153,25 @@ lNeighbours = [
 [iEgypt, iBabylonia, iGreece, iPersia, iArabia, iRussia], #Byzantium
 [iChina, iKorea, iKhmer, iMongolia, iThailand], #Japan
 [iFrance, iEngland, iHolyRome, iRussia, iPoland, iNetherlands, iGermany], #Vikings
-[iEgypt, iBabylonia, iPersia, iEthiopia, iByzantium, iTurkey, iCarthage], #Arabia
+[iEgypt, iBabylonia, iPersia, iEthiopia, iByzantium, iTurkey, iPhoenicia], #Arabia
 [iChina, iHarappa, iIndia, iMongolia, iMughals], #Tibet
 [iIndia, iChina, iTamils, iJapan, iIndonesia, iThailand], #Khmer
 [iIndia, iJapan, iKhmer, iThailand, iTamils], #Indonesia
 [iEgypt, iSpain, iPortugal, iMali], #Moors
-[iCarthage, iRome, iMoors, iFrance, iEngland, iPortugal], #Spain
+[iPhoenicia, iRome, iMoors, iFrance, iEngland, iPortugal], #Spain
 [iRome, iVikings, iSpain, iEngland, iHolyRome, iNetherlands, iPortugal, iItaly, iGermany], #France
 [iRome, iVikings, iSpain, iFrance, iHolyRome, iNetherlands, iGermany], #England
 [iRome, iVikings, iFrance, iEngland, iNetherlands, iItaly, iPoland, iGermany], #Holy Rome
 [iPersia, iByzantium, iVikings, iPoland, iTurkey, iMongolia, iGermany], #Russia
-[iEgypt, iCarthage, iEthiopia, iMoors, iCongo], #Mali
+[iEgypt, iPhoenicia, iEthiopia, iMoors, iCongo], #Mali
 [iVikings, iHolyRome, iRussia, iGermany], #Poland
-[iCarthage, iRome, iSpain, iFrance], #Portugal
+[iPhoenicia, iRome, iSpain, iFrance], #Portugal
 [iSpain, iAztecs, iAmerica, iArgentina, iBrazil], #Inca
-[iGreece, iCarthage, iRome, iFrance, iHolyRome], #Italy
+[iGreece, iPhoenicia, iRome, iFrance, iHolyRome], #Italy
 [iIndia, iChina, iPersia, iJapan, iKorea, iTibet, iRussia, iTurkey], #Mongolia
 [iSpain, iInca, iAmerica], #Aztec
 [iHarappa, iIndia, iPersia, iTamils, iTibet], #Mughals
-[iBabylonia, iGreece, iPersia, iByzantium, iRussia, iMongolia, iCarthage], #Turkey
+[iBabylonia, iGreece, iPersia, iByzantium, iRussia, iMongolia, iPhoenicia], #Turkey
 [iIndia, iChina, iJapan, iIndonesia, iKhmer, iTamils], #Thailand
 [iEthiopia, iMali], #Congo
 [iVikings, iFrance, iEngland, iHolyRome, iGermany], #Netherlands
@@ -206,7 +193,7 @@ lOlderNeighbours = [
 [iEgypt, iBabylonia], #Carthage
 [], # Polynesia
 [iEgypt, iBabylonia, iHarappa, iGreece], #Persia
-[iEgypt, iGreece, iCarthage], #Rome
+[iEgypt, iGreece, iPhoenicia], #Rome
 [iHarappa, iIndia], #Tamils
 [iEgypt], #Ethiopia
 [iChina], #Korea
@@ -219,14 +206,14 @@ lOlderNeighbours = [
 [iIndia], #Khmer
 [iKhmer], #Indonesia
 [], #Moors
-[iCarthage, iRome], #Spain
+[iPhoenicia, iRome], #Spain
 [iRome], #France
 [], #England
 [iGreece, iRome, iVikings], #Holy Rome
 [iPersia, iGreece, iByzantium], #Russia
-[iCarthage, iEthiopia, iArabia, iMoors], #Mali
+[iPhoenicia, iEthiopia, iArabia, iMoors], #Mali
 [iVikings, iHolyRome], #Poland
-[iCarthage, iRome], #Portugal
+[iPhoenicia, iRome], #Portugal
 [], #Inca
 [iByzantium, iHolyRome], #Italy
 [iChina, iJapan, iKorea, iArabia, iTibet, iKhmer, iRussia], #Mongolia
@@ -354,7 +341,7 @@ iCivBabylonia : (-1, -850, -700),
 iCivHarappa : (-1600, -1500, -800),
 iCivGreece : (-1, -250, -330),
 iCivIndia : (-100, 700, 1200),
-iCivCarthage : (-300, -100, 200),
+iCivPhoenicia : (-300, -100, 200),
 iCivPolynesia : (800, 1000, 1200),
 iCivPersia : (140, 350, 350),
 iCivRome : (100, 320, -1),
@@ -380,8 +367,8 @@ iCivPoland : (1400, -1, 1600),
 iCivPortugal : (1550, 1650, 1700),
 iCivInca : (1500, 1550, 1700),
 iCivItaly : (1500, 1600, 1930),
-iCivMongols : (1300, -1, 1500),
-iCivAztec : (1520, 1650, -1),
+iCivMongolia : (1300, -1, 1500),
+iCivAztecs : (1520, 1650, -1),
 iCivMughals : (1500, 1660, 1750),
 iCivTurkey : (1550, 1700, 1800),
 iCivThailand : (1650, 1700, 1900),
@@ -595,7 +582,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"),
 ("TXT_KEY_UHV_GRE1", "TXT_KEY_UHV_GRE2_MARATHON", "TXT_KEY_UHV_GRE3_MARATHON"),
 ("TXT_KEY_UHV_IND1_MARATHON", "TXT_KEY_UHV_IND2", "TXT_KEY_UHV_IND3"),
-("TXT_KEY_UHV_CAR1", "TXT_KEY_UHV_CAR2", "TXT_KEY_UHV_CAR3_MARATHON"),
+("TXT_KEY_UHV_PHO1", "TXT_KEY_UHV_PHO2", "TXT_KEY_UHV_PHO3_MARATHON"),
 ("TXT_KEY_UHV_PLY1", "TXT_KEY_UHV_PLY2", "TXT_KEY_UHV_PLY3"),
 ("TXT_KEY_UHV_PER1_MARATHON", "TXT_KEY_UHV_PER2_MARATHON", "TXT_KEY_UHV_PER3_MARATHON"),
 ("TXT_KEY_UHV_ROM1_MARATHON", "TXT_KEY_UHV_ROM2_MARATHON", "TXT_KEY_UHV_ROM3"),
@@ -641,7 +628,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"),
 ("TXT_KEY_UHV_GRE1", "TXT_KEY_UHV_GRE2_EPIC", "TXT_KEY_UHV_GRE3_EPIC"),
 ("TXT_KEY_UHV_IND1_EPIC", "TXT_KEY_UHV_IND2", "TXT_KEY_UHV_IND3"),
-("TXT_KEY_UHV_CAR1", "TXT_KEY_UHV_CAR2", "TXT_KEY_UHV_CAR3_EPIC"),
+("TXT_KEY_UHV_PHO1", "TXT_KEY_UHV_PHO2", "TXT_KEY_UHV_PHO3_EPIC"),
 ("TXT_KEY_UHV_PLY1", "TXT_KEY_UHV_PLY2", "TXT_KEY_UHV_PLY3"),
 ("TXT_KEY_UHV_PER1_EPIC", "TXT_KEY_UHV_PER2_EPIC", "TXT_KEY_UHV_PER3_EPIC"),
 ("TXT_KEY_UHV_ROM1_EPIC", "TXT_KEY_UHV_ROM2_EPIC", "TXT_KEY_UHV_ROM3"),
@@ -687,7 +674,7 @@ tGoals1 = (
 ("TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"),
 ("TXT_KEY_UHV_GRE1", "TXT_KEY_UHV_GRE2", "TXT_KEY_UHV_GRE3"),
 ("TXT_KEY_UHV_IND1", "TXT_KEY_UHV_IND2", "TXT_KEY_UHV_IND3"),
-("TXT_KEY_UHV_CAR1", "TXT_KEY_UHV_CAR2", "TXT_KEY_UHV_CAR3"),
+("TXT_KEY_UHV_PHO1", "TXT_KEY_UHV_PHO2", "TXT_KEY_UHV_PHO3"),
 ("TXT_KEY_UHV_PLY1", "TXT_KEY_UHV_PLY2", "TXT_KEY_UHV_PLY3"),
 ("TXT_KEY_UHV_PER1", "TXT_KEY_UHV_PER2", "TXT_KEY_UHV_PER3"),
 ("TXT_KEY_UHV_ROM1", "TXT_KEY_UHV_ROM2", "TXT_KEY_UHV_ROM3"),
@@ -736,7 +723,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"),
 ("TXT_KEY_UHV_GRE1", "TXT_KEY_UHV_GRE2_NOTURN", "TXT_KEY_UHV_GRE3"),
 ("TXT_KEY_UHV_IND1", "TXT_KEY_UHV_IND2", "TXT_KEY_UHV_IND3"),
-("TXT_KEY_UHV_CAR1", "TXT_KEY_UHV_CAR2", "TXT_KEY_UHV_CAR3_MARATHON"),
+("TXT_KEY_UHV_PHO1", "TXT_KEY_UHV_PHO2", "TXT_KEY_UHV_PHO3_MARATHON"),
 ("TXT_KEY_UHV_PLY1", "TXT_KEY_UHV_PLY2", "TXT_KEY_UHV_PLY3"),
 ("TXT_KEY_UHV_IRA1", "TXT_KEY_UHV_IRA2", "TXT_KEY_UHV_IRA3_MARATHON"),
 ("TXT_KEY_UHV_ITA1", "TXT_KEY_UHV_ITA2", "TXT_KEY_UHV_ITA3"),
@@ -782,7 +769,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"),
 ("TXT_KEY_UHV_GRE1", "TXT_KEY_UHV_GRE2_NOTURN", "TXT_KEY_UHV_GRE3"),
 ("TXT_KEY_UHV_IND1", "TXT_KEY_UHV_IND2", "TXT_KEY_UHV_IND3"),
-("TXT_KEY_UHV_CAR1", "TXT_KEY_UHV_CAR2", "TXT_KEY_UHV_CAR3_EPIC"),
+("TXT_KEY_UHV_PHO1", "TXT_KEY_UHV_PHO2", "TXT_KEY_UHV_PHO3_EPIC"),
 ("TXT_KEY_UHV_PLY1", "TXT_KEY_UHV_PLY2", "TXT_KEY_UHV_PLY3"),
 ("TXT_KEY_UHV_IRA1", "TXT_KEY_UHV_IRA2", "TXT_KEY_UHV_IRA3_EPIC"),
 ("TXT_KEY_UHV_ITA1", "TXT_KEY_UHV_ITA2", "TXT_KEY_UHV_ITA3"),
@@ -828,7 +815,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_HAR1", "TXT_KEY_UHV_HAR2", "TXT_KEY_UHV_HAR3"),
 ("TXT_KEY_UHV_GRE1", "TXT_KEY_UHV_GRE2", "TXT_KEY_UHV_GRE3"),
 ("TXT_KEY_UHV_IND1", "TXT_KEY_UHV_IND2", "TXT_KEY_UHV_IND3"),
-("TXT_KEY_UHV_CAR1", "TXT_KEY_UHV_CAR2", "TXT_KEY_UHV_CAR3"),
+("TXT_KEY_UHV_PHO1", "TXT_KEY_UHV_PHO2", "TXT_KEY_UHV_PHO3"),
 ("TXT_KEY_UHV_PLY1", "TXT_KEY_UHV_PLY2", "TXT_KEY_UHV_PLY3"),
 ("TXT_KEY_UHV_IRA1", "TXT_KEY_UHV_IRA2", "TXT_KEY_UHV_IRA3"),
 ("TXT_KEY_UHV_ITA1", "TXT_KEY_UHV_ITA2", "TXT_KEY_UHV_ITA3"),
@@ -920,7 +907,7 @@ iChina		:	"TXT_KEY_DOM_CHINA",
 iHarappa	:	"TXT_KEY_DOM_HARAPPA",
 iBabylonia	:	"TXT_KEY_DOM_BABYLONIA",
 iGreece		:	"TXT_KEY_DOM_GREECE",
-iCarthage	:	"TXT_KEY_DOM_PHOENICIA",
+iPhoenicia	:	"TXT_KEY_DOM_PHOENICIA",
 iPolynesia	:	"TXT_KEY_DOM_POLYNESIA",
 iPersia		:	"TXT_KEY_DOM_PERSIA",
 iRome		:	"TXT_KEY_DOM_ROME",
@@ -1118,8 +1105,8 @@ lEnemyCivsOnSpawn = [
 [], #India
 [], #Carthage
 [], #Polynesia
-[iBabylonia,iBabylonia,iGreece,iCarthage,iCarthage,iIndia,iIndia], #Persia
-#[iEgypt,iGreece,iGreece,iCarthage,iCarthage], #Rome
+[iBabylonia,iBabylonia,iGreece,iPhoenicia,iPhoenicia,iIndia,iIndia], #Persia
+#[iEgypt,iGreece,iGreece,iPhoenicia,iPhoenicia], #Rome
 [], # rome for testing
 [], #Tamils
 [], #Ethiopia
@@ -1128,7 +1115,7 @@ lEnemyCivsOnSpawn = [
 [iGreece, iPersia], #Byzantium
 [], #Japan
 [iEngland,iEngland,iFrance,iIndependent,iIndependent2], #Vikings
-[iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
+[iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iPhoenicia,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Tibet
 [], #Khmer
 [iKhmer, iKhmer], #Indonesia
@@ -1167,7 +1154,7 @@ lTotalWarOnSpawn = [
 [], #India
 [], #Phoenicia
 [], #Polynesia
-[iBabylonia, iCarthage], #Persia
+[iBabylonia, iPhoenicia], #Persia
 [iGreece], #Rome
 [], #Tamils
 [], #Ethiopia
@@ -1176,7 +1163,7 @@ lTotalWarOnSpawn = [
 [iGreece], #Byzantium
 [], #Japan
 [], #Vikings
-[iEgypt, iBabylonia, iCarthage, iPersia], #Arabia
+[iEgypt, iBabylonia, iPhoenicia, iPersia], #Arabia
 [], #Tibet
 [], #Khmer
 [], #Indonesia
@@ -1482,7 +1469,7 @@ lProtestantStart = [iNetherlands, iGermany, iAmerica]
 iNumTechs = 93
 (iMysticism, iMeditation, iPolytheism, iPriesthood, iMonotheism, iMonarchy, iLiterature, iCodeOfLaws, iDrama, iFeudalism,
 iTheology, iMusic, iCivilService, iGuilds, iDivineRight, iPatronage, iNationalism, iMilitaryTradition, iConstitution, iLiberalism,
-iDemocracy, iCorporation, iFascism, iCommunism, iMassMedia, iEcology, iFishing, iTheWheel, iAgriculture, iPottery,
+iDemocracy, iCorporation, iFascism, iCommunism, iMassMedia, iEcology, iFishing, iWheel, iAgriculture, iPottery,
 iAesthetics, iSailing, iWriting, iMathematics, iAlphabet, iCalendar, iCurrency, iPhilosophy, iPaper, iBanking, 
 iEducation, iPrintingPress, iEconomics, iAstronomy, iChemistry, iScientificMethod, iPhysics, iBiology, iMedicine, iElectricity,
 iCombustion, iFission, iFlight, iAdvancedFlight, iPlastics, iComposites, iStealth, iGenetics, iFiberOptics, iFusion,
@@ -1498,7 +1485,7 @@ iNumUnits = 164
 iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary,
 iTaoistMissionary, iZoroastrianMissionary, iWarrior, iSwordsman, iAztecJaguar, iRomanLegion, iCelticGallicWarrior,
 iAxeman, iGreekHoplite, iIncanAucac, iSumerianVulture, iNativeAmericanDogSoldier, iHeavySwordsman, iJapaneseSamurai, iVikingHuscarl, iCongolesePombos,
-iSpearman, iPersianImmortal, iZuluImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iOttomanJanissary, iEthiopianAskari, 
+iSpearman, iPersianImmortal, iZuluImpi, iPikeman, iHolyRomanLandsknecht, iMusketman, iTurkishJanissary, iEthiopianAskari, 
 iIranianQizilbash, iIroquoisMohawk, iFrenchMusketeer, iRifleman, iEnglishRedcoat, iAmericanMinuteman, iGrenadier, iColombianAlbionLegion, iAtInfantry, iInfantry, iItalianBersagliere,
 iSamInfantry, iMobileSam, iMarine, iAmericanNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iMandeSkirmisher, iBabylonAsharittuBowman, iMayanHolkan, iNubianMedjay,
 iLongbowman, iIndianPatiyodha, iCrossbowman, iChineseChokonu, iChariot, iEgyptianWarChariot, iHittiteHuluganni, iCelticCidainh, iHorseArcher, iTibetanKhampa,
@@ -1535,7 +1522,7 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 iNumBuildings = 212
 (iPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
-iMongolianGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iOttomanHammam, iKhmerBaray, iMoorishNoria, iHarappanBath, iIndianStepwell,
+iMongolianGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iTurkishHammam, iKhmerBaray, iMoorishNoria, iHarappanBath, iIndianStepwell,
 iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugueseFeitoria, iDrydock, iAirport,
 iForge, iMandeMint, iItalianArtStudio, iArabianAlchemist, iFactory, iGermanAssemblyPlant, iJapaneseZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant,
 iIndustrialPark, iPaganTemple, iEgyptianObelisk, iEthiopianStele, iIndonesianCandi, iIndianEdict, iBabylonianZiggurat, iNativeAmericanTotemPole, iPublicTransportation,
@@ -1553,11 +1540,11 @@ iZoroastrianMonastery, iZoroastrianShrine, iTriumphalArch, iOperaHouse, iTrading
 iIronWorks, iInterpol, iNationalPark, iRedCross, iGreatSphinx, iGreatLighthouse, iGreatCothon, iTerracottaArmy, iTempleOfArtemis,
 iPyramids, iHangingGardens, iOracle, iMoaiStatues, iIshtarGate, iColossus, iParthenon, iStatueOfZeus,
 iShwedagonPaya, iKhajuraho, iGreatLibrary, iMausoleumOfMaussollos, iFloatingGardens, iColosseum,
-iGreatWall, iTheodosianWalls, iMachuPicchu, iBorobudur, iGrandCanal, iHagiaSophia, iNotreDame, iTempleOfKukulkan, iHimejiCastle,
-iBlueMosque, iAngkorWat, iTopkapiPalace, iMezquita, iSistineChapel, iLeaningTower, iRedFort,
-iVersailles, iForbiddenPalace, iSpiralMinaret, iDomeOfTheRock, iSankore, iTajMahal, iSanMarcoBasilica, iPorcelainTower,
+iGreatWall, iTheodosianWalls, iMachuPicchu, iBorobudur, iGrandCanal, iNotreDame, iTempleOfKukulkan, iHimejiCastle,
+iBlueMosque, iAngkorWat, iTopkapiPalace, iLaMezquita, iHagiaSophia, iSistineChapel, iLeaningTower, iRedFort,
+iVersailles, iForbiddenPalace, iSpiralMinaret, iDomeOfTheRock, iUniversityofSankore, iTajMahal, iSanMarcoBasilica, iPorcelainTower,
 iStBasilsCathedral, iHarmandirSahib, iTrafalgarSquare, iBrandenburgGate, iStatueOfLiberty, iPentagon, iLubyanka, iWestminsterPalace, iMtRushmore,
-iEiffelTower, iEmpireStateBuilding, iCERN, iWembley, iGraceland, iCristoRedentor, iThreeGorgesDam, iHollywood, iUnitedNations, iCNTower, iSpaceElevator) = range(iNumBuildings)
+iEiffelTower, iEmpireStateBuilding, iCERNResearchComplex, iWembley, iGraceland, iCristoRedentor, iThreeGorgesDam, iHollywood, iUnitedNations, iCNTower, iSpaceElevator) = range(iNumBuildings)
 
 iBeginWonders = iGreatSphinx # different from DLL constant because that includes national wonders
 
@@ -1637,7 +1624,7 @@ mercRegions = {
 #Projects
 
 iNumProjects = 11
-(iManhattanProject, iTheInternet, iSDI, iApolloProgram, iSSCockpit, iSSLifeSupport, iSSStasisChamber, iSSDockingBay,
+(iManhattanProject, iInternet, iSDI, iApolloProgram, iSSCockpit, iSSLifeSupport, iSSStasisChamber, iSSDockingBay,
 iSSEngine, iSSCasing, iSSThrusters) = range(iNumProjects)
 
 
@@ -1680,19 +1667,14 @@ iVictorySecularism = 11
 #leaders
 
 iNumLeaders = 121
-(iLeaderBarbarian, iNativeLeader, iIndependentLeader, iAlexander, iAsoka, iAugustus, iBismarck, iBoudica, iBrennus, iCatherine, 
-iCharlemagne, iChurchill, iCyrus, iDarius, iDeGaulle, iElizabeth, iFrederick, iGandhi, iGenghisKhan, iSargon, 
-iHammurabi, iHannibal, iCleopatra, iHuaynaCapac, iIsabella, iJoao, iJuliusCaesar, iJustinian, iKublaiKhan, iLincoln, 
-iLouis, iMansaMusa, iMao, iMehmed, iMontezuma, iNapoleon, iPacal, iPericles, iPeter, iQinShiHuang, 
-iRamesses, iRagnar, iRoosevelt, iSaladin, iSittingBull, iStalin, iSuleiman, iSuryavarman, iOdaNobunaga, iVictoria, 
-iWangKon, iWashington, iWillemVanOranje, iZaraYaqob, iKammu, iMeiji, iAkbar, iHiram, iHaileSelassie, iGustav, 
-iMongkut, iPhilip, iBarbarossa, iCharles, iFrancis, iIvan, iAfonso, iAtaturk, iMaria, iHitler,
-iFranco, iNicholas, iCavour, iAbbas, iKhomeini, iTaizong, iHongwu, iDharmasetu, iHayamWuruk, iSuharto, 
-iShahuji, iNaresuan, iAlpArslan, iBaibars, iNasser, iAlfred, iTrudeau, iChandragupta, iTughluq, iBasil, 
-iRahman, iRajendra, iLobsangGyatso, iSobieski, iVatavelli, iMbemba, iHarun, iSongtsen, iCasimir, iYaqub, 
-iLorenzo, iSantaAnna, iJuarez, iCardenas, iPedro, iSanMartin, iPeron, iBolivar, iAhoeitu, iKrishnaDevaRaya, 
-iMussolini, iSejong, iBhutto, iPilsudski, iWalesa, iGerhardsen, iVargas, iMacDonald, iCastilla, iWilliam,
-iGeorge) = range(iNumLeaders)
+(iRamesses, iCleopatra, iBaibars, iNasser, iQinShiHuang, iTaizong, iHongwu, iMao, iSargon, iHammurabi, iVatavelli, iPericles, iAlexander, iGeorge, iAsoka, iChandragupta, iShahuji,
+iGandhi, iHiram, iHannibal, iAhoeitu, iCyrus, iDarius, iJuliusCaesar, iAugustus, iRajendra, iKrishnaDevaRaya, iZaraYaqob, iHaileSelassie, iWangKon, iSejong, iPacal,
+iJustinian, iBasil, iKammu, iOdaNobunaga, iMeiji, iRagnar, iGustav, iGerhardsen, iHarun, iSaladin, iSongtsen, iLobsangGyatso, iSuryavarman, iDharmasetu, iHayamWuruk,
+iSuharto, iRahman, iYaqub, iIsabella, iPhilip, iFranco, iCharlemagne, iLouis, iNapoleon, iDeGaulle, iAlfred, iElizabeth, iVictoria, iChurchill, iBarbarossa,
+iCharles, iFrancis, iIvan, iPeter, iCatherine, iNicholas, iStalin, iMansaMusa, iCasimir, iSobieski, iPilsudski, iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac,
+iCastilla, iLorenzo, iCavour, iMussolini, iGenghisKhan, iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, iMehmed, iSuleiman, iAtaturk, iNaresuan, iMongkut, iMbemba,
+iAbbas, iKhomeini, iWillemVanOranje, iWilliam, iFrederick, iBismarck, iHitler, iWashington, iLincoln, iRoosevelt, iSanMartin, iPeron, iSantaAnna, iJuarez, iCardenas, iBolivar,
+iPedro, iVargas, iMacDonald, iTrudeau, iBrennus, iAlpArslan, iNativeLeader, iIndependentLeader, iBarbarianLeader, iSittingBull, iBoudica) = range(iNumLeaders)
 
 resurrectionLeaders = {
 	iChina : iHongwu,
