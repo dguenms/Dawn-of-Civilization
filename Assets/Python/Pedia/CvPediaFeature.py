@@ -90,55 +90,16 @@ class CvPediaFeature:
 		screen.appendListBoxString(panel, u"<font=4b>" + info.getDescription() + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
 		szText = ""
-		if self.bNaturalWonder:
-			screen.appendListBoxString(panel, "Natural Wonder", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.appendListBoxString(panel, "Terrain Feature", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
-			sType = gc.getFeatureInfo(self.iFeature).getType().replace("FEATURE_", "BUILDING_")
-			iBuilding = gc.getInfoTypeForString(sType)
-			if iBuilding == -1:
-				return
-			BuildingInfo = gc.getBuildingInfo(iBuilding)
-
-			for iYieldType in xrange(YieldTypes.NUM_YIELD_TYPES):
-				iYieldChange = gc.getFeatureInfo(self.iFeature).getYieldChange(iYieldType)
-				iYieldChange += BuildingInfo.getYieldChange(iYieldType)
-				if iYieldChange != 0:
-					szSign = ""
-					if iYieldChange > 0:
-						szSign = "+"
-					szText += (u"%s%d%c  " % (szSign, iYieldChange, gc.getYieldInfo(iYieldType).getChar()))
-
-			for iCommerceType in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
-				iTotalCommerce = BuildingInfo.getObsoleteSafeCommerceChange(iCommerceType) + BuildingInfo.getCommerceChange(iCommerceType)
-				if iTotalCommerce != 0:
-					szSign = ""
-					if iTotalCommerce > 0:
-						szSign = "+"
-					szText += (u"%s%d%c  " % (szSign, iTotalCommerce, gc.getCommerceInfo(iCommerceType).getChar()))
-
-			iHappiness = BuildingInfo.getHappiness()
-			if iHappiness > 0:
-				szText += (u"+%i%c  " % (iHappiness, CyGame().getSymbolID(FontSymbols.HAPPY_CHAR)))
-			elif iHappiness < 0:
-				szText += (u"+%i%c  " % (abs(iHappiness), CyGame().getSymbolID(FontSymbols.UNHAPPY_CHAR)))
-
-			iHealth = BuildingInfo.getHealth()
-			if iHealth > 0:
-				szText += (u"+%i%c  " % (iHealth, CyGame().getSymbolID(FontSymbols.HEALTHY_CHAR)))
-			elif iHealth < 0:
-				szText += (u"+%i%c  " % (abs(iHealth), CyGame().getSymbolID(FontSymbols.UNHEALTHY_CHAR)))
-
-		else:
-			screen.appendListBoxString(panel, "Terrain Feature", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
-
-			szText = u""
-			for iYield in xrange(YieldTypes.NUM_YIELD_TYPES):
-				iYieldChange = info.getYieldChange(iYield)
-				if iYieldChange != 0:
-					szSign = ""
-					if iYieldChange > 0:
-						szSign = "+"
-					szText += (u"%s%d%c  " % (szSign, iYieldChange, gc.getYieldInfo(iYield).getChar()))
+		szText = u""
+		for iYield in xrange(YieldTypes.NUM_YIELD_TYPES):
+			iYieldChange = info.getYieldChange(iYield)
+			if iYieldChange != 0:
+				szSign = ""
+				if iYieldChange > 0:
+					szSign = "+"
+				szText += (u"%s%d%c  " % (szSign, iYieldChange, gc.getYieldInfo(iYield).getChar()))
 
 		screen.appendListBoxString(panel, szText, WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
@@ -185,7 +146,7 @@ class CvPediaFeature:
 		panel = self.top.getNextWidgetName()
 		info = gc.getFeatureInfo(self.iFeature)
 
-		screen.addPanel(panel, "Improvements", "", False, True, self.X_IMPROVEMENTS, self.Y_IMPROVEMENTS, self.W_IMPROVEMENTS, self.H_IMPROVEMENTS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_IMPROVEMENT", ()), "", False, True, self.X_IMPROVEMENTS, self.Y_IMPROVEMENTS, self.W_IMPROVEMENTS, self.H_IMPROVEMENTS, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 
 		for iImprovement in xrange(gc.getNumImprovementInfos()):
@@ -201,7 +162,7 @@ class CvPediaFeature:
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "Resources", "", False, True, self.X_RESOURCES, self.Y_RESOURCES, self.W_RESOURCES, self.H_RESOURCES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CONCEPT_RESOURCES", ()), "", False, True, self.X_RESOURCES, self.Y_RESOURCES, self.W_RESOURCES, self.H_RESOURCES, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 
 		for iResource in xrange(gc.getNumBonusInfos()):
