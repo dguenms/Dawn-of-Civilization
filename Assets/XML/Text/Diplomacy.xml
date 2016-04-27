@@ -191,7 +191,7 @@
 		<German>Seid gegr&#252;&#223;t, [CT_NAME]! Ich bin [OUR_NAME], Anf&#252;hrer der gro&#223;en Zivilisation von [OUR_CIV_SHORT].</German>
 	</TEXT>
 	<TEXT>
-		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HARUN_1</Tag>
+		<Tag>AI_DIPLO_FIRST_CONTACT_LEADER_HARUN_AL_RASHID_1</Tag>
 		<English>Peace be upon you, [CT_NAME] of [CT_CIV_SHORT]. If you would expect the blessings of Allah, be kind to his people, for Allah will help him who moves the ways of Allah.</English>
 		<German>Friede sei mit Euch, [CT_NAME] von [CT_CIV_SHORT]. Falls Ihr die Segnungen Allahs erwartet, seid freundlich zu seinem Volk, denn Allah wird dem helfen, der die Wege Allahs bewegt.</German>
 	</TEXT>
