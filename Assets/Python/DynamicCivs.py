@@ -1360,7 +1360,7 @@ def republicTitle(iPlayer):
 	
 	if iPlayer == iPoland:
 		if gc.getPlayer(iPlayer).getCurrentEra() <= iIndustrial:
-			return key(iPlayer, "EMPIRE")
+			return key(iPlayer, "COMMONWEALTH")
 	
 	if iPlayer == iEngland:
 		iEra = gc.getPlayer(iPlayer).getCurrentEra()
