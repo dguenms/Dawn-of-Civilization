@@ -1,6 +1,7 @@
 from CvPythonExtensions import *
 import CvUtil
 import FontUtil
+from Consts import *
 
 gc = CyGlobalContext()
 
@@ -87,7 +88,7 @@ class CvPediaCivic:
 	def placeEffects(self):
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
-		screen.addPanel(panel, "Effects", "", True, False, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_EFFECTS", ()), "", True, False, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
 		text = self.top.getNextWidgetName()
 		screen.attachListBoxGFC(panel, text, "", TableStyles.TABLE_STYLE_EMPTY)
 		screen.enableSelect(text, False)
@@ -107,9 +108,21 @@ class CvPediaCivic:
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "History", "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
-		szHistory = gc.getCivicInfo(self.iCivic).getCivilopedia()
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
+		if self.iCivic in [iCivicPantheon, iCivicSecularism]:
+			victorytext = CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ())
+			if self.iCivic == iCivicPantheon:
+				iVictory = iVictoryPolytheism
+			else:
+				iVictory = iVictorySecularism
+			bullet = u"%c" % CyGame().getSymbolID(FontSymbols.BULLET_CHAR)
+			for iGoal in range(3):
+				victorytext += bullet + CyTranslator().getText(tReligiousGoals[0][iVictory][iGoal], ()) + "\n"
+			szHistory = victorytext + "\n" + gc.getCivicInfo(self.iCivic).getCivilopedia()
+		else:
+			szHistory = gc.getCivicInfo(self.iCivic).getCivilopedia()
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		
 
 
 	def handleInput (self, inputClass):
