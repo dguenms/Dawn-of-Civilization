@@ -7264,8 +7264,6 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 	iHumanDealWeight = AI_dealVal(ePlayer, pTheirList);
 	iAIDealWeight = GET_PLAYER(ePlayer).AI_dealVal(getID(), pOurList);
 
-	GC.getGame().logMsg("Player %d to player %d, human value: %d, AI value: %d", getID(), ePlayer, iHumanDealWeight, iAIDealWeight);
-
 	int iGoldValuePercent = AI_goldTradeValuePercent(ePlayer);
 
 	pTheirCounter->clear();
@@ -8443,8 +8441,6 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 			iValue /= 2;
 		}
 	}
-
-	//GC.getGame().logMsg("Player %s to %s trade val for bonus %s change %d: %d", getCivilizationShortDescription(), GET_PLAYER(ePlayer).getCivilizationShortDescription(), GC.getBonusInfo(eBonus).getText(), iChange, iValue);
 
 	return (iValue * GC.getDefineINT("PEACE_TREATY_LENGTH"));
 }
@@ -11034,7 +11030,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 		if (getCapitalCity() != NULL)
 		{
-			//GC.getGameINLINE().logMsg("Begin AI free core specialist.");
 			int iLoop;
 			int iX;
 			int iY;
@@ -11050,7 +11045,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 					iValue += kCivic.getCoreFreeSpecialist() * 18;
 				}
 			}
-			//GC.getGameINLINE().logMsg("End AI free core specialist.");
 		}
 
 		if (getID() == MALI || getID() == EGYPT)
@@ -11067,10 +11061,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	// Leoreth: specialist threshold extra yield
 	if (getSpecialistExtraYieldBaseThreshold() > 0 || getSpecialistExtraYieldEraThreshold() > 0)
 	{
-		//GC.getGameINLINE().logMsg("Begin AI free core specialist.");
 		int iLoop;
-//		int iX;
-//		int iY;
 		CvCity* pLoopCity;
 		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
@@ -11095,7 +11086,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				}
 			}
 		}
-		//GC.getGameINLINE().logMsg("End AI free core specialist.");
 
 		if (getID() == MALI || getID() == EGYPT)
 		{
@@ -11613,7 +11603,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 	    iValue /= 10;
 	}
-	//GC.getGameINLINE().logMsg("End AI civic value.");
 
 	//Leoreth: less premature Republics
 	if (eCivic == CIVIC_REPUBLIC)
@@ -19932,8 +19921,6 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 
 	bool bOwnerCatholic = (GET_PLAYER(eOwner).getStateReligion() == CATHOLICISM && eOwner != GC.getGame().getActivePlayer());
 	bool bBuyerCatholic = GET_PLAYER(getID()).getStateReligion() == CATHOLICISM;
-
-	//GC.getGame().logMsg("getID() = %d, eOwner = %d", getID(), eOwner);
 
 	if (getID() != GC.getGame().getActivePlayer())
 	{

@@ -4479,7 +4479,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
         bool bCore = pPlot->isCore(GC.getGameINLINE().getActivePlayer());
 		bool bForeignCore = false;
 
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
+		for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
 		{
 			if (iI != GC.getGameINLINE().getActivePlayer())
 			{
@@ -13151,8 +13151,6 @@ void CvGameTextMgr::setReligionHelpCity(CvWStringBuffer &szBuffer, ReligionTypes
 	int iProductionModifier;
 	int iFreeExperience;
 	int iGreatPeopleRateModifier;
-	int iFaith;
-	int iWeight;
 
 	if (pCity == NULL)
 	{

@@ -1565,8 +1565,6 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 		iOurStrength += getPower(true);
 		iTheirStrength += GET_TEAM(eTeam).getPower(true);
 
-		//GC.getGame().logMsg("Global war between %d and %d, our strength: %d, their strength: %d, world strength: %d", getID(), eTeam, iOurStrength, iTheirStrength, iWorldStrength);
-
 		bool bGlobalWar = (3 * (iOurStrength + iTheirStrength) > iWorldStrength);
 
 		CvEventReporter::getInstance().changeWar(true, getID(), eTeam, bGlobalWar);

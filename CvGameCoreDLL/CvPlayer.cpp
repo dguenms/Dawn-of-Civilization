@@ -1442,8 +1442,6 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	if (bConquest)
 	{
-		//GC.getGameINLINE().logMsg("City conquered, next covered plot: %d", pOldCity->getNextCoveredPlot());
-
 		for (iI = 0; iI < pOldCity->getNextCoveredPlot(); iI++)
 		{
 			pLoopPlot = pOldCity->getCulturePlot(iI);
@@ -2831,8 +2829,7 @@ const TCHAR* CvPlayer::getUnitButton(UnitTypes eUnit) const
 void CvPlayer::doTurn()
 {
 	PROFILE_FUNC();
-	//GC.getGameINLINE().logMsg("player doTurn: %d", getID()); //Rhye
-
+	
 	//Rhye
 	if (m_bTurnPlayed)
 	{
@@ -8219,8 +8216,6 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 	{
 		GC.getGameINLINE().setHolyCity(eReligion, pBestCity, true);
 		
-		log(CvWString::format(L"Found religion %s in %s in year %d", GC.getReligionInfo(eReligion).getText(), pBestCity->getName().GetCString(), GC.getGame().getGameTurnYear()));
-
 		if (bAward)
 		{
 			if (GC.getReligionInfo(eSlotReligion).getNumFreeUnits() > 0)
@@ -11769,7 +11764,7 @@ void CvPlayer::setLastStateReligion(ReligionTypes eNewValue)
 		// religion visibility now part of espionage
 		//GC.getGameINLINE().updateCitySight(true, true);
 
-		for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			updateReligionYieldChange(eOldReligion, (YieldTypes)iI, -getReligionYieldChange((YieldTypes)iI));
 			updateReligionYieldChange(eNewValue, (YieldTypes)iI, getReligionYieldChange((YieldTypes)iI));
@@ -17582,8 +17577,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		changeDomainProductionModifier((DomainTypes)iI, GC.getCivicInfo(eCivic).getDomainProductionModifier(iI) * iChange);
 		changeDomainExperienceModifier((DomainTypes)iI, GC.getCivicInfo(eCivic).getDomainExperienceModifier(iI) * iChange);
 	}
-
-	//GC.getGameINLINE().logMsg("End process civics.");
 }
 
 void CvPlayer::showMissedMessages()
@@ -22353,14 +22346,11 @@ bool CvPlayer::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionS
 {
 	CvTeam& kOurTeam = GET_TEAM(getTeam());
 
-	//GC.getGame().logMsg("canDoResolution: %d (player %d)", (int)kData.eVote, getID());
-
 	// No contact to target civ necessary
 	/*if (NO_PLAYER != kData.ePlayer)
 	{
 		if (!kOurTeam.isHasMet(GET_PLAYER(kData.ePlayer).getTeam()))
 		{
-			GC.getGame().logMsg("Failed: hasn't met target.");
 			return false;
 		}
 	}*/
@@ -22457,7 +22447,6 @@ bool CvPlayer::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionS
 
 			if (!GET_TEAM(eMaster).canDeclareWar(kPlayer.getTeam()) || !GET_TEAM(eMaster).isHasMet(kPlayer.getTeam()))
 			{
-				GC.getGame().logMsg("Failed: cannot declare war on target.");
 				return false;
 			}
 		}*/
