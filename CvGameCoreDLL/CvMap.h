@@ -144,6 +144,9 @@ public:
 	int plotX(int iIndex) const;																										// Exposed to Python
 	int plotY(int iIndex) const;																										// Exposed to Python
 
+	// Leoreth
+	int plotIndex(int iX, int iY) const;
+
 	DllExport int pointXToPlotX(float fX);
 	DllExport float plotXToPointX(int iX);
 

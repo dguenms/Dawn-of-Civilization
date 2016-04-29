@@ -1604,5 +1604,14 @@ void CvMap::calculateAreas()
 
 }
 
+int CvMap::plotIndex(int iX, int iY) const
+{
+	if (iX == INVALID_PLOT_COORD || iY == INVALID_PLOT_COORD) return NULL;
+
+	int iMapX = coordRange(iX, getGridWidthINLINE(), isWrapXINLINE());
+	int iMapY = coordRange(iY, getGridHeightINLINE(), isWrapYINLINE());
+
+	return (isPlot(iMapX, iMapY)) ? plotNum(iMapX, iMapY) : -1;
+}
 
 // Private Functions...

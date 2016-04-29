@@ -191,6 +191,23 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	// Init saved data
 	reset(iID, eOwner, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
+	// Leoreth: init culture coverage
+	int iLoopX, iLoopY, iIndex;
+	for (iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+	{
+		iLoopX = getX() + GC.getCityPlot3X()[iI];
+		iLoopY = getY() + GC.getCityPlot3Y()[iI];
+
+		iIndex = GC.getMap().plotIndex(iLoopX, iLoopY);
+
+		if (iIndex < 0) log("Index < 0 for (%d, %d)", iX, iY);
+
+		m_aiCulturePlots[iI] = iIndex;
+	}
+
+	//log(CvWString::format(L"Init: update plot culture: %s (%d, %d)", getName().GetCString(), getX(), getY()));
+	updateCultureCosts();
+
 	// Leoreth: update art style before graphics are set up
 	updateArtStyleType();
 
@@ -764,25 +781,6 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aBuildingHealthChange.clear();
 	}
 
-	int iX, iY, iIndex;
-	for (iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
-	{
-		iX = getX() + GC.getCityPlot3X()[iI];
-		iY = getY() + GC.getCityPlot3Y()[iI];
-
-		// wrap around X coordinate
-		if (iX >= GC.getMap().getGridWidthINLINE()) iX -= GC.getMap().getGridWidthINLINE();
-		else if (iX < 0) iX += GC.getMap().getGridWidthINLINE();
-
-		// handle invalid Y coordinates
-		if (iY >= GC.getMap().getGridHeightINLINE() || iY < 0) iIndex = -1;
-		else iIndex = GC.getMap().plotNum(getX() + GC.getCityPlot3X()[iI], getY() + GC.getCityPlot3Y()[iI]);
-
-		m_aiCulturePlots[iI] = iIndex;
-	}
-
-	updateCultureCosts();
-
 	if (!bConstructorCall)
 	{
 		AI_reset();
@@ -983,11 +981,6 @@ void CvCity::doTurn()
 {
 	PROFILE("CvCity::doTurn()");
 
-	if (GC.getGame().getActivePlayer() == getOwner())
-	{		
-		GC.getGame().logMsg("CvCity::doTurn(): %d", GC.getGame().getGameTurn());
-	}
-
 	CvPlot* pLoopPlot;
 	int iI;
 
@@ -1116,12 +1109,6 @@ void CvCity::doTurn()
 
 	// Leoreth: update art style type once per turn
 	updateArtStyleType();
-
-	
-	if (GC.getGame().getActivePlayer() == getOwner())
-	{		
-		GC.getGame().logMsg("End CvCity::doTurn(): %d", GC.getGame().getGameTurn());
-	}
 
 	// ONEVENT - Do turn
 /*************************************************************************************************/
@@ -12448,8 +12435,6 @@ void CvCity::setReligionInfluence(ReligionTypes eReligion, int iNewValue)
 	{
 		m_paiReligionInfluence[eReligion] = iNewValue;
 
-		log(CvWString::format(L"Change religion influence in %s from %d to %d", getName().GetCString(), iOldValue, iNewValue));
-
 		int iFactor = GC.getReligionInfo(eReligion).isProselytizing() ? 2 : 1;
 
 		spreadReligionInfluence(eReligion, iFactor * iOldValue, -1);
@@ -12887,7 +12872,6 @@ void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool b
 					{
 						if (GC.getBuildingInfo(eIndex).getReligionChange(iI) > 0)
 						{
-							log(CvWString::format(L"From building: %s in %s", GC.getReligionInfo((ReligionTypes)iI).getText(), getName().GetCString()));
 							setHasReligion(((ReligionTypes)iI), true, true, true);
 						}
 					}
@@ -14731,11 +14715,6 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 
 	if (eSpread == RELIGION_SPREAD_MINORITY) iTurns *= 2;
 
-	if (getOwner() == CONGO)
-	{
-		log(CvWString::format(L"Congo: eSpread: %d, iIncrement: %d, iTurns: %d", eSpread, iIncrement, iTurns));
-	}
-
 	return getTurns(iTurns);
 }
 
@@ -14748,6 +14727,8 @@ bool CvCity::isHasPrecursor(ReligionTypes eReligion) const
 	if (eReligion == ISLAM) return isHasReligion(CATHOLICISM) || isHasReligion(ORTHODOXY);
 
 	if (eReligion == CATHOLICISM || eReligion == ORTHODOXY) return isHasReligion(JUDAISM);
+
+	return false;
 }
 
 int CvCity::getReligionPopulation(ReligionTypes eReligion) const
@@ -14781,7 +14762,6 @@ void CvCity::doReligion()
 		iReligionInfluence = plot()->getReligionInfluence(eReligion);
 		iChance = getTurnsToSpread(eReligion);
 		iRand = GC.getGameINLINE().getSorenRandNum(iChance, "Religion spread");
-		log(CvWString::format(L"Spread religion %s in %s: 1/%d chance", GC.getReligionInfo(eReligion).getText(), getName().GetCString(), iChance));
 		
 		if (iRand == 0)
 		{
@@ -14796,8 +14776,7 @@ void CvCity::doReligion()
 	{
 		iChance = GET_PLAYER(getOwner()).getSpreadType(plot(), eDisappearingReligion) * 25 + 25;
 		iRand = GC.getGame().getSorenRandNum(iChance, "Religion disappearance");
-		log(CvWString::format(L"Disappearing religion %s in %s: 1/%d chance", GC.getReligionInfo(eDisappearingReligion).getText(), getName().GetCString(), iChance));
-
+		
 		if (iRand == 0)
 		{
 			removeReligion(eReligion);
@@ -17502,7 +17481,6 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(pPlot->getImprovementType()).isActsAsCity()) return 0;
 
 	int iCost = pPlot->calculateCultureCost();
-	//int iDistance = plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY());
 	int iDistance = std::max(plotDistance(getX(), getY(), pPlot->getX(), pPlot->getY()), GC.getMap().calculatePathDistance(plot(), pPlot));
 
 	if (bOrdering)
@@ -17525,7 +17503,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	if (pPlot->getBonusType() >= 0 && GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)GC.getBonusInfo(pPlot->getBonusType()).getTechReveal())) iCost += GC.getDefineINT("CULTURE_COST_BONUS");
 	
 	if (iDistance <= 1) iCost -= GC.getDefineINT("CULTURE_COST_DISTANCE");
-	else iCost += std::max(3, iDistance) * GC.getDefineINT("CULTURE_COST_DISTANCE");
+	else iCost += std::min(3, iDistance) * GC.getDefineINT("CULTURE_COST_DISTANCE");
 
 	if (plot()->isRiver() && pPlot->isRiver()) iCost += GC.getDefineINT("CULTURE_COST_RIVER");
 
@@ -17543,8 +17521,6 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 			iCost  -= GC.getFeatureInfo(pPlot->getFeatureType()).getCultureCostModifier();
 		}
 	}
-
-	if (!bOrdering && getOwner() == INDIA) log("Plot: (%d, %d), iDistance: %d, iCost: %d", pPlot->getX(), pPlot->getY(), iDistance, iCost);
 
 	return bOrdering ? iCost : std::max(0, iCost);
 }
@@ -17621,7 +17597,6 @@ void CvCity::updateCultureCosts()
 	int iCumulativeCosts = 0;
 	int iCurrentCosts;
 	CvPlot* plot;
-	//if (getOwner() == EGYPT) GC.getGameINLINE().logMsg("Cumulative costs for x=%d, y=%d", getX(), getY());
 	for (std::vector<int>::iterator it = plots.begin(); it != plots.end(); ++it)
 	{
 		m_aiCulturePlots[iI] = *it;
@@ -17629,7 +17604,6 @@ void CvCity::updateCultureCosts()
 		iCurrentCosts = (plot != NULL) ? calculateCultureCost(plot) : 0;
 		iCumulativeCosts += iCurrentCosts;
 		m_aiCultureCosts[iI] = iCumulativeCosts; 
-		//if (getOwner() == EGYPT) GC.getGameINLINE().logMsg("%d = %d (+%d)", iI, iCumulativeCosts, iCurrentCosts);
 		iI++;
 	}
 }
@@ -17647,11 +17621,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 	int iCultureRange;
 	int iI;
 
-	//if (getOwner() == EGYPT) GC.getGameINLINE().logMsg("Next covered plot set to: %d (culture = %d)", iNewValue, getCultureTimes100(getOwnerINLINE()) / 100);
-
 	iOldValue = getNextCoveredPlot();
-
-	//GC.getGameINLINE().logMsg("iOldValue = %d, iNewValue = %d", iOldValue, iNewValue);
 
 	if (iNewValue < iOldValue)
 	{
@@ -17667,7 +17637,6 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 				if (pLoopPlot != NULL)
 				{
-					//GC.getGameINLINE().logMsg("Removed coverage for x=%d, y=%d on x=%d, y=%d", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
 					iCultureRange = std::max(0, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
 					pLoopPlot->changeCultureRangeCities(getOwnerINLINE(), iCultureRange, -1, bUpdatePlotGroups);
 				}
@@ -17689,7 +17658,6 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 				if (pLoopPlot != NULL)
 				{
-					//GC.getGameINLINE().logMsg("Added coverage for x=%d, y=%d on x=%d, y=%d (id=%d)", getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY(), getCulturePlot(iI));
 					iCultureRange = std::max(0, plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX(), pLoopPlot->getY()));
 
 					if (pLoopPlot->getCultureRangeCities(getOwnerINLINE(), iCultureRange) == 0)
@@ -17862,7 +17830,6 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 
 	if (eDisappearingReligion != NO_RELIGION && GC.getGame().getSorenRandNum(iDisappearanceChance, "Religion disappearance") == 0)
 	{
-		log(CvWString::format(L"Remove religion %s from %s after spread", GC.getReligionInfo(eDisappearingReligion).getText(), getName().GetCString()));
 		removeReligion(eDisappearingReligion);
 	}
 

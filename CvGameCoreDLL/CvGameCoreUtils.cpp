@@ -2668,15 +2668,3 @@ void log(CvWString message)
 {
 	gDLL->logMsg("sdkDbg.log", CvString(message));
 }
-
-char* chars(const wchar_t* wchars)
-{
-	char buf[256];
-	std::wcstombs(buf, wchars, 256);
-	return buf;
-}
-
-char* chars(CvWString string)
-{
-	return chars(string.c_str());
-}
