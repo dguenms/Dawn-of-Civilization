@@ -134,14 +134,11 @@ class Religions:
 		
 	def onReligionFounded(self, iReligion, iFounder):
 		if iReligion == iCatholicism:
-			for iPlayer in lCatholicStart:
-				if gc.getGame().getGameTurn() < getTurnForYear(tBirth[iPlayer]):
-					gc.getPlayer(iPlayer).setLastStateReligion(iCatholicism)
-					
+			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
+			utils.setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
+			
 		elif iReligion == iProtestantism:
-			for iPlayer in lProtestantStart:
-				if gc.getGame().getGameTurn() < getTurnForYear(tBirth[iPlayer]):
-					gc.getPlayer(iPlayer).setLastStateReligion(iProtestantism)
+			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 					
 	def getReligionCities(self, iReligion):
 		lCities = []
