@@ -36237,7 +36237,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=8
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -38008,7 +38008,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=8
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
@@ -38915,7 +38915,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=8
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
