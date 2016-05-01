@@ -54,11 +54,11 @@
 		<element type="RouteType" minOccurs="0"/>
 		<element type="EntityEvent" minOccurs="0"/>
 		<element type="FeatureStructs" minOccurs="0"/>
-		<element type="HotKey" minOccurs="0"/>
-		<element type="bAltDown" minOccurs="0"/>
-		<element type="bShiftDown" minOccurs="0"/>
-		<element type="bCtrlDown" minOccurs="0"/>
-		<element type="iHotKeyPriority" minOccurs="0"/>
+		<element type="HotKey"/>
+		<element type="bAltDown"/>
+		<element type="bShiftDown"/>
+		<element type="bCtrlDown"/>
+		<element type="iHotKeyPriority"/>
 		<element type="Button" maxOccurs="*"/>
 		<element type="iOrderPriority" minOccurs="0"/>
 		<element type="bGraphicalOnly" minOccurs="0"/>
