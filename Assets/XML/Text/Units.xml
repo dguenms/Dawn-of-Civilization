@@ -1331,7 +1331,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Rabbis[COLOR_REVERT] ([COLOR_UNIT_TEXT]Jewish Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Rabbi[COLOR_REVERT] ([COLOR_UNIT_TEXT]Jewish Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] in the Middle East, Europe, Russia and the United States.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY</Tag>
@@ -1340,7 +1340,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Orthodox Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT] ([COLOR_UNIT_TEXT]Orthodox Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in Russia, Southern Europe, the Middle East, Central Asia and Alaska.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Tag>
@@ -1349,7 +1349,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Catholic Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT] ([COLOR_UNIT_TEXT]Catholic Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in Europe, North America, South America, Oceania and Africa.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Tag>
@@ -1358,7 +1358,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Protestant Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT] ([COLOR_UNIT_TEXT]Protestant Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in Europe, North America, Oceania and South Africa.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISLAMIC_MISSIONARY</Tag>
@@ -1367,7 +1367,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISLAMIC_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Imams[COLOR_REVERT] ([COLOR_UNIT_TEXT]Islamic Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>[COLOR_UNIT_TEXT]Imams[COLOR_REVERT] ([COLOR_UNIT_TEXT]Islamic Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] in the Middle East, Central Asia, India, South-East Asia, Russia, Ethiopia, South Europe and West Africa.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HINDU_MISSIONARY</Tag>
@@ -1376,7 +1376,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HINDU_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Gurus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Hindu Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Guru[COLOR_REVERT] ([COLOR_UNIT_TEXT]Hindu Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] in India and South East Asia.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BUDDHIST_MISSIONARY</Tag>
@@ -1385,7 +1385,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BUDDHIST_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Bhikkus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Buddhist Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Bhikku[COLOR_REVERT] ([COLOR_UNIT_TEXT]Buddhist Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] in India, Tibet, South-East Asia, China, Korea, Japan and Persia.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY</Tag>
@@ -1394,7 +1394,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CONFUCIAN_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Scholars[COLOR_REVERT] ([COLOR_UNIT_TEXT]Confucian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Scholar[COLOR_REVERT] ([COLOR_UNIT_TEXT]Confucian Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] in China, Korea, Central Asia, Tibet, Japan, South-East Asia and Australia.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAOIST_MISSIONARY</Tag>
@@ -1403,7 +1403,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAOIST_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Daoshis[COLOR_REVERT] ([COLOR_UNIT_TEXT]Taoist Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Daoshi[COLOR_REVERT] ([COLOR_UNIT_TEXT]Taoist Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] in China, Tibet and Central Asia.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY</Tag>
@@ -1412,6 +1412,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Magus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>The [COLOR_UNIT_TEXT]Magu[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionary[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in Persia and India.</English>
 	</TEXT>
 </Civ4GameText>

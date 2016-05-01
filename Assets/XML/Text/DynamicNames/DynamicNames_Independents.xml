@@ -224,26 +224,17 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SELJUK_ADJECTIVE</Tag>
 		<English>Seljuk</English>
-		<French>in French</French>
 		<German>Seldschukisch</German>
-		<Italian>in Italian</Italian>
-		<Spanish>in Spanish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SELJUK_DESC</Tag>
 		<English>Seljuk Empire</English>
-		<French>in French</French>
 		<German>Seldschukenreich</German>
-		<Italian>in Italian</Italian>
-		<Spanish>in Spanish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SELJUK_SHORT_DESC</Tag>
 		<English>Seljuks</English>
-		<French>in French</French>
 		<German>Seldschuken</German>
-		<Italian>in Italian</Italian>
-		<Spanish>in Spanish</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ZULU_ADJECTIVE</Tag>
