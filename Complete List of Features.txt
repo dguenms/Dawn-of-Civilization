@@ -1,5 +1,5 @@
 RFC Dawn of Civilization
-Complete List of Features (as of version 1.13)
+Complete List of Features (as of version 1.14)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
@@ -175,6 +175,7 @@ MAJOR FEATURES
 	* Voting AI takes its relationships, own interests and the legitimacy of a claim when voting on claims
 	* Congresses establish contact between all participants
 * Expanded Apostolic Palace and United Nations mechanics:
+	* Apostolic Palace elections are now initiated by building Saint Peter's Basilica
 	* Votes are now proportional to the square root of your (state religion) population, to give smaller civs more weight
 	* When attempting to win a Diplomatic Victory, your own votes and those of your vassals do not count (you need to win a majority among the other civilizations)
 	* Only civilizations with Catholic state religion are members of the Apostolic Palace and allowed to vote
@@ -305,7 +306,6 @@ GAME RULES
 * Enforced peace with recently spawned or respawned civilizations
 * Independent culture does not create foreign culture unhappiness
 * On small islands, cities as resources count as improvements for production and commerce output of the city tile
-* Missionary success chance abroad depends on the civ specific religion spread modifier, like natural religion spread
 * Independents cannot circumnavigate or receive conquerors anymore
 * Minor civilizations are not affected by events
 * Capitals can be flipped as long as they are not on your initial starting plot
@@ -316,8 +316,8 @@ GAME RULES
 * Minor civilizations cannot receive conquerors anymore
 * New capital locations prefer cities
 * Wars on spawn only start when the spawn actually happens
-* Minor civilizations cannot take Goody Huts
-* Blockade range reduce to 2
+* Minor civilizations cannot take Tribal Villages
+* Blockade range reduced to 2
 * Hurry unhappiness scales with the amount of sacrificed population
 * The 80% core culture rule now also applies to city flips
 * Claims on cities from collapsing civs due to being the original owner are only valid if the city has been lost recently
@@ -326,7 +326,7 @@ GAME RULES
 * Ocean tiles only provide double movement to units than can naturally enter Ocean
 * All foreign city culture is flipped on spawn
 * Cities can be founded on one tile islands regardless of terrain features
-* If units are produced with food, their cost is modified by the growth modifier of its civilization
+* If units are produced with food, their cost is modified by the growth modifier of their civilization
 * Impassable terrain can be entered if improved
 * Improved terrain features provide no defensive bonus
 * Vassal dynamic names only appear for capitulated civilizations
@@ -1020,7 +1020,6 @@ GAME SCENARIOS
 * Improved resource arrangement in Persia
 * The Khmer start as Hindu
 * 3000 BC scenario:
-	* The Temple of Solomon spawns in Yerushalayim
 	* Gordion and Hatushas do not spawn anymore
 * 600 AD scenario:
 	* Some Chinese and Byzantine resources are improved
@@ -1107,7 +1106,7 @@ RELIGION
 	* Shrine: All Saints' Church
 * Buddhism is founded by building a Hindu Temple, instead of discovering a technology
 * Non-state religions create additional unhappiness unless you are running Secularism
-* Related religions create smaller diplomacy penalties and no unhappiness from non-state religions:
+* Related religions create reduced diplomacy penalties and no unhappiness from non-state religions:
 	* Hinduism and Buddhism
 	* Confucianism and Taoism
 * Spread of religions removes Pagan Temples and replaces it with the temple of the new religion in case it is the state religion
