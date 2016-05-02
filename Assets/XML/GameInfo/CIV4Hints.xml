@@ -520,5 +520,20 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_60</Description>
 		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_61</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_62</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_63</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_64</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_65</Description>
+		</HintInfo>
 	</HintInfos>
 </Civ4Hints>
