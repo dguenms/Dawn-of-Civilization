@@ -445,6 +445,8 @@ class RiseAndFall:
 			
 		self.foundCapitals()
 		self.flipStartingTerritory()
+		
+		self.initStartingReligions()
 	
 		if utils.getScenario() == i3000BC:
 			self.create4000BCstartingUnits()
@@ -841,7 +843,17 @@ class RiseAndFall:
 		self.placeHut((114, 10), (118, 17)) # Western Australia
 		self.placeHut((120, 5), (123, 11)) # New Zealand
 		self.placeHut((59, 25), (67, 28)) # Central Africa
-					    
+		
+	def initStartingReligions(self):
+	
+		if utils.getScenario() == i600AD:
+			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
+			utils.setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
+			
+		if utils.getScenario() == i1700AD:
+			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
+			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
+			
 	def checkTurn(self, iGameTurn):
 	
 		# Leoreth: randomly place goody huts

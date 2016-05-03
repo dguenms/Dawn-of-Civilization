@@ -1360,7 +1360,7 @@ def republicTitle(iPlayer):
 	
 	if iPlayer == iPoland:
 		if gc.getPlayer(iPlayer).getCurrentEra() <= iIndustrial:
-			return key(iPlayer, "EMPIRE")
+			return key(iPlayer, "COMMONWEALTH")
 	
 	if iPlayer == iEngland:
 		iEra = gc.getPlayer(iPlayer).getCurrentEra()
@@ -1735,7 +1735,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 		if bCityStates:
-			return "TXT_KEY_CIV_AZTECS_ALTEPETL"
+			return "TXT_KEY_CIV_AZTEC_ALTEPETL"
 				
 	elif iPlayer == iMughals:
 		if iEra == iMedieval and not bEmpire:

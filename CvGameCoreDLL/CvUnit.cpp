@@ -496,8 +496,6 @@ void CvUnit::setupGraphical()
 
 void CvUnit::convert(CvUnit* pUnit)
 {
-	GC.getGame().logMsg("CvUnit::convert()");
-
 	CvPlot* pPlot = plot();
 
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
@@ -5656,8 +5654,6 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < getSpreadChance(eReligion))
 		{
-			log(CvWString::format(L"Missionary spread %s to %s", GC.getReligionInfo(eReligion).getText(), pCity->getName().GetCString()));
-
 			pCity->spreadReligion(eReligion, true);
 			bSuccess = true;
 		}

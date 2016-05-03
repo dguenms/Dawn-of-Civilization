@@ -2073,5 +2073,10 @@ class RFCUtils:
 			if civ.isLeaders(iLeader):
 				return iCiv
 		return None
+		
+	def setStateReligionBeforeBirth(self, lPlayers, iReligion):
+		for iPlayer in lPlayers:
+			if gc.getGame().getGameTurn() < getTurnForYear(con.tBirth[iPlayer]):
+				gc.getPlayer(iPlayer).setLastStateReligion(iReligion)
 
 utils = RFCUtils()

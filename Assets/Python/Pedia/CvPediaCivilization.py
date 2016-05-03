@@ -73,14 +73,14 @@ class CvPediaCivilization:
 
 		szText = u"<font=4b>" + gc.getCivilizationInfo(self.iCivilization).getDescription() + "</font>\n\n"
 		szText += CyGameTextMgr().parseCivInfos(self.iCivilization, True)
-		screen.addMultilineText(text, szText, self.X_DESC + 10, self.Y_DESC + 10, self.W_DESC - 20, self.H_DESC - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.addMultilineText(text, szText, self.X_DESC + 10, self.Y_DESC + 10, self.W_DESC - 20, self.H_DESC - 20, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 		
 		
 	def placeLeaders(self):
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
-		screen.addPanel(panel, CyTranslator().getText("Leaders", ()), "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_LEADERS", ()), "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_BLUE50)
 		screen.attachLabel(panel, "", "  ")
 		for iLeader in xrange(gc.getNumLeaderHeadInfos()):
 			civ = gc.getCivilizationInfo(self.iCivilization)
@@ -131,7 +131,7 @@ class CvPediaCivilization:
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, "History", "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
 		szHistory = gc.getCivilizationInfo(self.iCivilization).getCivilopedia()
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 

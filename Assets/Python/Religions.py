@@ -134,14 +134,11 @@ class Religions:
 		
 	def onReligionFounded(self, iReligion, iFounder):
 		if iReligion == iCatholicism:
-			for iPlayer in lCatholicStart:
-				if gc.getGame().getGameTurn() < getTurnForYear(tBirth[iPlayer]):
-					gc.getPlayer(iPlayer).setLastStateReligion(iCatholicism)
-					
+			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
+			utils.setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
+			
 		elif iReligion == iProtestantism:
-			for iPlayer in lProtestantStart:
-				if gc.getGame().getGameTurn() < getTurnForYear(tBirth[iPlayer]):
-					gc.getPlayer(iPlayer).setLastStateReligion(iProtestantism)
+			utils.setStateReligionBeforeBirth(lProtestantStart, iProtestantism)
 					
 	def getReligionCities(self, iReligion):
 		lCities = []
@@ -339,15 +336,22 @@ class Religions:
 		self.schism(pOrthodoxCapital, pCatholicCapital, lNoStateReligionCities, lIndependentCities)
 
 	def schism(self, pOrthodoxCapital, pCatholicCapital, lReplace, lDistance):
-		for city in lReplace:
-			city.replaceReligion(iOrthodoxy, iCatholicism)
-			
 		for city in lDistance:
 			if stepDistance(city.getX(), city.getY(), pCatholicCapital.getX(), pCatholicCapital.getY()) <= stepDistance(city.getX(), city.getY(), pOrthodoxCapital.getX(), pOrthodoxCapital.getY()):
-				city.replaceReligion(iOrthodoxy, iCatholicism)
+				lReplace.append(city)
+				
+		for city in lReplace:
+			city.replaceReligion(iOrthodoxy, iCatholicism)
 				
 		if gc.getPlayer(utils.getHumanID()).getStateReligion() == iOrthodoxy and gc.getGame().getGameTurn() >= getTurnForYear(tBirth[utils.getHumanID()]):
 			utils.popup(CyTranslator().getText("TXT_KEY_SCHISM_TITLE", ()), CyTranslator().getText("TXT_KEY_SCHISM_MESSAGE", (pCatholicCapital.getName(),)), ())
+			
+		for iPlayer in range(iNumPlayers):
+			pPlayer = gc.getPlayer(iPlayer)
+			if pPlayer.getStateReligion() == iOrthodoxy:
+				lConvertedCities = [city for city in lReplace if city.getOwner() == iPlayer]
+				if 2 * len(lConvertedCities) >= gc.getPlayer(iPlayer).getNumCities():
+					gc.getPlayer(iPlayer).setLastStateReligion(iCatholicism)
 
 #REFORMATION
 
@@ -379,7 +383,6 @@ class Religions:
 			if (gc.getPlayer(iPlayer).getStateReligion() == iCatholicism):
 				if (not gc.getGame().isReligionFounded(iProtestantism)):
 					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
-					#gc.getPlayer(iPlayer).getCapitalCity().setNumRealBuilding(iProtestantShrine,1)
 					self.reformation()
 					
 	def onBuildingBuilt(self, city, iPlayer, iBuilding):
@@ -406,55 +409,35 @@ class Religions:
 		iRand = gc.getGame().getSorenRandNum(100, 'Protestantism anyway')
 		return iRand >= (getCatholicPreference(iCiv)+50)/2
 
-	def reformation(self):
-		for iCiv in range(iNumTotalPlayers):
-			#if gc.getPlayer(iCiv).getStateReligion() == iCatholicism:
-			#	self.reformationchoice(iCiv)
-			cityList = PyPlayer(iCiv).getCityList()
-			bCatholic = False
-			for city in cityList:
-				if city.hasReligion(iCatholicism):
-					bCatholic = True
-			if bCatholic:
-				self.reformationchoice(iCiv)
-		
-		print "Reformation decisions:"
-		for iCiv in range(iNumPlayers):
-			print CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),()) + ": " + str(self.getReformationDecision(iCiv))
-		
-		#print "Reformation matrix:"
-		#for iCiv in range(iNumPlayers):
-		#	print CyTranslator().getText(str(gc.getPlayer(iCiv).getCivilizationShortDescriptionKey()),()) + ": " + str(lReformationMatrix[iCiv])
-		
-		for iCiv in range(iNumPlayers):
-			if self.getReformationDecision(iCiv) == 2:
-				for iTargetCiv in range(iNumPlayers):
-					if self.getReformationDecision(iTargetCiv) == 0 and utils.getHumanID() != iTargetCiv and iTargetCiv != iNetherlands and not utils.isAVassal(iTargetCiv): # protect the Dutch or they'll get crushed
-						gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
-						print "Religious war: "+str(iCiv)+" declares war on "+str(iTargetCiv)
+	def reformation(self):				
+		for iPlayer in range(iNumPlayers):
+			if [city for city in utils.getCityList(iPlayer) if city.getOwner() == iPlayer]:
+				self.reformationChoice(iPlayer)
+				
+		for iPlayer in range(iNumPlayers):
+			if self.getReformationDecision(iPlayer) == 2:
+				for iTargetPlayer in range(iNumPlayers):
+					if self.getReformationDecision(iTargetPlayer) == 0 and utils.getHumanID() != iTargetPlayer and iTargetPlayer != iNetherlands and not utils.isAVassal(iTargetPlayer):
+						gc.getTeam(iPlayer).declareWar(iTargetPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 						
 		pHolyCity = gc.getGame().getHolyCity(iProtestantism)
 		if self.getReformationDecision(pHolyCity.getOwner()) == 0:
 			pHolyCity.setNumRealBuilding(iProtestantShrine, 1)
-			
-		# Make Netherlands spawn as Protestant if it's already founded
-		if gc.getGame().getGameTurn() < getTurnForYear(tBirth[iNetherlands]):
-			gc.getPlayer(iNetherlands).setLastStateReligion(iProtestantism)
-
-	def reformationchoice(self, iCiv):
-		pPlayer = gc.getPlayer(iCiv)
 		
-		if utils.getHumanID() == iCiv: return
+	def reformationChoice(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		
+		if utils.getHumanID() == iPlayer: return
 	
 		if pPlayer.getStateReligion() == iCatholicism:
-			if self.chooseProtestantism(iCiv):
-				self.embraceReformation(iCiv)
-			elif self.isProtestantAnyway(iCiv) or utils.isAVassal(iCiv):
-				self.tolerateReformation(iCiv)
+			if self.chooseProtestantism(iPlayer):
+				self.embraceReformation(iPlayer)
+			elif self.isProtestantAnyway(iPlayer) or utils.isAVassal(iPlayer):
+				self.tolerateReformation(iPlayer)
 			else:
-				self.counterReformation(iCiv)
+				self.counterReformation(iPlayer)
 		else:
-			self.tolerateReformation(iCiv)
+			self.tolerateReformation(iPlayer)
 					
 	def embraceReformation(self, iCiv):
 		cityList = PyPlayer(iCiv).getCityList()
@@ -500,8 +483,6 @@ class Religions:
 				if self.chooseProtestantism(iCiv):
 					if pCity.getPopulation() > 6:
 						pCity.setHasReligion(iProtestantism, True, False, False)
-						
-			#pCity.changeBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_CATHOLIC_MONASTERY"), 1, 2)
 		
 		if iCiv < iNumPlayers:
 			self.setReformationDecision(iCiv, 2)

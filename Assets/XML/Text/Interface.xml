@@ -1526,6 +1526,38 @@
 		<English>Details</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_RELIGIOUS_VICTORY</Tag>
+		<English>[BOLD]Religious victory[\BOLD][NEWLINE]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_LEADERS</Tag>
+		<English>Leaders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_TERRAIN_FEATURE</Tag>
+		<English>Terrain Feature</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_TERRAIN</Tag>
+		<English>Terrain</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_USED_BY</Tag>
+		<English>Used by</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_SOURCES</Tag>
+		<English>Sources</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ABILITIES</Tag>
+		<English>Abilities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_APPEAR_CONDITIONS</Tag>
+		<English>Appearing conditions</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CORPORATION_HQ_WEALTH</Tag>
 		<English>[ICON_BULLET]Headquarters: +%d1[ICON_GOLD] per City</English>
 	</TEXT>

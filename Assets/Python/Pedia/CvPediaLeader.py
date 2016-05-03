@@ -58,7 +58,7 @@ class CvPediaLeader:
 		self.placeHistory()
 		self.placeFavorites()
 		self.placeCiv()
-		self.placeTraits()
+		#self.placeTraits()
 
 
 
@@ -114,7 +114,7 @@ class CvPediaLeader:
 
 		szHistory = u"<font=2>" + gc.getLeaderHeadInfo(self.iLeader).getCivilopedia() + u"</font>"
 		screen.addPanel(panel, "", "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
-		screen.addMultilineText(text, szHistory, self.X_HISTORY + 15, self.Y_HISTORY + 10, self.W_HISTORY - 20, self.H_HISTORY - 30, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.addMultilineText(text, szHistory, self.X_HISTORY + 15, self.Y_HISTORY + 10, self.W_HISTORY - 20, self.H_HISTORY - 20, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 
 

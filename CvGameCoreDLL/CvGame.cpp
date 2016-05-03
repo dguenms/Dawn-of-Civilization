@@ -9659,8 +9659,6 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 
 		for (int iI = 0; iI < GC.getNumVoteInfos(); iI++)
 		{
-			logMsg("vote: %d", iI);
-
 			if (GC.getVoteInfo((VoteTypes)iI).isVoteSourceType(eVoteSource))
 			{
 				if (isChooseElection((VoteTypes)iI))

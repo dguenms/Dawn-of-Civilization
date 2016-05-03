@@ -50,7 +50,7 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_AZTEC_DEFAULT</Tag>
 		<English>%s2 Triple Alliance</English>
 		<French>
 			<Text>Triple Alliance %s2</Text>
@@ -74,15 +74,15 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_AZTEC_FASCIST</Tag>
 		<English>New Mexica Empire</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_ALTEPETL</Tag>
+		<Tag>TXT_KEY_CIV_AZTEC_ALTEPETL</Tag>
 		<English>Mexican Altepetl</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_AZTECS_EMPIRE</Tag>
+		<Tag>TXT_KEY_CIV_AZTEC_EMPIRE</Tag>
 		<English>Aztec Empire</English>
 	</TEXT>
 	<TEXT>
