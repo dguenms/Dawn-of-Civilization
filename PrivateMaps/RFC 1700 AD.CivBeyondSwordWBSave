@@ -35197,14 +35197,14 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45
 		Damage=0
 		Level=1, Experience=0
 		FacingDirection=4
 		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=45
 		CityName=Sana'a
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -35212,7 +35212,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		ReligionType=RELIGION_ISLAM
-		Player35Culture=100
+		Player45Culture=100
 	EndCity
 	TeamReveal=29,35,44,45,
 EndPlot
@@ -49851,9 +49851,26 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=53
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44
+		Damage=0
+		Level=1, Experience=0
+		FacingDirection=4
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginCity
+		CityOwner=44
+		CityName=Qiqihar
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_SMOKEHOUSE
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		ReligionType=RELIGION_CONFUCIANISM
+		Player44Culture=50
+	EndCity
 	TeamReveal=1,12,44,
 EndPlot
 BeginPlot
