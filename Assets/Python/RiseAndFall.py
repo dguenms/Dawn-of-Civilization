@@ -522,11 +522,11 @@ class RiseAndFall:
 				if (x, y) not in lExceptions:
 					plot = gc.getMap().plot(x, y)
 					if not plot.isWater(): plot.setWithinGreatWall(True)
-					#utils.debugTextPopup('setWithinGreatWall: ' + str((x,y)))
+					
 		for (x, y) in lAdditions:
 			plot = gc.getMap().plot(x, y)
 			if not plot.isWater(): plot.setWithinGreatWall(True)
-			#utils.debugTextPopup('setWithinGreatWall: ' + str((x,y)))
+			
 			
 	def adjust1700ADCulture(self):
 		for x in range(124):
@@ -722,9 +722,11 @@ class RiseAndFall:
 		if utils.getScenario() == i1700AD:
 		
 			# China (Tibet)
-			tTL = (94, 42)
-			tBR = (97, 45)
-			self.startingFlip(iChina, [(tTL, tBR)])
+			tTibetTL = (94, 42)
+			tTibetBR = (97, 45)
+			tManchuriaTL = (105, 51)
+			tManchuriaBR = (109, 55)
+			self.startingFlip(iChina, [(tTibetTL, tTibetBR), (tManchuriaTL, tManchuriaBR)])
 			
 			# Russia (Sankt Peterburg)
 			utils.convertPlotCulture(gc.getMap().plot(68, 58), iRussia, 100, True)

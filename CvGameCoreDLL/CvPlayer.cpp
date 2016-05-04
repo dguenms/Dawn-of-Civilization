@@ -1704,7 +1704,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{
 		pNewCity->setEverOwned(((PlayerTypes)iI), abEverOwned[iI]);
-		pNewCity->setCultureTimes100(((PlayerTypes)iI), aiCulture[iI], false, false);
+		pNewCity->setCultureTimes100(((PlayerTypes)iI), aiCulture[iI], (getID() == iI), false);
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
@@ -1847,6 +1847,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	{
 		GC.getGameINLINE().updatePlotGroups();
 	}
+
+	pNewCity->updateCoveredPlots(bUpdatePlotGroups);
 
 	CvEventReporter::getInstance().cityAcquired(eOldOwner, getID(), pNewCity, bConquest, bTrade);
 
