@@ -108,10 +108,6 @@
 		<English>[COLOR_BUILDING_TEXT]Wembley[COLOR_REVERT] provides your civilization with seven [COLOR_HIGHLIGHT_TEXT]Hit Football Event[COLOR_REVERT] resources (which provide happiness). It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_BUDDHIST_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Mahabodhi[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] throughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX</Tag>
 		<English>CERN Research Complex</English>
 		<French>
@@ -168,40 +164,8 @@
 		<English>The [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] increases all cities' defenses by 25%%. It improves the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CATHOLIC_SHRINE</Tag>
-		<English>Saint Peter's Basilica</English>
-		<French>
-			<Text>Basilique Saint-Pierre</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Petersdom</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Basilica di San Pietro</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Basílica de San Pedro</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CATHOLIC_SHRINE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Saint Peter's Basilica[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Catholic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT]. It also spreads [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER</Tag>
 		<English>CN Tower</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Kong Miao[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CN_TOWER_STRATEGY</Tag>
@@ -287,7 +251,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_COTHON_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It also increases the chances of a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT] appearing. The [COLOR_BUILDING_TEXT]Great Cothan[COLOR_REVERT] requires you to have the Pantheon civic active.</English>
+		<English>The [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] add a bonus production to every water tile in the city in which it's constructed. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_LIBRARY_STRATEGY</Tag>
@@ -374,10 +338,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KHAJURAHO</Tag>
 		<English>Khajuraho</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ISLAMIC_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Masjid al-Haram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Tag>
@@ -469,14 +429,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ORTHODOX_SHRINE</Tag>
-		<English>Church of the Anastasis</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ORTHODOX_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Church of the Anastasis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Orthodox Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MT_RUSHMORE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Mt. Rushmore[COLOR_REVERT] decreases war weariness in all cities in your civilization and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
@@ -499,7 +451,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_HELP</Tag>
-		<English>Requires 20 Water Tiles in City Radius[NEWLINE][ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements</English>
+		<English>[ICON_BULLET]+2 [ICON_PRODUCTION] for Water Improvements[NEWLINE][COLOR_WARNING_TEXT]Requires 20 Water Tiles in City Radius[REVERT_COLOR]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MOAI_STATUES_STRATEGY</Tag>
@@ -548,10 +500,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] improves the health of your city and adds an additional population point in all cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HINDU_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Kashi Vishwanath[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAND_CANAL</Tag>
@@ -639,14 +587,6 @@
 		<German>Porzellanturm</German>
 		<Italian>Torre di Porcellana</Italian>
 		<Spanish>Torre de porcelana</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PROTESTANT_SHRINE</Tag>
-		<English>All Saints' Church</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PROTESTANT_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]All Saints' Church[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Protestant Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER_STRATEGY</Tag>
@@ -810,10 +750,6 @@
 		<English>The [COLOR_BUILDING_TEXT]Temple of Artemis[COLOR_REVERT] increases its city's trade route income and gives a free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT]. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TAOIST_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Dai Miao[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] thoughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Dome of the Rock[COLOR_REVERT] provides one free [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialist and doubles the Shrine gold limit from 20 to 40. It increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
@@ -968,14 +904,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WESTMINSTER_PALACE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] reduces the cost of hurrying production and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE</Tag>
-		<English>Adur Farnbag</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] throughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Tag>
