@@ -433,7 +433,7 @@ class AStarMoveArea:
 		iTeam = pPlot.getRevealedTeam(self.iActivePlayerTeam, false)
 		pTeam = gc.getTeam(iTeam)
 		if pPlot.isRevealedGoody(iTeam):
-			if (pPlot.getImprovementType() == 3):#ImprovementTypes.IMPROVEMENT_GOODY_HUT):
+			if (pPlot.getImprovementType() == 3):#ImprovementTypes.IMPROVEMENT_TRIBAL_VILLAGE):
 				return PleOpt.MH_Color_Passable_Barbarian_Territory()
 		elif (iPlayer == PlayerTypes.NO_PLAYER) or (iPlayer == self.iActivePlayer):
 			return PleOpt.MH_Color_Passable_Terrain()

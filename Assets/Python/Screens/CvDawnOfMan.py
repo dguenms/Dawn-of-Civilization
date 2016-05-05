@@ -181,36 +181,35 @@ class CvDawnOfMan:
 		return 0
 	
 	def update(self, fDelta):
-            
 ##Rhye - begin
 		iActivePlayer = CyGame().getActivePlayer()
 		if con.tBirth[iActivePlayer] <= utils.getScenarioStartYear():
 			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
 			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, 1)
 			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (0,)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-                        screen.show( "Exit" )  #Rhye
-		else:                        
+			screen.show( "Exit" )  #Rhye
+		else:
 			iGameTurn = CyGame().getGameTurn()
 
 			iNumAutoPlayTurns = getTurnForYear(con.tBirth[CyGame().getActiveTeam()])
 			iNumTurnsRemaining = iNumAutoPlayTurns - iGameTurn
-                        
-			#if (iNumTurnsRemaining != self.iTurnsRemaining):                        
-			#	self.iTurnsRemaining = iNumTurnsRemaining                                
-                        screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
+			
+			#if (iNumTurnsRemaining != self.iTurnsRemaining):
+			#	self.iTurnsRemaining = iNumTurnsRemaining
+			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
 
-                        exponent = 1 + iNumAutoPlayTurns/utils.getTurns(190)
-                        screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, float(math.pow(iGameTurn-utils.getScenarioStartTurn(), exponent)) / float(math.pow(iNumAutoPlayTurns-utils.getScenarioStartTurn(), exponent)))
-                        screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (max(0,iNumTurnsRemaining),)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-                        if (iNumTurnsRemaining <= 0):  #Rhye
-                                screen.show( "Exit" )  #Rhye
+			exponent = 1 + iNumAutoPlayTurns/utils.getTurns(190)
+			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, float(math.pow(iGameTurn-utils.getScenarioStartTurn(), exponent)) / float(math.pow(iNumAutoPlayTurns-utils.getScenarioStartTurn(), exponent)))
+			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (max(0,iNumTurnsRemaining),)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			if (iNumTurnsRemaining <= 0):  #Rhye
+				screen.show( "Exit" )  #Rhye
 		
 ##Rhye - end
 		return
-            
+	    
 		
 	def onClose(self):
-                #CyInterface().DoSoundtrack("AS2D_R_F_C") #Rhye
+		#CyInterface().DoSoundtrack("AS2D_R_F_C") #Rhye
 		CyInterface().setSoundSelectionReady(true)		
 		return 0
 	

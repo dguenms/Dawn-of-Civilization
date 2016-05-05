@@ -1,5 +1,5 @@
 RFC Dawn of Civilization
-Complete List of Features (as of version 1.13)
+Complete List of Features (as of version 1.14)
 
 The modmod is based on RFC Epic/Marathon 1.21 and therefore includes all features of RFC v1.187 for BtS unless otherwise noted.
 
@@ -7,6 +7,7 @@ This version corresponds to SVN revision 1000.
 
 TABLE OF CONTENTS
 * Included Mods
+* Contributors
 * Major Features
 * Minor Features
 * Game Rules
@@ -41,6 +42,7 @@ INCLUDED MODS
 	* Interpol gives an additional +3 experience to Spies
 * BUG (BtS Unaltered Gameplay) by Emperor Fool, Lemon Merchant and others: various interface improvements and useful notification and automation options
 * Included the improved civics advisor screen from History Rewritten by Xyth
+* Included the civilopedia from History Rewritten by Xyth
 * Reformation modmod by Panopticon:
 	* Judaism replaced with Protestantism
 	* Christianity replaced with Catholicism
@@ -50,7 +52,23 @@ INCLUDED MODS
 		* Tolerate the new sects: state religion remains Catholic, Protestantism spreads to your cities and can even replace Catholicism
 		* Join the Counter-Reformation: state religion remains Catholic, Protestantism only rarely spreads to your cities, you declare war on all civs that embraced the Reformation
 		* AI civilizations convert based on their historical inclination (chance high for Netherlands, low for Spain)
-		
+* Platybuilder by platyping
+
+CONTRIBUTORS
+* Sgt. Bears:
+	* XML tag cleanup and reorganization
+	* Text fixes, cleanup and reorganization
+	* Button and art improvements
+* merijn_v1:
+	* Platybuilder integration
+	* Platybuilder extension to handle stability, settler and war maps
+	* Stability map overlay
+	* Improved corporation advisor
+	* Civic stability information in the civics advisor
+* Bautos42: leaderhead art changes and new leaderheads
+* Alexius08: better score calculation formula
+* Imp. Knoedel, Citis, DC123456789, epgquota
+
 MAJOR FEATURES
 * Rebirth mechanism: some dead civilizations can respawn as another civilization at specific dates
 	* Persia returns as Iran in 1501 AD
@@ -98,18 +116,22 @@ MAJOR FEATURES
 	* A crisis on collapsing results in a complete collapse
 * Cities can be released to dead civilizations to resurrect them
 * New Unique Religious Victory condition depending on your state religion
-	* Protestantism
-		* Enlightenment: Be the first to discover Liberalism, Constitution and Economics
-		* Work Ethic: Make sure there are five Great Merchants and five Great Engineers settled in Protestant civilizations
-		* Religious Freedom: Make sure that at least half of all civilizations are Protestant or Secular
-	* Catholicism
-		* Holy See: Be Pope for 100 turns
-		* Holy Land: Control the Catholic Shrine and make sure 12 Great Prophets are settled in Catholic Civilizations
-		* Holy Mission: Make sure 50% of the world territory are controlled by Catholic civilizations
+	* Judaism:
+		* Chosen People: Have a total of 15 Great Prophets, Great Scientists and Great Statesmen in your cities
+		* Promised Land: Have legendary culture in the Jewish holy city
+		* Diaspora: Have friendly relations with six civilizations with Jewish minorities
 	* Orthodoxy:
 		* Patriarchates: Build four Orthodox Cathedrals
 		* Iconography: Control three cities with Influential culture
 		* Communion: Make sure there are no Catholic civilizations
+	* Catholicism
+		* Holy See: Be Pope for 100 turns
+		* Holy Land: Control the Catholic Shrine and make sure 12 Great Prophets are settled in Catholic Civilizations
+		* Holy Mission: Make sure 50% of the world territory are controlled by Catholic civilizations
+	* Protestantism
+		* Enlightenment: Be the first to discover Liberalism, Constitution and Economics
+		* Work Ethic: Make sure there are five Great Merchants and five Great Engineers settled in Protestant civilizations
+		* Religious Freedom: Make sure that at least half of all civilizations are Protestant or Secular
 	* Islam
 		* Shahada: Spread Islam to 50%
 		* Hajj: Settle seven Great People in the Muslim holy city
@@ -139,9 +161,9 @@ MAJOR FEATURES
 		* Control ten wonders that require no state religion
 		* Do not allow more than half of your cities to have a religion
 	* Secularism (no state religion, running Secularism)
-		* Tolerance: Control the temples of seven different religions
-		* Humanism: Make sure there are 20 Universities in Secular civilizations
-		* Modernization: Be the first to enter the Industrial and Modern eras
+		* Tolerance: Control a Cathedral of every religion
+		* Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in Secular civilizations
+		* Modernity: Make sure the five most advanced independent civilizations are Secular
 * New Congress mechanic:
 	* Triggered either periodically or when a large war ends
 	* Players can claim cities or request to settle free spots
@@ -153,6 +175,7 @@ MAJOR FEATURES
 	* Voting AI takes its relationships, own interests and the legitimacy of a claim when voting on claims
 	* Congresses establish contact between all participants
 * Expanded Apostolic Palace and United Nations mechanics:
+	* Apostolic Palace elections are now initiated by building Saint Peter's Basilica
 	* Votes are now proportional to the square root of your (state religion) population, to give smaller civs more weight
 	* When attempting to win a Diplomatic Victory, your own votes and those of your vassals do not count (you need to win a majority among the other civilizations)
 	* Only civilizations with Catholic state religion are members of the Apostolic Palace and allowed to vote
@@ -196,6 +219,7 @@ MAJOR FEATURES
 	* Can conduct a Diplomatic Mission: immediately make peace with a civ you are at war with, or improve relations and reduce past transgression penalties with a civ you are at peace with
 	* Can join a city as a Great Statesman (+4 commerce)
 	* Some wonders now create Great Statesman points, especially those which previously generated Great Spy points
+	* Free Great Statesman for the first to discover Democracy
 * Unique "Dawn of a Civilization" introduction screens for every civilization
 * Redesign of the Victory code:
 	* Improved performance
@@ -210,6 +234,25 @@ MAJOR FEATURES
 	* Civilizations without state religion play the Classical era soundtrack during the Medieval era
 * Female Great People: included female Great People names for all civilizations, female Great People spawn with appropriate graphics
 * New scenario: starting in 1700 AD
+* More extensible and varied Dynamic Civilization Names mechanic
+	* names are composed of a long-form title ("Kingdom of ") and proper name ("England") or adjective ("English")
+	* vassal names make use of vassal's name but master's adjective
+	* more generic vassal titles
+	* some civ names are dynamically derived from its capital
+	* standardized mechanism for changing short names and adjective (e.g. Phoenicia -> Carthage)
+* Extensive refactoring of DLL modifiers and maps and exposing them to Python
+* New religion spread rules
+	* less randomness
+	* religions spread gradually around cities that already have them, not just holy cities
+	* religious buildings influence religion spread
+	* regions influence which religions can spread more easily (including missionary success chance)
+	* special mechanism to spread religions over long distances or to different continents
+	* only missionaries of proselytizing religions (Buddhism, Christianity, Islam) can spread in cities of civs with a different state religion
+	* to adopt a local religion (Judaism, Taoism) you need to control its shrine
+	* religions can disappear from a city if that religion cannot spread to the city under current circumstances (e.g. after owner or state religion change) or if too many religions are in a city, higher chances of disappearance right after a new religion has spread to the city
+	* religious buildings disappear with their religion
+	* new formula to calculate global religion presence
+* New Great Prophet mission: Great Mission: spreads state religion and removes other religions in surrounding cities
 	
 MINOR FEATURES
 * More diverse dynamic civilization names: greater variety of names and conditions
@@ -219,7 +262,7 @@ MINOR FEATURES
 * Conqueror events automatically trigger war
 * Spawn in Capital mechanic: if civilizations spawn at a tile that already has a city, it is immediately flipped and becomes their capital
 * Free Tech events (e.g. Liberalism, Oracle) only allow you to choose techs from your current or earlier eras
-* Semi-chronological order for Great People names (some random deviation from chronological order, but never more than a couple entries)
+* Era-specific Great People names (random names selected from each era, other adjacent eras used if no or too few names are available for a civ and era)
 * The exile mechanic has been removed
 * Palace costs scale with game era (cheaper in the early game, more expensive in the late game)
 * Settled Great Artists give +1 happiness
@@ -245,6 +288,8 @@ MINOR FEATURES
 * Goody huts are placed randomly near their original position at the start of a scenario
 * Embassies have been removed
 * During trades, there is always at least as much gold available as would be produced with 50% gold rate
+* Reimplementation of the city name manager: automatic discovery of reverse city renaming, names native to the area are used if no names for the owner are available
+* Communist city names are based on civics, not on techs
 
 GAME RULES
 * The plague can only reduce units to 50% health, never kill them
@@ -261,7 +306,6 @@ GAME RULES
 * Enforced peace with recently spawned or respawned civilizations
 * Independent culture does not create foreign culture unhappiness
 * On small islands, cities as resources count as improvements for production and commerce output of the city tile
-* Missionary success chance abroad depends on the civ specific religion spread modifier, like natural religion spread
 * Independents cannot circumnavigate or receive conquerors anymore
 * Minor civilizations are not affected by events
 * Capitals can be flipped as long as they are not on your initial starting plot
@@ -272,8 +316,8 @@ GAME RULES
 * Minor civilizations cannot receive conquerors anymore
 * New capital locations prefer cities
 * Wars on spawn only start when the spawn actually happens
-* Minor civilizations cannot take Goody Huts
-* Blockade range reduce to 2
+* Minor civilizations cannot take Tribal Villages
+* Blockade range reduced to 2
 * Hurry unhappiness scales with the amount of sacrificed population
 * The 80% core culture rule now also applies to city flips
 * Claims on cities from collapsing civs due to being the original owner are only valid if the city has been lost recently
@@ -282,7 +326,7 @@ GAME RULES
 * Ocean tiles only provide double movement to units than can naturally enter Ocean
 * All foreign city culture is flipped on spawn
 * Cities can be founded on one tile islands regardless of terrain features
-* If units are produced with food, their cost is modified by the growth modifier of its civilization
+* If units are produced with food, their cost is modified by the growth modifier of their civilization
 * Impassable terrain can be entered if improved
 * Improved terrain features provide no defensive bonus
 * Vassal dynamic names only appear for capitulated civilizations
@@ -291,6 +335,8 @@ GAME RULES
 * Respawned civilizations are immune to collapse for the first ten turns
 * Production to commerce (gold, research, culture) conversion processes do not benefit from production modifiers
 * Reduced gold compensation for production invested into failed Wonder construction reduced to 50%
+* Formula for score and rank at the end of the game accounts for game length and time of spawn
+* Independents have no state religion
 
 CIVILIZATIONS
 * Egypt
@@ -313,6 +359,7 @@ CIVILIZATIONS
 	* Unique Building: Ziggurat (Pagan Temple): +4 culture, +5% research, +5% culture
 	* Unique Power: The Power of the Cradle of Civilization: Starts with Animal Husbandry, Pottery and Archery
 * Greece
+	* Leaders: Pericles, Alexander, George I (respawn)
 	* Unique Unit: Hoplite (Axeman): starts with Shock, Formation
 	* Unique Building: Odeon (Theater): requires Aesthetics, +1 happiness, +1 Statesman slot
 	* Unique Power: Expires after the Classical Era
@@ -352,7 +399,7 @@ CIVILIZATIONS
 	* Unique Building: Stele (Pagan Temple): +2 Priest slots
 	* Unique Power: The Power of Sovereignty: +10% land unit strength within cultural borders
 	* Unique Historical Victory:
-		* Found Catholicism
+		* Found Orthodoxy
 		* Acquire three Incense resources by 600 AD
 		* Allow no European colonies in Ethiopia and Sub-Saharan Africa in 1500 AD and 1910 AD
 * Maya
@@ -374,7 +421,7 @@ CIVILIZATIONS
 		* Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and the Philippines in 1940 AD
 		* Be the first to discover five Modern technologies
 * Vikings
-	* Leaders: Ragnar, Gustav Adolph
+	* Leaders: Ragnar, Gustav Adolph, Gerhardsen
 	* Color: Light Purple / Black
 	* Spawn: Oslo
 	* Unique Unit: Huscarl (Heavy Swordman): requires Feudalism and Machinery, +10% city attack, starts with Amphibious
@@ -388,7 +435,7 @@ CIVILIZATIONS
 	* Coat of arms: Shahada
 	* Spawn: 620 AD (in all scenarios)
 	* Unique Unit: Camel Archer (Knight): requires Feudalism, +35% retreat chance
-	* Unique Building: Madrassa (Library): +2 culture, +2 Priest slots, counts as a religious building
+	* Unique Building: Alchemist (Forge): +1 scientist slot, no unhealthiness
 	* Unique Historical Victory:
 		* Be the most advanced civilization in 1300 AD
 		* Control or vassalize Spain, Egypt, the Maghreb, Mesopotamia and Persia in 1300 AD
@@ -428,7 +475,7 @@ CIVILIZATIONS
 		* Have a total of 25 Frigates and Ships of the Line and sink 50 enemy ships by 1800 AD
 		* Be the first to enter the Industrial and Modern eras
 * Russia
-	* Leaders: Yaroslav, Peter the Great, Catherine the Great, Nicholas II, Stalin
+	* Leaders: Ivan IV, Peter the Great, Catherine the Great, Nicholas II, Stalin
 	* Unique Building: Research Institute (Laboratory): requires Electricity, +1 Scientist Slot, +1 free Scientist
 	* Unique Historical Victory:
 		* Found seven colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD
@@ -450,6 +497,7 @@ CIVILIZATIONS
 		* Acquire 12 Trading Company resources by 1650 AD
 		* Have 15 colonies in Brazil, Africa and Asia in 1700 AD
 * Inca
+	* Leaders: Huayna Capac, Castilla (respawn)
 	* Unique Unit: Aucac (Axeman): +50% against Melee and Archery units, starts with Combat I
 	* Unique Building: Tambo (Castle): requires Construction, +2 culture
 	* Unique Historical Victory:
@@ -475,6 +523,7 @@ CIVILIZATIONS
 		* Have more culture than all European civilizations combined in 1800 AD
 * Netherlands
 	* Spawn: 1580 AD
+	* Leaders: Willem van Oranje, William III
 	* Unique Power: Double yield and commerce from Trading Company
 	* Unique Building: Dike (Levee): requires Replaceable Parts, requires coast or river, +1 production on water tiles
 	* Unique Historical Victory:
@@ -541,7 +590,7 @@ NEW CIVILIZATIONS
 		* Acquire 4000 gold by trade by 1200 AD
 * Korea
 	* Spawn: 50 BC at Hanseong/Seoul
-	* Leader: Wang Kon
+	* Leader: Wang Kon, Sejong
 	* Color: Light Red / White
 	* Coat of Arms: Korean Imperial Sigil
 	* Unique Unit: Hwacha (Catapult): +50% against melee
@@ -609,12 +658,12 @@ NEW CIVILIZATIONS
 	* Unique Building: Rathaus (Courthouse)
 	* Unique Power: The Power of Investiture: double production for state religion buildings
 	* Unique Historical Victory:
-		* Control the Apostolic Palace and the Church of the Holy Sepulchre in 1200 AD
+		* Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD
 		* Found Protestantism
 		* Settle three Great Artists in Vienna by 1700 AD
 * Poland
 	* Spawn: 1025 AD at Krakow
-	* Leaders: Casimir III, Sobieski
+	* Leaders: Casimir III, Sobieski, Pilsudski, Walesa
 	* Color: Amaranth / White
 	* Coat of Arms: Polish Eagle
 	* Unique Unit: Winged Hussar (Cuirassier): +50% attack against Musketman, Rifleman
@@ -631,7 +680,7 @@ NEW CIVILIZATIONS
 * Italy
 	* Spawn: 1167 AD at Florence
 	* Conditional: requires at least one independent city on the Italian peninsula
-	* Leaders: Lorenzo de' Medici, Cavour
+	* Leaders: Lorenzo de' Medici, Cavour, Mussolini
 	* Color: Dark Red / Dark Yellow
 	* Coat of Arms: Lion of Mark
 	* Unique Unit: Bersagliere (Infantry): 2 movement
@@ -643,7 +692,7 @@ NEW CIVILIZATIONS
 		* Control 65% of the Mediterranean by 1930 AD
 * Mughals
 	* Spawn: 1206 AD in Delhi
-	* Leaders: Muhammad ibn Tughluq, Akbar
+	* Leaders: Muhammad ibn Tughluq, Akbar, Benazir Bhutto
 	* Color: Brownish Green / Yellow
 	* Coat of Arms: Half Moon
 	* Unique Unit: Siege Elephant (Cannon): +25% city attack
@@ -739,7 +788,7 @@ NEW CIVILIZATIONS
 * Brazil
 	* Spawn: 1822 AD at Rio de Janeiro
 	* Conditional: if controlling civilization is not stable
-	* Leaders: Dom Pedro II
+	* Leaders: Dom Pedro II, Vargas
 	* Color: Light Green / Yellow
 	* Coat of Arms: Globe
 	* Unique Unit: Madeirero (Worker): starts with Woodsman II, chopping Jungle and Forest creates production and gold
@@ -751,7 +800,7 @@ NEW CIVILIZATIONS
 		* Control 20 Forest Preserves and have a National Park in your capital by 1950 AD
 * Canada
 	* Spawn: 1867 at Montreal
-	* Leader: Trudeau
+	* Leader: MacDonald, Trudeau
 	* Color: Pale Red / White
 	* Coat of Arms: Maple Leaf
 	* Unique Unit: Corvette (Destroyer): reduced strength and cost, increased speed
@@ -797,6 +846,7 @@ UNITS
 * Dog Soldiers only receive +75% against Melee units
 * New promotion: Mercenary (+2 gold upkeep, cannot be upgraded)
 * New unit: Persecutor: can remove non-state religions (except holy cities)
+* Ability to ignore desert movement penalties is now a starting promotion for: War Chariot, Numidian Cavalry, Camel Archer, Camel Gunner
 
 BUILDINGS
 * New building: Smokehouse (Animal Husbandry): +1 health from Cow, Sheep, Pig, Deer
@@ -824,9 +874,10 @@ WONDERS
 	* Zoroastrianism: Mausoleum of Maussollos
 	* Classical Wonders (require Pantheon): Parthenon, Oracle, Colossus, Statue of Zeus, Temple of Artemis, Great Library, Great Cothon, Pyramids, Hanging Gardens
 	* New World Wonders (require Corn): Temple of Kukulkan
-* Apostolic Palace: moves the Catholic holy city built in his city, expires with Nationalism
+* Additional wonder movies, including national wonders
+* Removed the Apostolic Palace (elections triggered by the Catholic Shrine instead)
 * Kremlin renamed to St. Basil's Cathedral (Gunpowder, Orthodoxy): +2 espionage per state religion building
-* Appropriate graphics for the Masjid al-Haram
+* Appropriate graphics for the Masjid al-Haram and Mahabodhi
 * Statue of Zeus: +25% unit production with Pagan Temple, no resistance in conquered cities, expires with Theology
 * Pyramids: +25% worker rate, no extra unhappiness from sacrificing population
 * Parthenon: allows all Government civics, expires with Theology
@@ -844,6 +895,7 @@ WONDERS
 * Forbidden Palace: also reduces civic upkeep by 33%
 * Notre Dame: faster to build with Marble instead of Stone
 * Flavian Amphitheatre: expires with Feudalism
+* Hagia Sophia: +2 production per state religion building
 
 NEW WONDERS
 * Great Sphinx, replaces Stonehenge (Mysticism, Pantheon): Great Prophets can create Great Works
@@ -851,12 +903,16 @@ NEW WONDERS
 * CERN Research Complex, replaces Channel Tunnel (Fission): +100% research, +3 Scientist slots
 * All Saint's Church: Protestant Shrine
 * Adur Farnbag: Zoroastrian Shrine
-* Temple of Solomon (Monotheism): Double shrine revenue limit, +1 free Priest, expires with Banking
+* Temple of Solomon: Jewish Shrine
+* Church of the Anastasis: Orthodox Shrine
+* Saint Peter's Basilica: Catholic Shrine
+* New Taoist shrine: Temple of Heaven
+* New Confucian shrine: San Kong
 * Ishtar Gate (Priesthood, Pantheon): +100% enemy war weariness
 * Theodosian Walls (Construction, Catholicism): -100% bombard damage before gunpowder
 * Terracotta Army (Pottery, Confucianism): +25% unit production, no limit on experience from barbarians, experience from barbarians contribute to Great General points
 * La Mezquita (Theology, Philosophy, Islam): +2 free Priests, free Great Person
-* Dome of the Rock (Divine Right, Islam, Temple of Solomon): -50% war weariness
+* Dome of the Rock (Divine Right, Islam, Temple of Solomon): Double shrine revenue limit, +1 free Priest, expires with Banking
 * Topkapi Palace (Civil Service, Engineering, Islam): Additional foreign culture is converted on city conquest
 * Brandenburg Gate (Nationalism, Rifling): +100% Great General birth rate within cultural borders
 * Westminster Palace (Democracy, Railroad): -33% hurry costs, expires with Fiber Optics
@@ -916,6 +972,7 @@ GAME SCENARIOS
 * Terrain changes in Indochina: extended one row to the east
 * Terrain changes in Japan: Kyushu changed to grassland, added Tea and Clam
 * Terrain changes in the Tarim Basin: added the Tarim River and additional oases
+* Added the Senegal river
 * Added the Guadalquivir river in Iberia
 * Minor map adjustments in Colombia, Brazil, Sri Lanka, Mexico, Caribbean, California
 * All civilizations start with appropriate civics and state religions
@@ -956,12 +1013,13 @@ GAME SCENARIOS
 * Opened the Canary Islands for settlement
 * Iron appears in Lusitania on Portugal's spawn
 * Southern Russia, Caucasus, Caricyn/Astrakhan area made more habitable
+* Turned some grasslands in northern Russia into plains
+* Removed Gems in northern Russia
 * Zapotec Danni Báa (Monte Albán) appears before the Mayan spawn
 * Removed peak in Armenia and moved Lake Van 1W to its position
 * Improved resource arrangement in Persia
 * The Khmer start as Hindu
 * 3000 BC scenario:
-	* The Temple of Solomon spawns in Yerushalayim
 	* Gordion and Hatushas do not spawn anymore
 * 600 AD scenario:
 	* Some Chinese and Byzantine resources are improved
@@ -1026,21 +1084,35 @@ CIVICS
 	* Multilateralism (Radio, low): +100% war weariness, +1 gold upkeep per military unit, +1 free specialist, +25% trade route yield with Defensive Pacts
 
 RELIGION
+* Removed Christianity and replaced it with Orthodoxy, Catholicism and Protestantism
+* New religion: Judaism
+	* Founded with Priesthood
+	* Scripted spawn possible if Jerusalem or nearby city is independent
+* New religion: Zoroastrianism
+	* Founded with Monotheism
 * New religion: Orthodoxy
-	* Founded when someone builds the Apostolic Palace
-	* Holy city assigned to a historically Orthodox civilization, depending on who built the Apostolic Palace
-	* To be eligible for the holy city, you need to be alive, Catholic and not control the Apostolic Palace
-* New religion: Zoroastrianism: founded with Monotheism
-* Zoroastrianism stops spreading on its own after 1000 AD
+	* Founded with Theology
+	* Shrine: Church of the Anastasis
+	* Scripted spawn possible in a Jewish city
+* New religion: Catholicism
+	* Founded when an Orthodox Cathedral is built OR more than half of all Christian cities are not controlled by Orthodox civs (Great Schism)
+	* City with Orthodox Cathedral becomes Catholic holy city (largest Orthodox city not controlled by Orthodox civ in the second case)
+	* Cities in Orthodox civs remain Orthodox, other cities convert to Catholicism if they are closer to the Catholic than to the Orthodox holy city
+	* Shrine: Saint Peter's Basilica
+	* Saint Peter's Basilica also triggers the Apostolic Palace elections (separate wonder removed), but no +2 production for Catholic buildings
+* New religion: Protestantism
+	* Founded when a Catholic civ discovers Printing Press
+	* Reformation event: civilizations choose to embrace (civ and most cities convert), tolerate (some cities convert) or oppose (no cities convert, war against Protestants) the Reformation
+	* Shrine: All Saints' Church
 * Buddhism is founded by building a Hindu Temple, instead of discovering a technology
 * Non-state religions create additional unhappiness unless you are running Secularism
-* Related religions create smaller diplomacy penalties and no unhappiness from non-state religions:
+* Related religions create reduced diplomacy penalties and no unhappiness from non-state religions:
 	* Hinduism and Buddhism
 	* Confucianism and Taoism
-* Spread of religions removes Pagan Temples and replaces it with the temple of the new religion
-* Netherlands start with Protestantism if it is already founded, otherwise Catholicism
+* Spread of religions removes Pagan Temples and replaces it with the temple of the new religion in case it is the state religion
+* Christian civs start with their historically appropriate religions unless it is not already founded (e.g. Protestantism for Netherlands, but Catholicism if Protestantism is not yet founded)
 * State religion of colonial civilizations depends on the dominant religion in their core
-* For colonies, the spread chance of Catholicism and Protestantism is not modified by city distance
+* Religion specific names for all religious buildings
 
 CORPORATIONS
 * Corporation headquarters and executives removed, corporations spread on their own to cities that fulfill their requirements
@@ -1059,7 +1131,7 @@ CORPORATIONS
 
 INTERFACE
 * Great People births are announced in the game again
-* The terrain tile tooltip displays tile stability in five categories:
+* The terrain tile tooltip and tile stability overlay displays tile stability in five categories:
 	* Core (dark green): cities here contribute to your core population, allowing to control more population outside of the core
 	* Historical (light green): no penalty for expanding here
 	* Contested (yellow): no penalty for expanding here, but risk of a respawn of another civilization
@@ -1077,6 +1149,9 @@ INTERFACE
 * Deadlines for UHV goals are also displayed as game turns (default only before Calendar is discovered, but can be enabled for the whole game)
 * Current year is displayed during autoplay even for civilizations that start without Calendar
 * Disabled the "X turns left" message
+* Improved corporation advisor: displays tech requirements, number of consumed resources, factors influencing spread
+* Included Platybuilder with additional features to edit and export settler, stability and war maps
+* Positive/negative civic combinations are highlighted in the civics advisor
 
 HISTORICAL IMMERSION
 * Civilizations are more likely to collapse after a certain historical date

@@ -3125,6 +3125,7 @@ m_bResolveCrisis(false), // Leoreth
 m_bReformGovernment(false), // Leoreth
 m_bDiplomaticMission(false), // Leoreth
 m_bPersecute(false), // Leoreth
+m_bGreatMission(false), // Leoreth
 m_fUnitMaxSpeed(0.0f),
 m_fUnitPadTime(0.0f),
 m_pbUpgradeUnitClass(NULL),
@@ -3836,6 +3837,11 @@ bool CvUnitInfo::isPersecute() const
 	return m_bPersecute;
 }
 
+bool CvUnitInfo::isGreatMission() const
+{
+	return m_bGreatMission;
+}
+
 // BUG - Unit Experience - start
 /*
  * Returns true if this unit type is eligible to receive experience points.
@@ -4417,6 +4423,7 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bReformGovernment);
 	stream->Read(&m_bDiplomaticMission);
 	stream->Read(&m_bPersecute); // Leoreth
+	stream->Read(&m_bGreatMission);
 
 	stream->Read(&m_fUnitMaxSpeed);
 	stream->Read(&m_fUnitPadTime);
@@ -4728,6 +4735,7 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bReformGovernment);
 	stream->Write(m_bDiplomaticMission);
 	stream->Write(m_bPersecute);
+	stream->Write(m_bGreatMission);
 
 	stream->Write(m_fUnitMaxSpeed);
 	stream->Write(m_fUnitPadTime);
@@ -4855,6 +4863,7 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bReformGovernment, "bReformGovernment");
 	pXML->GetChildXmlValByName(&m_bDiplomaticMission, "bDiplomaticMission");
 	pXML->GetChildXmlValByName(&m_bPersecute, "bPersecute");
+	pXML->GetChildXmlValByName(&m_bGreatMission, "bGreatMission");
 	pXML->GetChildXmlValByName(&m_bInvisible, "bInvisible");
 	pXML->GetChildXmlValByName(&m_bFirstStrikeImmune, "bFirstStrikeImmune");
 	pXML->GetChildXmlValByName(&m_bNoDefensiveBonus, "bNoDefensiveBonus");
@@ -6948,7 +6957,8 @@ m_piBuildingHappinessChanges(NULL),
 m_piPrereqNumOfBuildingClass(NULL),
 m_piFlavorValue(NULL),
 m_piImprovementFreeSpecialist(NULL),
-m_piPrereqBuildingClassPercent(NULL), //Leoreth
+m_piPrereqBuildingClassPercent(NULL), // Leoreth
+m_piReligionYieldChange(NULL), // Leoreth
 m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
@@ -7004,6 +7014,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_pbCommerceFlexible);
 	SAFE_DELETE_ARRAY(m_pbCommerceChangeOriginalOwner);
 	SAFE_DELETE_ARRAY(m_pbBuildingClassNeededInCity);
+	SAFE_DELETE_ARRAY(m_piReligionYieldChange); // Leoreth
 
 	if (m_ppaiSpecialistYieldChange != NULL)
 	{
@@ -8050,6 +8061,19 @@ int* CvBuildingInfo::getBonusYieldChangeArray(int i) const
 }
 
 // Leoreth
+int CvBuildingInfo::getReligionYieldChange(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piReligionYieldChange[i];
+}
+
+int* CvBuildingInfo::getReligionYieldChangeArray() const
+{
+	return m_piReligionYieldChange;
+}
+
+// Leoreth
 int CvBuildingInfo::getPrereqBuildingClassPercent(int i) const
 {
 	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
@@ -8364,6 +8388,11 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	m_piPrereqBuildingClassPercent = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_piPrereqBuildingClassPercent);
 
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piReligionYieldChange);
+	m_piReligionYieldChange = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piReligionYieldChange);
+
 	SAFE_DELETE_ARRAY(m_piFlavorValue);
 	m_piFlavorValue = new int[GC.getNumFlavorTypes()];
 	stream->Read(GC.getNumFlavorTypes(), m_piFlavorValue);
@@ -8614,7 +8643,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_DOMAIN_TYPES, m_piDomainProductionModifier);
 	stream->Write(GC.getNumBuildingClassInfos(), m_piBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_piPrereqNumOfBuildingClass);
-	stream->Write(GC.getNumBuildingClassInfos(), m_piPrereqBuildingClassPercent);
+	stream->Write(GC.getNumBuildingClassInfos(), m_piPrereqBuildingClassPercent); // Leoreth
+	stream->Write(NUM_YIELD_TYPES, m_piReligionYieldChange);
 	stream->Write(GC.getNumFlavorTypes(), m_piFlavorValue);
 	stream->Write(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
 
@@ -9009,6 +9039,17 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piGlobalYieldModifier, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "ReligionYieldChanges"))
+	{
+		pXML->SetYields(&m_piReligionYieldChange);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piReligionYieldChange, NUM_YIELD_TYPES);
 	}
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CommerceChanges"))
@@ -9786,12 +9827,14 @@ m_iNumLeaders(0),
 m_iSelectionSoundScriptId(0),
 m_iActionSoundScriptId(0),
 m_iDerivativeCiv(NO_CIVILIZATION),
+m_iStartingYear(0), // Leoreth
 m_bPlayable(false),
 m_bAIPlayable(false),
 m_piCivilizationBuildings(NULL),
 m_piCivilizationUnits(NULL),
 m_piCivilizationFreeUnitsClass(NULL),
 m_piCivilizationInitialCivics(NULL),
+m_piLoadingTime(NULL), // Leoreth
 m_pbLeaders(NULL),
 m_pbCivilizationFreeBuildingClass(NULL),
 m_pbCivilizationFreeTechs(NULL),
@@ -9813,6 +9856,7 @@ CvCivilizationInfo::~CvCivilizationInfo()
 	SAFE_DELETE_ARRAY(m_piCivilizationUnits);
 	SAFE_DELETE_ARRAY(m_piCivilizationFreeUnitsClass);
 	SAFE_DELETE_ARRAY(m_piCivilizationInitialCivics);
+	SAFE_DELETE_ARRAY(m_piLoadingTime); // Leoreth
 	SAFE_DELETE_ARRAY(m_pbLeaders);
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeBuildingClass);
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeTechs);
@@ -10003,6 +10047,27 @@ void CvCivilizationInfo::setDerivativeCiv(int iCiv)
 	m_iDerivativeCiv = iCiv;
 }
 
+// Leoreth
+int CvCivilizationInfo::getStartingYear() const
+{
+	return m_iStartingYear;
+}
+
+int CvCivilizationInfo::getLoadingTime(ScenarioTypes eScenario) const
+{
+	return m_piLoadingTime[eScenario];
+}
+
+const std::string CvCivilizationInfo::getIdentifier() const
+{
+	return m_szIdentifier;
+}
+
+int CvCivilizationInfo::getRating(RatingTypes eRating) const
+{
+	return m_piRatings[eRating];
+}
+
 void CvCivilizationInfo::read(FDataStreamBase* stream)
 {
 	CvInfoBase::read(stream);
@@ -10018,6 +10083,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iSelectionSoundScriptId);
 	stream->Read(&m_iActionSoundScriptId);
 	stream->Read(&m_iDerivativeCiv);
+	stream->Read(&m_iStartingYear); // Leoreth
 
 	stream->Read(&m_bAIPlayable);
 	stream->Read(&m_bPlayable);
@@ -10025,6 +10091,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->ReadString(m_szArtDefineTag);
 	stream->ReadString(m_szShortDescriptionKey);
 	stream->ReadString(m_szAdjectiveKey);
+	stream->ReadString(m_szIdentifier); // Leoreth
 
 	// Arrays
 
@@ -10043,6 +10110,16 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piCivilizationInitialCivics);
 	m_piCivilizationInitialCivics = new int[GC.getNumCivicOptionInfos()];
 	stream->Read(GC.getNumCivicOptionInfos(), m_piCivilizationInitialCivics);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piLoadingTime);
+	m_piLoadingTime = new int[NUM_SCENARIO_TYPES];
+	stream->Read(NUM_SCENARIO_TYPES, m_piLoadingTime);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piRatings);
+	m_piRatings = new int[NUM_RATING_TYPES];
+	stream->Read(NUM_RATING_TYPES, m_piRatings);
 
 	SAFE_DELETE_ARRAY(m_pbLeaders);
 	m_pbLeaders = new bool[GC.getNumLeaderHeadInfos()];
@@ -10080,6 +10157,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iSelectionSoundScriptId);
 	stream->Write(m_iActionSoundScriptId);
 	stream->Write(m_iDerivativeCiv);
+	stream->Write(m_iStartingYear); // Leoreth
 
 	stream->Write(m_bAIPlayable);
 	stream->Write(m_bPlayable);
@@ -10087,6 +10165,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->WriteString(m_szArtDefineTag);
 	stream->WriteString(m_szShortDescriptionKey);
 	stream->WriteString(m_szAdjectiveKey);
+	stream->WriteString(m_szIdentifier); // Leoreth
 
 	// Arrays
 
@@ -10094,6 +10173,8 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumUnitClassInfos(), m_piCivilizationUnits);
 	stream->Write(GC.getNumUnitClassInfos(), m_piCivilizationFreeUnitsClass);
 	stream->Write(GC.getNumCivicOptionInfos(), m_piCivilizationInitialCivics);
+	stream->Write(NUM_SCENARIO_TYPES, m_piLoadingTime); // Leoreth
+	stream->Write(NUM_RATING_TYPES, m_piRatings); // Leoreth
 	stream->Write(GC.getNumLeaderHeadInfos(), m_pbLeaders);
 	stream->Write(GC.getNumBuildingClassInfos(), m_pbCivilizationFreeBuildingClass);
 	stream->Write(GC.getNumTechInfos(), m_pbCivilizationFreeTechs);
@@ -10119,6 +10200,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(m_szAdjectiveKey, "Adjective");
 	// Get the Text from Text/Civ4GameTextXML.xml
 
+	// Leoreth
+	pXML->GetChildXmlValByName(m_szIdentifier, "Identifier");
+
 	pXML->GetChildXmlValByName(szTextVal, "DefaultPlayerColor");
 	m_iDefaultPlayerColor = pXML->FindInInfoClass(szTextVal);
 
@@ -10135,6 +10219,8 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	m_iSelectionSoundScriptId = (szTextVal.GetLength() > 0) ? gDLL->getAudioTagIndex( szTextVal.GetCString(), AUDIOTAG_3DSCRIPT ) : -1;
 	pXML->GetChildXmlValByName(szTextVal, "CivilizationActionSound");
 	m_iActionSoundScriptId = (szTextVal.GetLength() > 0) ? gDLL->getAudioTagIndex( szTextVal.GetCString(), AUDIOTAG_3DSCRIPT ) : -1;
+
+	pXML->GetChildXmlValByName(&m_iStartingYear, "StartingYear");
 
 	// set the current xml node to it's next sibling and then
 	pXML->GetChildXmlValByName(&m_bPlayable, "bPlayable");
@@ -10263,6 +10349,52 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 		}
 
 		// set the current xml node to it's parent node
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "Rating"))
+	{
+		pXML->InitList(&m_piRatings, NUM_RATING_TYPES, 0);
+
+		pXML->GetChildXmlValByName(&m_piRatings[RATING_TRADE], "Trade");
+		pXML->GetChildXmlValByName(&m_piRatings[RATING_PRODUCTION], "Production");
+		pXML->GetChildXmlValByName(&m_piRatings[RATING_CULTURE], "Culture");
+		pXML->GetChildXmlValByName(&m_piRatings[RATING_GROWTH], "Growth");
+		pXML->GetChildXmlValByName(&m_piRatings[RATING_START], "Start");
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"LoadingTimes"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			int iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			FAssertMsg(0 < NUM_SCENARIO_TYPES, "Allocating zero or less memory in CvCivilizationInfo::read");
+			pXML->InitList(&m_piLoadingTime, NUM_SCENARIO_TYPES, 0);
+
+			if (0 < iNumSibs)
+			{
+				int iTemp;
+				if (pXML->GetChildXmlVal(&iTemp))
+				{
+					FAssertMsg((iNumSibs <= NUM_SCENARIO_TYPES) , "There are more siblings than memory allocated for them in CvCivilizationInfo::read");
+					for (int j=0; j<iNumSibs; ++j)
+					{
+						m_piLoadingTime[j] = iTemp;
+						if (!pXML->GetNextXmlVal(&iTemp))
+						{
+							break;
+						}
+					}
+
+					gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+				}
+			}
+		}
+
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
 
@@ -10660,130 +10792,24 @@ int CvHandicapInfo::getUnitCostPercent() const
 }
 
 //Rhye - start switch
-int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes pl) const
+int CvHandicapInfo::getUnitCostPercentByID(PlayerTypes ePlayer) const
 {
-	int result = m_iUnitCostPercent;
+	int iUnitCost = m_iUnitCostPercent;
 
-	if (getScenario() >= SCENARIO_600AD) { //late start condition
-		if (pl < VIKING) {
-			result *= 90;
-			result /= 100;
-		}
-	}
-	/*switch (pl)
-	{
-	case EGYPT:
-		return result*125/100;
-	case INDIA:
-		return result*115/100;
-	case CHINA:
-		return result*10/10;   //10 before the addition of chinese UP //11 before removal of UP
-	case BABYLONIA:
-		return result*12/10;
-	case GREECE:
-		return result*11/10;   //11 before removal of Aggressive trait
-	case PERSIA:
-		return result*100/100;
-	case CARTHAGE:
-		return result*125/100;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            return result*11/10;
-        else
-            return result*10/10;  // Italy
-	case JAPAN:
-		return result*113/100;   //11 before removal of Aggressive trait
-	case ETHIOPIA:
-		return result*100/100;
-    case KOREA:
-        return result*113/100;
-	case MAYA:
-		return result*110/100;
-    case BYZANTIUM:
-        return result*110/100;
-	case VIKING:
-		return result*9/10;
-	case ARABIA:
-		return result*105/100;
-	case KHMER:
-		return result*90/100;
-	case INDONESIA:
-		return result*9/10;
-	case SPAIN:
-		return result*11/10;
-	case FRANCE:
-		return result*97/100;
-	case ENGLAND:
-		return result*10/10;
-	case GERMANY:
-		return result*75/100;
-	case RUSSIA:
-		return result*75/100;
-	case NETHERLANDS:
-		return result*90/100;
-	case MALI:
-		return result*95/100;
-	case TURKEY:
-		return result*8/10;
-	case PORTUGAL:
-		return result*93/100;
-	case INCA:
-		return result*100/100;   //10 before removal of Aggressive trait
-	case MONGOLIA:
-		return result*75/100;   //11 before removal of Aggressive trait
-	case AZTEC:
-		return result*95/100;   //10 before removal of Aggressive trait
-	case AMERICA:
-		return result*75/100;
-	case INDEPENDENT:
-		return result*13/10;
-	case INDEPENDENT2:
-		return result*13/10;
-	default:
-		return result;
-		break;
-	}*/
-
-	int iFinalResult;
-
-	if (pl < NUM_MAJOR_PLAYERS)
-	{
-		iFinalResult = result * unitCostModifier[pl] / 100;
-	}else if (pl == INDEPENDENT || pl == INDEPENDENT2)
-	{
-		iFinalResult = 0;
-	}else if (pl == SELJUKS)
-	{
-		iFinalResult = 50 / 100;
-	}else
-	{
-		iFinalResult = result;
-	}
-
-	// handle reborn civs explicitly (overwrite)
-	if (GET_PLAYER((PlayerTypes)pl).isReborn())
-	{
-		//if (pl == ROME)
-			//iFinalResult = result * 100 / 100;
-		if (pl == PERSIA)
-			iFinalResult = result * 90 / 100;
-		else if (pl == AZTEC)
-			iFinalResult = result * 90 / 100;
-		else if (pl == MAYA)
-			iFinalResult = result * 90 / 100;
-	}
+	iUnitCost *= GET_PLAYER(ePlayer).getModifier(MODIFIER_UNIT_UPKEEP);
+	iUnitCost /= 100;
 
 	// bonus for Netherlands and Germany in the beginning
-	if (pl == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
+	if (ePlayer == NETHERLANDS && GC.getGameINLINE().getGameTurnYear() < 1600)
 	{
-	    iFinalResult /= 2;
+	    iUnitCost /= 2;
 	}
-	else if (pl == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
+	else if (ePlayer == GERMANY && GC.getGameINLINE().getGameTurnYear() < 1775)
 	{
-	    iFinalResult /= 2;
+	    iUnitCost /= 2;
 	}
 
-	return iFinalResult;
+	return iUnitCost;
 }
 //Rhye - end
 
@@ -10848,7 +10874,7 @@ int CvHandicapInfo::getResearchPercentByID(PlayerTypes ePlayer) const
 
 	// reduce tech costs before the human players enter the game
 	// Leoreth: limit this effect to a constant period, otherwise the effect scales too much with late spawns
-	if (getTurnForYear(startingTurnYear[eHuman]) - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn <= getTurnForYear(startingTurnYear[eHuman]))
+	if (GET_PLAYER(eHuman).getBirthTurn() - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn <= GET_PLAYER(eHuman).getBirthTurn())
 	{
 		iResearchPercent *= iHumanSpawnModifier;
 		iResearchPercent /= 100;
@@ -10864,112 +10890,14 @@ int CvHandicapInfo::getDistanceMaintenancePercent() const
 }
 
 //Rhye - start switch
-int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes pl) const
+int CvHandicapInfo::getDistanceMaintenancePercentByID(PlayerTypes ePlayer) const
 {
-	int result = m_iDistanceMaintenancePercent;
+	int iDistanceMaintenance = m_iDistanceMaintenancePercent;
 
-	if (getScenario() >= SCENARIO_600AD) //late start condition
-		if (pl < VIKING) {
-			result *= 85;
-			result /= 100;
-		}
+	iDistanceMaintenance *= GET_PLAYER(ePlayer).getModifier(MODIFIER_DISTANCE_MAINTENANCE);
+	iDistanceMaintenance /= 100;
 
-	/*switch (pl)
-	{
-	case EGYPT:
-		return result*10/10;
-	case INDIA:
-		return result*10/10;
-	case CHINA:
-		return result*10/10;
-	case BABYLONIA:
-		return result*11/10;
-	case GREECE:
-		return result*90/100;
-	case PERSIA:
-		// start UP - old
-		return result*10/10;
-		//return result*0;
-		// end UP
-	case CARTHAGE:
-		return result*75/100;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            return result*75/100;
-        else
-            return result*7/10;     // Leoreth - Renaissance Italy
-	case JAPAN:
-		return result*95/100;
-	case ETHIOPIA:
-		return result*10/10;
-    case KOREA:
-        return result*10/10;
-	case MAYA:
-		return result*10/10;
-    case BYZANTIUM:
-        return result*8/10;
-	case VIKING:
-		return result*7/10;
-	case ARABIA:
-		return result*7/10;
-	case KHMER:
-		return result*8/10;
-	case INDONESIA:
-		return result*8/10;
-	case SPAIN:
-		return result*5/10;
-	case FRANCE:
-		return result*5/10;
-	case ENGLAND:
-		return result*25/100; //50 before new UP (Leoreth)
-	case GERMANY:
-		return result*6/10;
-	case RUSSIA:
-		return result*5/10;
-	case NETHERLANDS:
-		return result*45/100; // Leoreth: slightly lowered, 50 before
-	case MALI:
-		return result*80/100;  //70 before new UP
-	case TURKEY:
-		return result*6/10;
-	case PORTUGAL:
-		return result*5/10;
-	case INCA:
-		return result*6/10;
-	case MONGOLIA:
-		return result*58/100;
-	case AZTEC:
-		return result*7/10;
-	case AMERICA:
-		return result*6/10;
-	default:
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-			return result*5/10;
-		else
-			return result*2/10;
-	}*/
-
-	int iFinalResult;
-
-	if (pl < NUM_MAJOR_PLAYERS)
-	{
-		iFinalResult = result * distanceMaintenanceModifier[pl] / 100;
-	}else
-	{
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-			iFinalResult = result * 50 / 100;
-		else
-			iFinalResult = result * 20 / 100;
-	}
-
-	// handle respawns explicitly here (overwrite)
-	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
-	{
-		if (pl == ROME)
-			iFinalResult = result * 70 / 100;
-	}*/
-
-	return iFinalResult;
+	return iDistanceMaintenance;
 }
 //Rhye - end
 
@@ -10982,41 +10910,9 @@ int CvHandicapInfo::getNumCitiesMaintenancePercent() const
 int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes ePlayer) const
 {
 	int iMaintenance = m_iNumCitiesMaintenancePercent;
-
-	if (getScenario() >= SCENARIO_600AD && ePlayer < VIKING)
-	{
-		iMaintenance *= 80;
-		iMaintenance /= 100;
-	}
 	
-	if (ePlayer < NUM_MAJOR_PLAYERS)
-	{
-		iMaintenance *= numMaintenanceModifier[ePlayer];
-		iMaintenance /= 100;
-	}
-	else
-	{
-		if (getScenario() == SCENARIO_3000BC)
-		{
-			iMaintenance *= 60;
-			iMaintenance /= 100;
-		}
-		else
-		{
-			iMaintenance *= 30;
-			iMaintenance /= 100;
-		}
-	}
-
-	// handle respawned civs explicitly here (overwrite)
-	if (ePlayer == MAYA)
-	{
-		if (GET_PLAYER(ePlayer).isReborn())
-		{
-			iMaintenance *= 85;
-			iMaintenance /= 100;
-		}
-	}
+	iMaintenance *= GET_PLAYER(ePlayer).getModifier(MODIFIER_CITIES_MAINTENANCE);
+	iMaintenance /= 100;
 
 	// Leoreth: additional maintenance for high population
 	int iTotalPopulation = GET_PLAYER(ePlayer).getTotalPopulation();
@@ -11059,116 +10955,16 @@ int CvHandicapInfo::getCivicUpkeepPercent() const
 {
 	return m_iCivicUpkeepPercent;
 }
-//Rhye - start switch
-int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes pl) const
+
+int CvHandicapInfo::getCivicUpkeepPercentByID(PlayerTypes ePlayer) const
 {
-	int result = m_iCivicUpkeepPercent;
+	int iCivicUpkeep = m_iCivicUpkeepPercent;
 
-	if (getScenario() >= SCENARIO_600AD) //late start condition
-		if (pl < VIKING) {
-			result *= 90;
-			result /= 100;
-		}
+	iCivicUpkeep *= GET_PLAYER(ePlayer).getModifier(MODIFIER_CIVIC_UPKEEP);
+	iCivicUpkeep /= 100;
 
-	/*switch (pl)
-	{
-	case EGYPT:
-		return result*11/10;
-	case INDIA:
-		return result*102/100;   //10 before removal of Organized trait
-	case CHINA:
-		return result*105/100;
-	case BABYLONIA:
-		return result*10/10;
-	case GREECE:
-		return result*8/10;
-	case PERSIA:
-		return result*7/10;
-	case CARTHAGE:
-		return result*7/10;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-        {
-            return result*75/100;   //8 before removal of Organized trait
-        }
-        else
-        {
-            return result*8/10;    // Leoreth - Renaissance Italy
-        }
-	case JAPAN:
-		return result*8/10;   //11 before removal of Organized trait
-	case ETHIOPIA:
-		return result*8/10;
-    case KOREA:
-        return result*10/10;
-	case MAYA:
-		return result*8/10;
-    case BYZANTIUM:
-        return result*9/10;
-	case VIKING:
-		return result*8/10;
-	case ARABIA:
-		return result*9/10;
-	case KHMER:
-		return result*10/10;
-	case INDONESIA:
-		return result*10/10;
-	case SPAIN:
-		return result*6/10;
-	case FRANCE:
-		return result*8/10;
-	case ENGLAND:
-		return result*6/10;
-	case GERMANY:
-		return result*7/10;
-	case RUSSIA:
-		return result*70/100;
-	case NETHERLANDS:
-		return result*6/10; // Leoreth: reduced, 7 before
-	case MALI:
-		return result*8/10; //6 before new UP
-	case TURKEY:
-		return result*7/10;
-	case PORTUGAL:
-		return result*72/100;
-	case INCA:
-		return result*5/10;
-	case MONGOLIA:
-		return result*64/100;
-	case AZTEC:
-		return result*6/10;
-	case AMERICA:
-		return result*5/10;   //6 before removal of Organized trait
-	default:
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-			return result*9/10;
-		else
-			return result*7/10;
-	}*/
-
-	int iFinalResult;
-
-	if (pl < NUM_MAJOR_PLAYERS)
-	{
-		iFinalResult = result * civicUpkeepModifier[pl] / 100;
-	}else
-	{
-		if (GET_PLAYER((PlayerTypes)EGYPT).isPlayable())
-			iFinalResult = result * 90 / 100;
-		else
-			iFinalResult = result * 70 / 100;
-	}
-
-	// handle respawns explicitly here (overwrite)
-	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
-	{
-		if (pl == ROME)
-			iFinalResult = result * 80 / 100;
-	}*/
-
-	return iFinalResult;
+	return iCivicUpkeep;
 }
-//Rhye - end
 
 int CvHandicapInfo::getInflationPercent() const
 {
@@ -11181,130 +10977,20 @@ int CvHandicapInfo::getHealthBonus() const
 }
 
 //Rhye - start switch
-int CvHandicapInfo::getHealthBonusByID(PlayerTypes pl) const
+int CvHandicapInfo::getHealthBonusByID(PlayerTypes ePlayer) const
 {
-	int result = m_iHealthBonus;
+	int iHealthBonus = m_iHealthBonus;
 
-	/*switch (pl)
-	{
-	case EGYPT:
-		result = m_iHealthBonus*2;
-		break;
-	case INDIA:
-		result = m_iHealthBonus-1;
-		break;
-	case CHINA:
-		result = m_iHealthBonus;
-		break;
-	case BABYLONIA:
-		result = m_iHealthBonus*2;
-		break;
-	case GREECE:
-		result = m_iHealthBonus*4;
-		break;
-	case PERSIA:
-		result = m_iHealthBonus*5;   //4 before removal of Expansive trait
-		break;
-	case CARTHAGE:
-		result = m_iHealthBonus*7;
-		break;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-            result = m_iHealthBonus*7;   //4 before removal of Expansive trait
-        else
-            result = m_iHealthBonus*6;   // Leoreth - Renaissance Italy
-		break;
-	case JAPAN:
-		result = m_iHealthBonus*3;
-		break;
-	case ETHIOPIA:
-		result = m_iHealthBonus*6;
-		break;
-    case KOREA:
-        result = m_iHealthBonus*3;
-        break;
-	case MAYA:
-		result = m_iHealthBonus*6;
-		break;
-    case BYZANTIUM:
-        result = m_iHealthBonus*6;
-        break;
-	case VIKING:
-		result = m_iHealthBonus*6;
-		break;
-	case ARABIA:
-		result = m_iHealthBonus*3;
-		break;
-	case KHMER:
-		result = m_iHealthBonus*6;
-		break;
-	case INDONESIA:
-		result = m_iHealthBonus*6;
-		break;
-	case FRANCE:
-		result = m_iHealthBonus*4;
-		break;
-	case SPAIN:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case ENGLAND:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case GERMANY:
-		result = m_iHealthBonus*7;   //4 before removal of Expansive trait
-		break;
-	case NETHERLANDS:
-		result = m_iHealthBonus*6;
-		break;
-	case RUSSIA:
-		result = m_iHealthBonus*6;   //4 before removal of Expansive trait
-		break;
-	case MALI:
-		result = m_iHealthBonus*4;
-		break;
-	case TURKEY:
-		result = m_iHealthBonus*6;
-		break;
-	case PORTUGAL:
-		result = m_iHealthBonus*6;
-		break;
-	case INCA:
-		result = m_iHealthBonus*4;
-		break;
-	case MONGOLIA:
-		result = m_iHealthBonus*6;  //7 //4 before removal of Expansive trait
-		break;
-	case AZTEC:
-		result = m_iHealthBonus*4;
-		break;
-	case AMERICA:
-		result = m_iHealthBonus*4;
-		break;
-	default:
-		result = m_iHealthBonus;
-		break;
-	}*/
+	iHealthBonus += GET_PLAYER(ePlayer).getModifier(MODIFIER_HEALTH);
 
-	if (pl < NUM_MAJOR_PLAYERS)
+	// help early civs in late scenarios
+	if (getScenario() >= SCENARIO_600AD)
 	{
-		result = m_iHealthBonus + healthModifier[pl];
+		if (ePlayer < VIKINGS && iHealthBonus < 5) iHealthBonus += 1;
+		if (ePlayer < BABYLONIA && iHealthBonus < 5) iHealthBonus += 1;
 	}
 
-	/*if (GET_PLAYER((PlayerTypes)pl).isReborn())
-	{
-		if (pl == ROME)
-			result = m_iHealthBonus * 6;
-	}*/
-
-	if (getScenario() >= SCENARIO_600AD) { //late start condition
-		if (pl < VIKING && result < 5) {
-			result += 1;
-		}
-		if (pl < BABYLONIA) {
-			result += 1;
-		}
-	}
-	return result;
+	return iHealthBonus;
 }
 //Rhye - end
 
@@ -16854,6 +16540,8 @@ m_iFreeUnitClass(NO_UNITCLASS),
 m_iNumFreeUnits(0),
 m_iSpreadFactor(0),
 m_iMissionType(NO_MISSION),
+m_bProselytizing(false),
+m_bLocal(false),
 m_paiGlobalReligionCommerce(NULL),
 m_paiHolyCityCommerce(NULL),
 m_paiStateReligionCommerce(NULL)
@@ -17001,6 +16689,17 @@ const wchar* CvReligionInfo::getAdjectiveKey() const
 	return m_szAdjectiveKey;
 }
 
+// Leoreth
+bool CvReligionInfo::isProselytizing() const
+{
+	return m_bProselytizing;
+}
+
+bool CvReligionInfo::isLocal() const
+{
+	return m_bLocal;
+}
+
 // Arrays
 
 int CvReligionInfo::getGlobalReligionCommerce(int i) const
@@ -17058,6 +16757,9 @@ bool CvReligionInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_iNumFreeUnits, "iFreeUnits");
 	pXML->GetChildXmlValByName(&m_iSpreadFactor, "iSpreadFactor");
+
+	pXML->GetChildXmlValByName(&m_bProselytizing, "bProselytizing");
+	pXML->GetChildXmlValByName(&m_bLocal, "bLocal");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"GlobalReligionCommerces"))
 	{

@@ -10,7 +10,6 @@
 			<Type>CULTURELEVEL_NONE</Type>
 			<Description>TXT_KEY_CULTURELEVEL_NONE</Description>
 			<iCityDefenseModifier>0</iCityDefenseModifier>
-			<!-- Rhye - start -->
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -25,13 +24,11 @@
 					<iThreshold>0</iThreshold>
 				</SpeedThreshold>
 			</SpeedThresholds>
-			<!-- Rhye - end -->
 		</CultureLevelInfo>
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_POOR</Type>
 			<Description>TXT_KEY_CULTURELEVEL_POOR</Description>
 			<iCityDefenseModifier>0</iCityDefenseModifier>
-			<!-- Rhye - start -->
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -46,13 +43,11 @@
 					<iThreshold>0</iThreshold>
 				</SpeedThreshold>
 			</SpeedThresholds>
-			<!-- Rhye - end -->
 		</CultureLevelInfo>
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_FLEDGLING</Type>
 			<Description>TXT_KEY_CULTURELEVEL_FLEDGLING</Description>
 			<iCityDefenseModifier>20</iCityDefenseModifier>
-			<!-- Rhye - start -->
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -67,13 +62,11 @@
 					<iThreshold>10</iThreshold>
 				</SpeedThreshold>
 			</SpeedThresholds>
-			<!-- Rhye - end -->
 		</CultureLevelInfo>
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_DEVELOPING</Type>
 			<Description>TXT_KEY_CULTURELEVEL_DEVELOPING</Description>
 			<iCityDefenseModifier>40</iCityDefenseModifier>
-			<!-- Rhye - start -->
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -88,13 +81,11 @@
 					<iThreshold>100</iThreshold>
 				</SpeedThreshold>
 			</SpeedThresholds>
-			<!-- Rhye - end -->
 		</CultureLevelInfo>
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_REFINED</Type>
 			<Description>TXT_KEY_CULTURELEVEL_REFINED</Description>
 			<iCityDefenseModifier>60</iCityDefenseModifier>
-			<!-- Rhye - start -->
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -109,13 +100,11 @@
 					<iThreshold>500</iThreshold>
 				</SpeedThreshold>
 			</SpeedThresholds>
-			<!-- Rhye - end -->
 		</CultureLevelInfo>
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_INFLUENTIAL</Type>
 			<Description>TXT_KEY_CULTURELEVEL_INFLUENTIAL</Description>
 			<iCityDefenseModifier>80</iCityDefenseModifier>
-			<!-- Rhye - start -->
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -130,13 +119,11 @@
 					<iThreshold>5000</iThreshold>
 				</SpeedThreshold>
 			</SpeedThresholds>
-			<!-- Rhye - end -->
 		</CultureLevelInfo>
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_LEGENDARY</Type>
 			<Description>TXT_KEY_CULTURELEVEL_LEGENDARY</Description>
 			<iCityDefenseModifier>100</iCityDefenseModifier>
-			<!-- Rhye - start -->
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -151,7 +138,6 @@
 					<iThreshold>50000</iThreshold>
 				</SpeedThreshold>
 			</SpeedThresholds>
-			<!-- Rhye - end -->
 		</CultureLevelInfo>
 	</CultureLevelInfos>
 </Civ4CultureLevelInfo>

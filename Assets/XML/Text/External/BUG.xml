@@ -1,0 +1,2592 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--Various Interface Label Translations
+	BUG Option Screen Title, Button, Tab, and Label Translations
+	BUG Advisors Options Game Text
+	BUG City Screen Options Game Text
+	BUG Core Options Game Text
+	BUG Main Interface Options Game Text
+	Copyright (c) 2007 The BUG Mod -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+<!-- BUG Main Interface Options -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__OPTIONSKEY_TEXT</Tag>
+		<English>Options Shortcut Reminder</English>
+		<French>Rappel du Raccourci des Options</French>
+		<German>Erinnerung an die BUG-Optionen</German>
+		<Italian>Promemoria della combinazione per accedere alle Opzioni del</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__OPTIONSKEY_HOVER</Tag>
+		<English>When checked, displays a message about Alt + Ctrl + O when a game is started or loaded.</English>
+		<French>En activant, en rappel sur l'utilisation de Alt + Ctrl + O est montr&#233; quand un jeu d&#233;marre ou est charg&#233;.</French>
+		<German>Zeigt nach dem Spielstart oder dem Laden eines Spielstands eine Meldung, die an die Tastenkombination [STRG + ALT + O] erinnert, mit der man die Optionen der "BUG Mod" aufrufen kann</German>
+		<Italian>Quando &#232; selezionato, mostra un messaggio che ricorda la combinazione di tasti per accedere al Men&#249; delle Opzioni del BUG Mod quando un gioco viene iniziato o caricato .</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__OPTIONSBUTTON_TEXT</Tag>
+		<English>Options Button</English>
+		<German>Optionsschaltfl&#228;che</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__OPTIONSBUTTON_HOVER</Tag>
+		<English>When checked, shows the BUG Option Screen button.</English>
+		<German>Zeigt die Schaltfl&#228;che zum Aufruf des Optionensbildschirms der BUG Mod an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__GOLDRATEWARNING_TEXT</Tag>
+		<English>Gold Rate Warning</English>
+		<German>"Gold/Runde"-Warnung</German>
+		<Italian>Calo dell'Oro</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__GOLDRATEWARNING_HOVER</Tag>
+		<English>When checked, displays your gold rate in yellow if it is negative but not enough to drop your treasury below zero.</English>
+		<German>F&#228;rbt die Anzeige f&#252;r "Gold/Runde" Gelb ein, wenn dessen Wert zwar negativ ist, den Goldvorrat in der n&#228;chsten Runde aber nicht unter 0 senken wird</German>
+		<Italian>Quando &#232; selezionato, mostra il tasso di crescita dell'oro in giallo se &#232; negativo ma non abbastanza da mandarvi in rosso.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__GPBAR_TEXT</Tag>
+		<English>Great Person</English>
+		<French>Personnages Illustres</French>
+		<German>Gro&#223;e Pers&#246;nlichkeiten</German>
+		<Italian>Grandi Personaggi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__GPBAR_HOVER</Tag>
+		<English>When checked, displays the progress and city of the next Great Person.</English>
+		<French>En activant, montre la barre de progr&#232;s et la ville du prochain Personnage Illustre.</French>
+		<German>Zeigt einen Fortschrittsbalken an, um zu bestimmen, wann und in welcher Stadt die n&#228;chste Gro&#223;e Pers&#246;nlichkeit erscheinen wird</German>
+		<Italian>Quando &#232; selezionato, mostra il progresso e la citt&#224; del prossimo Grande Personaggio.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__GPBAR_TYPES_TEXT</Tag>
+		<English>GP Bar Types</English>
+		<French>Types de Barre PI</French>
+		<German>Anzeigemethode</German>
+		<Italian>Tipi di Grandi Personaggi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__GPBAR_TYPES_HOVER</Tag>
+		<English>Determines how many GP types to display in the GP Progress Bar. The [COLOR_HIGHLIGHT_TEXT]Maximum[COLOR_REVERT] setting also displays the percent chance for each.</English>
+		<French>Determine combien de types de PI doivent &#234;tre montr&#233;s dans la Barre de Progr&#232;s. L'option [COLOR_HIGHLIGHT_TEXT]Maximum[COLOR_REVERT] montre aussi les chances de chacun.</French>
+		<German>Bestimmt die Anzahl der Typen von Gro&#223;en Pers&#246;nlichkeiten, die im Fortschrittsbalken angezeigt werden (die Einstellung [COLOR_HIGHLIGHT_TEXT]Maximal[COLOR_REVERT] zeigt zus&#228;tzlich die prozentuale Chance f&#252;r jede einzelne an)</German>
+		<Italian>Determina quanti tipi di Grandi Personaggi devono essere mostrati nella Barra dei Grandi Personaggi. L'impostazione [COLOR_HIGHLIGHT_TEXT]Massimo[COLOR_REVERT] mostra anche la possibilit&#224; percentuale di ognuna.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__GPBAR_TYPES_LIST</Tag>
+		<English>None|One|Maximum</English>
+		<French>Aucun|Un|Maximum</French>
+		<German>Keine|Eine|Maximal</German>
+		<Italian>Nessuno|Uno|Massimo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__COMBAT_COUNTER_TEXT</Tag>
+		<English>Great General</English>
+		<French>G&#233;n&#233;ral Illustre</French>
+		<German>Gro&#223;er General</German>
+		<Italian>Grande Generale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__COMBAT_COUNTER_HOVER</Tag>
+		<English>When checked, displays a progress bar for the next Great General.</English>
+		<French>En activant, montre l'Exp&#233;rience au Combat n&#233;cessaire pour le prochain G&#233;n&#233;ral Illustre.</French>
+		<German>Zeigt die gesammelte Gefechtserfahrung an, um das Erscheinen des n&#228;chsten Gro&#223;en Generals zu bestimmen</German>
+		<Italian>Quando &#232; selezionato, mostra la barra di avanzamento per il prossimo Grande Generale.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__MINMAX_COMMERCE_TEXT</Tag>
+		<English>Min/Max Commerce Buttons</English>
+		<German>Min/Max Investitionsanteile</German>
+		<Italian>Bottoni del Commercio minimo/massimo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__MINMAX_COMMERCE_HOVER</Tag>
+		<English>When checked, displays a second pair of +/- buttons for each commerce type that set the rate to 100% and 0% respectively.</English>
+		<German>Zeigt ein zweites Paar "+/-"-Schaltfl&#228;chen f&#252;r jede Art Investitionsanteil an, die diese auf 100% beziehungsweise 0% setzen</German>
+		<Italian>Quando &#232; selezionato, mostra una seconda coppia di bottoni +/- per ogni tipo di commercio che impostano il valore rispettivamente al 100% ed allo 0%.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__CITYARROWS_TEXT</Tag>
+		<English>City Cycle Arrows</English>
+		<French>Fleches de Ville</French>
+		<German>St&#228;dtepfeile</German>
+		<Italian>Frecce di scorrimento cittadino</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__CITYARROWS_HOVER</Tag>
+		<English>When checked, displays arrows to cycle through cities above your civ's flag.</English>
+		<French>En activant, montre des fl&#232;ches pour cycler vos villes au-dessous du drapeau de votre civilisation.</French>
+		<German>Zeigt Pfeile &#252;ber der Flagge der eigenen Zivilisation an, mit denen durch die einzelnen St&#228;dte geschaltet werden kann</German>
+		<Italian>Quando &#232; selezionato, mostra sopra alla vostra bandiera le frecce per scorrere fra le Citt&#224;.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__FIELDOFVIEW_TEXT</Tag>
+		<English>Field of View</English>
+		<German>Field of View (FOV)</German>
+		<Italian>Campo visuale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__FIELDOFVIEW_HOVER</Tag>
+		<English>When checked, displays a slide bar which can be used to change the field of view.</English>
+		<German>Zeigt im Hauptbildschirm einen Schieberegler an, mit dem das Sichtfeld (engl. "Field of View") eingestellt werden kann</German>
+		<Italian>Quando &#232; selezionato, visualizza un cursore che pu&#242; essere utilizzato per regolare il campo visuale.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__PROGRESSBARSTICKMARKS_TEXT</Tag>
+		<English>Tick Marks</English>
+		<German>Teilstriche</German>
+		<Italian>Trattini di avanzamento</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__PROGRESSBARSTICKMARKS_HOVER</Tag>
+		<English>When checked, displays tick marks on selected progress bars that illustrate estimated future turn progress.</English>
+		<German>Zeigt Teilstriche auf ausgew&#228;hlten Fortschrittsbalken an, die deren voraussichtlichen Verlauf in zuk&#252;nftigen Runden darstellen</German>
+		<Italian>Visualizza sulle barre di avanzamento selezionate dei trattini che mostrano il progresso stimato per i turni successivi.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__FIELDOFVIEW_REMEMBER_TEXT</Tag>
+		<English>Remember Field of View</English>
+		<German>FOV-Einstellung merken</German>
+		<Italian>Conseva il Campo visuale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__FIELDOFVIEW_REMEMBER_HOVER</Tag>
+		<English>When checked, the Field of View value is remembered from game to game.</English>
+		<German>Merkt sich die letzte gew&#228;hlte Einstellung f&#252;r das Sichtfeld (engl. "Field of View") f&#252;r weitere Partien</German>
+		<Italian>Quando &#232; selezionato, il valore assegnato al Campo visuale viene conservato.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__FIELDOFVIEW_VALUE_TEXT</Tag>
+		<English>Field of View - Value</English>
+		<German>FOV-Wert</German>
+		<Italian>Valore del Campo visuale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__FIELDOFVIEW_VALUE_HOVER</Tag>
+		<English>Stores the Field of View value</English>
+		<German>Eingabem&#246;glichkeit f&#252;r die Einstellung des Sichtfeldes (engl. "Field of View")</German>
+		<Italian>Riporta il valore assegnato al Campo visuale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__UNITMOVEMENTPOINTSFRACTION_TEXT</Tag>
+		<English>Fractional Movement Points</English>
+		<German>Gebrochene Bewegungspunkte</German>
+		<Italian>Punti movimento decimali</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__UNITMOVEMENTPOINTSFRACTION_HOVER</Tag>
+		<English>When checked, shows the Movement Points for a single unit as a fraction in the Info Pane.</English>
+		<German>Zeigt die Bewegungspunkte einer einzelnen Einheit in der Detailanzeige mit Nachkommastellen an</German>
+		<Italian>Quando &#232; selezionato, mostra nel Pannello delle Informazioni i Punti Movimento di una Unit&#224; come un numero con una cifra decimale.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__STACKMOVEMENTPOINTS_TEXT</Tag>
+		<English>Stack Movement Points</English>
+		<German>Einheitenverband-Bewegungspunkte</German>
+		<Italian>Punti Movimento di gruppo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__STACKMOVEMENTPOINTS_HOVER</Tag>
+		<English>When checked, shows the minimum and maximum Movement Points for all selected units in the Info Pane.</English>
+		<German>Zeigt die minimalen und maximalen Bewegungspunkte aller ausgew&#228;hlten Einheiten in der Detailanzeige an</German>
+		<Italian>Quando &#232; selezionato, mostra nel Pannello delle Informazioni il valore minimo e quello massimo per i Punti Movimento del gruppo di Unit&#224; selezionate.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__BUILDICONSIZE_TEXT</Tag>
+		<English>Build/Action Icon Size</English>
+		<German>Gr&#246;&#223;e der Bau-/Befehlssymbole</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__BUILDICONSIZE_HOVER</Tag>
+		<English>Determines the size of the build and action buttons in the bottom center of the screen.</English>
+		<German>Bestimmt die Gr&#246;&#223;e der Bau- und Befehlssymbole im Men&#252; am unteren Bildschirmrand</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__BUILDICONSIZE_LIST</Tag>
+		<English>Small|Medium|Large</English>
+		<German>Klein|Mittel|Gro&#223;</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__ENABLEGRAPHICALPAGING_TEXT</Tag>
+		<English>Enable graphics paging</English>
+		<French>Activer la Pagination Graphique</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_MAININTERFACE__ENABLEGRAPHICALPAGING_HOVER</Tag>
+		<English>Turn on or off paging out of off-focus graphics to save memory</English>
+		<French>Activer la Pagination des Graphiques hors champ pour pr&#233;server de la m&#233;moire</French>
+	</TEXT>
+
+<!-- BUG Core Options -->
+
+	<!-- Logging -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__SCREENLOGLEVEL_TEXT</Tag>
+		<English>Screen Logging Level</English>
+		<German>Protokollierungsstufe (Bildschirm)</German>
+		<Italian>Livello di log a video</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__SCREENLOGLEVEL_HOVER</Tag>
+		<English>Selects which logging messages get printed to the screen. Each level includes messages of all levels below it.</English>
+		<German>Bestimmt, welche Protokoll-Meldungen im Hauptbildschirm angezeigt werden (jede Stufe schlie&#223;t die Meldungen der Stufe darunter mit ein)</German>
+		<Italian>Seleziona quali messaggi di log vengono mostrati sullo schermo. Ogni livello comprende ovviamente tutti i messaggi dei livelli inferiori.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__SCREENLOGLEVEL_LIST</Tag>
+		<English>Debug|Info|Warning|Error|None</English>
+		<German>Debug|Info|Warnung|Fehler|Keine</German>
+		<Italian>Debug|Informazioni|Avvisi|Errori|Nessuno</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__FILELOGLEVEL_TEXT</Tag>
+		<English>File Logging Level</English>
+		<German>Protokollierungsstufe (Datei)</German>
+		<Italian>Livello di log su file</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__FILELOGLEVEL_HOVER</Tag>
+		<English>Selects which logging messages get printed to the PythonDbg.log file. Each level includes messages of all levels below it.</English>
+		<German>Bestimmt, welche Protokoll-Meldungen in der Datei "PythonDbg.log" gespeichert werden (jede Stufe schlie&#223;t die Meldungen der Stufe darunter mit ein)</German>
+		<Italian>Seleziona quali messaggi di log vengono scritti nel file PythonDbg.log. Ogni livello comprende ovviamente tutti i messaggi dei livelli inferiori.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__FILELOGLEVEL_LIST</Tag>
+		<English>Debug|Info|Warning|Error|None</English>
+		<German>Debug|Info|Warnung|Fehler|Keine</German>
+		<Italian>Debug|Informazioni|Avvisi|Errori|Nessuno</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOGTIME_TEXT</Tag>
+		<English>Include Time</English>
+		<German>Zeit protokollieren</German>
+		<Italian>Includi ora</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOGTIME_HOVER</Tag>
+		<English>When checked, each log file message includes the current time in HH:MM:SS format.</English>
+		<German>F&#252;gt jeder ausgegebenen Protokoll-Meldung die aktuelle Uhrzeit im Format "HH:MM:SS" hinzu</German>
+		<Italian>Quando &#232; selezionato, ogni messaggio di log include l'ora corrente (nel formato HH:MM:SS).</Italian>
+	</TEXT>
+<!-- Subversion -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__CHECKFORUPDATES_TEXT</Tag>
+		<English>Check for Updates</English>
+		<German>Nach Updates suchen</German>
+		<Italian>Cerca aggiornamenti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__CHECKFORUPDATES_HOVER</Tag>
+		<English>When checked, BUG will look for SVN updates and/or releases each time you launch Civilization and notify you when new ones are found.</English>
+		<German>L&#228;sst die BUG Mod bei jedem Spielstart nach SVN-Updates und/oder neuen offiziellen Versionen suchen und eine Meldung ausgeben, wenn aktuellere Versionen gefunden wurden</German>
+		<Italian>Quando &#232; selezionato, il BUG Mod controller&#224; la disponibilit&#224; di aggiornamenti SVN e/o nuove versioni ogni volta che lancerai Civ4 e ti notificher&#224; ci&#242; che avr&#224; eventualmente trovato.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOCALROOT_TEXT</Tag>
+		<English>BUG Install Folder</English>
+		<German>Installationsverzeichnis der BUG Mod</German>
+		<Italian>Cartella di installazione del BUG Mod</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOCALROOT_HOVER</Tag>
+		<English>Location where BUG files are installed.</English>
+		<German>Verzeichnis, in dem sich die Dateien der BUG Mod befinden</German>
+		<Italian>Posizione in cui sono installati i file del BUG Mod.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOCALVERSION_TEXT</Tag>
+		<English>Installed Revision</English>
+		<German>Installierte Revision</German>
+		<Italian>Revisione installata</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__LOCALVERSION_HOVER</Tag>
+		<English>Revision number of the BUG installation.</English>
+		<German>Revisionsnummer der installierten BUG Mod</German>
+		<Italian>Numero di revisione del BUG Mod installato.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__REPOSITORYURL_TEXT</Tag>
+		<English>Repository URL</English>
+		<German>URL des Projektarchivs</German>
+		<Italian>URL del repository SVN</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__REPOSITORYURL_HOVER</Tag>
+		<English>URL for the BUG repository.</English>
+		<German>URL des Projektarchivs der BUG Mod</German>
+		<Italian>URL della directory SVN online dove si trovano i file del BUG Mod.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__REPOSITORYVERSION_TEXT</Tag>
+		<English>Repository Revision</English>
+		<German>Revision des Projektarchivs</German>
+		<Italian>Revisione del repository</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CORE__REPOSITORYVERSION_HOVER</Tag>
+		<English>Revision number of the BUG repository.</English>
+		<German>Revisionsnummer des Projektarchivs der BUG Mod</German>
+		<Italian>Numero di revisione della versione SVN disponibile online del BUG Mod.</Italian>
+	</TEXT>
+
+<!-- BUG City Screen Options -->
+
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__RAWYIELDS_TEXT</Tag>
+		<English>Raw Yields</English>
+		<French>Commerce Pur / Production</French>
+		<German>Anzeige der Rohertr&#228;ge</German>
+		<Italian>Prodotti grezzi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__RAWYIELDS_HOVER</Tag>
+		<English>When checked, the raw breakdowns for [ICON_FOOD], [ICON_PRODUCTION], and [ICON_COMMERCE] are displayed in the trade routes table.</English>
+		<German>Zeigt eine Aufschl&#252;sselung der Ertr&#228;ge von [ICON_FOOD], [ICON_PRODUCTION] und [ICON_COMMERCE] im Stadt-Bildschirm &#252;ber dem Handelseinkommen an</German>
+		<Italian>Quando &#232; selezionato, i valori grezzi di Cibo, Produzione e Commerci) vengono mostrati nel pannello delle vie commerciali.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__RAWYIELDSVIEW_TEXT</Tag>
+		<English>Default View</English>
+		<German>Standardanzeige</German>
+		<Italian>Vista predefinita</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__RAWYIELDSVIEW_HOVER</Tag>
+		<English>Determines the Raw Yields view used when Civ is started.</English>
+		<German>Bestimmt, welche Ertr&#228;ge beim Aufruf des Stadt-Bildschirms standardm&#228;&#223;ig angezeigt werden sollen</German>
+		<Italian>Determina la vista predefinita alla partenza di Civ4 per il pannello dei Prodotti Grezzi: Rotte Commerciali, Cibo, Produzione o Commercio.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__RAWYIELDSVIEW_LIST</Tag>
+		<English>Trade Routes|Food|Production|Commerce</English>
+		<German>Handelsverbindungen|Nahrung|Produktion|Wirtschaft</German>
+		<Italian>Rotte Commerciali|Cibo|Produzione|Commercio</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__RAWYIELDSTILES_TEXT</Tag>
+		<English>Count Tiles</English>
+		<German>Ertragsberechnung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__RAWYIELDSTILES_HOVER</Tag>
+		<English>Select which tiles to count in Raw Yields when Civ is started.</English>
+		<German>Bestimmt, welche Gel&#228;ndefelder in die Berechnung der Rohertr&#228;ge einflie&#223;en sollen, wenn das Spiel gestartet wird</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__RAWYIELDSTILES_LIST</Tag>
+		<English>Worked|City|Owned</English>
+		<German>Bearbeitet|Stadt|Besitz</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__FOODASSIST_TEXT</Tag>
+		<English>Detailed Food Info</English>
+		<German>Ausf&#252;hrliche Nahrungsertr&#228;ge</German>
+		<Italian>Informazioni alimentari dettagliate</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__FOODASSIST_HOVER</Tag>
+		<English>When checked, displays the food difference generated per turn (plus or minus) and the number of turns until starvation when the food supply is shrinking.</English>
+		<German>Zeigt die (positive oder negative) Abweichung der erwirtschafteten Nahrungsertr&#228;ge pro Runde an und au&#223;erdem die Anzahl der Runden, bis eine Hungersnot ausbricht und der Nahrungsvorrat zu schrumpfen beginnt</German>
+		<Italian>Quando &#232; selezionato, visualizza la differenza del cibo generato ogni turno (positiva o negativa); quando le risorse alimentari sono in riduzione, visualizza anche il numero di turni fino alla carestia.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__WHIPASSIST_TEXT</Tag>
+		<English>Production Bar</English>
+		<German>Produktionsbalken</German>
+		<Italian>Barra di Produzione</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__WHIPASSIST_HOVER</Tag>
+		<English>When checked, displays the [ICON_CITIZEN] cost and [ICON_PRODUCTION]/[ICON_GOLD] overflow for whipping and/or the [ICON_GOLD] cost for buying the item being produced in the Production Bar.</English>
+		<German>Zeigt im Produktionsbalken die Anzahl der [ICON_CITIZEN], die f&#252;r eine Beschleunigung der Produktion geopfert werden m&#252;ssen, und den daraus entstehenden &#220;berschuss ([ICON_PRODUCTION] und/oder [ICON_GOLD]) sowie die Kosten an, die anfallen, wenn das derzeitige Bauprojekt mit [ICON_GOLD] beschleunigt werden kann</German>
+		<Italian>Quando &#232; selezionato, la Barra della Pruduzione della Schermata Cittadina mostra il costo in popolazione ed il surplus di produzione per l'accelerazione di produzione mediante sacrifici e il costo in oro per l'accelerazione di produzione mediante pagamenti relativi all'oggetto attualmente costruito.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__WHIPASSISTOVERFLOWCOUNTCURRENTPRODUCTION_TEXT</Tag>
+		<English>Include Current</English>
+		<German>Aktuelle Runde einbeziehen</German>
+		<Italian>Includi corrente</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__WHIPASSISTOVERFLOWCOUNTCURRENTPRODUCTION_HOVER</Tag>
+		<English>When checked, whip production overflow estimates will include the city's current [ICON_PRODUCTION].</English>
+		<German>Bezieht [ICON_PRODUCTION] einer Stadt aus der aktuellen Runde in die Berechnung des Produktions&#252;berschusses ein</German>
+		<Italian>Quando &#232; selezionato, la stima del surplus di produzione include la produzione corrente della Citt&#224;.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__CULTURETURNS_TEXT</Tag>
+		<English>Culture Turns</English>
+		<French>Tours de Culture</French>
+		<German>Kulturanzeige (verbleibende Runden)</German>
+		<Italian>Turni per l'espansione culturale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__CULTURETURNS_HOVER</Tag>
+		<English>When checked, displays the number of turns until the city's borders expand.</English>
+		<French>En activant, le nombre de tours n&#233;cessaire &#224; l'expansion des fronti&#232;res culturelles est montr&#233;.</French>
+		<German>Zeigt in der Kulturanzeige die Anzahl der Runden an, bis sich die Kulturgrenzen einer Stadt erweitern</German>
+		<Italian>Quando &#232; selezionato, viene visualizzato il numero di turni mancanti alla successiva espansione culturale.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__GREATPERSONTURNS_TEXT</Tag>
+		<English>Turns Until Birth</English>
+		<German>Runden bis zum Erscheinen</German>
+		<Italian>Turni per la nascita di un Grande Personaggio</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__GREATPERSONTURNS_HOVER</Tag>
+		<English>When checked, displays the number of turns until the city will produce a [ICON_GREATPEOPLE].</English>
+		<German>Zeigt in der Anzeige der Gro&#223;e Pers&#246;nlichkeit-Punkte die Anzahl der Runden an, bis eine Stadt eine Gro&#223;e Pers&#246;nlichkeit ([ICON_GREATPEOPLE]) hervorbringt</German>
+		<Italian>Quando &#232; selezionato, viene visualizzato il numero di turni mancanti alla successiva nascita di un Grande Personaggio.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__GREATPERSONINFO_TEXT</Tag>
+		<English>Types and Percentages</English>
+		<German>Art und Wahrscheinlichkeit</German>
+		<Italian>Informazioni sui Grandi Personaggi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__GREATPERSONINFO_HOVER</Tag>
+		<English>When checked, displays the percentage chance and type of each possible [ICON_GREATPEOPLE] on the bar. The number shown is controlled by the General setting.</English>
+		<German>Zeigt die Wahrscheinlichkeit des Erscheinens der verschiedenen Arten von Gro&#223;en Pers&#246;nlichkeiten ([ICON_GREATPEOPLE]) an</German>
+		<Italian>Quando &#232; selezionato, vengono visualizzate informazioni aggiuntive sui Grandi Personaggi.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__ANGER_COUNTER_TEXT</Tag>
+		<English>Anger Counter</English>
+		<French>Compteur de Col&#232;re</French>
+		<German>Rundenz&#228;hler bei Unzufriedenheit</German>
+		<Italian>Infelicit&#224; da sacrifici</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__ANGER_COUNTER_HOVER</Tag>
+		<English>When checked, puts anger countdown on city screen.</English>
+		<French>En activant, montre un compteur de col&#232;re sur l'&#233;cran de ville.</French>
+		<German>Zeigt einen Rundenz&#228;hler im Stadt-Bildschirm an, der die Anzahl der Runden angibt, bis die Unzufriedenheit wegen einer Beschleunigung der Produktion durch Zwangsarbeit verflogen ist</German>
+		<Italian>Quando &#232; selezionato, nella Schermata Cittadina viene visualizzato un contatore dei turni di Infelicit&#224; da sacrifici.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__ONLYPRESENTRELIGIONS_TEXT</Tag>
+		<English>Only Present Religions</English>
+		<German>Nur vorhandene Religionen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__ONLYPRESENTRELIGIONS_HOVER</Tag>
+		<English>When checked, displays only the religions that are present in the city and allows for more than seven religions.</English>
+		<German>Zeigt nur die in einer Stadt vorhandenen Religionen an und erlaubt die Darstellung von mehr als sieben Religionen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__ONLYPRESENTCORPORATIONS_TEXT</Tag>
+		<English>Only Present Corporations</English>
+		<German>Nur vorhandene Kapitalgesellschaften</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__ONLYPRESENTCORPORATIONS_HOVER</Tag>
+		<English>When checked, displays only the corporations that are present in the city and allows for more than seven corporations.</English>
+		<German>Zeigt nur die in einer Stadt vorhandenen Kapitalgesellschaften an und erlaubt die Darstellung von mehr als sieben Kapitalgesellschaften</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__SPECIALISTS_TEXT</Tag>
+		<English>City Specialists</English>
+		<French>Sp&#233;cialistes</French>
+		<German>Anordnung der Spezialisten</German>
+		<Italian>Specialisti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__SPECIALISTS_HOVER</Tag>
+		<English>Determines how specialists are displayed:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Default[COLOR_REVERT] - Shows specialists using the vanilla BtS format.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Stacker[COLOR_REVERT] - Shows specialists stacked using the Stacked Specialist mod.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Chevron[COLOR_REVERT] - Shows specialists grouped into 5 (single chevron), 10 (capped chevron) and 20 (boxed capped chevron) format.</English>
+		<French>Determine comment les sp&#233;cialistes sont montr&#233;s.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]D&#233;faut[COLOR_REVERT] - Montre les sp&#233;cialistes comme BtS.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tas[COLOR_REVERT] - Tasse les sp&#233;cialistes.[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Chevrons[COLOR_REVERT] - Groupe les sp&#233;cialistes par 5 (simple chevron), 10 (chevron plein) et 20 (chevron plein plus carr&#233;).</French>
+		<German>Bestimmt die Anordnung der Spezialisten im Stadt-Bildschirm:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Standard[COLOR_REVERT] - Spezialisten werden wie in "Beyond the Sword" angeordnet[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Stapel[COLOR_REVERT] - Spezialisten werden gestapelt angeordnet (verwendet die "Stacked Specialist"-Mod)[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Chevron[COLOR_REVERT] - Spezialisten werden zu Gruppen aus 5 (einfaches Chevron), 10 (geschlossenes Chevron) und 20 (eingerahmtes geschlossenes Chevron) Spezialisten zusammengefasst</German>
+		<Italian>Determina quanti Specialisti vengono mostrati:[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Predefinito[COLOR_REVERT] - mostra gli Specialisti utilizzando il formato standard di Civ4:BtS;[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Impilati[COLOR_REVERT] - mostra gli Specialisti utilizzando il formato a pile dello 'Stacked Specialist Mod';[NEWLINE][ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Galloni[COLOR_REVERT] - mostra gli Specialisti raggruppati per 5, 10 e 20 utilizzando il formato a galloni dello 'Chevron Mod'.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__SPECIALISTS_LIST</Tag>
+		<English>Default|Stacker|Chevron</English>
+		<French>D&#233;faut|Tas|Chevrons</French>
+		<German>Standard|Stapel|Chevron</German>
+		<Italian>Predefinito|Impilati|Galloni</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONSTARTED_TEXT</Tag>
+		<English>Color Started Items</English>
+		<German>Baufortschritt einf&#228;rben</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONSTARTED_HOVER</Tag>
+		<English>When checked, displays the remaining turns in cyan for items that have been started.</English>
+		<German>F&#228;rbt die bis zur Fertigstellung eines Projekts verbleibenden Runden Blau ein</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYQUEUE_TEXT</Tag>
+		<English>Queue</English>
+		<German>Produktionsliste</German>
+		<Italian>Coda</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYQUEUE_HOVER</Tag>
+		<English>When checked, displays a yellow exclamation point (!) next to items in the build queue that are close to decaying from being left in the queue without adding [ICON_PRODUCTION] for too long. Two red exclamation points signify that the item will decay this turn if it is not first in the queue.</English>
+		<German>Zeigt ein gelbes Ausrufezeichen (!) bei Projekten in der Produktionsliste an, deren Produktionsfortschritt demn&#228;chst verf&#228;llt, da sie zu lange in der Liste stehen, ohne dass weitere [ICON_PRODUCTION] auf sie verwendet wurden. Zwei rote Ausrufezeichen (!!) zeigen an, dass der Produktionsfortschritt eines Projekts in dieser Runde verf&#228;llt, falls es nicht weiter produziert wird</German>
+		<Italian>Quando &#232; selezionato, mostra un punto esclamativo (!) giallo per gli oggetti nella coda di produzione che sono prossimi a perdere la produzione accumulata a causa della eccessiva permanenza nella coda senza ulteriore aggiunta di [ICON_PRODUCTION]. Due punti esclamativi rossi indicano che l'oggetto nella coda perder&#224; la produzione accumulata nel turno in corso a meno che non venga posizionato in testa alla coda produttiva.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYQUEUEUNITTHRESHOLD_TEXT</Tag>
+		<English>Unit Warning</English>
+		<German>Einheiten-Warnung</German>
+		<Italian>Avviso per le Unit&#224;</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYQUEUEUNITTHRESHOLD_HOVER</Tag>
+		<English>Select the number of turns before a unit will decay at which time a yellow exclamation mark is shown. Units decay after being in the queue without adding [ICON_PRODUCTION] for 10 turns.</English>
+		<German>Bestimmt die Anzahl der Runden, bevor der Produktionsfortschritt einer produzierten Einheit verf&#228;llt und ein gelbes Ausrufezeichen angezeigt wird (Produktionsfortschritte bei Einheiten verfallen, wenn sie 10 Runden in der Liste stehen, ohne dass weitere [ICON_PRODUCTION] auf sie verwendet wurden)</German>
+		<Italian>Inserisci il numero di turni prima che una Unit&#224; in coda perda la produzione accumulata mancanti i quali verr&#224; visualizzato il punto esclamativo giallo di avvertimento. Le Unit&#224; perdono la produzione accumulata dopo essere state nella coda di produzione per 10 turni senza aggiunte di [ICON_PRODUCTION].</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYQUEUEBUILDINGTHRESHOLD_TEXT</Tag>
+		<English>Building Warning</English>
+		<German>Geb&#228;ude-Warnung</German>
+		<Italian>Avviso per gli Edifici</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYQUEUEBUILDINGTHRESHOLD_HOVER</Tag>
+		<English>Select the number of turns before a building will decay at which time a yellow exclamation mark is shown. Buildings decay after being in the queue without adding [ICON_PRODUCTION] for 50 turns. Projects never decay.</English>
+		<German>Bestimmt die Anzahl der Runden, bevor der Produktionsfortschritt eines produzierten Geb&#228;udes verf&#228;llt und ein gelbes Ausrufezeichen angezeigt wird (Produktionsfortschritte bei Geb&#228;uden verfallen, wenn sie 50 Runden in der Liste stehen, ohne dass weitere [ICON_PRODUCTION] auf sie verwendet wurden; bei Projekten geschieht dies nie)</German>
+		<Italian>Inserisci il numero di turni prima che un Edificio in coda perda la produzione accumulata mancanti i quali verr&#224; visualizzato il punto esclamativo giallo di avvertimento. Gli Edifici perdono la produzione accumulata dopo essere state nella coda di produzione per 50 turni senza aggiunte di [ICON_PRODUCTION]; i Progetti invece non perdono mai la produzione accumulata.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYHOVER_TEXT</Tag>
+		<English>Hover</English>
+		<German>Tooltip</German>
+		<Italian>Testo a comparsa</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYHOVER_HOVER</Tag>
+		<English>When checked, displays the number of turns before and amount of decay in the hover text for units and buildings in the build queue.</English>
+		<German>Zeigt im Tooltip von Einheiten und Geb&#228;uden in der Produktionsliste die Anzahl der Runden an, bis ein Produktionsfortschritt verf&#228;llt und wie viele [ICON_PRODUCTION] dann verloren gehen</German>
+		<Italian>Quando &#232; selezionato, mostra nel testo a comparsa delle Unit&#224; e degli Edifici in coda di produzione il numero di turni prima che perdano la produzione accumulata e l'ammontare di tale perdita.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYHOVERUNITTHRESHOLD_TEXT</Tag>
+		<English>Unit Warning</English>
+		<German>Einheiten-Warnung</German>
+		<Italian>Avviso per le Unit&#224;</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYHOVERUNITTHRESHOLD_HOVER</Tag>
+		<English>Select the number of turns before a unit will decay at which time the decay information is first displayed.</English>
+		<German>Bestimmt die Anzahl der Runden, bevor der Produktionsfortschritt einer produzierten Einheit verf&#228;llt und ein gelbes Ausrufezeichen angezeigt wird</German>
+		<Italian>Inserisci il numero di turni prima che una Unit&#224; in coda perda la produzione accumulata mancanti i quali verranno visualizzate per la prima volta le informazioni relative.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYHOVERBUILDINGTHRESHOLD_TEXT</Tag>
+		<English>Building Warning</English>
+		<German>Geb&#228;ude-Warnung</German>
+		<Italian>Avviso per gli Edifici</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONDECAYHOVERBUILDINGTHRESHOLD_HOVER</Tag>
+		<English>Select the number of turns before a building will decay at which time the decay information is first displayed.</English>
+		<German>Bestimmt die Anzahl der Runden, bevor der Produktionsfortschritt eines produzierten Geb&#228;udes verf&#228;llt und ein gelbes Ausrufezeichen angezeigt wird</German>
+		<Italian>Inserisci il numero di turni prima che un Edificio in coda perda la produzione accumulata mancanti i quali verranno visualizzate per la prima volta le informazioni relative.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONPOPUPTRAINCIVILIANUNITSFOREVER_TEXT</Tag>
+		<English>Train Civilian Units Forever</English>
+		<German>Unendliche Einheitenproduktion (zivil)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONPOPUPTRAINCIVILIANUNITSFOREVER_HOVER</Tag>
+		<English>When checked, selecting a civilian unit in the Choose Production popup sets the city to train that unit repeatedly.</English>
+		<German>L&#228;sst eine Stadt wiederholt eine zivile Einheit produzieren, die im Stadt-Baumen&#252; ausgew&#228;hlt wurde</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONPOPUPTRAINMILITARYUNITSFOREVER_TEXT</Tag>
+		<English>Train Military Units Forever</English>
+		<German>Unendliche Einheitenproduktion (milit&#228;risch)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_CITYSCREEN__PRODUCTIONPOPUPTRAINMILITARYUNITSFOREVER_HOVER</Tag>
+		<English>When checked, selecting a military unit in the Choose Production popup sets the city to train that unit repeatedly.</English>
+		<German>L&#228;sst eine Stadt wiederholt eine milit&#228;rische Einheit produzieren, die im Stadt-Baumen&#252; ausgew&#228;hlt wurde</German>
+	</TEXT>
+
+<!-- BUG Advisors Options -->
+
+	<!-- Finance Advisor -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGFINANCEADVISOR_TEXT</Tag>
+		<English>BUG Finance Advisor</English>
+		<German>BUG Finanzberater</German>
+		<Italian>Evoluto</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGFINANCEADVISOR_HOVER</Tag>
+		<English>When checked, uses the BUG Finance Advisor (requires restart).</English>
+		<German>Aktiviert den verbesserten Finanzberater der BUG Mod (erfordert Neustart)</German>
+		<Italian>Quando &#232; selezionato, visualizza il Consigliere Economico del BUG mod (&#232; richiesto un  perch&#232; il cambiamento abbia effetto).</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCETAB_TEXT</Tag>
+		<English>Glance Tab</English>
+		<French>Page Coup d'Oeuil</French>
+		<German>&#220;berblick</German>
+		<Italian>Tabella "Occhiata"</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCETAB_HOVER</Tag>
+		<English>When checked, displays the 'Glance' tab on the Exotic Foreign Advisor screen.</English>
+		<French>En activant, montre la page 'Coup d'Oeuil' sur la page de l'Adviseur Etranger Exotique.</French>
+		<German>Zeigt einen zus&#228;tzlichen Kurz&#252;berblick im Bildschirm des Auslandsberaters an</German>
+		<Italian>Quando &#232; selezionato, visualizza la tabella "Occhiata" nella schermata del Consigliere Estero (utilizzando l'Exotic Foreign Advisor Mod).</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCEATTITUDES_TEXT</Tag>
+		<English>Smilies</English>
+		<French>Smileys</French>
+		<Italian>Icone</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCEATTITUDES_LIST</Tag>
+		<English>Numbers|Smilies|Both</English>
+		<French>Numbers|Smileys|Both</French>
+		<German>Zahlen|Smilies|Beides</German>
+		<Italian>Numbers|Icone|Both</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAGLANCEATTITUDES_HOVER</Tag>
+		<English>Select how to display AI attitudes on the GLANCE tab: numbers, smilies, or both.</English>
+		<French>S&#233;lectionnez le mode d'afficher des attitudes d'AI sur l'onglet GLANCE: nombres, des smileys, ou les deux.</French>
+		<German>Bestimmt, wie im Kurz&#252;berblick die Einstellung anderer Zivilisationen gegen&#252;ber der eigenen dargestellt werden</German>
+		<Italian>Selezionare la modalit&#224; di visualizzazione atteggiamenti AI sulla scheda GLANCE: i numeri, faccine, o entrambi.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAIMPROVEDINFO_TEXT</Tag>
+		<English>Improved Info Tab</English>
+		<German>BUG Info</German>
+		<Italian>Scheda Informazioni migliorata</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFAIMPROVEDINFO_HOVER</Tag>
+		<English>When checked, uses improved Foreign Advisor 'Info' tab instead of default.</English>
+		<German>Zeigt die Informationen auf der entsprechenden Seite des Auslandsberaters &#252;bersichtlicher an</German>
+		<Italian>Quando &#232; selezionato, utilizza la versione migliorata della scheda Informazioni del Consigliere Estero al posto di quella standard.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFADEALTURNSLEFT_TEXT</Tag>
+		<English>Deal Turns Left</English>
+		<German>Vertragsk&#252;ndigungen</German>
+		<Italian>Turni di Accordo rimasti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__EFADEALTURNSLEFT_HOVER</Tag>
+		<English>When checked, shows how many turns are left before you can cancel each deal on the 'Active' tab.</English>
+		<German>Zeigt an, wie viele Runden noch verbleiben, bis ein Vertrag im Auslandsberater unter "Aktiv" gek&#252;ndigt werden kann</German>
+		<Italian>Quando &#232; selezionato, mostra quanti turni sono rimasti prima che si possa annullare un accordo.</Italian>
+	</TEXT>
+<!-- Military Advisor -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGMA_TEXT</Tag>
+		<English>BUG Military Advisor</English>
+		<German>BUG Milit&#228;rberater</German>
+		<Italian>Evoluto</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGMA_HOVER</Tag>
+		<English>When checked, uses the BUG Militiary Advisor (requires restart).</English>
+		<German>Aktiviert den verbesserten Milit&#228;rberater der BUG Mod (erfordert Neustart)</German>
+		<Italian>Quando &#232; selezionato, utilizza il Consigliere Militare del BUG Mod (&#232; richiesto un  perch&#232; il cambiamento abbia effetto).</Italian>
+	</TEXT>
+<!-- Technology Advisor -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__GPTECHPREFS_TEXT</Tag>
+		<English>GP Research</English>
+		<French>Recherche des PI</French>
+		<German>GP-Technologien</German>
+		<Italian>Ricerche dei GP</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__GPTECHPREFS_HOVER</Tag>
+		<English>When checked, displays the technology each type of great person will research.</English>
+		<French>En activant, montre la technologie que chaque Personnage Illustre peut d&#233;couvrir.</French>
+		<German>Zeigt links neben dem Technologiebaum die Technologien an, die jeder Typ einer Gro&#223;en Pers&#246;nlichkeit erforschen kann</German>
+		<Italian>Quando &#232; selezionato, visualizza la tecnologia ricercata da ogni Grande Personaggio nella schermata del Consigliere Tecnologico.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__WIDETECHSCREEN_TEXT</Tag>
+		<English>Widescreen</English>
+		<French>Ecran Large</French>
+		<German>Breitbild</German>
+		<Italian>Schermo ampio</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__WIDETECHSCREEN_HOVER</Tag>
+		<English>When checked, the width of the tech screen will be linked to your screen resolution (requires restart).</English>
+		<French>En activant, la largeur de l'&#233;cran de technologie d&#233;pendra de votre r&#233;solution d'&#233;cran (requi&#232;rt un red&#233;marrage).</French>
+		<German>Koppelt die Breite des Technologiebaums an die Bildschirmaufl&#246;sung (erfordert Neustart)</German>
+		<Italian>Quando &#232; selezionato, la larghezza della schermata del Consigliere Tecnologico &#232; legata alla risoluzione dello schermo (&#232; richiesto un riavvio perch&#232; il cambiamento abbia effetto).</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWTECHERA_TEXT</Tag>
+		<English>Show Era</English>
+		<German>Epoche anzeigen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWTECHERA_HOVER</Tag>
+		<English>When selected, shows the technology's associated era.</English>
+		<German>Zeigt jeweils die Epoche an, zu der eine Technologie geh&#246;rt</German>
+	</TEXT>
+<!-- Religion Advisor -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGRELIGIOUSTAB_TEXT</Tag>
+		<English>BUG Religion Advisor</English>
+		<German>BUG Religionsberater</German>
+		<Italian>Consigliere Religioso</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGRELIGIOUSTAB_HOVER</Tag>
+		<English>When checked, displays extra information on the Religious tab.</English>
+		<German>Zeigt zus&#228;tzliche Informationen auf der entsprechenden Seite des Religionsberaters an</German>
+		<Italian>Quando &#232; selezionato, mostra informazioni aggiuntive nella schermata del Consigliere Religioso.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWRELIGIONS_TEXT</Tag>
+		<English>Show Religions</English>
+		<German>Anzeige</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWRELIGIONS_LIST</Tag>
+		<English>All|Founded|Player's</English>
+		<German>Alle|Gegr&#252;ndete|Eigene</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SHOWRELIGIONS_HOVER</Tag>
+		<English>Select which religions should be shown in the top area of the Religion Advisor.</English>
+		<German>Bestimmt, welche Religionen in der oberen H&#228;lfte des  Religionsberaters angezeigt werden sollen</German>
+	</TEXT>
+<!-- Victory Advisor -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGVICTORIESTAB_TEXT</Tag>
+		<English>Victories tab</English>
+		<German>BUG Siegbedingungen</German>
+		<Italian>Scheda Vittorie</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGVICTORIESTAB_HOVER</Tag>
+		<English>When checked, displays extra information on the Victories tab.</English>
+		<German>Zeigt zus&#228;tzliche Informationen auf der entsprechenden Seite des Sieg-Bildschirms an</German>
+		<Italian>Quando &#232; selezionato, mostra informazioni aggiuntive nella Scheda delle Vittorie della Schermata Condizioni di Vittoria.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGMEMBERSTAB_TEXT</Tag>
+		<English>Members tab</English>
+		<German>BUG Mitglieder</German>
+		<Italian>Scheda Membri</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGMEMBERSTAB_HOVER</Tag>
+		<English>When checked, displays extra information on the Members tab.</English>
+		<German>Zeigt zus&#228;tzliche Informationen auf der entsprechenden Seite des Sieg-Bildschirms an</German>
+		<Italian>Quando &#232; selezionato, mostra informazioni aggiuntive nella Scheda dei Membri della Schermata Condizioni di Vittoria.</Italian>
+	</TEXT>
+<!-- Info Screen -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSTAB_TEXT</Tag>
+		<English>Graphs tab</English>
+		<German>BUG Diagramme</German>
+		<Italian>Scheda Grafici</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSTAB_HOVER</Tag>
+		<English>When checked, displays graphs in BUG format.</English>
+		<German>Zeigt die Diagramme auf der entsprechenden Seite des Info-Bildschirms in einer &#252;bersichtlicheren Anordnung an.</German>
+		<Italian>Quando &#232; selezionato, mostra la Scheda dei Grafici nel formato modificato del BUG Mod.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSLOGSCALE_TEXT</Tag>
+		<English>Graphs Log Scale</English>
+		<German>Log-Skala</German>
+		<Italian>Scala logaritmica</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGGRAPHSLOGSCALE_HOVER</Tag>
+		<English>When checked, displays graphs are displayed in Log(10) scale.</English>
+		<German>Zeigt Diagramme in einer logarithmischen Darstellung an</German>
+		<Italian>Quando &#232; selezionato, mostra i Grafici in scala logaritmica (su base 10).</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGINFOWONDERS_TEXT</Tag>
+		<English>Wonders tab</English>
+		<German>BUG Wunder</German>
+		<Italian>Scheda Meraviglie</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGINFOWONDERS_HOVER</Tag>
+		<English>When checked, displays the BUG version of the Wonders tab.</English>
+		<German>Zeigt die entsprechende Seite des Info-Bildschirms in einer &#252;bersichtlicheren Anordnung an</German>
+		<Italian>Quando &#232; selezionato, mostra la Scheda delle Meraviglie nel formato modificato del BUG Mod.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGINFOWONDERSPLAYERCOLOR_TEXT</Tag>
+		<English>Use Player Color</English>
+		<German>Spielerfarben</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGINFOWONDERSPLAYERCOLOR_HOVER</Tag>
+		<English>When checked, displays wonders on the BUG version of the Wonders tab using the owning player's color.</English>
+		<German>F&#228;rbt die Wundernamen auf der von BUG ver&#228;nderten Wunder-Seite in der Farbe des jeweiligen Spielers ein</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGSTATSTAB_TEXT</Tag>
+		<English>Stats tab</English>
+		<German>BUG Statistiken</German>
+		<Italian>Scheda Statistiche</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__BUGSTATSTAB_HOVER</Tag>
+		<English>When checked, displays improvements on Stats tab.</English>
+		<German>Zeigt die Statistiken auf der entsprechenden Seite des Info-Bildschirms in einer &#252;bersichtlicheren Anordnung an</German>
+		<Italian>Quando &#232; selezionato, mostra la Scheda delle Statistiche nella versione migliorata del BUG Mod</Italian>
+	</TEXT>
+<!-- Sevopedia -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SEVOPEDIA_TEXT</Tag>
+		<English>Enabled</English>
+		<French>Activ&#233;</French>
+		<German>Aktivieren</German>
+		<Italian>Attivata</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SEVOPEDIA_HOVER</Tag>
+		<English>When checked, uses the Sevopedia (requires restart).</English>
+		<French>En activant, utilise le Sevopedia (requi&#232;rt un red&#233;marrage).</French>
+		<German>Aktiviert die "Sevopedia" (erfordert Neustart)</German>
+		<Italian>Quando &#232; selezionato, viene utilizzata la Sevopedia invece della Civilopedia (&#232; richiesto un riavvio perch&#232; il cambiamento abbia effetto).</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SEVOPEDIASORTITEMLIST_TEXT</Tag>
+		<English>Sort Lists</English>
+		<French>Trier les Listes</French>
+		<German>Listen sortieren</German>
+		<Italian>Liste ordinate</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_ADVISORS__SEVOPEDIASORTITEMLIST_HOVER</Tag>
+		<English>When checked, the lists of units, buildings, technologies, etc. are sorted.</English>
+		<French>En activant, les listes des unit&#233;s, b&#226;timents, technologies, etc. seront tri&#233;es.</French>
+		<German>Sortiert die Listen der Einheiten, Geb&#228;uden, Technologien etc.</German>
+		<Italian>Quando &#232; selezionato, le liste di Unit&#224;, Edifici, Tecnologie ecc. sono ordinate.</Italian>
+	</TEXT>
+
+<!-- BUG Options Screen -->
+
+	<!-- Title and Buttons -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_TITLE</Tag>
+		<English>BUG Mod Options</English>
+		<French>Options du BUG Mod</French>
+		<German>Optionen der BUG Mod</German>
+		<Italian>Opzioni BUG Mod</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTBUTTON_HELP</Tag>
+		<English>BUG Mod Help</English>
+		<French>d'Aide du BUG Mod</French>
+		<German>Hilfe der BUG Mod</German>
+		<Italian>Guida del BUG Mod</Italian>
+		<Spanish>Ayuda por BUG Mod</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTBUTTON_HELP_HOVER</Tag>
+		<English>Opens the BUG Mod help file. You can hit [ALT + CTRL + F1] from the main interface.</English>
+		<French>Ouvre le fichier d'aide du BUG Mod. Vous pouvez aussi utiliser [ALT + CTRL + F1] dans l'&#233;cran principal du jeu.</French>
+		<German>&#214;ffnet die Hilfe-Datei der BUG Mod (Tastenkombination [STRG + ALT + F1] im Hauptbildschirm)</German>
+		<Italian>Apre il file della Guida del BUG Mod. Puoi utilizzare la scorciatoia [ALT + CTRL + F1] dall'interfaccia principale.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTBUTTON_EXIT_HOVER</Tag>
+		<English>Exits the BUG Options screen.</English>
+		<French>Sortir de l'&#233;cran d'options du BUG.</French>
+		<German>Den Optionensbildschirm der BUG Mod verlassen</German>
+		<Italian>Esci dalla schermata delle Opzioni del BUG Mod.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTIONS_SCREEN_HOVER</Tag>
+		<English>Shows the BUG Option Screen.</English>
+		<German>Ruft den Optionsbildschirm der BUG Mod auf</German>
+	</TEXT>
+<!-- Tabs and Labels -->
+	<!-- General Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_GENERAL</Tag>
+		<English>General</English>
+		<French>G&#233;n&#233;ral</French>
+		<German>Allgemein</German>
+		<Italian>Generale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_PROGRESSBARS</Tag>
+		<English>Progress Bars:</English>
+		<German>Fortschrittsbalken:</German>
+		<Italian>Progressi Barra:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_LEADERHEADS</Tag>
+		<English>Leaderheads:</English>
+		<German>Oberhaupt-Symbole:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_AUTOSAVE</Tag>
+		<English>AutoSave:</English>
+		<German>Automatisches Speichern:</German>
+		<Italian>Salvataggio automatico:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ACTIONS</Tag>
+		<English>Actions:</English>
+		<German>Aktionen:</German>
+		<Italian>Azioni:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_TECHWINDOW</Tag>
+		<English>Tech Splash Screen:</English>
+		<German>Technologie-Popup:</German>
+		<Italian>Scheda della scoperta tecnologica:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_BUFFY</Tag>
+		<English>BUFFY:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_MISC</Tag>
+		<English>Miscellaneous:</English>
+		<German>Sonstiges:</German>
+		<Italian>Varie:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_INIFILENOTFOUND</Tag>
+		<English>Cannot Find INI File</English>
+		<French>Fichier INI Non Trouv&#233;</French>
+		<German>INI-Datei nicht gefunden</German>
+		<Italian>Il file 'BUG Mod.ini' non &#232; stato trovato</Italian>
+	</TEXT>
+	<!-- Map Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_MAP</Tag>
+		<English>Map</English>
+		<German>Karte</German>
+		<Italian>Mappa</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_STRATEGYOVERLAY</Tag>
+		<English>Strategy Layer:</English>
+		<German>Strategie-Overlay:</German>
+		<Italian>Livello Strategico:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_CITYBAR</Tag>
+		<English>City Bar:</English>
+		<German>Stadtbalken:</German>
+		<Italian>Barra Cittadina:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_TILEHOVER</Tag>
+		<English>Tile Hover:</English>
+		<German>Gel&#228;ndefeld-Tooltip:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_MAPFINDER</Tag>
+		<English>MapFinder:</English>
+	</TEXT>
+	<!-- Advisors Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_ADVISORS</Tag>
+		<English>Advisors</English>
+		<French>Adviseurs</French>
+		<German>Berater</German>
+		<Italian>Consiglieri</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_DOMESTIC_ADVISOR</Tag>
+		<English>Domestic [F1]:</English>
+		<French>Domestique [F1]:</French>
+		<German>Inland [F1]:</German>
+		<Italian>Interno [F1]:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_FINANCE_ADVISOR</Tag>
+		<English>Finance [F2]:</English>
+		<German>Finanzen [F2]:</German>
+		<Italian>Economico [F2]:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_FOREIGN_ADVISOR</Tag>
+		<English>Foreign [F4]:</English>
+		<French>Etranger [F4]:</French>
+		<German>Ausland [F4]:</German>
+		<Italian>Estero [F4]:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_MILITARY_ADVISOR</Tag>
+		<English>Military [F5]:</English>
+		<French>Militaire [F5]:</French>
+		<German>Milit&#228;r [F5]:</German>
+		<Italian>Militare [F5]:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_TECHNOLOGY_ADVISOR</Tag>
+		<English>Technology [F6]:</English>
+		<French>Technologie [F6]:</French>
+		<German>Technologiebaum [F6]:</German>
+		<Italian>Tecnologico [F6]:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_RELIGIOUS_ADVISOR</Tag>
+		<English>Religion [F7]:</English>
+		<Italian>Religioso [F7]:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_VICTORY_CONDITIONS</Tag>
+		<English>Victory [F8]:</English>
+		<German>Siegbedingungen [F8]:</German>
+		<Italian>Vittoria [F8]:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_INFO_SCREENS</Tag>
+		<English>Info [F9]:</English>
+		<German>Info-Bildschirm [F9]:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SEVOPEDIA</Tag>
+		<English>Sevopedia [F12]:</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ESPIONAGE_SCREEN</Tag>
+		<English>Espionage [CTRL + E]:</English>
+		<French>Espionnage [CTRL + E]:</French>
+		<German>Spionage [STRG + E]:</German>
+		<Italian>Spionaggio [CTRL + E]:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ESPIONAGE_RATIO</Tag>
+		<English>Ratio:</English>
+		<French>Pro Rata:</French>
+		<German>Spionagepunktverh&#228;ltnis:</German>
+		<Italian>Rapporto:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ESPIONAGE_MISSIONS</Tag>
+		<English>Missions:</English>
+		<German>Spionagemissionen:</German>
+		<Italian>Missioni:</Italian>
+	</TEXT>
+	<!-- City Screen Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_CITYSCREEN</Tag>
+		<English>City Screen</English>
+		<German>Stadt-Bildschirm</German>
+		<Italian>Citt&#224;</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_HURRYDETAIL</Tag>
+		<English>Hurry Detail:</English>
+		<German>Produktionsbeschleunigung:</German>
+		<Italian>Accelerazione dettagliata:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_GREATPERSONBAR</Tag>
+		<English>Great Person Bar:</English>
+		<German>Anzeige f&#252;r Gro&#223;e Pers&#246;nlichkeit-Punkte:</German>
+		<Italian>Barra dei Grandi Personaggi:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_BUILDINGEFFECTS</Tag>
+		<English>Building Actual Effects:</English>
+		<German>Effektive Geb&#228;udeertr&#228;ge:</German>
+		<Italian>Effetti degli Edifici:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_PRODUCTIONQUEUE</Tag>
+		<English>Production Queue:</English>
+		<German>Produktionskette:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_PRODUCTIONDECAY</Tag>
+		<English>Decay:</English>
+		<German>Verfall:</German>
+		<Italian>Decadimento:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_CITYBAR_HOVER</Tag>
+		<English>City Bar Hover:</English>
+		<German>Stadtbalken-Tooltip:</German>
+		<Italian>Testo della Barra Cittadina:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_CITYANGER</Tag>
+		<English>City Anger:</English>
+		<German>Unzufriedenheit:</German>
+		<Italian>Rabbia Cittadina:</Italian>
+	</TEXT>
+	<!-- Clock Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_NJAGC</Tag>
+		<English>Clock</English>
+		<French>Horloge</French>
+		<German>Uhr</German>
+		<Italian>Orologio</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_NJAGC_REGULAR</Tag>
+		<English>Standard View:</English>
+		<French>Vue Standard:</French>
+		<German>Standardansicht:</German>
+		<Italian>Visualizzazione normale:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_NJAGC_ALTERNATE</Tag>
+		<English>Alternate View:</English>
+		<French>Vue Alternative:</French>
+		<German>Alternative Ansicht:</German>
+		<Italian>Visualizzazione alternativa:</Italian>
+	</TEXT>
+	<!-- Scores Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_SCORES</Tag>
+		<English>Scoreboard</English>
+		<French>Scores</French>
+		<German>Punkteanzeige</German>
+		<Italian>Punteggio</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SCORES_GENERAL</Tag>
+		<English>General:</English>
+		<German>Allgemein:</German>
+		<Italian>Generale:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SCORES_DEAD_CIVS</Tag>
+		<English>Dead Civilizations:</English>
+		<French>Civilisations Mortes:</French>
+		<German>Ausgel&#246;schte Zivilisationen:</German>
+		<Italian>Civilt&#224; scomparse:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SCORES_NEW_COLUMNS</Tag>
+		<English>Additional Columns:</English>
+		<German>Zus&#228;tzliche Spalten:</German>
+		<Italian>Colonne aggiuntive:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SCORES_ICONS</Tag>
+		<English>[SPACE]</English>
+		<French>Icons:</French>
+		<German>Symbole:</German>
+		<Italian>Icone:</Italian>
+		<Spanish>Icons:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SCORES_GRID</Tag>
+		<English>Advanced Layout:</English>
+		<French>Layout Avanc&#233;:</French>
+		<German>Erweitertes Layout:</German>
+		<Italian>Layout avanzato:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SCORES_ORDER</Tag>
+		<English>Column Order:</English>
+		<French>Ordre des Colonnes:</French>
+		<German>Spaltenreihenfolge:</German>
+		<Italian>Ordine delle colonne:</Italian>
+	</TEXT>
+	<!-- PLE Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_PLE</Tag>
+		<English>Plot List</English>
+		<German>Einheitenliste</German>
+		<Italian>Icone Unit&#224;</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_PLE_INDICATORS</Tag>
+		<English>Indicators:</English>
+		<German>Zus&#228;tzliche Anzeigen:</German>
+		<Italian>Indicatori:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_PLE_UNIT_INFO_TOOLTIP</Tag>
+		<English>Unit Info Tooltip:</English>
+		<French>Infobulle d'Info d'Unit&#233;:</French>
+		<German>Info-Tooltip:</German>
+		<Italian>Informazioni sulle Unit&#224;:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_PLE_UPGRADE_COST</Tag>
+		<English>Upgrade Cost:</English>
+		<German>Modernisierungskosten:</German>
+		<Italian>Costo di avanzamento:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_PLE_SPECIALTIES</Tag>
+		<English>Unit Specialties:</English>
+		<German>Spezialf&#228;higkeiten:</German>
+		<Italian>Caratteristiche:</Italian>
+	</TEXT>
+	<!-- ACO Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_ACO</Tag>
+		<English>Odds</English>
+		<German>Siegchancen</German>
+		<Italian>Probabilit&#224;</Italian>
+	</TEXT>
+	<!-- Alerts Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_ALERTS</Tag>
+		<English>Alerts</English>
+		<French>Alertes</French>
+		<German>Warnungen</German>
+		<Italian>Avvisi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ALERTS_CITY</Tag>
+		<English>City:</English>
+		<French>Ville:</French>
+		<German>St&#228;dte:</German>
+		<Italian>Citt&#224;:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ALERTS_DIPLOMACY</Tag>
+		<English>Diplomacy:</English>
+		<French>Diplomatie:</French>
+		<German>Diplomatie:</German>
+		<Italian>Diplomazia:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ALERTS_TRADE</Tag>
+		<English>Trading:</English>
+		<French>Commerce:</French>
+		<German>Handel:</German>
+		<Italian>Commercio:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ALERTS_VICTORY</Tag>
+		<English>Victory:</English>
+		<French>Victoire:</French>
+		<German>Vorherrschafts-Sieg:</German>
+		<Italian>Vittoria di Dominazione:</Italian>
+	</TEXT>
+	<!-- Logging Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_AUTOLOG</Tag>
+		<English>Logging</English>
+		<French>Log</French>
+		<German>Protokollierung</German>
+		<Italian>Registro</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_AUTOLOG_BUILDS</Tag>
+		<English>Research and Builds:</English>
+		<French>Recherche et Construction:</French>
+		<German>Forschung / Bauten:</German>
+		<Italian>Ricerca e costruzioni:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_AUTOLOG_CITIES</Tag>
+		<English>Cities:</English>
+		<French>Villes:</French>
+		<German>St&#228;dte:</German>
+		<Italian>Citt&#224;:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_AUTOLOG_EVENTS</Tag>
+		<English>Events:</English>
+		<French>Ev&#232;nements:</French>
+		<German>Ereignisse:</German>
+		<Italian>Eventi:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_AUTOLOG_POLITICS</Tag>
+		<English>Diplomacy:</English>
+		<French>Diplomatie:</French>
+		<German>Diplomatie:</German>
+		<Italian>Diplomazia:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_AUTOLOG_COMBAT</Tag>
+		<English>Combat:</English>
+		<German>Kampf:</German>
+		<Italian>Combattimento:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_AUTOLOG_TRADE</Tag>
+		<English>Trade and Demands:</English>
+		<German>Handel / Forderungen:</German>
+		<Italian>Commercio:</Italian>
+	</TEXT>
+	<!-- Unit Naming Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_UNITNAMING</Tag>
+		<English>Unit Naming</English>
+		<French>Noms des Unit&#233;s</French>
+		<German>Einheitennamen</German>
+		<Italian>Nomi Unit&#224;</Italian>
+	</TEXT>
+	<!-- System Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_SYSTEM</Tag>
+		<English>System</English>
+		<Italian>Sistema</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SUBVERSION</Tag>
+		<English>Subversion (SVN):</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_DEBUG_LOGGING</Tag>
+		<English>Debug Output:</English>
+		<German>Debug-Meldungen:</German>
+		<Italian>Output del debug:</Italian>
+	</TEXT>
+	<!-- Configuration Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_CONFIG</Tag>
+		<English>Config</English>
+		<French>Configuration</French>
+		<German>Pfade</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_MOD_DIRECTORY</Tag>
+		<English>Mod Directory:</English>
+		<German>Mod-Verzeichnis:</German>
+		<Italian>Directory del Mod:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ROOT_DIRECTORY</Tag>
+		<English>CivilizationIV.ini Directory:</English>
+		<German>CivilizationIV.ini:</German>
+		<Italian>Directory di CivilizationIV.ini:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_SETTINGS_DIRECTORY</Tag>
+		<English>Settings Directory:</English>
+		<German>Einstellungen:</German>
+		<Italian>Directory dei Settings:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_ASSET_SEARCH_PATHS</Tag>
+		<English>Asset Search Paths:</English>
+		<German>"Assets"-Verzeichnisse:</German>
+		<Italian>Percorsi di ricerca di 'Assets':</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_CDA_CONFIG</Tag>
+		<English>CDA Pages File:</English>
+		<French>Fichiers des Pages CDA:</French>
+		<German>"CDA"-Optionsdatei:</German>
+		<Italian>File di personalizzazione del CDA:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_UNITNAMING_CONFIG</Tag>
+		<English>Advanced Unit Naming Options File:</English>
+		<French>Fichier d'options Advanced Unit Naming:</French>
+		<German>"Advanced Unit Naming"-Optionsdatei:</German>
+		<Italian>File per la Denominazione avanzata delle Unit&#224;:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_AUTOLOG_LOG</Tag>
+		<English>Autolog File:</English>
+		<French>Fichier Autolog:</French>
+		<German>"Autolog"-Protokolldatei:</German>
+		<Italian>File del Registro Automatico:</Italian>
+	</TEXT>
+	<!-- Credits Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTTAB_CREDITS</Tag>
+		<English>Credits</English>
+		<Italian>Crediti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_BUG_TEAM</Tag>
+		<English>BUG Team</English>
+		<French>Team BUG</French>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_MOD_AUTHORS</Tag>
+		<English>Mod Authors</English>
+		<French>Auteurs des Mods</French>
+		<German>Mod-Autoren</German>
+		<Italian>Autori dei Mod inclusi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_MAP_SCRIPTS</Tag>
+		<English>Map Scripts</English>
+		<German>Map-Scripte</German>
+		<Italian>Autori dei Map Script</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_TRANSLATORS</Tag>
+		<English>Translators</English>
+		<French>Traducteurs</French>
+		<German>&#220;bersetzer</German>
+		<Italian>Traduttori</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTLABEL_THANKS</Tag>
+		<English>Special Thanks</English>
+		<German>Besonderer Dank an</German>
+		<Italian>Ringraziamenti</Italian>
+	</TEXT>
+
+<!-- BUG Options Screen -->
+
+	<!-- General -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTIONS_KEY_REMINDER</Tag>
+		<English>Press [BOLD]ALT + CTRL + O[\BOLD] to customize %s1</English>
+		<French>Poussez sur [BOLD]ALT + CTRL + O[\BOLD] pour configurer %s1</French>
+		<German>[BOLD]&lt;STRG + ALT + O>[\BOLD] dr&#252;cken, um %s1 anzupassen...</German>
+		<Italian>Premi [BOLD]CTRL+ALT+O[\BOLD] per personalizzare %s1</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPTIONS_KEY_REMINDER_MAC</Tag>
+		<English>Press [BOLD]ALT + CMD + O[\BOLD] to customize %s1</English>
+		<French>Poussez sur [BOLD]ALT + CMD + O[\BOLD] pour configurer %s1</French>
+		<German>[BOLD]&lt;CMD + ALT + O>[\BOLD] dr&#252;cken, um %s1 anzupassen...</German>
+		<Italian>Premi [BOLD]CMD+ALT+O[\BOLD] per personalizzare %s1</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_CREATED_BY_HEADER</Tag>
+		<English>Created by The BUG Mod.</English>
+		<German>Erstellt durch die BUG Mod.</German>
+		<Italian>Creato dal BUG Mod.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_DEFAULT</Tag>
+		<English>Default</English>
+		<German>Standard</German>
+		<Italian>Predefinito</Italian>
+	</TEXT>
+	<!-- Help -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_HELP_OPENING</Tag>
+		<English>Opening the BUG Mod help file...</English>
+		<French>Ouverture du fichier d'aide du BUG Mod...</French>
+		<German>&#214;ffnen der Hilfe-Datei der BUG Mod...</German>
+		<Italian>Apertura della Guida del BUG Mod in corso...</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_HELP_LANGUAGE</Tag>
+		<English>BUG Mod Help - ENG.chm</English>
+		<French>BUG Mod Help - FRA.chm</French>
+		<German>BUG Mod Help - DEU.chm</German>
+		<Italian>BUG Mod Help - ITA.chm</Italian>
+		<Spanish>BUG Mod Help - ESP.chm</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_HELP_MISSING_TITLE</Tag>
+		<English>Help File Not Found</English>
+		<French>Fichier d'Aide Non Trouv&#233;</French>
+		<German>Hilfe-Datei nicht gefunden</German>
+		<Italian>Guida del BUG Mod non trovata</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_HELP_MISSING_BODY</Tag>
+		<English>Could not find the file "%s1" in the search paths. See the System tab on the BUG Options screen [ALT + CTRL + O] for details.</English>
+		<French>Impossible de trouver le fichier "%s1" dans les chemins recherch&#233;s. Voir l'onglet System dans l'&#233;cran d'options du BUG Mod [ALT + CTRL + O] pour les d&#233;tails.</French>
+		<German>Die Datei "%s1" konnte innerhalb der erkannten Pfade nicht gefunden werden. Details finden Sie im Reiter "System" im Optionsbildschirm der BuG Mod (Tastenkombination [STRG + ALT + O]).</German>
+		<Italian>Impossibile trovare il file "%s1" nei percorsi di ricerca. Vedi la tabella 'System' nella Schermata di Opzioni del BUG Mod [ALT + CTRL + O] per maggiori dettagli.</Italian>
+	</TEXT>
+	<!-- Missing Civ4 Entries -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_RELIGIOUS_CITY</Tag>
+		<English>Cities</English>
+		<German>St&#228;dte</German>
+		<Italian>Citt&#224;</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_RELIGIOUS_TEMPLE</Tag>
+		<English>Temples:</English>
+		<German>Tempel:</German>
+		<Italian>Templi:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_RELIGIOUS_MONASTARY</Tag>
+		<English>Monastaries:</English>
+		<German>Kl&#246;ster:</German>
+		<Italian>Monasteri:</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_RELIGIOUS_MISSIONARY</Tag>
+		<English>Missionaries:</English>
+		<German>Missionare:</German>
+		<Italian>Missionari:</Italian>
+	</TEXT>
+	<!-- Gold Rate Warning -->
+	<TEXT>
+		<Tag>TXT_KEY_MISC_POS_GOLD</Tag>
+		<English>[ICON_GOLD]: %d1_Gold</English>
+		<French>[ICON_GOLD]: %d1_Gold</French>
+		<German>[ICON_GOLD]: %d1_Gold</German>
+		<Italian>[ICON_GOLD]: %d1_Gold</Italian>
+		<Spanish>[ICON_GOLD]: %d1_Gold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_NEG_GOLD</Tag>
+		<English>[ICON_GOLD]: [COLOR_NEGATIVE_TEXT]%d1_Gold[COLOR_REVERT]</English>
+		<French>[ICON_GOLD]: [COLOR_NEGATIVE_TEXT]%d1_Gold[COLOR_REVERT]</French>
+		<German>[ICON_GOLD]: [COLOR_NEGATIVE_TEXT]%d1_Gold[COLOR_REVERT]</German>
+		<Italian>[ICON_GOLD]: [COLOR_NEGATIVE_TEXT]%d1_Gold[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_GOLD]: [COLOR_NEGATIVE_TEXT]%d1_Gold[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_NEG_WARNING_GOLD_PER_TURN</Tag>
+		<English>[SPACE][COLOR_YELLOW](%D1_Change/Turn)[COLOR_REVERT]</English>
+		<French>[SPACE][COLOR_YELLOW](%D1_Change/tour)[COLOR_REVERT]</French>
+		<German>[SPACE][COLOR_YELLOW](%D1_Change/Runde)[COLOR_REVERT]</German>
+		<Italian>[SPACE][COLOR_YELLOW](%D1_Change/Turno)[COLOR_REVERT]</Italian>
+		<Spanish>[SPACE][COLOR_YELLOW](%D1_Change/turno)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_POS_WARNING_GOLD_PER_TURN</Tag>
+		<English>[SPACE][COLOR_YELLOW](%D1_Change/Turn)[COLOR_REVERT]</English>
+		<French>[SPACE][COLOR_YELLOW](%D1_Change/tour)[COLOR_REVERT]</French>
+		<German>[SPACE][COLOR_YELLOW](%D1_Change/Runde)[COLOR_REVERT]</German>
+		<Italian>[SPACE][COLOR_YELLOW](%D1_Change/Turno)[COLOR_REVERT]</Italian>
+		<Spanish>[SPACE][COLOR_YELLOW](%D1_Change/turno)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<!-- Great Person / General Bars -->
+	<TEXT>
+		<Tag>INTERFACE_GREAT_PERSON_NONE</Tag>
+		<English>%s1: None</English>
+		<French>%s1: Aucun</French>
+		<German>%s1: Keine</German>
+		<Italian>%s1: Nessuno</Italian>
+		<Spanish>%s1: Ninguno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_GREAT_PERSON_CITY</Tag>
+		<English>%s1: %s2</English>
+		<French>%s1: %s2</French>
+		<German>%s1: %s2</German>
+		<Italian>%s1: %s2</Italian>
+		<Spanish>%s1: %s2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_GREAT_PERSON_TURNS</Tag>
+		<English>%s1: (%d2)</English>
+		<French>%s1: (%d2)</French>
+		<German>%s1: (%d2)</German>
+		<Italian>%s1: (%d2)</Italian>
+		<Spanish>%s1: (%d2)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_GREAT_PERSON_CITY_TURNS</Tag>
+		<English>%s1: %s2 (%d3)</English>
+		<French>%s1: %s2 (%d3)</French>
+		<German>%s1: %s2 (%d3)</German>
+		<Italian>%s1: %s2 (%d3)</Italian>
+		<Spanish>%s1: %s2 (%d3)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_NEXT_GREAT_GENERAL_XP</Tag>
+		<English>%s1 (%d2)</English>
+		<French>%s1 (%d2)</French>
+		<German>%s1 (%d2)</German>
+		<Italian>%s1 (%d2)</Italian>
+		<Spanish>%s1 (%d2)</Spanish>
+	</TEXT>
+	<!-- Dead Civs Scoreboard -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_DEAD_CIV</Tag>
+		<English>DEAD</English>
+		<French>MORT</French>
+		<German>TOT</German>
+		<Italian>SCOMPARSA</Italian>
+		<Spanish>MUERTO</Spanish>
+	</TEXT>
+	<!-- Raw Yields -->
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_WORKED_TILES</Tag>
+		<English>Worked Tiles (%d1)</English>
+		<French>Cases Travaill&#233;es (%d1)</French>
+		<German>Gel&#228;ndefelder: %d1</German>
+		<Italian>Caselle lavorate (%d1)</Italian>
+		<Spanish>Azulejos Trabajados (%d1)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_CITY_TILES</Tag>
+		<English>City's Tiles (%d1)</English>
+		<German>Gel&#228;ndefelder: %d1</German>
+		<Italian>Caselle della Citt&#224; (%d1)</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_OWNED_TILES</Tag>
+		<English>Owned Tiles (%d1)</English>
+		<German>Gel&#228;ndefelder: %d1</German>
+		<Italian>Caselle possedute (%d1)</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_ALL_TILES</Tag>
+		<English>All Tiles (%d1)</English>
+		<German>Gel&#228;ndefelder: %d1</German>
+		<Italian>Tutte le caselle (%d1)</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_BASE_MODIFIER</Tag>
+		<!-- Bureaucracy, Forge, Factory, Power, Ironworks -->
+		<English>Modifiers (%D1%%)</English>
+		<German>Modifikatoren: %D1%%</German>
+		<Italian>Modificatori (%D1%%)</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_PRODUCTION_MODIFIER</Tag>
+		<!-- Heroic Epic, Military Academy, Drydock, Police State, Organized Religion, Traits, Resources -->
+		<English>%s1 (%D2%%)</English>
+		<French>%s1 (%D2%%)</French>
+		<German>%s1 (%D2%%)</German>
+		<Italian>%s1 (%D2%%)</Italian>
+		<Spanish>%s1 (%D2%%)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_SUBTOTAL</Tag>
+		<English>Subtotal</English>
+		<French>Total Partiel</French>
+		<German>Zwischensumme</German>
+		<Italian>Totale Parziale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_TOTAL</Tag>
+		<English>Total</English>
+		<German>Summe</German>
+		<Italian>Totale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RAW_YIELD_VIEW_TRADE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]View Trade Routes[COLOR_REVERT][NEWLINE]Displays the Trade Routes for this city.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Handelsverbindungen[COLOR_REVERT][NEWLINE]Anzeige der Handelsverbindungen dieser Stadt</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Rotte Commericali[COLOR_REVERT][NEWLINE]Visualizza le Rotte Commericali pr questa Citt&#224;.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RAW_YIELD_VIEW_FOOD</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]View Raw Food[COLOR_REVERT][NEWLINE]Displays a breakdown of all [ICON_FOOD] sources.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Rohertr&#228;ge aus Nahrung[COLOR_REVERT][NEWLINE]Aufschl&#252;sselung aller [ICON_FOOD]-Ertr&#228;ge</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Fonti di Cibo[COLOR_REVERT][NEWLINE]Visualizza un riassunto di tutte le fonti di [ICON_FOOD].</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RAW_YIELD_VIEW_PRODUCTION</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]View Raw Production[COLOR_REVERT][NEWLINE]Displays a breakdown of all [ICON_PRODUCTION] sources and modifiers.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Rohertr&#228;ge aus Produktion[COLOR_REVERT][NEWLINE]Aufschl&#252;sselung aller [ICON_PRODUCTION]-Ertr&#228;ge mit deren Modifikatoren</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Fonti di Produzione[COLOR_REVERT][NEWLINE]Visualizza un riassunto di tutte le fonti di [ICON_PRODUCTION] ed i modificatori relativi.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RAW_YIELD_VIEW_COMMERCE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]View Raw Commerce[COLOR_REVERT][NEWLINE]Displays a breakdown of all [ICON_COMMERCE] sources and modifiers.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Rohertr&#228;ge aus Wirtschaft[COLOR_REVERT][NEWLINE]Aufschl&#252;sselung aller [ICON_COMMERCE]-Ertr&#228;ge mit deren Modifikatoren</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Fonti di Commercio[COLOR_REVERT][NEWLINE]Visualizza un riassunto di tutte le fonti di [ICON_COMMERCE] ed i modificatori relativi.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RAW_YIELD_TILES_WORKED</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Count Worked Tiles[COLOR_REVERT][NEWLINE]Counts the tiles the city is currently working.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Nur bearbeitete Gel&#228;ndefelder[COLOR_REVERT][NEWLINE]Zur Berechnung der Rohertr&#228;ge werden alle Gel&#228;ndefelder, die von der Stadt derzeit bearbeitet werden, herangezogen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Caselle lavorate[COLOR_REVERT][NEWLINE]Considera solo le caselle della Citt&#224; attualmente lavorate.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RAW_YIELD_TILES_CITY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Count City's Tiles[COLOR_REVERT][NEWLINE]Counts the tiles the city controls.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Nur Stadtgel&#228;ndefelder[COLOR_REVERT][NEWLINE]Zur Berechnung der Rohertr&#228;ge werden alle Gel&#228;ndefelder, die von der Stadt derzeit kontrolliert werden, herangezogen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Caselle della Citt&#224;[COLOR_REVERT][NEWLINE]Considera le caselle attualmente controllate dalla Citt&#224;.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RAW_YIELD_TILES_OWNED</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Count Owned Tiles[COLOR_REVERT][NEWLINE]Counts the tiles in the city radius owned by your civilization.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Nur Gel&#228;ndefelder in Besitz[COLOR_REVERT][NEWLINE]Zur Berechnung der Rohertr&#228;ge werden alle Gel&#228;ndefelder, die sich im Einzugsgebiet der Stadt befinden und zur eigenen Zivilisation geh&#246;ren, herangezogen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Caselle possedute[COLOR_REVERT][NEWLINE]Considera le caselle nel raggio cittadino attualmente possedute dalla Civilt&#224;.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RAW_YIELD_TILES_ALL</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Count All Tiles[COLOR_REVERT][NEWLINE]Counts all tiles in the city radius regardless of owner.</English>
+		<German>[COLOR_HIGHLIGHT_TEXT]Alle Gel&#228;ndefelder[COLOR_REVERT][NEWLINE]Zur Berechnung der Rohertr&#228;ge werden alle Gel&#228;ndefelder, die sich im Einzugsgebiet der Stadt befinden, unabh&#228;ngig davon, welcher Zivilisation sie geh&#246;ren, herangezogen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Tutte le caselle[COLOR_REVERT][NEWLINE]Considera tutte le caselle nel raggio cittadino indipendentemente dal proprietario.</Italian>
+	</TEXT>
+	<!-- Food Assist -->
+	<TEXT>
+		<Tag>INTERFACE_CITY_GROWTH</Tag>
+		<English>Growth!</English>
+		<French>Croissance!</French>
+		<German>Wachstum!</German>
+		<Italian>Crescita!</Italian>
+		<Spanish>Crecimiento!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_SHRINKING</Tag>
+		<English>[COLOR_YELLOW]Shrinking (%d1 [NUM1:Turn:Turns])[COLOR_REVERT]</English>
+		<French>[COLOR_YELLOW]R&#233;tr&#233;cissement (%d1 [NUM1:tour:tours])[COLOR_REVERT]</French>
+		<German>[COLOR_YELLOW]Schrumpfen (%d1 [NUM1:Runde:Runden])[COLOR_REVERT]</German>
+		<Italian>[COLOR_YELLOW]Riduzione (%d1 [NUM1:Turno:Turni])[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_YELLOW]Contracci&#243;n (%d1 [NUM1:turno:turnos])[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_FOOD_GROW</Tag>
+		<English>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = +%d3[ICON_FOOD]</English>
+		<French>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = +%d3[ICON_FOOD]</French>
+		<German>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = +%d3[ICON_FOOD]</German>
+		<Italian>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = +%d3[ICON_FOOD]</Italian>
+		<Spanish>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = +%d3[ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_FOOD_SHRINK</Tag>
+		<English>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = [COLOR_WARNING_TEXT]%d3[COLOR_REVERT][ICON_BAD_FOOD]</English>
+		<French>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = [COLOR_WARNING_TEXT]%d3[COLOR_REVERT][ICON_BAD_FOOD]</French>
+		<German>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = [COLOR_WARNING_TEXT]%d3[COLOR_REVERT][ICON_BAD_FOOD]</German>
+		<Italian>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = [COLOR_WARNING_TEXT]%d3[COLOR_REVERT][ICON_BAD_FOOD]</Italian>
+		<Spanish>%d1[ICON_FOOD] - %d2[ICON_EATENFOOD] = [COLOR_WARNING_TEXT]%d3[COLOR_REVERT][ICON_BAD_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_FOOD_STAGNATE</Tag>
+		<English>%d1[ICON_FOOD] = %d2[ICON_EATENFOOD]</English>
+		<French>%d1[ICON_FOOD] = %d2[ICON_EATENFOOD]</French>
+		<German>%d1[ICON_FOOD] = %d2[ICON_EATENFOOD]</German>
+		<Italian>%d1[ICON_FOOD] = %d2[ICON_EATENFOOD]</Italian>
+		<Spanish>%d1[ICON_FOOD] = %d2[ICON_EATENFOOD]</Spanish>
+	</TEXT>
+	<!-- Whip Assist -->
+	<TEXT>
+		<Tag>INTERFACE_CITY_PRODUCTION_WHIP</Tag>
+		<English>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION]</English>
+		<French>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION]</French>
+		<German>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION]</German>
+		<Italian>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION]</Italian>
+		<Spanish>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_PRODUCTION_WHIP_PLUS_GOLD</Tag>
+		<English>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION] %d5[ICON_GOLD]</English>
+		<French>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION] %d5[ICON_GOLD]</French>
+		<German>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION] %d5[ICON_GOLD]</German>
+		<Italian>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION] %d5[ICON_GOLD]</Italian>
+		<Spanish>%s1 (%d2)   %d3[ICON_ANGRYPOP] %d4[ICON_PRODUCTION] %d5[ICON_GOLD]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>INTERFACE_CITY_PRODUCTION_BUY</Tag>
+		<English>%s1 (%d2)   -%d3[ICON_GOLD]</English>
+		<French>%s1 (%d2)   -%d3[ICON_GOLD]</French>
+		<German>%s1 (%d2)   -%d3[ICON_GOLD]</German>
+		<Italian>%s1 (%d2)   -%d3[ICON_GOLD]</Italian>
+		<Spanish>%s1 (%d2)   -%d3[ICON_GOLD]</Spanish>
+	</TEXT>
+	<!-- Production Decay -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_PRODUCTION_DECAY_WARNING</Tag>
+		<English>[COLOR_YELLOW][BOLD]![\BOLD][COLOR_REVERT] %s1</English>
+		<French>[COLOR_YELLOW][BOLD]![\BOLD][COLOR_REVERT] %s1</French>
+		<German>[COLOR_YELLOW][BOLD]![\BOLD][COLOR_REVERT] %s1</German>
+		<Italian>[COLOR_YELLOW][BOLD]![\BOLD][COLOR_REVERT] %s1</Italian>
+		<Spanish>[COLOR_YELLOW][BOLD]![\BOLD][COLOR_REVERT] %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_PRODUCTION_DECAY_THIS_TURN</Tag>
+		<English>[COLOR_WARNING_TEXT][BOLD]!![\BOLD][COLOR_REVERT] %s1</English>
+		<French>[COLOR_WARNING_TEXT][BOLD]!![\BOLD][COLOR_REVERT] %s1</French>
+		<German>[COLOR_WARNING_TEXT][BOLD]!![\BOLD][COLOR_REVERT] %s1</German>
+		<Italian>[COLOR_WARNING_TEXT][BOLD]!![\BOLD][COLOR_REVERT] %s1</Italian>
+		<Spanish>[COLOR_WARNING_TEXT][BOLD]!![\BOLD][COLOR_REVERT] %s1</Spanish>
+	</TEXT>
+	<!-- Military Advisor -->
+	<!-- Unit Groupings -->
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_TYPE_GROUPING</Tag>
+		<English>Unit Type</English>
+		<German>Einheitentyp</German>
+		<Italian>Tipo Unit&#224;</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_COMBAT_GROUPING</Tag>
+		<English>Combat Type</English>
+		<German>Einheitenklasse</German>
+		<Italian>Tipo Combattimento</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_COMBAT_GROUP_NONE</Tag>
+		<English>None</English>
+		<French>Rien</French>
+		<German>Keine</German>
+		<Italian>Nessuno</Italian>
+		<Spanish>Ninguno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LEVEL_GROUPING</Tag>
+		<English>Level</English>
+		<French>Niveau</French>
+		<German>Stufe</German>
+		<Italian>Livello</Italian>
+		<Spanish>Nivel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LEVEL_GROUP</Tag>
+		<English>Level %s1</English>
+		<French>Niveau %s1</French>
+		<German>Stufe %s1</German>
+		<Italian>Livello %s1</Italian>
+		<Spanish>Nivel %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_PROMOTION_GROUPING</Tag>
+		<English>Promotions</English>
+		<German>Bef&#246;rderungen</German>
+		<Italian>Promozioni</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_PROMOTION_GROUP_NONE</Tag>
+		<English>None</English>
+		<French>Rien</French>
+		<German>Keine</German>
+		<Italian>Nessuno</Italian>
+		<Spanish>Ninguno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUPING</Tag>
+		<English>Location</English>
+		<German>Standort</German>
+		<Italian>Luogo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_DOMESTIC_CITY</Tag>
+		<English>Domestic City</English>
+		<German>Eigene Stadt</German>
+		<Italian>Citt&#224; propria</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_DOMESTIC_TERRITORY</Tag>
+		<English>Domestic Territory</English>
+		<German>Eigenes Gebiet</German>
+		<Italian>Territorio proprio</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_TEAM_CITY</Tag>
+		<English>Team City</English>
+		<German>Verb&#252;ndete Stadt</German>
+		<Italian>Citt&#224; alleata</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_TEAM_TERRITORY</Tag>
+		<English>Team Territory</English>
+		<German>Verb&#252;ndetes Gebiet</German>
+		<Italian>Territorio alleato</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_FRIENDLY_CITY</Tag>
+		<English>Friendly City</English>
+		<German>Befreundete Stadt</German>
+		<Italian>Citt&#224; amica</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_FRIENDLY_TERRITORY</Tag>
+		<English>Friendly Territory</English>
+		<German>Befreundetes Gebiet</German>
+		<Italian>Territorio amico</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_NEUTRAL_TERRITORY</Tag>
+		<English>Neutral Territory</English>
+		<German>Neutrales Gebiet</German>
+		<Italian>Territorio neutrale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_ENEMY_TERRITORY</Tag>
+		<English>Enemy Territory</English>
+		<German>Feindliches Gebiet</German>
+		<Italian>Territorio nemico</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_LOCATION_GROUP_BARBARIAN_TERRITORY</Tag>
+		<English>Barbarian Territory</English>
+		<German>Barbarisches Gebiet</German>
+		<Italian>Territorio barbaro</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUPING</Tag>
+		<English>Orders</English>
+		<German>Befehle</German>
+		<Italian>Ordini</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_NONE</Tag>
+		<English>None</English>
+		<German>Keine</German>
+		<Italian>Nessuno</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_SKIP</Tag>
+		<English>Skip</English>
+		<German>Runde &#252;berspringen</German>
+		<Italian>Passa</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_SLEEP</Tag>
+		<English>Sleep</English>
+		<German>Ausruhen</German>
+		<Italian>A riposo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_FORTIFY</Tag>
+		<English>Fortify</English>
+		<German>Verschanzen</German>
+		<Italian>Fortificarsi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_HEAL</Tag>
+		<English>Heal</English>
+		<German>Heilen</German>
+		<Italian>Curarsi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_SENTRY</Tag>
+		<English>Sentry</English>
+		<German>Wache</German>
+		<Italian>Sentinella</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_INTERCEPT</Tag>
+		<English>Intercept</English>
+		<German>Abfangen</German>
+		<Italian>Intercettare</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_PATROL</Tag>
+		<English>Patrol</English>
+		<German>Patrouille</German>
+		<Italian>Pattugliare</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_PLUNDER</Tag>
+		<English>Blockade</English>
+		<Italian>Embargo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_BUILD</Tag>
+		<English>Build Improvement</English>
+		<German>Modernisierung errichten</German>
+		<Italian>Costruire miglioramenti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_CONSTRUCT</Tag>
+		<English>Construct Building</English>
+		<German>Geb&#228;ude errichten</German>
+		<Italian>Edificare</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_GOTO</Tag>
+		<English>Go To</English>
+		<German>Gehe zu</German>
+		<Italian>Andare</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_EXPLORE</Tag>
+		<English>Explore</English>
+		<German>Erkunden</German>
+		<Italian>Esplorare</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_AUTO_BUILD</Tag>
+		<English>Auto Build Improvements</English>
+		<German>Modernisierungen errichten (automatisch)</German>
+		<Italian>Miglioramenti automatici</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_AUTO_NETWORK</Tag>
+		<English>Auto Trade Network</English>
+		<German>Handelsnetz errichten (automatisch)</German>
+		<Italian>Rete stradale automatica</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_AUTO_CITY</Tag>
+		<English>Auto Improve City</English>
+		<German>N&#228;chste Stadt modernisieren (automatisch)</German>
+		<Italian>Miglioramenti cittadini automatici</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_AUTO_RELIGION</Tag>
+		<English>Spread Religion/Corporation</English>
+		<German>Religion/Kapitalgesellschaft verbreiten</German>
+		<Italian>Diffondere religioni/corporazioni</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GROUPER_ORDER_GROUP_OTHER</Tag>
+		<English>Other</English>
+		<German>Andere</German>
+		<Italian>Altri</Italian>
+	</TEXT>
+	<!-- General Screen -->
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_UNIT_LOCATION</Tag>
+		<English>Deployment</English>
+		<French>Deploiement</French>
+		<German>Aufstellung</German>
+		<Italian>Dispiegamento</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITUATION_REPORT</Tag>
+		<English>Sit-Rep</English>
+		<French>Rapport</French>
+		<German>Lagebericht</German>
+		<Italian>Rapporti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_STRATEGIC_ADVANTAGES</Tag>
+		<English>Strategic Advantages</English>
+		<German>Strategische Vorteile</German>
+		<Italian>Vantaggi Strategici</Italian>
+	</TEXT>
+	<!-- Situation Report Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_WORST</Tag>
+		<English>Worst</English>
+		<Italian>Peggior</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_ENEMY</Tag>
+		<English>Enemy</English>
+		<German>Erzfeind</German>
+		<Italian>Nemico</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_THREAT_INDEX</Tag>
+		<English>Threat Index</English>
+		<French>Index de Menace</French>
+		<German>Bedrohungslage</German>
+		<Italian>Rischio</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_WARS</Tag>
+		<English>Wars</English>
+		<French>Guerres</French>
+		<German>Kriege</German>
+		<Italian>Guerre</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_WARS_ACTIVE</Tag>
+		<English>Active</English>
+		<French>Actives</French>
+		<German>Im Gange</German>
+		<Italian>In corso</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_WARS_OPTIONAL</Tag>
+		<English>Possible</English>
+		<German>M&#246;glich</German>
+		<Italian>Potenziali</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_POSSIBLE_EMBARGOS_1</Tag>
+		<English>Possible</English>
+		<German>M&#246;gliche</German>
+		<Italian>Potenziali</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_POSSIBLE_EMBARGOS_2</Tag>
+		<English>Embargos</English>
+		<Italian>Embarghi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_VASSALS</Tag>
+		<English>Vassals</English>
+		<French>Vassaux</French>
+		<German>Vasallen</German>
+		<Italian>Vassalli</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_VASSAL</Tag>
+		<English>Vassal</English>
+		<German>Vasall</German>
+		<Italian>Vassallo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_SITREP_DEFPACTS</Tag>
+		<English>Def Pacts</English>
+		<French>Pactes D&#233;fensifs</French>
+		<German>Vert.b&#252;nd.</German>
+		<Italian>Patti Difensivi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_THREAT_INDEX_LOW</Tag>
+		<English>Low</English>
+		<French>Bas</French>
+		<German>Gering</German>
+		<Italian>Rischio Basso</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_THREAT_INDEX_GUARDED</Tag>
+		<English>Guarded</English>
+		<French>En garde</French>
+		<German>Erh&#246;ht</German>
+		<Italian>Prudenza</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_THREAT_INDEX_ELEVATED</Tag>
+		<English>Elevated</English>
+		<French>Elev&#233;</French>
+		<German>Angespannt</German>
+		<Italian>Rischio Notevole</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_THREAT_INDEX_HIGH</Tag>
+		<English>High</English>
+		<French>Haut</French>
+		<German>Alarmierend</German>
+		<Italian>Allarme</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_THREAT_INDEX_SEVERE</Tag>
+		<English>Severe</English>
+		<French>S&#233;v&#232;re</French>
+		<German>Akut</German>
+		<Italian>Grave allarme</Italian>
+	</TEXT>
+	<!-- Strategic Advantages Tab -->
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_STRATADV_RESOURCES</Tag>
+		<English>Resources</English>
+		<French>Ressources</French>
+		<German>Ressourcen</German>
+		<Italian>Risorse</Italian>
+		<Spanish>Recursos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_STRATADV_OURS</Tag>
+		<English>Ours</English>
+		<French>Nous</French>
+		<German>Eigene</German>
+		<Italian>Propri</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_STRATADV_THEIRS</Tag>
+		<English>Theirs</English>
+		<French>Eux</French>
+		<German>Gegnerische</German>
+		<Italian>Altrui</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_STRATADV_OUR_UNITS</Tag>
+		<English>Our Units</English>
+		<German>Eigene Einheiten</German>
+		<Italian>Nostre Unit&#224;</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_STRATADV_THEIR_UNITS</Tag>
+		<English>Their Units</English>
+		<German>Gegnerische Einheiten</German>
+		<Italian>Unit&#224; Altrui</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_STRATADV_KNOWN</Tag>
+		<English>Known</English>
+		<German>Bekannt</German>
+		<Italian>Noti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MILITARY_STRATADV_POSSIBLE</Tag>
+		<English>Possible</English>
+		<German>M&#246;glich</German>
+		<Italian>Possibili</Italian>
+	</TEXT>
+	<!-- Reminders -->
+	<TEXT>
+		<Tag>TXT_KEY_REMINDER_HEADER</Tag>
+		<English>Create Reminder</English>
+		<French>Cr&#233;ez un Rappel</French>
+		<German>Erinnerung schreiben</German>
+		<Italian>Crea un Promemoria</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REMINDER_PROMPT</Tag>
+		<English>Enter the number of turns until the reminder goes off and the message to display.</English>
+		<French>Entrez le nombre de tours jusqu'&#224; l'apparition du rappel et le message &#224; montrer.</French>
+		<German>Geben Sie die Anzahl der Runden an, bis die Erinnerung angezeigt werden soll.</German>
+		<Italian>Inserisci il numero di turni che devono passare prima che il promemoria scada ed il messaggio venga visualizzato.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REMIND_END_TURN_PROMPT</Tag>
+		<English>Show reminder again at the end of this turn?</English>
+		<French>Remontrer le rappel &#224; la fin de ce tour?</French>
+		<German>Erinnerung am Ende dieser Runde erneut anzeigen?</German>
+		<Italian>Mostrare nuovamente il promemoria alla fine del turno?</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REMIND_NEXT_TURN_PROMPT</Tag>
+		<English>Show reminder again next turn?</English>
+		<French>Remontrer le rappel au prochain tour?</French>
+		<German>Erinnerung n&#228;chste Runde erneut anzeigen?</German>
+		<Italian>Mostrare nuovamente il promemoria il prossimo turno?</Italian>
+	</TEXT>
+	<!-- Tech Prefs -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_TECH_PREFS_ALL</Tag>
+		<English>Research Preference Order</English>
+		<German>Forschungspriorit&#228;ten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_TECH_PREFS_CURRENT</Tag>
+		<English>Current Technologies</English>
+		<German>Derzeitige Technologien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_TECH_PREFS_FUTURE</Tag>
+		<English>Future Technologies</English>
+		<German>Zuk&#252;nftige Technologien</German>
+	</TEXT>
+	<!-- Fix for Overlap in Foreign Advisor Tab in Italian Translation -->
+	<TEXT>
+		<Tag>TXT_KEY_FOREIGN_ADVISOR_INFO</Tag>
+		<English>Info</English>
+		<French>Infos</French>
+		<Spanish>Info.</Spanish>
+	</TEXT>
+	<!-- Fix for wrong translation of "Power" in German, Italian and Spanish language -->
+	<TEXT>
+		<Tag>TXT_KEY_POWER</Tag>
+		<English>Power</English>
+		<French>Puissance</French>
+		<German>Macht</German>
+		<Italian>Energia</Italian>
+		<Spanish>Energ&#237;a</Spanish>
+	</TEXT>
+	<!-- Graph Screen -->
+	<TEXT>
+		<Tag>TXT_KEY_SHOW_ALL</Tag>
+		<English>Show All</English>
+		<German>Alle anzeigen</German>
+		<Italian>Mostra tutti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SHOW_NONE</Tag>
+		<English>Show None</English>
+		<German>Keine anzeigen</German>
+		<Italian>Cancella tutti</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LOGSCALE</Tag>
+		<English>Log Scale</English>
+		<German>Log-Skala</German>
+		<Italian>Scala logaritmica</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_CHART_HELP</Tag>
+		<English>Zoom in and out by clicking on the body of the chart</English>
+		<German>Mit einem Mausklick auf ein Diagramm kann zwischen der verkleinerten Ansicht und der Gro&#223;ansicht umgeschalten werden</German>
+		<Italian>Alterna i livelli di zoom cliccando sul grafico</Italian>
+	</TEXT>
+	<!-- Wonders Screen -->
+	<TEXT>
+		<Tag>TXT_KEY_WONDER_NAME</Tag>
+		<English>Name</English>
+		<Italian>Nome</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WONDER_DATE</Tag>
+		<English>Date</English>
+		<German>Errichtet</German>
+		<Italian>Data</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WONDER_OWNER</Tag>
+		<English>Owner</English>
+		<German>Besitzer</German>
+		<Italian>Proprietario</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WONDER_CITY</Tag>
+		<English>City</English>
+		<German>Stadt</German>
+		<Italian>Citt&#224;</Italian>
+	</TEXT>
+	<!-- Victory Screen -->
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_TURNS_NEXT_VOTE</Tag>
+		<English>Turns until next Vote: %d1</English>
+		<German>N&#228;chste Abstimmung in %d1 [NUM1:Runde:Runden]</German>
+		<Italian>Turni alla prossima Votazione: %d1</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_VOTES_NEXT_ELECTION</Tag>
+		<English>Votes until next Election: %d1</English>
+		<German>N&#228;chsten Wahl in %d1 [NUM1:Runde:Runden]</German>
+		<Italian>Voti alla prossima Elezione: %d1</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VOTESOURCE_NON_VOTING_MEMBER</Tag>
+		<English>Non Member</English>
+		<French>Non Membres</French>
+		<German>Nichtmitglied</German>
+		<Italian>Non Membri</Italian>
+		<Spanish>No Miembro</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_TOGGLE_VOTES</Tag>
+		<English>Toggle Votes</English>
+		<French>Alterner Voix</French>
+		<German>Wahlen umschalten</German>
+		<Italian>Alterna Voti</Italian>
+		<Spanish>Alternar Votos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_VASSALED</Tag>
+		<English>%d1 vassaled</English>
+		<German>Vasallen: %d1</German>
+		<Italian>%d1 vassallo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_UNKNOWN</Tag>
+		<English>%d1 unknown</English>
+		<German>unbekannt: %d1</German>
+		<Italian>%d1 sconosciuto</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_DIPLOMATIC</Tag>
+		<English>Diplomatic Victory</English>
+		<French>Victoire diplomatique</French>
+		<German>Diplomatischer Sieg</German>
+		<Italian>Vittoria Diplomatica</Italian>
+		<Spanish>La victoria diplom&#225;tica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_VOTES_TOTAL</Tag>
+		<English>Total</English>
+		<German>Summe</German>
+		<Italian>Totale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_VOTES_REQUIRED</Tag>
+		<English>[SPACE](%s1 votes required)</English>
+		<German>[SPACE](%s1 Stimmen ben&#246;tigt)</German>
+		<Italian>[SPACE](%s1 voti richiesti)</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_BUG_POLL_RESULT</Tag>
+		<English>%s1 (%s2) leads by %s3.</English>
+		<French>%s1 (%s2) conduit par %s3.</French>
+		<German>%s1 (%s2) f&#252;hrt mit %s3 Vorsprung.</German>
+		<Italian>%s1 (%s2) in testa di %s3.</Italian>
+		<Spanish>%s1 (%s2) conduce por %s3.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_VICTORY_BUG_POLL_ERROR</Tag>
+		<English>Source: Recent BUG Poll, statistical margin of error %s1.</English>
+		<French>Source: Sondage BUG r&#233;cents, marge d'erreur %s1.</French>
+		<German>Quelle: Neueste BUG-Umfrage (statistische Fehlerquote: %s1)</German>
+		<Italian>Fonte: recente sondaggio BUG, margine di errore statistico %s1.</Italian>
+		<Spanish>Fuente: Encuesta BUG recientes, margen estad&#237;stico de error %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPH_SMOOTHING</Tag>
+		<English>Smooth Factor %d1_Num</English>
+		<German>Gl&#228;ttungsstufe %d1_Num</German>
+		<Italian>Fattore di smoothing %d1_Num</Italian>
+	</TEXT>
+	<!-- Maze Map Stuff -->
+	<TEXT>
+		<Tag>TXT_KEY_MAP_SCRIPT_MAZE_LAND_PLUS1</Tag>
+		<English>Extra Land Strip</English>
+		<German>Zus&#228;tzlicher Landstrich</German>
+		<Italian>Terreno aggiuntivo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRUE</Tag>
+		<English>True</English>
+		<German>Ja</German>
+		<Italian>Vero</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FALSE</Tag>
+		<English>False</English>
+		<German>Nein</German>
+		<Italian>Falso</Italian>
+	</TEXT>
+	<!-- Hall of Fame Screen: Win/Loss Result -->
+	<TEXT>
+		<Tag>TXT_KEY_HOF_WINLOSS_WIN</Tag>
+		<English>W-</English>
+		<German>S-</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HOF_WINLOSS_LOSS</Tag>
+		<English>L-</English>
+		<German>N-</German>
+	</TEXT>
+	<!-- Espionage Advisor -->
+	<TEXT>
+		<Tag>TXT_KEY_ESPIONAGE_MISSIONS_TAB</Tag>
+		<English>Missions</English>
+		<German>Missionen</German>
+		<Italian>Missioni</Italian>
+		<Spanish>Misiones</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ESPIONAGE_SPYVSPY_TAB</Tag>
+		<English>Spy v Spy</English>
+		<German>Gegenspionage</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ESPIONAGE_AI_SPENDING_TOGGLE</Tag>
+		<English>Show AI Espionage</English>
+		<German>KI-Spionage</German>
+	</TEXT>
+	<!-- BUG Finance Advisor -->
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_DOMESTIC_TRADE</Tag>
+		<English>Domestic Trade</English>
+		<French>Commerce Domestique</French>
+		<German>Binnenhandel</German>
+		<Italian>Commercio Interno</Italian>
+		<Spanish>Comercio Dom&#233;stico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_FOREIGN_TRADE</Tag>
+		<English>Foreign Trade</English>
+		<French>Commerce Ext&#233;rieur</French>
+		<German>Au&#223;enhandel</German>
+		<Italian>Commercio Estero</Italian>
+		<Spanish>Comercio Exterior</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_FOREIGN_OVERSEAS_TRADE</Tag>
+		<English>Overseas Trade</English>
+		<French>Commerce d'outre-mer</French>
+		<German>&#220;berseehandel</German>
+		<Italian>Commercio d'oltreoceano</Italian>
+		<Spanish>Comercio de Ultramar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RELIGIOUS_SHRINES</Tag>
+		<English>Religious Shrines</English>
+		<French>Lieux Saints</French>
+		<German>Schreine</German>
+		<Italian>Santuari</Italian>
+		<Spanish>Santuarios</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_FINANCIAL_ADVISOR_COMMERCE</Tag>
+		<English>Total Commerce</English>
+		<French>Commerce total</French>
+		<German>Handel insgesamt</German>
+		<Italian>Commercio totale</Italian>
+		<Spanish>Comercio total</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_FINANCIAL_ADVISOR_BUILDING_COUNT_AVERAGE</Tag>
+		<English>(%d1 &#215; %s2[ICON_GOLD])</English>
+		<French>(%d1 &#215; %s2[ICON_GOLD])</French>
+		<German>(%d1 &#215; %s2[ICON_GOLD])</German>
+		<Italian>(%d1 &#215; %s2[ICON_GOLD])</Italian>
+		<Spanish>(%d1 &#215; %s2[ICON_GOLD])</Spanish>
+	</TEXT>
+	<!-- Foreign Advisor Info Screen Header Text
+		 All the entries except POSSIBLE_FAV_CIVICS must be kept 
+		 short so that everything lines up properly. 4-6 letters 
+		 is usually best; some can probably fit 8-9 if the letters 
+		 used are narrow (e.g. i,l,t) When in doubt, check the FA 
+		 Info Screen to be sure it looks okay. The CIVICOPTION
+		 abbreviations should be similar to the full words used in 
+		 the CIVICOPTION keys in CIV4GameTextInfos_Objects.xml -->
+	<TEXT>
+		<Tag>TXT_KEY_FOREIGN_ADVISOR_ABBR_LEADER</Tag>
+		<English>Leader</English>
+		<French>Chef</French>
+		<German>Oberhaupt</German>
+		<Spanish>L&#237;der</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FOREIGN_ADVISOR_ABBR_ATTITUDE</Tag>
+		<English>Attitude</English>
+		<German>Einstellung</German>
+		<Italian>Attitudine</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FOREIGN_ADVISOR_POSSIBLE_FAV_CIVICS</Tag>
+		<English>Possible Favorite Civics</English>
+		<German>M&#246;gliche Vorlieben</German>
+		<Italian>Possibili Forme di Governo Favorite</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_ABBR_GOVERNMENT</Tag>
+		<English>Govt</English>
+		<German>Regierung</German>
+		<Italian>Governo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_ABBR_LEGAL</Tag>
+		<English>Legal</English>
+		<French>
+			<Text>Justice</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Recht</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>legale</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>legal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_ABBR_LABOR</Tag>
+		<English>Labor</English>
+		<French>
+			<Text>Travail</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Arbeit</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Lavoro</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>labor</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_ABBR_ECONOMY</Tag>
+		<English>Econ</English>
+		<German>&#214;konomie</German>
+		<Italian>Economia</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_ABBR_RELIGION</Tag>
+		<English>Religion</English>
+		<French>
+			<Text>Religion</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Religion</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Religione</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Religi&#243;n</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -309,6 +309,9 @@ public:
 	void setYResolution(int iNewValue);
 	void changeYResolution(int iChange);
 
+	void addGreatPersonBornName(std::wstring sName);
+	bool isGreatPersonBorn(std::wstring sName);
+
 protected:
 	CvGame* m_pGame;
 };

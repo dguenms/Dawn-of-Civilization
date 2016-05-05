@@ -1406,7 +1406,6 @@
 			<ModelConnections>NE SE SW NW</ModelConnections>
 			<Rotations>0 90 180 270</Rotations>
 		</RouteModelInfo>
-		
 		<RouteModelInfo>
 			<ModelFile>Art/Terrain/Routes/Roman Roads/RailroadA00.nif</ModelFile>
 			<LateModelFile>Art/Terrain/Routes/Roman Roads/RailroadA00.nif</LateModelFile>

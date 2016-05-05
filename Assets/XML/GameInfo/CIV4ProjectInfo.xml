@@ -82,7 +82,6 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
 			<iCost>1000</iCost>
-			<!-- Rhye -->
 			<iNukeInterception>50</iNukeInterception>
 			<iTechShare>0</iTechShare>
 			<EveryoneSpecialUnit>NONE</EveryoneSpecialUnit>
@@ -102,7 +101,7 @@
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<CreateSound/>
-			<MovieDefineTag/>
+			<MovieDefineTag>ART_DEF_MOVIE_SDI</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
 			<Type>PROJECT_APOLLO_PROGRAM</Type>
@@ -134,19 +133,18 @@
 				</BonusProductionModifier>
 			</BonusProductionModifiers>
 			<CreateSound/>
-			<MovieDefineTag/>
+			<MovieDefineTag>ART_DEF_MOVIE_APOLLO_PROGRAM</MovieDefineTag>
 		</ProjectInfo>
 		<ProjectInfo>
 			<Type>PROJECT_SS_COCKPIT</Type>
 			<Description>TXT_KEY_PROJECT_SS_COCKPIT</Description>
 			<Civilopedia>TXT_KEY_PROJECT_SS_COCKPIT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_SHIP_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_PROJECT_SPACE_COCKPIT_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_FIBER_OPTICS</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<!-- Rhye -->
 			<iCost>700</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
@@ -183,13 +181,12 @@
 			<Type>PROJECT_SS_LIFE_SUPPORT</Type>
 			<Description>TXT_KEY_PROJECT_SS_LIFE_SUPPORT</Description>
 			<Civilopedia>TXT_KEY_PROJECT_SS_LIFE_SUPPORT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_SHIP_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_PROJECT_SPACE_LIFE_SUPPORT_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_ECOLOGY</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<!-- Rhye -->
 			<iCost>800</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
@@ -226,13 +223,12 @@
 			<Type>PROJECT_SS_STASIS_CHAMBER</Type>
 			<Description>TXT_KEY_PROJECT_SS_STASIS_CHAMBER</Description>
 			<Civilopedia>TXT_KEY_PROJECT_SS_STASIS_CHAMBER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_SHIP_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_PROJECT_SPACE_STASIS_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_GENETICS</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<!-- Rhye -->
 			<iCost>900</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
@@ -264,13 +260,12 @@
 			<Type>PROJECT_SS_DOCKING_BAY</Type>
 			<Description>TXT_KEY_PROJECT_SS_DOCKING_BAY</Description>
 			<Civilopedia>TXT_KEY_PROJECT_SS_DOCKING_BAY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_SHIP_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_PROJECT_SPACE_DOCKING_BAY_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_SATELLITES</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
-			<!-- Rhye -->
 			<iCost>1700</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
@@ -307,13 +302,12 @@
 			<Type>PROJECT_SS_ENGINE</Type>
 			<Description>TXT_KEY_PROJECT_SS_ENGINE</Description>
 			<Civilopedia>TXT_KEY_PROJECT_SS_ENGINE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_SHIP_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_PROJECT_SPACE_ENGINE_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_FUSION</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>2</iMaxTeamInstances>
-			<!-- Rhye -->
 			<iCost>1300</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
@@ -350,13 +344,12 @@
 			<Type>PROJECT_SS_CASING</Type>
 			<Description>TXT_KEY_PROJECT_SS_CASING</Description>
 			<Civilopedia>TXT_KEY_PROJECT_SS_CASING_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_SHIP_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_PROJECT_SPACE_CASING_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_COMPOSITES</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>5</iMaxTeamInstances>
-			<!-- Rhye -->
 			<iCost>600</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>
@@ -398,13 +391,12 @@
 			<Type>PROJECT_SS_THRUSTERS</Type>
 			<Description>TXT_KEY_PROJECT_SS_THRUSTERS</Description>
 			<Civilopedia>TXT_KEY_PROJECT_SS_THRUSTERS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROJECT_SPACE_SHIP_STRATEGY</Strategy>
+			<Strategy>TXT_KEY_PROJECT_SPACE_THRUSTERS_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
 			<TechPrereq>TECH_SUPERCONDUCTORS</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>5</iMaxTeamInstances>
-			<!-- Rhye -->
 			<iCost>900</iCost>
 			<iNukeInterception>0</iNukeInterception>
 			<iTechShare>0</iTechShare>

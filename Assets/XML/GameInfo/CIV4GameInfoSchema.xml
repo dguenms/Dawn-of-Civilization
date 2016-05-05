@@ -217,6 +217,8 @@
 	<ElementType name="MovieFile" content="textOnly"/>
 	<ElementType name="MovieSound" content="textOnly"/>
 	<ElementType name="Sound" content="textOnly"/>
+	<ElementType name="bProselytizing" content="textOnly"/>
+	<ElementType name="bLocal" content="textOnly"/>
 	<ElementType name="ReligionInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -226,6 +228,8 @@
 		<element type="FreeUnitClass"/>
 		<element type="iFreeUnits"/>
 		<element type="iSpreadFactor"/>
+		<element type="bProselytizing" minOccurs="0"/>
+		<element type="bLocal" minOccurs="0"/>
 		<element type="GlobalReligionCommerces"/>
 		<element type="HolyCityCommerces"/>
 		<element type="StateReligionCommerces"/>
@@ -629,7 +633,7 @@
 	<ElementType name="CivicOptionInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
-		<element type="TraitNoUpkeeps"/>
+		<element type="TraitNoUpkeeps" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="CivicOptionInfos" content="eltOnly">
 		<element type="CivicOptionInfo" maxOccurs="*"/>
@@ -683,12 +687,10 @@
 	<ElementType name="iStateReligionUnitProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionBuildingProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionFreeExperience" content="textOnly" dt:type="int"/>
-	<!-- Rhye - start -->
 	<ElementType name="bStabilityVassalBonus" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bStabilityFoundBonus" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bStabilityConquestBonus" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bStabilityCommerceBonus" content="textOnly" dt:type="boolean"/>
-	<!-- Rhye - end -->
 	<ElementType name="Upkeep" content="textOnly"/>
 	<ElementType name="iYield" content="textOnly" dt:type="int"/>
 	<ElementType name="YieldModifiers" content="eltOnly">
@@ -762,7 +764,7 @@
 	<ElementType name="BuildingHealthChanges" content="eltOnly">
 		<element type="BuildingHealthChange" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<!-- Leoreth -->
+	<!-- Leoreth start -->
 	<ElementType name="iProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="BuildingProductionModifier" content="eltOnly">
 		<element type="BuildingType"/>
@@ -771,7 +773,7 @@
 	<ElementType name="BuildingProductionModifiers" content="eltOnly">
 		<element type="BuildingProductionModifier" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
-	<!-- Leoreth -->
+	<!-- Leoreth end -->
 	<ElementType name="FeatureType" content="textOnly"/>
 	<ElementType name="FeatureHappinessChange" content="eltOnly">
 		<element type="FeatureType"/>
@@ -817,87 +819,85 @@
 		<element type="Civilopedia"/>
 		<element type="Strategy"/>
 		<element type="Help" minOccurs="0"/>
-		<element type="Button"/>
-		<element type="TechPrereq"/>
-		<element type="iAnarchyLength"/>
-		<element type="Upkeep"/>
-		<element type="iAIWeight"/>
-		<element type="iGreatPeopleRateModifier"/>
-		<element type="iGreatGeneralRateModifier"/>
-		<element type="iDomesticGreatGeneralRateModifier"/>
-		<element type="iStateReligionGreatPeopleRateModifier"/>
-		<element type="iDistanceMaintenanceModifier"/>
-		<element type="iNumCitiesMaintenanceModifier"/>
-		<element type="iCorporationMaintenanceModifier"/>
+		<element type="Button" minOccurs="0"/>
+		<element type="TechPrereq" minOccurs="0"/>
+		<element type="iAnarchyLength" minOccurs="0"/>
+		<element type="Upkeep" minOccurs="0"/>
+		<element type="iAIWeight" minOccurs="0"/>
+		<element type="iGreatPeopleRateModifier" minOccurs="0"/>
+		<element type="iGreatGeneralRateModifier" minOccurs="0"/>
+		<element type="iDomesticGreatGeneralRateModifier" minOccurs="0"/>
+		<element type="iStateReligionGreatPeopleRateModifier" minOccurs="0"/>
+		<element type="iDistanceMaintenanceModifier" minOccurs="0"/>
+		<element type="iNumCitiesMaintenanceModifier" minOccurs="0"/>
+		<element type="iCorporationMaintenanceModifier" minOccurs="0"/>
 		<element type="iCorporationCommerceModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iCorporationUnhappinessModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWonderProductionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iProcessModifier" minOccurs="0"/> <!-- Leoreth -->
-		<element type="iExtraHealth"/>
+		<element type="iExtraHealth" minOccurs="0"/>
 		<element type="iPollutionModifier" minOccurs="0"/> <!-- Leoreth -->
-		<element type="iFreeExperience"/>
-		<element type="iWorkerSpeedModifier"/>
-		<element type="iImprovementUpgradeRateModifier"/>
-		<element type="iMilitaryProductionModifier"/>
-		<element type="iBaseFreeUnits"/>
-		<element type="iBaseFreeMilitaryUnits"/>
-		<element type="iFreeUnitsPopulationPercent"/>
-		<element type="iFreeMilitaryUnitsPopulationPercent"/>
-		<element type="iGoldPerUnit"/>
-		<element type="iGoldPerMilitaryUnit"/>
-		<element type="iHappyPerMilitaryUnit"/>
+		<element type="iFreeExperience" minOccurs="0"/>
+		<element type="iWorkerSpeedModifier" minOccurs="0"/>
+		<element type="iImprovementUpgradeRateModifier" minOccurs="0"/>
+		<element type="iMilitaryProductionModifier" minOccurs="0"/>
+		<element type="iBaseFreeUnits" minOccurs="0"/>
+		<element type="iBaseFreeMilitaryUnits" minOccurs="0"/>
+		<element type="iFreeUnitsPopulationPercent" minOccurs="0"/>
+		<element type="iFreeMilitaryUnitsPopulationPercent" minOccurs="0"/>
+		<element type="iGoldPerUnit" minOccurs="0"/>
+		<element type="iGoldPerMilitaryUnit" minOccurs="0"/>
+		<element type="iHappyPerMilitaryUnit" minOccurs="0"/>
 		<element type="iMilitaryHappinessLimit" minOccurs="0"/> <!-- Leoreth -->
-		<element type="bMilitaryFoodProduction"/>
-		<element type="iMaxConscript"/>
-		<element type="bNoUnhealthyPopulation"/>
-		<element type="iExpInBorderModifier"/>
-		<element type="bBuildingOnlyHealthy"/>
-		<element type="iLargestCityHappiness"/>
-		<element type="iWarWearinessModifier"/>
-		<element type="iFreeSpecialist"/>
+		<element type="bMilitaryFoodProduction" minOccurs="0"/>
+		<element type="iMaxConscript" minOccurs="0"/>
+		<element type="bNoUnhealthyPopulation" minOccurs="0"/>
+		<element type="iExpInBorderModifier" minOccurs="0"/>
+		<element type="bBuildingOnlyHealthy" minOccurs="0"/>
+		<element type="iLargestCityHappiness" minOccurs="0"/>
+		<element type="iWarWearinessModifier" minOccurs="0"/>
+		<element type="iFreeSpecialist" minOccurs="0"/>
 		<element type="iCoreFreeSpecialist" minOccurs="0"/> <!-- Leoreth -->
-		<element type="iTradeRoutes"/>
+		<element type="iTradeRoutes" minOccurs="0"/>
 		<element type="iCapitalTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iDefensivePactTradeModifier" minOccurs="0"/> <!-- Leoreth -->
-		<element type="bNoForeignTrade"/>
+		<element type="bNoForeignTrade" minOccurs="0"/>
 		<element type="bNoForeignTradeModifier" minOccurs="0"/> <!-- Leoreth -->
-		<element type="bNoCorporations"/>
-		<element type="bNoForeignCorporations"/>
-		<element type="iCivicPercentAnger"/>
-		<element type="bStateReligion"/>
-		<element type="bNoNonStateReligionSpread"/>
-		<element type="iStateReligionHappiness"/>
-		<element type="iNonStateReligionHappiness"/>
-		<element type="iStateReligionUnitProductionModifier"/>
-		<element type="iStateReligionBuildingProductionModifier"/>
-		<element type="iStateReligionFreeExperience"/>
-		<!-- Rhye - start -->
-		<element type="bStabilityVassalBonus"/>
-		<element type="bStabilityFoundBonus"/>
-		<element type="bStabilityConquestBonus"/>
-		<element type="bStabilityCommerceBonus"/>
-		<!-- Rhye - end -->
-		<element type="YieldModifiers"/>
-		<element type="CapitalYieldModifiers"/>
-		<element type="TradeYieldModifiers"/>
-		<element type="CommerceModifiers"/>
-		<element type="CapitalCommerceModifiers"/>
-		<element type="SpecialistExtraCommerces"/>
+		<element type="bNoCorporations" minOccurs="0"/>
+		<element type="bNoForeignCorporations" minOccurs="0"/>
+		<element type="iCivicPercentAnger" minOccurs="0"/>
+		<element type="bStateReligion" minOccurs="0"/>
+		<element type="bNoNonStateReligionSpread" minOccurs="0"/>
+		<element type="iStateReligionHappiness" minOccurs="0"/>
+		<element type="iNonStateReligionHappiness" minOccurs="0"/>
+		<element type="iStateReligionUnitProductionModifier" minOccurs="0"/>
+		<element type="iStateReligionBuildingProductionModifier" minOccurs="0"/>
+		<element type="iStateReligionFreeExperience" minOccurs="0"/>
+		<element type="bStabilityVassalBonus" minOccurs="0"/>
+		<element type="bStabilityFoundBonus" minOccurs="0"/>
+		<element type="bStabilityConquestBonus" minOccurs="0"/>
+		<element type="bStabilityCommerceBonus" minOccurs="0"/>
+		<element type="YieldModifiers" minOccurs="0"/>
+		<element type="CapitalYieldModifiers" minOccurs="0"/>
+		<element type="TradeYieldModifiers" minOccurs="0"/>
+		<element type="CommerceModifiers" minOccurs="0"/>
+		<element type="CapitalCommerceModifiers" minOccurs="0"/>
+		<element type="SpecialistExtraCommerces" minOccurs="0"/>
 		<element type="SpecialistExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iSpecialistExtraYieldBaseThreshold" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iSpecialistExtraYieldEraThreshold" minOccurs="0"/> <!-- Leoreth -->
 		<element type="SpecialistThresholdExtraYields" minOccurs="0"/> <!-- Leoreth -->
-		<element type="Hurrys"/>
-		<element type="SpecialBuildingNotRequireds"/>
-		<element type="SpecialistValids"/>
-		<element type="BuildingHappinessChanges"/>
-		<element type="BuildingHealthChanges"/>
+		<element type="Hurrys" minOccurs="0"/>
+		<element type="SpecialBuildingNotRequireds" minOccurs="0"/>
+		<element type="SpecialistValids" minOccurs="0"/>
+		<element type="BuildingHappinessChanges" minOccurs="0"/>
+		<element type="BuildingHealthChanges" minOccurs="0"/>
 		<element type="BuildingProductionModifiers" minOccurs="0"/> <!-- Leoreth -->
-		<element type="FeatureHappinessChanges"/>
-		<element type="ImprovementYieldChanges"/>
+		<element type="FeatureHappinessChanges" minOccurs="0"/>
+		<element type="ImprovementYieldChanges" minOccurs="0"/>
 		<element type="DomainProductionModifiers" minOccurs="0"/> <!-- Leoreth -->
 		<element type="DomainExperienceModifiers" minOccurs="0"/> <!-- Leoreth -->
-		<element type="WeLoveTheKing"/>
+		<element type="WeLoveTheKing" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="CivicInfos" content="eltOnly">
 		<element type="CivicInfo" maxOccurs="*"/>
@@ -1265,37 +1265,37 @@
 	<ElementType name="EspionageMissionInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
-		<element type="iCost"/>
-		<element type="bIsPassive"/>
-		<element type="bIsTwoPhases"/>
-		<element type="bTargetsCity"/>
-		<element type="bSelectPlot"/>
-		<element type="TechPrereq"/>
-		<element type="iVisibilityLevel"/>
-		<element type="bInvestigateCity"/>
-		<element type="bSeeDemographics"/>
-		<element type="bNoActiveMissions"/>
-		<element type="bSeeResearch"/>
-		<element type="bDestroyImprovement"/>
-		<element type="iDifficultyMod"/>
-		<element type="iDestroyBuildingCostFactor"/>
-		<element type="iDestroyUnitCostFactor"/>
-		<element type="iDestroyProjectCostFactor"/>
-		<element type="iDestroyProductionCostFactor"/>
-		<element type="iBuyUnitCostFactor"/>
-		<element type="iBuyCityCostFactor"/>
-		<element type="iStealTreasuryTypes"/>
-		<element type="iCityInsertCultureAmountFactor"/>
-		<element type="iCityInsertCultureCostFactor"/>
-		<element type="iCityPoisonWaterCounter"/>
-		<element type="iCityUnhappinessCounter"/>
-		<element type="iCityRevoltCounter"/>
-		<element type="iBuyTechCostFactor"/>
-		<element type="iSwitchCivicCostFactor"/>
-		<element type="iSwitchReligionCostFactor"/>
-		<element type="iPlayerAnarchyCounter"/>
-		<element type="iCounterespionageNumTurns"/>
-		<element type="iCounterespionageMod"/>
+		<element type="iCost" minOccurs="0"/>
+		<element type="bIsPassive" minOccurs="0"/>
+		<element type="bIsTwoPhases" minOccurs="0"/>
+		<element type="bTargetsCity" minOccurs="0"/>
+		<element type="bSelectPlot" minOccurs="0"/>
+		<element type="TechPrereq" minOccurs="0"/>
+		<element type="iVisibilityLevel" minOccurs="0"/>
+		<element type="bInvestigateCity" minOccurs="0"/>
+		<element type="bSeeDemographics" minOccurs="0"/>
+		<element type="bNoActiveMissions" minOccurs="0"/>
+		<element type="bSeeResearch" minOccurs="0"/>
+		<element type="bDestroyImprovement" minOccurs="0"/>
+		<element type="iDifficultyMod" minOccurs="0"/>
+		<element type="iDestroyBuildingCostFactor" minOccurs="0"/>
+		<element type="iDestroyUnitCostFactor" minOccurs="0"/>
+		<element type="iDestroyProjectCostFactor" minOccurs="0"/>
+		<element type="iDestroyProductionCostFactor" minOccurs="0"/>
+		<element type="iBuyUnitCostFactor" minOccurs="0"/>
+		<element type="iBuyCityCostFactor" minOccurs="0"/>
+		<element type="iStealTreasuryTypes" minOccurs="0"/>
+		<element type="iCityInsertCultureAmountFactor" minOccurs="0"/>
+		<element type="iCityInsertCultureCostFactor" minOccurs="0"/>
+		<element type="iCityPoisonWaterCounter" minOccurs="0"/>
+		<element type="iCityUnhappinessCounter" minOccurs="0"/>
+		<element type="iCityRevoltCounter" minOccurs="0"/>
+		<element type="iBuyTechCostFactor" minOccurs="0"/>
+		<element type="iSwitchCivicCostFactor" minOccurs="0"/>
+		<element type="iSwitchReligionCostFactor" minOccurs="0"/>
+		<element type="iPlayerAnarchyCounter" minOccurs="0"/>
+		<element type="iCounterespionageNumTurns" minOccurs="0"/>
+		<element type="iCounterespionageMod" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="EspionageMissionInfos" content="eltOnly">
 		<element type="EspionageMissionInfo" maxOccurs="*"/>

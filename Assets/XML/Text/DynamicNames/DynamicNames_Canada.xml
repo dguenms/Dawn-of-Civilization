@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Canada -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_DESC</Tag>
+		<English>The Canadians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_PEOPLES</Tag>
+		<English>Canadian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_DEFAULT</Tag>
+		<English>Dominion of %s1</English>
+		<French>
+			<Text>Dominion du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Dominion %s1:Dominion %s1:Dominion %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Dominion del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Dominio de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_REPUBLIC</Tag>
+		<English>Commonwealth of %s1</English>
+		<French>
+			<Text>Commonwealth d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Commonwealth %s1:Commonwealth %s1:Commonwealth %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Commonwealth d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Commonwealth de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_COMMUNIST</Tag>
+		<English>%s2 Worker's Commonwealth</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_FASCIST</Tag>
+		<English>%s2 Empire</English>
+		<French>
+			<Text>Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_ADJECTIVE</Tag>
+		<English>Canadian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CANADA_SHORT_DESC</Tag>
+		<English>Canada</English>
+	</TEXT>
+</Civ4GameText>

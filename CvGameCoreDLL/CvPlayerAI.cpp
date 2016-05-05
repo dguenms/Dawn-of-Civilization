@@ -1402,22 +1402,6 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 				iRazeValue -= 30;
 			}
 
-		/*if (getID() == MONGOLIA && iX == 103 && iY == 44)
-		{
-			iRazeValue += 50;
-		}*/
-
-		if (getID() == NATIVE || isBarbarian()) {
-				iRazeValue *= 2;
-				iRazeValue += 30;
-			}
-		else {
-				iRazeValue *= 3;
-				iRazeValue /= 2;
-			}
-
-		//Rhye - end
-
 		if (iRazeValue > 0)
 		{
 			for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
@@ -1785,7 +1769,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int tempY = pPlot->getY_INLINE();
     int reborn = GET_PLAYER(getID()).getReborn();
 
-    int iSettlerMapValue = settlersMaps[reborn][getID()][EARTH_Y - 1 - iY][iX];
+    int iSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(iX, iY);
 
     // Leoreth: settler map entry of 1000 (never used by Rhye) to force a city no matter the environment
     //if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] == 1000)
@@ -2362,240 +2346,10 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	}
 	//Rhye - end
 
-
-	//Rhye - start switch
-	/*if (iTakenTiles > (NUM_CITY_PLOTS / 3))
+	if (iTakenTiles > AI_getTakenTilesThreshold())
 	{
 		return 0;
-	}*/
-	/*switch (getID())
-	{
-	case EGYPT:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1)) //-2?   //13
-		{
-			return 0;
-		}
-		break;
-	case INDIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 + 2))    //16
-		{
-			return 0;
-		}
-		break;
-	case CHINA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 ))
-		{
-			return 0;
-		}
-		break;
-	case BABYLONIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 ))  //14
-		{
-			return 0;
-		}
-		break;
-	case GREECE:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case PERSIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case CARTHAGE:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -2)) //12
-		{
-			return 0;
-		}
-		break;
-	case ROME:
-        if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-        {
-            if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-            {
-                return 0;
-            }
-        }/*else{
-            if (iTakenTiles > (NUM_CITY_PLOTS *2/3 +1))    // Renaissance Italy
-            {
-                return 0;
-            }
-        }*/
-		/*break;
-	case JAPAN:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case ETHIOPIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-    case KOREA:
-        if (iTakenTiles > (NUM_CITY_PLOTS *2/3 +4)) // 18
-            return 0;
-	case MAYA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -2))
-		{
-			return 0;
-		}
-		break;
-    case BYZANTIUM:
-        if (iTakenTiles > (NUM_CITY_PLOTS /2 -1))
-        {
-            return 0;
-        }
-        break;
-	case VIKING:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case ARABIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -2))   //12
-		{
-			return 0;
-		}
-		break;
-	case KHMER:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case INDONESIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case SPAIN:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case FRANCE:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case ENGLAND:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case GERMANY:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -2))
-		{
-			return 0;
-		}
-		break;
-	case RUSSIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS /3))  //7
-		{
-			return 0;
-		}
-		break;
-	case NETHERLANDS:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 +1))
-		{
-			return 0;
-		}
-		break;
-	case MALI:
-		if (iTakenTiles > (NUM_CITY_PLOTS /2 -1))
-		{
-			return 0;
-		}
-		break;
-	case TURKEY:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case PORTUGAL:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 +1))
-		{
-			return 0;
-		}
-		break;
-	case INCA:
-		if (iTakenTiles > (NUM_CITY_PLOTS /2 -1))
-		{
-			return 0;
-		}
-		break;
-	case MONGOLIA:
-		if (iTakenTiles > (NUM_CITY_PLOTS /2 -1))
-		{
-			return 0;
-		}
-		break;
-	case AZTEC:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	case AMERICA:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	default:
-		if (iTakenTiles > (NUM_CITY_PLOTS *2/3 -1))
-		{
-			return 0;
-		}
-		break;
-	}*/
-
-	// Leoreth: only handle respawned civs explicitly here, rest in Rhyes.cpp
-	/*if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-	{
-		if (getID() == ROME)
-		{
-			if (iTakenTiles > 18)
-			{
-				return 0;
-			}
-		}else
-		{
-			if (iTakenTiles > 13)
-			{
-				return 0;
-			}
-		}
-	}else
-	{*/
-		if (getID() < NUM_MAJOR_PLAYERS)
-		{
-			if (iTakenTiles > takenTiles[getID()]) // CvRhyes.cpp
-			{
-				return 0;
-			}
-		}else
-		{
-			if (iTakenTiles > 13)
-			{
-				return 0;
-			}
-		}
-	//}
-
+	}
 
 	/*if (iTeammateTakenTiles > 1)
 	{
@@ -2819,178 +2573,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		{
 		    int iDistance = plotDistance(iX, iY, pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE());
 		    int iNumCities = getNumCities();
-			//Rhye - start switch
-			/*
-		    if (iDistance > 5)
-		    {
-		    	iValue -= (iDistance - 5) * 500;
-		    }
-		    else if (iDistance < 4)
-		    {
-		    	iValue -= (4 - iDistance) * 2000;
-		    }
-			*/
-			/*switch (getID())
-			{
-			case EGYPT:
-				iValue -= (abs(iDistance) - 4) * 500;
-				break;
-			case INDIA:
-				iValue -= (abs(iDistance) - 5) * 400;
-				break;
-			case CHINA:
-				iValue -= (abs(iDistance) - 3) * 400;
-				break;
-			case BABYLONIA:
-				iValue -= (abs(iDistance) - 3) * 500;
-				break;
-			case GREECE:
-				iValue -= (abs(iDistance) - 3) * 300;
-				break;
-			case PERSIA:
-				iValue -= (abs(iDistance) - 4) * 500;
-				break;
-			case CARTHAGE:
-				iValue -= (abs(iDistance) - 4) * 500;
-				break;
-			case ROME:
-                if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                    iValue -= (abs(iDistance) - 3) * 300;
-                //else
-                //    iValue -= (abs(iDistance) - 4) * 50;       // Leoreth - Renaissance Italy
-				break;
-			case JAPAN:
-				iValue -= (abs(iDistance) - 3) * 500;
-				break;
-			case ETHIOPIA:
-				iValue -= (abs(iDistance) - 4) * 500;
-				break;
-            case KOREA:
-                iValue -= (abs(iDistance) - 5)^2 * 400;
-                break;
-			case MAYA:
-				iValue -= (abs(iDistance) - 3) * 500;
-				break;
-            case BYZANTIUM:
-                iValue -= (abs(iDistance) - 3) * 400;
-                break;
-			case VIKING:
-				if (!GET_TEAM((TeamTypes)VIKING).isHasTech((TechTypes)OPTICS))
-				{
-					iValue -= (abs(iDistance) - 4) * 500;
-				}
-				else
-				{
-					iValue -= (abs(iDistance) - 4) * 300;
-				}
-				break;
-			case ARABIA:
-				iValue -= (abs(iDistance) - 4) * 250;
-				break;
-			case KHMER:
-				iValue -= (abs(iDistance) - 4) * 400;
-				break;
-			case INDONESIA:
-				iValue -= (abs(iDistance) - 4) * 400;
-				break;
-			case SPAIN:
-				if (!GET_TEAM((TeamTypes)SPAIN).isHasTech((TechTypes)ASTRONOMY)) //OPTICS?
-				{
-					iValue -= (abs(iDistance) - 3) * 500;
-				}
-				else
-				{
-					iValue -= (abs(iDistance) - 4) * 150;
-				}
-				break;
-			case FRANCE:
-				if (!GET_TEAM((TeamTypes)FRANCE).isHasTech((TechTypes)ASTRONOMY))
-				{
-					iValue -= (abs(iDistance) - 3) * 500;
-				}
-				else
-				{
-					iValue -= (abs(iDistance) - 4) * 150;
-				}
-				break;
-			case ENGLAND:
-				if (!GET_TEAM((TeamTypes)ENGLAND).isHasTech((TechTypes)ASTRONOMY))
-				{
-					iValue -= (abs(iDistance) - 3) * 500;
-				}
-				else
-				{
-					iValue -= (abs(iDistance) - 4) * 100;
-				}
-				break;
-			case GERMANY:
-				if (!GET_TEAM((TeamTypes)GERMANY).isHasTech((TechTypes)ASTRONOMY))
-				{
-					iValue -= (abs(iDistance) - 3) * 500;
-				}
-				else
-				{
-					iValue -= (abs(iDistance) - 4) * 300;
-				}
-				break;
-			case RUSSIA:
-				iValue -= (abs(iDistance) - 5) * 150;
-				break;
-			case NETHERLANDS:
-				iValue -= (abs(iDistance) - 4) * 150;
-				break;
-			case MALI:
-				iValue -= (abs(iDistance) - 3) * 500;
-				break;
-			case TURKEY:
-				iValue -= (abs(iDistance) - 3) * 400;
-				break;
-			case PORTUGAL:
-				iValue -= (abs(iDistance) - 4) * 150;
-				break;
-			case INCA:
-				iValue -= (abs(iDistance) - 3) * 500;
-				break;
-			case MONGOLIA:
-				iValue -= (abs(iDistance) - 4) * 200;
-				break;
-			case AZTEC:
-				iValue -= (abs(iDistance) - 3) * 500;
-				break;
-			case AMERICA:
-				iValue -= (abs(iDistance) - 5) * 400;
-				break;
-			default:
-				iValue -= (abs(iDistance) - 4) * 500;
-				break;
-			}*/
-			//Rhye - end
 
-			if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-			{
-				if (getID() == ROME)
-				{
-					iValue -= (abs(iDistance) - 5) * 500;
-				}else
-				{
-					iValue -= (abs(iDistance) - 4) * 500;
-				}
-			}else
-			{
-				if (getID() < NUM_MAJOR_PLAYERS) // defined in CvRhyes.cpp
-				{
-					if (GET_TEAM((TeamTypes)getID()).isHasTech((TechTypes)ASTRONOMY))
-					{
-						iValue -= (abs(iDistance) - distanceSubtrahendAstronomy[getID()]) * distanceMultiplyAstronomy[getID()];
-					}else
-					{
-						iValue -= (abs(iDistance) - distanceSubtrahend[getID()]) * distanceMultiply[getID()];
-					}
-				}else
-				{
-					iValue -= (abs(iDistance) - 4) * 500;
-				}
-			}
+			// Leoreth
+			iValue -= (abs(iDistance) - AI_getDistanceSubtrahend()) * AI_getDistanceFactor();
 
 			iValue *= (8 + iNumCities * 4);
 			iValue /= (2 + (iNumCities * 4) + iDistance);
@@ -3024,137 +2609,9 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 				FAssert(iMaxDistanceFromCapital > 0);
 
-				//Rhye - start switch
-				int compactEmpireModifier;
-				/*switch (getID())
-				{
-				case EGYPT:
-					compactEmpireModifier = 40;
-					break;
-				case INDIA:
-					compactEmpireModifier = 40;
-					break;
-				case CHINA:
-					compactEmpireModifier = 45;
-					break;
-				case BABYLONIA:
-					compactEmpireModifier = 40;
-					break;
-				case GREECE:
-					compactEmpireModifier = 10;
-					break;
-				case PERSIA:
-					compactEmpireModifier = 40;
-					break;
-				case CARTHAGE:
-					compactEmpireModifier = 20;
-					break;
-				case ROME:
-                    if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-                        compactEmpireModifier = 30;
-                    else
-                        compactEmpireModifier = 5;     // Leoreth - Renaissance Italy (test: increased to 30 ... more cities?)
-					break;
-				case JAPAN:
-					compactEmpireModifier = 20;
-					break;
-				case ETHIOPIA:
-					compactEmpireModifier = 40;
-					break;
-                case KOREA:
-                    compactEmpireModifier = 100;
-                    break;
-				case MAYA:
-					compactEmpireModifier = 40;
-					break;
-                case BYZANTIUM:
-                    compactEmpireModifier = 30;
-                    break;
-				case VIKING:
-					compactEmpireModifier = 5;
-					break;
-				case ARABIA:
-					compactEmpireModifier = 10;
-					break;
-				case KHMER:
-					compactEmpireModifier = 40;
-					break;
-				case INDONESIA:
-					compactEmpireModifier = 35;
-					break;
-				case SPAIN:
-					compactEmpireModifier = 40;
-					if (GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
-						compactEmpireModifier = 10;
-					break;
-				case FRANCE:
-					compactEmpireModifier = 40;
-					if (GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
-						compactEmpireModifier = 5;
-					break;
-				case ENGLAND:
-					compactEmpireModifier = 40;     // test: increased from 30 to 40 ... more cities?
-					if (GET_TEAM(getTeam()).isHasTech((TechTypes)ASTRONOMY))
-						compactEmpireModifier = 5;
-					break;
-				case GERMANY:
-					compactEmpireModifier = 40;
-					break;
-				case RUSSIA:
-					compactEmpireModifier = 40;
-					break;
-				case NETHERLANDS:
-					compactEmpireModifier = 5;
-					break;
-				case MALI:
-					compactEmpireModifier = 40;
-					break;
-				case TURKEY:
-					compactEmpireModifier = 40;
-					break;
-				case PORTUGAL:
-					compactEmpireModifier = 5;
-					break;
-				case INCA:
-					compactEmpireModifier = 40;
-					break;
-				case MONGOLIA:
-					compactEmpireModifier = 40;
-					break;
-				case AZTEC:
-					compactEmpireModifier = 40;
-					break;
-				case AMERICA:
-					compactEmpireModifier = 40;
-					break;
-				default:
-					compactEmpireModifier = 10;
-					break;
-				}*/
-
-				if (GET_PLAYER((PlayerTypes)getID()).isReborn())
-				{
-					if (getID() == ROME)
-					{
-						compactEmpireModifier = 70;
-					}else
-					{
-						compactEmpireModifier = 10;
-					}
-				}else
-				{
-					if (getID() < NUM_MAJOR_PLAYERS)
-					{
-						compactEmpireModifier = compactEmpireModifierArray[getID()]; // CvRhyes.cpp
-					}else
-					{
-						compactEmpireModifier = 10;
-					}
-				}
-
+				// Rhye
 				//iValue *= 100 + (((bAdvancedStart ? 80 : 50) * std::max(0, (iMaxDistanceFromCapital - iDistance))) / iMaxDistanceFromCapital);
-				iValue *= 100 + (((bAdvancedStart ? 80 : compactEmpireModifier) * std::max(0, (iMaxDistanceFromCapital - iDistance))) / iMaxDistanceFromCapital);
-				//Rhye - end
+				iValue *= 100 + (((bAdvancedStart ? 80 : AI_getCompactnessModifier()) * std::max(0, (iMaxDistanceFromCapital - iDistance))) / iMaxDistanceFromCapital);
 
 				iValue /= 100;
 			}
@@ -3302,12 +2759,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	//Rhye - start
 
-	iValue *= settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX];
+	int iTempSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(tempX, tempY);
+
+	iValue *= iTempSettlerMapValue;
 	iValue /= 100;
 
-	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] <= 3)
+	if (iTempSettlerMapValue <= 3)
 		return 0;
-	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] <= 60)
+	if (iTempSettlerMapValue <= 60)
 		iValue /= 2;
 	/*if (settlersMaps[getID()][EARTH_Y - 1 - tempY][tempX] >= 200) {
 		iValue *= 11;
@@ -3317,7 +2776,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		iValue *= 11;
 		iValue /= 10;
 	}*/
-	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - tempY][tempX] > 60)
+	if (iTempSettlerMapValue > 60)
 	//	iValue += GC.getGameINLINE().getSorenRandNum(1000, "Random Value");
 	{
 		//iValue *= 100 + GC.getASyncRand().get(40, "Random Value");
@@ -3456,14 +2915,15 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	}
 
 	//Rhye - start
+	int iSettlerMapValue = pCity->plot()->getSettlerValue(getID());
 
-	if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] <= 3)
+	if (iSettlerMapValue <= 3)
 		iValue -= 2;
-	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] <= 20)
+	else if (iSettlerMapValue <= 20)
 		iValue -= 1;
-	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 500) //500-700
+	else if (iSettlerMapValue >= 500) //500-700
 		iValue += 2; // Leoreth: lowered because of war maps influence
-	else if (settlersMaps[reborn][getID()][EARTH_Y - 1 - pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] >= 300) //300-400
+	else if (iSettlerMapValue >= 300) //300-400
 		iValue += 1; // Leoreth: lowered because of war maps influence
 
 	/* Leoreth: take out because of war map influence
@@ -3473,12 +2933,12 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		iValue += 1;*/
 
 	//Leoreth: take war maps into account here as well
-	iValue += warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] / 2;
+	iValue += pCity->plot()->getWarValue(getID()) / 2;
 
 	// Leoreth: don't conquer independents in regions you're not supposed to
-	if (pCity->getOwner() >= NUM_PL)
+	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
 	{
-		if (warMaps[reborn][getID()][EARTH_Y-1-pCity->plot()->getY_INLINE()][pCity->plot()->getX_INLINE()] == 0)
+		if (pCity->plot()->getWarValue(getID()) == 0)
 		{
 			iValue /= 2;
 		}
@@ -3524,7 +2984,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 	if (pCity->getOwner() >= NUM_MAJOR_PLAYERS)
 	{
 		// Leoreth: the AI has to follow expansion patterns when picking independent cities as targets
-		if (isMinorCiv() || pCity->plot()->getSettlerMapValue(getID()) >= 90 || pCity->plot()->getWarMapValue(getID()) > 0)
+		if (isMinorCiv() || pCity->plot()->getSettlerValue(getID()) >= 90 || pCity->plot()->getWarValue(getID()) > 0)
 		{
 			iValue += 2;
 		}
@@ -3574,117 +3034,8 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 
 	if (pNearestCity != NULL)
 	{
-		//Rhye - start switch
-		/*
-		iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-		*/
-		/*switch (getID()) //some civs will extend wars further
-		{
-		case EGYPT:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case INDIA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case CHINA:
-		iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case BABYLONIA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case GREECE:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case PERSIA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case CARTHAGE:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case ROME:  // Linkman226- greater chance the Romans will pursue wars farther, same chance for Italians
-			if (!GET_PLAYER((PlayerTypes)ROME).isReborn())
-				iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			else
-				iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))*2/3);
-			break;
-		case JAPAN:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case ETHIOPIA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-        case KOREA:
-            iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-		case MAYA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-        case BYZANTIUM:
-            iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-            break;
-		case VIKING:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))*2/3);
-			break;
-		case ARABIA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))*2/3);
-			break;
-		case KHMER:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case INDONESIA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case SPAIN:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			break;
-		case FRANCE:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			break;
-		case ENGLAND:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			break;
-		case GERMANY:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			break;
-		case RUSSIA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			break;
-		case NETHERLANDS:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			break;
-		case MALI:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case TURKEY:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case PORTUGAL:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			break;
-		case INCA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case MONGOLIA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/10);
-			break;
-		case AZTEC:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		case AMERICA:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot()))/3);
-			break;
-		default:
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-			break;
-		}*/
-		//Rhye - end
-
-		if (getID() < NUM_MAJOR_PLAYERS)
-		{
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())) * targetCityValueDivisor[getID()] / 100);
-		}else
-		{
-			iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())));
-		}
+		// Leoreth
+		iValue += std::max(1, ((GC.getMapINLINE().maxStepDistance() * 2) - GC.getMapINLINE().calculatePathDistance(pNearestCity->plot(), pCity->plot())) * AI_getTargetDistanceValueModifier() / 100);
 	}
 
 	//Rhye - start switch
@@ -4054,7 +3405,7 @@ bool CvPlayerAI::AI_isFinancialTrouble() const
 		//Rhye - start
 		int iGameTurn = GC.getGameINLINE().getGameTurn();
 		//if (iGameTurn == startingTurn[getID()] || iGameTurn == startingTurn[getID()] + 1 || iGameTurn == startingTurn[getID()] + 2)
-		if (iGameTurn == getTurnForYear(startingTurnYear[getID()]) || iGameTurn == getTurnForYear(startingTurnYear[getID()]) + 1 || iGameTurn == getTurnForYear(startingTurnYear[getID()]) + 2) //edead
+		if (iGameTurn == getBirthTurn() || iGameTurn == getBirthTurn() + 1 || iGameTurn == getBirthTurn() + 2) //edead
 			return false;
 		//if (getScenario() == SCENARIO_600AD) //late start condition
 			//if (iGameTurn <= 181+2)
@@ -5724,12 +5075,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case INDIA:
 									if (iI == MEDITATION || iI == PRIESTHOOD)
 										iValue *= 20;
-									if (iI == WRITING  || iI == MONOTHEISM || iI == MONARCHY || iI == CALENDAR || iI == MATHEMATICS)
+									if (iI == MONOTHEISM)
+										iValue /= 10;
+									if (iI == WRITING  || iI == MONARCHY || iI == CALENDAR)
 										iValue /= 3;
 									if (iI == ENGINEERING || iI == THEOLOGY || iI == CIVIL_SERVICE)
 										iValue /= 2;
 									break;
-								case CARTHAGE:
+								case PHOENICIA:
 									if (iI == COMPASS)
 										iValue *= 2;
 									if (iI == MONOTHEISM)
@@ -5776,10 +5129,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									break;
 								case ETHIOPIA:
-									if (iI == MONOTHEISM)
+									/*if (iI == MONOTHEISM)
 										iValue *= 2;
 									if (iI == THEOLOGY)
-										iValue *= 2;
+										iValue *= 2;*/
 									break;
                                 case KOREA:
                                     if (iI == OPTICS)
@@ -5816,7 +5169,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == ROBOTICS)
 										iValue *= 4;
 									break;
-								case VIKING:
+								case VIKINGS:
 									if (iI == MACHINERY || iI == CIVIL_SERVICE)
 										iValue *= 3;
 									if (iI == COMPASS || iI == MILITARY_TRADITION)
@@ -6014,7 +5367,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 4;
 									}
 									break;
-								case AZTEC:
+								case AZTECS:
 									if (iI == CONSTRUCTION)
 										iValue *= 4;
 									if (iI == LITERATURE || iI == MUSIC)
@@ -6050,7 +5403,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									if (iI == CORPORATION || iI == ASSEMBLY_LINE)
 										iValue *= 2;
-									if (iI == RAILROAD)
+									if (iI == RAILROAD || iI == DEMOCRACY)
 										iValue *= 3;
 									break;
 								case ARGENTINA:
@@ -6078,7 +5431,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								}
 
 								// Leoreth: don't research Theology before player Ethiopia is even alive
-								if (GC.getGameINLINE().getActivePlayer() == ETHIOPIA && GC.getGameINLINE().getGameTurnYear() < startingTurnYear[ETHIOPIA])
+								if (GC.getGameINLINE().getActivePlayer() == ETHIOPIA && GC.getGameINLINE().getGameTurnYear() < getBirthYear())
 								{
 									if (iI == THEOLOGY)
 									{
@@ -6445,7 +5798,7 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 	/*if (ePlayer == FRANCE) {    // Leoreth - unaffected by Italy respawn
 		if ((getID() != ROME) && (getID() != GREECE)
 			&& (getID() != SPAIN) && (getID() != ENGLAND) && (getID() != HOLY_ROME) && (getID() != RUSSIA)
-			&& (getID() != VIKING)
+			&& (getID() != VIKINGS)
 			&& (getID() != NETHERLANDS) && (getID() != PORTUGAL) && (getID() != GERMANY))
 			iAttitude += 8;
 	}*/
@@ -6910,17 +6263,14 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 	}
 
 	//Rhye - start (modified by Leoreth)
-	if (getCurrentEra() == 2) //medieval
+	if (getCurrentEra() == ERA_MEDIEVAL)
+	{
 		iAttitude *= 3;
-	else if (getCurrentEra() == 3) //renaissance
+	}
+	else if (getCurrentEra() == ERA_RENAISSANCE)
 	{
 		iAttitude *= 2;
-		//iAttitude /= 2;
 	}
-	//else if (getCurrentEra() <= 1 || getCurrentEra() == 5) //ancient, classical and modern
-		//iAttitude *= 2;
-	//renaissance and industrial = default
-	//Rhye - end
 
 	return iAttitude;
 }
@@ -7913,8 +7263,6 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 
 	iHumanDealWeight = AI_dealVal(ePlayer, pTheirList);
 	iAIDealWeight = GET_PLAYER(ePlayer).AI_dealVal(getID(), pOurList);
-
-	GC.getGame().logMsg("Player %d to player %d, human value: %d, AI value: %d", getID(), ePlayer, iHumanDealWeight, iAIDealWeight);
 
 	int iGoldValuePercent = AI_goldTradeValuePercent(ePlayer);
 
@@ -9094,8 +8442,6 @@ int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iCh
 		}
 	}
 
-	//GC.getGame().logMsg("Player %s to %s trade val for bonus %s change %d: %d", getCivilizationShortDescription(), GET_PLAYER(ePlayer).getCivilizationShortDescription(), GC.getBonusInfo(eBonus).getText(), iChange, iValue);
-
 	return (iValue * GC.getDefineINT("PEACE_TREATY_LENGTH"));
 }
 
@@ -9246,7 +8592,8 @@ int CvPlayerAI::AI_cityTradeVal(CvCity* pCity) const
 
 
 	if (GET_PLAYER(pCity->getOwnerINLINE()).getNumCities() > 12)
-		if (settlersMaps[reborn][pCity->getOwnerINLINE()][EARTH_Y -1 - pCity->getY()][pCity->getX()] < 500) { //not in core area
+		if (pCity->plot()->getSettlerValue(pCity->getOwnerINLINE()) < 500) 
+		{
 			iValue *= 2;
 			iValue /= 3;
 		}
@@ -10620,7 +9967,7 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 
 	case UNITAI_PERSECUTOR:
 		iValue += 50 * GC.getUnitInfo(eUnit).getMoves();
-		iValue += 40 * (5 - religiousTolerance[getID()]);
+		iValue += 40 * (5 - AI_getReligiousTolerance());
 		iValue += (isNoNonStateReligionSpread() ? 80 : 0);
 		break;
 
@@ -10827,7 +10174,7 @@ int CvPlayerAI::AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) co
     //internal spread.
     if (bCultureVictory || bState || bHoly)
     {
-        iCount = std::max(iCount, (pArea->getCitiesPerPlayer(getID()) - pArea->countHasReligion(eReligion, getID())));
+		iCount = std::max(iCount, pArea->countCanSpread(eReligion, getID(), true));
         if (iCount > 0)
         {
             if (!bCultureVictory)
@@ -10841,7 +10188,7 @@ int CvPlayerAI::AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) co
     //external spread.
     if ((bHoly && bState) || (bHoly && !bHolyState && (getStateReligion() != NO_RELIGION)))
     {
-        iCount += ((pArea->getNumCities() * 2) - (pArea->countHasReligion(eReligion) * 3));
+		iCount += pArea->countCanSpread(eReligion, NO_PLAYER, true) / 2;
         iCount /= 16; //Leoreth: /8 before, waste less time spreading religions
 
         iCount = std::max(0, iCount);
@@ -11683,7 +11030,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 		if (getCapitalCity() != NULL)
 		{
-			//GC.getGameINLINE().logMsg("Begin AI free core specialist.");
 			int iLoop;
 			int iX;
 			int iY;
@@ -11699,7 +11045,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 					iValue += kCivic.getCoreFreeSpecialist() * 18;
 				}
 			}
-			//GC.getGameINLINE().logMsg("End AI free core specialist.");
 		}
 
 		if (getID() == MALI || getID() == EGYPT)
@@ -11707,7 +11052,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iValue -= 40;
 		}
 
-		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
+		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
 		{
 			iValue += 40;
 		}
@@ -11716,10 +11061,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	// Leoreth: specialist threshold extra yield
 	if (getSpecialistExtraYieldBaseThreshold() > 0 || getSpecialistExtraYieldEraThreshold() > 0)
 	{
-		//GC.getGameINLINE().logMsg("Begin AI free core specialist.");
 		int iLoop;
-//		int iX;
-//		int iY;
 		CvCity* pLoopCity;
 		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
@@ -11744,14 +11086,13 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 				}
 			}
 		}
-		//GC.getGameINLINE().logMsg("End AI free core specialist.");
 
 		if (getID() == MALI || getID() == EGYPT)
 		{
 			iValue -= 40;
 		}
 
-		if (getID() == GREECE || getID() == CARTHAGE || getID() == KOREA || getID() == ITALY)
+		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
 		{
 			iValue += 80;
 		}
@@ -12192,8 +11533,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Leoreth: Pantheon civic
 	if (eCivic == CIVIC_PANTHEON)
 	{
-		//GC.getGameINLINE().logMsg("Begin AI pantheon civic.");
-		if (GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getFavoriteReligion() == -1 && GET_PLAYER(getID()).getCurrentEra() < 2 && getID() != MAYA)
+		if (eBestReligion == NO_RELIGION && GET_PLAYER(getID()).getCurrentEra() < ERA_MEDIEVAL && getID() != MAYA)
 		{
 			iValue += GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getWonderConstructRand() * 2;
 		}
@@ -12201,14 +11541,13 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			return 0;
 		}
-		//GC.getGameINLINE().logMsg("End AI pantheon civic.");
 	}
 
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)
 	{
 		if (!kCivic.isStateReligion() || iHighestReligionCount > 0)
 		{
-			iValue *= 5;   // Leoreth: was 5/4 before, lowered because of civicMatrix' additional impact
+			iValue *= 5;
 			iValue /= 4;
 			iValue += 6 * getNumCities();
 			iValue += 20;
@@ -12223,35 +11562,36 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}*/
 
 	// Leoreth - prefer Pantheon if more than half of their cities has no religion
-	if (eCivic == CIVIC_PANTHEON){  // Pantheon
-		//GC.getGameINLINE().logMsg("Pantheon check entered");
-        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == CARTHAGE || getID() == ROME){
+	if (eCivic == CIVIC_PANTHEON)  // Pantheon
+	{
+        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == PHOENICIA || getID() == ROME)
+		{
             int iCityCounter = 0;
-            for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++){
-                for (int iJ = 0; iJ < 8; iJ++){
-					//char cArray[99];
-					//sprintf(cArray, "Checking player %d, city %d, religion %d", getID(), iI, iJ);
-					//GC.getGameINLINE().logMsg(cArray);
+            for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++)
+			{
+                for (int iJ = 0; iJ < 8; iJ++)
+				{
                     if (GET_PLAYER((PlayerTypes)getID()).getCity(iI))
 					{
 						if (GET_PLAYER((PlayerTypes)getID()).getCity(iI)->isHasReligion((ReligionTypes)iJ))
 						{
 							iCityCounter++;
-							//GC.getGameINLINE().logMsg("Counter increased");
 							break;
 						}
 					}
 				}
             }
-            if (2*iCityCounter >= GET_PLAYER((PlayerTypes)getID()).getNumCities())
+
+            if (2 * iCityCounter >= GET_PLAYER((PlayerTypes)getID()).getNumCities())
+			{
                 iValue /= 2;
+			}
         }
-		//GC.getGameINLINE().logMsg("Pantheon check finished");
 	}
 
 	// Leoreth - prefer Vassalage for medieval Eurocivs
 	/*if (eCivic == (CivicTypes)VASSALAGE){
-	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == HOLY_ROME || getID() == VIKING || getID() == PORTUGAL || getID() == RUSSIA){
+	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == HOLY_ROME || getID() == VIKINGS || getID() == PORTUGAL || getID() == RUSSIA){
 	        if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() == 2){
 	            iValue *= 2;
 	        }
@@ -12263,7 +11603,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 	    iValue /= 10;
 	}
-	//GC.getGameINLINE().logMsg("End AI civic value.");
 
 	//Leoreth: less premature Republics
 	if (eCivic == CIVIC_REPUBLIC)
@@ -12328,16 +11667,14 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 				iValue /= 3; //Rhye (4)
 			}
 
-			//Rhye - start
-			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM) { //Christianity
-				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == CARTHAGE || getID() == PERSIA)
+			if (iI == CATHOLICISM || iI == ORTHODOXY || iI == PROTESTANTISM)
+			{
+				if (getID() == TURKEY || getID() == ARABIA || getID() == EGYPT || getID() == MALI || getID() == PHOENICIA || getID() == PERSIA)
 				{
-					iValue *= 1;
 					iValue /= 2;
 				}
 			}
-			//Rhye - end
-
+			
 			if (iValue > iBestValue)
 			{
 				iBestValue = iValue;
@@ -16617,7 +15954,7 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 	}
 
 	// Leoreth: prevent units from being disbanded after spawn in general
-	if (getID() < NUM_MAJOR_PLAYERS && GC.getGame().getGameTurn() < getTurnForYear(startingTurnYear[getID()]) + getTurns(20))
+	if (getID() < NUM_MAJOR_PLAYERS && GC.getGame().getGameTurn() < getBirthTurn() + getTurns(20))
 	{
 		return false;
 	}
@@ -19495,7 +18832,7 @@ void CvPlayerAI::AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int
 	CvPlot* pLoopPlot;
 	int iLoopX, iLoopY;
 	int iValue;
-	int iSettlerMapValue = settlersMaps[GET_PLAYER((PlayerTypes)getID()).getReborn()][getID()][EARTH_Y - 1 - iY][iX];
+	int iSettlerMapValue = GET_PLAYER(getID()).getSettlerValue(iX, iY);
 
 	for (iLoopX = -iOuterRadius; iLoopX <= iOuterRadius; iLoopX++)
 	{
@@ -19595,23 +18932,23 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 			CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 			if (pLoopPlot->isRevealed(getTeam(), false))
 			{
-				if (settlersMaps[reborn][getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] > 90) //Rhye
+				if (pLoopPlot->getSettlerValue(getID()) > 90) //Rhye
 				{ //Rhye
-				iValue = pLoopPlot->getFoundValue(getID());
+					iValue = pLoopPlot->getFoundValue(getID());
 
-				if (iValue > iMinFoundValueThreshold)
-				{
-					if (!AI_isPlotCitySite(pLoopPlot))
+					if (iValue > iMinFoundValueThreshold)
 					{
-						iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
-
-						if (iValue > iBestFoundValue)
+						if (!AI_isPlotCitySite(pLoopPlot))
 						{
-							iBestFoundValue = iValue;
-							pBestFoundPlot = pLoopPlot;
+							iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
+
+							if (iValue > iBestFoundValue)
+							{
+								iBestFoundValue = iValue;
+								pBestFoundPlot = pLoopPlot;
+							}
 						}
 					}
-				}
 				} //Rhye
 			}
 		}
@@ -19666,35 +19003,35 @@ int CvPlayerAI::AI_browseStep(int iMinFoundValueThreshold, int iBestFoundValue, 
 
 	for (iI = 0; iI < EARTH_X; iI++)
 	{
-	for (iJ = 0; iJ < EARTH_Y; iJ++)
-	{
-		CvPlot* pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
-		if (settlersMaps[reborn][getID()][EARTH_Y -1 -iJ][iI] == iModifier)
-
-	/*for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
-	{
-		CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
-		if (settlersMaps[getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] == iModifier)*/
+		for (iJ = 0; iJ < EARTH_Y; iJ++)
 		{
-			if (pLoopPlot->isRevealed(getTeam(), false))
-			{
-				iValue = pLoopPlot->getFoundValue(getID());
-				if (iValue > iMinFoundValueThreshold)
-				{
-					if (!AI_isPlotCitySite(pLoopPlot))
-					{
-						iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
+			CvPlot* pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
+			if (pLoopPlot->getSettlerValue(getID()) == iModifier)
 
-						if (iValue > iBestFoundValue)
+		/*for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+		{
+			CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
+			if (settlersMaps[getID()][EARTH_Y -1 - pLoopPlot->getY()][pLoopPlot->getX()] == iModifier)*/
+			{
+				if (pLoopPlot->isRevealed(getTeam(), false))
+				{
+					iValue = pLoopPlot->getFoundValue(getID());
+					if (iValue > iMinFoundValueThreshold)
+					{
+						if (!AI_isPlotCitySite(pLoopPlot))
 						{
-							iBestFoundValue = iValue;
-							pBestFoundPlot = pLoopPlot;
+							iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
+
+							if (iValue > iBestFoundValue)
+							{
+								iBestFoundValue = iValue;
+								pBestFoundPlot = pLoopPlot;
+							}
 						}
 					}
 				}
 			}
 		}
-	}
 	}
 	return iBestFoundValue;
 }
@@ -20585,8 +19922,6 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	bool bOwnerCatholic = (GET_PLAYER(eOwner).getStateReligion() == CATHOLICISM && eOwner != GC.getGame().getActivePlayer());
 	bool bBuyerCatholic = GET_PLAYER(getID()).getStateReligion() == CATHOLICISM;
 
-	//GC.getGame().logMsg("getID() = %d, eOwner = %d", getID(), eOwner);
-
 	if (getID() != GC.getGame().getActivePlayer())
 	{
 		if (getID() == MALI || getID() == CONGO || getID() == ETHIOPIA)
@@ -20612,7 +19947,9 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 // Leoreth
 int CvPlayerAI::AI_getPersecutionValue(ReligionTypes eReligion) const
 {
-	if (!isStateReligion()) return 1;
+	if (getStateReligion() == NO_RELIGION) return 1;
 
-	return persecutionValue[getStateReligion()][eReligion] - religiousTolerance[getID()];
+	if (getStateReligion() == eReligion) return 0;
+
+	return persecutionValue[getStateReligion()][eReligion] - AI_getReligiousTolerance();
 }

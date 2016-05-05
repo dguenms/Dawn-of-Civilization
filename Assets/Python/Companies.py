@@ -181,7 +181,7 @@ class Companies:
 		
 		# religions
 		if iCompany == iSilkRoute:
-			if owner.getStateReligion() in [con.iJudaism, con.iChristianity, con.iOrthodoxy]:
+			if owner.getStateReligion() in [con.iProtestantism, con.iCatholicism, con.iOrthodoxy]:
 				iValue -= 1
 		
 		# various bonuses
@@ -219,19 +219,19 @@ class Companies:
 		elif iCompany == iOilIndustry:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iBank)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iIndustrialPark)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iWallStreet)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iStockExchange)): iValue += 3
 
 		elif iCompany == iLuxuryIndustry:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iTheatre)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iBroadcastTower)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iHermitage)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iNationalGallery)): iValue += 3
 
 		elif iCompany == iComputerIndustry:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iLaboratory)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iUniversity)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iChannelTunnel)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iCERN)): iValue += 3
 
 		# trade routes
 		iValue += city.getTradeRoutes() - 1

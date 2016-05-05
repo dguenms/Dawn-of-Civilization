@@ -9,637 +9,139 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SEE_DEMOGRAPHICS</Type>
 			<Description>TXT_KEY_ESPIONAGE_CAN_SEE_DEMOGRAPHICS</Description>
-			<!-- Rhye -->
 			<iCost>15</iCost>
 			<bIsPassive>1</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
-			<bTargetsCity>0</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
 			<bSeeDemographics>1</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_VISIBILITY</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_VISIBILITY</Description>
-			<!-- Rhye -->
 			<iCost>160</iCost>
 			<bIsPassive>1</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<!-- Rhye -->
 			<TechPrereq>TECH_ELECTRICITY</TechPrereq>
 			<iVisibilityLevel>1</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_INVESTIGATE_CITY</Type>
 			<Description>TXT_KEY_ESPIONAGE_INVESTIGATE_CITY</Description>
 			<iCost>200</iCost>
 			<bIsPassive>1</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
 			<bInvestigateCity>1</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SEE_RESEARCH</Type>
 			<Description>TXT_KEY_ESPIONAGE_SEE_RESEARCH</Description>
-			<!-- Rhye -->
 			<iCost>130</iCost>
 			<bIsPassive>1</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
-			<bTargetsCity>0</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
 			<bSeeResearch>1</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_NO_ACTIVE_MISSIONS</Type>
 			<Description>TXT_KEY_ESPIONAGE_NO_ACTIVE_MISSIONS</Description>
 			<iCost>-1</iCost>
 			<bIsPassive>1</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
-			<bTargetsCity>0</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
 			<bNoActiveMissions>1</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_DESTROY_IMPROVEMENT</Type>
 			<Description>TXT_KEY_ESPIONAGE_DESTROY_IMPROVEMENT</Description>
 			<iCost>75</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
-			<bTargetsCity>0</bTargetsCity>
 			<bSelectPlot>1</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
 			<bDestroyImprovement>1</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_DESTROY_BUILDING</Type>
 			<Description>TXT_KEY_ESPIONAGE_DESTROY_BUILDING</Description>
-			<iCost>0</iCost>
-			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>10</iDifficultyMod>
 			<iDestroyBuildingCostFactor>500</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_DESTROY_PROJECT</Type>
 			<Description>TXT_KEY_ESPIONAGE_DESTROY_PROJECT</Description>
-			<iCost>0</iCost>
-			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>25</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
 			<iDestroyProjectCostFactor>500</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_DESTROY_PRODUCTION</Type>
 			<Description>TXT_KEY_ESPIONAGE_DESTROY_PRODUCTION</Description>
-			<iCost>0</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
 			<iDestroyProductionCostFactor>500</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_STEAL_TREASURY</Type>
 			<Description>TXT_KEY_ESPIONAGE_STEAL_TREASURY</Description>
 			<iCost>300</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>25</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
 			<iStealTreasuryTypes>100</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_INSERT_CULTURE</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_INSERT_CULTURE</Description>
 			<iCost>50</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
 			<iCityInsertCultureAmountFactor>5</iCityInsertCultureAmountFactor>
 			<iCityInsertCultureCostFactor>500</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_POISON_WATER</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_POISON_WATER</Description>
 			<iCost>120</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>-50</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
 			<iCityPoisonWaterCounter>5</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_UNHAPPINESS</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_UNHAPPINESS</Description>
 			<iCost>120</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>-50</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
 			<iCityUnhappinessCounter>8</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_REVOLT</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_REVOLT</Description>
-			<!-- Rhye 650 -->
-			<iCost>750</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
+			<iCost>750</iCost> <!-- Default: 650 -->
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>0</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
 			<iCityRevoltCounter>1</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_BUY_TECH</Type>
 			<Description>TXT_KEY_ESPIONAGE_BUY_TECH</Description>
-			<iCost>0</iCost>
-			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>25</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
 			<iBuyTechCostFactor>50</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SWITCH_CIVIC</Type>
 			<Description>TXT_KEY_ESPIONAGE_SWITCH_CIVIC</Description>
-			<iCost>0</iCost>
-			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>50</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<!-- Rhye 60000 -->
-			<iSwitchCivicCostFactor>100000</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
+			<iSwitchCivicCostFactor>100000</iSwitchCivicCostFactor> <!-- Default: 60000 -->
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SWITCH_RELIGION</Type>
 			<Description>TXT_KEY_ESPIONAGE_SWITCH_RELIGION</Description>
-			<iCost>0</iCost>
-			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>50</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<!-- Rhye 60000 -->
-			<iSwitchReligionCostFactor>100000</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
+			<iSwitchReligionCostFactor>100000</iSwitchReligionCostFactor> <!-- Default: 60000 -->
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_COUNTERESPIONAGE</Type>
 			<Description>TXT_KEY_ESPIONAGE_COUNTERESPIONAGE</Description>
 			<iCost>100</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>-100</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
 			<iCounterespionageNumTurns>10</iCounterespionageNumTurns>
 			<iCounterespionageMod>200</iCounterespionageMod>
 		</EspionageMissionInfo>
@@ -647,71 +149,17 @@
 			<Type>ESPIONAGEMISSION_ASSASSINATE</Type>
 			<Description>TXT_KEY_MISSION_ASSASSIN</Description>
 			<iCost>500</iCost>
-			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>1</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>50</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
 			<iDestroyUnitCostFactor>1</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
-			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_BRIBE</Type>
 			<Description>TXT_KEY_MISSION_BRIBE</Description>
 			<iCost>250</iCost>
-			<bIsPassive>0</bIsPassive>
-			<bIsTwoPhases>0</bIsTwoPhases>
-			<bTargetsCity>0</bTargetsCity>
-			<bSelectPlot>0</bSelectPlot>
-			<TechPrereq>NONE</TechPrereq>
-			<iVisibilityLevel>0</iVisibilityLevel>
-			<bInvestigateCity>0</bInvestigateCity>
-			<bSeeDemographics>0</bSeeDemographics>
-			<bNoActiveMissions>0</bNoActiveMissions>
-			<bSeeResearch>0</bSeeResearch>
-			<bDestroyImprovement>0</bDestroyImprovement>
 			<iDifficultyMod>25</iDifficultyMod>
-			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
-			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
-			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>0</iDestroyProductionCostFactor>
 			<iBuyUnitCostFactor>1</iBuyUnitCostFactor>
-			<iBuyCityCostFactor>0</iBuyCityCostFactor>
-			<iStealTreasuryTypes>0</iStealTreasuryTypes>
-			<iCityInsertCultureAmountFactor>0</iCityInsertCultureAmountFactor>
-			<iCityInsertCultureCostFactor>0</iCityInsertCultureCostFactor>
-			<iCityPoisonWaterCounter>0</iCityPoisonWaterCounter>
-			<iCityUnhappinessCounter>0</iCityUnhappinessCounter>
-			<iCityRevoltCounter>0</iCityRevoltCounter>
-			<iBuyTechCostFactor>0</iBuyTechCostFactor>
-			<iSwitchCivicCostFactor>0</iSwitchCivicCostFactor>
-			<iSwitchReligionCostFactor>0</iSwitchReligionCostFactor>
-			<iPlayerAnarchyCounter>0</iPlayerAnarchyCounter>
-			<iCounterespionageNumTurns>0</iCounterespionageNumTurns>
-			<iCounterespionageMod>0</iCounterespionageMod>
 		</EspionageMissionInfo>
 	</EspionageMissionInfos>
 </Civ4EspionageMissionInfo>

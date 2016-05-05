@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Italy -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_PEOPLES</Tag>
+		<English>Lombard Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_FASCIST</Tag>
+		<English>National Fascist %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_LEAGUE</Tag>
+		<English>%s2 League</English>
+		<French>
+			<Text>Ligue %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Liga:%s2 Liga:%s2 Liga</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Lega %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Liga %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_LOMBARD</Tag>
+		<English>Lombard</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_TUSCANY</Tag>
+		<English>Tuscany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_MARITIME_REPUBLICS</Tag>
+		<English>%s2 Maritime Republics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DUCHY_OF</Tag>
+		<English>Duchy of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_PAPAL_STATES</Tag>
+		<English>Papal States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_ADJECTIVE</Tag>
+		<English>Italian</English>
+		<French>Italien</French>
+		<German>Italienisch</German>
+		<Italian>Italiano</Italian>
+		<Spanish>Italiano</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_DESC</Tag>
+		<English>The Italians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_SHORT_DESC</Tag>
+		<English>Italy</English>
+		<French>Italie</French>
+		<German>Italien</German>
+		<Italian>L'Italia</Italian>
+		<Spanish>Italia</Spanish>
+	</TEXT>
+</Civ4GameText>

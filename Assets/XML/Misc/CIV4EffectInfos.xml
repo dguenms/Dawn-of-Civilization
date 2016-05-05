@@ -2455,7 +2455,6 @@
 			<Path>Art/Effects/FF_explosion_large/FF_explosion_large.nif</Path>
 			<bIsProjectile>0</bIsProjectile>
 		</EffectInfo>
-
 		<!--Final Frontier Unit Effects:-->
 		<EffectInfo>
 			<Type>EFFECT_INVASIONSHIP_SMALL_HIT</Type>
@@ -2553,7 +2552,6 @@
 			<Path>Art/Effects/FF_Transporter/fx_transporter.nif</Path>
 			<bIsProjectile>0</bIsProjectile>
 		</EffectInfo>
-		<!--Rhye-->
 		<EffectInfo>
 			<Type>EFFECT_PILUM</Type>
 			<Description>Pilum</Description>

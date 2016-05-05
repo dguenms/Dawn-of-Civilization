@@ -931,6 +931,7 @@ public:
 	bool isReformGovernment() const;
 	bool isDiplomaticMission() const;
 	bool isPersecute() const;
+	bool isGreatMission() const;
 
 	float getUnitMaxSpeed() const;					// Exposed to Python
 	float getUnitPadTime() const;					// Exposed to Python
@@ -1131,6 +1132,7 @@ protected:
 	bool m_bReformGovernment;
 	bool m_bDiplomaticMission;
 	bool m_bPersecute;
+	bool m_bGreatMission;
 
 	float m_fUnitMaxSpeed;
 	float m_fUnitPadTime;
@@ -1819,6 +1821,9 @@ public:
 	int getBonusYieldChange(int i, int j) const;
 	int* getBonusYieldChangeArray(int i) const;
 
+	int getReligionYieldChange(int i) const;
+	int* getReligionYieldChangeArray() const;
+
 	// Leoreth
 	int getPrereqBuildingClassPercent(int i) const;
 
@@ -1998,6 +2003,7 @@ protected:
 
 	// Leoreth
 	int* m_piPrereqBuildingClassPercent;
+	int* m_piReligionYieldChange;
 
 	bool* m_pbCommerceFlexible;
 	bool* m_pbCommerceChangeOriginalOwner;
@@ -2268,6 +2274,12 @@ public:
 	DllExport int getCivilizationFreeUnitsClass(int i) const;				// Exposed to Python
 	DllExport int getCivilizationInitialCivics(int i) const;				// Exposed to Python
 
+	// Leoreth
+	int getLoadingTime(ScenarioTypes eScenario) const;
+	int getRating(RatingTypes eRating) const;
+	int getStartingYear() const;
+	const std::string getIdentifier() const;
+
 	DllExport bool isLeaders(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeBuildingClass(int i) const;				// Exposed to Python
 	DllExport bool isCivilizationFreeTechs(int i) const;				// Exposed to Python
@@ -2299,18 +2311,24 @@ protected:
 	int m_iActionSoundScriptId;
 	int m_iDerivativeCiv;
 
+	int m_iStartingYear; // Leoreth
+
 	bool m_bAIPlayable;
 	bool m_bPlayable;
 
 	CvString m_szArtDefineTag;
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
+	std::string m_szIdentifier; // Leoreth
 	// Arrays
 
 	int* m_piCivilizationBuildings;
 	int* m_piCivilizationUnits;
 	int* m_piCivilizationFreeUnitsClass;
 	int* m_piCivilizationInitialCivics;
+
+	int* m_piLoadingTime; // Leoreth
+	int* m_piRatings; // Leoreth
 
 	bool* m_pbLeaders;
 	bool* m_pbCivilizationFreeBuildingClass;
@@ -4153,6 +4171,10 @@ public:
 	int getMissionType() const;					// Exposed to Python
 	void setMissionType(int iNewType);
 
+	// Leoreth
+	bool isProselytizing() const;
+	bool isLocal() const;
+
 	const TCHAR* getTechButton() const;				// Exposed to Python
 	void setTechButton(const TCHAR* szVal);
 	const TCHAR* getGenericTechButton() const;				// Exposed to Python
@@ -4191,6 +4213,10 @@ protected:
 	int m_iNumFreeUnits;
 	int m_iSpreadFactor;
 	int m_iMissionType;
+
+	// Leoreth
+	bool m_bProselytizing;
+	bool m_bLocal;
 
 	CvString m_szTechButton;
 	CvString m_szGenericTechButton;

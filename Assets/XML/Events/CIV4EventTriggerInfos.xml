@@ -188,7 +188,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech><!--obsolete Modern era-->
+				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech> <!-- Obsolete Modern Era -->
 				<ObsoleteTech>TECH_PLASTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_MASS_MEDIA</ObsoleteTech>
@@ -288,7 +288,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -551,7 +551,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech><!--obsolete Medieval era-->
+				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech> <!-- Obsolete Medieval Era -->
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
@@ -781,8 +781,8 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_JEWISH_CATHEDRAL</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_HINDU_CATHEDRAL</BuildingClass>
@@ -910,7 +910,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech><!--obsolete Modern era-->
+				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech> <!-- Obsolete Modern Era -->
 				<ObsoleteTech>TECH_PLASTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_MASS_MEDIA</ObsoleteTech>
@@ -1697,9 +1697,9 @@
 			<BonusesRequired/>
 			<RoutesRequired/>
 			<ReligionsRequired>
-				<ReligionType>RELIGION_JUDAISM</ReligionType>
+				<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+				<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 				<ReligionType>RELIGION_ORTHODOXY</ReligionType>
-				<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
 				<ReligionType>RELIGION_ISLAM</ReligionType>
 				<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
 			</ReligionsRequired>
@@ -5989,7 +5989,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -6082,7 +6082,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -6167,7 +6167,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -7249,13 +7249,13 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ORTHODOX_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_MONASTERY</BuildingClass>
 			</BuildingsRequired>
@@ -7463,7 +7463,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech><!--obsolete Medieval era-->
+				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech> <!-- Obsolete Medieval Era -->
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
@@ -7889,7 +7889,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -7977,7 +7977,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech><!--obsolete Medieval era-->
+				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech> <!-- Obsolete Medieval Era -->
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
@@ -8067,7 +8067,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_RIFLING</ObsoleteTech>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -8154,7 +8154,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -8242,7 +8242,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -8330,7 +8330,7 @@
 				<PrereqTech>TECH_STEEL</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech><!--obsolete Modern era-->
+				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech> <!-- Obsolete Modern Era -->
 				<ObsoleteTech>TECH_PLASTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_MASS_MEDIA</ObsoleteTech>
@@ -8419,7 +8419,7 @@
 				<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_STEALTH</ObsoleteTech><!--obsolete Future era-->
+				<ObsoleteTech>TECH_STEALTH</ObsoleteTech> <!-- Obsolete Future Era -->
 				<ObsoleteTech>TECH_GENETICS</ObsoleteTech>
 				<ObsoleteTech>TECH_FUSION</ObsoleteTech>
 			</ObsoleteTechs>
@@ -8505,7 +8505,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_STEALTH</ObsoleteTech><!--obsolete Future era-->
+				<ObsoleteTech>TECH_STEALTH</ObsoleteTech> <!-- Obsolete Future Era -->
 				<ObsoleteTech>TECH_GENETICS</ObsoleteTech>
 				<ObsoleteTech>TECH_FUSION</ObsoleteTech>
 			</ObsoleteTechs>
@@ -8591,7 +8591,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -8678,7 +8678,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -9020,7 +9020,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -9383,7 +9383,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -9469,7 +9469,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -9555,7 +9555,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -9641,7 +9641,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -9727,7 +9727,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -9786,14 +9786,14 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_BUDDHIST_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ISLAMIC_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_HINDU_TEMPLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_JEWISH_TEMPLE</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_BUDDHIST_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CONFUCIAN_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_TEMPLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_TEMPLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_ISLAMIC_TEMPLE</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_ORTHODOX_TEMPLE</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_TEMPLE</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
@@ -9925,7 +9925,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -10159,15 +10159,15 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_JEWISH_CATHEDRAL</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_HINDU_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_BUDDHIST_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_CONFUCIAN_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_TAOIST_CATHEDRAL</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_CATHEDRAL</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -11236,7 +11236,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -11328,7 +11328,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -11414,7 +11414,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -11505,7 +11505,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -11590,7 +11590,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -11682,7 +11682,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -11768,7 +11768,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -11860,7 +11860,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -12118,7 +12118,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech><!--obsolete Modern era-->
+				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech> <!-- Obsolete Modern Era -->
 				<ObsoleteTech>TECH_PLASTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_MASS_MEDIA</ObsoleteTech>
@@ -12208,7 +12208,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech><!--obsolete Modern era-->
+				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech> <!-- Obsolete Modern Era -->
 				<ObsoleteTech>TECH_PLASTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_MASS_MEDIA</ObsoleteTech>
@@ -12597,7 +12597,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_COLOSSEUM</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_AMPHITHEATRE</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -12627,7 +12627,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -12685,14 +12685,14 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
-				<BuildingClass>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PROTESTANT_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ORTHODOX_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_HINDU_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClass>
 				<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_MONASTERY</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
@@ -12813,7 +12813,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech><!--obsolete Modern era-->
+				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech> <!-- Obsolete Modern Era -->
 				<ObsoleteTech>TECH_PLASTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_MASS_MEDIA</ObsoleteTech>
@@ -14174,7 +14174,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_AESTHETICS</ObsoleteTech> <!--obsolete Classical era-->
+				<ObsoleteTech>TECH_AESTHETICS</ObsoleteTech> <!-- Obsolete Classical Era -->
 				<ObsoleteTech>TECH_HORSEBACK_RIDING</ObsoleteTech>
 				<ObsoleteTech>TECH_CODE_OF_LAWS</ObsoleteTech>
 				<ObsoleteTech>TECH_MATHEMATICS</ObsoleteTech>
@@ -14266,7 +14266,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_AESTHETICS</ObsoleteTech> <!--obsolete Classical era-->
+				<ObsoleteTech>TECH_AESTHETICS</ObsoleteTech> <!-- Obsolete Classical Era -->
 				<ObsoleteTech>TECH_HORSEBACK_RIDING</ObsoleteTech>
 				<ObsoleteTech>TECH_CODE_OF_LAWS</ObsoleteTech>
 				<ObsoleteTech>TECH_MATHEMATICS</ObsoleteTech>
@@ -14355,7 +14355,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech><!--obsolete Medieval era-->
+				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech> <!-- Obsolete Medieval Era -->
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
@@ -14445,7 +14445,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech><!--obsolete Medieval era-->
+				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech> <!-- Obsolete Medieval Era -->
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
@@ -14533,7 +14533,7 @@
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -14622,7 +14622,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -14879,7 +14879,7 @@
 				<PrereqTech>TECH_HORSEBACK_RIDING</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -14969,7 +14969,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech> <!--when curissars are available-->
+				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech> <!-- When cuirassiers are available -->
 				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech>
 				<ObsoleteTech>TECH_RIFLING</ObsoleteTech>
 			</ObsoleteTechs>
@@ -15054,7 +15054,7 @@
 				<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_STEALTH</ObsoleteTech><!--obsolete Future era-->
+				<ObsoleteTech>TECH_STEALTH</ObsoleteTech> <!-- Obsolete Future Era -->
 				<ObsoleteTech>TECH_GENETICS</ObsoleteTech>
 				<ObsoleteTech>TECH_FUSION</ObsoleteTech>
 			</ObsoleteTechs>
@@ -15788,7 +15788,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech><!--obsolete Medieval era-->
+				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech> <!-- Obsolete Medieval Era -->
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_MUSIC</ObsoleteTech>
 				<ObsoleteTech>TECH_PHILOSOPHY</ObsoleteTech>
@@ -15882,7 +15882,7 @@
 				<PrereqTech>TECH_POLYTHEISM</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -16224,7 +16224,7 @@
 				<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_STEALTH</ObsoleteTech><!--obsolete Future era-->
+				<ObsoleteTech>TECH_STEALTH</ObsoleteTech> <!-- Obsolete Future Era -->
 				<ObsoleteTech>TECH_GENETICS</ObsoleteTech>
 				<ObsoleteTech>TECH_FUSION</ObsoleteTech>
 			</ObsoleteTechs>
@@ -16532,7 +16532,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_TEMPLE_OF_SALOMON</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -16660,7 +16660,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_UTOPIA</ObsoleteTech><!--obsolete Industrial era-->
+				<ObsoleteTech>TECH_COMMUNISM</ObsoleteTech> <!-- Obsolete Industrial Era -->
 				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
 				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_STEEL</ObsoleteTech>
@@ -16718,7 +16718,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_CHRISTIAN_MONASTERY</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -16731,7 +16731,7 @@
 			<BonusesRequired/>
 			<RoutesRequired/>
 			<ReligionsRequired>
-				<ReligionType>RELIGION_CHRISTIANITY</ReligionType>
+				<ReligionType>RELIGION_CATHOLICISM</ReligionType>
 			</ReligionsRequired>
 			<iNumReligions>1</iNumReligions>
 			<CorporationsRequired/>
@@ -16833,7 +16833,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>
@@ -16892,7 +16892,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_OBELISK</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
@@ -16923,7 +16923,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech><!--obsolete Renaissance era-->
+				<ObsoleteTech>TECH_MILITARY_SCIENCE</ObsoleteTech> <!-- Obsolete Renaissance Era -->
 				<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
 				<ObsoleteTech>TECH_PRINTING_PRESS</ObsoleteTech>
 				<ObsoleteTech>TECH_MILITARY_TRADITION</ObsoleteTech>

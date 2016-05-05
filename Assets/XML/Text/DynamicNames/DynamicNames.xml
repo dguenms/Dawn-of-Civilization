@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Generic Dynamic Names -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_PEOPLES_OF</Tag>
+		<English>Peoples of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEOPLES_ADJECTIVE</Tag>
+		<English>%s2 Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EMPIRE_OF</Tag>
+		<English>Empire of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EMPIRE_ADJECTIVE</Tag>
+		<English>%s2 Empire</English>
+		<French>
+			<Text>Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KINGDOM_OF</Tag>
+		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KINGDOM_ADJECTIVE</Tag>
+		<English>%s2 Kingdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REPUBLIC_OF</Tag>
+		<English>Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Republik %s1:Republik %s1:Republik %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica di %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 Republic</English>
+		<French>
+			<Text>R&#233;publique %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Republik:%s2-Republik:%s2-Republik</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_OF</Tag>
+		<English>Socialist Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SOCIALIST_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 Socialist Republic</English>
+		<French>
+			<Text>R&#233;publique Socialiste %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Sozialistische Republik:%s2 Sozialistische Republik:%s2 Sozialistischen Republik</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica Socialista %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica Socialista %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITED_STATES_OF</Tag>
+		<English>United States of %s1</English>
+		<French>
+			<Text>Etats Unis d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Vereinigte Staaten von %s1:Vereinigten Staaten von %s1:Vereinigten Staaten von %s1</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Stati Uniti d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estados Unidos de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITED_STATES_ADJECTIVE</Tag>
+		<English>United %s2 States</English>
+		<French>
+			<Text>Etats %s2 Unis</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Vereinigte %s2 Staaten:Vereinigten %s2 Staaten:Vereinigten %s2 Staaten</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Stati Uniti %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estados Unidos %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEOPLES_REPUBLIC_OF</Tag>
+		<English>People's Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique Populaire du %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Volksrepublik %s1:Volksrepublik %s1:Volksrepublik %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica Popolare del %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica Popular de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEOPLES_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 People's Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_STATES_OF</Tag>
+		<English>City States of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_STATES_ADJECTIVE</Tag>
+		<English>%s2 City States</English>
+		<French>
+			<Text>Cit&#233;s-Etats %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>%s2-Stadtstaaten:%s2-Stadtstaaten:%s2-Stadtstaaten</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Citt&#224;-Stato %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ciudades-Estados %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_TITLE</Tag>
+		<English>%s2 %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CALIPHATE_ADJECTIVE</Tag>
+		<English>%s2 Caliphate</English>
+		<French>
+			<Text>Califat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Kaliphat:%s2 Kaliphat:%s2 Kaliphat</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Califfato %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Califato %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CALIPHATE_OF</Tag>
+		<English>Caliphate of %s1</English>
+		<French>
+			<Text>Califat d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kalifat %s1:Kalifat %s1:Kalifat %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Califfato di %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Califato de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SULTANATE_ADJECTIVE</Tag>
+		<English>%s2 Sultanate</English>
+		<French>
+			<Text>Sultanat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Sultanat:%s2 Sultanat:%s2 Sultanat</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sultanato %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sultanato %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SULTANATE_OF</Tag>
+		<English>Sultanate of %s1</English>
+		<French>
+			<Text>Sultanat d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Sultanat %s1:Sultanat %s1:Sultanat %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Sultanato d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sultanato de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONFEDERACY_ADJECTIVE</Tag>
+		<English>%s2 Confederacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ISLAMIC_REPUBLIC_OF</Tag>
+		<English>Islamic Republic of %s1</English>
+		<French>
+			<Text>R&#233;publique Islamique d'%s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Islamische Republik %s1:Islamische Republik %s1:Islamischen Republik %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica Islamica d'%s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica Isl&#225;mica de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ISLAMIC_REPUBLIC_ADJECTIVE</Tag>
+		<English>%s2 Islamic Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MANDATE_OF</Tag>
+		<English>%s2 Mandate of %s1</English>
+		<French>
+			<Text>Mandat %s2 %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Mandat %s1:%s2 Mandat %s1:%s2 Mandat %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Mandato %s2 dell'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mandato %s2 de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONFEDERATION_ADJECTIVE</Tag>
+		<English>%s2 Confederation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROTECTORATE_OF</Tag>
+		<English>Protectorate of %s1</English>
+		<French>
+			<Text>Protectorat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Protektorat %s1:Protektorat %s1:Protektorat %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Protettorato di %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Protectorado de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COLONY_OF</Tag>
+		<English>Colony of %s1</English>
+		<French>
+			<Text>Colonie d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kolonie %s1:Kolonie %s1:Kolonie %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Colonia d'%s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Colonia de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

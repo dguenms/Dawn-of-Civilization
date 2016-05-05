@@ -1,0 +1,3048 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Victory -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_UHV__TITLE</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GOALS</Tag>
+		<English>Historical Victory goals</English>
+		<French>Objectifs de victoire historique</French>
+		<German>Historische Siegbedingungen</German>
+		<Italian>Obiettivi per le vittorie storiche</Italian>
+		<Spanish>Objetivos de la victoria hist&#243;rica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AME1_TITLE</Tag>
+		<English>Manifest Destiny</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AME1</Tag>
+		<English>Allow no European colonies in the North and Central America and in the Caribbean and control or vassalize Mexico in 1900 AD</English>
+		<German>Lassen Sie im Jahr 1900 n. Chr. keine europ&#228;ischen St&#228;dte in Nord- und Zentralamerika und in der Karibik zu und kontrollieren oder vassalisieren Sie Mexiko</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AME2_TITLE</Tag>
+		<English>The American Dream</English>
+		<German>Der amerikanische Traum</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AME2</Tag>
+		<English>Build the Statue of Liberty, the Empire State Building, the Pentagon and the United Nations by 1950 AD</English>
+		<German>Errichten Sie bis zum Jahr 1950 n. Chr. die Freiheitsstatue, das Empire State Building, das Pentagon und the Vereinten Nationen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AME3_TITLE</Tag>
+		<English>The World's Policeman</English>
+		<German>Die Weltpolizei</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AME3</Tag>
+		<English>Secure 10 Oil resources by 2000 AD</English>
+		<French>S&#233;curiser 10 gisements de p&#233;trole avant 2000 ap. J.-C.</French>
+		<German>Sichern Sie sich bis zum Jahr 2000 n. Chr. 10 &#214;l-Vorkommen</German>
+		<Italian>Assicurati 10 fonti di petrolio entro il 2000 d.C.</Italian>
+		<Spanish>Controlar 10 recursos petrol&#237;feros en el 2000 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARA1_TITLE</Tag>
+		<English>Ijtihad</English>
+		<German>Ischtihad</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARA1</Tag>
+		<English>Be the most advanced civilization in 1300 AD</English>
+		<German>Seien Sie im Jahr 1300 n. Chr. die fortschrittlichste Zivilisation</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARA2_TITLE</Tag>
+		<English>Jihad</English>
+		<German>Dschihad</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARA2</Tag>
+		<English>Control Egypt, the Maghreb, Spain, Mesopotamia and Persia directly or by vassal in 1300 AD</English>
+		<German>Bringen Sie im Jahr 1300 n. Chr. &#196;gypten, den Maghreb, Spanien, Mesopotamien und Persien unter Ihre Kontrolle oder machen Sie sie zu Vasallenstaaten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARA3_TITLE</Tag>
+		<English>Dawah</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARA3</Tag>
+		<English>Spread Islam to 40% of the cities in the world</English>
+		<French>R&#233;pandre l'Islam &#224; 40% des villes du monde</French>
+		<German>Sorgen Sie f&#252;r eine weltweit 40%%-ige Verbreitung des Islam</German>
+		<Italian>Diffondi l'Islam nel 40% delle citt&#224; mondiali</Italian>
+		<Spanish>Propagar el Islam al 40% de las ciudades del mundo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG1_TITLE</Tag>
+		<English>The Argentinian Paradox</English>
+		<German>Das argentinische Paradox</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG1</Tag>
+		<English>Experience two golden ages by 1930 AD</English>
+		<German>Erleben Sie bis zum Jahr 1930 n. Chr. zwei goldene Zeitalter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG2_TITLE</Tag>
+		<English>Tango and Poetry</English>
+		<German>Tango und Dichtung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG2</Tag>
+		<English>Have 25000 culture in Buenos Aires by 1960 AD</English>
+		<German>Haben Sie bis zum Jahr 1960 n. Chr. 25.000 Kultur in Buenos Aires</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG2_EPIC</Tag>
+		<English>Have 37500 culture in Buenos Aires by 1960 AD</English>
+		<German>Haben Sie bis zum Jahr 1960 n. Chr. 37.500 Kultur in Buenos Aires</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG2_MARATHON</Tag>
+		<English>Have 75000 culture in Buenos Aires by 1960 AD</English>
+		<German>Haben Sie bis zum Jahr 1960 n. Chr. 75.000 Kultur in Buenos Aires</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG3_TITLE</Tag>
+		<English>Peronism</English>
+		<German>Peronismus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ARG3</Tag>
+		<English>Experience five golden ages by 2000 AD</English>
+		<German>Erleben Sie bis zum Jahr 2000 n. Chr. f&#252;nf goldene Zeitalter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AZT1_TITLE</Tag>
+		<English>Floating Gardens</English>
+		<German>Schwimmende G&#228;rten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AZT1</Tag>
+		<English>Make Tenochtitlan the largest city in the world in 1520 AD</English>
+		<German>Machen Sie Tenochtitlan im Jahr 1520 n. Chr. zur gr&#246;&#223;sten Stadt der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AZT2_TITLE</Tag>
+		<English>Human Sacrifice</English>
+		<German>Menschenopfer</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AZT2</Tag>
+		<English>Build 6 pagan temples and sacrificial altars by 1650 AD</English>
+		<German>Bauen Sie bis zum Jahr 1650 n. Chr. 6 heidnische Tempel und Opferalt&#228;re</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AZT3_TITLE</Tag>
+		<English>European Flower Wars</English>
+		<German>Europ&#228;ische Blumenkriege</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_AZT3</Tag>
+		<English>Enslave 20 Old World units</English>
+		<German>Versklaven Sie 20 Einheiten aus der alten Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB1_TITLE</Tag>
+		<English>Hammurabi's Code</English>
+		<German>Der Kodex von Hammurabi</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB1</Tag>
+		<English>Be the first to discover Writing, Code of Laws and Monarchy</English>
+		<French>Etre le premier &#224; d&#233;couvrir l'Ecriture, le Livre des Lois et la Monarchie</French>
+		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Schrift, Gesetzgebung und Monarchie</German>
+		<Italian>Devi essere il primo a scoprire scrittura, codice di leggi e monarchia</Italian>
+		<Spanish>Ser el primero en descubrir la Escritura, la Legislaci&#243;n y la Monarqu&#237;a</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB2_TITLE</Tag>
+		<English>The Fertile Crescent</English>
+		<German>Der fruchtbare Halbmond</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB2</Tag>
+		<English>Make Babylon the most populous city in the world in 850 BC</English>
+		<French>Faire de Babylone la ville la plus peupl&#233;e avant 850 av. J.-C.</French>
+		<German>Sorgen Sie daf&#252;r, dass Babylon im Jahr 850 v. Chr. die gr&#246;&#223;te Stadt der Welt ist</German>
+		<Italian>Rendi Babilonia la citt&#224; pi&#249; popolosa del mondo nell'850 a.C.</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s poblada del mundo en el 850 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB2_EPIC</Tag>
+		<English>Make Babylon the most populous city in the world in 850 BC</English>
+		<French>Faire de Babylone la ville la plus peupl&#233;e avant 850 av. J.-C.</French>
+		<German>Sorgen Sie daf&#252;r, dass Babylon im Jahr 850 v. Chr. die gr&#246;&#223;te Stadt der Welt ist</German>
+		<Italian>Rendi Babilonia la citt&#224; pi&#249; popolosa del mondo nell'850 a.C.</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s poblada del mundo en el 850 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB2_MARATHON</Tag>
+		<English>Make Babylon the most populous city in the world in 850 BC</English>
+		<French>Faire de Babylone la ville la plus peupl&#233;e avant 850 av. J.-C.</French>
+		<German>Sorgen Sie daf&#252;r, dass Babylon im Jahr 850 v. Chr. die gr&#246;&#223;te Stadt der Welt ist</German>
+		<Italian>Rendi Babilonia la citt&#224; pi&#249; popolosa del mondo nell'850 a.C.</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s poblada del mundo en el 850 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB2_NOTURN</Tag>
+		<English>Make Babylon the most populous city in the world in 850 BC</English>
+		<French>Faire de Babylone la ville la plus peupl&#233;e avant 850 av. J.-C.</French>
+		<German>Sorgen Sie daf&#252;r, dass Babylon im Jahr 850 v. Chr. die gr&#246;&#223;te Stadt der Welt ist</German>
+		<Italian>Rendi Babilonia la citt&#224; pi&#249; popolosa del mondo nell'850 a.C.</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s poblada del mundo en el 850 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB3_TITLE</Tag>
+		<English>The Tower of Babel</English>
+		<German>Der Turm von Babel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB3</Tag>
+		<English>Make Babylon the most culturally advanced city in the world in 700 BC</English>
+		<French>Faire de Babylone la ville la plus avanc&#233;e culturellement avant 700 av. J.-C.</French>
+		<German>Machen Sie Babylon im Jahr 700 v. Chr. zur kulturell bedeutendsten Stadt</German>
+		<Italian>Rendi Babilonia la citt&#224; culturalmente pi&#249; avanzata del mondo entro il 700 a.C.</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s adelantada del mundo en t&#233;rminos de cultura en el 700 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB3_EPIC</Tag>
+		<English>Make Babylon the most culturally advanced city in the world in 700 BC</English>
+		<French>Faire de Babylone la ville la plus avanc&#233;e culturellement avant 700 av. J.-C.</French>
+		<German>Machen Sie Babylon im Jahr 700 v. Chr. zur kulturell bedeutendsten Stadt</German>
+		<Italian>Rendi Babilonia la citt&#224; culturalmente pi&#249; avanzata del mondo entro il 700 a.C.</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s adelantada del mundo en t&#233;rminos de cultura en el 700 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB3_MARATHON</Tag>
+		<English>Make Babylon the most culturally advanced city in the world in 700 BC</English>
+		<French>Faire de Babylone la ville la plus avanc&#233;e culturellement avant 700 av. J.-C.</French>
+		<German>Machen Sie Babylon im Jahr 700 v. Chr. zur kulturell bedeutendsten Stadt</German>
+		<Italian>Rendi Babilonia la citt&#224; culturalmente pi&#249; avanzata del mondo entro il 700 a.C.</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s adelantada del mundo en t&#233;rminos de cultura en el 700 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BAB3_NOTURN</Tag>
+		<English>Make Babylon the most culturally advanced city in the world by 700 BC</English>
+		<French>Faire de Babylone la ville la plus avanc&#233;e culturellement avant 700 av. J.-C.</French>
+		<German>Machen Sie Babylon bis zum Jahr 700 v. Chr. zur kulturell bedeutendsten Stadt</German>
+		<Italian>Rendi Babilonia la citt&#224; culturalmente pi&#249; avanzata del mondo entro il 700 a.C.</Italian>
+		<Spanish>Conseguir que Babilonia sea la ciudad m&#225;s adelantada del mundo en t&#233;rminos de cultura en el 700 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA1_TITLE</Tag>
+		<English>The Golden Law</English>
+		<German>Das goldene Gesetz</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA1</Tag>
+		<English>Control 10 Slave Plantations and 4 Pastures in 1880 AD</English>
+		<German>Kontrollieren Sie im Jahr 1880 n. Chr. 10 Sklaven-Plantagen und 4 Weidel&#228;nder</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA2_TITLE</Tag>
+		<English>Maracana, Cristo Redentor, Itaipu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA2</Tag>
+		<English>Build Wembley, Cristo Redentor and the Three Gorges Dam</English>
+		<German>Bauen Sie Wembley, Cristo Redentor und den Drei-Schluchten-Damm</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA3_TITLE</Tag>
+		<English>Pindorama</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BRA3</Tag>
+		<English>Control 20 Forest Preserves and have a National Park in your capital by 1950 AD</English>
+		<German>Kontrollieren Sie bis zum Jahr 1880 n. Chr. 20 Waldschutzgebiete und einen Nationalpark in Ihrer Hauptstadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ1_TITLE</Tag>
+		<English>Crossroads of the World</English>
+		<German>Wegkreuzung der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ1</Tag>
+		<English>Have 5000 gold in 1000 AD</English>
+		<German>Besitzen Sie 5000 Gold im Jahr 1000 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ1_EPIC</Tag>
+		<English>Have 7500 gold in 1000 AD</English>
+		<German>Besitzen Sie 7500 Gold im Jahr 1000 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ1_MARATHON</Tag>
+		<English>Have 15000 gold in 1000 AD</English>
+		<German>Besitzen Sie 15000 Gold im Jahr 1000 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ2_TITLE</Tag>
+		<English>City of the World's Desire</English>
+		<German>Stadt der weltlichen Begierden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ2</Tag>
+		<English>Make Constantinople the world's largest and most cultured city in 1200 AD</English>
+		<German>Machen Sie Konstantinopel zur gr&#246;&#223;ten und kultiviertesten Stadt der Welt im Jahr 1200 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ3_TITLE</Tag>
+		<English>The Eternal Empire</English>
+		<German>Das ewige Imperium</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_BYZ3</Tag>
+		<English>Control three cities in the Balkans, Northern Africa and the Near East in 1450 AD</English>
+		<German>Kontrollieren Sie drei St&#228;dte im Balkan, Nordafrika und dem Nahen Osten im Jahr 1450 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN1_TITLE</Tag>
+		<English>A Mari Usque Ad Mare</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN1</Tag>
+		<English>Connect your capital to an Atlantic and a Pacific port by railroad by 1920 AD</English>
+		<German>Verbinden Sie bis zum Jahr 1920 n. Chr. Ihre Hauptstadt per Schiene zu einem atlantischem und einem pazifischen Hafen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN2_TITLE</Tag>
+		<English>Great White North</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN2</Tag>
+		<English>Control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD</English>
+		<German>Kontrollieren Sie bis zum Jahr 1950 n. Chr. alle St&#228;dte und 90% des Gebiets in Kanada ohne jemals eine Stadt zu erobern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN3_TITLE</Tag>
+		<English>Peacekeeping</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAN3</Tag>
+		<English>End twelve wars through diplomacy by 2000 AD</English>
+		<German>Beenden Sie bis zum Jahr 2000 n. Chr. zw&#246;lf Kriege durch Diplomatie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR1_TITLE</Tag>
+		<English>New Tyre</English>
+		<German>Das neue Tyrus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR1</Tag>
+		<English>Build a Palace and the Great Cothon in Carthage by 300 BC</English>
+		<German>Bauen Sie bis zum Jahr 300 v. Chr. einen Palast und den Gro&#223;en Cothon in Karthago</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR1_EPIC</Tag>
+		<English>Build a Palace and the Great Cothon in Carthage by 300 BC</English>
+		<German>Bauen Sie bis zum Jahr 300 v. Chr. einen Palast und den Gro&#223;en Cothon in Karthago</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR1_MARATHON</Tag>
+		<English>Build a Palace and the Great Cothon in Carthage by 300 BC</English>
+		<German>Bauen Sie bis zum Jahr 300 v. Chr. einen Palast und den Gro&#223;en Cothon in Karthago</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR1_NOTURN</Tag>
+		<English>Build a Palace and the Great Cothon in Carthage by 300 BC</English>
+		<German>Bauen Sie bis zum Jahr 300 v. Chr. einen Palast und den Gro&#223;en Cothon in Karthago</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR2_TITLE</Tag>
+		<English>The Punic Wars</English>
+		<German>Die punischen Kriege</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR2</Tag>
+		<English>Control Italy and Iberia in 100 BC</English>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR2_EPIC</Tag>
+		<English>Control Italy and Iberia in 100 BC</English>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR2_MARATHON</Tag>
+		<English>Control Italy and Iberia in 100 BC</English>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR2_NOTURN</Tag>
+		<English>Control Italy and Iberia in 100 BC</English>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. Italien und Iberien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR3_TITLE</Tag>
+		<English>Traders in Purple</English>
+		<German>Purpurh&#228;ndlers</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR3</Tag>
+		<English>Have 5000 gold in 200 AD</English>
+		<German>Verf&#252;gen Sie im Jahr 200 v. Chr. &#252;ber 5000 Gold</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR3_EPIC</Tag>
+		<English>Have 7500 gold in 200 AD</English>
+		<German>Verf&#252;gen Sie im Jahr 200 v. Chr. &#252;ber 7500 Gold</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CAR3_MARATHON</Tag>
+		<English>Have 15000 gold in 200 AD</English>
+		<German>Verf&#252;gen Sie im Jahr 200 v. Chr. &#252;ber 15000 Gold</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHI1_TITLE</Tag>
+		<English>Mandate of Heaven</English>
+		<German>Mandat des Himmels</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHI1</Tag>
+		<English>Build 2 Confucian Academies and 2 Taoist Pagodas by 1000 AD</English>
+		<French>Construire 2 acad&#233;mies confucianistes et 2 pagodes tao&#239;stes avant 1000 ap. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 1000 n. Chr. 2 Konfuzianische Akademien und 2 Taoistische Pagoden</German>
+		<Italian>Costruisci due Accademie Confuciane e due Pagode Taoiste entro il 1000 d.C.</Italian>
+		<Spanish>Construir 2 academias confucianas y 2 pagodas tao&#237;stas antes del 1000 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHI2_TITLE</Tag>
+		<English>The Four Great Inventions</English>
+		<German>Die Vier Gro&#223;en Erfindungen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHI2</Tag>
+		<English>Be first to discover Compass, Paper, Gunpowder and Printing Press</English>
+		<German>Entdecken Sie als erster Kompass, Papier, Schie&#223;pulver und Druckerpresse</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHI3_TITLE</Tag>
+		<English>Ten Thousand Years</English>
+		<German>Zehntausend Jahre</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CHI3</Tag>
+		<English>Experience four golden ages by 1800 AD</English>
+		<German>Erleben Sie bis zum Jahr 1800 n. Chr. vier goldene Zeitalter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL1_TITLE</Tag>
+		<English>The Boliver Doctrine</English>
+		<German>Die Bolivar-Doktrin</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL1</Tag>
+		<English>Allow no European colonies in Peru, Gran Colombia, the Guayanas and the Caribbean in 1870 AD</English>
+		<German>Lassen sie im Jahr 1870 n. Chr. keine europ&#228;ischen Kolonien in Peru, Gro&#223;kolumbien, den Guayanas and der Karibik</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL2_TITLE</Tag>
+		<English>United States of South America</English>
+		<German>Vereinigte Staaten von S&#252;damerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL2</Tag>
+		<English>Control South America in 1920 AD</English>
+		<German>Kontrollieren Sie im Jahr 1920 n. Chr. S&#252;damerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3_TITLE</Tag>
+		<English>Auge del Caf&#233;</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3</Tag>
+		<English>Acquire 3000 gold by selling resources by 1950 AD</English>
+		<German>Erhalten Sie bis zum Jahr 1950 n. Chr. 3000 Gold durch den Verkauf von Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3_EPIC</Tag>
+		<English>Acquire 4500 gold by selling resources by 1950 AD</English>
+		<German>Erhalten Sie bis zum Jahr 1950 n. Chr. 4500 Gold durch den Verkauf von Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_COL3_MARATHON</Tag>
+		<English>Acquire 9000 gold by selling resources by 1950 AD</English>
+		<German>Erhalten Sie bis zum Jahr 1950 n. Chr. 9000 Gold durch den Verkauf von Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY1_TITLE</Tag>
+		<English>Valley of Kings</English>
+		<German>Tal der K&#246;nige</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY1</Tag>
+		<English>Have more than 500 Culture in 850 BC</English>
+		<French>Avoir plus de 500 en Culture en 850 av. J.-C.</French>
+		<German>Erzielen Sie im Jahr 850 v. Chr. mehr als 500 Kulturpunkte</German>
+		<Italian>Devi avere pi&#249; di 500 cultura nel 850 a.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 500 en el 850 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY1_EPIC</Tag>
+		<English>Have more than 750 Culture in 850 BC</English>
+		<French>Avoir plus de 750 en Culture en 850 av. J.-C.</French>
+		<German>Erzielen Sie im Jahr 850 v. Chr. mehr als 750 Kulturpunkte</German>
+		<Italian>Devi avere pi&#249; di 750 cultura nel 850 a.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 750 en el 850 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY1_MARATHON</Tag>
+		<English>Have more than 1500 Culture in 850 BC</English>
+		<French>Avoir plus de 1500 en Culture en 850 av. J.-C.</French>
+		<German>Erzielen Sie im Jahr 850 v. Chr. mehr als 1500 Kulturpunkte</German>
+		<Italian>Devi avere pi&#249; di 1500 cultura nel 850 a.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 1500 en el 850 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY2_TITLE</Tag>
+		<English>Monuments on the Nile</English>
+		<German>Monumente am Nil</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY2</Tag>
+		<English>Build the Pyramids, the Great Library, and the Great Lighthouse by 100 BC</English>
+		<French>Construire les Pyramides, la Grande Biblioth&#232;que et le Phare avant 100 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 100 v. Chr. die Pyramiden, die Gro&#223;e Bibliothek und den Gro&#223;en Leuchtturm</German>
+		<Italian>Devi costruire le Piramidi, la Grande Biblioteca e il Grande Faro entro il 100 a.C.</Italian>
+		<Spanish>Construir las Pir&#225;mides, la Gran Biblioteca y el Gran Faro antes del 100 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY2_EPIC</Tag>
+		<English>Build the Pyramids, the Great Library, and the Great Lighthouse by 100 BC</English>
+		<French>Construire les Pyramides, la Grande Biblioth&#232;que et le Phare avant 100 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 100 v. Chr. die Pyramiden, die Gro&#223;e Bibliothek und den Gro&#223;en Leuchtturm</German>
+		<Italian>Devi costruire le Piramidi, la Grande Biblioteca e il Grande Faro entro il 100 a.C.</Italian>
+		<Spanish>Construir las Pir&#225;mides, la Gran Biblioteca y el Gran Faro antes del 100 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY2_MARATHON</Tag>
+		<English>Build the Pyramids, the Great Library, and the Great Lighthouse by 100 BC</English>
+		<French>Construire les Pyramides, la Grande Biblioth&#232;que et le Phare avant 100 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 100 v. Chr. die Pyramiden, die Gro&#223;e Bibliothek und den Gro&#223;en Leuchtturm</German>
+		<Italian>Devi costruire le Piramidi, la Grande Biblioteca e il Grande Faro entro il 100 a.C.</Italian>
+		<Spanish>Construir las Pir&#225;mides, la Gran Biblioteca y el Gran Faro antes del 100 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY3_TITLE</Tag>
+		<English>The Ptolemaic Dynasty</English>
+		<German>Die Ptolemaische Dynastie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY3</Tag>
+		<English>Have more than 5000 Culture in 170 AD</English>
+		<French>Avoir plus de 5000 en Culture en 170 ap. J.-C.</French>
+		<German>Erzielen Sie im Jahr 170 n. Chr. mehr als 5.000 Kulturpunkte</German>
+		<Italian>Devi avere pi&#249; di 5000 cultura nel 170 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 5.000 en el 170 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY3_EPIC</Tag>
+		<English>Have more than 7500 Culture in 170 AD</English>
+		<French>Avoir plus de 7500 en Culture en 170 ap. J.-C.</French>
+		<German>Erzielen Sie im Jahr 170 n. Chr. mehr als 7.500 Kulturpunkte</German>
+		<Italian>Devi avere pi&#249; di 7500 cultura nel 170 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 7.500 en el 170 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_EGY3_MARATHON</Tag>
+		<English>Have more than 15000 Culture in 170 AD</English>
+		<French>Avoir plus de 15000 en Culture en 170 ap. J.-C.</French>
+		<German>Erzielen Sie im Jahr 170 n. Chr. mehr als 15.000 Kulturpunkte</German>
+		<Italian>Devi avere pi&#249; di 15000 cultura nel 170 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 15.000 en el 170 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ENG1_TITLE</Tag>
+		<English>The Sun Never Sets</English>
+		<German>Die Sonne geht niemals unter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ENG1</Tag>
+		<English>Colonize every continent by 1730 AD</English>
+		<German>Kolonisieren Sie bis zum Jahr 1730 n. Chr. jeden Kontinent</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ENG2_TITLE</Tag>
+		<English>Britannia Rule the Waves</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ENG2</Tag>
+		<English>Control a total of 25 frigates or ships of the line and sink 50 enemy ships by 1800 AD</English>
+		<German>Kontrollieren Sie bis zum Jahr 1800 n. Chr. insgesamt 25 Fregatten oder Linienschiffe und versenken Sie 50 gegnerische Schiffe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ENG3_TITLE</Tag>
+		<English>The Industrial Revolution</English>
+		<German>Die industrielle Revolution</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ENG3</Tag>
+		<English>Be the first to enter Industrial and Modern eras</English>
+		<French>Etre le premier &#224; entrer dans les &#232;res industrielle et moderne</French>
+		<German>Erreichen Sie vor allen anderen Zivilisationen das Industriezeitalter und die Moderne</German>
+		<Italian>Devi essere il primo a entrare nell'et&#224; industriale e in quella moderna</Italian>
+		<Spanish>Ser el primero en entrar en las eras Industrial y Moderna</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH1_TITLE</Tag>
+		<English>Prester John</English>
+		<German>Presbyter Johannes</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH1</Tag>
+		<English>Found Orthodoxy</English>
+		<German>Begr&#252;nden Sie die Orthodoxie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
+		<English>Incense Road</English>
+		<German>Weihrauchstra&#223;e</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2</Tag>
+		<English>Acquire 3 incense resources by 600 AD</English>
+		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2_EPIC</Tag>
+		<English>Acquire 3 incense resources by 600 AD</English>
+		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH2_MARATHON</Tag>
+		<English>Acquire 3 incense resources by 600 AD</English>
+		<German>Erlangen Sie bis 600 n. Chr. 3 Weihrauch-Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH3_TITLE</Tag>
+		<English>Resisting the Scramble</English>
+		<German>Dem Wettlauf Widerstand leisten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ETH3</Tag>
+		<English>Ensure there are no European colonies in East and Subequatorial Africa in 1500 AD and 1910 AD</English>
+		<German>Lassen Sie im Jahr 1910 n. Chr. keine europ&#228;ischen Kolonien im &#246;stlichen und sub&#228;quatorialen Afrika zu</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA1_TITLE</Tag>
+		<English>Ancien Regime</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA1</Tag>
+		<English>Have 25000 culture in Paris in 1700 AD</English>
+		<German>Haben Sie im Jahr 1700 n. Chr. 25.000 Kulturpunkte in Paris</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA1_EPIC</Tag>
+		<English>Have 37500 culture in Paris in 1700 AD</English>
+		<German>Haben Sie im Jahr 1700 n. Chr. 37.500 Kulturpunkte in Paris</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA1_MARATHON</Tag>
+		<English>Have 75000 culture in Paris in 1700 AD</English>
+		<German>Haben Sie im Jahr 1700 n. Chr. 75.000 Kulturpunkte in Paris</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA2_TITLE</Tag>
+		<English>The Napoleonic Empire</English>
+		<German>Das Napoleonische Reich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA2</Tag>
+		<English>Control or vassalize 40% of Europe and North America in 1800 AD</English>
+		<German>Kontrollieren oder vassalisieren Sie im Jahr 1800 n. Chr. 40% von Europa und Nordamerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA3_TITLE</Tag>
+		<English>City of Lights</English>
+		<German>Stadt der Lichter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_FRA3</Tag>
+		<English>Build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD</English>
+		<German>Bauen Sie bis zum Jahr 1900 n. Chr. Notre Dame, Versailles, die Freiheitsstatue und den Eiffelturm</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GER1_TITLE</Tag>
+		<English>Dichter und Denker</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GER1</Tag>
+		<English>Have 7 great people in Berlin in 1900 AD</English>
+		<German>Haben Sie 7 gro&#223;e Pers&#246;nlichkeiten in Berlin im Jahr 1900 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GER2_TITLE</Tag>
+		<English>Lebensraum</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GER2</Tag>
+		<English>Control Italy, France, Scandinavia, England and Russia in 1940 AD</English>
+		<German>Kontrollieren Sie im Jahr 1940 n. Chr. Italien, Frankreich, Skandinavien, England und Russland</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GER3_TITLE</Tag>
+		<English>Vorsprung durch Technik</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GER3</Tag>
+		<English>Be the first to complete the tech tree</English>
+		<German>Erforschen Sie vor allen anderen Zivilisationen s&#228;mtliche Technologien des Technologiebaums</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE1_TITLE</Tag>
+		<English>The School of Hellas</English>
+		<German>Die Schule von Hellas</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE1</Tag>
+		<English>Be the first to discover Literature, Drama and Philosophy</English>
+		<French>Etre le premier &#224; d&#233;couvrir la Litt&#233;rature, le Th&#233;&#226;tre et la Philosophie</French>
+		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Literatur, Drama und Philosophie</German>
+		<Italian>Devi essere il primo a scoprire letteratura, drammaturgia e filosofia</Italian>
+		<Spanish>Ser el primero en descubrir la Literatura, el Drama y la Filosof&#237;a</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_TITLE</Tag>
+		<English>Wonders of the Aegean</English>
+		<German>Wunder der &#196;g&#228;is</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2</Tag>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
+		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_EPIC</Tag>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
+		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_MARATHON</Tag>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
+		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_NOTURN</Tag>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
+		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3_TITLE</Tag>
+		<English>Alexander's Empire</English>
+		<German>Alexanders Reich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3</Tag>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
+		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3_EPIC</Tag>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
+		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3_MARATHON</Tag>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
+		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR1_TITLE</Tag>
+		<English>Trade Networks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR1</Tag>
+		<English>Establish a trade connection with another civilization by 1600 BC</English>
+		<German>Richten Sie bis zum Jahr 1600 v. Chr. eine Handelsverbindung mit einer anderen Zivilisation ein</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR2_TITLE</Tag>
+		<English>Architecture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR2</Tag>
+		<English>Build three Baths and two Walls by 1500 BC</English>
+		<German>Errichten Sie bis zum Jahr 1500 v. Chr. drei B&#228;der und zwei Stadtmauern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR3_TITLE</Tag>
+		<English>Urban Planning</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HAR3</Tag>
+		<English>Have a total population of 20 by 800 BC</English>
+		<German>Haben Sie bis zum Jahr 800 v. Chr. eine Gesamtbev&#246;lkerung von 20</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL1_TITLE</Tag>
+		<English>Financial Center of the World</English>
+		<German>Finanzielles Zentrum der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL1</Tag>
+		<English>Settle 3 great merchants in Amsterdam by 1745 AD</English>
+		<German>Siedeln Sie bis 1745 n.Chr. 3 gro&#223;e H&#228;ndler in Amsterdam an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL2_TITLE</Tag>
+		<English>Colonial Rivalry</English>
+		<German>Koloniale Rivalit&#228;t</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL2</Tag>
+		<English>Conquer 4 European colonies by 1745 AD</English>
+		<German>Erobern Sie bis 1745 n. Chr. 4 europ&#228;ische Kolonien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL3_TITLE</Tag>
+		<English>The Dutch East India Company</English>
+		<German>Die Niederl&#228;nische Ostindien-Kompanie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HOL3</Tag>
+		<English>Secure or get by trade 7 spices resources by 1775 AD</English>
+		<French>S&#233;curiser ou obtenir par le commerce 7 en ressources d'&#233;pices avant 1775 ap. J.-C.</French>
+		<German>Besetzen oder kaufen Sie bis zum Jahr 1775 n. Chr. 7 Gew&#252;rz-Ressourcen</German>
+		<Italian>Assicurati o procurati col commercio 7 fonti di spezie entro il 1775 d.C.</Italian>
+		<Spanish>Asegurar o conseguir por medio del comercio 7 recursos de especias en el 1775 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE1_TITLE</Tag>
+		<English>Translatio Imperii</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE1</Tag>
+		<English>Control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD</English>
+		<German>Kontrollieren Sie den Petersdom und die Kirche der Anastasis im Jahr 1200 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE2_TITLE</Tag>
+		<English>The Reformation</English>
+		<German>Die Reformation</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE2</Tag>
+		<English>Found Protestantism</English>
+		<German>Begr&#252;nden Sie den Protestantismus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE3_TITLE</Tag>
+		<English>City of Music</English>
+		<German>Stadt der Musik</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_HRE3</Tag>
+		<English>Settle three great artists in Vienna by 1700 AD</English>
+		<German>Siedeln Sie bis zum Jahr 1700 n. Chr. drei gro&#223;e K&#252;nstler in Wien an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INC1_TITLE</Tag>
+		<English>Andean Road System</English>
+		<German>Das Anden-Stra&#223;ensystem</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INC1</Tag>
+		<English>Build five Tambos and a road along the Andean Coast by 1500 AD</English>
+		<German>Bauen Sie bis zum Jahr 1500 n. Chr. f&#252;nf Tambos und eine Stra&#223;e entlang der Andenk&#252;ste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INC2_TITLE</Tag>
+		<English>Sierra de la Plata</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INC2</Tag>
+		<English>Have 2500 gold in 1550 AD</English>
+		<French>Avoir 2500 en or en 1550 ap. J.-C.</French>
+		<German>Verf&#252;gen Sie im Jahr 1550 n. Chr. &#252;ber 2.500 Gold</German>
+		<Italian>Devi avere 2500 oro nel 1550 d.C.</Italian>
+		<Spanish>Tener 2.500 monedas de oro en el 1550 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INC2_EPIC</Tag>
+		<English>Have 3750 gold in 1550 AD</English>
+		<French>Avoir 3750 en or en 1550 ap. J.-C.</French>
+		<German>Verf&#252;gen Sie im Jahr 1550 n. Chr. &#252;ber 3.750 Gold</German>
+		<Italian>Devi avere 3750 oro nel 1550 d.C.</Italian>
+		<Spanish>Tener 3.750 monedas de oro en el 1550 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INC2_MARATHON</Tag>
+		<English>Have 7500 gold in 1550 AD</English>
+		<French>Avoir 7500 en or en 1550 ap. J.-C.</French>
+		<German>Verf&#252;gen Sie im Jahr 1550 n. Chr. &#252;ber 7.500 Gold</German>
+		<Italian>Devi avere 7500 oro nel 1550 d.C.</Italian>
+		<Spanish>Tener 7.500 monedas de oro en el 1550 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INC3_TITLE</Tag>
+		<English>Eight Incan Regions</English>
+		<German>Acht Regionen der Inka</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INC3</Tag>
+		<English>Control 60% of South America in 1700 AD</English>
+		<German>Kontrollieren Sie im Jahr 1700 n. Chr. 60% von S&#252;damerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND1_TITLE</Tag>
+		<English>The Dharmic Religions</English>
+		<German>Die Dharmischen Religionen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND1</Tag>
+		<English>Control the shrines of Hinduism and Buddhism in 100 BC</English>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. die Schreine des Hinduismus und Buddhismus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND1_EPIC</Tag>
+		<English>Control the shrines of Hinduism and Buddhism in 100 BC</English>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. die Schreine des Hinduismus und Buddhismus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND1_MARATHON</Tag>
+		<English>Control the shrines of Hinduism and Buddhism in 100 BC</English>
+		<German>Kontrollieren Sie im Jahr 100 v. Chr. die Schreine des Hinduismus und Buddhismus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND2_TITLE</Tag>
+		<English>Land of Temples</English>
+		<German>Land der Tempel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND2</Tag>
+		<English>Build 20 temples by 700 AD</English>
+		<German>Bauen Sie 20 Tempel bis 700 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND3_TITLE</Tag>
+		<English>Sacred Rivers</English>
+		<German>Heilige Fl&#252;sse</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IND3</Tag>
+		<English>Control 20% of the world's population in 1200 AD</English>
+		<German>Kontrollieren Sie im Jahr 1200 n. Chr. 20% der Weltbev&#246;lkerung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO1_TITLE</Tag>
+		<English>Prosperous Excellence</English>
+		<German>Florierende Vortrefflichkeit</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO1</Tag>
+		<English>Have the largest population in the world in 1300 AD</English>
+		<German>Haben Sie die gr&#246;&#223;te Bev&#246;lkerung der Welt im Jahr 1300 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO2_TITLE</Tag>
+		<English>Emerald of the Equator</English>
+		<German>Smaragd des &#196;quators</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO2</Tag>
+		<English>Acquire 10 different happiness resources by 1500 AD</English>
+		<German>Erwerben Sie 10 verschiedene Zufriedenheitsressourcen bis zum Jahr 1500 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO3_TITLE</Tag>
+		<English>National Awakening</English>
+		<German>Nationales Erwachen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_INO3</Tag>
+		<English>Control 9% of the world's population in 1940 AD</English>
+		<German>Kontrollieren Sie 9% der Weltbev&#246;lkerung im Jahr 1940 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA1_TITLE</Tag>
+		<English>European Embassies</English>
+		<German>Europ&#228;ische Botschaften</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA1</Tag>
+		<English>Have open borders with 6 European civilizations in 1650 AD</English>
+		<German>Haben Sie im Jahr 1650 n. Chr. offene Grenzen mit 6 europ&#228;ischen Zivilisationen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA2_TITLE</Tag>
+		<English>Nader Shah</English>
+		<German>Nadir Schah</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA2</Tag>
+		<English>Control Mesopotamia, Transoxania and Northwestern India in 1750 AD</English>
+		<German>Kontrollieren Sie im Jahr 1750 n. Chr. Mesopotamien, Transoxanien und Nordwestindien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA3_TITLE</Tag>
+		<English>Half of the World</English>
+		<German>Die halbe Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA3</Tag>
+		<English>Have a city of at least 20000 culture in 1800 AD</English>
+		<German>Haben Sie im Jahr 1800 n. Chr. eine Stadt mit mindestens 20000 Kulturpunkten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA3_EPIC</Tag>
+		<English>Have a city of at least 30000 culture in 1800 AD</English>
+		<German>Haben Sie im Jahr 1800 n. Chr. eine Stadt mit mindestens 20000 Kulturpunkten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_IRA3_MARATHON</Tag>
+		<English>Have a city of at least 60000 culture in 1800 AD</English>
+		<German>Haben Sie im Jahr 1800 n. Chr. eine Stadt mit mindestens 20000 Kulturpunkten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ITA1_TITLE</Tag>
+		<English>Renaissance Architecture</English>
+		<German>Architektur der Renaissance</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ITA1</Tag>
+		<English>Build San Marco Basilica, the Sistine Chapel and the Leaning Tower by 1500 AD</English>
+		<German>Bauen Sie bis zum Jahr 1500 n. Chr. die San Marco Basilica, die Sixtinische Kapelle und den Schiefen Turm</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ITA2_TITLE</Tag>
+		<English>Renaissance Art</English>
+		<German>Kunst der Renaissance</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ITA2</Tag>
+		<English>Have three cities with influential culture by 1600 AD</English>
+		<German>Haben Sie drei St&#228;dte mit einflussreicher Kultur bis zum Jahr 1600 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ITA3_TITLE</Tag>
+		<English>Mare Nostrum</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ITA3</Tag>
+		<English>Control 65% of the Mediterranean by 1930 AD</English>
+		<German>Kontrollieren Sie 65% der Mittelmeerk&#252;ste bis zum Jahr 1930 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP1_TITLE</Tag>
+		<English>Tranquility and Peace</English>
+		<German>Ruhe und Frieden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP1</Tag>
+		<English>Have an average city culture of 6000 by 1600 AD without ever losing a city</English>
+		<German>Erreichen Sie bis zum Jahr 1600 n. Chr. durchschnittlich 6000 Kulturpunkte pro Stadt, ohne jemals eine Stadt zu verlieren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP1_EPIC</Tag>
+		<English>Have an average city culture of 9000 by 1600 AD</English>
+		<German>Haben Sie bis zum Jahr 1600 n. Chr. durchschnittlich 9000 Kulturpunkte in Ihren St&#228;dten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP1_MARATHON</Tag>
+		<English>Have an average city culture of 18000 by 1600 AD</English>
+		<German>Haben Sie bis zum Jahr 1600 n. Chr. durchschnittlich 18000 Kulturpunkte in Ihren St&#228;dten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP2_TITLE</Tag>
+		<English>All the World Under One Roof</English>
+		<German>Die gesamte Welt unter einem Dach</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP2</Tag>
+		<English>Control or vassalize Korea, Manchuria, China, Indochina, Indonesia and Philippines in 1940 AD</English>
+		<German>Kontrollieren oder vasallisieren Sie im Jahr 1940 n. Chr. Korea, die Mandschurei, China, Indochina, Indonesian und die Philippinen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP3_TITLE</Tag>
+		<English>Flying Geese Paradigm</English>
+		<German>Flugg&#228;nsemodell</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_JAP3</Tag>
+		<English>Be the first to discover five modern technologies</English>
+		<German>Erforschen Sie als erster f&#252;nf Technologien der Moderne</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM1_TITLE</Tag>
+		<English>Angkor Wat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM1</Tag>
+		<English>Build four Buddhist and Hindu Monasteries and Wat Preah Pisnulok by 1200 AD</English>
+		<German>Bauen Sie bis zum Jahr 1200 n. Chr. vier Buddhistische und Hinduistische Kl&#246;ster und Wat Preah Pisnulok</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM1_EPIC</Tag>
+		<English>Have more than 18000 Culture in 1450 AD</English>
+		<French>Avoir plus de 18000 en Culture en 1450 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1450 n. Chr. mehr als 18.000 Kulturpunkte</German>
+		<Italian>Devi avere pi&#249; di 18.000 cultura nel 1450 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 18.000 en el 1450 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM1_MARATHON</Tag>
+		<English>Have more than 36000 Culture in 1450 AD</English>
+		<French>Avoir plus de 36000 en Culture en 1450 ap. J.-C.</French>
+		<German>Haben Sie im Jahr 1450 n. Chr. mehr als 36.000 Kulturpunkte</German>
+		<Italian>Devi avere pi&#249; di 36.000 cultura nel 1450 d.C.</Italian>
+		<Spanish>Conseguir una cultura superior a 36.000 en el 1450 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM2_TITLE</Tag>
+		<English>Thom Baray</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM2</Tag>
+		<English>Have an average city size of 12 or more by 1450 AD</English>
+		<French>Taille moyenne des villes de 12 ou plus en 1450 ap. J.-C.</French>
+		<German>Haben Sie bis zum Jahr 1450 n. Chr. eine durchschnittliche Stadtgr&#246;&#223;e von 12 oder mehr</German>
+		<Italian>Le tue citt&#224; devono avere una dimensione media di 12 o pi&#249; nel 1450 d.C.</Italian>
+		<Spanish>Tener un tama&#241;o medio de las ciudades de 12 o m&#225;s en el 1450 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM3_TITLE</Tag>
+		<English>Preah Srei</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM3</Tag>
+		<English>Have 8000 culture by 1450 AD</English>
+		<German>Haben Sie bis zum Jahr 1450 n. Chr. 8000 Kulturpunkte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM3_EPIC</Tag>
+		<English>Have 12000 culture by 1450 AD</English>
+		<German>Haben Sie bis zum Jahr 1450 n. Chr. 12000 Kulturpunkte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KHM3_MARATHON</Tag>
+		<English>Have 24000 culture by 1450 AD</English>
+		<German>Haben Sie bis zum Jahr 1450 n. Chr. 24000 Kulturpunkte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CON1_TITLE</Tag>
+		<English>Catholic Congo</English>
+		<German>Katholisches Kongo</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CON1</Tag>
+		<English>Acquire 15% of the votes in the Apostolic Palace by 1650 AD</English>
+		<German>Erreichen sie bis zum Jahr 1650 n. Chr. 15% der Stimmen im Apostolischen Palast</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CON2_TITLE</Tag>
+		<English>The Middle Passage</English>
+		<German>Die Mittlere Passage</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CON2</Tag>
+		<English>Gain 1000 gold through slave trade by 1800 AD</English>
+		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 1500 Gold durch Sklavenhandel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CON2_EPIC</Tag>
+		<English>Gain 1500 gold through slave trade by 1800 AD</English>
+		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 2750 Gold durch Sklavenhandel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CON2_MARATHON</Tag>
+		<English>Gain 3000 gold through slave trade by 1800 AD</English>
+		<German>Verdienen Sie bis zum Jahr 1800 n. Chr. 4500 Gold durch Sklavenhandel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CON3_TITLE</Tag>
+		<English>Industrial Africa</English>
+		<German>Industrielles Afrika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_CON3</Tag>
+		<English>Enter the Industrial Era before anyone enters the Modern Era</English>
+		<German>Erreichen sie das Industriezeitalter, bevor irgendjemand die Moderne erreicht</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR1_TITLE</Tag>
+		<English>Palman Daejanggyeong and Gukjagam</English>
+		<German>Palman Daejanggyeong und Gukjagam</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR1</Tag>
+		<English>Build a Buddhist Stupa and a Confucian Academy by 1200 AD</English>
+		<German>Bauen Sie eine Buddhistische Stupa und eine Konfuzianische Akademie bis zum Jahr 1200 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR2_TITLE</Tag>
+		<English>Choe Yun-ui</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR2</Tag>
+		<English>Be first to discover Printing Press</English>
+		<German>Erforschen Sie als Erster die Druckerpresse</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
+		<English>Yi Sun-sin</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_KOR3</Tag>
+		<English>Sink 20 enemy ships</English>
+		<German>Versenken Sie 20 gegnerische Schiffe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL1_TITLE</Tag>
+		<English>The Great Hajj</English>
+		<German>Die gro&#223;e Hadsch</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL1</Tag>
+		<English>Conduct a trade mission to your holy city by 1350 AD</English>
+		<German>F&#252;hren Sie bis zum Jahr 1350 n. Chr. eine Handelsmission zu Ihrer heiligen Stadt durch</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL2_TITLE</Tag>
+		<English>The Madrassah of Timbuktu</English>
+		<German>Die Madrasah von Timbuktu</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL2</Tag>
+		<English>Build the University of Sankore and settle a great prophet in its city by 1500 AD</English>
+		<German>Bauen Sie bis zum Jahr die Universit&#228;t von Sankore und siedeln Sie einen gro&#223;en Propheten in ihrer Stadt an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL3_TITLE</Tag>
+		<English>Caravans of the Sahara</English>
+		<German>Karawanen der Sahara</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL3</Tag>
+		<English>Have 5000 gold in 1500 AD and 15000 gold in 1700 AD</English>
+		<German>Verf&#252;gen Sie im Jahr 1500 n. Chr. &#252;ber 5000 Gold und im Jahr 1700 n. Chr. &#252;ber 15.000 Gold</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL3_EPIC</Tag>
+		<English>Have 7500 gold in 1500 AD and 22500 gold in 1700 AD</English>
+		<German>Verf&#252;gen Sie im Jahr 1500 n. Chr. &#252;ber 7500 Gold und im Jahr 1700 n. Chr. &#252;ber 22.500 Gold</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAL3_MARATHON</Tag>
+		<English>Have 15000 gold in 1500 AD and 45000 gold in 1700 AD</English>
+		<German>Verf&#252;gen Sie im Jahr 1500 n. Chr. &#252;ber 15000 Gold und im Jahr 1700 n. Chr. &#252;ber 45.000 Gold</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY1_TITLE</Tag>
+		<English>The Sun</English>
+		<German>Die Sonne</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY1</Tag>
+		<English>Discover Calendar by 600 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 600 n. Chr. die Technologie Kalender</German>
+		<Italian>Scopri il calendario entro il 600 d.C.</Italian>
+		<Spanish>Descubrir el Calendario antes del 600 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY1_EPIC</Tag>
+		<English>Discover Calendar by 600 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 600 n. Chr. die Technologie Kalender</German>
+		<Italian>Scopri il calendario entro il 600 d.C.</Italian>
+		<Spanish>Descubrir el Calendario antes del 600 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY1_MARATHON</Tag>
+		<English>Discover Calendar by 600 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 600 n. Chr. die Technologie Kalender</German>
+		<Italian>Scopri il calendario entro il 600 d.C.</Italian>
+		<Spanish>Descubrir el Calendario antes del 600 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY1_NOTURN</Tag>
+		<English>Discover Calendar by 600 AD</English>
+		<French>D&#233;couvrir le calendrier avant 600 ap. J.-C.</French>
+		<German>Erforschen Sie bis zum Jahr 600 n. Chr. die Technologie Kalender</German>
+		<Italian>Scopri il calendario entro il 600 d.C.</Italian>
+		<Spanish>Descubrir el Calendario antes del 600 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY2_TITLE</Tag>
+		<English>The Gods</English>
+		<German>Die G&#246;tter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY2</Tag>
+		<English>Build the Temple of Kukulkan by 900 AD</English>
+		<German>Errichten Sie bis zum Jahr 900 n. Chr. die Pyramide des Kukulc&#225;n</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY3_TITLE</Tag>
+		<English>The Stars</English>
+		<German>Die Sterne</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MAY3</Tag>
+		<English>Make contact with a European civilization before they discover America</English>
+		<German>Stellen Sie Kontakt mit einer europ&#228;ischen Zivilisation bevor diese Amerika entdecken</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX1_TITLE</Tag>
+		<English>Church and State</English>
+		<German>Kirche und Staat</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX1</Tag>
+		<English>Build three cathedrals of your state religion by 1880 AD</English>
+		<German>Bauen Sie bis zum Jahr 1880 n. Chr. drei Kathedralen Ihrer Staatsreligion</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX2_TITLE</Tag>
+		<English>Revolutionary Leaders</English>
+		<German>Revolutionsf&#252;hrer</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX2</Tag>
+		<English>Create three great generals by 1940 AD</English>
+		<German>Erstellen Sie bis zum Jahr 1940 n. Chr. drei Gro&#223;e Gener&#228;le</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX3_TITLE</Tag>
+		<English>The City of Palaces</English>
+		<German>Die Stadt der Pal&#228;ste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MEX3</Tag>
+		<English>Make Mexico City the largest city in the world in 1960 AD</English>
+		<German>Machen Sie Mexico-Stadt im Jahr 1960 n. Chr. zur gr&#246;&#223;ten Stadt der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MON1_TITLE</Tag>
+		<English>The Yuan Dynasty</English>
+		<German>Die Yuan-Dynastie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MON1</Tag>
+		<English>Control China by 1300 AD</English>
+		<French>Contr&#244;ler la Chine avant 1300 ap. J.-C.</French>
+		<German>Bringen Sie bis zum Jahr 1300 n. Chr. China unter Ihre Kontrolle</German>
+		<Italian>Controlla la Cina entro il 1300 d.C.</Italian>
+		<Spanish>Controlar China en el 1300 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MON2_TITLE</Tag>
+		<English>The Scourge of God</English>
+		<German>Die Gei&#223;el Gottes</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MON2</Tag>
+		<English>Raze at least 7 cities</English>
+		<French>Raser au moins 7 villes</French>
+		<German>Zerst&#246;ren Sie mindestens 7 St&#228;dte</German>
+		<Italian>Distruggi almeno 7 citt&#224;</Italian>
+		<Spanish>Arrasar al menos 7 ciudades</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MON3_TITLE</Tag>
+		<English>Pax Mongolica</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MON3</Tag>
+		<English>Control 12% of the world by 1500 AD</English>
+		<French>Contr&#244;ler 12% du territoire mondial avant 1500 ap. J.-C.</French>
+		<German>Bringen Sie bis zum Jahr 1500 n. Chr. 12%% der Weltkarte unter Ihre Kontrolle</German>
+		<Italian>Devi controllare il 12% del territorio mondiale entro il 1500 d.C.</Italian>
+		<Spanish>Controlar el 12% del territorio mundial en el 1500 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO1_TITLE</Tag>
+		<English>Caliphate of Al-Andalus</English>
+		<German>Kaliphat von Al-Andalus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO1</Tag>
+		<English>Control three cities in Iberia, the Maghreb and West Africa in 1200 AD</English>
+		<German>Kontrollieren Sie im Jahr 1200 n. Chr. drei St&#228;dte in Iberien, dem Maghreb und Westafrika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO2_TITLE</Tag>
+		<English>Jewel of the World</English>
+		<German>Juwel der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO2</Tag>
+		<English>Settle a total of five great prophets, scientists or engineers in Cordoba by 1300 AD</English>
+		<German>Siedeln Sie bis zum Jahr 1300 n. Chr. insgesamt f&#252;nf gro&#223;e Propheten, Wissenschaftler und Ingenieure in Cordoba an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO3_TITLE</Tag>
+		<English>Barbary Corsairs</English>
+		<German>Korsaren der Barbareskenk&#252;ste</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO3</Tag>
+		<English>Acquire 3000 gold through piracy by 1650 AD</English>
+		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 3000 Gold durch Piraterie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO3_EPIC</Tag>
+		<English>Acquire 4500 gold through piracy by 1650 AD</English>
+		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 4500 Gold durch Piraterie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MOO3_MARATHON</Tag>
+		<English>Acquire 9000 gold through piracy by 1650 AD</English>
+		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 9000 Gold durch Piraterie</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG1_TITLE</Tag>
+		<English>Muhammad ibn Tughluq</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG1</Tag>
+		<English>Build three Islamic Mosques by 1500 AD</English>
+		<German>Bauen Sie drei Islamische Moscheen bis zum Jahr 1500 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG2_TITLE</Tag>
+		<English>Shah Akbar</English>
+		<German>Schah Akbar</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG2</Tag>
+		<English>Build the Red Fort, Harmandir Sahib and the Taj Mahal by 1660 AD</English>
+		<German>Vollenden Sie bis zum Jahr 1660 n. Chr. das Rote Fort, Harmandir Sahib und den Taj Mahal.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG3_TITLE</Tag>
+		<English>Shah Jahan</English>
+		<German>Schah Dschahan</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG3</Tag>
+		<English>Have more than 50000 culture in 1750 AD</English>
+		<German>Haben Sie mehr als 50000 Kulturpunkte im Jahr 1750 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG3_EPIC</Tag>
+		<English>Have more than 75000 culture in 1750 AD</English>
+		<German>Haben Sie mehr als 75000 Kulturpunkte im Jahr 1750 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_MUG3_MARATHON</Tag>
+		<English>Have more than 150000 culture in 1750 AD</English>
+		<German>Haben Sie mehr als 150000 Kulturpunkte im Jahr 1750 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1_TITLE</Tag>
+		<English>The First Empire</English>
+		<German>Das erste Gro&#223;reich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1</Tag>
+		<English>Control 8% of the world by 140 AD</English>
+		<French>Contr&#244;ler 8% du territoire mondial avant 140 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 8% der Weltkarte</German>
+		<Italian>Devi controllare l'8% del territorio mondiale entro il 140 d.C.</Italian>
+		<Spanish>Controlar el 8% del territorio mundial antes del 140 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1_EPIC</Tag>
+		<English>Control 8% of the world by 140 AD</English>
+		<French>Contr&#244;ler 8% du territoire mondial avant 140 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 7% der Weltkarte</German>
+		<Italian>Devi controllare l'8% del territorio mondiale entro il 140 d.C.</Italian>
+		<Spanish>Controlar el 8% del territorio mundial antes del 140 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1_MARATHON</Tag>
+		<English>Control 8% of the world by 140 AD</English>
+		<French>Contr&#244;ler 8% du territoire mondial avant 140 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 8% der Weltkarte</German>
+		<Italian>Devi controllare l'8% del territorio mondiale entro il 140 d.C.</Italian>
+		<Spanish>Controlar el 8% del territorio mundial antes del 140 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER1_NOTURN</Tag>
+		<English>Control 8% of the world by 140 AD</English>
+		<French>Contr&#244;ler 8% du territoire mondial avant 140 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 140 n. Chr. 8% der Weltkarte</German>
+		<Italian>Devi controllare l'8% del territorio mondiale entro il 140 d.C.</Italian>
+		<Spanish>Controlar el 8% del territorio mundial antes del 140 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2_TITLE</Tag>
+		<English>Seven Wonders of the World</English>
+		<German>Die Sieben Weltwunder</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2</Tag>
+		<English>Control 7 world wonders by 350 AD</English>
+		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
+		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
+		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2_EPIC</Tag>
+		<English>Control 7 world wonders by 350 AD</English>
+		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
+		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
+		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2_MARATHON</Tag>
+		<English>Control 7 world wonders by 350 AD</English>
+		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
+		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
+		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER2_NOTURN</Tag>
+		<English>Control 7 world wonders by 350 AD</English>
+		<French>Contr&#244;ler 7 merveilles du monde avant 350 ap. J.-C.</French>
+		<German>Kontrollieren Sie bis zum Jahr 350 n. Chr. 7 Weltwunder</German>
+		<Italian>Devi controllare 7 Grandi Meraviglie entro il 350 d.C.</Italian>
+		<Spanish>Controlar 7 grandes maravillas del mundo antes del 350 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3_TITLE</Tag>
+		<English>Land of Religions</English>
+		<German>Land der Religionen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3</Tag>
+		<English>Control 2 holy city shrines in 350 AD</English>
+		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
+		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
+		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
+		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3_EPIC</Tag>
+		<English>Control 2 holy city shrines in 350 AD</English>
+		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
+		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
+		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
+		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3_MARATHON</Tag>
+		<English>Control 2 holy city shrines in 350 AD</English>
+		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
+		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
+		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
+		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PER3_NOTURN</Tag>
+		<English>Control 2 holy city shrines in 350 AD</English>
+		<French>Contr&#244;ler 2 autels de villes saintes en 350 ap. J.-C.</French>
+		<German>Kontrollieren Sie im Jahr 350 n. Chr. 2 heilige Schreine</German>
+		<Italian>Devi controllare 2 santuari della Citt&#224; Santa nel 350 d.C.</Italian>
+		<Spanish>Controlar 2 santuarios de ciudades santas en el 350 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY1_TITLE</Tag>
+		<English>Oceanic Navigators</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY1</Tag>
+		<English>Settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas and Easter Island</English>
+		<German>Besiedeln Sie bis zum Jahr 800 n. Chr. die folgenden Inselgruppen: Hawaii, Neuseeland, Marquesas und die Osterinsel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY2_TITLE</Tag>
+		<English>The Polynesian Triangle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY2</Tag>
+		<English>Settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD</English>
+		<German>Besiedeln Sie bis zum Jahr 1000 n. Chr. Hawaii, Neuseeland, Marquesas und die Osterinsel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY3_TITLE</Tag>
+		<English>Rano Raraku</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_PLY3</Tag>
+		<English>Build the Moai Statues by 1200 AD</English>
+		<German>Bauen Sie bis zum Jahr 1200 n. Chr. die Moai-Statuen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POL1_TITLE</Tag>
+		<English>The Folwark System</English>
+		<German>Das Folwark-System</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POL1</Tag>
+		<English>Have three cities of at least size 12 by 1400 AD</English>
+		<German>Haben Sie bis zum Jahr 1400 n. Chr. drei St&#228;dte mit mindestens Gr&#246;&#223;e 12</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POL2_TITLE</Tag>
+		<English>Golden Liberty</English>
+		<German>Goldene Freiheit</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POL2</Tag>
+		<English>Be first to discover Liberalism</English>
+		<German>Entdecken Sie als erster den Liberalismus</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POL3_TITLE</Tag>
+		<English>The Commonwealth</English>
+		<German>Die Adelsrepublik</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POL3</Tag>
+		<English>Build three Christian Cathedrals by 1600 AD</English>
+		<German>Bauen Sie bis zum Jahr 1600 n. Chr. drei christliche Kathedralen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR1_TITLE</Tag>
+		<English>Cartaz</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR1</Tag>
+		<English>Have open borders agreement with 14 other civs by 1550 AD</English>
+		<French>Avoir un accord de libre passage avec 14 autres civilisations en 1550 ap. J.-C.</French>
+		<German>Verf&#252;gen Sie bis zum Jahr 1550 n. Chr. &#252;ber Offene-Grenzen-Abkommen mit 14 anderen Zivilisationen</German>
+		<Italian>Devi aver abilitato il diritto di passaggio con altre 14 civilt&#224; nel 1550 d.C.</Italian>
+		<Spanish>Tener un acuerdo de apertura de fronteras con otras 14 civilizaciones en el 1550 d. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR2_TITLE</Tag>
+		<English>Age of Discovery</English>
+		<German>Zeitalter der Entdeckungen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR2</Tag>
+		<English>Acquire 12 trading company resources by 1650 AD</English>
+		<German>Erwerben Sie bis zum Jahr 1650 n. Chr. 12 Handelsgesellschaftsressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR3_TITLE</Tag>
+		<English>Treaty of Tordesilhas</English>
+		<German>Vertrag von Tordesilhas</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_POR3</Tag>
+		<English>Control 15 colonies in Brazil, Africa and Asia in 1700 AD</English>
+		<German>Kontrollieren Sie im Jahr 1700 AD 15 Kolonien in Brasilien, Afrika und Asien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1_TITLE</Tag>
+		<English>Bread and Circuses</English>
+		<German>Brot und Spiele</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1</Tag>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1_EPIC</Tag>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1_MARATHON</Tag>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukte, 4 Amphitheater und 3 Foren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM1_NOTURN</Tag>
+		<English>Build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD</English>
+		<German>Bauen Sie bis zum Jahr 100 n. Chr. 6 Kasernen, 5 Aqu&#228;dukten, 4 Amphitheatern und 3 Foren</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2_TITLE</Tag>
+		<English>Pax Romana</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2</Tag>
+		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2_EPIC</Tag>
+		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2_MARATHON</Tag>
+		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM2_NOTURN</Tag>
+		<English>Control in 320 AD all the area historically known as the Roman Empire</English>
+		<German>Kontrollieren Sie im Jahr 320 n. Chr. das gesamte historische Gebiet des R&#246;mischen Reiches</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM3_TITLE</Tag>
+		<English>Late Antiquity</English>
+		<German>Spätantike</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_ROM3</Tag>
+		<English>Be the first to discover Theology, Machinery and Civil Service</English>
+		<German>Enforschen Sie vor allen anderen Zivilisationen Theologie, Maschinen und &#214;ffentliche Verwaltung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RUS1_TITLE</Tag>
+		<English>Eastward Expansion</English>
+		<German>Expansion nach Osten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RUS1</Tag>
+		<English>Found 7 colonies in Siberia by 1700 AD and build the Trans-Siberian Railway by 1920 AD</English>
+		<German>Gr&#252;nden Sie bis zum Jahr 1700 n. Chr. 7 sibirische Kolonien und bauen Sie bis zum Jahr 1920 n. Chr. die transsibirische Eisenbahn</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RUS2_TITLE</Tag>
+		<English>The Cold War</English>
+		<German>Der Kalte Krieg</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RUS2</Tag>
+		<English>Be the first civilization to complete the Manhattan Project and the Apollo Program</English>
+		<German>Seien Sie die erste Zivilisation, die das Manhattan-Projekt und das Apollo-Programm vervollst&#228;ndigt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RUS3_TITLE</Tag>
+		<English>The Iron Curtain</English>
+		<German>Der Eiserne Vorhang</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_RUS3</Tag>
+		<English>Have friendly relations with 5 communist civilisations by 1950 AD</English>
+		<German>Haben Sie bis zum Jahr 1950 n. Chr. freundliche Beziehungen zu 5 kommunistischen Zivilisationen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA1_TITLE</Tag>
+		<English>Plus Ultra</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA1</Tag>
+		<English>Be the first to found a colony in America</English>
+		<French>Etre le premier &#224; fonder une ville en Am&#233;rique</French>
+		<German>Gr&#252;nden Sie vor allen anderen Zivilisationen die erste Kolonie in Amerika</German>
+		<Italian>Devi essere il primo a fondare una citt&#224; in America</Italian>
+		<Spanish>Ser el primero en fundar una ciudad en Am&#233;rica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA2_TITLE</Tag>
+		<English>The Treasure Fleet</English>
+		<German>Die Schatzflotte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA2</Tag>
+		<English>Secure a total of 10 silver and gold resources by 1650 AD</English>
+		<German>Erschlie&#223;en Sie bis zum Jahr 1650 n. Chr. insgesamt 10 Silber- und Goldvorkommen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA3_TITLE</Tag>
+		<English>Soldiers of God</English>
+		<German>Soldaten Gottes</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_SPA3</Tag>
+		<English>Spread Catholicism to 40% of the world population and allow no Protestant civilizations in Europe in 1650 AD</English>
+		<German>Verbreiten Sie den Katholizismus zu 40% der Weltbev&#246;lkerung und erlauben sie im Jahr 1650 n. Chr. keine protestantischen Zivilisationen in Europa</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM1_TITLE</Tag>
+		<English>The Sangam Period</English>
+		<German>Die Sangam-&#196;ra</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM1</Tag>
+		<English>Have 3000 gold and 2000 culture in 800 AD</English>
+		<German>Haben Sie im Jahr 800 n. Chr. 3000 Gold und 2000 Kultur</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM1_EPIC</Tag>
+		<English>Have 4500 gold and 3000 culture in 800 AD</English>
+		<German>Haben Sie im Jahr 800 n. Chr. 4500 Gold und 3000 Kultur</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM1_MARATHON</Tag>
+		<English>Have 9000 gold and 6000 culture in 800 AD</English>
+		<German>Haben Sie im Jahr 800 n. Chr. 9000 Gold und 6000 Kultur</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM2_TITLE</Tag>
+		<English>The Chola Empire</English>
+		<German>Das Chola-Reich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM2</Tag>
+		<English>Control or vassalize the Deccan and Srivijaya in 1000 AD</English>
+		<German>Kontrollieren Sie im Jahr 1000 n. Chr. Srivijaya und den Dekkan direkt oder per Vasall</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM3_TITLE</Tag>
+		<English>Indian Ocean Trade</English>
+		<German>Der Indische Ozean-Handel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM3</Tag>
+		<English>Acquire 4000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
+		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 4000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM3_EPIC</Tag>
+		<English>Acquire 6000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
+		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 6000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TAM3_MARATHON</Tag>
+		<English>Acquire 12000 gold by trade (trade routes, diplomacy, trade missions) by 1200 AD</English>
+		<German>Erwirtschaften Sie bis zum Jahr 1200 n. Chr. 12000 Gold durch Handel (Handelsrouten, Diplomatie, Handelsmissionen)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA1_TITLE</Tag>
+		<English>The King and I</English>
+		<German>Der K&#246;nig und ich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA1</Tag>
+		<English>Have open borders with 10 civilizations by 1650 AD</English>
+		<German>Haben Sie bis zum Jahr 1650 n. Chr. offene Grenzen mit 10 Zivilisationen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA2_TITLE</Tag>
+		<English>Venice of the East</English>
+		<German>Venedig des Ostens</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA2</Tag>
+		<English>Make Ayutthaya the most populous city in the world in 1700 AD</English>
+		<German>Machen Sie Ayutthaya zur bev&#246;lkerungsreichsten Stadt der Welt im Jahr 1700 n. Chr.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA3_TITLE</Tag>
+		<English>The Circle of Power</English>
+		<German>Der Kreis der Macht</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_THA3</Tag>
+		<English>Allow no foreign powers in Southern Asia in 1900 AD</English>
+		<German>Lassen Sie im Jahr 1900 n. Chr. keine ausl&#228;ndischen M&#228;chte im s&#252;dlichen Asien zu</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB1_TITLE</Tag>
+		<English>The Tibetan Empire</English>
+		<German>Das tibetanische Reich</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB1</Tag>
+		<English>Acquire 5 cities by 1000 AD</English>
+		<German>Erlangen Sie bis zum Jahr 1000 n. Chr. 5 St&#228;dte</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB2_TITLE</Tag>
+		<English>Tibetan Buddhism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB2</Tag>
+		<English>Spread Buddhism to 30% by 1400 AD</English>
+		<German>Verbreiten Sie bis zum Jahr 1400 n. Chr. den Buddhismus auf 30%</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB3_TITLE</Tag>
+		<English>The Dalai Lamas</English>
+		<German>Die Dalai Lamas</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TIB3</Tag>
+		<English>Settle 5 great prophets in Lhasa by 1700 AD</English>
+		<German>Siedeln Sie bis zum Jahr 1700 n. Chr. 5 gro&#223;e Propheten in Lhasa an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR1_TITLE</Tag>
+		<English>The Golden Apple</English>
+		<German>Der Goldene Apfel</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR1</Tag>
+		<English>Have four non-obsolete wonders in your capital in 1550 AD</English>
+		<German>Haben Sie im Jahr 1550 n. Chr. vier nicht veraltete Wunder in Ihrer Hauptstadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR2_TITLE</Tag>
+		<English>Empire on three Continents</English>
+		<German>Reich der drei Kontinente</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR2</Tag>
+		<English>Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna by 1700 AD</English>
+		<German>Kontrollieren Sie bis zum Jahr 1700 n. Chr. das &#246;stliche Mittelmeer, das Schwarze Meer, Kairo, Mekka, Bagdad und Wien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR3_TITLE</Tag>
+		<English>The Tulip Period</English>
+		<German>Die Tulpen-&#196;ra</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_TUR3</Tag>
+		<English>Have more culture than all European civilizations combined in 1800 AD</English>
+		<German>Haben Sie im Jahr 1800 n. Chr. mehr Kultur als alle europ&#228;ischen Zivilisationen zusammen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK1_TITLE</Tag>
+		<English>Norman Conquests</English>
+		<German>Normannische Eroberungen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK1</Tag>
+		<English>Control the core of another European civilization in 1050 AD</English>
+		<German>Kontrollieren Sie im Jahr 1050 n. Chr. das Kerngebiet einer anderen europ&#228;ischen Zivilisation</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK2_TITLE</Tag>
+		<English>Vinland Saga</English>
+		<German>Die Vinland-Saga</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK2</Tag>
+		<English>Found a city in America by 1100 AD</English>
+		<German>Gr&#252;nden Sie bis 1100 n. Chr. eine Stadt in Amerika</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK3_TITLE</Tag>
+		<English>Danegeld</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK3</Tag>
+		<English>Acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
+		<German>Erwerben Sie bis 1500 n. Chr. 3000 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK3_EPIC</Tag>
+		<English>Acquire 4500 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
+		<German>Erwerben Sie bis 1500 n. Chr. 4500 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_VIK3_MARATHON</Tag>
+		<English>Acquire 9000 gold by pillaging, conquering cities and sinking ships by 1500 AD</English>
+		<German>Erwerben Sie bis 1500 n. Chr. 9000 Gold, indem sie pl&#252;ndern, St&#228;dte erobern oder Schiffe versenken</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD1</Tag>
+		<English>Chosen People: Have a total of 15 Great Prophets, Scientists and Statesmen in your cities</English>
+		<German>Erwähltes Volk: Haben Sie insgesamt 15 Große Propheten, Wissenschaftler und Staatsmänner in Ihren Städten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD2</Tag>
+		<English>Promised Land: Have legendary culture in the Jewish holy city</English>
+		<German>Gelobtes Land: Haben Sie legendäre Kultur in der jüdischen heiligen Stadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_JUD3</Tag>
+		<English>Diaspora: Have friendly relations with six civilizations with a Jewish minority</English>
+		<German>Diaspora: Haben Sie freundliche Beziehungen mit sechs Zivilisationen mit einer jüdischen Minderheit</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_BUD1</Tag>
+		<English>Sila: Be at peace for 100 turns</English>
+		<German>Sila: Haben Sie 100 Runden lang Frieden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_BUD1_EPIC</Tag>
+		<English>Sila: Be at peace for 150 turns</English>
+		<German>Sila: Haben Sie 150 Runden lang Frieden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_BUD1_MARATHON</Tag>
+		<English>Sila: Be at peace for 300 turns</English>
+		<German>Sila: Haben Sie 300 Runden lang Frieden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_BUD2</Tag>
+		<English>Nirvana: Have the highest approval rating in the world for 100 turns</English>
+		<German>Nirwana: Haben Sie 100 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_BUD2_EPIC</Tag>
+		<English>Nirvana: Have the highest approval rating in the world for 150 turns</English>
+		<German>Nirwana: Haben Sie 150 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_BUD2_MARATHON</Tag>
+		<English>Nirvana: Have the highest approval rating in the world for 300 turns</English>
+		<German>Nirwana: Haben Sie 300 Runden lang die h&#246;chste Zustimmungsrate in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_BUD3</Tag>
+		<English>Middle Way: Have cautious or better relations with all civilizations</English>
+		<German>Mittlerer Weg: Haben Sie mit allen Zivilisationen vorsichtige oder bessere Beziehungen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_CAT1</Tag>
+		<English>Holy See: Be Pope for 100 turns</English>
+		<German>Heiliger Stuhl: Halten Sie 100 Runden lang das Papstamt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_CAT1_EPIC</Tag>
+		<English>Holy See: Be Pope for 150 turns</English>
+		<German>Heiliger Stuhl: Halten Sie 150 Runden lang das Papstamt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_CAT1_MARATHON</Tag>
+		<English>Holy See: Be Pope for 300 turns</English>
+		<German>Heiliger Stuhl: Halten Sie 300 Runden lang das Papstamt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_CAT2</Tag>
+		<English>Holy Land: Control the Catholic shrine and make sure that at least 12 great prophets are settled in Catholic civilizations</English>
+		<German>Heiliges Land: Kontrollieren Sie den katholischen Schrein und stellen Sie sicher, dass mindestens 12 gro&#223;e Propheten in katholischen Zivilisationen angesiedelt sind</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_CAT3</Tag>
+		<English>Holy Mission: Make sure at least 50% of the world is controlled by Catholic civilizations</English>
+		<German>Heilige Mission: Stellen Sie sicher, dass mindestens 50% des Weltgebiets von katholischen Zivilisationen kontrolliert wird</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_CON1</Tag>
+		<English>Harmony: Have friendly relations with five civilizations</English>
+		<German>Harmonie: Haben Sie freundliche Beziehungen mit f&#252;nf Zivilisationen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_CON2</Tag>
+		<English>Ritual: Have five wonders in the Confucian holy city</English>
+		<German>Ritual: Haben Sie f&#252;nf Wunder in der konfuzianistischen heiligen Stadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_CON3</Tag>
+		<English>Loyalty: Control an army of 200 non-obsolete melee or gunpowder units</English>
+		<German>Loyalit&#228;t: Kontrollieren Sie eine Armee as 200 nicht-veralteten Nahkampf- oder Schie&#223;pulver-Einheiten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_HIN1</Tag>
+		<English>Varna: Settle five different great people in the Hindu holy city</English>
+		<German>Varna: Siedeln Sie f&#252;nf verschiedene gro&#223;e Pers&#246;nlichkeiten in der hinduistischen heiligen Stadt an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_HIN2</Tag>
+		<English>Artha: Experience 24 turns of golden age</English>
+		<German>Artha: Erleben Sie 24 Runden Goldenes Zeitalter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_HIN2_EPIC</Tag>
+		<English>Artha: Experience 36 turns of golden age</English>
+		<German>Artha: Erleben Sie 36 Runden Goldenes Zeitalter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_HIN2_MARATHON</Tag>
+		<English>Artha: Experience 72 turns of golden age</English>
+		<German>Artha: Erleben Sie 72 Runden Goldenes Zeitalter</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_HIN3</Tag>
+		<English>Kama: Make sure the five largest cities in the world are Hindu</English>
+		<German>Kama: Stellen Sie sicher, dass die f&#252;nf gr&#246;&#223;ten St&#228;dte der Welt hinduistisch sind</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ISL1</Tag>
+		<English>Shahada: Spread Islam to 50%</English>
+		<German>Schahada: Verbreiten Sie den Islam auf 50%</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ISL2</Tag>
+		<English>Hajj: Settle seven great people in the Muslim holy city</English>
+		<German>Hadsch: Siedeln Sie sieben gro&#223;e Pers&#246;nlichkeiten in der muslimischen heiligen Stadt an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ISL3</Tag>
+		<English>Jihad: Control five shrines</English>
+		<German>Dschihad: Kontrollieren Sie f&#252;nf Schreine</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ORT1</Tag>
+		<English>Patriarchates: Build four Orthodox Cathedrals</English>
+		<German>Patriarchate: Bauen Sie vier orthodoxe Kathedralen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ORT2</Tag>
+		<English>Iconography: Make sure the five most cultured cities in the world are Orthodox</English>
+		<German>Ikonographie: Stellen Sie sicher, dass die f&#252;nf kultiviertesten St&#228;dte der Welt orthodox sind</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ORT3</Tag>
+		<English>Communion: Make sure there are no Catholic civilizations in the world</English>
+		<German>Kommunion: Stellen Sie sicher, dass es in der Welt keine katholischen Zivilisationen gibt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL1</Tag>
+		<English>Make sure there are 15 pagan temples in the world</English>
+		<German>Stellen Sie sicher, dass es 15 heidnische Tempel in der Welt gibt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2</Tag>
+		<English>Control ten wonders that require no state religion</English>
+		<German>Kontrollieren Sie zehn Wunder, die keine Staatsreligion erfordern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL3</Tag>
+		<English>Don't allow more than half of your cities to have a religion</English>
+		<German>Erlauben Sie nicht mehr als der H&#228;lfte ihrer St&#228;dte, eine Religion zu haben</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_PRO1</Tag>
+		<English>Enlightenment: Be first to discover Liberalism, Constitution and Economics</English>
+		<German>Aufkl&#228;rung: Entdecken Sie als erstes den Liberalismus, die Verfassung und Wirtschaftswissenschaften</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_PRO2</Tag>
+		<English>Work Ethic: Make sure five great merchants and five great engineers are settled in Protestant civilizations</English>
+		<German>Arbeitsmoral: Stellen Sie sicher, dass f&#252;nf gro&#223;e H&#228;ndler und f&#252;nf gro&#223;e Ingeneure in protestantischen Zivilisation angesiedelt sind</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_PRO3</Tag>
+		<English>Religious Freedom: Make sure at least half of all civilizations are Protestant or secular</English>
+		<German>Religi&#246;se Freiheit: Stellen Sie sicher, dass mindestens die H&#228;lfte aller Zivilisationen protestantisch oder s&#228;kular sind</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_SEC1</Tag>
+		<English>Tolerance: Control the Cathedrals of all religions</English>
+		<German>Toleranz: Kontrollieren Sie die Kathedralen aller Religionen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_SEC2</Tag>
+		<English>Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations</English>
+		<German>Humanismus: Stellen Sie sicher, dass es in säkularen Zivilisationen 25 Universitäten, 10 Große Wissenschaftler und 10 Große Staatsmänner gibt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_SEC3</Tag>
+		<English>Modernity: Make sure that the five most advanced independent civilizations are secular</English>
+		<German>Modernismus: Stellen Sie sicher, dass die fünf fortschrittlichsten unabhängigen Zivilisationen säkular sind</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_TAO1</Tag>
+		<English>Compassion: Have the highest life expectancy rating in the world for 100 turns</English>
+		<German>Mitgef&#252;hl: Haben Sie 100 Runden lang die h&#246;chste Lebenserwartung in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_TAO1_EPIC</Tag>
+		<English>Compassion: Have the highest life expectancy rating in the world for 150 turns</English>
+		<German>Mitgef&#252;hl: Haben Sie 150 Runden lang die h&#246;chste Lebenserwartung in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_TAO1_MARATHON</Tag>
+		<English>Compassion: Have the highest life expectancy rating in the world for 300 turns</English>
+		<German>Mitgef&#252;hl: Haben Sie 300 Runden lang die h&#246;chste Lebenserwartung in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_TAO2</Tag>
+		<English>Moderation: Control the Confucian and Taoist shrines and combine their income to 40 gold</English>
+		<German>M&#228;&#223;igung: Kontrollieren Sie den konfuzianistischen und den taoistischen Schrein und kombinieren Sie ihr Einkommen zu 40 Gold</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_TAO3</Tag>
+		<English>Humility: Have legendary culture in the Taoist holy city</English>
+		<German>Bescheidenheit: Haben Sie legend&#228;re Kultur in der taoistischen heiligen Stadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ZOR1</Tag>
+		<English>Adar: Acquire six incense resources</English>
+		<German>Adar: Erwerben Sie sechs Weihrauch-Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ZOR2</Tag>
+		<English>Mathra: Spread Zoroastrianism to 20%</English>
+		<German>Mathra: Verbreiten Sie den Zoroastrianismus auf 20%</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_ZOR3</Tag>
+		<English>Shahnameh: Have legendary culture in the Zoroastrian holy city</English>
+		<German>Schahnameh: Haben Sie legend&#228;re Kultur in der zoroastrischen heiligen Stadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_</Tag>
+		<English></English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ACCOMPLISHED</Tag>
+		<English>Historical goals accomplished:</English>
+		<French>Objectifs historiques accomplis :</French>
+		<German>Erreichte historische Ziele:</German>
+		<Italian>Obiettivi storici raggiunti:</Italian>
+		<Spanish>Objetivos hist&#243;ricos conseguidos:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ACQUIRED_GOLD</Tag>
+		<English>Acquired gold: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ANDEAN_ROAD</Tag>
+		<English>Road along the Andean Coast in your territory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT</Tag>
+		<English>Votes in the Apostolic Palace: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ATLANTIC_RAILROAD</Tag>
+		<English>Railroad to an Atlantic port</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_DYE_RESOURCES</Tag>
+		<English>Available dye resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES</Tag>
+		<English>Available incense resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_SPICE_RESOURCES</Tag>
+		<English>Available spice resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION</Tag>
+		<English>Average city population: %s1 / %s2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVERAGE_CULTURE</Tag>
+		<English>Average Culture: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BAGHDAD</Tag>
+		<English>Baghdad</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BALKANS</Tag>
+		<English>Balkans: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BEST_COMMERCE_CITY</Tag>
+		<English>Most commerce in: %s1_city</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BLACK_SEA</Tag>
+		<English>Black Sea</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_BUDDHIST_SHRINE</Tag>
+		<English>Buddhist Shrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAIRO</Tag>
+		<English>Cairo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS</Tag>
+		<English>Peace deals arranged: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CATHOLIC_SAINTS</Tag>
+		<English>Catholic great prophets: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CATHOLIC_WORLD_TERRITORY</Tag>
+		<English>Territory controlled by Catholic civilizations: %s1 / %s2%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAUTIOUS_OR_BETTER_RELATIONS</Tag>
+		<English>Cautious or better relations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CENTRAL_AMERICAN_CITIES</Tag>
+		<English>Central America: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CHECKF8</Tag>
+		<English>Check the Victory Conditions (F8) for details</English>
+		<French>Consulter les conditions de victoire (F8) pour de plus amples d&#233;tails</French>
+		<German>Einzelheiten in den Siegbedingungen (F8)</German>
+		<Italian>Per ulteriori dettagli consulta le Condizioni di vittoria (F8)</Italian>
+		<Spanish>Revisa las condiciones para la victoria [F8] para obtener m&#225;s detalles.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CHINESE_SHRINE_INCOME</Tag>
+		<English>Combined shrine income: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CHRISTIAN_CATHEDRALS</Tag>
+		<English>Christian Cathedrals built: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITIES_ACQUIRED</Tag>
+		<English>Cities acquired: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_CULTURE</Tag>
+		<English>Culture in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_DIFFERENT_GREAT_PEOPLE</Tag>
+		<English>Different great people in %s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_GREAT_PEOPLE</Tag>
+		<English>Great people in %s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_SIZE</Tag>
+		<English>%s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COLONIAL_RESOURCES</Tag>
+		<English>Available colonial resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_COMMUNIST_BROTHERS</Tag>
+		<English>Communist brothers: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA</Tag>
+		<English>Canadian territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_CANADA_CITIES</Tag>
+		<English>Controls all cities in Canada</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_HOLY_CITY</Tag>
+		<English>Control %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_NUM_UNITS</Tag>
+		<English>Number of melee and gunpowder units: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA</Tag>
+		<English>South America</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DECCAN</Tag>
+		<English>Deccan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DIFFERENT_CATHEDRALS</Tag>
+		<English>Cathedrals of different religions: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EASTER_ISLAND</Tag>
+		<English>Easter Island</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EASTERN_MEDITERRANEAN</Tag>
+		<English>Eastern Mediterranean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK</Tag>
+		<English>Enemy ships sunk: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_AFRICA</Tag>
+		<English>Africa: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_ASIA</Tag>
+		<English>Asia: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_NORTH_AMERICA</Tag>
+		<English>North America: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_OCEANIA</Tag>
+		<English>Australia and Oceania: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENGLAND_CONTROL_SOUTH_AMERICA</Tag>
+		<English>South America, Central America and the Caribbean: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ENSLAVED_UNITS</Tag>
+		<English>Enslaved units: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EUROPEAN_COLONIES_CONQUERED</Tag>
+		<English>European colonies conquered: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EUROPEAN_CORE</Tag>
+		<English>Controlling a European core</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EUROPEAN_TERRITORY</Tag>
+		<English>European territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_EXTRA_EUROPEAN_COLONIES</Tag>
+		<English>Colonies in Brazil, Africa and Asia: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FIRST_ENTER_INDUSTRIAL</Tag>
+		<English>First to enter the Industrial Era</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FIRST_ENTER_MODERN</Tag>
+		<English>First to enter the Modern Era</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_CIVS</Tag>
+		<English>Friendly civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FRIENDLY_RELIGION</Tag>
+		<English>Friendly civilizations with %s1 minority: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_ACCOMPLISHED</Tag>
+		<English>Goal accomplished!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_FAILED</Tag>
+		<English>Goal failed!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE</Tag>
+		<English>You have failed goal %d1 of your historical victory!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOLD_SILVER_RESOURCES</Tag>
+		<English>Gold and silver resources secured: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOLDEN_AGE_TURNS</Tag>
+		<English>Golden age turns: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GOLDEN_AGES</Tag>
+		<English>Golden Ages: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_ARTISTS_SETTLED</Tag>
+		<English>Great artists settled in %s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_GENERALS</Tag>
+		<English>Great Generals created: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_GENERALS_CAPITAL</Tag>
+		<English>Great Generals in capital: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_MERCHANTS_IN_CITY</Tag>
+		<English>Great merchants in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY</Tag>
+		<English>Great people in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS</Tag>
+		<English>Great prophets, scientists and engineers in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED</Tag>
+		<English>Great prophets settled in %s1_city: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HAPPINESS_TURNS</Tag>
+		<English>Turns with highest approval rating: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HAWAII</Tag>
+		<English>Hawaii</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HEALTH_TURNS</Tag>
+		<English>Turns with highest life expectancy rating: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_COMMERCE_CIV</Tag>
+		<English>Highest commerce per city: %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_COMMERCE_PER_CAPITA</Tag>
+		<English>Highest commerce per capita: %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_POPULATION_CIV</Tag>
+		<English>Civilization with the largest population: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HINDU_LARGEST_CITIES</Tag>
+		<English>Top five Hindu cities: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HINDU_SHRINE</Tag>
+		<English>Hindu Shrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HISTORICAL</Tag>
+		<English>Historical</English>
+		<French>
+			<Text>Historique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Historisch</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Storica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Hist&#243;rica</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HOLY_CITY_WONDERS</Tag>
+		<English>Wonders in %s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_IBERIA</Tag>
+		<English>Iberia: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_IBERIA_CARTHAGE</Tag>
+		<English>Iberia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_INDOCHINA</Tag>
+		<English>Indochina</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_INTERMEDIATE</Tag>
+		<English>We have accomplished 2 Historical Goals out of 3. A Triumphal Arch has been built in our capital</English>
+		<French>Nous avons accompli 2 objectifs historiques sur 3. Un Arc de Triomphe a &#233;t&#233; construit dans notre capitale</French>
+		<German>Wir haben 2 von 3 Historischen Siegbedingungen erf&#252;llt. In unserer Hauptstadt wurde ein Triumphbogen erbaut.</German>
+		<Italian>Abbiamo raggiunto 2 obiettivi storici su 3. &#200; stato costruito un arco di trionfo nella nostra capitale</Italian>
+		<Spanish>Hemos conseguido 2 de los 3 objetivos hist&#243;ricos. Se ha erigido un Arco de Triunfo en nuestra capital</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ITALY</Tag>
+		<English>Italy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_JEWISH_SPECIALISTS</Tag>
+		<English>Great Prophets, Scientists and Statesmen in Jewish cities: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_EMPIRE_CIV</Tag>
+		<English>Largest empire: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_MAP</Tag>
+		<English>Largest map: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LARGEST_RELIGION_CIV</Tag>
+		<English>Civilization with the largest Catholic population: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_LEGENDARY_CULTURE_CITY</Tag>
+		<English>Legendary culture in %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MAGHREB</Tag>
+		<English>Maghreb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MAGHREB_MOORS</Tag>
+		<English>Maghreb: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MANCHURIA</Tag>
+		<English>Manchuria</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MARQUESAS</Tag>
+		<English>Marquesas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MECCA</Tag>
+		<English>Mecca</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MEDITERRANEAN_CITIES</Tag>
+		<English>Mediterranean cities: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MEDITERRANEAN_TERRITORY</Tag>
+		<English>Mediterranean territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MESOPOTAMIA</Tag>
+		<English>Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOSQUES_BUILT</Tag>
+		<English>Mosques built: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_ADVANCED_CIV</Tag>
+		<English>Most advanced civilization: %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_CULTURED_CITY</Tag>
+		<English>Most cultured city: %s1_city</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_CULTURED_CITY_VALUE</Tag>
+		<English>Most cultured city: %s1_city (%d2 / %d3)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_POPULOUS_CITY</Tag>
+		<English>Most populous city: %s1_city</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_MOST_POWERFUL_CIV</Tag>
+		<English>Most powerful civilization: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NATIONAL_PARK_CAPITAL</Tag>
+		<English>National Park in capital</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAVY_SIZE</Tag>
+		<English>Total of frigates and ships of the line: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NEAR_EAST</Tag>
+		<English>Near East: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NEW_ZEALAND</Tag>
+		<English>New Zealand</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_1500</Tag>
+		<English>No European colonies in East and Subequatorial Africa in 1500 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_1910</Tag>
+		<English>No European colonies in East and Subequatorial Africa in 1910 AD</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_AFRICAN_COLONIES_CURRENT</Tag>
+		<English>Currently no European colonies in East and Subequatorial Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_CATHOLICS</Tag>
+		<English>No Catholic civilizations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_CENTRAL_AMERICAN_COLONIES</Tag>
+		<English>No European colonies in Central America, Southern USA and the Caribbean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_CITIES</Tag>
+		<English>No cities founded yet!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_COLONIES_CARIBBEAN</Tag>
+		<English>No colonies in the Caribbean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_COLONIES_GRAN_COLOMBIA</Tag>
+		<English>No colonies in Gran Colombia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_COLONIES_GUAYANAS</Tag>
+		<English>No colonies in the Guayanas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_COLONIES_PERU</Tag>
+		<English>No colonies in Peru</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_NORTH_AMERICAN_COLONIES</Tag>
+		<English>No European colonies in North and Central America and the Caribbean</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_PROTESTANTS</Tag>
+		<English>No Protestant civilizations in Europe</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_SOUTH_AMERICAN_COLONIES</Tag>
+		<English>No European colonies in South America (except Brazil)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NO_SOUTH_ASIAN_COLONIES</Tag>
+		<English>No foreign colonies in South Asia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NORTH_AFRICA</Tag>
+		<English>North Africa: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY</Tag>
+		<English>North American territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NORTHWEST_INDIA</Tag>
+		<English>Northwest India</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_ALTARS</Tag>
+		<English>Sacrificial Altars: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_AMPHITHEATRES</Tag>
+		<English>Amphitheatres: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_AQUEDUCTS</Tag>
+		<English>Aqueducts: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_BARRACKS</Tag>
+		<English>Barracks: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_BATHS</Tag>
+		<English>Baths: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES</Tag>
+		<English>Buddhist monasteries: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE</Tag>
+		<English>Cities with influential culture: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_CITIES_RAZED</Tag>
+		<English>Cities razed: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_CONFUCIAN_ACADEMIES</Tag>
+		<English>Confucian Academies: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_FORUMS</Tag>
+		<English>Forums: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_HAPPINESS_RESOURCES</Tag>
+		<English>Owned happiness resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES</Tag>
+		<English>Hindu monasteries: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_IMPROVEMENTS</Tag>
+		<English>%s1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_NONRELIGIOUS_WONDERS</Tag>
+		<English>Controlled nonreligious wonders: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_PAGAN_TEMPLES_WORLD</Tag>
+		<English>Pagan temples in the world: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_SHRINES</Tag>
+		<English>Shrines: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_TAMBOS</Tag>
+		<English>Tambos: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_TAOIST_PAGODAS</Tag>
+		<English>Taoist Pagodas: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_TEMPLES</Tag>
+		<English>Pagan Temples: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_VASSALS</Tag>
+		<English>Number of vassals: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_WALLS</Tag>
+		<English>Walls: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_WONDERS</Tag>
+		<English>Wonders: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_WONDERS_CAPITAL</Tag>
+		<English>Wonders in capital: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OIL_SECURED</Tag>
+		<English>Oil resources secured: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_OPEN_BORDERS</Tag>
+		<English>Open border agreements: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORTHODOX_CATHEDRALS</Tag>
+		<English>Orthodox cathedrals: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORTHODOX_CULTURE_CITIES</Tag>
+		<English>Top five Orthodox cities: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PACIFIC_RAILROAD</Tag>
+		<English>Railroad to a Pacific port</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PEACE_TURNS</Tag>
+		<English>Turns spent at peace: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION</Tag>
+		<English>Percentage of world population: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PERCENTAGE_WORLD_TERRITORY</Tag>
+		<English>Percentage of the world: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PHILIPPINES</Tag>
+		<English>Philippines</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PIRACY</Tag>
+		<English>Gold from piracy: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_POLYTHEISM_NEVER_RELIGION</Tag>
+		<English>Never more than half of all cities with a religion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_POPE_TURNS</Tag>
+		<English>Turns as Pope: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROTESTANT_CIVS</Tag>
+		<English>Protestant or secular civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROTESTANT_ENGINEERS</Tag>
+		<English>Protestant great engineers: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROTESTANT_MERCHANTS</Tag>
+		<English>Protestant great merchants: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RELIGIOUS</Tag>
+		<English>Religious</English>
+		<German>Religi&#246;s</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RELIGIOUS_VICTORY</Tag>
+		<English>Religious Victory:</English>
+		<German>Religi&#246;ser Sieg:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RICHEST_CIVILIZATION</Tag>
+		<English>Richest civilization: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM</Tag>
+		<English>Greece and Anatolia: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE</Tag>
+		<English>Africa: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_EGYPT</Tag>
+		<English>Egypt: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND</Tag>
+		<English>Britain: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_FRANCE</Tag>
+		<English>Gaul: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ROME_CONTROL_SPAIN</Tag>
+		<English>Iberia: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA</Tag>
+		<English>Cities in Siberia: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SANKORE_PROPHETS</Tag>
+		<English>Great prophets settled in the Sankore city: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SCANDINAVIA</Tag>
+		<English>Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED</Tag>
+		<English>Accomplished:</English>
+		<French>Accompli :</French>
+		<German>Erf&#252;llt:</German>
+		<Italian>Raggiunti:</Italian>
+		<Spanish>Cumplidos:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SCREEN_FULFILLED</Tag>
+		<English>Fulfilled:</English>
+		<German>Erf&#252;llt:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SCREEN_NO</Tag>
+		<English>NO</English>
+		<French>NON</French>
+		<German>NEIN</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SCREEN_NOTYET</Tag>
+		<English>Not yet</English>
+		<French>Pas encore</French>
+		<German>Noch nicht</German>
+		<Italian>Non ancora</Italian>
+		<Spanish>A&#250;n no</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SCREEN_YES</Tag>
+		<English>YES</English>
+		<French>OUI</French>
+		<German>JA</German>
+		<Italian>S&#204;</Italian>
+		<Spanish>S&#205;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SECULAR_SCIENTISTS</Tag>
+		<English>Great Scientists in secular civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SECULAR_STATESMEN</Tag>
+		<English>Great Statesmen in secular civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SECULAR_UNIVERSITIES</Tag>
+		<English>Universities in secular civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SLAVES_TRADED</Tag>
+		<English>Gold from slave trade: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SOUTH_AMERICAN_TERRITORY</Tag>
+		<English>South American territory: %s1 / %s2%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SPREAD_RELIGION_PERCENT</Tag>
+		<English>%s1_religion spread to: %s2 / %s3%%</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SRIVIJAYA</Tag>
+		<English>Srivijaya</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_STATE_RELIGION_CATHEDRALS</Tag>
+		<English>%s1 Cathedrals built: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TAOIST_CIVS</Tag>
+		<English>Other Taoist civilizations: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED</Tag>
+		<English>First to discover technologies in the %s1 era: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TEMPLES_BUILT</Tag>
+		<English>Temples built: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TOTAL_CULTURE</Tag>
+		<English>Total culture: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TOTAL_GOLD</Tag>
+		<English>Gold in treasury: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TOTAL_POPULATION</Tag>
+		<English>Total population: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRADE_GOLD</Tag>
+		<English>Gold from trade: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES</Tag>
+		<English>Gold from trading resources: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRANSOXANIA</Tag>
+		<English>Transoxania</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY</Tag>
+		<English>Railroad from Moscow to a Siberian port</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_UHV_END_TURN</Tag>
+		<English>(Turn %d1)</English>
+		<German>(Runde %d1)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_VIENNA</Tag>
+		<English>Vienna</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_WEST_AFRICA</Tag>
+		<English>West Africa: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_WESTERN_NORTH_AMERICA_CITIES</Tag>
+		<English>Western North America: %d1 / %d2</English>
+	</TEXT>
+</Civ4GameText>

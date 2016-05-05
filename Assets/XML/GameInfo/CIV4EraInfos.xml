@@ -288,7 +288,7 @@
 			<iTrainPercent>80</iTrainPercent>
 			<iConstructPercent>80</iConstructPercent>
 			<iCreatePercent>80</iCreatePercent>
-			<iResearchPercent>120</iResearchPercent>
+			<iResearchPercent>110</iResearchPercent>
 			<iBuildPercent>80</iBuildPercent>
 			<iImprovementPercent>80</iImprovementPercent>
 			<iGreatPeoplePercent>80</iGreatPeoplePercent>
@@ -352,7 +352,7 @@
 			<iTrainPercent>70</iTrainPercent>
 			<iConstructPercent>70</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>150</iResearchPercent>
+			<iResearchPercent>125</iResearchPercent>
 			<iBuildPercent>70</iBuildPercent>
 			<iImprovementPercent>70</iImprovementPercent>
 			<iGreatPeoplePercent>70</iGreatPeoplePercent>
@@ -476,7 +476,7 @@
 			<iTrainPercent>100</iTrainPercent>
 			<iConstructPercent>100</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>80</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
 			<iGreatPeoplePercent>100</iGreatPeoplePercent>
@@ -490,9 +490,6 @@
 				<EraInfoSoundtrack>AS2D_SONG_CIV_III_MID_AFRICA</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_SONG_CIV_III_MOD_MID_EAST</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_SONG_CONQUESTS_MID_EAST</EraInfoSoundtrack>
-				<!--EraInfoSoundtrack>AS2D_ARABIC_SOUNDTRACK1</EraInfoSoundtrack-->
-				<!--EraInfoSoundtrack>AS2D_CROSSROADS</EraInfoSoundtrack-->
-				<!--EraInfoSoundtrack>AS2D_GODS_OF_OLD</EraInfoSoundtrack-->
 			</EraInfoSoundtracks>
 			<CitySoundscapes>
 				<CitySoundscape>
@@ -531,7 +528,7 @@
 			<iTrainPercent>100</iTrainPercent>
 			<iConstructPercent>100</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>80</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
 			<iGreatPeoplePercent>100</iGreatPeoplePercent>
@@ -587,7 +584,7 @@
 			<iTrainPercent>100</iTrainPercent>
 			<iConstructPercent>100</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>80</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
 			<iGreatPeoplePercent>100</iGreatPeoplePercent>

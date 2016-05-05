@@ -2,6 +2,8 @@ from CvPythonExtensions import *
 import CvUtil
 import CvScreenEnums
 import CvScreensInterface
+import Consts as con
+import Stability
 
 # Globals
 gc = CyGlobalContext()
@@ -11,7 +13,7 @@ gc = CyGlobalContext()
 class CvCivicsScreen:
 	'Civics Screen'
 	def __init__(self):
-		self.W_SCREEN = 1200
+		self.W_SCREEN = 1024
 		self.H_SCREEN = 680
 
 		self.W_TOP_PANEL = self.W_SCREEN
@@ -150,9 +152,9 @@ class CvCivicsScreen:
 		iSpacing = 8
 
 		sName = "CivicIcon" + str(iCategory)
-		print gc.getCivicInfo(iCivic).getText()
+		#print gc.getCivicInfo(iCivic).getText()
 		sButton = gc.getCivicInfo(iCivic).getButton()
-		print "Button works"
+		#print "Button works"
 		screen.setImageButton(sName, sButton, iX + iSpacing , iY + iSpacing, self.BUTTON_LARGE, self.BUTTON_LARGE, WidgetTypes.WIDGET_GENERAL, iCivic, 1)
 
 		sName = "CivicCost" + str(iCategory)
@@ -339,6 +341,55 @@ class CvCivicsScreen:
 
 
 
+	def colorCivicTexts(self, iHoverCivic, bHoverOn):
+		screen = self.getScreen()
+		player = gc.getPlayer(self.iActivePlayer)
+		iHoverCategory = gc.getCivicInfo(iHoverCivic).getCivicOptionType()
+		
+		for iCivic in range(con.iNumCivics):
+			iCategory = gc.getCivicInfo(iCivic).getCivicOptionType()
+			if iCategory == iHoverCategory:
+				continue
+			iX, iY = self.getPosition(iCategory)
+			xPos = iX + self.W_CIVIC_CATEGORY - self.BUTTON_SMALL - self.MARGIN
+			iLine = iY + self.MARGIN + (iCivic % 6) * self.LINE
+			
+			sName = "CivicName" + str(iCivic)
+			sText = gc.getCivicInfo(iCivic).getDescription()
+			iCombovalue = Stability.getCivicCombinationStability(self.iActivePlayer, iHoverCivic, iCivic)
+			bGood = iCombovalue > 0
+			bBad = iCombovalue < 0
+			
+			if bHoverOn:
+				if bGood:
+					if player.canDoCivics(iCivic):
+						sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('COLOR_GREEN'))
+					else:
+						sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('COLOR_PLAYER_MIDDLE_GREEN'))
+				elif bBad:
+					if player.canDoCivics(iCivic):
+						sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('COLOR_RED'))
+					else:
+						sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('COLOR_PLAYER_CANADA_RED'))
+				else:
+					if player.canDoCivics(iCivic):
+						sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('WHITE'))
+					else:
+						sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('COLOR_LIGHT_GREY'))
+			else:
+				if self.SelectedCivics[iCategory] == iCivic:
+					screen.show("CivicButton" + str(iCivic))
+					sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('COLOR_YELLOW'))
+				elif player.canDoCivics(iCivic):
+					screen.show("CivicButton" + str(iCivic))
+					sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('COLOR_WHITE'))
+				else:
+					screen.hide("CivicButton" + str(iCivic))
+					sText = CyTranslator().changeTextColor(sText, gc.getInfoTypeForString('COLOR_LIGHT_GREY'))
+			screen.setText(sName, "", sText, CvUtil.FONT_RIGHT_JUSTIFY, xPos - self.MARGIN, iLine, 0, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+
+
 	def handleInput(self, inputClass):
 		'Handles input for this screen'
 		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_LISTBOX_ITEM_SELECTED:
@@ -362,6 +413,7 @@ class CvCivicsScreen:
 					self.updateRevolution()
 
 			elif inputClass.getNotifyCode() == NotifyCode.NOTIFY_CURSOR_MOVE_ON:
+				self.colorCivicTexts(inputClass.getID(), True)
 				if self.hoverCivic(inputClass.getID(), True):
 					# Highlight button
 					self.showCivic(gc.getCivicInfo(inputClass.getID()).getCivicOptionType())
@@ -369,6 +421,7 @@ class CvCivicsScreen:
 					self.updateRevolution()
 
 			elif inputClass.getNotifyCode() == NotifyCode.NOTIFY_CURSOR_MOVE_OFF:
+				self.colorCivicTexts(inputClass.getID(), False)
 				if self.hoverCivic(inputClass.getID(), False):
 					# Unhighlight button
 					self.showCivic(gc.getCivicInfo(inputClass.getID()).getCivicOptionType())

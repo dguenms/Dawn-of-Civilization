@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Brazil -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DESC</Tag>
+		<English>The Brazilians</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_PEOPLES</Tag>
+		<English>Brazilian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_REPUBLIC</Tag>
+		<English>Federative Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_FASCIST</Tag>
+		<English>United States of %s1</English>
+		<French>
+			<Text>Etats Unis d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Vereinigte Staaten von %s1:Vereinigten Staaten von %s1:Vereinigten Staaten von %s1</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Stati Uniti d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estados Unidos de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZILIAN_ARGENTINA</Tag>
+		<English>Transplatine Province</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_ADJECTIVE</Tag>
+		<English>Brazilian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BRAZIL_SHORT_DESC</Tag>
+		<English>Brazil</English>
+	</TEXT>
+</Civ4GameText>
