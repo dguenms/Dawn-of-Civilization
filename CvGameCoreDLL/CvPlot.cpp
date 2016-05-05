@@ -11334,7 +11334,7 @@ void CvPlot::cameraLookAt()
 }
 
 // Leoreth
-int CvPlot::calculateCultureCost(PlayerTypes ePlayer) const
+int CvPlot::calculateCultureCost() const
 {
 	int iCost = 0;
 
@@ -11343,15 +11343,6 @@ int CvPlot::calculateCultureCost(PlayerTypes ePlayer) const
 
 	if (isHills()) iCost += GC.getDefineINT("CULTURE_COST_HILL");
 	if (isPeak()) iCost += GC.getDefineINT("CULTURE_COST_PEAK");
-
-	// EPGQUOTA Parts of Africa far from North/South/Nile cost more
-	// Other criteria: Not African/Brazilian, not discovered Biology yet
-	if (((getX_INLINE() > 59 && getX_INLINE() < 78 && getY_INLINE() > 13 && getY_INLINE() < 29) ||
-		  (getX_INLINE() > 47 && getX_INLINE() < 67 && getY_INLINE() > 24 && getY_INLINE() < 32)) &&
-		  !(ePlayer == ETHIOPIA || ePlayer == MALI || ePlayer == CONGO || ePlayer == BRAZIL ||
-		      ePlayer == NATIVE || ePlayer == INDEPENDENT || ePlayer == INDEPENDENT2 || ePlayer == BARBARIAN) &&
-          !GET_TEAM((TeamTypes)ePlayer).isHasTech((TechTypes)BIOLOGY) &&
-		  (!isWater() || isLake())) iCost += 500;
 
 	return iCost;
 }

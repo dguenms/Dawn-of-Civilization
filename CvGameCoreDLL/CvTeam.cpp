@@ -5479,8 +5479,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 				}
 			}
 
-			// EPGQUOTA Also do culture in one specific case for Africa (should be an XML tag)
-			if ((GC.getGame().getGameTurn() > getScenarioStartTurn() && bBonusVisible) || eIndex == BIOLOGY)
+			if (GC.getGame().getGameTurn() > getScenarioStartTurn() && bBonusVisible)
 			{
 				int iLoop;
 				for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); NULL != pLoopCity; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
@@ -5865,9 +5864,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 			gDLL->getInterfaceIFace()->setDirty(ResearchButtons_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
 		}
-
 	}
-
 }
 
 

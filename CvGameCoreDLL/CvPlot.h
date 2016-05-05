@@ -512,8 +512,7 @@ public:
 	void setWithinGreatWall(bool bNewValue);
 	void cameraLookAt();
 	bool canUseSlave(PlayerTypes ePlayer) const;
-    // EPGQUOTA add player indicator to culture
-	int calculateCultureCost(PlayerTypes ePlayer) const;
+	int calculateCultureCost() const;
 
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();
