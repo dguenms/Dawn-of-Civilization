@@ -1,72 +1,82 @@
 CREDITS
 
 BASE MODS
-# Rhye's and Fall of Civilization by Rhye
-# RFC Epic/Marathon by embryodead for speed optimizations and different game speeds
-# The Sword of Islam by embryodead for various interface improvements, corporation spread changes, middle eastern graphics and many miscellaneous features (including unit trade and city plot yields)
-# Reformation modmod by Panopticon for the basis of the Reformation event
-# Project Synthesis by Linkman for the Seljuks and Middle Eastern Mongol conquerors
-# The History Rewritten mod by Xyth for the Tamil, Tibetan, Moorish, Polish, Congolese and Polynesian civilizations including units, buildings and leaders, as well as its redesigned civics screen
-# Rhye's and Fall of the Classical World by srpt for the idea behind the stability mechanic
-# SuperSpies by Trojan Sheep, glider1 and Lord Tirian
-# Caveman2Cosmos for its graphics paging modifications
+* Rhye's and Fall of Civilization by Rhye
+* RFC Epic/Marathon by embryodead for speed optimizations and different game speeds
+* The Sword of Islam by embryodead for various interface improvements, corporation spread changes, middle eastern graphics and many miscellaneous features (including unit trade and city plot yields)
+* Reformation modmod by Panopticon for the basis of the Reformation event
+* Project Synthesis by Linkman for the Seljuks and Middle Eastern Mongol conquerors
+* The History Rewritten mod by Xyth:
+	* Tamil, Tibetan, Moorish, Polish, Congolese and Polynesian civilizations including units, buildings and leaders
+	* Civics advisor screen
+	* Civilopedia design
+* Rhye's and Fall of the Classical World by srpt for the idea behind the stability mechanic
+* SuperSpies by Trojan Sheep, glider1 and Lord Tirian
+* Caveman2Cosmos for its graphics paging modifications
+* 2nd UU and UB modmod by merijn_v1: Alchemist UB concept and graphics
 
 LEADERHEADS
-# melcher kürzer: Catherine the Great, Isabella
-# veBear: Baibars, Hayam Wuruk, Suharto
-# saibotlieh: Nicholas II, Maria II, Cleopatra
-# The Capo: Gustav Adolph, Cavour, Charles V, Nasser, Yaroslav, Mongkut, Afonso, Hitler, Chandragupta
-# IgorS: Charles V, Nasser, Yaroslav, Mongkut, Afonso
-# Amra: Naresuan (Ramkhamhaeng), Hiram, Akbar, Basil, Francis
-# Ekmek: Meiji, Ataturk, Cixi, Khomeini, Mussolini, Akbar, Basil, Hitler
-# cfkane: Afonso, Barbarossa (Arthur)
-# Methyl Orange: Jimmu
-# mechaerik: Franco
-# Flintlock1415: Alfred
-# PW90: Philipp
-# charle88: Philipp
-# Darkstyx: Hongwu (Sejong)
-# mourndraken: Mussolini
-# C.Roland: Mussolini
-# Wyz_sub10: Basil
-# Farsight: Shivaji
-# embryodead: Shivaji (Bhoja)
-# Triver: Dharmasetu (Gajah Mada)
-# Bernie14: Hitler, Haile Selassie
-# The Coyote: Hitler
-# Smeagolheart: Hitler
-# Chuggi: Hitler
-# Firaxis: Qin Shi Huang, Taizong (Chinese release)
-# Novator: Lorenzo de' Medici (Simone Boccanegra)
-# Xyth: Aho'eitu (Tu'itatui)
-# cybrxkhan: Krishna Deva Raya (Mihirakula)
+* melcher kürzer: Catherine the Great, Isabella, Barbarossa
+* veBear: Baibars, Hayam Wuruk, Suharto
+* saibotlieh: Nicholas II, Maria II, Cleopatra
+* The Capo: Cavour, Charles V, Nasser, Yaroslav, Mongkut, Afonso, Hitler, Chandragupta, George I (Stambolov)
+* IgorS: Charles V, Nasser, Yaroslav, Mongkut, Afonso
+* Amra: Naresuan (Ramkhamhaeng), Hiram, Akbar, Basil, Francis
+* Ekmek: Meiji, Ataturk, Khomeini, Mussolini, Akbar, Basil, Hitler, Pilsudski, Castilla (O'Higgins)
+* cfkane: Afonso
+* Methyl Orange: Jimmu
+* mechaerik: Franco
+* Flintlock1415: Alfred
+* PW90: Philipp
+* charle88: Philipp
+* Darkstyx: Hongwu (Sejong)
+* mourndraken: Mussolini
+* C.Roland: Mussolini
+* Wyz_sub10: Basil
+* Farsight: Shahuji
+* embryodead: Shahuji (Bhoja)
+* Triver: Dharmasetu (Gajah Mada)
+* Bernie14: Hitler, Haile Selassie, Walesa
+* The Coyote: Hitler
+* Smeagolheart: Hitler
+* Chuggi: Hitler
+* Firaxis: Qin Shi Huang, Taizong (Chinese release)
+* Novator: Lorenzo de' Medici (Simone Boccanegra), Casimir III, Gerhardsen, Vargas
+* Xyth: Aho'eitu (Tu'itatui)
+* cybrxkhan: Krishna Deva Raya (Mihirakula)
+* ramzay1945: Casimir III, Gustavus Adolphus, MacDonald
+* Bautos42: texture and background changes for various included leaders
 
 From mods, without explicit mention of the original creators
-# The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak)
+* The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak), Rahman
+* RFC Asia: Hongwu
 
 UNITS
-# History Rewritten mod (Xyth): Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave, Huscarl and Waka graphics
-# Bakuel: Patiyodha (Gupta Longbowman)
-# RFC Classical World (srpt): Patiyodha name and button
+* History Rewritten mod (Xyth): Cidainh, Huluganni, Medjay, Asvaka, Farari, Mohawk, Mounted Brave, Huscarl and Waka graphics
+* Bakuel: Patiyodha (Gupta Longbowman)
+* RFC Classical World (srpt): Patiyodha name and button
 
 OTHER GRAPHICS
-# Slave unit, Indian Edict: RFC Classical World by srpt
-# Smokehouse building: History Rewritten by Xyth
+* Slave unit, Indian Edict: RFC Classical World by srpt
+* Smokehouse building: History Rewritten by Xyth
 
 MODULES
-# Himeji Castle, Empire State Building: Voyhkah
+* Himeji Castle, Empire State Building: Voyhkah
 
 MISCELLANEOUS
-# Corossol: Phoenicia
-# veBear: Indonesia
-# srpt: Canada, including map changes in the region
-# 3Miro: fixes in the stack and settler AI
-# Mef: map changes in France
-# Jusos2108: map changes in Australia
-# blizzrd: map changes in Scandinavia
-# Sgt. Bears: text and XML work
-# andrewv42: map changes in India and Indochina
-# Steb: city names in Canada and the Americas
+* Corossol: Phoenicia
+* veBear: Indonesia
+* srpt: Canada, including map changes in the region
+* 3Miro: fixes in the stack and settler AI
+* Mef: map changes in France
+* Jusos2108: map changes in Australia
+* blizzrd: map changes in Scandinavia
+* Sgt. Bears: text and XML work
+* andrewv42: map changes in India and Indochina
+* Steb: city names in Canada and the Americas
+
+GITHUB PROJECT CONTRIBUTORS
+Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, epgquota
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others
@@ -76,4 +86,4 @@ Too many people to list for their contributions of Great Statesmen, Female Great
 in particular Hightower, DC123456789, borhap88, Panopticon and Chep
 
 There has been so much valuable feedback to this mod which I'm really thankful for. I hope you're not offended if you miss yourself in this quickly compiled list and I hereby thank you anonymously.
-If someone feels he should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.
+If someone feels they should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.
