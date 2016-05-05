@@ -72,6 +72,12 @@ class RiseAndFall:
 
 	def setTempBottomRight( self, tNewValue ):
 		sd.scriptDict['tempBottomRight'] = tNewValue
+		
+	def setTempPlots(self, lPlots):
+		sd.scriptDict['lTempPlots'] = lPlots
+		
+	def getTempPlots(self):
+		return sd.scriptDict['lTempPlots']
 
 	def getSpawnWar( self ):
 		return sd.scriptDict['iSpawnWar']
@@ -267,12 +273,12 @@ class RiseAndFall:
 			for i in range(3):
 				utils.setGoal(iPreviousCiv, i, 0)
 
-	def flipPopup(self, iNewCiv, tTopLeft, tBottomRight):
+	def flipPopup(self, iNewCiv, lPlots):
 		iHuman = utils.getHumanID()
 		
 		flipText = CyTranslator().getText("TXT_KEY_FLIPMESSAGE1", ())
 		
-		for city in self.getConvertedCities(iNewCiv, utils.getPlotList(tTopLeft, tBottomRight)):
+		for city in self.getConvertedCities(iNewCiv, lPlots):
 			flipText += city.getName() + "\n"
 			
 		flipText += CyTranslator().getText("TXT_KEY_FLIPMESSAGE2", ())
@@ -280,18 +286,16 @@ class RiseAndFall:
 		self.showPopup(7615, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), flipText, (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
 		self.setNewCivFlip(iNewCiv)
 		self.setOldCivFlip(iHuman)
-		self.setTempTopLeft(tTopLeft)
-		self.setTempBottomRight(tBottomRight)
+		self.setTempPlots(lPlots)
 
 	def eventApply7615(self, popupReturn):
 		iHuman = utils.getHumanID()
-		tTopLeft = self.getTempTopLeft()
-		tBottomRight = self.getTempBottomRight()
+		lPlots = self.getTempPlots()
 		iNewCivFlip = self.getNewCivFlip()
 		
 		iNumCities = gc.getPlayer(iNewCivFlip).getNumCities()
 
-		humanCityList = [city for city in self.getConvertedCities(iNewCivFlip, utils.getPlotList(tTopLeft, tBottomRight)) if city.getOwner() == iHuman]
+		humanCityList = [city for city in self.getConvertedCities(iNewCivFlip, lPlots) if city.getOwner() == iHuman]
 		
 		if( popupReturn.getButtonClicked() == 0 ): # 1st button
 			print ("Flip agreed")
@@ -311,22 +315,21 @@ class RiseAndFall:
 				self.createStartingWorkers(iNewCivFlip, (gc.getPlayer(iNewCivFlip).getCapitalCity().getX(), gc.getPlayer(iNewCivFlip).getCapitalCity().getY()))
 
 			#same code as Betrayal - done just once to make sure human player doesn't hold a stack just outside of the cities
-			for x in range(tTopLeft[0], tBottomRight[0]+1):
-				for y in range(tTopLeft[1], tBottomRight[1]+1):
-					betrayalPlot = gc.getMap().plot(x,y)
-					if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iNewCivFlip): continue
-					iNumUnitsInAPlot = betrayalPlot.getNumUnits()
-					if (iNumUnitsInAPlot):								  
-						for i in range(iNumUnitsInAPlot):						
-							unit = betrayalPlot.getUnit(i)
-							if (unit.getOwner() == iHuman):
-								rndNum = gc.getGame().getSorenRandNum(100, 'betrayal')
-								if (rndNum >= iBetrayalThreshold):
-									if (unit.getDomainType() == 2): #land unit
-										iUnitType = unit.getUnitType()
-										unit.kill(False, iNewCivFlip)
-										utils.makeUnit(iUnitType, iNewCivFlip, (x,y), 1)
-										i = i - 1
+			for (x, y) in lPlots:
+				betrayalPlot = gc.getMap().plot(x,y)
+				if betrayalPlot.isCore(betrayalPlot.getOwner()) and not betrayalPlot.isCore(iNewCivFlip): continue
+				iNumUnitsInAPlot = betrayalPlot.getNumUnits()
+				if (iNumUnitsInAPlot):								  
+					for i in range(iNumUnitsInAPlot):						
+						unit = betrayalPlot.getUnit(i)
+						if (unit.getOwner() == iHuman):
+							rndNum = gc.getGame().getSorenRandNum(100, 'betrayal')
+							if (rndNum >= iBetrayalThreshold):
+								if (unit.getDomainType() == 2): #land unit
+									iUnitType = unit.getUnitType()
+									unit.kill(False, iNewCivFlip)
+									utils.makeUnit(iUnitType, iNewCivFlip, (x,y), 1)
+									i = i - 1
 
 
 			if (self.getCheatersCheck(0) == 0):
@@ -1277,7 +1280,7 @@ class RiseAndFall:
 		
 		# ask human player for flips
 		if iHumanCities > 0 and iCiv != utils.getHumanID():
-			self.flipPopup(iCiv, tTopLeft, tBottomRight)
+			self.flipPopup(iCiv, lRebirthPlots)
 
 		# adjust civics, religion and other special settings
 		if iCiv == iRome:
@@ -1890,8 +1893,9 @@ class RiseAndFall:
 		
 			iNumCities = gc.getPlayer(iCiv).getNumCities()
 		
-			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, utils.getPlotList(tTopLeft, tBottomRight))
-			self.convertSurroundingPlotCulture(iCiv, utils.getPlotList(tTopLeft, tBottomRight))
+			lPlots = utils.getPlotList(tTopLeft, tBottomRight, Areas.getBirthExceptions(iCiv))
+			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, lPlots)
+			self.convertSurroundingPlotCulture(iCiv, lPlots)
 			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
 			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
 			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ# starting workers
@@ -1935,7 +1939,7 @@ class RiseAndFall:
 
 			if (iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID()): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
 				print "Flip Popup: free region"
-				self.flipPopup(iCiv, tTopLeft, tBottomRight)
+				self.flipPopup(iCiv, lPlots)
 				
 
 			
@@ -1957,8 +1961,9 @@ class RiseAndFall:
 				
 		iNumCities = gc.getPlayer(iCiv).getNumCities()
 		
-		iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, utils.getPlotList(tTopLeft, tBottomRight))
-		self.convertSurroundingPlotCulture(iCiv, utils.getPlotList(tTopLeft, tBottomRight))
+		lPlots = utils.getPlotList(tTopLeft, tBottomRight, Areas.getBirthExceptions(iCiv))
+		iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, lPlots)
+		self.convertSurroundingPlotCulture(iCiv, lPlots)
 		
 		# create starting workers
 		if iNumCities == 0 and gc.getPlayer(iCiv).getNumCities() > 0:
@@ -2009,7 +2014,7 @@ class RiseAndFall:
 
 		if (iNumHumanCitiesToConvert > 0):
 			print "Flip Popup: foreign borders"
-			self.flipPopup(iCiv, tTopLeft, tBottomRight)
+			self.flipPopup(iCiv, lPlots)
 			
 		if iCiv == iGermany:
 			self.germanSpawn()
@@ -2095,9 +2100,9 @@ class RiseAndFall:
 				self.createStartingWorkers(iCiv, tCapital)
 
 		else:	   # starting units have already been placed, now to the second part
-
-			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, utils.getPlotList(tTopLeft, tBottomRight))
-			self.convertSurroundingPlotCulture(iCiv, utils.getPlotList(tTopLeft, tBottomRight))
+			lPlots = utils.getPlotList(tTopLeft, tBottomRight, Areas.getBirthExceptions(iCiv))
+			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, lPlots)
+			self.convertSurroundingPlotCulture(iCiv, lPlots)
 				
 			for i in range(iIndependent, iBarbarian+1):
 				utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, i, False, True) #remaining barbs/indeps in the region now belong to the new civ   
@@ -2132,7 +2137,7 @@ class RiseAndFall:
 			# convert human cities
 			if iNumHumanCitiesToConvert > 0:
 				print "Flip Popup: in capital"
-				self.flipPopup(iCiv, plotList)
+				self.flipPopup(iCiv, lPlots)
 				
 			utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
 			
@@ -2161,7 +2166,7 @@ class RiseAndFall:
 			lCanadaCities.extend(utils.getCityList(iAmerica))
 			
 			for city in lCanadaCities:
-				if city.getRegionID() == rCanada and city.getX() < Areas.getCapital(iCanada)[0]:
+				if city.getRegionID() == rCanada and city.getX() < Areas.getCapital(iCanada)[0] and city not in lCities:
 					lCities.append(city)
 					
 		# Leoreth: remove capital locations
@@ -2169,6 +2174,8 @@ class RiseAndFall:
 			if city.getOwner() < iNumPlayers:
 				if (city.getX(), city.getY()) == Areas.getCapital(city.getOwner()) and city.isCapital():
 					lCities.remove(city)
+				
+		utils.show(str([city.getName() for city in lCities]))
 
 		return lCities
 						

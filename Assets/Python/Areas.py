@@ -47,6 +47,10 @@ def getBirthRectangle(iPlayer, bExtended = None):
 		return dChangedBirthArea[iPlayer]
 	return tBirthArea[iPlayer]
 	
+def getBirthExceptions(iPlayer):
+	if iPlayer in dBirthAreaExceptions: return dBirthAreaExceptions[iPlayer]
+	return []
+	
 def getCoreArea(iPlayer, bReborn=None):
 	return getArea(iPlayer, tCoreArea, dCoreAreaExceptions, bReborn, dChangedCoreArea, dChangedCoreAreaExceptions)
 	

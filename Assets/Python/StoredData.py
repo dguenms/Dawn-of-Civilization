@@ -34,6 +34,7 @@ class StoredData:
 				    'iOldCivFlip': -1,
 				    'tTempTopLeft': -1,
 				    'tTempBottomRight': -1,
+				    'lTempPlots': [],
 				    'iSpawnWar': 0, #if 1, add units and declare war. If >=2, do nothing
 				    'bAlreadySwitched': False,
 				    'lColonistsAlreadyGiven': [0 for i in range(con.iNumPlayers)], #active players
