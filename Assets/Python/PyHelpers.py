@@ -468,7 +468,7 @@ class PyCity:
 		"int - Unhappy Population"
 		return self.city.unhappyLevel(0)
 		
-        #Rhye		
+	#Rhye		
 	def hasBuilding(self, iBuildingID):
 		"bool - Whether or not this city has iBuildingID"
 		return self.city.hasBuilding(iBuildingID)

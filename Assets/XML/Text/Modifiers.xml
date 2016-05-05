@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Resources -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS</Tag>
+		<English>Modifiers</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_0</Tag>
+		<English>Culture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_1</Tag>
+		<English>Unit upkeep</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_2</Tag>
+		<English>Research cost</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_3</Tag>
+		<English>Distance maintenance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_4</Tag>
+		<English>Cities maintenance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_5</Tag>
+		<English>Civic upkeep</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_6</Tag>
+		<English>Free health</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_7</Tag>
+		<English>Unit production costs</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_8</Tag>
+		<English>Wonder costs</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_9</Tag>
+		<English>Building costs</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_10</Tag>
+		<English>Inflation rate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_11</Tag>
+		<English>GP threshold</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MODIFIERS_12</Tag>
+		<English>Growth threshold</English>
+	</TEXT>
+</Civ4GameText>

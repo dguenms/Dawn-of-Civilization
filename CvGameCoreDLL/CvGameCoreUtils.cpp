@@ -2473,6 +2473,7 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	case MISSION_REFORM_GOVERNMENT: szString = L"MISSION_REFORM_GOVERNMENT"; break;
 	case MISSION_DIPLOMATIC_MISSION: szString = L"MISSION_DIPLOMATIC_MISSION"; break;
 	case MISSION_PERSECUTE: szString = L"MISSION_PERSECUTION"; break;
+	case MISSION_GREAT_MISSION: szString = L"MISSION_GREAT_MISSION"; break;
 
 	case MISSION_DIE_ANIMATION: szString = L"MISSION_DIE_ANIMATION"; break;
 
@@ -2635,63 +2636,6 @@ int calculateLevel(int iExperience, PlayerTypes ePlayer)
 }
 // BUG - Unit Experience - end
 
-int getSettlerMapValue(int iPlayer, int iReborn, int x, int y)
-{
-	return settlersMaps[iReborn][iPlayer][y][x];
-}
-
-int getRegionSpreadFactor(int iRegionID, ReligionTypes eReligion)
-{
-	int iSpreadFactor = regionSpreadFactor[iRegionID][eReligion];
-
-	if (eReligion == CATHOLICISM)
-	{
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
-		{
-			if (iSpreadFactor < regionSpreadFactor[iRegionID][ORTHODOXY])
-			{
-				iSpreadFactor = regionSpreadFactor[iRegionID][ORTHODOXY];
-			}
-		}
-
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
-		{
-			if (iSpreadFactor < regionSpreadFactor[iRegionID][PROTESTANTISM])
-			{
-				iSpreadFactor = regionSpreadFactor[iRegionID][PROTESTANTISM];
-			}
-		}
-	}
-
-	return iSpreadFactor;
-}
-
-int getCivSpreadFactor(PlayerTypes ePlayer, ReligionTypes eReligion)
-{
-	int iSpreadFactor = civSpreadFactor[ePlayer][eReligion];
-
-	if (eReligion == CATHOLICISM)
-	{
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)ORTHODOXY))
-		{
-			if (iSpreadFactor < civSpreadFactor[ePlayer][ORTHODOXY])
-			{
-				iSpreadFactor = civSpreadFactor[ePlayer][ORTHODOXY];
-			}
-		}
-
-		if (!GC.getGameINLINE().isReligionFounded((ReligionTypes)PROTESTANTISM))
-		{
-			if (iSpreadFactor < civSpreadFactor[ePlayer][PROTESTANTISM])
-			{
-				iSpreadFactor = civSpreadFactor[ePlayer][PROTESTANTISM];
-			}
-		}
-	}
-
-	return iSpreadFactor;
-}
-
 BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding)
 {
 	return (BuildingTypes)GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(GC.getBuildingInfo(eBuilding).getBuildingClassType());
@@ -2700,4 +2644,27 @@ BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes e
 UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit)
 {
 	return (UnitTypes)GC.getCivilizationInfo(eCivilization).getCivilizationUnits(GC.getUnitInfo(eUnit).getUnitClassType());
+}
+
+bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion)
+{
+	if (ePrecursor == CONFUCIANISM && eReligion == TAOISM) return true;
+	if (ePrecursor == TAOISM && eReligion == CONFUCIANISM) return true;
+	if (ePrecursor == HINDUISM && eReligion == BUDDHISM) return true;
+	if ((ePrecursor == CATHOLICISM || ePrecursor == ORTHODOXY) && eReligion == ISLAM) return true;
+	if (ePrecursor == JUDAISM && (eReligion == CATHOLICISM || eReligion == ORTHODOXY)) return true;
+
+	return false;
+}
+
+void log(char* format, ...)
+{
+	static char buf[2048];
+	_vsnprintf( buf, 2048-4, format, (char*)(&format+1) );
+	gDLL->logMsg("sdkDbg.log", buf);
+}
+
+void log(CvWString message)
+{
+	gDLL->logMsg("sdkDbg.log", CvString(message));
 }

@@ -6,6 +6,7 @@ import PyHelpers
 import Popup
 import RFCUtils
 from Consts import *
+import Areas
 import CityNameManager as cnm
 from StoredData import sd # edead
 
@@ -763,7 +764,7 @@ class Congress:
 				iClaimValidity -= 10
 			
 		# generic settler map bonus
-		iClaimantValue = plot.getSettlerMapValue(iClaimant)
+		iClaimantValue = plot.getSettlerValue(iClaimant)
 		if iClaimantValue >= 90:
 			iClaimValidity += max(1, iClaimantValue / 100)
 
@@ -771,7 +772,7 @@ class Congress:
 		if iVoter in lCivGroups[0]:
 			if iClaimant in lCivGroups[0]:
 				if not bOwner or iOwner not in lCivGroups[0]:
-					if plot.getSettlerMapValue(iVoter) < 90:
+					if plot.getSettlerValue(iVoter) < 90:
 						iClaimValidity += 10
 						
 		# vote to support settler maps for civs from your own group
@@ -782,8 +783,8 @@ class Congress:
 				if iVoter in lGroup and iClaimant in lGroup: bDifferentGroupClaimant = False
 				if iVoter in lGroup and iOwner in lGroup: bDifferentGroupOwner = False
 		
-			iClaimantValue = plot.getSettlerMapValue(iClaimant)
-			iOwnerValue = plot.getSettlerMapValue(iOwner)
+			iClaimantValue = plot.getSettlerValue(iClaimant)
+			iOwnerValue = plot.getSettlerValue(iOwner)
 			
 			if not bDifferentGroupClaimant and bDifferentGroupOwner and iClaimantValue >= 90: iClaimantValue *= 2
 			if not bDifferentGroupOwner and bDifferentGroupClaimant and iOwnerValue >= 90: iOwnerValue *= 2
@@ -793,8 +794,8 @@ class Congress:
 			
 		# own expansion targets
 		if not bOwnClaim:
-			iOwnSettlerValue = plot.getSettlerMapValue(iVoter)
-			iOwnWarTargetValue = plot.getWarMapValue(iVoter)
+			iOwnSettlerValue = plot.getSettlerValue(iVoter)
+			iOwnWarTargetValue = plot.getWarValue(iVoter)
 			
 			# if vote between two civs, favor the weaker one if we want to expand there later on
 			if bOwner:
@@ -972,7 +973,7 @@ class Congress:
 			for city in utils.getCityList(iLoopPlayer):
 				x, y = city.getX(), city.getY()
 				plot = gc.getMap().plot(x, y)
-				iSettlerMapValue = plot.getSettlerMapValue(iPlayer)
+				iSettlerMapValue = plot.getSettlerValue(iPlayer)
 				iValue = 0
 				
 				if not plot.isRevealed(iPlayer, False): continue
@@ -1016,7 +1017,7 @@ class Congress:
 					
 				# after war: war targets
 				if self.bPostWar:
-					iValue += plot.getWarMapValue(iPlayer) / 2
+					iValue += plot.getWarValue(iPlayer) / 2
 					
 				# AI America receives extra value for claims in the west
 				if iPlayer == iAmerica and utils.getHumanID() != iPlayer:
@@ -1040,8 +1041,8 @@ class Congress:
 					plot = gc.getMap().plot(x, y)
 					if not plot.isCity() and not plot.isPeak() and not plot.isWater() and pPlayer.canFound(x, y):
 						if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
-							iSettlerMapValue = plot.getSettlerMapValue(iPlayer)
-							if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)) != "-1":
+							iSettlerMapValue = plot.getSettlerValue(iPlayer)
+							if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)):
 								closestCity = gc.getMap().findCity(x, y, PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 								if stepDistance(x, y, closestCity.getX(), closestCity.getY()) > 2:
 									lPlots.append((x, y, max(1, iSettlerMapValue / 100 - 1)))
@@ -1058,6 +1059,6 @@ class Congress:
 		
 		# Leoreth: America receives an invite if there are still claims in the west
 		if iAmerica not in self.lInvites and not self.bPostWar and gc.getGame().getGameTurn() > tBirth[iAmerica]:
-			lAmericanClaimCities = utils.getAreaCities(tAmericanClaimsTL, tAmericanClaimsBR)
+			lAmericanClaimCities = utils.getAreaCities(utils.getPlotList(tAmericanClaimsTL, tAmericanClaimsBR))
 			if utils.satisfies(lAmericanClaimCities, lambda x: x.getOwner() != iAmerica):
 				self.lInvites[len(self.lInvites)-1] = iAmerica

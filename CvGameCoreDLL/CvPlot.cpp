@@ -39,6 +39,13 @@ CvPlot::CvPlot()
 {
 	m_aiYield = new short[NUM_YIELD_TYPES];
 
+	m_abCore = new bool[NUM_MAJOR_PLAYERS];
+	m_aiSettlerValue = new int[NUM_MAJOR_PLAYERS];
+	m_aiWarValue = new int[NUM_MAJOR_PLAYERS];
+	m_aiReligionSpreadFactor = new int[NUM_RELIGIONS];
+
+	m_aiReligionInfluence = new int[NUM_RELIGIONS];
+
 	m_aiCulture = NULL;
 	m_aiFoundValue = NULL;
 	m_aiPlayerCityRadiusCount = NULL;
@@ -49,8 +56,6 @@ CvPlot::CvPlot()
 	m_aiRevealedOwner = NULL;
 	m_abRiverCrossing = NULL;
 	m_abRevealed = NULL;
-	m_abCore = NULL; // Leoreth
-	m_abRebornCore = NULL; // Leoreth
 	m_aeRevealedImprovementType = NULL;
 	m_aeRevealedRouteType = NULL;
 	m_paiBuildProgress = NULL;
@@ -83,6 +88,14 @@ CvPlot::~CvPlot()
 	uninit();
 
 	SAFE_DELETE_ARRAY(m_aiYield);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_abCore);
+	SAFE_DELETE_ARRAY(m_aiSettlerValue);
+	SAFE_DELETE_ARRAY(m_aiWarValue);
+	SAFE_DELETE_ARRAY(m_aiReligionSpreadFactor);
+
+	SAFE_DELETE_ARRAY(m_aiReligionInfluence);
 }
 
 void CvPlot::init(int iX, int iY)
@@ -128,8 +141,6 @@ void CvPlot::uninit()
 
 	SAFE_DELETE_ARRAY(m_abRiverCrossing);
 	SAFE_DELETE_ARRAY(m_abRevealed);
-	SAFE_DELETE_ARRAY(m_abCore); // Leoreth
-	SAFE_DELETE_ARRAY(m_abRebornCore); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_aeRevealedImprovementType);
 	SAFE_DELETE_ARRAY(m_aeRevealedRouteType);
@@ -193,6 +204,9 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_iReconCount = 0;
 	m_iRiverCrossingCount = 0;
 
+	// Leoreth
+	//m_iRegionID = -1;
+
 	// Leoreth: graphics paging
 	m_iGraphicsPageIndex = -1;
 
@@ -225,6 +239,19 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
 		m_aiYield[iI] = 0;
+	}
+
+	for (iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
+	{
+		m_abCore[iI] = false;
+		m_aiSettlerValue[iI] = 0;
+		m_aiWarValue[iI] = 0;
+	}
+
+	for (iI = 0; iI < NUM_RELIGIONS; ++iI)
+	{
+		m_aiReligionSpreadFactor[iI] = -1;
+		m_aiReligionInfluence[iI] = 0;
 	}
 }
 
@@ -2525,7 +2552,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	}
 
 	// Leoreth: Mexican UP (Arid Agriculture): can build farms on hills
-	if (eTeam == AZTEC && GET_PLAYER((PlayerTypes)AZTEC).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
+	if (eTeam == AZTECS && GET_PLAYER((PlayerTypes)AZTECS).isReborn() && eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FARM") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_DESERT"))
 	{
 		bMexico = true;
 	}
@@ -3185,36 +3212,26 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	}
 	else
 	{
-	//Rhye - start (some units ignore desert cost)
-		if (((pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_EGYPT_WARCHARIOT")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_PERSIA_IMMORTAL")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_CARTHAGE_NUMIDIAN_CAVALRY")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_ARABIA_CAMELARCHER")) || (pUnit->getUnitType() == GC.getInfoTypeForString("UNIT_MOORISH_CAMEL_GUNNER"))) && (getTerrainType() == 2)) //war chariot, immortal, numidian cavalry and camel archer in desert
-		{
-			iRegularCost = 1;
-		}
-		else
-		{
-		//Rhye - end
-			iRegularCost = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getMovementCost() : GC.getFeatureInfo(getFeatureType()).getMovementCost());
+		iRegularCost = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getMovementCost() : GC.getFeatureInfo(getFeatureType()).getMovementCost());
 
-			if (isHills())
+		if (isHills())
+		{
+			iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
+		}
+
+		// Leoreth: Great Wall effect (+1 movement cost for enemies within the great wall)
+		if (isWithinGreatWall() && isOwned())
+		{
+			if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_WALL) && GET_TEAM((TeamTypes)getOwnerINLINE()).isAtWar((TeamTypes)pUnit->getOwner()))
 			{
 				iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
 			}
+		}
 
-			// Leoreth: Great Wall effect (+1 movement cost for enemies within the great wall)
-			if (isWithinGreatWall() && isOwned())
-			{
-				if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_WALL) && GET_TEAM((TeamTypes)getOwnerINLINE()).isAtWar((TeamTypes)pUnit->getOwner()))
-				{
-					iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
-				}
-			}
-
-			if (iRegularCost > 0)
-			{
-				iRegularCost = std::max(1, (iRegularCost - pUnit->getExtraMoveDiscount()));
-			}
-		} 
-		//Rhye
+		if (iRegularCost > 0)
+		{
+			iRegularCost = std::max(1, (iRegularCost - pUnit->getExtraMoveDiscount()));
+		}
 	}
 
 	bool bHasTerrainCost = (iRegularCost > 1);
@@ -3224,7 +3241,6 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	iRegularCost *= GC.getMOVE_DENOMINATOR();
 
 	//Rhye - start
-
 	if (getTerrainType() == TERRAIN_OCEAN)
 	{
 		// Leoreth: reduced movement cost only for units that could enter ocean on their own
@@ -3237,8 +3253,8 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 
 	if (bHasTerrainCost)
 	{
-		if (((getFeatureType() == NO_FEATURE) ? pUnit->isTerrainDoubleMove(getTerrainType()) : pUnit->isFeatureDoubleMove(getFeatureType())) ||
-			(isHills() && pUnit->isHillsDoubleMove()))
+		// Leoreth: terrain double move only when there are no hills
+		if (((getFeatureType() == NO_FEATURE) ? (pUnit->isTerrainDoubleMove(getTerrainType()) && !isHills()) : pUnit->isFeatureDoubleMove(getFeatureType())) || (isHills() && pUnit->isHillsDoubleMove()))
 		{
 			iRegularCost /= 2;
 		}
@@ -3424,7 +3440,7 @@ PlayerTypes CvPlot::calculateCulturalOwner() const
 				{
 					for (int iJ = 0; iJ < NUM_MAJOR_PLAYERS; iJ++)
 					{
-						if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurnYear() > startingTurnYear[iJ] && !GET_PLAYER((PlayerTypes)iI).isAlive())
+						if (isCore((PlayerTypes)iI) && GC.getGame().getGameTurnYear() > GET_PLAYER((PlayerTypes)iJ).getBirthYear() && !GET_PLAYER((PlayerTypes)iI).isAlive())
 						{
 							iCulture *= 4;
 							break;
@@ -4630,7 +4646,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		iUpgradeLeft *= 110;
 		iUpgradeLeft /= 100;
 		break;
-	case CARTHAGE:
+	case PHOENICIA:
 		iUpgradeLeft *= 110;
 		iUpgradeLeft /= 100;
 		break;
@@ -4650,7 +4666,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		iUpgradeLeft *= 110;
 		iUpgradeLeft /= 100;
 		break;
-	case VIKING:
+	case VIKINGS:
 		iUpgradeLeft *= 90;
 		iUpgradeLeft /= 100;
 		break;
@@ -4706,7 +4722,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		iUpgradeLeft *= 80;
 		iUpgradeLeft /= 100;
 		break;
-	case AZTEC:
+	case AZTECS:
 		iUpgradeLeft *= 80;
 		iUpgradeLeft /= 100;
 		break;
@@ -4720,7 +4736,7 @@ int CvPlot::getUpgradeTimeLeft(ImprovementTypes eImprovement, PlayerTypes ePlaye
 		break;
 	}
 	if (!GET_PLAYER((PlayerTypes)EGYPT).isPlayable()) //late start condition
-		if (ePlayer < VIKING) {
+		if (ePlayer < VIKINGS) {
 			iUpgradeLeft *= 90;
 			iUpgradeLeft /= 100;
 		}
@@ -6172,6 +6188,18 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			 (NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity()) )
 		{
 			updatePlotGroup();
+
+			// Leoreth: update culture costs
+			CvPlot* pLoopPlot;
+			for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
+			{
+				pLoopPlot = plotCity3(getX(), getY(), iI);
+				if (pLoopPlot != NULL && pLoopPlot->isCity()) 
+				{
+					pLoopPlot->getPlotCity()->updateCultureCosts();
+					pLoopPlot->getPlotCity()->updateCoveredPlots(true);
+				}
+			}
 		}
 
 		if (NO_IMPROVEMENT != eOldImprovement && GC.getImprovementInfo(eOldImprovement).isActsAsCity())
@@ -6205,50 +6233,6 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 
 			}
 		}
-
-		// Leoreth: forts allow to cover a tile
-		if ((eNewValue != NO_IMPROVEMENT && GC.getImprovementInfo(eNewValue).isActsAsCity()) || (eOldImprovement != NO_IMPROVEMENT && GC.getImprovementInfo(eOldImprovement).isActsAsCity()))
-		{
-			int iX, iY;
-			for (iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
-			{
-				iX = getX() + GC.getCityPlot3X()[iI];
-				iY = getY() + GC.getCityPlot3Y()[iI];
-
-				if (GC.getMap().isPlot(iX, iY) && GC.getMap().plot(iX, iY)->isCity())
-				{
-					GC.getMap().plot(iX, iY)->getPlotCity()->updateCultureCosts();
-					GC.getMap().plot(iX, iY)->getPlotCity()->updateCoveredPlots(true);
-				}
-			}
-		}
-
-		/*if (eNewValue != NO_IMPROVEMENT && GC.getImprovementInfo(eNewValue).isActsAsCity())
-		{
-			if (getOwner() != NO_PLAYER) // other case already handled in changeBuildProgress
-			{
-				changeCultureRangeCities(getOwner(), 0, 1, true);
-			}
-		}*/
-
-		/*if (eOldImprovement != NO_IMPROVEMENT && GC.getImprovementInfo(eOldImprovement).isActsAsCity())
-		{
-			if (getOwner() != NO_PLAYER)
-			{
-				if (getCultureRangeCities(getOwner(), 0) > 0) changeCultureRangeCities(getOwner(), 0, -1, true);
-			}
-			else
-			{
-				for (iI = 0; iI < MAX_PLAYERS; iI++)
-				{
-					// since there is no city on the plot, the distance 0 city can only be the fort
-					if (getCultureRangeCities((PlayerTypes)iI, 0) > 0) 
-					{
-						changeCultureRangeCities((PlayerTypes)iI, 0, -1, true);
-					}
-				}
-			}
-		}*/
 
 		gDLL->getInterfaceIFace()->setDirty(CitizenButtons_DIRTY_BIT, true);
 	}
@@ -6733,7 +6717,7 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 			{
 				if (getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
 					getFeatureType() == GC.getInfoTypeForString("FEATURE_RAINFOREST") ||
-					getFeatureType() == GC.getInfoTypeForString("FEATURE_MUD"))
+					getFeatureType() == GC.getInfoTypeForString("FEATURE_MARSH"))
 				{
 					if ((int)eYield == 0 || (int)eYield == 1)
 					{
@@ -7175,7 +7159,7 @@ int CvPlot::getCulture(PlayerTypes eIndex) const
 		return 0;
 	}
 
-	if (eIndex == VIKING && GC.getGameINLINE().getGameTurnYear() < 1000)
+	if (eIndex == VIKINGS && GC.getGameINLINE().getGameTurnYear() < 1000)
 	{
 		if (getY_INLINE() == 54 && (getX_INLINE() == 59 || getX_INLINE() == 60 || getX_INLINE() == 61))
 		{
@@ -7350,7 +7334,7 @@ int CvPlot::getFoundValue(PlayerTypes eIndex)
 		return 82393;
 	}
 
-	if ((getX_INLINE() == 101 && getY_INLINE() == 37) || (GET_PLAYER(eIndex).getSettlersMaps(EARTH_Y-1-getY_INLINE(), getX_INLINE()) >= 800))
+	if ((getX_INLINE() == 101 && getY_INLINE() == 37) || (getSettlerValue(eIndex) >= 800))
 	{
 		int iValue = GET_PLAYER(eIndex).AI_foundValue(getX_INLINE(), getY_INLINE(), -1, false);
 		if (iValue > area()->getBestFoundValue(eIndex))
@@ -9795,23 +9779,6 @@ void CvPlot::read(FDataStreamBase* pStream)
 		pStream->Read(cCount, m_abRevealed);
 	}
 
-	// Leoreth
-	SAFE_DELETE_ARRAY(m_abCore);
-	pStream->Read(&cCount);
-	if (cCount > 0)
-	{
-		m_abCore = new bool[cCount];
-		pStream->Read(cCount, m_abCore);
-	}
-	
-	SAFE_DELETE_ARRAY(m_abRebornCore);
-	pStream->Read(&cCount);
-	if (cCount > 0)
-	{
-		m_abRebornCore = new bool[cCount];
-		pStream->Read(cCount, m_abRebornCore);
-	}
-
 	SAFE_DELETE_ARRAY(m_aeRevealedImprovementType);
 	pStream->Read(&cCount);
 	if (cCount > 0)
@@ -9891,6 +9858,14 @@ void CvPlot::read(FDataStreamBase* pStream)
 			}
 		}
 	}
+
+	// Leoreth
+	pStream->Read(NUM_MAJOR_PLAYERS, m_abCore);
+	pStream->Read(NUM_MAJOR_PLAYERS, m_aiSettlerValue);
+	pStream->Read(NUM_MAJOR_PLAYERS, m_aiWarValue);
+	pStream->Read(NUM_RELIGIONS, m_aiReligionSpreadFactor);
+	pStream->Read(NUM_RELIGIONS, m_aiReligionInfluence);
+	pStream->Read(&m_iRegionID);
 
 	// Sanguo Mod Performance, start, added by poyuzhe 08.13.09
 //	if (NULL != m_apaiPlayerDangerCache)
@@ -10081,27 +10056,6 @@ void CvPlot::write(FDataStreamBase* pStream)
 		pStream->Write(MAX_TEAMS, m_abRevealed);
 	}
 
-	// Leoreth
-	if (NULL == m_abCore)
-	{
-		pStream->Write((char)0);
-	}
-	else
-	{
-		pStream->Write((char)NUM_MAJOR_PLAYERS);
-		pStream->Write(NUM_MAJOR_PLAYERS, m_abCore);
-	}
-	
-	if (NULL == m_abRebornCore)
-	{
-		pStream->Write((char)0);
-	}
-	else
-	{
-		pStream->Write((char)NUM_MAJOR_PLAYERS);
-		pStream->Write(NUM_MAJOR_PLAYERS, m_abRebornCore);
-	}
-
 	if (NULL == m_aeRevealedImprovementType)
 	{
 		pStream->Write((char)0);
@@ -10175,6 +10129,14 @@ void CvPlot::write(FDataStreamBase* pStream)
 			}
 		}
 	}
+
+	// Leoreth
+	pStream->Write(NUM_MAJOR_PLAYERS, m_abCore);
+	pStream->Write(NUM_MAJOR_PLAYERS, m_aiSettlerValue);
+	pStream->Write(NUM_MAJOR_PLAYERS, m_aiWarValue);
+	pStream->Write(NUM_RELIGIONS, m_aiReligionSpreadFactor);
+	pStream->Write(NUM_RELIGIONS, m_aiReligionInfluence);
+	pStream->Write(m_iRegionID);
 
 	// Sanguo Mod Performance, start, added by poyuzhe 08.13.09
 //	if (NULL == m_apaiPlayerDangerCache)
@@ -11232,14 +11194,19 @@ void CvPlot::invalidatePlayerDangerCache(PlayerTypes ePlayer, int iRange)
 
 int CvPlot::getRegionID() const
 {
-	return regionMap[EARTH_Y-1-getY_INLINE()][getX_INLINE()];
+	return m_iRegionID;
+}
+
+void CvPlot::setRegionID(int iNewValue)
+{
+	m_iRegionID = iNewValue;
 }
 
 CvWString CvPlot::getRegionName() const
 {
 	char szBuffer[20];
 	CvWString szResult;
-	sprintf(szBuffer, "TXT_KEY_REGION_%d", regionMap[EARTH_Y - 1 - getY_INLINE()][getX_INLINE()]);
+	sprintf(szBuffer, "TXT_KEY_REGION_%d", getRegionID());
 	szResult = gDLL->getText(szBuffer);
 	return gDLL->getText(szResult);
 }
@@ -11250,70 +11217,83 @@ bool CvPlot::isCore(PlayerTypes ePlayer) const
 	FAssertMsg(ePlayer >= 0, "eTeam is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "eTeam is expected to be within maximum bounds (invalid Index)");
 
-	if (GET_PLAYER(ePlayer).isReborn())
-	{
-		if (NULL == m_abRebornCore)
-		{
-			return false;
-		}
-
-		return m_abRebornCore[ePlayer];
-	}
-	else
-	{
-		if (NULL == m_abCore)
-		{
-			return false;
-		}
-
-		return m_abCore[ePlayer];
-	}
+	if (ePlayer >= NUM_MAJOR_PLAYERS) return false;
+	return m_abCore[ePlayer];
 }
 
 
-void CvPlot::setCore(PlayerTypes ePlayer, bool bReborn, bool bNewValue)
+void CvPlot::setCore(PlayerTypes ePlayer, bool bNewValue)
 {
 	FAssertMsg(ePlayer >= 0, "eTeam is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "eTeam is expected to be within maximum bounds (invalid Index)");
 
-	if (bReborn)
-	{
-		if (NULL == m_abRebornCore)
-		{
-			m_abRebornCore = new bool[NUM_MAJOR_PLAYERS];
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
-			{
-				m_abRebornCore[iI] = false;
-			}
-		}
-
-		m_abRebornCore[ePlayer] = bNewValue;
-	}
-	else
-	{
-		if (NULL == m_abCore)
-		{
-			m_abCore = new bool[NUM_MAJOR_PLAYERS];
-			for (int iI = 0; iI < NUM_MAJOR_PLAYERS; ++iI)
-			{
-				m_abCore[iI] = false;
-			}
-		}
-
-		m_abCore[ePlayer] = bNewValue;
-	}
+	m_abCore[ePlayer] = bNewValue;
 }
 
 // Leoreth
-int CvPlot::getSettlerMapValue(PlayerTypes ePlayer) const
+int CvPlot::getSettlerValue(PlayerTypes ePlayer) const
 {
-	return GET_PLAYER(ePlayer).getSettlersMaps(67 - getY_INLINE(), getX_INLINE());
+	if (ePlayer >= NUM_MAJOR_PLAYERS) return 0;
+	return m_aiSettlerValue[ePlayer];
 }
 
-int CvPlot::getWarMapValue(PlayerTypes ePlayer) const
+void CvPlot::setSettlerValue(PlayerTypes ePlayer, int iNewValue)
 {
-	return GET_PLAYER(ePlayer).getWarMapValue(getX_INLINE(), getY_INLINE());
+	m_aiSettlerValue[ePlayer] = iNewValue;
 }
+
+
+int CvPlot::getWarValue(PlayerTypes ePlayer) const
+{
+	if (ePlayer >= NUM_MAJOR_PLAYERS) return 0;
+	return m_aiWarValue[ePlayer];
+}
+
+void CvPlot::setWarValue(PlayerTypes ePlayer, int iNewValue)
+{
+	m_aiWarValue[ePlayer] = iNewValue;
+}
+
+
+int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
+{
+	int iSpreadFactor = m_aiReligionSpreadFactor[eReligion];
+
+	if (eReligion == JUDAISM)
+	{
+		if (!GC.getGameINLINE().isReligionFounded(ORTHODOXY))
+		{
+			return getSpreadFactor(ORTHODOXY);
+		}
+	}
+	
+	if (eReligion == ORTHODOXY)
+	{
+		if (!GC.getGameINLINE().isReligionFounded(CATHOLICISM))
+		{
+			if (iSpreadFactor < getSpreadFactor(CATHOLICISM))
+			{
+				iSpreadFactor = getSpreadFactor(CATHOLICISM);
+			}
+		}
+
+		if (!GC.getGameINLINE().isReligionFounded(PROTESTANTISM))
+		{
+			if (iSpreadFactor < getSpreadFactor(PROTESTANTISM))
+			{
+				iSpreadFactor = getSpreadFactor(PROTESTANTISM);
+			}
+		}
+	}
+
+	return iSpreadFactor;
+}
+
+void CvPlot::setSpreadFactor(ReligionTypes eReligion, int iNewValue)
+{
+	m_aiReligionSpreadFactor[eReligion] = iNewValue;
+}
+
 
 // Leoreth
 bool CvPlot::isWithinGreatWall() const
@@ -11372,4 +11352,25 @@ bool CvPlot::canUseSlave(PlayerTypes ePlayer) const
 	default:
 		return false;
 	}
+}
+
+// Leoreth
+int CvPlot::getReligionInfluence(ReligionTypes eReligion) const
+{
+	return m_aiReligionInfluence[eReligion];
+}
+
+void CvPlot::setReligionInfluence(ReligionTypes eReligion, int iNewValue)
+{
+	m_aiReligionInfluence[eReligion] = iNewValue;
+}
+
+void CvPlot::changeReligionInfluence(ReligionTypes eReligion, int iChange)
+{
+	m_aiReligionInfluence[eReligion] += iChange;
+}
+
+bool CvPlot::canSpread(ReligionTypes eReligion) const
+{
+	return getReligionInfluence(eReligion) > 0;
 }

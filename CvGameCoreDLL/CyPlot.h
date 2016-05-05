@@ -264,10 +264,20 @@ public:
 
 	// Leoreth
 	int getRegionID();
+	void setRegionID(int iNewValue);
+
 	bool isCore(int ePlayer);
-	void setCore(int ePlayer, bool bReborn, bool bNewValue);
-	int getSettlerMapValue(int ePlayer);
-	int getWarMapValue(int ePlayer);
+	void setCore(int ePlayer, bool bNewValue);
+
+	int getSettlerValue(int ePlayer);
+	void setSettlerValue(int ePlayer, int iNewValue);
+
+	int getWarValue(int ePlayer);
+	void setWarValue(int ePlayer, int iNewValue);
+
+	int getSpreadFactor(int eReligion);
+	void setSpreadFactor(int eReligion, int iNewValue);
+
 	bool isWithinGreatWall();
 	void setWithinGreatWall(bool bNewValue);
 	void cameraLookAt();

@@ -730,6 +730,7 @@ CvPlot* CvSelectionGroup::lastMissionPlot()
 		case MISSION_REFORM_GOVERNMENT:
 		case MISSION_DIPLOMATIC_MISSION:
 		case MISSION_PERSECUTE:
+		case MISSION_GREAT_MISSION:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -1110,6 +1111,13 @@ bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvP
 			}
 			break;
 
+		case MISSION_GREAT_MISSION:
+			if (pLoopUnit->canGreatMission(pPlot))
+			{
+				return true;
+			}
+			break;
+
 		case MISSION_DIE_ANIMATION:
 			return false;
 			break;
@@ -1304,6 +1312,7 @@ void CvSelectionGroup::startMission()
 		case MISSION_REFORM_GOVERNMENT: // Leoreth
 		case MISSION_DIPLOMATIC_MISSION: // Leoreth
 		case MISSION_PERSECUTE: // Leoreth
+		case MISSION_GREAT_MISSION:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -1577,6 +1586,13 @@ void CvSelectionGroup::startMission()
 					}
 					break;
 
+				case MISSION_GREAT_MISSION:
+					if (pLoopUnit->greatMission())
+					{
+						bAction = true;
+					}
+					break;
+
 				case MISSION_DIE_ANIMATION:
 					bAction = true;
 					break;
@@ -1730,16 +1746,19 @@ void CvSelectionGroup::continueMission(int iSteps)
 					}
 					else
 					{
-						//Leoreth: applying 3Miro's infinite settler loop fix
-						if ( (headMissionQueueNode()!=NULL)&& (headMissionQueueNode()->m_data.eMissionType==MISSION_MOVE_TO)&& ((getX() != headMissionQueueNode()->m_data.iData1) || (getY() != headMissionQueueNode()->m_data.iData2)) )
+						bDone = true;
+
+						// Leoreth: adapt 3Miro's infinite settler loop fix, avoid unintended transport behavior
+						if (headMissionQueueNode() != NULL && headMissionQueueNode()->m_data.eMissionType == MISSION_MOVE_TO)
 						{
-							bDone = true;
-														pushMission(MISSION_SKIP);
-						}else
-						{
-							bDone = true;
-						};
-						//bDone = true; // 3Miro: Original code
+							if (getX() != headMissionQueueNode()->m_data.iData1 && getY() != headMissionQueueNode()->m_data.iData2)
+							{
+								if (!(plot()->isWater() && GC.getMap().plot(headMissionQueueNode()->m_data.iData1, headMissionQueueNode()->m_data.iData2)->isCoastalLand()))
+								{
+									pushMission(MISSION_SKIP);
+								}
+							}
+						}
 					}
 					break;
 
@@ -1845,6 +1864,7 @@ void CvSelectionGroup::continueMission(int iSteps)
 				case MISSION_REFORM_GOVERNMENT: // Leoreth
 				case MISSION_DIPLOMATIC_MISSION: // Leoreth
 				case MISSION_PERSECUTE: // Leoreth
+				case MISSION_GREAT_MISSION:
 				case MISSION_DIE_ANIMATION:
 					break;
 
@@ -1948,6 +1968,7 @@ void CvSelectionGroup::continueMission(int iSteps)
 			case MISSION_REFORM_GOVERNMENT: // Leoreth
 			case MISSION_DIPLOMATIC_MISSION: // Leoreth
 			case MISSION_PERSECUTE: // Leoreth
+			case MISSION_GREAT_MISSION:
 			case MISSION_DIE_ANIMATION:
 				bDone = true;
 				break;

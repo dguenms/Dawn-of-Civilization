@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Korea -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_DESC</Tag>
+		<English>The Koreans</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_DEFAULT</Tag>
+		<English>Three Kingdoms of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_PEOPLES</Tag>
+		<English>Korean Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_COMMUNIST</Tag>
+		<English>Democratic People's Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_FASCIST</Tag>
+		<English>Supreme Council for National Reconstruction</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_SAMHAN</Tag>
+		<English>Samhan Confederacies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_GORYEO</Tag>
+		<English>Goryeo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_GOGURYEO</Tag>
+		<English>Goguryeo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_JOSEON</Tag>
+		<English>Greater Joseon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_ADJECTIVE</Tag>
+		<English>
+			<Text>Korean:Koreans</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>cor&#233;en:cor&#233;enne:cor&#233;ens:cor&#233;ennes</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Koreanisch:koreanischen:koreanische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>coreano:coreana:coreani:coreane</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>coreano:coreana:coreanos:coreanas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KOREA_SHORT_DESC</Tag>
+		<English>Korea</English>
+		<French>
+			<Text>Cor&#233;e</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Korea</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Corea</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Corea</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

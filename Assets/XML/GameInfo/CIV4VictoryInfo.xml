@@ -72,11 +72,9 @@
 			<bConquest>0</bConquest>
 			<bDiploVote>0</bDiploVote>
 			<bPermanent>0</bPermanent>
-			<!-- Rhye - start -->
-			<iPopulationPercentLead>20</iPopulationPercentLead>			
+			<iPopulationPercentLead>20</iPopulationPercentLead>
 			<iLandPercent>60</iLandPercent>
 			<iMinLandPercent>25</iMinLandPercent>
-			<!-- Rhye - end -->
 			<iReligionPercent>0</iReligionPercent>
 			<CityCulture>NONE</CityCulture>
 			<iNumCultureCities>0</iNumCultureCities>
@@ -141,7 +139,6 @@
 			<iVictoryDelayTurns>0</iVictoryDelayTurns>
 			<VictoryMovie/>
 		</VictoryInfo>
-		<!-- Rhye - start -->
 		<VictoryInfo>
 			<Type>VICTORY_HISTORICAL</Type>
 			<Description>TXT_KEY_VICTORY_HISTORICAL</Description>
@@ -161,7 +158,6 @@
 			<iVictoryDelayTurns>0</iVictoryDelayTurns>
 			<VictoryMovie/>
 		</VictoryInfo>
-		<!-- Rhye - end -->
 		<VictoryInfo>
 			<Type>VICTORY_RELIGIOUS</Type>
 			<Description>TXT_KEY_VICTORY_RELIGIOUS</Description>

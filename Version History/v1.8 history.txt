@@ -95,7 +95,7 @@ UHVs
 	# Build two Buddhist Stupas and two Confucian Academies by 1000 AD
 	# Be first to discover Compass, Paper, Gunpowder and Printing Press
 	# Experience four golden ages by 1800 AD
-# New Ottoman UHV:
+# New Turkish UHV:
 	# Have four wonders in your capitals in 1550 AD
 	# Control the Eastern Mediterranean, the Black Sea, Cairo, Mecca, Baghdad and Vienna in 1700 AD
 	# Have the world's largest military power in 1800 AD
@@ -199,7 +199,7 @@ WONDERS
 
 LEADERHEADS
 # Added generic first contact texts so leaders are not mute when you meet them
-# Added unique diplomacy texts to Yaroslav, Nicholas II, Cixi, Khomeini, Ataturk
+# Added unique diplomacy texts to Ivan IV, Nicholas II, Cixi, Khomeini, Ataturk
 # Added unique diplomacy music to Maria II and Afonso Henriques
 # China: added Tang Taizong and Hongwu
 # Egypt: added Baibars and Nasser

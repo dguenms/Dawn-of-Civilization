@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--Better Espionage Options Game Text
+	Copyright (c) 2009 The BUG Mod -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__ENABLED_TEXT</Tag>
+		<English>Better Espionage Screen</English>
+		<French>Meilleur Ecran d'Espionnage</French>
+		<German>Besserer Spionagebildschirm</German>
+		<Italian>Schermata di Spionaggio Migliorata</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__ENABLED_HOVER</Tag>
+		<English>When checked, uses Almightix's Better Espionage Screen.</English>
+		<French>En activant, utilise le mod Better Espionage Screen de Almightix.</French>
+		<German>Aktiviert den verbesserten Spionagebildschirm (verwendet Almightix' "Better Espionage Screen"-Mod)</German>
+		<Italian>Quando &#232; selezionato, viene utilizzata la schermata di spionaggio migliorata del Better Espionage Screen Mod di Almightix.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__SHOWCALCULATEDINFORMATION_TEXT</Tag>
+		<English>Show Calculated Information</English>
+		<German>Errechnete Informationen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__SHOWCALCULATEDINFORMATION_HOVER</Tag>
+		<English>When checked, shows calculated espionage information.</English>
+		<German>Zeigt errechnete Spionage-Informationen an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__DEFAULTRATIOCOLOR_TEXT</Tag>
+		<English>Ratio Color</English>
+		<French>Couleur de Pro Rata</French>
+		<German>Standardfarbe</German>
+		<Italian>Colore del rapporto</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__DEFAULTRATIOCOLOR_HOVER</Tag>
+		<English>Default color used for espionage ratios.</English>
+		<French>Couleur utilis&#233;e par d&#233;faut pour le pro rata d'espionnage.</French>
+		<German>Bestimmt die Standardfarbe, in der das Spionagepunktverh&#228;ltnis erscheint</German>
+		<Italian>Colore standard usato per i rapporti di spionaggio.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__GOODRATIOCUTOFF_TEXT</Tag>
+		<English>Good Ratio Cutoff</English>
+		<French>Limite du Bon Pro Rata</French>
+		<German>Gutes Punkteverh&#228;ltnis</German>
+		<Italian>Livello dei rapporti positivi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__GOODRATIOCUTOFF_HOVER</Tag>
+		<English>Ratios less than or equal to this value are colored with the following color.</English>
+		<French>Un pro rata &#233;gal ou moins que cette valeur aura la couleur suivante.</French>
+		<German>Gute Spionagepunktverh&#228;ltnisse kleiner oder gleich diesem Wert erscheinen in der definierten Farbe</German>
+		<Italian>I rapporti di spionaggio minori od uguali di questo valore vengono colorati con il colore seguente.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__GOODRATIOCOLOR_TEXT</Tag>
+		<English>Good Color</English>
+		<French>Bonne Couleur</French>
+		<German>Farbe (gut)</German>
+		<Italian>Colore positivo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__GOODRATIOCOLOR_HOVER</Tag>
+		<English>Color used for good espionage ratios.</English>
+		<French>Couleur utilis&#233; pour les bons pro rata d'espionnage.</French>
+		<German>Bestimmt die Farbe, in der gute Spionagepunktverh&#228;ltnisse erscheinen</German>
+		<Italian>Colore utilizzato per i rapporti di spionaggio positivi (in base al precedente livello).</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__BADRATIOCUTOFF_TEXT</Tag>
+		<English>Bad Ratio Cutoff</English>
+		<French>Limite du Mauvais Pro Rata</French>
+		<German>Schlechtes Punkteverh&#228;ltnis</German>
+		<Italian>Livello dei rapporti negativi</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__BADRATIOCUTOFF_HOVER</Tag>
+		<English>Ratios greater than or equal to this value are colored with the following color.</English>
+		<French>Un pro rata &#233;gal ou plus que cette valeur aura la couleur suivante.</French>
+		<German>Schlechte Spionagepunktverh&#228;ltnisse gr&#246;&#223;er oder gleich diesem Wert erscheinen in der definierten Farbe</German>
+		<Italian>I rapporti di spionaggio maggiori od uguali di questo valore vengono colorati con il colore seguente.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__BADRATIOCOLOR_TEXT</Tag>
+		<English>Bad Color</English>
+		<French>Mauvaise Couleur</French>
+		<German>Farbe (schlecht)</German>
+		<Italian>Colore negativo</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__BADRATIOCOLOR_HOVER</Tag>
+		<English>Color used for bad espionage ratios.</English>
+		<French>Couleur utilis&#233; pour les mauvais pro rata d'espionnage.</French>
+		<German>Bestimmt die Farbe, in der schlechte Spionagepunktverh&#228;ltnisse erscheinen</German>
+		<Italian>Colore utilizzato per i rapporti di spionaggio negativi (in base al precedente livello).</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__POSSIBLEMISSIONCOLOR_TEXT</Tag>
+		<English>Possible Mission Color</English>
+		<French>Couleur des Missions Possibles</French>
+		<German>Farbe (durchf&#252;hrbar)</German>
+		<Italian>Colore di Missione possibile</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__POSSIBLEMISSIONCOLOR_HOVER</Tag>
+		<English>Color used for missions that you can perform now (you have enough EPs against the target).</English>
+		<French>Couleur pour les missions que vous pouvez entreprendre maintenant (vous avez assez de PE sur la victime).</French>
+		<German>Bestimmt die Farbe, in der sofort durchf&#252;hrbare Spionagemissionen erscheinen (d.h. es sind genug Spionagepunkte investiert worden)</German>
+		<Italian>Colore utilizzato per le Missioni che puoi eseguire (perch&#232; hai abbastanza Punti Spionaggio contro il bersaglio).</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__CLOSEMISSIONPERCENT_TEXT</Tag>
+		<English>Close Percent Cutoff</English>
+		<French>Pourcentage Limite Presque</French>
+		<German>Grenzbereich (bald durchf&#252;hrbar)</German>
+		<Italian>Livello di prossimit&#224; percentuale</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__CLOSEMISSIONPERCENT_HOVER</Tag>
+		<English>Determines how close your EPs have to be to the cost of a mission for it to be considered close to possible.</English>
+		<French>D&#233;termine quel pourcentage de PE vous devez avoir pourqu'une mission soit presque possible.</French>
+		<German>Bestimmt den Grenzbereich, ab dem eine Spionagemission als bald durchf&#252;hrbar gekennzeichnet wird</German>
+		<Italian>Determina quanto vicino (in percentuale) devono essere i tuoi Punti Spionaggio al costo di una Missione perch&#232; questa debba essere considerata di prossima fattibilit&#224;.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__CLOSEMISSIONCOLOR_TEXT</Tag>
+		<English>Close Mission Color</English>
+		<French>Couleur Mission Pr&#234;te</French>
+		<German>Farbe (bald durchf&#252;hrbar)</German>
+		<Italian>Colore di Missione pross. poss.</Italian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUG_OPT_BETTERESPIONAGE__CLOSEMISSIONCOLOR_HOVER</Tag>
+		<English>Color used for missions that you can perform soon (you have close to enough EPs against the target).</English>
+		<French>Couleur utilis&#233;e pour indiquer les missions qui sont presque possibles (vous avez presque assez de PE).</French>
+		<German>Bestimmt die Farbe, in der bald durchf&#252;hrbare Spionagemissionen erscheinen (d.h. es sind fast genug Spionagepunkte investiert worden)</German>
+		<Italian>Colore utilizzato per le Missioni che potrai eseguire presto (perch&#232; hai quasi abbastanza Punti Spionaggio contro il bersaglio).</Italian>
+	</TEXT>
+</Civ4GameText>

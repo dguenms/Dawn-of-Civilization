@@ -34,7 +34,7 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildCityRuins.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,9</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
-			<Type>ART_DEF_IMPROVEMENT_GOODY_HUT</Type>
+			<Type>ART_DEF_IMPROVEMENT_TRIBAL_VILLAGE</Type>
 			<bExtraAnimations>0</bExtraAnimations>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -162,10 +162,8 @@
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_OFFSHORE_PLATFORM</Type>
 			<bExtraAnimations>0</bExtraAnimations>
-			<!-- Rhye - start -->
 			<fScale>0.5</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<!-- Rhye - end -->
 			<NIF>Art/Structures/Improvements/OilRig/OilRig.nif</NIF>
 			<KFM>Art/Structures/Improvements/OilRig/OilRig.kfm</KFM>
 			<Button>,Art/Interface/Buttons/Builds/BuildOffshorePlatform.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,4,9</Button>

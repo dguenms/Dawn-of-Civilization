@@ -247,6 +247,9 @@ void CyInfoPythonInterface3()
 		.def("getButtonDisabled", &CvReligionInfo::getButtonDisabled, "string ()")
 		.def("getAdjectiveKey", &CvReligionInfo::pyGetAdjectiveKey, "wstring ()")
 
+		.def("isProselytizing", &CvReligionInfo::isProselytizing, "bool ()")
+		.def("isLocal", &CvReligionInfo::isLocal, "bool ()")
+
 		// Arrays
 
 		.def("getGlobalReligionCommerce", &CvReligionInfo::getGlobalReligionCommerce, "int (int i)")

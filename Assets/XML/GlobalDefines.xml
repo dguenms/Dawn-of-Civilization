@@ -67,12 +67,10 @@
 	</Define>
 	<Define>
 		<DefineName>STANDARD_HANDICAP</DefineName>
-		<!-- Rhye -->
 		<DefineTextVal>HANDICAP_REGENT</DefineTextVal>
 	</Define>
 	<Define>
 		<DefineName>STANDARD_HANDICAP_QUICK</DefineName>
-		<!-- Rhye -->
 		<DefineTextVal>HANDICAP_REGENT</DefineTextVal>
 	</Define>
 	<Define>
@@ -101,12 +99,10 @@
 	</Define>
 	<Define>
 		<DefineName>AI_HANDICAP</DefineName>
-		<!-- Rhye -->
 		<DefineTextVal>HANDICAP_REGENT</DefineTextVal>
 	</Define>
 	<Define>
 		<DefineName>BARBARIAN_HANDICAP</DefineName>
-		<!-- Rhye -->
 		<DefineTextVal>HANDICAP_REGENT</DefineTextVal>
 	</Define>
 	<Define>
@@ -139,7 +135,6 @@
 	</Define>
 	<Define>
 		<DefineName>START_YEAR</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>-3000</iDefineIntVal>
 	</Define>
 	<Define>
@@ -228,7 +223,6 @@
 	</Define>
 	<Define>
 		<DefineName>MIN_CITY_RANGE</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
 	<Define>
@@ -317,12 +311,10 @@
 	</Define>
 	<Define>
 		<DefineName>MAX_TEAM_WONDERS_PER_CITY</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>5</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MAX_NATIONAL_WONDERS_PER_CITY</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>3</iDefineIntVal>
 	</Define>
 	<Define>
@@ -387,7 +379,6 @@
 	</Define>
 	<Define>
 		<DefineName>MAX_DISTANCE_CITY_MAINTENANCE</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
@@ -468,7 +459,7 @@
 	</Define>
 	<Define>
 		<DefineName>FOUND_RELIGION_CITY_RAND</DefineName>
-		<iDefineIntVal>20</iDefineIntVal> <!--Rhye 10 -->
+		<iDefineIntVal>20</iDefineIntVal> <!-- Default: 10 -->
 	</Define>
 	<Define>
 		<DefineName>FOUND_CORPORATION_CITY_RAND</DefineName>
@@ -585,7 +576,6 @@
 	<Define>
 		<DefineName>BASE_GOLDEN_AGE_UNITS</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
-		<!-- Rhye -->
 	</Define>
 	<Define>
 		<DefineName>GOLDEN_AGE_UNITS_MULTIPLIER</DefineName>
@@ -619,8 +609,7 @@
 		<DefineName>CAPITAL_TRADE_MODIFIER</DefineName>
 		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
-	<!-- Leoreth: removed for now, introduced a distance modifier in turn -->
-	<Define>
+	<Define><!-- Leoreth: removed for now, introduced a distance modifier in turn -->
 		<DefineName>OVERSEAS_TRADE_MODIFIER</DefineName>
 		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
@@ -710,7 +699,6 @@
 	</Define>
 	<Define>
 		<DefineName>NUKE_UNIT_DAMAGE_BASE</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>70</iDefineIntVal>
 	</Define>
 	<Define>
@@ -727,12 +715,10 @@
 	</Define>
 	<Define>
 		<DefineName>NUKE_BUILDING_DESTRUCTION_PROB</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>NUKE_POPULATION_DEATH_BASE</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>60</iDefineIntVal>
 	</Define>
 	<Define>
@@ -869,7 +855,6 @@
 	</Define>
 	<Define>
 		<DefineName>DEFY_RESOLUTION_POP_ANGER</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>3</iDefineIntVal>
 	</Define>
 	<Define>
@@ -1018,12 +1003,10 @@
 	</Define>
 	<Define>
 		<DefineName>BASE_UNIT_UPGRADE_COST</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>UNIT_UPGRADE_COST_PER_PRODUCTION</DefineName>
-		<!-- Rhye -->
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
 	<Define>
@@ -1111,7 +1094,15 @@
 	</Define>
 	<Define>
 		<DefineName>HOLY_CITY_INFLUENCE</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>2</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>RELIGION_PRESENCE_INFLUENCE</DefineName>
+		<iDefineIntVal>3</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>RELIGION_FOUNDING_SPREAD_TURNS</DefineName>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>WE_LOVE_THE_KING_RAND</DefineName>
@@ -1155,7 +1146,6 @@
 	</Define>
 	<Define>
 		<DefineName>CAMERA_START_DISTANCE</DefineName>
-		<!-- Rhye -->
 		<fDefineFloatVal>2800</fDefineFloatVal>
 	</Define>
 	<Define>
@@ -1430,7 +1420,6 @@
 	<Define>
 		<DefineName>VICTORY_SOUNDTRACK_AVAILABLE</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
-		<!-- Rhye -->
 	</Define>
 	<Define>
 		<DefineName>MAX_WITHDRAWAL_PROBABILITY</DefineName>
@@ -1671,7 +1660,7 @@
 	</Define>
 	<Define>
 		<DefineName>SHIP_BLOCKADE_RANGE</DefineName>
-		<iDefineIntVal>2</iDefineIntVal> <!-- Leoreth: down from 3 -->
+		<iDefineIntVal>2</iDefineIntVal> <!-- Default: 3 -->
 	</Define>
 	<Define>
 		<DefineName>PATH_DAMAGE_WEIGHT</DefineName>

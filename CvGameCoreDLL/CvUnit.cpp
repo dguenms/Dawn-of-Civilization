@@ -142,7 +142,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		}*/
 
 		//Leoreth: names in chronological order, but allow some randomness that increases with the game era
-		int iOffset = GC.getGameINLINE().getSorenRandNum(GET_PLAYER(eOwner).getCurrentEra()/2, "Unit name selection");
+		/*int iOffset = GC.getGameINLINE().getSorenRandNum(GET_PLAYER(eOwner).getCurrentEra()/2, "Unit name selection");
 
 		int iIndex;
 		for (iI = 0; iI < iNumNames; iI++)
@@ -156,7 +156,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 				GC.getGameINLINE().addGreatPersonBornName(szName);
 				break;
 			}
-		}
+		}*/
 	}
 
 	setGameTurnCreated(GC.getGameINLINE().getGameTurn());
@@ -237,15 +237,15 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
     case KOREA:
         if (getUnitCombatType() == 8) //naval
             {
-                setHasPromotion(((PromotionTypes)29), true); //Drill1
-                setHasPromotion(((PromotionTypes)30), true); //Drill2
+                setHasPromotion((PromotionTypes)PROMOTION_DRILL1, true);
+                setHasPromotion((PromotionTypes)PROMOTION_DRILL2, true);
             }
         break;
 	case SPAIN:
 		if (getUnitCombatType() == 8) //naval
 			{
-				setHasPromotion(((PromotionTypes)41), true); //navigation1
-				setHasPromotion(((PromotionTypes)42), true); //navigation2
+				setHasPromotion((PromotionTypes)PROMOTION_NAVIGATION1, true);
+				setHasPromotion((PromotionTypes)PROMOTION_NAVIGATION2, true);
 			}
 		break;
 	default:
@@ -496,8 +496,6 @@ void CvUnit::setupGraphical()
 
 void CvUnit::convert(CvUnit* pUnit)
 {
-	GC.getGame().logMsg("CvUnit::convert()");
-
 	CvPlot* pPlot = plot();
 
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
@@ -2785,7 +2783,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		}
 	}
 
-	if (GC.getUSE_UNIT_CANNOT_MOVE_INTO_CALLBACK())
+	/*if (GC.getUSE_UNIT_CANNOT_MOVE_INTO_CALLBACK())
 	{
 		// Python Override
 		CyArgsList argsList;
@@ -2800,7 +2798,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		{
 			return false;
 		}
-	}
+	}*/
 
 	return true;
 }
@@ -4824,7 +4822,7 @@ bool CvUnit::pillage()
 			iPillageGold = (int)lPillageGold;
 
 			//Rhye - start UP (Viking)
-			if (getOwnerINLINE() == VIKING && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
+			if (getOwnerINLINE() == VIKINGS && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
 			{
 				iPillageGold *= 5;
 			}
@@ -5529,7 +5527,7 @@ bool CvUnit::found()
 }
 
 
-bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestVisible) const
+bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestVisible, bool bAI) const
 {
 	CvCity* pCity;
 
@@ -5565,7 +5563,7 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
-	if (m_pUnitInfo->getReligionSpreads(eReligion) <= 0)
+	if (m_pUnitInfo->getReligionSpreads(eReligion) <= 0 && (!bAI || !m_pUnitInfo->isGreatMission()))
 	{
 		return false;
 	}
@@ -5577,9 +5575,18 @@ bool CvUnit::canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestV
 		return false;
 	}
 
-	if (pCity->isHasReligion(eReligion))
+	if (!pCity->canSpread(eReligion, true))
 	{
 		return false;
+	}
+
+	if (!GC.getReligionInfo(eReligion).isProselytizing())
+	{
+		ReligionTypes eStateReligion = GET_PLAYER(pCity->getOwnerINLINE()).getStateReligion();
+		if (getOwner() != pCity->getOwner() && eStateReligion != NO_RELIGION && eStateReligion != eReligion)
+		{
+			return false;
+		}
 	}
 
 	if (!canEnterArea(pPlot->getTeam(), pPlot->area()))
@@ -5633,7 +5640,6 @@ bool CvUnit::spread(ReligionTypes eReligion)
 {
 	CvCity* pCity;
 	CvWString szBuffer;
-	int iSpreadProb;
 
 	if (!canSpread(plot(), eReligion))
 	{
@@ -5644,28 +5650,11 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 	if (pCity != NULL)
 	{
-		iSpreadProb = m_pUnitInfo->getReligionSpreads(eReligion);
-
-		if (pCity->getTeam() != getTeam())
-		{
-			//iSpreadProb /= 2;
-			// Leoreth: use civ specific spread probabilities instead, should prevent unrealistic spread through missionaries
-			iSpreadProb *= civSpreadFactor[(int)pCity->getTeam()][(int)eReligion];
-			iSpreadProb /= 400;
-		}
-
 		bool bSuccess;
 
-		iSpreadProb += (((GC.getNumReligionInfos() - pCity->getReligionCount()) * (100 - iSpreadProb)) / GC.getNumReligionInfos());
-
-		if (getOwnerINLINE() == TIBET)
+		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < getSpreadChance(eReligion))
 		{
-			iSpreadProb += (100 - iSpreadProb)/2;
-		}
-
-		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < iSpreadProb)
-		{
-			pCity->setHasReligion(eReligion, true, true, false);
+			pCity->spreadReligion(eReligion, true);
 			bSuccess = true;
 		}
 		else
@@ -5687,6 +5676,42 @@ bool CvUnit::spread(ReligionTypes eReligion)
 	kill(true);
 
 	return true;
+}
+
+
+// Leoreth
+int CvUnit::getSpreadChance(ReligionTypes eReligion) const
+{
+	if (!plot()->isCity()) return 0;
+
+	CvCity* pCity = plot()->getPlotCity();
+	bool bDistant = GET_PLAYER(plot()->getOwner()).isDistantSpread(pCity, eReligion);
+	ReligionSpreadTypes eSpreadFactor = GET_PLAYER(plot()->getOwner()).getSpreadType(plot(), eReligion, bDistant);
+	
+	if (eSpreadFactor == RELIGION_SPREAD_FAST) return 100;
+
+	int iSpreadChance = m_pUnitInfo->getReligionSpreads(eReligion);
+
+	int iOtherReligions = 0;
+	for (int iI = 0; iI < NUM_RELIGIONS; iI++)
+	{
+		ReligionTypes eLoopReligion = (ReligionTypes)iI;
+		if (pCity->isHasReligion(eLoopReligion) && !GET_PLAYER(plot()->getOwner()).isTolerating(eLoopReligion))
+		{
+			iOtherReligions++;
+		}
+	}
+
+	iSpreadChance += (NUM_RELIGIONS - iOtherReligions) * (100 - iSpreadChance) / NUM_RELIGIONS;
+
+	if (getOwner() == TIBET)
+	{
+		iSpreadChance += (100 - iSpreadChance) / 2;
+	}
+
+	if (eSpreadFactor == RELIGION_SPREAD_MINORITY) iSpreadChance /= 2;
+
+	return iSpreadChance;
 }
 
 
@@ -6272,9 +6297,9 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture = m_pUnitInfo->getGreatWorkCulture();
 
 	// Leoreth: new Sphinx effect: great priests can create great works
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)SPHYNX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_PROPHET"))
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"))
 	{
-		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_ARTIST"))).getGreatWorkCulture();
+		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_ARTIST"))).getGreatWorkCulture();
 	}
 
 	// Leoreth: 800 culture per era
@@ -7941,6 +7966,7 @@ BuildTypes CvUnit::getBuildType() const
 		case MISSION_REFORM_GOVERNMENT: // Leoreth
 		case MISSION_DIPLOMATIC_MISSION: // Leoreth
 		case MISSION_PERSECUTE: // Leoreth
+		case MISSION_GREAT_MISSION:
 		case MISSION_DIE_ANIMATION:
 			break;
 
@@ -13718,7 +13744,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_MESOAMERICA || id == REGION_CARIBBEAN)
 	{
-		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)AZTEC).getCivilizationType()).getUnitArtStyleType();
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)AZTECS).getCivilizationType()).getUnitArtStyleType();
 	}
 	else if (id == REGION_BRAZIL || id == REGION_ARGENTINA || id == REGION_PERU || id == REGION_COLOMBIA)
 	{
@@ -13738,13 +13764,13 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_MAGHREB)
 	{
-		if (GC.getGameINLINE().getGameTurnYear() > startingTurnYear[ARABIA])
+		if (GC.getGameINLINE().getGameTurnYear() > GET_PLAYER(ARABIA).getBirthYear())
 		{
 			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ARABIA).getCivilizationType()).getUnitArtStyleType();
 		}
 		else
 		{
-			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)CARTHAGE).getCivilizationType()).getUnitArtStyleType();
+			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)PHOENICIA).getCivilizationType()).getUnitArtStyleType();
 		}
 	}
 	/*else if (id == REGION_ANATOLIA)
@@ -13764,7 +13790,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_SCANDINAVIA)
 	{
-		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)VIKING).getCivilizationType()).getUnitArtStyleType();
+		return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)VIKINGS).getCivilizationType()).getUnitArtStyleType();
 	}
 	else if (id == REGION_RUSSIA || id == REGION_SIBERIA)
 	{
@@ -13784,7 +13810,7 @@ int CvUnit::getOriginalArtStyle(int regionID)
 	}
 	else if (id == REGION_EGYPT)
 	{
-		if (GC.getGameINLINE().getGameTurnYear() > startingTurnYear[ARABIA])
+		if (GC.getGameINLINE().getGameTurnYear() > GET_PLAYER(ARABIA).getBirthYear())
 		{
 			return GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)ARABIA).getCivilizationType()).getUnitArtStyleType();
 		}
@@ -14126,6 +14152,62 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 
 		return true;
 	}
+}
+
+bool CvUnit::canGreatMission(const CvPlot* pPlot) const
+{
+	if (!GC.getUnitInfo(getUnitType()).isGreatMission()) return false;
+
+	if (GET_PLAYER(getOwner()).getStateReligion() == NO_RELIGION) return false;
+
+	if (!pPlot->isCity()) return false;
+
+	return true;
+}
+
+bool CvUnit::greatMission()
+{
+	if (!canGreatMission(plot()))
+	{
+		return false;
+	}
+
+	int iNumCities = 4 + GC.getGame().getSorenRandNum(3, "Great Mission");
+	iNumCities = std::max(iNumCities, GC.getMap().getArea(getArea())->getCitiesPerPlayer(getOwner()));
+	ReligionTypes eReligion = GET_PLAYER(getOwner()).getStateReligion();
+
+	CvPlot* pSpreadPlot;
+	CvCity* pSpreadCity;
+	int iSpreads = 0;
+
+	// spread to eligible cities
+	for (iSpreads; iSpreads < iNumCities; iSpreads++)
+	{
+		pSpreadPlot = AI_spreadTarget(eReligion, true).second;
+		
+		if (pSpreadPlot == NULL || !pSpreadPlot->isCity()) break;
+
+		pSpreadPlot->getPlotCity()->spreadReligion(eReligion, false);
+	}
+
+	// remove from eligible cities
+	for (; iSpreads < iNumCities; iSpreads++)
+	{
+		pSpreadCity = AI_persecutionTarget();
+
+		if (pSpreadCity == NULL) break;
+
+		pSpreadCity->removeReligion(pSpreadCity->AI_getPersecutionReligion());
+	}
+
+	if (plot()->isActiveVisible(false))
+	{
+		NotifyEntity(MISSION_GREAT_MISSION);
+	}
+
+	kill(true);
+
+	return true;
 }
 
 SpecialistTypes CvUnit::getSettledSpecialist() const

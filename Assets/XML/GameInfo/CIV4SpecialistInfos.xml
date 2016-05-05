@@ -9,7 +9,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_CITIZEN</Type>
 			<Description>TXT_KEY_SPECIALIST_CITIZEN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_CITIZEN_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_CITIZEN_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Citizen.dds</Texture>
@@ -34,12 +34,12 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_PRIEST</Type>
 			<Description>TXT_KEY_SPECIALIST_PRIEST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_PRIEST_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_PRIEST_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Priest.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_PROPHET</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields>
 				<iYield>0</iYield>
@@ -63,12 +63,12 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_ARTIST</Type>
 			<Description>TXT_KEY_SPECIALIST_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_ARTIST_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_ARTIST_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Artist.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_ARTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields/>
 			<Commerces>
@@ -88,12 +88,12 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_SCIENTIST</Type>
 			<Description>TXT_KEY_SPECIALIST_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_SCIENTIST_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_SCIENTIST_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/scientist.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields/>
 			<Commerces>
@@ -113,12 +113,12 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_MERCHANT</Type>
 			<Description>TXT_KEY_SPECIALIST_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_MERCHANT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_MERCHANT_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/merchant.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_MERCHANT</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields/>
 			<Commerces>
@@ -138,12 +138,12 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_ENGINEER</Type>
 			<Description>TXT_KEY_SPECIALIST_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_ENGINEER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_ENGINEER_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/engineer.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields>
 				<iYield>0</iYield>
@@ -163,12 +163,12 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_STATESMAN</Type>
 			<Description>TXT_KEY_SPECIALIST_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_STATESMAN_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_STATESMAN_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Statesman.dds</Texture>
 			<bVisible>1</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_STATESMAN</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
 			<Yields>
 				<iYield>0</iYield>
@@ -186,36 +186,10 @@
 			<Button>Art/Interface/MainScreen/CityScreen/Citizen.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
-			<Type>SPECIALIST_SPY</Type>
-			<Description>TXT_KEY_UNIT_SPY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_SPY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_SPECIALIST_SPY_STRATEGY</Strategy>
-			<Help/>
-			<Texture>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,5,14</Texture>
-			<bVisible>0</bVisible>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_SPY</GreatPeopleUnitClass>
-			<iGreatPeopleRateChange>3</iGreatPeopleRateChange>
-			<Yields/>
-			<Commerces>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
-			</Commerces>
-			<iExperience>0</iExperience>
-			<Flavors/>
-			<HotKey/>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/Interface/MainScreen/CityScreen/spy.dds</Button>
-		</SpecialistInfo>
-		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_PRIEST</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_PRIEST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_SPECIALIST_GREAT_PRIEST_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_SPECIALIST_GREAT_PRIEST_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_SPECIALIST_GREAT_PROPHET_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Great_Priest.dds</Texture>
 			<bVisible>0</bVisible>
@@ -243,7 +217,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_ARTIST</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_ARTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_GREAT_ARTIST_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_ARTIST_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Great_Artist.dds</Texture>
@@ -269,7 +243,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_SCIENTIST</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_SCIENTIST</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_GREAT_SCIENTIST_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_SCIENTIST_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Great_Scientist.dds</Texture>
@@ -298,7 +272,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_MERCHANT</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_MERCHANT</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_GREAT_MERCHANT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_MERCHANT_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Great_Merchant.dds</Texture>
@@ -327,7 +301,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_ENGINEER</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_ENGINEER</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_PEOPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_GREAT_ENGINEERS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_ENGINEER_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Great_Engineer.dds</Texture>
@@ -356,7 +330,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_STATESMAN</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_STATESMAN</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_GREAT_STATESMAN_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_STATESMAN_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Great_Statesman.dds</Texture>
@@ -381,7 +355,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_GENERAL</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_GENERAL</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_GREAT_GENERALS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_GENERAL_STRATEGY</Strategy>
 			<Help/>
 			<Texture>,Art/Interface/MainScreen/CityScreen/Great_Engineer.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,2,6</Texture>
@@ -410,7 +384,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_SPY</Type>
 			<Description>TXT_KEY_SPECIALIST_GREAT_SPY</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_GREAT_SPY_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_GREAT_SPY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_GREAT_SPY_STRATEGY</Strategy>
 			<Help/>
 			<Texture>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,6,14</Texture>
@@ -436,7 +410,7 @@
 		<SpecialistInfo>
 			<Type>SPECIALIST_SLAVE</Type>
 			<Description>TXT_KEY_SPECIALIST_SLAVE</Description>
-			<Civilopedia>TXT_KEY_CONCEPT_SPECIALISTS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_SPECIALIST_SLAVE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_SPECIALIST_SLAVE_STRATEGY</Strategy>
 			<Help/>
 			<Texture>Art/Interface/MainScreen/CityScreen/Slave.dds</Texture>

@@ -882,7 +882,9 @@ public:
 	void changeImprovementFreeSpecialists(ImprovementTypes eIndex, int iChange);		// Exposed to Python
 
 	int getReligionInfluence(ReligionTypes eIndex) const;													// Exposed to Python
+	void setReligionInfluence(ReligionTypes eIndex, int iNewValue);
 	void changeReligionInfluence(ReligionTypes eIndex, int iChange);				// Exposed to Python
+	void spreadReligionInfluence(ReligionTypes eReligion, int iRange, int iChange);
 
 	int getCurrentStateReligionHappiness() const;																	// Exposed to Python
 	int getStateReligionHappiness(ReligionTypes eIndex) const;										// Exposed to Python
@@ -920,6 +922,12 @@ public:
 
 	bool isHasReligion(ReligionTypes eIndex) const;
 	void setHasReligion(ReligionTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);
+
+	void spreadReligion(ReligionTypes eReligion, bool bMissionary = false);
+	void removeReligion(ReligionTypes eReligion);
+	void replaceReligion(ReligionTypes eOldReligion, ReligionTypes eNewReligion);
+
+	ReligionTypes disappearingReligion(ReligionTypes eNewReligion = NO_RELIGION) const;
 
 	bool isHasCorporation(CorporationTypes eIndex) const;
 	void setHasCorporation(CorporationTypes eIndex, bool bNewValue, bool bAnnounce, bool bArrows = true);
@@ -980,6 +988,9 @@ public:
 	int getBuildingHealthChange(BuildingClassTypes eBuildingClass) const;           // Exposed to Python
 	void setBuildingHealthChange(BuildingClassTypes eBuildingClass, int iChange);          // Exposed to Python
 
+	void updateBuildingYieldChange(BuildingClassTypes eBuildingType, YieldTypes eYield, int iChange);
+	void changeReligionYieldChange(ReligionTypes eReligion, YieldTypes eYield, int iChange);
+
 	PlayerTypes getLiberationPlayer(bool bConquest) const;   // Exposed to Python
 	void liberate(bool bConquest);    // Exposed to Python
 
@@ -1020,6 +1031,12 @@ public:
 	int getCapitalTradeModifier(CvCity* pOtherCity) const;
 	int getDefensivePactTradeModifier(CvCity* pOtherCity) const;
 	int estimateGrowth(int iTurns) const;
+
+	bool canSpread(ReligionTypes eReligion, bool bMissionary = false) const;
+	int getTurnsToSpread(ReligionTypes eReligion) const;
+
+	bool isHasPrecursor(ReligionTypes eReligion) const;
+	int getReligionPopulation(ReligionTypes eReligion) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;

@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- England -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_DESC</Tag>
+		<English>The English</English>
+		<French>
+			<Text>Les Anglais</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Engl&#228;nder:Die Engl&#228;nder:den Engl&#228;ndern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Gli Inglesi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Ingl&#233;ses</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_PEOPLES</Tag>
+		<English>Anglo-Saxon Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_REPUBLIC</Tag>
+		<English>Commonwealth of %s1</English>
+		<French>
+			<Text>Commonwealth d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Commonwealth %s1:Commonwealth %s1:Commonwealth %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Commonwealth d'%s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Commonwealth de %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_COMMUNIST</Tag>
+		<English>%s2 Worker's Commonwealth</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_FASCIST</Tag>
+		<English>%s2 Union</English>
+		<French>
+			<Text>Union %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Union:%s2 Union:%s2 Union</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Unione %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Uni&#243;n %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN</Tag>
+		<English>Great Britain</English>
+		<French>
+			<Text>Grande Bretagne</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Gro&#223;britannien:Gro&#223;britannien:Gro&#223;britannien</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Gran Bretagna</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Gran Breta&#241;a</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_BRITISH</Tag>
+		<English>British</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF</Tag>
+		<English>United Kingdom of %s1</English>
+		<French>
+			<Text>Royaume-Uni de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Vereinigtes K&#246;nigreich von %s1:Vereinigte K&#246;nigreich von %s1:Vereinigten K&#246;nigreich von %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno Unito di %s1</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino Unido de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_ANGEVIN_EMPIRE</Tag>
+		<English>Angevin Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_UNITED_REPUBLIC</Tag>
+		<English>United Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_EXILE</Tag>
+		<English>%s2 Government in Exile</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_VASSAL</Tag>
+		<English>Dominion of %s1</English>
+		<French>
+			<Text>Dominion du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Dominion %s1:Dominion %s1:Dominion %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Dominion del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Dominio de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_INDIA</Tag>
+		<English>%s2 Raj</English>
+		<French>
+			<Text>Raj %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Raj:%s2 Raj:%s2 Raj</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Raj %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Raj %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_BABYLONIA</Tag>
+		<English>%s2 Mandate of Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_PHOENICIA</Tag>
+		<English>%s2 Mandate of Lebanon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_ETHIOPIA</Tag>
+		<English>%s2 East Africa</English>
+		<French>
+			<Text>Afrique Orientale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Ostafrika:%s2-Ostafrika:%s2-Ostafrika</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Africa Orientale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>&#193;frica Oriental %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_MAYA</Tag>
+		<English>Colony of %s2 Honduras</English>
+		<French>
+			<Text>Colonie du Honduras %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kolonie %s2-Honduras:Kolonie %s2-Honduras:Kolonie %s2-Honduras</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Colonia dell'Honduras %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Colonia de Honduras %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_BYZANTIUM</Tag>
+		<English>Latin Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_VIKINGS</Tag>
+		<English>Duchy of Scandinavia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_INDONESIA</Tag>
+		<English>Federated Malay States</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_FRANCE</Tag>
+		<English>Duchy of Anjou</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_HOLY_ROME</Tag>
+		<English>Duchy of Hanover</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_GERMANY</Tag>
+		<English>%s2-Occupied Germany</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_NETHERLANDS</Tag>
+		<English>Duchy of Flanders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_MALI</Tag>
+		<English>%s2 West Africa</English>
+		<French>
+			<Text>Afrique Occidentale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Westafrika:%s2-Westafrika:%s2-Westafrika</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Africa Occidentale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>&#193;frica Occidental %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_AMERICA</Tag>
+		<English>Thirteen Colonies</English>
+		<French>
+			<Text>Treize Colonies</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Dreizehn Kolonien:Dreizehn Kolonien:Dreizehn Kolonien</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Tredici Colonie</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Trece Colonias</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_NAME_KHMER</Tag>
+		<English>Indochina</English>
+		<French>
+			<Text>Indochine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Indochina:Indochina:Indochina</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Indocina</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Indochina</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_NAME_MUGHALS</Tag>
+		<English>Pakistan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_ADJECTIVE</Tag>
+		<English>English</English>
+		<French>
+			<Text>anglais:anglaise:anglais:anglaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Englisch:englischen:englische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>inglese:inglese:inglesi:inglesi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>ingl&#233;s:inglesa:ingleses:inglesas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLAND_SHORT_DESC</Tag>
+		<English>England</English>
+		<French>
+			<Text>Angleterre</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>England</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Inghilterra</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Inglaterra</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

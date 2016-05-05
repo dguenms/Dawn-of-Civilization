@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Moors -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_DESC</Tag>
+		<English>The Moors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_PEOPLES</Tag>
+		<English>Andalusian Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_FASCIST</Tag>
+		<English>%s2 State</English>
+		<French>
+			<Text>Etat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Staat:%s2 Staat:%s2 Staat</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Stato %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estado %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_EMIRATE_OF</Tag>
+		<English>Emirate of %s1</English>
+		<French>
+			<Text>Emirat de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Emirat von %s1:Emirat von %s1:Emirat von %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Emirato di %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Emirato de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_ALMOHAD</Tag>
+		<English>Almohad</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_MOROCCO</Tag>
+		<English>Morocco</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_MOROCCAN</Tag>
+		<English>Moroccan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_TAIFAS</Tag>
+		<English>Andalusian Taifas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORISH_ARABIA</Tag>
+		<English>East Umayyad Caliphate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORISH_MALI</Tag>
+		<English>Pashalik of Timbuktu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIAN_NAME_ARABIA</Tag>
+		<English>Hejaz</English>
+		<French>
+			<Text>Hedjaz</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hedschas:Hedschas:Hedschas</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Hijaz</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Hiyaz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_ADJECTIVE</Tag>
+		<English>Moorish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOORS_SHORT_DESC</Tag>
+		<English>Moors</English>
+	</TEXT>
+</Civ4GameText>

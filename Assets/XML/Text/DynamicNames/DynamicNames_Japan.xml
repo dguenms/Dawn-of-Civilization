@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Japan -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_DESC</Tag>
+		<English>The Japanese</English>
+		<French>
+			<Text>Les Japonais</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Japaner:Die Japaner:den Japanern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Giapponesi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Japon&#233;sos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_PEOPLES</Tag>
+		<English>Yamato Peoples</English>
+		<French>
+			<Text>Peuplades Yamato</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Yamato-V&#246;lker:Yamato-V&#246;lker:Yamato-V&#246;lkern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Yamato</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Yamato</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_DEFAULT</Tag>
+		<English>%s2 Shogunate</English>
+		<French>
+			<Text>Sh&#244;gunat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Schogunat:%s2 Schogunat:%s2 Schogunat</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Shogunato %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Shogunato %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_FASCIST</Tag>
+		<English>Empire of Greater %s1</English>
+		<French>
+			<Text>Empire du Grand %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<Italian>
+			<Text>Impero del Grande %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Gran Imperio del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_VASSAL</Tag>
+		<English>Co-Prosperity %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_CHINA</Tag>
+		<English>Reorganized National Government of China</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_KOREA</Tag>
+		<English>Governor-General of Chosen</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_MONGOLIA</Tag>
+		<English>Mengjiang United Autonomous Government</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPANESE_INDIA</Tag>
+		<English>Azad Hind</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_ADJECTIVE</Tag>
+		<English>Japanese</English>
+		<French>
+			<Text>japonais:japonaise:japonais:japonaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Japanisch:japanischen:japanische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>giapponese:giapponese:giapponesi:giapponesi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>japon&#233;s:japonesa:japoneses:japonesas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_JAPAN_SHORT_DESC</Tag>
+		<English>Japan</English>
+		<French>
+			<Text>Japon</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Japan</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Giappone</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Jap&#243;n</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

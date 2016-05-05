@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- France -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_DESC</Tag>
+		<English>The French</English>
+		<French>
+			<Text>Les Fran&#231;ais</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Franzosen:Die Franzosen:den Franzosen</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>I Francesi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Franc&#233;ses</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_PEOPLES</Tag>
+		<English>Frankish Peoples</English>
+		<French>
+			<Text>Peuplades Franques</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Fränkische V&#246;lker:Fränkischen V&#246;lker:Fränkischen V&#246;lkern</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Popoli Franchi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pueblos Francos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_COMMUNIST</Tag>
+		<English>%s2 Commune</English>
+		<French>
+			<Text>%s2 de la Commune</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Kommune:%s2 Kommune:%s2 Kommune</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Commune %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Comuna %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_FASCIST</Tag>
+		<English>%s2 State</English>
+		<French>
+			<Text>Etat %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Staat:%s2 Staat:%s2 Staat</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Stato %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Estado %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_FRANCIA</Tag>
+		<English>Francia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_FRANKISH</Tag>
+		<English>Frankish</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_EXILE</Tag>
+		<English>Free %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_LOUISIANA</Tag>
+		<English>Louisiana</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_QUEBEC</Tag>
+		<English>Québec</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_BABYLONIA</Tag>
+		<English>French Mandate of Mesopotamia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_DEPARTEMENTS_OF</Tag>
+		<English>Départements of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_PHOENICIA</Tag>
+		<English>French Mandate of Lebanon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_ITALY</Tag>
+		<English>Cisalpine Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_ETHIOPIA</Tag>
+		<English>%s2 East Africa</English>
+		<French>
+			<Text>Afrique Orientale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Ostafrika:%s2-Ostafrika:%s2-Ostafrika</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Africa Orientale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>&#193;frica Oriental %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_BYZANTIUM</Tag>
+		<English>Latin Empire</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_ENGLAND</Tag>
+		<English>Duchy of Normandy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_SPAIN</Tag>
+		<English>Spanish March</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_HOLY_ROME</Tag>
+		<English>Confederation of the Rhine</English>
+		<French>
+			<Text>Conf&#233;d&#233;ration du Rhin</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Rheinbund:Rheinbund:Rheinbund</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Confederazione del Reno</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Confederaci&#243;n del Rin</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NETHERLANDS</Tag>
+		<English>Batavian Republic</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_MALI</Tag>
+		<English>%s2 West Africa</English>
+		<French>
+			<Text>Afrique Occidentale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Westafrika:%s2-Westafrika:%s2-Westafrika</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Africa Occidentale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>&#193;frica Occidental %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_POLAND</Tag>
+		<English>Duchy of Warsaw</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_INCA</Tag>
+		<English>Andean France</English>
+		<French>
+			<Text>France Andine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Franz&#246;sisch-Anden:Franz&#246;sisch-Anden:Franz&#246;sisch-Anden</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Francia Andina</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Francia Andina</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_AZTECS</Tag>
+		<English>Mesoamerican France</English>
+		<French>
+			<Text>M&#233;so-Am&#233;rique Fran&#231;aise</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Franz&#246;sisch-Mittelamerika:Franz&#246;sich-Mittelamerika:Franz&#246;sisch-Mittelamerika</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Francia Mesoamericana</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Francia Mesoamericana</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_AMERICA</Tag>
+		<English>New France</English>
+		<French>
+			<Text>Nouvelle France</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Neu-Frankreich:Neu-Frankreich:Neu-Frankreich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Nuova Francia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Nueva Francia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NAME_KHMER</Tag>
+		<English>Indochina</English>
+		<French>
+			<Text>Indochine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Indochina:Indochina:Indochina</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Indocina</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Indochina</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_NAME_MUGHALS</Tag>
+		<English>West India</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRENCH_CONGO</Tag>
+		<English>%s2 Equatorial Africa</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_ADJECTIVE</Tag>
+		<English>French</English>
+		<French>
+			<Text>fran&#231;ais:fran&#231;aise:fran&#231;ais:fran&#231;aises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Franz&#246;sisch:franz&#246;sischen:franz&#246;sische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>francese:francese:francesi:francesi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>franc&#233;s:francesa:franceses:francesas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANCE_SHORT_DESC</Tag>
+		<English>France</English>
+		<French>
+			<Text>France</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Frankreich</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Francia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Francia</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

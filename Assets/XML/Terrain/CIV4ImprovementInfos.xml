@@ -42,7 +42,6 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges/>
 			<RouteYieldChanges/>
-			<WorldSoundscapeAudioScript/>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -80,7 +79,6 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges/>
 			<RouteYieldChanges/>
-			<WorldSoundscapeAudioScript/>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -118,14 +116,13 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges/>
 			<RouteYieldChanges/>
-			<WorldSoundscapeAudioScript/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
-			<Type>IMPROVEMENT_GOODY_HUT</Type>
-			<Description>TXT_KEY_IMPROVEMENT_GOODY_HUT</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_GOODY_HUT_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_GOODY_HUT</ArtDefineTag>
+			<Type>IMPROVEMENT_TRIBAL_VILLAGE</Type>
+			<Description>TXT_KEY_IMPROVEMENT_TRIBAL_VILLAGE</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_TRIBAL_VILLAGE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_TRIBAL_VILLAGE</ArtDefineTag>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -174,6 +171,10 @@
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 				<FeatureMakesValid>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</FeatureMakesValid>
+				<FeatureMakesValid>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
@@ -192,13 +193,9 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FARM</ArtDefineTag>
 			<PrereqNatureYields>
 				<iYield>1</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
 			</PrereqNatureYields>
 			<IrrigatedYieldChange>
 				<iYield>1</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
 			</IrrigatedYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -244,8 +241,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -255,8 +250,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -266,8 +259,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
@@ -278,8 +269,6 @@
 					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<TechYields>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
@@ -325,8 +314,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -336,8 +323,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -347,8 +332,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>3</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -408,8 +391,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>3</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -419,8 +400,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>3</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -430,8 +409,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>4</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -455,7 +432,7 @@
 		<ImprovementInfo>
 			<Type>IMPROVEMENT_WHALING_BOATS</Type>
 			<Description>TXT_KEY_IMPROVEMENT_WHALING_BOATS</Description>
-			<Civilopedia>TXT_KEY_WHALING_BOATS_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_WHALING_BOATS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_WHALING_BOATS</ArtDefineTag>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -510,7 +487,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>2</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>1</bHillsMakesValid>
@@ -558,7 +534,6 @@
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>1</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -569,7 +544,6 @@
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>1</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -602,7 +576,6 @@
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>1</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -637,7 +610,6 @@
 					<RouteYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
@@ -650,13 +622,10 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_WORKSHOP</ArtDefineTag>
 			<PrereqNatureYields>
 				<iYield>1</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
 			</PrereqNatureYields>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -701,7 +670,6 @@
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
 				<TechYieldChange>
@@ -709,7 +677,6 @@
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
@@ -724,7 +691,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<RiverSideYieldChange>
 				<iYield>0</iYield>
@@ -771,7 +737,6 @@
 					<RouteYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
@@ -821,7 +786,6 @@
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
 				<TechYieldChange>
@@ -844,7 +808,6 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
-				<iYieldChange>0</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -880,7 +843,6 @@
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
 				<TechYieldChange>
@@ -934,9 +896,29 @@
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
-						<iYieldChange>2</iYieldChange>
+						<iYieldChange>3</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_COFFEE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
+						<iYieldChange>3</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_COTTON</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -994,41 +976,6 @@
 						<iYieldChange>1</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
-				<!-- Rhye - start -->
-				<BonusTypeStruct>
-					<BonusType>BONUS_COTTON</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>3</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<!-- Rhye - end -->
-				<BonusTypeStruct>
-					<BonusType>BONUS_TOBACCO</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
-					<BonusType>BONUS_COFFEE</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
 				<BonusTypeStruct>
 					<BonusType>BONUS_TEA</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
@@ -1038,6 +985,17 @@
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_TOBACCO</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
@@ -1095,9 +1053,31 @@
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
-						<iYieldChange>2</iYieldChange>
+						<iYieldChange>3</iYieldChange>
 						<iYieldChange>1</iYieldChange>
 						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_COFFEE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+						<iYieldChange>5</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_COTTON</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+						<iYieldChange>5</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1155,41 +1135,6 @@
 						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
-				<!-- Rhye - start -->
-				<BonusTypeStruct>
-					<BonusType>BONUS_COTTON</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>2</iYieldChange>
-						<iYieldChange>5</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<!-- Rhye - end -->
-				<BonusTypeStruct>
-					<BonusType>BONUS_TOBACCO</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>5</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
-					<BonusType>BONUS_COFFEE</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>5</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
 				<BonusTypeStruct>
 					<BonusType>BONUS_TEA</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
@@ -1199,6 +1144,17 @@
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>1</iYieldChange>
 						<iYieldChange>4</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_TOBACCO</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+						<iYieldChange>5</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
@@ -1259,7 +1215,6 @@
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
@@ -1272,7 +1227,6 @@
 					<RouteYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
@@ -1318,7 +1272,6 @@
 					<YieldChanges>
 						<iYieldChange>1</iYieldChange>
 						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1339,8 +1292,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>3</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1362,8 +1313,6 @@
 					<PrereqTech>TECH_REFRIGERATION</PrereqTech>
 					<TechYields>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
@@ -1418,8 +1367,6 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>2</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1609,8 +1556,6 @@
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_COTTAGE</ArtDefineTag>
 			<PrereqNatureYields>
 				<iYield>1</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
 			</PrereqNatureYields>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1816,7 +1761,6 @@
 			<Description>TXT_KEY_IMPROVEMENT_FORT</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FORT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FORT</ArtDefineTag>
-			<YieldChanges/>
 			<bActsAsCity>1</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -1874,9 +1818,8 @@
 		<ImprovementInfo>
 			<Type>IMPROVEMENT_FOREST_PRESERVE</Type>
 			<Description>TXT_KEY_IMPROVEMENT_FOREST_PRESERVE</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_FOREST_PRESERVE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_FOREST_PRESERVE_IMPROVEMENT_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FOREST_PRESERVE</ArtDefineTag>
-			<YieldChanges/>
 			<RiverSideYieldChange>
 				<iYield>0</iYield>
 				<iYield>0</iYield>

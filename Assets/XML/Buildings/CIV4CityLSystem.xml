@@ -5,7 +5,7 @@
 <!-- CityLSystem -->
 <!-- -->
 <!-- When debugging LSystems, refer to Civ4/Logs/LSystem.log for help -->
-<!-- CityLSystems use the follwing ArtRef attributes:
+<!-- CityLSystems use the following ArtRef attributes:
 
         Attribute     Syntax                Meaning
         ____________________________________________________________________________________________________________
@@ -21,12 +21,12 @@
         ArtStyle      ARTSTYLE_ALL          This art reference is allowed regardless of the game era.
                                             This is the default if not otherwise specified.
                       ARTSTYLE_xxx,[...]    A list of art styles, specified in CIV4GlobalTypes, for which
-                                            this art is valid. A ArtStyles are Civilization-sepcific 
+                                            this art is valid. A ArtStyles are Civilization-specific 
                                             and are specified in CIV4CivilizationInfos.xml
   
 		You can add the following items to a node or production...
 			<Attribute Class="ScalarList">szWithCityNameNotEqualTo:CityName1,CityName2</Attribute> : inhibits the production/node when a city is in the list
-			<Attribute Class="ScalarList">szWithCityNameEqualTo:CityName1,CityName2</Attribute>    : inhibits the production/node when a city not is in the list			
+			<Attribute Class="ScalarList">szWithCityNameEqualTo:CityName1,CityName2</Attribute>    : inhibits the production/node when a city not is in the list
 		
   -->
 <LSystemInfos xmlns="x-schema:CIV4LSystemSchema.xml">
@@ -42,37 +42,31 @@
 		<!-- LEAF 1x1 GENERICS -->
 		<ArtRef Name="generic:an_eu.nif::1x1_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::1x1_02">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::1x1_03">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::1x1_04">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::1x1_05">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::1x1_06">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
@@ -94,28 +88,24 @@
 		<!-- MEDIEVAL -->
 		<ArtRef Name="generic:med_eu.nif::1x1x1_01">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::1x1x1_02">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::1x1x2_01">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::1x1x2_02">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
@@ -126,7 +116,6 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- ORIENTAL -->
 		<ArtRef Name="generic:Oriental.nif::1x1x1_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -158,11 +147,9 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
 		<!-- RENAISSANCE -->
 		<ArtRef Name="generic:ren_eu.nif::park_1x1">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Scalar">bHasNoShadow:1</Attribute>
@@ -171,28 +158,24 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x1_01">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Scale>1.4</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x1_02">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Scale>1.4</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x1_03">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Scale>1.4</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x1_04">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Scale>1.4</Scale>
@@ -223,7 +206,6 @@
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Scale>1.0</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- MESO -->
 		<ArtRef Name="generic:meso_city.nif::1x1_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -286,7 +268,6 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
 		<!-- MODERN -->
 		<ArtRef Name="generic:mod_eu.nif::1x1_01">
 			<Attribute Class="Era">ERA_MODERN,ERA_FUTURE</Attribute>
@@ -359,7 +340,7 @@
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="ArtStyle">ARTSTYLE_GRECO_ROMAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
-		</ArtRef>		
+		</ArtRef>
 		<!-- LEAF 1x1 BUILDINGS -->
 		<ArtRef Name="building:LSYSTEM_1x1">
 			<Scale>1.0</Scale>
@@ -396,49 +377,42 @@
 		<ArtRef Name="generic:an_eu.nif::2x1_01">
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::2x1_02">
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::2x1_03">
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::2x1_04">
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::1x2_01">
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::1x2_02">
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<!-- MEDIEVAL -->
 		<ArtRef Name="generic:med_eu.nif::1x2x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
@@ -446,7 +420,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::1x2x2_02">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
@@ -454,7 +427,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::1x2x2_03">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
@@ -462,7 +434,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::1x2x2_04">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
@@ -470,7 +441,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::1x2x2_05">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
@@ -478,7 +448,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::2x1x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
@@ -486,7 +455,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::2x1x2_02">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
@@ -494,7 +462,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::2x1x2_03">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
@@ -502,13 +469,11 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::2x1x2_04">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- ORIENTAL -->
 		<ArtRef Name="generic:Oriental.nif::1x2x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -573,11 +538,9 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
 		<!-- RENAISSANCE -->
 		<ArtRef Name="generic:ren_eu.nif::park_2x1">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -588,7 +551,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x2_01">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -597,7 +559,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x2_02">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -605,7 +566,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x2_03">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -613,7 +573,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x2_04">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -621,7 +580,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::1x2_05">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">90,270</Attribute>
@@ -629,7 +587,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::park_2x1">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -639,7 +596,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::park_2x1_05">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -648,7 +604,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::2x1_01">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -656,7 +611,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::2x1_02">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -664,7 +618,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::2x1_03">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -672,7 +625,6 @@
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::2x1_04">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
@@ -721,7 +673,6 @@
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Scale>1.0</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- MESO -->
 		<ArtRef Name="generic:meso_city.nif::1x2_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -836,7 +787,6 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>0.9</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
 		<!-- MODERN -->
 		<ArtRef Name="generic:mod_eu.nif::1x2_01">
 			<Attribute Class="Era">ERA_MODERN,ERA_FUTURE</Attribute>
@@ -1034,14 +984,12 @@
 		<ArtRef Name="generic:an_eu.nif::3x1_01">
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<ArtRef Name="generic:an_eu.nif::1x3_01">
 			<Attribute Class="Rotation">90,270</Attribute>
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
@@ -1116,12 +1064,10 @@
 		</ArtRef>
 		<ArtRef Name="generic:med_eu.nif::2x2x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL,ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>1.1</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- ORIENTAL -->
 		<ArtRef Name="generic:Oriental.nif::2x2x2_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -1129,22 +1075,18 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>1.1</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
 		<ArtRef Name="generic:an_eu.nif::2x2_01">
 			<Attribute Class="Era">ERA_CLASSICAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 		</ArtRef>
 		<!-- MEDIEVAL -->
 		<ArtRef Name="generic:med_eu.nif::2x2x2_02">
 			<Attribute Class="Era">ERA_MEDIEVAL</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>1.1</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- ORIENTAL -->
 		<ArtRef Name="generic:Oriental.nif::2x2x2_02">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -1152,23 +1094,19 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>1.1</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
 		<!-- RENAISSANCE -->
 		<ArtRef Name="generic:ren_eu.nif::2x2_01">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Scale>1.0</Scale>
 		</ArtRef>
 		<ArtRef Name="generic:ren_eu.nif::2x2_02">
 			<Attribute Class="Era">ERA_RENAISSANCE</Attribute>
-			<!-- Rhye -->
 			<Attribute Class="ArtStyle">ARTSTYLE_EUROPEAN,ARTSTYLE_SOUTH_AMERICA,ARTSTYLE_BARBARIAN</Attribute>
 			<Attribute Class="Scalar">iBatchGroup:0</Attribute>
 			<Scale>1.0</Scale>
 		</ArtRef>
-		<!-- Rhye - start -->
 		<!-- MESO -->
 		<ArtRef Name="generic:meso_city.nif::2x2x3_01">
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -1195,7 +1133,6 @@
 			<Attribute Class="Scalar">iBatchGroup:1</Attribute>
 			<Scale>1.1</Scale>
 		</ArtRef>
-		<!-- Rhye - end -->
 		<!-- INDUSTRIAL -->
 		<ArtRef Name="generic:ind_eu.nif::2x2x3_01">
 			<Attribute Class="Era">ERA_INDUSTRIAL</Attribute>
@@ -1381,8 +1318,8 @@
 			<Attribute Class="Scalar">szBuilder:WallBuilder</Attribute>
 			<Attribute Class="Scalar">bLayoutAfterGenerics:1</Attribute>
 			<Attribute Class="Scalar">bNoContour:1</Attribute>
-			<Attribute Class="Scalar">szPostArtFile:Art/Structures/Wonders/Theodosian Walls/post01_byz_med.nif</Attribute>
-			<Attribute Class="Scalar">szWallArtFile:Art/Structures/Wonders/Theodosian Walls/wall%1_byz_med.nif</Attribute>
+			<Attribute Class="Scalar">szPostArtFile:Art/Structures/Wonders/Theodosian_Walls/post01_byz_med.nif</Attribute>
+			<Attribute Class="Scalar">szWallArtFile:Art/Structures/Wonders/Theodosian_Walls/wall%1_byz_med.nif</Attribute>
 			<Scale>1.0</Scale>
 			<Rotate>45</Rotate>
 			<!-- this needs to be the negative of the CITY_TWIST value in detail manager; note that this uses degrees but DetailManager uses radians. Sorry. -->

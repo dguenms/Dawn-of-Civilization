@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jon Shafer (Firaxis Games) -->
 <!-- Sid Meier's Civilization 4 -->
 <!-- Copyright Firaxis Games 2005 -->
@@ -927,6 +926,29 @@
 			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 			<bVisible>1</bVisible>
 			<Button>,Art/Interface/Buttons/Buildings/Temple_Jewish.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,15</Button>
+		</MissionInfo>
+		<MissionInfo>
+			<Type>MISSION_GREAT_MISSION</Type>
+			<Description>TXT_KEY_MISSION_GREAT_MISSION</Description>
+			<Help/>
+			<Waypoint>NONE</Waypoint>
+			<EntityEventType>ENTITY_EVENT_GREAT_EVENT</EntityEventType>
+			<iTime>16</iTime>
+			<bTarget>0</bTarget>
+			<bBuild>0</bBuild>
+			<bSound>1</bSound>
+			<HotKey/>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt/>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>0</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
+			<bVisible>1</bVisible>
+			<Button>,Art/Interface/Buttons/Civics/Theocracy.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,6,3</Button>
 		</MissionInfo>
 	</MissionInfos>
 </Civ4MissionInfos>

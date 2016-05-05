@@ -28,6 +28,7 @@ public:
 	int countNumUniqueBonusTypes() const;																			// Exposed to Python
 	int countHasReligion(ReligionTypes eReligion, PlayerTypes eOwner = NO_PLAYER) const;		// Exposed to Python
 	int countHasCorporation(CorporationTypes eCorporation, PlayerTypes eOwner = NO_PLAYER) const;		// Exposed to Python
+	int countCanSpread(ReligionTypes eReligion, PlayerTypes eOwner = NO_PLAYER, bool bMissionary = false) const;
 
 	int getID() const;																							// Exposed to Python
 	void setID(int iID);

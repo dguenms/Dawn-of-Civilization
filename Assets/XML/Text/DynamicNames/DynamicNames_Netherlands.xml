@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Netherlands -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_DESC</Tag>
+		<English>The Dutch</English>
+		<French>
+			<Text>Les Neerlandais</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Holl&#228;nder:Die Holl&#228;nder:den Holl&#228;ndern</Text>
+			<Gender>Male:Male:Male</Gender>
+			<Plural>1:1:1</Plural>
+		</German>
+		<Italian>
+			<Text>Gli Olandesi</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Los Holand&#233;ses</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_PEOPLES</Tag>
+		<English>Dutch Peoples</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>
+			<Text>Royaume du %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>K&#246;nigreich %s1:K&#246;nigreich %s1:K&#246;nigreich %s1</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Regno del %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Reino de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_REPUBLIC</Tag>
+		<English>Republic of the Seven United %s1</English>
+		<French>
+			<Text>R&#233;publique des Sept Provinces Unies</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Republik der Sieben Vereinigten %s1:Republik der Sieben Vereinigten %s1:Republik der Sieben Vereinigten %s1</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Repubblica delle Sette Province Unite</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Rep&#250;blica de las Siete Pa&#237;ses Bajos Unidos</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_COMMUNIST</Tag>
+		<English>Democratic Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_FASCIST</Tag>
+		<English>%s2 Empire</English>
+		<French>
+			<Text>Empire %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Reich:%s2 Reich:%s2 Reich</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Impero %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Imperio %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_UNITED_KINGDOM_OF</Tag>
+		<English>United Kingdom of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_EXILE</Tag>
+		<English>%s2 Government in Exile</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_BELGIUM</Tag>
+		<English>Belgium</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_BELGIAN</Tag>
+		<English>Belgian</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_INDONESIA</Tag>
+		<English>%s2 East Indies</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_CONGO</Tag>
+		<English>Congo Free State</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_AMERICA</Tag>
+		<English>New Netherlands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_BRAZIL</Tag>
+		<English>New Holland</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_MALI</Tag>
+		<English>%s2 Gold Coast</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_ETHIOPIA</Tag>
+		<English>%s2 East Africa</English>
+		<French>
+			<Text>Afrique Orientale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2-Ostafrika:%s2-Ostafrika:%s2-Ostafrika</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Africa Orientale %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>&#193;frica Oriental %s2</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_ARTICLE</Tag>
+		<English>the Netherlands</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_NETHERLANDS_ADJECTIVE</Tag>
+		<English>
+			<Text>Dutch:Dutch</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>n&#233;erlandais:n&#233;erlandaise:n&#233;erlandais:n&#233;erlandaises</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</French>
+		<German>
+			<Text>Holl&#228;ndisch:holl&#228;ndischen:holl&#228;ndische</Text>
+			<Gender>Neuter:Neuter:Neuter</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>olandese:olandese:olandesi:olandesi</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>holand&#233;s:holandesa:holandeses:holandesas</Text>
+			<Gender>Male:Female:Male:Female</Gender>
+			<Plural>0:0:1:1</Plural>
+		</Spanish>
+	</TEXT>
+</Civ4GameText>

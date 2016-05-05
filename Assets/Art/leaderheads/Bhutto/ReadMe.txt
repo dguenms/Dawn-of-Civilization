@@ -1,0 +1,5 @@
+As far as I know this leaderhead of Benazir Bhutto was started by Bernie14 and further worked on by The Capo and Ekmek. Who of these three did how much of this leaderhead and if there were any other people involved is beyond my knowledge. I was requested to give it the finishing touch, which involved only some shading, fixing some minor rigging problems and adding a sky texture.
+
+I do not know if parts of this leaderhead are taken from other sources than the Civ4 leaderhead, but I guess is an original work. Also I do not know from which source the background information were taken.
+
+This leaderhead uses custom animations. It's completely modular. All files in the zip-file are already put into the necessary folders, unzipping it directly in the Mods folder of BtS should result into a working mod. It has a polycount of about 11500 triangles. There is only a shader version included.

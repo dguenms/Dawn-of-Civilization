@@ -1363,7 +1363,7 @@ void CvMap::calculateAreas()
 			gDLL->getFAStarIFace()->GeneratePath(&GC.getAreaFinder(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), -1, -1, pLoopPlot->isWater(), iArea);
 		}
 	}
-	/* LEORETH TEST ONLY: completely disabled artificial continents to see its effect on AI behavior */
+	
 	//Rhye - start (continents)
 	CvArea* sudamericaArea = addArea();
 	int sudamericaID = sudamericaArea->getID();
@@ -1564,7 +1564,7 @@ void CvMap::calculateAreas()
 	// Leoreth: Western half of Africa
 	for (int iX = 48; iX <= 65; iX++)
 	{
-		for (int iY = 23; iY <= 32; iY++)
+		for (int iY = 23; iY <= 33; iY++)
 		{
 			if (!plotSorenINLINE(iX, iY)->isWater())
 				plotSorenINLINE(iX, iY)->setArea(africaID);
@@ -1604,5 +1604,14 @@ void CvMap::calculateAreas()
 
 }
 
+int CvMap::plotIndex(int iX, int iY) const
+{
+	if (iX == INVALID_PLOT_COORD || iY == INVALID_PLOT_COORD) return NULL;
+
+	int iMapX = coordRange(iX, getGridWidthINLINE(), isWrapXINLINE());
+	int iMapY = coordRange(iY, getGridHeightINLINE(), isWrapYINLINE());
+
+	return (isPlot(iMapX, iMapY)) ? plotNum(iMapX, iMapY) : -1;
+}
 
 // Private Functions...

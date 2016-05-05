@@ -11,24 +11,21 @@ typedef list<char*> LISTCHAR;
 
 #define MAX_COM_SHRINE			(20)
 
-#define GREATPALACE				(1)
-#define SUMMERPALACE			(1)
-//#define VERSAILLES				(2)
-#define FORBIDDENPALACE			(2)
+#define GREATPALACE				(98)
+#define SUMMERPALACE			(98)
 
-#define PAGAN_TEMPLE			(GC.getInfoTypeForString("BUILDING_OBELISK"))
-
-#define BEGIN_WONDERS				(134) // increment if normal building (not for wonders) is added
-#define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+11)
-#define NUM_BUILDINGS_PLAGUE		(210) // always increment when a building is added except embassies
-#define NUM_BUILDINGTYPES_PLAGUE	(131) // increment when a building class is created except embassies
+#define BEGIN_WONDERS				(138) // increment if normal building (not for wonders) is added
+#define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
+#define NUM_BUILDINGS_PLAGUE		(213) // always increment when a building is added
+#define NUM_BUILDINGTYPES_PLAGUE	(158) // increment when a building class is added
 
 #define NUM_MAJOR_PLAYERS		(44)
-#define NUM_PL					(44)
-#define NUM_MINORS				(6)	 // Independent, Indpendent2, Natives, Celtia, Seljuks, Barbarians
+#define NUM_MINORS				(6)	 // Independent, Independent2, Natives, Celtia, Seljuks, Barbarians
 #define NUM_CIVS				(52)
 
 #define NUM_ERAS				(ERA_FUTURE+1)
+
+#define PAGAN_TEMPLE ((BuildingTypes)GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
 
 enum MyTechs
 {
@@ -129,94 +126,79 @@ enum MyTechs
 enum MyBuildings
 {
 	TRIUMPHAL_ARCH = BEGIN_WONDERS,
-	GLOBE_THEATRE,
-	NATIONAL_PARK,
-	NATIONAL_GALLERY,
-	STOCK_EXCHANGE,
-	IRON_WORKS,
+	OPERA_HOUSE,
 	TRADING_COMPANY,
 	IBERIAN_TRADING_COMPANY,
-	RED_CROSS,
-	INTERPOL,
-	MILITARY_ACADEMY,
-	PYRAMIDS,
-	SPHYNX,
-	GREAT_LIBRARY,
-	GREAT_LIGHTHOUSE,
-	HANGING_GARDENS,
-	COLOSSUS,
-	ORACLE,
-	PARTHENON,
-	FLAVIAN_AMPHITHEATRE,
-	WAT_PREAH_PISNULOK,
-	KUKULKAN,
-	SISTINE_CHAPEL,
-	SPIRAL_MINARET,
-	NOTRE_DAME,
-	TAJ_MAHAL,
-	BASILS_CATHEDRAL,
-	EIFFEL_TOWER,
-	STATUE_OF_LIBERTY,
-	WEMBLEY,
-	GRACELAND,
-	HOLLYWOOD,
-	THREE_GORGES_DAM,
-	PENTAGON,
-	MOUNT_RUSHMORE,
-	UNITED_NATIONS,
-	SPACE_ELEVATOR,
-	CERN,
-	ARTEMIS,
-	SANKORE,
-	GREAT_WALL,
-	STATUE_OF_ZEUS,
-	MAUSOLLOS,
-	CRISTO_REDENTOR,
-	SHWEDAGON_PAYA,
-	GREAT_COTHON,
-	MOAI_STATUES,
-	APOSTOLIC_PALACE,
-	LEANING_TOWER,
+	STOCK_EXCHANGE,
 	OLYMPIC_PARK,
-	SOLOMON,
-	ISHTAR_GATE,
-	THEODOSIAN_WALLS,
+	NATIONAL_GALLERY,
+	IRONWORKS,
+	INTERPOL,
+	NATIONAL_PARK,
+	RED_CROSS,
+	GREAT_SPHINX,
+	GREAT_LIGHTHOUSE,
+	GREAT_COTHON,
 	TERRACOTTA_ARMY,
-	MEZQUITA,
-	DOME_OF_THE_ROCK,
-	TOPKAPI_PALACE,
-	BRANDENBURG_GATE,
-	SAN_MARCO_BASILICA,
-	WESTMINSTER_PALACE,
-	BOROBUDUR,
+	TEMPLE_OF_ARTEMIS,
+	PYRAMIDS,
+	HANGING_GARDENS,
+	ORACLE,
+	MOAI_STATUES,
+	ISHTAR_GATE,
+	COLOSSUS,
+	PARTHENON,
+	STATUE_OF_ZEUS,
+	SHWEDAGON_PAYA,
 	KHAJURAHO,
+	GREAT_LIBRARY,
+	MAUSOLEUM_OF_MAUSSOLLOS,
+	FLOATING_GARDENS,
+	COLOSSEUM,
+	GREAT_WALL,
+	THEODOSIAN_WALLS,
+	MACHU_PICCHU,
+	BOROBUDUR,
+	GRAND_CANAL,
+	HAGIA_SOPHIA,
+	NOTRE_DAME,
+	TEMPLE_OF_KUKULKAN,
 	HIMEJI_CASTLE,
-	PORCELAIN_TOWER,
-	HARMANDIR_SAHIB,
 	BLUE_MOSQUE,
+	WAT_PREAH_PISNULOK,
+	TOPKAPI_PALACE,
+	LA_MEZQUITA,
+	SISTINE_CHAPEL,
+	LEANING_TOWER,
 	RED_FORT,
 	VERSAILLES,
+	FORBIDDEN_PALACE,
+	SPIRAL_MINARET,
+	DOME_OF_THE_ROCK,
+	UNIVERSITY_OF_SANKORE,
+	TAJ_MAHAL,
+	SAN_MARCO_BASILICA,
+	PORCELAIN_TOWER,
+	ST_BASILS_CATHEDRAL,
+	HARMANDIR_SAHIB,
 	TRAFALGAR_SQUARE,
-	EMPIRE_STATE_BUILDING,
-	GRAND_CANAL,
-	FLOATING_GARDENS,
+	BRANDENBURG_GATE,
+	STATUE_OF_LIBERTY,
+	PENTAGON,
 	LUBYANKA,
-	MACHU_PICCHU,
+	WESTMINSTER_PALACE,
+	MT_RUSHMORE,
+	EIFFEL_TOWER,
+	EMPIRE_STATE_BUILDING,
+	CERN_RESEARCH_COMPLEX,
+	WEMBLEY,
+	GRACELAND,
+	CRISTO_REDENTOR,
+	THREE_GORGES_DAM,
+	HOLLYWOOD,
+	UNITED_NATIONS,
 	CN_TOWER,
-};
-
-enum MyReligions
-{
-	PROTESTANTISM,
-	CATHOLICISM,
-	ORTHODOXY,
-	ISLAM,
-	HINDUISM,
-	BUDDHISM,
-	CONFUCIANISM,
-	TAOISM,
-	ZOROASTRIANISM,
-	NUM_RELIGIONS
+	SPACE_ELEVATOR,
 };
 
 enum MyEras
@@ -302,80 +284,46 @@ enum ECSArtStyles
 
 #endif	// CVRHYES_H
 
+static const int lTechLeaderPenalty[NUM_ERAS] = {0, 0, 5, 10, 20, 20, 20};
+static const int lTechBackwardsBonus[NUM_ERAS] = {0, 5, 10, 15, 25, 25, 25};
 
-extern int startingTurn[];
-extern int startingTurnYear[]; // edead
-//extern int fallTurnYear[];
-extern char loadingTime[NUM_CIVS][4];
-extern char loadingTime600AD[NUM_CIVS][4];
-extern char loadingTime1700AD[NUM_CIVS][4];
-extern char startingYear[NUM_CIVS][6];
-extern bool startingEra[NUM_CIVS];
-extern char startingYear600AD[NUM_CIVS][6];
-extern bool startingEra600AD[NUM_CIVS];
-extern char startingYear1700AD[NUM_CIVS][6];
-extern bool startingEra1700AD[NUM_CIVS];
-
-extern int takenTiles[NUM_PL];
-extern int distanceSubtrahend[NUM_PL];
-extern int distanceSubtrahendAstronomy[NUM_PL];
-extern int distanceMultiply[NUM_PL];
-extern int distanceMultiplyAstronomy[NUM_PL];
-extern int compactEmpireModifierArray[NUM_PL];
-extern int compactEmpireModifierAstronomy[NUM_PL];
-extern int targetCityValueDivisor[NUM_PL];
-
-extern int eraModifierInit[NUM_PL];
-extern int eraModifierInitAstronomy[NUM_PL];
-extern int cultureModifier[NUM_PL];
-
-extern int unitCostModifier[NUM_PL];
-extern int researchModifier[NUM_PL];
-extern int distanceMaintenanceModifier[NUM_PL];
-extern int numMaintenanceModifier[NUM_PL];
-extern int civicUpkeepModifier[NUM_PL];
-extern int healthModifier[NUM_PL];
-
-extern int startingEraFound[NUM_PL];
-extern int startingEraFound600AD[NUM_PL];
-extern int startingEraFound1700AD[NUM_PL];
-extern int startingEraFoundAstronomy[NUM_PL];
-extern int startingEraRespawn[NUM_PL];
-extern int unitCostModifier2[NUM_PL];
-extern int wonderCostModifier[NUM_PL];
-extern int buildingCostModifier[NUM_PL];
-extern int inflationRateModifier[NUM_PL];
-extern int greatPeopleThresholdArray[NUM_PL];
-extern int currentEra[NUM_PL];
-extern int currentEra600AD[NUM_PL];
-extern int currentEra1700AD[NUM_PL];
-extern int growthThreshold[NUM_PL];
-extern int religiousTolerance[NUM_PL];
-
-extern char uniquePower[NUM_CIVS][2][16];
-extern char uniqueGoals[NUM_CIVS][3][18];
-extern char rating[NUM_CIVS][6][15];
-
-extern int lTechLeaderPenalty[NUM_ERAS];
-extern int lTechBackwardsBonus[NUM_ERAS];
-
-extern int regionSpreadFactor[NUM_REGIONS][NUM_RELIGIONS];
-
-extern int turnPlayed[NUM_PL+NUM_MINORS]; 
-extern int civSpreadFactor[NUM_PL+NUM_MINORS][NUM_RELIGIONS];
-extern int borders[NUM_PL][NUM_PL];
-extern int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1];
-extern int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS];
-extern int regionMap[68][124];
-extern int settlersMaps[2][NUM_PL][68][124];
-extern int warMaps[2][NUM_PL][68][124];
-
-inline int getStartingEra(PlayerTypes ePlayer, bool bAstronomy = true)
+// Leoreth: order of persecution
+static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] = 
 {
-	if (GET_PLAYER(ePlayer).isReborn()) return startingEraRespawn[ePlayer];
-	else if (bAstronomy && GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isHasTech((TechTypes)ASTRONOMY)) return startingEraFoundAstronomy[ePlayer];
-	else if (getScenario() == SCENARIO_1700AD) return startingEraFound1700AD[ePlayer];
-	else if (getScenario() == SCENARIO_600AD) return startingEraFound600AD[ePlayer];
+	// Judaism
+	{HINDUISM, BUDDHISM, TAOISM, CONFUCIANISM, ZOROASTRIANISM, ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY},
+	// Orthodoxy
+	{ISLAM, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Catholicism
+	{ISLAM, PROTESTANTISM, ORTHODOXY, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Protestantism
+	{ISLAM, CATHOLICISM, ORTHODOXY, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Islam
+	{ZOROASTRIANISM, HINDUISM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, JUDAISM, BUDDHISM, CONFUCIANISM, TAOISM},
+	// Hinduism
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, CONFUCIANISM, TAOISM, ZOROASTRIANISM, BUDDHISM},
+	// Buddhism
+	{ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, TAOISM, ISLAM, CONFUCIANISM, HINDUISM},
+	// Confucianism
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, TAOISM},
+	// Taoism
+	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM},
+	// Zoroastrianism
+	{ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, JUDAISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
+};
 
-	return startingEraFound[ePlayer];
-}
+// Leoreth: persecution priority
+static const int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS] =
+{
+	// JUD ORT CAT PRO ISL HIN BUD CON TAO ZOR
+	{  -1,  1,  1,  1,  1,  1,  1,  1,  1,  1 }, // Judaism
+	{   1, -1,  3,  3,  4,  1,  1,  1,  1,  2 }, // Orthodoxy
+	{   2,  2, -1,  3,  4,  1,  1,  1,  1,  2 }, // Catholicism
+	{   3,  2,  3, -1,  4,  1,  1,  1,  1,  2 }, // Protestantism
+	{   1,  2,  2,  2, -1,  3,  1,  1,  1,  4 }, // Islam
+	{   1,  3,  3,  3,  4, -1,  0,  1,  1,  2 }, // Hinduism
+	{   1,  3,  3,  3,  4,  0, -1,  1,  1,  2 }, // Buddhism
+	{   1,  2,  2,  2,  3,  1,  1, -1,  0,  1 }, // Confucianism
+	{   1,  2,  2,  2,  3,  1,  1,  0, -1,  1 }, // Taoism
+	{   1,  3,  3,  3,  4,  1,  1,  1,  1, -1 }, // Zoroastrianism
+};

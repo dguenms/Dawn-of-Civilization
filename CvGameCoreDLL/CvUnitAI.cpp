@@ -3553,12 +3553,22 @@ void CvUnitAI::AI_prophetMove()
 		return;
 	}
 
+	if (AI_greatMission(35))
+	{
+		return;
+	}
+
 	if (AI_discover(true, true))
 	{
 		return;
 	}
 
 	if (AI_construct(3))
+	{
+		return;
+	}
+
+	if (AI_greatMission(70))
 	{
 		return;
 	}
@@ -4318,6 +4328,26 @@ void CvUnitAI::AI_persecutorMove()
 {
 	PROFILE_FUNC();
 
+	CvCity* pTargetCity = AI_persecutionTarget();
+
+	if (pTargetCity != NULL)
+	{
+		if (atPlot(pTargetCity->plot()) && canPersecute(plot()))
+		{
+			persecute(pTargetCity->AI_getPersecutionReligion());
+			return;
+		}
+
+		getGroup()->pushMission(MISSION_MOVE_TO, pTargetCity->getX(), pTargetCity->getY(), 0, false, true, NO_MISSIONAI, plot(), this);
+		return;
+	}
+
+	getGroup()->pushMission(MISSION_SKIP);
+	return;
+}
+
+CvCity* CvUnitAI::AI_persecutionTarget()
+{
 	CvCity* pLoopCity;
 	int iLoop;
 
@@ -4342,20 +4372,7 @@ void CvUnitAI::AI_persecutorMove()
 		}
 	}
 
-	if (pTargetCity != NULL)
-	{
-		if (atPlot(pTargetCity->plot()) && canPersecute(plot()))
-		{
-			persecute(pTargetCity->AI_getPersecutionReligion());
-			return;
-		}
-
-		getGroup()->pushMission(MISSION_MOVE_TO, pTargetCity->getX(), pTargetCity->getY(), 0, false, true, NO_MISSIONAI, plot(), this);
-		return;
-	}
-
-	getGroup()->pushMission(MISSION_SKIP);
-	return;
+	return pTargetCity;
 }
 
 void CvUnitAI::AI_ICBMMove()
@@ -9005,19 +9022,9 @@ bool CvUnitAI::AI_spreadReligion()
 {
 	PROFILE_FUNC();
 
-	CvCity* pLoopCity;
-	CvPlot* pBestPlot;
-	CvPlot* pBestSpreadPlot;
 	ReligionTypes eReligion;
-	int iPathTurns;
-	int iValue;
-	int iBestValue;
-	int iPlayerMultiplierPercent;
-	int iLoop;
 	int iI;
 
-
-    bool bCultureVictory = GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE2);
 	eReligion = NO_RELIGION;
 
 	if (eReligion == NO_RELIGION)
@@ -9051,6 +9058,43 @@ bool CvUnitAI::AI_spreadReligion()
 		return false;
 	}
 
+	std::pair<CvPlot*, CvPlot*> spreadPlots = AI_spreadTarget(eReligion);
+	CvPlot* pBestPlot = spreadPlots.first;
+	CvPlot* pBestSpreadPlot = spreadPlots.second;
+
+	if ((pBestPlot != NULL) && (pBestSpreadPlot != NULL))
+	{
+		if (atPlot(pBestSpreadPlot))
+		{
+			getGroup()->pushMission(MISSION_SPREAD, eReligion);
+			return true;
+		}
+		else
+		{
+			FAssert(!atPlot(pBestPlot));
+			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), 0, false, false, MISSIONAI_SPREAD, pBestSpreadPlot);
+			return true;
+		}
+	}
+
+	return false;
+}
+
+
+std::pair<CvPlot*, CvPlot*> CvUnitAI::AI_spreadTarget(ReligionTypes eReligion, bool bGreatMission)
+{
+	CvCity* pLoopCity;
+	CvPlot* pBestPlot;
+	CvPlot* pBestSpreadPlot;
+	int iPathTurns;
+	int iValue;
+	int iBestValue;
+	int iPlayerMultiplierPercent;
+	int iLoop;
+	int iI;
+	
+    bool bCultureVictory = GET_PLAYER(getOwnerINLINE()).AI_isDoStrategy(AI_STRATEGY_CULTURE2);
+
 	bool bHasHolyCity = GET_TEAM(getTeam()).hasHolyCity(eReligion);
 	bool bHasAnyHolyCity = bHasHolyCity;
 	if (!bHasAnyHolyCity)
@@ -9073,7 +9117,7 @@ bool CvUnitAI::AI_spreadReligion()
 
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() != getTeam())
 			{
-				if (bHasHolyCity)
+				if (bHasHolyCity || bGreatMission)
 				{
 					iPlayerMultiplierPercent = 100;
 					if (!bCultureVictory || ((eReligion == GET_PLAYER(getOwnerINLINE()).getStateReligion()) && bHasHolyCity))
@@ -9135,10 +9179,9 @@ bool CvUnitAI::AI_spreadReligion()
 			{
 				for (pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
 				{
-
 					if (AI_plotValid(pLoopCity->plot()) && pLoopCity->area() == area())
 					{
-						if (canSpread(pLoopCity->plot(), eReligion))
+						if (canSpread(pLoopCity->plot(), eReligion, false, true))
 						{
 							if (!(pLoopCity->plot()->isVisibleEnemyUnit(this)))
 							{
@@ -9211,6 +9254,12 @@ bool CvUnitAI::AI_spreadReligion()
 											}
 										}
 
+										// AI prefers spreading in core areas
+										if (!isHuman())
+										{
+											if (pLoopCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE) iValue *= 10;
+										}
+
 										iValue *= 1000;
 
 										iValue /= (iPathTurns + 2);
@@ -9231,22 +9280,7 @@ bool CvUnitAI::AI_spreadReligion()
 		}
 	}
 
-	if ((pBestPlot != NULL) && (pBestSpreadPlot != NULL))
-	{
-		if (atPlot(pBestSpreadPlot))
-		{
-			getGroup()->pushMission(MISSION_SPREAD, eReligion);
-			return true;
-		}
-		else
-		{
-			FAssert(!atPlot(pBestPlot));
-			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), 0, false, false, MISSIONAI_SPREAD, pBestSpreadPlot);
-			return true;
-		}
-	}
-
-	return false;
+	return std::make_pair(pBestPlot, pBestSpreadPlot);
 }
 
 
@@ -12736,7 +12770,7 @@ bool CvUnitAI::AI_found()
 		CvPlot* pCitySitePlot = GET_PLAYER(getOwnerINLINE()).AI_getCitySite(iI);
 
 		//Rhye - start
-		if (settlersMaps[GET_PLAYER(getOwnerINLINE()).getReborn()][getOwnerINLINE()][EARTH_Y -1 -pCitySitePlot->getY_INLINE()][pCitySitePlot->getX_INLINE()] < 90) //so high?
+		if (pCitySitePlot->getSettlerValue(getOwnerINLINE()) < 90) //so high?
 			return false;
 		//Rhye - end
 
@@ -12815,7 +12849,7 @@ bool CvUnitAI::AI_found_map(int modifier)
 		{
 			pLoopPlot = GC.getMapINLINE().plotINLINE(iI, iJ);
 
-			if (settlersMaps[GET_PLAYER(getOwnerINLINE()).getReborn()][getOwnerINLINE()][EARTH_Y -1 -iJ][iI] == modifier)
+			if (GET_PLAYER(getOwner()).getSettlerValue(iI, iJ) == modifier)
 			{
 				if (pLoopPlot != NULL)
 				{
@@ -12909,7 +12943,7 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 				{
 					if (canFound(pLoopPlot))
 					{
-						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || settlersMaps[GET_PLAYER(getOwnerINLINE()).getReborn()][getOwnerINLINE()][EARTH_Y -1 - (iDY+getY_INLINE())][(iDX+getX_INLINE())] >= 60) //Rhye
+						if (getOwnerINLINE() > NUM_MAJOR_PLAYERS || GET_PLAYER(getOwnerINLINE()).getSettlerValue(iDX + getX_INLINE(), iDY + getY_INLINE()) >= 60) //Rhye
 						{ //Rhye
 
 						iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
@@ -18364,6 +18398,40 @@ bool CvUnitAI::AI_diplomaticMission(int iPowerMultiplier)
 			return true;
 		}
 
+	}
+
+	return false;
+}
+
+
+bool CvUnitAI::AI_greatMission(int iCityPercent)  
+{
+	ReligionTypes eReligion = GET_PLAYER(getOwner()).getStateReligion();
+
+	if (eReligion == NO_RELIGION) return false;
+
+	int iAreaCities = GC.getMap().getArea(plot()->getArea())->getCitiesPerPlayer(getOwner());
+	int iSpreadCities = GC.getMap().getArea(plot()->getArea())->countCanSpread(eReligion, getOwner(), true);
+
+	if (100 * iSpreadCities < iCityPercent * iAreaCities) return false;
+
+	std::pair<CvPlot*, CvPlot*> spreadPlots = AI_spreadTarget(eReligion);
+	CvPlot* pBestPlot = spreadPlots.first;
+	CvPlot* pBestSpreadPlot = spreadPlots.second;
+
+	if ((pBestPlot != NULL) && (pBestSpreadPlot != NULL))
+	{
+		if (atPlot(pBestSpreadPlot))
+		{
+			getGroup()->pushMission(MISSION_GREAT_MISSION);
+			return true;
+		}
+		else
+		{
+			FAssert(!atPlot(pBestPlot));
+			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), 0, false, false, MISSIONAI_SPREAD, pBestSpreadPlot);
+			return true;
+		}
 	}
 
 	return false;

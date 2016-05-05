@@ -567,7 +567,6 @@
 			<Description>TXT_KEY_ACTION_FLYING_CAMERA</Description>
 			<Help/>
 			<HotKey>KB_F</HotKey>
-			<!-- Rhye -->
 			<bAltDown>0</bAltDown>
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>1</bCtrlDown>
@@ -953,6 +952,21 @@
 			<bCtrlDownAlt>0</bCtrlDownAlt>
 			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
+		<ControlInfo>
+			<Type>CONTROL_STABILITY_OVERLAY</Type>
+			<Description>TXT_KEY_STABILITY_OVERLAY_WIDGET</Description>
+			<Help>TXT_KEY_STABILITY_OVERLAY_HELP</Help>
+			<HotKey>KB_K</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>1</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<HotKeyAlt>KB_K</HotKeyAlt>
+			<bAltDownAlt>0</bAltDownAlt>
+			<bShiftDownAlt>0</bShiftDownAlt>
+			<bCtrlDownAlt>1</bCtrlDownAlt>
+			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
+		</ControlInfo>
 		<!-- Rhye -->
 		<!-- Mercenaries Start -->
 		<ControlInfo>
@@ -970,6 +984,5 @@
 			<bCtrlDownAlt>0</bCtrlDownAlt>
 			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 		</ControlInfo>
-		<!-- Mercenaries End   -->				
 	</ControlInfos>
 </Civ4ControlInfos>

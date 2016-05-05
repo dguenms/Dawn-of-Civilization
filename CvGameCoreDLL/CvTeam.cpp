@@ -1159,7 +1159,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 	// Leoreth: protect recently spawned civs for ten turns to avoid early attack exploits
 	if (eTeam < NUM_MAJOR_PLAYERS)
 	{
-		if (GC.getGameINLINE().getGameTurn() - getScenarioStartTurn() > 10 && (GC.getGameINLINE().getGameTurn() - getTurnForYear(startingTurnYear[(int)eTeam]) < 10 || GC.getGameINLINE().getGameTurn() - GET_PLAYER((PlayerTypes)eTeam).getLatestRebellionTurn() < 10))
+		if (GC.getGameINLINE().getGameTurn() - getScenarioStartTurn() > 10 && (GC.getGameINLINE().getGameTurn() - GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getBirthTurn() < 10 || GC.getGameINLINE().getGameTurn() - GET_PLAYER((PlayerTypes)eTeam).getLatestRebellionTurn() < 10))
 		{
 			return false;
 		}
@@ -1564,8 +1564,6 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 
 		iOurStrength += getPower(true);
 		iTheirStrength += GET_TEAM(eTeam).getPower(true);
-
-		//GC.getGame().logMsg("Global war between %d and %d, our strength: %d, their strength: %d, world strength: %d", getID(), eTeam, iOurStrength, iTheirStrength, iWorldStrength);
 
 		bool bGlobalWar = (3 * (iOurStrength + iTheirStrength) > iWorldStrength);
 
@@ -2122,12 +2120,9 @@ int CvTeam::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 
 bool CvTeam::isVotingMember(VoteSourceTypes eVoteSource) const
 {
-	//Rhye - start
-	if (isMinorCiv() || isBarbarian())
-		return false;
-	//Rhye - end
+	if (isMinorCiv() || isBarbarian()) return false;
 
-	//Leoreth: Apostolic Palace has only full members
+	// Leoreth: Apostolic Palace has only full members
 	if ((int)eVoteSource == 1)
 	{
 		if (!isFullMember(eVoteSource))
@@ -2141,10 +2136,7 @@ bool CvTeam::isVotingMember(VoteSourceTypes eVoteSource) const
 
 bool CvTeam::isFullMember(VoteSourceTypes eVoteSource) const
 {
-	//Rhye - start
-	if (isMinorCiv() || isBarbarian())
-		return false;
-	//Rhye - end
+	if (isMinorCiv() || isBarbarian()) return false;
 
 	if (isForceTeamVoteEligible(eVoteSource))
 	{
@@ -2780,18 +2772,7 @@ int CvTeam::getCivilizationResearchModifier() const
 {
 	int iCivModifier;
 
-	if (getLeaderID() < NUM_MAJOR_PLAYERS)
-	{
-		iCivModifier = researchModifier[getLeaderID()];
-	}
-	else if (getLeaderID() == CELTIA)
-	{
-		iCivModifier = 350;
-	}
-	else
-	{
-		iCivModifier = 110;
-	}
+	iCivModifier = GET_PLAYER(getLeaderID()).getModifier(MODIFIER_RESEARCH_COST);
 
 	// Maya UP
 	if (GET_PLAYER(getLeaderID()).getCurrentEra() <= ERA_CLASSICAL)
@@ -2804,14 +2785,6 @@ int CvTeam::getCivilizationResearchModifier() const
 	{
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() == ERA_MEDIEVAL) iCivModifier += 15;
 		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 30;
-	}
-
-	// reborn civilizations have different modifiers
-	if (GET_PLAYER(getLeaderID()).isReborn())
-	{
-		if (getLeaderID() == PERSIA) iCivModifier = 90; // Iran
-		if (getLeaderID() == AZTEC) iCivModifier = 80; // Mexico
-		if (getLeaderID() == MAYA) iCivModifier = 80; // Colombia
 	}
 
 	return iCivModifier;
@@ -2863,9 +2836,9 @@ int CvTeam::getTurnResearchModifier() const
 		iTurnModifier *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
 		iTurnModifier /= 100;
 
-		if (GC.getGame().getGameTurn() <= getTurnForYear(startingTurnYear[getID()]) + iTurnModifier)
+		if (GC.getGame().getGameTurn() <= GET_PLAYER(getLeaderID()).getBirthTurn() + iTurnModifier)
 		{
-			iAmount = (getTurnForYear(startingTurnYear[getID()]) + iTurnModifier) - GC.getGame().getGameTurn();
+			iAmount = (GET_PLAYER(getLeaderID()).getBirthTurn() + iTurnModifier) - GC.getGame().getGameTurn();
 
 			// edead: this should make the length of the bonus longer but not the amount
 			iAmount *= 100;
@@ -2885,7 +2858,7 @@ int CvTeam::getTechLeaderModifier() const
 	return iModifier;
 
 	// Leoreth: penalty for the tech leader
-	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - getTurnForYear(startingTurnYear[getID()]) > getTurns(30))
+	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - GET_PLAYER(getLeaderID()).getBirthTurn() > getTurns(30))
 	{
 		int iBestValue = getTotalTechValue();
 		int iDenominator = 0;
@@ -2920,7 +2893,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	int iModifier = 0;
 
 	int iCurrentEra = GET_PLAYER(getLeaderID()).getCurrentEra();
-	int iStartingEra = getStartingEra(getLeaderID(), false);
+	int iStartingEra = GET_PLAYER(getLeaderID()).getStartingEra();
 
 	// effect does not apply during the era you started in
 	int iLeaderPenalty = (iCurrentEra > iStartingEra) ? lTechLeaderPenalty[iCurrentEra] : 0;
@@ -3931,6 +3904,11 @@ bool CvTeam::isHasMet(TeamTypes eIndex)	const
 	return m_abHasMet[eIndex];
 }
 
+bool CvTeam::isHasEverMet(TeamTypes eIndex) const
+{
+	return m_abHasEverMet[eIndex];
+}
+
 void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 {
 	CvDiploParameters* pDiplo;
@@ -4010,7 +3988,7 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 											if (GET_PLAYER((PlayerTypes)iI).isHuman())
 											{
 												// Rhye
-												if (!m_abHasEverMet[iI]) 
+												if (!isHasEverMet(GET_PLAYER((PlayerTypes)iI).getTeam())) 
 												{	
 													pDiplo = new CvDiploParameters(getLeaderID());
 													FAssertMsg(pDiplo != NULL, "pDiplo must be valid");
