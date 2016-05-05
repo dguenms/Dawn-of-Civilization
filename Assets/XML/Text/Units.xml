@@ -1340,7 +1340,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ORTHODOX_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Orthodox Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>[COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT] ([COLOR_UNIT_TEXT]Orthodox Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY</Tag>
@@ -1349,7 +1349,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CATHOLIC_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Catholic Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>[COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT] ([COLOR_UNIT_TEXT]Catholic Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PROTESTANT_MISSIONARY</Tag>
@@ -1358,7 +1358,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PROTESTANT_MISSIONARY_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Protestant Missionaries[COLOR_REVERT] can spread [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
+		<English>[COLOR_UNIT_TEXT]Missionaries[COLOR_REVERT] ([COLOR_UNIT_TEXT]Protestant Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ISLAMIC_MISSIONARY</Tag>

@@ -1485,4 +1485,104 @@
 		<English>[COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] has disappeared from %s2_CityName.</English>
 		<German>Die Religion [COLOR_HIGHLIGHT_TEXT]%s1_RelName[COLOR_REVERT] ist aus %s2_CityName verschwunden.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_CORPORATIONS</Tag>
+		<English>Corporations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_MILITARY_UNITS</Tag>
+		<English>Military Units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIQUE_UNITS</Tag>
+		<English>Unique Units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIT_CHARTS</Tag>
+		<English>Unit Charts</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_UNIQUE_BUILDINGS</Tag>
+		<English>Unique Buildings</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_RELIGIOUS_BUILDINGS</Tag>
+		<English>Religion Buildings</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_WORLD_WONDERS</Tag>
+		<English>Great Wonders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPTS</Tag>
+		<English>Concepts</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_FAVOURITES</Tag>
+		<English>Favourites</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_DETAILS</Tag>
+		<English>Details</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_RELIGIOUS_VICTORY</Tag>
+		<English>[BOLD]Religious victory[\BOLD][NEWLINE]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_LEADERS</Tag>
+		<English>Leaders</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_TERRAIN_FEATURE</Tag>
+		<English>Terrain Feature</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_TERRAIN</Tag>
+		<English>Terrain</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_USED_BY</Tag>
+		<English>Used by</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_SOURCES</Tag>
+		<English>Sources</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_ABILITIES</Tag>
+		<English>Abilities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_APPEAR_CONDITIONS</Tag>
+		<English>Appearing conditions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_HQ_WEALTH</Tag>
+		<English>[ICON_BULLET]Headquarters: +%d1[ICON_GOLD] per City</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_HQ_RESEARCH</Tag>
+		<English>[ICON_BULLET]Headquarters: +%d1[ICON_RESEARCH] per City</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_HQ_CULTURE</Tag>
+		<English>[ICON_BULLET]Headquarters: +%d1[ICON_CULTURE] per City</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_HQ_ESPIONAGE</Tag>
+		<English>[ICON_BULLET]Headquarters: +%d1[ICON_ESPIONAGE] per City</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_HEADER_RELIGION</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_HEADER_SPECIALIST</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Specialists[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</English>
+	</TEXT>
 </Civ4GameText>
