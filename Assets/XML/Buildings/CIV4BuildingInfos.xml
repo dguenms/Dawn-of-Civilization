@@ -9599,7 +9599,7 @@
 			</DomainProductionModifiers>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
