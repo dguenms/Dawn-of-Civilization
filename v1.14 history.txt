@@ -122,3 +122,7 @@
 * Roman building goal is checked when a building is built (credit to merijn_v1)
 * included the History Rewritten civilopedia adapted to DoC (credit to History Rewritten)
 * fixed a bug in the culture coverage initialization
+* added Chinese Qiqihar to the 1700 AD scenario
+* Sana'a is independent in the 1700 AD scenario
+* culture coverage is properly updated when a city changes owner
+* Trafalgar Square requires a Lighthouse now
