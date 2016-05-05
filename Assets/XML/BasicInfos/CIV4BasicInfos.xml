@@ -101,5 +101,10 @@
 			<Description>TXT_KEY_CONCEPT_DIPLOMATIC_INSTITUTIONS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_DIPLOMATIC_INSTITUTIONS_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_WORLDBUILDER</Type>
+			<Description>TXT_KEY_CONCEPT_EXTENDED_WORLDBUILDER</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_EXTENDED_WORLDBUILDER_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>
