@@ -49398,6 +49398,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=51
+	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -49843,6 +49844,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=52
+	RouteType=ROUTE_ROAD
 	BonusType=BONUS_OIL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
