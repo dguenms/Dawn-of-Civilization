@@ -76,7 +76,7 @@ MISCELLANEOUS
 * Steb: city names in Canada and the Americas
 
 GITHUB PROJECT CONTRIBUTORS
-Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, epgquota
+Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon
 
 FEEDBACK AND RESEARCH
 iOnlySignIn, Tomorrow's Dawn, strijder20, Tigranes, Dumanios, jammerculture, Jusos2108, J. Pride, The_Turk, Lone Wolf, Linkman226, BenZL43, blizzrd and many others

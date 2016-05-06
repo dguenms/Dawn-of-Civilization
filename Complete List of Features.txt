@@ -67,7 +67,7 @@ CONTRIBUTORS
 	* Civic stability information in the civics advisor
 * Bautos42: leaderhead art changes and new leaderheads
 * Alexius08: better score calculation formula
-* Imp. Knoedel, Citis, DC123456789, epgquota
+* Imp. Knoedel, Citis, DC123456789, Panopticon
 
 MAJOR FEATURES
 * Rebirth mechanism: some dead civilizations can respawn as another civilization at specific dates
