@@ -126,3 +126,4 @@
 * Sana'a is independent in the 1700 AD scenario
 * culture coverage is properly updated when a city changes owner
 * Trafalgar Square requires a Lighthouse now
+* Conquerors in the New World come with missionaries
