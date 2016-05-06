@@ -2174,8 +2174,6 @@ class RiseAndFall:
 			if city.getOwner() < iNumPlayers:
 				if (city.getX(), city.getY()) == Areas.getCapital(city.getOwner()) and city.isCapital():
 					lCities.remove(city)
-				
-		utils.show(str([city.getName() for city in lCities]))
 
 		return lCities
 						
@@ -2446,6 +2444,7 @@ class RiseAndFall:
 						iCounter = utils.getBestCounter(iOldWorldCiv)
 						iCavalry = utils.getBestCavalry(iOldWorldCiv)
 						iSiege = utils.getBestSiege(iOldWorldCiv)
+						iStateReligion = gc.getPlayer(iOldWorldCiv).getStateReligion()
 						
 						if iInfantry:
 							utils.makeUnitAI(iInfantry, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1 + iModifier2)
@@ -2458,6 +2457,9 @@ class RiseAndFall:
 							
 						if iCavalry:
 							utils.makeUnitAI(iCavalry, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iModifier1)
+							
+						if iStateReligion >= 0:
+							utils.makeUnit(iMissionary + iStateReligion, iOldWorldCiv, tArrivalPlot, 1)
 							
 						if iNewWorldCiv == iInca:
 							utils.makeUnitAI(iIncanAucac, iOldWorldCiv, tArrivalPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)

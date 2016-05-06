@@ -290,6 +290,7 @@ MINOR FEATURES
 * During trades, there is always at least as much gold available as would be produced with 50% gold rate
 * Reimplementation of the city name manager: automatic discovery of reverse city renaming, names native to the area are used if no names for the owner are available
 * Communist city names are based on civics, not on techs
+* Conquerors to the New World come with missionaries
 
 GAME RULES
 * The plague can only reduce units to 50% health, never kill them
