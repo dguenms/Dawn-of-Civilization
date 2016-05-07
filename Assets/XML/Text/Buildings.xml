@@ -120,15 +120,6 @@
 		<English>Royal Mounted Police</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_CHINESE_ACADEMY</Tag>
-		<English>Confucian Academy</English>
-		<German>
-			<Text>Konfuzianische Akademie</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CASTLE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Castles[COLOR_REVERT] increase your cities' defense against pre-gunpowder units, increase espionage output, generate a small amount of culture and also provide one extra trade route.</English>
 	</TEXT>
@@ -1043,12 +1034,12 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL</Tag>
-		<English>Confucian Xue Gong</English>
-		<German>Konfuzianische Xue Gong</German>
+		<English>Confucian Guozijian</English>
+		<German>Konfuzianische Guozijian</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Xue Gong[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Guozijian[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Cathedral[COLOR_REVERT]) greatly increases a city's cultural output. It increases the city's happiness if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is your state religion, or if you have access to [COLOR_HIGHLIGHT_TEXT]Incense[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_SHRINE</Tag>
