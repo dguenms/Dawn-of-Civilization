@@ -92,8 +92,13 @@ class CvPediaCivic:
 		text = self.top.getNextWidgetName()
 		screen.attachListBoxGFC(panel, text, "", TableStyles.TABLE_STYLE_EMPTY)
 		screen.enableSelect(text, False)
+		
+		szText = ""
+		
+		pUpkeepInfo = gc.getUpkeepInfo(gc.getCivicInfo(self.iCivic).getUpkeep())
+		if pUpkeepInfo: szText += u"%s\n" % pUpkeepInfo.getDescription()
 
-		szText = CyGameTextMgr().parseCivicInfo(self.iCivic, True, False, True).strip()
+		szText += CyGameTextMgr().parseCivicInfo(self.iCivic, True, False, True).strip()
 		for iYield in xrange(YieldTypes.NUM_YIELD_TYPES):
 			oldstring = u"%c from Trade Routes" % (gc.getYieldInfo(iYield).getChar())
 			newstring = u" Trade Route Yield as %c" % (gc.getYieldInfo(iYield).getChar())
