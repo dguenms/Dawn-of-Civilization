@@ -48,7 +48,7 @@ LEADERHEADS
 * Bautos42: texture and background changes for various included leaders
 
 From mods, without explicit mention of the original creators
-* The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak), Rahman
+* The Sword of Islam (embryodead): Abbas, Abu Bakr, Ibn Tughluq (Qutbuddin Aybak), Rahman, Akbar
 * RFC Asia: Hongwu
 
 UNITS
