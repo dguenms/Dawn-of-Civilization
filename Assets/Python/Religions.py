@@ -105,12 +105,8 @@ class Religions:
 				if not gc.getGame().isReligionFounded(iHinduism):
 					if not gc.getMap().plot(92, 39).getPlotCity().isNone():
 						self.foundReligion((92, 39), iHinduism)
-
-		if iGameTurn == getTurnForYear(-1200) - utils.getTurns(5) + utils.getTurns(utils.getSeed() % 10):
-			if gc.getMap().plot(tJerusalem[0], tJerusalem[1]).isCity():
-				self.foundReligion(tJerusalem, iJudaism)
-			else:
-				self.foundReligion(utils.getRandomEntry(utils.getAreaCities(utils.getPlotList(tJewishTL, tJewishBR))), iJudaism)
+				
+		self.checkJudaism(iGameTurn)
 
 		self.checkChristianity(iGameTurn)
 						
@@ -227,6 +223,15 @@ class Religions:
 		utils.makeUnit(iMissionary, city.getOwner(), tCoords, iNum)
 		
 ## JUDAISM
+
+	def checkJudaism(self, iGameTurn):
+		if gc.getGame().isReligionFounded(iJudaism): return
+
+		if iGameTurn == getTurnForYear(-1200) - utils.getTurns(5) + utils.getTurns(utils.getSeed() % 10):
+			if gc.getMap().plot(tJerusalem[0], tJerusalem[1]).isCity():
+				self.foundReligion(tJerusalem, iJudaism)
+			else:
+				self.foundReligion(utils.getRandomEntry(utils.getAreaCities(utils.getPlotList(tJewishTL, tJewishBR))), iJudaism)
 
 	def spreadJudaismEurope(self, iGameTurn):
 		if not gc.getGame().isReligionFounded(iJudaism): return
