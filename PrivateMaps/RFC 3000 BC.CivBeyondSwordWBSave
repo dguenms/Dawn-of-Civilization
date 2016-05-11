@@ -1,5 +1,3 @@
-Platy Builder
-bLoadSpecial=1
 Version=11
 BeginGame
 	Calendar=CALENDAR_DEFAULT
@@ -11,170 +9,118 @@ BeginGame
 	ModPath=Mods\RFC Dawn of Civilization
 EndGame
 BeginTeam
-	TeamID=0, (Egypt)
 	Tech=TECH_THE_WHEEL
 	Tech=TECH_AGRICULTURE
 EndTeam
 BeginTeam
-	TeamID=1, (China)
 	Tech=TECH_AGRICULTURE
 	Tech=TECH_MINING
 EndTeam
 BeginTeam
-	TeamID=2, (Babylonia)
-	Tech=TECH_THE_WHEEL
 	Tech=TECH_AGRICULTURE
+	Tech=TECH_THE_WHEEL
+	Tech=TECH_ANIMAL_HUSBANDRY
 	Tech=TECH_POTTERY
 	Tech=TECH_ARCHERY
-	Tech=TECH_ANIMAL_HUSBANDRY
 EndTeam
 BeginTeam
-	TeamID=3, (Harappa)
-	Tech=TECH_THE_WHEEL
 	Tech=TECH_AGRICULTURE
+	Tech=TECH_THE_WHEEL
 EndTeam
 BeginTeam
-	TeamID=4, (Greece)
 EndTeam
 BeginTeam
-	TeamID=5, (India)
 EndTeam
 BeginTeam
-	TeamID=6, (Phoenicia)
 EndTeam
 BeginTeam
-	TeamID=7, (Polynesia)
 EndTeam
 BeginTeam
-	TeamID=8, (Persia)
 EndTeam
 BeginTeam
-	TeamID=9, (Rome)
 EndTeam
 BeginTeam
-	TeamID=10, (Tamils)
 EndTeam
 BeginTeam
-	TeamID=11, (Ethiopia)
 EndTeam
 BeginTeam
-	TeamID=12, (Korea)
 EndTeam
 BeginTeam
-	TeamID=13, (Maya)
 EndTeam
 BeginTeam
-	TeamID=14, (Byzantium)
 EndTeam
 BeginTeam
-	TeamID=15, (Japan)
 EndTeam
 BeginTeam
-	TeamID=16, (Vikings)
 EndTeam
 BeginTeam
-	TeamID=17, (Arabia)
 EndTeam
 BeginTeam
-	TeamID=18, (Tibet)
 EndTeam
 BeginTeam
-	TeamID=19, (Khmer)
 EndTeam
 BeginTeam
-	TeamID=20, (Indonesia)
 EndTeam
 BeginTeam
-	TeamID=21, (Moors)
 EndTeam
 BeginTeam
-	TeamID=22, (Spain)
 EndTeam
 BeginTeam
-	TeamID=23, (France)
 EndTeam
 BeginTeam
-	TeamID=24, (England)
 EndTeam
 BeginTeam
-	TeamID=25, (HolyRome)
 EndTeam
 BeginTeam
-	TeamID=26, (Russia)
 EndTeam
 BeginTeam
-	TeamID=27, (Mali)
 EndTeam
 BeginTeam
-	TeamID=28, (Poland)
 EndTeam
 BeginTeam
-	TeamID=29, (Portugal)
 EndTeam
 BeginTeam
-	TeamID=30, (Inca)
 EndTeam
 BeginTeam
-	TeamID=31, (Italy)
 EndTeam
 BeginTeam
-	TeamID=32, (Mongols)
 EndTeam
 BeginTeam
-	TeamID=33, (Aztecs)
 EndTeam
 BeginTeam
-	TeamID=34, (Mughals)
 EndTeam
 BeginTeam
-	TeamID=35, (Turkey)
 EndTeam
 BeginTeam
-	TeamID=36, (Thailand)
 EndTeam
 BeginTeam
-	TeamID=37, (Congo)
 EndTeam
 BeginTeam
-	TeamID=38, (Netherlands)
 EndTeam
 BeginTeam
-	TeamID=39, (Germany)
 EndTeam
 BeginTeam
-	TeamID=40, (America)
 EndTeam
 BeginTeam
-	TeamID=41, (Argentina)
 EndTeam
 BeginTeam
-	TeamID=42, (Brazil)
 EndTeam
 BeginTeam
-	TeamID=43, (Canada)
 EndTeam
 BeginTeam
-	TeamID=44, (Independent)
 EndTeam
 BeginTeam
-	TeamID=45, (Independent2)
 EndTeam
 BeginTeam
-	TeamID=46, (Native)
 EndTeam
 BeginTeam
-	TeamID=47, (Celtia)
 EndTeam
 BeginTeam
-	TeamID=48, (Seljuks)
-EndTeam
-BeginTeam
-	TeamID=49, (Barbarian)
 EndTeam
 BeginPlayer
-	Team=0
 	LeaderType=LEADER_RAMESSES
 	CivType=CIVILIZATION_EGYPT
+	Team=0
 	PlayableCiv=1
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -182,50 +128,47 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=1
 	LeaderType=LEADER_QIN_SHI_HUANG
 	CivType=CIVILIZATION_CHINA
+	Team=1
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=2
 	LeaderType=LEADER_HAMMURABI
 	CivType=CIVILIZATION_BABYLONIA
+	Team=2
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=3
 	LeaderType=LEADER_VATAVELLI
 	CivType=CIVILIZATION_HARAPPANS
+	Team=3
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=4
 	LeaderType=LEADER_PERICLES
 	CivType=CIVILIZATION_GREECE
+	Team=4
 	PlayableCiv=1
-	StartingGold=100
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=5
 	LeaderType=LEADER_ASOKA
 	CivType=CIVILIZATION_INDIA
+	Team=5
 	PlayableCiv=1
-	StartingGold=80
 	StateReligion=RELIGION_HINDUISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=6
 	LeaderType=LEADER_HANNIBAL
 	CivType=CIVILIZATION_PHOENICIA
+	Team=6
 	PlayableCiv=1
-	StartingGold=200
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
@@ -233,108 +176,98 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=7
 	LeaderType=LEADER_AHOEITU
 	CivType=CIVILIZATION_POLYNESIA
-	Color=PLAYERCOLOR_POLYNESIA
+	Team=7
 	PlayableCiv=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=8
 	LeaderType=LEADER_CYRUS
 	CivType=CIVILIZATION_PERSIA
+	Team=8
 	PlayableCiv=1
-	StartingGold=200
-	StateReligion=RELIGION_ZOROASTRIANISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	StateReligion=RELIGION_ZOROASTRIANISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=9
 	LeaderType=LEADER_AUGUSTUS
 	CivType=CIVILIZATION_ROME
+	Team=9
 	PlayableCiv=1
-	StartingGold=100
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=10
 	LeaderType=LEADER_RAJENDRA
 	CivType=CIVILIZATION_TAMILS
+	Team=10
 	PlayableCiv=1
-	StartingGold=200
 	StateReligion=RELIGION_HINDUISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic_CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=11
 	LeaderType=LEADER_ZARA_YAQOB
 	CivType=CIVILIZATION_ETHIOPIA
+	Team=11
 	PlayableCiv=1
-	StartingGold=100
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=12
 	LeaderType=LEADER_WANGKON
 	CivType=CIVILIZATION_KOREA
+	Team=12
 	PlayableCiv=1
-	StartingGold=200
-	StateReligion=RELIGION_BUDDHISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=13
 	LeaderType=LEADER_PACAL
 	CivType=CIVILIZATION_MAYA
+	Team=13
 	PlayableCiv=1
-	StartingGold=200
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=14
 	LeaderType=LEADER_JUSTINIAN
 	CivType=CIVILIZATION_BYZANTIUM
+	Team=14
 	PlayableCiv=1
-	StartingGold=400
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_MERCENARIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=15
 	LeaderType=LEADER_TOKUGAWA
 	CivType=CIVILIZATION_JAPAN
+	Team=15
 	PlayableCiv=1
-	StartingGold=100
-	StateReligion=RELIGION_BUDDHISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=16
 	LeaderType=LEADER_RAGNAR
 	CivType=CIVILIZATION_VIKING
+	Team=16
 	PlayableCiv=1
-	StartingGold=150
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
@@ -342,423 +275,389 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=17
 	LeaderType=LEADER_SALADIN
 	CivType=CIVILIZATION_ARABIA
+	Team=17
 	PlayableCiv=1
-	StartingGold=300
-	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FANATICISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=18
 	LeaderType=LEADER_LOBSANG_GYATSO
 	CivType=CIVILIZATION_TIBET
+	Team=18
 	PlayableCiv=1
-	StartingGold=50
-	StateReligion=RELIGION_BUDDHISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=19
 	LeaderType=LEADER_SURYAVARMAN
 	CivType=CIVILIZATION_KHMER
+	Team=19
 	PlayableCiv=1
-	StartingGold=200
-	StateReligion=RELIGION_HINDUISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_HINDUISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=20
 	LeaderType=LEADER_HAYAM_WURUK
 	CivType=CIVILIZATION_INDONESIA
+	Team=20
 	PlayableCiv=1
-	StartingGold=300
-	StateReligion=RELIGION_BUDDHISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=21
 	LeaderType=LEADER_RAHMAN
 	CivType=CIVILIZATION_MOORS
+	Team=21
 	PlayableCiv=1
-	StartingGold=200
-	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SCHOLASTICISM
+	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=22
 	LeaderType=LEADER_ISABELLA
 	CivType=CIVILIZATION_SPAIN
+	Team=22
 	PlayableCiv=1
-	StartingGold=200
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=23
 	LeaderType=LEADER_LOUIS_XIV
 	CivType=CIVILIZATION_FRANCE
+	Team=23
 	PlayableCiv=1
-	StartingGold=150
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=24
 	LeaderType=LEADER_VICTORIA
 	CivType=CIVILIZATION_ENGLAND
+	Team=24
 	PlayableCiv=1
-	StartingGold=200
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=25
 	LeaderType=LEADER_BARBAROSSA
 	CivType=CIVILIZATION_HOLY_ROMAN
+	Team=25
 	PlayableCiv=1
-	StartingGold=150
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=26
 	LeaderType=LEADER_STALIN
 	CivType=CIVILIZATION_RUSSIA
+	Team=26
 	PlayableCiv=1
-	StartingGold=200
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	Handicap=HANDICAP_REGENT
-	StateReligionBuilding=25
 EndPlayer
 BeginPlayer
-	Team=27
 	LeaderType=LEADER_MANSA_MUSA
 	CivType=CIVILIZATION_MALI
+	Team=27
 	PlayableCiv=1
-	StartingGold=600
-	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=28
 	LeaderType=LEADER_SOBIESKI
 	CivType=CIVILIZATION_POLAND
+	Team=28
 	PlayableCiv=1
-	StartingGold=100
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=29
 	LeaderType=LEADER_JOAO
 	CivType=CIVILIZATION_PORTUGAL
+	Team=29
 	PlayableCiv=1
-	StartingGold=200
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_GUILDS
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_GUILDS
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=30
 	LeaderType=LEADER_HUAYNA_CAPAC
 	CivType=CIVILIZATION_INCA
+	Team=30
 	PlayableCiv=1
-	StartingGold=700
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=31
 	LeaderType=LEADER_CAVOUR
 	CivType=CIVILIZATION_ITALY
+	Team=31
 	PlayableCiv=1
-	StartingGold=350
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
-	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_GUILDS
+	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=32
 	LeaderType=LEADER_GENGHIS_KHAN
 	CivType=CIVILIZATION_MONGOL
+	Team=32
 	PlayableCiv=1
-	StartingGold=250
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=33
 	LeaderType=LEADER_MONTEZUMA
 	CivType=CIVILIZATION_AZTEC
+	Team=33
 	PlayableCiv=1
-	StartingGold=600
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=34
 	LeaderType=LEADER_AKBAR
 	CivType=CIVILIZATION_MUGHALS
+	Team=34
 	PlayableCiv=1
-	StartingGold=400
-	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_GUILDS
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=35
 	LeaderType=LEADER_MEHMED
 	CivType=CIVILIZATION_OTTOMAN
+	Team=35
 	PlayableCiv=1
-	StartingGold=300
-	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_GUILDS
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
+	StateReligion=RELIGION_ISLAM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=36
 	LeaderType=LEADER_NARESUAN
 	CivType=CIVILIZATION_THAILAND
+	Team=36
 	PlayableCiv=1
-	StartingGold=800
-	StateReligion=RELIGION_BUDDHISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
+	StateReligion=RELIGION_BUDDHISM
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=37
 	LeaderType=LEADER_MBEMBA
 	CivType=CIVILIZATION_CONGO
+	Team=37
 	PlayableCiv=1
-	StartingGold=300
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=38
 	LeaderType=LEADER_WILLEM_VAN_ORANJE
 	CivType=CIVILIZATION_NETHERLANDS
+	Team=38
 	PlayableCiv=1
-	StartingGold=600
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_AGRARIANISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_MERCENARIES
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=39
 	LeaderType=LEADER_FREDERICK
 	CivType=CIVILIZATION_GERMANY
+	Team=39
 	PlayableCiv=1
-	StartingGold=800
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_ABSOLUTISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_CAPITALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=40
 	LeaderType=LEADER_FRANKLIN_ROOSEVELT
 	CivType=CIVILIZATION_AMERICA
+	Team=40
 	PlayableCiv=1
-	StartingGold=1500
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_REPUBLIC
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_CAPITALISM
+	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=41
 	LeaderType=LEADER_SAN_MARTIN
 	CivType=CIVILIZATION_ARGENTINA
+	Team=41
 	PlayableCiv=1
-	StartingGold=1200
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_AUTOCRACY
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_CAPITALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SECULARISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=42
 	LeaderType=LEADER_DOM_PEDRO
 	CivType=CIVILIZATION_BRAZIL
+	Team=42
 	PlayableCiv=1
-	StartingGold=1600
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=43
 	LeaderType=LEADER_TRUDEAU
 	CivType=CIVILIZATION_CANADA
+	Team=43
 	PlayableCiv=1
-	StartingGold=1000
-	StateReligion=RELIGION_ORTHODOXY
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_REPRESENTATION
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_CAPITALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCANTILISM
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_STANDING_ARMY
+	StateReligion=RELIGION_ORTHODOXY
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=44
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT
+	Team=44
 	PlayableCiv=0
 	MinorNationStatus=1
-	StartingGold=50
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=45
 	LeaderType=LEADER_INDEPENDENT
 	CivType=CIVILIZATION_INDEPENDENT2
+	Team=45
 	PlayableCiv=0
 	MinorNationStatus=1
-	StartingGold=50
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=46
 	LeaderType=LEADER_NATIVE
 	CivType=CIVILIZATION_NATIVE
+	Team=46
 	PlayableCiv=0
 	MinorNationStatus=1
-	StartingGold=100
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=47
 	LeaderType=LEADER_BRENNUS
 	CivType=CIVILIZATION_CELT
+	Team=47
 	PlayableCiv=0
 	MinorNationStatus=1
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=48
 	LeaderType=LEADER_ALP
 	CivType=CIVILIZATION_SELJUK
-	Color=PLAYERCOLOR_SELJUK
-	ArtStyle=ARTSTYLE_MIDDLE_EAST
-	PlayableCiv=0
+	StateReligion=RELIGION_ISLAM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
+	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ANIMISM
 	MinorNationStatus=1
-	StartingGold=250
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=49
-	LeaderType=LEADER_BARBARIAN
-	CivType=CIVILIZATION_BARBARIAN
+	Team=48
 	PlayableCiv=0
 	Handicap=HANDICAP_REGENT
 EndPlayer
+
 BeginMap
 	grid width=124
 	grid height=68
-	top latitude=90
-	bottom latitude=-90
 	wrap X=1
 	wrap Y=0
+	top latitude=90
+	bottom latitude=-90
 	world size=WORLDSIZE_HUGE
 	climate=CLIMATE_TEMPERATE
 	sealevel=SEALEVEL_MEDIUM
@@ -26516,12 +26415,6 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=0, (Egypt)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)
-	EndUnit
 EndPlot
 BeginPlot
 	x=69,y=34
@@ -29226,12 +29119,6 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=2, (Babylonia)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
-	EndUnit
 EndPlot
 BeginPlot
 	x=76,y=41
@@ -38297,12 +38184,6 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=1, (China)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER, UnitOwner=1, (China)
-	EndUnit
 EndPlot
 BeginPlot
 	x=100,y=45
