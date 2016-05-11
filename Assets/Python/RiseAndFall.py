@@ -457,12 +457,12 @@ class RiseAndFall:
 		if utils.getScenario() == i600AD:
 			Civilizations.initScenarioTechs(i600AD)
 			self.create600ADstartingUnits()
-			self.assign600ADGold()
+#			self.assign600ADGold()
 			
 		if utils.getScenario() == i1700AD:
 			Civilizations.initScenarioTechs(i1700AD)
 			self.create1700ADstartingUnits()
-			self.assign1700ADGold()
+#			self.assign1700ADGold()
 			self.init1700ADDiplomacy()
 			self.prepareColonists()
 			self.adjust1700ADCulture()
@@ -472,7 +472,7 @@ class RiseAndFall:
 			
 			pChina.updateTradeRoutes()
 		
-		self.assign3000BCGold()	
+#		self.assign3000BCGold()	
 		self.invalidateUHVs()
 		
 		gc.getGame().setVoteSourceReligion(1, iCatholicism, False)
@@ -538,23 +538,23 @@ class RiseAndFall:
 				if plot.getOwner() != -1:
 					utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
 					
-		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
-			utils.convertPlotCulture(gc.getMap().plot(x, y), iPortugal, 100, True)
+#		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
+#			utils.convertPlotCulture(gc.getMap().plot(x, y), iPortugal, 100, True)
 			
-		for x, y in [(58, 49), (59, 49), (60, 49)]:
-			utils.convertPlotCulture(gc.getMap().plot(x, y), iGermany, 100, True)
+#		for x, y in [(58, 49), (59, 49), (60, 49)]:
+#			utils.convertPlotCulture(gc.getMap().plot(x, y), iGermany, 100, True)
 			
-		for x, y in [(62, 51)]:
-			utils.convertPlotCulture(gc.getMap().plot(x, y), iHolyRome, 100, True)
+#		for x, y in [(62, 51)]:
+#			utils.convertPlotCulture(gc.getMap().plot(x, y), iHolyRome, 100, True)
 			
-		for x, y in [(58, 52), (58, 53)]:
-			utils.convertPlotCulture(gc.getMap().plot(x, y), iNetherlands, 100, True)
+#		for x, y in [(58, 52), (58, 53)]:
+#			utils.convertPlotCulture(gc.getMap().plot(x, y), iNetherlands, 100, True)
 			
-		for x, y in [(64, 53), (66, 55)]:
-			utils.convertPlotCulture(gc.getMap().plot(x, y), iPoland, 100, True)
+#		for x, y in [(64, 53), (66, 55)]:
+#			utils.convertPlotCulture(gc.getMap().plot(x, y), iPoland, 100, True)
 			
-		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54)]:
-			utils.convertPlotCulture(gc.getMap().plot(x, y), iRussia, 100, True)
+#		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54)]:
+#			utils.convertPlotCulture(gc.getMap().plot(x, y), iRussia, 100, True)
 			
 	def prepareColonists(self):
 		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
@@ -580,23 +580,23 @@ class RiseAndFall:
 			gc.getPlayer(iPlayer).changeGold(utils.getTurns(dExtraGold1700AD[iPlayer]))
 		
 	def init1700ADDiplomacy(self):	
-		self.changeAttitudeExtra(iIndia, iMughals, -2)
-		self.changeAttitudeExtra(iPersia, iTurkey, -4)
-		self.changeAttitudeExtra(iPersia, iMughals, -2)
-		self.changeAttitudeExtra(iChina, iKorea, 2)
-		self.changeAttitudeExtra(iVikings, iRussia, -2)
-		self.changeAttitudeExtra(iVikings, iTurkey, -2)
-		self.changeAttitudeExtra(iSpain, iPortugal, 2)
-		self.changeAttitudeExtra(iFrance, iEngland, -4)
-		self.changeAttitudeExtra(iFrance, iNetherlands, 2)
-		self.changeAttitudeExtra(iFrance, iTurkey, -2)
-		self.changeAttitudeExtra(iEngland, iPortugal, 2)
-		self.changeAttitudeExtra(iEngland, iMughals, -2)
-		self.changeAttitudeExtra(iEngland, iTurkey, -2)
-		self.changeAttitudeExtra(iHolyRome, iTurkey, -4)
-		self.changeAttitudeExtra(iRussia, iTurkey, -4)
-		self.changeAttitudeExtra(iPortugal, iNetherlands, -2)
-		self.changeAttitudeExtra(iNetherlands, iTurkey, -2)
+#		self.changeAttitudeExtra(iIndia, iMughals, -2)
+#		self.changeAttitudeExtra(iPersia, iTurkey, -4)
+#		self.changeAttitudeExtra(iPersia, iMughals, -2)
+#		self.changeAttitudeExtra(iChina, iKorea, 2)
+#		self.changeAttitudeExtra(iVikings, iRussia, -2)
+#		self.changeAttitudeExtra(iVikings, iTurkey, -2)
+#		self.changeAttitudeExtra(iSpain, iPortugal, 2)
+#		self.changeAttitudeExtra(iFrance, iEngland, -4)
+#		self.changeAttitudeExtra(iFrance, iNetherlands, 2)
+#		self.changeAttitudeExtra(iFrance, iTurkey, -2)
+#		self.changeAttitudeExtra(iEngland, iPortugal, 2)
+#		self.changeAttitudeExtra(iEngland, iMughals, -2)
+#		self.changeAttitudeExtra(iEngland, iTurkey, -2)
+#		self.changeAttitudeExtra(iHolyRome, iTurkey, -4)
+#		self.changeAttitudeExtra(iRussia, iTurkey, -4)
+#		self.changeAttitudeExtra(iPortugal, iNetherlands, -2)
+#		self.changeAttitudeExtra(iNetherlands, iTurkey, -2)
 		
 		teamEngland.declareWar(iMughals, False, WarPlanTypes.WARPLAN_LIMITED)
 		teamIndia.declareWar(iMughals, False, WarPlanTypes.WARPLAN_TOTAL)
@@ -624,10 +624,10 @@ class RiseAndFall:
 		if utils.getScenario() == i600AD:
 		
 			# Byzantium
-			tCapital = Areas.getCapital(iByzantium)
-			lBuildings = [iWalls, iCastle, iBarracks, iStable, iGranary, iLibrary, iMarket, \
-				      iOrthodoxTemple, iByzantineHippodrome, iHagiaSophia, iTheodosianWalls]
-			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [iJudaism, iCatholicism, iOrthodoxy])
+#			tCapital = Areas.getCapital(iByzantium)
+#			lBuildings = [iWalls, iCastle, iBarracks, iStable, iGranary, iLibrary, iMarket, \
+#				      iOrthodoxTemple, iByzantineHippodrome, iHagiaSophia, iTheodosianWalls]
+#			city = utils.foundCapital(iByzantium, tCapital, 'Konstantinoupolis', 4, 250, lBuildings, [iJudaism, iCatholicism, iOrthodoxy])
 			
 			# China
 			self.prepareChina()
@@ -638,73 +638,73 @@ class RiseAndFall:
 		if utils.getScenario() == i1700AD:
 			
 			# London
-			x, y = Areas.getCapital(iEngland)
-			pLondon = gc.getMap().plot(x, y).getPlotCity()
-			pLondon.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
+#			x, y = Areas.getCapital(iEngland)
+#			pLondon = gc.getMap().plot(x, y).getPlotCity()
+#			pLondon.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
 			
 			# Paris
-			x, y = Areas.getCapital(iFrance)
-			pParis = gc.getMap().plot(x, y).getPlotCity()
-			pParis.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
+#			x, y = Areas.getCapital(iFrance)
+#			pParis = gc.getMap().plot(x, y).getPlotCity()
+#			pParis.setFreeSpecialistCount(iSpecialistGreatScientist, 1)
 			
 			# Netherlands
-			x, y = Areas.getCapital(iNetherlands)
-			pAmsterdam = gc.getMap().plot(x, y).getPlotCity()
-			pAmsterdam.setFreeSpecialistCount(iSpecialistGreatMerchant, 2)
+#			x, y = Areas.getCapital(iNetherlands)
+#			pAmsterdam = gc.getMap().plot(x, y).getPlotCity()
+#			pAmsterdam.setFreeSpecialistCount(iSpecialistGreatMerchant, 2)
 			
 			# Hamburg
-			x, y = tHamburg
-			pHamburg = gc.getMap().plot(x, y).getPlotCity()
-			pHamburg.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
-			pHamburg.setCulture(iNetherlands, 0, True)
-			gc.getMap().plot(x, y).setCulture(iNetherlands, 0, True)
+#			x, y = tHamburg
+#			pHamburg = gc.getMap().plot(x, y).getPlotCity()
+#			pHamburg.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
+#			pHamburg.setCulture(iNetherlands, 0, True)
+#			gc.getMap().plot(x, y).setCulture(iNetherlands, 0, True)
 			
 			# Milan
-			x, y = tMilan
-			pMilan = gc.getMap().plot(x, y).getPlotCity()
-			pMilan.setFreeSpecialistCount(iSpecialistGreatMerchant, 2)
-			pMilan.setFreeSpecialistCount(iSpecialistGreatEngineer, 1)
+#			x, y = tMilan
+#			pMilan = gc.getMap().plot(x, y).getPlotCity()
+#			pMilan.setFreeSpecialistCount(iSpecialistGreatMerchant, 2)
+#			pMilan.setFreeSpecialistCount(iSpecialistGreatEngineer, 1)
 			
 			# Kyoto
-			x, y = Areas.getCapital(iJapan)
-			pKyoto = gc.getMap().plot(x, y).getPlotCity()
-			pKyoto.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
+#			x, y = Areas.getCapital(iJapan)
+#			pKyoto = gc.getMap().plot(x, y).getPlotCity()
+#			pKyoto.setFreeSpecialistCount(iSpecialistGreatMerchant, 1)
 			
 			# Mecca
-			pMecca = gc.getGame().getHolyCity(iIslam)
-			pMecca.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
+#			pMecca = gc.getGame().getHolyCity(iIslam)
+#			pMecca.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
 			
 			# Rome
-			x, y = Areas.getCapital(iRome)
-			pRome = gc.getMap().plot(x, y).getPlotCity()
-			pRome.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
+#			x, y = Areas.getCapital(iRome)
+#			pRome = gc.getMap().plot(x, y).getPlotCity()
+#			pRome.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
 			
 			# Baghdad
-			x, y = tBaghdad
-			pBaghdad = gc.getMap().plot(x, y).getPlotCity()
-			pBaghdad.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
+#			x, y = tBaghdad
+#			pBaghdad = gc.getMap().plot(x, y).getPlotCity()
+#			pBaghdad.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
 			
 			# Pataliputra
-			pPataliputra = gc.getGame().getHolyCity(iHinduism)
-			pPataliputra.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
+#			pPataliputra = gc.getGame().getHolyCity(iHinduism)
+#			pPataliputra.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
 			
 			# Lhasa
-			x, y = Areas.getCapital(iTibet)
-			pLhasa = gc.getMap().plot(x, y).getPlotCity()
-			pLhasa.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
+#			x, y = Areas.getCapital(iTibet)
+#			pLhasa = gc.getMap().plot(x, y).getPlotCity()
+#			pLhasa.setFreeSpecialistCount(iSpecialistGreatProphet, 2)
 			
 			# Ayutthaya
-			x, y = Areas.getCapital(iThailand)
-			pAyutthaya = gc.getMap().plot(x, y).getPlotCity()
-			pAyutthaya.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
+#			x, y = Areas.getCapital(iThailand)
+#			pAyutthaya = gc.getMap().plot(x, y).getPlotCity()
+#			pAyutthaya.setFreeSpecialistCount(iSpecialistGreatProphet, 1)
 			
 			# Chengdu
 			pChengdu = gc.getMap().plot(99, 41).getPlotCity()
 			pChengdu.setCulture(iChina, 100, True)
 			
 			# Mumbai
-			pMumbai = gc.getMap().plot(88, 34).getPlotCity()
-			pMumbai.setFreeSpecialistCount(iSpecialistGreatGeneral, 1)
+#			pMumbai = gc.getMap().plot(88, 34).getPlotCity()
+#			pMumbai.setFreeSpecialistCount(iSpecialistGreatGeneral, 1)
 			
 	def flipStartingTerritory(self):
 	
@@ -715,7 +715,7 @@ class RiseAndFall:
 			tBR1 = (76, 45)
 			tTL2 = (66, 34)
 			tBR2 = (70, 37)
-			self.startingFlip(iByzantium, [(tTL1, tBR1), (tTL2, tBR2)])
+#			self.startingFlip(iByzantium, [(tTL1, tBR1), (tTL2, tBR2)])
 			
 			# China
 			tTL, tBR = Areas.tBirthArea[iChina]
@@ -732,8 +732,8 @@ class RiseAndFall:
 			self.startingFlip(iChina, [(tTibetTL, tTibetBR), (tManchuriaTL, tManchuriaBR)])
 			
 			# Russia (Sankt Peterburg)
-			utils.convertPlotCulture(gc.getMap().plot(68, 58), iRussia, 100, True)
-			utils.convertPlotCulture(gc.getMap().plot(67, 57), iRussia, 100, True)
+#			utils.convertPlotCulture(gc.getMap().plot(68, 58), iRussia, 100, True)
+#			utils.convertPlotCulture(gc.getMap().plot(67, 57), iRussia, 100, True)
 			
 			
 	def startingFlip(self, iPlayer, lRegionList):
@@ -3542,119 +3542,120 @@ class RiseAndFall:
 	
 		# China
 		tCapital = tBeijing
-		utils.makeUnit(iMusketman, iChina, tCapital, 12)
-		utils.makeUnit(iBombard, iChina, tCapital, 5)
+#		utils.makeUnit(iMusketman, iChina, tCapital, 12)
+#		utils.makeUnit(iBombard, iChina, tCapital, 5)
 		
 		# India
 		tCapital = tMumbai
-		utils.makeUnit(iMusketman, iIndia, tCapital, 8)
-		utils.makeUnit(iBombard, iIndia, tCapital, 5)
-		utils.makeUnit(iCuirassier, iIndia, tCapital, 3)
+#		utils.makeUnit(iMusketman, iIndia, tCapital, 8)
+#		utils.makeUnit(iBombard, iIndia, tCapital, 5)
+#		utils.makeUnit(iCuirassier, iIndia, tCapital, 3)
 		
 		# Tamils
 		tCapital = tMysore
-		utils.makeUnit(iMusketman, iTamils, tCapital, 6)
-		utils.makeUnit(iBombard, iTamils, tCapital, 4)
+#		utils.makeUnit(iMusketman, iTamils, tCapital, 6)
+#		utils.makeUnit(iBombard, iTamils, tCapital, 4)
 		
 		# Persia
 		tCapital = tEsfahan
-		utils.makeUnit(iIranianQizilbash, iPersia, tCapital, 10)
-		utils.makeUnit(iBombard, iPersia, tCapital, 4)
+#		utils.makeUnit(iIranianQizilbash, iPersia, tCapital, 10)
+#		utils.makeUnit(iBombard, iPersia, tCapital, 4)
 		
 		# Korea
 		tCapital = Areas.getCapital(iKorea)
-		utils.makeUnit(iMusketman, iKorea, tCapital, 6)
-		utils.makeUnit(iBombard, iKorea, tCapital, 4)
+#		utils.makeUnit(iMusketman, iKorea, tCapital, 6)
+#		utils.makeUnit(iBombard, iKorea, tCapital, 4)
 		
 		# Japan
 		tCapital = Areas.getCapital(iJapan)
-		utils.makeUnit(iMusketman, iJapan, tCapital, 10)
-		utils.makeUnit(iBombard, iJapan, tCapital, 4)
-		if utils.getHumanID() != iJapan: utils.makeUnit(iSettler, iJapan, tCapital, 1)
+#		utils.makeUnit(iMusketman, iJapan, tCapital, 10)
+#		utils.makeUnit(iBombard, iJapan, tCapital, 4)
+		if utils.getHumanID() != iJapan:
+			utils.makeUnit(iSettler, iJapan, tCapital, 1)
 		
 		# Vikings
 		tCapital = tStockholm
-		utils.makeUnit(iMusketman, iVikings, tCapital, 8)
-		utils.makeUnit(iBombard, iVikings, tCapital, 4)
+#		utils.makeUnit(iMusketman, iVikings, tCapital, 8)
+#		utils.makeUnit(iBombard, iVikings, tCapital, 4)
 		
 		# Spain
 		tCapital = Areas.getCapital(iSpain)
-		utils.makeUnit(iMusketman, iSpain, tCapital, 6)
-		utils.makeUnit(iSpanishConquistador, iSpain, tCapital, 4)
-		utils.makeUnit(iBombard, iSpain, tCapital, 2)
+#		utils.makeUnit(iMusketman, iSpain, tCapital, 6)
+#		utils.makeUnit(iSpanishConquistador, iSpain, tCapital, 4)
+3		utils.makeUnit(iBombard, iSpain, tCapital, 2)
 		
 		# France
 		tCapital = Areas.getCapital(iFrance)
-		utils.makeUnit(iRifleman, iFrance, tCapital, 12)
-		utils.makeUnit(iCuirassier, iFrance, tCapital, 4)
-		utils.makeUnit(iFrenchHeavyCannon, iFrance, tCapital, 5)
+#		utils.makeUnit(iRifleman, iFrance, tCapital, 12)
+#		utils.makeUnit(iCuirassier, iFrance, tCapital, 4)
+#		utils.makeUnit(iFrenchHeavyCannon, iFrance, tCapital, 5)
 		
 		# England
 		tCapital = Areas.getCapital(iEngland)
-		utils.makeUnit(iEnglishRedcoat, iEngland, tCapital, 8)
-		utils.makeUnit(iCannon, iEngland, tCapital, 4)
-		utils.makeUnit(iGalleon, iEngland, tCapital, 4)
+#		utils.makeUnit(iEnglishRedcoat, iEngland, tCapital, 8)
+#		utils.makeUnit(iCannon, iEngland, tCapital, 4)
+#		utils.makeUnit(iGalleon, iEngland, tCapital, 4)
 		
 		# Austria
 		tCapital = tVienna
-		utils.makeUnit(iRifleman, iHolyRome, tCapital, 6)
-		utils.makeUnit(iCannon, iHolyRome, tCapital, 2)
+#		utils.makeUnit(iRifleman, iHolyRome, tCapital, 6)
+#		utils.makeUnit(iCannon, iHolyRome, tCapital, 2)
 		
 		# Russia
 		tCapital = Areas.getCapital(iRussia)
-		utils.makeUnit(iMusketman, iRussia, tCapital, 8)
-		utils.makeUnit(iCuirassier, iRussia, tCapital, 4)
-		utils.makeUnit(iBombard, iRussia, tCapital, 4)
+#		utils.makeUnit(iMusketman, iRussia, tCapital, 8)
+#		utils.makeUnit(iCuirassier, iRussia, tCapital, 4)
+#		utils.makeUnit(iBombard, iRussia, tCapital, 4)
 		
 		# Poland
 		tCapital = tWarsaw
-		utils.makeUnit(iMusketman, iPoland, tCapital, 4)
-		utils.makeUnit(iPolishWingedHussar, iPoland, tCapital, 6)
-		utils.makeUnit(iBombard, iPoland, tCapital, 2)
+#		utils.makeUnit(iMusketman, iPoland, tCapital, 4)
+#		utils.makeUnit(iPolishWingedHussar, iPoland, tCapital, 6)
+#		utils.makeUnit(iBombard, iPoland, tCapital, 2)
 		
 		# Portugal
 		tCapital = Areas.getCapital(iPortugal)
-		utils.makeUnit(iMusketman, iPortugal, tCapital, 6)
-		utils.makeUnit(iBombard, iPortugal, tCapital, 2)
-		utils.makeUnit(iGalleon, iPortugal, tCapital, 3)
+#		utils.makeUnit(iMusketman, iPortugal, tCapital, 6)
+#		utils.makeUnit(iBombard, iPortugal, tCapital, 2)
+#		utils.makeUnit(iGalleon, iPortugal, tCapital, 3)
 		
 		# Mughals
 		tCapital = Areas.getCapital(iMughals)
-		utils.makeUnit(iMusketman, iMughals, tCapital, 5)
-		utils.makeUnit(iPikeman, iMughals, tCapital, 2)
-		utils.makeUnit(iMughalSiegeElephant, iMughals, tCapital, 2)
+#		utils.makeUnit(iMusketman, iMughals, tCapital, 5)
+#		utils.makeUnit(iPikeman, iMughals, tCapital, 2)
+#		utils.makeUnit(iMughalSiegeElephant, iMughals, tCapital, 2)
 		
 		# Turkey
 		tCapital = tIstanbul
-		utils.makeUnit(iOttomanJanissary, iTurkey, tCapital, 10)
-		utils.makeUnit(iCuirassier, iTurkey, tCapital, 4)
-		utils.makeUnit(iBombard, iTurkey, tCapital, 5)
+#		utils.makeUnit(iOttomanJanissary, iTurkey, tCapital, 10)
+#		utils.makeUnit(iCuirassier, iTurkey, tCapital, 4)
+#		utils.makeUnit(iBombard, iTurkey, tCapital, 5)
 		
 		# Thailand
 		tCapital = Areas.getCapital(iThailand)
-		utils.makeUnit(iMusketman, iThailand, tCapital, 4)
-		utils.makeUnit(iPikeman, iThailand, tCapital, 2)
-		utils.makeUnit(iThaiChangSuek, iThailand, tCapital, 4)
-		utils.makeUnit(iBombard, iThailand, tCapital, 2)
+#		utils.makeUnit(iMusketman, iThailand, tCapital, 4)
+#		utils.makeUnit(iPikeman, iThailand, tCapital, 2)
+#		utils.makeUnit(iThaiChangSuek, iThailand, tCapital, 4)
+#		utils.makeUnit(iBombard, iThailand, tCapital, 2)
 		
 		# Congo
 		tCapital = Areas.getCapital(iCongo)
-		utils.makeUnit(iSettler, iCongo, tCapital, 1)
-		utils.makeUnit(iCongolesePombos, iCongo, tCapital, 6)
-		utils.makeUnit(iCatapult, iCongo, tCapital, 2)
-		utils.makeUnit(iLongbowman, iCongo, tCapital, 2)
-		utils.makeUnit(iNativeSlave, iCongo, tCapital, 5)
+#		utils.makeUnit(iSettler, iCongo, tCapital, 1)
+#		utils.makeUnit(iCongolesePombos, iCongo, tCapital, 6)
+#		utils.makeUnit(iCatapult, iCongo, tCapital, 2)
+#		utils.makeUnit(iLongbowman, iCongo, tCapital, 2)
+#		utils.makeUnit(iNativeSlave, iCongo, tCapital, 5)
 		
 		# Netherlands
 		tCapital = Areas.getCapital(iNetherlands)
-		utils.makeUnit(iRifleman, iNetherlands, tCapital, 5)
-		utils.makeUnit(iBombard, iNetherlands, tCapital, 2)
-		utils.makeUnit(iDutchEastIndiaman, iNetherlands, tCapital, 3)
+#		utils.makeUnit(iRifleman, iNetherlands, tCapital, 5)
+#		utils.makeUnit(iBombard, iNetherlands, tCapital, 2)
+#		utils.makeUnit(iDutchEastIndiaman, iNetherlands, tCapital, 3)
 		
 		# Prussia
 		tCapital = Areas.getCapital(iGermany)
-		utils.makeUnit(iRifleman, iGermany, tCapital, 8)
-		utils.makeUnit(iCannon, iGermany, tCapital, 3)
+#		utils.makeUnit(iRifleman, iGermany, tCapital, 8)
+#		utils.makeUnit(iCannon, iGermany, tCapital, 3)
 		
 		for iPlayer in range(iNumPlayers):
 			if tBirth[iPlayer] > utils.getScenarioStartYear() and utils.getHumanID() == iPlayer:
@@ -3672,36 +3673,36 @@ class RiseAndFall:
 		utils.makeUnit(iWorker, iChina, tCapital, 2)
 		
 		tCapital = Areas.getCapital(iJapan)
-		utils.makeUnit(iSettler, iJapan, tCapital, 3)
-		utils.makeUnit(iBuddhistMissionary, iJapan, tCapital, 3)
-		utils.makeUnit(iSwordsman, iJapan, tCapital, 2)
-		utils.makeUnit(iArcher, iJapan, tCapital, 2)
+#		utils.makeUnit(iSettler, iJapan, tCapital, 3)
+#		utils.makeUnit(iBuddhistMissionary, iJapan, tCapital, 3)
+#		utils.makeUnit(iSwordsman, iJapan, tCapital, 2)
+#		utils.makeUnit(iArcher, iJapan, tCapital, 2)
 		tSeaPlot = self.findSeaPlots(tCapital, 1, iJapan)
-		if (tSeaPlot):				
-			utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
+#		if (tSeaPlot):
+#			utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
 
 		if utils.getHumanID() != iJapan:
 			utils.makeUnit(iCrossbowman, iJapan, tCapital, 2)
 			utils.makeUnit(iJapaneseSamurai, iJapan, tCapital, 3)
 
 		tCapital = Areas.getCapital(iVikings)
-		utils.makeUnit(iSettler, iVikings, tCapital, 1)
-		utils.makeUnit(iLongbowman, iVikings, tCapital, 2)
-		utils.makeUnit(iAxeman, iVikings, tCapital, 2)
-		utils.makeUnit(iScout, iVikings, tCapital, 1)
-		pVikings.initUnit(iSwordsman, tCapital[0], tCapital[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
-		utils.makeUnit(iSwordsman, iVikings, tCapital, 1)				
+#		utils.makeUnit(iSettler, iVikings, tCapital, 1)
+#		utils.makeUnit(iLongbowman, iVikings, tCapital, 2)
+#		utils.makeUnit(iAxeman, iVikings, tCapital, 2)
+#		utils.makeUnit(iScout, iVikings, tCapital, 1)
+#		pVikings.initUnit(iSwordsman, tCapital[0], tCapital[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
+#		utils.makeUnit(iSwordsman, iVikings, tCapital, 1)
 		tSeaPlot = self.findSeaPlots(tCapital, 1, iVikings)
-		if (tSeaPlot):				
-			utils.makeUnit(iWorkboat, iVikings, tSeaPlot, 1)
-			pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
+		if (tSeaPlot):
+#			utils.makeUnit(iWorkboat, iVikings, tSeaPlot, 1)
+#			pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 			if utils.getHumanID() == iVikings:
 				utils.makeUnit(iSettler, iVikings, tSeaPlot, 1)
 				utils.makeUnit(iLongbowman, iVikings, tSeaPlot, 1)
-			pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)				  #utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-			pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
+#			pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
 			#utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-			
+#			pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
+			#utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 		# start AI settler and garrison in Denmark and Sweden
 		if utils.getHumanID() != iVikings:
 			utils.makeUnit(iSettler, iVikings, (60, 56), 1)
@@ -3713,21 +3714,21 @@ class RiseAndFall:
 			utils.makeUnit(iLongbowman, iVikings, tCapital, 2)
 
 		tCapital = Areas.getCapital(iByzantium)
-		utils.makeUnit(iSpearman, iByzantium, tCapital, 2)
-		utils.makeUnit(iArcher, iByzantium, tCapital, 3)
-		utils.makeUnit(iByzantineCataphract, iByzantium, tCapital, 1)
+#		utils.makeUnit(iSpearman, iByzantium, tCapital, 2)
+#		utils.makeUnit(iArcher, iByzantium, tCapital, 3)
+#		utils.makeUnit(iByzantineCataphract, iByzantium, tCapital, 1)
 		tSeaPlot = self.findSeaPlots(tCapital, 1, iByzantium)
-		if tSeaPlot:
-			utils.makeUnit(iGalley, iByzantium, tSeaPlot, 2)
-			utils.makeUnit(iTrireme, iByzantium, tSeaPlot, 2)
+#		if tSeaPlot:
+#			utils.makeUnit(iGalley, iByzantium, tSeaPlot, 2)
+#			utils.makeUnit(iTrireme, iByzantium, tSeaPlot, 2)
 
 		tCapital = Areas.getCapital(iKorea)
-		utils.makeUnit(iSettler, iKorea, tCapital, 2)
-		utils.makeUnit(iBuddhistMissionary, iKorea, tCapital, 1)
-		utils.makeUnit(iConfucianMissionary, iKorea, tCapital, 1)
-		utils.makeUnit(iArcher, iKorea, tCapital, 2)
-		utils.makeUnit(iAxeman, iKorea, tCapital, 3)
-		utils.makeUnit(iHorseArcher, iKorea, tCapital, 1)
+#		utils.makeUnit(iSettler, iKorea, tCapital, 2)
+#		utils.makeUnit(iBuddhistMissionary, iKorea, tCapital, 1)
+#		utils.makeUnit(iConfucianMissionary, iKorea, tCapital, 1)
+#		utils.makeUnit(iArcher, iKorea, tCapital, 2)
+#		utils.makeUnit(iAxeman, iKorea, tCapital, 3)
+#		utils.makeUnit(iHorseArcher, iKorea, tCapital, 1)
 
 		if utils.getHumanID() != iKorea:
 			utils.makeUnit(iHeavySwordsman, iKorea, tCapital, 2)
@@ -3743,15 +3744,15 @@ class RiseAndFall:
 	
 		for iPlayer in range(iNumPlayers):
 			tCapital = Areas.getCapital(iPlayer)
-			if tBirth[iPlayer] == utils.getScenarioStartYear() and iPlayer != iHarappa:
-				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
-				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
-			elif iPlayer == iHarappa and (self.getPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
+#			if tBirth[iPlayer] == utils.getScenarioStartYear() and iPlayer != iHarappa:
+#				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
+#				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
+			if iPlayer == iHarappa and (self.getPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
 				utils.makeUnit(iHarappanCityBuilder, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
-			elif gc.getPlayer(iPlayer).isHuman():
-				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
-				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
+#			elif gc.getPlayer(iPlayer).isHuman():
+#				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
+#				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 			
 		
 		
