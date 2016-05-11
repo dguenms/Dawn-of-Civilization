@@ -1088,20 +1088,20 @@ iCivIndonesia : {
 	iGreatArtist : [
 		"Asep Sunandar Sunarya", #20th
 		"I Made Sidia", #20th
-                "Ismail Marzuki", #20th
+		"Ismail Marzuki", #20th
 	],
 	iGreatScientist : [
 		"Jayabaya", # 12th
 		"Empu Tantular", #14th
 	],
 	iGreatMerchant : [
-                "Dewawarman", #1st
+		"Dewawarman", #1st
 		"fCri Kahulunnan", #9th
 		iRenaissance,
-                "Nahkoda Muda", #18th
+		"Nahkoda Muda", #18th
 	],
 	iGreatEngineer : [
-                "Gunadharma" #9th
+		"Gunadharma" #9th
 		"Samaratungga", #9th
 		"Rakai Pikatan", #9th
 	],
@@ -1125,7 +1125,7 @@ iCivIndonesia : {
 		iRenaissance,
 		"fMalahayati" #16th
 		"fMartha Christina Tiahahu" #18th
-                "Pattimura" #18th
+		"Pattimura" #18th
 	],
 },
 iCivSpain : {

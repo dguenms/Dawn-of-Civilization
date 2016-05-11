@@ -756,7 +756,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MEXICAN_RURALES_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</English>
+		<English>The [COLOR_UNIT_TEXT]Rurales[COLOR_REVERT], the Mexican replacement for the [COLOR_UNIT_TEXT]Cavalry[COLOR_REVERT], is cheaper, receives a defensive bonus and begins with the [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAIN_BATTLE_TANK</Tag>
@@ -844,7 +844,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OTTOMAN_JANISSARY_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Ottoman replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
+		<English>The [COLOR_UNIT_TEXT]Janissary[COLOR_REVERT], the Turkish replacement for the [COLOR_UNIT_TEXT]Musketman[COLOR_REVERT], has a combat bonus against [COLOR_UNIT_TEXT]Archery Units[COLOR_REVERT], [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT] and [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PARATROOPER_STRATEGY</Tag>
@@ -989,7 +989,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SCOUT_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Scouts[COLOR_REVERT] is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gain only positive bonuses from Tribal villages, can only defend and have a combat bonus against [COLOR_UNIT_TEXT]Animal Units[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Scouts[COLOR_REVERT] is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gains only positive bonuses from Tribal villages, can only defend and have a combat bonus against [COLOR_UNIT_TEXT]Animal Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SAM_INFANTRY_STRATEGY</Tag>
