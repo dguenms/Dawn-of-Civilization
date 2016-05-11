@@ -3582,7 +3582,7 @@ class RiseAndFall:
 		tCapital = Areas.getCapital(iSpain)
 #		utils.makeUnit(iMusketman, iSpain, tCapital, 6)
 #		utils.makeUnit(iSpanishConquistador, iSpain, tCapital, 4)
-3		utils.makeUnit(iBombard, iSpain, tCapital, 2)
+#		utils.makeUnit(iBombard, iSpain, tCapital, 2)
 		
 		# France
 		tCapital = Areas.getCapital(iFrance)
