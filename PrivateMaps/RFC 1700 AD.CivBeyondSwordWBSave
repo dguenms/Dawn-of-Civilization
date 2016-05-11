@@ -6298,14 +6298,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Hermosillo
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -6694,14 +6690,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Guadalajara
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -7480,14 +7472,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Ciudad de M&#233;xico
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -7524,14 +7512,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Monterrey
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -7948,8 +7932,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -9095,9 +9079,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=33
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	BonusType=BONUS_BANANA
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,24,44,
@@ -9169,28 +9153,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=23, (France)
 		CityName=Nouvelle Orl&#233;ans
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -9558,14 +9530,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Ciudad de Guatemala
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -9595,8 +9563,8 @@ EndPlot
 BeginPlot
 	x=23,y=36
 	BonusType=BONUS_DYE
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -9608,14 +9576,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Ciudad Real
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -9985,14 +9949,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Quito
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -10497,8 +10457,8 @@ EndPlot
 BeginPlot
 	x=25,y=38
 	BonusType=BONUS_TOBACCO
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=22,23,24,44,45,
@@ -10535,14 +10495,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=Charles Town
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -10835,14 +10791,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Lima
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -10886,9 +10838,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=27
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	BonusType=BONUS_COFFEE
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -10970,23 +10922,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		PromotionType=PROMOTION_NAVIGATION1
-		PromotionType=PROMOTION_NAVIGATION2
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=La Habana
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -11335,8 +11277,8 @@ EndPlot
 BeginPlot
 	x=27,y=24
 	BonusType=BONUS_SILVER
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_MINE
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -11380,14 +11322,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Bogot&#225;
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -11401,18 +11339,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=30
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	BonusType=BONUS_COFFEE
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,45,
 EndPlot
 BeginPlot
 	x=27,y=31
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	BonusType=BONUS_BANANA
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,24,45,
@@ -11551,28 +11489,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=York
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -12172,14 +12098,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Santiago de Chile
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -12329,9 +12251,9 @@ BeginPlot
 	x=29,y=30
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	BonusType=BONUS_COFFEE
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -12382,14 +12304,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=23, (France)
 		CityName=Port-au-Prince
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -12825,14 +12743,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Caracas
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -12951,21 +12865,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=New York
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -13012,28 +12918,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=23, (France)
 		CityName=Montr&#233;al
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -13260,14 +13154,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=La Paz
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -13494,14 +13384,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=Boston
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -13866,19 +13752,14 @@ EndPlot
 BeginPlot
 	x=32,y=37
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=San Juan
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -14210,8 +14091,8 @@ EndPlot
 BeginPlot
 	x=33,y=20
 	BonusType=BONUS_SILVER
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_MINE
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -14322,14 +14203,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=Bridgetown
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -14613,23 +14490,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		PromotionType=PROMOTION_NAVIGATION1
-		PromotionType=PROMOTION_NAVIGATION2
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Buenos Aires
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -14791,14 +14658,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=Georgetown
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -15552,14 +15415,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Montevideo
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -15681,8 +15540,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -15850,14 +15709,10 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=St. John's
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -16145,14 +16000,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=23, (France)
 		CityName=Cayenne
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -16492,14 +16343,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=29, (Portugal)
 		CityName=S&#227;o Paulo
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -16571,8 +16418,8 @@ EndPlot
 BeginPlot
 	x=38,y=25
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=23,29,44,
@@ -16583,14 +16430,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=29, (Portugal)
 		CityName=Bel&#233;m
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -17011,9 +16854,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=26
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	BonusType=BONUS_BANANA
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -17773,37 +17616,25 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=29, (Portugal)
 		CityName=Rio de Janeiro
 		CityPopulation=5
-		BuildingType=BUILDING_ADMINISTRATIVE_CENTER
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_ADMINISTRATIVE_CENTER
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=100
@@ -18255,14 +18086,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=29, (Portugal)
 		CityName=Recife
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -18661,9 +18488,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=43,y=23
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	BonusType=BONUS_BANANA
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -19110,25 +18937,25 @@ BeginPlot
 	x=44,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=44,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=44,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=44,y=33
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=44,y=34
@@ -19190,14 +19017,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=29, (Portugal)
 		CityName=Ponta Delgada
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -19522,43 +19345,43 @@ BeginPlot
 	x=45,y=29
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=45,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=45,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=45,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=45,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=45,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=45,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=23,29,
 EndPlot
 BeginPlot
 	x=45,y=36
@@ -19726,14 +19549,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Reykjavik
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -19938,44 +19757,44 @@ BeginPlot
 	x=46,y=29
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=24,29,38,
+	TeamReveal=23,24,29,38,
 EndPlot
 BeginPlot
 	x=46,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=46,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=46,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=46,y=33
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=46,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=46,y=35
 	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,29,
+	TeamReveal=22,23,29,
 EndPlot
 BeginPlot
 	x=46,y=36
@@ -20327,43 +20146,43 @@ BeginPlot
 	x=47,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,45,
+	TeamReveal=22,23,24,29,38,45,
 EndPlot
 BeginPlot
 	x=47,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,45,
+	TeamReveal=22,23,24,29,38,45,
 EndPlot
 BeginPlot
 	x=47,y=31
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=47,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=47,y=33
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=47,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=22,23,24,29,38,44,
 EndPlot
 BeginPlot
 	x=47,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=22,23,24,29,38,44,
 EndPlot
 BeginPlot
 	x=47,y=36
@@ -20386,14 +20205,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=29, (Portugal)
 		CityName=Funchal
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -20737,20 +20552,20 @@ BeginPlot
 	x=48,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,45,
+	TeamReveal=22,23,24,29,38,45,
 EndPlot
 BeginPlot
 	x=48,y=30
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=22,24,29,38,45,
+	TeamReveal=22,23,24,29,38,45,
 EndPlot
 BeginPlot
 	x=48,y=31
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=22,24,29,38,45,
+	TeamReveal=22,23,24,29,38,45,
 EndPlot
 BeginPlot
 	x=48,y=32
@@ -20760,14 +20575,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=23, (France)
 		CityName=Saint-Louis du S&#233;n&#233;gal
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -20778,26 +20589,26 @@ BeginPlot
 		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=50
 	EndCity
-	TeamReveal=22,24,29,38,
+	TeamReveal=22,23,24,29,38,
 EndPlot
 BeginPlot
 	x=48,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=22,23,24,29,38,44,
 EndPlot
 BeginPlot
 	x=48,y=34
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=22,23,24,29,38,44,
 EndPlot
 BeginPlot
 	x=48,y=35
 	FeatureType=FEATURE_CAPE, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=22,23,24,29,38,44,
 EndPlot
 BeginPlot
 	x=48,y=36
@@ -20865,6 +20676,7 @@ BeginPlot
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=16,22,23,24,29,38,45,
+	Player29Culture=100, (Portugal)
 EndPlot
 BeginPlot
 	x=48,y=46
@@ -21237,6 +21049,7 @@ BeginPlot
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=16,22,23,24,29,38,44,45,
+	Player29Culture=100, (Portugal)
 EndPlot
 BeginPlot
 	x=49,y=41
@@ -21260,8 +21073,41 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=29, (Portugal)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=29, (Portugal)
+	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=29, (Portugal)
 		CityName=Lisboa
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -21310,14 +21156,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=La Coru&#241;a
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -21394,14 +21236,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=Dublin
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -21642,7 +21480,7 @@ BeginPlot
 	x=50,y=29
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=22,24,38,44,45,
+	TeamReveal=22,23,24,38,44,45,
 EndPlot
 BeginPlot
 	x=50,y=30
@@ -21684,7 +21522,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=22,29,44,45,
+	TeamReveal=22,23,29,44,45,
 EndPlot
 BeginPlot
 	x=50,y=36
@@ -21734,6 +21572,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,29,38,45,
+	Player29Culture=100, (Portugal)
 EndPlot
 BeginPlot
 	x=50,y=43
@@ -21745,6 +21584,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=16,22,23,24,29,38,45,
+	Player29Culture=100, (Portugal)
 EndPlot
 BeginPlot
 	x=50,y=44
@@ -21753,6 +21593,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=16,22,23,24,29,38,45,
+	Player29Culture=100, (Portugal)
 EndPlot
 BeginPlot
 	x=50,y=45
@@ -22062,21 +21903,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Djenne
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -22098,19 +21931,19 @@ BeginPlot
 	x=51,y=31
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=45,
+	TeamReveal=23,45,
 EndPlot
 BeginPlot
 	x=51,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=45,
+	TeamReveal=23,45,
 EndPlot
 BeginPlot
 	x=51,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=44,45,
+	TeamReveal=23,44,45,
 EndPlot
 BeginPlot
 	x=51,y=34
@@ -22122,7 +21955,7 @@ BeginPlot
 	x=51,y=35
 	TerrainType=TERRAIN_DESERT
 	PlotType=0
-	TeamReveal=29,44,45,
+	TeamReveal=23,29,44,45,
 EndPlot
 BeginPlot
 	x=51,y=36
@@ -22137,21 +21970,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Marrakus
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -22194,50 +22019,22 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		PromotionType=PROMOTION_NAVIGATION1
-		PromotionType=PROMOTION_NAVIGATION2
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		PromotionType=PROMOTION_NAVIGATION1
-		PromotionType=PROMOTION_NAVIGATION2
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		PromotionType=PROMOTION_NAVIGATION1
-		PromotionType=PROMOTION_NAVIGATION2
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		PromotionType=PROMOTION_NAVIGATION1
-		PromotionType=PROMOTION_NAVIGATION2
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Sevilla
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -22718,8 +22515,44 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_SPANISH_CONQUISTADOR, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPANISH_CONQUISTADOR, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPANISH_CONQUISTADOR, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPANISH_CONQUISTADOR, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=22, (Spain)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=22, (Spain)
+	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Madrid
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
@@ -22858,14 +22691,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=Edinburgh
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
@@ -23087,8 +22916,8 @@ EndPlot
 BeginPlot
 	x=53,y=28
 	BonusType=BONUS_GOLD
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_MINE
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -23116,28 +22945,16 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Timbuktu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -23273,42 +23090,22 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=23, (France)
 		CityName=Bordeaux
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -23372,8 +23169,56 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEON, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
+	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=London
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -23385,7 +23230,6 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
@@ -23393,6 +23237,7 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_ENGLISH_ROYAL_EXCHANGE
 		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_CATHEDRAL
 		BuildingType=BUILDING_TRADING_COMPANY
@@ -23630,14 +23475,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=38, (Netherlands)
 		CityName=Elmina
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -23645,8 +23486,8 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
-		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_CATHOLICISM
+		ReligionType=RELIGION_PROTESTANTISM
 		Player38Culture=50
 	EndCity
 	TeamReveal=22,24,29,38,45,
@@ -23750,14 +23591,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Wahran
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -24242,14 +24079,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Barcelona
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -24316,8 +24149,71 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=23, (France)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=23, (France)
+	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=23, (France)
 		CityName=Paris
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -24326,7 +24222,6 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_AMPHITHEATRE
@@ -24335,6 +24230,7 @@ BeginPlot
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_FRENCH_SALON
+		BuildingType=BUILDING_ACADEMY
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_TRADING_COMPANY
@@ -24623,21 +24519,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Gao
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -24763,14 +24651,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
-		CityOwner=23
+		CityOwner=23, (France)
 		CityName=Marseille
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -25272,8 +25156,38 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=38, (Netherlands)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=38, (Netherlands)
+	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=38, (Netherlands)
 		CityName=Amsterdam
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -25293,12 +25207,12 @@ BeginPlot
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_DUTCH_DIKE
-		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_TRADING_COMPANY
 		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_CATHOLICISM
+		ReligionType=RELIGION_PROTESTANTISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player38Culture=250
@@ -25623,14 +25537,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Tunus
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -25715,6 +25625,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=16,22,23,24,25,38,39,44,45,
+	Player39Culture=100, (Germany)
 EndPlot
 BeginPlot
 	x=58,y=50
@@ -25740,6 +25651,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,25,38,39,45,
+	Player38Culture=100, (Netherlands)
 EndPlot
 BeginPlot
 	x=58,y=53
@@ -25748,6 +25660,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,25,38,39,44,45,
+	Player38Culture=100, (Netherlands)
 EndPlot
 BeginPlot
 	x=58,y=54
@@ -25801,21 +25714,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Bergen
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -26028,15 +25933,11 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
-		CityOwner=29
-		CityName=TXT_KEY_CITY_NAME_LAGOS
+		CityOwner=29, (Portugal)
+		CityName=Lagos
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
@@ -26073,21 +25974,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Ngazargamu
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -26217,21 +26110,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=25, (Holy Rome)
 		CityName=Mailand
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
@@ -26270,6 +26155,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=16,22,23,24,25,38,39,44,45,
+	Player39Culture=100, (Germany)
 EndPlot
 BeginPlot
 	x=59,y=50
@@ -26287,21 +26173,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginCity
-		CityOwner=39
+		CityOwner=39, (Germany)
 		CityName=Frankfurt
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -26314,15 +26192,15 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_MILITARY_ACADEMY
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_CATHEDRAL
 		BuildingType=BUILDING_PROTESTANT_SHRINE
-		BuildingType=BUILDING_CATHOLIC_TEMPLE
-		BuildingType=BUILDING_MILITARY_ACADEMY
-		ReligionType=RELIGION_PROTESTANTISM
-		HolyCityReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
+		ReligionType=RELIGION_PROTESTANTISM
+		HolyCityReligionType=RELIGION_PROTESTANTISM
 		Player39Culture=100
 	EndCity
 	TeamReveal=16,22,23,24,25,38,39,45,
@@ -26355,35 +26233,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=39
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=39
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginCity
-		CityOwner=39
+		CityOwner=39, (Germany)
 		CityName=Hamburg
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -26397,9 +26259,8 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
-		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_CATHOLICISM
-		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
+		ReligionType=RELIGION_PROTESTANTISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
 		Player39Culture=100
 	EndCity
@@ -26779,35 +26640,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Roma
 		CityPopulation=8
 		BuildingType=BUILDING_WALLS
@@ -26875,6 +26720,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=16,22,23,24,25,38,39,44,45,
+	Player39Culture=100, (Germany)
 EndPlot
 BeginPlot
 	x=60,y=50
@@ -26934,35 +26780,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
+		UnitType=UNIT_RIFLEMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=K&#248;benhavn
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -26999,28 +26829,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Oslo
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -27234,8 +27052,8 @@ EndPlot
 BeginPlot
 	x=61,y=22
 	BonusType=BONUS_COTTON
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -27343,14 +27161,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Trablus
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -27558,21 +27372,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Trondheim
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -27735,8 +27541,56 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CATAPULT, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CATAPULT, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER, UnitOwner=37, (Congo)
+	EndUnit
 	BeginCity
-		CityOwner=37
+		CityOwner=37, (Congo)
 		CityName=Mbanza Kongo
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
@@ -27908,14 +27762,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=25, (Holy Rome)
 		CityName=Neapel
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -27984,8 +27834,32 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=25, (Holy Rome)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=25, (Holy Rome)
+	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=25, (Holy Rome)
 		CityName=Wien
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -28001,10 +27875,10 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
+		BuildingType=BUILDING_MILITARY_ACADEMY
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
-		BuildingType=BUILDING_MILITARY_ACADEMY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		Player25Culture=250
@@ -28027,6 +27901,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=16,22,23,24,25,26,28,38,39,45,
+	Player25Culture=100, (Holy Rome)
 EndPlot
 BeginPlot
 	x=62,y=52
@@ -28041,8 +27916,41 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CANNON, UnitOwner=39, (Germany)
+	EndUnit
 	BeginCity
-		CityOwner=39
+		CityOwner=39, (Germany)
 		CityName=Berlin
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -28225,21 +28133,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=38, (Netherlands)
 		CityName=Kaapstad
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -28597,8 +28497,44 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=16, (Vikings)
+	EndUnit
 	BeginCity
-		CityOwner=16
+		CityOwner=16, (Vikings)
 		CityName=Stockholm
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
@@ -28802,9 +28738,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=20
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	BonusType=BONUS_BANANA
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -29050,6 +28986,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,23,25,26,28,38,39,44,45,
+	Player28Culture=100, (Poland)
 EndPlot
 BeginPlot
 	x=64,y=54
@@ -29450,21 +29387,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Belgrad
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -29508,21 +29437,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
-		CityOwner=25
+		CityOwner=25, (Holy Rome)
 		CityName=Budapest
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
@@ -29571,8 +29492,44 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=28, (Poland)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=28, (Poland)
+	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=28, (Poland)
 		CityName=Warszawa
 		CityPopulation=8
 		BuildingType=BUILDING_PALACE
@@ -29611,14 +29568,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginCity
-		CityOwner=39
+		CityOwner=39, (Germany)
 		CityName=K&#246;nigsberg
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
@@ -29686,14 +29639,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginCity
-		CityOwner=16
+		CityOwner=16, (Vikings)
 		CityName=Lule&#229;
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
@@ -30147,6 +30096,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,25,26,28,39,45,
+	Player28Culture=100, (Poland)
 EndPlot
 BeginPlot
 	x=66,y=56
@@ -30486,14 +30436,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Iskenderiye
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -30509,8 +30455,8 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		BuildingType=BUILDING_GREAT_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
+		BuildingType=BUILDING_GREAT_LIBRARY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
@@ -30538,8 +30484,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=40
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=35,44,
@@ -30550,14 +30496,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Atina
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -30678,21 +30620,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
 	EndUnit
 	BeginCity
-		CityOwner=28
+		CityOwner=28, (Poland)
 		CityName=Wilno
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
@@ -30726,12 +30660,14 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,26,28,39,
+	Player26Culture=100, (Russia)
 EndPlot
 BeginPlot
 	x=67,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=16,26,28,39,45,
+	Player26Culture=100, (Russia)
 EndPlot
 BeginPlot
 	x=67,y=59
@@ -30741,14 +30677,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginCity
-		CityOwner=16
+		CityOwner=16, (Vikings)
 		CityName=Helsingfors
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -31150,8 +31082,65 @@ BeginPlot
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=35, (Turkey)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=35, (Turkey)
+	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Kostantiniyye
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -31170,15 +31159,15 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_MILITARY_ACADEMY
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		BuildingType=BUILDING_MILITARY_ACADEMY
 		BuildingType=BUILDING_THEODOSIAN_WALLS
 		BuildingType=BUILDING_HAGIA_SOPHIA
-		BuildingType=BUILDING_TOPKAPI_PALACE
 		BuildingType=BUILDING_BLUE_MOSQUE
+		BuildingType=BUILDING_TOPKAPI_PALACE
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
@@ -31283,6 +31272,7 @@ BeginPlot
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=16,26,28,39,45,
+	Player26Culture=100, (Russia)
 EndPlot
 BeginPlot
 	x=68,y=59
@@ -31290,6 +31280,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,26,28,39,45,
+	Player26Culture=100, (Russia)
 EndPlot
 BeginPlot
 	x=68,y=60
@@ -31558,14 +31549,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=El-Uqsur
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -31604,14 +31591,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=El-Kahire
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
@@ -31624,8 +31607,8 @@ BeginPlot
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		BuildingType=BUILDING_PYRAMIDS
 		BuildingType=BUILDING_GREAT_SPHINX
+		BuildingType=BUILDING_PYRAMIDS
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
@@ -31755,21 +31738,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Kiev
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
@@ -31809,6 +31784,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=16,26,28,39,45,
+	Player26Culture=100, (Russia)
 EndPlot
 BeginPlot
 	x=69,y=55
@@ -31823,6 +31799,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,26,28,39,45,
+	Player26Culture=100, (Russia)
 EndPlot
 BeginPlot
 	x=69,y=57
@@ -31839,21 +31816,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Sankt-Peterburg
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -32337,7 +32306,7 @@ BeginPlot
 	x=70,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=16,26,39,45,
+	TeamReveal=16,26,28,39,45,
 EndPlot
 BeginPlot
 	x=70,y=59
@@ -32347,7 +32316,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=16,26,39,45,
+	TeamReveal=16,26,28,39,45,
 EndPlot
 BeginPlot
 	x=70,y=60
@@ -32491,14 +32460,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
-		CityOwner=29
+		CityOwner=29, (Portugal)
 		CityName=Mo&#231;ambique
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -32547,21 +32512,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Mombasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -32734,14 +32691,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Ankara
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
@@ -32850,7 +32803,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=16,26,
+	TeamReveal=16,26,28,
 EndPlot
 BeginPlot
 	x=71,y=57
@@ -32865,13 +32818,13 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_VILLAGE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=16,26,
+	TeamReveal=16,26,28,
 EndPlot
 BeginPlot
 	x=71,y=59
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=16,26,
+	TeamReveal=16,26,28,
 EndPlot
 BeginPlot
 	x=71,y=60
@@ -33108,21 +33061,13 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Gondar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -33371,14 +33316,10 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Arkhangelsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -33676,14 +33617,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Kud&#252;s
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -33693,17 +33630,19 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_CATHOLIC_TEMPLE
-		BuildingType=BUILDING_ORTHODOX_TEMPLE
-		BuildingType=BUILDING_ORTHODOX_SHRINE
-		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		BuildingType=BUILDING_JEWISH_SHRINE
+		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		BuildingType=BUILDING_ORTHODOX_SHRINE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_DOME_OF_THE_ROCK
+		ReligionType=RELIGION_JUDAISM
+		HolyCityReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_ORTHODOXY
+		HolyCityReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_CATHOLICISM
 		ReligionType=RELIGION_ISLAM
-		HolyCityReligionType=RELIGION_JUDAISM
-		HolyCityReligionType=RELIGION_ORTHODOXY
 		Player35Culture=200
 	EndCity
 	TeamReveal=8,35,44,
@@ -33832,8 +33771,56 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (Russia)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=26, (Russia)
+	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Moskva
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -33858,8 +33845,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=55
-	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=16,26,
@@ -33887,14 +33874,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Vologda
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -34122,28 +34105,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
+		UnitType=UNIT_CANNON, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Muqdisho
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -34268,14 +34239,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Sam
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -34360,21 +34327,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Rostov-na-Donu
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -34722,14 +34681,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Mekke
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -34830,14 +34785,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Trabzon
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
@@ -35197,14 +35148,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Sana'a
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -35328,13 +35275,13 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=8,35,44,45,
+	TeamReveal=8,26,35,44,45,
 EndPlot
 BeginPlot
 	x=76,y=46
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=8,35,44,45,
+	TeamReveal=8,26,35,44,45,
 EndPlot
 BeginPlot
 	x=76,y=47
@@ -35632,7 +35579,7 @@ BeginPlot
 	x=77,y=27
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,35,38,44,
+	TeamReveal=22,24,29,35,38,44,45,
 EndPlot
 BeginPlot
 	x=77,y=28
@@ -35729,14 +35676,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_OTTOMAN_JANISSARY, UnitOwner=35, (Turkey)
 	EndUnit
 	BeginCity
-		CityOwner=35
+		CityOwner=35, (Turkey)
 		CityName=Baghdad
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -35895,14 +35838,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Vyatka
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -36122,7 +36061,7 @@ BeginPlot
 	x=78,y=27
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,35,38,44,
+	TeamReveal=22,24,29,35,38,44,45,
 EndPlot
 BeginPlot
 	x=78,y=28
@@ -36237,14 +36176,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
 	EndUnit
 	BeginCity
-		CityOwner=8
+		CityOwner=8, (Iran)
 		CityName=Tabriz
 		CityPopulation=7
 		BuildingType=BUILDING_BARRACKS
@@ -36329,14 +36264,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Samara
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -36591,7 +36522,7 @@ BeginPlot
 	x=79,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=22,24,35,38,
+	TeamReveal=22,24,35,38,45,
 EndPlot
 BeginPlot
 	x=79,y=28
@@ -36621,13 +36552,13 @@ BeginPlot
 	x=79,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=22,24,29,35,38,44,
+	TeamReveal=22,24,29,35,38,44,45,
 EndPlot
 BeginPlot
 	x=79,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=35,44,
+	TeamReveal=35,44,45,
 EndPlot
 BeginPlot
 	x=79,y=34
@@ -37002,43 +36933,43 @@ BeginPlot
 	x=80,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=35,
+	TeamReveal=35,45,
 EndPlot
 BeginPlot
 	x=80,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,29,35,
+	TeamReveal=22,29,35,45,
 EndPlot
 BeginPlot
 	x=80,y=29
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=22,29,35,38,
+	TeamReveal=22,29,35,38,45,
 EndPlot
 BeginPlot
 	x=80,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,35,38,44,
+	TeamReveal=22,24,29,35,38,44,45,
 EndPlot
 BeginPlot
 	x=80,y=31
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,35,38,44,
+	TeamReveal=22,24,29,35,38,44,45,
 EndPlot
 BeginPlot
 	x=80,y=32
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=22,24,29,35,38,44,
+	TeamReveal=22,24,29,35,38,44,45,
 EndPlot
 BeginPlot
 	x=80,y=33
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=29,35,38,44,
+	TeamReveal=29,35,38,44,45,
 EndPlot
 BeginPlot
 	x=80,y=34
@@ -37105,19 +37036,19 @@ BeginPlot
 	x=80,y=43
 	TerrainType=TERRAIN_PLAINS
 	PlotType=0
-	TeamReveal=8,34,44,45,
+	TeamReveal=8,34,35,44,45,
 EndPlot
 BeginPlot
 	x=80,y=44
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=8,44,45,
+	TeamReveal=8,35,44,45,
 EndPlot
 BeginPlot
 	x=80,y=45
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=8,44,45,
+	TeamReveal=8,35,44,45,
 EndPlot
 BeginPlot
 	x=80,y=46
@@ -37253,14 +37184,10 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Obdorsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -37546,8 +37473,50 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (Iran)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=8, (Iran)
+	EndUnit
 	BeginCity
-		CityOwner=8
+		CityOwner=8, (Iran)
 		CityName=Isfahan
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -37566,7 +37535,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player8Culture=250
 	EndCity
-	TeamReveal=8,34,44,45,
+	TeamReveal=8,34,35,44,45,
 EndPlot
 BeginPlot
 	x=81,y=42
@@ -37669,14 +37638,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Ekaterinburg
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -37938,7 +37903,7 @@ BeginPlot
 	x=82,y=33
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=22,24,29,34,38,44,
 EndPlot
 BeginPlot
 	x=82,y=34
@@ -37946,28 +37911,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
+		UnitType=UNIT_CANNON, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Masqat
 		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
@@ -38008,14 +37961,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
 	EndUnit
 	BeginCity
-		CityOwner=8
+		CityOwner=8, (Iran)
 		CityName=Shiraz
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -38067,7 +38016,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	TeamReveal=8,34,44,45,
+	TeamReveal=8,34,35,44,45,
 EndPlot
 BeginPlot
 	x=82,y=43
@@ -38494,28 +38443,16 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_CUIRASSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Merv
 		CityPopulation=4
 		BuildingType=BUILDING_STABLE
@@ -38569,6 +38506,7 @@ BeginPlot
 	x=83,y=51
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
+	TeamReveal=26,
 EndPlot
 BeginPlot
 	x=83,y=52
@@ -38857,31 +38795,31 @@ BeginPlot
 	x=84,y=32
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=24,29,38,44,
+	TeamReveal=5,24,29,38,44,
 EndPlot
 BeginPlot
 	x=84,y=33
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,
+	TeamReveal=5,22,24,29,34,38,44,
 EndPlot
 BeginPlot
 	x=84,y=34
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=8,22,24,29,34,38,44,
+	TeamReveal=5,8,22,24,29,34,38,44,
 EndPlot
 BeginPlot
 	x=84,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=8,22,24,29,34,38,44,45,
+	TeamReveal=5,8,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=84,y=36
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=8,22,24,29,34,38,44,45,
+	TeamReveal=5,8,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=84,y=37
@@ -38891,8 +38829,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=38
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_SPICES
+	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,24,34,44,45,
@@ -38915,14 +38853,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_IRANIAN_QIZILBASH, UnitOwner=8, (Iran)
 	EndUnit
 	BeginCity
-		CityOwner=8
+		CityOwner=8, (Iran)
 		CityName=Herat
 		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
@@ -39067,14 +39001,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Tyumen
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -39316,61 +39246,54 @@ BeginPlot
 	x=85,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,44,
+	TeamReveal=5,29,44,
 EndPlot
 BeginPlot
 	x=85,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,44,
+	TeamReveal=5,29,44,
 EndPlot
 BeginPlot
 	x=85,y=32
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=24,29,44,
+	TeamReveal=5,24,29,44,
 EndPlot
 BeginPlot
 	x=85,y=33
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=24,29,34,44,
+	TeamReveal=5,24,29,34,44,
 EndPlot
 BeginPlot
 	x=85,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=8,24,29,34,38,44,
+	TeamReveal=5,8,24,29,34,38,44,
 EndPlot
 BeginPlot
 	x=85,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=8,22,24,29,34,38,44,45,
+	TeamReveal=5,8,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=85,y=36
 	RiverNSDirection=2
 	isWOfRiver
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=34, (Mughals)
 		CityName=Kolachi
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -39383,7 +39306,7 @@ BeginPlot
 		ReligionType=RELIGION_ISLAM
 		Player34Culture=50
 	EndCity
-	TeamReveal=8,22,24,29,34,38,44,45,
+	TeamReveal=5,8,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=85,y=37
@@ -39466,28 +39389,16 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_CUIRASSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Samarkand
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -39785,58 +39696,58 @@ BeginPlot
 	x=86,y=29
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=10,29,
 EndPlot
 BeginPlot
 	x=86,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,
+	TeamReveal=5,10,29,
 EndPlot
 BeginPlot
 	x=86,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,44,
+	TeamReveal=5,10,29,44,
 EndPlot
 BeginPlot
 	x=86,y=32
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=24,29,44,45,
+	TeamReveal=5,10,24,29,44,45,
 EndPlot
 BeginPlot
 	x=86,y=33
 	BonusType=BONUS_OIL
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=5,10,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=86,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=5,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=86,y=35
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=8,22,24,29,34,38,44,45,
+	TeamReveal=5,8,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=86,y=36
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=8,22,24,34,38,44,45,
+	TeamReveal=5,8,22,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=86,y=37
-	RouteType=ROUTE_ROAD
 	ImprovementType=IMPROVEMENT_HAMLET
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=8,22,24,34,38,44,45,
@@ -39857,8 +39768,8 @@ BeginPlot
 	x=86,y=39
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_QUARRY
 	BonusType=BONUS_MARBLE
+	ImprovementType=IMPROVEMENT_QUARRY
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,24,34,44,45,
@@ -40192,74 +40103,75 @@ BeginPlot
 	x=87,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
+	TeamReveal=10,
 EndPlot
 BeginPlot
 	x=87,y=28
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,44,
+	TeamReveal=10,29,44,
 EndPlot
 BeginPlot
 	x=87,y=29
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,44,
+	TeamReveal=10,29,44,
 EndPlot
 BeginPlot
 	x=87,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,34,44,45,
+	TeamReveal=5,10,29,34,44,45,
 EndPlot
 BeginPlot
 	x=87,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,34,44,45,
+	TeamReveal=5,10,29,34,44,45,
 EndPlot
 BeginPlot
 	x=87,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=24,29,34,44,45,
+	TeamReveal=5,10,24,29,34,44,45,
 EndPlot
 BeginPlot
 	x=87,y=33
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=87,y=34
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=87,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=87,y=36
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_COTTON
+	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=8,22,24,34,38,44,45,
+	TeamReveal=5,8,22,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=87,y=37
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=8,22,24,34,38,44,45,
+	TeamReveal=5,8,22,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=87,y=38
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=8,24,34,44,45,
+	TeamReveal=5,8,24,34,44,45,
 EndPlot
 BeginPlot
 	x=87,y=39
@@ -40276,14 +40188,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=34, (Mughals)
 		CityName=Lahore
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -40629,55 +40537,104 @@ BeginPlot
 	x=88,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=44,
+	TeamReveal=10,44,
 EndPlot
 BeginPlot
 	x=88,y=28
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,38,44,
+	TeamReveal=10,29,38,44,
 EndPlot
 BeginPlot
 	x=88,y=29
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=29,38,44,
+	TeamReveal=10,29,38,44,
 EndPlot
 BeginPlot
 	x=88,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=88,y=31
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=88,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=88,y=33
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_BANANA
+	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=88,y=34
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=5, (India)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=5, (India)
+	EndUnit
 	BeginCity
-		CityOwner=5
+		CityOwner=5, (India)
 		CityName=Mumbai
 		CityPopulation=6
 		BuildingType=BUILDING_PALACE
@@ -40685,16 +40642,17 @@ BeginPlot
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
+		FreeSpecialistType=SPECIALIST_GREAT_GENERAL
 		Player5Culture=75
 	EndCity
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=88,y=35
@@ -40703,7 +40661,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=88,y=36
@@ -40711,22 +40669,22 @@ BeginPlot
 	RiverWEDirection=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=22,24,34,38,44,45,
+	TeamReveal=5,22,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=88,y=37
-	RouteType=ROUTE_ROAD
-	ImprovementType=IMPROVEMENT_PASTURE
 	BonusType=BONUS_HORSE
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=22,24,34,38,44,45,
+	TeamReveal=5,22,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=88,y=38
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=8,24,34,44,45,
+	TeamReveal=5,8,24,34,44,45,
 EndPlot
 BeginPlot
 	x=88,y=39
@@ -40734,7 +40692,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	TeamReveal=8,24,34,44,45,
+	TeamReveal=5,8,24,34,44,45,
 EndPlot
 BeginPlot
 	x=88,y=40
@@ -40744,16 +40702,16 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=41
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_SUGAR
+	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=8,34,44,45,
 EndPlot
 BeginPlot
 	x=88,y=42
-	ImprovementType=IMPROVEMENT_FARM
 	BonusType=BONUS_WHEAT
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=8,34,44,45,
@@ -41074,65 +41032,65 @@ BeginPlot
 	x=89,y=27
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=38,44,
+	TeamReveal=10,38,44,
 EndPlot
 BeginPlot
 	x=89,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,29,38,44,
+	TeamReveal=10,22,29,38,44,
 EndPlot
 BeginPlot
 	x=89,y=29
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=89,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=89,y=31
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=89,y=32
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=89,y=33
-	RouteType=ROUTE_ROAD
-	ImprovementType=IMPROVEMENT_MINE
 	BonusType=BONUS_GEMS
+	ImprovementType=IMPROVEMENT_MINE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=89,y=34
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=89,y=35
-	RouteType=ROUTE_ROAD
 	isNOfRiver
 	RiverWEDirection=3
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=89,y=36
@@ -41143,31 +41101,31 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=24,34,38,44,45,
+	TeamReveal=5,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=89,y=37
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=89,y=38
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=89,y=39
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=8,24,34,44,45,
+	TeamReveal=5,8,24,34,44,45,
 EndPlot
 BeginPlot
 	x=89,y=40
-	ImprovementType=IMPROVEMENT_PASTURE
 	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,34,44,
@@ -41192,6 +41150,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+	TeamReveal=34,44,
 EndPlot
 BeginPlot
 	x=89,y=44
@@ -41219,21 +41178,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Kashgar
 		CityPopulation=4
 		BuildingType=BUILDING_WALLS
@@ -41329,14 +41280,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
-		CityOwner=26
+		CityOwner=26, (Russia)
 		CityName=Tomsk
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -41551,119 +41498,142 @@ BeginPlot
 	x=90,y=27
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=38,44,
+	TeamReveal=10,38,44,
 EndPlot
 BeginPlot
 	x=90,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=90,y=29
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=90,y=30
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_MINE
 	BonusType=BONUS_GOLD
+	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=90,y=31
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
+	EndUnit
 	BeginCity
-		CityOwner=10
+		CityOwner=10, (Tamils)
 		CityName=Mahishuru
 		CityPopulation=5
 		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_BARRACKS
-		BuildingType=BUILDING_TAMIL_SANGAM
 		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_TAMIL_SANGAM
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
-		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_ISLAM
+		ReligionType=RELIGION_HINDUISM
 		Player10Culture=50
 	EndCity
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=90,y=32
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=90,y=33
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_SUGAR
+	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=5,10,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=90,y=34
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=5,10,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=90,y=35
-	ImprovementType=IMPROVEMENT_FARM
 	BonusType=BONUS_RICE
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=5,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=90,y=36
-	RouteType=ROUTE_ROAD
 	BonusType=BONUS_COTTON
 	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=24,34,38,44,45,
+	TeamReveal=5,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=90,y=37
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
 	EndUnit
 	BeginCity
-		CityOwner=5
+		CityOwner=5, (India)
 		CityName=Bhopal
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -41674,32 +41644,59 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		Player5Culture=75
 	EndCity
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=90,y=38
-	RouteType=ROUTE_ROAD
 	BonusType=BONUS_WHEAT
 	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=90,y=39
-	ImprovementType=IMPROVEMENT_CAMP
 	BonusType=BONUS_IVORY
+	ImprovementType=IMPROVEMENT_CAMP
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	TeamReveal=8,24,34,44,45,
+	TeamReveal=5,8,24,34,44,45,
 EndPlot
 BeginPlot
 	x=90,y=40
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUGHAL_SIEGE_ELEPHANT, UnitOwner=34, (Mughals)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUGHAL_SIEGE_ELEPHANT, UnitOwner=34, (Mughals)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN, UnitOwner=34, (Mughals)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN, UnitOwner=34, (Mughals)
+	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=34, (Mughals)
 		CityName=Delhi
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -41713,13 +41710,13 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		BuildingType=BUILDING_TAJ_MAHAL
 		BuildingType=BUILDING_RED_FORT
+		BuildingType=BUILDING_TAJ_MAHAL
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
 		Player34Culture=250
 	EndCity
-	TeamReveal=8,24,34,44,45,
+	TeamReveal=5,8,24,34,44,45,
 EndPlot
 BeginPlot
 	x=90,y=41
@@ -42050,22 +42047,22 @@ BeginPlot
 	x=91,y=27
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=29,38,44,
+	TeamReveal=10,29,38,44,
 EndPlot
 BeginPlot
 	x=91,y=28
-	ImprovementType=IMPROVEMENT_PASTURE
 	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=91,y=29
 	BonusType=BONUS_ALUMINUM
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=91,y=30
@@ -42074,63 +42071,52 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=91,y=31
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=91,y=32
-	RouteType=ROUTE_ROAD
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=91,y=33
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_CAMP
 	BonusType=BONUS_IVORY
+	ImprovementType=IMPROVEMENT_CAMP
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=91,y=34
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Hyderabad
 		CityPopulation=7
 		BuildingType=BUILDING_WALLS
@@ -42145,7 +42131,7 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		Player45Culture=200
 	EndCity
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=5,10,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=91,y=35
@@ -42157,7 +42143,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=5,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=91,y=36
@@ -42165,7 +42151,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,38,44,45,
+	TeamReveal=5,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=91,y=37
@@ -42175,14 +42161,14 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=91,y=38
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=91,y=39
@@ -42191,18 +42177,18 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=8,24,34,44,45,
+	TeamReveal=5,8,24,34,44,45,
 EndPlot
 BeginPlot
 	x=91,y=40
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_DYE
+	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=8,24,34,44,45,
+	TeamReveal=5,8,24,34,44,45,
 EndPlot
 BeginPlot
 	x=91,y=41
@@ -42235,8 +42221,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=45
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_VILLAGE
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=1,44,
@@ -42536,85 +42522,62 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=27
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	BonusType=BONUS_PEARL
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=92,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=92,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=92,y=30
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=92,y=31
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=92,y=32
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=Madras
 		CityPopulation=5
 		BuildingType=BUILDING_WALLS
@@ -42629,7 +42592,7 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		Player24Culture=50
 	EndCity
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=92,y=33
@@ -42638,7 +42601,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=92,y=34
@@ -42647,7 +42610,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_HAMLET
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=92,y=35
@@ -42657,14 +42620,14 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,38,44,45,
+	TeamReveal=5,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=92,y=36
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,38,44,45,
+	TeamReveal=5,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=92,y=37
@@ -42673,7 +42636,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=92,y=38
@@ -42683,14 +42646,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=92,y=39
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=92,y=40
@@ -42700,14 +42663,14 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=92,y=41
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,24,34,44,45,
+	TeamReveal=1,5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=92,y=42
@@ -43021,27 +42984,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=27
-	ImprovementType=IMPROVEMENT_MINE
 	BonusType=BONUS_IRON
+	ImprovementType=IMPROVEMENT_MINE
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=93,y=28
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=38, (Netherlands)
 		CityName=Colombo
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -43056,39 +43015,39 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		Player38Culture=50
 	EndCity
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=93,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=93,y=30
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=93,y=31
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=93,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=93,y=33
-	ImprovementType=IMPROVEMENT_PASTURE
 	BonusType=BONUS_COW
+	ImprovementType=IMPROVEMENT_PASTURE
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=93,y=34
@@ -43096,7 +43055,7 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=5,10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=93,y=35
@@ -43104,7 +43063,7 @@ BeginPlot
 	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=5,10,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=93,y=36
@@ -43112,7 +43071,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,38,44,45,
+	TeamReveal=5,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=93,y=37
@@ -43121,7 +43080,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,38,45,
+	TeamReveal=5,24,34,38,45,
 EndPlot
 BeginPlot
 	x=93,y=38
@@ -43130,13 +43089,13 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	TeamReveal=24,34,38,44,45,
+	TeamReveal=5,24,34,38,44,45,
 EndPlot
 BeginPlot
 	x=93,y=39
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=93,y=40
@@ -43146,13 +43105,13 @@ BeginPlot
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=93,y=41
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=1,24,34,44,45,
+	TeamReveal=1,5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=93,y=42
@@ -43195,8 +43154,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	ImprovementType=IMPROVEMENT_VILLAGE
-	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=1,44,
@@ -43462,8 +43421,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=27
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 	TeamReveal=22,24,29,38,
@@ -43472,39 +43431,39 @@ BeginPlot
 	x=94,y=28
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=10,22,24,29,38,
 EndPlot
 BeginPlot
 	x=94,y=29
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,
+	TeamReveal=10,22,24,29,38,
 EndPlot
 BeginPlot
 	x=94,y=30
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=22,24,29,38,44,
+	TeamReveal=10,22,24,29,38,44,
 EndPlot
 BeginPlot
 	x=94,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=24,29,34,38,44,45,
+	TeamReveal=10,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=94,y=32
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=94,y=33
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	BonusType=BONUS_FISH
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,34,38,44,45,
+	TeamReveal=10,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=94,y=34
@@ -43522,8 +43481,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=36
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_TEA
+	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -43533,8 +43492,8 @@ BeginPlot
 	x=94,y=37
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_COTTON
+	ImprovementType=IMPROVEMENT_PLANTATION
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,24,29,34,38,44,45,
@@ -43549,11 +43508,11 @@ EndPlot
 BeginPlot
 	x=94,y=39
 	BonusType=BONUS_DYE
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=94,y=40
@@ -43563,21 +43522,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginCity
-		CityOwner=34
+		CityOwner=34, (Mughals)
 		CityName=Azimabad
 		CityPopulation=10
 		BuildingType=BUILDING_STABLE
@@ -43600,7 +43551,7 @@ BeginPlot
 		FreeSpecialistType=SPECIALIST_GREAT_PRIEST
 		Player34Culture=200
 	EndCity
-	TeamReveal=24,34,44,45,
+	TeamReveal=5,24,34,44,45,
 EndPlot
 BeginPlot
 	x=94,y=41
@@ -43652,21 +43603,13 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CUIRASSIER, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_CUIRASSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Turfan
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -43956,13 +43899,13 @@ BeginPlot
 	x=95,y=31
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=24,38,44,
+	TeamReveal=24,38,44,45,
 EndPlot
 BeginPlot
 	x=95,y=32
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=22,24,38,44,
+	TeamReveal=22,24,38,44,45,
 EndPlot
 BeginPlot
 	x=95,y=33
@@ -43980,90 +43923,51 @@ BeginPlot
 	x=95,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,45,
+	TeamReveal=22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=95,y=36
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,45,
+	TeamReveal=22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=95,y=37
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_ENGLISH_REDCOAT, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=24
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK_CITY
+		UnitType=UNIT_CANNON, UnitOwner=24, (England)
 	EndUnit
 	BeginCity
-		CityOwner=24
+		CityOwner=24, (England)
 		CityName=Calcutta
 		CityPopulation=6
 		BuildingType=BUILDING_WALLS
@@ -44093,8 +43997,8 @@ BeginPlot
 	x=95,y=39
 	RiverNSDirection=2
 	isWOfRiver
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_BANANA
+	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -44104,8 +44008,8 @@ BeginPlot
 	x=95,y=40
 	isNOfRiver
 	RiverWEDirection=1
-	ImprovementType=IMPROVEMENT_PLANTATION
 	BonusType=BONUS_TEA
+	ImprovementType=IMPROVEMENT_PLANTATION
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -44467,14 +44371,14 @@ BeginPlot
 	x=96,y=35
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
-	TeamReveal=22,24,29,36,38,44,45,
+	TeamReveal=22,24,29,34,36,38,44,45,
 EndPlot
 BeginPlot
 	x=96,y=36
-	TerrainType=TERRAIN_COAST
 	BonusType=BONUS_FISH
+	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,24,29,38,44,45,
+	TeamReveal=22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=96,y=37
@@ -44535,14 +44439,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (China)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (China)
 		CityName=Lasa
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -44577,8 +44477,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=47
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_VILLAGE
+	FeatureType=FEATURE_OASIS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	TeamReveal=1,44,
@@ -44897,13 +44797,13 @@ BeginPlot
 	x=97,y=35
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,22,24,29,36,38,44,45,
+	TeamReveal=1,22,24,29,34,36,38,44,45,
 EndPlot
 BeginPlot
 	x=97,y=36
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,22,24,29,38,44,45,
+	TeamReveal=1,22,24,29,34,38,44,45,
 EndPlot
 BeginPlot
 	x=97,y=37
@@ -45306,28 +45206,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Yangon
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -45343,7 +45231,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		Player44Culture=100
 	EndCity
-	TeamReveal=1,22,24,29,36,38,44,45,
+	TeamReveal=1,22,24,29,34,36,38,44,45,
 EndPlot
 BeginPlot
 	x=98,y=37
@@ -45372,14 +45260,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,34,44,45,
+	TeamReveal=1,24,34,44,45,
 EndPlot
 BeginPlot
 	x=98,y=40
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,34,44,45,
+	TeamReveal=1,24,34,44,45,
 EndPlot
 BeginPlot
 	x=98,y=41
@@ -45714,8 +45602,8 @@ EndPlot
 BeginPlot
 	x=99,y=28
 	BonusType=BONUS_SUGAR
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -45768,8 +45656,8 @@ EndPlot
 BeginPlot
 	x=99,y=36
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -45778,8 +45666,8 @@ EndPlot
 BeginPlot
 	x=99,y=37
 	BonusType=BONUS_TEA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -45801,7 +45689,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,34,44,45,
+	TeamReveal=1,24,34,44,45,
 EndPlot
 BeginPlot
 	x=99,y=40
@@ -45810,7 +45698,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,34,44,45,
+	TeamReveal=1,24,34,44,45,
 EndPlot
 BeginPlot
 	x=99,y=41
@@ -45820,14 +45708,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Chengdu
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -46155,28 +46039,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Palembang
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -46193,8 +46065,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=100,y=27
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_VILLAGE
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=29,38,44,45,
@@ -46214,8 +46086,8 @@ EndPlot
 BeginPlot
 	x=100,y=30
 	BonusType=BONUS_SUGAR
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -46224,8 +46096,8 @@ EndPlot
 BeginPlot
 	x=100,y=31
 	BonusType=BONUS_DYE
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -46234,8 +46106,8 @@ EndPlot
 BeginPlot
 	x=100,y=32
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -46246,8 +46118,8 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -46343,14 +46215,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Xi'an
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
@@ -46683,21 +46551,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=38, (Netherlands)
 		CityName=Malakka
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -46740,8 +46600,44 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_THAI_CHANG_SUEK, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_THAI_CHANG_SUEK, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_THAI_CHANG_SUEK, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_THAI_CHANG_SUEK, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN, UnitOwner=36, (Thailand)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN, UnitOwner=36, (Thailand)
+	EndUnit
 	BeginCity
-		CityOwner=36
+		CityOwner=36, (Thailand)
 		CityName=Ayutthaya
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -46800,35 +46696,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Hanoi
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
@@ -46849,8 +46729,8 @@ EndPlot
 BeginPlot
 	x=101,y=38
 	BonusType=BONUS_TEA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -47285,8 +47165,8 @@ EndPlot
 BeginPlot
 	x=102,y=38
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -47315,14 +47195,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Chongqing
 		CityPopulation=7
 		BuildingType=BUILDING_GRANARY
@@ -47388,12 +47264,62 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
+	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Beijing
 		CityPopulation=9
 		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_FORBIDDEN_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
@@ -47405,6 +47331,7 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		BuildingType=BUILDING_TAOIST_TEMPLE
 		BuildingType=BUILDING_GREAT_WALL
+		BuildingType=BUILDING_FORBIDDEN_PALACE
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		Player1Culture=150
@@ -47727,7 +47654,7 @@ BeginPlot
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	TeamReveal=1,22,29,36,38,
+	TeamReveal=1,22,29,36,38,44,
 EndPlot
 BeginPlot
 	x=103,y=34
@@ -47741,8 +47668,8 @@ EndPlot
 BeginPlot
 	x=103,y=35
 	BonusType=BONUS_DYE
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	TeamReveal=1,22,29,36,38,44,45,
@@ -47764,8 +47691,8 @@ EndPlot
 BeginPlot
 	x=103,y=38
 	BonusType=BONUS_SILK
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -47818,14 +47745,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Kaifeng
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -47923,13 +47846,14 @@ BeginPlot
 	x=103,y=54
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=1,
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=103,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=103,y=56
@@ -48146,35 +48070,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=38, (Netherlands)
 		CityName=Batavia
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -48200,8 +48108,8 @@ EndPlot
 BeginPlot
 	x=104,y=27
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -48211,33 +48119,20 @@ BeginPlot
 	x=104,y=28
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Pontianak
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -48280,31 +48175,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=33
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Saigon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -48320,7 +48204,7 @@ BeginPlot
 		ReligionType=RELIGION_CONFUCIANISM
 		Player44Culture=50
 	EndCity
-	TeamReveal=1,22,29,36,38,
+	TeamReveal=1,22,29,36,38,44,
 EndPlot
 BeginPlot
 	x=104,y=34
@@ -48490,7 +48374,7 @@ BeginPlot
 	x=104,y=55
 	TerrainType=TERRAIN_GRASS
 	PlotType=0
-	TeamReveal=1,
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=104,y=56
@@ -48717,8 +48601,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=27
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_VILLAGE
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -48760,11 +48644,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=33
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=22,29,36,
+	TeamReveal=22,29,36,44,
 EndPlot
 BeginPlot
 	x=105,y=34
@@ -48802,18 +48686,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Guangzhou
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
@@ -48830,8 +48709,8 @@ EndPlot
 BeginPlot
 	x=105,y=40
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,22,29,45,
@@ -48904,21 +48783,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Shenyang
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
@@ -48973,6 +48844,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=105,y=56
@@ -49182,8 +49054,8 @@ EndPlot
 BeginPlot
 	x=106,y=25
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -49267,7 +49139,7 @@ BeginPlot
 	x=106,y=37
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,22,29,45,
+	TeamReveal=1,22,29,44,45,
 EndPlot
 BeginPlot
 	x=106,y=38
@@ -49325,14 +49197,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Shanghai
 		CityPopulation=10
 		BuildingType=BUILDING_GRANARY
@@ -49398,8 +49266,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=51
-	RouteType=ROUTE_ROAD
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,12,44,45,
@@ -49425,19 +49293,21 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=106,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=106,y=56
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=106,y=57
@@ -49634,8 +49504,8 @@ EndPlot
 BeginPlot
 	x=107,y=24
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -49717,7 +49587,7 @@ BeginPlot
 	x=107,y=37
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	TeamReveal=1,15,22,29,45,
+	TeamReveal=1,15,22,29,44,45,
 EndPlot
 BeginPlot
 	x=107,y=38
@@ -49752,14 +49622,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
-		CityOwner=1
+		CityOwner=1, (China)
 		CityName=Hangzhou
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -49844,26 +49710,23 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=52
-	RouteType=ROUTE_ROAD
 	BonusType=BONUS_OIL
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,12,44,
 EndPlot
 BeginPlot
 	x=107,y=53
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (China)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (China)
 		CityName=Qiqihar
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
@@ -49882,7 +49745,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	TeamReveal=1,
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=107,y=55
@@ -49890,6 +49753,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=107,y=56
@@ -49897,6 +49761,7 @@ BeginPlot
 	isWOfRiver
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=0
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=107,y=57
@@ -50106,33 +49971,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=26
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Makassar
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -50195,8 +50047,8 @@ EndPlot
 BeginPlot
 	x=108,y=34
 	BonusType=BONUS_SUGAR
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -50296,21 +50148,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
 	EndUnit
 	BeginCity
-		CityOwner=12
+		CityOwner=12, (Korea)
 		CityName=Pyongyang
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
@@ -50376,18 +50220,20 @@ BeginPlot
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=1,
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=108,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=108,y=56
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=0
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=108,y=57
@@ -50599,8 +50445,8 @@ EndPlot
 BeginPlot
 	x=109,y=26
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -50652,23 +50498,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_GALLEON, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		PromotionType=PROMOTION_NAVIGATION1
-		PromotionType=PROMOTION_NAVIGATION2
-		FacingDirection=4
-		UnitAIType=UNITAI_ASSAULT_SEA
+		UnitType=UNIT_GALLEON, UnitOwner=22, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=22
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (Spain)
 	EndUnit
 	BeginCity
-		CityOwner=22
+		CityOwner=22, (Spain)
 		CityName=Manila
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -50686,8 +50522,8 @@ EndPlot
 BeginPlot
 	x=109,y=34
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -50768,8 +50604,38 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
+	EndUnit
 	BeginCity
-		CityOwner=12
+		CityOwner=12, (Korea)
 		CityName=Hanseong
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
@@ -50852,19 +50718,21 @@ BeginPlot
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=1,
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=109,y=55
 	FeatureType=FEATURE_FOREST, FeatureVariety=2
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=109,y=56
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
+	TeamReveal=1,44,
 EndPlot
 BeginPlot
 	x=109,y=57
@@ -51107,8 +50975,8 @@ EndPlot
 BeginPlot
 	x=110,y=31
 	BonusType=BONUS_SILK
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -51262,7 +51130,7 @@ BeginPlot
 	FeatureType=FEATURE_MARSH, FeatureVariety=0
 	TerrainType=TERRAIN_MARSH
 	PlotType=2
-	TeamReveal=1,15,
+	TeamReveal=1,15,44,
 EndPlot
 BeginPlot
 	x=110,y=54
@@ -51271,7 +51139,7 @@ BeginPlot
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
-	TeamReveal=1,15,
+	TeamReveal=1,15,44,
 EndPlot
 BeginPlot
 	x=110,y=55
@@ -51489,8 +51357,8 @@ EndPlot
 BeginPlot
 	x=111,y=26
 	BonusType=BONUS_DYE
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -51499,19 +51367,14 @@ EndPlot
 BeginPlot
 	x=111,y=27
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_CITY_DEFENSE
+		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
-		CityOwner=38
+		CityOwner=38, (Netherlands)
 		CityName=Ambon
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
@@ -52003,14 +51866,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
 	EndUnit
 	BeginCity
-		CityOwner=15
+		CityOwner=15, (Japan)
 		CityName=Kagoshima
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -52341,8 +52200,8 @@ EndPlot
 BeginPlot
 	x=113,y=27
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	ImprovementType=IMPROVEMENT_PLANTATION
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=38,
@@ -52455,8 +52314,53 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=15, (Japan)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD, UnitOwner=15, (Japan)
+	EndUnit
+(	BeginUnit)
+(		UnitType=UNIT_SETTLER, UnitOwner=15, (Japan)) (AI only)
+(	EndUnit)
 	BeginCity
-		CityOwner=15
+		CityOwner=15, (Japan)
 		CityName=Kyouto
 		CityPopulation=10
 		BuildingType=BUILDING_PALACE
@@ -53696,14 +53600,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15
-		Damage=0
-		Level=1, Experience=0
-		FacingDirection=4
-		UnitAIType=UNITAI_ATTACK
+		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
 	EndUnit
 	BeginCity
-		CityOwner=15
+		CityOwner=15, (Japan)
 		CityName=Edo
 		CityPopulation=12
 		BuildingType=BUILDING_GRANARY
@@ -56360,5 +56260,3 @@ BeginPlot
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
-
-### Sign Info ###
