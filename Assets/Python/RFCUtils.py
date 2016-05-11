@@ -398,7 +398,7 @@ class RFCUtils:
 										continue
 									
 									if (bKillSettlers):
-										if ((unit.getUnitType() > iSettler)):
+										if ((unit.getUnitType() > iHarappanCityBuilder)):
 											self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
 									else:
 										if ((unit.getUnitType() >= iSettler)): #skip animals
@@ -683,7 +683,7 @@ class RFCUtils:
 				if (unit.getDomainType() == 2): #land unit
 					unit.setXYOld(tDestination[0], tDestination[1])
 				else:
-					j = j + 1
+					j += 1
 
 	def relocateGarrisons(self, tCityPlot, iOldOwner):
 		if iOldOwner < con.iNumPlayers:
@@ -697,7 +697,7 @@ class RFCUtils:
 					if (unit.getDomainType() == 2): #land
 						unit.setXYOld(pCity.getX(), pCity.getY())
 					else:
-						j = j + 1
+						j += 1
 		else:
 			plot = gc.getMap().plot(tCityPlot[0], tCityPlot[1])
 			iNumUnits = plot.getNumUnits()
@@ -752,7 +752,7 @@ class RFCUtils:
 				if (unit.getDomainType() == 0): #sea unit
 					unit.setXYOld(tDestination[0], tDestination[1])
 				else:
-					j = j + 1
+					j += 1
 
 
 	#Congresses, RiseAndFall
