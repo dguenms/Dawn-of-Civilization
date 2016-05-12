@@ -165,30 +165,13 @@ class RFCUtils:
 
 
 	def isMortalUnit(self, unit):
-		if (unit.isHasPromotion(42)): #leader
-			if (not gc.getPlayer(unit.getOwner()).isHuman()):
-				return False
-			else:
-				if (gc.getGame().getSorenRandNum(100, 'random modifier') >= 50):
-					return False	      
-		iUnitType = unit.getUnitType()
-		if (iUnitType <= con.iKhmerBallistaElephant \
-		     and iUnitType != con.iSettler and iUnitType != con.iMechanizedInfantry):
-			return True
-		if (iUnitType >= con.iCatapult and iUnitType <= con.iMobileArtillery ):
-			if (gc.getPlayer(unit.getOwner()).isHuman()):
-				return True
-			else:
-				if (gc.getGame().getSorenRandNum(100, 'random modifier') >= 30):
-					return True
-		if (iUnitType == con.iSettler ):
-			if (gc.getPlayer(unit.getOwner()).isHuman()):
-				if (gc.getGame().getSorenRandNum(100, 'random modifier') >= 50):
-					return True
-			else:
-				if (gc.getGame().getSorenRandNum(100, 'random modifier') >= 20):
-					return True
-		return False
+		if unit.getUpgradeDiscount() >= 100: return False
+		
+		if unit.isMechUnit(): return False
+		
+		if not unit.canFight(): return False
+		
+		return True
 
 	def isDefenderUnit(self, unit):
 		iUnitType = unit.getUnitType()
