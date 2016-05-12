@@ -989,7 +989,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SCOUT_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Scouts[COLOR_REVERT] is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gains only positive bonuses from Tribal villages, can only defend and have a combat bonus against [COLOR_UNIT_TEXT]Animal Units[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Scouts[COLOR_REVERT] are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT], gain only positive bonuses from Tribal villages, can only defend and have a combat bonus against [COLOR_UNIT_TEXT]Animal Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SAM_INFANTRY_STRATEGY</Tag>

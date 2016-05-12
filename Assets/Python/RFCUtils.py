@@ -397,12 +397,8 @@ class RFCUtils:
 									if unit.getUnitType() in [con.iWorker, con.iIndianPunjabiWorker, con.iBrazilianMadeireiro]:
 										continue
 									
-									if (bKillSettlers):
-										if ((unit.getUnitType() > iHarappanCityBuilder)):
-											self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
-									else:
-										if ((unit.getUnitType() >= iSettler)): #skip animals
-											self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
+									if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():
+										self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
 							else:
 								j += 1
 						tempPlot = gc.getMap().plot(0,67)
