@@ -7206,7 +7206,7 @@ EndPlot
 BeginPlot
 	x=17,y=65
 	TerrainType=TERRAIN_SNOW
-	PlotType=3
+	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=66
@@ -8892,18 +8892,18 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=22,y=35
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=46
+		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=46, (Native)
 	EndUnit
 	BeginCity
-		CityOwner=46
+		CityOwner=46, (Native)
 		CityName=Yax Mutal
 		CityPopulation=2
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_MAYAN_BALL_COURT
-		Player46Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -9298,21 +9298,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=37
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=46
+		UnitType=UNIT_MAYAN_HOLKAN, UnitOwner=46, (Native)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=46
+		UnitType=UNIT_WORKER, UnitOwner=46, (Native)
 	EndUnit
 	BeginCity
-		CityOwner=46
+		CityOwner=46, (Native)
 		CityName=Chich'en Itz&#225;
 		CityPopulation=2
 		BuildingType=BUILDING_MAYAN_BALL_COURT
 		BuildingType=BUILDING_TEMPLE_OF_KUKULKAN
-		Player46Culture=10
+		Player46Culture=10, (Native)
 	EndCity
 EndPlot
 BeginPlot
@@ -19604,19 +19605,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=37
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Marrakus
 		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		Player44Culture=1
+		BuildingType=BUILDING_HARBOR
 	EndCity
 EndPlot
 BeginPlot
@@ -20047,9 +20048,9 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=52,y=47
@@ -20428,26 +20429,26 @@ EndPlot
 BeginPlot
 	x=53,y=47
 	BonusType=BONUS_WINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=53,y=48
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Burdigala
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_CATHOLICISM
-		Player44Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -20788,17 +20789,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=42
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=54,y=43
 	BonusType=BONUS_SILVER
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=54,y=44
@@ -20826,9 +20827,9 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=54,y=48
@@ -21181,28 +21182,27 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=44
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Barcelona
 		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
-		Player45Culture=1
 	EndCity
 EndPlot
 BeginPlot
 	x=55,y=45
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=55,y=46
@@ -21212,9 +21212,9 @@ EndPlot
 BeginPlot
 	x=55,y=47
 	BonusType=BONUS_WHEAT
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=55,y=48
@@ -21572,22 +21572,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=46
-	isWOfRiver
 	RiverNSDirection=2
+	isWOfRiver
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Massilia
 		CityPopulation=3
-		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
-		Player44Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -21596,25 +21596,25 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_ALUMINUM
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=56,y=48
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_WINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=56,y=49
 	BonusType=BONUS_PIG
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=56,y=50
@@ -21918,9 +21918,9 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_SHEEP
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=57,y=40
@@ -21955,9 +21955,9 @@ EndPlot
 BeginPlot
 	x=57,y=46
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=57,y=47
@@ -22271,22 +22271,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=37
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=58,y=38
 	BonusType=BONUS_STONE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=58,y=39
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=58,y=40
@@ -22322,9 +22322,9 @@ EndPlot
 BeginPlot
 	x=58,y=46
 	BonusType=BONUS_STONE
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=58,y=47
@@ -22644,9 +22644,9 @@ EndPlot
 BeginPlot
 	x=59,y=37
 	BonusType=BONUS_WHEAT
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=59,y=38
@@ -22695,9 +22695,9 @@ EndPlot
 BeginPlot
 	x=59,y=46
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=59,y=47
@@ -23027,19 +23027,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=37
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44
+		UnitType=UNIT_SPEARMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=44
+		UnitType=UNIT_ARCHER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Tripolis
 		CityPopulation=2
-		Player44Culture=10
+		Player44Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -23077,61 +23078,62 @@ BeginPlot
 	x=60,y=44
 	RiverNSDirection=2
 	isWOfRiver
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=45
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=45, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=45
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=45, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=45
+		UnitType=UNIT_PIKEMAN, UnitOwner=45, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=45
+		UnitType=UNIT_PIKEMAN, UnitOwner=45, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CATHOLIC_MISSIONARY, UnitOwner=45
+		UnitType=UNIT_CATHOLIC_MISSIONARY, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=45
+		UnitType=UNIT_WORKER, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Roma
 		CityPopulation=4
-		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_ROMAN_FORUM
-		BuildingType=BUILDING_COLOSSEUM
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_CATHOLIC_SHRINE
+		BuildingType=BUILDING_COLOSSEUM
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
 		HolyCityReligionType=RELIGION_CATHOLICISM
-		Player45Culture=100
+		Player45Culture=100, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
 	x=60,y=45
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=60,y=46
@@ -23145,9 +23147,9 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_WHEAT
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=60,y=48
@@ -23206,6 +23208,12 @@ BeginPlot
 	x=60,y=56
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+(	BeginUnit)
+(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (AI only)
+(	EndUnit)
+(	BeginUnit)
+(		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (AI only)
+(	EndUnit)
 EndPlot
 BeginPlot
 	x=60,y=57
@@ -23216,11 +23224,66 @@ BeginPlot
 	x=60,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	BeginUnit
+		UnitType=UNIT_GALLEY, UnitOwner=16, (Vikings)
+		UnitAIType=UNITAI_SETTLER_SEA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEY, UnitOwner=16, (Vikings)
+		UnitAIType=UNITAI_EXPLORE_SEA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEY, UnitOwner=16, (Vikings)
+		UnitAIType=UNITAI_EXPLORE_SEA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORK_BOAT, UnitOwner=16, (Vikings)
+	EndUnit
+(	BeginUnit)
+(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (Human only)
+(	EndUnit)
+(	BeginUnit)
+(		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (Human only)
+(	EndUnit)
 EndPlot
 BeginPlot
 	x=60,y=59
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
+(	BeginUnit)
+(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (Human only)
+(	EndUnit)
+(	BeginUnit)
+(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (Human only)
+(	EndUnit)
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SWORDSMAN, UnitOwner=16, (Vikings)
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SWORDSMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_AXEMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_AXEMAN, UnitOwner=16, (Vikings)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SCOUT, UnitOwner=16, (Vikings)
+	EndUnit
+(	BeginUnit)
+(		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (Human only)
+(	EndUnit)
+	BeginUnit
+		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)
+	EndUnit
 EndPlot
 BeginPlot
 	x=60,y=60
@@ -23467,9 +23530,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=37
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=61,y=38
@@ -23499,9 +23562,9 @@ EndPlot
 BeginPlot
 	x=61,y=43
 	BonusType=BONUS_PIG
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=61,y=44
@@ -23524,43 +23587,42 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=47
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_PIKEMAN, UnitOwner=44
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44
+		UnitType=UNIT_PIKEMAN, UnitOwner=44, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Venetia
 		CityPopulation=2
-		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_CATHOLICISM
-		Player44Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -23883,9 +23945,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=36
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=62,y=37
@@ -23916,20 +23978,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=42
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=44
-		CityName=Napoli
+		CityOwner=14, (Byzantium)
+		CityName=Neapolis
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_CATHOLICISM
-		Player44Culture=10
+		Player14Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -23968,19 +24029,19 @@ BeginPlot
 	x=62,y=49
 	RiverNSDirection=2
 	isWOfRiver
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=45
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=45, (Independent2)
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Vindobona
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
-		Player45Culture=1
 	EndCity
 EndPlot
 BeginPlot
@@ -24294,9 +24355,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=36
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=63,y=37
@@ -24326,9 +24387,9 @@ EndPlot
 BeginPlot
 	x=63,y=42
 	BonusType=BONUS_SHEEP
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=63,y=43
@@ -24432,6 +24493,12 @@ BeginPlot
 	RiverWEDirection=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
+(	BeginUnit)
+(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (AI only)
+(	EndUnit)
+(	BeginUnit)
+(		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (AI only)
+(	EndUnit)
 EndPlot
 BeginPlot
 	x=63,y=60
@@ -24688,16 +24755,17 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=36
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=44
+		UnitType=UNIT_SPEARMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=44, (Independent)
 		CityName=Hesperides
 		CityPopulation=2
-		Player44Culture=10
+		Player44Culture=10, (Independent)
 	EndCity
 EndPlot
 BeginPlot
@@ -25106,9 +25174,9 @@ EndPlot
 BeginPlot
 	x=65,y=37
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=65,y=38
@@ -25138,9 +25206,9 @@ EndPlot
 BeginPlot
 	x=65,y=43
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=65,y=44
@@ -25150,19 +25218,19 @@ EndPlot
 BeginPlot
 	x=65,y=45
 	BonusType=BONUS_ALUMINUM
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44
+		UnitType=UNIT_LONGBOWMAN, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=44
-		CityName=Belgrad
+		CityOwner=14, (Byzantium)
+		CityName=Singidunon
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		ReligionType=RELIGION_ORTHODOXY
-		Player44Culture=10
+		Player14Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -25528,9 +25596,9 @@ BeginPlot
 	x=66,y=37
 	BonusType=BONUS_DYE
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=66,y=38
@@ -25558,10 +25626,10 @@ EndPlot
 BeginPlot
 	x=66,y=42
 	BonusType=BONUS_IRON
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROMAN_ROAD
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=66,y=43
@@ -25572,9 +25640,9 @@ BeginPlot
 	x=66,y=44
 	BonusType=BONUS_SHEEP
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=66,y=45
@@ -25938,14 +26006,15 @@ BeginPlot
 	x=67,y=36
 	RiverNSDirection=0
 	isWOfRiver
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=44
+		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=44
-		CityName=Alexandria
+		CityOwner=14, (Byzantium)
+		CityName=Alexandreia
 		CityPopulation=3
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_GREAT_LIGHTHOUSE
@@ -25953,7 +26022,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_CATHOLICISM
-		Player44Culture=10
+		Player14Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -25979,30 +26048,30 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=41
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WORKER, UnitOwner=44
+		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=44
+		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=44
-		CityName=Athenae
+		CityOwner=14, (Byzantium)
+		CityName=Athinai
 		CityPopulation=3
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_PAGAN_TEMPLE
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_THEATRE
-		BuildingType=BUILDING_GREEK_ODEON
+		BuildingType=BUILDING_BYZANTINE_HIPPODROME
+		BuildingType=BUILDING_PARTHENON
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
-		BuildingType=BUILDING_PARTHENON
-		Player44Culture=50
+		Player14Culture=50, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -26019,9 +26088,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=44
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=67,y=45
@@ -26389,9 +26458,9 @@ BeginPlot
 	RiverWEDirection=0
 	isWOfRiver
 	BonusType=BONUS_WHEAT
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=68,y=37
@@ -26437,11 +26506,72 @@ BeginPlot
 	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
+	BeginUnit
+		UnitType=UNIT_TRIREME, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_TRIREME, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEY, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEY, UnitOwner=14, (Byzantium)
+	EndUnit
 EndPlot
 BeginPlot
 	x=68,y=45
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+	BeginUnit
+		UnitType=UNIT_BYZANTINE_CATAPHRACT, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER, UnitOwner=14, (Byzantium)
+	EndUnit
+	BeginCity
+		CityOwner=14, (Byzantium)
+		CityName=Konstantinoupolis
+		CityPopulation=4
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_CASTLE
+		BuildingType=BUILDING_BARRACKS
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_BYZANTINE_HIPPODROME
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_ORTHODOX_TEMPLE
+		BuildingType=BUILDING_THEODOSIAN_WALLS
+		BuildingType=BUILDING_HAGIA_SOPHIA
+		ReligionType=RELIGION_JUDAISM
+		ReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_CATHOLICISM
+		Player14Culture=250, (Byzantium)
+	EndCity
 EndPlot
 BeginPlot
 	x=68,y=46
@@ -26768,31 +26898,32 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=34
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	BonusType=BONUS_MARBLE
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=35
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
+	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44
+		UnitType=UNIT_SPEARMAN, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=44
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=14, (Byzantium)
 		CityName=Memphis
 		CityPopulation=2
 		BuildingType=BUILDING_PYRAMIDS
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
-		Player44Culture=10
+		Player14Culture=10, (Byzantium)
 	EndCity
-	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=36
@@ -26800,9 +26931,9 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=69,y=37
@@ -26844,10 +26975,10 @@ EndPlot
 BeginPlot
 	x=69,y=44
 	BonusType=BONUS_SHEEP
-	TerrainType=TERRAIN_PLAINS
-	PlotType=2
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROMAN_ROAD
+	TerrainType=TERRAIN_PLAINS
+	PlotType=2
 EndPlot
 BeginPlot
 	x=69,y=45
@@ -26857,9 +26988,9 @@ EndPlot
 BeginPlot
 	x=69,y=46
 	BonusType=BONUS_CLAM
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=69,y=47
@@ -27154,7 +27285,6 @@ BeginPlot
 	x=70,y=31
 	BonusType=BONUS_GOLD
 	TerrainType=TERRAIN_DESERT
-	BonusType=BONUS_GOLD
 	PlotType=2
 EndPlot
 BeginPlot
@@ -27171,10 +27301,10 @@ EndPlot
 BeginPlot
 	x=70,y=34
 	BonusType=BONUS_HORSE
-	TerrainType=TERRAIN_DESERT
-	PlotType=2
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_DESERT
+	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=35
@@ -27185,9 +27315,9 @@ EndPlot
 BeginPlot
 	x=70,y=36
 	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=70,y=37
@@ -27230,9 +27360,9 @@ BeginPlot
 	x=70,y=44
 	BonusType=BONUS_COAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROMAN_ROAD
 EndPlot
 BeginPlot
 	x=70,y=45
@@ -27564,9 +27694,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=36
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=71,y=37
@@ -27603,12 +27733,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=43
-	isWOfRiver
 	RiverNSDirection=0
-	TerrainType=TERRAIN_PLAINS
+	isWOfRiver
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
-	PlotType=1
 	RouteType=ROUTE_ROMAN_ROAD
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=71,y=44
@@ -27911,21 +28041,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=29
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_SPEARMAN, UnitOwner=45
+		UnitType=UNIT_SPEARMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=45
+		UnitType=UNIT_ARCHER, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
-		CityOwner=45
+		CityOwner=45, (Independent2)
 		CityName=Aksum
 		CityPopulation=2
 		BuildingType=BUILDING_ETHIOPIAN_STELE
 		ReligionType=RELIGION_ORTHODOXY
-		Player45Culture=50
+		Player45Culture=50, (Independent2)
 	EndCity
 EndPlot
 BeginPlot
@@ -27966,9 +28097,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=37
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=72,y=38
@@ -28000,19 +28131,19 @@ BeginPlot
 	x=72,y=43
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=44
-		CityName=Iconium
+		CityOwner=14, (Byzantium)
+		CityName=Ikonion
 		CityPopulation=2
 		BuildingType=BUILDING_MARKET
 		ReligionType=RELIGION_ORTHODOXY
-		Player44Culture=10
+		Player14Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -28366,40 +28497,41 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=38
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=14, (Byzantium)
 		CityName=Hierousalem
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_ORTHODOX_SHRINE
 		BuildingType=BUILDING_JEWISH_TEMPLE
 		BuildingType=BUILDING_JEWISH_SHRINE
+		BuildingType=BUILDING_ORTHODOX_SHRINE
 		ReligionType=RELIGION_JUDAISM
-		ReligionType=RELIGION_ORTHODOXY
-		ReligionType=RELIGION_CATHOLICISM
-		HolyCityReligionType=RELIGION_ORTHODOXY
 		HolyCityReligionType=RELIGION_JUDAISM
-		Player44Culture=10
+		ReligionType=RELIGION_ORTHODOXY
+		HolyCityReligionType=RELIGION_ORTHODOXY
+		ReligionType=RELIGION_CATHOLICISM
+		Player14Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
 	x=73,y=39
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=73,y=40
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=73,y=41
@@ -28410,16 +28542,16 @@ EndPlot
 BeginPlot
 	x=73,y=42
 	BonusType=BONUS_WINE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=73,y=43
 	BonusType=BONUS_WHEAT
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=73,y=44
@@ -28784,21 +28916,22 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=40
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_ARCHER, UnitOwner=44
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
-		CityOwner=44
+		CityOwner=14, (Byzantium)
 		CityName=Damaskos
 		CityPopulation=3
+		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_WALLS
-		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_JUDAISM
-		Player44Culture=10
+		ReligionType=RELIGION_ORTHODOXY
+		Player14Culture=10, (Byzantium)
 	EndCity
 EndPlot
 BeginPlot
@@ -28807,9 +28940,9 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_WHEAT
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=74,y=42
@@ -28830,10 +28963,10 @@ EndPlot
 BeginPlot
 	x=74,y=44
 	BonusType=BONUS_HORSE
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=74,y=45
