@@ -2708,10 +2708,7 @@ class RiseAndFall:
 					break
 
 		if tSeaPlot != -1:
-			if iPlayer == iNetherlands:
-				utils.makeUnit(iDutchEastIndiaman, iPlayer, tSeaPlot, 1)
-			else:
-				utils.makeUnit(iGalleon, iPlayer, tSeaPlot, 1)
+			utils.makeUnit(utils.getUniqueUnitType(iPlayer, gc.getUnitInfo(iGalleon).getUnitClassType()), iPlayer, tSeaPlot, 1)
 				
 				
 	#def onProjectBuilt(self, city, iProjectType):
