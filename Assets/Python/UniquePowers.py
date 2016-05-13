@@ -171,7 +171,7 @@ class UniquePowers:
 
 		print("UniquePowers.checkTurn()")
 			
-		if (iGameTurn >= getTurnForYear(860)):
+		if (iGameTurn >= getTurnForYear(860)) and gc.getPlayer(iRussia).isAlive():
 			self.russianUP()
 
 		if (iGameTurn >= getTurnForYear(con.tBirth[iAmerica])+utils.getTurns(5)):

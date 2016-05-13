@@ -339,7 +339,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(-1600):
 			expire(iHarappa, 0)
 			
-		# second goal: build three Baths and two Granaries by 1500 BC
+		# second goal: build three Baths and two Walls by 1500 BC
 		if iGameTurn == getTurnForYear(-1500):
 			expire(iHarappa, 1)
 			
@@ -1663,7 +1663,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iConfucian >= 2 and iTaoist >= 2:
 					win(iChina, 0)
 					
-	# second Harappan goal: build three Baths and two Granaries by 1500 BC
+	# second Harappan goal: build three Baths and two Walls by 1500 BC
 	elif iPlayer == iHarappa:
 		if isPossible(iHarappa, 1):
 			if iBuilding in [iHarappanBath, iWalls]:
