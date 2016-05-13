@@ -139,11 +139,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BRAZILIAN_MADEIREIRO_HELP</Tag>
-		<English>[ICON_BULLET]Create Production and Gold when Removing Jungles and Forests</English>
+		<English>[ICON_BULLET]Create Production and Gold when Removing Jungles, Rainforest and Forests</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BRAZILIAN_MADEIREIRO_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Madeireiro[COLOR_REVERT], the Brazilian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Woodsman II[COLOR_REVERT] promotion and provides extra gold and production when it chops jungles and forests.</English>
+		<English>The [COLOR_UNIT_TEXT]Madeireiro[COLOR_REVERT], the Brazilian replacement for the [COLOR_UNIT_TEXT]Worker[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Woodsman II[COLOR_REVERT] promotion and provides extra gold and production when it chops jungles, rainforest and forests.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BYZANTINE_CATAPHRACT_STRATEGY</Tag>

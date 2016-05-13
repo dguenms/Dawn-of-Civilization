@@ -509,6 +509,10 @@ class CvRFCEventHandler:
 			dc.onPalaceMoved(iOwner)
 			
 			if city.isHasRealBuilding(iAdministrativeCenter): city.setHasRealBuilding(iAdministrativeCenter, False)
+			
+			# Leoreth: in case human Phoenicia moves palace to Carthage
+			if iOwner == iCarthage and city.getX() == 58 and city.getY() == 39:
+				utils.setReborn(iCarthage, True)
 
 		# Leoreth: update trade routes when Porcelain Tower is built to start its effect
 		if iBuildingType == iPorcelainTower:
@@ -544,11 +548,6 @@ class CvRFCEventHandler:
 			iGPType = utils.getUniqueUnit(iOwner, iGreatProphet + utils.getHighestIndex(lGPList))
 			utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
 			CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
-
-		# Leoreth: in case human Phoenicia moves palace to Carthage
-		if iBuildingType == iPalace:
-			if iOwner == iCarthage and city.getX() == 58 and city.getY() == 39:
-				utils.setReborn(iCarthage, True)
 			
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList
@@ -558,6 +557,7 @@ class CvRFCEventHandler:
 			
 			if iFeature == iForest: iGold = 15
 			elif iFeature == iJungle: iGold = 20
+			elif iFeature == iRainforest: iGold = 20
 			
 			if iGold > 0:
 				gc.getPlayer(iBrazil).changeGold(iGold)

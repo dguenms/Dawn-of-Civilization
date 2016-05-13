@@ -2499,13 +2499,13 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_FLOATING_GARDENS</Type>
-			<LSystem>LSYSTEM_RIVER</LSystem>
+			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Dutch_Dike/Dutch_Dike.nif</NIF>
+			<fScale>1.8</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Floating_Gardens/garden.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Granary.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,4</Button>
+			<Button>Art/Interface/Buttons/Wonders/Floating_Gardens.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GRAND_CANAL</Type>

@@ -29,7 +29,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ARABIAN_ALCHEMIST_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Alchemist[COLOR_REVERT], the Arabian replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], has an additional scientist slot and does not cause unhealthiness.</English>
+		<English>The [COLOR_BUILDING_TEXT]Alchemist[COLOR_REVERT], the Arabian replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], has an additional [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] slot and does not cause unhealthiness.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUEDUCT_STRATEGY</Tag>
