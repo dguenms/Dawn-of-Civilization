@@ -167,7 +167,7 @@ class RFCUtils:
 	def isMortalUnit(self, unit):
 		if unit.getUpgradeDiscount() >= 100: return False
 		
-		if unit.isMechUnit(): return False
+		if gc.getUnitInfo(unit.getUnitType()).isMechUnit(): return False
 		
 		if not unit.canFight(): return False
 		
@@ -2059,7 +2059,10 @@ class RFCUtils:
 		
 	def setStateReligionBeforeBirth(self, lPlayers, iReligion):
 		for iPlayer in lPlayers:
-			if gc.getGame().getGameTurn() < getTurnForYear(con.tBirth[iPlayer]):
+			if gc.getGame().getGameTurn() < getTurnForYear(con.tBirth[iPlayer]) and gc.getPlayer(iPlayer).getStateReligion() != iReligion:
 				gc.getPlayer(iPlayer).setLastStateReligion(iReligion)
+				
+	def playerNames(self, lPlayers):
+		return str([gc.getPlayer(iPlayer).getCivilizationShortDescription(0) for iPlayer in lPlayers])
 
 utils = RFCUtils()
