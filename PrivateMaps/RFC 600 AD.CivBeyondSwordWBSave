@@ -23208,12 +23208,6 @@ BeginPlot
 	x=60,y=56
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
-(	BeginUnit)
-(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (AI only)
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (AI only)
-(	EndUnit)
 EndPlot
 BeginPlot
 	x=60,y=57
@@ -23224,38 +23218,11 @@ BeginPlot
 	x=60,y=58
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	BeginUnit
-		UnitType=UNIT_GALLEY, UnitOwner=16, (Vikings)
-		UnitAIType=UNITAI_SETTLER_SEA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_GALLEY, UnitOwner=16, (Vikings)
-		UnitAIType=UNITAI_EXPLORE_SEA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_GALLEY, UnitOwner=16, (Vikings)
-		UnitAIType=UNITAI_EXPLORE_SEA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORK_BOAT, UnitOwner=16, (Vikings)
-	EndUnit
-(	BeginUnit)
-(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (Human only)
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (Human only)
-(	EndUnit)
 EndPlot
 BeginPlot
 	x=60,y=59
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
-(	BeginUnit)
-(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (Human only)
-(	EndUnit)
-(	BeginUnit)
-(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (Human only)
-(	EndUnit)
 	BeginUnit
 		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)
 	EndUnit
@@ -26506,18 +26473,6 @@ BeginPlot
 	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	BeginUnit
-		UnitType=UNIT_TRIREME, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_TRIREME, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_GALLEY, UnitOwner=14, (Byzantium)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_GALLEY, UnitOwner=14, (Byzantium)
-	EndUnit
 EndPlot
 BeginPlot
 	x=68,y=45
@@ -43983,12 +43938,6 @@ BeginPlot
 	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
-	BeginUnit
-		UnitType=UNIT_WORK_BOAT, UnitOwner=15, (Japan)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORK_BOAT, UnitOwner=15, (Japan)
-	EndUnit
 EndPlot
 BeginPlot
 	x=112,y=47
