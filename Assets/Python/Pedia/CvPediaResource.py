@@ -125,6 +125,11 @@ class CvPediaResource:
 			screen.attachImageButton(panel, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
 			screen.attachLabel(panel, "", u" (" + CyTranslator().getText("TXT_KEY_PEDIA_BONUS_TRADE", ()) + u")   ")
 
+		iTech = gc.getBonusInfo(self.iResource).getTechPlayerTrade()
+		if iTech > -1:
+			screen.attachImageButton(panel, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
+			screen.attachLabel(panel, "", u" (" + CyTranslator().getText("Trade", ()) + u")   ")
+			
 		iTech = gc.getBonusInfo(self.iResource).getTechObsolete()
 		if iTech > -1:
 			screen.attachImageButton(panel, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
