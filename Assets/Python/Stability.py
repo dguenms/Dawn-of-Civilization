@@ -2097,7 +2097,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		
 		if pOwner.isBarbarian() or pOwner.isMinorCiv():
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 100, False, True, True, True)
-			utils.flipUnitsInArea((x-2, y-2), (x+2, y+2), iPlayer, iOwner, True, False)
+			utils.flipUnitsInArea(utils.getPlotList((x-2, y-2), (x+2, y+2)), iPlayer, iOwner, True, False)
 	
 		else:
 			utils.completeCityFlip(x, y, iPlayer, iOwner, 75, False, True, True)
