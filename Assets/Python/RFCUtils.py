@@ -356,76 +356,73 @@ class RFCUtils:
 				unit.kill(False, con.iBarbarian)
 							
 	#RiseAndFall
-	def flipUnitsInArea(self, tTopLeft, tBottomRight, iNewOwner, iOldOwner, bSkipPlotCity, bKillSettlers, lExceptions=[]):
+	def flipUnitsInArea(self, lPlots, iNewOwner, iOldOwner, bSkipPlotCity, bKillSettlers):
 		"""Deletes, recreates units in 0,67 and moves them to the previous tile.
 		If there are units belonging to others in that plot and the new owner is barbarian, the units aren't recreated.
 		Settlers aren't created.
 		If bSkipPlotCity is True, units in a city won't flip. This is to avoid converting barbarian units that would capture a city before the flip delay"""
-		for x in range(tTopLeft[0], tBottomRight[0]+1):
-			for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if (x,y) in lExceptions: continue
-			
-				killPlot = gc.getMap().plot(x,y)
-				iNumUnitsInAPlot = killPlot.getNumUnits()
-				if (iNumUnitsInAPlot):
-					bRevealedZero = False
-					if (gc.getMap().plot(0, 67).isRevealed(iNewOwner, False)):
-						bRevealedZero = True
-					#print ("killplot", x, y)
-					if (bSkipPlotCity == True) and (killPlot.isCity()):
-						#print (killPlot.isCity())
-						#print 'do nothing'
-						pass
-					else:
-						j = 0
-						oldCapital = gc.getPlayer(iOldOwner).getCapitalCity()
-						for i in range(iNumUnitsInAPlot):							
-							unit = killPlot.getUnit(j)
-							#print ("killplot", x, y, unit.getUnitType(), unit.getOwner(), "j", j)
-							if (unit.getOwner() == iOldOwner):
-								# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
-								if iNewOwner == con.iItaly and iOldOwner < con.iNumPlayers:
-									unit.setXYOld(oldCapital.getX(), oldCapital.getY())
-								else:
-									unit.kill(False, con.iBarbarian)
-									
-									# Leoreth: can't flip naval units anymore
-									if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
-										continue
-										
-									# Leoreth: ignore workers as well
-									if unit.getUnitType() in [con.iWorker, con.iIndianPunjabiWorker, con.iBrazilianMadeireiro]:
-										continue
-									
-									if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():
-										self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
+		for (x, y) in lPlots:
+			killPlot = gc.getMap().plot(x,y)
+			iNumUnitsInAPlot = killPlot.getNumUnits()
+			if (iNumUnitsInAPlot):
+				bRevealedZero = False
+				if (gc.getMap().plot(0, 67).isRevealed(iNewOwner, False)):
+					bRevealedZero = True
+				#print ("killplot", x, y)
+				if (bSkipPlotCity == True) and (killPlot.isCity()):
+					#print (killPlot.isCity())
+					#print 'do nothing'
+					pass
+				else:
+					j = 0
+					oldCapital = gc.getPlayer(iOldOwner).getCapitalCity()
+					for i in range(iNumUnitsInAPlot):							
+						unit = killPlot.getUnit(j)
+						#print ("killplot", x, y, unit.getUnitType(), unit.getOwner(), "j", j)
+						if (unit.getOwner() == iOldOwner):
+							# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
+							if iNewOwner == con.iItaly and iOldOwner < con.iNumPlayers:
+								unit.setXYOld(oldCapital.getX(), oldCapital.getY())
 							else:
-								j += 1
-						tempPlot = gc.getMap().plot(0,67)
-						#moves new units back in their place
-						if (tempPlot.getNumUnits() != 0):
-							iNumUnitsInAPlot = tempPlot.getNumUnits()
-							for i in range(iNumUnitsInAPlot):
-								unit = tempPlot.getUnit(0)
-								unit.setXYOld(x,y)
-							iCiv = iNewOwner
-							if (bRevealedZero == False):
-								gc.getMap().plot(0, 67).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(0, 66).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(1, 66).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(1, 67).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(123, 67).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(123, 66).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(2, 67).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(2, 66).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(2, 65).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(1, 65).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(0, 65).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(122, 67).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(122, 66).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(122, 65).setRevealed(iCiv, False, True, -1);
-								gc.getMap().plot(123, 65).setRevealed(iCiv, False, True, -1);
-				
+								unit.kill(False, con.iBarbarian)
+								
+								# Leoreth: can't flip naval units anymore
+								if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
+									continue
+									
+								# Leoreth: ignore workers as well
+								if unit.getUnitType() in [con.iWorker, con.iIndianPunjabiWorker, con.iBrazilianMadeireiro]:
+									continue
+								
+								if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():
+									self.makeUnit(unit.getUnitType(), iNewOwner, [0, 67], 1)
+						else:
+							j += 1
+					tempPlot = gc.getMap().plot(0,67)
+					#moves new units back in their place
+					if (tempPlot.getNumUnits() != 0):
+						iNumUnitsInAPlot = tempPlot.getNumUnits()
+						for i in range(iNumUnitsInAPlot):
+							unit = tempPlot.getUnit(0)
+							unit.setXYOld(x,y)
+						iCiv = iNewOwner
+						if (bRevealedZero == False):
+							gc.getMap().plot(0, 67).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(0, 66).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(1, 66).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(1, 67).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(123, 67).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(123, 66).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(2, 67).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(2, 66).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(2, 65).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(1, 65).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(0, 65).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(122, 67).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(122, 66).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(122, 65).setRevealed(iCiv, False, True, -1);
+							gc.getMap().plot(123, 65).setRevealed(iCiv, False, True, -1);
+			
 
 
 

@@ -999,11 +999,12 @@ class RiseAndFall:
 			if utils.getScenario() == i600AD:  #late start condition
 				tTL, tBR = Areas.tBirthArea[iChina]
 				if utils.getHumanID() != iChina: tTL = (99, 39) # 4 tiles further north
-				iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iChina, utils.getPlotList(tTL, tBR))
-				self.convertSurroundingPlotCulture(iChina, utils.getPlotList(tTL, tBR))
-				utils.flipUnitsInArea(tTL, tBR, iChina, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
-				utils.flipUnitsInArea(tTL, tBR, iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-				utils.flipUnitsInArea(tTL, tBR, iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
+				lPlots = utils.getPlotList(tTL, tBR)
+				iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iChina, lPlots)
+				self.convertSurroundingPlotCulture(iChina, lPlots)
+				utils.flipUnitsInArea(lPlots, iChina, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ   
+				utils.flipUnitsInArea(lPlots, iChina, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+				utils.flipUnitsInArea(lPlots, iChina, iIndependent2, False, False) #remaining independents in the region now belong to the new civ
 
 				
 		#kill the remaining barbs in the region: it's necessary to do this more than once to protect those civs
@@ -1624,7 +1625,7 @@ class RiseAndFall:
 							pCurrent=gc.getMap().plot(x, y)
 							for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
 								if (iCiv != iLoopCiv):
-									utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iLoopCiv, True, False, utils.getOrElse(Areas.dBirthAreaExceptions, iCiv, []))
+									utils.flipUnitsInArea(utils.getPlotList(tTopLeft, tBottomRight, utils.getOrElse(Areas.dBirthAreaExceptions, iCiv, [])), iCiv, iLoopCiv, True, False)
 							if (pCurrent.isCity()):
 								pCurrent.eraseAIDevelopment() #new function, similar to erase but won't delete rivers, resources and features()
 							for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
@@ -1782,9 +1783,10 @@ class RiseAndFall:
 						city.setHasRealBuilding(iCourthouse, True)
 						if city.isCoastal(20): city.setHasRealBuilding(iHarbor, True)
 										
-				utils.flipUnitsInArea((tCapital[0]-3, tCapital[1]-3), (tCapital[0]+3, tCapital[1]+3), iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				utils.flipUnitsInArea((tCapital[0]-3, tCapital[1]-3), (tCapital[0]+3, tCapital[1]+3), iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
-				utils.flipUnitsInArea((tCapital[0]-3, tCapital[1]-3), (tCapital[0]+3, tCapital[1]+3), iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				lPlots = utils.getPlotList((tCapital[0]-3, tCapital[1]-3), (tCapital[0]+3, tCapital[1]+3))
+				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
 				self.assignTechs(iCiv)
 				utils.setPlagueCountdown(iCiv, -iImmunity)
 				utils.clearPlague(iCiv)
@@ -1798,9 +1800,9 @@ class RiseAndFall:
 			lPlots = utils.getPlotList(tTopLeft, tBottomRight, Areas.getBirthExceptions(iCiv))
 			iNumAICitiesConverted, iNumHumanCitiesToConvert = self.convertSurroundingCities(iCiv, lPlots)
 			self.convertSurroundingPlotCulture(iCiv, lPlots)
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ# starting workers
+			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, False, False) #remaining independents in the region now belong to the new civ   
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, False, False) #remaining independents in the region now belong to the new civ# starting workers
 		
 			# create starting workers
 			if iNumCities == 0 and gc.getPlayer(iCiv).getNumCities() > 0:
@@ -1882,9 +1884,9 @@ class RiseAndFall:
 					self.assignTechs(iCiv)
 					utils.setPlagueCountdown(iCiv, -iImmunity)
 					utils.clearPlague(iCiv)
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ 
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, False, False) #remaining barbs in the region now belong to the new civ 
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, False, False) #remaining barbs in the region now belong to the new civ
+			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ 
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, False, False) #remaining barbs in the region now belong to the new civ 
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, False, False) #remaining barbs in the region now belong to the new civ
 			
 			if iCiv == iTurkey:
 				sd.scriptDict['iOttomanSpawnTurn'] = gc.getGame().getGameTurn()
@@ -1910,9 +1912,9 @@ class RiseAndFall:
 						self.assignTechs(iCiv)
 						utils.setPlagueCountdown(iCiv, -iImmunity)
 						utils.clearPlague(iCiv)
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
-			utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
+			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
+			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
 
 		if (iNumHumanCitiesToConvert > 0):
 			print "Flip Popup: foreign borders"
@@ -1964,9 +1966,10 @@ class RiseAndFall:
 				utils.clearPlague(iCiv)
 
 				print ("flipping remaining units")
-				utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
-				utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
-				utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
+				lPlots = utils.getPlotList(tTopLeft, tBottomRight)
+				utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
+				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
 				
 				self.assignTechs(iCiv)
 				
@@ -2007,7 +2010,7 @@ class RiseAndFall:
 			self.convertSurroundingPlotCulture(iCiv, lPlots)
 				
 			for i in range(iIndependent, iBarbarian+1):
-				utils.flipUnitsInArea(tTopLeft, tBottomRight, iCiv, i, False, True) #remaining barbs/indeps in the region now belong to the new civ   
+				utils.flipUnitsInArea(lPlots, iCiv, i, False, True) #remaining barbs/indeps in the region now belong to the new civ   
 			
 			# kill the catapult and cover the plots
 			plotZero = gc.getMap().plot(0, 0)
