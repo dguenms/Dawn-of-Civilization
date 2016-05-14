@@ -105,7 +105,7 @@ class CvRFCEventHandler:
 		self.aiw.setup()
 		
 		vic.setup()
-		cong.setup()
+		#cong.setup()
 		
 		# Leoreth: set DLL core values
 		Modifiers.init()
@@ -586,7 +586,7 @@ class CvRFCEventHandler:
 		self.corp.checkTurn(iGameTurn)
 		
 		sta.checkTurn(iGameTurn)
-		cong.checkTurn(iGameTurn)
+		#cong.checkTurn(iGameTurn)
 		
 		if iGameTurn % 10 == 0:
 			dc.checkTurn(iGameTurn)
@@ -737,13 +737,13 @@ class CvRFCEventHandler:
 		sd.load() # edead: load & unpickle script data
 		
 	def onChangeWar(self, argsList):
-		bWar, iTeam, iOtherTeam, bGlobalWar = argsList
+		bWar, iTeam, iOtherTeam = argsList
 		
 		sta.onChangeWar(bWar, iTeam, iOtherTeam)
 		self.up.onChangeWar(bWar, iTeam, iOtherTeam)
 		
-		if iTeam < iNumPlayers and iOtherTeam < iNumPlayers:
-			cong.onChangeWar(argsList)
+		#if iTeam < iNumPlayers and iOtherTeam < iNumPlayers:
+		#	cong.onChangeWar(bWar, iTeam, iOtherTeam)
 		
 		# don't start AIWars if they get involved in natural wars
 		if bWar and iTeam < iNumPlayers and iOtherTeam < iNumPlayers:

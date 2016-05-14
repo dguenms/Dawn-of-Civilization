@@ -47,13 +47,17 @@ def checkTurn(iGameTurn):
 			sd.setCurrentCongress(currentCongress)
 			currentCongress.startCongress()
 
-def onChangeWar(argsList):
-	bWar, iPlayer, iOtherPlayer, bGlobalWar = argsList
-	
+def onChangeWar(bWar, iPlayer, iOtherPlayer):
 	if isCongressEnabled():
-		if bWar and bGlobalWar and not isGlobalWar():
-			sd.setGlobalWarAttacker(iPlayer)
-			sd.setGlobalWarDefender(iOtherPlayer)
+		if bWar and not isGlobalWar():
+			lAttackers, lDefenders = determineAlliances(iPlayer, iOtherPlayer)
+			
+			if startsGlobalWar(lAttackers, lDefenders):
+				iAttacker = utils.getHighestEntry(lAttackers, lambda iPlayer: gc.getTeam(iPlayer).getPower(True))
+				iDefender = utils.getHighestEntry(lDefenders, lambda iPlayer: gc.getTeam(iPlayer).getPower(True))
+			
+				sd.setGlobalWarAttacker(iAttacker)
+				sd.setGlobalWarDefender(iDefender)
 		
 		if not bWar and sd.getGlobalWarAttacker() in [iPlayer, iOtherPlayer] and sd.getGlobalWarDefender() in [iPlayer, iOtherPlayer]:
 			endGlobalWar(iPlayer, iOtherPlayer)
@@ -64,10 +68,29 @@ def isCongressEnabled():
 	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iUnitedNations).getBuildingClassType()) > 0:
 		return False
 		
-	#if gc.getGame().getGameTurn() < getTurnForYear(tBirth[utils.getHumanID()]):
-	#	return False
-		
 	return (gc.getGame().countKnownTechNumTeams(iNationalism) > 0)
+	
+def startsGlobalWar(lAttackers, lDefenders):
+	if len(lAttackers) < 2: return False
+	if len(lDefenders) < 2: return False
+	
+	lWorldPowers = utils.getSortedList([i for i in range(iNumPlayers) if gc.getPlayer(i).isAlive() and not utils.isAVassal(i)], lambda iPlayer: gc.getTeam(iPlayer).getPower(True), True)
+	
+	iCount = len(lWorldPowers)/4
+	lWorldPowers = lWorldPowers[:iCount]
+	
+	lParticipatingPowers = [iPlayer for iPlayer in lWorldPowers if iPlayer in lAttackers or iPlayer in lDefenders]
+	
+	return 2 * len(lParticipatingPowers) >= len(lWorldPowers)
+				
+def determineAlliances(iAttacker, iDefender):
+	teamAttacker = gc.getTeam(iAttacker)
+	teamDefender = gc.getTeam(iDefender)
+	
+	lAttackers = [iPlayer for iPlayer in range(iNumPlayers) if teamDefender.isAtWar(iPlayer)]
+	lDefenders = [iPlayer for iPlayer in range(iNumPlayers) if teamAttacker.isAtWar(iPlayer)]
+
+	return [iAttacker for iAttacker in lAttackers if iAttacker not in lDefenders], [iDefender for iDefender in lDefenders if iDefender not in lAttackers]
 
 def isGlobalWar():
 	return (sd.getGlobalWarAttacker() != -1 and sd.getGlobalWarDefender() != -1)
@@ -79,16 +102,19 @@ def endGlobalWar(iAttacker, iDefender):
 	lAttackers = [iAttacker]
 	lDefenders = [iDefender]
 	
+	lAttackers, lDefenders = determineAlliances(iAttacker, iDefender)
+	
 	# force peace for all allies of the belligerents
-	for iLoopPlayer in range(iNumPlayers):
+	for iLoopPlayer in lAttackers:
 		if utils.isAVassal(iLoopPlayer): continue
-		if gc.getTeam(iLoopPlayer).isDefensivePact(iAttacker) and gc.getTeam(iLoopPlayer).isAtWar(iDefender):
-			lAttackers.append(iLoopPlayer)
-			gc.getTeam(iLoopPlayer).makePeace(iDefender)
-		if gc.getTeam(iLoopPlayer).isDefensivePact(iDefender) and gc.getTeam(iLoopPlayer).isAtWar(iAttacker):
-			lDefenders.append(iLoopPlayer)
-			gc.getTeam(iLoopPlayer).makePeace(iAttacker)
-			
+		if iLoopPlayer == iAttacker: continue
+		gc.getTeam(iLoopPlayer).makePeace(iDefender)
+		
+	for iLoopPlayer in lDefenders:
+		if utils.isAVassal(iLoopPlayer): continue
+		if iLoopPlayer == iDefender: continue
+		gc.getTeam(iLoopPlayer).makePeace(iAttacker)
+		
 	if gc.getGame().determineWinner(iAttacker, iDefender) == iAttacker:
 		lWinners = lAttackers
 		lLosers = lDefenders
@@ -169,7 +195,7 @@ class Congress:
 	
 		# move AI claims here so they are made on the same turn as they are resolved - otherwise change of ownership might confuse things
 		for iLoopPlayer in self.lInvites:
-			if self.bPostWar and iLoopPlayer in self.lLosers: continue
+			if not self.canClaim(iLoopPlayer): continue
 			self.dPossibleClaims[iLoopPlayer] = self.selectClaims(iLoopPlayer)
 			
 		for iLoopPlayer in self.lInvites:
@@ -480,17 +506,10 @@ class Congress:
 
 	def startCongress(self):
 		self.bPostWar = (len(self.lWinners) > 0)
-		lPossibleInvites = []
 		
 		utils.debugTextPopup('Congress takes place')
-		
-		if self.bPostWar:
-			lPossibleInvites.extend(self.lWinners)
-			lPossibleInvites.extend(self.lLosers)
-		else:
-			lPossibleInvites = [i for i in range(iNumPlayers)]
 
-		self.inviteToCongress(lPossibleInvites)
+		self.inviteToCongress()
 		
 		if self.bPostWar:
 			iHostPlayer = self.lWinners[0]
@@ -520,7 +539,7 @@ class Congress:
 			else:
 				# select claims first, then move on to voting directly since the player isn't involved
 				for iLoopPlayer in self.lInvites:
-					if self.bPostWar and iLoopPlayer in self.lLosers: continue
+					if not self.canClaim(iLoopPlayer): continue
 					self.dPossibleClaims[iLoopPlayer] = self.selectClaims(iLoopPlayer)
 					
 				for iLoopPlayer in self.lInvites:
@@ -933,6 +952,15 @@ class Congress:
 		if len(self.dPossibleClaims[iPlayer]) == 0: return
 		x, y, iValue = utils.getHighestEntry(self.dPossibleClaims[iPlayer], lambda x: x[2])
 		self.dCityClaims[iPlayer] = (x, y, iValue)
+		
+	def canClaim(self, iPlayer):
+		if not self.bPostWar: return True
+		
+		if iPlayer in self.lWinners: return True
+		
+		if iPlayer in self.lLosers: return True
+		
+		return False
 			
 	def selectClaims(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -943,10 +971,11 @@ class Congress:
 		for iLoopPlayer in range(iNumTotalPlayers+1):
 			if iLoopPlayer == iPlayer: continue
 			if not gc.getPlayer(iLoopPlayer).isAlive(): continue
-			if iLoopPlayer in self.lWinners: continue
 			
-			# after a war: can only demand from losing civs
-			#if self.bPostWar and iLoopPlayer not in self.lLosers: continue
+			# after a war: winners can only claim from losers and vice versa
+			if self.bPostWar:
+				if iPlayer in self.lWinners and iLoopPlayer not in self.lLosers: continue
+				if iPlayer in self.lLosers and iLoopPlayer not in self.lWinners: continue
 				
 			# AI civs: cannot claim cities from friends
 			if utils.getHumanID() != iPlayer and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: continue
@@ -967,9 +996,6 @@ class Congress:
 			# cannot demand cities while at war
 			if gc.getTeam(iPlayer).isAtWar(iLoopPlayer): continue
 			
-			# Ethiopian UP
-			#if iLoopPlayer == iEthiopia: continue
-			
 			for city in utils.getCityList(iLoopPlayer):
 				x, y = city.getX(), city.getY()
 				plot = gc.getMap().plot(x, y)
@@ -978,6 +1004,10 @@ class Congress:
 				
 				if not plot.isRevealed(iPlayer, False): continue
 				if city.isCapital(): continue
+				
+				# after a war: losers can only claim previously owned cities
+				if self.bPostWar and iPlayer in self.lLosers:
+					if city.getGameTurnPlayerLost(iPlayer) < gc.getGame().getGameTurn() - utils.getTurns(25): continue
 				
 				# city culture
 				iTotalCulture = city.countTotalCultureTimes100()
@@ -1054,8 +1084,17 @@ class Congress:
 		lSortedPlayers = utils.getSortedList(lPlayers, lambda x: gc.getGame().getPlayerRank(x))
 		return lSortedPlayers[:iNumPlayers]
 		
-	def inviteToCongress(self, lPossibleInvites):
-		self.lInvites = self.getHighestRankedPlayers(lPossibleInvites, getNumInvitations())
+	def inviteToCongress(self):
+		rank = lambda x: gc.getGame().getPlayerRank(x)
+		lPossibleInvites = []
+	
+		if self.bPostWar:
+			lPossibleInvites.extend(self.lWinners)
+			lPossibleInvites.extend([iLoser for iLoser in self.lLosers if rank(iLoser) < min(self.lWinners, key=rank)])
+			
+		lPossibleInvites.extend(utils.getSortedList([iPlayer for iPlayer in range(iNumPlayers) if iPlayer not in lPossibleInvites], rank))
+	
+		self.lInvites = lPossibleInvites[:getNumInvitations()]
 		
 		# Leoreth: America receives an invite if there are still claims in the west
 		if iAmerica not in self.lInvites and not self.bPostWar and gc.getGame().getGameTurn() > tBirth[iAmerica]:

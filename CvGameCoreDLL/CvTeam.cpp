@@ -1527,47 +1527,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 		}
 		//Rhye - end
 
-		// Leoreth: determine wars with global alliances
-		int iWorldStrength = 0;
-		int iOurStrength = 0;
-		int iTheirStrength = 0;
-
-		for (iI = 0; iI < MAX_TEAMS; iI++)
-		{
-			if (GET_TEAM((TeamTypes)iI).isAlive())
-			{
-				if (!GET_PLAYER((PlayerTypes)iI).isMinorCiv())
-				{
-					iWorldStrength += GET_TEAM((TeamTypes)iI).getPower(false);
-				}
-
-				if (GET_TEAM((TeamTypes)iI).isDefensivePact(eTeam))
-				{
-					if (!GET_TEAM((TeamTypes)iI).isVassal(getID()) && !isVassal((TeamTypes)iI))
-					{
-						iTheirStrength += GET_TEAM((TeamTypes)iI).getPower(true);
-					}
-				}
-
-				if (GET_TEAM((TeamTypes)iI).isDefensivePact(getID()))
-				{
-					if (!GET_TEAM((TeamTypes)iI).isVassal(eTeam) && !isVassal((TeamTypes)iI))
-					{
-						iOurStrength += GET_TEAM((TeamTypes)iI).getPower(true);
-					}
-				}
-			}
-		}
-
-		// if the enemy has no allies, our own won't step in either
-		if (iTheirStrength == 0) iOurStrength = 0;
-
-		iOurStrength += getPower(true);
-		iTheirStrength += GET_TEAM(eTeam).getPower(true);
-
-		bool bGlobalWar = (3 * (iOurStrength + iTheirStrength) > iWorldStrength);
-
-		CvEventReporter::getInstance().changeWar(true, getID(), eTeam, bGlobalWar);
+		CvEventReporter::getInstance().changeWar(true, getID(), eTeam);
 
 		//cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled) 
 
@@ -1785,7 +1745,7 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 
 		} //Rhye
 
-		CvEventReporter::getInstance().changeWar(false, getID(), eTeam, false);
+		CvEventReporter::getInstance().changeWar(false, getID(), eTeam);
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{

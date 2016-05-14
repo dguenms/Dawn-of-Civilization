@@ -1190,7 +1190,7 @@ def specificAdjective(iPlayer):
 		x, y = Areas.getCapital(iRome)
 		plot = gc.getMap().plot(x, y)
 		if plot.isCity() and plot.getPlotCity().getOwner() == iPlayer:
-			return gc.getPlayer(iRome).getCivilizationAdjective()
+			return gc.getPlayer(iRome).getCivilizationAdjective(0)
 			
 	elif iPlayer == iVikings:
 		if bEmpire:
