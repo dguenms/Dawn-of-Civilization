@@ -3463,16 +3463,29 @@ class RiseAndFall:
 		utils.makeUnit(iWorker, iChina, tCapital, 2)
 		
 		tCapital = Areas.getCapital(iJapan)
+		tSeaPlot = self.findSeaPlots(tCapital, 1, iJapan)
+		if (tSeaPlot):				
+			utils.makeUnit(iWorkboat, iJapan, tSeaPlot, 2)
+			
 		if utils.getHumanID() != iJapan:
 			utils.makeUnit(iCrossbowman, iJapan, tCapital, 2)
 			utils.makeUnit(iJapaneseSamurai, iJapan, tCapital, 3)
+
+		tCapital = Areas.getCapital(iByzantium)
+		tSeaPlot = self.findSeaPlots(tCapital, 1, iByzantium)
+		if tSeaPlot:
+			utils.makeUnit(iGalley, iByzantium, tSeaPlot, 2)
+			utils.makeUnit(iTrireme, iByzantium, tSeaPlot, 2)
 
 		tCapital = Areas.getCapital(iVikings)
 		tSeaPlot = self.findSeaPlots(tCapital, 1, iVikings)
 		if (tSeaPlot):
 			if utils.getHumanID() == iVikings:
+				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
 				utils.makeUnit(iSettler, iVikings, tSeaPlot, 1)
 				utils.makeUnit(iLongbowman, iVikings, tSeaPlot, 1)
+				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 2)
+				
 		# start AI settler and garrison in Denmark and Sweden
 		if utils.getHumanID() != iVikings:
 			utils.makeUnit(iSettler, iVikings, (60, 56), 1)
