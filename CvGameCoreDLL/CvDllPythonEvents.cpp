@@ -1231,7 +1231,7 @@ void CvDllPythonEvents::reportEndGoldenAge(PlayerTypes ePlayer)
 	}
 }
 
-void CvDllPythonEvents::reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bGlobalWar)
+void CvDllPythonEvents::reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam)
 {
 	if (preEvent())
 	{
@@ -1240,7 +1240,6 @@ void CvDllPythonEvents::reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eO
 		eventData.add(bWar);
 		eventData.add((int)eTeam);
 		eventData.add((int)eOtherTeam);
-		eventData.add(bGlobalWar);
 		postEvent(eventData);
 	}
 }

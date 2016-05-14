@@ -127,7 +127,7 @@ public:
 
 	void goldenAge(PlayerTypes ePlayer);
 	void endGoldenAge(PlayerTypes ePlayer);
-	void changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bGlobalWar);
+	void changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam);
 
 	void setPlayerAlive( PlayerTypes ePlayerID, bool bNewValue );
 	void playerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
