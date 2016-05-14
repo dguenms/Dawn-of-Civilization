@@ -172,8 +172,10 @@ class Congress:
 				sInviteString += localText.getText("TXT_KEY_CONGRESS_INVITE", (gc.getPlayer(iPlayer).getCivilizationDescription(0),))
 				
 		if self.bPostWar:
-			if bHumanInvited: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR", (self.sHostCityName, sInviteString))
-			elif utils.getHumanID() in self.lLosers: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_LOST_WAR", (self.sHostCityName, sInviteString))
+			if bHumanInvited: 
+				if utils.getHumanID() in self.lWinners: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_WON", (self.sHostCityName, sInviteString))
+				elif utils.getHumanID() in self.lLosers: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_LOST", (self.sHostCityName, sInviteString))
+				else: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR", (self.sHostCityName, sInviteString))
 			else: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION_WAR_AI", (self.sHostCityName, sInviteString))
 		else:
 			if bHumanInvited: sText = localText.getText("TXT_KEY_CONGRESS_INTRODUCTION", (self.sHostCityName, sInviteString))
