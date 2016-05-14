@@ -535,6 +535,24 @@ class RiseAndFall:
 				if plot.getOwner() != -1:
 					utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
 					
+		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iPortugal, 100, True)
+			
+		for x, y in [(58, 49), (59, 49), (60, 49)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iGermany, 100, True)
+			
+		for x, y in [(62, 51)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iHolyRome, 100, True)
+			
+		for x, y in [(58, 52), (58, 53)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iNetherlands, 100, True)
+			
+		for x, y in [(64, 53), (66, 55)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iPoland, 100, True)
+			
+		for x, y in [(67, 58), (68, 59), (69, 56), (69, 54)]:
+			utils.convertPlotCulture(gc.getMap().plot(x, y), iRussia, 100, True)
+			
 	def prepareColonists(self):
 		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
 			self.setAstronomyTurn(iPlayer, getTurnForYear(1700))
@@ -614,6 +632,11 @@ class RiseAndFall:
 			tManchuriaTL = (105, 51)
 			tManchuriaBR = (109, 55)
 			self.startingFlip(iChina, [(tTibetTL, tTibetBR), (tManchuriaTL, tManchuriaBR)])
+			
+			# Russia (Sankt Peterburg)
+			utils.convertPlotCulture(gc.getMap().plot(68, 58), iRussia, 100, True)
+			utils.convertPlotCulture(gc.getMap().plot(67, 57), iRussia, 100, True)
+			
 			
 	def startingFlip(self, iPlayer, lRegionList):
 	
