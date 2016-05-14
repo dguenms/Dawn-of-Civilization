@@ -406,7 +406,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# second goal: control Italy and Iberia in 100 BC
 		if iGameTurn == getTurnForYear(-100):
-			bItaly = isControlled(iCarthage, utils.getPlotList(Areas.tNormalArea[iItaly], Areas.tNormalArea[iItaly], [(62, 47), (63, 47), (63, 46)]))
+			bItaly = isControlled(iCarthage, utils.getPlotList(Areas.tNormalArea[iItaly][0], Areas.tNormalArea[iItaly][1], [(62, 47), (63, 47), (63, 46)]))
 			bIberia = isControlled(iCarthage, Areas.getNormalArea(iSpain, False))
 			if bItaly and bIberia:
 				win(iCarthage, 1)
