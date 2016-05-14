@@ -3498,11 +3498,14 @@ class RiseAndFall:
 	
 		for iPlayer in range(iNumPlayers):
 			tCapital = Areas.getCapital(iPlayer)
+			
+			if tBirth[iPlayer] > utils.getScenarioStartYear() and gc.getPlayer(iPlayer).isHuman():
+				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
+				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
+				
 			if iPlayer == iHarappa and (self.getPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
 				utils.makeUnit(iHarappanCityBuilder, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
-			
-		
 		
 	def assignTechs(self, iPlayer):
 		Civilizations.initPlayerTechs(iPlayer)
