@@ -858,6 +858,10 @@ def specificName(iPlayer):
 	iGameEra = gc.getGame().getCurrentEra()
 	bWar = isAtWar(iPlayer)
 	
+	if iPlayer in lCityStatesStart:
+		if not tPlayer.isHasTech(iAlphabet):
+			bCityStates = True
+	
 	if iPlayer == iChina:
 		if iEra >= iIndustrial or utils.getScenario() == i1700AD:
 			return "TXT_KEY_CIV_CHINA_QING"
@@ -1075,6 +1079,10 @@ def specificAdjective(iPlayer):
 	iEra = pPlayer.getCurrentEra()
 	iGameEra = gc.getGame().getCurrentEra()
 	bWar = isAtWar(iPlayer)
+	
+	if iPlayer in lCityStatesStart:
+		if not tPlayer.isHasTech(iAlphabet):
+			bCityStates = True
 	
 	bMonarchy = not isCommunist(iPlayer) and not isFascist(iPlayer) and not isRepublic(iPlayer)
 	
