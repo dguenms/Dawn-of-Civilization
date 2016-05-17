@@ -273,18 +273,20 @@ class Religions:
 		iOffset = utils.getTurns(utils.getSeed() % 15)
 		
 		if iGameTurn == getTurnForYear(0) + iOffset + iEthiopiaOffset:
-			if gc.getGame().getSorenRandNum(2, "Holy city?") == 0:
-				pChristianCity = gc.getGame().getHolyCity(iJudaism)
+			pHolyCity = gc.getGame().getHolyCity(iJudaism)
+			
+			if pHolyCity.getOwner() != utils.getHumanID() and gc.getGame().getSorenRandNum(2, "Holy city?") == 0:
+				pChristianCity = pHolyCity
 				self.foundReligion((pChristianCity.getX(), pChristianCity.getY()), iOrthodoxy)
 				return
 
 			lJewishCities = []
 			for iPlayer in range(iNumTotalPlayersB):
-				lJewishCities.extend([city for city in utils.getCityList(iPlayer) if city.isHasReligion(iJudaism)])
-				
-			pChristianCity = utils.getRandomEntry(lJewishCities)
-			
-			self.foundReligion((pChristianCity.getX(), pChristianCity.getY()), iOrthodoxy)
+				lJewishCities.extend([city for city in utils.getCityList(iPlayer)])
+							
+			if lJewishCities:
+				pChristianCity = utils.getRandomEntry(lJewishCities)
+				self.foundReligion((pChristianCity.getX(), pChristianCity.getY()), iOrthodoxy)
 			
 		
 ##BUDDHISM
