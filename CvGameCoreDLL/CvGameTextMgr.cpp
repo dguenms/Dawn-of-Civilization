@@ -11084,6 +11084,41 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			szBuffer.append(CvWString::format(L"\nAI Building Value = %d", iBuildingValue));
 		}
 	}
+		
+		
+	 // Merijn: "Replaced by" for buildings, same code as units
+	if (bCivilopediaText)
+	{
+		if (eDefaultBuilding == eBuilding)
+		{
+			for (iI = 0; iI < GC.getNumBuildingInfos(); ++iI)
+			{
+				if (iI != eBuilding)
+				{
+					// edead: start - remove clutter from building card; no "Replaced by" if not UB and no bGraphicalOnly buildings
+					// if (eBuildingClass == GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType())
+					// {
+						// szBuffer.append(NEWLINE);
+						// szBuffer.append(gDLL->getText("TXT_KEY_REPLACED_BY_UNIT", GC.getBuildingInfo((BuildingTypes)iI).getTextKeyWide()));
+					// }
+					if ((eBuildingClass == GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()) && (!GC.getBuildingInfo((BuildingTypes)iI).isGraphicalOnly()))
+					{
+					    int iJ;
+                        for (iJ = 0; iJ < GC.getNumCivilizationInfos(); ++iJ)
+						{
+							if (GC.getCivilizationInfo((CivilizationTypes)iJ).getCivilizationBuildings(eBuildingClass) == iI)
+							{
+								szBuffer.append(NEWLINE);
+								szBuffer.append(gDLL->getText("TXT_KEY_REPLACED_BY_UNIT", GC.getBuildingInfo((BuildingTypes)iI).getTextKeyWide()));
+								break;
+							}
+						}
+					}
+					// edead: end
+				}
+			}
+		}
+	}
 	//Rhye - start comment
 	/*if (bStrategyText)
 	{
