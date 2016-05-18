@@ -99,6 +99,9 @@ def endGlobalWar(iAttacker, iDefender):
 	sd.setGlobalWarAttacker(-1)
 	sd.setGlobalWarDefender(-1)
 	
+	if not gc.getPlayer(iAttacker).isAlive() or not gc.getPlayer(iDefender).isAlive():
+		return
+	
 	lAttackers = [iAttacker]
 	lDefenders = [iDefender]
 	
