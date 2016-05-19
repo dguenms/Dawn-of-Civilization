@@ -418,7 +418,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_CHI1</Tag>
-		<English>Build 2 Confucian Academies and 2 Taoist Pagodas by 1000 AD</English>
+		<English>Build 2 Confucian Guozijians and 2 Taoist Gongs by 1000 AD</English>
 		<French>Construire 2 acad&#233;mies confucianistes et 2 pagodes tao&#239;stes avant 1000 ap. J.-C.</French>
 		<German>Bauen Sie bis zum Jahr 1000 n. Chr. 2 Konfuzianische Akademien und 2 Taoistische Pagoden</German>
 		<Italian>Costruisci due Accademie Confuciane e due Pagode Taoiste entro il 1000 d.C.</Italian>
@@ -1100,7 +1100,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM1</Tag>
-		<English>Build four Buddhist and Hindu Monasteries and Wat Preah Pisnulok by 1200 AD</English>
+		<English>Build four Buddhist Sanghas and Hindu Ashrams and Wat Preah Pisnulok by 1200 AD</English>
 		<German>Bauen Sie bis zum Jahr 1200 n. Chr. vier Buddhistische und Hinduistische Kl&#246;ster und Wat Preah Pisnulok</German>
 	</TEXT>
 	<TEXT>
@@ -1197,7 +1197,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR1</Tag>
-		<English>Build a Buddhist Stupa and a Confucian Academy by 1200 AD</English>
+		<English>Build a Buddhist Chaitya and a Confucian Guozijian by 1200 AD</English>
 		<German>Bauen Sie eine Buddhistische Stupa und eine Konfuzianische Akademie bis zum Jahr 1200 n. Chr.</German>
 	</TEXT>
 	<TEXT>
@@ -1429,8 +1429,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG1</Tag>
-		<English>Build three Islamic Mosques by 1500 AD</English>
-		<German>Bauen Sie drei Islamische Moscheen bis zum Jahr 1500 n. Chr.</German>
+		<English>Build three Islamic Grand Mosques by 1500 AD</English>
+		<German>Bauen Sie drei Islamische Groﬂe Moscheen bis zum Jahr 1500 n. Chr.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_MUG2_TITLE</Tag>
@@ -2613,7 +2613,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MOSQUES_BUILT</Tag>
-		<English>Mosques built: %d1 / %d2</English>
+		<English>Grand Mosques built: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_MOST_ADVANCED_CIV</Tag>
@@ -2741,7 +2741,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES</Tag>
-		<English>Buddhist monasteries: %d1 / %d2</English>
+		<English>Buddhist Sanghas: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_CITIES_INFLUENTIAL_CULTURE</Tag>
@@ -2753,7 +2753,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_CONFUCIAN_ACADEMIES</Tag>
-		<English>Confucian Academies: %d1 / %d2</English>
+		<English>Confucian Guozijians: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_FORUMS</Tag>
@@ -2765,7 +2765,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES</Tag>
-		<English>Hindu monasteries: %d1 / %d2</English>
+		<English>Hindu Ashrams: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_IMPROVEMENTS</Tag>
@@ -2789,7 +2789,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_TAOIST_PAGODAS</Tag>
-		<English>Taoist Pagodas: %d1 / %d2</English>
+		<English>Taoist Gongs: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_TEMPLES</Tag>
