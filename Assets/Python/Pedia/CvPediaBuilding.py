@@ -182,7 +182,7 @@ class CvPediaBuilding:
 		BuildingInfo = gc.getBuildingInfo(self.iBuilding)
 		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_EFFECTS", ()), "", True, False, self.X_EFFECTS, self.Y_EFFECTS, self.W_EFFECTS, self.H_EFFECTS, PanelStyles.PANEL_STYLE_BLUE50)
 		szText = CyGameTextMgr().getBuildingHelp(self.iBuilding, True, False, False, CyCity()).lstrip()
-		screen.addMultilineText(text, szText, self.X_EFFECTS + 10, self.Y_EFFECTS + 30, self.W_EFFECTS - 10, self.H_EFFECTS - 30, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.addMultilineText(text, szText, self.X_EFFECTS + 10, self.Y_EFFECTS + 30, self.W_EFFECTS - 10, self.H_EFFECTS - 35, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 
 
