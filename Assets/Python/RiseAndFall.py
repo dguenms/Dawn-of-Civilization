@@ -2047,7 +2047,7 @@ class RiseAndFall:
 			utils.convertPlotCulture(gc.getMap().plot(tCapital[0], tCapital[1]), iCiv, 100, True)
 			
 				
-	def getConvertedCities(self, iPlayer, lPlots):
+	def getConvertedCities(self, iPlayer, lPlots = []):
 		lCities = []
 		
 		for city in utils.getAreaCities(lPlots):
