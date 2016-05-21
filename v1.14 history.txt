@@ -127,3 +127,7 @@
 * culture coverage is properly updated when a city changes owner
 * Trafalgar Square requires a Lighthouse now
 * Conquerors in the New World come with missionaries
+* Changes for post war congresses:
+	* global wars are now triggered depending on how many major powers are involved (and there need to be at least two on each side)
+	* neutral powers can participate, but not make claims
+	* losing powers are allowed to reclaim cities lost during the war
