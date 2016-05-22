@@ -33,6 +33,8 @@ import MapEditorTools as met
 import Areas
 import SettlerMaps
 import WarMaps
+import RiseAndFall
+rnf = RiseAndFall.RiseAndFall()
 localText = CyTranslator()
 
 gc = CyGlobalContext()
@@ -1664,15 +1666,27 @@ class CvWorldBuilderScreen:
 		if self.m_iCurrentPlayer < con.iNumPlayers:
 			sColor = "COLOR_MAGENTA"
 			sColorAI = "COLOR_RED"
-			lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
+			# Human flipzone
+			if utils.canEverRespawn(self.m_iCurrentPlayer) or (gc.getPlayer(self.m_iCurrentPlayer).isAlive() and not utils.isReborn(self.m_iCurrentPlayer)) or gc.getGame().getGameTurn() < getTurnForYear(con.tBirth[self.m_iCurrentPlayer]):
+				lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
+			else:
+				lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
+			# Additional cities outside flipzone (Canada)
+			lExtraCities = rnf.getConvertedCities(self.m_iCurrentPlayer)
+			for city in lExtraCities:
+				x = city.getX()
+				y = city.getY()
+				if (x, y) not in lHumanPlotList:
+					lHumanPlotList.append((x, y))
 			for tPlot in lHumanPlotList:
 				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1000, sColor, 1.0)
 			
 			# Larger AI flipzone
-			tTL, tBR = Areas.getBirthRectangle(self.m_iCurrentPlayer, True)
-			lAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, self.m_iCurrentPlayer, [])) if tPlot not in lHumanPlotList]
-			for tPlot in lAIPlotList:
-				CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, sColorAI, 1.0)
+			if self.m_iCurrentPlayer in Areas.dChangedBirthArea:
+				tTL, tBR = Areas.getBirthRectangle(self.m_iCurrentPlayer, True)
+				lAIPlotList = [tPlot for tPlot in utils.getPlotList(tTL, tBR, utils.getOrElse(Areas.dBirthAreaExceptions, self.m_iCurrentPlayer, [])) if tPlot not in lHumanPlotList]
+				for tPlot in lAIPlotList:
+					CyEngine().fillAreaBorderPlotAlt(tPlot[0], tPlot[1], 1001, sColorAI, 1.0)
 
 	def showStabilityOverlay(self):
 		utils.removeStabilityOverlay()
