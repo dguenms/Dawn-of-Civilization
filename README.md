@@ -56,7 +56,8 @@ All of this shows in the following main features of Dawn of Civilization:
 * Completely new civic system with a set of six more historical and universally applicable choices per category
 * New stability system with more transparent factors, gradual effects in the form of different crises, and improved performance
 * Diplomatic institutions overhaul: new rules and resolutions for the Apostolic Palace and United Nations, extended and optimized Congress mechanics
-* New religions: Zoroastrianism, Orthodoxy and Protestantism, replacing Judaism. Orthodoxy and Protestantism are founded through specific events (the Great Schism and the Reformation, respectively)
+* New religions: Zoroastrianism, Orthodoxy and Protestantism. Christianity is founded as the Orthodox faith, with Catholicism and Protestantism branching off through specific events (the Great Schism and the Reformation, respectively)
+* New religious spread rules, with religions gradually spreading around their holy city depending on historical spread in various regions on the map. Owner state religion can influence which religions can appear, and religions can disappear when the owner state religion changes
 * Improved colonization of Africa and Asia: building the Trading Company grants conquerors to certain civilizations, and Congresses can be used to settle empty territory
 * You can win through a new victory type, the Unique Religious Victory. Different victory conditions exist depending on your state religion. Without a state religion, you can still win the Polytheism (Pantheon civic) and Secularism (Secularism civic) victories
 * Various map changes to accomodate other additions. In particular, China, India, Scandinavia and Canada have been completely redone
