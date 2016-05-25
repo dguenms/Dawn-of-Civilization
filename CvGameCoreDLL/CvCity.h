@@ -187,6 +187,7 @@ public:
 	int getWarWearinessPercentAnger() const;																// Exposed to Python
 	int getLargestCityHappiness() const;																		// Exposed to Python
 	int getVassalHappiness() const;																		// Exposed to Python
+	int getCultureHappiness() const;	//KNOEDEL
 	int getVassalUnhappiness() const;																		// Exposed to Python
 	int unhappyLevel(int iExtra = 0) const;																	// Exposed to Python 
 	int happyLevel() const;																				// Exposed to Python				
@@ -301,6 +302,7 @@ public:
 	int getBaseGreatPeopleRate() const;																		// Exposed to Python
 	int getGreatPeopleRate() const;																				// Exposed to Python
 	int getTotalGreatPeopleRateModifier() const;													// Exposed to Python
+	int getCultureGreatPeopleRateModifier() const;	//KNOEDEL
 	void changeBaseGreatPeopleRate(int iChange);										// Exposed to Python
 
 	int getGreatPeopleRateModifier() const;																// Exposed to Python
@@ -669,6 +671,7 @@ public:
 	int getTradeYield(YieldTypes eIndex) const;																	// Exposed to Python
 	int totalTradeModifier(CvCity* pOtherCity = NULL) const;																							// Exposed to Python
 	int getPopulationTradeModifier() const;
+	int getCultureTradeRouteModifier() const;	//KNOEDEL
 	int getPeaceTradeModifier(TeamTypes eTeam) const;
 	int getBaseTradeProfit(CvCity* pCity) const;
 // BUG - Fractional Trade Routes - start

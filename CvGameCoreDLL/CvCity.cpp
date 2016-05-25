@@ -5148,7 +5148,19 @@ int CvCity::getVassalHappiness() const
 
 	return iHappy;
 }
+//KNOEDELbegin
+int CvCity::getCultureHappiness() const
+{
+	int iHappy = 0;
 
+	if (getCultureLevel() != NO_CULTURELEVEL)
+	{
+		iHappy += GC.getCultureLevelInfo(getCultureLevel()).getCultureHappiness();
+	}
+
+	return iHappy;
+}
+//KNOEDELend
 int CvCity::getVassalUnhappiness() const
 {
 	int iUnhappy = 0;
@@ -5241,6 +5253,7 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, (getExtraHappiness() + GET_PLAYER(getOwnerINLINE()).getExtraHappiness()));
 	iHappiness += std::max(0, GC.getHandicapInfo(getHandicapType()).getHappyBonusByID(getOwner()));
 	iHappiness += std::max(0, getVassalHappiness());
+	iHappiness += std::max(0, getCultureHappiness());	//KNOEDEL
 
 	if (getHappinessTimer() > 0)
 	{
@@ -6303,11 +6316,20 @@ int CvCity::getTotalGreatPeopleRateModifier() const
 	{
 		iModifier += GC.getDefineINT("GOLDEN_AGE_GREAT_PEOPLE_MODIFIER");
 	}
-
+//KNOEDELbegin
+	if (getCultureLevel() != NO_CULTURELEVEL)
+	{
+		iModifier += GC.getCultureLevelInfo(getCultureLevel()).getCultureGreatPeopleRateModifier();
+	}
+//KNOEDELend
 	return std::max(0, (iModifier + 100));
 }
-
-
+//KNOEDELbegin
+int CvCity::getCultureGreatPeopleRateModifier() const
+{
+ return GC.getCultureLevelInfo(getCultureLevel()).getCultureGreatPeopleRateModifier();;
+}
+//KNOEDELend
 void CvCity::changeBaseGreatPeopleRate(int iChange)
 {
 	m_iBaseGreatPeopleRate = (m_iBaseGreatPeopleRate + iChange);
@@ -9644,6 +9666,8 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	iModifier += getPopulationTradeModifier();
 
+	iModifier += getCultureTradeRouteModifier();	//KNOEDEL
+
 	if (isConnectedToCapital())
 	{
 		iModifier += GC.getDefineINT("CAPITAL_TRADE_MODIFIER");
@@ -9689,6 +9713,12 @@ int CvCity::getCapitalTradeModifier(CvCity* pOtherCity) const
 
 	return 0;
 }
+//KNOEDELbegin
+int CvCity::getCultureTradeRouteModifier() const
+{
+	return GC.getCultureLevelInfo(getCultureLevel()).getCultureTradeRouteModifier();
+}
+//KNOEDELend
 
 int CvCity::getDefensivePactTradeModifier(CvCity* pOtherCity) const
 {

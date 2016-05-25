@@ -12468,6 +12468,16 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
+//KNOEDELbegin
+		iHappy = city.getCultureHappiness();
+		if (iHappy > 0)
+		{
+			iTotalHappy += iHappy;
+			szBuffer.append(gDLL->getText("TXT_KEY_HAPPY_CULTURE", iHappy));
+			szBuffer.append(NEWLINE);
+		}
+//KNOEDELend
+
 		iHappy = city.getCurrentStateReligionHappiness();
 		if (iHappy > 0)
 		{
@@ -17552,6 +17562,17 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 		iModifier += iBuildingMod;
 	}
 
+//KNOEDELbegin
+	if (city.getCultureGreatPeopleRateModifier() != 0)
+	{
+		int iCultureMod = city.getCultureGreatPeopleRateModifier();
+
+		szBuffer.append(gDLL->getText("TXT_KEY_GREAT_PEOPLE_CULTURE", iCultureMod));
+		szBuffer.append(NEWLINE);
+		iModifier += iCultureMod;
+	}
+//KNOEDELend
+
 	// Civics
 	int iCivicMod = 0;
 	for (int i = 0; i < GC.getNumCivicOptionInfos(); i++)
@@ -18839,6 +18860,15 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 				szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_POPULATION", iNewMod));
 				iModifier += iNewMod;
 			}
+//KNOEDELbegin
+			iNewMod = pCity->getCultureTradeRouteModifier();
+			if (0 != iNewMod)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_CULTURE", iNewMod));
+				iModifier += iNewMod;
+			}
+//KNOEDELend
 
 			if (pCity->isConnectedToCapital())
 			{
