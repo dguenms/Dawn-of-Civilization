@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Assert|Win32">
+      <Configuration>Assert</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug2|Win32">
+      <Configuration>Debug2</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0839103A-3707-457B-A5A2-BEB34D674844}</ProjectGuid>
+    <RootNamespace>CvGameCoreDLL</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set TARGET=Release
+nmake source_list
+nmake fastdep
+nmake precompile
+bin\jom build</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">set TARGET=Assert
+nmake source_list
+nmake fastdep
+nmake precompile
+bin\jom build</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">set TARGET=Profile
+nmake source_list
+nmake fastdep
+nmake precompile
+bin\jom build</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set TARGET=Release
+nmake clean
+nmake source_list
+nmake fastdep
+nmake precompile
+bin\jom build</NMakeReBuildCommandLine>
+    <NMakeReBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">set TARGET=Assert
+nmake clean
+nmake source_list
+nmake fastdep
+nmake precompile
+bin\jom build</NMakeReBuildCommandLine>
+    <NMakeReBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">set TARGET=Profile
+nmake clean
+nmake source_list
+nmake fastdep
+nmake precompile
+bin\jom build</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set TARGET=Release
+nmake clean</NMakeCleanCommandLine>
+    <NMakeCleanCommandLine Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">set TARGET=Assert
+nmake clean</NMakeCleanCommandLine>
+    <NMakeCleanCommandLine Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">set TARGET=Profile
+nmake clean</NMakeCleanCommandLine>
+    <NMakeOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CvGameCoreDLL.dll</NMakeOutput>
+    <NMakeOutput Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">CvGameCoreDLL.dll</NMakeOutput>
+    <NMakeOutput Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">CvGameCoreDLL.dll</NMakeOutput>
+    <NMakePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_USRDLL;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">WIN32;NDEBUG;_USRDLL;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">WIN32;NDEBUG;_USRDLL;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeForcedIncludes Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeForcedIncludes Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakeAssemblySearchPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
+    <NMakeAssemblySearchPath Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
+    <NMakeAssemblySearchPath Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(NMakeAssemblySearchPath)</NMakeAssemblySearchPath>
+    <NMakeForcedUsingAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(NMakeForcedUsingAssemblies)</NMakeForcedUsingAssemblies>
+    <NMakeForcedUsingAssemblies Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">$(NMakeForcedUsingAssemblies)</NMakeForcedUsingAssemblies>
+    <NMakeForcedUsingAssemblies Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">$(NMakeForcedUsingAssemblies)</NMakeForcedUsingAssemblies>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="_precompile.cpp" />
+    <ClCompile Include="CvArea.cpp" />
+    <ClCompile Include="CvArtFileMgr.cpp" />
+    <ClCompile Include="CvCity.cpp" />
+    <ClCompile Include="CvCityAI.cpp" />
+    <ClCompile Include="CvDeal.cpp" />
+    <ClCompile Include="CvDiploParameters.cpp" />
+    <ClCompile Include="CvDLLButtonPopup.cpp" />
+    <ClCompile Include="CvDLLEntity.cpp" />
+    <ClCompile Include="CvDLLPython.cpp" />
+    <ClCompile Include="CvDllPythonEvents.cpp" />
+    <ClCompile Include="CvDllTranslator.cpp" />
+    <ClCompile Include="CvDLLWidgetData.cpp" />
+    <ClCompile Include="CvEventReporter.cpp" />
+    <ClCompile Include="CvFractal.cpp" />
+    <ClCompile Include="CvGame.cpp" />
+    <ClCompile Include="CvGameAI.cpp" />
+    <ClCompile Include="CvGameCoreDLL.cpp" />
+    <ClCompile Include="CvGameCoreUtils.cpp" />
+    <ClCompile Include="CvGameInterface.cpp" />
+    <ClCompile Include="CvGameTextMgr.cpp" />
+    <ClCompile Include="CvGlobals.cpp" />
+    <ClCompile Include="CvHallOfFameInfo.cpp" />
+    <ClCompile Include="CvInfos.cpp" />
+    <ClCompile Include="CvInfoWater.cpp" />
+    <ClCompile Include="CvInitCore.cpp" />
+    <ClCompile Include="CvMap.cpp" />
+    <ClCompile Include="CvMapGenerator.cpp" />
+    <ClCompile Include="CvMessageControl.cpp" />
+    <ClCompile Include="CvMessageData.cpp" />
+    <ClCompile Include="CvPlayer.cpp" />
+    <ClCompile Include="CvPlayerAI.cpp" />
+    <ClCompile Include="CvPlot.cpp" />
+    <ClCompile Include="CvPlotGroup.cpp" />
+    <ClCompile Include="CvPopupInfo.cpp" />
+    <ClCompile Include="CvPopupReturn.cpp" />
+    <ClCompile Include="CvRandom.cpp" />
+    <ClCompile Include="CvReplayInfo.cpp" />
+    <ClCompile Include="CvReplayMessage.cpp" />
+    <ClCompile Include="CvSelectionGroup.cpp" />
+    <ClCompile Include="CvSelectionGroupAI.cpp" />
+    <ClCompile Include="CvStatistics.cpp" />
+    <ClCompile Include="CvStructs.cpp" />
+    <ClCompile Include="CvTalkingHeadMessage.cpp" />
+    <ClCompile Include="CvTeam.cpp" />
+    <ClCompile Include="CvTeamAI.cpp" />
+    <ClCompile Include="CvUnit.cpp" />
+    <ClCompile Include="CvUnitAI.cpp" />
+    <ClCompile Include="CvXMLLoadUtility.cpp" />
+    <ClCompile Include="CvXMLLoadUtilityGet.cpp" />
+    <ClCompile Include="CvXMLLoadUtilityInit.cpp" />
+    <ClCompile Include="CvXMLLoadUtilitySet.cpp" />
+    <ClCompile Include="CyArea.cpp" />
+    <ClCompile Include="CyAreaInterface.cpp" />
+    <ClCompile Include="CyArgsList.cpp" />
+    <ClCompile Include="CyArtFileMgr.cpp" />
+    <ClCompile Include="CyArtFileMgrInterface.cpp" />
+    <ClCompile Include="CyCity.cpp" />
+    <ClCompile Include="CyCityInterface1.cpp" />
+    <ClCompile Include="CyDeal.cpp" />
+    <ClCompile Include="CyEnumsInterface.cpp" />
+    <ClCompile Include="CyGame.cpp" />
+    <ClCompile Include="CyGameCoreUtils.cpp" />
+    <ClCompile Include="CyGameCoreUtilsInterface.cpp" />
+    <ClCompile Include="CyGameInterface.cpp" />
+    <ClCompile Include="CyGameTextMgr.cpp" />
+    <ClCompile Include="CyGameTextMgrInterface.cpp" />
+    <ClCompile Include="CyGlobalContext.cpp" />
+    <ClCompile Include="CyGlobalContextInterface1.cpp" />
+    <ClCompile Include="CyGlobalContextInterface2.cpp" />
+    <ClCompile Include="CyGlobalContextInterface3.cpp" />
+    <ClCompile Include="CyGlobalContextInterface4.cpp" />
+    <ClCompile Include="CyHallOfFameInfo.cpp" />
+    <ClCompile Include="CyHallOfFameInterface.cpp" />
+    <ClCompile Include="CyInfoInterface1.cpp" />
+    <ClCompile Include="CyInfoInterface2.cpp" />
+    <ClCompile Include="CyInfoInterface3.cpp" />
+    <ClCompile Include="CyMap.cpp" />
+    <ClCompile Include="CyMapGenerator.cpp" />
+    <ClCompile Include="CyMapGeneratorInterface.cpp" />
+    <ClCompile Include="CyMapInterface.cpp" />
+    <ClCompile Include="CyMessageControl.cpp" />
+    <ClCompile Include="CyMessageControlInterface.cpp" />
+    <ClCompile Include="CyPlayer.cpp" />
+    <ClCompile Include="CyPlayerInterface1.cpp" />
+    <ClCompile Include="CyPlayerInterface2.cpp" />
+    <ClCompile Include="CyPlot.cpp" />
+    <ClCompile Include="CyPlotInterface1.cpp" />
+    <ClCompile Include="CyRandomInterface.cpp" />
+    <ClCompile Include="CyReplayInfo.cpp" />
+    <ClCompile Include="CySelectionGroup.cpp" />
+    <ClCompile Include="CySelectionGroupInterface.cpp" />
+    <ClCompile Include="CyStructsInterface1.cpp" />
+    <ClCompile Include="CyTeam.cpp" />
+    <ClCompile Include="CyTeamInterface.cpp" />
+    <ClCompile Include="CyUnit.cpp" />
+    <ClCompile Include="CyUnitInterface1.cpp" />
+    <ClCompile Include="FAssert.cpp" />
+    <ClCompile Include="FDialogTemplate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AI_Defines.h" />
+    <ClInclude Include="CvArea.h" />
+    <ClInclude Include="CvArtFileMgr.h" />
+    <ClInclude Include="CvCity.h" />
+    <ClInclude Include="CvCityAI.h" />
+    <ClInclude Include="CvDeal.h" />
+    <ClInclude Include="CvDefines.h" />
+    <ClInclude Include="CvDiploParameters.h" />
+    <ClInclude Include="CvDLLButtonPopup.h" />
+    <ClInclude Include="CvDLLDataStreamIFaceBase.h" />
+    <ClInclude Include="CvDLLEngineIFaceBase.h" />
+    <ClInclude Include="CvDLLEntity.h" />
+    <ClInclude Include="CvDLLEntityIFaceBase.h" />
+    <ClInclude Include="CvDLLEventReporterIFaceBase.h" />
+    <ClInclude Include="CvDLLFAStarIFaceBase.h" />
+    <ClInclude Include="CvDLLFlagEntityIFaceBase.h" />
+    <ClInclude Include="CvDLLIniParserIFaceBase.h" />
+    <ClInclude Include="CvDLLInterfaceIFaceBase.h" />
+    <ClInclude Include="CvDLLPlotBuilderIFaceBase.h" />
+    <ClInclude Include="CvDllPythonEvents.h" />
+    <ClInclude Include="CvDLLPythonIFaceBase.h" />
+    <ClInclude Include="CvDLLSymbolIFaceBase.h" />
+    <ClInclude Include="CvDllTranslator.h" />
+    <ClInclude Include="CvDLLUtilityIFaceBase.h" />
+    <ClInclude Include="CvDLLWidgetData.h" />
+    <ClInclude Include="CvDLLXMLIFaceBase.h" />
+    <ClInclude Include="CvEnums.h" />
+    <ClInclude Include="CvEventReporter.h" />
+    <ClInclude Include="CvFractal.h" />
+    <ClInclude Include="CvGame.h" />
+    <ClInclude Include="CvGameAI.h" />
+    <ClInclude Include="CvGameCoreDLL.h" />
+    <ClInclude Include="CvGameCoreDLLDefNew.h" />
+    <ClInclude Include="CvGameCoreDLLUndefNew.h" />
+    <ClInclude Include="CvGameCoreUtils.h" />
+    <ClInclude Include="CvGameTextMgr.h" />
+    <ClInclude Include="CvGlobals.h" />
+    <ClInclude Include="CvHallOfFameInfo.h" />
+    <ClInclude Include="CvInfos.h" />
+    <ClInclude Include="CvInfoWater.h" />
+    <ClInclude Include="CvInitCore.h" />
+    <ClInclude Include="CvMap.h" />
+    <ClInclude Include="CvMapGenerator.h" />
+    <ClInclude Include="CvMessageControl.h" />
+    <ClInclude Include="CvMessageData.h" />
+    <ClInclude Include="CvPlayer.h" />
+    <ClInclude Include="CvPlayerAI.h" />
+    <ClInclude Include="CvPlot.h" />
+    <ClInclude Include="CvPlotGroup.h" />
+    <ClInclude Include="CvPopupInfo.h" />
+    <ClInclude Include="CvPopupReturn.h" />
+    <ClInclude Include="CvRandom.h" />
+    <ClInclude Include="CvReplayInfo.h" />
+    <ClInclude Include="CvReplayMessage.h" />
+    <ClInclude Include="CvSelectionGroup.h" />
+    <ClInclude Include="CvSelectionGroupAI.h" />
+    <ClInclude Include="CvStatistics.h" />
+    <ClInclude Include="CvString.h" />
+    <ClInclude Include="CvStructs.h" />
+    <ClInclude Include="CvTalkingHeadMessage.h" />
+    <ClInclude Include="CvTeam.h" />
+    <ClInclude Include="CvTeamAI.h" />
+    <ClInclude Include="CvUnit.h" />
+    <ClInclude Include="CvUnitAI.h" />
+    <ClInclude Include="CvXMLLoadUtility.h" />
+    <ClInclude Include="CyArea.h" />
+    <ClInclude Include="CyArgsList.h" />
+    <ClInclude Include="CyArtFileMgr.h" />
+    <ClInclude Include="CyCity.h" />
+    <ClInclude Include="CyDeal.h" />
+    <ClInclude Include="CyGame.h" />
+    <ClInclude Include="CyGameCoreUtils.h" />
+    <ClInclude Include="CyGameTextMgr.h" />
+    <ClInclude Include="CyGlobalContext.h" />
+    <ClInclude Include="CyHallOfFameInfo.h" />
+    <ClInclude Include="CyMap.h" />
+    <ClInclude Include="CyMapGenerator.h" />
+    <ClInclude Include="CyMessageControl.h" />
+    <ClInclude Include="CyPlayer.h" />
+    <ClInclude Include="CyPlot.h" />
+    <ClInclude Include="CyReplayInfo.h" />
+    <ClInclude Include="CySelectionGroup.h" />
+    <ClInclude Include="CyTeam.h" />
+    <ClInclude Include="CyUnit.h" />
+    <ClInclude Include="FAssert.h" />
+    <ClInclude Include="FAStarNode.h" />
+    <ClInclude Include="FDataStreamBase.h" />
+    <ClInclude Include="FDialogTemplate.h" />
+    <ClInclude Include="FFreeListArray.h" />
+    <ClInclude Include="FFreeListArrayBase.h" />
+    <ClInclude Include="FFreeListTrashArray.h" />
+    <ClInclude Include="FInputDevice.h" />
+    <ClInclude Include="FProfiler.h" />
+    <ClInclude Include="FVariableSystem.h" />
+    <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FVariableSystem.inl" />
+    <None Include="interfaceDirtyBits.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CvGameCoreDLL.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

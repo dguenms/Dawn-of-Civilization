@@ -1,0 +1,14 @@
+﻿Build started 26.05.2016 02:28:59.
+     1>Project "E:\Spiele\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword\Mods\RFC Dawn of Civilization\CvGameCoreDLL\CvGameCoreDLL.vcxproj" on node 2 (build target(s)).
+     1>PrepareForBuild:
+         Creating directory "obj\Win32\Assert\".
+       Build:
+         nmake /NOLOGO /K Release
+     1>makefile(218): fatal error U1050: Target "" not supported. Supported targets: Debug Release Assert Profile
+         Stop.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.MakeFile.Targets(38,5): error MSB3073: The command "nmake /NOLOGO /K Release" exited with code 2.
+     1>Done Building Project "E:\Spiele\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword\Mods\RFC Dawn of Civilization\CvGameCoreDLL\CvGameCoreDLL.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.11

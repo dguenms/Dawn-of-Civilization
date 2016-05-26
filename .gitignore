@@ -6,3 +6,4 @@ CvGameCoreDLL/_UpgradeReport_Files/
 Release/
 Debug/
 UpgradeLog.XML
+*.opensdf
