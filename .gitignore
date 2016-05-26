@@ -1,3 +1,8 @@
 *.fpk
 **/CIV4ArtDefines_Misc.xml
 Resource/
+CvGameCoreDLL/temp_files/
+CvGameCoreDLL/_UpgradeReport_Files/
+Release/
+Debug/
+UpgradeLog.XML
