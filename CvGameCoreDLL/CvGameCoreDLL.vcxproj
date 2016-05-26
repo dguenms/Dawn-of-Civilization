@@ -114,6 +114,7 @@ nmake clean</NMakeCleanCommandLine>
     <ClCompile Include="_precompile.cpp" />
     <ClCompile Include="CvArea.cpp" />
     <ClCompile Include="CvArtFileMgr.cpp" />
+    <ClInclude Include="CvBugMod.cpp" />
     <ClCompile Include="CvCity.cpp" />
     <ClCompile Include="CvCityAI.cpp" />
     <ClCompile Include="CvDeal.cpp" />
@@ -212,9 +213,13 @@ nmake clean</NMakeCleanCommandLine>
     <ClCompile Include="FDialogTemplate.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AI_Defines.h" />
+    <ClCompile Include="AdvancedCombatOdds.h" />
+    <ClCompile Include="AI_Defines.h" />
+    <ClCompile Include="Buffy.h" />
+    <ClCompile Include="Bugmod.h" />
     <ClInclude Include="CvArea.h" />
     <ClInclude Include="CvArtFileMgr.h" />
+    <ClInclude Include="CvBugMod.h" />
     <ClInclude Include="CvCity.h" />
     <ClInclude Include="CvCityAI.h" />
     <ClInclude Include="CvDeal.h" />
@@ -266,6 +271,7 @@ nmake clean</NMakeCleanCommandLine>
     <ClInclude Include="CvRandom.h" />
     <ClInclude Include="CvReplayInfo.h" />
     <ClInclude Include="CvReplayMessage.h" />
+    <ClInclude Include="CvRhyes.h" />
     <ClInclude Include="CvSelectionGroup.h" />
     <ClInclude Include="CvSelectionGroupAI.h" />
     <ClInclude Include="CvStatistics.h" />
