@@ -9,3 +9,5 @@ Assert/
 Profile/
 UpgradeLog.XML
 *.opensdf
+*.sdf
+*.suo
