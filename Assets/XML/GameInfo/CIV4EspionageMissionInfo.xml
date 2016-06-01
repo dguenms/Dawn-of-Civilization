@@ -19,7 +19,7 @@
 			<iCost>160</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bTargetsCity>1</bTargetsCity>
-			<TechPrereq>TECH_ELECTRICITY</TechPrereq>
+			<TechPrereq>TECH_TELEPHONE</TechPrereq>
 			<iVisibilityLevel>1</iVisibilityLevel>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
