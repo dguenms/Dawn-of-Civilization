@@ -22,10 +22,9 @@ EndTeam
 BeginTeam
 	TeamID=2, (Babylonia)
 	Tech=TECH_THE_WHEEL
-	Tech=TECH_AGRICULTURE
+	Tech=TECH_PASTORALISM
 	Tech=TECH_POTTERY
-	Tech=TECH_ARCHERY
-	Tech=TECH_ANIMAL_HUSBANDRY
+	Tech=TECH_LEATHER_WORKING
 EndTeam
 BeginTeam
 	TeamID=3, (Harappa)

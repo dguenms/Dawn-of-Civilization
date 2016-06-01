@@ -11,7 +11,7 @@
 			<Description>TXT_KEY_RELIGION_JUDAISM</Description>
 			<Adjective>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_JUDAISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_PRIESTHOOD</TechPrereq>
+			<TechPrereq>TECH_RECORD_KEEPING</TechPrereq>
 			<FreeUnitClass>UNITCLASS_JEWISH_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
 			<iSpreadFactor>50</iSpreadFactor>
@@ -139,7 +139,7 @@
 			<Description>TXT_KEY_RELIGION_ISLAM</Description>
 			<Adjective>TXT_KEY_RELIGION_ISLAM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ISLAM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_DIVINE_RIGHT</TechPrereq>
+			<TechPrereq>TECH_DOGMA</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ISLAMIC_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>150</iSpreadFactor>
@@ -171,7 +171,7 @@
 			<Description>TXT_KEY_RELIGION_HINDUISM</Description>
 			<Adjective>TXT_KEY_RELIGION_HINDUISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_HINDUISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_MEDITATION</TechPrereq>
+			<TechPrereq>TECH_CALENDAR</TechPrereq>
 			<FreeUnitClass>UNITCLASS_HINDU_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
 			<iSpreadFactor>80</iSpreadFactor>
@@ -234,7 +234,7 @@
 			<Description>TXT_KEY_RELIGION_CONFUCIANISM</Description>
 			<Adjective>TXT_KEY_RELIGION_CONFUCIANISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_CONFUCIANISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_MATHEMATICS</TechPrereq>
+			<TechPrereq>TECH_LAW</TechPrereq>
 			<FreeUnitClass>UNITCLASS_CONFUCIAN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>70</iSpreadFactor>
@@ -265,7 +265,7 @@
 			<Description>TXT_KEY_RELIGION_TAOISM</Description>
 			<Adjective>TXT_KEY_RELIGION_TAOISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_TAOISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_CALENDAR</TechPrereq>
+			<TechPrereq>TECH_ALCHEMY</TechPrereq>
 			<FreeUnitClass>UNITCLASS_TAOIST_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>70</iSpreadFactor>
@@ -297,7 +297,7 @@
 			<Description>TXT_KEY_RELIGION_ZOROASTRIANISM</Description>
 			<Adjective>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ZOROASTRIANISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_MONOTHEISM</TechPrereq>
+			<TechPrereq>TECH_DIVINATION</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ZOROASTRIAN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>50</iSpreadFactor>
