@@ -1,0 +1,2335 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText xmlns="http://www.firaxis.com">
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AERODYNAMICS</Tag>
+		<English>Aerodynamics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AERODYNAMICS_QUOTE</Tag>
+		<English>"Oh! I have slipped the surly bonds of Earth and danced the skies on laughter-silvered wings."[PARAGRAPH:2]- John Gillespie Magee, Jr.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AERODYNAMICS_PEDIA</Tag>
+		<English>Aerodynamics is the study of designing objects so that they will go smoothly through the air, rather than having to constantly waste energy battering through air resistance.
+
+In the early days of flight, aerodynamics was a somewhat informal science, and advances in engine power that gave aircraft more brute-force ability to push through the air were often more important. This began to change in the 1920s and 1930s, when aerodynamic designs became more popular not only for monocoque-hulled aircraft, but also for trains and automobiles.
+
+Aerodynamics became all the more important when engineers attempted to design more complex and advanced aircraft, such as helicopters (which are inherently unstable, and must be designed carefully to be flyable) and supersonic jets (since passing the speed of sound can rip an aircraft to pieces if the design fails to deflect and make use of shockwaves created by breaking the sound barrier).
+
+Today, aerodynamic calculations can be made in greater detail and thoroughness than ever before, using powerful computers. This allows designers to extract the greatest possible speed and efficiency out of a given amount of engine power.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AESTHETICS</Tag>
+		<English>Aesthetics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AESTHETICS_QUOTE</Tag>
+		<English>"I believe in the might of design, the mystery of colour, the redemption of all things by Beauty everlasting, and the message of Art that has made these hands blessed."[PARAGRAPH:2]- George Bernard Shaw</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AESTHETICS_PEDIA</Tag>
+		<English>Aesthetics is the branch of philosophy that deals with questions of art and beauty. Every culture in the world has its own Aesthetics, the study of art being nearly as old as art itself. Modern Aesthetics delves into all forms of art - theater, poetry, literature, film, etc. - but in its earliest form, aesthetics dealt largely with the visual arts.[NEWLINE][NEWLINE]While clashing senses of Aesthetics have caused many squabbles in their times, one city has been the center of some of the most violent artistic struggles throughout history - Istanbul. During the ninth century, Christian killed Christian in the city then known as Constantinople as the followers of Christ attempted to decide whether religious icons should be considered blasphemous. With the conquest of the city by the Ottomans, previous artistic works deemed offensive were removed or vandalized. Inside the Hagia Sophia, mosaics of Christian religious figures were covered with plaster, that only now, several hundred years later, are finally being revealed.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AGRICULTURE</Tag>
+		<English>Agriculture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AGRICULTURE_QUOTE</Tag>
+		<English>"Where tillage begins, other arts follow. The farmers therefore are the founders of civilization."[PARAGRAPH:2]- Daniel Webster</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ALCHEMY</Tag>
+		<English>Alchemy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ALCHEMY_QUOTE</Tag>
+		<English>"The laws of nature are just but terrible. The fire burns, the water drowns, the air consumes, the earth buries."[PARAGRAPH:2]- Henry Wadsworth Longfellow</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ALCHEMY_PEDIA</Tag>
+<English>Alchemy is the study of chemical substances, in its pre-scientific form. This was often an informal art; mysticism and superstition were mixed seamlessly with pragmatic efforts to manipulate flame, metal, and liquids. Many alchemists sought out impossible goals such as the universal solvent, the elixir of youth, the secret of immortality, or means by which common metals like iron or lead might be transmuted into gold. Alchemy was fraught with frauds, cheats, and liars.
+
+However, alchemists made real contributions to society. Alchemists were the first to invent many of the basic techniques of processing chemicals, and the equipment needed to do so. Operating on a rough-and-ready empirical basis, they were able to develop substances such as acids, distilled alcoholic spirits, incendiaries, and gunpowder, which had great effects on their societies in both war and peace.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARCHITECTURE</Tag>
+		<English>Architecture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARCHITECTURE_QUOTE</Tag>
+		<English>"In the architectural structure, man's pride, man's triumph over gravitation, man's will to power, assume a visible form."[PARAGRAPH:2]- Friedrich Nietzsche</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARCHITECTURE_PEDIA</Tag>
+		<English>Architecture is the discipline of designing structures with an eye to specific goals; usually aesthetic appeal, but also functional features such as defensibility. The architect's trade blends that of the ordinary engineer and the artist. On the one hand, all great architecture must be durable enough to stand natural forces and the test of time; on the other, it is often expected to be pleasant to live in and to behold.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE</Tag>
+		<English>Artificial Intelligence</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE_QUOTE</Tag>
+		<English>"The real problem is not whether machines think, but whether men do."[PARAGRAPH:2]- B.F. Skinner</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE_PEDIA</Tag>
+<English>As computer technology advances its capabilities at a geometric rate, the ability of computer software to emulate intelligent decisions grows. Automation first replaces  routine, mundane labor on assembly lines, then an increasing share of service and office jobs. As the process continues, it seems likely that computers will become able to sustain true intelligence, at least for a pragmatic definition of the term.
+
+Some predict that the creation of the first artificial intelligences will lead to a 'singularity' beyond which we lose our ability to predict the course of human development: these AIs will rapidly begin to modify and improve themselves until their capabilities are little short of godlike. Others feel that this is an exaggeration of the possibilities. Regardless, artificial intelligence is likely to play a prominent role in the development of human society in the future.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARTISANRY</Tag>
+		<English>Artisanry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARTISANRY_QUOTE</Tag>
+		<English>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARTISANRY_PEDIA</Tag>
+		<English>As agricultural productivity increased and the demand for specialist goods increased, it became less practical and less desirable to keep control of these industries in the hands of rulers. The invention of currency-based trade made independent life as a merchant or professional easier, especially in urban and semi-urbanized areas. Such trade also contributed to the rising influence of the proto-middle class, and promoted long-range commerce. The availability of rare goods at trading hubs increased, and centers of production where specialist goods were made profited.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASSEMBLY_LINE</Tag>
+		<English>Assembly Line</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASSEMBLY_LINE_QUOTE</Tag>
+		<English>"One cannot walk through an assembly factory and not feel that one is in Hell."[PARAGRAPH:2]- W. H. Auden</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASTRONOMY</Tag>
+		<English>Astronomy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASTRONOMY_QUOTE</Tag>
+		<English>"Astronomy compels the soul to look upwards and leads us from this world to another."[PARAGRAPH:2]- Plato</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ATOMIC_PHYSICS</Tag>
+		<English>Atomic Physics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ATOMIC_PHYSICS_QUOTE</Tag>
+		<English>"By convention, sweet; by convention, bitter; by convention, colour; but, in reality, atoms and the void."[PARAGRAPH:2]- Democritus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ATOMIC_PHYSICS_PEDIA</Tag>
+<English>Atomic theory is, in simplest form, the idea that all matter is made up of tiny, indivisible particles called "atoms." The first ancient form of this theory comes from the Greek philosopher Democritus. His atomic theory was founded on the Greek ideas of the geometric order of the universe and of the four elements, which led to some strange ideas. For instance, early supporters of the atomic theory suggested that water might flow because it was made up of icosahedral atoms which, being nearly round, tumbled over each other easily; fire was painful because it was made up of tetrahedral atoms which were sharp and thus damaging. Since there was no evidence for this theory at the time, and no obvious reason to prefer it to the alternatives, it was largely ignored for the following two thousand years.
+
+The atomic theory re-emerged around 1800, following early chemists' discovery of new types of chemical elements that seemed more fundamental than things like air and fire. The chemist John Dalton proposed again that all matter was made of atoms, which were neither created nor destroyed in chemical reactions, only reshuffled to form different substances. This theory proved fruitful for 19th century chemistry, although many scientists insisted that it was only a theory.
+
+Towards the end of the century, advances in the studies of the spectrum of light emitted by different elements, and the discovery of radioactivity, cast doubt on the premise that atoms were indivisible. Perhaps atoms had some kind of internal structure, and were themselves composed of smaller particles with new and intriguing properties of their own. The first of these particles to be discovered was the electron, a tiny and lightweight particle which carries a strong negative charge, and whose motions form the basis for nearly all electrical, magnetic, and chemical interactions.
+
+Further investigation into the structure of the atom using ever more precise and complex instruments and mathematical theories opened up broad vistas of scientific discovery. Various models of atomic structure, such as the "plum pudding" model, the Rutherford atom, and the Bohr atom, were considered, modified, or discarded. Scientists gained more understanding of the mechanisms behind atomic structure, and of how atoms could bind together to form molecules.
+
+This led to great advances in practical technology in the latter half of the 20th century. Once the atoms that made them up were understood, chemists could tailor-make molecules to suit their needs. Alloys with strange electrical properties could be used to build advanced calculating machines. And the immense forces locked within the atomic nucleus could be released, for good or for evil.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AUTOMATION</Tag>
+		<English>Automation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AUTOMATION_QUOTE</Tag>
+		<English>"We are becoming the servants in thought, as in action, of the machine we have created to serve us."[PARAGRAPH:2]- John Kenneth Galbraith</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AUTOMATION_PEDIA</Tag>
+<English>Automation is the art of making machines which perform tasks on their own, without active input or oversight from a human operator. Automatic constructs have existed as toys for the rich since ancient times, the products of individual craftsmanship, but widespread use of automation to control machines is a twentieth-century phenomenon.
+
+The demand for automation first came from the need to make machinery function where humans cannot or will not; be it in an extremely hostile environment, in a factory where machines ran faster than the human eye can follow, or in a job too menial and unstimulating for the average person to be content doing. Over time, automation has become more popular and flexible, especially with the rise of electronic computers.
+
+Automatic equipment invariably saves human labor, but it also displaces labour. The simple tasks involved in doing the machine's job are replaced by specialized jobs tending the machines. Or not replaced at all.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AUTOMOBILE</Tag>
+		<English>Automobile</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AUTOMOBILE_QUOTE</Tag>
+		<English>"Everything in life is somewhere else, and you get there in a car."[PARAGRAPH:2]- E. B. White</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AUTOMOBILE_PEDIA</Tag>
+		<English>The earliest attempts at producing a self-propelled vehicle date back to the late 1770s. These early vehicles used bulky steam engines for power. Despite constant improvements, the steam engine ultimately proved impractical for small vehicles. The development of the internal combustion engine in the late 1800s provided a small but powerful replacement for steam engines, and were able to achieve much higher speeds. The first practical automobiles were developed in the late 19th century, by automotive pioneers in France, Germany, and the United States. By the 1920s, a number of automotive manufacturing companies were operating in the U.S., including Ford and General Motors. By 1980, more than 300 million cars and 85 million trucks were in operation throughout the world. The popularity of the automobile has led to massive improvements in the highway systems in most industrialized countries. Unfortunately, automobiles are also one of the primary sources of air pollution, and have resulted in an all time high demand for petrochemical fuels.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AVIATION</Tag>
+		<English>Aviation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AVIATION_QUOTE</Tag>
+		<English>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_AVIATION_PEDIA</Tag>
+		<English>While the earliest powered flying machines proved useless for war except as aerial scout platforms, the demands of World War One accelerated development of fast, powerful aircraft capable of hauling significant weapons or cargo. Steady improvements in the internal combustion engine, and rapid growth of experience in airplane design, led to a boom in the airplane's capabilities in the 1920s and 1930s. Passenger aviation in planes like the Douglas DC-3 (still in service today) turned aircraft construction into a major industry. At the same time, military airplanes became more powerful and capable, diversifying into fast, agile fighters and bombers capable of carrying tons of explosives hundreds of kilometres into enemy territory.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BALLISTICS</Tag>
+		<English>Ballistics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BALLISTICS_QUOTE</Tag>
+		<English>"Artillery adds dignity to what would otherwise be a vulgar brawl."[PARAGRAPH:2]- Frederick the Great</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BALLISTICS_PEDIA</Tag>
+		<English>The rise of industrial machine tools in the late 19th century had huge effects on the development of artillery. More precise manufacturing meant ammunition that could be fired at far longer ranges, with more predictable fuzing and gunlaying. Advances in metallurgy made for stronger gun barrels and longer range. For the first time, indirect-fire guns were useful for something other than specialist roles. The effective range of artillery increased by as much as a factor of ten within a generation.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BIOLOGY</Tag>
+		<English>Biology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BIOLOGY_QUOTE</Tag>
+		<English>"It is not the strongest of the species that survive, but the one most responsive to change."[PARAGRAPH:2]- Charles Darwin</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BIOTECHNOLOGY</Tag>
+		<English>Biotechnology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BIOTECHNOLOGY_QUOTE</Tag>
+		<English>"We can rebuild him. We have the technology."[PARAGRAPH:2]- Oscar Goldman, 'The Six Million Dollar Man'</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BIOTECHNOLOGY_PEDIA</Tag>
+		<English>Bionics is one name for the effort to create machines that can duplicate functions of human body parts. This has obvious applications in medicine, where it allows people who have lost limbs, sensory organs, or even hearts to survive with mechanical substitutes. Other effects of this growing field, placed as it is at the cutting edge of automation, miniaturization, and our understanding of how brain and body operate, are more subtle but perhaps no less profound.[NEWLINE][NEWLINE]Advanced bionics might allow the creation of synthetic androids whose superficially human appearance lends itself to a variety of roles. They might become popular as replacements or augmentations for functioning body parts - if an artificial eye sees more clearly, some may prefer it to their natural one. Taken to its logical extreme, bionics might even cause us to call into question the very meaning of what it is to be human, an issue mostly considered the province of science fiction to date.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BRONZE_WORKING</Tag>
+		<English>Bronze Working</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BRONZE_WORKING_QUOTE</Tag>
+		<English>"It is entirely seemly for a young man killed in battle to lie mangled by the bronze spear. In his death all things appear fair."[PARAGRAPH:2]- Homer</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CALENDAR</Tag>
+		<English>Calendar</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CALENDAR_QUOTE</Tag>
+		<English>"For everything there is a season and a time for every purpose under heaven."[PARAGRAPH:2]- Ecclesiastes</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARTOGRAPHY</Tag>
+		<English>Cartography</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARTOGRAPHY_QUOTE</Tag>
+		<English>"Map me no maps, sir, my head is a map, a map of the whole world."[PARAGRAPH:2]- Henry Fielding</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARTOGRAPHY_PEDIA</Tag>
+		<English>Cartography is the art of making maps. Since any traveler will do well to have maps of the territory they move through, good maps have been in demand for as long as the art of writing made it possible to create them. Early maps were often crude, with the shapes of continents and the relative position of cities and landmarks grossly distorted. Portions of the map with which the artist was unfamiliar were often decorated with fanciful place-names and the images of fictional creatures, as in the famous "here there be dragons."[NEWLINE][NEWLINE]Cartography became more of a science during the medieval period, with advances in mathematics and surveying techniques. Growing and spreading populations helped as well - it's easier and more practical to make an accurate map of cultivated fields and townships than of a howling wilderness. During the European Age of Exploration, the art of mapmaking advanced hand in hand with the art of navigation - the one being nearly impossible without the other.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARVING</Tag>
+		<English>Carving</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARVING_QUOTE</Tag>
+		<English>"I saw the angel in the marble and carved until I set him free."[PARAGRAPH:2]- Michaelangelo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CARVING_PEDIA</Tag>
+		<English>Carving is the practice of making indentations on a solid object, using some sort of cutting tool or scraping technique. Carving has been a popular way to decorate stone, bone, wood, and other durable materials since prehistoric times, and definitely predates the rise of even the earliest and smallest civilized communities. Decorative carving techniques tie into methods for toolmaking, especially in the working of wood and stone.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CEREMONIAL_BURIAL</Tag>
+		<English>Ceremonial Burial</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CEREMONIAL_BURIAL_QUOTE</Tag>
+		<English>"A tomb now suffices him for whom the whole world was not sufficient."[PARAGRAPH:2]- Epitaph of Alexander the Great</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CEREMONIAL_BURIAL_PEDIA</Tag>
+		<English>Groping for an explanation of the world around them, the earliest humans developed the first concepts of religion. Gradually, rites of worship grew to include sacrifices, ceremonies, vigils, symbology, sacred items, and prayer. One significant step in the advance of worship was the ceremonial burial, often a ritual preparation of the deceased's body for the afterlife his or her culture anticipated. The remains of ceremonial burials offer some of the most detailed information about past civilizations.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHARITY</Tag>
+		<English>Charity</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHARITY_QUOTE</Tag>
+		<English>"If you haven't got any charity in your heart, you have the worst kind of heart trouble."[PARAGRAPH:2]- Bob Hope</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHARITY_PEDIA</Tag>
+		<English>Charity is the virtue of willingness to give, to use one's time, resources, and influence for the benefit of others who need those things. Charity has been an ideal promoted by many cultures and numerous world religions throughout history. In the earliest recorded times and simplest known national governments, the charity of leaders such as kings and priests allowed an orderly redistribution of wealth. This served to take place of the traditional reciprocal behaviours of tribal cultures, implementing sharing and mutual protection on a larger scale.[NEWLINE][NEWLINE]As the complexity of social systems and the philosophical refinement of social mores evolved through the ages, the practice of charity by hierarchies grew more pronounced. In the modern era, virtually all developed societies provide some degree of organized charity to the groups they deem vulnerable, such as children, the elderly, single parents, the unemployed, the sick, workers in economic sectors threatened by social, economic, and technological change, or underdeveloped foreign countries. This practice is augmented by similar charity practiced by private individuals (e.g. the Gates Foundation) and international organizations (e.g. Medicins Sans Frontieres).</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHARTER</Tag>
+		<English>Charter</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHARTER_QUOTE</Tag>
+		<English>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHARTER_PEDIA</Tag>
+<English>The earliest intercontinental explorers were part of government-funded expeditions, as with Zheng He, Christopher Columbus, and Bartholomew Diaz. Soon it became clear that there were vast riches to be had from trade in luxury goods with remote lands, and where long range seafaring continued to thrive, private enterprise soon followed.
+
+For the people of the time, a trip from Europe to trade for spices, gems, silk and other precious goods in Asia was immensely time-consuming, requiring the most advanced ships and years of time and effort by a crew of skilled sailors. Quite a few ships that attempted the voyage never made it back, being destroyed by storms or hostile locals over the tens of thousands of kilometres of sea voyage.
+
+The risks involved created a powerful incentive to limit the financial hazards of the trip - any one merchant who invested in such an expedition might be ruined if something went wrong. Groups of wealthy men began to organize 'companies', bands that would pool their resources and share the costs of the long, immensely profitable trips.
+
+Some of these companies were able to secure royal guarantees from their home nations of exclusive trading rights- early examples include the English, Dutch, and French East India Companies. Over time, these organizations became extremely powerful, as the first ancestors of the modern multinational corporation.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHEMISTRY</Tag>
+		<English>Chemistry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHEMISTRY_QUOTE</Tag>
+		<English>"Chemistry means the difference between poverty and starvation and the abundant life."[PARAGRAPH:2]- Robert Brent</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHIVALRY</Tag>
+		<English>Chivalry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHIVALRY_QUOTE</Tag>
+		<English>"Do not try to fight a lion if you are not one yourself."[PARAGRAPH:2]- African Proverb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CHIVALRY_PEDIA</Tag>
+		<English>Chivalry comes from the Old French words for "knighthood" and "horsemanship." Chivalry was a European code of rules governing the behavior of an aristocratic class of warriors known as knights. First appearing in or around the 12th century, the rules of chivalry governed not only the knights' behavior in battle, but in their personal lives as well. The chief chivalric virtues of piety, honor, valor, courtesy, chastity, and loyalty represented a fusion of Christian and military morality.[NEWLINE][NEWLINE]Other, comparable codes existed in many other societies. Out of many examples, a similar code of behavior known as "Bushido" or "the way of the warrior" governed the behavior of the samurai warriors of feudal Japan. Other societies which formed a warrior class subject to religious and moral codes of honor included ancient Persia and India.[NEWLINE][NEWLINE]Although the strict practice of the code of chivalry had all but disappeared in Europe by the 16th century, the ideals of chivalric behavior became the basis for what is now considered to be gentlemanly conduct. Chivalry also forms part of the basis for what we now call "the laws of war," because it was in the customs of chivalry that one finds precedent for the idea that war is to be an honorable confrontation between warriors, rather than a predatory confrontation between one side's warriors and the other side's noncombatants.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_LIBERTIES</Tag>
+		<English>Civil Liberties</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_LIBERTIES_QUOTE</Tag>
+		<English>"Give me the liberty to know, to utter, and to argue freely according to conscience, above all liberties."[PARAGRAPH:2]- John Milton</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_LIBERTIES_PEDIA</Tag>
+<English>Civil liberties are forms of freedom of action which the state is required to give to all citizens, without limits or with very minimal limits.
+
+The idea that one's standing in society confers certain rights is ancien t- most traditional societies grant special immunities to nobles and priests, granting them more room to speak their minds and more confidence of avoiding practices like torture and arbitrary arrest. But in most of the world, the notion that these rights should be universal is relatively new. Similarly, the belief that they should apply without exception even when the state has an interest in ignoring them, as a matter of principle date back to no earlier than the Enlightenment of the 1600s and 1700s.
+
+Key among these basic rights are freedom of speech, freedom of religion, the right to vote, and freedom from arbitrary use of police powers. Removing any of these rights makes it far easier for a tyrannical government to suppress dissent, while keeping them in place helps to ensure that the state remains honest, forthright, and responsible in its dealings with the citizenry.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_RIGHTS</Tag>
+		<English>Civil Rights</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_RIGHTS_QUOTE</Tag>
+		<English>"I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character."[PARAGRAPH:2]- Martin Luther King Jr.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_RIGHTS_PEDIA</Tag>
+<English>Certain inequalities have been a feature of most civilizations since the beginning of recorded history, or earlier. Almost without exception, most women were restricted to low-prestige roles as subordinates to men. Many societies identified a ruling elite or 'native' national majority which was free to condemn religious, racial, or other minorities. Large categories of second-class citizens existed in practically all countries, most frequently women, who lacked the political and economic freedoms enjoyed by men.
+
+As great increases in wealth, literacy, and access to communications spread through the developed world in the late 19th and early 20th century, this state of affairs was called into question. Women and racial minorities struggled to achieve equal access to economic opportunities and for the right to vote. Ethnic and linguistic groups overpowered and surrounded by foreigners (especially in the Americas and Australia) fought to preserve their right to raise their own children and maintain their language and traditions in the face of intense pressure to dissolve into the mainstream. In recent decades, issues of sexuality and gender identity have sparked much debate and protest between those striving for equality and those that would deny it to them.
+
+The battles for these forms of equality, generally known as "civil rights" were one of the defining social forces of the 20th century, and continue into the 21st.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_SERVICE</Tag>
+		<English>Civil Service</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_SERVICE_QUOTE</Tag>
+		<English>"The bureaucracy is expanding to meet the needs of the expanding bureaucracy."[PARAGRAPH:2]- Anonymous</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CIVIL_SERVICE_PEDIA</Tag>
+<English>Civil Service is the technology of bureaucracy - organizing and running a government. A successful civil service requires standard procedures, division of responsibility, hierarchy, and advancement through merit. Record-keeping is crucial to the successful management of a government, as well. While some early cultures kept records on clay or wax or stone tablets, the advent of paper was a boon to the advance of bureaucracy and a civil service.
+
+One of the oldest known civil services is found in China, during the Tang dynasty (600 - 900 CE). This was created largely in response to the Confucian demands for honest government; among other innovations, the Tang civil servants were hired based upon the results of a written examination, rather than through the more common methods of bribery and patronage, and thus had fewer ties to the wealthy and powerful nobility. The English followed the Chinese civil service model when they created a bureaucracy to manage their growing colonies. Though successful, the practice did not spread to Europe until the mid-18th century.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMBUSTION</Tag>
+		<English>Combustion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMBUSTION_QUOTE</Tag>
+		<English>"Everything in life is somewhere else, and you get there in a car."[PARAGRAPH:2]- E. B. White</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPASS</Tag>
+		<English>Compass</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPASS_QUOTE</Tag>
+		<English>"The wisest men follow their own direction."[PARAGRAPH:2]- Euripides</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPOSITES</Tag>
+		<English>Composites</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPOSITES_QUOTE</Tag>
+		<English>"The whole is greater than the sum of its parts."[PARAGRAPH:2]- Aristotle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPOSITES_PEDIA</Tag>
+<English>The term "composite" refers to any object that is made up of more than one material. Composites were used quite early in human history; composite bows have been discovered dating back to 1300 BC. The composite technology refers the late 20th Century invention of various metal and plastic composites with greater strength, lightness, and other special properties than the base materials.
+
+Kevlar, the modern battle armor, is a composite material. Modern tanks are constructed of steel-boron nitride composites. Stealth airplanes use composite materials that are much more difficult to spot on radar. The tungsten-carbide composite is used in drill bits and wedding rings. Composite materials often demand extremely complex and precise manufacturing processes. However expensive the process may be, the resulting material may have superior qualities that make them more than worth the expense.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPUTERS</Tag>
+		<English>Computers</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMPUTERS_QUOTE</Tag>
+		<English>"I do not fear computers. I fear the lack of them."[PARAGRAPH:2]- Isaac Asimov</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CONSTITUTION</Tag>
+		<English>Constitution</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CONSTITUTION_QUOTE</Tag>
+		<English>"No freeman shall be taken, imprisoned, or in any other way destroyed, except by the lawful judgment of his peers."[PARAGRAPH:2]- The Magna Carta</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CONSTRUCTION</Tag>
+		<English>Construction</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CONSTRUCTION_QUOTE</Tag>
+		<English>"It is from their foes, not their friends, that cities learn the lesson of building high walls."[PARAGRAPH:2]- Aristophanes</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COPPER_WORKING</Tag>
+		<English>Copper Working</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COPPER_WORKING_QUOTE</Tag>
+		<English>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COPPER_WORKING_PEDIA</Tag>
+<English>Copper is one of the few metallic elements which can be found in nature in pure form, uncombined with other elements and not bound into an ore. This made it easy for primitive societies to find and work in modest quantities.
+
+Copper can be used for metallic tools, but it is soft and does not hold a cutting edge well. Most societies found more use for copper in jewellery and decorations. However, familiarity with working copper (and other elements found in native-metal form, such as gold, silver, and meteoric iron) probably contributed to early societies' understanding of metalworking in general. As the techniques for refining metals from ore improved, this became crucial to the progress of early civilizations.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CORPORATION</Tag>
+		<English>Corporation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CORPORATION_QUOTE</Tag>
+		<English>"Corporation: An ingenious device for obtaining individual profit without individual responsibility."[PARAGRAPH:2]- Ambrose Bierce</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CROP_ROTATION</Tag>
+		<English>Crop Rotation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CROP_ROTATION_QUOTE</Tag>
+		<English>"Don't judge each day by the harvest you reap but by the seeds that you plant."[PARAGRAPH:2]- Robert Louis Stevenson</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CROP_ROTATION_PEDIA</Tag>
+<English>Crop rotation is the practice of planting different species of crops in the same field in a continuous cycle. This is extremely useful as a way to improve farm productivity, because any given crop will absorb certain nutrients from the soil while leaving others in place or even enriching them. Over time, growing the same crops in a field over and over will exhaust its nutrients and make it useless. By rotating crops, a farmer can intersperse these periods of nutrient drain with periods where the crops actively replenish the soil; this is often achieved using legume crops such as beans, which enrich soil with nitrogen that many other plants need to grow.
+
+Crop rotation was introduced in various parts of the world during the classical and medieval periods. Over time it has become a more complex practice; each improvement in crop rotation practices provided a boost in agricultural productivity. While today, chemical fertilizers often take the place of crop rotation by replacing soil nutrients artificially, crop rotation remains an important technique for farmers to know, especially if they wish to avoid relying totally on the fertilizer supply.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CURRENCY</Tag>
+		<English>Currency</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CURRENCY_QUOTE</Tag>
+		<English>"Everything is worth what its purchaser will pay for it."[PARAGRAPH:2]- Publius Syrus</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CYBERNETICS</Tag>
+		<English>Cybernetics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CYBERNETICS_QUOTE</Tag>
+		<English>"If the brain were so simple we could understand it, we would be so simple we couldn't."[PARAGRAPH:2]- Lyall Watson</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CYBERNETICS_PEDIA</Tag>
+<English>Cybernetics is a term coined by pioneering computer scientist Norbert Wiener, referring to the science of studying control systems, organization, and information flow. This is a relatively new field of research, dating to the mid-20th century. Cyberneticists seek to understand how decisions are made, and how to improve the process using systematic, scientific methods. This is particularly important in the fields of automation and computer programming. Setting up a computer to do a job in a human's place cannot be done unless the computer's programmers and users understand how it is to make the necessary decisions: how the computer 'thinks.' Cybernetics also finds use in management of human beings, because its theories can be applied to the flow of information and decisions up and down a chain of command, among a peer group, or through other social structures.
+
+More colloquially, "cybernetics" is often used to refer to advanced automation, or to a mixture of organic and machine technology, particularly in the context of the newly-dawning Information Age. Naturally, this is tied into the research described above - one can hardly design an advanced robot without knowing how to build a decision-making computer.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DIVINATION</Tag>
+		<English>Divination</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DIVINATION_QUOTE</Tag>
+		<English>"In the beginning Man created God; and in the image of Man created he him."[PARAGRAPH:2]- Ian Anderson</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DIVINATION_PEDIA</Tag>
+<English>People of the ancient world were fascinated and awed by the forces of nature surrounding them. Earthquakes, storms and other phenomena were generally regarded as signs from heaven. Individuals and groups arose to formulate explanations for these events, and pass the knowledge along to the tribe. The priests and priestesses of mysticism, often called oracles, claimed union with the divine through meditation and trance-like contemplation.
+
+Oracles across the world developed complex rites and rituals to appease and interact with gods and spirits. One of the most common forms of supernatural power invoked was divination - the ability to foretell the future using signs and portents such as dreams, the motions of the stars, the guts of sacrificial animals, the fracture lines in a tortoise's shell, visions experienced while under the influence of various drugs, and so on. Divination served the common human need to obtain information about the unknown future.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DOGMA</Tag>
+		<English>Dogma</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DOGMA_QUOTE</Tag>
+		<English>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DOGMA_PEDIA</Tag>
+<English>"Dogma" refers to a firmly established body of beliefs and opinions, generally associated with religion and laid out by respected theologians within the faith. Within that religion, the dogma is considered authoritative and final - it may be clarified or expanded upon, but not contradicted. To call the basic facts of the dogma into question is, by definition, to leave the religion for some other path which may be deemed heretical.
+
+Different religions have different core bodies of dogma, which usually focus on key points of doctrine that the religious leaders consider to be of extreme importance. In Christianity, the concept of salvation through faith in Christ is a matter of dogma, although the details of how this salvation may best be achieved can vary. In Islam, it is a point of dogma that Muhammed was the last of the divinely inspired prophets.
+
+Dogma is particularly important to organized religions, since it serves to define the limits of what can and cannot be accepted as part of the faith. Learning the basic principles outlined by the dogma is considered the universal foundation of education within the religious tradition, and among the scholarly figures of the religion, all knowledge and all philosophy is likely to be interpreted through the dogma's lens. Groups which defy dogma are often forced to recant, removed from positions of official responsibility, and even violently persecuted until they rejoin the fold, flee, or die.
+
+The concept of points of dogma that a society will not tolerate violation of is not unique to religion. Many totalitarian societies feature secular political 'dogma', de facto or de jure, which cannot be violated without the hostile attentions of the state.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ECOLOGY</Tag>
+		<English>Ecology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ECOLOGY_QUOTE</Tag>
+		<English>"We do not inherit the Earth from our ancestors, we borrow it from our children."[PARAGRAPH:2]- Native American proverb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ECOLOGY_PEDIA</Tag>
+		<English>Ecology is the science of studying biological systems in nature, as distinct from the processes that go on inside individual organisms or species. Ecologists focus on understanding how different species interact in their natural habitats, what causes some to flourish and others to fade, what patterns persist across all examples of a given biome (such as 'forest' or 'savannah'), and what difference may make one area unique compared to others that are superficially similar. Knowledge of ecology helps to predict the future of a living system, control outbreaks of diseases such as blights in the wild, and mitigate certain types of natural disaster such as floods and wildfires.[NEWLINE][NEWLINE]Ecological discoveries over the late 19th and 20th centuries have made humanity far more aware of the complexities of life on Earth, and how human actions impact these complexities.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ECONOMICS</Tag>
+		<English>Economics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ECONOMICS_QUOTE</Tag>
+		<English>"The engine which drives enterprise is not thrift but profit."[PARAGRAPH:2]- John Maynard Keynes</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EDUCATION</Tag>
+		<English>Education</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EDUCATION_QUOTE</Tag>
+		<English>"There is no wealth like knowledge, no poverty like ignorance."[PARAGRAPH:2]- Ali ibn Abi-Talib</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ELECTRICITY</Tag>
+		<English>Electricity</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ELECTRICITY_QUOTE</Tag>
+		<English>"We will make electricity so cheap that only the rich will burn candles."[PARAGRAPH:2]- Thomas Edison</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ELECTRONICS</Tag>
+		<English>Electronics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ELECTRONICS_QUOTE</Tag>
+		<English>"The human brain must continue to frame the problems for the electronic machine to solve."[PARAGRAPH:2]- David Sarnoff</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ELECTRONICS_PEDIA</Tag>
+		<English>The field of electronics deals with the practical application and manipulation of electricity and electromagnetic phenomena. The invention of the vacuum tube in the early 20th century marked the beginning of modern electronics. The vacuum tube was capable of amplifying weak radio signals, allowing them to be transmitted over greater distances. Vacuum tubes also allowed music and voice to be superimposed onto radio waves for transmission. The early study of electronics revolutionized a number of fields, especially the field of communications. Because of the vacuum tube, the technology of radio communications was highly developed by World War II. After the war, electronics research continued to advance rapidly. Post-war advances include the earliest examples of digital computers and, eventually, transistors and integrated circuits: miniaturized replacements for the vacuum tube.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EMPLOYMENT</Tag>
+		<English>Employment</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EMPLOYMENT_QUOTE</Tag>
+		<English>"Pleasure in the job puts perfection in the work."[PARAGRAPH:2]- Aristotle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EMPLOYMENT_PEDIA</Tag>
+<English>In hunter-gatherer societies, every person works solely for themself, or for a handful of dependents such as children. Goods may be distributed among the group or kept in an individual's hands, but there is no concept of one person working at the orders of another, or working solely to enrich another.
+
+This pattern seems to have persisted through the early days of civilization, with the average citizen being a subsistence farmer who works to grow their own food and make their own goods, or a specialist who provides some specific product in exchange for food and goods. The most common exception were slaves, individuals legally owned by some other person, and who could be ordered to do nearly any form of labor on their behalf.
+
+However, as the amount of surplus available to large civilizations grew and the techniques for recording inventories and contracts improved, a new type of labor relationship emerged - that of the employee. Instead of working directly to produce goods for their own consumption, or being used as a form of property to produce goods for another, an employee works on behalf of another in exchange for some regular, agreed-upon form of compensation, such as food, shelter, money, or a combination of the above.
+
+This kind of labor is much more flexible than subsistence labor. An employee can be paid to do things that would not allow them to provide for themselves directly (a construction worker cannot eat the buildings he creates), or to improve the productivity of a large-scale enterprise (a clerk would be useless working alone, but is valuable when working for a large organization). It is also much more efficient than slavery. Unlike slaves, employees can be obtained cheaply, need not be policed to prevent escapes, and have no particular reason to resent the person they work for which might lead them to cheat, steal, or simply slow down on the job.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ENGINEERING</Tag>
+		<English>Engineering</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ENGINEERING_QUOTE</Tag>
+		<English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away."[PARAGRAPH:2]- Antoine de Saint-Exupry</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ETHICS</Tag>
+		<English>Ethics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ETHICS_QUOTE</Tag>
+		<English>"Act only according to that maxim whereby you can, at the same time, will that it should become universal law."[PARAGRAPH:2]- Immanuel Kant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ETHICS_PEDIA</Tag>
+<English>Ethics is the philosophical study which addresses moral questions - matters of right and wrong, virtue and vice, justice and injustice. This has preoccupied thinkers since ancient times, but formal discussion and contemplation of ethics as a logic-based endeavour, as distinct from traditions of religious or secular law, are mostly a product of the classical and medieval periods.
+
+Different cultures produce widely divergent schools of ethics, ranging from the law-oriented systems common in China to the relatively individualist virtue-ethical schools of the ancient Greeks. Ethics may be highly abstract or applied as a practical matter to questions of professional conduct and personal behavior. They may emphasize the intent of the moral actor, the fulfillment of certain laws and precepts, the consequences of the action itself, or any combination of the above.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EVANGELISM</Tag>
+		<English>Evangelism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EVANGELISM_QUOTE</Tag>
+		<English>"Just as a candle cannot burn without fire, men cannot live without a spiritual life."[PARAGRAPH:2]- Buddha</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EVANGELISM_PEDIA</Tag>
+<English>Evangelism is an interpretation of religion which sees expanding itself as a sacred duty. This view begins with the idea of a specific religion as being at the centre of one's existence. To the evangelist, it isn't simply a matter of appeasing one's own gods, with other people having other gods. It isn't a matter of trying to become personally enlightened. No, this enlightenment must be spread to others, or the reverence of this god must be something that it would be good for everyone to share.
+
+Therefore, to the evangelist, the very existence of unbelievers is a disastrous state of the world. It is a crisis facing the souls of the human race, an emptiness in the collective spirit of humanity, and possibly a personal insult as well. Evangelists will go forth and preach to others, converting outsiders to the faith, and to their own specific versions of the faith- by hook or by crook.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EXPLOSIVES</Tag>
+		<English>Explosives</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EXPLOSIVES_QUOTE</Tag>
+		<English>"You can bomb the world to pieces but you can't bomb it into peace."[PARAGRAPH:2]- Michael Franti</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EXPLOSIVES_PEDIA</Tag>
+		<English>An explosive is a chemical compound or mixture that undergoes rapid combustion and produces heat, gas, and pressure effects. The earliest explosive compound known was gunpowder, which was first used in the13th century, and was the only explosive known for hundreds of years. The first modern explosive, a compound known as nitroglycerin, was discovered in 1846. Compounds similar to nitroglycerin are the most commonly used explosives today. Explosives vary in brisance, or shattering effect, and in their stability under various environmental conditions. Aside from their obvious use in weaponry, explosives are also used in such peaceful applications as rocket propellants and for mining and demolition work.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FERTILIZER</Tag>
+		<English>Fertilizer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FERTILIZER_QUOTE</Tag>
+		<English>"If the grass on the other side of the fence appears greener, it must be all the fertilizer they are using."[PARAGRAPH:2]- Kevin Rodowicz</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FERTILIZER_PEDIA</Tag>
+<English>Fertilizers are substances which increase the fertility of soil by introducing nutrients that are often lacking. Since deficiencies in substances like nitrogen, phosphorus, and potassium are often bottlenecks in plant growth, fertilizer makes plants to grow larger and more quickly. This is especially desirable in agriculture as it allows the same land to feed more people.
+
+Fertilization has been a common practice throughout the civilized world since prehistoric times. Farmers in nearly all places fertilized their fields with simple materials like animal (or human) dung, ground-up fish remains, or potsherds (most fertile soil in the Amazon basin is laced with broken pottery, and this appears to have been deliberate on the natives' part).
+During the 19th and 20th centuries, the range of available fertilizers grew dramatically. Industrial-scale extraction of minerals, particularly nitrates and phosphates, allowed vast increases in farm output. Advances in industrial chemistry allowed factories to create fully synthetic fertilizers too, using customized organic molecules to speed the growth of crops and inhibit the growth of weeds and parasites. This contributes to the success of the "Green Revolution" of the 1960s and 1970s at feeding a world population of seven billion and rising.
+
+In general, fertilizer achieves varying success. Used carelessly, it may not contribute to soil fertility (adding more of what's already there is pointless), or even decrease it (adding enough phosphorus to maximize growth may result in all the carbon in the soil being used up quickly). This is a particularly serious problem with "Green Revolution" crops in the modern era. Furthermore, careless or excessive use can lead to fertilizer seeping into waterways, causing oxygen depletion, algal blooms, and other ecological problems.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FILM</Tag>
+		<English>Film</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FILM_QUOTE</Tag>
+		<English>"There's no business like show business."[PARAGRAPH:2]- Irving Berlin</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FILM_PEDIA</Tag>
+<English>One of the many great inventions of the mid-19th century was 'moving pictures'. By creating a narrow strip of transparent film with tiny still images impressed on it, and rapidly moving this film past a light source, the images could be projected onto a wall or screen. Changing the image fast enough (~10 times per second) creates the illusion of motion, allowing artists to show an audience a moving, lifelike image of events on screen.
+
+This gave rise to the first "mass media." The creation of motion pictures became a professionalized industry, with a special class of artists who were experts at using techniques like camera angles and special effects to evoke emotion. It also created a new class of celebrity - the movie star, who was seen by millions on a regular basis where an ordinary actor would never appear before more than a few thousand people at a time.
+
+Film was not just used for entertainment, it became a powerful medium for education, journalism, and advertising. It also became a popular vehicle for state propaganda.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FINANCE</Tag>
+		<English>Finance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FINANCE_QUOTE</Tag>
+		<English>"Banking establishments are more dangerous than standing armies."[PARAGRAPH:2]- Thomas Jefferson</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FINANCE_PEDIA</Tag>
+<English>Finance refers to the organized processes of handling money. While money is an ancient innovation, for most of history currency was handled in simple ways. Coins were just another commodity, fixed volumes of precious metal that had some kind of official sanction. A rich person would simply have large numbers of coins, much as they might have a large herd of cattle or a warehouse full of pottery. Anyone who wanted to buy something would simply pile up coins into a large heap that could be exchanged for the good, usually by earning them a few at a time.
+
+This had limits. Starting a business, making major purchases or engaging in large scale public works were difficult because the buyer needed to have all their money at once, and at the beginning of the process, in order to accomplish anything. Travel was more dangerous because there was no way to store money during travel except on your person. If you needed money at your destination to do business, you would have to carry it with you.
+
+Around 1000 CE solutions to this problem emerged. One obvious solution was the creation of banks - dedicated storehouses that would hold onto money and which could contact other banks in other cities. Instead of traveling with a hundred gold coins on your person, you could deposit the gold in a bank at home, travel to a destination, and 'withdraw' coins from the other city's bank: their records would tell them that you owned the money, but in another place. Banks could also make loans; a large sum of money up-front, to be paid back over a period of time with interest. This allowed the wealthy to invest with more safety and gave the poor an option for buying expensive capital goods.
+
+The rise of financial institutions has come with costs. Professional money-manipulators have a great deal of power in society, and sometimes use it at others' expense. But it greatly increases the economic power and flexibility of a civilization.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FIREARMS</Tag>
+		<English>Firearms</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FIREARMS_QUOTE</Tag>
+		<English>"One man with a gun can control a hundred without one."[PARAGRAPH:2]- Vladimir Lenin</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FIREARMS_PEDIA</Tag>
+<English>In its first centuries, gunpowder was too unstable and metallurgy too crude for the new explosive mix to be used for applications other than demolitions, fireworks, and large, heavily overbuilt artillery pieces. But with advances in metalworking in the 15th and 16th centuries CE, it became possible to create man-portable gunpowder weapons, which began to supplement and then to replace earlier ranged weapons such as the bow, crossbow, and sling.
+
+By the 17th century, the world's most modern armies relied in large part on blocks of musket-armed infantry, often supported by pike units to keep cavalry from running down the musketeers while they reloaded their clumsy weapons. The pike units were removed entirely with the development of the bayonet, and ever since that era infantry combat has been dominated by the role of the gun and advances in firearms technology.
+
+Even though early firearms were little if any deadlier than a good bow on average, they triggered a revolution in warfare. Firearms were easy to learn to use, and incredibly easy to mass produce compared to the cost of a suit of "bullet proof" steel armor. This helped drive the last nails into the coffin of heavily armored shock cavalry in Europe, ended the dominance of nomadic horse-archer cultures in Asia, and triggered a shift towards mass armies recruited from among the populace, ultimately paving the way for the revolutionary leveé en masse of the Napoleonic French.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FISHING</Tag>
+		<English>Fishing</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FISHING_QUOTE</Tag>
+		<English>"Give a man a fish and you feed him for a day. Teach a man to fish and you feed him for a lifetime."[PARAGRAPH:2]- Lao Tzu</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FISSION</Tag>
+		<English>Fission</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FISSION_QUOTE</Tag>
+		<English>"If the radiance of a thousand suns were to burst forth at once in the sky, that would be like the splendour of the mighty One. I am become Death, destroyer of worlds."[PARAGRAPH:2]- J. Robert Oppenheimer, quoting from the Bhagavat Gita</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FISSION_PEDIA</Tag>
+<English>When an atomic nucleus undergoes fission, it splits into two smaller nuclei and a spray of single subatomic particles, including neutrons and X-ray photons. Since the impact of a neutron can itself cause a fission reaction, if enough atoms which can undergo fission ("fissile" atoms) are concentrated in the same place, they will begin to spontaneously experience a higher and higher rate of fission. As the concentration increases past a threshold known as "critical mass," the rate of fission becomes so high that a large fraction of the fissile material will undergo fission at once, releasing extremely large amounts of energy, mostly in the form of X-rays.
+
+The discovery of atomic fission in 1938 as a result of chemical assays of uranium samples came during the runup to the largest war in the history of the world. All the major powers of the age were mobilizing the full resources of science and industry to prevail in the coming conflict. Under the circumstances, when theoretical physicists determined that under some conditions fission could be used to make powerful weapons, the development of these weapons became inevitable.
+
+Nuclear weapons rely mainly on fission as a source of massive, instantaneous energy release - fusion or "H-bombs" actually use the fusion stage as a secondary booster, to enhance the efficiency of the fission reaction more than anything else. A nuclear device contains enough fissile material (some uranium isotopes, or plutonium-239) to release trillions of joules of energy, or even quadrillions at the extreme upper limit. This energy, released as X-rays that are absorbed by the device's surroundings, creates a roughly spherical zone of superheated matter called a "nuclear fireball," which is roughly as hot as the interior of the sun. The intensity of light and heat from the fireball is enough to literally blind the unprotected eye, often permanently.
+
+The effects propagate outward in the form of a "blast wave", a zone of high pressure air pushed outward from the blast, which exerts pressures on the order of one atmosphere for a large area around the point where the device is initiated. This blast wave can be powerful enough to destroy reinforced buildings at a range of kilometers, and lightly constructed buildings at a range of many kilometers, depending on the yield of the device. Meanwhile, direct heating from the fireball creates a "thermal pulse" which can cause instant third-degree burns at long distances, and ignite flammable materials, often resulting in numerous and intense fires throughout the area targeted by the device. Close in, the heat is sufficient to fuse large ground areas into a field of glass, subsequently broken up and shattered by the blast.
+
+As this devastation goes on, the fireball from a nuclear initiation in atmosphere will tend to rise, creating the characteristic "mushroom cloud" associated with nuclear weapons in the public imagination. The effects on the ground are large enough to lay waste to entire cities, render troop movements practically impossible, and kill hundreds of thousands if not millions of people, at a single blow.
+
+Perhaps the most sinister, though far from the most lethal, effect of nuclear weapons is radioactive fallout - fission byproducts from the fissile material in the device, and other matter irradiated during the event. When nuclear weapons are set off high in the atmosphere, fallout is relatively mild, but an initiation close to ground level that sucks up material on the ground into the fireball itself to be irradiated can produce much greater levels of fallout.
+
+Some of this fallout is often redeposited in the form of a deadly black rain near Ground Zero, which is very radioactive and highly lethal. The rest spreads out over a large area downwind of the target. The effects of multiple devises are particularly severe in this respect, as for reasons not yet well understood it is common for intense, lethally radioactive 'hot spots' to appear where the fallout patterns from multiple nuclear initiations interact. While most of the land contaminated by fallout is broadly habitable, hot spots may give lethal doses of radiation in a short time, guaranteeing a slow, painful death from radiation sickness.
+
+All the effects of nuclear attacks are made far worse by the fact that the initiations destroy a great deal of infrastructure and first-response assets, making humanitarian relief extremely difficult. Bringing in supplies and caring for the thousands upon thousands of sick and wounded becomes nearly impossible. Long-term effects can be similarly devastating; a nuclear attack powerful enough to destroy a modern nation's ability to make war will predictably ruin its infrastructure and lead to famines and breakdowns of the civilian economy for years to come.
+
+The creation of a nuclear arsenal is a huge industrial undertaking for even an advanced nation - the original Manhattan Project required 1/6 of all electricity produced in the United States during the war years, and a vast influx of money to build a network of secret industrial facilities to produce fissile material and develop bomb designs.
+
+Production of fissiles takes high-end precision machinery which is available from only a handful of sources in the modern world - monitoring of these tools plays a major part in anti-proliferation efforts today. Designing the devices is also a major challenge, even more difficult if they cannot be tested (today, in underground chambers; in the 1940s and 1950s, often in the open air). A nuclear device which is designed improperly will 'fizzle:' it will undergo only partial fission before the energies released blow the device apart, with most of the fissile material being wasted entirely. This is a particularly common problem with the simplified designs created by various third world nations (see the Pakistani and North Korean nuclear programs for reference).
+
+Once created, nuclear weapons can be delivered by missile, air-dropped bomb, or large caliber artillery shell; some nuclear devices have been built in the one-kiloton range which are small enough to be man-portable have been built, though they are awkward and very bulky. Most war plans featuring nuclear weapons rely on the "nuclear triad" of manned bombers (which are good at fighting their way through defenses, and cheap), ICBMs (which are impossible to stop without specialized anti-ballistic missile defenses, but expensive and impossible to call off after launch), and shorter-ranged submarine-launched ballistic missiles (which, like ICBMs, are very hard to stop, but which have the added advantage of being impossible to destroy in a preemptive strike unless the attacker knows exactly where to find the submarine with the missiles).
+
+Since in a nuclear war the nation's leaders might be killed at any time, nuclear weapons are aimed according to pre-set war plans, with the devices being targeted in what is called a "laydown," with the intent of destroying a specific list of targets as efficiently and thoroughly as possible. Targets for a laydown might include the enemy's nuclear launch facilities, command and control centers, transport facilities vital to military mobilization such as ports, railroad marshalling yards, and highway interchanges, airports that could be used to launch bombers, factories which produce components for advanced weapons, and the offices of government agencies that could organize nuclear war or mobilize civil defense to limit the effects of the nuclear attack.
+
+As a rule, cities are not targeted specifically with the intent of killing vast numbers of people, but since so many of the important targets are in or around cities, any nuclear war is sure to destroy many cities and kill tens of millions of people. Civil defense measures can reduce civilian casualties, but never even come close to eliminating them.
+
+Fortunately for mankind, the terrifying power of nuclear weapons is sobering for any sane or intelligent person. Some claim that the rise of nuclear arsenals among the developed nations has actually reduced the odds of war breaking out, because it would be impossible to attack a nuclear-armed country and defeat it without taking terrible damage from nuclear counterattack. Balanced against this is the fear of accidental war - that weapons prepared to launch a counterattack might be fired by mistake, in response to a false alarm. There is also the risk that if nuclear weapons become common in too many nations, political instability might let them fall into the hands of groups irresponsible and deranged enough to try to use them.
+
+Because of this, many countries have political movements devoted to nuclear disarmament, including well organized protest movements such as the one which has been permanently camped outside the residence of the President of the United States since 1982. These movements have had some success - the large nuclear powers have negotiated repeated reductions of their nuclear arsenals from the peak of the Cold War circa 1970. Certain types of weapons have been banned as 'too provocative,' creating the threat of a successful nuclear sneak attack and thus giving the enemy an incentive to strike first out of fear.
+
+But many nuclear devices remain, and some countries continue to pursue expanded nuclear capabilities, for obvious reasons - it's the ultimate deterrent against ordinary invasion.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FLIGHT</Tag>
+		<English>Flight</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FLIGHT_QUOTE</Tag>
+		<English>"For once you have tasted flight you will walk the earth with your eyes turned skywards, for there you have been and there you will long to return."[PARAGRAPH:2]- Leonardo Da Vinci</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FUSION</Tag>
+		<English>Fusion</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FUSION_QUOTE</Tag>
+		<English>"All stable processes we shall predict. All unstable processes we shall control."[PARAGRAPH:2]- John von Neumann</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FUTURE_TECH</Tag>
+		<English>Future Tech</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FUTURE_TECH_QUOTE</Tag>
+		<English>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GENETICS</Tag>
+		<English>Genetics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GENETICS_QUOTE</Tag>
+		<English>"Every human gene is related to the genes of other animals and bacteria, to this great chain of being."[PARAGRAPH:2]- Walter Gilbert</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GEOLOGY</Tag>
+		<English>Geology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GEOLOGY_QUOTE</Tag>
+		<English>Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets.[PARAGRAPH:2]- Jules Verne</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GEOLOGY_PEDIA</Tag>
+<English>The word geology comes from Greek, meaning "knowledge of the earth." Throughout history, humans have searched for mineral resources valuable to them; the best flint and obsidian for toolmaking, veins of gold, silver, and gems, the ores of useful metals. The systematic rise of science in the 18th century, and the relaxation of old taboos about the nature and origin of the world, allowed scholars to think more freely about the earth, as about other subjects. These 'geologists' examined rock strata, tectonic activity such as earthquakes and volcanoes, and the patterns formed in the landscape by erosion and other forces of nature.
+
+In doing so, they replaced the old, naive picture of the world as an unchanging mass of rock. Geologists of the 19th and 20th centuries have learned that the ground we stand on is actually a series of plates of stone floating on the sea of lava that makes up most of the Earth's mass. Over the eons ("geologic time") powerful forces slowly reshape the landscape, bringing new rock closer to the surface and rearranging the terrain to form mountains and seas.
+
+Understanding geology helps us understand where to find mineral resources, and how to channel the elemental forces of earth and water to our advantage.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GLOBALIZATION</Tag>
+		<English>Globalization</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GLOBALIZATION_QUOTE</Tag>
+		<English>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope"</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GLOBALIZATION_PEDIA</Tag>
+<English>Globalization is the process by which different peoples spread across the world become united by ties of ideology, economics, and politics. The first wave of globalization took place during the 19th century Age of Imperialism, when steam power and telegraphy allowed European empires to spread zones of influence across most of the world, creating a web of transport, communication, and government. However, access to these networks was limited and patchy and many people neither knew nor cared about events in far-off lands.
+
+The World Wars sped up the process. The staggering, apocalyptic scale of combat caught up many colonial possessions in Africa and Asia, permanently undermining European rule at the same time that people in economic backwaters were exposed to a wide variety of modern products and weapons. After World War Two, ideologies such as nationalism or communism spread into regions that had previously been dominated by traditional cultures that were less inclined to resist foreign rule. A wave of "decolonization" swept the world.
+
+But this was not the end. Direct imperial rule of poor nations by rich ones went out of fashion, the economic bonds between rich and poor were not so easily broken. The industrial giants of the developed world could easily produce enough goods to supply massive export markets, while needing to import raw materials on an ever-growing scale as their own supplies of timber, coal, ore, and oil became depleted. Along with these flows of goods came flows of popular products and the culture that came with them, particularly from the United States. Artifacts of American culture (Hollywood movies, blue jeans, Coca-Cola) became world-spanning; to a lesser extent this diffusion worked from other sources, and even worked the other way, with foreign customs being adopted in the former colonial metropoles.
+
+Along with these economic ties came an entangled world political stage. Dictators of small, remote countries could no longer count on isolation and control of the media to keep their people from becoming restless, or to keep large foreign powers from intruding on their business. The only security for small nations was to align themselves with the economic interests of the great power blocs, supplying cheap resources and labor and giving themselves a place in the new world order.
+
+Today the world is extensively globalized, a product of the capitalist triumph of the post-Cold War era. Whether this is socially desirable, economically sustainable, or even ecologically survivable remains to be seen, and is likely to become one of the great questions of the 21st century.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GUILDS</Tag>
+		<English>Guilds</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GUILDS_QUOTE</Tag>
+		<English>"People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public."[PARAGRAPH:2]- Adam Smith</English>
+	</TEXT>
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GUNPOWDER</Tag>
+		<English>Gunpowder</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GUNPOWDER_QUOTE</Tag>
+		<English>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HEALTHCARE</Tag>
+		<English>Healthcare</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HEALTHCARE_QUOTE</Tag>
+		<English>"If you haven't got your health, you haven't got anything."[PARAGRAPH:2]- Christopher Guest, in 'The Princess Bride'</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HEALTHCARE_PEDIA</Tag>
+		<English>Healthcare is the practice of acting so as to preserve or restore the health of the individual patient, although this is normally construed to not include basic sustenance needs such as air, water, and food. Healthcare can be divided into a wide range of overlapping categories. These include but are not limited to preventative care (to maintain health through nutrition, exercise, and hygiene), palliative care (to relieve the symptoms of a patient who cannot be cured by the available means), outpatient care (where the patient is able to function and live independently while undergoing treatment), urgent care (treatment of pressing medical problems that are nonetheless not life-threatening), and acute care (where a patient requires detailed monitoring or complex medical support and so must remain in a hospital with physicians in attendance).[NEWLINE][NEWLINE]Since it affects what may be the foremost concern of nearly all humans - their health - health care occupies a large share of the total time and energy of the human race. Many (though not all) of the professionals involved in providing health care receive unusual prestige and wealth within their own societies. This was the case even in ancient times when the practice of medicine was primitive to the point of being life-threatening.[NEWLINE][NEWLINE]In modern times, the health care system has become an elaborate and refined infrastructure, especially in developed nations. Not only is it an industry in its own right, it supports various other industries such as the pharmaceutical industry and the insurance industry. The challenge of working out how to efficiently pay for this vast system that keeps us alive and relatively comfortable is a subject of energetic debate in many societies.</English>
+	</TEXT>
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HERITAGE</Tag>
+		<English>Heritage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HERITAGE_QUOTE</Tag>
+		<English>"And how can man die better, than facing fearful odds, for the ashes of his fathers, and the temples of his gods?"[PARAGRAPH:2]- Thomas Macaulay, Lays of Ancient Rome</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HERITAGE_PEDIA</Tag>
+		<English>Heritage is that which, having been created by our ancestors, is given to us because our ancestors willed that it be given to us. The concept of heritage and similar words with the same root such as "inheritance" and "heredity" are fundamental to the human self-image. Nearly everyone feels affectionate bonds to both their ancestors and their descendants. As a result, there is a near-universal desire to make sure that one's descendants inherit the virtues, resources, and opportunities that made one's own successes possible. Conversely, there is a near-universal belief that one is entitled to practice the traditions, use the assets, and partake of the opportunities that one's ancestors enjoyed.[NEWLINE][NEWLINE]More broadly, heritage can refer to the collective legacy left behind by the ancestral generations of an entire town, nation, culture, or civilization. This heritage can be material (natural resources cultivated and preserved by past generations), economic (control over property owned by ancestors), aesthetic (works of art that have endured through multiple generations), cultural (practices that protected or enriched the society in the past), or spiritual (the presumed supernatural protection of ancestral spirits, and the idea of following "the faith of one's fathers" as a gesture of unity with that which came before and that which will come in the future.[NEWLINE][NEWLINE]How to efficiently preserve one's heritage, to obtain as large a share of its rewards as possible, while passing it down to the next generation in turn, is a preoccupation of most humans and most human societies. Individuals do this with legal procedures such as wills or through the practices of childrearing (intended to instill traditional virtues in the young). Nations fund museums and preservation projects, make laws regarding cultural practices, and sometimes even go to war for the sake of preserving their heritage from that which they perceive to threaten it.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HORTICULTURE</Tag>
+		<English>Horticulture</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HORTICULTURE_QUOTE</Tag>
+		<English>"The first farmer was the first man. All historic nobility rests on the possession and use of land."[PARAGRAPH:2]- Ralph Waldo Emerson</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HORTICULTURE_PEDIA</Tag>
+		<English>Horticulture is the art of cultivating plants for human use. By the late Middle Ages, the techniques of growing plants by hand and muscle power had been under refinement for millenia. Staple crops like wheat, rice, and potatoes were about as refined and optimized as possible. Immense bodies of farming lore arose, about the best practices for growing plants in a given land, under varying conditions of soil conditions, temperature, day length, rainfall, parasites, disease and predation.[NEWLINE][NEWLINE]The careful and professional science of crop-growing played a large role in the pre-industrial Age of Colonialism. Knowing how best to produce staple crops also made it easier to mass-cultivate luxury crops for export. Since most luxury crops grew best in certain climates and soils under the eyes of local populations who knew how to cultivate them (tobacco in the New World, tea in the Far East), this opened up new routes for trade and investment around the world.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HUMANITIES</Tag>
+		<English>Humanities</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HUMANITIES_QUOTE</Tag>
+		<English>"I am a man. Nothing human is alien to me."[PARAGRAPH:2]- Terence</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HUMANITIES_PEDIA</Tag>
+		<English>The humanities are the academic disciplines which study human behavior, organization, society, and culture. They include but are not limited to philosophy, history, archaeology, anthropology, theology, classical studies, law, semiotics, linguistics, and the arts. The fields collectively known as the humanities are generally pursued by specialized scholars or artists, who work steadily to refine their aesthetic sense, their understanding of the human condition, and their knowledge of the proper order of human affairs.[NEWLINE][NEWLINE]While it is generally difficult to point to specific physical benefits garnered from these fields, collectively they make up almost all that motivates the human race. Without art, law, religion, history, and philosophy, human civilizations are at a loss as to how to organize themselves or what goals they should orient themselves towards.[NEWLINE][NEWLINE]Individuals may pursue self-gratification or bare survival in the absence of these things, but social cohesion tends to break down rapidly when this is all that people have and share with each other. Thus, the humanities form the mortar, the glue, the nuts and bolts, that hold civilizations together.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HUNTING</Tag>
+		<English>Hunting</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HUNTING_QUOTE</Tag>
+		<English>"If you chase two rabbits, you will lose them both."[PARAGRAPH:2] - Native American proverb</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HYDRAULICS</Tag>
+		<English>Hydraulics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HYDRAULICS_QUOTE</Tag>
+		<English>"No man ever steps in the same river twice, for it's not the same river and he's not the same man."[PARAGRAPH:2]- Heraclitus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_HYDRAULICS_PEDIA</Tag>
+		<English>The word "hydraulics" comes from a root word for "water". Hydraulic technology manipulates water or another fluid, for a variety of purposes.[NEWLINE][NEWLINE]Civilization is intimately tied to water. People need water to live, to raise crops, to move cargo along rivers, canals, and the sea. As the understanding of water and water pressure became more complete and mathematical in late pre-industrial times, traditional projects of water-manipulation grew more ambitious. Many civilizations built or improved great canals, for instance, making artificial waterways where nature did not provide an easy path. In areas where river valleys posed a flooding hazard, great levees and dikes were built to stem the flow of water. Existing innovations like waterwheels were used on a larger and larger scale, to provide greater reserves of power for manufacturing.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_INFRASTRUCTURE</Tag>
+		<English>Infrastructure</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_INFRASTRUCTURE_QUOTE</Tag>
+		<English>"All right, but apart from the sanitation, medicine, education, wine, public order, irrigation, roads, the fresh water system and public health, what have the Romans ever done for us?"[PARAGRAPH:2]- Reg (John Cleese), 'The Life of Brian'</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_INFRASTRUCTURE_PEDIA</Tag>
+<English>Infrastructure is the collective term for all those facilities and systems by which it is possible for human civilizations to carry out productive enterprises and maintain a functional economy. Examples of infrastructure assets include but are not limited to transportation facilities, electrical power grids, financial systems, water supplies, waste disposal facilities, flood control facilities, lighthouses, telecommunication networks, and arguably systems designed to provide services directly to the public such as education systems, law enforcement, public housing, and state-funded hospitals.
+
+Some types of infrastructure are nearly always created, maintained, and administered by government agencies. Others lend themselves better to privatization. The question of whether infrastructure should be publicly or privately owned is often hotly debated.
+
+The increasingly elaborate nature of infrastructure in advanced, developed societies is one of the main reasons they represent such a vast change in terms of lifestyle and quality of life from pre-industrial times. Industrial-scale projects make it possible to provide basic necessities of life to all citizens with little difficulty, enabling people to concentrate on things other than providing for their sustenance. For instance, a public water system that pipes drinkable water into every home saves a great deal of time and energy compared to requiring every individual to operate their own well, or draw water from a nearby river or lake. It is also possible to make such a water system much healthier and safer than individuals could do alone, and to provide quantities of water that would be an immense laborious undertaking in the absence of the general system of waterworks.
+
+While infrastructure makes us safe and prosperous, however, it can also make us vulnerable. Managing infrastructure with safety and reliability can require complex bureaucracy and confining regulations. And in times of war or natural disaster, large parts of a society's infrastructure may be destroyed, forcing thousands or millions of people to do without essential things which they had never lacked before.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_INSURANCE</Tag>
+		<English>Insurance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_INSURANCE_QUOTE</Tag>
+		<English>"Insurance - an ingenious modern game of chance in which the player is permitted to enjoy the comfortable conviction that he is beating the man who keeps the table."[PARAGRAPH:2]- Ambrose Bierce</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_INSURANCE_PEDIA</Tag>
+<English>Insurance is, at its core, a way of managing risk using contracts and the legal system. An insurance policy guarantees to the individual that, in the event that they suffer some sort of defined loss, they will be compensated for the resulting damages. This is widely desired in the modern world because a single accident can cause life-altering, massive consequences for individuals, or even for large organizations. Durable items of property such as complex machines, homes, and workplaces represent the accumulated hard work of years, and can be lost overnight in case of emergency. It is seldom practical for individuals and corporations to store up enough money to replace the losses quickly, so such emergencies can lead to ruin.
+
+Insurance systems operate by collecting small "premiums" of money from a large base of clients, and then pooling this money to use in case a disaster strikes any one of the clients. Since the disasters are generally highly unlikely, spreading the risk of loss and damage among numerous clients can reduce the cost of insurance to a very manageable level. The use of scientific statistical calculations can predict the risk of disaster and allow the insurance provider to tailor their coverage to the individual - those who are deemed 'high risk' typically end up paying larger premiums. This is meant to compensate for the increased danger that the insurer will have to pay to cover the accidents they are likely to suffer.
+
+Insurance is an extremely complex field morally, economically, and legally. Insurance companies often hold onto large sums of money, and by the nature of their business tend to extract considerable profit from the fear of crises, from those who fear illness, injury, or property damage. Insurance contracts can be immensely complicated in an attempt to limit the insurance company's payout in case the client acts in ways they deem improper.
+
+However, insurance is likely to remain a permanent part of civilized life, a direct result of the human desire to reduce the risks of life in a dangerous world - and to replace them with steady, predictable costs of doing business.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_IRON_WORKING</Tag>
+		<English>Iron Working</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_IRON_WORKING_QUOTE</Tag>
+		<English>"You should hammer your iron when it is glowing hot."[PARAGRAPH:2]- Publius Syrus</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_JOURNALISM</Tag>
+		<English>Journalism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_JOURNALISM_QUOTE</Tag>
+		<English>"Put it before them briefly so they will read it, clearly so they will appreciate it, picturesquely so they will remember it and, above all, accurately so they will be guided by its light."[PARAGRAPH:2]- Joseph Pulitzer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_JOURNALISM_PEDIA</Tag>
+<English>Journalism is the profession of investigating and reporting on news of interest to the journalist's readers, listeners, or viewers. Journalism plays an important role in economics and politics, by allowing the masses to access information that would otherwise be available only to a lucky, connected few.
+
+Journalism as we now know it comes from the rise of news corporations (particularly newspapers, in the 19th and 20th centuries), improved transportation and communications that allowed correspondents to move about, learn things, and report back to headquarters quickly, and the rise of mass literacy among the general public in the 18th and 19th centuries.
+
+In the middle and late 20th century the rise of radio and television created new media for journalists to distribute information. At the same time they changed the dynamics of how news flowed through the system, and what sorts of information could be presented, culminating in concepts like the "sound bite" and the "24-hour news cycle." Today, journalism is undergoing a sea change, as the old newspapers struggle to maintain public readership in the age of the internet, while critics argue that the television news have become bland tools for soothing and manipulating the masses instead of informing them. At the same time, vast numbers of enterprising individuals have taken it upon themselves to document and comment on the news online, creating a sphere of private, individualized online journalism.
+
+The relationship between the "fourth estate" of journalists and government power is always uneasy. In dictatorships, state control of the media blurs the line between journalism and propaganda. Even in democratic nations, the organized media may be afraid of losing access to the corridors of power, of political concerns, or of undermining their own positions as wealthy information-handling organizations.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_JURISPRUDENCE</Tag>
+		<English>Jurisprudence</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_JURISPRUDENCE_QUOTE</Tag>
+		<English>"A precedent embalms a principle."[PARAGRAPH:2]- Benjamin Disraeli</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_JURISPRUDENCE_PEDIA</Tag>
+<English>Jurisprudence is the theory of making legal decisions, and is practiced by judges, juries, magistrates, or other individuals or groups that are empowered to determine the right or wrong in matters of law. Jurisprudence can relate to questions about the law in and of itself, such as whether a particular case contradicts some principle enshrined in a particular nation's law. Or it can relate to questions about whether the laws are just and appropriate, and whether they are being appropriately enforced, in light of their social consequences.
+
+Many ancient societies developed bodies of law and particular methods by which a case could be judged according to the law. In many cases the law was supplemented by what is called 'precedent' - the idea that if courts have decided in the past that a certain act is legal or illegal, or that certain responses are appropriate to a certain situation, then those same decisions should be repeated in new cases, rather than changed. Observing precedent has the effect of making law more orderly and predictable, making it easier to be certain whether or not one is obeying the law, and minimizing the risk that a judge will make an inappropriate decision for personal reasons.
+
+Jurisprudence was further developed in the Middle Ages as scholarship spread and legal systems grew more complex. In Renaissance-era Europe, in Islam during the Golden Age, in China during the Tang and later dynasties, and so forth. An immense variety of philosophies of jurisprudence then evolved and continued to flourish, as each society pursued its respective concepts of law and justice, in an attempt to establish a benevolent order throught their lands.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LABOUR_UNIONS</Tag>
+		<English>Labour Unions</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LABOUR_UNIONS_QUOTE</Tag>
+		<English>"Let the workers organize. Let the toilers assemble. Let their crystallized voice proclaim their injustices and demand their privileges. Let all thoughtful citizens sustain them."[PARAGRAPH:2]- John L. Lewis</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LABOUR_UNIONS_PEDIA</Tag>
+		<English>Labour unions arose in the 18th and 19th century in response to the poor working conditions brought on by an intense competition for jobs, and the increasing dependence of the working class on their employers created by the move toward industrialization. Early labour unions, formed by skilled labourers in specific fields, met with opposition from both employers and the government. In the 19th century, laws were passed legalizing labour unions, and by the 20th century unions were formed in semi- or unskilled fields such as mining, transportation, and dock working. Binding their interests together and bargaining collectively, labour unions forced factory and business owners to provide better working conditions and economic status for their workers.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LAND_TENURE</Tag>
+		<English>Land Tenure</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LAND_TENURE_QUOTE</Tag>
+		<English>"We are only tenants, and shortly the great Landlord will give us notice that our lease has expired."[PARAGRAPH:2]- Joseph Jefferson</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LAND_TENURE_PEDIA</Tag>
+<English>Land tenure is the idea of a fixed, legalized ownership of land with a formal relationship between the landowner and their ruler. "Tenure" comes from a root verb meaning "to hold" the land in question. Under a land tenure system, all land is the property of the sovereign by default, but this land is granted to trusted individuals in permanent, usually inherited titles. This forms the foundation of what we now know as feudalism. In exchange for a grant of land for themself and their heirs, a feudal noble might promise to supply their ruler with troops, money, food, or other goods obtained from the productivity of the land itself.
+
+This saved the monarch from the burden of administering the territory directly and trying to collect taxes from it, and created a large class of aristocrats who owed their fortune and power to the throne. The pattern of tenancy could be scaled up and down easily, ranging from great territories held by powerful nobles down to individual farmers on their own plots granted to them by a local warlord.
+
+A feudal tenure-based system has drawbacks, however. Tenants' loyalty to the sovereign is often conditional, based on complicated webs of mutual obligations and exceptions to the legal code which make it difficult to change or reform the economy. Powerful feudal nobles may defect to an enemy intact to preserve their status in the face of invasion - or even scheme to seize control of the land themselves.
+</English>
+	</TEXT>
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LASER</Tag>
+		<English>Laser</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LASER_QUOTE</Tag>
+		<English>"Nothing travels faster than the speed of light with the possible exception of bad news, which obeys its own special laws."[PARAGRAPH:2]- Douglas Adams</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LASER_PEDIA</Tag>
+		<English>The laser, short for "[BOLD]L[\BOLD]ight [BOLD]A[\BOLD]mplification by [BOLD]S[\BOLD]timulated [BOLD]E[\BOLD]mission of [BOLD]R[\BOLD]adiation," is a focused beam of photons, light energy released by excited atoms. Lasers rely on a phenomenon that occurs when a collection of atoms of certain elements are excited to the same state: they all release the same color of photon. When properly focused through reflective mediums, the result is a high-density beam of photons with innumerable uses, from military targeting to earthquake prevention.</English>
+	</TEXT>
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LAW</Tag>
+		<English>Law</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LAW_QUOTE</Tag>
+		<English>"Society is well governed when its people obey the magistrates, and the magistrates obey the law."[PARAGRAPH:2]- Solon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LAW_PEDIA</Tag>
+		<English>The earliest tribal civilizations were bonded together by mutual needs and beliefs. These groups were ruled by a tribal chieftain, who acted as an advisor, and enforcer of the will of the gods. No formal laws existed in these early cultures, but fear of the gods and a sense of tribal customs and morality kept order in the tribe. As societies became larger and more diverse, the need arose for established rules of conduct. The earliest known codes of laws existed in Babylon, India, and Palestine. The Twelve Tables of Rome, written in 500 BC, and its successors such as the Justinian Code, were the first codes of law to distinguish between public law, which involves the state, and private law, which concerns disputes between citizens. Roman law was the first formalized written system of laws, and went on to influence many of the legal systems of the modern world.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LEATHER_WORKING</Tag>
+		<English>Leather Working</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LEATHER_WORKING_QUOTE</Tag>
+		<English>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LEATHER_WORKING_PEDIA</Tag>
+<English>Leather is a hard-wearing, flexible material created by curing and drying animal skins. Forms of leather can be made using Stone Age technology (curing hides with materials like lime or animal brains), or more complex chemical processes. Leather has been in use since at least the second millenium BC, as proven by finds of leather samples over 3000 years old in archaeological digs. Since leather does not last forever under normal conditions, its invention very probably came earlier.
+
+Leather can be made from the skin of almost any large animal, with a variety of qualities. Depending on how it is tanned, it can be flexible or stiff, soft or rough. It is generally waterproof, fairly effective at keeping in heat, and resistant to rotting or decay. Properly oiled and maintained, it can survive desert sandstorms or frozen tundra conditions. It can even be boiled for hardness and used as a form of cheap, lightweight armor protection.
+
+Unlike other fabrics such as linen, cotton, and silk, leather can be made even by nomadic cultures. If the nomads kill a domestic or wild animal, and have a suitable tanning process. On the other hand, leather remains useful in farming societies, especially those with large herd animals such as cattle.
+
+Because it is sturdy and cannot be unraveled like normal cloth, leather can be decorated with a variety of hole-punches, stitches, and decorative studs. Decorative leather goods are a popular form of arts and crafts in many societies. Today, advances in synthetic plastics have made leather less important, and it has now become more of a fashion statement and luxury good than a major fabric in practical use.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LOGISTICS</Tag>
+		<English>Logistics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LOGISTICS_QUOTE</Tag>
+		<English>"The officer who doesn't know his communications and supply as well as his tactics is totally useless."[PARAGRAPH:2]- George S. Patton</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LOGISTICS_PEDIA</Tag>
+<English>Logistics is the art of producing, moving, storing, controlling, and distributing supplies, in order to carry out a large project, especially in war. Logistics has governed the conduct of armies since ancient times.
+
+Ancient historians often recount the use of vast armies of hundreds of thousands, or even millions, in great campaigns. This is generally deemed unlikely, entirely because of logistics. To set great masses of people to work, one must have plenty of food and other goods, and ways to move them. For domestic labor this is relatively easy, since grain and supplies can be stockpiled near a fixed workplace and used as necessary. But in war, the supplies have to be transported and guarded from enemy raiders.
+
+Human porters, pack animals, and animal-drawn wagons have limits; all these forms of transport have to eat and are vulnerable to exhaustion. Past a certain distance, the weight of food a man or animal carries to feed themself is so great that there's no room to transport anything else. Smaller armies can survive by hunting, foraging, and (most often) stealing the food of the local populace. But a large enough army will strip the land bare and potentially drink rivers dry; without a better means of supply the army will die of thirst or hunger even if it never sees an armed enemy.
+
+In ancient times (and even today) the cheapest, most cost-effective way of moving bulk cargo was by sea. Even an ancient ship could carry many tons of cargo, much faster than man or beast could walk. Therefore, large ancient armies were tied to the seas and rivers; traveling any great distance from water was very risky.  This constraint remained throughout pre-industrial history, although areas with strong governments that built good roads could simplify the problem by allowing land transport to move faster and carry more; the Roman and Inca empires both thrived because they built excellent road networks throughout their land, and used them to move large armies.
+
+In modern times, logistics has become more demanding, but more powerful. Railroads and modern ships carry totally unprecedented weights of cargo at incredible speed. But industrial armies demand tons upon tons of fuel, artillery, ammunition, spare parts, and other goods not needed by an ancient army. Logistics is no less important than it ever was, whether the goods move by sea, railway, highway, or even through the air.
+
+A cunning enemy may always strike at an army's logistics. This has caused countless defeats throughout history, from the Horns of Hattin to the jungles of Dien Bien Phu. Therefore, much of what we call generalship revolves around making sure one's own logistics are secure, giving one the advantages of well fed troops with plenty of weapons - and denying those advantages to the enemy.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MACHINERY</Tag>
+		<English>Machinery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MACHINERY_QUOTE</Tag>
+		<English>"Give me a lever long enough, and a fulcrum on which to place it, and I shall move the world."[PARAGRAPH:2]- Archimedes</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MACHINE_TOOLS</Tag>
+		<English>Machine Tools</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MACHINE_TOOLS_QUOTE</Tag>
+		<English>"I can make just such ones if I had tools, and I could make tools if I had tools to make them with."[PARAGRAPH:2]- Eli Whitney</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MACHINE_TOOLS_PEDIA</Tag>
+		<English>One of the most important steps in the move toward industrialization was the ability to precisely shape or 'machine' solid metal into a desired form. Through mechanical, chemical, and other means, machine tools mold and shape raw materials into precision parts for complex machinery. The first machine tool, a horizontal boring device, was produced in the late 1700s.[NEWLINE][NEWLINE]The development of measuring devices accurate to within thousandths of an inch allowed for the mass production of items with interchangeable parts. The technology of the 20th century has produced computer-controlled machine tools that can be adapted to a wide variety of applications. The speed and accuracy of these machines allows for the economical mass production of extremely complex products.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MARKETING</Tag>
+		<English>Marketing</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MARKETING_QUOTE</Tag>
+		<English>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MARKETING_PEDIA</Tag>
+<English>Marketing is the practice of persuading people that an object, idea, or behavior is desirable (and worth paying for). Marketing has existed in some form since prehistoric times; one may speculate that the first marketing activities were invented within five minutes of the first invention of commerce.  The development of mass media such as broadcast radio, print journalism, and film made it possible to market on a larger scale. The rise of a working and middle class in developed societies with enough disposable income to buy luxury goods made it desirable to do so. The growth of modern industrial corporations that could produce goods in immense quantities made it necessary to do so.
+
+Common practices in modern marketing include direct personal approaches, flattery of the customer, praise of the product (intellectually honest or otherwise), and efforts to make the seller appear sympathetic and likeable to the prospective buyer. The main difference is that all these things are now transmitted from the individual advertiser to the mass of the population through new communications technology such as printing, broadcasts, or the Internet.
+
+The practice of marketing is often criticized for dishonesty, for misleading people into paying for that which is useless to them, for encouraging people to go into debt, and for discouraging people from thrift and from building up savings for the future. It is also criticized for the increasingly intrusive way in which, in the modern computerized era, marketers use "big data" to analyze individuals' purchasing habits and tailor advertisements to them. This is widely regarded as intrusive, and as having ominous implications for the individual's privacy and control over their own life in the future.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MASONRY</Tag>
+		<English>Masonry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MASONRY_QUOTE</Tag>
+		<English>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MASS_MEDIA</Tag>
+		<English>Mass Media</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MASS_MEDIA_QUOTE</Tag>
+		<English>"The only thing worse than being talked about is not being talked about."[PARAGRAPH:2]- Oscar Wilde</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MATHEMATICS</Tag>
+		<English>Mathematics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MATHEMATICS_QUOTE</Tag>
+		<English>"If in other sciences we should arrive at certainty without doubt and truth without error, it behooves us to place the foundations of knowledge in mathematics."[PARAGRAPH:2]- Roger Bacon</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MEDICINE</Tag>
+		<English>Medicine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MEDICINE_QUOTE</Tag>
+		<English>"As to diseases make a habit of two things - to help, or at least, to do no harm."[PARAGRAPH:2]- Hippocrates</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METALLURGY</Tag>
+		<English>Metallurgy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METALLURGY_QUOTE</Tag>
+		<English>"The purest ore is produced from the hottest furnace; the brightest thunderbolt is elicited from the darkest storm."[PARAGRAPH:2]- Charles Caleb Colton</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METALLURGY_PEDIA</Tag>
+<English>Metallurgy is the study of the properties of metals and the methods used to separate metal deposits from metal-bearing ores. Through the course of history, artisans have switched the materials from which they constructed weapons and tools to harder, more durable metals as they were discovered. Constant improvements in metallurgy led to the discovery of new metals and alloys that were stronger, lighter, and cheaper.
+
+By the late 19th century, metallurgy was a sophisticated science. The rise of modern chemistry led to the discovery of a vast number of 'new' chemical elements that could be used in alloys, and electric power made it possible to control the conditions under which metals were worked more finely than ever before. Metallurgists developed a vast array of new kinds of steel and other alloys, with different combinations of hardness, flexibility, corrosion-resistance, and other properties. These rapid advances in metallurgy had vast implications for almost every field of engineering.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METEOROLOGY</Tag>
+		<English>Meteorology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METEOROLOGY_QUOTE</Tag>
+		<English>"The trouble with weather forecasting is that it's right too often for us to ignore it and wrong too often for us to rely on it."[PARAGRAPH:2]- Patrick Young</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METEOROLOGY_PEDIA</Tag>
+<English>Meteorology is the science of weather, how it behaves and how it can be predicted in advance. Investigation into the structure and nature of the Earth's atmosphere and climate began in the Middle Ages, with investigations into phenomena like twilight and rainbows. Renaissance-vintage instruments and technology sped up the process in Europe. Scientific study of weather benefitted from the rise of instruments to measure temperature, pressure, wind speed, humidity, and the like.
+
+18th century natural philosophers achieved the real breakthroughs in defining a global pattern of climate. With plenty of data from places around the world thanks to the Age of Colonization and its sea voyages, and with the tools to understand the way that the distant sun warms the Earth coming from astronomy, scientists like Hadley could identify the major wind and weather patterns on the world's oceans, which had great benefits for seafaring.
+
+The 19th century saw refinement of meteorology and the first organized networks of weather observers that could communicate faster than a storm could travel, using the new electromagnetic telegraph. Radio accelerated this process further yet, but the real breakthroughs were the rise of computer and satellite technology in the 1950s and 1960s. An electronic computer can perform enough calculations to simulate weather in advance, predicting it long before it has any chance of arriving to affect us. Weather satellites can directly observe any kind of weather, no matter how intense, without fear; they orbit above the entire atmosphere and are immune to wind, rain, snow, and lightning. This lets us track hurricanes and project their course accurately, which has saved vast sums of life and property since the first decades of satellite technology.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILLING</Tag>
+		<English>Milling</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILLING_QUOTE</Tag>
+		<English>"The mill cannot grind with the water that is past."[PARAGRAPH:2]- Daniel D. Palmer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MILLING_PEDIA</Tag>
+<English>Milling is the practice of using powered machinery to grind materials into powder or fibres. Most civilizations since ancient times have relied heavily on grains for staple food. Some grains are edible directly (like many rice cultivars), but all grains can be processed into 'flour', a ground-up powder made from the grain, which can then be made into nutritious, durable bread or tasty confections. Grinding grain into flour has therefore been one of the oldest tasks of agricultural civilization.
+
+However, doing this by muscle power is incredibly laborious. Typically, grain is powdered by grinding it between heavy stones by a person turning a crank. It takes much time to produce enough flour to feed one person for one day. The work is hard and tends to damage muscles and joints if carried on indefinitely. Usually, grinding grain was the job of low-status people: slaves, women in patriarchal communities, or both.
+
+Naturally, this burden of toil would drive almost anyone to find better ways of grinding the grain. One obvious method is to rely on the labor of draft animals - donkeys, oxen, or the like - to drive the grinding stones. This allows larger 'mills' than a single person turning a crank, and saves trouble for human beings. But draft animals were expensive in pre-industrial society, and had an endless list of other valuable applications (plowing fields, hauling vehicles, and so on).
+
+The next logical step was to power the mill with the inanimate forces of nature. A river doesn't eat, never gets tired, and doesn't care how monotonous its job is. Making good use of inanimate power sources meant complex mechanisms of wood, metal, and stone, though - the pressure of wind and water flow can only do mechanical work through the use of gears, bladed waterwheels, and windmills. Milling was a task that machines were ideally suited to do, and it was one of the first steps towards the development of more complex machinery and civilization's ability to harness natural forces for its benefit.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MINING</Tag>
+		<English>Mining</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MINING_QUOTE</Tag>
+		<English>"The man who moves a mountain begins by carrying away small stones."[PARAGRAPH:2]- Confucius</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NANOTECHNOLOGY</Tag>
+		<English>Nanotechnology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NANOTECHNOLOGY_QUOTE</Tag>
+		<English>"In nanotech, matter becomes code."[PARAGRAPH:2]- Steve Jurvetson</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NANOTECHNOLOGY_PEDIA</Tag>
+<English>Nanotechnology is the craft of creating molecular 'machinery' to perform customized chemical and biological operations at a very small scale.
+
+Up through the 20th century, the sciences of chemistry and medicine relied on naturally occuring substances, or large-scale manipulation and processing of those substances, to produce what was needed. Chemicals might be mixed in a vat and heated up, or exposed to some other substance or condition, but there was no direct interaction between the human operator and the molecules themselves: they are simply left to act in accordance to blind forces that affect every part of the material at once.
+
+The idea of nanotechnology or 'nanotech,' pioneered by figures like Eric Drexler of MIT, is that we can create complex molecules which act like tiny machine tools. These molecular tools would have identifiable parts like tiny levers, wheels, and 'grippers' made up of varying structures of single atoms. They could then grab hold of a material surface or molecules floating in a solution, and break them up or reassemble them as needed.
+
+This would have many applications. Nanotech could be used to 'build' materials with unusual or extreme properties atom by atom, to clean up dangerous chemicals, or to enter into the body and attack cancer cells or toxins. Advocates expect them to perform all manner of tasks which cannot be achieved by simpler, conventional means of industrial chemistry.
+
+One example of successful, naturally-occuring 'nanotech' is the use of biological enzymes in industrial chemistry. An enzyme can take a chemical reaction that would normally happen slowly or not at all (like sugar turning into alcohol in a fermented beverage) and greatly speed it up. Nanotechnology researchers hope to take the potential of natural enzymes and generalize them to do whatever we can imagine, by controlling the molecular structure of matter.
+
+Some say nanotechnology will totally revolutionize the production of goods and distribution of resources around the world. Others question this, pointing out that nanotech molecular machines will be inherently large, relatively fragile molecules that may not survive well outside a controlled environment. It is also uncertain whether nanotech would ever be more efficient than 'macro-scale' processes for making large objects: nanotech could be a good way to apply a coating to an engine part, but not such a good way to make the part in the first place.
+
+Still, it seems likely that 21st century chemistry and biochemistry will be greatly strengthened by advances in this field, even if industry and society as a whole are not changed so much.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NATIONHOOD</Tag>
+		<English>Nationhood</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NATIONHOOD_QUOTE</Tag>
+		<English>"A man does not have himself killed for a half-pence a day or for a petty distinction. You must speak to the soul in order to electrify him."[PARAGRAPH:2]- Napoleon Bonaparte</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NATIONHOOD_PEDIA</Tag>
+		<English>Needs to be written</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVIGATION</Tag>
+		<English>Navigation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVIGATION_QUOTE</Tag>
+		<English>"If the highest aim of a captain were to preserve his ship, he would keep it in port forever"[PARAGRAPH:2]- Thomas Aquinas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NAVIGATION_PEDIA</Tag>
+		<English>In the early days of seafaring, sailors operated solely through a process known as "piloting", in which the position and course of the ship was determined by referring to geographical landmarks. The need to stay in view of the shore severely limited the extent of sea voyages. Through experience, sailors learned to apply the science of astronomy to their profession, noting the positions and movement of particular stars. They realized that even when the shore was out of sight, they could steer by certain reliable stars. This crude, yet practical application of astronomy allowed the adventurous to sail into the unknown with a reasonable chance of finding their way. As a result, ship building technology quickly improved, producing larger, more stable ships designed for longer voyages.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NOBILITY</Tag>
+		<English>Nobility</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NOBILITY_QUOTE</Tag>
+		<English>"Nonsense is the privilege of the aristocracy. The worries of the world are for the common people."[PARAGRAPH:2]- George Jean Nathan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NOBILITY_PEDIA</Tag>
+		<English>Nobility can refer to "the nobility," a class of aristocrats who inherit the right to dominate society at large. Or it can refer to the ideals of "noble" behavior, as favored by this class.
+
+Aristocratic elites have been with human civilization for millenia. Any person with enough resources, political influence, or military power would have a great advantage in controlling others, and could use that control to further preserve their power. Naturally, anyone blessed by such a fortunate combination of power and wealth would want to pass it on to their children, so legal systems emerged to make sure that the titles and positions of nobility would be inherited safely.
+
+The most common employment for aristocrats in history has been warfare. The nobility can be sure of getting plenty of food and good living conditions, so that their children grow up big and strong. They can afford expensive, carefully crafted weapons like suits of armor, high-quality bows, and fine warhorses. And their political power meant they could easily recruit fighting men from among the people they controlled, making sure they'd have trustworthy retainers to watch their back and handle the supplies while the nobles themselves went off to fight.
+
+The ideal of military courage and self-discipline therefore plays a great role in the idea of "nobility." A nobleman is normally expected to be brave in battle, to be prepared to fight either to defend his own interests or the interests of his ruler, and to act in the ways that his society expects of warriors.
+
+Noblewomen generally were not expected to fight; for females nobility had relatively fewer attractions, except of course for the freedom it granted from drudge labor like grinding grain or tending crops.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NUCLEAR_POWER</Tag>
+		<English>Nuclear Power</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NUCLEAR_POWER_QUOTE</Tag>
+		<English>Needs a quote.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_NUCLEAR_POWER_PEDIA</Tag>
+		<English>Needs to be written</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_OPTICS</Tag>
+		<English>Optics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_OPTICS_QUOTE</Tag>
+		<English>"We do not see the lens through which we look."[PARAGRAPH:2]- Ruth Benedict</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_OPTICS_PEDIA</Tag>
+<English>Optics are instruments that manipulate visible light. The basis of optics as we know it comes from medieval times and the European Renaissance. Geometric studies of how light interacted with reflecting surfaces, and with materials like water and glass, were pioneered by the ancient Greeks and the Islamic natural philosophers. In the 1600s, European craftsmen combined this knowledge with improved methods of glassworking to create the first lenses.
+
+A lens is a carefully shaped, transparent object that bends light in predictable ways. Using the right mathematics we can tailor lenses to bend light so that far-away objects seem close by, so that tiny objects are enlarged, or so that blurry objects come into sharp focus. These three applications spawned three major classes of practical optics in the 16th and 17th centuries: the telescope, the microscope, and eyeglasses.
+
+Eyeglasses were of course a practical boon to literacy and the aging eyesight of the average master craftsman or clerk. The telescope and microscope both caused great changes in science, by making visible that which could literally never have been seen before - the details of the solar system and the structure of living tissue.
+
+At the same time the telescope in particular had nautical and military applications. On the sea, lines of sight are long, especially from the top of a mast; having a tool to make an object ten miles away appear as though it is only one mile away lets sailors take full advantage of this. At war, being able to make a detailed observation of enemy positions while staying comfortably out of range of enemy guns was a great thing for scouts and commanders trying to understand how to fight an enemy more effectively.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ORATORY</Tag>
+		<English>Oratory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ORATORY_QUOTE</Tag>
+		<English>"Be a craftsman in speech that thou mayest be strong, for the strength of one is the tongue, and speech is mightier than all fighting."[PARAGRAPH:2]- Ptahhotep</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ORATORY_PEDIA</Tag>
+		<English>Needs to be written.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PAPER</Tag>
+		<English>Paper</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PAPER_QUOTE</Tag>
+		<English>"I cannot live without books."[PARAGRAPH:2]- Thomas Jefferson</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PARTICLE_PHYSICS</Tag>
+		<English>Particle Physics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PARTICLE_PHYSICS_QUOTE</Tag>
+		<English>"Everything we call real is made of things that cannot be regarded as real."[PARAGRAPH:2]- Niels Bohr</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PARTICLE_PHYSICS_PEDIA</Tag>
+		<English>Needs to be written.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PASTORALISM</Tag>
+		<English>Pastoralism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PASTORALISM_QUOTE</Tag>
+		<English>"The greatness of a nation can be judged by the way its animals are treated."[PARAGRAPH:2]- Mohandas Gandhi</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PASTORALISM_PEDIA</Tag>
+<English>Pastoralism is a term for the art of raising livestock. It is also used in sociology, to describe a way of life that revolves around herding and caring for domestic animals. Pastoral societies are generally most successful on poorly productive land such as large, dry stretches of desert, savannah, hills, or tundra. In this sort of terrain, dense stands of food crops cannot be grown naturally, so farming is impossible without modern irrigation. However, in such biomes there is a substantial natural supply of grasses and shrubs; humans cannot eat them, but sheep, cattle, goats, or yaks can.
+
+It is often but not always the case that a pastoral people 'follows their herds,' moving from one part of the land they occupy to another to ensure that they have access to the best available grazing, water supplies, and a healthy climate for their animals.
+
+Pastoral societies present a common alternative to agricultural societies, and were capable of functioning and thriving on equal terms with them up until the rise of modern technology. They could be particularly effective in warfare, especially when leaders took advantage of their self-sufficient, highly mobile lifestyle to create an army of self-sufficient, highly mobile soldiers. In modern times, however, the inability of small pastoral communities to manufacture modern weapons, coupled with overpopulation problems, have made it less sustainable and practical for these peoples to live in their traditional mode.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PATRONAGE</Tag>
+		<English>Patronage</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PATRONAGE_QUOTE</Tag>
+		<English>"Never respect men merely for their riches, but rather for their philanthropy; we do not value the sun for its height, but for its use."[PARAGRAPH:2]- Gamaliel Bailey</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PATRONAGE_PEDIA</Tag>
+<English>Patronage is the practice of a wealthy or powerful individual choosing to support an artist, charitable organization, scholar, or other worthy cause. This support generally takes the form of donations of money or the exercise of political influence. Patronage is vital to the survival of the arts, even in the modern era when artists can at least occasionally rely on state grants to support their activities - which arguably is itself a form of patronage.
+
+In the medieval and renaissance eras, in particular, the patronage of aristocrats, wealthy merchants, and even kings and emperors had major consequences for the evolution of human knowledge.
+Emperors and merchant princes funded great voyages of discovery that traveled across continents. Kings and queens adopted radical philosophers into their courts, giving the philosophers the security they needed to publish ideas about human nature, ethics, and political theory.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHARMACEUTICALS</Tag>
+		<English>Pharmaceuticals</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHARMACEUTICALS_QUOTE</Tag>
+		<English>"Medicine is not only a science; it is also an art. It does not consist of compounding pills and plasters; it deals with the very processes of life, which must be understood before they may be guided."[PARAGRAPH:2]- Paracelsus</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHARMACEUTICALS_PEDIA</Tag>
+<English>Pharmaceuticals are drugs used to diagnose, cure, treat, or prevent disease. The use of natural or artificial substances has accompanied the art of medicine since prehistoric times. In ancient times the effectiveness of pharmaceutical treatment varied wildly. Empirical experiments sometimes revealed a substance that would work to treat an illness. On the other hand, in a society almost entirely unaware of the basic principles of anatomy and chemistry, many actively dangerous substances were used as 'medicine' such as toxic heavy metals and poisonous plants.
+
+As the practice of scientific medicine emerged in the 1800s, it took a considerable amount of time for efficient pharmaceuticals to accompany it. Even as late as 1900, physicians had few reliably effective medicines other than disinfectants and painkillers. However, the rise of organic chemistry and improvements in chemical synthesis made it more practical to analyze chemical compounds proven effective against disease, reproduce them, and test artificial variations on the successful themes. By 1950 the list of available pharmaceuticals was growing rapidly and this continues to the present day.
+
+Thus, modern medicine has a vast arsenal of weapons against disease, ranging from the innocuous to the borderline-lethal, from the cheap to the almost unfathomably expensive.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHILOSOPHY</Tag>
+		<English>Philosophy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHILOSOPHY_QUOTE</Tag>
+		<English>"I think, therefore I am."[PARAGRAPH:2]- Rene Descartes</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHOTOGRAPHY</Tag>
+		<English>Photography</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHOTOGRAPHY_QUOTE</Tag>
+		<English>"A picture shows me at a glance what it takes a dozen pages to expound."[PARAGRAPH:2]- Ivan Turgenev</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHOTOGRAPHY_PEDIA</Tag>
+<English>Photography is the practice of using artifical tools to capture visual images in a durable form. Photography relies on optical devices (usually lenses) to focus incoming light onto a light-sensitive surface, which is then altered by the light so that the effect of the light on the surface can be stored for later reference.
+
+Experiments with photography began around 1800 with efforts to capture images created in a camera obscura (pinhole camera) using light-sensitive chemicals. These efforts began to bear fruit in the 1820s with the development of the photographic plate. Early photography required that the photograph be exposed to the image it was meant to record for a period of hours, making it impractical for any purpose other than taking pictures of landscapes or buildings. By the late 1830s, Louis Daguerre had refined the process until the exposure time had fallen to ten minutes, making it practical for an individual person to be photographed. In 1839, the French government presented Daguerre's method, "open source," as a gift of France to the world.
+
+Meanwhile, other experimentalists worked on promising avenues, such as the creation of photographic 'film' which would form a 'negative,' reversed version of the image (light parts would be dark and vice versa). Further advances in making photographs durable, reproducible, and quick-exposing continued throughout the 19th century.
+
+Around 1900, Eastman and Kodak introduced photographic film - a flexible roll of material that could be used as a backing for light-sensitive chemicals in the camera, removing the need for large, fragile glass photographic plates. Film replaced plates for almost all types of photography other than scientific applications. (Glass plate photography revolutionized astronomy, for instance, by allowing astronomers to record observations or gather up all the light coming to their telescope from the same star onto a single plate for an hours-long exposure).
+
+Color photography, meanwhile, had been practiced as early as the 1860s based on improved scientific understanding of light. However, it was impractical for normal applications until the mid-20th century, representing a further advance over the previously monochrome photos of the era. By the 1970s and '80s, the art of photography had largely stabilized on the standard of film cameras capable of imaging multiple colors on the same piece of film, which would then be "developed" in a laboratory using special chemicals to stabilize and desensitize the film. The resulting film would then form 'negatives' from which accurate reproductions of the original image could be reconstructed.
+
+However, photography was once again revolutionized by the rise of electronic 'digital' cameras. Today, digital cameras that electronically detect light and send the resulting images into digital storage have largely replaced chemical film. Digital cameras have the advantages of requiring no development, storing nigh-unlimited numbers of photos, and being so easily miniaturized that they can be casually attached to a device the size of a pack of cards, as a cheap extra feature.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHYSICS</Tag>
+		<English>Physics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PHYSICS_QUOTE</Tag>
+		<English>"To every action there is always opposed an equal reaction."[PARAGRAPH:2]- Isaac Newton</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PLASTICS</Tag>
+		<English>Plastics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PLASTICS_QUOTE</Tag>
+		<English>"I was born with a plastic spoon in my mouth."[PARAGRAPH:2]- Pete Townshend</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PLUMBING</Tag>
+		<English>Plumbing</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PLUMBING_QUOTE</Tag>
+		<English>"The society which scorns excellence in plumbing and tolerates shoddiness in philosophy will have neither good plumbing nor good philosophy: neither its pipes nor its theories will hold water."[PARAGRAPH:2] -John W Gardner</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PLUMBING_PEDIA</Tag>
+<English>Plumbing is the practice of using pipes and channels to control the flow of water, generally through populated areas, for human use. Plumbing is normally seen as distinct from irrigation, which is used to provide water for crops.
+
+Primitive societies generally lack the means to create a plumbing system, which requires careful craftsmanship and large-scale collaboration. More advanced civilizations, such as those of the Indus valley circa 2700 BC, began working on organized supplies of clean water quite early in human history, however. Clean water to drink and bathe in is one of the most fundamental human desires, and is shared universally across cultural lines, driving the independent invention of plumbing in many times and places.
+
+Typical elements of an early plumbing infrastructure include systems of pipes, channels and ducts to gather rainwater and bring it to central locations, and other such channels to remove wastewater. Such channels were typically made of brick, pottery, or other ceramic. Specifically within the Mediterranean world, civilizations known or remarkable for their achievements in the art of plumbing include the Minoans (inventors of the flush toilet), the ancient Greeks (inventors of the pressurized shower for bathing), and of course the Romans. The Romans brought ancient plumbing to its height, combining the earthenware apparatus with metallic plumbing made of copper or lead. For their larger cities, the Romans augmented the naturally available supplies of fresh water with enormous aqueducts to bring water from a distance of many kilometers, emptying into large reservoirs.
+
+In Europe the art of plumbing declined after the fall of the Roman Empire, and public sanitation and health declined with it. Other civilizations, such as those of Persia, China, and the Mayans, retained many of the sophisticated systems alluded to above.
+
+Major advances in plumbing further developed during the Enlightenment era. With the rise of knowledge about microorganisms and early chemistry, engineers began devising pipes with filters and bends to strain out harmful microbes. The idea of 'waste treatment' emerged, with sewage being processed chemically or biologically so that it would become less infectious and less smelly. Chlorination of water was introduced to kill germs such as typhus and prevent epidemics. Today, plumbing is one of the seldom-contemplated foundations of our industrial civilizations and the vast populations they support. By supplying a fundamental human need to drink water and remain clean, in a highly safe and efficient manner, plumbing becomes indispensible to our lives.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PNEUMATICS</Tag>
+		<English>Pneumatics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PNEUMATICS_QUOTE</Tag>
+		<English>"No pressure, no diamonds."[PARAGRAPH:2]- Thomas Carlyle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PNEUMATICS_PEDIA</Tag>
+<English>Pneumatics is the art of using pressurized air or gas as the basis for working machinery. Pneumatics are made practical by the efficient use of metalworking (to create airtight pipes) and organic chemistry (to create glues, resins, and other substances that can form an airtight seal over cloth or other more flexible substances).
+
+Among the advantages of pneumatics are that for many pneumatic systems, the working gas is freely available and nontoxic- to wit, air. Other working gases such as carbon dioxide do present toxicity or asphyxiation hazards, but in exchange tend to allow higher performance. Pneumatic systems tend to be rugged, reliable, and safe due to their being subject to minimal levels of shock from the easily compressed gases acting as a 'cushion'.
+
+Applications include brakes, drills, motors, control systems for ventilating structures, musical instruments, automatic tools such as jackhammers, and automatically-reloading firearms.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_POLITICS</Tag>
+		<English>Politics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_POLITICS_QUOTE</Tag>
+		<English>"Politics is the art of the possible."[PARAGRAPH:2]- Otto von Bismarck</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_POLITICS_PEDIA</Tag>
+<English>Politics, from the Greek for "of or pertaining to citizens," is the practice of influencing people, particularly with the aim of acquiring and using power within a government. The tactics and techniques of politics vary depending on the society. In autocratic societies, the key to political success is the personal appeal to the leader and their most trusted subordinates, along with efforts to undermine rivals and make them appear to be threats to the system. In democracies, a massive range of tools and methods are used to appeal to the general public and acquire their support. Likewise, practitioners of politics in democracies also seek to undermine their opponents, generally attacking their popularity - by means both fair and foul.
+
+The framework that determines what political methods are allowed in a given society can be viewed as a political 'system.' For example, long-established parliamentary democracies have a system that makes violent overthrow of the government unacceptable, such that even if such a coup succeeded, it is likely that the victorious military leader would have difficulty persuading the public to obey orders. Conversely, autocratic systems generally prohibit any form of politics that would involve organizing the masses to express disapproval of state policy.
+
+Formal theorizing on politics dates back to the time of figures such as Plato and Confucius, and represents a major transition in the history of human civilization- because it represents serious, intellectual reflection on the question "how best shall we organize ourselves?"</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_POTTERY</Tag>
+		<English>Pottery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_POTTERY_QUOTE</Tag>
+		<English>"Hath not the potter power over the clay, to make one vessel unto honor, and another unto dishonor?"[PARAGRAPH:2]- The Bible</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PRIESTHOOD</Tag>
+		<English>Priesthood</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PRIESTHOOD_QUOTE</Tag>
+		<English>"From the solemn gloom of the temple, children run out to sit in the dust. God watches them play and forgets the priest."[PARAGRAPH:2]- Rabindranath Tagore</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PRINTING</Tag>
+		<English>Printing</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PRINTING_QUOTE</Tag>
+		<English>"What gunpowder did for war, the printing press has done for the mind."[PARAGRAPH:2]- Wendell Phillips</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PRINTING_PEDIA</Tag>
+<English>The principle behind printing is not very complicated, but immense amounts of complexity are invested in the mass production of printed documents. Invented by Johannes Gutenberg in the mid-15th century, the early printing presses used a flat tray of inked type. Once paper was placed over the type, a surface was applied and the ink was pressed into the paper. While an improvement over the traditional duplication methods of the time (meticulous hand-scribing of volumes), it was a slow and tedious process to use. Around 1800 the first cylinder press was created, followed by the large and immensely fast rotary presses.
+
+Today, computers have taken this ancient art out of the craftsman's workshop and placed it on the desktop. Desktop publishing revolutionized the creation of printed documents, not only from the standpoint of speed and accuracy, but also by enabling anyone to mass-produce the printed word without investing the many years it takes to learn the trade.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PROPERTY</Tag>
+		<English>Property</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PROPERTY_QUOTE</Tag>
+		<English>"The first man who, having fenced in a piece of land, said "This is mine," and found people naive enough to believe him; that man was the true founder of civil society."[PARAGRAPH:2]- Jean Jacques Rousseau</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PROPERTY_PEDIA</Tag>
+<English>Property refers to the concept that a certain object, idea, or place is solely under the authority of some specific person or entity, and is not available for the use of others without the consent of that 'owner.' The most basic Neolithic societies known to us usually have concepts of individual ownership of certain items, such as tools and caches of food. This is often combined with widespread sharing of the goods, usually done for purposes of reinforcing social ties.
+
+Such a practice results in very cohesive societies. However, such societies often have difficulty organizing their surplus resources to commit to large-scale projects not of immediate use to any one person (such as infrastructure, ceremonial architecture, or military expeditions). Moreover, the system tends to break down in the presence of large numbers of strangers, because it relies on individuals being willing to freely share their belongings with each other. For both these reasons, the rise of cities generally went hand-in-hand with the rise of accumulated property in the hands of social elites, a trend which has persisted throughout recorded history to the present day.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_QUANTUM_GRAVITY</Tag>
+		<English>Quantum Gravity</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_QUANTUM_GRAVITY_QUOTE</Tag>
+		<English>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- Werner Heisenberg</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_QUANTUM_GRAVITY_PEDIA</Tag>
+<English>By late 20th century, physics had converged on a set of well understood theories to describe nature. But there are several gaps, defects, or vulnerabilities in this universal model. Firstly, this set of theories stands on two pillars. One is the nature of gravity, as outlined by Einstein's theory of "general relativity" in 1920 and refined since that time, which treats time and space as flexible things that can be warped by gravity. The other is "quantum field theory," which describes the behavior of subatomic particles, treating each particle as a special instance of a generalized, abstract field of force and probability that permeates the universe.
+
+The problem is that quantum field theory, otherwise known as the Standard Model, assumes that time and space are fixed, inflexible, and invariant - that they are the constant and unchanging playing field on which particle interactions are allowed to happen. In other words, the Standard Model does not obey the theory of relativity. Therefore, it cannot be the whole story. General relativity appears to be a solid and essentially complete picture of a key part of reality, the Standard Model is not. It is solid, it explains the behavior of nearly all things that can be seen on Earth or elsewhere in the universe... but it is not complete.
+
+The Standard Model explains almost all known phenomena, but some of the ones it cannot explain present very large issues. It does not explain the nature or origins of dark matter or dark energy and yet astronomers have reason to believe that these things make up 95% of all substance in the universe today. The Standard Model does not explain why the ghostly neutrino particles coming from the Sun appear to randomly reshuffle their nature, in a way the Standard Model deems impossible. The Standard Model predicts that in the beginning of the universe, matter and antimatter 'should' have been created in equal quantities, and devoured each other totally, leaving behind nothing but light and radiation in all of space. In hindsight, this appears not to have occurred. For this and other reasons, despite the Standard Model providing huge advances in our understanding compared to anything that came before it, it is not the last step.
+
+Research into these matters is ongoing today. It is hoped that future physics will emerge which resolves some of these contradictions. In particular, it is hoped that these new physics will allow us to create a model of quantum physics that is consistent with Einstein's work on gravity - thus the name, "quantum gravity."</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RADAR</Tag>
+		<English>Radar</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RADAR_QUOTE</Tag>
+		<English>"Vision is the art of seeing things invisible."[PARAGRAPH:2]- Jonathan Swift</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RADAR_PEDIA</Tag>
+<English>Radar is a method of using radio waves to observe one's surroundings by technological means. Derived from the acronym "RAdio Detection And Ranging," radar permits observation to continue at distances the naked eye cannot reach, in conditions of bad weather and darkness the eye cannot penetrate, with machine-like precision the eye cannot duplicate. It is particularly useful for detecting aircraft at long range, although it can also be used from an aircraft to survey the land, or from a ship to detect another ship at sea.
+
+Innovation in radar technology began shortly before the Second World War, with Britain in the lead and other nations such as Germany and the US following close behind. The British capitalized on their advantage and developed the highly effective "Chain Home" system of early warning stations to detect any enemy aircraft trying to attack their island. This proved a very useful defensive asset in resisting the severe German air attacks of 'the Blitz' during late 1940. Combined with other uses of the radio spectrum (such as cunningly mimicking German navigation beacons so that German bombers would get lost in the dark and bomb random wheat fields instead of British cities), Britain used its advantage in radar to wage what Winston Churchill called a "wizards' war" that complemented the air war then being fought.
+
+When the tables began to turn in 1943, the Germans too found radar a useful means of defending against British and American air attack, although the sheer mass of the Allied war machine caused their defenses to break down by late 1944. Meanwhile, the Germans' submarine warfare campaign likewise suffered from Allied use of radar to detect submarines; and on the other side of the world, the total lack of effective radar on the part of their allies, the Japanese, played a major role in Japan's defeat in air and naval combat from 1942 on.
+
+Radar became far more advanced and developed in the postwar era with the steady rise of electronics technology, especially after the vacuum tube gave way to the integrated circuit. The military continues to make use of radar imaging as the primary means of tracking aircraft, and also employs it to scan the ground from the air. In civilian applications, radar is used to coordinate commercial air traffic to prevent collisions, and is a common, valuable scientific instrument whenever detailed imagery needs to be taken from a distance.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RADIO</Tag>
+		<English>Radio</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RADIO_QUOTE</Tag>
+		<English>"Then one fine morning she puts on a New York station. You know her life was saved by Rock 'n' Roll."[PARAGRAPH:2] - The Velvet Underground</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RECORD_KEEPING</Tag>
+		<English>Record Keeping</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RECORD_KEEPING_QUOTE</Tag>
+		<English>"The white man knows how to make everything, but he does not know how to distribute it."[PARAGRAPH:2]- Sitting Bull</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RECORD_KEEPING_PEDIA</Tag>
+		<English>The rise of Neolithic cities and the accumulation of economic surplus made a new problem in the human experience - how to keep track of so many goods. Memory was at best a flawed guide, and trusting subjects to guard a treasure-house or other storage facility was always risky. Specialists needed to be able to make binding agreements that would last for years in some legally enforceable form; priests and mystics wanted to lay out their myths and revelations in permanent forms.[NEWLINE][NEWLINE]All these things motivated the creation of systematic methods of record keeping, evolving from things like tally sticks, wax and clay seals, and symbolic mnemonic tokens into what we would call writing. For example, the ancient Mesopotamians once recorded contracts by making tiny sculptures of the items promised as part of the deal, then baking them into a ball of clay. Over time, people began carving representations of the items into the surface of the clay, and then to dispense with the little statuettes altogether, paving the way for the cuneiform method of writing.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFINING</Tag>
+		<English>Refining</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFINING_QUOTE</Tag>
+		<English>"The formula for success: rise early, work late, and strike oil."[PARAGRAPH:2]- J. Paul Getty</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFINING_PEDIA</Tag>
+		<English>When the demand for oil-based fuels for lighting and other purposes began to soar in the 19th century, scientists began searching for a way to make use of crude oil. This research led to techniques in which crude oil was broken down, or refined, into a number of different fuels, including kerosene and gasoline. As consumer demand continued to increase, commercial refineries were set up to purify crude oil. The new petroleum products produced as a result of the development and perfection of the refining process led to the use of oil-based fuels in many consumer and industrial applications. These include the use of petrol to power automobiles, and the use of oil for heating and for the generation of electrical power.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFRIGERATION</Tag>
+		<English>Refrigeration</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REFRIGERATION_QUOTE</Tag>
+		<English>"Tell me what you eat, and I will tell you what you are."[PARAGRAPH:2]- Anthelme Brillat-Savarin</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RENEWABLE_ENERGY</Tag>
+		<English>Renewable Energy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RENEWABLE_ENERGY_QUOTE</Tag>
+		<English>Needs a quote.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RENEWABLE_ENERGY_PEDIA</Tag>
+<English>Renewable energy is a term used in industry to refer to methods of generating electrical power that can be 'renewed' indefinitely, rather than relying on some supply of fuel that will run out in the foreseeable future. We can predict that at some future time the world's reserves of uranium, natural gas, coal, and (especially) oil will run out. Or, more accurately, there will come a time at which it becomes economically impractical to extract the remaining supply of these materials, due to the extreme cost of doing so.
+
+By contrast, other sources of power are likely to go on indefinitely. Geothermal power is driven by slow radioactive decay inside the earth, tidal power by the gravitational strength of the moon, and solar power is driven by the sun. All three sources of energy will exist as long as our solar system remains in some recognizable form. Likewise, wind and hydroelectric power take advantage of the Earth's naturally occurring water and air cycles, and are driven by its weather; they will exist so long as there is weather to draw power from.
+
+Through the 20th century, renewable energy sources other than hydroelectric energy usually went relatively undeveloped. In some cases this was because of the need for computerized design and coordination to make the systems effective (especially for wind power); in others, it was purely a matter of economics, with power from expendable fuel being cheaper and easier to supply. However, in recent times, many nations have seen fit to explore renewable energy. The hope is that renewable power sources will provide lower environmental impact and longer-term, more sustainable energy into the indefinite future, after other sources of power are exhausted.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REPLACEABLE_PARTS</Tag>
+		<English>Replaceable Parts</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REPLACEABLE_PARTS_QUOTE</Tag>
+		<English>"The whole is greater than the sum of its parts."[PARAGRAPH:2]- Aristotle</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REPRESENTATION</Tag>
+		<English>Representation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REPRESENTATION_QUOTE</Tag>
+		<English>"It has been said that democracy is the worst form of government except all the others that have been tried."[PARAGRAPH:2]- Winston Churchill</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_REPRESENTATION_PEDIA</Tag>
+<English>Representation is the practice of having one person stand in for the interests of another person, or of many people. In the context of politics, a government official can be said to 'represent' a 'constituency' who select that official, support them, and hold them accountable for the government's actions. This is a feature of democratic governments.
+
+Representative democracy began to evolve in ancient Athens and Rome. The working-class Roman plebeians, in particular, played a major role in creating the concept. In the 490s BC, the plebeians went on a mass strike and refusing to do any more labor until the elite patrician class created the office of the "plebeian tribune." The tribunes were elected by the plebeians to protect their interests from the relatively wealthy and powerful patricians. Toward this end, the tribunes were empowered to block any action taken by the Senate, which was called "veto" from the Latin for "I forbid." Likewise, they were legally sacrosanct and any person who so much as touched a tribune or interfered with their duty in any way could be put to death.
+
+This idea, that the masses could vote not only on policy issues but on the creation of officials to protect their interests and govern the state on their behalf, remained largely dormant in Western society until the rise of the commercial republics of the late Middle Ages. After that time it began to flourish during the Enlightenment era, for a simple reason. Direct democracy, in which all citizens vote on all actions taken by the state, becomes impossibly unwieldy when the state contains more than, at most, about ten thousand citizens. It is also impractical if the citizenry is spread over a large area so that it cannot meet regularly. For a republic that is several days' travel across, or which has many thousands of voters, to function, representation becomes vital.
+
+The first large European state to employ representative democracy in a significant way was England. The English parliament, which originated as a means for the king to gather the representatives of the populace to hear his wishes and agree on ways to fund his plans, slowly evolved into a body which held the "purse strings" of the entire English government. Ultimately, kings became unable to run their government without Parliament's approval. The efforts of Charles I to do so in the 1630s and 1640s led ultimately to the English Civil War, and to Charles I's execution by beheading.
+
+Thus, representative democracy became established as an alternative to, and potentially an antagonist toward, the notion of the 'divine right of kings' then dominant in continental Europe. This conflict between monarchy and democracy was resolved amicably in England after the 'Glorious Revolution' of 1688, which created a constitutional monarchy headed by a reasonably popular king- and one who knew not to overstep the limits of what the people would tolerate.
+
+To this day, this pattern of conflict between representative bodies (legislatures and elected executive officials) and unelected autocrats is a persistent one throughout the world.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RIDING</Tag>
+		<English>Riding</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RIDING_QUOTE</Tag>
+		<English>"If you speak the truth, have a foot in the stirrup."[PARAGRAPH:2]- Turkish proverb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RIDING_PEDIA</Tag>
+		<English>The horse was first domesticated for transportation and warfare by tribesmen on the Asian steppes. These tribesmen used their superior mobility and speed to overwhelm the proto-civilizations just rising in southeast Europe and the Middle East. In approximately 2000 BCE, domestic horses were introduced into Mesopotamia. Within the next several centuries, horses had spread throughout much of Europe and northern Africa. It was not long before nearly every civilization had put horses to work as field animals and as a means of transportation. Horses also went on to play an important role in the military conflicts of nearly every civilization in the world, both as mounts for horsemen and cavalry, and as draft animals for pulling war chariots and heavy weapons into battle.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RIFLING</Tag>
+		<English>Rifling</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RIFLING_QUOTE</Tag>
+		<English>"Political power grows out of the barrel of a gun."[PARAGRAPH:2]- Mao Zedong</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RITUAL</Tag>
+		<English>Ritual</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RITUAL_QUOTE</Tag>
+		<English>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RITUAL_PEDIA</Tag>
+<English>A ritual is a personal, cultural, or religious practice that has become routine by time, practice, or taboo, and which has significance beyond the obvious direct consequences of the act itself. All known religions and cultures are associated with the practice of rituals, as are many secular organizations.
+
+Some of these rituals are used by all members of society as a way to avert bad luck, seek supernatural aid in some difficult endeavour, or thank divine beings for their generosity. Other rituals might only be practiced by certain castes, or by the designated priests of a particular cause or entity. Some rituals are spectacularly public. Others are so private that unauthorized intrusion is punishable by death. Some involve demonstrative physical acts or sacrifices; others are quiet and contemplative.
+
+The recurring pattern is that rituals serve a role of promoting social cohestion in the face of adversity, providing a means for individuals to communicate their shared values and signal their collective loyalty to the survival of the group.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ROBOTICS</Tag>
+		<English>Robotics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ROBOTICS_QUOTE</Tag>
+		<English>"From the moment when the machine first made its appearance it was clear to all thinking people that the need for human drudgery, and therefore too a great extent for human inequality, had disappeared."[PARAGRAPH:2]- George Orwell</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ROCKETRY</Tag>
+		<English>Rocketry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ROCKETRY_QUOTE</Tag>
+		<English>"We have guided missiles and misguided men."[PARAGRAPH:2]- Martin Luther King, Jr.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SAILING</Tag>
+		<English>Sailing</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SAILING_QUOTE</Tag>
+		<English>"You cannot direct the wind, but you can adjust your sails."[PARAGRAPH:2] - Unknown</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SANITATION</Tag>
+		<English>Sanitation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SANITATION_QUOTE</Tag>
+		<English>"The health of the people is really the foundation upon which all their happiness and all their powers as a state depend."[PARAGRAPH:2]- Benjamin Disraeli</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SANITATION_PEDIA</Tag>
+		<English>The increased waste produced by growing populations over time eventually led to potential health hazards. It then became necessary to come up with systems to dispose of garbage and human waste in a sanitary manner. Plumbing systems designed to remove waste water from dwellings and public buildings became commonplace, as did sewage plants which treated the wastewater before it was dumped into local waterways. Landfills were established, and garbage was collected for sanitary disposal in dumps and landfills a safe distance from the general population. These measures led to a healthier environment, and allowed for further population growth.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SATELLITES</Tag>
+		<English>Satellites</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SATELLITES_QUOTE</Tag>
+		<English>"The earth is the cradle of the mind but one cannot eternally live in a cradle."[PARAGRAPH:2]- Konstantin Tsiolkovsky</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SCIENTIFIC_METHOD</Tag>
+		<English>Scientific Method</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SCIENTIFIC_METHOD_QUOTE</Tag>
+		<English>"I do not feel obliged to believe that the same God who has endowed us with sense, reason, and intellect has intended us to forgo their use."[PARAGRAPH:2]- Galileo Galilei</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SEAFARING</Tag>
+		<English>Seafaring</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SEAFARING_QUOTE</Tag>
+		<English>"Hoist up sail while the gale doth last. Tide and wind stay no man's pleasure."[PARAGRAPH:2]- Robert Southwell</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SEAFARING_PEDIA</Tag>
+<English>Seafaring is the art of directing, maintaining, and preserving ships that travel across the ocean. The earliest human vessels such as rafts, small canoes, and reed boats would have been extremely unsafe on the open ocean. However, there is extensive evidence for the practice of seafaring stretching back to the Bronze Age, or the Neolithic in the case of Polynesian long-distance sailing canoes.
+
+In general, successful seafarers must make use of some source of power other than their own muscles (in the early days of navigation, a sail) to ensure they were not trapped by ocean currents. They must know how to construct reasonably sturdy craft that would resist ocean waves. They had to make use of a great knowledge of weather conditions to ensure the craft was not caught by a storm too powerful to be survived - which in premodern times weather could be predicted only by experience.
+
+All this represented a significant advance over the earliest Stone Age boats and their operations... and yet, all these things were necessary in order for coastal civilizations to make any serious use of maritime travel for trade or exploration.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SHIPBUILDING</Tag>
+		<English>Shipbuilding</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SHIPBUILDING_QUOTE</Tag>
+		<English>"He who commands the sea has command of everything."[PARAGRAPH:2]- Themistocles</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SHIPBUILDING_PEDIA</Tag>
+<English>Shipbuilding is the art of constructing large watergoing vessels for travel on large bodies of water.As the demand for larger, safer vessels to cross the oceans of the ancient world grew, so did knowledge of ship construction. By far the preferred method for building such ships was to make them out of wood - preferably the hardest, strongest timber available, even if this had to be imported over long distances. Great strides in the art of carpentry made it possible to assemble large ships that would be strong enough to withstand the forces of the sea, but flexible enough not to break under heavy impact.
+
+Larger, heavier ships were generally more useful for trade because they could carry a greater volume of goods. They were also more useful for warfare. Ancient naval war revolved around deliberate ramming attacks, boarding parties and sailors firing musclepowered missile weapons at each other. A larger ship would be harder to damage by ramming, would have the tactical advantage of being 'the high ground' in combat, and could carry a larger army with which to capture enemy ships.
+
+Ongoing advances in shipbuilding continued steadily from the Bronze Age up to the present day in many parts of the world. Nations which enjoyed an advantage in the art at any particular time were usually able to dominate the seas for vast distances around their homeland.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SIEGECRAFT</Tag>
+		<English>Siegecraft</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SIEGECRAFT_QUOTE</Tag>
+		<English>"It is imperative to contest all factions for complete victory, so the army is not garrisoned and the profit can be total. This is the law of strategic siege."[PARAGRAPH:2]- Sun Tzu</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SIEGECRAFT_PEDIA</Tag>
+<English>Siegecraft is the art of surrounding a defended area of land, and gradually neutralizing, wearing down, or 'reducing' its defenses in order to make it more vulnerable to attack. The practice of building fixed defensive structures such as watch towers and walls around a defensible location or an entire community dates back to prehistoric times. Relatively early on, with the advent of masonry or brick walls, it became possible to construct fortifications that provided a massive advantage to the defender, so great that attacking a position became impossible without great loss of life. Short of some kind of explosive weapons, soldiers have no way of attacking a position defended by a five meter stone wall, without the great risk of being killed by enemy weapons. Attackers could face traps, arrows, thrown stones or spears, or even sheets of deadly liquid such as boiling oil.
+
+This made a sudden, rash attack against a fortress extremely unwise in classical and medieval warfare. Instead, an army would typically surround the fortress at a distance and set up permanent lines around it, to prevent any reinforcement or resupply from reaching the defender. These "siege lines" would have to be held for as long as it took to compel the defenders to surrender.
+
+The simplest approach here was to simply wait for the defenders to run out of food or water, or to be exterminated by some disease. This could take an extremely long time, although some of history's more ruthless commanders took steps to accelerate the process. Julius Caesar once forced a Gaulish city to run out of water by using a team of miners to dig into the underground spring that fed their water supply. Mongols under Jani Beg introduced disease to the city of Kaffa on the Black Sea by catapulting bodies of the victims of bubonic plague over the walls of the city.
+
+If waiting for the enemy to give in due to starvation, thirst, or disease was not practical, more direct means were needed. However, that in turn required that the artificial defenses of the target be 'reduced' to something more manageable.
+
+The methods used to do this in classical and medieval warfare included but were not limited to use of spring-loaded, counterweight-powered, or mechanical engines to throw projectiles at the defenders' walls, the use of rams, drills, and prying tools to open a locked gate (with or without the use of mobile shelters to protect the demolition team from the defenders), the use of large mobile towers that could roll up to the wall and deploy soldiers directly on top of it, the filling-in of ditches and moats with rubble, the construction of rubble ramps to scale a wall, the use of mobile shields to cover archers and allow them to approach the defenses and snipe at the garrison, and the use of tunneling techniques to undermine the enemy's walls and cause them to collapse.
+
+The advent of gunpowder altered the rules somewhat. Most mechanical siege engines were rendered obsolete, since exploding gunpowder could propel missile weapons much more effectively. Tunneling warfare took on a new dimension, with sappers digging tunnels under enemy defenses, filling them with tons of explosives, and then lighting the fuse. Even at surface level, infantry could carry petards (heavy demolition charges to destroy gates and structures) and grenades (to drive enemy troops out of a position with blast and shrapnel). At the same time, the defenders altered the structure of their walls and outworks to make them more resistant to cannon fire, and redesigned defenses to deliver heavy fire from their own gunpowder weapons against an attacker.
+
+The race of siege techniques versus defense techniques has proceeded up into the 20th century, though relatively few innovations on the art have been seen since the Second World War. Siege warfare continues to be seen, though, wherever an attacking army gradually tries to encircle a defended place and works its way inward. Instances include the Vietnamese siege of Dien Bien Phu, or the recent siege of the city of Kobani in northern Iraq by fundamentalist militants.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPACE_EXPLORATION</Tag>
+		<English>Space Exploration</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPACE_EXPLORATION_QUOTE</Tag>
+		<English>"That's one small step for man; one giant leap for humanity."[PARAGRAPH:2]- Neil Armstrong</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPACE_EXPLORATION_PEDIA</Tag>
+<English>Utilizing the now well-developed science of rocketry, the modern exploration of space began in October 1957 when the Soviet Union launched Sputnik 1. This tiny satellite orbited the earth for 57 days, providing information on radiation and other phenomena in the upper atmosphere. In less than a year, the United States had also launched a satellite, Explorer 1. This started the "space race", years of competition between the U.S. and the U.S.S.R. to achieve new frontiers in space exploration. Space flight advanced rapidly from the simple sub-orbital flights of the 1950s, to manned missions to Earth's moon in the late 1960s. The rapid growth of space technology led to many practical applications, such as weather and surveillance satellites, and vastly improved worldwide communications. Today, although hindered by severe government budget cuts, the exploration of space continues.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEAM_POWER</Tag>
+		<English>Steam Power</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEAM_POWER_QUOTE</Tag>
+		<English>"You would make a ship sail against the winds and currents by lighting a bonfire under her deck? I have no time for such nonsense."[PARAGRAPH:2] - Napoleon Bonaparte</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEEL_WORKING</Tag>
+		<English>Steel Working</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEEL_WORKING_QUOTE</Tag>
+		<English>"Men are like steel. When they lose their temper, they lose their worth."[PARAGRAPH:2]-  Chuck Norris</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STEEL_WORKING_PEDIA</Tag>
+<English>The iron alloys produced up until about the 14th century were made by heating a mixture of iron ore and charcoal in a forge, then pounding the molten metal to drive out the impurities or "slag". Occasionally, the iron mixture would absorb more carbon, creating steel rather than wrought iron. Because steel proved to be less brittle and more resistant to corrosion than iron, techniques were developed to produce steel. This was done by blowing a coal derivative called coke through molten iron. Most modern steel making utilizes the "blast furnace", developed by Henry Bessemer in 1855, to accomplish this task on a large-scale basis. The strength and other qualities of steel make it the material of choice for warships, planes, and many other vehicles.</English>
+	</TEXT>
+
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SUPERMATERIALS</Tag>
+		<English>Supermaterials</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SUPERMATERIALS_QUOTE</Tag>
+		<English>Needs a quote.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SUPERMATERIALS_PEDIA</Tag>
+		<English>Needs to be written.</English>
+	</TEXT>
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SURVEILLANCE</Tag>
+		<English>Surveillance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SURVEILLANCE_QUOTE</Tag>
+		<English>"Under observation, we act less free, which means we effectively are less free."PARAGRAPH:2]- Edward Snowden</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SURVEILLANCE_PEDIA</Tag>
+<English>Surveillance, from the French for "to watch from above," is the act of monitoring others, as implemented by some directing or governing entity. With the rise of increasingly miniaturized and refined electronics in the mid-20th century, it became possible to use such devices as "eyes and ears" to spy on persons of interest. Among the earliest such applications was the use of 'wiretaps' to allow a third party to listen in on telephone conversations. Soon after it became more and more common to place small microphones or cameras as "bugs" that could record events in a given area. Automated closed circuit TV systems permit monitoring of public or private spaces through cameras; the rising reliance on wireless communication allows signals intelligence agencies to collect enormous masses of data on who communicates with who, and how.
+
+This has led to a vast growth in the capabilities of intelligence agencies to target foreign and domestic enemies. The countervailing concern is that with the rise of 20th and 21st century surveillance techniques, we may all become targets - that the state, or powerful private organizations, may use this technology to gain total information, and thus a great measure of power, over our lives.
+</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TELECOMMUNICATIONS</Tag>
+		<English>Telecommunications</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TELECOMMUNICATIONS_QUOTE</Tag>
+		<English>"The new electronic interdependence recreates the world in the image of a global village."[PARAGRAPH:2]- Marshall McLuhan</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TELECOMMUNICATIONS_PEDIA</Tag>
+		<English>The value of computers increases sharply when they can be used to send information by remote access over long distances. An isolated computer is just a machine for doing calculations and controlling fixed installations. A computer network can coordinate the activities of a large organization, give all members of the group access to a single central database, or allow scattered groups of people to interact in ways limited only by the power of their computers.[NEWLINE][NEWLINE]Early computer networks were piggybacked onto the existing infrastructure of the telephone system, and made use of simple communication protocols devised by computer scientists and enthusiasts. Over time, the complexity of networks has increased, as has the body of technical literature and specialist skills devoted to designing, building, and maintaining them. Today, most of the world's computer networks flow together seamlessly into the Internet, a world-spanning system that allows nearly anyone on Earth to communicate with anyone else, given computer access.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TELEPHONE</Tag>
+		<English>Telephone</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TELEPHONE_QUOTE</Tag>
+		<English>Mr. Watson, come here - I want to see you."[PARAGRAPH:2]- Alexander Graham Bell</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TELEPHONE_PEDIA</Tag>
+<English>A telephone, from the Greek for 'distant voice,' is an device that converts a speaker's voice into electrical impulses, transmits them to a remote receiver, permits the speaker to receive other similar signals, and converts them back into voice. This permits conversations to be had between any two owners of telephones on the same switching network.
+
+There is some debate over who invented the telephone. Many individuals were working to design them, with similar tools, throughout the 1860s and '70s. However, it is clear that within a few years of the first commercially successful telephones being created, systems of the devices were beginning to connect distant cities. The telephone allowed infinitely faster and richer exchanges of information than any pre-19th century mode of communication, and had great advantages compared to the slightly earlier telegraph as well.
+
+Early telephone technology was highly diverse, but standardized as the 20th century began and as telephone systems became increasingly networked. It was found that while a specific telephone line from one place to another was valuable, a network permitting every user to call every other user was exponentially more valuable. Elaborate systems of manually operated "switchboards" emerged, allowing connections to be made at will between different telephones on the network.
+
+Networks grew larger and the individual telephones grew more compact and user-friendly throughout the early and mid-20th centuries. After the computer revolution began in the 1950s and '60s, automated switching took the place of manually operated systems, touch-tone dialing replaced rotary phones, and long distance calls became a cheaper and more common activity connecting the world together.
+
+The next great advance, mobile telephony, came in the 1970s and '80s, reaching maturity around the turn of the millenium. Cellular networks of transceiver towers make it possible for every citizen to carry a miniaturized wireless telephone, permitting near-instant communication throughout the world. Over the past decade, this technology has been further refined and combined with further miniaturization, allowing a single handheld device to serve as telephone, camera, appointment book, a portable device for audiovisual entertainment, and a gaming platform.</English>
+	</TEXT>
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THEOLOGY</Tag>
+		<English>Theology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THEOLOGY_QUOTE</Tag>
+		<English>"Two cities have been formed by two loves: the earthly by the love of self; the heavenly by the love of God."[PARAGRAPH:2]- Saint Augustine</English>
+	</TEXT>
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TOURISM</Tag>
+		<English>Tourism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TOURISM_QUOTE</Tag>
+		<English>"The world is a book, and those who do not travel read only one page."[PARAGRAPH:2]- Saint Augustine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TOURISM_PEDIA</Tag>
+		<English>Needs to be written</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_URBAN_PLANNING</Tag>
+		<English>Urban Planning</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_URBAN_PLANNING_QUOTE</Tag>
+		<English>"I found Rome a city of bricks and left it a city of marble."[PARAGRAPH:2]- Augustus Caesar</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_URBAN_PLANNING_PEDIA</Tag>
+		<English>Needs to be written.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THE_WHEEL</Tag>
+		<English>The Wheel</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THE_WHEEL_QUOTE</Tag>
+		<English>"Put your shoulder to the wheel."[PARAGRAPH:2]- Aesop</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WRITING</Tag>
+		<English>Writing</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WRITING_QUOTE</Tag>
+		<English>"True glory consists in doing what deserves to be written; in writing what deserves to be read."[PARAGRAPH:2]- Pliny the Elder</English>
+	</TEXT>
+
+</Civ4GameText>

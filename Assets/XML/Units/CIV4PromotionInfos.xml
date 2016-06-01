@@ -346,7 +346,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_COMBAT1</PromotionPrereqOr1>
 			<PromotionPrereqOr2>PROMOTION_DRILL1</PromotionPrereqOr2>
-			<TechPrereq>TECH_GUNPOWDER</TechPrereq>
+			<TechPrereq>TECH_FIREARMS</TechPrereq>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
@@ -446,7 +446,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_COMBAT2</PromotionPrereqOr1>
 			<PromotionPrereqOr2>PROMOTION_DRILL2</PromotionPrereqOr2>
-			<TechPrereq>TECH_INDUSTRIALISM</TechPrereq>
+			<TechPrereq>TECH_ROCKETRY</TechPrereq>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
@@ -552,7 +552,7 @@
 			<Description>TXT_KEY_PROMOTION_BLITZ</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_COMBAT3</PromotionPrereqOr1>
-			<TechPrereq>TECH_MILITARY_SCIENCE</TechPrereq>
+			<TechPrereq>TECH_INFRASTRUCTURE</TechPrereq>
 			<bBlitz>1</bBlitz>
 			<UnitCombats>
 				<UnitCombat>
@@ -579,7 +579,7 @@
 			<Description>TXT_KEY_PROMOTION_COMMANDO</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_COMBAT4</PromotionPrereqOr1>
-			<TechPrereq>TECH_MILITARY_SCIENCE</TechPrereq>
+			<TechPrereq>TECH_LOGISTICS</TechPrereq>
 			<bEnemyRoute>1</bEnemyRoute>
 			<UnitCombats>
 				<UnitCombat>
@@ -1765,7 +1765,7 @@
 			<Description>TXT_KEY_PROMOTION_ALCHEMIST3</Description>
 			<Sound>AS2D_PING</Sound>
 			<PromotionPrereqOr1>PROMOTION_ALCHEMIST2</PromotionPrereqOr1>
-			<TechPrereq>TECH_COMPOSITES</TechPrereq>
+			<TechPrereq>TECH_BIOTECHNOLOGY</TechPrereq>
 			<bAmphib>1</bAmphib>
 			<UnitCombats>
 				<UnitCombat>

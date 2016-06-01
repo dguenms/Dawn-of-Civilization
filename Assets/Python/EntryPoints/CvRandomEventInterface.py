@@ -1103,7 +1103,7 @@ def canTriggerInfluenza(argsList):
 	if player.getCurrentEra() <= iIndustrial:
 		return false
 	
-	iMedicine = CvUtil.findInfoTypeNum(gc.getTechInfo,gc.getNumTechInfos(),'TECH_MEDICINE')
+	iMedicine = CvUtil.findInfoTypeNum(gc.getTechInfo,gc.getNumTechInfos(),'TECH_PHARMACEUTICALS')
 	
 	if team.isHasTech(iMedicine):
 		return false
@@ -1842,7 +1842,7 @@ def canTriggerTheHuns(argsList):
 			
 #   At least one civ on the board must know Horseback Riding.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_HORSEBACK_RIDING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_NOBILITY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -1952,17 +1952,17 @@ def canTriggerTheVandals(argsList):
 		return false
 			
 #   At least one civ on the board must know Metal Casting.
-	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_METAL_CASTING')
-	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
-		loopPlayer = gc.getPlayer(iPlayer)
-		if loopPlayer.isAlive():
-			if gc.getTeam(loopPlayer.getTeam()).isHasTech(iTech):
-				bFoundValid = true
-				break
-				
-	if not bFoundValid:
-		return false
+#	bFoundValid = false
+#	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_METAL_CASTING')
+#	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
+#		loopPlayer = gc.getPlayer(iPlayer)
+#		if loopPlayer.isAlive():
+#			if gc.getTeam(loopPlayer.getTeam()).isHasTech(iTech):
+#				bFoundValid = true
+#				break
+#				
+#	if not bFoundValid:
+#		return false
 					
 #   At least one civ on the board must know Iron Working.
 	bFoundValid = false
@@ -2175,7 +2175,7 @@ def canTriggerThePhilistines(argsList):
 			
 #   At least one civ on the board must know Monotheism.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_MONOTHEISM')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_DIVINATION')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2286,7 +2286,7 @@ def canTriggerTheVedicAryans(argsList):
 			
 #   At least one civ on the board must know Polytheism.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_POLYTHEISM')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_RITUAL')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():

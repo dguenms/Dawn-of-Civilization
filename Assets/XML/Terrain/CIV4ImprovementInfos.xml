@@ -266,7 +266,7 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_FERTILIZER</PrereqTech>
 					<TechYields>
 						<iYield>1</iYield>
 					</TechYields>
@@ -666,14 +666,7 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_GUILDS</PrereqTech>
-					<TechYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
-				<TechYieldChange>
-					<PrereqTech>TECH_CHEMISTRY</PrereqTech>
+					<PrereqTech>TECH_MACHINE_TOOLS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
@@ -730,7 +723,16 @@
 			</FeatureMakesValids>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_PAPER</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
 					<RouteType>ROUTE_RAILROAD</RouteType>
@@ -850,7 +852,7 @@
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
@@ -1001,7 +1003,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_CROP_ROTATION</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
 					<RouteType>ROUTE_RAILROAD</RouteType>
@@ -1220,7 +1231,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_GEOLOGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
 					<RouteType>ROUTE_RAILROAD</RouteType>
@@ -1310,8 +1330,9 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_REFRIGERATION</PrereqTech>
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<TechYields>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -1394,7 +1415,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FIREARMS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1545,7 +1575,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1693,7 +1732,7 @@
 			<ImprovementUpgrade>IMPROVEMENT_TOWN</ImprovementUpgrade>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_PRINTING_PRESS</PrereqTech>
+					<PrereqTech>TECH_PRINTING</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1745,7 +1784,7 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_PRINTING_PRESS</PrereqTech>
+					<PrereqTech>TECH_PRINTING</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>

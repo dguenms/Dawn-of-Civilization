@@ -2759,7 +2759,7 @@
 			<iFreeUnitSupport>0</iFreeUnitSupport>
 			<iInflationMod>0</iInflationMod>
 			<iSpaceProductionMod>0</iSpaceProductionMod>
-			<Tech>TECH_FLIGHT</Tech>
+			<Tech>TECH_AVIATION</Tech>
 			<TechFlavors/>
 			<iTechPercent>15</iTechPercent>
 			<iTechCostPercent>0</iTechCostPercent>
@@ -2845,7 +2845,7 @@
 			<iFreeUnitSupport>0</iFreeUnitSupport>
 			<iInflationMod>0</iInflationMod>
 			<iSpaceProductionMod>0</iSpaceProductionMod>
-			<Tech>TECH_FLIGHT</Tech>
+			<Tech>TECH_AVIATION</Tech>
 			<TechFlavors/>
 			<iTechPercent>20</iTechPercent>
 			<iTechCostPercent>0</iTechCostPercent>
