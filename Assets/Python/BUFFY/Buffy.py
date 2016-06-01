@@ -98,10 +98,7 @@ def canTriggerTheVedicAryans(argsList):
 
 # BUFFY 3.19.003 - start
 	# changes one of the key techs to Priesthood instead of Polytheism
-	if isEnabled():
-		iTech = gc.getInfoTypeForString('TECH_PRIESTHOOD')
-	else:
-		iTech = gc.getInfoTypeForString('TECH_POLYTHEISM')
+	iTech = gc.getInfoTypeForString('TECH_DIVINATION')
 # BUFFY 3.19.003 - end
 
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):
@@ -116,7 +113,7 @@ def canTriggerTheVedicAryans(argsList):
 					
 #   At least one civ on the board must know Archery.
 	bFoundValid = false
-	iTech = gc.getInfoTypeForString('TECH_ARCHERY')
+	iTech = gc.getInfoTypeForString('TECH_LEATHER_WORKING')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():

@@ -38,7 +38,7 @@
 		<BuildInfo>
 			<Type>BUILD_RAILROAD</Type>
 			<Description>TXT_KEY_BUILD_RAILROAD</Description>
-			<PrereqTech>TECH_RAILROAD</PrereqTech>
+			<PrereqTech>TECH_STEAM_POWER</PrereqTech>
 			<iTime>400</iTime>
 			<RouteType>ROUTE_RAILROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_RAILROAD</EntityEvent>
@@ -59,14 +59,14 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -80,7 +80,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>500</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -96,7 +96,7 @@
 		<BuildInfo>
 			<Type>BUILD_FISHING_BOATS</Type>
 			<Description>TXT_KEY_BUILD_FISHING_BOATS</Description>
-			<PrereqTech>TECH_FISHING</PrereqTech>
+			<PrereqTech>TECH_SAILING</PrereqTech>
 			<iTime>0</iTime>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
@@ -126,7 +126,7 @@
 		<BuildInfo>
 			<Type>BUILD_WHALING_BOATS</Type>
 			<Description>TXT_KEY_BUILD_WHALING_BOATS</Description>
-			<PrereqTech>TECH_OPTICS</PrereqTech>
+			<PrereqTech>TECH_SEAFARING</PrereqTech>
 			<iTime>0</iTime>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_WHALING_BOATS</ImprovementType>
@@ -148,7 +148,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -178,21 +178,21 @@
 		<BuildInfo>
 			<Type>BUILD_WORKSHOP</Type>
 			<Description>TXT_KEY_BUILD_WORKSHOP</Description>
-			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
+			<PrereqTech>TECH_ARTISANRY</PrereqTech>
 			<iTime>600</iTime>
 			<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -215,7 +215,7 @@
 		<BuildInfo>
 			<Type>BUILD_LUMBERMILL</Type>
 			<Description>TXT_KEY_BUILD_LUMBERMILL</Description>
-			<PrereqTech>TECH_GUILDS</PrereqTech>
+			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<iTime>900</iTime>
 			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
@@ -229,21 +229,21 @@
 		<BuildInfo>
 			<Type>BUILD_WINDMILL</Type>
 			<Description>TXT_KEY_BUILD_WINDMILL</Description>
-			<PrereqTech>TECH_MACHINERY</PrereqTech>
+			<PrereqTech>TECH_MILLING</PrereqTech>
 			<iTime>600</iTime>
 			<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -266,21 +266,21 @@
 		<BuildInfo>
 			<Type>BUILD_WATERMILL</Type>
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
-			<PrereqTech>TECH_MACHINERY</PrereqTech>
+			<PrereqTech>TECH_MILLING</PrereqTech>
 			<iTime>900</iTime>
 			<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -310,7 +310,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -371,14 +371,14 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -401,21 +401,21 @@
 		<BuildInfo>
 			<Type>BUILD_PASTURE</Type>
 			<Description>TXT_KEY_BUILD_PASTURE</Description>
-			<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
+			<PrereqTech>TECH_PASTORALISM</PrereqTech>
 			<iTime>500</iTime>
 			<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -452,21 +452,21 @@
 		<BuildInfo>
 			<Type>BUILD_WELL</Type>
 			<Description>TXT_KEY_BUILD_WELL</Description>
-			<PrereqTech>TECH_COMBUSTION</PrereqTech>
+			<PrereqTech>TECH_REFINING</PrereqTech>
 			<iTime>1000</iTime>
 			<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -489,7 +489,7 @@
 		<BuildInfo>
 			<Type>BUILD_OFFSHORE_PLATFORM</Type>
 			<Description>TXT_KEY_BUILD_OFFSHORE_PLATFORM</Description>
-			<PrereqTech>TECH_PLASTICS</PrereqTech>
+			<PrereqTech>TECH_EXPLOSIVES</PrereqTech>
 			<iTime>0</iTime>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_OFFSHORE_PLATFORM</ImprovementType>
@@ -504,21 +504,21 @@
 		<BuildInfo>
 			<Type>BUILD_WINERY</Type>
 			<Description>TXT_KEY_BUILD_WINERY</Description>
-			<PrereqTech>TECH_MONARCHY</PrereqTech>
+			<PrereqTech>TECH_POTTERY</PrereqTech>
 			<iTime>600</iTime>
 			<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -541,14 +541,14 @@
 		<BuildInfo>
 			<Type>BUILD_COTTAGE</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
-			<PrereqTech>TECH_POTTERY</PrereqTech>
+			<PrereqTech>TECH_PROPERTY</PrereqTech>
 			<iTime>700</iTime>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -578,14 +578,14 @@
 		<BuildInfo>
 			<Type>BUILD_FORT</Type>
 			<Description>TXT_KEY_BUILD_FORT</Description>
-			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
+			<PrereqTech>TECH_STEEL_WORKING</PrereqTech>
 			<iTime>1000</iTime>
 			<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -606,7 +606,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -627,7 +627,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -669,7 +669,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FALLOUT</FeatureType>
-					<PrereqTech>TECH_ECOLOGY</PrereqTech>
+					<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
 					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
@@ -685,7 +685,7 @@
 		<BuildInfo>
 			<Type>BUILD_FOREST_PRESERVE</Type>
 			<Description>TXT_KEY_BUILD_FOREST_PRESERVE</Description>
-			<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
+			<PrereqTech>TECH_ECOLOGY</PrereqTech>
 			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_FOREST_PRESERVE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
@@ -704,7 +704,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -726,7 +726,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -750,14 +750,14 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -771,7 +771,7 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>500</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
@@ -795,7 +795,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -826,21 +826,21 @@
 		<BuildInfo>
 			<Type>BUILD_WORKSHOP_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WORKSHOP</Description>
-			<PrereqTech>TECH_METAL_CASTING</PrereqTech>
+			<PrereqTech>TECH_ARTISANRY</PrereqTech>
 			<iTime>600</iTime>
 			<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -864,21 +864,21 @@
 		<BuildInfo>
 			<Type>BUILD_WINDMILL_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WINDMILL</Description>
-			<PrereqTech>TECH_MACHINERY</PrereqTech>
+			<PrereqTech>TECH_MILLING</PrereqTech>
 			<iTime>600</iTime>
 			<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -902,21 +902,21 @@
 		<BuildInfo>
 			<Type>BUILD_WATERMILL_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
-			<PrereqTech>TECH_MACHINERY</PrereqTech>
+			<PrereqTech>TECH_MILLING</PrereqTech>
 			<iTime>900</iTime>
 			<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -985,14 +985,14 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -1016,21 +1016,21 @@
 		<BuildInfo>
 			<Type>BUILD_PASTURE_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_PASTURE</Description>
-			<PrereqTech>TECH_ANIMAL_HUSBANDRY</PrereqTech>
+			<PrereqTech>TECH_PASTORALISM</PrereqTech>
 			<iTime>500</iTime>
 			<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -1054,21 +1054,21 @@
 		<BuildInfo>
 			<Type>BUILD_WELL_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WELL</Description>
-			<PrereqTech>TECH_COMBUSTION</PrereqTech>
+			<PrereqTech>TECH_REFINING</PrereqTech>
 			<iTime>1000</iTime>
 			<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -1092,21 +1092,21 @@
 		<BuildInfo>
 			<Type>BUILD_WINERY_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WINERY</Description>
-			<PrereqTech>TECH_MONARCHY</PrereqTech>
+			<PrereqTech>TECH_POTTERY</PrereqTech>
 			<iTime>600</iTime>
 			<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -1130,14 +1130,14 @@
 		<BuildInfo>
 			<Type>BUILD_COTTAGE_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
-			<PrereqTech>TECH_POTTERY</PrereqTech>
+			<PrereqTech>TECH_PROPERTY</PrereqTech>
 			<iTime>700</iTime>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_HEALTHCARE</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>

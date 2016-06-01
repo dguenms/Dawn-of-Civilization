@@ -99,7 +99,7 @@
 		<element type="Description"/>
 		<element type="Civilopedia"/>
 		<element type="Help" minOccurs="0"/>
-		<element type="Strategy"/>
+		<element type="Strategy" minOccurs="0"/>
 		<element type="Advisor" minOccurs="0"/>
 		<element type="iAIWeight" minOccurs="0"/>
 		<element type="iAITradeModifier" minOccurs="0"/>
