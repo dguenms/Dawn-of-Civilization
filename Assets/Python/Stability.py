@@ -1531,7 +1531,7 @@ def calculateStability(iPlayer):
 				if pLoopPlayer.getStateReligion() != iStateReligion: iFanaticismStability += 3
 				else: iFanaticismStability -= 2
 		if bMultilateralism:
-			if tPlayer.isAtWar(iLoopPlayer):
+			if gc.getPlayer(iLoopPlayer).isAlive() and tPlayer.isAtWar(iLoopPlayer):
 				iMultilateralismStability -= 2
 		
 	# penalize contacts because they allow more OB treaties
