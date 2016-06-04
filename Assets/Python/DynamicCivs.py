@@ -669,7 +669,7 @@ def key(iPlayer, sSuffix):
 	return "TXT_KEY_CIV_" + short(iPlayer).replace(" ", "_").upper() + sSuffix
 
 def text(sTextKey, tInput=()):
-	return localText.getText(sTextKey, tInput)
+	return localText.getText(str(sTextKey), tInput)
 	
 def desc(iPlayer, sTextKey=str("%s1")):
 	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
