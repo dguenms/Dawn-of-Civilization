@@ -832,8 +832,7 @@ def republicName(iPlayer):
 	return short(iPlayer)
 	
 def peoplesName(iPlayer):
-	return u"ü"
-	#return desc(iPlayer, key(iPlayer, "PEOPLES"))
+	return desc(iPlayer, key(iPlayer, "PEOPLES"))
 	
 def specificName(iPlayer):
 	iGameTurn = gc.getGame().getGameTurn()
