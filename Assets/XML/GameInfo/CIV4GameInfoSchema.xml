@@ -996,6 +996,9 @@
 		<element type="UpkeepInfo" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="iCityDefenseModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureTradeRouteModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="GameSpeedType" content="textOnly"/>
 	<ElementType name="SpeedThreshold" content="eltOnly">
 		<element type="GameSpeedType"/>
@@ -1008,6 +1011,9 @@
 		<element type="Type"/>
 		<element type="Description"/>
 		<element type="iCityDefenseModifier"/>
+		<element type="iCultureHappiness"/>
+		<element type="iCultureGreatPeopleRateModifier"/>
+		<element type="iCultureTradeRouteModifier"/>
 	</ElementType>
 	<ElementType name="CultureLevelInfos" content="eltOnly">
 		<element type="CultureLevelInfo" maxOccurs="*"/>

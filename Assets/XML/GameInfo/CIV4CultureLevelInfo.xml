@@ -10,6 +10,9 @@
 			<Type>CULTURELEVEL_NONE</Type>
 			<Description>TXT_KEY_CULTURELEVEL_NONE</Description>
 			<iCityDefenseModifier>0</iCityDefenseModifier>
+			<iCultureHappiness>0</iCultureHappiness>
+			<iCultureGreatPeopleRateModifier>0</iCultureGreatPeopleRateModifier>
+			<iCultureTradeRouteModifier>0</iCultureTradeRouteModifier>
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -29,6 +32,9 @@
 			<Type>CULTURELEVEL_POOR</Type>
 			<Description>TXT_KEY_CULTURELEVEL_POOR</Description>
 			<iCityDefenseModifier>0</iCityDefenseModifier>
+			<iCultureHappiness>0</iCultureHappiness>
+			<iCultureGreatPeopleRateModifier>0</iCultureGreatPeopleRateModifier>
+			<iCultureTradeRouteModifier>0</iCultureTradeRouteModifier>
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -48,6 +54,9 @@
 			<Type>CULTURELEVEL_FLEDGLING</Type>
 			<Description>TXT_KEY_CULTURELEVEL_FLEDGLING</Description>
 			<iCityDefenseModifier>20</iCityDefenseModifier>
+			<iCultureHappiness>0</iCultureHappiness>
+			<iCultureGreatPeopleRateModifier>0</iCultureGreatPeopleRateModifier>
+			<iCultureTradeRouteModifier>0</iCultureTradeRouteModifier>
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -67,6 +76,9 @@
 			<Type>CULTURELEVEL_DEVELOPING</Type>
 			<Description>TXT_KEY_CULTURELEVEL_DEVELOPING</Description>
 			<iCityDefenseModifier>40</iCityDefenseModifier>
+			<iCultureHappiness>1</iCultureHappiness>
+			<iCultureGreatPeopleRateModifier>25</iCultureGreatPeopleRateModifier>
+			<iCultureTradeRouteModifier>25</iCultureTradeRouteModifier>
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -86,6 +98,9 @@
 			<Type>CULTURELEVEL_REFINED</Type>
 			<Description>TXT_KEY_CULTURELEVEL_REFINED</Description>
 			<iCityDefenseModifier>60</iCityDefenseModifier>
+			<iCultureHappiness>2</iCultureHappiness>
+			<iCultureGreatPeopleRateModifier>50</iCultureGreatPeopleRateModifier>
+			<iCultureTradeRouteModifier>50</iCultureTradeRouteModifier>
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -105,6 +120,9 @@
 			<Type>CULTURELEVEL_INFLUENTIAL</Type>
 			<Description>TXT_KEY_CULTURELEVEL_INFLUENTIAL</Description>
 			<iCityDefenseModifier>80</iCityDefenseModifier>
+			<iCultureHappiness>3</iCultureHappiness>
+			<iCultureGreatPeopleRateModifier>100</iCultureGreatPeopleRateModifier>
+			<iCultureTradeRouteModifier>100</iCultureTradeRouteModifier>
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
@@ -124,6 +142,9 @@
 			<Type>CULTURELEVEL_LEGENDARY</Type>
 			<Description>TXT_KEY_CULTURELEVEL_LEGENDARY</Description>
 			<iCityDefenseModifier>100</iCityDefenseModifier>
+			<iCultureHappiness>4</iCultureHappiness>
+			<iCultureGreatPeopleRateModifier>200</iCultureGreatPeopleRateModifier>
+			<iCultureTradeRouteModifier>200</iCultureTradeRouteModifier>
 			<SpeedThresholds>
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>

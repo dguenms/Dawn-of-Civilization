@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Tim McCracken (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_HAPPY_CULTURE</Tag>
+		<English>+%d1_Change[ICON_HAPPY]: "We are so sophisticated!"</English>
+		<French>+%d1_Change[ICON_HAPPY] : "Lautus sumus!"</French>
+		<German>+%d1_Change[ICON_HAPPY]: "Wir sind so kultiviert!"</German>
+		<Italian>+%d1_Change[ICON_HAPPY]: "Lautus sumus!"</Italian>
+		<Spanish>+%d1_Change [ICON_HAPPY]: "Lautus sumus!"</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GREAT_PEOPLE_CULTURE</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Culture</English>
+		<French>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] culturae</French>
+		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] von Kultur</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] culturae</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] culturae</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_CULTURE</Tag>
+		<English>%D1%%: from Culture</English>
+		<French>%D1%%: culturae</French>
+		<German>%D1%%: von Kultur</German>
+		<Italian>%D1%%: culturae</Italian>
+		<Spanish>%D1%%: culturae</Spanish>
+	</TEXT>
+</Civ4GameText>
