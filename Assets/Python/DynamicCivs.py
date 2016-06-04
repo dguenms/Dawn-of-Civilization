@@ -1,4 +1,4 @@
-# Dynamic Civs - edead
+# encoding: utf-8
 
 from CvPythonExtensions import *
 import CvUtil
@@ -557,7 +557,7 @@ def setup():
 	elif iScenario == i1700AD:
 		sd.changeResurrections(iEgypt, 1)
 	
-	for iPlayer in range(iNumPlayers):	
+	for iPlayer in range(iNumPlayers):
 		setDesc(iPlayer, peoplesName(iPlayer))
 		
 		if gc.getPlayer(iPlayer).getNumCities() > 0:
@@ -669,7 +669,7 @@ def key(iPlayer, sSuffix):
 	return "TXT_KEY_CIV_" + short(iPlayer).replace(" ", "_").upper() + sSuffix
 
 def text(sTextKey, tInput=()):
-	return localText.getText(str(sTextKey), tInput)
+	return localText.getText(sTextKey, tInput)
 	
 def desc(iPlayer, sTextKey=str("%s1")):
 	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
@@ -832,7 +832,8 @@ def republicName(iPlayer):
 	return short(iPlayer)
 	
 def peoplesName(iPlayer):
-	return desc(iPlayer, key(iPlayer, "PEOPLES"))
+	return u"ü"
+	#return desc(iPlayer, key(iPlayer, "PEOPLES"))
 	
 def specificName(iPlayer):
 	iGameTurn = gc.getGame().getGameTurn()
