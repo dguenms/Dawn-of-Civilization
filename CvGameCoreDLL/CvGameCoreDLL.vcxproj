@@ -75,13 +75,11 @@ bin\jom build</NMakeBuildCommandLine>
     <NMakeBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">set TARGET=Profile
 nmake source_list
 nmake fastdep
-nmake precompile
-bin\jom build</NMakeBuildCommandLine>
+nmake dll</NMakeBuildCommandLine>
     <NMakeBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">set TARGET=Debug
 nmake source_list
 nmake fastdep
-nmake precompile
-bin\jom build</NMakeBuildCommandLine>
+nmake dll</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set TARGET=Release
 nmake clean
 nmake source_list
@@ -98,14 +96,12 @@ bin\jom build</NMakeReBuildCommandLine>
 nmake clean
 nmake source_list
 nmake fastdep
-nmake precompile
-bin\jom build</NMakeReBuildCommandLine>
+nmake dll</NMakeReBuildCommandLine>
     <NMakeReBuildCommandLine Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">set TARGET=Debug
 nmake clean
 nmake source_list
 nmake fastdep
-nmake precompile
-bin\jom build</NMakeReBuildCommandLine>
+nmake dll</NMakeReBuildCommandLine>
     <NMakeCleanCommandLine Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set TARGET=Release
 nmake clean</NMakeCleanCommandLine>
     <NMakeCleanCommandLine Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">set TARGET=Assert
