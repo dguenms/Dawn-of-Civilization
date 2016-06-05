@@ -27,8 +27,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_HELP</Tag>
-		<English>[ICON_BULLET]Artists can also be hired using Priest slots.</English>
-		<German>[ICON_BULLET]K&#252;nstler k&#246;nnen auch mithilfe von Priesterstellen eingestellt werden.</German>
+		<English>[ICON_BULLET]Artists can also be hired using Priest slots</English>
+		<German>[ICON_BULLET]K&#252;nstler k&#246;nnen auch mithilfe von Priesterstellen eingestellt werden</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Tag>
@@ -187,8 +187,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_HELP</Tag>
-		<English>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population.</English>
-		<German>[ICON_BULLET]Produziert [ICON_GOLD] entsprechend der Bev&#246;lkerung seiner Stadt.</German>
+		<English>[ICON_BULLET]Provides [ICON_GOLD] bonus equal to city's population</English>
+		<German>[ICON_BULLET]Produziert [ICON_GOLD] entsprechend der Bev&#246;lkerung seiner Stadt</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING_STRATEGY</Tag>
@@ -263,8 +263,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_WALL_HELP</Tag>
-		<English>[ICON_BULLET]Reduced Enemy Movement Speed Within the Walls.[NEWLINE][ICON_BULLET]Barbarian Units Take Damage within the Walls</English>
-		<German>[ICON_BULLET]Geringere Bewegung feindlicher Einheiten innerhalb der Mauern.[NEWLINE][ICON_BULLET]Barbarische Einheiten nehmen Schaden innerhalb der Mauern</German>
+		<English>[ICON_BULLET]Reduced Enemy Movement Speed Within the Walls[NEWLINE][ICON_BULLET]Barbarian Units Take Damage within the Walls</English>
+		<German>[ICON_BULLET]Geringere Bewegung feindlicher Einheiten innerhalb der Mauern[NEWLINE][ICON_BULLET]Barbarische Einheiten nehmen Schaden innerhalb der Mauern</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_WALL_STRATEGY</Tag>
@@ -710,8 +710,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Tag>
-		<English>[ICON_BULLET]Great prophets can create great works like great artists.</English>
-		<German>[ICON_BULLET]Gro&#223;e Propheten k&#246;nnen gro&#223;e Kunstwerke erstellen, genau wie gro&#223;e K&#252;nstler.</German>
+		<English>[ICON_BULLET]Great prophets can create great works like great artists</English>
+		<German>[ICON_BULLET]Gro&#223;e Propheten k&#246;nnen gro&#223;e Kunstwerke erstellen, genau wie gro&#223;e K&#252;nstler</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Tag>
@@ -849,8 +849,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_HELP</Tag>
-		<English>[ICON_BULLET]Requires a naval unit of level three or higher.</English>
-		<German>[ICON_BULLET]Ben&#246;tigt eine Marineeinheit der Stufe drei oder h&#246;her.</German>
+		<English>[ICON_BULLET]Requires a naval unit of level three or higher</English>
+		<German>[ICON_BULLET]Ben&#246;tigt eine Marineeinheit der Stufe drei oder h&#246;her</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_STRATEGY</Tag>
