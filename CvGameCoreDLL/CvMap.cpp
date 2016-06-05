@@ -1214,7 +1214,7 @@ void CvMap::resetPathDistance()
 }
 
 
-int CvMap::calculatePathDistance(CvPlot *pSource, CvPlot *pDest)
+int CvMap::calculatePathDistance(CvPlot *pSource, CvPlot *pDest, int iFlags)
 {
 	FAStarNode* pNode;
 
@@ -1223,7 +1223,7 @@ int CvMap::calculatePathDistance(CvPlot *pSource, CvPlot *pDest)
 		return -1;
 	}
 
-	if (gDLL->getFAStarIFace()->GeneratePath(&GC.getStepFinder(), pSource->getX_INLINE(), pSource->getY_INLINE(), pDest->getX_INLINE(), pDest->getY_INLINE(), false, 0, true))
+	if (gDLL->getFAStarIFace()->GeneratePath(&GC.getStepFinder(), pSource->getX_INLINE(), pSource->getY_INLINE(), pDest->getX_INLINE(), pDest->getY_INLINE(), false, iFlags, true))
 	{
 		pNode = gDLL->getFAStarIFace()->GetLastNode(&GC.getStepFinder());
 

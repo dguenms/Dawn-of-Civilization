@@ -262,7 +262,7 @@ public:
 	void recalculateAreas();																		// Exposed to Python
 
 	void resetPathDistance();																		// Exposed to Python
-	int calculatePathDistance(CvPlot *pSource, CvPlot *pDest);	// Exposed to Python
+	int calculatePathDistance(CvPlot *pSource, CvPlot *pDest, int iFlags = 0);	// Exposed to Python
 
 	// Serialization:
 	DllExport virtual void read(FDataStreamBase* pStream);
