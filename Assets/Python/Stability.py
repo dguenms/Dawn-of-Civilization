@@ -1485,6 +1485,9 @@ def calculateStability(iPlayer):
 		pLoopPlayer = gc.getPlayer(iLoopPlayer)
 		tLoopPlayer = gc.getTeam(pLoopPlayer.getTeam())
 		iLoopScore = pLoopPlayer.getScoreHistory(iGameTurn)
+		
+		if iLoopPlayer == iPlayer: continue
+		if not pLoopPlayer.isAlive(): continue
 	
 		# neighbor stability
 		if utils.isNeighbor(iPlayer, iLoopPlayer) or iLoopPlayer in lNeighbours[iPlayer]:
@@ -1531,7 +1534,7 @@ def calculateStability(iPlayer):
 				if pLoopPlayer.getStateReligion() != iStateReligion: iFanaticismStability += 3
 				else: iFanaticismStability -= 2
 		if bMultilateralism:
-			if gc.getPlayer(iLoopPlayer).isAlive() and tPlayer.isAtWar(iLoopPlayer):
+			if tPlayer.isAtWar(iLoopPlayer):
 				iMultilateralismStability -= 2
 		
 	# penalize contacts because they allow more OB treaties
