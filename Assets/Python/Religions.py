@@ -302,7 +302,7 @@ class Religions:
 
 			lJewishCities = []
 			for iPlayer in range(iNumTotalPlayersB):
-				lJewishCities.extend([city for city in utils.getCityList(iPlayer)])
+				lJewishCities.extend([city for city in utils.getCityList(iPlayer) if city.isHasReligion(iJudaism) and city.getOwner() != utils.getHumanID()])
 							
 			if lJewishCities:
 				pChristianCity = utils.getRandomEntry(lJewishCities)
