@@ -4785,6 +4785,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 											{
 												if (!(GC.getGameINLINE().isReligionSlotTaken((ReligionTypes)iJ)))
 												{
+													if (iJ == JUDAISM) continue;
+													if ((iJ == CONFUCIANISM || iJ == TAOISM) && getID() != CHINA) continue;
+													if (iJ == ZOROASTRIANISM && getID() != PERSIA) continue;
+
 													int iRoll = 2400;
 													if (!GC.getGame().isOption(GAMEOPTION_PICK_RELIGION))
 													{
@@ -5033,11 +5037,13 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case BABYLONIA:
 									if (iI == MEDITATION || iI == CALENDAR || iI == MONOTHEISM)
 										iValue /= 3;
-									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
-										iValue /= 5;
+									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded(JUDAISM))
+										iValue = 0;
 									if (iI == WRITING || iI == CODEOFLAWS)
 										iValue *= 3;
-									if (iI == MASONRY || iI == MONARCHY || iI == POLYTHEISM)
+									if (iI == MASONRY || iI == POLYTHEISM)
+										iValue *= 2;
+									if (iI == MONARCHY && !GC.getGame().isReligionFounded(JUDAISM))
 										iValue *= 2;
 									if (iI == MATHEMATICS || iI == BRONZEWORKING || iI == FEUDALISM)
 										iValue /= 3;
@@ -5117,7 +5123,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                         iValue *= 3;
                                         iValue /= 2;
                                     }
-                                    if (iI == MACHINERY)
+                                    if (iI == MACHINERY || iI == COMPASS)
                                         iValue /= 2;
 									if (iI == DIVINERIGHT)
 										iValue /= 4;

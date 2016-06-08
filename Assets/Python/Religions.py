@@ -107,6 +107,8 @@ class Religions:
 						self.foundReligion((92, 39), iHinduism)
 				
 		self.checkJudaism(iGameTurn)
+		
+		self.checkBuddhism(iGameTurn)
 
 		self.checkChristianity(iGameTurn)
 						
@@ -222,17 +224,28 @@ class Religions:
 		#print city.getOwner()
 		utils.makeUnit(iMissionary, city.getOwner(), tCoords, iNum)
 		
+	def selectHolyCity(self, tTL, tBR, tPreferredCity = None, bAIOnly = True):
+		x, y = tPreferredCity
+		if gc.getMap().plot(x, y).isCity():
+			if not bAIOnly or utils.getHumanID() != gc.getMap().plot(x, y).getPlotCity().getOwner():
+				return tPreferredCity
+		
+		lCities = [city for city in utils.getAreaCities(utils.getPlotList(tTL, tBR)) if not bAIOnly or city.getOwner() != utils.getHumanID()]
+		
+		if lCities:
+			city = utils.getRandomEntry(lCities)
+			return (city.getX(), city.getY())
+			
+		return None
+		
 ## JUDAISM
 
 	def checkJudaism(self, iGameTurn):
 		if gc.getGame().isReligionFounded(iJudaism): return
 
-		if iGameTurn == getTurnForYear(-1200) - utils.getTurns(5) + utils.getTurns(utils.getSeed() % 10):
-			if gc.getMap().plot(tJerusalem[0], tJerusalem[1]).isCity():
-				self.foundReligion(tJerusalem, iJudaism)
-			else:
-				self.foundReligion(utils.getRandomEntry(utils.getAreaCities(utils.getPlotList(tJewishTL, tJewishBR))), iJudaism)
-
+		if iGameTurn == getTurnForYear(-1500) - utils.getTurns(utils.getSeed() % 5):
+			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
+			
 	def spreadJudaismEurope(self, iGameTurn):
 		if not gc.getGame().isReligionFounded(iJudaism): return
 		if iGameTurn < getTurnForYear(1000): return
@@ -261,6 +274,13 @@ class Religions:
 			if pSpreadCity:
 				pSpreadCity.setHasReligion(iJudaism, True, True, True)
 		
+## BUDDHISM
+
+	def checkBuddhism(self, iGameTurn):
+		if gc.getGame().isReligionFounded(iBuddhism): return
+		
+		if iGameTurn == getTurnForYear(-300) - 5 + utils.getTurns(utils.getSeed() % 10):
+			self.foundReligion(self.selectHolyCity(tBuddhistTL, tBuddhistBR), iBuddhism)
 		
 ## ORTHODOXY
 
@@ -516,3 +536,5 @@ class Religions:
 				rndnum = gc.getGame().getSorenRandNum(100, 'ReformationAnyway')
 				if(rndnum >= lReformationMatrix[iCiv]):
 					city.city.setHasReligion(iProtestantism, True, False, False)
+
+					

@@ -11,7 +11,7 @@
 			<Description>TXT_KEY_RELIGION_JUDAISM</Description>
 			<Adjective>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_JUDAISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_MONOTHEISM</TechPrereq>
+			<TechPrereq>TECH_PRIESTHOOD</TechPrereq>
 			<FreeUnitClass>UNITCLASS_JEWISH_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
 			<iSpreadFactor>50</iSpreadFactor>
@@ -297,7 +297,7 @@
 			<Description>TXT_KEY_RELIGION_ZOROASTRIANISM</Description>
 			<Adjective>TXT_KEY_RELIGION_ZOROASTRIANISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ZOROASTRIANISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_MONARCHY</TechPrereq>
+			<TechPrereq>TECH_MONOTHEISM</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ZOROASTRIAN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>50</iSpreadFactor>
