@@ -640,7 +640,10 @@ def checkLeader(iPlayer):
 ### Setter methods for player object ###
 
 def setDesc(iPlayer, sName):
-	gc.getPlayer(iPlayer).setCivDescription(sName)
+	try:
+		gc.getPlayer(iPlayer).setCivDescription(sName)
+	except:
+		pass
 	
 def setShort(iPlayer, sShort):
 	gc.getPlayer(iPlayer).setCivShortDescription(sShort)
