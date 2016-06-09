@@ -1368,24 +1368,53 @@ class RFCUtils:
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		return lFreePlots[iRand]
 		
-	def handleChineseCities(self, pUnit):
-		iRand = gc.getGame().getSorenRandNum(len(lChineseCities), 'Random city')
+	def surroundingPlots(self, tPlot, iRadius=1, filter=lambda (x, y): True):
+		x, y = tPlot
+		return [(i, j) for i in [x-1, x, x+1] for j in [y-1, y, y+1] if 0 <= i < con.iWorldX and 0 <= i < con.iWorldY and not filter(i, j)]
 		
-		for i in range(len(lChineseCities)):
-			iIndex = (iRand + i) % len(lChineseCities)
-			tPlot = lChineseCities[iIndex]
+	def getUnitList(self, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		return [plot.getUnit(i) for i in range(plot.getNumUnits())]
+		
+	def hasEnemyUnit(self, iPlayer, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		for unit in self.getUnitList(tPlot):
+			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isAtWar(unit.getTeam()): return True
 			
-			x, y = tPlot
-			bFree = True
-			for j in range(x-1, x+2):
-				for k in range(y-1, y+2):
-					if gc.getMap().plot(j, k).isCity():
-						bFree = False
-						
-			if bFree:
-				gc.getPlayer(con.iChina).found(x, y)
-				pUnit.kill(False, con.iBarbarian)
-				return
+		return False
+		
+	def isFree(self, iPlayer, tPlot, bNoCity=False, bNoEnemyUnit=False, bCanEnter=False):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		
+		if bNoCity:
+			isCity = lambda (i, j): gc.getMap().plot(i, j).isCity()
+			if self.surroundingPlots(tPlot, filter=isCity):
+				return False
+				
+		if bNoEnemyUnit:
+			hasEnemyUnit = lambda (i, j): self.hasEnemyUnit(iPlayer, (i, j))
+			if self.surroundingPlots(tPlot, filter=hasEnemyUnit):
+				return False
+			
+		if bCanEnter:
+			if plot.isPeak(): return False
+			if plot.isWater(): return False
+			if plot.getFeatureType() in [con.iMarsh, con.iJungle]: return False
+			
+		return True
+		
+	def handleChineseCities(self, pUnit):
+		lCities = [(x, y) for (x, y) in lChineseCities if self.isFree(con.iChina, (x, y), True, True, True)]
+
+		if lCities:
+			x, y = self.getRandomEntry(lCities)
+			gc.getPlayer(con.iChina).found(x, y)
+			pUnit.kill(False, con.iBarbarian)
 				
 	def foundCapital(self, iPlayer, tPlot, sName, iSize, iCulture, lBuildings=[], lReligions=[], iScenario=False):
 	
