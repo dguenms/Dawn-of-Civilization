@@ -225,10 +225,11 @@ class Religions:
 		utils.makeUnit(iMissionary, city.getOwner(), tCoords, iNum)
 		
 	def selectHolyCity(self, tTL, tBR, tPreferredCity = None, bAIOnly = True):
-		x, y = tPreferredCity
-		if gc.getMap().plot(x, y).isCity():
-			if not bAIOnly or utils.getHumanID() != gc.getMap().plot(x, y).getPlotCity().getOwner():
-				return tPreferredCity
+		if tPreferredCity:
+			x, y = tPreferredCity
+			if gc.getMap().plot(x, y).isCity():
+				if not bAIOnly or utils.getHumanID() != gc.getMap().plot(x, y).getPlotCity().getOwner():
+					return tPreferredCity
 		
 		lCities = [city for city in utils.getAreaCities(utils.getPlotList(tTL, tBR)) if not bAIOnly or city.getOwner() != utils.getHumanID()]
 		

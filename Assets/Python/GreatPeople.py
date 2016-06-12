@@ -50,21 +50,13 @@ def getEraNames(iCiv, iType, iEra):
 	
 	iSpread = max(iNextOffset - iOffset, iEra+2)
 	
-	print "Offset: " + str(iOffset)
-	print "Spread: " + str(iSpread)
-	
 	lBefore = [sName for sName in lNames[:iOffset] if not gc.getGame().isGreatPersonBorn(sName)]
 	lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
 	
-	print "lBefore: " + str(lBefore)
-	print "lAfter: " + str(lAfter)
-	
 	if len(lAfter) >= iSpread:
-		print "Only after offset: " + str(lAfter[:iSpread])
 		return lAfter[:iSpread]
 	
 	iSpread -= len(lAfter)
-	print "Include before: " + str(lBefore[:-iSpread] + lAfter)
 	return lBefore[:-iSpread] + lAfter
 	
 def getName(unit):
