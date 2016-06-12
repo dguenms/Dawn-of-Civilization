@@ -7,7 +7,8 @@ from array import *
 # globals
 gc = CyGlobalContext()
 version = 11
-fileencoding = "latin_1"	# aka "iso-8859-1"
+#fileencoding = "latin_1"	# aka "iso-8859-1"
+fileencoding = "utf8"
 
 ## self.bSpecial True will load the following additional special effects:
 ## Team Abilities: MapCentering, MapTrading, OpenBordersTrading, IgnoreIrrigation etc
