@@ -1,4 +1,4 @@
-# encoding: utf8
+# coding: utf-8
 
 from CvPythonExtensions import *
 import CvUtil
@@ -14,6 +14,8 @@ import Areas
 
 gc = CyGlobalContext()
 localText = CyTranslator()
+
+encoding = "utf-8"
 
 tBrazilTL = (32, 14)
 tBrazilBR = (43, 30)
@@ -672,7 +674,7 @@ def key(iPlayer, sSuffix):
 	return "TXT_KEY_CIV_" + short(iPlayer).replace(" ", "_").upper() + sSuffix
 
 def text(sTextKey, tInput=()):
-	return localText.getText(str(sTextKey), tInput)
+	return localText.getText(sTextKey.encode(encoding), tInput)
 	
 def desc(iPlayer, sTextKey=str("%s1")):
 	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))

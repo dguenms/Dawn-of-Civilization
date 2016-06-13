@@ -139,15 +139,12 @@
 	<load mod="Advanced Scoreboard"/>
 	<load mod="Plot List Enhancements"/>
 	
-	<load mod="Autolog"/>
-	<load mod="Reminder"/>  <!-- requires Autolog -->
 	<load mod="Civ4lerts"/>
 	<load mod="MoreCiv4lerts"/>
 	<load mod="Unit Naming"/>
 	<load mod="FavoriteCivicDetector"/>
 	<load mod="EventSigns"/>
 	<load mod="Strategy Overlay"/>
-	<load mod="StatusDump"/>
 	
 	<!-- BULL -->
 	
@@ -181,8 +178,6 @@
 		<tab module="BugPleOptionsTab"/>
 		<tab module="BugACOOptionsTab"/>
 		<tab module="BugUnitNameOptionsTab"/>
-		
-		<tab module="BugAutologOptionsTab"/>
 		
 		<tab module="BugSystemOptionsTab"/>
 		<tab module="BugCreditsOptionsTab"/>

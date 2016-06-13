@@ -73,10 +73,6 @@ localText = CyTranslator()
 import GameUtil
 # BUG - 3.17 No Espionage - end
 
-# BUG - Reminders - start
-import ReminderEventManager
-# BUG - Reminders - end
-
 # BUG - Great General Bar - start
 import GGUtil
 # BUG - Great General Bar - end
@@ -1154,12 +1150,6 @@ class CvMainInterface:
 					screen.setEndTurnState( "EndTurnText", acOutput )
 					bShow = True
 				elif ( CyInterface().shouldDisplayEndTurn() ):
-# BUG - Reminders - start
-					if ( ReminderEventManager.g_turnReminderTexts ):
-						acOutput = u"%s" % ReminderEventManager.g_turnReminderTexts
-					else:
-						acOutput = localText.getText("SYSTEM_END_TURN", ())
-# BUG - Reminders - end
 					#screen.modifyLabel( "EndTurnText", acOutput, CvUtil.FONT_CENTER_JUSTIFY )
 					screen.setEndTurnState( "EndTurnText", acOutput )
 					bShow = True

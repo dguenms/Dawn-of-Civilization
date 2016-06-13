@@ -1,3 +1,5 @@
+# coding: utf-8
+
 from CvPythonExtensions import *
 import os
 import sys
@@ -8,7 +10,7 @@ from array import *
 gc = CyGlobalContext()
 version = 11
 #fileencoding = "latin_1"	# aka "iso-8859-1"
-fileencoding = "utf8"
+fileencoding = "utf-8"
 
 ## self.bSpecial True will load the following additional special effects:
 ## Team Abilities: MapCentering, MapTrading, OpenBordersTrading, IgnoreIrrigation etc
@@ -305,7 +307,7 @@ class CvTeamDesc:
 			if i == idx: continue
 			if gc.getTeam(i).isBarbarian(): continue
 			if pTeam.isHasMet(i):
-				f.write("\tContactWithTeam=%d, (%s)\n" %(i, gc.getTeam(i).getName()))
+				f.write("\tContactWithTeam=%d, (%s)\n" %(i, gc.getTeam(i).getName().encode(fileencoding)))
 	## Platy Builder ##
 		# write warring teams
 		for i in xrange(gc.getMAX_TEAMS()):
@@ -1869,6 +1871,7 @@ class CvWBDesc:
 		"Save out a high-level desc of the world, and height/terrainmaps"
 		fileName = os.path.normpath(fileName)
 		fileName,ext = os.path.splitext(fileName)
+		fileName = fileName.encode(fileencoding)
 		CvUtil.pyPrint( 'saveDesc:%s, curDir:%s' %(fileName,os.getcwd()) )
 
 		f = file(self.getDescFileName(fileName), "w")		# open text file
