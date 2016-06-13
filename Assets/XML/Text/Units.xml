@@ -1414,4 +1414,19 @@
 		<Tag>TXT_KEY_UNIT_ZOROASTRIAN_MISSIONARY_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Magus[COLOR_REVERT] ([COLOR_UNIT_TEXT]Zoroastrian Missionaries[COLOR_REVERT]) can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in friendly cities (or rival cities with whom you have [COLOR_HIGHLIGHT_TEXT]Open Borders[COLOR_REVERT]).</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPREAD_REQUIRES_GEOGRAPHY</Tag>
+		<English>[ICON_BULLET]Can Only Spread in Historical Regions for [LINK=literal]%s1[\LINK] or if it is the Prevalent State Religion</English>
+		<German>[ICON_BULLET]Kann [LINK=literal]%s1[\LINK] nur in historischen Regionen verbreiten, oder wo es die vorherrschende Staatsreligion ist</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPREAD_REQUIRES_STATE_RELIGION</Tag>
+		<English>[ICON_BULLET]Cannot Spread [LINK=literal]%s1[\LINK] within a Civilization that has a Different State Religion</English>
+		<German>[ICON_BULLET]Kann [LINK=literal]%s1[\LINK] nicht innerhalb einer Zivilisation mit anderer Staatsreligion verbreiten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_</Tag>
+		<English></English>
+		<German></German>
+	</TEXT>
 </Civ4GameText>

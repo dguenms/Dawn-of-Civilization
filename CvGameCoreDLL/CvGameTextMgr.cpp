@@ -8545,6 +8545,23 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 	}
 
 	bFirst = true;
+	for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)
+	{
+		if (GC.getUnitInfo(eUnit).getReligionSpreads(iI) > 0)
+		{
+			szBuffer.append(NEWLINE);
+			if (GC.getReligionInfo((ReligionTypes)iI).isProselytizing())
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_UNIT_SPREAD_REQUIRES_GEOGRAPHY", GC.getReligionInfo((ReligionTypes)iI).getDescription()));
+			}
+			else
+			{
+				szBuffer.append(gDLL->getText("TXT_KEY_UNIT_SPREAD_REQUIRES_STATE_RELIGION", GC.getReligionInfo((ReligionTypes)iI).getDescription()));
+			}
+		}
+	}
+
+	bFirst = true;
 
 	for (iI = 0; iI < GC.getNumCorporationInfos(); ++iI)
 	{
