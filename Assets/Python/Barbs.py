@@ -510,7 +510,6 @@ class Barbs:
 					
 	#Leoreth: new ways to spawn barbarians
 	def checkSpawn(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, spawnFunction, iTurn, iPeriod, iRest, lAdj=[]):
-	
 		if len(lAdj) == 0:
 			sAdj = ""
 		else:
@@ -519,70 +518,47 @@ class Barbs:
 		if iTurn % utils.getTurns(iPeriod) == iRest:
 			spawnFunction(iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj)
 			
-	def getFreeWaterTiles(self, tTL, tBR, bTerritory=False, bOcean=False):
-	
-		plotList = []
-	
-		for x in range(tTL[0], tBR[0]+1):
-			for y in range(tTL[1], tBR[1]+1):
-				plot = gc.getMap().plot(x,y)
-				if plot.getTerrainType() == con.iCoast or (bOcean and plot.getTerrainType() == con.iOcean):
-					if not plot.isUnit() and plot.area().getNumTiles() > 10:
-						if not (bTerritory and plot.getOwner() != -1):
-							plotList.append((x,y))
-							
-		return plotList
+	def possibleTiles(self, tTL, tBR, bWater=False, bTerritory=False, bBorder=False, bImpassable=False, bNearCity=False):
+		return [tPlot for tPlot in utils.getPlotList(tTL, tBR) if self.possibleTile(tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity)]
 		
-	def getFreeLandTiles(self, tTL, tBR, bTerritory=False, bJungle=False):
-		plotList = []
-	
-		for x in range(tTL[0], tBR[0]+1):
-			for y in range(tTL[1], tBR[1]+1):
-				plot = gc.getMap().plot(x,y)
-				if plot.isHills() or plot.isFlatlands():
-					if plot.getTerrainType() != con.iMarsh and (bJungle or plot.getFeatureType() != con.iJungle):
-						if not plot.isUnit() and not plot.isCity():
-							bClear = True
-							for i in range(x-1, x+2):
-								for j in range(y-1, y+2):
-									if gc.getMap().plot(i,j).isCity(): bClear = False
-								
-							if bClear and not (bTerritory and plot.getOwner() != -1):
-								plotList.append((x,y))
-							
-		return plotList
-		
-	def getTargetCities(self, tTL, tBR):
-		cityPlotList = []
-		
-		for x in range(tTL[0], tBR[0]+1):
-			for y in range(tTL[1], tBR[1]+1):
-				plot = gc.getMap().plot(x,y)
-				if plot.isCity():
-					city = plot.getPlotCity()
-					if city.getOwner() < con.iNumPlayers and (city.getPopulation() > 1 or city.getCultureLevel() > 0):
-						cityPlotList.append((city.getX(), city.getY()))
-						
-		return cityPlotList
-		
-	def getCitySpawnPlot(self, tPlot):
+	def possibleTile(self, tPlot, bWater, bTerritory, bBorder, bImpassable, bNearCity):
 		x, y = tPlot
-		plotList = []
+		plot = gc.getMap().plot(x, y)
+		lSurrounding = utils.surroundingPlots(tPlot)
 		
-		for i in range(x-2, x+3):
-			for j in range(y-2, y+3):
-				if abs(x-i) == 2 or abs(y-j) == 2:
-					plot = gc.getMap().plot(i,j)
-					if not plot.isUnit() and not plot.isWater() and not plot.isPeak() and not plot.isCity():
-						plotList.append((i,j))
-						
-		return utils.getRandomEntry(plotList)
+		# only land or water
+		if bWater and not plot.isWater(): return False
+		
+		# only inside territory if specified
+		if not bTerritory and plot.getOwner() >= 0: return False
+		
+		# never directly next to cities
+		if [(i, j) for (i, j) in lSurrounding if gc.getMap().plot(i, j).isCity()]: return False
+		
+		# never on tiles with units
+		if plot.isUnit(): return False
+		
+		# never in marsh (impassable)
+		if plot.getFeatureType() == con.iMarsh: return False
+		
+		# allow other impassable terrain (ocean, jungle)
+		if not bImpassable:
+			if plot.getTerrainType() == con.iOcean: return False
+			if plot.getFeatureType() == con.iJungle: return False
+		
+		# only near borders if specified
+		if bBorder and not [(i, j) for (i, j) in lSurrounding if gc.getMap().plot(i, j).getOwner() != plot.getOwner()]: return False
+		
+		# near a city if specified (next to cities excluded above)
+		if bNearCity and not [(i, j) for (i, j) in utils.surroundingPlots(tPlot, 2, lambda (a, b): gc.getMap().plot(a, b).isCity())]: return False
+		
+		return True
 
 	def spawnPirates(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: spawns all ships at the same coastal spot, out to pillage and disrupt trade, can spawn inside borders'''
-	
-		plotList = self.getFreeWaterTiles(tTL, tBR, False, False)
-		tPlot = utils.getRandomEntry(plotList)
+		
+		lPlots = self.possibleTiles(tTL, tBR, bWater=True, bTerritory=False)
+		tPlot = utils.getRandomEntry(lPlots)
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_PIRATE_SEA, iNumUnits, sAdj)
@@ -590,21 +566,21 @@ class Barbs:
 	def spawnNatives(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: outside of territory, in jungles, all dispersed on several plots, out to pillage'''
 		
-		plotList = self.getFreeLandTiles(tTL, tBR, True, True)
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=False, bImpassable=True)
 		
 		for i in range(iNumUnits):
-			tPlot = utils.getRandomEntry(plotList)
+			tPlot = utils.getRandomEntry(lPlots)
 			if not tPlot: break
 			
-			plotList.remove(tPlot)
+			lPlots.remove(tPlot)
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, 1, sAdj)
 			
 	def spawnMinors(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: represents minor states without ingame cities
 			    outside of territory, not in jungles, in groups, passive'''
 			    
-		plotList = self.getFreeLandTiles(tTL, tBR, True, False)
-		tPlot = utils.getRandomEntry(plotList)
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=False)
+		tPlot = utils.getRandomEntry(lPlots)
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
@@ -612,9 +588,9 @@ class Barbs:
 	def spawnNomads(self, iPlayer, iUnitType, iNumUnits, tTL, tBR, sAdj=""):
 		'''Leoreth: represents aggressive steppe nomads etc.
 			    outside of territory, not in jungles, in small groups, target cities'''
-			    
-		plotList = self.getFreeLandTiles(tTL, tBR, True, False)
-		tPlot = utils.getRandomEntry(plotList)
+		
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=False)
+		tPlot = utils.getRandomEntry(lPlots)
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
@@ -623,8 +599,8 @@ class Barbs:
 		'''Leoreth: represents large invasion forces and migration movements
 			    inside of territory, not in jungles, in groups, target cities'''
 			    
-		plotList = self.getFreeLandTiles(tTL, tBR, False, False)
-		tPlot = utils.getRandomEntry(plotList)
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=True, bBorder=True)
+		tPlot = utils.getRandomEntry(lPlots)
 		
 		if tPlot:
 			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
@@ -633,12 +609,9 @@ class Barbs:
 		''' Leoreth: represents uprisings of Natives against colonial settlements, especially North America
 			     spawns units in a free plot in the second ring of a random target city in the area
 			     (also used for units from warring city states in classical Mesoamerica)'''
-			     
-		targetCityList = self.getTargetCities(tTL, tBR)
-		tCity = utils.getRandomEntry(targetCityList)
 		
-		if tCity:
-			tPlot = self.getCitySpawnPlot(tCity)
-			
-			if tPlot:
-				utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
+		lPlots = self.possibleTiles(tTL, tBR, bTerritory=True, bNearCity=True)
+		tPlot = utils.getRandomEntry(lPlots)
+		
+		if tPlot:
+			utils.makeUnitAI(iUnitType, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK, iNumUnits, sAdj)
