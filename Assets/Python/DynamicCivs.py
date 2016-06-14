@@ -680,10 +680,10 @@ def desc(iPlayer, sTextKey=str("%s1")):
 	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
 
 def short(iPlayer):
-	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getShortDescription(0)
+	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getShortDescription(0).encode(encoding)
 	
 def civAdjective(iPlayer):
-	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getAdjective(0)
+	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getAdjective(0).encode(encoding)
 
 def capitalName(iPlayer):
 	capital = gc.getPlayer(iPlayer).getCapitalCity()
