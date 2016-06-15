@@ -1,4 +1,5 @@
 from CvPythonExtensions import *
+from RFCUtils import utils
 import CvUtil
 
 gc = CyGlobalContext()
@@ -49,6 +50,16 @@ class CvPediaUnit:
 		self.Y_PROMOTIONS = self.Y_ABILITIES
 		self.W_PROMOTIONS = self.W_UNIT_ANIMATION
 		self.H_PROMOTIONS = self.H_ABILITIES
+		
+		self.X_REPLACEMENTS = self.X_ABILITIES + self.W_ABILITIES + 10
+		self.Y_REPLACEMENTS = self.Y_ABILITIES
+		self.W_REPLACEMENTS = self.W_UNIT_ANIMATION
+		self.H_REPLACEMENTS = self.H_REQUIRES + 5
+		
+		self.X_UPGRADES = self.X_REPLACEMENTS
+		self.W_UPGRADES = self.W_REPLACEMENTS
+		self.H_UPGRADES = self.H_REPLACEMENTS
+		self.Y_UPGRADES = self.Y_REPLACEMENTS + self.H_ABILITIES - self.H_UPGRADES
 
 		self.X_HISTORY = self.X_INFO_PANE
 		self.Y_HISTORY = self.Y_ABILITIES + self.H_ABILITIES + 10
@@ -65,7 +76,9 @@ class CvPediaUnit:
 		self.placeInfo()
 		self.placeRequires()
 		self.placeAbilities()
-		self.placePromotions()
+		#self.placePromotions()
+		self.placeReplacements()
+		self.placeUpgrades()
 		self.placeHistory()
 
 
@@ -117,7 +130,37 @@ class CvPediaUnit:
 
 		screen.appendListBoxString(panel, u"<font=3>" + szStats + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 
-
+	def placeReplacements(self):
+		screen = self.top.getScreen()
+		panel = self.top.getNextWidgetName()
+		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_PEDIA_REPLACEMENTS_UPGRADES", ()), "", False, True, self.X_REPLACEMENTS, self.Y_REPLACEMENTS, self.W_REPLACEMENTS, self.H_REPLACEMENTS, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.attachLabel(panel, "", "  ")
+		
+		iUnitClass = gc.getUnitInfo(self.iUnit).getUnitClassType()
+		iBaseUnit = gc.getUnitClassInfo(iUnitClass).getDefaultUnitIndex()
+		
+		if self.iUnit != iBaseUnit:
+			screen.attachImageButton(panel, "", gc.getUnitInfo(iBaseUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iBaseUnit, 1, False)
+			return
+		
+		for iUnit in xrange(gc.getNumUnitInfos()):
+			if self.iUnit != iUnit and not gc.getUnitInfo(iUnit).isGraphicalOnly():
+				if iUnitClass == gc.getUnitInfo(iUnit).getUnitClassType():
+					screen.attachImageButton(panel, "", gc.getUnitInfo(iUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, 1, False)
+					
+	def placeUpgrades(self):
+		screen = self.top.getScreen()
+		panel = self.top.getNextWidgetName()
+		screen.addPanel(panel, " ", "", False, True, self.X_UPGRADES, self.Y_UPGRADES, self.W_UPGRADES, self.H_UPGRADES, PanelStyles.PANEL_STYLE_BLUE50)
+		screen.attachLabel(panel, "", "  ")
+		
+		for iUnitClass in xrange(gc.getNumUnitClassInfos()):
+			if gc.getUnitInfo(self.iUnit).getUpgradeUnitClass(iUnitClass):
+				if self.top.iActivePlayer >= 0:
+					iUnit = utils.getUniqueUnitType(self.top.iActivePlayer, iUnitClass)
+				else:
+					iUnit = gc.getUnitClassInfo(iUnitClass).getDefaultUnitIndex()
+				screen.attachImageButton(panel, "", gc.getUnitInfo(iUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, 1, False)
 
 	def placeRequires(self):
 		screen = self.top.getScreen()
@@ -168,6 +211,7 @@ class CvPediaUnit:
 		if (iPrereq >= 0):
 			screen.attachImageButton(panel, "", gc.getBuildingInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iPrereq, -1, False)
 
+	
 
 
 	def placeAbilities(self):

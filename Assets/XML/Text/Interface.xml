@@ -1554,6 +1554,18 @@
 		<English>Abilities</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_REPLACEMENTS_UPGRADES</Tag>
+		<English>Replacements and Upgrades</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_REPLACEMENTS</Tag>
+		<English>Replaced By</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_UPGRADES</Tag>
+		<English>Upgraded To</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_APPEAR_CONDITIONS</Tag>
 		<English>Appearing conditions</English>
 	</TEXT>

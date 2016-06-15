@@ -9698,7 +9698,8 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 	}*/
 	//Rhye - end comment
 
-	if (bCivilopediaText)
+	// Leoreth: replaced by unit buttons in Python code
+	/*if (bCivilopediaText)
 	{
 		if (eDefaultUnit == eUnit)
 		{
@@ -9729,7 +9730,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 				}
 			}
 		}
-	}
+	}*/
 
 	if (pCity != NULL)
 	{
