@@ -1671,8 +1671,8 @@ class RiseAndFall:
 		for (x, y) in Areas.getNormalArea(iCiv):
 			gc.getMap().plot(x, y).setRevealed(iCiv, True, True, 0)
 				
-		# Leoreth: conditional state religion for colonial civs
-		if iCiv in [iArgentina, iBrazil]:
+		# Leoreth: conditional state religion for colonial civs and Byzantium
+		if iCiv in [iByzantium, iArgentina, iBrazil]:
 			self.setStateReligion(iCiv)
 			
 		if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):

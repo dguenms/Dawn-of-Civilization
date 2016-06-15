@@ -38,8 +38,6 @@ tQufuTL = (102, 44)
 tQufuBR = (106, 46)
 tMecca = (75, 33)
 
-lCatholicCivs = [iCarthage, iRome, iRome, iGreece, iGreece, iByzantium, iByzantium]
-
 dCatholicPreference = {
 iEgypt		: 80,
 iGreece		: 80,
@@ -131,6 +129,8 @@ class Religions:
 		
 		
 	def onReligionFounded(self, iReligion, iFounder):
+		if gc.getGame().getGameTurn() == utils.getScenarioStartTurn(): return
+	
 		if iReligion == iCatholicism:
 			utils.setStateReligionBeforeBirth(lCatholicStart, iCatholicism)
 			utils.setStateReligionBeforeBirth(lProtestantStart, iCatholicism)
@@ -376,7 +376,7 @@ class Religions:
 			
 		for iPlayer in range(iNumPlayers):
 			pPlayer = gc.getPlayer(iPlayer)
-			if pPlayer.getStateReligion() == iOrthodoxy:
+			if pPlayer.isAlive() and pPlayer.getStateReligion() == iOrthodoxy:
 				lConvertedCities = [city for city in lReplace if city.getOwner() == iPlayer]
 				if 2 * len(lConvertedCities) >= gc.getPlayer(iPlayer).getNumCities():
 					gc.getPlayer(iPlayer).setLastStateReligion(iCatholicism)
