@@ -527,7 +527,7 @@ class Barbs:
 		lSurrounding = utils.surroundingPlots(tPlot)
 		
 		# only land or water
-		if bWater and not plot.isWater(): return False
+		if bWater != plot.isWater(): return False
 		
 		# only inside territory if specified
 		if not bTerritory and plot.getOwner() >= 0: return False
