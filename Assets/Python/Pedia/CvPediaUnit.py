@@ -156,7 +156,7 @@ class CvPediaUnit:
 		
 		for iUnitClass in xrange(gc.getNumUnitClassInfos()):
 			if gc.getUnitInfo(self.iUnit).getUpgradeUnitClass(iUnitClass):
-				if self.top.iActivePlayer >= 0:
+				if self.top.iActivePlayer >= 0 and self.iUnit == utils.getUniqueUnit(self.top.iActivePlayer, self.iUnit):
 					iUnit = utils.getUniqueUnitType(self.top.iActivePlayer, iUnitClass)
 				else:
 					iUnit = gc.getUnitClassInfo(iUnitClass).getDefaultUnitIndex()
