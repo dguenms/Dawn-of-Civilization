@@ -546,7 +546,7 @@ class Barbs:
 			if plot.getTerrainType() == con.iOcean: return False
 			if plot.getFeatureType() == con.iJungle: return False
 		
-		# only near borders if specified
+		# restrict to borders if specified
 		if bBorder and not [(i, j) for (i, j) in lSurrounding if gc.getMap().plot(i, j).getOwner() != plot.getOwner()]: return False
 		
 		# near a city if specified (next to cities excluded above)

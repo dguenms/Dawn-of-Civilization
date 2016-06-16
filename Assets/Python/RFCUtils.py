@@ -1368,9 +1368,9 @@ class RFCUtils:
 		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
 		return lFreePlots[iRand]
 		
-	def surroundingPlots(self, tPlot, iRadius=1, filter=lambda (x, y): True):
+	def surroundingPlots(self, tPlot, iRadius=1, filter=lambda (x, y): False):
 		x, y = tPlot
-		return [(i, j) for i in [x-1, x, x+1] for j in [y-1, y, y+1] if 0 <= i < con.iWorldX and 0 <= i < con.iWorldY and not filter((i, j))]
+		return [(i, j) for i in [x-iRadius, x, x+iRadius] for j in [y-iRadius, y, y+iRadius] if 0 <= i < con.iWorldX and 0 <= j < con.iWorldY and not filter((i, j))]
 		
 	def getUnitList(self, tPlot):
 		x, y = tPlot
