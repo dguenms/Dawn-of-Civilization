@@ -671,6 +671,9 @@ def getOrElse(dDictionary, iPlayer, sDefault=None):
 
 def key(iPlayer, sSuffix):
 	if sSuffix: sSuffix = "_" + sSuffix
+	print "short(iPlayer) %s" % (short(iPlayer),)
+	print "short(iPlayer).replace() %s" % (short(iPlayer).replace(" ", "_"),)
+	print "short(iPlayer).replace().upper() %s" % (short(iPlayer).replace(" ", "_").upper(),)
 	return "TXT_KEY_CIV_" + short(iPlayer).replace(" ", "_").upper() + sSuffix
 
 def text(sTextKey, tInput=()):
@@ -680,10 +683,10 @@ def desc(iPlayer, sTextKey=str("%s1")):
 	return text(sTextKey, (name(iPlayer), adjective(iPlayer)))
 
 def short(iPlayer):
-	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getShortDescription(0).encode(encoding)
+	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getShortDescription(0)
 	
 def civAdjective(iPlayer):
-	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getAdjective(0).encode(encoding)
+	return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getAdjective(0)
 
 def capitalName(iPlayer):
 	capital = gc.getPlayer(iPlayer).getCapitalCity()
