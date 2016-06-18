@@ -12868,13 +12868,13 @@ void CvCity::setNumRealBuildingTimed(BuildingTypes eIndex, int iNewValue, bool b
 						}
 					}
 
-					for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+					/*for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 					{
 						if (GC.getBuildingInfo(eIndex).getReligionChange(iI) > 0)
 						{
 							setHasReligion(((ReligionTypes)iI), true, true, true);
 						}
-					}
+					}*/
 
 					if (GC.getBuildingInfo(eIndex).getFreeTechs() > 0)
 					{

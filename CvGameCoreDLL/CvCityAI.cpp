@@ -3591,7 +3591,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 		return 0;
 	}
 
-	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	/*for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
 		if (kBuilding.getReligionChange(iI) > 0)
 		{
@@ -3600,7 +3600,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				return 0;
 			}
 		}
-	}
+	}*/
 
 	int iValue = 0;
 
@@ -4631,7 +4631,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					}
 				}
 
-				for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+				/*for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 				{
 					if (kBuilding.getReligionChange(iI) > 0)
 					{
@@ -4640,7 +4640,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 							iValue += (kBuilding.getReligionChange(iI) * ((eStateReligion == iI) ? 10 : 1));
 						}
 					}
-				}
+				}*/
 
 				if (NO_VOTESOURCE != kBuilding.getVoteSourceType())
 				{
