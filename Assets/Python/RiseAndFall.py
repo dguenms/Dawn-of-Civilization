@@ -3709,7 +3709,7 @@ class RiseAndFall:
 		
 		for city in lCities:
 			for iReligion in range(iNumReligions):
-				if city.isHasReligion(iReligion): lReligions[iReligion] += 1
+				if iReligion not in [iJudaism] and city.isHasReligion(iReligion): lReligions[iReligion] += 1
 				
 		iHighestEntry = utils.getHighestEntry(lReligions)
 		
