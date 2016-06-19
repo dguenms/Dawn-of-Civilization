@@ -109,7 +109,7 @@
 			<Civilopedia>TXT_KEY_PROJECT_APOLLO_PROGRAM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_APOLLO_PROGRAM_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_SPACE_EXPLORATION</TechPrereq>
+			<TechPrereq>TECH_SPACEFLIGHT</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>1</iMaxTeamInstances>
@@ -393,7 +393,7 @@
 			<Civilopedia>TXT_KEY_PROJECT_SS_THRUSTERS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_PROJECT_SPACE_THRUSTERS_STRATEGY</Strategy>
 			<VictoryPrereq>VICTORY_SPACE_RACE</VictoryPrereq>
-			<TechPrereq>TECH_QUANTUM_GRAVITY</TechPrereq>
+			<TechPrereq>TECH_UNIFIED_THEORY</TechPrereq>
 			<AnyonePrereqProject>NONE</AnyonePrereqProject>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>5</iMaxTeamInstances>

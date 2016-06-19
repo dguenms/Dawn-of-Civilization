@@ -496,7 +496,7 @@
 				<PrereqTech>TECH_DRAMA</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
+				<PrereqTech>TECH_GEOMETRY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_MUSIC_QUOTE</Quote>
 			<Sound>AS2D_TECH_MUSIC</Sound>
@@ -556,7 +556,7 @@
 				<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
+				<PrereqTech>TECH_GEOMETRY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_CIVIL_SERVICE_QUOTE</Quote>
 			<Sound>AS2D_TECH_CIVIL_SERVICE</Sound>
@@ -1046,7 +1046,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_DEMOCRACY</PrereqTech>
-				<PrereqTech>TECH_STEAM_POWER</PrereqTech>
+				<PrereqTech>TECH_THERMODYNAMICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_COMMUNISM_QUOTE</Quote>
 			<Sound>AS2D_TECH_UTOPIA</Sound>
@@ -1054,10 +1054,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Communism.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,2</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_MASS_MEDIA</Type>
-			<Description>TXT_KEY_TECH_MASS_MEDIA</Description>
-			<Civilopedia>TXT_KEY_TECH_MASS_MEDIA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_MASS_MEDIA_STRATEGY</Strategy>
+			<Type>TECH_TELEVISION</Type>
+			<Description>TXT_KEY_TECH_TELEVISION</Description>
+			<Civilopedia>TXT_KEY_TECH_TELEVISION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_TELEVISION_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<iCost>3200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1091,8 +1091,8 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_RADIO</PrereqTech>
 			</OrPreReqs>
-			<Quote>TXT_KEY_TECH_MASS_MEDIA_QUOTE</Quote>
-			<Sound>AS2D_TECH_MASS_MEDIA</Sound>
+			<Quote>TXT_KEY_TECH_TELEVISION_QUOTE</Quote>
+			<Sound>AS2D_TECH_TELEVISION</Sound>
 			<SoundMP>AS2D_TECH_MP_MASS_MEDIA</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/MassMedia.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,5</Button>
 		</TechInfo>
@@ -1129,7 +1129,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_PLASTICS</PrereqTech>
+				<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 				<PrereqTech>TECH_FISSION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
@@ -1179,10 +1179,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Fishing.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,10</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_THE_WHEEL</Type>
-			<Description>TXT_KEY_TECH_THE_WHEEL</Description>
-			<Civilopedia>TXT_KEY_TECH_THE_WHEEL_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_THE_WHEEL_STRATEGY</Strategy>
+			<Type>TECH_LEVERAGE</Type>
+			<Description>TXT_KEY_TECH_LEVERAGE</Description>
+			<Civilopedia>TXT_KEY_TECH_LEVERAGE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_LEVERAGE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1215,8 +1215,8 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
-			<Quote>TXT_KEY_TECH_THE_WHEEL_QUOTE</Quote>
-			<Sound>AS2D_TECH_THE_WHEEL</Sound>
+			<Quote>TXT_KEY_TECH_LEVERAGE_QUOTE</Quote>
+			<Sound>AS2D_TECH_LEVERAGE</Sound>
 			<SoundMP>AS2D_TECH_MP_THE_WHEEL</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/The Wheel.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,12</Button>
 		</TechInfo>
@@ -1294,7 +1294,7 @@
 				<PrereqTech>TECH_FISHING</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_THE_WHEEL</PrereqTech>
+				<PrereqTech>TECH_LEVERAGE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_POTTERY_QUOTE</Quote>
 			<Sound>AS2D_TECH_POTTERY</Sound>
@@ -1437,10 +1437,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Writing.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,12</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_MATHEMATICS</Type>
-			<Description>TXT_KEY_TECH_MATHEMATICS</Description>
-			<Civilopedia>TXT_KEY_TECH_MATHEMATICS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_MATHEMATICS_STRATEGY</Strategy>
+			<Type>TECH_GEOMETRY</Type>
+			<Description>TXT_KEY_TECH_GEOMETRY</Description>
+			<Civilopedia>TXT_KEY_TECH_GEOMETRY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_GEOMETRY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1473,8 +1473,8 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 			</OrPreReqs>
-			<Quote>TXT_KEY_TECH_MATHEMATICS_QUOTE</Quote>
-			<Sound>AS2D_TECH_MATHEMATICS</Sound>
+			<Quote>TXT_KEY_TECH_GEOMETRY_QUOTE</Quote>
+			<Sound>AS2D_TECH_GEOMETRY</Sound>
 			<SoundMP>AS2D_TECH_MP_MATHEMATICS</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Mathematics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,3,5</Button>
 		</TechInfo>
@@ -1557,7 +1557,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
+				<PrereqTech>TECH_GEOMETRY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_SAILING</PrereqTech>
@@ -1602,7 +1602,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
+				<PrereqTech>TECH_GEOMETRY</PrereqTech>
 				<PrereqTech>TECH_ALPHABET</PrereqTech>
 			</OrPreReqs>
 			<Quote>TXT_KEY_TECH_CURRENCY_QUOTE</Quote>
@@ -2060,10 +2060,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Biology.dds,Art/Interface/Buttons/TechTree_Atlas.dds,1,9</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_MEDICINE</Type>
-			<Description>TXT_KEY_TECH_MEDICINE</Description>
-			<Civilopedia>TXT_KEY_TECH_MEDICINE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_MEDICINE_STRATEGY</Strategy>
+			<Type>TECH_SANITATION</Type>
+			<Description>TXT_KEY_TECH_SANITATION</Description>
+			<Civilopedia>TXT_KEY_TECH_SANITATION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_SANITATION_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<iCost>3700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2100,8 +2100,8 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_OPTICS</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_MEDICINE_QUOTE</Quote>
-			<Sound>AS2D_TECH_MEDICINE</Sound>
+			<Quote>TXT_KEY_TECH_SANITATION_QUOTE</Quote>
+			<Sound>AS2D_TECH_SANITATION</Sound>
 			<SoundMP>AS2D_TECH_MP_MEDICINE</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Medicine.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,5</Button>
 		</TechInfo>
@@ -2141,7 +2141,7 @@
 				<PrereqTech>TECH_PHYSICS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_STEAM_POWER</PrereqTech>
+				<PrereqTech>TECH_THERMODYNAMICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_ELECTRICITY_QUOTE</Quote>
 			<Sound>AS2D_TECH_ELECTRICITY</Sound>
@@ -2307,10 +2307,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,3,16</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_PLASTICS</Type>
-			<Description>TXT_KEY_TECH_PLASTICS</Description>
-			<Civilopedia>TXT_KEY_TECH_PLASTICS_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_PLASTICS_STRATEGY</Strategy>
+			<Type>TECH_SYNTHETICS</Type>
+			<Description>TXT_KEY_TECH_SYNTHETICS</Description>
+			<Civilopedia>TXT_KEY_TECH_SYNTHETICS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_SYNTHETICS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>5500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2339,8 +2339,8 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_COMBUSTION</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_PLASTICS_QUOTE</Quote>
-			<Sound>AS2D_TECH_PLASTICS</Sound>
+			<Quote>TXT_KEY_TECH_SYNTHETICS_QUOTE</Quote>
+			<Sound>AS2D_TECH_SYNTHETICS</Sound>
 			<SoundMP>AS2D_TECH_MP_PLASTICS</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Plastics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,6</Button>
 		</TechInfo>
@@ -2370,7 +2370,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_PLASTICS</PrereqTech>
+				<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_SATELLITES</PrereqTech>
@@ -2449,7 +2449,7 @@
 				<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_MEDICINE</PrereqTech>
+				<PrereqTech>TECH_SANITATION</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_GENETICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENETICS</Sound>
@@ -2735,10 +2735,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Animal Husbandry.dds,Art/Interface/Buttons/TechTree_Atlas.dds,3,1</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_BRONZE_WORKING</Type>
-			<Description>TXT_KEY_TECH_BRONZE_WORKING</Description>
-			<Civilopedia>TXT_KEY_TECH_BRONZE_WORKING_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_BRONZE_WORKING_STRATEGY</Strategy>
+			<Type>TECH_ALLOYS</Type>
+			<Description>TXT_KEY_TECH_ALLOYS</Description>
+			<Civilopedia>TXT_KEY_TECH_ALLOYS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_ALLOYS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2770,7 +2770,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_MINING</PrereqTech>
 			</OrPreReqs>
-			<Quote>TXT_KEY_TECH_BRONZE_WORKING_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_ALLOYS_QUOTE</Quote>
 			<Sound>AS2D_TECH_BRONZEWORK</Sound>
 			<SoundMP>AS2D_TECH_MP_BRONZEWORK</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Bronze Working.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,9</Button>
@@ -2822,10 +2822,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Horseback Riding.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,4</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_IRON_WORKING</Type>
-			<Description>TXT_KEY_TECH_IRON_WORKING</Description>
-			<Civilopedia>TXT_KEY_TECH_IRON_WORKING_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_IRON_WORKING_STRATEGY</Strategy>
+			<Type>TECH_BLOOMERY</Type>
+			<Description>TXT_KEY_TECH_BLOOMERY</Description>
+			<Civilopedia>TXT_KEY_TECH_BLOOMERY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_BLOOMERY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2855,9 +2855,9 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
+				<PrereqTech>TECH_ALLOYS</PrereqTech>
 			</OrPreReqs>
-			<Quote>TXT_KEY_TECH_IRON_WORKING_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_BLOOMERY_QUOTE</Quote>
 			<Sound>AS2D_TECH_IRONWORK</Sound>
 			<SoundMP>AS2D_TECH_MP_IRONWORK</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Iron Working.dds,Art/Interface/Buttons/TechTree_Atlas.dds,5,10</Button>
@@ -2900,7 +2900,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_BRONZE_WORKING</PrereqTech>
+				<PrereqTech>TECH_ALLOYS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_POTTERY</PrereqTech>
@@ -2944,7 +2944,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_IRON_WORKING</PrereqTech>
+				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_SAILING</PrereqTech>
@@ -2997,7 +2997,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
+				<PrereqTech>TECH_GEOMETRY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_MASONRY</PrereqTech>
@@ -3291,10 +3291,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Rifling.dds,Art/Interface/Buttons/TechTree_Atlas.dds,3,7</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_STEAM_POWER</Type>
-			<Description>TXT_KEY_TECH_STEAM_POWER</Description>
-			<Civilopedia>TXT_KEY_TECH_STEAM_POWER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_STEAM_POWER_STRATEGY</Strategy>
+			<Type>TECH_THERMODYNAMICS</Type>
+			<Description>TXT_KEY_TECH_THERMODYNAMICS</Description>
+			<Civilopedia>TXT_KEY_TECH_THERMODYNAMICS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_THERMODYNAMICS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>2700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3332,7 +3332,7 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_CHEMISTRY</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_STEAM_POWER_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_THERMODYNAMICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_STEAMPOWER</Sound>
 			<SoundMP>AS2D_TECH_MP_STEAMPOWER</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Steam Power.dds,Art/Interface/Buttons/TechTree_Atlas.dds,1,12</Button>
@@ -3370,7 +3370,7 @@
 				<PrereqTech>TECH_CHEMISTRY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_IRON_WORKING</PrereqTech>
+				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_STEEL_QUOTE</Quote>
 			<Sound>AS2D_TECH_STEEL</Sound>
@@ -3407,7 +3407,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_STEAM_POWER</PrereqTech>
+				<PrereqTech>TECH_THERMODYNAMICS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_CORPORATION</PrereqTech>
@@ -3458,7 +3458,7 @@
 				<PrereqTech>TECH_STEEL</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_STEAM_POWER</PrereqTech>
+				<PrereqTech>TECH_THERMODYNAMICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_RAILROAD_QUOTE</Quote>
 			<Sound>AS2D_TECH_RAILROAD</Sound>
@@ -3697,7 +3697,7 @@
 				<PrereqTech>TECH_RADIO</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_PLASTICS</PrereqTech>
+				<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_COMPUTERS_QUOTE</Quote>
 			<Sound>AS2D_TECH_COMPUTERS</Sound>
@@ -3732,7 +3732,7 @@
 				<PrereqTech>TECH_SATELLITES</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_PLASTICS</PrereqTech>
+				<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_LASER_QUOTE</Quote>
 			<Sound>AS2D_TECH_LASER</Sound>
@@ -3859,10 +3859,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Robotics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,7</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_FUTURE_TECH</Type>
-			<Description>TXT_KEY_TECH_FUTURE_TECH</Description>
-			<Civilopedia>TXT_KEY_TECH_FUTURE_TECH_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_FUTURE_TECH_STRATEGY</Strategy>
+			<Type>TECH_TRANSHUMANISM</Type>
+			<Description>TXT_KEY_TECH_TRANSHUMANISM</Description>
+			<Civilopedia>TXT_KEY_TECH_TRANSHUMANISM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_TRANSHUMANISM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iCost>10000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3905,7 +3905,7 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_STEALTH</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_FUTURE_TECH_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_TRANSHUMANISM_QUOTE</Quote>
 			<Sound>AS2D_TECH_FUTURE</Sound>
 			<SoundMP>AS2D_TECH_MP_FUTURE</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Future Tech.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,4</Button>

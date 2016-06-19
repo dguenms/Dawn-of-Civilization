@@ -66,6 +66,17 @@ However, alchemists made real contributions to society. Alchemists were the firs
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_ALLOYS</Tag>
+		<English>Alloys</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ALLOYS_QUOTE</Tag>
+		<English>"It is entirely seemly for a young man killed in battle to lie mangled by the bronze spear. In his death all things appear fair."[PARAGRAPH:2]- Homer</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_ARCHITECTURE</Tag>
 		<English>Architecture</English>
 	</TEXT>
@@ -76,6 +87,21 @@ However, alchemists made real contributions to society. Alchemists were the firs
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARCHITECTURE_PEDIA</Tag>
 		<English>Architecture is the discipline of designing structures with an eye to specific goals; usually aesthetic appeal, but also functional features such as defensibility. The architect's trade blends that of the ordinary engineer and the artist. On the one hand, all great architecture must be durable enough to stand natural forces and the test of time; on the other, it is often expected to be pleasant to live in and to behold.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARITHMETICS</Tag>
+		<English>Arithmetics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARITHMETICS_QUOTE</Tag>
+		<English>"The white man knows how to make everything, but he does not know how to distribute it."[PARAGRAPH:2]- Sitting Bull</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ARITHMETICS_PEDIA</Tag>
+		<English>The rise of Neolithic cities and the accumulation of economic surplus made a new problem in the human experience - how to keep track of so many goods. Memory was at best a flawed guide, and trusting subjects to guard a treasure-house or other storage facility was always risky. Specialists needed to be able to make binding agreements that would last for years in some legally enforceable form; priests and mystics wanted to lay out their myths and revelations in permanent forms.[NEWLINE][NEWLINE]All these things motivated the creation of systematic methods of record keeping, evolving from things like tally sticks, wax and clay seals, and symbolic mnemonic tokens into what we would call writing. For example, the ancient Mesopotamians once recorded contracts by making tiny sculptures of the items promised as part of the deal, then baking them into a ball of clay. Over time, people began carving representations of the items into the surface of the clay, and then to dispense with the little statuettes altogether, paving the way for the cuneiform method of writing.</English>
 	</TEXT>
 
 
@@ -119,6 +145,21 @@ Some predict that the creation of the first artificial intelligences will lead t
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ASSEMBLY_LINE_QUOTE</Tag>
 		<English>"One cannot walk through an assembly factory and not feel that one is in Hell."[PARAGRAPH:2]- W. H. Auden</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASTROLABE</Tag>
+		<English>Astrolabe</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASTROLABE_QUOTE</Tag>
+		<English>"If the highest aim of a captain were to preserve his ship, he would keep it in port forever"[PARAGRAPH:2]- Thomas Aquinas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ASTROLABE_PEDIA</Tag>
+		<English>In the early days of seafaring, sailors operated solely through a process known as "piloting", in which the position and course of the ship was determined by referring to geographical landmarks. The need to stay in view of the shore severely limited the extent of sea voyages. Through experience, sailors learned to apply the science of astronomy to their profession, noting the positions and movement of particular stars. They realized that even when the shore was out of sight, they could steer by certain reliable stars. This crude, yet practical application of astronomy allowed the adventurous to sail into the unknown with a reasonable chance of finding their way. As a result, ship building technology quickly improved, producing larger, more stable ships designed for longer voyages.</English>
 	</TEXT>
 
 
@@ -222,6 +263,17 @@ Automatic equipment invariably saves human labor, but it also displaces labour. 
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_BLOOMERY</Tag>
+		<English>Bloomery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BLOOMERY_QUOTE</Tag>
+		<English>"You should hammer your iron when it is glowing hot."[PARAGRAPH:2]- Publius Syrus</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_BIOLOGY</Tag>
 		<English>Biology</English>
 	</TEXT>
@@ -243,17 +295,6 @@ Automatic equipment invariably saves human labor, but it also displaces labour. 
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BIOTECHNOLOGY_PEDIA</Tag>
 		<English>Bionics is one name for the effort to create machines that can duplicate functions of human body parts. This has obvious applications in medicine, where it allows people who have lost limbs, sensory organs, or even hearts to survive with mechanical substitutes. Other effects of this growing field, placed as it is at the cutting edge of automation, miniaturization, and our understanding of how brain and body operate, are more subtle but perhaps no less profound.[NEWLINE][NEWLINE]Advanced bionics might allow the creation of synthetic androids whose superficially human appearance lends itself to a variety of roles. They might become popular as replacements or augmentations for functioning body parts - if an artificial eye sees more clearly, some may prefer it to their natural one. Taken to its logical extreme, bionics might even cause us to call into question the very meaning of what it is to be human, an issue mostly considered the province of science fiction to date.</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_BRONZE_WORKING</Tag>
-		<English>Bronze Working</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_BRONZE_WORKING_QUOTE</Tag>
-		<English>"It is entirely seemly for a young man killed in battle to lie mangled by the bronze spear. In his death all things appear fair."[PARAGRAPH:2]- Homer</English>
 	</TEXT>
 
 
@@ -330,48 +371,12 @@ Automatic equipment invariably saves human labor, but it also displaces labour. 
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_CHARTER</Tag>
-		<English>Charter</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CHARTER_QUOTE</Tag>
-		<English>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CHARTER_PEDIA</Tag>
-<English>The earliest intercontinental explorers were part of government-funded expeditions, as with Zheng He, Christopher Columbus, and Bartholomew Diaz. Soon it became clear that there were vast riches to be had from trade in luxury goods with remote lands, and where long range seafaring continued to thrive, private enterprise soon followed.
-
-For the people of the time, a trip from Europe to trade for spices, gems, silk and other precious goods in Asia was immensely time-consuming, requiring the most advanced ships and years of time and effort by a crew of skilled sailors. Quite a few ships that attempted the voyage never made it back, being destroyed by storms or hostile locals over the tens of thousands of kilometres of sea voyage.
-
-The risks involved created a powerful incentive to limit the financial hazards of the trip - any one merchant who invested in such an expedition might be ruined if something went wrong. Groups of wealthy men began to organize 'companies', bands that would pool their resources and share the costs of the long, immensely profitable trips.
-
-Some of these companies were able to secure royal guarantees from their home nations of exclusive trading rights- early examples include the English, Dutch, and French East India Companies. Over time, these organizations became extremely powerful, as the first ancestors of the modern multinational corporation.</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_CHEMISTRY</Tag>
 		<English>Chemistry</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CHEMISTRY_QUOTE</Tag>
 		<English>"Chemistry means the difference between poverty and starvation and the abundant life."[PARAGRAPH:2]- Robert Brent</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CHIVALRY</Tag>
-		<English>Chivalry</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CHIVALRY_QUOTE</Tag>
-		<English>"Do not try to fight a lion if you are not one yourself."[PARAGRAPH:2]- African Proverb</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CHIVALRY_PEDIA</Tag>
-		<English>Chivalry comes from the Old French words for "knighthood" and "horsemanship." Chivalry was a European code of rules governing the behavior of an aristocratic class of warriors known as knights. First appearing in or around the 12th century, the rules of chivalry governed not only the knights' behavior in battle, but in their personal lives as well. The chief chivalric virtues of piety, honor, valor, courtesy, chastity, and loyalty represented a fusion of Christian and military morality.[NEWLINE][NEWLINE]Other, comparable codes existed in many other societies. Out of many examples, a similar code of behavior known as "Bushido" or "the way of the warrior" governed the behavior of the samurai warriors of feudal Japan. Other societies which formed a warrior class subject to religious and moral codes of honor included ancient Persia and India.[NEWLINE][NEWLINE]Although the strict practice of the code of chivalry had all but disappeared in Europe by the 16th century, the ideals of chivalric behavior became the basis for what is now considered to be gentlemanly conduct. Chivalry also forms part of the basis for what we now call "the laws of war," because it was in the customs of chivalry that one finds precedent for the idea that war is to be an honorable confrontation between warriors, rather than a predatory confrontation between one side's warriors and the other side's noncombatants.</English>
 	</TEXT>
 
 
@@ -427,6 +432,27 @@ The battles for these forms of equality, generally known as "civil rights" were 
 <English>Civil Service is the technology of bureaucracy - organizing and running a government. A successful civil service requires standard procedures, division of responsibility, hierarchy, and advancement through merit. Record-keeping is crucial to the successful management of a government, as well. While some early cultures kept records on clay or wax or stone tablets, the advent of paper was a boon to the advance of bureaucracy and a civil service.
 
 One of the oldest known civil services is found in China, during the Tang dynasty (600 - 900 CE). This was created largely in response to the Confucian demands for honest government; among other innovations, the Tang civil servants were hired based upon the results of a written examination, rather than through the more common methods of bribery and patronage, and thus had fewer ties to the wealthy and powerful nobility. The English followed the Chinese civil service model when they created a bureaucracy to manage their growing colonies. Though successful, the practice did not spread to Europe until the mid-18th century.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CLERGY</Tag>
+		<English>Clergy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CLERGY_QUOTE</Tag>
+		<English>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_CLERGY_PEDIA</Tag>
+<English>"Dogma" refers to a firmly established body of beliefs and opinions, generally associated with religion and laid out by respected theologians within the faith. Within that religion, the dogma is considered authoritative and final - it may be clarified or expanded upon, but not contradicted. To call the basic facts of the dogma into question is, by definition, to leave the religion for some other path which may be deemed heretical.
+
+Different religions have different core bodies of dogma, which usually focus on key points of doctrine that the religious leaders consider to be of extreme importance. In Christianity, the concept of salvation through faith in Christ is a matter of dogma, although the details of how this salvation may best be achieved can vary. In Islam, it is a point of dogma that Muhammed was the last of the divinely inspired prophets.
+
+Dogma is particularly important to organized religions, since it serves to define the limits of what can and cannot be accepted as part of the faith. Learning the basic principles outlined by the dogma is considered the universal foundation of education within the religious tradition, and among the scholarly figures of the religion, all knowledge and all philosophy is likely to be interpreted through the dogma's lens. Groups which defy dogma are often forced to recant, removed from positions of official responsibility, and even violently persecuted until they rejoin the fold, flee, or die.
+
+The concept of points of dogma that a society will not tolerate violation of is not unique to religion. Many totalitarian societies feature secular political 'dogma', de facto or de jure, which cannot be violated without the hostile attentions of the state.</English>
 	</TEXT>
 
 
@@ -504,18 +530,22 @@ Kevlar, the modern battle armor, is a composite material. Modern tanks are const
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_COPPER_WORKING</Tag>
-		<English>Copper Working</English>
+		<Tag>TXT_KEY_TECH_CONTRACT</Tag>
+		<English>Contract</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_COPPER_WORKING_QUOTE</Tag>
-		<English>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</English>
+		<Tag>TXT_KEY_TECH_CONTRACT_QUOTE</Tag>
+		<English>"Pleasure in the job puts perfection in the work."[PARAGRAPH:2]- Aristotle</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_COPPER_WORKING_PEDIA</Tag>
-<English>Copper is one of the few metallic elements which can be found in nature in pure form, uncombined with other elements and not bound into an ore. This made it easy for primitive societies to find and work in modest quantities.
+		<Tag>TXT_KEY_TECH_CONTRACT_PEDIA</Tag>
+<English>In hunter-gatherer societies, every person works solely for themself, or for a handful of dependents such as children. Goods may be distributed among the group or kept in an individual's hands, but there is no concept of one person working at the orders of another, or working solely to enrich another.
 
-Copper can be used for metallic tools, but it is soft and does not hold a cutting edge well. Most societies found more use for copper in jewellery and decorations. However, familiarity with working copper (and other elements found in native-metal form, such as gold, silver, and meteoric iron) probably contributed to early societies' understanding of metalworking in general. As the techniques for refining metals from ore improved, this became crucial to the progress of early civilizations.</English>
+This pattern seems to have persisted through the early days of civilization, with the average citizen being a subsistence farmer who works to grow their own food and make their own goods, or a specialist who provides some specific product in exchange for food and goods. The most common exception were slaves, individuals legally owned by some other person, and who could be ordered to do nearly any form of labor on their behalf.
+
+However, as the amount of surplus available to large civilizations grew and the techniques for recording inventories and contracts improved, a new type of labor relationship emerged - that of the employee. Instead of working directly to produce goods for their own consumption, or being used as a form of property to produce goods for another, an employee works on behalf of another in exchange for some regular, agreed-upon form of compensation, such as food, shelter, money, or a combination of the above.
+
+This kind of labor is much more flexible than subsistence labor. An employee can be paid to do things that would not allow them to provide for themselves directly (a construction worker cannot eat the buildings he creates), or to improve the productivity of a large-scale enterprise (a clerk would be useless working alone, but is valuable when working for a large organization). It is also much more efficient than slavery. Unlike slaves, employees can be obtained cheaply, need not be policed to prevent escapes, and have no particular reason to resent the person they work for which might lead them to cheat, steal, or simply slow down on the job.</English>
 	</TEXT>
 
 
@@ -594,27 +624,6 @@ Oracles across the world developed complex rites and rituals to appease and inte
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_DOGMA</Tag>
-		<English>Dogma</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_DOGMA_QUOTE</Tag>
-		<English>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_DOGMA_PEDIA</Tag>
-<English>"Dogma" refers to a firmly established body of beliefs and opinions, generally associated with religion and laid out by respected theologians within the faith. Within that religion, the dogma is considered authoritative and final - it may be clarified or expanded upon, but not contradicted. To call the basic facts of the dogma into question is, by definition, to leave the religion for some other path which may be deemed heretical.
-
-Different religions have different core bodies of dogma, which usually focus on key points of doctrine that the religious leaders consider to be of extreme importance. In Christianity, the concept of salvation through faith in Christ is a matter of dogma, although the details of how this salvation may best be achieved can vary. In Islam, it is a point of dogma that Muhammed was the last of the divinely inspired prophets.
-
-Dogma is particularly important to organized religions, since it serves to define the limits of what can and cannot be accepted as part of the faith. Learning the basic principles outlined by the dogma is considered the universal foundation of education within the religious tradition, and among the scholarly figures of the religion, all knowledge and all philosophy is likely to be interpreted through the dogma's lens. Groups which defy dogma are often forced to recant, removed from positions of official responsibility, and even violently persecuted until they rejoin the fold, flee, or die.
-
-The concept of points of dogma that a society will not tolerate violation of is not unique to religion. Many totalitarian societies feature secular political 'dogma', de facto or de jure, which cannot be violated without the hostile attentions of the state.</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_ECOLOGY</Tag>
 		<English>Ecology</English>
 	</TEXT>
@@ -678,27 +687,6 @@ The concept of points of dogma that a society will not tolerate violation of is 
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_EMPLOYMENT</Tag>
-		<English>Employment</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_EMPLOYMENT_QUOTE</Tag>
-		<English>"Pleasure in the job puts perfection in the work."[PARAGRAPH:2]- Aristotle</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_EMPLOYMENT_PEDIA</Tag>
-<English>In hunter-gatherer societies, every person works solely for themself, or for a handful of dependents such as children. Goods may be distributed among the group or kept in an individual's hands, but there is no concept of one person working at the orders of another, or working solely to enrich another.
-
-This pattern seems to have persisted through the early days of civilization, with the average citizen being a subsistence farmer who works to grow their own food and make their own goods, or a specialist who provides some specific product in exchange for food and goods. The most common exception were slaves, individuals legally owned by some other person, and who could be ordered to do nearly any form of labor on their behalf.
-
-However, as the amount of surplus available to large civilizations grew and the techniques for recording inventories and contracts improved, a new type of labor relationship emerged - that of the employee. Instead of working directly to produce goods for their own consumption, or being used as a form of property to produce goods for another, an employee works on behalf of another in exchange for some regular, agreed-upon form of compensation, such as food, shelter, money, or a combination of the above.
-
-This kind of labor is much more flexible than subsistence labor. An employee can be paid to do things that would not allow them to provide for themselves directly (a construction worker cannot eat the buildings he creates), or to improve the productivity of a large-scale enterprise (a clerk would be useless working alone, but is valuable when working for a large organization). It is also much more efficient than slavery. Unlike slaves, employees can be obtained cheaply, need not be policed to prevent escapes, and have no particular reason to resent the person they work for which might lead them to cheat, steal, or simply slow down on the job.</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINEERING</Tag>
 		<English>Engineering</English>
 	</TEXT>
@@ -744,6 +732,27 @@ Therefore, to the evangelist, the very existence of unbelievers is a disastrous 
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_EXPLORATION</Tag>
+		<English>Exploration</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EXPLORATION_QUOTE</Tag>
+		<English>"Wealth unused might as well not exist."[PARAGRAPH:2]- Aesop</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_EXPLORATION_PEDIA</Tag>
+<English>The earliest intercontinental explorers were part of government-funded expeditions, as with Zheng He, Christopher Columbus, and Bartholomew Diaz. Soon it became clear that there were vast riches to be had from trade in luxury goods with remote lands, and where long range seafaring continued to thrive, private enterprise soon followed.
+
+For the people of the time, a trip from Europe to trade for spices, gems, silk and other precious goods in Asia was immensely time-consuming, requiring the most advanced ships and years of time and effort by a crew of skilled sailors. Quite a few ships that attempted the voyage never made it back, being destroyed by storms or hostile locals over the tens of thousands of kilometres of sea voyage.
+
+The risks involved created a powerful incentive to limit the financial hazards of the trip - any one merchant who invested in such an expedition might be ruined if something went wrong. Groups of wealthy men began to organize 'companies', bands that would pool their resources and share the costs of the long, immensely profitable trips.
+
+Some of these companies were able to secure royal guarantees from their home nations of exclusive trading rights- early examples include the English, Dutch, and French East India Companies. Over time, these organizations became extremely powerful, as the first ancestors of the modern multinational corporation.</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_EXPLOSIVES</Tag>
 		<English>Explosives</English>
 	</TEXT>
@@ -774,6 +783,26 @@ Fertilization has been a common practice throughout the civilized world since pr
 During the 19th and 20th centuries, the range of available fertilizers grew dramatically. Industrial-scale extraction of minerals, particularly nitrates and phosphates, allowed vast increases in farm output. Advances in industrial chemistry allowed factories to create fully synthetic fertilizers too, using customized organic molecules to speed the growth of crops and inhibit the growth of weeds and parasites. This contributes to the success of the "Green Revolution" of the 1960s and 1970s at feeding a world population of seven billion and rising.
 
 In general, fertilizer achieves varying success. Used carelessly, it may not contribute to soil fertility (adding more of what's already there is pointless), or even decrease it (adding enough phosphorus to maximize growth may result in all the carbon in the soil being used up quickly). This is a particularly serious problem with "Green Revolution" crops in the modern era. Furthermore, careless or excessive use can lead to fertilizer seeping into waterways, causing oxygen depletion, algal blooms, and other ecological problems.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FEUDALISM</Tag>
+		<English>Feudalism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FEUDALISM_QUOTE</Tag>
+		<English>"We are only tenants, and shortly the great Landlord will give us notice that our lease has expired."[PARAGRAPH:2]- Joseph Jefferson</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FEUDALISM_PEDIA</Tag>
+<English>Land tenure is the idea of a fixed, legalized ownership of land with a formal relationship between the landowner and their ruler. "Tenure" comes from a root verb meaning "to hold" the land in question. Under a land tenure system, all land is the property of the sovereign by default, but this land is granted to trusted individuals in permanent, usually inherited titles. This forms the foundation of what we now know as feudalism. In exchange for a grant of land for themself and their heirs, a feudal noble might promise to supply their ruler with troops, money, food, or other goods obtained from the productivity of the land itself.
+
+This saved the monarch from the burden of administering the territory directly and trying to collect taxes from it, and created a large class of aristocrats who owed their fortune and power to the throne. The pattern of tenancy could be scaled up and down easily, ranging from great territories held by powerful nobles down to individual farmers on their own plots granted to them by a local warlord.
+
+A feudal tenure-based system has drawbacks, however. Tenants' loyalty to the sovereign is often conditional, based on complicated webs of mutual obligations and exceptions to the legal code which make it difficult to change or reform the economy. Powerful feudal nobles may defect to an enemy intact to preserve their status in the face of invasion - or even scheme to seize control of the land themselves.
+</English>
 	</TEXT>
 
 
@@ -916,17 +945,6 @@ But many nuclear devices remain, and some countries continue to pursue expanded 
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_FUTURE_TECH</Tag>
-		<English>Future Tech</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_FUTURE_TECH_QUOTE</Tag>
-		<English>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_GENETICS</Tag>
 		<English>Genetics</English>
 	</TEXT>
@@ -952,6 +970,17 @@ But many nuclear devices remain, and some countries continue to pursue expanded 
 In doing so, they replaced the old, naive picture of the world as an unchanging mass of rock. Geologists of the 19th and 20th centuries have learned that the ground we stand on is actually a series of plates of stone floating on the sea of lava that makes up most of the Earth's mass. Over the eons ("geologic time") powerful forces slowly reshape the landscape, bringing new rock closer to the surface and rearranging the terrain to form mountains and seas.
 
 Understanding geology helps us understand where to find mineral resources, and how to channel the elemental forces of earth and water to our advantage.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GEOMETRY</Tag>
+		<English>Geometry</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GEOMETRY_QUOTE</Tag>
+		<English>"If in other sciences we should arrive at certainty without doubt and truth without error, it behooves us to place the foundations of knowledge in mathematics."[PARAGRAPH:2]- Roger Bacon</English>
 	</TEXT>
 
 
@@ -996,21 +1025,6 @@ Today the world is extensively globalized, a product of the capitalist triumph o
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GUNPOWDER_QUOTE</Tag>
 		<English>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_HEALTHCARE</Tag>
-		<English>Healthcare</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_HEALTHCARE_QUOTE</Tag>
-		<English>"If you haven't got your health, you haven't got anything."[PARAGRAPH:2]- Christopher Guest, in 'The Princess Bride'</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_HEALTHCARE_PEDIA</Tag>
-		<English>Healthcare is the practice of acting so as to preserve or restore the health of the individual patient, although this is normally construed to not include basic sustenance needs such as air, water, and food. Healthcare can be divided into a wide range of overlapping categories. These include but are not limited to preventative care (to maintain health through nutrition, exercise, and hygiene), palliative care (to relieve the symptoms of a patient who cannot be cured by the available means), outpatient care (where the patient is able to function and live independently while undergoing treatment), urgent care (treatment of pressing medical problems that are nonetheless not life-threatening), and acute care (where a patient requires detailed monitoring or complex medical support and so must remain in a hospital with physicians in attendance).[NEWLINE][NEWLINE]Since it affects what may be the foremost concern of nearly all humans - their health - health care occupies a large share of the total time and energy of the human race. Many (though not all) of the professionals involved in providing health care receive unusual prestige and wealth within their own societies. This was the case even in ancient times when the practice of medicine was primitive to the point of being life-threatening.[NEWLINE][NEWLINE]In modern times, the health care system has become an elaborate and refined infrastructure, especially in developed nations. Not only is it an industry in its own right, it supports various other industries such as the pharmaceutical industry and the insurance industry. The challenge of working out how to efficiently pay for this vast system that keeps us alive and relatively comfortable is a subject of energetic debate in many societies.</English>
 	</TEXT>
 
 
@@ -1128,17 +1142,6 @@ However, insurance is likely to remain a permanent part of civilized life, a dir
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_IRON_WORKING</Tag>
-		<English>Iron Working</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_IRON_WORKING_QUOTE</Tag>
-		<English>"You should hammer your iron when it is glowing hot."[PARAGRAPH:2]- Publius Syrus</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_JOURNALISM</Tag>
 		<English>Journalism</English>
 	</TEXT>
@@ -1192,26 +1195,6 @@ Jurisprudence was further developed in the Middle Ages as scholarship spread and
 	</TEXT>
 
 
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_LAND_TENURE</Tag>
-		<English>Land Tenure</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_LAND_TENURE_QUOTE</Tag>
-		<English>"We are only tenants, and shortly the great Landlord will give us notice that our lease has expired."[PARAGRAPH:2]- Joseph Jefferson</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_LAND_TENURE_PEDIA</Tag>
-<English>Land tenure is the idea of a fixed, legalized ownership of land with a formal relationship between the landowner and their ruler. "Tenure" comes from a root verb meaning "to hold" the land in question. Under a land tenure system, all land is the property of the sovereign by default, but this land is granted to trusted individuals in permanent, usually inherited titles. This forms the foundation of what we now know as feudalism. In exchange for a grant of land for themself and their heirs, a feudal noble might promise to supply their ruler with troops, money, food, or other goods obtained from the productivity of the land itself.
-
-This saved the monarch from the burden of administering the territory directly and trying to collect taxes from it, and created a large class of aristocrats who owed their fortune and power to the throne. The pattern of tenancy could be scaled up and down easily, ranging from great territories held by powerful nobles down to individual farmers on their own plots granted to them by a local warlord.
-
-A feudal tenure-based system has drawbacks, however. Tenants' loyalty to the sovereign is often conditional, based on complicated webs of mutual obligations and exceptions to the legal code which make it difficult to change or reform the economy. Powerful feudal nobles may defect to an enemy intact to preserve their status in the face of invasion - or even scheme to seize control of the land themselves.
-</English>
-	</TEXT>
-
-
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LASER</Tag>
 		<English>Laser</English>
@@ -1242,22 +1225,12 @@ A feudal tenure-based system has drawbacks, however. Tenants' loyalty to the sov
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_LEATHER_WORKING</Tag>
-		<English>Leather Working</English>
+		<Tag>TXT_KEY_TECH_LEVERAGE</Tag>
+		<English>Leverage</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_LEATHER_WORKING_QUOTE</Tag>
-		<English>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_LEATHER_WORKING_PEDIA</Tag>
-<English>Leather is a hard-wearing, flexible material created by curing and drying animal skins. Forms of leather can be made using Stone Age technology (curing hides with materials like lime or animal brains), or more complex chemical processes. Leather has been in use since at least the second millenium BC, as proven by finds of leather samples over 3000 years old in archaeological digs. Since leather does not last forever under normal conditions, its invention very probably came earlier.
-
-Leather can be made from the skin of almost any large animal, with a variety of qualities. Depending on how it is tanned, it can be flexible or stiff, soft or rough. It is generally waterproof, fairly effective at keeping in heat, and resistant to rotting or decay. Properly oiled and maintained, it can survive desert sandstorms or frozen tundra conditions. It can even be boiled for hardness and used as a form of cheap, lightweight armor protection.
-
-Unlike other fabrics such as linen, cotton, and silk, leather can be made even by nomadic cultures. If the nomads kill a domestic or wild animal, and have a suitable tanning process. On the other hand, leather remains useful in farming societies, especially those with large herd animals such as cattle.
-
-Because it is sturdy and cannot be unraveled like normal cloth, leather can be decorated with a variety of hole-punches, stitches, and decorative studs. Decorative leather goods are a popular form of arts and crafts in many societies. Today, advances in synthetic plastics have made leather less important, and it has now become more of a fashion statement and luxury good than a major fabric in practical use.</English>
+		<Tag>TXT_KEY_TECH_LEVERAGE_QUOTE</Tag>
+		<English>"Put your shoulder to the wheel."[PARAGRAPH:2]- Aesop</English>
 	</TEXT>
 
 
@@ -1314,25 +1287,6 @@ A cunning enemy may always strike at an army's logistics. This has caused countl
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MARKETING</Tag>
-		<English>Marketing</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MARKETING_QUOTE</Tag>
-		<English>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MARKETING_PEDIA</Tag>
-<English>Marketing is the practice of persuading people that an object, idea, or behavior is desirable (and worth paying for). Marketing has existed in some form since prehistoric times; one may speculate that the first marketing activities were invented within five minutes of the first invention of commerce.  The development of mass media such as broadcast radio, print journalism, and film made it possible to market on a larger scale. The rise of a working and middle class in developed societies with enough disposable income to buy luxury goods made it desirable to do so. The growth of modern industrial corporations that could produce goods in immense quantities made it necessary to do so.
-
-Common practices in modern marketing include direct personal approaches, flattery of the customer, praise of the product (intellectually honest or otherwise), and efforts to make the seller appear sympathetic and likeable to the prospective buyer. The main difference is that all these things are now transmitted from the individual advertiser to the mass of the population through new communications technology such as printing, broadcasts, or the Internet.
-
-The practice of marketing is often criticized for dishonesty, for misleading people into paying for that which is useless to them, for encouraging people to go into debt, and for discouraging people from thrift and from building up savings for the future. It is also criticized for the increasingly intrusive way in which, in the modern computerized era, marketers use "big data" to analyze individuals' purchasing habits and tailor advertisements to them. This is widely regarded as intrusive, and as having ominous implications for the individual's privacy and control over their own life in the future.</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_MASONRY</Tag>
 		<English>Masonry</English>
 	</TEXT>
@@ -1344,23 +1298,20 @@ The practice of marketing is often criticized for dishonesty, for misleading peo
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MASS_MEDIA</Tag>
-		<English>Mass Media</English>
+		<Tag>TXT_KEY_TECH_MASS_MARKET</Tag>
+		<English>Mass Market</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MASS_MEDIA_QUOTE</Tag>
-		<English>"The only thing worse than being talked about is not being talked about."[PARAGRAPH:2]- Oscar Wilde</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MATHEMATICS</Tag>
-		<English>Mathematics</English>
+		<Tag>TXT_KEY_TECH_MASS_MARKET_QUOTE</Tag>
+		<English>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MATHEMATICS_QUOTE</Tag>
-		<English>"If in other sciences we should arrive at certainty without doubt and truth without error, it behooves us to place the foundations of knowledge in mathematics."[PARAGRAPH:2]- Roger Bacon</English>
+		<Tag>TXT_KEY_TECH_MASS_MARKET_PEDIA</Tag>
+<English>Marketing is the practice of persuading people that an object, idea, or behavior is desirable (and worth paying for). Marketing has existed in some form since prehistoric times; one may speculate that the first marketing activities were invented within five minutes of the first invention of commerce.  The development of mass media such as broadcast radio, print journalism, and film made it possible to market on a larger scale. The rise of a working and middle class in developed societies with enough disposable income to buy luxury goods made it desirable to do so. The growth of modern industrial corporations that could produce goods in immense quantities made it necessary to do so.
+
+Common practices in modern marketing include direct personal approaches, flattery of the customer, praise of the product (intellectually honest or otherwise), and efforts to make the seller appear sympathetic and likeable to the prospective buyer. The main difference is that all these things are now transmitted from the individual advertiser to the mass of the population through new communications technology such as printing, broadcasts, or the Internet.
+
+The practice of marketing is often criticized for dishonesty, for misleading people into paying for that which is useless to them, for encouraging people to go into debt, and for discouraging people from thrift and from building up savings for the future. It is also criticized for the increasingly intrusive way in which, in the modern computerized era, marketers use "big data" to analyze individuals' purchasing habits and tailor advertisements to them. This is widely regarded as intrusive, and as having ominous implications for the individual's privacy and control over their own life in the future.</English>
 	</TEXT>
 
 
@@ -1371,7 +1322,34 @@ The practice of marketing is often criticized for dishonesty, for misleading peo
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MEDICINE_QUOTE</Tag>
-		<English>"As to diseases make a habit of two things - to help, or at least, to do no harm."[PARAGRAPH:2]- Hippocrates</English>
+		<English>"If you haven't got your health, you haven't got anything."[PARAGRAPH:2]- Christopher Guest, in 'The Princess Bride'</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MEDICINE_PEDIA</Tag>
+		<English>Healthcare is the practice of acting so as to preserve or restore the health of the individual patient, although this is normally construed to not include basic sustenance needs such as air, water, and food. Healthcare can be divided into a wide range of overlapping categories. These include but are not limited to preventative care (to maintain health through nutrition, exercise, and hygiene), palliative care (to relieve the symptoms of a patient who cannot be cured by the available means), outpatient care (where the patient is able to function and live independently while undergoing treatment), urgent care (treatment of pressing medical problems that are nonetheless not life-threatening), and acute care (where a patient requires detailed monitoring or complex medical support and so must remain in a hospital with physicians in attendance).[NEWLINE][NEWLINE]Since it affects what may be the foremost concern of nearly all humans - their health - health care occupies a large share of the total time and energy of the human race. Many (though not all) of the professionals involved in providing health care receive unusual prestige and wealth within their own societies. This was the case even in ancient times when the practice of medicine was primitive to the point of being life-threatening.[NEWLINE][NEWLINE]In modern times, the health care system has become an elaborate and refined infrastructure, especially in developed nations. Not only is it an industry in its own right, it supports various other industries such as the pharmaceutical industry and the insurance industry. The challenge of working out how to efficiently pay for this vast system that keeps us alive and relatively comfortable is a subject of energetic debate in many societies.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METAL_CASTING</Tag>
+		<English>Metal Casting</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METAL_CASTING_QUOTE</Tag>
+		<English>"The society which scorns excellence in plumbing and tolerates shoddiness in philosophy will have neither good plumbing nor good philosophy: neither its pipes nor its theories will hold water."[PARAGRAPH:2] -John W Gardner</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_METAL_CASTING_PEDIA</Tag>
+<English>Plumbing is the practice of using pipes and channels to control the flow of water, generally through populated areas, for human use. Plumbing is normally seen as distinct from irrigation, which is used to provide water for crops.
+
+Primitive societies generally lack the means to create a plumbing system, which requires careful craftsmanship and large-scale collaboration. More advanced civilizations, such as those of the Indus valley circa 2700 BC, began working on organized supplies of clean water quite early in human history, however. Clean water to drink and bathe in is one of the most fundamental human desires, and is shared universally across cultural lines, driving the independent invention of plumbing in many times and places.
+
+Typical elements of an early plumbing infrastructure include systems of pipes, channels and ducts to gather rainwater and bring it to central locations, and other such channels to remove wastewater. Such channels were typically made of brick, pottery, or other ceramic. Specifically within the Mediterranean world, civilizations known or remarkable for their achievements in the art of plumbing include the Minoans (inventors of the flush toilet), the ancient Greeks (inventors of the pressurized shower for bathing), and of course the Romans. The Romans brought ancient plumbing to its height, combining the earthenware apparatus with metallic plumbing made of copper or lead. For their larger cities, the Romans augmented the naturally available supplies of fresh water with enormous aqueducts to bring water from a distance of many kilometers, emptying into large reservoirs.
+
+In Europe the art of plumbing declined after the fall of the Roman Empire, and public sanitation and health declined with it. Other civilizations, such as those of Persia, China, and the Mayans, retained many of the sophisticated systems alluded to above.
+
+Major advances in plumbing further developed during the Enlightenment era. With the rise of knowledge about microorganisms and early chemistry, engineers began devising pipes with filters and bends to strain out harmful microbes. The idea of 'waste treatment' emerged, with sewage being processed chemically or biologically so that it would become less infectious and less smelly. Chlorination of water was introduced to kill germs such as typhus and prevent epidemics. Today, plumbing is one of the seldom-contemplated foundations of our industrial civilizations and the vast populations they support. By supplying a fundamental human need to drink water and remain clean, in a highly safe and efficient manner, plumbing becomes indispensible to our lives.</English>
 	</TEXT>
 
 
@@ -1445,6 +1423,21 @@ The next logical step was to power the mill with the inanimate forces of nature.
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_MODERN_SANITATION</Tag>
+		<English>Sanitation</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MODERN_SANITATION_QUOTE</Tag>
+		<English>"The health of the people is really the foundation upon which all their happiness and all their powers as a state depend."[PARAGRAPH:2]- Benjamin Disraeli</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MODERN_SANITATION_PEDIA</Tag>
+		<English>The increased waste produced by growing populations over time eventually led to potential health hazards. It then became necessary to come up with systems to dispose of garbage and human waste in a sanitary manner. Plumbing systems designed to remove waste water from dwellings and public buildings became commonplace, as did sewage plants which treated the wastewater before it was dumped into local waterways. Landfills were established, and garbage was collected for sanitary disposal in dumps and landfills a safe distance from the general population. These measures led to a healthier environment, and allowed for further population growth.</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_NANOTECHNOLOGY</Tag>
 		<English>Nanotechnology</English>
 	</TEXT>
@@ -1482,21 +1475,6 @@ Still, it seems likely that 21st century chemistry and biochemistry will be grea
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NATIONHOOD_PEDIA</Tag>
 		<English>Needs to be written</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_NAVIGATION</Tag>
-		<English>Navigation</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_NAVIGATION_QUOTE</Tag>
-		<English>"If the highest aim of a captain were to preserve his ship, he would keep it in port forever"[PARAGRAPH:2]- Thomas Aquinas</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_NAVIGATION_PEDIA</Tag>
-		<English>In the early days of seafaring, sailors operated solely through a process known as "piloting", in which the position and course of the ship was determined by referring to geographical landmarks. The need to stay in view of the shore severely limited the extent of sea voyages. Through experience, sailors learned to apply the science of astronomy to their profession, noting the positions and movement of particular stars. They realized that even when the shore was out of sight, they could steer by certain reliable stars. This crude, yet practical application of astronomy allowed the adventurous to sail into the unknown with a reasonable chance of finding their way. As a result, ship building technology quickly improved, producing larger, more stable ships designed for longer voyages.</English>
 	</TEXT>
 
 
@@ -1561,42 +1539,12 @@ At the same time the telescope in particular had nautical and military applicati
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_ORATORY</Tag>
-		<English>Oratory</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_ORATORY_QUOTE</Tag>
-		<English>"Be a craftsman in speech that thou mayest be strong, for the strength of one is the tongue, and speech is mightier than all fighting."[PARAGRAPH:2]- Ptahhotep</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_ORATORY_PEDIA</Tag>
-		<English>Needs to be written.</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_PAPER</Tag>
 		<English>Paper</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_PAPER_QUOTE</Tag>
 		<English>"I cannot live without books."[PARAGRAPH:2]- Thomas Jefferson</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PARTICLE_PHYSICS</Tag>
-		<English>Particle Physics</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PARTICLE_PHYSICS_QUOTE</Tag>
-		<English>"Everything we call real is made of things that cannot be regarded as real."[PARAGRAPH:2]- Niels Bohr</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PARTICLE_PHYSICS_PEDIA</Tag>
-		<English>Needs to be written.</English>
 	</TEXT>
 
 
@@ -1705,40 +1653,6 @@ However, photography was once again revolutionized by the rise of electronic 'di
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_PLASTICS</Tag>
-		<English>Plastics</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PLASTICS_QUOTE</Tag>
-		<English>"I was born with a plastic spoon in my mouth."[PARAGRAPH:2]- Pete Townshend</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PLUMBING</Tag>
-		<English>Plumbing</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PLUMBING_QUOTE</Tag>
-		<English>"The society which scorns excellence in plumbing and tolerates shoddiness in philosophy will have neither good plumbing nor good philosophy: neither its pipes nor its theories will hold water."[PARAGRAPH:2] -John W Gardner</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PLUMBING_PEDIA</Tag>
-<English>Plumbing is the practice of using pipes and channels to control the flow of water, generally through populated areas, for human use. Plumbing is normally seen as distinct from irrigation, which is used to provide water for crops.
-
-Primitive societies generally lack the means to create a plumbing system, which requires careful craftsmanship and large-scale collaboration. More advanced civilizations, such as those of the Indus valley circa 2700 BC, began working on organized supplies of clean water quite early in human history, however. Clean water to drink and bathe in is one of the most fundamental human desires, and is shared universally across cultural lines, driving the independent invention of plumbing in many times and places.
-
-Typical elements of an early plumbing infrastructure include systems of pipes, channels and ducts to gather rainwater and bring it to central locations, and other such channels to remove wastewater. Such channels were typically made of brick, pottery, or other ceramic. Specifically within the Mediterranean world, civilizations known or remarkable for their achievements in the art of plumbing include the Minoans (inventors of the flush toilet), the ancient Greeks (inventors of the pressurized shower for bathing), and of course the Romans. The Romans brought ancient plumbing to its height, combining the earthenware apparatus with metallic plumbing made of copper or lead. For their larger cities, the Romans augmented the naturally available supplies of fresh water with enormous aqueducts to bring water from a distance of many kilometers, emptying into large reservoirs.
-
-In Europe the art of plumbing declined after the fall of the Roman Empire, and public sanitation and health declined with it. Other civilizations, such as those of Persia, China, and the Mayans, retained many of the sophisticated systems alluded to above.
-
-Major advances in plumbing further developed during the Enlightenment era. With the rise of knowledge about microorganisms and early chemistry, engineers began devising pipes with filters and bends to strain out harmful microbes. The idea of 'waste treatment' emerged, with sewage being processed chemically or biologically so that it would become less infectious and less smelly. Chlorination of water was introduced to kill germs such as typhus and prevent epidemics. Today, plumbing is one of the seldom-contemplated foundations of our industrial civilizations and the vast populations they support. By supplying a fundamental human need to drink water and remain clean, in a highly safe and efficient manner, plumbing becomes indispensible to our lives.</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_PNEUMATICS</Tag>
 		<English>Pneumatics</English>
 	</TEXT>
@@ -1833,27 +1747,6 @@ Such a practice results in very cohesive societies. However, such societies ofte
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_QUANTUM_GRAVITY</Tag>
-		<English>Quantum Gravity</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_QUANTUM_GRAVITY_QUOTE</Tag>
-		<English>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- Werner Heisenberg</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_QUANTUM_GRAVITY_PEDIA</Tag>
-<English>By late 20th century, physics had converged on a set of well understood theories to describe nature. But there are several gaps, defects, or vulnerabilities in this universal model. Firstly, this set of theories stands on two pillars. One is the nature of gravity, as outlined by Einstein's theory of "general relativity" in 1920 and refined since that time, which treats time and space as flexible things that can be warped by gravity. The other is "quantum field theory," which describes the behavior of subatomic particles, treating each particle as a special instance of a generalized, abstract field of force and probability that permeates the universe.
-
-The problem is that quantum field theory, otherwise known as the Standard Model, assumes that time and space are fixed, inflexible, and invariant - that they are the constant and unchanging playing field on which particle interactions are allowed to happen. In other words, the Standard Model does not obey the theory of relativity. Therefore, it cannot be the whole story. General relativity appears to be a solid and essentially complete picture of a key part of reality, the Standard Model is not. It is solid, it explains the behavior of nearly all things that can be seen on Earth or elsewhere in the universe... but it is not complete.
-
-The Standard Model explains almost all known phenomena, but some of the ones it cannot explain present very large issues. It does not explain the nature or origins of dark matter or dark energy and yet astronomers have reason to believe that these things make up 95% of all substance in the universe today. The Standard Model does not explain why the ghostly neutrino particles coming from the Sun appear to randomly reshuffle their nature, in a way the Standard Model deems impossible. The Standard Model predicts that in the beginning of the universe, matter and antimatter 'should' have been created in equal quantities, and devoured each other totally, leaving behind nothing but light and radiation in all of space. In hindsight, this appears not to have occurred. For this and other reasons, despite the Standard Model providing huge advances in our understanding compared to anything that came before it, it is not the last step.
-
-Research into these matters is ongoing today. It is hoped that future physics will emerge which resolves some of these contradictions. In particular, it is hoped that these new physics will allow us to create a model of quantum physics that is consistent with Einstein's work on gravity - thus the name, "quantum gravity."</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_RADAR</Tag>
 		<English>Radar</English>
 	</TEXT>
@@ -1881,21 +1774,6 @@ Radar became far more advanced and developed in the postwar era with the steady 
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RADIO_QUOTE</Tag>
 		<English>"Then one fine morning she puts on a New York station. You know her life was saved by Rock 'n' Roll."[PARAGRAPH:2] - The Velvet Underground</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_RECORD_KEEPING</Tag>
-		<English>Record Keeping</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_RECORD_KEEPING_QUOTE</Tag>
-		<English>"The white man knows how to make everything, but he does not know how to distribute it."[PARAGRAPH:2]- Sitting Bull</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_RECORD_KEEPING_PEDIA</Tag>
-		<English>The rise of Neolithic cities and the accumulation of economic surplus made a new problem in the human experience - how to keep track of so many goods. Memory was at best a flawed guide, and trusting subjects to guard a treasure-house or other storage facility was always risky. Specialists needed to be able to make binding agreements that would last for years in some legally enforceable form; priests and mystics wanted to lay out their myths and revelations in permanent forms.[NEWLINE][NEWLINE]All these things motivated the creation of systematic methods of record keeping, evolving from things like tally sticks, wax and clay seals, and symbolic mnemonic tokens into what we would call writing. For example, the ancient Mesopotamians once recorded contracts by making tiny sculptures of the items promised as part of the deal, then baking them into a ball of clay. Over time, people began carving representations of the items into the surface of the clay, and then to dispense with the little statuettes altogether, paving the way for the cuneiform method of writing.</English>
 	</TEXT>
 
 
@@ -2008,25 +1886,6 @@ To this day, this pattern of conflict between representative bodies (legislature
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_RITUAL</Tag>
-		<English>Ritual</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_RITUAL_QUOTE</Tag>
-		<English>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_RITUAL_PEDIA</Tag>
-<English>A ritual is a personal, cultural, or religious practice that has become routine by time, practice, or taboo, and which has significance beyond the obvious direct consequences of the act itself. All known religions and cultures are associated with the practice of rituals, as are many secular organizations.
-
-Some of these rituals are used by all members of society as a way to avert bad luck, seek supernatural aid in some difficult endeavour, or thank divine beings for their generosity. Other rituals might only be practiced by certain castes, or by the designated priests of a particular cause or entity. Some rituals are spectacularly public. Others are so private that unauthorized intrusion is punishable by death. Some involve demonstrative physical acts or sacrifices; others are quiet and contemplative.
-
-The recurring pattern is that rituals serve a role of promoting social cohestion in the face of adversity, providing a means for individuals to communicate their shared values and signal their collective loyalty to the survival of the group.</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_ROBOTICS</Tag>
 		<English>Robotics</English>
 	</TEXT>
@@ -2065,11 +1924,7 @@ The recurring pattern is that rituals serve a role of promoting social cohestion
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SANITATION_QUOTE</Tag>
-		<English>"The health of the people is really the foundation upon which all their happiness and all their powers as a state depend."[PARAGRAPH:2]- Benjamin Disraeli</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_SANITATION_PEDIA</Tag>
-		<English>The increased waste produced by growing populations over time eventually led to potential health hazards. It then became necessary to come up with systems to dispose of garbage and human waste in a sanitary manner. Plumbing systems designed to remove waste water from dwellings and public buildings became commonplace, as did sewage plants which treated the wastewater before it was dumped into local waterways. Landfills were established, and garbage was collected for sanitary disposal in dumps and landfills a safe distance from the general population. These measures led to a healthier environment, and allowed for further population growth.</English>
+		<English>"As to diseases make a habit of two things - to help, or at least, to do no harm."[PARAGRAPH:2]- Hippocrates</English>
 	</TEXT>
 
 
@@ -2162,42 +2017,63 @@ The race of siege techniques versus defense techniques has proceeded up into the
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_SPACE_EXPLORATION</Tag>
-		<English>Space Exploration</English>
+		<Tag>TXT_KEY_TECH_SMELTING</Tag>
+		<English>Smelting</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_SPACE_EXPLORATION_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_SMELTING_QUOTE</Tag>
+		<English>"Wealth falls on some men as a copper down the drain."[PARAGRAPH:2]- Seneca</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SMELTING_PEDIA</Tag>
+<English>Copper is one of the few metallic elements which can be found in nature in pure form, uncombined with other elements and not bound into an ore. This made it easy for primitive societies to find and work in modest quantities.
+
+Copper can be used for metallic tools, but it is soft and does not hold a cutting edge well. Most societies found more use for copper in jewellery and decorations. However, familiarity with working copper (and other elements found in native-metal form, such as gold, silver, and meteoric iron) probably contributed to early societies' understanding of metalworking in general. As the techniques for refining metals from ore improved, this became crucial to the progress of early civilizations.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPACEFLIGHT</Tag>
+		<English>Spaceflight</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SPACEFLIGHT_QUOTE</Tag>
 		<English>"That's one small step for man; one giant leap for humanity."[PARAGRAPH:2]- Neil Armstrong</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_SPACE_EXPLORATION_PEDIA</Tag>
+		<Tag>TXT_KEY_TECH_SPACEFLIGHT_PEDIA</Tag>
 <English>Utilizing the now well-developed science of rocketry, the modern exploration of space began in October 1957 when the Soviet Union launched Sputnik 1. This tiny satellite orbited the earth for 57 days, providing information on radiation and other phenomena in the upper atmosphere. In less than a year, the United States had also launched a satellite, Explorer 1. This started the "space race", years of competition between the U.S. and the U.S.S.R. to achieve new frontiers in space exploration. Space flight advanced rapidly from the simple sub-orbital flights of the 1950s, to manned missions to Earth's moon in the late 1960s. The rapid growth of space technology led to many practical applications, such as weather and surveillance satellites, and vastly improved worldwide communications. Today, although hindered by severe government budget cuts, the exploration of space continues.</English>
 	</TEXT>
 
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_STEAM_POWER</Tag>
-		<English>Steam Power</English>
+		<Tag>TXT_KEY_TECH_STEEL</Tag>
+		<English>Steel</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_STEAM_POWER_QUOTE</Tag>
-		<English>"You would make a ship sail against the winds and currents by lighting a bonfire under her deck? I have no time for such nonsense."[PARAGRAPH:2] - Napoleon Bonaparte</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_STEEL_WORKING</Tag>
-		<English>Steel Working</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_STEEL_WORKING_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_STEEL_QUOTE</Tag>
 		<English>"Men are like steel. When they lose their temper, they lose their worth."[PARAGRAPH:2]-  Chuck Norris</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_STEEL_WORKING_PEDIA</Tag>
+		<Tag>TXT_KEY_TECH_STEEL_PEDIA</Tag>
 <English>The iron alloys produced up until about the 14th century were made by heating a mixture of iron ore and charcoal in a forge, then pounding the molten metal to drive out the impurities or "slag". Occasionally, the iron mixture would absorb more carbon, creating steel rather than wrought iron. Because steel proved to be less brittle and more resistant to corrosion than iron, techniques were developed to produce steel. This was done by blowing a coal derivative called coke through molten iron. Most modern steel making utilizes the "blast furnace", developed by Henry Bessemer in 1855, to accomplish this task on a large-scale basis. The strength and other qualities of steel make it the material of choice for warships, planes, and many other vehicles.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SUPERCONDUCTORS</Tag>
+		<English>Superconductors</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SUPERCONDUCTORS_QUOTE</Tag>
+		<English>"Everything we call real is made of things that cannot be regarded as real."[PARAGRAPH:2]- Niels Bohr</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SUPERCONDUCTORS_PEDIA</Tag>
+		<English>Needs to be written.</English>
 	</TEXT>
 
 
@@ -2231,6 +2107,38 @@ The race of siege techniques versus defense techniques has proceeded up into the
 
 This has led to a vast growth in the capabilities of intelligence agencies to target foreign and domestic enemies. The countervailing concern is that with the rise of 20th and 21st century surveillance techniques, we may all become targets - that the state, or powerful private organizations, may use this technology to gain total information, and thus a great measure of power, over our lives.
 </English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SYNTHETICS</Tag>
+		<English>Synthetics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SYNTHETICS_QUOTE</Tag>
+		<English>"I was born with a plastic spoon in my mouth."[PARAGRAPH:2]- Pete Townshend</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TANNING</Tag>
+		<English>Tanning</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TANNING_QUOTE</Tag>
+		<English>"'Tis the same to him who wears a shoe, as if the whole earth were covered in leather."[PARAGRAPH:2]- Persian proverb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TANNING_PEDIA</Tag>
+<English>Leather is a hard-wearing, flexible material created by curing and drying animal skins. Forms of leather can be made using Stone Age technology (curing hides with materials like lime or animal brains), or more complex chemical processes. Leather has been in use since at least the second millenium BC, as proven by finds of leather samples over 3000 years old in archaeological digs. Since leather does not last forever under normal conditions, its invention very probably came earlier.
+
+Leather can be made from the skin of almost any large animal, with a variety of qualities. Depending on how it is tanned, it can be flexible or stiff, soft or rough. It is generally waterproof, fairly effective at keeping in heat, and resistant to rotting or decay. Properly oiled and maintained, it can survive desert sandstorms or frozen tundra conditions. It can even be boiled for hardness and used as a form of cheap, lightweight armor protection.
+
+Unlike other fabrics such as linen, cotton, and silk, leather can be made even by nomadic cultures. If the nomads kill a domestic or wild animal, and have a suitable tanning process. On the other hand, leather remains useful in farming societies, especially those with large herd animals such as cattle.
+
+Because it is sturdy and cannot be unraveled like normal cloth, leather can be decorated with a variety of hole-punches, stitches, and decorative studs. Decorative leather goods are a popular form of arts and crafts in many societies. Today, advances in synthetic plastics have made leather less important, and it has now become more of a fashion statement and luxury good than a major fabric in practical use.</English>
 	</TEXT>
 
 
@@ -2272,6 +2180,17 @@ The next great advance, mobile telephony, came in the 1970s and '80s, reaching m
 	</TEXT>
 
 
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TELEVISION</Tag>
+		<English>Television</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TELEVISION_QUOTE</Tag>
+		<English>"The only thing worse than being talked about is not being talked about."[PARAGRAPH:2]- Oscar Wilde</English>
+	</TEXT>
+
+
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THEOLOGY</Tag>
 		<English>Theology</English>
@@ -2279,6 +2198,17 @@ The next great advance, mobile telephony, came in the 1970s and '80s, reaching m
 	<TEXT>
 		<Tag>TXT_KEY_TECH_THEOLOGY_QUOTE</Tag>
 		<English>"Two cities have been formed by two loves: the earthly by the love of self; the heavenly by the love of God."[PARAGRAPH:2]- Saint Augustine</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THERMODYNAMICS</Tag>
+		<English>Thermodynamics</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_THERMODYNAMICS_QUOTE</Tag>
+		<English>"You would make a ship sail against the winds and currents by lighting a bonfire under her deck? I have no time for such nonsense."[PARAGRAPH:2] - Napoleon Bonaparte</English>
 	</TEXT>
 
 
@@ -2293,6 +2223,53 @@ The next great advance, mobile telephony, came in the 1970s and '80s, reaching m
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TOURISM_PEDIA</Tag>
 		<English>Needs to be written</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TRADITION</Tag>
+		<English>Tradition</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TRADITION_QUOTE</Tag>
+		<English>"Be a craftsman in speech that thou mayest be strong, for the strength of one is the tongue, and speech is mightier than all fighting."[PARAGRAPH:2]- Ptahhotep</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TRADITION_PEDIA</Tag>
+		<English>Needs to be written.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TRANSHUMANISM</Tag>
+		<English>Transhumanism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TRANSHUMANISM_QUOTE</Tag>
+		<English>"What has the future in store for this strange being, born of a breath, of perishable tissue, yet immortal, with his powers fearful and divine?"[PARAGRAPH:2]- Nikola Tesla</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_UNIFIED_THEORY</Tag>
+		<English>Unified Theory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_UNIFIED_THEORY_QUOTE</Tag>
+		<English>"The universe is not only stranger than we imagine, it is stranger than we can imagine."[PARAGRAPH:2]- Werner Heisenberg</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_UNIFIED_THEORY_PEDIA</Tag>
+<English>By late 20th century, physics had converged on a set of well understood theories to describe nature. But there are several gaps, defects, or vulnerabilities in this universal model. Firstly, this set of theories stands on two pillars. One is the nature of gravity, as outlined by Einstein's theory of "general relativity" in 1920 and refined since that time, which treats time and space as flexible things that can be warped by gravity. The other is "quantum field theory," which describes the behavior of subatomic particles, treating each particle as a special instance of a generalized, abstract field of force and probability that permeates the universe.
+
+The problem is that quantum field theory, otherwise known as the Standard Model, assumes that time and space are fixed, inflexible, and invariant - that they are the constant and unchanging playing field on which particle interactions are allowed to happen. In other words, the Standard Model does not obey the theory of relativity. Therefore, it cannot be the whole story. General relativity appears to be a solid and essentially complete picture of a key part of reality, the Standard Model is not. It is solid, it explains the behavior of nearly all things that can be seen on Earth or elsewhere in the universe... but it is not complete.
+
+The Standard Model explains almost all known phenomena, but some of the ones it cannot explain present very large issues. It does not explain the nature or origins of dark matter or dark energy and yet astronomers have reason to believe that these things make up 95% of all substance in the universe today. The Standard Model does not explain why the ghostly neutrino particles coming from the Sun appear to randomly reshuffle their nature, in a way the Standard Model deems impossible. The Standard Model predicts that in the beginning of the universe, matter and antimatter 'should' have been created in equal quantities, and devoured each other totally, leaving behind nothing but light and radiation in all of space. In hindsight, this appears not to have occurred. For this and other reasons, despite the Standard Model providing huge advances in our understanding compared to anything that came before it, it is not the last step.
+
+Research into these matters is ongoing today. It is hoped that future physics will emerge which resolves some of these contradictions. In particular, it is hoped that these new physics will allow us to create a model of quantum physics that is consistent with Einstein's work on gravity - thus the name, "quantum gravity."</English>
 	</TEXT>
 
 
@@ -2313,12 +2290,35 @@ The next great advance, mobile telephony, came in the 1970s and '80s, reaching m
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_THE_WHEEL</Tag>
-		<English>The Wheel</English>
+		<Tag>TXT_KEY_TECH_WARRIOR_CODE</Tag>
+		<English>Warrior Code</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_THE_WHEEL_QUOTE</Tag>
-		<English>"Put your shoulder to the wheel."[PARAGRAPH:2]- Aesop</English>
+		<Tag>TXT_KEY_TECH_WARRIOR_CODE_QUOTE</Tag>
+		<English>"Do not try to fight a lion if you are not one yourself."[PARAGRAPH:2]- African Proverb</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WARRIOR_CODE_PEDIA</Tag>
+		<English>Chivalry comes from the Old French words for "knighthood" and "horsemanship." Chivalry was a European code of rules governing the behavior of an aristocratic class of warriors known as knights. First appearing in or around the 12th century, the rules of chivalry governed not only the knights' behavior in battle, but in their personal lives as well. The chief chivalric virtues of piety, honor, valor, courtesy, chastity, and loyalty represented a fusion of Christian and military morality.[NEWLINE][NEWLINE]Other, comparable codes existed in many other societies. Out of many examples, a similar code of behavior known as "Bushido" or "the way of the warrior" governed the behavior of the samurai warriors of feudal Japan. Other societies which formed a warrior class subject to religious and moral codes of honor included ancient Persia and India.[NEWLINE][NEWLINE]Although the strict practice of the code of chivalry had all but disappeared in Europe by the 16th century, the ideals of chivalric behavior became the basis for what is now considered to be gentlemanly conduct. Chivalry also forms part of the basis for what we now call "the laws of war," because it was in the customs of chivalry that one finds precedent for the idea that war is to be an honorable confrontation between warriors, rather than a predatory confrontation between one side's warriors and the other side's noncombatants.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WORSHIP</Tag>
+		<English>Worship</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WORSHIP_QUOTE</Tag>
+		<English>"Lead them by means of virtue and regulate them through ritual, and they will have a sense of shame and moreover have standards."[PARAGRAPH:2]- Confucius</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WORSHIP_PEDIA</Tag>
+<English>A ritual is a personal, cultural, or religious practice that has become routine by time, practice, or taboo, and which has significance beyond the obvious direct consequences of the act itself. All known religions and cultures are associated with the practice of rituals, as are many secular organizations.
+
+Some of these rituals are used by all members of society as a way to avert bad luck, seek supernatural aid in some difficult endeavour, or thank divine beings for their generosity. Other rituals might only be practiced by certain castes, or by the designated priests of a particular cause or entity. Some rituals are spectacularly public. Others are so private that unauthorized intrusion is punishable by death. Some involve demonstrative physical acts or sacrifices; others are quiet and contemplative.
+
+The recurring pattern is that rituals serve a role of promoting social cohestion in the face of adversity, providing a means for individuals to communicate their shared values and signal their collective loyalty to the survival of the group.</English>
 	</TEXT>
 
 
