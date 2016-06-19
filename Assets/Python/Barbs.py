@@ -526,6 +526,9 @@ class Barbs:
 		plot = gc.getMap().plot(x, y)
 		lSurrounding = utils.surroundingPlots(tPlot)
 		
+		# never on peaks
+		if plot.isPeak(): return False
+		
 		# only land or water
 		if bWater != plot.isWater(): return False
 		
