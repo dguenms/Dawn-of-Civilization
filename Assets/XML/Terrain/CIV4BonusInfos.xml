@@ -91,7 +91,7 @@
 			<Civilopedia>TXT_KEY_BONUS_COPPER_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_RUSH</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COPPER</ArtDefineTag>
-			<TechReveal>TECH_COPPER_WORKING</TechReveal>
+			<TechReveal>TECH_SMELTING</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -186,7 +186,7 @@
 			<Civilopedia>TXT_KEY_BONUS_IRON_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_RUSH</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_IRON</ArtDefineTag>
-			<TechReveal>TECH_IRON_WORKING</TechReveal>
+			<TechReveal>TECH_BLOOMERY</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -636,7 +636,7 @@
 			<Civilopedia>TXT_KEY_BONUS_DEER_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_DEER</ArtDefineTag>
-			<TechCityTrade>TECH_HUNTING</TechCityTrade>
+			<TechCityTrade>TECH_TANNING</TechCityTrade>
 			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -1017,8 +1017,8 @@
 			<Civilopedia>TXT_KEY_BONUS_FUR_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_FUR</ArtDefineTag>
-			<TechCityTrade>TECH_HUNTING</TechCityTrade>
-			<TechObsolete>TECH_PLASTICS</TechObsolete>
+			<TechCityTrade>TECH_TANNING</TechCityTrade>
+			<TechObsolete>TECH_SYNTHETICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1198,7 +1198,7 @@
 			<Civilopedia>TXT_KEY_BONUS_IVORY_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_IVORY</ArtDefineTag>
-			<TechCityTrade>TECH_HUNTING</TechCityTrade>
+			<TechCityTrade>TECH_TANNING</TechCityTrade>
 			<TechObsolete>TECH_COMBUSTION</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1247,7 +1247,7 @@
 			<Civilopedia>TXT_KEY_BONUS_PEARL_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_PEARL</ArtDefineTag>
-			<TechObsolete>TECH_PLASTICS</TechObsolete>
+			<TechObsolete>TECH_SYNTHETICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>

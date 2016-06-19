@@ -11,7 +11,7 @@
 			<Description>TXT_KEY_RELIGION_JUDAISM</Description>
 			<Adjective>TXT_KEY_RELIGION_JUDAISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_JUDAISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_RECORD_KEEPING</TechPrereq>
+			<TechPrereq>TECH_ARITHMETICS</TechPrereq>
 			<FreeUnitClass>UNITCLASS_JEWISH_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
 			<iSpreadFactor>50</iSpreadFactor>
@@ -139,7 +139,7 @@
 			<Description>TXT_KEY_RELIGION_ISLAM</Description>
 			<Adjective>TXT_KEY_RELIGION_ISLAM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_ISLAM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_DOGMA</TechPrereq>
+			<TechPrereq>TECH_CLERGY</TechPrereq>
 			<FreeUnitClass>UNITCLASS_ISLAMIC_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>1</iFreeUnits>
 			<iSpreadFactor>150</iSpreadFactor>
