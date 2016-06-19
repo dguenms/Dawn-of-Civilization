@@ -792,19 +792,21 @@ class RFCUtils:
 		return False
 
 	#Barbs, RiseAndFall
-	def squareSearch( self, tTopLeft, tBottomRight, function, argsList, tExceptions = () ): #by LOQ
+	def squareSearch(self, tTopLeft, tBottomRight, function, argsList, tExceptions = () ): #by LOQ
 		"""Searches all tile in the square from tTopLeft to tBottomRight and calls function for
 		every tile, passing argsList. The function called must return a tuple: (1) a result, (2) if
 		a plot should be painted and (3) if the search should continue."""
+		return listSearch(self.getPlotList(tTopLeft, tBottomRight, tExceptions), function, argsList)
+		
+	def listSearch(self, lPlots, function, argsList):
 		tPaintedList = []
 		result = None
-		for x in range(tTopLeft[0], tBottomRight[0]+1):
-			for y in range(tTopLeft[1], tBottomRight[1]+1):
-				result, bPaintPlot, bContinueSearch = function((x, y), result, argsList)
-				if bPaintPlot:			# paint plot
-					tPaintedList.append((x, y))
-				if not bContinueSearch:		# goal reached, so stop
-					return result, tPaintedList
+		for (x, y) in lPlots:
+			result, bPaintPlot, bContinueSearch = function((x, y), result, argsList)
+			if bPaintPlot:			# paint plot
+				tPaintedList.append((x, y))
+			if not bContinueSearch:		# goal reached, so stop
+				return result, tPaintedList
 		return result, tPaintedList
 
 	#Barbs, RiseAndFall

@@ -2712,14 +2712,14 @@ class RiseAndFall:
 
 	def initMinorBetrayal( self, iCiv ):
 		iHuman = utils.getHumanID()
-		tTL, tBR = Areas.tBirthArea[iCiv]
-		dummy, plotList = utils.squareSearch(tTL, tBR, utils.outerInvasion, [])
+		lPlots = Areas.getBirthArea(iCiv)
+		dummy, plotList = utils.listSearch(lPlots, utils.outerInvasion, [])
 		rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot abroad human players borders')
 		if (len(plotList)):
 			result = plotList[rndNum]
 			if (result):
 				self.createAdditionalUnits(iCiv, result)
-				self.unitsBetrayal(iCiv, iHuman, tTL, tBR, result, utils.getOrElse(Areas.dBirthAreaExceptions, iCiv, []))
+				self.unitsBetrayal(iCiv, iHuman, lPlots, result)
 
 	def initBetrayal( self ):
 		iFlipPlayer = self.getNewCivFlip()
@@ -2728,46 +2728,45 @@ class RiseAndFall:
 	
 		iHuman = utils.getHumanID()
 		turnsLeft = self.getBetrayalTurns()
-		dummy, plotList = utils.squareSearch( self.getTempTopLeft(), self.getTempBottomRight(), utils.outerInvasion, [] )
+		lTempPlots = self.getTempPlots()
+		dummy, plotList = utils.listSearch(lTempPlots, utils.outerInvasion, [] )
 		rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot abroad human players (or in general, the old civ if human player just swtiched) borders')
 		if (not len(plotList)):
-			dummy, plotList = utils.squareSearch( self.getTempTopLeft(), self.getTempBottomRight(), utils.innerSpawn, [self.getOldCivFlip(), self.getNewCivFlip()] )
+			dummy, plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [self.getOldCivFlip(), self.getNewCivFlip()] )
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot within human or new civs border but distant from units')				
 		if (not len(plotList)):
-			dummy, plotList = utils.squareSearch( self.getTempTopLeft(), self.getTempBottomRight(), utils.innerInvasion, [self.getOldCivFlip(), self.getNewCivFlip()] )
+			dummy, plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [self.getOldCivFlip(), self.getNewCivFlip()] )
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot within human or new civs border')				
 		if (len(plotList)):
 			result = plotList[rndNum]
 			if (result):
 				if (turnsLeft == iBetrayalPeriod):
 					self.createAdditionalUnits(self.getNewCivFlip(), result)
-				self.unitsBetrayal(self.getNewCivFlip(), self.getOldCivFlip(), self.getTempTopLeft(), self.getTempBottomRight(), result)
+				self.unitsBetrayal(self.getNewCivFlip(), self.getOldCivFlip(), lTempPlots, result)
 		self.setBetrayalTurns(turnsLeft - 1)
 
 
 
-	def unitsBetrayal( self, iNewOwner, iOldOwner, tTopLeft, tBottomRight, tPlot, lExceptions=() ):
+	def unitsBetrayal( self, iNewOwner, iOldOwner, lPlots, tPlot):
 		if (gc.getPlayer(self.getOldCivFlip()).isHuman()):
 			CyInterface().addMessage(self.getOldCivFlip(), False, iDuration, CyTranslator().getText("TXT_KEY_FLIP_BETRAYAL", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
 		elif (gc.getPlayer(self.getNewCivFlip()).isHuman()):
 			CyInterface().addMessage(self.getNewCivFlip(), False, iDuration, CyTranslator().getText("TXT_KEY_FLIP_BETRAYAL_NEW", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
-		for x in range(tTopLeft[0], tBottomRight[0]+1):
-			for y in range(tTopLeft[1], tBottomRight[1]+1):
-				if (x, y) not in lExceptions:
-					killPlot = gc.getMap().plot(x,y)
-					if killPlot.isCore(iOldOwner) and not killPlot.isCore(iNewOwner): continue
-					iNumUnitsInAPlot = killPlot.getNumUnits()
-					if (iNumUnitsInAPlot):								  
-						for i in range(iNumUnitsInAPlot):						
-							unit = killPlot.getUnit(i)
-							if (unit.getOwner() == iOldOwner):
-								rndNum = gc.getGame().getSorenRandNum(100, 'betrayal')
-								if (rndNum >= iBetrayalThreshold):
-									if (unit.getDomainType() == 2): #land unit
-										iUnitType = unit.getUnitType()
-										unit.kill(False, iNewOwner)
-										utils.makeUnit(iUnitType, iNewOwner, tPlot, 1)
-										i = i - 1
+		for (x, y) in lPlots:
+			killPlot = gc.getMap().plot(x,y)
+			if killPlot.isCore(iOldOwner) and not killPlot.isCore(iNewOwner): continue
+			iNumUnitsInAPlot = killPlot.getNumUnits()
+			if (iNumUnitsInAPlot):								  
+				for i in range(iNumUnitsInAPlot):						
+					unit = killPlot.getUnit(i)
+					if (unit.getOwner() == iOldOwner):
+						rndNum = gc.getGame().getSorenRandNum(100, 'betrayal')
+						if (rndNum >= iBetrayalThreshold):
+							if (unit.getDomainType() == 2): #land unit
+								iUnitType = unit.getUnitType()
+								unit.kill(False, iNewOwner)
+								utils.makeUnit(iUnitType, iNewOwner, tPlot, 1)
+								i = i - 1
 
 	def createAdditionalUnits( self, iCiv, tPlot ):
 		if iCiv == iIndia:
