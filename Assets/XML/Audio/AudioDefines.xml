@@ -8470,7 +8470,7 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_TECH_MASS_MEDIA</SoundID>
+			<SoundID>SND_TECH_TELEVISION</SoundID>
 			<Filename>Sounds/Tech/Tech_MassMedia</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
@@ -8491,7 +8491,7 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_TECH_THE_WHEEL</SoundID>
+			<SoundID>SND_TECH_LEVERAGE</SoundID>
 			<Filename>Sounds/Tech/Tech_Wheel</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
@@ -8526,8 +8526,8 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_TECH_MATHEMATICS</SoundID>
-			<Filename>Sounds/Tech/Tech_Mathematics</Filename>
+			<SoundID>SND_TECH_GEOMETRY</SoundID>
+			<Filename>Sounds/Tech/TECH_GEOMETRY</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
@@ -8631,8 +8631,8 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_TECH_MEDICINE</SoundID>
-			<Filename>Sounds/Tech/Tech_Medicine</Filename>
+			<SoundID>SND_TECH_SANITATION</SoundID>
+			<Filename>Sounds/Tech/TECH_SANITATION</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
@@ -8666,8 +8666,8 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_TECH_PLASTICS</SoundID>
-			<Filename>Sounds/Tech/Tech_Plastics</Filename>
+			<SoundID>SND_TECH_SYNTHETICS</SoundID>
+			<Filename>Sounds/Tech/TECH_SYNTHETICS</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

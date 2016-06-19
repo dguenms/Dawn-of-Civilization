@@ -37,7 +37,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_CITY_STATES_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Buildings/Market.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,3</Button>
-			<TechPrereq>TECH_ORATORY</TechPrereq>
+			<TechPrereq>TECH_TRADITION</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iNumCitiesMaintenanceModifier>100</iNumCitiesMaintenanceModifier>
@@ -95,7 +95,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_REPUBLIC_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_REPUBLIC_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Civics/Emancipation.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,6,1</Button>
-			<TechPrereq>TECH_NATIONHOOD</TechPrereq>
+			<TechPrereq>TECH_STATECRAFT</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iGreatPeopleRateModifier>50</iGreatPeopleRateModifier>
@@ -120,7 +120,7 @@
 			<Strategy>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Strategy>
 			<Help>TXT_KEY_CIVIC_VASSALAGE_HELP</Help>
 			<Button>,Art/Interface/Buttons/Civics/Vassalage.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,4</Button>
-			<TechPrereq>TECH_LAND_TENURE</TechPrereq>
+			<TechPrereq>TECH_FEUDALISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iFreeExperience>2</iFreeExperience>
@@ -678,7 +678,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_FANATICISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_FANATICISM_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Civics/Pacifism.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,7,15</Button>
-			<TechPrereq>TECH_DOGMA</TechPrereq>
+			<TechPrereq>TECH_CLERGY</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<bStateReligion>1</bStateReligion>
@@ -721,7 +721,7 @@
 			<Strategy>TXT_KEY_CIVIC_MERCENARIES_STRATEGY</Strategy>
 			<Help>TXT_KEY_CIVIC_MERCENARIES_HELP</Help>
 			<Button>,Art/Interface/Buttons/Units/HorseArcher.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,8</Button>
-			<TechPrereq>TECH_EMPLOYMENT</TechPrereq>
+			<TechPrereq>TECH_CONTRACT</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<Hurrys>
@@ -764,7 +764,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_STANDING_ARMY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/TechTree/Military Tradition.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,5</Button>
-			<TechPrereq>TECH_INSURANCE</TechPrereq>
+			<TechPrereq>TECH_LOGISTICS</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<BuildingProductionModifiers>
@@ -800,7 +800,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_NAVAL_SUPREMACY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_NAVAL_SUPREMACY_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Units/Frigate.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,9</Button>
-			<TechPrereq>TECH_METEOROLOGY</TechPrereq>
+			<TechPrereq>TECH_ASTRONOMY</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<BuildingProductionModifiers>
