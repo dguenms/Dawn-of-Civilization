@@ -1855,7 +1855,7 @@ def canTriggerTheHuns(argsList):
 					
 #   At least one civ on the board must know Iron Working.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_IRON_WORKING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_BLOOMERY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -1966,7 +1966,7 @@ def canTriggerTheVandals(argsList):
 					
 #   At least one civ on the board must know Iron Working.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_IRON_WORKING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_BLOOMERY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2064,7 +2064,7 @@ def canTriggerTheGoths(argsList):
 			
 #   At least one civ on the board must know Mathematics.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_MATHEMATICS')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_GEOMETRY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2077,7 +2077,7 @@ def canTriggerTheGoths(argsList):
 					
 #   At least one civ on the board must know Iron Working.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_IRON_WORKING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_BLOOMERY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2188,7 +2188,7 @@ def canTriggerThePhilistines(argsList):
 					
 #   At least one civ on the board must know Bronze Working.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_BRONZE_WORKING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_ALLOYS')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2286,7 +2286,7 @@ def canTriggerTheVedicAryans(argsList):
 			
 #   At least one civ on the board must know Polytheism.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_RITUAL')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_WORSHIP')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2299,7 +2299,7 @@ def canTriggerTheVedicAryans(argsList):
 					
 #   At least one civ on the board must know Archery.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_ARCHERY')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_TANNING')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():

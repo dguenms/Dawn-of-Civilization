@@ -113,7 +113,7 @@ def canTriggerTheVedicAryans(argsList):
 					
 #   At least one civ on the board must know Archery.
 	bFoundValid = false
-	iTech = gc.getInfoTypeForString('TECH_LEATHER_WORKING')
+	iTech = gc.getInfoTypeForString('TECH_TANNING')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
