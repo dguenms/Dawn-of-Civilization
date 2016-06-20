@@ -785,7 +785,7 @@
 			<Quote>TXT_KEY_TECH_ARITHMETICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Arithmetics.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Arithmetics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,3,5</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -964,7 +964,7 @@
 			<Quote>TXT_KEY_TECH_METAL_CASTING_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Metal_Casting.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Metal Casting.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,5</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -1001,7 +1001,7 @@
 			<Quote>TXT_KEY_TECH_GEOMETRY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Geometry.dds,Art/Interface/Buttons/TechTree_Atlas.dds,3,5</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Geometry.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -1153,7 +1153,7 @@
 			<Quote>TXT_KEY_TECH_ASTROLABE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Astrolabe.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Astrolabe.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,7,1</Button>
 		</TechInfo>
 
 <!-- #6 -->
@@ -1636,7 +1636,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<iGridX>7</iGridX>
-			<iGridY>9</iGridY>
+			<iGridY>11</iGridY>
 			<Flavors>
 				<!-- TODO: flavors -->
 				<Flavor>
@@ -1651,7 +1651,7 @@
 			<Quote>TXT_KEY_TECH_SCHOLARSHIP_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Scholarship.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Scholarship.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,6,3</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -1688,7 +1688,7 @@
 			<Quote>TXT_KEY_TECH_ETHICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Ethics.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Ethics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,5,5</Button>
 		</TechInfo>
 
 <!-- #8 -->
@@ -1742,7 +1742,7 @@
 			<bGoodyTech>0</bGoodyTech>
 			<bVassalTrading>1</bVassalTrading>
 			<iGridX>8</iGridX>
-			<iGridY>5</iGridY>
+			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -1831,15 +1831,16 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_SCHOLARSHIP</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_ARCHITECTURE</PrereqTech>
 				<PrereqTech>TECH_ARTISANRY</PrereqTech>
-				<PrereqTech>TECH_NOBILITY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_ALCHEMY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Alchemy.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Alchemy.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,2,1</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2063,9 +2064,9 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_ARCHITECTURE</PrereqTech>
-				<PrereqTech>TECH_ARTISANRY</PrereqTech>
-				<PrereqTech>TECH_NOBILITY</PrereqTech>
+				<PrereqTech>TECH_FEUDALISM</PrereqTech>
+				<PrereqTech>TECH_MACHINERY</PrereqTech>
+				<PrereqTech>TECH_ALCHEMY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_GUILDS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2406,7 +2407,7 @@
 			<Quote>TXT_KEY_TECH_HORTICULTURE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Horticulture.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Urbanism.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2630,10 +2631,10 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_CLERGY</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_EVANGELISM_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_LITERATURE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Evangelism.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Literature.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,10</Button>
 		</TechInfo>
 
 <!-- #11 -->
@@ -2729,7 +2730,7 @@
 			<Quote>TXT_KEY_TECH_ECONOMICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Economics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,3</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Economics.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,1,5</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2771,7 +2772,7 @@
 			<Quote>TXT_KEY_TECH_EXPLORATION_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Charter.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Exploration.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -3939,7 +3940,7 @@
 			<Quote>TXT_KEY_TECH_BIOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Biology.dds,Art/Interface/Buttons/TechTree_Atlas.dds,1,9</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Biology.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -3992,7 +3993,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<iGridX>14</iGridX>
-			<iGridY>11</iGridY>
+			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
@@ -4198,7 +4199,7 @@
 			<Quote>TXT_KEY_TECH_MEDICINE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Medicine.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Biology.dds,Art/Interface/Buttons/TechTree_Atlas.dds,1,9</Button>
 		</TechInfo>
 
 		<!--TechInfo>
@@ -4629,7 +4630,7 @@
 			<Quote>TXT_KEY_TECH_MACROECONOMICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Macroeconomics.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Macroeconomics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,3</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -4666,7 +4667,7 @@
 			<Quote>TXT_KEY_TECH_MEDICINE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Healthcare.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Social_Services.dds</Button>
 		</TechInfo>
 
 <!-- #17 -->
@@ -4894,7 +4895,7 @@
 			<Quote>TXT_KEY_TECH_MASS_MARKET_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Marketing.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Mass_Market.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -5564,7 +5565,7 @@
 			<Quote>TXT_KEY_TECH_SUPERCONDUCTORS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Particle_Physics.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Superconductors.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -5939,7 +5940,7 @@
 			<Quote>TXT_KEY_TECH_UNIFIED_THEORY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Quantum_Gravity.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Unified_Theory.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
