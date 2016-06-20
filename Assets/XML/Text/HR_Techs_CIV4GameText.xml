@@ -356,6 +356,13 @@ Automatic equipment invariably saves human labor, but it also displaces labour. 
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_CEREMONY</Tag>
+		<English>Ceremony</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_CHARITY</Tag>
 		<English>Charity</English>
 	</TEXT>
@@ -945,6 +952,13 @@ But many nuclear devices remain, and some countries continue to pursue expanded 
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_GENERALSHIP</Tag>
+		<English>Generalship</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_GENETICS</Tag>
 		<English>Genetics</English>
 	</TEXT>
@@ -1163,6 +1177,13 @@ The relationship between the "fourth estate" of journalists and government power
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_JUDICIARY</Tag>
+		<English>Judiciary</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_JURISPRUDENCE</Tag>
 		<English>Jurisprudence</English>
 	</TEXT>
@@ -1287,6 +1308,13 @@ A cunning enemy may always strike at an army's logistics. This has caused countl
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_MACROECONOMICS</Tag>
+		<English>Macroeconomics</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_MASONRY</Tag>
 		<English>Masonry</English>
 	</TEXT>
@@ -1312,6 +1340,13 @@ A cunning enemy may always strike at an army's logistics. This has caused countl
 Common practices in modern marketing include direct personal approaches, flattery of the customer, praise of the product (intellectually honest or otherwise), and efforts to make the seller appear sympathetic and likeable to the prospective buyer. The main difference is that all these things are now transmitted from the individual advertiser to the mass of the population through new communications technology such as printing, broadcasts, or the Internet.
 
 The practice of marketing is often criticized for dishonesty, for misleading people into paying for that which is useless to them, for encouraging people to go into debt, and for discouraging people from thrift and from building up savings for the future. It is also criticized for the increasingly intrusive way in which, in the modern computerized era, marketers use "big data" to analyze individuals' purchasing habits and tailor advertisements to them. This is widely regarded as intrusive, and as having ominous implications for the individual's privacy and control over their own life in the future.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MEASUREMENT</Tag>
+		<English>Measurement</English>
 	</TEXT>
 
 
@@ -1941,6 +1976,13 @@ To this day, this pattern of conflict between representative bodies (legislature
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_SCHOLARSHIP</Tag>
+		<English>Scholarship</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_SCIENTIFIC_METHOD</Tag>
 		<English>Scientific Method</English>
 	</TEXT>
@@ -2034,6 +2076,20 @@ Copper can be used for metallic tools, but it is soft and does not hold a cuttin
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_SOCIAL_SCIENCES</Tag>
+		<English>Social Sciences</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_SOCIAL_SERVICES</Tag>
+		<English>Social Services</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_SPACEFLIGHT</Tag>
 		<English>Spaceflight</English>
 	</TEXT>
@@ -2044,6 +2100,13 @@ Copper can be used for metallic tools, but it is soft and does not hold a cuttin
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SPACEFLIGHT_PEDIA</Tag>
 <English>Utilizing the now well-developed science of rocketry, the modern exploration of space began in October 1957 when the Soviet Union launched Sputnik 1. This tiny satellite orbited the earth for 57 days, providing information on radiation and other phenomena in the upper atmosphere. In less than a year, the United States had also launched a satellite, Explorer 1. This started the "space race", years of competition between the U.S. and the U.S.S.R. to achieve new frontiers in space exploration. Space flight advanced rapidly from the simple sub-orbital flights of the 1950s, to manned missions to Earth's moon in the late 1960s. The rapid growth of space technology led to many practical applications, such as weather and surveillance satellites, and vastly improved worldwide communications. Today, although hindered by severe government budget cuts, the exploration of space continues.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_STATECRAFT</Tag>
+		<English>Statecraft</English>
 	</TEXT>
 
 
@@ -2285,6 +2348,13 @@ Research into these matters is ongoing today. It is hoped that future physics wi
 	<TEXT>
 		<Tag>TXT_KEY_TECH_URBAN_PLANNING_PEDIA</Tag>
 		<English>Needs to be written.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_URBANISM</Tag>
+		<English>Urbanism</English>
 	</TEXT>
 
 
