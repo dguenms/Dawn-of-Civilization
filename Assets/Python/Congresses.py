@@ -1092,10 +1092,9 @@ class Congress:
 	def inviteToCongress(self):
 		rank = lambda x: gc.getGame().getPlayerRank(x)
 		lPossibleInvites = []
-		
-		iLowestWinnerRank = rank(utils.getSortedList(self.lWinners, rank))
 	
 		if self.bPostWar:
+			iLowestWinnerRank = rank(utils.getSortedList(self.lWinners, rank)[0])
 			lPossibleInvites.extend(self.lWinners)
 			lPossibleInvites.extend([iLoser for iLoser in self.lLosers if rank(iLoser) < iLowestWinnerRank])
 			
