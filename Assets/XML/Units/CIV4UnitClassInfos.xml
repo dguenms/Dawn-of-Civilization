@@ -191,12 +191,12 @@
 			<DefaultUnit>UNIT_AXEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_HEAVY_SWORDSMAN</Type>
-			<Description>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Description>
+			<Type>UNITCLASS_FOOTMAN</Type>
+			<Description>TXT_KEY_UNIT_FOOTMAN</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_HEAVY_SWORDSMAN</DefaultUnit>
+			<DefaultUnit>UNIT_FOOTMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SPEARMAN</Type>
@@ -335,12 +335,12 @@
 			<DefaultUnit>UNIT_HORSE_ARCHER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_KNIGHT</Type>
-			<Description>TXT_KEY_UNIT_KNIGHT</Description>
+			<Type>UNITCLASS_LANCER</Type>
+			<Description>TXT_KEY_UNIT_LANCER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_KNIGHT</DefaultUnit>
+			<DefaultUnit>UNIT_LANCER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CUIRASSIER</Type>
@@ -463,12 +463,12 @@
 			<DefaultUnit>UNIT_GALLEY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_TRIREME</Type>
-			<Description>TXT_KEY_UNIT_TRIREME</Description>
+			<Type>UNITCLASS_WAR_GALLEY</Type>
+			<Description>TXT_KEY_UNIT_WAR_GALLEY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_TRIREME</DefaultUnit>
+			<DefaultUnit>UNIT_WAR_GALLEY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CARAVEL</Type>
@@ -567,12 +567,12 @@
 			<DefaultUnit>UNIT_SUBMARINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_ATTACK_SUBMARINE</Type>
-			<Description>TXT_KEY_UNIT_ATTACK_SUBMARINE</Description>
+			<Type>UNITCLASS_NUCLEAR_SUBMARINE</Type>
+			<Description>TXT_KEY_UNIT_NUCLEAR_SUBMARINE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_ATTACK_SUBMARINE</DefaultUnit>
+			<DefaultUnit>UNIT_NUCLEAR_SUBMARINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CARRIER</Type>

@@ -39,11 +39,11 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_KNIGHT</UnitType>
+					<UnitType>UNIT_LANCER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_KNIGHT_ASIAN</EarlyArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_KNIGHT_ASIAN</MiddleArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_KNIGHT_ASIAN</LateArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_LANCER_ASIAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_LANCER_ASIAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_LANCER_ASIAN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -135,11 +135,11 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_HEAVY_SWORDSMAN</UnitType>
+					<UnitType>UNIT_FOOTMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_ASIAN</EarlyArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_ASIAN</MiddleArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_ASIAN</LateArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_FOOTMAN_ASIAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_FOOTMAN_ASIAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_FOOTMAN_ASIAN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
@@ -148,11 +148,11 @@
 			<Type>UNIT_ARTSTYLE_EUROPEAN</Type>
 			<StyleUnits>
 				<StyleUnit>
-					<UnitType>UNIT_KNIGHT</UnitType>
+					<UnitType>UNIT_LANCER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_KNIGHT_EUROPEAN</EarlyArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_KNIGHT_EUROPEAN</MiddleArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_KNIGHT_EUROPEAN</LateArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_LANCER_EUROPEAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_LANCER_EUROPEAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_LANCER_EUROPEAN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -320,11 +320,11 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_KNIGHT</UnitType>
+					<UnitType>UNIT_LANCER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_KNIGHT_MIDDLE_EASTERN</EarlyArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_KNIGHT_MIDDLE_EASTERN</MiddleArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_KNIGHT_MIDDLE_EASTERN</LateArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_LANCER_MIDDLE_EASTERN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_LANCER_MIDDLE_EASTERN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_LANCER_MIDDLE_EASTERN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -406,11 +406,11 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_HEAVY_SWORDSMAN</UnitType>
+					<UnitType>UNIT_FOOTMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MIDDLE_EASTERN</EarlyArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MIDDLE_EASTERN</MiddleArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_MIDDLE_EASTERN</LateArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_FOOTMAN_MIDDLE_EASTERN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_FOOTMAN_MIDDLE_EASTERN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_FOOTMAN_MIDDLE_EASTERN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
@@ -419,11 +419,11 @@
 			<Type>UNIT_ARTSTYLE_SOUTH_AMERICAN</Type>
 			<StyleUnits>
 				<StyleUnit>
-					<UnitType>UNIT_KNIGHT</UnitType>
+					<UnitType>UNIT_LANCER</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_KNIGHT_SOUTH_AMERICAN</EarlyArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_KNIGHT_SOUTH_AMERICAN</MiddleArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_KNIGHT_SOUTH_AMERICAN</LateArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_LANCER_SOUTH_AMERICAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_LANCER_SOUTH_AMERICAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_LANCER_SOUTH_AMERICAN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -507,11 +507,11 @@
 					</UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_HEAVY_SWORDSMAN</UnitType>
+					<UnitType>UNIT_FOOTMAN</UnitType>
 					<UnitMeshGroup>
-						<EarlyArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_SOUTH_AMERICAN</EarlyArtDefineTag>
-						<MiddleArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_SOUTH_AMERICAN</MiddleArtDefineTag>
-						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_SOUTH_AMERICAN</LateArtDefineTag>
+						<EarlyArtDefineTag>ART_DEF_UNIT_FOOTMAN_SOUTH_AMERICAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_FOOTMAN_SOUTH_AMERICAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_FOOTMAN_SOUTH_AMERICAN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
