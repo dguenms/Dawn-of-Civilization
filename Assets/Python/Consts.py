@@ -1479,17 +1479,47 @@ lProtestantStart = [iNetherlands, iGermany, iAmerica]
 
 # initialise tech variables to unit indices from XML
 
-iNumTechs = 93
-(iMysticism, iMeditation, iPolytheism, iPriesthood, iMonotheism, iMonarchy, iLiterature, iCodeOfLaws, iDrama, iFeudalism,
-iTheology, iMusic, iCivilService, iGuilds, iDivineRight, iPatronage, iNationalism, iMilitaryTradition, iConstitution, iLiberalism,
-iDemocracy, iCorporation, iFascism, iCommunism, iMassMedia, iEcology, iFishing, iTheWheel, iAgriculture, iPottery,
-iAesthetics, iSailing, iWriting, iMathematics, iAlphabet, iCalendar, iCurrency, iPhilosophy, iPaper, iBanking, 
-iEducation, iPrintingPress, iEconomics, iAstronomy, iChemistry, iScientificMethod, iPhysics, iBiology, iMedicine, iElectricity,
-iCombustion, iFission, iFlight, iAdvancedFlight, iPlastics, iComposites, iStealth, iGenetics, iFiberOptics, iFusion,
-iHunting, iMining, iArchery, iMasonry, iAnimalHusbandry, iBronzeWorking, iHorsebackRiding, iIronWorking, iMetalCasting, iCompass, 
-iConstruction, iMachinery, iEngineering, iOptics, iGunpowder, iReplaceableParts, iMilitaryScience, iRifling, iSteamPower, iSteel, 
-iAssemblyLine, iRailroad, iTechArtillery, iIndustrialism, iRadio, iRefrigeration, iSuperconfuctors, iComputers, iLaser, iRocketry, 
-iSatellites, iRobotics, iFutureTech) = range(iNumTechs)
+# iNumTechs = 93
+# (iMysticism, iMeditation, iPolytheism, iPriesthood, iMonotheism, iMonarchy, iLiterature, iCodeOfLaws, iDrama, iFeudalism,
+# iTheology, iMusic, iCivilService, iGuilds, iDivineRight, iPatronage, iNationalism, iMilitaryTradition, iConstitution, iLiberalism,
+# iDemocracy, iCorporation, iFascism, iCommunism, iMassMedia, iEcology, iFishing, iTheWheel, iAgriculture, iPottery,
+# iAesthetics, iSailing, iWriting, iMathematics, iAlphabet, iCalendar, iCurrency, iPhilosophy, iPaper, iBanking, 
+# iEducation, iPrintingPress, iEconomics, iAstronomy, iChemistry, iScientificMethod, iPhysics, iBiology, iMedicine, iElectricity,
+# iCombustion, iFission, iFlight, iAdvancedFlight, iPlastics, iComposites, iStealth, iGenetics, iFiberOptics, iFusion,
+# iHunting, iMining, iArchery, iMasonry, iAnimalHusbandry, iBronzeWorking, iHorsebackRiding, iIronWorking, iMetalCasting, iCompass, 
+# iConstruction, iMachinery, iEngineering, iOptics, iGunpowder, iReplaceableParts, iMilitaryScience, iRifling, iSteamPower, iSteel, 
+# iAssemblyLine, iRailroad, iTechArtillery, iIndustrialism, iRadio, iRefrigeration, iSuperconfuctors, iComputers, iLaser, iRocketry, 
+# iSatellites, iRobotics, iFutureTech) = range(iNumTechs)
+
+iNumTechs = 141
+(iTanning, iMining, iPottery, iPastoralism, iAgriculture, iWorship, iSailing,
+iSmelting, iMasonry, iLeverage, iProperty, iCeremony, iDivination, iSeafaring,
+iAlloys, iConstruction, iRiding, iArithmetics, iTradition, iCalendar, iShipbuilding,
+iBloomery, iMetalCasting, iGeometry, iContract, iWriting, iPriesthood, iAstrolabe,
+iGeneralship, iEngineering, iAesthetics, iCurrency, iLaw, iPhilosophy, iSanitation,
+iNobility, iSteel, iArchitecture, iArtisanry, iPolitics, iScholarship, iEthics,
+iWarriorCode, iFeudalism, iMachinery, iAlchemy, iCivilService, iJudiciary, iTheology,
+iSiegecraft, iCropRotation, iGuilds, iCompass, iPaper, iPatronage, iClergy,
+iGunpowder, iUrbanism, iFinance, iCartography, iPrinting, iEducation, iLiterature,
+iFirearms, iEconomics, iExploration, iOptics, iHumanities, iStatecraft, iHeritage,
+iLogistics, iCorporation, iAstronomy, iScientificMethod, iUrbanPlanning, iCivilLiberties, iHorticulture,
+iReplaceableParts, iHydraulics, iPhysics, iGeology, iMeasurement, iSocialSciences, iConstitution,
+iMechanization, iThermodynamics, iMetallurgy, iChemistry, iBiology, iRepresentation, iNationalism,
+iBallistics, iAssemblyLine, iRefining, iElectricity, iMedicine, iLaborUnions, iJournalism,
+iPneumatics, iCombustion, iSynthetics, iFilm, iRefrigeration, iMacroeconomics, iSocialServices,
+iInfrastructure, iFlight, iExplosives, iRadio, iSurveillance, iMassMarket, iCivilRights,
+iAviation, iRocketry, iFission, iElectronics, iTelevision, iTourism, iPharmaceuticals,
+iRadar, iSpaceflight, iNuclearPower, iLaser, iComputers, iGlobalization, iEcology,
+iAerodynamics, iSatellites, iSuperconductors, iRobotics, iTelecommunications, iRenewableEnergy, iGenetics,
+iSupermaterials, iFusion, iNanotechnology, iAutomation, iBiotechnology,
+iUnifiedTheory, iArtificialIntelligence, iTranshumanism) = range(iNumTechs)
+
+lAncientTechs = [i for i in range(21)]
+lClassicalTechs = [i for i in range(42)]
+lMedievalTechs = [i for i in range(63)]
+lRenaissanceTechs = [i for i in range(84)]
+lIndustrialTechs = [i for i in range(105)]
+lModernTechs = [i for i in range(126)]
 
 # initialise unit variables to unit indices from XML
 
