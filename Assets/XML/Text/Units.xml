@@ -74,8 +74,12 @@
 		<English>[COLOR_UNIT_TEXT]Axemen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ATTACK_SUBMARINE_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] unit, can see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT], [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Airship[COLOR_REVERT] units.</English>
+		<Tag>TXT_KEY_UNIT_NUCLEAR_SUBMARINE</Tag>
+		<English>Nuclear Submarine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NUCLEAR_SUBMARINE_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] unit, can see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT], [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Airship[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AT_INFANTRY_STRATEGY</Tag>
@@ -645,8 +649,12 @@
 		<English>The [COLOR_UNIT_TEXT]Bersagliere[COLOR_REVERT], the Italian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], has an additional movement point.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_KNIGHT_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Knights[COLOR_REVERT] are immune to first strikes, don't receive defensive bonuses and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT] and [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT] units.</English>
+		<Tag>TXT_KEY_UNIT_LANCER</Tag>
+		<English>Lancer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LANCER_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Lancers[COLOR_REVERT] are immune to first strikes, don't receive defensive bonuses and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT] and [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KHMER_BALLISTA_ELEPHANT_STRATEGY</Tag>
@@ -661,13 +669,13 @@
 		<English>[COLOR_UNIT_TEXT]Marines[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Machine Gun[COLOR_REVERT] and [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] units, are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
-		<English>Heavy Swordsman</English>
-		<German>Schwerer Schwertk&#228;mpfer</German>
+		<Tag>TXT_KEY_UNIT_FOOTMAN</Tag>
+		<English>Footman</English>
+		<German>Fuﬂsoldat</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
+		<Tag>TXT_KEY_UNIT_FOOTMAN_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Footmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MANDE_SKIRMISHER</Tag>
@@ -1229,8 +1237,12 @@
 		<English>Khampa</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TRIREME_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Triremes[COLOR_REVERT] have a combat bonus against the [COLOR_UNIT_TEXT]Galley[COLOR_REVERT] unit, cannot enter [COLOR_HIGHLIGHT_TEXT]Ocean[COLOR_REVERT] and cannot pass [COLOR_HIGHLIGHT_TEXT]Capes[COLOR_REVERT] until [COLOR_TECH_TEXT]Optics[COLOR_REVERT].</English>
+		<Tag>TXT_KEY_UNIT_WAR_GALLEY</Tag>
+		<English>War Galley</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WAR_GALLEY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT] cannot enter [COLOR_HIGHLIGHT_TEXT]Ocean[COLOR_REVERT] and cannot pass [COLOR_HIGHLIGHT_TEXT]Capes[COLOR_REVERT] until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TREBUCHET_STRATEGY</Tag>

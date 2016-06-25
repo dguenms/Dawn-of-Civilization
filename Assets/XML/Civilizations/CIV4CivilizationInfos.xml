@@ -146,7 +146,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_ARABIAN_CAMEL_ARCHER</UnitType>
 				</Unit>
 			</Units>
@@ -627,7 +627,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_BYZANTINE_CATAPHRACT</UnitType>
 				</Unit>
 			</Units>
@@ -2699,7 +2699,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_FOOTMAN</UnitClassType>
 					<UnitType>UNIT_JAPANESE_SAMURAI</UnitType>
 				</Unit>
 			</Units>
@@ -2907,7 +2907,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_FOOTMAN</UnitClassType>
 					<UnitType>UNIT_CONGOLESE_POMBOS</UnitType>
 				</Unit>
 				<Unit>
@@ -3409,7 +3409,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_MONGOLIAN_KESHIK</UnitType>
 				</Unit>
 			</Units>
@@ -4755,7 +4755,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_SELJUK_GHULAM_WARRIOR</UnitType>
 				</Unit>
 				<Unit>
@@ -5215,7 +5215,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_THAI_CHANG_SUEK</UnitType>
 				</Unit>
 			</Units>
@@ -5439,7 +5439,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_FOOTMAN</UnitClassType>
 					<UnitType>UNIT_VIKING_HUSCARL</UnitType>
 				</Unit>
 			</Units>
