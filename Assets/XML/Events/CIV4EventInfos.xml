@@ -13211,7 +13211,7 @@
 			<UnitCombatPromotions/>
 			<UnitClassPromotions>
 				<UnitClassPromotion>
-					<UnitClass>UNITCLASS_TRIREME</UnitClass>
+					<UnitClass>UNITCLASS_WAR_GALLEY</UnitClass>
 					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>
@@ -22383,7 +22383,7 @@
 			<UnitCombatPromotions/>
 			<UnitClassPromotions>
 				<UnitClassPromotion>
-					<UnitClass>UNITCLASS_TRIREME</UnitClass>
+					<UnitClass>UNITCLASS_WAR_GALLEY</UnitClass>
 					<UnitPromotion>PROMOTION_COMBAT1</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>
@@ -22991,7 +22991,7 @@
 			<UnitCombatPromotions/>
 			<UnitClassPromotions>
 				<UnitClassPromotion>
-					<UnitClass>UNITCLASS_KNIGHT</UnitClass>
+					<UnitClass>UNITCLASS_LANCER</UnitClass>
 					<UnitPromotion>PROMOTION_FLANKING1</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>
