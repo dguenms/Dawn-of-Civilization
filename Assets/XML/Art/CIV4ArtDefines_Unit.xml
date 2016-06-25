@@ -2062,7 +2062,7 @@
 			<Type>ART_DEF_UNIT_GALLEY</Type>
 			<Button>,Art/Interface/Buttons/Units/Galley.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,9</Button>
 			<fScale>0.17</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Galley/Galley.nif</NIF>
@@ -2101,7 +2101,7 @@
 			<Type>ART_DEF_UNIT_CARAVEL</Type>
 			<Button>,Art/Interface/Buttons/Units/Caravel.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,9</Button>
 			<fScale>0.21</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Caravel/Caravel.nif</NIF>
@@ -2179,10 +2179,10 @@
 			<Type>ART_DEF_UNIT_GALLEON</Type>
 			<Button>,Art/Interface/Buttons/Units/Galleon.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,5,9</Button>
 			<fScale>0.17</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Galleon/Galleon.nif</NIF>
+			<NIF>Art/Units/Galleon/Galleon_FX.nif</NIF>
 			<KFM>Art/Units/Galleon/Galleon.kfm</KFM>
 			<SHADERNIF>Art/Units/Galleon/Galleon_FX.nif</SHADERNIF>
 			<ShadowDef>
@@ -2255,16 +2255,16 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PRIVATEER</Type>
-			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,11</Button>
-			<fScale>0.2</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<Button>,Art/Interface/Buttons/Units/Privateer.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,11</Button>
+			<fScale>0.22</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Privateer/Privateer.nif</NIF>
 			<KFM>Art/Units/Privateer/Privateer.kfm</KFM>
-			<SHADERNIF>Art/Units/Privateer/Privateer_FX.nif</SHADERNIF>
+			<SHADERNIF>Art/Units/Privateer/Privateer.nif</SHADERNIF>
 			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/FrigateShadow.nif</ShadowNIF>
+				<ShadowNIF>Art/Units/01_UnitShadows/CaravelShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
 				<fShadowScale>1.0</fShadowScale>
 			</ShadowDef>
@@ -2281,13 +2281,13 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bSmoothMove>1</bSmoothMove>
 			<fAngleInterpRate>720.0</fAngleInterpRate>
-			<fBankRate>.3</fBankRate>
+			<fBankRate>.2</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
 			<AudioRunSounds>
-				<AudioRunTypeLoop>LOOPSTEP_OCEAN1</AudioRunTypeLoop>
-				<AudioRunTypeEnd>ENDSTEP_OCEAN1</AudioRunTypeEnd>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
 			</AudioRunSounds>
 			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
@@ -2296,7 +2296,7 @@
 			<Type>ART_DEF_UNIT_FRIGATE</Type>
 			<Button>,Art/Interface/Buttons/Units/Frigate.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,9</Button>
 			<fScale>0.20</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Frigate/Frigate.nif</NIF>
@@ -2335,10 +2335,10 @@
 			<Type>ART_DEF_UNIT_SHIP_OF_THE_LINE</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,1,12</Button>
 			<fScale>0.21</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Ship_0f_the_Line/Ship_0f_the_Line.nif</NIF>
+			<NIF>Art/Units/Ship_0f_the_Line/Ship_of_the_Line.nif</NIF>
 			<KFM>Art/Units/Ship_0f_the_Line/Ship_of_the_Line.kfm</KFM>
 			<SHADERNIF>Art/Units/Ship_0f_the_Line/Ship_of_the_Line_FX.nif</SHADERNIF>
 			<ShadowDef>
@@ -2372,18 +2372,18 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_IRONCLAD</Type>
-			<Button>,Art/Interface/Buttons/Units/Ironclad.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,9</Button>
-			<fScale>0.56</fScale>
-			<fInterfaceScale>1.2</fInterfaceScale>
+			<Button>Art/Interface/Buttons/Units/Ironclad.dds</Button>
+			<fScale>0.6</fScale>
+			<fInterfaceScale>0.3</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Ironclad/Ironclad.nif</NIF>
-			<KFM>Art/Units/Ironclad/Ironclad.kfm</KFM>
+			<NIF>Art/Units/Ironclad/Ironclad_FX.nif</NIF>
+			<KFM>Art/Units/Ship_0f_the_Line/Ship_of_the_Line.kfm</KFM>
 			<SHADERNIF>Art/Units/Ironclad/Ironclad_FX.nif</SHADERNIF>
 			<ShadowDef>
-				<ShadowNIF>Art/Units/01_UnitShadows/IroncladShadow.nif</ShadowNIF>
+				<ShadowNIF>Art/Units/01_UnitShadows/FrigateShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
-				<fShadowScale>1.0</fShadowScale>
+				<fShadowScale>0.3</fShadowScale>
 			</ShadowDef>
 			<iDamageStates>4</iDamageStates>
 			<TrailDefinition>
@@ -2398,7 +2398,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bSmoothMove>1</bSmoothMove>
 			<fAngleInterpRate>720.0</fAngleInterpRate>
-			<fBankRate>.2</fBankRate>
+			<fBankRate>.3</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
@@ -2411,14 +2411,14 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TRANSPORT</Type>
-			<Button>,Art/Interface/Buttons/Units/Transport.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,10</Button>
-			<fScale>0.9</fScale>
-			<fInterfaceScale>1.3</fInterfaceScale>
+			<Button>Art/Units/Transport/Button_Transport.dds</Button>
+			<fScale>0.90</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Transport/Transport.nif</NIF>
-			<KFM>Art/Units/Transport/Transport.kfm</KFM>
-			<SHADERNIF>Art/Units/Transport/Transport_FX.nif</SHADERNIF>
+			<NIF>Art/Units/Transport/Liberty.nif</NIF>
+			<KFM>Art/Units/Transport/Liberty.kfm</KFM>
+			<SHADERNIF>Art/Units/Transport/Liberty_FX.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/TransportShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
@@ -2437,7 +2437,7 @@
 			<fRangedDeathTime>0.31</fRangedDeathTime>
 			<bSmoothMove>1</bSmoothMove>
 			<fAngleInterpRate>720.0</fAngleInterpRate>
-			<fBankRate>.2</fBankRate>
+			<fBankRate>0.2</fBankRate>
 			<fExchangeAngle>25.0</fExchangeAngle>
 			<bActAsRanged>0</bActAsRanged>
 			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
@@ -2451,7 +2451,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_DESTROYER</Type>
 			<Button>,Art/Interface/Buttons/Units/Destroyer.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,9</Button>
-			<fScale>0.7</fScale>
+			<fScale>0.75</fScale>
 			<fInterfaceScale>1.1</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -2568,8 +2568,8 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BATTLESHIP</Type>
 			<Button>,Art/Interface/Buttons/Units/Battleship.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,10</Button>
-			<fScale>0.82</fScale>
-			<fInterfaceScale>0.9</fInterfaceScale>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Battleship/Battleship.nif</NIF>
@@ -2607,7 +2607,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_SUBMARINE</Type>
 			<Button>,Art/Interface/Buttons/Units/Submarine.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,6,9</Button>
-			<fScale>0.60</fScale>
+			<fScale>0.65</fScale>
 			<fInterfaceScale>1.3</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -3596,7 +3596,7 @@
 			<Type>ART_DEF_UNIT_WAR_GALLEY</Type>
 			<Button>,Art/Interface/Buttons/Units/Galley.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,8,8</Button>
 			<fScale>0.13</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Trireme/Trireme.nif</NIF>
@@ -3731,7 +3731,7 @@
 			<Type>ART_DEF_UNIT_MISSILE_CRUISER</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,2,12</Button>
 			<fScale>0.55</fScale>
-			<fInterfaceScale>0.7</fInterfaceScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Missile_Cruiser/Missile_Cruiser.nif</NIF>
