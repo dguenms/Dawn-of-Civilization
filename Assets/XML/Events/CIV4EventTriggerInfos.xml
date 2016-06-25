@@ -5559,7 +5559,7 @@
 				<UnitClass>UNITCLASS_MISSILE_CRUISER</UnitClass>
 				<UnitClass>UNITCLASS_STEALTH_DESTROYER</UnitClass>
 				<UnitClass>UNITCLASS_SUBMARINE</UnitClass>
-				<UnitClass>UNITCLASS_ATTACK_SUBMARINE</UnitClass>
+				<UnitClass>UNITCLASS_NUCLEAR_SUBMARINE</UnitClass>
 				<UnitClass>UNITCLASS_CARRIER</UnitClass>
 				<UnitClass>UNITCLASS_TRANSPORT</UnitClass>
 			</UnitsRequired>
@@ -13351,7 +13351,7 @@
 			<iUnhealthy>0</iUnhealthy>
 			<UnitsRequired>
 				<UnitClass>UNITCLASS_GALLEY</UnitClass>
-				<UnitClass>UNITCLASS_TRIREME</UnitClass>
+				<UnitClass>UNITCLASS_WAR_GALLEY</UnitClass>
 				<UnitClass>UNITCLASS_CARAVEL</UnitClass>
 				<UnitClass>UNITCLASS_GALLEON</UnitClass>
 				<UnitClass>UNITCLASS_PRIVATEER</UnitClass>
@@ -13364,7 +13364,7 @@
 				<UnitClass>UNITCLASS_BATTLESHIP</UnitClass>
 				<UnitClass>UNITCLASS_MISSILE_CRUISER</UnitClass>
 				<UnitClass>UNITCLASS_SUBMARINE</UnitClass>
-				<UnitClass>UNITCLASS_ATTACK_SUBMARINE</UnitClass>
+				<UnitClass>UNITCLASS_NUCLEAR_SUBMARINE</UnitClass>
 				<UnitClass>UNITCLASS_CARRIER</UnitClass>
 			</UnitsRequired>
 			<iNumUnits>1</iNumUnits>

@@ -576,7 +576,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN</Type>
+			<Type>ART_DEF_UNIT_FOOTMAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -597,7 +597,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_MIDDLE_EASTERN</Type>
+			<Type>ART_DEF_UNIT_FOOTMAN_MIDDLE_EASTERN</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -618,7 +618,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_ASIAN</Type>
+			<Type>ART_DEF_UNIT_FOOTMAN_ASIAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -639,7 +639,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_MESOAMERICA</Type>
+			<Type>ART_DEF_UNIT_FOOTMAN_MESOAMERICA</Type>
 			<Button>,Art/Interface/Buttons/Units/Worker.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,2,2</Button>
 			<fScale>0.46</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -1511,7 +1511,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_KNIGHT</Type>
+			<Type>ART_DEF_UNIT_LANCER</Type>
 			<Button>,Art/Interface/Buttons/Units/Knight.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,1</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -2635,7 +2635,7 @@
 			<ActionSound>AS3D_UN_SUBMARINE_FORT</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_ATTACK_SUBMARINE</Type>
+			<Type>ART_DEF_UNIT_NUCLEAR_SUBMARINE</Type>
 			<Button>,Art/Interface/Buttons/Units/ICBM.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,4,12</Button>
 			<fScale>0.48</fScale>
 			<fInterfaceScale>1.3</fInterfaceScale>
@@ -3593,7 +3593,7 @@
 			<ActionSound>AS3D_UN_CATAPULT_HEAL</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_TRIREME</Type>
+			<Type>ART_DEF_UNIT_WAR_GALLEY</Type>
 			<Button>,Art/Interface/Buttons/Units/Galley.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,8,8</Button>
 			<fScale>0.13</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
@@ -4233,7 +4233,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_KNIGHT_ASIAN</Type>
+			<Type>ART_DEF_UNIT_LANCER_ASIAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Knight.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,1</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -4254,7 +4254,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_ASIAN_OLD</Type>
+			<Type>ART_DEF_UNIT_FOOTMAN_ASIAN_OLD</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -4546,7 +4546,7 @@
 			<ActionSound>AS3D_UN_SPY_SURR_VOX</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_KNIGHT_EUROPEAN</Type>
+			<Type>ART_DEF_UNIT_LANCER_EUROPEAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Knight.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,1</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -4567,7 +4567,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_EUROPEAN</Type>
+			<Type>ART_DEF_UNIT_FOOTMAN_EUROPEAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
@@ -5036,7 +5036,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_KNIGHT_MIDDLE_EASTERN</Type>
+			<Type>ART_DEF_UNIT_LANCER_MIDDLE_EASTERN</Type>
 			<Button>,Art/Interface/Buttons/Units/Knight.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,1</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -5387,7 +5387,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_KNIGHT_SOUTH_AMERICAN</Type>
+			<Type>ART_DEF_UNIT_LANCER_SOUTH_AMERICAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Knight.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,8,1</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
@@ -5429,7 +5429,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_HEAVY_SWORDSMAN_SOUTH_AMERICAN</Type>
+			<Type>ART_DEF_UNIT_FOOTMAN_SOUTH_AMERICAN</Type>
 			<Button>,Art/Interface/Buttons/Units/Maceman.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,1,2</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
