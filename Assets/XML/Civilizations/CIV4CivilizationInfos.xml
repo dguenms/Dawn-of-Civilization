@@ -146,7 +146,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
+					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
 					<UnitType>UNIT_ARABIAN_CAMEL_ARCHER</UnitType>
 				</Unit>
 			</Units>
@@ -3115,8 +3115,8 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
-					<UnitType>UNIT_MANDE_SKIRMISHER</UnitType>
+					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
+					<UnitType>UNIT_MANDE_KELEBOLO</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
@@ -3229,7 +3229,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
+					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
 					<UnitType>UNIT_MAYAN_HOLKAN</UnitType>
 				</Unit>
 			</Units>
