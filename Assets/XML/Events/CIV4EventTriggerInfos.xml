@@ -6504,9 +6504,7 @@
 			<MinDifficulty>NONE</MinDifficulty>
 			<iAngry>0</iAngry>
 			<iUnhealthy>0</iUnhealthy>
-			<UnitsRequired>
-				<UnitClass>UNITCLASS_AIRSHIP</UnitClass>
-			</UnitsRequired>
+			<UnitsRequired/>
 			<iNumUnits>1</iNumUnits>
 			<iNumUnitsGlobal>0</iNumUnitsGlobal>
 			<iUnitDamagedWeight>0</iUnitDamagedWeight>
@@ -6542,7 +6540,9 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_RADIO</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs/>
+			<AndPreReqs>
+				<PrereqTech>TECH_FLIGHT</PrereqTech>
+			</AndPreReqs>
 			<ObsoleteTechs/>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
