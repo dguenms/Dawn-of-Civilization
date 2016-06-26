@@ -1141,7 +1141,7 @@
 		<English>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Knight[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Guilds[COLOR_REVERT] technology, has one less strength point, doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Knight[COLOR_REVERT] units and cannot be upgraded.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TACTICAL_NUKE_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_NUCLEAR_BOMBER_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] have an increased chance to evade interception and can nuke enemy lands.</English>
 	</TEXT>
 	<TEXT>
@@ -1437,8 +1437,44 @@
 		<German>[ICON_BULLET]Kann [LINK=literal]%s1[\LINK] nicht innerhalb einer Zivilisation mit anderer Staatsreligion verbreiten</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_NUCLEAR_BOMBER</Tag>
+		<English>Nuclear Bomber</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SKIRMISHER</Tag>
+		<English>Skirmisher</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN</Tag>
+		<English>Horseman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEAVY_GALLEY</Tag>
+		<English>Heavy Galley</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COG</Tag>
+		<English>Cog</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GALLEASS</Tag>
+		<English>Galleass</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TORPEDO_BOAT</Tag>
+		<English>Torpedo Boat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CRUISER</Tag>
+		<English>Cruiser</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BIPLANE</Tag>
+		<English>Biplane</English>
+	</TEXT>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
-		<German></German>
 	</TEXT>
 </Civ4GameText>
