@@ -534,7 +534,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAYAN_HOLKAN_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Holkan[COLOR_REVERT], the Mayan replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Hunting[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Archery[COLOR_REVERT] technology, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], provides food to the nearest city when it wins a fight and can withdraw from combat.</English>
+		<English>The [COLOR_UNIT_TEXT]Holkan[COLOR_REVERT], the Mayan replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], provides food to the nearest city when it wins a fight and has a higher chance to withdraw from combat.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIAN_PUNJABI_WORKER_STRATEGY</Tag>
@@ -678,32 +678,32 @@
 		<English>[COLOR_UNIT_TEXT]Footmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MANDE_SKIRMISHER</Tag>
-		<English>Skirmisher</English>
+		<Tag>TXT_KEY_UNIT_MANDE_KELEBOLO</Tag>
+		<English>Kelebolo</English>
 		<French>
-			<Text>Tirailleur</Text>
+			<Text>Kelebolo</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Pl&#228;nkler</Text>
+			<Text>Kelebolo</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
 		<Italian>
-			<Text>Combattente:Combattenti</Text>
+			<Text>Kelebolo</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Hostigador:Hostigadores</Text>
+			<Text>Kelebolo</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MANDE_SKIRMISHER_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], has an additional strength point, has a possible extra first strike and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</English>
+		<Tag>TXT_KEY_UNIT_MANDE_KELEBOLO_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against melee units and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MACHINE_GUN_STRATEGY</Tag>
