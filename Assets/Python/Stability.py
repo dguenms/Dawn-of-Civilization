@@ -1415,11 +1415,11 @@ def calculateStability(iPlayer):
 		if iCurrentEra <= iClassical: iCivicStability += 2
 		elif iCurrentEra >= iIndustrial: iCivicStability -= 5
 		
-	if tPlayer.isHasTech(iDemocracy):
+	if tPlayer.isHasTech(iRepresentation):
 		if iCivicOrganization not in [iCivicRepresentation, iCivicEgalitarianism, iCivicTotalitarianism]: iCivicStability -= 5
 		if iCivicLabor in [iCivicSlavery, iCivicAgrarianism] and iCivicOrganization != iCivicTotalitarianism: iCivicStability -= 5
 		
-	if tPlayer.isHasTech(iCommunism):
+	if tPlayer.isHasTech(iJournalism):
 		if iCivicOrganization not in [iCivicEgalitarianism, iCivicTotalitarianism]: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(iCorporation):

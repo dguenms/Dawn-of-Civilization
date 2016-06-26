@@ -2235,7 +2235,7 @@ class RiseAndFall:
 		teamCiv = gc.getTeam(pCiv.getTeam())
 		
 		if pCiv.isAlive() and utils.getHumanID() != iCiv:
-			if teamCiv.isHasTech(iAstronomy) and self.getColonistsAlreadyGiven(iCiv) < tMaxColonists[iCiv]:
+			if teamCiv.isHasTech(iExploration) and self.getColonistsAlreadyGiven(iCiv) < tMaxColonists[iCiv]:
 				lCities = utils.getAreaCitiesCiv(iCiv, Areas.getCoreArea(iCiv))
 				
 				# help England with settling Canada and Australia
@@ -3525,7 +3525,7 @@ class RiseAndFall:
 			
 		# Leoreth: Babylonian UHV: make them lose if they don't have Monarchy already
 		if iPlayer == iPersia:
-			vic.onTechAcquired(iPersia, iMonarchy)	
+			vic.onTechAcquired(iPersia, iPolitics)	
 				
 		sta.onCivSpawn(iPlayer)
 
