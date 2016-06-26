@@ -192,12 +192,12 @@ tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50))
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
-	iChina: (1, [iCompass, iPaper, iGunpowder, iPrintingPress]),
-	iBabylonia: (0, [iWriting, iCodeOfLaws, iMonarchy]),
-	iGreece: (0, [iLiterature, iDrama, iPhilosophy]),
+	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
+	iBabylonia: (0, [iWriting, iLaw, iPolitics]),
+	iGreece: (0, [iLiterature, iScholarship, iPhilosophy]),
 	iRome: (2, [iTheology, iMachinery, iCivilService]),
-	iKorea: (1, [iPrintingPress]),
-	iPoland: (1, [iLiberalism]),
+	iKorea: (1, [iPrinting]),
+	iPoland: (1, [iCivilLiberties]),
 }
 
 dEraGoals = {
@@ -950,7 +950,7 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iRussia, 0)
 				
 		if isPossible(iRussia, 0):
-			if teamRussia.isHasTech(iRailroad):
+			if teamRussia.isHasTech(iThermodynamics):
 				if isConnectedByRailroad(iRussia, Areas.getCapital(iRussia), lSiberianCoast):
 					win(iRussia, 0)
 					
@@ -1609,7 +1609,7 @@ def onTechAcquired(iPlayer, iTech):
 	# first Maya goal: discover Calendar by 600 AD
 	if iPlayer == iMaya:
 		if not pMaya.isReborn() and isPossible(iMaya, 0):
-			if iTech == iCalendar:
+			if iTech == iAstrolabe:
 				win(iMaya, 0)
 				
 	# third Congolese goal: enter the Industrial era before anyone enters the Modern era
@@ -1999,9 +1999,9 @@ def checkReligiousGoal(iPlayer, iGoal):
 		
 		# first Protestant goal: be first to discover Liberalism, Constitution and Economics
 		if iGoal == 0:
-			lProtestantTechs = [iLiberalism, iConstitution, iEconomics]
+			lProtestantTechs = [iCivilLiberties, iConstitution, iEconomics]
 			if checkTechGoal(iPlayer, lProtestantTechs): return 1
-			elif sd.getFirstDiscovered(iLiberalism) not in [iPlayer, -1] or sd.getFirstDiscovered(iConstitution) not in [iPlayer, -1] or sd.getFirstDiscovered(iEconomics) not in [iPlayer, -1]: return 0
+			elif sd.getFirstDiscovered(iCivilLiberties) not in [iPlayer, -1] or sd.getFirstDiscovered(iConstitution) not in [iPlayer, -1] or sd.getFirstDiscovered(iEconomics) not in [iPlayer, -1]: return 0
 			
 		# second Protestant goal: make sure five great merchants and great engineers are settled in Protestant civilizations
 		elif iGoal == 1:
@@ -2758,7 +2758,7 @@ def calculateShrineIncome(iPlayer, iReligion):
 	if getNumBuildings(iPlayer, iShrine  + 4*iReligion) == 0: return 0
 	
 	iThreshold = 20
-	if getNumBuildings(iPlayer, iTempleOfSolomon) > 0 and not gc.getTeam(iPlayer).isHasTech(iLiberalism): iThreshold = 40
+	if getNumBuildings(iPlayer, iTempleOfSolomon) > 0 and not gc.getTeam(iPlayer).isHasTech(iCivilLiberties): iThreshold = 40
 	
 	return min(iThreshold, gc.getGame().countReligionLevels(iReligion))
 	
@@ -2875,7 +2875,7 @@ def getURVHelp(iPlayer, iGoal):
 			bLiberalism = sd.getFirstDiscovered(iLiberalism) == iPlayer
 			bConstitution = sd.getFirstDiscovered(iConstitution) == iPlayer
 			bEconomics = sd.getFirstDiscovered(iEconomics) == iPlayer
-			aHelp.append(getIcon(bLiberalism) + localText.getText("TXT_KEY_TECH_LIBERALISM", ()) + ' ' + getIcon(bConstitution) + localText.getText("TXT_KEY_TECH_CONSTITUTION", ()) + ' ' + getIcon(bEconomics) + localText.getText("TXT_KEY_TECH_ECONOMICS", ()))
+			aHelp.append(getIcon(bLiberalism) + localText.getText("TXT_KEY_TECH_CIVIL_LIBERTIES", ()) + ' ' + getIcon(bConstitution) + localText.getText("TXT_KEY_TECH_CONSTITUTION", ()) + ' ' + getIcon(bEconomics) + localText.getText("TXT_KEY_TECH_ECONOMICS", ()))
 		elif iGoal == 1:
 			iMerchants = countReligionSpecialists(iProtestantism, iSpecialistGreatMerchant)
 			iEngineers = countReligionSpecialists(iProtestantism, iSpecialistGreatEngineer)
@@ -3040,7 +3040,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bPaper = sd.getFirstDiscovered(iPaper) == iChina
 			bGunpowder = sd.getFirstDiscovered(iGunpowder) == iChina
 			bPrintingPress = sd.getFirstDiscovered(iPrintingPress) == iChina
-			aHelp.append(getIcon(bCompass) + localText.getText("TXT_KEY_TECH_COMPASS", ()) + ' ' + getIcon(bPaper) + localText.getText("TXT_KEY_TECH_PAPER", ()) + ' ' + getIcon(bGunpowder) + localText.getText("TXT_KEY_TECH_GUNPOWDER", ()) + ' ' + getIcon(bPrintingPress) + localText.getText("TXT_KEY_TECH_PRINTING_PRESS", ()))
+			aHelp.append(getIcon(bCompass) + localText.getText("TXT_KEY_TECH_COMPASS", ()) + ' ' + getIcon(bPaper) + localText.getText("TXT_KEY_TECH_PAPER", ()) + ' ' + getIcon(bGunpowder) + localText.getText("TXT_KEY_TECH_GUNPOWDER", ()) + ' ' + getIcon(bPrintingPress) + localText.getText("TXT_KEY_TECH_PRINTING", ()))
 		elif iGoal == 2:
 			iGoldenAgeTurns = sd.getChineseGoldenAgeTurns()
 			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(32)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 4)))
@@ -3059,7 +3059,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bWriting = sd.getFirstDiscovered(iWriting) == iBabylonia
 			bCodeOfLaws = sd.getFirstDiscovered(iCodeOfLaws) == iBabylonia
 			bMonarchy = sd.getFirstDiscovered(iMonarchy) == iBabylonia
-			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCodeOfLaws) + localText.getText("TXT_KEY_TECH_CODE_OF_LAWS", ()) + ' ' + getIcon(bMonarchy) + localText.getText("TXT_KEY_TECH_MONARCHY", ()))
+			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCodeOfLaws) + localText.getText("TXT_KEY_TECH_LAW", ()) + ' ' + getIcon(bMonarchy) + localText.getText("TXT_KEY_TECH_POLITICS", ()))
 		elif iGoal == 1:
 			pBestCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
 			bBestCity = isBestCity(iBabylonia, (76, 40), cityPopulation)
@@ -3074,7 +3074,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bLiterature = sd.getFirstDiscovered(iLiterature) == iGreece
 			bDrama = sd.getFirstDiscovered(iDrama) == iGreece
 			bPhilosophy = sd.getFirstDiscovered(iPhilosophy) == iGreece
-			aHelp.append(getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bDrama) + localText.getText("TXT_KEY_TECH_DRAMA", ()) + ' ' + getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()))
+			aHelp.append(getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bDrama) + localText.getText("TXT_KEY_TECH_SCHOLARSHIP", ()) + ' ' + getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()))
 		elif iGoal == 1:
 			bOracle = (getNumBuildings(iGreece, iOracle) > 0)
 			bParthenon = (getNumBuildings(iGreece, iParthenon) > 0)

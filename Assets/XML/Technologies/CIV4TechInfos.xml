@@ -167,9 +167,6 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
-			<AndPreReqs>
-				<PrereqTech>TECH_HUNTING</PrereqTech>
-			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_TANNING_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
@@ -326,9 +323,6 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
-			<AndPreReqs>
-				<PrereqTech>TECH_CEREMONIAL_BURIAL</PrereqTech>
-			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_WORSHIP_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
@@ -346,6 +340,7 @@
 			<iAsset>4</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
+			<bWaterWork>1</bWaterWork>
 			<iGridX>2</iGridX>
 			<iGridY>13</iGridY>
 			<bRiverTrade>1</bRiverTrade>
@@ -355,9 +350,6 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
-			<AndPreReqs>
-				<PrereqTech>TECH_FISHING</PrereqTech>
-			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_SAILING_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
