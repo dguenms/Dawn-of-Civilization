@@ -244,7 +244,7 @@ class AIWars:
 				utils.makeUnitAI(con.iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 	
 	def forgetMemory(self, iTech, iPlayer):
-		if (iTech == con.iCommunism or iTech == con.iMassMedia):
+		if (iTech == con.iJournalism or iTech == con.iRadio):
 			for iLoopCiv in range( iNumPlayers ):
 				pPlayer = gc.getPlayer(iPlayer)
 				if (pPlayer.AI_getMemoryCount(iLoopCiv,0) > 0):

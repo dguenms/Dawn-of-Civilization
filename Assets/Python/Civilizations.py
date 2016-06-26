@@ -213,7 +213,7 @@ iCivNetherlands:techs(lMedievalTechs, [iFirearms, iExploration, iOptics, iHumani
 iCivGermany :	techs(lMedievalTechs, [iFirearms, iEconomics, iExploration, iOptics, iHumanities, iStatecraft, iHeritage,
 				iLogistics, iAstronomy, iUrbanPlanning, iCivilLiberties, iHorticulture,
 				iReplaceableParts, iPhysics, iConstitution]),
-iCivAmerica : 	[iTech for iTech in lRenaissanceTechs if iTech not in [iHydraulics, iSocialSciences]].append(iNationalism),
+iCivAmerica : 	techs([iTech for iTech in lRenaissanceTechs if iTech not in [iHydraulics, iSocialSciences]], [iNationalism]),
 iCivArgentina :	techs(lRenaissanceTechs, [iThermodynamics, iChemistry, iRepresentation, iNationalism]),
 iCivMexico : 	techs(lRenaissanceTechs, [iThermodynamics, iChemistry, iRepresentation, iNationalism]),
 iCivColombia : 	techs(lRenaissanceTechs, [iThermodynamics, iChemistry, iRepresentation, iNationalism]),
