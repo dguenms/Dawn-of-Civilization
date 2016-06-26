@@ -6610,10 +6610,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_AIRSHIP</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_FIGHTER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6634,7 +6630,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_TACTICAL_NUKE</UnitClassType>
+					<UnitClassType>UNITCLASS_NUCLEAR_BOMBER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
