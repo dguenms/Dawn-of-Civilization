@@ -665,7 +665,7 @@ class CvRFCEventHandler:
 			if (gc.getGame().getGameTurn() > getTurnForYear(1700)):
 				self.aiw.forgetMemory(argsList[0], argsList[2])
 
-		if (argsList[0] == iAstronomy):
+		if (argsList[0] == iExploration):
 			if iPlayer in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
 				self.rnf.setAstronomyTurn(iPlayer, gc.getGame().getGameTurn())
 				
@@ -676,17 +676,17 @@ class CvRFCEventHandler:
 		if (argsList[0] == iMedicine):
 			self.pla.onTechAcquired(argsList[0], argsList[2])
 
-		if argsList[0] == iRailroad:
+		if argsList[0] == iThermodynamics:
 			self.rnf.onRailroadDiscovered(argsList[2])
 			
-		if iTech in [iAstronomy, iGunpowder]:
+		if iTech in [iExploration, iFirearms]:
 			teamPlayer = gc.getTeam(iPlayer)
-			if teamPlayer.isHasTech(iAstronomy) and teamPlayer.isHasTech(iGunpowder):
+			if teamPlayer.isHasTech(iExploration) and teamPlayer.isHasTech(iFirearms):
 				self.rnf.earlyTradingCompany(iPlayer)
 			
-		if iTech in [iEconomics, iRifling]:
+		if iTech in [iCorporation, iReplaceableParts]:
 			teamPlayer = gc.getTeam(iPlayer)
-			if teamPlayer.isHasTech(iEconomics) and teamPlayer.isHasTech(iRifling):
+			if teamPlayer.isHasTech(iCorporation) and teamPlayer.isHasTech(iReplaceableParts):
 				self.rnf.lateTradingCompany(iPlayer)
 	
 		if utils.getHumanID() != iPlayer:
@@ -715,8 +715,8 @@ class CvRFCEventHandler:
 		if iPlayer == iItaly and iEra == iIndustrial:
 			utils.setReborn(iItaly, True)
 			
-		# Arabia's core moves to Iraq when Philosophy is discovered
-		if iPlayer == iArabia and iTech == iPhilosophy:
+		# Arabia's core moves to Iraq when Philosophy is discovered (HR tech tree: Education?)
+		if iPlayer == iArabia and iTech == iEducation:
 			utils.setReborn(iArabia, True)
 			
 		# Japan's core extends when reaching the Industrial era
