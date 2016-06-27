@@ -1518,7 +1518,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iCivicOrganization == iCivicAbsolutism:
 			return "TXT_KEY_EMPIRE_OF"
 			
-		if iEra >= iIndustrialism:
+		if iEra >= iIndustrial:
 			return "TXT_KEY_EMPIRE_OF"
 			
 	elif iPlayer == iTamils:
