@@ -429,6 +429,10 @@ public:
 	int getFeatureBadHappiness() const;																		// Exposed to Python
 	void updateFeatureHappiness();
 
+	int getImprovementHappiness() const;																	// Exposed to Python
+	void setImprovementHappiness(int iNewValue);
+	void changeImprovementHappiness(int iChange);
+
 	int getBonusGoodHappiness() const;																		// Exposed to Python  
 	int getBonusBadHappiness() const;																			// Exposed to Python  
 	void changeBonusGoodHappiness(int iChange);
@@ -469,6 +473,11 @@ public:
 	int getBuildingOnlyHealthyCount() const;
 	bool isBuildingOnlyHealthy() const;																		// Exposed to Python
 	void changeBuildingOnlyHealthyCount(int iChange);
+
+	// Leoreth
+	int getImprovementHealth() const;
+	void setImprovementHealth(int iNewValue);
+	void changeImprovementHealth(int iChange);
 
 	int getFood() const;																				// Exposed to Python
 	void setFood(int iNewValue);																		// Exposed to Python
@@ -1038,6 +1047,10 @@ public:
 	bool isHasPrecursor(ReligionTypes eReligion) const;
 	int getReligionPopulation(ReligionTypes eReligion) const;
 
+	void updateWorkedImprovements();
+	void updateWorkedImprovement(int iIndex);
+	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement);
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
@@ -1203,6 +1216,9 @@ protected:
 	int m_iCorporationBadHappiness;
 	int m_iCorporationHealth;
 	int m_iCorporationUnhealth;
+	
+	int m_iImprovementHappiness;
+	int m_iImprovementHealth;
 
 	int m_iNextCoveredPlot;
 

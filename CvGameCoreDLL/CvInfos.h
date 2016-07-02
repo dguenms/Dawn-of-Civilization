@@ -2963,6 +2963,7 @@ public:
 	int getUpgradeTime() const;				// Exposed to Python
 	int getAirBombDefense() const;				// Exposed to Python
 	int getDefenseModifier() const;				// Exposed to Python
+	int getHealth() const;
 	int getHappiness() const;				// Exposed to Python
 	int getPillageGold() const;				// Exposed to Python
 	int getImprovementPillage() const;				// Exposed to Python
@@ -3043,6 +3044,7 @@ protected:
 	int m_iUpgradeTime;
 	int m_iAirBombDefense;
 	int m_iDefenseModifier;
+	int m_iHealth;
 	int m_iHappiness;
 	int m_iPillageGold;
 	int m_iImprovementPillage;
