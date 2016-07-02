@@ -969,6 +969,19 @@
 		<German>%D1_Change[ICON_UNHEALTHY] durch Kapitalgesellschaften</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HEALTH_FROM_IMPROVEMENTS</Tag>
+		<English>%D1_Change[ICON_UNHEALTHY] from Improvements</English>
+		<German>%D1_Change[ICON_UNHEALTHY] durch Verbesserungen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ANGER_IMPROVEMENTS</Tag>
+		<English>+%d1_Change[ICON_UNHAPPY]: "The countryside is overcrowded!"</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HAPPY_IMPROVEMENTS</Tag>
+		<English>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH</Tag>
 		<English>[ICON_BULLET]%D1%F2 from Excess Health</English>
 	</TEXT>

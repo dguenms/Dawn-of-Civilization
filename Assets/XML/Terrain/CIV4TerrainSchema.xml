@@ -452,6 +452,7 @@
 		<element type="iAirBombDefense"/>
 		<element type="iDefenseModifier"/>
 		<element type="iHappiness"/>
+		<element type="iHealth" minOccurs="0"/>
 		<element type="iPillageGold"/>
 		<element type="bOutsideBorders"/>
 		<element type="TerrainMakesValids"/>

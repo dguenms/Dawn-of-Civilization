@@ -291,6 +291,7 @@ void CyInfoPythonInterface2()
 		.def("getHappiness", &CvImprovementInfo::getDefenseModifier, "int ()")
 */
 		.def("getHappiness", &CvImprovementInfo::getHappiness, "int ()")
+		.def("getHealth", &CvImprovementInfo::getHealth, "int ()")
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/

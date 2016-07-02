@@ -12367,6 +12367,7 @@ m_iFeatureGrowthProbability(0),
 m_iUpgradeTime(0),
 m_iAirBombDefense(0),
 m_iDefenseModifier(0),
+m_iHealth(0),
 m_iHappiness(0),
 m_iPillageGold(0),
 m_iImprovementPillage(NO_IMPROVEMENT),
@@ -12480,6 +12481,11 @@ int CvImprovementInfo::getAirBombDefense() const
 int CvImprovementInfo::getDefenseModifier() const
 {
 	return m_iDefenseModifier;
+}
+
+int CvImprovementInfo::getHealth() const
+{
+	return m_iHealth;
 }
 
 int CvImprovementInfo::getHappiness() const
@@ -12773,6 +12779,7 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iAirBombDefense);
 	stream->Read(&m_iDefenseModifier);
 	stream->Read(&m_iHappiness);
+	stream->Read(&m_iHealth);
 	stream->Read(&m_iPillageGold);
 	stream->Read(&m_iImprovementPillage);
 	stream->Read(&m_iImprovementUpgrade);
@@ -12884,6 +12891,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iAirBombDefense);
 	stream->Write(m_iDefenseModifier);
 	stream->Write(m_iHappiness);
+	stream->Write(m_iHealth);
 	stream->Write(m_iPillageGold);
 	stream->Write(m_iImprovementPillage);
 	stream->Write(m_iImprovementUpgrade);
@@ -13023,6 +13031,7 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iAirBombDefense, "iAirBombDefense");
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefenseModifier");
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
+	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
 	pXML->GetChildXmlValByName(&m_iPillageGold, "iPillageGold");
 	pXML->GetChildXmlValByName(&m_bOutsideBorders, "bOutsideBorders");
 
