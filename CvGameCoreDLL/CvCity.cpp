@@ -540,6 +540,9 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iNextCoveredPlot = 0;
 
+	m_iImprovementHappiness = 0;
+	m_iImprovementHealth = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -5202,6 +5205,7 @@ int CvCity::unhappyLevel(int iExtra) const
 		iUnhappiness -= std::min(0, getBuildingBadHappiness());
 		iUnhappiness -= std::min(0, getExtraBuildingBadHappiness());
 		iUnhappiness -= std::min(0, getFeatureBadHappiness());
+		iUnhappiness -= std::min(0, getImprovementHappiness());
 		iUnhappiness -= std::min(0, getBonusBadHappiness());
 		iUnhappiness -= std::min(0, getReligionBadHappiness());
 		iUnhappiness -= std::min(0, getCommerceHappiness());
@@ -5231,6 +5235,7 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, getBuildingGoodHappiness());
 	iHappiness += std::max(0, getExtraBuildingGoodHappiness());
 	iHappiness += std::max(0, getFeatureGoodHappiness());
+	iHappiness += std::max(0, getImprovementHappiness());
 	iHappiness += std::max(0, getBonusGoodHappiness());
 	iHappiness += std::max(0, getReligionGoodHappiness());
 	iHappiness += std::max(0, getCorporationGoodHappiness()); // Leoreth
@@ -5372,6 +5377,13 @@ int CvCity::goodHealth() const
 	}
 
 	// Leoreth
+	iHealth = getImprovementHealth();
+	if (iHealth > 0)
+	{
+		iTotalHealth += iHealth;
+	}
+
+	// Leoreth
 	iHealth = getCorporationHealth();
 	if (iHealth > 0)
 	{
@@ -5453,6 +5465,13 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 	}
 
 	iHealth = totalBadBuildingHealth();
+	if (iHealth < 0)
+	{
+		iTotalHealth += iHealth;
+	}
+
+	// Leoreth
+	iHealth = getImprovementHealth();
 	if (iHealth < 0)
 	{
 		iTotalHealth += iHealth;
@@ -7741,7 +7760,7 @@ void CvCity::updateFeatureHappiness()
 				}
 			}
 
-			ImprovementTypes eImprovement = pLoopPlot->getImprovementType();
+			/*ImprovementTypes eImprovement = pLoopPlot->getImprovementType();
 
 			if (NO_IMPROVEMENT != eImprovement)
 			{
@@ -7754,7 +7773,7 @@ void CvCity::updateFeatureHappiness()
 				{
 					iNewFeatureBadHappiness += iHappy;
 				}
-			}
+			}*/
 		}
 	}
 
@@ -12654,6 +12673,8 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 				}
 			}
 
+			updateWorkedImprovement(iIndex);
+
 			if ((getTeam() == GC.getGameINLINE().getActiveTeam()) || GC.getGameINLINE().isDebugMode())
 			{
 				pPlot->updateSymbolDisplay();
@@ -15184,6 +15205,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationHealth);
 	pStream->Read(&m_iCorporationUnhealth);
 	pStream->Read(&m_iNextCoveredPlot); // Leoreth
+	pStream->Read(&m_iImprovementHappiness);
+	pStream->Read(&m_iImprovementHealth);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15446,6 +15469,9 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCorporationUnhealth);
 
 	pStream->Write(m_iNextCoveredPlot);
+
+	pStream->Write(m_iImprovementHappiness);
+	pStream->Write(m_iImprovementHealth);
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -17920,4 +17946,87 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion) const
 	}
 
 	return NO_RELIGION;
+}
+
+int CvCity::getImprovementHappiness() const
+{
+	return m_iImprovementHappiness;
+}
+
+void CvCity::setImprovementHappiness(int iNewValue)
+{
+	if (getImprovementHappiness() != iNewValue)
+	{
+		m_iImprovementHappiness = iNewValue;
+		
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+void CvCity::changeImprovementHappiness(int iChange)
+{
+	setImprovementHappiness(getImprovementHappiness() + iChange);
+}
+
+int CvCity::getImprovementHealth() const
+{
+	return m_iImprovementHealth;
+}
+
+void CvCity::setImprovementHealth(int iNewValue)
+{
+	m_iImprovementHealth = iNewValue;
+}
+
+void CvCity::changeImprovementHealth(int iChange)
+{
+	m_iImprovementHealth += iChange;
+}
+
+void CvCity::updateWorkedImprovements()
+{
+	int iI;
+	ImprovementTypes eImprovement;
+
+	setImprovementHappiness(0);
+	setImprovementHealth(0);
+
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		if (isWorkingPlot(iI))
+		{
+			eImprovement = getCityIndexPlot(iI)->getImprovementType();
+			if (eImprovement != NO_IMPROVEMENT)
+			{
+				changeImprovementHappiness(GC.getImprovementInfo(eImprovement).getHappiness());
+				changeImprovementHealth(GC.getImprovementInfo(eImprovement).getHealth());
+			}
+		}
+	}
+}
+
+void CvCity::updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement)
+{
+	if (eOldImprovement != NO_IMPROVEMENT)
+	{
+		changeImprovementHappiness(-GC.getImprovementInfo(eOldImprovement).getHappiness());
+		changeImprovementHealth(-GC.getImprovementInfo(eOldImprovement).getHealth());
+	}
+
+	if (eNewImprovement != NO_IMPROVEMENT)
+	{
+		changeImprovementHappiness(GC.getImprovementInfo(eNewImprovement).getHappiness());
+		changeImprovementHealth(GC.getImprovementInfo(eNewImprovement).getHealth());
+	}
+}
+
+void CvCity::updateWorkedImprovement(int iIndex)
+{
+	CvPlot* pPlot = getCityIndexPlot(iIndex);
+
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
+	{
+		changeImprovementHappiness(GC.getImprovementInfo(pPlot->getImprovementType()).getHappiness() * (isWorkingPlot(iIndex) ? 1 : -1));
+		changeImprovementHealth(GC.getImprovementInfo(pPlot->getImprovementType()).getHealth() * (isWorkingPlot(iIndex) ? 1 : -1));
+	}
 }

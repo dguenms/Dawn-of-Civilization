@@ -2845,6 +2845,14 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 						szTempBuffer.Format(L", +%d%c", abs(iHappy), (iHappy > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
 						szBuffer.append(szTempBuffer);
 					}
+
+					int iHealth = GC.getImprovementInfo(eImprovement).getHealth();
+
+					if (iHealth != 0)
+					{
+						szTempBuffer.Format(L", +%d%c", abs(iHealth), (iHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)));
+						szBuffer.append(szTempBuffer);
+					}
 				}
 
 				bValid = false;
