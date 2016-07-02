@@ -6168,7 +6168,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		updateIrrigated();
 		updateYield();
 
-		for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+		/*for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
 		{
 			CvPlot* pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), iI);
 
@@ -6181,7 +6181,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 					pLoopCity->updateFeatureHappiness();
 				}
 			}
-		}
+		}*/
 
 		// Building or removing a fort will now force a plotgroup update to verify resource connections.
 		if ( (NO_IMPROVEMENT != getImprovementType() && GC.getImprovementInfo(getImprovementType()).isActsAsCity()) !=
@@ -6225,12 +6225,12 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		CvCity* pWorkingCity = getWorkingCity();
 		if (NULL != pWorkingCity)
 		{
+			//pWorkingCity->updateWorkedImprovement(eOldImprovement, eNewValue);
+
 			if ((NO_IMPROVEMENT != eNewValue && pWorkingCity->getImprovementFreeSpecialists(eNewValue) > 0)	||
 				(NO_IMPROVEMENT != eOldImprovement && pWorkingCity->getImprovementFreeSpecialists(eOldImprovement) > 0))
 			{
-
 				pWorkingCity->AI_setAssignWorkDirty(true);
-
 			}
 		}
 
