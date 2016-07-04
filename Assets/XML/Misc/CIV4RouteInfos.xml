@@ -52,18 +52,27 @@
 			<iValue>2</iValue>
 			<iAdvancedStartCost>12</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<iMovement>30</iMovement>
+			<iMovement>20</iMovement>
 			<iFlatMovement>30</iFlatMovement>
 			<BonusType>NONE</BonusType>
 			<PrereqOrBonuses/>
 			<Yields/>
-			<TechMovementChanges>
-				<TechMovementChange>
-					<PrereqTech>TECH_MASONRY</PrereqTech>
-					<iMovementChange>-10</iMovementChange>
-				</TechMovementChange>
-			</TechMovementChanges>
-			<Button>Art/Interface/Buttons/BuildPavedRoad.dds</Button>
+			<TechMovementChanges/>
+			<Button>Art/Interface/Buttons/Builds/BuildPavedRoad.dds</Button>
+		</RouteInfo>
+		<RouteInfo>
+			<Type>ROUTE_HIGHWAY</Type>
+			<Description>TXT_KEY_ROUTE_HIGHWAY</Description>
+			<iValue>4</iValue>
+			<iAdvancedStartCost>18</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<iMovement>20</iMovement>
+			<iFlatMovement>6</iFlatMovement>
+			<BonusType>BONUS_OIL</BonusType>
+			<PrereqOrBonuses/>
+			<Yields/>
+			<TechMovementChanges/>
+			<Button>Art/Interface/Buttons/Builds/BuildHighway.dds</Button>
 		</RouteInfo>
 	</RouteInfos>
 </Civ4RouteInfos>

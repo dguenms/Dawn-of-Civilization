@@ -1925,9 +1925,8 @@
 		</ArtRef>
 		<!-- SPICE crops -->
 		<ArtRef Name="art:spice_crop">
-			<!-- when worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusWorkedOnly:1</Attribute>
@@ -1937,9 +1936,8 @@
 			<Rotate>+45</Rotate>
 		</ArtRef>
 		<ArtRef Name="art:Spice_crop">
-			<!-- when improved but not worked by plantation -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
@@ -1950,9 +1948,8 @@
 			<Rotate>+45</Rotate>
 		</ArtRef>
 		<ArtRef Name="art:Spice_crop">
-			<!-- when in the rough ... there's anotehr in 3x2 for farms -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -1961,25 +1958,23 @@
 			<Scale>0.8</Scale>
 			<Rotate>+45</Rotate>
 		</ArtRef>
-		<!-- Spice improvement crap -->
-		<ArtRef Name="art:SPICE_PLANTATION_RACK">
+		<ArtRef Name="art:SPICE_ORCHARD_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::1x3_01_Rack_NotWorked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
 			<Scale>0.8</Scale>
 		</ArtRef>
-		<ArtRef Name="art:SPICE_PLANTATION_RACK">
+		<ArtRef Name="art:SPICE_ORCHARD_RACK">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::1x3_01_Rack_Worked</Attribute>
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
 			<Scale>0.8</Scale>
 		</ArtRef>
-		<ArtRef Name="art:SPICE_PLANTATION_GRINDER">
-			<!-- worked pool -->
+		<ArtRef Name="art:SPICE_ORCHARD_GRINDER">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_Grinder_Worked.nif</Attribute>
 			<Attribute Class="Scalar">KFM:Art/Terrain/Resources/Spices/Spices_Grinder_Worked.kfm</Attribute>
 			<Attribute Class="Scalar">iPlayAnimationID:0</Attribute>
@@ -1988,12 +1983,34 @@
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
 		</ArtRef>
-		<ArtRef Name="art:SPICE_PLANTATION_GRINDER">
-			<!-- unworked pool -->
+		<ArtRef Name="art:SPICE_ORCHARD_GRINDER">
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::1x2_01_Grinder_NotWorked</Attribute>
 			<Attribute Class="Scalar">bExtraGoalOnly:1</Attribute>
 			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+		</ArtRef>
+		<ArtRef Name="goal:BONUS_SPICES">
+			<!-- unworked spice -->
+			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
+			<Attribute Class="Scalar">bGoalOnly:1</Attribute>
+			<Attribute Class="Scalar">bPlace:0</Attribute>
+			<Attribute Class="Scalar">iCropArea:12</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Scale>0.6</Scale>
+		</ArtRef>
+		<ArtRef Name="art:Spice_crop">
+			<!-- when in the rough -->
+			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Scalar">szBatchGroup:spice_crop</Attribute>
+			<Scale>0.8</Scale>
+			<Rotate>+45</Rotate>
 		</ArtRef>
 		<!-- OLIVES crops -->
 		<ArtRef Name="art:olives_crop">
@@ -2334,7 +2351,7 @@
 		<!-- General plantation -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES,!BONUS_COTTON</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -2344,7 +2361,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_SPICES,!BONUS_COTTON</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_MODERN,ERA_FUTURE</Attribute>
@@ -2519,8 +2536,8 @@
 			<Rotate>+45</Rotate>
 		</ArtRef>
 		<!-- Spices -->
-		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<!-- worked ancient spices plantation -->
+		<!--ArtRef Name="goal:IMPROVEMENT_PLANTATION">
+			< worked ancient spices plantation >
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
@@ -2537,7 +2554,7 @@
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<!-- worked ancient spices plantation -->
+			< worked ancient spices plantation >
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
@@ -2553,7 +2570,7 @@
 			<Scale>0.9</Scale>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<!-- unworked ancient spices plantation -->
+			< unworked ancient spices plantation >
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
@@ -2570,7 +2587,7 @@
 			<Attribute Class="Rotation">0,180</Attribute>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			<!-- unworked modern spices plantation -->
+			< unworked modern spices plantation >
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:8</Attribute>
@@ -2584,9 +2601,9 @@
 			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Scale>0.9</Scale>
-		</ArtRef>
-		<ArtRef Name="goal:BONUS_SPICES">
-			<!-- unworked spice -->
+		</ArtRef-->
+		<!--ArtRef Name="goal:BONUS_SPICES">
+			< unworked spice >
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
 			<Attribute Class="Scalar">bGoalOnly:1</Attribute>
@@ -2597,9 +2614,9 @@
 			<Scale>0.6</Scale>
 		</ArtRef>
 		<ArtRef Name="art:Spice_crop">
-			<!-- when in the rough -->
+			< when in the rough >
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -2607,7 +2624,7 @@
 			<Attribute Class="Scalar">szBatchGroup:spice_crop</Attribute>
 			<Scale>0.8</Scale>
 			<Rotate>+45</Rotate>
-		</ArtRef>
+		</ArtRef-->
 		<!-- Olives -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient olives plantation -->
@@ -3159,8 +3176,8 @@
 	<LNode Name="BLeaf_4x3">
 		<Width>6</Width>
 		<Height>6</Height>
-		<ArtRef Name="goal:IMPROVEMENT_WINERY">
-			<Attribute Class="Improvement">IMPROVEMENT_WINERY</Attribute>
+		<ArtRef Name="goal:IMPROVEMENT_ORCHARD">
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 			<Attribute Class="Scalar">iCropArea:50</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
@@ -3676,7 +3693,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_6x6">
-		<Attribute Class="Improvement">IMPROVEMENT_WINERY</Attribute>
+		<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 		<Attribute Class="Bonus">BONUS_WINE</Attribute>
 		<Attribute Class="Scalar">bGoalOnly:1</Attribute>
 		<To Name="BLeaf_4x3"/>
@@ -3685,7 +3702,7 @@
 		</To>
 	</LProduction>
 	<LProduction From="Node_6x6">
-		<Attribute Class="Improvement">IMPROVEMENT_WINERY</Attribute>
+		<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 		<Attribute Class="Bonus">BONUS_WINE</Attribute>
 		<Attribute Class="Scalar">bGoalOnly:1</Attribute>
 		<To Name="BLeaf_4x3">
@@ -3816,7 +3833,7 @@
 		<To Name="GLeaf_4x2"/>
 	</LProduction>
 	<LProduction From="Node_4x2" Name="P4x2_C">
-		<Attribute Class="Improvement">IMPROVEMENT_WINERY</Attribute>
+		<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 		<Attribute Class="Bonus">BONUS_WINE</Attribute>
 		<Attribute Class="RegionTest">0</Attribute>
 		<To Name="BLeaf_4x2"/>
@@ -3876,7 +3893,7 @@
 		<To Name="BLeaf_3x2"/>
 	</LProduction>
 	<LProduction From="Node_3x2">
-		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM,!IMPROVEMENT_WINERY,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM,!IMPROVEMENT_ORCHARD,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 		<Attribute Class="RegionTest">0</Attribute>
 		<To Name="Node_2x1">
 			<Translate>-1,0</Translate>
@@ -3888,7 +3905,7 @@
 	</LProduction>
 	<LProduction From="Node_3x2">
 		<Attribute Class="RegionTest">0</Attribute>
-		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM,!IMPROVEMENT_WINERY,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+		<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM,!IMPROVEMENT_ORCHARD,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 		<To Name="Node_2x2">
 			<Translate>-0.5,0</Translate>
 		</To>
@@ -3909,7 +3926,7 @@
 		<To Name="BLeaf_2x2"/>
 	</LProduction>
 	<LProduction From="Node_2x2">
-		<Attribute Class="Improvement">IMPROVEMENT_ALL,!IMPROVEMENT_COTTAGE,!IMPROVEMENT_HAMLET,!IMPROVEMENT_VILLAGE,!IMPROVEMENT_TOWN,!IMPROVEMENT_WINERY</Attribute>
+		<Attribute Class="Improvement">IMPROVEMENT_ALL,!IMPROVEMENT_COTTAGE,!IMPROVEMENT_HAMLET,!IMPROVEMENT_VILLAGE,!IMPROVEMENT_TOWN,!IMPROVEMENT_ORCHARD</Attribute>
 		<To Name="GLeaf_2x2">
 			<Translate>0,0</Translate>
 			<Rotate>90</Rotate>
