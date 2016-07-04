@@ -11,8 +11,24 @@
 		<English>Slave Plantation</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_ORCHARD</Tag>
+		<English>Orchard</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_NATURE_RESERVE</Tag>
+		<English>Nature Reserve</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_MARINE_RESERVE</Tag>
+		<English>Marine Reserve</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ROUTE_ROMAN_ROAD</Tag>
 		<English>Roman Road</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ROUTE_HIGHWAY</Tag>
+		<English>Highway</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_TRIBAL_VILLAGE</Tag>

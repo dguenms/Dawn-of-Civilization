@@ -320,7 +320,7 @@
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -519,33 +519,27 @@
 			</BuildingProductionModifiers>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
-					<ImprovementYields>
-						<iYield>1</iYield>
-						<iYield>0</iYield>
-						<iYield>-1</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>-1</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>-1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
@@ -580,7 +574,15 @@
 			</BuildingProductionModifiers>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_FOREST_PRESERVE</ImprovementType>
+					<ImprovementType>IMPROVEMENT_NATURE_RESERVE</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>2</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_MARINE_RESERVE</ImprovementType>
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -589,14 +591,6 @@
 				</ImprovementYieldChange>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
-					<ImprovementYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
-						<iYield>2</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
