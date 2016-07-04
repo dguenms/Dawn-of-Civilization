@@ -2924,7 +2924,7 @@
 				<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 				<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
 				<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
-				<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
+				<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
 				<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
 				<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 				<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
@@ -3749,14 +3749,14 @@
 				<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 				<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
 				<ImprovementType>IMPROVEMENT_WELL</ImprovementType>
-				<ImprovementType>IMPROVEMENT_WINERY</ImprovementType>
+				<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
 				<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
 				<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 				<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType>
 				<ImprovementType>IMPROVEMENT_CAMP</ImprovementType>
 				<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
 				<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
-				<ImprovementType>IMPROVEMENT_FOREST_PRESERVE</ImprovementType>
+				<ImprovementType>IMPROVEMENT_NATURE_RESERVE</ImprovementType>
 				<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
 			</ImprovementsRequired>
 			<BonusesRequired/>
