@@ -6868,7 +6868,11 @@
 			</CommerceChangeDoubleTimes>
 			<ImprovementFreeSpecialists>
 				<ImprovementFreeSpecialist>
-					<ImprovementType>IMPROVEMENT_FOREST_PRESERVE</ImprovementType>
+					<ImprovementType>IMPROVEMENT_NATURE_RESERVE</ImprovementType>
+					<iFreeSpecialistCount>1</iFreeSpecialistCount>
+				</ImprovementFreeSpecialist>
+				<ImprovementFreeSpecialist>
+					<ImprovementType>IMPROVEMENT_MARINE_RESERVE</ImprovementType>
 					<iFreeSpecialistCount>1</iFreeSpecialistCount>
 				</ImprovementFreeSpecialist>
 			</ImprovementFreeSpecialists>

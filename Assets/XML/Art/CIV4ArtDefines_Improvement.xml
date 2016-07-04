@@ -169,13 +169,13 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildOffshorePlatform.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,4,9</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
-			<Type>ART_DEF_IMPROVEMENT_WINERY</Type>
+			<Type>ART_DEF_IMPROVEMENT_ORCHARD</Type>
 			<bExtraAnimations>0</bExtraAnimations>
-			<fScale>1.0</fScale>
+			<fScale>0.8</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Structures/Improvements/Winery/Winery.nif</NIF>
 			<KFM>Art/Structures/Improvements/Winery/Winery.kfm</KFM>
-			<Button>,Art/Interface/Buttons/Builds/BuildWinery.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,6,8</Button>
+			<Button>Art/Interface/Buttons/Builds/BuildOrchard.dds</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_COTTAGE</Type>
@@ -223,13 +223,22 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildFort.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,9</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
-			<Type>ART_DEF_IMPROVEMENT_FOREST_PRESERVE</Type>
+			<Type>ART_DEF_IMPROVEMENT_NATURE_RESERVE</Type>
 			<bExtraAnimations>0</bExtraAnimations>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Structures/Improvements/ForestPreserve/ForestPreserve.nif</NIF>
 			<KFM>Art/Structures/Improvements/ForestPreserve/ForestPreserve.kfm</KFM>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,4,14</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_MARINE_RESERVE</Type>
+			<bExtraAnimations>0</bExtraAnimations>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Marine_Reserve/Nets.nif</NIF>
+			<KFM>Art/Structures/Improvements/Marine_Reserve/Nets.kfm</KFM>
+			<Button>Art/Interface/Buttons/Builds/BuildMarineReserve.dds</Button>
 		</ImprovementArtInfo>
 	</ImprovementArtInfos>
 </Civ4ArtDefines>

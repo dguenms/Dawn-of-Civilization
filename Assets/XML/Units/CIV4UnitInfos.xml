@@ -368,7 +368,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_WINERY</BuildType>
+					<BuildType>BUILD_ORCHARD</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -396,7 +396,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_FOREST_PRESERVE</BuildType>
+					<BuildType>BUILD_NATURE_RESERVE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -493,7 +493,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_WINERY_DEFORESTATION</BuildType>
+					<BuildType>BUILD_ORCHARD_DEFORESTATION</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -521,7 +521,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_FOREST_PRESERVE</BuildType>
+					<BuildType>BUILD_NATURE_RESERVE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
@@ -622,7 +622,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_WINERY</BuildType>
+					<BuildType>BUILD_ORCHARD</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -650,7 +650,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_FOREST_PRESERVE</BuildType>
+					<BuildType>BUILD_NATURE_RESERVE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 			</Builds>
