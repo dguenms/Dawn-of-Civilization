@@ -1199,7 +1199,7 @@
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_IVORY</ArtDefineTag>
 			<TechCityTrade>TECH_TANNING</TechCityTrade>
-			<TechObsolete>TECH_COMBUSTION</TechObsolete>
+			<TechObsolete>TECH_ENGINE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>

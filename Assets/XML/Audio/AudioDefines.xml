@@ -8631,8 +8631,8 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_TECH_SANITATION</SoundID>
-			<Filename>Sounds/Tech/TECH_SANITATION</Filename>
+			<SoundID>SND_TECH_MEDICINE</SoundID>
+			<Filename>Sounds/Tech/TECH_MEDICINE</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
@@ -8645,8 +8645,8 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_TECH_COMBUSTION</SoundID>
-			<Filename>Sounds/Tech/Tech_Combustion</Filename>
+			<SoundID>SND_TECH_ENGINE</SoundID>
+			<Filename>Sounds/Tech/TECH_ENGINE</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

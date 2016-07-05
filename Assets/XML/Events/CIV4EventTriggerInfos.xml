@@ -386,7 +386,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -1105,7 +1105,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -1988,7 +1988,7 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_SANITATION</PrereqTech>
+				<PrereqTech>TECH_MEDICINE</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -2954,7 +2954,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -3401,7 +3401,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -3490,7 +3490,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -3668,7 +3668,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -3786,7 +3786,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -3875,7 +3875,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -9243,7 +9243,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_SANITATION</ObsoleteTech>
+				<ObsoleteTech>TECH_MEDICINE</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -9969,7 +9969,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
@@ -12013,7 +12013,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-				<ObsoleteTech>TECH_MEDICINE</ObsoleteTech>
+				<ObsoleteTech>TECH_MICROBIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
@@ -12101,7 +12101,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-				<ObsoleteTech>TECH_MEDICINE</ObsoleteTech>
+				<ObsoleteTech>TECH_MICROBIOLOGY</ObsoleteTech>
 				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
@@ -14259,7 +14259,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -14350,7 +14350,7 @@
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ASTROLABE</PrereqTech>
+				<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
