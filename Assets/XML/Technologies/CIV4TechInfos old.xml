@@ -2060,10 +2060,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Biology.dds,Art/Interface/Buttons/TechTree_Atlas.dds,1,9</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_SANITATION</Type>
-			<Description>TXT_KEY_TECH_SANITATION</Description>
-			<Civilopedia>TXT_KEY_TECH_SANITATION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_SANITATION_STRATEGY</Strategy>
+			<Type>TECH_MEDICINE</Type>
+			<Description>TXT_KEY_TECH_MEDICINE</Description>
+			<Civilopedia>TXT_KEY_TECH_MEDICINE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_MEDICINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<iCost>3700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2100,8 +2100,8 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_OPTICS</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_SANITATION_QUOTE</Quote>
-			<Sound>AS2D_TECH_SANITATION</Sound>
+			<Quote>TXT_KEY_TECH_MEDICINE_QUOTE</Quote>
+			<Sound>AS2D_TECH_MEDICINE</Sound>
 			<SoundMP>AS2D_TECH_MP_MEDICINE</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Medicine.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,5</Button>
 		</TechInfo>
@@ -2149,10 +2149,10 @@
 			<Button>,Art/Interface/Buttons/TechTree/Electricity.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,3</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_COMBUSTION</Type>
-			<Description>TXT_KEY_TECH_COMBUSTION</Description>
-			<Civilopedia>TXT_KEY_TECH_COMBUSTION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_TECH_COMBUSTION_STRATEGY</Strategy>
+			<Type>TECH_ENGINE</Type>
+			<Description>TXT_KEY_TECH_ENGINE</Description>
+			<Civilopedia>TXT_KEY_TECH_ENGINE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_TECH_ENGINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iCost>3700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2182,8 +2182,8 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_COMBUSTION_QUOTE</Quote>
-			<Sound>AS2D_TECH_COMBUSTION</Sound>
+			<Quote>TXT_KEY_TECH_ENGINE_QUOTE</Quote>
+			<Sound>AS2D_TECH_ENGINE</Sound>
 			<SoundMP>AS2D_TECH_MP_COMBUSTION</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Combustion.dds,Art/Interface/Buttons/TechTree_Atlas.dds,3,2</Button>
 		</TechInfo>
@@ -2263,7 +2263,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_PHYSICS</PrereqTech>
-				<PrereqTech>TECH_COMBUSTION</PrereqTech>
+				<PrereqTech>TECH_ENGINE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_FLIGHT_QUOTE</Quote>
 			<Sound>AS2D_TECH_FLIGHT</Sound>
@@ -2337,7 +2337,7 @@
 				<PrereqTech>TECH_INDUSTRIALISM</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_COMBUSTION</PrereqTech>
+				<PrereqTech>TECH_ENGINE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_SYNTHETICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_SYNTHETICS</Sound>
@@ -2449,7 +2449,7 @@
 				<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_SANITATION</PrereqTech>
+				<PrereqTech>TECH_MEDICINE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_GENETICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENETICS</Sound>

@@ -1068,7 +1068,7 @@
 			<iUpgradeTime>0</iUpgradeTime>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
-			<iHappiness>0</iHappiness>
+			<iHappiness>-1</iHappiness>
 			<iPillageGold>5</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
