@@ -796,7 +796,7 @@ class RFCUtils:
 		"""Searches all tile in the square from tTopLeft to tBottomRight and calls function for
 		every tile, passing argsList. The function called must return a tuple: (1) a result, (2) if
 		a plot should be painted and (3) if the search should continue."""
-		return listSearch(self.getPlotList(tTopLeft, tBottomRight, tExceptions), function, argsList)
+		return self.listSearch(self.getPlotList(tTopLeft, tBottomRight, tExceptions), function, argsList)
 		
 	def listSearch(self, lPlots, function, argsList):
 		tPaintedList = []
