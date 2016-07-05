@@ -3220,7 +3220,7 @@
 			<Strategy>TXT_KEY_BUILDING_GROCER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GROCER</ArtDefineTag>
-			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+			<PrereqTech>TECH_URBANISM</PrereqTech>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>

@@ -252,7 +252,7 @@
 			<Type>CORPORATION_LUXURY_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_LUXURY_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_LUXURY_INDUSTRY_PEDIA</Civilopedia>
-			<TechPrereq>TECH_SYNTHETICS</TechPrereq>
+			<TechPrereq>TECH_CONSUMERISM</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>

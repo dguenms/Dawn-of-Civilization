@@ -849,7 +849,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_CLERGY</PrereqTech>
+			<PrereqTech>TECH_JUDICIARY</PrereqTech>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>

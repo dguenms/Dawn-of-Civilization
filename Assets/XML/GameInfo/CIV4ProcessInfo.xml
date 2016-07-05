@@ -22,7 +22,7 @@
 			<Type>PROCESS_RESEARCH</Type>
 			<Description>TXT_KEY_PROCESS_RESEARCH</Description>
 			<Strategy>TXT_KEY_PROCESS_RESEARCH_STRATEGY</Strategy>
-			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
+			<TechPrereq>TECH_SCHOLARSHIP</TechPrereq>
 			<ProductionToCommerceModifiers>
 				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
 				<iProductionToCommerceModifier>50</iProductionToCommerceModifier>
