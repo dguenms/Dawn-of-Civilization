@@ -407,7 +407,7 @@
 			<Strategy>TXT_KEY_BUILDING_STABLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STABLE</ArtDefineTag>
-			<ObsoleteTech>TECH_COMBUSTION</ObsoleteTech>
+			<ObsoleteTech>TECH_ENGINE</ObsoleteTech>
 			<PrereqTech>TECH_RIDING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
@@ -438,7 +438,7 @@
 			<Strategy>TXT_KEY_BUILDING_MONGOLIAN_GER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MONGOLIAN_GER</ArtDefineTag>
-			<ObsoleteTech>TECH_COMBUSTION</ObsoleteTech>
+			<ObsoleteTech>TECH_ENGINE</ObsoleteTech>
 			<PrereqTech>TECH_RIDING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
@@ -825,7 +825,7 @@
 			<Strategy>TXT_KEY_BUILDING_HOSPITAL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HOSPITAL</ArtDefineTag>
-			<PrereqTech>TECH_MEDICINE</PrereqTech>
+			<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -875,7 +875,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LIGHTHOUSE</ArtDefineTag>
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
-			<PrereqTech>TECH_ASTROLABE</PrereqTech>
+			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<bWater>1</bWater>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -915,7 +915,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_VIKING_TRADING_POST</ArtDefineTag>
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
-			<PrereqTech>TECH_ASTROLABE</PrereqTech>
+			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<FreePromotion>PROMOTION_NAVIGATION1</FreePromotion>
 			<bWater>1</bWater>
 			<iCost>80</iCost>
@@ -3488,7 +3488,7 @@
 			<Strategy>TXT_KEY_BUILDING_SUPERMARKET_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SUPERMARKET</ArtDefineTag>
-			<PrereqTech>TECH_MASS_MARKET</PrereqTech>
+			<PrereqTech>TECH_CONSUMERISM</PrereqTech>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -3534,7 +3534,7 @@
 			<Strategy>TXT_KEY_BUILDING_AMERICAN_MALL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AMERICAN_MALL</ArtDefineTag>
-			<PrereqTech>TECH_MASS_MARKET</PrereqTech>
+			<PrereqTech>TECH_CONSUMERISM</PrereqTech>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -3605,7 +3605,7 @@
 			<Strategy>TXT_KEY_BUILDING_ARGENTINE_REFRIGERATION_PLANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ARGENTINE_REFRIGERATION_PLANT</ArtDefineTag>
-			<PrereqTech>TECH_MASS_MARKET</PrereqTech>
+			<PrereqTech>TECH_CONSUMERISM</PrereqTech>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -4140,7 +4140,7 @@
 			<Strategy>TXT_KEY_BUILDING_INTELLIGENCE_AGENCY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INTELLIGENCE_AGENCY</ArtDefineTag>
-			<PrereqTech>TECH_SURVEILLANCE</PrereqTech>
+			<PrereqTech>TECH_PSYCHOLOGY</PrereqTech>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -6991,7 +6991,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_LIGHTHOUSE</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<PrereqTech>TECH_ASTROLABE</PrereqTech>
+			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -9650,7 +9650,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LUBYANKA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_LUBYANKA</MovieDefineTag>
-			<PrereqTech>TECH_SURVEILLANCE</PrereqTech>
+			<PrereqTech>TECH_PSYCHOLOGY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -9799,7 +9799,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_EIFFEL_TOWER</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_EIFFEL_TOWER</MovieDefineTag>
-			<PrereqTech>TECH_RADIO</PrereqTech>
+			<PrereqTech>TECH_RAILROAD</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -9862,7 +9862,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_EMPIRE_STATE_BUILDING</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_EMPIRE_STATE_BUILDING</MovieDefineTag>
 			<MaxStartEra>ERA_FUTURE</MaxStartEra>
-			<PrereqTech>TECH_MASS_MARKET</PrereqTech>
+			<PrereqTech>TECH_CONSUMERISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>

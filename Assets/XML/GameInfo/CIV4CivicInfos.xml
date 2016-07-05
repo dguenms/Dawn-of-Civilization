@@ -189,7 +189,7 @@
 			<Strategy>TXT_KEY_CIVIC_TOTALITARIANISM_STRATEGY</Strategy>
 			<Help>TXT_KEY_CIVIC_TOTALITARIANISM_HELP</Help>
 			<Button>,Art/Interface/Buttons/Civics/Police_State.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,5,2</Button>
-			<TechPrereq>TECH_SURVEILLANCE</TechPrereq>
+			<TechPrereq>TECH_PSYCHOLOGY</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>NONE</Upkeep>
 			<iDistanceMaintenanceModifier>-100</iDistanceMaintenanceModifier>
