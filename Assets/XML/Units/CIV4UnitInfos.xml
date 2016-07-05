@@ -8281,7 +8281,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_EXPLOSIVES</PrereqTech>
+			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 			<BonusType>BONUS_OIL</BonusType>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -8361,7 +8361,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_EXPLOSIVES</PrereqTech>
+			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 			<BonusType>BONUS_OIL</BonusType>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -11150,7 +11150,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_COMBUSTION</PrereqTech>
+			<PrereqTech>TECH_ENGINE</PrereqTech>
 			<PrereqBonuses>
 				<BonusType>BONUS_COAL</BonusType>
 				<BonusType>BONUS_OIL</BonusType>
@@ -11473,7 +11473,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_EXPLOSIVES</PrereqTech>
+			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
@@ -12049,7 +12049,7 @@
 			</UnitAIs>
 			<PrereqTech>TECH_AVIATION</PrereqTech>
 			<TechTypes>
-				<PrereqTech>TECH_EXPLOSIVES</PrereqTech>
+				<PrereqTech>TECH_SYNTHETICS</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_OIL</BonusType>
 			<iCost>180</iCost>

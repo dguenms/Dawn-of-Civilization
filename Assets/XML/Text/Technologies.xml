@@ -118,7 +118,7 @@
 		<English>[COLOR_TECH_TEXT]Code of Laws[COLOR_REVERT] allows construction of the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] World Wonder.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_COMBUSTION_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_ENGINE_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Combustion[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Transports[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Airships[COLOR_REVERT]. Allows the construction of the [COLOR_BUILDING_TEXT]Public Transportation[COLOR_REVERT] Building, the construction of the [COLOR_HIGHLIGHT_TEXT]Well[COLOR_REVERT] Improvement and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Oil Industry[COLOR_REVERT]. It obsoletes the [COLOR_WARNING_TEXT]Whale[COLOR_REVERT] Resource and the [COLOR_WARNING_TEXT]Trafalgar Square[COLOR_REVERT] World Wonder.</English>
 	</TEXT>
 	<TEXT>
@@ -278,7 +278,7 @@
 		<English>[COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] Building, allows the construction of the [COLOR_HIGHLIGHT_TEXT]Fort[COLOR_REVERT] Improvement and allows you to train [COLOR_UNIT_TEXT]Catapults[COLOR_REVERT]. It also increases the production gained from chopping forests. The first player to discover [COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_SANITATION_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_MEDICINE_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Medicine[COLOR_REVERT] allows you to construct the [COLOR_BUILDING_TEXT]Hospital[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Red Cross Society[COLOR_REVERT] National Wonder.</English>
 	</TEXT>
 	<TEXT>

@@ -150,15 +150,15 @@ Some predict that the creation of the first artificial intelligences will lead t
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_ASTROLABE</Tag>
-		<English>Astrolabe</English>
+		<Tag>TXT_KEY_TECH_NAVIGATION</Tag>
+		<English>Navigation</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_ASTROLABE_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_NAVIGATION_QUOTE</Tag>
 		<English>"If the highest aim of a captain were to preserve his ship, he would keep it in port forever"[PARAGRAPH:2]- Thomas Aquinas</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_ASTROLABE_PEDIA</Tag>
+		<Tag>TXT_KEY_TECH_NAVIGATION_PEDIA</Tag>
 		<English>In the early days of seafaring, sailors operated solely through a process known as "piloting", in which the position and course of the ship was determined by referring to geographical landmarks. The need to stay in view of the shore severely limited the extent of sea voyages. Through experience, sailors learned to apply the science of astronomy to their profession, noting the positions and movement of particular stars. They realized that even when the shore was out of sight, they could steer by certain reliable stars. This crude, yet practical application of astronomy allowed the adventurous to sail into the unknown with a reasonable chance of finding their way. As a result, ship building technology quickly improved, producing larger, more stable ships designed for longer voyages.</English>
 	</TEXT>
 
@@ -465,11 +465,11 @@ The concept of points of dogma that a society will not tolerate violation of is 
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_COMBUSTION</Tag>
-		<English>Combustion</English>
+		<Tag>TXT_KEY_TECH_ENGINE</Tag>
+		<English>Engine</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_COMBUSTION_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_ENGINE_QUOTE</Tag>
 		<English>"Everything in life is somewhere else, and you get there in a car."[PARAGRAPH:2]- E. B. White</English>
 	</TEXT>
 
@@ -1326,15 +1326,15 @@ A cunning enemy may always strike at an army's logistics. This has caused countl
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MASS_MARKET</Tag>
-		<English>Mass Market</English>
+		<Tag>TXT_KEY_TECH_CONSUMERISM</Tag>
+		<English>Consumerism</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MASS_MARKET_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_CONSUMERISM_QUOTE</Tag>
 		<English>"Many a small thing has been made large by the right kind of advertising."[PARAGRAPH:2]- Mark Twain</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MASS_MARKET_PEDIA</Tag>
+		<Tag>TXT_KEY_TECH_CONSUMERISM_PEDIA</Tag>
 <English>Marketing is the practice of persuading people that an object, idea, or behavior is desirable (and worth paying for). Marketing has existed in some form since prehistoric times; one may speculate that the first marketing activities were invented within five minutes of the first invention of commerce.  The development of mass media such as broadcast radio, print journalism, and film made it possible to market on a larger scale. The rise of a working and middle class in developed societies with enough disposable income to buy luxury goods made it desirable to do so. The growth of modern industrial corporations that could produce goods in immense quantities made it necessary to do so.
 
 Common practices in modern marketing include direct personal approaches, flattery of the customer, praise of the product (intellectually honest or otherwise), and efforts to make the seller appear sympathetic and likeable to the prospective buyer. The main difference is that all these things are now transmitted from the individual advertiser to the mass of the population through new communications technology such as printing, broadcasts, or the Internet.
@@ -1357,10 +1357,21 @@ The practice of marketing is often criticized for dishonesty, for misleading peo
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MEDICINE_QUOTE</Tag>
+		<English>"As to diseases make a habit of two things - to help, or at least, to do no harm."[PARAGRAPH:2]- Hippocrates</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MICROBIOLOGY</Tag>
+		<English>Microbiology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MICROBIOLOGY_QUOTE</Tag>
 		<English>"If you haven't got your health, you haven't got anything."[PARAGRAPH:2]- Christopher Guest, in 'The Princess Bride'</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MEDICINE_PEDIA</Tag>
+		<Tag>TXT_KEY_TECH_MICROBIOLOGY_PEDIA</Tag>
 		<English>Healthcare is the practice of acting so as to preserve or restore the health of the individual patient, although this is normally construed to not include basic sustenance needs such as air, water, and food. Healthcare can be divided into a wide range of overlapping categories. These include but are not limited to preventative care (to maintain health through nutrition, exercise, and hygiene), palliative care (to relieve the symptoms of a patient who cannot be cured by the available means), outpatient care (where the patient is able to function and live independently while undergoing treatment), urgent care (treatment of pressing medical problems that are nonetheless not life-threatening), and acute care (where a patient requires detailed monitoring or complex medical support and so must remain in a hospital with physicians in attendance).[NEWLINE][NEWLINE]Since it affects what may be the foremost concern of nearly all humans - their health - health care occupies a large share of the total time and energy of the human race. Many (though not all) of the professionals involved in providing health care receive unusual prestige and wealth within their own societies. This was the case even in ancient times when the practice of medicine was primitive to the point of being life-threatening.[NEWLINE][NEWLINE]In modern times, the health care system has become an elaborate and refined infrastructure, especially in developed nations. Not only is it an industry in its own right, it supports various other industries such as the pharmaceutical industry and the insurance industry. The challenge of working out how to efficiently pay for this vast system that keeps us alive and relatively comfortable is a subject of energetic debate in many societies.</English>
 	</TEXT>
 
@@ -1622,20 +1633,8 @@ Emperors and merchant princes funded great voyages of discovery that traveled ac
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_PHARMACEUTICALS</Tag>
-		<English>Pharmaceuticals</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PHARMACEUTICALS_QUOTE</Tag>
-		<English>"Medicine is not only a science; it is also an art. It does not consist of compounding pills and plasters; it deals with the very processes of life, which must be understood before they may be guided."[PARAGRAPH:2]- Paracelsus</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_PHARMACEUTICALS_PEDIA</Tag>
-<English>Pharmaceuticals are drugs used to diagnose, cure, treat, or prevent disease. The use of natural or artificial substances has accompanied the art of medicine since prehistoric times. In ancient times the effectiveness of pharmaceutical treatment varied wildly. Empirical experiments sometimes revealed a substance that would work to treat an illness. On the other hand, in a society almost entirely unaware of the basic principles of anatomy and chemistry, many actively dangerous substances were used as 'medicine' such as toxic heavy metals and poisonous plants.
-
-As the practice of scientific medicine emerged in the 1800s, it took a considerable amount of time for efficient pharmaceuticals to accompany it. Even as late as 1900, physicians had few reliably effective medicines other than disinfectants and painkillers. However, the rise of organic chemistry and improvements in chemical synthesis made it more practical to analyze chemical compounds proven effective against disease, reproduce them, and test artificial variations on the successful themes. By 1950 the list of available pharmaceuticals was growing rapidly and this continues to the present day.
-
-Thus, modern medicine has a vast arsenal of weapons against disease, ranging from the innocuous to the borderline-lethal, from the cheap to the almost unfathomably expensive.</English>
+		<Tag>TXT_KEY_TECH_ACTIVISM</Tag>
+		<English>Activism</English>
 	</TEXT>
 
 
@@ -1814,6 +1813,13 @@ Radar became far more advanced and developed in the postwar era with the steady 
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_RAILROAD</Tag>
+		<English>Railroad</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_REFINING</Tag>
 		<English>Refining</English>
 	</TEXT>
@@ -1949,17 +1955,6 @@ To this day, this pattern of conflict between representative bodies (legislature
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SAILING_QUOTE</Tag>
 		<English>"You cannot direct the wind, but you can adjust your sails."[PARAGRAPH:2] - Unknown</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_SANITATION</Tag>
-		<English>Sanitation</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_SANITATION_QUOTE</Tag>
-		<English>"As to diseases make a habit of two things - to help, or at least, to do no harm."[PARAGRAPH:2]- Hippocrates</English>
 	</TEXT>
 
 
@@ -2157,19 +2152,8 @@ Copper can be used for metallic tools, but it is soft and does not hold a cuttin
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_SURVEILLANCE</Tag>
-		<English>Surveillance</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_SURVEILLANCE_QUOTE</Tag>
-		<English>"Under observation, we act less free, which means we effectively are less free."PARAGRAPH:2]- Edward Snowden</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_SURVEILLANCE_PEDIA</Tag>
-<English>Surveillance, from the French for "to watch from above," is the act of monitoring others, as implemented by some directing or governing entity. With the rise of increasingly miniaturized and refined electronics in the mid-20th century, it became possible to use such devices as "eyes and ears" to spy on persons of interest. Among the earliest such applications was the use of 'wiretaps' to allow a third party to listen in on telephone conversations. Soon after it became more and more common to place small microphones or cameras as "bugs" that could record events in a given area. Automated closed circuit TV systems permit monitoring of public or private spaces through cameras; the rising reliance on wireless communication allows signals intelligence agencies to collect enormous masses of data on who communicates with who, and how.
-
-This has led to a vast growth in the capabilities of intelligence agencies to target foreign and domestic enemies. The countervailing concern is that with the rise of 20th and 21st century surveillance techniques, we may all become targets - that the state, or powerful private organizations, may use this technology to gain total information, and thus a great measure of power, over our lives.
-</English>
+		<Tag>TXT_KEY_TECH_PSYCHOLOGY</Tag>
+		<English>Psychology</English>
 	</TEXT>
 
 
