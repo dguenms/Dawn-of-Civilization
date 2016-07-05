@@ -1764,7 +1764,7 @@
 			<Quote>TXT_KEY_TECH_FEUDALISM_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Land_Tenure.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Feudalism.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -1840,7 +1840,7 @@
 			<Quote>TXT_KEY_TECH_ALCHEMY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Alchemy.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,2,1</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Alchemy.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -4781,7 +4781,7 @@
 			<Quote>TXT_KEY_TECH_CONSUMERISM_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Mass_Market.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Consumerism.dds</Button>
 		</TechInfo>
 
 		<!--TechInfo>
@@ -5083,7 +5083,7 @@
 			<Quote>TXT_KEY_TECH_PSYCHOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Psychology.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Mass_Market.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
