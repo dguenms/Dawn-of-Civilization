@@ -242,18 +242,6 @@ class CvTechChooser:
 		for iTech in xrange(gc.getNumTechInfos()):
 			self.TechEffects[iTech] = []
 
-		# Civics / Tenets
-		for iCivic in xrange(gc.getNumCivicInfos()):
-			iTech = gc.getCivicInfo(iCivic).getTechPrereq()
-			if iTech > -1:
-				self.TechEffects[iTech].append(("Civic", iCivic))
-
-		# Religions
-		for iReligion in xrange(gc.getNumReligionInfos()):
-			iTech = gc.getReligionInfo(iReligion).getTechPrereq()
-			if iTech > -1:
-				self.TechEffects[iTech].append(("Religion", iReligion))
-
 		# Units
 		for iClass in xrange(gc.getNumUnitClassInfos()):
 			iUnit = utils.getUniqueUnitType(self.iPlayer, iClass)
@@ -297,13 +285,23 @@ class CvTechChooser:
 			if iTech > -1:
 				self.TechEffects[iTech].append(("Project", iProject))
 
+		# Civics / Tenets
+		for iCivic in xrange(gc.getNumCivicInfos()):
+			iTech = gc.getCivicInfo(iCivic).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Civic", iCivic))
+
+		# Religions
+		for iReligion in xrange(gc.getNumReligionInfos()):
+			iTech = gc.getReligionInfo(iReligion).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Religion", iReligion))
+
 		# Corporations
 		for iCorporation in xrange(gc.getNumCorporationInfos()):
-			iHeadQuarters = gc.getInfoTypeForString("BUILDING_" + gc.getCorporationInfo(iCorporation).getType())
-			if iHeadQuarters > -1:
-				iTech = gc.getBuildingInfo(iHeadQuarters).getPrereqAndTech()
-				if iTech > -1:
-					self.TechEffects[iTech].append(("Corporation", iCorporation))
+			iTech = gc.getCorporationInfo(iCorporation).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Corporation", iCorporation))
 
 		# Improvements
 		for iBuild in xrange(gc.getNumBuildInfos()):
@@ -615,12 +613,8 @@ class CvTechChooser:
 
 				elif type == "CommerceAdjust":
 						szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_GENERAL_QUESTIONMARK").getPath()
-						if item == CommerceTypes.COMMERCE_GOLD:
-							szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_GOLD").getPath()
-						elif item == CommerceTypes.COMMERCE_RESEARCH:
-							szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_RESEARCH").getPath()
-						elif item == CommerceTypes.COMMERCE_CULTURE:
-							szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_CULTURE").getPath()
+						if item in [CommerceTypes.COMMERCE_GOLD, CommerceTypes.COMMERCE_RESEARCH, CommerceTypes.COMMERCE_CULTURE]:
+							szFileName = gc.getProcessInfo(item).getButton()
 						elif item == CommerceTypes.COMMERCE_ESPIONAGE:
 							szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_ESPIONAGE").getPath()
 						screen.addDDSGFCAt(szItem, szTechBox, szFileName, iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_ADJUST, tech, item, False)
