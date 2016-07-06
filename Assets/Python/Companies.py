@@ -21,7 +21,7 @@ iNumCompanies = 9
 
 (iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
 
-tCompanyTechs = (con.iCurrency, con.iExploration, con.iBiology, con.iRefrigeration, con.iThermodynamics, con.iMetallurgy, con.iCombustion, con.iElectricity, con.iComputers)
+tCompanyTechs = (con.iCurrency, con.iExploration, con.iBiology, con.iRefrigeration, con.iThermodynamics, con.iMetallurgy, con.iRefining, con.iElectricity, con.iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
 lTradingCompanyCivs = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands, con.iVikings] # Vikings too now

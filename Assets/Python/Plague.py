@@ -437,7 +437,7 @@ class Plague:
 			pPlayer = gc.getPlayer(iPlayer)
 			if (self.getPlagueCountdown(iPlayer) == 0): #vulnerable
 			#if (self.getPlagueCountdown(iPlayer) < 0): #debug
-				if (not gc.getTeam(pPlayer.getTeam()).isHasTech(con.iMedicine)):
+				if (not gc.getTeam(pPlayer.getTeam()).isHasTech(con.iMicrobiology)):
 					iHealth = -30
 					if (pPlayer.calculateTotalCityHealthiness() > 0):
 						iHealth = int((1.0 * pPlayer.calculateTotalCityHealthiness()) / (pPlayer.calculateTotalCityHealthiness() + \

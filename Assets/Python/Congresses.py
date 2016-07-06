@@ -1094,8 +1094,9 @@ class Congress:
 		lPossibleInvites = []
 	
 		if self.bPostWar:
+			iLowestWinnerRank = rank(utils.getSortedList(self.lWinners, rank)[0])
 			lPossibleInvites.extend(self.lWinners)
-			lPossibleInvites.extend([iLoser for iLoser in self.lLosers if rank(iLoser) < min(self.lWinners, key=rank)])
+			lPossibleInvites.extend([iLoser for iLoser in self.lLosers if rank(iLoser) < iLowestWinnerRank])
 			
 		lPossibleInvites.extend(utils.getSortedList([iPlayer for iPlayer in range(iNumPlayers) if iPlayer not in lPossibleInvites], rank))
 	
