@@ -1180,6 +1180,30 @@
 		<English>Solar Plant</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ESTATE</Tag>
+		<English>Estate</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PHARMACY</Tag>
+		<English>Pharmacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RAILWAY_STATION</Tag>
+		<English>Railway Station</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DEPARTMENT_STORE</Tag>
+		<English>Department Store</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STAR_FORT</Tag>
+		<English>Star Fort</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ELECTRICAL_GRID</Tag>
+		<English>Electrical Grid</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 	</TEXT>
