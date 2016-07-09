@@ -316,11 +316,6 @@
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>2</iGridX>
 			<iGridY>11</iGridY>
-			<CommerceFlexible>
-				<bFlexible>0</bFlexible>
-				<bFlexible>0</bFlexible>
-				<bFlexible>1</bFlexible>
-			</CommerceFlexible>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -801,6 +796,11 @@
 			<bGoodyTech>1</bGoodyTech>
 			<iGridX>4</iGridX>
 			<iGridY>9</iGridY>
+			<CommerceFlexible>
+				<bFlexible>0</bFlexible>
+				<bFlexible>0</bFlexible>
+				<bFlexible>1</bFlexible>
+			</CommerceFlexible>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2087,12 +2087,6 @@
 			<bGoodyTech>0</bGoodyTech>
 			<iGridX>9</iGridX>
 			<iGridY>7</iGridY>
-			<TerrainTrades>
-				<TerrainTrade>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainTrade>1</bTerrainTrade>
-				</TerrainTrade>
-			</TerrainTrades>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -2789,6 +2783,12 @@
 			<bExtraWaterSeeFrom>1</bExtraWaterSeeFrom>
 			<iGridX>11</iGridX>
 			<iGridY>7</iGridY>
+			<TerrainTrades>
+				<TerrainTrade>
+					<TerrainType>TERRAIN_OCEAN</TerrainType>
+					<bTerrainTrade>1</bTerrainTrade>
+				</TerrainTrade>
+			</TerrainTrades>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>

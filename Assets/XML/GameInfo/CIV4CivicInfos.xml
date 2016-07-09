@@ -652,7 +652,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_SCHOLASTICISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_SCHOLASTICISM_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/TechTree/Philosophy.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,6</Button>
-			<TechPrereq>TECH_EDUCATION</TechPrereq>
+			<TechPrereq>TECH_SCHOLARSHIP</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iStateReligionGreatPeopleRateModifier>40</iStateReligionGreatPeopleRateModifier>
