@@ -1123,4 +1123,64 @@
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_SHRINE_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Adur Farnbag[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Shrine[COLOR_REVERT]) produces one gold each turn for every city in the world that practises [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT], with a limit of 20 gold. It also spreads [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] throughout the world and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WEAVER</Tag>
+		<English>Weaver</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BATH</Tag>
+		<English>Bath</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CONSTABULARY</Tag>
+		<English>Constabulary</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COFFEEHOUSE</Tag>
+		<English>Tavern</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_POST_OFFICE</Tag>
+		<English>Post Office</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WHARF</Tag>
+		<English>Wharf</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CIVIC_SQUARE</Tag>
+		<English>Civic Square</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SEWER</Tag>
+		<English>Sewer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DISTILLERY</Tag>
+		<English>Distillery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NEWS_PRESS</Tag>
+		<English>News Press</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CINEMA</Tag>
+		<English>Cinema</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HOTEL</Tag>
+		<English>Hotel</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PARK</Tag>
+		<English>Park</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SOLAR_PLANT</Tag>
+		<English>Solar Plant</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_</Tag>
+		<English></English>
+	</TEXT>
 </Civ4GameText>
