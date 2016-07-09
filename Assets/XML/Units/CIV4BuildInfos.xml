@@ -229,7 +229,7 @@
 		<BuildInfo>
 			<Type>BUILD_LUMBERMILL</Type>
 			<Description>TXT_KEY_BUILD_LUMBERMILL</Description>
-			<PrereqTech>TECH_MACHINERY</PrereqTech>
+			<PrereqTech>TECH_FEUDALISM</PrereqTech>
 			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_LUMBERMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
