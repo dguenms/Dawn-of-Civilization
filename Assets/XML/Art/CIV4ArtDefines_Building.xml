@@ -2397,5 +2397,65 @@
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Obelisk.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,6,4</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ESTATE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Estate/ts_d_gov.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Estate.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_PHARMACY</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.05</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Pharmacy/hospital.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/TechTree/Medicine.dds,Art/Interface/Buttons/TechTree_Atlas.dds,4,5</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_DEPARTMENT_STORE</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Department_Store/ts_f_2sha.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Department_Store.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ELECTRICAL_GRID</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>0.85</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Electrical_Grid/powerplant_subst4.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Electrical_Grid.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_RAILWAY_STATION</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Railway_Station/central_station.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Railway_Station.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_STAR_FORT</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Star_Fort/Star_fort.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Star_Fort.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
