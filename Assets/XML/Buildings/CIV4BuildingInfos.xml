@@ -317,6 +317,32 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_STAR_FORT</BuildingClass>
+			<Type>BUILDING_STAR_FORT</Type>
+			<Description>TXT_KEY_BUILDING_STAR_FORT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_STAR_FORT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_STAR_FORT_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_STAR_FORT</ArtDefineTag>
+			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iBombardDefense>50</iBombardDefense>
+			<iAsset>2</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BARRACKS</BuildingClass>
 			<Type>BUILDING_BARRACKS</Type>
 			<Description>TXT_KEY_BUILDING_BARRACKS</Description>
@@ -841,8 +867,51 @@
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PHARMACY</BuildingClass>
+			<Type>BUILDING_PHARMACY</Type>
+			<Description>TXT_KEY_BUILDING_PHARMACY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PHARMACY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PHARMACY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PHARMACY</ArtDefineTag>
+			<PrereqTech>TECH_ALCHEMY</PrereqTech>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>4</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_GROCER</ConstructSound>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_BANANA</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_WINE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_WHALE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -1834,6 +1903,42 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ELECTRICAL_GRID</BuildingClass>
+			<Type>BUILDING_ELECTRICAL_GRID</Type>
+			<Description>TXT_KEY_BUILDING_ELECTRICAL_GRID</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ELECTRICAL_GRID_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ELECTRICAL_GRID_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ELECTRICAL_GRID</ArtDefineTag>
+			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
+			<iCost>150</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<PowerYieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>10</iYield>
+			</PowerYieldModifiers>
+			<ConstructSound>AS2D_BUILD_BROADCASTTOWER</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_INDUSTRIAL_PARK</BuildingClass>
 			<Type>BUILDING_INDUSTRIAL_PARK</Type>
 			<Description>TXT_KEY_BUILDING_INDUSTRIAL_PARK</Description>
@@ -1841,7 +1946,7 @@
 			<Strategy>TXT_KEY_BUILDING_INDUSTRIAL_PARK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INDUSTRIAL_PARK</ArtDefineTag>
-			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
+			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -3846,6 +3951,79 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_RAILWAY_STATION</BuildingClass>
+			<Type>BUILDING_RAILWAY_STATION</Type>
+			<Description>TXT_KEY_BUILDING_RAILWAY_STATION</Description>
+			<Civilopedia>TXT_KEY_BUILDING_RAILWAY_STATION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_RAILWAY_STATION_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_RAILWAY_STATION</ArtDefineTag>
+			<FreeStartEra>ERA_FUTURE</FreeStartEra>
+			<PrereqTech>TECH_RAILROAD</PrereqTech>
+			<iCost>250</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iHealth>-1</iHealth>
+			<iAsset>6</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_FACTORY</ConstructSound>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_COAL</BonusType>
+					<iHealthChange>-2</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_DEPARTMENT_STORE</BuildingClass>
+			<Type>BUILDING_DEPARTMENT_STORE</Type>
+			<Description>TXT_KEY_BUILDING_DEPARTMENT_STORE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DEPARTMENT_STORE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DEPARTMENT_STORE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DEPARTMENT_STORE</ArtDefineTag>
+			<PrereqTech>TECH_SYNTHETICS</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>6</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_GROCERY</ConstructSound>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SUPERMARKET</BuildingClass>
 			<Type>BUILDING_SUPERMARKET</Type>
 			<Description>TXT_KEY_BUILDING_SUPERMARKET</Description>
@@ -4319,6 +4497,62 @@
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ESTATE</BuildingClass>
+			<Type>BUILDING_ESTATE</Type>
+			<Description>TXT_KEY_BUILDING_ESTATE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ESTATE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ESTATE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ESTATE</ArtDefineTag>
+			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>66</iConquestProb>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<CommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</CommerceChanges>
+			<CommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<CommerceHappinesses>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>5</iCommerce>
+			</CommerceHappinesses>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
