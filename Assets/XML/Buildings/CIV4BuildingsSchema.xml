@@ -218,6 +218,9 @@
 	<ElementType name="CommerceModifiers" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="PowerCommerceModifiers" content="eltOnly">
+		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="GlobalCommerceModifiers" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
@@ -381,8 +384,22 @@
 		<element type="ImprovementType"/>
 		<element type="iFreeSpecialistCount"/>
 	</ElementType>
+	<ElementType name="ImprovementHappiness" content="eltOnly">
+		<element type="ImprovementType"/>
+		<element type="iHappiness"/>
+	</ElementType>
+	<ElementType name="ImprovementHealth" content="eltOnly">
+		<element type="ImprovementType"/>
+		<element type="iHealth"/>
+	</ElementType>
 	<ElementType name="ImprovementFreeSpecialists" content="eltOnly">
 		<element type="ImprovementFreeSpecialist" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ImprovementHappinesses" content="eltOnly">
+		<element type="ImprovementHappiness" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ImprovementHealths" content="eltOnly">
+		<element type="ImprovementHealth" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="ImprovementType" content="textOnly"/>
 	<ElementType name="FlavorType" content="textOnly"/>
@@ -546,6 +563,7 @@
 		<element type="ObsoleteSafeCommerceChanges" minOccurs="0"/>
 		<element type="CommerceChangeDoubleTimes" minOccurs="0"/>
 		<element type="CommerceModifiers" minOccurs="0"/>
+		<element type="PowerCommerceModifiers" minOccurs="0"/>
 		<element type="GlobalCommerceModifiers" minOccurs="0"/>
 		<element type="SpecialistExtraCommerces" minOccurs="0"/>
 		<element type="StateReligionCommerces" minOccurs="0"/>
@@ -572,6 +590,8 @@
 		<element type="BonusYieldChanges" minOccurs="0"/>
 		<element type="ReligionYieldChanges" minOccurs="0"/> <!-- Leoreth -->
 		<element type="ImprovementFreeSpecialists" minOccurs="0"/>
+		<element type="ImprovementHappinesses" minOccurs="0"/>
+		<element type="ImprovementHealths" minOccurs="0"/>
 		<element type="Flavors" minOccurs="0"/>
 		<element type="HotKey" minOccurs="0"/>
 		<element type="bAltDown" minOccurs="0"/>

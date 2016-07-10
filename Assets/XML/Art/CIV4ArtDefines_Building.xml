@@ -2421,7 +2421,7 @@
 			<Type>ART_DEF_BUILDING_DEPARTMENT_STORE</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.8</fScale>
+			<fScale>0.4</fScale>
 			<fInterfaceScale>0.35</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Department_Store/ts_f_2sha.nif</NIF>
 			<KFM/>

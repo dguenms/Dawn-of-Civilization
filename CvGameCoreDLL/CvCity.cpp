@@ -50,6 +50,7 @@ CvCity::CvCity()
 	m_aiReligionCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCorporationCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCommerceRateModifier = new int[NUM_COMMERCE_TYPES];
+	m_aiPowerCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
 	m_aiBonusCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
 	m_aiCommerceHappinessPer = new int[NUM_COMMERCE_TYPES];
 	m_aiDomainFreeExperience = new int[NUM_DOMAIN_TYPES];
@@ -91,6 +92,8 @@ CvCity::CvCity()
 	m_paiFreePromotionCount = NULL;
 	m_paiNumRealBuilding = NULL;
 	m_paiNumFreeBuilding = NULL;
+	m_paiImprovementHappiness = NULL; // Leoreth
+	m_paiImprovementHealth = NULL; // Leoreth
 
 	m_pabWorkingPlot = NULL;
 	m_pabHasReligion = NULL;
@@ -144,6 +147,7 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiReligionCommerce);
 	SAFE_DELETE_ARRAY(m_aiCorporationCommerce);
 	SAFE_DELETE_ARRAY(m_aiCommerceRateModifier);
+	SAFE_DELETE_ARRAY(m_aiPowerCommerceRateModifier); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiBonusCommerceRateModifier); //Leoreth
 	SAFE_DELETE_ARRAY(m_aiCommerceHappinessPer);
 	SAFE_DELETE_ARRAY(m_aiDomainFreeExperience);
@@ -410,6 +414,8 @@ void CvCity::uninit()
 	SAFE_DELETE_ARRAY(m_paiFreePromotionCount);
 	SAFE_DELETE_ARRAY(m_paiNumRealBuilding);
 	SAFE_DELETE_ARRAY(m_paiNumFreeBuilding);
+	SAFE_DELETE_ARRAY(m_paiImprovementHappiness); // Leoreth
+	SAFE_DELETE_ARRAY(m_paiImprovementHealth); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_pabWorkingPlot);
 	SAFE_DELETE_ARRAY(m_pabHasReligion);
@@ -521,6 +527,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iFreeSpecialist = 0;
 	m_iPowerCount = 0;
 	m_iDirtyPowerCount = 0;
+	m_iPowerConsumedCount = 0;
 	m_iDefenseDamage = 0;
 	m_iLastDefenseDamage = 0;
 	m_iOccupationTimer = 0;
@@ -594,6 +601,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiReligionCommerce[iI] = 0;
 		m_aiCorporationCommerce[iI] = 0;
 		m_aiCommerceRateModifier[iI] = 0;
+		m_aiPowerCommerceRateModifier[iI] = 0; // Leoreth
 		m_aiBonusCommerceRateModifier[iI] = 0; // Leoreth
 		m_aiCommerceHappinessPer[iI] = 0;
 	}
@@ -717,9 +725,13 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 		FAssertMsg((0 < GC.getNumImprovementInfos()),  "GC.getNumImprovementInfos() is not greater than zero but an array is being allocated in CvCity::reset");
 		m_paiImprovementFreeSpecialists = new int[GC.getNumImprovementInfos()];
+		m_paiImprovementHappiness = new int[GC.getNumImprovementInfos()];
+		m_paiImprovementHealth = new int[GC.getNumImprovementInfos()];
 		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 		{
 			m_paiImprovementFreeSpecialists[iI] = 0;
+			m_paiImprovementHappiness[iI] = GC.getImprovementInfo((ImprovementTypes)iI).getHappiness();
+			m_paiImprovementHealth[iI] = GC.getImprovementInfo((ImprovementTypes)iI).getHealth();
 		}
 
 		m_paiReligionInfluence = new int[GC.getNumReligionInfos()];
@@ -4385,6 +4397,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 		{
 			changeCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceModifier(iI) * iChange));
+			changePowerCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getPowerCommerceModifier(iI) * iChange));
 			changeCommerceHappinessPer(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceHappiness(iI) * iChange));
 		}
 
@@ -4402,6 +4415,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 		{
 			changeImprovementFreeSpecialists((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementFreeSpecialist(iI) * iChange);
+			changeImprovementHappiness((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementHappiness(iI) * iChange);
+			changeImprovementHealth((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementHealth(iI) * iChange);
 		}
 
 		FAssertMsg((0 < GC.getNumBonusInfos()) && "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlotGroup::reset", "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlotGroup::reset");
@@ -7167,16 +7182,18 @@ void CvCity::updatePowerHealth()
 	iNewGoodHealth = 0;
 	iNewBadHealth = 0;
 
+	int iPowerConsumed = getPowerConsumedCount();
+
 	if (isPower())
 	{
 		int iPowerHealth = GC.getDefineINT("POWER_HEALTH_CHANGE");
 		if (iPowerHealth > 0)
 		{
-			iNewGoodHealth += iPowerHealth;
+			iNewGoodHealth += iPowerHealth * iPowerConsumed;
 		}
 		else
 		{
-			iNewBadHealth += iPowerHealth;
+			iNewBadHealth += iPowerHealth * iPowerConsumed;
 		}
 	}
 
@@ -7185,11 +7202,11 @@ void CvCity::updatePowerHealth()
 		int iDirtyPowerHealth = GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE");
 		if (iDirtyPowerHealth > 0)
 		{
-			iNewGoodHealth += iDirtyPowerHealth;
+			iNewGoodHealth += iDirtyPowerHealth * iPowerConsumed;
 		}
 		else
 		{
-			iNewBadHealth += iDirtyPowerHealth;
+			iNewBadHealth += iDirtyPowerHealth * iPowerConsumed;
 		}
 	}
 
@@ -9562,6 +9579,9 @@ void CvCity::changePowerYieldRateModifier(YieldTypes eIndex, int iChange)
 		m_aiPowerYieldRateModifier[eIndex] = (m_aiPowerYieldRateModifier[eIndex] + iChange);
 		FAssert(getYieldRate(eIndex) >= 0);
 
+		if (iChange > 0) changePowerConsumedCount(1);
+		if (iChange < 0) changePowerConsumedCount(-1);
+
 		GET_PLAYER(getOwnerINLINE()).invalidateYieldRankCache(eIndex);
 
 		if (eIndex == YIELD_COMMERCE)
@@ -10156,7 +10176,25 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 
 int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 {
-	return std::max(0, (getCommerceRateModifier(eIndex) + GET_PLAYER(getOwnerINLINE()).getCommerceRateModifier(eIndex) + ((isCapital()) ? GET_PLAYER(getOwnerINLINE()).getCapitalCommerceRateModifier(eIndex) : 0) + getBonusCommerceRateModifier(eIndex) + 100)); // Leoreth
+	int iTotalModifier = 100;
+		
+	iTotalModifier += getCommerceRateModifier(eIndex);
+
+	iTotalModifier += GET_PLAYER(getOwnerINLINE()).getCommerceRateModifier(eIndex);
+
+	if (isCapital())
+	{
+		iTotalModifier += GET_PLAYER(getOwnerINLINE()).getCapitalCommerceRateModifier(eIndex);
+	}
+
+	iTotalModifier += getBonusCommerceRateModifier(eIndex);
+
+	if (isPower())
+	{
+		iTotalModifier += getPowerCommerceRateModifier(eIndex);
+	}
+
+	return std::max(0, iTotalModifier); // Leoreth
 }
 
 
@@ -11029,6 +11067,33 @@ void CvCity::changeCommerceRateModifier(CommerceTypes eIndex, int iChange)
 	if (iChange != 0)
 	{
 		m_aiCommerceRateModifier[eIndex] = (m_aiCommerceRateModifier[eIndex] + iChange);
+
+		updateCommerce(eIndex);
+
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+
+int CvCity::getPowerCommerceRateModifier(CommerceTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+	return m_aiPowerCommerceRateModifier[eIndex];
+}
+
+
+void CvCity::changePowerCommerceRateModifier(CommerceTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+
+	if (iChange != 0)
+	{
+		m_aiPowerCommerceRateModifier[eIndex] = (m_aiPowerCommerceRateModifier[eIndex] + iChange);
+
+		if (iChange > 0) changePowerConsumedCount(1);
+		if (iChange < 0) changePowerConsumedCount(-1);
 
 		updateCommerce(eIndex);
 
@@ -15189,6 +15254,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iFreeSpecialist);
 	pStream->Read(&m_iPowerCount);
 	pStream->Read(&m_iDirtyPowerCount);
+	pStream->Read(&m_iPowerConsumedCount);
 	pStream->Read(&m_iDefenseDamage);
 	pStream->Read(&m_iLastDefenseDamage);
 	pStream->Read(&m_iOccupationTimer);
@@ -15280,6 +15346,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiForceSpecialistCount);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiFreeSpecialistCount);
 	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementFreeSpecialists);
+	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHappiness);
+	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHealth);
 	pStream->Read(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Read(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
 	pStream->Read(GC.getNumUnitCombatInfos(), m_paiUnitCombatFreeExperience);
@@ -15452,6 +15520,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iFreeSpecialist);
 	pStream->Write(m_iPowerCount);
 	pStream->Write(m_iDirtyPowerCount);
+	pStream->Write(m_iPowerConsumedCount);
 	pStream->Write(m_iDefenseDamage);
 	pStream->Write(m_iLastDefenseDamage);
 	pStream->Write(m_iOccupationTimer);
@@ -15545,6 +15614,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiForceSpecialistCount);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiFreeSpecialistCount);
 	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementFreeSpecialists);
+	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHappiness);
+	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHealth);
 	pStream->Write(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Write(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
 	pStream->Write(GC.getNumUnitCombatInfos(), m_paiUnitCombatFreeExperience);
@@ -17999,8 +18070,8 @@ void CvCity::updateWorkedImprovements()
 			eImprovement = getCityIndexPlot(iI)->getImprovementType();
 			if (eImprovement != NO_IMPROVEMENT)
 			{
-				changeImprovementHappiness(GC.getImprovementInfo(eImprovement).getHappiness());
-				changeImprovementHealth(GC.getImprovementInfo(eImprovement).getHealth());
+				changeImprovementHappiness(getImprovementHappiness(eImprovement));
+				changeImprovementHealth(getImprovementHealth(eImprovement));
 			}
 		}
 	}
@@ -18010,14 +18081,14 @@ void CvCity::updateWorkedImprovement(ImprovementTypes eOldImprovement, Improveme
 {
 	if (eOldImprovement != NO_IMPROVEMENT)
 	{
-		changeImprovementHappiness(-GC.getImprovementInfo(eOldImprovement).getHappiness());
-		changeImprovementHealth(-GC.getImprovementInfo(eOldImprovement).getHealth());
+		changeImprovementHappiness(-getImprovementHappiness(eOldImprovement));
+		changeImprovementHealth(-getImprovementHealth(eOldImprovement));
 	}
 
 	if (eNewImprovement != NO_IMPROVEMENT)
 	{
-		changeImprovementHappiness(GC.getImprovementInfo(eNewImprovement).getHappiness());
-		changeImprovementHealth(GC.getImprovementInfo(eNewImprovement).getHealth());
+		changeImprovementHappiness(getImprovementHappiness(eNewImprovement));
+		changeImprovementHealth(getImprovementHealth(eNewImprovement));
 	}
 }
 
@@ -18027,7 +18098,52 @@ void CvCity::updateWorkedImprovement(int iIndex)
 
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 	{
-		changeImprovementHappiness(GC.getImprovementInfo(pPlot->getImprovementType()).getHappiness() * (isWorkingPlot(iIndex) ? 1 : -1));
-		changeImprovementHealth(GC.getImprovementInfo(pPlot->getImprovementType()).getHealth() * (isWorkingPlot(iIndex) ? 1 : -1));
+		changeImprovementHappiness(getImprovementHappiness(pPlot->getImprovementType()) * (isWorkingPlot(iIndex) ? 1 : -1));
+		changeImprovementHealth(getImprovementHealth(pPlot->getImprovementType()) * (isWorkingPlot(iIndex) ? 1 : -1));
+	}
+}
+
+int CvCity::getPowerConsumedCount() const
+{
+	return m_iPowerConsumedCount;
+}
+
+void CvCity::changePowerConsumedCount(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iPowerConsumedCount += iChange;
+
+		updatePowerHealth();
+	}
+}
+
+int CvCity::getImprovementHappiness(ImprovementTypes eImprovement) const
+{
+	return m_paiImprovementHappiness[eImprovement];
+}
+
+void CvCity::changeImprovementHappiness(ImprovementTypes eImprovement, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_paiImprovementHappiness[eImprovement] += iChange;
+
+		updateWorkedImprovements();
+	}
+}
+
+int CvCity::getImprovementHealth(ImprovementTypes eImprovement) const
+{
+	return m_paiImprovementHealth[eImprovement];
+}
+
+void CvCity::changeImprovementHealth(ImprovementTypes eImprovement, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_paiImprovementHealth[eImprovement] += iChange;
+
+		updateWorkedImprovements();
 	}
 }
