@@ -10575,6 +10575,8 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerYieldModifierArray(), true);
 
+	setCommerceChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_WITH_POWER").c_str(), kBuilding.getPowerCommerceModifierArray(), true);
+
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_ALL_CITIES_THIS_CONTINENT").c_str(), kBuilding.getAreaYieldModifierArray(), true);
 
 	setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_BUILDING_ALL_CITIES").c_str(), kBuilding.getGlobalYieldModifierArray(), true);
@@ -10666,7 +10668,6 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	}
 
 	iLast = 0;
-
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
 		if (kBuilding.getImprovementFreeSpecialist(iI) > 0)
@@ -10675,6 +10676,34 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			szTempBuffer.Format(L"<link=literal>%s</link>", GC.getImprovementInfo((ImprovementTypes)iI).getDescription());
 			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (kBuilding.getImprovementFreeSpecialist(iI) != iLast));
 			iLast = kBuilding.getImprovementFreeSpecialist(iI);
+		}
+	}
+
+	iLast = 0;
+	int iImprovementHappiness;
+	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
+	{
+		iImprovementHappiness = kBuilding.getImprovementHappiness(iI);
+		if (iImprovementHappiness != 0)
+		{
+			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS", std::abs(iImprovementHappiness), iImprovementHappiness > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)).GetCString());
+			szTempBuffer.Format(L"<link=literal>%s</link>", GC.getImprovementInfo((ImprovementTypes)iI).getDescription());
+			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHappiness != iLast));
+			iLast = iImprovementHappiness;
+		}
+	}
+
+	iLast = 0;
+	int iImprovementHealth;
+	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
+	{
+		iImprovementHealth = kBuilding.getImprovementHealth(iI);
+		if (iImprovementHealth != 0)
+		{
+			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HEALTH", std::abs(iImprovementHealth), iImprovementHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)).GetCString());
+			szTempBuffer.Format(L"<link=literal>%s</link>", GC.getImprovementInfo((ImprovementTypes)iI).getDescription());
+			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHealth != iLast));
+			iLast = iImprovementHealth;
 		}
 	}
 
@@ -17147,6 +17176,18 @@ void CvGameTextMgr::setCommerceHelp(CvWStringBuffer &szBuffer, CvCity& city, Com
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_BUILDINGS", iBuildingMod, info.getChar()));
 		szBuffer.append(NEWLINE);
 		iModifier += iBuildingMod;
+	}
+
+	// Power
+	if (city.isPower())
+	{
+		int iPowerMod = city.getPowerCommerceRateModifier(eCommerceType);
+		if (0 != iPowerMod)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_YIELD_POWER", iPowerMod, info.getChar()));
+			szBuffer.append(NEWLINE);
+			iModifier += iPowerMod;
+		}
 	}
 
 

@@ -1779,6 +1779,8 @@ public:
 	int getCommerceChangeDoubleTime(int i) const;				// Exposed to Python
 	int getCommerceModifier(int i) const;				// Exposed to Python
 	int* getCommerceModifierArray() const;
+	int getPowerCommerceModifier(int i) const; // Leoreth
+	int* getPowerCommerceModifierArray() const; // Leoreth
 	int getGlobalCommerceModifier(int i) const;				// Exposed to Python
 	int* getGlobalCommerceModifierArray() const;
 	int getSpecialistExtraCommerce(int i) const;	// Exposed to Python
@@ -1826,6 +1828,8 @@ public:
 
 	// Leoreth
 	int getPrereqBuildingClassPercent(int i) const;
+	int getImprovementHappiness(int i) const;
+	int getImprovementHealth(int i) const;
 
 	// Other
 
@@ -1983,6 +1987,7 @@ protected:
 	int* m_piObsoleteSafeCommerceChange;
 	int* m_piCommerceChangeDoubleTime;
 	int* m_piCommerceModifier;
+	int* m_piPowerCommerceModifier; // Leoreth
 	int* m_piGlobalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
 	int* m_piStateReligionCommerce;
@@ -2004,6 +2009,8 @@ protected:
 	// Leoreth
 	int* m_piPrereqBuildingClassPercent;
 	int* m_piReligionYieldChange;
+	int* m_piImprovementHappiness;
+	int* m_piImprovementHealth;
 
 	bool* m_pbCommerceFlexible;
 	bool* m_pbCommerceChangeOriginalOwner;
