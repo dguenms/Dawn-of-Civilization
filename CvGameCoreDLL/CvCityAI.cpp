@@ -4414,7 +4414,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 					iTempValue += (kBuilding.getCommerceChange(iI) * 4);
 					iTempValue += (kBuilding.getObsoleteSafeCommerceChange(iI) * 4);
-					iTempValue *= 100 + kBuilding.getCommerceModifier(iI);
+					iTempValue *= 100 + kBuilding.getCommerceModifier(iI) + (isPower() ? kBuilding.getPowerCommerceModifier(iI) : 0);
 					iTempValue /= 100;
 
 					if ((CommerceTypes)iI == COMMERCE_CULTURE)
@@ -4435,6 +4435,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 					// add value for a commerce modifier
 					int iCommerceModifier = kBuilding.getCommerceModifier(iI);
+					if (isPower()) iCommerceModifier += kBuilding.getPowerCommerceModifier(iI);
 					int iBaseCommerceRate = getBaseCommerceRate((CommerceTypes) iI);
 					int iCommerceMultiplierValue = iCommerceModifier * iBaseCommerceRate;
 					if (((CommerceTypes) iI) == COMMERCE_CULTURE && iCommerceModifier != 0)

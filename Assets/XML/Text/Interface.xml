@@ -1598,4 +1598,12 @@
 		<Tag>TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappOrUn per[SPACE]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HEALTH</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HealthOrUn per[SPACE]</English>
+	</TEXT>
 </Civ4GameText>

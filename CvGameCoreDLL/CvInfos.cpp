@@ -6940,6 +6940,7 @@ m_piCommerceChange(NULL),
 m_piObsoleteSafeCommerceChange(NULL),
 m_piCommerceChangeDoubleTime(NULL),
 m_piCommerceModifier(NULL),
+m_piPowerCommerceModifier(NULL), // Leoreth
 m_piGlobalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
 m_piStateReligionCommerce(NULL),
@@ -6959,6 +6960,8 @@ m_piFlavorValue(NULL),
 m_piImprovementFreeSpecialist(NULL),
 m_piPrereqBuildingClassPercent(NULL), // Leoreth
 m_piReligionYieldChange(NULL), // Leoreth
+m_piImprovementHappiness(NULL), // Leoreth
+m_piImprovementHealth(NULL), // Leoreth
 m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
@@ -6993,6 +6996,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piObsoleteSafeCommerceChange);
 	SAFE_DELETE_ARRAY(m_piCommerceChangeDoubleTime);
 	SAFE_DELETE_ARRAY(m_piCommerceModifier);
+	SAFE_DELETE_ARRAY(m_piPowerCommerceModifier); // Leoreth
 	SAFE_DELETE_ARRAY(m_piGlobalCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piStateReligionCommerce);
@@ -7015,6 +7019,8 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_pbCommerceChangeOriginalOwner);
 	SAFE_DELETE_ARRAY(m_pbBuildingClassNeededInCity);
 	SAFE_DELETE_ARRAY(m_piReligionYieldChange); // Leoreth
+	SAFE_DELETE_ARRAY(m_piImprovementHappiness); // Leoreth
+	SAFE_DELETE_ARRAY(m_piImprovementHealth); // Leoreth
 
 	if (m_ppaiSpecialistYieldChange != NULL)
 	{
@@ -7811,6 +7817,18 @@ int* CvBuildingInfo::getCommerceModifierArray() const
 	return m_piCommerceModifier;
 }
 
+int CvBuildingInfo::getPowerCommerceModifier(int i) const
+{
+	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piPowerCommerceModifier ? m_piPowerCommerceModifier[i] : -1;
+}
+
+int* CvBuildingInfo::getPowerCommerceModifierArray() const
+{
+	return m_piPowerCommerceModifier;
+}
+
 int CvBuildingInfo::getGlobalCommerceModifier(int i) const
 {
 	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
@@ -7971,6 +7989,20 @@ int CvBuildingInfo::getImprovementFreeSpecialist(int i) const
 	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_piImprovementFreeSpecialist ? m_piImprovementFreeSpecialist[i] : -1;
+}
+
+int CvBuildingInfo::getImprovementHappiness(int i) const
+{
+	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piImprovementHappiness ? m_piImprovementHappiness[i] : -1;
+}
+
+int CvBuildingInfo::getImprovementHealth(int i) const
+{
+	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piImprovementHealth ? m_piImprovementHealth[i] : -1;
 }
 
 bool CvBuildingInfo::isCommerceFlexible(int i) const
@@ -8323,6 +8355,10 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	m_piCommerceModifier = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piCommerceModifier);
 
+	SAFE_DELETE_ARRAY(m_piPowerCommerceModifier);
+	m_piPowerCommerceModifier = new int[NUM_COMMERCE_TYPES];
+	stream->Read(NUM_COMMERCE_TYPES, m_piPowerCommerceModifier);
+
 	SAFE_DELETE_ARRAY(m_piGlobalCommerceModifier);
 	m_piGlobalCommerceModifier = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piGlobalCommerceModifier);
@@ -8400,6 +8436,14 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piImprovementFreeSpecialist);
 	m_piImprovementFreeSpecialist = new int[GC.getNumImprovementInfos()];
 	stream->Read(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
+
+	SAFE_DELETE_ARRAY(m_piImprovementHappiness);
+	m_piImprovementHappiness = new int[GC.getNumImprovementInfos()];
+	stream->Read(GC.getNumImprovementInfos(), m_piImprovementHappiness);
+
+	SAFE_DELETE_ARRAY(m_piImprovementHealth);
+	m_piImprovementHealth = new int[GC.getNumImprovementInfos()];
+	stream->Read(GC.getNumImprovementInfos(), m_piImprovementHealth);
 
 	SAFE_DELETE_ARRAY(m_pbCommerceFlexible);
 	m_pbCommerceFlexible = new bool[NUM_COMMERCE_TYPES];
@@ -8628,6 +8672,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piObsoleteSafeCommerceChange);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceChangeDoubleTime);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceModifier);
+	stream->Write(NUM_COMMERCE_TYPES, m_piPowerCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piGlobalCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_COMMERCE_TYPES, m_piStateReligionCommerce);
@@ -8647,6 +8692,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piReligionYieldChange);
 	stream->Write(GC.getNumFlavorTypes(), m_piFlavorValue);
 	stream->Write(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
+	stream->Write(GC.getNumImprovementInfos(), m_piImprovementHappiness);
+	stream->Write(GC.getNumImprovementInfos(), m_piImprovementHealth);
 
 	stream->Write(NUM_COMMERCE_TYPES, m_pbCommerceFlexible);
 	stream->Write(NUM_COMMERCE_TYPES, m_pbCommerceChangeOriginalOwner);
@@ -9092,6 +9139,16 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 		pXML->InitList(&m_piCommerceModifier, NUM_COMMERCE_TYPES);
 	}
 
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"PowerCommerceModifiers"))
+	{
+		pXML->SetCommerce(&m_piPowerCommerceModifier);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piPowerCommerceModifier, NUM_COMMERCE_TYPES);
+	}
+
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"GlobalCommerceModifiers"))
 	{
 		pXML->SetCommerce(&m_piGlobalCommerceModifier);
@@ -9346,6 +9403,8 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->SetVariableListTagPair(&m_piFlavorValue, "Flavors", GC.getFlavorTypes(), GC.getNumFlavorTypes());
 	pXML->SetVariableListTagPair(&m_piImprovementFreeSpecialist, "ImprovementFreeSpecialists", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
+	pXML->SetVariableListTagPair(&m_piImprovementHappiness, "ImprovementHappinesses", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
+	pXML->SetVariableListTagPair(&m_piImprovementHealth, "ImprovementHealths", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
 
 	pXML->SetVariableListTagPair(&m_piBuildingHappinessChanges, "BuildingHappinessChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 

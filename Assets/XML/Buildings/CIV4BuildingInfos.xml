@@ -961,6 +961,12 @@
 			<iHappiness>2</iHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ImprovementHappinesses>
+				<ImprovementHappiness>
+					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<iHappiness>1</iHappiness>
+				</ImprovementHappiness>
+			</ImprovementHappinesses>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1022,7 +1028,6 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RECYCLING_CENTER</ArtDefineTag>
 			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
-			<bBuildingOnlyHealthy>1</bBuildingOnlyHealthy>
 			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -1030,6 +1035,16 @@
 			<iAsset>6</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
+			<ImprovementHealths>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
+					<iHealth>1</iHealth>
+				</ImprovementHealth>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
+					<iHealth>1</iHealth>
+				</ImprovementHealth>
+			</ImprovementHealths>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -2312,16 +2327,19 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>66</iConquestProb>
-			<iHealth>1</iHealth>
 			<iAsset>5</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
-			<BonusHealthChanges>
-				<BonusHealthChange>
-					<BonusType>BONUS_OIL</BonusType>
-					<iHealthChange>1</iHealthChange>
-				</BonusHealthChange>
-			</BonusHealthChanges>
+			<ImprovementHealths>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
+					<iHealth>1</iHealth>
+				</ImprovementHealth>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
+					<iHealth>1</iHealth>
+				</ImprovementHealth>
+			</ImprovementHealths>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -2710,10 +2728,10 @@
 			<iSpaceProductionModifier>50</iSpaceProductionModifier>
 			<iAsset>6</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceModifiers>
+			<PowerCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>25</iCommerce>
-			</CommerceModifiers>
+			</PowerCommerceModifiers>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
@@ -3280,11 +3298,11 @@
 			<iConquestProb>66</iConquestProb>
 			<iAsset>5</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<CommerceModifiers>
+			<PowerCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>50</iCommerce>
-			</CommerceModifiers>
+			</PowerCommerceModifiers>
 			<CommerceHappinesses>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -4007,9 +4025,9 @@
 			<iAsset>6</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_GROCERY</ConstructSound>
-			<CommerceModifiers>
+			<PowerCommerceModifiers>
 				<iCommerce>25</iCommerce>
-			</CommerceModifiers>
+			</PowerCommerceModifiers>
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
