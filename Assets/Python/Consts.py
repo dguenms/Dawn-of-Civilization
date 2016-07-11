@@ -1567,17 +1567,17 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 #Buildings (update Persian UHV every time this is changed)
 
-iNumBuildings = 212
-(iPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iBarracks, iZuluIkhanda, iStable,
-iMongolianGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iOttomanHammam, iKhmerBaray, iMoorishNoria, iHarappanBath, iIndianStepwell,
-iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugueseFeitoria, iDrydock, iAirport,
-iForge, iMandeMint, iItalianArtStudio, iArabianAlchemist, iFactory, iGermanAssemblyPlant, iJapaneseZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant,
-iIndustrialPark, iPaganTemple, iEgyptianObelisk, iEthiopianStele, iIndonesianCandi, iIndianEdict, iBabylonianZiggurat, iNativeAmericanTotemPole, iPublicTransportation,
+iNumBuildings = 233
+(iPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iStarFort, iBarracks, iZuluIkhanda, iStable,
+iMongolianGer, iBunker, iBombShelter, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iOttomanHammam, iKhmerBaray, iMoorishNoria, iHarappanBath, iIndianStepwell, iBath,
+iPharmacy, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iVikingTradingPost, iHarbor, iCustomHouse, iPortugueseFeitoria, iWharf, iPostOffice, iDrydock, iAirport,
+iForge, iMandeMint, iItalianArtStudio, iArabianAlchemist, iFactory, iGermanAssemblyPlant, iJapaneseZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant, iSolarPlant, iElectricalGrid,
+iIndustrialPark, iPaganTemple, iBabylonianZiggurat, iMonument, iEgyptianObelisk, iEthiopianStele, iIndonesianCandi, iIndianEdict, iNativeAmericanTotemPole, iPublicTransportation,
 iLibrary, iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, 
-iRussianResearchInstitute, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavillion, iAmphitheatre, iMayanBallCourt, iMexicanCharreada, 
-iPolynesianMalae, iBabylonianGarden, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iCongoleseMbwadi, iPhoenicianGlassmaker, 
-iGrocer, iBrazilianFazenda, iColombianHacienda, iBank, iEnglishRoyalExchange, iSupermarket, iAmericanMall, iArgentineRefrigerationPlant, iCourthouse,
-iAztecSacrificialAltar, iHolyRomanRathaus, iPolishSejmik, iJail, iFrenchSalon, iMughalMausoleum, iCanadianRoyalMountedPolice, iLevee, 
+iRussianResearchInstitute, iWeaver, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavillion, iAmphitheatre, iMayanBallCourt, iMexicanCharreada, 
+iPolynesianMalae, iBabylonianGarden, iCinema, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iCongoleseMbwadi, iPhoenicianGlassmaker, 
+iGrocer, iBrazilianFazenda, iColombianHacienda, iBank, iEnglishRoyalExchange, iRailwayStation, iDepartmentStore, iSupermarket, iAmericanMall, iArgentineRefrigerationPlant, iCoffeeHouse, iDistillery, iHotel,
+iConstabulary, iCivicSquare, iEstate, iNewsPress, iCourthouse, iAztecSacrificialAltar, iHolyRomanRathaus, iPolishSejmik, iJail, iFrenchSalon, iMughalMausoleum, iCanadianRoyalMountedPolice, iLevee, 
 iDutchDike, iIntelligenceAgency, iSecurityBureau, iAcademy, iMilitaryAcademy, iAdministrativeCenter, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine,
 iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iCatholicTemple, iCatholicCathedral, iCatholicMonastery, iCatholicShrine, iProtestantTemple, 
 iProtestantCathedral, iProtestantMonastery, iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, 
