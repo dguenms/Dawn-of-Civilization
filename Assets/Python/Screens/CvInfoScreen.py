@@ -2956,8 +2956,8 @@ class CvInfoScreen:
 		iPlayer = CyGame().getActivePlayer()
 		pPlayer = gc.getPlayer(iPlayer)
 		tPlayer = gc.getTeam(pPlayer.getTeam())
-		iBronzeWorking = con.iBronzeWorking
-		iIronWorking = con.iIronWorking
+		iBronzeWorking = con.iAlloys
+		iIronWorking = con.iBloomery
 		iCalendar = con.iCalendar
 		
 		if (tPlayer.isHasTech(iCalendar) or year < con.tBirth[iPlayer]):  

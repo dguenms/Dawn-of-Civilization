@@ -673,10 +673,10 @@ class CvRFCEventHandler:
 			if (iPlayer == iVikings):
 				gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
 				
-		if (argsList[0] == iMedicine):
+		if (argsList[0] == iMicrobiology):
 			self.pla.onTechAcquired(argsList[0], argsList[2])
 
-		if argsList[0] == iThermodynamics:
+		if argsList[0] == iRailroad:
 			self.rnf.onRailroadDiscovered(argsList[2])
 			
 		if iTech in [iExploration, iFirearms]:

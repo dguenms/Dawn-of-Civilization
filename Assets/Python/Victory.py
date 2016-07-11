@@ -1609,7 +1609,7 @@ def onTechAcquired(iPlayer, iTech):
 	# first Maya goal: discover Calendar by 600 AD
 	if iPlayer == iMaya:
 		if not pMaya.isReborn() and isPossible(iMaya, 0):
-			if iTech == iAstrolabe:
+			if iTech == iNavigation:
 				win(iMaya, 0)
 				
 	# third Congolese goal: enter the Industrial era before anyone enters the Modern era
@@ -3039,7 +3039,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bCompass = sd.getFirstDiscovered(iCompass) == iChina
 			bPaper = sd.getFirstDiscovered(iPaper) == iChina
 			bGunpowder = sd.getFirstDiscovered(iGunpowder) == iChina
-			bPrintingPress = sd.getFirstDiscovered(iPrintingPress) == iChina
+			bPrintingPress = sd.getFirstDiscovered(iPrinting) == iChina
 			aHelp.append(getIcon(bCompass) + localText.getText("TXT_KEY_TECH_COMPASS", ()) + ' ' + getIcon(bPaper) + localText.getText("TXT_KEY_TECH_PAPER", ()) + ' ' + getIcon(bGunpowder) + localText.getText("TXT_KEY_TECH_GUNPOWDER", ()) + ' ' + getIcon(bPrintingPress) + localText.getText("TXT_KEY_TECH_PRINTING", ()))
 		elif iGoal == 2:
 			iGoldenAgeTurns = sd.getChineseGoldenAgeTurns()
@@ -3057,9 +3057,9 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iBabylonia:
 		if iGoal == 0:
 			bWriting = sd.getFirstDiscovered(iWriting) == iBabylonia
-			bCodeOfLaws = sd.getFirstDiscovered(iCodeOfLaws) == iBabylonia
-			bMonarchy = sd.getFirstDiscovered(iMonarchy) == iBabylonia
-			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCodeOfLaws) + localText.getText("TXT_KEY_TECH_LAW", ()) + ' ' + getIcon(bMonarchy) + localText.getText("TXT_KEY_TECH_POLITICS", ()))
+			bLaw = sd.getFirstDiscovered(iLaw) == iBabylonia
+			bPolitics = sd.getFirstDiscovered(iPolitics) == iBabylonia
+			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bLaw) + localText.getText("TXT_KEY_TECH_LAW", ()) + ' ' + getIcon(bPolitics) + localText.getText("TXT_KEY_TECH_POLITICS", ()))
 		elif iGoal == 1:
 			pBestCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
 			bBestCity = isBestCity(iBabylonia, (76, 40), cityPopulation)
@@ -3072,9 +3072,9 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iGreece:
 		if iGoal == 0:
 			bLiterature = sd.getFirstDiscovered(iLiterature) == iGreece
-			bDrama = sd.getFirstDiscovered(iDrama) == iGreece
+			bScholarship = sd.getFirstDiscovered(iScholarship) == iGreece
 			bPhilosophy = sd.getFirstDiscovered(iPhilosophy) == iGreece
-			aHelp.append(getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bDrama) + localText.getText("TXT_KEY_TECH_SCHOLARSHIP", ()) + ' ' + getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()))
+			aHelp.append(getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bScholarship) + localText.getText("TXT_KEY_TECH_SCHOLARSHIP", ()) + ' ' + getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()))
 		elif iGoal == 1:
 			bOracle = (getNumBuildings(iGreece, iOracle) > 0)
 			bParthenon = (getNumBuildings(iGreece, iParthenon) > 0)

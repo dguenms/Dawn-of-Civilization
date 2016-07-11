@@ -193,7 +193,7 @@ class Congress:
 		# check one more time if player has collapsed in the meantime
 		lRemove = []
 		for iLoopPlayer in self.lInvites:
-			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.add(iLoopPlayer)
+			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.append(iLoopPlayer)
 			
 		for iLoopPlayer in lRemove:
 			self.lInvites.remove(iLoopPlayer)
