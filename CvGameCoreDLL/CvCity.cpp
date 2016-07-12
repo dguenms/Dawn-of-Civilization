@@ -51,6 +51,7 @@ CvCity::CvCity()
 	m_aiCorporationCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCommerceRateModifier = new int[NUM_COMMERCE_TYPES];
 	m_aiPowerCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
+	m_aiCultureCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
 	m_aiBonusCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
 	m_aiCommerceHappinessPer = new int[NUM_COMMERCE_TYPES];
 	m_aiDomainFreeExperience = new int[NUM_DOMAIN_TYPES];
@@ -148,6 +149,7 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiCorporationCommerce);
 	SAFE_DELETE_ARRAY(m_aiCommerceRateModifier);
 	SAFE_DELETE_ARRAY(m_aiPowerCommerceRateModifier); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiCultureCommerceRateModifier); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiBonusCommerceRateModifier); //Leoreth
 	SAFE_DELETE_ARRAY(m_aiCommerceHappinessPer);
 	SAFE_DELETE_ARRAY(m_aiDomainFreeExperience);
@@ -550,6 +552,10 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iImprovementHappiness = 0;
 	m_iImprovementHealth = 0;
 
+	m_iCultureGreatPeopleRateModifier = 0;
+	m_iCultureHappiness = 0;
+	m_iCultureTradeRouteModifier = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -602,6 +608,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiCorporationCommerce[iI] = 0;
 		m_aiCommerceRateModifier[iI] = 0;
 		m_aiPowerCommerceRateModifier[iI] = 0; // Leoreth
+		m_aiCultureCommerceRateModifier[iI] = 0; // Leoreth
 		m_aiBonusCommerceRateModifier[iI] = 0; // Leoreth
 		m_aiCommerceHappinessPer[iI] = 0;
 	}
@@ -4377,6 +4384,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeNoUnhealthyPopulationCount((GC.getBuildingInfo(eBuilding).isNoUnhealthyPopulation()) ? iChange : 0);
 		changeBuildingOnlyHealthyCount((GC.getBuildingInfo(eBuilding).isBuildingOnlyHealthy()) ? iChange : 0);
 
+		changeCultureGreatPeopleRateModifier(GC.getBuildingInfo(eBuilding).getCultureGreatPeopleRateModifier());
+		changeCultureHappiness(GC.getBuildingInfo(eBuilding).getCultureHappiness());
+		changeCultureTradeRouteModifier(GC.getBuildingInfo(eBuilding).getCultureTradeRouteModifier());
+
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			changeSeaPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getSeaPlotYieldChange(iI) * iChange));
@@ -4398,6 +4409,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		{
 			changeCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceModifier(iI) * iChange));
 			changePowerCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getPowerCommerceModifier(iI) * iChange));
+			changeCultureCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCultureCommerceModifier(iI) * iChange));
 			changeCommerceHappinessPer(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceHappiness(iI) * iChange));
 		}
 
@@ -5221,6 +5233,7 @@ int CvCity::unhappyLevel(int iExtra) const
 		iUnhappiness -= std::min(0, getExtraBuildingBadHappiness());
 		iUnhappiness -= std::min(0, getFeatureBadHappiness());
 		iUnhappiness -= std::min(0, getImprovementHappiness());
+		iUnhappiness -= std::min(0, getCultureHappiness() * getCultureLevel());
 		iUnhappiness -= std::min(0, getBonusBadHappiness());
 		iUnhappiness -= std::min(0, getReligionBadHappiness());
 		iUnhappiness -= std::min(0, getCommerceHappiness());
@@ -5251,6 +5264,7 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, getExtraBuildingGoodHappiness());
 	iHappiness += std::max(0, getFeatureGoodHappiness());
 	iHappiness += std::max(0, getImprovementHappiness());
+	iHappiness += std::max(0, getCultureHappiness() * getCultureLevel());
 	iHappiness += std::max(0, getBonusGoodHappiness());
 	iHappiness += std::max(0, getReligionGoodHappiness());
 	iHappiness += std::max(0, getCorporationGoodHappiness()); // Leoreth
@@ -6323,6 +6337,9 @@ int CvCity::getTotalGreatPeopleRateModifier() const
 
 	iModifier = getGreatPeopleRateModifier();
 
+	// Leoreth
+	iModifier += getCultureGreatPeopleRateModifier() * getCultureLevel();
+
 	iModifier += GET_PLAYER(getOwnerINLINE()).getGreatPeopleRateModifier();
 
 	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION)
@@ -6440,6 +6457,7 @@ int CvCity::getAdditionalGreatPeopleRateModifierByBuilding(BuildingTypes eBuildi
 	if (!bObsolete)
 	{
 		iExtraModifier += kBuilding.getGreatPeopleRateModifier();
+		iExtraModifier += kBuilding.getCultureGreatPeopleRateModifier() * getCultureLevel();
 		iExtraModifier += kBuilding.getGlobalGreatPeopleRateModifier();
 	}
 
@@ -7328,6 +7346,8 @@ int CvCity::getBuildingHappiness(BuildingTypes eBuilding) const
 	int iI;
 
 	iHappiness = GC.getBuildingInfo(eBuilding).getHappiness();
+
+	iHappiness += GC.getBuildingInfo(eBuilding).getCultureHappiness() * getCultureLevel();
 
 	if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 	{
@@ -9316,6 +9336,7 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 					iTotalTradeYield += iTradeYield;
 
 					iTradeModifier += kBuilding.getTradeRouteModifier();
+					iTradeModifier += kBuilding.getCultureTradeRouteModifier() * getCultureLevel();
 					if (pCity->getOwnerINLINE() != getOwnerINLINE())
 					{
 						iTradeModifier += kBuilding.getForeignTradeRouteModifier();
@@ -9712,6 +9733,9 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 		// Leoreth: new modifier for trade routes with defensive pact partners
 		iModifier += getDefensivePactTradeModifier(pOtherCity);
+
+		// Leoreth: new culture level based modifier
+		iModifier += getCultureTradeRouteModifier() * getCultureLevel();
 	}
 
 	return iModifier;
@@ -10179,6 +10203,8 @@ int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 	int iTotalModifier = 100;
 		
 	iTotalModifier += getCommerceRateModifier(eIndex);
+
+	iTotalModifier += getCultureCommerceRateModifier(eIndex) * getCultureLevel();
 
 	iTotalModifier += GET_PLAYER(getOwnerINLINE()).getCommerceRateModifier(eIndex);
 
@@ -11094,6 +11120,30 @@ void CvCity::changePowerCommerceRateModifier(CommerceTypes eIndex, int iChange)
 
 		if (iChange > 0) changePowerConsumedCount(1);
 		if (iChange < 0) changePowerConsumedCount(-1);
+
+		updateCommerce(eIndex);
+
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+
+int CvCity::getCultureCommerceRateModifier(CommerceTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+	return m_aiCultureCommerceRateModifier[eIndex];
+}
+
+
+void CvCity::changeCultureCommerceRateModifier(CommerceTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+
+	if (iChange != 0)
+	{
+		m_aiCultureCommerceRateModifier[eIndex] = (m_aiCultureCommerceRateModifier[eIndex] + iChange);
 
 		updateCommerce(eIndex);
 
@@ -15254,7 +15304,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iFreeSpecialist);
 	pStream->Read(&m_iPowerCount);
 	pStream->Read(&m_iDirtyPowerCount);
-	pStream->Read(&m_iPowerConsumedCount);
+	pStream->Read(&m_iPowerConsumedCount); // Leoreth
 	pStream->Read(&m_iDefenseDamage);
 	pStream->Read(&m_iLastDefenseDamage);
 	pStream->Read(&m_iOccupationTimer);
@@ -15273,6 +15323,9 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iNextCoveredPlot); // Leoreth
 	pStream->Read(&m_iImprovementHappiness);
 	pStream->Read(&m_iImprovementHealth);
+	pStream->Read(&m_iCultureGreatPeopleRateModifier);
+	pStream->Read(&m_iCultureHappiness);
+	pStream->Read(&m_iCultureTradeRouteModifier);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15309,6 +15362,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiReligionCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCorporationCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRateModifier);
+	pStream->Read(NUM_COMMERCE_TYPES, m_aiPowerCommerceRateModifier); // Leoreth
+	pStream->Read(NUM_COMMERCE_TYPES, m_aiCultureCommerceRateModifier); // Leoreth
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiBonusCommerceRateModifier); // Leoreth
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
@@ -15542,6 +15597,10 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iImprovementHappiness);
 	pStream->Write(m_iImprovementHealth);
 
+	pStream->Write(m_iCultureGreatPeopleRateModifier);
+	pStream->Write(m_iCultureHappiness);
+	pStream->Write(m_iCultureTradeRouteModifier);
+
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
 	pStream->Write(m_bDrafted);
@@ -15577,6 +15636,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiReligionCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCorporationCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRateModifier);
+	pStream->Write(NUM_COMMERCE_TYPES, m_aiPowerCommerceRateModifier); // Leoreth
+	pStream->Write(NUM_COMMERCE_TYPES, m_aiCultureCommerceRateModifier); // Leoreth
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiBonusCommerceRateModifier); // Leoreth
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
@@ -18145,5 +18206,46 @@ void CvCity::changeImprovementHealth(ImprovementTypes eImprovement, int iChange)
 		m_paiImprovementHealth[eImprovement] += iChange;
 
 		updateWorkedImprovements();
+	}
+}
+
+int CvCity::getCultureGreatPeopleRateModifier() const
+{
+	return m_iCultureGreatPeopleRateModifier;
+}
+
+void CvCity::changeCultureGreatPeopleRateModifier(int iChange)
+{
+	m_iCultureGreatPeopleRateModifier += iChange;
+}
+
+int CvCity::getCultureHappiness() const
+{
+	return m_iCultureHappiness;
+}
+
+void CvCity::changeCultureHappiness(int iChange)
+{
+	int iOldCultureHappiness = getCultureHappiness();
+	m_iCultureHappiness += iChange;
+
+	if (getCultureHappiness() != iOldCultureHappiness)
+	{
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+int CvCity::getCultureTradeRouteModifier() const
+{
+	return m_iCultureTradeRouteModifier;
+}
+
+void CvCity::changeCultureTradeRouteModifier(int iChange)
+{
+	m_iCultureTradeRouteModifier += iChange;
+
+	if (iChange != 0)
+	{
+		updateTradeRoutes();
 	}
 }

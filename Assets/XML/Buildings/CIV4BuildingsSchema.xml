@@ -153,6 +153,7 @@
 	<ElementType name="iAreaHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iAreaHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionHappiness" content="textOnly" dt:type="int"/>
@@ -164,6 +165,7 @@
 	<ElementType name="iCoastalTradeRoutes" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalTradeRoutes" content="textOnly" dt:type="int"/>
 	<ElementType name="iTradeRouteModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureTradeRouteModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iForeignTradeRouteModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalPopulationChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeTechs" content="textOnly" dt:type="int"/>
@@ -178,6 +180,7 @@
 	<ElementType name="CivicOption" content="textOnly"/>
 	<ElementType name="GreatPeopleUnitClass" content="textOnly"/>
 	<ElementType name="iGreatPeopleRateChange" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureGreatPeopleRateChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iHurryAngerModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="bBorderObstacle" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iYield" content="textOnly" dt:type="int"/>
@@ -219,6 +222,9 @@
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="PowerCommerceModifiers" content="eltOnly">
+		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="CultureCommerceModifiers" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="GlobalCommerceModifiers" content="eltOnly">
@@ -504,6 +510,7 @@
 		<element type="iMinLatitude" minOccurs="0"/>
 		<element type="iMaxLatitude" minOccurs="0"/>
 		<element type="iGreatPeopleRateModifier" minOccurs="0"/>
+		<element type="iCultureGreatPeopleRateModifier" minOccurs="0"/>
 		<element type="iGreatGeneralRateModifier" minOccurs="0"/>
 		<element type="iDomesticGreatGeneralRateModifier" minOccurs="0"/>
 		<element type="iGlobalGreatPeopleRateModifier" minOccurs="0"/>
@@ -530,6 +537,7 @@
 		<element type="iAreaHealth" minOccurs="0"/>
 		<element type="iGlobalHealth" minOccurs="0"/>
 		<element type="iHappiness" minOccurs="0"/>
+		<element type="iCultureHappiness" minOccurs="0"/>
 		<element type="iAreaHappiness" minOccurs="0"/>
 		<element type="iGlobalHappiness" minOccurs="0"/>
 		<element type="iStateReligionHappiness" minOccurs="0"/>
@@ -541,6 +549,7 @@
 		<element type="iCoastalTradeRoutes" minOccurs="0"/>
 		<element type="iGlobalTradeRoutes" minOccurs="0"/>
 		<element type="iTradeRouteModifier" minOccurs="0"/>
+		<element type="iCultureTradeRouteModifier" minOccurs="0"/>
 		<element type="iForeignTradeRouteModifier" minOccurs="0"/>
 		<element type="iGlobalPopulationChange" minOccurs="0"/>
 		<element type="iFreeTechs" minOccurs="0"/>
@@ -564,6 +573,7 @@
 		<element type="CommerceChangeDoubleTimes" minOccurs="0"/>
 		<element type="CommerceModifiers" minOccurs="0"/>
 		<element type="PowerCommerceModifiers" minOccurs="0"/>
+		<element type="CultureCommerceModifiers" minOccurs="0"/>
 		<element type="GlobalCommerceModifiers" minOccurs="0"/>
 		<element type="SpecialistExtraCommerces" minOccurs="0"/>
 		<element type="StateReligionCommerces" minOccurs="0"/>

@@ -9869,6 +9869,7 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			szBuffer.append(szTempBuffer);
 		}
 
+
 		int iHealth;
 		if (NULL != pCity)
 		{
@@ -10204,6 +10205,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_BIRTH_RATE_MOD", kBuilding.getGreatPeopleRateModifier()));
 	}
 
+	if (kBuilding.getCultureGreatPeopleRateModifier() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_CULTURE_BIRTH_RATE_MOD", kBuilding.getCultureGreatPeopleRateModifier()));
+	}
+
 	if (kBuilding.getGreatGeneralRateModifier() != 0)
 	{
 		szBuffer.append(NEWLINE);
@@ -10463,6 +10470,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TRADE_ROUTE_MOD", kBuilding.getTradeRouteModifier()));
+	}
+
+	if (kBuilding.getCultureTradeRouteModifier() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_CULTURE_TRADE_ROUTE_MOD", kBuilding.getCultureTradeRouteModifier() * pCity->getCultureLevel()));
 	}
 
 	if (kBuilding.getForeignTradeRouteModifier() != 0)
@@ -12541,7 +12554,7 @@ void CvGameTextMgr::setHappyHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			szBuffer.append(NEWLINE);
 		}
 
-		iHappy = (city.getBuildingGoodHappiness() + city.getExtraBuildingGoodHappiness());
+		iHappy = (city.getBuildingGoodHappiness() + city.getExtraBuildingGoodHappiness() + city.getCultureHappiness() * city.getCultureLevel());
 		if (iHappy > 0)
 		{
 			iTotalHappy += iHappy;
@@ -17637,6 +17650,15 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 		iModifier += iBuildingMod;
 	}
 
+	// Culture
+	int iCultureMod = city.getCultureGreatPeopleRateModifier() * city.getCultureLevel();
+	if (0 != iCultureMod)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_GREATPEOPLE_CULTURE_LEVEL", iCultureMod));
+		szBuffer.append(NEWLINE);
+		iModifier += iCultureMod;
+	}
+
 	// Civics
 	int iCivicMod = 0;
 	for (int i = 0; i < GC.getNumCivicOptionInfos(); i++)
@@ -18912,6 +18934,20 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					{
 						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_BUILDING", GC.getBuildingInfo((BuildingTypes)iBuilding).getTextKeyWide(), iNewMod));
+						iModifier += iNewMod;
+					}
+				}
+			}
+
+			for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); ++iBuilding)
+			{
+				if (pCity->getNumActiveBuilding((BuildingTypes)iBuilding) > 0)
+				{
+					iNewMod = pCity->getNumActiveBuilding((BuildingTypes)iBuilding) * GC.getBuildingInfo((BuildingTypes)iBuilding).getCultureTradeRouteModifier() * pCity->getCultureLevel();
+					if (0 != iNewMod)
+					{
+						szBuffer.append(NEWLINE);
+						szBuffer.append(gDLL->getText("TXT_KEY_CULTURE_TRADE_ROUTE_MOD_BUILDING", GC.getBuildingInfo((BuildingTypes)iBuilding).getTextKeyWide(), iNewMod));
 						iModifier += iNewMod;
 					}
 				}
