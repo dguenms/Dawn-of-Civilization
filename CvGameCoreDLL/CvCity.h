@@ -767,6 +767,10 @@ public:
 	int getPowerCommerceRateModifier(CommerceTypes eIndex) const;
 	void changePowerCommerceRateModifier(CommerceTypes eIndex, int iChange);
 
+	// Leoreth
+	int getCultureCommerceRateModifier(CommerceTypes eIndex) const;
+	void changeCultureCommerceRateModifier(CommerceTypes eIndex, int iChange);
+
 	int getCommerceHappinessPer(CommerceTypes eIndex) const;										// Exposed to Python
 	int getCommerceHappinessByType(CommerceTypes eIndex) const;									// Exposed to Python
 	int getCommerceHappiness() const;																						// Exposed to Python
@@ -1064,6 +1068,15 @@ public:
 	int getImprovementHealth(ImprovementTypes eImprovement) const;
 	void changeImprovementHealth(ImprovementTypes eImprovement, int iChange);
 
+	int getCultureGreatPeopleRateModifier() const;
+	void changeCultureGreatPeopleRateModifier(int iChange);
+
+	int getCultureHappiness() const;
+	void changeCultureHappiness(int iChange);
+
+	int getCultureTradeRouteModifier() const;
+	void changeCultureTradeRouteModifier(int iChange);
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
@@ -1236,6 +1249,10 @@ protected:
 
 	int m_iNextCoveredPlot;
 
+	int m_iCultureGreatPeopleRateModifier;
+	int m_iCultureHappiness;
+	int m_iCultureTradeRouteModifier;
+
 	bool m_bNeverLost;
 	bool m_bBombarded;
 	bool m_bDrafted;
@@ -1283,6 +1300,7 @@ protected:
 	int* m_aiCorporationCommerce;
 	int* m_aiCommerceRateModifier;
 	int* m_aiPowerCommerceRateModifier; // Leoreth
+	int* m_aiCultureCommerceRateModifier; // Leoreth
 	int* m_aiCommerceHappinessPer;
 	int* m_aiDomainFreeExperience;
 	int* m_aiDomainProductionModifier;

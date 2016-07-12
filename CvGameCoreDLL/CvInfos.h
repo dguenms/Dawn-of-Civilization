@@ -1655,6 +1655,7 @@ public:
 	int getMinLatitude() const;				// Exposed to Python
 	int getMaxLatitude() const;				// Exposed to Python
 	int getGreatPeopleRateModifier() const;				// Exposed to Python
+	int getCultureGreatPeopleRateModifier() const; // Leoreth
 	int getGreatGeneralRateModifier() const;				// Exposed to Python
 	int getDomesticGreatGeneralRateModifier() const;				// Exposed to Python
 	int getGlobalGreatPeopleRateModifier() const;				// Exposed to Python
@@ -1673,6 +1674,7 @@ public:
 	int getAreaFreeSpecialist() const;				// Exposed to Python
 	int getGlobalFreeSpecialist() const;				// Exposed to Python
 	int getHappiness() const;				// Exposed to Python
+	int getCultureHappiness() const; // Leoreth
 	int getAreaHappiness() const;				// Exposed to Python
 	int getGlobalHappiness() const;				// Exposed to Python
 	int getStateReligionHappiness() const;				// Exposed to Python
@@ -1684,6 +1686,7 @@ public:
 	int getCoastalTradeRoutes() const;				// Exposed to Python
 	int getGlobalTradeRoutes() const;				// Exposed to Python
 	int getTradeRouteModifier() const;				// Exposed to Python
+	int getCultureTradeRouteModifier() const; // Leoreth
 	int getForeignTradeRouteModifier() const;				// Exposed to Python
 	int getAssetValue() const;				// Exposed to Python
 	int getPowerValue() const;				// Exposed to Python
@@ -1781,6 +1784,8 @@ public:
 	int* getCommerceModifierArray() const;
 	int getPowerCommerceModifier(int i) const; // Leoreth
 	int* getPowerCommerceModifierArray() const; // Leoreth
+	int getCultureCommerceModifier(int i) const; // Leoreth
+	int* getCultureCommerceModifierArray() const; // Leoreth
 	int getGlobalCommerceModifier(int i) const;				// Exposed to Python
 	int* getGlobalCommerceModifierArray() const;
 	int getSpecialistExtraCommerce(int i) const;	// Exposed to Python
@@ -1875,6 +1880,7 @@ protected:
 	int m_iMinLatitude;
 	int m_iMaxLatitude;
 	int m_iGreatPeopleRateModifier;
+	int m_iCultureGreatPeopleRateModifier; // Leoreth
 	int m_iGreatGeneralRateModifier;
 	int m_iDomesticGreatGeneralRateModifier;
 	int m_iGlobalGreatPeopleRateModifier;
@@ -1893,6 +1899,7 @@ protected:
 	int m_iAreaFreeSpecialist;
 	int m_iGlobalFreeSpecialist;
 	int m_iHappiness;
+	int m_iCultureHappiness; // Leoreth
 	int m_iAreaHappiness;
 	int m_iGlobalHappiness;
 	int m_iStateReligionHappiness;
@@ -1904,6 +1911,7 @@ protected:
 	int m_iCoastalTradeRoutes;
 	int m_iGlobalTradeRoutes;
 	int m_iTradeRouteModifier;
+	int m_iCultureTradeRouteModifier; // Leoreth
 	int m_iForeignTradeRouteModifier;
 	int m_iAssetValue;
 	int m_iPowerValue;
@@ -1988,6 +1996,7 @@ protected:
 	int* m_piCommerceChangeDoubleTime;
 	int* m_piCommerceModifier;
 	int* m_piPowerCommerceModifier; // Leoreth
+	int* m_piCultureCommerceModifier; // Leoreth
 	int* m_piGlobalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
 	int* m_piStateReligionCommerce;
