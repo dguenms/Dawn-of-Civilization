@@ -4679,6 +4679,8 @@ bool CvUnit::bombard()
 		iBombardModifier -= pBombardCity->getBuildingBombardDefense();
 	}
 
+	iBombardModifier -= pBombardCity->getBuildingUnignorableBombardDefense();
+
 	pBombardCity->changeDefenseModifier(-(bombardRate() * std::max(0, 100 + iBombardModifier)) / 100);
 
 	setMadeAttack(true);
