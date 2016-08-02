@@ -127,6 +127,7 @@
 	<ElementType name="iMinLatitude" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxLatitude" content="textOnly" dt:type="int"/>
 	<ElementType name="iGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGreatGeneralRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iDomesticGreatGeneralRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
@@ -171,6 +172,7 @@
 	<ElementType name="iFreeTechs" content="textOnly" dt:type="int"/>
 	<ElementType name="iDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iBombardDefense" content="textOnly" dt:type="int"/>
+	<ElementType name="iUnignorableBombardDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iAllCityDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iEspionageDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iAsset" content="textOnly" dt:type="int"/>
@@ -555,6 +557,7 @@
 		<element type="iFreeTechs" minOccurs="0"/>
 		<element type="iDefense" minOccurs="0"/>
 		<element type="iBombardDefense" minOccurs="0"/>
+		<element type="iUnignorableBombardDefense" minOccurs="0"/>
 		<element type="iAllCityDefense" minOccurs="0"/>
 		<element type="iEspionageDefense" minOccurs="0"/>
 		<element type="iAsset" minOccurs="0"/>

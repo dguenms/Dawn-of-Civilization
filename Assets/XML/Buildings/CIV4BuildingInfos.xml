@@ -330,7 +330,7 @@
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iBombardDefense>50</iBombardDefense>
+			<iUnignorableBombardDefense>50</iUnignorableBombardDefense>
 			<iAsset>2</iAsset>
 			<iPower>2</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>

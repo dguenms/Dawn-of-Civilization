@@ -3643,10 +3643,14 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					if ((GC.getGameINLINE().getBestLandUnit() == NO_UNIT) || !(GC.getUnitInfo(GC.getGameINLINE().getBestLandUnit()).isIgnoreBuildingDefense()))
 					{
 						iValue += (std::max(0, std::min(((kBuilding.getDefenseModifier() + getBuildingDefense()) - getNaturalDefense() - 10), kBuilding.getDefenseModifier())) / 4);
+
+						iValue += (std::max(getBuildingDefense() + kBuilding.getDefenseModifier(), getNaturalDefense()) / 4) * kBuilding.getBombardDefenseModifier() / 100;
 					}
+
+					iValue += (getNaturalDefense() / 4) * kBuilding.getUnignorableBombardDefenseModifier() / 100;
 				}
 
-				iValue += kBuilding.getBombardDefenseModifier() / 8;
+				//iValue += kBuilding.getBombardDefenseModifier() / 8;
 
 				iValue += -kBuilding.getAirModifier() / 4;
 				iValue += -kBuilding.getNukeModifier() / 4;
@@ -6449,7 +6453,7 @@ void CvCityAI::AI_doHurry(bool bForce)
 
 			if (eProductionBuilding != NO_BUILDING)
 			{
-				if (GC.getBuildingInfo(eProductionBuilding).getBombardDefenseModifier() > 0)
+				if (GC.getBuildingInfo(eProductionBuilding).getBombardDefenseModifier() > 0 || GC.getBuildingInfo(eProductionBuilding).getUnignorableBombardDefenseModifier() > 0)
 				{
 					if (bDanger)
 					{

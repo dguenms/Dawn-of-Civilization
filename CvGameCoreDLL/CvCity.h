@@ -1077,6 +1077,10 @@ public:
 	int getCultureTradeRouteModifier() const;
 	void changeCultureTradeRouteModifier(int iChange);
 
+	int getBuildingUnignorableBombardDefense() const;
+	void changeBuildingUnignorableBombardDefense(int iChange);
+	int getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuilding) const;
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);
@@ -1252,6 +1256,8 @@ protected:
 	int m_iCultureGreatPeopleRateModifier;
 	int m_iCultureHappiness;
 	int m_iCultureTradeRouteModifier;
+
+	int m_iBuildingUnignorableBombardDefense;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;

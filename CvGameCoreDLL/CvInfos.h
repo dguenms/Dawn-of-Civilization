@@ -1719,6 +1719,7 @@ public:
 	int getFreeTechs() const;				// Exposed to Python
 	int getDefenseModifier() const;					// Exposed to Python
 	int getBombardDefenseModifier() const;					// Exposed to Python
+	int getUnignorableBombardDefenseModifier() const;
 	int getAllCityDefenseModifier() const;				// Exposed to Python
 	int getEspionageDefenseModifier() const;					// Exposed to Python
 	int getMissionType() const;											// Exposed to Python
@@ -1944,6 +1945,7 @@ protected:
 	int m_iFreeTechs;
 	int m_iDefenseModifier;
 	int m_iBombardDefenseModifier;
+	int m_iUnignorableBombardDefenseModifier;
 	int m_iAllCityDefenseModifier;
 	int m_iEspionageDefenseModifier;
 	int m_iMissionType;

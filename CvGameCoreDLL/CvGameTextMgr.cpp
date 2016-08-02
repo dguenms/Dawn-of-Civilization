@@ -10516,6 +10516,12 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_BOMBARD_DEFENSE_MOD", -kBuilding.getBombardDefenseModifier()));
 	}
 
+	if (kBuilding.getUnignorableBombardDefenseModifier() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_UNIGNORABLE_BOMBARD_DEFENSE_MOD", -kBuilding.getUnignorableBombardDefenseModifier()));
+	}
+
 	if (kBuilding.getAllCityDefenseModifier() != 0)
 	{
 		szBuffer.append(NEWLINE);
