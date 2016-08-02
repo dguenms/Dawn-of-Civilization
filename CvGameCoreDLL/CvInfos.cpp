@@ -6901,6 +6901,7 @@ m_iGlobalPopulationChange(0),
 m_iFreeTechs(0),
 m_iDefenseModifier(0),
 m_iBombardDefenseModifier(0),
+m_iUnignorableBombardDefenseModifier(0),
 m_iAllCityDefenseModifier(0),
 m_iEspionageDefenseModifier(0),
 m_iMissionType(NO_MISSION),
@@ -7532,6 +7533,11 @@ int CvBuildingInfo::getDefenseModifier() const
 int CvBuildingInfo::getBombardDefenseModifier() const
 {
 	return m_iBombardDefenseModifier;
+}
+
+int CvBuildingInfo::getUnignorableBombardDefenseModifier() const
+{
+	return m_iUnignorableBombardDefenseModifier;
 }
 
 int CvBuildingInfo::getAllCityDefenseModifier() const
@@ -8296,6 +8302,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iFreeTechs);
 	stream->Read(&m_iDefenseModifier);
 	stream->Read(&m_iBombardDefenseModifier);
+	stream->Read(&m_iUnignorableBombardDefenseModifier);
 	stream->Read(&m_iAllCityDefenseModifier);
 	stream->Read(&m_iEspionageDefenseModifier);
 	stream->Read(&m_iMissionType);
@@ -8668,6 +8675,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iFreeTechs);
 	stream->Write(m_iDefenseModifier);
 	stream->Write(m_iBombardDefenseModifier);
+	stream->Write(m_iUnignorableBombardDefenseModifier);
 	stream->Write(m_iAllCityDefenseModifier);
 	stream->Write(m_iEspionageDefenseModifier);
 	stream->Write(m_iMissionType);
@@ -9035,6 +9043,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iFreeTechs, "iFreeTechs");
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefense");
 	pXML->GetChildXmlValByName(&m_iBombardDefenseModifier, "iBombardDefense");
+	pXML->GetChildXmlValByName(&m_iUnignorableBombardDefenseModifier, "iUnignorableBombardDefense");
 	pXML->GetChildXmlValByName(&m_iAllCityDefenseModifier, "iAllCityDefense");
 	pXML->GetChildXmlValByName(&m_iEspionageDefenseModifier, "iEspionageDefense");
 	pXML->GetChildXmlValByName(&m_iAssetValue, "iAsset");

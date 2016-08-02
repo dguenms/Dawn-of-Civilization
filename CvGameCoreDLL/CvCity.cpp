@@ -556,6 +556,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iCultureHappiness = 0;
 	m_iCultureTradeRouteModifier = 0;
 
+	m_iBuildingUnignorableBombardDefense = 0;
+
 	m_bNeverLost = true;
 	m_bBombarded = false;
 	m_bDrafted = false;
@@ -4519,6 +4521,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 	{
 		changeBuildingDefense(GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
 		changeBuildingBombardDefense(GC.getBuildingInfo(eBuilding).getBombardDefenseModifier() * iChange);
+		changeBuildingUnignorableBombardDefense(GC.getBuildingInfo(eBuilding).getUnignorableBombardDefenseModifier() * iChange);
 
 		// Leoreth: Himeji Castle effect: defense modifiers affect culture
 		if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
@@ -15326,6 +15329,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCultureGreatPeopleRateModifier);
 	pStream->Read(&m_iCultureHappiness);
 	pStream->Read(&m_iCultureTradeRouteModifier);
+	pStream->Read(&m_iBuildingUnignorableBombardDefense);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15600,6 +15604,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCultureGreatPeopleRateModifier);
 	pStream->Write(m_iCultureHappiness);
 	pStream->Write(m_iCultureTradeRouteModifier);
+
+	pStream->Write(m_iBuildingUnignorableBombardDefense);
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -18248,4 +18254,26 @@ void CvCity::changeCultureTradeRouteModifier(int iChange)
 	{
 		updateTradeRoutes();
 	}
+}
+
+int CvCity::getBuildingUnignorableBombardDefense() const
+{
+	return m_iBuildingUnignorableBombardDefense;
+}
+
+void CvCity::changeBuildingUnignorableBombardDefense(int iChange)
+{
+	m_iBuildingUnignorableBombardDefense += iChange;
+}
+
+int CvCity::getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuilding) const
+{
+	FAssertMsg(eBuilding >= 0, "eBuilding expected to be >= 0");
+	FAssertMsg(eBuilding < GC.getNumBuildingInfos(), "eBuilding expected to be < GC.getNumBuildingInfos()");
+
+	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+	int iBaseDefense = getBuildingUnignorableBombardDefense();
+
+	// cap total bombard defense at 100
+	return std::min(kBuilding.getUnignorableBombardDefenseModifier() + iBaseDefense, 100) - iBaseDefense;
 }
