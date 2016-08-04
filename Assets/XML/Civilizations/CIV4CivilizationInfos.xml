@@ -50,7 +50,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SUPERMARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_DEPARTMENT_STORE</BuildingClassType>
 					<BuildingType>BUILDING_AMERICAN_MALL</BuildingType>
 				</Building>
 			</Buildings>
@@ -140,7 +140,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_PHARMACY</BuildingClassType>
 					<BuildingType>BUILDING_ARABIAN_ALCHEMIST</BuildingType>
 				</Building>
 			</Buildings>
@@ -344,7 +344,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
 					<BuildingType>BUILDING_AZTEC_SACRIFICIAL_ALTAR</BuildingType>
 				</Building>
 			</Buildings>
@@ -528,7 +528,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_GROCER</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_BRAZILIAN_FAZENDA</BuildingType>
 				</Building>
 			</Buildings>
@@ -729,7 +729,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_CONSTABULARY</BuildingClassType>
 					<BuildingType>BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</BuildingType>
 				</Building>
 			</Buildings>
@@ -1236,7 +1236,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_GROCER</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_COLOMBIAN_HACIENDA</BuildingType>
 				</Building>
 			</Buildings>
@@ -1663,7 +1663,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_COFFEEHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_FRENCH_SALON</BuildingType>
 				</Building>
 			</Buildings>
@@ -2014,8 +2014,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
-					<BuildingType>BUILDING_HARAPPAN_BATH</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_BATH</BuildingClassType>
+					<BuildingType>BUILDING_HARAPPAN_RESERVOIR</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2106,7 +2106,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
 					<BuildingType>BUILDING_HOLY_ROMAN_RATHAUS</BuildingType>
 				</Building>
 			</Buildings>
@@ -2905,7 +2905,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_WEAVER</BuildingClassType>
 					<BuildingType>BUILDING_CONGOLESE_MBWADI</BuildingType>
 				</Building>
 			</Buildings>
@@ -3619,7 +3619,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_MUGHAL_MAUSOLEUM</BuildingType>
 				</Building>
 			</Buildings>
@@ -3946,7 +3946,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_BATH</BuildingClassType>
 					<BuildingType>BUILDING_OTTOMAN_HAMMAM</BuildingType>
 				</Building>
 			</Buildings>
@@ -4175,7 +4175,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
 					<BuildingType>BUILDING_POLISH_SEJMIK</BuildingType>
 				</Building>
 			</Buildings>
