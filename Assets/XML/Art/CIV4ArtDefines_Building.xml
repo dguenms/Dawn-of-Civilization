@@ -2148,7 +2148,7 @@
 			<Button>Art/Structures/Buildings/Mbwadi/Button_Mbwadi.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_HARAPPAN_BATH</Type>
+			<Type>ART_DEF_BUILDING_HARAPPAN_RESERVOIR</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.6</fScale>

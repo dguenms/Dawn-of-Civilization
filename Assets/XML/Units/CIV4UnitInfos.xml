@@ -12270,6 +12270,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<PrereqBuilding>BUILDING_NUCLEAR_PLANT</PrereqBuilding>
 			<PrereqTech>TECH_NUCLEAR_POWER</PrereqTech>
 			<BonusType>BONUS_URANIUM</BonusType>
 			<iCost>600</iCost>

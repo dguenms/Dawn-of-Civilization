@@ -312,12 +312,12 @@
 		<English>[COLOR_BUILDING_TEXT]Grocers[COLOR_REVERT] increase a city's wealth. It also increases the city's health with access to [COLOR_HIGHLIGHT_TEXT]Spices[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Sugar[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Wine[COLOR_REVERT], or [COLOR_HIGHLIGHT_TEXT]Bananas[COLOR_REVERT]. [COLOR_BUILDING_TEXT]Grocers[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HARAPPAN_BATH</Tag>
-		<English>Bath</English>
+		<Tag>TXT_KEY_BUILDING_HARAPPAN_RESERVOIR</Tag>
+		<English>Reservoir</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HARAPPAN_BATH_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] technology, is cheaper and provides culture.</English>
+		<Tag>TXT_KEY_BUILDING_HARAPPAN_BATH_RESERVOIR</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Reservoir[COLOR_REVERT], the Harappan replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], doesn't require the [COLOR_TECH_TEXT]Medicine[COLOR_REVERT] technology, is cheaper and provides culture.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HARBOR_STRATEGY</Tag>
