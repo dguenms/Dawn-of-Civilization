@@ -158,13 +158,13 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_INCAN_TAMBO</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.2</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Incan_Terrace/Incan_Terrace.nif</NIF>
+			<LSystem>LSYSTEM_4x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Tambo/incamon.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Granary.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,4</Button>
+			<Button>Art/Interface/Buttons/Buildings/Tambo.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_AQUEDUCT</Type>
@@ -599,11 +599,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MARKET</Type>
-			<LSystem>LSYSTEM_3x2</LSystem>
+			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.05</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Market/Market.nif</NIF>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Souk/arab_col.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Market.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,3</Button>
 		</BuildingArtInfo>
@@ -745,7 +745,7 @@
 			<fInterfaceScale>0.67</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Jail/Jail.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/PoliceStation.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,9</Button>
+			<Button>Art/Interface/Buttons/Buildings/Jail.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_INTELLIGENCE_AGENCY</Type>
@@ -1281,11 +1281,11 @@
 			<Type>ART_DEF_BUILDING_GREAT_SPHINX</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.75</fScale>
-			<fInterfaceScale>0.57</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Sphinx/Sphinx.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Sphinx/sphinx.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/Sphinx.dds</Button>
+			<Button>Art/Structures/Buildings/Sphinx/sphinx_button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GREAT_LIBRARY</Type>
@@ -2099,11 +2099,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MOORISH_NORIA</Type>
-			<LSystem>LSYSTEM_RIVER</LSystem>
-			<bAnimated>1</bAnimated>
-			<fScale>1.31</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Improvements/watermill/watermill.nif</NIF>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Noria/arab_noria.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Builds/buildwatermill.dds</Button>
 		</BuildingArtInfo>
@@ -2189,11 +2189,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_COLOMBIAN_HACIENDA</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
+			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.1</fScale>
-			<fInterfaceScale>0.65</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/BrazilFazenda/BrazilFazenda.nif</NIF>
+			<fScale>9.0</fScale>
+			<fInterfaceScale>0.9</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Hacienda/hacienda.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/BrazilFazenda/Fazenda.dds</Button>
 		</BuildingArtInfo>
@@ -2259,23 +2259,23 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BATH</Type>
-			<LSystem>LSYSTEM_2x2</LSystem>
+			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.6</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Bath_Building/Bath/bath_southamerika.nif</NIF>
+			<fScale>0.4</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Thermae/bad_giebel.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Bath_Building/Bath/Button_Bath.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Thermae.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CONSTABULARY</Type>
-			<LSystem>LSYSTEM_2x1</LSystem>
+			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>1.75</fScale>
-			<fInterfaceScale>0.34</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/ScotlandYard/ScotlandYard.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Constabulary/templar.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/ScotlandYard.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,11</Button>
+			<Button>Art/Interface/Buttons/Buildings/Constabulary.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_COFFEEHOUSE</Type>
@@ -2289,11 +2289,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_POST_OFFICE</Type>
-			<LSystem>LSYSTEM_2x1</LSystem>
+			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Post Office/gutenberg.nif</NIF>
+			<fScale>50.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Print_Shop/print_shop.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Post Office/Button_PostOffice.dds</Button>
 		</BuildingArtInfo>
@@ -2342,7 +2342,7 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.8</fScale>
-			<fInterfaceScale>0.35</fInterfaceScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/News Press/newspaper.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/News Press/Button_NewsPress.dds</Button>
@@ -2421,8 +2421,8 @@
 			<Type>ART_DEF_BUILDING_DEPARTMENT_STORE</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.4</fScale>
-			<fInterfaceScale>0.35</fInterfaceScale>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Department_Store/ts_f_2sha.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/Department_Store.dds</Button>
