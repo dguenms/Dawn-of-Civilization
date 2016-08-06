@@ -4750,7 +4750,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>7500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>64</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
@@ -4828,7 +4828,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<iCost>7100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_INDUSTRIAL</Era>
 			<iAsset>64</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
@@ -5093,7 +5093,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>8300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_INDUSTRIAL</Era>
+			<Era>ERA_MODERN</Era>
 			<iAsset>60</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
@@ -5215,7 +5215,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<iCost>8900</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_INDUSTRIAL</Era>
+			<Era>ERA_MODERN</Era>
 			<iAsset>60</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
