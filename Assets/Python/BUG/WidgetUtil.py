@@ -144,7 +144,20 @@ def getWidgetHelp(argsList):
 		if iData1 == 1027:
 			return CyTranslator().getText("TXT_KEY_WB_PLOT_DATA",())
 		elif iData1 == 1028:
-			return gc.getGameOptionInfo(iData2).getHelp()
+			if iData2 < gc.getNumGameOptionInfos():
+				return gc.getGameOptionInfo(iData2).getHelp()
+			elif iData2 < 2000:
+				return CyTranslator().getText("TXT_KEY_WB_OPTIONS_ENABLE_CIV",())
+			elif iData2 == 2000:
+				return CyTranslator().getText("TXT_KEY_WB_NO_STABILITY_TEXT",())
+			elif iData2 == 2001:
+				return CyTranslator().getText("TXT_KEY_WB_NO_HUMAN_STABILITY_TEXT",())
+			elif iData2 == 2002:
+				return CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV_TEXT",())
+			elif iData2 == 2003:
+				return CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING_TEXT",())
+			elif iData2 == 2004:
+				return CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED_TEXT",())
 		elif iData1 == 1029:
 			if iData2 == 0:
 				sText = CyTranslator().getText("TXT_KEY_WB_PYTHON", ())

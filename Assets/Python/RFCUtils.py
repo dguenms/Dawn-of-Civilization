@@ -85,11 +85,6 @@ class RFCUtils:
 	def getTempEventList( self ):
 		return sd.scriptDict['lTempEventList']
 		
-	def setPlayerEnabled(self, iCiv, bNewValue):
-		sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)] = bNewValue
-		
-	def getPlayerEnabled(self, iCiv):
-		return sd.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
 
 #######################################
 			    

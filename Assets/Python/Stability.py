@@ -172,6 +172,10 @@ def isImmune(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	
+	# immune if stability disabled
+	if sd.getNoStability():
+		return True
+	
 	# must not be dead
 	if not pPlayer.isAlive() or pPlayer.getNumCities() == 0:
 		return True
@@ -190,6 +194,10 @@ def isImmune(iPlayer):
 		
 	# immune right after resurrection
 	if iGameTurn - pPlayer.getLatestRebellionTurn() < utils.getTurns(10):
+		return True
+		
+	# human player immunity if option is enabled
+	if iPlayer == utils.getHumanID() and sd.getNoHumanStability():
 		return True
 		
 	return False

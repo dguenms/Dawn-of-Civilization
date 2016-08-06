@@ -20,6 +20,19 @@
 		<DefineName>AI_SLAVE_VALUE</DefineName>
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
+	<!-- Merijn: Additional options for game personalization -->
+	<Define>
+		<DefineName>NO_HUMAN_STABILITY</DefineName>
+		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
+	</Define>
+	<Define>
+		<DefineName>NO_STABILITY</DefineName>
+		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
+	</Define>
+	<Define>
+		<DefineName>UNLIMITED_SWITCHING</DefineName>
+		<iDefineIntVal>0</iDefineIntVal>			<!-- default: 0 -->
+	</Define>
 	<!--Leoreth: define how often these optional civs should appear
 			value=0	Civilization never appears
 			value>0	Civilization roughly appears in every i-th game, where i is the entered value

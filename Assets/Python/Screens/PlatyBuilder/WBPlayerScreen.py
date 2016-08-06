@@ -14,6 +14,7 @@ import Popup
 gc = CyGlobalContext()
 iChange = 1
 
+from StoredData import sd
 from RFCUtils import utils
 import Consts as con
 import Modifiers
@@ -478,9 +479,9 @@ class WBPlayerScreen:
 			
 		elif inputClass.getFunctionName() == "CivEnabledButton":
 			if utils.getPlayerEnabled(iPlayer):
-				utils.setPlayerEnabled(iPlayer, False)
+				sd.setPlayerEnabled(iPlayer, False)
 			else:
-				utils.setPlayerEnabled(iPlayer, True)
+				sd.setPlayerEnabled(iPlayer, True)
 			self.interfaceScreen(iPlayer)
 			
 		elif inputClass.getFunctionName() == "PlayerEditScriptData":

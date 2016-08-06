@@ -37,6 +37,7 @@ class StoredData:
 				    'lTempPlots': [],
 				    'iSpawnWar': 0, #if 1, add units and declare war. If >=2, do nothing
 				    'bAlreadySwitched': False,
+					'bUnlimitedSwitching': False,
 				    'lColonistsAlreadyGiven': [0 for i in range(con.iNumPlayers)], #active players
 				    'lAstronomyTurn': [1500 for i in range(con.iNumPlayers)], #active players
 				    'lNumCities': [0 for i in range(con.iNumTotalPlayers)], #total players to contain Byzantium too
@@ -136,6 +137,8 @@ class StoredData:
 				    'lWarTrend' : [[[] for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
 				    'lWarStartTurn' : [[0 for i in range(con.iNumPlayers)] for j in range(con.iNumPlayers)],
 				    'dSecedingCities' : {},
+					'bNoHumanStability': False,
+					'bNoAIStability': False,
 				}
 		self.save()
 		
@@ -149,6 +152,24 @@ class StoredData:
 		
 	def resetTimedConquests(self):
 		self.scriptDict['lTimedConquests'] = []
+		
+	def setPlayerEnabled(self, iCiv, bNewValue):
+		self.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)] = bNewValue
+		
+	def getPlayerEnabled(self, iCiv):
+		return self.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
+		
+	def getAlreadySwitched( self ):
+		return self.scriptDict['bAlreadySwitched']
+
+	def setAlreadySwitched( self, bNewValue ):
+		self.scriptDict['bAlreadySwitched'] = bNewValue
+		
+	def setUnlimitedSwitching(self, bNewValue):
+		self.scriptDict['bUnlimitedSwitching'] = bNewValue
+		
+	def getUnlimitedSwitching(self):
+		return self.scriptDict['bUnlimitedSwitching']
 		
 	# STABILITY
 		
@@ -330,6 +351,18 @@ class StoredData:
 	
 	def setSecedingCities(self, iPlayer, lCities):
 		self.scriptDict['dSecedingCities'][iPlayer] = [city.getID() for city in lCities]
+		
+	def setNoHumanStability(self, bNewValue):
+		self.scriptDict['bNoHumanStability'] = bNewValue
+		
+	def getNoHumanStability(self):
+		return self.scriptDict['bNoHumanStability']
+		
+	def setNoStability(self, bNewValue):
+		self.scriptDict['bNoAIStability'] = bNewValue
+		
+	def getNoStability(self):
+		return self.scriptDict['bNoAIStability']
 		
 	# AIWARS
 		

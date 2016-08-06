@@ -14,6 +14,9 @@ bRepeat = False
 iSelectedCiv = -1
 iSelectedLeader = -1
 
+from StoredData import sd
+import Consts as con
+
 class WBGameDataScreen:
 
 	def __init__(self, main):
@@ -223,24 +226,76 @@ class WBGameDataScreen:
 			if Info.getVisible() or bHiddenOption:
 				lList.append([Info.getDescription(), item])
 		lList.sort()
+
+		# Merijn: Add extra DoC options
+		lList2 = []
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_STABILITY", ()), 2000])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_HUMAN_STABILITY", ()), 2001])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV", ()), 2002])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING", ()), 2003])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED", ()), 2004])
+		lList2.sort()
+
 		iNumRows = (len(lList) + nColumns - 1) / nColumns
-		for i in xrange(iNumRows):
+		iNumRows2 = iNumRows + 3 + max(len(con.lSecondaryCivs), len(lList2)/2)
+		for i in xrange(iNumRows2):
 			screen.appendTableRow("WBGameOptions")
 
 		for i in xrange(len(lList)):
-			item = lList[i][1]
-			Info = gc.getGameOptionInfo(item)
 			iColumn = i / iNumRows
 			iRow = i % iNumRows
-			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
-			if CyGame().isOption(item):
-				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
-			sText = "<font=3>" + sColor + lList[i][0] + "</font></color>"
+			item = lList[i][1]
+
+			bEnabled = CyGame().isOption(item)
+			bDefault = False
+			if item in [6, 11]: # Aggressive AI, No Tech Brokering
+				bDefault = True
+
+			sText = self.colorText(lList[i][0], bEnabled)
 			screen.setTableText("WBGameOptions", iColumn * 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
-			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
-			if Info.getDefault():
-				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
-			sText = "<font=3>" + sColor + CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()) + "</font></color>"
+			sText = self.colorText(CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()), bDefault)
+			screen.setTableText("WBGameOptions", iColumn * 2 + 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+
+		# Merijn: extra rows for secondary civs and RFC options
+		screen.setTableText("WBGameOptions", 0, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_SECONDARY_CIVS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.setTableText("WBGameOptions", 2, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_RFC_OPTIONS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+
+		iRow = iNumRows + 3
+		for iCiv in con.lSecondaryCivs:
+			bEnabled = sd.getPlayerEnabled(iCiv)
+			bDefault = True
+			if iCiv in [con.iHarappa, con.iPolynesia]:
+				bDefault = False
+
+			sText = self.colorText(gc.getPlayer(iCiv).getCivilizationShortDescription(0), bEnabled)
+			screen.setTableText("WBGameOptions", 0, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, 1000+iCiv, CvUtil.FONT_LEFT_JUSTIFY)
+			sText = self.colorText(CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()), bDefault)
+			screen.setTableText("WBGameOptions", 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+			iRow += 1
+
+		for i in xrange(len(lList2)):
+			item = lList2[i][1]
+			iColumn = i / (iNumRows2 - iNumRows) + 1
+			iRow = i % (iNumRows2 - iNumRows) + iNumRows + 3
+
+			bEnabled = False
+			bDefault = False
+
+			if item == 2000:
+				bEnabled = sd.getNoStability()
+			elif item == 2001:
+				bEnabled = sd.getNoHumanStability()
+			elif item == 2002:
+				bEnabled = sd.isIgnoreAI()
+				bDefault = True
+			elif item == 2003:
+				bEnabled = sd.getUnlimitedSwitching()
+			elif item == 2004:
+				bEnabled = sd.getAlreadySwitched()
+
+			sText = self.colorText(lList2[i][0], bEnabled)
+			screen.setTableText("WBGameOptions", iColumn * 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
+			sText = self.colorText(CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()), bDefault)
 			screen.setTableText("WBGameOptions", iColumn * 2 + 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 
 	def handleInput(self, inputClass):
@@ -332,8 +387,25 @@ class WBGameDataScreen:
 
 		elif inputClass.getFunctionName() == "WBGameOptions":
 			iGameOption = inputClass.getData2()
-			CyGame().setOption(iGameOption, not CyGame().isOption(iGameOption))
-			self.checkOptions(iGameOption)
+			if iGameOption < gc.getNumGameOptionInfos():
+				CyGame().setOption(iGameOption, not CyGame().isOption(iGameOption))
+				self.checkOptions(iGameOption)
+			else:
+				# Enabling/disabling secondary civs
+				if iGameOption < 2000:
+					iItem = iGameOption - 1000
+					sd.setPlayerEnabled(iItem, not sd.getPlayerEnabled(iItem))
+				# Enabling/disabling RFC options
+				elif iGameOption == 2000:
+					sd.setNoStability(not sd.getNoStability())
+				elif iGameOption == 2001:
+					sd.setNoHumanStability(not sd.getNoHumanStability())
+				elif iGameOption == 2002:
+					sd.setIgnoreAI(not sd.isIgnoreAI())
+				elif iGameOption == 2003:
+					sd.setUnlimitedSwitching(not sd.getUnlimitedSwitching())
+				elif iGameOption == 2004:
+					sd.setAlreadySwitched(not sd.getAlreadySwitched())
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":
@@ -403,6 +475,14 @@ class WBGameDataScreen:
 			pPlayerBarb = gc.getPlayer(gc.getBARBARIAN_PLAYER ())
 			pPlayerBarb.killCities()
 			pPlayerBarb.killUnits()
+
+	def colorText(self, sString, bVal):
+		if bVal:
+			sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
+		else:
+			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
+		sText = "<font=3>" + sColor + sString + "</font></color>"
+		return sText
 
 	def update(self, fDelta):
 		return 1

@@ -744,4 +744,56 @@
 		<Tag>TXT_KEY_WB_WARVALUE</Tag>
 		<English>Warvalue</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_STABILITY</Tag>
+		<English>No Stability (all civs)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_STABILITY_TEXT</Tag>
+		<English>Ignores stability checks for all civilizations. Civilizations cannot collapse.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY</Tag>
+		<English>No Stability Human Player</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY_TEXT</Tag>
+		<English>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_IGNORE_AI_UHV</Tag>
+		<English>Ignore AI UHV Checks</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_IGNORE_AI_UHV_TEXT</Tag>
+		<English>Ignores checks for the AI unique historical victory goals. Increases speed if disabled. (The AI is not aware of the historical victory goals and will not attempt to achieve these)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING</Tag>
+		<English>Unlimited Civ Switching</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING_TEXT</Tag>
+		<English>Allows the human player to switch multiple times.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ALREADY_SWITCHED</Tag>
+		<English>Already Switched Civ</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_ALREADY_SWITCHED_TEXT</Tag>
+		<English>Function to reset the "already switched" variable. (This is not really an option, but a function to change the "already switched" variable in the StoredData)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SECONDARY_CIVS</Tag>
+		<English>Enabled secondary civilizations</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RFC_OPTIONS</Tag>
+		<English>RFC DoC options</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_OPTIONS_ENABLE_CIV</Tag>
+		<English>Enable/disable civ</English>
+	</TEXT>
 </Civ4GameText>
