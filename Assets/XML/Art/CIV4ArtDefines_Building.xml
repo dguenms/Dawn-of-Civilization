@@ -1178,14 +1178,14 @@
 			<Button>,Art/Interface/Buttons/Buildings/NationalEpic.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,8</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_OPERA_HOUSE</Type>
+			<Type>ART_DEF_BUILDING_NATIONAL_THEATRE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.5</fScale>
 			<fInterfaceScale>0.53</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/GlobeTheater/GlobeTheater.nif</NIF>
+			<NIF>Art/Structures/Buildings/National_Theatre/semperoper.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/GlobeTheatre.dds,Art/Interface/Buttons/Buildings_Atlas.dds,3,9</Button>
+			<Button>Art/Interface/Buttons/Buildings/NationalTheatre.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_NATIONAL_GALLERY</Type>
@@ -1231,11 +1231,11 @@
 			<Type>ART_DEF_BUILDING_TRADING_COMPANY</Type>
 			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.70</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Inn/inn.nif</NIF>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Trading_Company/navalmanufacture.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/WestPoint.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,11</Button>
+			<Button>Art/Interface/Buttons/Buildings/TradingCompany.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MT_RUSHMORE</Type>
@@ -1258,7 +1258,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/RedCross.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,9</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_INTERPOL</Type>
+			<Type>ART_DEF_BUILDING_SECRET_SERVICE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>1.65</fScale>
@@ -1548,7 +1548,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/SpaceElevator.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,6</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_MILITARY_ACADEMY</Type>
+			<Type>ART_DEF_BUILDING_ARMOURY</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.3</fScale>
@@ -1599,13 +1599,13 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_NATIONAL_PARK</Type>
-			<LSystem>LSYSTEM_4x2</LSystem>
+			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Central_Park/Central_Park.nif</NIF>
+			<fScale>0.25</fScale>
+			<fInterfaceScale>0.25</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/National_Park/park.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/HangingGardens.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,8</Button>
+			<Button>Art/Structures/Buildings/National_Park/Button_NationalPark.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GREAT_COTHON</Type>
@@ -2456,6 +2456,66 @@
 			<NIF>Art/Structures/Buildings/Star_Fort/Star_fort.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/Star_Fort.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MUSEUM</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.32</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Museum/Museum.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Museum/Button_Museum.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MANUFACTORY</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.1</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Mill/Medieval/brick.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Mill/Button_Mill.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_NATIONAL_MONUMENT</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.35</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Kings_Saga/KingsSaga.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Buildings/HeroicEpic.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,5</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_NATIONAL_COLLEGE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.83</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/OxfordUniversity/OxfordUniversity.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/NationalCollege.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MILITARY_ACADEMY</Type>
+			<LSystem>LSYSTEM_2x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.75</fScale>
+			<fInterfaceScale>0.34</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/WestPoint/WestPoint.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/MilitaryAcademy.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CENTRAL_BANK</Type>
+			<LSystem>LSYSTEM_2x4</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.3</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Central_Bank/Bank.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Central_Bank/CentralBank.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

@@ -12411,6 +12411,12 @@
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_MUSEUM</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -12523,6 +12529,12 @@
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_STOCK_EXCHANGE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -12577,6 +12589,12 @@
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_MANUFACTORY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -12693,7 +12711,7 @@
 			</GreatPeoples>
 			<Buildings>
 				<Building>
-					<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
+					<BuildingType>BUILDING_ARMOURY</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -12797,7 +12815,7 @@
 			</GreatPeoples>
 			<Buildings>
 				<Building>
-					<BuildingType>BUILDING_INTERPOL</BuildingType>
+					<BuildingType>BUILDING_SECRET_SERVICE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -12942,6 +12960,12 @@
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_MUSEUM</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -13056,6 +13080,12 @@
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_STOCK_EXCHANGE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
@@ -13111,6 +13141,12 @@
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>
+			<Buildings>
+				<Building>
+					<BuildingType>BUILDING_MANUFACTORY</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+			</Buildings>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
@@ -13229,7 +13265,7 @@
 			</GreatPeoples>
 			<Buildings>
 				<Building>
-					<BuildingType>BUILDING_MILITARY_ACADEMY</BuildingType>
+					<BuildingType>BUILDING_ARMOURY</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>
@@ -13290,7 +13326,7 @@
 			</GreatPeoples>
 			<Buildings>
 				<Building>
-					<BuildingType>BUILDING_INTERPOL</BuildingType>
+					<BuildingType>BUILDING_SECRET_SERVICE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 			</Buildings>

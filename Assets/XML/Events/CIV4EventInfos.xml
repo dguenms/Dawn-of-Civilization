@@ -20193,7 +20193,7 @@
 			<UnitName/>
 			<UnitCombatPromotions/>
 			<UnitClassPromotions/>
-			<BuildingClass>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_ARMOURY</BuildingClass>
 			<iBuildingChange>1</iBuildingChange>
 			<BuildingExtraYields/>
 			<BuildingExtraCommerces/>

@@ -7558,9 +7558,7 @@
 			<iUnitDistanceWeight>0</iUnitDistanceWeight>
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
-			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_OLYMPIC_PARK</BuildingClass>
-			</BuildingsRequired>
+			<BuildingsRequired/>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>

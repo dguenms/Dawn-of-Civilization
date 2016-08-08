@@ -262,6 +262,24 @@
 			<DefaultBuilding>BUILDING_ACADEMY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MANUFACTORY</Type>
+			<Description>TXT_KEY_BUILDING_MANUFACTORY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_MANUFACTORY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MUSEUM</Type>
+			<Description>TXT_KEY_BUILDING_MUSEUM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_MUSEUM</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_LIBRARY</Type>
 			<Description>TXT_KEY_BUILDING_LIBRARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -996,13 +1014,13 @@
 			<DefaultBuilding>BUILDING_TRIUMPHAL_ARCH</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_OPERA_HOUSE</Type>
-			<Description>TXT_KEY_BUILDING_OPERA_HOUSE</Description>
+			<Type>BUILDINGCLASS_NATIONAL_THEATRE</Type>
+			<Description>TXT_KEY_BUILDING_NATIONAL_THEATRE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_OPERA_HOUSE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_NATIONAL_THEATRE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_NATIONAL_PARK</Type>
@@ -1023,6 +1041,42 @@
 			<DefaultBuilding>BUILDING_NATIONAL_GALLERY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_NATIONAL_COLLEGE</Type>
+			<Description>TXT_KEY_BUILDING_NATIONAL_COLLEGE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_NATIONAL_COLLEGE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CENTRAL_BANK</Type>
+			<Description>TXT_KEY_BUILDING_CENTRAL_BANK</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CENTRAL_BANK</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_NATIONAL_MONUMENT</Type>
+			<Description>TXT_KEY_BUILDING_NATIONAL_MONUMENT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_NATIONAL_MONUMENT</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MILITARY_ACADEMY</Type>
+			<Description>TXT_KEY_BUILDING_MILITARY_ACADEMY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_MILITARY_ACADEMY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CERN_RESEARCH_COMPLEX</Type>
 			<Description>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1036,7 +1090,7 @@
 			<Description>TXT_KEY_BUILDING_STOCK_EXCHANGE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_STOCK_EXCHANGE</DefaultBuilding>
 		</BuildingClassInfo>
@@ -1077,13 +1131,13 @@
 			<DefaultBuilding>BUILDING_RED_CROSS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_INTERPOL</Type>
-			<Description>TXT_KEY_BUILDING_INTERPOL</Description>
+			<Type>BUILDINGCLASS_SECRET_SERVICE</Type>
+			<Description>TXT_KEY_BUILDING_SECRET_SERVICE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_INTERPOL</DefaultBuilding>
+			<DefaultBuilding>BUILDING_SECRET_SERVICE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PYRAMIDS</Type>
@@ -1302,13 +1356,13 @@
 			<DefaultBuilding>BUILDING_SPACE_ELEVATOR</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_MILITARY_ACADEMY</Type>
-			<Description>TXT_KEY_BUILDING_MILITARY_ACADEMY</Description>
+			<Type>BUILDINGCLASS_ARMOURY</Type>
+			<Description>TXT_KEY_BUILDING_ARMOURY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_MILITARY_ACADEMY</DefaultBuilding>
+			<DefaultBuilding>BUILDING_ARMOURY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TEMPLE_OF_ARTEMIS</Type>
@@ -1400,15 +1454,6 @@
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bMonument>1</bMonument>
 			<DefaultBuilding>BUILDING_LEANING_TOWER</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_OLYMPIC_PARK</Type>
-			<Description>TXT_KEY_BUILDING_OLYMPIC_PARK</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_OLYMPIC_PARK</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PLAGUE</Type>

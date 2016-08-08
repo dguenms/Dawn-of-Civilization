@@ -2,32 +2,12 @@
 <!-- National Wonders -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_OPERA_HOUSE</Tag>
-		<English>Opera House</English>
-		<French>
-			<Text>Op&#233;ra</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Opernhaus</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Teatro dell'opera</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>el Teatro de la &#211;pera</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_THEATRE</Tag>
+		<English>National Theatre</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_OPERA_HOUSE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Opera House[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_THEATRE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] increases the cultural output of the city as well as increasing the city's happiness. It increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_GALLERY</Tag>
@@ -91,32 +71,12 @@
 		<English>The [COLOR_BUILDING_TEXT]Olympic Park[COLOR_REVERT] begins a [COLOR_HIGHLIGHT_TEXT]Golden Age[COLOR_REVERT] for your civilization. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_INTERPOL</Tag>
-		<English>Interpol</English>
-		<French>
-			<Text>Interpol</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Interpol</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Interpol</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>la Interpol</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_BUILDING_SECRET_SERVICE</Tag>
+		<English>Secret Service</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_INTERPOL_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Interpol[COLOR_REVERT] doubles its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</English>
+		<Tag>TXT_KEY_BUILDING_SECRET_SERVICE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Secret Service[COLOR_REVERT] doubles its city's espionage output and gives experience points to [COLOR_UNIT_TEXT]Espionage Units[COLOR_REVERT] built in it's city.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RED_CROSS_STRATEGY</Tag>
@@ -249,5 +209,33 @@
 		<German>Die [COLOR_BUILDING_TEXT]Eisenverarbeitung[COLOR_REVERT] steigert in St&#228;dten mit Zugriff auf Kohle und/oder Eisen die Produktion, wirkt sich aber negativ auf die Gesundheit der Bev&#246;lkerung aus. Dar&#252;ber hinaus erh&#246;ht sie die Chancen der Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
 		<Italian>La [COLOR_BUILDING_TEXT]Ferrieria[COLOR_REVERT] aumenta la produzione della citt&#224; se ha accesso a carbone e/o ferro, ma genera infelicit&#224;. Inoltre, aumenta la probabilit&#224; di generare un [COLOR_UNIT_TEXT]Grande Ingegnere[COLOR_REVERT].</Italian>
 		<Spanish>La [COLOR_BUILDING_TEXT]Metalurgia[COLOR_REVERT] aumenta la producci&#243;n de la ciudad si &#233;sta tiene acceso a carb&#243;n o hierro, pero tambi&#233;n aumenta su insalubridad. Incrementa tambi&#233;n las posibilidades de que en su ciudad se genere un [COLOR_UNIT_TEXT]Gran ingeniero[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MANUFACTORY</Tag>
+		<English>Manufactory</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MUSEUM</Tag>
+		<English>Museum</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ARMOURY</Tag>
+		<English>Armoury</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_COLLEGE</Tag>
+		<English>National College</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_MONUMENT</Tag>
+		<English>National Monument</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MILITARY_ACADEMY</Tag>
+		<English>Military Academy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CENTRAL_BANK</Tag>
+		<English>Central Bank</English>
 	</TEXT>
 </Civ4GameText>

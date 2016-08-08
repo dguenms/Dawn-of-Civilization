@@ -339,7 +339,7 @@
 			<Path>Art/Movies/Wonders/SDI.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_OPERA_HOUSE</Type>
+			<Type>ART_DEF_MOVIE_NATIONAL_THEATRE</Type>
 			<Path>Art/Movies/Wonders/GlobeTheatre.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -367,7 +367,7 @@
 			<Path>Art/Movies/Wonders/RedCross.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_INTERPOL</Type>
+			<Type>ART_DEF_MOVIE_SECRET_SERVICE</Type>
 			<Path>Art/Movies/Wonders/ScotlandYard.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
@@ -379,7 +379,7 @@
 			<Path>Art/Movies/Wonders/Academy.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
-			<Type>ART_DEF_MOVIE_MILITARY_ACADEMY</Type>
+			<Type>ART_DEF_MOVIE_ARMOURY</Type>
 			<Path>Art/Movies/Wonders/MiliaryAcademy.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
