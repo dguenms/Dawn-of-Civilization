@@ -501,7 +501,7 @@
 		<English>The [COLOR_BUILDING_TEXT]Charreada Arena[COLOR_REVERT], the Mexican replacement for a [COLOR_BUILDING_TEXT]Amphitheatre[COLOR_REVERT], grants experience points to mounted units built in its city and increases happiness from access to [COLOR_HIGHLIGHT_TEXT]Horses[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_MILITARY_ACADEMY_STRATEGY</Tag>
+		<Tag>TXT_KEY_BUILDING_ARMOURY_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Military Academies[COLOR_REVERT] increase a city's military unit production and provide culture.</English>
 	</TEXT>
 	<TEXT>

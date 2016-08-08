@@ -1612,7 +1612,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS</Tag>
-		<English>[ICON_BULLET]%D1_Change%F2_HappOrUn per[SPACE]</English>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per[SPACE]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HEALTH</Tag>
@@ -1622,5 +1622,15 @@
 		<Tag>TXT_KEY_BUILDING_UNIGNORABLE_BOMBARD_DEFENSE_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% Damage to Defenses from Bombardment</English>
 		<German>[ICON_BULLET]%D1_Mod%% Bombardierungsschaden gegen Defensivanlagen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CULTURE_BIRTH_RATE_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_GREATPEOPLE] Birth Rate per Culture Level</English>
+		<German>[ICON_BULLET]%D1_Mod%% Geburtenrate [ICON_GREATPEOPLE] pro Kulturstufe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CULTURE_LEVEL_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Culture Level</English>
+		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Kulturstufe</German>
 	</TEXT>
 </Civ4GameText>
