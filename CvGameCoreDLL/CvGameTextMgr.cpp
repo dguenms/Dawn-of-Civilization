@@ -10614,6 +10614,13 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	}
 	setCommerceChangeHelp(szBuffer, L"", L"", szTempBuffer, kBuilding.getStateReligionCommerceArray());
 
+	// Leoreth
+	if (kBuilding.getCultureHappiness() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_CULTURE_LEVEL_HAPPINESS", abs(kBuilding.getCultureHappiness()), kBuilding.getCultureHappiness() ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
+	}
+
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; ++iI)
 	{
 		if (kBuilding.getCommerceHappiness(iI) != 0)
