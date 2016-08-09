@@ -1475,7 +1475,7 @@ class RiseAndFall:
 		iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
 		
 		if iCiv in lSecondaryCivs:
-			if iHuman != iCiv and not sd.getPlayerEnabled(iCiv):
+			if iHuman != iCiv and not sd.isPlayerEnabled(iCiv):
 				return
 		
 		if iCiv == iTurkey:
@@ -1675,7 +1675,7 @@ class RiseAndFall:
 		if iCiv in [iByzantium, iArgentina, iBrazil]:
 			self.setStateReligion(iCiv)
 			
-		if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (sd.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1 or sd.getUnlimitedSwitching() == True) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
+		if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (sd.isAlreadySwitched() == False or utils.getReborn(iCiv) == 1 or sd.isUnlimitedSwitching() == True) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
 			self.newCivPopup(iCiv)
 
 	def moveOutInvaders(self, tTL, tBR):
@@ -3070,7 +3070,7 @@ class RiseAndFall:
 			utils.makeUnit(iLongbowman, iCiv, tPlot, 1)
 			utils.makeUnitAI(iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 4)
-			if sd.getPlayerEnabled(iMoors):
+			if sd.isPlayerEnabled(iMoors):
 				if utils.getHumanID() != iMoors:
 					utils.makeUnit(iKnight, iCiv, tPlot, 2)
 			else:
@@ -3515,7 +3515,7 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 				
-			if iPlayer == iHarappa and (sd.getPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
+			if iPlayer == iHarappa and (sd.isPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
 				utils.makeUnit(iHarappanCityBuilder, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 		

@@ -267,7 +267,7 @@ class WBGameDataScreen:
 
 		iRow = iNumRows + 3
 		for iCiv in con.lSecondaryCivs:
-			bEnabled = sd.getPlayerEnabled(iCiv)
+			bEnabled = sd.isPlayerEnabled(iCiv)
 			bDefault = True
 			if iCiv in [con.iHarappa, con.iPolynesia]:
 				bDefault = False
@@ -293,7 +293,7 @@ class WBGameDataScreen:
 				bEnabled = sd.isIgnoreAI()
 				bDefault = True
 			elif item == 2003:
-				bEnabled = sd.getUnlimitedSwitching()
+				bEnabled = sd.isUnlimitedSwitching()
 
 			sText = self.colorText(lList2[i][0], bEnabled)
 			screen.setTableText("WBGameOptions", 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
@@ -307,7 +307,7 @@ class WBGameDataScreen:
 			bEnabled = False
 			
 			if item == 3001:
-				bEnabled = sd.getAlreadySwitched()
+				bEnabled = sd.isAlreadySwitched()
 
 			sText = self.colorText(lList3[i][0], bEnabled)
 			screen.setTableText("WBGameOptions", 4, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
@@ -408,7 +408,7 @@ class WBGameDataScreen:
 				# Enabling/disabling secondary civs
 				if iGameOption < 2000:
 					iItem = iGameOption - 1000
-					sd.setPlayerEnabled(iItem, not sd.getPlayerEnabled(iItem))
+					sd.setPlayerEnabled(iItem, not sd.isPlayerEnabled(iItem))
 				# Enabling/disabling RFC options
 				elif iGameOption == 2000:
 					sd.setNoStability(not sd.getNoStability())
@@ -417,10 +417,10 @@ class WBGameDataScreen:
 				elif iGameOption == 2002:
 					sd.setIgnoreAI(not sd.isIgnoreAI())
 				elif iGameOption == 2003:
-					sd.setUnlimitedSwitching(not sd.getUnlimitedSwitching())
+					sd.setUnlimitedSwitching(not sd.isUnlimitedSwitching())
 				# Stored Variables
 				elif iGameOption == 3001:
-					sd.setAlreadySwitched(not sd.getAlreadySwitched())
+					sd.setAlreadySwitched(not sd.isAlreadySwitched())
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":

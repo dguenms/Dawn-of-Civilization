@@ -156,10 +156,10 @@ class StoredData:
 	def setPlayerEnabled(self, iCiv, bNewValue):
 		self.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)] = bNewValue
 		
-	def getPlayerEnabled(self, iCiv):
+	def isPlayerEnabled(self, iCiv):
 		return self.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
 		
-	def getAlreadySwitched( self ):
+	def isAlreadySwitched( self ):
 		return self.scriptDict['bAlreadySwitched']
 
 	def setAlreadySwitched( self, bNewValue ):
@@ -168,7 +168,7 @@ class StoredData:
 	def setUnlimitedSwitching(self, bNewValue):
 		self.scriptDict['bUnlimitedSwitching'] = bNewValue
 		
-	def getUnlimitedSwitching(self):
+	def isUnlimitedSwitching(self):
 		return self.scriptDict['bUnlimitedSwitching']
 		
 	# STABILITY
