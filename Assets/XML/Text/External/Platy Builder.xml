@@ -750,15 +750,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_STABILITY_TEXT</Tag>
-		<English>Ignores stability checks for all civilizations. Civilizations cannot collapse.</English>
+		<English>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY</Tag>
-		<English>No Stability Human Player</English>
+		<English>No collapsing Human Player</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY_TEXT</Tag>
-		<English>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse.</English>
+		<English>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IGNORE_AI_UHV</Tag>
@@ -766,7 +766,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IGNORE_AI_UHV_TEXT</Tag>
-		<English>Ignores checks for the AI unique historical victory goals. Increases speed if disabled. (The AI is not aware of the historical victory goals and will not attempt to achieve these)</English>
+		<English>Ignores checks for the AI unique historical victory goals. It increases speed if enabled.[NEWLINE](The AI is not aware of the historical victory goals and will not attempt to achieve these)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING</Tag>
@@ -782,7 +782,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_ALREADY_SWITCHED_TEXT</Tag>
-		<English>Function to reset the "already switched" variable. (This is not really an option, but a function to change the "already switched" variable in the StoredData)</English>
+		<English>Variable which stores if the player has already switched. (Red means the player CAN still switch)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SECONDARY_CIVS</Tag>
@@ -791,6 +791,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_RFC_OPTIONS</Tag>
 		<English>RFC DoC options</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RFC_VARIABLES</Tag>
+		<English>Stored variables</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_OPTIONS_ENABLE_CIV</Tag>

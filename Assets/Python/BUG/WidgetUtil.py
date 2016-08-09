@@ -156,7 +156,7 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV_TEXT",())
 			elif iData2 == 2003:
 				return CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING_TEXT",())
-			elif iData2 == 2004:
+			elif iData2 == 3001:
 				return CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED_TEXT",())
 		elif iData1 == 1029:
 			if iData2 == 0:

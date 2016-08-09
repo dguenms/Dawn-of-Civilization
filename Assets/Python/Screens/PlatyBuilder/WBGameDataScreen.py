@@ -233,11 +233,15 @@ class WBGameDataScreen:
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_HUMAN_STABILITY", ()), 2001])
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV", ()), 2002])
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING", ()), 2003])
-		lList2.append([CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED", ()), 2004])
 		lList2.sort()
+		
+		# Stored variables
+		lList3 = []
+		lList3.append([CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED", ()), 3001])
+		lList3.sort()
 
 		iNumRows = (len(lList) + nColumns - 1) / nColumns
-		iNumRows2 = iNumRows + 3 + max(len(con.lSecondaryCivs), len(lList2)/2)
+		iNumRows2 = iNumRows + 3 + max(len(con.lSecondaryCivs), len(lList2), len(lList3))
 		for i in xrange(iNumRows2):
 			screen.appendTableRow("WBGameOptions")
 
@@ -259,6 +263,7 @@ class WBGameDataScreen:
 		# Merijn: extra rows for secondary civs and RFC options
 		screen.setTableText("WBGameOptions", 0, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_SECONDARY_CIVS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 		screen.setTableText("WBGameOptions", 2, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_RFC_OPTIONS", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+		screen.setTableText("WBGameOptions", 4, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_RFC_VARIABLES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 		iRow = iNumRows + 3
 		for iCiv in con.lSecondaryCivs:
@@ -275,8 +280,7 @@ class WBGameDataScreen:
 
 		for i in xrange(len(lList2)):
 			item = lList2[i][1]
-			iColumn = i / (iNumRows2 - iNumRows) + 1
-			iRow = i % (iNumRows2 - iNumRows) + iNumRows + 3
+			iRow = iNumRows + 3 + i
 
 			bEnabled = False
 			bDefault = False
@@ -290,13 +294,23 @@ class WBGameDataScreen:
 				bDefault = True
 			elif item == 2003:
 				bEnabled = sd.getUnlimitedSwitching()
-			elif item == 2004:
-				bEnabled = sd.getAlreadySwitched()
 
 			sText = self.colorText(lList2[i][0], bEnabled)
-			screen.setTableText("WBGameOptions", iColumn * 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
+			screen.setTableText("WBGameOptions", 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
 			sText = self.colorText(CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()), bDefault)
-			screen.setTableText("WBGameOptions", iColumn * 2 + 1, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+			screen.setTableText("WBGameOptions", 3, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+						
+		for i in xrange(len(lList3)):
+			item = lList3[i][1]
+			iRow = iNumRows + 3 + i
+
+			bEnabled = False
+			
+			if item == 3001:
+				bEnabled = sd.getAlreadySwitched()
+
+			sText = self.colorText(lList3[i][0], bEnabled)
+			screen.setTableText("WBGameOptions", 4, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
 
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBGameDataScreen", CvScreenEnums.WB_GAMEDATA)
@@ -404,7 +418,8 @@ class WBGameDataScreen:
 					sd.setIgnoreAI(not sd.isIgnoreAI())
 				elif iGameOption == 2003:
 					sd.setUnlimitedSwitching(not sd.getUnlimitedSwitching())
-				elif iGameOption == 2004:
+				# Stored Variables
+				elif iGameOption == 3001:
 					sd.setAlreadySwitched(not sd.getAlreadySwitched())
 			self.placeGameOptions()
 
