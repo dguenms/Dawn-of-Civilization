@@ -85,12 +85,6 @@ class RiseAndFall:
 	def setSpawnWar( self, iNewValue ):
 		sd.scriptDict['iSpawnWar'] = iNewValue
 
-	def getAlreadySwitched( self ):
-		return sd.scriptDict['bAlreadySwitched']
-
-	def setAlreadySwitched( self, bNewValue ):
-		sd.scriptDict['bAlreadySwitched'] = bNewValue
-
 	def getColonistsAlreadyGiven( self, iCiv ):
 		return sd.scriptDict['lColonistsAlreadyGiven'][iCiv]
 
@@ -204,13 +198,6 @@ class RiseAndFall:
 		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 		return sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)]
 		
-	def setPlayerEnabled(self, iCiv, bNewValue):
-		sd.scriptDict['lPlayerEnabled'][lSecondaryCivs.index(iCiv)] = bNewValue
-		if bNewValue == False and utils.getHumanID() != iCiv: gc.getPlayer(iCiv).setPlayable(False)
-		
-	def getPlayerEnabled(self, iCiv):
-		return sd.scriptDict['lPlayerEnabled'][lSecondaryCivs.index(iCiv)]
-		
 ###############
 ### Popups ###
 #############
@@ -250,7 +237,7 @@ class RiseAndFall:
 		for iMaster in range(iNumPlayers):
 			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iMaster)):
 				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)
-		self.setAlreadySwitched(True)
+		sd.setAlreadySwitched(True)
 		gc.getPlayer(iCiv).setPlayable(True)
 		
 		sd.resetHumanStability()
@@ -473,6 +460,25 @@ class RiseAndFall:
 		self.invalidateUHVs()
 		
 		gc.getGame().setVoteSourceReligion(1, iCatholicism, False)
+		
+		self.updateExtraOptions()
+		
+	def updateExtraOptions(self):
+		# Human player can't collapse
+		bNoHumanStability = (gc.getDefineINT("NO_HUMAN_STABILITY") != 0)
+		sd.setNoHumanStability(bNoHumanStability)
+		# No stability checks at all
+		bNoAIStability = (gc.getDefineINT("NO_STABILITY") != 0)
+		sd.setNoStability(bNoAIStability)
+		# Human player can switch infinite times
+		bUnlimitedSwitching = (gc.getDefineINT("UNLIMITED_SWITCHING") != 0)
+		sd.setUnlimitedSwitching(bUnlimitedSwitching)
+		# No congresses
+		bNoCongresses = (gc.getDefineINT("NO_CONGRESSES") != 0)
+		sd.setNoCongressOption(bNoCongresses)
+		# No plagues
+		bNoPlagues = (gc.getDefineINT("NO_PLAGUES") != 0)
+		sd.setNoPlagueOption(bNoPlagues)
 		
 	def updateStartingPlots(self):
 		for iPlayer in range(iNumPlayers):
@@ -1475,7 +1481,7 @@ class RiseAndFall:
 		iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
 		
 		if iCiv in lSecondaryCivs:
-			if iHuman != iCiv and not self.getPlayerEnabled(iCiv):
+			if iHuman != iCiv and not sd.isPlayerEnabled(iCiv):
 				return
 		
 		if iCiv == iTurkey:
@@ -1675,7 +1681,7 @@ class RiseAndFall:
 		if iCiv in [iByzantium, iArgentina, iBrazil]:
 			self.setStateReligion(iCiv)
 			
-		if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (self.getAlreadySwitched() == False or utils.getReborn(iCiv) == 1) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
+		if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (sd.isAlreadySwitched() == False or utils.getReborn(iCiv) == 1 or sd.isUnlimitedSwitching() == True) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
 			self.newCivPopup(iCiv)
 
 	def moveOutInvaders(self, tTL, tBR):
@@ -3070,7 +3076,7 @@ class RiseAndFall:
 			utils.makeUnit(iLongbowman, iCiv, tPlot, 1)
 			utils.makeUnitAI(iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 4)
-			if self.getPlayerEnabled(iMoors):
+			if sd.isPlayerEnabled(iMoors):
 				if utils.getHumanID() != iMoors:
 					utils.makeUnit(iKnight, iCiv, tPlot, 2)
 			else:
@@ -3515,7 +3521,7 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 				
-			if iPlayer == iHarappa and (self.getPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
+			if iPlayer == iHarappa and (sd.isPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
 				utils.makeUnit(iHarappanCityBuilder, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 		
@@ -3616,71 +3622,71 @@ class RiseAndFall:
 		
 		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLYNESIA")	
 		if iRand <= 0:
-			self.setPlayerEnabled(iPolynesia, False)
+			sd.setPlayerEnabled(iPolynesia, False)
 		elif gc.getGame().getSorenRandNum(iRand, 'Polynesia enabled?') != 0:
-			self.setPlayerEnabled(iPolynesia, False)
+			sd.setPlayerEnabled(iPolynesia, False)
 			
 		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_HARAPPA")
 		if iRand <= 0:
-			self.setPlayerEnabled(iHarappa, False)
+			sd.setPlayerEnabled(iHarappa, False)
 		elif gc.getGame().getSorenRandNum(iRand, 'Harappa enabled?') != 0:
-			self.setPlayerEnabled(iHarappa, False)
+			sd.setPlayerEnabled(iHarappa, False)
 		
 		if iHuman != iIndia and iHuman != iIndonesia:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TAMILS")
 			
 			if iRand <= 0:
-				self.setPlayerEnabled(iTamils, False)
+				sd.setPlayerEnabled(iTamils, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Tamils enabled?') != 0:
-				self.setPlayerEnabled(iTamils, False)
+				sd.setPlayerEnabled(iTamils, False)
 				
 		if iHuman != iChina and iHuman != iIndia and iHuman != iMughals:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TIBET")
 			
 			if iRand <= 0:
-				self.setPlayerEnabled(iTibet, False)
+				sd.setPlayerEnabled(iTibet, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Tibet enabled?') != 0:
-				self.setPlayerEnabled(iTibet, False)
+				sd.setPlayerEnabled(iTibet, False)
 				
 		if iHuman != iSpain and iHuman != iMali:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_MOORS")
 			
 			if iRand <= 0:
-				self.setPlayerEnabled(iMoors, False)
+				sd.setPlayerEnabled(iMoors, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Moors enabled?') != 0:
-				self.setPlayerEnabled(iMoors, False)
+				sd.setPlayerEnabled(iMoors, False)
 				
 		if iHuman != iHolyRome and iHuman != iGermany and iHuman != iRussia:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLAND")
 			
 			if iRand <= 0:
-				self.setPlayerEnabled(iPoland, False)
+				sd.setPlayerEnabled(iPoland, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Poland enabled?') != 0:
-				self.setPlayerEnabled(iPoland, False)
+				sd.setPlayerEnabled(iPoland, False)
 				
 		if iHuman != iMali and iHuman != iPortugal:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_CONGO")
 			
 			if iRand <= 0:
-				self.setPlayerEnabled(iCongo, False)
+				sd.setPlayerEnabled(iCongo, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
-				self.setPlayerEnabled(iCongo, False)
+				sd.setPlayerEnabled(iCongo, False)
 				
 		if iHuman != iSpain:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_ARGENTINA")
 			
 			if iRand <= 0:
-				self.setPlayerEnabled(iArgentina, False)
+				sd.setPlayerEnabled(iArgentina, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Argentina enabled?') != 0:
-				self.setPlayerEnabled(iArgentina, False)
+				sd.setPlayerEnabled(iArgentina, False)
 				
 		if iHuman != iPortugal:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_BRAZIL")
 			
 			if iRand <= 0:
-				self.setPlayerEnabled(iBrazil, False)
+				sd.setPlayerEnabled(iBrazil, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Brazil enabled?') != 0:
-				self.setPlayerEnabled(iBrazil, False)
+				sd.setPlayerEnabled(iBrazil, False)
 				
 	def placeHut(self, tTL, tBR):
 		plotList = []

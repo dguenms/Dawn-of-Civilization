@@ -14,7 +14,7 @@ import Popup
 gc = CyGlobalContext()
 iChange = 1
 
-from RFCUtils import utils
+from StoredData import sd
 import Consts as con
 import Modifiers
 localText = CyTranslator()
@@ -168,7 +168,7 @@ class WBPlayerScreen:
 		#Merijn: Place Civenabled buttons
 		iY += 30
 		if iPlayer in con.lSecondaryCivs:
-			if utils.getPlayerEnabled(iPlayer):
+			if sd.isPlayerEnabled(iPlayer):
 				screen.setButtonGFC("CivEnabledButton", "", gc.getMissionInfo(gc.getInfoTypeForString("MISSION_FOUND")).getButton(), iX, iY, 64, 64, WidgetTypes.WIDGET_PYTHON, 22001, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
 			else:
 				screen.setButtonGFC("CivEnabledButton", "", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iX, iY, 64, 64, WidgetTypes.WIDGET_PYTHON, 22001, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
@@ -477,10 +477,7 @@ class WBPlayerScreen:
 			self.interfaceScreen(iPlayer)
 			
 		elif inputClass.getFunctionName() == "CivEnabledButton":
-			if utils.getPlayerEnabled(iPlayer):
-				utils.setPlayerEnabled(iPlayer, False)
-			else:
-				utils.setPlayerEnabled(iPlayer, True)
+			sd.setPlayerEnabled(iPlayer, not sd.isPlayerEnabled(iPlayer))
 			self.interfaceScreen(iPlayer)
 			
 		elif inputClass.getFunctionName() == "PlayerEditScriptData":

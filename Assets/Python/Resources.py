@@ -6,6 +6,7 @@ import PyHelpers
 #import Popup
 import Consts as con
 import RFCUtils # edead
+from StoredData import sd
 
 # globals
 gc = CyGlobalContext()
@@ -82,7 +83,7 @@ class Resources:
 			self.createResource(88, 37, iHorse)
 			
 		# Tamils
-		if iGameTurn == getTurnForYear(-300)-1 and utils.getPlayerEnabled(con.iTamils):
+		if iGameTurn == getTurnForYear(-300)-1 and sd.isPlayerEnabled(con.iTamils):
 			self.createResource(90, 28, iFish)
 
 		#Orka: Silk Road
@@ -151,7 +152,7 @@ class Resources:
 		#	CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
 			
 		# Leoreth: prepare Tibet
-		if iGameTurn == getTurnForYear(630)-1 and utils.getPlayerEnabled(con.iTibet):
+		if iGameTurn == getTurnForYear(630)-1 and sd.isPlayerEnabled(con.iTibet):
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
 			
@@ -183,7 +184,7 @@ class Resources:
 			self.createResource(66, 23, iBanana) # Central Africa
 			self.createResource(64, 20, iBanana) # Central Africa
 			
-			if utils.getPlayerEnabled(con.iCongo):
+			if sd.isPlayerEnabled(con.iCongo):
 				self.createResource(61, 22, iCotton) # Congo
 				self.createResource(63, 19, iIvory) # Congo
 				self.createResource(61, 24, iIvory) # Cameroon
@@ -309,12 +310,12 @@ class Resources:
 			if gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") != 0:
 				self.createResource(28, 31, iIron) # Colombia
 			
-			if utils.getPlayerEnabled(con.iArgentina):
+			if sd.isPlayerEnabled(con.iArgentina):
 				self.createResource(31, 10, iWine) # Mendoza, Argentina
 				self.createResource(31, 6, iSheep) # Pampas, Argentina
 				self.createResource(32, 11, iIron) # Argentina
 			
-			if utils.getPlayerEnabled(con.iBrazil):
+			if sd.isPlayerEnabled(con.iBrazil):
 				self.createResource(36, 18, iCorn) # Sao Paulo
 				self.createResource(42, 18, iFish) # Rio de Janeiro
 
