@@ -16,6 +16,7 @@ iSelectedLeader = -1
 
 from StoredData import sd
 import Consts as con
+import Congresses as cong
 
 class WBGameDataScreen:
 
@@ -233,11 +234,14 @@ class WBGameDataScreen:
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_HUMAN_STABILITY", ()), 2001])
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_IGNORE_AI_UHV", ()), 2002])
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_UNLIMITED_SWITCHING", ()), 2003])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_CONGRESS", ()), 2004])
+		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_PLAGUE", ()), 2005])
 		lList2.sort()
 		
 		# Stored variables
 		lList3 = []
 		lList3.append([CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED", ()), 3001])
+		lList3.append([CyTranslator().getText("TXT_KEY_WB_CONGRESS_TURNS", ()), 3002])
 		lList3.sort()
 
 		iNumRows = (len(lList) + nColumns - 1) / nColumns
@@ -294,6 +298,10 @@ class WBGameDataScreen:
 				bDefault = True
 			elif item == 2003:
 				bEnabled = sd.isUnlimitedSwitching()
+			elif item == 2004:
+				bEnabled = sd.isNoCongressOption()
+			elif item == 2005:
+				bEnabled = sd.isNoPlagueOption()
 
 			sText = self.colorText(lList2[i][0], bEnabled)
 			screen.setTableText("WBGameOptions", 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
@@ -305,12 +313,22 @@ class WBGameDataScreen:
 			iRow = iNumRows + 3 + i
 
 			bEnabled = False
+			bWhite = False
 			
 			if item == 3001:
 				bEnabled = sd.isAlreadySwitched()
+			elif item == 3002:
+				bWhite = True
 
-			sText = self.colorText(lList3[i][0], bEnabled)
+			sText = self.colorText(lList3[i][0], bEnabled, bWhite)
 			screen.setTableText("WBGameOptions", 4, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
+			if item == 3002:
+				if not cong.isCongressEnabled():
+					iTurns = -1
+				else:
+					iTurns = sd.getCongressTurns()
+				sText = self.colorText(str(iTurns), True, True)
+				screen.setTableText("WBGameOptions", 5, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_CENTER_JUSTIFY)
 
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBGameDataScreen", CvScreenEnums.WB_GAMEDATA)
@@ -418,9 +436,15 @@ class WBGameDataScreen:
 					sd.setIgnoreAI(not sd.isIgnoreAI())
 				elif iGameOption == 2003:
 					sd.setUnlimitedSwitching(not sd.isUnlimitedSwitching())
+				elif iGameOption == 2004:
+					sd.setNoCongressOption(not sd.isNoCongressOption())
+				elif iGameOption == 2005:
+					sd.setNoPlagueOption(not sd.isNoPlagueOption())
 				# Stored Variables
 				elif iGameOption == 3001:
 					sd.setAlreadySwitched(not sd.isAlreadySwitched())
+				elif iGameOption == 3002 and cong.isCongressEnabled():
+					sd.setCongressTurns(max(0, sd.getCongressTurns() - iChange))
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":
@@ -491,8 +515,10 @@ class WBGameDataScreen:
 			pPlayerBarb.killCities()
 			pPlayerBarb.killUnits()
 
-	def colorText(self, sString, bVal):
-		if bVal:
+	def colorText(self, sString, bVal, bWhite = False):
+		if bWhite:
+			sColor = ""
+		elif bVal:
 			sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
 		else:
 			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())

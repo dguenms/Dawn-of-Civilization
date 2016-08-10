@@ -473,6 +473,12 @@ class RiseAndFall:
 		# Human player can switch infinite times
 		bUnlimitedSwitching = (gc.getDefineINT("UNLIMITED_SWITCHING") != 0)
 		sd.setUnlimitedSwitching(bUnlimitedSwitching)
+		# No congresses
+		bNoCongresses = (gc.getDefineINT("NO_CONGRESSES") != 0)
+		sd.setNoCongressOption(bNoCongresses)
+		# No plagues
+		bNoPlagues = (gc.getDefineINT("NO_PLAGUES") != 0)
+		sd.setNoPlagueOption(bNoPlagues)
 		
 	def updateStartingPlots(self):
 		for iPlayer in range(iNumPlayers):

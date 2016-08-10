@@ -65,6 +65,9 @@ def onChangeWar(bWar, iPlayer, iOtherPlayer):
 ### Global Methods ###
 
 def isCongressEnabled():
+	if sd.isNoCongressOption():
+		return False
+
 	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iUnitedNations).getBuildingClassType()) > 0:
 		return False
 		

@@ -83,14 +83,16 @@ class StoredData:
 				    'iCongressTurns': 0,
 				    'iCivsWithNationalism': 0,
 				    'currentCongress': None,
+					'bNoCongressOption': False,
 				    #------------Plague
 				    'lPlagueCountdown': [0 for i in range(con.iNumTotalPlayersB)], #total players + barbarians
 				    'lGenericPlagueDates': [-1, -1, -1, -1],# -1],
 				    'lFirstContactPlague': [False for i in range(con.iNumTotalPlayersB)], #total players + barbarians
+					'bNoPlagueOption': False,
 				     #------------Victories
 				    'lGoals': [[-1, -1, -1] for i in range(con.iNumPlayers)],
 				    'lHistoricalGoldenAge' : [False for i in range(con.iNumPlayers)],
-				    'bIgnoreAI': False,
+				    'bIgnoreAI': True,
 				    
 				    'lWonderBuilder': [-1 for i in range(con.iNumBuildings - con.iBeginWonders)],
 				    'lReligionFounder': [-1 for i in range(con.iNumReligions)],
@@ -159,10 +161,10 @@ class StoredData:
 	def isPlayerEnabled(self, iCiv):
 		return self.scriptDict['lPlayerEnabled'][con.lSecondaryCivs.index(iCiv)]
 		
-	def isAlreadySwitched( self ):
+	def isAlreadySwitched(self):
 		return self.scriptDict['bAlreadySwitched']
 
-	def setAlreadySwitched( self, bNewValue ):
+	def setAlreadySwitched(self, bNewValue):
 		self.scriptDict['bAlreadySwitched'] = bNewValue
 		
 	def setUnlimitedSwitching(self, bNewValue):
@@ -426,6 +428,38 @@ class StoredData:
 	def setCurrentCongress(self, congress):
 		self.scriptDict['currentCongress'] = congress
 		
+	def setNoCongressOption(self, bNewValue):
+		self.scriptDict['bNoCongressOption'] = bNewValue
+		
+	def isNoCongressOption(self):
+		return self.scriptDict['bNoCongressOption']
+
+	# PLAGUE
+	
+	def getPlagueCountdown(self, iCiv):
+		return self.scriptDict['lPlagueCountdown'][iCiv]
+
+	def setPlagueCountdown(self, iCiv, iNewValue):
+		self.scriptDict['lPlagueCountdown'][iCiv] = iNewValue
+
+	def getGenericPlagueDates(self, i):
+		return self.scriptDict['lGenericPlagueDates'][i]
+
+	def setGenericPlagueDates(self, i, iNewValue):
+		self.scriptDict['lGenericPlagueDates'][i] = iNewValue
+		
+	def getFirstContactPlague(self, iCiv):
+		return self.scriptDict['lFirstContactPlague'][iCiv]
+
+	def setFirstContactPlague(self, iCiv, bNewValue):
+		self.scriptDict['lFirstContactPlague'][iCiv] = bNewValue	
+
+	def setNoPlagueOption(self, bNewValue):
+		self.scriptDict['bNoPlagueOption'] = bNewValue
+
+	def isNoPlagueOption(self):
+		return self.scriptDict['bNoPlagueOption']
+
 	# VICTORY
 	
 	def getGoal(self, iPlayer, iGoal):

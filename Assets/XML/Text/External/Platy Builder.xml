@@ -749,7 +749,7 @@
 		<English>No Stability (all civs)</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_NO_STABILITY_TEXT</Tag>
+		<Tag>TXT_KEY_WB_NO_STABILITY_HELP</Tag>
 		<English>Prevents stability calculations for all civilizations. No civilization can collapse.[NEWLINE](It also prevents storing of various stability parameters. When enabling stability again, all civilizations start with the parameters when the stability was disabled.)</English>
 	</TEXT>
 	<TEXT>
@@ -757,7 +757,7 @@
 		<English>No collapsing Human Player</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY_TEXT</Tag>
+		<Tag>TXT_KEY_WB_NO_HUMAN_STABILITY_HELP</Tag>
 		<English>Ignores stability checks for the human player. The human player cannot collapse. AI civilizations can still collapse. (Various calculations and parameter updates still run in the background, but cannot lead to collapse)</English>
 	</TEXT>
 	<TEXT>
@@ -765,7 +765,7 @@
 		<English>Ignore AI UHV Checks</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_IGNORE_AI_UHV_TEXT</Tag>
+		<Tag>TXT_KEY_WB_IGNORE_AI_UHV_HELP</Tag>
 		<English>Ignores checks for the AI unique historical victory goals. It increases speed if enabled.[NEWLINE](The AI is not aware of the historical victory goals and will not attempt to achieve these)</English>
 	</TEXT>
 	<TEXT>
@@ -773,7 +773,7 @@
 		<English>Unlimited Civ Switching</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING_TEXT</Tag>
+		<Tag>TXT_KEY_WB_UNLIMITED_SWITCHING_HELP</Tag>
 		<English>Allows the human player to switch multiple times.</English>
 	</TEXT>
 	<TEXT>
@@ -781,8 +781,32 @@
 		<English>Already Switched Civ</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_ALREADY_SWITCHED_TEXT</Tag>
+		<Tag>TXT_KEY_WB_ALREADY_SWITCHED_HELP</Tag>
 		<English>Variable which stores if the player has already switched. (Red means the player CAN still switch)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_CONGRESS</Tag>
+		<English>No congresses</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_CONGRESS_HELP</Tag>
+		<English>Disables congresses. Both normal and war congresses.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_PLAGUE</Tag>
+		<English>No plagues</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NO_PLAGUE_HELP</Tag>
+		<English>Disables the start of a plague and all effects of the plague.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CONGRESS_TURNS</Tag>
+		<English>Congress turns</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CONGRESS_TURNS_HELP</Tag>
+		<English>Number of turns left before the next congress starts. Click to reduce the amount of turns by the given amount.[NEWLINE](-1 indicates that congresses are not possible)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_SECONDARY_CIVS</Tag>
