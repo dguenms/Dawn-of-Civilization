@@ -238,4 +238,8 @@
 		<Tag>TXT_KEY_BUILDING_CENTRAL_BANK</Tag>
 		<English>Central Bank</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_</Tag>
+		<English></English>
+	</TEXT>
 </Civ4GameText>
