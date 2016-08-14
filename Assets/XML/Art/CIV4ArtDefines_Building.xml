@@ -1313,9 +1313,9 @@
 			<bAnimated>1</bAnimated>
 			<fScale>1.66</fScale>
 			<fInterfaceScale>0.48</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/HangingGardens/HangingGardens.nif</NIF>
+			<NIF>Art/Structures/Wonders/Hanging_Gardens/BabylonGardens.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/HangingGardens.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,3</Button>
+			<Button>Art/Structures/Wonders/Hanging_Gardens/Button_HangingGardens.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_COLOSSUS</Type>
@@ -1389,11 +1389,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SPIRAL_MINARET</Type>
-			<LSystem>LSYSTEM_2x2</LSystem>
+			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.4</fScale>
+			<fScale>1.0</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/SpiralMinaret/FridayMosque.nif</NIF>
+			<NIF>Art/Structures/Wonders/Spiral_Minaret/mideast_early.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/SpiralMinaret.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,9</Button>
 		</BuildingArtInfo>
@@ -1491,9 +1491,9 @@
 			<Type>ART_DEF_BUILDING_PENTAGON</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.2</fScale>
-			<fInterfaceScale>0.5</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Pentagon/Pentagon.nif</NIF>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Pentagon/Pentagon.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Pentagon.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,5</Button>
 		</BuildingArtInfo>
@@ -2001,11 +2001,11 @@
 			<Type>ART_DEF_BUILDING_RED_FORT</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.5</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/RedFort/palace.nif</NIF>
+			<fScale>10.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Red_Fort/agra_fort.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/RedFort/RedFort.dds</Button>
+			<Button>Art/Structures/Wonders/Red_Fort/RedFort.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_IRANIAN_CARAVANSERAI</Type>
@@ -2172,7 +2172,7 @@
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>3</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<NIF>Art/Structures/Wonders/MachuPicchu/macchu_picchu.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/MachuPicchu/Machu.dds</Button>

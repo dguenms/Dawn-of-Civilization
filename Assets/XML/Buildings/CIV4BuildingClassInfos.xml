@@ -1113,15 +1113,6 @@
 			<DefaultBuilding>BUILDING_TRADING_COMPANY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_MT_RUSHMORE</Type>
-			<Description>TXT_KEY_BUILDING_MT_RUSHMORE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_MT_RUSHMORE</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_RED_CROSS</Type>
 			<Description>TXT_KEY_BUILDING_RED_CROSS</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
