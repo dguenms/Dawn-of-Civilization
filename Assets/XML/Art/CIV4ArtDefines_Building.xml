@@ -1353,7 +1353,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.25</fScale>
 			<fInterfaceScale>0.48</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/AngkorWat/AngkorWat.nif</NIF>
+			<NIF>Art/Structures/Buildings/AngkorWat/AngkorWat.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/AngkorWat.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,1</Button>
 		</BuildingArtInfo>
@@ -1478,7 +1478,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Hollywood.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_THREE_GORGES_DAM</Type>
+			<Type>ART_DEF_BUILDING_ITAIPU_DAM</Type>
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>0.98</fScale>
