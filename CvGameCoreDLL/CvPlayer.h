@@ -715,9 +715,6 @@ public:
 	DllExport bool isStrike() const;																																	// Exposed to Python
 	void setStrike(bool bNewValue);
 
-	DllExport bool isOlympics() const;	//Rhye																																// Exposed to Python
-	void setOlympics(bool bNewValue);		//Rhye
-
 	DllExport PlayerTypes getID() const;																												// Exposed to Python
 
 	DllExport HandicapTypes getHandicapType() const;																									// Exposed to Python
@@ -1375,7 +1372,6 @@ protected:
 	bool m_bFoundedFirstCity;
 	bool m_bStrike;
 	bool m_bHuman;
-	bool m_bOlympics; //Rhye
 
 
 /************************************************************************************************/

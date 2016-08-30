@@ -2266,13 +2266,6 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	//Rhye - start
-	if (eBuilding == OLYMPIC_PARK)
-	{
-		if (GET_PLAYER(getOwnerINLINE()).isOlympics()) return false;
-	}
-	//Rhye - end
-
 	// Leoreth: Moai Statues require 20 water tiles
 	if (eBuilding == MOAI_STATUES)
 	{
@@ -3092,6 +3085,9 @@ bool CvCity::isFoodProduction() const
 			break;
 
 		case ORDER_CONSTRUCT:
+			return isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX);
+			break;
+
 		case ORDER_CREATE:
 		case ORDER_MAINTAIN:
 			break;
@@ -3384,6 +3380,7 @@ int CvCity::getProductionTurnsLeft(BuildingTypes eBuilding, int iNum) const
 	int iFirstBuildingOrder;
 	int iProductionNeeded;
 	int iProductionModifier;
+	bool bFoodProduction;
 
 	iProduction = 0;
 
@@ -3398,7 +3395,9 @@ int CvCity::getProductionTurnsLeft(BuildingTypes eBuilding, int iNum) const
 
 	iProductionModifier = getProductionModifier(eBuilding);
 
-	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, false, (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, false, false));
+	bFoodProduction = isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX);
+
+	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, bFoodProduction, (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, false, false));
 }
 
 
@@ -3547,13 +3546,13 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 	}
 
 	// Leoreth: Statue of Zeus effect: +25% military production speed in cities with pagan temples
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)STATUE_OF_ZEUS) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)THEOLOGY))
+	/*if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)STATUE_OF_ZEUS) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)THEOLOGY))
 	{
 		if (isHasRealBuilding(getUniqueBuilding(getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)))
 		{
 			iMultiplier += 25;
 		}
-	}
+	}*/
 
 	return std::max(0, iMultiplier);
 }
@@ -3830,8 +3829,8 @@ void CvCity::hurry(HurryTypes eHurry)
 	iHurryAngerModifier = (iHurryPopulation + 1) / 2;
 
 	// Leoreth: Pyramids negate unhappiness scaling
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
-		iHurryAngerModifier = 1;
+	//if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+	//	iHurryAngerModifier = 1;
 
 	changeHurryAngerTimer(iHurryAngerLength * iHurryAngerModifier);
 
@@ -5563,7 +5562,7 @@ int CvCity::foodDifference(bool bBottom) const
 		return 0;
 	}
 
-	if (isFoodProduction())
+	if (isFoodProduction() && !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
 	{
 		iDifference = std::min(0, (getYieldRate(YIELD_FOOD) - foodConsumption()));
 	}
@@ -7075,8 +7074,13 @@ void CvCity::updateFeatureHealth()
 				else
 				{
 					// Leoreth: Congo UP: no unhealthiness from jungle and marsh
-					if (!(getOwnerINLINE() == CONGO && (eFeature == GC.getInfoTypeForString("FEATURE_JUNGLE") || eFeature == GC.getInfoTypeForString("FEATURE_MARSH"))))
+					bool bCongoUP = (getOwnerINLINE() == CONGO && (eFeature == GC.getInfoTypeForString("FEATURE_JUNGLE") || eFeature == GC.getInfoTypeForString("FEATURE_MARSH")));
+					bool bHangingGardens = (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HANGING_GARDENS) && eFeature == GC.getInfoTypeForString("FEATURE_FLOOD_PLAINS"));
+
+					if (!bCongoUP && !bHangingGardens)
+					{
 						iNewBadHealth += GC.getFeatureInfo(eFeature).getHealthPercent();
+					}
 				}
 			}
 		}
@@ -12382,7 +12386,7 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 				
 
 	// Leoreth: Wat Preah Pisnulok effect
-	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)WAT_PREAH_PISNULOK) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
+	/*if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)WAT_PREAH_PISNULOK) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
 	{
 		if (eIndex == (SpecialistTypes)2) // artist
 		{
@@ -12394,7 +12398,7 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 			int iPriestsToArtists = max(0, getSpecialistCount((SpecialistTypes)2) - getFreeSpecialistCount((SpecialistTypes)2) - m_paiMaxSpecialistCount[(SpecialistTypes)2]);
 			iMaxSpecialistCount -= iPriestsToArtists;
 		}
-	}
+	}*/
 
 	// Leoreth: unlimited specialist effects now only double available specialists
 	if (GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex))
@@ -13915,12 +13919,6 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			{
 				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
 			}
-
-			//Rhye - start
-			if (eConstructBuilding == OLYMPIC_PARK) {
-				GET_PLAYER(getOwnerINLINE()).setOlympics(true);
-			}
-			//Rhye - end
 
 			CvEventReporter::getInstance().buildingBuilt(this, eConstructBuilding);
 		}

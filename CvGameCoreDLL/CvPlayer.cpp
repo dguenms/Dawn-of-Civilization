@@ -535,7 +535,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bExtendedGame = false;
 	m_bFoundedFirstCity = false;
 	m_bStrike = false;
-	m_bOlympics = false; //Rhye
 
 	m_bTurnPlayed = false;
 
@@ -6839,6 +6838,17 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			pLoopCity->changeCommerceRateModifier(COMMERCE_CULTURE, pLoopCity->getBuildingDefense() * iChange);
 		}
 	}
+
+	// Leoreth: Hanging Gardens effect
+	if (eBuilding == HANGING_GARDENS)
+	{
+		CvCity* pLoopCity;
+		int iLoop;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			pLoopCity->updateFeatureHealth();
+		}
+	}
 }
 
 
@@ -11577,16 +11587,6 @@ void CvPlayer::setStrike(bool bNewValue)
 	}
 }
 
-//Rhye - start
-bool CvPlayer::isOlympics() const
-{
-	return m_bOlympics;
-}
-void CvPlayer::setOlympics(bool bNewValue)
-{
-	m_bOlympics = bNewValue;
-}
-//Rhye - end
 
 PlayerTypes CvPlayer::getID() const
 {
@@ -17936,7 +17936,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bExtendedGame);
 	pStream->Read(&m_bFoundedFirstCity);
 	pStream->Read(&m_bStrike);
-	pStream->Read(&m_bOlympics); //Rhye
 
 	//Rhye (jdog) -  start ---------------------
 	//pStream->ReadString(m_szName);
@@ -18460,7 +18459,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bExtendedGame);
 	pStream->Write(m_bFoundedFirstCity);
 	pStream->Write(m_bStrike);
-	pStream->Write(m_bOlympics); //Rhye
 
 
 	//Rhye (jdog) -  start ---------------------

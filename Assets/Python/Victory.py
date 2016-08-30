@@ -209,13 +209,13 @@ dWonderGoals = {
 	iCarthage: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
 	iMaya: (1, [iTempleOfKukulkan], True),
-	iKhmer: (0, [iAngkorWat], False),
+	iKhmer: (0, [iWatPreahPisnulok], False),
 	iFrance: (2, [iNotreDame, iVersailles, iStatueOfLiberty, iEiffelTower], True),
-	iMali: (1, [iSankore], False),
+	iMali: (1, [iUniversityOfSankore], False),
 	iItaly: (0, [iSanMarcoBasilica, iSistineChapel, iLeaningTower], True),
 	iMughals: (1, [iTajMahal, iRedFort, iHarmandirSahib], True),
 	iAmerica: (1, [iStatueOfLiberty, iEmpireStateBuilding, iPentagon, iUnitedNations], True),
-	iBrazil: (1, [iWembley, iCristoRedentor, iThreeGorgesDam], True),
+	iBrazil: (1, [iWembley, iCristoRedentor, iItaipuDam], True),
 }
 
 dReligionGoals = {
@@ -974,7 +974,7 @@ def checkTurn(iGameTurn, iPlayer):
 		# second goal: build the University of Sankore and settle a great prophet in its city by 1500 AD
 		if isPossible(iMali, 1):
 			for city in utils.getCityList(iMali):
-				if city.isHasRealBuilding(iSankore) and city.getFreeSpecialistCount(iSpecialistGreatProphet) >= 1:
+				if city.isHasRealBuilding(iUniversityOfSankore) and city.getFreeSpecialistCount(iSpecialistGreatProphet) >= 1:
 					win(iMali, 1)
 		
 		if iGameTurn == getTurnForYear(1500):
@@ -1704,11 +1704,11 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	# first Khmer goal: build four Buddhist and Hindu monasteries and Wat Preah Pisnulok by 1200 AD
 	elif iPlayer == iKhmer:
 		if isPossible(iKhmer, 0):
-			if iBuilding in [iAngkorWat, iBuddhistMonastery, iHinduMonastery]:
+			if iBuilding in [iWatPreahPisnulok, iBuddhistMonastery, iHinduMonastery]:
 				iBuddhist = getNumBuildings(iKhmer, iBuddhistMonastery)
 				iHindu = getNumBuildings(iKhmer, iHinduMonastery)
-				bAngkorWat = data.getWonderBuilder(iAngkorWat) == iKhmer
-				if iBuddhist >= 4 and iHindu >= 4 and bAngkorWat:
+				bWatPreahPisnulok = data.getWonderBuilder(iWatPreahPisnulok) == iKhmer
+				if iBuddhist >= 4 and iHindu >= 4 and bWatPreahPisnulok:
 					win(iKhmer, 0)
 					
 	# third Polish goal: build a total of three Catholic, Orthodox and Protestant Cathedrals by 1600 AD
@@ -3294,8 +3294,8 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iNumBuddhism = getNumBuildings(iKhmer, iBuddhistMonastery)
 			iNumHinduism = getNumBuildings(iKhmer, iHinduMonastery)
-			bAngkorWat = data.getWonderBuilder(iAngkorWat) == iKhmer
-			aHelp.append(getIcon(iNumBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iNumBuddhism, 4)) + ' ' + getIcon(iNumHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES", (iNumHinduism, 4)) + ' ' + getIcon(bAngkorWat) + localText.getText("TXT_KEY_BUILDING_WAT_PREAH_PISNULOK", ()))
+			bWatPreahPisnulok = data.getWonderBuilder(iWatPreahPisnulok) == iKhmer
+			aHelp.append(getIcon(iNumBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iNumBuddhism, 4)) + ' ' + getIcon(iNumHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES", (iNumHinduism, 4)) + ' ' + getIcon(bWatPreahPisnulok) + localText.getText("TXT_KEY_BUILDING_WAT_PREAH_PISNULOK", ()))
 		elif iGoal == 1:
 			fPopPerCity = getAverageCitySize(iKhmer)
 			aHelp.append(getIcon(fPopPerCity >= 12.0) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", (str(u"%.2f" % fPopPerCity), str(12))))
@@ -3407,7 +3407,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bSankore = False
 			iProphets = 0
 			for city in utils.getCityList(iMali):
-				if city.isHasRealBuilding(iSankore):
+				if city.isHasRealBuilding(iUniversityOfSankore):
 					bSankore = True
 					iProphets = city.getFreeSpecialistCount(iSpecialistGreatProphet)
 					break
@@ -3627,8 +3627,8 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 1:
 			bWembley = data.getWonderBuilder(iWembley) == iBrazil
 			bCristoRedentor = data.getWonderBuilder(iCristoRedentor) == iBrazil
-			bThreeGorgesDam = data.getWonderBuilder(iThreeGorgesDam) == iBrazil
-			aHelp.append(getIcon(bWembley) + localText.getText("TXT_KEY_BUILDING_WEMBLEY", ()) + ' ' + getIcon(bCristoRedentor) + localText.getText("TXT_KEY_BUILDING_CRISTO_REDENTOR", ()) + ' ' + getIcon(bThreeGorgesDam) + localText.getText("TXT_KEY_BUILDING_THREE_GORGES_DAM", ()))
+			bItaipuDam = data.getWonderBuilder(iItaipuDam) == iBrazil
+			aHelp.append(getIcon(bWembley) + localText.getText("TXT_KEY_BUILDING_WEMBLEY", ()) + ' ' + getIcon(bCristoRedentor) + localText.getText("TXT_KEY_BUILDING_CRISTO_REDENTOR", ()) + ' ' + getIcon(bItaipuDam) + localText.getText("TXT_KEY_BUILDING_THREE_GORGES_DAM", ()))
 		elif iGoal == 2:
 			iForestPreserves = countImprovements(iBrazil, iForestPreserve)
 			bNationalPark = False
