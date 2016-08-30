@@ -369,7 +369,7 @@ bool CvCityAI::AI_avoidGrowth()
 		return true;
 	}
 
-	if (isFoodProduction())
+	if (isFoodProduction() && !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
 	{
 		return true;
 	}
@@ -3073,7 +3073,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == STATUE_OF_ZEUS) iTempValue *= 3;
 										else if (iI == GREAT_COTHON) iTempValue /= 4;
 										else if (iI == HAGIA_SOPHIA) iTempValue *= 2;
-										else if (iI == OLYMPIC_PARK) iTempValue *= 2;
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;

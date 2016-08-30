@@ -540,15 +540,15 @@ class CvRFCEventHandler:
 					plot.setWithinGreatWall(True)
 					
 		# Leoreth: La Mezquita
-		if iBuildingType == iMezquita:
-			lGPList = [0, 0, 0, 0, 0, 0, 0]
-			for city in utils.getCityList(iOwner):
-				for i in range(7):
-					iSpecialistUnit = utils.getUniqueUnit(iOwner, iGreatProphet + i)
-					lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
-			iGPType = utils.getUniqueUnit(iOwner, iGreatProphet + utils.getHighestIndex(lGPList))
-			utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
-			CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
+		#if iBuildingType == iMezquita:
+		#	lGPList = [0, 0, 0, 0, 0, 0, 0]
+		#	for city in utils.getCityList(iOwner):
+		#		for i in range(7):
+		#			iSpecialistUnit = utils.getUniqueUnit(iOwner, iGreatProphet + i)
+		#			lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
+		#	iGPType = utils.getUniqueUnit(iOwner, iGreatProphet + utils.getHighestIndex(lGPList))
+		#	utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
+		#	CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
 			
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList

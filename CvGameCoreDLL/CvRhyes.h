@@ -14,9 +14,9 @@ typedef list<char*> LISTCHAR;
 #define GREATPALACE				(98)
 #define SUMMERPALACE			(98)
 
-#define BEGIN_WONDERS				(138) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(162) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+12)
-#define NUM_BUILDINGS_PLAGUE		(213) // always increment when a building is added
+#define NUM_BUILDINGS_PLAGUE		(237) // always increment when a building is added
 #define NUM_BUILDINGTYPES_PLAGUE	(158) // increment when a building class is added
 
 #define NUM_MAJOR_PLAYERS		(44)
@@ -126,14 +126,15 @@ enum MyTechs
 enum MyBuildings
 {
 	TRIUMPHAL_ARCH = BEGIN_WONDERS,
-	OPERA_HOUSE,
+	NATIONAL_THEATRE,
 	TRADING_COMPANY,
 	IBERIAN_TRADING_COMPANY,
-	STOCK_EXCHANGE,
-	OLYMPIC_PARK,
+	CENTRAL_BANK,
+	NATIONAL_COLLEGE,
 	NATIONAL_GALLERY,
+	NATIONAL_MONUMENT,
 	IRONWORKS,
-	INTERPOL,
+	MILITARY_ACADEMY,
 	NATIONAL_PARK,
 	RED_CROSS,
 	GREAT_SPHINX,

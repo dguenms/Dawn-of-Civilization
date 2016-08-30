@@ -1311,13 +1311,13 @@
 			<DefaultBuilding>BUILDING_HOLLYWOOD</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_THREE_GORGES_DAM</Type>
-			<Description>TXT_KEY_BUILDING_THREE_GORGES_DAM</Description>
+			<Type>BUILDINGCLASS_ITAIPU_DAM</Type>
+			<Description>TXT_KEY_BUILDING_ITAIPU_DAM</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_THREE_GORGES_DAM</DefaultBuilding>
+			<DefaultBuilding>BUILDING_ITAIPU_DAM</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PENTAGON</Type>
