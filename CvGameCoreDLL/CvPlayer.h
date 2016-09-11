@@ -376,6 +376,7 @@ public:
 
 	int getGreatGeneralsCreated() const;																																		// Exposed to Python
 	void incrementGreatGeneralsCreated();
+	void decrementGreatGeneralsCreated();
 
 	int getGreatSpiesCreated() const;
 	void incrementGreatSpiesCreated();

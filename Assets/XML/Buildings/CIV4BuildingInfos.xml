@@ -8802,7 +8802,6 @@
 			<Description>TXT_KEY_BUILDING_STATUE_OF_ZEUS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_STATUE_OF_ZEUS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_STATUE_OF_ZEUS_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_STATUE_OF_ZEUS_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STATUE_OF_ZEUS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STATUE_OF_ZEUS</MovieDefineTag>
@@ -9740,7 +9739,6 @@
 			<Description>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WAT_PREAH_PISNULOK</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_WAT_PREAH_PISNULOK</MovieDefineTag>
@@ -10060,6 +10058,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
+			<iEnemyWarWearinessModifier>100</iEnemyWarWearinessModifier>
 			<iAsset>14</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -10499,7 +10498,7 @@
 			<Description>TXT_KEY_BUILDING_PORCELAIN_TOWER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PORCELAIN_TOWER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_PORCELAIN_TOWER_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Help>
+			<Help>TXT_KEY_BUILDING_PORCELAIN_TOWER_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PORCELAIN_TOWER</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PORCELAIN_TOWER</MovieDefineTag>
@@ -10730,6 +10729,7 @@
 			<Description>TXT_KEY_BUILDING_BRANDENBURG_GATE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BRANDENBURG_GATE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_BRANDENBURG_GATE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_BRANDENBURG_GATE_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BRANDENBURG_GATE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_BRANDENBURG_GATE</MovieDefineTag>
@@ -10744,7 +10744,6 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iDomesticGreatGeneralRateModifier>100</iDomesticGreatGeneralRateModifier>
 			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>

@@ -9718,14 +9718,12 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	if (NULL != pOtherCity)
 	{
-	    // Leoreth: includes Porcelain Tower effect
-		if (area() != pOtherCity->area() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
+	    if (area() != pOtherCity->area())
 		{
 			iModifier += GC.getDefineINT("OVERSEAS_TRADE_MODIFIER");
 		}
 
-        // Leoreth: includes Porcelain Tower effect
-		if ((getTeam() != pOtherCity->getTeam() && !GET_PLAYER(getOwner()).isNoForeignTradeModifier()) || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
+        if ((getTeam() != pOtherCity->getTeam() && !GET_PLAYER(getOwner()).isNoForeignTradeModifier()))
 		{
 			iModifier += getForeignTradeRouteModifier();
 
