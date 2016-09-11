@@ -712,6 +712,21 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 
 	GET_PLAYER(getOwnerINLINE()).AI_changeNumAIUnits(AI_getUnitAIType(), -1);
 
+	// Brandenburg Gate effect: Great General death resets Great General threshold
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)BRANDENBURG_GATE))
+	{
+		for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+		{
+			if (isHasPromotion((PromotionTypes)iI))
+			{
+				if (GC.getPromotionInfo((PromotionTypes)iI).isLeader())
+				{
+					GET_PLAYER(getOwnerINLINE()).decrementGreatGeneralsCreated();
+				}
+			}
+		}
+	}
+
 	eOwner = getOwnerINLINE();
 	eCapturingPlayer = getCapturingPlayer();
 	eCaptureUnitType = ((eCapturingPlayer != NO_PLAYER) ? getCaptureUnitType(GET_PLAYER(eCapturingPlayer).getCivilizationType()) : NO_UNIT);

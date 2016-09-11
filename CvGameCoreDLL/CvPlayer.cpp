@@ -1838,6 +1838,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		GC.getMapINLINE().verifyUnitValidPlot();
 	}
 
+	// Topkapi Palace effect: initial production in conquered cities
+	if (bConquest && isHasBuildingEffect((BuildingTypes)TOPKAPI_PALACE))
+	{
+		pNewCity->changeProduction(GC.getGameINLINE().getProductionPerPopulation((HurryTypes)0) * getCurrentEra() / 2);
+	}
+
 	pCityPlot->setRevealed(GET_PLAYER(eOldOwner).getTeam(), true, false, NO_TEAM, false);
 
 	pNewCity->updateEspionageVisibility(false);
@@ -9190,6 +9196,11 @@ int CvPlayer::getGreatGeneralsCreated() const
 void CvPlayer::incrementGreatGeneralsCreated()
 {
 	m_iGreatGeneralsCreated++;
+}
+
+void CvPlayer::decrementGreatGeneralsCreated()
+{
+	m_iGreatGeneralsCreated = std::max(0, m_iGreatGeneralsCreated-1);
 }
 
 // Leoreth
@@ -22706,6 +22717,12 @@ bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
 	}
 
 	if (getTeam() == kOtherPlayer.getTeam())
+	{
+		return true;
+	}
+
+	// Porcelain Tower effect: no open borders required for trade
+	if (isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
 	{
 		return true;
 	}

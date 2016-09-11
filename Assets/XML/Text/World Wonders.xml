@@ -300,7 +300,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_KHAJURAHO</Tag>
 		<English>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</English>
-		<German>[ICON_BULLET]+100% [ICON_PRODUCTION] f¸r Geb‰ude der Staats [ICON_RELIGION]</German>
+		<German>[ICON_BULLET]+100% [ICON_PRODUCTION] f√ºr Geb√§ude der Staats [ICON_RELIGION]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
@@ -619,7 +619,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_HELP</Tag>
 		<English>[ICON_BULLET]Cities grow while producing with food</English>
-		<German>[ICON_BULLET]St‰dte wachsen, wenn Nahrung zur Produktion verwendet wird</German>
+		<German>[ICON_BULLET]St√§dte wachsen, wenn Nahrung zur Produktion verwendet wird</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Tag>
@@ -710,8 +710,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Tag>
-		<English>[ICON_BULLET]Great prophets can create great works like great artists</English>
-		<German>[ICON_BULLET]Gro&#223;e Propheten k&#246;nnen gro&#223;e Kunstwerke erstellen, genau wie gro&#223;e K&#252;nstler</German>
+		<English>[ICON_BULLET]Wonders can be produced using food</English>
+		<German>[ICON_BULLET]Wunder k√∂nnen mithilfe von Nahrung errichtet werden</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Tag>
@@ -811,8 +811,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_HELP</Tag>
-		<English>[ICON_BULLET]Additional Foreign Culture is Converted on City Conquest</English>
-		<German>[ICON_BULLET]Bei der Eroberung gegnerischer St&#228;dte wird zus&#228;tzliche Kultur konvertiert</German>
+		<English>[ICON_BULLET]Extra initial production in conquered cities</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_STRATEGY</Tag>
@@ -888,11 +887,19 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<German>Die [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] erhˆht die Produktion aller Geb‰ude der Staatsreligion und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
+		<German>Die [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] erh√∂ht die Produktion aller Geb√§ude der Staatsreligion und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_HELP</Tag>
-		<English>[ICON_BULLET]No [ICON_UNHEALTH] from Flood Plains</English>
+		<English>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE_HELP</Tag>
+		<English>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER_HELP</Tag>
+		<English>[ICON_BULLET]No open borders required for trade</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
