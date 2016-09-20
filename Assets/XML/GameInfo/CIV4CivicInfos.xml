@@ -839,7 +839,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_MULTILATERALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_MULTILATERALISM_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Buildings/UnitedNations.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,7</Button>
-			<TechPrereq>TECH_GLOBALIZATION</TechPrereq>
+			<TechPrereq>TECH_GLOBALISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iGoldPerMilitaryUnit>1</iGoldPerMilitaryUnit>

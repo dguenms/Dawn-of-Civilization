@@ -1000,15 +1000,15 @@ Understanding geology helps us understand where to find mineral resources, and h
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_GLOBALIZATION</Tag>
-		<English>Globalization</English>
+		<Tag>TXT_KEY_TECH_GLOBALISM</Tag>
+		<English>Globalism</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_GLOBALIZATION_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_GLOBALISM_QUOTE</Tag>
 		<English>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope"</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_GLOBALIZATION_PEDIA</Tag>
+		<Tag>TXT_KEY_TECH_GLOBALISM_PEDIA</Tag>
 <English>Globalization is the process by which different peoples spread across the world become united by ties of ideology, economics, and politics. The first wave of globalization took place during the 19th century Age of Imperialism, when steam power and telegraphy allowed European empires to spread zones of influence across most of the world, creating a web of transport, communication, and government. However, access to these networks was limited and patchy and many people neither knew nor cared about events in far-off lands.
 
 The World Wars sped up the process. The staggering, apocalyptic scale of combat caught up many colonial possessions in Africa and Asia, permanently undermining European rule at the same time that people in economic backwaters were exposed to a wide variety of modern products and weapons. After World War Two, ideologies such as nationalism or communism spread into regions that had previously been dominated by traditional cultures that were less inclined to resist foreign rule. A wave of "decolonization" swept the world.
@@ -1633,13 +1633,6 @@ Emperors and merchant princes funded great voyages of discovery that traveled ac
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_ACTIVISM</Tag>
-		<English>Activism</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_PHILOSOPHY</Tag>
 		<English>Philosophy</English>
 	</TEXT>
@@ -1731,6 +1724,13 @@ Formal theorizing on politics dates back to the time of figures such as Plato an
 	<TEXT>
 		<Tag>TXT_KEY_TECH_POTTERY_QUOTE</Tag>
 		<English>"Hath not the potter power over the clay, to make one vessel unto honor, and another unto dishonor?"[PARAGRAPH:2]- The Bible</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_POWER_PROJECTION</Tag>
+		<English>Power Projection</English>
 	</TEXT>
 
 
@@ -2027,28 +2027,8 @@ Ongoing advances in shipbuilding continued steadily from the Bronze Age up to th
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_SIEGECRAFT</Tag>
-		<English>Siegecraft</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_SIEGECRAFT_QUOTE</Tag>
-		<English>"It is imperative to contest all factions for complete victory, so the army is not garrisoned and the profit can be total. This is the law of strategic siege."[PARAGRAPH:2]- Sun Tzu</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_SIEGECRAFT_PEDIA</Tag>
-<English>Siegecraft is the art of surrounding a defended area of land, and gradually neutralizing, wearing down, or 'reducing' its defenses in order to make it more vulnerable to attack. The practice of building fixed defensive structures such as watch towers and walls around a defensible location or an entire community dates back to prehistoric times. Relatively early on, with the advent of masonry or brick walls, it became possible to construct fortifications that provided a massive advantage to the defender, so great that attacking a position became impossible without great loss of life. Short of some kind of explosive weapons, soldiers have no way of attacking a position defended by a five meter stone wall, without the great risk of being killed by enemy weapons. Attackers could face traps, arrows, thrown stones or spears, or even sheets of deadly liquid such as boiling oil.
-
-This made a sudden, rash attack against a fortress extremely unwise in classical and medieval warfare. Instead, an army would typically surround the fortress at a distance and set up permanent lines around it, to prevent any reinforcement or resupply from reaching the defender. These "siege lines" would have to be held for as long as it took to compel the defenders to surrender.
-
-The simplest approach here was to simply wait for the defenders to run out of food or water, or to be exterminated by some disease. This could take an extremely long time, although some of history's more ruthless commanders took steps to accelerate the process. Julius Caesar once forced a Gaulish city to run out of water by using a team of miners to dig into the underground spring that fed their water supply. Mongols under Jani Beg introduced disease to the city of Kaffa on the Black Sea by catapulting bodies of the victims of bubonic plague over the walls of the city.
-
-If waiting for the enemy to give in due to starvation, thirst, or disease was not practical, more direct means were needed. However, that in turn required that the artificial defenses of the target be 'reduced' to something more manageable.
-
-The methods used to do this in classical and medieval warfare included but were not limited to use of spring-loaded, counterweight-powered, or mechanical engines to throw projectiles at the defenders' walls, the use of rams, drills, and prying tools to open a locked gate (with or without the use of mobile shelters to protect the demolition team from the defenders), the use of large mobile towers that could roll up to the wall and deploy soldiers directly on top of it, the filling-in of ditches and moats with rubble, the construction of rubble ramps to scale a wall, the use of mobile shields to cover archers and allow them to approach the defenses and snipe at the garrison, and the use of tunneling techniques to undermine the enemy's walls and cause them to collapse.
-
-The advent of gunpowder altered the rules somewhat. Most mechanical siege engines were rendered obsolete, since exploding gunpowder could propel missile weapons much more effectively. Tunneling warfare took on a new dimension, with sappers digging tunnels under enemy defenses, filling them with tons of explosives, and then lighting the fuse. Even at surface level, infantry could carry petards (heavy demolition charges to destroy gates and structures) and grenades (to drive enemy troops out of a position with blast and shrapnel). At the same time, the defenders altered the structure of their walls and outworks to make them more resistant to cannon fire, and redesigned defenses to deliver heavy fire from their own gunpowder weapons against an attacker.
-
-The race of siege techniques versus defense techniques has proceeded up into the 20th century, though relatively few innovations on the art have been seen since the Second World War. Siege warfare continues to be seen, though, wherever an attacking army gradually tries to encircle a defended place and works its way inward. Instances include the Vietnamese siege of Dien Bien Phu, or the recent siege of the city of Kobani in northern Iraq by fundamentalist militants.</English>
+		<Tag>TXT_KEY_TECH_STANDING_ARMY</Tag>
+		<English>Standing Army</English>
 	</TEXT>
 
 
@@ -2344,16 +2324,8 @@ Research into these matters is ongoing today. It is hoped that future physics wi
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_WARRIOR_CODE</Tag>
-		<English>Warrior Code</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_WARRIOR_CODE_QUOTE</Tag>
-		<English>"Do not try to fight a lion if you are not one yourself."[PARAGRAPH:2]- African Proverb</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_WARRIOR_CODE_PEDIA</Tag>
-		<English>Chivalry comes from the Old French words for "knighthood" and "horsemanship." Chivalry was a European code of rules governing the behavior of an aristocratic class of warriors known as knights. First appearing in or around the 12th century, the rules of chivalry governed not only the knights' behavior in battle, but in their personal lives as well. The chief chivalric virtues of piety, honor, valor, courtesy, chastity, and loyalty represented a fusion of Christian and military morality.[NEWLINE][NEWLINE]Other, comparable codes existed in many other societies. Out of many examples, a similar code of behavior known as "Bushido" or "the way of the warrior" governed the behavior of the samurai warriors of feudal Japan. Other societies which formed a warrior class subject to religious and moral codes of honor included ancient Persia and India.[NEWLINE][NEWLINE]Although the strict practice of the code of chivalry had all but disappeared in Europe by the 16th century, the ideals of chivalric behavior became the basis for what is now considered to be gentlemanly conduct. Chivalry also forms part of the basis for what we now call "the laws of war," because it was in the customs of chivalry that one finds precedent for the idea that war is to be an honorable confrontation between warriors, rather than a predatory confrontation between one side's warriors and the other side's noncombatants.</English>
+		<Tag>TXT_KEY_TECH_FORTIFICATION</Tag>
+		<English>Fortification</English>
 	</TEXT>
 
 

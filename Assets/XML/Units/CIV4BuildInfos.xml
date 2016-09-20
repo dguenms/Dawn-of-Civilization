@@ -707,7 +707,7 @@
 			<Type>BUILD_NATURE_RESERVE</Type>
 			<Description>TXT_KEY_BUILD_NATURE_RESERVE</Description>
 			<Help/>
-			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
+			<PrereqTech>TECH_CIVIL_RIGHTS</PrereqTech>
 			<iTime>800</iTime>
 			<iCost>0</iCost>
 			<bKill>0</bKill>

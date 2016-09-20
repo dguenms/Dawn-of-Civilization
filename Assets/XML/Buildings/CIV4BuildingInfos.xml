@@ -9638,7 +9638,7 @@
 			<StateReligion>RELIGION_BUDDHISM</StateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<PrereqTech>TECH_WARRIOR_CODE</PrereqTech>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -10837,7 +10837,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PENTAGON</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PENTAGON</MovieDefineTag>
-			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
+			<PrereqTech>TECH_POWER_PROJECTION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -11204,7 +11204,7 @@
 			<OrStateReligion>RELIGION_PROTESTANTISM</OrStateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<OrPrereqReligion>RELIGION_PROTESTANTISM</OrPrereqReligion>
-			<PrereqTech>TECH_TOURISM</PrereqTech>
+			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -11314,7 +11314,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_UNITED_NATIONS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_UNITED_NATIONS</MovieDefineTag>
 			<VictoryPrereq>VICTORY_DIPLOMATIC</VictoryPrereq>
-			<PrereqTech>TECH_GLOBALIZATION</PrereqTech>
+			<PrereqTech>TECH_GLOBALISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>

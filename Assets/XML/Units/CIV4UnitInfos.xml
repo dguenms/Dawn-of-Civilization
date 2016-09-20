@@ -4397,7 +4397,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_GLOBALIZATION</PrereqTech>
+			<PrereqTech>TECH_GLOBALISM</PrereqTech>
 			<iCost>160</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -4473,7 +4473,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_GLOBALIZATION</PrereqTech>
+			<PrereqTech>TECH_GLOBALISM</PrereqTech>
 			<iCost>160</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -6509,7 +6509,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_WARRIOR_CODE</PrereqTech>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
@@ -6601,7 +6601,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_WARRIOR_CODE</PrereqTech>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
 			<iCost>90</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -6790,7 +6790,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_WARRIOR_CODE</PrereqTech>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<BonusType>BONUS_IVORY</BonusType>
 			<iCost>90</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -6887,7 +6887,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_WARRIOR_CODE</PrereqTech>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
 			<iCost>90</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -6987,7 +6987,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_WARRIOR_CODE</PrereqTech>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<BonusType>BONUS_HORSE</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
@@ -8802,7 +8802,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</NotUnitAIs>
-			<PrereqTech>TECH_SIEGECRAFT</PrereqTech>
+			<PrereqTech>TECH_STANDING_ARMY</PrereqTech>
 			<iCost>100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -11806,7 +11806,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_RADAR</PrereqTech>
+			<PrereqTech>TECH_POWER_PROJECTION</PrereqTech>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
