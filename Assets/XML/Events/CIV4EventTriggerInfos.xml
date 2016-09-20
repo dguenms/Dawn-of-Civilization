@@ -556,7 +556,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
@@ -3573,7 +3573,7 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
@@ -7498,7 +7498,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
@@ -8012,7 +8012,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
@@ -8710,7 +8710,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
@@ -13647,7 +13647,7 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
@@ -14430,7 +14430,7 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
@@ -14521,7 +14521,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
@@ -15860,7 +15860,7 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_WARRIOR_CODE</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
 				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
