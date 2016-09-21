@@ -30,7 +30,7 @@
 			<Type>SPECIALBUILDING_CATHEDRAL</Type>
 			<Description>TXT_KEY_SPECIALBUILDING_CATHEDRAL</Description>
 			<ObsoleteTech>NONE</ObsoleteTech>
-			<TechPrereq>TECH_THEOLOGY</TechPrereq>
+			<TechPrereq>TECH_ARCHITECTURE</TechPrereq>
 			<TechPrereqAnyone>NONE</TechPrereqAnyone>
 			<bValid>1</bValid>
 			<ProductionTraits/>
