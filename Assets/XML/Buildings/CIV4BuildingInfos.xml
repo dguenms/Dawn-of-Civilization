@@ -120,7 +120,7 @@
 			<Strategy>TXT_KEY_BUILDING_CASTLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CASTLE</ArtDefineTag>
-			<PrereqTech>TECH_ARCHITECTURE</PrereqTech>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>100</iCost>
@@ -175,7 +175,7 @@
 			<Strategy>TXT_KEY_BUILDING_SPANISH_CITADEL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SPANISH_CITADEL</ArtDefineTag>
-			<PrereqTech>TECH_ARCHITECTURE</PrereqTech>
+			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>50</iCost>
@@ -7393,7 +7393,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ARMOURY</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ARMOURY</MovieDefineTag>
-			<PrereqTech>TECH_GENERALSHIP</PrereqTech>
+			<PrereqTech>TECH_STANDING_ARMY</PrereqTech>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -9813,7 +9813,7 @@
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<PrereqTech>TECH_URBANISM</PrereqTech>
+			<PrereqTech>TECH_JUDICIARY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
