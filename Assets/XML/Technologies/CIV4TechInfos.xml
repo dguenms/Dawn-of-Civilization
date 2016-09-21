@@ -2026,6 +2026,9 @@
 					<iFlavor>1</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_GUILDS</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_FEUDALISM</PrereqTech>
 				<PrereqTech>TECH_FORTIFICATION</PrereqTech>
@@ -2060,6 +2063,9 @@
 					<iFlavor>1</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 				<PrereqTech>TECH_MACHINERY</PrereqTech>
