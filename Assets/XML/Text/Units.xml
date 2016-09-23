@@ -1281,6 +1281,10 @@
 		<English>[COLOR_UNIT_TEXT]Warriors[COLOR_REVERT] have a defensive bonus in cities.</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_MILITIA_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Militia[COLOR_REVERT] have a defensive bonus in cities.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_WAR_ELEPHANT_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]War Elephants[COLOR_REVERT] are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], don't receive defensive bonuses, have a combat penalty when attacking cities and have a combat bonus against [COLOR_UNIT_TEXT]Mounted Units[COLOR_REVERT].</English>
 	</TEXT>
@@ -1339,7 +1343,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY</Tag>
 		<English>Jewish Rabbi</English>
-		<German>Jüdischer Rabbi</German>
+		<German>JÃ¼discher Rabbi</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>
@@ -1472,9 +1476,8 @@
 		<Tag>TXT_KEY_UNIT_BIPLANE</Tag>
 		<English>Biplane</English>
 	</TEXT>
-	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_</Tag>
-		<English></English>
+		<Tag>TXT_KEY_UNIT_MILITIA</Tag>
+		<English>Militia</English>
 	</TEXT>
 </Civ4GameText>
