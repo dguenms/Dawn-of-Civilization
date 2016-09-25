@@ -1496,4 +1496,12 @@
 		<Tag>TXT_KEY_UNIT_DRAGOON</Tag>
 		<English>Dragoon</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PISTOLIER</Tag>
+		<English>Pistolier</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HUSSAR</Tag>
+		<English>Hussar</English>
+	</TEXT>
 </Civ4GameText>
