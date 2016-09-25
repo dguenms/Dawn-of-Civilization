@@ -12609,7 +12609,7 @@
 			<UnitCombatPromotions/>
 			<UnitClassPromotions>
 				<UnitClassPromotion>
-					<UnitClass>UNITCLASS_MUSKETMAN</UnitClass>
+					<UnitClass>UNITCLASS_ARQUEBUSIER</UnitClass>
 					<UnitPromotion>PROMOTION_PINCH</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>
@@ -22647,7 +22647,7 @@
 			<UnitCombatPromotions/>
 			<UnitClassPromotions>
 				<UnitClassPromotion>
-					<UnitClass>UNITCLASS_MUSKETMAN</UnitClass>
+					<UnitClass>UNITCLASS_ARQUEBUSIER</UnitClass>
 					<UnitPromotion>PROMOTION_PINCH</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>

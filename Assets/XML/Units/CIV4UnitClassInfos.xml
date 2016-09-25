@@ -191,12 +191,12 @@
 			<DefaultUnit>UNIT_AXEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_FOOTMAN</Type>
-			<Description>TXT_KEY_UNIT_FOOTMAN</Description>
+			<Type>UNITCLASS_HEAVY_SWORDSMAN</Type>
+			<Description>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_FOOTMAN</DefaultUnit>
+			<DefaultUnit>UNIT_HEAVY_SWORDSMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SPEARMAN</Type>
@@ -215,12 +215,12 @@
 			<DefaultUnit>UNIT_PIKEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_MUSKETMAN</Type>
-			<Description>TXT_KEY_UNIT_MUSKETMAN</Description>
+			<Type>UNITCLASS_ARQUEBUSIER</Type>
+			<Description>TXT_KEY_UNIT_ARQUEBUSIER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_MUSKETMAN</DefaultUnit>
+			<DefaultUnit>UNIT_ARQUEBUSIER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_RIFLEMAN</Type>
@@ -781,6 +781,38 @@
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_MILITIA</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_MUSKETMAN</Type>
+			<Description>TXT_KEY_UNIT_MUSKETMAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_MUSKETMAN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HEAVY_SPEARMAN</Type>
+			<Description>TXT_KEY_UNIT_HEAVY_SPEARMAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_HEAVY_SPEARMAN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HOWITZER</Type>
+			<Description>TXT_KEY_UNIT_HOWITZER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_HOWITZER</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_DRAGOON</Type>
+			<Description>TXT_KEY_UNIT_DRAGOON</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_DRAGOON</DefaultUnit>
 		</UnitClassInfo>
 	</UnitClassInfos>
 </Civ4UnitClassInfos>
