@@ -669,12 +669,12 @@
 		<English>[COLOR_UNIT_TEXT]Marines[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Machine Gun[COLOR_REVERT] and [COLOR_UNIT_TEXT]Artillery[COLOR_REVERT] units, are able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT] and begin with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_FOOTMAN</Tag>
-		<English>Footman</English>
-		<German>Fuﬂsoldat</German>
+		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
+		<English>Heavy Swordsman</English>
+		<German>Schwerer Schwertk‰mpfer</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_FOOTMAN_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Footmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -919,7 +919,7 @@
 		<English>The [COLOR_UNIT_TEXT]Dog Soldier[COLOR_REVERT] is a Barbarian unit that spawns in Central North America and the Andes Mountains from 600 - 1800 AD.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_ARQUEBUSIER_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] are the first [COLOR_UNIT_TEXT]Gunpowder Unit[COLOR_REVERT] avaiable.</English>
 	</TEXT>
 	<TEXT>
@@ -1479,5 +1479,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MILITIA</Tag>
 		<English>Militia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARQUEBUSIER</Tag>
+		<English>Arquebusier</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEAVY_SPEARMAN</Tag>
+		<English>Heavy Spearman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HOWITZER</Tag>
+		<English>Howitzer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRAGOON</Tag>
+		<English>Dragoon</English>
 	</TEXT>
 </Civ4GameText>
