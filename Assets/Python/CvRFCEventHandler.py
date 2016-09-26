@@ -95,9 +95,10 @@ class CvRFCEventHandler:
 
 	def onGameStart(self, argsList):
 		'Called at the start of the game'
-		
+
 		data.setup()
-		
+		data.save()
+
 		self.rnf.setup()
 		self.pla.setup()
 		dc.setup()
