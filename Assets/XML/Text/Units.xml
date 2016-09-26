@@ -1504,4 +1504,8 @@
 		<Tag>TXT_KEY_UNIT_HUSSAR</Tag>
 		<English>Hussar</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN</Tag>
+		<English>Light Swordsman</English>
+	</TEXT>
 </Civ4GameText>
