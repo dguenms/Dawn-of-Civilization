@@ -6495,28 +6495,5 @@
 			<Button>Art/Interface/Buttons/TechTree/Future_Tech.dds</Button>
 		</TechInfo>
 
-<!-- FAKE -->
-
-		<TechInfo>
-			<Type>TECH_FAKE</Type>
-			<Description>Fake Tech</Description>
-			<Civilopedia/>
-			<Advisor>ADVISOR_RELIGION</Advisor>
-			<iCost>50</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_FUTURE</Era>
-			<iAsset>0</iAsset>
-			<bTrade>0</bTrade>
-			<bDisable>1</bDisable>
-			<bGoodyTech>0</bGoodyTech>
-			<iGridX>-1</iGridX>
-			<iGridY>-1</iGridY>
-			<Flavors/>
-			<Quote/>
-			<Sound/>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/TechTree/Religion.dds</Button>
-		</TechInfo>
-
 	</TechInfos>
 </Civ4TechInfos>

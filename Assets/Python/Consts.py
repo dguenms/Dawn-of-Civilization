@@ -1491,6 +1491,30 @@ iConstruction, iMachinery, iEngineering, iOptics, iGunpowder, iReplaceableParts,
 iAssemblyLine, iRailroad, iTechArtillery, iIndustrialism, iRadio, iRefrigeration, iSuperconfuctors, iComputers, iLaser, iRocketry, 
 iSatellites, iRobotics, iFutureTech) = range(iNumTechs)
 
+iNumTechs = 141
+(iTanning, iMining, Pottery, iPastoralism, iAgriculture, iWorship, iSailing,
+iSmelting, iMasonry, iLeverage, iProperty, iCeremony, iDivination, iSeafaring,
+iAlloys, iConstruction, iRiding, iArithmetics, iTradition, iCalendar, iShipbuilding,
+iBloomery, iMetalCasting, iGeometry, iContract, iWriting, iPriesthood, iNavigation,
+iGeneralship, iEngineering, iAesthetics, iCurrency, iLaw, iPhilosophy, iMedicine,
+iNobility, iSteel, iArchitecture, iArtisanry, iPolitics, iScholarship, iEthics,
+iFeudalism, iFortification, iMachinery, iAlchemy, iGuilds, iCivilService, iTheology,
+iStandingArmy, iCropRotation, iPaper, iCompass, iPatronage, iLiterature, iClergy,
+iGunpowder, iUrbanism, iFinance, iCartography, iEducation, iPrinting, iJudiciary,
+iFirearms, iEconomics, iExploration, iOptics, iHumanities, iStatecraft, Heritage,
+iLogistics, iCorporation, iAstronomy, iScientificMethod, iUrbanPlanning, iCivilLiberties, iHorticulture,
+iReplaceableParts, iHydraulics, iPhysics, iGeology, iMeasurement, iSocialSciences, iConstitution,
+iMachineTools, iThermodynamics, iMetallurgy, iChemistry, iBiology, iRepresentation, iNationalism,
+iBallistics, iEngine, iRailroad, iElectricity, iRefrigeration, iLabourUnions, iJournalism,
+iPneumatics, iAssemblyLine, iRefining, iFilm, iMicrobiology, iConsumerism, iCivilRights,
+iInfrastructure, iFlight, iSynthetics, iRadio, iPsychology, iMacroeconomics, iSocialServices,
+iAviation, iRocketry, iFission, iElectronics, iTelevision, iPowerProjection, iGlobalism,
+iRadar, iSpaceflight, iNuclearPower, iLaser, iComputers, iTourism, iEcology,
+iAerodynamics, iSatellites, iSuperconductors, iRobotics, iTelecommunications, iRenewableEnergy, iGenetics,
+iSupermaterials, iFusion, iNanotechnology, iAutomation, iBiotechnology,
+iUnifiedTheory, iArtificialIntelligence,
+iTranshumanism) = range(iNumTechs)
+
 # initialise unit variables to unit indices from XML
 
 iNumUnits = 164
@@ -1511,6 +1535,26 @@ iShipOfTheLine, iIronclad, iTransport, iDestroyer, iCanadianCorvette, iBattleshi
 iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iTacticalNuke, iIcbm, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral,
 iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral,
 iFemaleGreatSpy, iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
+
+iNumUnits = 179
+(iLion, iBear, iPanther, iWolf, iSettler, iCityBuilder, iWorker, iMadeireiro, iPunjabiWorker, iScout,
+iExplorer, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, iBuddhistMissionary,
+iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilita, iAxeman, iLightSwordsman, iVulture, iDogSoldier, iSwordsman,
+iJaguar, iLegion, iGallicWarrior, iAucac, iHeavySwordsman, iSamurai, iHuscarl, iPombos, iSpearman, iHoplite,
+iImmortal, iImpi, iHeavySpearman, iPikeman, iLandsknecht, iArquebusier, iJanissary, iAskari, iQizilbash, iMohawk,
+iMusketeer, iMusketman, iRedcoat, iMinuteman, iRifleman, iGrenadier, iAlbionLegion, iAntiTank, iInfantry, iBersagliere,
+iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iAsharittuBowman, iMedjay, iSkirmisher,
+iHolkan, iKelebolo, iLongbowman, iPatiyodha, iCrossbowman, iChoKoNu, iChariot, iWarChariot, iHuluganni, iCidainh,
+iHorseman, iNumidianCavalry, iAsvaka, iHorseArcher, iCamelArcher, iKhampa, iLancer, iKeshik, iCataphract, iChangSuek,
+iGhulamWarrior, iFarari, iPistolier, iCuirassier, iConquistador, iWingedHussar, iMountedBrave, iCamelGunner, iHussar, iDragoon,
+iCossack, iGrenadierCavalry, iCavalry, iRurales, iWarElephant, iBallistaElephant, iAfricanWarElephant, iTank, iPanzer, iMainBattleTank,
+iGunship, iCatapult, iHwacha, iTrebuchet, iBombard, iSiegeElephant, iCannon, iHeavyCannon, iArtillery, iMachineGun,
+iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, iCog, iGalleass,
+iCaravel, iCarrack, iDharani, iGalleon, iEastIndiaman, iPrivateer, iOrangLaut, iCorsair, iFrigate, iShipOfTheLine,
+iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine,
+iNuclearSubmarine, iCarrier, iBiplane, iFighter, iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iNuclearBomber, iICBM,
+iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist,
+iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleFreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
 
 iMissionary = iJewishMissionary # generic
 
@@ -1533,18 +1577,18 @@ iSugar, iTea, iTobacco, iWine, iWhales, iSoccer, iSongs, iMovies) = range(iNumBo
 
 #Buildings (update Persian UHV every time this is changed)
 iNumBuildings = 236
-(iPalace, iWalls, iCelticDun, iCastle, iSpanishCitadel, iIncanTambo, iStarFort, iBarracks, iZuluIkhanda, iStable, 
-iMongolianGer, iBunker, iBombShelters, iGranary, iIncanTerrace, iSmokehouse, iAqueduct, iKhmerBaray, iMoorishNoria, iIndianStepwell, 
-iBath, iHarappanReservoir, iOttomanHammam, iPharmacy, iArabianAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, 
-iVikingTradingPost, iHarbor, iCustomsHouse, iPortugueseFeitoria, iWharf, iPostOffice, iDrydock, iAirport, iForge, iMandeMint, 
-iItalianArtStudio, iFactory, iGermanAssemblyPlant, iJapaneseZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant, iSolarPlant, iElectricalGrid, iIndustrialPark, 
-iPaganTemple, iBabylonianZiggurat, iMonument, iEgyptianObelisk, iEthiopianStele, iIndonesianCandi, iIndianEdict, iNativeAmericanTotemPole, iPublicTransportation, iLibrary, 
-iChineseTaixue, iThaiHoTrai, iTamilSangam, iUniversity, iKoreanSeowon, iTibetanGompa, iObservatory, iLaboratory, iRussianResearchInstitute, iWeaver, 
-iCongoleseMbwadi, iTheatre, iGreekOdeon, iByzantineHippodrome, iChinesePavilion, iAmphitheatre, iMayanBallCourt, iMexicanCharreadaArena, iPolynesianMalae, iBabylonianGarden, 
-iCinema, iBroadcastTower, iMarket, iRomanForum, iPersianApothecary, iIranianCaravanserai, iPhoenicianGlassmaker, iBank, iEnglishRoyalExchange, iRailwayStation, 
-iDepartmentStore, iAmericanMall, iSupermarket, iArgentineRefrigerationPlant, iCoffeehouse, iFrenchSalon, iDistillery, iHotel, iConstabulary, iCanadianMountedPolice, 
-iCivicSquare, iHolyRomanRathaus, iPolishSejmik, iEstate, iMughalMausoleum, iBrazilianFazenda, iColombianHacienda, iNewsPress, iCourthouse, iJail, 
-iAztecSacrificialAltar, iLevee, iDutchDike, iIntelligenceAgency, iSecurityBureau, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iOrthodoxTemple, 
+(iPalace, iWalls, iDun, iCastle, iCitadel, iTambo, iStarFort, iBarracks, iIkhanda, iStable, 
+iGer, iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNoria, iStepwell, 
+iBath, iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, 
+iTradingPost, iHarbor, iCustomsHouse, iFeitoria, iWharf, iPostOffice, iDrydock, iAirport, iForge, iMint, 
+iArtStudio, iFactory, iAssemblyPlant, iZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant, iSolarPlant, iElectricalGrid, iIndustrialPark, 
+iPaganTemple, iZiggurat, iMonument, iObelisk, iStele, iCandi, iEdict, iTotemPole, iPublicTransportation, iLibrary, 
+iTaixue, iHoTrai, iSangam, iUniversity, iSeowon, iGompa, iObservatory, iLaboratory, iResearchInstitute, iWeaver, 
+iMbwadi, iTheatre, iOdeon, iHippodrome, iPavilion, iAmphitheatre, iBallCourt, iCharreadaArena, iMalae, iGarden, 
+iCinema, iBroadcastTower, iMarket, iForum, iApothecary, iCaravanserai, iGlassmaker, iBank, iRoyalExchange, iRailwayStation, 
+iDepartmentStore, iMall, iSupermarket, iRefrigerationPlant, iCoffeehouse, iSalon, iDistillery, iHotel, iConstabulary, iMountedPolice, 
+iCivicSquare, iRathaus, iSejmik, iEstate, iMausoleum, iFazenda, iHacienda, iNewsPress, iCourthouse, iJail, 
+iSacrificialAltar, iLevee, iDike, iIntelligenceAgency, iSecurityBureau, iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iOrthodoxTemple, 
 iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iCatholicChurch, iCatholicCathedral, iCatholicMonastery, iCatholicShrine, iProtestantTemple, iProtestantCathedral, iProtestantMonastery, 
 iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicShrine, iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, 
 iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, iConfucianMonastery, iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, 
@@ -1651,6 +1695,11 @@ iNumEras = 7
 iNumImprovements = 27
 (iLandWorked, iWaterWorked, iCityRuins, iHut, iFarm, iFishingBoats, iHighSeaFishingBoats, iWhalingBoats, iMine, iWorkshop, iLumbermill, iWindmill, iWatermill, iPlantation, 
 iSlavePlantation, iQuarry, iPasture, iCamp, iWell, iOffshorePlatform, iWinery, iCottage, iHamlet, iVillage, iTown, iFort, iForestPreserve) = range(iNumImprovements)
+
+iNumImprovements = 28
+(iLandWorked, iWaterWorked, iCityRuins, iTribalVillage, iFarm, iFishingBoats, iHighSeaFishingBoats, iWhalingBoats, iMine, iWorkshop,
+iLumbermill, iWindmill, iWatermill, iPlantation, iSlavePlantation, iQuarry, iPasture, iCamp, iWell, iOffshorePlatform,
+iOrchard, iCottage, iHamlet, iVillage, iTown, iFort, iNatureReserve, iMarineReserve) = range(iNumImprovements)
 
 #feature & terrain
 
