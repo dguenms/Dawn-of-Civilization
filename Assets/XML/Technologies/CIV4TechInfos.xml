@@ -783,7 +783,7 @@
 			<Button>,Art/Interface/Buttons/TechTree/Arithmetics.dds,Art/Interface/Buttons/TechTree_Atlas.dds,3,5</Button>
 		</TechInfo>
 
-		<TechInfo>
+		<!--TechInfo>
 			<Type>TECH_TRADITION</Type>
 			<Description>TXT_KEY_TECH_TRADITION</Description>
 			<Civilopedia>TXT_KEY_TECH_TRADITION_PEDIA</Civilopedia>
@@ -823,6 +823,46 @@
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Tradition.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,3</Button>
+		</TechInfo-->
+
+		<TechInfo>
+			<Type>TECH_WRITING</Type>
+			<Description>TXT_KEY_TECH_WRITING</Description>
+			<Civilopedia>TXT_KEY_TECH_WRITING_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<iCost>180</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<Era>ERA_ANCIENT</Era>
+			<iAsset>12</iAsset>
+			<bTrade>1</bTrade>
+			<bGoodyTech>1</bGoodyTech>
+			<bTechTrading>1</bTechTrading>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+			<AndPreReqs>
+				<PrereqTech>TECH_PROPERTY</PrereqTech>
+				<PrereqTech>TECH_CEREMONY</PrereqTech>
+			</AndPreReqs>
+			<Quote>TXT_KEY_TECH_WRITING_QUOTE</Quote>
+			<Sound>AS2D_TECH_GENERIC</Sound>
+			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
+			<Button>,Art/Interface/Buttons/TechTree/Writing.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,12</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -1048,7 +1088,7 @@
 			<Button>Art/Interface/Buttons/TechTree/Contract.dds</Button>
 		</TechInfo>
 
-		<TechInfo>
+		<!--TechInfo>
 			<Type>TECH_WRITING</Type>
 			<Description>TXT_KEY_TECH_WRITING</Description>
 			<Civilopedia>TXT_KEY_TECH_WRITING_PEDIA</Civilopedia>
@@ -1088,6 +1128,48 @@
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Writing.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,12</Button>
+		</TechInfo-->
+		
+		<TechInfo>
+			<Type>TECH_TRADITION</Type>
+			<Description>TXT_KEY_TECH_TRADITION</Description>
+			<Civilopedia>TXT_KEY_TECH_TRADITION_PEDIA</Civilopedia>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<iCost>380</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<Era>ERA_CLASSICAL</Era>
+			<iAsset>16</iAsset>
+			<bTrade>1</bTrade>
+			<bGoodyTech>0</bGoodyTech>
+			<iGridX>5</iGridX>
+			<iGridY>9</iGridY>
+			<CommerceFlexible>
+				<bFlexible>0</bFlexible>
+				<bFlexible>0</bFlexible>
+				<bFlexible>1</bFlexible>
+			</CommerceFlexible>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+			</Flavors>
+			<AndPreReqs>
+				<PrereqTech>TECH_ARITHMETICS</PrereqTech>
+				<PrereqTech>TECH_TRADITION</PrereqTech>
+			</AndPreReqs>
+			<Quote>TXT_KEY_TECH_TRADITION_QUOTE</Quote>
+			<Sound>AS2D_TECH_GENERIC</Sound>
+			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
+			<Button>,Art/Interface/Buttons/TechTree/Tradition.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,3</Button>
 		</TechInfo>
 
 		<TechInfo>
