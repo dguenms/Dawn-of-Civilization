@@ -837,6 +837,8 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<bTechTrading>1</bTechTrading>
+			<iGridX>4</iGridX>
+			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -1077,7 +1079,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_MASONRY</PrereqTech>
+				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_ARITHMETICS</PrereqTech>
@@ -1164,7 +1166,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_ARITHMETICS</PrereqTech>
-				<PrereqTech>TECH_TRADITION</PrereqTech>
+				<PrereqTech>TECH_WRITING</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_TRADITION_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -1196,7 +1198,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_TRADITION</PrereqTech>
+				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_CALENDAR</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_PRIESTHOOD_QUOTE</Quote>
@@ -1398,7 +1400,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
-				<PrereqTech>TECH_WRITING</PrereqTech>
+				<PrereqTech>TECH_TRADITION</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_LAW_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -1434,7 +1436,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_WRITING</PrereqTech>
+				<PrereqTech>TECH_TRADITION</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_PHILOSOPHY_QUOTE</Quote>
