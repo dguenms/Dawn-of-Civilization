@@ -660,7 +660,7 @@ def forceScreenUpdate (argsList):
 		
 	# Tech chooser update (forced from net message)
 	if ( argsList[0] == TECH_CHOOSER ):
-		techChooser.updateTechRecords(false)
+		techChooser.updateTechs(false)
 	# Main interface Screen
 	elif ( argsList[0] == MAIN_INTERFACE ):
 		mainInterface.updateScreen()
