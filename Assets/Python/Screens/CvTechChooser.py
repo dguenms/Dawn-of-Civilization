@@ -936,17 +936,17 @@ class CvTechChooser:
 			return
 
 		# Advanced Start
-		if player.getAdvancedStartPoints() > -1:
-			if inputClass.getFunctionName() == "AddTechButton":
-				if player.getAdvancedStartTechCost(self.iSelectedTech, True) != -1:
-					CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_TECH, self.iPlayer, -1, -1, self.iSelectedTech, True)
-					self.bTechBoxesDirty = True
-					self.bSelectedTechDirty = True
+		#if player.getAdvancedStartPoints() > -1:
+		#	if inputClass.getFunctionName() == "AddTechButton":
+		#		if player.getAdvancedStartTechCost(self.iSelectedTech, True) != -1:
+		#			CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_TECH, self.iPlayer, -1, -1, self.iSelectedTech, True)
+		#			self.bTechBoxesDirty = True
+		#			self.bSelectedTechDirty = True
 
-			elif inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED:
-				if inputClass.getButtonType() == WidgetTypes.WIDGET_TECH_TREE:
-					self.iSelectedTech = inputClass.getData1()
-					self.updateSelectedTech()
+		#	elif inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED:
+		#		if inputClass.getButtonType() == WidgetTypes.WIDGET_TECH_TREE:
+		#			self.iSelectedTech = inputClass.getData1()
+		#			self.updateSelectedTech()
 
 		return 0
 
