@@ -193,16 +193,14 @@ tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50))
 
 dTechGoals = {
 	iChina: (1, [iCompass, iPaper, iGunpowder, iPrintingPress]),
-	iBabylonia: (0, [iWriting, iCodeOfLaws, iMonarchy]),
-	iGreece: (0, [iLiterature, iDrama, iPhilosophy]),
-	iRome: (2, [iTheology, iMachinery, iCivilService]),
+	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
+	iGreece: (0, [iGeometry, iTradition, iAesthetics, iPhilosophy, iMedicine]),
+	iRome: (2, [iArchitecture, iPolitics, iMachinery, iCivilService, iTheology]),
 	iKorea: (1, [iPrintingPress]),
 	iPoland: (1, [iLiberalism]),
 }
 
-dEraGoals = {
-	iEngland: (2, [iIndustrial, iModern]),
-}
+dEraGoals = {}
 
 dWonderGoals = {
 	iEgypt: (1, [iPyramids, iGreatLibrary, iGreatLighthouse], True),
@@ -1578,19 +1576,23 @@ def onTechAcquired(iPlayer, iTech):
 				if iPlayer != iLoopPlayer: lose(iLoopPlayer, iGoal)
 				elif checkTechGoal(iLoopPlayer, lTechs): win(iLoopPlayer, iGoal)
 				
-		# third Japanese goal: be the first to discover five modern technologies
+		# third Japanese goal: be the first to discover ten Global and ten Digital technologies
 		if isPossible(iJapan, 2):
-			if countFirstDiscovered(iPlayer, iModern) >= 5:
+			if countFirstDiscovered(iPlayer, iModern) >= 10 and countFirstDiscovered(iPlayer, iFuture) >= 10:
 				if iPlayer == iJapan: win(iJapan, 2)
 				else: lose(iJapan, 2)
-	
-	# handle complete tech tree goals (final tech may not be discovered for the first time)
-	if isCompleteTechTree(iPlayer):
 				
-		# third German goal: be the first to finish the tech tree
-		if isPossible(iGermany, 2):
-			if iPlayer == iGermany: win(iGermany, 2)
-			else: lose(iGermany, 2)
+		# third English goal: be the first to discover ten Renaissance and ten Industrial technologies
+		if isPossible(iEngland, 2):
+			if countFirstDiscovered(iPlayer, iRenaissance) >= 10 and countFirstDiscovered(iPlayer, iIndustrial) >= 10:
+				if iPlayer == iEngland: win(iEngland, 2)
+				else: lose(iEngland, 2)
+				
+		# third German goal: be the first to discover ten Industrial and ten Global technologies
+		if isPossible(iGerman, 2):
+			if countFirstDiscovered(iPlayer, iIndustrial) >= 10 and countFirstDiscovered(iPlayer, iModern) >= 10:
+				if iPlayer == iGermany: win(iGermany, 2)
+				else: lose(iGermany, 2)
 			
 	# handle all "be the first to enter" goals
 	if not isEntered(iEra):
@@ -3056,10 +3058,13 @@ def getUHVHelp(iPlayer, iGoal):
 			
 	elif iPlayer == iBabylonia:
 		if iGoal == 0:
+			bConstruction = data.lFirstDiscovered[iConstruction] == iBabylonia
+			bArithmetics = data.lFirstDiscovered[iArithmetics] == iBabylonia
 			bWriting = data.lFirstDiscovered[iWriting] == iBabylonia
-			bCodeOfLaws = data.lFirstDiscovered[iCodeOfLaws] == iBabylonia
-			bMonarchy = data.lFirstDiscovered[iMonarchy] == iBabylonia
-			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCodeOfLaws) + localText.getText("TXT_KEY_TECH_CODE_OF_LAWS", ()) + ' ' + getIcon(bMonarchy) + localText.getText("TXT_KEY_TECH_MONARCHY", ()))
+			bCalendar = data.lFirstDiscovered[iCalendar] == iBabylonia
+			bContract = data.lFirstDiscovered[iContract] == iBabylonia
+			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()))
+			aHelp.append(getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()) + ' ' + getIcon(bContract) + localText.getText("TXT_KEY_TECH_CONTRACT", ()))
 		elif iGoal == 1:
 			pBestCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
 			bBestCity = isBestCity(iBabylonia, (76, 40), cityPopulation)
@@ -3071,10 +3076,13 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iGreece:
 		if iGoal == 0:
-			bLiterature = data.lFirstDiscovered[iLiterature] == iGreece
-			bDrama = data.lFirstDiscovered[iDrama] == iGreece
+			bGeometry = data.lFirstDiscovered[iGeometry] == iGreece
+			bTradition = data.lFirstDiscovered[iTradition] == iGreece
+			bAesthetics = data.lFirstDiscovered[iAesthetics] == iGreece
 			bPhilosophy = data.lFirstDiscovered[iPhilosophy] == iGreece
-			aHelp.append(getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bDrama) + localText.getText("TXT_KEY_TECH_DRAMA", ()) + ' ' + getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()))
+			bMedicine = data.lFirstDiscovered[iMedicine] == iGreece
+			aHelp.append(getIcon(bGeometry) + localText.getText("TXT_KEY_TECH_GEOMETRY", ()) + ' ' + getIcon(bTradition) + localText.getText("TXT_KEY_TECH_TRADITION", ()) + ' ' + getIcon(bAesthetics) + localText.getText("TXT_KEY_TECH_AESTHETICS", ()))
+			aHelp.append(getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()) + ' ' + getIcon(bMedicine) + localText.getText("TXT_KEY_TECH_MEDICINE", ()))
 		elif iGoal == 1:
 			bOracle = (getNumBuildings(iGreece, iOracle) > 0)
 			bParthenon = (getNumBuildings(iGreece, iParthenon) > 0)
@@ -3166,10 +3174,12 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCitiesSpain >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", (iCitiesSpain, 2)) + ' ' + getIcon(iCitiesFrance >= 3) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", (iCitiesFrance, 3)) + ' ' + getIcon(iCitiesEngland >= 1) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", (iCitiesEngland, 1)))
 			aHelp.append(getIcon(iCitiesCarthage >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE", (iCitiesCarthage, 2)) + ' ' + getIcon(iCitiesByzantium >= 4) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM", (iCitiesByzantium, 4)) + ' ' + getIcon(iCitiesEgypt >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", (iCitiesEgypt, 2)))
 		elif iGoal == 2:
+			bArchitecture = data.lFirstDiscovered[iArchitecture] == iRome
+			bPolitics = data.lFirstDiscovered[iPolitics] == iRome
 			bTheology = data.lFirstDiscovered[iTheology] == iRome
 			bMachinery = data.lFirstDiscovered[iMachinery] == iRome
 			bCivilService = data.lFirstDiscovered[iCivilService] == iRome
-			aHelp.append(getIcon(bTheology) + localText.getText("TXT_KEY_TECH_THEOLOGY", ()) + ' ' + getIcon(bMachinery) + localText.getText("TXT_KEY_TECH_MACHINERY", ()) + ' ' + getIcon(bCivilService) + localText.getText("TXT_KEY_TECH_CIVIL_SERVICE", ()))
+			aHelp.append(getIcon(bArchitecture) + localText.getText("TXT_KEY_TECH_ARCHITECTURE", ()) + ' ' + getIcon(bPolitics) + localText.getText("TXT_KEY_TECH_POLITICS", ()))
 
 	elif iPlayer == iTamils:
 		if iGoal == 0:
@@ -3249,8 +3259,9 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bKorea) + localText.getText("TXT_KEY_CIV_KOREA_SHORT_DESC", ()) + ' ' + getIcon(bManchuria) + localText.getText("TXT_KEY_VICTORY_MANCHURIA", ()) + ' ' + getIcon(bChina) + localText.getText("TXT_KEY_CIV_CHINA_SHORT_DESC", ()))
 			aHelp.append(getIcon(bIndochina) + localText.getText("TXT_KEY_VICTORY_INDOCHINA", ()) + ' ' + getIcon(bIndonesia) + localText.getText("TXT_KEY_CIV_INDONESIA_SHORT_DESC", ()) + ' ' + getIcon(bPhilippines) + localText.getText("TXT_KEY_VICTORY_PHILIPPINES", ()))
 		elif iGoal == 2:
-			iTechsFirstDiscovered = countFirstDiscovered(iJapan, iModern)
-			aHelp.append(getIcon(iTechsFirstDiscovered >= 5) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iModern).getText(), iTechsFirstDiscovered, 5)))
+			iGlobalTechs = countFirstDiscovered(iJapan, iModern)
+			iDigitalTechs = countFirstDiscovered(iJapan, iFuture)
+			aHelp.append(getIcon(iGlobalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iModern).getText(), iGlobalTechs, 10)) + ' ' + getIcon(iDigitalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iFuture).getText(), iDigitalTechs, 10)))
 			
 	elif iPlayer == iVikings:
 		if iGoal == 0:
@@ -3260,7 +3271,6 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			iRaidGold = data.iVikingGold
 			aHelp.append(getIcon(iRaidGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (iRaidGold, utils.getTurns(3000))))
-
 
 	elif iPlayer == iArabia:
 		if iGoal == 0:
@@ -3375,9 +3385,9 @@ def getUHVHelp(iPlayer, iGoal):
 			iEnglishSinks = data.iEnglishSinks
 			aHelp.append(getIcon(iEnglishNavy >= 25) + localText.getText("TXT_KEY_VICTORY_NAVY_SIZE", (iEnglishNavy, 25)) + ' ' + getIcon(iEnglishSinks >= 50) + localText.getText("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", (iEnglishSinks, 50)))
 		elif iGoal == 2:
-			bIndustrial = data.lFirstEntered[iIndustrial] == iEngland
-			bModern = data.lFirstEntered[iModern] == iEngland
-			aHelp.append(getIcon(bIndustrial) + localText.getText("TXT_KEY_VICTORY_FIRST_ENTER_INDUSTRIAL", ()) + ' ' + getIcon(bModern) + localText.getText("TXT_KEY_VICTORY_FIRST_ENTER_MODERN", ()))
+			iRenaissanceTechs = countFirstDiscovered(iEngland, iRenaissance)
+			iIndustrialTechs = countFirstDiscovered(iEngland, iIndustrial)
+			aHelp.append(getIcon(iRenaissanceTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iRenaissance).getText(), iRenaissanceTechs, 10)) + ' ' + getIcon(iIndustrialTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iIndustrial).getText(), iIndustrialTechs, 10)))
 
 	elif iPlayer == iHolyRome:
 		if iGoal == 0:
@@ -3591,6 +3601,10 @@ def getUHVHelp(iPlayer, iGoal):
 			bScandinavia = checkOwnedCiv(iGermany, iVikings)
 			aHelp.append(getIcon(bRome) + localText.getText("TXT_KEY_CIV_ITALY_SHORT_DESC", ()) + ' ' + getIcon(bFrance) + localText.getText("TXT_KEY_CIV_FRANCE_SHORT_DESC", ()) + ' ' + getIcon(bScandinavia) + localText.getText("TXT_KEY_VICTORY_SCANDINAVIA", ()))
 			aHelp.append(getIcon(bEngland) + localText.getText("TXT_KEY_CIV_ENGLAND_SHORT_DESC", ()) + ' ' + getIcon(bRussia) + localText.getText("TXT_KEY_CIV_RUSSIA_SHORT_DESC", ()))
+		elif iGoal == 2:
+			iIndustrialTechs = countFirstDiscovered(iGermany, iIndustrial)
+			iGlobalTechs = countFirstDiscovered(iGermany, iModern)
+			aHelp.append(getIcon(iIndustrialTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iIndustrial).getText(), iIndustrialTechs, 10)) + ' ' + getIcon(iGlobalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iModern).getText(), iGlobalTechs, 10)))
 
 	elif iPlayer == iAmerica:
 		if iGoal == 0:
