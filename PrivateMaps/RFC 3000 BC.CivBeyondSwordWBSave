@@ -11,25 +11,15 @@ BeginGame
 EndGame
 BeginTeam
 	TeamID=0, (Egypt)
-	Tech=TECH_LEVERAGE
-	Tech=TECH_AGRICULTURE
 EndTeam
 BeginTeam
 	TeamID=1, (China)
-	Tech=TECH_AGRICULTURE
-	Tech=TECH_MINING
 EndTeam
 BeginTeam
 	TeamID=2, (Babylonia)
-	Tech=TECH_LEVERAGE
-	Tech=TECH_PASTORALISM
-	Tech=TECH_POTTERY
-	Tech=TECH_TANNING
 EndTeam
 BeginTeam
 	TeamID=3, (Harappa)
-	Tech=TECH_LEVERAGE
-	Tech=TECH_AGRICULTURE
 EndTeam
 BeginTeam
 	TeamID=4, (Greece)

@@ -155,7 +155,7 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
+			<iGridX>1</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -187,7 +187,7 @@
 			<iAsset>4</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
+			<iGridX>1</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -219,7 +219,7 @@
 			<iAsset>4</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
+			<iGridX>1</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -256,7 +256,7 @@
 			<iAsset>4</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
+			<iGridX>1</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -285,7 +285,7 @@
 			<iAsset>4</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
+			<iGridX>1</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -314,7 +314,7 @@
 			<iAsset>4</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
+			<iGridX>1</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -346,7 +346,7 @@
 			<iAsset>4</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>2</iGridX>
+			<iGridX>1</iGridX>
 			<iGridY>13</iGridY>
 			<bRiverTrade>1</bRiverTrade>
 			<Flavors>
@@ -379,7 +379,7 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
+			<iGridX>2</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -413,7 +413,7 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
+			<iGridX>2</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -451,7 +451,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
+			<iGridX>2</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -484,7 +484,7 @@
 			<iAsset>8</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
+			<iGridX>2</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -521,7 +521,7 @@
 			<iAsset>8</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
+			<iGridX>2</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -558,7 +558,7 @@
 			<iAsset>8</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
+			<iGridX>2</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -595,7 +595,7 @@
 			<iAsset>8</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>3</iGridX>
+			<iGridX>2</iGridX>
 			<iGridY>13</iGridY>
 			<TerrainTrades>
 				<TerrainTrade>
@@ -636,7 +636,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
+			<iGridX>3</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -672,7 +672,7 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
+			<iGridX>3</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -711,7 +711,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
+			<iGridX>3</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -747,7 +747,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<bOpenBordersTrading>1</bOpenBordersTrading>
-			<iGridX>4</iGridX>
+			<iGridX>3</iGridX>
 			<iGridY>7</iGridY>
 			<CommerceFlexible>
 				<bFlexible>0</bFlexible>
@@ -837,7 +837,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<bTechTrading>1</bTechTrading>
-			<iGridX>4</iGridX>
+			<iGridX>3</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -879,7 +879,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
 			<bMapCentering>1</bMapCentering>
-			<iGridX>4</iGridX>
+			<iGridX>3</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -913,7 +913,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<iGridX>4</iGridX>
+			<iGridX>3</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -952,7 +952,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>5</iGridX>
+			<iGridX>4</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -987,7 +987,7 @@
 			<iAsset>16</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>5</iGridX>
+			<iGridX>4</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1021,7 +1021,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bBridgeBuilding>1</bBridgeBuilding>
-			<iGridX>5</iGridX>
+			<iGridX>4</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1058,7 +1058,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>5</iGridX>
+			<iGridX>4</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1143,7 +1143,7 @@
 			<iAsset>16</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>5</iGridX>
+			<iGridX>4</iGridX>
 			<iGridY>9</iGridY>
 			<CommerceFlexible>
 				<bFlexible>0</bFlexible>
@@ -1185,7 +1185,7 @@
 			<iAsset>16</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>5</iGridX>
+			<iGridX>4</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1218,7 +1218,7 @@
 			<iAsset>16</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>5</iGridX>
+			<iGridX>4</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1254,7 +1254,7 @@
 			<iAsset>20</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>5</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<!-- TODO: flavors -->
@@ -1287,7 +1287,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>5</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1321,7 +1321,7 @@
 			<iAsset>20</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>5</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1357,7 +1357,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bGoldTrading>1</bGoldTrading>
-			<iGridX>6</iGridX>
+			<iGridX>5</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1386,7 +1386,7 @@
 			<iAsset>20</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>5</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1419,7 +1419,7 @@
 			<iAsset>20</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>5</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1456,7 +1456,7 @@
 			<iAsset>20</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>6</iGridX>
+			<iGridX>5</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1499,7 +1499,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>7</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1539,7 +1539,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>7</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1606,7 +1606,7 @@
 			<iAsset>24</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>7</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1643,7 +1643,7 @@
 			<iAsset>24</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>7</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1681,7 +1681,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>7</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1719,7 +1719,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>7</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<!-- TODO: flavors -->
@@ -1749,7 +1749,7 @@
 			<iAsset>24</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>7</iGridX>
+			<iGridX>6</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1791,7 +1791,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bVassalTrading>1</bVassalTrading>
-			<iGridX>8</iGridX>
+			<iGridX>7</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1829,7 +1829,7 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>8</iGridX>
+			<iGridX>7</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1862,7 +1862,7 @@
 			<iAsset>28</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>8</iGridX>
+			<iGridX>7</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1898,7 +1898,7 @@
 			<iAsset>28</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>8</iGridX>
+			<iGridX>7</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<!-- TODO: flavors -->
@@ -1938,7 +1938,7 @@
 			<iAsset>28</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>8</iGridX>
+			<iGridX>7</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -1980,7 +1980,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>8</iGridX>
+			<iGridX>7</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2061,7 +2061,7 @@
 			<iAsset>28</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>8</iGridX>
+			<iGridX>7</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2094,7 +2094,7 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>9</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2135,7 +2135,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bIrrigation>1</bIrrigation>
-			<iGridX>9</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2213,7 +2213,7 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>9</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2250,7 +2250,7 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>9</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2286,7 +2286,7 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>9</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2368,7 +2368,7 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>9</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<!-- TODO: flavors -->
@@ -2404,7 +2404,7 @@
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>9</iGridX>
+			<iGridX>8</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2441,7 +2441,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>10</iGridX>
+			<iGridX>9</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2546,7 +2546,7 @@
 			<iAsset>36</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>10</iGridX>
+			<iGridX>9</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2583,7 +2583,7 @@
 			<iAsset>36</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>10</iGridX>
+			<iGridX>9</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2616,7 +2616,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bMapTrading>1</bMapTrading>
-			<iGridX>10</iGridX>
+			<iGridX>9</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2650,7 +2650,7 @@
 			<iAsset>36</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>10</iGridX>
+			<iGridX>9</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2694,7 +2694,7 @@
 			<iAsset>36</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>10</iGridX>
+			<iGridX>9</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2809,7 +2809,7 @@
 			<iAsset>36</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>10</iGridX>
+			<iGridX>9</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2883,7 +2883,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>11</iGridX>
+			<iGridX>10</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2913,7 +2913,7 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>11</iGridX>
+			<iGridX>10</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2943,7 +2943,7 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>11</iGridX>
+			<iGridX>10</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -2985,7 +2985,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bExtraWaterSeeFrom>1</bExtraWaterSeeFrom>
-			<iGridX>11</iGridX>
+			<iGridX>10</iGridX>
 			<iGridY>7</iGridY>
 			<TerrainTrades>
 				<TerrainTrade>
@@ -3028,7 +3028,7 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>11</iGridX>
+			<iGridX>10</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3108,7 +3108,7 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>11</iGridX>
+			<iGridX>10</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3190,7 +3190,7 @@
 			<iAsset>40</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>11</iGridX>
+			<iGridX>10</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3261,7 +3261,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>12</iGridX>
+			<iGridX>11</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3297,7 +3297,7 @@
 			<iAsset>44</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>12</iGridX>
+			<iGridX>11</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3331,7 +3331,7 @@
 			<iAsset>44</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>12</iGridX>
+			<iGridX>11</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3365,7 +3365,7 @@
 			<iAsset>44</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>12</iGridX>
+			<iGridX>11</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3401,7 +3401,7 @@
 			<iAsset>44</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>12</iGridX>
+			<iGridX>11</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<!-- TODO: flavors -->
@@ -3511,7 +3511,7 @@
 			<iAsset>44</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>12</iGridX>
+			<iGridX>11</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3553,7 +3553,7 @@
 			<iAsset>44</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>12</iGridX>
+			<iGridX>11</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3593,7 +3593,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>13</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3630,7 +3630,7 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>13</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3665,7 +3665,7 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>13</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3698,7 +3698,7 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>13</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3766,7 +3766,7 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>13</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3804,7 +3804,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bDefensivePactTrading>1</bDefensivePactTrading>
-			<iGridX>13</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3874,7 +3874,7 @@
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>13</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3946,7 +3946,7 @@
 			<iAsset>52</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>14</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -3979,7 +3979,7 @@
 			<iAsset>52</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>14</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4013,7 +4013,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>14</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4054,7 +4054,7 @@
 			<iAsset>52</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>14</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4122,7 +4122,7 @@
 			<iAsset>52</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>14</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4158,7 +4158,7 @@
 			<iAsset>52</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>14</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4196,7 +4196,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>14</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4239,7 +4239,7 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>15</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4312,7 +4312,7 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>15</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4352,7 +4352,7 @@
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>15</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4389,7 +4389,7 @@
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>15</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4455,7 +4455,7 @@
 			<iAsset>60</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>15</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves>
 				<DomainExtraMove>
@@ -4576,7 +4576,7 @@
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>15</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4616,7 +4616,7 @@
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>15</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4660,7 +4660,7 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>16</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4698,7 +4698,7 @@
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>16</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4731,7 +4731,7 @@
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>16</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4805,7 +4805,7 @@
 			<iAsset>60</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>16</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4885,7 +4885,7 @@
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>16</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -4958,7 +4958,7 @@
 			<iAsset>64</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>16</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5036,7 +5036,7 @@
 			<iAsset>64</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>16</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5076,7 +5076,7 @@
 			<iAsset>64</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>17</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5113,7 +5113,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>17</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5191,7 +5191,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>17</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5231,7 +5231,7 @@
 			<iAsset>64</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>17</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5269,7 +5269,7 @@
 			<iAsset>64</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>17</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5301,7 +5301,7 @@
 			<iAsset>60</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>17</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<!-- TODO: flavors -->
@@ -5423,7 +5423,7 @@
 			<iAsset>60</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>17</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<!-- TODO: flavor -->
@@ -5464,7 +5464,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>18</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5502,7 +5502,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>18</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5532,7 +5532,7 @@
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>18</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5565,7 +5565,7 @@
 			<iAsset>68</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>18</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5604,7 +5604,7 @@
 			<iAsset>68</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>18</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5641,7 +5641,7 @@
 			<iAsset>68</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>18</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5670,7 +5670,7 @@
 			<iAsset>68</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>18</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5758,7 +5758,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>19</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5794,7 +5794,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bMapVisible>1</bMapVisible>
-			<iGridX>19</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5831,7 +5831,7 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>19</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5864,7 +5864,7 @@
 			<iAsset>72</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>19</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5897,7 +5897,7 @@
 			<iAsset>72</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>19</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5935,7 +5935,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>19</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -5975,7 +5975,7 @@
 			<iAsset>72</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>19</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6018,7 +6018,7 @@
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>20</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6050,7 +6050,7 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>20</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6094,7 +6094,7 @@
 			<iAsset>76</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>20</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6125,7 +6125,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>20</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6158,7 +6158,7 @@
 			<iAsset>76</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>20</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6198,7 +6198,7 @@
 			<iAsset>76</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>20</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6239,7 +6239,7 @@
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
 			<bIgnoreIrrigation>1</bIgnoreIrrigation>
-			<iGridX>20</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6278,7 +6278,7 @@
 			<iPower>2</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>21</iGridX>
+			<iGridX>20</iGridX>
 			<iGridY>3</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6320,7 +6320,7 @@
 			<iAsset>80</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>21</iGridX>
+			<iGridX>20</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6355,7 +6355,7 @@
 			<iAsset>80</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>21</iGridX>
+			<iGridX>20</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6396,7 +6396,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>21</iGridX>
+			<iGridX>20</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6432,7 +6432,7 @@
 			<iAsset>80</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>21</iGridX>
+			<iGridX>20</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6469,7 +6469,7 @@
 			<iAsset>80</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>22</iGridX>
+			<iGridX>21</iGridX>
 			<iGridY>5</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6499,7 +6499,7 @@
 			<iAsset>80</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>22</iGridX>
+			<iGridX>21</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
@@ -6533,7 +6533,7 @@
 			<bRepeat>1</bRepeat>
 			<bTrade>0</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<iGridX>23</iGridX>
+			<iGridX>22</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>

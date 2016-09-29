@@ -1,5 +1,6 @@
 from Consts import *
 from RFCUtils import utils
+from sets import Set
 
 ### Class for easier tech specification ###
 
@@ -17,11 +18,13 @@ class Techs:
 		lTechs.update([i for i in range(iNumTechs) if gc.getTechInfo(i).getEra() <= self.era])
 		lTechs.update(self.techs)
 		lTechs.difference_update(self.exceptions)
+		
 		return list(lTechs)
 
 ### Starting tech methods ###
 
 def getScenarioTechs(iScenario, iPlayer):
+
 	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 	for iScenarioType in reversed(range(iScenario+1)):
 		if iCivilization in lStartingTechs[iScenarioType]:
@@ -32,9 +35,11 @@ def getStartingTechs(iPlayer):
 	
 def initScenarioTechs(iScenario):
 	for iPlayer in range(iNumTotalPlayers):
+		if tBirth[iPlayer] > utils.getScenarioStartYear(): continue
+	
 		iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 		if iCivilization in lStartingTechs[iScenario]:
-			initTechs(iPlayer, lStartingTechs[iScenario][iCivilization])
+			initTechs(iPlayer, lStartingTechs[iScenario][iCivilization].list())
 			
 def initPlayerTechs(iPlayer):
 	initTechs(iPlayer, getStartingTechs(iPlayer))
@@ -48,11 +53,6 @@ def initTechs(iPlayer, lTechs):
 	iCurrentEra = pPlayer.getCurrentEra()
 	pPlayer.setStartingEra(iCurrentEra)
 	
-def techs(lEraTechs, lExtraTechs=[]):
-	lTechs = list(lEraTechs)
-	lTechs.extend(lExtraTechs)
-	return lambda: lTechs
-	
 ### General functions ###
 		
 def initBirthYear(iPlayer):
@@ -64,15 +64,13 @@ def init():
 
 ### Starting technologies ###
 
-lMedievalTechs = [iFishing, iTheWheel, iAgriculture, iHunting, iMysticism, iMining, iSailing, iPottery, iAnimalHusbandry, iArchery, 
-		  iMeditation, iPolytheism, iMasonry, iHorsebackRiding, iPriesthood, iMonotheism, iBronzeWorking, iWriting, iMetalCasting, iIronWorking,
-		  iAesthetics, iMathematics, iAlphabet, iMonarchy, iCompass, iLiterature, iCalendar, iConstruction, iCurrency, iMachinery,
-		  iDrama, iEngineering, iCodeOfLaws, iFeudalism, iMusic, iPhilosophy, iCivilService, iTheology, iOptics, iPatronage, 
-		  iDivineRight, iPaper, iGuilds, iEducation, iBanking, iGunpowder]
-
 lStartingTechs = [
 {
 iCivNative : 	Techs([iTanning, iWorship]),
+iCivEgypt :	Techs([iMining, iAgriculture, iWorship]),
+iCivHarappa : 	Techs([iPottery, iAgriculture, iWorship]),
+iCivChina :	Techs([iTanning, iMining, iAgriculture]),
+iCivBabylonia :	Techs([iMasonry, iLeverage, iDivination], column=1, exceptions=[iTanning]),
 iCivIndia :	Techs([iSmelting, iLeverage, iProperty, iCeremony, iAlloys], column=1),
 iCivGreece :	Techs([iWriting], column=2),
 iCivPersia :	Techs([iAlloys, iRiding, iWriting], column=2, exceptions=[iSeafaring]),
