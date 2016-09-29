@@ -166,11 +166,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BAB1</Tag>
-		<English>Be the first to discover Writing, Code of Laws and Monarchy</English>
-		<French>Etre le premier &#224; d&#233;couvrir l'Ecriture, le Livre des Lois et la Monarchie</French>
-		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Schrift, Gesetzgebung und Monarchie</German>
-		<Italian>Devi essere il primo a scoprire scrittura, codice di leggi e monarchia</Italian>
-		<Spanish>Ser el primero en descubrir la Escritura, la Legislaci&#243;n y la Monarqu&#237;a</Spanish>
+		<English>Be the first to discover Construction, Arithmetics, Writing, Calendar and Contract</English>
+		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Bauwesen, Arithmetik, Schrift, Kalender und Vertragswesen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_BAB2_TITLE</Tag>
@@ -596,11 +593,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ENG3</Tag>
-		<English>Be the first to enter Industrial and Modern eras</English>
-		<French>Etre le premier &#224; entrer dans les &#232;res industrielle et moderne</French>
-		<German>Erreichen Sie vor allen anderen Zivilisationen das Industriezeitalter und die Moderne</German>
-		<Italian>Devi essere il primo a entrare nell'et&#224; industriale e in quella moderna</Italian>
-		<Spanish>Ser el primero en entrar en las eras Industrial y Moderna</Spanish>
+		<English>Be the first to discover ten Renaissance and ten Industrial technologies</English>
+		<German>Entdecken Sie als erste Zivilisation zehn Technologien der Renaissance und zehn Technologien des Industriezeitalters</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1_TITLE</Tag>
@@ -705,8 +699,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GER3</Tag>
-		<English>Be the first to complete the tech tree</English>
-		<German>Erforschen Sie vor allen anderen Zivilisationen s&#228;mtliche Technologien des Technologiebaums</German>
+		<English>Be the first to discover ten Industrial and ten Global era technologies</English>
+		<German>Entdecken Sie als erste Zivilisation zehn Technologien des Industriezeitalters und zehn Technologien des Globalzeitalters</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE1_TITLE</Tag>
@@ -715,11 +709,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE1</Tag>
-		<English>Be the first to discover Literature, Drama and Philosophy</English>
-		<French>Etre le premier &#224; d&#233;couvrir la Litt&#233;rature, le Th&#233;&#226;tre et la Philosophie</French>
-		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Literatur, Drama und Philosophie</German>
-		<Italian>Devi essere il primo a scoprire letteratura, drammaturgia e filosofia</Italian>
-		<Spanish>Ser el primero en descubrir la Literatura, el Drama y la Filosof&#237;a</Spanish>
+		<English>Be the first to discover Geometry, Tradition, Aesthetics, Philosophy, iMedicine</English>
+		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Geometrie, Tradition, Ästhetik, Philosophie und Medizin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE2_TITLE</Tag>
@@ -1091,8 +1082,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_JAP3</Tag>
-		<English>Be the first to discover five modern technologies</English>
-		<German>Erforschen Sie als erster f&#252;nf Technologien der Moderne</German>
+		<English>Be the first to discover ten Global and ten Digital technologies</English>
+		<German>Erforschen vor allen anderen Zivilisation zehn Technologien des Globalzeitalters und zehn Technologien des Digitalzeitalters</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM1_TITLE</Tag>
