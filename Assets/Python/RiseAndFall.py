@@ -246,16 +246,16 @@ class RiseAndFall:
 		self.flipStartingTerritory()
 		
 		self.initStartingReligions()
+		
+		Civilizations.initScenarioTechs(utils.getScenario())
 	
-		if utils.getScenario() == i3000BC:
+		if utils.getScenario() == i3000BC:		
 			self.create4000BCstartingUnits()
 			
 		if utils.getScenario() == i600AD:
-			Civilizations.initScenarioTechs(i600AD)
 			self.create600ADstartingUnits()
 			
 		if utils.getScenario() == i1700AD:
-			Civilizations.initScenarioTechs(i1700AD)
 			self.create1700ADstartingUnits()
 			self.init1700ADDiplomacy()
 			self.prepareColonists()
