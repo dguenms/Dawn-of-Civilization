@@ -202,8 +202,8 @@ class AIWars:
 			iBestInfantry = utils.getBestInfantry(iPlayer)
 			iBestSiege = utils.getBestSiege(iPlayer)
 			
-			if iPlayer == iGreece:
-				iBestInfantry = iGreekHoplite
+			if iPlayer == con.iGreece:
+				iBestInfantry = iHoplite
 				iBestSiege = iCatapult
 			
 			utils.makeUnitAI(iBestInfantry, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 + iExtra)
