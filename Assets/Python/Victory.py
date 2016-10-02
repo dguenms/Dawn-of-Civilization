@@ -1589,7 +1589,7 @@ def onTechAcquired(iPlayer, iTech):
 				else: lose(iEngland, 2)
 				
 		# third German goal: be the first to discover ten Industrial and ten Global technologies
-		if isPossible(iGerman, 2):
+		if isPossible(iGermany, 2):
 			if countFirstDiscovered(iPlayer, iIndustrial) >= 10 and countFirstDiscovered(iPlayer, iModern) >= 10:
 				if iPlayer == iGermany: win(iGermany, 2)
 				else: lose(iGermany, 2)

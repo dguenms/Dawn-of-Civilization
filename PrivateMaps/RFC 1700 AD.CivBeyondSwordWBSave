@@ -9262,10 +9262,10 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -12410,7 +12410,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -13024,13 +13024,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -16106,7 +16106,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -20681,7 +20681,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -21165,7 +21165,7 @@ EndPlot
 BeginPlot
 	x=49,y=42
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,29,38,45,
@@ -21225,7 +21225,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
@@ -22146,7 +22146,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
@@ -22561,7 +22561,7 @@ EndPlot
 BeginPlot
 	x=52,y=37
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -22588,7 +22588,7 @@ EndPlot
 BeginPlot
 	x=52,y=41
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -22665,7 +22665,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
@@ -22807,7 +22807,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
@@ -23203,7 +23203,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -23335,7 +23335,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ENGLISH_ROYAL_EXCHANGE
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_ACADEMY
@@ -23576,7 +23576,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Netherlands)
@@ -24195,7 +24195,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
@@ -24251,40 +24251,40 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=23, (France)
@@ -24327,7 +24327,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_FRENCH_SALON
@@ -24752,7 +24752,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=23, (France)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=23, (France)
 	EndUnit
 	BeginCity
 		CityOwner=23, (France)
@@ -24765,7 +24765,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		ReligionType=RELIGION_CATHOLICISM
 		Player23Culture=100, (France)
@@ -24788,7 +24788,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -25193,7 +25193,7 @@ EndPlot
 BeginPlot
 	x=57,y=46
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROMAN_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -25267,25 +25267,25 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_CANNON, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_BOMBARD, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_CANNON, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Netherlands)
@@ -25304,7 +25304,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_DUTCH_DIKE
@@ -26208,10 +26208,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=25, (Holy Rome)
@@ -26225,7 +26225,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
@@ -26270,10 +26270,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Germany)
@@ -26286,7 +26286,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_MILITARY_ACADEMY
@@ -26336,10 +26336,10 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Germany)
@@ -26353,7 +26353,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
@@ -26706,7 +26706,7 @@ EndPlot
 BeginPlot
 	x=60,y=40
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=22,25,35,44,45,
@@ -26737,16 +26737,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent2)
@@ -26789,7 +26789,7 @@ EndPlot
 BeginPlot
 	x=60,y=46
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,22,23,24,25,38,39,44,45,
@@ -26876,16 +26876,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=44, (Independent)
@@ -26947,7 +26947,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
@@ -27858,7 +27858,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=25, (Holy Rome)
@@ -27872,7 +27872,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
@@ -27931,28 +27931,28 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_BOMBARD, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=25, (Holy Rome)
@@ -27968,7 +27968,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_HOLY_ROMAN_RATHAUS
 		BuildingType=BUILDING_MILITARY_ACADEMY
@@ -28012,28 +28012,28 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON, UnitOwner=39, (Germany)
@@ -28231,7 +28231,7 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Netherlands)
@@ -29531,10 +29531,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=25, (Holy Rome)
@@ -29605,16 +29605,16 @@ BeginPlot
 		UnitType=UNIT_POLISH_WINGED_HUSSAR, UnitOwner=28, (Poland)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Poland)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Poland)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Poland)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Poland)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=28, (Poland)
@@ -29635,7 +29635,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_POLISH_SEJMIK
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
@@ -29662,7 +29662,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=39, (Germany)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Germany)
@@ -30543,7 +30543,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
@@ -30610,7 +30610,7 @@ EndPlot
 BeginPlot
 	x=67,y=42
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -30713,10 +30713,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Poland)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=28, (Poland)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=28, (Poland)
 	EndUnit
 	BeginCity
 		CityOwner=28, (Poland)
@@ -31127,7 +31127,7 @@ EndPlot
 BeginPlot
 	x=68,y=39
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -31248,7 +31248,7 @@ BeginPlot
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_AMPHITHEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_MILITARY_ACADEMY
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
@@ -31692,7 +31692,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
@@ -31827,10 +31827,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -31843,7 +31843,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_CATHEDRAL
@@ -31903,10 +31903,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -31922,7 +31922,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
@@ -33403,7 +33403,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -33760,7 +33760,7 @@ EndPlot
 BeginPlot
 	x=73,y=42
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
@@ -33871,28 +33871,28 @@ BeginPlot
 		UnitType=UNIT_CUIRASSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=26, (Russia)
@@ -33918,7 +33918,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_CATHEDRAL
@@ -33961,7 +33961,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -34414,10 +34414,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -34781,7 +34781,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_ISLAMIC_SHRINE
@@ -35775,7 +35775,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_SPIRAL_MINARET
@@ -35925,7 +35925,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -36351,7 +36351,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -37271,7 +37271,7 @@ BeginPlot
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -37540,7 +37540,7 @@ EndPlot
 BeginPlot
 	x=81,y=39
 	BonusType=BONUS_WINE
-	ImprovementType=IMPROVEMENT_WINERY
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
@@ -37615,7 +37615,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_IRANIAN_CARAVANSERAI
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_CATHEDRAL
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
@@ -37725,7 +37725,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -38063,7 +38063,7 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_IRANIAN_CARAVANSERAI
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		BuildingType=BUILDING_ZOROASTRIAN_TEMPLE
@@ -38953,7 +38953,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_IRANIAN_CARAVANSERAI
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
@@ -39088,7 +39088,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -39374,10 +39374,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginCity
 		CityOwner=34, (Mughals)
@@ -40275,7 +40275,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginCity
 		CityOwner=34, (Mughals)
@@ -41367,7 +41367,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=26, (Russia)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=26, (Russia)
 	EndUnit
 	BeginCity
 		CityOwner=26, (Russia)
@@ -41756,19 +41756,19 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_MUGHAL_SIEGE_ELEPHANT, UnitOwner=34, (Mughals)
@@ -43084,7 +43084,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Netherlands)
@@ -43609,10 +43609,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=34, (Mughals)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=34, (Mughals)
 	EndUnit
 	BeginCity
 		CityOwner=34, (Mughals)
@@ -44526,7 +44526,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (China)
 	EndUnit
 	BeginCity
 		CityOwner=44, (China)
@@ -45795,7 +45795,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -46302,7 +46302,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -46315,7 +46315,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_CONFUCIAN_CATHEDRAL
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
@@ -46638,10 +46638,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Netherlands)
@@ -46700,16 +46700,16 @@ BeginPlot
 		UnitType=UNIT_THAI_CHANG_SUEK, UnitOwner=36, (Thailand)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=36, (Thailand)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=36, (Thailand)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=36, (Thailand)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=36, (Thailand)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=36, (Thailand)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=36, (Thailand)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=36, (Thailand)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=36, (Thailand)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=36, (Thailand)
@@ -46736,7 +46736,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_THAI_HO_TRAI
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
@@ -47282,7 +47282,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -47352,40 +47352,40 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=1, (China)
@@ -47834,7 +47834,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -48163,10 +48163,10 @@ BeginPlot
 		UnitType=UNIT_DUTCH_EAST_INDIAMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Netherlands)
@@ -48773,7 +48773,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -48785,7 +48785,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
 		ReligionType=RELIGION_CONFUCIANISM
@@ -48870,10 +48870,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -49284,7 +49284,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -49709,7 +49709,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=1, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=1, (China)
 	EndUnit
 	BeginCity
 		CityOwner=1, (China)
@@ -49810,7 +49810,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (China)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (China)
 	EndUnit
 	BeginCity
 		CityOwner=44, (China)
@@ -50235,10 +50235,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginCity
 		CityOwner=12, (Korea)
@@ -50692,22 +50692,22 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=12, (Korea)
@@ -50735,7 +50735,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
@@ -51458,7 +51458,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_RIFLEMAN, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Netherlands)
@@ -51953,7 +51953,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginCity
 		CityOwner=15, (Japan)
@@ -52402,34 +52402,34 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=15, (Japan)
@@ -52460,7 +52460,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_GROCER
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
@@ -53687,7 +53687,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=15, (Japan)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=15, (Japan)
 	EndUnit
 	BeginCity
 		CityOwner=15, (Japan)

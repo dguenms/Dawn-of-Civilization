@@ -528,7 +528,6 @@
 			<RouteType>NONE</RouteType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
-			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
@@ -550,7 +549,6 @@
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
-			</FeatureStructs>
 			</FeatureStructs>
 			<HotKey>KB_O</HotKey>
 			<bAltDown>0</bAltDown>
