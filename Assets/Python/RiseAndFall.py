@@ -32,6 +32,173 @@ iEscapePeriod = 30
 
 class RiseAndFall:
 
+##################################################
+### Secure storage & retrieval of script data ###
+################################################
+	
+
+	def getNewCiv( self ):
+		return sd.scriptDict['lNewCiv'].pop()
+
+	def setNewCiv( self, iNewValue ):
+		sd.scriptDict['lNewCiv'].append(iNewValue)
+		
+	def getRespawnCiv(self):
+		return sd.scriptDict['iRespawnCiv']
+		
+	def setRespawnCiv(self, iNewValue):
+		sd.scriptDict['iRespawnCiv'] = iNewValue
+
+	def getNewCivFlip( self ):
+		return sd.scriptDict['iNewCivFlip']
+
+	def setNewCivFlip( self, iNewValue ):
+		sd.scriptDict['iNewCivFlip'] = iNewValue
+
+	def getOldCivFlip( self ):
+		return sd.scriptDict['iOldCivFlip']
+
+	def setOldCivFlip( self, iNewValue ):
+		sd.scriptDict['iOldCivFlip'] = iNewValue
+		
+	def getTempTopLeft( self ):
+		return sd.scriptDict['tempTopLeft']
+
+	def setTempTopLeft( self, tNewValue ):
+		sd.scriptDict['tempTopLeft'] = tNewValue
+
+	def getTempBottomRight( self ):
+		return sd.scriptDict['tempBottomRight']
+
+	def setTempBottomRight( self, tNewValue ):
+		sd.scriptDict['tempBottomRight'] = tNewValue
+		
+	def setTempPlots(self, lPlots):
+		sd.scriptDict['lTempPlots'] = lPlots
+		
+	def getTempPlots(self):
+		return sd.scriptDict['lTempPlots']
+
+	def getSpawnWar( self ):
+		return sd.scriptDict['iSpawnWar']
+
+	def setSpawnWar( self, iNewValue ):
+		sd.scriptDict['iSpawnWar'] = iNewValue
+
+	def getColonistsAlreadyGiven( self, iCiv ):
+		return sd.scriptDict['lColonistsAlreadyGiven'][iCiv]
+
+	def setColonistsAlreadyGiven( self, iCiv, iNewValue ):
+		sd.scriptDict['lColonistsAlreadyGiven'][iCiv] = iNewValue
+		
+	def changeColonistsAlreadyGiven(self, iCiv, iChange):
+		sd.scriptDict['lColonistsAlreadyGiven'][iCiv] += iChange
+
+	def getExplorationTurn( self, iCiv ):
+		return sd.scriptDict['lExplorationTurn'][iCiv]
+
+	def setExplorationTurn( self, iCiv, iNewValue ):
+		sd.scriptDict['lExplorationTurn'][iCiv] = iNewValue
+
+	def getNumCities( self, iCiv ):
+		return sd.scriptDict['lNumCities'][iCiv]
+
+	def setNumCities( self, iCiv, iNewValue ):
+		sd.scriptDict['lNumCities'][iCiv] = iNewValue
+		
+	def getSpawnDelay( self, iCiv ):
+		return sd.scriptDict['lSpawnDelay'][iCiv]
+
+	def setSpawnDelay( self, iCiv, iNewValue ):
+		sd.scriptDict['lSpawnDelay'][iCiv] = iNewValue
+
+	def getFlipsDelay( self, iCiv ):
+		return sd.scriptDict['lFlipsDelay'][iCiv]
+
+	def setFlipsDelay( self, iCiv, iNewValue ):
+		sd.scriptDict['lFlipsDelay'][iCiv] = iNewValue
+
+	def getBetrayalTurns( self ):
+		return sd.scriptDict['iBetrayalTurns']
+
+	def setBetrayalTurns( self, iNewValue ):
+		sd.scriptDict['iBetrayalTurns'] = iNewValue
+
+	def getLatestFlipTurn( self ):
+		return sd.scriptDict['iLatestFlipTurn']
+
+	def setLatestFlipTurn( self, iNewValue ):
+		sd.scriptDict['iLatestFlipTurn'] = iNewValue
+
+	def getLatestRebellionTurn( self, iCiv ):
+		return gc.getPlayer(iCiv).getLatestRebellionTurn()
+
+	def setLatestRebellionTurn( self, iCiv, iNewValue ):
+		gc.getPlayer(iCiv).setLatestRebellionTurn(iNewValue)
+
+	def getRebelCiv( self ):
+		return sd.scriptDict['iRebelCiv']
+
+	def setRebelCiv( self, iNewValue ):
+		sd.scriptDict['iRebelCiv'] = iNewValue
+		
+	def getExileData( self, i ):
+		return sd.scriptDict['lExileData'][i]
+
+	def setExileData( self, i, iNewValue ):
+		sd.scriptDict['lExileData'][i] = iNewValue
+	
+	def getTempFlippingCity( self ):
+		return sd.scriptDict['tempFlippingCity']
+
+	def setTempFlippingCity( self, tNewValue ):
+		sd.scriptDict['tempFlippingCity'] = tNewValue
+
+	def getCheatersCheck( self, i ):
+		return sd.scriptDict['lCheatersCheck'][i]
+
+	def setCheatersCheck( self, i, iNewValue ):
+		sd.scriptDict['lCheatersCheck'][i] = iNewValue
+
+	def getBirthTurnModifier( self, iCiv ):
+		return sd.scriptDict['lBirthTurnModifier'][iCiv]
+
+	def setBirthTurnModifier( self, iCiv, iNewValue ):
+		sd.scriptDict['lBirthTurnModifier'][iCiv] = iNewValue
+
+	def getDeleteMode( self, i ):
+		return sd.scriptDict['lDeleteMode'][i]
+
+	def setDeleteMode( self, i, iNewValue ):
+		sd.scriptDict['lDeleteMode'][i] = iNewValue
+
+	def getFirstContactConquerors( self, iCiv ):
+		return sd.scriptDict['lFirstContactConquerors'][iCiv]
+
+	def setFirstContactConquerors( self, iCiv, iNewValue ):
+		sd.scriptDict['lFirstContactConquerors'][iCiv] = iNewValue
+
+	def getCheatMode( self ):
+		return sd.scriptDict['bCheatMode']
+
+	def setCheatMode( self, bNewValue ):
+		sd.scriptDict['bCheatMode'] = bNewValue
+
+	def setTempFlippingCity(self, tPlot):
+		sd.scriptDict['tTempFlippingCity'] = tPlot
+
+	def getTempFlippingCity(self):
+		return sd.scriptDict['tTempFlippingCity']
+
+	def setFirstContactMongols(self, iCiv, iValue):
+		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
+		sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)] = iValue
+
+	def getFirstContactMongols(self, iCiv):
+		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
+		return sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)]
+		
+>>>>>>> Adjust tech constants
 ###############
 ### Popups ###
 #############
@@ -362,7 +529,7 @@ class RiseAndFall:
 			
 	def prepareColonists(self):
 		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
-			data.players[iPlayer].iAstronomyTurn = getTurnForYear(1700)
+			data.players[iPlayer].iExplorationTurn = getTurnForYear(1700)
 			
 		data.players[iVikings].iColonistsAlreadyGiven = 1
 		data.players[iSpain].iColonistsAlreadyGiven = 7
@@ -635,7 +802,7 @@ class RiseAndFall:
 		
 		if utils.isYearIn(1350, 1918):
 			for iPlayer in [iSpain, iEngland, iFrance, iPortugal, iNetherlands, iVikings, iGermany]:
-				if iGameTurn == data.players[iPlayer].iAstronomyTurn + 1 + data.players[iPlayer].iColonistsAlreadyGiven * 8:
+				if iGameTurn == data.players[iPlayer].iExplorationTurn + 1 + data.players[iPlayer].iColonistsAlreadyGiven * 8:
 					self.giveColonists(iPlayer)
 					
 		if iGameTurn == getTurnForYear(710)-1:
@@ -1752,7 +1919,7 @@ class RiseAndFall:
 					if tPlot:
 						x, y = tPlot
 						gc.getPlayer(iCiv).initUnit(iGalley, x, y, UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
-						if teamCiv.isHasTech(iCivilService):
+						if teamCiv.isHasTech(iSteel):
 							if iCiv == iVikings:
 								gc.getPlayer(iCiv).initUnit(iVikingHuscarl, x, y, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 								gc.getPlayer(iCiv).initUnit(iVikingHuscarl, x, y, UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
@@ -2995,10 +3162,6 @@ class RiseAndFall:
 		
 	def assignTechs(self, iPlayer):
 		Civilizations.initPlayerTechs(iPlayer)
-			
-		# Leoreth: Babylonian UHV: make them lose if they don't have Monarchy already
-		if iPlayer == iPersia:
-			vic.onTechAcquired(iPersia, iMonarchy)
 				
 		sta.onCivSpawn(iPlayer)
 

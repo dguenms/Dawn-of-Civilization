@@ -19,7 +19,7 @@ class PlayerData:
 		self.setup()
 
 	def setup(self):
-		
+	
 		# Rise and Fall
 		
 		self.iColonistsAlreadyGiven = 0
@@ -30,7 +30,7 @@ class PlayerData:
 		self.iResurrections = 0
 		self.iLastTurnAlive = 0
 		
-		self.iAstronomyTurn = 1500
+		self.iExplorationTurn = 1500
 		
 		# Religions
 		
@@ -110,7 +110,6 @@ class PlayerData:
 		if iNewValue == 1 and self.getGoal(iGoal) == 0: return
 		self.lGoals[iGoal] = iNewValue
 	
-
 class GameData:
 
 	def __init__(self):

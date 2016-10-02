@@ -358,7 +358,7 @@ class Plague:
 		else:
 			pPlayer = gc.getPlayer(iPlayer)
 			if data.players[iPlayer].iPlagueCountdown == 0: #vulnerable
-				if not gc.getTeam(pPlayer.getTeam()).isHasTech(iMedicine):
+				if not gc.getTeam(pPlayer.getTeam()).isHasTech(iMicrobiology):
 					iHealth = self.calculateHealth(iPlayer)
 					if iHealth < 14: #no spread for iHealth >= 74 years
 						return True
@@ -392,7 +392,7 @@ class Plague:
 		if city.hasBuilding(iPlague):
 			if not data.players[iOldOwner].bFirstContactPlague: #don't infect if first contact plague
 				if data.players[iNewOwner].iPlagueCountdown <= 0 and gc.getGame().getGameTurn() > getTurnForYear(tBirth[iNewOwner]) + utils.getTurns(iImmunity): #skip immunity in this case (to prevent expoiting of being immune to conquer weak civs), but not for the new born civs
-					if not gc.getTeam(gc.getPlayer(iNewOwner).getTeam()).isHasTech(iMedicine): #but not permanent immunity
+					if not gc.getTeam(gc.getPlayer(iNewOwner).getTeam()).isHasTech(iMicrobiology): #but not permanent immunity
 						print("acquiring plague")
 						self.spreadPlague(iNewOwner)
 						self.infectCitiesNear(iNewOwner, city.getX(), city.getY())
