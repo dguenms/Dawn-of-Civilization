@@ -159,18 +159,18 @@ class Barbs:
 			
 		#pirates in Mediterranean
 		if utils.isYearIn(-210, 50):
-			self.checkSpawn(iBarbarian, iTrireme, 1, (49, 37), (72, 44), self.spawnPirates, iGameTurn, 8, 0)
+			self.checkSpawn(iBarbarian, iWarGalley, 1, (49, 37), (72, 44), self.spawnPirates, iGameTurn, 8, 0)
 		#pirates in Barbary coast
 		if not gc.getPlayer(iMoors).isAlive():
 			if utils.isYearIn(-50, 700):
-				self.checkSpawn(iBarbarian, iTrireme, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 18, 0)
+				self.checkSpawn(iBarbarian, iWarGalley, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 18, 0)
 			elif utils.isYearIn(700, 1400):
-				self.checkSpawn(iBarbarian, iTrireme, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 8, 0)
+				self.checkSpawn(iBarbarian, iWarGalley, 1, (46, 30), (62, 39), self.spawnPirates, iGameTurn, 8, 0)
 		#pirates in Indian ocean
 		if utils.isYearIn(-650, 700):
-			self.checkSpawn(iBarbarian, iTrireme, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 18, 0)
+			self.checkSpawn(iBarbarian, iWarGalley, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 18, 0)
 		elif utils.isYearIn(700, 1700):
-			self.checkSpawn(iBarbarian, iTrireme, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 10, 0)
+			self.checkSpawn(iBarbarian, iHeavyGalley, 1, (72, 20), (91, 36), self.spawnPirates, iGameTurn, 10, 0)
 
 		# Leoreth: Barbarians in Anatolia (Hittites), replace Hattusas spawn
 		if utils.isYearIn(-2000, -800):

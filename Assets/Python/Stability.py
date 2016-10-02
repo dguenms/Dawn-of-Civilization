@@ -1450,7 +1450,7 @@ def calculateStability(iPlayer):
 		if iCivicOrganization not in [iCivicRepresentation, iCivicEgalitarianism, iCivicTotalitarianism]: iCivicStability -= 5
 		if iCivicLabor in [iCivicSlavery, iCivicAgrarianism] and iCivicOrganization != iCivicTotalitarianism: iCivicStability -= 5
 		
-	if tPlayer.isHasTech(iCommunism):
+	if tPlayer.isHasTech(iCivilRights):
 		if iCivicOrganization not in [iCivicEgalitarianism, iCivicTotalitarianism]: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(iCorporation):
