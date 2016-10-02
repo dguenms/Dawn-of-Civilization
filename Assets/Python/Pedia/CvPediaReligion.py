@@ -90,7 +90,7 @@ class CvPediaReligion:
 			screen.attachImageButton(panel, "", gc.getBuildingInfo(iOrthodoxCathedral).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iOrthodoxCathedral, 1, False)
 		elif self.iReligion == iProtestantism:
 			screen.attachImageButton(panel, "", gc.getReligionInfo(iCatholicism).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iCatholicism, 1, False)
-			screen.attachImageButton(panel, "", gc.getTechInfo(iPrintingPress).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iPrintingPress, 1, False)
+			screen.attachImageButton(panel, "", gc.getTechInfo(iPrinting).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iPrinting, 1, False)
 			
 	def placeEffects(self):
 		screen = self.top.getScreen()
