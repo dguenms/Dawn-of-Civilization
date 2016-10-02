@@ -109,7 +109,7 @@ class RFCUtils:
 
 	def isDefenderUnit(self, unit):
 		iUnitType = unit.getUnitType()
-		if (iUnitType >= iSpearman and iUnitType <= iChineseChokonu):
+		if (iUnitType >= iSpearman and iUnitType <= iChokonu):
 			return True
 		return False
 
@@ -325,7 +325,11 @@ class RFCUtils:
 									continue
 									
 								# Leoreth: ignore workers as well
+<<<<<<< HEAD
 								if unit.getUnitType() in [iWorker, iIndianPunjabiWorker, iBrazilianMadeireiro]:
+=======
+								if unit.getUnitType() in [con.iWorker, con.iPunjabiWorker, con.iMadeireiro]:
+>>>>>>> Python constants adjustment
 									continue
 								
 								if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():

@@ -318,7 +318,7 @@ class CvRFCEventHandler:
 		if iOwner == iItaly and (city.getX(), city.getY()) == Areas.getCapital(iItaly) and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iItaly])+3:
 			city.setPopulation(7)
 			
-			for iBuilding in [iLibrary, iGrocer, iTemple+4*gc.getPlayer(iItaly).getStateReligion(), iMarket, iItalianArtStudio, iAqueduct, iCourthouse, iWalls]:
+			for iBuilding in [iLibrary, iGrocer, iTemple+4*gc.getPlayer(iItaly).getStateReligion(), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
 				city.setHasRealBuilding(iBuilding, True)
 				
 			gc.getPlayer(iItaly).AI_updateFoundValues(False)
@@ -374,7 +374,7 @@ class CvRFCEventHandler:
 		sta.onCombatResult(pWinningUnit.getOwner(), pLosingUnit.getOwner(), iUnitPower)
 		
 		# catch slaves by defeating native and barbarian Pombos or Impis
-		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iZuluImpi, iCongolesePombos]:
+		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iImpi, iPombos]:
 			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
 				if gc.getPlayer(pWinningUnit.getOwner()).getCivics(2) == iCivicSlavery:
 					iRand = gc.getGame().getSorenRandNum(5, "Caught slaves?")
@@ -384,7 +384,7 @@ class CvRFCEventHandler:
 						CyInterface().addMessage(pWinningUnit.getOwner(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
 
 		# Maya Holkans give food to closest city on victory
-		if pWinningUnit.getUnitType() == iMayanHolkan:
+		if pWinningUnit.getUnitType() == iHolkan:
 			iOwner = pWinningUnit.getOwner()
 			city = gc.getMap().findCity(pWinningUnit.getX(), pWinningUnit.getY(), iOwner, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 			if city: 

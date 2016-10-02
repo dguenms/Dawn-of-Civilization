@@ -192,11 +192,11 @@ tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50))
 ### GOAL CONSTANTS ###
 
 dTechGoals = {
-	iChina: (1, [iCompass, iPaper, iGunpowder, iPrintingPress]),
+	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
 	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iGeometry, iTradition, iAesthetics, iPhilosophy, iMedicine]),
 	iRome: (2, [iArchitecture, iPolitics, iMachinery, iCivilService, iTheology]),
-	iKorea: (1, [iPrintingPress]),
+	iKorea: (1, [iPrinting]),
 	iPoland: (1, [iCivilLiberties]),
 }
 
@@ -1040,7 +1040,7 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# first goal: build five Tambos and a road along the Andean coast by 1500 AD
 		if isPossible(iInca, 0):
-			if isRoad(iInca, lAndeanCoast) and getNumBuildings(iInca, iIncanTambo) >= 5:
+			if isRoad(iInca, lAndeanCoast) and getNumBuildings(iInca, iTambo) >= 5:
 				win(iInca, 0)
 				
 		if iGameTurn == getTurnForYear(1500):
@@ -1139,7 +1139,7 @@ def checkTurn(iGameTurn, iPlayer):
 					
 			# second goal: build six pagan temples and sacrificial altars by 1650 AD
 			if isPossible(iAztecs, 1):
-				if getNumBuildings(iAztecs, iPaganTemple) >= 6 and getNumBuildings(iAztecs, iAztecSacrificialAltar) >= 6:
+				if getNumBuildings(iAztecs, iPaganTemple) >= 6 and getNumBuildings(iAztecs, iSacrificialAltar) >= 6:
 					win(iAztecs, 1)
 			
 			if iGameTurn == getTurnForYear(1650):
@@ -1668,8 +1668,8 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	# second Harappan goal: build three Baths and two Walls by 1500 BC
 	elif iPlayer == iHarappa:
 		if isPossible(iHarappa, 1):
-			if iBuilding in [iHarappanBath, iWalls]:
-				iNumBaths = getNumBuildings(iHarappa, iHarappanBath)
+			if iBuilding in [iReservoir, iWalls]:
+				iNumBaths = getNumBuildings(iHarappa, iReservoir)
 				iNumWalls = getNumBuildings(iHarappa, iWalls)
 				if iNumBaths >= 3 and iNumWalls >= 2:
 					win(iHarappa, 1)
@@ -1688,11 +1688,11 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	# first Roman goal: build 6 Barracks, 5 Aqueducts, 4 Amphitheatres and 3 Forums by 100 AD
 	elif iPlayer == iRome:
 		if isPossible(iRome, 0):
-			if iBuilding in [iBarracks, iAqueduct, iAmphitheatre, iRomanForum]:
+			if iBuilding in [iBarracks, iAqueduct, iAmphitheatre, iForum]:
 				iNumBarracks = getNumBuildings(iRome, iBarracks)
 				iNumAqueducts = getNumBuildings(iRome, iAqueduct)
 				iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
-				iNumForums = getNumBuildings(iRome, iRomanForum)
+				iNumForums = getNumBuildings(iRome, iForum)
 				if iNumBarracks >= 6 and iNumAqueducts >= 5 and iNumAmphitheatres >= 4 and iNumForums >= 3:
 					win(iRome, 0)
 					
@@ -1729,9 +1729,9 @@ def onBuildingBuilt(iPlayer, iBuilding):
 		# second Aztec goal: build 6 pagan temples and sacrificial altars
 		if not pAztecs.isReborn():
 			if isPossible(iAztecs, 1):
-				if iBuilding in [iPaganTemple, iAztecSacrificialAltar]:
+				if iBuilding in [iPaganTemple, iSacrificialAltar]:
 					iTemples = getNumBuildings(iAztecs, iPaganTemple)
-					iAltars = getNumBuildings(iAztecs, iAztecSacrificialAltar)
+					iAltars = getNumBuildings(iAztecs, iSacrificialAltar)
 					if iTemples >= 6 and iAltars >= 6:
 						win(iAztecs, 1)
 						
@@ -1755,8 +1755,8 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	# first Incan goal: build 5 tambos and a road along the Andean coast by 1500 AD
 	elif iPlayer == iInca:
 		if isPossible(iInca, 0):
-			if iBuilding == iIncanTambo:
-				if isRoad(iInca, lAndeanCoast) and getNumBuildings(iInca, iIncanTambo) >= 5:
+			if iBuilding == iTambo:
+				if isRoad(iInca, lAndeanCoast) and getNumBuildings(iInca, iTambo) >= 5:
 					win(iInca, 0)
 				
 def checkWonderGoal(iPlayer, lWonders):
@@ -1862,7 +1862,7 @@ def onUnitPillage(iPlayer, iGold, iUnit):
 			data.iVikingGold += iGold
 			
 	elif iPlayer == iMoors:
-		if isPossible(iMoors, 2) and iUnit == iMoorishCorsair:
+		if isPossible(iMoors, 2) and iUnit == iCorsair:
 			data.iMoorishGold += iGold
 		
 def onCityCaptureGold(iPlayer, iGold):
@@ -3041,7 +3041,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bCompass = data.lFirstDiscovered[iCompass] == iChina
 			bPaper = data.lFirstDiscovered[iPaper] == iChina
 			bGunpowder = data.lFirstDiscovered[iGunpowder] == iChina
-			bPrintingPress = data.lFirstDiscovered[iPrintingPress] == iChina
+			bPrintingPress = data.lFirstDiscovered[iPrinting] == iChina
 			aHelp.append(getIcon(bCompass) + localText.getText("TXT_KEY_TECH_COMPASS", ()) + ' ' + getIcon(bPaper) + localText.getText("TXT_KEY_TECH_PAPER", ()) + ' ' + getIcon(bGunpowder) + localText.getText("TXT_KEY_TECH_GUNPOWDER", ()) + ' ' + getIcon(bPrintingPress) + localText.getText("TXT_KEY_TECH_PRINTING_PRESS", ()))
 		elif iGoal == 2:
 			iGoldenAgeTurns = data.iChineseGoldenAgeTurns
@@ -3049,7 +3049,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iHarappa:
 		if iGoal == 1:
-			iNumBaths = getNumBuildings(iHarappa, iHarappanBath)
+			iNumBaths = getNumBuildings(iHarappa, iReservoir)
 			iNumWalls = getNumBuildings(iHarappa, iWalls)
 			aHelp.append(getIcon(iNumBaths >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_BATHS", (iNumBaths, 3)) + ' ' + getIcon(iNumWalls >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_WALLS", (iNumWalls, 2)))
 		elif iGoal == 2:
@@ -3162,7 +3162,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumBarracks = getNumBuildings(iRome, iBarracks)
 			iNumAqueducts = getNumBuildings(iRome, iAqueduct)
 			iNumAmphitheatres = getNumBuildings(iRome, iAmphitheatre)
-			iNumForums = getNumBuildings(iRome, iRomanForum)
+			iNumForums = getNumBuildings(iRome, iForum)
 			aHelp.append(getIcon(iNumBarracks >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_BARRACKS", (iNumBarracks, 6)) + ' ' + getIcon(iNumAqueducts >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_AQUEDUCTS", (iNumAqueducts, 5)) + ' ' + getIcon(iNumAmphitheatres >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_AMPHITHEATRES", (iNumAmphitheatres, 4)) + ' ' + getIcon(iNumForums >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_FORUMS", (iNumForums, 3)))
 		elif iGoal == 1:
 			iCitiesSpain = getNumCitiesInArea(iRome, Areas.getNormalArea(iSpain, False))
@@ -3460,7 +3460,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iInca:
 		if iGoal == 0:
 			bRoad = isRoad(iInca, lAndeanCoast)
-			iTambos = getNumBuildings(iInca, iIncanTambo)
+			iTambos = getNumBuildings(iInca, iTambo)
 			aHelp.append(getIcon(bRoad) + localText.getText("TXT_KEY_VICTORY_ANDEAN_ROAD", ()) + ' ' + getIcon(iTambos >= 5) + localText.getText("TXT_KEY_VICTORY_NUM_TAMBOS", (iTambos, 5)))
 		elif iGoal == 1:
 			iTreasury = pInca.getGold()
@@ -3513,7 +3513,7 @@ def getUHVHelp(iPlayer, iGoal):
 				aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
 			elif iGoal == 1:
 				iTemples = getNumBuildings(iAztecs, iPaganTemple)
-				iAltars = getNumBuildings(iAztecs, iAztecSacrificialAltar)
+				iAltars = getNumBuildings(iAztecs, iSacrificialAltar)
 				aHelp.append(getIcon(iTemples >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_TEMPLES", (iTemples, 6)) + " " + getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_ALTARS", (iAltars, 6)))
 			elif iGoal == 2:
 				iEnslavedUnits = data.iAztecSlaves

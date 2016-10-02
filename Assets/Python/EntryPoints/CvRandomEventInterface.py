@@ -4495,7 +4495,7 @@ def doTradingCompanyConquerors2(argsList):
 
 	if tSeaPlot != -1:
 		if iPlayer == iNetherlands:
-			utils.makeUnit(iDutchEastIndiaman, iPlayer, tSeaPlot, 1)
+			utils.makeUnit(iEastIndiaman, iPlayer, tSeaPlot, 1)
 		else:
 			utils.makeUnit(iGalleon, iPlayer, tSeaPlot, 1)
 	
