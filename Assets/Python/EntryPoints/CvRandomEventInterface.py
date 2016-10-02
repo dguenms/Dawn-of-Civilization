@@ -1103,9 +1103,9 @@ def canTriggerInfluenza(argsList):
 	if player.getCurrentEra() <= iIndustrial:
 		return false
 	
-	iMedicine = CvUtil.findInfoTypeNum(gc.getTechInfo,gc.getNumTechInfos(),'TECH_PHARMACEUTICALS')
+	iMicrobiology = CvUtil.findInfoTypeNum(gc.getTechInfo,gc.getNumTechInfos(),'TECH_MICROBIOLOGY')
 	
-	if team.isHasTech(iMedicine):
+	if team.isHasTech(iMicrobiology):
 		return false
 						
 	return true
