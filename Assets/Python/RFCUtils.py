@@ -313,11 +313,7 @@ class RFCUtils:
 									continue
 									
 								# Leoreth: ignore workers as well
-<<<<<<< HEAD
-								if unit.getUnitType() in [iWorker, iIndianPunjabiWorker, iBrazilianMadeireiro]:
-=======
-								if unit.getUnitType() in [con.iWorker, con.iPunjabiWorker, con.iMadeireiro]:
->>>>>>> Python constants adjustment
+								if unit.getUnitType() in [iWorker, iPunjabiWorker, iMadeireiro
 									continue
 								
 								if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():
@@ -1409,7 +1405,7 @@ class RFCUtils:
 		
 	def getBestInfantry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lInfantryList = [iInfantry, iRifleman, iMusketman, iHeavySwordsman, iCrossbowman, iSwordsman, iAxeman, iWarrior]
+		lInfantryList = [iInfantry, iRifleman, iMusketman, iArquebusier, iPikeman, iHeavySwordsman, iCrossbowman, iSwordsman, iLightSwordsman, iMilitia]
 		
 		for iBaseUnit in lInfantryList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1420,7 +1416,7 @@ class RFCUtils:
 		
 	def getBestCavalry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lCavalryList = [iCavalry, iCuirassier, iKnight, iHorseArcher, iChariot]
+		lCavalryList = [iCavalry, iDragoon, iHussar, iCuirassier, iPistolier, iLancer, iHorseArcher, iChariot]
 		
 		for iBaseUnit in lCavalryList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1431,7 +1427,7 @@ class RFCUtils:
 		
 	def getBestSiege(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lSiegeList = [iCannon, iBombard, iTrebuchet, iCatapult]
+		lSiegeList = [iHowitzer, iArtillery, iCannon, iBombard, iTrebuchet, iCatapult]
 		
 		for iBaseUnit in lSiegeList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1442,7 +1438,7 @@ class RFCUtils:
 				
 	def getBestCounter(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lCounterList = [iMarine, iGrenadier, iPikeman, iSpearman]
+		lCounterList = [iMarine, iGrenadier, iPikeman, iHeavySpearman, iSpearman]
 		
 		for iBaseUnit in lCounterList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1456,7 +1452,7 @@ class RFCUtils:
 		if iPlayer == iBarbarian: iPlayer = iIndependent
 		
 		pPlayer = gc.getPlayer(iPlayer)
-		lDefenderList = [iInfantry, iMachineGun, iRifleman, iLongbowman, iCrossbowman, iArcher, iWarrior]
+		lDefenderList = [iInfantry, iMachineGun, iRifleman, iMusketman, iArquebusier, iCrossbowman, iArcher, iWarrior]
 		
 		for iBaseUnit in lDefenderList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())

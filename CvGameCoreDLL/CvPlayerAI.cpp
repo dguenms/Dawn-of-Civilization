@@ -4991,115 +4991,90 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								switch (getID())
 								{
 								case EGYPT:
-									if (iI == WRITING || iI == SAILING)
-										iValue /= 3;
-									if (iI == MEDITATION || iI == PRIESTHOOD)
-										iValue /= 5;
 									if (iI == MASONRY)
 										iValue *= 3;
-                                    if (iI == MONOTHEISM)
-                                        iValue /= 5;
+									if (iI == DIVINATION || iI == PHILOSOPHY || iI == PRIESTHOOD)
+										iValue *= 2;
 									break;
 								case CHINA:
-									if (iI == MEDITATION || iI == MONOTHEISM || iI == FISHING)
+									if (iI == DIVINATION || iI == SAILING)
 										iValue /= 2;
-									//if (iI == PRIESTHOOD)
-									//	iValue *= 2;
-									if (iI == ALPHABET || iI == SAILING)
-										iValue /= 5;
-									if (iI == MATHEMATICS || iI == CALENDAR)
+									if (iI == AESTHETICS || iI == CONTRACT)
 										iValue *= 4;
 									if (iI == WRITING && (!(GET_PLAYER((PlayerTypes)BABYLONIA).isHuman()) || GET_TEAM((TeamTypes)BABYLONIA).isHasTech((TechTypes)WRITING)))
 										iValue *= 4;	// fair conditions for the Babylonian UHV, otherwise even more luck dependent
-									if (iI == GUNPOWDER || iI == PAPER || iI == PRINTING_PRESS || iI == COMPASS)
+									if (iI == GUNPOWDER || iI == PAPER || iI == PRINTING || iI == COMPASS)
 										iValue *= 2;
+									if (iI == FIREARMS)
+										iValue /= 5;
 									if (iI == CIVIL_SERVICE) {
 										iValue *= 3;
 										iValue /= 2;
 									}
 									if (iI == CONSTRUCTION)
 										iValue *= 2;
-									if (iI == ARCHERY)
-										iValue *= 2;
-									if (iI == HUNTING)
-										iValue *= 2;
-									if (iI == ENGINEERING)
+									if (iI == URBANISM)
 										iValue /= 4;
                                     if (iI == EDUCATION) {
                                         iValue *= 2;
                                         iValue /= 3;
                                     }
-									if (iI == OPTICS || iI == ASTRONOMY || iI == THEOLOGY || iI == BANKING || iI == EDUCATION || iI == ECONOMICS || iI == MILITARY_TRADITION)
+									if (iI == EXPLORATION || iI == OPTICS || iI == ASTRONOMY || iI == THEOLOGY || iI == FINANCE || iI == EDUCATION || iI == ECONOMICS || iI == LOGISTICS)
 										iValue /= 4;
-									if (iI == LIBERALISM)
+									if (iI == CIVIL_LIBERTIES || iI == HUMANITIES)
 										iValue /= 10;
 									break;
 								case BABYLONIA:
-									if (iI == MEDITATION || iI == CALENDAR || iI == MONOTHEISM)
-										iValue /= 3;
-									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded(JUDAISM))
-										iValue = 0;
-									if (iI == WRITING || iI == CODEOFLAWS)
+									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
+										iValue /= 5;
+									if (iI == WRITING || iI == CONTRACT || iI == CALENDAR)
 										iValue *= 3;
-									if (iI == MASONRY || iI == POLYTHEISM)
+									if (iI == MASONRY || iI == PROPERTY || iI == DIVINATION || iI == CONSTRUCTION)
 										iValue *= 2;
-									if (iI == MONARCHY && !GC.getGame().isReligionFounded(JUDAISM))
-										iValue *= 2;
-									if (iI == MATHEMATICS || iI == BRONZEWORKING || iI == FEUDALISM)
+									if (iI == GEOMETRY || iI == ALLOYS || iI == STEEL)
 										iValue /= 3;
 									break;
 								case HARAPPA:
-									if (iI == MASONRY || iI == ANIMAL_HUSBANDRY || iI == POTTERY)
+									if (iI == MASONRY || iI == PASTORALISM || iI == POTTERY)
 										iValue *= 2;
-									if (iI == MONOTHEISM || iI == POLYTHEISM || iI == MEDITATION)
+									if (iI == WORSHIP || iI == DIVINATION || iI == CEREMONY)
 										iValue /= 5;
 								case GREECE:
-									if (iI == MONOTHEISM || iI == MEDITATION || iI == MONARCHY)
-										iValue /= 3;
 									if (iI == THEOLOGY)
+									{
 										iValue *= 2;
 										iValue /= 3;
-									//2000
-									/*if (iI == WRITING || iI == ALPHABET || iI == LITERATURE || iI == MATHEMATICS || iI == DRAMA || iI == PHILOSOPHY)
-										iValue *= 2;*/
-									//2000 - end
-									//1800
-									if (iI == METALCASTING)
+									}
+									if (iI == METAL_CASTING)
 										iValue *= 2;
-									if (iI == ALPHABET || iI == PHILOSOPHY || iI == DRAMA || iI == POLYTHEISM || iI == AESTHETICS || iI == LITERATURE)
+									if (iI == WRITING || iI == PHILOSOPHY || iI == AESTHETICS || iI == DIVINATION || iI == PHILOSOPHY || iI == TRADITION || iI == MEDICINE)
 										iValue *= 3;
-									if (iI == SAILING)
+									if (iI == SAILING || iI == SHIPBUILDING || iI == NAVIGATION)
 										iValue *= 4;
-									if (iI == MATHEMATICS)
-										iValue /= 2;
+									if (iI == ARITHMETICS || iI == GEOMETRY)
+										iValue *= 2;
 									if (iI == CALENDAR)
 										iValue /= 3;
-									if (iI == MACHINERY || iI == PAPER || iI == PRINTING_PRESS)
+									if (iI == MACHINERY || iI == PAPER || iI == PRINTING)
 										iValue /= 2;
 									//1800 - end
 									break;
 								case INDIA:
-									if (iI == MEDITATION || iI == PRIESTHOOD)
+									if (iI == CEREMONY || iI == PRIESTHOOD)
 										iValue *= 20;
-									if (iI == MONOTHEISM)
-										iValue /= 10;
-									if (iI == WRITING  || iI == MONARCHY || iI == CALENDAR)
-										iValue /= 3;
 									if (iI == ENGINEERING || iI == THEOLOGY || iI == CIVIL_SERVICE)
 										iValue /= 2;
 									break;
 								case PHOENICIA:
 									if (iI == COMPASS)
 										iValue *= 2;
-									if (iI == MONOTHEISM)
-										iValue /= 2;
-									if (iI == HORSEBACK_RIDING || iI == CONSTRUCTION)
+									if (iI == RIDING || iI == CURRENCY)
 										iValue *= 3;
 									break;
 								case POLYNESIA:
-									if (iI == COMPASS || iI == PRIESTHOOD || iI == MASONRY)
+									if (iI == COMPASS || iI == DIVINATION || iI == MASONRY)
 										iValue *= 2;
-									if (iI == BRONZEWORKING || iI == IRONWORKING)
+									if (iI == ALLOYS || iI == BLOOMERY)
 										iValue /= 3;
 									break;
 								case PERSIA:
@@ -5111,27 +5086,21 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									break;
 								case ROME:
-                                    if (iI == MEDITATION || iI == CALENDAR)
+                                    if (iI == CALENDAR)
                                         iValue /= 2;
-                                    if (iI == MONOTHEISM && GET_PLAYER((PlayerTypes)PERSIA).isAlive())
-                                        iValue *= 2;
                                     if (iI == THEOLOGY)
                                         iValue *= 3;
-                                    if (iI == LITERATURE || iI == CODEOFLAWS || iI == MONARCHY)
+                                    if (iI == CURRENCY || iI == LAW || iI == POLITICS)
                                         iValue *= 2;
-                                    if (iI == CONSTRUCTION) {
+                                    if (iI == CONSTRUCTION || iI == ENGINEERING) {
                                         iValue *= 3;
                                         iValue /= 2;
                                     }
-                                    if (iI == MACHINERY || iI == COMPASS)
-                                        iValue /= 2;
-									if (iI == DIVINERIGHT)
-										iValue /= 4;
 									break;
 								case TAMILS:
-									if (iI == METALCASTING || iI == COMPASS || iI == CALENDAR)
+									if (iI == METAL_CASTING || iI == COMPASS || iI == CALENDAR)
 										iValue *= 2;
-									if (iI == LIBERALISM || iI == EDUCATION || iI == RIFLING)
+									if (iI == SCIENTIFIC_METHOD || iI == EDUCATION || iI == REPLACEABLE_PARTS)
 										iValue /= 2;
 									break;
 								case ETHIOPIA:
@@ -5143,34 +5112,32 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                 case KOREA:
                                     if (iI == OPTICS)
                                         iValue /= 4;
-                                    if (iI == ASTRONOMY || iI == RIFLING || iI == LIBERALISM)
+                                    if (iI == EXPLORATION || iI == REPLACEABLE_PARTS || iI == SCIENTIFIC_METHOD)
                                         iValue /= 4;
-                                    if (iI == PRINTING_PRESS || iI == GUNPOWDER)
+                                    if (iI == PRINTING || iI == GUNPOWDER)
                                         iValue *= 3;
 								case MAYA:
 									if (iI == CALENDAR)
 										iValue *= 4;
-									if (iI == CODEOFLAWS)
+									if (iI == AESTHETICS)
 										iValue *= 3;
 									break;
                                 case BYZANTIUM:
-                                    if (iI == OPTICS || iI == GUNPOWDER || iI == ASTRONOMY)
+                                    if (iI == OPTICS || iI == FIREARMS || iI == EXPLORATION)
                                         iValue /= 2;
-									else if (iI == BANKING)
+									else if (iI == FINANCE)
 										iValue /= 5;
                                     break;
 								case JAPAN:
-									if (iI == CONSTRUCTION)
-										iValue /= 4;
-									if (iI == GUNPOWDER)
+									if (iI == FIREARMS)
 										iValue /= 3;
 									if (iI == MACHINERY || iI == GUILDS)
 										iValue /= 2;
-									if (iI == OPTICS)
+									if (iI == OPTICS || iI == EXPLORATION)
 										iValue /= 4;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == LIBERALISM)
+									if (iI == ASTRONOMY || iI == REPLACEABLE_PARTS || iI == SCIENTIFIC_METHOD)
 										iValue /= 2;
-									if (iI == FEUDALISM)
+									if (iI == FEUDALISM || iI == FORTIFICATION)
 										iValue *= 4;
 									if (iI == ROBOTICS)
 										iValue *= 4;
@@ -5178,7 +5145,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case VIKINGS:
 									if (iI == MACHINERY || iI == CIVIL_SERVICE)
 										iValue *= 3;
-									if (iI == COMPASS || iI == MILITARY_TRADITION)
+									if (iI == COMPASS)
 										iValue *= 2;
 									break;
 								case ARABIA:
@@ -5186,11 +5153,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 4;
 										iValue /= 3;
 									}*/
-									if (iI == PHILOSOPHY)
+									if (iI == SCHOLARSHIP || iI == ALCHEMY)
 									{
 										iValue *= 3;
 									}
-									else if (iI == BANKING || iI == GUNPOWDER || iI == MILITARY_TRADITION || iI == MILITARY_SCIENCE) {
+									else if (iI == FINANCE || iI == FIREARMS || iI == URBANISM) {
 									    iValue /= 5;
 									}
 									else if (iI == PAPER)
@@ -5201,91 +5168,73 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case TIBET:
 									if (iI == PHILOSOPHY)
 										iValue *= 3;
-									if (iI == ENGINEERING || iI == PAPER || iI == THEOLOGY)
+									if (iI == ENGINEERING || iI == PAPER || iI == THEOLOGY || iI == CLERGY)
 										iValue *= 2;
 									break;
 								case KHMER:
-									if (iI == PHILOSOPHY || iI == SAILING || iI == CALENDAR)
+									if (iI == PHILOSOPHY || iI == SAILING || iI == CALENDAR || iI == CIVIL_SERVICE)
 										iValue *= 3;
-									if (iI == ALPHABET || iI == CURRENCY || iI == OPTICS)
+									if (iI == CURRENCY || iI == EXPLORATION)
 										iValue /= 3;
 									if (iI == AESTHETICS)
 										iValue *= 2;
 									break;
 								case INDONESIA:
-									if (iI == AESTHETICS)
+									if (iI == AESTHETICS || iI == ARTISANRY)
 										iValue *= 3;
-									else if (iI == ALPHABET)
-										iValue /= 3;
-									else if (iI == OPTICS)
+									else if (iI == EXPLORATION)
 										iValue /= 2;
 									break;
 								case MOORS:
-									if (iI == OPTICS || iI == GUILDS)
+									if (iI == EXPLORATION || iI == GUILDS)
 										iValue /= 4;
 									if (iI == CIVIL_SERVICE)
 										iValue *= 2;
 								case SPAIN:
-									if (iI == MEDITATION)
-										iValue /= 2;
-									if (iI == OPTICS || iI == ASTRONOMY)
+									if (iI == CARTOGRAPHY || iI == EXPLORATION)
 										iValue *= 5;
-									if (iI == RIFLING)
+									if (iI == FIREARMS || iI == REPLACEABLE_PARTS)
 										iValue *= 3;
 									if (iI == GUILDS || iI == GUNPOWDER || iI == CHEMISTRY) {
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == DIVINERIGHT) {
-										iValue *= 2;
-									}
 									break;
 								case FRANCE:
-									if (iI == MEDITATION)
-										iValue /= 2;
-									if (iI == ASTRONOMY || iI == ECONOMICS || iI == PATRONAGE)
+									if (iI == EXPLORATION || iI == ASTRONOMY || iI == ECONOMICS || iI == PATRONAGE)
 										iValue *= 2;
-									if (iI == DRAMA || iI == MUSIC || iI == GUILDS || iI == CHEMISTRY) {
+									if (iI == LITERATURE || iI == GUILDS || iI == CHEMISTRY) {
 										iValue *= 3;
 										iValue /= 2;
-									}
-									if (iI == DIVINERIGHT) {
-										iValue *= 2;
 									}
 									if (iI == FISSION) {
 										iValue *= 5;
 										iValue /= 4;
 									}
-									if (iI == RIFLING)
+									if (iI == REPLACEABLE_PARTS)
 										iValue *= 3;
 									break;
 								case ENGLAND:
-									if (iI == MEDITATION)
-										iValue /= 2;
-									if (iI == ASTRONOMY)
+									if (iI == EXPLORATION || iI == ASTRONOMY)
 										iValue *= 4;
-									if (iI == RIFLING || iI == ECONOMICS)
+									if (iI == REPLACEABLE_PARTS || iI == ECONOMICS)
 										iValue *= 3;
-									if (iI == LITERATURE || iI == DRAMA || iI == GUILDS || iI == ECONOMICS || iI == CHEMISTRY) {
+									if (iI == LITERATURE || iI == GUILDS || iI == CHEMISTRY) {
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == DIVINERIGHT || iI == LIBERALISM) {
+									if (iI == CIVIL_LIBERTIES) {
 										iValue *= 2;
 									}
-									if (iI == COMMUNISM)
-										iValue /= 2;
 									break;
 								case HOLY_ROME:
-									if (iI == MEDITATION)
-										iValue /= 2;
-									if (iI == PRINTING_PRESS)
+									if (iI == PRINTING)
 										iValue *= 5;
-									if (iI == MUSIC || iI == GUILDS || iI == ASTRONOMY) {
+									if (iI == LITERATURE || iI == GUILDS || iI == ASTRONOMY) {
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == DIVINERIGHT || iI == RIFLING) {
+									if (iI == REPLACEABLE_PARTS) {
 										iValue *= 2;
 									}
 									if (iI == FISSION) {
@@ -5294,17 +5243,15 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									break;
 								case RUSSIA:
-									if (iI == COMMUNISM)
+									if (iI == MACROECONOMICS)
 										iValue *= 3;
-									if (iI == MILITARY_SCIENCE || iI == RIFLING || iI == MILITARY_TRADITION)
+									if (iI == LOGISTICS || iI == REPLACEABLE_PARTS)
 										iValue *= 3;
-									if (iI == MEDITATION)
-										iValue /= 2;
-									if (iI == LITERATURE || iI == MUSIC) {
+									if (iI == LITERATURE || iI == PATRONAGE) {
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == PHILOSOPHY || iI == PRINTING_PRESS || iI == LIBERALISM || iI == CONSTITUTION || iI == DEMOCRACY)
+									if (iI == PHILOSOPHY || iI == PRINTING || iI == CIVIL_LIBERTIES || iI == CONSTITUTION || iI == REPRESENTATION)
 										iValue /= 2;
 									if (iI == FISSION) {
 										iValue *= 5;
@@ -5316,15 +5263,17 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									break;
 								case TURKEY:
-									if (iI == GUNPOWDER || iI == RIFLING || iI == MILITARY_TRADITION)
+									if (iI == GUNPOWDER || iI == FIREARMS || iI == LOGISTICS)
 										iValue *= 3;
+									if (iI == JUDICIARY)
+										iValue *= 2;
 									break;
 								case MUGHALS:
-									if (iI == RIFLING || iI == LIBERALISM || iI == MILITARY_TRADITION || iI == ASTRONOMY)
+									if (iI == REPLACEABLE_PARTS || iI == SCIENTIFIC_METHOD || iI == LOGISTICS || iI == EXPLORATION)
 										iValue /= 3;
-									if (iI == CONSTITUTION)
+									if (iI == HUMANITIES)
 										iValue *= 3;
-									if (iI == PHILOSOPHY || iI == MUSIC || iI == PAPER || iI == PATRONAGE)
+									if (iI == PHILOSOPHY || iI == LITERATURE || iI == PAPER || iI == PATRONAGE)
 										iValue *= 2;
 									if (iI == ENGINEERING)
 									{
@@ -5333,30 +5282,26 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									break;
 								case POLAND:
-									if (iI == MUSIC || iI == CONSTITUTION || iI == ASTRONOMY)
+									if (iI == CONSTITUTION || iI == ASTRONOMY)
 										iValue *= 2;
-									if (iI == MILITARY_TRADITION || iI == LIBERALISM)
+									if (iI == LOGISTICS || iI == CIVIL_LIBERTIES)
 										iValue *= 3;
 								case PORTUGAL:
-									if (iI == MEDITATION)
-										iValue /= 2;
-									if (iI == RIFLING)
+									if (iI == REPLACEABLE_PARTS)
 										iValue *= 2;
-									if (iI == ASTRONOMY || iI == OPTICS)
+									if (iI == CARTOGRAPHY || iI == EXPLORATION || iI == ASTRONOMY || iI == OPTICS)
 										iValue *= 5;
 									break;
 								case INCA:
 									if (iI == CONSTRUCTION || iI == CALENDAR)
 										iValue *= 4;
-									if (iI == MUSIC)
-										iValue *= 2;
 									if (iI == FEUDALISM)
 										iValue /= 4;
 									if (iI == MACHINERY || iI == GUNPOWDER || iI == GUILDS)
 										iValue /= 2;
 									break;
 								case ITALY:
-                                    if (iI == RADIO || iI == FASCISM || iI == BANKING || iI == OPTICS || iI == PATRONAGE || iI == RIFLING)
+                                    if (iI == RADIO || iI == PSYCHOLOGY || iI == FINANCE || iI == OPTICS || iI == PATRONAGE || iI == REPLACEABLE_PARTS)
                                         iValue *= 2;
                                     if (iI == FISSION){
                                         iValue *= 5;
@@ -5368,7 +5313,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == MILITARY_TRADITION)
+									if (iI == FIREARMS || iI == LOGISTICS)
 									{
 										iValue /= 4;
 									}
@@ -5376,7 +5321,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case AZTECS:
 									if (iI == CONSTRUCTION)
 										iValue *= 4;
-									if (iI == LITERATURE || iI == MUSIC)
+									if (iI == LITERATURE)
 										iValue *= 2;
 									if (iI == FEUDALISM)
 										iValue /= 4;
@@ -5384,9 +5329,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									break;
 								case NETHERLANDS:
-									if (iI == MEDITATION)
-										iValue /= 2;
-									if (iI == ASTRONOMY || iI == RIFLING || iI == ECONOMICS || iI == LIBERALISM)
+									if (iI == EXPLORATION || iI == OPTICS || iI == ASTRONOMY || iI == REPLACEABLE_PARTS || iI == ECONOMICS || iI == CORPORATION || iI == CIVIL_LIBERTIES)
 										iValue *= 2;
 									if (iI == CHEMISTRY) {
 										iValue *= 3;
@@ -5394,7 +5337,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									break;
 								case GERMANY:
-									if (iI == COMBUSTION || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == FASCISM)
+									if (iI == ENGINE || iI == INFRASTRUCTURE || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == PSYCHOLOGY)
 										iValue *= 2;
 									if (iI == FISSION)
 									{
@@ -5409,32 +5352,30 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									if (iI == CORPORATION || iI == ASSEMBLY_LINE)
 										iValue *= 2;
-									if (iI == RAILROAD || iI == DEMOCRACY)
+									if (iI == RAILROAD || iI == REPRESENTATION)
 										iValue *= 3;
 									break;
 								case ARGENTINA:
-									if (iI == MASS_MEDIA || iI == ELECTRICITY || iI == FASCISM)
+									if (iI == TELEVISION || iI == ELECTRICITY || iI == PSYCHOLOGY)
 										iValue *= 2;
 									if (iI == REFRIGERATION)
 										iValue *= 3;
 								case BRAZIL:
-									if (iI == RADIO || iI == PLASTICS || iI == ELECTRICITY || iI == COMBUSTION)
+									if (iI == RADIO || iI == SYNTHETICS || iI == ELECTRICITY || iI == ENGINE)
 										iValue *= 2;
 									break;
 								default:
-									if (iI == POLYTHEISM || iI == MONOTHEISM)
-										iValue *= 3;
 									break;
 								}
 								//Rhye - end
 
-								if (getID() != INDIA)
+								/*if (getID() != INDIA)
 								{
 									if (iI == MEDITATION && !GC.getGame().isReligionFounded((ReligionTypes)HINDUISM))
 										iValue /= 3;
 									if (iI == PRIESTHOOD && !GC.getGame().isReligionFounded((ReligionTypes)BUDDHISM))
 										iValue /= 4;
-								}
+								}*/
 
 								// Leoreth: don't research Theology before player Ethiopia is even alive
 								if (GC.getGameINLINE().getActivePlayer() == ETHIOPIA && GC.getGameINLINE().getGameTurnYear() < getBirthYear())
@@ -19922,8 +19863,8 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	bool bOwnerEuropean = (eOwner == SPAIN || eOwner == FRANCE || eOwner == ENGLAND || eOwner == PORTUGAL || eOwner == NETHERLANDS);
 	bool bBuyerEuropean = (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == PORTUGAL || getID() == NETHERLANDS);
 
-	bool bOwnerAstronomy = GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)ASTRONOMY);
-	bool bBuyerAstronomy = GET_TEAM(GET_PLAYER(getID()).getTeam()).isHasTech((TechTypes)ASTRONOMY);
+	bool bOwnerExploration = GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)EXPLORATION);
+	bool bBuyerExploration = GET_TEAM(GET_PLAYER(getID()).getTeam()).isHasTech((TechTypes)EXPLORATION);
 
 	bool bOwnerCatholic = (GET_PLAYER(eOwner).getStateReligion() == CATHOLICISM && eOwner != GC.getGame().getActivePlayer());
 	bool bBuyerCatholic = GET_PLAYER(getID()).getStateReligion() == CATHOLICISM;
@@ -19943,7 +19884,7 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 
 	if (getID() == GC.getGame().getActivePlayer()) iModifier += 1;
 	if (bOwnerEuropean || bBuyerEuropean) iModifier += 1;
-	if (!bOwnerAstronomy && !bBuyerAstronomy) iModifier -= 1;
+	if (!bOwnerExploration && !bBuyerExploration) iModifier -= 1;
 	if (bOwnerCatholic || bBuyerCatholic) iModifier += 1;
 
 	return std::max(1, iModifier) * iValue;

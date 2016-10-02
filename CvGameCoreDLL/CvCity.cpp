@@ -322,7 +322,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
 	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra : 0;
 
-	if (GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)ASTRONOMY))
+	if (GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)EXPLORATION))
 	{
 		if (isColony())
 		{
@@ -2094,7 +2094,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 
 		if (iCapitalContinent != iCityContinent && !bException)
 		{
-			if (!GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)ASTRONOMY))
+			if (!GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)EXPLORATION))
 			{
 				return false;
 			}
@@ -2293,7 +2293,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	if (eBuilding == WEMBLEY || eBuilding == THREE_GORGES_DAM || eBuilding == CRISTO_REDENTOR)
+	if (eBuilding == WEMBLEY || eBuilding == ITAIPU_DAM || eBuilding == CRISTO_REDENTOR)
 	{
 		if (getOwnerINLINE() != BRAZIL)
 		{
