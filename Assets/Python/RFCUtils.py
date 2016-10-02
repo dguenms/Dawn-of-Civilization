@@ -1101,7 +1101,6 @@ class RFCUtils:
 		return plotList[iRand]
 
 	def colonialConquest(self, iCiv, x, y):
-		bRifling = gc.getTeam(iCiv).isHasTech(iRifling)
 		iTargetCiv = gc.getMap().plot(x,y).getPlotCity().getOwner()
 		lFreePlots = []
 		

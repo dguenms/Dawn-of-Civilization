@@ -200,7 +200,7 @@ class CvRFCEventHandler:
 					city.setOccupationTimer(0)
 					
 			# Statue of Zeus effect: no city resistance on conquest
-			if gc.getPlayer(iPlayer).countNumBuildings(iStatueOfZeus) > 0 and not gc.getTeam(iPlayer).isHasTech(iTheology):
+			if gc.getPlayer(iPlayer).countNumBuildings(iStatueOfZeus) > 0:
 				city.setOccupationTimer(0)
 				
 			# Byzantium reduced to four cities: core shrinks to Constantinople
@@ -666,28 +666,28 @@ class CvRFCEventHandler:
 			if (gc.getGame().getGameTurn() > getTurnForYear(1700)):
 				self.aiw.forgetMemory(argsList[0], argsList[2])
 
-		if (argsList[0] == iAstronomy):
+		if (argsList[0] == iExploration):
 			if iPlayer in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
-				data.players[iPlayer].iAstronomyTurn = gc.getGame().getGameTurn()
+				data.players[iPlayer].iExplorationTurn = gc.getGame().getGameTurn()
 				
 		if (argsList[0] == iCompass):
 			if (iPlayer == iVikings):
 				gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
 				
-		if (argsList[0] == iMedicine):
+		if (argsList[0] == iMicrobiology):
 			self.pla.onTechAcquired(argsList[0], argsList[2])
 
 		if argsList[0] == iRailroad:
 			self.rnf.onRailroadDiscovered(argsList[2])
 			
-		if iTech in [iAstronomy, iGunpowder]:
+		if iTech in [iExploration, iFirearms]:
 			teamPlayer = gc.getTeam(iPlayer)
-			if teamPlayer.isHasTech(iAstronomy) and teamPlayer.isHasTech(iGunpowder):
+			if teamPlayer.isHasTech(iExploration) and teamPlayer.isHasTech(iFirearms):
 				self.rnf.earlyTradingCompany(iPlayer)
 			
-		if iTech in [iEconomics, iRifling]:
+		if iTech in [iEconomics, iReplaceableParts]:
 			teamPlayer = gc.getTeam(iPlayer)
-			if teamPlayer.isHasTech(iEconomics) and teamPlayer.isHasTech(iRifling):
+			if teamPlayer.isHasTech(iEconomics) and teamPlayer.isHasTech(iReplaceableParts):
 				self.rnf.lateTradingCompany(iPlayer)
 	
 		if utils.getHumanID() != iPlayer:
@@ -716,8 +716,8 @@ class CvRFCEventHandler:
 		if iPlayer == iItaly and iEra == iIndustrial:
 			utils.setReborn(iItaly, True)
 			
-		# Arabia's core moves to Iraq when Philosophy is discovered
-		if iPlayer == iArabia and iTech == iPhilosophy:
+		# Arabia's core moves to Iraq when Scholarship is discovered
+		if iPlayer == iArabia and iTech == iScholarship:
 			utils.setReborn(iArabia, True)
 			
 		# Japan's core extends when reaching the Industrial era
