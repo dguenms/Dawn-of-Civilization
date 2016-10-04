@@ -128,11 +128,11 @@
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_CITY_RUINS_INDUSTRIAL_1</Text>
-					<Era>ERA_MODERN</Era>
+					<Era>ERA_GLOBAL</Era>
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_CITY_RUINS_INDUSTRIAL_1</Text>
-					<Era>ERA_FUTURE</Era>
+					<Era>ERA_DIGITAL</Era>
 				</TriggerText>
 			</TriggerTexts>
 			<bSinglePlayer>0</bSinglePlayer>
@@ -2467,11 +2467,11 @@
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_JOYOUS_WEDDING_3</Text>
-					<Era>ERA_MODERN</Era>
+					<Era>ERA_GLOBAL</Era>
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_JOYOUS_WEDDING_3</Text>
-					<Era>ERA_FUTURE</Era>
+					<Era>ERA_DIGITAL</Era>
 				</TriggerText>
 			</TriggerTexts>
 			<bSinglePlayer>1</bSinglePlayer>
@@ -2573,11 +2573,11 @@
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_WEDDING_FEUD_3</Text>
-					<Era>ERA_MODERN</Era>
+					<Era>ERA_GLOBAL</Era>
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_WEDDING_FEUD_3</Text>
-					<Era>ERA_FUTURE</Era>
+					<Era>ERA_DIGITAL</Era>
 				</TriggerText>
 			</TriggerTexts>
 			<bSinglePlayer>1</bSinglePlayer>
@@ -2679,11 +2679,11 @@
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_LEFT_AT_ALTAR_3</Text>
-					<Era>ERA_MODERN</Era>
+					<Era>ERA_GLOBAL</Era>
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_LEFT_AT_ALTAR_3</Text>
-					<Era>ERA_FUTURE</Era>
+					<Era>ERA_DIGITAL</Era>
 				</TriggerText>
 			</TriggerTexts>
 			<bSinglePlayer>1</bSinglePlayer>
@@ -2873,11 +2873,11 @@
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_TORNADO_3</Text>
-					<Era>ERA_MODERN</Era>
+					<Era>ERA_GLOBAL</Era>
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_TORNADO_3</Text>
-					<Era>ERA_FUTURE</Era>
+					<Era>ERA_DIGITAL</Era>
 				</TriggerText>
 			</TriggerTexts>
 			<bSinglePlayer>0</bSinglePlayer>
@@ -3171,11 +3171,11 @@
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_LOOTERS_2</Text>
-					<Era>ERA_MODERN</Era>
+					<Era>ERA_GLOBAL</Era>
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_LOOTERS_2</Text>
-					<Era>ERA_FUTURE</Era>
+					<Era>ERA_DIGITAL</Era>
 				</TriggerText>
 			</TriggerTexts>
 			<bSinglePlayer>0</bSinglePlayer>
