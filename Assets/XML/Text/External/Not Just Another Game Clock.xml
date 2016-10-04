@@ -127,28 +127,28 @@
 		<Italian>Colore da utilizzare per l'Era Industriale.</Italian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_MODERN_TEXT</Tag>
+		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_GLOBAL_TEXT</Tag>
 		<English>Modern Era</English>
 		<French>Ere Moderne</French>
 		<German>Moderne</German>
 		<Italian>Era Moderna</Italian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_MODERN_HOVER</Tag>
+		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_GLOBAL_HOVER</Tag>
 		<English>Color to use for the Modern era.</English>
 		<French>Couleur pour l'Ere Moderne.</French>
 		<German>Bestimmt die Farbe, in der die Epoche "Moderne" erscheint</German>
 		<Italian>Colore da utilizzare per l'Era Moderna.</Italian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_FUTURE_TEXT</Tag>
+		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_DIGITAL_TEXT</Tag>
 		<English>Future Era</English>
 		<French>Temps Futurs</French>
 		<German>Zukunft</German>
 		<Italian>Era Futura</Italian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_FUTURE_HOVER</Tag>
+		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_DIGITAL_HOVER</Tag>
 		<English>Color to use for the Future era.</English>
 		<French>Couleur pour les Temps Futurs.</French>
 		<German>Bestimmt die Farbe, in der die Epoche "Zukunft" erscheint</German>
