@@ -1061,7 +1061,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<iCost>3200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<iGridX>17</iGridX>
@@ -1105,7 +1105,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>4000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<iGridX>18</iGridX>
@@ -2279,7 +2279,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>4000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<iPower>10</iPower>
 			<bTrade>1</bTrade>
@@ -2314,7 +2314,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>5500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<iGridX>17</iGridX>
@@ -2353,7 +2353,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>5600</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
@@ -2389,7 +2389,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>5800</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_FUTURE</Era>
+			<Era>ERA_DIGITAL</Era>
 			<iAsset>48</iAsset>
 			<iPower>5</iPower>
 			<bTrade>1</bTrade>
@@ -2425,7 +2425,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>5600</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_FUTURE</Era>
+			<Era>ERA_DIGITAL</Era>
 			<iHealth>3</iHealth>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
@@ -2465,7 +2465,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>6000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<iGridX>19</iGridX>
@@ -2498,7 +2498,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>6800</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_FUTURE</Era>
+			<Era>ERA_DIGITAL</Era>
 			<FirstFreeUnitClass>UNITCLASS_GREAT_ENGINEER</FirstFreeUnitClass>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
@@ -3594,7 +3594,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<iCost>3800</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<iGridX>16</iGridX>
@@ -3638,7 +3638,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<iCost>5000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<iGridX>18</iGridX>
@@ -3670,7 +3670,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iCost>5000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<iGridX>17</iGridX>
@@ -3712,7 +3712,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iCost>5600</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<iPower>10</iPower>
 			<bTrade>1</bTrade>
@@ -3748,7 +3748,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>4500</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<iPower>10</iPower>
 			<bTrade>1</bTrade>
@@ -3786,7 +3786,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>5000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<iPower>4</iPower>
 			<bTrade>1</bTrade>
@@ -3827,7 +3827,7 @@
 			<iAITradeModifier>10</iAITradeModifier>
 			<iCost>6200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_MODERN</Era>
+			<Era>ERA_GLOBAL</Era>
 			<iAsset>48</iAsset>
 			<bTrade>1</bTrade>
 			<iGridX>19</iGridX>
@@ -3866,7 +3866,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iCost>10000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<Era>ERA_FUTURE</Era>
+			<Era>ERA_DIGITAL</Era>
 			<iHealth>1</iHealth>
 			<iHappiness>1</iHappiness>
 			<iAsset>64</iAsset>

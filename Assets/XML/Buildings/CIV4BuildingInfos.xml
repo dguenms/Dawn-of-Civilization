@@ -1573,7 +1573,7 @@
 			<Strategy>TXT_KEY_BUILDING_FACTORY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FACTORY</ArtDefineTag>
-			<FreeStartEra>ERA_FUTURE</FreeStartEra>
+			<FreeStartEra>ERA_DIGITAL</FreeStartEra>
 			<PrereqTech>TECH_MACHINE_TOOLS</PrereqTech>
 			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1613,7 +1613,7 @@
 			<Strategy>TXT_KEY_BUILDING_GERMAN_ASSEMBLY_PLANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GERMAN_ASSEMBLY_PLANT</ArtDefineTag>
-			<FreeStartEra>ERA_FUTURE</FreeStartEra>
+			<FreeStartEra>ERA_DIGITAL</FreeStartEra>
 			<PrereqTech>TECH_MACHINE_TOOLS</PrereqTech>
 			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1666,7 +1666,7 @@
 			<Strategy>TXT_KEY_BUILDING_JAPANESE_ZAIBATSU_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JAPANESE_ZAIBATSU</ArtDefineTag>
-			<FreeStartEra>ERA_FUTURE</FreeStartEra>
+			<FreeStartEra>ERA_DIGITAL</FreeStartEra>
 			<PrereqTech>TECH_MACHINE_TOOLS</PrereqTech>
 			<iCost>125</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3668,7 +3668,7 @@
 			<Strategy>TXT_KEY_BUILDING_RAILWAY_STATION_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RAILWAY_STATION</ArtDefineTag>
-			<FreeStartEra>ERA_FUTURE</FreeStartEra>
+			<FreeStartEra>ERA_DIGITAL</FreeStartEra>
 			<PrereqTech>TECH_RAILROAD</PrereqTech>
 			<iCost>250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -4479,7 +4479,7 @@
 			<Strategy>TXT_KEY_BUILDING_ESTATE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ESTATE</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -4535,7 +4535,7 @@
 			<Strategy>TXT_KEY_BUILDING_MUGHAL_MAUSOLEUM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MUGHAL_MAUSOLEUM</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HERITAGE</PrereqTech>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -4597,7 +4597,7 @@
 			<Strategy>TXT_KEY_BUILDING_BRAZILIAN_FAZENDA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -4695,7 +4695,7 @@
 			<Strategy>TXT_KEY_BUILDING_COLOMBIAN_HACIENDA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COLOMBIAN_HACIENDA</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -4834,7 +4834,7 @@
 			<Strategy>TXT_KEY_BUILDING_COURTHOUSE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COURTHOUSE</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_CONSTITUTION</PrereqTech>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -4879,7 +4879,7 @@
 			<Strategy>TXT_KEY_BUILDING_POLISH_SEJMIK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_POLISH_SEJMIK</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_CONSTITUTION</PrereqTech>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -4928,7 +4928,7 @@
 			<Strategy>TXT_KEY_BUILDING_JAIL_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JAIL</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_LAW</PrereqTech>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -4962,7 +4962,7 @@
 			<Strategy>TXT_KEY_BUILDING_AZTEC_SACRIFICIAL_ALTAR_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AZTEC_SACRIFICIAL_ALTAR</ArtDefineTag>
-			<FreeStartEra>ERA_MODERN</FreeStartEra>
+			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_LAW</PrereqTech>
 			<iHurryAngerModifier>-50</iHurryAngerModifier>
 			<iCost>90</iCost>
@@ -11026,7 +11026,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_EMPIRE_STATE_BUILDING</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_EMPIRE_STATE_BUILDING</MovieDefineTag>
-			<MaxStartEra>ERA_FUTURE</MaxStartEra>
+			<MaxStartEra>ERA_DIGITAL</MaxStartEra>
 			<PrereqTech>TECH_CONSUMERISM</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -11338,7 +11338,7 @@
 			<Strategy>TXT_KEY_BUILDING_CN_TOWER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CN_TOWER</ArtDefineTag>
-			<MaxStartEra>ERA_MODERN</MaxStartEra>
+			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_TELEVISION</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_BROADCAST_TOWER</FreeBuilding>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>

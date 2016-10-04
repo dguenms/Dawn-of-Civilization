@@ -86,7 +86,7 @@
 			<iTrainPercent>100</iTrainPercent>
 			<iConstructPercent>100</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>125</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
 			<iGreatPeoplePercent>100</iGreatPeoplePercent>
@@ -288,7 +288,7 @@
 			<iTrainPercent>80</iTrainPercent>
 			<iConstructPercent>80</iConstructPercent>
 			<iCreatePercent>80</iCreatePercent>
-			<iResearchPercent>110</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>80</iBuildPercent>
 			<iImprovementPercent>80</iImprovementPercent>
 			<iGreatPeoplePercent>80</iGreatPeoplePercent>
@@ -333,9 +333,9 @@
 			<AudioUnitDefeatScript>AS2D_LOSS_MIDDLE</AudioUnitDefeatScript>
 		</EraInfo>
 		<EraInfo>
-			<Type>ERA_MODERN</Type>
-			<Description>TXT_KEY_ERA_MODERN</Description>
-			<Strategy>TXT_KEY_ERA_MODERN_STRATEGY</Strategy>
+			<Type>ERA_GLOBAL</Type>
+			<Description>TXT_KEY_ERA_GLOBAL</Description>
+			<Strategy>TXT_KEY_ERA_GLOBAL_STRATEGY</Strategy>
 			<bNoGoodies>1</bNoGoodies>
 			<bNoAnimals>1</bNoAnimals>
 			<bNoBarbUnits>1</bNoBarbUnits>
@@ -352,7 +352,7 @@
 			<iTrainPercent>70</iTrainPercent>
 			<iConstructPercent>70</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>125</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>70</iBuildPercent>
 			<iImprovementPercent>70</iImprovementPercent>
 			<iGreatPeoplePercent>70</iGreatPeoplePercent>
@@ -395,9 +395,9 @@
 			<AudioUnitDefeatScript>AS2D_LOSS_LATE</AudioUnitDefeatScript>
 		</EraInfo>
 		<EraInfo>
-			<Type>ERA_FUTURE</Type>
-			<Description>TXT_KEY_ERA_FUTURE</Description>
-			<Strategy>TXT_KEY_ERA_FUTURE_STRATEGY</Strategy>
+			<Type>ERA_DIGITAL</Type>
+			<Description>TXT_KEY_ERA_DIGITAL</Description>
+			<Strategy>TXT_KEY_ERA_DIGITAL_STRATEGY</Strategy>
 			<bNoGoodies>1</bNoGoodies>
 			<bNoAnimals>1</bNoAnimals>
 			<bNoBarbUnits>1</bNoBarbUnits>
@@ -414,7 +414,7 @@
 			<iTrainPercent>60</iTrainPercent>
 			<iConstructPercent>60</iConstructPercent>
 			<iCreatePercent>60</iCreatePercent>
-			<iResearchPercent>150</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>60</iBuildPercent>
 			<iImprovementPercent>60</iImprovementPercent>
 			<iGreatPeoplePercent>60</iGreatPeoplePercent>

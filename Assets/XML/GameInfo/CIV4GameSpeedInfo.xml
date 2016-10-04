@@ -15,7 +15,7 @@
 			<iTrainPercent>200</iTrainPercent> <!-- Default: 180 -->
 			<iConstructPercent>300</iConstructPercent>
 			<iCreatePercent>300</iCreatePercent>
-			<iResearchPercent>350</iResearchPercent><!-- Default: 320; grows by up to 20% as the game progresses -->
+			<iResearchPercent>300</iResearchPercent><!-- Default: 320; grows by up to 20% as the game progresses -->
 			<iBuildPercent>300</iBuildPercent>
 			<iImprovementPercent>300</iImprovementPercent>
 			<iGreatPeoplePercent>300</iGreatPeoplePercent>
@@ -78,10 +78,10 @@
 			<Description>TXT_KEY_GAMESPEED_EPIC</Description>
 			<Help>TXT_KEY_GAMESPEED_EPIC_HELP</Help>
 			<iGrowthPercent>150</iGrowthPercent>
-			<iTrainPercent>140</iTrainPercent> <!-- Default: 135 -->
+			<iTrainPercent>150</iTrainPercent> 
 			<iConstructPercent>150</iConstructPercent>
 			<iCreatePercent>150</iCreatePercent>
-			<iResearchPercent>175</iResearchPercent> <!-- Default: 160; grows by up to 20% as the game progresses -->
+			<iResearchPercent>150</iResearchPercent> 
 			<iBuildPercent>150</iBuildPercent>
 			<iImprovementPercent>150</iImprovementPercent>
 			<iGreatPeoplePercent>150</iGreatPeoplePercent>
@@ -93,7 +93,7 @@
 			<iUnitHurryPercent>150</iUnitHurryPercent>
 			<iUnitTradePercent>150</iUnitTradePercent>
 			<iUnitGreatWorkPercent>150</iUnitGreatWorkPercent>
-			<iGoldenAgePercent>150</iGoldenAgePercent> <!-- Default: 150 -->
+			<iGoldenAgePercent>150</iGoldenAgePercent> 
 			<iHurryPercent>66</iHurryPercent>
 			<iHurryConscriptAngerPercent>150</iHurryConscriptAngerPercent>
 			<iInflationPercent>30</iInflationPercent>
@@ -144,15 +144,15 @@
 			<Description>TXT_KEY_GAMESPEED_NORMAL</Description>
 			<Help>TXT_KEY_GAMESPEED_NORMAL_HELP</Help>
 			<iGrowthPercent>100</iGrowthPercent>
-			<iTrainPercent>90</iTrainPercent>
+			<iTrainPercent>100</iTrainPercent>
 			<iConstructPercent>100</iConstructPercent>
 			<iCreatePercent>100</iCreatePercent>
-			<iResearchPercent>105</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
 			<iGreatPeoplePercent>100</iGreatPeoplePercent>
-			<iCulturePercent>110</iCulturePercent>
-			<iAnarchyPercent>110</iAnarchyPercent>
+			<iCulturePercent>100</iCulturePercent>
+			<iAnarchyPercent>100</iAnarchyPercent>
 			<iBarbPercent>100</iBarbPercent>
 			<iFeatureProductionPercent>100</iFeatureProductionPercent>
 			<iUnitDiscoverPercent>100</iUnitDiscoverPercent>

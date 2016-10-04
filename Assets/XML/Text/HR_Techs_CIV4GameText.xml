@@ -2357,5 +2357,14 @@ The recurring pattern is that rituals serve a role of promoting social cohestion
 		<Tag>TXT_KEY_TECH_WRITING_QUOTE</Tag>
 		<English>"True glory consists in doing what deserves to be written; in writing what deserves to be read."[PARAGRAPH:2]- Pliny the Elder</English>
 	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_ERA_GLOBAL</Tag>
+		<English>Global</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DIGITAL</Tag>
+		<English>Digital</English>
+	</TEXT>
 
 </Civ4GameText>
