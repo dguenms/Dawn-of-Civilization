@@ -3,7 +3,6 @@
 	<TechInfos>
 
 <!-- TODO: admin flavor -->
-<!-- TODO: verify tech costs per column -->
 	
 <!-- #1 -->
 <!-- Cost 50, iAsset 4 -->
@@ -361,8 +360,8 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
-					<iFlavor>2</iFlavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
@@ -676,7 +675,7 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -893,6 +892,10 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
@@ -941,7 +944,7 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -1038,10 +1041,13 @@
 			<iGridX>5</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
-				<!-- TODO: flavors -->
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>4</iFlavor>
+					<iFlavor>8</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -1171,12 +1177,16 @@
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
@@ -1294,6 +1304,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>1</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -1434,7 +1448,7 @@
 			<iGridY>9</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -1443,6 +1457,10 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -1471,10 +1489,9 @@
 			<iGridX>6</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
-				<!-- TODO: flavors -->
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
-					<iFlavor>5</iFlavor>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
@@ -1511,6 +1528,10 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -1552,7 +1573,7 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -1650,7 +1671,6 @@
 			<iGridX>7</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
-				<!-- TODO: flavors -->
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
 					<iFlavor>4</iFlavor>
@@ -1660,7 +1680,7 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -1703,7 +1723,7 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -1733,7 +1753,7 @@
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -1895,6 +1915,10 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
@@ -1999,10 +2023,9 @@
 			<iGridX>8</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
-				<!-- TODO: flavors -->
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>5</iFlavor>
+					<iFlavor>7</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
@@ -2040,7 +2063,7 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -2178,7 +2201,7 @@
 			<iGridY>7</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -2224,6 +2247,10 @@
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
@@ -2265,6 +2292,10 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -2520,7 +2551,7 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
-					<iFlavor>3</iFlavor>
+					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2569,6 +2600,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -2642,7 +2677,7 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -2741,9 +2776,8 @@
 			<iGridX>11</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
-				<!-- TODO: flavors -->
 				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -2751,7 +2785,11 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -2786,8 +2824,8 @@
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
-					<iFlavor>4</iFlavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>6</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -2833,6 +2871,10 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -3046,15 +3088,15 @@
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
-					<iFlavor>3</iFlavor>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -3083,8 +3125,8 @@
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
-					<iFlavor>3</iFlavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -3300,8 +3342,8 @@
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
-					<iFlavor>4</iFlavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -3337,6 +3379,10 @@
 			<iGridX>13</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
 					<iFlavor>5</iFlavor>
@@ -3570,6 +3616,10 @@
 			<iGridY>11</iGridY>
 			<Flavors>
 				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
@@ -3609,6 +3659,10 @@
 			<iGridX>14</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>4</iFlavor>
@@ -3875,6 +3929,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -4042,6 +4100,10 @@
 					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>2</iFlavor>
+				</Flavor>
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_REFINING</PrereqTech>
@@ -4068,6 +4130,10 @@
 			<iGridX>16</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>8</iFlavor>
+				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
 					<iFlavor>5</iFlavor>
@@ -4100,7 +4166,6 @@
 			<iGridX>16</iGridX>
 			<iGridY>11</iGridY>
 			<Flavors>
-				<!-- TODO: flavors -->
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
 					<iFlavor>4</iFlavor>
@@ -4141,7 +4206,6 @@
 			<iGridX>16</iGridX>
 			<iGridY>13</iGridY>
 			<Flavors>
-				<!-- TODO: flavor -->
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>4</iFlavor>
@@ -4149,6 +4213,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
@@ -4327,7 +4395,7 @@
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -4389,7 +4457,7 @@
 			<iGridY>13</iGridY>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -4661,6 +4729,10 @@
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -5245,6 +5317,10 @@
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>1</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>1</iFlavor>
 				</Flavor>
 			</Flavors>
