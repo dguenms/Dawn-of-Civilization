@@ -724,8 +724,8 @@ class CvRFCEventHandler:
 		if iPlayer == iJapan and iEra == iIndustrial:
 			utils.setReborn(iJapan, True)
 			
-		# Germany's core shrinks when reaching the Modern era
-		if iPlayer == iGermany and iEra == iModern:
+		# Germany's core shrinks when reaching the Global era
+		if iPlayer == iGermany and iEra == iGlobal:
 			utils.setReborn(iGermany, True)
 		
 
