@@ -1657,7 +1657,7 @@ iSSEngine, iSSCasing, iSSThrusters) = range(iNumProjects)
 #Eras
 
 iNumEras = 7
-(iAncient, iClassical, iMedieval, iRenaissance, iIndustrial, iModern, iFuture) = range (iNumEras)
+(iAncient, iClassical, iMedieval, iRenaissance, iIndustrial, iGlobal, iDigital) = range (iNumEras)
 
 
 #Improvements
