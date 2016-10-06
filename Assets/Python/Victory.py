@@ -1576,7 +1576,7 @@ def onTechAcquired(iPlayer, iTech):
 				
 		# third Japanese goal: be the first to discover ten Global and ten Digital technologies
 		if isPossible(iJapan, 2):
-			if countFirstDiscovered(iPlayer, iModern) >= 10 and countFirstDiscovered(iPlayer, iFuture) >= 10:
+			if countFirstDiscovered(iPlayer, iGlobal) >= 10 and countFirstDiscovered(iPlayer, iDigital) >= 10:
 				if iPlayer == iJapan: win(iJapan, 2)
 				else: lose(iJapan, 2)
 				
@@ -1588,7 +1588,7 @@ def onTechAcquired(iPlayer, iTech):
 				
 		# third German goal: be the first to discover ten Industrial and ten Global technologies
 		if isPossible(iGermany, 2):
-			if countFirstDiscovered(iPlayer, iIndustrial) >= 10 and countFirstDiscovered(iPlayer, iModern) >= 10:
+			if countFirstDiscovered(iPlayer, iIndustrial) >= 10 and countFirstDiscovered(iPlayer, iGlobal) >= 10:
 				if iPlayer == iGermany: win(iGermany, 2)
 				else: lose(iGermany, 2)
 			
@@ -1616,7 +1616,7 @@ def onTechAcquired(iPlayer, iTech):
 	if isPossible(iCongo, 2):
 		if iEra == iIndustrial and iPlayer == iCongo:
 			win(iCongo, 2)
-		if iEra == iModern and iPlayer != iCongo:
+		if iEra == iGlobal and iPlayer != iCongo:
 			lose(iCongo, 2)
 				
 def checkTechGoal(iPlayer, lTechs):
@@ -2670,7 +2670,7 @@ def countReligionCities(iPlayer):
 	return iCount
 	
 def isCompleteTechTree(iPlayer):
-	if gc.getPlayer(iPlayer).getCurrentEra() < iModern: return False
+	if gc.getPlayer(iPlayer).getCurrentEra() < iGlobal: return False
 	
 	tPlayer = gc.getTeam(iPlayer)
 	for iTech in range(iNumTechs):
@@ -3260,9 +3260,9 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bKorea) + localText.getText("TXT_KEY_CIV_KOREA_SHORT_DESC", ()) + ' ' + getIcon(bManchuria) + localText.getText("TXT_KEY_VICTORY_MANCHURIA", ()) + ' ' + getIcon(bChina) + localText.getText("TXT_KEY_CIV_CHINA_SHORT_DESC", ()))
 			aHelp.append(getIcon(bIndochina) + localText.getText("TXT_KEY_VICTORY_INDOCHINA", ()) + ' ' + getIcon(bIndonesia) + localText.getText("TXT_KEY_CIV_INDONESIA_SHORT_DESC", ()) + ' ' + getIcon(bPhilippines) + localText.getText("TXT_KEY_VICTORY_PHILIPPINES", ()))
 		elif iGoal == 2:
-			iGlobalTechs = countFirstDiscovered(iJapan, iModern)
-			iDigitalTechs = countFirstDiscovered(iJapan, iFuture)
-			aHelp.append(getIcon(iGlobalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iModern).getText(), iGlobalTechs, 10)) + ' ' + getIcon(iDigitalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iFuture).getText(), iDigitalTechs, 10)))
+			iGlobalTechs = countFirstDiscovered(iJapan, iGlobal)
+			iDigitalTechs = countFirstDiscovered(iJapan, iDigital)
+			aHelp.append(getIcon(iGlobalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iGlobal).getText(), iGlobalTechs, 10)) + ' ' + getIcon(iDigitalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iDigital).getText(), iDigitalTechs, 10)))
 			
 	elif iPlayer == iVikings:
 		if iGoal == 0:
@@ -3604,8 +3604,8 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bEngland) + localText.getText("TXT_KEY_CIV_ENGLAND_SHORT_DESC", ()) + ' ' + getIcon(bRussia) + localText.getText("TXT_KEY_CIV_RUSSIA_SHORT_DESC", ()))
 		elif iGoal == 2:
 			iIndustrialTechs = countFirstDiscovered(iGermany, iIndustrial)
-			iGlobalTechs = countFirstDiscovered(iGermany, iModern)
-			aHelp.append(getIcon(iIndustrialTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iIndustrial).getText(), iIndustrialTechs, 10)) + ' ' + getIcon(iGlobalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iModern).getText(), iGlobalTechs, 10)))
+			iGlobalTechs = countFirstDiscovered(iGermany, iGlobal)
+			aHelp.append(getIcon(iIndustrialTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iIndustrial).getText(), iIndustrialTechs, 10)) + ' ' + getIcon(iGlobalTechs >= 10) + localText.getText("TXT_KEY_VICTORY_TECHS_FIRST_DISCOVERED", (gc.getEraInfo(iGlobal).getText(), iGlobalTechs, 10)))
 
 	elif iPlayer == iAmerica:
 		if iGoal == 0:
