@@ -2668,3 +2668,8 @@ void log(CvWString message)
 {
 	gDLL->logMsg("sdkDbg.log", CvString(message));
 }
+
+void log(CvString logfile, CvString message)
+{
+	gDLL->logMsg(logfile, message);
+}
