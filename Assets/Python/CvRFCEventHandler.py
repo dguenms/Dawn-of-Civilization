@@ -29,6 +29,7 @@ import Areas
 import Civilizations
 import AIParameters
 import GreatPeople as gp
+import TechLog as techlog
 
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
@@ -106,6 +107,7 @@ class CvRFCEventHandler:
 		
 		vic.setup()
 		cong.setup()
+		techlog.setup()
 		
 		# Leoreth: set DLL core values
 		Modifiers.init()
@@ -400,6 +402,7 @@ class CvRFCEventHandler:
 	
 		vic.onReligionFounded(iFounder, iReligion)
 		self.rel.onReligionFounded(iReligion, iFounder)
+		techlog.onReligionFounded(iFounder, iReligion)
 
 	def onVassalState(self, argsList):
 		'Vassal State'
@@ -588,6 +591,7 @@ class CvRFCEventHandler:
 		
 		sta.checkTurn(iGameTurn)
 		cong.checkTurn(iGameTurn)
+		techlog.checkTurn(iGameTurn)
 		
 		if iGameTurn % 10 == 0:
 			dc.checkTurn(iGameTurn)
@@ -652,8 +656,9 @@ class CvRFCEventHandler:
 			
 		sta.onTechAcquired(iPlayer, iTech)
 		AIParameters.onTechAcquired(iPlayer, iTech)
-		
+
 		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]):
+			techlog.onTechAcquired(iPlayer, iTech)
 			vic.onTechAcquired(iPlayer, iTech)
 			cnm.onTechAcquired(argsList[2])
 
@@ -730,7 +735,8 @@ class CvRFCEventHandler:
 		pass
 
 	def onLoadGame(self, argsList):
-		pass
+		data.load() # edead: load & unpickle script data
+		techlog.setup()
 		
 	def onChangeWar(self, argsList):
 		bWar, iTeam, iOtherTeam = argsList

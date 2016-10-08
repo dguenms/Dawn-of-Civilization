@@ -6,6 +6,7 @@ from Consts import *
 from RFCUtils import utils
 import heapq
 import Areas
+import TechLog as techlog
 
 ### GLOBALS ###
 
@@ -1562,6 +1563,8 @@ def onTechAcquired(iPlayer, iTech):
 	# handle all "be the first to discover" goals
 	if not isDiscovered(iTech):
 		data.lFirstDiscovered[iTech] = iPlayer
+		
+		techlog.onFirstDiscovered(iPlayer, iTech)
 		
 		for iLoopPlayer in dTechGoals.keys():
 			iGoal = dTechGoals[iLoopPlayer][0]

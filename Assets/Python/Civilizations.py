@@ -1,6 +1,7 @@
 from Consts import *
 from RFCUtils import utils
 from sets import Set
+from StoredData import sd
 
 ### Class for easier tech specification ###
 
@@ -48,10 +49,16 @@ def initTechs(iPlayer, lTechs):
 	pPlayer = gc.getPlayer(iPlayer)
 
 	for iTech in lTechs:
-		gc.getTeam(pPlayer.getTeam()).setHasTech(iTech, True, iPlayer, False, False)
+		initTech(iPlayer, iTech)
 	
 	iCurrentEra = pPlayer.getCurrentEra()
 	pPlayer.setStartingEra(iCurrentEra)
+	
+def initTech(iPlayer, iTech):
+	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
+	
+	if sd.getFirstDiscovered(iTech) == -1:
+		sd.setFirstDiscovered(iTech, iPlayer)
 	
 ### General functions ###
 		

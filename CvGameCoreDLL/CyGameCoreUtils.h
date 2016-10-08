@@ -85,4 +85,6 @@ int cyGetTurnMonthForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ e
 
 int cyGetSettlerValue(int iPlayer, int x, int y);
 
+void cyLog(std::string logfile, std::string message);
+
 #endif	// CyGameCoreUtils_h

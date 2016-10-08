@@ -86,4 +86,5 @@ void CyGameCoreUtilsPythonInterface()
 	// edead: end
 
 	python::def("getSettlerValue", cyGetSettlerValue, "int (int iPlayer, int x, int y)");
+	python::def("log", cyLog, "void (string logfile, string message)");
 }
