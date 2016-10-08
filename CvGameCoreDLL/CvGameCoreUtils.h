@@ -380,6 +380,7 @@ bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion); // Leoreth
 
 void log(char* format, ...);
 void log(CvWString message);
+void log(CvString logfile, CvString message);
 char* chars(const wchar_t* wchars);
 char* chars(CvWString string);
 

@@ -308,3 +308,8 @@ int cyGetSettlerValue(int iPlayer, int x, int y)
 {
 	return GET_PLAYER((PlayerTypes)iPlayer).getSettlerValue(x, y);
 }
+
+void cyLog(std::string logfile, std::string message)
+{
+	log(CvString(logfile), CvString(message));
+}
