@@ -245,7 +245,7 @@ class CvTechChooser:
 		# Units
 		for iClass in xrange(gc.getNumUnitClassInfos()):
 			iUnit = utils.getUniqueUnitType(self.iPlayer, iClass)
-			if iUnit > -1:
+			if iUnit > -1 and not gc.getUnitInfo(iUnit).isGraphicalOnly():
 				iTech = gc.getUnitInfo(iUnit).getPrereqAndTech()
 				if iTech > -1:
 					self.TechEffects[iTech].append(("Unit", iUnit))
