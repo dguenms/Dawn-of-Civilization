@@ -2702,7 +2702,7 @@ class RiseAndFall:
 		if (iCiv == iCarthage):
 			utils.makeUnit(iAfricanWarElephant, iCiv, tPlot, 1)
 		if iCiv == iPolynesia:
-			utils.makeUnit(iWarrior, iCiv, tPlot, 2)
+			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
 		if (iCiv == iRome):
 			utils.makeUnit(iLegion, iCiv, tPlot, 4)
 		if (iCiv == iJapan):
@@ -2816,7 +2816,7 @@ class RiseAndFall:
 			utils.makeUnit(iArcher, iCiv, tPlot, 1)
 		if (iCiv == iGreece):
 			utils.createSettlers(iCiv, 1)
-			utils.makeUnit(iWarrior, iCiv, tPlot, 2)
+			utils.makeUnit(iMilitia, iCiv, tPlot, 2)
 			utils.makeUnit(iHoplite, iCiv, tPlot, 1) #3
 			pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 			pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
@@ -2824,7 +2824,7 @@ class RiseAndFall:
 			if (tSeaPlot):
 				pGreece.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iWarrior, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
 		if (iCiv == iPersia):
 			utils.createSettlers(iCiv, 3)
 			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
@@ -3372,7 +3372,7 @@ class RiseAndFall:
 		for iPlayer in range(iNumPlayers):
 			if tBirth[iPlayer] > utils.getScenarioStartYear() and utils.getHumanID() == iPlayer:
 				utils.makeUnit(iSettler, iPlayer, Areas.getCapital(iPlayer), 1)
-				utils.makeUnit(iWarrior, iPlayer, Areas.getCapital(iPlayer), 1)
+				utils.makeUnit(iMilitia, iPlayer, Areas.getCapital(iPlayer), 1)
 
 	def create600ADstartingUnits( self ):
 
@@ -3426,7 +3426,7 @@ class RiseAndFall:
 			if tBirth[iPlayer] > utils.getScenarioStartYear() and gc.getPlayer(iPlayer).isHuman():
 				tCapital = Areas.getCapital(iPlayer)
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
-				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
+				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
 
 
 	def create4000BCstartingUnits(self):
@@ -3436,11 +3436,11 @@ class RiseAndFall:
 			
 			if tBirth[iPlayer] > utils.getScenarioStartYear() and gc.getPlayer(iPlayer).isHuman():
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
-				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
-			
+				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
+				
 			if iPlayer == iHarappa and (data.isPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
 				utils.makeUnit(iCityBuilder, iPlayer, tCapital, 1)
-				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
+				utils.makeUnit(iMilitia, iPlayer, tCapital, 1)
 		
 	def assignTechs(self, iPlayer):
 		Civilizations.initPlayerTechs(iPlayer)
