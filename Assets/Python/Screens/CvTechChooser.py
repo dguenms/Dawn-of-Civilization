@@ -3,6 +3,7 @@ import CvUtil
 import CvScreenEnums
 import CvScreensInterface
 
+from Consts import *
 from RFCUtils import utils
 
 gc = CyGlobalContext()
@@ -31,7 +32,7 @@ class CvTechChooser:
 		self.bResearched = False
 		self.bBuilt = False
 		self.iFromEra = 0
-		self.iHideEra = 999999
+		self.iHideEra = iDigital
 
 		# Advanced Start
 		self.iSelectedTech = -1
@@ -152,7 +153,7 @@ class CvTechChooser:
 		screen.setButtonGFC("RightArrow", "", "", self.W_SCREEN - 155, 10, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_ARROW_RIGHT)
 		screen.setHitTest("RightArrow", HitTestTypes.HITTEST_NOHIT)
 
-		for iEra in xrange(gc.getNumEraInfos()):
+		for iEra in xrange(iDigital+1):
 			if iEra <= self.iHideEra:
 				screen.addPullDownString("FilterFromEra", gc.getEraInfo(iEra).getDescription(), iEra, iEra, iEra == self.iFromEra)
 			if iEra >= self.iFromEra:
