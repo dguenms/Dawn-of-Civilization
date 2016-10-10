@@ -2697,8 +2697,8 @@ int CvTeam::getResearchCost(TechTypes eTech, bool bModifiers) const
 	iCost *= getCivilizationResearchModifier();
 	iCost /= 100;
 
-	iCost *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getResearchPercent();
-	iCost /= 100;
+	/*iCost *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getResearchPercent();
+	iCost /= 100;*/
 
 	iCost *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent();
 	iCost /= 100;
@@ -2755,8 +2755,8 @@ int CvTeam::getScenarioResearchModifier() const
 	// scale the scenario tech speed with its starting conditions
 	int iScenarioModifier = 100;
 
-	if (getScenario() == SCENARIO_600AD) iScenarioModifier = 110;
-	else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 120;
+	//if (getScenario() == SCENARIO_600AD) iScenarioModifier = 110;
+	//else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 120;
 
 	return iScenarioModifier;
 }
