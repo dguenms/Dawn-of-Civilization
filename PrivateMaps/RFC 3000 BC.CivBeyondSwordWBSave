@@ -26505,7 +26505,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=0, (Egypt)
+		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)
@@ -29215,7 +29215,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
@@ -38286,7 +38286,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=1, (China)
+		UnitType=UNIT_MILITIA, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=1, (China)
