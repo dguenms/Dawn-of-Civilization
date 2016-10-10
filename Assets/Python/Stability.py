@@ -311,6 +311,10 @@ def getStabilityThreshold(iPlayer):
 	if utils.getHumanID() != iPlayer and iGameTurn > getTurnForYear(tFall[iPlayer]):
 		iThreshold += 5 * iStabilityLevel + 5 + max(10, (iGameTurn - getTurnForYear(tFall[iPlayer])) / utils.getTurns(10))
 		
+	# reduce number of collapses
+	if iStabilityLevel == iStabilityUnstable:
+		iThreshold -= 10
+		
 	# golden ages make stability increases easier
 	if gc.getPlayer(iPlayer).isGoldenAge():
 		iThreshold -= 5
