@@ -7490,9 +7490,9 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/Asian_units/asian_shortsword/threekingdomsswordsmanlv1final.nif</NIF>
-			<KFM>Art/Units/Unique/Ottoman/Swordsman_Ottoman/LightSwordsman.kfm</KFM>
-			<SHADERNIF>Art/Units/Asian_units/asian_shortsword/threekingdomsswordsmanlv1final.nif</SHADERNIF>
+			<NIF>Art/Units/Light_Swordsman/Asian/threekingdomsswordsmanlv1final.nif</NIF>
+			<KFM>Art/Units/Light_Swordsman/Ottoman/LightSwordsman.kfm</KFM>
+			<SHADERNIF>Art/Units/Light_Swordsman/Asian/threekingdomsswordsmanlv1final.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
