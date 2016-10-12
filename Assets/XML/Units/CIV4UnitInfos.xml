@@ -1341,7 +1341,7 @@
 			<bPillage>1</bPillage>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_AXEMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_LIGHT_SWORDSMAN</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 				<UnitClassUpgrade>
