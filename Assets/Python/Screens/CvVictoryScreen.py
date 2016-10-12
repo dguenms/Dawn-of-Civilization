@@ -559,6 +559,8 @@ class CvVictoryScreen:
 			if gc.getGame().countPossibleVote(iLoop, iActiveVote) > 0:
 				iMaxVotes = gc.getGame().countPossibleVote(iLoop, iActiveVote)
 				break
+				
+		if iMaxVotes == 0: return
 
 		iRow = screen.appendTableRow(szTable)
 		iVoteReq = self.getVoteReq(iActiveVote, self.VoteType)
