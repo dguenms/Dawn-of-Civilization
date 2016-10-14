@@ -114,7 +114,7 @@ class CvPediaUnit:
 		szStats = u"%d%c" % (iStrength, CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR))
 
 		# Movement
-		if UnitInfo.getAirRange() > 0:
+		if UnitInfo.getAirCombat() > 0 and UnitInfo.getAirRange() > 0:
 			szStats += u"  %d%c" % (UnitInfo.getAirRange(), CyGame().getSymbolID(FontSymbols.MOVES_CHAR))
 		else:
 			szStats += u"  %d%c" % (UnitInfo.getMoves(), CyGame().getSymbolID(FontSymbols.MOVES_CHAR))
