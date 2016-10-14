@@ -1934,17 +1934,13 @@ class RFCUtils:
 		else: unit.setXY(x, y, False, True, False)
 		
 	def evacuate(self, tPlot):
-		x, y = tPlot		
-		lUnits = []
-		for i in (x-1, x, x+1):
-			for j in (y-1, y, y+1):
-				plot = gc.getMap().plot(i, j)
-				for k in range(plot.getNumUnits()):
-					unit = plot.getUnit(k)
-					lUnits.append(unit)
-			
-		for unit in lUnits:
-			self.moveToClosestCity(unit)
+		for tLoopPlot in utils.surroundingPlots(tPlot):
+			for unit in utils.getUnitList(tLoopPlot):
+				lPossibleTiles = utils.surroundingPlots(tLoopPlot, 2, lambda (x, y): utils.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True))
+				tTargetPlot = utils.getRandomEntry(lPossibleTiles)
+				if tTargetPlot:
+					x, y = tLoopPlot
+					unit.setXY(x, y, False, True, False)
 			
 	def getWonderList():
 		return [i for i in range(iNumBuildings) if isWorldWonderClass(gc.getBuildingInfo(i).getBuildingClassType())]
