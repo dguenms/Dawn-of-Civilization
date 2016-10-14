@@ -99,27 +99,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_REPUBLIC</Tag>
+		<English>Federal Democratic Republic of %s1</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ETHIOPIA_COMMUNIST</Tag>
 		<English>People's Democratic Republic of %s1</English>
-		<French>
-			<Text>R&#233;publique Populaire D&#233;mocratique d'%s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Volksdemokratische Republik %s1:Volksdemokratische Republik %s1:Volksdemokratischen Republik %s1</Text>
-			<Gender>Female:Female:Female</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Repubblica Democratica Popolare di %s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Rep&#250;blica Democr&#225;tica Popular de %s1</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ETHIOPIA_AKSUM</Tag>
