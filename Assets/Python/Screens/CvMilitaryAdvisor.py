@@ -6,7 +6,6 @@ import ScreenInput
 import time
 import PyHelpers
 import re
-import Consts as con #Rhye
 
 PyPlayer = PyHelpers.PyPlayer
 PyInfo = PyHelpers.PyInfo
@@ -406,7 +405,6 @@ class CvMilitaryAdvisor:
 			player = gc.getPlayer(iLoopPlayer)
 			#Rhye - to hide the independents switch the comments
 			if (player.isAlive() and (gc.getTeam(player.getTeam()).isHasMet(gc.getPlayer(self.iActivePlayer).getTeam()) or gc.getGame().isDebugMode())):
-			#if (player.isAlive() and player.getID() != con.iIndependent and player.getID() != con.iIndependent2 and (gc.getTeam(player.getTeam()).isHasMet(gc.getPlayer(self.iActivePlayer).getTeam()) or gc.getGame().isDebugMode())):
 				listLeaders.append(iLoopPlayer)
 	    
 					

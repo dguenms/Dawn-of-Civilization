@@ -12,12 +12,12 @@
 import CvUtil
 from CvPythonExtensions import *
 
-import Consts as con #Rhye
+from Consts import * #Rhye
 import RFCUtils #Leoreth
 import Religions #Leoreth
 import PyHelpers #Leoreth
 import CityNameManager as cnm
-from StoredData import sd
+from StoredData import data
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -1703,10 +1703,10 @@ def canTriggerGreatMediator(argsList):
 		return false
 
 	#Rhye - start
-	if (player.getID() == con.iIndependent or player.getID() == con.iIndependent2):
+	if (player.getID() == iIndependent or player.getID() == iIndependent2):
 		return false
 
-	if (destPlayer.getID() == con.iIndependent or destPlayer.getID() == con.iIndependent2):
+	if (destPlayer.getID() == iIndependent or destPlayer.getID() == iIndependent2):
 		return false
 	#Rhye - end
 
@@ -3078,7 +3078,7 @@ def canApplyCrusadeDone2(argsList):
 	holyCity = gc.getGame().getHolyCity(kTriggeredData.eReligion)
 
 	#Rhye - switch to Jerusalem
-	if utils.getScenario() >= con.i600AD: #late start condition
+	if utils.getScenario() >= i600AD: #late start condition
 		if (holyCity.getX() == 60 and holyCity.getY() == 44):
 			pJerusalem = gc.getMap().plot(73, 38)
 			if (not pJerusalem.getPlotCity().isNone()):
@@ -4289,9 +4289,9 @@ def canTriggerTradingCompanyConquerors(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
 	
-	if utils.getScenario() == con.i1700AD: return False
+	if utils.getScenario() == i1700AD: return False
 
-	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	
 	if iPlayer not in lCivList or utils.getHumanID() != iPlayer:
 		return False
@@ -4302,7 +4302,7 @@ def canTriggerTradingCompanyConquerors(argsList):
 	utils.debugTextPopup('Determining colonial targets.')
 	targetList = utils.getColonialTargets(iPlayer, True)
 	
-	sd.scriptDict['tTradingCompanyConquerorsTargets'][id].extend(targetList)
+	data.lTradingCompanyConquerorsTargets[id].extend(targetList)
 
 	return True	
 
@@ -4311,10 +4311,10 @@ def canChooseTradingCompanyConquerors1(argsList):
 	iPlayer = kTriggeredData.ePlayer
 	pPlayer = gc.getPlayer(iPlayer)
 
-	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	id = lCivList.index(iPlayer)
 
-	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+	targetList = data.lTradingCompanyConquerorsTargets[id]
 
 	iGold = len(targetList) * 200
 
@@ -4329,10 +4329,10 @@ def getTradingCompanyConquerors1HelpText(argsList):
 	sTargetCivs = ''
 	sTargetCities = ''
 
-	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	id = lCivList.index(iPlayer)
 
-	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+	targetList = data.lTradingCompanyConquerorsTargets[id]
 
 	targetCivList = []
 
@@ -4370,10 +4370,10 @@ def doTradingCompanyConquerors1(argsList):
 	iPlayer = kTriggeredData.ePlayer
 	pPlayer = gc.getPlayer(iPlayer)
 
-	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	id = lCivList.index(iPlayer)
 
-	targetList = list(sd.scriptDict['tTradingCompanyConquerorsTargets'][id])
+	targetList = data.lTradingCompanyConquerorsTargets[id]
 	targetCivList = []
 	settlerList = []
 
@@ -4395,9 +4395,9 @@ def doTradingCompanyConquerors1(argsList):
 	utils.debugTextPopup(str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in targetCivList]))
 	for iTargetCiv in targetCivList:
 		iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
-		if iTargetCiv >= con.iNumPlayers:
+		if iTargetCiv >= iNumPlayers:
 			bAccepted = True
-		elif iRand >= con.tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
+		elif iRand >= tPatienceThreshold[iTargetCiv] and not gc.getTeam(iPlayer).isAtWar(iTargetCiv):
 			bAccepted = True
 		else:
 			bAccepted = False
@@ -4418,10 +4418,10 @@ def canChooseTradingCompanyConquerors2(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 
-	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	id = lCivList.index(iPlayer)
 
-	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+	targetList = data.lTradingCompanyConquerorsTargets[id]
 
 	bResult = False
 	for tPlot in targetList:
@@ -4439,10 +4439,10 @@ def getTradingCompanyConquerors2HelpText(argsList):
 	sTargetCivs = ''
 	sTargetCities = ''
 
-	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	id = lCivList.index(iPlayer)
 
-	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+	targetList = data.lTradingCompanyConquerorsTargets[id]
 	targetCivList = []
 
 	for tPlot in targetList:
@@ -4473,10 +4473,10 @@ def doTradingCompanyConquerors2(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 
-	lCivList = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands]
+	lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 	id = lCivList.index(iPlayer)
 
-	targetList = sd.scriptDict['tTradingCompanyConquerorsTargets'][id]
+	targetList = data.lTradingCompanyConquerorsTargets[id]
 
 	for tPlot in targetList:
 		x, y = tPlot
@@ -4492,10 +4492,10 @@ def doTradingCompanyConquerors2(argsList):
 				break
 
 	if tSeaPlot != -1:
-		if iPlayer == con.iNetherlands:
-			utils.makeUnit(con.iDutchEastIndiaman, iPlayer, tSeaPlot, 1)
+		if iPlayer == iNetherlands:
+			utils.makeUnit(iDutchEastIndiaman, iPlayer, tSeaPlot, 1)
 		else:
-			utils.makeUnit(con.iGalleon, iPlayer, tSeaPlot, 1)
+			utils.makeUnit(iGalleon, iPlayer, tSeaPlot, 1)
 	
 ######## Reformation (Leoreth) ########
 
@@ -4503,29 +4503,29 @@ def canTriggerReformation(argsList):
 	kTriggeredData = argsList[0]
 	iPlayer = kTriggeredData.ePlayer
 	
-	if utils.getScenario() == con.i1700AD: return False
+	if utils.getScenario() == i1700AD: return False
 	
 	if utils.getHumanID() != iPlayer: return False
 	
 	bCatholicCity = False
 	for city in PyHelpers.PyPlayer(iPlayer).getCityList():
-		if city.GetCy().isHasReligion(con.iCatholicism):
+		if city.GetCy().isHasReligion(iCatholicism):
 			bCatholicCity = True
 			break
 			
 	if not bCatholicCity: return False
 	
-	if gc.getGame().isReligionFounded(con.iProtestantism):
-		if gc.getGame().getReligionGameTurnFounded(con.iProtestantism)+2 < gc.getGame().getGameTurn():
+	if gc.getGame().isReligionFounded(iProtestantism):
+		if gc.getGame().getReligionGameTurnFounded(iProtestantism)+2 < gc.getGame().getGameTurn():
 			return False
 
-	return gc.getGame().isReligionFounded(con.iProtestantism)
+	return gc.getGame().isReligionFounded(iProtestantism)
 
 def canChooseReformation1(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	return (gc.getPlayer(iPlayer).getStateReligion() == con.iCatholicism)
+	return (gc.getPlayer(iPlayer).getStateReligion() == iCatholicism)
 	
 def getReformation1HelpText(argsList):
 	kTriggeredData = argsList[1]
@@ -4534,7 +4534,7 @@ def getReformation1HelpText(argsList):
 	iNumCatholicCities = 0
 	cityList = PyHelpers.PyPlayer(iPlayer).getCityList()
 	for city in cityList:
-		if city.GetCy().isHasReligion(con.iCatholicism):
+		if city.GetCy().isHasReligion(iCatholicism):
 			iNumCatholicCities += 1
 
 	return localText.getText("TXT_KEY_EVENT_REFORMATION_EMBRACE", (iNumCatholicCities * 100,))
@@ -4545,13 +4545,13 @@ def doReformation1(argsList):
 	
 	rel.embraceReformation(iPlayer)
 	
-	pHolyCity = gc.getGame().getHolyCity(con.iProtestantism)
+	pHolyCity = gc.getGame().getHolyCity(iProtestantism)
 	if pHolyCity.getOwner() == iPlayer:
-		pHolyCity.setNumRealBuilding(con.iProtestantShrine, 1)
+		pHolyCity.setNumRealBuilding(iProtestantShrine, 1)
 	
-	if iPlayer != con.iNetherlands:
-		for iCiv in range(con.iNumPlayers):
-			if sd.scriptDict['lReformationDecision'][iCiv] == 2:
+	if iPlayer != iNetherlands:
+		for iCiv in range(iNumPlayers):
+			if data.players[iCiv].iReformationDecision == 2:
 				gc.getTeam(iCiv).declareWar(iPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 	
 def canChooseReformation2(argsList):
@@ -4561,7 +4561,7 @@ def getReformation2HelpText(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 
-	if gc.getPlayer(iPlayer).getStateReligion() == con.iCatholicism:
+	if gc.getPlayer(iPlayer).getStateReligion() == iCatholicism:
 		return localText.getText("TXT_KEY_EVENT_REFORMATION_TOLERATE_STATE", ())
 		
 	return localText.getText("TXT_KEY_EVENT_REFORMATION_TOLERATE", ())
@@ -4576,7 +4576,7 @@ def canChooseReformation3(argsList):
 	kTriggeredData = argsList[1]
 	iPlayer = kTriggeredData.ePlayer
 	
-	return (gc.getPlayer(iPlayer).getStateReligion() == con.iCatholicism)
+	return (gc.getPlayer(iPlayer).getStateReligion() == iCatholicism)
 	
 def getReformation3HelpText(argsList):
 	kTriggeredData = argsList[1]
@@ -4590,6 +4590,6 @@ def doReformation3(argsList):
 	
 	rel.counterReformation(iPlayer)
 	
-	for iTargetCiv in range(con.iNumPlayers):
-		if sd.scriptDict['lReformationDecision'][iTargetCiv] == 0:
+	for iTargetCiv in range(iNumPlayers):
+		if data.players[iTargetCiv].iReformationDecision == 0:
 			gc.getTeam(iPlayer).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)

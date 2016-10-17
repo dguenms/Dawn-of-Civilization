@@ -3,7 +3,7 @@ import CvUtil
 import PyHelpers 
 import Popup as PyPopup 
 
-from StoredData import sd # edead
+from StoredData import data # edead
 import RiseAndFall
 import Barbs
 import Religions
@@ -97,9 +97,7 @@ class CvRFCEventHandler:
 	def onGameStart(self, argsList):
 		'Called at the start of the game'
 		
-		sd.setup() # edead
 		self.rnf.setup()
-		self.rel.setup()
 		self.pla.setup()
 		dc.setup()
 		self.aiw.setup()
@@ -163,7 +161,7 @@ class CvRFCEventHandler:
 		# Leoreth: relocate capital for AI if reacquired:
 		if utils.getHumanID() != iPlayer and iPlayer < iNumPlayers:
 			tCity = (city.getX(), city.getY())
-			if sd.scriptDict['lResurrections'][iPlayer] == 0:
+			if data.players[iPlayer].iResurrections == 0:
 				if Areas.getCapital(iPlayer) == tCity:
 					utils.relocateCapital(iPlayer, city)
 			else:
@@ -603,7 +601,7 @@ class CvRFCEventHandler:
 		#if utils.getHumanID() == iPlayer:
 		#	utils.debugTextPopup('Can contact: ' + str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in range(iNumPlayers) if gc.getTeam(iPlayer).canContact(i)]))
 
-		if (self.rnf.getDeleteMode(0) != -1):
+		if (data.lDeleteMode[0] != -1):
 			self.rnf.deleteMode(iPlayer)
 			
 		self.pla.checkPlayerTurn(iGameTurn, iPlayer)
@@ -731,10 +729,10 @@ class CvRFCEventHandler:
 	def onPreSave(self, argsList):
 		'called before a game is actually saved'
 		
-		sd.save() # edead: pickle & save script data
+		data.save() # edead: pickle & save script data
 
 	def onLoadGame(self, argsList):
-		sd.load() # edead: load & unpickle script data
+		data.load() # edead: load & unpickle script data
 		
 	def onChangeWar(self, argsList):
 		bWar, iTeam, iOtherTeam = argsList
@@ -747,8 +745,8 @@ class CvRFCEventHandler:
 		
 		# don't start AIWars if they get involved in natural wars
 		if bWar and iTeam < iNumPlayers and iOtherTeam < iNumPlayers:
-			sd.setAggressionLevel(iTeam, 0)
-			sd.setAggressionLevel(iOtherTeam, 0)
+			data.players[iTeam].iAggressionLevel = 0
+			data.players[iOtherTeam].iAggressionLevel = 0
 			
 	def onGoldenAge(self, argsList):
 		iPlayer = argsList[0]
@@ -795,7 +793,7 @@ class CvRFCEventHandler:
 			CyInterface().addMessage(utils.getHumanID(), True, iDuration, "EXPLOITER!!! ;)", "", 0, "", ColorTypes(iRed), -1, -1, True, True)
 
 		#Stability Cheat
-		if self.rnf.getCheatMode() and theKey == int(InputTypes.KB_S) and self.eventManager.bAlt and self.eventManager.bShift:
+		if data.bCheatMode and theKey == int(InputTypes.KB_S) and self.eventManager.bAlt and self.eventManager.bShift:
 			print("SHIFT-ALT-S") #increases stability by one level
 			utils.setStabilityLevel(utils.getHumanID(), min(5, utils.getStabilityLevel(utils.getHumanID()) + 1))
 			

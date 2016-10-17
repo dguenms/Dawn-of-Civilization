@@ -8,7 +8,7 @@ import RFCUtils
 from Consts import *
 import Areas
 import CityNameManager as cnm
-from StoredData import sd # edead
+from StoredData import data # edead
 
 ### Globals ###
 
@@ -34,17 +34,17 @@ tNewfoundlandBR = (36, 59)
 ### Event Handlers ###
 
 def setup():
-	sd.setCongressTurns(utils.getTurns(iCongressInterval))
+	data.iCongressTurns = utils.getTurns(iCongressInterval)
 
 def checkTurn(iGameTurn):
 	if isCongressEnabled():
 		if not isGlobalWar():
-			sd.changeCongressTurns(-1)
+			data.iCongressTurns -= 1
 			
-		if sd.getCongressTurns() == 0:
-			sd.setCongressTurns(utils.getTurns(iCongressInterval))
+		if data.iCongressTurns == 0:
+			data.iCongressTurns = utils.getTurns(iCongressInterval)
 			currentCongress = Congress()
-			sd.setCurrentCongress(currentCongress)
+			data.currentCongress = currentCongress
 			currentCongress.startCongress()
 
 def onChangeWar(bWar, iPlayer, iOtherPlayer):
@@ -56,16 +56,16 @@ def onChangeWar(bWar, iPlayer, iOtherPlayer):
 				iAttacker = utils.getHighestEntry(lAttackers, lambda iPlayer: gc.getTeam(iPlayer).getPower(True))
 				iDefender = utils.getHighestEntry(lDefenders, lambda iPlayer: gc.getTeam(iPlayer).getPower(True))
 			
-				sd.setGlobalWarAttacker(iAttacker)
-				sd.setGlobalWarDefender(iDefender)
+				data.iGlobalWarAttacker = iAttacker
+				data.iGlobalWarDefender = iDefender
 		
-		if not bWar and sd.getGlobalWarAttacker() in [iPlayer, iOtherPlayer] and sd.getGlobalWarDefender() in [iPlayer, iOtherPlayer]:
+		if not bWar and data.iGlobalWarAttacker in [iPlayer, iOtherPlayer] and data.iGlobalWarDefender in [iPlayer, iOtherPlayer]:
 			endGlobalWar(iPlayer, iOtherPlayer)
 			
 ### Global Methods ###
 
 def isCongressEnabled():
-	if sd.isNoCongressOption():
+	if data.bNoCongressOption:
 		return False
 
 	if gc.getGame().getBuildingClassCreatedCount(gc.getBuildingInfo(iUnitedNations).getBuildingClassType()) > 0:
@@ -96,11 +96,11 @@ def determineAlliances(iAttacker, iDefender):
 	return [iAttacker for iAttacker in lAttackers if iAttacker not in lDefenders], [iDefender for iDefender in lDefenders if iDefender not in lAttackers]
 
 def isGlobalWar():
-	return (sd.getGlobalWarAttacker() != -1 and sd.getGlobalWarDefender() != -1)
+	return (data.iGlobalWarAttacker != -1 and data.iGlobalWarDefender != -1)
 	
 def endGlobalWar(iAttacker, iDefender):
-	sd.setGlobalWarAttacker(-1)
-	sd.setGlobalWarDefender(-1)
+	data.iGlobalWarAttacker = -1
+	data.iGlobalWarDefender = -1
 	
 	if not gc.getPlayer(iAttacker).isAlive() or not gc.getPlayer(iDefender).isAlive():
 		return
@@ -129,7 +129,7 @@ def endGlobalWar(iAttacker, iDefender):
 		lLosers = lAttackers
 	
 	currentCongress = Congress(lWinners, lLosers)
-	sd.setCurrentCongress(currentCongress)
+	data.currentCongress = currentCongress
 	currentCongress.startCongress()
 	
 def getNumInvitations():
@@ -508,7 +508,7 @@ class Congress:
 			popup.addPopup(utils.getHumanID())
 		
 		# don't waste memory
-		sd.setCurrentCongress(None)
+		data.currentCongress = None
 
 	### Other Methods ###
 
@@ -1043,7 +1043,7 @@ class Congress:
 				# weaker and collapsing empires
 				if iLoopPlayer < iNumPlayers:
 					if gc.getGame().getPlayerRank(iLoopPlayer) > iNumPlayersAlive / 2 and gc.getGame().getPlayerRank(iLoopPlayer) < iNumPlayersAlive / 2:
-						if sd.getStabilityLevel(iLoopPlayer) == iStabilityCollapsing:
+						if data.players[iLoopPlayer].iStabilityLevel == iStabilityCollapsing:
 							if iSettlerMapValue >= 90:
 								iValue += max(1, iSettlerMapValue / 100)
 									

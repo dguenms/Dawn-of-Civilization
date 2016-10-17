@@ -1,7 +1,7 @@
 # Rhye's and Fall of Civilization - Stability
 
 from CvPythonExtensions import *
-from StoredData import sd # edead
+from StoredData import data # edead
 from Consts import *
 import RFCUtils
 import DynamicCivs as dc
@@ -33,15 +33,15 @@ tCrisisTypes = (
 )
 
 def checkTurn(iGameTurn):
-	if sd.getNoStability():
+	if data.bNoAIStability:
 		return
 	
 	for iPlayer in range(iNumPlayers):
-		if sd.getTurnsToCollapse(iPlayer) == 0:
-			sd.setTurnsToCollapse(iPlayer, -1)
+		if data.players[iPlayer].iTurnsToCollapse == 0:
+			data.players[iPlayer].iTurnsToCollapse = -1
 			completeCollapse(iPlayer)
-		elif sd.getTurnsToCollapse(iPlayer) > 0:
-			sd.changeTurnsToCollapse(iPlayer, -1)
+		elif data.players[iPlayer].iTurnsToCollapse > 0:
+			data.players[iPlayer].iTurnsToCollapse -= 1
 	
 		if getCrisisCountdown(iPlayer) > 0:
 			changeCrisisCountdown(iPlayer, -1)
@@ -60,28 +60,28 @@ def checkTurn(iGameTurn):
 			
 	# decay penalties from razing cities and losing to barbarians
 	if iGameTurn % utils.getTurns(5) == 0:
-		if sd.getHumanRazePenalty() < 0:
-			sd.changeHumanRazePenalty(2)
+		if data.iHumanRazePenalty < 0:
+			data.iHumanRazePenalty += 2
 		for iPlayer in range(iNumPlayers):
-			if sd.getBarbarianLosses(iPlayer) > 0:
-				sd.changeBarbarianLosses(iPlayer, -1)
+			if data.players[iPlayer].iBarbarianLosses > 0:
+				data.players[iPlayer].iBarbarianLosses -= 1
 			
 	if iGameTurn % utils.getTurns(12) == 0:
 		for iPlayer in range(iNumPlayers):
 			checkLostCitiesCollapse(iPlayer)
 			
 	if iGameTurn >= getTurnForYear(tBirth[utils.getHumanID()]):
-		sd.setHumanStability(calculateStability(utils.getHumanID()))
+		data.iHumanStability = calculateStability(utils.getHumanID)
 		
 def endTurn(iPlayer):
-	lSecedingCities = sd.getSecedingCities(iPlayer)
+	lSecedingCities = data.getSecedingCities(iPlayer)
 	
 	if lSecedingCities:
 		secedeCities(iPlayer, lSecedingCities)
-		sd.setSecedingCities(iPlayer, [])
+		data.setSecedingCities(iPlayer, [])
 		
 def triggerCollapse(iPlayer):
-	sd.setTurnsToCollapse(iPlayer, 1)
+	data.players[iPlayer].iTurnsToCollapse = 1
 
 def onCityAcquired(city, iOwner, iPlayer):
 	checkStability(iOwner)
@@ -92,7 +92,7 @@ def onCityAcquired(city, iOwner, iPlayer):
 		checkBarbarianCollapse(iOwner)
 		
 def onCityRazed(iPlayer, city):
-	if sd.getNoStability():
+	if data.bNoAIStability:
 		return
 	
 	iOwner = city.getOwner()
@@ -106,24 +106,24 @@ def onCityRazed(iPlayer, city):
 			
 		if iOwner >= iNumPlayers: iRazePenalty /= 2
 			
-		sd.changeHumanRazePenalty(iRazePenalty)
+		data.iHumanRazePenalty += iRazePenalty
 		checkStability(iPlayer)
 	
 def onTechAcquired(iPlayer, iTech):
 	checkStability(iPlayer)
 	
 def onVassalState(iMaster, iVassal):
-	if sd.getNoStability():
+	if data.bNoAIStability:
 		return
 	
 	setStabilityLevel(iVassal, max(iStabilityShaky, getStabilityLevel(iVassal)))
 	checkStability(iMaster, True)
 	
 	# update number of cities so vassals survive losing cities
-	sd.setNumPreviousCities(iVassal, gc.getPlayer(iVassal).getNumCities())
+	data.players[iVassal].iNumPreviousCities = gc.getPlayer(iVassal).getNumCities()
 	
 def onChangeWar(bWar, iTeam, iOtherTeam):
-	if sd.getNoStability():
+	if data.bNoAIStability:
 		return
 	
 	if iTeam < iNumPlayers and iOtherTeam < iNumPlayers:
@@ -153,14 +153,14 @@ def onGreatPersonBorn(iPlayer):
 	checkStability(iPlayer, True)
 	
 def onCombatResult(iWinningPlayer, iLosingPlayer, iLostPower):
-	if sd.getNoStability():
+	if data.bNoAIStability:
 		return
 	
 	if iWinningPlayer == iBarbarian and iLosingPlayer < iNumPlayers:
-		sd.changeBarbarianLosses(iLosingPlayer, 1)
+		data.players[iLosingPlayer].iBarbarianLosses += 1
 	
 def onCivSpawn(iPlayer):
-	if sd.getNoStability():
+	if data.bNoAIStability:
 		return
 	
 	for iOlderNeighbor in lOlderNeighbours[iPlayer]:
@@ -169,29 +169,29 @@ def onCivSpawn(iPlayer):
 			#utils.debugTextPopup('Lost stability to neighbor spawn: ' + gc.getPlayer(iOlderNeighbor).getCivilizationShortDescription(0))
 
 def getStabilityLevel(iPlayer):
-	return sd.getStabilityLevel(iPlayer)
+	return data.getStabilityLevel(iPlayer)
 	
 def setStabilityLevel(iPlayer, iStabilityLevel):
-	sd.setStabilityLevel(iPlayer, iStabilityLevel)
+	data.setStabilityLevel(iPlayer, iStabilityLevel)
 	
 def incrementStability(iPlayer):
-	sd.setStabilityLevel(iPlayer, min(iStabilitySolid, sd.getStabilityLevel(iPlayer) + 1))
+	data.setStabilityLevel(iPlayer, min(iStabilitySolid, data.getStabilityLevel(iPlayer) + 1))
 	
 def decrementStability(iPlayer):
-	sd.setStabilityLevel(iPlayer, max(iStabilityCollapsing, sd.getStabilityLevel(iPlayer) - 1))
+	data.setStabilityLevel(iPlayer, max(iStabilityCollapsing, data.getStabilityLevel(iPlayer) - 1))
 	
 def getCrisisCountdown(iPlayer):
-	return sd.getCrisisCountdown(iPlayer)
+	return data.players[iPlayer].iCrisisCountdown
 	
 def changeCrisisCountdown(iPlayer, iChange):
-	sd.changeCrisisCountdown(iPlayer, iChange)
+	data.players[iPlayer].iCrisisCountdown += iChange
 	
 def isImmune(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	
 	# immune if stability disabled
-	if sd.getNoStability():
+	if data.bNoAIStability:
 		return True
 	
 	# must not be dead
@@ -215,7 +215,7 @@ def isImmune(iPlayer):
 		return True
 		
 	# human player immunity if option is enabled
-	if iPlayer == utils.getHumanID() and sd.getNoHumanStability():
+	if iPlayer == utils.getHumanID() and data.bNoHumanStability:
 		return True
 		
 	return False
@@ -250,7 +250,7 @@ def checkLostCitiesCollapse(iPlayer):
 	if isImmune(iPlayer): return
 		
 	iNumCurrentCities = pPlayer.getNumCities()
-	iNumPreviousCities = sd.getNumPreviousCities(iPlayer)
+	iNumPreviousCities = data.players[iPlayer].iNumPreviousCities
 	
 	# half or less cities than 12 turns ago: collapse (exceptions for civs with very little cities to begin with -> use lost core collapse)
 	if iNumPreviousCities > 2 and 2 * iNumCurrentCities <= iNumPreviousCities:
@@ -263,7 +263,7 @@ def checkLostCitiesCollapse(iPlayer):
 			setStabilityLevel(iPlayer, iStabilityCollapsing)
 			collapseToCore(iPlayer)
 		
-	sd.setNumPreviousCities(iPlayer, iNumCurrentCities)
+	data.players[iPlayer].iNumPreviousCities = iNumCurrentCities
 	
 def checkLostCoreCollapse(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
@@ -317,7 +317,7 @@ def getStabilityThreshold(iPlayer):
 	return iThreshold
 
 def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
-	if sd.getNoStability():
+	if data.bNoAIStability:
 		return
 	
 	pPlayer = gc.getPlayer(iPlayer)
@@ -343,7 +343,7 @@ def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
 		
 	iStability, lStabilityTypes, lParameters = calculateStability(iPlayer)
 	iStabilityLevel = getStabilityLevel(iPlayer)
-	sd.setLastDifference(iPlayer, 0)
+	data.players[iPlayer].iLastDifference = 0
 	bHuman = (utils.getHumanID() == iPlayer)
 	bHumanVassal = (bVassal and utils.getHumanID() == iMaster)
 	bFall = (not bHuman and iGameTurn > getTurnForYear(tFall[iPlayer]))
@@ -361,28 +361,28 @@ def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
 		else:
 			incrementStability(iPlayer)
 			
-		sd.setLastDifference(iPlayer, 1)
-		if bHuman: sd.setCrisisImminent(False)
+		data.players[iPlayer].iLastDifference = 1
+		if bHuman: data.bCrisisImminent = False
 		
 	elif iStability >= iThreshold:
-		if bHuman: sd.setCrisisImminent(False)
+		if bHuman: data.bCrisisImminent = False
 		
 		# if stability does not improve on collapsing, a complete collapse ensues
 		if iStabilityLevel == iStabilityCollapsing:
-			if iStability <= sd.getLastStability(iPlayer):
+			if iStability <= data.players[iPlayer].iLastStability:
 				#completeCollapse(iPlayer)
 				triggerCollapse(iPlayer)
 		
 	elif not bPositive:
 		# humans are immune to first stability drop
-		if (bHuman or bHumanVassal) and not sd.isCrisisImminent() and iStabilityLevel > iStabilityCollapsing:
-			if bHuman: sd.setCrisisImminent(True)
+		if (bHuman or bHumanVassal) and not data.bCrisisImminent and iStabilityLevel > iStabilityCollapsing:
+			if bHuman: data.bCrisisImminent = True
 			changeCrisisCountdown(iPlayer, utils.getTurns(5))
 			sText = localText.getText("TXT_KEY_STABILITY_CRISIS_IMMINENT_MESSAGE", (localText.getText(tCrisisLevels[iStabilityLevel], ()),))
 			CyInterface().addMessage(iPlayer, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
 		else:
 			decrementStability(iPlayer)
-			sd.setLastDifference(iPlayer, -1)
+			data.players[iPlayer].iLastDifference = -1
 		
 			iCrisisType = determineCrisisType(lStabilityTypes)
 			iCrisisLevel = iStabilityLevel # PREVIOUS level
@@ -395,9 +395,9 @@ def checkStability(iPlayer, bPositive = False, bWar = False, iMaster = -1):
 			if bFall: bContinue = True
 		
 	# update stability information
-	sd.setLastStability(iPlayer, iStability)
+	data.players[iPlayer].iLastStability = iStability
 	for i in range(5):
-		sd.setStabilityCategoryValue(iPlayer, i, lStabilityTypes[i])
+		data.players[iPlayer].lStabilityCategoryValues[i] = lStabilityTypes[i]
 	
 	for i in range(iNumStabilityParameters):
 		pPlayer.setStabilityParameter(i, lParameters[i])
@@ -537,7 +537,7 @@ def getPossibleMinors(iPlayer):
 	return [iIndependent, iIndependent2]
 	
 def secession(iPlayer, lCities):
-	sd.setSecedingCities(iPlayer, lCities)
+	data.setSecedingCities(iPlayer, lCities)
 	
 def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	lPossibleMinors = getPossibleMinors(iPlayer)
@@ -645,7 +645,7 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		for iLoopPlayer in range(iNumPlayers):
 			if iLoopPlayer == iPlayer: continue
 			if gc.getPlayer(iLoopPlayer).isAlive(): continue
-			if gc.getGame().getGameTurn() - utils.getLastTurnAlive(iLoopPlayer) < utils.getTurns(20): continue
+			if gc.getGame().getGameTurn() - data.players[iLoopPlayer].iLastTurnAlive < utils.getTurns(20): continue
 			
 			# Leoreth: Egyptian respawn on Arabian collapse hurts Ottoman expansion
 			if iPlayer == iArabia and iLoopPlayer == iEgypt: continue
@@ -711,7 +711,7 @@ def completeCollapse(iPlayer):
 	# take care of the remnants of the civ
 	gc.getPlayer(iPlayer).killUnits()
 	utils.resetUHV(iPlayer)
-	utils.setLastTurnAlive(iPlayer, gc.getGame().getGameTurn())
+	data.players[iPlayer].iLastTurnAlive = gc.getGame().getGameTurn()
 		
 	# special case: Byzantine collapse: remove Christians in the Turkish core
 	if iPlayer == iByzantium:
@@ -1294,12 +1294,12 @@ def calculateStability(iPlayer):
 	if iPeripheryExcess > 0:
 		iCorePeripheryStability -= int(25 * sigmoid(1.0 * iPeripheryExcess / 100))
 		
-		iLastExpansionStability = sd.getLastExpansionStability(iPlayer)
+		iLastExpansionStability = data.players[iPlayer].iLastExpansionStability
 		
 		# cap changes between checks at +5
 		if iLastExpansionStability - iCorePeripheryStability > 5: iCorePeripheryStability = iLastExpansionStability - 5
-		
-		sd.setLastExpansionStability(iPlayer, iCorePeripheryStability)
+
+		data.players[iPlayer].iLastExpansionStability = iCorePeripheryStability
 		
 		utils.debugTextPopup('Expansion rating: ' + pPlayer.getCivilizationShortDescription(0) + '\nCore population: ' + str(iCorePopulation) + '\nPeriphery population: ' + str(iPeripheryPopulation) + '\nExpansion stability: ' + str(iCorePeripheryStability))
 		
@@ -1310,7 +1310,7 @@ def calculateStability(iPlayer):
 	iExpansionStability += iCorePeripheryStability
 	
 	# apply raze city penalty
-	iRazeCityStability = sd.getHumanRazePenalty()
+	iRazeCityStability = data.iHumanRazePenalty
 	
 	lParameters[iParameterRazedCities] = iRazeCityStability
 		
@@ -1320,7 +1320,7 @@ def calculateStability(iPlayer):
 	iEconomyStability = 0
 	
 	# Economic Growth
-	iEconomicGrowthStability = 3 * calculateTrendScore(sd.getEconomyTrend(iPlayer))
+	iEconomicGrowthStability = 3 * calculateTrendScore(data.players[iPlayer].lEconomyTrend)
 	
 	lParameters[iParameterEconomicGrowth] = iEconomicGrowthStability
 	
@@ -1398,7 +1398,7 @@ def calculateStability(iPlayer):
 	iDomesticStability = 0
 	
 	# Happiness
-	iHappinessStability = calculateTrendScore(sd.getHappinessTrend(iPlayer))
+	iHappinessStability = calculateTrendScore(data.players[iPlayer].lHappinessTrend)
 	
 	#if iNumTotalCities > 0:
 	#	if iHappyCities > iUnhappyCities:
@@ -1598,7 +1598,7 @@ def calculateStability(iPlayer):
 	for iEnemy in range(iNumPlayers):
 		pEnemy = gc.getPlayer(iEnemy)
 		if pEnemy.isAlive() and tPlayer.isAtWar(iEnemy):
-			iTempWarSuccessStability = calculateTrendScore(sd.getWarTrend(iPlayer, iEnemy))
+			iTempWarSuccessStability = calculateTrendScore(data.players[iPlayer].lWarTrend[iEnemy])
 			if iTempWarSuccessStability > 0: iTempWarSuccessStability /= 2
 			
 			iWarSuccessStability += iTempWarSuccessStability
@@ -1606,7 +1606,7 @@ def calculateStability(iPlayer):
 			iOurWarWeariness = tPlayer.getWarWeariness(iEnemy)
 			iTheirWarWeariness = gc.getTeam(iEnemy).getWarWeariness(iPlayer)
 			
-			iWarTurns = iGameTurn - sd.getWarStartTurn(iPlayer, iEnemy)
+			iWarTurns = iGameTurn - data.players[iPlayer].lWarStartTurn[iEnemy]
 			iDurationModifier = 0
 			
 			if iWarTurns > utils.getTurns(20):
@@ -1677,7 +1677,7 @@ def calculateStability(iPlayer):
 	#iMilitaryStability += iMilitaryStrengthStability
 	
 	# apply barbarian losses
-	iBarbarianLossesStability = -sd.getBarbarianLosses(iPlayer)
+	iBarbarianLossesStability = -data.players[iPlayer].iBarbarianLosses
 	
 	lParameters[iParameterBarbarianLosses] = iBarbarianLossesStability
 	
@@ -1802,20 +1802,20 @@ def updateEconomyTrend(iPlayer):
 	#bFreeMarket = (iCivicEconomy == iCivicFreeMarket)
 	#bEnvironmentalism = (iCivicEconomy == iCivicEnvironmentalism)
 	
-	iPreviousCommerce = sd.getPreviousCommerce(iPlayer)
+	iPreviousCommerce = data.players[iPlayer].iPreviousCommerce
 	iCurrentCommerce = pPlayer.calculateTotalCommerce()
 	
 	if iPreviousCommerce == 0: 
-		sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
+		data.players[iPlayer].iPreviousCommerce = iCurrentCommerce
 		return
 	
 	iPercentChange = 100 * iCurrentCommerce / iPreviousCommerce - 100
 	
-	if iPercentChange > 5: sd.pushEconomyTrend(iPlayer, 1)
-	elif iPercentChange < 0: sd.pushEconomyTrend(iPlayer, -1)
-	else: sd.pushEconomyTrend(iPlayer, 0)
+	if iPercentChange > 5: data.players[iPlayer].pushEconomyTrend(1)
+	elif iPercentChange < 0: data.players[iPlayer].pushEconomyTrend(-1)
+	else: data.players[iPlayer].pushEconomyTrend(0)
 	
-	sd.setPreviousCommerce(iPlayer, iCurrentCommerce)
+	data.players[iPlayer].iPreviousCommerce = iCurrentCommerce
 	
 def updateHappinessTrend(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
@@ -1842,13 +1842,13 @@ def updateHappinessTrend(iPlayer):
 		elif iUnhappiness - iOvercrowding > iPopulation / 5 or iUnhappiness - iHappiness > 0:
 			iUnhappyCities += 1
 			
-	if iHappyCities - iUnhappyCities > math.ceil(iNumCities / 5.0): sd.pushHappinessTrend(iPlayer, 1)
-	elif iUnhappyCities - iHappyCities > math.ceil(iNumCities / 5.0): sd.pushHappinessTrend(iPlayer, -1)
+	if iHappyCities - iUnhappyCities > math.ceil(iNumCities / 5.0): data.players[iPlayer].pushHappinessTrend(1)
+	elif iUnhappyCities - iHappyCities > math.ceil(iNumCities / 5.0): data.players[iPlayer].pushHappinessTrend(-1)
 	
 def updateWarTrend(iPlayer, iEnemy):
-	iPreviousTrend = sd.getLastWarTrend(iPlayer, iEnemy)
+	iPreviousTrend = data.players[iPlayer].getLastWarTrend(iEnemy)
 	
-	iWarTurns = gc.getGame().getGameTurn() - sd.getWarStartTurn(iPlayer, iEnemy)
+	iWarTurns = gc.getGame().getGameTurn() - data.players[iPlayer].lWarStartTurn[iEnemy]
 	iDurationModifier = min(5, iWarTurns / utils.getTurns(10))
 	
 	iOurSuccess = gc.getTeam(iPlayer).AI_getWarSuccess(iEnemy)
@@ -1859,15 +1859,15 @@ def updateWarTrend(iPlayer, iEnemy):
 	else:
 		iCurrentTrend = 0
 	
-	sd.pushWarTrend(iPlayer, iEnemy, iCurrentTrend)
+	data.players[iPlayer].pushWarTrend(iEnemy, iCurrentTrend)
 	
 def startWar(iPlayer, iEnemy):
-	sd.setWarTrend(iPlayer, iEnemy, [])
-	sd.setWarTrend(iEnemy, iPlayer, [])
+	data.players[iPlayer].lWarTrend[iEnemy] = []
+	data.players[iEnemy].lWarTrend[iPlayer] = []
 	
 	iGameTurn = gc.getGame().getGameTurn()
-	sd.setWarStartTurn(iPlayer, iEnemy, iGameTurn)
-	sd.setWarStartTurn(iEnemy, iPlayer, iGameTurn)
+	data.players[iPlayer].lWarStartTurn[iEnemy] = iGameTurn
+	data.players[iEnemy].lWarStartTurn[iPlayer] = iGameTurn
 	
 def calculateEconomicGrowth(iPlayer, iNumTurns):
 	lHistory = []
@@ -1966,7 +1966,7 @@ def checkResurrection(iGameTurn):
 
 	#print '\nCheck resurrection'
 
-	iNationalismModifier = min(20, 4 * utils.getCivsWithNationalism())
+	iNationalismModifier = min(20, 4 * data.iCivsWithNationalism)
 	
 	lPossibleResurrections = []
 	bDeadCivFound = False
@@ -1976,7 +1976,7 @@ def checkResurrection(iGameTurn):
 		if utils.canRespawn(iLoopCiv):
 			lPossibleResurrections.append(iLoopCiv)
 				
-	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: utils.getLastTurnAlive(x)):
+	for iLoopCiv in utils.getSortedList(lPossibleResurrections, lambda x: data.players[x].iLastTurnAlive):
 		iMinNumCities = 2
 		
 		# special case Netherlands: need only one city to respawn (Amsterdam)
@@ -2022,7 +2022,7 @@ def getResurrectionCities(iPlayer, bFromCollapse = False):
 		bCapital = ((city.getX(), city.getY()) == tCapital)
 		
 		# flips are less likely before Nationalism
-		if utils.getCivsWithNationalism() == 0:
+		if data.iCivsWithNationalism == 0:
 			iOwnerStability += 1
 			
 		if utils.getHumanID() != iOwner:
@@ -2076,7 +2076,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	pPlayer = gc.getPlayer(iPlayer)
 	teamPlayer = gc.getTeam(iPlayer)
 
-	sd.setRebelCiv(iPlayer)
+	data.iRebelCiv = iPlayer
 	
 	for iOtherCiv in range(iNumPlayers):
 		teamPlayer.makePeace(iOtherCiv)
@@ -2087,7 +2087,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 		if gc.getTeam(iOtherCiv).isVassal(iPlayer):
 			teamPlayer.freeVassal(iOtherCiv)
 		
-	sd.setNumPreviousCities(iPlayer, 0)
+	data.players[iPlayer].iNumPreviousCities = 0
 	
 	pPlayer.AI_reset()
 	
@@ -2182,9 +2182,9 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	if bAskFlip and iHuman in lOwners:
 		rebellionPopup(iPlayer)
 		
-	sd.setStabilityLevel(iPlayer, iStabilityStable)
+	data.setStabilityLevel(iPlayer, iStabilityStable)
 	
-	utils.setPlagueCountdown(iPlayer, -10)
+	data.players[iPlayer].iPlagueCountdown = -10
 	utils.clearPlague(iPlayer)
 	convertBackCulture(iPlayer)
 	

@@ -27,7 +27,7 @@ import CvEventManager
 import Popup
 import CityNameManager as cnm
 
-import Consts as con
+from Consts import *
 from RFCUtils import utils
 import MapEditorTools as met
 import Areas
@@ -519,19 +519,19 @@ class CvWorldBuilderScreen:
 			else:
 				self.m_pRiverStartPlot = self.m_pCurrentPlot
 		elif self.iPlayerAddMode == "Core":
-			if self.m_iCurrentPlayer < con.iNumPlayers:
+			if self.m_iCurrentPlayer <iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
 				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "SettlerValue":
-			if self.m_iCurrentPlayer < con.iNumPlayers:
+			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, iSetValue)
 				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
-			if self.m_iCurrentPlayer < con.iNumPlayers:
+			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeWarValue(self.m_iCurrentPlayer, tPlot, iWarValue)
 				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
@@ -638,19 +638,19 @@ class CvWorldBuilderScreen:
 		elif self.iPlayerAddMode == "AddLandMark":
 			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "Core":
-			if self.m_iCurrentPlayer < con.iNumPlayers:
+			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
 				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "SettlerValue":
-			if self.m_iCurrentPlayer < con.iNumPlayers:
+			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeSettlerValue(self.m_iCurrentPlayer, tPlot, 20)
 				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
-			if self.m_iCurrentPlayer < con.iNumPlayers:
+			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
 				met.changeWarValue(self.m_iCurrentPlayer, tPlot, 0)
 				if self.iBrushWidth <= 1 and self.iBrushHeight <= 1:
@@ -1272,11 +1272,11 @@ class CvWorldBuilderScreen:
 				iX += iAdjust
 				screen.addDropDownBoxGFC("PresetValue", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 				if self.iPlayerAddMode == "WarMap":
-					for i in range(0, con.iMaxWarValue+1, 2):
+					for i in range(0, iMaxWarValue+1, 2):
 						screen.addPullDownString("PresetValue", str(i), i, i, i == iWarValue)
 				else:
-					for i in range(len(con.lPresetValues)):
-						screen.addPullDownString("PresetValue", str(con.lPresetValues[i]), i, con.lPresetValues[i], con.lPresetValues[i] == iSetValue)
+					for i in range(len(lPresetValues)):
+						screen.addPullDownString("PresetValue", str(lPresetValues[i]), i, lPresetValues[i], lPresetValues[i] == iSetValue)
 
 				if self.iPlayerAddMode in ["Core", "SettlerValue", "WarMap"]:
 					iX = iXStart + 8
@@ -1663,11 +1663,11 @@ class CvWorldBuilderScreen:
 
 	def showFlipZone(self):
 		utils.removeStabilityOverlay()
-		if self.m_iCurrentPlayer < con.iNumPlayers:
+		if self.m_iCurrentPlayer < iNumPlayers:
 			sColor = "COLOR_MAGENTA"
 			sColorAI = "COLOR_RED"
 			# Human flipzone
-			if utils.canEverRespawn(self.m_iCurrentPlayer) or (gc.getPlayer(self.m_iCurrentPlayer).isAlive() and not utils.isReborn(self.m_iCurrentPlayer)) or gc.getGame().getGameTurn() < getTurnForYear(con.tBirth[self.m_iCurrentPlayer]):
+			if utils.canEverRespawn(self.m_iCurrentPlayer) or (gc.getPlayer(self.m_iCurrentPlayer).isAlive() and not utils.isReborn(self.m_iCurrentPlayer)) or gc.getGame().getGameTurn() < getTurnForYear(tBirth[self.m_iCurrentPlayer]):
 				lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
 			else:
 				lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
@@ -1698,7 +1698,7 @@ class CvWorldBuilderScreen:
 			plot = CyMap().plotByIndex(i)
 			iPlotType = plot.getWarValue(self.m_iCurrentPlayer) / 2
 			if iPlotType > 0:
-				szColor = con.lWarMapColors[iPlotType-1]
+				szColor = lWarMapColors[iPlotType-1]
 				CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000+iPlotType-1, szColor, 0.7)
 
 	def Exit(self):
@@ -2159,14 +2159,14 @@ class CvWorldBuilderScreen:
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
 				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in range(con.iNumPlayers):
+					for iPlayer in range(iNumPlayers):
 						met.exportSettlerMap(iPlayer, True, True)
 				else:
 					met.exportSettlerMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showStabilityOverlay()
 			else:
 				if CvEventInterface.getEventManager().bAlt:
-					for iPlayer in range(con.iNumPlayers):
+					for iPlayer in range(iNumPlayers):
 						met.exportWarMap(iPlayer, True, True)
 				else:
 					met.exportWarMap(self.m_iCurrentPlayer, CyInterface().shiftKey())

@@ -51,7 +51,7 @@ TechWindowOpt = BugCore.game.TechWindow
 g_bIsScreenActive = -1
 
 #Rhye - start
-from StoredData import sd
+from StoredData import data
 from Consts import *
 import Areas
 import RFCUtils
@@ -62,7 +62,8 @@ utils = RFCUtils.RFCUtils()
 gc = CyGlobalContext()
 
 def getStabilityLevel(argsList):
-	return sd.getStabilityLevel(argsList[0])
+	iPlayer = argsList[0]
+	return data.players[iPlayer].iStabilityLevel
 	
 def countAchievedGoals(argsList):
 	return utils.countAchievedGoals(argsList[0])
@@ -1176,22 +1177,22 @@ def toggleStabilityOverlay():
 	utils.toggleStabilityOverlay()
 		
 def applyClaimCityEvent(argsList):
-	sd.getCurrentCongress().applyClaimCityEvent(argsList[0])
+	data.currentCongress.applyClaimCityEvent(argsList[0])
 	
 def applyVoteCityEvent(argsList):
-	sd.getCurrentCongress().applyVoteCityEvent(argsList[1], argsList[2], argsList[0])
+	data.currentCongress.applyVoteCityEvent(argsList[1], argsList[2], argsList[0])
 	
 def applyIntroductionEvent(argsList):
-	sd.getCurrentCongress().applyIntroductionEvent()
+	data.currentCongress.applyIntroductionEvent()
 	
 def applyRefusalEvent(argsList):
-	sd.getCurrentCongress().applyRefusalEvent(argsList[0], argsList[1], argsList[2], argsList[3])
+	data.currentCongress.applyRefusalEvent(argsList[0], argsList[1], argsList[2], argsList[3])
 	
 def applyBriberyEvent(argsList):
-	sd.getCurrentCongress().applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])
+	data.currentCongress.applyBriberyEvent(argsList[0], argsList[1], argsList[2], argsList[3])
 	
 def applyBriberyResultEvent(argsList):
-	sd.getCurrentCongress().applyBriberyResultEvent()
+	data.currentCongress.applyBriberyResultEvent()
 
 
 #######################################################################################

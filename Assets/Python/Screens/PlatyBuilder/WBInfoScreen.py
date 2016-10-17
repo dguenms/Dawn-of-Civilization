@@ -12,7 +12,7 @@ import WBProjectScreen
 import CvPlatyBuilderScreen
 gc = CyGlobalContext()
 
-import Consts as con
+from Consts import *
 from RFCUtils import utils
 import MapEditorTools as met
 import Areas
@@ -297,34 +297,34 @@ class WBInfoScreen:
 		elif iMode == 14 and iItem != -1:
 			iPlayer = iItem
 			tCapital = Areas.getCapital(iPlayer)
-			for x in range(con.iWorldX):
-				for y in range(con.iWorldY):
+			for x in range(iWorldX):
+				for y in range(iWorldY):
 					plot = gc.getMap().plot(x, y)
 					if plot.isWater(): continue
 					if gc.getMap().plot(x, y).isCore(iPlayer):
-						iPlotType = con.iCore
+						iPlotType = iCore
 					else:
 						bForeignCore = Areas.isForeignCore(iPlayer, (x, y))
 						iSettlerValue = met.getSettlerValue(iPlayer, (x, y))
 						if iSettlerValue >= 90:
 							if bForeignCore:
-								iPlotType = con.iContest
+								iPlotType = iContest
 							else:
-								iPlotType = con.iHistorical
+								iPlotType = iHistorical
 						elif iSettlerValue == 3 and bShowAIForbidden:
-							iPlotType = con.iAIForbidden
+							iPlotType = iAIForbidden
 						elif bForeignCore and bShowForeignCores:
-							iPlotType = con.iForeignCore
+							iPlotType = iForeignCore
 						else:
 							iPlotType = -1
 					if iPlotType != -1:
-						iColor = gc.getInfoTypeForString(con.lStabilityColors[iPlotType])
+						iColor = gc.getInfoTypeForString(lStabilityColors[iPlotType])
 						screen.minimapFlashPlot(x, y, iColor, -1)
 
 		elif iMode == 15 and iItem != -1:
 			iColorS = gc.getInfoTypeForString(self.iColorSpawn)
 			iColorSW = gc.getInfoTypeForString(self.iColorSpawnWater)
-			iColorC = gc.getInfoTypeForString(con.lStabilityColors[2])
+			iColorC = gc.getInfoTypeForString(lStabilityColors[2])
 			iPlayer = iItem
 			for tPlot in Areas.getBirthArea(iPlayer):
 				plot = gc.getMap().plot(tPlot[0], tPlot[1])
@@ -604,7 +604,7 @@ class WBInfoScreen:
 		screen.addTableControlGFC("InfoTable", 2, iX, iY, iWidth, iHeight, True, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 		screen.setTableColumnHeader("InfoTable", 0, "<font=3>" + CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIV", ()) + "</font>", iWidth)
 
-		for iPlayer in range(con.iNumPlayers):
+		for iPlayer in range(iNumPlayers):
 			iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 			iRow = screen.appendTableRow("InfoTable")
 			screen.setTableText("InfoTable", 0, iRow, "<font=3>" + gc.getCivilizationInfo(iCiv).getShortDescription(0) + "</font>", gc.getCivilizationInfo(iCiv).getButton(), WidgetTypes.WIDGET_PYTHON, 22005, iPlayer, CvUtil.FONT_LEFT_JUSTIFY)

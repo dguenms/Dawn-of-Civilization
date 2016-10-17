@@ -2,7 +2,7 @@ from CvPythonExtensions import *
 import CvUtil
 import CvScreenEnums
 import CvScreensInterface
-import Consts as con
+from Consts import *
 import Stability
 
 # Globals
@@ -346,7 +346,7 @@ class CvCivicsScreen:
 		player = gc.getPlayer(self.iActivePlayer)
 		iHoverCategory = gc.getCivicInfo(iHoverCivic).getCivicOptionType()
 		
-		for iCivic in range(con.iNumCivics):
+		for iCivic in range(iNumCivics):
 			iCategory = gc.getCivicInfo(iCivic).getCivicOptionType()
 			if iCategory == iHoverCategory:
 				continue

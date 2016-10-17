@@ -7,7 +7,7 @@ import PyHelpers
 import CvUtil
 import CvScreenEnums
 import random
-import Consts as con #Rhye
+from Consts import * #Rhye
 from CvPythonExtensions import *
 
 PyPlayer = PyHelpers.PyPlayer
@@ -160,7 +160,7 @@ class CvTopCivs:
 		
 		# Loop through all players except the barbs
 		#for iPlayerLoop in range(gc.getMAX_PLAYERS()-1): #Rhye
-		for iPlayerLoop in range(con.iNumMajorPlayers): #Rhye
+		for iPlayerLoop in range(iNumMajorPlayers): #Rhye
 				
 			if (gc.getPlayer(iPlayerLoop).isAlive()):
 				

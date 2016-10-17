@@ -12,7 +12,7 @@ import string
 #import time
 import math
 
-import Consts as con
+from Consts import *
 import RFCUtils
 from PyHelpers import PyPlayer
 
@@ -2152,9 +2152,8 @@ class CvInfoScreen:
 					iActivePlayer = CyGame().getActivePlayer()
 					pActivePlayer = gc.getPlayer(iActivePlayer)
 					tActivePlayer = gc.getTeam(pActivePlayer.getTeam())
-					iCalendar = con.iCalendar
 					
-					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < con.tBirth[iActivePlayer]):
+					if (tActivePlayer.isHasTech(iCalendar) or iTurnYear < tBirth[iActivePlayer]):
 						if (iTurnYear < 0):
 						    szTurnFounded = localText.getText("TXT_KEY_TIME_BC", (-iTurnYear,))
 						else:
@@ -2956,11 +2955,8 @@ class CvInfoScreen:
 		iPlayer = CyGame().getActivePlayer()
 		pPlayer = gc.getPlayer(iPlayer)
 		tPlayer = gc.getTeam(pPlayer.getTeam())
-		iBronzeWorking = con.iBronzeWorking
-		iIronWorking = con.iIronWorking
-		iCalendar = con.iCalendar
 		
-		if (tPlayer.isHasTech(iCalendar) or year < con.tBirth[iPlayer]):  
+		if (tPlayer.isHasTech(iCalendar) or year < tBirth[iPlayer]):  
 			if (year < 0):
 			    return localText.getText("TXT_KEY_TIME_BC", (-year,))
 			else:

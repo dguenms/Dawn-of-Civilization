@@ -8,7 +8,7 @@ import CvEventInterface
 import time
 
 import RFCUtils
-from StoredData import sd
+from StoredData import data
 from Consts import *
 
 # BUG - DLL - start
@@ -5209,7 +5209,7 @@ class CvMainInterface:
 # Leoreth - Stability Icons - start
 
 												if ePlayer < iNumPlayers:
-													iStabilityLevel = sd.getStabilityLevel(ePlayer)
+													iStabilityLevel = data.getStabilityLevel(ePlayer)
 													if iStabilityLevel > iStabilityStable: cStab = unichr(CyGame().getSymbolID(FontSymbols.SOLID_CHAR))
 													elif iStabilityLevel > iStabilityUnstable: cStab = unichr(CyGame().getSymbolID(FontSymbols.STABLE_CHAR))
 													else: cStab = unichr(CyGame().getSymbolID(FontSymbols.UNSTABLE_CHAR))

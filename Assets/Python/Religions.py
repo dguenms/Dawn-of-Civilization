@@ -8,7 +8,7 @@ import Popup
 from Consts import *
 import CvTranslator
 import RFCUtils
-from StoredData import sd #edead
+from StoredData import data #edead
 
 # globals
 gc = CyGlobalContext()
@@ -72,29 +72,9 @@ lOrthodoxWest = [iByzantium, iGreece, iRussia, iEthiopia, iEgypt, iCarthage, iPe
 
 class Religions:
 
-##################################################
-### Secure storage & retrieval of script data ###
-################################################
-
-	def getSeed( self ):
-		return sd.scriptDict['iSeed']
-
-	def setSeed( self ):
-		sd.scriptDict['iSeed'] = gc.getGame().getSorenRandNum(100, 'Seed for random delay')
-		
-	def getReformationDecision(self, iCiv):
-		return sd.scriptDict['lReformationDecision'][iCiv]
-		
-	def setReformationDecision(self, iCiv, iDecision):
-		sd.scriptDict['lReformationDecision'][iCiv] = iDecision
-
-
 #######################################
 ### Main methods (Event-Triggered) ###
-#####################################  
-
-	def setup(self):
-		self.setSeed()
+#####################################
 		
 	def checkTurn(self, iGameTurn):
 	
@@ -244,7 +224,7 @@ class Religions:
 	def checkJudaism(self, iGameTurn):
 		if gc.getGame().isReligionFounded(iJudaism): return
 
-		if iGameTurn == getTurnForYear(-1500) - utils.getTurns(utils.getSeed() % 5):
+		if iGameTurn == getTurnForYear(-1500) - utils.getTurns(data.iSeed % 5):
 			self.foundReligion(self.selectHolyCity(tJewishTL, tJewishBR, tJerusalem), iJudaism)
 			
 	def spreadJudaismEurope(self, iGameTurn):
@@ -280,7 +260,7 @@ class Religions:
 	def checkBuddhism(self, iGameTurn):
 		if gc.getGame().isReligionFounded(iBuddhism): return
 		
-		if iGameTurn == getTurnForYear(-300) - 5 + utils.getTurns(utils.getSeed() % 10):
+		if iGameTurn == getTurnForYear(-300) - 5 + utils.getTurns(data.iSeed % 10):
 			self.foundReligion(self.selectHolyCity(tBuddhistTL, tBuddhistBR), iBuddhism)
 		
 ## ORTHODOXY
@@ -290,8 +270,8 @@ class Religions:
 		if gc.getGame().isReligionFounded(iOrthodoxy): return
 		
 		iEthiopiaOffset = 0
-		if utils.getHumanID() == iEthiopia: iEthiopiaOffset = utils.getTurns(10 + utils.getSeed() % 5)
-		iOffset = utils.getTurns(utils.getSeed() % 15)
+		if utils.getHumanID() == iEthiopia: iEthiopiaOffset = utils.getTurns(10 + data.iSeed % 5)
+		iOffset = utils.getTurns(data.iSeed % 15)
 		
 		if iGameTurn == getTurnForYear(0) + iOffset + iEthiopiaOffset:
 			pHolyCity = gc.getGame().getHolyCity(iJudaism)
@@ -443,13 +423,13 @@ class Religions:
 				self.reformationChoice(iPlayer)
 				
 		for iPlayer in range(iNumPlayers):
-			if self.getReformationDecision(iPlayer) == 2:
+			if data.players[iPlayer].iReformationDecision == 2:
 				for iTargetPlayer in range(iNumPlayers):
-					if self.getReformationDecision(iTargetPlayer) == 0 and utils.getHumanID() != iTargetPlayer and iTargetPlayer != iNetherlands and not utils.isAVassal(iTargetPlayer):
+					if data.players[iTargetPlayer].iReformationDecision == 0 and utils.getHumanID() != iTargetPlayer and iTargetPlayer != iNetherlands and not utils.isAVassal(iTargetPlayer):
 						gc.getTeam(iPlayer).declareWar(iTargetPlayer, True, WarPlanTypes.WARPLAN_DOGPILE)
 						
 		pHolyCity = gc.getGame().getHolyCity(iProtestantism)
-		if self.getReformationDecision(pHolyCity.getOwner()) == 0:
+		if data.players[pHolyCity.getOwner()].iReformationDecision == 0:
 			pHolyCity.setNumRealBuilding(iProtestantShrine, 1)
 		
 	def reformationChoice(self, iPlayer):
@@ -488,7 +468,7 @@ class Religions:
 		pPlayer.setConversionTimer(10)
 		
 		if iCiv < iNumPlayers:
-			self.setReformationDecision(iCiv, 0)
+			data.players[iCiv].iReformationDecision = 0
 		
 	def tolerateReformation(self, iCiv):
 		cityList = PyPlayer(iCiv).getCityList()
@@ -501,7 +481,7 @@ class Religions:
 					pCity.setHasReligion(iProtestantism, True, False, False)
 		
 		if iCiv < iNumPlayers:
-			self.setReformationDecision(iCiv, 1)
+			data.players[iCiv].iReformationDecision = 1
 					
 	def counterReformation(self, iCiv):
 		cityList = PyPlayer(iCiv).getCityList()
@@ -513,7 +493,7 @@ class Religions:
 						pCity.setHasReligion(iProtestantism, True, False, False)
 		
 		if iCiv < iNumPlayers:
-			self.setReformationDecision(iCiv, 2)
+			data.players[iCiv].iReformationDecision = 2
 		
 
 	def reformationyes(self, iCiv):

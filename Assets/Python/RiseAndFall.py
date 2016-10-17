@@ -5,7 +5,7 @@ import CvUtil
 from PyHelpers import PyPlayer
 import Popup
 #import cPickle as pickle
-from StoredData import sd # edead
+from StoredData import data # edead
 import CvTranslator
 import RFCUtils
 from Consts import *
@@ -32,172 +32,6 @@ iEscapePeriod = 30
 
 class RiseAndFall:
 
-##################################################
-### Secure storage & retrieval of script data ###
-################################################
-	
-
-	def getNewCiv( self ):
-		return sd.scriptDict['lNewCiv'].pop()
-
-	def setNewCiv( self, iNewValue ):
-		sd.scriptDict['lNewCiv'].append(iNewValue)
-		
-	def getRespawnCiv(self):
-		return sd.scriptDict['iRespawnCiv']
-		
-	def setRespawnCiv(self, iNewValue):
-		sd.scriptDict['iRespawnCiv'] = iNewValue
-
-	def getNewCivFlip( self ):
-		return sd.scriptDict['iNewCivFlip']
-
-	def setNewCivFlip( self, iNewValue ):
-		sd.scriptDict['iNewCivFlip'] = iNewValue
-
-	def getOldCivFlip( self ):
-		return sd.scriptDict['iOldCivFlip']
-
-	def setOldCivFlip( self, iNewValue ):
-		sd.scriptDict['iOldCivFlip'] = iNewValue
-		
-	def getTempTopLeft( self ):
-		return sd.scriptDict['tempTopLeft']
-
-	def setTempTopLeft( self, tNewValue ):
-		sd.scriptDict['tempTopLeft'] = tNewValue
-
-	def getTempBottomRight( self ):
-		return sd.scriptDict['tempBottomRight']
-
-	def setTempBottomRight( self, tNewValue ):
-		sd.scriptDict['tempBottomRight'] = tNewValue
-		
-	def setTempPlots(self, lPlots):
-		sd.scriptDict['lTempPlots'] = lPlots
-		
-	def getTempPlots(self):
-		return sd.scriptDict['lTempPlots']
-
-	def getSpawnWar( self ):
-		return sd.scriptDict['iSpawnWar']
-
-	def setSpawnWar( self, iNewValue ):
-		sd.scriptDict['iSpawnWar'] = iNewValue
-
-	def getColonistsAlreadyGiven( self, iCiv ):
-		return sd.scriptDict['lColonistsAlreadyGiven'][iCiv]
-
-	def setColonistsAlreadyGiven( self, iCiv, iNewValue ):
-		sd.scriptDict['lColonistsAlreadyGiven'][iCiv] = iNewValue
-		
-	def changeColonistsAlreadyGiven(self, iCiv, iChange):
-		sd.scriptDict['lColonistsAlreadyGiven'][iCiv] += iChange
-
-	def getAstronomyTurn( self, iCiv ):
-		return sd.scriptDict['lAstronomyTurn'][iCiv]
-
-	def setAstronomyTurn( self, iCiv, iNewValue ):
-		sd.scriptDict['lAstronomyTurn'][iCiv] = iNewValue
-
-	def getNumCities( self, iCiv ):
-		return sd.scriptDict['lNumCities'][iCiv]
-
-	def setNumCities( self, iCiv, iNewValue ):
-		sd.scriptDict['lNumCities'][iCiv] = iNewValue
-		
-	def getSpawnDelay( self, iCiv ):
-		return sd.scriptDict['lSpawnDelay'][iCiv]
-
-	def setSpawnDelay( self, iCiv, iNewValue ):
-		sd.scriptDict['lSpawnDelay'][iCiv] = iNewValue
-
-	def getFlipsDelay( self, iCiv ):
-		return sd.scriptDict['lFlipsDelay'][iCiv]
-
-	def setFlipsDelay( self, iCiv, iNewValue ):
-		sd.scriptDict['lFlipsDelay'][iCiv] = iNewValue
-
-	def getBetrayalTurns( self ):
-		return sd.scriptDict['iBetrayalTurns']
-
-	def setBetrayalTurns( self, iNewValue ):
-		sd.scriptDict['iBetrayalTurns'] = iNewValue
-
-	def getLatestFlipTurn( self ):
-		return sd.scriptDict['iLatestFlipTurn']
-
-	def setLatestFlipTurn( self, iNewValue ):
-		sd.scriptDict['iLatestFlipTurn'] = iNewValue
-
-	def getLatestRebellionTurn( self, iCiv ):
-		return gc.getPlayer(iCiv).getLatestRebellionTurn()
-
-	def setLatestRebellionTurn( self, iCiv, iNewValue ):
-		gc.getPlayer(iCiv).setLatestRebellionTurn(iNewValue)
-
-	def getRebelCiv( self ):
-		return sd.scriptDict['iRebelCiv']
-
-	def setRebelCiv( self, iNewValue ):
-		sd.scriptDict['iRebelCiv'] = iNewValue
-		
-	def getExileData( self, i ):
-		return sd.scriptDict['lExileData'][i]
-
-	def setExileData( self, i, iNewValue ):
-		sd.scriptDict['lExileData'][i] = iNewValue
-	
-	def getTempFlippingCity( self ):
-		return sd.scriptDict['tempFlippingCity']
-
-	def setTempFlippingCity( self, tNewValue ):
-		sd.scriptDict['tempFlippingCity'] = tNewValue
-
-	def getCheatersCheck( self, i ):
-		return sd.scriptDict['lCheatersCheck'][i]
-
-	def setCheatersCheck( self, i, iNewValue ):
-		sd.scriptDict['lCheatersCheck'][i] = iNewValue
-
-	def getBirthTurnModifier( self, iCiv ):
-		return sd.scriptDict['lBirthTurnModifier'][iCiv]
-
-	def setBirthTurnModifier( self, iCiv, iNewValue ):
-		sd.scriptDict['lBirthTurnModifier'][iCiv] = iNewValue
-
-	def getDeleteMode( self, i ):
-		return sd.scriptDict['lDeleteMode'][i]
-
-	def setDeleteMode( self, i, iNewValue ):
-		sd.scriptDict['lDeleteMode'][i] = iNewValue
-
-	def getFirstContactConquerors( self, iCiv ):
-		return sd.scriptDict['lFirstContactConquerors'][iCiv]
-
-	def setFirstContactConquerors( self, iCiv, iNewValue ):
-		sd.scriptDict['lFirstContactConquerors'][iCiv] = iNewValue
-
-	def getCheatMode( self ):
-		return sd.scriptDict['bCheatMode']
-
-	def setCheatMode( self, bNewValue ):
-		sd.scriptDict['bCheatMode'] = bNewValue
-
-	def setTempFlippingCity(self, tPlot):
-		sd.scriptDict['tTempFlippingCity'] = tPlot
-
-	def getTempFlippingCity(self):
-		return sd.scriptDict['tTempFlippingCity']
-
-	def setFirstContactMongols(self, iCiv, iValue):
-		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
-		sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)] = iValue
-
-	def getFirstContactMongols(self, iCiv):
-		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
-		return sd.scriptDict['lFirstContactMongols'][lMongolCivs.index(iCiv)]
-		
 ###############
 ### Popups ###
 #############
@@ -213,20 +47,20 @@ class RiseAndFall:
 
 	def newCivPopup(self, iCiv):
 		self.showPopup(7614, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
-		self.setNewCiv(iCiv)
+		data.addNewCiv(iCiv)
 
 	def eventApply7614(self, popupReturn):
-		iNewCiv = self.getNewCiv()
+		iNewCiv = data.getNewCiv()
 		if( popupReturn.getButtonClicked() == 0 ): # 1st button
 			self.handleNewCiv(iNewCiv)
 			
 	def respawnPopup(self, iCiv):
 		self.showPopup(7628, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), CyTranslator().getText("TXT_KEY_NEWCIV_MESSAGE", (gc.getPlayer(iCiv).getCivilizationAdjectiveKey(),)), (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
-		self.setRespawnCiv(iCiv)
+		data.iRespawnCiv = iCiv
 		
 	def eventApply7628(self, popupReturn):
 		if popupReturn.getButtonClicked() == 0:
-			self.handleNewCiv(self.getRespawnCiv())
+			self.handleNewCiv(data.iRespawnCiv)
 		
 	def handleNewCiv(self, iCiv):
 		iPreviousCiv = utils.getHumanID()
@@ -237,10 +71,10 @@ class RiseAndFall:
 		for iMaster in range(iNumPlayers):
 			if (gc.getTeam(gc.getPlayer(iCiv).getTeam()).isVassal(iMaster)):
 				gc.getTeam(gc.getPlayer(iCiv).getTeam()).setVassal(iMaster, False, False)
-		sd.setAlreadySwitched(True)
+		data.bAlreadySwitched = True
 		gc.getPlayer(iCiv).setPlayable(True)
 		
-		sd.resetHumanStability()
+		data.resetHumanStability()
 
 		pPlayer = gc.getPlayer(iCiv)
 		pCity, iter = pPlayer.firstCity(true)
@@ -254,11 +88,11 @@ class RiseAndFall:
 						city.setLayoutDirty(True)
 						
 		for i in range(3):
-			utils.setGoal(iCiv, i, -1)
+			data.players[iCiv].lGoals[i] = -1
 						
 		if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
 			for i in range(3):
-				utils.setGoal(iPreviousCiv, i, 0)
+				data.players[iPreviousCiv].lGoals[i] = 0
 
 	def flipPopup(self, iNewCiv, lPlots):
 		iHuman = utils.getHumanID()
@@ -271,14 +105,14 @@ class RiseAndFall:
 		flipText += CyTranslator().getText("TXT_KEY_FLIPMESSAGE2", ())
 							
 		self.showPopup(7615, CyTranslator().getText("TXT_KEY_NEWCIV_TITLE", ()), flipText, (CyTranslator().getText("TXT_KEY_POPUP_YES", ()), CyTranslator().getText("TXT_KEY_POPUP_NO", ())))
-		self.setNewCivFlip(iNewCiv)
-		self.setOldCivFlip(iHuman)
-		self.setTempPlots(lPlots)
+		data.iNewCivFlip = iNewCiv
+		data.iOldCivFlip = iHuman
+		data.lTempPlots = lPlots
 
 	def eventApply7615(self, popupReturn):
 		iHuman = utils.getHumanID()
-		lPlots = self.getTempPlots()
-		iNewCivFlip = self.getNewCivFlip()
+		lPlots = data.lTempPlots
+		iNewCivFlip = data.iNewCivFlip
 		
 		iNumCities = gc.getPlayer(iNewCivFlip).getNumCities()
 
@@ -294,9 +128,9 @@ class RiseAndFall:
 					print ("flipping ", city.getName())
 					utils.cultureManager((city.getX(),city.getY()), 100, iNewCivFlip, iHuman, False, False, False)
 					utils.flipUnitsInCityBefore((city.getX(),city.getY()), iNewCivFlip, iHuman)
-					self.setTempFlippingCity((city.getX(),city.getY()))
+					data.tTempFlippingCity = (city.getX(), city.getY())
 					utils.flipCity((city.getX(), city.getY()), 0, 0, iNewCivFlip, [iHuman])					
-					utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iNewCivFlip)
+					utils.flipUnitsInCityAfter(data.tTempFlippingCity, iNewCivFlip)
 					
 			if iNumCities == 0 and gc.getPlayer(iNewCivFlip).getNumCities() > 0:
 				self.createStartingWorkers(iNewCivFlip, (gc.getPlayer(iNewCivFlip).getCapitalCity().getX(), gc.getPlayer(iNewCivFlip).getCapitalCity().getY()))
@@ -319,9 +153,9 @@ class RiseAndFall:
 									i = i - 1
 
 
-			if (self.getCheatersCheck(0) == 0):
-				self.setCheatersCheck(0, iCheatersPeriod)
-				self.setCheatersCheck(1, self.getNewCivFlip())
+			if (data.lCheatersCheck[0] == 0):
+				data.lCheatersCheck[0] = iCheatersPeriod
+				data.lCheatersCheck[1] = data.iNewCivFlip
 				
 		elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
 			print ("Flip disagreed")
@@ -335,11 +169,10 @@ class RiseAndFall:
 					oldCulture = pCurrent.getCulture(iHuman)
 					pCurrent.setCulture(iNewCivFlip, oldCulture/2, True)
 					pCurrent.setCulture(iHuman, oldCulture/2, True)					
-					iWar = self.getSpawnWar() + 1
-					self.setSpawnWar(iWar)
-					if (self.getSpawnWar() == 1):
+					data.iSpawnWar += 1
+					if (data.iSpawnWar == 1):
 						gc.getTeam(gc.getPlayer(iNewCivFlip).getTeam()).declareWar(iHuman, False, -1) ##True??
-						self.setBetrayalTurns(iBetrayalPeriod)
+						data.iBetrayalTurns = iBetrayalPeriod
 						self.initBetrayal()							      
 				
 	def rebellionPopup(self, iRebelCiv):
@@ -350,7 +183,7 @@ class RiseAndFall:
 
 	def eventApply7622(self, popupReturn):
 		iHuman = utils.getHumanID()
-		iRebelCiv = self.getRebelCiv()
+		iRebelCiv = data.iRebelCiv
 		if( popupReturn.getButtonClicked() == 0 ): # 1st button
 			gc.getTeam(gc.getPlayer(iHuman).getTeam()).makePeace(iRebelCiv)						   
 		elif( popupReturn.getButtonClicked() == 1 ): # 2nd button
@@ -358,7 +191,7 @@ class RiseAndFall:
 
 	def eventApply7625(self, popupReturn):
 		iHuman = utils.getHumanID()
-		iPlayer, targetList = utils.getTempEventList()
+		iPlayer, targetList = data.lTempEventList
 		if popupReturn.getButtonClicked() == 0:
 			for tPlot in targetList:
 				x, y = tPlot
@@ -370,29 +203,9 @@ class RiseAndFall:
 				x, y = tPlot
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iHuman:
 					utils.colonialConquest(iPlayer, x, y)
-					
-	#def eventApply7627(self, popupReturn):
-	#	lReligionList, tCityPlot = utils.getTempEventList()
-	#	x, y = tCityPlot
-	#	city = gc.getMap().plot(x, y).getPlotCity()
-	#	
-	#	utils.debugTextPopup("lReligionList: "+str(lReligionList)+"\n Button clicked: "+str(popupReturn.getButtonClicked()))
-	#	
-	#	iPersecutedReligion = lReligionList[popupReturn.getButtonClicked()]
-	#	
-	#	utils.debugTextPopup("iPersecutedReligion: "+str(gc.getReligionInfo(iPersecutedReligion).getText()))
-	#	
-	#	city.setHasReligion(iPersecutedReligion, False, True, True)
-	#	city.setHasRealBuilding(iTemple + 4*iPersecutedReligion, False)
-	#	city.setHasRealBuilding(iMonastery + 4*iPersecutedReligion, False)
-	#	city.setHasRealBuilding(iCathedral + 4*iPersecutedReligion, False)
-	#	city.changeOccupationTimer(2)
-	#	city.changeHurryAngerTimer(city.hurryAngerLength(0))
-		
-	#	CyInterface().addMessage(city.getOwner(), True, iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 		
 	def eventApply7629(self, netUserData, popupReturn):
-		targetList = sd.getByzantineBribes()
+		targetList = data.lByzantineBribes
 		iButton = popupReturn.getButtonClicked()
 		
 		if iButton >= len(targetList): return
@@ -465,20 +278,15 @@ class RiseAndFall:
 		
 	def updateExtraOptions(self):
 		# Human player can't collapse
-		bNoHumanStability = (gc.getDefineINT("NO_HUMAN_STABILITY") != 0)
-		sd.setNoHumanStability(bNoHumanStability)
+		data.bNoHumanStability = (gc.getDefineINT("NO_HUMAN_STABILITY") != 0)
 		# No stability checks at all
-		bNoAIStability = (gc.getDefineINT("NO_STABILITY") != 0)
-		sd.setNoStability(bNoAIStability)
+		data.bNoAIStability = (gc.getDefineINT("NO_STABILITY") != 0)
 		# Human player can switch infinite times
-		bUnlimitedSwitching = (gc.getDefineINT("UNLIMITED_SWITCHING") != 0)
-		sd.setUnlimitedSwitching(bUnlimitedSwitching)
+		data.bUnlimitedSwitching = (gc.getDefineINT("UNLIMITED_SWITCHING") != 0)
 		# No congresses
-		bNoCongresses = (gc.getDefineINT("NO_CONGRESSES") != 0)
-		sd.setNoCongressOption(bNoCongresses)
+		data.bNoCongresses = (gc.getDefineINT("NO_CONGRESSES") != 0)
 		# No plagues
-		bNoPlagues = (gc.getDefineINT("NO_PLAGUES") != 0)
-		sd.setNoPlagueOption(bNoPlagues)
+		data.bNoPlagues = (gc.getDefineINT("NO_PLAGUES") != 0)
 		
 	def updateStartingPlots(self):
 		for iPlayer in range(iNumPlayers):
@@ -561,14 +369,14 @@ class RiseAndFall:
 			
 	def prepareColonists(self):
 		for iPlayer in [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iGermany, iVikings]:
-			self.setAstronomyTurn(iPlayer, getTurnForYear(1700))
+			data.players[iPlayer].iAstronomyTurn = getTurnForYear(1700)
 			
-		self.setColonistsAlreadyGiven(iVikings, 1)
-		self.setColonistsAlreadyGiven(iSpain, 7)
-		self.setColonistsAlreadyGiven(iFrance, 3)
-		self.setColonistsAlreadyGiven(iEngland, 3)
-		self.setColonistsAlreadyGiven(iPortugal, 6)
-		self.setColonistsAlreadyGiven(iNetherlands, 4)
+		data.players[iVikings].iColonistsAlreadyGiven = 1
+		data.players[iSpain].iColonistsAlreadyGiven = 7
+		data.players[iFrance].iColonistsAlreadyGiven = 3
+		data.players[iEngland].iColonistsAlreadyGiven = 3
+		data.players[iPortugal].iColonistsAlreadyGiven = 6
+		data.players[iNetherlands].iColonistsAlreadyGiven = 4
 		
 	def assign3000BCGold(self):
 		for iPlayer in range(iNumTotalPlayers):
@@ -604,7 +412,7 @@ class RiseAndFall:
 		for iPlayer in range(iNumPlayers):
 			if not gc.getPlayer(iPlayer).isPlayable():
 				for i in range(3):
-					utils.setGoal(iPlayer, i, 0)
+					data.players[iPlayer].lGoals[i] = 0
 					
 	def foundCapitals(self):	
 		if utils.getScenario() == i600AD:
@@ -715,14 +523,14 @@ class RiseAndFall:
 	def setupBirthTurnModifiers(self):
 		for iCiv in range(iNumPlayers):
 			if (iCiv >= iIndia and not gc.getPlayer(iCiv).isHuman()):
-				self.setBirthTurnModifier(iCiv, (gc.getGame().getSorenRandNum(11, 'BirthTurnModifier') - 5)) # -5 to +5
+				data.players[iCiv].iBirthTurnModifier = gc.getGame().getSorenRandNum(11, "BirthTurnModifier") - 5 # -5 to +5
 		#now make sure that no civs spawn in the same turn and cause a double "new civ" popup
 		for iCiv in range(iNumPlayers):
 			if (iCiv > utils.getHumanID() and iCiv < iBrazil):
 				for j in range(iNumPlayers-1-iCiv):
 					iNextCiv = iCiv+j+1
-					if (getTurnForYear(tBirth[iCiv])+self.getBirthTurnModifier(iCiv) == getTurnForYear(tBirth[iNextCiv])+self.getBirthTurnModifier(iNextCiv)):
-						self.setBirthTurnModifier(iNextCiv, (self.getBirthTurnModifier(iNextCiv)+1))
+					if (getTurnForYear(tBirth[iCiv]) + data.players[iCiv].iBirthTurnModifier == getTurnForYear(tBirth[iNextCiv]) + data.players[iNextCiv].iBirthTurnModifier):
+						data.players[iNextCiv].iBirthTurnModifier += 1
 						
 	def placeGoodyHuts(self):
 			
@@ -780,7 +588,7 @@ class RiseAndFall:
 					pMassilia.getPlotCity().setCulture(pMassilia.getPlotCity().getOwner(), 1, True)
 
 		#Leoreth: Turkey immediately flips Seljuk or independent cities in its core to avoid being pushed out of Anatolia
-		if iGameTurn == sd.scriptDict['iOttomanSpawnTurn']+1:
+		if iGameTurn ==  data.iOttomanSpawnTurn + 1:
 			cityPlotList = utils.getAreaCities(Areas.getBirthArea(iTurkey))
 			for city in cityPlotList:
 				tPlot = (city.getX(), city.getY())
@@ -792,18 +600,18 @@ class RiseAndFall:
 					utils.makeUnit(iLongbowman, iTurkey, tPlot, 1)
 					
 		#Trigger betrayal mode
-		if (self.getBetrayalTurns() > 0):
+		if (data.iBetrayalTurns > 0):
 			self.initBetrayal()
 
-		if (self.getCheatersCheck(0) > 0):
+		if (data.lCheatersCheck[0] > 0):
 			teamPlayer = gc.getTeam(gc.getPlayer(utils.getHumanID()).getTeam())
-			if (teamPlayer.isAtWar(self.getCheatersCheck(1))):
+			if (teamPlayer.isAtWar(data.lCheatersCheck[1])):
 				print ("No cheaters!")
-				self.initMinorBetrayal(self.getCheatersCheck(1))
-				self.setCheatersCheck(0, 0)
-				self.setCheatersCheck(1, -1)
+				self.initMinorBetrayal(data.lCheatersCheck[1])
+				data.lCheatersCheck[0] = 0
+				data.lCheatersCheck[1] = -1
 			else:
-				self.setCheatersCheck(0, self.getCheatersCheck(0)-1)
+				data.lCheatersCheck[0] -= 1
 
 		if (iGameTurn % utils.getTurns(20) == 0):
 			if (pIndependent.isAlive()):				  
@@ -814,7 +622,7 @@ class RiseAndFall:
 				utils.updateMinorTechs(iSeljuks, iBarbarian)
 
 		#Leoreth: give Phoenicia a settler in Qart-Hadasht in 820BC
-		if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) - (utils.getSeed() % 10)):
+		if (not pCarthage.isHuman() and iGameTurn == getTurnForYear(-820) - (data.iSeed % 10)):
 			utils.makeUnit(iSettler, iCarthage, (58, 39), 1)
 			utils.makeUnit(iArcher, iCarthage, (58, 39), 2)
 			utils.makeUnit(iWorker, iCarthage, (58, 39), 2)
@@ -845,7 +653,7 @@ class RiseAndFall:
 			       
 		if (iGameTurn >= getTurnForYear(1350) and iGameTurn <= getTurnForYear(1918)):
 			for iPlayer in [iSpain, iEngland, iFrance, iPortugal, iNetherlands, iVikings, iGermany]:
-				if iGameTurn == self.getAstronomyTurn(iPlayer) + 1 + self.getColonistsAlreadyGiven(iPlayer)*8:
+				if iGameTurn == data.players[iPlayer].iAstronomyTurn + 1 + data.players[iPlayer].iColonistsAlreadyGiven * 8:
 					self.giveColonists(iPlayer)
 					
 		if iGameTurn == getTurnForYear(710)-1:
@@ -922,7 +730,7 @@ class RiseAndFall:
 			if utils.getHumanID() in lCivGroups[2]:
 				CyInterface().addMessage(CyGame().getActivePlayer(), True , iDuration, CyTranslator().getText("TXT_KEY_SELJUK_HORDES", ()), "", 1 , "", ColorTypes(iRed),0,0,False,False)
 
-		if iGameTurn == getTurnForYear(1070 + utils.getSeed()%10 - 5): #Linkman226- Seljuks
+		if iGameTurn == getTurnForYear(1070 + data.iSeed % 10 - 5): #Linkman226- Seljuks
 			tSpawnPlots = ((77,41), (74, 43), (72, 44), (74, 39))
 			for plot in tSpawnPlots:
 				spawnPlot = utils.getFreePlot(plot[0], plot[1])
@@ -933,7 +741,7 @@ class RiseAndFall:
 				teamSeljuks.declareWar(iByzantium, True, WarPlanTypes.WARPLAN_TOTAL)
 				teamSeljuks.declareWar(iArabia, True, WarPlanTypes.WARPLAN_TOTAL)
 
-		if iGameTurn == getTurnForYear(1230 + utils.getSeed()%10): #Linkman226- Mongol Conquerors for Seljuks
+		if iGameTurn == getTurnForYear(1230 + data.iSeed % 10): #Linkman226- Mongol Conquerors for Seljuks
 		
 			# let Seljuk army decay for everyone
 			lSeljukUnits = [pSeljuks.getUnit(i) for i in range(pSeljuks.getNumUnits())]
@@ -973,7 +781,7 @@ class RiseAndFall:
 				utils.makeUnitAI(iTrebuchet, iMongolia, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				if utils.getHumanID() in lCivGroups[1]:
 					CyInterface().addMessage(utils.getHumanID(), True, iDuration, CyTranslator().getText("TXT_KEY_MONGOL_HORDE", (gc.getPlayer(iSeljuks).getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-		if iGameTurn == getTurnForYear(1230 + utils.getSeed()%10 + 3): #Linkman226- Mongol Conquerors for Seljuks
+		if iGameTurn == getTurnForYear(1230 + data.iSeed % 10 + 3): #Linkman226- Mongol Conquerors for Seljuks
 			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
 				tPlot = utils.getFreeNeighborPlot((83, 42))
 				utils.makeUnitAI(iMongolianKeshik, iMongolia, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
@@ -1046,10 +854,10 @@ class RiseAndFall:
 					self.rebirthSecondTurn(iCiv)
 					
 	def endTurn(self, iPlayer):
-		for tTimedConquest in sd.getTimedConquests():
+		for tTimedConquest in data.lTimedConquests:
 			iConqueror, x, y = tTimedConquest
 			utils.colonialConquest(iConqueror, x, y)
-		sd.resetTimedConquests()
+		data.lTimedConquests = []
 
 	def rebirthFirstTurn(self, iCiv):
 		pCiv = gc.getPlayer(iCiv)
@@ -1121,7 +929,7 @@ class RiseAndFall:
 		if (gc.getGame().getGameTurn() >= getTurnForYear(tBirth[gc.getGame().getActivePlayer()])):
 			self.respawnPopup(iCiv)
 
-		self.setLatestRebellionTurn(iCiv, getTurnForYear(tRebirth[iCiv]))
+		gc.getPlayer(iCiv).setLatestRebellionTurn(getTurnForYear(tRebirth[iCiv]))
 		
 		dc.onCivRespawn(iCiv, [])
 		
@@ -1179,13 +987,13 @@ class RiseAndFall:
 		self.convertSurroundingPlotCulture(iCiv, lRebirthPlots)
 		
 		# reset plague
-		utils.setPlagueCountdown(iCiv, -10)
+		data.players[iCiv].iPlagueCountdown = -10
 		utils.clearPlague(iCiv)
 		
 		# adjust starting stability
-		sd.setStabilityLevel(iCiv, iStabilityStable)
-		sd.resetStability(iCiv)
-		if utils.getHumanID() == iCiv: sd.resetHumanStability()
+		data.players[iCiv].resetStability()
+		data.players[iCiv].iStabilityLevel = iStabilityStable
+		if utils.getHumanID() == iCiv: data.resetHumanStability()
 		
 		# ask human player for flips
 		if iHumanCities > 0 and iCiv != utils.getHumanID():
@@ -1265,9 +1073,9 @@ class RiseAndFall:
 						pCurrent = gc.getMap().plot(city.getX(), city.getY())					
 						utils.cultureManager((city.getX(),city.getY()), 50, iSmallIndependent, iBigIndependent, False, True, True)
 						utils.flipUnitsInCityBefore((city.getX(),city.getY()), iSmallIndependent, iBigIndependent)			    
-						self.setTempFlippingCity((city.getX(),city.getY()))
+						data.tTempFlippingCity = (city.getX(), city.getY())
 						utils.flipCity((city.getX(),city.getY()), 0, 0, iSmallIndependent, [iBigIndependent])   #by trade because by conquest may raze the city
-						utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iSmallIndependent)
+						utils.flipUnitsInCityAfter(data.tTempFlippingCity, iSmallIndependent)
 						iCounter += 1
 						if (iCounter == 3):
 							return
@@ -1302,9 +1110,8 @@ class RiseAndFall:
 								if (iDivideCounter % 4 == 0 or iDivideCounter % 4 == 1):
 									utils.cultureManager((city.getX(),city.getY()), 50, iNewCiv, iBarbarian, False, True, True)
 									utils.flipUnitsInCityBefore((city.getX(),city.getY()), iNewCiv, iBarbarian)			    
-									self.setTempFlippingCity((city.getX(),city.getY()))
 									utils.flipCity((city.getX(),city.getY()), 0, 0, iNewCiv, [iBarbarian])   #by trade because by conquest may raze the city
-									utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iNewCiv)
+									utils.flipUnitsInCityAfter(data.tTempFlippingCity, iNewCiv)
 									iDivideCounter += 1
 					return
 		
@@ -1316,7 +1123,7 @@ class RiseAndFall:
 			iPlayer = j % iNumPlayers   
 			if (gc.getPlayer(iPlayer).isAlive() and iGameTurn >= getTurnForYear(tBirth[iPlayer]) + utils.getTurns(30)):
 				
-				if sd.getStabilityLevel(iPlayer) == iStabilityCollapsing:
+				if data.getStabilityLevel(iPlayer) == iStabilityCollapsing:
 
 					cityList = []
 					apCityList = PyPlayer(iPlayer).getCityList()
@@ -1356,14 +1163,14 @@ class RiseAndFall:
 						    iPlayer == iMaya or \
 						    iPlayer == iEthiopia or \
 						    iPlayer == iMali):
-							if (utils.getCivsWithNationalism() <= 0):
+							if (data.iCivsWithNationalism <= 0):
 								iNewCiv = iNative		    
 						splittingCity = cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')]
 						utils.cultureManager((splittingCity.getX(),splittingCity.getY()), 50, iNewCiv, iPlayer, False, True, True)
 						utils.flipUnitsInCityBefore((splittingCity.getX(),splittingCity.getY()), iNewCiv, iPlayer)			    
-						self.setTempFlippingCity((splittingCity.getX(),splittingCity.getY()))
+						data.tTempFlippingCity = (splittingCity.getX(), splittingCity.getY())
 						utils.flipCity((splittingCity.getX(),splittingCity.getY()), 0, 0, iNewCiv, [iPlayer])   #by trade because by conquest may raze the city
-						utils.flipUnitsInCityAfter(self.getTempFlippingCity(), iNewCiv)
+						utils.flipUnitsInCityAfter(data.tTempFlippingCity, iNewCiv)
 						if (iPlayer == utils.getHumanID()):
 							CyInterface().addMessage(iPlayer, True, iDuration, splittingCity.getName() + " " + \
 											   CyTranslator().getText("TXT_KEY_STABILITY_SECESSION", ()), "", 0, "", ColorTypes(iOrange), -1, -1, True, True)
@@ -1481,7 +1288,7 @@ class RiseAndFall:
 		iBirthYear = getTurnForYear(iBirthYear) # converted to turns here - edead
 		
 		if iCiv in lSecondaryCivs:
-			if iHuman != iCiv and not sd.isPlayerEnabled(iCiv):
+			if iHuman != iCiv and not data.isPlayerEnabled(iCiv):
 				return
 		
 		if iCiv == iTurkey:
@@ -1499,17 +1306,17 @@ class RiseAndFall:
 
 			elif iCiv == iThailand:
 				if utils.getHumanID() != iKhmer:
-					if sd.getStabilityLevel(iKhmer) > iStabilityShaky:
+					if data.getStabilityLevel(iKhmer) > iStabilityShaky:
 						return
 				else:
-					if sd.getStabilityLevel(iKhmer) > iStabilityUnstable:
+					if data.getStabilityLevel(iKhmer) > iStabilityUnstable:
 						return
 						
 			if iCiv in [iArgentina, iBrazil]:
 				iColonyPlayer = utils.getColonyPlayer(iCiv)
 				if iColonyPlayer < 0: return
 				elif iColonyPlayer not in [iArgentina, iBrazil]:
-					if sd.getStabilityLevel(iColonyPlayer) > iStabilityStable:
+					if data.getStabilityLevel(iColonyPlayer) > iStabilityStable:
 						return
 						
 		if utils.getHumanID() != iCiv and iCiv == iItaly:
@@ -1540,12 +1347,12 @@ class RiseAndFall:
 					break
 					break
 
-		if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
+		if (iCurrentTurn == iBirthYear-1 + data.players[iCiv].iSpawnDelay + data.players[iCiv].iFlipsDelay):
 			if iCiv in lConditionalCivs or bCapitalSettled:
 				x, y = tCapital
 				utils.convertPlotCulture(gc.getMap().plot(x,y), iCiv, 100, True)
 
-		if (iCurrentTurn == iBirthYear-1 + self.getSpawnDelay(iCiv) + self.getFlipsDelay(iCiv)):
+		if (iCurrentTurn == iBirthYear-1 + data.players[iCiv].iSpawnDelay + data.players[iCiv].iFlipsDelay):
 			reborn = utils.getReborn(iCiv)
 			tTopLeft, tBottomRight = Areas.getBirthRectangle(iCiv)
 			tBroaderTopLeft, tBroaderBottomRight = Areas.tBroaderArea[iCiv]
@@ -1576,7 +1383,7 @@ class RiseAndFall:
 			iPreviousOwner = gc.getMap().plot(tCapital[0], tCapital[1]).getOwner()
 				
 		    
-			if (self.getFlipsDelay(iCiv) == 0): #city hasn't already been founded)
+			if (data.players[iCiv].iFlipsDelay == 0): #city hasn't already been founded)
 			    
 				#this may fix the -1 bug
 				if (iCiv == iHuman): 
@@ -1619,7 +1426,7 @@ class RiseAndFall:
 				print ("bDeleteEverything", bDeleteEverything)
 				if (not gc.getMap().plot(tCapital[0], tCapital[1]).isOwned()):
 					if (iCiv == iNetherlands or iCiv == iPortugal or iCiv == iByzantium or iCiv == iKorea or iCiv == iThailand or iCiv == iItaly or iCiv == iCarthage): #dangerous starts
-						self.setDeleteMode(0, iCiv)
+						data.lDeleteMode[0] = iCiv
 					if bBirthInCapital:
 						self.birthInCapital(iCiv, iPreviousOwner, tCapital, tTopLeft, tBottomRight)
 					else:
@@ -1627,7 +1434,7 @@ class RiseAndFall:
 				elif (bDeleteEverything and not bBirthInCapital):
 					for x in range(tCapital[0] - 1, tCapital[0] + 2):	# from x-1 to x+1
 						for y in range(tCapital[1] - 1, tCapital[1] + 2):       # from y-1 to y+1
-							self.setDeleteMode(0, iCiv)
+							data.lDeleteMode[0] = iCiv
 							pCurrent=gc.getMap().plot(x, y)
 							for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
 								if (iCiv != iLoopCiv):
@@ -1681,7 +1488,7 @@ class RiseAndFall:
 		if iCiv in [iByzantium, iArgentina, iBrazil]:
 			self.setStateReligion(iCiv)
 			
-		if (iCurrentTurn == iBirthYear + self.getSpawnDelay(iCiv)) and (gc.getPlayer(iCiv).isAlive()) and (sd.isAlreadySwitched() == False or utils.getReborn(iCiv) == 1 or sd.isUnlimitedSwitching() == True) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
+		if (iCurrentTurn == iBirthYear + data.players[iCiv].iSpawnDelay) and (gc.getPlayer(iCiv).isAlive()) and (not data.bAlreadySwitched or utils.getReborn(iCiv) == 1 or data.bUnlimitedSwitching) and ((iHuman not in lNeighbours[iCiv] and getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) > 0) or getTurnForYear(tBirth[iCiv]) - getTurnForYear(tBirth[iHuman]) >= utils.getTurns(25) ):
 			self.newCivPopup(iCiv)
 
 	def moveOutInvaders(self, tTL, tBR):
@@ -1709,7 +1516,7 @@ class RiseAndFall:
 		
 
 	def deleteMode(self, iCurrentPlayer):
-		iCiv = self.getDeleteMode(0)
+		iCiv = data.lDeleteMode[0]
 		print ("deleteMode after", iCurrentPlayer)
 		tCapital = Areas.getCapital(iCiv)
 			
@@ -1732,7 +1539,7 @@ class RiseAndFall:
 					if (pCurrent.getCulture(iCiv) < 3000):
 						pCurrent.setCulture(iCiv, 3000, True) #2000 in vanilla/warlords, cos here Portugal is choked by spanish culture
 					pCurrent.setOwner(iCiv)
-			self.setDeleteMode(0, -1)
+			data.lDeleteMode[0] = -1
 			return
 		    
 		#print ("iCurrentPlayer", iCurrentPlayer, "iCiv", iCiv)
@@ -1766,14 +1573,14 @@ class RiseAndFall:
 	def birthInFreeRegion(self, iCiv, tCapital, tTopLeft, tBottomRight):
 	
 		startingPlot = gc.getMap().plot( tCapital[0], tCapital[1] )
-		if (self.getFlipsDelay(iCiv) == 0):
-			iFlipsDelay = self.getFlipsDelay(iCiv) + 2
+		if (data.players[iCiv].iFlipsDelay == 0):
+			iFlipsDelay = data.players[iCiv].iFlipsDelay + 2
 			if (iFlipsDelay > 0):
 				print ("starting units in", tCapital[0], tCapital[1])
 				self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
 				
 				if iCiv == iTurkey:
-					sd.scriptDict['iOttomanSpawnTurn'] = gc.getGame().getGameTurn()
+					data.iOttomanSpawnTurn = gc.getGame().getGameTurn()
 			
 				if iCiv == iItaly:
 					utils.removeCoreUnits(iItaly)
@@ -1794,9 +1601,9 @@ class RiseAndFall:
 				utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
 				utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #This is mostly for the AI. During Human player spawn, that area should be already cleaned			
 				self.assignTechs(iCiv)
-				utils.setPlagueCountdown(iCiv, -iImmunity)
+				data.players[iCiv].iPlagueCountdown = -iImmunity
 				utils.clearPlague(iCiv)
-				self.setFlipsDelay(iCiv, iFlipsDelay) #save
+				data.players[iCiv].iFlipsDelay = iFlipsDelay #save
 				
 
 		else: #starting units have already been placed, now the second part
@@ -1888,14 +1695,14 @@ class RiseAndFall:
 				if (result):
 					self.createStartingUnits(iCiv, result)
 					self.assignTechs(iCiv)
-					utils.setPlagueCountdown(iCiv, -iImmunity)
+					data.players[iCiv].iPlagueCountdown = -iImmunity
 					utils.clearPlague(iCiv)
 			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, False, True) #remaining barbs in the region now belong to the new civ 
 			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, False, False) #remaining barbs in the region now belong to the new civ 
 			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, False, False) #remaining barbs in the region now belong to the new civ
 			
 			if iCiv == iTurkey:
-				sd.scriptDict['iOttomanSpawnTurn'] = gc.getGame().getGameTurn()
+				data.iOttomanSpawnTurn = gc.getGame().getGameTurn()
 
 		else:   #search another place
 			dummy, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.goodPlots, [] )
@@ -1905,7 +1712,7 @@ class RiseAndFall:
 				if (result):
 					self.createStartingUnits(iCiv, result)
 					self.assignTechs(iCiv)
-					utils.setPlagueCountdown(iCiv, -iImmunity)
+					data.players[iCiv].iPlagueCountdown = -iImmunity
 					utils.clearPlague(iCiv)
 			else:
 				dummy1, plotList = utils.squareSearch( tBroaderTopLeft, tBroaderBottomRight, utils.goodPlots, [] )	
@@ -1916,7 +1723,7 @@ class RiseAndFall:
 						self.createStartingUnits(iCiv, result)
 						#self.createStartingWorkers(iCiv, result)
 						self.assignTechs(iCiv)
-						utils.setPlagueCountdown(iCiv, -iImmunity)
+						data.players[iCiv].iPlagueCountdown = -iImmunity
 						utils.clearPlague(iCiv)
 			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
 			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
@@ -1935,9 +1742,9 @@ class RiseAndFall:
 		startingPlot = (tCapital[0], tCapital[1])
 		iOwner = iPreviousOwner
 
-		if self.getFlipsDelay(iCiv) == 0:
+		if data.players[iCiv].iFlipsDelay == 0:
 
-			iFlipsDelay = self.getFlipsDelay(iCiv)+2
+			iFlipsDelay = data.players[iCiv].iFlipsDelay + 2
 
 			if iFlipsDelay > 0:
 
@@ -1968,7 +1775,7 @@ class RiseAndFall:
 				print ("birthConditional: starting units in", tCapital[0], tCapital[1])
 				self.createStartingUnits(iCiv, (tCapital[0], tCapital[1]))
 
-				utils.setPlagueCountdown(iCiv, -iImmunity)
+				data.players[iCiv].iPlagueCountdown
 				utils.clearPlague(iCiv)
 
 				print ("flipping remaining units")
@@ -1979,7 +1786,7 @@ class RiseAndFall:
 				
 				self.assignTechs(iCiv)
 				
-				self.setFlipsDelay(iCiv, iFlipsDelay) #save
+				data.players[iCiv].iFlipsDelay = iFlipsDelay #save
 
 				# kill the catapult and cover the plots
 				plotZero = gc.getMap().plot(0, 0)
@@ -2091,7 +1898,7 @@ class RiseAndFall:
 	def convertSurroundingCities(self, iPlayer, lPlots):
 		iConvertedCitiesCount = 0
 		iNumHumanCities = 0
-		self.setSpawnWar(0)
+		data.iSpawnWar = 0
 					
 		lEnemies = []
 		lCities = self.getConvertedCities(iPlayer, lPlots)
@@ -2241,7 +2048,7 @@ class RiseAndFall:
 		teamCiv = gc.getTeam(pCiv.getTeam())
 		
 		if pCiv.isAlive() and utils.getHumanID() != iCiv:
-			if teamCiv.isHasTech(iAstronomy) and self.getColonistsAlreadyGiven(iCiv) < tMaxColonists[iCiv]:
+			if teamCiv.isHasTech(iAstronomy) and data.players[iCiv].iColonistsAlreadyGiven < tMaxColonists[iCiv]:
 				lCities = utils.getAreaCitiesCiv(iCiv, Areas.getCoreArea(iCiv))
 				
 				# help England with settling Canada and Australia
@@ -2267,7 +2074,7 @@ class RiseAndFall:
 					utils.makeUnit(utils.getBestDefender(iCiv), iCiv, tSeaPlot, 1)
 					utils.makeUnit(iWorker, iCiv, tSeaPlot, 1)
 					
-					self.changeColonistsAlreadyGiven(iCiv, 1)
+					data.players[iCiv].iColonistsAlreadyGiven += 1
 					
 
 	def onFirstContact(self, iTeamX, iHasMetTeamY):
@@ -2284,11 +2091,11 @@ class RiseAndFall:
 				
 				iIndex = lCivBioNewWorld.index(iNewWorldCiv)
 				
-				bAlreadyContacted = (self.getFirstContactConquerors(iIndex) == 1)
+				bAlreadyContacted = (data.lFirstContactConquerors[iIndex] == 1)
 				
 				# avoid "return later" exploit
 				if iGameTurn <= getTurnForYear(tBirth[iAztecs])+10:
-					self.setFirstContactConquerors(iIndex, 1)
+					data.lFirstContactConquerors[iIndex] = 1
 					return
 					
 				if not bAlreadyContacted:
@@ -2302,7 +2109,7 @@ class RiseAndFall:
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
 						
-					self.setFirstContactConquerors(iIndex, 1)
+					data.lFirstContactConquerors[iIndex] = 1
 					
 					# change some terrain to end isolation
 					if (iNewWorldCiv == iInca):
@@ -2389,9 +2196,9 @@ class RiseAndFall:
 		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
 			if iTeamX in [iPersia, iByzantium, iRussia]:
-				if gc.getGame().getGameTurn() < getTurnForYear(1500) and self.getFirstContactMongols(iTeamX) == 0:
+				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.getFirstContactMongols(iTeamX) == 0:
 
-					self.setFirstContactMongols(iTeamX, 1)
+					data.setFirstContactMongols(iTeamX, 1)
 		
 					teamTarget = gc.getTeam(iTeamX)
 
@@ -2568,7 +2375,7 @@ class RiseAndFall:
 				popup.addButton(CyTranslator().getText("TXT_KEY_POPUP_YES", ()))
 				popup.addButton(CyTranslator().getText("TXT_KEY_POPUP_NO", ()))
 				argsList = (iPlayer, askCityList)
-				utils.setTempEventList(argsList)
+				data.lTempEventList = argsList
 				popup.launch(False)
 			else:
 				iRand = gc.getGame().getSorenRandNum(100, 'City acquisition offer')
@@ -2596,8 +2403,7 @@ class RiseAndFall:
 							utils.colonialAcquisition(iPlayer, x, y)
 							gc.getPlayer(iTargetCiv).changeGold(200)
 						else:
-							#utils.colonialConquest(iPlayer, x, y)
-							sd.timedConquest(iPlayer, x, y)
+							data.timedConquest(iPlayer, x, y)
 						targetList.remove(tPlot)
 
 		pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
@@ -2607,8 +2413,7 @@ class RiseAndFall:
 
 		for tPlot in targetList:
 			x, y = tPlot
-			#utils.colonialConquest(iPlayer, x, y)
-			sd.timedConquest(iPlayer, x, y)
+			data.timedConquest(iPlayer, x, y)
 
 		tSeaPlot = -1
 		x, y = targetList[0]
@@ -2620,63 +2425,6 @@ class RiseAndFall:
 
 		if tSeaPlot != -1:
 			utils.makeUnit(utils.getUniqueUnitType(iPlayer, gc.getUnitInfo(iGalleon).getUnitClassType()), iPlayer, tSeaPlot, 1)
-				
-				
-	#def onProjectBuilt(self, city, iProjectType):
-		#if iProjectType == iPersecutionProject:
-		#	lReligionList = []
-		#	iOwner = city.getOwner()
-		#	pOwner = gc.getPlayer(iOwner)
-		#	iStateReligion = pOwner.getStateReligion()
-		#				
-		#	for iReligion in range(iNumReligions):
-		#		if city.isHasReligion(iReligion) and iReligion != iStateReligion and not city.isHolyCityByType(iReligion):
-		#			lReligionList.append(iReligion)
-		#			
-		#	if utils.getHumanID() != iOwner:
-		#		iPersecutedReligion = self.getPersecutedReligion(lReligionList, iStateReligion)
-		#	else:
-		#		iPersecutedReligion = -1
-		#		self.launchPersecutionPopup(lReligionList, city)
-		#	
-		#	if iPersecutedReligion > -1:
-		#		city.setHasReligion(iPersecutedReligion, False, True, True)
-		#		city.setHasRealBuilding(iTemple + 4*iPersecutedReligion, False)
-		#		city.setHasRealBuilding(iMonastery + 4*iPersecutedReligion, False)
-		#		city.setHasRealBuilding(iCathedral + 4*iPersecutedReligion, False)
-		#		
-		#		city.changeOccupationTimer(2)
-		#		city.changeHurryAngerTimer(city.hurryAngerLength(0))
-		#		
-		#		iCountdown = 10
-		#		iCountdown -= abs(gc.getLeaderheadInfo(gc.getPlayer(iOwner).getLeader()).getDifferentReligionAttitudeChange())
-		#		
-		#		if gc.getPlayer(iOwner).getCivics(0) == iTheocracy or gc.getPlayer(iOwner).getCivics(4) == iFanaticism:
-		#			iCountdown -= 2
-		#		
-		#		CyInterface().addMessage(city.getOwner(), True, iDuration, CyTranslator().getText("TXT_KEY_PERSECUTION_PERFORMED", (gc.getReligionInfo(iPersecutedReligion).getText(), city.getName())), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-				
-		#	gc.getTeam(pOwner.getTeam()).changeProjectCount(iPersecutionProject, -1)
-			
-	#def getPersecutedReligion(self, lReligionList, iStateReligion):
-	#	for iReligion in tPersecutionPreference[iStateReligion]:
-	#		if iReligion in lReligionList:
-	#			return iReligion
-	#			
-	#	return -1
-		
-	#def launchPersecutionPopup(self, lReligionList, city):
-	#	popup = Popup.PyPopup(7627, EventContextTypes.EVENTCONTEXT_ALL)
-	#	popup.setBodyString(CyTranslator().getText("TXT_KEY_PERSECUTION_MESSAGE", (city.getName(),)))
-	#	
-	#	for iReligion in lReligionList:
-	#		popup.addButton(gc.getReligionInfo(iReligion).getText())
-	#		
-	#	argsList = [lReligionList, (city.getX(), city.getY())]
-	#	utils.setTempEventList(argsList)
-	#	
-	#	popup.launch(False)
-	
 	
 	def startWarsOnSpawn(self, iCiv):
 	
@@ -2702,7 +2450,7 @@ class RiseAndFall:
 						iWarPlan = WarPlanTypes.WARPLAN_TOTAL
 					teamCiv.declareWar(iLoopCiv, False, iWarPlan)
 					
-					if utils.getHumanID() == iCiv: self.setBetrayalTurns(0)
+					if utils.getHumanID() == iCiv: data.iBetrayalTurns = 0
 					
 					
 	def immuneMode(self, argsList): 
@@ -2728,36 +2476,36 @@ class RiseAndFall:
 				self.unitsBetrayal(iCiv, iHuman, lPlots, result)
 
 	def initBetrayal( self ):
-		iFlipPlayer = self.getNewCivFlip()
+		iFlipPlayer = data.iNewCivFlip
 		if not gc.getPlayer(iFlipPlayer).isAlive() or not gc.getTeam(iFlipPlayer).isAtWar(utils.getHumanID()):
 			return
 	
 		iHuman = utils.getHumanID()
-		turnsLeft = self.getBetrayalTurns()
-		lTempPlots = self.getTempPlots()
+		turnsLeft = data.iBetrayalTurns
+		lTempPlots = data.lTempPlots
 		dummy, plotList = utils.listSearch(lTempPlots, utils.outerInvasion, [] )
 		rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot abroad human players (or in general, the old civ if human player just swtiched) borders')
 		if (not len(plotList)):
-			dummy, plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [self.getOldCivFlip(), self.getNewCivFlip()] )
+			dummy, plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot within human or new civs border but distant from units')				
 		if (not len(plotList)):
-			dummy, plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [self.getOldCivFlip(), self.getNewCivFlip()] )
+			dummy, plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [data.iOldCivFlip, data.iNewCivFlip] )
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot within human or new civs border')				
 		if (len(plotList)):
 			result = plotList[rndNum]
 			if (result):
 				if (turnsLeft == iBetrayalPeriod):
-					self.createAdditionalUnits(self.getNewCivFlip(), result)
-				self.unitsBetrayal(self.getNewCivFlip(), self.getOldCivFlip(), lTempPlots, result)
-		self.setBetrayalTurns(turnsLeft - 1)
+					self.createAdditionalUnits(data.iNewCivFlip, result)
+				self.unitsBetrayal(data.iNewCivFlip, data.iOldCivFlip, lTempPlots, result)
+		data.iBetrayalTurns = turnsLeft - 1
 
 
 
 	def unitsBetrayal( self, iNewOwner, iOldOwner, lPlots, tPlot):
-		if (gc.getPlayer(self.getOldCivFlip()).isHuman()):
-			CyInterface().addMessage(self.getOldCivFlip(), False, iDuration, CyTranslator().getText("TXT_KEY_FLIP_BETRAYAL", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
-		elif (gc.getPlayer(self.getNewCivFlip()).isHuman()):
-			CyInterface().addMessage(self.getNewCivFlip(), False, iDuration, CyTranslator().getText("TXT_KEY_FLIP_BETRAYAL_NEW", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
+		if (gc.getPlayer(data.iOldCivFlip).isHuman()):
+			CyInterface().addMessage(data.iOldCivFlip, False, iDuration, CyTranslator().getText("TXT_KEY_FLIP_BETRAYAL", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
+		elif (gc.getPlayer(data.iNewCivFlip).isHuman()):
+			CyInterface().addMessage(data.iNewCivFlip, False, iDuration, CyTranslator().getText("TXT_KEY_FLIP_BETRAYAL_NEW", ()), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
 		for (x, y) in lPlots:
 			killPlot = gc.getMap().plot(x,y)
 			if killPlot.isCore(iOldOwner) and not killPlot.isCore(iNewOwner): continue
@@ -3076,7 +2824,7 @@ class RiseAndFall:
 			utils.makeUnit(iLongbowman, iCiv, tPlot, 1)
 			utils.makeUnitAI(iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 4)
-			if sd.isPlayerEnabled(iMoors):
+			if data.isPlayerEnabled(iMoors):
 				if utils.getHumanID() != iMoors:
 					utils.makeUnit(iKnight, iCiv, tPlot, 2)
 			else:
@@ -3521,7 +3269,7 @@ class RiseAndFall:
 				utils.makeUnit(iSettler, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 				
-			if iPlayer == iHarappa and (sd.isPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
+			if iPlayer == iHarappa and (data.isPlayerEnabled(iPlayer) or gc.getPlayer(iPlayer).isHuman()):
 				utils.makeUnit(iHarappanCityBuilder, iPlayer, tCapital, 1)
 				utils.makeUnit(iWarrior, iPlayer, tCapital, 1)
 		
@@ -3604,7 +3352,7 @@ class RiseAndFall:
 			utils.makeUnit(iSpearman, iArabia, (77, 40), 2)
 			
 	def germanSpawn(self):
-		if sd.getStabilityLevel(iHolyRome) < iStabilityShaky: sd.setStabilityLevel(iHolyRome, iStabilityShaky)
+		if data.getStabilityLevel(iHolyRome) < iStabilityShaky: data.setStabilityLevel(iHolyRome, iStabilityShaky)
 			
 		utils.setReborn(iHolyRome, True)
 		
@@ -3622,71 +3370,71 @@ class RiseAndFall:
 		
 		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLYNESIA")	
 		if iRand <= 0:
-			sd.setPlayerEnabled(iPolynesia, False)
+			data.setPlayerEnabled(iPolynesia, False)
 		elif gc.getGame().getSorenRandNum(iRand, 'Polynesia enabled?') != 0:
-			sd.setPlayerEnabled(iPolynesia, False)
+			data.setPlayerEnabled(iPolynesia, False)
 			
 		iRand = gc.getDefineINT("PLAYER_OCCURRENCE_HARAPPA")
 		if iRand <= 0:
-			sd.setPlayerEnabled(iHarappa, False)
+			data.setPlayerEnabled(iHarappa, False)
 		elif gc.getGame().getSorenRandNum(iRand, 'Harappa enabled?') != 0:
-			sd.setPlayerEnabled(iHarappa, False)
+			data.setPlayerEnabled(iHarappa, False)
 		
 		if iHuman != iIndia and iHuman != iIndonesia:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TAMILS")
 			
 			if iRand <= 0:
-				sd.setPlayerEnabled(iTamils, False)
+				data.setPlayerEnabled(iTamils, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Tamils enabled?') != 0:
-				sd.setPlayerEnabled(iTamils, False)
+				data.setPlayerEnabled(iTamils, False)
 				
 		if iHuman != iChina and iHuman != iIndia and iHuman != iMughals:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_TIBET")
 			
 			if iRand <= 0:
-				sd.setPlayerEnabled(iTibet, False)
+				data.setPlayerEnabled(iTibet, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Tibet enabled?') != 0:
-				sd.setPlayerEnabled(iTibet, False)
+				data.setPlayerEnabled(iTibet, False)
 				
 		if iHuman != iSpain and iHuman != iMali:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_MOORS")
 			
 			if iRand <= 0:
-				sd.setPlayerEnabled(iMoors, False)
+				data.setPlayerEnabled(iMoors, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Moors enabled?') != 0:
-				sd.setPlayerEnabled(iMoors, False)
+				data.setPlayerEnabled(iMoors, False)
 				
 		if iHuman != iHolyRome and iHuman != iGermany and iHuman != iRussia:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_POLAND")
 			
 			if iRand <= 0:
-				sd.setPlayerEnabled(iPoland, False)
+				data.setPlayerEnabled(iPoland, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Poland enabled?') != 0:
-				sd.setPlayerEnabled(iPoland, False)
+				data.setPlayerEnabled(iPoland, False)
 				
 		if iHuman != iMali and iHuman != iPortugal:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_CONGO")
 			
 			if iRand <= 0:
-				sd.setPlayerEnabled(iCongo, False)
+				data.setPlayerEnabled(iCongo, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Congo enabled?') != 0:
-				sd.setPlayerEnabled(iCongo, False)
+				data.setPlayerEnabled(iCongo, False)
 				
 		if iHuman != iSpain:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_ARGENTINA")
 			
 			if iRand <= 0:
-				sd.setPlayerEnabled(iArgentina, False)
+				data.setPlayerEnabled(iArgentina, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Argentina enabled?') != 0:
-				sd.setPlayerEnabled(iArgentina, False)
+				data.setPlayerEnabled(iArgentina, False)
 				
 		if iHuman != iPortugal:
 			iRand = gc.getDefineINT("PLAYER_OCCURRENCE_BRAZIL")
 			
 			if iRand <= 0:
-				sd.setPlayerEnabled(iBrazil, False)
+				data.setPlayerEnabled(iBrazil, False)
 			elif gc.getGame().getSorenRandNum(iRand, 'Brazil enabled?') != 0:
-				sd.setPlayerEnabled(iBrazil, False)
+				data.setPlayerEnabled(iBrazil, False)
 				
 	def placeHut(self, tTL, tBR):
 		plotList = []

@@ -14,8 +14,8 @@ bRepeat = False
 iSelectedCiv = -1
 iSelectedLeader = -1
 
-from StoredData import sd
-import Consts as con
+from StoredData import data
+from Consts import *
 import Congresses as cong
 
 class WBGameDataScreen:
@@ -245,7 +245,7 @@ class WBGameDataScreen:
 		lList3.sort()
 
 		iNumRows = (len(lList) + nColumns - 1) / nColumns
-		iNumRows2 = iNumRows + 3 + max(len(con.lSecondaryCivs), len(lList2), len(lList3))
+		iNumRows2 = iNumRows + 3 + max(len(lSecondaryCivs), len(lList2), len(lList3))
 		for i in xrange(iNumRows2):
 			screen.appendTableRow("WBGameOptions")
 
@@ -270,10 +270,10 @@ class WBGameDataScreen:
 		screen.setTableText("WBGameOptions", 4, iNumRows + 2, CyTranslator().getText("TXT_KEY_WB_RFC_VARIABLES", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 		iRow = iNumRows + 3
-		for iCiv in con.lSecondaryCivs:
-			bEnabled = sd.isPlayerEnabled(iCiv)
+		for iCiv in lSecondaryCivs:
+			bEnabled = data.isPlayerEnabled(iCiv)
 			bDefault = True
-			if iCiv in [con.iHarappa, con.iPolynesia]:
+			if iCiv in [iHarappa, iPolynesia]:
 				bDefault = False
 
 			sText = self.colorText(gc.getPlayer(iCiv).getCivilizationShortDescription(0), bEnabled)
@@ -290,18 +290,18 @@ class WBGameDataScreen:
 			bDefault = False
 
 			if item == 2000:
-				bEnabled = sd.getNoStability()
+				bEnabled = data.bNoAIStability
 			elif item == 2001:
-				bEnabled = sd.getNoHumanStability()
+				bEnabled = data.bNoHumanStability
 			elif item == 2002:
-				bEnabled = sd.isIgnoreAI()
+				bEnabled = data.bIgnoreAI
 				bDefault = True
 			elif item == 2003:
-				bEnabled = sd.isUnlimitedSwitching()
+				bEnabled = data.bUnlimitedSwitching
 			elif item == 2004:
-				bEnabled = sd.isNoCongressOption()
+				bEnabled = data.bNoCongressOption
 			elif item == 2005:
-				bEnabled = sd.isNoPlagueOption()
+				bEnabled = data.bNoPlagueOption
 
 			sText = self.colorText(lList2[i][0], bEnabled)
 			screen.setTableText("WBGameOptions", 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
@@ -316,7 +316,7 @@ class WBGameDataScreen:
 			bWhite = False
 			
 			if item == 3001:
-				bEnabled = sd.isAlreadySwitched()
+				bEnabled = data.bAlreadySwitched
 			elif item == 3002:
 				bWhite = True
 
@@ -326,7 +326,7 @@ class WBGameDataScreen:
 				if not cong.isCongressEnabled():
 					iTurns = -1
 				else:
-					iTurns = sd.getCongressTurns()
+					iTurns = data.iCongressTurns
 				sText = self.colorText(str(iTurns), True, True)
 				screen.setTableText("WBGameOptions", 5, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_CENTER_JUSTIFY)
 
@@ -426,25 +426,25 @@ class WBGameDataScreen:
 				# Enabling/disabling secondary civs
 				if iGameOption < 2000:
 					iItem = iGameOption - 1000
-					sd.setPlayerEnabled(iItem, not sd.isPlayerEnabled(iItem))
+					data.setPlayerEnabled(iItem, not data.isPlayerEnabled(iItem))
 				# Enabling/disabling RFC options
 				elif iGameOption == 2000:
-					sd.setNoStability(not sd.getNoStability())
+					data.bNoAIStability = not data.bNoAIStability
 				elif iGameOption == 2001:
-					sd.setNoHumanStability(not sd.getNoHumanStability())
+					data.bNoHumanStability = not data.bNoHumanStability
 				elif iGameOption == 2002:
-					sd.setIgnoreAI(not sd.isIgnoreAI())
+					data.bIgnoreAI = not data.bIgnoreAI
 				elif iGameOption == 2003:
-					sd.setUnlimitedSwitching(not sd.isUnlimitedSwitching())
+					data.bUnlimitedSwitching = not data.bUnlimitedSwitching
 				elif iGameOption == 2004:
-					sd.setNoCongressOption(not sd.isNoCongressOption())
+					data.bNoCongressOption = not data.bNoCongressOption
 				elif iGameOption == 2005:
-					sd.setNoPlagueOption(not sd.isNoPlagueOption())
+					data.bNoPlagueOption = not data.bNoPlagueOption
 				# Stored Variables
 				elif iGameOption == 3001:
-					sd.setAlreadySwitched(not sd.isAlreadySwitched())
+					data.bAlreadySwitched = not data.bAlreadySwitched
 				elif iGameOption == 3002 and cong.isCongressEnabled():
-					sd.setCongressTurns(max(0, sd.getCongressTurns() - iChange))
+					data.iCongressTurns = max(0, data.iCongressTurns - iChange)
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":

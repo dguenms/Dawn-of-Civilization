@@ -3,8 +3,7 @@
 from CvPythonExtensions import *
 import CvUtil
 import PyHelpers
-import Consts as con
-from StoredData import sd
+from Consts import *
 import RFCUtils
 from operator import itemgetter
 
@@ -15,16 +14,14 @@ PyPlayer = PyHelpers.PyPlayer
 
 utils = RFCUtils.RFCUtils()
 
-iNumPlayers = con.iNumPlayers
-iNumTotalPlayers = con.iNumTotalPlayers
 iNumCompanies = 9
 
 (iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
 
-tCompanyTechs = (con.iCurrency, con.iAstronomy, con.iBiology, con.iRefrigeration, con.iSteamPower, con.iSteel, con.iCombustion, con.iElectricity, con.iComputers)
+tCompanyTechs = (iCurrency, iAstronomy, iBiology, iRefrigeration, iSteamPower, iSteel, iCombustion, iElectricity, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
-lTradingCompanyCivs = [con.iSpain, con.iFrance, con.iEngland, con.iPortugal, con.iNetherlands, con.iVikings] # Vikings too now
+lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings] # Vikings too now
 
 tSilkRouteTL = (80, 46)
 tSilkRouteBR = (99, 52)
@@ -62,7 +59,7 @@ class Companies:
 		# loop through all cities, check the company value for each and add the good ones to a list of tuples (city, value)
 		cityValueList = []
 		for iPlayer in range(iNumPlayers):
-			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(tCompanyTechs[iCompany]) and (gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(con.iCorporation) or iCompany <= iTradingCompany):
+			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(tCompanyTechs[iCompany]) and (gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iCorporation) or iCompany <= iTradingCompany):
 				apCityList = PyPlayer(iPlayer).getCityList()
 				for pCity in apCityList:
 					city = pCity.GetCy()
@@ -126,7 +123,7 @@ class Companies:
 		ownerTeam = gc.getTeam(owner.getTeam())
 		
 		# State Property
-		if owner.getCivics(3) == con.iCivicCentralPlanning:
+		if owner.getCivics(3) == iCivicCentralPlanning:
 			bOtherCorp = False
 			for iLoopCorporation in range(iNumCompanies):
 				if city.isHasCorporation(iLoopCorporation) and iLoopCorporation != iCompany:
@@ -136,27 +133,27 @@ class Companies:
 				return -1
 
 		# Mercantilism increases likeliness for trading company
-		if iCompany == iTradingCompany and owner.getCivics(3) == con.iCivicMercantilism:
+		if iCompany == iTradingCompany and owner.getCivics(3) == iCivicMercantilism:
 			iValue += 2
 			
 		# Tribalism increases likeliness for silk route
-		if iCompany == iSilkRoute and owner.getCivics(2) == con.iCivicTribalism:
+		if iCompany == iSilkRoute and owner.getCivics(2) == iCivicTribalism:
 			iValue += 2
 
 		# Free Market increases likeliness for all companies
-		if owner.getCivics(3) == con.iCivicFreeMarket:
+		if owner.getCivics(3) == iCivicFreeMarket:
 			iValue += 1
 
 		# civilization requirements
 		if iCompany == iTradingCompany:
 			if not owner.getID() in lTradingCompanyCivs:
 				return -1
-			if owner.getID() == con.iNetherlands:
+			if owner.getID() == iNetherlands:
 				iValue += 2
 		elif iCompany == iSilkRoute:
-			if owner.getID() == con.iMongolia:
+			if owner.getID() == iMongolia:
 				iValue += 2
-			elif owner.getID() == con.iChina:
+			elif owner.getID() == iChina:
 				iValue -= 2
 		
 		# geographical requirements
@@ -164,7 +161,7 @@ class Companies:
 		if iCompany == iSilkRoute and not self.isCityInArea(tPlot, tSilkRouteTL, tSilkRouteBR) and not self.isCityInArea(tPlot, tMiddleEastTL, tMiddleEastBR):
 			return -1
 		if iCompany == iTradingCompany:
-			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(con.iTradingCompany) or city.isHasRealBuilding(con.iIberianTradingCompany)):
+			if not self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR) and not self.isCityInArea(tPlot, tSubSaharanAfricaTL, tSubSaharanAfricaBR) and not self.isCityInArea(tPlot, tSouthAsiaTL, tSouthAsiaBR) and not (city.isHasRealBuilding(iTradingCompany) or city.isHasRealBuilding(iIberianTradingCompany)):
 				return -1
 			elif self.isCityInArea(tPlot, tCaribbeanTL, tCaribbeanBR):
 				iValue += 1
@@ -181,57 +178,57 @@ class Companies:
 		
 		# religions
 		if iCompany == iSilkRoute:
-			if owner.getStateReligion() in [con.iProtestantism, con.iCatholicism, con.iOrthodoxy]:
+			if owner.getStateReligion() in [iProtestantism, iCatholicism, iOrthodoxy]:
 				iValue -= 1
 		
 		# various bonuses
 		if iCompany == iSilkRoute:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iMarket)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iGrocer)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iHarbor)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iGrocer)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
 
 		elif iCompany == iTradingCompany:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iHarbor)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iCustomHouse)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iBank)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iTradingCompany)): iValue += 2
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCustomHouse)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBank)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iTradingCompany)): iValue += 2
 
 		elif iCompany == iCerealIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iGranary)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iGrocer)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iSupermarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iGranary)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iGrocer)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iSupermarket)): iValue += 1
 
 		elif iCompany == iFishingIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iLighthouse)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iHarbor)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iSupermarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iLighthouse)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iSupermarket)): iValue += 1
 			
 		elif iCompany == iTextileIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iMarket)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
 
 		elif iCompany == iSteelIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iCoalPlant)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iIndustrialPark)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iIronWorks)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCoalPlant)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIndustrialPark)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIronWorks)): iValue += 3
 
 		elif iCompany == iOilIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iBank)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iIndustrialPark)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iStockExchange)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBank)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIndustrialPark)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStockExchange)): iValue += 3
 
 		elif iCompany == iLuxuryIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iTheatre)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iBroadcastTower)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iNationalGallery)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iTheatre)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBroadcastTower)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iNationalGallery)): iValue += 3
 
 		elif iCompany == iComputerIndustry:
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iFactory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iLaboratory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iUniversity)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, con.iCERN)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iLaboratory)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iUniversity)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCERN)): iValue += 3
 
 		# trade routes
 		iValue += city.getTradeRoutes() - 1
@@ -248,7 +245,7 @@ class Companies:
 				elif iCompany == iOilIndustry:
 					iTempValue += city.getNumBonuses(iBonus) * 4
 				elif iCompany == iSilkRoute:
-					if iBonus == con.iSilk:
+					if iBonus == iSilk:
 						iTempValue += city.getNumBonuses(iBonus) * 4
 					else:
 						iTempValue += city.getNumBonuses(iBonus) * 2
@@ -256,9 +253,9 @@ class Companies:
 					iTempValue += city.getNumBonuses(iBonus) * 2
 		
 		# Brazilian UP: sugar counts as oil for Oil Industry
-		if owner.getID() == con.iBrazil and iCompany == iOilIndustry:
-			iValue += city.getNumBonuses(con.iSugar) * 3
-			if city.getNumBonuses(con.iSugar) > 0: bFound = True
+		if owner.getID() == iBrazil and iCompany == iOilIndustry:
+			iValue += city.getNumBonuses(iSugar) * 3
+			if city.getNumBonuses(iSugar) > 0: bFound = True
 					
 		if not bFound: return -1
 		iValue += iTempValue
