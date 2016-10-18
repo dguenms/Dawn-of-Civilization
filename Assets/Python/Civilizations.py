@@ -149,7 +149,7 @@ iCivHolyRome :	Techs([iReplaceableParts], column=11),
 iCivRussia : 	Techs(column=11, exceptions=[iCivilLiberties]),
 iCivPoland :	Techs([iConstitution], column=11),
 iCivPortugal :	Techs([iReplaceableParts], column=11),
-iCivTurkey :	Techs(column=11, exceptions=[iScientificMethod, iCivilLiberties, iCorporation])
+iCivTurkey :	Techs(column=11, exceptions=[iScientificMethod, iCivilLiberties, iCorporation]),
 iCivMughals :	Techs(column=11, exceptions=[iScientificMethod, iCivilLiberties]),
 iCivThailand :	Techs([iUrbanPlanning, iHorticulture], column=10),
 iCivCongo :	Techs([iCartography, iJudiciary], column=8),
