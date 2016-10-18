@@ -665,7 +665,7 @@ class CvRFCEventHandler:
 
 		if (argsList[0] == iAstronomy):
 			if iPlayer in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
-				self.rnf.setAstronomyTurn(iPlayer, gc.getGame().getGameTurn())
+				data.players[iPlayer].iAstronomyTurn = gc.getGame().getGameTurn()
 				
 		if (argsList[0] == iCompass):
 			if (iPlayer == iVikings):

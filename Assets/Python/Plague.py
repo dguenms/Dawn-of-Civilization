@@ -49,7 +49,7 @@ class Plague:
 		for i in range(iNumTotalPlayersB):
 			if (gc.getPlayer(i).isAlive()):
 				if (data.players[i].iPlagueCountdown > 0):
-					data.players[i] -= 1
+					data.players[i].iPlagueCountdown -= 1
 					if (data.players[i].iPlagueCountdown == 2):
 						self.preStopPlague(i)
 					if (data.players[i].iPlagueCountdown == 0):
@@ -145,7 +145,7 @@ class Plague:
 		data.players[iPlayer].iPlagueCountdown = -utils.getTurns(iImmunity)
 		if data.players[iPlayer].bFirstContactPlague:
 			data.players[iPlayer].iPlagueCountdown = -utils.getTurns(iImmunity-30)
-		data.players[iPlayers].bFirstContactPlague = False
+		data.players[iPlayer].bFirstContactPlague = False
 		apCityList = PyPlayer(iPlayer).getCityList()
 		for pCity in apCityList:
 			city = pCity.GetCy()

@@ -77,9 +77,9 @@ class PlayerData:
 		
 		self.lEconomyTrend = []
 		self.lHappinessTrend = []
-		self.lWarTrend = []
 		
-		self.lWarStartTurn = []
+		self.lWarTrend = [[] for _ in range(iNumTotalPlayersB)]		
+		self.lWarStartTurn = [0] * iNumTotalPlayersB
 		
 		self.lStabilityCategoryValues = [0, 0, 0, 0, 0]
 		
@@ -152,7 +152,7 @@ class GameData:
 		self.lDeleteMode = [-1] * 3
 		self.lFirstContactConquerors = [0] * 3
 		self.lFirstContactMongols = [0] * 5
-		self.lTradingCompanyConquerorsTargets = [[]] * 5
+		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]
 		
 		self.lCheatersCheck = [0, -1]
 		
@@ -291,7 +291,7 @@ class GameData:
 		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 		return self.lFirstContactMongols[lMongolCivs.index(iPlayer)]
 		
-	def setFirstContextMongols(self, iPlayer, iValue):
+	def setFirstContactMongols(self, iPlayer, iValue):
 		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
 		self.lFirstContactConquerors[lMongolCivs.index(iPlayer)] = iValue
 		
