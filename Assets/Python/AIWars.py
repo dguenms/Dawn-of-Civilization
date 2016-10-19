@@ -289,8 +289,7 @@ class AIWars:
 			
 			lPotentialTargets.append(iLoopPlayer)
 			
-		if not lPotentialTargets:
-			return -1
+		if not lPotentialTargets: return -1
 			
 		# iterate the map for all potential targets
 		for i in range(124):
@@ -305,6 +304,8 @@ class AIWars:
 			
 		# normalization
 		iMaxValue = utils.getHighestEntry(lTargetValues)
+		if iMaxValue == 0: return -1
+		
 		for iLoopPlayer in lPotentialTargets:
 			lTargetValues[iLoopPlayer] *= 500
 			lTargetValues[iLoopPlayer] /= iMaxValue

@@ -293,7 +293,7 @@ class GameData:
 		
 	def setFirstContactMongols(self, iPlayer, iValue):
 		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
-		self.lFirstContactConquerors[lMongolCivs.index(iPlayer)] = iValue
+		self.lFirstContactMongols[lMongolCivs.index(iPlayer)] = iValue
 		
 	def getStabilityLevel(self, iPlayer):
 		return self.players[iPlayer].iStabilityLevel
