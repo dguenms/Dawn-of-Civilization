@@ -145,7 +145,7 @@ dSpecificVassalTitles = {
 		iInca : "TXT_KEY_CIV_FRENCH_INCA",
 		iAztecs : "TXT_KEY_CIV_FRENCH_AZTECS",
 		iMughals : "TXT_KEY_MANDATE_OF",
-		iCongo : "TXT_KEY_FRENCH_CONGO",
+		iCongo : "TXT_KEY_ADJECTIVE_TITLE",
 		iTurkey : "TXT_KEY_MANDATE_OF",
 		iAmerica : "TXT_KEY_CIV_FRENCH_AMERICA",
 	},
