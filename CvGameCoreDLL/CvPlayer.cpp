@@ -11815,9 +11815,12 @@ void CvPlayer::setLastStateReligion(ReligionTypes eNewValue)
 						}
 					}
 
-					//szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYER_CONVERT_RELIGION", getNameKey(), GC.getReligionInfo(getLastStateReligion()).getTextKeyWide()); //Rhye
-					szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYER_CONVERT_RELIGION", getCivilizationShortDescriptionKey(), GC.getReligionInfo(getLastStateReligion()).getTextKeyWide()); //Rhye
-					GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getID(), szBuffer);
+					if (isAlive())
+					{
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYER_CONVERT_RELIGION", getNameKey(), GC.getReligionInfo(getLastStateReligion()).getTextKeyWide()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYER_CONVERT_RELIGION", getCivilizationShortDescriptionKey(), GC.getReligionInfo(getLastStateReligion()).getTextKeyWide()); //Rhye
+						GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getID(), szBuffer);
+					}
 				}
 			}
 
