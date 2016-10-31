@@ -13,7 +13,7 @@ import CvPlatyBuilderScreen
 import Popup
 gc = CyGlobalContext()
 
-import Consts as con
+from Consts import *
 from RFCUtils import utils
 import MapEditorTools as met
 import Areas
@@ -215,7 +215,7 @@ class WBPlotScreen:
 				screen.setTableText("WBSigns", 1, iRow, "", gc.getLeaderHeadInfo(iLeader).getButton(), WidgetTypes.WIDGET_PYTHON, 7876, iPlayerX * 10000 + iLeader, CvUtil.FONT_LEFT_JUSTIFY )
 				sText = "<font=3>" + CvPlatyBuilderScreen.CvWorldBuilderScreen().addComma(pPlot.getCulture(iPlayerX)) + CyTranslator().getText("[ICON_CULTURE]", ()) + "</font>"
 				screen.setTableText("WBSigns", 2, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
-				if iPlayerX < con.iNumPlayers:
+				if iPlayerX < iNumPlayers:
 					if gc.getMap().plot(tPlot[0], tPlot[1]).isCore(iPlayerX):
 						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 						iCore = 22011
@@ -253,8 +253,8 @@ class WBPlotScreen:
 			screen.setButtonGFC("SetValueIncrease", "", "", iX + 4 + 100,  iY - 30, 26, 26, WidgetTypes.WIDGET_PYTHON, 22400, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 
 			screen.addDropDownBoxGFC("PresetValue", iX + 135,  iY - 32, 160, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-			for i in range(len(con.lPresetValues)):
-				screen.addPullDownString("PresetValue", str(con.lPresetValues[i]), i, con.lPresetValues[i], False)
+			for i in range(len(lPresetValues)):
+				screen.addPullDownString("PresetValue", str(lPresetValues[i]), i, lPresetValues[i], False)
 		else:
 			screen.deleteWidget("SetValueBox")
 			screen.deleteWidget("SetValueDecrease")

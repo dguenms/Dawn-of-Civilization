@@ -7,7 +7,7 @@
 
 from CvPythonExtensions import *
 import CvUtil
-import Consts as con
+from Consts import *
 
 # BUG - Options - end
 import BugCore
@@ -278,15 +278,15 @@ class CvTechSplashScreen:
 			bTechFound = 0
 			eLoopBuilding = CyGlobalContext().getCivilizationInfo(CyGlobalContext().getGame().getActiveCivilizationType()).getCivilizationBuildings(j)
 			
-			if eLoopBuilding > con.iNumBuildingsPlague: continue
+			if eLoopBuilding > iNumBuildingsPlague: continue
 			
-			if (eLoopBuilding != -1 and eLoopBuilding != con.iNumBuildingsPlague):
+			if (eLoopBuilding != -1 and eLoopBuilding != iNumBuildingsPlague):
 				if (isTechRequiredForBuilding(self.iTech, eLoopBuilding)):
 	        			screen.attachImageButton( panelName2, "", CyGlobalContext().getBuildingInfo(eLoopBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM,
 								  WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
-			elif eLoopBuilding == con.iNumBuildingsPlague:
+			elif eLoopBuilding == iNumBuildingsPlague:
 				if isTechRequiredForBuilding(self.iTech, eLoopBuilding):
-					screen.attachImageButton( panelName2, "", CyGlobalContext().getTechInfo(con.iPaper).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM,
+					screen.attachImageButton( panelName2, "", CyGlobalContext().getTechInfo(iPaper).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM,
 								  WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, False )
 
 		# Improvements

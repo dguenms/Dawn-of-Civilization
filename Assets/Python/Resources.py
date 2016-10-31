@@ -4,9 +4,9 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers  
 #import Popup
-import Consts as con
+from Consts import *
 import RFCUtils # edead
-from StoredData import sd
+from StoredData import data
 
 # globals
 gc = CyGlobalContext()
@@ -19,30 +19,6 @@ localText = CyTranslator()
 
 # initialise bonuses variables
 
-iHorse = con.iHorse
-iBanana = con.iBanana
-iCorn = con.iCorn
-iCow = con.iCow
-iPig = con.iPig
-iSheep = con.iSheep
-iWheat = con.iWheat
-iSugar = con.iSugar
-iWine = con.iWine
-iCotton = con.iCotton
-iDye = con.iDye
-iRice = con.iRice
-iClam = con.iClam
-iFish = con.iFish
-iCoffee = con.iCoffee
-iTea = con.iTea
-iTobacco = con.iTobacco
-iSpices = con.iSpices
-iIvory = con.iIvory
-iIron = con.iIron
-iDeer = con.iDeer
-
-iCottage = con.iCottage
-iSilk = con.iSilk
 iRoad = 0
 #Orka: Silk Road road locations
 lSilkRoute = [(85,48), (86,49), (87,48), (88,47), (89,46), (90,47), (90,45), (91,47), (91,45), (92,48), (93,48), (93,46), (94,47), (95,47), (96,47), (97,47), (98,47), (99,46)]
@@ -68,7 +44,7 @@ class Resources:
 				city = gc.getMap().findCity(iX, iY, iOwner, TeamTypes.NO_TEAM, not bWater, bWater, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 				if not city.isNone():
 					szText = localText.getText(textKey, (gc.getBonusInfo(iBonus).getTextKey(), city.getName()))
-					CyInterface().addMessage(iOwner, False, con.iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(con.iWhite), iX, iY, True, True)
+					CyInterface().addMessage(iOwner, False, iDuration, szText, "AS2D_DISCOVERBONUS", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getBonusInfo(iBonus).getButton(), ColorTypes(iWhite), iX, iY, True, True)
 
 
 	def removeResource(self, iX, iY, textKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
@@ -83,7 +59,7 @@ class Resources:
 			self.createResource(88, 37, iHorse)
 			
 		# Tamils
-		if iGameTurn == getTurnForYear(-300)-1 and sd.isPlayerEnabled(con.iTamils):
+		if iGameTurn == getTurnForYear(-300)-1 and data.isPlayerEnabled(iTamils):
 			self.createResource(90, 28, iFish)
 
 		#Orka: Silk Road
@@ -130,7 +106,7 @@ class Resources:
 		#if (iGameTurn == getTurnForYear(450)): #(dye added later to prevent Carthaginian UHV exploit)
 		#	self.createResource(53, 51, iDye) # France
 		#	self.createResource(53, 55, iDye) # England
-		#if utils.getScenario() >= con.i600AD: #late start condition
+		#if utils.getScenario() >= i600AD: #late start condition
 		#	if (iGameTurn == getTurnForYear(600)):
 		#		self.createResource(53, 51, iDye)
 		#		self.createResource(53, 55, iDye)
@@ -144,7 +120,7 @@ class Resources:
 			self.removeResource(58, 37)
 
 		# Leoreth: replicate silk route in 600 AD
-		#if iGameTurn == getTurnForYear(600) and utils.getScenario() == con.i600AD:
+		#if iGameTurn == getTurnForYear(600) and utils.getScenario() == i600AD:
 		#	CyGame().setPlotExtraYield(91, 45, YieldTypes.YIELD_FOOD, 2) #Khotan			       
 		#	CyGame().setPlotExtraYield(93, 48, YieldTypes.YIELD_FOOD, 2) #Turfan
 		#	CyGame().setPlotExtraYield(97, 47, YieldTypes.YIELD_FOOD, 2) #Wuwei
@@ -152,17 +128,17 @@ class Resources:
 		#	CyGame().setPlotExtraYield(89, 46, YieldTypes.YIELD_FOOD, 2) #Kashgar
 			
 		# Leoreth: prepare Tibet
-		if iGameTurn == getTurnForYear(630)-1 and sd.isPlayerEnabled(con.iTibet):
+		if iGameTurn == getTurnForYear(630)-1 and data.isPlayerEnabled(iTibet):
 			self.createResource(95, 43, iWheat)
 			self.createResource(97, 44, iHorse)
 			
 		# Leoreth: obstacles for colonization
 		if iGameTurn == getTurnForYear(700):
-			gc.getMap().plot(35, 54).setFeatureType(con.iMud, 0)
+			gc.getMap().plot(35, 54).setFeatureType(iMud, 0)
 			for x, y in lNewfoundlandCapes:
-				gc.getMap().plot(x, y).setFeatureType(con.iCape, 0)
+				gc.getMap().plot(x, y).setFeatureType(iCape, 0)
 				
-			if utils.getHumanID() == con.iVikings:
+			if utils.getHumanID() == iVikings:
 				gc.getMap().plot(41, 58).setFeatureType(-1, 0)
 		
 		# Leoreth: New Guinea can be settled
@@ -184,7 +160,7 @@ class Resources:
 			self.createResource(66, 23, iBanana) # Central Africa
 			self.createResource(64, 20, iBanana) # Central Africa
 			
-			if sd.isPlayerEnabled(con.iCongo):
+			if data.isPlayerEnabled(iCongo):
 				self.createResource(61, 22, iCotton) # Congo
 				self.createResource(63, 19, iIvory) # Congo
 				self.createResource(61, 24, iIvory) # Cameroon
@@ -195,7 +171,7 @@ class Resources:
 			self.createResource(50, 44, iIron) # Portugal
 			
 		# Leoreth: route to connect Karakorum to Beijing and help the Mongol attackers
-		if iGameTurn == getTurnForYear(con.tBirth[con.iMongolia]):
+		if iGameTurn == getTurnForYear(tBirth[iMongolia]):
 			for tPlot in [(101, 48), (100, 49), (100, 50), (99, 50)]:
 				x, y = tPlot
 				gc.getMap().plot(x, y).setRouteType(iRoad)
@@ -261,7 +237,7 @@ class Resources:
 			self.createResource(77, 52, iCorn) # Caricyn
 			
 			self.createResource(92, 35, iSpices) # Deccan
-			gc.getMap().plot(92, 35).setFeatureType(con.iRainforest, 0)
+			gc.getMap().plot(92, 35).setFeatureType(iRainforest, 0)
 			
 			# remove floodplains in Transoxania
 			for tuple in [(82, 47), (83, 46), (85, 49)]:
@@ -310,12 +286,12 @@ class Resources:
 			if gc.getDefineINT("PLAYER_REBIRTH_COLOMBIA") != 0:
 				self.createResource(28, 31, iIron) # Colombia
 			
-			if sd.isPlayerEnabled(con.iArgentina):
+			if data.isPlayerEnabled(iArgentina):
 				self.createResource(31, 10, iWine) # Mendoza, Argentina
 				self.createResource(31, 6, iSheep) # Pampas, Argentina
 				self.createResource(32, 11, iIron) # Argentina
 			
-			if sd.isPlayerEnabled(con.iBrazil):
+			if data.isPlayerEnabled(iBrazil):
 				self.createResource(36, 18, iCorn) # Sao Paulo
 				self.createResource(42, 18, iFish) # Rio de Janeiro
 

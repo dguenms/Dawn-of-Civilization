@@ -2,7 +2,7 @@
 ## Copyright Firaxis Games 2005
 
 import math #Rhye
-import Consts as con
+from Consts import *
 import CvUtil
 from CvPythonExtensions import *
 import RFCUtils # edead
@@ -141,10 +141,10 @@ class CvDawnOfMan:
 		pActivePlayer = gc.getPlayer(CyGame().getActivePlayer())
 		iActivePlayer = CyGame().getActivePlayer()
 			
-		if getTurnForYear(con.tBirth[iActivePlayer]) <= utils.getScenarioStartTurn():
+		if getTurnForYear(tBirth[iActivePlayer]) <= utils.getScenarioStartTurn():
 			iYear = utils.getScenarioStartYear()
 		else:
-			iYear = con.tBirth[iActivePlayer]
+			iYear = tBirth[iActivePlayer]
 			
 		year = str(abs(iYear)) + ' '
 		if iYear >= 0: year += CyTranslator().getText("TXT_KEY_AD", ())
@@ -153,8 +153,8 @@ class CvDawnOfMan:
 		#Leoreth: imported individual texts from Sword of Islam (edead)
 		pActivePlayer = gc.getPlayer(CyGame().getActivePlayer())
 		
-		textKey = con.dawnOfMan3000BC[iActivePlayer]
-		dawnOfMan = con.lDawnOfMan[utils.getScenario()]
+		textKey = dawnOfMan3000BC[iActivePlayer]
+		dawnOfMan = lDawnOfMan[utils.getScenario()]
 		if iActivePlayer in dawnOfMan:
 			textKey = dawnOfMan[iActivePlayer]
 
@@ -183,7 +183,7 @@ class CvDawnOfMan:
 	def update(self, fDelta):
 ##Rhye - begin
 		iActivePlayer = CyGame().getActivePlayer()
-		if con.tBirth[iActivePlayer] <= utils.getScenarioStartYear():
+		if tBirth[iActivePlayer] <= utils.getScenarioStartYear():
 			screen = CyGInterfaceScreen( "CvLoadingScreen", self.iScreenID )
 			screen.setBarPercentage("ProgressBar", InfoBarTypes.INFOBAR_STORED, 1)
 			screen.setLabel("Text", "", CyTranslator().getText("TXT_KEY_AUTOPLAY_TURNS_REMAINING", (0,)), CvUtil.FONT_CENTER_JUSTIFY, 530, 445, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -191,7 +191,7 @@ class CvDawnOfMan:
 		else:
 			iGameTurn = CyGame().getGameTurn()
 
-			iNumAutoPlayTurns = getTurnForYear(con.tBirth[CyGame().getActiveTeam()])
+			iNumAutoPlayTurns = getTurnForYear(tBirth[CyGame().getActiveTeam()])
 			iNumTurnsRemaining = iNumAutoPlayTurns - iGameTurn
 			
 			#if (iNumTurnsRemaining != self.iTurnsRemaining):

@@ -6,7 +6,7 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 
-import Consts as con
+from Consts import *
 import companies
 
 PyPlayer = PyHelpers.PyPlayer
@@ -201,8 +201,8 @@ class CvCorporationScreen:
 						szList = u""
 						
 			iActivePlayer = CyGame().getActivePlayer()
-			if iActivePlayer == con.iBrazil and i == companies.iOilIndustry:
-				eBonus = con.iSugar
+			if iActivePlayer == iBrazil and i == companies.iOilIndustry:
+				eBonus = iSugar
 				szList += u", "
 				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
 				
@@ -368,8 +368,8 @@ class CvCorporationScreen:
 					iAvailableBonus = (pActivePlayer.getNumAvailableBonuses(eBonus))
 					szList += u"%d" % iAvailableBonus
 					szListLabels.append(szList)
-			if iActivePlayer == con.iBrazil and iLinkCorporation == companies.iOilIndustry:
-				eBonus = con.iSugar
+			if iActivePlayer == iBrazil and iLinkCorporation == companies.iOilIndustry:
+				eBonus = iSugar
 				szList = u""
 				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
 				szList += u" : "
@@ -395,10 +395,10 @@ class CvCorporationScreen:
 		
 			if (iLinkCorporation > 1):
 				szButtonName = self.TECH_REQUIRED_BUTTON_CORPORATION
-				screen.addDDSGFC(szButtonName, gc.getTechInfo(con.iCorporation).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, con.iCorporation, -1)
+				screen.addDDSGFC(szButtonName, gc.getTechInfo(iCorporation).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iCorporation, -1)
 				
 				szList = u""
-				if teamCiv.isHasTech(con.iCorporation):
+				if teamCiv.isHasTech(iCorporation):
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 				else:
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))

@@ -8,7 +8,7 @@ import BugCore
 import PlayerUtil
 import TradeUtil
 
-import Consts as con
+from Consts import *
 
 # BUG - Mac Support - start
 import BugUtil
@@ -156,7 +156,7 @@ class MoreCiv4lertsEvent( AbstractMoreCiv4lertsEvent):
 			if (iPlayer == iActivePlayer):
 				self.CheckForAlerts(iPlayer, PyPlayer(iPlayer).getTeam(), False)
 		if (self.getCheckForForeignCities()):
-			if (iPlayer != iActivePlayer and iPlayer < con.iNumPlayers):
+			if (iPlayer != iActivePlayer and iPlayer < iNumPlayers):
 				bRevealed = city.isRevealed(gc.getActivePlayer().getTeam(), False)
 				if (bRevealed or PlayerUtil.canSeeCityList(iPlayer)):
 					player = gc.getPlayer(iPlayer)

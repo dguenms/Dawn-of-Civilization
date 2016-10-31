@@ -1,7 +1,7 @@
 # Rhye's and Fall of Civilization - Historical Victory Goals
 
 from CvPythonExtensions import *
-from StoredData import sd
+from StoredData import data
 from Consts import *
 import RFCUtils
 import heapq
@@ -239,18 +239,18 @@ def setup():
 		win(iCongo, 0)
 		
 		# French goal needs to be winnable
-		sd.setWonderBuilder(iNotreDame, iFrance)
-		sd.setWonderBuilder(iVersailles, iFrance)
+		data.setWonderBuilder(iNotreDame, iFrance)
+		data.setWonderBuilder(iVersailles, iFrance)
 		
 		# help Congo
-		sd.changeCongoSlaveCounter(500)
+		data.iCongoSlaveCounter += 500
 		
 		# help Netherlands
-		sd.changeDutchColonies(2)
+		data.iDutchColonies += 2
 	
 	# ignore AI goals
 	bIgnoreAI = (gc.getDefineINT("NO_AI_UHV_CHECKS") == 1)
-	sd.setIgnoreAI(bIgnoreAI)
+	data.bIgnoreAI = bIgnoreAI
 	
 	if bIgnoreAI:
 		for iPlayer in range(iNumPlayers):
@@ -268,7 +268,7 @@ def checkTurn(iGameTurn, iPlayer):
 	if not gc.getPlayer(iPlayer).isAlive(): return
 	
 	# Don't check AI civilizations to improve speed
-	if utils.getHumanID() != iPlayer and sd.isIgnoreAI(): return
+	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 	
 	pPlayer = gc.getPlayer(iPlayer)
 	
@@ -302,11 +302,11 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: experience four golden ages by 1800 AD
 		if isPossible(iChina, 2):
-			if sd.getChineseGoldenAgeTurns() >= utils.getTurns(32):
+			if data.iChineseGoldenAgeTurns >= utils.getTurns(32):
 				win(iChina, 2)
 				
 			if pChina.isGoldenAge() and not pChina.isAnarchy():
-				sd.changeChineseGoldenAgeTurns(1)
+				data.iChineseGoldenAgeTurns += 1
 				
 		if iGameTurn == getTurnForYear(1800):
 			expire(iChina, 2)
@@ -542,10 +542,10 @@ def checkTurn(iGameTurn, iPlayer):
 			# gold from per turn gold trade
 			for iPlayer in range(iNumPlayers):
 				iTradeGold += pTamils.getGoldPerTurnByPlayer(iPlayer)
-				
-			sd.changeTamilTradeGold(iTradeGold)
 			
-			if sd.getTamilTradeGold() >= utils.getTurns(4000):
+			data.iTamilTradeGold += iTradeGold
+			
+			if data.iTamilTradeGold >= utils.getTurns(4000):
 				win(iTamils, 2)
 				
 		if iGameTurn == getTurnForYear(1200):
@@ -635,10 +635,10 @@ def checkTurn(iGameTurn, iPlayer):
 				
 				for iLoopPlayer in range(iNumPlayers):
 					iTradeGold += pMaya.getGoldPerTurnByPlayer(iLoopPlayer)
-					
-				sd.changeColombianTradeGold(iTradeGold)
 				
-				if sd.getColombianTradeGold() >= utils.getTurns(3000):
+				data.iColombianTradeGold += iTradeGold
+				
+				if data.iColombianTradeGold >= utils.getTurns(3000):
 					win(iMaya, 2)
 					
 			if iGameTurn == getTurnForYear(1950):
@@ -713,7 +713,7 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
 		if isPossible(iVikings, 2):
-			if sd.getVikingGold() >= utils.getTurns(3000):
+			if data.iVikingGold >= utils.getTurns(3000):
 				win(iVikings, 2)
 				
 		if iGameTurn == getTurnForYear(1500):
@@ -841,7 +841,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 		# third goal: acquire 3000 gold through piracy by 1650 AD
 		if isPossible(iMoors, 2):
-			if sd.getMoorishGold() >= utils.getTurns(3000):
+			if data.iMoorishGold >= utils.getTurns(3000):
 				win(iMoors, 2)
 				
 		if iGameTurn == getTurnForYear(1650):
@@ -913,7 +913,7 @@ def checkTurn(iGameTurn, iPlayer):
 			iEnglishNavy += pEngland.getUnitClassCount(gc.getUnitInfo(iFrigate).getUnitClassType())
 			iEnglishNavy += pEngland.getUnitClassCount(gc.getUnitInfo(iShipOfTheLine).getUnitClassType())
 			
-			if iEnglishNavy >= 25 and sd.getEnglishSinks() >= 50:
+			if iEnglishNavy >= 25 and data.iEnglishSinks >= 50:
 				win(iEngland, 1)
 		
 		if iGameTurn == getTurnForYear(1800):
@@ -1149,7 +1149,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 			# third goal: enslave 20 old world units
 			if isPossible(iAztecs, 2):
-				if sd.getAztecSlaves() >= 20:
+				if data.iAztecSlaves >= 20:
 					win(iAztecs, 2)
 					
 		# Mexico
@@ -1315,7 +1315,7 @@ def checkTurn(iGameTurn, iPlayer):
 	
 		# first goal: experience two golden ages by 1930 AD
 		if isPossible(iArgentina, 0):
-			if sd.getArgentineGoldenAgeTurns() >= utils.getTurns(16):
+			if data.iArgentineGoldenAgeTurns >= utils.getTurns(16):
 				win(iArgentina, 0)
 				
 		if iGameTurn == getTurnForYear(1930):
@@ -1331,14 +1331,14 @@ def checkTurn(iGameTurn, iPlayer):
 			
 		# third goal: experience five golden ages by 2000 AD
 		if isPossible(iArgentina, 2):
-			if sd.getArgentineGoldenAgeTurns() >= utils.getTurns(40):
+			if data.iArgentineGoldenAgeTurns >= utils.getTurns(40):
 				win(iArgentina, 2)
 				
 		if iGameTurn == getTurnForYear(2000):
 			expire(iArgentina, 2)
 			
 		if pArgentina.isGoldenAge() and not pArgentina.isAnarchy():
-			sd.changeArgentineGoldenAgeTurns(1)
+			data.iArgentineGoldenAgeTurns += 1
 			
 	elif iPlayer == iBrazil:
 	
@@ -1400,26 +1400,26 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		if iVictoryType == iCatholicism:
 			if gc.getGame().getSecretaryGeneral(1) == iPlayer:
-				sd.changePopeTurns(1)
+				data.iPopeTurns += 1
 				
 		elif iVictoryType == iHinduism:
 			if pPlayer.isGoldenAge():
-				sd.changeHinduGoldenAgeTurns(1)
+				data.iHinduGoldenAgeTurns += 1
 				
 		elif iVictoryType == iBuddhism:
 			if isAtPeace(iPlayer):
-				sd.changeBuddhistPeaceTurns(1)
+				data.iBuddhistPeaceTurns += 1
 				
 			if isHappiest(iPlayer):
-				sd.changeBuddhistHappinessTurns(1)
+				data.iBuddhistHappinessTurns += 1
 				
 		elif iVictoryType == iTaoism:
 			if isHealthiest(iPlayer):
-				sd.changeTaoistHealthTurns(1)
+				data.iTaoistHealthTurns += 1
 				
 		elif iVictoryType == iVictoryPolytheism:
 			if 2 * countReligionCities(iPlayer) > pPlayer.getNumCities():
-				sd.setPolytheismNeverReligion(False)
+				data.bPolytheismNeverReligion = False
 				
 		if checkReligiousGoals(iPlayer):
 			gc.getGame().setWinner(iPlayer, 8)
@@ -1427,10 +1427,10 @@ def checkTurn(iGameTurn, iPlayer):
 def checkHistoricalVictory(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	
-	if not sd.isHistoricalGoldenAge(iPlayer):
+	if not data.players[iPlayer].bHistoricalGoldenAge:
 		if countAchievedGoals(iPlayer) == 2:
 		
-			sd.setHistoricalGoldenAge(iPlayer, True)
+			data.players[iPlayer].bHistoricalGoldenAge = True
 			
 			capital = pPlayer.getCapitalCity()
 			capital.setHasRealBuilding(iTriumphalArch, True)
@@ -1452,17 +1452,17 @@ def onCityBuilt(iPlayer, city):
 
 	if not gc.getGame().isVictoryValid(7): return
 	
-	if utils.getHumanID() != iPlayer and sd.isIgnoreAI(): return
+	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 	
 	if iPlayer >= iNumPlayers: return
 	
 	iGameTurn = gc.getGame().getGameTurn()
 	
 	# record first colony in the Americas for various UHVs
-	if not sd.isFirstWorldColonized():
+	if not data.isFirstWorldColonized():
 		if utils.isPlotInArea((city.getX(), city.getY()), tAmericasTL, tAmericasBR):
 			if iPlayer not in lCivGroups[5]:
-				sd.setFirstNewWorldColony(iPlayer)
+				data.iFirstNewWorldColony = iPlayer
 			
 				# second Viking goal: found a city in America by 1100 AD
 				if isPossible(iVikings, 1):
@@ -1516,7 +1516,7 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 
 	if not gc.getGame().isVictoryValid(7): return
 	
-	if utils.getHumanID() != iPlayer and sd.isIgnoreAI(): return
+	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 	
 	# first Japanese goal: have an average city culture of 6000 by 1600 AD without ever losing a city
 	if iOwner == iJapan:
@@ -1546,8 +1546,8 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 				bColony = city.getRegionID() not in [rBritain, rIberia, rItaly, rBalkans, rEurope, rScandinavia, rRussia]
 			
 				if bColony and bConquest:
-					sd.changeDutchColonies(1)
-					if sd.getDutchColonies() >= 4:
+					data.iDutchColonies += 1
+					if data.iDutchColonies >= 4:
 						win(iNetherlands, 1)
 				
 	# second Canadian goal: control all cities and 90% of the territory in Canada by 1950 AD without ever conquering a city
@@ -1565,7 +1565,7 @@ def onTechAcquired(iPlayer, iTech):
 	
 	# handle all "be the first to discover" goals
 	if not isDiscovered(iTech):
-		sd.setFirstDiscovered(iTech, iPlayer)
+		data.lFirstDiscovered[iTech] = iPlayer
 		
 		for iLoopPlayer in dTechGoals.keys():
 			iGoal = dTechGoals[iLoopPlayer][0]
@@ -1594,7 +1594,7 @@ def onTechAcquired(iPlayer, iTech):
 			
 	# handle all "be the first to enter" goals
 	if not isEntered(iEra):
-		sd.setFirstEntered(iEra, iPlayer)
+		data.lFirstEntered[iEra] = iPlayer
 		
 		for iLoopPlayer in dEraGoals.keys():
 			iGoal = dEraGoals[iLoopPlayer][0]
@@ -1621,13 +1621,13 @@ def onTechAcquired(iPlayer, iTech):
 				
 def checkTechGoal(iPlayer, lTechs):
 	for iTech in lTechs:
-		if sd.getFirstDiscovered(iTech) != iPlayer:
+		if data.lFirstDiscovered[iTech] != iPlayer:
 			return False
 	return True
 	
 def checkEraGoal(iPlayer, lEras):
 	for iEra in lEras:
-		if sd.getFirstEntered(iEra) != iPlayer:
+		if data.lFirstEntered[iEra] != iPlayer:
 			return False
 	return True
 	
@@ -1637,7 +1637,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 	
 	# handle all "build wonders" goals
 	if isWonder(iBuilding) and not isWonderBuilt(iBuilding):
-		sd.setWonderBuilder(iBuilding, iPlayer)
+		data.setWonderBuilder(iBuilding, iPlayer)
 		
 		for iLoopPlayer in dWonderGoals.keys():
 			iGoal = dWonderGoals[iLoopPlayer][0]
@@ -1650,7 +1650,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iPlayer != iLoopPlayer: lose(iLoopPlayer, iGoal)
 				elif bCanWin and checkWonderGoal(iLoopPlayer, lWonders): win(iLoopPlayer, iGoal)
 				
-	if utils.getHumanID() != iPlayer and sd.isIgnoreAI(): return
+	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 	
 	if not gc.getPlayer(iPlayer).isAlive(): return
 	
@@ -1709,7 +1709,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 			if iBuilding in [iAngkorWat, iBuddhistMonastery, iHinduMonastery]:
 				iBuddhist = getNumBuildings(iKhmer, iBuddhistMonastery)
 				iHindu = getNumBuildings(iKhmer, iHinduMonastery)
-				bAngkorWat = sd.getWonderBuilder(iAngkorWat) == iKhmer
+				bAngkorWat = data.getWonderBuilder(iAngkorWat) == iKhmer
 				if iBuddhist >= 4 and iHindu >= 4 and bAngkorWat:
 					win(iKhmer, 0)
 					
@@ -1759,7 +1759,7 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				
 def checkWonderGoal(iPlayer, lWonders):
 	for iWonder in lWonders:
-		if sd.getWonderBuilder(iWonder) != iPlayer:
+		if data.getWonderBuilder(iWonder) != iPlayer:
 			return False
 	return True
 				
@@ -1769,7 +1769,7 @@ def onReligionFounded(iPlayer, iReligion):
 	
 	# handle all "be the first to found" goals
 	if not isFounded(iReligion):
-		sd.setReligionFounder(iReligion, iPlayer)
+		data.lReligionFounder[iReligion] = iPlayer
 		
 		for iLoopPlayer in dReligionGoals.keys():
 			iGoal = dReligionGoals[iLoopPlayer][0]
@@ -1783,7 +1783,7 @@ def onReligionFounded(iPlayer, iReligion):
 				
 def checkReligionGoal(iPlayer, lReligions):
 	for iReligion in lReligions:
-		if sd.getReligionFounder(iReligion) != iPlayer:
+		if data.lReligionFounder[iReligion] != iPlayer:
 			return False
 	return True
 				
@@ -1791,13 +1791,13 @@ def onCityRazed(iPlayer, city):
 
 	if not gc.getGame().isVictoryValid(7): return
 	
-	if utils.getHumanID() != iPlayer and sd.isIgnoreAI(): return
+	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 	
 	# second Mongol goal: raze seven cities
 	if iPlayer == iMongolia:
 		if isPossible(iMongolia, 1):
-			sd.changeMongolRazes(1)
-			if sd.getMongolRazes() >= 7:
+			data.iMongolRazes += 1
+			if data.iMongolRazes >= 7:
 				win(iMongolia, 1)
 				
 def onProjectBuilt(iPlayer, iProject):
@@ -1820,7 +1820,7 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 	iWinningPlayer = pWinningUnit.getOwner()
 	iLosingPlayer = pLosingUnit.getOwner()
 	
-	if utils.getHumanID() != iWinningPlayer and sd.isIgnoreAI(): return
+	if utils.getHumanID() != iWinningPlayer and data.bIgnoreAI: return
 	
 	pLosingUnitInfo = gc.getUnitInfo(pLosingUnit.getUnitType())
 	iDomainSea = gc.getInfoTypeForString("DOMAIN_SEA")
@@ -1829,19 +1829,19 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 	if iWinningPlayer == iEngland:
 		if isPossible(iEngland, 1):
 			if pLosingUnitInfo.getDomainType() == iDomainSea:
-				sd.changeEnglishSinks(1)
+				data.iEnglishSinks += 1
 				
 	# third Korean goal: sink 20 enemy ships
 	elif iWinningPlayer == iKorea:
 		if isPossible(iKorea, 2):
 			if pLosingUnitInfo.getDomainType() == iDomainSea:
-				sd.changeKoreanSinks(1)
-				if sd.getKoreanSinks() >= 20:
+				data.iKoreanSinks += 1
+				if data.iKoreanSinks >= 20:
 					win(iKorea, 2)
 					
 def onGreatPersonBorn(iPlayer, unit):
 
-	if utils.getHumanID() != iPlayer and sd.isIgnoreAI(): return
+	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 	
 	pUnitInfo = gc.getUnitInfo(unit.getUnitType())
 	
@@ -1857,40 +1857,40 @@ def onUnitPillage(iPlayer, iGold, iUnit):
 	# third Viking goal: acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
 	if iPlayer == iVikings:
 		if isPossible(iVikings, 2):
-			sd.changeVikingGold(iGold)
+			data.iVikingGold += iGold
 			
 	elif iPlayer == iMoors:
 		if isPossible(iMoors, 2) and iUnit == iMoorishCorsair:
-			sd.changeMoorishGold(iGold)
+			data.iMoorishGold += iGold
 		
 def onCityCaptureGold(iPlayer, iGold):
 
 	# third Viking goal: acquire 3000 gold by pillaging, conquering cities and sinking ships by 1500 AD
 	if iPlayer == iVikings:
 		if isPossible(iVikings, 2):
-			sd.changeVikingGold(iGold)
+			data.iVikingGold += iGold
 		
 def onPlayerGoldTrade(iPlayer, iGold):
 
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iPlayer == iTamils:
 		if isPossible(iTamils, 2):
-			sd.changeTamilTradeGold(iGold)
+			data.iTamilTradeGold += iGold
 		
 def onPlayerSlaveTrade(iPlayer, iGold):
 
 	# second Congolese goal: gain 1000 gold through slave trade by 1800 AD
 	if iPlayer == iCongo:
 		if isPossible(iCongo, 1):
-			sd.changeCongoSlaveCounter(iGold)
-			if sd.getCongoSlaveCounter() >= utils.getTurns(1000):
+			data.iCongoSlaveCounter += iGold
+			if data.iCongoSlaveCounter >= utils.getTurns(1000):
 				win(iCongo, 1)
 				
 def onTradeMission(iPlayer, iX, iY, iGold):
 
 	# third Tamil goal: acquire 4000 gold by trade by 1200 AD
 	if iPlayer == iTamils:
-		sd.changeTamilTradeGold(iGold)
+		data.iTamilTradeGold += iGold
 		
 	# first Mande goal: conduct a trade mission in your state religion's holy city by 1350 AD
 	elif iPlayer == iMali:
@@ -1906,8 +1906,8 @@ def onPeaceBrokered(iBroker, iPlayer1, iPlayer2):
 
 	# third Canadian goal: end twelve wars through diplomacy by 2000 AD
 	if iBroker == iCanada:
-		sd.changeCanadianPeaceDeals(1)
-		if sd.getCanadianPeaceDeals() >= 12:
+		data.iCanadianPeaceDeals += 1
+		if data.iCanadianPeaceDeals >= 12:
 			win(iCanada, 2)
 			
 def onBlockade(iPlayer, iGold):
@@ -1915,7 +1915,7 @@ def onBlockade(iPlayer, iGold):
 	# third Moorish goal: acquire 3000 gold through piracy by 1650 AD
 	if iPlayer == iMoors:
 		if isPossible(iMoors, 2):
-			sd.changeMoorishGold(iGold)
+			data.iMoorishGold += iGold
 			
 def onFirstContact(iPlayer, iHasMetPlayer):
 
@@ -1982,7 +1982,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 	
 		# first Catholic goal: be pope for 100 turns
 		if iGoal == 0:
-			if sd.getPopeTurns() >= utils.getTurns(100): return 1
+			if data.iPopeTurns >= utils.getTurns(100): return 1
 			
 		# second Catholic goal: control the Catholic shrine and make sure 12 great prophets are settled in Catholic civilizations
 		elif iGoal == 1:
@@ -2001,7 +2001,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 		if iGoal == 0:
 			lProtestantTechs = [iLiberalism, iConstitution, iEconomics]
 			if checkTechGoal(iPlayer, lProtestantTechs): return 1
-			elif sd.getFirstDiscovered(iLiberalism) not in [iPlayer, -1] or sd.getFirstDiscovered(iConstitution) not in [iPlayer, -1] or sd.getFirstDiscovered(iEconomics) not in [iPlayer, -1]: return 0
+			elif data.lFirstDiscovered[iLiberalism] not in [iPlayer, -1] or data.lFirstDiscovered[iConstitution] not in [iPlayer, -1] or data.lFirstDiscovered[iEconomics] not in [iPlayer, -1]: return 0
 			
 		# second Protestant goal: make sure five great merchants and great engineers are settled in Protestant civilizations
 		elif iGoal == 1:
@@ -2051,7 +2051,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 		
 		# second Hindu goal: experience 24 turns of golden age
 		elif iGoal == 1:
-			if sd.getHinduGoldenAgeTurns() >= utils.getTurns(24): return 1
+			if data.iHinduGoldenAgeTurns >= utils.getTurns(24): return 1
 			
 		# third Hindu goal: make sure the five largest cities in the world are Hindu
 		elif iGoal == 2:
@@ -2061,11 +2061,11 @@ def checkReligiousGoal(iPlayer, iGoal):
 	
 		# first Buddhist goal: be at peace for 100 turns
 		if iGoal == 0:
-			if sd.getBuddhistPeaceTurns() >= utils.getTurns(100): return 1
+			if data.iBuddhistPeaceTurns >= utils.getTurns(100): return 1
 			
 		# second Buddhist goal: have the highest approval rating for 100 turns
 		elif iGoal == 1:
-			if sd.getBuddhistHappinessTurns() >= utils.getTurns(100): return 1
+			if data.iBuddhistHappinessTurns >= utils.getTurns(100): return 1
 			
 		# third Buddhist goal: have cautious or better relations with all civilizations in the world
 		elif iGoal == 2:
@@ -2092,7 +2092,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 	
 		# first Taoist goal: have the highest life expectancy in the world for 100 turns
 		if iGoal == 0:
-			if sd.getTaoistHealthTurns() >= utils.getTurns(100): return 1
+			if data.iTaoistHealthTurns >= utils.getTurns(100): return 1
 			
 		# second Taoist goal: control the Confucian and Taoist shrine and combine their income to 40 gold
 		elif iGoal == 1:
@@ -2133,7 +2133,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 			
 		# third Polytheist goal: don't allow more than half of your cities to have a religion
 		elif iGoal == 2:
-			if sd.isPolytheismNeverReligion(): return 1
+			if data.bPolytheismNeverReligion: return 1
 			
 	elif iVictoryType == iVictorySecularism:
 	
@@ -2166,28 +2166,28 @@ def checkReligiousGoal(iPlayer, iGoal):
 ### UTILITY METHODS ###
 
 def lose(iPlayer, iGoal):
-	sd.setGoal(iPlayer, iGoal, 0)
+	data.players[iPlayer].lGoals[iGoal] = 0
 	if utils.getHumanID() == iPlayer:
 		utils.show(localText.getText("TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE", (iGoal+1,)))
 	
 def win(iPlayer, iGoal):
-	sd.setGoal(iPlayer, iGoal, 1)
+	data.players[iPlayer].lGoals[iGoal] = 0
 	checkHistoricalVictory(iPlayer)
 	
 def expire(iPlayer, iGoal):
 	if isPossible(iPlayer, iGoal): lose(iPlayer, iGoal)
 	
 def isWon(iPlayer, iGoal):
-	return sd.getGoal(iPlayer, iGoal) == 1
+	return data.players[iPlayer].lGoals[iGoal] == 1
 	
 def isLost(iPlayer, iGoal):
-	return sd.getGoal(iPlayer, iGoal) == 0
+	return data.players[iPlayer].lGoals[iGoal] == 0
 	
 def isPossible(iPlayer, iGoal):
-	return sd.getGoal(iPlayer, iGoal) == -1
+	return data.players[iPlayer].lGoals[iGoal] == -1
 	
 def loseAll(iPlayer):
-	for i in range(3): sd.setGoal(iPlayer, i, 0)
+	for i in range(3): data.players[iPlayer].lGoals[i] = 0
 	
 def countAchievedGoals(iPlayer):
 	iCount = 0
@@ -2196,16 +2196,16 @@ def countAchievedGoals(iPlayer):
 	return iCount
 	
 def isFounded(iReligion):
-	return sd.getReligionFounder(iReligion) != -1
+	return data.lReligionFounder[iReligion] != -1
 	
 def isWonderBuilt(iWonder):
-	return sd.getWonderBuilder(iWonder) != -1
+	return data.getWonderBuilder(iWonder) != -1
 	
 def isDiscovered(iTech):
-	return sd.getFirstDiscovered(iTech) != -1
+	return data.lFirstDiscovered[iTech] != -1
 	
 def isEntered(iEra):
-	return sd.getFirstEntered(iEra) != -1
+	return data.lFirstDiscovered[iEra] != -1
 	
 	
 def getBestCity(iPlayer, tPlot, function):
@@ -2678,7 +2678,7 @@ def isCompleteTechTree(iPlayer):
 def countFirstDiscovered(iPlayer, iEra):
 	iCount = 0
 	for iTech in range(iNumTechs):
-		if gc.getTechInfo(iTech).getEra() == iEra and sd.getFirstDiscovered(iTech) == iPlayer:
+		if gc.getTechInfo(iTech).getEra() == iEra and data.lFirstDiscovered[iTech] == iPlayer:
 			iCount += 1
 	return iCount
 	
@@ -2860,7 +2860,7 @@ def getURVHelp(iPlayer, iGoal):
 
 	elif iVictoryType == iCatholicism:
 		if iGoal == 0:
-			iPopeTurns = sd.getPopeTurns()
+			iPopeTurns = data.iPopeTurns
 			aHelp.append(getIcon(iPopeTurns >= utils.getTurns(100)) + localText.getText("TXT_KEY_VICTORY_POPE_TURNS", (iPopeTurns, utils.getTurns(100))))
 		elif iGoal == 1:
 			bShrine = pPlayer.countNumBuildings(iCatholicShrine) > 0
@@ -2872,9 +2872,9 @@ def getURVHelp(iPlayer, iGoal):
 
 	elif iVictoryType == iProtestantism:
 		if iGoal == 0:
-			bLiberalism = sd.getFirstDiscovered(iLiberalism) == iPlayer
-			bConstitution = sd.getFirstDiscovered(iConstitution) == iPlayer
-			bEconomics = sd.getFirstDiscovered(iEconomics) == iPlayer
+			bLiberalism = data.lFirstDiscovered[iLiberalism] == iPlayer
+			bConstitution = data.lFirstDiscovered[iConstitution] == iPlayer
+			bEconomics = data.lFirstDiscovered[iEconomics] == iPlayer
 			aHelp.append(getIcon(bLiberalism) + localText.getText("TXT_KEY_TECH_LIBERALISM", ()) + ' ' + getIcon(bConstitution) + localText.getText("TXT_KEY_TECH_CONSTITUTION", ()) + ' ' + getIcon(bEconomics) + localText.getText("TXT_KEY_TECH_ECONOMICS", ()))
 		elif iGoal == 1:
 			iMerchants = countReligionSpecialists(iProtestantism, iSpecialistGreatMerchant)
@@ -2911,7 +2911,7 @@ def getURVHelp(iPlayer, iGoal):
 					iCount += 1
 			aHelp.append(getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_CITY_DIFFERENT_GREAT_PEOPLE", (gc.getGame().getHolyCity(iHinduism).getName(), iCount, 5)))
 		elif iGoal == 1:
-			iGoldenAgeTurns = sd.getHinduGoldenAgeTurns()
+			iGoldenAgeTurns = data.iHinduGoldenAgeTurns
 			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(24)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGE_TURNS", (iGoldenAgeTurns, utils.getTurns(24))))
 		elif iGoal == 2:
 			iLargestCities = countBestCitiesReligion(iHinduism, cityPopulation, 5)
@@ -2919,10 +2919,10 @@ def getURVHelp(iPlayer, iGoal):
 
 	elif iVictoryType == iBuddhism:
 		if iGoal == 0:
-			iPeaceTurns = sd.getBuddhistPeaceTurns()
+			iPeaceTurns = data.iBuddhistPeaceTurns
 			aHelp.append(getIcon(iPeaceTurns >= utils.getTurns(100)) + localText.getText("TXT_KEY_VICTORY_PEACE_TURNS", (iPeaceTurns, utils.getTurns(100))))
 		elif iGoal == 1:
-			iHappinessTurns = sd.getBuddhistHappinessTurns()
+			iHappinessTurns = data.iBuddhistHappinessTurns
 			aHelp.append(getIcon(iHappinessTurns >= utils.getTurns(100)) + localText.getText("TXT_KEY_VICTORY_HAPPINESS_TURNS", (iHappinessTurns, utils.getTurns(100))))
 		elif iGoal == 2:
 			iGoodRelations = countGoodRelationPlayers(iPlayer, AttitudeTypes.ATTITUDE_CAUTIOUS)
@@ -2945,7 +2945,7 @@ def getURVHelp(iPlayer, iGoal):
 
 	elif iVictoryType == iTaoism:
 		if iGoal == 0:
-			iHealthTurns = sd.getTaoistHealthTurns()
+			iHealthTurns = data.iTaoistHealthTurns
 			aHelp.append(getIcon(iHealthTurns >= utils.getTurns(100)) + localText.getText("TXT_KEY_VICTORY_HEALTH_TURNS", (iHealthTurns, utils.getTurns(100))))
 		elif iGoal == 1:
 			bConfucianShrine = getNumBuildings(iPlayer, iConfucianShrine) > 0
@@ -2978,7 +2978,7 @@ def getURVHelp(iPlayer, iGoal):
 			iCount = countReligionWonders(iPlayer, -1)
 			aHelp.append(getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_NONRELIGIOUS_WONDERS", (iCount, 10)))
 		elif iGoal == 2:
-			bPolytheismNeverReligion = sd.isPolytheismNeverReligion()
+			bPolytheismNeverReligion = data.bPolytheismNeverReligion
 			aHelp.append(getIcon(bPolytheismNeverReligion) + localText.getText("TXT_KEY_VICTORY_POLYTHEISM_NEVER_RELIGION", ()))
 
 	elif iVictoryType == iVictorySecularism:
@@ -3010,10 +3010,10 @@ def getUHVHelp(iPlayer, iGoal):
 	aHelp = [];
 
 	# the info is outdated or irrelevant once the goal has been accomplished or failed
-	if sd.getGoal(iPlayer, iGoal) == 1:
+	if data.players[iPlayer].lGoals[iGoal] == 1:
 		aHelp.append(getIcon(True) + localText.getText("TXT_KEY_VICTORY_GOAL_ACCOMPLISHED", ()))
 		return aHelp
-	elif sd.getGoal(iPlayer, iGoal) == 0:
+	elif data.players[iPlayer].lGoals[iGoal] == 0:
 		aHelp.append(getIcon(False) + localText.getText("TXT_KEY_VICTORY_GOAL_FAILED", ()))
 		return aHelp
 
@@ -3022,9 +3022,9 @@ def getUHVHelp(iPlayer, iGoal):
 			iCulture = pEgypt.countTotalCulture()
 			aHelp.append(getIcon(iCulture >= utils.getTurns(500)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(500))))
 		elif iGoal == 1:
-			bPyramids = sd.getWonderBuilder(iPyramids) == iEgypt
-			bLibrary = sd.getWonderBuilder(iGreatLibrary) == iEgypt
-			bLighthouse = sd.getWonderBuilder(iGreatLighthouse) == iEgypt
+			bPyramids = data.getWonderBuilder(iPyramids) == iEgypt
+			bLibrary = data.getWonderBuilder(iGreatLibrary) == iEgypt
+			bLighthouse = data.getWonderBuilder(iGreatLighthouse) == iEgypt
 			aHelp.append(getIcon(bPyramids) + localText.getText("TXT_KEY_BUILDING_PYRAMIDS", ()) + getIcon(bLibrary) + localText.getText("TXT_KEY_BUILDING_GREAT_LIBRARY", ()) + getIcon(bLighthouse) + localText.getText("TXT_KEY_BUILDING_GREAT_LIGHTHOUSE", ()))
 		elif iGoal == 2:
 			iCulture = pEgypt.countTotalCulture()
@@ -3036,13 +3036,13 @@ def getUHVHelp(iPlayer, iGoal):
 			iTaoistCounter = getNumBuildings(iChina, iTaoistCathedral)
 			aHelp.append(getIcon(iConfucianCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_CONFUCIAN_ACADEMIES", (iConfucianCounter, 2)) + ' ' + getIcon(iTaoistCounter >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_TAOIST_PAGODAS", (iTaoistCounter, 2)))
 		elif iGoal == 1:
-			bCompass = sd.getFirstDiscovered(iCompass) == iChina
-			bPaper = sd.getFirstDiscovered(iPaper) == iChina
-			bGunpowder = sd.getFirstDiscovered(iGunpowder) == iChina
-			bPrintingPress = sd.getFirstDiscovered(iPrintingPress) == iChina
+			bCompass = data.lFirstDiscovered[iCompass] == iChina
+			bPaper = data.lFirstDiscovered[iPaper] == iChina
+			bGunpowder = data.lFirstDiscovered[iGunpowder] == iChina
+			bPrintingPress = data.lFirstDiscovered[iPrintingPress] == iChina
 			aHelp.append(getIcon(bCompass) + localText.getText("TXT_KEY_TECH_COMPASS", ()) + ' ' + getIcon(bPaper) + localText.getText("TXT_KEY_TECH_PAPER", ()) + ' ' + getIcon(bGunpowder) + localText.getText("TXT_KEY_TECH_GUNPOWDER", ()) + ' ' + getIcon(bPrintingPress) + localText.getText("TXT_KEY_TECH_PRINTING_PRESS", ()))
 		elif iGoal == 2:
-			iGoldenAgeTurns = sd.getChineseGoldenAgeTurns()
+			iGoldenAgeTurns = data.iChineseGoldenAgeTurns
 			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(32)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 4)))
 
 	elif iPlayer == iHarappa:
@@ -3056,9 +3056,9 @@ def getUHVHelp(iPlayer, iGoal):
 			
 	elif iPlayer == iBabylonia:
 		if iGoal == 0:
-			bWriting = sd.getFirstDiscovered(iWriting) == iBabylonia
-			bCodeOfLaws = sd.getFirstDiscovered(iCodeOfLaws) == iBabylonia
-			bMonarchy = sd.getFirstDiscovered(iMonarchy) == iBabylonia
+			bWriting = data.lFirstDiscovered[iWriting] == iBabylonia
+			bCodeOfLaws = data.lFirstDiscovered[iCodeOfLaws] == iBabylonia
+			bMonarchy = data.lFirstDiscovered[iMonarchy] == iBabylonia
 			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bCodeOfLaws) + localText.getText("TXT_KEY_TECH_CODE_OF_LAWS", ()) + ' ' + getIcon(bMonarchy) + localText.getText("TXT_KEY_TECH_MONARCHY", ()))
 		elif iGoal == 1:
 			pBestCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
@@ -3071,9 +3071,9 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iGreece:
 		if iGoal == 0:
-			bLiterature = sd.getFirstDiscovered(iLiterature) == iGreece
-			bDrama = sd.getFirstDiscovered(iDrama) == iGreece
-			bPhilosophy = sd.getFirstDiscovered(iPhilosophy) == iGreece
+			bLiterature = data.lFirstDiscovered[iLiterature] == iGreece
+			bDrama = data.lFirstDiscovered[iDrama] == iGreece
+			bPhilosophy = data.lFirstDiscovered[iPhilosophy] == iGreece
 			aHelp.append(getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bDrama) + localText.getText("TXT_KEY_TECH_DRAMA", ()) + ' ' + getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()))
 		elif iGoal == 1:
 			bOracle = (getNumBuildings(iGreece, iOracle) > 0)
@@ -3166,9 +3166,9 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iCitiesSpain >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_SPAIN", (iCitiesSpain, 2)) + ' ' + getIcon(iCitiesFrance >= 3) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_FRANCE", (iCitiesFrance, 3)) + ' ' + getIcon(iCitiesEngland >= 1) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_ENGLAND", (iCitiesEngland, 1)))
 			aHelp.append(getIcon(iCitiesCarthage >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_CARTHAGE", (iCitiesCarthage, 2)) + ' ' + getIcon(iCitiesByzantium >= 4) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_BYZANTIUM", (iCitiesByzantium, 4)) + ' ' + getIcon(iCitiesEgypt >= 2) + localText.getText("TXT_KEY_VICTORY_ROME_CONTROL_EGYPT", (iCitiesEgypt, 2)))
 		elif iGoal == 2:
-			bTheology = sd.getFirstDiscovered(iTheology) == iRome
-			bMachinery = sd.getFirstDiscovered(iMachinery) == iRome
-			bCivilService = sd.getFirstDiscovered(iCivilService) == iRome
+			bTheology = data.lFirstDiscovered[iTheology] == iRome
+			bMachinery = data.lFirstDiscovered[iMachinery] == iRome
+			bCivilService = data.lFirstDiscovered[iCivilService] == iRome
 			aHelp.append(getIcon(bTheology) + localText.getText("TXT_KEY_TECH_THEOLOGY", ()) + ' ' + getIcon(bMachinery) + localText.getText("TXT_KEY_TECH_MACHINERY", ()) + ' ' + getIcon(bCivilService) + localText.getText("TXT_KEY_TECH_CIVIL_SERVICE", ()))
 
 	elif iPlayer == iTamils:
@@ -3182,7 +3182,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bSrivijaya = isControlledOrVassalized(iTamils, utils.getPlotList(tSrivijayaTL, tSrivijayaBR))
 			aHelp.append(getIcon(bDeccan) + localText.getText("TXT_KEY_VICTORY_DECCAN", ()) + ' ' + getIcon(bSrivijaya) + localText.getText("TXT_KEY_VICTORY_SRIVIJAYA", ()))
 		elif iGoal == 2:
-			iTradeGold = sd.getTamilTradeGold()
+			iTradeGold = data.iTamilTradeGold
 			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
 
 	elif iPlayer == iEthiopia:
@@ -3199,7 +3199,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bBuddhistCathedral = (getNumBuildings(iKorea, iBuddhistCathedral) > 0)
 			aHelp.append(getIcon(bBuddhistCathedral) + localText.getText("TXT_KEY_BUILDING_BUDDHIST_CATHEDRAL", ()) + ' ' + getIcon(bConfucianCathedral) + localText.getText("TXT_KEY_BUILDING_CONFUCIAN_CATHEDRAL", ()))
 		elif iGoal == 2:
-			iNumSinks = sd.getKoreanSinks()
+			iNumSinks = data.iKoreanSinks
 			aHelp.append(getIcon(iNumSinks >= 20) + localText.getText("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", (iNumSinks, 20)))
 
 	# Maya goals have no stages
@@ -3216,7 +3216,7 @@ def getUHVHelp(iPlayer, iGoal):
 				bSouthAmerica = isControlled(iMaya, utils.getPlotList(tSAmericaTL, tSAmericaBR, tSouthAmericaExceptions))
 				aHelp.append(getIcon(bSouthAmerica) + localText.getText("TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA", ()))
 			elif iGoal == 2:
-				iTradeGold = sd.getColombianTradeGold()
+				iTradeGold = data.iColombianTradeGold
 				aHelp.append(getIcon(iTradeGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD_RESOURCES", (iTradeGold, utils.getTurns(3000))))
 
 	elif iPlayer == iByzantium:
@@ -3258,7 +3258,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bEuropeanCore = isCoreControlled(iVikings, lEuroCivs)
 			aHelp.append(getIcon(bEuropeanCore) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_CORE", ()))
 		elif iGoal == 2:
-			iRaidGold = sd.getVikingGold()
+			iRaidGold = data.iVikingGold
 			aHelp.append(getIcon(iRaidGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_ACQUIRED_GOLD", (iRaidGold, utils.getTurns(3000))))
 
 
@@ -3293,7 +3293,7 @@ def getUHVHelp(iPlayer, iGoal):
 		if iGoal == 0:
 			iNumBuddhism = getNumBuildings(iKhmer, iBuddhistMonastery)
 			iNumHinduism = getNumBuildings(iKhmer, iHinduMonastery)
-			bAngkorWat = sd.getWonderBuilder(iAngkorWat) == iKhmer
+			bAngkorWat = data.getWonderBuilder(iAngkorWat) == iKhmer
 			aHelp.append(getIcon(iNumBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iNumBuddhism, 4)) + ' ' + getIcon(iNumHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES", (iNumHinduism, 4)) + ' ' + getIcon(bAngkorWat) + localText.getText("TXT_KEY_BUILDING_WAT_PREAH_PISNULOK", ()))
 		elif iGoal == 1:
 			fPopPerCity = getAverageCitySize(iKhmer)
@@ -3327,7 +3327,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iCounter += countCitySpecialists(iMoors, (51, 41), iSpecialistGreatEngineer)
 			aHelp.append(getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PEOPLE_IN_CITY_MOORS", ("Cordoba", iCounter, 5)))
 		elif iGoal == 2:
-			iRaidGold = sd.getMoorishGold()
+			iRaidGold = data.iMoorishGold
 			aHelp.append(getIcon(iRaidGold >= utils.getTurns(3000)) + localText.getText("TXT_KEY_VICTORY_PIRACY", (iRaidGold, utils.getTurns(3000))))
 
 	elif iPlayer == iSpain:
@@ -3352,10 +3352,10 @@ def getUHVHelp(iPlayer, iGoal):
 			fNorthAmerica = iNorthAmerica * 100.0 / iTotalNorthAmerica
 			aHelp.append(getIcon(fEurope >= 40.0) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_TERRITORY", (str(u"%.2f%%" % fEurope), str(40))) + ' ' + getIcon(fNorthAmerica >= 40.0) + localText.getText("TXT_KEY_VICTORY_NORTH_AMERICAN_TERRITORY", (str(u"%.2f%%" % fNorthAmerica), str(40))))
 		elif iGoal == 2:	# not entirely correct, this counts conquered ones as well
-			bNotreDame = sd.getWonderBuilder(iNotreDame) == iFrance
-			bVersailles = sd.getWonderBuilder(iVersailles) == iFrance
-			bStatueOfLiberty = sd.getWonderBuilder(iStatueOfLiberty) == iFrance
-			bEiffelTower = sd.getWonderBuilder(iEiffelTower) == iFrance
+			bNotreDame = data.getWonderBuilder(iNotreDame) == iFrance
+			bVersailles = data.getWonderBuilder(iVersailles) == iFrance
+			bStatueOfLiberty = data.getWonderBuilder(iStatueOfLiberty) == iFrance
+			bEiffelTower = data.getWonderBuilder(iEiffelTower) == iFrance
 			aHelp.append(getIcon(bNotreDame) + localText.getText("TXT_KEY_BUILDING_NOTRE_DAME", ()) + ' ' + getIcon(bVersailles) + localText.getText("TXT_KEY_BUILDING_VERSAILLES", ()) + ' ' + getIcon(bStatueOfLiberty) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_LIBERTY", ()) + ' ' + getIcon(bEiffelTower) + localText.getText("TXT_KEY_BUILDING_EIFFEL_TOWER", ()))
 
 	elif iPlayer == iEngland:
@@ -3372,11 +3372,11 @@ def getUHVHelp(iPlayer, iGoal):
 			iEnglishNavy = 0
 			iEnglishNavy += pEngland.getUnitClassCount(gc.getUnitInfo(iFrigate).getUnitClassType())
 			iEnglishNavy += pEngland.getUnitClassCount(gc.getUnitInfo(iShipOfTheLine).getUnitClassType())
-			iEnglishSinks = sd.getEnglishSinks()
+			iEnglishSinks = data.iEnglishSinks
 			aHelp.append(getIcon(iEnglishNavy >= 25) + localText.getText("TXT_KEY_VICTORY_NAVY_SIZE", (iEnglishNavy, 25)) + ' ' + getIcon(iEnglishSinks >= 50) + localText.getText("TXT_KEY_VICTORY_ENEMY_SHIPS_SUNK", (iEnglishSinks, 50)))
 		elif iGoal == 2:
-			bIndustrial = sd.getFirstEntered(iIndustrial) == iEngland
-			bModern = sd.getFirstEntered(iModern) == iEngland
+			bIndustrial = data.lFirstEntered[iIndustrial] == iEngland
+			bModern = data.lFirstEntered[iModern] == iEngland
 			aHelp.append(getIcon(bIndustrial) + localText.getText("TXT_KEY_VICTORY_FIRST_ENTER_INDUSTRIAL", ()) + ' ' + getIcon(bModern) + localText.getText("TXT_KEY_VICTORY_FIRST_ENTER_MODERN", ()))
 
 	elif iPlayer == iHolyRome:
@@ -3462,9 +3462,9 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iItaly:
 		if iGoal == 0:
-			bSanMarcoBasilica = sd.getWonderBuilder(iSanMarcoBasilica) == iItaly
-			bSistineChapel = sd.getWonderBuilder(iSistineChapel) == iItaly
-			bLeaningTower = sd.getWonderBuilder(iLeaningTower) == iItaly
+			bSanMarcoBasilica = data.getWonderBuilder(iSanMarcoBasilica) == iItaly
+			bSistineChapel = data.getWonderBuilder(iSistineChapel) == iItaly
+			bLeaningTower = data.getWonderBuilder(iLeaningTower) == iItaly
 			aHelp.append(getIcon(bSanMarcoBasilica) + localText.getText("TXT_KEY_BUILDING_SAN_MARCO_BASILICA", ()) + ' ' + getIcon(bSistineChapel) + localText.getText("TXT_KEY_BUILDING_SISTINE_CHAPEL", ()) + ' ' + getIcon(bLeaningTower) + localText.getText("TXT_KEY_BUILDING_LEANING_TOWER", ()))
 		elif iGoal == 1:
 			iCount = countCitiesWithCultureLevel(iItaly, 5)
@@ -3476,7 +3476,7 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iMongolia:
 		if iGoal == 1:
-			iRazedCities = sd.getMongolRazes()
+			iRazedCities = data.iMongolRazes
 			aHelp.append(getIcon(iRazedCities >= 7) + localText.getText("TXT_KEY_VICTORY_NUM_CITIES_RAZED", (iRazedCities, 7)))
 		elif iGoal == 2:
 			landPercent = getLandPercent(iMongolia)
@@ -3487,9 +3487,9 @@ def getUHVHelp(iPlayer, iGoal):
 			iNumMosques = getNumBuildings(iMughals, iIslamicCathedral)
 			aHelp.append(getIcon(iNumMosques >= 3) + localText.getText("TXT_KEY_VICTORY_MOSQUES_BUILT", (iNumMosques, 3)))
 		elif iGoal == 1:
-			bRedFort = sd.getWonderBuilder(iRedFort) == iMughals
-			bHarmandirSahib = sd.getWonderBuilder(iHarmandirSahib) == iMughals
-			bTajMahal = sd.getWonderBuilder(iTajMahal) == iMughals
+			bRedFort = data.getWonderBuilder(iRedFort) == iMughals
+			bHarmandirSahib = data.getWonderBuilder(iHarmandirSahib) == iMughals
+			bTajMahal = data.getWonderBuilder(iTajMahal) == iMughals
 			aHelp.append(getIcon(bRedFort) + localText.getText("TXT_KEY_BUILDING_RED_FORT", ()) + ' ' + getIcon(bHarmandirSahib) + localText.getText("TXT_KEY_BUILDING_HARMANDIR_SAHIB", ()) + ' ' + getIcon(bTajMahal) + localText.getText("TXT_KEY_BUILDING_TAJ_MAHAL", ()))
 		elif iGoal == 2:
 			iCulture = pMughals.countTotalCulture()
@@ -3506,7 +3506,7 @@ def getUHVHelp(iPlayer, iGoal):
 				iAltars = getNumBuildings(iAztecs, iAztecSacrificialAltar)
 				aHelp.append(getIcon(iTemples >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_TEMPLES", (iTemples, 6)) + " " + getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_ALTARS", (iAltars, 6)))
 			elif iGoal == 2:
-				iEnslavedUnits = sd.getAztecSlaves()
+				iEnslavedUnits = data.iAztecSlaves
 				aHelp.append(getIcon(iEnslavedUnits >= 20) + localText.getText("TXT_KEY_VICTORY_ENSLAVED_UNITS", (iEnslavedUnits, 20)))
 		else:
 			if iGoal == 0:
@@ -3563,7 +3563,7 @@ def getUHVHelp(iPlayer, iGoal):
 			fPercent = getApostolicVotePercent(iCongo)
 			aHelp.append(getIcon(fPercent >= 15.0) + localText.getText("TXT_KEY_VICTORY_APOSTOLIC_VOTE_PERCENT", (str(u"%.2f%%" % fPercent), str(15))))
 		elif iGoal == 1:
-			iSlaves = sd.getCongoSlaveCounter()
+			iSlaves = data.iCongoSlaveCounter
 			aHelp.append(getIcon(iSlaves >= utils.getTurns(1000)) + localText.getText("TXT_KEY_VICTORY_SLAVES_TRADED", (iSlaves, utils.getTurns(1000))))
 
 	elif iPlayer == iNetherlands:
@@ -3571,7 +3571,7 @@ def getUHVHelp(iPlayer, iGoal):
 			iMerchants = countCitySpecialists(iNetherlands, Areas.getCapital(iNetherlands), iSpecialistGreatMerchant)
 			aHelp.append(getIcon(iMerchants >= 3) + localText.getText("TXT_KEY_VICTORY_GREAT_MERCHANTS_IN_CITY", ("Amsterdam", iMerchants, 3)))
 		elif iGoal == 1:
-			iColonies = sd.getDutchColonies()
+			iColonies = data.iDutchColonies
 			aHelp.append(getIcon(iColonies >= 4) + localText.getText("TXT_KEY_VICTORY_EUROPEAN_COLONIES_CONQUERED", (iColonies, 4)))
 		elif iGoal == 2:
 			iNumSpices = pNetherlands.getNumAvailableBonuses(iSpices)
@@ -3598,10 +3598,10 @@ def getUHVHelp(iPlayer, iGoal):
 			bMexico = isControlledOrVassalized(iAmerica, Areas.getCoreArea(iAztecs, True))
 			aHelp.append(getIcon(bAmericas) + localText.getText("TXT_KEY_VICTORY_NO_NORTH_AMERICAN_COLONIES", ()) + ' ' + getIcon(bMexico) + localText.getText("TXT_KEY_CIV_MEXICO_SHORT_DESC", ()))
 		elif iGoal == 1:
-			bUnitedNations = sd.getWonderBuilder(iUnitedNations) == iAmerica
-			bStatueOfLiberty = sd.getWonderBuilder(iStatueOfLiberty) == iAmerica
-			bPentagon = sd.getWonderBuilder(iPentagon) == iAmerica
-			bEmpireState = sd.getWonderBuilder(iEmpireStateBuilding) == iAmerica
+			bUnitedNations = data.getWonderBuilder(iUnitedNations) == iAmerica
+			bStatueOfLiberty = data.getWonderBuilder(iStatueOfLiberty) == iAmerica
+			bPentagon = data.getWonderBuilder(iPentagon) == iAmerica
+			bEmpireState = data.getWonderBuilder(iEmpireStateBuilding) == iAmerica
 			aHelp.append(getIcon(bStatueOfLiberty) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_LIBERTY", ()) + ' ' + getIcon(bEmpireState) + localText.getText("TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING", ()) + ' ' + getIcon(bPentagon) + localText.getText("TXT_KEY_BUILDING_PENTAGON", ()) + ' ' + getIcon(bUnitedNations) + localText.getText("TXT_KEY_BUILDING_UNITED_NATIONS", ()))
 		elif iGoal == 2:
 			iCounter = countResources(iAmerica, iOil)
@@ -3609,13 +3609,13 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iArgentina:
 		if iGoal == 0:
-			iGoldenAgeTurns = sd.getArgentineGoldenAgeTurns()
+			iGoldenAgeTurns = data.iArgentineGoldenAgeTurns
 			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(16)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 2)))
 		elif iGoal == 1:
 			iCulture = getCityCulture(iArgentina, Areas.getCapital(iArgentina))
 			aHelp.append(getIcon(iCulture >= utils.getTurns(25000)) + localText.getText("TXT_KEY_VICTORY_CITY_CULTURE", ("Buenos Aires", iCulture, utils.getTurns(25000))))
 		elif iGoal == 2:
-			iGoldenAgeTurns = sd.getArgentineGoldenAgeTurns()
+			iGoldenAgeTurns = data.iArgentineGoldenAgeTurns
 			aHelp.append(getIcon(iGoldenAgeTurns >= utils.getTurns(40)) + localText.getText("TXT_KEY_VICTORY_GOLDEN_AGES", (iGoldenAgeTurns / utils.getTurns(8), 5)))
 
 	elif iPlayer == iBrazil:
@@ -3624,9 +3624,9 @@ def getUHVHelp(iPlayer, iGoal):
 			iPastures = countImprovements(iBrazil, iPasture)
 			aHelp.append(getIcon(iSlavePlantations >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iSlavePlantation).getText(), iSlavePlantations, 10)) + ' ' + getIcon(iPastures >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_IMPROVEMENTS", (gc.getImprovementInfo(iPasture).getText(), iPastures, 4)))
 		elif iGoal == 1:
-			bWembley = sd.getWonderBuilder(iWembley) == iBrazil
-			bCristoRedentor = sd.getWonderBuilder(iCristoRedentor) == iBrazil
-			bThreeGorgesDam = sd.getWonderBuilder(iThreeGorgesDam) == iBrazil
+			bWembley = data.getWonderBuilder(iWembley) == iBrazil
+			bCristoRedentor = data.getWonderBuilder(iCristoRedentor) == iBrazil
+			bThreeGorgesDam = data.getWonderBuilder(iThreeGorgesDam) == iBrazil
 			aHelp.append(getIcon(bWembley) + localText.getText("TXT_KEY_BUILDING_WEMBLEY", ()) + ' ' + getIcon(bCristoRedentor) + localText.getText("TXT_KEY_BUILDING_CRISTO_REDENTOR", ()) + ' ' + getIcon(bThreeGorgesDam) + localText.getText("TXT_KEY_BUILDING_THREE_GORGES_DAM", ()))
 		elif iGoal == 2:
 			iForestPreserves = countImprovements(iBrazil, iForestPreserve)
@@ -3648,7 +3648,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bAllCities = controlsAllCities(iCanada, tCanadaWestTL, tCanadaWestBR, tCanadaWestExceptions) and controlsAllCities(iCanada, tCanadaEastTL, tCanadaEastBR, tCanadaEastExceptions)
 			aHelp.append(getIcon(fCanada >= 90.0) + localText.getText("TXT_KEY_VICTORY_CONTROL_CANADA", (str(u"%.2f%%" % fCanada), str(90))) + ' ' + getIcon(bAllCities) + localText.getText("TXT_KEY_VICTORY_CONTROL_CANADA_CITIES", ()))
 		elif iGoal == 2:
-			iPeaceDeals = sd.getCanadianPeaceDeals()
+			iPeaceDeals = data.iCanadianPeaceDeals
 			aHelp.append(getIcon(iPeaceDeals >= 12) + localText.getText("TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS", (iPeaceDeals, 12)))
 			
 	return aHelp

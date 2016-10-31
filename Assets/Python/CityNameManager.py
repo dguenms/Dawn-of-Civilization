@@ -6,7 +6,7 @@ import PyHelpers
 import Popup
 from Consts import *
 import RFCUtils
-from StoredData import sd
+from StoredData import data
 
 # globals
 gc = CyGlobalContext()
@@ -27,7 +27,7 @@ iLangHarappan) = range(iNumLanguages)
 # methods
 
 def isResurrected(iCiv):
-	return (sd.scriptDict['lResurrections'][iCiv] > 0)
+	return (data.players[iCiv].iResurrections > 0)
 
 def getLanguages(iCiv):
 	pCiv = gc.getPlayer(iCiv)
