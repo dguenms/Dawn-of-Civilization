@@ -4172,8 +4172,8 @@ def canTriggerNuclearProtest(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	iICBMClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_ICBM')
-	iTacNukeClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_TACTICAL_NUKE')
-	if player.getUnitClassCount(iICBMClass) + player.getUnitClassCount(iTacNukeClass) < 10:
+	iNuclearBomberClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_NUCLEAR_BOMBER')
+	if player.getUnitClassCount(iICBMClass) + player.getUnitClassCount(iNuclearBomberClass) < 10:
 		return false
 
 	return true
@@ -4183,11 +4183,11 @@ def doNuclearProtest1(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 
 	iICBMClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_ICBM')
-	iTacNukeClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_TACTICAL_NUKE')
+	iNuclearBomberClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_NUCLEAR_BOMBER')
 
 	(loopUnit, iter) = player.firstUnit(false)
 	while (loopUnit):
-		if loopUnit.getUnitClassType() == iICBMClass or loopUnit.getUnitClassType() == iTacNukeClass:
+		if loopUnit.getUnitClassType() == iICBMClass or loopUnit.getUnitClassType() == iNuclearBomberClass:
 			loopUnit.kill(false, -1)
 		(loopUnit, iter) = player.nextUnit(iter, false)
 
