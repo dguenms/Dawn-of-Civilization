@@ -13,6 +13,7 @@ bHiddenOption = True
 bRepeat = False
 iSelectedCiv = -1
 iSelectedLeader = -1
+bRemove = True
 
 from StoredData import data
 from Consts import *
@@ -45,6 +46,10 @@ class WBGameDataScreen:
 				i *= 5
 			else:
 				i *= 2
+				
+		screen.addDropDownBoxGFC("ChangeType", 20, 50 + 20 + 15, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), 1, 1, not bRemove)
+		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), 0, 0, bRemove)				
 
 		screen.addDropDownBoxGFC("CurrentPage", 20, screen.getYResolution() - 42, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_RELIGION", ()), 8, 8, False)
@@ -60,7 +65,7 @@ class WBGameDataScreen:
 	def placeStats(self):
 		screen = CyGInterfaceScreen( "WBGameDataScreen", CvScreenEnums.WB_GAMEDATA)
 
-		iY = 90
+		iY = 90 + 35
 		screen.setButtonGFC("StartYearPlus", "", "", 20, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 		screen.setButtonGFC("StartYearMinus", "", "", 45, iY, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
 		iYear = CyGame().getStartYear()
@@ -337,6 +342,7 @@ class WBGameDataScreen:
 		global bRepeat
 		global iSelectedCiv
 		global iSelectedLeader
+		global bRemove
 
 		if inputClass.getFunctionName() == "CurrentPage":
 			iIndex = screen.getPullDownData("CurrentPage", screen.getSelectedPullDownID("CurrentPage"))
@@ -444,7 +450,10 @@ class WBGameDataScreen:
 				elif iGameOption == 3001:
 					data.bAlreadySwitched = not data.bAlreadySwitched
 				elif iGameOption == 3002 and cong.isCongressEnabled():
-					data.iCongressTurns = max(0, data.iCongressTurns - iChange)
+					if bRemove:
+						sd.setCongressTurns(max(1, sd.getCongressTurns() - iChange))
+					else:
+						sd.setCongressTurns(sd.getCongressTurns() + iChange)
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":
@@ -480,6 +489,10 @@ class WBGameDataScreen:
 			popup.setHeaderString(CyTranslator().getText("TXT_KEY_WB_SCRIPT", ()))
 			popup.createEditBox(CyGame().getScriptData())
 			popup.launch()
+
+		elif inputClass.getFunctionName() == "ChangeType":
+			bRemove = not bRemove
+
 		return 1
 
 	def checkOptions(self, iGameOption):

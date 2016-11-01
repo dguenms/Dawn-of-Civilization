@@ -40,7 +40,7 @@ class WBBuildingScreen:
 		screen.addPanel("MainBG", u"", u"", True, False, -10, -10, screen.getXResolution() + 20, screen.getYResolution() + 20, PanelStyles.PANEL_STYLE_MAIN )
 		screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
 
-		screen.setLabel("BuildingHeader", "Background", u"<font=4b>" + CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_BUILDING", ()) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution() * 5/8 - 10, screen.getYResolution()/2, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		screen.setLabel("BuildingHeader", "Background", u"<font=4b>" + CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_BUILDING", ()) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution() * 5/8 - 10, screen.getYResolution()/2 + 5, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		screen.setLabel("WonderHeader", "Background", u"<font=4b>" + CyTranslator().getText("TXT_KEY_CONCEPT_WONDERS", ()) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution() * 5/8 - 10, 20, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		sText = CyTranslator().getText("[COLOR_SELECTED_TEXT]", ()) + "<font=3b>" + CyTranslator().getText("TXT_KEY_WB_GRANT_AVAILABLE", ()) + "</color></font>"
 		screen.setText("BuildingAvailable", "Background", sText, CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution() * 5/8 - 10, screen.getYResolution()/2 + 30, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -63,6 +63,12 @@ class WBBuildingScreen:
 		screen.addPullDownString("WonderClass", CyTranslator().getText("TXT_KEY_PEDIA_NATIONAL_WONDER", ()), 1, 1, iSelectedClass == 1)
 		screen.addPullDownString("WonderClass", CyTranslator().getText("TXT_KEY_PEDIA_TEAM_WONDER", ()), 2, 2, iSelectedClass == 2)
 		screen.addPullDownString("WonderClass", CyTranslator().getText("TXT_KEY_PEDIA_WORLD_WONDER", ()), 3, 3, iSelectedClass == 3)
+
+		sText = u"<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ()) + "</font>"
+		sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
+		if CvPlatyBuilderScreen.bHideInactive:
+			sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
+		screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_LEFT_JUSTIFY, screen.getXResolution()/4 + 150 + 20, 50, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		screen.addDropDownBoxGFC("CurrentPage", 20, screen.getYResolution() - 42, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_WB_CITY_DATA", ()), 0, 0, False)
@@ -115,7 +121,7 @@ class WBBuildingScreen:
 		screen = CyGInterfaceScreen( "WBBuildingScreen", CvScreenEnums.WB_BUILDING)
 		iWidth = screen.getXResolution()/4 - 40
 		iHeight = (screen.getYResolution() - 40 - self.iTable_Y) / 24 * 24 + 2
-		screen.addTableControlGFC( "CurrentCity", 3, 20, self.iTable_Y, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD )
+		screen.addTableControlGFC( "CurrentCity", 3, 20, self.iTable_Y + 5, iWidth, iHeight - 10, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD )
 		screen.setTableColumnHeader("CurrentCity", 0, "", 24)
 		screen.setTableColumnHeader("CurrentCity", 1, "", 24)
 		screen.setTableColumnHeader("CurrentCity", 2, "", iWidth - 48)
@@ -198,9 +204,9 @@ class WBBuildingScreen:
 
 		iWidth = screen.getXResolution() *3/4 - 20
 		iMaxRows = (screen.getYResolution()/2 - self.iTable_Y) / 24
-		nColumns = max(1, min(iWidth/180, (len(lBuilding) + iMaxRows - 1)/iMaxRows))
+		nColumns = max(1, min(iWidth/180, (len(lWonders) + iMaxRows - 1)/iMaxRows))
 		iHeight = iMaxRows * 24 + 2
-		screen.addTableControlGFC("WBWonders", nColumns, screen.getXResolution()/4, self.iTable_Y, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD )
+		screen.addTableControlGFC("WBWonders", nColumns, screen.getXResolution()/4, self.iTable_Y + 5, iWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD )
 		for i in xrange(nColumns):
 			screen.setTableColumnHeader( "WBWonders", i, "", iWidth/nColumns)		
 
@@ -341,6 +347,17 @@ class WBBuildingScreen:
 			if bApplyAll:
 				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
 			screen.modifyString("ApplyAll", sColor + sText + "</color>", 0)
+
+		elif inputClass.getFunctionName() == "HideInactive":
+			CvPlatyBuilderScreen.bHideInactive = not CvPlatyBuilderScreen.bHideInactive
+			CvPlatyBuilderScreen.CvWorldBuilderScreen().refreshSideMenu()
+			sText = u"<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ()) + "</font>"
+			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
+			if CvPlatyBuilderScreen.bHideInactive:
+				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
+			screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_LEFT_JUSTIFY, screen.getXResolution()/4 + 150 + 20, 50, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			self.sortBuildings()
+
 		return 1
 
 	def editBuilding(self, item, pPlayerX, bAvailable, bWonder):

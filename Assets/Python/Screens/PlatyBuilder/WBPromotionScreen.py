@@ -80,6 +80,12 @@ class WBPromotionScreen:
 			sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
 		screen.setText("ApplyAll", "Background", sColor + sText + "</color>", CvUtil.FONT_RIGHT_JUSTIFY, screen.getXResolution() - 20, self.iTable_Y - 60, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		
+		sText = u"<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ()) + "</font>"
+		sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
+		if CvPlatyBuilderScreen.bHideInactive:
+			sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
+		screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_RIGHT_JUSTIFY, screen.getXResolution() - 20, self.iTable_Y - 80, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
 		screen.addDropDownBoxGFC("ChangeType", screen.getXResolution() - 120, self.iTable_Y - 30, 100, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_MODIFY", ("",)), 2, 2, 2 == iChangeType)
 		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), 1, 1, 1 == iChangeType)
@@ -258,6 +264,17 @@ class WBPromotionScreen:
 			if bApplyAll:
 				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
 			screen.modifyString("ApplyAll", sColor + sText + "</color>", 0)
+
+		elif inputClass.getFunctionName() == "HideInactive":
+			CvPlatyBuilderScreen.bHideInactive = not CvPlatyBuilderScreen.bHideInactive
+			CvPlatyBuilderScreen.CvWorldBuilderScreen().refreshSideMenu()
+			sText = u"<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ()) + "</font>"
+			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
+			if CvPlatyBuilderScreen.bHideInactive:
+				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
+			screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_RIGHT_JUSTIFY, screen.getXResolution() - 20, self.iTable_Y - 80, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			self.sortPromotions()
+
 		return 1
 
 	def editPromotion(self, item):

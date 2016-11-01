@@ -196,7 +196,7 @@ class Congress:
 		# check one more time if player has collapsed in the meantime
 		lRemove = []
 		for iLoopPlayer in self.lInvites:
-			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.add(iLoopPlayer)
+			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.append(iLoopPlayer)
 			
 		for iLoopPlayer in lRemove:
 			self.lInvites.remove(iLoopPlayer)
@@ -1104,6 +1104,13 @@ class Congress:
 		lPossibleInvites.extend(utils.getSortedList([iPlayer for iPlayer in range(iNumPlayers) if iPlayer not in lPossibleInvites], rank))
 	
 		self.lInvites = lPossibleInvites[:getNumInvitations()]
+		
+		lRemove = []
+		for iLoopPlayer in self.lInvites:
+			if not gc.getPlayer(iLoopPlayer).isAlive(): lRemove.append(iLoopPlayer)
+			
+		for iLoopPlayer in lRemove:
+			self.lInvites.remove(iLoopPlayer)
 		
 		# Leoreth: America receives an invite if there are still claims in the west
 		if iAmerica not in self.lInvites and not self.bPostWar and gc.getGame().getGameTurn() > tBirth[iAmerica]:
