@@ -798,7 +798,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_PLAGUE_HELP</Tag>
-		<English>Disables the start of a plague and all effects of the plague.</English>
+		<English>Disables the start of a plague and all effects of the plague.[NEWLINE](Do NOT turn on while a plague is happening, otherwise it will not disappear)</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CONGRESS_TURNS</Tag>

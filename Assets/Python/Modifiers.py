@@ -7,6 +7,12 @@ def getModifier(iPlayer, iModifier):
 		return tModifiers[iModifier][lOrder.index(iCivilization)]
 	return tDefaults[iModifier]
 	
+def getAdjustedModifier(iPlayer, iModifier):
+	if utils.getScenario() > i3000BC and iPlayer < iVikings:
+		if iModifier in dLateScenarioModifiers:
+			return getModifier(iPlayer, iModifier) * dLateScenarioModifiers[iModifier] / 100
+	return getModifier(iPlayer, iModifier)
+	
 def setModifier(iPlayer, iModifier, iNewValue):
 	gc.getPlayer(iPlayer).setModifier(iModifier, iNewValue)
 	

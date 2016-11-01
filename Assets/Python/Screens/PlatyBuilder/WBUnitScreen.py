@@ -103,7 +103,13 @@ class WBUnitScreen:
 		iX += iWidth
 		sText = CyTranslator().getText("[COLOR_SELECTED_TEXT]", ()) + "<font=3b>" + CyTranslator().getText("TXT_KEY_WB_COPY_ALL", (CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_UNIT", ()),)) + "</color></font>"
 		screen.setText("CopyStats", "Background", sText, CvUtil.FONT_LEFT_JUSTIFY, iX, screen.getYResolution() - 42, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-		
+
+		sText = u"<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ()) + "</font>"
+		sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
+		if CvPlatyBuilderScreen.bHideInactive:
+			sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
+		screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_LEFT_JUSTIFY, screen.getXResolution() * 4/5, self.iTable_Y - 85, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
 		global lUnitAI
 		lUnitAI = []
 		for i in xrange(UnitAITypes.NUM_UNITAI_TYPES):
@@ -878,6 +884,16 @@ class WBUnitScreen:
 		elif sName == "UnitExit":
 			self.top.iTargetPlotX = -1
 			self.top.iTargetPlotY = -1
+
+		elif sName == "HideInactive":
+			CvPlatyBuilderScreen.bHideInactive = not CvPlatyBuilderScreen.bHideInactive
+			CvPlatyBuilderScreen.CvWorldBuilderScreen().refreshSideMenu()
+			sText = u"<font=3b>" + CyTranslator().getText("TXT_KEY_PEDIA_HIDE_INACTIVE", ()) + "</font>"
+			sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
+			if CvPlatyBuilderScreen.bHideInactive:
+				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
+			screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_LEFT_JUSTIFY, screen.getXResolution() * 4/5, self.iTable_Y - 85, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			self.placeUnitType()
 
 		if (inputClass.getNotifyCode() == NotifyCode.NOTIFY_CHARACTER) and inputClass.getData() == int(InputTypes.KB_ESCAPE):
 			self.top.iTargetPlotX = -1
