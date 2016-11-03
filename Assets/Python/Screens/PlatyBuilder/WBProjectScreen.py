@@ -12,7 +12,7 @@ import CvEventManager
 gc = CyGlobalContext()
 
 iChange = 1
-iChangeType = 1
+bRemove = False
 bApplyAll = False
 bNoBarb = True
 iProjectType = 0
@@ -81,8 +81,8 @@ class WBProjectScreen:
 		screen.setText("ApplyAll", "Background", sColor + sText + "</color>", CvUtil.FONT_RIGHT_JUSTIFY, screen.getXResolution() - 20, 50, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		
 		screen.addDropDownBoxGFC("ChangeType", screen.getXResolution() - 120, self.iTable_Y - 30, 100, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), 1, 1, 1 == iChangeType)
-		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), 0, 0, 0 == iChangeType)
+		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), 1, 1, not bRemove)
+		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), 0, 0, bRemove)
 		sText = CyTranslator().getText("[COLOR_SELECTED_TEXT]", ()) + "<font=4b>" + CyTranslator().getText("TXT_KEY_WB_CITY_ALL", ()) + " (+/-)</color></font>"
 		screen.setText("ProjectAll", "Background", sText, CvUtil.FONT_RIGHT_JUSTIFY, screen.getXResolution() - 120, self.iTable_Y - 30, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		
@@ -144,13 +144,20 @@ class WBProjectScreen:
 	def handleInput (self, inputClass):
 		screen = CyGInterfaceScreen( "WBProjectScreen", CvScreenEnums.WB_PROJECT)
 		global iChange
-		global iChangeType
 		global bApplyAll
 		global bNoBarb
 		global iProjectType
+		global bRemove
 
 		if inputClass.getFunctionName() == "ChangeBy":
-			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+
+		elif inputClass.getFunctionName() == "ChangeType":
+			bRemove = not bRemove
+			iChange = -iChange
 
 		elif inputClass.getFunctionName() == "CurrentTeam":
 			iIndex = screen.getPullDownData("CurrentTeam", screen.getSelectedPullDownID("CurrentTeam"))
@@ -159,9 +166,6 @@ class WBProjectScreen:
 		elif inputClass.getFunctionName() == "ProjectType":
 			iProjectType = screen.getPullDownData("ProjectType", screen.getSelectedPullDownID("ProjectType"))
 			self.sortProjects()
-
-		elif inputClass.getFunctionName() == "ChangeType":
-			iChangeType = screen.getPullDownData("ChangeType", screen.getSelectedPullDownID("ChangeType"))
 
 		elif inputClass.getFunctionName() == "CurrentPage":
 			iIndex = screen.getPullDownData("CurrentPage", screen.getSelectedPullDownID("CurrentPage"))
@@ -215,11 +219,8 @@ class WBProjectScreen:
 			CyGame().makeNukesValid(False)
 
 	def modifyCount(self, item, pTeamX):
-		iCount = iChange
-		if iChangeType == 0:
-			iCount = -iCount
-			iCount = max(iCount, - pTeamX.getProjectCount(item))
-		else:
+		iCount = max(iChange, - pTeamX.getProjectCount(item))
+		if bRemove:
 			Info = gc.getProjectInfo(item)
 			iTeam = Info.getMaxTeamInstances()
 			iWorld = Info.getMaxGlobalInstances()

@@ -26,6 +26,7 @@ import WBTradeScreen
 import CvEventManager
 import Popup
 import CityNameManager as cnm
+import WBStoredDataScreen
 
 from Consts import *
 from RFCUtils import utils
@@ -39,6 +40,7 @@ localText = CyTranslator()
 
 gc = CyGlobalContext()
 iChange = 1
+bRemove = False
 bPython = True
 bHideInactive = True
 Activities = ["AWAKE", "HOLD", "SLEEP", "HEAL", "SENTRY", "INTERCEPT", "MISSION", "PATROL", "PLUNDER"]
@@ -446,7 +448,7 @@ class CvWorldBuilderScreen:
 			self.m_pCurrentPlot.setOwner(self.m_iCurrentPlayer)
 	## Python Effects ##
 		elif self.iPlayerAddMode == "Units":
-			for i in xrange(iChange):
+			for i in xrange(abs(iChange)):
 				gc.getPlayer(self.m_iCurrentPlayer).initUnit(self.iSelection, self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
 		elif self.iPlayerAddMode == "Buildings":
 			if self.m_pCurrentPlot.isCity():
@@ -962,7 +964,7 @@ class CvWorldBuilderScreen:
 		iAdjust = iButtonWidth + 3
 
 		iScreenWidth = 16 + iAdjust * 6
-		iScreenHeight = 16 + iAdjust * 4
+		iScreenHeight = 16 + iAdjust * 5
 
 		iXStart = screen.getXResolution() - iScreenWidth
 		if CyInterface().isInAdvancedStart():
@@ -1024,6 +1026,12 @@ class CvWorldBuilderScreen:
 			iX += iAdjust
 			screen.setImageButton("TradeScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 34)
 			screen.setStyle("TradeScreen", "Button_HUDAdvisorFinance_Style")
+
+			iX = iXStart + 8
+			iY += iAdjust
+
+			screen.setImageButton("StoredDataScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 39)
+			screen.setStyle("StoredDataScreen", "Button_HUDAdvisorRecord_Style")
 			
 			iX = iXStart + 8
 			iY += iAdjust
@@ -1981,6 +1989,7 @@ class CvWorldBuilderScreen:
 		global bHideInactive
 		global iSetValue
 		global iWarValue
+		global bRemove
 
 		if inputClass.getFunctionName() == "WorldBuilderEraseAll":
 			for i in xrange(CyMap().numPlots()):
@@ -2020,6 +2029,9 @@ class CvWorldBuilderScreen:
 		elif inputClass.getFunctionName() == "EditUnitsCities":
 			WBPlayerUnits.WBPlayerUnits().interfaceScreen(self.m_iCurrentPlayer)
 
+		elif inputClass.getFunctionName() == "StoredDataScreen":
+			WBStoredDataScreen.WBStoredDataScreen(self).interfaceScreen()
+
 		elif inputClass.getFunctionName() == "WorldBuilderPlayerChoice":
 			self.m_iCurrentPlayer = screen.getPullDownData("WorldBuilderPlayerChoice", screen.getSelectedPullDownID("WorldBuilderPlayerChoice"))
 			self.m_iCurrentTeam = gc.getPlayer(self.m_iCurrentPlayer).getTeam()
@@ -2036,7 +2048,10 @@ class CvWorldBuilderScreen:
 				self.showWarOverlay()
 
 		elif inputClass.getFunctionName() == "ChangeBy":
-			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
 
 		elif inputClass.getFunctionName() == "AddOwnershipButton":
 			self.iPlayerAddMode = "Ownership"

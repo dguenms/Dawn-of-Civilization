@@ -326,7 +326,7 @@ class Barbs:
 			if iGameTurn < getTurnForYear(iYear): return
 			if iGameTurn > getTurnForYear(iYear)+10: continue
 			
-			if data.bMinorCityFounded[i]: continue
+			if data.lMinorCityFounded[i]: continue
 			
 			x, y = tPlot
 			plot = gc.getMap().plot(x, y)
@@ -347,7 +347,7 @@ class Barbs:
 			utils.evacuate(tPlot)
 		
 			if self.foundCity(iPlayer, tPlot, sName, iPopulation, iUnitType, iNumUnits, lReligions):
-				data.bMinorCityFounded[i] = True
+				data.lMinorCityFounded[i] = True
 		
 	def canFoundCity(self, sName):
 		if sName == 'Kanchipuram' and utils.getHumanID() == iTamils: return False

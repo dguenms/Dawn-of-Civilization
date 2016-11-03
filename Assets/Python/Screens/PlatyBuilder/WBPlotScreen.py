@@ -24,6 +24,7 @@ iChange = 1
 iCounter = -1
 iCulturePlayer = 0
 iSelectedClass = -1
+bRemove = False
 
 # Merijn
 iChangeType = 1
@@ -249,16 +250,16 @@ class WBPlotScreen:
 			screen.setTableColumnHeader("SetValueBox", 1, "", 100)
 			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 
-			screen.setButtonGFC("SetValueDecrease", "", "", iX-30,  iY - 30, 26, 26, WidgetTypes.WIDGET_PYTHON, 22300, iChange, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
-			screen.setButtonGFC("SetValueIncrease", "", "", iX + 4 + 100,  iY - 30, 26, 26, WidgetTypes.WIDGET_PYTHON, 22400, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+			screen.setButtonGFC("SetValueIncrease", "", "", iX-30,  iY - 30, 26, 26, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+			screen.setButtonGFC("SetValueDecrease", "", "", iX + 4 + 100,  iY - 30, 26, 26, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
 
 			screen.addDropDownBoxGFC("PresetValue", iX + 135,  iY - 32, 160, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 			for i in range(len(lPresetValues)):
 				screen.addPullDownString("PresetValue", str(lPresetValues[i]), i, lPresetValues[i], False)
 		else:
 			screen.deleteWidget("SetValueBox")
-			screen.deleteWidget("SetValueDecrease")
 			screen.deleteWidget("SetValueIncrease")
+			screen.deleteWidget("SetValueDecrease")
 			screen.deleteWidget("PresetValue")
 
 	def placeMap(self):
@@ -560,10 +561,13 @@ class WBPlotScreen:
 		global iCulturePlayer
 		global iSelectedClass
 		global iSetValue
+		global bRemove
 
 		if inputClass.getFunctionName() == "ChangeBy":
-			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
-			self.placeValueChanger()
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
 
 		elif inputClass.getFunctionName() == "CurrentPlayer":
 			iIndex = screen.getPullDownData("CurrentPlayer", screen.getSelectedPullDownID("CurrentPlayer"))
@@ -619,13 +623,13 @@ class WBPlotScreen:
 		elif inputClass.getFunctionName().find("BaseYield") > -1:
 			i = YieldTypes(inputClass.getData2())
 			if inputClass.getData1() == 1030:
-				CyGame().setPlotExtraYield(pPlot.getX(), pPlot.getY(), i, iChange)
+				CyGame().setPlotExtraYield(pPlot.getX(), pPlot.getY(), i, abs(iChange))
 			elif inputClass.getData1() == 1031:
 				iYield = pPlot.getYield(i)
 				iImprovement = pPlot.getImprovementType()
 				if iImprovement > -1:
 					iYield -= pPlot.calculateImprovementYieldChange(iImprovement, i, pPlot.getOwner(), False)
-				CyGame().setPlotExtraYield(pPlot.getX(), pPlot.getY(), i, - min(iChange, iYield))
+				CyGame().setPlotExtraYield(pPlot.getX(), pPlot.getY(), i, - min(abs(iChange), iYield))
 			self.placeStats()
 
 		elif inputClass.getFunctionName() == "RiverWestAButton":
@@ -690,9 +694,9 @@ class WBPlotScreen:
 				tPlot = (pPlot.getX(), pPlot.getY())
 				if iChangeType < 3:
 					if iChangeType == 0:
-						iValue = met.getSettlerValue(iPlayer, tPlot) - iChange
+						iValue = met.getSettlerValue(iPlayer, tPlot) - abs(iChange)
 					elif iChangeType == 1:
-						iValue = met.getSettlerValue(iPlayer, tPlot) + iChange
+						iValue = met.getSettlerValue(iPlayer, tPlot) + abs(iChange)
 					elif iChangeType == 2:
 						iValue = iSetValue
 					met.changeSettlerValue(iPlayer, tPlot, iValue)
@@ -706,9 +710,9 @@ class WBPlotScreen:
 
 		elif inputClass.getFunctionName().find("EditCulture") > -1:
 			if inputClass.getData1() == 1030:
-				pPlot.changeCulture(iCulturePlayer, iChange, True)
+				pPlot.changeCulture(iCulturePlayer, abs(iChange), True)
 			elif inputClass.getData1() == 1031:
-				pPlot.changeCulture(iCulturePlayer, -min(iChange, pPlot.getCulture(iCulturePlayer)), True)
+				pPlot.changeCulture(iCulturePlayer, -min(abs(iChange), pPlot.getCulture(iCulturePlayer)), True)
 			self.interfaceScreen(pPlot)
 
 		elif inputClass.getFunctionName() == "WBPlotType":
@@ -788,9 +792,9 @@ class WBPlotScreen:
 
 		elif inputClass.getFunctionName().find("UpgradeTime") > -1:
 			if inputClass.getData1() == 1030:
-				pPlot.changeUpgradeProgress(- iChange)
+				pPlot.changeUpgradeProgress(- abs(iChange))
 			elif inputClass.getData1() == 1031:
-				pPlot.changeUpgradeProgress(min(iChange, pPlot.getUpgradeTimeLeft(pPlot.getImprovementType(), pPlot.getOwner()) - 1))
+				pPlot.changeUpgradeProgress(min(abs(iChange), pPlot.getUpgradeTimeLeft(pPlot.getImprovementType(), pPlot.getOwner()) - 1))
 			self.placeImprovements()
 
 		elif inputClass.getFunctionName() == "WBPlotFeature":
@@ -872,11 +876,11 @@ class WBPlotScreen:
 			bSensibility = not bSensibility
 			screen.setState("SensibilityCheck", bSensibility)
 
-		elif inputClass.getFunctionName() == "SetValueIncrease":
-			iSetValue += iChange
-			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-		elif inputClass.getFunctionName() == "SetValueDecrease":
-			iSetValue = max(iSetValue-iChange,0)
+		elif inputClass.getFunctionName().find("SetValue") > -1:
+			if inputClass.getData1() == 1030:
+				iSetValue += abs(iChange)
+			elif inputClass.getData1() == 1031:
+				iSetValue -= abs(iChange)
 			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 		elif inputClass.getFunctionName() == "PresetValue":
 			iSetValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))

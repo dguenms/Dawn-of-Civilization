@@ -13,6 +13,7 @@ import WBInfoScreen
 import Popup
 gc = CyGlobalContext()
 
+bRemove = False
 iChange = 1
 iCopyType = 0
 iOwnerType = 0
@@ -667,10 +668,14 @@ class WBUnitScreen:
 		global iMissionData1
 		global bCargo
 		global bUnitType
+		global bRemove
 		sName = inputClass.getFunctionName()
 
 		if sName == "ChangeBy":
-			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
 
 		elif sName == "CurrentPage":
 			iIndex = screen.getPullDownData("CurrentPage", screen.getSelectedPullDownID("CurrentPage"))
@@ -736,51 +741,51 @@ class WBUnitScreen:
 
 		elif sName.find("UnitLevel") > -1:
 			if inputClass.getData1() == 1030:
-				pUnit.setLevel(pUnit.getLevel() + iChange)
+				pUnit.setLevel(pUnit.getLevel() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				pUnit.setLevel(max(0, pUnit.getLevel() - iChange))
+				pUnit.setLevel(max(0, pUnit.getLevel() - abs(iChange)))
 			self.placeStats()
 
 		elif sName.find("UnitExperience") > -1:
 			if inputClass.getData1() == 1030:
-				pUnit.changeExperience(iChange, -1, False, False, False)
+				pUnit.changeExperience(abs(iChange), -1, False, False, False)
 			elif inputClass.getData1() == 1031:
-				pUnit.changeExperience(- min(iChange, pUnit.getExperience()), -1, False, False, False)
+				pUnit.changeExperience(- min(abs(iChange), pUnit.getExperience()), -1, False, False, False)
 			self.placeStats()
 
 		elif sName.find("UnitBaseStr") > -1:
 			if inputClass.getData1() == 1030:
-				pUnit.setBaseCombatStr(pUnit.baseCombatStr() + iChange)
+				pUnit.setBaseCombatStr(pUnit.baseCombatStr() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				pUnit.setBaseCombatStr(max(0, pUnit.baseCombatStr() - iChange))
+				pUnit.setBaseCombatStr(max(0, pUnit.baseCombatStr() - abs(iChange)))
 			self.placeStats()
 
 		elif sName.find("UnitDamage") > -1:
 			if inputClass.getData1() == 1030:
-				pUnit.changeDamage(iChange, -1)
+				pUnit.changeDamage(abs(iChange), -1)
 			elif inputClass.getData1() == 1031:
-				pUnit.changeDamage(- min(iChange, pUnit.getDamage()), -1)
+				pUnit.changeDamage(- min(abs(iChange), pUnit.getDamage()), -1)
 			self.placeStats()
 
 		elif sName.find("UnitMovesLeft") > -1:
 			if inputClass.getData1() == 1030:
-				pUnit.changeMoves(- iChange * gc.getDefineINT("MOVE_DENOMINATOR"))
+				pUnit.changeMoves(- abs(iChange) * gc.getDefineINT("MOVE_DENOMINATOR"))
 			elif inputClass.getData1() == 1031:
-				pUnit.changeMoves(min(iChange * gc.getDefineINT("MOVE_DENOMINATOR"), pUnit.movesLeft()))
+				pUnit.changeMoves(min(abs(iChange) * gc.getDefineINT("MOVE_DENOMINATOR"), pUnit.movesLeft()))
 			self.placeStats()
 
 		elif sName.find("UnitImmobile") > -1:
 			if inputClass.getData1() == 1030:
-				pUnit.setImmobileTimer(pUnit.getImmobileTimer() + iChange)
+				pUnit.setImmobileTimer(pUnit.getImmobileTimer() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				pUnit.setImmobileTimer(max(0, pUnit.getImmobileTimer() - iChange))
+				pUnit.setImmobileTimer(max(0, pUnit.getImmobileTimer() - abs(iChange)))
 			self.placeStats()
 
 		elif sName.find("UnitCargo") > -1:
 			if inputClass.getData1() == 1030:
-				pUnit.changeCargoSpace(iChange)
+				pUnit.changeCargoSpace(abs(iChange))
 			elif inputClass.getData1() == 1031:
-				pUnit.changeCargoSpace(- min(iChange, pUnit.cargoSpace()))
+				pUnit.changeCargoSpace(- min(abs(iChange), pUnit.cargoSpace()))
 			self.placeCargo()
 
 		elif sName == "WBCargoUnits":

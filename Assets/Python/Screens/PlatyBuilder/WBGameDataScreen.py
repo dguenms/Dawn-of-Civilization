@@ -6,6 +6,7 @@ import Popup
 import WBReligionScreen
 import WBCorporationScreen
 import WBInfoScreen
+import WBStoredDataScreen
 gc = CyGlobalContext()
 
 iChange = 1
@@ -56,6 +57,7 @@ class WBGameDataScreen:
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_CONCEPT_CORPORATIONS", ()), 9, 9, False)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_PITBOSS_GAME_OPTIONS", ()), 10, 10, True)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_INFO_SCREEN", ()), 11, 11, False)
+		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_WB_STOREDDATA", ()), 12, 12, False)
 
 		self.placeStats()
 		self.placeGameOptions()
@@ -306,7 +308,7 @@ class WBGameDataScreen:
 			elif item == 2004:
 				bEnabled = data.bNoCongressOption
 			elif item == 2005:
-				bEnabled = data.bNoPlagueOption
+				bEnabled = data.bNoPlagues
 
 			sText = self.colorText(lList2[i][0], bEnabled)
 			screen.setTableText("WBGameOptions", 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
@@ -352,40 +354,49 @@ class WBGameDataScreen:
 				WBCorporationScreen.WBCorporationScreen().interfaceScreen(self.top.m_iCurrentPlayer)
 			elif iIndex == 11:
 				WBInfoScreen.WBInfoScreen().interfaceScreen(self.top.m_iCurrentPlayer)
+			elif iIndex == 12:
+				WBStoredDataScreen.WBStoredDataScreen(self.top).interfaceScreen()
 
 		elif inputClass.getFunctionName() == "ChangeBy":
-			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+
+		elif inputClass.getFunctionName() == "ChangeType":
+			bRemove = not bRemove
+			iChange = -iChange
 
 		elif inputClass.getFunctionName().find("StartYear") > -1:
 			if inputClass.getData1() == 1030:
-				CyGame().setStartYear(CyGame().getStartYear() + iChange)
+				CyGame().setStartYear(CyGame().getStartYear() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				CyGame().setStartYear(CyGame().getStartYear() - iChange)
+				CyGame().setStartYear(CyGame().getStartYear() - abs(iChange))
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("MaxCityElimination") > -1:
 			if inputClass.getData1() == 1030:
-				CyGame().setMaxCityElimination(CyGame().getMaxCityElimination() + iChange)
+				CyGame().setMaxCityElimination(CyGame().getMaxCityElimination() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				CyGame().setMaxCityElimination(max(0, CyGame().getMaxCityElimination() - iChange))
+				CyGame().setMaxCityElimination(max(0, CyGame().getMaxCityElimination() - abs(iChange)))
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("GameTurn") > -1:
 			if inputClass.getData1() == 1030:
-				iChange = min(iChange, CyGame().getMaxTurns() - CyGame().getElapsedGameTurns())
+				iChange = min(abs(iChange), CyGame().getMaxTurns() - CyGame().getElapsedGameTurns())
 				CyGame().setGameTurn(CyGame().getGameTurn() + iChange)
 				CyGame().changeMaxTurns(- iChange)
 			elif inputClass.getData1() == 1031:
-				iChange = min(CyGame().getGameTurn(), iChange)
+				iChange = min(CyGame().getGameTurn(), abs(iChange))
 				CyGame().setGameTurn(CyGame().getGameTurn() - iChange)
 				CyGame().changeMaxTurns(iChange)
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("TargetScore") > -1:
 			if inputClass.getData1() == 1030:
-				CyGame().setTargetScore(CyGame().getTargetScore() + iChange)
+				CyGame().setTargetScore(CyGame().getTargetScore() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				CyGame().setTargetScore(max(0, CyGame().getTargetScore() - iChange))
+				CyGame().setTargetScore(max(0, CyGame().getTargetScore() - abs(iChange)))
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("EstimateEndTurn") > -1:
@@ -397,30 +408,30 @@ class WBGameDataScreen:
 
 		elif inputClass.getFunctionName().find("NukesExploded") > -1:
 			if inputClass.getData1() == 1030:
-				CyGame().changeNukesExploded(iChange)
+				CyGame().changeNukesExploded(abs(iChange))
 			elif inputClass.getData1() == 1031:
-				CyGame().changeNukesExploded(- min(CyGame().getNukesExploded(), iChange))
+				CyGame().changeNukesExploded(- min(CyGame().getNukesExploded(), abs(iChange)))
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("MaxTurns") > -1:
 			if inputClass.getData1() == 1030:
-				CyGame().changeMaxTurns(iChange)
+				CyGame().changeMaxTurns(abs(iChange))
 			elif inputClass.getData1() == 1031:
-				CyGame().changeMaxTurns(- min(CyGame().getMaxTurns(), iChange))
+				CyGame().changeMaxTurns(- min(CyGame().getMaxTurns(), abs(iChange)))
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("TradeRoutes") > -1:
 			if inputClass.getData1() == 1030:
-				CyGame().changeTradeRoutes(min(iChange, gc.getDefineINT("MAX_TRADE_ROUTES") - gc.getDefineINT("INITIAL_TRADE_ROUTES") - CyGame().getTradeRoutes()))
+				CyGame().changeTradeRoutes(min(abs(iChange), gc.getDefineINT("MAX_TRADE_ROUTES") - gc.getDefineINT("INITIAL_TRADE_ROUTES") - CyGame().getTradeRoutes()))
 			elif inputClass.getData1() == 1031:
-				CyGame().changeTradeRoutes(- min(CyGame().getTradeRoutes(), iChange))
+				CyGame().changeTradeRoutes(- min(CyGame().getTradeRoutes(), abs(iChange)))
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("AIAutoPlay") > -1:
 			if inputClass.getData1() == 1030:
-				CyGame().setAIAutoPlay(CyGame().getAIAutoPlay() + iChange)
+				CyGame().setAIAutoPlay(CyGame().getAIAutoPlay() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				CyGame().setAIAutoPlay(max(0, CyGame().getAIAutoPlay() - iChange))
+				CyGame().setAIAutoPlay(max(0, CyGame().getAIAutoPlay() - abs(iChange)))
 			self.placeStats()
 
 		elif inputClass.getFunctionName() == "WBGameOptions":
@@ -445,15 +456,12 @@ class WBGameDataScreen:
 				elif iGameOption == 2004:
 					data.bNoCongressOption = not data.bNoCongressOption
 				elif iGameOption == 2005:
-					data.bNoPlagueOption = not data.bNoPlagueOption
+					data.bNoPlagues = not data.bNoPlagues
 				# Stored Variables
 				elif iGameOption == 3001:
 					data.bAlreadySwitched = not data.bAlreadySwitched
 				elif iGameOption == 3002 and cong.isCongressEnabled():
-					if bRemove:
-						sd.setCongressTurns(max(1, sd.getCongressTurns() - iChange))
-					else:
-						sd.setCongressTurns(sd.getCongressTurns() + iChange)
+					sd.setCongressTurns(sd.getCongressTurns() + iChange)
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":
@@ -489,9 +497,6 @@ class WBGameDataScreen:
 			popup.setHeaderString(CyTranslator().getText("TXT_KEY_WB_SCRIPT", ()))
 			popup.createEditBox(CyGame().getScriptData())
 			popup.launch()
-
-		elif inputClass.getFunctionName() == "ChangeType":
-			bRemove = not bRemove
 
 		return 1
 

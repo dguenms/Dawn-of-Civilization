@@ -824,4 +824,48 @@
 		<Tag>TXT_KEY_WB_OPTIONS_ENABLE_CIV</Tag>
 		<English>Enable/disable civ</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STOREDDATA</Tag>
+		<English>StoredData</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RESTORE_SD_BACKUP</Tag>
+		<English>Restore backup</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RESTORE_SD_BACKUP_HELP</Tag>
+		<English>Restores StoredData to last created backup. If no manual backup is created, the last created backup is when the savefile was loaded. (StoredData changes of played turns since the last backup is made will be lost when the backup is restored)</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CREATE_SD_BACKUP</Tag>
+		<English>Create backup</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CREATE_SD_BACKUP_HELP</Tag>
+		<English>Saves the current state of the StoredData.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_GLOBAL</Tag>
+		<English>Global data</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CIVS</Tag>
+		<English>Civilization data</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STOREDDATA_WARNING</Tag>
+		<English>Be careful with your changes! Any change can seriously effect your game!</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CHANGE</Tag>
+		<English>Click to change</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_SELECT</Tag>
+		<English>Click to select</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_CANNOT_CHANGE</Tag>
+		<English>Cannot change this</English>
+	</TEXT>
 </Civ4GameText>
