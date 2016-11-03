@@ -267,7 +267,15 @@ def getWidgetHelp(argsList):
 			elif iData2 == 38:
 				return CyTranslator().getText("TXT_KEY_WB_WARVALUE", ())
 			elif iData2 == 39:
+				return CyTranslator().getText("TXT_KEY_WB_RELIGIONMAP", ())
+			elif iData2 == 40:
+				return CyTranslator().getText("TXT_KEY_WB_REGIONMAP", ())
+			elif iData2 == 41:
 				return CyTranslator().getText("TXT_KEY_WB_STOREDDATA", ())
+			elif iData2 == 42:
+				return CyTranslator().getText("TXT_KEY_WB_DOCMAPS", ())
+			elif iData2 == 43:
+				return CyTranslator().getText("TXT_KEY_WB_REGION_SELECTION", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"

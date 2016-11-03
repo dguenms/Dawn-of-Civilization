@@ -5,6 +5,7 @@ import Popup as PyPopup
 import Areas
 import SettlerMaps
 import WarMaps
+import RegionMap
 import os
 
 IMAGE_LOCATION = os.getcwd() + "\Mods\\RFC Dawn of Civilization\\Export"
@@ -17,22 +18,18 @@ def changeCore(iPlayer, tPlot):
 	plot = gc.getMap().plot(x, y)
 	if plot.isWater() or (plot.isPeak() and tPlot not in Areas.lPeakExceptions): return
 	plot.setCore(iPlayer, not bCore)
-	
+
 def changeCoreForce(iPlayer, tPlot, bAdd):
 	x, y = tPlot
 	plot = gc.getMap().plot(x, y)
 	if plot.isWater() or (plot.isPeak() and tPlot not in Areas.lPeakExceptions): return
 	plot.setCore(iPlayer, bAdd)
-	
+
 def changeSettlerValue(iPlayer, tPlot, iValue):
 	x, y = tPlot
 	plot = gc.getMap().plot(x, y)
 	if plot.isWater() or (plot.isPeak() and tPlot not in Areas.lPeakExceptions): return
 	plot.setSettlerValue(iPlayer, iValue)
-	
-def getSettlerValue(iPlayer, tPlot):
-	x, y = tPlot
-	return gc.getMap().plot(x, y).getSettlerValue(iPlayer)
 
 def changeWarValue(iPlayer, tPlot, iValue):
 	x, y = tPlot
@@ -40,9 +37,17 @@ def changeWarValue(iPlayer, tPlot, iValue):
 	if plot.isWater() or (plot.isPeak() and tPlot not in Areas.lPeakExceptions): return
 	plot.setWarValue(iPlayer, iValue)
 
-def getWarValue(iPlayer, tPlot):
-	x, y = tPlot
-	return gc.getMap().plot(x, y).getWarValue(iPlayer)
+def changeReligionValue(iReligion, pPlot, iValue):
+	if pPlot.isWater(): return
+	pPlot.setSpreadFactor(iReligion, iValue)
+
+def changeRegionID(pPlot, iRegion):
+	if pPlot.isWater(): return
+	pPlot.setRegionID(iRegion)
+
+def resetPlotRegionID(pPlot):
+	if pPlot.isWater(): return
+	pPlot.setRegionID(RegionMap.getMapValue(pPlot.getX(), pPlot.getY()))
 
 def resetCore(iPlayer):
 	Areas.updateCore(iPlayer)
@@ -53,6 +58,12 @@ def resetSettler(iPlayer):
 def resetWarMap(iPlayer):
 	WarMaps.updateMap(iPlayer)
 
+def resetReligionMap(iReligion):
+	RegionMap.updateReligionSpread(iReligion)
+
+def resetRegionMap():
+	RegionMap.updateRegionMap()
+
 def exportCore(iPlayer, bForce = False):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
@@ -60,7 +71,7 @@ def exportCore(iPlayer, bForce = False):
 		sName = "HolyRome"
 	elif iPlayer == iAztecs:
 		sName = "Aztecs"
-	
+
 	lCorePlotList = Areas.getCoreArea(iPlayer)
 	bCoreChanged = bForce
 	if not bCoreChanged:
@@ -120,7 +131,7 @@ def exportCore(iPlayer, bForce = False):
 	popup = PyPopup.PyPopup()
 	popup.setBodyString(sText)
 	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
-	
+
 def exportAllCores():
 	lAllCores = []
 	lAllExceptions = []
@@ -185,7 +196,7 @@ def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 		sName = "HolyRome"
 	elif iPlayer == iAztecs:
 		sName = "Aztecs"
-		
+
 	bSettlerValueChanged = bForce
 	if not bSettlerValueChanged:
 		for x in range(iWorldX):
@@ -234,7 +245,7 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 		sName = "HolyRome"
 	elif iPlayer == iAztecs:
 		sName = "Aztecs"
-		
+
 	bWarMapChanged = bForce
 	if not bWarMapChanged:
 		for x in range(iWorldX):

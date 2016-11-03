@@ -44,6 +44,10 @@
 		<English>Checks Prerequisites for Multiple Tiles Mode</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_WB_REGION_SELECTION</Tag>
+		<English>Selects all tiles in a region</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_WB_PLOT_TYPE</Tag>
 		<English>Plot Type</English>
 	</TEXT>
@@ -690,7 +694,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_EXTENDED</Tag>
-		<English>Toggle reborn map</English>
+		<English>Reborn</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_NA</Tag>
+		<English>N/A</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CORE_ADD</Tag>
@@ -743,6 +751,30 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_WARVALUE</Tag>
 		<English>Warvalue</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RELIGIONMAP</Tag>
+		<English>Religion values</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_REGIONMAP</Tag>
+		<English>Region IDs</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RELIGIONMAP_MINORITY</Tag>
+		<English>Minority</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RELIGIONMAP_PERIPHERY</Tag>
+		<English>Periphery</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RELIGIONMAP_HISTORICAL</Tag>
+		<English>Historical</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_RELIGIONMAP_CORE</Tag>
+		<English>Core</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_NO_STABILITY</Tag>
@@ -867,5 +899,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_CANNOT_CHANGE</Tag>
 		<English>Cannot change this</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_DOCMAPS</Tag>
+		<English>DoC maps</English>
 	</TEXT>
 </Civ4GameText>
