@@ -4995,6 +4995,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									if (iI == DIVINATION || iI == PHILOSOPHY || iI == PRIESTHOOD)
 										iValue *= 2;
+									if (iI == ALLOYS)
+										iValue /= 2;
+									if (iI == BLOOMERY)
+										iValue /= 5;
 									break;
 								case CHINA:
 									if (iI == DIVINATION || iI == SAILING)
@@ -5031,7 +5035,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									if (iI == MASONRY || iI == PROPERTY || iI == DIVINATION || iI == CONSTRUCTION)
 										iValue *= 2;
-									if (iI == GEOMETRY || iI == ALLOYS || iI == STEEL)
+									if (iI == GEOMETRY || iI == ALLOYS || iI == BLOOMERY || iI == STEEL)
 										iValue /= 3;
 									break;
 								case HARAPPA:
