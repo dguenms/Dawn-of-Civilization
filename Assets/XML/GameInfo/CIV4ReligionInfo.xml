@@ -171,7 +171,7 @@
 			<Description>TXT_KEY_RELIGION_HINDUISM</Description>
 			<Adjective>TXT_KEY_RELIGION_HINDUISM_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_RELIGION_HINDUISM_PEDIA</Civilopedia>
-			<TechPrereq>TECH_CEREMONY</TechPrereq>
+			<TechPrereq>TECH_CALENDAR</TechPrereq>
 			<FreeUnitClass>UNITCLASS_HINDU_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
 			<iSpreadFactor>80</iSpreadFactor>
