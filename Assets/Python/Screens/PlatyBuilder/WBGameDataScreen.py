@@ -14,7 +14,7 @@ bHiddenOption = True
 bRepeat = False
 iSelectedCiv = -1
 iSelectedLeader = -1
-bRemove = True
+bRemove = False
 
 from StoredData import data
 from Consts import *
@@ -461,7 +461,7 @@ class WBGameDataScreen:
 				elif iGameOption == 3001:
 					data.bAlreadySwitched = not data.bAlreadySwitched
 				elif iGameOption == 3002 and cong.isCongressEnabled():
-					sd.setCongressTurns(sd.getCongressTurns() + iChange)
+					data.iCongressTurns = max(1, data.iCongressTurns+iChange)
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":

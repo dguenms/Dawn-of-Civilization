@@ -28,7 +28,7 @@ def updateReligionSpread(iReligion):
 def init():
 	updateRegionMap()
 	for iReligion in range(iNumReligions):
-		updateReligionSpreadiReligion(iReligion)
+		updateReligionSpread(iReligion)
 				
 
 tRegionMap = (

@@ -307,11 +307,11 @@ class WBInfoScreen:
 				for y in range(iWorldY):
 					plot = gc.getMap().plot(x, y)
 					if plot.isWater(): continue
-					if gc.getMap().plot(x, y).isCore(iPlayer):
+					if plot.isCore(iPlayer):
 						iPlotType = iCore
 					else:
 						bForeignCore = Areas.isForeignCore(iPlayer, (x, y))
-						iSettlerValue = met.getSettlerValue(iPlayer, (x, y))
+						iSettlerValue = plot.getSettlerValue(iPlayer)
 						if iSettlerValue >= 90:
 							if bForeignCore:
 								iPlotType = iContest

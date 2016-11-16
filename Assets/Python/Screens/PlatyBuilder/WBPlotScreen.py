@@ -224,7 +224,7 @@ class WBPlotScreen:
 						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
 						iCore = 22012
 					screen.setTableText("WBSigns", 3, iRow, sCore, "", WidgetTypes.WIDGET_PYTHON, iCore, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
-					iSettlerValue = met.getSettlerValue(iPlayerX, tPlot)
+					iSettlerValue = pPlot.getSettlerValue(iPlayerX)
 					screen.setTableText("WBSigns", 4, iRow, str(iSettlerValue), "", WidgetTypes.WIDGET_PYTHON, 22003, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
 					if tPlot in Areas.getBirthArea(iPlayerX):
 						sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
@@ -694,9 +694,9 @@ class WBPlotScreen:
 				tPlot = (pPlot.getX(), pPlot.getY())
 				if iChangeType < 3:
 					if iChangeType == 0:
-						iValue = met.getSettlerValue(iPlayer, tPlot) - abs(iChange)
+						iValue = pPlot.getSettlerValue(iPlayer) - abs(iChange)
 					elif iChangeType == 1:
-						iValue = met.getSettlerValue(iPlayer, tPlot) + abs(iChange)
+						iValue = pPlot.getSettlerValue(iPlayer) + abs(iChange)
 					elif iChangeType == 2:
 						iValue = iSetValue
 					met.changeSettlerValue(iPlayer, tPlot, iValue)
@@ -704,7 +704,7 @@ class WBPlotScreen:
 				else:
 					popup = Popup.PyPopup(6666, EventContextTypes.EVENTCONTEXT_ALL)
 					popup.setUserData((iPlayer, -1))
-					sText = str(met.getSettlerValue(iPlayer, tPlot))
+					sText = str(pPlot.getSettlerValue(iPlayer))
 					popup.createEditBox(sText)
 					popup.launch()
 

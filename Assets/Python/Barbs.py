@@ -73,20 +73,6 @@ tMinorStates = (
 iHandicapOld = (gc.getGame().getHandicapType() - 1)
 
 class Barbs:
-
-	def makeUnit(self, iUnit, iPlayer, tCoords, iNum, iForceAttack):
-		'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
-		for i in range(iNum):
-			player = gc.getPlayer(iPlayer)
-			if (iForceAttack == 0):
-				player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-			elif (iForceAttack == 1):
-				player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)				  
-			elif (iForceAttack == 2):
-				player.initUnit(iUnit, tCoords[0], tCoords[1], UnitAITypes.UNITAI_ATTACK_SEA, DirectionTypes.DIRECTION_SOUTH)
-
-
-
 		
 	def checkTurn(self, iGameTurn):
 		
@@ -294,10 +280,10 @@ class Barbs:
 		if (iGameTurn >= getTurnForYear(1300) and iGameTurn <= getTurnForYear(1600)):
 			if (iGameTurn % 18 == 0):
 				if (gc.getMap().plot(27, 29).getNumUnits() == 0):
-					self.makeUnit(iNativeAmericanDogSoldier, iBarbarian, (27, 29), 3 + iHandicap, 1)
+					utils.makeUnitAI(iNativeAmericanDogSoldier, iBarbarian, (27, 29), UnitAITypes.UNITAI_ATTACK, 3 + iHandicap)
 			if (iGameTurn % 18 == 9):
 				if (gc.getMap().plot(30, 13).getNumUnits() == 0):
-					self.makeUnit(iNativeAmericanDogSoldier, iBarbarian, (30, 13), 3 + iHandicap, 1)
+					utils.makeUnitAI(iNativeAmericanDogSoldier, iBarbarian, (30, 13), UnitAITypes.UNITAI_ATTACK, 3 + iHandicap)
 		
 		if iGameTurn >= getTurnForYear(1700) and iGameTurn <= getTurnForYear(1900):
 			self.checkSpawn(iBarbarian, iSiouxMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
@@ -466,18 +452,6 @@ class Barbs:
 
 
 
-	def spawnUnits(self, iCiv, tTopLeft, tBottomRight, iUnitType, iNumUnits, iTurn, iPeriod, iRest, function, iForceAttack):
-		if (iTurn % utils.getTurns(iPeriod) == iRest):
-			dummy, plotList = utils.squareSearch( tTopLeft, tBottomRight, function, [] )
-			if (len(plotList)):
-				rndNum = gc.getGame().getSorenRandNum(len(plotList), 'Spawn units')
-				result = plotList[rndNum]
-				if (result):
-					self.makeUnit(iUnitType, iCiv, result, iNumUnits, iForceAttack)
-				
-
-
-	    
 	def killNeighbours(self, tCoords):
 		'Kills all units in the neigbbouring tiles of plot (as well as plot itself) so late starters have some space.'
 		for x in range(tCoords[0]-1, tCoords[0]+2):	# from x-1 to x+1
