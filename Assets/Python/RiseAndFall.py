@@ -16,6 +16,7 @@ from operator import itemgetter
 import Stability as sta
 import Areas
 import Civilizations
+import Modifiers
 
 ################
 ### Globals ###
@@ -864,6 +865,7 @@ class RiseAndFall:
 		teamCiv = gc.getTeam(pCiv.getTeam())
 		if tRebirthCiv[iCiv] != -1:
 			pCiv.setCivilizationType(tRebirthCiv[iCiv])
+		Modifiers.updateModifiers(iCiv)
 		x, y = Areas.dRebirthPlot[iCiv]
 		plot = gc.getMap().plot(x,y)
 		
