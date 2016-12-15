@@ -4315,6 +4315,8 @@ def canChooseTradingCompanyConquerors1(argsList):
 	id = lCivList.index(iPlayer)
 
 	targetList = data.lTradingCompanyConquerorsTargets[id]
+	
+	if not targetList: return False
 
 	iGold = len(targetList) * 200
 
