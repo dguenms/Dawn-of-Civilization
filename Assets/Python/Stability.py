@@ -71,7 +71,7 @@ def checkTurn(iGameTurn):
 			checkLostCitiesCollapse(iPlayer)
 			
 	if iGameTurn >= getTurnForYear(tBirth[utils.getHumanID()]):
-		data.iHumanStability = calculateStability(utils.getHumanID)
+		data.iHumanStability = calculateStability(utils.getHumanID())
 		
 def endTurn(iPlayer):
 	lSecedingCities = data.getSecedingCities(iPlayer)
