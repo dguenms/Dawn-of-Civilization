@@ -2572,20 +2572,22 @@ iCivCanada : {
 	iGreatScientist : [
 		"Frederick Banting", # 20th
 		"Norman Bethune", # 20th
-		"Andrew McNaughton", # 20th
+		"Wilder Penfield", # 20th
+		"Pierre Dansereau", # 20th
 		"fShirley Tilghman", # 20th
-		"Ted Rogers", # 20th
 		"David Suzuki", # 20th
 	],
 	iGreatMerchant : [
 		"Timothy Eaton", # 19th
 		iModern,
 		"fElizabeth Arden", # 20th
+		"Ted Rogers", # 20th
 		u"Guy Laliberté", # 20th
 	],
 	iGreatEngineer : [
 		"Sandford Fleming", # 19th
 		"William Cornelius Van Horne", # 19th
+		"Reginald Fessenden", # 19th-20th
 		iModern,
 		"Joseph-Armand Bombardier", # 20th
 		"fElsie MacGill", # 20th
@@ -2599,10 +2601,11 @@ iCivCanada : {
 		"fEmily Murphy", # 20th
 		"fNellie McClung", # 20th
 		u"René Levesque", # 20th
-		u"Roméo Dallaire", # 20th
 	],
 	iGreatGeneral : [
-		"Arthur Currie", # 19th
+		"Arthur Currie", # 20th
+		"Andrew McNaughton", # 20th
+		u"Roméo Dallaire", # 20th
 	],
 },
 }
