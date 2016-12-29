@@ -325,7 +325,7 @@ class RFCUtils:
 									continue
 									
 								# Leoreth: ignore workers as well
-								if unit.getUnitType() in [iWorker, iPunjabiWorker, iMadeireiro
+								if unit.getUnitType() in [iWorker, iPunjabiWorker, iMadeireiro]:
 									continue
 								
 								if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():
