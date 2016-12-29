@@ -203,7 +203,7 @@ class AIWars:
 			iBestInfantry = utils.getBestInfantry(iPlayer)
 			iBestSiege = utils.getBestSiege(iPlayer)
 			
-			if iPlayer == con.iGreece:
+			if iPlayer == iGreece:
 				iBestInfantry = iHoplite
 				iBestSiege = iCatapult
 			
@@ -214,7 +214,7 @@ class AIWars:
 				utils.makeUnitAI(iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 	
 	def forgetMemory(self, iTech, iPlayer):
-		if iTech in [con.iPsychology, con.iTelevision]:
+		if iTech in [iPsychology, iTelevision]:
 			for iLoopCiv in range( iNumPlayers ):
 				pPlayer = gc.getPlayer(iPlayer)
 				if (pPlayer.AI_getMemoryCount(iLoopCiv,0) > 0):
