@@ -1,5 +1,5 @@
 from Consts import *
-from StoredData import sd
+from StoredData import data
 from RFCUtils import utils
 
 def techlog(text):
@@ -14,8 +14,8 @@ def onTechAcquired(iPlayer, iTech):
 	iYear = gc.getGame().getGameTurnYear()
 	iColumn = gc.getTechInfo(iTech).getGridX()
 	
-	if iColumn > sd.getTechColumn(iPlayer):
-		sd.setTechColumn(iPlayer, iColumn)
+	if iColumn > data.players[iPlayer].iTechColumn:
+		data.players[iPlayer].TechColumn = iColumn
 		techlog("Reached new column - year: %d, player: %s, column: %d" % (iYear, gc.getPlayer(iPlayer).getCivilizationShortDescription(0), iColumn))
 		
 def onFirstDiscovered(iPlayer, iTech):

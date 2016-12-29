@@ -55,6 +55,10 @@ class PlayerData:
 		
 		self.resetStability()
 		
+		# Tech Log
+		
+		self.iTechColumn = 0
+		
 	def resetStability(self):
 		self.iStabilityLevel = iStabilityShaky
 		
