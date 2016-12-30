@@ -3405,8 +3405,11 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iRussia:
 		if iGoal == 0:
 			iSiberia = getNumFoundedCitiesInArea(iRussia, utils.getPlotList(tSiberiaTL, tSiberiaBR))
+			bSiberia = (iSiberia >= 7) or gc.getGame().getGameTurn() >= getTurnForYear(1700)
+			siberiaText = localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", (iSiberia, 7))
+			if bSiberia: siberiaText = localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA_COMPLETE", ()) 
 			bSiberianRailway = isConnectedByRailroad(iRussia, Areas.getCapital(iRussia), lSiberianCoast)
-			aHelp.append(getIcon(iSiberia >= 7) + localText.getText("TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA", (iSiberia, 7)) + ' ' + getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()))
+			aHelp.append(getIcon(bSiberia) + siberiaText + ' ' + getIcon(bSiberianRailway) + localText.getText("TXT_KEY_VICTORY_TRANSSIBERIAN_RAILWAY", ()))
 		elif iGoal == 1:
 			bManhattanProject = teamRussia.getProjectCount(iManhattanProject) > 0
 			bApolloProgram = teamRussia.getProjectCount(iApolloProgram) > 0
