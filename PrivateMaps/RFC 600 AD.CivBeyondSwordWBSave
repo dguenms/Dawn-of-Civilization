@@ -23081,13 +23081,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
@@ -23223,10 +23223,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARCHER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SWORDSMAN, UnitOwner=16, (Vikings)
@@ -23563,13 +23563,13 @@ BeginPlot
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 		Level=3, Experience=5
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
@@ -23999,7 +23999,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
 		PromotionType=PROMOTION_CITY_GARRISON1
 		PromotionType=PROMOTION_CITY_GARRISON2
 	EndUnit
@@ -24460,7 +24460,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 (	BeginUnit)
-(		UnitType=UNIT_LONGBOWMAN, UnitOwner=16, (Vikings)) (AI only)
+(		UnitType=UNIT_ARCHER, UnitOwner=16, (Vikings)) (AI only)
 (	EndUnit)
 (	BeginUnit)
 (		UnitType=UNIT_SETTLER, UnitOwner=16, (Vikings)) (AI only)
@@ -25188,7 +25188,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=14, (Byzantium)
+		UnitType=UNIT_ARCHER, UnitOwner=14, (Byzantium)
 	EndUnit
 	BeginCity
 		CityOwner=14, (Byzantium)
@@ -34684,10 +34684,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent2)
@@ -37203,7 +37203,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=44, (Independent)
@@ -44309,10 +44309,10 @@ BeginPlot
 (		UnitType=UNIT_JAPANESE_SAMURAI, UnitOwner=15, (Japan)) (AI only)
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_CROSSBOWMAN, UnitOwner=15, (Japan)) (AI only)
+(		UnitType=UNIT_ARCHER, UnitOwner=15, (Japan)) (AI only)
 (	EndUnit)
 (	BeginUnit)
-(		UnitType=UNIT_CROSSBOWMAN, UnitOwner=15, (Japan)) (AI only)
+(		UnitType=UNIT_ARCHER, UnitOwner=15, (Japan)) (AI only)
 (	EndUnit)
 	BeginUnit
 		UnitType=UNIT_SWORDSMAN, UnitOwner=15, (Japan)
