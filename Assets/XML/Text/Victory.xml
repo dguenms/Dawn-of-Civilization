@@ -2905,6 +2905,10 @@
 		<English>Cities in Siberia: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_RUSSIA_CONTROL_SIBERIA_COMPLETE</Tag>
+		<English>Colonize Siberia</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SANKORE_PROPHETS</Tag>
 		<English>Great prophets settled in the Sankore city: %d1 / %d2</English>
 	</TEXT>
