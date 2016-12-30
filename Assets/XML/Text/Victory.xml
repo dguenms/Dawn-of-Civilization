@@ -709,8 +709,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE1</Tag>
-		<English>Be the first to discover Geometry, Tradition, Aesthetics, Philosophy, iMedicine</English>
-		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Geometrie, Tradition, Ästhetik, Philosophie und Medizin</German>
+		<English>Be the first to discover Geometry, Tradition, Aesthetics, Philosophy and Medicine</English>
+		<German>Erforschen Sie vor allen anderen Zivilisationen die Technologien Geometrie, Tradition, Ã„sthetik, Philosophie und Medizin</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE2_TITLE</Tag>
@@ -1197,8 +1197,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR2</Tag>
-		<English>Be first to discover Printing Press</English>
-		<German>Erforschen Sie als Erster die Druckerpresse</German>
+		<English>Be first to discover Printing</English>
+		<German>Erforschen Sie als Erster Buchdruck</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KOR3_TITLE</Tag>
@@ -1705,12 +1705,12 @@
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3_TITLE</Tag>
 		<English>Late Antiquity</English>
-		<German>Spätantike</German>
+		<German>SpÃ¤tantike</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ROM3</Tag>
-		<English>Be the first to discover Theology, Machinery and Civil Service</English>
-		<German>Enforschen Sie vor allen anderen Zivilisationen Theologie, Maschinen und &#214;ffentliche Verwaltung</German>
+		<English>Be the first to discover Architecture, Politics, Machinery, Civil Service and Theology</English>
+		<German>Enforschen Sie vor allen anderen Zivilisationen Architektur, Politik, Maschinen, &#214;ffentliche Verwaltung und Theologie</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_RUS1_TITLE</Tag>
