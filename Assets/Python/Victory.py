@@ -312,7 +312,7 @@ def checkTurn(iGameTurn, iPlayer):
 				
 	elif iPlayer == iBabylonia:
 	
-		# first goal: be the first to discover Writing, Code of Laws and Monarchy
+		# first goal: be the first to discover Construction, Arithmetics, Writing, Calendar and Contract
 		
 		# second goal: make Babylon the most populous city in the world in 850 BC
 		if iGameTurn == getTurnForYear(-850):
@@ -3066,7 +3066,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bWriting = data.lFirstDiscovered[iWriting] == iBabylonia
 			bCalendar = data.lFirstDiscovered[iCalendar] == iBabylonia
 			bContract = data.lFirstDiscovered[iContract] == iBabylonia
-			aHelp.append(getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()) + ' ' + getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()))
+			aHelp.append(getIcon(bConstruction) + localText.getText("TXT_KEY_TECH_CONSTRUCTION", ()) + ' ' + getIcon(bArithmetics) + localText.getText("TXT_KEY_TECH_ARITHMETICS", ()) + ' ' + getIcon(bWriting) + localText.getText("TXT_KEY_TECH_WRITING", ()))
 			aHelp.append(getIcon(bCalendar) + localText.getText("TXT_KEY_TECH_CALENDAR", ()) + ' ' + getIcon(bContract) + localText.getText("TXT_KEY_TECH_CONTRACT", ()))
 		elif iGoal == 1:
 			pBestCity = getBestCity(iBabylonia, (76, 40), cityPopulation)
