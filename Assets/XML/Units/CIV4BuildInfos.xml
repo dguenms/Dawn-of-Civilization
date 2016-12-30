@@ -537,10 +537,10 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
+					<PrereqTech>TECH_BLOOMERY</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>0</iProduction>
-					<bRemove>1</bRemove>
+					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
