@@ -12604,7 +12604,11 @@ void CvPlayer::changeFreeBuildingCount(BuildingTypes eIndex, int iChange)
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				pLoopCity->setNumFreeBuilding(eIndex, 1);
+				// Leoreth: only grant free buildings if allowed for their location
+				if (pLoopCity->isValidBuildingLocation(eIndex))
+				{
+					pLoopCity->setNumFreeBuilding(eIndex, 1);
+				}
 			}
 		}
 		else if (getFreeBuildingCount(eIndex) == 0)
