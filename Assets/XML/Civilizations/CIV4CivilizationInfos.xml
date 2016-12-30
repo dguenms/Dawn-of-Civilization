@@ -2193,7 +2193,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_CASTLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_POST_OFFICE</BuildingClassType>
 					<BuildingType>BUILDING_INCAN_TAMBO</BuildingType>
 				</Building>
 			</Buildings>
