@@ -208,56 +208,6 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CASTLE</BuildingClass>
-			<Type>BUILDING_INCAN_TAMBO</Type>
-			<Description>TXT_KEY_BUILDING_INCAN_TAMBO</Description>
-			<Civilopedia>TXT_KEY_BUILDING_INCAN_TAMBO_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Strategy>
-			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TAMBO</ArtDefineTag>
-			<PrereqTech>TECH_GEOMETRY</PrereqTech>
-			<bNeverCapture>1</bNeverCapture>
-			<bCenterInCity>1</bCenterInCity>
-			<iCost>100</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iTradeRoutes>1</iTradeRoutes>
-			<iDefense>50</iDefense>
-			<iBombardDefense>25</iBombardDefense>
-			<iAsset>2</iAsset>
-			<iPower>2</iPower>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
-			<BonusProductionModifiers>
-				<BonusProductionModifier>
-					<BonusType>BONUS_STONE</BonusType>
-					<iProductonModifier>100</iProductonModifier>
-				</BonusProductionModifier>
-			</BonusProductionModifiers>
-			<UnitCombatFreeExperiences>
-				<UnitCombatFreeExperience>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<iExperience>2</iExperience>
-				</UnitCombatFreeExperience>
-			</UnitCombatFreeExperiences>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_WALLS</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>6</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_STAR_FORT</BuildingClass>
 			<Type>BUILDING_STAR_FORT</Type>
 			<Description>TXT_KEY_BUILDING_STAR_FORT</Description>
