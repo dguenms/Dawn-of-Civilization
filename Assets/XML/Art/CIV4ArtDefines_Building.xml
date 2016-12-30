@@ -2295,7 +2295,7 @@
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Print_Shop/print_shop.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Post Office/Button_PostOffice.dds</Button>
+			<Button>Art/Structures/Buildings/Post_Office/Button_PostOffice.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_WHARF</Type>
@@ -2313,9 +2313,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Civic Square/Civic Square.nif</NIF>
+			<NIF>Art/Structures/Buildings/Civic_Square/Civic_Square.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Civic Square/Button_CivicSquare.dds</Button>
+			<Button>Art/Structures/Buildings/Civic_Square/Button_CivicSquare.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SEWER</Type>
@@ -2343,9 +2343,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.8</fScale>
 			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/News Press/newspaper.nif</NIF>
+			<NIF>Art/Structures/Buildings/News_Press/newspaper.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/News Press/Button_NewsPress.dds</Button>
+			<Button>Art/Structures/Buildings/News_Press/Button_NewsPress.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CINEMA</Type>
@@ -2383,9 +2383,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>2.5</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Solar Plant/solarplant.nif</NIF>
+			<NIF>Art/Structures/Buildings/Solar_Plant/solarplant.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Solar Plant/Button_SolarPlant.dds</Button>
+			<Button>Art/Structures/Buildings/Solar_Plant/Button_SolarPlant.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MONUMENT</Type>
