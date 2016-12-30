@@ -75,7 +75,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_AUTOCRACY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_AUTOCRACY_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Civics/Nationhood.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,2</Button>
-			<TechPrereq>TECH_JOURNALISM</TechPrereq>
+			<TechPrereq>TECH_NATIONALISM</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iGreatGeneralRateModifier>50</iGreatGeneralRateModifier>
