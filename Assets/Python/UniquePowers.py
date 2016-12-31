@@ -56,20 +56,18 @@ class UniquePowers:
 
 
 	def checkTurn(self, iGameTurn):
-
-		print("UniquePowers.checkTurn()")
-			
 		if iGameTurn >= getTurnForYear(tBirth[iRussia]) and pRussia.isAlive():
 			self.russianUP()
 
 		if iGameTurn >= getTurnForYear(tBirth[iAmerica])+utils.getTurns(5):
 			self.checkImmigration()
-			
+
 		if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
 			self.indonesianUP()
+		
+		data.bBabyloniaTechReceived = False
 					
 	def onChangeWar(self, bWar, iTeam, iOtherTeam):
-	
 		# reset Mongol UP flags when peace is made
 		if not bWar:
 			if iTeam == iMongolia:
@@ -78,6 +76,10 @@ class UniquePowers:
 			elif iOtherTeam == iMongolia:
 				for city in utils.getCityList(iTeam):
 					city.setMongolUP(False)
+					
+	def onTechAcquired(self, iPlayer, iTech):
+		if iPlayer == iBabylonia:
+			self.babylonianUP()
 					
 #------------------VIKING UP----------------------
 
@@ -568,3 +570,13 @@ class UniquePowers:
 			if utils.getHumanID() == iIndonesia:
 				CyInterface().addMessage(iIndonesia, False, iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 				
+	# Babylonian UP: receives a free tech after the first four techs discovered
+	def babylonianUP(self):
+		if data.iBabylonianTechs < 4 and not data.bBabyloniaTechReceived:
+			data.iBabylonianTechs += 1
+			data.bBabyloniaTechReceived = True
+		
+			if pBabylonia.isHuman():
+				pBabylonia.chooseTech(1, CyTranslator().getText("TXT_KEY_BABYLONIAN_UP", ()), False)
+			else:
+				pBabylonia.AI_chooseFreeTech()

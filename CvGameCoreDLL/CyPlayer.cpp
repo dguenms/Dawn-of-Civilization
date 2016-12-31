@@ -2578,3 +2578,9 @@ int CyPlayer::getSpreadType(CyPlot* pPlot, int iReligion) const
 {
 	return m_pPlayer ? m_pPlayer->getSpreadType(pPlot->getPlot(), (ReligionTypes)iReligion) : RELIGION_SPREAD_NONE;
 }
+
+void CyPlayer::AI_chooseFreeTech()
+{
+	if (m_pPlayer)
+		m_pPlayer->AI_chooseFreeTech();
+}

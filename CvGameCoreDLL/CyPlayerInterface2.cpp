@@ -108,5 +108,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("setReligiousTolerance", &CyPlayer::setReligiousTolerance, "void (int iNewValue)")
 		.def("setBirthYear", &CyPlayer::setBirthYear, "void (int iNewValue)")
 		.def("getSpreadType", &CyPlayer::getSpreadType, "int (CyPlot* pPlot, int iReligion)")
+		.def("AI_chooseFreeTech", &CyPlayer::AI_chooseFreeTech, "void ()")
 		;
 }

@@ -571,6 +571,7 @@ public:
 	int getBirthYear();
 	int getBirthTurn();
 	void setBirthYear(int iNewValue);
+	void AI_chooseFreeTech();
 
 private:
 	CvPlayer* m_pPlayer;
