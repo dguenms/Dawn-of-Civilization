@@ -2573,3 +2573,9 @@ void CyPlayer::setBirthYear(int iNewValue)
 	if (m_pPlayer)
 		m_pPlayer->setBirthYear(iNewValue);
 }
+
+void CyPlayer::AI_chooseFreeTech()
+{
+	if (m_pPlayer)
+		m_pPlayer->AI_chooseFreeTech();
+}

@@ -187,6 +187,9 @@ class GameData:
 		
 		self.lLatestRazeData = [-1] * 5
 		
+		self.iBabylonianTechs = 0
+		self.bBabyloniaTechReceived = False
+		
 		# AI Wars
 		
 		self.iNextTurnAIWar = -1
