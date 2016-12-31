@@ -3053,9 +3053,9 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iHarappa:
 		if iGoal == 1:
-			iNumBaths = getNumBuildings(iHarappa, iReservoir)
+			iNumReservoirs = getNumBuildings(iHarappa, iReservoir)
 			iNumWalls = getNumBuildings(iHarappa, iWalls)
-			aHelp.append(getIcon(iNumBaths >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_BATHS", (iNumBaths, 3)) + ' ' + getIcon(iNumWalls >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_WALLS", (iNumWalls, 2)))
+			aHelp.append(getIcon(iNumReservoirs >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_RESERVOIRS", (iNumReservoirs, 3)) + ' ' + getIcon(iNumWalls >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_WALLS", (iNumWalls, 2)))
 		elif iGoal == 2:
 			iNumPopulation = pHarappa.getTotalPopulation()
 			aHelp.append(getIcon(iNumPopulation >= 20) + localText.getText("TXT_KEY_VICTORY_TOTAL_POPULATION", (iNumPopulation, 20)))
