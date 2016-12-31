@@ -650,12 +650,10 @@ class CvRFCEventHandler:
 		
 		iEra = gc.getTechInfo(iTech).getEra()
 		
-		if (utils.getScenario() == i600AD and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
+		if gc.getGame().getGameTurn() == utils.getScenarioStartTurn():
 			return
 			
-		if utils.getScenario() == i1700AD and gc.getGame().getGameTurn() == getTurnForYear(1700):
-			return
-			
+		self.up.onTechAcquired(iPlayer, iTech)
 		sta.onTechAcquired(iPlayer, iTech)
 		AIParameters.onTechAcquired(iPlayer, iTech)
 		

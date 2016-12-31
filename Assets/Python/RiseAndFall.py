@@ -240,7 +240,6 @@ class RiseAndFall:
 					break
 					
 	def initScenario(self):
-	
 		self.updateStartingPlots()
 	
 		self.adjustCityCulture()
@@ -259,6 +258,7 @@ class RiseAndFall:
 			
 		if utils.getScenario() == i600AD:
 			self.create600ADstartingUnits()
+			data.iBabylonianTechs = 4
 			
 		if utils.getScenario() == i1700AD:
 			self.create1700ADstartingUnits()
@@ -270,6 +270,7 @@ class RiseAndFall:
 				utils.setReborn(iPlayer, True)
 			
 			pChina.updateTradeRoutes()
+			data.iBabylonianTechs = 4
 		
 		self.invalidateUHVs()
 		

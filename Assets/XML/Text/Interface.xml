@@ -1633,4 +1633,9 @@
 		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Culture Level</English>
 		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Kulturstufe</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BABYLONIAN_UP</Tag>
+		<English>As the Cradle of Civilization, we can choose another free technology:</English>
+		<German>Als Wiege der Zivilisation können wir eine weitere Technologie entdecken:</German>
+	</TEXT>
 </Civ4GameText>
