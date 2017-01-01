@@ -36,6 +36,7 @@ def getStartingTechs(iPlayer):
 def initScenarioTechs(iScenario):
 	for iPlayer in range(iNumTotalPlayers):
 		if tBirth[iPlayer] > utils.getScenarioStartYear(): continue
+		if iPlayer == iSeljuks: continue
 	
 		iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 		if iCivilization in lStartingTechs[iScenario]:
