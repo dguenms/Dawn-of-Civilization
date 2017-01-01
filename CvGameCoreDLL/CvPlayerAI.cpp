@@ -4773,6 +4773,8 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										int iPotentialReligions = 0;
 										for (iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
 										{
+											if (!canFoundReligion((ReligionTypes)iJ, (TechTypes)iI)) continue;
+
 											TechTypes eReligionTech = (TechTypes)GC.getReligionInfo((ReligionTypes)iJ).getTechPrereq();
 											if (kTeam.isHasTech(eReligionTech))
 											{

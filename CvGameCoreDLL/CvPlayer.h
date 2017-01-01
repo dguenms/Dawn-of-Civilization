@@ -1247,6 +1247,8 @@ public:
 
 	bool canTradeBonus(BonusTypes eBonus) const;
 
+	bool canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered = NO_TECH) const;
+
 	bool m_bTurnPlayed;
 
 protected:
