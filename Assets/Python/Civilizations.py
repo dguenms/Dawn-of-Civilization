@@ -25,7 +25,6 @@ class Techs:
 ### Starting tech methods ###
 
 def getScenarioTechs(iScenario, iPlayer):
-
 	iCivilization = gc.getPlayer(iPlayer).getCivilizationType()
 	for iScenarioType in reversed(range(iScenario+1)):
 		if iCivilization in lStartingTechs[iScenarioType]:
