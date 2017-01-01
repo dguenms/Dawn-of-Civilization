@@ -1865,6 +1865,15 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	SAFE_DELETE_ARRAY(paiBuildingOriginalOwner);
 	SAFE_DELETE_ARRAY(paiBuildingOriginalTime);
 
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		ReligionTypes eReligion = (ReligionTypes)iI;
+		if (canFoundReligion(eReligion))
+		{
+			foundReligion(eReligion, eReligion, true);
+		}
+	}
+
 	if (bConquest)
 	{
 		//Rhye - start
@@ -5616,7 +5625,6 @@ void CvPlayer::found(int iX, int iY)
 
 	if (isBarbarian())
 	{
-
 		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE);
 
 		if (eDefenderUnit == NO_UNIT)
@@ -5631,7 +5639,6 @@ void CvPlayer::found(int iX, int iY)
 				initUnit(eDefenderUnit, iX, iY, UNITAI_CITY_DEFENSE);
 			}
 		}
-
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
@@ -5706,6 +5713,15 @@ void CvPlayer::found(int iX, int iY)
 	//Rhye - end comment
 
 	CvEventReporter::getInstance().cityBuilt(pCity);
+
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		ReligionTypes eReligion = (ReligionTypes)iI;
+		if (canFoundReligion(eReligion))
+		{
+			foundReligion(eReligion, eReligion, true);
+		}
+	}
 }
 
 
@@ -8158,8 +8174,7 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		//if (!bStarting || !(pLoopCity->isHolyCity() && getNumCities() > 1) || (eSlotReligion == PROTESTANTISM))
-		if (true)
+		if (pLoopCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE)
 		{
 			iValue = 10;
 			iValue += pLoopCity->getPopulation();
@@ -25040,4 +25055,51 @@ void CvPlayer::updateReligionYieldChange(ReligionTypes eReligion, YieldTypes eYi
 	{
 		pCity->changeReligionYieldChange(eReligion, eYield, iChange);
 	}
+}
+
+bool CvPlayer::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered) const
+{
+	if (GC.getGameINLINE().isReligionFounded(eReligion))
+	{
+		return false;
+	}
+
+	if (isBarbarian() || isMinorCiv())
+	{
+		return false;
+	}
+
+	TechTypes ePrereqTech = (TechTypes)GC.getReligionInfo(eReligion).getTechPrereq();
+
+	if (eTechDiscovered != NO_TECH)
+	{
+		if (ePrereqTech != eTechDiscovered)
+		{
+			return false;
+		}
+	}
+	else
+	{
+		if (ePrereqTech == NO_TECH)
+		{
+			return false;
+		}
+
+		if (!GET_TEAM(getTeam()).isHasTech(ePrereqTech))
+		{
+			return false;
+		}
+	}
+
+	int iLoop;
+	CvCity* pCity;
+	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		if (pCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }

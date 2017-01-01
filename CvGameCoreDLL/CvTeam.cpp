@@ -5462,7 +5462,29 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 			bReligionFounded = false;
 			bFirstBonus = false;
 
-			if (bFirst)
+			// Leoreth: new rules to found religions
+			ReligionTypes eReligion;
+			PlayerTypes eFoundingPlayer;
+			for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+			{
+				eReligion = (ReligionTypes)iI;
+
+				if (canFoundReligion(eReligion, eIndex))
+				{
+					eFoundingPlayer = getFoundingPlayer(eReligion);
+
+					if (eFoundingPlayer != NO_PLAYER)
+					{
+						GET_PLAYER(eFoundingPlayer).foundReligion(eReligion, eReligion, true);
+
+						bReligionFounded = true;
+						bFirstBonus = true;
+					}
+				}
+			}
+
+			// Leoreth: disabled both old religion and corporation founding rules
+			/*if (bFirst)
 			{
 				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1)
 				{
@@ -5551,7 +5573,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 						}
 
 						// Leoreth: don't found corporations from techs
-						/*for (iI = 0; iI < GC.getNumCorporationInfos(); ++iI)
+						for (iI = 0; iI < GC.getNumCorporationInfos(); ++iI)
 						{
 							if (GC.getCorporationInfo((CorporationTypes)iI).getTechPrereq() == eIndex)
 							{
@@ -5591,10 +5613,10 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 									}
 								}
 							}
-						}*/
+						}
 					}
 				}
-			}
+			}*/
 
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -6922,4 +6944,60 @@ bool CvTeam::canCutContact(TeamTypes eTeam)
 	}
 
 	return bResult;
+}
+
+bool CvTeam::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered) const
+{
+	int iI;
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+		{
+			if (GET_PLAYER((PlayerTypes)iI).canFoundReligion(eReligion, eTechDiscovered))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+PlayerTypes CvTeam::getFoundingPlayer(ReligionTypes eReligion) const
+{
+	int iBestValue = MAX_INT;
+	PlayerTypes eBestPlayer = NO_PLAYER;
+
+	int iValue;
+	int iI, iJ;
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			{
+				iValue = 10;
+													
+				iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Religion (Player)");
+
+				for (iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
+				{
+					iValue += (GET_PLAYER((PlayerTypes)iI).getHasReligionCount((ReligionTypes)iJ) * 10);
+				}
+
+				if (GET_PLAYER((PlayerTypes)iI).getCurrentResearch() != GC.getReligionInfo(eReligion).getTechPrereq())
+				{
+					iValue *= 10;
+				}
+
+				if (iValue < iBestValue)
+				{
+					iBestValue = iValue;
+					eBestPlayer = ((PlayerTypes)iI);
+				}
+			}
+		}
+	}
+
+	return eBestPlayer;
 }

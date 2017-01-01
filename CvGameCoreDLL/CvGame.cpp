@@ -6183,7 +6183,7 @@ void CvGame::doTurn()
 	doGlobalWarming();
 
 	//Rhye - comment this to stop religion founding
-	doHolyCity();
+	//doHolyCity();
 
 	//doHeadquarters();
 
