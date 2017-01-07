@@ -2,6 +2,7 @@ from Consts import *
 from RFCUtils import utils
 from sets import Set
 from StoredData import data
+import Victory as vic
 
 ### Class for easier tech specification ###
 
@@ -56,9 +57,7 @@ def initTechs(iPlayer, lTechs):
 	
 def initTech(iPlayer, iTech):
 	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).setHasTech(iTech, True, iPlayer, False, False)
-	
-	if data.lFirstDiscovered[iTech] == -1:
-		data.lFirstDiscovered[iTech] = iPlayer
+	vic.onTechAcquired(iPlayer, iTech)
 	
 ### General functions ###
 		
