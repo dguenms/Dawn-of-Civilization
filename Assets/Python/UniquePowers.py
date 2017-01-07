@@ -64,8 +64,6 @@ class UniquePowers:
 			self.checkImmigration()
 			
 		self.indonesianUP()
-		
-		data.bBabyloniaTechReceived = False
 					
 	def onChangeWar(self, bWar, iTeam, iOtherTeam):
 		# reset Mongol UP flags when peace is made
@@ -594,10 +592,12 @@ class UniquePowers:
 				
 	# Babylonian UP: receives a free tech after the first four techs discovered
 	def babylonianUP(self):
-		if data.iBabylonianTechs < 4 and not data.bBabyloniaTechReceived:
-			data.iBabylonianTechs += 1
-			data.bBabyloniaTechReceived = True
-		
+		iGameTurn = gc.getGame().getGameTurn()
+		utils.show("iGameTurn = "+str(iGameTurn)+"\niLastTurnFreeBabylonianTech = "+str(data.iLastTurnFreeBabylonianTech))
+		if data.iFreeBabylonianTechs < 4 and iGameTurn > data.iLastTurnFreeBabylonianTech:
+			data.iFreeBabylonianTechs += 1
+			data.iLastTurnFreeBabylonianTech = iGameTurn + 1
+
 			if pBabylonia.isHuman():
 				pBabylonia.chooseTech(1, CyTranslator().getText("TXT_KEY_BABYLONIAN_UP", ()), False)
 			else:
