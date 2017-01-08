@@ -1572,7 +1572,7 @@ bool CvDLLButtonPopup::launchChooseTechPopup(CvPopup* pPopup, CvPopupInfo &info)
 
 						CvString szButton = GC.getTechInfo((TechTypes) iI).getButton();
 
-						for (int iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
+						/*for (int iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
 						{
 							if (GC.getReligionInfo((ReligionTypes)iJ).getTechPrereq() == iI)
 							{
@@ -1582,7 +1582,7 @@ bool CvDLLButtonPopup::launchChooseTechPopup(CvPopup* pPopup, CvPopupInfo &info)
 									break;
 								}
 							}
-						}
+						}*/
 
 						gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, szButton, iI, WIDGET_RESEARCH, iI, iDiscover, true, POPUP_LAYOUT_STRETCH, DLL_FONT_LEFT_JUSTIFY);
 						iNumTechs++;
