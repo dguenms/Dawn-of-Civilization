@@ -2217,7 +2217,7 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 def getResurrectionTechs(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
 	lTechList = []
-	lSourceCivs = [iPlayer]
+	lSourceCivs = []
 	
 	# same tech group
 	for lRegionList in lTechGroups:
@@ -2236,6 +2236,8 @@ def getResurrectionTechs(iPlayer):
 	if len(lSourceCivs) == 0:
 		lSourceCivs.append(iIndependent)
 		lSourceCivs.append(iIndependent2)
+		
+	utils.show("Resurrection tech source civs for " + pPlayer.getCivilizationShortDescription(0) + ": " + str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in lSourceCivs]))
 	
 	for iTech in range(iNumTechs):
 			
@@ -2247,6 +2249,8 @@ def getResurrectionTechs(iPlayer):
 				
 		if 2 * iCount >= len(lSourceCivs):
 			lTechList.append(iTech)
+			
+	utils.show("Resurrection techs for " + pPlayer.getCivilizationShortDescription(0) + ": " + str([gc.getTechInfo(i).getText() for i in lTechList]))
 			
 	return lTechList
 	
