@@ -1013,8 +1013,9 @@ def specificName(iPlayer):
 			if isCapital(iPlayer, ["La Paz"]):
 				return "TXT_KEY_CIV_INCA_BOLIVIA"
 				
-		if not bEmpire:
-			return capitalName(iPlayer)
+		else:
+			if not bEmpire:
+				return capitalName(iPlayer)
 			
 	elif iPlayer == iItaly:
 		if not bResurrected and not bEmpire and not bCityStates:
