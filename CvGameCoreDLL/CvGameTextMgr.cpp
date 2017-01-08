@@ -9355,7 +9355,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 	UnitClassTypes eUnitClass = (UnitClassTypes)GC.getUnitInfo(eUnit).getUnitClassType();
 	UnitTypes eDefaultUnit = (UnitTypes)GC.getUnitClassInfo(eUnitClass).getDefaultUnitIndex();
 
-	if (NO_UNIT != eDefaultUnit && eDefaultUnit != eUnit)
+	if (NO_UNIT != eDefaultUnit && eDefaultUnit != eUnit && !GC.getUnitInfo(eUnit).isGraphicalOnly())
 	{
 		for (iI  = 0; iI < GC.getNumCivilizationInfos(); ++iI)
 		{

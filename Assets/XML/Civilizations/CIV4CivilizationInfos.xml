@@ -237,6 +237,10 @@
 					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
 					<UnitType>UNIT_ARGENTINE_GRENADIER_CAVALRY</UnitType>
 				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType>
+					<UnitType>UNIT_ARGENTINE_GREAT_GENERAL</UnitType>
+				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
