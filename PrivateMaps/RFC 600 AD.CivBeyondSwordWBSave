@@ -26028,6 +26028,7 @@ BeginPlot
 		CityOwner=14, (Byzantium)
 		CityName=Athinai
 		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_PAGAN_TEMPLE
 		BuildingType=BUILDING_LIBRARY
@@ -26513,6 +26514,7 @@ BeginPlot
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_STABLE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_BYZANTINE_HIPPODROME
 		BuildingType=BUILDING_MARKET
@@ -34211,6 +34213,10 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
 		Player44Culture=50, (Independent)
@@ -35069,6 +35075,7 @@ BeginPlot
 		CityPopulation=2
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
 		Player44Culture=50, (Independent)
