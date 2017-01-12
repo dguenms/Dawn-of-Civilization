@@ -1179,7 +1179,7 @@ class RFCUtils:
 		lCivList = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 		id = lCivList.index(iPlayer)
 
-		lPlotList = tTradingCompanyPlotLists[id]
+		lPlotList = tTradingCompanyPlotLists[id][:]
 
 		cityList = []
 		for tPlot in lPlotList:
