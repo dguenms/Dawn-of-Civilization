@@ -1199,6 +1199,7 @@ iCivFrance : {
 		u"Marcel Légaut", # 20th
 	],
 	iGreatArtist : [
+		u"Pérotin", # 12th
 		u"Chrétien de Troyes", # 12th
 		"fChristine de Pizan", # 15th
 		iRenaissance,
@@ -1333,6 +1334,8 @@ iCivEngland : {
 		"Francis Drake", # 16th
 		"James Cook", # 18th
 		"Adam Smith", # 18th
+		iIndustrial,
+		"Cecil Rhodes", # 19th
 		iModern,
 		"John Maynard Keynes", # 20th
 	],
