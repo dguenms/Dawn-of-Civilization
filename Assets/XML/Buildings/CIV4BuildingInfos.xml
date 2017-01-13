@@ -1899,7 +1899,7 @@
 			<Strategy>TXT_KEY_BUILDING_PAGAN_TEMPLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PAGAN_TEMPLE</ArtDefineTag>
-			<PrereqTech>TECH_WORSHIP</PrereqTech>
+			<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>30</iCost>
@@ -1933,7 +1933,7 @@
 			<Strategy>TXT_KEY_BUILDING_BABYLONIAN_ZIGGURAT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BABYLONIAN_ZIGGURAT</ArtDefineTag>
-			<PrereqTech>TECH_WORSHIP</PrereqTech>
+			<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>30</iCost>
@@ -8036,7 +8036,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_SPHINX</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<PrereqTech>TECH_WORSHIP</PrereqTech>
+			<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>

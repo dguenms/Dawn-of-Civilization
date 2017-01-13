@@ -168,9 +168,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_WORSHIP</Type>
-			<Description>TXT_KEY_TECH_WORSHIP</Description>
-			<Civilopedia>TXT_KEY_TECH_WORSHIP_PEDIA</Civilopedia>
+			<Type>TECH_MYTHOLOGY</Type>
+			<Description>TXT_KEY_TECH_MYTHOLOGY</Description>
+			<Civilopedia>TXT_KEY_TECH_MYTHOLOGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iCost>50</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -193,7 +193,7 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_CEREMONIAL_BURIAL</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_WORSHIP_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_MYTHOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Worship.dds</Button>
@@ -404,7 +404,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_AGRICULTURE</PrereqTech>
-				<PrereqTech>TECH_WORSHIP</PrereqTech>
+				<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_CEREMONY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -440,7 +440,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_WORSHIP</PrereqTech>
+				<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 				<PrereqTech>TECH_SAILING</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_DIVINATION_QUOTE</Quote>

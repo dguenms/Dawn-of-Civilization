@@ -5171,7 +5171,7 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_ALLOYS</PrereqTech>
 				<PrereqTech>TECH_LEVERAGE</PrereqTech>
-				<PrereqTech>TECH_WORSHIP</PrereqTech>
+				<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs/>
 			<bRecurring>1</bRecurring>
