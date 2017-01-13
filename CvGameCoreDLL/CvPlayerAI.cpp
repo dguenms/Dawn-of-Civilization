@@ -5043,7 +5043,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case HARAPPA:
 									if (iI == MASONRY || iI == PASTORALISM || iI == POTTERY)
 										iValue *= 2;
-									if (iI == WORSHIP || iI == DIVINATION || iI == CEREMONY)
+									if (iI == MYTHOLOGY || iI == DIVINATION || iI == CEREMONY)
 										iValue /= 5;
 								case GREECE:
 									if (iI == THEOLOGY)

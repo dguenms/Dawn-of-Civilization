@@ -1480,7 +1480,7 @@ lProtestantStart = [iNetherlands, iGermany, iAmerica]
 # initialise tech variables to unit indices from XML
 
 iNumTechs = 141
-(iTanning, iMining, iPottery, iPastoralism, iAgriculture, iWorship, iSailing,
+(iTanning, iMining, iPottery, iPastoralism, iAgriculture, iMythology, iSailing,
 iSmelting, iMasonry, iLeverage, iProperty, iCeremony, iDivination, iSeafaring,
 iAlloys, iConstruction, iRiding, iArithmetics, iWriting, iCalendar, iShipbuilding,
 iBloomery, iMetalCasting, iGeometry, iContract, iTradition, iPriesthood, iNavigation,
