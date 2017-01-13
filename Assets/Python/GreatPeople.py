@@ -1214,7 +1214,9 @@ iCivFrance : {
 		"Claude Debussy", # 19th
 		"fGeorge Sand", # 19th
 		"Alexandre Dumas", # 19th
+		"Auguste Rodin", # 19th
 		iModern,
+		"Marcel Proust", # 20th
 		u"fÉdith Piaf", # 20th
 	],
 	iGreatScientist : [
@@ -1237,7 +1239,8 @@ iCivFrance : {
 		"Samuel de Champlain", # 17th
 		u"fThérèse de Couagne", # 18th
 		iIndustrial,
-		"Frédéric Bastiat", #18th
+		"Frédéric Bastiat", # 18th
+		"Ferdinand de Lesseps", # 19th
 		iModern,
 		"fCoco Chanel", # 20th
 		"Marcel Dessault", # 20th
@@ -1246,11 +1249,15 @@ iCivFrance : {
 		"Jules Hardouin Mansart", # 17th
 		"Blaise Pascal", # 17th
 		"Claude Perrault", # 17th
-		"Charles Augustin Coulomb", # 18th
+		"Charles-Augustin Coulomb", # 18th
 		"Joseph-Michel Montgolfier", # 18th
 		iIndustrial,
+		"Joseph Marie Jacquard", # 18th
+		"Louis Daguerre", # 19th
+		"Norbert Rillieux", # 19th
 		"Alexandre Gustave Eiffel", # 19th
 		iModern,
+		u"Louis Lumière", # 20th
 		"fMarie Marvingt", # 20th
 	],
 	iGreatStatesman : [
@@ -1333,6 +1340,7 @@ iCivEngland : {
 		"Christopher Wren", # 17th
 		"James Watt", # 18th
 		iIndustrial,
+		"Isambard Kingdom Brunel", # 19th
 		"Henry Bessemer", # 19th
 		"Charles Babbage", # 19th
 		"fAda Lovelace", # 19th
@@ -1453,6 +1461,7 @@ iCivGermany : {
 		u"Otto der Große", # 10th
 		iRenaissance,
 		"Albrecht von Wallenstein", # 17th
+		"Eugen von Savoyen", # 17th
 		u"Gebhard Leberecht von Blücher", # 18th
 		iIndustrial,
 		"Carl von Clausewitz", # 19th
