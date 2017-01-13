@@ -40,28 +40,30 @@ tMinorCities = (
 (633, (96, 43), iBarbarian, 'Rasa', 2, iKhampa, 1),		# Lhasa
 (680, (51, 37), iIndependent, 'Marrakus', 1, iCrossbowman, 1),	# Marrakesh
 (700, (30, 20), iNative, 'Tiwanaku', 1, -1, -1),			# Tihuanaco
-(800, tVienna, iIndependent, 'Vindobona', 1, iLongbowman, 1),	# Wien
+(800, tVienna, iIndependent, 'Vindobona', 1, iCrossbowman, 1),	# Wien
 (830, (59, 54), iIndependent, 'Hamburg', 2, iCrossbowman, 1),	# Hamburg
 (830, (60, 54), iIndependent, 'L&#252;beck', 2, iCrossbowman, 1),	# Lübeck
 (866, (101, 37), iBarbarian, 'Hanoi', 2, -1, -1),			# Hanoi
 (880, (65, 48), iIndependent2, 'Buda', 3, iHorseArcher, 5),		# Budapest
 (900, (24, 26), iNative, 'Tucume', 1, iArcher, 2),			# Tucume
 (900, (25, 23), iNative, 'Chan Chan', 2, iArcher, 2),		# Chan Chan
-(900, (69, 52), iIndependent, 'Kyiv', 2, iLongbowman, 2),		# Kiev
+(900, (69, 52), iIndependent, 'Kyiv', 2, iCrossbowman, 2),		# Kiev
 (990, (49, 56), iCeltia, '&#193;th Cliath', 1, -1, -1),			# Dublin
 (1000, (61, 63), iIndependent2, 'Nidaros', 1, iHuscarl, 1),	# Trondheim
 (1000, (71, 17), iNative, 'Quelimane', 1, iImpi, 1),		# Quelimane
 (1100, (71, 20), iNative, 'Mombasa', 1, iImpi, 1),		# Mombasa
 (1200, (77, 55), iBarbarian, 'Qazan', 2, iHorseArcher, 1),		# Kazan
-(1400, (104, 33), iIndependent, 'Saigon', 5, iLongbowman, 3),	# Saigon
+(1400, (104, 33), iIndependent, 'Saigon', 5, iCrossbowman, 3),	# Saigon
 (1483, (62, 20), iNative, 'Mbanza Kongo', 1, iPombos, 1),	# Mbanza Kongo
 )
 
 # do some research on dates here
 tMinorStates = (
 	(633, 1400, 96, 43, [iArcher, iSwordsman]),	# Tibet
-	(-75, 1600, 89, 46, [iHorseArcher]),		# Kashgar
-	(-75, 1600, 85, 47, [iHorseArcher]),		# Samarkand
+	(-75, 600, 89, 46, [iHorseman]),		# Kashgar early
+	(600, 1600, 89, 46, [iHorseArcher]),		# Kashgar late
+	(-75, 600, 85, 47, [iHorseman]),		# Samarkand early
+	(600, 1600, 85, 47, [iHorseArcher]),		# Samarkand late
 	(-300, 600, 91, 31, [iArcher, iSwordsman, iWarElephant]), # Chola
 	(-300, 600, 92, 33, [iArcher, iSwordsman, iWarElephant]), # Chola
 	(-300, 900, 105, 49, [iHorseArcher, iSwordsman]), # Jurchen
@@ -113,7 +115,7 @@ class Barbs:
 			
 		#mongolia
 		if (iGameTurn >= getTurnForYear(-210) and iGameTurn < getTurnForYear(300)):
-			self.checkSpawn(iBarbarian, iHorseArcher, 3 + iHandicap, (94, 48), (107, 54), self.spawnNomads, iGameTurn, 8-iHandicap, 0, ["TXT_KEY_ADJECTIVE_XIONGNU"])
+			self.checkSpawn(iBarbarian, iHorseman, 3 + iHandicap, (94, 48), (107, 54), self.spawnNomads, iGameTurn, 8-iHandicap, 0, ["TXT_KEY_ADJECTIVE_XIONGNU"])
 		if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(900)):
 			iNumUnits = 2 + iHandicap
 			self.checkSpawn(iBarbarian, iHorseArcher, iNumUnits, (91, 50), (107, 54), self.spawnNomads, iGameTurn, 7-iHandicap, 0, ["TXT_KEY_ADJECTIVE_GOKTURK", "TXT_KEY_ADJECTIVE_UIGHUR"])
@@ -122,7 +124,9 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iKeshik, iNumUnits, (94, 48), (107, 54), self.spawnInvaders, iGameTurn, 6, 0, ["TXT_KEY_ADJECTIVE_JURCHEN", "TXT_KEY_ADJECTIVE_KHITAN"])
 			
 		#tibet
-		if (iGameTurn >= getTurnForYear(-350) and iGameTurn <= getTurnForYear(1100)):
+		if (iGameTurn >= getTurnForYear(-350) and iGameTurn < getTurnForYear(200)):
+			self.checkSpawn(iBarbarian, iLightSwordsman, 1 + iHandicap, (92, 41), (99, 45), self.spawnMinors, iGameTurn, 10-iHandicap, 3, ["TXT_KEY_ADJECTIVE_TIBETAN"])
+		if (iGameTurn >= getTurnForYear(200) and iGameTurn <= getTurnForYear(1100)):
 			self.checkSpawn(iBarbarian, iSwordsman, 1 + iHandicap, (92, 41), (99, 45), self.spawnMinors, iGameTurn, 10-iHandicap, 3, ["TXT_KEY_ADJECTIVE_TIBETAN"])
 
 		# Deccan barbarians
@@ -141,7 +145,7 @@ class Barbs:
 
 		#Indo-Scythians
 		if iGameTurn >= getTurnForYear(-200) and iGameTurn <= getTurnForYear(400):
-			self.checkSpawn(iBarbarian, iHorseArcher, 2, (84, 40), (89, 43), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_INDO_SCYTHIAN"])
+			self.checkSpawn(iBarbarian, iHorseman, 2, (84, 40), (89, 43), self.spawnNomads, iGameTurn, 8-iHandicap, 4, ["TXT_KEY_ADJECTIVE_INDO_SCYTHIAN"])
 
 		#Kushana
 		if iGameTurn >= getTurnForYear(30) and iGameTurn <= getTurnForYear(220):
@@ -203,7 +207,7 @@ class Barbs:
 			self.checkSpawn(iBarbarian, iVulture, 1, (74, 34), (78, 44), self.spawnNomads, iGameTurn, 6-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
 		if (iGameTurn >= getTurnForYear(-850) and iGameTurn < getTurnForYear(300)):
 			self.checkSpawn(iBarbarian, iVulture, 1, (73, 38), (78, 44), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_ASSYRIAN"])
-			self.checkSpawn(iBarbarian, iHorseArcher, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
+			self.checkSpawn(iBarbarian, iHorseman, 2 + iHandicap, (79, 41), (84, 49), self.spawnInvaders, iGameTurn, 7-iHandicap, 2, ["TXT_KEY_ADJECTIVE_PARTHIAN"])
 		if (iGameTurn >= getTurnForYear(300) and iGameTurn <= getTurnForYear(700)):
 			#if utils.getScenario() == i3000BC:  #late start condition
 			self.checkSpawn(iBarbarian, iHorseArcher, 2 + iHandicap, (78, 42), (88, 50), self.spawnNomads, iGameTurn, 8-iHandicap, 2, ["TXT_KEY_ADJECTIVE_TURKIC"])
