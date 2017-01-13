@@ -833,9 +833,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_GEOMETRY</Type>
-			<Description>TXT_KEY_TECH_GEOMETRY</Description>
-			<Civilopedia>TXT_KEY_TECH_GEOMETRY_PEDIA</Civilopedia>
+			<Type>TECH_MATHEMATICS</Type>
+			<Description>TXT_KEY_TECH_MATHEMATICS</Description>
+			<Civilopedia>TXT_KEY_TECH_MATHEMATICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -863,7 +863,7 @@
 				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 				<PrereqTech>TECH_ARITHMETICS</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_GEOMETRY_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_MATHEMATICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Geometry.dds</Button>
@@ -1090,7 +1090,7 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_ENGINEERING_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -1125,7 +1125,7 @@
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_AESTHETICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -1155,7 +1155,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_CURRENCY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>

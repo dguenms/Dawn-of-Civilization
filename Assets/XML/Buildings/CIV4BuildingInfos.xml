@@ -8249,7 +8249,7 @@
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
 			<TechTypes>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			</TechTypes>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
@@ -8660,7 +8660,7 @@
 			<MovieDefineTag>ART_DEF_MOVIE_PARTHENON</MovieDefineTag>
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<PrereqTech>TECH_GEOMETRY</PrereqTech>
+			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<CivicOption>CIVICOPTION_GOVERNMENT</CivicOption>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>

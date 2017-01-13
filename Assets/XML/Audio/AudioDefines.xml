@@ -8526,8 +8526,8 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>SND_TECH_GEOMETRY</SoundID>
-			<Filename>Sounds/Tech/TECH_GEOMETRY</Filename>
+			<SoundID>SND_TECH_MATHEMATICS</SoundID>
+			<Filename>Sounds/Tech/TECH_MATHEMATICS</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

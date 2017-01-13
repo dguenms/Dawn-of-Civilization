@@ -2064,7 +2064,7 @@ def canTriggerTheGoths(argsList):
 			
 #   At least one civ on the board must know Mathematics.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_GEOMETRY')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_MATHEMATICS')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():

@@ -274,7 +274,7 @@
 		<English>[COLOR_TECH_TEXT]Mass Media[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] Building, [COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT], the [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Public Welfare[COLOR_REVERT] Civic.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_GEOMETRY_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_MATHEMATICS_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] Building, allows the construction of the [COLOR_HIGHLIGHT_TEXT]Fort[COLOR_REVERT] Improvement and allows you to train [COLOR_UNIT_TEXT]Catapults[COLOR_REVERT]. It also increases the production gained from chopping forests. The first player to discover [COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>

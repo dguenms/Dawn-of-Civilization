@@ -195,7 +195,7 @@ tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50))
 dTechGoals = {
 	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
 	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
-	iGreece: (0, [iGeometry, iTradition, iAesthetics, iPhilosophy, iMedicine]),
+	iGreece: (0, [iMathematics, iTradition, iAesthetics, iPhilosophy, iMedicine]),
 	iRome: (2, [iArchitecture, iPolitics, iMachinery, iCivilService, iTheology]),
 	iKorea: (1, [iPrinting]),
 	iPoland: (1, [iCivilLiberties]),
@@ -3079,12 +3079,12 @@ def getUHVHelp(iPlayer, iGoal):
 
 	elif iPlayer == iGreece:
 		if iGoal == 0:
-			bGeometry = data.lFirstDiscovered[iGeometry] == iGreece
+			bGeometry = data.lFirstDiscovered[iMathematics] == iGreece
 			bTradition = data.lFirstDiscovered[iTradition] == iGreece
 			bAesthetics = data.lFirstDiscovered[iAesthetics] == iGreece
 			bPhilosophy = data.lFirstDiscovered[iPhilosophy] == iGreece
 			bMedicine = data.lFirstDiscovered[iMedicine] == iGreece
-			aHelp.append(getIcon(bGeometry) + localText.getText("TXT_KEY_TECH_GEOMETRY", ()) + ' ' + getIcon(bTradition) + localText.getText("TXT_KEY_TECH_TRADITION", ()) + ' ' + getIcon(bAesthetics) + localText.getText("TXT_KEY_TECH_AESTHETICS", ()))
+			aHelp.append(getIcon(bGeometry) + localText.getText("TXT_KEY_TECH_MATHEMATICS", ()) + ' ' + getIcon(bTradition) + localText.getText("TXT_KEY_TECH_TRADITION", ()) + ' ' + getIcon(bAesthetics) + localText.getText("TXT_KEY_TECH_AESTHETICS", ()))
 			aHelp.append(getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()) + ' ' + getIcon(bMedicine) + localText.getText("TXT_KEY_TECH_MEDICINE", ()))
 		elif iGoal == 1:
 			bOracle = (getNumBuildings(iGreece, iOracle) > 0)
