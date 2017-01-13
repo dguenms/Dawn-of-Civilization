@@ -5037,7 +5037,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									if (iI == MASONRY || iI == PROPERTY || iI == DIVINATION || iI == CONSTRUCTION)
 										iValue *= 2;
-									if (iI == GEOMETRY || iI == ALLOYS || iI == BLOOMERY || iI == STEEL)
+									if (iI == MATHEMATICS || iI == ALLOYS || iI == BLOOMERY || iI == STEEL)
 										iValue /= 3;
 									break;
 								case HARAPPA:
@@ -5057,7 +5057,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									if (iI == SAILING || iI == SHIPBUILDING || iI == NAVIGATION)
 										iValue *= 4;
-									if (iI == ARITHMETICS || iI == GEOMETRY)
+									if (iI == ARITHMETICS || iI == MATHEMATICS)
 										iValue *= 2;
 									if (iI == CALENDAR)
 										iValue /= 3;

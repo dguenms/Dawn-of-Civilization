@@ -9154,7 +9154,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_GEOMETRY</PrereqTech>
+			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<iCost>75</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -9244,7 +9244,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_GEOMETRY</PrereqTech>
+			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<iCost>75</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>

@@ -382,7 +382,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -1101,7 +1101,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -2950,7 +2950,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -3397,7 +3397,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -3486,7 +3486,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -3664,7 +3664,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -3782,7 +3782,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -3871,7 +3871,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -9963,7 +9963,7 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -14253,7 +14253,7 @@
 			<ObsoleteTechs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -14344,7 +14344,7 @@
 			<ObsoleteTechs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
 				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
-				<PrereqTech>TECH_GEOMETRY</PrereqTech>
+				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>

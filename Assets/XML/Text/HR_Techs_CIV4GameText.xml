@@ -989,11 +989,11 @@ Understanding geology helps us understand where to find mineral resources, and h
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_GEOMETRY</Tag>
-		<English>Geometry</English>
+		<Tag>TXT_KEY_TECH_MATHEMATICS</Tag>
+		<English>Mathematics</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_GEOMETRY_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_MATHEMATICS_QUOTE</Tag>
 		<English>"If in other sciences we should arrive at certainty without doubt and truth without error, it behooves us to place the foundations of knowledge in mathematics."[PARAGRAPH:2]- Roger Bacon</English>
 	</TEXT>
 
