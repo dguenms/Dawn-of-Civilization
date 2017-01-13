@@ -658,6 +658,10 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 					if iStart <= gc.getGame().getGameTurnYear() <= iEnd:
 						bPossible = True
 						break
+						
+				# make respawns on collapse more likely
+				if tBirth[iLoopPlayer] <= gc.getGame().getGameTurnYear() <= tFall[iLoopPlayer]:
+					bPossible = True
 				
 				if bPossible:
 					if iLoopPlayer in dPossibleResurrections:
