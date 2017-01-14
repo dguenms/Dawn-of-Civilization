@@ -3858,7 +3858,7 @@
 			<Strategy/>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COFFEEHOUSE</ArtDefineTag>
-			<PrereqTech>TECH_URBANISM</PrereqTech>
+			<PrereqTech>TECH_COMPANIES</PrereqTech>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3919,7 +3919,7 @@
 			<Strategy/>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FRENCH_SALON</ArtDefineTag>
-			<PrereqTech>TECH_URBANISM</PrereqTech>
+			<PrereqTech>TECH_COMPANIES</PrereqTech>
 			<bNukeImmune>1</bNukeImmune>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>

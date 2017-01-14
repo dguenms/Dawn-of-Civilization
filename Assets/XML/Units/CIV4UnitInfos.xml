@@ -3098,7 +3098,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_URBANISM</PrereqTech>
+			<PrereqTech>TECH_COMPANIES</PrereqTech>
 			<BonusType>BONUS_IRON</BonusType>
 			<iCost>80</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3184,7 +3184,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_URBANISM</PrereqTech>
+			<PrereqTech>TECH_COMPANIES</PrereqTech>
 			<BonusType>BONUS_IRON</BonusType>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>

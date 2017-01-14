@@ -888,8 +888,8 @@
 			<Civilopedia>TXT_KEY_BONUS_COFFEE_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COFFEE</ArtDefineTag>
-			<TechReveal>TECH_URBANISM</TechReveal>
-			<TechCityTrade>TECH_URBANISM</TechCityTrade>
+			<TechReveal>TECH_COMPANIES</TechReveal>
+			<TechCityTrade>TECH_COMPANIES</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
