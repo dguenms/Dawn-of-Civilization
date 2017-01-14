@@ -897,7 +897,7 @@
 			<Strategy/>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PARK</ArtDefineTag>
-			<PrereqTech>TECH_SOCIAL_SCIENCES</PrereqTech>
+			<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -7891,7 +7891,7 @@
 			<Strategy/>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MILITARY_ACADEMY</ArtDefineTag>
-			<PrereqTech>TECH_SOCIAL_SCIENCES</PrereqTech>
+			<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
 			<FreePromotion>PROMOTION_LEADERSHIP</FreePromotion>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>

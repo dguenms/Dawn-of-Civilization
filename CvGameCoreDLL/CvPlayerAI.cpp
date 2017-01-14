@@ -5209,7 +5209,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case FRANCE:
 									if (iI == EXPLORATION || iI == GEOGRAPHY || iI == ECONOMICS || iI == PATRONAGE || iI == MEASUREMENT)
 										iValue *= 2;
-									if (iI == LITERATURE || iI == GUILDS || iI == CHEMISTRY) {
+									if (iI == LITERATURE || iI == FEUDALISM || iI == CHEMISTRY || iI == SOCIOLOGY) {
 										iValue *= 3;
 										iValue /= 2;
 									}
@@ -5343,7 +5343,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									break;
 								case GERMANY:
-									if (iI == ENGINE || iI == INFRASTRUCTURE || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == PSYCHOLOGY)
+									if (iI == ENGINE || iI == INFRASTRUCTURE || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == PSYCHOLOGY || iI == SOCIOLOGY)
 										iValue *= 2;
 									if (iI == FISSION)
 									{

@@ -3074,9 +3074,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_SOCIAL_SCIENCES</Type>
-			<Description>TXT_KEY_TECH_SOCIAL_SCIENCES</Description>
-			<Civilopedia>TXT_KEY_TECH_SOCIAL_SCIENCES_PEDIA</Civilopedia>
+			<Type>TECH_SOCIOLOGY</Type>
+			<Description>TXT_KEY_TECH_SOCIOLOGY</Description>
+			<Civilopedia>TXT_KEY_TECH_SOCIOLOGY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>1600</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3106,7 +3106,7 @@
 				<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
 				<PrereqTech>TECH_CIVIL_LIBERTIES</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_SOCIAL_SCIENCES_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_SOCIOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Social_Sciences.dds</Button>
@@ -3321,7 +3321,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_MEASUREMENT</PrereqTech>
-				<PrereqTech>TECH_SOCIAL_SCIENCES</PrereqTech>
+				<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_BIOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -3357,7 +3357,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_SOCIAL_SCIENCES</PrereqTech>
+				<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
 				<PrereqTech>TECH_CONSTITUTION</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_REPRESENTATION_QUOTE</Quote>
