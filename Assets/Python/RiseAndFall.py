@@ -1790,7 +1790,7 @@ class RiseAndFall:
 		teamCiv = gc.getTeam(pCiv.getTeam())
 		
 		if pCiv.isAlive() and utils.getHumanID() != iCiv:
-			if teamCiv.isHasTech(iAstronomy) and data.players[iCiv].iColonistsAlreadyGiven < tMaxColonists[iCiv]:
+			if teamCiv.isHasTech(iGeography) and data.players[iCiv].iColonistsAlreadyGiven < tMaxColonists[iCiv]:
 				lCities = utils.getAreaCitiesCiv(iCiv, Areas.getCoreArea(iCiv))
 				
 				# help England with settling Canada and Australia

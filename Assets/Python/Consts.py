@@ -1490,7 +1490,7 @@ iFeudalism, iFortification, iMachinery, iAlchemy, iGuilds, iCivilService, iTheol
 iCharter, iCropRotation, iPaper, iCompass, iPatronage, iLiterature, iClergy,
 iGunpowder, iCompanies, iFinance, iCartography, iEducation, iPrinting, iJudiciary,
 iFirearms, iEconomics, iExploration, iOptics, iHumanities, iStatecraft, iHeritage,
-iLogistics, iCorporation, iAstronomy, iScientificMethod, iUrbanPlanning, iCivilLiberties, iHorticulture,
+iLogistics, iCorporation, iGeography, iScientificMethod, iUrbanPlanning, iCivilLiberties, iHorticulture,
 iReplaceableParts, iHydraulics, iPhysics, iGeology, iMeasurement, iSocialSciences, iConstitution,
 iMachineTools, iThermodynamics, iMetallurgy, iChemistry, iBiology, iRepresentation, iNationalism,
 iBallistics, iEngine, iRailroad, iElectricity, iRefrigeration, iLabourUnions, iJournalism,

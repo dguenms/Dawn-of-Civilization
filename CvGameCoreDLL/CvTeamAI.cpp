@@ -2063,7 +2063,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 				return DENIAL_TOO_FAR;
 			}
             // edead: do not allow far away vassals
-            // Leoreth: only before Astronomy
+            // Leoreth: only before Exploration
 			if (!kMasterTeam.isHasTech((TechTypes)EXPLORATION) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
 			{
 				return DENIAL_TOO_FAR;
