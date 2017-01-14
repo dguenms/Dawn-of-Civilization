@@ -2,6 +2,11 @@
 <Civ4GameText xmlns="http://www.firaxis.com">
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_ACADEMIA</Tag>
+		<English>Academia</English>
+	</TEXT>
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_AERODYNAMICS</Tag>
 		<English>Aerodynamics</English>
 	</TEXT>
@@ -2242,21 +2247,6 @@ The next great advance, mobile telephony, came in the 1970s and '80s, reaching m
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TOURISM_PEDIA</Tag>
 		<English>Needs to be written</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_TRADITION</Tag>
-		<English>Tradition</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_TRADITION_QUOTE</Tag>
-		<English>"Be a craftsman in speech that thou mayest be strong, for the strength of one is the tongue, and speech is mightier than all fighting."[PARAGRAPH:2]- Ptahhotep</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_TRADITION_PEDIA</Tag>
-		<English>Needs to be written.</English>
 	</TEXT>
 
 

@@ -2430,7 +2430,7 @@
 			<Strategy>TXT_KEY_BUILDING_UNIVERSITY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_UNIVERSITY</ArtDefineTag>
-			<PrereqTech>TECH_EDUCATION</PrereqTech>
+			<PrereqTech>TECH_ACADEMIA</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2800,7 +2800,7 @@
 			<Strategy>TXT_KEY_BUILDING_THEATRE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_THEATRE</ArtDefineTag>
-			<PrereqTech>TECH_TRADITION</PrereqTech>
+			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>50</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2844,7 +2844,7 @@
 			<Strategy>TXT_KEY_BUILDING_GREEK_ODEON_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREEK_ODEON</ArtDefineTag>
-			<PrereqTech>TECH_TRADITION</PrereqTech>
+			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>50</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2893,7 +2893,7 @@
 			<Strategy>TXT_KEY_BUILDING_BYZANTINE_HIPPODROME_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BYZANTINE_HIPPODROME</ArtDefineTag>
-			<PrereqTech>TECH_TRADITION</PrereqTech>
+			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>50</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2944,7 +2944,7 @@
 			<Strategy>TXT_KEY_BUILDING_CHINESE_PAVILLION_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CHINESE_PAVILLION</ArtDefineTag>
-			<PrereqTech>TECH_TRADITION</PrereqTech>
+			<PrereqTech>TECH_LITERATURE</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>50</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -7469,7 +7469,7 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_THEATRE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_NATIONAL_THEATRE</MovieDefineTag>
-			<PrereqTech>TECH_LITERATURE</PrereqTech>
+			<PrereqTech>TECH_HUMANITIES</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iAIWeight>-50</iAIWeight>
@@ -7674,7 +7674,7 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_COLLEGE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_NATIONAL_COLLEGE</MovieDefineTag>
-			<PrereqTech>TECH_HUMANITIES</PrereqTech>
+			<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>600</iCost>
@@ -9833,7 +9833,7 @@
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<PrereqTech>TECH_LITERATURE</PrereqTech>
+			<PrereqTech>TECH_HUMANITIES</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -10240,7 +10240,7 @@
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
-			<PrereqTech>TECH_PAPER</PrereqTech>
+			<PrereqTech>TECH_EDUCATION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -10296,7 +10296,7 @@
 			<StateReligion>RELIGION_ISLAM</StateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
-			<PrereqTech>TECH_HUMANITIES</PrereqTech>
+			<PrereqTech>TECH_ACADEMIA</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
