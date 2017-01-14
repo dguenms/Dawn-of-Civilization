@@ -918,9 +918,9 @@
 		</TechInfo>
 		
 		<TechInfo>
-			<Type>TECH_TRADITION</Type>
-			<Description>TXT_KEY_TECH_TRADITION</Description>
-			<Civilopedia>TXT_KEY_TECH_TRADITION_PEDIA</Civilopedia>
+			<Type>TECH_LITERATURE</Type>
+			<Description>TXT_KEY_TECH_LITERATURE</Description>
+			<Civilopedia>TXT_KEY_TECH_LITERATURE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -953,10 +953,10 @@
 				<PrereqTech>TECH_ARITHMETICS</PrereqTech>
 				<PrereqTech>TECH_WRITING</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_TRADITION_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_LITERATURE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Tradition.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,3</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Education.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,10</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -1192,7 +1192,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_CONTRACT</PrereqTech>
-				<PrereqTech>TECH_TRADITION</PrereqTech>
+				<PrereqTech>TECH_LITERATURE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_LAW_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -1228,7 +1228,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_TRADITION</PrereqTech>
+				<PrereqTech>TECH_LITERATURE</PrereqTech>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_PHILOSOPHY_QUOTE</Quote>
@@ -2009,11 +2009,11 @@
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Patronage.dds</Button>
 		</TechInfo>
-
+		
 		<TechInfo>
-			<Type>TECH_LITERATURE</Type>
-			<Description>TXT_KEY_TECH_LITERATURE</Description>
-			<Civilopedia>TXT_KEY_TECH_LITERATURE_PEDIA</Civilopedia>
+			<Type>TECH_EDUCATION</Type>
+			<Description>TXT_KEY_TECH_EDUCATION</Description>
+			<Civilopedia>TXT_KEY_TECH_EDUCATION_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iCost>720</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2039,10 +2039,10 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_LITERATURE_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_EDUCATION_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Literature.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,10</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Education.dds,Art/Interface/Buttons/TechTree_Atlas.dds,5,3</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2222,9 +2222,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_EDUCATION</Type>
-			<Description>TXT_KEY_TECH_EDUCATION</Description>
-			<Civilopedia>TXT_KEY_TECH_EDUCATION_PEDIA</Civilopedia>
+			<Type>TECH_HUMANITIES</Type>
+			<Description>TXT_KEY_TECH_HUMANITIES</Description>
+			<Civilopedia>TXT_KEY_TECH_HUMANITIES_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iCost>900</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2261,12 +2261,12 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_PATRONAGE</PrereqTech>
-				<PrereqTech>TECH_LITERATURE</PrereqTech>
+				<PrereqTech>TECH_EDUCATION</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_EDUCATION_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_HUMANITIES_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Education.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Humanities.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2305,7 +2305,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_LITERATURE</PrereqTech>
+				<PrereqTech>TECH_EDUCATION</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_PRINTING_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2341,7 +2341,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_LITERATURE</PrereqTech>
+				<PrereqTech>TECH_EDUCATION</PrereqTech>
 				<PrereqTech>TECH_CLERGY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_JUDICIARY_QUOTE</Quote>
@@ -2491,7 +2491,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_CARTOGRAPHY</PrereqTech>
-				<PrereqTech>TECH_EDUCATION</PrereqTech>
+				<PrereqTech>TECH_HUMANITIES</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_OPTICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2500,9 +2500,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_HUMANITIES</Type>
-			<Description>TXT_KEY_TECH_HUMANITIES</Description>
-			<Civilopedia>TXT_KEY_TECH_HUMANITIES_PEDIA</Civilopedia>
+			<Type>TECH_ACADEMIA</Type>
+			<Description>TXT_KEY_TECH_ACADEMIA</Description>
+			<Civilopedia>TXT_KEY_TECH_ACADEMIA_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<iCost>1000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2527,13 +2527,13 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_EDUCATION</PrereqTech>
+				<PrereqTech>TECH_HUMANITIES</PrereqTech>
 				<PrereqTech>TECH_PRINTING</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_HUMANITIES_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_ACADEMIA_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Humanities.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Academia.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2608,7 +2608,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_COMPANIES</PrereqTech>
+				<PrereqTech>TECH_HUMANITIES</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_JUDICIARY</PrereqTech>
@@ -2755,7 +2755,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_OPTICS</PrereqTech>
-				<PrereqTech>TECH_HUMANITIES</PrereqTech>
+				<PrereqTech>TECH_ACADEMIA</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_SCIENTIFIC_METHOD_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2802,7 +2802,8 @@
 				<PrereqTech>TECH_FIREARMS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_HUMANITIES</PrereqTech>
+				<PrereqTech>TECH_ACADEMIA</PrereqTech>
+				<PrereqTech>TECH_STATECRAFT</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_URBAN_PLANNING_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2841,8 +2842,10 @@
 					<iFlavor>1</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_COMPANIES</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_HUMANITIES</PrereqTech>
 				<PrereqTech>TECH_STATECRAFT</PrereqTech>
 				<PrereqTech>TECH_HERITAGE</PrereqTech>
 			</AndPreReqs>

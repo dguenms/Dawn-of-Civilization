@@ -3120,7 +3120,7 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_TRADITION</PrereqTech>
+				<PrereqTech>TECH_LITERATURE</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -6023,7 +6023,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -6204,7 +6204,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -7926,7 +7926,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -8191,7 +8191,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -9058,7 +9058,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -9424,7 +9424,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -9512,7 +9512,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -9600,7 +9600,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -9688,7 +9688,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -9776,7 +9776,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -9975,7 +9975,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -10061,7 +10061,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</OrPreReqs>
@@ -11290,7 +11290,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -11384,7 +11384,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -11650,7 +11650,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -11744,7 +11744,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -11832,7 +11832,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -11926,7 +11926,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -12792,7 +12792,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</OrPreReqs>
@@ -13741,7 +13741,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</OrPreReqs>
@@ -13830,7 +13830,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</OrPreReqs>
@@ -13919,7 +13919,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</OrPreReqs>
@@ -14613,7 +14613,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>
@@ -14704,7 +14704,7 @@
 				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
+				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
 				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
 				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
 			</ObsoleteTechs>

@@ -37,7 +37,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_CITY_STATES_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Buildings/Market.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,3</Button>
-			<TechPrereq>TECH_TRADITION</TechPrereq>
+			<TechPrereq>TECH_LITERATURE</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iNumCitiesMaintenanceModifier>100</iNumCitiesMaintenanceModifier>
@@ -688,7 +688,7 @@
 			<Strategy>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Strategy>
 			<Help>TXT_KEY_CIVIC_SECULARISM_HELP</Help>
 			<Button>,Art/Interface/Buttons/Civics/Free_Religion.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,3</Button>
-			<TechPrereq>TECH_HUMANITIES</TechPrereq>
+			<TechPrereq>TECH_CIVIL_LIBERTIES</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<bStateReligion>0</bStateReligion>
@@ -758,7 +758,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_STANDING_ARMY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/TechTree/Military Tradition.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,5</Button>
-			<TechPrereq>TECH_COMBINED_ARMS</TechPrereq>
+			<TechPrereq>TECH_LOGISTICS</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<BuildingProductionModifiers>
