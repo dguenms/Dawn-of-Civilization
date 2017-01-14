@@ -300,7 +300,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_CAPITALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CAPITALISM_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,9</Button>
-			<TechPrereq>TECH_CORPORATION</TechPrereq>
+			<TechPrereq>TECH_CIVIL_LIBERTIES</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<YieldModifiers>
@@ -758,7 +758,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_STANDING_ARMY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_STANDING_ARMY_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/TechTree/Military Tradition.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,5</Button>
-			<TechPrereq>TECH_LOGISTICS</TechPrereq>
+			<TechPrereq>TECH_COMBINED_ARMS</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<BuildingProductionModifiers>

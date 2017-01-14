@@ -461,6 +461,13 @@ The concept of points of dogma that a society will not tolerate violation of is 
 
 
 	<TEXT>
+		<Tag>TXT_KEY_TECH_COMBINED_ARMS</Tag>
+		<English>Combined Arms</English>
+	</TEXT>
+
+
+
+	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINE</Tag>
 		<English>Engine</English>
 	</TEXT>
@@ -549,17 +556,6 @@ This pattern seems to have persisted through the early days of civilization, wit
 However, as the amount of surplus available to large civilizations grew and the techniques for recording inventories and contracts improved, a new type of labor relationship emerged - that of the employee. Instead of working directly to produce goods for their own consumption, or being used as a form of property to produce goods for another, an employee works on behalf of another in exchange for some regular, agreed-upon form of compensation, such as food, shelter, money, or a combination of the above.
 
 This kind of labor is much more flexible than subsistence labor. An employee can be paid to do things that would not allow them to provide for themselves directly (a construction worker cannot eat the buildings he creates), or to improve the productivity of a large-scale enterprise (a clerk would be useless working alone, but is valuable when working for a large organization). It is also much more efficient than slavery. Unlike slaves, employees can be obtained cheaply, need not be policed to prevent escapes, and have no particular reason to resent the person they work for which might lead them to cheat, steal, or simply slow down on the job.</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CORPORATION</Tag>
-		<English>Corporation</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CORPORATION_QUOTE</Tag>
-		<English>"Corporation: An ingenious device for obtaining individual profit without individual responsibility."[PARAGRAPH:2]- Ambrose Bierce</English>
 	</TEXT>
 
 

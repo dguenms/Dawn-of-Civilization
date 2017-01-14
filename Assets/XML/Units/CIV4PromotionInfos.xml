@@ -579,7 +579,7 @@
 			<Description>TXT_KEY_PROMOTION_COMMANDO</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_COMBAT4</PromotionPrereqOr1>
-			<TechPrereq>TECH_LOGISTICS</TechPrereq>
+			<TechPrereq>TECH_COMBINED_ARMS</TechPrereq>
 			<bEnemyRoute>1</bEnemyRoute>
 			<UnitCombats>
 				<UnitCombat>
