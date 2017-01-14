@@ -456,6 +456,7 @@ iCivGreece : {
 iCivCarthage : {
 	iGreatProphet : [
 		"Acherbas", # legendary
+		"fJezebel", # 9th BC
 		iClassical,
 		"Tertullian", # 2nd
 		"Cyprian", # 3rd
@@ -474,6 +475,7 @@ iCivCarthage : {
 		"Bomilcar", # 3rd BC
 		"Eshmuniaton", # ?
 		"Tanit", # ?
+		"Sanchuniathon", # unknown date
 	],
 	iGreatMerchant : [
 		"Hanno", # 5th BC
@@ -575,7 +577,6 @@ iCivRome : {
 	],
 	iGreatScientist : [
 		"Cato", # 1st BC
-		"Cicero", # 1st BC
 		"Sosigenes", # 1st BC
 		"Plinius", # 1st
 		"Strabo", # 1st
@@ -583,15 +584,14 @@ iCivRome : {
 	],
 	iGreatMerchant : [
 		"Marcus Crassus", # 1st BC
-		"Iucundus", # ?
-		"Atticus", # ?
-		"Sittius", # ?
+		"Publius Sittius", # 1st BC
+		"Lucius Caecilius Iucundus", # 1st
 	],
 	iGreatEngineer : [
-		"Apollodorus", # 2nd BC
 		"Vitruvius", # 1st BC
 		"Agrippa", # 1st BC
 		"Hitarius", # 1st AD
+		"Apollodorus", # 2nd AD
 	],
 	iGreatStatesman : [
 		"Publicola", # 6th BC
@@ -631,11 +631,14 @@ iCivJapan : {
 		"Saigyo Hoshi", # 12th
 		iRenaissance,
 		"Kano Eitoku", # 16th
-		iIndustrial,
 		"Toshusai Sharaku", # 18th
-		"Katsushika Hokusai", # 18th
+		"Yosa Buson", # 18th
+		iIndustrial,
+		"Katsushika Hokusai", # 19th
 		"Utagawa Hiroshige", # 19th
 		iModern,
+		"Yukio Mishima", # 20th
+		"Hayao Miyazaki", # 20th
 		"Toro Okamoto", # Contest Reward
 	],
 	iGreatScientist : [
@@ -882,6 +885,8 @@ iCivVikings : {
 		u"Haraldr Blátonn", # 10th
 		u"Sveinn Tjúguskegg", # 10th
 		"fBirgitta Birgersdotter", # 13th
+		iRenaissance, 
+		"Emanuel Swedenborg", # 18th
 	],
 	iGreatArtist : [
 		"Nils Hakansson", # 14th swedish
@@ -895,6 +900,7 @@ iCivVikings : {
 		"Edvard Munch", # 19th
 		iModern,
 		"fAstrid Lindgren", # 20th
+		"Ingmar Bergman", # 20th
 	],
 	iGreatScientist : [
 		"Tycho Brahe", # 16th
@@ -1259,6 +1265,7 @@ iCivFrance : {
 		"Alexandre Gustave Eiffel", # 19th
 		iModern,
 		u"Louis Lumière", # 20th
+		"Le Corbusier", # 20th
 		"fMarie Marvingt", # 20th
 	],
 	iGreatStatesman : [
@@ -1438,6 +1445,8 @@ iCivGermany : {
 		"Johann Lukas von Hildebrandt", # 18th
 		iIndustrial,
 		"Alfred Krupp", # 19th
+		"Nikolaus Otto", # 19th
+		"Gottlieb Daimler", # 19th
 		"Carl Benz", # 19th
 		iModern,
 		"Ferdinand Porsche", # 20th
@@ -1772,6 +1781,7 @@ iCivItaly : {
 		"Taccola", # 15th
 		"Donato Bramante", # 15th
 		"Filippo Brunelleschi", # 15th
+		"Andrea Palladio", # 16th
 		iModern,
 		"Guglielmo Marconi", # 20th
 	],
@@ -2290,6 +2300,7 @@ iCivPoland : {
 		"Mikolaj Kopernik", # 16th
 		"Jan Brozek", # 17th
 		"Stanislaw Staszic", # 18th
+		iIndustrial,
 		"fMaria Sklodowska", # 19th
 	],
 	iGreatMerchant : [
@@ -2570,6 +2581,8 @@ iCivMexico : {
 },
 iCivCanada : {
 	iGreatProphet : [
+		"Ignace Bourget", # 19th
+		iModern,
 		u"André Bessette", # 20th
 	],
 	iGreatArtist : [
