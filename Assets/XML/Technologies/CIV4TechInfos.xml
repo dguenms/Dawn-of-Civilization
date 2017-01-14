@@ -2693,9 +2693,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_ASTRONOMY</Type>
-			<Description>TXT_KEY_TECH_ASTRONOMY</Description>
-			<Civilopedia>TXT_KEY_TECH_ASTRONOMY_PEDIA</Civilopedia>
+			<Type>TECH_GEOGRAPHY</Type>
+			<Description>TXT_KEY_TECH_GEOGRAPHY</Description>
+			<Civilopedia>TXT_KEY_TECH_GEOGRAPHY_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>1250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2720,7 +2720,7 @@
 				<PrereqTech>TECH_EXPLORATION</PrereqTech>
 				<PrereqTech>TECH_OPTICS</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_ASTRONOMY_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_GEOGRAPHY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Astronomy.dds</Button>
@@ -2961,6 +2961,7 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_CORPORATION</PrereqTech>
+				<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_HYDRAULICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2992,7 +2993,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_ASTRONOMY</PrereqTech>
+				<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
 				<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_PHYSICS_QUOTE</Quote>

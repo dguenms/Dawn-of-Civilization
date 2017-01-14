@@ -165,12 +165,8 @@ Some predict that the creation of the first artificial intelligences will lead t
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_ASTRONOMY</Tag>
-		<English>Astronomy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_ASTRONOMY_QUOTE</Tag>
-		<English>"Astronomy compels the soul to look upwards and leads us from this world to another."[PARAGRAPH:2]- Plato</English>
+		<Tag>TXT_KEY_TECH_GEOGRAPHY</Tag>
+		<English>Geography</English>
 	</TEXT>
 
 

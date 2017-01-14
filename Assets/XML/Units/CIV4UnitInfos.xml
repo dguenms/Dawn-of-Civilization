@@ -11499,7 +11499,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_ASTRONOMY</PrereqTech>
+			<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_GUNPOWDER</PrereqTech>
 			</TechTypes>

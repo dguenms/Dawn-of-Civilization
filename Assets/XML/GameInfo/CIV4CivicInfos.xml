@@ -794,7 +794,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_NAVAL_SUPREMACY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_NAVAL_SUPREMACY_STRATEGY</Strategy>
 			<Button>,Art/Interface/Buttons/Units/Frigate.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,9</Button>
-			<TechPrereq>TECH_ASTRONOMY</TechPrereq>
+			<TechPrereq>TECH_GEOGRAPHY</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<BuildingProductionModifiers>
