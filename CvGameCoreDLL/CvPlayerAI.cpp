@@ -5019,7 +5019,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									if (iI == CONSTRUCTION)
 										iValue *= 2;
-									if (iI == URBANISM)
+									if (iI == COMPANIES)
 										iValue /= 4;
                                     if (iI == EDUCATION) {
                                         iValue *= 2;
@@ -5163,7 +5163,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									{
 										iValue *= 3;
 									}
-									else if (iI == FINANCE || iI == FIREARMS || iI == URBANISM) {
+									else if (iI == FINANCE || iI == FIREARMS || iI == COMPANIES) {
 									    iValue /= 5;
 									}
 									else if (iI == PAPER)

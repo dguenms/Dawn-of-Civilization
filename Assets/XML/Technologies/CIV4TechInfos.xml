@@ -2118,9 +2118,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_URBANISM</Type>
-			<Description>TXT_KEY_TECH_URBANISM</Description>
-			<Civilopedia>TXT_KEY_TECH_URBANISM_PEDIA</Civilopedia>
+			<Type>TECH_COMPANIES</Type>
+			<Description>TXT_KEY_TECH_COMPANIES</Description>
+			<Civilopedia>TXT_KEY_TECH_COMPANIES_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<iCost>800</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2148,7 +2148,7 @@
 				<PrereqTech>TECH_CHARTER</PrereqTech>
 				<PrereqTech>TECH_CROP_ROTATION</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_URBANISM_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_COMPANIES_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Urbanism.dds</Button>
@@ -2375,7 +2375,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_GUNPOWDER</PrereqTech>
-				<PrereqTech>TECH_URBANISM</PrereqTech>
+				<PrereqTech>TECH_COMPANIES</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_FIREARMS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2404,7 +2404,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_URBANISM</PrereqTech>
+				<PrereqTech>TECH_COMPANIES</PrereqTech>
 				<PrereqTech>TECH_FINANCE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_ECONOMICS_QUOTE</Quote>
@@ -2608,7 +2608,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_URBANISM</PrereqTech>
+				<PrereqTech>TECH_COMPANIES</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_JUDICIARY</PrereqTech>
