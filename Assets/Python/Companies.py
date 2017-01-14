@@ -59,7 +59,7 @@ class Companies:
 		# loop through all cities, check the company value for each and add the good ones to a list of tuples (city, value)
 		cityValueList = []
 		for iPlayer in range(iNumPlayers):
-			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(tCompanyTechs[iCompany]) and (gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iCorporation) or iCompany <= iTradingCompany):
+			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(tCompanyTechs[iCompany]) and (gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iEconomics) or iCompany <= iTradingCompany):
 				apCityList = PyPlayer(iPlayer).getCityList()
 				for pCity in apCityList:
 					city = pCity.GetCy()

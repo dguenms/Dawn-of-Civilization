@@ -2384,9 +2384,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_ECONOMICS</Type>
-			<Description>TXT_KEY_TECH_ECONOMICS</Description>
-			<Civilopedia>TXT_KEY_TECH_ECONOMICS_PEDIA</Civilopedia>
+			<Type>TECH_LOGISTICS</Type>
+			<Description>TXT_KEY_TECH_LOGISTICS</Description>
+			<Civilopedia>TXT_KEY_TECH_LOGISTICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>1000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2407,7 +2407,7 @@
 				<PrereqTech>TECH_COMPANIES</PrereqTech>
 				<PrereqTech>TECH_FINANCE</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_ECONOMICS_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_LOGISTICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Economics.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,1,5</Button>
@@ -2623,9 +2623,9 @@
 <!-- Cost 1050/1150/1250/1350/1450, iAsset 44 -->
 
 		<TechInfo>
-			<Type>TECH_LOGISTICS</Type>
-			<Description>TXT_KEY_TECH_LOGISTICS</Description>
-			<Civilopedia>TXT_KEY_TECH_LOGISTICS_PEDIA</Civilopedia>
+			<Type>TECH_COMBINED_ARMS</Type>
+			<Description>TXT_KEY_TECH_COMBINED_ARMS</Description>
+			<Civilopedia>TXT_KEY_TECH_COMBINED_ARMS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iCost>1250</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2651,18 +2651,18 @@
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_FIREARMS</PrereqTech>
-				<PrereqTech>TECH_ECONOMICS</PrereqTech>
+				<PrereqTech>TECH_LOGISTICS</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_LOGISTICS_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_COMBINED_ARMS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Logistics.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_CORPORATION</Type>
-			<Description>TXT_KEY_TECH_CORPORATION</Description>
-			<Civilopedia>TXT_KEY_TECH_CORPORATION_PEDIA</Civilopedia>
+			<Type>TECH_ECONOMICS</Type>
+			<Description>TXT_KEY_TECH_ECONOMICS</Description>
+			<Civilopedia>TXT_KEY_TECH_ECONOMICS_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>1350</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2683,10 +2683,10 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_ECONOMICS</PrereqTech>
+				<PrereqTech>TECH_LOGISTICS</PrereqTech>
 				<PrereqTech>TECH_EXPLORATION</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_CORPORATION_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_ECONOMICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,9</Button>
@@ -2880,7 +2880,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_ECONOMICS</PrereqTech>
+				<PrereqTech>TECH_LOGISTICS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_HERITAGE</PrereqTech>
@@ -2924,8 +2924,8 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_LOGISTICS</PrereqTech>
-				<PrereqTech>TECH_CORPORATION</PrereqTech>
+				<PrereqTech>TECH_COMBINED_ARMS</PrereqTech>
+				<PrereqTech>TECH_ECONOMICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_REPLACEABLE_PARTS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2960,7 +2960,7 @@
 				<PrereqTech>TECH_HORTICULTURE</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_CORPORATION</PrereqTech>
+				<PrereqTech>TECH_ECONOMICS</PrereqTech>
 				<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_HYDRAULICS_QUOTE</Quote>
@@ -3026,7 +3026,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_LOGISTICS</PrereqTech>
+				<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
@@ -3399,7 +3399,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_CORPORATION</PrereqTech>
+				<PrereqTech>TECH_ECONOMICS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_CONSTITUTION</PrereqTech>

@@ -7144,7 +7144,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STOCK_EXCHANGE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STOCK_EXCHANGE</MovieDefineTag>
-			<PrereqTech>TECH_CORPORATION</PrereqTech>
+			<PrereqTech>TECH_ECONOMICS</PrereqTech>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -7523,7 +7523,7 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TRADING_COMPANY</ArtDefineTag>
 			<GlobalCorporationCommerce>CORPORATION_TRADING_COMPANY</GlobalCorporationCommerce>
-			<PrereqTech>TECH_CORPORATION</PrereqTech>
+			<PrereqTech>TECH_ECONOMICS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<iCost>450</iCost>
@@ -10512,7 +10512,7 @@
 			<OrStateReligion>RELIGION_ISLAM</OrStateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
-			<PrereqTech>TECH_LOGISTICS</PrereqTech>
+			<PrereqTech>TECH_COMBINED_ARMS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>

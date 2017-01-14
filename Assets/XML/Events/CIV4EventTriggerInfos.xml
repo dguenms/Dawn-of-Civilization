@@ -6020,7 +6020,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -6201,7 +6201,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -6373,7 +6373,7 @@
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
-				<PrereqTech>TECH_CORPORATION</PrereqTech>
+				<PrereqTech>TECH_MACROECONOMICS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs/>
@@ -7923,7 +7923,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -8188,7 +8188,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -9055,7 +9055,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -9421,7 +9421,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -9509,7 +9509,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -9597,7 +9597,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -9685,7 +9685,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -9773,7 +9773,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -9972,7 +9972,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -10058,7 +10058,7 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -11287,7 +11287,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -11381,7 +11381,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -11647,7 +11647,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -11741,7 +11741,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -11829,7 +11829,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -11923,7 +11923,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -12789,7 +12789,7 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -13738,7 +13738,7 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -13827,7 +13827,7 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -13916,7 +13916,7 @@
 			<bPrereqEventPlot>0</bPrereqEventPlot>
 			<OrPreReqs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -14610,7 +14610,7 @@
 			</AndPreReqs>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
@@ -14701,7 +14701,7 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
 				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
 				<ObsoleteTech>TECH_HUMANITIES</ObsoleteTech>
