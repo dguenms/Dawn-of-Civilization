@@ -1023,6 +1023,10 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		elif inputClass.getButtonType() == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS:
 			self.pediaJump(PEDIA_RESOURCES, inputClass.getData1(), True, True)
 
+		if inputClass.getData1() == 10:
+			self.deleteAllWidgets()
+			CvPediaCivilization.CvPediaCivilization(self).interfaceScreen(self.iItem, inputClass.getData2())
+
 		return 0
 
 

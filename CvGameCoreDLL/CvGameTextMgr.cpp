@@ -13621,7 +13621,7 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 	// Leoreth: display sugar consumption in the tooltip
 	if (GC.getGame().getActivePlayer() == BRAZIL && eCorporation == (CorporationTypes)6)
 	{
-		szBuffer.append(CvWString::format(L"%s", GC.getBonusInfo(BONUS_SUGAR).getChar()));
+		szBuffer.append(CvWString::format(L"%c", GC.getBonusInfo(BONUS_SUGAR).getChar()));
 	}
 
 	if (kCorporation.getBonusProduced() != NO_BONUS)
