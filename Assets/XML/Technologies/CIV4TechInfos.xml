@@ -196,7 +196,7 @@
 			<Quote>TXT_KEY_TECH_MYTHOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Worship.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Mythology.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -1853,7 +1853,7 @@
 			<Quote>TXT_KEY_TECH_CHARTER_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Standing_Army.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Charter.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2151,7 +2151,7 @@
 			<Quote>TXT_KEY_TECH_COMPANIES_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Urbanism.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Economics.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,1,5</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2413,7 +2413,7 @@
 			<Quote>TXT_KEY_TECH_LOGISTICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Economics.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,1,5</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Logistics.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2659,7 +2659,7 @@
 			<Quote>TXT_KEY_TECH_COMBINED_ARMS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Logistics.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Combined_Arms.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2726,7 +2726,7 @@
 			<Quote>TXT_KEY_TECH_GEOGRAPHY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Astronomy.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Geography.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -3115,7 +3115,7 @@
 			<Quote>TXT_KEY_TECH_SOCIOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Social_Sciences.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Sociology.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -3188,7 +3188,7 @@
 			<Quote>TXT_KEY_TECH_MACHINE_TOOLS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Mechanization.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Machine_Tools.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -4157,7 +4157,7 @@
 			<Quote>TXT_KEY_TECH_PSYCHOLOGY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Mass_Market.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Psychology.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -5339,7 +5339,7 @@
 			<Quote>TXT_KEY_TECH_TRANSHUMANISM_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Future_Tech.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Transhumanism.dds</Button>
 		</TechInfo>
 
 	</TechInfos>
