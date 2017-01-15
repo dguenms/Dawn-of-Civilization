@@ -331,49 +331,50 @@ iCivEgypt : {
 		"Ptah-Hotep", # 25th BC
 		"Meryre", # 15th BC
 		"Akhenaten", # 14th BC
-		"fHatshepsut", # 14th BC
 		"Moses", # 13th BC
 		"fNefertiti", # 13th BC
-		iClassical,
 		"Petiese", # 7th BC
 	],
 	iGreatArtist : [
-		"Khafra", # 26th BC
-		"Nefertari", # 23th BC
-		"Amenhotep", # 15th BC
-		"Anena", # 15th BC
-		"Amenemhat", # 15th BC
-		"Yuny", # 13th BC
+		"Thutmose", # 14th BC
+		"Bek", # 14th BC
+		"Ipuki", # 14th BC
+		"Sennedjem", # 13th
 		"Khaemweset", # 12th BC
+		"Amenemope", # 12th BC
+		iClassical, 
+		"fHelena", # 4th BC
 	],
 	iGreatScientist : [
 		"fMerit-Ptah", # 27th BC
-		iClassical,
+		"fPeseshet", # 26th BC
+		"Ahmose", # 17th BC
+		"Harkhebi", # 3rd BC
 		"Manetho", # 3rd BC
+		iClassical,
 		"Ptolemaios", # 2nd
 		"Diophantos", # 3rd
 		"fHypatia", # 4th
 	],
 	iGreatMerchant : [
 		"Harkhuf", # 23rd BC
-		"Ahmose", # 16th BC
 		"Maya", # 13th BC
 		"fTiye", # 13th BC
-		iClassical,
 		"Piye", # 8th BC
 		"Alara", # 8th BC
 	],
 	iGreatEngineer : [
 		"Imhotep", # 27th BC
-		"Djoser", # 27th BC
 		"Sneferu", # 27th BC
 		"Senenmut", # 17th BC
+		"Ineni", # 15th BC
+		iClassical, 
+		"Heron", # 1st AD
 	],
 	iGreatStatesman : [
 		"Kagemni", # 26th BC
 		"Amenemhat", # 20th BC
 		"fHatshepsut", # 15th BC
-		"Amenemope", # 12th BC
 		"Herihor", # 11th BC
 	],
 	iGreatGeneral : [
@@ -401,6 +402,7 @@ iCivGreece : {
 		"Euripides", # 5th BC
 		"Herodotos", # 5th BC
 		"Aischylos", # 5th BC
+		"Pheidias", # 5th BC
 		"Anyte Tegeatis", # 3rd BC
 	],
 	iGreatScientist : [
@@ -455,29 +457,28 @@ iCivGreece : {
 },
 iCivCarthage : {
 	iGreatProphet : [
-		"Acherbas", # legendary
+		"Sanchuniathon", # unknown date
 		"fJezebel", # 9th BC
 		iClassical,
-		"Tertullian", # 2nd
-		"Cyprian", # 3rd
+		"Tertullianus", # 2nd
+		"Cyprianus", # 3rd
 		"Donatus", # 4th
 	],
 	iGreatArtist : [
-		"Kartobal", # ?
-		"Ortobal", # ?
-		"Sophonisba", # 3rd BC
+		"fSapanbaal", # 3rd BC
 		"Micipsa", # 2nd BC
-		"Oxynthas", # ?
+		"Ennion", # 1st AD
 	],
 	iGreatScientist : [
+		"Mochus", # 14th BC
 		"Hiram", # 10th BC
 		"Mago", # 4th BC
-		"Bomilcar", # 3rd BC
-		"Eshmuniaton", # ?
-		"Tanit", # ?
 		"Sanchuniathon", # unknown date
+		"Hasdrubal Clitomachus", # 2nd BC
+		"Abba", # 3rd 
 	],
 	iGreatMerchant : [
+		"Acerbas", # 9th BC / legendary
 		"Hanno", # 5th BC
 		"Himilco", # 5th BC
 		"Adherbal", # 2nd BC
@@ -490,18 +491,21 @@ iCivCarthage : {
 		"Gauda", # ?
 	],
 	iGreatStatesman : [
-		"Astarymus", # 9th BC
+		"Ashtar-rom", # 9th BC
+		"Ithobaal", # 9th BC
 		"Pygmalion", # 9th BC
 		"fElishat", # 8th BC
-		"Hanno", # 5th BC
-		"Azelmicus", # 4th BC
+		"Hanno", # 4th BC
+		"Eshmuniaton", # 4th BC
+		"Azelmelek", # 4th BC
+		"Bomilcar", # 3rd BC
 	],
 	iGreatGeneral : [
 		"Hasdrubal Barca", # 3rd BC
 		"Hamilcar Barca", # 3rd BC
 		"Mago Barca", # 3rd BC
+		"Carthalo", # 3rd BC
 		"Maharbal", # 2nd BC
-		"Cathalo", # ?
 	],
 },
 iCivPersia : {
@@ -570,6 +574,7 @@ iCivRome : {
 	],
 	iGreatArtist : [
 		"Vergilius", # 1st BC
+		"fIaia", # 1st BC
 		"Livius", # 1st
 		"Ovidius", # 1st
 		"Plutarchus", # 1st
@@ -585,12 +590,14 @@ iCivRome : {
 	iGreatMerchant : [
 		"Marcus Crassus", # 1st BC
 		"Publius Sittius", # 1st BC
+		"Titus Pomponius Atticus", # 1st BC
 		"Lucius Caecilius Iucundus", # 1st
 	],
 	iGreatEngineer : [
+		"Sergius Orata", # 2nd BC
 		"Vitruvius", # 1st BC
-		"Agrippa", # 1st BC
-		"Hitarius", # 1st AD
+		"Marcus Vipsanius Agrippa", # 1st AD
+		"Sextus Julius Frontinus", # 1st AD
 		"Apollodorus", # 2nd AD
 	],
 	iGreatStatesman : [
@@ -671,15 +678,15 @@ iCivJapan : {
 		"Shigeru Miyamoto", # 20th
 	],
 	iGreatStatesman : [
-		"Shoutouku Taishi", # 6th
+		"Shotoku Taishi", # 6th
 		iMedieval,
 		"Taira no Kiyomori", # 12th
 		iRenaissance,
 		"Tokugawa Ieyasu", # 16th
 		"Arai Hakuseki", # 17th
 		iIndustrial,
-		"Sakamoto Ryouma", # 19th
-		"Oukubo Toshimichi", # 19th
+		"Sakamoto Ryoma", # 19th
+		"Okubo Toshimichi", # 19th
 		iModern,
 		"Shigeru Yoshida", # 20th
 	],
@@ -1169,6 +1176,7 @@ iCivSpain : {
 		u"Agustín de Betancourt", # 18th
 		"Alberto de Palacio y Elissague", # 19th
 		"Esteban Terradas i Illa", # 19th
+		u"Antoni Gaudí", # 19th
 		iModern,
 		"Juan de la Cierva", # 20th
 	],
@@ -1275,11 +1283,11 @@ iCivFrance : {
 		"Jean Bodin", # 16th
 		"Armand Jean du Plessis de Richelieu", # 17th
 		"Jean-Baptiste Colbert", # 17th
-		u"fAnne Marie Louise d'Orléans", # 17th
+		u"fAnne-Marie-Louise d'Orléans", # 17th
 		u"Charles-Maurice de Talleyrand-Périgord", # 18th
 		"Montesquieu", # 18th
 		iIndustrial,
-		"Alexis de Tocqueville", # 20th
+		"Alexis de Tocqueville", # 19th
 		"Pierre-Joseph Proudhon", # 19th
 		iModern,
 		"fSimone de Beauvoir", # 20th
@@ -1319,6 +1327,7 @@ iCivEngland : {
 		"Arthur Conan Doyle", # 19th
 		"fMary Shelley", # 19th
 		iModern,
+		"James Joyce", # 20th
 		"fAgatha Christie", # 20th
 		"John Lennon", # 20th
 	],
@@ -1412,7 +1421,7 @@ iCivGermany : {
 		iModern,
 		"Paul Klee", # 20th
 		"fLeni Riefenstahl", # 20th
-		"Leoreth", # 20th
+		"Leoreth", # 21st
 	],
 	iGreatScientist : [
 		"Gerhard Mercator", # 16th
@@ -1420,6 +1429,8 @@ iCivGermany : {
 		"Gottfried Leibniz", # 17th
 		iIndustrial,
 		u"Carl Friedrich Gauß", # 19th
+		"Ignaz Semmelweis", # 19th
+		"Gregor Mendel", # 19th
 		iModern,
 		"Albert Einstein", # 20th
 		"Werner Heisenberg", # 20th
@@ -1495,7 +1506,7 @@ iCivRussia : {
 		"Alexei Losev", # 20th
 	],
 	iGreatArtist : [
-		"Alexander Pushkin", # 20th
+		"Alexander Pushkin", # 19th
 		"Fyodor Dostoyevsky", # 19th
 		"Leo Tolstoy", # 19th
 		"Pyotr Ilyich Tchaikovsky", # 19th
@@ -1511,10 +1522,11 @@ iCivRussia : {
 		iIndustrial,
 		"Dmitri Mendeleyev", # 19th
 		"Nikolai Lobachevsky", # 19th
+		"fSofia Kovalevskaya", # 19th
 		iModern,
+		"Konstantin Tsiolkovsky", # 19th
 		"Pavel Cherenkov", # 20th
 		"Mikhail Ostrogradsky", # 20th
-		"fMaria Kovalevskaya",
 	],
 	iGreatMerchant : [
 		"Afanasiy Nikitin", # 15th
@@ -1522,14 +1534,17 @@ iCivRussia : {
 		"Vitus Bering", # 18th
 		iIndustrial,
 		"Ivan Kruzenshtern", # 19th
+		iModern, 
+		"Nikolai Kondratiev", # 20th
 	],
 	iGreatEngineer : [
+		"Postnik Yakovlev", # 16th
 		"Ivan Starov", # 18th
 		iModern,
 		"Sergei Korolev", # 20th
 		"Andrey Tupolev", # 20th
-		"Leon Theremin", # 20th
-		"Vladimir Zworykin", # 20th
+		u"Léon Theremin", # 20th
+		"Vladimir Zvorykin", # 20th
 		"Igor Sikorsky", # 20th
 		"fValentina Tereshkova", # 20th
 	],
