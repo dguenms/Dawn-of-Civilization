@@ -303,6 +303,10 @@ def getStabilityThreshold(iPlayer):
 	if utils.getHumanID() != iPlayer and iGameTurn > getTurnForYear(tFall[iPlayer]):
 		iThreshold += 5 * iStabilityLevel + 5 + max(10, (iGameTurn - getTurnForYear(tFall[iPlayer])) / utils.getTurns(10))
 		
+	# reduce number of collapses
+	if iStabilityLevel == iStabilityUnstable:
+		iThreshold -= 10
+		
 	# golden ages make stability increases easier
 	if gc.getPlayer(iPlayer).isGoldenAge():
 		iThreshold -= 5
@@ -1448,11 +1452,11 @@ def calculateStability(iPlayer):
 		if iCurrentEra <= iClassical: iCivicStability += 2
 		elif iCurrentEra >= iIndustrial: iCivicStability -= 5
 		
-	if tPlayer.isHasTech(iDemocracy):
+	if tPlayer.isHasTech(iRepresentation):
 		if iCivicOrganization not in [iCivicRepresentation, iCivicEgalitarianism, iCivicTotalitarianism]: iCivicStability -= 5
 		if iCivicLabor in [iCivicSlavery, iCivicAgrarianism] and iCivicOrganization != iCivicTotalitarianism: iCivicStability -= 5
 		
-	if tPlayer.isHasTech(iCommunism):
+	if tPlayer.isHasTech(iCivilRights):
 		if iCivicOrganization not in [iCivicEgalitarianism, iCivicTotalitarianism]: iCivicStability -= 5
 		
 	if tPlayer.isHasTech(iCorporation):

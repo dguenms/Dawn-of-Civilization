@@ -107,5 +107,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("setTargetDistanceValueModifier", &CyPlayer::setTargetDistanceValueModifier, "void (int iNewValue)")
 		.def("setReligiousTolerance", &CyPlayer::setReligiousTolerance, "void (int iNewValue)")
 		.def("setBirthYear", &CyPlayer::setBirthYear, "void (int iNewValue)")
+		.def("AI_chooseFreeTech", &CyPlayer::AI_chooseFreeTech, "void ()")
 		;
 }

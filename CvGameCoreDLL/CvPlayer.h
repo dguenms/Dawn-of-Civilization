@@ -376,6 +376,7 @@ public:
 
 	int getGreatGeneralsCreated() const;																																		// Exposed to Python
 	void incrementGreatGeneralsCreated();
+	void decrementGreatGeneralsCreated();
 
 	int getGreatSpiesCreated() const;
 	void incrementGreatSpiesCreated();
@@ -714,9 +715,6 @@ public:
 
 	DllExport bool isStrike() const;																																	// Exposed to Python
 	void setStrike(bool bNewValue);
-
-	DllExport bool isOlympics() const;	//Rhye																																// Exposed to Python
-	void setOlympics(bool bNewValue);		//Rhye
 
 	DllExport PlayerTypes getID() const;																												// Exposed to Python
 
@@ -1249,6 +1247,8 @@ public:
 
 	bool canTradeBonus(BonusTypes eBonus) const;
 
+	bool canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered = NO_TECH) const;
+
 	bool m_bTurnPlayed;
 
 protected:
@@ -1375,7 +1375,6 @@ protected:
 	bool m_bFoundedFirstCity;
 	bool m_bStrike;
 	bool m_bHuman;
-	bool m_bOlympics; //Rhye
 
 
 /************************************************************************************************/

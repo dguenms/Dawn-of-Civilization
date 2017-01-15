@@ -74,8 +74,12 @@
 		<English>[COLOR_UNIT_TEXT]Axemen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ATTACK_SUBMARINE_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Attack Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] unit, can see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT], [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Airship[COLOR_REVERT] units.</English>
+		<Tag>TXT_KEY_UNIT_NUCLEAR_SUBMARINE</Tag>
+		<English>Nuclear Submarine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NUCLEAR_SUBMARINE_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Nuclear Submarines[COLOR_REVERT] can carry one [COLOR_UNIT_TEXT]Scout[COLOR_REVERT], [COLOR_UNIT_TEXT]Explorer[COLOR_REVERT], [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT], [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] or [COLOR_UNIT_TEXT]Great Person[COLOR_REVERT], has an attack bonus against the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] unit, can see the [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] units, is able to enter [COLOR_HIGHLIGHT_TEXT]Ice[COLOR_REVERT], can explore rival territory, can withdraw from combat and are invisible to all units except the [COLOR_UNIT_TEXT]Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Stealth Destroyer[COLOR_REVERT], [COLOR_UNIT_TEXT]Submarine[COLOR_REVERT], [COLOR_UNIT_TEXT]Attack Submarine[COLOR_REVERT] and [COLOR_UNIT_TEXT]Airship[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_AT_INFANTRY_STRATEGY</Tag>
@@ -530,7 +534,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAYAN_HOLKAN_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Holkan[COLOR_REVERT], the Mayan replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Hunting[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Archery[COLOR_REVERT] technology, is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], provides food to the nearest city when it wins a fight and can withdraw from combat.</English>
+		<English>The [COLOR_UNIT_TEXT]Holkan[COLOR_REVERT], the Mayan replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], provides food to the nearest city when it wins a fight and has a higher chance to withdraw from combat.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIAN_PUNJABI_WORKER_STRATEGY</Tag>
@@ -645,8 +649,12 @@
 		<English>The [COLOR_UNIT_TEXT]Bersagliere[COLOR_REVERT], the Italian replacement for the the [COLOR_UNIT_TEXT]Infantry[COLOR_REVERT], has an additional movement point.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_KNIGHT_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Knights[COLOR_REVERT] are immune to first strikes, don't receive defensive bonuses and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT] and [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT] units.</English>
+		<Tag>TXT_KEY_UNIT_LANCER</Tag>
+		<English>Lancer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LANCER_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Lancers[COLOR_REVERT] are immune to first strikes, don't receive defensive bonuses and have a flank attack against [COLOR_UNIT_TEXT]Catapult[COLOR_REVERT] and [COLOR_UNIT_TEXT]Trebuchet[COLOR_REVERT] units.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KHMER_BALLISTA_ELEPHANT_STRATEGY</Tag>
@@ -663,39 +671,39 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN</Tag>
 		<English>Heavy Swordsman</English>
-		<German>Schwerer Schwertk&#228;mpfer</German>
+		<German>Schwerer Schwertkämpfer</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEAVY_SWORDSMAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Heavy Swordsmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
+		<English>[COLOR_UNIT_TEXT]Footmen[COLOR_REVERT] have a combat bonus against [COLOR_UNIT_TEXT]Melee Units[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MANDE_SKIRMISHER</Tag>
-		<English>Skirmisher</English>
+		<Tag>TXT_KEY_UNIT_MANDE_KELEBOLO</Tag>
+		<English>Kelebolo</English>
 		<French>
-			<Text>Tirailleur</Text>
+			<Text>Kelebolo</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
 		<German>
-			<Text>Pl&#228;nkler</Text>
+			<Text>Kelebolo</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</German>
 		<Italian>
-			<Text>Combattente:Combattenti</Text>
+			<Text>Kelebolo</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Hostigador:Hostigadores</Text>
+			<Text>Kelebolo</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MANDE_SKIRMISHER_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], has an additional strength point, has a possible extra first strike and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</English>
+		<Tag>TXT_KEY_UNIT_MANDE_KELEBOLO_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Kelebolo[COLOR_REVERT], the Mali replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], has additional strength in deserts and against melee units and is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Marsh[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MACHINE_GUN_STRATEGY</Tag>
@@ -911,7 +919,7 @@
 		<English>The [COLOR_UNIT_TEXT]Dog Soldier[COLOR_REVERT] is a Barbarian unit that spawns in Central North America and the Andes Mountains from 600 - 1800 AD.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MUSKETMAN_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_ARQUEBUSIER_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Musketmen[COLOR_REVERT] are the first [COLOR_UNIT_TEXT]Gunpowder Unit[COLOR_REVERT] avaiable.</English>
 	</TEXT>
 	<TEXT>
@@ -1133,7 +1141,7 @@
 		<English>[COLOR_UNIT_TEXT]Ghulam Warrior[COLOR_REVERT], the Seljuk replacement for the [COLOR_UNIT_TEXT]Knight[COLOR_REVERT], requires the [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT] technology, doesn't require the [COLOR_TECH_TEXT]Guilds[COLOR_REVERT] technology, has one less strength point, doesn't require the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] resource, can withdraw from combat, has a combat bonus against the [COLOR_UNIT_TEXT]Pikeman[COLOR_REVERT] and [COLOR_UNIT_TEXT]Knight[COLOR_REVERT] units and cannot be upgraded.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TACTICAL_NUKE_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_NUCLEAR_BOMBER_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Tactical Nukes[COLOR_REVERT] have an increased chance to evade interception and can nuke enemy lands.</English>
 	</TEXT>
 	<TEXT>
@@ -1229,8 +1237,12 @@
 		<English>Khampa</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TRIREME_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Triremes[COLOR_REVERT] have a combat bonus against the [COLOR_UNIT_TEXT]Galley[COLOR_REVERT] unit, cannot enter [COLOR_HIGHLIGHT_TEXT]Ocean[COLOR_REVERT] and cannot pass [COLOR_HIGHLIGHT_TEXT]Capes[COLOR_REVERT] until [COLOR_TECH_TEXT]Optics[COLOR_REVERT].</English>
+		<Tag>TXT_KEY_UNIT_WAR_GALLEY</Tag>
+		<English>War Galley</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WAR_GALLEY_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]War Galleys[COLOR_REVERT] cannot enter [COLOR_HIGHLIGHT_TEXT]Ocean[COLOR_REVERT] and cannot pass [COLOR_HIGHLIGHT_TEXT]Capes[COLOR_REVERT] until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TREBUCHET_STRATEGY</Tag>
@@ -1267,6 +1279,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WARRIOR_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Warriors[COLOR_REVERT] have a defensive bonus in cities.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MILITIA_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Militia[COLOR_REVERT] have a defensive bonus in cities.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WAR_ELEPHANT_STRATEGY</Tag>
@@ -1327,7 +1343,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY</Tag>
 		<English>Jewish Rabbi</English>
-		<German>Jüdischer Rabbi</German>
+		<German>JÃ¼discher Rabbi</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>
@@ -1425,8 +1441,71 @@
 		<German>[ICON_BULLET]Kann [LINK=literal]%s1[\LINK] nicht innerhalb einer Zivilisation mit anderer Staatsreligion verbreiten</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_</Tag>
-		<English></English>
-		<German></German>
+		<Tag>TXT_KEY_UNIT_NUCLEAR_BOMBER</Tag>
+		<English>Nuclear Bomber</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SKIRMISHER</Tag>
+		<English>Skirmisher</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN</Tag>
+		<English>Horseman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEAVY_GALLEY</Tag>
+		<English>Heavy Galley</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COG</Tag>
+		<English>Cog</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GALLEASS</Tag>
+		<English>Galleass</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TORPEDO_BOAT</Tag>
+		<English>Torpedo Boat</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CRUISER</Tag>
+		<English>Cruiser</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BIPLANE</Tag>
+		<English>Biplane</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MILITIA</Tag>
+		<English>Militia</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARQUEBUSIER</Tag>
+		<English>Arquebusier</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEAVY_SPEARMAN</Tag>
+		<English>Heavy Spearman</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HOWITZER</Tag>
+		<English>Howitzer</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DRAGOON</Tag>
+		<English>Dragoon</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PISTOLIER</Tag>
+		<English>Pistolier</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HUSSAR</Tag>
+		<English>Hussar</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN</Tag>
+		<English>Light Swordsman</English>
 	</TEXT>
 </Civ4GameText>

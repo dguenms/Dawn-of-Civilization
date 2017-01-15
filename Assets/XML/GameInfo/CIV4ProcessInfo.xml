@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jesse Smith (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Process -->
+<Civ4ProcessInfo xmlns="x-schema:CIV4GameInfoSchema.xml">
+	<ProcessInfos>
+		<ProcessInfo>
+			<Type>PROCESS_WEALTH</Type>
+			<Description>TXT_KEY_PROCESS_WEALTH</Description>
+			<Strategy>TXT_KEY_PROCESS_WEALTH_STRATEGY</Strategy>
+			<TechPrereq>TECH_CURRENCY</TechPrereq>
+			<ProductionToCommerceModifiers>
+				<iProductionToCommerceModifier>50</iProductionToCommerceModifier>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+			</ProductionToCommerceModifiers>
+			<Button>Art/Interface/Buttons/Process/ProcessWealth.dds</Button>
+		</ProcessInfo>
+		<ProcessInfo>
+			<Type>PROCESS_RESEARCH</Type>
+			<Description>TXT_KEY_PROCESS_RESEARCH</Description>
+			<Strategy>TXT_KEY_PROCESS_RESEARCH_STRATEGY</Strategy>
+			<TechPrereq>TECH_SCHOLARSHIP</TechPrereq>
+			<ProductionToCommerceModifiers>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+				<iProductionToCommerceModifier>50</iProductionToCommerceModifier>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+			</ProductionToCommerceModifiers>
+			<Button>Art/Interface/Buttons/Process/ProcessResearch.dds</Button>
+		</ProcessInfo>
+		<ProcessInfo>
+			<Type>PROCESS_CULTURE</Type>
+			<Description>TXT_KEY_PROCESS_CULTURE</Description>
+			<Strategy>TXT_KEY_PROCESS_CULTURE_STRATEGY</Strategy>
+			<TechPrereq>TECH_ARTISANRY</TechPrereq>
+			<ProductionToCommerceModifiers>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+				<iProductionToCommerceModifier>0</iProductionToCommerceModifier>
+				<iProductionToCommerceModifier>50</iProductionToCommerceModifier>
+			</ProductionToCommerceModifiers>
+			<Button>Art/Interface/Buttons/Process/ProcessCulture.dds</Button>
+		</ProcessInfo>
+	</ProcessInfos>
+</Civ4ProcessInfo>

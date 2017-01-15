@@ -196,7 +196,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_EIFFEL_TOWER_HELP</Tag>
-		<English>[ICON_BULLET]Golden Ages Consume at most Three Great People</English>
+		<English>[ICON_BULLET]Golden Ages consume at most three Great People</English>
 		<German>[ICON_BULLET]Goldene Zeitalter verbrauchen h&#246;chstens drei gro&#223;e Pers&#246;nlichkeiten</German>
 	</TEXT>
 	<TEXT>
@@ -263,8 +263,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_WALL_HELP</Tag>
-		<English>[ICON_BULLET]Reduced Enemy Movement Speed Within the Walls[NEWLINE][ICON_BULLET]Barbarian Units Take Damage within the Walls</English>
-		<German>[ICON_BULLET]Geringere Bewegung feindlicher Einheiten innerhalb der Mauern[NEWLINE][ICON_BULLET]Barbarische Einheiten nehmen Schaden innerhalb der Mauern</German>
+		<English>[ICON_BULLET]Reduced enemy movement speed within the walls[NEWLINE][ICON_BULLET]Barbarian units take damage within the walls</English>
+		<German>[ICON_BULLET]Geringere Bewegung feindlicher Einheiten innerhalb der Mauer[NEWLINE][ICON_BULLET]Barbarische Einheiten nehmen Schaden innerhalb der Mauern</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_WALL_STRATEGY</Tag>
@@ -299,8 +299,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_KHAJURAHO</Tag>
-		<English>[ICON_BULLET]State Religion buildings are constructed twice as fast</English>
-		<German>[ICON_BULLET]Geb&#228;ude der Staatsreligion werden doppelt so schnell gebaut</German>
+		<English>[ICON_BULLET]+100% [ICON_PRODUCTION] for State [ICON_RELIGION] buildings</English>
+		<German>[ICON_BULLET]+100% [ICON_PRODUCTION] für Gebäude der Staats [ICON_RELIGION]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HELP_PORCELAIN_TOWER</Tag>
@@ -618,8 +618,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_HELP</Tag>
-		<English>[ICON_BULLET]Hurry Unhappiness Does Not Increase with the Amount of Sacrificed Population</English>
-		<German>[ICON_BULLET]Die Unzufriedenheit durch Sklaverei steigt nicht mit der Anzahl der geopferten Bev&#246;lkerung</German>
+		<English>[ICON_BULLET]Cities grow while producing with food</English>
+		<German>[ICON_BULLET]Städte wachsen, wenn Nahrung zur Produktion verwendet wird</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Tag>
@@ -710,8 +710,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Tag>
-		<English>[ICON_BULLET]Great prophets can create great works like great artists</English>
-		<German>[ICON_BULLET]Gro&#223;e Propheten k&#246;nnen gro&#223;e Kunstwerke erstellen, genau wie gro&#223;e K&#252;nstler</German>
+		<English>[ICON_BULLET]Wonders can be produced using food</English>
+		<German>[ICON_BULLET]Wunder können mithilfe von Nahrung errichtet werden</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Tag>
@@ -772,7 +772,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TERRACOTTA_ARMY_HELP</Tag>
-		<English>[ICON_BULLET]Unlimited Experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories Against Barbarians Contribute to Great General Birth</English>
+		<English>[ICON_BULLET]Unlimited experience from Barbarian Units[NEWLINE][ICON_BULLET]Victories against Barbarians contribute to Great General birth</English>
 		<German>[ICON_BULLET]Unbegrenzte Erfahrung von barbarischen Einheiten[NEWLINE][ICON_BULLET]Siege gegen Barbaren tragen zur Geburt gro&#223;er Gener&#228;le bei</German>
 	</TEXT>
 	<TEXT>
@@ -802,37 +802,16 @@
 		</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_THREE_GORGES_DAM</Tag>
-		<English>Three Gorges Dam</English>
-		<French>
-			<Text>Barrage des Trois Gorges</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Drei-Schluchten-Damm</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>La Diga delle Tre Gole</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>la Presa de las Tres Gargantas:las Presas de las Tres Gargantas</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
+		<Tag>TXT_KEY_BUILDING_ITAIPU_DAM</Tag>
+		<English>Itaipu Dam</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_THREE_GORGES_DAM_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Three Gorges Dam[COLOR_REVERT] provides clean power to all cities on the same continent. It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<Tag>TXT_KEY_BUILDING_ITAIPU_DAM_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Itaipu Dam[COLOR_REVERT] provides clean power to all cities on the same continent. It increases the odds that its city will generate a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_HELP</Tag>
-		<English>[ICON_BULLET]Additional Foreign Culture is Converted on City Conquest</English>
-		<German>[ICON_BULLET]Bei der Eroberung gegnerischer St&#228;dte wird zus&#228;tzliche Kultur konvertiert</German>
+		<English>[ICON_BULLET]Extra initial production in conquered cities</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_STRATEGY</Tag>
@@ -908,6 +887,22 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] increases the production of all state religion buildings and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
-		<German>Die [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] erh�ht die Produktion aller Geb�ude der Staatsreligion und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
+		<German>Die [COLOR_BUILDING_TEXT]Hagia Sophia[COLOR_REVERT] erhöht die Produktion aller Gebäude der Staatsreligion und erh&#246;ht die Chancen einer Stadt, einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] hervorzubringen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_HELP</Tag>
+		<English>[ICON_BULLET]No [ICON_UNHEALTHY] from Flood Plains</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE_HELP</Tag>
+		<English>[ICON_BULLET]Great general threshold is reset when one of your generals dies in battle</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER_HELP</Tag>
+		<English>[ICON_BULLET]No open borders required for trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_</Tag>
+		<English></English>
 	</TEXT>
 </Civ4GameText>

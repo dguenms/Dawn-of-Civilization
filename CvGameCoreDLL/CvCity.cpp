@@ -50,6 +50,8 @@ CvCity::CvCity()
 	m_aiReligionCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCorporationCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCommerceRateModifier = new int[NUM_COMMERCE_TYPES];
+	m_aiPowerCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
+	m_aiCultureCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
 	m_aiBonusCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
 	m_aiCommerceHappinessPer = new int[NUM_COMMERCE_TYPES];
 	m_aiDomainFreeExperience = new int[NUM_DOMAIN_TYPES];
@@ -91,6 +93,8 @@ CvCity::CvCity()
 	m_paiFreePromotionCount = NULL;
 	m_paiNumRealBuilding = NULL;
 	m_paiNumFreeBuilding = NULL;
+	m_paiImprovementHappiness = NULL; // Leoreth
+	m_paiImprovementHealth = NULL; // Leoreth
 
 	m_pabWorkingPlot = NULL;
 	m_pabHasReligion = NULL;
@@ -144,6 +148,8 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiReligionCommerce);
 	SAFE_DELETE_ARRAY(m_aiCorporationCommerce);
 	SAFE_DELETE_ARRAY(m_aiCommerceRateModifier);
+	SAFE_DELETE_ARRAY(m_aiPowerCommerceRateModifier); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiCultureCommerceRateModifier); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiBonusCommerceRateModifier); //Leoreth
 	SAFE_DELETE_ARRAY(m_aiCommerceHappinessPer);
 	SAFE_DELETE_ARRAY(m_aiDomainFreeExperience);
@@ -316,7 +322,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
 	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra : 0;
 
-	if (GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)ASTRONOMY))
+	if (GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)EXPLORATION))
 	{
 		if (isColony())
 		{
@@ -410,6 +416,8 @@ void CvCity::uninit()
 	SAFE_DELETE_ARRAY(m_paiFreePromotionCount);
 	SAFE_DELETE_ARRAY(m_paiNumRealBuilding);
 	SAFE_DELETE_ARRAY(m_paiNumFreeBuilding);
+	SAFE_DELETE_ARRAY(m_paiImprovementHappiness); // Leoreth
+	SAFE_DELETE_ARRAY(m_paiImprovementHealth); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_pabWorkingPlot);
 	SAFE_DELETE_ARRAY(m_pabHasReligion);
@@ -521,6 +529,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iFreeSpecialist = 0;
 	m_iPowerCount = 0;
 	m_iDirtyPowerCount = 0;
+	m_iPowerConsumedCount = 0;
 	m_iDefenseDamage = 0;
 	m_iLastDefenseDamage = 0;
 	m_iOccupationTimer = 0;
@@ -539,6 +548,15 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iCorporationUnhealth = 0;
 
 	m_iNextCoveredPlot = 0;
+
+	m_iImprovementHappiness = 0;
+	m_iImprovementHealth = 0;
+
+	m_iCultureGreatPeopleRateModifier = 0;
+	m_iCultureHappiness = 0;
+	m_iCultureTradeRouteModifier = 0;
+
+	m_iBuildingUnignorableBombardDefense = 0;
 
 	m_bNeverLost = true;
 	m_bBombarded = false;
@@ -591,6 +609,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiReligionCommerce[iI] = 0;
 		m_aiCorporationCommerce[iI] = 0;
 		m_aiCommerceRateModifier[iI] = 0;
+		m_aiPowerCommerceRateModifier[iI] = 0; // Leoreth
+		m_aiCultureCommerceRateModifier[iI] = 0; // Leoreth
 		m_aiBonusCommerceRateModifier[iI] = 0; // Leoreth
 		m_aiCommerceHappinessPer[iI] = 0;
 	}
@@ -714,9 +734,13 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 		FAssertMsg((0 < GC.getNumImprovementInfos()),  "GC.getNumImprovementInfos() is not greater than zero but an array is being allocated in CvCity::reset");
 		m_paiImprovementFreeSpecialists = new int[GC.getNumImprovementInfos()];
+		m_paiImprovementHappiness = new int[GC.getNumImprovementInfos()];
+		m_paiImprovementHealth = new int[GC.getNumImprovementInfos()];
 		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 		{
 			m_paiImprovementFreeSpecialists[iI] = 0;
+			m_paiImprovementHappiness[iI] = GC.getImprovementInfo((ImprovementTypes)iI).getHappiness();
+			m_paiImprovementHealth[iI] = GC.getImprovementInfo((ImprovementTypes)iI).getHealth();
 		}
 
 		m_paiReligionInfluence = new int[GC.getNumReligionInfos()];
@@ -2070,7 +2094,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 
 		if (iCapitalContinent != iCityContinent && !bException)
 		{
-			if (!GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)ASTRONOMY))
+			if (!GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)EXPLORATION))
 			{
 				return false;
 			}
@@ -2121,7 +2145,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		return false;
 	}
 
-	if(GC.getUSE_CAN_CONSTRUCT_CALLBACK())
+	if (GC.getUSE_CAN_CONSTRUCT_CALLBACK())
 	{
 		CyCity* pyCity = new CyCity((CvCity*)this);
 		CyArgsList argsList;
@@ -2242,13 +2266,6 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	//Rhye - start
-	if (eBuilding == OLYMPIC_PARK)
-	{
-		if (GET_PLAYER(getOwnerINLINE()).isOlympics()) return false;
-	}
-	//Rhye - end
-
 	// Leoreth: Moai Statues require 20 water tiles
 	if (eBuilding == MOAI_STATUES)
 	{
@@ -2276,7 +2293,7 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		}
 	}
 
-	if (eBuilding == WEMBLEY || eBuilding == THREE_GORGES_DAM || eBuilding == CRISTO_REDENTOR)
+	if (eBuilding == WEMBLEY || eBuilding == ITAIPU_DAM || eBuilding == CRISTO_REDENTOR)
 	{
 		if (getOwnerINLINE() != BRAZIL)
 		{
@@ -3068,6 +3085,9 @@ bool CvCity::isFoodProduction() const
 			break;
 
 		case ORDER_CONSTRUCT:
+			return isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)(pOrderNode->m_data.iData1)).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX);
+			break;
+
 		case ORDER_CREATE:
 		case ORDER_MAINTAIN:
 			break;
@@ -3360,6 +3380,7 @@ int CvCity::getProductionTurnsLeft(BuildingTypes eBuilding, int iNum) const
 	int iFirstBuildingOrder;
 	int iProductionNeeded;
 	int iProductionModifier;
+	bool bFoodProduction;
 
 	iProduction = 0;
 
@@ -3374,7 +3395,9 @@ int CvCity::getProductionTurnsLeft(BuildingTypes eBuilding, int iNum) const
 
 	iProductionModifier = getProductionModifier(eBuilding);
 
-	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, false, (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, false, false));
+	bFoodProduction = isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()) && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX);
+
+	return getProductionTurnsLeft(iProductionNeeded, iProduction, getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, bFoodProduction, (iNum == 0)), getProductionDifference(iProductionNeeded, iProduction, iProductionModifier, false, false));
 }
 
 
@@ -3523,13 +3546,13 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 	}
 
 	// Leoreth: Statue of Zeus effect: +25% military production speed in cities with pagan temples
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)STATUE_OF_ZEUS) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)THEOLOGY))
+	/*if (GET_PLAYER(getOwnerINLINE()).isHasBuilding((BuildingTypes)STATUE_OF_ZEUS) && !GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)THEOLOGY))
 	{
 		if (isHasRealBuilding(getUniqueBuilding(getCivilizationType(), (BuildingTypes)PAGAN_TEMPLE)))
 		{
 			iMultiplier += 25;
 		}
-	}
+	}*/
 
 	return std::max(0, iMultiplier);
 }
@@ -3806,8 +3829,8 @@ void CvCity::hurry(HurryTypes eHurry)
 	iHurryAngerModifier = (iHurryPopulation + 1) / 2;
 
 	// Leoreth: Pyramids negate unhappiness scaling
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
-		iHurryAngerModifier = 1;
+	//if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+	//	iHurryAngerModifier = 1;
 
 	changeHurryAngerTimer(iHurryAngerLength * iHurryAngerModifier);
 
@@ -4362,6 +4385,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeNoUnhealthyPopulationCount((GC.getBuildingInfo(eBuilding).isNoUnhealthyPopulation()) ? iChange : 0);
 		changeBuildingOnlyHealthyCount((GC.getBuildingInfo(eBuilding).isBuildingOnlyHealthy()) ? iChange : 0);
 
+		changeCultureGreatPeopleRateModifier(GC.getBuildingInfo(eBuilding).getCultureGreatPeopleRateModifier());
+		changeCultureHappiness(GC.getBuildingInfo(eBuilding).getCultureHappiness());
+		changeCultureTradeRouteModifier(GC.getBuildingInfo(eBuilding).getCultureTradeRouteModifier());
+
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			changeSeaPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getSeaPlotYieldChange(iI) * iChange));
@@ -4382,6 +4409,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 		{
 			changeCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceModifier(iI) * iChange));
+			changePowerCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getPowerCommerceModifier(iI) * iChange));
+			changeCultureCommerceRateModifier(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCultureCommerceModifier(iI) * iChange));
 			changeCommerceHappinessPer(((CommerceTypes)iI), (GC.getBuildingInfo(eBuilding).getCommerceHappiness(iI) * iChange));
 		}
 
@@ -4399,6 +4428,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 		{
 			changeImprovementFreeSpecialists((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementFreeSpecialist(iI) * iChange);
+			changeImprovementHappiness((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementHappiness(iI) * iChange);
+			changeImprovementHealth((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementHealth(iI) * iChange);
 		}
 
 		FAssertMsg((0 < GC.getNumBonusInfos()) && "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlotGroup::reset", "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlotGroup::reset");
@@ -4489,6 +4520,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 	{
 		changeBuildingDefense(GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
 		changeBuildingBombardDefense(GC.getBuildingInfo(eBuilding).getBombardDefenseModifier() * iChange);
+		changeBuildingUnignorableBombardDefense(GC.getBuildingInfo(eBuilding).getUnignorableBombardDefenseModifier() * iChange);
 
 		// Leoreth: Himeji Castle effect: defense modifiers affect culture
 		if (GET_PLAYER(getOwner()).isHasBuildingEffect((BuildingTypes)HIMEJI_CASTLE))
@@ -5202,6 +5234,8 @@ int CvCity::unhappyLevel(int iExtra) const
 		iUnhappiness -= std::min(0, getBuildingBadHappiness());
 		iUnhappiness -= std::min(0, getExtraBuildingBadHappiness());
 		iUnhappiness -= std::min(0, getFeatureBadHappiness());
+		iUnhappiness -= std::min(0, getImprovementHappiness());
+		iUnhappiness -= std::min(0, getCultureHappiness() * getCultureLevel());
 		iUnhappiness -= std::min(0, getBonusBadHappiness());
 		iUnhappiness -= std::min(0, getReligionBadHappiness());
 		iUnhappiness -= std::min(0, getCommerceHappiness());
@@ -5231,6 +5265,8 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, getBuildingGoodHappiness());
 	iHappiness += std::max(0, getExtraBuildingGoodHappiness());
 	iHappiness += std::max(0, getFeatureGoodHappiness());
+	iHappiness += std::max(0, getImprovementHappiness());
+	iHappiness += std::max(0, getCultureHappiness() * getCultureLevel());
 	iHappiness += std::max(0, getBonusGoodHappiness());
 	iHappiness += std::max(0, getReligionGoodHappiness());
 	iHappiness += std::max(0, getCorporationGoodHappiness()); // Leoreth
@@ -5372,6 +5408,13 @@ int CvCity::goodHealth() const
 	}
 
 	// Leoreth
+	iHealth = getImprovementHealth();
+	if (iHealth > 0)
+	{
+		iTotalHealth += iHealth;
+	}
+
+	// Leoreth
 	iHealth = getCorporationHealth();
 	if (iHealth > 0)
 	{
@@ -5459,6 +5502,13 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 	}
 
 	// Leoreth
+	iHealth = getImprovementHealth();
+	if (iHealth < 0)
+	{
+		iTotalHealth += iHealth;
+	}
+
+	// Leoreth
 	iHealth = -getCorporationUnhealth();
 	if (iHealth < 0)
 	{
@@ -5512,7 +5562,7 @@ int CvCity::foodDifference(bool bBottom) const
 		return 0;
 	}
 
-	if (isFoodProduction())
+	if (isFoodProduction() && !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
 	{
 		iDifference = std::min(0, (getYieldRate(YIELD_FOOD) - foodConsumption()));
 	}
@@ -6289,6 +6339,9 @@ int CvCity::getTotalGreatPeopleRateModifier() const
 
 	iModifier = getGreatPeopleRateModifier();
 
+	// Leoreth
+	iModifier += getCultureGreatPeopleRateModifier() * getCultureLevel();
+
 	iModifier += GET_PLAYER(getOwnerINLINE()).getGreatPeopleRateModifier();
 
 	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION)
@@ -6406,6 +6459,7 @@ int CvCity::getAdditionalGreatPeopleRateModifierByBuilding(BuildingTypes eBuildi
 	if (!bObsolete)
 	{
 		iExtraModifier += kBuilding.getGreatPeopleRateModifier();
+		iExtraModifier += kBuilding.getCultureGreatPeopleRateModifier() * getCultureLevel();
 		iExtraModifier += kBuilding.getGlobalGreatPeopleRateModifier();
 	}
 
@@ -7020,8 +7074,13 @@ void CvCity::updateFeatureHealth()
 				else
 				{
 					// Leoreth: Congo UP: no unhealthiness from jungle and marsh
-					if (!(getOwnerINLINE() == CONGO && (eFeature == GC.getInfoTypeForString("FEATURE_JUNGLE") || eFeature == GC.getInfoTypeForString("FEATURE_MARSH"))))
+					bool bCongoUP = (getOwnerINLINE() == CONGO && (eFeature == GC.getInfoTypeForString("FEATURE_JUNGLE") || eFeature == GC.getInfoTypeForString("FEATURE_MARSH")));
+					bool bHangingGardens = (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)HANGING_GARDENS) && eFeature == GC.getInfoTypeForString("FEATURE_FLOOD_PLAINS"));
+
+					if (!bCongoUP && !bHangingGardens)
+					{
 						iNewBadHealth += GC.getFeatureInfo(eFeature).getHealthPercent();
+					}
 				}
 			}
 		}
@@ -7148,16 +7207,18 @@ void CvCity::updatePowerHealth()
 	iNewGoodHealth = 0;
 	iNewBadHealth = 0;
 
+	int iPowerConsumed = getPowerConsumedCount();
+
 	if (isPower())
 	{
 		int iPowerHealth = GC.getDefineINT("POWER_HEALTH_CHANGE");
 		if (iPowerHealth > 0)
 		{
-			iNewGoodHealth += iPowerHealth;
+			iNewGoodHealth += iPowerHealth * iPowerConsumed;
 		}
 		else
 		{
-			iNewBadHealth += iPowerHealth;
+			iNewBadHealth += iPowerHealth * iPowerConsumed;
 		}
 	}
 
@@ -7166,11 +7227,11 @@ void CvCity::updatePowerHealth()
 		int iDirtyPowerHealth = GC.getDefineINT("DIRTY_POWER_HEALTH_CHANGE");
 		if (iDirtyPowerHealth > 0)
 		{
-			iNewGoodHealth += iDirtyPowerHealth;
+			iNewGoodHealth += iDirtyPowerHealth * iPowerConsumed;
 		}
 		else
 		{
-			iNewBadHealth += iDirtyPowerHealth;
+			iNewBadHealth += iDirtyPowerHealth * iPowerConsumed;
 		}
 	}
 
@@ -7292,6 +7353,8 @@ int CvCity::getBuildingHappiness(BuildingTypes eBuilding) const
 	int iI;
 
 	iHappiness = GC.getBuildingInfo(eBuilding).getHappiness();
+
+	iHappiness += GC.getBuildingInfo(eBuilding).getCultureHappiness() * getCultureLevel();
 
 	if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
 	{
@@ -7741,7 +7804,7 @@ void CvCity::updateFeatureHappiness()
 				}
 			}
 
-			ImprovementTypes eImprovement = pLoopPlot->getImprovementType();
+			/*ImprovementTypes eImprovement = pLoopPlot->getImprovementType();
 
 			if (NO_IMPROVEMENT != eImprovement)
 			{
@@ -7754,7 +7817,7 @@ void CvCity::updateFeatureHappiness()
 				{
 					iNewFeatureBadHappiness += iHappy;
 				}
-			}
+			}*/
 		}
 	}
 
@@ -9280,6 +9343,7 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 					iTotalTradeYield += iTradeYield;
 
 					iTradeModifier += kBuilding.getTradeRouteModifier();
+					iTradeModifier += kBuilding.getCultureTradeRouteModifier() * getCultureLevel();
 					if (pCity->getOwnerINLINE() != getOwnerINLINE())
 					{
 						iTradeModifier += kBuilding.getForeignTradeRouteModifier();
@@ -9543,6 +9607,9 @@ void CvCity::changePowerYieldRateModifier(YieldTypes eIndex, int iChange)
 		m_aiPowerYieldRateModifier[eIndex] = (m_aiPowerYieldRateModifier[eIndex] + iChange);
 		FAssert(getYieldRate(eIndex) >= 0);
 
+		if (iChange > 0) changePowerConsumedCount(1);
+		if (iChange < 0) changePowerConsumedCount(-1);
+
 		GET_PLAYER(getOwnerINLINE()).invalidateYieldRankCache(eIndex);
 
 		if (eIndex == YIELD_COMMERCE)
@@ -9651,14 +9718,12 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	if (NULL != pOtherCity)
 	{
-	    // Leoreth: includes Porcelain Tower effect
-		if (area() != pOtherCity->area() || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
+	    if (area() != pOtherCity->area())
 		{
 			iModifier += GC.getDefineINT("OVERSEAS_TRADE_MODIFIER");
 		}
 
-        // Leoreth: includes Porcelain Tower effect
-		if ((getTeam() != pOtherCity->getTeam() && !GET_PLAYER(getOwner()).isNoForeignTradeModifier()) || GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)PORCELAIN_TOWER))
+        if ((getTeam() != pOtherCity->getTeam() && !GET_PLAYER(getOwner()).isNoForeignTradeModifier()))
 		{
 			iModifier += getForeignTradeRouteModifier();
 
@@ -9673,6 +9738,9 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 		// Leoreth: new modifier for trade routes with defensive pact partners
 		iModifier += getDefensivePactTradeModifier(pOtherCity);
+
+		// Leoreth: new culture level based modifier
+		iModifier += getCultureTradeRouteModifier() * getCultureLevel();
 	}
 
 	return iModifier;
@@ -10137,7 +10205,27 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 
 int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 {
-	return std::max(0, (getCommerceRateModifier(eIndex) + GET_PLAYER(getOwnerINLINE()).getCommerceRateModifier(eIndex) + ((isCapital()) ? GET_PLAYER(getOwnerINLINE()).getCapitalCommerceRateModifier(eIndex) : 0) + getBonusCommerceRateModifier(eIndex) + 100)); // Leoreth
+	int iTotalModifier = 100;
+		
+	iTotalModifier += getCommerceRateModifier(eIndex);
+
+	iTotalModifier += getCultureCommerceRateModifier(eIndex) * getCultureLevel();
+
+	iTotalModifier += GET_PLAYER(getOwnerINLINE()).getCommerceRateModifier(eIndex);
+
+	if (isCapital())
+	{
+		iTotalModifier += GET_PLAYER(getOwnerINLINE()).getCapitalCommerceRateModifier(eIndex);
+	}
+
+	iTotalModifier += getBonusCommerceRateModifier(eIndex);
+
+	if (isPower())
+	{
+		iTotalModifier += getPowerCommerceRateModifier(eIndex);
+	}
+
+	return std::max(0, iTotalModifier); // Leoreth
 }
 
 
@@ -11010,6 +11098,57 @@ void CvCity::changeCommerceRateModifier(CommerceTypes eIndex, int iChange)
 	if (iChange != 0)
 	{
 		m_aiCommerceRateModifier[eIndex] = (m_aiCommerceRateModifier[eIndex] + iChange);
+
+		updateCommerce(eIndex);
+
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+
+int CvCity::getPowerCommerceRateModifier(CommerceTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+	return m_aiPowerCommerceRateModifier[eIndex];
+}
+
+
+void CvCity::changePowerCommerceRateModifier(CommerceTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+
+	if (iChange != 0)
+	{
+		m_aiPowerCommerceRateModifier[eIndex] = (m_aiPowerCommerceRateModifier[eIndex] + iChange);
+
+		if (iChange > 0) changePowerConsumedCount(1);
+		if (iChange < 0) changePowerConsumedCount(-1);
+
+		updateCommerce(eIndex);
+
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+
+int CvCity::getCultureCommerceRateModifier(CommerceTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+	return m_aiCultureCommerceRateModifier[eIndex];
+}
+
+
+void CvCity::changeCultureCommerceRateModifier(CommerceTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
+
+	if (iChange != 0)
+	{
+		m_aiCultureCommerceRateModifier[eIndex] = (m_aiCultureCommerceRateModifier[eIndex] + iChange);
 
 		updateCommerce(eIndex);
 
@@ -12245,7 +12384,7 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 				
 
 	// Leoreth: Wat Preah Pisnulok effect
-	if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)WAT_PREAH_PISNULOK) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
+	/*if (GET_PLAYER(getOwner()).isHasBuilding((BuildingTypes)WAT_PREAH_PISNULOK) && !GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)SCIENTIFIC_METHOD))
 	{
 		if (eIndex == (SpecialistTypes)2) // artist
 		{
@@ -12257,7 +12396,7 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 			int iPriestsToArtists = max(0, getSpecialistCount((SpecialistTypes)2) - getFreeSpecialistCount((SpecialistTypes)2) - m_paiMaxSpecialistCount[(SpecialistTypes)2]);
 			iMaxSpecialistCount -= iPriestsToArtists;
 		}
-	}
+	}*/
 
 	// Leoreth: unlimited specialist effects now only double available specialists
 	if (GET_PLAYER(getOwnerINLINE()).isSpecialistValid(eIndex))
@@ -12654,6 +12793,8 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 				}
 			}
 
+			updateWorkedImprovement(iIndex);
+
 			if ((getTeam() == GC.getGameINLINE().getActiveTeam()) || GC.getGameINLINE().isDebugMode())
 			{
 				pPlot->updateSymbolDisplay();
@@ -12972,6 +13113,11 @@ void CvCity::setNumFreeBuilding(BuildingTypes eIndex, int iNewValue)
 
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex expected to be < GC.getNumBuildingInfos()");
+
+	if (GC.getBuildingInfo(eIndex).isWater() && !isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
+	{
+		return;
+	}
 
 	if (getNumFreeBuilding(eIndex) != iNewValue)
 	{
@@ -13776,12 +13922,6 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			{
 				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
 			}
-
-			//Rhye - start
-			if (eConstructBuilding == OLYMPIC_PARK) {
-				GET_PLAYER(getOwnerINLINE()).setOlympics(true);
-			}
-			//Rhye - end
 
 			CvEventReporter::getInstance().buildingBuilt(this, eConstructBuilding);
 		}
@@ -15168,6 +15308,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iFreeSpecialist);
 	pStream->Read(&m_iPowerCount);
 	pStream->Read(&m_iDirtyPowerCount);
+	pStream->Read(&m_iPowerConsumedCount); // Leoreth
 	pStream->Read(&m_iDefenseDamage);
 	pStream->Read(&m_iLastDefenseDamage);
 	pStream->Read(&m_iOccupationTimer);
@@ -15184,6 +15325,12 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationHealth);
 	pStream->Read(&m_iCorporationUnhealth);
 	pStream->Read(&m_iNextCoveredPlot); // Leoreth
+	pStream->Read(&m_iImprovementHappiness);
+	pStream->Read(&m_iImprovementHealth);
+	pStream->Read(&m_iCultureGreatPeopleRateModifier);
+	pStream->Read(&m_iCultureHappiness);
+	pStream->Read(&m_iCultureTradeRouteModifier);
+	pStream->Read(&m_iBuildingUnignorableBombardDefense);
 
 	pStream->Read(&m_bNeverLost);
 	pStream->Read(&m_bBombarded);
@@ -15220,6 +15367,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiReligionCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCorporationCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRateModifier);
+	pStream->Read(NUM_COMMERCE_TYPES, m_aiPowerCommerceRateModifier); // Leoreth
+	pStream->Read(NUM_COMMERCE_TYPES, m_aiCultureCommerceRateModifier); // Leoreth
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiBonusCommerceRateModifier); // Leoreth
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Read(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
@@ -15257,6 +15406,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiForceSpecialistCount);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiFreeSpecialistCount);
 	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementFreeSpecialists);
+	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHappiness);
+	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHealth);
 	pStream->Read(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Read(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
 	pStream->Read(GC.getNumUnitCombatInfos(), m_paiUnitCombatFreeExperience);
@@ -15429,6 +15580,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iFreeSpecialist);
 	pStream->Write(m_iPowerCount);
 	pStream->Write(m_iDirtyPowerCount);
+	pStream->Write(m_iPowerConsumedCount);
 	pStream->Write(m_iDefenseDamage);
 	pStream->Write(m_iLastDefenseDamage);
 	pStream->Write(m_iOccupationTimer);
@@ -15446,6 +15598,15 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCorporationUnhealth);
 
 	pStream->Write(m_iNextCoveredPlot);
+
+	pStream->Write(m_iImprovementHappiness);
+	pStream->Write(m_iImprovementHealth);
+
+	pStream->Write(m_iCultureGreatPeopleRateModifier);
+	pStream->Write(m_iCultureHappiness);
+	pStream->Write(m_iCultureTradeRouteModifier);
+
+	pStream->Write(m_iBuildingUnignorableBombardDefense);
 
 	pStream->Write(m_bNeverLost);
 	pStream->Write(m_bBombarded);
@@ -15482,6 +15643,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiReligionCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCorporationCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRateModifier);
+	pStream->Write(NUM_COMMERCE_TYPES, m_aiPowerCommerceRateModifier); // Leoreth
+	pStream->Write(NUM_COMMERCE_TYPES, m_aiCultureCommerceRateModifier); // Leoreth
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiBonusCommerceRateModifier); // Leoreth
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceHappinessPer);
 	pStream->Write(NUM_DOMAIN_TYPES, m_aiDomainFreeExperience);
@@ -15519,6 +15682,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiForceSpecialistCount);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiFreeSpecialistCount);
 	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementFreeSpecialists);
+	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHappiness);
+	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHealth);
 	pStream->Write(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Write(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
 	pStream->Write(GC.getNumUnitCombatInfos(), m_paiUnitCombatFreeExperience);
@@ -17921,4 +18086,195 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion) const
 	}
 
 	return NO_RELIGION;
+}
+
+int CvCity::getImprovementHappiness() const
+{
+	return m_iImprovementHappiness;
+}
+
+void CvCity::setImprovementHappiness(int iNewValue)
+{
+	if (getImprovementHappiness() != iNewValue)
+	{
+		m_iImprovementHappiness = iNewValue;
+		
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+void CvCity::changeImprovementHappiness(int iChange)
+{
+	setImprovementHappiness(getImprovementHappiness() + iChange);
+}
+
+int CvCity::getImprovementHealth() const
+{
+	return m_iImprovementHealth;
+}
+
+void CvCity::setImprovementHealth(int iNewValue)
+{
+	m_iImprovementHealth = iNewValue;
+}
+
+void CvCity::changeImprovementHealth(int iChange)
+{
+	m_iImprovementHealth += iChange;
+}
+
+void CvCity::updateWorkedImprovements()
+{
+	int iI;
+	ImprovementTypes eImprovement;
+
+	setImprovementHappiness(0);
+	setImprovementHealth(0);
+
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		if (isWorkingPlot(iI))
+		{
+			eImprovement = getCityIndexPlot(iI)->getImprovementType();
+			if (eImprovement != NO_IMPROVEMENT)
+			{
+				changeImprovementHappiness(getImprovementHappiness(eImprovement));
+				changeImprovementHealth(getImprovementHealth(eImprovement));
+			}
+		}
+	}
+}
+
+void CvCity::updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement)
+{
+	if (eOldImprovement != NO_IMPROVEMENT)
+	{
+		changeImprovementHappiness(-getImprovementHappiness(eOldImprovement));
+		changeImprovementHealth(-getImprovementHealth(eOldImprovement));
+	}
+
+	if (eNewImprovement != NO_IMPROVEMENT)
+	{
+		changeImprovementHappiness(getImprovementHappiness(eNewImprovement));
+		changeImprovementHealth(getImprovementHealth(eNewImprovement));
+	}
+}
+
+void CvCity::updateWorkedImprovement(int iIndex)
+{
+	CvPlot* pPlot = getCityIndexPlot(iIndex);
+
+	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
+	{
+		changeImprovementHappiness(getImprovementHappiness(pPlot->getImprovementType()) * (isWorkingPlot(iIndex) ? 1 : -1));
+		changeImprovementHealth(getImprovementHealth(pPlot->getImprovementType()) * (isWorkingPlot(iIndex) ? 1 : -1));
+	}
+}
+
+int CvCity::getPowerConsumedCount() const
+{
+	return m_iPowerConsumedCount;
+}
+
+void CvCity::changePowerConsumedCount(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iPowerConsumedCount += iChange;
+
+		updatePowerHealth();
+	}
+}
+
+int CvCity::getImprovementHappiness(ImprovementTypes eImprovement) const
+{
+	return m_paiImprovementHappiness[eImprovement];
+}
+
+void CvCity::changeImprovementHappiness(ImprovementTypes eImprovement, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_paiImprovementHappiness[eImprovement] += iChange;
+
+		updateWorkedImprovements();
+	}
+}
+
+int CvCity::getImprovementHealth(ImprovementTypes eImprovement) const
+{
+	return m_paiImprovementHealth[eImprovement];
+}
+
+void CvCity::changeImprovementHealth(ImprovementTypes eImprovement, int iChange)
+{
+	if (iChange != 0)
+	{
+		m_paiImprovementHealth[eImprovement] += iChange;
+
+		updateWorkedImprovements();
+	}
+}
+
+int CvCity::getCultureGreatPeopleRateModifier() const
+{
+	return m_iCultureGreatPeopleRateModifier;
+}
+
+void CvCity::changeCultureGreatPeopleRateModifier(int iChange)
+{
+	m_iCultureGreatPeopleRateModifier += iChange;
+}
+
+int CvCity::getCultureHappiness() const
+{
+	return m_iCultureHappiness;
+}
+
+void CvCity::changeCultureHappiness(int iChange)
+{
+	int iOldCultureHappiness = getCultureHappiness();
+	m_iCultureHappiness += iChange;
+
+	if (getCultureHappiness() != iOldCultureHappiness)
+	{
+		AI_setAssignWorkDirty(true);
+	}
+}
+
+int CvCity::getCultureTradeRouteModifier() const
+{
+	return m_iCultureTradeRouteModifier;
+}
+
+void CvCity::changeCultureTradeRouteModifier(int iChange)
+{
+	m_iCultureTradeRouteModifier += iChange;
+
+	if (iChange != 0)
+	{
+		updateTradeRoutes();
+	}
+}
+
+int CvCity::getBuildingUnignorableBombardDefense() const
+{
+	return m_iBuildingUnignorableBombardDefense;
+}
+
+void CvCity::changeBuildingUnignorableBombardDefense(int iChange)
+{
+	m_iBuildingUnignorableBombardDefense += iChange;
+}
+
+int CvCity::getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuilding) const
+{
+	FAssertMsg(eBuilding >= 0, "eBuilding expected to be >= 0");
+	FAssertMsg(eBuilding < GC.getNumBuildingInfos(), "eBuilding expected to be < GC.getNumBuildingInfos()");
+
+	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+	int iBaseDefense = getBuildingUnignorableBombardDefense();
+
+	// cap total bombard defense at 100
+	return std::min(kBuilding.getUnignorableBombardDefenseModifier() + iBaseDefense, 100) - iBaseDefense;
 }

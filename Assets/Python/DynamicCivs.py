@@ -702,6 +702,9 @@ def nameChange(iPlayer):
 def adjectiveChange(iPlayer):
 	setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
 	
+def getColumn(iPlayer):
+	return max([gc.getTechInfo(iTech).getGridX() for iTech in range(iNumTechs) if gc.getTeam(iPlayer).isHasTech(iTech)])
+	
 ### Utility methods for civilization status ###
 
 def getCivics(iPlayer):
@@ -866,7 +869,7 @@ def specificName(iPlayer):
 	bWar = isAtWar(iPlayer)
 	
 	if iPlayer in lCityStatesStart:
-		if not tPlayer.isHasTech(iAlphabet):
+		if not tPlayer.isHasTech(iWriting):
 			bCityStates = True
 	
 	if iPlayer == iChina:
@@ -1089,7 +1092,7 @@ def specificAdjective(iPlayer):
 	bWar = isAtWar(iPlayer)
 	
 	if iPlayer in lCityStatesStart:
-		if not tPlayer.isHasTech(iAlphabet):
+		if not tPlayer.isHasTech(iWriting):
 			bCityStates = True
 	
 	bMonarchy = not isCommunist(iPlayer) and not isFascist(iPlayer) and not isRepublic(iPlayer)
@@ -1386,7 +1389,7 @@ def republicTitle(iPlayer):
 		if isEmpire(iEngland) and iEra == iIndustrial:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if iEra == iModern:
+		if iEra == iGlobal:
 			return "TXT_KEY_CIV_ENGLAND_UNITED_REPUBLIC"
 	
 	if iPlayer == iAmerica:
@@ -1432,7 +1435,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	bWar = isAtWar(iPlayer)
 	
 	if iPlayer in lCityStatesStart:
-		if not tPlayer.isHasTech(iAlphabet):
+		if not tPlayer.isHasTech(iWriting):
 			bCityStates = True
 
 	if iPlayer == iEgypt:
@@ -1529,7 +1532,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iCivicOrganization == iCivicAbsolutism:
 			return "TXT_KEY_EMPIRE_OF"
 			
-		if iEra >= iIndustrialism:
+		if iEra >= iIndustrial:
 			return "TXT_KEY_EMPIRE_OF"
 			
 	elif iPlayer == iTamils:
@@ -1577,7 +1580,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_OF"
 			
 	elif iPlayer == iVikings:
-		if iReligion < 0 and not tPlayer.isHasTech(iLiberalism):
+		if iReligion < 0 and iEra < iRenaissance:
 			return "TXT_KEY_CIV_VIKINGS_NORSE_KINGDOMS"
 			
 		if bEmpire:
@@ -1833,7 +1836,7 @@ def leader(iPlayer):
 	iCivicGovernment, iCivicOrganization, iCivicLabor, iCivicEconomy, iCivicReligion = getCivics(iPlayer)
 	iGameTurn = gc.getGame().getGameTurn()
 	bEmpire = isEmpire(iPlayer)
-	bCityStates = (iCivicGovernment == iCivicCityStates or not gc.getTeam(pPlayer.getTeam()).isHasTech(iCodeOfLaws))
+	bCityStates = (iCivicGovernment == iCivicCityStates or not gc.getTeam(pPlayer.getTeam()).isHasTech(iWriting))
 	bTheocracy = (iCivicGovernment == iCivicTheocracy)
 	bResurrected = data.players[iPlayer].iResurrections > 0
 	bMonarchy = not (isCommunist(iPlayer) or isFascist(iPlayer) or isRepublic(iPlayer))
@@ -1842,18 +1845,18 @@ def leader(iPlayer):
 	iGameEra = gc.getGame().getCurrentEra()
 	
 	if iPlayer == iEgypt:
-		if not bMonarchy and iEra >= iModern: return iNasser
+		if not bMonarchy and iEra >= iGlobal: return iNasser
 		
 		if bResurrected or utils.getScenario() >= i600AD: return iBaibars
 		
-		if tPlayer.isHasTech(iLiterature): return iCleopatra
+		if getColumn(iPlayer) >= 4: return iCleopatra
 		
 	elif iPlayer == iIndia:
-		if not bMonarchy and iEra >= iModern: return iGandhi
+		if not bMonarchy and iEra >= iGlobal: return iGandhi
 		
 		if iEra >= iRenaissance: return iShahuji
 		
-		if tPlayer.isHasTech(iCurrency): return iChandragupta
+		if getColumn(iPlayer) >= 5: return iChandragupta
 		
 	elif iPlayer == iChina:
 		if isCommunist(iPlayer) or isRepublic(iPlayer) and iEra >= iIndustrial: return iMao
@@ -1872,7 +1875,7 @@ def leader(iPlayer):
 	elif iPlayer == iGreece:
 		if iEra >= iIndustrial: return iGeorge
 		
-		if bResurrected and iGameTurn >= getTurnForYear(1600): return iGeorge
+		if bResurrected and getColumn(iPlayer) >= 11: return iGeorge
 	
 		if bEmpire: return iAlexander
 		
@@ -1880,7 +1883,7 @@ def leader(iPlayer):
 		
 	elif iPlayer == iPersia:
 		if bReborn:
-			if iEra >= iModern: return iKhomeini
+			if iEra >= iGlobal: return iKhomeini
 			
 			return iAbbas
 			
@@ -1919,7 +1922,7 @@ def leader(iPlayer):
 		if iGameTurn >= getTurnForYear(1000): return iBasil
 		
 	elif iPlayer == iVikings:
-		if iEra >= iModern: return iGerhardsen
+		if iEra >= iGlobal: return iGerhardsen
 		
 		if iEra >= iRenaissance: return iGustav
 		
@@ -1930,7 +1933,7 @@ def leader(iPlayer):
 		if iGameTurn >= getTurnForYear(1500): return iLobsangGyatso
 		
 	elif iPlayer == iIndonesia:
-		if iEra >= iModern: return iSuharto
+		if iEra >= iGlobal: return iSuharto
 		
 		if bEmpire: return iHayamWuruk
 		
@@ -1943,16 +1946,14 @@ def leader(iPlayer):
 		if 1 in data.lFirstContactConquerors: return iPhilip
 		
 	elif iPlayer == iFrance:
-		if iEra >= iModern: return iDeGaulle
+		if iEra >= iGlobal: return iDeGaulle
 		
 		if iEra >= iIndustrial: return iNapoleon
-		
-		if tPlayer.isHasTech(iNationalism): return iNapoleon
 		
 		if iEra >= iRenaissance: return iLouis
 		
 	elif iPlayer == iEngland:
-		if iEra >= iModern: return iChurchill
+		if iEra >= iGlobal: return iChurchill
 		
 		if iEra >= iIndustrial: return iVictoria
 		
@@ -1982,7 +1983,7 @@ def leader(iPlayer):
 		if iGameTurn >= getTurnForYear(1650): return iWilliam
 			
 	elif iPlayer == iPoland:
-		if iEra >= iModern: return iWalesa
+		if iEra >= iGlobal: return iWalesa
 		
 		if isFascist(iPlayer) or isCommunist(iPlayer): return iPilsudski
 	
@@ -1993,7 +1994,7 @@ def leader(iPlayer):
 	elif iPlayer == iPortugal:
 		if iEra >= iIndustrial: return iMaria
 		
-		if tPlayer.isHasTech(iOptics): return iJoao
+		if tPlayer.isHasTech(iCartography): return iJoao
 		
 	elif iPlayer == iInca:
 		if iEra >= iIndustrial: return iCastilla
@@ -2014,19 +2015,19 @@ def leader(iPlayer):
 			
 			if isFascist(iPlayer): return iSantaAnna
 			
-			if iEra >= iModern: return iCardenas
+			if iEra >= iGlobal: return iCardenas
 			
 			return iJuarez
 			
 	elif iPlayer == iMughals:
-		if iEra >= iModern: return iBhutto
+		if iEra >= iGlobal: return iBhutto
 	
-		if tPlayer.isHasTech(iPatronage): return iAkbar
+		if getColumn(iPlayer) >= 9: return iAkbar
 		
 	elif iPlayer == iTurkey:
 		if not bMonarchy and iEra >= iIndustrial: return iAtaturk
 		
-		if tPlayer.isHasTech(iPatronage): return iSuleiman
+		if iEra >= iRenaissance: return iSuleiman
 				
 	elif iPlayer == iThailand:
 		if iEra >= iIndustrial: return iMongkut
@@ -2034,21 +2035,21 @@ def leader(iPlayer):
 	elif iPlayer == iGermany:
 		if isFascist(iPlayer): return iHitler
 		
-		if tPlayer.isHasTech(iNationalism): return iBismarck
+		if getColumn(iPlayer) >= 14: return iBismarck
 		
 	elif iPlayer == iAmerica:
-		if iEra >= iModern: return iRoosevelt
+		if iEra >= iGlobal: return iRoosevelt
 		
 		if iGameTurn >= getTurnForYear(1850): return iLincoln
 		
 	elif iPlayer == iArgentina:
-		if iEra >= iModern: return iPeron
+		if iEra >= iGlobal: return iPeron
 	
 	elif iPlayer == iBrazil:
-		if iEra >= iModern: return iVargas
+		if iEra >= iGlobal: return iVargas
 		
 	elif iPlayer == iCanada:
-		if iEra >= iModern: return iTrudeau
+		if iEra >= iGlobal: return iTrudeau
 		
 	return startingLeader(iPlayer)
 		

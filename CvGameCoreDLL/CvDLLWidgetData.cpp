@@ -1995,8 +1995,8 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 		int iHurryAngerModifier = (1 + iHurryPopulation) / 2;
 
 		// Leoreth: Pyramids negate unhappiness scaling
-		if (GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
-			iHurryAngerModifier = 1;
+		//if (GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
+		//	iHurryAngerModifier = 1;
 
 		if (iHurryAngerLength > 0)
 		{
@@ -2843,6 +2843,14 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 					if (iHappy != 0)
 					{
 						szTempBuffer.Format(L", +%d%c", abs(iHappy), (iHappy > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
+						szBuffer.append(szTempBuffer);
+					}
+
+					int iHealth = GC.getImprovementInfo(eImprovement).getHealth();
+
+					if (iHealth != 0)
+					{
+						szTempBuffer.Format(L", +%d%c", abs(iHealth), (iHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)));
 						szBuffer.append(szTempBuffer);
 					}
 				}

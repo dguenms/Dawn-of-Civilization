@@ -535,7 +535,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bExtendedGame = false;
 	m_bFoundedFirstCity = false;
 	m_bStrike = false;
-	m_bOlympics = false; //Rhye
 
 	m_bTurnPlayed = false;
 
@@ -1839,6 +1838,12 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		GC.getMapINLINE().verifyUnitValidPlot();
 	}
 
+	// Topkapi Palace effect: initial production in conquered cities
+	if (bConquest && isHasBuildingEffect((BuildingTypes)TOPKAPI_PALACE))
+	{
+		pNewCity->changeProduction(GC.getGameINLINE().getProductionPerPopulation((HurryTypes)0) * getCurrentEra() / 2);
+	}
+
 	pCityPlot->setRevealed(GET_PLAYER(eOldOwner).getTeam(), true, false, NO_TEAM, false);
 
 	pNewCity->updateEspionageVisibility(false);
@@ -1859,6 +1864,15 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	SAFE_DELETE_ARRAY(paiNumRealBuilding);
 	SAFE_DELETE_ARRAY(paiBuildingOriginalOwner);
 	SAFE_DELETE_ARRAY(paiBuildingOriginalTime);
+
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		ReligionTypes eReligion = (ReligionTypes)iI;
+		if (canFoundReligion(eReligion))
+		{
+			foundReligion(eReligion, eReligion, true);
+		}
+	}
 
 	if (bConquest)
 	{
@@ -5611,7 +5625,6 @@ void CvPlayer::found(int iX, int iY)
 
 	if (isBarbarian())
 	{
-
 		eDefenderUnit = pCity->AI_bestUnitAI(UNITAI_CITY_DEFENSE);
 
 		if (eDefenderUnit == NO_UNIT)
@@ -5626,7 +5639,6 @@ void CvPlayer::found(int iX, int iY)
 				initUnit(eDefenderUnit, iX, iY, UNITAI_CITY_DEFENSE);
 			}
 		}
-
 	}
 
 	for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
@@ -5701,6 +5713,15 @@ void CvPlayer::found(int iX, int iY)
 	//Rhye - end comment
 
 	CvEventReporter::getInstance().cityBuilt(pCity);
+
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		ReligionTypes eReligion = (ReligionTypes)iI;
+		if (canFoundReligion(eReligion))
+		{
+			foundReligion(eReligion, eReligion, true);
+		}
+	}
 }
 
 
@@ -6839,6 +6860,17 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 			pLoopCity->changeCommerceRateModifier(COMMERCE_CULTURE, pLoopCity->getBuildingDefense() * iChange);
 		}
 	}
+
+	// Leoreth: Hanging Gardens effect
+	if (eBuilding == HANGING_GARDENS)
+	{
+		CvCity* pLoopCity;
+		int iLoop;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			pLoopCity->updateFeatureHealth();
+		}
+	}
 }
 
 
@@ -7577,7 +7609,7 @@ bool CvPlayer::canResearch(TechTypes eTech, bool bTrade) const
 			{
 				//Rhye
 				//if (!bTrade || GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) || !GET_TEAM(getTeam()).isNoTradeTech(ePrereq))
-				if (!bTrade || (GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) && !GET_TEAM(getTeam()).isHasTech((TechTypes)MASS_MEDIA)) || !GET_TEAM(getTeam()).isNoTradeTech(ePrereq))
+				if (!bTrade || (GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) && !GET_TEAM(getTeam()).isHasTech((TechTypes)GLOBALISM)) || !GET_TEAM(getTeam()).isNoTradeTech(ePrereq))
 				{
 					bFoundValid = true;
 					break;
@@ -7603,7 +7635,7 @@ bool CvPlayer::canResearch(TechTypes eTech, bool bTrade) const
 
 			//Rhye
 			//if (bTrade && !GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) && GET_TEAM(getTeam()).isNoTradeTech(ePrereq))
-			if (bTrade && (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) || GET_TEAM(getTeam()).isHasTech((TechTypes)MASS_MEDIA)) && GET_TEAM(getTeam()).isNoTradeTech(ePrereq))
+			if (bTrade && (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) || GET_TEAM(getTeam()).isHasTech((TechTypes)GLOBALISM)) && GET_TEAM(getTeam()).isNoTradeTech(ePrereq))
 			{
 				return false;
 			}
@@ -8142,8 +8174,7 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		//if (!bStarting || !(pLoopCity->isHolyCity() && getNumCities() > 1) || (eSlotReligion == PROTESTANTISM))
-		if (true)
+		if (pLoopCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE)
 		{
 			iValue = 10;
 			iValue += pLoopCity->getPopulation();
@@ -9180,6 +9211,11 @@ int CvPlayer::getGreatGeneralsCreated() const
 void CvPlayer::incrementGreatGeneralsCreated()
 {
 	m_iGreatGeneralsCreated++;
+}
+
+void CvPlayer::decrementGreatGeneralsCreated()
+{
+	m_iGreatGeneralsCreated = std::max(0, m_iGreatGeneralsCreated-1);
 }
 
 // Leoreth
@@ -11577,16 +11613,6 @@ void CvPlayer::setStrike(bool bNewValue)
 	}
 }
 
-//Rhye - start
-bool CvPlayer::isOlympics() const
-{
-	return m_bOlympics;
-}
-void CvPlayer::setOlympics(bool bNewValue)
-{
-	m_bOlympics = bNewValue;
-}
-//Rhye - end
 
 PlayerTypes CvPlayer::getID() const
 {
@@ -12593,7 +12619,11 @@ void CvPlayer::changeFreeBuildingCount(BuildingTypes eIndex, int iChange)
 
 			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 			{
-				pLoopCity->setNumFreeBuilding(eIndex, 1);
+				// Leoreth: only grant free buildings if allowed for their location
+				if (pLoopCity->isValidBuildingLocation(eIndex))
+				{
+					pLoopCity->setNumFreeBuilding(eIndex, 1);
+				}
 			}
 		}
 		else if (getFreeBuildingCount(eIndex) == 0)
@@ -17936,7 +17966,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bExtendedGame);
 	pStream->Read(&m_bFoundedFirstCity);
 	pStream->Read(&m_bStrike);
-	pStream->Read(&m_bOlympics); //Rhye
 
 	//Rhye (jdog) -  start ---------------------
 	//pStream->ReadString(m_szName);
@@ -18460,7 +18489,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bExtendedGame);
 	pStream->Write(m_bFoundedFirstCity);
 	pStream->Write(m_bStrike);
-	pStream->Write(m_bOlympics); //Rhye
 
 
 	//Rhye (jdog) -  start ---------------------
@@ -22712,6 +22740,12 @@ bool CvPlayer::canHaveTradeRoutesWith(PlayerTypes ePlayer) const
 		return true;
 	}
 
+	// Porcelain Tower effect: no open borders required for trade
+	if (isHasBuildingEffect((BuildingTypes)PORCELAIN_TOWER))
+	{
+		return true;
+	}
+
 	if (GET_TEAM(getTeam()).isFreeTrade(kOtherPlayer.getTeam()))
 	{
 		if (GET_TEAM(getTeam()).isVassal(kOtherPlayer.getTeam()))
@@ -25017,4 +25051,51 @@ void CvPlayer::updateReligionYieldChange(ReligionTypes eReligion, YieldTypes eYi
 	{
 		pCity->changeReligionYieldChange(eReligion, eYield, iChange);
 	}
+}
+
+bool CvPlayer::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered) const
+{
+	if (GC.getGameINLINE().isReligionFounded(eReligion))
+	{
+		return false;
+	}
+
+	if (isBarbarian() || isMinorCiv())
+	{
+		return false;
+	}
+
+	TechTypes ePrereqTech = (TechTypes)GC.getReligionInfo(eReligion).getTechPrereq();
+
+	if (eTechDiscovered != NO_TECH)
+	{
+		if (ePrereqTech != eTechDiscovered)
+		{
+			return false;
+		}
+	}
+	else
+	{
+		if (ePrereqTech == NO_TECH)
+		{
+			return false;
+		}
+
+		if (!GET_TEAM(getTeam()).isHasTech(ePrereqTech))
+		{
+			return false;
+		}
+	}
+
+	int iLoop;
+	CvCity* pCity;
+	for (pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
+	{
+		if (pCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }

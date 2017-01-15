@@ -451,9 +451,9 @@ class WBGameDataScreen:
 					data.bAlreadySwitched = not data.bAlreadySwitched
 				elif iGameOption == 3002 and cong.isCongressEnabled():
 					if bRemove:
-						sd.setCongressTurns(max(1, sd.getCongressTurns() - iChange))
+						data.iCongressTurns = max(1, data.iCongressTurns - iChange)
 					else:
-						sd.setCongressTurns(sd.getCongressTurns() + iChange)
+						data.iCongressTurns += iChange
 			self.placeGameOptions()
 
 		elif inputClass.getFunctionName() == "HiddenOptions":

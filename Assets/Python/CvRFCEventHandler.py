@@ -30,6 +30,7 @@ import Areas
 import Civilizations
 import AIParameters
 import GreatPeople as gp
+import TechLog as techlog
 
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
@@ -107,6 +108,7 @@ class CvRFCEventHandler:
 		
 		vic.setup()
 		cong.setup()
+		techlog.setup()
 		
 		# Leoreth: set DLL core values
 		Modifiers.init()
@@ -200,7 +202,7 @@ class CvRFCEventHandler:
 					city.setOccupationTimer(0)
 					
 			# Statue of Zeus effect: no city resistance on conquest
-			if gc.getPlayer(iPlayer).countNumBuildings(iStatueOfZeus) > 0 and not gc.getTeam(iPlayer).isHasTech(iTheology):
+			if gc.getPlayer(iPlayer).countNumBuildings(iStatueOfZeus) > 0:
 				city.setOccupationTimer(0)
 				
 			# Byzantium reduced to four cities: core shrinks to Constantinople
@@ -310,7 +312,7 @@ class CvRFCEventHandler:
 		if iOwner == iNetherlands and (city.getX(), city.getY()) == Areas.getCapital(iNetherlands) and gc.getGame().getGameTurn() <= getTurnForYear(1580)+3:
 			city.setPopulation(9)
 			
-			for iBuilding in [iLibrary, iBarracks, iGrocer, iBank, iAmphitheatre, iTheatre, iTemple+4*gc.getPlayer(iNetherlands).getStateReligion()]:
+			for iBuilding in [iLibrary, iBarracks, iPharmacy, iBank, iAmphitheatre, iTheatre, iTemple+4*gc.getPlayer(iNetherlands).getStateReligion()]:
 				city.setHasRealBuilding(iBuilding, True)
 				
 			gc.getPlayer(iNetherlands).AI_updateFoundValues(False)
@@ -318,7 +320,7 @@ class CvRFCEventHandler:
 		if iOwner == iItaly and (city.getX(), city.getY()) == Areas.getCapital(iItaly) and gc.getGame().getGameTurn() <= getTurnForYear(tBirth[iItaly])+3:
 			city.setPopulation(7)
 			
-			for iBuilding in [iLibrary, iGrocer, iTemple+4*gc.getPlayer(iItaly).getStateReligion(), iMarket, iItalianArtStudio, iAqueduct, iCourthouse, iWalls]:
+			for iBuilding in [iLibrary, iPharmacy, iTemple+4*gc.getPlayer(iItaly).getStateReligion(), iMarket, iArtStudio, iAqueduct, iCourthouse, iWalls]:
 				city.setHasRealBuilding(iBuilding, True)
 				
 			gc.getPlayer(iItaly).AI_updateFoundValues(False)
@@ -374,7 +376,7 @@ class CvRFCEventHandler:
 		sta.onCombatResult(pWinningUnit.getOwner(), pLosingUnit.getOwner(), iUnitPower)
 		
 		# catch slaves by defeating native and barbarian Pombos or Impis
-		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iZuluImpi, iCongolesePombos]:
+		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iImpi, iPombos]:
 			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
 				if gc.getPlayer(pWinningUnit.getOwner()).getCivics(2) == iCivicSlavery:
 					iRand = gc.getGame().getSorenRandNum(5, "Caught slaves?")
@@ -384,7 +386,7 @@ class CvRFCEventHandler:
 						CyInterface().addMessage(pWinningUnit.getOwner(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
 
 		# Maya Holkans give food to closest city on victory
-		if pWinningUnit.getUnitType() == iMayanHolkan:
+		if pWinningUnit.getUnitType() == iHolkan:
 			iOwner = pWinningUnit.getOwner()
 			city = gc.getMap().findCity(pWinningUnit.getX(), pWinningUnit.getY(), iOwner, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
 			if city: 
@@ -401,6 +403,7 @@ class CvRFCEventHandler:
 	
 		vic.onReligionFounded(iFounder, iReligion)
 		self.rel.onReligionFounded(iReligion, iFounder)
+		techlog.onReligionFounded(iFounder, iReligion)
 
 	def onVassalState(self, argsList):
 		'Vassal State'
@@ -540,15 +543,15 @@ class CvRFCEventHandler:
 					plot.setWithinGreatWall(True)
 					
 		# Leoreth: La Mezquita
-		if iBuildingType == iMezquita:
-			lGPList = [0, 0, 0, 0, 0, 0, 0]
-			for city in utils.getCityList(iOwner):
-				for i in range(7):
-					iSpecialistUnit = utils.getUniqueUnit(iOwner, iGreatProphet + i)
-					lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
-			iGPType = utils.getUniqueUnit(iOwner, iGreatProphet + utils.getHighestIndex(lGPList))
-			utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
-			CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
+		#if iBuildingType == iMezquita:
+		#	lGPList = [0, 0, 0, 0, 0, 0, 0]
+		#	for city in utils.getCityList(iOwner):
+		#		for i in range(7):
+		#			iSpecialistUnit = utils.getUniqueUnit(iOwner, iGreatProphet + i)
+		#			lGPList[i] += city.getGreatPeopleUnitProgress(iSpecialistUnit)
+		#	iGPType = utils.getUniqueUnit(iOwner, iGreatProphet + utils.getHighestIndex(lGPList))
+		#	utils.makeUnit(iGPType, iOwner, (city.getX(), city.getY()), 1)
+		#	CyInterface().addMessage(iOwner, False, iDuration, CyTranslator().getText("TXT_KEY_MEZQUITA_FREE_GP", (gc.getUnitInfo(iGPType).getText(), city.getName())), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGPType).getButton(), ColorTypes(iWhite), city.getX(), city.getY(), True, True)
 			
 	def onPlotFeatureRemoved(self, argsList):
 		plot, city, iFeature = argsList
@@ -588,6 +591,7 @@ class CvRFCEventHandler:
 		
 		sta.checkTurn(iGameTurn)
 		cong.checkTurn(iGameTurn)
+		techlog.checkTurn(iGameTurn)
 		
 		if iGameTurn % 10 == 0:
 			dc.checkTurn(iGameTurn)
@@ -646,16 +650,15 @@ class CvRFCEventHandler:
 		
 		iEra = gc.getTechInfo(iTech).getEra()
 		
-		if (utils.getScenario() == i600AD and gc.getGame().getGameTurn() == getTurnForYear(600)): #late start condition
+		if gc.getGame().getGameTurn() == utils.getScenarioStartTurn():
 			return
 			
-		if utils.getScenario() == i1700AD and gc.getGame().getGameTurn() == getTurnForYear(1700):
-			return
-			
+		self.up.onTechAcquired(iPlayer, iTech)
 		sta.onTechAcquired(iPlayer, iTech)
 		AIParameters.onTechAcquired(iPlayer, iTech)
 		
 		if (gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer])):
+			techlog.onTechAcquired(iPlayer, iTech)
 			vic.onTechAcquired(iPlayer, iTech)
 			cnm.onTechAcquired(argsList[2])
 
@@ -666,28 +669,28 @@ class CvRFCEventHandler:
 			if (gc.getGame().getGameTurn() > getTurnForYear(1700)):
 				self.aiw.forgetMemory(argsList[0], argsList[2])
 
-		if (argsList[0] == iAstronomy):
+		if (argsList[0] == iExploration):
 			if iPlayer in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
-				data.players[iPlayer].iAstronomyTurn = gc.getGame().getGameTurn()
+				data.players[iPlayer].iExplorationTurn = gc.getGame().getGameTurn()
 				
 		if (argsList[0] == iCompass):
 			if (iPlayer == iVikings):
 				gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
 				
-		if (argsList[0] == iMedicine):
+		if (argsList[0] == iMicrobiology):
 			self.pla.onTechAcquired(argsList[0], argsList[2])
 
 		if argsList[0] == iRailroad:
 			self.rnf.onRailroadDiscovered(argsList[2])
 			
-		if iTech in [iAstronomy, iGunpowder]:
+		if iTech in [iExploration, iFirearms]:
 			teamPlayer = gc.getTeam(iPlayer)
-			if teamPlayer.isHasTech(iAstronomy) and teamPlayer.isHasTech(iGunpowder):
+			if teamPlayer.isHasTech(iExploration) and teamPlayer.isHasTech(iFirearms):
 				self.rnf.earlyTradingCompany(iPlayer)
 			
-		if iTech in [iEconomics, iRifling]:
+		if iTech in [iEconomics, iReplaceableParts]:
 			teamPlayer = gc.getTeam(iPlayer)
-			if teamPlayer.isHasTech(iEconomics) and teamPlayer.isHasTech(iRifling):
+			if teamPlayer.isHasTech(iEconomics) and teamPlayer.isHasTech(iReplaceableParts):
 				self.rnf.lateTradingCompany(iPlayer)
 	
 		if utils.getHumanID() != iPlayer:
@@ -716,16 +719,16 @@ class CvRFCEventHandler:
 		if iPlayer == iItaly and iEra == iIndustrial:
 			utils.setReborn(iItaly, True)
 			
-		# Arabia's core moves to Iraq when Philosophy is discovered
-		if iPlayer == iArabia and iTech == iPhilosophy:
+		# Arabia's core moves to Iraq when Scholarship is discovered
+		if iPlayer == iArabia and iTech == iScholarship:
 			utils.setReborn(iArabia, True)
 			
 		# Japan's core extends when reaching the Industrial era
 		if iPlayer == iJapan and iEra == iIndustrial:
 			utils.setReborn(iJapan, True)
 			
-		# Germany's core shrinks when reaching the Modern era
-		if iPlayer == iGermany and iEra == iModern:
+		# Germany's core shrinks when reaching the Global era
+		if iPlayer == iGermany and iEra == iGlobal:
 			utils.setReborn(iGermany, True)
 		
 
@@ -736,6 +739,7 @@ class CvRFCEventHandler:
 
 	def onLoadGame(self, argsList):
 		data.load() # edead: load & unpickle script data
+		techlog.setup()
 		
 	def onChangeWar(self, argsList):
 		bWar, iTeam, iOtherTeam = argsList

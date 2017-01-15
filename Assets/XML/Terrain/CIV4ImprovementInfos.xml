@@ -510,6 +510,7 @@
 			<iAirBombDefense>10</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappiness>0</iHappiness>
+			<iHealth>-1</iHealth>
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
@@ -603,7 +604,15 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_GEOLOGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
 					<RouteType>ROUTE_RAILROAD</RouteType>
@@ -624,8 +633,8 @@
 				<iYield>1</iYield>
 			</PrereqNatureYields>
 			<YieldChanges>
-				<iYieldChange>-1</iYieldChange>
-				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>2</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -649,6 +658,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappiness>0</iHappiness>
+			<iHealth>-1</iHealth>
 			<iPillageGold>5</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids>
@@ -666,21 +676,23 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_GUILDS</PrereqTech>
-					<TechYields>
-						<iYield>0</iYield>
-						<iYield>1</iYield>
-					</TechYields>
-				</TechYieldChange>
-				<TechYieldChange>
-					<PrereqTech>TECH_CHEMISTRY</PrereqTech>
+					<PrereqTech>TECH_MACHINE_TOOLS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
-			<RouteYieldChanges/>
+			<RouteYieldChanges>
+				<RouteYieldChange>
+					<RouteType>ROUTE_HIGHWAY</RouteType>
+					<RouteYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</RouteYields>
+				</RouteYieldChange>
+			</RouteYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -694,8 +706,8 @@
 			</YieldChanges>
 			<RiverSideYieldChange>
 				<iYield>0</iYield>
-				<iYield>0</iYield>
 				<iYield>1</iYield>
+				<iYield>0</iYield>
 			</RiverSideYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -730,7 +742,16 @@
 			</FeatureMakesValids>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_PAPER</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
 					<RouteType>ROUTE_RAILROAD</RouteType>
@@ -808,6 +829,7 @@
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
+				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
@@ -850,7 +872,7 @@
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>2</iYield>
+						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
@@ -897,6 +919,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>3</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -955,17 +979,6 @@
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
-					<BonusType>BONUS_SPICES</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>0</iYieldChange>
-						<iYieldChange>2</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
 					<BonusType>BONUS_SUGAR</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
@@ -973,7 +986,7 @@
 					<YieldChanges>
 						<iYieldChange>1</iYieldChange>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
+						<iYieldChange>2</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -984,7 +997,7 @@
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>2</iYieldChange>
+						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -995,13 +1008,22 @@
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
+						<iYieldChange>4</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
 					<RouteType>ROUTE_RAILROAD</RouteType>
@@ -1019,6 +1041,11 @@
 			<Description>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_PLANTATION</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>2</iYieldChange>
+			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -1041,7 +1068,7 @@
 			<iUpgradeTime>0</iUpgradeTime>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
-			<iHappiness>0</iHappiness>
+			<iHappiness>-1</iHappiness>
 			<iPillageGold>5</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
@@ -1053,9 +1080,9 @@
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
-						<iYieldChange>3</iYieldChange>
-						<iYieldChange>1</iYieldChange>
 						<iYieldChange>2</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1065,8 +1092,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>5</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1076,8 +1103,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>2</iYieldChange>
-						<iYieldChange>5</iYieldChange>
+						<iYieldChange>1</iYieldChange>
+						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1087,8 +1114,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>6</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>4</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1098,8 +1125,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>7</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>5</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1109,19 +1136,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>5</iYieldChange>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
-					<BonusType>BONUS_SPICES</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<bBonusTrade>1</bBonusTrade>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>4</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1131,8 +1147,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>1</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>3</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>2</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1142,8 +1158,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>4</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>3</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1153,15 +1169,33 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
-						<iYieldChange>5</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>4</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
-			<RouteYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
+			<RouteYieldChanges>
+				<RouteYieldChange>
+					<RouteType>ROUTE_RAILROAD</RouteType>
+					<RouteYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</RouteYields>
+				</RouteYieldChange>
+			</RouteYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1220,7 +1254,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_GEOLOGY</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+						<iYield>0</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges>
 				<RouteYieldChange>
 					<RouteType>ROUTE_RAILROAD</RouteType>
@@ -1310,8 +1353,9 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_REFRIGERATION</PrereqTech>
+					<PrereqTech>TECH_BIOLOGY</PrereqTech>
 					<TechYields>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
 					</TechYields>
 				</TechYieldChange>
@@ -1377,7 +1421,7 @@
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
+						<iYieldChange>2</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1394,7 +1438,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_FIREARMS</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1425,6 +1478,7 @@
 			<iAirBombDefense>10</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappiness>0</iHappiness>
+			<iHealth>-1</iHealth>
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
@@ -1499,10 +1553,16 @@
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
-			<Type>IMPROVEMENT_WINERY</Type>
-			<Description>TXT_KEY_IMPROVEMENT_WINERY</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_WINERY_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_WINERY</ArtDefineTag>
+			<Type>IMPROVEMENT_ORCHARD</Type>
+			<Description>TXT_KEY_IMPROVEMENT_ORCHARD</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_ORCHARD_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_ORCHARD</ArtDefineTag>
+			<PrereqNatureYields/>
+			<IrrigatedYieldChange>
+				<iYield>1</iYield>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+			</IrrigatedYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -1526,18 +1586,29 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappiness>0</iHappiness>
-			<iPillageGold>10</iPillageGold>
+			<iPillageGold>5</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
 			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_SPICES</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>1</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
 				<BonusTypeStruct>
 					<BonusType>BONUS_WINE</BonusType>
 					<bBonusMakesValid>1</bBonusMakesValid>
 					<bBonusTrade>1</bBonusTrade>
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
-						<iYieldChange>1</iYieldChange>
+						<iYieldChange>0</iYieldChange>
 						<iYieldChange>0</iYieldChange>
 						<iYieldChange>2</iYieldChange>
 					</YieldChanges>
@@ -1545,7 +1616,16 @@
 			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
-			<TechYieldChanges/>
+			<TechYieldChanges>
+				<TechYieldChange>
+					<PrereqTech>TECH_CROP_ROTATION</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+			</TechYieldChanges>
 			<RouteYieldChanges/>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
@@ -1685,6 +1765,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappiness>0</iHappiness>
+			<iHealth>-1</iHealth>
 			<iPillageGold>20</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
@@ -1693,7 +1774,7 @@
 			<ImprovementUpgrade>IMPROVEMENT_TOWN</ImprovementUpgrade>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_PRINTING_PRESS</PrereqTech>
+					<PrereqTech>TECH_PRINTING</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1736,7 +1817,8 @@
 			<iUpgradeTime>0</iUpgradeTime>
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
-			<iHappiness>0</iHappiness>
+			<iHappiness>-1</iHappiness>
+			<iHealth>-1</iHealth>
 			<iPillageGold>25</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
@@ -1745,7 +1827,7 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_PRINTING_PRESS</PrereqTech>
+					<PrereqTech>TECH_PRINTING</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
@@ -1753,7 +1835,16 @@
 					</TechYields>
 				</TechYieldChange>
 			</TechYieldChanges>
-			<RouteYieldChanges/>
+			<RouteYieldChanges>
+				<RouteYieldChange>
+					<RouteType>ROUTE_HIGHWAY</RouteType>
+					<RouteYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</RouteYields>
+				</RouteYieldChange>
+			</RouteYieldChanges>
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
@@ -1816,10 +1907,11 @@
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
-			<Type>IMPROVEMENT_FOREST_PRESERVE</Type>
-			<Description>TXT_KEY_IMPROVEMENT_FOREST_PRESERVE</Description>
-			<Civilopedia>TXT_KEY_IMPROVEMENT_FOREST_PRESERVE_IMPROVEMENT_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_FOREST_PRESERVE</ArtDefineTag>
+			<Type>IMPROVEMENT_NATURE_RESERVE</Type>
+			<Description>TXT_KEY_IMPROVEMENT_NATURE_RESERVE</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_NATURE_RESERVE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_NATURE_RESERVE</ArtDefineTag>
+			<YieldChanges/>
 			<RiverSideYieldChange>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
@@ -1865,6 +1957,99 @@
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>
 			</FeatureMakesValids>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_IVORY</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>0</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>-1</iYieldChange>
+						<iYieldChange>3</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_FUR</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>0</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
+			<ImprovementPillage/>
+			<ImprovementUpgrade/>
+			<TechYieldChanges/>
+			<RouteYieldChanges/>
+			<bGraphicalOnly>0</bGraphicalOnly>
+		</ImprovementInfo>
+
+		<ImprovementInfo>
+			<Type>IMPROVEMENT_MARINE_RESERVE</Type>
+			<Description>TXT_KEY_IMPROVEMENT_MARINE_RESERVE</Description>
+			<Civilopedia>TXT_KEY_IMPROVEMENT_MARINE_RESERVE_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_MARINE_RESERVE</ArtDefineTag>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</YieldChanges>
+			<RiverSideYieldChange/>
+			<bActsAsCity>0</bActsAsCity>
+			<bHillsMakesValid>0</bHillsMakesValid>
+			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
+			<bRiverSideMakesValid>0</bRiverSideMakesValid>
+			<bNoFreshWater>0</bNoFreshWater>
+			<bRequiresFlatlands>0</bRequiresFlatlands>
+			<bRequiresRiverSide>0</bRequiresRiverSide>
+			<bRequiresIrrigation>0</bRequiresIrrigation>
+			<bCarriesIrrigation>0</bCarriesIrrigation>
+			<bRequiresFeature>1</bRequiresFeature>
+			<bWater>1</bWater>
+			<bGoody>0</bGoody>
+			<bPermanent>0</bPermanent>
+			<bUseLSystem>0</bUseLSystem>
+			<iAdvancedStartCost>48</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<iTilesPerGoody>0</iTilesPerGoody>
+			<iGoodyRange>0</iGoodyRange>
+			<iFeatureGrowth>0</iFeatureGrowth>
+			<iUpgradeTime>0</iUpgradeTime>
+			<iAirBombDefense>20</iAirBombDefense>
+			<iDefenseModifier>0</iDefenseModifier>
+			<iHappiness>1</iHappiness>
+			<iPillageGold>0</iPillageGold>
+			<bOutsideBorders>0</bOutsideBorders>
+			<TerrainMakesValids/>
+			<FeatureMakesValids/>
+			<BonusTypeStructs>
+				<BonusTypeStruct>
+					<BonusType>BONUS_PEARL</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>0</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+				<BonusTypeStruct>
+					<BonusType>BONUS_WHALE</BonusType>
+					<bBonusMakesValid>1</bBonusMakesValid>
+					<bBonusTrade>0</bBonusTrade>
+					<iDiscoverRand>0</iDiscoverRand>
+					<YieldChanges>
+						<iYieldChange>-1</iYieldChange>
+						<iYieldChange>0</iYieldChange>
+						<iYieldChange>2</iYieldChange>
+					</YieldChanges>
+				</BonusTypeStruct>
+			</BonusTypeStructs>
 			<ImprovementPillage/>
 			<ImprovementUpgrade/>
 			<TechYieldChanges/>

@@ -10,7 +10,7 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 import RFCUtils
-import Consts as con
+from Consts import *
 
 # BUG - start
 import BugUtil

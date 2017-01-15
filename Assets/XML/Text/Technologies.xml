@@ -98,7 +98,7 @@
 		<English>[COLOR_TECH_TEXT]Biology[COLOR_REVERT] allows the construction of [COLOR_HIGHLIGHT_TEXT]Farms[COLOR_REVERT] without [COLOR_HIGHLIGHT_TEXT]Irrigation[COLOR_REVERT] as well as the [COLOR_BUILDING_TEXT]National Park[COLOR_REVERT] National Wonder. It increases the food production of all [COLOR_HIGHLIGHT_TEXT]Farm[COLOR_REVERT] Improvements by 1, allows the removal of Jungles and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Cereal Industry[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_BRONZE_WORKING_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_ALLOYS_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Bronze Working[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Copper[COLOR_REVERT] resource, allows you to train [COLOR_UNIT_TEXT]Axemen[COLOR_REVERT] and allows the removal of Forests.</English>
 	</TEXT>
 	<TEXT>
@@ -118,7 +118,7 @@
 		<English>[COLOR_TECH_TEXT]Code of Laws[COLOR_REVERT] allows construction of the [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Administrative Center[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Temple of Kukulkan[COLOR_REVERT] World Wonder.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_COMBUSTION_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_ENGINE_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Combustion[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Transports[COLOR_REVERT], [COLOR_UNIT_TEXT]Destroyers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Airships[COLOR_REVERT]. Allows the construction of the [COLOR_BUILDING_TEXT]Public Transportation[COLOR_REVERT] Building, the construction of the [COLOR_HIGHLIGHT_TEXT]Well[COLOR_REVERT] Improvement and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Oil Industry[COLOR_REVERT]. It obsoletes the [COLOR_WARNING_TEXT]Whale[COLOR_REVERT] Resource and the [COLOR_WARNING_TEXT]Trafalgar Square[COLOR_REVERT] World Wonder.</English>
 	</TEXT>
 	<TEXT>
@@ -210,7 +210,7 @@
 		<English>[COLOR_TECH_TEXT]Fusion[COLOR_REVERT] allows you to construct the [COLOR_PROJECT_TEXT]SS Engine[COLOR_REVERT] Spaceship Part. The first to research [COLOR_TECH_TEXT]Fusion[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT] unit</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_FUTURE_TECH_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_TRANSHUMANISM_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Future Tech[COLOR_REVERT] increases health and happiness in all your cities.</English>
 	</TEXT>
 	<TEXT>
@@ -238,7 +238,7 @@
 		<English>[COLOR_TECH_TEXT]Industrialism[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Marines[COLOR_REVERT], [COLOR_UNIT_TEXT]Tanks[COLOR_REVERT] and [COLOR_UNIT_TEXT]Battleships[COLOR_REVERT], allows you to construct the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Empire State Building[COLOR_REVERT] World Wonder. It also reveals the [COLOR_HIGHLIGHT_TEXT]Aluminum[COLOR_REVERT] Resource, obsoletes the [COLOR_WARNING_TEXT]Ivory[COLOR_REVERT] Resource and enables the [COLOR_HIGHLIGHT_TEXT]Ambush[COLOR_REVERT] Promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_IRON_WORKING_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_BLOOMERY_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Iron Working[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Iron[COLOR_REVERT] Resource and allows you to train [COLOR_UNIT_TEXT]Swordsmen[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -270,11 +270,11 @@
 		<English>[COLOR_TECH_TEXT]Masonry[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Quarry[COLOR_REVERT] Improvement and enables the [COLOR_HIGHLIGHT_TEXT]Slavery[COLOR_REVERT] Civic. It also allows the construction of the [COLOR_BUILDING_TEXT]Walls[COLOR_REVERT] Building, the [COLOR_BUILDING_TEXT]Great Pyramids[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT], the [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Great Cothon[COLOR_REVERT] World Wonders.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MASS_MEDIA_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_TELEVISION_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Mass Media[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Broadcast Tower[COLOR_REVERT] Building, [COLOR_BUILDING_TEXT]Hollywood[COLOR_REVERT], the [COLOR_BUILDING_TEXT]United Nations[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]CN Tower[COLOR_REVERT] World Wonders. It also enables the [COLOR_HIGHLIGHT_TEXT]Public Welfare[COLOR_REVERT] Civic.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_MATHEMATICS_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_GEOMETRY_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] Building, allows the construction of the [COLOR_HIGHLIGHT_TEXT]Fort[COLOR_REVERT] Improvement and allows you to train [COLOR_UNIT_TEXT]Catapults[COLOR_REVERT]. It also increases the production gained from chopping forests. The first player to discover [COLOR_TECH_TEXT]Mathematics[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
@@ -370,7 +370,7 @@
 		<English>[COLOR_TECH_TEXT]Physics[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] Resource. The first to research [COLOR_TECH_TEXT]Physics[COLOR_REVERT] receives a free [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT] unit.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_PLASTICS_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_SYNTHETICS_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Plastics[COLOR_REVERT] allows the construction of the [COLOR_HIGHLIGHT_TEXT]Offshore Platform[COLOR_REVERT] Improvement, allows the construction of the [COLOR_BUILDING_TEXT]Hydro Plant[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Three Gorges Dam[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]Fur[COLOR_REVERT] and [COLOR_WARNING_TEXT]Pearls[COLOR_REVERT] Resources.</English>
 	</TEXT>
 	<TEXT>
@@ -442,7 +442,7 @@
 		<English>[COLOR_TECH_TEXT]Stealth[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Stealth Bombers[COLOR_REVERT] and [COLOR_UNIT_TEXT]Stealth Destroyers[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_STEAM_POWER_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_THERMODYNAMICS_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Steam Power[COLOR_REVERT] reveals the [COLOR_HIGHLIGHT_TEXT]Coal[COLOR_REVERT] Resource, causes workers to build improvements 50% faster and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Textile Industry[COLOR_REVERT]. It also allows you to train [COLOR_UNIT_TEXT]Ironclads[COLOR_REVERT] and allows you to construct the [COLOR_BUILDING_TEXT]Levee[COLOR_REVERT] Building.</English>
 	</TEXT>
 	<TEXT>
@@ -462,7 +462,7 @@
 		<English>[COLOR_TECH_TEXT]Superconductors[COLOR_REVERT] allow the construction of the [COLOR_PROJECT_TEXT]SS Thrusters[COLOR_REVERT] Spaceship Part.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_THE_WHEEL_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_LEVERAGE_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]The Wheel[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Chariots[COLOR_REVERT] and allows the construction of [COLOR_HIGHLIGHT_TEXT]Roads[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>

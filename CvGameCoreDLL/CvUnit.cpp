@@ -712,6 +712,21 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 
 	GET_PLAYER(getOwnerINLINE()).AI_changeNumAIUnits(AI_getUnitAIType(), -1);
 
+	// Brandenburg Gate effect: Great General death resets Great General threshold
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)BRANDENBURG_GATE))
+	{
+		for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+		{
+			if (isHasPromotion((PromotionTypes)iI))
+			{
+				if (GC.getPromotionInfo((PromotionTypes)iI).isLeader())
+				{
+					GET_PLAYER(getOwnerINLINE()).decrementGreatGeneralsCreated();
+				}
+			}
+		}
+	}
+
 	eOwner = getOwnerINLINE();
 	eCapturingPlayer = getCapturingPlayer();
 	eCaptureUnitType = ((eCapturingPlayer != NO_PLAYER) ? getCaptureUnitType(GET_PLAYER(eCapturingPlayer).getCivilizationType()) : NO_UNIT);
@@ -4679,6 +4694,8 @@ bool CvUnit::bombard()
 		iBombardModifier -= pBombardCity->getBuildingBombardDefense();
 	}
 
+	iBombardModifier -= pBombardCity->getBuildingUnignorableBombardDefense();
+
 	pBombardCity->changeDefenseModifier(-(bombardRate() * std::max(0, 100 + iBombardModifier)) / 100);
 
 	setMadeAttack(true);
@@ -6297,10 +6314,10 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture = m_pUnitInfo->getGreatWorkCulture();
 
 	// Leoreth: new Sphinx effect: great priests can create great works
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"))
+	/*if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"))
 	{
 		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_ARTIST"))).getGreatWorkCulture();
-	}
+	}*/
 
 	// Leoreth: 800 culture per era
 	iCulture *= (GET_PLAYER(getOwnerINLINE()).getCurrentEra()+1);

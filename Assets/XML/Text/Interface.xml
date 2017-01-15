@@ -969,6 +969,19 @@
 		<German>%D1_Change[ICON_UNHEALTHY] durch Kapitalgesellschaften</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HEALTH_FROM_IMPROVEMENTS</Tag>
+		<English>%D1_Change[ICON_UNHEALTHY] from Improvements</English>
+		<German>%D1_Change[ICON_UNHEALTHY] durch Verbesserungen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ANGER_IMPROVEMENTS</Tag>
+		<English>+%d1_Change[ICON_UNHAPPY]: "The countryside is overcrowded!"</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HAPPY_IMPROVEMENTS</Tag>
+		<English>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH</Tag>
 		<English>[ICON_BULLET]%D1%F2 from Excess Health</English>
 	</TEXT>
@@ -1596,5 +1609,33 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per[SPACE]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HEALTH</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HealthOrUn per[SPACE]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNIGNORABLE_BOMBARD_DEFENSE_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Damage to Defenses from Bombardment</English>
+		<German>[ICON_BULLET]%D1_Mod%% Bombardierungsschaden gegen Defensivanlagen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CULTURE_BIRTH_RATE_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_GREATPEOPLE] Birth Rate per Culture Level</English>
+		<German>[ICON_BULLET]%D1_Mod%% Geburtenrate [ICON_GREATPEOPLE] pro Kulturstufe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CULTURE_LEVEL_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Culture Level</English>
+		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Kulturstufe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BABYLONIAN_UP</Tag>
+		<English>As the Cradle of Civilization, we can choose another free technology:</English>
+		<German>Als Wiege der Zivilisation können wir eine weitere Technologie entdecken:</German>
 	</TEXT>
 </Civ4GameText>

@@ -1,1316 +1,973 @@
-## Sid Meier's Civilization 4
-## Copyright Firaxis Games 2005
 from CvPythonExtensions import *
 import CvUtil
-import ScreenInput
 import CvScreenEnums
 import CvScreensInterface
-import Consts as con
 
-TEXTURE_SIZE = 24
-X_START = 6
-X_INCREMENT = 27
-Y_ROW = 32
+from Consts import *
+from RFCUtils import utils
+
+gc = CyGlobalContext()
 
 CIV_HAS_TECH = 0
 CIV_IS_RESEARCHING = 1
 CIV_NO_RESEARCH = 2
 CIV_TECH_AVAILABLE = 3
 
-# globals
-gc = CyGlobalContext()
-ArtFileMgr = CyArtFileMgr()
-localText = CyTranslator()
 
-# BUG - GP Tech Prefs - start
-import TechPrefs
-import BugCore
-BugOpt = BugCore.game.Advisors
-ClockOpt = BugCore.game.NJAGC
-
-import BugUtil
-
-PREF_ICON_SIZE = 24
-PREF_ICON_TOP = 168
-PREF_ICON_LEFT = 10
-
-FLAVORS = [ TechPrefs.FLAVOR_PRODUCTION, TechPrefs.FLAVOR_GOLD, TechPrefs.FLAVOR_SCIENCE,
-			TechPrefs.FLAVOR_CULTURE, TechPrefs.FLAVOR_RELIGION ]
-UNIT_CLASSES = [ "UNITCLASS_GREAT_ENGINEER", "UNITCLASS_GREAT_MERCHANT", "UNITCLASS_GREAT_SCIENTIST",
-				 "UNITCLASS_GREAT_ARTIST", "UNITCLASS_GREAT_PROPHET" ]
-# BUG - GP Tech Prefs - end
-
-# BUG - 3.19 No Espionage - start
-import GameUtil
-# BUG - 3.19 No Espionage - end
-
-# BUG - Mac Support - start
-BugUtil.fixSets(globals())
-# BUG - Mac Support - end
-
-# BUG - Tech Era Colors - start
-def getEraDescription(eWidgetType, iData1, iData2, bOption):
-	return gc.getEraInfo(iData1).getDescription()
-# BUG - Tech Era Colors - end
-
-# BUG - GP Tech Prefs - start
-def resetTechPrefs(args=[]):
-	CvScreensInterface.techChooser.resetTechPrefs()
-
-def getAllTechPrefsHover(widgetType, iData1, iData2, bOption):
-	return buildTechPrefsHover("TXT_KEY_BUG_TECH_PREFS_ALL", CvScreensInterface.techChooser.pPrefs.getAllFlavorTechs(iData1))
-
-def getCurrentTechPrefsHover(widgetType, iData1, iData2, bOption):
-	return buildTechPrefsHover("TXT_KEY_BUG_TECH_PREFS_CURRENT", CvScreensInterface.techChooser.pPrefs.getCurrentFlavorTechs(iData1))
-
-def getFutureTechPrefsHover(widgetType, iData1, iData2, bOption):
-	pPlayer = gc.getPlayer(CvScreensInterface.techChooser.iCivSelected)
-	sTechs = set()
-	for i in range(gc.getNumTechInfos()):
-		if (pPlayer.isResearchingTech(i)):
-			sTechs.add(CvScreensInterface.techChooser.pPrefs.getTech(i))
-	return buildTechPrefsHover("TXT_KEY_BUG_TECH_PREFS_FUTURE", CvScreensInterface.techChooser.pPrefs.getCurrentWithFlavorTechs(iData1, sTechs))
-
-def buildTechPrefsHover(key, lTechs):
-	szText = BugUtil.getPlainText(key) + "\n"
-	for pTech in lTechs:
-		szText += "<img=%s size=24></img>" % pTech.getInfo().getButton().replace(" ", "_")
-	return szText
-# BUG - GP Tech Prefs - end
 
 class CvTechChooser:
-	"Tech Chooser Screen"
-
 	def __init__(self):
+		self.iPlayer = -1
+		self.iCivilization = -1
+		self.TechEffects = {}
+		self.GreatPeopleList = []
+		self.iMinX = 1
+
 		self.nWidgetCount = 0
-		self.iCivSelected = 0
 		self.aiCurrentState = []
+		for i in xrange(gc.getNumTechInfos()):
+			self.aiCurrentState.append(-1)
+
+		# Filters
+		self.bResearched = False
+		self.bBuilt = False
+		self.iFromEra = 0
+		self.iHideEra = iDigital
 
 		# Advanced Start
-		self.m_iSelectedTech = -1
-		self.m_bSelectedTechDirty = false
-		self.m_bTechRecordsDirty = false
+		self.iSelectedTech = -1
+		self.bSelectedTechDirty = False
+		self.bTechBoxesDirty = False
 
-# BUG - GP Tech Prefs - start
-		self.bPrefsShowing = False
-		self.resetTechPrefs()
-# BUG - GP Tech Prefs - end
 
-		self.PIXEL_INCREMENT = 7
-		self.BOX_INCREMENT_WIDTH = 27 # Used to be 33 #Should be a multiple of 3...
-		self.BOX_INCREMENT_HEIGHT = 9 #Should be a multiple of 3...
-		self.BOX_INCREMENT_Y_SPACING = 6 #Should be a multiple of 3...
-		self.BOX_INCREMENT_X_SPACING = 9 #Should be a multiple of 3...
 
 	def getScreen(self):
-		return CyGInterfaceScreen( "TechChooser", CvScreenEnums.TECH_CHOOSER )
+		return CyGInterfaceScreen("TechChooser", CvScreenEnums.TECH_CHOOSER)
 
-	def hideScreen (self):
-		# Get the screen
+
+
+	def hideScreen(self):
 		screen = self.getScreen()
-
-		# Hide the screen
 		screen.hideScreen()
 
-	# Screen construction function
-	def interfaceScreen(self):
-#		BugUtil.debug("CvTechChooser: interfacescreen")
-#		self.timer = BugUtil.Timer("CvTechChooser")
 
-		if ( CyGame().isPitbossHost() ):
+
+	def interfaceScreen(self):
+		''
+		self.iPlayer = CyGame().getActivePlayer()
+		if CyGame().isPitbossHost():
 			return
 
-		# Create a new screen, called TechChooser, using the file CvTechChooser.py for input
 		screen = self.getScreen()
+		player = gc.getPlayer(self.iPlayer)
+		team = gc.getTeam(player.getTeam())
+
+		self.X_RESOLUTION = screen.getXResolution()
+		self.Y_RESOLUTION = screen.getYResolution()
+
+		if self.X_RESOLUTION >= 1280:
+			self.W_SCREEN = 1280
+			self.H_SCREEN = 740
+		else:
+			self.W_SCREEN = self.X_RESOLUTION
+			self.H_SCREEN = 768
+
+		self.W_TOP_PANEL = self.W_SCREEN
+		self.H_TOP_PANEL = 55
+		self.X_TOP_PANEL = 0
+		self.Y_TOP_PANEL = -2
+
+		self.W_BOTTOM_PANEL = self.W_SCREEN
+		self.H_BOTTOM_PANEL = 55
+		self.X_BOTTOM_PANEL = 0
+		self.Y_BOTTOM_PANEL = self.H_SCREEN - self.H_BOTTOM_PANEL
+
+		self.X_TITLE = self.X_TOP_PANEL + (self.W_TOP_PANEL / 2)
+		self.Y_TITLE = self.Y_TOP_PANEL + 14
+
+		self.ICON_SIZE = 24
+		self.TECH_ICON_SIZE = 48
+		self.GP_ICON_SIZE = 32
+
+		self.X_ITEMS = self.TECH_ICON_SIZE + 8
+		self.X_INCREMENT = self.ICON_SIZE + 3
+		self.Y_ITEMS = 30
+		self.MAX_ITEMS = 5
+
+		self.PIXEL_INCREMENT = 7
+		self.BOX_WIDTH = self.PIXEL_INCREMENT * 3 + self.TECH_ICON_SIZE + (self.X_INCREMENT * self.MAX_ITEMS)
+		self.BOX_HEIGHT = self.ICON_SIZE * 3
+		self.BOX_X_SPACING = self.X_INCREMENT * 2
+		self.BOX_Y_SPACING = self.BOX_HEIGHT / 2 + self.PIXEL_INCREMENT
+
+		self.X_ADVANCED_START = 25
+		self.Y_ADVANCED_START = self.Y_BOTTOM_PANEL + 22
+		self.W_ADVANCED_START = 150
+		self.H_ADVANCED_START = 30
+
+		self.X_EXIT = self.W_BOTTOM_PANEL - 25
+		self.Y_EXIT = self.Y_BOTTOM_PANEL + 20
+
+		screen.setDimensions((self.X_RESOLUTION / 2) - (self.W_SCREEN / 2), screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
 		screen.setRenderInterfaceOnly(True)
 		screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
+		screen.addDDSGFC("ScreenBackground", CyArtFileMgr().getInterfaceArtInfo('SCREEN_BG_OPAQUE').getPath(), 0, 0, self.W_SCREEN, self.H_SCREEN, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		screen.moveToBack("ScreenBackground")
+		screen.showWindowBackground(False)
 
-		screen.hide("AddTechButton")
-		screen.hide("ASPointsLabel")
-		screen.hide("SelectedTechLabel")
+		screen.addPanel("TechTopPanel", u"", u"", True, False, self.X_TOP_PANEL, self.Y_TOP_PANEL, self.W_TOP_PANEL, self.H_TOP_PANEL, PanelStyles.PANEL_STYLE_TOPBAR)
+		screen.addPanel("TechBottomPanel", u"", u"", True, False, self.X_BOTTOM_PANEL, self.Y_BOTTOM_PANEL, self.W_BOTTOM_PANEL, self.H_BOTTOM_PANEL, PanelStyles.PANEL_STYLE_BOTTOMBAR)
+		screen.setLabel("TechTitle", "Background", u"<font=4b>TECHNOLOGY ADVISOR</font>", CvUtil.FONT_CENTER_JUSTIFY, self.X_TITLE, self.Y_TITLE, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		screen.setText("TechExit", "Background", u"<font=4>EXIT</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_EXIT, self.Y_EXIT, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1)
 
-# BUG - GP Tech Prefs - start
-		self.NO_TECH_ART = ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath()
-# BUG - GP Tech Prefs - end
-			
-		if ( CyGame().isDebugMode() ):
-			screen.addDropDownBoxGFC( "CivDropDown", 22, 12, 192, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.SMALL_FONT )
-			screen.setActivation( "CivDropDown", ActivationTypes.ACTIVATE_MIMICPARENTFOCUS )
-			for j in range(gc.getMAX_PLAYERS()):
-				if (gc.getPlayer(j).isAlive()):
-					screen.addPullDownString( "CivDropDown", gc.getPlayer(j).getCivilizationShortDescription(0), j, j, False )
-		else:
-			screen.hide( "CivDropDown" )
+		# Filters
+		iSize = 28
+		szBorder = CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath()
 
-		if ( screen.isPersistent() and self.iCivSelected == gc.getGame().getActivePlayer()):
-			self.updateTechRecords(false)
-			return
+		screen.addCheckBoxGFC("FilterResearched", "Art/Interface/Buttons/Process/ProcessResearch.dds", szBorder, 10, 10, iSize, iSize, WidgetTypes.WIDGET_PYTHON, 7801, 0, ButtonStyles.BUTTON_STYLE_IMAGE)
+		screen.setState("FilterResearched", self.bResearched)
 
-		self.nWidgetCount = 0
-		self.sWidgets = []
+		screen.addCheckBoxGFC("FilterBuilt", ",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Charlemagne_Atlas.dds,8,1", szBorder, 10 + iSize, 10, iSize, iSize, WidgetTypes.WIDGET_PYTHON, 7801, 2, ButtonStyles.BUTTON_STYLE_IMAGE)
+		screen.setState("FilterBuilt", self.bBuilt)
 
-		self.iCivSelected = gc.getGame().getActivePlayer()
-		self.aiCurrentState = []
-		screen.setPersistent( True )
+		self.iMinX = 9999999
+		self.iFromEra = min(gc.getNumEraInfos() - 1, max(0, self.iFromEra))
+		self.iHideEra = min(gc.getNumEraInfos() - 1, max(0, self.iHideEra))
+
+		for iTech in xrange(gc.getNumTechInfos()):
+			TechInfo = gc.getTechInfo(iTech)
+			if TechInfo.getEra() < self.iFromEra:
+				continue
+			if TechInfo.getEra() > self.iHideEra:
+				continue
+			if self.bResearched and team.isHasTech(iTech):
+				continue
+
+			iX = TechInfo.getGridX()
+			if iX < 1:
+				continue
+			self.iMinX = min(self.iMinX, iX)
+
+		screen.addDropDownBoxGFC("FilterFromEra", self.W_SCREEN - 280, 8, 120, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+		screen.addDropDownBoxGFC("FilterToEra", self.W_SCREEN - 130, 8, 120, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+		screen.setButtonGFC("RightArrow", "", "", self.W_SCREEN - 155, 10, 24, 24, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_ARROW_RIGHT)
+		screen.setHitTest("RightArrow", HitTestTypes.HITTEST_NOHIT)
+
+		for iEra in xrange(iDigital+1):
+			if iEra <= self.iHideEra:
+				screen.addPullDownString("FilterFromEra", gc.getEraInfo(iEra).getDescription(), iEra, iEra, iEra == self.iFromEra)
+			if iEra >= self.iFromEra:
+				screen.addPullDownString("FilterToEra", gc.getEraInfo(iEra).getDescription(), iEra, iEra, iEra == self.iHideEra)
+
+		# Tech Effects
+		if not self.TechEffects or player.getCivilizationType() != self.iCivilization:
+			self.initTechs()
+
+		# Great People Techs
+		if not self.GreatPeopleList:
+			for iUnitClass in xrange(gc.getNumUnitClassInfos()):
+				iUnit = utils.getUniqueUnitType(self.iPlayer, iUnitClass)
+				if iUnit > -1:
+					if iUnit in self.GreatPeopleList:
+						continue
+					if gc.getUnitInfo(iUnit).getBaseDiscover() > 0:
+						self.GreatPeopleList.append(iUnit)
+
+		self.placeGreatPeople()
 
 		# Advanced Start
-		if (gc.getPlayer(self.iCivSelected).getAdvancedStartPoints() >= 0):
-
-			self.m_bSelectedTechDirty = true
-
-			self.X_ADD_TECH_BUTTON = 10
-			self.Y_ADD_TECH_BUTTON = 731
-			self.W_ADD_TECH_BUTTON = 150
-			self.H_ADD_TECH_BUTTON = 30
-			self.X_ADVANCED_START_TEXT = self.X_ADD_TECH_BUTTON + self.W_ADD_TECH_BUTTON + 20
-
-			szText = localText.getText("TXT_KEY_WB_AS_ADD_TECH", ())
-			screen.setButtonGFC( "AddTechButton", szText, "", self.X_ADD_TECH_BUTTON, self.Y_ADD_TECH_BUTTON, self.W_ADD_TECH_BUTTON, self.H_ADD_TECH_BUTTON, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD )
+		if player.getAdvancedStartPoints() > -1:
+			self.bSelectedTechDirty = True
+			szText = CyTranslator().getText("TXT_KEY_WB_AS_ADD_TECH", ())
+			screen.setButtonGFC("AddTechButton", szText, "", self.X_ADVANCED_START, self.Y_ADVANCED_START - 5, self.W_ADVANCED_START, self.H_ADVANCED_START, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 			screen.hide("AddTechButton")
+			screen.hide("AddTechCost")
 
-# BUG - Tech Screen Resolution - start
-		if (BugOpt.isWideTechScreen() and screen.getXResolution() > 1024):
-			xPanelWidth = screen.getXResolution() - 60
-		else:
-			xPanelWidth = 1024
-		yPanelHeight = 768
+		# Debug
+		screen.hide("CivDropDown")
+		if CyGame().isDebugMode():
+			screen.addDropDownBoxGFC("CivDropDown", 10 + iSize * 3, 8, 160, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.SMALL_FONT)
+			screen.setActivation("CivDropDown", ActivationTypes.ACTIVATE_MIMICPARENTFOCUS)
+			for j in xrange(gc.getMAX_PLAYERS()):
+				if gc.getPlayer(j).isAlive():
+					screen.addPullDownString("CivDropDown", gc.getPlayer(j).getName(), j, j, self.iPlayer == j)
 
-		screen.showWindowBackground( False )
-		screen.setDimensions((screen.getXResolution() - xPanelWidth) / 2, screen.centerY(0), xPanelWidth, yPanelHeight)
-# BUG - Tech Screen Resolution - end
-
-		screen.addPanel( "TechTopPanel", u"", u"", True, False, 0, 0, xPanelWidth, 55, PanelStyles.PANEL_STYLE_TOPBAR )
-		screen.addDDSGFC("TechBG", ArtFileMgr.getInterfaceArtInfo("SCREEN_BG_OPAQUE").getPath(), 0, 51, xPanelWidth, yPanelHeight - 96, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		screen.addPanel( "TechBottomPanel", u"", u"", True, False, 0, yPanelHeight - 55, xPanelWidth, 55, PanelStyles.PANEL_STYLE_BOTTOMBAR )
-		screen.setText( "TechChooserExit", "Background", u"<font=4>" + CyTranslator().getText("TXT_KEY_PEDIA_SCREEN_EXIT", ()).upper() + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, xPanelWidth - 30, yPanelHeight - 42, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1 )
-		screen.setActivation( "TechChooserExit", ActivationTypes.ACTIVATE_MIMICPARENTFOCUS )
-
-		# Header...
-		szText = u"<font=4>"
-		szText = szText + localText.getText("TXT_KEY_TECH_CHOOSER_TITLE", ()).upper()
-		szText = szText + u"</font>"
-		screen.setLabel( "TechTitleHeader", "Background", szText, CvUtil.FONT_CENTER_JUSTIFY, xPanelWidth / 2, 8, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-
-		# Make the scrollable area for the city list...
-		if BugOpt.isShowGPTechPrefs():
-			iX = 80
-			iW = xPanelWidth - 80
-		else:
-			iX = 0
-			iW = xPanelWidth
-
-		self.TabPanels = ["TechList", "TechTrade"]
-
-#		screen.addScrollPanel(self.TabPanels[0], u"", iX, 64, iW, yPanelHeight - 142, PanelStyles.PANEL_STYLE_EXTERNAL )
-		screen.addScrollPanel(self.TabPanels[0], u"", iX, 56, iW, yPanelHeight - 134, PanelStyles.PANEL_STYLE_EXTERNAL )
-		screen.setActivation(self.TabPanels[0], ActivationTypes.ACTIVATE_NORMAL )
-
-		screen.addScrollPanel(self.TabPanels[1], u"", 80, 64, xPanelWidth - 80, yPanelHeight - 142, PanelStyles.PANEL_STYLE_EXTERNAL )
-		screen.setActivation(self.TabPanels[1], ActivationTypes.ACTIVATE_NORMAL )
-
-# BUG - GP Tech Prefs - start
-		if BugOpt.isShowGPTechPrefs():
-			screen.addPanel("GPTechPref", u"", u"", True, False, 0, 51, 80, yPanelHeight - 95, PanelStyles.PANEL_STYLE_MAIN_WHITE )
-# BUG - GP Tech Prefs - end
-
-		# Add the Highlight
-		#screen.addDDSGFC( "TechHighlight", ArtFileMgr.getInterfaceArtInfo("TECH_HIGHLIGHT").getPath(), 0, 0, self.getXStart() + 6, 12 + ( self.BOX_INCREMENT_HEIGHT * self.PIXEL_INCREMENT ), WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		#screen.hide( "TechHighlight" )
-
-		self.X_SELECT_TAB = 30
-		self.X_TRADE_TAB = 165
-		self.Y_TABS = 730
-
-		self.sTechSelectTab = self.getNextWidgetName("TechSelectTab")
-		self.sTechTradeTab = self.getNextWidgetName("TechTradeTab")
-		self.sTechTabID = self.sTechSelectTab
-
-		# reset widget array so that the above never get deleted
-		self.nWidgetCount = 0
-		self.sWidgets = []
-
-		self.ConstructTabs()
-
-		self.ShowTab()
-
-		return
-
-	def ConstructTabs(self):
-#		BugUtil.debug("cvTechChooser: ConstructTabs")
-
-		screen = self.getScreen()
-
-		self.BOX_INCREMENT_WIDTH = 27 # Used to be 33 #Should be a multiple of 3...
-		self.DrawTechChooser(screen, self.TabPanels[0], True, True, True, True, True, True)
-
-		self.BOX_INCREMENT_WIDTH = 12 # Used to be 33 #Should be a multiple of 3...
-		self.DrawTechChooser(screen, self.TabPanels[1], True, False, True, False, False, True)
-		self.BOX_INCREMENT_WIDTH = 27 # Used to be 33 #Should be a multiple of 3...
-
-	def ShowTab(self):
-#		BugUtil.debug("cvTechChooser: ShowTab")
-
-		screen = self.getScreen()
-
-		for tp in self.TabPanels:
-			screen.hide(tp)
-
-		# remove these 2 lines when we return to multi-tab screen and uncomment out the 10 below.
-		screen.show(self.TabPanels[0])
-		screen.setFocus(self.TabPanels[0])
-
-#		if(self.sTechTabID == self.sTechSelectTab):
-#			screen.setText(self.sTechSelectTab, "", "Tech Select", CvUtil.FONT_LEFT_JUSTIFY, self.X_SELECT_TAB, self.Y_TABS, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-#			screen.setText(self.sTechTradeTab, "", "Tech Trade - under development", CvUtil.FONT_LEFT_JUSTIFY, self.X_TRADE_TAB, self.Y_TABS, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-#			screen.show(self.TabPanels[0])
-#			screen.setFocus(self.TabPanels[0])
-
-#		elif(self.sTechTabID == self.sTechTradeTab):
-#			screen.setText(self.sTechSelectTab, "", "Tech Select", CvUtil.FONT_LEFT_JUSTIFY, self.X_SELECT_TAB, self.Y_TABS, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-#			screen.setText(self.sTechTradeTab, "", "Tech Trade - under development", CvUtil.FONT_LEFT_JUSTIFY, self.X_TRADE_TAB, self.Y_TABS, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-#			screen.show(self.TabPanels[1])
-#			screen.setFocus(self.TabPanels[1])
-
-
-	def DrawTechChooser(self, screen, sPanel, bTechPanel, bTechName, bTechIcon, bTechDetails, bANDPreReq, bORPreReq):
-#		BugUtil.debug("cvTechChooser: DrawTechChooser (%s)", sPanel)
-#		self.timer.reset()
-#		self.timer.start()
-
-		# Place the tech blocks
-		self.placeTechs(screen, sPanel, bTechPanel, bTechName, bTechIcon, bTechDetails)
-
-		# Draw the arrows
-		self.drawArrows(screen, sPanel, bANDPreReq, bORPreReq)
-
-		self.updateTechPrefs()
-
-		screen.moveToFront( "CivDropDown" )
-
-		screen.moveToFront( "AddTechButton" )
-
-#		self.timer.logSpan("total")
-
-	def placeTechs(self, screen, sPanel, bTechPanel, bTechName, bTechIcon, bTechDetails):
-#		BugUtil.debug("cvTechChooser: placeTechs")
-
-		iMaxX = 0
-		iMaxY = 0
-
-		if sPanel == self.TabPanels[0]:
-			sPanelWidget = ""
-		else:
-			sPanelWidget = sPanel
-
-		# If we are the Pitboss, we don't want to put up an interface at all
-		if ( CyGame().isPitbossHost() ):
+		# Check Redraw
+		if screen.isPersistent() and not (self.bResearched or self.bBuilt):
+			self.updateTechs(False)
 			return
 
-		# Go through all the techs
-		for i in range(gc.getNumTechInfos()):
-
-			# Create and place a tech in its proper location
-			iX = 30 + ( (gc.getTechInfo(i).getGridX() - 1) * ( ( self.BOX_INCREMENT_X_SPACING + self.BOX_INCREMENT_WIDTH ) * self.PIXEL_INCREMENT ) )
-			iY = ( gc.getTechInfo(i).getGridY() - 1 ) * ( self.BOX_INCREMENT_Y_SPACING * self.PIXEL_INCREMENT ) + 5
-			szTechRecord = sPanelWidget + "TechRecord" + str(i)
-
-			if ( iMaxX < iX + self.getXStart() ):
-				iMaxX = iX + self.getXStart()
-			if ( iMaxY < iY + ( self.BOX_INCREMENT_HEIGHT * self.PIXEL_INCREMENT ) ):
-				iMaxY = iY + ( self.BOX_INCREMENT_HEIGHT * self.PIXEL_INCREMENT )
-
-# BUG - Tech Era Colors - start
-			szTechRecordShadow = sPanelWidget + "TechRecordShadow" + str(i)
-			iShadowOffset = 9
-			screen.attachPanelAt( sPanel, szTechRecordShadow, u"", u"", True, False, PanelStyles.PANEL_STYLE_TECH, iX - 6 + iShadowOffset, iY - 6 + iShadowOffset, self.getXStart() + 6, 12 + ( self.BOX_INCREMENT_HEIGHT * self.PIXEL_INCREMENT ), WidgetTypes.WIDGET_TECH_CHOOSER_ERA, gc.getTechInfo(i).getEra(), -1 )
-			self.setTechPanelShadowColor(screen, szTechRecordShadow, gc.getTechInfo(i).getEra())
-			screen.hide( szTechRecordShadow )
-# BUG - Tech Era Colors - end
-
-			screen.attachPanelAt( sPanel, szTechRecord, u"", u"", True, False, PanelStyles.PANEL_STYLE_TECH, iX - 6, iY - 6, self.getXStart() + 6, 12 + ( self.BOX_INCREMENT_HEIGHT * self.PIXEL_INCREMENT ), WidgetTypes.WIDGET_TECH_TREE, i, -1 )
-			screen.setActivation( szTechRecord, ActivationTypes.ACTIVATE_MIMICPARENTFOCUS)
-			screen.hide( szTechRecord )
-
-			#reset so that it offsets from the tech record's panel
-			iX = 6
-			iY = 6
-
-			if ( gc.getTeam(gc.getPlayer(self.iCivSelected).getTeam()).isHasTech(i) ):
-				screen.setPanelColor(szTechRecord, 85, 150, 87)
-				self.aiCurrentState.append(CIV_HAS_TECH)
-			elif ( gc.getPlayer(self.iCivSelected).getCurrentResearch() == i ):
-				screen.setPanelColor(szTechRecord, 104, 158, 165)
-				self.aiCurrentState.append(CIV_IS_RESEARCHING)
-			elif ( gc.getPlayer(self.iCivSelected).isResearchingTech(i) ):
-				screen.setPanelColor(szTechRecord, 104, 158, 165)
-				self.aiCurrentState.append(CIV_IS_RESEARCHING)
-			elif ( gc.getPlayer(self.iCivSelected).canEverResearch(i) ):
-				screen.setPanelColor(szTechRecord, 100, 104, 160)
-				self.aiCurrentState.append(CIV_NO_RESEARCH)
-			else:
-				screen.setPanelColor(szTechRecord, 206, 65, 69)
-				self.aiCurrentState.append(CIV_TECH_AVAILABLE)
-
-			if bTechName:
-				szTechID = sPanelWidget + "TechID" + str(i)
-				szTechString = "<font=1>"
-				if ( gc.getPlayer(self.iCivSelected).isResearchingTech(i) ):
-					szTechString = szTechString + str(gc.getPlayer(self.iCivSelected).getQueuePosition(i)) + ". "
-				szTechString += gc.getTechInfo(i).getDescription()
-				szTechString = szTechString + "</font>"
-				screen.setTextAt( szTechID, szTechRecord, szTechString, CvUtil.FONT_LEFT_JUSTIFY, iX + 6 + X_INCREMENT, iY + 6, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_TECH_TREE, i, -1 )
-				screen.setActivation( szTechID, ActivationTypes.ACTIVATE_MIMICPARENTFOCUS )
-
-			if bTechIcon:
-				szTechButtonID = sPanelWidget + "TechButtonID" + str(i)
-				screen.addDDSGFCAt( szTechButtonID, szTechRecord, gc.getTechInfo(i).getButton(), iX + 6, iY + 6, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_TECH_TREE, i, -1, False )
-
-			if bTechDetails:
-				self.addIconsToTechPanel(screen, i, X_START, iX, iY, szTechRecord)
-
-			if bTechPanel:
-				if BugOpt.isShowTechEra():
-					screen.show( szTechRecordShadow )
-				else:
-					screen.hide( szTechRecordShadow )
-				screen.show( szTechRecord )
-			else:
-				screen.hide( szTechRecordShadow )
-				screen.hide( szTechRecord )
-
-		screen.setViewMin( sPanel, iMaxX + 20, iMaxY + 20 )
-
-		return
-
-	def addIconsToTechPanel(self, screen, i, fX, iX, iY, szTechRecord):
-#		BugUtil.debug("cvTechChooser: addIconsToTechPanel")
-
-		j = 0
-		k = 0
-
-		# Unlockable units...
-		for j in range( gc.getNumUnitClassInfos() ):
-			eLoopUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(j)
-			if (eLoopUnit != -1):
-				if (gc.getUnitInfo(eLoopUnit).getPrereqAndTech() == i):
-					szUnitButton = self.getNextWidgetName("Unit")
-					screen.addDDSGFCAt( szUnitButton, szTechRecord, gc.getPlayer(gc.getGame().getActivePlayer()).getUnitButton(eLoopUnit), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, eLoopUnit, 1, True )
-					fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Unlockable Buildings...
-		for j in range(gc.getNumBuildingClassInfos()):
-			bTechFound = 0
-			eLoopBuilding = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationBuildings(j)
-
-			if (eLoopBuilding != -1):
-				if (gc.getBuildingInfo(eLoopBuilding).getPrereqAndTech() == i):
-					szBuildingButton = self.getNextWidgetName("Building")
-					screen.addDDSGFCAt( szBuildingButton, szTechRecord, gc.getBuildingInfo(eLoopBuilding).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eLoopBuilding, 1, True )
-					fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Obsolete Buildings...
-		for j in range(gc.getNumBuildingClassInfos()):
-			eLoopBuilding = gc.getCivilizationInfo(gc.getPlayer(self.iCivSelected).getCivilizationType()).getCivilizationBuildings(j)
-
-			if (eLoopBuilding != -1):
-				if (gc.getBuildingInfo(eLoopBuilding).getObsoleteTech() == i):
-					# Add obsolete picture here...
-					szObsoleteButton = self.getNextWidgetName("Obsolete")
-					szObsoleteX = self.getNextWidgetName("ObsoleteX")
-					screen.addDDSGFCAt( szObsoleteButton, szTechRecord, gc.getBuildingInfo(eLoopBuilding).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE, eLoopBuilding, -1, False )
-					screen.addDDSGFCAt( szObsoleteX, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_RED_X").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE, eLoopBuilding, -1, False )
-					fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Obsolete Bonuses...
-		for j in range(gc.getNumBonusInfos()):
-			if (gc.getBonusInfo(j).getTechObsolete() == i):
-				# Add obsolete picture here...
-				szObsoleteButton = self.getNextWidgetName("ObsoleteBonus")
-				szObsoleteX = self.getNextWidgetName("ObsoleteXBonus")
-				screen.addDDSGFCAt( szObsoleteButton, szTechRecord, gc.getBonusInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_BONUS, j, -1, False )
-				screen.addDDSGFCAt( szObsoleteX, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_RED_X").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_BONUS, j, -1, False )
-				fX += X_INCREMENT
-					
-		j = 0
-		k = 0
-
-		# Obsolete Monastaries...
-		for j in range (gc.getNumSpecialBuildingInfos()):
-			if (gc.getSpecialBuildingInfo(j).getObsoleteTech() == i):
-					# Add obsolete picture here...
-					szObsoleteSpecialButton = self.getNextWidgetName("ObsoleteSpecial")
-					szObsoleteSpecialX = self.getNextWidgetName("ObsoleteSpecialX")
-					screen.addDDSGFCAt( szObsoleteSpecialButton, szTechRecord, gc.getSpecialBuildingInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_SPECIAL, j, -1, False )
-					screen.addDDSGFCAt( szObsoleteSpecialX, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_RED_X").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_SPECIAL, j, -1, False )
-					fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Route movement change
-		for j in range(gc.getNumRouteInfos()):
-			if ( gc.getRouteInfo(j).getTechMovementChange(i) != 0 ):
-				szMoveButton = self.getNextWidgetName("Move")
-				screen.addDDSGFCAt( szMoveButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_MOVE_BONUS").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_MOVE_BONUS, i, -1, False )
-				fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Promotion Info
-		for j in range( gc.getNumPromotionInfos() ):
-			if ( gc.getPromotionInfo(j).getTechPrereq() == i ):
-				szPromotionButton = self.getNextWidgetName("Promotion")
-				screen.addDDSGFCAt( szPromotionButton, szTechRecord, gc.getPromotionInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, j, -1, False )
-				fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Free unit
-		if ( gc.getTechInfo(i).getFirstFreeUnitClass() != UnitClassTypes.NO_UNITCLASS ):
-			szFreeUnitButton = self.getNextWidgetName("FreeUnit")
-			eLoopUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(gc.getTechInfo(i).getFirstFreeUnitClass())
-			if (eLoopUnit != -1):
-# BUG - 3.19 No Espionage - start
-				# CvUnitInfo.getEspionagePoints() was added in 319
-				if (GameUtil.getVersion() < 319 or gc.getUnitInfo(eLoopUnit).getEspionagePoints() == 0 or not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_ESPIONAGE)):				
-# BUG - 3.19 No Espionage - end
-					screen.addDDSGFCAt( szFreeUnitButton, szTechRecord, gc.getPlayer(gc.getGame().getActivePlayer()).getUnitButton(eLoopUnit), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_FREE_UNIT, eLoopUnit, i, False )
-					fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Feature production modifier
-		if ( gc.getTechInfo(i).getFeatureProductionModifier() != 0 ):
-			szFeatureProductionButton = self.getNextWidgetName("FeatureProduction")
-			screen.addDDSGFCAt( szFeatureProductionButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_FEATURE_PRODUCTION").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_FEATURE_PRODUCTION, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Worker speed
-		if ( gc.getTechInfo(i).getWorkerSpeedModifier() != 0 ):
-			szWorkerModifierButton = self.getNextWidgetName("Worker")
-			screen.addDDSGFCAt( szWorkerModifierButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_WORKER_SPEED").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_WORKER_RATE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Trade Routes per City change
-		if ( gc.getTechInfo(i).getTradeRoutes() != 0 ):
-			szTradeRouteButton = self.getNextWidgetName("TradeRoutes")
-			screen.addDDSGFCAt( szTradeRouteButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_TRADE_ROUTES").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_TRADE_ROUTES, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Health Rate bonus from this tech...
-		if ( gc.getTechInfo(i).getHealth() != 0 ):
-			szHealthRateButton = self.getNextWidgetName("HealthRate")
-			screen.addDDSGFCAt( szHealthRateButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_HEALTH").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_HEALTH_RATE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Happiness Rate bonus from this tech...
-		if ( gc.getTechInfo(i).getHappiness() != 0 ):
-			szHappinessRateButton = self.getNextWidgetName("HappinessRate")
-			screen.addDDSGFCAt( szHappinessRateButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_HAPPINESS").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_HAPPINESS_RATE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Free Techs
-		if ( gc.getTechInfo(i).getFirstFreeTechs() > 0 ):
-			szFreeTechButton = self.getNextWidgetName("FreeTech")
-			screen.addDDSGFCAt( szFreeTechButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_FREETECH").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_FREE_TECH, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Line of Sight bonus...
-		if ( gc.getTechInfo(i).isExtraWaterSeeFrom() ):
-			szLOSButton = self.getNextWidgetName("LOS")
-			screen.addDDSGFCAt( szLOSButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_LOS").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_LOS_BONUS, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Map Center Bonus...
-		if ( gc.getTechInfo(i).isMapCentering() ):
-			szMapCenterButton = self.getNextWidgetName("MapCenter")
-			screen.addDDSGFCAt( szMapCenterButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_MAPCENTER").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_MAP_CENTER, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Map Reveal...
-		if ( gc.getTechInfo(i).isMapVisible() ):
-			szMapRevealButton = self.getNextWidgetName("MapReveal")
-			screen.addDDSGFCAt( szMapRevealButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_MAPREVEAL").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_MAP_REVEAL, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Map Trading
-		if ( gc.getTechInfo(i).isMapTrading() == True ):
-			szMapTradeButton = self.getNextWidgetName("MapTrade")
-			screen.addDDSGFCAt( szMapTradeButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_MAPTRADING").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_MAP_TRADE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Tech Trading
-		if ( gc.getTechInfo(i).isTechTrading() ):
-			szTechTradeButton = self.getNextWidgetName("TechTrade")
-			screen.addDDSGFCAt( szTechTradeButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_TECHTRADING").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_TECH_TRADE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Gold Trading
-		if ( gc.getTechInfo(i).isGoldTrading() ):
-			szGoldTradeButton = self.getNextWidgetName("GoldTrade")
-			screen.addDDSGFCAt( szGoldTradeButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_GOLDTRADING").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_GOLD_TRADE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Open Borders
-		if ( gc.getTechInfo(i).isOpenBordersTrading() ):
-			szOpenBordersButton = self.getNextWidgetName("OpenBorders")
-			screen.addDDSGFCAt( szOpenBordersButton , szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_OPENBORDERS").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_OPEN_BORDERS, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Defensive Pact
-		if ( gc.getTechInfo(i).isDefensivePactTrading() ):
-			szDefensivePactButton = self.getNextWidgetName("DefensivePact")
-			screen.addDDSGFCAt( szDefensivePactButton , szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_DEFENSIVEPACT").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_DEFENSIVE_PACT, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Permanent Alliance
-		if ( gc.getTechInfo(i).isPermanentAllianceTrading() ):
-			szPermanentAllianceButton = self.getNextWidgetName("PermanentAlliance")
-			screen.addDDSGFCAt( szPermanentAllianceButton , szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_PERMALLIANCE").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_PERMANENT_ALLIANCE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Vassal States
-		if ( gc.getTechInfo(i).isVassalStateTrading() ):
-			szVassalStateButton = self.getNextWidgetName("VassalState")
-			screen.addDDSGFCAt( szVassalStateButton , szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_VASSAL").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_VASSAL_STATE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Bridge Building
-		if ( gc.getTechInfo(i).isBridgeBuilding() ):
-			szBuildBridgeButton = self.getNextWidgetName("BuildBridge")
-			screen.addDDSGFCAt( szBuildBridgeButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_BRIDGEBUILDING").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_BUILD_BRIDGE, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Irrigation unlocked...
-		if ( gc.getTechInfo(i).isIrrigation() ):
-			szIrrigationButton = self.getNextWidgetName("Irrigation")
-			screen.addDDSGFCAt( szIrrigationButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_IRRIGATION").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_IRRIGATION, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Ignore Irrigation unlocked...
-		if ( gc.getTechInfo(i).isIgnoreIrrigation() ):
-			szIgnoreIrrigationButton = self.getNextWidgetName("IgnoreIrrigation")
-			screen.addDDSGFCAt( szIgnoreIrrigationButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_NOIRRIGATION").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_IGNORE_IRRIGATION, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Coastal Work unlocked...
-		if ( gc.getTechInfo(i).isWaterWork() ):
-			szWaterWorkButton = self.getNextWidgetName("WaterWork")
-			screen.addDDSGFCAt( szWaterWorkButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_WATERWORK").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_WATER_WORK, i, -1, False )
-			fX += X_INCREMENT
-
-		j = 0
-		k = 0
+		self.nWidgetCount = 0
+		self.aiCurrentState = []
+		for i in xrange(gc.getNumTechInfos()):
+			self.aiCurrentState.append(-1)
+
+		screen.setPersistent(True)
+
+		# Scrolling Panel
+		screen.addScrollPanel("TechList", u"", 0, 60, self.W_SCREEN, self.H_SCREEN - 132, PanelStyles.PANEL_STYLE_EXTERNAL)
+		screen.setActivation("TechList", ActivationTypes.ACTIVATE_NORMAL)
+		screen.hide("TechList")
+		self.placeTechs()
+
+
+
+	def scaleScreen(self, xResolution, yResolution):
+		''
+		self.W_SCREEN = xResolution
+		self.H_SCREEN = 740
+
+		self.W_TOP_PANEL = self.W_SCREEN
+		self.H_TOP_PANEL = 55
+		self.X_TOP_PANEL = 0
+		self.Y_TOP_PANEL = -2
+
+		self.W_BOTTOM_PANEL = self.W_SCREEN
+		self.H_BOTTOM_PANEL = 55
+		self.X_BOTTOM_PANEL = 0
+		self.Y_BOTTOM_PANEL = self.H_SCREEN - self.H_BOTTOM_PANEL
+
+		self.X_TITLE = self.X_TOP_PANEL + (self.W_TOP_PANEL / 2)
+		self.Y_TITLE = self.Y_TOP_PANEL + 14
+
+		self.X_EXIT = self.W_BOTTOM_PANEL - 25
+		self.Y_EXIT = self.Y_BOTTOM_PANEL + 20
+
+
+
+	def initTechs(self):
+		''
+		player = gc.getPlayer(self.iPlayer)
+		self.iCivilization = player.getCivilizationType()
+		self.TechEffects.clear()
+		for iTech in xrange(gc.getNumTechInfos()):
+			self.TechEffects[iTech] = []
+
+		# Units
+		for iClass in xrange(gc.getNumUnitClassInfos()):
+			iUnit = utils.getUniqueUnitType(self.iPlayer, iClass)
+			if iUnit > -1 and not gc.getUnitInfo(iUnit).isGraphicalOnly():
+				iTech = gc.getUnitInfo(iUnit).getPrereqAndTech()
+				if iTech > -1:
+					self.TechEffects[iTech].append(("Unit", iUnit))
+
+		# Promotions
+		for iPromotion in xrange(gc.getNumPromotionInfos()):
+			iTech = gc.getPromotionInfo(iPromotion).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Promotion", iPromotion))
+
+		# Buildings
+		for iClass in xrange(gc.getNumBuildingClassInfos()):
+			iBuilding = utils.getUniqueBuildingType(self.iPlayer, iClass)
+			if iBuilding > -1:
+				BuildingInfo = gc.getBuildingInfo(iBuilding)
+				if BuildingInfo.getFoundsCorporation() > -1:
+					continue
+				iTech = BuildingInfo.getPrereqAndTech()
+				if iTech > -1:
+					self.TechEffects[iTech].append(("Building", iBuilding))
+				iTech = BuildingInfo.getObsoleteTech()
+				if iTech > -1:
+					self.TechEffects[iTech].append(("ObsoleteBuilding", iBuilding))
+
+		# Special Buildings
+		for iSpecial in xrange(gc.getNumSpecialBuildingInfos()):
+			iTech = gc.getSpecialBuildingInfo(iSpecial).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("SpecialBuilding", iSpecial))
+			iTech = gc.getSpecialBuildingInfo(iSpecial).getObsoleteTech()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("ObsoleteSpecialBuilding", iSpecial))
+
+		# Projects
+		for iProject in xrange(gc.getNumProjectInfos()):
+			iTech = gc.getProjectInfo(iProject).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Project", iProject))
+
+		# Civics / Tenets
+		for iCivic in xrange(gc.getNumCivicInfos()):
+			iTech = gc.getCivicInfo(iCivic).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Civic", iCivic))
+
+		# Religions
+		for iReligion in xrange(gc.getNumReligionInfos()):
+			iTech = gc.getReligionInfo(iReligion).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Religion", iReligion))
+
+		# Corporations
+		for iCorporation in xrange(gc.getNumCorporationInfos()):
+			iTech = gc.getCorporationInfo(iCorporation).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Corporation", iCorporation))
 
 		# Improvements
-		for j in range(gc.getNumBuildInfos()):
-			if gc.getBuildInfo(j).isGraphicalOnly(): continue
-		
-			bTechFound = 0;
-
-			if (gc.getBuildInfo(j).getTechPrereq() == -1):
-				bTechFound = 0
-				for k in range(gc.getNumFeatureInfos()):
-					if (gc.getBuildInfo(j).getFeatureTech(k) == i):
-						bTechFound = 1
+		for iBuild in xrange(gc.getNumBuildInfos()):
+			if gc.getBuildInfo(iBuild).isGraphicalOnly(): continue
+			bTechFound = False
+			iTech = gc.getBuildInfo(iBuild).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Improvement", iBuild))
 			else:
-				if (gc.getBuildInfo(j).getTechPrereq() == i):
-					bTechFound = 1
+				for iFeature in xrange(gc.getNumFeatureInfos()):
+					iTech = gc.getBuildInfo(iBuild).getFeatureTech(iFeature)
+					if iTech > -1:
+						self.TechEffects[iTech].append(("Improvement", iBuild))
 
-			if (bTechFound == 1):
-				szImprovementButton = self.getNextWidgetName("Improvement")
-				screen.addDDSGFCAt( szImprovementButton, szTechRecord, gc.getBuildInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_IMPROVEMENT, i, j, False )
-				fX += X_INCREMENT
+		# Resources
+		for iResource in xrange(gc.getNumBonusInfos()):
+			iTech = gc.getBonusInfo(iResource).getTechReveal()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("RevealResource", iResource))
+			iTech = gc.getBonusInfo(iResource).getTechObsolete()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("ObsoleteResource", iResource))
 
-		j = 0
-		k = 0
+		# Other Effects
+		for iTech in xrange(gc.getNumTechInfos()):
+			TechInfo = gc.getTechInfo(iTech)
 
-		# Domain Extra Moves
-		for j in range( DomainTypes.NUM_DOMAIN_TYPES ):
-			if (gc.getTechInfo(i).getDomainExtraMoves(j) != 0):
-				szDomainExtraMovesButton = self.getNextWidgetName("DomainExtraMoves")
-				screen.addDDSGFCAt( szDomainExtraMovesButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_WATERMOVES").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_DOMAIN_EXTRA_MOVES, i, j, False )
-				fX += X_INCREMENT
+			for iImprovement in xrange(gc.getNumImprovementInfos()):
+				for iYieldType in xrange(YieldTypes.NUM_YIELD_TYPES):
+					if gc.getImprovementInfo(iImprovement).getTechYieldChanges(iTech, iYieldType):
+						self.TechEffects[iTech].append(("ImprovementYield", iImprovement))
 
-		j = 0
-		k = 0
+			if TechInfo.isIrrigation():
+				self.TechEffects[iTech].append(("EnableIrrigation", -1))
+			if TechInfo.isIgnoreIrrigation():
+				self.TechEffects[iTech].append(("IgnoreIrrigation", -1))
+			if TechInfo.getWorkerSpeedModifier():
+				self.TechEffects[iTech].append(("WorkerSpeed", -1))
+			if TechInfo.getFeatureProductionModifier():
+				self.TechEffects[iTech].append(("FeatureProduction", -1))
 
-		# Adjustments
-		for j in range( CommerceTypes.NUM_COMMERCE_TYPES ):
-			if (gc.getTechInfo(i).isCommerceFlexible(j) and not (gc.getTeam(gc.getPlayer(self.iCivSelected).getTeam()).isCommerceFlexible(j))):
-				szAdjustButton = self.getNextWidgetName("AdjustButton")
-				if ( j == CommerceTypes.COMMERCE_CULTURE ):
-					szFileName = ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_CULTURE").getPath()
-				elif ( j == CommerceTypes.COMMERCE_ESPIONAGE ):
-					szFileName = ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_ESPIONAGE").getPath()
+			for iRoute in xrange(gc.getNumRouteInfos()):
+				if gc.getRouteInfo(iRoute).getTechMovementChange(iTech) != 0:
+					self.TechEffects[iTech].append(("RouteMovement", iRoute))
+
+			if TechInfo.isBridgeBuilding():
+				self.TechEffects[iTech].append(("BridgeBuilding", -1))
+			if TechInfo.isRiverTrade():
+				self.TechEffects[iTech].append(("RiverTrade", -1))
+
+			for iTerrain in xrange(gc.getNumTerrainInfos()):
+				if TechInfo.isTerrainTrade(iTerrain):
+					self.TechEffects[iTech].append(("WaterTrade", iTerrain))
+
+			if TechInfo.isWaterWork():
+				self.TechEffects[iTech].append(("WaterWork", -1))
+			if TechInfo.isExtraWaterSeeFrom():
+				self.TechEffects[iTech].append(("WaterSight", -1))
+
+			for iDomain in xrange(DomainTypes.NUM_DOMAIN_TYPES):
+				if TechInfo.getDomainExtraMoves(iDomain):
+					self.TechEffects[iTech].append(("WaterMoves", iDomain))
+
+			if TechInfo.isMapCentering():
+				self.TechEffects[iTech].append(("MapCenter", -1))
+			if TechInfo.isMapVisible():
+				self.TechEffects[iTech].append(("MapReveal", -1))
+			if TechInfo.isMapTrading():
+				self.TechEffects[iTech].append(("MapTrading", -1))
+			if TechInfo.isGoldTrading():
+				self.TechEffects[iTech].append(("WealthTrading", -1))
+			if TechInfo.isTechTrading():
+				self.TechEffects[iTech].append(("TechTrading", -1))
+			if TechInfo.getTradeRoutes():
+				self.TechEffects[iTech].append(("TradeRoute", -1))
+			if TechInfo.isOpenBordersTrading():
+				self.TechEffects[iTech].append(("OpenBorders", -1))
+			if TechInfo.isDefensivePactTrading():
+				self.TechEffects[iTech].append(("DefensivePact", -1))
+			if TechInfo.isPermanentAllianceTrading():
+				self.TechEffects[iTech].append(("PermanentAlliance", -1))
+			if TechInfo.isVassalStateTrading():
+				self.TechEffects[iTech].append(("VassalStates", -1))
+			if TechInfo.getHappiness():
+				self.TechEffects[iTech].append(("Happiness", -1))
+			if TechInfo.getHealth():
+				self.TechEffects[iTech].append(("Health", -1))
+
+			for iCommerceType in xrange(CommerceTypes.NUM_COMMERCE_TYPES):
+				if TechInfo.isCommerceFlexible(iCommerceType):
+					self.TechEffects[iTech].append(("CommerceAdjust", iCommerceType))
+
+			if TechInfo.getFirstFreeTechs():
+				self.TechEffects[iTech].append(("FreeTech", -1))
+			if TechInfo.getFirstFreeUnitClass() > -1:
+				iUnit = utils.getUniqueUnitType(self.iPlayer, TechInfo.getFirstFreeUnitClass())
+				if iUnit > -1:
+					self.TechEffects[iTech].append(("FreeUnit", iUnit))
+			if TechInfo.getHelp():
+				self.TechEffects[iTech].append(("CustomEffect", -1))
+
+		# Processes
+		for iProcess in xrange(gc.getNumProcessInfos()):
+			iTech = gc.getProcessInfo(iProcess).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Process", iProcess))
+
+
+
+	def placeTechs(self):
+		''
+		if CyGame().isPitbossHost():
+			return
+
+		screen = self.getScreen()
+		player = gc.getPlayer(self.iPlayer)
+		team = gc.getTeam(player.getTeam())
+		iCiv = player.getCivilizationType()
+
+		ARROW_X = CyArtFileMgr().getInterfaceArtInfo("ARROW_X").getPath()
+		ARROW_Y = CyArtFileMgr().getInterfaceArtInfo("ARROW_Y").getPath()
+		ARROW_MXMY = CyArtFileMgr().getInterfaceArtInfo("ARROW_MXMY").getPath()
+		ARROW_XY = CyArtFileMgr().getInterfaceArtInfo("ARROW_XY").getPath()
+		ARROW_MXY = CyArtFileMgr().getInterfaceArtInfo("ARROW_MXY").getPath()
+		ARROW_XMY = CyArtFileMgr().getInterfaceArtInfo("ARROW_XMY").getPath()
+		ARROW_HEAD = CyArtFileMgr().getInterfaceArtInfo("ARROW_HEAD").getPath()
+
+		for tech in xrange(gc.getNumTechInfos()):
+			TechInfo = gc.getTechInfo(tech)
+			if TechInfo.getEra() < self.iFromEra:
+				continue
+			if TechInfo.getEra() > self.iHideEra:
+				continue
+			if self.bResearched and team.isHasTech(tech):
+				continue
+
+			# Tech Box
+			szTechBox = "TechBox" + str(tech)
+			iX = (TechInfo.getGridX() - self.iMinX) * (self.BOX_X_SPACING + self.BOX_WIDTH)
+			iY = (TechInfo.getGridY() - 1) * self.BOX_Y_SPACING
+			screen.attachPanelAt("TechList", szTechBox, u"", u"", True, False, PanelStyles.PANEL_STYLE_TECH, iX, iY, self.BOX_WIDTH, self.BOX_HEIGHT, WidgetTypes.WIDGET_TECH_TREE, tech, -1)
+			screen.setActivation(szTechBox, ActivationTypes.ACTIVATE_MIMICPARENTFOCUS)
+
+			# Tech Box Colour
+			self.aiCurrentState[tech] = CIV_NO_RESEARCH
+			if team.isHasTech(tech):
+				self.aiCurrentState[tech] = CIV_HAS_TECH
+			elif player.isResearchingTech(tech):
+				self.aiCurrentState[tech] = CIV_IS_RESEARCHING
+			elif player.canEverResearch(tech):
+				self.aiCurrentState[tech] = CIV_TECH_AVAILABLE
+
+			# Tech Icon
+			iX = 6
+			iY = 6
+			szTechIconID = "TechButtonID" + str(tech)
+			screen.addDDSGFCAt(szTechIconID, szTechBox, TechInfo.getButton(), iX + 6, iY + 6, self.TECH_ICON_SIZE, self.TECH_ICON_SIZE, WidgetTypes.WIDGET_TECH_TREE, tech, -1, False)
+			screen.setActivation(szTechIconID, ActivationTypes.ACTIVATE_NORMAL)
+
+		### Effects
+			fX = self.X_ITEMS
+			for index in xrange(len(self.TechEffects[tech])):
+				type = self.TechEffects[tech][index][0]
+				item = self.TechEffects[tech][index][1]
+				szItem = "Item" + str(tech * 1000 + index)
+				szObsolete = "Obsolete" + str(tech * 1000 + index)
+
+				if type == "Civic":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getCivicInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIVIC, item, 1, False)
+
+				elif type == "Tenet":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getCivicInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TENET, item, 1, False)
+
+				elif type == "Religion":
+					if CyGame().isOption(GameOptionTypes.GAMEOPTION_PICK_RELIGION):
+						szButton = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_POPUPBUTTON_RELIGION").getPath()
+					else:
+						szButton = gc.getReligionInfo(item).getButton()
+					screen.addDDSGFCAt(szItem, szTechBox, szButton, iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_FOUND_RELIGION, tech, item, False)
+
+				elif type == "Unit":
+					if self.bBuilt and not team.isHasTech(tech):
+						iClass = gc.getUnitInfo(item).getUnitClassType()
+						iLimit = gc.getUnitClassInfo(iClass).getMaxGlobalInstances()
+						if iLimit > -1 and CyGame().getUnitClassCreatedCount(iClass) >= iLimit:
+							continue
+
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getUnitInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, item, 1, True)
+
+				elif type == "Promotion":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getPromotionInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, item, -1, False)
+
+				elif type == "Building":
+					if self.bBuilt and not team.isHasTech(tech):
+						iClass = gc.getBuildingInfo(item).getBuildingClassType()
+						iLimit = gc.getBuildingClassInfo(iClass).getMaxGlobalInstances()
+						if iLimit > -1 and CyGame().getBuildingClassCreatedCount(iClass) >= iLimit:
+							continue
+
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getBuildingInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, item, -1, True)
+
+				elif type == "ObsoleteBuilding":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getBuildingInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE, item, -1, False)
+					screen.addDDSGFCAt(szObsolete, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_RED_X").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE, item, -1, False)
+
+				elif type == "SpecialBuilding":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getSpecialBuildingInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_SPECIAL_BUILDING, tech, item, False)
+
+				elif type == "ObsoleteSpecialBuilding":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getSpecialBuildingInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_SPECIAL, item, -1, False)
+					screen.addDDSGFCAt(szObsolete, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_RED_X").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_SPECIAL, item, -1, False)
+
+				elif type == "Project":
+					if self.bBuilt and not team.isHasTech(tech):
+						iLimit = gc.getProjectInfo(item).getMaxGlobalInstances()
+						if iLimit > -1 and CyGame().getProjectCreatedCount(item) >= iLimit:
+							continue
+
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getProjectInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROJECT, item, 1, False)
+
+				elif type == "Corporation":
+					if self.bBuilt and not team.isHasTech(tech):
+						if CyGame().isCorporationFounded(item):
+							continue
+
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getCorporationInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CORPORATION, item, 1, False)
+
+				elif type == "Improvement":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getBuildInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_IMPROVEMENT, tech, item, False)
+
+				elif type == "ImprovementYield":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getImprovementInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_YIELD_CHANGE, tech, item, False)
+
+				elif type == "RevealResource":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getBonusInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_BONUS_REVEAL, tech, item, False)
+
+				elif type == "ObsoleteResource":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getBonusInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_BONUS, item, -1, False)
+					screen.addDDSGFCAt(szObsolete, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_RED_X").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_BONUS, item, -1, False)
+
+				elif type == "EnableIrrigation":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_IRRIGATION").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_IRRIGATION, tech, -1, False)
+
+				elif type == "IgnoreIrrigation":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_NOIRRIGATION").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_IGNORE_IRRIGATION, tech, -1, False)
+
+				elif type == "WorkerSpeed":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_WORKER_SPEED").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_WORKER_RATE, tech, -1, False)
+
+				elif type == "FeatureProduction":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_FEATURE_PRODUCTION").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_FEATURE_PRODUCTION, tech, -1, False)
+
+				elif type == "RouteMovement":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_MOVE_BONUS").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_MOVE_BONUS, tech, -1, False)
+
+				elif type == "BridgeBuilding":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_BRIDGEBUILDING").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_BUILD_BRIDGE, tech, -1, False)
+
+				elif type == "RiverTrade":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_RIVERTRADE").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_TERRAIN_TRADE, tech, gc.getNumTerrainInfos(), False)
+
+				elif type == "WaterTrade":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_WATERTRADE").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_TERRAIN_TRADE, tech, item, False)
+
+				elif type == "WaterWork":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_WATERWORK").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_WATER_WORK, tech, -1, False)
+
+				elif type == "WaterSight":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_LOS").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_LOS_BONUS, tech, -1, False)
+
+				elif type == "WaterMoves":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_WATERMOVES").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_DOMAIN_EXTRA_MOVES, tech, item, False)
+
+				elif type == "MapCenter":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_MAPCENTER").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_MAP_CENTER, tech, -1, False)
+
+				elif type == "MapReveal":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_MAPREVEAL").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_MAP_REVEAL, tech, -1, False)
+
+				elif type == "MapTrading":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_MAPTRADING").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_MAP_TRADE, tech, -1, False)
+
+				elif type == "WealthTrading":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_GOLDTRADING").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_GOLD_TRADE, tech, -1, False)
+
+				elif type == "TechTrading":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_TECHTRADING").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_TECH_TRADE, tech, -1, False)
+
+				elif type == "TradeRoute":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_TRADE_ROUTES").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_TRADE_ROUTES, tech, -1, False)
+
+				elif type == "OpenBorders":
+					screen.addDDSGFCAt(szItem , szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_OPENBORDERS").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OPEN_BORDERS, tech, -1, False)
+
+				elif type == "DefensivePact":
+					screen.addDDSGFCAt(szItem , szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_DEFENSIVEPACT").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_DEFENSIVE_PACT, tech, -1, False)
+
+				elif type == "PermanentAlliance":
+					screen.addDDSGFCAt(szItem , szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_PERMALLIANCE").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_PERMANENT_ALLIANCE, tech, -1, False)
+
+				elif type == "VassalStates":
+					screen.addDDSGFCAt(szItem , szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_VASSAL").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_VASSAL_STATE, tech, -1, False)
+
+				elif type == "Happiness":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_HAPPINESS").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_HAPPINESS_RATE, tech, -1, False)
+
+				elif type == "Health":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_HEALTH").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_HEALTH_RATE, tech, -1, False)
+
+				elif type == "CommerceAdjust":
+						szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_GENERAL_QUESTIONMARK").getPath()
+						if item in [CommerceTypes.COMMERCE_GOLD, CommerceTypes.COMMERCE_RESEARCH, CommerceTypes.COMMERCE_CULTURE]:
+							szFileName = gc.getProcessInfo(item).getButton()
+						elif item == CommerceTypes.COMMERCE_ESPIONAGE:
+							szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_ESPIONAGE").getPath()
+						screen.addDDSGFCAt(szItem, szTechBox, szFileName, iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_ADJUST, tech, item, False)
+
+				elif type == "Process":
+					screen.addDDSGFCAt(szItem, szTechBox, gc.getProcessInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_PROCESS_INFO, tech, item, False)
+
+				elif type == "FreeTech":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_FREETECH").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_FREE_TECH, tech, -1, False)
+
+				elif type == "FreeUnit":
+					if gc.getUnitInfo(item).getEspionagePoints() == 0 or not CyGame().isOption(GameOptionTypes.GAMEOPTION_NO_ESPIONAGE):
+						screen.addDDSGFCAt(szItem, szTechBox, player.getUnitButton(item), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_FREE_UNIT, item, tech, False)
+
+				elif type == "CustomEffect":
+					szFileName = CyArtFileMgr().getInterfaceArtInfo("INTERFACE_GENERAL_QUESTIONMARK").getPath()
+					screen.addDDSGFCAt(szItem, szTechBox, szFileName, iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_PYTHON, 7800, tech, False)
+
+				fX += self.X_INCREMENT
+
+			fX = self.BOX_WIDTH - (self.PIXEL_INCREMENT * 2)
+
+		###	Crosslinks
+			for j in xrange(gc.getNUM_OR_TECH_PREREQS()):
+				iPrereq = TechInfo.getPrereqOrTechs(j)
+				if iPrereq == -1:
+					break
+
+				fX -= self.X_INCREMENT
+				szTechPrereqID = "TechPrereqID" + str((tech * 1000) + j)
+				screen.addDDSGFCAt(szTechPrereqID, szTechBox, gc.getTechInfo(iPrereq).getButton(), iX + fX, iY + 5, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_TECH_PREPREQ, iPrereq, -1, False)
+
+		### Arrows
+			for j in xrange(gc.getNUM_AND_TECH_PREREQS()):
+				iPrereq = TechInfo.getPrereqAndTechs(j)
+				if iPrereq == -1:
+					break
+
+				eInfo = gc.getTechInfo(iPrereq)
+				if eInfo.getEra() < self.iFromEra:
+					continue
+				if eInfo.getEra() > self.iHideEra:
+					continue
+				if self.bResearched and team.isHasTech(iPrereq):
+					continue
+
+				iX = (eInfo.getGridX() - self.iMinX) * (self.BOX_X_SPACING + self.BOX_WIDTH) + self.BOX_WIDTH - 6
+				iY = (eInfo.getGridY() -1) * self.BOX_Y_SPACING - 6
+				xDiff = TechInfo.getGridX() - gc.getTechInfo(iPrereq).getGridX()
+				yDiff = TechInfo.getGridY() - gc.getTechInfo(iPrereq).getGridY()
+
+				if yDiff == 0:
+					screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX, iY + self.getYStart(3), self.getWidth(xDiff), 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+					screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_HEAD, iX + self.getWidth(xDiff), iY + self.getYStart(3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+
+				elif yDiff < 0:
+					if yDiff == -6:
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX, iY + self.getYStart(1), self.getWidth(xDiff) / 2, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_XY, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(1), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_Y, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(1) + 8 - self.getHeight(yDiff, 0), 8, self.getHeight(yDiff, 0) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_XMY, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(1) - self.getHeight(yDiff, 0), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX + 8 + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(1) - self.getHeight(yDiff, 0), (self.getWidth(xDiff) / 2 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_HEAD, iX + self.getWidth(xDiff), iY + self.getYStart(1) - self.getHeight(yDiff, 0), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+
+					elif yDiff == -2 and xDiff == 2:
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX, iY + self.getYStart(2), self.getWidth(xDiff) * 5 / 6, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_XY, iX + (self.getWidth(xDiff) * 5 / 6 ), iY + self.getYStart(2), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_Y, iX + (self.getWidth(xDiff) * 5 / 6 ), iY + self.getYStart(2) + 8 - self.getHeight(yDiff, 3), 8, self.getHeight(yDiff, 3) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_XMY, iX + (self.getWidth(xDiff) * 5 / 6 ), iY + self.getYStart(2) - self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX + 8 + (self.getWidth(xDiff) * 5 / 6 ), iY + self.getYStart(2) - self.getHeight(yDiff, 3), (self.getWidth(xDiff) / 6 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_HEAD, iX + self.getWidth(xDiff), iY + self.getYStart(2) - self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+
+					else:
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX, iY + self.getYStart(2), self.getWidth(xDiff) / 2, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_XY, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(2), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_Y, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(2) + 8 - self.getHeight(yDiff, 3), 8, self.getHeight(yDiff, 3) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_XMY, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(2) - self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX + 8 + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(2) - self.getHeight(yDiff, 3), (self.getWidth(xDiff) / 2 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_HEAD, iX + self.getWidth(xDiff), iY + self.getYStart(2) - self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+
 				else:
-					szFileName = ArtFileMgr.getInterfaceArtInfo("INTERFACE_GENERAL_QUESTIONMARK").getPath()
-				screen.addDDSGFCAt( szAdjustButton, szTechRecord, szFileName, iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_ADJUST, i, j, False )
-				fX += X_INCREMENT
+					if yDiff == 2 and xDiff == 2:
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX + self.BOX_WIDTH, iY + self.getYStart(4), self.getWidth(xDiff) / 6, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_MXMY, iX + self.BOX_WIDTH + (self.getWidth(xDiff) / 6 ), iY + self.getYStart(4), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_Y, iX + self.BOX_WIDTH + (self.getWidth(xDiff) / 6 ), iY + self.getYStart(4) + 8, 8, self.getHeight(yDiff, 3) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_MXY, iX + self.BOX_WIDTH + (self.getWidth(xDiff) / 6 ), iY + self.getYStart(4) + self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX + 8 + self.BOX_WIDTH + (self.getWidth(xDiff) / 6 ), iY + self.getYStart(4) + self.getHeight(yDiff, 3), (self.getWidth(xDiff) * 5 / 6 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_HEAD, iX + self.BOX_WIDTH + self.getWidth(xDiff), iY + self.getYStart(4) + self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
 
-		j = 0
-		k = 0
+					elif yDiff == 4 and xDiff == 1:
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX, iY + self.getYStart(5), self.getWidth(xDiff) / 3, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_MXMY, iX + (self.getWidth(xDiff) / 3 ), iY + self.getYStart(5), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_Y, iX + (self.getWidth(xDiff) / 3 ), iY + self.getYStart(5) + 8, 8, self.getHeight(yDiff, 0) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_MXY, iX + (self.getWidth(xDiff) / 3 ), iY + self.getYStart(5) + self.getHeight(yDiff, 0), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX + 8 + (self.getWidth(xDiff) / 3 ), iY + self.getYStart(5) + self.getHeight(yDiff, 0), (self.getWidth(xDiff) * 2 / 3 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_HEAD, iX + self.getWidth(xDiff), iY + self.getYStart(5) + self.getHeight(yDiff, 0), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
 
-		# Terrain opens up as a trade route
-		for j in range( gc.getNumTerrainInfos() ):
-			if (gc.getTechInfo(i).isTerrainTrade(j) and not (gc.getTeam(gc.getPlayer(self.iCivSelected).getTeam()).isTerrainTrade(j))):
-				szTerrainTradeButton = self.getNextWidgetName("TerrainTradeButton")
-				screen.addDDSGFCAt( szTerrainTradeButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_WATERTRADE").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_TERRAIN_TRADE, i, j, False )
-				fX += X_INCREMENT
+					else:
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX, iY + self.getYStart(4), self.getWidth(xDiff) / 2, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_MXMY, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(4), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_Y, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(4) + 8, 8, self.getHeight(yDiff, 3) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_MXY, iX + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(4) + self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_X, iX + 8 + (self.getWidth(xDiff) / 2 ), iY + self.getYStart(4) + self.getHeight(yDiff, 3), (self.getWidth(xDiff) / 2 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+						screen.addDDSGFCAt(self.getNextWidgetName(), "TechList", ARROW_HEAD, iX + self.getWidth(xDiff), iY + self.getYStart(4) + self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
 
-		j = gc.getNumTerrainInfos()	
-		if (gc.getTechInfo(i).isRiverTrade() and not (gc.getTeam(gc.getPlayer(self.iCivSelected).getTeam()).isRiverTrade())):
-			szTerrainTradeButton = self.getNextWidgetName("TerrainTradeButton")
-			screen.addDDSGFCAt( szTerrainTradeButton, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_RIVERTRADE").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_TERRAIN_TRADE, i, j, False )
-			fX += X_INCREMENT
+		screen.show("TechList")
+		screen.setFocus("TechList")
+		self.updateTechs(True)
 
-		j = 0
-		k = 0
 
-		# Special buildings like monestaries...
-		for j in range( gc.getNumSpecialBuildingInfos() ):
-			if (gc.getSpecialBuildingInfo(j).getTechPrereq() == i):
-				szSpecialBuilding = self.getNextWidgetName("SpecialBuildingButton")
-				screen.addDDSGFCAt( szSpecialBuilding, szTechRecord, gc.getSpecialBuildingInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_SPECIAL_BUILDING, i, j, False )
-				fX += X_INCREMENT
 
-		j = 0
-		k = 0
-
-		# Yield change
-		for j in range( gc.getNumImprovementInfos() ):
-			bFound = False
-			for k in range( YieldTypes.NUM_YIELD_TYPES ):
-				if (gc.getImprovementInfo(j).getTechYieldChanges(i, k)):
-					if ( bFound == False ):
-						szYieldChange = self.getNextWidgetName("YieldChangeButton")
-						screen.addDDSGFCAt( szYieldChange, szTechRecord, gc.getImprovementInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_YIELD_CHANGE, i, j, False )
-						fX += X_INCREMENT
-						bFound = True
-
-		j = 0
-		k = 0
-
-		# Bonuses revealed
-		for j in range( gc.getNumBonusInfos() ):
-			if (gc.getBonusInfo(j).getTechReveal() == i):
-				szBonusReveal = self.getNextWidgetName("BonusRevealButton")
-				screen.addDDSGFCAt( szBonusReveal, szTechRecord, gc.getBonusInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_BONUS_REVEAL, i, j, False )
-				fX += X_INCREMENT
-		
-		# Leoreth: allows bonus trade
-		j = 0
-		k = 0
-		
-		for j in range( gc.getNumBonusInfos() ):
-			if gc.getBonusInfo(j).getTechPlayerTrade() == i:
-				szBonusPlayerTrade = self.getNextWidgetName("BonusPlayerTradeButton")
-				screen.addDDSGFCAt( szBonusPlayerTrade, szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_GOLDTRADING").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_BONUS_PLAYER_TRADE, i, 0, False )
-				fX += X_INCREMENT
-				break
-				
-		j = 0
-		k = 0
-
-		# Civic options
-		for j in range( gc.getNumCivicInfos() ):
-			if (gc.getCivicInfo(j).getTechPrereq() == i):
-				szCivicReveal = self.getNextWidgetName("CivicRevealButton")
-				screen.addDDSGFCAt( szCivicReveal, szTechRecord, gc.getCivicInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_CIVIC_REVEAL, i, j, False )
-				fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Projects possible
-		for j in range( gc.getNumProjectInfos() ):
-			if (gc.getProjectInfo(j).getTechPrereq() == i):
-				szProjectInfo = self.getNextWidgetName("ProjectInfoButton")
-				screen.addDDSGFCAt( szProjectInfo, szTechRecord, gc.getProjectInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROJECT, j, 1, False )
-				fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Processes possible
-		for j in range( gc.getNumProcessInfos() ):
-			if (gc.getProcessInfo(j).getTechPrereq() == i):
-				szProcessInfo = self.getNextWidgetName("ProcessInfoButton")
-				screen.addDDSGFCAt( szProcessInfo, szTechRecord, gc.getProcessInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_PROCESS_INFO, i, j, False )
-				fX += X_INCREMENT
-
-		j = 0
-		k = 0
-
-		# Religions unlocked
-		for j in range( gc.getNumReligionInfos() ):
-			if ( gc.getReligionInfo(j).getTechPrereq() == i ):
-				szFoundReligion = self.getNextWidgetName("FoundReligionButton")
-				if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_PICK_RELIGION):
-					szButton = ArtFileMgr.getInterfaceArtInfo("INTERFACE_POPUPBUTTON_RELIGION").getPath()
-				else:
-					szButton = gc.getReligionInfo(j).getButton()
-				screen.addDDSGFCAt( szFoundReligion, szTechRecord, szButton, iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_FOUND_RELIGION, i, j, False )
-				fX += X_INCREMENT
-
-		for j in range( gc.getNumCorporationInfos() ):
-			if ( gc.getCorporationInfo(j).getTechPrereq() == i ):
-				szFoundCorporation = self.getNextWidgetName("FoundCorporationButton")
-				screen.addDDSGFCAt( szFoundCorporation, szTechRecord, gc.getCorporationInfo(j).getButton(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_FOUND_CORPORATION, i, j, False )
-				fX += X_INCREMENT
-
-	# Will update the tech records based on color, researching, researched, queued, etc.
-	def updateTechRecords (self, bForce):
-#		BugUtil.debug("cvTechChooser: updateTechRecords")
-
-		# If we are the Pitboss, we don't want to put up an interface at all
-		if ( CyGame().isPitbossHost() ):
+	def updateTechs(self, bForce):
+		if CyGame().isPitbossHost():
 			return
 
-		if (self.sTechTabID == self.sTechSelectTab):
-			bTechName = True
-			sPanel = self.TabPanels[0]
-			self.BOX_INCREMENT_WIDTH = 27 # Used to be 33 #Should be a multiple of 3...
-		else:
-			bTechName = False
-			sPanel = self.TabPanels[1]
-			self.BOX_INCREMENT_WIDTH = 12 # Used to be 33 #Should be a multiple of 3...
-
-		# Get the screen
 		screen = self.getScreen()
+		player = gc.getPlayer(self.iPlayer)
+		team = gc.getTeam(player.getTeam())
 
-		abChanged = []
-		bAnyChanged = 0
+		ChangedList = []
+		for tech in xrange(gc.getNumTechInfos()):
+			TechInfo = gc.getTechInfo(tech)
+			if TechInfo.getEra() < self.iFromEra:
+				continue
+			if TechInfo.getEra() > self.iHideEra:
+				continue
+			if self.bResearched and team.isHasTech(tech):
+				continue
 
-		# Go through all the techs
-		for i in range(gc.getNumTechInfos()):
-
-			abChanged.append(0)
-
-			if ( gc.getTeam(gc.getPlayer(self.iCivSelected).getTeam()).isHasTech(i) ):
-				if ( self.aiCurrentState[i] != CIV_HAS_TECH ):
-					self.aiCurrentState[i] = CIV_HAS_TECH
-					abChanged[i] = 1
-					bAnyChanged = 1
-			elif ( gc.getPlayer(self.iCivSelected).getCurrentResearch() == i ):
-				if ( self.aiCurrentState[i] != CIV_IS_RESEARCHING ):
-					self.aiCurrentState[i] = CIV_IS_RESEARCHING
-					abChanged[i] = 1
-					bAnyChanged = 1
-			elif ( gc.getPlayer(self.iCivSelected).isResearchingTech(i) ):
-				if ( self.aiCurrentState[i] != CIV_IS_RESEARCHING ):
-					self.aiCurrentState[i] = CIV_IS_RESEARCHING
-					abChanged[i] = 1
-					bAnyChanged = 1
-			elif ( gc.getPlayer(self.iCivSelected).canEverResearch(i) ):
-				if ( self.aiCurrentState[i] != CIV_NO_RESEARCH ):
-					self.aiCurrentState[i] = CIV_NO_RESEARCH
-					abChanged[i] = 1
-					bAnyChanged = 1
+			if team.isHasTech(tech):
+				if self.aiCurrentState[tech] != CIV_HAS_TECH or bForce:
+					self.aiCurrentState[tech] = CIV_HAS_TECH
+					ChangedList.append(tech)
+			elif player.isResearchingTech(tech):
+				self.aiCurrentState[tech] = CIV_IS_RESEARCHING
+				ChangedList.append(tech)
+			elif player.canEverResearch(tech):
+				if self.aiCurrentState[tech] != CIV_TECH_AVAILABLE or bForce:
+					self.aiCurrentState[tech] = CIV_TECH_AVAILABLE
+					ChangedList.append(tech)
 			else:
-				if ( self.aiCurrentState[i] != CIV_TECH_AVAILABLE ):
-					self.aiCurrentState[i] = CIV_TECH_AVAILABLE
-					abChanged[i] = 1
-					bAnyChanged = 1
+				if self.aiCurrentState[tech] != CIV_NO_RESEARCH or bForce:
+					self.aiCurrentState[tech] = CIV_NO_RESEARCH
+					ChangedList.append(tech)
 
-		for i in range(gc.getNumTechInfos()):
-			if (abChanged[i] or bForce or (bAnyChanged and gc.getPlayer(self.iCivSelected).isResearchingTech(i))):
-				# Create and place a tech in its proper location
-				szTechRecord = "TechRecord" + str(i)
-				szTechID = "TechID" + str(i)
-				szTechString = "<font=1>"
+		for tech in ChangedList:
+			TechInfo = gc.getTechInfo(tech)
+			iX = (gc.getTechInfo(tech).getGridX() - self.iMinX) * (self.BOX_X_SPACING + self.BOX_WIDTH)
+			iY = (gc.getTechInfo(tech).getGridY() - 1) * self.BOX_Y_SPACING
 
-				if ( gc.getPlayer(self.iCivSelected).isResearchingTech(i) ):
-					szTechString = szTechString + unicode(gc.getPlayer(self.iCivSelected).getQueuePosition(i)) + ". "
+			# Tech Description
+			szTechID = "TechID" + str(tech)
+			szText = ""
+			iQueue = player.getQueuePosition(tech)
+			if player.isResearchingTech(tech):
+				szText += str(iQueue) + ". "
+			szText += TechInfo.getDescription()
+			screen.setTextAt(szTechID, "TechList", szText, CvUtil.FONT_LEFT_JUSTIFY, iX + self.TECH_ICON_SIZE + 12, iY + 12, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_TECH_TREE, tech, -1)
+			screen.setActivation(szTechID, ActivationTypes.ACTIVATE_MIMICPARENTFOCUS)
+			screen.setHitTest(szTechID, HitTestTypes.HITTEST_NOHIT)
 
-				iX = 30 + ( (gc.getTechInfo(i).getGridX() - 1) * ( ( self.BOX_INCREMENT_X_SPACING + self.BOX_INCREMENT_WIDTH ) * self.PIXEL_INCREMENT ) )
-				iY = ( gc.getTechInfo(i).getGridY() - 1 ) * ( self.BOX_INCREMENT_Y_SPACING * self.PIXEL_INCREMENT ) + 5
+			# Tech Box Colours
+			szTechBox = "TechBox" + str(tech)
+			if gc.getTeam(player.getTeam()).isHasTech(tech):
+				screen.setPanelColor(szTechBox, 100, 150, 200)
+			elif player.isResearchingTech(tech):
+				screen.setPanelColor(szTechBox, 200, 175, 0)
+			elif player.canEverResearch(tech):
+				if TechInfo.getEra() == 0:
+					screen.setPanelColor(szTechBox, 40, 80, 30)
+				if TechInfo.getEra() == 1:
+					screen.setPanelColor(szTechBox, 150, 100, 35)
+				if TechInfo.getEra() == 2:
+					screen.setPanelColor(szTechBox, 80, 70, 60)
+				if TechInfo.getEra() == 3:
+					screen.setPanelColor(szTechBox, 40, 80, 115)
+				if TechInfo.getEra() == 4:
+					screen.setPanelColor(szTechBox, 120, 120, 120)
+				if TechInfo.getEra() == 5:
+					screen.setPanelColor(szTechBox, 80, 40, 100)
+				if TechInfo.getEra() == 6:
+					screen.setPanelColor(szTechBox, 40, 40, 100)
 
-				if bTechName:
-					szTechString += gc.getTechInfo(i).getDescription()
-					if ( gc.getPlayer(self.iCivSelected).isResearchingTech(i) ):
-						szTechString += " ("
-						szTechString += str(gc.getPlayer(self.iCivSelected).getResearchTurnsLeft(i, ( gc.getPlayer(self.iCivSelected).getCurrentResearch() == i )))
-						szTechString += ")"
-					szTechString = szTechString + "</font>"
-					screen.setTextAt( szTechID, sPanel, szTechString, CvUtil.FONT_LEFT_JUSTIFY, iX + 6 + X_INCREMENT, iY + 6, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_TECH_TREE, i, -1 )
-					screen.setActivation( szTechID, ActivationTypes.ACTIVATE_MIMICPARENTFOCUS )
+			# Progress Bars
+			szProgress = "Progress" + str(tech)
+			screen.hide(szProgress)
+			if player.isResearchingTech(tech) and iQueue == 1:
+				screen.addStackedBarGFCAt(szProgress, "TechList", iX + 6, iY + self.BOX_HEIGHT - 9, self.BOX_WIDTH - 12, 15, InfoBarTypes.NUM_INFOBAR_TYPES, WidgetTypes.WIDGET_GENERAL, -1, -1)
+				screen.setStackedBarColors(szProgress, InfoBarTypes.INFOBAR_STORED, gc.getInfoTypeForString("COLOR_RESEARCH_STORED"))
+				screen.setStackedBarColors(szProgress, InfoBarTypes.INFOBAR_RATE, gc.getInfoTypeForString("COLOR_RESEARCH_RATE"))
+				screen.setStackedBarColors(szProgress, InfoBarTypes.INFOBAR_EMPTY, gc.getInfoTypeForString("COLOR_EMPTY"))
 
-				if ( gc.getTeam(gc.getPlayer(self.iCivSelected).getTeam()).isHasTech(i) ):
-					screen.setPanelColor(szTechRecord, 85, 150, 87)
-				elif ( gc.getPlayer(self.iCivSelected).getCurrentResearch() == i ):
-					screen.setPanelColor(szTechRecord, 104, 158, 165)
-				elif ( gc.getPlayer(self.iCivSelected).isResearchingTech(i) ):
-					screen.setPanelColor(szTechRecord, 104, 158, 165)
-				elif ( gc.getPlayer(self.iCivSelected).canEverResearch(i) ):
-					screen.setPanelColor(szTechRecord, 100, 104, 160)
-				else:
-					screen.setPanelColor(szTechRecord, 206, 65, 69)
-
-# BUG - GP Tech Prefs - start
-		self.updateTechPrefs()
-# BUG - GP Tech Prefs - end
-
-# BUG - Tech Era Colors - start
-	def setTechPanelShadowColor(self, screen, sPanel, iEra):
-		szEra = gc.getEraInfo(iEra).getType()
-		iColor = ClockOpt.getEraColor(szEra)
-		if iColor != -1:
-			color = gc.getColorInfo(iColor)
-			if color:
-				rgb = color.getColor() # NiColorA object
-				if rgb:
-					screen.setPanelColor(sPanel, int(100 * rgb.r), int(100 * rgb.g), int(100 * rgb.b))
-# BUG - Tech Era Colors - end
-
-	# Will draw the arrows
-	def drawArrows(self, screen, sPanel, bANDPreReq, bORPreReq):
-#		BugUtil.debug("cvTechChooser: drawArrows")
-
-		iLoop = 0
-
-		ARROW_X = ArtFileMgr.getInterfaceArtInfo("ARROW_X").getPath()
-		ARROW_Y = ArtFileMgr.getInterfaceArtInfo("ARROW_Y").getPath()
-		ARROW_MXMY = ArtFileMgr.getInterfaceArtInfo("ARROW_MXMY").getPath()
-		ARROW_XY = ArtFileMgr.getInterfaceArtInfo("ARROW_XY").getPath()
-		ARROW_MXY = ArtFileMgr.getInterfaceArtInfo("ARROW_MXY").getPath()
-		ARROW_XMY = ArtFileMgr.getInterfaceArtInfo("ARROW_XMY").getPath()
-		ARROW_HEAD = ArtFileMgr.getInterfaceArtInfo("ARROW_HEAD").getPath()
-
-		for i in range(gc.getNumTechInfos()):
-			bFirst = 1
-			fX = (self.BOX_INCREMENT_WIDTH * self.PIXEL_INCREMENT) - 8
-
-			if bANDPreReq:
-				for j in range( gc.getNUM_AND_TECH_PREREQS() ):
-					eTech = gc.getTechInfo(i).getPrereqAndTechs(j)
-					if ( eTech > -1 ):
-						fX = fX - X_INCREMENT
-						iX = 30 + ( (gc.getTechInfo(i).getGridX() - 1) * ( ( self.BOX_INCREMENT_X_SPACING + self.BOX_INCREMENT_WIDTH ) * self.PIXEL_INCREMENT ) )
-						iY = ( gc.getTechInfo(i).getGridY() - 1 ) * ( self.BOX_INCREMENT_Y_SPACING * self.PIXEL_INCREMENT ) + 5
-
-						szTechPrereqID = "TechPrereqID" + str((i * 1000) + j)
-						screen.addDDSGFCAt( szTechPrereqID, sPanel, gc.getTechInfo(eTech).getButton(), iX + fX, iY + 6, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_HELP_TECH_PREPREQ, eTech, -1, False )
-
-						#szTechPrereqBorderID = "TechPrereqBorderID" + str((i * 1000) + j)
-						#screen.addDDSGFCAt( szTechPrereqBorderID, sPanel, ArtFileMgr.getInterfaceArtInfo("TECH_TREE_BUTTON_BORDER").getPath(), iX + fX + 4, iY + 22, 32, 32, WidgetTypes.WIDGET_HELP_TECH_PREPREQ, eTech, -1, False )
-
-			j = 0
-
-			if bORPreReq:
-				for j in range( gc.getNUM_OR_TECH_PREREQS() ):
-					eTech = gc.getTechInfo(i).getPrereqOrTechs(j)
-					if ( eTech > -1 ):
-						iX = 24 + ( (gc.getTechInfo(eTech).getGridX() - 1) * ( ( self.BOX_INCREMENT_X_SPACING + self.BOX_INCREMENT_WIDTH ) * self.PIXEL_INCREMENT ) )
-						iY = ( gc.getTechInfo(eTech).getGridY() - 1 ) * ( self.BOX_INCREMENT_Y_SPACING * self.PIXEL_INCREMENT ) + 5
-
-						# j is the pre-req, i is the tech...
-						xDiff = gc.getTechInfo(i).getGridX() - gc.getTechInfo(eTech).getGridX()
-						yDiff = gc.getTechInfo(i).getGridY() - gc.getTechInfo(eTech).getGridY()
-
-						if (yDiff == 0):
-							screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + self.getXStart(), iY + self.getYStart(3), self.getWidth(xDiff), 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-							screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_HEAD, iX + self.getXStart() + self.getWidth(xDiff), iY + self.getYStart(3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-						elif (yDiff < 0):
-							if ( yDiff == -6 ):
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + self.getXStart(), iY + self.getYStart(1), self.getWidth(xDiff) / 2, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_XY, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(1), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_Y, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(1) + 8 - self.getHeight(yDiff, 0), 8, self.getHeight(yDiff, 0) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_XMY, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(1) - self.getHeight(yDiff, 0), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + 8 + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(1) - self.getHeight(yDiff, 0), ( self.getWidth(xDiff) / 2 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_HEAD, iX + self.getXStart() + self.getWidth(xDiff), iY + self.getYStart(1) - self.getHeight(yDiff, 0), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-							elif ( yDiff == -2 and xDiff == 2 ):
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + self.getXStart(), iY + self.getYStart(2), self.getWidth(xDiff) * 5 / 6, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_XY, iX + self.getXStart() + ( self.getWidth(xDiff) * 5 / 6 ), iY + self.getYStart(2), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_Y, iX + self.getXStart() + ( self.getWidth(xDiff) * 5 / 6 ), iY + self.getYStart(2) + 8 - self.getHeight(yDiff, 3), 8, self.getHeight(yDiff, 3) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_XMY, iX + self.getXStart() + ( self.getWidth(xDiff) * 5 / 6 ), iY + self.getYStart(2) - self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + 8 + self.getXStart() + ( self.getWidth(xDiff) * 5 / 6 ), iY + self.getYStart(2) - self.getHeight(yDiff, 3), ( self.getWidth(xDiff) / 6 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_HEAD, iX + self.getXStart() + self.getWidth(xDiff), iY + self.getYStart(2) - self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-							else:
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + self.getXStart(), iY + self.getYStart(2), self.getWidth(xDiff) / 2, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_XY, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(2), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_Y, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(2) + 8 - self.getHeight(yDiff, 3), 8, self.getHeight(yDiff, 3) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_XMY, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(2) - self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + 8 + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(2) - self.getHeight(yDiff, 3), ( self.getWidth(xDiff) / 2 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_HEAD, iX + self.getXStart() + self.getWidth(xDiff), iY + self.getYStart(2) - self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-						elif (yDiff > 0):
-							if ( yDiff == 2 and xDiff == 2):
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + self.getXStart(), iY + self.getYStart(4), self.getWidth(xDiff) / 6, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_MXMY, iX + self.getXStart() + ( self.getWidth(xDiff) / 6 ), iY + self.getYStart(4), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_Y, iX + self.getXStart() + ( self.getWidth(xDiff) / 6 ), iY + self.getYStart(4) + 8, 8, self.getHeight(yDiff, 3) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_MXY, iX + self.getXStart() + ( self.getWidth(xDiff) / 6 ), iY + self.getYStart(4) + self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + 8 + self.getXStart() + ( self.getWidth(xDiff) / 6 ), iY + self.getYStart(4) + self.getHeight(yDiff, 3), ( self.getWidth(xDiff) * 5 / 6 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_HEAD, iX + self.getXStart() + self.getWidth(xDiff), iY + self.getYStart(4) + self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-							elif ( yDiff == 4 and xDiff == 1):
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + self.getXStart(), iY + self.getYStart(5), self.getWidth(xDiff) / 3, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_MXMY, iX + self.getXStart() + ( self.getWidth(xDiff) / 3 ), iY + self.getYStart(5), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_Y, iX + self.getXStart() + ( self.getWidth(xDiff) / 3 ), iY + self.getYStart(5) + 8, 8, self.getHeight(yDiff, 0) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_MXY, iX + self.getXStart() + ( self.getWidth(xDiff) / 3 ), iY + self.getYStart(5) + self.getHeight(yDiff, 0), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + 8 + self.getXStart() + ( self.getWidth(xDiff) / 3 ), iY + self.getYStart(5) + self.getHeight(yDiff, 0), ( self.getWidth(xDiff) * 2 / 3 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_HEAD, iX + self.getXStart() + self.getWidth(xDiff), iY + self.getYStart(5) + self.getHeight(yDiff, 0), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-							else:
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + self.getXStart(), iY + self.getYStart(4), self.getWidth(xDiff) / 2, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_MXMY, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(4), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_Y, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(4) + 8, 8, self.getHeight(yDiff, 3) - 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_MXY, iX + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(4) + self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_X, iX + 8 + self.getXStart() + ( self.getWidth(xDiff) / 2 ), iY + self.getYStart(4) + self.getHeight(yDiff, 3), ( self.getWidth(xDiff) / 2 ) - 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-								screen.addDDSGFCAt( self.getNextWidgetName("TechArrow"), sPanel, ARROW_HEAD, iX + self.getXStart() + self.getWidth(xDiff), iY + self.getYStart(4) + self.getHeight(yDiff, 3), 8, 8, WidgetTypes.WIDGET_GENERAL, -1, -1, False )
-
-		return
-
-# BUG - GP Tech Prefs - start
-	def resetTechPrefs (self):
-		self.pPrefs = TechPrefs.TechPrefs()
-	
-	def updateTechPrefs (self):
-#		BugUtil.debug("cvTechChooser: updateTechPrefs")
-
-		# If we are the Pitboss, we don't want to put up an interface at all
-		if ( CyGame().isPitbossHost() ):
-			return
-
-		# These don't seem to be setup when screen is first opened
-		if (gc.getNumTechInfos() <= 0 or gc.getNumFlavorTypes() <= 0):
-			return
-
-		# Get the screen and player
-		screen = self.getScreen()
-		pPlayer = gc.getPlayer(self.iCivSelected)
-
-		# Don't show tech prefs during advanced start setup
-		if (pPlayer.getAdvancedStartPoints() >= 0):
-			return
-
-		# Check to see if option is disabled
-		if (not BugOpt.isShowGPTechPrefs()):
-			if (self.bPrefsShowing):
-				# ... and if so, remove icons if they are currently showing
-				screen.hide( "GreatPersonHeading")
-				for i, f in enumerate(FLAVORS):
-					screen.hide( "GreatPerson" + str(f) )
-					screen.hide( "GreatPersonTech" + str(f) )
-					screen.hide( "GreatPersonTechNext" + str(f) )
-				self.bPrefsShowing = False
-			return
-		# Always redraw the GP icons because otherwise they are prone to disappearing
-		# discover icon heading
-		iIconSize = 48
-		iX = PREF_ICON_LEFT + 5 * PREF_ICON_SIZE / 4 - iIconSize / 2
-		iY = PREF_ICON_TOP - iIconSize - 40
-		screen.addDDSGFC( "GreatPersonHeading", ArtFileMgr.getInterfaceArtInfo("DISCOVER_TECHNOLOGY_BUTTON").getPath(), iX, iY, iIconSize, iIconSize, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-
-		for i, f in enumerate(FLAVORS):
-			# GP icon
-			iUnitClass = gc.getInfoTypeForString(UNIT_CLASSES[i])
-			iUnitType = gc.getUnitClassInfo(iUnitClass).getDefaultUnitIndex()
-			pUnitInfo = gc.getUnitInfo(iUnitType)
-			iX = PREF_ICON_LEFT
-			iY = PREF_ICON_TOP + 4 * i * PREF_ICON_SIZE
-			screen.addDDSGFC( "GreatPerson" + str(f), pUnitInfo.getButton(), iX, iY, PREF_ICON_SIZE, PREF_ICON_SIZE, WidgetTypes.WIDGET_TECH_PREFS_ALL, f, -1 )
-		self.bPrefsShowing = True
-
-		# Remove any techs researched since last call, creating tree if necessary
-		if (not self.pPrefs):
-			self.resetTechPrefs()
-		self.pPrefs.removeKnownTechs()
-
-		# Add all techs in research queue to set of soon-to-be-known techs
-		sTechs = set()
-		for i in range(gc.getNumTechInfos()):
-			if (pPlayer.isResearchingTech(i)):
-				sTechs.add(self.pPrefs.getTech(i))
-
-		# Update the buttons to reflect the new tech prefs
-		for i, f in enumerate(FLAVORS):
-			# GP button
-			screen.show( "GreatPerson" + str(f) )
-
-			# Current tech GP will pop
-			szButtonName = "GreatPersonTech" + str(f)
-			pTech = self.pPrefs.getNextResearchableFlavorTech(f)
-			iX = PREF_ICON_LEFT + 3 * PREF_ICON_SIZE / 2
-			iY = PREF_ICON_TOP + 4 * i * PREF_ICON_SIZE
-			if (pTech):
-				screen.addDDSGFC( szButtonName, pTech.getInfo().getButton(), iX, iY, PREF_ICON_SIZE, PREF_ICON_SIZE, WidgetTypes.WIDGET_TECH_PREFS_CURRENT, f, -1 )
-			else:
-				screen.addDDSGFC( szButtonName, self.NO_TECH_ART, iX, iY, PREF_ICON_SIZE, PREF_ICON_SIZE, WidgetTypes.WIDGET_TECH_PREFS_CURRENT, f, -1 )
-			screen.show( szButtonName )
-
-			# Tech GP will pop once selected techs are researched
-			szButtonName = "GreatPersonTechNext" + str(f)
-			pTech = self.pPrefs.getNextResearchableWithFlavorTech(f, sTechs)
-			iX = PREF_ICON_LEFT + 3 * PREF_ICON_SIZE / 2
-			iY = PREF_ICON_TOP + 4 * i * PREF_ICON_SIZE + 3 * PREF_ICON_SIZE / 2
-			if (pTech):
-				screen.addDDSGFC( szButtonName, pTech.getInfo().getButton(), iX, iY, PREF_ICON_SIZE, PREF_ICON_SIZE, WidgetTypes.WIDGET_TECH_PREFS_FUTURE, f, -1 )
-			else:
-				screen.addDDSGFC( szButtonName, self.NO_TECH_ART, iX, iY, PREF_ICON_SIZE, PREF_ICON_SIZE, WidgetTypes.WIDGET_TECH_PREFS_FUTURE, f, -1 )
-			screen.show( szButtonName )
-# BUG - GP Tech Prefs - end
-
-	def TechRecord (self, inputClass):
-		return 0
-
-	# Clicked the parent?
-	def ParentClick (self, inputClass):
-		return 0
-
-	def CivDropDown( self, inputClass ):
-		if ( inputClass.getNotifyCode() == NotifyCode.NOTIFY_LISTBOX_ITEM_SELECTED ):
-			screen = self.getScreen()
-			iIndex = screen.getSelectedPullDownID("CivDropDown")
-			self.iCivSelected = screen.getPullDownData("CivDropDown", iIndex)
-			self.updateTechRecords(false)
-
-	# Will handle the input for this screen...
-	def handleInput (self, inputClass):
-#		BugUtil.debug("cvTechChooser: handleInput")
-#		BugUtil.debugInput(inputClass)
-
-		# Get the screen
-		screen = self.getScreen()
-
-		szWidgetName = inputClass.getFunctionName() + str(inputClass.getID())
-
-		# Advanced Start Stuff
-		pPlayer = gc.getPlayer(self.iCivSelected)
-		if (pPlayer.getAdvancedStartPoints() >= 0):
-#			BugUtil.debug("cvTechChooser: handleInput - advancedstart")
-			# Add tech button
-			if (inputClass.getFunctionName() == "AddTechButton"):
-				if (pPlayer.getAdvancedStartTechCost(self.m_iSelectedTech, true) != -1):
-					CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_TECH, self.iCivSelected, -1, -1, self.m_iSelectedTech, true)	#Action, Player, X, Y, Data, bAdd
-					self.m_bTechRecordsDirty = true
-					self.m_bSelectedTechDirty = true
-
-			# Tech clicked on
-			elif (inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED):
-				if (inputClass.getButtonType() == WidgetTypes.WIDGET_TECH_TREE):
-					self.m_iSelectedTech = inputClass.getData1()
-					self.updateSelectedTech()
-
-		' Calls function mapped in TechChooserInputMap'
-		# only get from the map if it has the key
-		if ( inputClass.getNotifyCode() == NotifyCode.NOTIFY_LISTBOX_ITEM_SELECTED ):
-#			BugUtil.debug("cvTechChooser: handleInput - dropdown")
-			self.CivDropDown( inputClass )
-			return 1
-
-		if (inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED):
-			if szWidgetName == self.sTechSelectTab:
-				self.sTechTabID = self.sTechSelectTab
-				self.ShowTab()
-
-			elif szWidgetName == self.sTechTradeTab:
-				self.sTechTabID = self.sTechTradeTab
-				self.ShowTab()
+				iProgress = team.getResearchProgress(tech)
+				iThreshold = team.getResearchCost(tech)
+				iRate = player.calculateResearchRate(tech)
+				iOverflow = player.getOverflowResearch() * player.calculateResearchModifier(tech) / 100
+				screen.setBarPercentage(szProgress, InfoBarTypes.INFOBAR_STORED, float(iProgress) / float(iThreshold))
+				screen.setBarPercentage(szProgress, InfoBarTypes.INFOBAR_RATE, 0.0)
+				if iThreshold > (iProgress + iOverflow):
+					screen.setBarPercentage(szProgress, InfoBarTypes.INFOBAR_RATE, float(iRate) / (iThreshold - iProgress - iOverflow))
 
 
-
-		return 0
-
-	def getNextWidgetName(self, sName):
-#		BugUtil.debug("cvTechChooser: getNextWidgetName %i %i", self.nWidgetCount, len(self.sWidgets))
-		szName = sName + str(self.nWidgetCount)
-		self.nWidgetCount += 1
-		self.sWidgets.append(szName)
-		return szName
-
-	def deleteWidgets(self):
-#		BugUtil.debug("cvTechChooser: deleteWidgets %i %i", self.nWidgetCount, len(self.sWidgets))
-		screen = self.getScreen()
-		for w in self.sWidgets:
-#			BugUtil.debug("cvTechChooser: deleteWidgets '%s'", w)
-			screen.deleteWidget(w)
-
-		self.nWidgetCount = 0
-		self.sWidgets = []
-		return
-
-
-
-
-
-	def getXStart(self):
-		return ( self.BOX_INCREMENT_WIDTH * self.PIXEL_INCREMENT )
-
-	def getXSpacing(self):
-		return ( self.BOX_INCREMENT_X_SPACING * self.PIXEL_INCREMENT )
-
-	def getYStart(self, iY):
-		return int((((self.BOX_INCREMENT_HEIGHT * self.PIXEL_INCREMENT ) / 6.0) * iY) - self.PIXEL_INCREMENT )
-
-	def getWidth(self, xDiff):
-		return ( ( xDiff * self.getXSpacing() ) + ( ( xDiff - 1 ) * self.getXStart() ) )
-
-	def getHeight(self, yDiff, nFactor):
-		return ( ( nFactor + ( ( abs( yDiff ) - 1 ) * 6 ) ) * self.PIXEL_INCREMENT )
-
-	def update(self, fDelta):
-		if (CyInterface().isDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT)):
-			CyInterface().setDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT, false)
-
-			if (self.m_bSelectedTechDirty):
-				self.m_bSelectedTechDirty = false
-				self.updateSelectedTech()
-
-			if (self.m_bTechRecordsDirty):
-				self.m_bTechRecordsDirty = false
-				self.updateTechRecords(true)
-
-			if (gc.getPlayer(self.iCivSelected).getAdvancedStartPoints() < 0):
-				# hide the screen
-				screen = self.getScreen()
-				screen.hide("AddTechButton")
-				screen.hide("ASPointsLabel")
-				screen.hide("SelectedTechLabel")
-
-		return
 
 	def updateSelectedTech(self):
-		pPlayer = gc.getPlayer(CyGame().getActivePlayer())
-
-		# Get the screen
+		''
+		player = gc.getPlayer(CyGame().getActivePlayer())
 		screen = self.getScreen()
 
 		szName = ""
 		iCost = 0
+		if self.iSelectedTech > -1:
+			iCost = gc.getPlayer(CyGame().getActivePlayer()).getAdvancedStartTechCost(self.iSelectedTech, True)
 
-		if (self.m_iSelectedTech != -1):
-			szName = gc.getTechInfo(self.m_iSelectedTech).getDescription()
-			iCost = gc.getPlayer(CyGame().getActivePlayer()).getAdvancedStartTechCost(self.m_iSelectedTech, true)
-
+		screen.hide("AddTechButton")
+		screen.hide("AddTechCost")
 		if iCost > 0:
-			szText = u"<font=4>" + localText.getText("TXT_KEY_WB_AS_SELECTED_TECH_COST", (iCost, pPlayer.getAdvancedStartPoints())) + u"</font>"
-			screen.setLabel( "ASPointsLabel", "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, self.X_ADVANCED_START_TEXT, self.Y_ADD_TECH_BUTTON + 3, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
-		else:
-			screen.hide("ASPointsLabel")
+			szText = u"<font=3b>%d/%d%c</font>" % (iCost, player.getAdvancedStartPoints(), gc.getCommerceInfo(CommerceTypes.COMMERCE_GOLD).getChar())
+			screen.setLabel("AddTechCost", "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, self.X_ADVANCED_START + self.W_ADVANCED_START + 25, self.Y_ADVANCED_START, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+			if player.getAdvancedStartPoints() >= iCost:
+				screen.show("AddTechButton")
 
-		szText = u"<font=4>"
-		szText += localText.getText("TXT_KEY_WB_AS_SELECTED_TECH", (szName,))
-		szText += u"</font>"
-		screen.setLabel( "SelectedTechLabel", "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, self.X_ADVANCED_START_TEXT + 250, self.Y_ADD_TECH_BUTTON + 3, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 
-		# Want to add
-		if (pPlayer.getAdvancedStartTechCost(self.m_iSelectedTech, true) != -1):
-			screen.show("AddTechButton")
-		else:
-			screen.hide("AddTechButton")
+
+	def placeGreatPeople(self):
+		''
+		if CyGame().isInAdvancedStart():
+			return
+
+		screen = self.getScreen()
+		iGPX = 25
+
+		for j in xrange(len(self.GreatPeopleList)):
+			iUnit = self.GreatPeopleList[j]
+			for iFlavor in xrange(gc.getNumFlavorTypes()):
+				if gc.getUnitInfo(iUnit).getFlavorValue(iFlavor) > 0:
+					break
+
+			iMaxFlavor = 0
+			iTech = -1
+			for iLoopTech in xrange(gc.getNumTechInfos()):
+				if gc.getPlayer(self.iPlayer).canResearch(iLoopTech, False):
+					if gc.getTechInfo(iLoopTech).getFlavorValue(iFlavor) > iMaxFlavor:
+						iMaxFlavor = gc.getTechInfo(iLoopTech).getFlavorValue(iFlavor)
+						iTech = iLoopTech
+
+			screen.addDDSGFCAt("GreatPeopleUnit" + str(iUnit),"TechBottomPanel", gc.getUnitInfo(iUnit).getButton(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, -1, False)
+			iGPX += self.GP_ICON_SIZE
+
+			if iTech > -1:
+				screen.addDDSGFCAt("GreatPeopliPrereq" + str(iUnit),"TechBottomPanel", gc.getTechInfo(iTech).getButton(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iTech, -1, False)
+				iGPX += self.GP_ICON_SIZE * 2
+			else:
+				screen.addDDSGFCAt("GreatPeopliPrereq" + str(iUnit),"TechBottomPanel", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+				iGPX += self.GP_ICON_SIZE * 2
+
+
+
+	def getWidth(self, xDiff):
+		return xDiff * self.BOX_X_SPACING + (xDiff - 1) * self.BOX_WIDTH
+
+
+
+	def getHeight(self, yDiff, nFactor):
+		return (nFactor + ((abs(yDiff) - 1) * 6)) * self.PIXEL_INCREMENT
+
+
+
+	def getYStart(self, iY):
+		return self.BOX_HEIGHT * iY / 6
+
+
+
+	def getNextWidgetName(self):
+		szName = "TechArrow" + str(self.nWidgetCount)
+		self.nWidgetCount += 1
+		return szName
+
+
 
 	def onClose(self):
-		pPlayer = gc.getPlayer(self.iCivSelected)
-		if (pPlayer.getAdvancedStartPoints() >= 0):
-			CyInterface().setDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT, true)
+		player = gc.getPlayer(self.iPlayer)
+		if player.getAdvancedStartPoints() > -1:
+			CyInterface().setDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT, True)
 		return 0
 
-class TechChooserMaps:
 
-	TechChooserInputMap = {
-		'TechRecord'			: CvTechChooser().TechRecord,
-		'TechID'				: CvTechChooser().ParentClick,
-		'TechPane'				: CvTechChooser().ParentClick,
-		'TechButtonID'			: CvTechChooser().ParentClick,
-		'TechButtonBorder'		: CvTechChooser().ParentClick,
-		'Unit'					: CvTechChooser().ParentClick,
-		'Building'				: CvTechChooser().ParentClick,
-		'Obsolete'				: CvTechChooser().ParentClick,
-		'ObsoleteX'				: CvTechChooser().ParentClick,
-		'Move'					: CvTechChooser().ParentClick,
-		'FreeUnit'				: CvTechChooser().ParentClick,
-		'FeatureProduction'			: CvTechChooser().ParentClick,
-		'Worker'				: CvTechChooser().ParentClick,
-		'TradeRoutes'			: CvTechChooser().ParentClick,
-		'HealthRate'			: CvTechChooser().ParentClick,
-		'HappinessRate'			: CvTechChooser().ParentClick,
-		'FreeTech'				: CvTechChooser().ParentClick,
-		'LOS'					: CvTechChooser().ParentClick,
-		'MapCenter'				: CvTechChooser().ParentClick,
-		'MapReveal'				: CvTechChooser().ParentClick,
-		'MapTrade'				: CvTechChooser().ParentClick,
-		'TechTrade'				: CvTechChooser().ParentClick,
-		'OpenBorders'		: CvTechChooser().ParentClick,
-		'BuildBridge'			: CvTechChooser().ParentClick,
-		'Irrigation'			: CvTechChooser().ParentClick,
-		'Improvement'			: CvTechChooser().ParentClick,
-		'DomainExtraMoves'			: CvTechChooser().ParentClick,
-		'AdjustButton'			: CvTechChooser().ParentClick,
-		'TerrainTradeButton'	: CvTechChooser().ParentClick,
-		'SpecialBuildingButton'	: CvTechChooser().ParentClick,
-		'YieldChangeButton'		: CvTechChooser().ParentClick,
-		'BonusRevealButton'		: CvTechChooser().ParentClick,
-		'CivicRevealButton'		: CvTechChooser().ParentClick,
-		'ProjectInfoButton'		: CvTechChooser().ParentClick,
-		'ProcessInfoButton'		: CvTechChooser().ParentClick,
-		'FoundReligionButton'	: CvTechChooser().ParentClick,
-		'CivDropDown'			: CvTechChooser().CivDropDown,
-		}
 
+	def handleInput(self, inputClass):
+		screen = self.getScreen()
+		player = gc.getPlayer(self.iPlayer)
+
+		if inputClass.getButtonType() == WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIVIC:
+			CvScreensInterface.pediaJumpToCivic([inputClass.getData1()])
+		elif inputClass.getButtonType() == WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING:
+			CvScreensInterface.pediaJumpToBuilding([inputClass.getData1()])
+
+		# Filters
+		elif inputClass.getFunctionName().startswith("Filter"):
+			if inputClass.getFunctionName() == "FilterFromEra":
+				iIndex = screen.getSelectedPullDownID("FilterFromEra")
+				self.iFromEra = screen.getPullDownData("FilterFromEra", iIndex)
+			elif inputClass.getFunctionName() == "FilterToEra":
+				iIndex = screen.getSelectedPullDownID("FilterToEra")
+				self.iHideEra = screen.getPullDownData("FilterToEra", iIndex)
+			elif inputClass.getFunctionName() == "FilterResearched":
+				self.bResearched = not self.bResearched
+			elif inputClass.getFunctionName() == "FilterBuilt":
+				self.bBuilt = not self.bBuilt
+			screen.setPersistent(False)
+			self.interfaceScreen()
+			return
+
+		# Debug
+		elif inputClass.getFunctionName() == "CivDropDown":
+			iIndex = screen.getSelectedPullDownID("CivDropDown")
+			self.iPlayer = screen.getPullDownData("CivDropDown", iIndex)
+			screen.setPersistent(False)
+			self.interfaceScreen()
+			return
+
+		# Advanced Start
+		#if player.getAdvancedStartPoints() > -1:
+		#	if inputClass.getFunctionName() == "AddTechButton":
+		#		if player.getAdvancedStartTechCost(self.iSelectedTech, True) != -1:
+		#			CyMessageControl().sendAdvancedStartAction(AdvancedStartActionTypes.ADVANCEDSTARTACTION_TECH, self.iPlayer, -1, -1, self.iSelectedTech, True)
+		#			self.bTechBoxesDirty = True
+		#			self.bSelectedTechDirty = True
+
+		#	elif inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED:
+		#		if inputClass.getButtonType() == WidgetTypes.WIDGET_TECH_TREE:
+		#			self.iSelectedTech = inputClass.getData1()
+		#			self.updateSelectedTech()
+
+		return 0
+
+
+
+	def update(self, fDelta):
+		if CyInterface().isDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT):
+			CyInterface().setDirty(InterfaceDirtyBits.Advanced_Start_DIRTY_BIT, False)
+
+			if self.bSelectedTechDirty:
+				self.bSelectedTechDirty = False
+				self.updateSelectedTech()
+
+			if self.bTechBoxesDirty:
+				self.bTechBoxesDirty = False
+				self.updateTechs(True)
+
+			if gc.getPlayer(self.iPlayer).getAdvancedStartPoints() < 0:
+				screen = self.getScreen()
+				screen.hide("AddTechButton")
+				screen.hide("AddTechCost")
+
+		return

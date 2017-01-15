@@ -18,7 +18,7 @@ iNumCompanies = 9
 
 (iSilkRoute, iTradingCompany, iCerealIndustry, iFishingIndustry, iTextileIndustry, iSteelIndustry, iOilIndustry, iLuxuryIndustry, iComputerIndustry) = range(iNumCompanies)
 
-tCompanyTechs = (iCurrency, iAstronomy, iBiology, iRefrigeration, iSteamPower, iSteel, iCombustion, iElectricity, iComputers)
+tCompanyTechs = (iCompass, iExploration, iBiology, iRefrigeration, iThermodynamics, iMetallurgy, iRefining, iConsumerism, iComputers)
 tCompaniesLimit = (10, 12, 16, 10, 12, 12, 6, 10, 12) # kind of arbitrary currently, see how this plays out
 
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands, iVikings] # Vikings too now
@@ -184,18 +184,18 @@ class Companies:
 		# various bonuses
 		if iCompany == iSilkRoute:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iGrocer)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStable)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
 
 		elif iCompany == iTradingCompany:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iHarbor)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCustomHouse)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCustomsHouse)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBank)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iTradingCompany)): iValue += 2
 
 		elif iCompany == iCerealIndustry:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iGranary)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iGrocer)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iSewer)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iSupermarket)): iValue += 1
 
 		elif iCompany == iFishingIndustry:
@@ -211,7 +211,7 @@ class Companies:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iCoalPlant)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIndustrialPark)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIronWorks)): iValue += 3
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIronworks)): iValue += 3
 
 		elif iCompany == iOilIndustry:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBank)): iValue += 1

@@ -74,9 +74,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BAB</Tag>
-		<English>Begins the game with the knowledge of Animal Husbandry, Pottery and Archery</English>
+		<English>Receives a free technology for the first four technologies discovered</English>
 		<French>Pas de r&#233;sistance dans les villes conquises</French>
-		<German>Beginnt das Spiel mit dem Wissen &#252;ber Tierzucht, Keramik und Bogenschie&#223;en</German>
+		<German>Erhält eine weitere Technologie für die ersten vier entdeckten Technologien</German>
 		<Italian>Nessuna resistenza nelle citt&#224; conquistate</Italian>
 		<Spanish>Las ciudades conquistadas no ofrecen resistencia</Spanish>
 	</TEXT>
@@ -589,11 +589,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_POR</Tag>
-		<English>Ocean Trade allowed with Optics, reduced instability for overseas colonies</English>
-		<French>Toutes les unit&#233;s en mer ont un champ de vision &#233;largi</French>
-		<German>Ozeanhandel erm&#246;glicht durch Optik, verringerte Instabilit&#228;t durch &#220;bersee-Kolonien</German>
-		<Italian>Tutte le unit&#224; marine hanno un raggio visivo pi&#249; ampio</Italian>
-		<Spanish>Todas las unidades mar&#237;timas tienen un alcance de visibilidad superior</Spanish>
+		<English>Ocean Trade allowed with Cartography, reduced instability for overseas colonies</English>
+		<German>Ozeanhandel erm&#246;glicht durch Kartographie, verringerte Instabilit&#228;t durch &#220;bersee-Kolonien</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_ROM_TITLE</Tag>

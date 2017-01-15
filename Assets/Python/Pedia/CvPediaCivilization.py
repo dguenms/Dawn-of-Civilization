@@ -1,6 +1,8 @@
 from CvPythonExtensions import *
 import CvUtil
 import ScreenInput
+import GreatPeople as gp
+from Consts import *
 
 gc = CyGlobalContext()
 
@@ -38,19 +40,19 @@ class CvPediaCivilization:
 		self.H_DESC = 360
 
 		self.X_HISTORY = self.X_BUILDINGS
-		self.Y_HISTORY = self.Y_UNITS + self.H_UNITS + 10
+		self.Y_HISTORY = self.Y_UNITS + self.H_UNITS + 40
 		self.W_HISTORY = self.top.R_PEDIA_PAGE - self.X_HISTORY
 		self.H_HISTORY = self.top.B_PEDIA_PAGE - self.Y_HISTORY
 
 
 
-	def interfaceScreen(self, iCivilization):
+	def interfaceScreen(self, iCivilization, iMode = 0):
 		self.iCivilization = iCivilization
 		self.placeInfo()
 		self.placeDescription()
 		self.placeBuildings()
 		self.placeUnits()
-		self.placeHistory()
+		self.placeHistory(iMode)
 
 
 
@@ -126,13 +128,32 @@ class CvPediaCivilization:
 
 
 
-	def placeHistory(self):
+	def placeHistory(self, iMode):
 		screen = self.top.getScreen()
 		panel = self.top.getNextWidgetName()
 		text = self.top.getNextWidgetName()
 
-		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
-		szHistory = gc.getCivilizationInfo(self.iCivilization).getCivilopedia()
+		screen.setButtonGFC(self.top.getNextWidgetName(), CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", self.X_HISTORY, self.Y_HISTORY - 30, 120, 30, WidgetTypes.WIDGET_GENERAL, 10, 0, ButtonStyles.BUTTON_STYLE_STANDARD)
+		screen.setButtonGFC(self.top.getNextWidgetName(), CyTranslator().getText("TXT_KEY_CONCEPT_GREAT_PEOPLE", ()), "", self.X_HISTORY + 130, self.Y_HISTORY - 30, 120, 30, WidgetTypes.WIDGET_GENERAL, 10, 1, ButtonStyles.BUTTON_STYLE_STANDARD)
+
+		if iMode == 0:
+			screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
+			szHistory = gc.getCivilizationInfo(self.iCivilization).getCivilopedia()
+		elif iMode == 1:
+			screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CONCEPT_GREAT_PEOPLE", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
+			szHistory = ""
+			lGP = gp.lTypes[:-1] # No Great Spies
+			for iGP in lGP:
+				szHistory += "<font=3b>%s</font>" % gc.getUnitInfo(iGP).getDescription()
+				iCiv = gp.getAlias(self.iCivilization, gp.lTypes.index(iGP))
+				for name in gp.dGreatPeople[iCiv][iGP]:
+					if isinstance(name, int): continue
+					if name[0] == "f":
+						name = name[1:]
+					szHistory += "\n" + name
+				if iGP != lGP[-1]:
+					szHistory += "\n\n"
+
 		screen.addMultilineText(text, szHistory, self.X_HISTORY + 10, self.Y_HISTORY + 30, self.W_HISTORY - 20, self.H_HISTORY - 40, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 

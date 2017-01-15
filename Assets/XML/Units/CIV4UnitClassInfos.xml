@@ -215,12 +215,12 @@
 			<DefaultUnit>UNIT_PIKEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_MUSKETMAN</Type>
-			<Description>TXT_KEY_UNIT_MUSKETMAN</Description>
+			<Type>UNITCLASS_ARQUEBUSIER</Type>
+			<Description>TXT_KEY_UNIT_ARQUEBUSIER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_MUSKETMAN</DefaultUnit>
+			<DefaultUnit>UNIT_ARQUEBUSIER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_RIFLEMAN</Type>
@@ -335,12 +335,12 @@
 			<DefaultUnit>UNIT_HORSE_ARCHER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_KNIGHT</Type>
-			<Description>TXT_KEY_UNIT_KNIGHT</Description>
+			<Type>UNITCLASS_LANCER</Type>
+			<Description>TXT_KEY_UNIT_LANCER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_KNIGHT</DefaultUnit>
+			<DefaultUnit>UNIT_LANCER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CUIRASSIER</Type>
@@ -463,12 +463,12 @@
 			<DefaultUnit>UNIT_GALLEY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_TRIREME</Type>
-			<Description>TXT_KEY_UNIT_TRIREME</Description>
+			<Type>UNITCLASS_WAR_GALLEY</Type>
+			<Description>TXT_KEY_UNIT_WAR_GALLEY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_TRIREME</DefaultUnit>
+			<DefaultUnit>UNIT_WAR_GALLEY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CARAVEL</Type>
@@ -567,12 +567,12 @@
 			<DefaultUnit>UNIT_SUBMARINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_ATTACK_SUBMARINE</Type>
-			<Description>TXT_KEY_UNIT_ATTACK_SUBMARINE</Description>
+			<Type>UNITCLASS_NUCLEAR_SUBMARINE</Type>
+			<Description>TXT_KEY_UNIT_NUCLEAR_SUBMARINE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_ATTACK_SUBMARINE</DefaultUnit>
+			<DefaultUnit>UNIT_NUCLEAR_SUBMARINE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CARRIER</Type>
@@ -581,14 +581,6 @@
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_CARRIER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_AIRSHIP</Type>
-			<Description>TXT_KEY_UNIT_AIRSHIP</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_AIRSHIP</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_FIGHTER</Type>
@@ -639,12 +631,12 @@
 			<DefaultUnit>UNIT_ICBM</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_TACTICAL_NUKE</Type>
-			<Description>TXT_KEY_UNIT_TACTICAL_NUKE</Description>
+			<Type>UNITCLASS_NUCLEAR_BOMBER</Type>
+			<Description>TXT_KEY_UNIT_NUCLEAR_BOMBER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_TACTICAL_NUKE</DefaultUnit>
+			<DefaultUnit>UNIT_NUCLEAR_BOMBER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_GREAT_PROPHET</Type>
@@ -717,6 +709,134 @@
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<DefaultUnit>UNIT_SLAVE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_SKIRMISHER</Type>
+			<Description>TXT_KEY_UNIT_SKIRMISHER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_SKIRMISHER</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HORSEMAN</Type>
+			<Description>TXT_KEY_UNIT_HORSEMAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_HORSEMAN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HEAVY_GALLEY</Type>
+			<Description>TXT_KEY_UNIT_HEAVY_GALLEY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_HEAVY_GALLEY</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_COG</Type>
+			<Description>TXT_KEY_UNIT_COG</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_COG</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_GALLEASS</Type>
+			<Description>TXT_KEY_UNIT_GALLEASS</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_GALLEASS</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_TORPEDO_BOAT</Type>
+			<Description>TXT_KEY_UNIT_TORPEDO_BOAT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_TORPEDO_BOAT</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_CRUISER</Type>
+			<Description>TXT_KEY_UNIT_CRUISER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_CRUISER</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_BIPLANE</Type>
+			<Description>TXT_KEY_UNIT_BIPLANE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_BIPLANE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_MILITIA</Type>
+			<Description>TXT_KEY_UNIT_MILITIA</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_MILITIA</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_MUSKETMAN</Type>
+			<Description>TXT_KEY_UNIT_MUSKETMAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_MUSKETMAN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HEAVY_SPEARMAN</Type>
+			<Description>TXT_KEY_UNIT_HEAVY_SPEARMAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_HEAVY_SPEARMAN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HOWITZER</Type>
+			<Description>TXT_KEY_UNIT_HOWITZER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_HOWITZER</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_DRAGOON</Type>
+			<Description>TXT_KEY_UNIT_DRAGOON</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_DRAGOON</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_PISTOLIER</Type>
+			<Description>TXT_KEY_UNIT_PISTOLIER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_PISTOLIER</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HUSSAR</Type>
+			<Description>TXT_KEY_UNIT_HUSSAR</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_HUSSAR</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_LIGHT_SWORDSMAN</Type>
+			<Description>TXT_KEY_UNIT_LIGHT_SWORDSMAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_LIGHT_SWORDSMAN</DefaultUnit>
 		</UnitClassInfo>
 	</UnitClassInfos>
 </Civ4UnitClassInfos>

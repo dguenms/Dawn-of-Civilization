@@ -39,13 +39,13 @@ def init():
 		updateParameters(iPlayer)
 		
 def onTechAcquired(iPlayer, iTech):
-	if iTech == iAstronomy:
+	if iTech == iExploration:
 		pPlayer = gc.getPlayer(iPlayer)
 		iCiv = pPlayer.getCivilizationType()
 		
-		if iCiv in dDistanceSubtrahendAstronomy: pPlayer.setDistanceSubtrahend(dDistanceSubtrahendAstronomy[iCiv])
-		if iCiv in dDistanceFactorAstronomy: pPlayer.setDistanceFactor(dDistanceFactorAstronomy[iCiv])
-		if iCiv in dCompactnessModifierAstronomy: pPlayer.setCompactnessModifier(dCompactnessModifierAstronomy[iCiv])
+		if iCiv in dDistanceSubtrahendExploration: pPlayer.setDistanceSubtrahend(dDistanceSubtrahendExploration[iCiv])
+		if iCiv in dDistanceFactorExploration: pPlayer.setDistanceFactor(dDistanceFactorExploration[iCiv])
+		if iCiv in dCompactnessModifierExploration: pPlayer.setCompactnessModifier(dCompactnessModifierExploration[iCiv])
 	
 dTakenTilesThreshold = {
 iCivBabylonia : 14,
@@ -92,7 +92,7 @@ iCivTurkey : 3,
 iCivGermany : 3,
 }
 
-dDistanceSubtrahendAstronomy = {
+dDistanceSubtrahendExploration = {
 iCivVikings : 4,
 iCivMoors : 4,
 iCivSpain : 4,
@@ -131,7 +131,7 @@ iCivBrazil : 150,
 iCivCanada : 150,
 }
 
-dDistanceFactorAstronomy = {
+dDistanceFactorExploration = {
 iCivMoors : 300,
 iCivSpain : 150,
 iCivFrance : 150,
@@ -161,7 +161,7 @@ iCivNetherlands : 5,
 iCivAmerica : 20,
 }
 
-dCompactnessModifierAstronomy = {
+dCompactnessModifierExploration = {
 iCivSpain : 10,
 iCivFrance : 5,
 iCivEngland : 5,

@@ -103,6 +103,20 @@ class CvPediaImprovement:
 				if iYieldChange > 0:
 					szSign = "+"
 				szStats += (u"%s%d%c  " % (szSign, iYieldChange, gc.getYieldInfo(iYieldType).getChar()))
+				
+		iHappiness = info.getHappiness()
+		if iHappiness != 0:
+			symbol = CyGame().getSymbolID(FontSymbols.UNHAPPY_CHAR)
+			if iHappiness > 0: 
+				symbol = CyGame().getSymbolID(FontSymbols.HAPPY_CHAR)
+			szStats += (u"+%d%c  " % (abs(iHappiness), symbol))
+				
+		iHealth = info.getHealth()
+		if iHealth != 0:
+			symbol = CyGame().getSymbolID(FontSymbols.UNHEALTHY_CHAR)
+			if iHealth > 0: 
+				symbol = CyGame().getSymbolID(FontSymbols.HEALTHY_CHAR)
+			szStats += (u"+%d%c  " % (abs(iHealth), symbol))
 
 		screen.appendListBoxString(panel, szStats, WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 

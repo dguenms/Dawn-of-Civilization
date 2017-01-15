@@ -12128,8 +12128,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_TECH_MASS_MEDIA</ScriptID>
-		<SoundID>SND_TECH_MASS_MEDIA</SoundID>
+		<ScriptID>AS2D_TECH_TELEVISION</ScriptID>
+		<SoundID>SND_TECH_TELEVISION</SoundID>
 		<SoundType>GAME_SPEECH</SoundType>
 		<iMinVolume>100</iMinVolume>
 		<iMaxVolume>100</iMaxVolume>
@@ -12197,8 +12197,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_TECH_THE_WHEEL</ScriptID>
-		<SoundID>SND_TECH_THE_WHEEL</SoundID>
+		<ScriptID>AS2D_TECH_LEVERAGE</ScriptID>
+		<SoundID>SND_TECH_LEVERAGE</SoundID>
 		<SoundType>GAME_SPEECH</SoundType>
 		<iMinVolume>100</iMinVolume>
 		<iMaxVolume>100</iMaxVolume>
@@ -12312,8 +12312,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_TECH_MATHEMATICS</ScriptID>
-		<SoundID>SND_TECH_MATHEMATICS</SoundID>
+		<ScriptID>AS2D_TECH_GEOMETRY</ScriptID>
+		<SoundID>SND_TECH_GEOMETRY</SoundID>
 		<SoundType>GAME_SPEECH</SoundType>
 		<iMinVolume>100</iMinVolume>
 		<iMaxVolume>100</iMaxVolume>
@@ -12703,8 +12703,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_TECH_COMBUSTION</ScriptID>
-		<SoundID>SND_TECH_COMBUSTION</SoundID>
+		<ScriptID>AS2D_TECH_ENGINE</ScriptID>
+		<SoundID>SND_TECH_ENGINE</SoundID>
 		<SoundType>GAME_SPEECH</SoundType>
 		<iMinVolume>100</iMinVolume>
 		<iMaxVolume>100</iMaxVolume>
@@ -12772,8 +12772,8 @@
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
 	<Script2DSound>
-		<ScriptID>AS2D_TECH_PLASTICS</ScriptID>
-		<SoundID>SND_TECH_PLASTICS</SoundID>
+		<ScriptID>AS2D_TECH_SYNTHETICS</ScriptID>
+		<SoundID>SND_TECH_SYNTHETICS</SoundID>
 		<SoundType>GAME_SPEECH</SoundType>
 		<iMinVolume>100</iMinVolume>
 		<iMaxVolume>100</iMaxVolume>

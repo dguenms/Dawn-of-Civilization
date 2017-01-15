@@ -11,26 +11,15 @@ BeginGame
 EndGame
 BeginTeam
 	TeamID=0, (Egypt)
-	Tech=TECH_THE_WHEEL
-	Tech=TECH_AGRICULTURE
 EndTeam
 BeginTeam
 	TeamID=1, (China)
-	Tech=TECH_AGRICULTURE
-	Tech=TECH_MINING
 EndTeam
 BeginTeam
 	TeamID=2, (Babylonia)
-	Tech=TECH_THE_WHEEL
-	Tech=TECH_AGRICULTURE
-	Tech=TECH_POTTERY
-	Tech=TECH_ARCHERY
-	Tech=TECH_ANIMAL_HUSBANDRY
 EndTeam
 BeginTeam
 	TeamID=3, (Harappa)
-	Tech=TECH_THE_WHEEL
-	Tech=TECH_AGRICULTURE
 EndTeam
 BeginTeam
 	TeamID=4, (Greece)
@@ -225,7 +214,6 @@ BeginPlayer
 	CivType=CIVILIZATION_PHOENICIA
 	PlayableCiv=1
 	StartingGold=200
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_CITY_STATES
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_MERCENARIES
@@ -301,7 +289,6 @@ BeginPlayer
 	PlayableCiv=1
 	StartingGold=200
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_PANTHEON
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
@@ -311,7 +298,7 @@ BeginPlayer
 	PlayableCiv=1
 	StartingGold=400
 	StateReligion=RELIGION_ORTHODOXY
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_MERCENARIES
@@ -335,7 +322,6 @@ BeginPlayer
 	PlayableCiv=1
 	StartingGold=150
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	Handicap=HANDICAP_REGENT
@@ -348,9 +334,8 @@ BeginPlayer
 	StartingGold=300
 	StateReligion=RELIGION_ISLAM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
-	CivicOption=CIVICOPTION_ORGANIZATION, Civic=CIVIC_VASSALAGE
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_FANATICISM
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_SCHOLASTICISM
 	CivicOption=CIVICOPTION_MILITARY, Civic=CIVIC_LEVY_ARMIES
 	Handicap=HANDICAP_REGENT
 EndPlayer
@@ -361,7 +346,7 @@ BeginPlayer
 	PlayableCiv=1
 	StartingGold=50
 	StateReligion=RELIGION_BUDDHISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_THEOCRACY
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_DYNASTICISM
 	CivicOption=CIVICOPTION_LABOR, Civic=CIVIC_SLAVERY
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_ORGANIZED_RELIGION
 	Handicap=HANDICAP_REGENT
@@ -26516,7 +26501,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=0, (Egypt)
+		UnitType=UNIT_MILITIA, UnitOwner=0, (Egypt)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=0, (Egypt)
@@ -29226,7 +29211,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=2, (Babylonia)
+		UnitType=UNIT_MILITIA, UnitOwner=2, (Babylonia)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=2, (Babylonia)
@@ -38297,7 +38282,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_WARRIOR, UnitOwner=1, (China)
+		UnitType=UNIT_MILITIA, UnitOwner=1, (China)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=1, (China)

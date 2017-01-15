@@ -86,7 +86,7 @@ class Religions:
 				
 		self.checkJudaism(iGameTurn)
 		
-		self.checkBuddhism(iGameTurn)
+		#self.checkBuddhism(iGameTurn)
 
 		self.checkChristianity(iGameTurn)
 						
@@ -219,6 +219,33 @@ class Religions:
 			
 		return None
 		
+	def checkLateReligionFounding(self, iReligion, iTech):
+		if gc.getReligionInfo(iReligion).getTechPrereq() != iTech:
+			return
+			
+		if gc.getGame().isReligionFounded(iReligion):
+			return
+		
+		iPlayerCount = 0
+		iPrereqCount = 0
+		for iPlayer in range(iNumPlayers):
+			if gc.getPlayer(iPlayer).isAlive():
+				iPlayerCount += 1
+				if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iTech):
+					iPrereqCount += 1
+					
+		if 2 * iPrereqCount >= iPlayerCount:
+			self.foundReligionInCore(iReligion)
+			
+	def foundReligionInCore(self, iReligion):
+		lCoreCities = [city for city in utils.getAllCities() if city.plot().getSpreadFactor(iReligion) == RegionSpreadTypes.REGION_SPREAD_CORE]
+		
+		if not lCoreCities: return
+		
+		city = utils.getRandomEntry(lCoreCities)
+		
+		self.foundReligion((city.getX(), city.getY()), iReligion)
+					
 ## JUDAISM
 
 	def checkJudaism(self, iGameTurn):
@@ -387,11 +414,14 @@ class Religions:
 		if utils.getScenario() == i1700AD:
 			return
 			
-		if (iTech == iPrintingPress):
+		if iTech == iPrinting:
 			if (gc.getPlayer(iPlayer).getStateReligion() == iCatholicism):
 				if (not gc.getGame().isReligionFounded(iProtestantism)):
 					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
 					self.reformation()
+					
+		for iReligion in range(iNumReligions):
+			self.checkLateReligionFounding(iReligion, iTech)
 					
 	def onBuildingBuilt(self, city, iPlayer, iBuilding):
 		if iBuilding == iHinduTemple:
