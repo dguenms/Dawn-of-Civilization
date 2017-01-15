@@ -138,6 +138,10 @@ iCivChina : {
 		"fCai Wenji", # 1st
 		iMedieval,
 		"fShangguan Wan'er", # 7th
+		"Luo Guanzhong", # 14th
+		iRenaissance, 
+		"Wu Cheng'en", # 16th
+		"Cao Xueqin", # 18th
 	],
 	iGreatScientist : [
 		"Li Fan", # 1st
@@ -145,6 +149,7 @@ iCivChina : {
 		"Liu Hui", # 3rd
 		"Zu Chongzhi", # 5th
 		iMedieval,
+		"Shen Kuo", # 11th
 		"Zhu Shijie", # 14th
 		iRenaissance,
 		"fTan Yunxian", # 16th
@@ -169,6 +174,7 @@ iCivChina : {
 		"Zhang Heng", # 2nd
 		iMedieval,
 		"Bi Sheng", # 11th
+		"Wang Zhen", # 14th 
 		iModern,
 		"Li Siguang", # 20th
 		"fWu Jianxiong", # 20th
@@ -186,8 +192,11 @@ iCivChina : {
 		"Sun Yat-sen", # 19th
 		iModern,
 		"Zhou Enlai", # 20th
+		"fJiang Qing", # 20th
 	],
 	iGreatGeneral : [
+		"fFu Hao", # 13th BC
+		iClassical
 		"Sun Tzu", # 6th BC
 		"Cao Cao", # 2nd
 		"Zhuge Liang", # 3rd
@@ -267,6 +276,8 @@ iCivIndia : {
 		iIndustrial,
 		"Ram Mohan Roy", # 19th
 		"Ranjit Singh", # 19th
+		iModern, 
+		"Jawaharlal Nehru", # 20th
 	],
 	iGreatGeneral : [
 		"Chandragupta Maurya", # 4th BC
@@ -284,21 +295,29 @@ iCivBabylonia : {
 	iGreatProphet : [
 		"Utnapishtim", # legendary
 		"Gilgamesh", # legendary
+		"fAmat-Mamu", # 18th BC
+		iClassical, 
+		"fAdad-guppi", # 6th BC
+		"Ezra", # 5th BC
 	],
 	iGreatArtist : [
-		"fEn-hedu-ana", # 23rd BC
+		"fEnheduanna", # 23rd BC
 		"Gudea", # 22nd BC
 		"Samsu-ditana", # 17th BC
 	],
 	iGreatScientist : [
-		"Tapputi", # legendary
+		"fTapputi", # legendary
 		"Sin-leqi-unninni", # 13th BC
+		"Esagil-kin-apli", # 11th BC
 		iClassical,
+		"fEnnigaldi", # 6th BC 
 		"Nabu-rimanni", # 6th BC
 		"Kidinnu", # 4th BC
 		"Sudines", # 3rd BC
+		"Bel-reu-su", # 3rd BC
 	],
 	iGreatMerchant : [
+		"fIltani", # 18th BC
 		"Burna-Buriash", # 14th BC
 		"Kadashman-Enlil", # 14th BC
 		iClassical, 
@@ -336,6 +355,7 @@ iCivEgypt : {
 		"Petiese", # 7th BC
 	],
 	iGreatArtist : [
+		"Pehen-Ptah", # 27th BC
 		"Thutmose", # 14th BC
 		"Bek", # 14th BC
 		"Ipuki", # 14th BC
@@ -896,6 +916,7 @@ iCivVikings : {
 		"Emanuel Swedenborg", # 18th
 	],
 	iGreatArtist : [
+		"Snorri Sturluson", # 13th 
 		"Nils Hakansson", # 14th swedish
 		iRenaissance,
 		"Johan Nordahl Brun", # 18th
@@ -1352,6 +1373,7 @@ iCivEngland : {
 		"Adam Smith", # 18th
 		iIndustrial,
 		"Cecil Rhodes", # 19th
+		"Thomas Sutherland", # 19th
 		iModern,
 		"John Maynard Keynes", # 20th
 	],
@@ -1365,6 +1387,7 @@ iCivEngland : {
 		"fAda Lovelace", # 19th
 		iModern,
 		"Alan Turing", # 20th
+		"Tim Berners-Lee", # 20th
 	],
 	iGreatStatesman : [
 		"Thomas Beckett", # 12th
@@ -1401,6 +1424,8 @@ iCivGermany : {
 		iRenaissance,
 		"Martin Luther", # 16th
 		"Philip Melanchthon", # 16th
+		iIndustrial, 
+		"Theodor Herzl", # 19th
 		iModern,
 		"Dietrich Bonhoeffer", # 20th
 		"fEdith Stein", # 20th
@@ -1449,6 +1474,7 @@ iCivGermany : {
 		"Friedrich List", # 19th
 		"Carl Menger", # 19th
 		iModern,
+		"Joseph Schumpeter", # 20th
 		"fMelitta Bentz", # 20th
 		"Ludwig von Mises", # 20th
 	],
@@ -1885,21 +1911,23 @@ iCivAztecs : {
 		"fYacotzin", # 16th
 	],
 	iGreatArtist : [
-		"Techotlalatzin", # 14th
-		"Ihuitemotzin", # 16th
+		"Cuacuauhtzin", # 15th
+		"Nezahualcoyotl", # 15th
+		"Xayacamach", # 15th
 	],
 	iGreatScientist : [
 		"Axayacatl", # 15th
-		"Ixtlilxochitl", # 15th
-		"Coanacoch", # 16th
+		"Ixtlilxochitl", # 16th
+		"Coanacochtzin", # 16th
 	],
 	iGreatMerchant : [
+		"Apoxpalon", # 16th maya
 		"Cuauhtemoc", # 16th
 		"Tlacotzin", # 16th
-		"fTechichpotzin", # 16th
+		"fTecuichpoch Ixcaxochitzin", # 16th
 	],
 	iGreatEngineer : [
-		"Jasaw Chan K'awiil", # 8th 
+		"Jasaw Chan K'awiil", # 8th maya
 		"Itzcatl", # 15th
 		"Tlacaelel", # 15th
 		"Moquihuix", # 15th
@@ -1914,6 +1942,7 @@ iCivAztecs : {
 		"fRigoberta Mench&#250;", # 20th
 	],
 	iGreatGeneral : [
+		"Hunac Ceel", # 12th maya
 		"Tezozomoc", # 14th
 		"Ahuitzotl", # 15th
 		"Itzcoatl", # 15th
@@ -2285,9 +2314,6 @@ iCivTibet : {
 		iModern,
 		"Tenzin Gyatso", # 20th
 	],
-	iGreatArtist : [
-		"fNamgyal Lhamo", # 20th
-	],
 	iGreatScientist : [
 		"Yuthog Yontan Gonpo", # 8th
 	],
@@ -2610,6 +2636,9 @@ iCivCanada : {
 		"Neil Young", # 20th
 	],
 	iGreatScientist : [
+		"John William Dawson", # 19th
+		"fMaude Abbott", # 19th
+		iModern,
 		"Frederick Banting", # 20th
 		"Norman Bethune", # 20th
 		"Wilder Penfield", # 20th
@@ -2627,6 +2656,7 @@ iCivCanada : {
 	iGreatEngineer : [
 		"Sandford Fleming", # 19th
 		"William Cornelius Van Horne", # 19th
+		"Alexander Graham Bell", # 19th
 		"Reginald Fessenden", # 19th-20th
 		iModern,
 		"Joseph-Armand Bombardier", # 20th
