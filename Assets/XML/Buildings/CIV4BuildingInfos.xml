@@ -1674,7 +1674,7 @@
 			<Strategy>TXT_KEY_BUILDING_COAL_PLANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COAL_PLANT</ArtDefineTag>
-			<PrereqTech>TECH_THERMODYNAMICS</PrereqTech>
+			<PrereqTech>TECH_ENGINE</PrereqTech>
 			<PowerBonus>BONUS_COAL</PowerBonus>
 			<bDirtyPower>1</bDirtyPower>
 			<iCost>150</iCost>
