@@ -926,6 +926,7 @@ iCivVikings : {
 		"Johan Ludvig Runeberg", # 19th finnish
 		"fJohanna Maria Lind", # 19th
 		"Edvard Munch", # 19th
+		"Edvard Grieg", # 19th
 		iModern,
 		"fAstrid Lindgren", # 20th
 		"Ingmar Bergman", # 20th
