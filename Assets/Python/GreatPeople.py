@@ -352,6 +352,7 @@ iCivEgypt : {
 		"Akhenaten", # 14th BC
 		"Moses", # 13th BC
 		"fNefertiti", # 13th BC
+		iClassical, 
 		"Petiese", # 7th BC
 	],
 	iGreatArtist : [
@@ -369,9 +370,9 @@ iCivEgypt : {
 		"fMerit-Ptah", # 27th BC
 		"fPeseshet", # 26th BC
 		"Ahmose", # 17th BC
+		iClassical, 
 		"Harkhebi", # 3rd BC
 		"Manetho", # 3rd BC
-		iClassical,
 		"Ptolemaios", # 2nd
 		"Diophantos", # 3rd
 		"fHypatia", # 4th
@@ -380,6 +381,7 @@ iCivEgypt : {
 		"Harkhuf", # 23rd BC
 		"Maya", # 13th BC
 		"fTiye", # 13th BC
+		iClassical, 
 		"Piye", # 8th BC
 		"Alara", # 8th BC
 	],
