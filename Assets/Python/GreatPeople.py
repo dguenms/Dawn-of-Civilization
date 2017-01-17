@@ -25,7 +25,6 @@ def getAlias(iCiv, iType):
 	elif iCiv == iCivMaya: return iCivAztec
 	elif iCiv == iCivMoors: return iCivArabia
 	elif iCiv == iCivThailand: return iCivKhmer
-	elif iCiv == iCivTibet and iType != lTypes.index(iGreatProphet): return iCivChina
 	
 	return iCiv
 	
@@ -494,8 +493,9 @@ iCivCarthage : {
 	iGreatScientist : [
 		"Mochus", # 14th BC
 		"Hiram", # 10th BC
-		"Mago", # 4th BC
 		"Sanchuniathon", # unknown date
+		iClassical,
+		"Mago", # 4th BC
 		"Hasdrubal Clitomachus", # 2nd BC
 		"Abba", # 3rd 
 	],
@@ -503,6 +503,7 @@ iCivCarthage : {
 		"Acerbas", # 9th BC / legendary
 		"Hanno", # 5th BC
 		"Himilco", # 5th BC
+		iClassical,
 		"Adherbal", # 2nd BC
 		"Bocchus", # 2nd BC
 	],
@@ -517,6 +518,7 @@ iCivCarthage : {
 		"Ithobaal", # 9th BC
 		"Pygmalion", # 9th BC
 		"fElishat", # 8th BC
+		iClassical,
 		"Hanno", # 4th BC
 		"Eshmuniaton", # 4th BC
 		"Azelmelek", # 4th BC
@@ -646,21 +648,21 @@ iCivRome : {
 },
 iCivJapan : {
 	iGreatProphet : [
-		"Kobo Daishi", # 8th
+		"Koubou Daishi", # 8th
 		"Eisai Zenji", # 12th
 		"Shinran", # 13th
-		"Nikko Shonin", # 13th
+		"Nikkou Shounin", # 13th
 		iRenaissance,
-		"Takuan Soho", # 17th
+		"Takuan Souhou", # 17th
 		iIndustrial,
-		"Uchimura Kanzo", # 19th
+		"Uchimura Kanzou", # 19th
 	],
 	iGreatArtist : [
 		"fMurasaki Shikibu", # 10th
-		"Saigyo Hoshi", # 12th
+		"Saigyou Houshi", # 12th
 		iRenaissance,
-		"Kano Eitoku", # 16th
-		"Toshusai Sharaku", # 18th
+		"Kanou Eitoku", # 16th
+		"Toushusai Sharaku", # 18th
 		"Yosa Buson", # 18th
 		iIndustrial,
 		"Katsushika Hokusai", # 19th
@@ -674,14 +676,14 @@ iCivJapan : {
 		"Yoshida Mitsuyoshi", # 17th
 		"Aida Yasuaki", # 18th
 		iModern,
-		"Kiyoshi Ito", # 20th
+		"Kiyoshi Itou", # 20th
 		"Hideki Yukawa", # 20th
 		"Masatoshi Koshiba", # 20th
 		"Kenkichi Iwasawa", # 20th
 	],
 	iGreatMerchant : [
 		"Torakusu Yamaha", # 19th
-		"Otano Kozui", # 19th
+		"Outano Kouzui", # 19th
 		iModern,
 		"Masahisa Fujita", # 20th
 		"Kiichiro Toyoda", # 20th
@@ -690,25 +692,26 @@ iCivJapan : {
 	],
 	iGreatEngineer : [
 		"Tanaka Hisashige", # 19th
-		"Katayama Tokuma", # 19th
-		"Takeda Ayasaburo", # 19th
+		"Katayama Toukuma", # 19th
+		"Takeda Ayasaburou", # 19th
 		iModern,
-		"Kotaro Honda", # 20th
+		"Koutarou Honda", # 20th
 		"Ken Sakamura", # 20th
 		"Kyota Sugimoto", # 20th
 		"Hidetsugu Yagi", # 20th
 		"Shigeru Miyamoto", # 20th
 	],
 	iGreatStatesman : [
-		"Shotoku Taishi", # 6th
+		"Shoutouku Taishi", # 6th
 		iMedieval,
 		"Taira no Kiyomori", # 12th
+		"fHoujou Masako", # 12th
 		iRenaissance,
 		"Tokugawa Ieyasu", # 16th
 		"Arai Hakuseki", # 17th
 		iIndustrial,
-		"Sakamoto Ryoma", # 19th
-		"Okubo Toshimichi", # 19th
+		"Sakamoto Ryouma", # 19th
+		"Oukubo Toshimichi", # 19th
 		iModern,
 		"Shigeru Yoshida", # 20th
 	],
@@ -721,7 +724,7 @@ iCivJapan : {
 		"Toyotomi Hideyoshi", # 16th
 		iIndustrial,
 		"fNakano Takeko", # 19th
-		"Togo Heihachiro", # 19th
+		"Tougou Heihachirou", # 19th
 		iModern,
 		"Isoroku Yamamoto", # 20th
 		"Tomoyuki Yamashita", # 20th
@@ -1459,6 +1462,7 @@ iCivGermany : {
 		u"Carl Friedrich Gauß", # 19th
 		"Ignaz Semmelweis", # 19th
 		"Gregor Mendel", # 19th
+		"Sigmund Freud", # 19th
 		iModern,
 		"Albert Einstein", # 20th
 		"Werner Heisenberg", # 20th
@@ -2317,11 +2321,49 @@ iCivTibet : {
 		iModern,
 		"Tenzin Gyatso", # 20th
 	],
+	iGreatArtist : [
+		"fYeshe Tsogyal", # 8th
+		"Milarepa", # 11th
+		iRenaissance,
+		u"Chöying Dorje", # 17th
+		"Situ Panchen", # 18th
+		iIndustrial,
+		u"Gendün Chöphel", # 20th
+	],
 	iGreatScientist : [
-		"Yuthog Yontan Gonpo", # 8th
+		"Thonmi Sambhota", # 7th
+		"Yuthog Yontan Gonpo", # 8th and 12th
+		"Tsongkhapa", # 14th
+		iRenaissance, 
+		"Kunkhyen Pema Karpo", # 16h
+		iIndustrial, 
+		"Khyenrab Norbu", # 20th
+	],
+	iGreatMerchant : [
+		"Sonam Rapten", # 17th
+		iIndustrial, 
+		"Tsarong", # 20th
 	],
 	iGreatEngineer : [
-		"Thangtong Gyalpo", # 15th
+		"Rinchen Zangpo", # 10th
+		"Thang Tong Gyalpo", # 15th
+		iRenaissance,
+		"Desi Sangye Gyatso", # 17th
+	],
+	iGreatStatesman : [
+		u"fThrimalö", # 7th
+		u"Gar Tongsten Yülsung", # 7th
+		iIndustrial,
+		"Paljor Dorje Shatra", # 19th
+		"Lhalu Tsewang Dorje", # 20th
+	],
+	iGreatGeneral : [
+		"Gar Trinring Tsendro", # 7th
+		"Chimshang Gyalsig Shuteng", # 8th
+		"Nganlam Takdra Lukhong", # 8th
+		"Nanam Shang Gyaltsen Lhanang", # 8th
+		iRenaissance,
+		"Ngawang Namgyal", # 17th
 	],
 },
 iCivPoland : {
