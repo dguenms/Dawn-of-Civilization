@@ -6,7 +6,8 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 
-from Consts import *
+from Consts import iCorporation as iCorporationTech
+from Consts import iBrazil
 import companies
 
 PyPlayer = PyHelpers.PyPlayer
@@ -203,8 +204,7 @@ class CvCorporationScreen:
 			iActivePlayer = CyGame().getActivePlayer()
 			if iActivePlayer == iBrazil and i == companies.iOilIndustry:
 				eBonus = iSugar
-				szList += u", "
-				szList += u"%c" % (gc.getBonusInfo(eBonus).getChar(), )
+				szList += u", %c" % (gc.getBonusInfo(eBonus).getChar(), )
 				
 			if len(szList) > 0:
 				szListLabels.append(szList)
@@ -395,10 +395,10 @@ class CvCorporationScreen:
 		
 			if (iLinkCorporation > 1):
 				szButtonName = self.TECH_REQUIRED_BUTTON_CORPORATION
-				screen.addDDSGFC(szButtonName, gc.getTechInfo(iCorporation).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iCorporation, -1)
+				screen.addDDSGFC(szButtonName, gc.getTechInfo(iCorporationTech).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iCorporation, -1)
 				
 				szList = u""
-				if teamCiv.isHasTech(iCorporation):
+				if teamCiv.isHasTech(iCorporationTech):
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 				else:
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
