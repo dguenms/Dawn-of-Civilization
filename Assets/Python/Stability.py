@@ -2241,8 +2241,6 @@ def getResurrectionTechs(iPlayer):
 		lSourceCivs.append(iIndependent)
 		lSourceCivs.append(iIndependent2)
 		
-	utils.show("Resurrection tech source civs for " + pPlayer.getCivilizationShortDescription(0) + ": " + str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in lSourceCivs]))
-	
 	for iTech in range(iNumTechs):
 			
 		# at least half of the source civs know this technology
@@ -2253,8 +2251,6 @@ def getResurrectionTechs(iPlayer):
 				
 		if 2 * iCount >= len(lSourceCivs):
 			lTechList.append(iTech)
-			
-	utils.show("Resurrection techs for " + pPlayer.getCivilizationShortDescription(0) + ": " + str([gc.getTechInfo(i).getText() for i in lTechList]))
 			
 	return lTechList
 	

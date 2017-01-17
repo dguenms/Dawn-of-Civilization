@@ -49,11 +49,7 @@ class RFCUtils:
 
 	#Plague
 	def getRandomCity(self, iPlayer):
-		citylist = self.getCityList(iPlayer)
-		if cityList:
-			return cityList[gc.getGame().getSorenRandNum(len(cityList), 'random city')]
-		else:
-			return -1
+		return self.getRandomEntry(self.getCityList(iPlayer))
 
 	# Leoreth - finds an adjacent land plot without enemy units that's closest to the player's capital (for the Roman UP)
 	def findNearestLandPlot(self, tPlot, iPlayer):
@@ -579,7 +575,7 @@ class RFCUtils:
 	def relocateGarrisons(self, tCityPlot, iOldOwner):
 		if iOldOwner < iNumPlayers:
 			pCity = self.getRandomCity(iOldOwner)
-			if pCity != -1:
+			if pCity:
 				plot = gc.getMap().plot(tCityPlot[0],tCityPlot[1])
 				iNumUnits = plot.getNumUnits()
 				j = 0
@@ -1376,7 +1372,7 @@ class RFCUtils:
 			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(iSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
 		
 	def getRandomEntry(self, list):
-		if len(list) == 0: return False
+		if not list: return False
 		
 		return list[gc.getGame().getSorenRandNum(len(list), 'Random entry')]
 			

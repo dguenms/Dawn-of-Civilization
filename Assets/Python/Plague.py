@@ -117,7 +117,7 @@ class Plague:
 			print ("worstCiv", iWorstCiv)
 			pWorstCiv = gc.getPlayer(iWorstCiv)
 			city = utils.getRandomCity(iWorstCiv)
-			if (city != -1):
+			if city:
 				self.spreadPlague(iWorstCiv)
 				self.infectCity(city)
 				iHuman = utils.getHumanID()
@@ -444,7 +444,7 @@ class Plague:
 					#print ("vulnerable", iNewWorldCiv)
 					if (not gc.getTeam(pNewWorldCiv.getTeam()).isHasTech(iBiology)):
 						city = utils.getRandomCity(iNewWorldCiv)
-						if (city != -1):
+						if city:
 							iHealth = self.calculateHealth(iNewWorldCiv)
 							if (iHealth < 10): #no spread for iHealth >= 70 years
 								iHealth /= 10

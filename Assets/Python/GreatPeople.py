@@ -195,7 +195,7 @@ iCivChina : {
 	],
 	iGreatGeneral : [
 		"fFu Hao", # 13th BC
-		iClassical
+		iClassical,
 		"Sun Tzu", # 6th BC
 		"Cao Cao", # 2nd
 		"Zhuge Liang", # 3rd
