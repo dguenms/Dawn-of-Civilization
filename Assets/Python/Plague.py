@@ -3,13 +3,13 @@
 
 from CvPythonExtensions import *
 import CvUtil
-import PyHelpers   
+import PyHelpers
 #import Popup
 #import cPickle as pickle
 from Consts import *
 from StoredData import data #edead
-import RFCUtils
-utils = RFCUtils.RFCUtils()
+from RFCUtils import utils
+import random
 
 # globals
 gc = CyGlobalContext()
@@ -19,22 +19,25 @@ iDuration = 6
 
 class Plague:
 
-#######################################
+######################################
 ### Main methods (Event-Triggered) ###
-#####################################  
+######################################
 
 
 	def setup(self):
 		for i in range(iNumMajorPlayers):
 			data.players[i].iPlagueCountdown = -utils.getTurns(iImmunity)
 		
-		if utils.getScenario() == i3000BC:  #late start condition
+		if utils.getScenario() == i3000BC:  #early start condition
 			data.lGenericPlagueDates[0] = getTurnForYear(400) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
 		else:
 			data.lGenericPlagueDates[0] = 80
 			
 		data.lGenericPlagueDates[1] = getTurnForYear(1300) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
-		data.lGenericPlagueDates[2] = getTurnForYear(1650) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
+		if utils.getScenario != i1700AD:
+			data.lGenericPlagueDates[2] = getTurnForYear(1650) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
+		else:
+			data.lGenericPlagueDates[2] = 300 # Safe value to prevent plague at start of 1700 scenario
 		data.lGenericPlagueDates[3] = getTurnForYear(1850) + gc.getGame().getSorenRandNum(40, 'Variation') - 20
 
 		undoPlague = gc.getGame().getSorenRandNum(8, 'undo')
@@ -52,7 +55,7 @@ class Plague:
 					data.players[i].iPlagueCountdown -= 1
 					if (data.players[i].iPlagueCountdown == 2):
 						self.preStopPlague(i)
-					if (data.players[i].iPlagueCountdown == 0):
+					elif (data.players[i].iPlagueCountdown == 0):
 						self.stopPlague(i)
 				elif (data.players[i].iPlagueCountdown < 0):
 					data.players[i].iPlagueCountdown += 1
@@ -95,24 +98,21 @@ class Plague:
 
 		iWorstCiv = -1
 		iWorstHealth = 200
-		for i in range(iNumMajorPlayers):
-			pPlayer = gc.getPlayer(i)
+		for iPlayer in range(iNumMajorPlayers):
+			pPlayer = gc.getPlayer(iPlayer)
 			if (pPlayer.isAlive()):
-				if (self.isVulnerable(i) == True):
-					iHealth = -30
-					iHealth2 = iHealth/2
+				if self.isVulnerable(iPlayer):
+					iHealth = self.calculateHealth(iPlayer)
+					iHealth /= 2
 					if (pPlayer.calculateTotalCityHealthiness() > 0):
-						iHealth = int((1.0 * pPlayer.calculateTotalCityHealthiness()) / (pPlayer.calculateTotalCityHealthiness() + \
-							pPlayer.calculateTotalCityUnhealthiness()) * 100) - 60
-						iHealth2 = iHealth/2
-						iHealth2 += gc.getGame().getSorenRandNum(40, 'random modifier')
-						#print ("starting plague", "civ:", i, "iHealth:", iHealth, iHealth2)
+						iHealth += gc.getGame().getSorenRandNum(40, 'random modifier')
+						#print ("starting plague", "civ:", iPlayer, "iHealth:", iHealth, iHealth2)
 						if (iPlagueCounter == 2): #medieval black death
-							if (i in lCivGroups[0]):
-							       iHealth2 -= 5 
+							if (iPlayer in lCivGroups[0]):
+								iHealth2 -= 5 
 					if (iHealth2 < iWorstHealth):
 						iWorstHealth = iHealth2
-						iWorstCiv = i
+						iWorstCiv = iPlayer
 		if (iWorstCiv != -1):
 			print ("worstCiv", iWorstCiv)
 			pWorstCiv = gc.getPlayer(iWorstCiv)
@@ -127,12 +127,7 @@ class Plague:
 
 	def preStopPlague(self, iPlayer):
 
-		cityList = []
-		apCityList = PyPlayer(iPlayer).getCityList()
-		for pCity in apCityList:
-			city = pCity.GetCy()
-			if (city.hasBuilding(iPlague)):
-				cityList.append(city)
+		cityList = [city for city in utils.getCityList(iPlayer) if city.hasBuilding(iPlague)]
 		if (len(cityList)):
 			iModifier = 0
 			for city in cityList:
@@ -146,9 +141,7 @@ class Plague:
 		if data.players[iPlayer].bFirstContactPlague:
 			data.players[iPlayer].iPlagueCountdown = -utils.getTurns(iImmunity-30)
 		data.players[iPlayer].bFirstContactPlague = False
-		apCityList = PyPlayer(iPlayer).getCityList()
-		for pCity in apCityList:
-			city = pCity.GetCy()
+		for city in utils.getCityList(iPlayer):
 			city.setHasRealBuilding(iPlague, False)
 
 
@@ -157,11 +150,12 @@ class Plague:
 		pPlayer = gc.getPlayer(iPlayer)
 		#first spread to close locations
 		cityList = [] #see below
-		apCityList = PyPlayer(iPlayer).getCityList()
-		for pCity in apCityList:
-			city = pCity.GetCy()
+		lInfectedCities = []
+		lNotInfectedCities = []
+		for city in utils.getCityList(iPlayer):
 			cityList.append(city) #see below
 			if (city.hasBuilding(iPlague)):
+				lInfectedCities.append(city)
 				#print ("plague in city", city.getName())
 				#if (pPlayer.isHuman()):
 				#	CyInterface().addMessage(iPlayer, True, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_PROCESS_CITY", ()) + " " + city.getName(), "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
@@ -170,68 +164,59 @@ class Plague:
 					if (gc.getGame().getSorenRandNum(100, 'roll') > 40 + 5*city.healthRate(False, 0)):
 						city.changePopulation(-1)
 				if (city.isCapital()): #delete in vanilla
-					if not data.players[iPlayer].bFirstContactPlague: #don't infect if first contact plague
-						for iLoopCiv in range(iNumMajorPlayers):
-							if (gc.getTeam(pPlayer.getTeam()).isVassal(iLoopCiv) or \
-							    gc.getTeam(gc.getPlayer(iLoopCiv).getTeam()).isVassal(iPlayer)):
-								if (gc.getPlayer(iLoopCiv).getNumCities() > 0): #this check is needed, otherwise game crashes
-									capital = gc.getPlayer(iLoopCiv).getCapitalCity()
-									if (self.isVulnerable(iLoopCiv) == True):
-										if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
+					if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
+						if not data.players[iPlayer].bFirstContactPlague: #don't infect if first contact plague
+							for iLoopCiv in range(iNumMajorPlayers):
+								if (gc.getTeam(pPlayer.getTeam()).isVassal(iLoopCiv) or \
+									gc.getTeam(gc.getPlayer(iLoopCiv).getTeam()).isVassal(iPlayer)):
+									if (gc.getPlayer(iLoopCiv).getNumCities() > 0): #this check is needed, otherwise game crashes
+										capital = gc.getPlayer(iLoopCiv).getCapitalCity()
+										if self.isVulnerable(iLoopCiv):
 											self.spreadPlague(iLoopCiv)
 											self.infectCity(capital)
 											#print ("infect master/vassal", city.getName(), "to", capital.getName())
 				for x in range(city.getX()-2, city.getX()+3):
 					for y in range(city.getY()-2, city.getY()+3):
 						##print ("plagueXY", x, y)
-						pCurrent = gc.getMap().plot( x, y )
-						if (pCurrent.getOwner() != iPlayer and pCurrent.getOwner() >= 0):
+						pPlot = gc.getMap().plot( x, y )
+						if (pPlot.getOwner() != iPlayer and pPlot.getOwner() >= 0):
 							if not data.players[iPlayer].bFirstContactPlague: #don't infect if first contact plague
 								if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
-									if (self.isVulnerable(pCurrent.getOwner()) == True):
-										self.spreadPlague(pCurrent.getOwner())
-										self.infectCitiesNear(pCurrent.getOwner(), x, y)
+									if self.isVulnerable(pPlot.getOwner()):
+										self.spreadPlague(pPlot.getOwner())
+										self.infectCitiesNear(pPlot.getOwner(), x, y)
 										#print ("infect foreign near", city.getName())
 						else:
-							if (pCurrent.isCity() and not (x == city.getX() and y == city.getY())):
+							if (pPlot.isCity() and not (x == city.getX() and y == city.getY())):
 								#print ("is city", x, y)
-								cityNear = pCurrent.getPlotCity() 
+								cityNear = pPlot.getPlotCity() 
 								if (not cityNear.hasBuilding(iPlague)):
 									if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
 										self.infectCity(cityNear)
 										#print ("infect near", city.getName(), "to", cityNear.getName())
 							else:
 								if (x == city.getX() and y == city.getY()):
-									self.killUnitsByPlague(city, pCurrent, 0, 42, 2)
+									self.killUnitsByPlague(city, pPlot, 0, 42, 2)
 								else:
-									if (pCurrent.isRoute()):
-										self.killUnitsByPlague(city, pCurrent, 10, 35, 0)
-									elif (pCurrent.isWater()):
-										self.killUnitsByPlague(city, pCurrent, 30, 35, 0)
+									if (pPlot.isRoute()):
+										self.killUnitsByPlague(city, pPlot, 10, 35, 0)
+									elif (pPlot.isWater()):
+										self.killUnitsByPlague(city, pPlot, 30, 35, 0)
 									else:
-										self.killUnitsByPlague(city, pCurrent, 30, 35, 0)
+										self.killUnitsByPlague(city, pPlot, 30, 35, 0)
+				lPlots = []
 				for x in range(city.getX()-3, city.getX()+4):
-					pCurrent = gc.getMap().plot( x, city.getY()-3 )
-					if (pCurrent.getOwner() == iPlayer or not pCurrent.isOwned()):
-						if (not pCurrent.isCity()):
-							if (pCurrent.isRoute() or pCurrent.isWater()):
-								self.killUnitsByPlague(city, pCurrent, 30, 35, 0)
-					pCurrent = gc.getMap().plot( x, city.getY()+3 )
-					if (pCurrent.getOwner() == iPlayer or not pCurrent.isOwned()):
-						if (not pCurrent.isCity()):
-							if (pCurrent.isRoute() or pCurrent.isWater()):
-								self.killUnitsByPlague(city, pCurrent, 30, 35, 0)
+					lPlots.append((x, city.getY()-3))
+					lPlots.append((x, city.getY()+3))
 				for y in range(city.getY()-2, city.getY()+3):
-					pCurrent = gc.getMap().plot( city.getX()-3, y )
-					if (pCurrent.getOwner() == iPlayer or not pCurrent.isOwned()):
-						if (not pCurrent.isCity()):
-							if (pCurrent.isRoute() or pCurrent.isWater()):
-								self.killUnitsByPlague(city, pCurrent, 30, 35, 0)
-					pCurrent = gc.getMap().plot( city.getX()+3, y )
-					if (pCurrent.getOwner() == iPlayer or not pCurrent.isOwned()):
-						if (not pCurrent.isCity()):
-							if (pCurrent.isRoute() or pCurrent.isWater()):
-								self.killUnitsByPlague(city, pCurrent, 30, 35, 0)
+					lPlots.append((city.getX()-3, y))
+					lPlots.append((city.getX()-3, y))
+				for (x, y) in lPlots:
+					pPlot = gc.getMap().plot(x, y)
+					if pPlot.getOwner() == iPlayer or not pPlot.isOwned():
+						if not pPlot.isCity():
+							if pPlot.isRoute() or pPlot.isWater():
+								self.killUnitsByPlague(city, pPlot, 30, 35, 0)
 
 
 				if not data.players[iPlayer].bFirstContactPlague: #don't infect if first contact plague
@@ -243,40 +228,34 @@ class Plague:
 							if (not loopCity.isNone()):
 								if (not loopCity.hasBuilding(iPlague)):
 									iOwner = loopCity.getOwner()
-									if (iPlayer == iOwner or gc.getTeam(pPlayer.getTeam()).isOpenBorders(iOwner) or \
-									    gc.getTeam(pPlayer.getTeam()).isVassal(iOwner) or \
-									    gc.getTeam(gc.getPlayer(iOwner).getTeam()).isVassal(iPlayer)): #own city, or open borders, or vassal
-										if (iPlayer != iOwner):
-											if (self.isVulnerable(iOwner) == True):
-												self.spreadPlague(iOwner)
-												self.infectCity(loopCity)
-												#print ("infect by trade route", city.getName(), "to", loopCity.getName())
-												iHuman = utils.getHumanID()
-												if (gc.getPlayer(iHuman).canContact(iOwner) and iHuman != iOwner):
-													CyInterface().addMessage(iHuman, True, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_SPREAD_CITY", ()) + " " + loopCity.getName() + " (" + gc.getPlayer(iOwner).getCivilizationAdjective(0) + ")", "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
-										else:
+									if iPlayer == iOwner:
+										self.infectCity(loopCity)
+										#print ("infect by trade route", city.getName(), "to", loopCity.getName())
+									elif gc.getTeam(pPlayer.getTeam()).isOpenBorders(iOwner) or \
+										gc.getTeam(pPlayer.getTeam()).isVassal(iOwner) or \
+										gc.getTeam(gc.getPlayer(iOwner).getTeam()).isVassal(iPlayer): #own city, or open borders, or vassal
+										if self.isVulnerable(iOwner):
+											self.spreadPlague(iOwner)
 											self.infectCity(loopCity)
 											#print ("infect by trade route", city.getName(), "to", loopCity.getName())
+											iHuman = utils.getHumanID()
+											if gc.getPlayer(iHuman).canContact(iOwner) and iHuman != iOwner and loopCity.plot().isRevealed(iHuman):
+												CyInterface().addMessage(iHuman, True, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_SPREAD_CITY", ()) + " " + loopCity.getName() + " (" + gc.getPlayer(iOwner).getCivilizationAdjective(0) + ")", "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
+			else:
+				lNotInfectedCities.append(city)
 
 
 		#spread to other cities of the empire
-		if (len(cityList)):
+		if lNotInfectedCities:
 			if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
-				for city1 in cityList:
-					##print ("citylist", city1.getName())
-					if (not city1.hasBuilding(iPlague)):
-						for city2 in cityList:
-							if (city1 != city2):
-								if (city2.hasBuilding(iPlague)):
-									if (city1.isConnectedTo(city2)):
-										##print ("infect distant", city1.getName(), "to", city2.getName(), utils.calculateDistance(city1.getX(), city1.getY(), city2.getX(), city2.getY()))
-										if (utils.calculateDistance(city1.getX(), city1.getY(), city2.getX(), city2.getY()) <= 6):
-											#print ("infect distant", city2.getName(), "to", city1.getName())
-											self.infectCity(city1)
-											return
+				for infectedCity in random.shuffle(lInfectedCities):
+					lPossibleCities = [city for city in lNotInfectedCities if (city.isConnectedTo(infectedCity) and utils.calculateDistance(city.getX(), city.getY(), infectedCity.getX(), infectedCity.getY()) <= 6)]
+					if lPossibleCities:
+						self.infectCity(utils.getRandomEntry(lPossibleCities))
+						return
 
 
-	def killUnitsByPlague(self, city, pCurrent, baseValue, iDamage, iPreserveDefenders):
+	def killUnitsByPlague(self, city, pPlot, baseValue, iDamage, iPreserveDefenders):
 
 		iOwner = city.getOwner()
 		pOwner = gc.getPlayer(iOwner)
@@ -289,7 +268,7 @@ class Plague:
 
 
 		#print (city.getX(), city.getY())
-		iNumUnitsInAPlot = pCurrent.getNumUnits()
+		iNumUnitsInAPlot = pPlot.getNumUnits()
 		#iPreserveHumanDefenders = iPreserveDefenders -1 #human handicap
 		iPreserveHumanDefenders = iPreserveDefenders
 		iHuman = utils.getHumanID()
@@ -302,41 +281,35 @@ class Plague:
 				else:
 					for j in range(len(lCivGroups)):
 						if ((iOwner in lCivGroups[j]) and (utils.getHumanID() in lCivGroups[j])):
-						       iPreserveDefenders += 1
-						       break
+							iPreserveDefenders += 1
+							break
 		if (iNumUnitsInAPlot):
 			for j in range(iNumUnitsInAPlot):
 				i = iNumUnitsInAPlot - j - 1
-				unit = pCurrent.getUnit(i)
+				unit = pPlot.getUnit(i)
 				if (gc.getPlayer(unit.getOwner()).isHuman()):
 					#print ("iPreserveHumanDefenders", iPreserveHumanDefenders)
 					if (iPreserveHumanDefenders > 0):
 						if (utils.isDefenderUnit(unit)):
 							iPreserveHumanDefenders -= 1
-							if (pCurrent.getNumUnits() > iPreserveDefenders):
+							if (pPlot.getNumUnits() > iPreserveDefenders):
 								pass
 							else:
 								# Leoreth: keep units at 50% minimum
-								if (unit.getDamage() + iDamage - 20 > 50):
-									unit.setDamage(50, iBarbarian)
-								else:
-									unit.setDamage(unit.getDamage() + iDamage - 20, iBarbarian)
+								unit.setDamage(min(50, unit.getDamage() + iDamage - 20), iBarbarian)
 							#print ("preserve")
 							continue
 				else:
 					if (iPreserveDefenders > 0):
 						if (utils.isDefenderUnit(unit)):
 							iPreserveDefenders -= 1
-							if (pCurrent.getNumUnits() > iPreserveDefenders or gc.getTeam(gc.getPlayer(unit.getOwner()).getTeam()).isAtWar(iHuman)):
+							if (pPlot.getNumUnits() > iPreserveDefenders or gc.getTeam(gc.getPlayer(unit.getOwner()).getTeam()).isAtWar(iHuman)):
 								pass
 							else:
 								# Leoreth: keep units at 50% minimum
-								if (unit.getDamage() + iDamage - 20 < 50):
-									unit.setDamage(50, iBarbarian)
-								else:
-									unit.setDamage(unit.getDamage() + iDamage - 20, iBarbarian)
+								unit.setDamage(min(50, unit.getDamage() + iDamage - 20), iBarbarian)
 							#print ("preserve")
-							continue   
+							continue
 				if (utils.isMortalUnit(unit)): #another human handicap inside
 					iThreshold = baseValue + 5*city.healthRate(False, 0)
 					#print ("iThreshold", iThreshold)
@@ -356,10 +329,7 @@ class Plague:
 							if (unit.getOwner() != iOwner and gc.getPlayer(unit.getOwner()).isHuman()):
 								CyInterface().addMessage(unit.getOwner(), False, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_PROCESS_UNIT", ()) + " " + city.getName(), "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
 						#Leoreth: keep units at 50% minimum
-						if (unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2 > 50):
-							unit.setDamage(50, iBarbarian)
-						else:
-							unit.setDamage(unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2, iBarbarian)
+						unit.setDamage(min(50, unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2), iBarbarian)
 						#print ("process")
 						break
 
@@ -373,20 +343,20 @@ class Plague:
 			CyInterface().addMessage(city.getOwner(), True, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_SPREAD_CITY", ()) + " " + city.getName() + "!", "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
 		for x in range(city.getX()-2, city.getX()+3):
 			for y in range(city.getY()-2, city.getY()+3):
-				pCurrent = gc.getMap().plot( x, y )
-				pCurrent.setUpgradeProgress(0)
-				iImprovement = pCurrent.getImprovementType()
+				pPlot = gc.getMap().plot( x, y )
+				pPlot.setUpgradeProgress(0)
+				iImprovement = pPlot.getImprovementType()
 				#if (iImprovement == iCottage):
-				#	pCurrent.setImprovementType(-1)
+				#	pPlot.setImprovementType(-1)
 				#if (iImprovement == iHamlet):
-				#	pCurrent.setImprovementType(iCottage)
+				#	pPlot.setImprovementType(iCottage)
 				#if (iImprovement == iVillage):
-				#	pCurrent.setImprovementType(iHamlet)
+				#	pPlot.setImprovementType(iHamlet)
 				if (iImprovement == iTown):
-					pCurrent.setImprovementType(iVillage)
-				if (pCurrent.isCity()):
+					pPlot.setImprovementType(iVillage)
+				if (pPlot.isCity()):
 					if (x == city.getX() and y == city.getY()):
-						self.killUnitsByPlague(city, pCurrent, 0, 100, 0)
+						self.killUnitsByPlague(city, pPlot, 0, 100, 0)
 
 
 	def isVulnerable(self, iPlayer):
@@ -397,10 +367,7 @@ class Plague:
 			pPlayer = gc.getPlayer(iPlayer)
 			if data.players[iPlayer].iPlagueCountdown: #vulnerable
 				if (not gc.getTeam(pPlayer.getTeam()).isHasTech(iMedicine)):
-					iHealth = -30
-					if (pPlayer.calculateTotalCityHealthiness() > 0):
-						iHealth = int((1.0 * pPlayer.calculateTotalCityHealthiness()) / (pPlayer.calculateTotalCityHealthiness() + \
-								pPlayer.calculateTotalCityUnhealthiness()) * 100) - 60
+					iHealth = self.calculateHealth(iPlayer)
 					if (iHealth < 14): #no spread for iHealth >= 74 years
 						return True
 					else:
@@ -411,26 +378,27 @@ class Plague:
 
 	def spreadPlague(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		iHealth = -30
-		if (pPlayer.calculateTotalCityHealthiness() > 0):
-			iHealth = int((1.0 * pPlayer.calculateTotalCityHealthiness()) / (pPlayer.calculateTotalCityHealthiness() + \
-				pPlayer.calculateTotalCityUnhealthiness()) * 100) - 60
+		iHealth = self.calculateHealth(iPlayer)
 		iHealth /= 7 #duration range will be -4 to +4 for 30 to 90
 		data.players[iPlayer].iPlagueCountdown = min(9, iDuration - iHealth)
 		print ("spreading plague to", iPlayer)
 
 
+	def calculateHealth(self, iPlayer):
+		pPlayer = gc.getPlayer(iPlayer)
+		if pPlayer.calculateTotalCityHealthiness() > 0:
+			return int((1.0 * pPlayer.calculateTotalCityHealthiness()) / (pPlayer.calculateTotalCityHealthiness() + \
+				pPlayer.calculateTotalCityUnhealthiness()) * 100) - 60
+		return -30
+
+
 	def infectCitiesNear(self, iPlayer, startingX, startingY):
-		apCityList = PyPlayer(iPlayer).getCityList()
-		for pCity in apCityList:
-			city = pCity.GetCy()
+		for city in utils.getCityList(iPlayer):
 			if (utils.calculateDistance(city.getX(), city.getY(), startingX, startingY) <= 3):
 				self.infectCity(city)
 				iHuman = utils.getHumanID()
 				if (gc.getPlayer(iHuman).canContact(iPlayer) and iHuman != iPlayer):
 					CyInterface().addMessage(iHuman, True, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_SPREAD_CITY", ()) + " " + city.getName() + " (" + gc.getPlayer(iPlayer).getCivilizationAdjective(0) + ")", "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
-
-
 
 
 	def onCityAcquired(self, iOldOwner, iNewOwner, city):
@@ -440,21 +408,15 @@ class Plague:
 					if (not gc.getTeam(gc.getPlayer(iNewOwner).getTeam()).isHasTech(iMedicine)): #but not permanent immunity
 						print("acquiring plague")
 						self.spreadPlague(iNewOwner)
-						apCityList = PyPlayer(iNewOwner).getCityList()
-						for pCity in apCityList:
-							cityNear = pCity.GetCy()
-							if (utils.calculateDistance(city.getX(), city.getY(), cityNear.getX(), cityNear.getY()) <= 3):
-								self.infectCity(cityNear)
+						self.infectCitiesNear(iNewOwner, city.getX(), city.getY())
 						return
 			city.setHasRealBuilding(iPlague, False)
 
 	def onCityRazed(self, city, iNewOwner):
 		if (city.hasBuilding(iPlague)):
 			if data.players[iNewOwner].iPlagueCountdown > 0:
-				apCityList = PyPlayer(iNewOwner).getCityList()
 				iNumCitiesInfected = 0
-				for pCity in apCityList:
-					otherCity = pCity.GetCy()
+				for otherCity in utils.getCityList(iNewOwner):
 					if (otherCity.getX() != city.getX() or otherCity.getY() != city.getY()): #because the city razed still has the plague
 						if (otherCity.hasBuilding(iPlague)):
 							iNumCitiesInfected += 1
@@ -483,10 +445,7 @@ class Plague:
 					if (not gc.getTeam(pNewWorldCiv.getTeam()).isHasTech(iBiology)):
 						city = utils.getRandomCity(iNewWorldCiv)
 						if (city != -1):
-							iHealth = -30
-							if (pNewWorldCiv.calculateTotalCityHealthiness() > 0):
-								iHealth = int((1.0 * pNewWorldCiv.calculateTotalCityHealthiness()) / (pNewWorldCiv.calculateTotalCityHealthiness() + \
-									pNewWorldCiv.calculateTotalCityUnhealthiness()) * 100) - 60
+							iHealth = self.calculateHealth(iNewWorldCiv)
 							if (iHealth < 10): #no spread for iHealth >= 70 years
 								iHealth /= 10
 								if (gc.getGame().getSorenRandNum(100, 'roll') > 30 + 5*iHealth):
