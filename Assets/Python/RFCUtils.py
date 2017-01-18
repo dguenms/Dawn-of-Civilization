@@ -1254,7 +1254,7 @@ class RFCUtils:
 		
 	def surroundingPlots(self, tPlot, iRadius=1, filter=lambda (x, y): False):
 		x, y = tPlot
-		return [(i, j) for i in [x-iRadius, x, x+iRadius] for j in [y-iRadius, y, y+iRadius] if 0 <= i < iWorldX and 0 <= j < iWorldY and not filter((i, j))]
+		return [(i % iWorldX, j) for i in range(x-iRadius, x+iRadius+1) for j in range(y-iRadius, y+iRadius+1) if 0 <= j < iWorldY and not filter((i, j))]
 		
 	def getUnitList(self, tPlot):
 		x, y = tPlot

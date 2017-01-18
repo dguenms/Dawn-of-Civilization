@@ -532,7 +532,7 @@ class Barbs:
 		if bBorder and not [(i, j) for (i, j) in lSurrounding if gc.getMap().plot(i, j).getOwner() != plot.getOwner()]: return False
 		
 		# near a city if specified (next to cities excluded above)
-		if bNearCity and not [(i, j) for (i, j) in utils.surroundingPlots(tPlot, 2, lambda (a, b): gc.getMap().plot(a, b).isCity())]: return False
+		if bNearCity and not [(i, j) for (i, j) in utils.surroundingPlots(tPlot, 2, lambda (a, b): not gc.getMap().plot(a, b).isCity())]: return False
 		
 		return True
 
