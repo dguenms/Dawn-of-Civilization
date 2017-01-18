@@ -1,0 +1,3 @@
+TOOLKIT=C:\Dev\Microsoft Visual C++ Toolkit 2003
+PSDK=C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A
+CUSTOM_LDFLAGS = psapi.lib
