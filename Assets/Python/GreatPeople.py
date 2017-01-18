@@ -1281,7 +1281,7 @@ iCivFrance : {
 		"Samuel de Champlain", # 17th
 		u"fThérèse de Couagne", # 18th
 		iIndustrial,
-		"Frédéric Bastiat", # 18th
+		u"Frédéric Bastiat", # 18th
 		"Ferdinand de Lesseps", # 19th
 		iModern,
 		"fCoco Chanel", # 20th
@@ -2586,7 +2586,7 @@ iCivColombia : {
 	iGreatStatesman : [
 		u"Rafael Núñez", # 19th
 		iModern,
-		"Jorge Eliécer Gaitán", # 20th
+		u"Jorge Eliécer Gaitán", # 20th
 		u"Nicolás Gómez Dávila", # 20th
 		u"Mario Lanserna Pinzón", # 20th
 	],

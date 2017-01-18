@@ -109,9 +109,9 @@ class Plague:
 						#print ("starting plague", "civ:", iPlayer, "iHealth:", iHealth, iHealth2)
 						if (iPlagueCounter == 2): #medieval black death
 							if (iPlayer in lCivGroups[0]):
-								iHealth2 -= 5 
-					if (iHealth2 < iWorstHealth):
-						iWorstHealth = iHealth2
+								iHealth -= 5 
+					if (iHealth < iWorstHealth):
+						iWorstHealth = iHealth
 						iWorstCiv = iPlayer
 		if (iWorstCiv != -1):
 			print ("worstCiv", iWorstCiv)
