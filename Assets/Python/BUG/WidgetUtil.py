@@ -266,6 +266,16 @@ def getWidgetHelp(argsList):
 				return CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ())
 			elif iData2 == 38:
 				return CyTranslator().getText("TXT_KEY_WB_WARVALUE", ())
+			elif iData2 == 39:
+				return CyTranslator().getText("TXT_KEY_WB_RELIGIONMAP", ())
+			elif iData2 == 40:
+				return CyTranslator().getText("TXT_KEY_WB_REGIONMAP", ())
+			elif iData2 == 41:
+				return CyTranslator().getText("TXT_KEY_WB_STOREDDATA", ())
+			elif iData2 == 42:
+				return CyTranslator().getText("TXT_KEY_WB_DOCMAPS", ())
+			elif iData2 == 43:
+				return CyTranslator().getText("TXT_KEY_WB_REGION_SELECTION", ())
 		elif iData1 > 1029 and iData1 < 1040:
 			if iData1 %2:
 				return "-"
@@ -472,7 +482,7 @@ def getWidgetHelp(argsList):
 				sText += "\n" + CyTranslator().getText("TXT_KEY_CIVICS_SCREEN_NO_UPKEEP", ())
 			return sText
 ## Ultrapack ##
-		
+
 		#Merijn functions
 		elif iData1 == 22001:
 			if iData2 == 0:
@@ -480,21 +490,13 @@ def getWidgetHelp(argsList):
 			else:
 				sText = CyTranslator().getText("TXT_KEY_WB_DISABLE_CIV", ())
 			return sText
-			
 		elif iData1 == 22011:
 			return CyTranslator().getText("TXT_KEY_WB_CORE_ADD", ())
 		elif iData1 == 22012:
 			return CyTranslator().getText("TXT_KEY_WB_CORE_REMOVE", ())
 		elif iData1 == 22003:
 			return CyTranslator().getText("TXT_KEY_WB_CHANGE_SETTLERVALUE", ())
-			
-		elif iData1 >= 22300 and iData1 < 22325:
-			sText = "-" + str(iData2)
-			return sText
-		elif iData1 >= 22400 and iData1 < 22425:
-			sText = "+" + str(iData2)
-			return sText
-			
+
 		elif iData1 == 22005:
 			return " "
 		elif iData1 == 22006:
@@ -503,6 +505,16 @@ def getWidgetHelp(argsList):
 			else:
 				return CyTranslator().getText("TXT_KEY_WB_HIDE", ())
 
+		elif iData1 == 22007 or iData1 == 22008:
+			return CyTranslator().getText("TXT_KEY_WB_CHANGE", ())
+		elif iData1 == 22009:
+			return CyTranslator().getText("TXT_KEY_WB_SELECT", ())
+		elif iData1 == 22010:
+			return CyTranslator().getText("TXT_KEY_WB_CANNOT_CHANGE", ())
+		elif iData1 == 22013:
+			return CyTranslator().getText("TXT_KEY_WB_RESTORE_SD_BACKUP_HELP", ())
+		elif iData1 == 22014:
+			return CyTranslator().getText("TXT_KEY_WB_CREATE_SD_BACKUP_HELP", ())
 	return u""
 
 ## Configuration Handler

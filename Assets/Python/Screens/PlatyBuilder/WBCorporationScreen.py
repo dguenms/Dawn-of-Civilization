@@ -9,6 +9,7 @@ import WBTeamScreen
 import WBCityEditScreen
 import WBInfoScreen
 import CvPlatyBuilderScreen
+import WBStoredDataScreen
 gc = CyGlobalContext()
 
 bHeadquarter = False
@@ -42,6 +43,7 @@ class WBCorporationScreen:
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_CONCEPT_CORPORATIONS", ()), 9, 9, True)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_PITBOSS_GAME_OPTIONS", ()), 10, 10, False)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_INFO_SCREEN", ()), 11, 11, False)
+		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_WB_STOREDDATA", ()), 12, 12, False)
 
 		screen.addDropDownBoxGFC("OwnerType", screen.getXResolution()/4, self.iTable_Y - 60, 150, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("OwnerType", CyTranslator().getText("TXT_KEY_WB_CITY_ALL", ()), 0, 0, 0 == iOwnerType)
@@ -179,6 +181,8 @@ class WBCorporationScreen:
 				WBGameDataScreen.WBGameDataScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).interfaceScreen()
 			elif iIndex == 11:
 				WBInfoScreen.WBInfoScreen().interfaceScreen(iSelectedPlayer)
+			elif iIndex == 12:
+				WBStoredDataScreen.WBStoredDataScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).interfaceScreen()
 
 		elif inputClass.getFunctionName() == "OwnerType":
 			iOwnerType = screen.getPullDownData("OwnerType", screen.getSelectedPullDownID("OwnerType"))

@@ -46,7 +46,7 @@ class Plague:
 
 
 	def checkTurn(self, iGameTurn):
-		if data.bNoPlagueOption:
+		if data.bNoPlagues:
 			return
 
 		for i in range(iNumTotalPlayersB):
@@ -85,7 +85,7 @@ class Plague:
 						self.startPlague(i)
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
-		if data.bNoPlagueOption:
+		if data.bNoPlagues:
 			return
 
 		if (iPlayer < iNumTotalPlayersB):
@@ -426,7 +426,7 @@ class Plague:
 
 
 	def onFirstContact(self, iTeamX, iHasMetTeamY):
-		if data.bNoPlagueOption:
+		if data.bNoPlagues:
 			return
 
 		if (gc.getGame().getGameTurn() > getTurnForYear(tBirth[iAztecs]) + 2 and gc.getGame().getGameTurn() < getTurnForYear(1800)):

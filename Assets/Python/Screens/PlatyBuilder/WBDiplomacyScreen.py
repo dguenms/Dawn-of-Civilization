@@ -292,9 +292,15 @@ class WBDiplomacyScreen:
 				WBPlayerScreen.WBPlayerScreen().interfaceScreen(iPlayerX)
 
 		if inputClass.getFunctionName() == "ChangeBy":
-			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+
 		elif inputClass.getFunctionName() == "ChangeType":
 			bRemove = not bRemove
+			iChange = -iChange
+
 		elif inputClass.getFunctionName() == "CurrentPlayer":
 			iSelectedPlayer = screen.getPullDownData("CurrentPlayer", screen.getSelectedPullDownID("CurrentPlayer"))
 			self.interfaceScreen(iSelectedPlayer, bDiplomacyPage)
@@ -482,10 +488,7 @@ class WBDiplomacyScreen:
 		if bTowardsPlayer:
 			iTeam1 = iTeam
 			iTeam2 = iSelectedTeam
-		iCount = iChange
-		if bRemove:
-			iCount = -iChange
-			iCount = max(iCount, - gc.getTeam(iTeam1).getEspionagePointsAgainstTeam(iTeam2))
+		iCount = max(iChange, - gc.getTeam(iTeam1).getEspionagePointsAgainstTeam(iTeam2))
 		gc.getTeam(iTeam1).changeEspionagePointsAgainstTeam(iTeam2, iCount)
 
 	def editEspionageWeight(self, iPlayer):
@@ -497,9 +500,7 @@ class WBDiplomacyScreen:
 		if bTowardsPlayer:
 			iPlayer1 = iPlayer
 			iTeam2 = iSelectedTeam
-		iCount = iChange
-		if bRemove:
-			iCount = -iChange
+		iCount = abs(iChange)
 		gc.getPlayer(iPlayer1).changeEspionageSpendingWeightAgainstTeam(iTeam2, iCount)
 
 	def editCEModifier(self, iTeam):
@@ -509,10 +510,7 @@ class WBDiplomacyScreen:
 		if bTowardsPlayer:
 			iTeam1 = iTeam
 			iTeam2 = iSelectedTeam
-		iCount = iChange
-		if bRemove:
-			iCount = -iChange
-			iCount = max(iCount, - gc.getTeam(iTeam1).getCounterespionageModAgainstTeam(iTeam2))
+		iCount = max(iChange, - gc.getTeam(iTeam1).getCounterespionageModAgainstTeam(iTeam2))
 		gc.getTeam(iTeam1).changeCounterespionageModAgainstTeam(iTeam2, iCount)
 
 	def editCETurns(self, iTeam):
@@ -522,10 +520,7 @@ class WBDiplomacyScreen:
 		if bTowardsPlayer:
 			iTeam1 = iTeam
 			iTeam2 = iSelectedTeam
-		iCount = iChange
-		if bRemove:
-			iCount = -iChange
-			iCount = max(iCount, - gc.getTeam(iTeam1).getCounterespionageTurnsLeftAgainstTeam(iTeam2))
+		iCount = max(iChange, - gc.getTeam(iTeam1).getCounterespionageTurnsLeftAgainstTeam(iTeam2))
 		gc.getTeam(iTeam1).changeCounterespionageTurnsLeftAgainstTeam(iTeam2, iCount)
 
 	def editAttitude(self, iPlayer):
@@ -554,16 +549,11 @@ class WBDiplomacyScreen:
 		if bTowardsPlayer:
 			pPlayer1 = gc.getPlayer(iPlayer)
 			iPlayer2 = iSelectedPlayer
-		iCount = iChange
-		if bRemove:
-			iCount = -iChange
-			iCount = max(iCount, - pPlayer1.AI_getMemoryCount(iPlayer2, iSelectedMemory))
+		iCount = max(iChange, - pPlayer1.AI_getMemoryCount(iPlayer2, iSelectedMemory))
 		pPlayer1.AI_changeMemoryCount(iPlayer2, iSelectedMemory, iCount)
 
 	def editWarWeariness(self, iTeam1, iTeam2):
 		iCount = iChange
-		if bRemove:
-			iCount = -iChange
 		if bTowardsPlayer:
 			gc.getTeam(iTeam2).changeWarWeariness(iTeam1, iCount)
 		else:

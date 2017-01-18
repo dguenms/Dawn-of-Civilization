@@ -81,6 +81,7 @@ tSpainMoorsTL = (50, 40)
 tSpainMoorsBR = (54, 42)
 
 tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 0, iSpainMoorsYear, 10)
+lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors]
 
 class AIWars:
 		
@@ -140,7 +141,7 @@ class AIWars:
 		
 		if not gc.getPlayer(iPlayer).isAlive(): return
 		
-		if data.bConquest[iID]: return
+		if data.lConquest[iID]: return
 		
 		iGameTurn = gc.getGame().getGameTurn()
 		iStartTurn = getTurnForYear(iYear) - 5 + (data.iSeed % 10)
@@ -150,7 +151,7 @@ class AIWars:
 		if tPrereqConquest and not self.isConquered(tPrereqConquest): return
 		
 		self.spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns, iWarPlan)
-		data.bConquest[iID] = True
+		data.lConquest[iID] = True
 		
 	def isConquered(self, tConquest):
 		iID, iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIntervalTurns = tConquest

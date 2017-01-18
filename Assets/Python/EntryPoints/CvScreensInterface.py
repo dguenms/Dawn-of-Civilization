@@ -88,6 +88,7 @@ import WBReligionScreen
 import WBCorporationScreen
 import WBInfoScreen
 import WBTradeScreen
+import WBStoredDataScreen
 
 def toggleSetNoScreens():
 	global g_bIsScreenActive
@@ -1253,6 +1254,7 @@ HandleInputMap = {  MAIN_INTERFACE : mainInterface,
 					WB_CORPORATION : WBCorporationScreen.WBCorporationScreen(),
 					WB_INFO : WBInfoScreen.WBInfoScreen(),
 					WB_TRADE : WBTradeScreen.WBTradeScreen(),
+					WB_STOREDDATA : WBStoredDataScreen.WBStoredDataScreen(worldBuilderScreen),
 				}
 
 #######################################################################################

@@ -13,6 +13,7 @@ import CvPlatyBuilderScreen
 import Popup
 gc = CyGlobalContext()
 iChange = 1
+bRemove = False
 
 from StoredData import data
 from Consts import *
@@ -252,14 +253,15 @@ class WBPlayerScreen:
 		for iModifier in range(Modifiers.iNumModifiers):
 			iRow = screen.appendTableRow("WBPlayerModifiers")
 			screen.deleteWidget("ModifierButtonDecrease"+str(iRow))
+			screen.deleteWidget("ModifierButtonDecrease"+str(iRow))
 			screen.deleteWidget("ModifierRevertButton"+str(iRow))
 			sText = localText.getText("TXT_KEY_MODIFIERS_"+str(iModifier), ())
 			iValue = pPlayer.getModifier(iModifier)
 			screen.setTableText("WBPlayerModifiers", 0, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 			screen.setTableText("WBPlayerModifiers", 1, iRow, str(iValue), "", WidgetTypes.WIDGET_PYTHON, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
 			if not bRevert:
-				screen.setButtonGFC("ModifierButtonDecrease"+str(iRow), "", "", iXx, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 22300+iModifier, iChange, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
-				screen.setButtonGFC("ModifierButtonIncrease"+str(iRow), "", "", iXx+24, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 22400+iModifier, iChange, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+				screen.setButtonGFC("ModifierButtonIncrease"+str(iRow), "", "", iXx, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 1030, iModifier, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+				screen.setButtonGFC("ModifierButtonDecrease"+str(iRow), "", "", iXx+24, iY + iRow*24, 24, 24, WidgetTypes.WIDGET_PYTHON, 1031, iModifier, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
 			else:
 				if not iValue == Modifiers.getAdjustedModifier(iPlayer, iModifier):
 					screen.setButtonGFC("ModifierRevertButton"+str(iRow), "I", "", iXx, iY + iRow*24, 2*24, 24, WidgetTypes.WIDGET_PYTHON, iModifier, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
@@ -354,10 +356,14 @@ class WBPlayerScreen:
 	def handleInput (self, inputClass):
 		screen = CyGInterfaceScreen( "WBPlayerScreen", CvScreenEnums.WB_PLAYER)
 		global iChange
+		global bRemove
 
 		if inputClass.getFunctionName() == "ChangeBy":
 			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
-			self.placeModifiers()
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
 
 		elif inputClass.getFunctionName() == "CurrentPage":
 			iIndex = screen.getPullDownData("CurrentPage", screen.getSelectedPullDownID("CurrentPage"))
@@ -495,22 +501,16 @@ class WBPlayerScreen:
 			return
 			
 		elif inputClass.getFunctionName().find("ModifierButton") > -1:
-			iData1 = inputClass.getData1()
-			if iData1 >= 22300 and iData1 < 22325:
-				iModifier = iData1 - 22300
-				iModifierValue = pPlayer.getModifier(iModifier)
-				pPlayer.setModifier(iModifier, iModifierValue - iChange)
-			elif iData1 >= 22400 and iData1 < 22425:
-				iModifier = iData1 - 22400
-				iModifierValue = pPlayer.getModifier(iModifier)
-				pPlayer.setModifier(iModifier, iModifierValue + iChange)
+			iModifier = inputClass.getData2()
+			iModifierValue = pPlayer.getModifier(iModifier)
+			if inputClass.getData1() == 1030:
+				pPlayer.setModifier(iModifier, iModifierValue + abs(iChange))
+			elif inputClass.getData1() == 1031:
+				pPlayer.setModifier(iModifier, iModifierValue - abs(iChange))
 			self.placeModifiers()
 
 		elif inputClass.getFunctionName() == "ModifierResetButton":
-			if inputClass.getData1() == 1:
-				self.placeModifiers(True)
-			else:
-				self.placeModifiers(False)
+			self.placeModifiers(inputClass.getData1() == 1)
 
 		elif inputClass.getFunctionName().find("ModifierRevertButton") > -1:
 			iModifier = inputClass.getData1()

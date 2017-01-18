@@ -31,6 +31,7 @@ import WBPlayerScreen
 import WBGameDataScreen
 import WBPlotScreen
 import CvPlatyBuilderScreen
+import WBStoredDataScreen
 ## Ultrapack ##
 
 gc = CyGlobalContext()
@@ -195,6 +196,7 @@ class CvEventManager(object):
 			4444 : ('WBGameScript', self.__eventWBGameScriptPopupApply, self.__eventWBScriptPopupBegin),
 			5555 : ('WBPlotScript', self.__eventWBPlotScriptPopupApply, self.__eventWBScriptPopupBegin),
 			6666 : ('WBSettlerValue', self.__eventWBSettlerValuePopupApply, self.__eventWBScriptPopupBegin),
+			7777 : ('WBStoredDataValue', self.__eventWBStoredDataValuePopupApply, self.__eventWBScriptPopupBegin),
 ## Platy Builder ##
 		}	
 #################### EVENT STARTERS ######################
@@ -1188,7 +1190,7 @@ class CvEventManager(object):
 		pPlot.setScriptData(CvUtil.convertToStr(sScript))
 		WBPlotScreen.WBPlotScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
 		return
-		
+
 	def __eventWBSettlerValuePopupApply(self, playerID, userData, popupReturn):
 		sScript = popupReturn.getEditBoxString(0)
 		try:
@@ -1199,6 +1201,18 @@ class CvEventManager(object):
 		if bInt:
 			iValue = int(sScript)
 			WBPlotScreen.WBPlotScreen().changeSettlerValuePopup(userData[0], iValue)
+		return
+
+	def __eventWBStoredDataValuePopupApply(self, playerID, userData, popupReturn):
+		sScript = popupReturn.getEditBoxString(0)
+		try:
+			int(sScript)
+			bInt = True
+		except ValueError:
+			bInt = False
+		if bInt:
+			iValue = int(sScript)
+			WBStoredDataScreen.WBStoredDataScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).changeListTableValue(userData[0], iValue)
 		return
 
 	def __eventWBLandmarkPopupApply(self, playerID, userData, popupReturn):

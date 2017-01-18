@@ -20,15 +20,15 @@ def updateRegionMap():
 		for y in range(iWorldY):
 			gc.getMap().plot(x, y).setRegionID(getMapValue(x, y))
 			
-def updateReligionSpread():
+def updateReligionSpread(iReligion):
 	for x in range(iWorldX):
 		for y in range(iWorldY):
-			for iReligion in range(iNumReligions):
-				gc.getMap().plot(x, y).setSpreadFactor(iReligion, getSpreadFactor(iReligion, x, y))
+			gc.getMap().plot(x, y).setSpreadFactor(iReligion, getSpreadFactor(iReligion, x, y))
 				
 def init():
 	updateRegionMap()
-	updateReligionSpread()
+	for iReligion in range(iNumReligions):
+		updateReligionSpread(iReligion)
 				
 
 tRegionMap = (

@@ -342,10 +342,14 @@ class WBCityDataScreen:
 		global iSelectedYield
 
 		if inputClass.getFunctionName() == "ChangeBy":
-			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
 
 		elif inputClass.getFunctionName() == "ChangeType":
 			bRemove = not bRemove
+			iChange = -iChange
 
 		elif inputClass.getFunctionName() == "CurrentCity":
 			iPlayerX = inputClass.getData1() - 7200
@@ -400,16 +404,16 @@ class WBCityDataScreen:
 
 		elif inputClass.getFunctionName().find("GreatPeopleFlat") > -1:
 			if inputClass.getData1() == 1030:
-				self.editGreatPeopleFlat(iChange)
+				self.editGreatPeopleFlat(abs(iChange))
 			elif inputClass.getData1() == 1031:
-				self.editGreatPeopleFlat(-iChange)
+				self.editGreatPeopleFlat(-abs(iChange))
 			self.placeGreatPeople()
 
 		elif inputClass.getFunctionName().find("GreatPeopleRate") > -1:
 			if inputClass.getData1() == 1030:
-				self.editGreatPeopleRate(iChange)
+				self.editGreatPeopleRate(abs(iChange))
 			elif inputClass.getData1() == 1031:
-				self.editGreatPeopleRate(-iChange)
+				self.editGreatPeopleRate(-abs(iChange))
 			self.placeSpecialist()
 
 		elif inputClass.getFunctionName() == "WBGreatPeople":
@@ -448,8 +452,6 @@ class WBCityDataScreen:
 	def modifyBuilding(self, iBuilding):
 		iType  = iSelectedYield
 		iCount = iChange
-		if bRemove:
-			iCount = -iCount
 		iClass = gc.getBuildingInfo(iBuilding).getBuildingClassType()
 		if iType < YieldTypes.NUM_YIELD_TYPES:
 			pCity.setBuildingYieldChange(iClass, iType, pCity.getBuildingYieldChange(iClass, iType) + iCount)
@@ -466,10 +468,7 @@ class WBCityDataScreen:
 
 
 	def editFreeBonus(self, item):
-		iCount = iChange
-		if bRemove:
-			iCount = - iChange
-			iCount = max(iCount, - pCity.getFreeBonus(item))
+		iCount = max(iChange, - pCity.getFreeBonus(item))
 		pCity.changeFreeBonus(item, iCount)
 
 	def setNoBonusCB(self, item):
@@ -490,18 +489,12 @@ class WBCityDataScreen:
 		pCity.changeBaseGreatPeopleRate(iCount)
 
 	def editGreatPeopleProgress(self, item) :
-		iCount = iChange
-		if bRemove:
-			iCount = - iChange
-			iCount = max(iCount, - pCity.getGreatPeopleUnitProgress(item))
+		iCount = max(iChange, - pCity.getGreatPeopleUnitProgress(item))
 		pCity.changeGreatPeopleUnitProgress(item, min(iCount, gc.getPlayer(iPlayer).greatPeopleThreshold(False) - pCity.getGreatPeopleUnitProgress(item)))
 		self.editGreatPeopleFlat(iCount)
 
 	def editFreeSpecialist(self, item):
-		iCount = iChange
-		if bRemove:
-			iCount = - iChange
-			iCount = max(iCount, - pCity.getFreeSpecialistCount(item))
+		iCount = max(iChange, - pCity.getFreeSpecialistCount(item))
 		pCity.changeFreeSpecialistCount(item, iCount)
 
 	def update(self, fDelta):

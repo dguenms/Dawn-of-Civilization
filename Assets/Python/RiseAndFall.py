@@ -2093,11 +2093,11 @@ class RiseAndFall:
 				
 				iIndex = lCivBioNewWorld.index(iNewWorldCiv)
 				
-				bAlreadyContacted = (data.lFirstContactConquerors[iIndex] == 1)
+				bAlreadyContacted = data.lFirstContactConquerors[iIndex]
 				
 				# avoid "return later" exploit
 				if iGameTurn <= getTurnForYear(tBirth[iAztecs])+10:
-					data.lFirstContactConquerors[iIndex] = 1
+					data.lFirstContactConquerors[iIndex] = True
 					return
 					
 				if not bAlreadyContacted:
@@ -2111,7 +2111,7 @@ class RiseAndFall:
 						tContactZoneTL = (21, 11)
 						tContactZoneBR = (36, 40)
 						
-					data.lFirstContactConquerors[iIndex] = 1
+					data.lFirstContactConquerors[iIndex] = True
 					
 					# change some terrain to end isolation
 					if (iNewWorldCiv == iInca):
@@ -2198,9 +2198,9 @@ class RiseAndFall:
 		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
 			if iTeamX in [iPersia, iByzantium, iRussia]:
-				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.getFirstContactMongols(iTeamX) == 0:
+				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.isFirstContactMongols:
 
-					data.setFirstContactMongols(iTeamX, 1)
+					data.setFirstContactMongols(iTeamX, False)
 		
 					teamTarget = gc.getTeam(iTeamX)
 

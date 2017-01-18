@@ -1586,10 +1586,12 @@ iSpecialistGreatProphet, iSpecialistGreatArtist, iSpecialistGreatScientist, iSpe
 #Stability Levels
 iNumStabilityLevels = 5
 (iStabilityCollapsing, iStabilityUnstable, iStabilityShaky, iStabilityStable, iStabilitySolid) = range(iNumStabilityLevels)
+StabilityLevelTexts = ["TXT_KEY_STABILITY_COLLAPSING", "TXT_KEY_STABILITY_UNSTABLE", "TXT_KEY_STABILITY_SHAKY", "TXT_KEY_STABILITY_STABLE", "TXT_KEY_STABILITY_SOLID"]
 
 #Stability Types
 iNumStabilityTypes = 5
 (iStabilityExpansion, iStabilityEconomy, iStabilityDomestic, iStabilityForeign, iStabilityMilitary) = range(iNumStabilityTypes)
+StabilityTypesTexts = ["TXT_KEY_STABILITY_CATEGORY_EXPANSION", "TXT_KEY_STABILITY_CATEGORY_ECONOMY", "TXT_KEY_STABILITY_CATEGORY_DOMESTIC", "TXT_KEY_STABILITY_CATEGORY_FOREIGN", "TXT_KEY_STABILITY_CATEGORY_MILITARY"]
 
 #Stability Parameters
 iNumStabilityParameters = 22
@@ -1716,6 +1718,8 @@ tTradingCompanyPlotLists = (
 
 lSecondaryCivs = [iHarappa, iPolynesia, iTamils, iTibet, iMoors, iPoland, iCongo, iArgentina, iBrazil]
 
+lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
+
 (i3000BC, i600AD, i1700AD) = range(3)
 
 # Stability overlay and editor
@@ -1726,3 +1730,6 @@ lPresetValues = [3, 20, 90, 200, 500, 700]
 
 iMaxWarValue = 12
 lWarMapColors = ["COLOR_RED", "COLOR_PLAYER_ORANGE", "COLOR_YELLOW", "COLOR_GREEN", "COLOR_PLAYER_DARK_GREEN", "COLOR_BLUE"]
+
+lReligionMapColors = ["COLOR_PLAYER_ORANGE", "COLOR_YELLOW", "COLOR_GREEN", "COLOR_CYAN"]
+lReligionMapTexts = ["TXT_KEY_CULTURELEVEL_NONE", "TXT_KEY_WB_RELIGIONMAP_MINORITY", "TXT_KEY_WB_RELIGIONMAP_PERIPHERY", "TXT_KEY_WB_RELIGIONMAP_HISTORICAL", "TXT_KEY_WB_RELIGIONMAP_CORE"]

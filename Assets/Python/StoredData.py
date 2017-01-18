@@ -147,11 +147,11 @@ class GameData:
 		self.lTimedConquests = []
 		
 		self.lPlayerEnabled = [True] * len(lSecondaryCivs)
-		self.bMinorCityFounded = [False] * iNumMinorCities
+		self.lMinorCityFounded = [False] * iNumMinorCities
 		
 		self.lDeleteMode = [-1] * 3
-		self.lFirstContactConquerors = [0] * 3
-		self.lFirstContactMongols = [0] * 5
+		self.lFirstContactConquerors = [False] * 3
+		self.lFirstContactMongols = [True] * 5
 		self.lTradingCompanyConquerorsTargets = [[] for _ in range(5)]
 		
 		self.lCheatersCheck = [0, -1]
@@ -188,7 +188,7 @@ class GameData:
 		
 		self.iNextTurnAIWar = -1
 		
-		self.bConquest = [False] * iNumConquests
+		self.lConquest = [False] * iNumConquests
 		
 		# Congresses
 		
@@ -206,7 +206,7 @@ class GameData:
 		
 		self.lGenericPlagueDates = [-1] * 4
 		
-		self.bNoPlagueOption = False
+		self.bNoPlagues = False
 		
 		# Victories
 		
@@ -287,13 +287,11 @@ class GameData:
 	def addNewCiv(self, iCiv):
 		self.lNewCivs.append(iCiv)
 		
-	def getFirstContactMongols(self, iPlayer):
-		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
+	def isFirstContactMongols(self, iPlayer):
 		return self.lFirstContactMongols[lMongolCivs.index(iPlayer)]
 		
-	def setFirstContactMongols(self, iPlayer, iValue):
-		lMongolCivs = [iPersia, iByzantium, iArabia, iRussia, iMughals]
-		self.lFirstContactMongols[lMongolCivs.index(iPlayer)] = iValue
+	def setFirstContactMongols(self, iPlayer, bValue):
+		self.lFirstContactMongols[lMongolCivs.index(iPlayer)] = bValue
 		
 	def getStabilityLevel(self, iPlayer):
 		return self.players[iPlayer].iStabilityLevel

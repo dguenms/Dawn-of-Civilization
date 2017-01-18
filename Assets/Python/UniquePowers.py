@@ -88,7 +88,7 @@ class UniquePowers:
 		
 		iOwner = pWinningUnit.getOwner()
 		
-		if (iOwner == iVikings and gc.getPlayer(iVikings).getCurrentEra() <= iMedieval) or pWinningUnit.getUnitType() == iMoorishCorsair:
+		if (iOwner == iVikings and gc.getGame().getGameTurn() <= getTurnForYear(1500)) or pWinningUnit.getUnitType() == iMoorishCorsair:
 			if cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA"):
 				iGold = cLosingUnit.getProductionCost() / 2
 				gc.getPlayer(iOwner).changeGold(iGold)

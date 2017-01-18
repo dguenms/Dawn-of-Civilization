@@ -418,7 +418,14 @@ class WBTeamScreen:
 		global iSelectedYield
 
 		if inputClass.getFunctionName() == "ChangeBy":
-			iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			if bRemove:
+				iChange = -screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+			else:
+				iChange = screen.getPullDownData("ChangeBy", screen.getSelectedPullDownID("ChangeBy"))
+
+		elif inputClass.getFunctionName() == "ChangeType":
+			bRemove = not bRemove
+			iChange = -iChange
 
 		elif inputClass.getFunctionName() == "CurrentPage":
 			iIndex = screen.getPullDownData("CurrentPage", screen.getSelectedPullDownID("CurrentPage"))
@@ -448,39 +455,39 @@ class WBTeamScreen:
 
 		elif inputClass.getFunctionName().find("NukeInterception") > -1:
 			if inputClass.getData1() == 1030:
-				pTeam.changeNukeInterception(min(iChange, 100 - pTeam.getNukeInterception()))
+				pTeam.changeNukeInterception(min(abs(iChange), 100 - pTeam.getNukeInterception()))
 			elif inputClass.getData1() == 1031:
-				iCount = min(iChange, pTeam.getNukeInterception())
+				iCount = min(abs(iChange), pTeam.getNukeInterception())
 				pTeam.changeNukeInterception(-iCount)
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("EnemyWW") > -1:
 			if inputClass.getData1() == 1030:
-				pTeam.changeEnemyWarWearinessModifier(iChange)
+				pTeam.changeEnemyWarWearinessModifier(abs(iChange))
 			elif inputClass.getData1() == 1031:
-				iCount = min(iChange, pTeam.getEnemyWarWearinessModifier())
+				iCount = min(abs(iChange), pTeam.getEnemyWarWearinessModifier())
 				pTeam.changeEnemyWarWearinessModifier(-iCount)
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("MasterPower") > -1:
 			if inputClass.getData1() == 1030:
-				pTeam.setMasterPower(pTeam.getMasterPower() + iChange)
+				pTeam.setMasterPower(pTeam.getMasterPower() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				pTeam.setMasterPower(max(0, pTeam.getMasterPower() - iChange))
+				pTeam.setMasterPower(max(0, pTeam.getMasterPower() - abs(iChange)))
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("VassalPower") > -1:
 			if inputClass.getData1() == 1030:
-				pTeam.setVassalPower(pTeam.getVassalPower() + iChange)
+				pTeam.setVassalPower(pTeam.getVassalPower() + abs(iChange))
 			elif inputClass.getData1() == 1031:
-				pTeam.setVassalPower(max(0, pTeam.getVassalPower() - iChange))
+				pTeam.setVassalPower(max(0, pTeam.getVassalPower() - abs(iChange)))
 			self.placeStats()
 
 		elif inputClass.getFunctionName().find("EspionageEver") > -1:
 			if inputClass.getData1() == 1030:
-				pTeam.changeEspionagePointsEver(iChange)
+				pTeam.changeEspionagePointsEver(abs(iChange))
 			elif inputClass.getData1() == 1031:
-				iCount = min(iChange, pTeam.getEspionagePointsEver())
+				iCount = min(abs(iChange), pTeam.getEspionagePointsEver())
 				pTeam.changeEspionagePointsEver(-iCount)
 			self.placeStats()
 
@@ -491,9 +498,6 @@ class WBTeamScreen:
 		elif inputClass.getFunctionName() == "WBTeamDomainMoves":
 			self.editDomain(inputClass.getData2())
 			self.placeDomains()
-
-		elif inputClass.getFunctionName() == "ChangeType":
-			bRemove = not bRemove
 
 		elif inputClass.getFunctionName() == "YieldType":
 			iSelectedYield = screen.getPullDownData("YieldType", screen.getSelectedPullDownID("YieldType"))
@@ -549,22 +553,13 @@ class WBTeamScreen:
 		return 1
 
 	def editDomain(self, item):
-		iCount = iChange
-		if bRemove:
-			iCount = -iCount
-		pTeam.changeExtraMoves(item, iCount)
+		pTeam.changeExtraMoves(item, iChange)
 
 	def editRoute(self, item):
-		iCount = iChange
-		if bRemove:
-			iCount = -iCount
-		pTeam.changeRouteChange(item, iCount)
+		pTeam.changeRouteChange(item, iChange)
 
 	def modifyImprovement(self, item):
-		iCount = iChange
-		if bRemove:
-			iCount = -iCount
-		pTeam.changeImprovementYieldChange(item, iSelectedYield, iCount)
+		pTeam.changeImprovementYieldChange(item, iSelectedYield, iChange)
 
 	def doTeamAbilities(self, i, iType):
 		if i == 0:
