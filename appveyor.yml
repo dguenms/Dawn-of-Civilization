@@ -1,0 +1,32 @@
+version: 1.14.{build}
+pull_requests:
+  do_not_increment_build_number: true
+configuration: Release
+clone_depth: 1
+init:
+- ps: >-
+    Invoke-WebRequest http://kael.civfanatics.net/files/VCToolkitSetup.exe -OutFile ${env:TEMP}\VCToolkitSetup.exe
+
+    & ${env:TEMP}\VCToolkitSetup.exe /s /v"/qb"
+
+    Start-Sleep -s 120
+
+    Invoke-WebRequest http://kael.civfanatics.net/files/msvcrt.lib -OutFile "C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib\msvcrt.lib"
+
+    Invoke-WebRequest http://kael.civfanatics.net/files/msvcrtd.lib -OutFile "C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib\msvcrtd.lib"
+
+    Invoke-WebRequest http://kael.civfanatics.net/files/msvcprt.lib -OutFile "C:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003\lib\msvcprt.lib"
+build:
+  project: CvGameCoreDLL/CvGameCoreDLL.vcxproj
+  verbosity: minimal
+artifacts:
+- path: Assets/CvGameCoreDLL.dll
+  name: CvGameCoreDLL
+notifications:
+- provider: GitHubPullRequest
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
+only_commits:
+  files:
+    - CvGameCoreDLL/
