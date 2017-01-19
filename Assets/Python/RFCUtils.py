@@ -34,15 +34,15 @@ class RFCUtils:
 	#Victory
 	def countAchievedGoals(self, iPlayer):
 		iResult = 0
-		for j in range(3):
-			if data.players[iPlayer].lGoals[j] == 1:
+		for iGoal in range(3):
+			if data.players[iPlayer].lGoals[iGoal] == 1:
 				iResult += 1
 		return iResult
 		
 	def getGoalsColor(self, iPlayer): #by CyberChrist
 		iCol = 0
-		for j in range(3):
-			if data.players[iPlayer].lGoals[j] == 0:
+		for iGoal in range(3):
+			if data.players[iPlayer].lGoals[iGoal] == 0:
 				iCol += 1
 		return tCol[iCol]
 
@@ -53,38 +53,18 @@ class RFCUtils:
 
 	# Leoreth - finds an adjacent land plot without enemy units that's closest to the player's capital (for the Roman UP)
 	def findNearestLandPlot(self, tPlot, iPlayer):
-		x, y = tPlot
 		plotList = []
 
-		for i in range(x - 1, x + 2):
-			for j in range(y - 1, y + 2):
-				pPlot = gc.getMap().plot( i, j )
-				if (not pPlot.isWater() and not pPlot.isPeak()):
-					if ( not pPlot.isUnit() ):
-						plotList.append(pPlot)
+		for (x, y) in self.surroundingPlots(tPlot, 1):
+			pPlot = gc.getMap().plot(x, y)
+			if not pPlot.isWater() and not pPlot.isPeak():
+				if not pPlot.isUnit():
+					plotList.append(pPlot)
 
-		#if (len(plotList) > 0):
-		#	iDistance = 1000
-		#	pCapital = gc.getPlayer(iPlayer).getCapitalCity()
-		#	iCapX = pCapital.getX()
-		#	iCapY = pCapital.getY()
-		#	for plot in plotList:
-		#		plotX = plot.getX()
-		#		plotY = plot.getY()
-		#		iTempDist = self.calculateDistance(iCapX, plotX, iCapY, plotY)
-#
-		#		if iTempDist < iDistance:
-		#			nearestPlot = plot
-		#			iDistance = iTempDist
-
-		#	return nearestPlot
-
-		#return (None)
-
-		if (len(plotList) > 0):
+		if plotList:
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'land plot')
 			result = plotList[rndNum]
-			if (result):
+			if result:
 				return ((result.getX(), result.getY()))
 		# if no plot is found, return that player's capital
 		return Areas.getCapital(iPlayer)
@@ -124,25 +104,25 @@ class RFCUtils:
 	#AIWars
 	def checkUnitsInEnemyTerritory(self, iCiv1, iCiv2): 
 		unitList = PyPlayer(iCiv1).getUnitList()
-		if(len(unitList)):
+		if unitList:
 			for unit in unitList:
 				iX = unit.getX()
 				iY = unit.getY()
-				if (gc.getMap().plot( iX, iY ).getOwner() == iCiv2):
+				if gc.getMap().plot( iX, iY ).getOwner() == iCiv2:
 					return True
 		return False
 
 	#AIWars
 	def restorePeaceAI(self, iMinorCiv, bOpenBorders):
 		teamMinor = gc.getTeam(gc.getPlayer(iMinorCiv).getTeam())
-		for iActiveCiv in range( iNumActivePlayers ):
-			if (gc.getPlayer(iActiveCiv).isAlive() and not gc.getPlayer(iActiveCiv).isHuman()):
-				if (teamMinor.isAtWar(iActiveCiv)):
+		for iActiveCiv in range(iNumActivePlayers):
+			if gc.getPlayer(iActiveCiv).isAlive() and not gc.getPlayer(iActiveCiv).isHuman():
+				if teamMinor.isAtWar(iActiveCiv):
 					bActiveUnitsInIndependentTerritory = self.checkUnitsInEnemyTerritory(iActiveCiv, iMinorCiv)
 					bIndependentUnitsInActiveTerritory = self.checkUnitsInEnemyTerritory(iMinorCiv, iActiveCiv)
-					if (not bActiveUnitsInIndependentTerritory and not bIndependentUnitsInActiveTerritory):
+					if not bActiveUnitsInIndependentTerritory and not bIndependentUnitsInActiveTerritory:
 						teamMinor.makePeace(iActiveCiv)
-						if (bOpenBorders):
+						if bOpenBorders:
 							teamMinor.signOpenBorders(iActiveCiv)
 	#AIWars
 	def restorePeaceHuman(self, iMinorCiv, bOpenBorders): 
@@ -152,23 +132,20 @@ class RFCUtils:
 			if teamMinor.isAtWar(iHuman):
 				bActiveUnitsInIndependentTerritory = self.checkUnitsInEnemyTerritory(iHuman, iMinorCiv)
 				bIndependentUnitsInActiveTerritory = self.checkUnitsInEnemyTerritory(iMinorCiv, iHuman)
-				if (not bActiveUnitsInIndependentTerritory and not bIndependentUnitsInActiveTerritory):
+				if not bActiveUnitsInIndependentTerritory and not bIndependentUnitsInActiveTerritory:
 					teamMinor.makePeace(iHuman)
-				return
 	#AIWars
 	def minorWars(self, iMinorCiv):
 		teamMinor = gc.getTeam(gc.getPlayer(iMinorCiv).getTeam())
 		for city in self.getCityList(iMinorCiv):
 			x = city.getX()
 			y = city.getY()
-			for iActiveCiv in range( iNumActivePlayers ):
-				if (gc.getPlayer(iActiveCiv).isAlive() and not gc.getPlayer(iActiveCiv).isHuman()):
-					if (gc.getPlayer(iActiveCiv).getSettlerValue(x, y) >= 90 or gc.getPlayer(iActiveCiv).getWarValue(x, y) >= 6):
-						if (not teamMinor.isAtWar(iActiveCiv)):
+			for iActiveCiv in range(iNumActivePlayers):
+				if gc.getPlayer(iActiveCiv).isAlive() and not gc.getPlayer(iActiveCiv).isHuman():
+					if gc.getPlayer(iActiveCiv).getSettlerValue(x, y) >= 90 or gc.getPlayer(iActiveCiv).getWarValue(x, y) >= 6:
+						if not teamMinor.isAtWar(iActiveCiv):
 							teamMinor.declareWar(iActiveCiv, False, WarPlanTypes.WARPLAN_LIMITED)
 							print ("Minor war", city.getName(), gc.getPlayer(iActiveCiv).getCivilizationAdjective(0))
-
-
 
 
 	#RiseAndFall, Stability
@@ -201,9 +178,9 @@ class RFCUtils:
 
 	#RiseAndFall
 	def updateMinorTechs( self, iMinorCiv, iMajorCiv):
-		for t in range(iNumTechs):
-			if (gc.getTeam(gc.getPlayer(iMajorCiv).getTeam()).isHasTech(t)):
-					gc.getTeam(gc.getPlayer(iMinorCiv).getTeam()).setHasTech(t, True, iMinorCiv, False, False)
+		for iTech in range(iNumTechs):
+			if (gc.getTeam(gc.getPlayer(iMajorCiv).getTeam()).isHasTech(iTech)):
+					gc.getTeam(gc.getPlayer(iMinorCiv).getTeam()).setHasTech(iTech, True, iMinorCiv, False, False)
 
 
 	#RiseAndFall, Religions, Congresses, UniquePowers
@@ -216,8 +193,6 @@ class RFCUtils:
 				unit.setName(CyTranslator().getText(sAdj, ()) + ' ' + unit.getName())
 			if iExp > 0:
 				unit.changeExperience(iExp, 100, False, False, False)
-				
-		#return unit
 
 	def makeUnitAI(self, iUnit, iPlayer, tCoords, iAI, iNum, sAdj=""): #by LOQ, modified by Leoreth
 		'Makes iNum units for player iPlayer of the type iUnit at tCoords.'
@@ -229,9 +204,6 @@ class RFCUtils:
 
 	#RiseAndFall, Religions, Congresses
 	def getHumanID(self):
-##		for iCiv in range(iNumPlayers):
-##			if (gc.getPlayer(iCiv).isHuman()):
-##				return iCiv
 		return gc.getGame().getActivePlayer()
 
 
@@ -246,9 +218,9 @@ class RFCUtils:
 		for i in range(iNumUnitsInAPlot):
 			unit = plotCity.getUnit(j)
 			unitType = unit.getUnitType()
-			if (unit.getOwner() == iOldOwner):
+			if unit.getOwner() == iOldOwner:
 				unit.kill(False, iBarbarian)
-				if (iNewOwner < iNumActivePlayers or unitType > iSettler):
+				if iNewOwner < iNumActivePlayers or unitType > iSettler:
 					self.makeUnit(unitType, iNewOwner, [0, 67], 1)
 			else:
 				j += 1
@@ -257,7 +229,7 @@ class RFCUtils:
 		#moves new units back in their place
 		print ("tCityPlot After", tCityPlot)
 		tempPlot = gc.getMap().plot(0,67)
-		if (tempPlot.getNumUnits() != 0):
+		if tempPlot.getNumUnits() != 0:
 			iNumUnitsInAPlot = tempPlot.getNumUnits()
 			#print ("iNumUnitsInAPlot", iNumUnitsInAPlot)
 			for i in range(iNumUnitsInAPlot):
@@ -273,8 +245,8 @@ class RFCUtils:
 			plot = gc.getMap().plot(x, y)
 			iNumUnits = plot.getNumUnits()
 			if iNumUnits > 0:
-				for i in range(iNumUnits):
-					unit = plot.getUnit(i)
+				for iUnit in range(iNumUnits):
+					unit = plot.getUnit(iUnit)
 					if unit.getOwner() == iPlayer:
 						lUnits.append(unit)
 			for unit in lUnits:
@@ -289,12 +261,12 @@ class RFCUtils:
 		for (x, y) in lPlots:
 			killPlot = gc.getMap().plot(x,y)
 			iNumUnitsInAPlot = killPlot.getNumUnits()
-			if (iNumUnitsInAPlot):
+			if iNumUnitsInAPlot > 0:
 				bRevealedZero = False
-				if (gc.getMap().plot(0, 67).isRevealed(iNewOwner, False)):
+				if gc.getMap().plot(0, 67).isRevealed(iNewOwner, False):
 					bRevealedZero = True
 				#print ("killplot", x, y)
-				if (bSkipPlotCity == True) and (killPlot.isCity()):
+				if bSkipPlotCity  and killPlot.isCity():
 					#print (killPlot.isCity())
 					#print 'do nothing'
 					pass
@@ -304,7 +276,7 @@ class RFCUtils:
 					for i in range(iNumUnitsInAPlot):
 						unit = killPlot.getUnit(j)
 						#print ("killplot", x, y, unit.getUnitType(), unit.getOwner(), "j", j)
-						if (unit.getOwner() == iOldOwner):
+						if unit.getOwner() == iOldOwner:
 							# Leoreth: Italy shouldn't flip so it doesn't get too strong by absorbing French or German armies attacking Rome
 							if iNewOwner == iItaly and iOldOwner < iNumPlayers:
 								unit.setXYOld(oldCapital.getX(), oldCapital.getY())
@@ -325,7 +297,7 @@ class RFCUtils:
 							j += 1
 					tempPlot = gc.getMap().plot(0,67)
 					#moves new units back in their place
-					if (tempPlot.getNumUnits() != 0):
+					if tempPlot.getNumUnits() != 0:
 						iNumUnitsInAPlot = tempPlot.getNumUnits()
 						for i in range(iNumUnitsInAPlot):
 							unit = tempPlot.getUnit(0)
@@ -348,12 +320,12 @@ class RFCUtils:
 		An empty list will cause the flip to always happen."""
 		pNewOwner = gc.getPlayer(iNewOwner)
 		city = gc.getMap().plot(tCityPlot[0], tCityPlot[1]).getPlotCity()
-		if (gc.getMap().plot(tCityPlot[0], tCityPlot[1]).isCity()):
+		if gc.getMap().plot(tCityPlot[0], tCityPlot[1]).isCity():
 			if not city.isNone():
 				iOldOwner = city.getOwner()
-				if (iOldOwner in iOldOwners or not iOldOwners):
+				if iOldOwner in iOldOwners or not iOldOwners:
 
-					if (bKillUnits):
+					if bKillUnits:
 						killPlot = gc.getMap().plot( tCityPlot[0], tCityPlot[1] )
 						for i in range(killPlot.getNumUnits()):
 							unit = killPlot.getUnit(0)
@@ -393,116 +365,76 @@ class RFCUtils:
 		city = pCity.getPlotCity()
 
 		#city
-		if (pCity.isCity()):
+		if pCity.isCity():
 			iCurrentCityCulture = city.getCulture(iOldOwner)
 			city.setCulture(iOldOwner, iCurrentCityCulture*(100-iCulturePercent)/100, False)
-			if (iNewOwner != iBarbarian):
+			if iNewOwner != iBarbarian:
 				city.setCulture(iBarbarian, 0, True)
 			city.setCulture(iNewOwner, iCurrentCityCulture*iCulturePercent/100, False)
-			if (city.getCulture(iNewOwner) <= 10):
+			if city.getCulture(iNewOwner) <= 10:
 				city.setCulture(iNewOwner, 20, False)
 
 		#halve barbarian culture in a broader area
-		if (bBarbarian2x2Decay or bBarbarian2x2Conversion):
+		if bBarbarian2x2Decay or bBarbarian2x2Conversion:
 			if iNewOwner not in [iBarbarian, iIndependent, iIndependent2]:
-				for x in range(tCityPlot[0]-2, tCityPlot[0]+3):	# from x-2 to x+2
-					for y in range(tCityPlot[1]-2, tCityPlot[1]+3):	# from y-2 to y+2				
-						iPlotBarbCulture = gc.getMap().plot(x, y).getCulture(iBarbarian)
-						if (iPlotBarbCulture > 0):
-							if (gc.getMap().plot(x, y).getPlotCity().isNone() or (x==tCityPlot[0] and y==tCityPlot[1])):
-								if (bBarbarian2x2Decay):
-									gc.getMap().plot(x, y).setCulture(iBarbarian, iPlotBarbCulture/4, True)
-								if (bBarbarian2x2Conversion):
-									gc.getMap().plot(x, y).setCulture(iBarbarian, 0, True)
-									gc.getMap().plot(x, y).setCulture(iNewOwner, iPlotBarbCulture, True)
-						iPlotIndependentCulture = gc.getMap().plot(x, y).getCulture(iIndependent)
-						if (iPlotIndependentCulture > 0):
-							if (gc.getMap().plot(x, y).getPlotCity().isNone() or (x==tCityPlot[0] and y==tCityPlot[1])):
-								if (bBarbarian2x2Decay):
-									gc.getMap().plot(x, y).setCulture(iIndependent, iPlotIndependentCulture/4, True)
-								if (bBarbarian2x2Conversion):
-									gc.getMap().plot(x, y).setCulture(iIndependent, 0, True)
-									gc.getMap().plot(x, y).setCulture(iNewOwner, iPlotIndependentCulture, True)
-						iPlotIndependent2Culture = gc.getMap().plot(x, y).getCulture(iIndependent2)
-						if (iPlotIndependent2Culture > 0):
-							if (gc.getMap().plot(x, y).getPlotCity().isNone() or (x==tCityPlot[0] and y==tCityPlot[1])):
-								if (bBarbarian2x2Decay):
-									gc.getMap().plot(x, y).setCulture(iIndependent2, iPlotIndependent2Culture/4, True)
-								if (bBarbarian2x2Conversion):
-									gc.getMap().plot(x, y).setCulture(iIndependent2, 0, True)
-									gc.getMap().plot(x, y).setCulture(iNewOwner, iPlotIndependent2Culture, True)
+				for (x, y) in self.surroundingPlots(tCityPlot, 2):
+					bCity = gc.getMap().plot(x, y).getPlotCity().isNone() or (x, y) == tCityPlot
+					if bCity:
+						for iMinor in [iBarbarian, iIndependent, iIndependent2]:
+							iMinorCulture = gc.getMap().plot(x, y).getCulture(iMinor)
+							if iMinorCulture > 0:
+								if bBarbarian2x2Decay:
+									gc.getMap().plot(x, y).setCulture(iMinor, iMinorCulture/4, True)
+								if bBarbarian2x2Conversion:
+									gc.getMap().plot(x, y).setCulture(iMinor, 0, True)
+									gc.getMap().plot(x, y).setCulture(iNewOwner, iMinorCulture, True)
 									
 		#plot
-		for x in range(tCityPlot[0]-1, tCityPlot[0]+2):	# from x-1 to x+1
-			for y in range(tCityPlot[1]-1, tCityPlot[1]+2):	# from y-1 to y+1
-				pPlot = gc.getMap().plot(x, y)
+		for (x, y) in self.surroundingPlots(tCityPlot, 1):
+			pPlot = gc.getMap().plot(x, y)
+			
+			iCurrentPlotCulture = pPlot.getCulture(iOldOwner)
+
+			if pPlot.isCity():
+				pPlot.setCulture(iNewOwner, iCurrentPlotCulture*iCulturePercent/100, True)
+				pPlot.setCulture(iOldOwner, iCurrentPlotCulture*(100-iCulturePercent)/100, True)
+			else:
+				pPlot.setCulture(iNewOwner, iCurrentPlotCulture*iCulturePercent/3/100, True)
+				pPlot.setCulture(iOldOwner, iCurrentPlotCulture*(100-iCulturePercent/3)/100, True)
 				
-				iCurrentPlotCulture = pPlot.getCulture(iOldOwner)
-
-				if (pPlot.isCity()):
-					pPlot.setCulture(iNewOwner, iCurrentPlotCulture*iCulturePercent/100, True)
-					pPlot.setCulture(iOldOwner, iCurrentPlotCulture*(100-iCulturePercent)/100, True)
+				if bAlwaysOwnPlots:
+					pPlot.setOwner(iNewOwner)
 				else:
-					pPlot.setCulture(iNewOwner, iCurrentPlotCulture*iCulturePercent/3/100, True)
-					pPlot.setCulture(iOldOwner, iCurrentPlotCulture*(100-iCulturePercent/3)/100, True)
-
-				#cut other players culture
-##				for iCiv in range(iNumPlayers):
-##					if (iCiv != iNewOwner and iCiv != iOldOwner):
-##						iPlotCulture = gc.getMap().plot(x, y).getCulture(iCiv)
-##						if (iPlotCulture > 0):
-##							gc.getMap().plot(x, y).setCulture(iCiv, iPlotCulture/3, True)
-							
-				#print (x, y, pPlot.getCulture(iNewOwner), ">", pPlot.getCulture(iOldOwner))
-
-				if (not pPlot.isCity()):
-					if (bAlwaysOwnPlots):
+					if pPlot.getCulture(iNewOwner)*4 > pPlot.getCulture(iOldOwner):
 						pPlot.setOwner(iNewOwner)
-					else:
-						if (pPlot.getCulture(iNewOwner)*4 > pPlot.getCulture(iOldOwner)):
-							pPlot.setOwner(iNewOwner)					
-					#print ("NewOwner", pPlot.getOwner())
+				#print ("NewOwner", pPlot.getOwner())
+						
+			#print (x, y, pPlot.getCulture(iNewOwner), ">", pPlot.getCulture(iOldOwner))
 
 
 
 	#handler
-	def spreadMajorCulture(self, iMajorCiv, iX, iY):  
-		
-		for x in range(iX-3, iX+4):	# from x-4 to x+4
-			for y in range(iY-3, iY+4):	# from y-4 to y+4
-				pPlot = gc.getMap().plot(x, y)
-				if (pPlot.isCity()):
-					city = pPlot.getPlotCity()
-					if (city.getOwner() >= iNumMajorPlayers):
-						iMinor = city.getOwner()
-						iDen = 25
-						if (gc.getPlayer(iMajorCiv).getSettlerValue(x, y) >= 400):
-							iDen = 10
-						elif (gc.getPlayer(iMajorCiv).getSettlerValue(x, y) >= 150):
-							iDen = 15
-							
-						iMinorCityCulture = city.getCulture(iMinor)
-						city.setCulture(iMajorCiv, iMinorCityCulture/iDen, True)
+	def spreadMajorCulture(self, iMajorCiv, iX, iY):
+		for (x, y) in self.surroundingPlots((iX, iY), 4):
+			pPlot = gc.getMap().plot(x, y)
+			if pPlot.isCity():
+				city = pPlot.getPlotCity()
+				if city.getOwner() >= iNumMajorPlayers:
+					iMinor = city.getOwner()
+					iDen = 25
+					if gc.getPlayer(iMajorCiv).getSettlerValue(x, y) >= 400:
+						iDen = 10
+					elif gc.getPlayer(iMajorCiv).getSettlerValue(x, y) >= 150:
+						iDen = 15
 						
-						iMinorPlotCulture = pPlot.getCulture(iMinor)
-						pPlot.setCulture(iMajorCiv, iMinorPlotCulture/iDen, True)
-						
-		#plot = gc.getMap().plot(iX, iY)
-		#if plot.isCity():
-		#	city = plot.getPlotCity()
-		#	iCityCulture = 0
-		#	iPlotCulture = 0
-		#	for iMinor in range(iNumPlayers, iNumTotalPlayersB):
-		#		iCityCulture += city.getCulture(iMinor)
-		#		iPlotCulture += plot.getCulture(iMinor)
-		#		city.setCulture(iMinor, 0, True)
-		#		plot.setCulture(iMinor, 0, True)
-		#	city.changeCulture(iMajorCiv, iCityCulture, True)
-		#	plot.changeCulture(iMajorCiv, iPlotCulture, True)
+					iMinorCityCulture = city.getCulture(iMinor)
+					city.setCulture(iMajorCiv, iMinorCityCulture/iDen, True)
+					
+					iMinorPlotCulture = pPlot.getCulture(iMinor)
+					pPlot.setCulture(iMajorCiv, iMinorPlotCulture/iDen, True)
 
 	#UniquePowers
 	def convertPlotCulture(self, plot, iPlayer, iPercent, bOwner):
-	
 		if plot.isCity():
 			city = plot.getPlotCity()
 			iConvertedCulture = 0
@@ -523,33 +455,8 @@ class RFCUtils:
 				
 		plot.changeCulture(iPlayer, iConvertedCulture, True)
 		
-		if bOwner: plot.setOwner(iPlayer)
-		
-		#if (plot.isCity()):
-		#	city = plot.getPlotCity()
-		#	iCivCulture = city.getCulture(iCiv)
-		#	iLoopCivCulture = 0
-		#	for iLoopCiv in range(iNumTotalPlayers):
-		#		if (iLoopCiv != iCiv):
-		#			iLoopCivCulture += city.getCulture(iLoopCiv)
-		#			city.setCulture(iLoopCiv, city.getCulture(iLoopCiv)*(100-iPercent)/100, True)
-		#	city.setCulture(iCiv, iCivCulture + iLoopCivCulture, True)  
-	
-##		for iLoopCiv in range(iNumTotalPlayers):
-##			if (iLoopCiv != iCiv):
-##				iLoopCivCulture = plot.getCulture(iLoopCiv)
-##				iCivCulture = plot.getCulture(iCiv)
-##				plot.setCulture(iLoopCiv, iLoopCivCulture*(100-iPercent)/100, True)
-##				plot.setCulture(iCiv, iCivCulture + iLoopCivCulture*iPercent/100, True)
-		#iCivCulture = plot.getCulture(iCiv)
-		#iLoopCivCulture = 0
-		#for iLoopCiv in range(iNumTotalPlayers):
-		#	if (iLoopCiv != iCiv):
-		#		iLoopCivCulture += plot.getCulture(iLoopCiv)
-		#		plot.setCulture(iLoopCiv, plot.getCulture(iLoopCiv)*(100-iPercent)/100, True)
-		#plot.setCulture(iCiv, iCivCulture + iLoopCivCulture, True)
-		#if (bOwner == True):
-		#	plot.setOwner(iCiv)
+		if bOwner:
+			plot.setOwner(iPlayer)
 
 	#DynamicCivs
 	def getMaster(self, iCiv):
@@ -560,48 +467,42 @@ class RFCUtils:
 		return -1
 
 
-
-
-
-
-
-
 	#Congresses, RiseAndFall
 	def pushOutGarrisons(self, tCityPlot, iOldOwner):
+		x, y = tCityPlot
 		tDestination = (-1, -1)
-		for x in range(tCityPlot[0]-2, tCityPlot[0]+3):
-			for y in range(tCityPlot[1]-2, tCityPlot[1]+3):
-				pDestination = gc.getMap().plot(x, y)
-				if (pDestination.getOwner() == iOldOwner and (not pDestination.isWater()) and (not pDestination.isImpassable())):
-					tDestination = (x, y)
-					break
-					break
-		if (tDestination != (-1, -1)):
-			plotCity = gc.getMap().plot(tCityPlot[0], tCityPlot[1])
+		for (i, j) in self.surroundingPlots(tCityPlot, 3):
+			pDestination = gc.getMap().plot(i, j)
+			if pDestination.getOwner() == iOldOwner and not pDestination.isWater() and not pDestination.isImpassable():
+				tDestination = (i, j)
+				break
+		if tDestination != (-1, -1):
+			plotCity = gc.getMap().plot(x, y)
 			iNumUnitsInAPlot = plotCity.getNumUnits()
 			j = 0
 			for i in range(iNumUnitsInAPlot):
 				unit = plotCity.getUnit(j)
-				if (unit.getDomainType() == 2): #land unit
+				if unit.getDomainType() == 2: #land unit
 					unit.setXYOld(tDestination[0], tDestination[1])
 				else:
 					j += 1
 
 	def relocateGarrisons(self, tCityPlot, iOldOwner):
+		x, y = tCityPlot
 		if iOldOwner < iNumPlayers:
 			pCity = self.getRandomCity(iOldOwner)
 			if pCity:
-				plot = gc.getMap().plot(tCityPlot[0],tCityPlot[1])
+				plot = gc.getMap().plot(x, y)
 				iNumUnits = plot.getNumUnits()
 				j = 0
 				for i in range(iNumUnits):
 					unit = plot.getUnit(j)
-					if (unit.getDomainType() == 2): #land
+					if unit.getDomainType() == 2: #land
 						unit.setXYOld(pCity.getX(), pCity.getY())
 					else:
 						j += 1
 		else:
-			plot = gc.getMap().plot(tCityPlot[0], tCityPlot[1])
+			plot = gc.getMap().plot(x, y)
 			iNumUnits = plot.getNumUnits()
 			for i in range(iNumUnits):
 				unit = plot.getUnit(i)
@@ -613,11 +514,9 @@ class RFCUtils:
 			if plot.isCity():
 				pCity = plot.getPlotCity()
 				if pCity.getOwner() != iPlayer:
-					x = pCity.getX()
-					y = pCity.getY()
-					self.relocateGarrisons((x,y), pCity.getOwner())
-					self.relocateSeaGarrisons((x,y), pCity.getOwner())
-					self.createGarrisons((x,y), pCity.getOwner(), 2)
+					self.relocateGarrisons((x, y), pCity.getOwner())
+					self.relocateSeaGarrisons((x, y), pCity.getOwner())
+					self.createGarrisons((x, y), pCity.getOwner(), 2)
 			else:
 				iNumUnits = plot.getNumUnits()
 				j = 0
@@ -633,25 +532,24 @@ class RFCUtils:
 				
 	#Congresses, RiseAndFall
 	def relocateSeaGarrisons(self, tCityPlot, iOldOwner):
+		x, y = tCityPlot
 		tDestination = (-1, -1)
 		for city in self.getCityList(iOldOwner):
-			if (city.isCoastalOld()):
+			if city.isCoastalOld():
 				tDestination = (city.getX(), city.getY())
-		if (tDestination == (-1, -1)):		    
-			for x in range(tCityPlot[0]-12, tCityPlot[0]+12):
-				for y in range(tCityPlot[1]-12, tCityPlot[1]+12):
-					pDestination = gc.getMap().plot(x, y)
-					if (pDestination.isWater()):
-						tDestination = (x, y)
-						break
-						break
-		if (tDestination != (-1, -1)):
-			plotCity = gc.getMap().plot(tCityPlot[0], tCityPlot[1])
+		if tDestination == (-1, -1):
+			for (i, j) in self.surroundingPlots(tCityPlot, 12):
+				pDestination = gc.getMap().plot(i, j)
+				if pDestination.isWater():
+					tDestination = (i, j)
+					break
+		if tDestination != (-1, -1):
+			plotCity = gc.getMap().plot(x, y)
 			iNumUnitsInAPlot = plotCity.getNumUnits()
 			j = 0
 			for i in range(iNumUnitsInAPlot):
 				unit = plotCity.getUnit(j)
-				if (unit.getDomainType() == 0): #sea unit
+				if unit.getDomainType() == 0: #sea unit
 					unit.setXYOld(tDestination[0], tDestination[1])
 				else:
 					j += 1
@@ -659,18 +557,17 @@ class RFCUtils:
 
 	#Congresses, RiseAndFall
 	def createGarrisons(self, tCityPlot, iNewOwner, iNumUnits):
-		plotCity = gc.getMap().plot(tCityPlot[0], tCityPlot[1])
-		city = plotCity.getPlotCity()
+		x, y = tCityPlot
+		plotCity = gc.getMap().plot(x, y)
 		iNumUnitsInAPlot = plotCity.getNumUnits()
-		pCiv = gc.getPlayer(iNewOwner)
 
 		iUnitType = self.getBestDefender(iNewOwner)
 
-		self.makeUnit(iUnitType, iNewOwner, [tCityPlot[0], tCityPlot[1]], iNumUnits)
+		self.makeUnit(iUnitType, iNewOwner, (x, y), iNumUnits)
 
 
 	def resetUHV(self, iPlayer):
-		if (iPlayer < iNumMajorPlayers):
+		if iPlayer < iNumMajorPlayers:
 			for i in range(3):
 				if data.players[iPlayer].lGoals[i] == -1:
 					data.players[iPlayer].lGoals[i] = 0
@@ -679,8 +576,6 @@ class RFCUtils:
 		for city in self.getCityList(iCiv):
 			if city.hasBuilding(iPlague):
 				city.setHasRealBuilding(iPlague, False)
-
-
 
 
 	#AIWars, by CyberChrist
@@ -710,37 +605,35 @@ class RFCUtils:
 		return result, tPaintedList
 
 	#Barbs, RiseAndFall
-	def outerInvasion( self, tCoords, result, argsList ):
+	def outerInvasion(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.isHills() or pPlot.isFlatlands() ):
-			if (pPlot.getTerrainType() != iMarsh) and (pPlot.getFeatureType() != iJungle):
-				if ( not pPlot.isCity() and not pPlot.isUnit() ):
-					if (pPlot.countTotalCulture() == 0 ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isHills() or pPlot.isFlatlands():
+			if pPlot.getTerrainType() != iMarsh and pPlot.getFeatureType() != iJungle:
+				if not pPlot.isCity() and not pPlot.isUnit():
+					if pPlot.countTotalCulture() == 0:
 						# this is a good plot, so paint it and continue search
 						return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
 
 	#Barbs
-	def innerSeaSpawn( self, tCoords, result, argsList ):
+	def innerSeaSpawn(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's water and it isn't occupied by any unit. Unit check extended to adjacent plots"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.isWater()):
-			if ( not pPlot.isCity() and not pPlot.isUnit() and pPlot.area().getNumTiles() > 10 ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isWater():
+			if not pPlot.isUnit() and pPlot.area().getNumTiles() > 10:
 				bClean = True
-				for x in range(tCoords[0] - 1, tCoords[0] + 2):	# from x-1 to x+1
-					for y in range(tCoords[1] - 1, tCoords[1] + 2):	# from y-1 to y+1
-						if (pPlot.getNumUnits() != 0):
-							bClean = False
-							break
-							break
+				for (x, y) in self.surroundingPlots(tCoords, 1):
+					if pPlot.getNumUnits() != 0:
+						bClean = False
+						break
 				if bClean:
 					# this is a good plot, so paint it and continue search
 					return (None, bPaint, bContinue)
@@ -748,44 +641,40 @@ class RFCUtils:
 		return (None, not bPaint, bContinue)
 
 	#Barbs
-	def outerSeaSpawn( self, tCoords, result, argsList ):
+	def outerSeaSpawn(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's water and it isn't occupied by any unit and if it isn't a civ's territory. Unit check extended to adjacent plots"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.isWater()):
-			if ( not pPlot.isCity() and not pPlot.isUnit() and pPlot.area().getNumTiles() > 10):
-				if (pPlot.countTotalCulture() == 0 ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isWater():
+			if not pPlot.isUnit() and pPlot.area().getNumTiles() > 10:
+				if pPlot.countTotalCulture() == 0:
 					bClean = True
-					for x in range(tCoords[0] - 1, tCoords[0] + 2):	# from x-1 to x+1
-						for y in range(tCoords[1] - 1, tCoords[1] + 2):	# from y-1 to y+1
-							if (pPlot.getNumUnits() != 0):
-								bClean = False
-								break
-								break
+					for (x, y) in self.surroundingPlots(tCoords, 1):
+						if pPlot.getNumUnits() != 0:
+							bClean = False
+							break
 					if bClean:
 						# this is a good plot, so paint it and continue search
 						return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
 
-	def outerCoastSpawn( self, tCoords, result, argsList ):
+	def outerCoastSpawn(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's water and it isn't occupied by any unit and if it isn't a civ's territory. Unit check extended to adjacent plots"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.getTerrainType() == iCoast):
-			if ( not pPlot.isCity() and not pPlot.isUnit() and pPlot.area().getNumTiles() > 10 ):
-				if (pPlot.countTotalCulture() == 0 ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.getTerrainType() == iCoast:
+			if not pPlot.isUnit() and pPlot.area().getNumTiles() > 10:
+				if pPlot.countTotalCulture() == 0:
 					bClean = True
-					for x in range(tCoords[0] - 1, tCoords[0] + 2):	# from x-1 to x+1
-						for y in range(tCoords[1] - 1, tCoords[1] + 2):	# from y-1 to y+1
-							if (pPlot.getNumUnits() != 0):
-								bClean = False
-								break
-								break
+					for (x, y) in self.surroundingPlots(tCoords, 1):
+						if pPlot.getNumUnits() != 0:
+							bClean = False
+							break
 					if bClean:
 						# this is a good plot, so paint it and continue search
 						return (None, bPaint, bContinue)
@@ -793,41 +682,39 @@ class RFCUtils:
 		return (None, not bPaint, bContinue)
 
 	#Barbs
-	def outerSpawn( self, tCoords, result, argsList ):
+	def outerSpawn(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory.
 		Unit check extended to adjacent plots"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.isHills() or pPlot.isFlatlands() ):
-			if (pPlot.getTerrainType() != iMarsh) and (pPlot.getFeatureType() != iJungle):
-				if ( not pPlot.isCity() and not pPlot.isUnit() ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isHills() or pPlot.isFlatlands():
+			if pPlot.getTerrainType() != iMarsh and pPlot.getFeatureType() != iJungle:
+				if not pPlot.isCity() and not pPlot.isUnit():
 					bClean = True
-					for x in range(tCoords[0] - 1, tCoords[0] + 2):	# from x-1 to x+1
-						for y in range(tCoords[1] - 1, tCoords[1] + 2):	# from y-1 to y+1
-							if (pPlot.getNumUnits() != 0):
-								bClean = False
-								break
-								break
+					for (x, y) in self.surroundingPlots(tCoords, 1):
+						if pPlot.getNumUnits() != 0:
+							bClean = False
+							break
 					if bClean:
-						if (pPlot.countTotalCulture() == 0 ):
+						if pPlot.countTotalCulture() == 0:
 							# this is a good plot, so paint it and continue search
 							return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
 
 	#RiseAndFall
-	def innerInvasion( self, tCoords, result, argsList ):
+	def innerInvasion(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.isHills() or pPlot.isFlatlands() ):
-			if (pPlot.getTerrainType() != iMarsh) and (pPlot.getFeatureType() != iJungle):
-				if ( not pPlot.isCity() and not pPlot.isUnit() ):
-					if (pPlot.getOwner() in argsList ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isHills() or pPlot.isFlatlands():
+			if pPlot.getTerrainType() != iMarsh and pPlot.getFeatureType() != iJungle:
+				if not pPlot.isCity() and not pPlot.isUnit():
+					if pPlot.getOwner() in argsList:
 						# this is a good plot, so paint it and continue search
 						return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
@@ -844,42 +731,40 @@ class RFCUtils:
 					return (None, bPaint, bContinue)
 		return (None, not bPaint, bContinue)
 
-	def innerSpawn( self, tCoords, result, argsList ):
+	def innerSpawn(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.isHills() or pPlot.isFlatlands() ):
-			if (pPlot.getTerrainType() != iMarsh) and (pPlot.getFeatureType() != iJungle):
-				if ( not pPlot.isCity() and not pPlot.isUnit() ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isHills() or pPlot.isFlatlands():
+			if pPlot.getTerrainType() != iMarsh and pPlot.getFeatureType() != iJungle:
+				if not pPlot.isCity() and not pPlot.isUnit():
 					bClean = True
-					for x in range(tCoords[0] - 1, tCoords[0] + 2):	# from x-1 to x+1
-						for y in range(tCoords[1] - 1, tCoords[1] + 2):	# from y-1 to y+1
-							if (pPlot.getNumUnits() != 0):
-								bClean = False
-								break
-								break
+					for (x, y) in self.surroundingPlots(tCoords, 1):
+						if (pPlot.getNumUnits() != 0):
+							bClean = False
+							break
 					if bClean:
-						if (pPlot.getOwner() in argsList ):
+						if pPlot.getOwner() in argsList:
 							# this is a good plot, so paint it and continue search
 							return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
 
 	#RiseAndFall
-	def goodPlots( self, tCoords, result, argsList ):
+	def goodPlots(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's hill or flatlands, it isn't desert, tundra, marsh or jungle; it isn't occupied by a unit or city and if it isn't a civ's territory.
 		Unit check extended to adjacent plots"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.isHills() or pPlot.isFlatlands() ):
-			if ( not pPlot.isImpassable()):
-				if ( not pPlot.isUnit() ):
-					if (pPlot.getTerrainType() != iDesert) and (pPlot.getTerrainType() != iTundra) and (pPlot.getTerrainType() != iMarsh) and (pPlot.getFeatureType() != iJungle):
-						if (pPlot.countTotalCulture() == 0 ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isHills() or pPlot.isFlatlands():
+			if not pPlot.isImpassable():
+				if not pPlot.isUnit():
+					if pPlot.getTerrainType() not in [iDesert, iTundra, iMarsh] and pPlot.getFeatureType() != iJungle:
+						if pPlot.countTotalCulture() == 0:
 							# this is a good plot, so paint it and continue search
 							return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
@@ -894,68 +779,68 @@ class RFCUtils:
 			return (None, bPaint, bContinue)
 		return (None, not bPaint, bContinue)
 
-	def ownedCityPlots( self, tCoords, result, argsList ):
+	def ownedCityPlots(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it contains a city belonging to the civ"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if (pPlot.getOwner() == argsList ):
-			if (pPlot.isCity()):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.getOwner() == argsList:
+			if pPlot.isCity():
 				# this is a good plot, so paint it and continue search
 				return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
 
-	def ownedCityPlotsAdjacentArea( self, tCoords, result, argsList ):
+	def ownedCityPlotsAdjacentArea(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it contains a city belonging to the civ"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
 		#print(tCoords[0], tCoords[1], pPlot.isCity(), pPlot.getOwner() == argsList[0], pPlot.isAdjacentToArea(gc.getMap().plot(argsList[1][0],argsList[1][1]).area()))
-		if (pPlot.getOwner() == argsList[0] and pPlot.isAdjacentToArea(gc.getMap().plot(argsList[1][0],argsList[1][1]).area())):
-			if (pPlot.isCity()):
+		if pPlot.getOwner() == argsList[0] and pPlot.isAdjacentToArea(gc.getMap().plot(argsList[1][0],argsList[1][1]).area()):
+			if pPlot.isCity():
 				# this is a good plot, so paint it and continue search
 				return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
 
-	def foundedCityPlots( self, tCoords, result, argsList ):
+	def foundedCityPlots(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it contains a city belonging to the civ"""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if (pPlot.isCity()):
-			if (pPlot.getPlotCity().getOriginalOwner() == argsList ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isCity():
+			if pPlot.getPlotCity().getOriginalOwner() == argsList:
 				# this is a good plot, so paint it and continue search
 				return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
 
-	def ownedPlots( self, tCoords, result, argsList ):
+	def ownedPlots(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it is in civ's territory."""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if (pPlot.getOwner() == argsList ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.getOwner() == argsList:
 			# this is a good plot, so paint it and continue search
 			return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
 		return (None, not bPaint, bContinue)
 
-	def goodOwnedPlots( self, tCoords, result, argsList ):
+	def goodOwnedPlots(self, tCoords, result, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's hill or flatlands; it isn't marsh or jungle, it isn't occupied by a unit and if it is in civ's territory."""
 		bPaint = True
 		bContinue = True
-		pPlot = gc.getMap().plot( tCoords[0], tCoords[1] )
-		if ( pPlot.isHills() or pPlot.isFlatlands() ):
-			if (pPlot.getTerrainType() != iMarsh) and (pPlot.getFeatureType() != iJungle):
-				if ( not pPlot.isCity() and not pPlot.isUnit() ):
-					    if (pPlot.getOwner() == argsList ):
+		pPlot = gc.getMap().plot(tCoords[0], tCoords[1])
+		if pPlot.isHills() or pPlot.isFlatlands():
+			if pPlot.getTerrainType() != iMarsh and pPlot.getFeatureType() != iJungle:
+				if not pPlot.isCity() and not pPlot.isUnit():
+					    if pPlot.getOwner() == argsList:
 							# this is a good plot, so paint it and continue search
 							return (None, bPaint, bContinue)
 		# not a good plot, so don't paint it but continue search
@@ -977,8 +862,8 @@ class RFCUtils:
 
 	# Leoreth - RiseAndFall
 	def clearCatapult(self, iCiv):
-		plotZero = gc.getMap().plot( 0, 0 )
-		if (plotZero.getNumUnits()):
+		plotZero = gc.getMap().plot(0, 0)
+		if plotZero.getNumUnits():
 			catapult = plotZero.getUnit(0)
 			catapult.kill(False, iCiv)
 		for (x, y) in self.surroundingPlots((0, 67), 2):
@@ -1009,13 +894,11 @@ class RFCUtils:
 
 	def getCivRectangleCities(self, iCiv, TopLeft, BottomRight):
 		cityList = []
-		for x in range(TopLeft[0], BottomRight[0]+1):
-			for y in range(TopLeft[1], BottomRight[1]+1):
-				plot = gc.getMap().plot(x,y)
-				if plot.isCity():
-					cityList.append(plot.getPlotCity())
+		for (x, y) in self.getPlotList(TopLef, BottomRight):
+			plot = gc.getMap().plot(x,y)
+			if plot.isCity():
+				cityList.append(plot.getPlotCity())
 		return cityList
-
 
 
 	def removeReligionByArea(self, lPlotList, iReligion):
@@ -1031,52 +914,46 @@ class RFCUtils:
 				city.setHasRealBuilding((iMonastery + iReligion*4), False)
 
 	def getEasternmostCity(self, iCiv):
-		pPlayer = gc.getPlayer(iCiv)
 		pResultCity = pPlayer.getCapitalCity()
-		for i in range(pPlayer.getNumCities()):
-			if pPlayer.getCity(i).getX() > pResultCity.getX():
-				pResultCity = pPlayer.getCity(i)
+		for city in self.getCityList(iCiv):
+			if city.getX() > pResultCity.getX():
+				pResultCity = city
 		return pResultCity
 
 	def getNorthernmostCity(self, iCiv):
-		pPlayer = gc.getPlayer(iCiv)
 		pResultCity = pPlayer.getCapitalCity()
-		for i in range(pPlayer.getNumCities()):
-			if pPlayer.getCity(i).getY() > pResultCity.getY():
-				pResultCity = pPlayer.getCity(i)
+		for city in self.getCityList(iCiv):
+			if city.getY() > pResultCity.getY():
+				pResultCity = city
 		return pResultCity
 
 	def getWesternmostCity(self, iCiv):
-		pPlayer = gc.getPlayer(iCiv)
 		pResultCity = pPlayer.getCapitalCity()
-		for i in range(pPlayer.getNumCities()):
-			if pPlayer.getCity(i).getX() < pResultCity.getX():
-				pResultCity = pPlayer.getCity(i)
+		for city in self.getCityList(iCiv):
+			if city.getX() < pResultCity.getX():
+				pResultCity = city
 		return pResultCity
 
 	def getFreeNeighborPlot(self, tPlot):
-		x, y = tPlot
 		plotList = []
-		for i in range(x-1, x+2):
-			for j in range(y-1, y+2):
-				if (i, j) != (x, y):
-					plot = gc.getMap().plot(i, j)
-					if (not plot.isPeak()) and (not plot.isWater()) and (not plot.isCity()) and (not plot.isUnit()):
-						plotList.append((i, j))
-		iRand = gc.getGame().getSorenRandNum(len(plotList), '')
-		return plotList[iRand]
+		for (x, y) in self.surroundingPlots(tPlot):
+			if (x, y) != tPlot:
+				plot = gc.getMap().plot(x, y)
+				if not plot.isPeak() and not plot.isWater() and not plot.isCity() and not plot.isUnit():
+					plotList.append((x, y))
+		return self.getRandomEntry(plotList)
 
-	def colonialConquest(self, iCiv, x, y):
+	def colonialConquest(self, iCiv, tPlot):
+		x, y = tPlot
 		bRifling = gc.getTeam(iCiv).isHasTech(iRifling)
-		iTargetCiv = gc.getMap().plot(x,y).getPlotCity().getOwner()
+		iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
 		lFreePlots = []
 		
-		for i in range(x-1, x+2):
-			for j in range(y-1, y+2):
-				current = gc.getMap().plot(i, j)
-				if not current.isCity() and not current.isPeak() and not current.isWater():
-					#if not current.getFeatureType() == iJungle and not current.getTerrainType() == iMarsh:
-					lFreePlots.append((i,j))
+		for (i, j) in self.surroundingPlots(tPlot, 1):
+			current = gc.getMap().plot(i, j)
+			if not current.isCity() and not current.isPeak() and not current.isWater():
+				#if not current.getFeatureType() == iJungle and not current.getTerrainType() == iMarsh:
+				lFreePlots.append((i,j))
 					
 		if iTargetCiv != -1 and not gc.getTeam(iCiv).isAtWar(iTargetCiv):
 			gc.getTeam(iCiv).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_TOTAL)
@@ -1085,8 +962,7 @@ class RFCUtils:
 		if not gc.getTeam(iCiv).isAtWar(iIndependent): gc.getTeam(iCiv).declareWar(iIndependent, True, WarPlanTypes.WARPLAN_LIMITED)
 		if not gc.getTeam(iCiv).isAtWar(iIndependent2): gc.getTeam(iCiv).declareWar(iIndependent2, True, WarPlanTypes.WARPLAN_LIMITED)
 			
-		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
-		tPlot = lFreePlots[iRand]
+		tTargetPlot = self.getRandomEntry(lFreePlots)
 		
 		if iCiv in [iSpain, iPortugal, iNetherlands]:
 			iNumUnits = 2
@@ -1100,38 +976,39 @@ class RFCUtils:
 		if self.getHumanID() != iCiv: iExp = 2
 		
 		if iSiege:
-			self.makeUnit(iSiege, iCiv, tPlot, iNumUnits, '', 2)
+			self.makeUnit(iSiege, iCiv, tTargetPlot, iNumUnits, '', 2)
 			
 		if iInfantry:
-			self.makeUnit(iInfantry, iCiv, tPlot, 2*iNumUnits, '', 2)
+			self.makeUnit(iInfantry, iCiv, tTargetPlot, 2*iNumUnits, '', 2)
 
 
-	def colonialAcquisition(self, iCiv, x, y):
+	def colonialAcquisition(self, iCiv, tPlot):
+		x, y = tPlot
 		if iCiv in [iPortugal, iSpain]:
 			iNumUnits = 1
 		elif iCiv in [iFrance, iEngland, iNetherlands]:
 			iNumUnits = 2
-		if gc.getMap().plot(x,y).isCity():
-			self.flipCity((x,y), False, True, iCiv, [])
-			self.makeUnit(iWorker, iCiv, (x,y), iNumUnits)
+		if gc.getMap().plot(x, y).isCity():
+			self.flipCity(tPlot, False, True, iCiv, [])
+			self.makeUnit(iWorker, iCiv, tPlot, iNumUnits)
 			iInfantry = self.getBestInfantry(iCiv)
 			if iInfantry:
-				self.makeUnit(iInfantry, iCiv, (x,y), iNumUnits)
+				self.makeUnit(iInfantry, iCiv, tPlot, iNumUnits)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(iMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+				self.makeUnit(iMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x, y), 1)
 		else:
-			gc.getMap().plot(x,y).setCulture(iCiv, 10, True)
-			gc.getMap().plot(x,y).setOwner(iCiv)
+			gc.getMap().plot(x, y).setCulture(iCiv, 10, True)
+			gc.getMap().plot(x, y).setOwner(iCiv)
 			if self.getHumanID() == iCiv:
-				self.makeUnit(iSettler, iCiv, (x,y), 1)
+				self.makeUnit(iSettler, iCiv, tPlot, 1)
 			else:
 				gc.getPlayer(iCiv).found(x, y)
-			self.makeUnit(iWorker, iCiv, (x,y), 2)
+			self.makeUnit(iWorker, iCiv, tPlot, 2)
 			iInfantry = self.getBestInfantry(iCiv)
 			if iInfantry:
-				self.makeUnit(iInfantry, iCiv, (x,y), 2)
+				self.makeUnit(iInfantry, iCiv, tPlot, 2)
 			if gc.getPlayer(iCiv).getStateReligion() != -1:
-				self.makeUnit(iMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, (x,y), 1)
+				self.makeUnit(iMissionary+gc.getPlayer(iCiv).getStateReligion(), iCiv, tPlot, 1)
 
 	def getColonialTargets(self, iPlayer, bEmpty=False):
 		if iPlayer == iSpain or iPlayer == iFrance:
@@ -1152,11 +1029,11 @@ class RFCUtils:
 			x, y = tPlot
 			if gc.getMap().plot(x, y).isCity():
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() != iPlayer:
-					cityList.append((x, y))
+					cityList.append(tPlot)
 
 		targetList = []
 
-		if len(cityList) != 0:
+		if cityList:
 			for i in range(iNumCities):
 				iRand = gc.getGame().getSorenRandNum(len(cityList), 'Random city')
 				print 'iRand = '+str(iRand)
@@ -1166,16 +1043,11 @@ class RFCUtils:
 
 		if bEmpty:
 			while len(targetList) < iNumCities and len(lPlotList) > 0:
-				iRand = gc.getGame().getSorenRandNum(len(lPlotList), 'Random free plot')
-				x, y = lPlotList[iRand]
 				bValid = True
-				for i in range(x-1, x+2):
-					for j in range(y-1, y+2):
-						if gc.getMap().plot(i, j).isCity():
-							bValid = False
-							break
-							break
-							
+				for (i, j) in self.surroundingPlots(self.getRandomEntry(lPlotList), 1):
+					if gc.getMap().plot(i, j).isCity():
+						bValid = False
+						break
 				if bValid:
 					targetList.append(lPlotList[iRand])
 				
@@ -1258,14 +1130,12 @@ class RFCUtils:
 		if not (pPlot.isCity() or pPlot.isPeak() or pPlot.isWater()):
 			return (x, y)
 			
-		for i in range(x-1, x+2):
-			for j in range(y-1, y+2):
-				pPlot = gc.getMap().plot(i, j)
-				if not (pPlot.isCity() or pPlot.isPeak() or pPlot.isWater()):
-					lFreePlots.append((i, j))
-					
-		iRand = gc.getGame().getSorenRandNum(len(lFreePlots), 'random plot')
-		return lFreePlots[iRand]
+		for (i, j) in self.surroundingPlots((x, y), 1):
+			pPlot = gc.getMap().plot(i, j)
+			if not (pPlot.isCity() or pPlot.isPeak() or pPlot.isWater()):
+				lFreePlots.append((i, j))
+		
+		return self.getRandomEntry(lFreePlots)
 		
 	def surroundingPlots(self, tPlot, iRadius=1, filter=lambda (x, y): False):
 		x, y = tPlot
@@ -1524,13 +1394,13 @@ class RFCUtils:
 		return gc.getGame().isNeighbors(iCiv1, iCiv2)
 						
 	def isUniqueBuilding(self, iBuilding):
-		if (isWorldWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())):
+		if isWorldWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType()):
 			return true			
 
-		if (isTeamWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())):
+		if isTeamWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType()):
 			return true
 
-		if (isNationalWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())): #Rhye - should be changed to move embassies to regular buildings
+		if isNationalWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType()): #Rhye - should be changed to move embassies to regular buildings
 			return true
 
 		# Regular building
@@ -1647,15 +1517,14 @@ class RFCUtils:
 	def cityConquestCulture(self, city, iPlayer, iPreviousOwner):
 		x = city.getX()
 		y = city.getY()
-		for i in range(x-1, x+2):
-			for j in range(y-1, y+2):
-				plot = gc.getMap().plot(i, j)
-				if (i, j) == (x, y):
-					self.convertPlotCulture(plot, iPlayer, 25, False)
-				elif plot.getOwner() == iPreviousOwner:
-					self.convertPlotCulture(plot, iPlayer, 50, True)
-				else:
-					self.convertPlotCulture(plot, iPlayer, 25, True)
+		for (i, j) in self.surroundingPlots((x, y), 1):
+			plot = gc.getMap().plot(i, j)
+			if (i, j) == (x, y):
+				self.convertPlotCulture(plot, iPlayer, 25, False)
+			elif plot.getOwner() == iPreviousOwner:
+				self.convertPlotCulture(plot, iPlayer, 50, True)
+			else:
+				self.convertPlotCulture(plot, iPlayer, 25, True)
 					
 	def getAllDeals(self, iFirstPlayer, iSecondPlayer):
 		lDeals = []
@@ -1836,9 +1705,9 @@ class RFCUtils:
 		else: unit.setXY(x, y, False, True, False)
 		
 	def evacuate(self, tPlot):
-		for tLoopPlot in utils.surroundingPlots(tPlot):
+		for tLoopPlot in self.surroundingPlots(tPlot):
 			for unit in utils.getUnitList(tLoopPlot):
-				lPossibleTiles = utils.surroundingPlots(tLoopPlot, 2, lambda (x, y): utils.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True))
+				lPossibleTiles = self.surroundingPlots(tLoopPlot, 2, lambda (x, y): utils.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True))
 				tTargetPlot = utils.getRandomEntry(lPossibleTiles)
 				if tTargetPlot:
 					x, y = tLoopPlot

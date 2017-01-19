@@ -197,13 +197,13 @@ class RiseAndFall:
 			for tPlot in targetList:
 				x, y = tPlot
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iHuman:
-					utils.colonialAcquisition(iPlayer, x, y)
+					utils.colonialAcquisition(iPlayer, tPlot)
 					gc.getPlayer(iHuman).changeGold(200)
 		elif popupReturn.getButtonClicked() == 1:
 			for tPlot in targetList:
 				x, y = tPlot
 				if gc.getMap().plot(x, y).getPlotCity().getOwner() == iHuman:
-					utils.colonialConquest(iPlayer, x, y)
+					utils.colonialConquest(iPlayer, tPlot)
 		
 	def eventApply7629(self, netUserData, popupReturn):
 		targetList = data.lByzantineBribes
@@ -856,8 +856,8 @@ class RiseAndFall:
 					
 	def endTurn(self, iPlayer):
 		for tTimedConquest in data.lTimedConquests:
-			iConqueror, x, y = tTimedConquest
-			utils.colonialConquest(iConqueror, x, y)
+			iConqueror, tPlot = tTimedConquest
+			utils.colonialConquest(iConqueror, tPlot)
 		data.lTimedConquests = []
 
 	def rebirthFirstTurn(self, iCiv):
@@ -2343,8 +2343,7 @@ class RiseAndFall:
 				settlerList.append((x,y))
 
 		for tPlot in settlerList:
-			x, y = tPlot
-			utils.colonialAcquisition(iPlayer, x, y)
+			utils.colonialAcquisition(iPlayer, tPlot)
 	
 		for iTargetCiv in targetCivList:
 			if iTargetCiv == utils.getHumanID():
@@ -2402,10 +2401,10 @@ class RiseAndFall:
 					x, y = tPlot
 					if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
 						if bAccepted:
-							utils.colonialAcquisition(iPlayer, x, y)
+							utils.colonialAcquisition(iPlayer, tPlot)
 							gc.getPlayer(iTargetCiv).changeGold(200)
 						else:
-							data.timedConquest(iPlayer, x, y)
+							data.timedConquest(iPlayer, tPlot)
 						targetList.remove(tPlot)
 
 		pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
@@ -2414,8 +2413,7 @@ class RiseAndFall:
 		targetList = utils.getColonialTargets(iPlayer)
 
 		for tPlot in targetList:
-			x, y = tPlot
-			data.timedConquest(iPlayer, x, y)
+			data.timedConquest(iPlayer, tPlot)
 
 		tSeaPlot = -1
 		x, y = targetList[0]
