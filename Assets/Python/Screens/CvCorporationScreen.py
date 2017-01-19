@@ -8,6 +8,7 @@ import CvScreenEnums
 
 from Consts import iCorporation as iCorporationTech
 from Consts import iBrazil
+from Consts import iSugar
 import companies
 
 PyPlayer = PyHelpers.PyPlayer
