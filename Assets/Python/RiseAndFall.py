@@ -699,7 +699,7 @@ class RiseAndFall:
 			tSeljukAreaBR = (85, 46)
 			targetCityList = []
 			targetPlayerList = []
-			dummy, lCityPlotList = utils.squareSearch(tSeljukAreaTL, tSeljukAreaBR, utils.cityPlots, -1)
+			lCityPlotList = utils.squareSearch(tSeljukAreaTL, tSeljukAreaBR, utils.cityPlots, -1)
 			for tPlot in lCityPlotList:
 				x, y = tPlot
 				city = gc.getMap().plot(x, y).getPlotCity()
@@ -761,7 +761,7 @@ class RiseAndFall:
 				targetAreaTL = (73, 38)
 				targetAreaBR = (85, 46)
 				count = 0
-				dummy, lCityPlotList = utils.squareSearch(targetAreaTL, targetAreaBR, utils.cityPlots, -1)
+				lCityPlotList = utils.squareSearch(targetAreaTL, targetAreaBR, utils.cityPlots, -1)
 
 				for tPlot in lCityPlotList:
 					x, y = tPlot
@@ -1690,7 +1690,7 @@ class RiseAndFall:
 
 		#now starting units must be placed
 		if (iNumAICitiesConverted > 0):
-			dummy1, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.ownedCityPlots, iCiv )	
+			plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.ownedCityPlots, iCiv )	
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching any city just flipped')
 			if (len(plotList)):
 				result = plotList[rndNum]
@@ -1707,7 +1707,7 @@ class RiseAndFall:
 				data.iOttomanSpawnTurn = gc.getGame().getGameTurn()
 
 		else:   #search another place
-			dummy, plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.goodPlots, [] )
+			plotList = utils.squareSearch( tTopLeft, tBottomRight, utils.goodPlots, [] )
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching another free plot')
 			if (len(plotList)):
 				result = plotList[rndNum]
@@ -1717,7 +1717,7 @@ class RiseAndFall:
 					data.players[iCiv].iPlagueCountdown = -iImmunity
 					utils.clearPlague(iCiv)
 			else:
-				dummy1, plotList = utils.squareSearch( tBroaderTopLeft, tBroaderBottomRight, utils.goodPlots, [] )	
+				plotList = utils.squareSearch( tBroaderTopLeft, tBroaderBottomRight, utils.goodPlots, [] )	
 				rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching other good plots in a broader region')
 				if (len(plotList)):
 					result = plotList[rndNum]
@@ -2467,7 +2467,7 @@ class RiseAndFall:
 	def initMinorBetrayal( self, iCiv ):
 		iHuman = utils.getHumanID()
 		lPlots = Areas.getBirthArea(iCiv)
-		dummy, plotList = utils.listSearch(lPlots, utils.outerInvasion, [])
+		plotList = utils.listSearch(lPlots, utils.outerInvasion, [])
 		rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot abroad human players borders')
 		if (len(plotList)):
 			result = plotList[rndNum]
@@ -2483,13 +2483,13 @@ class RiseAndFall:
 		iHuman = utils.getHumanID()
 		turnsLeft = data.iBetrayalTurns
 		lTempPlots = data.lTempPlots
-		dummy, plotList = utils.listSearch(lTempPlots, utils.outerInvasion, [] )
+		plotList = utils.listSearch(lTempPlots, utils.outerInvasion, [] )
 		rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot abroad human players (or in general, the old civ if human player just swtiched) borders')
 		if (not len(plotList)):
-			dummy, plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )
+			plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot within human or new civs border but distant from units')				
 		if (not len(plotList)):
-			dummy, plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [data.iOldCivFlip, data.iNewCivFlip] )
+			plotList = utils.listSearch(lTempPlots, utils.innerInvasion, [data.iOldCivFlip, data.iNewCivFlip] )
 			rndNum = gc.getGame().getSorenRandNum(len(plotList), 'searching a free plot within human or new civs border')				
 		if (len(plotList)):
 			result = plotList[rndNum]
