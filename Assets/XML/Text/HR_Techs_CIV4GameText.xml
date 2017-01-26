@@ -1403,48 +1403,8 @@ Major advances in plumbing further developed during the Enlightenment era. With 
 By the late 19th century, metallurgy was a sophisticated science. The rise of modern chemistry led to the discovery of a vast number of 'new' chemical elements that could be used in alloys, and electric power made it possible to control the conditions under which metals were worked more finely than ever before. Metallurgists developed a vast array of new kinds of steel and other alloys, with different combinations of hardness, flexibility, corrosion-resistance, and other properties. These rapid advances in metallurgy had vast implications for almost every field of engineering.</English>
 	</TEXT>
 
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_METEOROLOGY</Tag>
-		<English>Meteorology</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_METEOROLOGY_QUOTE</Tag>
-		<English>"The trouble with weather forecasting is that it's right too often for us to ignore it and wrong too often for us to rely on it."[PARAGRAPH:2]- Patrick Young</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_METEOROLOGY_PEDIA</Tag>
-<English>Meteorology is the science of weather, how it behaves and how it can be predicted in advance. Investigation into the structure and nature of the Earth's atmosphere and climate began in the Middle Ages, with investigations into phenomena like twilight and rainbows. Renaissance-vintage instruments and technology sped up the process in Europe. Scientific study of weather benefitted from the rise of instruments to measure temperature, pressure, wind speed, humidity, and the like.
-
-18th century natural philosophers achieved the real breakthroughs in defining a global pattern of climate. With plenty of data from places around the world thanks to the Age of Colonization and its sea voyages, and with the tools to understand the way that the distant sun warms the Earth coming from astronomy, scientists like Hadley could identify the major wind and weather patterns on the world's oceans, which had great benefits for seafaring.
-
-The 19th century saw refinement of meteorology and the first organized networks of weather observers that could communicate faster than a storm could travel, using the new electromagnetic telegraph. Radio accelerated this process further yet, but the real breakthroughs were the rise of computer and satellite technology in the 1950s and 1960s. An electronic computer can perform enough calculations to simulate weather in advance, predicting it long before it has any chance of arriving to affect us. Weather satellites can directly observe any kind of weather, no matter how intense, without fear; they orbit above the entire atmosphere and are immune to wind, rain, snow, and lightning. This lets us track hurricanes and project their course accurately, which has saved vast sums of life and property since the first decades of satellite technology.</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MILLING</Tag>
-		<English>Milling</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MILLING_QUOTE</Tag>
-		<English>"The mill cannot grind with the water that is past."[PARAGRAPH:2]- Daniel D. Palmer</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MILLING_PEDIA</Tag>
-<English>Milling is the practice of using powered machinery to grind materials into powder or fibres. Most civilizations since ancient times have relied heavily on grains for staple food. Some grains are edible directly (like many rice cultivars), but all grains can be processed into 'flour', a ground-up powder made from the grain, which can then be made into nutritious, durable bread or tasty confections. Grinding grain into flour has therefore been one of the oldest tasks of agricultural civilization.
-
-However, doing this by muscle power is incredibly laborious. Typically, grain is powdered by grinding it between heavy stones by a person turning a crank. It takes much time to produce enough flour to feed one person for one day. The work is hard and tends to damage muscles and joints if carried on indefinitely. Usually, grinding grain was the job of low-status people: slaves, women in patriarchal communities, or both.
-
-Naturally, this burden of toil would drive almost anyone to find better ways of grinding the grain. One obvious method is to rely on the labor of draft animals - donkeys, oxen, or the like - to drive the grinding stones. This allows larger 'mills' than a single person turning a crank, and saves trouble for human beings. But draft animals were expensive in pre-industrial society, and had an endless list of other valuable applications (plowing fields, hauling vehicles, and so on).
-
-The next logical step was to power the mill with the inanimate forces of nature. A river doesn't eat, never gets tired, and doesn't care how monotonous its job is. Making good use of inanimate power sources meant complex mechanisms of wood, metal, and stone, though - the pressure of wind and water flow can only do mechanical work through the use of gears, bladed waterwheels, and windmills. Milling was a task that machines were ideally suited to do, and it was one of the first steps towards the development of more complex machinery and civilization's ability to harness natural forces for its benefit.</English>
-	</TEXT>
-
-
-
+	
+	
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MINING</Tag>
 		<English>Mining</English>
@@ -1452,21 +1412,6 @@ The next logical step was to power the mill with the inanimate forces of nature.
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MINING_QUOTE</Tag>
 		<English>"The man who moves a mountain begins by carrying away small stones."[PARAGRAPH:2]- Confucius</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MODERN_SANITATION</Tag>
-		<English>Sanitation</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MODERN_SANITATION_QUOTE</Tag>
-		<English>"The health of the people is really the foundation upon which all their happiness and all their powers as a state depend."[PARAGRAPH:2]- Benjamin Disraeli</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_MODERN_SANITATION_PEDIA</Tag>
-		<English>The increased waste produced by growing populations over time eventually led to potential health hazards. It then became necessary to come up with systems to dispose of garbage and human waste in a sanitary manner. Plumbing systems designed to remove waste water from dwellings and public buildings became commonplace, as did sewage plants which treated the wastewater before it was dumped into local waterways. Landfills were established, and garbage was collected for sanitary disposal in dumps and landfills a safe distance from the general population. These measures led to a healthier environment, and allowed for further population growth.</English>
 	</TEXT>
 
 
@@ -1499,11 +1444,11 @@ Still, it seems likely that 21st century chemistry and biochemistry will be grea
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_NATIONHOOD</Tag>
-		<English>Nationhood</English>
+		<Tag>TXT_KEY_TECH_NATIONALISM</Tag>
+		<English>Nationalism</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_NATIONHOOD_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_NATIONALISM_QUOTE</Tag>
 		<English>"A man does not have himself killed for a half-pence a day or for a petty distinction. You must speak to the soul in order to electrify him."[PARAGRAPH:2]- Napoleon Bonaparte</English>
 	</TEXT>
 	<TEXT>
