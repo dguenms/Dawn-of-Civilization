@@ -63,7 +63,7 @@ Today, aerodynamic calculations can be made in greater detail and thoroughness t
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALCHEMY_QUOTE</Tag>
-		<English>"The laws of nature are just but terrible. The fire burns, the water drowns, the air consumes, the earth buries."[PARAGRAPH:2]- Henry Wadsworth Longfellow, Table Talk</English>
+		<English>"All is interrelated. Heaven and earth, air and water. All are but one thing; not four, not two and not three, but one. Where they are not together, there is only an incomplete piece."[PARAGRAPH:2]- Paracelsus</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ALCHEMY_PEDIA</Tag>
@@ -117,7 +117,7 @@ However, alchemists made real contributions to society. Alchemists were the firs
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE_QUOTE</Tag>
-		<English>"The real problem is not whether machines think, but whether men do."[PARAGRAPH:2]- B.F. Skinner</English>
+		<English>"The mystery which surrounds a thinking machine already surrounds a thinking man."[PARAGRAPH:2]- B.F. Skinner, Contingencies of Reinforcement</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTIFICIAL_INTELLIGENCE_PEDIA</Tag>
@@ -134,7 +134,7 @@ Some predict that the creation of the first artificial intelligences will lead t
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTISANRY_QUOTE</Tag>
-		<English>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer</English>
+		<English>"The life so short, the craft so long in the learning."[PARAGRAPH:2]- Geoffrey Chaucer, Parliament of Foules</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTISANRY_PEDIA</Tag>
@@ -160,7 +160,7 @@ Some predict that the creation of the first artificial intelligences will lead t
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NAVIGATION_QUOTE</Tag>
-		<English>"If the highest aim of a captain were to preserve his ship, he would keep it in port forever."[PARAGRAPH:2]- Thomas Aquinas</English>
+		<English>"The winds and the waves are always on the side of the ablest navigators."[PARAGRAPH:2]- Edward Gibbon</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_NAVIGATION_PEDIA</Tag>
@@ -175,7 +175,7 @@ Some predict that the creation of the first artificial intelligences will lead t
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GEOGRAPHY_QUOTE</Tag>
-		<English>"Leave no stone unturned."[PARAGRAPH:2]- Euripides</English>
+		<English>"Leave no stone unturned."[PARAGRAPH:2]- Euripides, Heraclidae</English>
 	</TEXT>
 
 
@@ -209,7 +209,7 @@ This led to great advances in practical technology in the latter half of the 20t
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AUTOMATION_QUOTE</Tag>
-		<English>"We are becoming the servants in thought, as in action, of the machine we have created to serve us."[PARAGRAPH:2]- John Kenneth Galbraith</English>
+		<English>"We are becoming the servants in thought, as in action, of the machine we have created to serve us."[PARAGRAPH:2]- John Kenneth Galbraith, The New Industrial State</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AUTOMATION_PEDIA</Tag>
@@ -243,7 +243,7 @@ Automatic equipment invariably saves human labor, but it also displaces labour. 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AVIATION_QUOTE</Tag>
-		<English>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White</English>
+		<English>"What railways have done for nations, airways will do for the world."[PARAGRAPH:2]- Claude Grahame-White, The Aeroplane</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_AVIATION_PEDIA</Tag>
@@ -273,7 +273,7 @@ Automatic equipment invariably saves human labor, but it also displaces labour. 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BLOOMERY_QUOTE</Tag>
-		<English>"You should hammer your iron when it is glowing hot."[PARAGRAPH:2]- Publius Syrus</English>
+		<English>"You should hammer your iron when it is glowing hot."[PARAGRAPH:2]- Publius Syrus, Sentences</English>
 	</TEXT>
 
 
@@ -310,7 +310,7 @@ Automatic equipment invariably saves human labor, but it also displaces labour. 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CALENDAR_QUOTE</Tag>
-		<English>"For everything there is a season and a time for every purpose under heaven."[PARAGRAPH:2]- Ecclesiastes</English>
+		<English>"For everything there is a season and a time for every purpose under heaven."[PARAGRAPH:2]- The Bible, Ecclesiastes</English>
 	</TEXT>
 
 
@@ -326,36 +326,6 @@ Automatic equipment invariably saves human labor, but it also displaces labour. 
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CARTOGRAPHY_PEDIA</Tag>
 		<English>Cartography is the art of making maps. Since any traveler will do well to have maps of the territory they move through, good maps have been in demand for as long as the art of writing made it possible to create them. Early maps were often crude, with the shapes of continents and the relative position of cities and landmarks grossly distorted. Portions of the map with which the artist was unfamiliar were often decorated with fanciful place-names and the images of fictional creatures, as in the famous "here there be dragons."[NEWLINE][NEWLINE]Cartography became more of a science during the medieval period, with advances in mathematics and surveying techniques. Growing and spreading populations helped as well - it's easier and more practical to make an accurate map of cultivated fields and townships than of a howling wilderness. During the European Age of Exploration, the art of mapmaking advanced hand in hand with the art of navigation - the one being nearly impossible without the other.</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CARVING</Tag>
-		<English>Carving</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CARVING_QUOTE</Tag>
-		<English>"I saw the angel in the marble and carved until I set him free."[PARAGRAPH:2]- Michaelangelo</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CARVING_PEDIA</Tag>
-		<English>Carving is the practice of making indentations on a solid object, using some sort of cutting tool or scraping technique. Carving has been a popular way to decorate stone, bone, wood, and other durable materials since prehistoric times, and definitely predates the rise of even the earliest and smallest civilized communities. Decorative carving techniques tie into methods for toolmaking, especially in the working of wood and stone.</English>
-	</TEXT>
-
-
-
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CEREMONIAL_BURIAL</Tag>
-		<English>Ceremonial Burial</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CEREMONIAL_BURIAL_QUOTE</Tag>
-		<English>"A tomb now suffices him for whom the whole world was not sufficient."[PARAGRAPH:2]- Epitaph of Alexander the Great</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CEREMONIAL_BURIAL_PEDIA</Tag>
-		<English>Groping for an explanation of the world around them, the earliest humans developed the first concepts of religion. Gradually, rites of worship grew to include sacrifices, ceremonies, vigils, symbology, sacred items, and prayer. One significant step in the advance of worship was the ceremonial burial, often a ritual preparation of the deceased's body for the afterlife his or her culture anticipated. The remains of ceremonial burials offer some of the most detailed information about past civilizations.</English>
 	</TEXT>
 
 
@@ -441,7 +411,7 @@ The battles for these forms of equality, generally known as "civil rights" were 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CIVIL_SERVICE_QUOTE</Tag>
-		<English>"The bureaucracy is expanding to meet the needs of the expanding bureaucracy."[PARAGRAPH:2]- Anonymous</English>
+		<English>"The bureaucracy is expanding to meet the needs of the expanding bureaucracy."[PARAGRAPH:2]- Oscar Wilde</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CIVIL_SERVICE_PEDIA</Tag>
@@ -458,7 +428,7 @@ One of the oldest known civil services is found in China, during the Tang dynast
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CLERGY_QUOTE</Tag>
-		<English>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas</English>
+		<English>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas, Summa Theologica</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CLERGY_PEDIA</Tag>
@@ -479,7 +449,7 @@ The concept of points of dogma that a society will not tolerate violation of is 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_COMBINED_ARMS_QUOTE</Tag>
-		<English>"The whole is greater than the sum of its parts."[PARAGRAPH:2]- Aristotle</English>
+		<English>"The whole is greater than the sum of its parts."[PARAGRAPH:2]- Aristotle, Metaphysics</English>
 	</TEXT>
 
 
@@ -551,7 +521,7 @@ Kevlar, the modern battle armor, is a composite material. Modern tanks are const
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_CONSTRUCTION_QUOTE</Tag>
-		<English>"And on the pedestal these words appear: 'My name is Ozymandias, king of kings: Look on my works, ye Mighty, and despair!'"[PARAGRAPH:2]- Percy Bysshe Shelley</English>
+		<English>"And on the pedestal these words appear: 'My name is Ozymandias, king of kings: Look on my works, ye Mighty, and despair!'"[PARAGRAPH:2]- Percy Bysshe Shelley, Ozymandias</English>
 	</TEXT>
 
 
@@ -698,7 +668,7 @@ Oracles across the world developed complex rites and rituals to appease and inte
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ENGINEERING_QUOTE</Tag>
-		<English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away."[PARAGRAPH:2]- Antoine de Saint-Exupry</English>
+		<English>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away."[PARAGRAPH:2]- Antoine de Saint-Exupéry, Terre des Hommes</English>
 	</TEXT>
 
 
@@ -709,7 +679,7 @@ Oracles across the world developed complex rites and rituals to appease and inte
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ETHICS_QUOTE</Tag>
-		<English>"Act only according to that maxim whereby you can, at the same time, will that it should become universal law."[PARAGRAPH:2]- Immanuel Kant</English>
+		<English>"Act only according to that maxim whereby you can, at the same time, will that it should become universal law."[PARAGRAPH:2]- Immanuel Kant, Groundwork of the Metaphysics of Morals</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ETHICS_PEDIA</Tag>
@@ -743,7 +713,7 @@ Therefore, to the evangelist, the very existence of unbelievers is a disastrous 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EXPLORATION_QUOTE</Tag>
-		<English>"One doesn't discover new lands without losing sight of the shore."[PARAGRAPH:2]- Andre Gide</English>
+		<English>"One doesn't discover new lands without losing sight of the shore."[PARAGRAPH:2]- André Gide, The Counterfeiters</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_EXPLORATION_PEDIA</Tag>
@@ -799,7 +769,7 @@ In general, fertilizer achieves varying success. Used carelessly, it may not con
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FEUDALISM_QUOTE</Tag>
-		<English>"We are only tenants, and shortly the great Landlord will give us notice that our lease has expired."[PARAGRAPH:2]- Joseph Jefferson</English>
+		<English>"I will to my lord be true and faithful and love all which he loves and shun all which he shuns."[PARAGRAPH:2]- Anglo-Saxon Oath of Fealty</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FEUDALISM_PEDIA</Tag>
@@ -970,7 +940,7 @@ But many nuclear devices remain, and some countries continue to pursue expanded 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GEOLOGY_QUOTE</Tag>
-		<English>Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets.[PARAGRAPH:2]- Jules Verne</English>
+		<English>"Man, a mere inhabitant of the earth, cannot overstep its boundaries! But though he is confined to its crust, he may penetrate into all its secrets."[PARAGRAPH:2]- Jules Verne, Journey to the Center of the Earth</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GEOLOGY_PEDIA</Tag>
@@ -989,7 +959,7 @@ Understanding geology helps us understand where to find mineral resources, and h
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MATHEMATICS_QUOTE</Tag>
-		<English>"If in other sciences we should arrive at certainty without doubt and truth without error, it behooves us to place the foundations of knowledge in mathematics."[PARAGRAPH:2]- Roger Bacon</English>
+		<English>"If in other sciences we should arrive at certainty without doubt and truth without error, it behooves us to place the foundations of knowledge in mathematics."[PARAGRAPH:2]- Roger Bacon, Opus Majus</English>
 	</TEXT>
 
 
@@ -1000,7 +970,7 @@ Understanding geology helps us understand where to find mineral resources, and h
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GLOBALISM_QUOTE</Tag>
-		<English>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope"</English>
+		<English>"I am a citizen of the world."[PARAGRAPH:2]- Diogenes of Sinope</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GLOBALISM_PEDIA</Tag>
@@ -1023,7 +993,7 @@ Today the world is extensively globalized, a product of the capitalist triumph o
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GUILDS_QUOTE</Tag>
-		<English>"People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public."[PARAGRAPH:2]- Adam Smith</English>
+		<English>"People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public."[PARAGRAPH:2]- Adam Smith, The Wealth of Nations</English>
 	</TEXT>
 
 
@@ -1033,7 +1003,7 @@ Today the world is extensively globalized, a product of the capitalist triumph o
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GUNPOWDER_QUOTE</Tag>
-		<English>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle</English>
+		<English>"The real use of gunpowder is to make all men tall."[PARAGRAPH:2]- Thomas Carlyle, Sartor Resartus</English>
 	</TEXT>
 
 
@@ -1058,7 +1028,7 @@ Today the world is extensively globalized, a product of the capitalist triumph o
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HORTICULTURE_QUOTE</Tag>
-		<English>"The first farmer was the first man. All historic nobility rests on the possession and use of land."[PARAGRAPH:2]- Ralph Waldo Emerson</English>
+		<English>"The first farmer was the first man. All historic nobility rests on the possession and use of land."[PARAGRAPH:2]- Ralph Waldo Emerson, Farming</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HORTICULTURE_PEDIA</Tag>
@@ -1114,7 +1084,7 @@ Today the world is extensively globalized, a product of the capitalist triumph o
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_INFRASTRUCTURE_QUOTE</Tag>
-		<English>"All right, but apart from the sanitation, medicine, education, wine, public order, irrigation, roads, the fresh water system and public health, what have the Romans ever done for us?"[PARAGRAPH:2]- Reg (John Cleese), 'The Life of Brian'</English>
+		<English>"Everything in life is somewhere else, and you get there in a car."[PARAGRAPH:2]- E. B. White, One Man's Meat</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_INFRASTRUCTURE_PEDIA</Tag>
@@ -1156,7 +1126,7 @@ However, insurance is likely to remain a permanent part of civilized life, a dir
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_JOURNALISM_QUOTE</Tag>
-		<English>"Put it before them briefly so they will read it, clearly so they will appreciate it, picturesquely so they will remember it and, above all, accurately so they will be guided by its light."[PARAGRAPH:2]- Joseph Pulitzer</English>
+		<English>"The press is the best instrument for enlightening the mind of man, and improving him as a rational, moral and social being."[PARAGRAPH:2]- Thomas Jefferson</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_JOURNALISM_PEDIA</Tag>
@@ -1221,7 +1191,7 @@ Jurisprudence was further developed in the Middle Ages as scholarship spread and
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LASER_QUOTE</Tag>
-		<English>"Nothing travels faster than the speed of light with the possible exception of bad news, which obeys its own special laws."[PARAGRAPH:2]- Douglas Adams</English>
+		<English>"The night is far spent; the day is at hand. Let us therefore cast off the works of darkness, and let us put on the armor of light."[PARAGRAPH:2]- The Bible, Romans</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LASER_PEDIA</Tag>
@@ -1250,7 +1220,18 @@ Jurisprudence was further developed in the Middle Ages as scholarship spread and
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_LEVERAGE_QUOTE</Tag>
-		<English>"Put your shoulder to the wheel."[PARAGRAPH:2]- Aesop</English>
+		<English>"Give me a lever long enough, and a fulcrum on which to place it, and I shall move the world."[PARAGRAPH:2]- Archimedes</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LITERATURE</Tag>
+		<English>Literature</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LITERATURE_QUOTE</Tag>
+		<English>"Some books are to be tasted, others to be swallowed, and some few to be chewed and digested."[PARAGRAPH:2]- Francis Bacon, Of Studies</English>
 	</TEXT>
 
 
@@ -1286,7 +1267,7 @@ A cunning enemy may always strike at an army's logistics. This has caused countl
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MACHINERY_QUOTE</Tag>
-		<English>"Give me a lever long enough, and a fulcrum on which to place it, and I shall move the world."[PARAGRAPH:2]- Archimedes</English>
+		<English>"Instrumental or mechanical science is the noblest and, above all others, the most useful."[PARAGRAPH:2]- Leonardo da Vinci</English>
 	</TEXT>
 
 
@@ -1323,7 +1304,7 @@ A cunning enemy may always strike at an army's logistics. This has caused countl
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MASONRY_QUOTE</Tag>
-		<English>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien</English>
+		<English>"There hammer on the anvil smote, there chisel clove and graver wrote; There forged was blade and bound was hilt; The delver mined, the mason built."[PARAGRAPH:2]- J.R.R. Tolkien, The Lord of the Rings</English>
 	</TEXT>
 
 
@@ -1350,6 +1331,10 @@ The practice of marketing is often criticized for dishonesty, for misleading peo
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MEASUREMENT</Tag>
 		<English>Measurement</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MEASUREMENT_QUOTE</Tag>
+		<English>"Measure what is measurable, and make measurable what is not so."[PARAGRAPH:2]- Galileo Galilei</English>
 	</TEXT>
 
 
@@ -1386,7 +1371,7 @@ The practice of marketing is often criticized for dishonesty, for misleading peo
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_METAL_CASTING_QUOTE</Tag>
-		<English>"The society which scorns excellence in plumbing and tolerates shoddiness in philosophy will have neither good plumbing nor good philosophy: neither its pipes nor its theories will hold water."[PARAGRAPH:2] -John W Gardner</English>
+		<English>"When pieces of bronze or gold or iron break, the metalsmith wields them together again on the fire, and the bond is established."[PARAGRAPH:2] - Sri Guru Granth Sahib</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_METAL_CASTING_PEDIA</Tag>
@@ -1814,7 +1799,7 @@ Radar became far more advanced and developed in the postwar era with the steady 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RADIO_QUOTE</Tag>
-		<English>"Then one fine morning she puts on a New York station. You know her life was saved by Rock 'n' Roll."[PARAGRAPH:2] - The Velvet Underground</English>
+		<English>"A world without radio is a deaf world."[PARAGRAPH:2] - Ernest Yeboah</English>
 	</TEXT>
 
 
@@ -1825,7 +1810,7 @@ Radar became far more advanced and developed in the postwar era with the steady 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_RAILROAD_QUOTE</Tag>
-		<English>"If the steam engine be the most powerful instrument in the hands of man, to alter the face of the physical world, it operates, at the same time, as a powerful moral lever in forwarding the great cause of civilisation."[PARAGRAPH:2]- William Huskisson</English>
+		<English>"The introduction of so powerful an agent as steam to carriage on wheels will make a great change in the situation of man."[PARAGRAPH:2]- Thomas Jefferson</English>
 	</TEXT>
 
 
@@ -2134,7 +2119,7 @@ Copper can be used for metallic tools, but it is soft and does not hold a cuttin
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SUPERCONDUCTORS_QUOTE</Tag>
-		<English>"Everything we call real is made of things that cannot be regarded as real."[PARAGRAPH:2]- Niels Bohr</English>
+		<English>"What is happiness? The feeling that power is growing, that resistance is overcome."[PARAGRAPH:2]- Friedrich Nietzsche, The Antichrist</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SUPERCONDUCTORS_PEDIA</Tag>
@@ -2150,7 +2135,7 @@ Copper can be used for metallic tools, but it is soft and does not hold a cuttin
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SUPERMATERIALS_QUOTE</Tag>
-		<English>Needs a quote.</English>
+		<English>"The matter lies before the eyes of all; everybody sees it, touches it, loves it, but knows it not."[PARAGRAPH:2]- Lucas Jennis, The Hermetic Library</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SUPERMATERIALS_PEDIA</Tag>
@@ -2175,7 +2160,7 @@ Copper can be used for metallic tools, but it is soft and does not hold a cuttin
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SYNTHETICS_QUOTE</Tag>
-		<English>"I was born with a plastic spoon in my mouth."[PARAGRAPH:2]- Pete Townshend</English>
+		<English>"Nothing on this earth lasts forever. Except maybe plastic."[PARAGRAPH:2]- Patricia Dunn</English>
 	</TEXT>
 
 
@@ -2349,7 +2334,7 @@ Research into these matters is ongoing today. It is hoped that future physics wi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FORTIFICATION_QUOTE</Tag>
-		<English>"It is from their foes, not their friends, that cities learn the lesson of building high walls."[PARAGRAPH:2]- Aristophanes</English>
+		<English>"It is from their foes, not their friends, that cities learn the lesson of building high walls."[PARAGRAPH:2]- Aristophanes, Birds</English>
 	</TEXT>
 
 
