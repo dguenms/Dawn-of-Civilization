@@ -386,7 +386,7 @@ class Plague:
 			if data.players[iNewOwner].iPlagueCountdown > 0:
 				iNumCitiesInfected = 0
 				for otherCity in utils.getCityList(iNewOwner):
-					if (othercity.getX(), othercity.getY()) != (x, y): #because the city razed still has the plague
+					if (otherCity.getX(), otherCity.getY()) != (x, y): #because the city razed still has the plague
 						if otherCity.hasBuilding(iPlague):
 							iNumCitiesInfected += 1
 				print ("iNumCitiesInfected", iNumCitiesInfected)
