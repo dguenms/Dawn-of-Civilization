@@ -17730,6 +17730,11 @@ void CvGameTextMgr::buildCityBillboardIconString( CvWStringBuffer& szBuffer, CvC
 			}
 		}
 
+		if (pCity->isHasRealBuilding((BuildingTypes)BUILDING_PLAGUE))
+		{
+			szBuffer.append(CvWString::format(L"%c", gDLL->getSymbolID(PLAGUE_CHAR)));
+		}
+
 // BUG - Airport Icon - start
 		if (getBugOptionBOOL("CityBar__AirportIcon", true, "BUG_CITYBAR_AIRPORT_ICONS"))
 		{
