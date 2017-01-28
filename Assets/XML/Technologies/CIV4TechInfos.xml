@@ -1816,9 +1816,9 @@
 <!-- Cost 580/620/650/680/720, iAsset 32 -->
 
 		<TechInfo>
-			<Type>TECH_CHARTER</Type>
-			<Description>TXT_KEY_TECH_CHARTER</Description>
-			<Civilopedia>TXT_KEY_TECH_CHARTER_PEDIA</Civilopedia>
+			<Type>TECH_COMMUNE</Type>
+			<Description>TXT_KEY_TECH_COMMUNE</Description>
+			<Civilopedia>TXT_KEY_TECH_COMMUNE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iCost>620</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -1850,10 +1850,10 @@
 				<PrereqTech>TECH_FEUDALISM</PrereqTech>
 				<PrereqTech>TECH_FORTIFICATION</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_CHARTER_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_COMMUNE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Charter.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Commune.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2109,7 +2109,7 @@
 				<PrereqTech>TECH_ALCHEMY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_CHARTER</PrereqTech>
+				<PrereqTech>TECH_COMMUNE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_GUNPOWDER_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -2145,7 +2145,7 @@
 				</Flavor>
 			</Flavors>
 			<AndPreReqs>
-				<PrereqTech>TECH_CHARTER</PrereqTech>
+				<PrereqTech>TECH_COMMUNE</PrereqTech>
 				<PrereqTech>TECH_CROP_ROTATION</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_COMPANIES_QUOTE</Quote>

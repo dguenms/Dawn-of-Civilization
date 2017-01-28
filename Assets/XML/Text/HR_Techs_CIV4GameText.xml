@@ -1972,8 +1972,12 @@ Ongoing advances in shipbuilding continued steadily from the Bronze Age up to th
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_CHARTER</Tag>
-		<English>Charter</English>
+		<Tag>TXT_KEY_TECH_COMMUNE</Tag>
+		<English>Commune</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_COMMUNE_QUOTE</Tag>
+		<English>"We shall be a single People of brethren, never to part in danger nor distress."[PARAGRAPH:2]- Friedrich Schiller, William Tell</English>
 	</TEXT>
 
 

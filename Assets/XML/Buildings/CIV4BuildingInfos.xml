@@ -7293,7 +7293,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ARMOURY</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ARMOURY</MovieDefineTag>
-			<PrereqTech>TECH_CHARTER</PrereqTech>
+			<PrereqTech>TECH_COMMUNE</PrereqTech>
 			<iCost>-1</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
