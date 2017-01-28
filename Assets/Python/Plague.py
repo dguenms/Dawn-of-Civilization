@@ -138,101 +138,122 @@ class Plague:
 		data.players[iPlayer].bFirstContactPlague = False
 		for city in utils.getCityList(iPlayer):
 			city.setHasRealBuilding(iPlague, False)
-
+			
+	def losePopulation(self, city):
+		if city.getPopulation() <= 1: return
+		
+		iRand = gc.getGame().getSorenRandNum(100, "Lose population from plague")
+		iHealth = city.healthRate(False, 0)
+		
+		if iRand > 40 + 5 * iHealth:
+			city.changePopulation(-1)
+			
+	def spreadToVassals(self, iPlayer):
+		if data.players[iPlayer].bFirstContactPlague: return
+		
+		for iLoopPlayer in range(iNumMajorPlayers):
+			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isVassal(iLoopPlayer) or gc.getTeam(gc.getPlayer(iLoopPlayer).getTeam()).isVassal(iPlayer):
+				if self.isVulnerable(iLoopPlayer) and data.players[iLoopPlayer].iPlagueCountdown > 2:
+					if gc.getPlayer(iLoopPlayer).getNumCities() > 0:
+						capital = gc.getPlayer(iLoopPlayer).getCapitalCity()
+						self.spreadPlague(iLoopPlayer)
+						self.infectCity(capital)
+						
+	def spreadToSurroundings(self, city):
+		iPlayer = city.getOwner()
+		
+		# do not spread if plague is almost over
+		if data.players[iPlayer].iPlagueCountdown <= 2: return
+	
+		for (x, y) in utils.surroundingPlots((city.getX(), city.getY()), 2):
+			plot = gc.getMap().plot(x, y)
+			
+			if not plot.isOwned(): continue
+			if (city.getX(), city.getY()) == (x, y): continue
+			
+			if plot.getOwner() == iPlayer:
+				if plot.isCity():
+					plotCity = plot.getPlotCity()
+					if not plotCity.isHasRealBuilding(iPlague):
+						self.infectCity(plotCity)
+			
+			else:
+				if data.players[iPlayer].bFirstContactPlague: continue
+				
+				if self.isVulnerable(plot.getOwner()):
+					self.spreadPlague(plot.getOwner())
+					self.infectCitiesNear(plot.getOwner(), x, y)
+					
+	def damageNearbyUnits(self, city):
+		for (x, y) in utils.surroundingPlots((city.getX(), city.getY()), 3):
+			plot = gc.getMap().plot(x, y)
+			iDistance = utils.calculateDistance(city.getX(), city.getY(), x, y)
+			
+			if iDistance == 0:
+				self.killUnitsByPlague(city, plot, 0, 42, 2)
+			elif not plot.isCity():
+				if iDistance < 3:
+					if plot.isRoute():
+						self.killUnitsByPlague(city, plot, 10, 35, 0)
+					else:
+						self.killUnitsByPlague(city, plot, 30, 35, 0)
+				else:
+					if plot.isRoute() or plot.isWater():
+						self.killUnitsByPlague(city, plot, 30, 35, 0)
+		
+	def spreadAlongTradeRoutes(self, city):
+		iPlayer = city.getOwner()
+		
+		if data.players[iPlayer].bFirstContactPlague: return
+		if data.players[iPlayer].iPlagueCountdown <= 2: return
+		
+		for iTradeRoute in range(city.getTradeRoutes()):
+			tradeCity = city.getTradeCity(iTradeRoute)
+			if not tradeCity.isNone():
+				iOwner = tradeCity.getOwner()
+				if not tradeCity.isHasRealBuilding(iPlague):
+					if iPlayer == iOwner:
+						self.infectCity(tradeCity)
+					elif self.isVulnerable(iOwner):
+						self.spreadPlague(iOwner)
+						self.infectCity(tradeCity)
+						self.announceForeignPlagueSpread(city)
+						
+	def spreadBetweenCities(self, iPlayer, lSourceCities, lTargetCities):
+		if data.players[iPlayer].iPlagueCountdown <= 2: return
+		
+		random.shuffle(lTargetCities)
+		for targetCity in lTargetCities:
+			if [city for city in lSourceCities if targetCity.isConnectedTo(city) and utils.calculateDistance(targetCity.getX(), targetCity.getY(), city.getX(), city.getY()) <= 6]:
+				self.infectCity(targetCity)
+				return
 
 	def processPlague(self, iPlayer):
-		pPlayer = gc.getPlayer(iPlayer)
-		#first spread to close locations
-		cityList = [] #see below
-		lInfectedCities = []
-		lNotInfectedCities = []
-		for city in utils.getCityList(iPlayer):
-			cityList.append(city) #see below
-			if city.hasBuilding(iPlague):
-				lInfectedCities.append(city)
-				#print ("plague in city", city.getName())
-				if city.getPopulation() > 1:
-					#print("healthRate in city", 35 + 5*city.healthRate(False, 0))
-					if gc.getGame().getSorenRandNum(100, 'roll') > 40 + 5*city.healthRate(False, 0):
-						city.changePopulation(-1)
-				if city.isCapital(): #delete in vanilla
-					if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
-						if not data.players[iPlayer].bFirstContactPlague: #don't infect if first contact plague
-							for iLoopCiv in range(iNumMajorPlayers):
-								if gc.getTeam(pPlayer.getTeam()).isVassal(iLoopCiv) or gc.getTeam(gc.getPlayer(iLoopCiv).getTeam()).isVassal(iPlayer):
-									if gc.getPlayer(iLoopCiv).getNumCities() > 0: #this check is needed, otherwise game crashes
-										capital = gc.getPlayer(iLoopCiv).getCapitalCity()
-										if self.isVulnerable(iLoopCiv):
-											self.spreadPlague(iLoopCiv)
-											self.infectCity(capital)
-											#print ("infect master/vassal", city.getName(), "to", capital.getName())
-				for (x, y) in utils.surroundingPlots((city.getX(), city.getY()), 2):
-					##print ("plagueXY", x, y)
-					pPlot = gc.getMap().plot( x, y )
-					if pPlot.getOwner() != iPlayer and pPlot.getOwner() >= 0:
-						if not data.players[iPlayer].bFirstContactPlague: #don't infect if first contact plague
-							if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
-								if self.isVulnerable(pPlot.getOwner()):
-									self.spreadPlague(pPlot.getOwner())
-									self.infectCitiesNear(pPlot.getOwner(), x, y)
-									#print ("infect foreign near", city.getName())
-					else:
-						if pPlot.isCity() and not (city.getX(), city.getY()) == (x, y):
-							#print ("is city", x, y)
-							cityNear = pPlot.getPlotCity() 
-							if not cityNear.hasBuilding(iPlague):
-								if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
-									self.infectCity(cityNear)
-									#print ("infect near", city.getName(), "to", cityNear.getName())
-						else:
-							if (city.getX(), city.getY()) == (x, y):
-								self.killUnitsByPlague(city, pPlot, 0, 42, 2)
-							else:
-								if pPlot.isRoute():
-									self.killUnitsByPlague(city, pPlot, 10, 35, 0)
-								elif pPlot.isWater():
-									self.killUnitsByPlague(city, pPlot, 30, 35, 0)
-								else:
-									self.killUnitsByPlague(city, pPlot, 30, 35, 0)
-				for (x, y) in utils.surroundingPlots((city.getX(), city.getY()), 3):
-					pPlot = gc.getMap().plot(x, y)
-					if pPlot.getOwner() == iPlayer or not pPlot.isOwned():
-						if not pPlot.isCity():
-							if pPlot.isRoute() or pPlot.isWater():
-								self.killUnitsByPlague(city, pPlot, 30, 35, 0)
-
-
-				if not data.players[iPlayer].bFirstContactPlague: #don't infect if first contact plague
-					#spread to trade route cities
-					if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
-						for iRoute in range(city.getTradeRoutes()):
-							loopCity = city.getTradeCity(iRoute)
-							if not loopCity.isNone():
-								if not loopCity.hasBuilding(iPlague):
-									iOwner = loopCity.getOwner()
-									if iPlayer == iOwner:
-										self.infectCity(loopCity)
-										#print ("infect by trade route", city.getName(), "to", loopCity.getName())
-									elif gc.getTeam(pPlayer.getTeam()).isOpenBorders(iOwner) or \
-										gc.getTeam(pPlayer.getTeam()).isVassal(iOwner) or \
-										gc.getTeam(gc.getPlayer(iOwner).getTeam()).isVassal(iPlayer): #own city, or open borders, or vassal
-										if self.isVulnerable(iOwner):
-											self.spreadPlague(iOwner)
-											self.infectCity(loopCity)
-											#print ("infect by trade route", city.getName(), "to", loopCity.getName())
-											self.announceForeignPlagueSpread(city)
-			else:
-				lNotInfectedCities.append(city)
-
-		#spread to other cities of the empire
-		if lNotInfectedCities:
-			if data.players[iPlayer].iPlagueCountdown > 2: #don't spread the last turns
-				random.shuffle(lInfectedCities)
-				for infectedCity in lInfectedCities:
-					lPossibleCities = [city for city in lNotInfectedCities if city.isConnectedTo(infectedCity) and utils.calculateDistance(city.getX(), city.getY(), infectedCity.getX(), infectedCity.getY()) <= 6]
-					if lPossibleCities:
-						self.infectCity(utils.getRandomEntry(lPossibleCities))
-						return
+		
+		# collect cities with and without plague
+		lInfectedCities = [city for city in utils.getCityList(iPlayer) if city.isHasRealBuilding(iPlague)]
+		lUninfectedCities = [city for city in utils.getCityList(iPlayer) if not city.isHasRealBuilding(iPlague)]
+			
+		for city in lInfectedCities:
+			
+			# let plague affect city
+			self.losePopulation(city)
+			
+			# let plague spread to vassals
+			if city.isCapital():
+				self.spreadToVassals(iPlayer)
+				
+			# let plague affect surrounding area
+			self.spreadToSurroundings(city)
+			
+			# let plague damage nearby units
+			self.damageNearbyUnits(city)
+			
+			# let plague spread through trade routes
+			self.spreadAlongTradeRoutes(city)
+			
+		# spread within the civilization
+		self.spreadBetweenCities(iPlayer, lInfectedCities, lUninfectedCities)
 
 
 	def killUnitsByPlague(self, city, pPlot, baseValue, iDamage, iPreserveDefenders):
@@ -336,14 +357,12 @@ class Plague:
 				return True
 		else:
 			pPlayer = gc.getPlayer(iPlayer)
-			if data.players[iPlayer].iPlagueCountdown: #vulnerable
+			if data.players[iPlayer].iPlagueCountdown == 0: #vulnerable
 				if not gc.getTeam(pPlayer.getTeam()).isHasTech(iMedicine):
 					iHealth = self.calculateHealth(iPlayer)
 					if iHealth < 14: #no spread for iHealth >= 74 years
 						return True
-					else:
-						#print ("immune", iPlayer)
-						pass
+						
 		return False
 
 
@@ -386,7 +405,7 @@ class Plague:
 			if data.players[iNewOwner].iPlagueCountdown > 0:
 				iNumCitiesInfected = 0
 				for otherCity in utils.getCityList(iNewOwner):
-					if (otherCity.getX(), otherCity.getY()) != (x, y): #because the city razed still has the plague
+					if (otherCity.getX(), otherCity.getY()) != (city.getX(), city.getY()): #because the city razed still has the plague
 						if otherCity.hasBuilding(iPlague):
 							iNumCitiesInfected += 1
 				print ("iNumCitiesInfected", iNumCitiesInfected)
