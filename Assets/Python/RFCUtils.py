@@ -102,8 +102,20 @@ class RFCUtils:
 
 	def isDefenderUnit(self, unit):
 		iUnitType = unit.getUnitType()
-		if (iUnitType >= iSpearman and iUnitType <= iChineseChokonu):
+		pUnitInfo = gc.getUnitInfo(iUnitType)
+		
+		# Archery units with city defense
+		if pUnitInfo.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_ARCHER") and pUnitInfo.getCityDefenseModifier() > 0:
 			return True
+			
+		# Melee units with mounted modifiers
+		if pUnitInfo.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_MELEE") and pUnitInfo.getUnitCombatModifier(gc.getInfoTypeForString("UNITCOMBAT_MOUNTED")) > 0:
+			return True
+			
+		# Conscriptable gunpowder units
+		if pUnitInfo.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_GUN") and pUnitInfo.getConscriptionValue() > 1:
+			return True
+			
 		return False
 
 	#AIWars
