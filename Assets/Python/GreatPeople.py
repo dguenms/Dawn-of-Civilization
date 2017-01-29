@@ -275,7 +275,7 @@ iCivIndia : {
 		iIndustrial,
 		"Ram Mohan Roy", # 19th
 		"Ranjit Singh", # 19th
-		iModern, 
+		iGlobal, 
 		"Jawaharlal Nehru", # 20th
 	],
 	iGreatGeneral : [
@@ -1568,7 +1568,7 @@ iCivRussia : {
 		"Vitus Bering", # 18th
 		iIndustrial,
 		"Ivan Kruzenshtern", # 19th
-		iModern, 
+		iGlobal, 
 		"Nikolai Kondratiev", # 20th
 	],
 	iGreatEngineer : [
@@ -2102,7 +2102,7 @@ iCivNetherlands : {
 		"fTitia Bergsma", # 18th
 		iIndustrial,
 		"Vincent van Gogh", # 19th
-		iModern, 
+		iGlobal, 
 		"Piet Mondrian", # 20th
 	],
 	iGreatScientist : [
@@ -2669,7 +2669,7 @@ iCivMexico : {
 iCivCanada : {
 	iGreatProphet : [
 		"Ignace Bourget", # 19th
-		iModern,
+		iGlobal,
 		u"André Bessette", # 20th
 	],
 	iGreatArtist : [
@@ -2684,7 +2684,7 @@ iCivCanada : {
 	iGreatScientist : [
 		"John William Dawson", # 19th
 		"fMaude Abbott", # 19th
-		iModern,
+		iGlobal,
 		"Frederick Banting", # 20th
 		"Norman Bethune", # 20th
 		"Wilder Penfield", # 20th

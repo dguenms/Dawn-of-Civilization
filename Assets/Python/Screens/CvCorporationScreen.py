@@ -6,7 +6,7 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 
-from Consts import iCorporation as iCorporationTech
+from Consts import iEconomics as iEconomicsTech
 from Consts import iBrazil
 from Consts import iSugar
 import companies
@@ -396,10 +396,10 @@ class CvCorporationScreen:
 		
 			if (iLinkCorporation > 1):
 				szButtonName = self.TECH_REQUIRED_BUTTON_CORPORATION
-				screen.addDDSGFC(szButtonName, gc.getTechInfo(iCorporationTech).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iCorporation, -1)
+				screen.addDDSGFC(szButtonName, gc.getTechInfo(iEconomicsTech).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iCorporation, -1)
 				
 				szList = u""
-				if teamCiv.isHasTech(iCorporationTech):
+				if teamCiv.isHasTech(iEconomicsTech):
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 				else:
 					szList += u"%c" % (CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
