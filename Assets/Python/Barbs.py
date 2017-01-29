@@ -285,10 +285,10 @@ class Barbs:
 		if (iGameTurn >= getTurnForYear(1300) and iGameTurn <= getTurnForYear(1600)):
 			if (iGameTurn % 18 == 0):
 				if (gc.getMap().plot(27, 29).getNumUnits() == 0):
-					self.makeUnit(iDogSoldier, iBarbarian, (27, 29), 3 + iHandicap, 1)
+					utils.makeUnitAI(iDogSoldier, iBarbarian, (27, 29), UnitAITypes.UNITAI_ATTACK, 3 + iHandicap)
 			if (iGameTurn % 18 == 9):
 				if (gc.getMap().plot(30, 13).getNumUnits() == 0):
-					self.makeUnit(iDogSoldier, iBarbarian, (30, 13), 3 + iHandicap, 1)
+					utils.makeUnitAI(iDogSoldier, iBarbarian, (30, 13), UnitAITypes.UNITAI_ATTACK, 3 + iHandicap)
 		
 		if iGameTurn >= getTurnForYear(1700) and iGameTurn <= getTurnForYear(1900):
 			self.checkSpawn(iBarbarian, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
