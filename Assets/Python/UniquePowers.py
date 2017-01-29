@@ -573,7 +573,6 @@ class UniquePowers:
 	# Babylonian UP: receives a free tech after the first four techs discovered
 	def babylonianUP(self):
 		iGameTurn = gc.getGame().getGameTurn()
-		utils.show("iGameTurn = "+str(iGameTurn)+"\niLastTurnFreeBabylonianTech = "+str(data.iLastTurnFreeBabylonianTech))
 		if data.iFreeBabylonianTechs < 4 and iGameTurn > data.iLastTurnFreeBabylonianTech:
 			data.iFreeBabylonianTechs += 1
 			data.iLastTurnFreeBabylonianTech = iGameTurn + 1
