@@ -81,8 +81,7 @@ class RFCUtils:
 		iUnitType = unit.getUnitType()
 		pUnitInfo = gc.getUnitInfo(iUnitType)
 		
-		if not pUnitInfo:
-			return False
+		if not pUnitInfo: return False
 		
 		# Archery units with city defense
 		if pUnitInfo.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_ARCHER") and pUnitInfo.getCityDefenseModifier() > 0:
