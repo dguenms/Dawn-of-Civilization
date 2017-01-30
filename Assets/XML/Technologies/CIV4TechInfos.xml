@@ -749,7 +749,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
+				<PrereqTech>TECH_LEVERAGE</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_SEAFARING</PrereqTech>
@@ -1495,6 +1495,9 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_ENGINEERING</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_LAW</PrereqTech>
 				<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
@@ -1578,6 +1581,9 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_POLITICS</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_NOBILITY</PrereqTech>
 				<PrereqTech>TECH_STEEL</PrereqTech>
@@ -2406,6 +2412,9 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_COMPASS</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_COMPANIES</PrereqTech>
 				<PrereqTech>TECH_FINANCE</PrereqTech>
@@ -3405,7 +3414,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_ECONOMICS</PrereqTech>
+				<PrereqTech>TECH_COMBINED_ARMS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_CONSTITUTION</PrereqTech>
@@ -3837,9 +3846,11 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_JOURNALISM</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_ELECTRICITY</PrereqTech>
-				<PrereqTech>TECH_PHOTOGRAPHY</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_FILM_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -4113,6 +4124,9 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_PNEUMATICS</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_REFINING</PrereqTech>
 				<PrereqTech>TECH_FILM</PrereqTech>
@@ -4595,6 +4609,9 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_ROCKETRY</PrereqTech>
 				<PrereqTech>TECH_FISSION</PrereqTech>
