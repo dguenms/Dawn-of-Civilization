@@ -37,7 +37,9 @@
 from CvPythonExtensions import CyGame
 import BugUtil
 import cPickle as pickle
+from StoredData import data
 
+STORED_DATA = "doc_stored_data"
 
 ## Data Access
 
@@ -93,8 +95,12 @@ def onGameStart(argsList):
 def onGameLoad(argsList):
 	print 'ON GAME LOAD'
 	initGameData().load()
+	
+	data.update(getTable(STORED_DATA).data)
 
 def save():
+	getTable(STORED_DATA).setData(data.__dict__)
+
 	getGameData().save()
 
 
