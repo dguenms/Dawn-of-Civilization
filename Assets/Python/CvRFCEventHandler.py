@@ -99,10 +99,6 @@ class CvRFCEventHandler:
 		'Called at the start of the game'
 		
 		data.setup()
-		data.save()
-
-		data.setup()
-		data.save()
 
 		self.rnf.setup()
 		self.pla.setup()
@@ -737,11 +733,9 @@ class CvRFCEventHandler:
 
 	def onPreSave(self, argsList):
 		'called before a game is actually saved'
-		
-		data.save() # edead: pickle & save script data
+		pass
 
 	def onLoadGame(self, argsList):
-		data.load() # edead: load & unpickle script data
 		techlog.setup()
 		
 	def onChangeWar(self, argsList):

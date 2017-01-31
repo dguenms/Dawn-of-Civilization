@@ -17,13 +17,6 @@ class PlayerData:
 		self.iPlayer = iPlayer
 		
 		self.setup()
-		self.save()
-		
-	def load(self):
-		self.__dict__.update(pickle.loads(gc.getPlayer(self.iPlayer).getScriptData()))
-		
-	def save(self):
-		gc.getPlayer(self.iPlayer).setScriptData(pickle.dumps(self.__dict__))
 
 	def setup(self):
 	
@@ -125,19 +118,9 @@ class GameData:
 
 	def __init__(self):
 		self.setup()
-		self.save()
 		
-	def load(self):
-		self.__dict__.update(pickle.loads(gc.getGame().getScriptData()))
-		
-		for player in self.players:
-			player.load()
-		
-	def save(self):
-		gc.getGame().setScriptData(pickle.dumps(self.data()))
-		
-		for player in self.players:
-			player.save()
+	def update(self, data):
+		self.__dict__.update(data)
 
 	def setup(self):
 		self.players = [PlayerData(i) for i in range(iNumTotalPlayersB)]
@@ -255,9 +238,6 @@ class GameData:
 		self.bNoAIStability = False
 		
 		self.dSecedingCities = {}
-	
-	def data(self):
-		return dict((key, self.__dict__[key]) for key in self.__dict__ if key != "players")
 		
 	def timedConquest(self, iPlayer, x, y):
 		self.lTimedConquests.append((iPlayer, x, y))
