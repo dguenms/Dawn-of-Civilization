@@ -98,10 +98,6 @@ class CvRFCEventHandler:
 		'Called at the start of the game'
 		
 		data.setup()
-		data.save()
-
-		data.setup()
-		data.save()
 
 		self.rnf.setup()
 		self.pla.setup()
@@ -736,7 +732,6 @@ class CvRFCEventHandler:
 		pass
 
 	def onLoadGame(self, argsList):
-		data.load() # edead: load & unpickle script data
 		techlog.setup()
 		
 	def onChangeWar(self, argsList):
