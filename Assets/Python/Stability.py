@@ -81,6 +81,13 @@ def endTurn(iPlayer):
 		data.setSecedingCities(iPlayer, [])
 		
 def triggerCollapse(iPlayer):
+	# help overexpanding AI: collapse to core, unless fall date
+	if utils.getHumanID() != iPlayer:
+		if gc.getGame().getGameTurnYear() < tFall[iPlayer]:
+			if len(utils.getCoreCityList(iPlayer)) < len(utils.getCityList(iPlayer)):
+				collapseToCore(iPlayer)
+				return
+
 	data.players[iPlayer].iTurnsToCollapse = 1
 
 def onCityAcquired(city, iOwner, iPlayer):

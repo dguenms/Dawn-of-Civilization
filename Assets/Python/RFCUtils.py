@@ -989,7 +989,7 @@ class RFCUtils:
 		return gc.getPlayer(iCiv).getReborn()
 
 	# Leoreth
-	def getCoreCityList(self, iCiv, bReborn):
+	def getCoreCityList(self, iCiv, bReborn=False):
 		cityList = []
 		for (x, y) in Areas.getCoreArea(iCiv, bReborn):
 			plot = gc.getMap().plot(x, y)
