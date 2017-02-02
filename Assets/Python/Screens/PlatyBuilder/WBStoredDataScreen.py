@@ -8,6 +8,7 @@ import WBCorporationScreen
 import WBInfoScreen
 import Barbs
 import AIWars
+import BugData
 gc = CyGlobalContext()
 
 iChange = 1
@@ -418,10 +419,10 @@ class WBStoredDataScreen:
 			self.placeListTables()
 
 		elif inputClass.getFunctionName() == "RestoreBackup":
-			data.load()
+			BugData.onGameLoad(-1)
 			self.loadData()
 		elif inputClass.getFunctionName() == "CreateBackup":
-			data.save()
+			BugData.save()
 
 		return 1
 
