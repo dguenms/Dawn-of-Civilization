@@ -676,7 +676,7 @@ class RiseAndFall:
 					city.changePopulation(-3)
 				
 		if iGameTurn == getTurnForYear(1040):	# Leoreth: first Seljuk wave (flips independents, spawns armies for players)
-			tEsfahan = utils.getFreePlot(81, 41)
+			tEsfahan = utils.getFreePlot((81, 41))
 			esfahan = gc.getMap().plot(tEsfahan[0], tEsfahan[1])
 			if esfahan.isCity():
 				utils.flipCity(tEsfahan, False, True, iSeljuks, ())
@@ -734,7 +734,7 @@ class RiseAndFall:
 		if iGameTurn == getTurnForYear(1070 + data.iSeed % 10 - 5): #Linkman226- Seljuks
 			tSpawnPlots = ((77,41), (74, 43), (72, 44), (74, 39))
 			for plot in tSpawnPlots:
-				spawnPlot = utils.getFreePlot(plot[0], plot[1])
+				spawnPlot = utils.getFreePlot(plot)
 				utils.makeUnitAI(iSeljukGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
 				utils.makeUnitAI(iSeljukGhulamWarrior, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
 				utils.makeUnitAI(iTrebuchet, iSeljuks, spawnPlot, UnitAITypes.UNITAI_ATTACK_CITY_LEMMING, 3)
@@ -757,7 +757,7 @@ class RiseAndFall:
 				unit.kill(False, iBarbarian)
 		
 			if pSeljuks.isAlive() and utils.getHumanID() != iMongolia:
-				tPlot = utils.getFreePlot(84, 46)
+				tPlot = utils.getFreePlot((84, 46))
 				targetAreaTL = (73, 38)
 				targetAreaBR = (85, 46)
 				count = 0
