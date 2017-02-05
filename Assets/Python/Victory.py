@@ -950,9 +950,8 @@ def checkTurn(iGameTurn, iPlayer):
 				lose(iRussia, 0)
 				
 		if isPossible(iRussia, 0):
-			if teamRussia.isHasTech(iRailroad):
-				if isConnectedByRailroad(iRussia, Areas.getCapital(iRussia), lSiberianCoast):
-					win(iRussia, 0)
+			if isConnectedByRailroad(iRussia, Areas.getCapital(iRussia), lSiberianCoast):
+				win(iRussia, 0)
 					
 		if iGameTurn == getTurnForYear(1920):
 			expire(iRussia, 0)
@@ -2500,6 +2499,7 @@ def getCityCulture(iPlayer, tPlot):
 	
 def isConnectedByRailroad(iPlayer, tStart, lTargetList):
 	if len(lTargetList) == 0: return False
+	if not gc.getTeam(iPlayer).isHasTech(iRailroad): return False
 	
 	iStartX, iStartY = tStart
 	iTargetX, iTargetY = lTargetList[0]

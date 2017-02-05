@@ -233,8 +233,8 @@ class GameData:
 		
 		self.dSecedingCities = {}
 		
-	def timedConquest(self, iPlayer, x, y):
-		self.lTimedConquests.append((iPlayer, x, y))
+	def timedConquest(self, iPlayer, tPlot):
+		self.lTimedConquests.append((iPlayer, tPlot))
 		
 	def setPlayerEnabled(self, iPlayer, bNewValue):
 		self.lPlayerEnabled[lSecondaryCivs.index(iPlayer)] = bNewValue

@@ -4391,8 +4391,7 @@ def doTradingCompanyConquerors1(argsList):
 			settlerList.append((x,y))
 
 	for tPlot in settlerList:
-		x, y = tPlot
-		utils.colonialAcquisition(iPlayer, x, y)
+		utils.colonialAcquisition(iPlayer, tPlot)
 	
 	utils.debugTextPopup(str([gc.getPlayer(i).getCivilizationShortDescription(0) for i in targetCivList]))
 	for iTargetCiv in targetCivList:
@@ -4408,10 +4407,10 @@ def doTradingCompanyConquerors1(argsList):
 			x, y = tPlot
 			if gc.getMap().plot(x, y).getPlotCity().getOwner() == iTargetCiv:
 				if bAccepted:
-					utils.colonialAcquisition(iPlayer, x, y)
+					utils.colonialAcquisition(iPlayer, tPlot)
 					gc.getPlayer(iTargetCiv).changeGold(200)
 				else:
-					utils.colonialConquest(iPlayer, x, y)
+					utils.colonialConquest(iPlayer, tPlot)
 				targetList.remove(tPlot)
 
 	pPlayer.setGold(max(0, pPlayer.getGold()-iGold))
@@ -4483,7 +4482,7 @@ def doTradingCompanyConquerors2(argsList):
 	for tPlot in targetList:
 		x, y = tPlot
 		if gc.getMap().plot(x, y).isCity():
-			utils.colonialConquest(iPlayer, x, y)
+			utils.colonialConquest(iPlayer, tPlot)
 
 	tSeaPlot = -1
 	x, y = targetList[0]
