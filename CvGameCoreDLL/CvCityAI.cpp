@@ -5803,10 +5803,13 @@ void CvCityAI::AI_updateBestBuild()
 								}
 							}
 
-							iHappyAdjust += GC.getImprovementInfo(eImprovement).getHappiness();
+							// Leoreth: account for buildings here
+							iHappyAdjust += (GC.getImprovementInfo(eImprovement).getHappiness() + getImprovementHappiness(eImprovement));
+							iHealthAdjust += (GC.getImprovementInfo(eImprovement).getHealth() + getImprovementHealth(eImprovement));
 							if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 							{
-								iHappyAdjust -= GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHappiness();
+								iHappyAdjust -= (GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHappiness() + getImprovementHappiness(pLoopPlot->getImprovementType()));
+								iHealthAdjust -= (GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHealth() + getImprovementHealth(pLoopPlot->getImprovementType()));
 							}
 
 							// Leoreth: ignore yield change of defensive structures if no natural food on the tile
@@ -5898,7 +5901,7 @@ void CvCityAI::AI_updateBestBuild()
 
 	int iBonusFoodDiff = ((iBonusFoodSurplus + iFeatureFoodSurplus) - (iBonusFoodDeficit + iHillFoodDeficit / 2));
 
-	int iHealth = goodHealth() - badHealth();
+	int iHealth = goodHealth() - badHealth() + iHealthAdjust; // Leoreth: use health adjust to discourage 
 	int iTargetSize = std::min(iGoodTileCount, getPopulation()+(happyLevel()-unhappyLevel()));
 	iTargetSize = std::min(iTargetSize, 1 + getPopulation() + iHealth);
 
@@ -8612,6 +8615,15 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 				{
 					bValid = true;
 
+					// Leoreth: try to discourage workshops with low health
+					if (iFoodChange > 0 && !pPlot->isHills())
+					{
+						if (GC.getImprovementInfo(eImprovement).getHealth() + getImprovementHealth(eImprovement) < 0)
+						{
+							bValid = false;
+						}
+					}
+
 					if (pPlot->getFeatureType() != NO_FEATURE)
 					{
 						if (GC.getBuildInfo(eBestTempBuild).isFeatureRemove(pPlot->getFeatureType()))
@@ -8806,7 +8818,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 						{
 							iHappyLevel -= iHappiness;
 						}
-						int iHealthLevel = (goodHealth() - badHealth(false, 0));
+						int iHealthLevel = (goodHealth() - badHealth());
 
 						int iHappyValue = 0;
 						if (iHappyLevel <= 0)
