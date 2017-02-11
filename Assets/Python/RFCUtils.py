@@ -226,7 +226,7 @@ class RFCUtils:
 		#moves new units back in their place
 		print ("tCityPlot After", tCityPlot)
 		tempPlot = gc.getMap().plot(0,67)
-		if tempPlot.getNumUnits() != 0:
+		if tempPlot.isUnit():
 			iNumUnitsInAPlot = tempPlot.getNumUnits()
 			#print ("iNumUnitsInAPlot", iNumUnitsInAPlot)
 			for i in range(iNumUnitsInAPlot):
@@ -294,7 +294,7 @@ class RFCUtils:
 							j += 1
 					tempPlot = gc.getMap().plot(0,67)
 					#moves new units back in their place
-					if tempPlot.getNumUnits() != 0:
+					if tempPlot.isUnit():
 						iNumUnitsInAPlot = tempPlot.getNumUnits()
 						for i in range(iNumUnitsInAPlot):
 							unit = tempPlot.getUnit(0)
@@ -411,8 +411,8 @@ class RFCUtils:
 
 
 	#handler
-	def spreadMajorCulture(self, iMajorCiv, iX, iY):
-		for (x, y) in self.surroundingPlots((iX, iY), 3):
+	def spreadMajorCulture(self, iMajorCiv, tPlot):
+		for (x, y) in self.surroundingPlots(tPlot, 3):
 			pPlot = gc.getMap().plot(x, y)
 			if pPlot.isCity():
 				city = pPlot.getPlotCity()
@@ -502,7 +502,7 @@ class RFCUtils:
 			plot = gc.getMap().plot(x, y)
 			iNumUnits = plot.getNumUnits()
 			for i in range(iNumUnits):
-				unit = plot.getUnit(i)
+				unit = plot.getUnit(0)
 				unit.kill(False, iOldOwner)
 				
 	def removeCoreUnits(self, iPlayer):
@@ -555,8 +555,8 @@ class RFCUtils:
 	#Congresses, RiseAndFall
 	def createGarrisons(self, tCityPlot, iNewOwner, iNumUnits):
 		x, y = tCityPlot
-		plotCity = gc.getMap().plot(x, y)
-		iNumUnitsInAPlot = plotCity.getNumUnits()
+		#plotCity = gc.getMap().plot(x, y)
+		#iNumUnitsInAPlot = plotCity.getNumUnits()
 
 		iUnitType = self.getBestDefender(iNewOwner)
 
@@ -632,7 +632,7 @@ class RFCUtils:
 			if not pPlot.isUnit() and pPlot.area().getNumTiles() > 10:
 				if not (bOuter and pPlot.countTotalCulture() != 0):
 					for (x, y) in self.surroundingPlots(tCoords):
-						if pPlot.getNumUnits() != 0:
+						if pPlot.isUnit():
 							return False
 					return True
 		return False
@@ -646,7 +646,7 @@ class RFCUtils:
 			if not pPlot.isUnit() and pPlot.area().getNumTiles() > 10:
 				if pPlot.countTotalCulture() == 0:
 					for (x, y) in self.surroundingPlots(tCoords):
-						if pPlot.getNumUnits() != 0:
+						if pPlot.isUnit():
 							return False
 					return True
 		return False
@@ -665,7 +665,7 @@ class RFCUtils:
 			if pPlot.getTerrainType() != iMarsh and pPlot.getFeatureType() != iJungle:
 				if not pPlot.isCity() and not pPlot.isUnit():
 					for (x, y) in self.surroundingPlots(tCoords):
-						if pPlot.getNumUnits() != 0:
+						if pPlot.isUnit():
 							return False
 					if bOuter:
 						if pPlot.countTotalCulture() == 0:
@@ -788,7 +788,7 @@ class RFCUtils:
 	# Leoreth - RiseAndFall
 	def clearCatapult(self, iCiv):
 		plotZero = gc.getMap().plot(0, 0)
-		if plotZero.getNumUnits():
+		if plotZero.isUnit():
 			catapult = plotZero.getUnit(0)
 			catapult.kill(False, iCiv)
 		for (x, y) in self.surroundingPlots((0, 0), 2):
@@ -1778,5 +1778,9 @@ class RFCUtils:
 				
 	def playerNames(self, lPlayers):
 		return str([gc.getPlayer(iPlayer).getCivilizationShortDescription(0) for iPlayer in lPlayers])
+		
+	def isYearIn(self, iStartYear, iEndYear):
+		iGameTurn = gc.getGame().getGameTurn()
+		return getTurnForYear(iStartYear) <= iGameTurn <= getTurnForYear(iEndYear)
 
 utils = RFCUtils()

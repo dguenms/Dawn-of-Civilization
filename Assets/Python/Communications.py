@@ -6,8 +6,7 @@ import PyHelpers
 import Popup
 from Consts import *
 from StoredData import *
-import RFCUtils
-utils = RFCUtils.RFCUtils()
+from RFCUtils import utils
 
 # globals
 gc = CyGlobalContext()
@@ -77,49 +76,32 @@ tPool3 = (iEgypt,
 
 
 class Communications:
-       	
+
 	def checkTurn(self, iGameTurn):
 		#self.decay(iIndia) #debug
-		#if (iGameTurn >= 25 and iGameTurn <= 95):
-		if (iGameTurn >= getTurnForYear(-2250) and iGameTurn <= getTurnForYear(-680)):
-			i = (iGameTurn + data.iSeed/10 - 5) % (len(tPool1))
+		if utils.isYearIn(-2250, -680):
+			i = (iGameTurn + data.iSeed/10 - 5) % len(tPool1)
 			iCiv = tPool1[i]
-##			#shuffle			
-##			if (i % 2 == 0):
-##				iCiv = i/2
-##			else:
-##				iCiv = iNumMajorPlayers/2 + i/2  
-			if (iCiv >= 0 and iCiv < iNumMajorPlayers):
-				if (gc.getPlayer(iCiv).isAlive() and iGameTurn >= getTurnForYear(tBirth[iCiv]+utils.getTurns(15))): # edead: RFCM
-					if (not gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iElectricity)):
-						self.decay(iCiv)
-		#elif (iGameTurn > 95 and iGameTurn <= 168):
-		elif (iGameTurn > getTurnForYear(-680) and iGameTurn <= getTurnForYear(410)): # edead: RFCM
-			i = (iGameTurn + data.iSeed/10 - 5) % (len(tPool2))
+			self.canDecay(iGameTurn, iCiv)
+		elif utils.isYearIn(-680, 410): # edead: RFCM
+			i = (iGameTurn + data.iSeed/10 - 5) % len(tPool2)
 			iCiv = tPool2[i]
-  
-			if (iCiv >= 0 and iCiv < iNumMajorPlayers):
-				if (gc.getPlayer(iCiv).isAlive() and iGameTurn >= getTurnForYear(tBirth[iCiv]+utils.getTurns(15))): # edead: RFCM
-					if (not gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iElectricity)):
-						self.decay(iCiv)
+			self.canDecay(iGameTurn, iCiv)
 		else:
-			i = (iGameTurn + data.iSeed/10 - 5) % (len(tPool3))
-			j = ((iGameTurn + data.iSeed/10 - 5)+13) % (len(tPool3))
+			i = (iGameTurn + data.iSeed/10 - 5) % len(tPool3)
+			j = ((iGameTurn + data.iSeed/10 - 5)+13) % len(tPool3)
 			iCiv1 = tPool3[i]
-			iCiv2 = tPool3[j]	  
-			if (iCiv1 >= 0 and iCiv1 < iNumMajorPlayers):
-				if (gc.getPlayer(iCiv1).isAlive() and iGameTurn >= getTurnForYear(tBirth[iCiv1]+utils.getTurns(15))): # edead: RFCM
-					if (not gc.getTeam(gc.getPlayer(iCiv1).getTeam()).isHasTech(iElectricity)):
-						self.decay(iCiv1)
-			if (iCiv2 >= 0 and iCiv2 < iNumMajorPlayers):
-				if (gc.getPlayer(iCiv2).isAlive() and iGameTurn >= getTurnForYear(tBirth[iCiv2]+utils.getTurns(15))): # edead: RFCM
-					if (not gc.getTeam(gc.getPlayer(iCiv2).getTeam()).isHasTech(iElectricity)):
-						self.decay(iCiv2)
+			iCiv2 = tPool3[j]
+			self.canDecay(iGameTurn, iCiv1)
+			self.canDecay(iGameTurn, iCiv2)
 
-			
+	def canDecay(self, iGameTurn, iCiv):
+		if 0 <= iCiv < iNumMajorPlayers:
+			if gc.getPlayer(iCiv).isAlive() and iGameTurn >= getTurnForYear(tBirth[iCiv]+utils.getTurns(15)): # edead: RFCM
+				if not gc.getTeam(gc.getPlayer(iCiv).getTeam()).isHasTech(iElectricity):
+					self.decay(iCiv)
 
 	def decay(self, iCiv):
-
 		teamCiv = gc.getTeam(gc.getPlayer(iCiv).getTeam())
 		iCounter = 0
 		

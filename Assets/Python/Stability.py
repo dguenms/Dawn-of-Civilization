@@ -3,13 +3,11 @@
 from CvPythonExtensions import *
 from StoredData import data # edead
 from Consts import *
-import RFCUtils
+from RFCUtils import utils
 import DynamicCivs as dc
 from operator import itemgetter
 import math
 import Areas
-
-utils = RFCUtils.RFCUtils()
 
 # globals
 gc = CyGlobalContext()

@@ -7,14 +7,13 @@ import Popup
 #import cPickle as pickle
 from Consts import *
 import Areas
-import RFCUtils
+from RFCUtils import utils
 import UniquePowers
 from StoredData import data # edead
 
 # globals
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer	# LOQ
-utils = RFCUtils.RFCUtils()
 up = UniquePowers.UniquePowers()
 
 ### Constants ###
@@ -99,20 +98,20 @@ class AIWars:
 		print "Check AI wars"
 
 		#turn automatically peace on between independent cities and all the major civs
-		if (iGameTurn % 20 == 7):
+		if iGameTurn % 20 == 7:
 			utils.restorePeaceHuman(iIndependent2, False)
-		if (iGameTurn % 20 == 14):
+		elif iGameTurn % 20 == 14:
 			utils.restorePeaceHuman(iIndependent, False)
-		if (iGameTurn % 60 == 55 and iGameTurn > utils.getTurns(50)):
+		if iGameTurn % 60 == 55 and iGameTurn > utils.getTurns(50):
 			utils.restorePeaceAI(iIndependent, False)
-		if (iGameTurn % 60 == 30 and iGameTurn > utils.getTurns(50)):
+		elif iGameTurn % 60 == 30 and iGameTurn > utils.getTurns(50):
 			utils.restorePeaceAI(iIndependent2, False)
 		#turn automatically war on between independent cities and some AI major civs
-		if (iGameTurn % 13 == 6 and iGameTurn > utils.getTurns(50)): #1 turn after restorePeace()
+		if iGameTurn % 13 == 6 and iGameTurn > utils.getTurns(50): #1 turn after restorePeace()
 			utils.minorWars(iIndependent)
-		if (iGameTurn % 13 == 11 and iGameTurn > utils.getTurns(50)): #1 turn after restorePeace()
+		elif iGameTurn % 13 == 11 and iGameTurn > utils.getTurns(50): #1 turn after restorePeace()
 			utils.minorWars(iIndependent2)
-		if (iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50)):
+		if iGameTurn % 50 == 24 and iGameTurn > utils.getTurns(50):
 			utils.minorWars(iCeltia)
 			utils.minorWars(iSeljuks)
 		
@@ -214,13 +213,14 @@ class AIWars:
 				utils.makeUnitAI(iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
 	
 	def forgetMemory(self, iTech, iPlayer):
-		if (iTech == iCommunism or iTech == iMassMedia):
-			for iLoopCiv in range( iNumPlayers ):
-				pPlayer = gc.getPlayer(iPlayer)
-				if (pPlayer.AI_getMemoryCount(iLoopCiv,0) > 0):
-					pPlayer.AI_changeMemoryCount(iLoopCiv,0,-1)
-				if (pPlayer.AI_getMemoryCount(iLoopCiv,1) > 0):
-					pPlayer.AI_changeMemoryCount(iLoopCiv,1,-1)
+		if iTech in [iCommunism, iMassMedia]:
+			pPlayer = gc.getPlayer(iPlayer)
+			for iLoopCiv in range(iNumPlayers):
+				if iPlayer == iLoopCiv: continue
+				if pPlayer.AI_getMemoryCount(iLoopCiv, MemoryTypes.MEMORY_DECLARED_WAR) > 0:
+					pPlayer.AI_changeMemoryCount(iLoopCiv, MemoryTypes.MEMORY_DECLARED_WAR, -1)
+				if pPlayer.AI_getMemoryCount(iLoopCiv, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND) > 0:
+					pPlayer.AI_changeMemoryCount(iLoopCiv, MemoryTypes.MEMORY_DECLARED_WAR_ON_FRIEND, -1)
 					
 	def getNextInterval(self, iGameTurn):
 		if iGameTurn > getTurnForYear(1600):

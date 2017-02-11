@@ -6,11 +6,10 @@
 import CvUtil
 from CvPythonExtensions import *
 import CvEventInterface
-import RFCUtils
+from RFCUtils import utils
 
 # globals
 gc = CyGlobalContext()
-utils = RFCUtils.RFCUtils()
 
 class CvGameUtils:
 	"Miscellaneous game functions"

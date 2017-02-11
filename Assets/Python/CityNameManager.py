@@ -5,12 +5,11 @@ import CvUtil
 import PyHelpers
 import Popup
 from Consts import *
-import RFCUtils
+from RFCUtils import utils
 from StoredData import data
 
 # globals
 gc = CyGlobalContext()
-utils = RFCUtils.RFCUtils()
 PyPlayer = PyHelpers.PyPlayer
 
 iNumLanguages = 41

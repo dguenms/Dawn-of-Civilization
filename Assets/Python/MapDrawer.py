@@ -1,7 +1,7 @@
 from CvPythonExtensions import *
 from Consts import *
 import Areas
-import RFCUtils
+from RFCUtils import utils
 import csv
 
 IMAGE_LOCATION = "E:\Dawn of Civ Maps"
@@ -12,7 +12,6 @@ DISPLAY_CONTESTED = True
 (LAND, WATER, PEAK, CORE, HISTORICAL, CONTESTED, FOREIGN, FOREIGN_CORE, FLIPZONE) = range(9)
 
 gc = CyGlobalContext()
-utils = RFCUtils.RFCUtils()
 
 def createMaps():
 	for iPlayer in range(iNumPlayers):

@@ -4,15 +4,13 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers
 from Consts import *
-import RFCUtils
+from RFCUtils import utils
 from operator import itemgetter
 
 # globals
 gc = CyGlobalContext()
 localText = CyTranslator()
 PyPlayer = PyHelpers.PyPlayer
-
-utils = RFCUtils.RFCUtils()
 
 iNumCompanies = 9
 
