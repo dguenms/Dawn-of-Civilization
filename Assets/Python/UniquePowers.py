@@ -32,10 +32,9 @@ import Popup
 #import cPickle as pickle
 from StoredData import data # edead
 from Consts import *
-import RFCUtils
+from RFCUtils import utils
 from operator import itemgetter
 import Areas
-utils = RFCUtils.RFCUtils()
 
 # globals
 gc = CyGlobalContext()
@@ -55,18 +54,19 @@ class UniquePowers:
 ### Main methods (Event-Triggered) ###
 #####################################  
 
-       	
+
 	def checkTurn(self, iGameTurn):
 
 		print("UniquePowers.checkTurn()")
 			
-		if (iGameTurn >= getTurnForYear(860)) and gc.getPlayer(iRussia).isAlive():
+		if iGameTurn >= getTurnForYear(tBirth[iRussia]) and pRussia.isAlive():
 			self.russianUP()
 
-		if (iGameTurn >= getTurnForYear(tBirth[iAmerica])+utils.getTurns(5)):
+		if iGameTurn >= getTurnForYear(tBirth[iAmerica])+utils.getTurns(5):
 			self.checkImmigration()
 			
-		self.indonesianUP()
+		if iGameTurn >= getTurnForYear(tBirth[iIndonesia]) and pIndonesia.isAlive():
+			self.indonesianUP()
 					
 	def onChangeWar(self, bWar, iTeam, iOtherTeam):
 	
@@ -104,17 +104,14 @@ class UniquePowers:
 
 #------------------ROMAN UP-----------------------
 
-	def doRomanWar(self, iCiv):
+	def doRomanWar(self, iCiv): # Unused
 	
 		if iCiv in [iCarthage, iPersia, iCeltia, iEgypt]:
 			iNumTargets = 2
 			self.romanConquestUP(iCiv, iNumTargets)
 		elif iCiv == iGreece and utils.getHumanID() != iGreece:
 			bEgypt = False
-			cityList = PyPlayer(iGreece).getCityList()
-			
-			for pCity in cityList:
-				city = pCity.GetCy()
+			for city in utils.getCityList(iGreece):
 				if city.getRegionID() == rEgypt:
 					bEgypt = True
 					break
@@ -127,26 +124,24 @@ class UniquePowers:
 			
 			self.romanConquestUP(iCiv, iNumTargets)
 
-	def romanConquestUP(self, iEnemy, iNumTargets=1, lPreferredTargetRegions=[]):
+	def romanConquestUP(self, iEnemy, iNumTargets=1, lPreferredTargetRegions=[]): # Unused
 		lEnemyCities = []
 		lPreferredCities = []
 		
 		print "Getting closest city."
-		cityList = PyPlayer(iEnemy).getCityList()
-		for city in cityList:
-			pCity = city.GetCy()
+		for city in utils.getCityList(iEnemy):
 			iDist = utils.calculateDistance(pCity.getX(), pCity.getY(), pRome.getCapitalCity().getX(), pRome.getCapitalCity().getY())
 			lEnemyCities.append((iDist, pCity))
 			if pCity.getRegionID() in lPreferredTargetRegions:
 				lPreferredCities.append((iDist, pCity))
 				
-		if len(lPreferredCities) > 0:
+		if lPreferredCities:
 			lEnemyCities = lPreferredCities
 			
 		lEnemyCities.sort()
 		
 		for i in range(iNumTargets):
-			if len(lEnemyCities) > 0:
+			if lEnemyCities:
 				pTargetCity = lEnemyCities.pop(0)[1]
 				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iRome)
 				
@@ -155,24 +150,6 @@ class UniquePowers:
 				
 				utils.makeUnitAI(iRomanLegion, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2+iExtra)
 				utils.makeUnitAI(iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1+iExtra*2)
-
-		#if (pTargetCity != -1):
-		#	print ("City found, searching free land plot.")
-		#	tPlot = utils.findNearestLandPlot((pTargetCity.getX(),pTargetCity.getY()), iRome)
-		#else:
-		#	print ("No plot found, spawning in Roma instead.")
-
-		# weaken the effect if human player is Rome
-		#if (utils.getHumanID() == iRome):
-		#	utils.makeUnitAI(iRomanLegion, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-		#	utils.makeUnitAI(iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
-		#else:
-		#	utils.makeUnitAI(iRomanLegion, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 3)
-		#	utils.makeUnitAI(iCatapult, iRome, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
-		#print ("Units created.")
-
-		#utils.makeUnit(iRomanLegion, iRome, tPlot, 3)
-		#utils.makeUnit(iCatapult, iRome, tPlot, 2)
 				
 		#utils.debugTextPopup("Roman conquerors against "+CyTranslator().getText(str(gc.getPlayer(iEnemy).getCivilizationShortDescriptionKey()), ()))
 
@@ -180,13 +157,11 @@ class UniquePowers:
 		CyInterface().addMessage(iEnemy, False, iDuration, CyTranslator().getText("TXT_KEY_UP_ROMAN_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 		print ("Message displayed.")
 		
-	def greekConquestUP(self, iEnemy, iNumTargets=1):
+	def greekConquestUP(self, iEnemy, iNumTargets=1): # Unused
 		lEnemyCities = []
 		
 		print "Getting closest city."
-		cityList = PyPlayer(iEnemy).getCityList()
-		for city in cityList:
-			pCity = city.GetCy()
+		for city in utils.getCityList(iEnemy):
 			iDist = utils.calculateDistance(pCity.getX(), pCity.getY(), pGreece.getCapitalCity().getX(), pGreece.getCapitalCity().getY())
 			lEnemyCities.append((iDist, pCity))
 			
@@ -195,10 +170,10 @@ class UniquePowers:
 		for i in range(iNumTargets):
 			if len(lEnemyCities) > 0:
 				pTargetCity = lEnemyCities.pop(0)[1]
-				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iRome)
+				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iGreece)
 				
 				iExtra = 0
-				if utils.getHumanID() != iGreece and utils.getHumanID() != iEnemy: 
+				if utils.getHumanID() not in [iGreece, iEnemy]: 
 					iExtra = 1
 					if iEnemy == iPersia: iExtra = 2
 				
@@ -207,20 +182,18 @@ class UniquePowers:
 				
 		CyInterface().addMessage(iEnemy, False, iDuration, CyTranslator().getText("TXT_KEY_UP_GREEK_CONQUESTS_TARGET", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 		
-	def tamilConquestUP(self, iEnemy, iNumTargets=1):
+	def tamilConquestUP(self, iEnemy, iNumTargets=1): # Unused
 		lEnemyCities = []
 		
 		print "Getting closest city."
-		cityList = PyPlayer(iEnemy).getCityList()
-		for city in cityList:
-			pCity = city.GetCy()
-			iDist = utils.calculateDistance(pCity.getX(), pCity.getY(), pGreece.getCapitalCity().getX(), pGreece.getCapitalCity().getY())
+		for pCity in utils.getCityList(iEnemy):
+			iDist = utils.calculateDistance(pCity.getX(), pCity.getY(), pTamils.getCapitalCity().getX(), pTamils.getCapitalCity().getY())
 			lEnemyCities.append((iDist, pCity))
 			
 		lEnemyCities.sort()
 		
 		for i in range(iNumTargets):
-			if len(lEnemyCities) > 0:
+			if lEnemyCities:
 				pTargetCity = lEnemyCities.pop(0)[1]
 				tPlot = utils.findNearestLandPlot((pTargetCity.getX(), pTargetCity.getY()), iTamils)
 				
@@ -233,17 +206,17 @@ class UniquePowers:
 
 #------------------ARABIAN U.P.-------------------
 
-	def mughalUP(self, city):
+	def mughalUP(self, city): # Unused
 		return
-		pMughals = gc.getPlayer(iMughals)
+		# pMughals = gc.getPlayer(iMughals)
 		iStateReligion = pMughals.getStateReligion()
 
 		if iStateReligion >= 0:
 			city.setHasReligion(iStateReligion, True, True, False)
 
-	def seljukUP(self, city):
+	def seljukUP(self, city): # Unused
 		return
-		pSeljuks = gc.getPlayer(iSeljuks)
+		# pSeljuks = gc.getPlayer(iSeljuks)
 		iStateReligion = pSeljuks.getStateReligion()
 
 		if iStateReligion >= 0:
@@ -260,71 +233,60 @@ class UniquePowers:
 		
 
 	def arabianUP(self, city):
-		pArabia = gc.getPlayer(iArabia)
+		#pArabia = gc.getPlayer(iArabia)
 		iStateReligion = pArabia.getStateReligion()
 
-		if (iStateReligion >= 0):
-			#for iReligion in range(iNumReligions):	# Leoreth: now removes foreign religions and buildings (except holy cities) as well
-			#	if city.isHasReligion(iReligion) and not city.isHolyCityByType(iReligion):
-			#		city.setHasReligion(iReligion, False, False, False)
-			#	if city.hasBuilding(iTemple + iReligion*4):
-			#		city.setHasRealBuilding((iTemple + iReligion*4), False)
-			#	if city.hasBuilding(iCathedral + iReligion*4):
-			#		city.setHasRealBuilding((iCathedral + iReligion*4), False)
-			#	if city.hasBuilding(iMonastery + iReligion*4):
-			#		city.setHasRealBuilding((iMonastery + iReligion*4), False)
-
-			if (not city.isHasReligion(iStateReligion)):
+		if iStateReligion >= 0:
+			if not city.isHasReligion(iStateReligion):
 				city.setHasReligion(iStateReligion, True, True, False)
-			if (not city.hasBuilding(iTemple + iStateReligion*4)):
+			if not city.hasBuilding(iTemple + iStateReligion*4):
 				city.setHasRealBuilding((iTemple + iStateReligion*4), True)
 
 #------------------AZTEC U.P.-------------------
 
 	def aztecUP(self, argsList): #Real Slavery by Sevo
-		pWinningUnit,pLosingUnit = argsList
+		if not pAztecs.isAlive(): return
+		if utils.isReborn(iAztecs): return
+		
+		pWinningUnit, pLosingUnit = argsList
 		pWinningPlayer = gc.getPlayer(pWinningUnit.getOwner())
 		
-		if (pWinningPlayer.getID() != iAztecs):
+		if pWinningPlayer.getID() != iAztecs:
 			return
 			
-		if utils.isReborn(iAztecs): return
-
 		pLosingPlayer = gc.getPlayer(pLosingUnit.getOwner())
 		cLosingUnit = PyHelpers.PyInfo.UnitInfo(pLosingUnit.getUnitType())
 		
-		if (pLosingUnit.getUnitType() < iWarrior):
+		if pLosingUnit.isAnimal() or not (pLosingUnit.getDomainType() == DomainTypes.DOMAIN_LAND and pLosingUnit.getCombat() > 0):
 			return
 		
 		# Only enslave land units!!
-		if (cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_LAND")):
-			iRandom = gc.getGame().getSorenRandNum(100, 'capture chance')
-			if (iRandom < 35):
-				pNewUnit = pWinningPlayer.initUnit(iAztecSlave, pWinningUnit.getX(), pWinningUnit.getY(), UnitAITypes.UNITAI_ENGINEER, DirectionTypes.DIRECTION_SOUTH)
-				CyInterface().addMessage(pWinningPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
-				CyInterface().addMessage(pLosingPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_LOSE", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(7),pWinningUnit.getX(),pWinningUnit.getY(),True,True)		
-				if (pLosingUnit.getOwner() not in lCivGroups[5] and pLosingUnit.getOwner() < iNumPlayers): # old world civs now
-					data.iAztecSlaves += 1
+		iRandom = gc.getGame().getSorenRandNum(100, 'capture chance')
+		if iRandom < 35:
+			pNewUnit = pWinningPlayer.initUnit(iAztecSlave, pWinningUnit.getX(), pWinningUnit.getY(), UnitAITypes.UNITAI_ENGINEER, DirectionTypes.DIRECTION_SOUTH)
+			CyInterface().addMessage(pWinningPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
+			CyInterface().addMessage(pLosingPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_LOSE", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(7),pWinningUnit.getX(),pWinningUnit.getY(),True,True)		
+			if pLosingUnit.getOwner() not in lCivGroups[5] and pLosingUnit.getOwner() < iNumPlayers: # old world civs now
+				data.iAztecSlaves += 1
 
 
 
 #------------------RUSSIAN U.P.-------------------
 
 	def russianUP(self):
-		pRussia = gc.getPlayer(iRussia)
-		teamRussia = gc.getTeam(pRussia.getTeam()) 
-		for x in range(tRussianTopLeft[0], tRussianBottomRight[0]):
-			for y in range(tRussianTopLeft[1], tRussianBottomRight[1]):
-				pCurrent = gc.getMap().plot( x, y )
-				if (pCurrent.getOwner() == iRussia):
-					iNumUnitsInAPlot = pCurrent.getNumUnits()
-					if (iNumUnitsInAPlot):
-						for i in range(iNumUnitsInAPlot):
-							unit = pCurrent.getUnit(i)
-							if (teamRussia.isAtWar(unit.getOwner())):
+		#pRussia = gc.getPlayer(iRussia)
+		#teamRussia = gc.getTeam(pRussia.getTeam())
+		for (x, y) in utils.getPlotList(tRussianTopLeft, tRussianBottomRight):
+			pPlot = gc.getMap().plot(x, y)
+			if pPlot.getOwner() == iRussia:
+				iNumUnitsInAPlot = pPlot.getNumUnits()
+				if iNumUnitsInAPlot > 0:
+					for i in range(iNumUnitsInAPlot):
+						unit = pPlot.getUnit(i)
+						if teamRussia.isAtWar(unit.getOwner()):
 ##								print("hp", unit.currHitPoints() )
 ##								print("damage", unit.getDamage() )
-								unit.setDamage(unit.getDamage()+8, iRussia)
+							unit.changeDamage(8, iRussia)
 ##								print("hp now", unit.currHitPoints() 
 ##								print("damage", unit.getDamage() )
 
@@ -335,82 +297,77 @@ class UniquePowers:
 
 
 	def turkishUP(self, city, iCiv, iPreviousOwner):
-	       
-		for x in range(city.getX()-2, city.getX()+3):
-			for y in range(city.getY()-2, city.getY()+3):
-				pCurrent = gc.getMap().plot( x, y )
-				if (x == city.getX() and y == city.getY()):
-					utils.convertPlotCulture(pCurrent, iCiv, 51, False)
-				elif (pCurrent.isCity()):
-					pass
-				elif (utils.calculateDistance(x, y, city.getX(), city.getY()) == 1):
-					utils.convertPlotCulture(pCurrent, iCiv, 80, True)
-				else:
-					if pCurrent.getOwner() == iPreviousOwner:
-						utils.convertPlotCulture(pCurrent, iCiv, 20, False)
+		tPlot = (city.getX(), city.getY())
+		x, y = tPlot
+		for (i, j) in utils.surroundingPlots(tPlot, 2):
+			pPlot = gc.getMap().plot(i, j)
+			if (i, j) == tPlot:
+				utils.convertPlotCulture(pPlot, iCiv, 51, False)
+			elif pPlot.isCity():
+				pass
+			elif utils.calculateDistance(i, j, x ,y) == 1:
+				utils.convertPlotCulture(pPlot, iCiv, 80, True)
+			else:
+				if pPlot.getOwner() == iPreviousOwner:
+					utils.convertPlotCulture(pPlot, iCiv, 20, False)
 
 
 #------------------MONGOLIAN U.P.-------------------
 
-	def setMongolAI(self):
+	def setMongolAI(self): # Unused
 		pCity = gc.getMap().plot(data.lLatestRazeData[3], data.lLatestRazeData[4])
 		city = pCity.getPlotCity()
 		iOldOwner = data.lLatestRazeData[1]
 		print ("Mongol AI", iOldOwner)
 
-		if (pCity.getNumUnits() > 0):
+		if pCity.isUnit():
 			for i in range(pCity.getNumUnits()):
 				unit = pCity.getUnit(i)
-				if (unit.getOwner() == iMongolia):
-					if (unit.baseMoves() == 2):
-						unit.setMoves(2)
-					if (unit.baseMoves() == 1):
-						unit.setMoves(1)
+				if unit.getOwner() == iMongolia:
+					unit.setMoves(unit.baseMoves())
 
 
-	def useMongolUP(self):
+	def useMongolUP(self): # Unused
 		iOldOwner = data.lLatestRazeData[1]
 		pCity = gc.getMap().plot(data.lLatestRazeData[3], data.lLatestRazeData[4])
 		city = pCity.getPlotCity()
 		print ("Mongol UP", iOldOwner)
-		for x in range(data.lLatestRazeData[3] - iMongolianRadius, data.lLatestRazeData[3] + 1 + iMongolianRadius):
-			for y in range(data.lLatestRazeData[4] - iMongolianRadius, data.lLatestRazeData[4] + 1 + iMongolianRadius):
-				pCurrent = gc.getMap().plot( x, y )
-				if ( pCurrent.isCity()):
-					cityNear = pCurrent.getPlotCity()
-					iOwnerNear = cityNear.getOwner()
-					if (cityNear.getName() != city.getName()):
-						print ("iOwnerNear", iOwnerNear, "citynear", cityNear.getName())
-						if (iOwnerNear == iOldOwner or iOwnerNear == iIndependent or iOwnerNear == iIndependent2):
-							print ("citynear", cityNear.getName(), "passed1")
-							if (cityNear.getPopulation() <= data.lLatestRazeData[2] and not cityNear.isCapital()):
-								print ("citynear", cityNear.getName(), "passed2")
-								iApproachingUnits = 0
-								for j in range(cityNear.getX() -1, cityNear.getX() +2):
-									for k in range(cityNear.getY() -1, cityNear.getY() +2):
-										pNear = gc.getMap().plot( j, k )
-										if (pNear.getNumUnits() > 0):
-											for l in range(pNear.getNumUnits()):
-												if(pNear.getUnit(l).getOwner() == iMongolia):
-													iApproachingUnits += 1
-													break
-													break
-													break													
-								if (iApproachingUnits > 0):
-									print ("citynear", cityNear.getName(), "passed3")
-									utils.flipUnitsInCityBefore((x,y), iMongolia, iOwnerNear)
-									data.tTempFlippingCity = (x, y)
-									utils.flipCity((x,y), 0, 0, iMongolia, [iOwnerNear])
-									utils.flipUnitsInCityAfter(data.tTempFlippingCity, iMongolia)
-									utils.cultureManager(data.tTempFlippingCity, 50, iOwnerNear, iMongolia, False, False, False)
-									CyInterface().addMessage(iOwnerNear, False, iDuration, CyTranslator().getText("TXT_KEY_UP_TERROR1", ()) + " " + cityNear.getName() + " " + CyTranslator().getText("TXT_KEY_UP_TERROR2", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-									CyInterface().addMessage(iMongolia, False, iDuration, CyTranslator().getText("TXT_KEY_UP_TERROR1", ()) + " " + cityNear.getName() + " " + CyTranslator().getText("TXT_KEY_UP_TERROR2", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+		for (x, y) in surroundingPlots((data.lLatestRazeData[3], data.lLatestRazeData[4]), iMongolianRadius):
+			tPlot = (x, y)
+			pPlot = gc.getMap().plot(x, y)
+			if pPlot.isCity():
+				cityNear = pPlot.getPlotCity()
+				iOwnerNear = cityNear.getOwner()
+				if cityNear.getName() != city.getName():
+					print ("iOwnerNear", iOwnerNear, "citynear", cityNear.getName())
+					if iOwnerNear in [iOldOwner, iIndependent, iIndependent2]:
+						print ("citynear", cityNear.getName(), "passed1")
+						if cityNear.getPopulation() <= data.lLatestRazeData[2] and not cityNear.isCapital():
+							print ("citynear", cityNear.getName(), "passed2")
+							bUnitsApproaching = False
+							for (i, j) in utils.surroundingPlots((cityNear.getX(), cityNear.getY())):
+								pNear = gc.getMap().plot(i, j)
+								if pNear.isUnit():
+									for k in range(pNear.getNumUnits()):
+										if pNear.getUnit(k).getOwner() == iMongolia:
+											bUnitsApproaching = True
+											break
+											break
+							if bUnitsApproaching:
+								print ("citynear", cityNear.getName(), "passed3")
+								utils.flipUnitsInCityBefore(tPlot, iMongolia, iOwnerNear)
+								data.tTempFlippingCity = tPlot
+								utils.flipCity(tPlot, 0, 0, iMongolia, [iOwnerNear])
+								utils.flipUnitsInCityAfter(data.tTempFlippingCity, iMongolia)
+								utils.cultureManager(data.tTempFlippingCity, 50, iOwnerNear, iMongolia, False, False, False)
+								CyInterface().addMessage(iOwnerNear, False, iDuration, CyTranslator().getText("TXT_KEY_UP_TERROR1", ()) + " " + cityNear.getName() + " " + CyTranslator().getText("TXT_KEY_UP_TERROR2", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+								CyInterface().addMessage(iMongolia, False, iDuration, CyTranslator().getText("TXT_KEY_UP_TERROR1", ()) + " " + cityNear.getName() + " " + CyTranslator().getText("TXT_KEY_UP_TERROR2", ()), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
 
 
 	def mongolUP(self, city):
-		if (city.getPopulation() >= 7):
+		if city.getPopulation() >= 7:
 			utils.makeUnitAI(iMongolianKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 2)
-		elif (city.getPopulation() >= 4):
+		elif city.getPopulation() >= 4:
 			utils.makeUnitAI(iMongolianKeshik, iMongolia, (city.getX(), city.getY()), UnitAITypes.UNITAI_ATTACK_CITY, 1)
 
 		#if utils.getHumanID() != iMongolia:
@@ -484,11 +441,10 @@ class UniquePowers:
 			# extra cottage growth for target city's vicinity
 			x = targetCity.getX()
 			y = targetCity.getY()
-			for i in range(x-2, x+3):
-				for j in range(y-2, y+3):
-					pCurrent = gc.getMap().plot(i, j)
-					if pCurrent.getWorkingCity() == targetCity:
-						pCurrent.changeUpgradeProgress(utils.getTurns(10))
+			for (i, j) in utils.surroundingPlots((x, y), 2):
+				pCurrent = gc.getMap().plot(i, j)
+				if pCurrent.getWorkingCity() == targetCity:
+					pCurrent.changeUpgradeProgress(utils.getTurns(10))
 						
 			# migration brings culture
 			targetPlot = gc.getMap().plot(x, y)
@@ -520,13 +476,13 @@ class UniquePowers:
 		
 		lProgress = []
 		bAllZero = True
-		for iSpecialist in [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatGeneral, iGreatSpy]:
+		for iSpecialist in [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman]:
 			iProgress = city.getGreatPeopleUnitProgress(utils.getUniqueUnit(city.getOwner(), iSpecialist))
 			if iProgress > 0: bAllZero = False
 			lProgress.append(iProgress)
 			
 		if bAllZero:
-			iGreatPerson = utils.getRandomEntry([iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatSpy])
+			iGreatPerson = utils.getRandomEntry([iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman])
 		else:
 			iGreatPerson = utils.getHighestIndex(lProgress) + iGreatProphet
 			
@@ -538,20 +494,15 @@ class UniquePowers:
 		if utils.getHumanID() == city.getOwner():
 			CyInterface().addMessage(city.getOwner(), False, iDuration, CyTranslator().getText("TXT_KEY_UP_MULTICULTURALISM", (city.getName(), gc.getUnitInfo(iGreatPerson).getText(), iPopulation)), "", InterfaceMessageTypes.MESSAGE_TYPE_MINOR_EVENT, gc.getUnitInfo(iGreatPerson).getButton(), ColorTypes(iGreen), city.getX(), city.getY(), True, True)
 					
-	def selectRandomCitySourceCiv(self, iCiv):
-		if (gc.getPlayer(iCiv).isAlive()):
-			cityList = []
-			for pyCity in PyPlayer(iCiv).getCityList():
-				if (pyCity.GetCy()):
-					if ( pyCity.GetCy().getPopulation() > 1):			
-						cityList.append(pyCity.GetCy())
-			if (len(cityList)):
-				iCity = gc.getGame().getSorenRandNum(len(cityList), 'random city')
-				return cityList[iCity]
-		return False				
+	def selectRandomCitySourceCiv(self, iCiv): # Unused
+		if gc.getPlayer(iCiv).isAlive():
+			cityList = [city for city in utils.getCityList(iCiv) if city.getPopulation() > 1]
+			if cityList:
+				return getRandomEntry(cityList)
+		return False
 
 
-	def selectRandomCityTargetCiv(self, iCiv):
+	def selectRandomCityTargetCiv(self, iCiv): # Unused
 		if gc.getPlayer(iCiv).isAlive():
 			lCities = []
 			for city in utils.getCityList(iCiv):
@@ -561,33 +512,32 @@ class UniquePowers:
 				return utils.getRandomEntry(lCities)
 		return False
 		
-	def getNewWorldCities(self):
+	def getNewWorldCities(self): # Unused
 		lCityList = []
 		
 		for iPlayer in range(iNumPlayers):
 			pPlayer = gc.getPlayer(iPlayer)
 			if pPlayer.getCapitalCity().getRegionID() in lNewWorld:
-				for city in PyPlayer(iPlayer).getCityList():
-					pCity = city.GetCy()
-					if pCity.getRegionID() in lNewWorld:
-						lCityList.append(pCity)
+				for city in utils.getCityList(iPlayer):
+					if city.getRegionID() in lNewWorld:
+						lCityList.append(city)
 						
 		return lCityList
 	
 	def tradingCompanyCulture(self, city, iCiv, iPreviousOwner):
-	       
-		for x in range(city.getX()-1, city.getX()+2):
-			for y in range(city.getY()-1, city.getY()+2):
-				pCurrent = gc.getMap().plot( x, y )
-				if (x == city.getX() and y == city.getY()):
-					utils.convertPlotCulture(pCurrent, iCiv, 51, False)
-				elif (pCurrent.isCity()):
-					pass
-				elif (utils.calculateDistance(x, y, city.getX(), city.getY()) == 1):
-					utils.convertPlotCulture(pCurrent, iCiv, 65, True)
-				else:
-					if pCurrent.getOwner() == iPreviousOwner:
-						utils.convertPlotCulture(pCurrent, iCiv, 15, False)
+		tCity = (city.getX(), city.getY())
+		x, y = tCity
+		for (i, j) in utils.surroundingPlots(tCity):
+			pPlot = gc.getMap().plot(i, j)
+			if (i, j) == tCity:
+				utils.convertPlotCulture(pPlot, iCiv, 51, False)
+			elif pPlot.isCity():
+				pass
+			elif utils.calculateDistance(i, j, x ,y) == 1:
+				utils.convertPlotCulture(pPlot, iCiv, 65, True)
+			else:
+				if pPlot.getOwner() == iPreviousOwner:
+					utils.convertPlotCulture(pPlot, iCiv, 15, False)
 			
 	# Indonesian UP: additional gold for foreign ships in your core
 	def indonesianUP(self):

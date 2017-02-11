@@ -4,7 +4,7 @@ from CvPythonExtensions import *
 import CvUtil
 import PyHelpers 
 import Popup
-import RFCUtils
+from RFCUtils import utils
 from Consts import *
 import Areas
 import CityNameManager as cnm
@@ -14,7 +14,6 @@ from StoredData import data # edead
 
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
-utils = RFCUtils.RFCUtils()
 localText = CyTranslator()
 
 ### Singleton ###

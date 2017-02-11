@@ -3,14 +3,13 @@
 from CvPythonExtensions import *
 from StoredData import data
 from Consts import *
-import RFCUtils
+from RFCUtils import utils
 import heapq
 import Areas
 
 ### GLOBALS ###
 
 gc = CyGlobalContext()
-utils = RFCUtils.RFCUtils()
 localText = CyTranslator()
 
 ### CONSTANTS ###
@@ -1822,7 +1821,7 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 	if utils.getHumanID() != iWinningPlayer and data.bIgnoreAI: return
 	
 	pLosingUnitInfo = gc.getUnitInfo(pLosingUnit.getUnitType())
-	iDomainSea = gc.getInfoTypeForString("DOMAIN_SEA")
+	iDomainSea = DomainTypes.DOMAIN_SEA
 	
 	# second English goal: control a total of 25 frigates and ships of the line and sink 50 ships in 1800 AD
 	if iWinningPlayer == iEngland:
@@ -2337,7 +2336,7 @@ def isControlledOrVassalized(iPlayer, lPlots):
 		if iLoopPlayer in lOwners:
 			bControlled = True
 			lOwners.remove(iLoopPlayer)
-	if len(lOwners):
+	if lOwners:
 		bControlled = False
 	return bControlled
 	
@@ -2498,7 +2497,7 @@ def getCityCulture(iPlayer, tPlot):
 	return plot.getPlotCity().getCulture(iPlayer)
 	
 def isConnectedByRailroad(iPlayer, tStart, lTargetList):
-	if len(lTargetList) == 0: return False
+	if not lTargetList: return False
 	if not gc.getTeam(iPlayer).isHasTech(iRailroad): return False
 	
 	iStartX, iStartY = tStart
@@ -2518,15 +2517,14 @@ def isConnectedByRailroad(iPlayer, tStart, lTargetList):
 		h, x, y = heapq.heappop(lNodes)
 		lVisitedNodes.append((h, x, y))
 		
-		for i in range(x-1, x+2):
-			for j in range(y-1, y+2):
-				plot = gc.getMap().plot(i, j)
-				if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == iRailroad):
-					if (i, j) in lTargetList: return True
-					tTuple = (utils.calculateDistance(i, j, iTargetX, iTargetY), i, j)
-					if not tTuple in lVisitedNodes:
-						if not tTuple in lNodes:
-							heapq.heappush(lNodes, tTuple)
+		for (i, j) in utils.surroundingPlots((x, y)):
+			plot = gc.getMap().plot(i, j)
+			if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == iRailroad):
+				if (i, j) in lTargetList: return True
+				tTuple = (utils.calculateDistance(i, j, iTargetX, iTargetY), i, j)
+				if not tTuple in lVisitedNodes:
+					if not tTuple in lNodes:
+						heapq.heappush(lNodes, tTuple)
 							
 	return False
 	
@@ -2611,12 +2609,10 @@ def isCultureControlled(iPlayer, lPlots):
 	return True
 	
 def controlsCity(iPlayer, tPlot):
-	x, y = tPlot
-	for i in range(x-1, x+2):
-		for j in range(y-1, y+2):
-			plot = gc.getMap().plot(i, j)
-			if plot.isCity() and plot.getPlotCity().getOwner() == iPlayer:
-				return True
+	for (x, y) in utils.surroundingPlots(tPlot):
+		plot = gc.getMap().plot(x, y)
+		if plot.isCity() and plot.getPlotCity().getOwner() == iPlayer:
+			return True
 	return False
 	
 def getTotalCulture(lPlayers):
@@ -2626,13 +2622,8 @@ def getTotalCulture(lPlayers):
 	return iTotalCulture
 	
 def countImprovements(iPlayer, iImprovement):
-	iCount = 0
-	for x in range(iWorldX):
-		for y in range(iWorldY):
-			plot = gc.getMap().plot(x, y)
-			if plot.getOwner() == iPlayer and plot.getImprovementType() == iImprovement:
-				iCount += 1
-	return iCount
+	if iImprovement <= 0: return 0
+	return gc.getPlayer(iPlayer).getImprovementCount(iImprovement)
 	
 def controlsAllCities(iPlayer, tTopLeft, tBottomRight, tExceptions=()):
 	for city in utils.getAreaCities(utils.getPlotList(tTopLeft, tBottomRight, tExceptions)):
