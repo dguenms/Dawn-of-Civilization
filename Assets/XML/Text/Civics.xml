@@ -466,15 +466,19 @@
 		<Spanish>Expansi&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVICOPTION_MILITARY</Tag>
-		<English>Military</English>
+		<Tag>TXT_KEY_CIVICOPTION_TERRITORY</Tag>
+		<English>Territory</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
-		<English>Organization</English>
+		<Tag>TXT_KEY_CIVICOPTION_AUTHORITY</Tag>
+		<English>Authority</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_SOCIETY</Tag>
 		<English>Society</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_LEGITIMACY</Tag>
+		<English>Legitimacy</English>
 	</TEXT>
 </Civ4GameText>
