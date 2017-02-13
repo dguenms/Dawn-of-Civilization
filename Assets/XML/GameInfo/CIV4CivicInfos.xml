@@ -303,6 +303,16 @@
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
 		<CivicInfo>
+			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
+			<Type>CIVIC_SECULARISM</Type>
+			<Description>TXT_KEY_CIVIC_SECULARISM</Description>
+			<Civilopedia>TXT_KEY_CIVIC_SECULARISM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_SECULARISM_STRATEGY</Strategy>
+			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<iAnarchyLength>1</iAnarchyLength>
+			<Upkeep>UPKEEP_LOW</Upkeep>
+		</CivicInfo>
+		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
 			<Type>CIVIC_CITY_STATES</Type>
 			<Description>TXT_KEY_CIVIC_CITY_STATES</Description>
