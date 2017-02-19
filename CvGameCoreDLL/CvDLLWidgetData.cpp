@@ -2141,33 +2141,28 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 					int iDraftUnits = GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getConscriptCount();
 					int iMaxDraftUnits = GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getMaxConscript();
 
-					// Leoreth: reflect Turkish UP here
+					int iMaxDraftUnitsNonState = iMaxDraftUnits;
+
 					if (pHeadSelectedCity->getOwnerINLINE() == TURKEY)
 					{
-						if (!GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).isStateReligion())
+						if (pHeadSelectedCity->getReligionCount() <= ((!GET_PLAYER(TURKEY).isStateReligion() || !pHeadSelectedCity->isHasReligion(GET_PLAYER(TURKEY).getStateReligion())) ? 0 : 1))
 						{
-							if (pHeadSelectedCity->getReligionCount() == 0)
-							{
-								iMaxDraftUnits -= 2;
-							}
-						}
-						else
-						{
-							if ((pHeadSelectedCity->isHasReligion(GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getStateReligion()) && pHeadSelectedCity->getReligionCount() == 1) || pHeadSelectedCity->getReligionCount() == 0)
-							{
-								iMaxDraftUnits -= 2;
-							}
+							iMaxDraftUnitsNonState -= 2;
 						}
 					}
+					
+					szBuffer.append(NEWLINE);
 
 					if (iDraftUnits >= iMaxDraftUnits)
 					{
-						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_MISC_NO_CONSCRIPT_UNITS_LEFT"));
+					}
+					else if (iDraftUnits >= iMaxDraftUnitsNonState)
+					{
+						szBuffer.append("non state religion required");
 					}
 					else
 					{
-						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_MISC_CONSCRIPT_UNITS_LEFT", iMaxDraftUnits - iDraftUnits));
 					}
 				}
