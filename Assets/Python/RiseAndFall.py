@@ -1236,7 +1236,7 @@ class RiseAndFall:
 			tBroaderTopLeft, tBroaderBottomRight = Areas.tBroaderArea[iCiv]
 			
 			if iCiv == iThailand:
-				i, j = Areas.getCapital(iKhmer)
+				i, j = Areas.tCapital[iKhmer]
 				if gc.getMap().plot(i, j).isCity():
 					angkor = gc.getMap().plot(i, j).getPlotCity()
 					bWonder = False
