@@ -11210,7 +11210,7 @@ void CvPlayer::verifyAlive()
 
 		if (!bKill)
 		{
-			if (!isBarbarian())
+			if (!isBarbarian() && getID() != NATIVE && getID() != CELTIA) // Leoreth: natives and celts should behave like barbarians
 			{
 				if (getNumCities() == 0 && getAdvancedStartPoints() < 0)
 				{
