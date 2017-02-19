@@ -1379,7 +1379,7 @@ class CvWorldBuilderScreen:
 						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iReligion, iReligion, self.m_iCurrentReligion == iReligion)
 				elif self.iPlayerAddMode in "RegionMap":
 					screen.addDropDownBoxGFC("WorldBuilderPlayerChoice", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-					for iRegion in range(iNumReligions):
+					for iRegion in range(iNumRegions):
 						TextKey = u"TXT_KEY_REGION_%d" % iRegion
 						sName = CyTranslator().getText(str(TextKey), ())
 						screen.addPullDownString("WorldBuilderPlayerChoice", sName, iRegion, iRegion, self.m_iRegionMapID == iRegion)

@@ -602,9 +602,9 @@ class RFCUtils:
 	def outerInvasion(self, tCoords, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
-		return self.invasion(tCoords, argList, True)
+		return self.invasion(tCoords, argsList, True)
 	
-	def invasion(self, tCoords, argList, bOuter):
+	def invasion(self, tCoords, argsList, bOuter):
 		x, y = tCoords
 		pPlot = gc.getMap().plot(x, y)
 		if pPlot.isHills() or pPlot.isFlatlands():
@@ -618,14 +618,14 @@ class RFCUtils:
 	def innerSeaSpawn(self, tCoords, argsList): # Unused
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's water and it isn't occupied by any unit. Unit check extended to adjacent plots"""
-		return self.seaSpawn(tCoords, arglist, False)
+		return self.seaSpawn(tCoords, argsList, False)
 
 	def outerSeaSpawn(self, tCoords, argsList): # Unused
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's water and it isn't occupied by any unit and if it isn't a civ's territory. Unit check extended to adjacent plots"""
-		return self.seaSpawn(tCoords, arglist, True)
+		return self.seaSpawn(tCoords, argsList, True)
 	
-	def seaSpawn(self, tCoords, arglist, bOuter): # Used by unused functions
+	def seaSpawn(self, tCoords, argsList, bOuter): # Used by unused functions
 		x, y = tCoords
 		pPlot = gc.getMap().plot(x, y)
 		if pPlot.isWater():
@@ -679,7 +679,7 @@ class RFCUtils:
 	def innerInvasion(self, tCoords, argsList):
 		"""Checks validity of the plot at the current tCoords, returns plot if valid (which stops the search).
 		Plot is valid if it's hill or flatlands, it isn't marsh or jungle, it isn't occupied by a unit or city and if it isn't a civ's territory"""
-		return self.invasion(tCoords, argList, False)
+		return self.invasion(tCoords, argsList, False)
 
 	def internalInvasion(self, tCoords, argsList): # Unused
 		"""Like inner invasion, but ignores territory, to allow for more barbarians"""
