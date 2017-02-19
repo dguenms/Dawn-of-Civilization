@@ -722,8 +722,9 @@ class WBUnitScreen:
 			popup.launch()
 
 		elif sName == "WBCurrentUnit":
-			iPlayer = inputClass.getData1() - 8300
-			self.interfaceScreen(gc.getPlayer(iPlayer).getUnit(inputClass.getData2()))
+			if inputClass.getData1() >= 8300:
+				iPlayer = inputClass.getData1() - 8300
+				self.interfaceScreen(gc.getPlayer(iPlayer).getUnit(inputClass.getData2()))
 
 		elif sName == "UnitOwner":
 			self.changeOwner(screen.getPullDownData("UnitOwner", screen.getSelectedPullDownID("UnitOwner")))

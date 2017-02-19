@@ -249,23 +249,26 @@ class UniquePowers:
 		if utils.isReborn(iAztecs): return
 		
 		pWinningUnit, pLosingUnit = argsList
-		pWinningPlayer = gc.getPlayer(pWinningUnit.getOwner())
 		
-		if pWinningPlayer.getID() != iAztecs:
+		iWinningPlayer = pWinningUnit.getOwner()
+		pWinningPlayer = gc.getPlayer(iWinningPlayer)
+		
+		iLosingPlayer = pLosingUnit.getOwner()
+		iLosingUnit = pLosingUnit.getUnitType()
+		
+		if iWinningPlayer != iAztecs:
 			return
 			
-		pLosingPlayer = gc.getPlayer(pLosingUnit.getOwner())
-		cLosingUnit = PyHelpers.PyInfo.UnitInfo(pLosingUnit.getUnitType())
-		
-		if pLosingUnit.isAnimal() or not (pLosingUnit.getDomainType() == DomainTypes.DOMAIN_LAND and pLosingUnit.getCombat() > 0):
+
+		# Only enslave land units!!
+		if pLosingUnit.isAnimal() or not (pLosingUnit.getDomainType() == DomainTypes.DOMAIN_LAND and gc.getUnitInfo(iLosingUnit).getCombat() > 0):
 			return
 		
-		# Only enslave land units!!
 		iRandom = gc.getGame().getSorenRandNum(100, 'capture chance')
 		if iRandom < 35:
 			pNewUnit = pWinningPlayer.initUnit(iAztecSlave, pWinningUnit.getX(), pWinningUnit.getY(), UnitAITypes.UNITAI_ENGINEER, DirectionTypes.DIRECTION_SOUTH)
-			CyInterface().addMessage(pWinningPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
-			CyInterface().addMessage(pLosingPlayer.getID(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_LOSE", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(7),pWinningUnit.getX(),pWinningUnit.getY(),True,True)		
+			CyInterface().addMessage(iWinningPlayer, True, 15, CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()), 'SND_REVOLTEND', 1, 'Art/Units/slave/button_slave.dds', ColorTypes(8), pWinningUnit.getX(), pWinningUnit.getY(), True, True)
+			CyInterface().addMessage(iLosingPlayer, True, 15, CyTranslator().getText("TXT_KEY_UP_ENSLAVE_LOSE", ()), 'SND_REVOLTEND', 1, 'Art/Units/slave/button_slave.dds', ColorTypes(7), pWinningUnit.getX(), pWinningUnit.getY(), True, True)
 			if pLosingUnit.getOwner() not in lCivGroups[5] and pLosingUnit.getOwner() < iNumPlayers: # old world civs now
 				data.iAztecSlaves += 1
 
