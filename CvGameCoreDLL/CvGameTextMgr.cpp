@@ -19822,11 +19822,11 @@ void CvGameTextMgr::getInterfaceCenterText(CvWString& strText)
 	strText.clear();
 	if (!gDLL->getInterfaceIFace()->isCityScreenUp())
 	{
-		if (GC.getGameINLINE().getWinner() != NO_TEAM)
+		/*if (GC.getGameINLINE().getWinner() != NO_TEAM)
 		{
 			strText = gDLL->getText("TXT_KEY_MISC_WINS_VICTORY", GET_TEAM(GC.getGameINLINE().getWinner()).getName().GetCString(), GC.getVictoryInfo(GC.getGameINLINE().getVictory()).getTextKeyWide());
-		}
-		else if (!(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).isAlive()))
+		}*/
+		if (!(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).isAlive()))
 		{
 			strText = gDLL->getText("TXT_KEY_MISC_DEFEAT");
 		}
