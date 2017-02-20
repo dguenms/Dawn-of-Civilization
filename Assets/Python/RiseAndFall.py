@@ -1281,7 +1281,7 @@ class RiseAndFall:
 					self.moveOutInvaders(tTopLeft, tBottomRight)  
 					
 				if bBirthInCapital:
-					utils.makeUnit(iCatapult, iCiv, (1,0), 1)
+					utils.makeUnit(iCatapult, iCiv, (0, 0), 1)
 			
 				bDeleteEverything = False
 				pCapital = gc.getMap().plot(x, y)
@@ -1477,7 +1477,7 @@ class RiseAndFall:
    
 			print ("utils.flipUnitsInArea()") 
 			#cover plots revealed by the lion
-			utils.clearCatapult
+			utils.clearCatapult(iCiv)
 
 			if iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID(): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
 				print "Flip Popup: free region"
