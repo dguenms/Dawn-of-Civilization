@@ -3373,7 +3373,7 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iHolyRome:
 		if iGoal == 0:
 			bSaintPeters = getNumBuildings(iHolyRome, iCatholicShrine) > 0
-			bAnastasis = getNumBuildings(iHolyRome, iCatholicShrine) > 0
+			bAnastasis = getNumBuildings(iHolyRome, iOrthodoxShrine) > 0
 			aHelp.append(getIcon(bSaintPeters) + localText.getText("TXT_KEY_BUILDING_CATHOLIC_SHRINE", ()) + ' ' + getIcon(bAnastasis) + localText.getText("TXT_KEY_BUILDING_ORTHODOX_SHRINE", ()))
 		elif iGoal == 2:
 			iGreatArtists = countCitySpecialists(iHolyRome, tVienna, iSpecialistGreatArtist)
