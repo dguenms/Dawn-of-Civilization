@@ -990,7 +990,6 @@ class CvWorldBuilderScreen:
 	def setMultipleReveal(self, bReveal):
 		lPlots = self.getMultiplePlotData()
 		for pPlot in lPlots:
-			pPlot = CyMap().plot(x,y)
 			if pPlot.isNone(): continue
 			self.RevealCurrentPlot(bReveal, pPlot)
 		self.refreshReveal()
