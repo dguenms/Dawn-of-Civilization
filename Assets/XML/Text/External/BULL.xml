@@ -643,6 +643,11 @@
 		<English>[COLOR_NEGATIVE_TEXT]You cannot draft any more units this turn[COLOR_REVERT]</English>
 		<German>[COLOR_NEGATIVE_TEXT]Ihr k&#246;nnt in dieser Runde keine weitere Einheit rekrutieren[COLOR_REVERT]</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CONSCRIPT_UNITS_LEFT_NON_STATE</Tag>
+		<English>[COLOR_NEGATIVE_TEXT]You can only draft %d1 [NUM1:unit:units] in cities with non-state religion this turn[COLOR_REVERT]</English>
+		<German>[COLOR_NEGATIVE_TEXT]Ihr k&#246;nnt in dieser Runde nur noch in Städten mit Nicht-Staatsreligion %d1 [NUM1:Einheit:Einheiten] rekrutieren[COLOR_REVERT]</German>
+	</TEXT>
 <!-- Pre-Chop -->
 	<TEXT>
 		<Tag>TXT_KEY_BUG_PRECLEARING_FEATURE_BONUS</Tag>

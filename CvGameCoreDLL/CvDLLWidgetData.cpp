@@ -2159,7 +2159,7 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 					}
 					else if (iDraftUnits >= iMaxDraftUnitsNonState)
 					{
-						szBuffer.append("non state religion required");
+						szBuffer.append(gDLL->getText("TXT_KEY_MISC_CONSCRIPT_UNITS_LEFT_NON_STATE", iMaxDraftUnits - iDraftUnits));
 					}
 					else
 					{
