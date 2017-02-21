@@ -216,7 +216,9 @@ class RiseAndFall:
 		newUnit = utils.makeUnit(unit.getUnitType(), iByzantium, (closestCity.plot().getX(), closestCity.plot().getY()), 1)
 		gc.getPlayer(iByzantium).changeGold(-iCost)
 		unit.kill(False, iByzantium)
-		CyInterface().selectUnit(newUnit, True, True, False)
+		
+		if newUnit:
+			CyInterface().selectUnit(newUnit, True, True, False)
 
 #######################################
 ### Main methods (Event-Triggered) ###

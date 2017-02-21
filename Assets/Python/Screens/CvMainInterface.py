@@ -2505,14 +2505,7 @@ class CvMainInterface:
 						
 					# Leoreth: Byzantine UP: bribe barbarians
 					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == iByzantium and pByzantium.getNumCities() > 0:
-						plot = CyMap().plot(pUnit.getX(), pUnit.getY())
-						unitList = [plot.getUnit(i) for i in range(plot.getNumUnits())]
-						bBarbarian = False
-						for unit in unitList:
-							if unit.getOwner() == iBarbarian:
-								bBarbarian = True
-								break
-						if bBarbarian:
+						if utils.canDoByzantineBribery(pUnit):
 							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iBanking).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")
 							iCount = iCount + 1

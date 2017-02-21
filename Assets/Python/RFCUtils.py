@@ -1509,29 +1509,40 @@ class RFCUtils:
 		return (iHealthy * 100) / max(1, iHealthy + iUnhealthy)
 		
 	# Leoreth: Byzantine UP: bribe barbarian units
-	def doByzantineBribery(self, spy):
-		localText = CyTranslator()
-		plot = CyMap().plot(spy.getX(), spy.getY())
-		unitList = [plot.getUnit(i) for i in range(plot.getNumUnits())]
-		targetList = []
-		iTreasury = gc.getPlayer(iByzantium).getGold()
+	def getByzantineBriberyUnits(self, spy):
+		plot = gc.getMap().plot(spy.getX(), spy.getY())
+		iTreasury = gc.getPlayer(spy.getOwner()).getGold()
+		lTargets = []
 		
-		# get pairs of units with their bribe costs
-		for unit in unitList:
+		for unit in [plot.getUnit(i) for i in range(plot.getNumUnits())]:
 			iCost = gc.getUnitInfo(unit.getUnitType()).getProductionCost() * 2
 			if unit.getOwner() == iBarbarian and iCost <= iTreasury:
-				targetList.append((unit, iCost))
+				lTargets.append((unit, iCost))
+				
+		return lTargets
+		
+	def canDoByzantineBribery(self, spy):
+		if spy.getMoves() >= spy.maxMoves(): return False
+		
+		if not self.getByzantineBriberyUnits(spy): return False
+		
+		return True
+	
+	def doByzantineBribery(self, spy):
+		localText = CyTranslator()
+		
+		lTargets = self.getByzantineBriberyUnits(spy)
 				
 		# only once per turn
 		spy.finishMoves()
 				
 		# launch popup
 		popup = Popup.PyPopup(7629, EventContextTypes.EVENTCONTEXT_ALL)
-		data.lByzantineBribes = targetList
+		data.lByzantineBribes = lTargets
 		popup.setHeaderString(localText.getText("TXT_KEY_BYZANTINE_UP_TITLE", ()))
 		popup.setBodyString(localText.getText("TXT_KEY_BYZANTINE_UP_BODY", ()))
 		
-		for tTuple in targetList:
+		for tTuple in lTargets:
 			unit, iCost = tTuple
 			popup.addButton(localText.getText("TXT_KEY_BYZANTINE_UP_BUTTON", (unit.getName(), iCost)))
 			
