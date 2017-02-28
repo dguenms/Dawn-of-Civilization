@@ -7,13 +7,13 @@
 <Civ4CivicOptionInfos xmlns="x-schema:CIV4GameInfoSchema.xml">
 	<CivicOptionInfos>
 		<CivicOptionInfo>
-			<Type>CIVICOPTION_LEGITIMACY</Type>
-			<Description>TXT_KEY_CIVICOPTION_LEGITIMACY</Description>
+			<Type>CIVICOPTION_GOVERNMENT</Type>
+			<Description>TXT_KEY_CIVICOPTION_GOVERNMENT</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
-			<Type>CIVICOPTION_AUTHORITY</Type>
-			<Description>TXT_KEY_CIVICOPTION_AUTHORITY</Description>
+			<Type>CIVICOPTION_LEGITIMACY</Type>
+			<Description>TXT_KEY_CIVICOPTION_LEGITIMACY</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
