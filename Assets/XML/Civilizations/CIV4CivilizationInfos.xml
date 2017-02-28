@@ -74,7 +74,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_WASHINGTON</LeaderName>
@@ -157,7 +164,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_SALADIN</LeaderName>
@@ -242,7 +256,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_PERON</LeaderName>
@@ -351,7 +372,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_MONTEZUMA</LeaderName>
@@ -436,7 +464,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_HAMMURABI</LeaderName>
@@ -517,7 +552,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_DOM_PEDRO</LeaderName>
@@ -607,7 +649,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_JUSTINIAN</LeaderName>
@@ -704,7 +753,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_MACDONALD</LeaderName>
@@ -797,7 +853,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_HANNIBAL</LeaderName>
@@ -1001,7 +1064,14 @@
 			<FreeBuildingClasses/>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_BRENNUS</LeaderName>
@@ -1094,7 +1164,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_QIN_SHI_HUANG</LeaderName>
@@ -1179,7 +1256,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_BOLIVAR</LeaderName>
@@ -1282,7 +1366,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_HATSHEPSUT</LeaderName>
@@ -1379,7 +1470,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_ELIZABETH</LeaderName>
@@ -1492,7 +1590,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_ZARA_YAQOB</LeaderName>
@@ -1578,7 +1683,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_CHARLEMAGNE</LeaderName>
@@ -1693,7 +1805,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_FREDERICK</LeaderName>
@@ -1810,7 +1929,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_ALEXANDER</LeaderName>
@@ -1908,7 +2034,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_VATAVELLI</LeaderName>
@@ -1993,7 +2126,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_BARBAROSSA</LeaderName>
@@ -2077,7 +2217,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_HUAYNA_CAPAC</LeaderName>
@@ -2171,7 +2318,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_ASOKA</LeaderName>
@@ -2264,7 +2418,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_DHARMASETU</LeaderName>
@@ -2360,7 +2521,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_ABBAS</LeaderName>
@@ -2446,7 +2614,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_CAVOUR</LeaderName>
@@ -2542,7 +2717,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_TOKUGAWA</LeaderName>
@@ -2645,7 +2827,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_SURYAVARMAN</LeaderName>
@@ -2740,7 +2929,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_MBEMBA</LeaderName>
@@ -2825,7 +3021,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_WANGKON</LeaderName>
@@ -2934,7 +3137,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_MANSA_MUSA</LeaderName>
@@ -3037,7 +3247,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_PACAL</LeaderName>
@@ -3113,7 +3330,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_CARDENAS</LeaderName>
@@ -3203,7 +3427,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_GENGHIS_KHAN</LeaderName>
@@ -3307,7 +3538,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_RAHMAN</LeaderName>
@@ -3401,7 +3639,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_IBN_TUGHLUQ</LeaderName>
@@ -3519,7 +3764,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_BARBARIAN</LeaderName>
@@ -3621,7 +3873,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_WILLEM_VAN_ORANJE</LeaderName>
@@ -3707,7 +3966,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_MEHMED</LeaderName>
@@ -3817,7 +4083,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_CYRUS</LeaderName>
@@ -3922,7 +4195,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_SOBIESKI</LeaderName>
@@ -4036,7 +4316,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_AHOEITU</LeaderName>
@@ -4136,7 +4423,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_JOAO</LeaderName>
@@ -4245,7 +4539,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_JULIUS_CAESAR</LeaderName>
@@ -4319,7 +4620,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_PETER</LeaderName>
@@ -4524,7 +4832,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_ALP</LeaderName>
@@ -4607,7 +4922,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_ISABELLA</LeaderName>
@@ -4701,7 +5023,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_BARBARIAN</LeaderName>
@@ -4794,7 +5123,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_RAJENDRA</LeaderName>
@@ -4893,7 +5229,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_NARESUAN</LeaderName>
@@ -5012,7 +5355,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_LOBSANG_GYATSO</LeaderName>
@@ -5103,7 +5453,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_RAGNAR</LeaderName>
@@ -5207,7 +5564,14 @@
 			</FreeBuildingClasses>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_BARBARIAN</LeaderName>
@@ -5432,7 +5796,14 @@
 			<FreeBuildingClasses/>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_INDEPENDENT</LeaderName>
@@ -5658,7 +6029,14 @@
 			<FreeBuildingClasses/>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_INDEPENDENT</LeaderName>
@@ -5852,7 +6230,14 @@
 			<FreeBuildingClasses/>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_NATIVE</LeaderName>
@@ -5972,7 +6357,14 @@
 			<FreeTechs>
 			</FreeTechs>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_BARBARIAN</LeaderName>
@@ -6258,7 +6650,14 @@
 			<FreeBuildingClasses/>
 			<FreeTechs/>
 			<DisableTechs/>
-			<InitialCivics/>
+			<InitialCivics>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
+				<CivicType>CIVIC_ANIMISM</CivicType>
+				<CivicType>CIVIC_CITY_STATES</CivicType>
+			</InitialCivics>
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_BARBARIAN</LeaderName>

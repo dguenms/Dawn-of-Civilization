@@ -1943,7 +1943,8 @@ enum CivicTypes						// Exposed to Python
 	CIVIC_LEVY_ARMIES,
 	CIVIC_PROFESSIONAL_ARMIES,
 	CIVIC_NAVAL_SUPREMACY,
-	CIVIC_MULTILATERALISM
+	CIVIC_MULTILATERALISM,
+	CIVIC_NONE
 };
 
 enum WarPlanTypes					// Exposed to Python

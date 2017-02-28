@@ -8661,7 +8661,7 @@
 			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
-			<CivicOption>CIVICOPTION_AUTHORITY</CivicOption>
+			<CivicOption>CIVICOPTION_LEGITIMACY</CivicOption>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>

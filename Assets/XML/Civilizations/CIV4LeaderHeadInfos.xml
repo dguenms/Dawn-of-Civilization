@@ -1372,7 +1372,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DESPOTISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CONQUEST</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -2469,7 +2469,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IMPERIAL_CULT</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DESPOTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -3014,7 +3014,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_PUBLIC_WELFARE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
 			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -6304,7 +6304,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DESPOTISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CONQUEST</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ZOROASTRIANISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -6861,7 +6861,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CITIZENSHIP</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ZOROASTRIANISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -7964,7 +7964,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THALASSOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_COLONIALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -9590,7 +9590,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_TRIBUTARIES</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CONQUEST</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -10136,7 +10136,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_CITY_STATES</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEIFICATION</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -11799,7 +11799,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IMPERIAL_CULT</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEIFICATION</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -13455,7 +13455,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THALASSOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_COLONIALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -14009,7 +14009,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_CITIZENSHIP</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -15103,7 +15103,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_BUREAUCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MERITOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -15653,7 +15653,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_SOCIAL_CONTRACT</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CONSTITUTION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -17856,7 +17856,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -18964,7 +18964,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -20630,7 +20630,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_MANORIALISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -22284,7 +22284,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CONQUEST</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -26164,7 +26164,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_REGULATED_TRADE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_ISOLATIONISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -26731,7 +26731,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THALASSOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_INDIVIDUALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -27861,7 +27861,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_SOCIAL_CONTRACT</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CONSTITUTION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -29569,7 +29569,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_IMPERIAL_CULT</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEIFICATION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -30125,7 +30125,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_SOCIAL_CONTRACT</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEMOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -31808,7 +31808,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_ORGANIZED_RELIGION</FavoriteCivic>
+			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -32353,7 +32353,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_PROTESTANTISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -32898,7 +32898,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DEMOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -33443,7 +33443,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THALASSOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_COLONIALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -34000,7 +34000,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_OLIGARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -34545,7 +34545,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REGULATED_TRADE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -36192,7 +36192,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_THALASSOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_COLONIALISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -37306,7 +37306,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>-5</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DEMOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_FREE_ENTERPRISE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -40054,7 +40054,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -41068,7 +41068,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DIVINE_MANDATE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MERITOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -41613,7 +41613,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_REGULATED_TRADE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_ISOLATIONISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -42154,7 +42154,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DIVINE_MANDATE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DEIFICATION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -42700,7 +42700,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MERCHANT_TRADE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -43254,7 +43254,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -43782,7 +43782,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_FRIENDLY</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_HINDUISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -44329,7 +44329,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_VASSALAGE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -45659,7 +45659,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>-10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_DESPOTISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -48948,7 +48948,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DIVINE_MANDATE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_OLIGARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -52208,7 +52208,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DIVINE_MANDATE</FavoriteCivic>
+			<FavoriteCivic>CIVIC_THEOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -52760,7 +52760,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_BUDDHISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -54373,7 +54373,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>-10</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_OLIGARCHY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_REPUBLIC</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -54918,7 +54918,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DEMOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -55472,7 +55472,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>50</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_SOCIAL_CONTRACT</FavoriteCivic>
+			<FavoriteCivic>CIVIC_CONSTITUTION</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -56608,7 +56608,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_SLAVERY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -57153,7 +57153,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -57701,7 +57701,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_IDEOLOGY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -58258,7 +58258,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_AUTOCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_NATIONHOOD</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -60435,7 +60435,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>-20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_BUREAUCRACY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MERITOCRACY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CONFUCIANISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -65353,7 +65353,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_CAUTIOUS</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_DYNASTICISM</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONARCHY</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ORTHODOXY</FavoriteReligion>
 			<Traits/>
 			<Flavors>

@@ -225,8 +225,15 @@ class CvCivicsScreen:
 		iX, iY = self.getPosition(iCategory)
 
 		iLine = iY + self.MARGIN
+		
+		bSkippedFirst = False
+		
 		for iCivic in xrange(gc.getNumCivicInfos()):
 			if gc.getCivicInfo(iCivic).getCivicOptionType() == iCategory:
+				if not bSkippedFirst:
+					bSkippedFirst = True
+					continue
+			
 				sName = "CivicButton" + str(iCivic)
 				sButton = gc.getCivicInfo(iCivic).getButton()
 				xPos = iX + self.W_CIVIC_CATEGORY - self.BUTTON_SMALL - self.MARGIN

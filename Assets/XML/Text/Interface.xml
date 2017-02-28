@@ -237,14 +237,6 @@
 		<German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] mit Verteidigungsb&#252;ndnispartnern</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_DEMOCRACY</Tag>
-		<English>[ICON_BULLET]Temporary instability caused by transition to Democracy</English>
-		<French>[ICON_BULLET]Instabilit&#233; temporaire caus&#233;e par la transition vers la D&#233;mocratie</French>
-		<German>[ICON_BULLET]Vor&#252;bergehende Instabilit&#228;t durch Wechsel zur Demokratie</German>
-		<Italian>[ICON_BULLET]Instabilit&#224; temporanea causata dal passaggio alla democrazia.</Italian>
-		<Spanish>[ICON_BULLET]Inestabilidad temporal causada por la transici&#243;n a la democracia</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEPRESSION</Tag>
 		<English>[ICON_BULLET]Risk of Great Depression</English>
 		<French>[ICON_BULLET]Risque de Grande D&#233;pression</French>
