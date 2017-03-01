@@ -4558,6 +4558,32 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 				szString.append(NEWLINE);
 			}
 		}
+		
+		// Merijn: CNM in tooltip for settlers
+		CvWString szName;
+		CyArgsList argsList4;
+		argsList4.add(GC.getGameINLINE().getActivePlayer());
+		argsList4.add(pPlot->getX());
+		argsList4.add(pPlot->getY());
+		gDLL->getPythonIFace()->callFunction(PYScreensModule, "getCityName", argsList4.makeFunctionArgs(), &szName);
+		
+		CvUnit* pHeadSelectedUnit = gDLL->getInterfaceIFace()->getHeadSelectedUnit();
+		
+		if (!szName.empty())
+		{
+			if (pHeadSelectedUnit != NULL)
+			{
+				if (pHeadSelectedUnit->isFound())
+				{
+					if (pPlot->getPlotType() == PLOT_LAND || pPlot->getPlotType() == PLOT_HILLS)
+					{
+						szString.append(szName);
+						szString.append(NEWLINE);
+					}
+				}
+			}
+		}
+		
 		// end UHV requirement info
 
 		//Leoreth: display Great Wall, only bugfix purposes

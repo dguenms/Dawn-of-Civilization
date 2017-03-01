@@ -478,21 +478,19 @@ class RiseAndFall:
 
 		tCultureRegionTL = (98, 37)
 		tCultureRegionBR = (109, 49)
-		for x in range(tCultureRegionTL[0], tCultureRegionBR[0]+1):
-			for y in range(tCultureRegionTL[1], tCultureRegionBR[1]+1):
-				pCurrent = gc.getMap().plot(x, y)
-				bCity = False
-				for iX in range(x-1, x+2):	# from x-1 to x+1
-					for iY in range(y-1, y+2):      # from y-1 to y+1
-						loopPlot = gc.getMap().plot(iX, iY)
-						if (loopPlot.isCity()):
-							bCity = True
-							loopPlot.getPlotCity().setCulture(iIndependent2, 0, False)
-				if (bCity):
-					pCurrent.setCulture(iIndependent2, 1, True)
-				else:
-					pCurrent.setCulture(iIndependent2, 0, True)
-					pCurrent.setOwner(-1)
+		for (x, y) in utils.getPlotList(tCultureRegionTL, tCultureRegionBR):
+			pPlot = gc.getMap().plot(x, y)
+			bCity = False
+			for (i, j) in utils.surroundingPlots((x, y)):
+				loopPlot = gc.getMap().plot(i, j)
+				if loopPlot.isCity():
+					bCity = True
+					loopPlot.getPlotCity().setCulture(iIndependent2, 0, False)
+			if bCity:
+				pPlot.setCulture(iIndependent2, 1, True)
+			else:
+				pPlot.setCulture(iIndependent2, 0, True)
+				pPlot.setOwner(-1)
 					
 		pIndependent.found(99, 41)
 		utils.makeUnit(iArcher, iIndependent, (99, 41), 1)
