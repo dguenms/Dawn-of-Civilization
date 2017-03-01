@@ -226,13 +226,9 @@ class CvCivicsScreen:
 
 		iLine = iY + self.MARGIN
 		
-		bSkippedFirst = False
-		
 		for iCivic in xrange(gc.getNumCivicInfos()):
 			if gc.getCivicInfo(iCivic).getCivicOptionType() == iCategory:
-				if not bSkippedFirst:
-					bSkippedFirst = True
-					continue
+				if iCivic % 7 == 0: continue
 			
 				sName = "CivicButton" + str(iCivic)
 				sButton = gc.getCivicInfo(iCivic).getButton()
@@ -354,12 +350,14 @@ class CvCivicsScreen:
 		iHoverCategory = gc.getCivicInfo(iHoverCivic).getCivicOptionType()
 		
 		for iCivic in range(iNumCivics):
+			if iCivic % 7 == 0: continue
+		
 			iCategory = gc.getCivicInfo(iCivic).getCivicOptionType()
 			if iCategory == iHoverCategory:
 				continue
 			iX, iY = self.getPosition(iCategory)
 			xPos = iX + self.W_CIVIC_CATEGORY - self.BUTTON_SMALL - self.MARGIN
-			iLine = iY + self.MARGIN + (iCivic % 6) * self.LINE
+			iLine = iY + self.MARGIN + (iCivic % 7 - 1) * self.LINE
 			
 			sName = "CivicName" + str(iCivic)
 			sText = gc.getCivicInfo(iCivic).getDescription()
