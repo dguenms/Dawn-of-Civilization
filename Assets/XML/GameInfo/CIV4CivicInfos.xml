@@ -23,7 +23,7 @@
 			<Description>TXT_KEY_CIVIC_DESPOTISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_DESPOTISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_DESPOTISM_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Despotism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_DESPOT</WeLoveTheKing>
@@ -67,7 +67,7 @@
 			<Description>TXT_KEY_CIVIC_STATE_PARTY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_STATE_PARTY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_STATE_PARTY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Bureaucracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_DICTATOR</WeLoveTheKing>
@@ -78,7 +78,7 @@
 			<Description>TXT_KEY_CIVIC_CONSTITUTION</Description>
 			<Civilopedia>TXT_KEY_CIVIC_CONSTITUTION_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CONSTITUTION_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Emancipation.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_PRESIDENT</WeLoveTheKing>
@@ -99,7 +99,7 @@
 			<Description>TXT_KEY_CIVIC_CITIZENSHIP</Description>
 			<Civilopedia>TXT_KEY_CIVIC_CITIZENSHIP_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CITIZENSHIP_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Citizenship.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -109,7 +109,7 @@
 			<Description>TXT_KEY_CIVIC_VASSALAGE</Description>
 			<Civilopedia>TXT_KEY_CIVIC_VASSALAGE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_VASSALAGE_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Vassalage.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -129,7 +129,7 @@
 			<Description>TXT_KEY_CIVIC_CENTRALISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_CENTRALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CENTRALISM_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Centralism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -149,7 +149,7 @@
 			<Description>TXT_KEY_CIVIC_DEMOCRACY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_DEMOCRACY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_DEMOCRACY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Democracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -159,7 +159,7 @@
 			<Description>TXT_KEY_CIVIC_TRADITIONALISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_TRADITIONALISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_TRADITIONALISM_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Traditionalism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -169,7 +169,7 @@
 			<Description>TXT_KEY_CIVIC_SLAVERY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_SLAVERY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_SLAVERY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Slavery.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -279,7 +279,7 @@
 			<Description>TXT_KEY_CIVIC_CENTRAL_PLANNING</Description>
 			<Civilopedia>TXT_KEY_CIVIC_CENTRAL_PLANNING_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CENTRAL_PLANNING_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/State_Property.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -319,7 +319,7 @@
 			<Description>TXT_KEY_CIVIC_ORGANIZED_RELIGION</Description>
 			<Civilopedia>TXT_KEY_CIVIC_ORGANIZED_RELIGION_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Organized_Religion.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -339,7 +339,7 @@
 			<Description>TXT_KEY_CIVIC_THEOCRACY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_THEOCRACY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_THEOCRACY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Theocracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -379,7 +379,7 @@
 			<Description>TXT_KEY_CIVIC_CONQUEST</Description>
 			<Civilopedia>TXT_KEY_CIVIC_CONQUEST_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_CONQUEST_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Conquest.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -389,7 +389,7 @@
 			<Description>TXT_KEY_CIVIC_TRIBUTARIES</Description>
 			<Civilopedia>TXT_KEY_CIVIC_TRIBUTARIES_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_TRIBUTARIES_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Tributaries.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -419,7 +419,7 @@
 			<Description>TXT_KEY_CIVIC_NATIONHOOD</Description>
 			<Civilopedia>TXT_KEY_CIVIC_NATIONHOOD_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_NATIONHOOD_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Nationhood.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
