@@ -23,7 +23,7 @@
 			<Description>TXT_KEY_CIVIC_DESPOTISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_DESPOTISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_DESPOTISM_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Despotism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/DespotismCivic.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_DESPOT</WeLoveTheKing>
@@ -67,7 +67,7 @@
 			<Description>TXT_KEY_CIVIC_STATE_PARTY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_STATE_PARTY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_STATE_PARTY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Bureaucracy.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/State Party.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_DICTATOR</WeLoveTheKing>
@@ -89,7 +89,7 @@
 			<Description>TXT_KEY_CIVIC_AUTHORITY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_AUTHORITY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_AUTHORITY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Despotism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
@@ -119,7 +119,7 @@
 			<Description>TXT_KEY_CIVIC_MERITOCRACY</Description>
 			<Civilopedia>TXT_KEY_CIVIC_MERITOCRACY_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_MERITOCRACY_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/Barbarism.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Meritocracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>

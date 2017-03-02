@@ -2465,7 +2465,7 @@
 			<fInterfaceScale>0.32</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Museum/Museum.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Museum/Button_Museum.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Museum.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MANUFACTORY</Type>
