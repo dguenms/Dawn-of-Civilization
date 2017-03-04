@@ -505,11 +505,11 @@ Kevlar, the modern battle armor, is a composite material. Modern tanks are const
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_CONSTITUTION</Tag>
-		<English>Constitution</English>
+		<Tag>TXT_KEY_TECH_SOCIAL_CONTRACT</Tag>
+		<English>Social Contract</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_CONSTITUTION_QUOTE</Tag>
+		<Tag>TXT_KEY_TECH_SOCIAL_CONTRACT_QUOTE</Tag>
 		<English>"No freeman shall be taken, imprisoned, or in any other way destroyed, except by the lawful judgment of his peers."[PARAGRAPH:2]- The Magna Carta</English>
 	</TEXT>
 
@@ -1366,24 +1366,12 @@ The practice of marketing is often criticized for dishonesty, for misleading peo
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_METAL_CASTING</Tag>
-		<English>Metal Casting</English>
+		<Tag>TXT_KEY_TECH_CEMENT</Tag>
+		<English>Cement</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_METAL_CASTING_QUOTE</Tag>
-		<English>"When pieces of bronze or gold or iron break, the metalsmith wields them together again on the fire, and the bond is established."[PARAGRAPH:2] - Sri Guru Granth Sahib</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_METAL_CASTING_PEDIA</Tag>
-<English>Plumbing is the practice of using pipes and channels to control the flow of water, generally through populated areas, for human use. Plumbing is normally seen as distinct from irrigation, which is used to provide water for crops.
-
-Primitive societies generally lack the means to create a plumbing system, which requires careful craftsmanship and large-scale collaboration. More advanced civilizations, such as those of the Indus valley circa 2700 BC, began working on organized supplies of clean water quite early in human history, however. Clean water to drink and bathe in is one of the most fundamental human desires, and is shared universally across cultural lines, driving the independent invention of plumbing in many times and places.
-
-Typical elements of an early plumbing infrastructure include systems of pipes, channels and ducts to gather rainwater and bring it to central locations, and other such channels to remove wastewater. Such channels were typically made of brick, pottery, or other ceramic. Specifically within the Mediterranean world, civilizations known or remarkable for their achievements in the art of plumbing include the Minoans (inventors of the flush toilet), the ancient Greeks (inventors of the pressurized shower for bathing), and of course the Romans. The Romans brought ancient plumbing to its height, combining the earthenware apparatus with metallic plumbing made of copper or lead. For their larger cities, the Romans augmented the naturally available supplies of fresh water with enormous aqueducts to bring water from a distance of many kilometers, emptying into large reservoirs.
-
-In Europe the art of plumbing declined after the fall of the Roman Empire, and public sanitation and health declined with it. Other civilizations, such as those of Persia, China, and the Mayans, retained many of the sophisticated systems alluded to above.
-
-Major advances in plumbing further developed during the Enlightenment era. With the rise of knowledge about microorganisms and early chemistry, engineers began devising pipes with filters and bends to strain out harmful microbes. The idea of 'waste treatment' emerged, with sewage being processed chemically or biologically so that it would become less infectious and less smelly. Chlorination of water was introduced to kill germs such as typhus and prevent epidemics. Today, plumbing is one of the seldom-contemplated foundations of our industrial civilizations and the vast populations they support. By supplying a fundamental human need to drink water and remain clean, in a highly safe and efficient manner, plumbing becomes indispensible to our lives.</English>
+		<Tag>TXT_KEY_TECH_CEMENT_QUOTE</Tag>
+		<English>"A man who builds his own pedestal had better use strong cement."[PARAGRAPH:2] - Anna Quidlen</English>
 	</TEXT>
 
 

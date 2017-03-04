@@ -800,9 +800,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_METAL_CASTING</Type>
-			<Description>TXT_KEY_TECH_METAL_CASTING</Description>
-			<Civilopedia>TXT_KEY_TECH_METAL_CASTING_PEDIA</Civilopedia>
+			<Type>TECH_CEMENT</Type>
+			<Description>TXT_KEY_TECH_CEMENT</Description>
+			<Civilopedia>TXT_KEY_TECH_CEMENT_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -826,10 +826,10 @@
 				<PrereqTech>TECH_ALLOYS</PrereqTech>
 				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_METAL_CASTING_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_CEMENT_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Metal Casting.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,5</Button>
+			<Button>Art/Interface/Buttons/TechTree/Cement.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -1089,7 +1089,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_BLOOMERY</PrereqTech>
-				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
+				<PrereqTech>TECH_CEMENT</PrereqTech>
 				<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_ENGINEERING_QUOTE</Quote>
@@ -1265,7 +1265,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
+				<PrereqTech>TECH_CEMENT</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
@@ -1348,7 +1348,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
+				<PrereqTech>TECH_CEMENT</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_GENERALSHIP</PrereqTech>
@@ -2701,7 +2701,7 @@
 			<Quote>TXT_KEY_TECH_ECONOMICS_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Corporation.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,9</Button>
+			<Button>Art/Interface/Buttons/TechTree/Economics.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -3128,9 +3128,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_CONSTITUTION</Type>
-			<Description>TXT_KEY_TECH_CONSTITUTION</Description>
-			<Civilopedia>TXT_KEY_TECH_CONSTITUTION_PEDIA</Civilopedia>
+			<Type>TECH_SOCIAL_CONTRACT</Type>
+			<Description>TXT_KEY_TECH_SOCIAL_CONTRACT</Description>
+			<Civilopedia>TXT_KEY_TECH_SOCIAL_CONTRACT_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iCost>1700</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -3158,10 +3158,10 @@
 				<PrereqTech>TECH_CIVIL_LIBERTIES</PrereqTech>
 				<PrereqTech>TECH_HORTICULTURE</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_CONSTITUTION_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_SOCIAL_CONTRACT_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Constitution.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Social_Contract.dds</Button>
 		</TechInfo>
 
 <!-- #13 -->
@@ -3373,7 +3373,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
-				<PrereqTech>TECH_CONSTITUTION</PrereqTech>
+				<PrereqTech>TECH_SOCIAL_CONTRACT</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_REPRESENTATION_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
@@ -3417,12 +3417,12 @@
 				<PrereqTech>TECH_COMBINED_ARMS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_CONSTITUTION</PrereqTech>
+				<PrereqTech>TECH_SOCIAL_CONTRACT</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_NATIONALISM_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/Civics/Nationalism.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,1,2</Button>
+			<Button>Art/Interface/Buttons/TechTree/Nationalism.dds</Button>
 		</TechInfo>
 
 <!-- #14 -->
