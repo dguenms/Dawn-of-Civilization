@@ -79,12 +79,12 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_GOVERNMENT</CivicOptionType>
-			<Type>CIVIC_CONSTITUTION</Type>
-			<Description>TXT_KEY_CIVIC_CONSTITUTION</Description>
-			<Civilopedia>TXT_KEY_CIVIC_CONSTITUTION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_CONSTITUTION_STRATEGY</Strategy>
-			<TechPrereq>TECH_SOCIAL_CONTRACT</TechPrereq>
-			<Button>,Art/Interface/Buttons/Civics/Constitution.dds</Button>
+			<Type>CIVIC_DEMOCRACY</Type>
+			<Description>TXT_KEY_CIVIC_DEMOCRACY</Description>
+			<Civilopedia>TXT_KEY_CIVIC_DEMOCRACY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_DEMOCRACY_STRATEGY</Strategy>
+			<TechPrereq>TECH_REPRESENTATION</TechPrereq>
+			<Button>,Art/Interface/Buttons/Civics/Democracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_PRESIDENT</WeLoveTheKing>
@@ -156,12 +156,12 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
-			<Type>CIVIC_DEMOCRACY</Type>
-			<Description>TXT_KEY_CIVIC_DEMOCRACY</Description>
-			<Civilopedia>TXT_KEY_CIVIC_DEMOCRACY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_DEMOCRACY_STRATEGY</Strategy>
-			<TechPrereq>TECH_REPRESENTATION</TechPrereq>
-			<Button>,Art/Interface/Buttons/Civics/Democracy.dds</Button>
+			<Type>CIVIC_CONSTITUTION</Type>
+			<Description>TXT_KEY_CIVIC_CONSTITUTION</Description>
+			<Civilopedia>TXT_KEY_CIVIC_CONSTITUTION_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_CONSTITUTION_STRATEGY</Strategy>
+			<TechPrereq>TECH_SOCIAL_CONTRACT</TechPrereq>
+			<Button>,Art/Interface/Buttons/Civics/Constitution.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
