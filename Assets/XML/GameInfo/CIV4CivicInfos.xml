@@ -345,7 +345,7 @@
 			<Civilopedia>TXT_KEY_CIVIC_ORGANIZED_RELIGION_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Strategy>
 			<TechPrereq>TECH_PRIESTHOOD</TechPrereq>
-			<Button>,Art/Interface/Buttons/Civics/Organized_Religion.dds</Button>
+			<Button>,Art/Interface/Buttons/Civics/Priesthood.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>
