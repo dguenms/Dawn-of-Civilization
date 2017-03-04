@@ -5047,7 +5047,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 2;
 										iValue /= 3;
 									}
-									if (iI == METAL_CASTING)
+									if (iI == CEMENT)
 										iValue *= 2;
 									if (iI == WRITING || iI == PHILOSOPHY || iI == AESTHETICS || iI == DIVINATION || iI == PHILOSOPHY || iI == LITERATURE || iI == MEDICINE)
 										iValue *= 3;
@@ -5100,7 +5100,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
                                     }
 									break;
 								case TAMILS:
-									if (iI == METAL_CASTING || iI == COMPASS || iI == CALENDAR)
+									if (iI == CEMENT || iI == COMPASS || iI == CALENDAR)
 										iValue *= 2;
 									if (iI == SCIENTIFIC_METHOD || iI == ACADEMIA || iI == REPLACEABLE_PARTS)
 										iValue /= 2;
@@ -5253,7 +5253,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == PHILOSOPHY || iI == PRINTING || iI == CIVIL_LIBERTIES || iI == CONSTITUTION || iI == REPRESENTATION)
+									if (iI == PHILOSOPHY || iI == PRINTING || iI == CIVIL_LIBERTIES || iI == SOCIAL_CONTRACT || iI == REPRESENTATION)
 										iValue /= 2;
 									if (iI == FISSION) {
 										iValue *= 5;
@@ -5284,7 +5284,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									break;
 								case POLAND:
-									if (iI == CONSTITUTION || iI == OPTICS)
+									if (iI == SOCIAL_CONTRACT || iI == OPTICS)
 										iValue *= 2;
 									if (iI == COMBINED_ARMS || iI == CIVIL_LIBERTIES)
 										iValue *= 3;

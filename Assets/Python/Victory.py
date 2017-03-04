@@ -2002,9 +2002,9 @@ def checkReligiousGoal(iPlayer, iGoal):
 		
 		# first Protestant goal: be first to discover Civil Liberties, Constitution and Economics
 		if iGoal == 0:
-			lProtestantTechs = [iCivilLiberties, iConstitution, iLogistics]
+			lProtestantTechs = [iCivilLiberties, iSocialContract, iLogistics]
 			if checkTechGoal(iPlayer, lProtestantTechs): return 1
-			elif data.lFirstDiscovered[iCivilLiberties] not in [iPlayer, -1] or data.lFirstDiscovered[iConstitution] not in [iPlayer, -1] or data.lFirstDiscovered[iLogistics] not in [iPlayer, -1]: return 0
+			elif data.lFirstDiscovered[iCivilLiberties] not in [iPlayer, -1] or data.lFirstDiscovered[iSocialContract] not in [iPlayer, -1] or data.lFirstDiscovered[iLogistics] not in [iPlayer, -1]: return 0
 			
 		# second Protestant goal: make sure five great merchants and great engineers are settled in Protestant civilizations
 		elif iGoal == 1:
@@ -2879,7 +2879,7 @@ def getURVHelp(iPlayer, iGoal):
 	elif iVictoryType == iProtestantism:
 		if iGoal == 0:
 			bCivilLiberties = data.lFirstDiscovered[iCivilLiberties] == iPlayer
-			bConstitution = data.lFirstDiscovered[iConstitution] == iPlayer
+			bConstitution = data.lFirstDiscovered[iSocialContract] == iPlayer
 			bEconomics = data.lFirstDiscovered[iEconomics] == iPlayer
 			aHelp.append(getIcon(bCivilLiberties) + localText.getText("TXT_KEY_TECH_CIVIL_LIBERTIES", ()) + ' ' + getIcon(bConstitution) + localText.getText("TXT_KEY_TECH_CONSTITUTION", ()) + ' ' + getIcon(bEconomics) + localText.getText("TXT_KEY_TECH_ECONOMICS", ()))
 		elif iGoal == 1:

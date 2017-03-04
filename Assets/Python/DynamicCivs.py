@@ -997,7 +997,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANCIA"
 			
 	elif iPlayer == iEngland:
-		if tPlayer.isHasTech(iConstitution) and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
+		if tPlayer.isHasTech(iSocialContract) and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
 			return "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN"
 			
 	elif iPlayer == iHolyRome:
@@ -1250,7 +1250,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANKISH"
 			
 	elif iPlayer == iEngland:
-		if tPlayer.isHasTech(iConstitution) and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
+		if tPlayer.isHasTech(iSocialContract) and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
 			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 			
 	elif iPlayer == iHolyRome:
@@ -1661,7 +1661,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if tPlayer.isHasTech(iConstitution) and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
+		if tPlayer.isHasTech(iSocialContract) and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
 			return "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF"
 			
 	elif iPlayer == iHolyRome:

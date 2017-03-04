@@ -134,7 +134,7 @@
 		<English>[COLOR_TECH_TEXT]Computers[COLOR_REVERT] allows you to train [COLOR_UNIT_TEXT]Main Battle Tanks[COLOR_REVERT], allows the construction of the [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] Building, allows the construction of the [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] Project and allows the spread of the [COLOR_HIGHLIGHT_TEXT]Computer Industry[COLOR_REVERT]. It also obsoletes the [COLOR_WARNING_TEXT]Spiral Minaret[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_CONSTITUTION_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_SOCIAL_CONTRACT_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Constitution[COLOR_REVERT] enables the [COLOR_HIGHLIGHT_TEXT]Representation[COLOR_REVERT] civic, allows the construction of the [COLOR_BUILDING_TEXT]Jail[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Taj Mahal[COLOR_REVERT] World Wonder. It also obsoletes the [COLOR_WARNING_TEXT]La Mezquita[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
@@ -286,7 +286,7 @@
 		<English>[COLOR_TECH_TEXT]Meditation[COLOR_REVERT] allows you to construct Religious [COLOR_BUILDING_TEXT]Monasteries[COLOR_REVERT]. The first player to discover [COLOR_TECH_TEXT]Meditation[COLOR_REVERT] founds [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_METAL_CASTING_STRATEGY</Tag>
+		<Tag>TXT_KEY_TECH_CEMENT_STRATEGY</Tag>
 		<English>[COLOR_TECH_TEXT]Metal Casting[COLOR_REVERT] allows the construction of the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT] Building and the [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] World Wonder. It also allows the construction of the [COLOR_HIGHLIGHT_TEXT]Workshop[COLOR_REVERT] Improvement and allows you to train [COLOR_UNIT_TEXT]Triremes[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
