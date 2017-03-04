@@ -1012,12 +1012,12 @@ class RiseAndFall:
 			
 			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
 			
-			pAztecs.setCivics(0, iCivicRepublic)
-			pAztecs.setCivics(1, iCivicRepresentation)
-			pAztecs.setCivics(2, iCivicCapitalism)
-			pAztecs.setCivics(3, iCivicMercantilism)
-			pAztecs.setCivics(4, iCivicOrganizedReligion)
-			pAztecs.setCivics(5, iCivicStandingArmy)
+			pAztecs.setCivics(0, iCivicRepublic) # Constitution
+			pAztecs.setCivics(1, iCivicRepresentation) # Democracy
+			pAztecs.setCivics(2, iCivicCapitalism) # Individualism
+			pAztecs.setCivics(3, iCivicMercantilism) # Regulated Trade
+			pAztecs.setCivics(4, iCivicOrganizedReligion) # Organized Religion
+			pAztecs.setCivics(5, iCivicStandingArmy) # Nationhood
 		elif iCiv == iMaya:
 			pMaya.setCivics(0, iCivicAutocracy)
 			pMaya.setCivics(1, iCivicRepresentation)
