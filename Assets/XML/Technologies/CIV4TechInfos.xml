@@ -3922,6 +3922,9 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_RAILROAD</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_REFRIGERATION</PrereqTech>
 				<PrereqTech>TECH_LABOUR_UNIONS</PrereqTech>
