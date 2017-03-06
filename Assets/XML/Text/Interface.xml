@@ -148,7 +148,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS</Tag>
-		<English>[ICON_BULLET]%D1_Change free specialist for all cities within the third ring of your capital</English>
+		<English>[ICON_BULLET]%D1_Change Free Specialist per Core City</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LIMITED_UNIT_HAPPINESS</Tag>
