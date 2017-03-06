@@ -8492,12 +8492,9 @@ int CvCity::getFreeSpecialist() const
     }
 
 	//Leoreth: handle free specialists for core here for simplicity
-	if (GET_PLAYER(getOwner()).getCoreFreeSpecialist() > 0)
+	if (plot()->isCore(getOwnerINLINE()))
 	{
-		if (plotDistance(getX(), getY(), GET_PLAYER(getOwner()).getCapitalCity()->getX(), GET_PLAYER(getOwner()).getCapitalCity()->getY()) <= 3)
-		{
-			iCoreSpecialists = GET_PLAYER(getOwner()).getCoreFreeSpecialist();
-		}
+		iCoreSpecialists += GET_PLAYER(getOwnerINLINE()).getCoreFreeSpecialist();
 	}
 
 	return m_iFreeSpecialist+iItalianSpecialists+iCoreSpecialists;

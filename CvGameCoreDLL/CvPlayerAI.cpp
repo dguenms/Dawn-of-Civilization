@@ -10977,22 +10977,13 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Leoreth: free core specialist
 	if (kCivic.getCoreFreeSpecialist() > 0)
 	{
-		if (getCapitalCity() != NULL)
+		int iLoop;
+		CvCity* pLoopCity;
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 		{
-			int iLoop;
-			int iX;
-			int iY;
-			int iCapitalX = getCapitalCity()->getX();
-			int iCapitalY = getCapitalCity()->getY();
-			CvCity* pLoopCity;
-			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			if (pLoopCity->plot()->isCore(getID()))
 			{
-				iX = pLoopCity->getX();
-				iY = pLoopCity->getY();
-				if (plotDistance(iX, iY, iCapitalX, iCapitalY) <= 3)
-				{
-					iValue += kCivic.getCoreFreeSpecialist() * 18;
-				}
+				iValue += kCivic.getCoreFreeSpecialist() * 18;
 			}
 		}
 
