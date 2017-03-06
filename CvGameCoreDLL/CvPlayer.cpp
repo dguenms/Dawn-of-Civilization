@@ -505,7 +505,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iStateReligionCount = 0;
 	m_iNoNonStateReligionSpreadCount = 0;
 	m_iStateReligionHappiness = 0;
-	m_iNonStateReligionHappiness = 0;
+	m_iNonStateReligionHappiness = -1; // Leoreth: -1 is the default value
 	m_iStateReligionUnitProductionModifier = 0;
 	m_iStateReligionBuildingProductionModifier = 0;
 	m_iStateReligionFreeExperience = 0;
