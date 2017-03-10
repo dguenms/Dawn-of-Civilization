@@ -730,10 +730,10 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
-			<Type>CIVIC_ORGANIZED_RELIGION</Type>
-			<Description>TXT_KEY_CIVIC_ORGANIZED_RELIGION</Description>
-			<Civilopedia>TXT_KEY_CIVIC_ORGANIZED_RELIGION_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Strategy>
+			<Type>CIVIC_CLERGY</Type>
+			<Description>TXT_KEY_CIVIC_CLERGY</Description>
+			<Civilopedia>TXT_KEY_CIVIC_CLERGY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_CLERGY_STRATEGY</Strategy>
 			<TechPrereq>TECH_PRIESTHOOD</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Priesthood.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
@@ -743,10 +743,10 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_RELIGION</CivicOptionType>
-			<Type>CIVIC_ASCETICISM</Type>
-			<Description>TXT_KEY_CIVIC_ASCETICISM</Description>
-			<Civilopedia>TXT_KEY_CIVIC_ASCETICISM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_ASCETICISM_STRATEGY</Strategy>
+			<Type>CIVIC_MONASTICISM</Type>
+			<Description>TXT_KEY_CIVIC_MONASTICISM</Description>
+			<Civilopedia>TXT_KEY_CIVIC_MONASTICISM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_MONASTICISM_STRATEGY</Strategy>
 			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Asceticism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>

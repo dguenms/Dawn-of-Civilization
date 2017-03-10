@@ -15992,7 +15992,7 @@
 			<iWeight>1000</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_ASCETICISM</Civic>
+			<Civic>CIVIC_MONASTICISM</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>

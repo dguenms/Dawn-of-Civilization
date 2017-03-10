@@ -263,7 +263,7 @@
 		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por conquista de ciudades; no hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_CLERGY_STRATEGY</Tag>
 		<English>Extra unhappiness from non-state religions; cities with state religion construct buildings faster</English>
 	</TEXT>
 	<TEXT>
@@ -562,8 +562,12 @@
 		<English>Deification</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_ASCETICISM</Tag>
-		<English>Asceticism</English>
+		<Tag>TXT_KEY_CIVIC_CLERGY</Tag>
+		<English>Clergy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MONASTICISM</Tag>
+		<English>Monasticism</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOLERANCE</Tag>
