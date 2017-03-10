@@ -2050,9 +2050,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_CLERGY</Type>
-			<Description>TXT_KEY_TECH_CLERGY</Description>
-			<Civilopedia>TXT_KEY_TECH_CLERGY_PEDIA</Civilopedia>
+			<Type>TECH_DOCTRINE</Type>
+			<Description>TXT_KEY_TECH_DOCTRINE</Description>
+			<Civilopedia>TXT_KEY_TECH_DOCTRINE_PEDIA</Civilopedia>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iCost>650</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -2078,7 +2078,7 @@
 			<AndPreReqs>
 				<PrereqTech>TECH_THEOLOGY</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_CLERGY_QUOTE</Quote>
+			<Quote>TXT_KEY_TECH_DOCTRINE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
 			<Button>Art/Interface/Buttons/TechTree/Clergy.dds</Button>
@@ -2263,7 +2263,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_CLERGY</PrereqTech>
+				<PrereqTech>TECH_DOCTRINE</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_PATRONAGE</PrereqTech>
@@ -2351,7 +2351,7 @@
 			</Flavors>
 			<AndPreReqs>
 				<PrereqTech>TECH_EDUCATION</PrereqTech>
-				<PrereqTech>TECH_CLERGY</PrereqTech>
+				<PrereqTech>TECH_DOCTRINE</PrereqTech>
 			</AndPreReqs>
 			<Quote>TXT_KEY_TECH_JUDICIARY_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>

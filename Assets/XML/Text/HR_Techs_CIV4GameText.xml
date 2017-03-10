@@ -423,27 +423,6 @@ One of the oldest known civil services is found in China, during the Tang dynast
 
 
 	<TEXT>
-		<Tag>TXT_KEY_TECH_CLERGY</Tag>
-		<English>Clergy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CLERGY_QUOTE</Tag>
-		<English>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas, Summa Theologica</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_CLERGY_PEDIA</Tag>
-<English>"Dogma" refers to a firmly established body of beliefs and opinions, generally associated with religion and laid out by respected theologians within the faith. Within that religion, the dogma is considered authoritative and final - it may be clarified or expanded upon, but not contradicted. To call the basic facts of the dogma into question is, by definition, to leave the religion for some other path which may be deemed heretical.
-
-Different religions have different core bodies of dogma, which usually focus on key points of doctrine that the religious leaders consider to be of extreme importance. In Christianity, the concept of salvation through faith in Christ is a matter of dogma, although the details of how this salvation may best be achieved can vary. In Islam, it is a point of dogma that Muhammed was the last of the divinely inspired prophets.
-
-Dogma is particularly important to organized religions, since it serves to define the limits of what can and cannot be accepted as part of the faith. Learning the basic principles outlined by the dogma is considered the universal foundation of education within the religious tradition, and among the scholarly figures of the religion, all knowledge and all philosophy is likely to be interpreted through the dogma's lens. Groups which defy dogma are often forced to recant, removed from positions of official responsibility, and even violently persecuted until they rejoin the fold, flee, or die.
-
-The concept of points of dogma that a society will not tolerate violation of is not unique to religion. Many totalitarian societies feature secular political 'dogma', de facto or de jure, which cannot be violated without the hostile attentions of the state.</English>
-	</TEXT>
-
-
-
-	<TEXT>
 		<Tag>TXT_KEY_TECH_COMBINED_ARMS</Tag>
 		<English>Combined Arms</English>
 	</TEXT>
@@ -595,6 +574,27 @@ More colloquially, "cybernetics" is often used to refer to advanced automation, 
 <English>People of the ancient world were fascinated and awed by the forces of nature surrounding them. Earthquakes, storms and other phenomena were generally regarded as signs from heaven. Individuals and groups arose to formulate explanations for these events, and pass the knowledge along to the tribe. The priests and priestesses of mysticism, often called oracles, claimed union with the divine through meditation and trance-like contemplation.
 
 Oracles across the world developed complex rites and rituals to appease and interact with gods and spirits. One of the most common forms of supernatural power invoked was divination - the ability to foretell the future using signs and portents such as dreams, the motions of the stars, the guts of sacrificial animals, the fracture lines in a tortoise's shell, visions experienced while under the influence of various drugs, and so on. Divination served the common human need to obtain information about the unknown future.</English>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DOCTRINE</Tag>
+		<English>Doctrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DOCTRINE_QUOTE</Tag>
+		<English>"Clearly the person who accepts the church as an infallible guide will believe whatever the church teaches."[PARAGRAPH:2]- Thomas Aquinas, Summa Theologica</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DOCTRINE_PEDIA</Tag>
+<English>"Dogma" refers to a firmly established body of beliefs and opinions, generally associated with religion and laid out by respected theologians within the faith. Within that religion, the dogma is considered authoritative and final - it may be clarified or expanded upon, but not contradicted. To call the basic facts of the dogma into question is, by definition, to leave the religion for some other path which may be deemed heretical.
+
+Different religions have different core bodies of dogma, which usually focus on key points of doctrine that the religious leaders consider to be of extreme importance. In Christianity, the concept of salvation through faith in Christ is a matter of dogma, although the details of how this salvation may best be achieved can vary. In Islam, it is a point of dogma that Muhammed was the last of the divinely inspired prophets.
+
+Dogma is particularly important to organized religions, since it serves to define the limits of what can and cannot be accepted as part of the faith. Learning the basic principles outlined by the dogma is considered the universal foundation of education within the religious tradition, and among the scholarly figures of the religion, all knowledge and all philosophy is likely to be interpreted through the dogma's lens. Groups which defy dogma are often forced to recant, removed from positions of official responsibility, and even violently persecuted until they rejoin the fold, flee, or die.
+
+The concept of points of dogma that a society will not tolerate violation of is not unique to religion. Many totalitarian societies feature secular political 'dogma', de facto or de jure, which cannot be violated without the hostile attentions of the state.</English>
 	</TEXT>
 
 

@@ -1487,7 +1487,7 @@ iBloomery, iCement, iMathematics, iContract, iLiterature, iPriesthood, iNavigati
 iGeneralship, iEngineering, iAesthetics, iCurrency, iLaw, iPhilosophy, iMedicine,
 iNobility, iSteel, iArchitecture, iArtisanry, iPolitics, iScholarship, iEthics,
 iFeudalism, iFortification, iMachinery, iAlchemy, iGuilds, iCivilService, iTheology,
-iCommune, iCropRotation, iPaper, iCompass, iPatronage, iEducation, iClergy,
+iCommune, iCropRotation, iPaper, iCompass, iPatronage, iEducation, iDoctrine,
 iGunpowder, iCompanies, iFinance, iCartography, iHumanities, iPrinting, iJudiciary,
 iFirearms, iLogistics, iExploration, iOptics, iAcademia, iStatecraft, iHeritage,
 iCombinedArms, iEconomics, iGeography, iScientificMethod, iUrbanPlanning, iCivilLiberties, iHorticulture,
