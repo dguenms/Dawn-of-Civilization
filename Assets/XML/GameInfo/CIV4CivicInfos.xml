@@ -115,10 +115,8 @@
 			<Button>,Art/Interface/Buttons/Civics/Oligarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iNumCitiesMaintenanceModifier>-50</iNumCitiesMaintenanceModifier>
-			<CapitalCommerceModifiers>
-				<iCommerce>50</iCommerce>
-			</CapitalCommerceModifiers>
+			<iDistanceMaintenanceModifier>-50</iDistanceMaintenanceModifier>
+			<iLargestCityHappiness>3</iLargestCityHappiness>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>
@@ -131,13 +129,13 @@
 			<Button>,Art/Interface/Buttons/Civics/State Party.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iDistanceMaintenanceModifier>-100</iDistanceMaintenanceModifier>
-			<CapitalCommerceModifiers>
+			<iNumCitiesMaintenanceModifier>-100</iNumCitiesMaintenanceModifier>
+			<SpecialistExtraCommerces>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
-			</CapitalCommerceModifiers>
+				<iCommerce>3</iCommerce>
+			</SpecialistExtraCommerces>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_DICTATOR</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>
@@ -173,8 +171,28 @@
 			<Button>,Art/Interface/Buttons/Civics/Citizenship.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iImprovementUpgradeRateModifier>100</iImprovementUpgradeRateModifier>
-			<iLargestCityHappiness>2</iLargestCityHappiness>
+			<BuildingProductionModifiers>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_AQUEDUCT</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_LIBRARY</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_FORGE</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_MARKET</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+				<BuildingProductionModifier>
+					<BuildingType>BUILDINGCLASS_JAIL</BuildingType>
+					<iProductionModifier>100</iProductionModifier>
+				</BuildingProductionModifier>
+			</BuildingProductionModifiers>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
@@ -216,20 +234,25 @@
 			<Button>,Art/Interface/Buttons/Civics/Meritocracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
-			<BuildingProductionModifiers>
-				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_LIBRARY</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
-				</BuildingProductionModifier>
-				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_MARKET</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
-				</BuildingProductionModifier>
-				<BuildingProductionModifier>
-					<BuildingType>BUILDINGCLASS_JAIL</BuildingType>
-					<iProductionModifier>100</iProductionModifier>
-				</BuildingProductionModifier>
-			</BuildingProductionModifiers>
+			<iExpInBorderModifier>50</iExpInBorderModifier>
+			<CapitalCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>50</iCommerce>
+			</CapitalCommerceModifiers>
+			<ImprovementYieldChanges>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
+					<ImprovementYields>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
+			</ImprovementYieldChanges>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
@@ -241,11 +264,14 @@
 			<Button>,Art/Interface/Buttons/Civics/Centralism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<iNumCitiesMaintenanceModifier>50</iNumCitiesMaintenanceModifier>
 			<CapitalYieldModifiers>
 				<iYield>0</iYield>
 				<iYield>50</iYield>
-				<iYield>50</iYield>
 			</CapitalYieldModifiers>
+			<CapitalCommerceModifiers>
+				<iCommerce>50</iCommerce>
+			</CapitalCommerceModifiers>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_LEGITIMACY</CivicOptionType>
@@ -409,6 +435,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Individualism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<iImprovementUpgradeRateModifier>100</iImprovementUpgradeRateModifier>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
@@ -524,7 +551,11 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iTradeRoutes>-1</iTradeRoutes>
-			<iCapitalTradeModifier>200</iCapitalTradeModifier>
+			<CapitalYieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>50</iYield>
+			</CapitalYieldModifiers>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
@@ -633,10 +664,6 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iCorporationUnhappinessModifier>-50</iCorporationUnhappinessModifier>
-			<CapitalCommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
-			</CapitalCommerceModifiers>
 			<Hurrys>
 				<Hurry>
 					<HurryType>HURRY_GOLD_BUILDINGS</HurryType>
