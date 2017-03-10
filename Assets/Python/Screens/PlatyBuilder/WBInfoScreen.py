@@ -303,29 +303,28 @@ class WBInfoScreen:
 		elif iMode == 14 and iItem != -1:
 			iPlayer = iItem
 			tCapital = Areas.getCapital(iPlayer)
-			for x in range(iWorldX):
-				for y in range(iWorldY):
-					plot = gc.getMap().plot(x, y)
-					if plot.isWater(): continue
-					if plot.isCore(iPlayer):
-						iPlotType = iCore
-					else:
-						bForeignCore = Areas.isForeignCore(iPlayer, (x, y))
-						iSettlerValue = plot.getSettlerValue(iPlayer)
-						if iSettlerValue >= 90:
-							if bForeignCore:
-								iPlotType = iContest
-							else:
-								iPlotType = iHistorical
-						elif iSettlerValue == 3 and bShowAIForbidden:
-							iPlotType = iAIForbidden
-						elif bForeignCore and bShowForeignCores:
-							iPlotType = iForeignCore
+			for (x, y) in utils.getWorldPlotsList():
+				plot = gc.getMap().plot(x, y)
+				if plot.isWater(): continue
+				if plot.isCore(iPlayer):
+					iPlotType = iCore
+				else:
+					bForeignCore = Areas.isForeignCore(iPlayer, (x, y))
+					iSettlerValue = plot.getSettlerValue(iPlayer)
+					if iSettlerValue >= 90:
+						if bForeignCore:
+							iPlotType = iContest
 						else:
-							iPlotType = -1
-					if iPlotType != -1:
-						iColor = gc.getInfoTypeForString(lStabilityColors[iPlotType])
-						screen.minimapFlashPlot(x, y, iColor, -1)
+							iPlotType = iHistorical
+					elif iSettlerValue == 3 and bShowAIForbidden:
+						iPlotType = iAIForbidden
+					elif bForeignCore and bShowForeignCores:
+						iPlotType = iForeignCore
+					else:
+						iPlotType = -1
+				if iPlotType != -1:
+					iColor = gc.getInfoTypeForString(lStabilityColors[iPlotType])
+					screen.minimapFlashPlot(x, y, iColor, -1)
 
 		elif iMode == 15 and iItem != -1:
 			iColorS = gc.getInfoTypeForString(self.iColorSpawn)

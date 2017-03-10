@@ -75,39 +75,34 @@ def exportCore(iPlayer, bForce = False):
 	lCorePlotList = Areas.getCoreArea(iPlayer)
 	bCoreChanged = bForce
 	if not bCoreChanged:
-		for x in range(iWorldX):
-			for y in range(iWorldY):
-				bOldCore = (x, y) in lCorePlotList
-				if gc.getMap().plot(x, y).isCore(iPlayer) != bOldCore:
-					bCoreChanged = True
-					break
-			if bCoreChanged:
+		for (x, y) in utils.getWorldPlotsList():
+			bOldCore = (x, y) in lCorePlotList
+			if gc.getMap().plot(x, y).isCore(iPlayer) != bOldCore:
+				bCoreChanged = True
 				break
 	if bCoreChanged:
 		Bottom = iWorldY
 		Top = 0
 		Left = iWorldX
 		Right = 0
-		for x in range(iWorldX):
-			for y in range(iWorldY):
-				if gc.getMap().plot(x, y).isCore(iPlayer):
-					if x < Left:
-						Left = x
-					if x > Right:
-						Right = x
-					if y < Bottom:
-						Bottom = y
-					if y > Top:
-						Top = y
+		for (x, y) in utils.getWorldPlotsList():
+			if gc.getMap().plot(x, y).isCore(iPlayer):
+				if x < Left:
+					Left = x
+				if x > Right:
+					Right = x
+				if y < Bottom:
+					Bottom = y
+				if y > Top:
+					Top = y
 		BL = (Left, Bottom)
 		TR = (Right, Top)
 
 		lExceptions = []
-		for x in range(BL[0], TR[0]+1):
-			for y in range(BL[1], TR[1]+1):
-				plot = gc.getMap().plot(x, y)
-				if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions)):
-					lExceptions.append((x, y))
+		for (x, y) in utils.getPlotList(BL, TR):
+			plot = gc.getMap().plot(x, y)
+			if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions)):
+				lExceptions.append((x, y))
 
 		file = open(IMAGE_LOCATION + "\Cores\\" + sName + ".txt", 'wt')
 		try:
@@ -147,26 +142,24 @@ def exportAllCores():
 		Top = 0
 		Left = iWorldX
 		Right = 0
-		for x in range(iWorldX):
-			for y in range(iWorldY):
-				if gc.getMap().plot(x, y).isCore(iPlayer):
-					if x < Left:
-						Left = x
-					if x > Right:
-						Right = x
-					if y < Bottom:
-						Bottom = y
-					if y > Top:
-						Top = y
+		for (x, y) in utils.getWorldPlotsList():
+			if gc.getMap().plot(x, y).isCore(iPlayer):
+				if x < Left:
+					Left = x
+				if x > Right:
+					Right = x
+				if y < Bottom:
+					Bottom = y
+				if y > Top:
+					Top = y
 		BL = (Left, Bottom)
 		TR = (Right, Top)
 
 		lExceptions = []
-		for x in range(BL[0], TR[0]+1):
-			for y in range(BL[1], TR[1]+1):
-				plot = gc.getMap().plot(x, y)
-				if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions)):
-					lExceptions.append((x, y))
+		for (x, y) in utils.getPlotList(BL, TR):
+			plot = gc.getMap().plot(x, y)
+			if not plot.isCore(iPlayer) and not (plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions)):
+				lExceptions.append((x, y))
 
 		lAllCores.append("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
 		if lExceptions:
@@ -199,12 +192,9 @@ def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 
 	bSettlerValueChanged = bForce
 	if not bSettlerValueChanged:
-		for x in range(iWorldX):
-			for y in range(iWorldY):
-				if getSettlerValue(iPlayer, (x, y)) != SettlerMaps.getMapValue(iCiv, x, y):
-					bSettlerValueChanged = True
-					break
-			if bSettlerValueChanged:
+		for (x, y) in utils.getWorldPlotsList():
+			if getSettlerValue(iPlayer, (x, y)) != SettlerMaps.getMapValue(iCiv, x, y):
+				bSettlerValueChanged = True
 				break
 	if bSettlerValueChanged:
 		file = open(IMAGE_LOCATION + "\SettlerValues\\" + sName + ".txt", 'wt')
@@ -248,12 +238,9 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 
 	bWarMapChanged = bForce
 	if not bWarMapChanged:
-		for x in range(iWorldX):
-			for y in range(iWorldY):
-				if getWarValue(iPlayer, (x, y)) != WarMaps.getMapValue(iCiv, x, y):
-					bWarMapChanged = True
-					break
-			if bWarMapChanged:
+		for (x, y) in utils.getWorldPlotsList():
+			if getWarValue(iPlayer, (x, y)) != WarMaps.getMapValue(iCiv, x, y):
+				bWarMapChanged = True
 				break
 	if bWarMapChanged:
 		file = open(IMAGE_LOCATION + "\WarMaps\\" + sName + ".txt", 'wt')

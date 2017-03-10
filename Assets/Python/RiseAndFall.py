@@ -79,13 +79,12 @@ class RiseAndFall:
 		pPlayer = gc.getPlayer(iCiv)
 		pCity, iter = pPlayer.firstCity(true)
 
-		for x in range(iWorldX):
-			for y in range(iWorldY):
-				if gc.getMap().plot(x,y).isCity():
-					city = gc.getMap().plot( x,y ).getPlotCity()
-					if city.getOwner() == iCiv:
-						city.setInfoDirty(True)
-						city.setLayoutDirty(True)
+		for (x, y) in utils.getWorldPlotsList():
+			if gc.getMap().plot(x,y).isCity():
+				city = gc.getMap().plot( x,y ).getPlotCity()
+				if city.getOwner() == iCiv:
+					city.setInfoDirty(True)
+					city.setLayoutDirty(True)
 						
 		for i in range(3):
 			data.players[iCiv].lGoals[i] = -1
@@ -345,11 +344,10 @@ class RiseAndFall:
 			
 			
 	def adjust1700ADCulture(self):
-		for x in range(124):
-			for y in range(68):
-				plot = gc.getMap().plot(x, y)
-				if plot.getOwner() != -1:
-					utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
+		for (x, y) in utils.getWorldPlotsList():
+			plot = gc.getMap().plot(x, y)
+			if plot.getOwner() != -1:
+				utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
 					
 		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iPortugal, 100, True)
@@ -1236,7 +1234,7 @@ class RiseAndFall:
 			tBroaderTopLeft, tBroaderBottomRight = Areas.tBroaderArea[iCiv]
 			
 			if iCiv == iThailand:
-				i, j = Areas.tCapital[iKhmer]
+				i, j = Areas.tCapitals[iKhmer]
 				if gc.getMap().plot(i, j).isCity():
 					angkor = gc.getMap().plot(i, j).getPlotCity()
 					bWonder = False

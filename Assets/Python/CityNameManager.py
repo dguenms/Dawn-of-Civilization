@@ -160,10 +160,9 @@ def updateCityNamesFound(iCiv):
 def findLocations(iPlayer, sName):
 	lLocations = []
 	
-	for x in range(iWorldX):
-		for y in range(iWorldY):
-			if getFoundName(iPlayer, (x,y)) == sName or getFoundName(iEngland, (x,y)) == sName:
-				lLocations.append((x,y))
+	for tPlot in utils.getWorldPlotsList():
+		if getFoundName(iPlayer, tPlot) == sName or getFoundName(iEngland, tPlot) == sName:
+			lLocations.append(tPlot)
 				
 	return lLocations
 	

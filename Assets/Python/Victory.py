@@ -1924,12 +1924,12 @@ def onFirstContact(iPlayer, iHasMetPlayer):
 			elif iHasMetPlayer == iMaya and iPlayer in lCivGroups[0]: iEuropean = iPlayer
 			else: return
 		
-			for x in range(iWorldX):
-				for y in range(iWorldY):
-					if utils.isPlotInArea((x, y), tNorthAmericaTL, tNorthAmericaBR) or utils.isPlotInArea((x, y), tSouthCentralAmericaTL, tSouthCentralAmericaBR):
-						if gc.getMap().plot(x, y).isRevealed(iEuropean, False):
-							lose(iMaya, 2)
-							return
+			lPlots = utils.getPlotList(tNorthAmericaTL, tNorthAmericaBR) + utils.getPlotList(tSouthCentralAmericaTL, tSouthCentralAmericaBR)
+			for (x, y) in lPlots:
+				plot = gc.getMap().plot(x, y)
+				if plot.isRevealed(iEuropean, False) and not plot.isWater():
+					lose(iMaya, 2)
+					return
 			
 def checkReligiousGoals(iPlayer):
 	for i in range(3):
@@ -2508,7 +2508,17 @@ def isConnectedByRailroad(iPlayer, tStart, lTargetList):
 	
 	if tStart in lTargetList: return True
 	
-	iRailroad = gc.getInfoTypeForString("ROUTE_RAILROAD")
+	iRailroadRoute = gc.getInfoTypeForString("ROUTE_RAILROAD")
+	
+	bValidTarget = False
+	for tPlot in lTargetList:
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == iRailroadRoute):
+			bValidTarget = True
+			break
+	if not bValidTarget: return False
+	
 	lNodes = [(utils.calculateDistance(iStartX, iStartY, iTargetX, iTargetY), iStartX, iStartY)]
 	heapq.heapify(lNodes)
 	lVisitedNodes = []
@@ -2519,7 +2529,7 @@ def isConnectedByRailroad(iPlayer, tStart, lTargetList):
 		
 		for (i, j) in utils.surroundingPlots((x, y)):
 			plot = gc.getMap().plot(i, j)
-			if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == iRailroad):
+			if plot.getOwner() == iPlayer and (plot.isCity() or plot.getRouteType() == iRailroadRoute):
 				if (i, j) in lTargetList: return True
 				tTuple = (utils.calculateDistance(i, j, iTargetX, iTargetY), i, j)
 				if not tTuple in lVisitedNodes:
