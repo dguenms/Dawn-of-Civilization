@@ -467,6 +467,10 @@
 			<Upkeep>NONE</Upkeep>
 			<iMilitaryProductionModifier>25</iMilitaryProductionModifier>
 			<iWarWearinessModifier>-100</iWarWearinessModifier>
+			<UnhappinessExtraYields>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</UnhappinessExtraYields>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_SOCIETY</CivicOptionType>
@@ -664,6 +668,11 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iCorporationUnhappinessModifier>-50</iCorporationUnhappinessModifier>
+			<HappinessExtraYields>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>2</iYield>
+			</HappinessExtraYields>
 			<Hurrys>
 				<Hurry>
 					<HurryType>HURRY_GOLD_BUILDINGS</HurryType>

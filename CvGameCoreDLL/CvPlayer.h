@@ -893,6 +893,17 @@ public:
 	int getSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2) const;
 	void changeSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange);
 
+	// Leoreth
+	int getHappinessExtraYield(YieldTypes eIndex) const;
+	void changeHappinessExtraYield(YieldTypes eIndex, int iChange);
+
+	// Leoreth
+	int getUnhappinessExtraYield(YieldTypes eIndex) const;
+	void changeUnhappinessExtraYield(YieldTypes eIndex, int iChange);
+
+	// Leoreth
+	void updateHappinessExtraYield();
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1431,6 +1442,8 @@ protected:
 	int* m_aiStateReligionBuildingCommerce;
 	int* m_aiSpecialistExtraCommerce;
 	int* m_aiSpecialistExtraYield; //Leoreth
+	int* m_aiHappinessExtraYield; // Leoreth
+	int* m_aiUnhappinessExtraYield; // Leoreth
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;

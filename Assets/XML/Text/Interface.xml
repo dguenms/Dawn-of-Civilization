@@ -201,6 +201,16 @@
 		<German>[SPACE]pro Spezialist f&#252;r jede Stadt, die h&#246;chstens %d1 Landfelder bearbeitet</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PER_EXCESS_HAPPINESS</Tag>
+		<English>[SPACE]per Excess Happiness</English>
+		<German>[SPACE]pro Überschuss an Zufriedenheit</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PER_ANGRY_POPULATION</Tag>
+		<English>[SPACE]per Angry Population</English>
+		<German>[SPACE]pro Unzufriedene Bevölkerung</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POLLUTION_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_UNHEALTHY]</English>
 	</TEXT>

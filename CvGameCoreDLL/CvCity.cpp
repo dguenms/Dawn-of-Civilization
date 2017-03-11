@@ -43,6 +43,7 @@ CvCity::CvCity()
 	m_aiTradeYield = new int[NUM_YIELD_TYPES];
 	m_aiCorporationYield = new int[NUM_YIELD_TYPES];
 	m_aiExtraSpecialistYield = new int[NUM_YIELD_TYPES];
+	m_aiHappinessYield = new int[NUM_YIELD_TYPES]; // Leoreth
 	m_aiCommerceRate = new int[NUM_COMMERCE_TYPES];
 	m_aiProductionToCommerceModifier = new int[NUM_COMMERCE_TYPES];
 	m_aiBuildingCommerce = new int[NUM_COMMERCE_TYPES];
@@ -141,6 +142,7 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiTradeYield);
 	SAFE_DELETE_ARRAY(m_aiCorporationYield);
 	SAFE_DELETE_ARRAY(m_aiExtraSpecialistYield);
+	SAFE_DELETE_ARRAY(m_aiHappinessYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCommerceRate);
 	SAFE_DELETE_ARRAY(m_aiProductionToCommerceModifier);
 	SAFE_DELETE_ARRAY(m_aiBuildingCommerce);
@@ -598,6 +600,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiTradeYield[iI] = 0;
 		m_aiCorporationYield[iI] = 0;
 		m_aiExtraSpecialistYield[iI] = 0;
+		m_aiHappinessYield[iI] = 0; // Leoreth
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -10109,6 +10112,36 @@ void CvCity::updateExtraSpecialistYield()
 }
 
 
+// Leoreth
+int CvCity::getHappinessYield(YieldTypes eIndex) const
+{
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eIndex > -1, "Index out of bounds");
+
+	return m_aiHappinessYield[eIndex];
+}
+
+
+// Leoreth
+void CvCity::updateHappinessYield()
+{
+	int iHappinessDifference = happyLevel() - unhappyLevel(0);
+
+	int iOldYield, iNewYield;
+	for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+	{
+		iOldYield = getHappinessYield((YieldTypes)iI);
+		iNewYield = iHappinessDifference > 0 ? abs(iHappinessDifference) * GET_PLAYER(getOwnerINLINE()).getHappinessExtraYield((YieldTypes)iI) : abs(iHappinessDifference) * GET_PLAYER(getOwnerINLINE()).getUnhappinessExtraYield((YieldTypes)iI);
+
+		if (iOldYield != iNewYield)
+		{
+			m_aiHappinessYield[iI] = iNewYield;
+			changeBaseYieldRate((YieldTypes)iI, iNewYield - iOldYield);
+		}
+	}
+}
+
+
 int CvCity::getCommerceRate(CommerceTypes eIndex) const
 {
 	return getCommerceRateTimes100(eIndex) / 100;
@@ -15357,6 +15390,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_YIELD_TYPES, m_aiTradeYield);
 	pStream->Read(NUM_YIELD_TYPES, m_aiCorporationYield);
 	pStream->Read(NUM_YIELD_TYPES, m_aiExtraSpecialistYield);
+	pStream->Read(NUM_YIELD_TYPES, m_aiHappinessYield); // Leoreth
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRate);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiProductionToCommerceModifier);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiBuildingCommerce);
@@ -15633,6 +15667,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_YIELD_TYPES, m_aiTradeYield);
 	pStream->Write(NUM_YIELD_TYPES, m_aiCorporationYield);
 	pStream->Write(NUM_YIELD_TYPES, m_aiExtraSpecialistYield);
+	pStream->Write(NUM_YIELD_TYPES, m_aiHappinessYield); // Leoreth
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRate);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiProductionToCommerceModifier);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiBuildingCommerce);
