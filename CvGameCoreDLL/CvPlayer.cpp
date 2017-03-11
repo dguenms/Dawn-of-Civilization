@@ -55,6 +55,8 @@ CvPlayer::CvPlayer()
 	m_aiStateReligionBuildingCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiSpecialistExtraCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiSpecialistExtraYield = new int[NUM_YIELD_TYPES]; //Leoreth
+	m_aiHappinessExtraYield = new int[NUM_YIELD_TYPES]; // Leoreth
+	m_aiUnhappinessExtraYield = new int[NUM_YIELD_TYPES]; // Leoreth
 	m_aiCommerceFlexibleCount = new int[NUM_COMMERCE_TYPES];
 	m_aiGoldPerTurnByPlayer = new int[MAX_PLAYERS];
 	m_aiEspionageSpendingWeightAgainstTeam = new int[MAX_TEAMS];
@@ -131,6 +133,8 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiStateReligionBuildingCommerce);
 	SAFE_DELETE_ARRAY(m_aiSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_aiSpecialistExtraYield); //Leoreth
+	SAFE_DELETE_ARRAY(m_aiHappinessExtraYield); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiUnhappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCommerceFlexibleCount);
 	SAFE_DELETE_ARRAY(m_aiGoldPerTurnByPlayer);
 	SAFE_DELETE_ARRAY(m_aiEspionageSpendingWeightAgainstTeam);
@@ -580,6 +584,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_aiTradeYieldModifier[iI] = 0;
 		m_aiSpecialistExtraYield[iI] = 0; // Leoreth
 		m_aiReligionYieldChange[iI] = 0; // Leoreth
+		m_aiHappinessExtraYield[iI] = 0; // Leoreth
+		m_aiUnhappinessExtraYield[iI] = 0; // Leoreth
 	}
 
 	for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -13441,6 +13447,62 @@ void CvPlayer::changeSpecialistThresholdExtraYield(SpecialistTypes eIndex1, Yiel
 	}
 }
 
+// Leoreth
+int CvPlayer::getHappinessExtraYield(YieldTypes eIndex) const
+{
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eIndex > -1, "Index out of bounds");
+
+	return m_aiHappinessExtraYield[eIndex];
+}
+
+// Leoreth
+void CvPlayer::changeHappinessExtraYield(YieldTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eIndex > -1, "Index out of bounds");
+
+	if (iChange != 0)
+	{
+		m_aiHappinessExtraYield[eIndex] += iChange;
+
+		updateHappinessExtraYield();
+	}
+}
+
+// Leoreth
+int CvPlayer::getUnhappinessExtraYield(YieldTypes eIndex) const
+{
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eIndex > -1, "Index out of bounds");
+
+	return m_aiUnhappinessExtraYield[eIndex];
+}
+
+// Leoreth
+void CvPlayer::changeUnhappinessExtraYield(YieldTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eIndex > -1, "Index out of bounds");
+
+	if (iChange != 0)
+	{
+		m_aiUnhappinessExtraYield[eIndex] += iChange;
+
+		updateHappinessExtraYield();
+	}
+}
+
+// Leoreth
+void CvPlayer::updateHappinessExtraYield()
+{
+	int iLoop;
+	for (CvCity* pCity = firstCity(&iLoop); NULL != pCity; pCity = nextCity(&iLoop))
+	{
+		pCity->updateHappinessYield();
+	}
+}
+
 int CvPlayer::getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const
 {
 	FAssertMsg(eIndex1 >= 0, "eIndex1 is expected to be non-negative (invalid Index)");
@@ -17561,6 +17623,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		changeYieldRateModifier(((YieldTypes)iI), (GC.getCivicInfo(eCivic).getYieldModifier(iI) * iChange));
 		changeCapitalYieldRateModifier(((YieldTypes)iI), (GC.getCivicInfo(eCivic).getCapitalYieldModifier(iI) * iChange));
 		changeTradeYieldModifier(((YieldTypes)iI), (GC.getCivicInfo(eCivic).getTradeYieldModifier(iI) * iChange));
+		changeHappinessExtraYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getHappinessExtraYield(iI) * iChange);
+		changeUnhappinessExtraYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getUnhappinessExtraYield(iI) * iChange);
 		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
 		{
 			changeSpecialistExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange)); //Leoreth
@@ -18003,6 +18067,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_YIELD_TYPES, m_aiExtraYieldThreshold);
 	pStream->Read(NUM_YIELD_TYPES, m_aiTradeYieldModifier);
 	pStream->Read(NUM_YIELD_TYPES, m_aiReligionYieldChange); // Leoreth
+	pStream->Read(NUM_YIELD_TYPES, m_aiHappinessExtraYield); // Leoreth
+	pStream->Read(NUM_YIELD_TYPES, m_aiUnhappinessExtraYield); // Leoreth
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiFreeCityCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommercePercent);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRate);
@@ -18526,6 +18592,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_YIELD_TYPES, m_aiExtraYieldThreshold);
 	pStream->Write(NUM_YIELD_TYPES, m_aiTradeYieldModifier);
 	pStream->Write(NUM_YIELD_TYPES, m_aiReligionYieldChange); // Leoreth
+	pStream->Write(NUM_YIELD_TYPES, m_aiHappinessExtraYield); // Leoreth
+	pStream->Write(NUM_YIELD_TYPES, m_aiUnhappinessExtraYield); // Leoreth
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiFreeCityCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommercePercent);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRate);

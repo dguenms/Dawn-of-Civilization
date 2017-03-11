@@ -5490,6 +5490,8 @@ m_piCapitalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
 m_piSpecialistExtraYield(NULL), //Leoreth
 m_piSpecialistThresholdExtraYield(NULL), //Leoreth
+m_piHappinessExtraYield(NULL), // Leoreth
+m_piUnhappinessExtraYield(NULL), // Leoreth
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiBuildingProductionModifiers(NULL), //Leoreth
@@ -5522,6 +5524,8 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield); //Leoreth
 	SAFE_DELETE_ARRAY(m_piSpecialistThresholdExtraYield); //Leoreth
+	SAFE_DELETE_ARRAY(m_piHappinessExtraYield); // Leoreth
+	SAFE_DELETE_ARRAY(m_piUnhappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); //Leoreth
@@ -5963,6 +5967,34 @@ int* CvCivicInfo::getSpecialistThresholdExtraYieldArray() const
 	return m_piSpecialistThresholdExtraYield;
 }
 
+// Leoreth
+int CvCivicInfo::getHappinessExtraYield(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piHappinessExtraYield ? m_piHappinessExtraYield[i] : -1;
+}
+
+// Leoreth
+int* CvCivicInfo::getHappinessExtraYieldArray() const
+{
+	return m_piHappinessExtraYield;
+}
+
+// Leoreth
+int CvCivicInfo::getUnhappinessExtraYield(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piUnhappinessExtraYield ? m_piUnhappinessExtraYield[i] : -1;
+}
+
+// Leoreth
+int* CvCivicInfo::getUnhappinessExtraYieldArray() const
+{
+	return m_piUnhappinessExtraYield;
+}
+
 int CvCivicInfo::getBuildingHappinessChanges(int i) const
 {
 	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
@@ -6143,6 +6175,16 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	m_piSpecialistThresholdExtraYield = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield);
 
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piHappinessExtraYield);
+	m_piHappinessExtraYield = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piHappinessExtraYield);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piUnhappinessExtraYield);
+	m_piUnhappinessExtraYield = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piUnhappinessExtraYield);
+
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	m_paiBuildingHappinessChanges = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
@@ -6280,6 +6322,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistExtraYield); //Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield); //Leoreth
+	stream->Write(NUM_YIELD_TYPES, m_piHappinessExtraYield); // Leoreth
+	stream->Write(NUM_YIELD_TYPES, m_piUnhappinessExtraYield); // Leoreth
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers); //Leoreth
@@ -6459,6 +6503,28 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piSpecialistThresholdExtraYield, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "HappinessExtraYields"))
+	{
+		pXML->SetYields(&m_piHappinessExtraYield);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piHappinessExtraYield, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "UnhappinessExtraYields"))
+	{
+		pXML->SetYields(&m_piUnhappinessExtraYield);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piUnhappinessExtraYield, NUM_YIELD_TYPES);
 	}
 
 	pXML->SetVariableListTagPair(&m_pabHurry, "Hurrys", sizeof(GC.getHurryInfo((HurryTypes)0)), GC.getNumHurryInfos());

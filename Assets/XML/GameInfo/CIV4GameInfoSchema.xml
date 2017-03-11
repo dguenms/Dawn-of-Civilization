@@ -810,6 +810,12 @@
 	<ElementType name="DomainExperienceModifiers" content="eltOnly">
 		<element type="DomainExperienceModifier" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="HappinessExtraYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="UnhappinessExtraYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -887,6 +893,8 @@
 		<element type="iSpecialistExtraYieldBaseThreshold" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iSpecialistExtraYieldEraThreshold" minOccurs="0"/> <!-- Leoreth -->
 		<element type="SpecialistThresholdExtraYields" minOccurs="0"/> <!-- Leoreth -->
+		<element type="HappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
+		<element type="UnhappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Hurrys" minOccurs="0"/>
 		<element type="SpecialBuildingNotRequireds" minOccurs="0"/>
 		<element type="SpecialistValids" minOccurs="0"/>
