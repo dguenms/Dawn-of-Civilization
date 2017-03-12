@@ -654,6 +654,7 @@
 	<ElementType name="iExtraHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iPollutionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iFreeExperience" content="textOnly" dt:type="int"/>
+	<ElementType name="iWorkerProductionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iWorkerSpeedModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iImprovementUpgradeRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iMilitaryProductionModifier" content="textOnly" dt:type="int"/>
@@ -819,6 +820,7 @@
 	<ElementType name="iVassalCityCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappinessBonusCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iSpecialistHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iCaptureGoldModifier" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -847,6 +849,7 @@
 		<element type="iExtraHealth" minOccurs="0"/>
 		<element type="iPollutionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iFreeExperience" minOccurs="0"/>
+		<element type="iWorkerProductionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWorkerSpeedModifier" minOccurs="0"/>
 		<element type="iImprovementUpgradeRateModifier" minOccurs="0"/>
 		<element type="iMilitaryProductionModifier" minOccurs="0"/>
@@ -873,6 +876,7 @@
 		<element type="iDefensivePactTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iVassalCityCommerce" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iHappinessBonusCommerce" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iCaptureGoldModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoForeignTrade" minOccurs="0"/>
 		<element type="bNoForeignTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoCorporations" minOccurs="0"/>

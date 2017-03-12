@@ -380,6 +380,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Manorialism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
+			<iWorkerProductionModifier>50</iWorkerProductionModifier>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType>
@@ -880,6 +881,7 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iVassalCityCommerce>5</iVassalCityCommerce>
+			<iCaptureGoldModifier>50</iCaptureGoldModifier>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>

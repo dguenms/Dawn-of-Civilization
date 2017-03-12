@@ -1352,6 +1352,7 @@ public:
 	int getExtraHealth() const;						// Exposed to Python
 	int getPollutionModifier() const; //Leoreth
 	int getFreeExperience() const;				// Exposed to Python
+	int getWorkerProductionModifier() const; // Leoreth
 	int getWorkerSpeedModifier() const;				// Exposed to Python
 	int getImprovementUpgradeRateModifier() const;				// Exposed to Python
 	int getMilitaryProductionModifier() const;				// Exposed to Python
@@ -1373,6 +1374,7 @@ public:
 	int getDefensivePactTradeModifier() const; // Leoreth
 	int getVassalCityCommerce() const; // Leoreth
 	int getHappinessBonusCommerce() const; // Leoreth
+	int getCaptureGoldModifier() const; // Leoreth
 	int getTechPrereq() const;				// Exposed to Python
 	int getCivicPercentAnger() const;				// Exposed to Python
 	int getMaxConscript() const;				// Exposed to Python
@@ -1466,6 +1468,7 @@ protected:
 	int m_iExtraHealth;
 	int m_iPollutionModifier; //Leoreth
 	int m_iFreeExperience;
+	int m_iWorkerProductionModifier; // Leoreth
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;
 	int m_iMilitaryProductionModifier;
@@ -1487,6 +1490,7 @@ protected:
 	int m_iDefensivePactTradeModifier; // Leoreth
 	int m_iVassalCityCommerce; // Leoreth
 	int m_iHappinessBonusCommerce; // Leoreth
+	int m_iCaptureGoldModifier; // Leoreth
 	int m_iTechPrereq;
 	int m_iCivicPercentAnger;
 	int m_iMaxConscript;
