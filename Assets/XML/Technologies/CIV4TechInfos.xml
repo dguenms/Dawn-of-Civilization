@@ -881,6 +881,7 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
+			<bVassalTrading>1</bVassalTrading>
 			<iGridX>4</iGridX>
 			<iGridY>7</iGridY>
 			<Flavors>
@@ -1564,7 +1565,6 @@
 			<iPower>3</iPower>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
-			<bVassalTrading>1</bVassalTrading>
 			<iGridX>7</iGridX>
 			<iGridY>1</iGridY>
 			<Flavors>
