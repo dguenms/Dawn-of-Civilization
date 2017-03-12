@@ -5452,6 +5452,7 @@ m_iGoldPerMilitaryUnit(0),
 m_iHappyPerMilitaryUnit(0),
 m_iMilitaryHappinessLimit(0), //Leoreth
 m_iLargestCityHappiness(0),
+m_iSpecialistHappiness(0), // Leoreth
 m_iWarWearinessModifier(0),
 m_iFreeSpecialist(0),
 m_iCoreFreeSpecialist(0), //Leoreth
@@ -5701,6 +5702,12 @@ int CvCivicInfo::getMilitaryHappinessLimit() const
 int CvCivicInfo::getLargestCityHappiness() const
 {
 	return m_iLargestCityHappiness;
+}
+
+// Leoreth
+int CvCivicInfo::getSpecialistHappiness() const
+{
+	return m_iSpecialistHappiness;
 }
 
 int CvCivicInfo::getWarWearinessModifier() const
@@ -6121,6 +6128,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iHappyPerMilitaryUnit);
 	stream->Read(&m_iMilitaryHappinessLimit); //Leoreth
 	stream->Read(&m_iLargestCityHappiness);
+	stream->Read(&m_iSpecialistHappiness); // Leoreth
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iFreeSpecialist);
 	stream->Read(&m_iCoreFreeSpecialist); //Leoreth
@@ -6296,6 +6304,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iHappyPerMilitaryUnit);
 	stream->Write(m_iMilitaryHappinessLimit); //Leoreth
 	stream->Write(m_iLargestCityHappiness);
+	stream->Write(m_iSpecialistHappiness); // Leoreth
 	stream->Write(m_iWarWearinessModifier);
 	stream->Write(m_iFreeSpecialist);
 	stream->Write(m_iCoreFreeSpecialist); //Leoreth
@@ -6415,6 +6424,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNoUnhealthyPopulation, "bNoUnhealthyPopulation");
 	pXML->GetChildXmlValByName(&m_bBuildingOnlyHealthy, "bBuildingOnlyHealthy");
 	pXML->GetChildXmlValByName(&m_iLargestCityHappiness, "iLargestCityHappiness");
+	pXML->GetChildXmlValByName(&m_iSpecialistHappiness, "iSpecialistHappiness"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iWarWearinessModifier, "iWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iFreeSpecialist, "iFreeSpecialist");
 	pXML->GetChildXmlValByName(&m_iCoreFreeSpecialist, "iCoreFreeSpecialist"); //Leoreth

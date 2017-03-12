@@ -492,6 +492,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iExtraHappiness = 0;
 	m_iBuildingHappiness = 0;
 	m_iLargestCityHappiness = 0;
+	m_iSpecialistHappiness = 0; // Leoreth
 	m_iWarWearinessPercentAnger = 0;
 	m_iWarWearinessModifier = 0;
 	m_iFreeSpecialist = 0;
@@ -10178,6 +10179,25 @@ void CvPlayer::changeLargestCityHappiness(int iChange)
 }
 
 
+// Leoreth
+int CvPlayer::getSpecialistHappiness() const
+{
+	return m_iSpecialistHappiness;
+}
+
+
+// Leoreth
+void CvPlayer::changeSpecialistHappiness(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iSpecialistHappiness += iChange;
+
+		AI_makeAssignWorkDirty();
+	}
+}
+
+
 int CvPlayer::getWarWearinessPercentAnger() const
 {
 	return m_iWarWearinessPercentAnger;
@@ -17667,6 +17687,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeNoUnhealthyPopulationCount((GC.getCivicInfo(eCivic).isNoUnhealthyPopulation()) ? iChange : 0);
 	changeBuildingOnlyHealthyCount((GC.getCivicInfo(eCivic).isBuildingOnlyHealthy()) ? iChange : 0);
 	changeLargestCityHappiness(GC.getCivicInfo(eCivic).getLargestCityHappiness() * iChange);
+	changeSpecialistHappiness(GC.getCivicInfo(eCivic).getSpecialistHappiness() * iChange); // Leoreth
 	changeWarWearinessModifier(GC.getCivicInfo(eCivic).getWarWearinessModifier() * iChange);
 	changeFreeSpecialist(GC.getCivicInfo(eCivic).getFreeSpecialist() * iChange);
 	changeCoreFreeSpecialist(GC.getCivicInfo(eCivic).getCoreFreeSpecialist() * iChange); //Leoreth
@@ -18058,6 +18079,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iExtraHappiness);
 	pStream->Read(&m_iBuildingHappiness);
 	pStream->Read(&m_iLargestCityHappiness);
+	pStream->Read(&m_iSpecialistHappiness); // Leoreth
 	pStream->Read(&m_iWarWearinessPercentAnger);
 	pStream->Read(&m_iWarWearinessModifier);
 	pStream->Read(&m_iFreeSpecialist);
@@ -18585,6 +18607,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iExtraHappiness);
 	pStream->Write(m_iBuildingHappiness);
 	pStream->Write(m_iLargestCityHappiness);
+	pStream->Write(m_iSpecialistHappiness); // Leoreth
 	pStream->Write(m_iWarWearinessPercentAnger);
 	pStream->Write(m_iWarWearinessModifier);
 	pStream->Write(m_iFreeSpecialist);

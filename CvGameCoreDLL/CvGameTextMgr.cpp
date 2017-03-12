@@ -6414,6 +6414,12 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 		setCommerceChangeHelp(szHelpString, L"", L"", L"", aiCommerces);
 
 		int iHappinessChange = GC.getSpecialistInfo(eSpecialist).getHappiness();
+
+		if (pCity != NULL)
+		{
+			iHappinessChange += GET_PLAYER(pCity->getOwnerINLINE()).getSpecialistHappiness();
+		}
+
 		if (iHappinessChange != 0)
 		{
 			if (iHappinessChange > 0)
@@ -7565,6 +7571,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
+	}
+
+	// Leoreth: specialist happiness
+	if (GC.getCivicInfo(eCivic).getSpecialistHappiness() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_SPECIALIST_HAPPINESS", abs(GC.getCivicInfo(eCivic).getSpecialistHappiness()), GC.getCivicInfo(eCivic).getSpecialistHappiness() > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
 	}
 
 	// Leoreth: American UP
