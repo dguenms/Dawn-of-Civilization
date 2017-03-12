@@ -604,6 +604,17 @@ public:
 	int getDefensivePactTradeModifier() const;
 	void changeDefensivePactTradeModifier(int iChange);
 
+	// Leoreth
+	int getVassalCityCommerce() const;
+	void changeVassalCityCommerce(int iChange);
+
+	// Leoreth
+	int getHappinessBonusCommerce() const;
+	void changeHappinessBonusCommerce(int iChange);
+
+	// Leoreth
+	void changeCapitalCommerce(int iChange);
+
 	DllExport int getRevolutionTimer() const;																																	// Exposed to Python
 	void setRevolutionTimer(int iNewValue);
 	void changeRevolutionTimer(int iChange);
@@ -1223,6 +1234,8 @@ public:
 	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange);
 
 	int countColonies() const;
+	int countVassalCities() const;
+	int countHappinessBonuses() const;
 	int countSlaveCities() const;
 	int countRequiredSlaves() const;
 	CvCity* findSlaveCity() const;
@@ -1349,6 +1362,8 @@ protected:
 	int m_iTradeRoutes;
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
+	int m_iVassalCityCommerce; // Leoreth
+	int m_iHappinessBonusCommerce; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

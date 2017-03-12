@@ -951,6 +951,14 @@ void CvCity::kill(bool bUpdatePlotGroups)
 
 	GET_PLAYER(getOwnerINLINE()).deleteCity(getID());
 
+	// Leoreth
+	TeamTypes eMasterTeam = GET_TEAM(getTeam()).getMaster();
+	if (eMasterTeam != NULL)
+	{
+		CvPlayer& kMasterPlayer = GET_PLAYER(GET_TEAM(eMasterTeam).getLeaderID());
+		kMasterPlayer.changeCapitalCommerce(-kMasterPlayer.getVassalCityCommerce());
+	}
+
 	pPlot->updateCulture(true, false);
 
 	for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
@@ -1133,6 +1141,8 @@ void CvCity::doTurn()
 			setWeLoveTheKingDay(false);
 		}
 	}
+
+	updateHappinessYield();
 
 	// Leoreth: update art style type once per turn
 	updateArtStyleType();
@@ -10137,6 +10147,8 @@ void CvCity::updateHappinessYield()
 		{
 			m_aiHappinessYield[iI] = iNewYield;
 			changeBaseYieldRate((YieldTypes)iI, iNewYield - iOldYield);
+
+			AI_assignWorkingPlots();
 		}
 	}
 }
@@ -11854,6 +11866,11 @@ void CvCity::changeNumBonuses(BonusTypes eIndex, int iChange)
 		bool bOldHasBonus = hasBonus(eIndex);
 
 		m_paiNumBonuses[eIndex] += iChange;
+
+		if (isCapital() && GC.getBonusInfo(eIndex).getHappiness() > 0)
+		{
+			GET_PLAYER(getOwnerINLINE()).changeCapitalCommerce(iChange * GET_PLAYER(getOwnerINLINE()).getHappinessBonusCommerce());
+		}
 
 		if (bOldHasBonus != hasBonus(eIndex))
 		{

@@ -1370,6 +1370,8 @@ public:
 	int getTradeRoutes() const;				// Exposed to Python
 	int getCapitalTradeModifier() const; // Leoreth
 	int getDefensivePactTradeModifier() const; // Leoreth
+	int getVassalCityCommerce() const; // Leoreth
+	int getHappinessBonusCommerce() const; // Leoreth
 	int getTechPrereq() const;				// Exposed to Python
 	int getCivicPercentAnger() const;				// Exposed to Python
 	int getMaxConscript() const;				// Exposed to Python
@@ -1481,6 +1483,8 @@ protected:
 	int m_iTradeRoutes;
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
+	int m_iVassalCityCommerce; // Leoreth
+	int m_iHappinessBonusCommerce; // Leoreth
 	int m_iTechPrereq;
 	int m_iCivicPercentAnger;
 	int m_iMaxConscript;

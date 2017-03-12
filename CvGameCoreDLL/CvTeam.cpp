@@ -4225,6 +4225,24 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 			}
 		}
 
+		if (bNewValue)
+		{
+			if (eIndex != NO_TEAM)
+			{
+				CvPlayer& kMasterPlayer = GET_PLAYER(GET_TEAM(eIndex).getLeaderID());
+				kMasterPlayer.changeCapitalCommerce(getNumCities() * kMasterPlayer.getVassalCityCommerce());
+			}
+		}
+		else
+		{
+			TeamTypes eMasterTeam = getMaster();
+			if (eMasterTeam != NO_TEAM)
+			{
+				CvPlayer& kMasterPlayer = GET_PLAYER(GET_TEAM(eMasterTeam).getLeaderID());
+				kMasterPlayer.changeCapitalCommerce(-getNumCities() * kMasterPlayer.getVassalCityCommerce());
+			}
+		}
+
 		m_abVassal[eIndex] = bNewValue;
 
 		for (int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
@@ -7000,4 +7018,17 @@ PlayerTypes CvTeam::getFoundingPlayer(ReligionTypes eReligion) const
 	}
 
 	return eBestPlayer;
+}
+
+TeamTypes CvTeam::getMaster() const
+{
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (isVassal((TeamTypes)iI))
+		{
+			return (TeamTypes)iI;
+		}
+	}
+
+	return NO_TEAM;
 }

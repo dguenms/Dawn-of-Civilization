@@ -5458,6 +5458,8 @@ m_iCoreFreeSpecialist(0), //Leoreth
 m_iTradeRoutes(0),
 m_iCapitalTradeModifier(0), // Leoreth
 m_iDefensivePactTradeModifier(0), // Leoreth
+m_iVassalCityCommerce(0), // Leoreth
+m_iHappinessBonusCommerce(0), // Leoreth
 m_iTechPrereq(NO_TECH),
 m_iCivicPercentAnger(0),
 m_iMaxConscript(0),
@@ -5732,6 +5734,18 @@ int CvCivicInfo::getCapitalTradeModifier() const
 int CvCivicInfo::getDefensivePactTradeModifier() const
 {
 	return m_iDefensivePactTradeModifier;
+}
+
+// Leoreth
+int CvCivicInfo::getVassalCityCommerce() const
+{
+	return m_iVassalCityCommerce;
+}
+
+// Leoreth
+int CvCivicInfo::getHappinessBonusCommerce() const
+{
+	return m_iHappinessBonusCommerce;
 }
 
 int CvCivicInfo::getTechPrereq() const
@@ -6113,6 +6127,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iTradeRoutes);
 	stream->Read(&m_iCapitalTradeModifier); // Leoreth
 	stream->Read(&m_iDefensivePactTradeModifier); // Leoreth
+	stream->Read(&m_iVassalCityCommerce); // Leoreth
+	stream->Read(&m_iHappinessBonusCommerce); // Leoreth
 	stream->Read(&m_iTechPrereq);
 	stream->Read(&m_iCivicPercentAnger);
 	stream->Read(&m_iMaxConscript);
@@ -6286,6 +6302,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iTradeRoutes);
 	stream->Write(m_iCapitalTradeModifier); // Leoreth
 	stream->Write(m_iDefensivePactTradeModifier); // Leoreth
+	stream->Write(m_iVassalCityCommerce); // Leoreth
+	stream->Write(m_iHappinessBonusCommerce); // Leoreth
 	stream->Write(m_iTechPrereq);
 	stream->Write(m_iCivicPercentAnger);
 	stream->Write(m_iMaxConscript);
@@ -6403,6 +6421,8 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");
 	pXML->GetChildXmlValByName(&m_iCapitalTradeModifier, "iCapitalTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iDefensivePactTradeModifier, "iDefensivePactTradeModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iVassalCityCommerce, "iVassalCityCommerce"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iHappinessBonusCommerce, "iHappinessBonusCommerce"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoForeignTrade, "bNoForeignTrade");
 	pXML->GetChildXmlValByName(&m_bNoForeignTradeModifier, "bNoForeignTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoCorporations, "bNoCorporations");

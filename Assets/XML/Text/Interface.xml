@@ -166,6 +166,16 @@
 		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] beim Bau von Wundern</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VASSAL_CITY_COMMERCE</Tag>
+		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital per Vassal City</English>
+		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro Vasallenstadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_HAPPINESS_BONUS_COMMERCE</Tag>
+		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital per [ICON_HAPPY] Resource</English>
+		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro [ICON_HAPPY] Resource</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSAL_BONUS</Tag>
 		<English>[ICON_BULLET]+4 Stability Points for each vassal</English>
 		<French>[ICON_BULLET]+4 points de stabilit&#233; par vassal</French>
@@ -183,7 +193,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_UNLIMTED</Tag>
-		<English>[ICON_BULLET]Doubled slots for[SPACE]</English>
+		<English>[ICON_BULLET]Double slots for[SPACE]</English>
 		<German>[ICON_BULLET]Erlaubt doppelt soviele[SPACE]</German>
 	</TEXT>
 	<TEXT>

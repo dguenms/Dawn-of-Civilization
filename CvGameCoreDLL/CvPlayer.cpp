@@ -504,6 +504,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iTradeRoutes = 0;
 	m_iCapitalTradeModifier= 0; // Leoreth
 	m_iDefensivePactTradeModifier = 0; // Leoreth
+	m_iVassalCityCommerce = 0; // Leoreth
+	m_iHappinessBonusCommerce = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -1373,6 +1375,13 @@ CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bUpdatePlotGrou
 	FAssertMsg(!(GC.getMapINLINE().plotINLINE(iX, iY)->isCity()), "No city is expected at this plot when initializing new city");
 
 	pCity->init(pCity->getID(), getID(), iX, iY, bBumpUnits, bUpdatePlotGroups);
+
+	TeamTypes eMasterTeam = GET_TEAM(getTeam()).getMaster();
+	if (eMasterTeam != NO_TEAM)
+	{
+		CvPlayer& kMasterPlayer = GET_PLAYER(GET_TEAM(eMasterTeam).getLeaderID());
+		kMasterPlayer.changeVassalCityCommerce(kMasterPlayer.getVassalCityCommerce());
+	}
 
 	return pCity;
 }
@@ -10465,6 +10474,54 @@ void CvPlayer::changeDefensivePactTradeModifier(int iChange)
 }
 
 
+// Leoreth
+int CvPlayer::getVassalCityCommerce() const
+{
+	return m_iVassalCityCommerce;
+}
+
+
+// Leoreth
+void CvPlayer::changeVassalCityCommerce(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iVassalCityCommerce += iChange;
+
+		changeCapitalCommerce(countVassalCities() * iChange);
+	}
+}
+
+
+// Leoreth
+int CvPlayer::getHappinessBonusCommerce() const
+{
+	return m_iHappinessBonusCommerce;
+}
+
+
+// Leoreth
+void CvPlayer::changeHappinessBonusCommerce(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iHappinessBonusCommerce += iChange;
+
+		changeCapitalCommerce(countHappinessBonuses() * iChange);
+	}
+}
+
+
+// Leoreth
+void CvPlayer::changeCapitalCommerce(int iChange)
+{
+	if (getCapitalCity() != NULL)
+	{
+		getCapitalCity()->changeBuildingYieldChange(BUILDING_PALACE, YIELD_COMMERCE, iChange);
+	}
+}
+
+
 int CvPlayer::getRevolutionTimer() const
 {
 	return m_iRevolutionTimer;
@@ -10760,6 +10817,19 @@ void CvPlayer::setCapitalCity(CvCity* pNewCapitalCity)
 			pNewCapitalCity->updateCommerce();
 
 			pNewCapitalCity->setInfoDirty(true);
+		}
+
+		// Leoreth
+		if (pOldCapitalCity != NULL)
+		{
+			pOldCapitalCity->changeBuildingYieldChange(BUILDING_PALACE, YIELD_COMMERCE, -countVassalCities() * getVassalCityCommerce());
+			pOldCapitalCity->changeBuildingYieldChange(BUILDING_PALACE, YIELD_COMMERCE, -countHappinessBonuses() * getHappinessBonusCommerce());
+		}
+
+		if (pNewCapitalCity != NULL)
+		{
+			pNewCapitalCity->changeBuildingYieldChange(BUILDING_PALACE, YIELD_COMMERCE, countVassalCities() * getVassalCityCommerce());
+			pNewCapitalCity->changeBuildingYieldChange(BUILDING_PALACE, YIELD_COMMERCE, countHappinessBonuses() * getHappinessBonusCommerce());
 		}
 	}
 }
@@ -17603,6 +17673,8 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeTradeRoutes(GC.getCivicInfo(eCivic).getTradeRoutes() * iChange);
 	changeCapitalTradeModifier(GC.getCivicInfo(eCivic).getCapitalTradeModifier() * iChange); // Leoreth
 	changeDefensivePactTradeModifier(GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() * iChange); // Leoreth
+	changeVassalCityCommerce(GC.getCivicInfo(eCivic).getVassalCityCommerce() * iChange); // Leoreth
+	changeHappinessBonusCommerce(GC.getCivicInfo(eCivic).getHappinessBonusCommerce() * iChange); // Leoreth
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
 	changeNoForeignTradeModifierCount(GC.getCivicInfo(eCivic).isNoForeignTradeModifier() * iChange); // Leoreth
 	changeNoCorporationsCount(GC.getCivicInfo(eCivic).isNoCorporations() * iChange);
@@ -17998,6 +18070,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTradeRoutes);
 	pStream->Read(&m_iCapitalTradeModifier); // Leoreth
 	pStream->Read(&m_iDefensivePactTradeModifier); // Leoreth
+	pStream->Read(&m_iVassalCityCommerce); // Leoreth
+	pStream->Read(&m_iHappinessBonusCommerce); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -18523,6 +18597,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTradeRoutes);
 	pStream->Write(m_iCapitalTradeModifier); // Leoreth
 	pStream->Write(m_iDefensivePactTradeModifier); // Leoreth
+	pStream->Write(m_iVassalCityCommerce); // Leoreth
+	pStream->Write(m_iHappinessBonusCommerce); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -24676,6 +24752,36 @@ int CvPlayer::countSlaveCities() const
 	}
 
 	return iNumSlaveCities;
+}
+
+int CvPlayer::countVassalCities() const
+{
+	int iNumCities = 0;
+
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (GET_TEAM((TeamTypes)iI).isVassal(getTeam()))
+		{
+			iNumCities += GET_TEAM((TeamTypes)iI).getNumCities();
+		}
+	}
+
+	return iNumCities;
+}
+
+int CvPlayer::countHappinessBonuses() const
+{
+	int iNumBonuses = 0;
+
+	for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
+	{
+		if (GC.getBonusInfo((BonusTypes)iI).getHappiness() > 0)
+		{
+			iNumBonuses = getNumAvailableBonuses((BonusTypes)iI);
+		}
+	}
+
+	return iNumBonuses;
 }
 
 // BUG - Reminder Mod - start
