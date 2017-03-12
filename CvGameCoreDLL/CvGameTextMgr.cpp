@@ -7145,6 +7145,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		}
 	}
 
+	// Worker production modifier
+	if (GC.getCivicInfo(eCivic).getWorkerProductionModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_WORKER_PRODUCTION", GC.getCivicInfo(eCivic).getWorkerProductionModifier()));
+	}
+
 	//	Worker speed modifier
 	if (GC.getCivicInfo(eCivic).getWorkerSpeedModifier() != 0)
 	{
@@ -7602,6 +7609,13 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		szHelpText.append(NEWLINE);
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_HAPPINESS_BONUS_COMMERCE", GC.getCivicInfo(eCivic).getHappinessBonusCommerce()));
+	}
+
+	// Capture gold modifier
+	if (GC.getCivicInfo(eCivic).getCaptureGoldModifier() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER", GC.getCivicInfo(eCivic).getCaptureGoldModifier()));
 	}
 
 	//	Improvement Yields

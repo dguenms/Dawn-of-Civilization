@@ -1655,4 +1655,19 @@
 		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Specialist</English>
 		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Spezialist</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</English>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] bei Stadteroberung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</English>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] bei Stadteroberung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WORKER_PRODUCTION</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Worker Production</English>
+		<German>[ICON_BULLET]%D1_Mod%% Arbeiter-Produktion</German>
+	</TEXT>
 </Civ4GameText>

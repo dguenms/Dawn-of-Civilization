@@ -450,6 +450,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iMaxPlayerBuildingProductionModifier = 0;
 	m_iFreeExperience = 0;
 	m_iFeatureProductionModifier = 0;
+	m_iWorkerProductionModifier = 0; // Leoreth
 	m_iWorkerSpeedModifier = 0;
 	m_iImprovementUpgradeRateModifier = 0;
 	m_iMilitaryProductionModifier = 0;
@@ -507,6 +508,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iDefensivePactTradeModifier = 0; // Leoreth
 	m_iVassalCityCommerce = 0; // Leoreth
 	m_iHappinessBonusCommerce = 0; // Leoreth
+	m_iCaptureGoldModifier = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -1555,11 +1557,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 		iCaptureGold = (int)lCaptureGold;
 
-		// Leoreth: Viking UP
-		if (getID() == VIKINGS && getCurrentEra() <= ERA_MEDIEVAL)
-		{
-			iCaptureGold *= 2;
-		}
+		iCaptureGold *= (100 + getCaptureGoldModifier());
+		iCaptureGold /= 100;
 
 		CvEventReporter::getInstance().cityCaptureGold(pOldCity, getID(), iCaptureGold);
 	}
@@ -9390,6 +9389,25 @@ void CvPlayer::changeFeatureProductionModifier(int iChange)
 }
 
 
+// Leoreth
+int CvPlayer::getWorkerProductionModifier() const
+{
+	return m_iWorkerProductionModifier;
+}
+
+
+// Leoreth
+void CvPlayer::changeWorkerProductionModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iWorkerProductionModifier += iChange;
+
+
+	}
+}
+
+
 int CvPlayer::getWorkerSpeedModifier() const
 {
 	return m_iWorkerSpeedModifier;
@@ -10528,6 +10546,31 @@ void CvPlayer::changeHappinessBonusCommerce(int iChange)
 		m_iHappinessBonusCommerce += iChange;
 
 		changeCapitalCommerce(countHappinessBonuses() * iChange);
+	}
+}
+
+
+// Leoreth
+int CvPlayer::getCaptureGoldModifier() const
+{
+	int iModifier = m_iCaptureGoldModifier;
+
+	// Viking UP
+	if (getID() == VIKINGS && getCurrentEra() <= ERA_MEDIEVAL)
+	{
+		iModifier += 100;
+	}
+
+	return iModifier;
+}
+
+
+// Leoreth
+void CvPlayer::changeCaptureGoldModifier(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iCaptureGoldModifier += iChange;
 	}
 }
 
@@ -17671,6 +17714,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeExtraHealth(GC.getCivicInfo(eCivic).getExtraHealth() * iChange);
 	changePollutionModifier(GC.getCivicInfo(eCivic).getPollutionModifier() * iChange); //Leoreth
 	changeFreeExperience(GC.getCivicInfo(eCivic).getFreeExperience() * iChange);
+	changeWorkerProductionModifier(GC.getCivicInfo(eCivic).getWorkerProductionModifier() * iChange); // Leoreth
 	changeWorkerSpeedModifier(GC.getCivicInfo(eCivic).getWorkerSpeedModifier() * iChange);
 	changeImprovementUpgradeRateModifier(GC.getCivicInfo(eCivic).getImprovementUpgradeRateModifier() * iChange);
 	changeMilitaryProductionModifier(GC.getCivicInfo(eCivic).getMilitaryProductionModifier() * iChange);
@@ -17696,6 +17740,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeDefensivePactTradeModifier(GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() * iChange); // Leoreth
 	changeVassalCityCommerce(GC.getCivicInfo(eCivic).getVassalCityCommerce() * iChange); // Leoreth
 	changeHappinessBonusCommerce(GC.getCivicInfo(eCivic).getHappinessBonusCommerce() * iChange); // Leoreth
+	changeCaptureGoldModifier(GC.getCivicInfo(eCivic).getCaptureGoldModifier() * iChange); // Leoreth
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
 	changeNoForeignTradeModifierCount(GC.getCivicInfo(eCivic).isNoForeignTradeModifier() * iChange); // Leoreth
 	changeNoCorporationsCount(GC.getCivicInfo(eCivic).isNoCorporations() * iChange);
@@ -18037,6 +18082,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iMaxPlayerBuildingProductionModifier);
 	pStream->Read(&m_iFreeExperience);
 	pStream->Read(&m_iFeatureProductionModifier);
+	pStream->Read(&m_iWorkerProductionModifier); // Leoreth
 	pStream->Read(&m_iWorkerSpeedModifier);
 	pStream->Read(&m_iImprovementUpgradeRateModifier);
 	pStream->Read(&m_iMilitaryProductionModifier);
@@ -18094,6 +18140,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iDefensivePactTradeModifier); // Leoreth
 	pStream->Read(&m_iVassalCityCommerce); // Leoreth
 	pStream->Read(&m_iHappinessBonusCommerce); // Leoreth
+	pStream->Read(&m_iCaptureGoldModifier); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -18565,6 +18612,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iMaxPlayerBuildingProductionModifier);
 	pStream->Write(m_iFreeExperience);
 	pStream->Write(m_iFeatureProductionModifier);
+	pStream->Write(m_iWorkerProductionModifier); // Leoreth
 	pStream->Write(m_iWorkerSpeedModifier);
 	pStream->Write(m_iImprovementUpgradeRateModifier);
 	pStream->Write(m_iMilitaryProductionModifier);
@@ -18622,6 +18670,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iDefensivePactTradeModifier); // Leoreth
 	pStream->Write(m_iVassalCityCommerce); // Leoreth
 	pStream->Write(m_iHappinessBonusCommerce); // Leoreth
+	pStream->Write(m_iCaptureGoldModifier); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);

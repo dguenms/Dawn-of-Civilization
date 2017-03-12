@@ -417,6 +417,10 @@ public:
 	int getFeatureProductionModifier() const;																															// Exposed to Python
 	void changeFeatureProductionModifier(int iChange);
 
+	// Leoreth
+	int getWorkerProductionModifier() const;
+	void changeWorkerProductionModifier(int iChange);
+
 	int getWorkerSpeedModifier() const;																																		// Exposed to Python
 	void changeWorkerSpeedModifier(int iChange);
 	
@@ -919,6 +923,10 @@ public:
 	// Leoreth
 	void updateHappinessExtraYield();
 
+	// Leoreth
+	int getCaptureGoldModifier() const;
+	void changeCaptureGoldModifier(int iChange);
+
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 
@@ -1312,6 +1320,7 @@ protected:
 	int m_iMaxPlayerBuildingProductionModifier;
 	int m_iFreeExperience;
 	int m_iFeatureProductionModifier;
+	int m_iWorkerProductionModifier; // Leoreth
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;
 	int m_iMilitaryProductionModifier;
@@ -1369,6 +1378,7 @@ protected:
 	int m_iDefensivePactTradeModifier; // Leoreth
 	int m_iVassalCityCommerce; // Leoreth
 	int m_iHappinessBonusCommerce; // Leoreth
+	int m_iCaptureGoldModifier; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

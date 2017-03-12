@@ -5440,6 +5440,7 @@ m_iProcessModifier(0), //Leoreth
 m_iExtraHealth(0),
 m_iPollutionModifier(0), //Leoreth
 m_iFreeExperience(0),
+m_iWorkerProductionModifier(0), // Leoreth
 m_iWorkerSpeedModifier(0),
 m_iImprovementUpgradeRateModifier(0),
 m_iMilitaryProductionModifier(0),
@@ -5461,6 +5462,7 @@ m_iCapitalTradeModifier(0), // Leoreth
 m_iDefensivePactTradeModifier(0), // Leoreth
 m_iVassalCityCommerce(0), // Leoreth
 m_iHappinessBonusCommerce(0), // Leoreth
+m_iCaptureGoldModifier(0), // Leoreth
 m_iTechPrereq(NO_TECH),
 m_iCivicPercentAnger(0),
 m_iMaxConscript(0),
@@ -5643,6 +5645,12 @@ int CvCivicInfo::getFreeExperience() const
 	return m_iFreeExperience;
 }
 
+// Leoreth
+int CvCivicInfo::getWorkerProductionModifier() const
+{
+	return m_iWorkerProductionModifier;
+}
+
 int CvCivicInfo::getWorkerSpeedModifier() const
 {
 	return m_iWorkerSpeedModifier;
@@ -5753,6 +5761,12 @@ int CvCivicInfo::getVassalCityCommerce() const
 int CvCivicInfo::getHappinessBonusCommerce() const
 {
 	return m_iHappinessBonusCommerce;
+}
+
+// Leoreth
+int CvCivicInfo::getCaptureGoldModifier() const
+{
+	return m_iCaptureGoldModifier;
 }
 
 int CvCivicInfo::getTechPrereq() const
@@ -6116,6 +6130,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iExtraHealth);
 	stream->Read(&m_iPollutionModifier); //Leoreth
 	stream->Read(&m_iFreeExperience);
+	stream->Read(&m_iWorkerProductionModifier); // Leoreth
 	stream->Read(&m_iWorkerSpeedModifier);
 	stream->Read(&m_iImprovementUpgradeRateModifier);
 	stream->Read(&m_iMilitaryProductionModifier);
@@ -6137,6 +6152,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iDefensivePactTradeModifier); // Leoreth
 	stream->Read(&m_iVassalCityCommerce); // Leoreth
 	stream->Read(&m_iHappinessBonusCommerce); // Leoreth
+	stream->Read(&m_iCaptureGoldModifier); // Leoreth
 	stream->Read(&m_iTechPrereq);
 	stream->Read(&m_iCivicPercentAnger);
 	stream->Read(&m_iMaxConscript);
@@ -6292,6 +6308,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iExtraHealth);
 	stream->Write(m_iPollutionModifier); //Leoreth
 	stream->Write(m_iFreeExperience);
+	stream->Write(m_iWorkerProductionModifier); // Leoreth
 	stream->Write(m_iWorkerSpeedModifier);
 	stream->Write(m_iImprovementUpgradeRateModifier);
 	stream->Write(m_iMilitaryProductionModifier);
@@ -6313,6 +6330,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iDefensivePactTradeModifier); // Leoreth
 	stream->Write(m_iVassalCityCommerce); // Leoreth
 	stream->Write(m_iHappinessBonusCommerce); // Leoreth
+	stream->Write(m_iCaptureGoldModifier); // Leoreth
 	stream->Write(m_iTechPrereq);
 	stream->Write(m_iCivicPercentAnger);
 	stream->Write(m_iMaxConscript);
@@ -6408,6 +6426,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iExtraHealth, "iExtraHealth");
 	pXML->GetChildXmlValByName(&m_iPollutionModifier, "iPollutionModifier"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iFreeExperience, "iFreeExperience");
+	pXML->GetChildXmlValByName(&m_iWorkerProductionModifier, "iWorkerProductionModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iWorkerSpeedModifier, "iWorkerSpeedModifier");
 	pXML->GetChildXmlValByName(&m_iImprovementUpgradeRateModifier, "iImprovementUpgradeRateModifier");
 	pXML->GetChildXmlValByName(&m_iMilitaryProductionModifier, "iMilitaryProductionModifier");
@@ -6433,6 +6452,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iDefensivePactTradeModifier, "iDefensivePactTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iVassalCityCommerce, "iVassalCityCommerce"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iHappinessBonusCommerce, "iHappinessBonusCommerce"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iCaptureGoldModifier, "iCaptureGoldModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoForeignTrade, "bNoForeignTrade");
 	pXML->GetChildXmlValByName(&m_bNoForeignTradeModifier, "bNoForeignTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoCorporations, "bNoCorporations");
