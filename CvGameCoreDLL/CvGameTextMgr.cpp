@@ -6979,7 +6979,7 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	PROFILE_FUNC();
 
 	CvWString szFirstBuffer;
-	//bool bFound;
+	bool bFound;
 	bool bFirst;
 	int iLast;
 	int iI, iJ;
@@ -7402,7 +7402,7 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 
 	if (!(GC.getCivicInfo(eCivic).isStateReligion()))
 	{
-		/*bFound = false;
+		bFound = false;
 
 		for (iI = 0; iI < GC.getNumCivicInfos(); ++iI)
 		{
@@ -7412,9 +7412,7 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 			}
 		}
 
-		if (bFound)*/
-		// Leoreth: only display "no state religion" in the "Religion" category
-		if ( GC.getCivicInfo(eCivic).getCivicOptionType() == 4 )
+		if (bFound)
 		{
             szHelpText.append(NEWLINE);
             szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_STATE_RELIGION"));
@@ -7603,6 +7601,20 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 			szHelpText.append(NEWLINE);
 			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS", 2, gDLL->getSymbolID(HAPPY_CHAR)));
 		}
+	}
+
+	// Commerce from vassal cities
+	if (GC.getCivicInfo(eCivic).getVassalCityCommerce() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_VASSAL_CITY_COMMERCE", GC.getCivicInfo(eCivic).getVassalCityCommerce()));
+	}
+
+	// Commerce from happiness resources
+	if (GC.getCivicInfo(eCivic).getHappinessBonusCommerce() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_HAPPINESS_BONUS_COMMERCE", GC.getCivicInfo(eCivic).getHappinessBonusCommerce()));
 	}
 
 	//	Improvement Yields

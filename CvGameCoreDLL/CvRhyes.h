@@ -23,6 +23,7 @@ typedef list<char*> LISTCHAR;
 #define NUM_ERAS				(ERA_DIGITAL+1)
 
 #define PAGAN_TEMPLE ((BuildingTypes)GC.getInfoTypeForString("BUILDING_PAGAN_TEMPLE"))
+#define BUILDING_PALACE			((BuildingClassTypes)0)
 #define BUILDING_PLAGUE			(NUM_BUILDINGS_PLAGUE-1)
 
 enum DoCTechs

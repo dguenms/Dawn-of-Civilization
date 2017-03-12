@@ -816,6 +816,8 @@
 	<ElementType name="UnhappinessExtraYields" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="iVassalCityCommerce" content="textOnly" dt:type="int"/>
+	<ElementType name="iHappinessBonusCommerce" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -867,6 +869,8 @@
 		<element type="iTradeRoutes" minOccurs="0"/>
 		<element type="iCapitalTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iDefensivePactTradeModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iVassalCityCommerce" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iHappinessBonusCommerce" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoForeignTrade" minOccurs="0"/>
 		<element type="bNoForeignTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoCorporations" minOccurs="0"/>
