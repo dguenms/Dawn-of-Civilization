@@ -757,7 +757,7 @@
 			<Description>TXT_KEY_CIVIC_MONASTICISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_MONASTICISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_MONASTICISM_STRATEGY</Strategy>
-			<TechPrereq>TECH_PHILOSOPHY</TechPrereq>
+			<TechPrereq>TECH_ETHICS</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Asceticism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
