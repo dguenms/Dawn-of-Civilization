@@ -818,6 +818,7 @@
 	</ElementType>
 	<ElementType name="iVassalCityCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappinessBonusCommerce" content="textOnly" dt:type="int"/>
+	<ElementType name="iSpecialistHappiness" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -863,6 +864,7 @@
 		<element type="iExpInBorderModifier" minOccurs="0"/>
 		<element type="bBuildingOnlyHealthy" minOccurs="0"/>
 		<element type="iLargestCityHappiness" minOccurs="0"/>
+		<element type="iSpecialistHappiness" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWarWearinessModifier" minOccurs="0"/>
 		<element type="iFreeSpecialist" minOccurs="0"/>
 		<element type="iCoreFreeSpecialist" minOccurs="0"/> <!-- Leoreth -->

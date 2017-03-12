@@ -742,8 +742,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HAPPY_SPECIALISTS</Tag>
-		<English>%D1_Change[ICON_HAPPY]: "Settled artists entertain us!"</English>
-		<German>%D1_Change[ICON_HAPPY]: "Angesiedelte K&#252;nstler unterhalten uns!"</German>
+		<English>%D1_Change[ICON_HAPPY]: "Our specialists increase the prestige of our city!"</English>
+		<German>%D1_Change[ICON_HAPPY]: "Unsere Spezialisten steigern das Prestige unserer Stadt!"</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HIRED_MERCENARIES</Tag>
@@ -1649,5 +1649,10 @@
 		<Tag>TXT_KEY_BABYLONIAN_UP</Tag>
 		<English>As the Cradle of Civilization, we can choose another free technology:</English>
 		<German>Als Wiege der Zivilisation können wir eine weitere Technologie entdecken:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SPECIALIST_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Specialist</English>
+		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Spezialist</German>
 	</TEXT>
 </Civ4GameText>

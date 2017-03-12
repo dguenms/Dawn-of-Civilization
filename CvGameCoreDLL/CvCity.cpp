@@ -4617,6 +4617,9 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 	changeSpecialistFreeExperience(GC.getSpecialistInfo(eSpecialist).getExperience() * iChange);
 
 	int iHappinessChange = GC.getSpecialistInfo(eSpecialist).getHappiness();
+
+	iHappinessChange += GET_PLAYER(getOwnerINLINE()).getSpecialistHappiness();
+
 	if (iHappinessChange > 0)
 	{
 		changeSpecialistGoodHappiness(iHappinessChange * iChange);
