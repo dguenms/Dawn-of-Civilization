@@ -10952,10 +10952,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += (kCivic.getFreeSpecialist() * getNumCities() * /*12*/ 18);
 
 	// Leoreth: factor in extra unit upkeep
-	if (eCivic == CIVIC_MERCENARIES)
+	/*if (eCivic == CIVIC_MERCENARIES)
 	{
 		iValue -= getNumMilitaryUnits() / 3;
-	}
+	}*/
 
 	// Leoreth: wonder production modifier
 	iTempValue = kCivic.getWonderProductionModifier();
@@ -11471,7 +11471,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	//Rhye - end 6th
 
 	//Leoreth: Pantheon civic
-	if (eCivic == CIVIC_PANTHEON)
+	/*if (eCivic == CIVIC_PANTHEON)
 	{
 		if (eBestReligion == NO_RELIGION && GET_PLAYER(getID()).getCurrentEra() < ERA_MEDIEVAL && getID() != MAYA)
 		{
@@ -11481,7 +11481,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			return 0;
 		}
-	}
+	}*/
 
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)
 	{
@@ -11502,7 +11502,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}*/
 
 	// Leoreth - prefer Pantheon if more than half of their cities has no religion
-	if (eCivic == CIVIC_PANTHEON)  // Pantheon
+	/*if (eCivic == CIVIC_PANTHEON)  // Pantheon
 	{
         if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == PHOENICIA || getID() == ROME)
 		{
@@ -11527,6 +11527,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
                 iValue /= 2;
 			}
         }
+	}*/
+
+	// Leoreth: prefer deification if no state religion
+	if (eCivic == CIVIC_DEIFICATION && getLastStateReligion() == NO_RELIGION)
+	{
+		iValue *= 2;
 	}
 
 	// Leoreth - prefer Vassalage for medieval Eurocivs
@@ -11544,30 +11550,15 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	    iValue /= 10;
 	}
 
-	//Leoreth: less premature Republics
-	if (eCivic == CIVIC_REPUBLIC)
+	if (eCivic == CIVIC_MONARCHY && getID() == NETHERLANDS)
 	{
-		if (getCurrentEra() < ERA_INDUSTRIAL)
-		{
-			if (getID() != AMERICA && getID() != NETHERLANDS)
-			{
-				iValue /= 2;
-			}
-		}
-	}
-
-	if (eCivic == CIVIC_DYNASTICISM)
-	{
-		if (getID() == NETHERLANDS)
-		{
-			iValue /= 2;
-		}
+		iValue /= 2;
 	}
 
 	// Leoreth: take American UP into account
 	if (getID() == AMERICA)
 	{
-		if (eCivic == CIVIC_REPUBLIC || eCivic == CIVIC_CAPITALISM || eCivic == CIVIC_FREE_MARKET)
+		if (eCivic == CIVIC_REPUBLIC || eCivic == CIVIC_CONSTITUTION || eCivic == CIVIC_INDIVIDUALISM || eCivic == CIVIC_FREE_ENTERPRISE)
 		{
 			iValue += 100;
 		}
