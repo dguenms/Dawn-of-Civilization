@@ -1072,17 +1072,16 @@ class Congress:
 		# extra spots for colonial civs -> will be settled
 		# not available after wars because these congresses are supposed to reassign cities
 		if iPlayer in lCivGroups[0] and not self.bPostWar:
-			for x in range(iWorldX):
-				for y in range(iWorldY):
-					if utils.getHumanID() == iPlayer and not plot.isRevealed(iPlayer, False): continue
-					plot = gc.getMap().plot(x, y)
-					if not plot.isCity() and not plot.isPeak() and not plot.isWater() and pPlayer.canFound(x, y):
-						if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
-							iSettlerMapValue = plot.getSettlerValue(iPlayer)
-							if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)):
-								closestCity = gc.getMap().findCity(x, y, PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
-								if stepDistance(x, y, closestCity.getX(), closestCity.getY()) > 2:
-									lPlots.append((x, y, max(1, iSettlerMapValue / 100 - 1)))
+			for (x, y) in utils.getWorldPlotsList():
+				if utils.getHumanID() == iPlayer and not plot.isRevealed(iPlayer, False): continue
+				plot = gc.getMap().plot(x, y)
+				if not plot.isCity() and not plot.isPeak() and not plot.isWater() and pPlayer.canFound(x, y):
+					if plot.getRegionID() in [rWestAfrica, rSouthAfrica, rEthiopia, rAustralia, rOceania]:
+						iSettlerMapValue = plot.getSettlerValue(iPlayer)
+						if iSettlerMapValue >= 90 and cnm.getFoundName(iPlayer, (x, y)):
+							closestCity = gc.getMap().findCity(x, y, PlayerTypes.NO_PLAYER, TeamTypes.NO_TEAM, False, False, TeamTypes.NO_TEAM, DirectionTypes.NO_DIRECTION, CyCity())
+							if stepDistance(x, y, closestCity.getX(), closestCity.getY()) > 2:
+								lPlots.append((x, y, max(1, iSettlerMapValue / 100 - 1)))
 						
 		lPlots = utils.getSortedList(lPlots, lambda x: x[2] + gc.getGame().getSorenRandNum(3, 'Randomize city value'), True)
 		return lPlots[:10]

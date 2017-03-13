@@ -76,16 +76,10 @@ class RiseAndFall:
 		
 		data.resetHumanStability()
 
-		pPlayer = gc.getPlayer(iCiv)
-		pCity, iter = pPlayer.firstCity(true)
 
-		for x in range(iWorldX):
-			for y in range(iWorldY):
-				if gc.getMap().plot(x,y).isCity():
-					city = gc.getMap().plot( x,y ).getPlotCity()
-					if city.getOwner() == iCiv:
-						city.setInfoDirty(True)
-						city.setLayoutDirty(True)
+		for city in utils.getCityList(iCiv):
+			city.setInfoDirty(True)
+			city.setLayoutDirty(True)
 						
 		for i in range(3):
 			data.players[iCiv].lGoals[i] = -1
@@ -332,12 +326,10 @@ class RiseAndFall:
 			for tPlot in lRemoveWall:
 				x, y = tPlot
 				gc.getMap().plot(x, y).setOwner(iChina)
-			
-		for x in range(tTL[0], tBR[0]+1):
-			for y in range(tTL[1], tBR[1]+1):
-				if (x, y) not in lExceptions:
-					plot = gc.getMap().plot(x, y)
-					if not plot.isWater(): plot.setWithinGreatWall(True)
+		
+		for (x, y) in utils.getPlotList(tTL, tBR, lExceptions):
+			plot = gc.getMap().plot(x, y)
+			if not plot.isWater(): plot.setWithinGreatWall(True)
 					
 		for (x, y) in lAdditions:
 			plot = gc.getMap().plot(x, y)
@@ -345,11 +337,10 @@ class RiseAndFall:
 			
 			
 	def adjust1700ADCulture(self):
-		for x in range(124):
-			for y in range(68):
-				plot = gc.getMap().plot(x, y)
-				if plot.getOwner() != -1:
-					utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
+		for (x, y) in utils.getWorldPlotsList():
+			plot = gc.getMap().plot(x, y)
+			if plot.getOwner() != -1:
+				utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
 					
 		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iPortugal, 100, True)
@@ -478,21 +469,19 @@ class RiseAndFall:
 
 		tCultureRegionTL = (98, 37)
 		tCultureRegionBR = (109, 49)
-		for x in range(tCultureRegionTL[0], tCultureRegionBR[0]+1):
-			for y in range(tCultureRegionTL[1], tCultureRegionBR[1]+1):
-				pCurrent = gc.getMap().plot(x, y)
-				bCity = False
-				for iX in range(x-1, x+2):	# from x-1 to x+1
-					for iY in range(y-1, y+2):      # from y-1 to y+1
-						loopPlot = gc.getMap().plot(iX, iY)
-						if (loopPlot.isCity()):
-							bCity = True
-							loopPlot.getPlotCity().setCulture(iIndependent2, 0, False)
-				if (bCity):
-					pCurrent.setCulture(iIndependent2, 1, True)
-				else:
-					pCurrent.setCulture(iIndependent2, 0, True)
-					pCurrent.setOwner(-1)
+		for (x, y) in utils.getPlotList(tCultureRegionTL, tCultureRegionBR):
+			pPlot = gc.getMap().plot(x, y)
+			bCity = False
+			for (i, j) in utils.surroundingPlots((x, y)):
+				loopPlot = gc.getMap().plot(i, j)
+				if loopPlot.isCity():
+					bCity = True
+					loopPlot.getPlotCity().setCulture(iIndependent2, 0, False)
+			if bCity:
+				pPlot.setCulture(iIndependent2, 1, True)
+			else:
+				pPlot.setCulture(iIndependent2, 0, True)
+				pPlot.setOwner(-1)
 					
 		pIndependent.found(99, 41)
 		utils.makeUnit(iArcher, iIndependent, (99, 41), 1)
@@ -875,9 +864,8 @@ class RiseAndFall:
 		pCiv.AI_reset()
 		
 		# reset map visibility
-		for i in range(iWorldX):
-			for j in range(iWorldY):
-				gc.getMap().plot(i, j).setRevealed(iCiv, False, True, -1)
+		for (i, j) in utils.getWorldPlotsList():
+			gc.getMap().plot(i, j).setRevealed(iCiv, False, True, -1)
 		
 		# assign new leader
 		if iCiv in rebirthLeaders:
@@ -889,9 +877,8 @@ class RiseAndFall:
 		
 		# Determine whether capital location is free
 		bFree = True
-		for (i, j) in utils.surroundingPlots((x, y)):
-			if gc.getMap().plot(i,j).isCity():
-				bFree = False
+		if not utils.isFree(iCiv, (x, y), True):
+			bFree = False
 
 		if plot.isUnit():
 			bFree = False
@@ -904,7 +891,7 @@ class RiseAndFall:
 			if bFree:
 				pCiv.found(x,y)
 			else:
-				utils.makeUnit(iSettler, iCiv, (x,y), 1)
+				utils.makeUnit(iSettler, iCiv, (x, y), 1)
 				
 		# make sure there is a palace in the city
 		if plot.isCity():
@@ -912,7 +899,7 @@ class RiseAndFall:
 			if not capital.hasBuilding(iPalace):
 				capital.setHasRealBuilding(iPalace, True)
 		
-		self.createRespawnUnits(iCiv, (x,y))
+		self.createRespawnUnits(iCiv, (x, y))
 		
 		# for colonial civs, set dynamic state religion
 		if iCiv in [iAztecs, iMaya]:
@@ -936,10 +923,10 @@ class RiseAndFall:
 				x, y = tPlot
 				plot = gc.getMap().plot(x, y)
 				if plot.getOwner() == iAmerica and tPlot not in Areas.getCoreArea(iAztecs, True):
-					lRemovedPlots.append((x, y))
+					lRemovedPlots.append(tPlot)
 					
-		for (x, y) in lRemovedPlots:
-			lRebirthPlots.remove((x, y))
+		for tPlot in lRemovedPlots:
+			lRebirthPlots.remove(tPlot)
 		
 		seljukUnits = []
 		lCities = []
@@ -960,11 +947,10 @@ class RiseAndFall:
 		# remove garrisons
 		for city in lCities:
 			if city.getOwner() != utils.getHumanID():
-				x = city.getX()
-				y = city.getY()
-				utils.relocateGarrisons((x,y), city.getOwner())
-				utils.relocateSeaGarrisons((x,y), city.getOwner())
-				#utils.createGarrisons((x,y), iCiv)
+				tPlot = (city.getX(), city.getY())
+				utils.relocateGarrisons(tPlot, city.getOwner())
+				utils.relocateSeaGarrisons(tPlot, city.getOwner())
+				#utils.createGarrisons(tPlot, iCiv)
 				
 		# convert cities
 		iConvertedCities, iHumanCities = self.convertSurroundingCities(iCiv, lRebirthPlots)
@@ -1238,7 +1224,7 @@ class RiseAndFall:
 			tBroaderTopLeft, tBroaderBottomRight = Areas.tBroaderArea[iCiv]
 			
 			if iCiv == iThailand:
-				i, j = Areas.tCapital[iKhmer]
+				i, j = Areas.tCapitals[iKhmer]
 				if gc.getMap().plot(i, j).isCity():
 					angkor = gc.getMap().plot(i, j).getPlotCity()
 					bWonder = False
@@ -1404,7 +1390,7 @@ class RiseAndFall:
 			pPlot=gc.getMap().plot(i, j)
 			if pPlot.isOwned():
 				bNotOwned = False
-				for iLoopCiv in range(iNumTotalPlayers+1): #Barbarians as well
+				for iLoopCiv in range(iNumTotalPlayersB): #Barbarians as well
 					if iLoopCiv != iCiv:
 						pPlot.setCulture(iLoopCiv, 0, True)
 				pPlot.setOwner(iCiv)
@@ -1543,11 +1529,11 @@ class RiseAndFall:
 			if plotList:
 				tPlot = utils.getRandomEntry(plotList)
 				if tPlot:
-						self.createStartingUnits(iCiv, result)
-						#self.createStartingWorkers(iCiv, result)
-						self.assignTechs(iCiv)
-						data.players[iCiv].iPlagueCountdown = -iImmunity
-						utils.clearPlague(iCiv)
+					self.createStartingUnits(iCiv, result)
+					#self.createStartingWorkers(iCiv, result)
+					self.assignTechs(iCiv)
+					data.players[iCiv].iPlagueCountdown = -iImmunity
+					utils.clearPlague(iCiv)
 			utils.flipUnitsInArea(lPlots, iCiv, iBarbarian, True, True) #remaining barbs in the region now belong to the new civ 
 			utils.flipUnitsInArea(lPlots, iCiv, iIndependent, True, False) #remaining barbs in the region now belong to the new civ 
 			utils.flipUnitsInArea(lPlots, iCiv, iIndependent2, True, False) #remaining barbs in the region now belong to the new civ 
@@ -2059,10 +2045,8 @@ class RiseAndFall:
 				else:
 					bFree = True
 					
-					for i in range(x-1, x+2):
-						for j in range(y-1, y+2):
-							bFree = False
-							break
+					if utils.isFree(iRussia, tPlot, True): # Also bNoEnemyUnits?
+						bFree = False
 					
 					if bFree:
 						pRussia.found(x, y)

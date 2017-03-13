@@ -9,6 +9,9 @@ from operator import itemgetter
 import math
 import Areas
 
+import PyHelpers
+PyPlayer = PyHelpers.PyPlayer
+
 # globals
 gc = CyGlobalContext()
 
@@ -891,16 +894,15 @@ def loseCommerce(iPlayer, iPercentage):
 		CyInterface().addMessage(iPlayer, False, iDuration, sText, "", 0, "", ColorTypes(iRed), -1, -1, True, True)
 	
 def downgradeCottages(iPlayer):
-	for x in range(128):
-		for y in range(64):
-			plot = gc.getMap().plot(x, y)
-			if plot.getOwner() == iPlayer:
-				iImprovement = plot.getImprovementType()
-				
-				if iImprovement == iTown: plot.setImprovementType(iHamlet)
-				elif iImprovement == iVillage: plot.setImprovementType(iCottage)
-				elif iImprovement == iHamlet: plot.setImprovementType(iCottage)
-				elif iImprovement == iCottage: plot.setImprovementType(-1)
+	for (x, y) in utils.getWorldPlotsList():
+		plot = gc.getMap().plot(x, y)
+		if plot.getOwner() == iPlayer:
+			iImprovement = plot.getImprovementType()
+			
+			if iImprovement == iTown: plot.setImprovementType(iHamlet)
+			elif iImprovement == iVillage: plot.setImprovementType(iCottage)
+			elif iImprovement == iHamlet: plot.setImprovementType(iCottage)
+			elif iImprovement == iCottage: plot.setImprovementType(-1)
 				
 	if utils.getHumanID() == iPlayer:
 		sText = localText.getText("TXT_KEY_STABILITY_DOWNGRADE_COTTAGES", ())
@@ -1076,14 +1078,10 @@ def targetCityUnrest(iPlayer):
 		
 def immobilizeUnits(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
-	
-	for x in range(124):
-		for y in range(68):
-			plot = gc.getMap().plot(x, y)
-			for i in range(plot.getNumUnits()):
-				unit = plot.getUnit(i)
-				if unit.getOwner() == iPlayer and gc.getUnitInfo(unit.getUnitType()).isMilitaryProduction():
-					unit.changeImmobileTimer(1)
+
+	for unit in PyPlayer(iPlayer).getUnitList():
+		if gc.getUnitInfo(unit.getUnitType()).isMilitaryProduction():
+			unit.changeImmobileTimer(1)
 			
 	if utils.getHumanID() == iPlayer:
 		sText = localText.getText("TXT_KEY_STABILITY_IMMOBILIZED_UNITS", ())
@@ -1093,23 +1091,18 @@ def unitDesertion(iPlayer, iDivisor):
 	pPlayer = gc.getPlayer(iPlayer)
 	lDesertingUnits = []
 	
-	for x in range(124):
-		for y in range(68):
-			plot = gc.getMap().plot(x, y)
-			lPlotUnits = []
-			for i in range(plot.getNumUnits()):
-				unit = plot.getUnit(i)
-				if unit.getOwner() == iPlayer and gc.getUnitInfo(unit.getUnitType()).isMilitaryProduction():
-					lPlotUnits.append(unit)
-			for i in range(len(lPlotUnits)):
-				if i % iDivisor == 0:
-					lDesertingUnits.append(lPlotUnits[i])		
+	for (x, y) in utils.getWorldPlotsList():
+		plot = gc.getMap().plot(x, y)
+		lPlotUnits = []
+		for i in range(plot.getNumUnits()):
+			unit = plot.getUnit(i)
+			if unit.getOwner() == iPlayer and gc.getUnitInfo(unit.getUnitType()).isMilitaryProduction():
+				lPlotUnits.append(unit)
+		for i in range(len(lPlotUnits)):
+			if i % iDivisor == 0:
+				lDesertingUnits.append(lPlotUnits[i])
 			
 	for unit in lDesertingUnits:
-		x = unit.getX()
-		y = unit.getY()
-		plot = gc.getMap().plot(x, y)
-		
 		unit.kill(False, iBarbarian)#iPlayer)
 		
 	if utils.getHumanID() == iPlayer:

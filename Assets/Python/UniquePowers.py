@@ -89,7 +89,7 @@ class UniquePowers:
 		iOwner = pWinningUnit.getOwner()
 		
 		if (iOwner == iVikings and gc.getGame().getGameTurn() <= getTurnForYear(1500)) or pWinningUnit.getUnitType() == iMoorishCorsair:
-			if cLosingUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA"):
+			if cLosingUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
 				iGold = cLosingUnit.getProductionCost() / 2
 				gc.getPlayer(iOwner).changeGold(iGold)
 				sAdjective = gc.getPlayer(pLosingUnit.getOwner()).getCivilizationAdjectiveKey()
@@ -403,14 +403,21 @@ class UniquePowers:
 			lCities = []
 			bNewWorld = pPlayer.getCapitalCity().getRegionID() in lNewWorld
 			for city in utils.getCityList(iPlayer):
-				if city.foodDifference(False) <= 0: continue
+				iFoodDifference = city.foodDifference(False)
 				iHappinessDifference = city.happyLevel() - city.unhappyLevel(0)
 				if city.getRegionID() in lNewWorld and bNewWorld:
+					if iFoodDifference <= 0 or iHappinessDifference <= 0: continue
 					iNorthAmericaBonus = 0
 					if city.getRegionID() in [rCanada, rUnitedStates]: iNorthAmericaBonus = 5
-					if iHappinessDifference > 0: lCities.append((city, iHappinessDifference + city.foodDifference(False) / 2 + city.getPopulation() / 2 + iNorthAmericaBonus))
+					lCities.append((city, iHappinessDifference + iFoodDifference / 2 + city.getPopulation() / 2 + iNorthAmericaBonus))
 				elif city.getRegionID() not in lNewWorld and not bNewWorld:
-					if iHappinessDifference < 0: lCities.append((city, -iHappinessDifference))
+					iValue = 0
+					if iFoodDifference < 0:
+						iValue -= iFoodDifference / 2
+					if iHappinessDifference < 0:
+						iValue -= iHappinessDifference
+					if iValue > 0:
+						lCities.append((city, iValue))
 			
 			if lCities:
 				lCities.sort(key=itemgetter(1), reverse=True)
