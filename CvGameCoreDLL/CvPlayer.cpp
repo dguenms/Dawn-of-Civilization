@@ -509,6 +509,9 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iVassalCityCommerce = 0; // Leoreth
 	m_iHappinessBonusCommerce = 0; // Leoreth
 	m_iCaptureGoldModifier = 0; // Leoreth
+	m_iEnslaveCount = 0; // Leoreth
+	m_iSlaveryCount = 0; // Leoreth
+	m_iColonialSlaveryCount = 0; // Leoreth
 	m_iRevolutionTimer = 0;
 	m_iConversionTimer = 0;
 	m_iStateReligionCount = 0;
@@ -4532,8 +4535,8 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		{
 			if (GC.getUnitInfo(pUnitTraded->getUnitType()).isSlave() && (pTheirCapitalCity != NULL))
 			{
-				// receiving player must be able to use slaves
-				if (GET_PLAYER(eWhoTo).getCivics((CivicOptionTypes)1) != CIVIC_EGALITARIANISM)
+				// receiving player must be able to use slaves in colonies
+				if (GET_PLAYER(eWhoTo).isColonialSlavery())
 				{
 					// make sure slaves aren't on sea
 					if (!pUnitTraded->isCargo() || pUnitTraded->canUnload())
@@ -10572,6 +10575,43 @@ void CvPlayer::changeCaptureGoldModifier(int iChange)
 	{
 		m_iCaptureGoldModifier += iChange;
 	}
+}
+
+
+// Leoreth
+bool CvPlayer::isEnslave() const
+{
+	return m_iEnslaveCount > 0;
+}
+
+// Leoreth
+void CvPlayer::changeEnslaveCount(int iChange)
+{
+	m_iEnslaveCount += iChange;
+}
+
+// Leoreth
+bool CvPlayer::isSlavery() const
+{
+	return m_iSlaveryCount > 0;
+}
+
+// Leoreth
+void CvPlayer::changeSlaveryCount(int iChange)
+{
+	m_iSlaveryCount += iChange;
+}
+
+// Leoreth
+bool CvPlayer::isColonialSlavery() const
+{
+	return m_iColonialSlaveryCount > 0;
+}
+
+// Leoreth
+void CvPlayer::changeColonialSlaveryCount(int iChange)
+{
+	m_iColonialSlaveryCount += iChange;
 }
 
 
@@ -17741,6 +17781,9 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeVassalCityCommerce(GC.getCivicInfo(eCivic).getVassalCityCommerce() * iChange); // Leoreth
 	changeHappinessBonusCommerce(GC.getCivicInfo(eCivic).getHappinessBonusCommerce() * iChange); // Leoreth
 	changeCaptureGoldModifier(GC.getCivicInfo(eCivic).getCaptureGoldModifier() * iChange); // Leoreth
+	changeEnslaveCount(GC.getCivicInfo(eCivic).isEnslave() * iChange); // Leoreth
+	changeSlaveryCount(GC.getCivicInfo(eCivic).isSlavery() * iChange); // Leoreth
+	changeColonialSlaveryCount(GC.getCivicInfo(eCivic).isColonialSlavery() * iChange); // Leoreth
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
 	changeNoForeignTradeModifierCount(GC.getCivicInfo(eCivic).isNoForeignTradeModifier() * iChange); // Leoreth
 	changeNoCorporationsCount(GC.getCivicInfo(eCivic).isNoCorporations() * iChange);
@@ -18141,6 +18184,9 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iVassalCityCommerce); // Leoreth
 	pStream->Read(&m_iHappinessBonusCommerce); // Leoreth
 	pStream->Read(&m_iCaptureGoldModifier); // Leoreth
+	pStream->Read(&m_iEnslaveCount); // Leoreth
+	pStream->Read(&m_iSlaveryCount); // Leoreth
+	pStream->Read(&m_iColonialSlaveryCount); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
 	pStream->Read(&m_iConversionTimer);
 	pStream->Read(&m_iStateReligionCount);
@@ -18671,6 +18717,9 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iVassalCityCommerce); // Leoreth
 	pStream->Write(m_iHappinessBonusCommerce); // Leoreth
 	pStream->Write(m_iCaptureGoldModifier); // Leoreth
+	pStream->Write(m_iEnslaveCount); // Leoreth
+	pStream->Write(m_iSlaveryCount); // Leoreth
+	pStream->Write(m_iColonialSlaveryCount); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
 	pStream->Write(m_iConversionTimer);
 	pStream->Write(m_iStateReligionCount);
@@ -24744,7 +24793,7 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 
 bool CvPlayer::canEnslave() const
 {
-	return (getCivics((CivicOptionTypes)2) == CIVIC_SLAVERY && getMaxConscript() <= 0);
+	return (isEnslave() && getMaxConscript() <= 0);
 }
 
 bool CvPlayer::hasCivic(CivicTypes eCivic) const

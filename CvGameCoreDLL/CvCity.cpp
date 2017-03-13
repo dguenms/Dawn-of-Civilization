@@ -17503,11 +17503,6 @@ bool CvCity::isMiddleEast() const
 	return (getRegionID() == REGION_PERSIA || getRegionID() == REGION_MESOPOTAMIA || getRegionID() == REGION_ANATOLIA || (getX_INLINE() == 68 && getY_INLINE() == 45));
 }
 
-bool CvCity::canEnslave() const
-{
-	return canEnslave(false);
-}
-
 bool CvCity::canEnslave(bool bGeneral) const
 {			
 	if (GET_PLAYER(getOwnerINLINE()).canEnslave())
@@ -17687,7 +17682,7 @@ bool CvCity::isColony() const
 // Leoreth: at most half of the population may be slaves
 bool CvCity::canSlaveJoin() const
 {
-	if (!plot()->canUseSlave(getOwner())) return false;
+	if (!GET_PLAYER(getOwnerINLINE()).isSlavery()) return false;
 
 	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
 	int iNumSlaves = getFreeSpecialistCount(eSlave);

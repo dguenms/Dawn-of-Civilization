@@ -605,6 +605,18 @@ public:
 	void changeTradeRoutes(int iChange);																																// Exposed to Python
 
 	// Leoreth
+	bool isEnslave() const;
+	void changeEnslaveCount(int iChange);
+
+	// Leoreth
+	bool isSlavery() const;
+	void changeSlaveryCount(int iChange);
+
+	// Leoreth
+	bool isColonialSlavery() const;
+	void changeColonialSlaveryCount(int iChange);
+
+	// Leoreth
 	int getCapitalTradeModifier() const;
 	void changeCapitalTradeModifier(int iChange);
 
@@ -1379,6 +1391,9 @@ protected:
 	int m_iVassalCityCommerce; // Leoreth
 	int m_iHappinessBonusCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
+	int m_iEnslaveCount; // Leoreth
+	int m_iSlaveryCount; // Leoreth
+	int m_iColonialSlaveryCount; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;

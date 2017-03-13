@@ -5929,7 +5929,7 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 	//Leoreth: no slavery in the motherland or with egalitarianism
 	if (getUnitType() == GC.getInfoTypeForString("UNIT_SLAVE"))
 	{
-		if (GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)1) == CIVIC_EGALITARIANISM)
+		if (!GET_PLAYER(getOwner()).isSlavery() && !GET_PLAYER(getOwner()).isColonialSlavery())
 		{
 			return false;
 		}
