@@ -846,11 +846,11 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>
-			<Type>CIVIC_CITY_STATES</Type>
-			<Description>TXT_KEY_CIVIC_CITY_STATES</Description>
-			<Civilopedia>TXT_KEY_CIVIC_CITY_STATES_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Strategy>
-			<Button>,Art/Interface/Buttons/Civics/City States.dds</Button>
+			<Type>CIVIC_SOVEREIGNTY</Type>
+			<Description>TXT_KEY_CIVIC_SOVEREIGNTY</Description>
+			<Civilopedia>TXT_KEY_CIVIC_SOVEREIGNTY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_SOVEREIGNTY_STRATEGY</Strategy>
+			<Button>,Art/Interface/Buttons/Civics/Sovereignty.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 		</CivicInfo>

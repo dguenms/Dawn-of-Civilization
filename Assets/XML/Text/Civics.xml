@@ -58,11 +58,11 @@
 		<English>Extra production from specialists; extra food from workshops and watermills; less commerce from windmills, watermills and towns; double production speed for factories and coal plants</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CITY_STATES</Tag>
-		<English>City States</English>
+		<Tag>TXT_KEY_CIVIC_SOVEREIGNTY</Tag>
+		<English>Sovereignty</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_SOVEREIGNTY_STRATEGY</Tag>
 		<English>Increased maintenance from number of cities; specialists produce food if city works less than seven tiles</English>
 	</TEXT>
 	<TEXT>
