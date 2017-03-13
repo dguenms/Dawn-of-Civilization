@@ -31238,7 +31238,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_CITY_STATES</FavoriteCivic>
+			<FavoriteCivic>CIVIC_SOVEREIGNTY</FavoriteCivic>
 			<FavoriteReligion>NONE</FavoriteReligion>
 			<Traits/>
 			<Flavors>
