@@ -7611,7 +7611,7 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	// Leoreth: American UP
 	if (GC.getGame().getActivePlayer() == AMERICA)
 	{
-		if (eCivic == CIVIC_REPUBLIC || eCivic == CIVIC_CAPITALISM || eCivic == CIVIC_FREE_MARKET)
+		if (eCivic == CIVIC_DEMOCRACY || eCivic == CIVIC_CONSTITUTION || eCivic == CIVIC_INDIVIDUALISM || eCivic == CIVIC_FREE_ENTERPRISE)
 		{
 			szHelpText.append(NEWLINE);
 			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS", 2, gDLL->getSymbolID(HAPPY_CHAR)));
@@ -9662,11 +9662,11 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 	}
 
 	// Leoreth - units that require the vassalage civic
-	if ( GC.getUnitInfo(eUnit).getPrereqCivic() == CIVIC_VASSALAGE )
+	/*if ( GC.getUnitInfo(eUnit).getPrereqCivic() == CIVIC_VASSALAGE )
 	{
 	    szBuffer.append(NEWLINE);
 	    szBuffer.append(gDLL->getText("TXT_KEY_VASSALAGE_REQUIREMENT"));
-	}
+	}*/
 
 	if (!bCivilopediaText && GC.getGameINLINE().getActivePlayer() != NO_PLAYER)
 	{

@@ -5957,7 +5957,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 		}
 	}
 
-	if (!bStateReligion && !bOrStateReligion && getCivics((CivicOptionTypes)4) != CIVIC_SECULARISM)
+	if (!bStateReligion && !bOrStateReligion && getCivics(CIVICOPTION_RELIGION) != CIVIC_SECULARISM)
 	{
 		return false;
 	}
@@ -7848,15 +7848,14 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 		}
 	}
 
-	// Egyptian UP: starts with Dynasticism, Slavery and Pantheon
+	// Egyptian UP: starts with Monarchy, Redistribution and Deification
 	if (getID() == EGYPT)
-		if (eCivic == CIVIC_DYNASTICISM || eCivic == CIVIC_SLAVERY || eCivic == CIVIC_PANTHEON)
+	{
+		if (eCivic == CIVIC_MONARCHY || eCivic == CIVIC_REDISTRIBUTION || eCivic == CIVIC_DEIFICATION)
+		{
 			return true;
-
-	// Phoenician UP: starts with Mercenaries
-	if (getID() == PHOENICIA)
-		if (eCivic == CIVIC_MERCENARIES)
-			return true;
+		}
+	}
 
 	if (!isHasCivicOption((CivicOptionTypes)(GC.getCivicInfo(eCivic).getCivicOptionType())) && !(GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getCivicInfo(eCivic).getTechPrereq()))))
 	{
@@ -10144,9 +10143,10 @@ int CvPlayer::getExtraHappiness() const
 	{
 		int iCivicHappiness = 0;
 
-		if (getCivics((CivicOptionTypes)0) == CIVIC_REPUBLIC) iCivicHappiness += 2;
-		if (getCivics((CivicOptionTypes)2) == CIVIC_CAPITALISM) iCivicHappiness += 2;
-		if (getCivics((CivicOptionTypes)3) == CIVIC_FREE_MARKET) iCivicHappiness += 2;
+		if (getCivics(CIVICOPTION_GOVERNMENT) == CIVIC_REPUBLIC) iCivicHappiness += 2;
+		if (getCivics(CIVICOPTION_LEGITIMACY) == CIVIC_CONSTITUTION) iCivicHappiness += 2;
+		if (getCivics(CIVICOPTION_SOCIETY) == CIVIC_INDIVIDUALISM) iCivicHappiness += 2;
+		if (getCivics(CIVICOPTION_ECONOMY) == CIVIC_FREE_ENTERPRISE) iCivicHappiness += 2;
 
 		return m_iExtraHappiness + iCivicHappiness;
 	}
@@ -24743,8 +24743,8 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 		return DENIAL_NO_GAIN;
 	}*/
 
-	// don't buy when running Egalitarianism
-	if (getCivics((CivicOptionTypes)2) == CIVIC_EGALITARIANISM)
+	// don't buy when not running Colonialism
+	if (getCivics(CIVICOPTION_TERRITORY) != CIVIC_COLONIALISM)
 	{
 		return DENIAL_NO_GAIN;
 	}
