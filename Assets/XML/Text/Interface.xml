@@ -1670,4 +1670,19 @@
 		<English>[ICON_BULLET]%D1_Mod%% Worker Production</English>
 		<German>[ICON_BULLET]%D1_Mod%% Arbeiter-Produktion</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_ENSLAVE</Tag>
+		<English>[ICON_BULLET]Can Enslave Population</English>
+		<German>[ICON_BULLET]Kann Bevölkerung versklaven</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES</Tag>
+		<English>[ICON_BULLET]Can Use Slaves</English>
+		<German>[ICON_BULLET]Kann Sklaven verwenden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES_IN_COLONIES</Tag>
+		<English>[ICON_BULLET]Can Use Slaves in Colonies</English>
+		<German>[ICON_BULLET]Kann Sklaven in Kolonien verwenden</German>
+	</TEXT>
 </Civ4GameText>

@@ -7406,6 +7406,27 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_FOREIGN_CORPORATIONS"));
 	}
 
+	// Leoreth: can enslave
+	if (GC.getCivicInfo(eCivic).isEnslave())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_ENSLAVE"));
+	}
+
+	// Leoreth: can use slaves
+	if (GC.getCivicInfo(eCivic).isSlavery())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_USE_SLAVES"));
+	}
+
+	// Leoreth: can use slaves in colonies
+	if (GC.getCivicInfo(eCivic).isColonialSlavery())
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_USE_SLAVES_IN_COLONIES"));
+	}
+
 	//	Freedom Anger
 	if (GC.getCivicInfo(eCivic).getCivicPercentAnger() != 0)
 	{

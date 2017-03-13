@@ -344,6 +344,8 @@
 			<Button>,Art/Interface/Buttons/Civics/Slavery.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
+			<bEnslave>1</bEnslave>
+			<!--bSlavery>1</bSlavery-->
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_QUARRY</ImprovementType>
@@ -906,6 +908,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Colonialism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<bColonialSlavery>1</bColonialSlavery>
 			<iHappinessBonusCommerce>2</iHappinessBonusCommerce>
 			<DomainExperienceModifiers>
 				<DomainExperienceModifier>

@@ -5487,6 +5487,9 @@ m_bStabilityVassalBonus(false), //Rhye 6th
 m_bStabilityFoundBonus(false), //Rhye 6th
 m_bStabilityConquestBonus(false), //Rhye 6th
 m_bStabilityCommerceBonus(false), //Rhye 6th
+m_bEnslave(false), // Leoreth
+m_bSlavery(false), // Leoreth
+m_bColonialSlavery(false), // Leoreth
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
@@ -5890,6 +5893,24 @@ bool CvCivicInfo::isStabilityCommerceBonus() const
 }
 //Rhye - end 6th
 
+// Leoreth
+bool CvCivicInfo::isEnslave() const
+{
+	return m_bEnslave;
+}
+
+// Leoreth
+bool CvCivicInfo::isSlavery() const
+{
+	return m_bSlavery;
+}
+
+// Leoreth
+bool CvCivicInfo::isColonialSlavery() const
+{
+	return m_bColonialSlavery;
+}
+
 const wchar* CvCivicInfo::getWeLoveTheKing()
 {
 	return m_szWeLoveTheKingKey;
@@ -6178,6 +6199,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bStabilityFoundBonus); //Rhye 6th
 	stream->Read(&m_bStabilityConquestBonus); //Rhye 6th
 	stream->Read(&m_bStabilityCommerceBonus); //Rhye 6th
+	stream->Read(&m_bEnslave); // Leoreth
+	stream->Read(&m_bSlavery); // Leoreth
+	stream->Read(&m_bColonialSlavery); // Leoreth
 
 	// Arrays
 
@@ -6356,6 +6380,9 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bStabilityFoundBonus); //Rhye 6th
 	stream->Write(m_bStabilityConquestBonus); //Rhye 6th
 	stream->Write(m_bStabilityCommerceBonus); //Rhye 6th
+	stream->Write(m_bEnslave); // Leoreth
+	stream->Write(m_bSlavery); // Leoreth
+	stream->Write(m_bColonialSlavery); // Leoreth
 
 	// Arrays
 
@@ -6464,6 +6491,9 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bStabilityFoundBonus, "bStabilityFoundBonus"); //Rhye 6th
 	pXML->GetChildXmlValByName(&m_bStabilityConquestBonus, "bStabilityConquestBonus"); //Rhye 6th
 	pXML->GetChildXmlValByName(&m_bStabilityCommerceBonus, "bStabilityCommerceBonus"); //Rhye 6th
+	pXML->GetChildXmlValByName(&m_bEnslave, "bEnslave"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");
