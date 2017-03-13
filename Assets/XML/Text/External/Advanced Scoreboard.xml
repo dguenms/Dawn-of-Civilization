@@ -387,17 +387,4 @@
 		<German>Bestimmt die Farbe, in der niedrige Machtverh&#228;ltnisse erscheinen</German>
 		<Italian>Consente di selezionare il colore con cui visualizzare il Rapporto di Forza nel Pannello del Punteggio quando &#232; "basso".</Italian>
 	</TEXT>
-	
-	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_SCORES__SCROLLABLE_TEXT</Tag>
-		<English>Scrollable Scoreboard</English>
-		<German>No translation</German>
-		<Italian>No translation</Italian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUG_OPT_SCORES__SCROLLABLE_HOVER</Tag>
-		<English>Scrollable scoreboard hover text</English>
-		<German>No translation</German>
-		<Italian>No translation</Italian>
-	</TEXT>
 </Civ4GameText>

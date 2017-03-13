@@ -1152,8 +1152,8 @@ class RFCUtils:
 		for (x, y) in self.getWorldPlotsList():
 			plot = gc.getMap().plot(x, y)
 			if plot.getOwner() == iPlayer:
-				if plot.getImprovementType() == iPlantation:
-					plot.setImprovementType(iSlavePlantation)
+				if plot.getImprovementType() == iSlavePlantation:
+					plot.setImprovementType(iPlantation)
 				if plot.isCity():
 					self.removeSlaves(plot.getPlotCity())
 						
@@ -1631,15 +1631,15 @@ class RFCUtils:
 		
 	def evacuate(self, tPlot):
 		for tLoopPlot in self.surroundingPlots(tPlot):
-			for unit in utils.getUnitList(tLoopPlot):
-				lPossibleTiles = self.surroundingPlots(tLoopPlot, 2, lambda (x, y): utils.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True))
-				tTargetPlot = utils.getRandomEntry(lPossibleTiles)
+			for unit in self.getUnitList(tLoopPlot):
+				lPossibleTiles = self.surroundingPlots(tLoopPlot, 2, lambda (x, y): self.isFree(unit.getOwner(), (x, y), bNoEnemyUnit=True, bCanEnter=True))
+				tTargetPlot = self.getRandomEntry(lPossibleTiles)
 				if tTargetPlot:
 					x, y = tLoopPlot
 					unit.setXY(x, y, False, True, False)
 			
 	def getWonderList():
-		return [i for i in range(iBeginWonders, iNumBuildings)]
+		return [i for i in range(iNumBuildings) if isWorldWonderClass(gc.getBuildingInfo(i).getBuildingClassType())]
 		
 	def getOrElse(self, dDictionary, key, default):
 		if key in dDictionary: return dDictionary[key]

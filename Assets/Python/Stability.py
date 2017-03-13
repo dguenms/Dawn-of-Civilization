@@ -9,6 +9,9 @@ from operator import itemgetter
 import math
 import Areas
 
+import PyHelpers
+PyPlayer = PyHelpers.PyPlayer
+
 # globals
 gc = CyGlobalContext()
 
@@ -1075,13 +1078,10 @@ def targetCityUnrest(iPlayer):
 		
 def immobilizeUnits(iPlayer):
 	pPlayer = gc.getPlayer(iPlayer)
-	
-	for (x, y) in utils.getWorldPlotsList():
-		plot = gc.getMap().plot(x, y)
-		for i in range(plot.getNumUnits()):
-			unit = plot.getUnit(i)
-			if unit.getOwner() == iPlayer and gc.getUnitInfo(unit.getUnitType()).isMilitaryProduction():
-				unit.changeImmobileTimer(1)
+
+	for unit in PyPlayer(iPlayer).getUnitList():
+		if gc.getUnitInfo(unit.getUnitType()).isMilitaryProduction():
+			unit.changeImmobileTimer(1)
 			
 	if utils.getHumanID() == iPlayer:
 		sText = localText.getText("TXT_KEY_STABILITY_IMMOBILIZED_UNITS", ())
@@ -1103,10 +1103,6 @@ def unitDesertion(iPlayer, iDivisor):
 				lDesertingUnits.append(lPlotUnits[i])
 			
 	for unit in lDesertingUnits:
-		x = unit.getX()
-		y = unit.getY()
-		plot = gc.getMap().plot(x, y)
-		
 		unit.kill(False, iBarbarian)#iPlayer)
 		
 	if utils.getHumanID() == iPlayer:
