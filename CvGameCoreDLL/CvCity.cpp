@@ -7328,6 +7328,9 @@ int CvCity::getMilitaryHappinessUnits() const
 {
 	int iMilitaryHappinessLimit = GET_PLAYER(getOwnerINLINE()).getMilitaryHappinessLimit();
 
+	// Leoreth: at most half the city population
+	iMilitaryHappinessLimit = std::min(iMilitaryHappinessLimit, getPopulation() / 2);
+
 	if (iMilitaryHappinessLimit > 0)
 	{
 		return std::min(m_iMilitaryHappinessUnits, iMilitaryHappinessLimit);
