@@ -490,8 +490,8 @@
 		<English>Monarchy</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_OLIGARCHY</Tag>
-		<English>Oligarchy</English>
+		<Tag>TXT_KEY_CIVIC_ELECTIVE</Tag>
+		<English>Elective</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_STATE_PARTY</Tag>

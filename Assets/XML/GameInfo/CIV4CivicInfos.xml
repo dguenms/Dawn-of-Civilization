@@ -107,10 +107,10 @@
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_GOVERNMENT</CivicOptionType>
-			<Type>CIVIC_OLIGARCHY</Type>
-			<Description>TXT_KEY_CIVIC_OLIGARCHY</Description>
-			<Civilopedia>TXT_KEY_CIVIC_OLIGARCHY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_CIVIC_OLIGARCHY_STRATEGY</Strategy>
+			<Type>CIVIC_ELECTIVE</Type>
+			<Description>TXT_KEY_CIVIC_ELECTIVE</Description>
+			<Civilopedia>TXT_KEY_CIVIC_ELECTIVE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_CIVIC_ELECTIVE_STRATEGY</Strategy>
 			<TechPrereq>TECH_POLITICS</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Oligarchy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
