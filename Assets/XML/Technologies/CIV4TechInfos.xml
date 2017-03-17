@@ -2081,7 +2081,7 @@
 			<Quote>TXT_KEY_TECH_DOCTRINE_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>Art/Interface/Buttons/TechTree/Clergy.dds</Button>
+			<Button>Art/Interface/Buttons/TechTree/Doctrine.dds</Button>
 		</TechInfo>
 
 <!-- #9 -->
