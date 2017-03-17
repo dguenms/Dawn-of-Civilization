@@ -10678,7 +10678,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STATUE_OF_LIBERTY</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STATUE_OF_LIBERTY</MovieDefineTag>
-			<PrereqCivic>CIVIC_REPUBLIC</PrereqCivic>
+			<PrereqCivic>CIVIC_DEMOCRACY</PrereqCivic>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_REPRESENTATION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>

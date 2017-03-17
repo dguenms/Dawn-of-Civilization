@@ -1408,7 +1408,7 @@ class RFCUtils:
 		return getTurnForYear(self.getScenarioStartYear())
 		
 	def hasCivic(self, iPlayer, iCivic):
-		return (gc.getPlayer(iPlayer).getCivics(iCivic % 6) == iCivic)
+		return (gc.getPlayer(iPlayer).getCivics(iCivic % 7) == iCivic)
 		
 	def getUniqueBuildingType(self, iPlayer, iBuildingClass):
 		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(iBuildingClass)
@@ -1469,9 +1469,9 @@ class RFCUtils:
 		
 		if iStateReligion >= 0:
 			return iStateReligion
-		elif pPlayer.getCivics(4) == iCivicPantheon:
+		elif pPlayer.getLastStateReligion() == -1:
 			return iVictoryPolytheism
-		elif pPlayer.getCivics(4) == iCivicSecularism:
+		elif not pPlayer.isStateReligion():
 			return iVictorySecularism
 			
 		return -1

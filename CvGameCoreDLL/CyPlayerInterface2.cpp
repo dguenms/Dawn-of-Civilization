@@ -109,5 +109,8 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("setBirthYear", &CyPlayer::setBirthYear, "void (int iNewValue)")
 		.def("getSpreadType", &CyPlayer::getSpreadType, "int (CyPlot* pPlot, int iReligion)")
 		.def("AI_chooseFreeTech", &CyPlayer::AI_chooseFreeTech, "void ()")
+		.def("isEnslave", &CyPlayer::isEnslave, "bool ()")
+		.def("isSlavery", &CyPlayer::isSlavery, "bool ()")
+		.def("isColonialSlavery", &CyPlayer::isColonialSlavery, "bool ()")
 		;
 }

@@ -120,8 +120,8 @@ class Companies:
 		owner = gc.getPlayer(iOwner)
 		ownerTeam = gc.getTeam(owner.getTeam())
 		
-		# State Property
-		if owner.getCivics(3) == iCivicCentralPlanning:
+		# Central Planning: only one company per city
+		if owner.getCivics(iCivicsEconomy) == iCentralPlanning:
 			bOtherCorp = False
 			for iLoopCorporation in range(iNumCompanies):
 				if city.isHasCorporation(iLoopCorporation) and iLoopCorporation != iCompany:
@@ -130,16 +130,16 @@ class Companies:
 			if bOtherCorp:
 				return -1
 
-		# Mercantilism increases likeliness for trading company
-		if iCompany == iTradingCompany and owner.getCivics(3) == iCivicMercantilism:
+		# Colonialism increases likeliness for trading company
+		if iCompany == iTradingCompany and owner.getCivics(iCivicsTerritory) == iColonialism:
 			iValue += 2
 			
-		# Tribalism increases likeliness for silk route
-		if iCompany == iSilkRoute and owner.getCivics(2) == iCivicTribalism:
+		# Merchant Trade increases likeliness for silk route
+		if iCompany == iSilkRoute and owner.getCivics(iCivicsEconomy) == iMerchantTrade:
 			iValue += 2
 
-		# Free Market increases likeliness for all companies
-		if owner.getCivics(3) == iCivicFreeMarket:
+		# Free Enterprise increases likeliness for all companies
+		if owner.getCivics(iCivicsEconomy) == iFreeEnterprise:
 			iValue += 1
 
 		# civilization requirements

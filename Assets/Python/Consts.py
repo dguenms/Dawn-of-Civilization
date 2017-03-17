@@ -1583,13 +1583,22 @@ iPlague = iNumBuildings
 iNumBuildingsPlague = iNumBuildings+1
 
 #Civics
-iNumCivics = 36
-(iCivicTyranny, iCivicDynasticism, iCivicCityStates, iCivicTheocracy, iCivicAutocracy, iCivicRepublic,
-iCivicDirectRule, iCivicVassalage, iCivicAbsolutism, iCivicRepresentation, iCivicTotalitarianism, iCivicEgalitarianism,
-iCivicTribalism, iCivicSlavery, iCivicAgrarianism, iCivicCapitalism, iCivicIndustrialism, iCivicPublicWelfare,
-iCivicSubsistence, iCivicGuilds, iCivicMercantilism, iCivicFreeMarket, iCivicCentralPlanning, iCivicEnvironmentalism,
-iCivicAnimism, iCivicPantheon, iCivicOrganizedReligion, iCivicScholasticism, iCivicFanaticism, iCivicSecularism,
-iCivicMilitia, iCivicMercenaries, iCivicLevyArmies, iCivicStandingArmy, iCivicNavalSupremacy, iCivicMultilateralism) = range(iNumCivics)
+iNumCivics = 42
+(iChiefdom, iDespotism, iMonarchy, iRepublic, iOligarchy, iStateParty, iDemocracy,
+iAuthority, iCitizenship, iVassalage, iMeritocracy, iCentralism, iIdeology, iConstitution,
+iTraditionalism, iSlavery, iManorialism, iCasteSystem, iIndividualism, iTotalitarianism, iEgalitarianism,
+iReciprocity, iRedistribution, iMerchantTrade, iRegulatedTrade, iFreeEnterprise, iCentralPlanning, iPublicWelfare,
+iAnimism, iDeification, iClergy, iMonasticism, iTheocracy, iTolerance, iSecularism,
+iSovereignty, iConquest, iTributaries, iIsolationism, iColonialism, iNationhood, iMultilateralism) = range(iNumCivics)
+
+(iCivicsGovernment, iCivicsLegitimacy, iCivicsSociety, iCivicsEconomy, iCivicsReligion, iCivicsTerritory) = range(6)
+
+#(iCivicTyranny, iCivicDynasticism, iCivicCityStates, iCivicTheocracy, iCivicAutocracy, iCivicRepublic,
+#iCivicDirectRule, iCivicVassalage, iCivicAbsolutism, iCivicRepresentation, iCivicTotalitarianism, iCivicEgalitarianism,
+#iCivicTribalism, iCivicSlavery, iCivicAgrarianism, iCivicCapitalism, iCivicIndustrialism, iCivicPublicWelfare,
+#iCivicSubsistence, iCivicGuilds, iCivicMercantilism, iCivicFreeMarket, iCivicCentralPlanning, iCivicEnvironmentalism,
+#iCivicAnimism, iCivicPantheon, iCivicOrganizedReligion, iCivicScholasticism, iCivicFanaticism, iCivicSecularism,
+#iCivicMilitia, iCivicMercenaries, iCivicLevyArmies, iCivicStandingArmy, iCivicNavalSupremacy, iCivicMultilateralism)
 
 #Specialists
 iNumSpecialists = 16
