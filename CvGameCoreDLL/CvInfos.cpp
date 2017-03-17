@@ -7071,6 +7071,7 @@ m_bBuildingOnlyHealthy(false),
 m_bNeverCapture(false),
 m_bNukeImmune(false),
 m_bPrereqReligion(false),
+m_bPagan(false), // Leoreth
 m_bCenterInCity(false),
 m_bStateReligion(false),
 m_bAllowsNukes(false),
@@ -7806,6 +7807,12 @@ bool CvBuildingInfo::isPrereqReligion() const
 	return m_bPrereqReligion;
 }
 
+// Leoreth
+bool CvBuildingInfo::isPagan() const
+{
+	return m_bPagan;
+}
+
 bool CvBuildingInfo::isCenterInCity() const
 {
 	return m_bCenterInCity;
@@ -8474,6 +8481,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bNeverCapture);
 	stream->Read(&m_bNukeImmune);
 	stream->Read(&m_bPrereqReligion);
+	stream->Read(&m_bPagan); // Leoreth
 	stream->Read(&m_bCenterInCity);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bAllowsNukes);
@@ -8847,6 +8855,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bNeverCapture);
 	stream->Write(m_bNukeImmune);
 	stream->Write(m_bPrereqReligion);
+	stream->Write(m_bPagan); // Leoreth
 	stream->Write(m_bCenterInCity);
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bAllowsNukes);
@@ -9127,6 +9136,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNeverCapture, "bNeverCapture");
 	pXML->GetChildXmlValByName(&m_bNukeImmune, "bNukeImmune");
 	pXML->GetChildXmlValByName(&m_bPrereqReligion, "bPrereqReligion");
+	pXML->GetChildXmlValByName(&m_bPagan, "bPagan"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");

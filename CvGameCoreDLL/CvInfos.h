@@ -1768,6 +1768,7 @@ public:
 	bool isNeverCapture() const;				// Exposed to Python
 	bool isNukeImmune() const;				// Exposed to Python
 	bool isPrereqReligion() const;				// Exposed to Python
+	bool isPagan() const; // Leoreth
 	bool isCenterInCity() const;				// Exposed to Python
 	bool isStateReligion() const;				// Exposed to Python
 	bool isAllowsNukes() const;				// Exposed to Python
@@ -1993,6 +1994,7 @@ protected:
 	bool m_bNeverCapture;
 	bool m_bNukeImmune;
 	bool m_bPrereqReligion;
+	bool m_bPagan; // Leoreth
 	bool m_bCenterInCity;
 	bool m_bStateReligion;
 	bool m_bAllowsNukes;

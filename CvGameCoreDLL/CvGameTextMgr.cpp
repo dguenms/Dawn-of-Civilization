@@ -11442,6 +11442,15 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			}
 		}
 
+		if (kBuilding.isPagan())
+		{
+			if (NULL == pCity || NO_PLAYER == ePlayer || NO_RELIGION != GET_PLAYER(ePlayer).getStateReligion())
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_REQUIRES_NO_STATE_RELIGION"));
+			}
+		}
+
 		if (kBuilding.getNumCitiesPrereq() > 0)
 		{
 			if (NO_PLAYER == ePlayer || GET_PLAYER(ePlayer).getNumCities() < kBuilding.getNumCitiesPrereq())
