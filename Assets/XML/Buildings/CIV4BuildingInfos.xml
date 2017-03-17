@@ -8034,13 +8034,13 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREAT_SPHINX</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_SPHINX</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iAIWeight>100</iAIWeight>
 			<iCost>150</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
@@ -8087,7 +8087,6 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREAT_LIGHTHOUSE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_LIGHTHOUSE</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<FreeBuilding>BUILDINGCLASS_LIGHTHOUSE</FreeBuilding>
@@ -8096,6 +8095,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>200</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8136,7 +8136,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREAT_COTHON</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_COTHON</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
@@ -8144,6 +8143,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>250</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8245,7 +8245,6 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_ARTEMIS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_TEMPLE_OF_ARTEMIS</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
 			<TechTypes>
@@ -8255,6 +8254,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>350</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8307,7 +8307,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PYRAMIDS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PYRAMIDS</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_MASONRY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
@@ -8315,6 +8314,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bMapCentering>1</bMapCentering>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iAIWeight>200</iAIWeight>
 			<iCost>250</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
@@ -8362,13 +8362,13 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HANGING_GARDENS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HANGING_GARDENS</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_CALENDAR</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>200</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8414,13 +8414,13 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ORACLE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ORACLE</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_DIVINATION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>150</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8468,7 +8468,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MOAI_STATUES</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_MOAI_STATUES</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
@@ -8476,6 +8475,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iAIWeight>200</iAIWeight>
 			<iCost>300</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
@@ -8522,13 +8522,13 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ISHTAR_GATE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ISHTAR_GATE</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>150</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8600,7 +8600,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COLOSSUS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_COLOSSUS</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_CEMENT</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
@@ -8608,6 +8607,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bWater>1</bWater>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>250</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8658,7 +8658,6 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PARTHENON</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PARTHENON</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<CivicOption>CIVICOPTION_LEGITIMACY</CivicOption>
@@ -8666,6 +8665,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>350</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8705,13 +8705,13 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STATUE_OF_ZEUS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STATUE_OF_ZEUS</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_CEMENT</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iAIWeight>100</iAIWeight>
 			<iCost>200</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
@@ -8868,13 +8868,13 @@
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREAT_LIBRARY</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_LIBRARY</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>350</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -8971,7 +8971,6 @@
 			<Strategy>TXT_KEY_BUILDING_FLOATING_GARDENS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FLOATING_GARDENS</ArtDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_MEDICINE</PrereqTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
@@ -8980,6 +8979,7 @@
 			<bTeamShare>1</bTeamShare>
 			<bRiver>1</bRiver>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iAIWeight>200</iAIWeight>
 			<iCost>450</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
@@ -9028,13 +9028,13 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COLOSSEUM</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_COLOSSEUM</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>300</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -9196,7 +9196,6 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MACHU_PICCHU</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_MACHU_PICCHU</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_LAW</PrereqTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
@@ -9204,6 +9203,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -9480,7 +9480,6 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_TEMPLE_OF_KUKULKAN</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_TEMPLE_OF_KUKULKAN</MovieDefineTag>
-			<PrereqCivic>CIVIC_PANTHEON</PrereqCivic>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_AESTHETICS</PrereqTech>
 			<PrereqBonuses>BONUS_CORN</PrereqBonuses>
@@ -9488,6 +9487,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bPagan>1</bPagan>
 			<iCost>450</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>

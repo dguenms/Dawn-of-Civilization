@@ -112,6 +112,7 @@
 	<ElementType name="bNeverCapture" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNukeImmune" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPrereqReligion" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bPagan" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bCenterInCity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iAIWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
@@ -497,6 +498,7 @@
 		<element type="bNeverCapture" minOccurs="0"/>
 		<element type="bNukeImmune" minOccurs="0"/>
 		<element type="bPrereqReligion" minOccurs="0"/>
+		<element type="bPagan" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bCenterInCity" minOccurs="0"/>
 		<element type="iAIWeight" minOccurs="0"/>
 		<element type="iCost" minOccurs="0"/>
