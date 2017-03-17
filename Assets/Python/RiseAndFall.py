@@ -1003,27 +1003,13 @@ class RiseAndFall:
 			self.flipPopup(iCiv, lRebirthPlots)
 
 		# adjust civics, religion and other special settings
-		if iCiv == iRome:
-			if gc.getMap().plot(61,47).isCity():
-				pVenice = gc.getMap().plot(61,47).getPlotCity()
-				pVenice.setCulture(iRome, 100, True)
-				pVenice.setPopulation(4)
-				utils.makeUnit(iGalley, iRome, (pVenice.plot().getX(), pVenice.plot().getY()), 2)
-			pRome.setLastStateReligion(iCatholicism)
-			pRome.setCivics(0, iCivicCityStates)
-			pRome.setCivics(1, iCivicAbsolutism)
-			pRome.setCivics(2, iCivicAgrarianism)
-			pRome.setCivics(3, iCivicGuilds)
-			pRome.setCivics(4, iCivicOrganizedReligion)
-			pRome.setCivics(5, iCivicMercenaries)
-		elif iCiv == iPersia:
+		if iCiv == iPersia:
 			pPersia.setLastStateReligion(iIslam)
-			pPersia.setCivics(0, iCivicDynasticism)
-			pPersia.setCivics(1, iCivicAbsolutism)
-			pPersia.setCivics(2, iCivicSlavery)
-			pPersia.setCivics(3, iCivicGuilds)
-			pPersia.setCivics(4, iCivicFanaticism)
-			pPersia.setCivics(5, iCivicLevyArmies)
+			pPersia.setCivics(iCivicsGovernment, iMonarchy)
+			pPersia.setCivics(iCivicsLegitimacy, iVassalage)
+			pPersia.setCivics(iCivicsSociety, iSlavery)
+			pPersia.setCivics(iCivicsEconomy, iMerchantTrade)
+			pPersia.setCivics(iCivicsReligion, iTheocracy)
 		elif iCiv == iAztecs:
 			if gc.getMap().plot(18, 37).isCity():
 				city = gc.getMap().plot(18, 37).getPlotCity()
@@ -1035,19 +1021,19 @@ class RiseAndFall:
 			
 			cnm.updateCityNamesFound(iAztecs) # use name of the plots in their city name map
 			
-			pAztecs.setCivics(0, iCivicRepublic) # Constitution
-			pAztecs.setCivics(1, iCivicRepresentation) # Democracy
-			pAztecs.setCivics(2, iCivicCapitalism) # Individualism
-			pAztecs.setCivics(3, iCivicMercantilism) # Regulated Trade
-			pAztecs.setCivics(4, iCivicOrganizedReligion) # Organized Religion
-			pAztecs.setCivics(5, iCivicStandingArmy) # Nationhood
+			pAztecs.setCivics(iCivicsGovernment, iDemocracy)
+			pAztecs.setCivics(iCivicsLegitimacy, iConstitution)
+			pAztecs.setCivics(iCivicsSociety, iIndividualism)
+			pAztecs.setCivics(iCivicsEconomy, iRegulatedTrade)
+			pAztecs.setCivics(iCivicsReligion, iClergy)
+			pAztecs.setCivics(iCivicsTerritory, iNationhood)
 		elif iCiv == iMaya:
-			pMaya.setCivics(0, iCivicAutocracy)
-			pMaya.setCivics(1, iCivicRepresentation)
-			pMaya.setCivics(2, iCivicCapitalism)
-			pMaya.setCivics(3, iCivicMercantilism)
-			pMaya.setCivics(4, iCivicOrganizedReligion)
-			pMaya.setCivics(5, iCivicStandingArmy)
+			pMaya.setCivics(iCivicsGovernment, iDespotism)
+			pMaya.setCivics(iCivicsLegitimacy, iIdeology)
+			pMaya.setCivics(iCivicsSociety, iIndividualism)
+			pMaya.setCivics(iCivicsEconomy, iRegulatedTrade)
+			pMaya.setCivics(iCivicsReligion, iClergy)
+			pMaya.setCivics(iCivicTerritory, iNationhood)
 			gc.getMap().plot(28, 31).setFeatureType(-1, 0)
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):

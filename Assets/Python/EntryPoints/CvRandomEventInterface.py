@@ -1508,7 +1508,7 @@ def canApplyEarthDay2(argsList):
 	
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ENVIRONMENTALISM')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_PUBLIC_WELFARE')
 	
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
@@ -1529,7 +1529,7 @@ def applyEarthDay2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ENVIRONMENTALISM')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_PUBLIC_WELFARE')
 	iCivicOption = CvUtil.findInfoTypeNum(gc.getCivicOptionInfo,gc.getNumCivicOptionInfos(),'CIVICOPTION_ECONOMY')
 	
 	listPlayers = []
@@ -2419,7 +2419,7 @@ def canTriggerTea(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_MERCANTILISM')):
+	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_COLONIALISM')):
 		return false
 
 	bCanTrade = false		
@@ -3559,7 +3559,7 @@ def canApplyEliteSwordsDone2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_DYNASTICISM')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_MONARCHY')
 	
 	if not player.isCivic(iCivic):
 		return false
@@ -3743,7 +3743,7 @@ def canApplyNobleKnightsDone2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ORGANIZED_RELIGION')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_CLERGY')
 	
 	if not player.isCivic(iCivic):
 		return false

@@ -572,6 +572,9 @@ public:
 	int getBirthTurn();
 	void setBirthYear(int iNewValue);
 	void AI_chooseFreeTech();
+	bool isEnslave();
+	bool isSlavery();
+	bool isColonialSlavery();
 
 private:
 	CvPlayer* m_pPlayer;

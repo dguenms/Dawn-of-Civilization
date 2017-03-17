@@ -7707,7 +7707,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_EGALITARIANISM</Civic>
+			<Civic>CIVIC_PUBLIC_WELFARE</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -13255,7 +13255,7 @@
 			<iWeight>200</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_REPUBLIC</Civic>
+			<Civic>CIVIC_DEMOCRACY</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -13519,7 +13519,7 @@
 			<iWeight>-2</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_REPUBLIC</Civic>
+			<Civic>CIVIC_DEMOCRACY</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>
@@ -13782,7 +13782,7 @@
 			<iWeight>100</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
-			<Civic>CIVIC_DEMOCRACY</Civic>
+			<Civic>CIVIC_CONSTITUTION</Civic>
 			<iMinTreasury>0</iMinTreasury>
 			<iMinPopulation>0</iMinPopulation>
 			<iMaxPopulation>0</iMaxPopulation>

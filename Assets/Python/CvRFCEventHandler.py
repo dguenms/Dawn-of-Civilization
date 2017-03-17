@@ -150,7 +150,7 @@ class CvRFCEventHandler:
 				utils.moveCapital(iMongolia, (102, 47)) # Khanbaliq
 				
 		# remove slaves if unable to practice slavery
-		if gc.getPlayer(iPlayer).getCivics(1) == iCivicEgalitarianism:
+		if not gc.getPlayer(iPlayer).isColonialSlavery():
 			utils.removeSlaves(city)
 		else:
 			utils.freeSlaves(city, iPlayer)
@@ -377,7 +377,7 @@ class CvRFCEventHandler:
 		# catch slaves by defeating native and barbarian Pombos or Impis
 		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iImpi, iPombos]:
 			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
-				if gc.getPlayer(pWinningUnit.getOwner()).getCivics(2) == iCivicSlavery:
+				if gc.getPlayer(pWinningUnit.getOwner()).isEnslave():
 					iRand = gc.getGame().getSorenRandNum(5, "Caught slaves?")
 					if iRand == 1:
 						iNewUnit = utils.getUniqueUnitType(pWinningUnit.getOwner(), gc.getUnitInfo(iSlave).getUnitClassType())
@@ -429,7 +429,7 @@ class CvRFCEventHandler:
 		if iPlayer < iNumPlayers:
 			dc.onRevolution(iPlayer)
 			
-		if gc.getPlayer(iPlayer).getCivics(1) == iCivicEgalitarianism:
+		if not gc.getPlayer(iPlayer).isColonialSlavery():
 			utils.clearSlaves(iPlayer)
 			
 		if iPlayer in [iEgypt]:

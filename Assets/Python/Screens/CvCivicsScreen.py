@@ -361,7 +361,7 @@ class CvCivicsScreen:
 			
 			sName = "CivicName" + str(iCivic)
 			sText = gc.getCivicInfo(iCivic).getDescription()
-			iCombovalue = Stability.getCivicCombinationStability(self.iActivePlayer, iHoverCivic, iCivic)
+			iCombovalue = Stability.getCivicStability(self.iActivePlayer, [iHoverCivic, iCivic])
 			bGood = iCombovalue > 0
 			bBad = iCombovalue < 0
 			

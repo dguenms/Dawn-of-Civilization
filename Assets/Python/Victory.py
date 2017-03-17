@@ -960,7 +960,7 @@ def checkTurn(iGameTurn, iPlayer):
 		
 		# third goal: have friendly relations with five communist civilizations by 1950 AD
 		if isPossible(iRussia, 2):
-			if countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (3, iCivicCentralPlanning)) >= 5:
+			if countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning)) >= 5:
 				win(iRussia, 2)
 				
 		if iGameTurn == getTurnForYear(1950):
@@ -2017,7 +2017,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 		# third Protestant goal: make sure at least half of all civilizations are Protestant or Secular
 		elif iGoal == 2:
 			iProtestantCivs, iTotal = countReligionPlayers(iProtestantism)
-			iSecularCivs, iTotal = countCivicPlayers(4, iCivicSecularism)
+			iSecularCivs, iTotal = countCivicPlayers(iCivicsReligion, iSecularism)
 			
 			if 2 * (iProtestantCivs + iSecularCivs) >= iTotal: return 1
 			
@@ -2152,9 +2152,9 @@ def checkReligiousGoal(iPlayer, iGoal):
 			
 		# second Secular goal: make sure there are 25 universities, 10 Great Scientists and 10 Great Statesmen in secular civilizations
 		elif iGoal == 1:
-			iUniversities = countCivicBuildings(4, iCivicSecularism, iUniversity)
-			iScientists = countCivicSpecialists(4, iCivicSecularism, iSpecialistGreatScientist)
-			iStatesmen = countCivicSpecialists(4, iCivicSecularism, iSpecialistGreatStatesman)
+			iUniversities = countCivicBuildings(iCivicsReligion, iSecularism, iUniversity)
+			iScientists = countCivicSpecialists(iCivicsReligion, iSecularism, iSpecialistGreatScientist)
+			iStatesmen = countCivicSpecialists(iCivicsReligion, iSecularism, iSpecialistGreatStatesman)
 			if iUniversities >= 25 and iScientists >= 10 and iStatesmen >= 10: return 1
 			
 		# third Secular goal: make sure the five most advanced civilizations are secular
@@ -2162,7 +2162,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 			iCount = 0
 			lAdvancedPlayers = utils.getSortedList([iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).isAlive() and not utils.isAVassal(iLoopPlayer)], lambda iLoopPlayer: gc.getTeam(iLoopPlayer).getTotalTechValue(), True)
 			for iLoopPlayer in lAdvancedPlayers[:5]:
-				if gc.getPlayer(iLoopPlayer).getCivics(4) == iCivicSecularism:
+				if gc.getPlayer(iLoopPlayer).getCivics(iCivicsReligion) == iSecularism:
 					iCount += 1
 			if iCount >= 5: return 1
 			
@@ -2887,7 +2887,7 @@ def getURVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iMerchants >= 5) + localText.getText("TXT_KEY_VICTORY_PROTESTANT_MERCHANTS", (iMerchants, 5)) + ' ' + getIcon(iEngineers >= 5) + localText.getText("TXT_KEY_VICTORY_PROTESTANT_ENGINEERS", (iEngineers, 5)))
 		elif iGoal == 2:
 			iProtestantCivs, iTotal = countReligionPlayers(iProtestantism)
-			iSecularCivs, iTotal = countCivicPlayers(4, iCivicSecularism)
+			iSecularCivs, iTotal = countCivicPlayers(iCivicsReligion, iSecularism)
 			iNumProtestantCivs = iProtestantCivs + iSecularCivs
 			aHelp.append(getIcon(2 * iNumProtestantCivs >= iTotal) + localText.getText("TXT_KEY_VICTORY_PROTESTANT_CIVS", (iNumProtestantCivs, iTotal)))
 
@@ -2994,9 +2994,9 @@ def getURVHelp(iPlayer, iGoal):
 					iCount += 1
 			aHelp.append(getIcon(iCount >= iNumReligions) + localText.getText("TXT_KEY_VICTORY_DIFFERENT_CATHEDRALS", (iCount, iNumReligions)))
 		elif iGoal == 1:
-			iUniversities = countCivicBuildings(4, iCivicSecularism, iUniversity)
-			iScientists = countCivicSpecialists(4, iCivicSecularism, iSpecialistGreatScientist)
-			iStatesmen = countCivicSpecialists(4, iCivicSecularism, iSpecialistGreatStatesman)
+			iUniversities = countCivicBuildings(iCivicsReligion, iSecularism, iUniversity)
+			iScientists = countCivicSpecialists(iCivicsReligion, iSecularism, iSpecialistGreatScientist)
+			iStatesmen = countCivicSpecialists(iCivicsReligion, iSecularism, iSpecialistGreatStatesman)
 			aHelp.append(getIcon(iUniversities >= 25) + localText.getText("TXT_KEY_VICTORY_SECULAR_UNIVERSITIES", (iUniversities, 25)))
 			aHelp.append(getIcon(iScientists >= 10) + localText.getText("TXT_KEY_VICTORY_SECULAR_SCIENTISTS", (iScientists, 10)) + ' ' + getIcon(iStatesmen >= 10) + localText.getText("TXT_KEY_VICTORY_SECULAR_STATESMEN", (iStatesmen, 10)))
 		elif iGoal == 2:
@@ -3004,7 +3004,7 @@ def getURVHelp(iPlayer, iGoal):
 			lAdvancedPlayers = utils.getSortedList([iLoopPlayer for iLoopPlayer in range(iNumPlayers) if gc.getPlayer(iLoopPlayer).isAlive() and not utils.isAVassal(iLoopPlayer)], lambda iLoopPlayer: gc.getTeam(iLoopPlayer).getTotalTechValue(), True)
 			for iLoopPlayer in lAdvancedPlayers[:5]:
 				pLoopPlayer = gc.getPlayer(iLoopPlayer)
-				sString += getIcon(pLoopPlayer.getCivics(4) == iCivicSecularism) + pLoopPlayer.getCivilizationShortDescription(0) + ' '
+				sString += getIcon(pLoopPlayer.getCivics(iCivicsReligion) == iSecularism) + pLoopPlayer.getCivilizationShortDescription(0) + ' '
 			aHelp.append(sString)
 				
 	return aHelp
@@ -3414,7 +3414,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bApolloProgram = teamRussia.getProjectCount(iApolloProgram) > 0
 			aHelp.append(getIcon(bManhattanProject) + localText.getText("TXT_KEY_PROJECT_MANHATTAN_PROJECT", ()) + ' ' + getIcon(bApolloProgram) + localText.getText("TXT_KEY_PROJECT_APOLLO_PROGRAM", ()))
 		elif iGoal == 2:
-			iCount = countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (3, iCivicCentralPlanning))
+			iCount = countPlayersWithAttitudeAndCivic(iPlayer, AttitudeTypes.ATTITUDE_FRIENDLY, (iCivicsEconomy, iCentralPlanning))
 			aHelp.append(getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_COMMUNIST_BROTHERS", (iCount, 5)))
 
 	elif iPlayer == iMali:
