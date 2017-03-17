@@ -34000,7 +34000,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>20</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_OLIGARCHY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_ELECTIVE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -48948,7 +48948,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_OLIGARCHY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_MONASTICISM</FavoriteCivic>
 			<FavoriteReligion>RELIGION_ISLAM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -50557,7 +50557,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_OLIGARCHY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_ELECTIVE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>
@@ -53269,7 +53269,7 @@
 			<VassalRefuseAttitudeThreshold>ATTITUDE_PLEASED</VassalRefuseAttitudeThreshold>
 			<iVassalPowerModifier>0</iVassalPowerModifier>
 			<iFreedomAppreciation>10</iFreedomAppreciation>
-			<FavoriteCivic>CIVIC_OLIGARCHY</FavoriteCivic>
+			<FavoriteCivic>CIVIC_ELECTIVE</FavoriteCivic>
 			<FavoriteReligion>RELIGION_CATHOLICISM</FavoriteReligion>
 			<Traits/>
 			<Flavors>

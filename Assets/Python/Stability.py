@@ -1574,8 +1574,8 @@ def calculateStability(iPlayer):
 	lParameters[iParameterVassals] = iVassalStability
 	lParameters[iParameterDefensivePacts] = iDefensivePactStability
 	lParameters[iParameterRelations] = iRelationStability
-	lParameters[iParameterNationhood] = iAutocracyStability
-	lParameters[iParameterTheocracy] = iFanaticismStability
+	lParameters[iParameterNationhood] = iNationhoodStability
+	lParameters[iParameterTheocracy] = iTheocracyStability
 	lParameters[iParameterMultilateralism] = iMultilateralismStability
 			
 	iForeignStability += iNeighborStability + iVassalStability + iDefensivePactStability + iRelationStability + iNationhoodStability + iTheocracyStability + iMultilateralismStability
@@ -1769,7 +1769,7 @@ def getCivicStability(iPlayer, lCivics):
 	if iMonarchy in civics:
 		if civics.any(iClergy, iMonasticism): iStability += 2
 		
-	if iOligarchy in civics:
+	if iElective in civics:
 		if iCentralism in civics: iStability -= 5
 		
 	if iConstitution in civics:
@@ -1970,8 +1970,8 @@ def isTolerated(iPlayer, iReligion):
 	# should not be asked, but still check
 	if iStateReligion == iReligion: return True
 	
-	# Secularism civic
-	if pPlayer.getCivics(4) == iCivicSecularism: return True
+	# civics
+	if pPlayer.getCivics(4) in [iTolerance, iSecularism]: return True
 	
 	# Mughal UP
 	if iPlayer == iMughals: return True

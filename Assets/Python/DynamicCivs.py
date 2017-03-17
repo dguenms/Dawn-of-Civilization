@@ -736,7 +736,7 @@ def isRepublic(iPlayer):
 	
 	if iGovernment == iDemocracy: return True
 	
-	if iGovernment in [iDespotism, iRepublic, iOligarchy] and iLegitimacy == iConstitution: return True
+	if iGovernment in [iDespotism, iRepublic, iElective] and iLegitimacy == iConstitution: return True
 	
 	return False
 	
@@ -745,7 +745,7 @@ def isCityStates(iPlayer):
 	
 	if iLegitimacy not in [iAuthority, iCitizenship]: return False
 	
-	if iGovernment in [iRepublic, iOligarchy, iDemocracy]: return True
+	if iGovernment in [iRepublic, iElective, iDemocracy]: return True
 	
 	if iGovernment == iChiefdom and iPlayer in lCityStatesStart: return True
 	
