@@ -363,6 +363,7 @@ public:
 	void setCurrentEra(int /*EraTypes*/ iNewValue);
 
 	int /*ReligonTypes*/ getStateReligion();
+	int getLastStateReligion();
 	void setLastStateReligion(int /*ReligionTypes*/ iNewReligion);
 
 	int getTeam();

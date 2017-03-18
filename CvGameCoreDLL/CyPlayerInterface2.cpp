@@ -111,5 +111,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("isEnslave", &CyPlayer::isEnslave, "bool ()")
 		.def("isSlavery", &CyPlayer::isSlavery, "bool ()")
 		.def("isColonialSlavery", &CyPlayer::isColonialSlavery, "bool ()")
+		.def("getLastStateReligion", &CyPlayer::getLastStateReligion, "int ()")
 		;
 }

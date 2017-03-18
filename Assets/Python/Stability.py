@@ -1162,6 +1162,8 @@ def calculateStability(iPlayer):
 	
 	bTotalitarianism = iCivicSociety == iTotalitarianism
 	bTheocracy = iCivicReligion == iTheocracy
+	bTributaries = iCivicTerritory == iTributaries
+	bIsolationism = iCivicTerritory == iIsolationism
 	bColonialism = iCivicTerritory == iColonialism
 	bNationhood = iCivicTerritory == iNationhood
 	bMultilateralism = iCivicTerritory == iMultilateralism
@@ -1529,7 +1531,7 @@ def calculateStability(iPlayer):
 			elif getStabilityLevel(iLoopPlayer) == iStabilityUnstable: iVassalStability -= 1
 			elif getStabilityLevel(iLoopPlayer) == iStabilitySolid: iVassalStability += 2
 			
-			if bVassalage: iVassalStability += 2
+			if bTributaries: iVassalStability += 2
 			
 		# defensive pacts
 		if tPlayer.isDefensivePact(iLoopPlayer):
@@ -1569,6 +1571,10 @@ def calculateStability(iPlayer):
 	
 	if iNumContacts <= 2 * min(iCurrentEra, 2) + 1:
 		iRelationStability = 0
+		
+	if bIsolationism:
+		if iRelationStability < 0: iRelationStability = 0
+		if iRelationStability > 0: iRelationStability /= 2
 	
 	lParameters[iParameterNeighbors] = iNeighborStability
 	lParameters[iParameterVassals] = iVassalStability

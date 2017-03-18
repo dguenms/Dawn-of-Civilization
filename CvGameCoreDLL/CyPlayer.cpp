@@ -1561,6 +1561,11 @@ int /*ReligonTypes*/ CyPlayer::getStateReligion()
 	return m_pPlayer ? (int) m_pPlayer->getStateReligion() : NO_RELIGION;
 }
 
+int CyPlayer::getLastStateReligion()
+{
+	return m_pPlayer ? (int) m_pPlayer->getLastStateReligion() : NO_RELIGION;
+}
+
 void CyPlayer::setLastStateReligion(int /*ReligionTypes*/ iNewReligion)
 {
 	if (m_pPlayer)
