@@ -1758,5 +1758,9 @@
 			<Type>INTERFACE_TECH_FREETECH</Type>
 			<Path>Art/Interface/Screens/TechTree/Free_Technology.dds</Path>
 		</InterfaceArtInfo>
+		<InterfaceArtInfo>
+			<Type>BUTTON_RELIGION_PESEDJET</Type>
+			<Path>Art/Interface/Buttons/Religions/Pesedjet.dds</Path>
+		</InterfaceArtInfo>
 	</InterfaceArtInfos>
 </Civ4ArtDefines>

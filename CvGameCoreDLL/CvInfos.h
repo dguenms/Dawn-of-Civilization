@@ -2306,9 +2306,15 @@ public:
 	DllExport const wchar* getAdjectiveKey() const;				// Exposed to Python
 	std::wstring pyGetAdjectiveKey() { return getAdjectiveKey(); }				// Exposed to Python
 
+	std::wstring pyGetPaganReligionName(uint uiForm) { return getPaganReligionName(uiForm); }
+	const wchar* getPaganReligionName(uint uiForm = 0);
+	const wchar* getPaganReligionKey() const;
+	std::wstring pyGetPaganReligionKey() { return getPaganReligionKey(); }
+
 	DllExport const TCHAR* getFlagTexture() const;
 	DllExport const TCHAR* getArtDefineTag() const;
 	DllExport void setArtDefineTag(const TCHAR* szVal);
+	const TCHAR* getPaganReligionButton() const;
 	// Arrays
 
 	DllExport int getCivilizationBuildings(int i) const;				// Exposed to Python
@@ -2361,6 +2367,8 @@ protected:
 	CvString m_szArtDefineTag;
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
+	CvWString m_szPaganReligionKey; // Leoreth
+	CvString m_szPaganReligionButton; // Leoreth
 	std::string m_szIdentifier; // Leoreth
 	// Arrays
 
@@ -2381,6 +2389,7 @@ protected:
 
 	mutable std::vector<CvWString> m_aszShortDescription;
 	mutable std::vector<CvWString> m_aszAdjective;
+	mutable std::vector<CvWString> m_aszPaganReligion;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
