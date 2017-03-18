@@ -17512,6 +17512,15 @@ void CvGameTextMgr::setConvertHelp(CvWStringBuffer& szBuffer, PlayerTypes ePlaye
 	{
 		szReligion = GC.getReligionInfo(eReligion).getTextKeyWide();
 	}
+	else 
+	{
+		CvWString szPaganReligionName = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getPaganReligionName();
+
+		if (!szPaganReligionName.length() == 0)
+		{
+			szReligion = szPaganReligionName;
+		}
+	}
 
 	szBuffer.assign(gDLL->getText("TXT_KEY_MISC_CANNOT_CONVERT_TO", szReligion.GetCString()));
 

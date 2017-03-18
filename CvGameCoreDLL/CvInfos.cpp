@@ -10152,6 +10152,7 @@ void CvCivilizationInfo::reset()
 	CvInfoBase::reset();
 	m_aszAdjective.clear();
 	m_aszShortDescription.clear();
+	m_aszPaganReligion.clear();
 }
 
 
@@ -10230,6 +10231,23 @@ const wchar* CvCivilizationInfo::getAdjectiveKey() const
 	return m_szAdjectiveKey;
 }
 
+// Leoreth
+const wchar* CvCivilizationInfo::getPaganReligionName(uint uiForm)
+{
+	while (m_aszPaganReligion.size() <= uiForm)
+	{
+		m_aszPaganReligion.push_back(gDLL->getObjectText(m_szPaganReligionKey, m_aszPaganReligion.size()));
+	}
+
+	return m_aszPaganReligion[uiForm];
+}
+
+// Leoreth
+const wchar* CvCivilizationInfo::getPaganReligionKey() const
+{
+	return m_szPaganReligionKey;
+}
+
 const TCHAR* CvCivilizationInfo::getFlagTexture() const
 {
 	return ARTFILEMGR.getCivilizationArtInfo( getArtDefineTag() )->getPath();
@@ -10243,6 +10261,17 @@ const TCHAR* CvCivilizationInfo::getArtDefineTag() const
 void CvCivilizationInfo::setArtDefineTag(const TCHAR* szVal)
 {
 	m_szArtDefineTag = szVal;
+}
+
+// Leoreth
+const TCHAR* CvCivilizationInfo::getPaganReligionButton() const
+{
+	if (m_szPaganReligionButton.IsEmpty())
+	{
+		return NULL;
+	}
+
+	return m_szPaganReligionButton;
 }
 
 // Arrays
@@ -10374,6 +10403,8 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->ReadString(m_szArtDefineTag);
 	stream->ReadString(m_szShortDescriptionKey);
 	stream->ReadString(m_szAdjectiveKey);
+	stream->ReadString(m_szPaganReligionKey); // Leoreth
+	stream->ReadString(m_szPaganReligionButton); // Leoreth
 	stream->ReadString(m_szIdentifier); // Leoreth
 
 	// Arrays
@@ -10448,6 +10479,8 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->WriteString(m_szArtDefineTag);
 	stream->WriteString(m_szShortDescriptionKey);
 	stream->WriteString(m_szAdjectiveKey);
+	stream->WriteString(m_szPaganReligionKey); // Leoreth
+	stream->WriteString(m_szPaganReligionButton); // Leoreth
 	stream->WriteString(m_szIdentifier); // Leoreth
 
 	// Arrays
@@ -10482,6 +10515,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(m_szAdjectiveKey, "Adjective");
 	// Get the Text from Text/Civ4GameTextXML.xml
+
+	pXML->GetChildXmlValByName(m_szPaganReligionKey, "PaganReligionName"); // Leoreth
+	pXML->GetChildXmlValByName(m_szPaganReligionButton, "PaganReligionButton"); // Leoreth
 
 	// Leoreth
 	pXML->GetChildXmlValByName(m_szIdentifier, "Identifier");
