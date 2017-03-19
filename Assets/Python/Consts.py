@@ -1552,7 +1552,7 @@ iBunker, iBombShelters, iGranary, iTerrace, iSmokehouse, iAqueduct, iBaray, iNor
 iReservoir, iHammam, iPharmacy, iAlchemist, iSewer, iPark, iHospital, iRecyclingCenter, iLighthouse, iTradingPost, 
 iHarbor, iCustomsHouse, iFeitoria, iWharf, iPostOffice, iTambo, iDrydock, iAirport, iForge, iMint, 
 iArtStudio, iFactory, iAssemblyPlant, iZaibatsu, iCoalPlant, iHydroPlant, iNuclearPlant, iSolarPlant, iElectricalGrid, iIndustrialPark, 
-iPaganTemple, iZiggurat, iMonument, iObelisk, iStele, iCandi, iEdict, iTotemPole, iPublicTransportation, iLibrary, 
+iPaganTemple, iMonument, iObelisk, iStele, iCandi, iEdict, iTotemPole, iPublicTransportation, iLibrary, iEdubba,
 iTaixue, iHoTrai, iSangam, iUniversity, iSeowon, iGompa, iObservatory, iLaboratory, iResearchInstitute, iWeaver, 
 iMbwadi, iTheatre, iOdeon, iHippodrome, iPavilion, iAmphitheatre, iBallCourt, iCharreadaArena, iMalae, iGarden, 
 iCinema, iBroadcastTower, iMarket, iForum, iApothecary, iCaravanserai, iGlassmaker, iBank, iRoyalExchange, iRailwayStation, 
