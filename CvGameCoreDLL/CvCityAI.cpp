@@ -3050,7 +3050,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case BABYLONIA:
 										if (iI == HANGING_GARDENS || iI == ISHTAR_GATE) iTempValue *= 5;
-										else if (iI == PYRAMIDS) iTempValue /= 3;
+										else if (iI == PYRAMIDS || iI == GREAT_SPHINX) iTempValue /= 4;
 										else if (iI == SPIRAL_MINARET) iTempValue *= 2;
 										else if (iI == GREAT_WALL) iTempValue /= 4;
 										else if (iI == ORACLE) iTempValue /= 6;
