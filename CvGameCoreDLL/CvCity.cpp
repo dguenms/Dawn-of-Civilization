@@ -953,7 +953,7 @@ void CvCity::kill(bool bUpdatePlotGroups)
 
 	// Leoreth
 	TeamTypes eMasterTeam = GET_TEAM(getTeam()).getMaster();
-	if (eMasterTeam != NULL)
+	if (eMasterTeam != NO_TEAM)
 	{
 		CvPlayer& kMasterPlayer = GET_PLAYER(GET_TEAM(eMasterTeam).getLeaderID());
 		kMasterPlayer.changeCapitalCommerce(-kMasterPlayer.getVassalCityCommerce());
