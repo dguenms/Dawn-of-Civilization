@@ -1208,6 +1208,74 @@
 		<English>Edubba</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PESEDJET_TEMPLE</Tag>
+		<English>Pesedjet Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ANCESTOR_SHRINE</Tag>
+		<English>Ancestor Shrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VEDIC_TEMPLE</Tag>
+		<English>Vedic Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OLYMPIAN_TEMPLE</Tag>
+		<English>Olympian Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAALIST_TEMPLE</Tag>
+		<English>Baalist Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FALE_TELE</Tag>
+		<English>Fale Tele</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MAZDAIST_TEMPLE</Tag>
+		<English>Mazdaist Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEOTL_STEP_PYRAMID</Tag>
+		<English>Teotl Step Pyramid</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SHINTO_SHRINE</Tag>
+		<English>Shinto Shrine</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASATRU_HOF</Tag>
+		<English>Asatru Hof</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DRUIDIC_NEMETON</Tag>
+		<English>Druidic Nemeton</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PERUN_SHRINE</Tag>
+		<English>Shrine of Perun</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_YORUBA_TEMPLE</Tag>
+		<English>Yoruba Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INTI_TEMPLE</Tag>
+		<English>Inti Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TENGRI_OBO</Tag>
+		<English>Tengri Obo</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HUBAL_TEMPLE</Tag>
+		<English>Hubal Temple</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ASTAR_TEMPLE</Tag>
+		<English>Astar Temple</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 	</TEXT>

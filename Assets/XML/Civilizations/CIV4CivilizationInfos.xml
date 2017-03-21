@@ -55,6 +55,10 @@
 					<BuildingClassType>BUILDINGCLASS_DEPARTMENT_STORE</BuildingClassType>
 					<BuildingType>BUILDING_AMERICAN_MALL</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -147,6 +151,10 @@
 					<BuildingClassType>BUILDINGCLASS_PHARMACY</BuildingClassType>
 					<BuildingType>BUILDING_ARABIAN_ALCHEMIST</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -236,6 +244,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SUPERMARKET</BuildingClassType>
 					<BuildingType>BUILDING_ARGENTINE_REFRIGERATION_PLANT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -354,6 +366,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
 					<BuildingType>BUILDING_AZTEC_SACRIFICIAL_ALTAR</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -547,6 +563,10 @@
 					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_BRAZILIAN_FAZENDA</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -645,6 +665,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
 					<BuildingType>BUILDING_BYZANTINE_HIPPODROME</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -752,6 +776,10 @@
 					<BuildingClassType>BUILDINGCLASS_CONSTABULARY</BuildingClassType>
 					<BuildingType>BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -853,6 +881,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 					<BuildingType>BUILDING_PHOENICIAN_GLASSMAKER</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_BAALIST_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1167,6 +1199,10 @@
 					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 					<BuildingType>BUILDING_CHINESE_TAIXUE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -1228,6 +1264,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_COLOMBIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
 			<Identifier>COL</Identifier>
 			<StartingYear>1814</StartingYear>
 			<LoadingTimes>
@@ -1258,6 +1296,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_COLOMBIAN_HACIENDA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1371,6 +1413,10 @@
 					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_EGYPTIAN_OBELISK</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PESEDJET_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -1476,6 +1522,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_BANK</BuildingClassType>
 					<BuildingType>BUILDING_ENGLISH_ROYAL_EXCHANGE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1595,6 +1645,10 @@
 					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_ETHIOPIAN_STELE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASTAR_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -1693,6 +1747,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_COFFEEHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_FRENCH_SALON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1817,6 +1875,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
 					<BuildingType>BUILDING_GERMAN_ASSEMBLY_PLANT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1944,6 +2006,10 @@
 					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
 					<BuildingType>BUILDING_GREEK_ODEON</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2051,6 +2117,10 @@
 					<BuildingClassType>BUILDINGCLASS_BATH</BuildingClassType>
 					<BuildingType>BUILDING_HARAPPAN_RESERVOIR</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2145,6 +2215,10 @@
 					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
 					<BuildingType>BUILDING_HOLY_ROMAN_RATHAUS</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2237,6 +2311,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_POST_OFFICE</BuildingClassType>
 					<BuildingType>BUILDING_INCAN_TAMBO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2341,6 +2419,10 @@
 					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_INDIAN_EDICT</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2442,6 +2524,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_INDONESIAN_CANDI</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2548,6 +2634,10 @@
 					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 					<BuildingType>BUILDING_IRANIAN_CARAVANSERAI</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_MAZDAIST_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2642,6 +2732,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
 					<BuildingType>BUILDING_ITALIAN_ART_STUDIO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2747,6 +2841,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
 					<BuildingType>BUILDING_JAPANESE_ZAIBATSU</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_SHINTO_SHRINE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2860,6 +2958,10 @@
 					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
 					<BuildingType>BUILDING_KHMER_BARAY</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2960,6 +3062,10 @@
 					<BuildingClassType>BUILDINGCLASS_WEAVER</BuildingClassType>
 					<BuildingType>BUILDING_CONGOLESE_MBWADI</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3057,6 +3163,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
 					<BuildingType>BUILDING_KOREAN_SEOWON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3171,6 +3281,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
 					<BuildingType>BUILDING_MANDE_MINT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3288,6 +3402,10 @@
 					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
 					<BuildingType>BUILDING_MAYAN_BALL_COURT</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3377,6 +3495,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
 					<BuildingType>BUILDING_MEXICAN_CHARREADA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3471,6 +3593,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
 					<BuildingType>BUILDING_MONGOLIAN_GER</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3583,6 +3709,10 @@
 					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
 					<BuildingType>BUILDING_MOORISH_NORIA</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PHARMACY</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3685,6 +3815,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_MUGHAL_MAUSOLEUM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3922,6 +4056,10 @@
 					<BuildingClassType>BUILDINGCLASS_LEVEE</BuildingClassType>
 					<BuildingType>BUILDING_DUTCH_DIKE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4016,6 +4154,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_BATH</BuildingClassType>
 					<BuildingType>BUILDING_OTTOMAN_HAMMAM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4136,6 +4278,10 @@
 					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 					<BuildingType>BUILDING_PERSIAN_APOTHECARY</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_MAZDAIST_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4249,6 +4395,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
 					<BuildingType>BUILDING_POLISH_SEJMIK</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4373,6 +4523,10 @@
 					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
 					<BuildingType>BUILDING_POLYNESIAN_MALAE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_FALE_TELE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4481,6 +4635,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_TRADING_COMPANY</BuildingClassType>
 					<BuildingType>BUILDING_IBERIAN_TRADING_COMPANY</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4600,6 +4758,10 @@
 					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 					<BuildingType>BUILDING_ROMAN_FORUM</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4682,6 +4844,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
 					<BuildingType>BUILDING_RUSSIAN_RESEARCH_INSTITUTE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4987,6 +5153,10 @@
 					<BuildingClassType>BUILDINGCLASS_TRADING_COMPANY</BuildingClassType>
 					<BuildingType>BUILDING_IBERIAN_TRADING_COMPANY</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5190,6 +5360,10 @@
 					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 					<BuildingType>BUILDING_TAMIL_SANGAM</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5297,6 +5471,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 					<BuildingType>BUILDING_THAI_HO_TRAI</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -5426,6 +5604,10 @@
 					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
 					<BuildingType>BUILDING_TIBETAN_GOMPA</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5525,6 +5707,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_VIKING_TRADING_POST</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
