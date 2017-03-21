@@ -17512,7 +17512,7 @@ void CvGameTextMgr::setConvertHelp(CvWStringBuffer& szBuffer, PlayerTypes ePlaye
 	{
 		szReligion = GC.getReligionInfo(eReligion).getTextKeyWide();
 	}
-	else 
+	else if (GET_PLAYER(ePlayer).isStateReligion())
 	{
 		CvWString szPaganReligionName = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getPaganReligionName();
 
