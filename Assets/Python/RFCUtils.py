@@ -1951,7 +1951,7 @@ class RFCUtils:
 		'4 = World Wonder'
 
 		BuildingInfo = gc.getBuildingInfo(iBuilding)
-		if BuildingInfo.isGraphicalOnly():
+		if False: #BuildingInfo.isGraphicalOnly():
 			return -1
 		elif BuildingInfo.getReligionType() > -1:
 			return 1
