@@ -383,6 +383,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_COMBAT2</PromotionPrereqOr1>
 			<PromotionPrereqOr2>PROMOTION_DRILL2</PromotionPrereqOr2>
+			<TechPrereq>TECH_GENERALSHIP</TechPrereq>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
@@ -482,6 +483,7 @@
 			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_COMBAT2</PromotionPrereqOr1>
+			<TechPrereq>TECH_SEAFARING</TechPrereq>
 			<bAmphib>1</bAmphib>
 			<bRiver>1</bRiver>
 			<UnitCombats>
@@ -615,6 +617,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_COMBAT1</PromotionPrereqOr1>
 			<PromotionPrereqOr2>PROMOTION_DRILL1</PromotionPrereqOr2>
+			<TechPrereq>TECH_MEDICINE</TechPrereq>
 			<iSameTileHealChange>10</iSameTileHealChange>
 			<UnitCombats>
 				<UnitCombat>
@@ -692,6 +695,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereq>PROMOTION_LEADER</PromotionPrereq>
 			<PromotionPrereqOr1>PROMOTION_MEDIC2</PromotionPrereqOr1>
+			<TechPrereq>TECH_LOGISTICS</TechPrereq>
 			<iSameTileHealChange>15</iSameTileHealChange>
 			<iAdjacentTileHealChange>15</iAdjacentTileHealChange>
 			<UnitCombats>
