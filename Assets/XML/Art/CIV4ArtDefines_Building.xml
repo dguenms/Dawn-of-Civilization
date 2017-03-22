@@ -2555,7 +2555,7 @@
 			<fInterfaceScale>0.15</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Vedic_Temple/door.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Vedic_Temple/vedic_temple.nif</Button>
+			<Button>Art/Structures/Buildings/Vedic_Temple/vedic_temple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_OLYMPIAN_TEMPLE</Type>
@@ -2575,7 +2575,7 @@
 			<fInterfaceScale>2.0</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Baalist_Temple/carthage_temple.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Baalist_Temple/carthage_temple.nif</Button>
+			<Button>Art/Structures/Buildings/Baalist_Temple/carthage_temple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_FALE_TELE</Type>
