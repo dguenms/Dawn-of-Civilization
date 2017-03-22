@@ -885,7 +885,7 @@
 			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Temple/christian/christian temple.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Temple_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,13</Button>
+			<Button>Art/Interface/Buttons/Buildings/catholic_temple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CATHOLIC_CATHEDRAL</Type>
@@ -895,7 +895,7 @@
 			<fInterfaceScale>0.42</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Cathedral_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,5,13</Button>
+			<Button>Art/Interface/Buttons/Buildings/catholic_cathedral.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CATHOLIC_MONASTERY</Type>
@@ -905,7 +905,7 @@
 			<fInterfaceScale>0.44</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Monastery/Christian/christian monastery.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Monastery_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,13</Button>
+			<Button>Art/Interface/Buttons/Buildings/catholic_monastery.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CATHOLIC_SHRINE</Type>
