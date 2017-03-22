@@ -283,7 +283,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CATHOLIC_MISSIONARY</Type>
-			<Button>,Art/Interface/Buttons/Units/Missionary_Christian.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,2,3</Button>
+			<Button>Art/Interface/Buttons/Units/catholic_missionary.dds</Button>
 			<fScale>0.44</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
