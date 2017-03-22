@@ -6165,7 +6165,8 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 
 	iAttitude = 0;
 
-	if ((getStateReligion() != NO_RELIGION) && (GET_PLAYER(ePlayer).getStateReligion() != NO_RELIGION) && (getStateReligion() != GET_PLAYER(ePlayer).getStateReligion()))
+	// Leoreth: if state religion, even have negative relations with non-state religion civs
+	if ((getStateReligion() != NO_RELIGION) && (getStateReligion() != GET_PLAYER(ePlayer).getStateReligion()))
 	{
 		// Leoreth: no penalties between Confucianism and Taoism
 		if (((getStateReligion() == CONFUCIANISM) && (GET_PLAYER(ePlayer).getStateReligion() == TAOISM)) || ((getStateReligion() == TAOISM) && (GET_PLAYER(ePlayer).getStateReligion() == CONFUCIANISM)))
@@ -6174,6 +6175,12 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 		}
 
 		iAttitude += GC.getLeaderHeadInfo(getPersonalityType()).getDifferentReligionAttitudeChange();
+
+		// Leoreth: halved penalty if other civ has no state religion
+		if (GET_PLAYER(ePlayer).getStateReligion() == NO_RELIGION)
+		{
+			iAttitude /= 2;
+		}
 
 		if (hasHolyCity(getStateReligion()))
 		{
