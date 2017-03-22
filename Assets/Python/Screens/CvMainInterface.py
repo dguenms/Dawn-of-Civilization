@@ -725,15 +725,15 @@ class CvMainInterface:
 			screen.setImageButton( szName, gc.getTechInfo(i).getButton(), 0, 0, 32, 32, WidgetTypes.WIDGET_RESEARCH, i, -1 )
 			screen.hide( szName )
 
-		i = 0
-		for i in range(gc.getNumReligionInfos()):
-			szName = "ReligionButton" + str(i)
-			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_PICK_RELIGION):
-				szButton = gc.getReligionInfo(i).getGenericTechButton()
-			else:
-				szButton = gc.getReligionInfo(i).getTechButton()
-			screen.setImageButton( szName, szButton, 0, 0, 32, 32, WidgetTypes.WIDGET_RESEARCH, gc.getReligionInfo(i).getTechPrereq(), -1 )
-			screen.hide( szName )
+		#i = 0
+		#for i in range(gc.getNumReligionInfos()):
+		#	szName = "ReligionButton" + str(i)
+		#	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_PICK_RELIGION):
+		#		szButton = gc.getReligionInfo(i).getGenericTechButton()
+		#	else:
+		#		szButton = gc.getReligionInfo(i).getTechButton()
+		#	screen.setImageButton( szName, szButton, 0, 0, 32, 32, WidgetTypes.WIDGET_RESEARCH, gc.getReligionInfo(i).getTechPrereq(), -1 )
+		#	screen.hide( szName )
 		
 		# *********************************************************************************
 		# CITIZEN BUTTONS
@@ -2506,7 +2506,7 @@ class CvMainInterface:
 					# Leoreth: Byzantine UP: bribe barbarians
 					if pUnit.getUnitType() == iSpy and not pUnit.isMadeAttack() and pUnit.getOwner() == iByzantium and pByzantium.getNumCities() > 0:
 						if utils.canDoByzantineBribery(pUnit):
-							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iBanking).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
+							screen.appendMultiListButton("BottomButtonContainer", gc.getTechInfo(iCurrency).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 10001, 10001, False)
 							screen.show("BottomButtonContainer")
 							iCount = iCount + 1
 
@@ -2532,9 +2532,9 @@ class CvMainInterface:
 		#screen.hide( "InterfaceOrnamentLeftLow" )
 		#screen.hide( "InterfaceOrnamentRightLow" )
 			
-		for i in range(gc.getNumReligionInfos()):
-			szName = "ReligionButton" + str(i)
-			screen.hide( szName )
+		#for i in range(gc.getNumReligionInfos()):
+		#	szName = "ReligionButton" + str(i)
+		#	screen.hide( szName )
 
 		i = 0
 		if ( CyInterface().shouldShowResearchButtons() and CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW ):
@@ -2545,13 +2545,13 @@ class CvMainInterface:
 					if (iCount < 20):
 						szName = "ResearchButton" + str(i)
 
-						bDone = False
-						for j in range( gc.getNumReligionInfos() ):
-							if ( not bDone ):
-								if (gc.getReligionInfo(j).getTechPrereq() == i):
-									if not (gc.getGame().isReligionSlotTaken(j)):
-										szName = "ReligionButton" + str(j)
-										bDone = True
+						#bDone = False
+						#for j in range( gc.getNumReligionInfos() ):
+						#	if ( not bDone ):
+						#		if (gc.getReligionInfo(j).getTechPrereq() == i):
+						#			if not (gc.getGame().isReligionSlotTaken(j)):
+						#				szName = "ReligionButton" + str(j)
+						#				bDone = True
 
 						screen.show( szName )
 						self.setResearchButtonPosition(szName, iCount)
