@@ -62,6 +62,7 @@ import TradeUtil
 
 import BugUnitPlot
 import WidgetUtil
+import FontUtil
 
 # globals
 utils = RFCUtils.RFCUtils() #Rhye
@@ -5121,8 +5122,10 @@ class CvMainInterface:
 														szBuffer = szBuffer + szTempBuffer
 														if (bAlignIcons):
 															scores.setPact()
-													if (gc.getPlayer(ePlayer).getStateReligion() != -1):
-														if (gc.getPlayer(ePlayer).hasHolyCity(gc.getPlayer(ePlayer).getStateReligion())):
+													if gc.getPlayer(ePlayer).isStateReligion():
+														if gc.getPlayer(ePlayer).getStateReligion() == -1:
+															szTempBuffer = self.getPaganReligionChar(ePlayer)
+														elif (gc.getPlayer(ePlayer).hasHolyCity(gc.getPlayer(ePlayer).getStateReligion())):
 															szTempBuffer = u"%c" %(gc.getReligionInfo(gc.getPlayer(ePlayer).getStateReligion()).getHolyCityChar())
 														else:
 															szTempBuffer = u"%c" %(gc.getReligionInfo(gc.getPlayer(ePlayer).getStateReligion()).getChar())
@@ -5723,3 +5726,10 @@ class CvMainInterface:
 		zsFieldOfView_Text = "%s [%i]" % (self.sFieldOfView_Text, self.iField_View)
 		screen.setLabel(self.szSliderTextId, "", zsFieldOfView_Text, CvUtil.FONT_RIGHT_JUSTIFY, self.iX_FoVSlider, self.iY_FoVSlider + 6, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 # BUG - field of view slider - end
+
+	def getPaganReligionChar(self, iPlayer):
+		paganReligionName = gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionName(0)
+		
+		if not paganReligionName: return ""
+	
+		return u"<font=2>%c</font>" % FontUtil.getChar(paganReligionName.lower())
