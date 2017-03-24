@@ -42,6 +42,22 @@
 	<symbol id="ss life support"/>
 	<symbol id="ss stasis chamber"/>
 	<symbol id="ss thruster"/>
+	<symbol id="pesedjet"/>
+	<symbol id="shendao"/>
+	<symbol id="anunnaki"/>
+	<symbol id="vedism"/>
+	<symbol id="olympianism"/>
+	<symbol id="baalism"/>
+	<symbol id="atua"/>
+	<symbol id="mazdaism"/>
+	<symbol id="teotl"/>
+	<symbol id="shinto"/>
+	<symbol id="asatru"/>
+	<symbol id="druidism"/>
+	<symbol id="rodnovery"/>
+	<symbol id="yoruba"/>
+	<symbol id="inti"/>
+	<symbol id="tengri"/>
 	<symbol id="citizen" from="POWER" offset="1"/>
 	<symbol id="greatgeneral" name="GREAT_GENERAL"/>
 	
