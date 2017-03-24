@@ -2551,7 +2551,7 @@
 			<Type>ART_DEF_BUILDING_VEDIC_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>10.0</fScale>
+			<fScale>2.0</fScale>
 			<fInterfaceScale>0.15</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Vedic_Temple/door.nif</NIF>
 			<KFM/>
@@ -2628,7 +2628,7 @@
 			<Button>Art/Structures/Buildings/Asatru_Hof/asatru_hof.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CELTIC_TEMPLE</Type>
+			<Type>ART_DEF_BUILDING_DRUIDIC_NEMETON</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>0.15</fScale>
