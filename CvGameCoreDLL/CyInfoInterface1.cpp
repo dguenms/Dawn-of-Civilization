@@ -580,6 +580,7 @@ void CyInfoPythonInterface1()
 		// Leoreth
 		.def("getOrPrereqReligion", &CvBuildingInfo::getOrPrereqReligion, "int ()")
 		.def("getOrStateReligion", &CvBuildingInfo::getOrStateReligion, "int ()")
+		.def("isPagan", &CvBuildingInfo::isPagan, "bool ()")
 
 		// Arrays
 

@@ -8194,7 +8194,7 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 						if (GC.getBuildingInfo(eLoopBuilding).getPrereqAndTech() == eTech)
 						{
 							szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_TECH_CAN_CONSTRUCT").c_str());
-							szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), (eLoopBuilding == NUM_BUILDINGS_PLAGUE ? gDLL->getText("TXT_KEY_BUILDING_EMBASSY_GENERIC").c_str() : GC.getBuildingInfo(eLoopBuilding).getDescription()));
+							szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), GC.getBuildingInfo(eLoopBuilding).getDescription());
 							setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", bFirst);
 							bFirst = false;
 						}
@@ -8205,7 +8205,7 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 								if (GC.getBuildingInfo(eLoopBuilding).getPrereqAndTechs(iJ) == eTech)
 								{
 								    szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_TECH_CAN_CONSTRUCT").c_str());
-									szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), (eLoopBuilding == NUM_BUILDINGS_PLAGUE ? gDLL->getText("TXT_KEY_BUILDING_EMBASSY_GENERIC").c_str() : GC.getBuildingInfo(eLoopBuilding).getDescription()));
+									szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), GC.getBuildingInfo(eLoopBuilding).getDescription());
 									setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", bFirst);
 									bFirst = false;
 									break;
@@ -11444,10 +11444,17 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 
 		if (kBuilding.isPagan())
 		{
-			if (NULL == pCity || NO_PLAYER == ePlayer || NO_RELIGION != GET_PLAYER(ePlayer).getStateReligion())
+			if (NULL == pCity || NO_PLAYER == ePlayer || NO_RELIGION != GET_PLAYER(ePlayer).getStateReligion() || pCity->getReligionCount() > 0)
 			{
+				const wchar* szPaganReligionName = gDLL->getText("TXT_KEY_RELIGION_PAGANISM");
+				
+				if (NO_PLAYER != ePlayer)
+				{
+					szPaganReligionName = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getPaganReligionName();
+				}
+
 				szBuffer.append(NEWLINE);
-				szBuffer.append(gDLL->getText("TXT_KEY_REQUIRES_NO_STATE_RELIGION"));
+				szBuffer.append(gDLL->getText("TXT_KEY_REQUIRES_PAGAN_RELIGION", szPaganReligionName));
 			}
 		}
 
@@ -20741,3 +20748,15 @@ bool CvGameTextMgr::setBuildingAdditionalBombardDefenseHelp(CvWStringBuffer &szB
 }
 // BUG - Building Additional Bombard Defense - end
 
+// Leoreth
+void CvGameTextMgr::parseMinorReligionHelp(CvWStringBuffer &szBuffer, CivilizationTypes eCivilization)
+{
+	const wchar* szPaganReligionName = GC.getCivilizationInfo(eCivilization).getPaganReligionName();
+
+	if (CvWString(szPaganReligionName).empty())
+	{		
+		szPaganReligionName = gDLL->getText("TXT_KEY_RELIGION_PAGANISM");
+	}
+
+	szBuffer.append(CvWString::format(SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), szPaganReligionName));
+}

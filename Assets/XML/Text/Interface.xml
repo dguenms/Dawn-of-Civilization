@@ -1686,8 +1686,8 @@
 		<German>[ICON_BULLET]Kann Sklaven in Kolonien verwenden</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_REQUIRES_NO_STATE_RELIGION</Tag>
-		<English>[COLOR_WARNING_TEXT]Requires no state religion[COLOR_REVERT]</English>
-		<German>[COLOR_WARNING_TEXT]Benötigt keine Staatsreligion[COLOR_REVERT]</German>
+		<Tag>TXT_KEY_REQUIRES_PAGAN_RELIGION</Tag>
+		<English>[COLOR_WARNING_TEXT]Requires %s1[COLOR_REVERT]</English>
+		<German>[COLOR_WARNING_TEXT]Benötigt %s1[COLOR_REVERT]</German>
 	</TEXT>
 </Civ4GameText>
