@@ -840,10 +840,10 @@
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_PROTESTANT_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
-			<bAnimated>1</bAnimated>
-			<fScale>2.0</fScale>
-			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Temple/christian/christian temple.nif</NIF>
+			<bAnimated>0</bAnimated>
+			<fScale>1.49</fScale>
+			<fInterfaceScale>0.42</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/ProtestantTemple.dds</Button>
 		</BuildingArtInfo>
@@ -851,9 +851,9 @@
 			<Type>ART_DEF_BUILDING_PROTESTANT_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.49</fScale>
-			<fInterfaceScale>0.42</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
+			<fScale>1.50</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Christian_Cathedral/kathedrale.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/ProtestantCathedral.dds</Button>
 		</BuildingArtInfo>
@@ -879,11 +879,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CATHOLIC_TEMPLE</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>1</bAnimated>
-			<fScale>2.0</fScale>
-			<fInterfaceScale>0.45</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Temple/christian/christian temple.nif</NIF>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.49</fScale>
+			<fInterfaceScale>0.42</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/catholic_temple.dds</Button>
 		</BuildingArtInfo>
@@ -891,9 +891,9 @@
 			<Type>ART_DEF_BUILDING_CATHOLIC_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.49</fScale>
-			<fInterfaceScale>0.42</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
+			<fScale>1.50</fScale>
+			<fInterfaceScale>0.65</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Christian_Cathedral/kathedrale.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/catholic_cathedral.dds</Button>
 		</BuildingArtInfo>
