@@ -632,6 +632,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseFeatureHelp(widgetDataStruct, szBuffer);
 		break;
 
+	// Leoreth
+	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
+		parseMinorReligionHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_PEDIA_DESCRIPTION:
 		parseDescriptionHelp(widgetDataStruct, szBuffer, false);
 		break;
@@ -930,6 +935,11 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 		doPediaFeatureJump(widgetDataStruct);
 		break;
 
+	// Leoreth
+	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
+		doPediaMinorReligionJump(widgetDataStruct);
+		break;
+
 	case WIDGET_PEDIA_DESCRIPTION:
 	case WIDGET_PEDIA_DESCRIPTION_NO_HELP:
 		doPediaDescription(widgetDataStruct);
@@ -1131,6 +1141,7 @@ bool CvDLLWidgetData::isLink(const CvWidgetDataStruct &widgetDataStruct) const
 	case WIDGET_PEDIA_JUMP_TO_CORPORATION:
 	case WIDGET_PEDIA_JUMP_TO_TERRAIN:
 	case WIDGET_PEDIA_JUMP_TO_FEATURE:
+	case WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION:
 	case WIDGET_PEDIA_FORWARD:
 	case WIDGET_PEDIA_BACK:
 	case WIDGET_PEDIA_MAIN:
@@ -1555,6 +1566,14 @@ void CvDLLWidgetData::doPediaBuildingJump(CvWidgetDataStruct &widgetDataStruct)
 {
 	CyArgsList argsList;
 	argsList.add(widgetDataStruct.m_iData1);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToBuilding", argsList.makeFunctionArgs());
+}
+
+// Leoreth
+void CvDLLWidgetData::doPediaMinorReligionJump(CvWidgetDataStruct &widgetDataStruct)
+{
+	CyArgsList argsList;
+	argsList.add(getUniqueBuilding((CivilizationTypes)widgetDataStruct.m_iData1, PAGAN_TEMPLE));
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToBuilding", argsList.makeFunctionArgs());
 }
 
@@ -4869,6 +4888,15 @@ void CvDLLWidgetData::parseCivilizationHelp(CvWidgetDataStruct &widgetDataStruct
 	if (widgetDataStruct.m_iData2 != 0)
 	{
 		GAMETEXT.parseCivInfos(szBuffer, (CivilizationTypes)widgetDataStruct.m_iData1);
+	}
+}
+
+// Leoreth
+void CvDLLWidgetData::parseMinorReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	if (widgetDataStruct.m_iData1 != 0)
+	{
+		GAMETEXT.parseMinorReligionHelp(szBuffer, (CivilizationTypes)widgetDataStruct.m_iData1);
 	}
 }
 
