@@ -1870,6 +1870,7 @@
 			<iCost>650</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_MEDIEVAL</Era>
+			<iFeatureProductionModifier>50</iFeatureProductionModifier>
 			<iAsset>32</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
@@ -3626,6 +3627,8 @@
 			<iCost>2400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<Era>ERA_INDUSTRIAL</Era>
+			<iFeatureProductionModifier>50</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>50</iWorkerSpeedModifier>
 			<iAsset>56</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>0</bGoodyTech>
