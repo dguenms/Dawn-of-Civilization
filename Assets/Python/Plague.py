@@ -295,8 +295,10 @@ class Plague:
 							if pPlot.getNumUnits() > iPreserveDefenders:
 								pass
 							else:
-								# Leoreth: keep units at 50% minimum
-								unit.setDamage(min(50, unit.getDamage() + iDamage - 20), iBarbarian)
+								iMaxDamage = 50
+								if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
+								
+								unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarian)
 							#print ("preserve")
 							continue
 				else:
@@ -306,8 +308,10 @@ class Plague:
 							if pPlot.getNumUnits() > iPreserveDefenders or gc.getTeam(gc.getPlayer(unit.getOwner()).getTeam()).isAtWar(iHuman):
 								pass
 							else:
-								# Leoreth: keep units at 50% minimum
-								unit.setDamage(min(50, unit.getDamage() + iDamage - 20), iBarbarian)
+								iMaxDamage = 50
+								if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
+								
+								unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - 20), iBarbarian)
 							#print ("preserve")
 							continue
 				if utils.isMortalUnit(unit): #another human handicap inside
@@ -328,7 +332,9 @@ class Plague:
 							if unit.getOwner() != iOwner and gc.getPlayer(unit.getOwner()).isHuman():
 								CyInterface().addMessage(unit.getOwner(), False, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_PROCESS_UNIT", ()) + " " + city.getName(), "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
 						#Leoreth: keep units at 50% minimum
-						unit.setDamage(min(50, unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2), iBarbarian)
+						iMaxDamage = 50
+						if unit.workRate(100) > 0 and not unit.canFight(): iMaxDamage = 100
+						unit.setDamage(min(iMaxDamage, unit.getDamage() + iDamage - unit.getExperience()/10 - unit.baseCombatStr()/2), iBarbarian)
 						#print ("process")
 						break
 
@@ -346,6 +352,12 @@ class Plague:
 			iImprovement = pPlot.getImprovementType()
 			if iImprovement == iTown:
 				pPlot.setImprovementType(iVillage)
+			elif iImprovement == iVillage:
+				pPlot.setImprovementType(iHamlet)
+			elif iImprovement == iHamlet:
+				pPlot.setImprovementType(iCottage)
+			elif iImprovement == iCottage:
+				pPlot.setImprovementType(-1)
 			if pPlot.isCity():
 				if (city.getX(), city.getY()) == (x, y):
 					self.killUnitsByPlague(city, pPlot, 0, 100, 0)
