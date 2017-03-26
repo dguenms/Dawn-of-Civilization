@@ -1918,6 +1918,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11368,6 +11374,12 @@
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -11403,6 +11415,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11439,6 +11457,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11474,6 +11498,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11510,6 +11540,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11546,6 +11582,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11582,6 +11624,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11618,6 +11666,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11654,6 +11708,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11690,6 +11750,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11726,6 +11792,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11761,6 +11833,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11796,6 +11874,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11832,6 +11916,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11868,6 +11958,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11903,6 +11999,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11939,6 +12041,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -11975,6 +12083,12 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
 			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<Flavors>
 				<Flavor>
