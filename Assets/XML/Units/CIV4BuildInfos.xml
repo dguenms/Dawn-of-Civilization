@@ -10,7 +10,7 @@
 			<Type>BUILD_ROAD</Type>
 			<Description>TXT_KEY_BUILD_ROAD</Description>
 			<PrereqTech>TECH_LEVERAGE</PrereqTech>
-			<iTime>300</iTime>
+			<iTime>400</iTime>
 			<RouteType>ROUTE_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<HotKey>KB_R</HotKey>
@@ -24,7 +24,7 @@
 			<Type>BUILD_ROMAN_ROAD</Type>
 			<Description>TXT_KEY_BUILD_ROMAN_ROAD</Description>
 			<PrereqTech>TECH_LEVERAGE</PrereqTech>
-			<iTime>300</iTime>
+			<iTime>400</iTime>
 			<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
 			<HotKey>KB_R</HotKey>
@@ -39,7 +39,7 @@
 			<Type>BUILD_RAILROAD</Type>
 			<Description>TXT_KEY_BUILD_RAILROAD</Description>
 			<PrereqTech>TECH_RAILROAD</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>800</iTime>
 			<RouteType>ROUTE_RAILROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_RAILROAD</EntityEvent>
 			<HotKey>KB_R</HotKey>
@@ -53,7 +53,7 @@
 			<Type>BUILD_HIGHWAY</Type>
 			<Description>TXT_KEY_BUILD_HIGHWAY</Description>
 			<PrereqTech>TECH_INFRASTRUCTURE</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>800</iTime>
 			<RouteType>ROUTE_HIGHWAY</RouteType>
 			<EntityEvent>ENTITY_EVENT_RAILROAD</EntityEvent>
 			<HotKey>KB_R</HotKey>
@@ -74,21 +74,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -163,21 +163,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -200,21 +200,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -251,21 +251,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -288,21 +288,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -325,21 +325,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -387,21 +387,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -424,21 +424,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -475,21 +475,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -531,21 +531,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -561,28 +561,28 @@
 			<Type>BUILD_COTTAGE</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
 			<PrereqTech>TECH_PROPERTY</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -605,7 +605,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -626,7 +626,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -647,7 +647,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -668,7 +668,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -689,7 +689,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_FALLOUT</FeatureType>
 					<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
-					<iTime>600</iTime>
+					<iTime>2000</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -748,7 +748,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -770,7 +770,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -794,21 +794,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -839,21 +839,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -877,21 +877,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -915,21 +915,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -953,21 +953,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -991,21 +991,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_CALENDAR</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1029,21 +1029,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1067,21 +1067,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1105,21 +1105,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1148,21 +1148,21 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -1180,28 +1180,28 @@
 			<Type>BUILD_COTTAGE_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
 			<PrereqTech>TECH_PROPERTY</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
 					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<PrereqTech>TECH_BLOOMERY</PrereqTech>
-					<iTime>400</iTime>
+					<iTime>600</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>300</iTime>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
