@@ -11452,15 +11452,15 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 		{
 			if (NULL == pCity || NO_PLAYER == ePlayer || NO_RELIGION != GET_PLAYER(ePlayer).getStateReligion() || pCity->getReligionCount() > 0)
 			{
-				const wchar* szPaganReligionName = gDLL->getText("TXT_KEY_RELIGION_PAGANISM");
+				CvWString szPaganReligionName = gDLL->getText("TXT_KEY_RELIGION_PAGANISM");
 				
 				if (NO_PLAYER != ePlayer)
 				{
-					szPaganReligionName = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getPaganReligionName();
+					szPaganReligionName = CvWString(GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getPaganReligionName());
 				}
 
 				szBuffer.append(NEWLINE);
-				szBuffer.append(gDLL->getText("TXT_KEY_REQUIRES_PAGAN_RELIGION", szPaganReligionName));
+				szBuffer.append(gDLL->getText("TXT_KEY_REQUIRES_PAGAN_RELIGION", szPaganReligionName.GetCString()));
 			}
 		}
 
