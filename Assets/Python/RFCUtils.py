@@ -1414,7 +1414,7 @@ class RFCUtils:
 		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(iBuildingClass)
 		
 	def getUniqueBuilding(self, iPlayer, iBuilding):
-		if iPlayer < 0: return iBuilding
+		if iPlayer < 0: return gc.getBuildingClassInfo(gc.getBuildingInfo(iBuilding).getBuildingClassType()).getDefaultBuildingIndex()
 		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(gc.getBuildingInfo(iBuilding).getBuildingClassType())
 		
 	def getStabilityLevel(self, iPlayer):

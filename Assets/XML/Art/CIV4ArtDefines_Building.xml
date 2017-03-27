@@ -2568,14 +2568,14 @@
 			<Button>Art/Structures/Buildings/Olympian_Temple/olympian_temple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CARTHAGE_TEMPLE</Type>
+			<Type>ART_DEF_BUILDING_BAALIST_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.5</fScale>
 			<fInterfaceScale>2.0</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Baalist_Temple/carthage_temple.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Baalist_Temple/carthage_temple.dds</Button>
+			<Button>Art/Structures/Buildings/Baalist_Temple/baalist_temple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_FALE_TELE</Type>
@@ -2618,7 +2618,7 @@
 			<Button>Art/Structures/Buildings/Shinto_Shrine/shinto_shrine.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_VIKING_TEMPLE</Type>
+			<Type>ART_DEF_BUILDING_ASATRU_HOF</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>5.0</fScale>
@@ -2638,7 +2638,7 @@
 			<Button>Art/Structures/Buildings/Druidic_Nemeton/druidic_nemeton.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_PERUN_TEMPLE</Type>
+			<Type>ART_DEF_BUILDING_PERUN_SHRINE</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>28</fScale>
