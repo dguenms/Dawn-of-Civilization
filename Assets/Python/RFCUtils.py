@@ -1629,6 +1629,7 @@ class RFCUtils:
 		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(iBuildingClass)
 		
 	def getUniqueBuilding(self, iPlayer, iBuilding):
+		if iPlayer < 0: return iBuilding
 		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(gc.getBuildingInfo(iBuilding).getBuildingClassType())
 		
 	def getStabilityLevel(self, iPlayer):
@@ -1951,9 +1952,7 @@ class RFCUtils:
 		'4 = World Wonder'
 
 		BuildingInfo = gc.getBuildingInfo(iBuilding)
-		if False: #BuildingInfo.isGraphicalOnly():
-			return -1
-		elif BuildingInfo.getReligionType() > -1:
+		if BuildingInfo.getReligionType() > -1:
 			return 1
 		elif isWorldWonderClass(BuildingInfo.getBuildingClassType()):
 			return 4
@@ -1964,8 +1963,12 @@ class RFCUtils:
 				return 3
 			else:
 				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
+					if gc.getBuildingInfo(iBuilding).isGraphicalOnly():
+						return 0
 					return 2
 				else:
+					if gc.getBuildingInfo(iBuilding).isGraphicalOnly():
+						return -1
 					return 0
 					
 	def getLeaderCiv(self, iLeader):
