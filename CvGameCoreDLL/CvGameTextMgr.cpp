@@ -8818,6 +8818,12 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 		}
 	}
 
+	if (GC.getUnitInfo(eUnit).getWorkRate() > 100)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_WORK_RATE_MODIFIER", GC.getUnitInfo(eUnit).getWorkRate() - 100));
+	}
+
 	if (GC.getUnitInfo(eUnit).getNukeRange() != -1)
 	{
 		szBuffer.append(NEWLINE);

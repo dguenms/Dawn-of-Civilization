@@ -1690,4 +1690,9 @@
 		<English>[COLOR_WARNING_TEXT]Requires %s1[COLOR_REVERT]</English>
 		<German>[COLOR_WARNING_TEXT]Benötigt %s1[COLOR_REVERT]</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WORK_RATE_MODIFIER</Tag>
+		<English>[ICON_BULLET]Constructs Improvements %D1_Mod%% Faster</English>
+		<German>[ICON_BULLET]Errichtet Verbesserungen %D1_Mod%% Schneller</German>
+	</TEXT>
 </Civ4GameText>

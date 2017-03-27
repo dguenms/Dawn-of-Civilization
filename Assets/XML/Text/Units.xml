@@ -1508,4 +1508,8 @@
 		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN</Tag>
 		<English>Light Swordsman</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LABOURER</Tag>
+		<English>Labourer</English>
+	</TEXT>
 </Civ4GameText>
