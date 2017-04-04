@@ -1695,4 +1695,14 @@
 		<English>[ICON_BULLET]Constructs Improvements %D1_Mod%% Faster</English>
 		<German>[ICON_BULLET]Errichtet Verbesserungen %D1_Mod%% Schneller</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WORKER_LIMIT</Tag>
+		<English>[ICON_BULLET]Worker (1 Allowed per City)</English>
+		<German>[ICON_BULLET]Arbeiter (1 zulässig pro Stadt)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WORKER_LEFT</Tag>
+		<English>[SPACE]%d1_Num Left</English>
+		<German>[SPACE]%d1_Num &#252;brig</German>
+	</TEXT>
 </Civ4GameText>

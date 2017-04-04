@@ -635,6 +635,10 @@ public:
 	// Leoreth
 	void changeCapitalCommerce(int iChange);
 
+	// Leoreth
+	int getWorkerCount() const;
+	void changeWorkerCount(int iChange);
+
 	DllExport int getRevolutionTimer() const;																																	// Exposed to Python
 	void setRevolutionTimer(int iNewValue);
 	void changeRevolutionTimer(int iChange);
@@ -1465,6 +1469,8 @@ protected:
 	int m_iCompactnessModifier;
 	int m_iTargetDistanceValueModifier;
 	int m_iReligiousTolerance;
+
+	int m_iWorkerCount;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;

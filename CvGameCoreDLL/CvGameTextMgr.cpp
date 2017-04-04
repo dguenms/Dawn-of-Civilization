@@ -9498,6 +9498,20 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 		}
 	}
 
+	// Leoreth: worker limit
+	if (GC.getUnitInfo(eUnit).isWorker())
+	{
+		if (pCity == NULL)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_WORKER_LIMIT"));
+		}
+		else
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_WORKER_LEFT", (ePlayer != NO_PLAYER) ? std::max(GET_PLAYER(ePlayer).getNumCities() - GET_PLAYER(ePlayer).getWorkerCount(), 0) : 0));
+		}
+	}
+
 	if (0 != GC.getUnitClassInfo(eUnitClass).getInstanceCostModifier())
 	{
 		szBuffer.append(NEWLINE);

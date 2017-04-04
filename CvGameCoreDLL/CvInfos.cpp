@@ -3842,6 +3842,11 @@ bool CvUnitInfo::isGreatMission() const
 	return m_bGreatMission;
 }
 
+bool CvUnitInfo::isWorker() const
+{
+	return getWorkRate() > 0 && getCombat() == 0;
+}
+
 // BUG - Unit Experience - start
 /*
  * Returns true if this unit type is eligible to receive experience points.

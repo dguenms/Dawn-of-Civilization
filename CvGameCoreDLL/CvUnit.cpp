@@ -180,6 +180,12 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		GET_PLAYER(getOwnerINLINE()).changeNumMilitaryUnits(1);
 	}
 
+	// Leoreth: worker count
+	if (m_pUnitInfo->isWorker())
+	{
+		GET_PLAYER(getOwnerINLINE()).changeWorkerCount(1);
+	}
+
 	GET_PLAYER(getOwnerINLINE()).changeAssets(m_pUnitInfo->getAssetValue());
 
 	GET_PLAYER(getOwnerINLINE()).changePower(m_pUnitInfo->getPowerValue());
@@ -704,6 +710,12 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	if (m_pUnitInfo->isMilitarySupport())
 	{
 		GET_PLAYER(getOwnerINLINE()).changeNumMilitaryUnits(-1);
+	}
+
+	// Leoreth: worker count
+	if (m_pUnitInfo->isWorker())
+	{
+		GET_PLAYER(getOwnerINLINE()).changeWorkerCount(-1);
 	}
 
 	GET_PLAYER(getOwnerINLINE()).changeAssets(-(m_pUnitInfo->getAssetValue()));
@@ -14239,4 +14251,9 @@ SpecialistTypes CvUnit::getSettledSpecialist() const
 	}
 
 	return NO_SPECIALIST;
+}
+
+bool CvUnit::isWorker() const
+{
+	return GC.getUnitInfo(getUnitType()).isWorker();
 }

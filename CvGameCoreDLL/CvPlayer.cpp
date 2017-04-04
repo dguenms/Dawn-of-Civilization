@@ -536,6 +536,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iEspionageExperience = 0; // Leoreth
 	m_iPopRushHurryCount = 0;
 	m_iInflationModifier = 0;
+	m_iWorkerCount = 0; // Leoreth
 	m_uiStartTime = 0;
 
 	m_bAlive = false;
@@ -5867,6 +5868,15 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 		if (GC.getUnitInfo(eUnit).getSpecialUnitType() != NO_SPECIALUNIT)
 		{
 			if (!(GC.getGameINLINE().isSpecialUnitValid((SpecialUnitTypes)(GC.getUnitInfo(eUnit).getSpecialUnitType()))))
+			{
+				return false;
+			}
+		}
+
+		// Leoreth: at most one worker per city
+		if (GC.getUnitInfo(eUnit).isWorker())
+		{
+			if (getWorkerCount() + (bContinue ? -1 : 0) >= getNumCities())
 			{
 				return false;
 			}
@@ -18234,6 +18244,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iTechScore);
 	pStream->Read(&m_iCombatExperience);
 	pStream->Read(&m_iEspionageExperience); // Leoreth
+	pStream->Read(&m_iWorkerCount); // Leoreth
 
 	pStream->Read(&m_bAlive);
 	pStream->Read(&m_bEverAlive);
@@ -18767,6 +18778,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTechScore);
 	pStream->Write(m_iCombatExperience);
 	pStream->Write(m_iEspionageExperience); // Leoreth
+	pStream->Write(m_iWorkerCount); // Leoreth
 
 	pStream->Write(m_bAlive);
 	pStream->Write(m_bEverAlive);
@@ -25418,4 +25430,14 @@ bool CvPlayer::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscover
 	}
 
 	return false;
+}
+
+int CvPlayer::getWorkerCount() const
+{
+	return m_iWorkerCount;
+}
+
+void CvPlayer::changeWorkerCount(int iChange)
+{
+	m_iWorkerCount += iChange;
 }

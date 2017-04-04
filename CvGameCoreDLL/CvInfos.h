@@ -983,6 +983,7 @@ public:
 	int getLeaderExperience() const;				// Exposed to Python
 
 	bool isSlave() const; // Leoreth
+	bool isWorker() const; // Leoreth
 
 	// Sanguo Mod Performance start, added by poyuzhe 07.27.09
 	std::vector<int> getUpgradeUnitClassTypes() const;
