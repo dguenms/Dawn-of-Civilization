@@ -282,6 +282,8 @@ public:
 	bool canGreatMission(const CvPlot* pPlot) const;
 	bool greatMission();
 
+	bool isWorker() const;
+
 	int upgradePrice(UnitTypes eUnit) const;																											// Exposed to Python
 	bool upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, int iCount = 0) const;					// Exposed to Python
 	bool canUpgrade(UnitTypes eUnit, bool bTestVisible = false) const;														// Exposed to Python

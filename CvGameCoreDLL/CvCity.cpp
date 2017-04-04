@@ -13676,6 +13676,11 @@ void CvCity::pushOrder(OrderTypes eOrder, int iData1, int iData2, bool bSave, bo
 
 			GET_PLAYER(getOwnerINLINE()).changeUnitClassMaking(((UnitClassTypes)(GC.getUnitInfo((UnitTypes) iData1).getUnitClassType())), 1);
 
+			if (GC.getUnitInfo((UnitTypes)iData1).isWorker())
+			{
+				GET_PLAYER(getOwnerINLINE()).changeWorkerCount(1);
+			}
+
 			area()->changeNumTrainAIUnits(getOwnerINLINE(), ((UnitAITypes)iData2), 1);
 			GET_PLAYER(getOwnerINLINE()).AI_changeNumTrainAIUnits(((UnitAITypes)iData2), 1);
 
@@ -13858,6 +13863,11 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 		area()->changeNumTrainAIUnits(getOwnerINLINE(), eTrainAIUnit, -1);
 		GET_PLAYER(getOwnerINLINE()).AI_changeNumTrainAIUnits(eTrainAIUnit, -1);
+
+		if (GC.getUnitInfo(eTrainUnit).isWorker())
+		{
+			GET_PLAYER(getOwnerINLINE()).changeWorkerCount(-1);
+		}
 
 		if (bFinish)
 		{
