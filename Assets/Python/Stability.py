@@ -1759,7 +1759,7 @@ def getCivicStability(iPlayer, lCivics):
 			
 	if iDespotism in civics:
 		if iSlavery in civics: iStability += 2
-		if iNationalism in civics: iStability += 3
+		if iNationhood in civics: iStability += 3
 		
 	if iCasteSystem in civics:
 		if civics.any(iCitizenship, iMeritocracy): iStability -= 4
