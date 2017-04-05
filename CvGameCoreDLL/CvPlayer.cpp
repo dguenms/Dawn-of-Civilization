@@ -24954,6 +24954,8 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 
 	if (pCity->plot()->getSpreadFactor(eReligion) < REGION_SPREAD_HISTORICAL) return false;
 
+	if (GET_PLAYER(pCity->getOwner()).isNoNonStateReligionSpread()) return false;
+
 	if (getStateReligion() == NO_RELIGION)
 	{
 		if (GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) > 0) return false;
@@ -24964,7 +24966,7 @@ bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) con
 			{
 				if (GET_PLAYER((PlayerTypes)iI).getStateReligion() == eReligion)
 				{
-					if (GET_TEAM(getTeam()).isHasEverMet(GET_PLAYER((PlayerTypes)iI).getTeam()) && canTradeNetworkWith((PlayerTypes)iI))
+					if (GET_TEAM(getTeam()).canContact(GET_PLAYER((PlayerTypes)iI).getTeam()) && canTradeNetworkWith((PlayerTypes)iI))
 					{
 						return true;
 					}
