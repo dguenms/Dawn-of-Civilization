@@ -449,8 +449,8 @@ public:
 
 	// Leoreth
 	int getEspionageExperience() const;
-
 	int getSpecialistExtraYield(int /*SpecialistTypes*/ eIndex1, int /*YieldTypes*/ eIndex2);
+	int getSpreadType(CyPlot* pPlot, int iReligion) const;
 
 	int findPathLength(int /*TechTypes*/ eTech, bool bCost);
 

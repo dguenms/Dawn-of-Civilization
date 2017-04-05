@@ -191,6 +191,9 @@ class Religions:
 		#print city.getOwner()
 		utils.makeUnit(iMissionary, city.getOwner(), tCoords, iNum)
 		
+	def getTargetCities(self, lCities, iReligion):
+		return [city for city in lCities if not city.isHasReligion(iReligion) and gc.getPlayer(city.getOwner()).getSpreadType(city.plot(), iReligion) > ReligionSpreadTypes.RELIGION_SPREAD_NONE]
+		
 	def selectHolyCity(self, tTL, tBR, tPreferredCity = None, bAIOnly = True):
 		if tPreferredCity:
 			x, y = tPreferredCity
@@ -224,7 +227,7 @@ class Religions:
 		lJewishCities = [city for city in lEuropeanCities if city.isHasReligion(iJudaism)]
 		
 		if 2 * len(lJewishCities) < len(lEuropeanCities):
-			pSpreadCity = utils.getRandomEntry([city for city in lEuropeanCities if not city.isHasReligion(iJudaism)])
+			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lEuropeanCities, iJudaism))
 			if pSpreadCity:
 				pSpreadCity.setHasReligion(iJudaism, True, True, True)
 				
@@ -238,7 +241,7 @@ class Religions:
 		lJewishCities = [city for city in lMiddleEastCities if city.isHasReligion(iJudaism)]
 		
 		if 2 * len(lJewishCities) < len(lMiddleEastCities):
-			pSpreadCity = utils.getRandomEntry([city for city in lMiddleEastCities if not city.isHasReligion(iJudaism)])
+			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lMiddleEastCities, iJudaism))
 			if pSpreadCity:
 				pSpreadCity.setHasReligion(iJudaism, True, True, True)
 		
