@@ -24905,6 +24905,8 @@ void CvPlayer::setReligiousTolerance(int iNewValue)
 
 bool CvPlayer::isTolerating(ReligionTypes eReligion) const
 {
+	if (!isStateReligion()) return true;
+
 	ReligionTypes eStateReligion = getStateReligion();
 
 	if (eStateReligion == HINDUISM && eReligion == BUDDHISM) return true;
