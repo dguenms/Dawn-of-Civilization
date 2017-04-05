@@ -131,7 +131,7 @@ tSpreadFactors = (
 {
 	iCore : 	[rArabia, rMesopotamia, rEgypt],
 	iHistorical : 	[rPersia, rMaghreb, rCentralAsia, rIndia, rIndonesia, rWestAfrica],
-	iPeriphery : 	[rEthiopia, rItaly, rIberia, rAnatolia, rBalkans],
+	iPeriphery : 	[rEthiopia, rItaly, rIberia, rAnatolia, rBalkans, rDeccan],
 	iMinority : 	[rRussia, rSiberia],
 },
 # Hinduism
