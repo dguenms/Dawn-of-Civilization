@@ -549,6 +549,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bFoundedFirstCity = false;
 	m_bStrike = false;
 
+	m_bChoosingFreeTech = false;
+
 	m_bTurnPlayed = false;
 
 	m_szCivDesc.clear();
@@ -18255,6 +18257,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bExtendedGame);
 	pStream->Read(&m_bFoundedFirstCity);
 	pStream->Read(&m_bStrike);
+	pStream->Read(&m_bChoosingFreeTech);
 
 	//Rhye (jdog) -  start ---------------------
 	//pStream->ReadString(m_szName);
@@ -18789,6 +18792,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bExtendedGame);
 	pStream->Write(m_bFoundedFirstCity);
 	pStream->Write(m_bStrike);
+	pStream->Write(m_bChoosingFreeTech);
 
 
 	//Rhye (jdog) -  start ---------------------
