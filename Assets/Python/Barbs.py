@@ -59,16 +59,16 @@ tMinorCities = (
 
 # do some research on dates here
 tMinorStates = (
-	(633, 1400, 96, 43, [iArcher, iSwordsman]),	# Tibet
-	(-75, 600, 89, 46, [iHorseman]),		# Kashgar early
-	(600, 1600, 89, 46, [iHorseArcher]),		# Kashgar late
-	(-75, 600, 85, 47, [iHorseman]),		# Samarkand early
-	(600, 1600, 85, 47, [iHorseArcher]),		# Samarkand late
-	(-300, 600, 91, 31, [iArcher, iSwordsman, iWarElephant]), # Chola
-	(-300, 600, 92, 33, [iArcher, iSwordsman, iWarElephant]), # Chola
-	(-300, 900, 105, 49, [iHorseArcher, iSwordsman]), # Jurchen
-	(1100, 1500, 60, 44, [iPikeman, iLongbowman]), # Rome late
-	(0, 1100, 60, 44, [iSpearman, iArcher]), # Rome early
+	(633, 1400, (96, 43), [iArcher, iSwordsman]),	# Tibet
+	(-75, 600, (89, 46), [iHorseman]),		# Kashgar early
+	(600, 1600, (89, 46), [iHorseArcher]),		# Kashgar late
+	(-75, 600, (85, 47), [iHorseman]),		# Samarkand early
+	(600, 1600, (85, 47), [iHorseArcher]),		# Samarkand late
+	(-300, 600, (91, 31), [iArcher, iSwordsman, iWarElephant]), # Chola
+	(-300, 600, (92, 33), [iArcher, iSwordsman, iWarElephant]), # Chola
+	(-300, 900, (105, 49), [iHorseArcher, iSwordsman]), # Jurchen
+	(1100, 1500, (60, 44), [iPikeman, iLongbowman]), # Rome late
+	(0, 1100, (60, 44), [iSpearman, iArcher]), # Rome early
 )
 
 #handicap level modifier
