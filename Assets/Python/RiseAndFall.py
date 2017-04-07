@@ -1010,7 +1010,7 @@ class RiseAndFall:
 			pMaya.setCivics(iCivicsSociety, iIndividualism)
 			pMaya.setCivics(iCivicsEconomy, iRegulatedTrade)
 			pMaya.setCivics(iCivicsReligion, iClergy)
-			pMaya.setCivics(iCivicTerritory, iNationhood)
+			pMaya.setCivics(iCivicsTerritory, iNationhood)
 			gc.getMap().plot(28, 31).setFeatureType(-1, 0)
 
 	def checkPlayerTurn(self, iGameTurn, iPlayer):
