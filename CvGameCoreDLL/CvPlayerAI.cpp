@@ -10934,8 +10934,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.getGreatPeopleRateModifier() * getNumCities()) / 10);
 	iValue += ((kCivic.getGreatGeneralRateModifier() * getNumMilitaryUnits()) / 50);
 	iValue += ((kCivic.getDomesticGreatGeneralRateModifier() * getNumMilitaryUnits()) / 100);
-	iValue += -((kCivic.getDistanceMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
-	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / 8);
+	//iValue += -((kCivic.getDistanceMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / /*8*/ 12);
+	//iValue += -((kCivic.getNumCitiesMaintenanceModifier() * std::max(0, (getNumCities() - 3))) / /*8*/ 12);
+	iValue += -((kCivic.getDistanceMaintenanceModifier() * calculateDistanceMaintenance()) / 100);
+	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * calculateCitiesMaintenance()) / 100);
 	iValue += (kCivic.getFreeExperience() * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 100;
 	iValue += ((kCivic.getWorkerSpeedModifier() * AI_getNumAIUnits(UNITAI_WORKER)) / 15);
 	iValue += ((kCivic.getImprovementUpgradeRateModifier() * getNumCities()) / 50);
@@ -10956,7 +10958,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	}
 	iValue += ((kCivic.isBuildingOnlyHealthy()) ? (getNumCities() * 3) : 0);
 	iValue += -((kCivic.getWarWearinessModifier() * getNumCities()) / ((bWarPlan) ? 10 : 50));
-	iValue += (kCivic.getFreeSpecialist() * getNumCities() * /*12*/ 18);
+	iValue += (kCivic.getFreeSpecialist() * getNumCities() * 12 /*18*/);
 
 	// Leoreth: factor in extra unit upkeep
 	/*if (eCivic == CIVIC_MERCENARIES)
@@ -10990,11 +10992,11 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			if (pLoopCity->plot()->isCore(getID()))
 			{
-				iValue += kCivic.getCoreFreeSpecialist() * 18;
+				iValue += kCivic.getCoreFreeSpecialist() * 12;
 			}
 		}
 
-		if (getID() == MALI || getID() == EGYPT)
+		/*if (getID() == MALI || getID() == EGYPT)
 		{
 			iValue -= 40;
 		}
@@ -11002,7 +11004,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
 		{
 			iValue += 40;
-		}
+		}*/
 	}
 
 	// Leoreth: specialist threshold extra yield
@@ -11153,7 +11155,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 /* orginal bts code
 		iValue += (getNumCities() * 9 * AI_getHappinessWeight(isCivic(eCivic) ? -iTempValue : iTempValue, 1)) / 100;
 */
-		iValue += (getNumCities() * 6 * AI_getHappinessWeight(iTempValue, 1)) / 100; // Rhye
+		iValue += (getNumCities() * 9 * AI_getHappinessWeight(iTempValue, 1)) / 100; // Rhye
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -11247,7 +11249,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 		for (iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
 		{
-			iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) + getNumCities() * 2))) / 100;
+			iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) /*+ getNumCities() * 2*/))) / 100;
 		}
 
 		// Leoreth: specialist extra yield

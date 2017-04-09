@@ -15724,7 +15724,7 @@ void CvGameTextMgr::buildFinanceCityMaintString(CvWStringBuffer& szBuffer, Playe
 	{
 		return;
 	}
-	int iLoop;
+	/*int iLoop;
 	int iDistanceMaint = 0;
 	int iColonyMaint = 0;
 	int iCorporationMaint = 0;
@@ -15740,7 +15740,13 @@ void CvGameTextMgr::buildFinanceCityMaintString(CvWStringBuffer& szBuffer, Playe
 	iColonyMaint /= 100;
 	iCorporationMaint /= 100;
 
-	int iNumCityMaint = player.getTotalMaintenance() - iDistanceMaint - iColonyMaint - iCorporationMaint;
+	int iNumCityMaint = player.getTotalMaintenance() - iDistanceMaint - iColonyMaint - iCorporationMaint;*/
+
+	CvPlayer& player = GET_PLAYER(ePlayer);
+	int iDistanceMaint = player.calculateDistanceMaintenance();
+	int iNumCityMaint = player.calculateCitiesMaintenance();
+	int iColonyMaint = player.calculateColonyMaintenance();
+	int iCorporationMaint = player.calculateCorporationMaintenance();
 
 	szBuffer.append(NEWLINE);
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_CITY_MAINT_COST", iDistanceMaint, iNumCityMaint, iColonyMaint, iCorporationMaint, player.getTotalMaintenance()));

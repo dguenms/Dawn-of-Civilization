@@ -25449,3 +25449,55 @@ void CvPlayer::changeWorkerCount(int iChange)
 {
 	m_iWorkerCount += iChange;
 }
+
+int CvPlayer::calculateDistanceMaintenance() const
+{
+	int iLoop;
+	int iDistanceMaint = 0;
+
+	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		iDistanceMaint += (pLoopCity->calculateDistanceMaintenanceTimes100() * std::max(0, (pLoopCity->getMaintenanceModifier() + 100))) / 100;
+	}
+
+	return iDistanceMaint / 100;
+}
+
+int CvPlayer::calculateColonyMaintenance() const
+{
+	int iLoop;
+	int iColonyMaint = 0;
+
+	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		iColonyMaint += (pLoopCity->calculateColonyMaintenanceTimes100() * std::max(0, (pLoopCity->getMaintenanceModifier() + 100))) / 100;
+	}
+
+	return iColonyMaint / 100;
+}
+
+int CvPlayer::calculateCorporationMaintenance() const
+{
+	int iLoop;
+	int iCorporationMaint = 0;
+
+	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		iCorporationMaint += (pLoopCity->calculateCorporationMaintenanceTimes100() * std::max(0, (pLoopCity->getMaintenanceModifier() + 100))) / 100;
+	}
+
+	return iCorporationMaint / 100;
+}
+
+int CvPlayer::calculateCitiesMaintenance() const
+{
+	int iLoop;
+	int iCitiesMaint = 0;
+
+	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		iCitiesMaint += (pLoopCity->calculateNumCitiesMaintenanceTimes100() * std::max(0, (pLoopCity->getMaintenanceModifier() + 100))) / 100;
+	}
+
+	return iCitiesMaint / 100;
+}

@@ -1301,6 +1301,11 @@ public:
 
 	bool canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered = NO_TECH) const;
 
+	int calculateDistanceMaintenance() const;
+	int calculateColonyMaintenance() const;
+	int calculateCorporationMaintenance() const;
+	int calculateCitiesMaintenance() const;
+
 	bool m_bTurnPlayed;
 
 protected:

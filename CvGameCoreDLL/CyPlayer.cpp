@@ -2604,3 +2604,9 @@ bool CyPlayer::isColonialSlavery()
 {
 	return m_pPlayer ? m_pPlayer->isColonialSlavery() : false;
 }
+
+int CyPlayer::AI_bestCivic(int iCivicOptionType)
+{
+	//return m_pPlayer ? m_pPlayer->AI_bestCivic((CivicOptionTypes)iCivicOptionType) : NO_CIVIC;
+	return NO_CIVIC;
+}
