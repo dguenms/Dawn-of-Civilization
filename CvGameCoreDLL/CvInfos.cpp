@@ -3844,7 +3844,7 @@ bool CvUnitInfo::isGreatMission() const
 
 bool CvUnitInfo::isWorker() const
 {
-	return getWorkRate() > 0 && getCombat() == 0;
+	return getWorkRate() > 0 && getDomainType() == DOMAIN_LAND && getCombat() == 0;
 }
 
 // BUG - Unit Experience - start
