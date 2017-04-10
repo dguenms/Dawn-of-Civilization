@@ -1865,9 +1865,9 @@ def leader(iPlayer):
 		
 		if bResurrected and getColumn(iPlayer) >= 11: return iGeorge
 	
-		if bEmpire: return iAlexander
+		if bEmpire: return iAlexanderTheGreat
 		
-		if not bCityStates: return iAlexander
+		if not bCityStates: return iAlexanderTheGreat
 		
 	elif iPlayer == iPersia:
 		if bReborn:
@@ -1960,7 +1960,7 @@ def leader(iPlayer):
 		if iEra >= iIndustrial:
 			if not bMonarchy: return iStalin
 			
-			return iNicholas
+			return iAlexanderII
 			
 		if iEra >= iRenaissance:
 			if iGameTurn >= getTurnForYear(1750): return iCatherine

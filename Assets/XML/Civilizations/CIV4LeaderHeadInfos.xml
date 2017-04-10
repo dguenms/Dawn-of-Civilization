@@ -38881,10 +38881,10 @@
 			</DiplomacyMusicWar>
 		</LeaderHeadInfo>
 		<LeaderHeadInfo>
-			<Type>LEADER_NICHOLAS_II</Type>
-			<Description>TXT_KEY_LEADER_NICHOLAS_II</Description>
-			<Civilopedia>TXT_KEY_LEADER_NICHOLAS_II_PEDIA</Civilopedia>
-			<ArtDefineTag>ART_DEF_LEADER_NICHOLAS_II</ArtDefineTag>
+			<Type>LEADER_ALEXANDER_II</Type>
+			<Description>TXT_KEY_LEADER_ALEXANDER_II</Description>
+			<Civilopedia>TXT_KEY_LEADER_ALEXANDER_II_PEDIA</Civilopedia>
+			<ArtDefineTag>ART_DEF_LEADER_ALEXANDER_II</ArtDefineTag>
 			<iWonderConstructRand>10</iWonderConstructRand>
 			<iBaseAttitude>-1</iBaseAttitude>
 			<iBasePeaceWeight>3</iBasePeaceWeight>
