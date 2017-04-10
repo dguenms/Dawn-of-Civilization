@@ -10980,7 +10980,7 @@
 			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iCargo>1</iCargo>
 			<iAsset>2</iAsset>
-			<iPower>3</iPower>
+			<iPower>6</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<fMaxSpeed>2.25</fMaxSpeed>
@@ -11051,14 +11051,14 @@
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>5</iMoves>
 			<iNukeRange>-1</iNukeRange>
-			<iCombat>3</iCombat>
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iCargo>2</iCargo>
 			<iAsset>2</iAsset>
-			<iPower>3</iPower>
+			<iPower>6</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<fMaxSpeed>2.25</fMaxSpeed>
@@ -11151,7 +11151,7 @@
 					<PassableTech>TECH_CARTOGRAPHY</PassableTech>
 				</FeaturePassableTech>
 			</FeaturePassableTechs>
-			<iCombat>4</iCombat>
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
@@ -11159,7 +11159,7 @@
 			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iCargo>2</iCargo>
 			<iAsset>2</iAsset>
-			<iPower>4</iPower>
+			<iPower>6</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<fMaxSpeed>2.25</fMaxSpeed>
