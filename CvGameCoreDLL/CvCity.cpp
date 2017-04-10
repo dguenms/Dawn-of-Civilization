@@ -18065,7 +18065,7 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 		removeReligion(eDisappearingReligion);
 	}
 
-	if (isHasRealBuilding(PAGAN_TEMPLE))
+	if (isHasRealBuilding(PAGAN_TEMPLE) && GC.getReligionInfo(eReligion).isLocal())
 	{
 		setHasRealBuilding(PAGAN_TEMPLE, false);
 
