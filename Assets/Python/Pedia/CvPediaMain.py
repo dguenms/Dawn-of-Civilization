@@ -612,8 +612,15 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeBuildings(self):
 		lBuildings = []
 		for iBuilding in xrange(gc.getNumBuildingInfos()):
-			if utils.getBuildingCategory(iBuilding) == 0 and not gc.getBuildingInfo(iBuilding).isGraphicalOnly():
-				lBuildings.append((gc.getBuildingInfo(iBuilding).getDescription(), iBuilding))
+			if utils.getBuildingCategory(iBuilding) == 0:
+				if iBuilding == utils.getUniqueBuilding(self.iActivePlayer, iBuilding):
+					lBuildings.append((gc.getBuildingInfo(iBuilding).getDescription(), iBuilding))
+			
+				#iUniqueBuilding = utils.getUniqueBuilding(self.iActivePlayer, iBuilding)
+				#if iBuilding == iUniqueBuilding and not gc.getBuildingInfo(iBuilding).isGraphicalOnly():
+				#	lBuildings.append((gc.getBuildingInfo(iBuilding).getDescription(), iBuilding))
+				#elif iBuilding != iUniqueBuilding and gc.getBuildingInfo(iUniqueBuilding).isGraphicalOnly():
+				#	lBuildings.append((gc.getBuildingInfo(iUniqueBuilding).getDescription(), iUniqueBuilding))
 
 		lBuildings.sort()
 		self.list = lBuildings

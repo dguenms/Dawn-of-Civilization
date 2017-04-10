@@ -16,6 +16,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_AMERICA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
 			<Identifier>AME</Identifier>
 			<StartingYear>1775</StartingYear>
 			<LoadingTimes>
@@ -50,13 +52,17 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SUPERMARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_DEPARTMENT_STORE</BuildingClassType>
 					<BuildingType>BUILDING_AMERICAN_MALL</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_RIFLEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
 					<UnitType>UNIT_AMERICAN_MINUTEMAN</UnitType>
 				</Unit>
 			</Units>
@@ -75,12 +81,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -110,6 +116,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ARABIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
 			<Identifier>ARA</Identifier>
 			<StartingYear>620</StartingYear>
 			<LoadingTimes>
@@ -140,13 +148,17 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_PHARMACY</BuildingClassType>
 					<BuildingType>BUILDING_ARABIAN_ALCHEMIST</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
 					<UnitType>UNIT_ARABIAN_CAMEL_ARCHER</UnitType>
 				</Unit>
 			</Units>
@@ -165,12 +177,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -196,6 +208,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ARGENTINA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
 			<Identifier>ARG</Identifier>
 			<StartingYear>1810</StartingYear>
 			<LoadingTimes>
@@ -231,10 +245,14 @@
 					<BuildingClassType>BUILDINGCLASS_SUPERMARKET</BuildingClassType>
 					<BuildingType>BUILDING_ARGENTINE_REFRIGERATION_PLANT</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
+					<UnitClassType>UNITCLASS_DRAGOON</UnitClassType>
 					<UnitType>UNIT_ARGENTINE_GRENADIER_CAVALRY</UnitType>
 				</Unit>
 				<Unit>
@@ -257,12 +275,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -288,6 +306,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_AZTEC</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
 			<Identifier>AZT</Identifier>
 			<StartingYear>1200</StartingYear>
 			<LoadingTimes>
@@ -344,8 +364,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
 					<BuildingType>BUILDING_AZTEC_SACRIFICIAL_ALTAR</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -373,12 +397,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -400,6 +424,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BABYLON</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
 			<Identifier>BAB</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -440,6 +466,10 @@
 			</Cities>
 			<Buildings>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
+					<BuildingType>BUILDING_BABYLONIAN_EDUBBA</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_BABYLONIAN_ZIGGURAT</BuildingType>
 				</Building>
@@ -465,12 +495,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -496,6 +526,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BRAZIL</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
 			<Identifier>BRA</Identifier>
 			<StartingYear>1822</StartingYear>
 			<LoadingTimes>
@@ -528,13 +560,17 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_GROCER</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_BRAZILIAN_FAZENDA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_WORKER</UnitClassType>
+					<UnitClassType>UNITCLASS_LABOURER</UnitClassType>
 					<UnitType>UNIT_BRAZILIAN_MADEIREIRO</UnitType>
 				</Unit>
 			</Units>
@@ -553,12 +589,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -584,6 +620,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BYZANTIUM</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_OLYMPIANISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Olympianism.dds</PaganReligionButton>
 			<Identifier>BYZ</Identifier>
 			<StartingYear>330</StartingYear>
 			<LoadingTimes>
@@ -628,10 +666,14 @@
 					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
 					<BuildingType>BUILDING_BYZANTINE_HIPPODROME</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_BYZANTINE_CATAPHRACT</UnitType>
 				</Unit>
 			</Units>
@@ -650,12 +692,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -681,6 +723,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CANADA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
 			<Identifier>CAN</Identifier>
 			<StartingYear>1867</StartingYear>
 			<LoadingTimes>
@@ -729,8 +773,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_CONSTABULARY</BuildingClassType>
 					<BuildingType>BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -754,12 +802,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -785,6 +833,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PHOENICIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_BAALISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Baalism.dds</PaganReligionButton>
 			<Identifier>CAR</Identifier>
 			<StartingYear>-1200</StartingYear>
 			<LoadingTimes>
@@ -832,6 +882,10 @@
 					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 					<BuildingType>BUILDING_PHOENICIAN_GLASSMAKER</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_BAALIST_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -854,12 +908,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -954,7 +1008,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_NATIONAL_THEATRE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -966,10 +1020,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OLYMPIC_PARK</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_NATIONAL_GALLERY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -978,7 +1028,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_INTERPOL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_SECRET_SERVICE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -1069,12 +1119,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1096,6 +1146,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CHINA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
 			<Identifier>CHI</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -1147,6 +1199,10 @@
 					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 					<BuildingType>BUILDING_CHINESE_TAIXUE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -1169,12 +1225,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1208,6 +1264,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_COLOMBIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
 			<Identifier>COL</Identifier>
 			<StartingYear>1814</StartingYear>
 			<LoadingTimes>
@@ -1236,8 +1294,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_GROCER</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_COLOMBIAN_HACIENDA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1261,12 +1323,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1288,6 +1350,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_EGYPT</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_PESEDJET</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Pesedjet.dds</PaganReligionButton>
 			<Identifier>EGY</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -1346,8 +1410,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_EGYPTIAN_OBELISK</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PESEDJET_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1371,12 +1439,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1410,6 +1478,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ENGLAND</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
 			<Identifier>ENG</Identifier>
 			<StartingYear>820</StartingYear>
 			<LoadingTimes>
@@ -1453,10 +1523,14 @@
 					<BuildingClassType>BUILDINGCLASS_BANK</BuildingClassType>
 					<BuildingType>BUILDING_ENGLISH_ROYAL_EXCHANGE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_RIFLEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
 					<UnitType>UNIT_ENGLISH_REDCOAT</UnitType>
 				</Unit>
 			</Units>
@@ -1475,12 +1549,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1514,6 +1588,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ETHIOPIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ANUNNAKI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Anunnaki.dds</PaganReligionButton>
 			<Identifier>ETH</Identifier>
 			<StartingYear>-295</StartingYear>
 			<LoadingTimes>
@@ -1566,13 +1642,17 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_ETHIOPIAN_STELE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASTAR_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
 					<UnitType>UNIT_ETHIOPIAN_ASKARI</UnitType>
 				</Unit>
 				<Unit>
@@ -1595,12 +1675,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1626,6 +1706,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_FRANCE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
 			<Identifier>FRA</Identifier>
 			<StartingYear>750</StartingYear>
 			<LoadingTimes>
@@ -1663,8 +1745,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_COFFEEHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_FRENCH_SALON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1688,12 +1774,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1727,6 +1813,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_GERMANY</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
 			<Identifier>GER</Identifier>
 			<StartingYear>1700</StartingYear>
 			<LoadingTimes>
@@ -1788,6 +1876,10 @@
 					<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
 					<BuildingType>BUILDING_GERMAN_ASSEMBLY_PLANT</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -1810,12 +1902,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1845,6 +1937,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_GREECE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_OLYMPIANISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Olympianism.dds</PaganReligionButton>
 			<Identifier>GRE</Identifier>
 			<StartingYear>-1600</StartingYear>
 			<LoadingTimes>
@@ -1912,10 +2006,14 @@
 					<BuildingClassType>BUILDINGCLASS_THEATRE</BuildingClassType>
 					<BuildingType>BUILDING_GREEK_ODEON</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
 					<UnitType>UNIT_GREEK_HOPLITE</UnitType>
 				</Unit>
 			</Units>
@@ -1934,12 +2032,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -1969,6 +2067,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HARAPPANS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>HAR</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
@@ -2014,8 +2114,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
-					<BuildingType>BUILDING_HARAPPAN_BATH</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_BATH</BuildingClassType>
+					<BuildingType>BUILDING_HARAPPAN_RESERVOIR</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2039,12 +2143,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2066,6 +2170,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_HOLY_ROMAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
 			<Identifier>HRE</Identifier>
 			<StartingYear>840</StartingYear>
 			<LoadingTimes>
@@ -2106,8 +2212,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
 					<BuildingType>BUILDING_HOLY_ROMAN_RATHAUS</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2131,12 +2241,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2166,6 +2276,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INCA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_INTI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Inti.dds</PaganReligionButton>
 			<Identifier>INC</Identifier>
 			<StartingYear>1150</StartingYear>
 			<LoadingTimes>
@@ -2197,13 +2309,17 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_CASTLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_POST_OFFICE</BuildingClassType>
 					<BuildingType>BUILDING_INCAN_TAMBO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_INCAN_AUCAC</UnitType>
 				</Unit>
 			</Units>
@@ -2222,12 +2338,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2253,6 +2369,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INDIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>IND</Identifier>
 			<StartingYear>-1500</StartingYear>
 			<LoadingTimes>
@@ -2298,8 +2416,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_INDIAN_EDICT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2323,12 +2445,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2362,6 +2484,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_INDONESIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>INO</Identifier>
 			<StartingYear>700</StartingYear>
 			<LoadingTimes>
@@ -2398,8 +2522,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_INDONESIAN_CANDI</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2423,12 +2551,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2458,6 +2586,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_IRAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_MAZDAISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Mazdaism.dds</PaganReligionButton>
 			<Identifier>IRA</Identifier>
 			<StartingYear>1501</StartingYear>
 			<LoadingTimes>
@@ -2504,10 +2634,14 @@
 					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 					<BuildingType>BUILDING_IRANIAN_CARAVANSERAI</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_MAZDAIST_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
 					<UnitType>UNIT_IRANIAN_QIZILBASH</UnitType>
 				</Unit>
 			</Units>
@@ -2526,12 +2660,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2557,6 +2691,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ITALY</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_OLYMPIANISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Olympianism.dds</PaganReligionButton>
 			<Identifier>ITA</Identifier>
 			<StartingYear>1167</StartingYear>
 			<LoadingTimes>
@@ -2597,6 +2733,10 @@
 					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
 					<BuildingType>BUILDING_ITALIAN_ART_STUDIO</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2619,12 +2759,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2654,6 +2794,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_JAPAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_SHINTO</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Shinto.dds</PaganReligionButton>
 			<Identifier>JAP</Identifier>
 			<StartingYear>525</StartingYear>
 			<LoadingTimes>
@@ -2700,6 +2842,10 @@
 					<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
 					<BuildingType>BUILDING_JAPANESE_ZAIBATSU</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_SHINTO_SHRINE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2722,12 +2868,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2757,6 +2903,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KHMER</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>KHM</Identifier>
 			<StartingYear>660</StartingYear>
 			<LoadingTimes>
@@ -2810,6 +2958,10 @@
 					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
 					<BuildingType>BUILDING_KHMER_BARAY</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2832,12 +2984,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2859,6 +3011,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_CONGO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
 			<Identifier>CON</Identifier>
 			<StartingYear>1390</StartingYear>
 			<LoadingTimes>
@@ -2905,8 +3059,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_WEAVER</BuildingClassType>
 					<BuildingType>BUILDING_CONGOLESE_MBWADI</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2934,12 +3092,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -2961,6 +3119,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KOREA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
 			<Identifier>KOR</Identifier>
 			<StartingYear>-50</StartingYear>
 			<LoadingTimes>
@@ -3004,6 +3164,10 @@
 					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
 					<BuildingType>BUILDING_KOREAN_SEOWON</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3026,12 +3190,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3057,6 +3221,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MALI</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_AFRICAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_YORUBA</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Yoruba.dds</PaganReligionButton>
 			<Identifier>MAL</Identifier>
 			<StartingYear>980</StartingYear>
 			<LoadingTimes>
@@ -3116,11 +3282,15 @@
 					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
 					<BuildingType>BUILDING_MANDE_MINT</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_YORUBA_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
-					<UnitType>UNIT_MANDE_SKIRMISHER</UnitType>
+					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
+					<UnitType>UNIT_MANDE_KELEBOLO</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
@@ -3142,12 +3312,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3169,6 +3339,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MAYA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
 			<Identifier>MAY</Identifier>
 			<StartingYear>65</StartingYear>
 			<LoadingTimes>
@@ -3230,10 +3402,14 @@
 					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
 					<BuildingType>BUILDING_MAYAN_BALL_COURT</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
+					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
 					<UnitType>UNIT_MAYAN_HOLKAN</UnitType>
 				</Unit>
 			</Units>
@@ -3252,12 +3428,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3279,6 +3455,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MEXICO</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TEOTL</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Teotl.dds</PaganReligionButton>
 			<Identifier>MEX</Identifier>
 			<StartingYear>1810</StartingYear>
 			<LoadingTimes>
@@ -3318,6 +3496,10 @@
 					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
 					<BuildingType>BUILDING_MEXICAN_CHARREADA</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3335,12 +3517,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3370,6 +3552,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MONGOL</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
 			<Identifier>MON</Identifier>
 			<StartingYear>1190</StartingYear>
 			<LoadingTimes>
@@ -3410,10 +3594,14 @@
 					<BuildingClassType>BUILDINGCLASS_STABLE</BuildingClassType>
 					<BuildingType>BUILDING_MONGOLIAN_GER</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_MONGOLIAN_KESHIK</UnitType>
 				</Unit>
 			</Units>
@@ -3432,12 +3620,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3521,6 +3709,10 @@
 					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
 					<BuildingType>BUILDING_MOORISH_NORIA</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PHARMACY</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3543,12 +3735,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3574,6 +3766,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MUGHALS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
 			<Identifier>MUG</Identifier>
 			<StartingYear>1206</StartingYear>
 			<LoadingTimes>
@@ -3619,8 +3813,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_JAIL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_ESTATE</BuildingClassType>
 					<BuildingType>BUILDING_MUGHAL_MAUSOLEUM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3644,12 +3842,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3769,12 +3967,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3796,6 +3994,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_NETHERLANDS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
 			<Identifier>HOL</Identifier>
 			<StartingYear>1580</StartingYear>
 			<LoadingTimes>
@@ -3856,6 +4056,10 @@
 					<BuildingClassType>BUILDINGCLASS_LEVEE</BuildingClassType>
 					<BuildingType>BUILDING_DUTCH_DIKE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3878,12 +4082,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -3909,6 +4113,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_OTTOMAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_TENGRI</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Tengri.dds</PaganReligionButton>
 			<Identifier>TUR</Identifier>
 			<StartingYear>1280</StartingYear>
 			<LoadingTimes>
@@ -3946,13 +4152,17 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AQUEDUCT</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_BATH</BuildingClassType>
 					<BuildingType>BUILDING_OTTOMAN_HAMMAM</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
 					<UnitType>UNIT_OTTOMAN_JANISSARY</UnitType>
 				</Unit>
 			</Units>
@@ -3971,12 +4181,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4006,6 +4216,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PERSIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_MAZDAISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Mazdaism.dds</PaganReligionButton>
 			<Identifier>PER</Identifier>
 			<StartingYear>-850</StartingYear>
 			<LoadingTimes>
@@ -4066,6 +4278,10 @@
 					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 					<BuildingType>BUILDING_PERSIAN_APOTHECARY</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_MAZDAIST_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4088,12 +4304,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4119,6 +4335,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_POLAND</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_RODNOVERY</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Rodnovery.dds</PaganReligionButton>
 			<Identifier>POL</Identifier>
 			<StartingYear>1025</StartingYear>
 			<LoadingTimes>
@@ -4175,8 +4393,12 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
 					<BuildingType>BUILDING_POLISH_SEJMIK</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4200,12 +4422,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4239,6 +4461,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_POLYNESIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_BARBARIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_SOUTH_AMERICAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ATUA</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Atua.dds</PaganReligionButton>
 			<Identifier>PLY</Identifier>
 			<StartingYear>-1000</StartingYear>
 			<LoadingTimes>
@@ -4299,6 +4523,10 @@
 					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
 					<BuildingType>BUILDING_POLYNESIAN_MALAE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_FALE_TELE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4321,12 +4549,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4348,6 +4576,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_PORTUGAL</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
 			<Identifier>POR</Identifier>
 			<StartingYear>1130</StartingYear>
 			<LoadingTimes>
@@ -4406,6 +4636,10 @@
 					<BuildingClassType>BUILDINGCLASS_TRADING_COMPANY</BuildingClassType>
 					<BuildingType>BUILDING_IBERIAN_TRADING_COMPANY</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4428,12 +4662,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4463,6 +4697,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ROME</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_GRECO_ROMAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_OLYMPIANISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Olympianism.dds</PaganReligionButton>
 			<Identifier>ROM</Identifier>
 			<StartingYear>-760</StartingYear>
 			<LoadingTimes>
@@ -4522,6 +4758,10 @@
 					<BuildingClassType>BUILDINGCLASS_MARKET</BuildingClassType>
 					<BuildingType>BUILDING_ROMAN_FORUM</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4544,12 +4784,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4575,6 +4815,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_RUSSIA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_RODNOVERY</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Rodnovery.dds</PaganReligionButton>
 			<Identifier>RUS</Identifier>
 			<StartingYear>860</StartingYear>
 			<LoadingTimes>
@@ -4603,10 +4845,14 @@
 					<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType>
 					<BuildingType>BUILDING_RUSSIAN_RESEARCH_INSTITUTE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_CAVALRY</UnitClassType>
+					<UnitClassType>UNITCLASS_DRAGOON</UnitClassType>
 					<UnitType>UNIT_RUSSIAN_COSSACK</UnitType>
 				</Unit>
 			</Units>
@@ -4625,12 +4871,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4721,7 +4967,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_NATIONAL_THEATRE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -4733,10 +4979,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OLYMPIC_PARK</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_NATIONAL_GALLERY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -4745,7 +4987,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_INTERPOL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_SECRET_SERVICE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -4759,7 +5001,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_SELJUK_GHULAM_WARRIOR</UnitType>
 				</Unit>
 				<Unit>
@@ -4841,12 +5083,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -4868,6 +5110,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_SPAIN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_DRUIDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Druidism.dds</PaganReligionButton>
 			<Identifier>SPA</Identifier>
 			<StartingYear>722</StartingYear>
 			<LoadingTimes>
@@ -4909,6 +5153,10 @@
 					<BuildingClassType>BUILDINGCLASS_TRADING_COMPANY</BuildingClassType>
 					<BuildingType>BUILDING_IBERIAN_TRADING_COMPANY</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4931,12 +5179,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5032,12 +5280,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5059,6 +5307,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TAMILS</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_MIDDLE_EASTERN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>TAM</Identifier>
 			<StartingYear>-300</StartingYear>
 			<LoadingTimes>
@@ -5110,6 +5360,10 @@
 					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 					<BuildingType>BUILDING_TAMIL_SANGAM</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5132,12 +5386,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5163,6 +5417,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_THAILAND</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>THA</Identifier>
 			<StartingYear>1350</StartingYear>
 			<LoadingTimes>
@@ -5216,10 +5472,14 @@
 					<BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType>
 					<BuildingType>BUILDING_THAI_HO_TRAI</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_KNIGHT</UnitClassType>
+					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<UnitType>UNIT_THAI_CHANG_SUEK</UnitType>
 				</Unit>
 			</Units>
@@ -5238,12 +5498,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5269,6 +5529,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_TIBET</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_ASIAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_SHENDAO</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Shendao.dds</PaganReligionButton>
 			<Identifier>TIB</Identifier>
 			<StartingYear>630</StartingYear>
 			<LoadingTimes>
@@ -5342,6 +5604,10 @@
 					<BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType>
 					<BuildingType>BUILDING_TIBETAN_GOMPA</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5364,12 +5630,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5395,6 +5661,8 @@
 			<ArtDefineTag>ART_DEF_CIVILIZATION_VIKING</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_EUROPEAN</UnitArtStyleType>
+			<PaganReligionName>TXT_KEY_RELIGION_ASATRU</PaganReligionName>
+			<PaganReligionButton>Art/Interface/Buttons/Religions/Asatru.dds</PaganReligionButton>
 			<Identifier>VIK</Identifier>
 			<StartingYear>545</StartingYear>
 			<LoadingTimes>
@@ -5440,6 +5708,10 @@
 					<BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_VIKING_TRADING_POST</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5462,12 +5734,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5573,12 +5845,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5694,7 +5966,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_NATIONAL_THEATRE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -5706,10 +5978,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OLYMPIC_PARK</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_NATIONAL_GALLERY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -5718,7 +5986,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_INTERPOL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_SECRET_SERVICE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -5809,12 +6077,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -5931,7 +6199,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_NATIONAL_THEATRE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -5943,10 +6211,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OLYMPIC_PARK</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_NATIONAL_GALLERY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -5955,7 +6219,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_INTERPOL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_SECRET_SERVICE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -6046,12 +6310,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6144,7 +6408,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_NATIONAL_THEATRE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -6156,19 +6420,11 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OLYMPIC_PARK</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_NATIONAL_GALLERY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_IRONWORKS</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_INTERPOL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_SECRET_SERVICE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -6255,12 +6511,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6382,12 +6638,12 @@
 			</FreeTechs>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>
@@ -6504,7 +6760,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OPERA_HOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_NATIONAL_THEATRE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -6516,10 +6772,6 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_OLYMPIC_PARK</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_NATIONAL_GALLERY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -6528,7 +6780,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_INTERPOL</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_SECRET_SERVICE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -6610,10 +6862,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_AIRSHIP</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_FIGHTER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6634,7 +6882,7 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_TACTICAL_NUKE</UnitClassType>
+					<UnitClassType>UNITCLASS_NUCLEAR_BOMBER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
@@ -6683,12 +6931,12 @@
 			<FreeTechs/>
 			<DisableTechs/>
 			<InitialCivics>
-				<CivicType>CIVIC_TYRANNY</CivicType>
-				<CivicType>CIVIC_DIRECT_RULE</CivicType>
-				<CivicType>CIVIC_TRIBALISM</CivicType>
-				<CivicType>CIVIC_SUBSISTENCE</CivicType>
+				<CivicType>CIVIC_CHIEFDOM</CivicType>
+				<CivicType>CIVIC_AUTHORITY</CivicType>
+				<CivicType>CIVIC_TRADITIONALISM</CivicType>
+				<CivicType>CIVIC_RECIPROCITY</CivicType>
 				<CivicType>CIVIC_ANIMISM</CivicType>
-				<CivicType>CIVIC_MILITIA</CivicType>
+				<CivicType>CIVIC_SOVEREIGNTY</CivicType>
 			</InitialCivics>
 			<Leaders>
 				<Leader>

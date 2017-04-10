@@ -654,6 +654,7 @@
 	<ElementType name="iExtraHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iPollutionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iFreeExperience" content="textOnly" dt:type="int"/>
+	<ElementType name="iWorkerProductionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iWorkerSpeedModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iImprovementUpgradeRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iMilitaryProductionModifier" content="textOnly" dt:type="int"/>
@@ -667,6 +668,9 @@
 	<ElementType name="iMilitaryHappinessLimit" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="bMilitaryFoodProduction" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iMaxConscript" content="textOnly" dt:type="int"/>
+	<ElementType name="bEnslave" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bSlavery" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bColonialSlavery" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bNoUnhealthyPopulation" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iExpInBorderModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="bBuildingOnlyHealthy" content="textOnly" dt:type="boolean"/>
@@ -810,6 +814,16 @@
 	<ElementType name="DomainExperienceModifiers" content="eltOnly">
 		<element type="DomainExperienceModifier" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="HappinessExtraYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="UnhappinessExtraYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="iVassalCityCommerce" content="textOnly" dt:type="int"/>
+	<ElementType name="iHappinessBonusCommerce" content="textOnly" dt:type="int"/>
+	<ElementType name="iSpecialistHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iCaptureGoldModifier" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
 	<ElementType name="WeLoveTheKing" content="textOnly"/>
 	<ElementType name="CivicInfo" content="eltOnly">
@@ -838,6 +852,7 @@
 		<element type="iExtraHealth" minOccurs="0"/>
 		<element type="iPollutionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iFreeExperience" minOccurs="0"/>
+		<element type="iWorkerProductionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWorkerSpeedModifier" minOccurs="0"/>
 		<element type="iImprovementUpgradeRateModifier" minOccurs="0"/>
 		<element type="iMilitaryProductionModifier" minOccurs="0"/>
@@ -851,16 +866,23 @@
 		<element type="iMilitaryHappinessLimit" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bMilitaryFoodProduction" minOccurs="0"/>
 		<element type="iMaxConscript" minOccurs="0"/>
+		<element type="bEnslave" minOccurs="0"/> <!-- Leoreth -->
+		<element type="bSlavery" minOccurs="0"/> <!-- Leoreth -->
+		<element type="bColonialSlavery" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoUnhealthyPopulation" minOccurs="0"/>
 		<element type="iExpInBorderModifier" minOccurs="0"/>
 		<element type="bBuildingOnlyHealthy" minOccurs="0"/>
 		<element type="iLargestCityHappiness" minOccurs="0"/>
+		<element type="iSpecialistHappiness" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWarWearinessModifier" minOccurs="0"/>
 		<element type="iFreeSpecialist" minOccurs="0"/>
 		<element type="iCoreFreeSpecialist" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iTradeRoutes" minOccurs="0"/>
 		<element type="iCapitalTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iDefensivePactTradeModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iVassalCityCommerce" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iHappinessBonusCommerce" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iCaptureGoldModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoForeignTrade" minOccurs="0"/>
 		<element type="bNoForeignTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoCorporations" minOccurs="0"/>
@@ -887,6 +909,8 @@
 		<element type="iSpecialistExtraYieldBaseThreshold" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iSpecialistExtraYieldEraThreshold" minOccurs="0"/> <!-- Leoreth -->
 		<element type="SpecialistThresholdExtraYields" minOccurs="0"/> <!-- Leoreth -->
+		<element type="HappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
+		<element type="UnhappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Hurrys" minOccurs="0"/>
 		<element type="SpecialBuildingNotRequireds" minOccurs="0"/>
 		<element type="SpecialistValids" minOccurs="0"/>

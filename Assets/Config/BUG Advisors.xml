@@ -104,12 +104,7 @@
 	<widget name="WIDGET_INFO_WORLD_WONDERS" xml="TXT_KEY_TOP_CITIES_SCREEN_WORLD_WONDERS"/>
 	<widget name="WIDGET_INFO_NATIONAL_WONDERS" xml="TXT_KEY_TOP_CITIES_SCREEN_NATIONAL_WONDERS"/>
 	<widget name="WIDGET_INFO_PROJECTS" xml="TXT_KEY_PEDIA_CATEGORY_PROJECT"/>
-
-	<widget name="WIDGET_TECH_PREFS_ALL" module="CvTechChooser" function="getAllTechPrefsHover"/>
-	<widget name="WIDGET_TECH_PREFS_CURRENT" module="CvTechChooser" function="getCurrentTechPrefsHover"/>
-	<widget name="WIDGET_TECH_PREFS_FUTURE" module="CvTechChooser" function="getFutureTechPrefsHover"/>
-	<widget name="WIDGET_TECH_CHOOSER_ERA" module="CvTechChooser" function="getEraDescription"/>
-
+	
 	<event type="ResolutionChanged" module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
 	<event type="LanguageChanged" module="CvCustomizableDomesticAdvisor" function="forcePositionCalc"/>
 

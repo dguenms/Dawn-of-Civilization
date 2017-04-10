@@ -114,12 +114,9 @@ class CvPediaCivic:
 		text = self.top.getNextWidgetName()
 
 		screen.addPanel(panel, CyTranslator().getText("TXT_KEY_CIVILOPEDIA_HISTORY", ()), "", True, True, self.X_HISTORY, self.Y_HISTORY, self.W_HISTORY, self.H_HISTORY, PanelStyles.PANEL_STYLE_BLUE50)
-		if self.iCivic in [iCivicPantheon, iCivicSecularism]:
+		if self.iCivic == iSecularism:
 			victorytext = CyTranslator().getText("TXT_KEY_PEDIA_RELIGIOUS_VICTORY", ())
-			if self.iCivic == iCivicPantheon:
-				iVictory = iVictoryPolytheism
-			else:
-				iVictory = iVictorySecularism
+			iVictory = iVictorySecularism
 			bullet = u"%c" % CyGame().getSymbolID(FontSymbols.BULLET_CHAR)
 			for iGoal in range(3):
 				victorytext += bullet + CyTranslator().getText(tReligiousGoals[0][iVictory][iGoal], ()) + "\n"

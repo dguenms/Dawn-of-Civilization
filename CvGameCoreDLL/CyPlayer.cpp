@@ -1561,6 +1561,11 @@ int /*ReligonTypes*/ CyPlayer::getStateReligion()
 	return m_pPlayer ? (int) m_pPlayer->getStateReligion() : NO_RELIGION;
 }
 
+int CyPlayer::getLastStateReligion()
+{
+	return m_pPlayer ? (int) m_pPlayer->getLastStateReligion() : NO_RELIGION;
+}
+
 void CyPlayer::setLastStateReligion(int /*ReligionTypes*/ iNewReligion)
 {
 	if (m_pPlayer)
@@ -2577,4 +2582,31 @@ void CyPlayer::setBirthYear(int iNewValue)
 int CyPlayer::getSpreadType(CyPlot* pPlot, int iReligion) const
 {
 	return m_pPlayer ? m_pPlayer->getSpreadType(pPlot->getPlot(), (ReligionTypes)iReligion) : RELIGION_SPREAD_NONE;
+}
+
+void CyPlayer::AI_chooseFreeTech()
+{
+	if (m_pPlayer)
+		m_pPlayer->AI_chooseFreeTech();
+}
+
+bool CyPlayer::isEnslave()
+{
+	return m_pPlayer ? m_pPlayer->isEnslave() : false;
+}
+
+bool CyPlayer::isSlavery()
+{
+	return m_pPlayer ? m_pPlayer->isSlavery() : false;
+}
+
+bool CyPlayer::isColonialSlavery()
+{
+	return m_pPlayer ? m_pPlayer->isColonialSlavery() : false;
+}
+
+int CyPlayer::AI_bestCivic(int iCivicOptionType)
+{
+	//return m_pPlayer ? m_pPlayer->AI_bestCivic((CivicOptionTypes)iCivicOptionType) : NO_CIVIC;
+	return NO_CIVIC;
 }

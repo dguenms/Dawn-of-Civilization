@@ -369,7 +369,7 @@ bool CvCityAI::AI_avoidGrowth()
 		return true;
 	}
 
-	if (isFoodProduction())
+	if (isFoodProduction() && !GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)PYRAMIDS))
 	{
 		return true;
 	}
@@ -2357,7 +2357,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).verifySettlersHalt(300)) {}
 	else if (GET_PLAYER((PlayerTypes)getOwnerINLINE()).verifySettlersHalt(40))
 		{
-		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 			aiUnitAIVal[UNITAI_SETTLE] /= 2;
 		}
 	else aiUnitAIVal[UNITAI_SETTLE] /= 4;
@@ -2457,7 +2457,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
         aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;
 	case JAPAN:
-		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)INDUSTRIALISM))
+		if (!GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)MACHINE_TOOLS))
 				aiUnitAIVal[UNITAI_ATTACK_SEA] /= 3;
 		else
 				aiUnitAIVal[UNITAI_ATTACK_SEA] *= 3;
@@ -2510,7 +2510,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_MISSIONARY_SEA] *= 2;
 		aiUnitAIVal[UNITAI_MISSIONARY] *= 2;
@@ -2522,7 +2522,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		break;
 	case ENGLAND:
@@ -2530,7 +2530,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_DEFENSE_AIR] *= 2;
 		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
@@ -2580,7 +2580,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
 		aiUnitAIVal[UNITAI_WORKER_SEA] *= 3;
@@ -2620,7 +2620,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
 		aiUnitAIVal[UNITAI_WORKER_SEA] *= 3;
@@ -3045,12 +3045,12 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									case CHINA:
 										if (iI == FORBIDDEN_PALACE || iI == GRAND_CANAL) iTempValue *= 4;
 										else if (iI == GREAT_WALL) iTempValue *= 8;
-										else if (iI == THREE_GORGES_DAM || iI == TERRACOTTA_ARMY || iI == PORCELAIN_TOWER) iTempValue *= 2;
+										else if (iI == TERRACOTTA_ARMY || iI == PORCELAIN_TOWER) iTempValue *= 2;
 										else if (iI == HANGING_GARDENS || iI == HIMEJI_CASTLE || iI == BOROBUDUR || iI == BRANDENBURG_GATE) iTempValue /= 3;
 										break;
 									case BABYLONIA:
 										if (iI == HANGING_GARDENS || iI == ISHTAR_GATE) iTempValue *= 5;
-										else if (iI == PYRAMIDS) iTempValue /= 3;
+										else if (iI == PYRAMIDS || iI == GREAT_SPHINX) iTempValue /= 4;
 										else if (iI == SPIRAL_MINARET) iTempValue *= 2;
 										else if (iI == GREAT_WALL) iTempValue /= 4;
 										else if (iI == ORACLE) iTempValue /= 6;
@@ -3073,7 +3073,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == STATUE_OF_ZEUS) iTempValue *= 3;
 										else if (iI == GREAT_COTHON) iTempValue /= 4;
 										else if (iI == HAGIA_SOPHIA) iTempValue *= 2;
-										else if (iI == OLYMPIC_PARK) iTempValue *= 2;
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;
@@ -3360,7 +3359,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == PENTAGON || iI == EMPIRE_STATE_BUILDING) iTempValue *= 3;
 										else if (iI == UNITED_NATIONS) iTempValue *= 2;
 										//else if (iI == 71) iTempValue *= 2; //West Point
-										else if (iI == MT_RUSHMORE) iTempValue *= 3;
 										else {
 											iTempValue *= 3;
 											iTempValue /= 4;
@@ -3371,7 +3369,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case BRAZIL:
 										if (iI == CRISTO_REDENTOR) iTempValue *= 3;
-										if (iI == THREE_GORGES_DAM || iI == WEMBLEY) iTempValue *= 2;
+										if (iI == ITAIPU_DAM || iI == WEMBLEY) iTempValue *= 2;
 										break;
 									case CANADA:
 										if (iI == CN_TOWER) iTempValue *= 3;
@@ -3545,6 +3543,22 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	int iNumCities = kOwner.getNumCities();
 	int iNumCitiesInArea = area()->getCitiesPerPlayer(getOwnerINLINE());
 
+	int* aiWorkedImprovementCount = new int[GC.getNumImprovementInfos()];
+	std::fill_n(aiWorkedImprovementCount, GC.getNumImprovementInfos(), 0);
+
+	ImprovementTypes eImprovement;
+	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
+	{
+		if (isWorkingPlot(iI))
+		{
+			eImprovement = getCityIndexPlot(iI)->getImprovementType();
+			if (eImprovement != NO_IMPROVEMENT)
+			{
+				aiWorkedImprovementCount[eImprovement]++;
+			}
+		}
+	}
+
 	int aiYieldRank[NUM_YIELD_TYPES];
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -3627,10 +3641,14 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					if ((GC.getGameINLINE().getBestLandUnit() == NO_UNIT) || !(GC.getUnitInfo(GC.getGameINLINE().getBestLandUnit()).isIgnoreBuildingDefense()))
 					{
 						iValue += (std::max(0, std::min(((kBuilding.getDefenseModifier() + getBuildingDefense()) - getNaturalDefense() - 10), kBuilding.getDefenseModifier())) / 4);
+
+						iValue += (std::max(getBuildingDefense() + kBuilding.getDefenseModifier(), getNaturalDefense()) / 4) * kBuilding.getBombardDefenseModifier() / 100;
 					}
+
+					iValue += (getNaturalDefense() / 4) * kBuilding.getUnignorableBombardDefenseModifier() / 100;
 				}
 
-				iValue += kBuilding.getBombardDefenseModifier() / 8;
+				//iValue += kBuilding.getBombardDefenseModifier() / 8;
 
 				iValue += -kBuilding.getAirModifier() / 4;
 				iValue += -kBuilding.getNukeModifier() / 4;
@@ -3666,7 +3684,14 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iValue += ((iAngryPopulation * 10) + getPopulation());
 				}
 
-				int iBuildingHappiness = kBuilding.getHappiness();
+				int iBuildingHappiness = kBuilding.getHappiness() + kBuilding.getCultureHappiness() * getCultureLevel();
+
+				// Leoreth: for worked improvements
+				for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+				{
+					iBuildingHappiness += kBuilding.getImprovementHappiness(iI) * aiWorkedImprovementCount[iI];
+				}
+
 				if (iBuildingHappiness != 0)
 				{
 					iValue += (std::min(iBuildingHappiness, iAngryPopulation) * 10)
@@ -3750,6 +3775,12 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				}
 
 				int iBuildingHealth = kBuilding.getHealth();
+
+				for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
+				{
+					iBuildingHealth += kBuilding.getImprovementHealth(iI) * aiWorkedImprovementCount[iI];
+				}
+
 				if (iBuildingHealth != 0)
 				{
 					iValue += (std::min(iBuildingHealth, iBadHealth) * 12)
@@ -3926,6 +3957,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				iTempValue += (kBuilding.getGlobalTradeRoutes() * iNumCities * iGlobalTradeValue);
 
 				iTempValue += ((kBuilding.getTradeRouteModifier() * getTradeYield(YIELD_COMMERCE)) / (bForeignTrade ? 12 : 25));
+				iTempValue += ((kBuilding.getCultureTradeRouteModifier() * getCultureLevel() * getTradeYield(YIELD_COMMERCE)) / (bForeignTrade ? 12 : 25));
 				if (bForeignTrade)
 				{
 					iTempValue += ((kBuilding.getForeignTradeRouteModifier() * getTradeYield(YIELD_COMMERCE)) / 12);
@@ -4005,6 +4037,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				}
 
 				int iGreatPeopleRateModifier = kBuilding.getGreatPeopleRateModifier();
+				iGreatPeopleRateModifier += kBuilding.getCultureGreatPeopleRateModifier() * getCultureLevel();
 				if (iGreatPeopleRateModifier > 0)
 				{
 					int iGreatPeopleRate = getBaseGreatPeopleRate();
@@ -4248,6 +4281,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					iTempValue = 0;
 
 					iValue += ((kBuilding.getTradeRouteModifier() * getTradeYield((YieldTypes)iI)) / 12);
+					iValue += ((kBuilding.getCultureTradeRouteModifier() * getCultureLevel() * getTradeYield((YieldTypes)iI)) / 12);
 					if (bForeignTrade)
 					{
 						iValue += ((kBuilding.getForeignTradeRouteModifier() * getTradeYield((YieldTypes)iI)) / 12);
@@ -4414,7 +4448,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 					iTempValue += (kBuilding.getCommerceChange(iI) * 4);
 					iTempValue += (kBuilding.getObsoleteSafeCommerceChange(iI) * 4);
-					iTempValue *= 100 + kBuilding.getCommerceModifier(iI);
+					iTempValue *= 100 + kBuilding.getCommerceModifier(iI) + (isPower() ? kBuilding.getPowerCommerceModifier(iI) : 0);
 					iTempValue /= 100;
 
 					if ((CommerceTypes)iI == COMMERCE_CULTURE)
@@ -4435,6 +4469,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 					// add value for a commerce modifier
 					int iCommerceModifier = kBuilding.getCommerceModifier(iI);
+					if (isPower()) iCommerceModifier += kBuilding.getPowerCommerceModifier(iI);
 					int iBaseCommerceRate = getBaseCommerceRate((CommerceTypes) iI);
 					int iCommerceMultiplierValue = iCommerceModifier * iBaseCommerceRate;
 					if (((CommerceTypes) iI) == COMMERCE_CULTURE && iCommerceModifier != 0)
@@ -5768,10 +5803,13 @@ void CvCityAI::AI_updateBestBuild()
 								}
 							}
 
-							iHappyAdjust += GC.getImprovementInfo(eImprovement).getHappiness();
+							// Leoreth: account for buildings here
+							iHappyAdjust += (GC.getImprovementInfo(eImprovement).getHappiness() + getImprovementHappiness(eImprovement));
+							iHealthAdjust += (GC.getImprovementInfo(eImprovement).getHealth() + getImprovementHealth(eImprovement));
 							if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 							{
-								iHappyAdjust -= GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHappiness();
+								iHappyAdjust -= (GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHappiness() + getImprovementHappiness(pLoopPlot->getImprovementType()));
+								iHealthAdjust -= (GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHealth() + getImprovementHealth(pLoopPlot->getImprovementType()));
 							}
 
 							// Leoreth: ignore yield change of defensive structures if no natural food on the tile
@@ -5863,7 +5901,7 @@ void CvCityAI::AI_updateBestBuild()
 
 	int iBonusFoodDiff = ((iBonusFoodSurplus + iFeatureFoodSurplus) - (iBonusFoodDeficit + iHillFoodDeficit / 2));
 
-	int iHealth = goodHealth() - badHealth();
+	int iHealth = goodHealth() - badHealth() + iHealthAdjust; // Leoreth: use health adjust to discourage 
 	int iTargetSize = std::min(iGoodTileCount, getPopulation()+(happyLevel()-unhappyLevel()));
 	iTargetSize = std::min(iTargetSize, 1 + getPopulation() + iHealth);
 
@@ -6416,7 +6454,7 @@ void CvCityAI::AI_doHurry(bool bForce)
 
 			if (eProductionBuilding != NO_BUILDING)
 			{
-				if (GC.getBuildingInfo(eProductionBuilding).getBombardDefenseModifier() > 0)
+				if (GC.getBuildingInfo(eProductionBuilding).getBombardDefenseModifier() > 0 || GC.getBuildingInfo(eProductionBuilding).getUnignorableBombardDefenseModifier() > 0)
 				{
 					if (bDanger)
 					{
@@ -8577,6 +8615,15 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 				{
 					bValid = true;
 
+					// Leoreth: try to discourage workshops with low health
+					if (iFoodChange > 0 && !pPlot->isHills())
+					{
+						if (GC.getImprovementInfo(eImprovement).getHealth() + getImprovementHealth(eImprovement) < 0)
+						{
+							bValid = false;
+						}
+					}
+
 					if (pPlot->getFeatureType() != NO_FEATURE)
 					{
 						if (GC.getBuildInfo(eBestTempBuild).isFeatureRemove(pPlot->getFeatureType()))
@@ -8771,7 +8818,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 						{
 							iHappyLevel -= iHappiness;
 						}
-						int iHealthLevel = (goodHealth() - badHealth(false, 0));
+						int iHealthLevel = (goodHealth() - badHealth());
 
 						int iHappyValue = 0;
 						if (iHappyLevel <= 0)
@@ -9768,9 +9815,9 @@ int CvCityAI::AI_yieldMultiplier(YieldTypes eYield)
 
 	if (eYield == YIELD_COMMERCE)
 	{
-		iMultiplier += (getCommerceRateModifier(COMMERCE_RESEARCH) * 60) / 100;
-		iMultiplier += (getCommerceRateModifier(COMMERCE_GOLD) * 35) / 100;
-		iMultiplier += (getCommerceRateModifier(COMMERCE_CULTURE) * 15) / 100;
+		iMultiplier += ((getCommerceRateModifier(COMMERCE_RESEARCH) + getCultureCommerceRateModifier(COMMERCE_RESEARCH) * getCultureLevel()) * 60) / 100;
+		iMultiplier += ((getCommerceRateModifier(COMMERCE_GOLD) + getCultureCommerceRateModifier(COMMERCE_GOLD) * getCultureLevel()) * 35) / 100;
+		iMultiplier += ((getCommerceRateModifier(COMMERCE_CULTURE) + getCultureCommerceRateModifier(COMMERCE_CULTURE) * getCultureLevel()) * 15) / 100;
 	}
 
 	return iMultiplier;

@@ -110,7 +110,7 @@ def setup():
 			for i in range(1, len(lCurrentOffsets)):
 				if lCurrentOffsets[i] < lCurrentOffsets[i-1]: lCurrentOffsets[i] = lCurrentOffsets[i-1]
 				
-			lCurrentOffsets[iFuture] = len(lEntries)
+			lCurrentOffsets[iDigital] = len(lEntries)
 				
 	print lGreatPeople
 
@@ -163,7 +163,7 @@ iCivChina : {
 		"Wang Anshi", # 11th
 		iRenaissance,
 		"Zheng He", # 15th
-		iModern,
+		iGlobal,
 		"Deng Xiaoping", # 20th
 	],
 	iGreatEngineer : [
@@ -174,7 +174,7 @@ iCivChina : {
 		iMedieval,
 		"Bi Sheng", # 11th
 		"Wang Zhen", # 14th 
-		iModern,
+		iGlobal,
 		"Li Siguang", # 20th
 		"fWu Jianxiong", # 20th
 	],
@@ -189,7 +189,7 @@ iCivChina : {
 		iIndustrial,
 		"Li Hongzhang", # 19th
 		"Sun Yat-sen", # 19th
-		iModern,
+		iGlobal,
 		"Zhou Enlai", # 20th
 		"fJiang Qing", # 20th
 	],
@@ -206,7 +206,7 @@ iCivChina : {
 		"Shi Lang", # 17th
 		iIndustrial,
 		"fChing Shih", # 19th
-		iModern,
+		iGlobal,
 		"Zhang Zuolin", # 20th
 	],
 },
@@ -223,7 +223,7 @@ iCivIndia : {
 		"fMeera", # 16th
 		iIndustrial,
 		"Tipu Sultan", # 18th
-		iModern,
+		iGlobal,
 		"fAnjeze Gonxhe Bojaxhiu", # 20th
 	],
 	iGreatArtist : [
@@ -231,7 +231,7 @@ iCivIndia : {
 		"Valmiki", # 4th BC
 		iRenaissance,
 		"Basawan", # 16th
-		iModern,
+		iGlobal,
 		"Raja Rao", # 20th
 		"Rabindranath Tagore", # 20th
 	],
@@ -244,7 +244,7 @@ iCivIndia : {
 		iRenaissance,
 		"Nilakantha Somayaji", # 15th
 		"Kamalakara", # 17th
-		iModern,
+		iGlobal,
 		"fAsima Chatterjee", # 20th
 	],
 	iGreatMerchant : [
@@ -253,7 +253,7 @@ iCivIndia : {
 		iIndustrial,
 		"Jamshetji Tata", # 19th
 		"Ardeshir Godrej", # 19th
-		iModern,
+		iGlobal,
 		"fIndra Nooyi", # 20th
 	],
 	iGreatEngineer : [
@@ -261,7 +261,7 @@ iCivIndia : {
 		"Lagadha", # 1st
 		iIndustrial,
 		"Jagadish Chandra Bose", # 19th
-		iModern,
+		iGlobal,
 		"Chandrasekhara Venkata Raman", # 20th
 	],
 	iGreatStatesman : [
@@ -275,7 +275,7 @@ iCivIndia : {
 		iIndustrial,
 		"Ram Mohan Roy", # 19th
 		"Ranjit Singh", # 19th
-		iModern, 
+		iGlobal, 
 		"Jawaharlal Nehru", # 20th
 	],
 	iGreatGeneral : [
@@ -666,16 +666,16 @@ iCivJapan : {
 		"Yosa Buson", # 18th
 		iIndustrial,
 		"Katsushika Hokusai", # 19th
-		"Utagawa Hiroshige", # 19th
-		iModern,
+		"Utagawa Hiroshige", # 
+		iGlobal,
 		"Yukio Mishima", # 20th
 		"Hayao Miyazaki", # 20th
 		"Toro Okamoto", # Contest Reward
 	],
 	iGreatScientist : [
 		"Yoshida Mitsuyoshi", # 17th
-		"Aida Yasuaki", # 18th
-		iModern,
+		"Aida Yasuaki", # 18t
+		iGlobal,
 		"Kiyoshi Itou", # 20th
 		"Hideki Yukawa", # 20th
 		"Masatoshi Koshiba", # 20th
@@ -684,7 +684,7 @@ iCivJapan : {
 	iGreatMerchant : [
 		"Torakusu Yamaha", # 19th
 		"Outano Kouzui", # 19th
-		iModern,
+		iGlobal,
 		"Masahisa Fujita", # 20th
 		"Kiichiro Toyoda", # 20th
 		"Soichiro Honda", # 20th
@@ -694,7 +694,7 @@ iCivJapan : {
 		"Tanaka Hisashige", # 19th
 		"Katayama Toukuma", # 19th
 		"Takeda Ayasaburou", # 19th
-		iModern,
+		iGlobal,
 		"Koutarou Honda", # 20th
 		"Ken Sakamura", # 20th
 		"Kyota Sugimoto", # 20th
@@ -712,7 +712,7 @@ iCivJapan : {
 		iIndustrial,
 		"Sakamoto Ryouma", # 19th
 		"Oukubo Toshimichi", # 19th
-		iModern,
+		iGlobal,
 		"Shigeru Yoshida", # 20th
 	],
 	iGreatGeneral : [
@@ -725,7 +725,7 @@ iCivJapan : {
 		iIndustrial,
 		"fNakano Takeko", # 19th
 		"Tougou Heihachirou", # 19th
-		iModern,
+		iGlobal,
 		"Isoroku Yamamoto", # 20th
 		"Tomoyuki Yamashita", # 20th
 	],
@@ -737,12 +737,12 @@ iCivEthiopia : {
 		iMedieval,
 		"Ewostatewos", # 14th
 		"Abba Samuel", # 14th
-		iModern,
+		iGlobal,
 		"Abune Tewophilos", # 20th
 	],
 	iGreatArtist : [
 		"Gebre Kristos Desta", # 19th
-		iModern,
+		iGlobal,
 		"Tsegaye Gabre-Medhin", # 20th
 		"Adamu Tesfaw", # 20th
 		"Afeworq Tekle", # 20th
@@ -750,7 +750,7 @@ iCivEthiopia : {
 	],
 	iGreatScientist : [
 		"Abba Bahrey", # 16th
-		iModern,
+		iGlobal,
 		"Aklilu Lemma", # 20th
 		"Kitaw Ejigu", # 20th
 		"Sossina Haile", # 20th
@@ -758,7 +758,7 @@ iCivEthiopia : {
 	],
 	iGreatMerchant : [
 		"Nigiste Saba", # legendary
-		iModern,
+		iGlobal,
 		"Berhanu Nega", # 20th
 		"Eleni Gebre-Medhin", # 20th
 		"Mohammed Al Amoudi", # 20th
@@ -777,7 +777,7 @@ iCivEthiopia : {
 		iIndustrial,
 		"Tewodros", # 19th
 		"Menelik", # 19th
-		iModern,
+		iGlobal,
 		"Mengistu Haile Mariam", # 20th
 	],
 	iGreatGeneral : [
@@ -819,7 +819,7 @@ iCivKorea : {
 		"Seong Sammun", # 15th
 		"Yu Seong-won", # 15th
 		"Heo Jun", # 16th
-		iModern,
+		iGlobal,
 		"Hwang Woo-Suk", # 20th
 	],
 	iGreatMerchant : [
@@ -843,7 +843,7 @@ iCivKorea : {
 		iIndustrial,
 		"Kim Ok-gyun", # 19th
 		"fMyeongseong", # 19th
-		iModern,
+		iGlobal,
 		"Kim Gu", # 20th
 		"Kim Dae-jung", # 20th
 	],
@@ -932,7 +932,7 @@ iCivVikings : {
 		"fJohanna Maria Lind", # 19th
 		"Edvard Munch", # 19th
 		"Edvard Grieg", # 19th
-		iModern,
+		iGlobal,
 		"fAstrid Lindgren", # 20th
 		"Ingmar Bergman", # 20th
 	],
@@ -946,14 +946,14 @@ iCivVikings : {
 		iIndustrial,
 		"Johannes Rydberg", # 19th swedish
 		u"Anders Ångström", # 19th swedish
-		iModern,
+		iGlobal,
 		"Niels Bohr", # 20th
 	],
 	iGreatMerchant : [
 		"Eirikr Raudhi", # 10th
 		"Leifr Eiriksson", # 10th
 		"Haakon Sigurdsson", # 10th
-		iModern,
+		iGlobal,
 		"Ingvar Kamprad", # 20th swedish
 		"Roald Amundsen", # 20th
 	],
@@ -962,7 +962,7 @@ iCivVikings : {
 		iIndustrial,
 		"Niels Abel", # 19th
 		"Alfred Nobel", # 19th swedish
-		iModern,
+		iGlobal,
 		"Ivar Giaever", # 20th
 	],
 	iGreatStatesman : [
@@ -973,7 +973,7 @@ iCivVikings : {
 		"Gustav Vasa", # 16th
 		iIndustrial,
 		"Nikolaj Frederik Severin Grundtvig", # 19th
-		iModern,
+		iGlobal,
 		u"Dag Hammarskjöld", # 20th
 	],
 	iGreatGeneral : [
@@ -1033,7 +1033,7 @@ iCivArabia : {
 		"Ibn Khaldun", # 14th
 		iIndustrial,
 		"Muhammad ibn Saud", # 18th
-		iModern,
+		iGlobal,
 		"Yasser Arafat", # 20th
 	],
 	iGreatGeneral : [
@@ -1054,14 +1054,14 @@ iCivKhmer : {
 		"Tamalinda", # 12th
 		iIndustrial,
 		"Chuon Nath", # 19th
-		iModern,
+		iGlobal,
 		"Maha Ghosananda", # 20th
 	],
 	iGreatArtist : [
 		"Thammaracha", # 16th
 		iIndustrial,
 		"Ang Duong", # 19th
-		iModern,
+		iGlobal,
 		"Vann Nath", # 20th
 		"Chath Piersath", # 20th
 		"Chhim Sothy", # 20th
@@ -1069,7 +1069,7 @@ iCivKhmer : {
 	iGreatScientist : [
 		"Jayavarman", # 10th
 		"fSaptadevakula Prana", # 10th
-		iModern,
+		iGlobal,
 		"Krisana Kraisintu", # 20th
 		"Shaiwatna Kupratakul", # 20th
 	],
@@ -1080,14 +1080,14 @@ iCivKhmer : {
 		iRenaissance,
 		"Chey Chettha", # 16th
 		"Srei Meara", # 17th
-		iModern,
+		iGlobal,
 		"Teng Bunma", # 20th
 	],
 	iGreatEngineer : [
 		"Indravarman", # 9th
 		"Yasovarman", # 9th
 		"fJahavi", # 10th
-		iModern,
+		iGlobal,
 		"Vann Molyvann", # 20th
 	],
 	iGreatStatesman : [
@@ -1095,7 +1095,7 @@ iCivKhmer : {
 		"Harshavarman", # 10th
 		iIndustrial,
 		"Norodom", # 19th
-		iModern,
+		iGlobal,
 		"Tou Samouth", # 20th
 	],
 	iGreatGeneral : [
@@ -1103,7 +1103,7 @@ iCivKhmer : {
 		"Bhavavarman", # 6th
 		"Vinyanandana", # 9th
 		"Rajendravarman", # 10th
-		iModern,
+		iGlobal,
 		"Sak Sutsakhan", # 20th
 		"Dien Del", # 20th
 	],
@@ -1146,7 +1146,7 @@ iCivIndonesia : {
 		iIndustrial,
 		"Mahmud Badaruddin", # 19th 
 		"fRaden Ayu Kartini", # 19th 
-		iModern,
+		iGlobal,
 		"Sukarno", # 20th 
 		"Agus Salim", # 20th 
 		"Chep the Magnificent", # Contest Reward 
@@ -1179,7 +1179,7 @@ iCivSpain : {
 		u"fJuana Inés de la Cruz", # 17th
 		u"Diego de Silva Velázquez", # 17th
 		"Francisco de Goya", # 18th
-		iModern,
+		iGlobal,
 		"Pablo Picasso", # 20th
 		u"Salvador Dalí", # 20th
 	],
@@ -1204,7 +1204,7 @@ iCivSpain : {
 		"Alberto de Palacio y Elissague", # 19th
 		"Esteban Terradas i Illa", # 19th
 		u"Antoni Gaudí", # 19th
-		iModern,
+		iGlobal,
 		"Juan de la Cierva", # 20th
 	],
 	iGreatStatesman : [
@@ -1235,7 +1235,7 @@ iCivFrance : {
 		"Jean Calvin", # 16th
 		iIndustrial,
 		u"fThérèse de Lisieux", # 19th
-		iModern,
+		iGlobal,
 		"Albert Schweitzer", # 20th
 		u"Marcel Légaut", # 20th
 	],
@@ -1257,9 +1257,10 @@ iCivFrance : {
 		"fGeorge Sand", # 19th
 		"Alexandre Dumas", # 19th
 		"Auguste Rodin", # 19th
-		iModern,
+		iGlobal,
 		"Marcel Proust", # 20th
 		u"fÉdith Piaf", # 20th
+		"fEdith Piaf", # 20th
 	],
 	iGreatScientist : [
 		"Nicole Oresme", # 14th
@@ -1273,7 +1274,7 @@ iCivFrance : {
 		"Louis Pasteur", # 19th
 		"fMarie-Sophie Germain", # 19th
 		"fMarie Curie", # 19th
-		iModern,
+		iGlobal,
 		"Antoine Henri Becquerel", # 20th
 	],
 	iGreatMerchant : [
@@ -1283,7 +1284,7 @@ iCivFrance : {
 		iIndustrial,
 		u"Frédéric Bastiat", # 18th
 		"Ferdinand de Lesseps", # 19th
-		iModern,
+		iGlobal,
 		"fCoco Chanel", # 20th
 		"Marcel Dessault", # 20th
 	],
@@ -1298,7 +1299,7 @@ iCivFrance : {
 		"Louis Daguerre", # 19th
 		"Norbert Rillieux", # 19th
 		"Alexandre Gustave Eiffel", # 19th
-		iModern,
+		iGlobal,
 		u"Louis Lumière", # 20th
 		"Le Corbusier", # 20th
 		"fMarie Marvingt", # 20th
@@ -1316,7 +1317,7 @@ iCivFrance : {
 		iIndustrial,
 		"Alexis de Tocqueville", # 19th
 		"Pierre-Joseph Proudhon", # 19th
-		iModern,
+		iGlobal,
 		"fSimone de Beauvoir", # 20th
 	],
 	iGreatGeneral : [
@@ -1353,7 +1354,7 @@ iCivEngland : {
 		"Charles Dickens", # 19th
 		"Arthur Conan Doyle", # 19th
 		"fMary Shelley", # 19th
-		iModern,
+		iGlobal,
 		"James Joyce", # 20th
 		"fAgatha Christie", # 20th
 		"John Lennon", # 20th
@@ -1368,7 +1369,7 @@ iCivEngland : {
 		"Charles Darwin", # 19th
 		"James Clerk Maxwell", # 19th
 		"fMary Anning", # 19th
-		iModern,
+		iGlobal,
 		"Ernest Rutherford", # 20th
 		"fRosalind Franklin", # 20th
 		"Stephen Hawking", # 20th
@@ -1380,7 +1381,7 @@ iCivEngland : {
 		iIndustrial,
 		"Cecil Rhodes", # 19th
 		"Thomas Sutherland", # 19th
-		iModern,
+		iGlobal,
 		"John Maynard Keynes", # 20th
 	],
 	iGreatEngineer : [
@@ -1391,7 +1392,7 @@ iCivEngland : {
 		"Henry Bessemer", # 19th
 		"Charles Babbage", # 19th
 		"fAda Lovelace", # 19th
-		iModern,
+		iGlobal,
 		"Alan Turing", # 20th
 		"Tim Berners-Lee", # 20th
 	],
@@ -1406,7 +1407,7 @@ iCivEngland : {
 		iIndustrial,
 		"William Gladstone", # 19th
 		"Benjamin Disraeli", # 19th
-		iModern,
+		iGlobal,
 		"Clement Atlee", # 20th
 	],
 	iGreatGeneral : [
@@ -1418,7 +1419,7 @@ iCivEngland : {
 		"Horatio Nelson", # 18th
 		iIndustrial,
 		"Arthur Wellington", # 19th
-		iModern,
+		iGlobal,
 		"Bernard Law Montgomery", # 20th
 	],
 },
@@ -1432,7 +1433,7 @@ iCivGermany : {
 		"Philip Melanchthon", # 16th
 		iIndustrial, 
 		"Theodor Herzl", # 19th
-		iModern,
+		iGlobal,
 		"Dietrich Bonhoeffer", # 20th
 		"fEdith Stein", # 20th
 	],
@@ -1449,7 +1450,7 @@ iCivGermany : {
 		"fClara Schumann", # 19th
 		"Richard Wagner", # 19th
 		"Gustav Klimt", # 19th
-		iModern,
+		iGlobal,
 		"Paul Klee", # 20th
 		"fLeni Riefenstahl", # 20th
 		"Leoreth", # 21st
@@ -1463,7 +1464,7 @@ iCivGermany : {
 		"Ignaz Semmelweis", # 19th
 		"Gregor Mendel", # 19th
 		"Sigmund Freud", # 19th
-		iModern,
+		iGlobal,
 		"Albert Einstein", # 20th
 		"Werner Heisenberg", # 20th
 		"fEmmy Noether", # 20th
@@ -1480,7 +1481,7 @@ iCivGermany : {
 		iIndustrial,
 		"Friedrich List", # 19th
 		"Carl Menger", # 19th
-		iModern,
+		iGlobal,
 		"Joseph Schumpeter", # 20th
 		"fMelitta Bentz", # 20th
 		"Ludwig von Mises", # 20th
@@ -1492,7 +1493,7 @@ iCivGermany : {
 		"Nikolaus Otto", # 19th
 		"Gottlieb Daimler", # 19th
 		"Carl Benz", # 19th
-		iModern,
+		iGlobal,
 		"Ferdinand Porsche", # 20th
 		"August Horch", # 20th
 		"Ludwig Mies van der Rohe", # 20th
@@ -1508,7 +1509,7 @@ iCivGermany : {
 		"Wilhelm Liebknecht", # 19th
 		"Friedrich Ebert", # 19th
 		"fRosa Luxemburg", # 19th
-		iModern,
+		iGlobal,
 		"Konrad Adenauer", # 20th
 		"fHannah Arendt", # 20th
 		"Helmut Kohl", # 20th
@@ -1522,7 +1523,7 @@ iCivGermany : {
 		iIndustrial,
 		"Carl von Clausewitz", # 19th
 		"Paul von Hindenburg", # 19th
-		iModern,
+		iGlobal,
 		"Erwin Rommel", # 20th
 		"Heinz Guderian", # 20th
 	],
@@ -1533,7 +1534,7 @@ iCivRussia : {
 		"Feofan Prokopovich", # 18th
 		iIndustrial,
 		"fHelena Blavatsky", # 19th
-		iModern,
+		iGlobal,
 		"Nikolai Berdyaev", # 20th
 		"Georges Florovsky", # 20th
 		"Alexei Losev", # 20th
@@ -1545,7 +1546,7 @@ iCivRussia : {
 		"Pyotr Ilyich Tchaikovsky", # 19th
 		"Modest Mussorgsky", # 19th
 		"Anton Chekov", # 19th
-		iModern,
+		iGlobal,
 		"Wassily Kandinsky", # 20th
 		"fNatalia Goncharova", # 20th
 		"fAnna Pavlova", # 20th
@@ -1556,7 +1557,7 @@ iCivRussia : {
 		"Dmitri Mendeleyev", # 19th
 		"Nikolai Lobachevsky", # 19th
 		"fSofia Kovalevskaya", # 19th
-		iModern,
+		iGlobal,
 		"Konstantin Tsiolkovsky", # 19th
 		"Pavel Cherenkov", # 20th
 		"Mikhail Ostrogradsky", # 20th
@@ -1567,13 +1568,13 @@ iCivRussia : {
 		"Vitus Bering", # 18th
 		iIndustrial,
 		"Ivan Kruzenshtern", # 19th
-		iModern, 
+		iGlobal, 
 		"Nikolai Kondratiev", # 20th
 	],
 	iGreatEngineer : [
 		"Postnik Yakovlev", # 16th
 		"Ivan Starov", # 18th
-		iModern,
+		iGlobal,
 		"Sergei Korolev", # 20th
 		"Andrey Tupolev", # 20th
 		u"Léon Theremin", # 20th
@@ -1590,7 +1591,7 @@ iCivRussia : {
 		iIndustrial,
 		"Mikhail Speransky", # 19th
 		"Vladimir Lenin", # 19th
-		iModern,
+		iGlobal,
 		"Leon Trotsky", # 20th
 		"fAlexandra Kollontai", # 20th
 		"Andrei Sakharov", # 20th
@@ -1606,7 +1607,7 @@ iCivRussia : {
 		"Mikhail Skobelev", # 19th
 		"fVasilisa Kozhina", # 19th
 		"fNadezhda Durova", # 19th
-		iModern,
+		iGlobal,
 		"Georgy Zhukov", # 20th
 		"Vasily Chuikov", # 20th
 	],
@@ -1621,7 +1622,7 @@ iCivMali : {
 	],
 	iGreatArtist : [
 		"Nare Maghann Konate", # 13th
-		iModern,
+		iGlobal,
 		"Lobi Traore", # 20th
 		"Ibrahim Aya", # 20th
 	],
@@ -1637,7 +1638,7 @@ iCivMali : {
 		"Tunka Manin", # 11th
 		"Abubakari", # 13th
 		"Abu Bakr ibn Ahmad Biru", # 12-16th
-		iModern,
+		iGlobal,
 		"Moctar Ouane", # 20th
 	],
 	iGreatEngineer : [
@@ -1654,7 +1655,7 @@ iCivMali : {
 		u"Bitòn Coulibaly", # 18th
 		iIndustrial,
 		u"Samori Touré", # 19th
-		iModern,
+		iGlobal,
 		"Modibo Keita", # 20th
 		u"Alpha Oumar Konaré", # 20th
 	],
@@ -1691,7 +1692,7 @@ iCivPortugal : {
 		"Pedro Nunes", # 16th
 		"Bartolomeu de Gusmao", # 18th
 		"Jacob de Castro Sarmento", # 18th
-		iModern,
+		iGlobal,
 		"Abel Salazar", # 20th
 		u"António Egas Moniz", # 20th
 	],
@@ -1710,14 +1711,14 @@ iCivPortugal : {
 		iRenaissance,
 		"Diogo de Boitaca", # 16th
 		u"João Antunes", # 17th
-		iModern,
+		iGlobal,
 		u"Álvaro Siza Vieira", # 20th
 	],
 	iGreatStatesman : [
 		"Henrique de Avis", # 15th
 		iRenaissance,
 		u"Sebastião José de Carvalho e Melo", # 18th
-		iModern,
+		iGlobal,
 		"Afonso Costa", # 20th
 		u"António de Oliveria Salazar", # 20th
 	],
@@ -1725,7 +1726,7 @@ iCivPortugal : {
 		u"Nuno Álvares Pereira", # 14th
 		"Afonso de Albuquerque", # 15th
 		"Alvaro Vaz de Almada", # 15th
-		iModern,
+		iGlobal,
 		"Otelo Saraiva de Carvalho", # 20th
 	],
 },
@@ -1796,7 +1797,7 @@ iCivItaly : {
 		"Raffaello Sanzio", # 16th
 		"fSofonisba Anguissola", # 16th
 		"fArtemisia Gentileschi", # 17th
-		iModern,
+		iGlobal,
 		"fGrazia Deledda", # 20th
 		"Gabriele Trovato", # 20th
 		u"Gian Maria Volontè", # Contest Reward
@@ -1811,7 +1812,7 @@ iCivItaly : {
 		"Luigi Galvani", # 18th
 		"Alessandro Volta", # 18th
 		"fMaria Gaetana Agnesi", # 18th
-		iModern,
+		iGlobal,
 		"Enrico Fermi", # 20th
 		"fRita Levi-Montalcini", # 20th
 	],
@@ -1830,7 +1831,7 @@ iCivItaly : {
 		"Donato Bramante", # 15th
 		"Filippo Brunelleschi", # 15th
 		"Andrea Palladio", # 16th
-		iModern,
+		iGlobal,
 		"Guglielmo Marconi", # 20th
 	],
 	iGreatStatesman : [
@@ -1843,7 +1844,7 @@ iCivItaly : {
 		iIndustrial,
 		"Giuseppe Garibaldi", # 19th
 		"Giuseppe Mazzini", # 19th
-		iModern,
+		iGlobal,
 		"Antonio Gramsci", # 20th
 	],
 	iGreatGeneral : [
@@ -1866,7 +1867,7 @@ iCivMongols : {
 		"Oghul Qaimish", # 13th
 		"Tolui", # 13th
 		"Uzbeg", # 14th
-		iModern,
+		iGlobal,
 		"Siqin Gaowa", # 20th
 	],
 	iGreatScientist : [
@@ -1888,7 +1889,7 @@ iCivMongols : {
 		"Duwa", # 13th
 		"Zhang Wenqian", # 13th
 		"Toqta", # 14th
-		iModern,
+		iGlobal,
 		"Li Siguang", # 20th
 	],
 	iGreatStatesman : [
@@ -1945,7 +1946,7 @@ iCivAztecs : {
 		"Tezozomoctli", # 15th
 		"Nezahualcoyotl", # 15th
 		"Nezahualpilli", # 15th
-		iModern,
+		iGlobal,
 		"fRigoberta Mench&#250;", # 20th
 	],
 	iGreatGeneral : [
@@ -1988,13 +1989,13 @@ iCivMughals : {
 		"Mir Jumla", # 17th
 		"Yahya Saleh", # 16th
 		"Khan Alam", # 18th
-		iModern,
+		iGlobal,
 		"Mian Muhammad Mansha", # 20th
 	],
 	iGreatEngineer : [
 		"Fathullah Shirazi", # 16th
 		"Ustad Ahmad Lahauri", # 17th
-		iModern,
+		iGlobal,
 		"Abdur Rahman Hye", # 20th
 		"Abdul Qadeer Khan", # 20th
 		"Munir Ahmad Khan", # 20th
@@ -2005,7 +2006,7 @@ iCivMughals : {
 		iRenaissance,
 		"Babur", # 16th
 		"Abu'l-Fazl ibn Muhammad", # 16th
-		iModern,
+		iGlobal,
 		"Muhammad Ali Jinnah", # 20th
 		"Choudhry Ali", # 20th
 	],
@@ -2026,7 +2027,7 @@ iCivTurkey : {
 		iRenaissance,
 		"Sabatai Zevi", # 17th
 		"Yaakov Culi", # 18th
-		iModern,
+		iGlobal,
 		"Mustada Cagrici", # 20th
 	],
 	iGreatArtist : [
@@ -2034,12 +2035,12 @@ iCivTurkey : {
 		iRenaissance,
 		u"Hayâlî", # 16th
 		u"Gül Baba", # 16th
-		iModern,
+		iGlobal,
 		"Mehmet Akif Ersoy", # 20th
 	],
 	iGreatScientist : [
 		"Qazi Zada", # 14th
-		iModern,
+		iGlobal,
 		"Cahit Arf", # 20th
 		"Oktay Sinanoglu", # 20th
 		u"Feza Gürsey", # 20th
@@ -2049,7 +2050,7 @@ iCivTurkey : {
 		"Evliya Celebi", # 17th
 		iIndustrial,
 		u"Abdülmecid", # 19th
-		iModern,
+		iGlobal,
 		"Hormuzd Rassam", # 20th
 		"Nejat Eczacibashi", # 20th
 		"Aydin Dogan", # 20th
@@ -2058,7 +2059,7 @@ iCivTurkey : {
 		"Atik Sinan", # 15th
 		"Davud Aga", # 15th
 		"Mimar Sinan", # 15th
-		iModern,
+		iGlobal,
 		"Ekmel Ozbay", # 20th
 	],
 	iGreatStatesman : [
@@ -2066,7 +2067,7 @@ iCivTurkey : {
 		iRenaissance,
 		"Pargali Ibrahim Pasha", # 16th
 		"Sokollu Mehmet Pasha", # 16th
-		iModern,
+		iGlobal,
 		u"Ismet Inönü", # 20th
 		u"Süleyman Demirel", # 20th
 	],
@@ -2077,7 +2078,7 @@ iCivTurkey : {
 		"Selim", # 16th
 		"Turgut Reis", # 16th
 		"Kara Mustafa Pasha", # 17th
-		iModern,
+		iGlobal,
 		"Ismail Enver", # 20th
 	],
 },
@@ -2090,7 +2091,7 @@ iCivNetherlands : {
 		iIndustrial,
 		"Abraham Kuyper", # 19th
 		"fAletta Jacobs", # 19th
-		iModern,
+		iGlobal,
 		"fAlida Bosshardt", # 20th
 	],
 	iGreatArtist : [
@@ -2101,7 +2102,7 @@ iCivNetherlands : {
 		"fTitia Bergsma", # 18th
 		iIndustrial,
 		"Vincent van Gogh", # 19th
-		iModern, 
+		iGlobal, 
 		"Piet Mondrian", # 20th
 	],
 	iGreatScientist : [
@@ -2110,7 +2111,7 @@ iCivNetherlands : {
 		"Antonie van Leeuwenhoek", # 17th
 		"Govert Bidloo", # 17th
 		"fAnna Maria van Schurman", # 18th
-		iModern,
+		iGlobal,
 		"Jan Hendrik Oort", # 20th
 		"Gerrit Pieter Kuiper", # 20th
 	],
@@ -2126,7 +2127,7 @@ iCivNetherlands : {
 		iIndustrial,
 		"Clemens Brenninkmeijer", # 19th
 		"August Kessler", # 19th
-		iModern,
+		iGlobal,
 		"Freddy Heineken", # 20th
 	],
 	iGreatEngineer : [
@@ -2135,7 +2136,7 @@ iCivNetherlands : {
 		"Jan Leeghwater", # 17th
 		iIndustrial,
 		"Adolphe Sax", # 19th
-		iModern,
+		iGlobal,
 		"Frits Philips", # 20th
 	],
 	iGreatStatesman : [
@@ -2148,7 +2149,7 @@ iCivNetherlands : {
 		iIndustrial,
 		"Johan Thorbecke", # 19th
 		"Cornelis Lely", # 19th
-		iModern,
+		iGlobal,
 		"Willem Drees", # 20th
 	],
 	iGreatGeneral : [
@@ -2176,7 +2177,7 @@ iCivAmerica : {
 		"fEmily Dickinson", # 19th
 		"Herman Melville", # 19th
 		"fMary Cassatt", # 19th
-		iModern,
+		iGlobal,
 		"Ernest Hemingway", # 20th
 		"Charlie Chaplin", # 20th
 		"Elvis Presley", # 20th
@@ -2188,7 +2189,7 @@ iCivAmerica : {
 	iGreatScientist : [
 		"Benjamin Franklin", # 18th
 		"fNettie Stevens", # 19th
-		iModern,
+		iGlobal,
 		"Arthur Compton", # 20th
 		"Edwin Hubble", # 20th
 		"John von Neumann", # 20th
@@ -2203,7 +2204,7 @@ iCivAmerica : {
 		"John D. Rockefeller", # 19th
 		"Andrew Carnegie", # 19th
 		"fHetty Green", # 19th
-		iModern,
+		iGlobal,
 		"fHelena Rubinstein", # 20th
 		"William Edward Boeing", # 20th
 		"Bill Gates", # 20th
@@ -2213,7 +2214,7 @@ iCivAmerica : {
 		"Nikola Tesla", # 19th
 		"Henry Ford", # 19th
 		"Charles Goodyear", # 19th
-		iModern,
+		iGlobal,
 		"Orville Wright", # 20th
 		"fLillian Moller Gilbreth", # 20th
 		"fHedy Lamarr", # 20th
@@ -2229,7 +2230,7 @@ iCivAmerica : {
 		"fSojourner Truth", # 19th
 		"fVictoria Claflin Woodhull", # 19th
 		"fJane Addams", # 19th
-		iModern,
+		iGlobal,
 		"fEleanor Roosevelt", # 20th
 		"George Kennan", # 20th
 	],
@@ -2237,7 +2238,7 @@ iCivAmerica : {
 		"Andrew Jackson", # 19th
 		"Ulysses S. Grant", # 19th
 		"Robert E. Lee", # 19th
-		iModern,
+		iGlobal,
 		"Dwight D. Eisenhower", # 20th
 		"George Patton", # 20th
 		"Douglas MacArthur", # 20th
@@ -2251,7 +2252,7 @@ iCivIran : {
 		iIndustrial,
 		u"Bahá'u'lláh", # 19th
 		u"Báb", # 19th
-		iModern,
+		iGlobal,
 		"Ayatollah Mohammad Taqi", # 20th
 	],
 	iGreatArtist : [
@@ -2260,7 +2261,7 @@ iCivIran : {
 		"Ustad Mirza Shirazi", # 18thth
 		iIndustrial,
 		"Mihr 'Ali", # 19th
-		iModern,
+		iGlobal,
 		"fForough Farrokhzad", # 20th
 		"Hossein Amanat", # 20th
 		"fHayedeh", # 20th
@@ -2269,7 +2270,7 @@ iCivIran : {
 		"Al-Birjandi", # 16th
 		"Qazi Sa'id Qumi", # 17th
 		"Alavi Shirazi", # 17th
-		iModern,
+		iGlobal,
 		"Mahmoud Hessaby", # 20th
 		"Ali Javan", # 20th
 		"Cumrun Vafa", # 20th
@@ -2295,7 +2296,7 @@ iCivIran : {
 		"Ebrahim Khan Kalantar", # 19th
 		"Kuchik Khan", # 19th
 		"Amir Kabir", # 19th
-		iModern,
+		iGlobal,
 		"Reza Shah Pahlavi", # 20th
 		"Mohammad Mossadegh", # 20th
 	],
@@ -2304,7 +2305,7 @@ iCivIran : {
 		"Mohammad Khan Qajar", # 18th
 		iIndustrial,
 		"Ahmad Amir-Ahmadi", # 19th
-		iModern,
+		iGlobal,
 		"Bahram Aryana", # 20th
 		"Muhammad-Husayn Ayrom", # 20th
 		"Ali-Reza Asgari", # 20th
@@ -2318,7 +2319,7 @@ iCivTibet : {
 		"Sonam Gyatso", # 16th
 		"Yonten Gyatso", # 16-17th
 		"Tsangyang Gyatso", # 17th
-		iModern,
+		iGlobal,
 		"Tenzin Gyatso", # 20th
 	],
 	iGreatArtist : [
@@ -2371,13 +2372,13 @@ iCivPoland : {
 		"Wojciech", # 10th
 		"Stanislaw", # 11th
 		"fJadwiga", # 14th
-		iModern,
+		iGlobal,
 		"Karol Wojtyla", # 20th
 	],
 	iGreatArtist : [
 		"Jan Matejko", # 19th
 		"Fryderyk Chopin", # 19th
-		iModern,
+		iGlobal,
 		"Witold Lutoslawski", # 20th
 	],
 	iGreatScientist : [
@@ -2391,12 +2392,12 @@ iCivPoland : {
 	],
 	iGreatMerchant : [
 		"Leopold Kronenberg", # 19th
-		iModern,
+		iGlobal,
 		"Jan Kulczyk", # 20th
 	],
 	iGreatEngineer : [
 		"Ignacy Lukasiewicz", # 19th
-		iModern,
+		iGlobal,
 		"Kasimiersz Proszynski", # 20th
 		"Tadeusz Sendzimir", # 20th
 	],
@@ -2406,7 +2407,7 @@ iCivPoland : {
 		"Andrzej Frycz Modrzewski", # 16th
 		"Jan Zamoyski", # 16th
 		"Stanislaw Staszic", # 18th
-		iModern,
+		iGlobal,
 		"Ignacy Daszynski", # 20th
 		"Jozef Pilsudski", # 20th
 		"Wladyslaw Sikorski", # 20th
@@ -2418,7 +2419,7 @@ iCivPoland : {
 		"Tadeusz Kosciuszko", # 18th
 		iIndustrial,
 		"fEmilia Plater", # 19th
-		iModern,
+		iGlobal,
 		"Wladyslaw Sikorski", # 20th
 	],
 },
@@ -2429,7 +2430,7 @@ iCivCongo : {
 		"Kalala Ilunga", # 17th
 		iIndustrial,
 		"Msiri", # 19th
-		iModern,
+		iGlobal,
 		"Patrice Lumumba", # 20th
 		"Joseph Kasa-Vubu", # 20th
 	],
@@ -2437,12 +2438,12 @@ iCivCongo : {
 iCivArgentina : {
 	iGreatProphet : [
 		"Gauchito Gil", # 19th
-		iModern,
+		iGlobal,
 		"Jorge Mario Bergoglio", # 20th
 	],
 	iGreatArtist : [
 		u"José Hernández", # 19th
-		iModern,
+		iGlobal,
 		"Carlos Gardel", # 20th
 		"fGabriela Mistral", # 20th
 		u"fEva Perón", # 20th
@@ -2454,14 +2455,14 @@ iCivArgentina : {
 	],
 	iGreatScientist : [
 		"Francisco Moreno", # 19th
-		iModern,
+		iGlobal,
 		"Luis Federico Leloir", # 20th
 		u"László Bíró", # 20th
 		u"René Favaloro", # 20th
 	],
 	iGreatMerchant : [
 		"Juan Las Heras", # 19th
-		iModern,
+		iGlobal,
 		u"José ber Gelbard", # 20th
 		"Roberto Alemann", # 20th
 		"Jorge Wehbe", # 20th
@@ -2470,14 +2471,14 @@ iCivArgentina : {
 	],
 	iGreatEngineer : [
 		"Luis Huergo", # 19th
-		iModern,
+		iGlobal,
 		"Amancio Williams", # 20th
 		u"César Pelli", # 20th
 		"Clorindo Testa", # 20th
 	],
 	iGreatStatesman : [
 		"Estanislao Zeballos", # 19th
-		iModern,
+		iGlobal,
 		"Carlos Saavedra Lamas", # 20th
 		"Juan Atilio Bramuglia", # 20th
 		"fEstela Barnes de Carlotto", # 20th
@@ -2493,7 +2494,7 @@ iCivArgentina : {
 iCivBrazil : {
 	iGreatProphet : [
 		u"António Conselheiro", # 19th
-		iModern,
+		iGlobal,
 		u"Hélder Câmara", # 20th
 		u"fIrmã Dulce Pontes", # 20th
 		"Chico Xavier", # 20th
@@ -2503,7 +2504,7 @@ iCivBrazil : {
 		"Aleijadinho", # 18th
 		u"António Carlos Gomes", # 19th
 		"Machado de Assis", # 19th
-		iModern,
+		iGlobal,
 		"fTarsila do Amaral", # 20th
 		"fCarmen Miranda", # 20th
 		"Tom Jobim", # 20th
@@ -2512,7 +2513,7 @@ iCivBrazil : {
 	iGreatScientist : [
 		"Oswaldo Cruz", # 19th
 		"Carlos Chagas", # 19th
-		iModern,
+		iGlobal,
 		"Alberto Santos-Dumont", # 20th
 		"Urbano Ernesto Stumpf", # 20th
 		u"Aziz Ab'Sáber", # 20th
@@ -2525,7 +2526,7 @@ iCivBrazil : {
 	],
 	iGreatEngineer : [
 		u"André Rebouças", # 19th
-		iModern,
+		iGlobal,
 		u"Cândido Rondon", # 20th
 		"Oscar Niemeyer", # 20th
 		"Norberto Odebrecht", # 20th
@@ -2537,14 +2538,14 @@ iCivBrazil : {
 		u"José Paranhos", # 19th
 		u"Isabel Bragança", # 19th
 		"Miguel Reale", # 19th
-		iModern,
+		iGlobal,
 		"Roberto Mangabeira Unger", # 20th
 	],
 	iGreatGeneral : [
 		u"Luís Alves de Lima e Silva", # 19th 
 		"Joaquim Marques Lisboa", # 19th
 		u"fMaria Quitéria", # 19th
-		iModern,
+		iGlobal,
 		u"João Baptista Mascarenhas de Morais", # 20th
 		"Eurico Gaspar Dutra", # 20th
 		"Artur da Costa e Silva", # 20th
@@ -2571,7 +2572,7 @@ iCivColombia : {
 	iGreatScientist : [
 		u"José Jéronimo Triana", # 19th
 		"Julio Garavito Armero", # 19th
-		iModern,
+		iGlobal,
 		u"Rodolfo Llinás", # 20th
 		"Jorge Reynolds Pombo", # 20th
 	],
@@ -2585,7 +2586,7 @@ iCivColombia : {
 	],
 	iGreatStatesman : [
 		u"Rafael Núñez", # 19th
-		iModern,
+		iGlobal,
 		u"Jorge Eliécer Gaitán", # 20th
 		u"Nicolás Gómez Dávila", # 20th
 		u"Mario Lanserna Pinzón", # 20th
@@ -2601,7 +2602,7 @@ iCivMexico : {
 		"Juan Diego", # 16th
 		"Francisco Javier Clavijero", # 18th
 		u"Cristóbal Magallanes Jara", # 19th
-		iModern,
+		iGlobal,
 		u"Rafael Guízar Valencia", # 20th
 		"Miguel Pro", # 20th
 		"Samuel Ruiz", # 20th
@@ -2609,7 +2610,7 @@ iCivMexico : {
 	],
 	iGreatArtist : [
 		u"fÁngela Peralta", # 19th
-		iModern,
+		iGlobal,
 		u"José Clemente Orozco", # 20th
 		"Diego Rivera", # 20th
 		"fFrida Kahlo", # 20th
@@ -2623,7 +2624,7 @@ iCivMexico : {
 	iGreatScientist : [
 		"Gabino Barreda", # 19th
 		u"Lucas Alamán", # 19th
-		iModern,
+		iGlobal,
 		"Manuel Sandoval Vallarta", # 20th
 		"Ricardo Miledi", # 20th
 		u"Mario José Molina", # 20th
@@ -2648,7 +2649,7 @@ iCivMexico : {
 	iGreatStatesman : [
 		u"José María Pino Suárez", # 19th
 		"Pascual Orozco", # 19th
-		iModern,
+		iGlobal,
 		u"José Vasconcelos", # 20th
 		"Octavio Paz", # 20th
 		"fElvia Carrillo Puerto", # 20th
@@ -2668,13 +2669,13 @@ iCivMexico : {
 iCivCanada : {
 	iGreatProphet : [
 		"Ignace Bourget", # 19th
-		iModern,
+		iGlobal,
 		u"André Bessette", # 20th
 	],
 	iGreatArtist : [
 		"Tom Thomson", # 19th
 		u"Émile Nelligan", # 19th
-		iModern,
+		iGlobal,
 		"Lawren Harris", # 20th
 		"fEmily Carr", # 20th
 		"Jean-Paul Riopelle", # 20th
@@ -2683,7 +2684,7 @@ iCivCanada : {
 	iGreatScientist : [
 		"John William Dawson", # 19th
 		"fMaude Abbott", # 19th
-		iModern,
+		iGlobal,
 		"Frederick Banting", # 20th
 		"Norman Bethune", # 20th
 		"Wilder Penfield", # 20th
@@ -2693,7 +2694,7 @@ iCivCanada : {
 	],
 	iGreatMerchant : [
 		"Timothy Eaton", # 19th
-		iModern,
+		iGlobal,
 		"fElizabeth Arden", # 20th
 		"Ted Rogers", # 20th
 		u"Guy Laliberté", # 20th
@@ -2702,8 +2703,8 @@ iCivCanada : {
 		"Sandford Fleming", # 19th
 		"William Cornelius Van Horne", # 19th
 		"Alexander Graham Bell", # 19th
-		"Reginald Fessenden", # 19th-20th
-		iModern,
+		"Reginald Fessenden", # 19th-
+		iGlobal,
 		"Joseph-Armand Bombardier", # 20th
 		"fElsie MacGill", # 20th
 	],
@@ -2711,7 +2712,7 @@ iCivCanada : {
 		"John A. Macdonald", # 19th
 		u"George-Étienne Cartier", # 19th
 		"Louis Riel", # 19th
-		iModern,
+		iGlobal,
 		"Lester B. Pearson", # 20th
 		"fEmily Murphy", # 20th
 		"fNellie McClung", # 20th

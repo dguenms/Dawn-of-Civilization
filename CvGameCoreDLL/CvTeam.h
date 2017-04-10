@@ -242,6 +242,8 @@ public:
 	bool isVassal(TeamTypes eIndex) const;																// Exposed to Python
 	void setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated);
 
+	TeamTypes getMaster() const; // Leoreth
+
 	void assignVassal(TeamTypes eVassal, bool bSurrender) const;																// Exposed to Python
 	void freeVassal(TeamTypes eVassal) const;																// Exposed to Python
 
@@ -352,6 +354,9 @@ public:
 	// Leoreth
 	int getTotalTechValue() const;
 	void changeTotalTechValue(int iChange);
+
+	bool canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered = NO_TECH) const;
+	PlayerTypes getFoundingPlayer(ReligionTypes eReligion) const;
 
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;

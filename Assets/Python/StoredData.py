@@ -19,7 +19,7 @@ class PlayerData:
 		self.setup()
 
 	def setup(self):
-		
+	
 		# Rise and Fall
 		
 		self.iColonistsAlreadyGiven = 0
@@ -30,7 +30,7 @@ class PlayerData:
 		self.iResurrections = 0
 		self.iLastTurnAlive = 0
 		
-		self.iAstronomyTurn = 1500
+		self.iExplorationTurn = 1500
 		
 		# Religions
 		
@@ -54,6 +54,10 @@ class PlayerData:
 		# Stability
 		
 		self.resetStability()
+		
+		# Tech Log
+		
+		self.iTechColumn = 0
 		
 	def resetStability(self):
 		self.iStabilityLevel = iStabilityShaky
@@ -110,7 +114,6 @@ class PlayerData:
 		if iNewValue == 1 and self.getGoal(iGoal) == 0: return
 		self.lGoals[iGoal] = iNewValue
 	
-
 class GameData:
 
 	def __init__(self):
@@ -166,6 +169,9 @@ class GameData:
 		self.lByzantineBribes = []
 		
 		self.lLatestRazeData = [-1] * 5
+		
+		self.iFreeBabylonianTechs = 0
+		self.iLastTurnFreeBabylonianTech = 0
 		
 		# AI Wars
 		

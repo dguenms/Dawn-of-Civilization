@@ -321,7 +321,7 @@ def onReligionSpread(iReligion, iCiv, city):
 			
 def onRevolution(iCiv):
 
-	if gc.getPlayer(iCiv).getCivics(3) == iCivicCentralPlanning:
+	if gc.getPlayer(iCiv).getCivics(iCivicsEconomy) == iCentralPlanning:
 		applyCommunistNames(iCiv)
 	else:
 		revertCommunistNames(iCiv)

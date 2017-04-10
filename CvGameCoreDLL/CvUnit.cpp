@@ -180,6 +180,12 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		GET_PLAYER(getOwnerINLINE()).changeNumMilitaryUnits(1);
 	}
 
+	// Leoreth: worker count
+	if (m_pUnitInfo->isWorker())
+	{
+		GET_PLAYER(getOwnerINLINE()).changeWorkerCount(1);
+	}
+
 	GET_PLAYER(getOwnerINLINE()).changeAssets(m_pUnitInfo->getAssetValue());
 
 	GET_PLAYER(getOwnerINLINE()).changePower(m_pUnitInfo->getPowerValue());
@@ -706,11 +712,32 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 		GET_PLAYER(getOwnerINLINE()).changeNumMilitaryUnits(-1);
 	}
 
+	// Leoreth: worker count
+	if (m_pUnitInfo->isWorker())
+	{
+		GET_PLAYER(getOwnerINLINE()).changeWorkerCount(-1);
+	}
+
 	GET_PLAYER(getOwnerINLINE()).changeAssets(-(m_pUnitInfo->getAssetValue()));
 
 	GET_PLAYER(getOwnerINLINE()).changePower(-(m_pUnitInfo->getPowerValue()));
 
 	GET_PLAYER(getOwnerINLINE()).AI_changeNumAIUnits(AI_getUnitAIType(), -1);
+
+	// Brandenburg Gate effect: Great General death resets Great General threshold
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)BRANDENBURG_GATE))
+	{
+		for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+		{
+			if (isHasPromotion((PromotionTypes)iI))
+			{
+				if (GC.getPromotionInfo((PromotionTypes)iI).isLeader())
+				{
+					GET_PLAYER(getOwnerINLINE()).decrementGreatGeneralsCreated();
+				}
+			}
+		}
+	}
 
 	eOwner = getOwnerINLINE();
 	eCapturingPlayer = getCapturingPlayer();
@@ -728,7 +755,7 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 
 	GET_PLAYER(getOwnerINLINE()).deleteUnit(getID());
 
-	if ((eCapturingPlayer != NO_PLAYER) && (eCaptureUnitType != NO_UNIT) && !(GET_PLAYER(eCapturingPlayer).isBarbarian()))
+	if ((eCapturingPlayer != NO_PLAYER) && (eCaptureUnitType != NO_UNIT) && !(GET_PLAYER(eCapturingPlayer).isBarbarian()) && GET_PLAYER(eCapturingPlayer).canTrain(eCaptureUnitType))
 	{
 		if (GET_PLAYER(eCapturingPlayer).isHuman() || GET_PLAYER(eCapturingPlayer).AI_captureUnit(eCaptureUnitType, pPlot) || 0 == GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
 		{
@@ -4679,6 +4706,8 @@ bool CvUnit::bombard()
 		iBombardModifier -= pBombardCity->getBuildingBombardDefense();
 	}
 
+	iBombardModifier -= pBombardCity->getBuildingUnignorableBombardDefense();
+
 	pBombardCity->changeDefenseModifier(-(bombardRate() * std::max(0, 100 + iBombardModifier)) / 100);
 
 	setMadeAttack(true);
@@ -5912,7 +5941,7 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 	//Leoreth: no slavery in the motherland or with egalitarianism
 	if (getUnitType() == GC.getInfoTypeForString("UNIT_SLAVE"))
 	{
-		if (GET_PLAYER(getOwner()).getCivics((CivicOptionTypes)1) == CIVIC_EGALITARIANISM)
+		if (!GET_PLAYER(getOwner()).isSlavery() && !GET_PLAYER(getOwner()).isColonialSlavery())
 		{
 			return false;
 		}
@@ -6297,10 +6326,10 @@ int CvUnit::getGreatWorkCulture(const CvPlot* pPlot) const
 	iCulture = m_pUnitInfo->getGreatWorkCulture();
 
 	// Leoreth: new Sphinx effect: great priests can create great works
-	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"))
+	/*if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect((BuildingTypes)GREAT_SPHINX) && getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_GREAT_PROPHET"))
 	{
 		iCulture = GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_GREAT_ARTIST"))).getGreatWorkCulture();
-	}
+	}*/
 
 	// Leoreth: 800 culture per era
 	iCulture *= (GET_PLAYER(getOwnerINLINE()).getCurrentEra()+1);
@@ -14222,4 +14251,9 @@ SpecialistTypes CvUnit::getSettledSpecialist() const
 	}
 
 	return NO_SPECIALIST;
+}
+
+bool CvUnit::isWorker() const
+{
+	return GC.getUnitInfo(getUnitType()).isWorker();
 }

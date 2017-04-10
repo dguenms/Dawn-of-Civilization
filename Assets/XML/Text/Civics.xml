@@ -58,11 +58,11 @@
 		<English>Extra production from specialists; extra food from workshops and watermills; less commerce from windmills, watermills and towns; double production speed for factories and coal plants</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CITY_STATES</Tag>
-		<English>City States</English>
+		<Tag>TXT_KEY_CIVIC_SOVEREIGNTY</Tag>
+		<English>Sovereignty</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CITY_STATES_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_SOVEREIGNTY_STRATEGY</Tag>
 		<English>Increased maintenance from number of cities; specialists produce food if city works less than seven tiles</English>
 	</TEXT>
 	<TEXT>
@@ -263,7 +263,7 @@
 		<Spanish>A&#241;ade una bonificaci&#243;n de puntos de estabilidad por conquista de ciudades; no hay puntos de estabilidad negativos por las ciudades sometidas a ocupaci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_ORGANIZED_RELIGION_STRATEGY</Tag>
+		<Tag>TXT_KEY_CIVIC_CLERGY_STRATEGY</Tag>
 		<English>Extra unhappiness from non-state religions; cities with state religion construct buildings faster</English>
 	</TEXT>
 	<TEXT>
@@ -466,15 +466,135 @@
 		<Spanish>Expansi&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVICOPTION_MILITARY</Tag>
-		<English>Military</English>
+		<Tag>TXT_KEY_CIVICOPTION_TERRITORY</Tag>
+		<English>Territory</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVICOPTION_ORGANIZATION</Tag>
-		<English>Organization</English>
+		<Tag>TXT_KEY_CIVICOPTION_AUTHORITY</Tag>
+		<English>Authority</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVICOPTION_SOCIETY</Tag>
 		<English>Society</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVICOPTION_LEGITIMACY</Tag>
+		<English>Legitimacy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CHIEFDOM</Tag>
+		<English>Chiefdom</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MONARCHY</Tag>
+		<English>Monarchy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ELECTIVE</Tag>
+		<English>Elective</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_STATE_PARTY</Tag>
+		<English>State Party</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CONSTITUTION</Tag>
+		<English>Constitution</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_AUTHORITY</Tag>
+		<English>Authority</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CITIZENSHIP</Tag>
+		<English>Citizenship</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERITOCRACY</Tag>
+		<English>Meritocracy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CENTRALISM</Tag>
+		<English>Centralism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_IDEOLOGY</Tag>
+		<English>Ideology</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DEMOCRACY</Tag>
+		<English>Democracy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TRADITIONALISM</Tag>
+		<English>Traditionalism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MANORIALISM</Tag>
+		<English>Manorialism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_INDIVIDUALISM</Tag>
+		<English>Individualism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_RECIPROCITY</Tag>
+		<English>Reciprocity</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_REDISTRIBUTION</Tag>
+		<English>Redistribution</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MERCHANT_TRADE</Tag>
+		<English>Merchant Trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_REGULATED_TRADE</Tag>
+		<English>Regulated Trade</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_ENTERPRISE</Tag>
+		<English>Free Enterprise</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_DEIFICATION</Tag>
+		<English>Deification</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CLERGY</Tag>
+		<English>Clergy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MONASTICISM</Tag>
+		<English>Monasticism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TOLERANCE</Tag>
+		<English>Tolerance</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CONQUEST</Tag>
+		<English>Conquest</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_TRIBUTARIES</Tag>
+		<English>Tributaries</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ISOLATIONISM</Tag>
+		<English>Isolationism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_COLONIALISM</Tag>
+		<English>Colonialism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NATIONHOOD</Tag>
+		<English>Nationhood</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_MULTILATERALISM</Tag>
+		<English>Multilateralism</English>
 	</TEXT>
 </Civ4GameText>

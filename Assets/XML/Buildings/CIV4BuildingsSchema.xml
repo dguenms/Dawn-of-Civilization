@@ -112,6 +112,7 @@
 	<ElementType name="bNeverCapture" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNukeImmune" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPrereqReligion" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bPagan" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bCenterInCity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iAIWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
@@ -127,6 +128,7 @@
 	<ElementType name="iMinLatitude" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxLatitude" content="textOnly" dt:type="int"/>
 	<ElementType name="iGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGreatGeneralRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iDomesticGreatGeneralRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
@@ -153,6 +155,7 @@
 	<ElementType name="iAreaHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iAreaHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionHappiness" content="textOnly" dt:type="int"/>
@@ -164,11 +167,13 @@
 	<ElementType name="iCoastalTradeRoutes" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalTradeRoutes" content="textOnly" dt:type="int"/>
 	<ElementType name="iTradeRouteModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureTradeRouteModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iForeignTradeRouteModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalPopulationChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeTechs" content="textOnly" dt:type="int"/>
 	<ElementType name="iDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iBombardDefense" content="textOnly" dt:type="int"/>
+	<ElementType name="iUnignorableBombardDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iAllCityDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iEspionageDefense" content="textOnly" dt:type="int"/>
 	<ElementType name="iAsset" content="textOnly" dt:type="int"/>
@@ -178,6 +183,7 @@
 	<ElementType name="CivicOption" content="textOnly"/>
 	<ElementType name="GreatPeopleUnitClass" content="textOnly"/>
 	<ElementType name="iGreatPeopleRateChange" content="textOnly" dt:type="int"/>
+	<ElementType name="iCultureGreatPeopleRateChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iHurryAngerModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="bBorderObstacle" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iYield" content="textOnly" dt:type="int"/>
@@ -216,6 +222,12 @@
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="CommerceModifiers" content="eltOnly">
+		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="PowerCommerceModifiers" content="eltOnly">
+		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="CultureCommerceModifiers" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="GlobalCommerceModifiers" content="eltOnly">
@@ -381,8 +393,22 @@
 		<element type="ImprovementType"/>
 		<element type="iFreeSpecialistCount"/>
 	</ElementType>
+	<ElementType name="ImprovementHappiness" content="eltOnly">
+		<element type="ImprovementType"/>
+		<element type="iHappiness"/>
+	</ElementType>
+	<ElementType name="ImprovementHealth" content="eltOnly">
+		<element type="ImprovementType"/>
+		<element type="iHealth"/>
+	</ElementType>
 	<ElementType name="ImprovementFreeSpecialists" content="eltOnly">
 		<element type="ImprovementFreeSpecialist" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ImprovementHappinesses" content="eltOnly">
+		<element type="ImprovementHappiness" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ImprovementHealths" content="eltOnly">
+		<element type="ImprovementHealth" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="ImprovementType" content="textOnly"/>
 	<ElementType name="FlavorType" content="textOnly"/>
@@ -472,6 +498,7 @@
 		<element type="bNeverCapture" minOccurs="0"/>
 		<element type="bNukeImmune" minOccurs="0"/>
 		<element type="bPrereqReligion" minOccurs="0"/>
+		<element type="bPagan" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bCenterInCity" minOccurs="0"/>
 		<element type="iAIWeight" minOccurs="0"/>
 		<element type="iCost" minOccurs="0"/>
@@ -487,6 +514,7 @@
 		<element type="iMinLatitude" minOccurs="0"/>
 		<element type="iMaxLatitude" minOccurs="0"/>
 		<element type="iGreatPeopleRateModifier" minOccurs="0"/>
+		<element type="iCultureGreatPeopleRateModifier" minOccurs="0"/>
 		<element type="iGreatGeneralRateModifier" minOccurs="0"/>
 		<element type="iDomesticGreatGeneralRateModifier" minOccurs="0"/>
 		<element type="iGlobalGreatPeopleRateModifier" minOccurs="0"/>
@@ -513,6 +541,7 @@
 		<element type="iAreaHealth" minOccurs="0"/>
 		<element type="iGlobalHealth" minOccurs="0"/>
 		<element type="iHappiness" minOccurs="0"/>
+		<element type="iCultureHappiness" minOccurs="0"/>
 		<element type="iAreaHappiness" minOccurs="0"/>
 		<element type="iGlobalHappiness" minOccurs="0"/>
 		<element type="iStateReligionHappiness" minOccurs="0"/>
@@ -524,11 +553,13 @@
 		<element type="iCoastalTradeRoutes" minOccurs="0"/>
 		<element type="iGlobalTradeRoutes" minOccurs="0"/>
 		<element type="iTradeRouteModifier" minOccurs="0"/>
+		<element type="iCultureTradeRouteModifier" minOccurs="0"/>
 		<element type="iForeignTradeRouteModifier" minOccurs="0"/>
 		<element type="iGlobalPopulationChange" minOccurs="0"/>
 		<element type="iFreeTechs" minOccurs="0"/>
 		<element type="iDefense" minOccurs="0"/>
 		<element type="iBombardDefense" minOccurs="0"/>
+		<element type="iUnignorableBombardDefense" minOccurs="0"/>
 		<element type="iAllCityDefense" minOccurs="0"/>
 		<element type="iEspionageDefense" minOccurs="0"/>
 		<element type="iAsset" minOccurs="0"/>
@@ -546,6 +577,8 @@
 		<element type="ObsoleteSafeCommerceChanges" minOccurs="0"/>
 		<element type="CommerceChangeDoubleTimes" minOccurs="0"/>
 		<element type="CommerceModifiers" minOccurs="0"/>
+		<element type="PowerCommerceModifiers" minOccurs="0"/>
+		<element type="CultureCommerceModifiers" minOccurs="0"/>
 		<element type="GlobalCommerceModifiers" minOccurs="0"/>
 		<element type="SpecialistExtraCommerces" minOccurs="0"/>
 		<element type="StateReligionCommerces" minOccurs="0"/>
@@ -572,6 +605,8 @@
 		<element type="BonusYieldChanges" minOccurs="0"/>
 		<element type="ReligionYieldChanges" minOccurs="0"/> <!-- Leoreth -->
 		<element type="ImprovementFreeSpecialists" minOccurs="0"/>
+		<element type="ImprovementHappinesses" minOccurs="0"/>
+		<element type="ImprovementHealths" minOccurs="0"/>
 		<element type="Flavors" minOccurs="0"/>
 		<element type="HotKey" minOccurs="0"/>
 		<element type="bAltDown" minOccurs="0"/>

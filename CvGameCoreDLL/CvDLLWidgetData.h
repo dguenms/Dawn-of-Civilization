@@ -242,6 +242,9 @@ public:
 	void parseStabilityMilitaryHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseStabilityHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 
+	void parseMinorReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void doPediaMinorReligionJump(CvWidgetDataStruct &widgetDataStruct);
+
 protected:
 	
 	static CvDLLWidgetData* m_pInst;

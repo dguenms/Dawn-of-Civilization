@@ -1389,7 +1389,7 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnor
 
 	//Rhye
 	//if (GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
-	if (!bIgnoreProgress && GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) && !GET_TEAM(eTeam).isHasTech((TechTypes)MASS_MEDIA))
+	if (!bIgnoreProgress && GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) && !GET_TEAM(eTeam).isHasTech((TechTypes)GLOBALISM))
 	{
 		CvTeam& kTeam = GET_TEAM(eTeam);
 
@@ -2063,8 +2063,8 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 				return DENIAL_TOO_FAR;
 			}
             // edead: do not allow far away vassals
-            // Leoreth: only before Astronomy
-			if (!kMasterTeam.isHasTech((TechTypes)ASTRONOMY) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
+            // Leoreth: only before Exploration
+			if (!kMasterTeam.isHasTech((TechTypes)EXPLORATION) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
 			{
 				return DENIAL_TOO_FAR;
 			}
@@ -2707,7 +2707,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 	bool bTech = false;
 	for (int iK = 0; iK < NUM_MAJOR_PLAYERS; iK++) {
 		if (players[iK] > 0) {
-			if (GET_TEAM((TeamTypes)iK).isHasTech((TechTypes)FASCISM) || isHasTech((TechTypes)FISSION)) {
+			if (GET_TEAM((TeamTypes)iK).isHasTech((TechTypes)PSYCHOLOGY) || isHasTech((TechTypes)FISSION)) {
 				bTech = true;
 				break;
 			}

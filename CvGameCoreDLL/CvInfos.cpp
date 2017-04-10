@@ -3842,6 +3842,11 @@ bool CvUnitInfo::isGreatMission() const
 	return m_bGreatMission;
 }
 
+bool CvUnitInfo::isWorker() const
+{
+	return getWorkRate() > 0 && getDomainType() == DOMAIN_LAND && getCombat() == 0;
+}
+
 // BUG - Unit Experience - start
 /*
  * Returns true if this unit type is eligible to receive experience points.
@@ -5440,6 +5445,7 @@ m_iProcessModifier(0), //Leoreth
 m_iExtraHealth(0),
 m_iPollutionModifier(0), //Leoreth
 m_iFreeExperience(0),
+m_iWorkerProductionModifier(0), // Leoreth
 m_iWorkerSpeedModifier(0),
 m_iImprovementUpgradeRateModifier(0),
 m_iMilitaryProductionModifier(0),
@@ -5452,12 +5458,16 @@ m_iGoldPerMilitaryUnit(0),
 m_iHappyPerMilitaryUnit(0),
 m_iMilitaryHappinessLimit(0), //Leoreth
 m_iLargestCityHappiness(0),
+m_iSpecialistHappiness(0), // Leoreth
 m_iWarWearinessModifier(0),
 m_iFreeSpecialist(0),
 m_iCoreFreeSpecialist(0), //Leoreth
 m_iTradeRoutes(0),
 m_iCapitalTradeModifier(0), // Leoreth
 m_iDefensivePactTradeModifier(0), // Leoreth
+m_iVassalCityCommerce(0), // Leoreth
+m_iHappinessBonusCommerce(0), // Leoreth
+m_iCaptureGoldModifier(0), // Leoreth
 m_iTechPrereq(NO_TECH),
 m_iCivicPercentAnger(0),
 m_iMaxConscript(0),
@@ -5482,6 +5492,9 @@ m_bStabilityVassalBonus(false), //Rhye 6th
 m_bStabilityFoundBonus(false), //Rhye 6th
 m_bStabilityConquestBonus(false), //Rhye 6th
 m_bStabilityCommerceBonus(false), //Rhye 6th
+m_bEnslave(false), // Leoreth
+m_bSlavery(false), // Leoreth
+m_bColonialSlavery(false), // Leoreth
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
@@ -5490,6 +5503,8 @@ m_piCapitalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
 m_piSpecialistExtraYield(NULL), //Leoreth
 m_piSpecialistThresholdExtraYield(NULL), //Leoreth
+m_piHappinessExtraYield(NULL), // Leoreth
+m_piUnhappinessExtraYield(NULL), // Leoreth
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiBuildingProductionModifiers(NULL), //Leoreth
@@ -5522,6 +5537,8 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield); //Leoreth
 	SAFE_DELETE_ARRAY(m_piSpecialistThresholdExtraYield); //Leoreth
+	SAFE_DELETE_ARRAY(m_piHappinessExtraYield); // Leoreth
+	SAFE_DELETE_ARRAY(m_piUnhappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); //Leoreth
@@ -5636,6 +5653,12 @@ int CvCivicInfo::getFreeExperience() const
 	return m_iFreeExperience;
 }
 
+// Leoreth
+int CvCivicInfo::getWorkerProductionModifier() const
+{
+	return m_iWorkerProductionModifier;
+}
+
 int CvCivicInfo::getWorkerSpeedModifier() const
 {
 	return m_iWorkerSpeedModifier;
@@ -5697,6 +5720,12 @@ int CvCivicInfo::getLargestCityHappiness() const
 	return m_iLargestCityHappiness;
 }
 
+// Leoreth
+int CvCivicInfo::getSpecialistHappiness() const
+{
+	return m_iSpecialistHappiness;
+}
+
 int CvCivicInfo::getWarWearinessModifier() const
 {
 	return m_iWarWearinessModifier;
@@ -5728,6 +5757,24 @@ int CvCivicInfo::getCapitalTradeModifier() const
 int CvCivicInfo::getDefensivePactTradeModifier() const
 {
 	return m_iDefensivePactTradeModifier;
+}
+
+// Leoreth
+int CvCivicInfo::getVassalCityCommerce() const
+{
+	return m_iVassalCityCommerce;
+}
+
+// Leoreth
+int CvCivicInfo::getHappinessBonusCommerce() const
+{
+	return m_iHappinessBonusCommerce;
+}
+
+// Leoreth
+int CvCivicInfo::getCaptureGoldModifier() const
+{
+	return m_iCaptureGoldModifier;
 }
 
 int CvCivicInfo::getTechPrereq() const
@@ -5851,6 +5898,24 @@ bool CvCivicInfo::isStabilityCommerceBonus() const
 }
 //Rhye - end 6th
 
+// Leoreth
+bool CvCivicInfo::isEnslave() const
+{
+	return m_bEnslave;
+}
+
+// Leoreth
+bool CvCivicInfo::isSlavery() const
+{
+	return m_bSlavery;
+}
+
+// Leoreth
+bool CvCivicInfo::isColonialSlavery() const
+{
+	return m_bColonialSlavery;
+}
+
 const wchar* CvCivicInfo::getWeLoveTheKing()
 {
 	return m_szWeLoveTheKingKey;
@@ -5963,6 +6028,34 @@ int* CvCivicInfo::getSpecialistThresholdExtraYieldArray() const
 	return m_piSpecialistThresholdExtraYield;
 }
 
+// Leoreth
+int CvCivicInfo::getHappinessExtraYield(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piHappinessExtraYield ? m_piHappinessExtraYield[i] : -1;
+}
+
+// Leoreth
+int* CvCivicInfo::getHappinessExtraYieldArray() const
+{
+	return m_piHappinessExtraYield;
+}
+
+// Leoreth
+int CvCivicInfo::getUnhappinessExtraYield(int i) const
+{
+	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piUnhappinessExtraYield ? m_piUnhappinessExtraYield[i] : -1;
+}
+
+// Leoreth
+int* CvCivicInfo::getUnhappinessExtraYieldArray() const
+{
+	return m_piUnhappinessExtraYield;
+}
+
 int CvCivicInfo::getBuildingHappinessChanges(int i) const
 {
 	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
@@ -6063,6 +6156,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iExtraHealth);
 	stream->Read(&m_iPollutionModifier); //Leoreth
 	stream->Read(&m_iFreeExperience);
+	stream->Read(&m_iWorkerProductionModifier); // Leoreth
 	stream->Read(&m_iWorkerSpeedModifier);
 	stream->Read(&m_iImprovementUpgradeRateModifier);
 	stream->Read(&m_iMilitaryProductionModifier);
@@ -6075,12 +6169,16 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iHappyPerMilitaryUnit);
 	stream->Read(&m_iMilitaryHappinessLimit); //Leoreth
 	stream->Read(&m_iLargestCityHappiness);
+	stream->Read(&m_iSpecialistHappiness); // Leoreth
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iFreeSpecialist);
 	stream->Read(&m_iCoreFreeSpecialist); //Leoreth
 	stream->Read(&m_iTradeRoutes);
 	stream->Read(&m_iCapitalTradeModifier); // Leoreth
 	stream->Read(&m_iDefensivePactTradeModifier); // Leoreth
+	stream->Read(&m_iVassalCityCommerce); // Leoreth
+	stream->Read(&m_iHappinessBonusCommerce); // Leoreth
+	stream->Read(&m_iCaptureGoldModifier); // Leoreth
 	stream->Read(&m_iTechPrereq);
 	stream->Read(&m_iCivicPercentAnger);
 	stream->Read(&m_iMaxConscript);
@@ -6106,6 +6204,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bStabilityFoundBonus); //Rhye 6th
 	stream->Read(&m_bStabilityConquestBonus); //Rhye 6th
 	stream->Read(&m_bStabilityCommerceBonus); //Rhye 6th
+	stream->Read(&m_bEnslave); // Leoreth
+	stream->Read(&m_bSlavery); // Leoreth
+	stream->Read(&m_bColonialSlavery); // Leoreth
 
 	// Arrays
 
@@ -6142,6 +6243,16 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piSpecialistThresholdExtraYield);
 	m_piSpecialistThresholdExtraYield = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piHappinessExtraYield);
+	m_piHappinessExtraYield = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piHappinessExtraYield);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piUnhappinessExtraYield);
+	m_piUnhappinessExtraYield = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piUnhappinessExtraYield);
 
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	m_paiBuildingHappinessChanges = new int[GC.getNumBuildingClassInfos()];
@@ -6226,6 +6337,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iExtraHealth);
 	stream->Write(m_iPollutionModifier); //Leoreth
 	stream->Write(m_iFreeExperience);
+	stream->Write(m_iWorkerProductionModifier); // Leoreth
 	stream->Write(m_iWorkerSpeedModifier);
 	stream->Write(m_iImprovementUpgradeRateModifier);
 	stream->Write(m_iMilitaryProductionModifier);
@@ -6238,12 +6350,16 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iHappyPerMilitaryUnit);
 	stream->Write(m_iMilitaryHappinessLimit); //Leoreth
 	stream->Write(m_iLargestCityHappiness);
+	stream->Write(m_iSpecialistHappiness); // Leoreth
 	stream->Write(m_iWarWearinessModifier);
 	stream->Write(m_iFreeSpecialist);
 	stream->Write(m_iCoreFreeSpecialist); //Leoreth
 	stream->Write(m_iTradeRoutes);
 	stream->Write(m_iCapitalTradeModifier); // Leoreth
 	stream->Write(m_iDefensivePactTradeModifier); // Leoreth
+	stream->Write(m_iVassalCityCommerce); // Leoreth
+	stream->Write(m_iHappinessBonusCommerce); // Leoreth
+	stream->Write(m_iCaptureGoldModifier); // Leoreth
 	stream->Write(m_iTechPrereq);
 	stream->Write(m_iCivicPercentAnger);
 	stream->Write(m_iMaxConscript);
@@ -6269,6 +6385,9 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bStabilityFoundBonus); //Rhye 6th
 	stream->Write(m_bStabilityConquestBonus); //Rhye 6th
 	stream->Write(m_bStabilityCommerceBonus); //Rhye 6th
+	stream->Write(m_bEnslave); // Leoreth
+	stream->Write(m_bSlavery); // Leoreth
+	stream->Write(m_bColonialSlavery); // Leoreth
 
 	// Arrays
 
@@ -6280,6 +6399,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistExtraYield); //Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield); //Leoreth
+	stream->Write(NUM_YIELD_TYPES, m_piHappinessExtraYield); // Leoreth
+	stream->Write(NUM_YIELD_TYPES, m_piUnhappinessExtraYield); // Leoreth
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers); //Leoreth
@@ -6337,6 +6458,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iExtraHealth, "iExtraHealth");
 	pXML->GetChildXmlValByName(&m_iPollutionModifier, "iPollutionModifier"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iFreeExperience, "iFreeExperience");
+	pXML->GetChildXmlValByName(&m_iWorkerProductionModifier, "iWorkerProductionModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iWorkerSpeedModifier, "iWorkerSpeedModifier");
 	pXML->GetChildXmlValByName(&m_iImprovementUpgradeRateModifier, "iImprovementUpgradeRateModifier");
 	pXML->GetChildXmlValByName(&m_iMilitaryProductionModifier, "iMilitaryProductionModifier");
@@ -6353,12 +6475,16 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNoUnhealthyPopulation, "bNoUnhealthyPopulation");
 	pXML->GetChildXmlValByName(&m_bBuildingOnlyHealthy, "bBuildingOnlyHealthy");
 	pXML->GetChildXmlValByName(&m_iLargestCityHappiness, "iLargestCityHappiness");
+	pXML->GetChildXmlValByName(&m_iSpecialistHappiness, "iSpecialistHappiness"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iWarWearinessModifier, "iWarWearinessModifier");
 	pXML->GetChildXmlValByName(&m_iFreeSpecialist, "iFreeSpecialist");
 	pXML->GetChildXmlValByName(&m_iCoreFreeSpecialist, "iCoreFreeSpecialist"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");
 	pXML->GetChildXmlValByName(&m_iCapitalTradeModifier, "iCapitalTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iDefensivePactTradeModifier, "iDefensivePactTradeModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iVassalCityCommerce, "iVassalCityCommerce"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iHappinessBonusCommerce, "iHappinessBonusCommerce"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iCaptureGoldModifier, "iCaptureGoldModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoForeignTrade, "bNoForeignTrade");
 	pXML->GetChildXmlValByName(&m_bNoForeignTradeModifier, "bNoForeignTradeModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoCorporations, "bNoCorporations");
@@ -6370,6 +6496,9 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bStabilityFoundBonus, "bStabilityFoundBonus"); //Rhye 6th
 	pXML->GetChildXmlValByName(&m_bStabilityConquestBonus, "bStabilityConquestBonus"); //Rhye 6th
 	pXML->GetChildXmlValByName(&m_bStabilityCommerceBonus, "bStabilityCommerceBonus"); //Rhye 6th
+	pXML->GetChildXmlValByName(&m_bEnslave, "bEnslave"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");
@@ -6459,6 +6588,28 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piSpecialistThresholdExtraYield, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "HappinessExtraYields"))
+	{
+		pXML->SetYields(&m_piHappinessExtraYield);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piHappinessExtraYield, NUM_YIELD_TYPES);
+	}
+
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "UnhappinessExtraYields"))
+	{
+		pXML->SetYields(&m_piUnhappinessExtraYield);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piUnhappinessExtraYield, NUM_YIELD_TYPES);
 	}
 
 	pXML->SetVariableListTagPair(&m_pabHurry, "Hurrys", sizeof(GC.getHurryInfo((HurryTypes)0)), GC.getNumHurryInfos());
@@ -6837,6 +6988,7 @@ m_iUnitLevelPrereq(0),
 m_iMinLatitude(0),
 m_iMaxLatitude(90),
 m_iGreatPeopleRateModifier(0),
+m_iCultureGreatPeopleRateModifier(0), // Leoreth
 m_iGreatGeneralRateModifier(0),
 m_iDomesticGreatGeneralRateModifier(0),
 m_iGlobalGreatPeopleRateModifier(0),
@@ -6855,6 +7007,7 @@ m_iFreeSpecialist(0),
 m_iAreaFreeSpecialist(0),
 m_iGlobalFreeSpecialist(0),
 m_iHappiness(0),
+m_iCultureHappiness(0), // Leoreth
 m_iAreaHappiness(0),
 m_iGlobalHappiness(0),
 m_iStateReligionHappiness(0),
@@ -6866,6 +7019,7 @@ m_iTradeRoutes(0),
 m_iCoastalTradeRoutes(0),
 m_iGlobalTradeRoutes(0),
 m_iTradeRouteModifier(0),
+m_iCultureTradeRouteModifier(0), // Leoreth
 m_iForeignTradeRouteModifier(0),
 m_iAssetValue(0),
 m_iPowerValue(0),
@@ -6898,6 +7052,7 @@ m_iGlobalPopulationChange(0),
 m_iFreeTechs(0),
 m_iDefenseModifier(0),
 m_iBombardDefenseModifier(0),
+m_iUnignorableBombardDefenseModifier(0),
 m_iAllCityDefenseModifier(0),
 m_iEspionageDefenseModifier(0),
 m_iMissionType(NO_MISSION),
@@ -6921,6 +7076,7 @@ m_bBuildingOnlyHealthy(false),
 m_bNeverCapture(false),
 m_bNukeImmune(false),
 m_bPrereqReligion(false),
+m_bPagan(false), // Leoreth
 m_bCenterInCity(false),
 m_bStateReligion(false),
 m_bAllowsNukes(false),
@@ -6940,6 +7096,8 @@ m_piCommerceChange(NULL),
 m_piObsoleteSafeCommerceChange(NULL),
 m_piCommerceChangeDoubleTime(NULL),
 m_piCommerceModifier(NULL),
+m_piPowerCommerceModifier(NULL), // Leoreth
+m_piCultureCommerceModifier(NULL), // Leoreth
 m_piGlobalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
 m_piStateReligionCommerce(NULL),
@@ -6959,6 +7117,8 @@ m_piFlavorValue(NULL),
 m_piImprovementFreeSpecialist(NULL),
 m_piPrereqBuildingClassPercent(NULL), // Leoreth
 m_piReligionYieldChange(NULL), // Leoreth
+m_piImprovementHappiness(NULL), // Leoreth
+m_piImprovementHealth(NULL), // Leoreth
 m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
@@ -6993,6 +7153,8 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piObsoleteSafeCommerceChange);
 	SAFE_DELETE_ARRAY(m_piCommerceChangeDoubleTime);
 	SAFE_DELETE_ARRAY(m_piCommerceModifier);
+	SAFE_DELETE_ARRAY(m_piPowerCommerceModifier); // Leoreth
+	SAFE_DELETE_ARRAY(m_piCultureCommerceModifier); // Leoreth
 	SAFE_DELETE_ARRAY(m_piGlobalCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piStateReligionCommerce);
@@ -7015,6 +7177,8 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_pbCommerceChangeOriginalOwner);
 	SAFE_DELETE_ARRAY(m_pbBuildingClassNeededInCity);
 	SAFE_DELETE_ARRAY(m_piReligionYieldChange); // Leoreth
+	SAFE_DELETE_ARRAY(m_piImprovementHappiness); // Leoreth
+	SAFE_DELETE_ARRAY(m_piImprovementHealth); // Leoreth
 
 	if (m_ppaiSpecialistYieldChange != NULL)
 	{
@@ -7196,6 +7360,12 @@ int CvBuildingInfo::getGreatPeopleRateModifier() const
 	return m_iGreatPeopleRateModifier;
 }
 
+// Leoreth
+int CvBuildingInfo::getCultureGreatPeopleRateModifier() const
+{
+	return m_iCultureGreatPeopleRateModifier;
+}
+
 int CvBuildingInfo::getGreatGeneralRateModifier() const
 {
 	return m_iGreatGeneralRateModifier;
@@ -7286,6 +7456,12 @@ int CvBuildingInfo::getHappiness() const
 	return m_iHappiness;
 }
 
+// Leoreth
+int CvBuildingInfo::getCultureHappiness() const
+{
+	return m_iCultureHappiness;
+}
+
 int CvBuildingInfo::getAreaHappiness() const
 {
 	return m_iAreaHappiness;
@@ -7339,6 +7515,12 @@ int CvBuildingInfo::getGlobalTradeRoutes() const
 int CvBuildingInfo::getTradeRouteModifier() const
 {
 	return m_iTradeRouteModifier;
+}
+
+// Leoreth
+int CvBuildingInfo::getCultureTradeRouteModifier() const
+{
+	return m_iCultureTradeRouteModifier;
 }
 
 int CvBuildingInfo::getForeignTradeRouteModifier() const
@@ -7505,6 +7687,11 @@ int CvBuildingInfo::getBombardDefenseModifier() const
 	return m_iBombardDefenseModifier;
 }
 
+int CvBuildingInfo::getUnignorableBombardDefenseModifier() const
+{
+	return m_iUnignorableBombardDefenseModifier;
+}
+
 int CvBuildingInfo::getAllCityDefenseModifier() const
 {
 	return m_iAllCityDefenseModifier;
@@ -7623,6 +7810,12 @@ bool CvBuildingInfo::isNukeImmune() const
 bool CvBuildingInfo::isPrereqReligion() const
 {
 	return m_bPrereqReligion;
+}
+
+// Leoreth
+bool CvBuildingInfo::isPagan() const
+{
+	return m_bPagan;
 }
 
 bool CvBuildingInfo::isCenterInCity() const
@@ -7811,6 +8004,30 @@ int* CvBuildingInfo::getCommerceModifierArray() const
 	return m_piCommerceModifier;
 }
 
+int CvBuildingInfo::getPowerCommerceModifier(int i) const
+{
+	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piPowerCommerceModifier ? m_piPowerCommerceModifier[i] : -1;
+}
+
+int* CvBuildingInfo::getPowerCommerceModifierArray() const
+{
+	return m_piPowerCommerceModifier;
+}
+
+int CvBuildingInfo::getCultureCommerceModifier(int i) const
+{
+	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piCultureCommerceModifier ? m_piCultureCommerceModifier[i] : -1;
+}
+
+int* CvBuildingInfo::getCultureCommerceModifierArray() const
+{
+	return m_piCultureCommerceModifier;
+}
+
 int CvBuildingInfo::getGlobalCommerceModifier(int i) const
 {
 	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
@@ -7971,6 +8188,20 @@ int CvBuildingInfo::getImprovementFreeSpecialist(int i) const
 	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_piImprovementFreeSpecialist ? m_piImprovementFreeSpecialist[i] : -1;
+}
+
+int CvBuildingInfo::getImprovementHappiness(int i) const
+{
+	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piImprovementHappiness ? m_piImprovementHappiness[i] : -1;
+}
+
+int CvBuildingInfo::getImprovementHealth(int i) const
+{
+	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
+	FAssertMsg(i > -1, "Index out of bounds");
+	return m_piImprovementHealth ? m_piImprovementHealth[i] : -1;
 }
 
 bool CvBuildingInfo::isCommerceFlexible(int i) const
@@ -8165,6 +8396,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iMinLatitude);
 	stream->Read(&m_iMaxLatitude);
 	stream->Read(&m_iGreatPeopleRateModifier);
+	stream->Read(&m_iCultureGreatPeopleRateModifier); // Leoreth
 	stream->Read(&m_iGreatGeneralRateModifier);
 	stream->Read(&m_iDomesticGreatGeneralRateModifier);
 	stream->Read(&m_iGlobalGreatPeopleRateModifier);
@@ -8183,6 +8415,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iAreaFreeSpecialist);
 	stream->Read(&m_iGlobalFreeSpecialist);
 	stream->Read(&m_iHappiness);
+	stream->Read(&m_iCultureHappiness); // Leoreth
 	stream->Read(&m_iAreaHappiness);
 	stream->Read(&m_iGlobalHappiness);
 	stream->Read(&m_iStateReligionHappiness);
@@ -8194,6 +8427,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iCoastalTradeRoutes);
 	stream->Read(&m_iGlobalTradeRoutes);
 	stream->Read(&m_iTradeRouteModifier);
+	stream->Read(&m_iCultureTradeRouteModifier); // Leoreth
 	stream->Read(&m_iForeignTradeRouteModifier);
 	stream->Read(&m_iAssetValue);
 	stream->Read(&m_iPowerValue);
@@ -8226,6 +8460,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iFreeTechs);
 	stream->Read(&m_iDefenseModifier);
 	stream->Read(&m_iBombardDefenseModifier);
+	stream->Read(&m_iUnignorableBombardDefenseModifier);
 	stream->Read(&m_iAllCityDefenseModifier);
 	stream->Read(&m_iEspionageDefenseModifier);
 	stream->Read(&m_iMissionType);
@@ -8251,6 +8486,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bNeverCapture);
 	stream->Read(&m_bNukeImmune);
 	stream->Read(&m_bPrereqReligion);
+	stream->Read(&m_bPagan); // Leoreth
 	stream->Read(&m_bCenterInCity);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bAllowsNukes);
@@ -8322,6 +8558,14 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piCommerceModifier);
 	m_piCommerceModifier = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piCommerceModifier);
+
+	SAFE_DELETE_ARRAY(m_piPowerCommerceModifier);
+	m_piPowerCommerceModifier = new int[NUM_COMMERCE_TYPES];
+	stream->Read(NUM_COMMERCE_TYPES, m_piPowerCommerceModifier);
+
+	SAFE_DELETE_ARRAY(m_piCultureCommerceModifier);
+	m_piCultureCommerceModifier = new int[NUM_COMMERCE_TYPES];
+	stream->Read(NUM_COMMERCE_TYPES, m_piCultureCommerceModifier);
 
 	SAFE_DELETE_ARRAY(m_piGlobalCommerceModifier);
 	m_piGlobalCommerceModifier = new int[NUM_COMMERCE_TYPES];
@@ -8400,6 +8644,14 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piImprovementFreeSpecialist);
 	m_piImprovementFreeSpecialist = new int[GC.getNumImprovementInfos()];
 	stream->Read(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
+
+	SAFE_DELETE_ARRAY(m_piImprovementHappiness);
+	m_piImprovementHappiness = new int[GC.getNumImprovementInfos()];
+	stream->Read(GC.getNumImprovementInfos(), m_piImprovementHappiness);
+
+	SAFE_DELETE_ARRAY(m_piImprovementHealth);
+	m_piImprovementHealth = new int[GC.getNumImprovementInfos()];
+	stream->Read(GC.getNumImprovementInfos(), m_piImprovementHealth);
 
 	SAFE_DELETE_ARRAY(m_pbCommerceFlexible);
 	m_pbCommerceFlexible = new bool[NUM_COMMERCE_TYPES];
@@ -8518,6 +8770,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iMinLatitude);
 	stream->Write(m_iMaxLatitude);
 	stream->Write(m_iGreatPeopleRateModifier);
+	stream->Write(m_iCultureGreatPeopleRateModifier); // Leoreth
 	stream->Write(m_iGreatGeneralRateModifier);
 	stream->Write(m_iDomesticGreatGeneralRateModifier);
 	stream->Write(m_iGlobalGreatPeopleRateModifier);
@@ -8536,6 +8789,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iAreaFreeSpecialist);
 	stream->Write(m_iGlobalFreeSpecialist);
 	stream->Write(m_iHappiness);
+	stream->Write(m_iCultureHappiness); // Leoreth
 	stream->Write(m_iAreaHappiness);
 	stream->Write(m_iGlobalHappiness);
 	stream->Write(m_iStateReligionHappiness);
@@ -8547,6 +8801,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iCoastalTradeRoutes);
 	stream->Write(m_iGlobalTradeRoutes);
 	stream->Write(m_iTradeRouteModifier);
+	stream->Write(m_iCultureTradeRouteModifier); // Leoreth
 	stream->Write(m_iForeignTradeRouteModifier);
 	stream->Write(m_iAssetValue);
 	stream->Write(m_iPowerValue);
@@ -8579,6 +8834,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iFreeTechs);
 	stream->Write(m_iDefenseModifier);
 	stream->Write(m_iBombardDefenseModifier);
+	stream->Write(m_iUnignorableBombardDefenseModifier);
 	stream->Write(m_iAllCityDefenseModifier);
 	stream->Write(m_iEspionageDefenseModifier);
 	stream->Write(m_iMissionType);
@@ -8604,6 +8860,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bNeverCapture);
 	stream->Write(m_bNukeImmune);
 	stream->Write(m_bPrereqReligion);
+	stream->Write(m_bPagan); // Leoreth
 	stream->Write(m_bCenterInCity);
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bAllowsNukes);
@@ -8628,6 +8885,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piObsoleteSafeCommerceChange);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceChangeDoubleTime);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceModifier);
+	stream->Write(NUM_COMMERCE_TYPES, m_piPowerCommerceModifier);
+	stream->Write(NUM_COMMERCE_TYPES, m_piCultureCommerceModifier); // Leoreth
 	stream->Write(NUM_COMMERCE_TYPES, m_piGlobalCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_COMMERCE_TYPES, m_piStateReligionCommerce);
@@ -8647,6 +8906,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piReligionYieldChange);
 	stream->Write(GC.getNumFlavorTypes(), m_piFlavorValue);
 	stream->Write(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
+	stream->Write(GC.getNumImprovementInfos(), m_piImprovementHappiness);
+	stream->Write(GC.getNumImprovementInfos(), m_piImprovementHealth);
 
 	stream->Write(NUM_COMMERCE_TYPES, m_pbCommerceFlexible);
 	stream->Write(NUM_COMMERCE_TYPES, m_pbCommerceChangeOriginalOwner);
@@ -8880,6 +9141,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bNeverCapture, "bNeverCapture");
 	pXML->GetChildXmlValByName(&m_bNukeImmune, "bNukeImmune");
 	pXML->GetChildXmlValByName(&m_bPrereqReligion, "bPrereqReligion");
+	pXML->GetChildXmlValByName(&m_bPagan, "bPagan"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");
@@ -8897,6 +9159,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iMinLatitude, "iMinLatitude");
 	pXML->GetChildXmlValByName(&m_iMaxLatitude, "iMaxLatitude", 90);
 	pXML->GetChildXmlValByName(&m_iGreatPeopleRateModifier, "iGreatPeopleRateModifier");
+	pXML->GetChildXmlValByName(&m_iCultureGreatPeopleRateModifier, "iCultureGreatPeopleRateModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iGreatGeneralRateModifier, "iGreatGeneralRateModifier");
 	pXML->GetChildXmlValByName(&m_iDomesticGreatGeneralRateModifier, "iDomesticGreatGeneralRateModifier");
 	pXML->GetChildXmlValByName(&m_iGlobalGreatPeopleRateModifier, "iGlobalGreatPeopleRateModifier");
@@ -8923,6 +9186,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iAreaHealth, "iAreaHealth");
 	pXML->GetChildXmlValByName(&m_iGlobalHealth, "iGlobalHealth");
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
+	pXML->GetChildXmlValByName(&m_iCultureHappiness, "iCultureHappiness"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iAreaHappiness, "iAreaHappiness");
 	pXML->GetChildXmlValByName(&m_iGlobalHappiness, "iGlobalHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
@@ -8934,11 +9198,13 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCoastalTradeRoutes, "iCoastalTradeRoutes");
 	pXML->GetChildXmlValByName(&m_iGlobalTradeRoutes, "iGlobalTradeRoutes");
 	pXML->GetChildXmlValByName(&m_iTradeRouteModifier, "iTradeRouteModifier");
+	pXML->GetChildXmlValByName(&m_iCultureTradeRouteModifier, "iCultureTradeRouteModifier");
 	pXML->GetChildXmlValByName(&m_iForeignTradeRouteModifier, "iForeignTradeRouteModifier");
 	pXML->GetChildXmlValByName(&m_iGlobalPopulationChange, "iGlobalPopulationChange");
 	pXML->GetChildXmlValByName(&m_iFreeTechs, "iFreeTechs");
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefense");
 	pXML->GetChildXmlValByName(&m_iBombardDefenseModifier, "iBombardDefense");
+	pXML->GetChildXmlValByName(&m_iUnignorableBombardDefenseModifier, "iUnignorableBombardDefense");
 	pXML->GetChildXmlValByName(&m_iAllCityDefenseModifier, "iAllCityDefense");
 	pXML->GetChildXmlValByName(&m_iEspionageDefenseModifier, "iEspionageDefense");
 	pXML->GetChildXmlValByName(&m_iAssetValue, "iAsset");
@@ -9090,6 +9356,26 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piCommerceModifier, NUM_COMMERCE_TYPES);
+	}
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"PowerCommerceModifiers"))
+	{
+		pXML->SetCommerce(&m_piPowerCommerceModifier);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piPowerCommerceModifier, NUM_COMMERCE_TYPES);
+	}
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CultureCommerceModifiers"))
+	{
+		pXML->SetCommerce(&m_piCultureCommerceModifier);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piCultureCommerceModifier, NUM_COMMERCE_TYPES);
 	}
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"GlobalCommerceModifiers"))
@@ -9346,6 +9632,8 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->SetVariableListTagPair(&m_piFlavorValue, "Flavors", GC.getFlavorTypes(), GC.getNumFlavorTypes());
 	pXML->SetVariableListTagPair(&m_piImprovementFreeSpecialist, "ImprovementFreeSpecialists", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
+	pXML->SetVariableListTagPair(&m_piImprovementHappiness, "ImprovementHappinesses", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
+	pXML->SetVariableListTagPair(&m_piImprovementHealth, "ImprovementHealths", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
 
 	pXML->SetVariableListTagPair(&m_piBuildingHappinessChanges, "BuildingHappinessChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 
@@ -9869,6 +10157,7 @@ void CvCivilizationInfo::reset()
 	CvInfoBase::reset();
 	m_aszAdjective.clear();
 	m_aszShortDescription.clear();
+	m_aszPaganReligion.clear();
 }
 
 
@@ -9947,6 +10236,23 @@ const wchar* CvCivilizationInfo::getAdjectiveKey() const
 	return m_szAdjectiveKey;
 }
 
+// Leoreth
+const wchar* CvCivilizationInfo::getPaganReligionName(uint uiForm)
+{
+	while (m_aszPaganReligion.size() <= uiForm)
+	{
+		m_aszPaganReligion.push_back(gDLL->getObjectText(m_szPaganReligionKey, m_aszPaganReligion.size()));
+	}
+
+	return m_aszPaganReligion[uiForm];
+}
+
+// Leoreth
+const wchar* CvCivilizationInfo::getPaganReligionKey() const
+{
+	return m_szPaganReligionKey;
+}
+
 const TCHAR* CvCivilizationInfo::getFlagTexture() const
 {
 	return ARTFILEMGR.getCivilizationArtInfo( getArtDefineTag() )->getPath();
@@ -9960,6 +10266,17 @@ const TCHAR* CvCivilizationInfo::getArtDefineTag() const
 void CvCivilizationInfo::setArtDefineTag(const TCHAR* szVal)
 {
 	m_szArtDefineTag = szVal;
+}
+
+// Leoreth
+const TCHAR* CvCivilizationInfo::getPaganReligionButton() const
+{
+	if (m_szPaganReligionButton.IsEmpty())
+	{
+		return NULL;
+	}
+
+	return m_szPaganReligionButton;
 }
 
 // Arrays
@@ -10091,6 +10408,8 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->ReadString(m_szArtDefineTag);
 	stream->ReadString(m_szShortDescriptionKey);
 	stream->ReadString(m_szAdjectiveKey);
+	stream->ReadString(m_szPaganReligionKey); // Leoreth
+	stream->ReadString(m_szPaganReligionButton); // Leoreth
 	stream->ReadString(m_szIdentifier); // Leoreth
 
 	// Arrays
@@ -10165,6 +10484,8 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->WriteString(m_szArtDefineTag);
 	stream->WriteString(m_szShortDescriptionKey);
 	stream->WriteString(m_szAdjectiveKey);
+	stream->WriteString(m_szPaganReligionKey); // Leoreth
+	stream->WriteString(m_szPaganReligionButton); // Leoreth
 	stream->WriteString(m_szIdentifier); // Leoreth
 
 	// Arrays
@@ -10199,6 +10520,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(m_szAdjectiveKey, "Adjective");
 	// Get the Text from Text/Civ4GameTextXML.xml
+
+	pXML->GetChildXmlValByName(m_szPaganReligionKey, "PaganReligionName"); // Leoreth
+	pXML->GetChildXmlValByName(m_szPaganReligionButton, "PaganReligionButton"); // Leoreth
 
 	// Leoreth
 	pXML->GetChildXmlValByName(m_szIdentifier, "Identifier");
@@ -12367,6 +12691,7 @@ m_iFeatureGrowthProbability(0),
 m_iUpgradeTime(0),
 m_iAirBombDefense(0),
 m_iDefenseModifier(0),
+m_iHealth(0),
 m_iHappiness(0),
 m_iPillageGold(0),
 m_iImprovementPillage(NO_IMPROVEMENT),
@@ -12480,6 +12805,11 @@ int CvImprovementInfo::getAirBombDefense() const
 int CvImprovementInfo::getDefenseModifier() const
 {
 	return m_iDefenseModifier;
+}
+
+int CvImprovementInfo::getHealth() const
+{
+	return m_iHealth;
 }
 
 int CvImprovementInfo::getHappiness() const
@@ -12773,6 +13103,7 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iAirBombDefense);
 	stream->Read(&m_iDefenseModifier);
 	stream->Read(&m_iHappiness);
+	stream->Read(&m_iHealth);
 	stream->Read(&m_iPillageGold);
 	stream->Read(&m_iImprovementPillage);
 	stream->Read(&m_iImprovementUpgrade);
@@ -12884,6 +13215,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iAirBombDefense);
 	stream->Write(m_iDefenseModifier);
 	stream->Write(m_iHappiness);
+	stream->Write(m_iHealth);
 	stream->Write(m_iPillageGold);
 	stream->Write(m_iImprovementPillage);
 	stream->Write(m_iImprovementUpgrade);
@@ -13023,6 +13355,7 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iAirBombDefense, "iAirBombDefense");
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefenseModifier");
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
+	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
 	pXML->GetChildXmlValByName(&m_iPillageGold, "iPillageGold");
 	pXML->GetChildXmlValByName(&m_bOutsideBorders, "bOutsideBorders");
 

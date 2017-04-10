@@ -12,13 +12,13 @@
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
-			<Type>CIVICOPTION_ORGANIZATION</Type>
-			<Description>TXT_KEY_CIVICOPTION_ORGANIZATION</Description>
+			<Type>CIVICOPTION_LEGITIMACY</Type>
+			<Description>TXT_KEY_CIVICOPTION_LEGITIMACY</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
-			<Type>CIVICOPTION_LABOR</Type>
-			<Description>TXT_KEY_CIVICOPTION_LABOR</Description>
+			<Type>CIVICOPTION_SOCIETY</Type>
+			<Description>TXT_KEY_CIVICOPTION_SOCIETY</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
@@ -32,8 +32,8 @@
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 		<CivicOptionInfo>
-			<Type>CIVICOPTION_MILITARY</Type>
-			<Description>TXT_KEY_CIVICOPTION_MILITARY</Description>
+			<Type>CIVICOPTION_TERRITORY</Type>
+			<Description>TXT_KEY_CIVICOPTION_TERRITORY</Description>
 			<TraitNoUpkeeps/>
 		</CivicOptionInfo>
 	</CivicOptionInfos>

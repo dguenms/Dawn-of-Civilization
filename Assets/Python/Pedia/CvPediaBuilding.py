@@ -1,6 +1,7 @@
 from CvPythonExtensions import *
 import CvUtil
 from RFCUtils import utils
+from Consts import *
 
 gc = CyGlobalContext()
 
@@ -208,6 +209,13 @@ class CvPediaBuilding:
 
 			if iPrereq >= 0 and iOrStatePrereq >= 0:
 				screen.attachLabel(panel, "", ")")
+				
+		# Leoreth: pagan religion prereqs
+		if gc.getBuildingInfo(self.iBuilding).isPagan():
+			if self.top.iActivePlayer != -1:
+				button = gc.getCivilizationInfo(gc.getPlayer(self.top.iActivePlayer).getCivilizationType()).getPaganReligionButton()
+				if button:
+					screen.attachImageButton(panel, "", button, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_MINOR_RELIGION, gc.getPlayer(self.top.iActivePlayer).getCivilizationType(), 1, False)
 
 
 	def placeEffects(self):

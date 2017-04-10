@@ -148,7 +148,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_CORE_FREE_SPECIALISTS</Tag>
-		<English>[ICON_BULLET]%D1_Change free specialist for all cities within the third ring of your capital</English>
+		<English>[ICON_BULLET]%D1_Change Free Specialist per Core City</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_LIMITED_UNIT_HAPPINESS</Tag>
@@ -164,6 +164,16 @@
 		<Tag>TXT_KEY_CIVIC_WONDER_PRODUCTION</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] when building Wonders</English>
 		<German>[ICON_BULLET]%D1_Mod%% [ICON_PRODUCTION] beim Bau von Wundern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_VASSAL_CITY_COMMERCE</Tag>
+		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital per Vassal City</English>
+		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro Vasallenstadt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_HAPPINESS_BONUS_COMMERCE</Tag>
+		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital per [ICON_HAPPY] Resource</English>
+		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro [ICON_HAPPY] Resource</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSAL_BONUS</Tag>
@@ -183,7 +193,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_UNLIMTED</Tag>
-		<English>[ICON_BULLET]Doubled slots for[SPACE]</English>
+		<English>[ICON_BULLET]Double slots for[SPACE]</English>
 		<German>[ICON_BULLET]Erlaubt doppelt soviele[SPACE]</German>
 	</TEXT>
 	<TEXT>
@@ -199,6 +209,16 @@
 		<Tag>TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD</Tag>
 		<English>[SPACE]per Specialist for every city that works at most %d1 land tiles</English>
 		<German>[SPACE]pro Spezialist f&#252;r jede Stadt, die h&#246;chstens %d1 Landfelder bearbeitet</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PER_EXCESS_HAPPINESS</Tag>
+		<English>[SPACE]per Excess Happiness</English>
+		<German>[SPACE]pro Überschuss an Zufriedenheit</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_PER_ANGRY_POPULATION</Tag>
+		<English>[SPACE]per Angry Population</English>
+		<German>[SPACE]pro Unzufriedene Bevölkerung</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_POLLUTION_MODIFIER</Tag>
@@ -235,14 +255,6 @@
 		<Tag>TXT_KEY_CIVIC_DEFENSIVE_PACT_TRADE_MODIFIER</Tag>
 		<English>[ICON_BULLET]%D1_Mod%% Income from [ICON_TRADE] with Defensive Pact partners</English>
 		<German>[ICON_BULLET]%D1_Mod%% Einkommen durch [ICON_TRADE] mit Verteidigungsb&#252;ndnispartnern</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIVIC_DEMOCRACY</Tag>
-		<English>[ICON_BULLET]Temporary instability caused by transition to Democracy</English>
-		<French>[ICON_BULLET]Instabilit&#233; temporaire caus&#233;e par la transition vers la D&#233;mocratie</French>
-		<German>[ICON_BULLET]Vor&#252;bergehende Instabilit&#228;t durch Wechsel zur Demokratie</German>
-		<Italian>[ICON_BULLET]Instabilit&#224; temporanea causata dal passaggio alla democrazia.</Italian>
-		<Spanish>[ICON_BULLET]Inestabilidad temporal causada por la transici&#243;n a la democracia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_DEPRESSION</Tag>
@@ -730,8 +742,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HAPPY_SPECIALISTS</Tag>
-		<English>%D1_Change[ICON_HAPPY]: "Settled artists entertain us!"</English>
-		<German>%D1_Change[ICON_HAPPY]: "Angesiedelte K&#252;nstler unterhalten uns!"</German>
+		<English>%D1_Change[ICON_HAPPY]: "Our specialists increase the prestige of our city!"</English>
+		<German>%D1_Change[ICON_HAPPY]: "Unsere Spezialisten steigern das Prestige unserer Stadt!"</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HIRED_MERCENARIES</Tag>
@@ -967,6 +979,19 @@
 		<Tag>TXT_KEY_MISC_HEALTH_FROM_CORPORATIONS</Tag>
 		<English>%D1_Change[ICON_UNHEALTHY] from Corporations</English>
 		<German>%D1_Change[ICON_UNHEALTHY] durch Kapitalgesellschaften</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HEALTH_FROM_IMPROVEMENTS</Tag>
+		<English>%D1_Change[ICON_UNHEALTHY] from Improvements</English>
+		<German>%D1_Change[ICON_UNHEALTHY] durch Verbesserungen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ANGER_IMPROVEMENTS</Tag>
+		<English>+%d1_Change[ICON_UNHAPPY]: "The countryside is overcrowded!"</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HAPPY_IMPROVEMENTS</Tag>
+		<English>+%d1_Change[ICON_HAPPY]: "We love our National Parks!"</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_FOOD_FROM_HEALTH</Tag>
@@ -1596,5 +1621,88 @@
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_HEADER_GREAT_SPECIALIST</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Great Specialists[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per[SPACE]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HEALTH</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HealthOrUn per[SPACE]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_UNIGNORABLE_BOMBARD_DEFENSE_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Damage to Defenses from Bombardment</English>
+		<German>[ICON_BULLET]%D1_Mod%% Bombardierungsschaden gegen Defensivanlagen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CULTURE_BIRTH_RATE_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_GREATPEOPLE] Birth Rate per Culture Level</English>
+		<German>[ICON_BULLET]%D1_Mod%% Geburtenrate [ICON_GREATPEOPLE] pro Kulturstufe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CULTURE_LEVEL_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Culture Level</English>
+		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Kulturstufe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BABYLONIAN_UP</Tag>
+		<English>As the Cradle of Civilization, we can choose another free technology:</English>
+		<German>Als Wiege der Zivilisation können wir eine weitere Technologie entdecken:</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SPECIALIST_HAPPINESS</Tag>
+		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per Specialist</English>
+		<German>[ICON_BULLET]%D1_Change%F2_HappyOrUn pro Spezialist</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</English>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] bei Stadteroberung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAPTURE_GOLD_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] on City Conquest</English>
+		<German>[ICON_BULLET]%D1_Mod%% [ICON_GOLD] bei Stadteroberung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_WORKER_PRODUCTION</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Worker Production</English>
+		<German>[ICON_BULLET]%D1_Mod%% Arbeiter-Produktion</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_ENSLAVE</Tag>
+		<English>[ICON_BULLET]Can Enslave Population</English>
+		<German>[ICON_BULLET]Kann Bevölkerung versklaven</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES</Tag>
+		<English>[ICON_BULLET]Can Use Slaves</English>
+		<German>[ICON_BULLET]Kann Sklaven verwenden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES_IN_COLONIES</Tag>
+		<English>[ICON_BULLET]Can Use Slaves in Colonies</English>
+		<German>[ICON_BULLET]Kann Sklaven in Kolonien verwenden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_REQUIRES_PAGAN_RELIGION</Tag>
+		<English>[COLOR_WARNING_TEXT]Requires %s1[COLOR_REVERT]</English>
+		<German>[COLOR_WARNING_TEXT]Benötigt %s1[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WORK_RATE_MODIFIER</Tag>
+		<English>[ICON_BULLET]Constructs Improvements %D1_Mod%% Faster</English>
+		<German>[ICON_BULLET]Errichtet Verbesserungen %D1_Mod%% Schneller</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WORKER_LIMIT</Tag>
+		<English>[ICON_BULLET]Worker (1 Allowed per City)</English>
+		<German>[ICON_BULLET]Arbeiter (1 zulässig pro Stadt)</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WORKER_LEFT</Tag>
+		<English>[SPACE]%d1_Num Left</English>
+		<German>[SPACE]%d1_Num &#252;brig</German>
 	</TEXT>
 </Civ4GameText>

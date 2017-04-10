@@ -56,6 +56,9 @@ void CyInfoPythonInterface2()
 		.def("getArtDefineTag", &CvCivilizationInfo::getArtDefineTag, "string ()")
 		.def("getButton", &CvCivilizationInfo::getButton, "string ()")
 
+		.def("getPaganReligionName", &CvCivilizationInfo::pyGetPaganReligionName, "wstring ()")
+		.def("getPaganReligionButton", &CvCivilizationInfo::getPaganReligionButton, "string ()")
+
 		.def("getDerivativeCiv", &CvCivilizationInfo::getDerivativeCiv, "int ()")
 
 		// Arrays
@@ -291,6 +294,7 @@ void CyInfoPythonInterface2()
 		.def("getHappiness", &CvImprovementInfo::getDefenseModifier, "int ()")
 */
 		.def("getHappiness", &CvImprovementInfo::getHappiness, "int ()")
+		.def("getHealth", &CvImprovementInfo::getHealth, "int ()")
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/

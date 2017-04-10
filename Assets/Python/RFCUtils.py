@@ -81,8 +81,7 @@ class RFCUtils:
 		iUnitType = unit.getUnitType()
 		pUnitInfo = gc.getUnitInfo(iUnitType)
 		
-		if not pUnitInfo:
-			return False
+		if not pUnitInfo: return False
 		
 		# Archery units with city defense
 		if pUnitInfo.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_ARCHER") and pUnitInfo.getCityDefenseModifier() > 0:
@@ -285,7 +284,7 @@ class RFCUtils:
 									continue
 									
 								# Leoreth: ignore workers as well
-								if unit.getUnitType() in [iWorker, iIndianPunjabiWorker, iBrazilianMadeireiro]:
+								if unit.getUnitType() in [iWorker, iPunjabiWorker, iMadeireiro]:
 									continue
 								
 								if not (unit.isFound() and not bKillSettlers) and not unit.isAnimal():
@@ -866,7 +865,6 @@ class RFCUtils:
 
 	def colonialConquest(self, iCiv, tPlot):
 		x, y = tPlot
-		bRifling = gc.getTeam(iCiv).isHasTech(iRifling)
 		iTargetCiv = gc.getMap().plot(x, y).getPlotCity().getOwner()
 		lFreePlots = []
 		
@@ -1197,7 +1195,7 @@ class RFCUtils:
 		
 	def getBestInfantry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lInfantryList = [iInfantry, iRifleman, iMusketman, iHeavySwordsman, iCrossbowman, iSwordsman, iAxeman, iWarrior]
+		lInfantryList = [iInfantry, iRifleman, iMusketman, iArquebusier, iPikeman, iHeavySwordsman, iCrossbowman, iSwordsman, iLightSwordsman, iMilitia]
 		
 		for iBaseUnit in lInfantryList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1208,7 +1206,7 @@ class RFCUtils:
 		
 	def getBestCavalry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lCavalryList = [iCavalry, iCuirassier, iKnight, iHorseArcher, iChariot]
+		lCavalryList = [iCavalry, iDragoon, iHussar, iCuirassier, iPistolier, iLancer, iHorseArcher, iChariot]
 		
 		for iBaseUnit in lCavalryList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1219,7 +1217,7 @@ class RFCUtils:
 		
 	def getBestSiege(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lSiegeList = [iCannon, iBombard, iTrebuchet, iCatapult]
+		lSiegeList = [iHowitzer, iArtillery, iCannon, iBombard, iTrebuchet, iCatapult]
 		
 		for iBaseUnit in lSiegeList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1230,7 +1228,7 @@ class RFCUtils:
 				
 	def getBestCounter(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
-		lCounterList = [iMarine, iGrenadier, iPikeman, iSpearman]
+		lCounterList = [iMarine, iGrenadier, iPikeman, iHeavySpearman, iSpearman]
 		
 		for iBaseUnit in lCounterList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1244,7 +1242,7 @@ class RFCUtils:
 		if iPlayer == iBarbarian: iPlayer = iIndependent
 		
 		pPlayer = gc.getPlayer(iPlayer)
-		lDefenderList = [iInfantry, iMachineGun, iRifleman, iLongbowman, iCrossbowman, iArcher, iWarrior]
+		lDefenderList = [iInfantry, iMachineGun, iRifleman, iMusketman, iArquebusier, iCrossbowman, iArcher, iWarrior]
 		
 		for iBaseUnit in lDefenderList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
@@ -1409,9 +1407,13 @@ class RFCUtils:
 		return getTurnForYear(self.getScenarioStartYear())
 		
 	def hasCivic(self, iPlayer, iCivic):
-		return (gc.getPlayer(iPlayer).getCivics(iCivic % 6) == iCivic)
+		return (gc.getPlayer(iPlayer).getCivics(iCivic % 7) == iCivic)
+		
+	def getUniqueBuildingType(self, iPlayer, iBuildingClass):
+		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(iBuildingClass)
 		
 	def getUniqueBuilding(self, iPlayer, iBuilding):
+		if iPlayer < 0: return gc.getBuildingClassInfo(gc.getBuildingInfo(iBuilding).getBuildingClassType()).getDefaultBuildingIndex()
 		return gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getCivilizationBuildings(gc.getBuildingInfo(iBuilding).getBuildingClassType())
 		
 	def getStabilityLevel(self, iPlayer):
@@ -1467,9 +1469,9 @@ class RFCUtils:
 		
 		if iStateReligion >= 0:
 			return iStateReligion
-		elif pPlayer.getCivics(4) == iCivicPantheon:
+		elif pPlayer.getLastStateReligion() == -1:
 			return iVictoryPolytheism
-		elif pPlayer.getCivics(4) == iCivicSecularism:
+		elif not pPlayer.isStateReligion():
 			return iVictorySecularism
 			
 		return -1
@@ -1744,9 +1746,7 @@ class RFCUtils:
 		'4 = World Wonder'
 
 		BuildingInfo = gc.getBuildingInfo(iBuilding)
-		if BuildingInfo.isGraphicalOnly():
-			return -1
-		elif BuildingInfo.getReligionType() > -1:
+		if BuildingInfo.getReligionType() > -1:
 			return 1
 		elif isWorldWonderClass(BuildingInfo.getBuildingClassType()):
 			return 4
@@ -1757,8 +1757,12 @@ class RFCUtils:
 				return 3
 			else:
 				if iDefaultBuilding > -1 and iDefaultBuilding != iBuilding:
+					if gc.getBuildingInfo(iBuilding).isGraphicalOnly():
+						return 0
 					return 2
 				else:
+					if gc.getBuildingInfo(iBuilding).isGraphicalOnly():
+						return -1
 					return 0
 					
 	def getLeaderCiv(self, iLeader):

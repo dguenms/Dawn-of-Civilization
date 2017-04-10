@@ -376,6 +376,7 @@ public:
 
 	int getGreatGeneralsCreated() const;																																		// Exposed to Python
 	void incrementGreatGeneralsCreated();
+	void decrementGreatGeneralsCreated();
 
 	int getGreatSpiesCreated() const;
 	void incrementGreatSpiesCreated();
@@ -415,6 +416,10 @@ public:
 
 	int getFeatureProductionModifier() const;																															// Exposed to Python
 	void changeFeatureProductionModifier(int iChange);
+
+	// Leoreth
+	int getWorkerProductionModifier() const;
+	void changeWorkerProductionModifier(int iChange);
 
 	int getWorkerSpeedModifier() const;																																		// Exposed to Python
 	void changeWorkerSpeedModifier(int iChange);
@@ -558,6 +563,10 @@ public:
 	int getLargestCityHappiness() const;																																			// Exposed to Python
 	void changeLargestCityHappiness(int iChange);
 
+	// Leoreth
+	int getSpecialistHappiness() const;
+	void changeSpecialistHappiness(int iChange);
+
 	int getWarWearinessPercentAnger() const;																																	// Exposed to Python
 	void updateWarWearinessPercentAnger();
 	int getModifiedWarWearinessPercentAnger(int iWarWearinessPercentAnger) const;
@@ -596,12 +605,39 @@ public:
 	void changeTradeRoutes(int iChange);																																// Exposed to Python
 
 	// Leoreth
+	bool isEnslave() const;
+	void changeEnslaveCount(int iChange);
+
+	// Leoreth
+	bool isSlavery() const;
+	void changeSlaveryCount(int iChange);
+
+	// Leoreth
+	bool isColonialSlavery() const;
+	void changeColonialSlaveryCount(int iChange);
+
+	// Leoreth
 	int getCapitalTradeModifier() const;
 	void changeCapitalTradeModifier(int iChange);
 
 	// Leoreth
 	int getDefensivePactTradeModifier() const;
 	void changeDefensivePactTradeModifier(int iChange);
+
+	// Leoreth
+	int getVassalCityCommerce() const;
+	void changeVassalCityCommerce(int iChange);
+
+	// Leoreth
+	int getHappinessBonusCommerce() const;
+	void changeHappinessBonusCommerce(int iChange);
+
+	// Leoreth
+	void changeCapitalCommerce(int iChange);
+
+	// Leoreth
+	int getWorkerCount() const;
+	void changeWorkerCount(int iChange);
 
 	DllExport int getRevolutionTimer() const;																																	// Exposed to Python
 	void setRevolutionTimer(int iNewValue);
@@ -714,9 +750,6 @@ public:
 
 	DllExport bool isStrike() const;																																	// Exposed to Python
 	void setStrike(bool bNewValue);
-
-	DllExport bool isOlympics() const;	//Rhye																																// Exposed to Python
-	void setOlympics(bool bNewValue);		//Rhye
 
 	DllExport PlayerTypes getID() const;																												// Exposed to Python
 
@@ -894,6 +927,21 @@ public:
 	// Leoreth
 	int getSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2) const;
 	void changeSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange);
+
+	// Leoreth
+	int getHappinessExtraYield(YieldTypes eIndex) const;
+	void changeHappinessExtraYield(YieldTypes eIndex, int iChange);
+
+	// Leoreth
+	int getUnhappinessExtraYield(YieldTypes eIndex) const;
+	void changeUnhappinessExtraYield(YieldTypes eIndex, int iChange);
+
+	// Leoreth
+	void updateHappinessExtraYield();
+
+	// Leoreth
+	int getCaptureGoldModifier() const;
+	void changeCaptureGoldModifier(int iChange);
 
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;								// Exposed to Python
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
@@ -1214,6 +1262,8 @@ public:
 	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange);
 
 	int countColonies() const;
+	int countVassalCities() const;
+	int countHappinessBonuses() const;
 	int countSlaveCities() const;
 	int countRequiredSlaves() const;
 	CvCity* findSlaveCity() const;
@@ -1248,6 +1298,13 @@ public:
 	int countCoreCities() const;
 
 	bool canTradeBonus(BonusTypes eBonus) const;
+
+	bool canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered = NO_TECH) const;
+
+	int calculateDistanceMaintenance() const;
+	int calculateColonyMaintenance() const;
+	int calculateCorporationMaintenance() const;
+	int calculateCitiesMaintenance() const;
 
 	bool m_bTurnPlayed;
 
@@ -1284,6 +1341,7 @@ protected:
 	int m_iMaxPlayerBuildingProductionModifier;
 	int m_iFreeExperience;
 	int m_iFeatureProductionModifier;
+	int m_iWorkerProductionModifier; // Leoreth
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;
 	int m_iMilitaryProductionModifier;
@@ -1326,6 +1384,7 @@ protected:
 	int m_iExtraHappiness;
 	int m_iBuildingHappiness;
 	int m_iLargestCityHappiness;
+	int m_iSpecialistHappiness; // Leoreth
 	int m_iWarWearinessPercentAnger;
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
@@ -1338,6 +1397,12 @@ protected:
 	int m_iTradeRoutes;
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
+	int m_iVassalCityCommerce; // Leoreth
+	int m_iHappinessBonusCommerce; // Leoreth
+	int m_iCaptureGoldModifier; // Leoreth
+	int m_iEnslaveCount; // Leoreth
+	int m_iSlaveryCount; // Leoreth
+	int m_iColonialSlaveryCount; // Leoreth
 	int m_iRevolutionTimer;
 	int m_iConversionTimer;
 	int m_iStateReligionCount;
@@ -1375,7 +1440,6 @@ protected:
 	bool m_bFoundedFirstCity;
 	bool m_bStrike;
 	bool m_bHuman;
-	bool m_bOlympics; //Rhye
 
 
 /************************************************************************************************/
@@ -1411,6 +1475,8 @@ protected:
 	int m_iTargetDistanceValueModifier;
 	int m_iReligiousTolerance;
 
+	int m_iWorkerCount;
+
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;
 	EraTypes m_eCurrentEra;
@@ -1432,6 +1498,8 @@ protected:
 	int* m_aiStateReligionBuildingCommerce;
 	int* m_aiSpecialistExtraCommerce;
 	int* m_aiSpecialistExtraYield; //Leoreth
+	int* m_aiHappinessExtraYield; // Leoreth
+	int* m_aiUnhappinessExtraYield; // Leoreth
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;

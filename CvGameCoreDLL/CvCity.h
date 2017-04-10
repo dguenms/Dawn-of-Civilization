@@ -429,6 +429,10 @@ public:
 	int getFeatureBadHappiness() const;																		// Exposed to Python
 	void updateFeatureHappiness();
 
+	int getImprovementHappiness() const;																	// Exposed to Python
+	void setImprovementHappiness(int iNewValue);
+	void changeImprovementHappiness(int iChange);
+
 	int getBonusGoodHappiness() const;																		// Exposed to Python  
 	int getBonusBadHappiness() const;																			// Exposed to Python  
 	void changeBonusGoodHappiness(int iChange);
@@ -469,6 +473,11 @@ public:
 	int getBuildingOnlyHealthyCount() const;
 	bool isBuildingOnlyHealthy() const;																		// Exposed to Python
 	void changeBuildingOnlyHealthyCount(int iChange);
+
+	// Leoreth
+	int getImprovementHealth() const;
+	void setImprovementHealth(int iNewValue);
+	void changeImprovementHealth(int iChange);
 
 	int getFood() const;																				// Exposed to Python
 	void setFood(int iNewValue);																		// Exposed to Python
@@ -544,6 +553,9 @@ public:
 	int getDirtyPowerCount() const;
 	bool isDirtyPower() const;																						// Exposed to Python
 	void changePowerCount(int iChange, bool bDirty);
+	
+	int getPowerConsumedCount() const;
+	void changePowerConsumedCount(int iChange);
 
 	bool isAreaBorderObstacle() const;																				// Exposed to Python
 
@@ -691,6 +703,10 @@ public:
 	void updateExtraSpecialistYield(YieldTypes eYield);
 	void updateExtraSpecialistYield();
 
+	// Leoreth
+	int getHappinessYield(YieldTypes eIndex) const;
+	void updateHappinessYield();
+
 	int getCommerceRate(CommerceTypes eIndex) const;									// Exposed to Python
 	int getCommerceRateTimes100(CommerceTypes eIndex) const;									// Exposed to Python
 	int getCommerceFromPercent(CommerceTypes eIndex, int iYieldRate) const;			// Exposed to Python
@@ -750,6 +766,14 @@ public:
 
 	int getCommerceRateModifier(CommerceTypes eIndex) const;										// Exposed to Python
 	void changeCommerceRateModifier(CommerceTypes eIndex, int iChange);
+
+	// Leoreth
+	int getPowerCommerceRateModifier(CommerceTypes eIndex) const;
+	void changePowerCommerceRateModifier(CommerceTypes eIndex, int iChange);
+
+	// Leoreth
+	int getCultureCommerceRateModifier(CommerceTypes eIndex) const;
+	void changeCultureCommerceRateModifier(CommerceTypes eIndex, int iChange);
 
 	int getCommerceHappinessPer(CommerceTypes eIndex) const;										// Exposed to Python
 	int getCommerceHappinessByType(CommerceTypes eIndex) const;									// Exposed to Python
@@ -1002,8 +1026,7 @@ public:
 
 	//Leoreth
 	bool isMiddleEast() const;
-	bool canEnslave() const;
-	bool canEnslave(bool bGeneral) const;
+	bool canEnslave(bool bGeneral = false) const;
 	int getSpecialistGoodHappiness() const;
 	int getSpecialistBadHappiness() const;
 	void changeSpecialistGoodHappiness(int iChange);
@@ -1037,6 +1060,29 @@ public:
 
 	bool isHasPrecursor(ReligionTypes eReligion) const;
 	int getReligionPopulation(ReligionTypes eReligion) const;
+
+	void updateWorkedImprovements();
+	void updateWorkedImprovement(int iIndex);
+	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement);
+
+	int getImprovementHappiness(ImprovementTypes eImprovement) const;
+	void changeImprovementHappiness(ImprovementTypes eImprovement, int iChange);
+
+	int getImprovementHealth(ImprovementTypes eImprovement) const;
+	void changeImprovementHealth(ImprovementTypes eImprovement, int iChange);
+
+	int getCultureGreatPeopleRateModifier() const;
+	void changeCultureGreatPeopleRateModifier(int iChange);
+
+	int getCultureHappiness() const;
+	void changeCultureHappiness(int iChange);
+
+	int getCultureTradeRouteModifier() const;
+	void changeCultureTradeRouteModifier(int iChange);
+
+	int getBuildingUnignorableBombardDefense() const;
+	void changeBuildingUnignorableBombardDefense(int iChange);
+	int getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuilding) const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
@@ -1186,6 +1232,7 @@ protected:
 	int m_iNukeModifier;
 	int m_iFreeSpecialist;
 	int m_iPowerCount;
+	int m_iPowerConsumedCount;
 	int m_iDirtyPowerCount;
 	int m_iDefenseDamage;
 	int m_iLastDefenseDamage;
@@ -1203,8 +1250,17 @@ protected:
 	int m_iCorporationBadHappiness;
 	int m_iCorporationHealth;
 	int m_iCorporationUnhealth;
+	
+	int m_iImprovementHappiness;
+	int m_iImprovementHealth;
 
 	int m_iNextCoveredPlot;
+
+	int m_iCultureGreatPeopleRateModifier;
+	int m_iCultureHappiness;
+	int m_iCultureTradeRouteModifier;
+
+	int m_iBuildingUnignorableBombardDefense;
 
 	bool m_bNeverLost;
 	bool m_bBombarded;
@@ -1245,6 +1301,7 @@ protected:
 	int* m_aiTradeYield;
 	int* m_aiCorporationYield;
 	int* m_aiExtraSpecialistYield;
+	int* m_aiHappinessYield; // Leoreth
 	int* m_aiCommerceRate;
 	int* m_aiProductionToCommerceModifier;
 	int* m_aiBuildingCommerce;
@@ -1252,6 +1309,8 @@ protected:
 	int* m_aiReligionCommerce;
 	int* m_aiCorporationCommerce;
 	int* m_aiCommerceRateModifier;
+	int* m_aiPowerCommerceRateModifier; // Leoreth
+	int* m_aiCultureCommerceRateModifier; // Leoreth
 	int* m_aiCommerceHappinessPer;
 	int* m_aiDomainFreeExperience;
 	int* m_aiDomainProductionModifier;
@@ -1289,6 +1348,8 @@ protected:
 	int* m_paiForceSpecialistCount;
 	int* m_paiFreeSpecialistCount;
 	int* m_paiImprovementFreeSpecialists;
+	int* m_paiImprovementHealth; // Leoreth
+	int* m_paiImprovementHappiness; // Leoreth
 	int* m_paiReligionInfluence;
 	int* m_paiStateReligionHappiness;
 	int* m_paiUnitCombatFreeExperience;

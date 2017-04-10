@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Special Building -->
+<Civ4SpecialBuildingInfos xmlns="x-schema:CIV4BuildingsSchema.xml">
+	<SpecialBuildingInfos>
+		<SpecialBuildingInfo>
+			<Type>SPECIALBUILDING_BOMB_SHELTER</Type>
+			<Description>TXT_KEY_SPECIALBUILDING_BOMB_SHELTER</Description>
+			<ObsoleteTech>NONE</ObsoleteTech>
+			<TechPrereq>NONE</TechPrereq>
+			<TechPrereqAnyone>NONE</TechPrereqAnyone>
+			<bValid>0</bValid>
+			<ProductionTraits/>
+			<Button>Art/Interface/Buttons/Buildings/BombShelters.dds</Button>
+		</SpecialBuildingInfo>
+		<SpecialBuildingInfo>
+			<Type>SPECIALBUILDING_TEMPLE</Type>
+			<Description>TXT_KEY_SPECIALBUILDING_TEMPLE</Description>
+			<ObsoleteTech>NONE</ObsoleteTech>
+			<TechPrereq>TECH_DIVINATION</TechPrereq>
+			<TechPrereqAnyone>NONE</TechPrereqAnyone>
+			<bValid>1</bValid>
+			<ProductionTraits/>
+			<Button>Art/Interface/Buttons/Buildings/Temple.dds</Button>
+		</SpecialBuildingInfo>
+		<SpecialBuildingInfo>
+			<Type>SPECIALBUILDING_CATHEDRAL</Type>
+			<Description>TXT_KEY_SPECIALBUILDING_CATHEDRAL</Description>
+			<ObsoleteTech>NONE</ObsoleteTech>
+			<TechPrereq>TECH_ARCHITECTURE</TechPrereq>
+			<TechPrereqAnyone>NONE</TechPrereqAnyone>
+			<bValid>1</bValid>
+			<ProductionTraits/>
+			<Button>Art/Interface/Buttons/Buildings/Cathedral.dds</Button>
+		</SpecialBuildingInfo>
+		<SpecialBuildingInfo>
+			<Type>SPECIALBUILDING_MONASTERY</Type>
+			<Description>TXT_KEY_SPECIALBUILDING_MONASTERY</Description>
+			<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
+			<TechPrereq>TECH_PRIESTHOOD</TechPrereq>
+			<TechPrereqAnyone>NONE</TechPrereqAnyone>
+			<bValid>1</bValid>
+			<ProductionTraits/>
+			<Button>Art/Interface/Buttons/Buildings/Monastery_Hindu.dds</Button>
+		</SpecialBuildingInfo>
+	</SpecialBuildingInfos>
+</Civ4SpecialBuildingInfos>

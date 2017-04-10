@@ -1103,9 +1103,9 @@ def canTriggerInfluenza(argsList):
 	if player.getCurrentEra() <= iIndustrial:
 		return false
 	
-	iMedicine = CvUtil.findInfoTypeNum(gc.getTechInfo,gc.getNumTechInfos(),'TECH_MEDICINE')
+	iMicrobiology = CvUtil.findInfoTypeNum(gc.getTechInfo,gc.getNumTechInfos(),'TECH_MICROBIOLOGY')
 	
-	if team.isHasTech(iMedicine):
+	if team.isHasTech(iMicrobiology):
 		return false
 						
 	return true
@@ -1508,7 +1508,7 @@ def canApplyEarthDay2(argsList):
 	
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ENVIRONMENTALISM')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_PUBLIC_WELFARE')
 	
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
@@ -1529,7 +1529,7 @@ def applyEarthDay2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ENVIRONMENTALISM')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_PUBLIC_WELFARE')
 	iCivicOption = CvUtil.findInfoTypeNum(gc.getCivicOptionInfo,gc.getNumCivicOptionInfos(),'CIVICOPTION_ECONOMY')
 	
 	listPlayers = []
@@ -1842,7 +1842,7 @@ def canTriggerTheHuns(argsList):
 			
 #   At least one civ on the board must know Horseback Riding.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_HORSEBACK_RIDING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_NOBILITY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -1855,7 +1855,7 @@ def canTriggerTheHuns(argsList):
 					
 #   At least one civ on the board must know Iron Working.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_IRON_WORKING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_BLOOMERY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -1952,21 +1952,21 @@ def canTriggerTheVandals(argsList):
 		return false
 			
 #   At least one civ on the board must know Metal Casting.
-	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_METAL_CASTING')
-	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
-		loopPlayer = gc.getPlayer(iPlayer)
-		if loopPlayer.isAlive():
-			if gc.getTeam(loopPlayer.getTeam()).isHasTech(iTech):
-				bFoundValid = true
-				break
-				
-	if not bFoundValid:
-		return false
+#	bFoundValid = false
+#	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_METAL_CASTING')
+#	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
+#		loopPlayer = gc.getPlayer(iPlayer)
+#		if loopPlayer.isAlive():
+#			if gc.getTeam(loopPlayer.getTeam()).isHasTech(iTech):
+#				bFoundValid = true
+#				break
+#				
+#	if not bFoundValid:
+#		return false
 					
 #   At least one civ on the board must know Iron Working.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_IRON_WORKING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_BLOOMERY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2077,7 +2077,7 @@ def canTriggerTheGoths(argsList):
 					
 #   At least one civ on the board must know Iron Working.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_IRON_WORKING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_BLOOMERY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2175,7 +2175,7 @@ def canTriggerThePhilistines(argsList):
 			
 #   At least one civ on the board must know Monotheism.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_MONOTHEISM')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_DIVINATION')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2188,7 +2188,7 @@ def canTriggerThePhilistines(argsList):
 					
 #   At least one civ on the board must know Bronze Working.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_BRONZE_WORKING')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_ALLOYS')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2286,7 +2286,7 @@ def canTriggerTheVedicAryans(argsList):
 			
 #   At least one civ on the board must know Polytheism.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_POLYTHEISM')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_MYTHOLOGY')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2299,7 +2299,7 @@ def canTriggerTheVedicAryans(argsList):
 					
 #   At least one civ on the board must know Archery.
 	bFoundValid = false
-	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_ARCHERY')
+	iTech = CvUtil.findInfoTypeNum(gc.getTechInfo, gc.getNumTechInfos(), 'TECH_TANNING')
 	for iPlayer in range(gc.getMAX_CIV_PLAYERS()):			
 		loopPlayer = gc.getPlayer(iPlayer)
 		if loopPlayer.isAlive():
@@ -2419,7 +2419,7 @@ def canTriggerTea(argsList):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_MERCANTILISM')):
+	if player.isCivic(CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_COLONIALISM')):
 		return false
 
 	bCanTrade = false		
@@ -3559,7 +3559,7 @@ def canApplyEliteSwordsDone2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_DYNASTICISM')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_MONARCHY')
 	
 	if not player.isCivic(iCivic):
 		return false
@@ -3607,7 +3607,7 @@ def canTriggerWarshipsDone(argsList):
 	#iNumUnits = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers()
 	iNumUnits = 7
 	#Rhye - end
-	iUnitClassType = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_TRIREME')
+	iUnitClassType = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_WAR_GALLEY')
 
 	if player.getUnitClassCount(iUnitClassType) < iNumUnits:
 		return false
@@ -3714,7 +3714,7 @@ def canTriggerNobleKnightsDone(argsList):
 	#iNumUnits = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers() + 1
 	iNumUnits = 7 + 1
 	#Rhye - end
-	iUnitClassType = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_KNIGHT')
+	iUnitClassType = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_LANCER')
 
 	if player.getUnitClassCount(iUnitClassType) < iNumUnits:
 		return false
@@ -3743,7 +3743,7 @@ def canApplyNobleKnightsDone2(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 		
-	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_ORGANIZED_RELIGION')
+	iCivic = CvUtil.findInfoTypeNum(gc.getCivicInfo,gc.getNumCivicInfos(),'CIVIC_CLERGY')
 	
 	if not player.isCivic(iCivic):
 		return false
@@ -4172,8 +4172,8 @@ def canTriggerNuclearProtest(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
 	iICBMClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_ICBM')
-	iTacNukeClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_TACTICAL_NUKE')
-	if player.getUnitClassCount(iICBMClass) + player.getUnitClassCount(iTacNukeClass) < 10:
+	iNuclearBomberClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_NUCLEAR_BOMBER')
+	if player.getUnitClassCount(iICBMClass) + player.getUnitClassCount(iNuclearBomberClass) < 10:
 		return false
 
 	return true
@@ -4183,11 +4183,11 @@ def doNuclearProtest1(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 
 	iICBMClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_ICBM')
-	iTacNukeClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_TACTICAL_NUKE')
+	iNuclearBomberClass = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_NUCLEAR_BOMBER')
 
 	(loopUnit, iter) = player.firstUnit(false)
 	while (loopUnit):
-		if loopUnit.getUnitClassType() == iICBMClass or loopUnit.getUnitClassType() == iTacNukeClass:
+		if loopUnit.getUnitClassType() == iICBMClass or loopUnit.getUnitClassType() == iNuclearBomberClass:
 			loopUnit.kill(false, -1)
 		(loopUnit, iter) = player.nextUnit(iter, false)
 
@@ -4494,7 +4494,7 @@ def doTradingCompanyConquerors2(argsList):
 
 	if tSeaPlot != -1:
 		if iPlayer == iNetherlands:
-			utils.makeUnit(iDutchEastIndiaman, iPlayer, tSeaPlot, 1)
+			utils.makeUnit(iEastIndiaman, iPlayer, tSeaPlot, 1)
 		else:
 			utils.makeUnit(iGalleon, iPlayer, tSeaPlot, 1)
 	

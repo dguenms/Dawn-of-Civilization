@@ -225,8 +225,11 @@ class CvCivicsScreen:
 		iX, iY = self.getPosition(iCategory)
 
 		iLine = iY + self.MARGIN
+		
 		for iCivic in xrange(gc.getNumCivicInfos()):
 			if gc.getCivicInfo(iCivic).getCivicOptionType() == iCategory:
+				if iCivic % 7 == 0: continue
+			
 				sName = "CivicButton" + str(iCivic)
 				sButton = gc.getCivicInfo(iCivic).getButton()
 				xPos = iX + self.W_CIVIC_CATEGORY - self.BUTTON_SMALL - self.MARGIN
@@ -347,16 +350,18 @@ class CvCivicsScreen:
 		iHoverCategory = gc.getCivicInfo(iHoverCivic).getCivicOptionType()
 		
 		for iCivic in range(iNumCivics):
+			if iCivic % 7 == 0: continue
+		
 			iCategory = gc.getCivicInfo(iCivic).getCivicOptionType()
 			if iCategory == iHoverCategory:
 				continue
 			iX, iY = self.getPosition(iCategory)
 			xPos = iX + self.W_CIVIC_CATEGORY - self.BUTTON_SMALL - self.MARGIN
-			iLine = iY + self.MARGIN + (iCivic % 6) * self.LINE
+			iLine = iY + self.MARGIN + (iCivic % 7 - 1) * self.LINE
 			
 			sName = "CivicName" + str(iCivic)
 			sText = gc.getCivicInfo(iCivic).getDescription()
-			iCombovalue = Stability.getCivicCombinationStability(self.iActivePlayer, iHoverCivic, iCivic)
+			iCombovalue = Stability.getCivicStability(self.iActivePlayer, [iHoverCivic, iCivic])
 			bGood = iCombovalue > 0
 			bBad = iCombovalue < 0
 			

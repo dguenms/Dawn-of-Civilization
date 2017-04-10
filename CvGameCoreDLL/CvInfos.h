@@ -983,6 +983,7 @@ public:
 	int getLeaderExperience() const;				// Exposed to Python
 
 	bool isSlave() const; // Leoreth
+	bool isWorker() const; // Leoreth
 
 	// Sanguo Mod Performance start, added by poyuzhe 07.27.09
 	std::vector<int> getUpgradeUnitClassTypes() const;
@@ -1352,6 +1353,7 @@ public:
 	int getExtraHealth() const;						// Exposed to Python
 	int getPollutionModifier() const; //Leoreth
 	int getFreeExperience() const;				// Exposed to Python
+	int getWorkerProductionModifier() const; // Leoreth
 	int getWorkerSpeedModifier() const;				// Exposed to Python
 	int getImprovementUpgradeRateModifier() const;				// Exposed to Python
 	int getMilitaryProductionModifier() const;				// Exposed to Python
@@ -1364,12 +1366,16 @@ public:
 	int getHappyPerMilitaryUnit() const;				// Exposed to Python
 	int getMilitaryHappinessLimit() const; //Leoreth
 	int getLargestCityHappiness() const;					// Exposed to Python
+	int getSpecialistHappiness() const; // Leoreth
 	int getWarWearinessModifier() const;					// Exposed to Python
 	int getFreeSpecialist() const;				// Exposed to Python
 	int getCoreFreeSpecialist() const; //Leoreth
 	int getTradeRoutes() const;				// Exposed to Python
 	int getCapitalTradeModifier() const; // Leoreth
 	int getDefensivePactTradeModifier() const; // Leoreth
+	int getVassalCityCommerce() const; // Leoreth
+	int getHappinessBonusCommerce() const; // Leoreth
+	int getCaptureGoldModifier() const; // Leoreth
 	int getTechPrereq() const;				// Exposed to Python
 	int getCivicPercentAnger() const;				// Exposed to Python
 	int getMaxConscript() const;				// Exposed to Python
@@ -1396,6 +1402,9 @@ public:
 	bool isStabilityFoundBonus() const;				//Rhye 6th
 	bool isStabilityConquestBonus() const;				//Rhye 6th
 	bool isStabilityCommerceBonus() const;				//Rhye 6th
+	bool isEnslave() const; // Leoreth
+	bool isSlavery() const; // Leoreth
+	bool isColonialSlavery() const; // Leoreth
 
 	std::wstring pyGetWeLoveTheKing() { return getWeLoveTheKing(); }			// Exposed to Python
 	const wchar* getWeLoveTheKing();
@@ -1419,6 +1428,10 @@ public:
 	int* getSpecialistExtraYieldArray() const; //Leoreth
 	int getSpecialistThresholdExtraYield(int i) const; //Leoreth
 	int* getSpecialistThresholdExtraYieldArray() const; //Leoreth
+	int getHappinessExtraYield(int i) const; // Leoreth
+	int* getHappinessExtraYieldArray() const; // Leoreth
+	int getUnhappinessExtraYield(int i) const; // Leoreth
+	int* getUnhappinessExtraYieldArray() const; // Leoreth
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
 	int getBuildingHealthChanges(int i) const;				// Exposed to Python
 	int getBuildingProductionModifier(int i) const;	//Leoreth
@@ -1459,6 +1472,7 @@ protected:
 	int m_iExtraHealth;
 	int m_iPollutionModifier; //Leoreth
 	int m_iFreeExperience;
+	int m_iWorkerProductionModifier; // Leoreth
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;
 	int m_iMilitaryProductionModifier;
@@ -1471,12 +1485,16 @@ protected:
 	int m_iHappyPerMilitaryUnit;
 	int m_iMilitaryHappinessLimit; //Leoreth
 	int m_iLargestCityHappiness;
+	int m_iSpecialistHappiness; // Leoreth
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
 	int m_iCoreFreeSpecialist; //Leoreth
 	int m_iTradeRoutes;
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
+	int m_iVassalCityCommerce; // Leoreth
+	int m_iHappinessBonusCommerce; // Leoreth
+	int m_iCaptureGoldModifier; // Leoreth
 	int m_iTechPrereq;
 	int m_iCivicPercentAnger;
 	int m_iMaxConscript;
@@ -1503,6 +1521,9 @@ protected:
 	bool m_bStabilityFoundBonus; //Rhye 6th
 	bool m_bStabilityConquestBonus; //Rhye 6th
 	bool m_bStabilityCommerceBonus; //Rhye 6th
+	bool m_bEnslave; // Leoreth
+	bool m_bSlavery; // Leoreth
+	bool m_bColonialSlavery; // Leoreth
 
 	CvWString m_szWeLoveTheKingKey;
 
@@ -1516,6 +1537,8 @@ protected:
 	int* m_piSpecialistExtraCommerce;
 	int* m_piSpecialistExtraYield; //Leoreth
 	int* m_piSpecialistThresholdExtraYield; //Leoreth
+	int* m_piHappinessExtraYield; // Leoreth
+	int* m_piUnhappinessExtraYield; // Leoreth
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
 	int* m_paiBuildingProductionModifiers; //Leoreth
@@ -1655,6 +1678,7 @@ public:
 	int getMinLatitude() const;				// Exposed to Python
 	int getMaxLatitude() const;				// Exposed to Python
 	int getGreatPeopleRateModifier() const;				// Exposed to Python
+	int getCultureGreatPeopleRateModifier() const; // Leoreth
 	int getGreatGeneralRateModifier() const;				// Exposed to Python
 	int getDomesticGreatGeneralRateModifier() const;				// Exposed to Python
 	int getGlobalGreatPeopleRateModifier() const;				// Exposed to Python
@@ -1673,6 +1697,7 @@ public:
 	int getAreaFreeSpecialist() const;				// Exposed to Python
 	int getGlobalFreeSpecialist() const;				// Exposed to Python
 	int getHappiness() const;				// Exposed to Python
+	int getCultureHappiness() const; // Leoreth
 	int getAreaHappiness() const;				// Exposed to Python
 	int getGlobalHappiness() const;				// Exposed to Python
 	int getStateReligionHappiness() const;				// Exposed to Python
@@ -1684,6 +1709,7 @@ public:
 	int getCoastalTradeRoutes() const;				// Exposed to Python
 	int getGlobalTradeRoutes() const;				// Exposed to Python
 	int getTradeRouteModifier() const;				// Exposed to Python
+	int getCultureTradeRouteModifier() const; // Leoreth
 	int getForeignTradeRouteModifier() const;				// Exposed to Python
 	int getAssetValue() const;				// Exposed to Python
 	int getPowerValue() const;				// Exposed to Python
@@ -1716,6 +1742,7 @@ public:
 	int getFreeTechs() const;				// Exposed to Python
 	int getDefenseModifier() const;					// Exposed to Python
 	int getBombardDefenseModifier() const;					// Exposed to Python
+	int getUnignorableBombardDefenseModifier() const;
 	int getAllCityDefenseModifier() const;				// Exposed to Python
 	int getEspionageDefenseModifier() const;					// Exposed to Python
 	int getMissionType() const;											// Exposed to Python
@@ -1742,6 +1769,7 @@ public:
 	bool isNeverCapture() const;				// Exposed to Python
 	bool isNukeImmune() const;				// Exposed to Python
 	bool isPrereqReligion() const;				// Exposed to Python
+	bool isPagan() const; // Leoreth
 	bool isCenterInCity() const;				// Exposed to Python
 	bool isStateReligion() const;				// Exposed to Python
 	bool isAllowsNukes() const;				// Exposed to Python
@@ -1779,6 +1807,10 @@ public:
 	int getCommerceChangeDoubleTime(int i) const;				// Exposed to Python
 	int getCommerceModifier(int i) const;				// Exposed to Python
 	int* getCommerceModifierArray() const;
+	int getPowerCommerceModifier(int i) const; // Leoreth
+	int* getPowerCommerceModifierArray() const; // Leoreth
+	int getCultureCommerceModifier(int i) const; // Leoreth
+	int* getCultureCommerceModifierArray() const; // Leoreth
 	int getGlobalCommerceModifier(int i) const;				// Exposed to Python
 	int* getGlobalCommerceModifierArray() const;
 	int getSpecialistExtraCommerce(int i) const;	// Exposed to Python
@@ -1826,6 +1858,8 @@ public:
 
 	// Leoreth
 	int getPrereqBuildingClassPercent(int i) const;
+	int getImprovementHappiness(int i) const;
+	int getImprovementHealth(int i) const;
 
 	// Other
 
@@ -1871,6 +1905,7 @@ protected:
 	int m_iMinLatitude;
 	int m_iMaxLatitude;
 	int m_iGreatPeopleRateModifier;
+	int m_iCultureGreatPeopleRateModifier; // Leoreth
 	int m_iGreatGeneralRateModifier;
 	int m_iDomesticGreatGeneralRateModifier;
 	int m_iGlobalGreatPeopleRateModifier;
@@ -1889,6 +1924,7 @@ protected:
 	int m_iAreaFreeSpecialist;
 	int m_iGlobalFreeSpecialist;
 	int m_iHappiness;
+	int m_iCultureHappiness; // Leoreth
 	int m_iAreaHappiness;
 	int m_iGlobalHappiness;
 	int m_iStateReligionHappiness;
@@ -1900,6 +1936,7 @@ protected:
 	int m_iCoastalTradeRoutes;
 	int m_iGlobalTradeRoutes;
 	int m_iTradeRouteModifier;
+	int m_iCultureTradeRouteModifier; // Leoreth
 	int m_iForeignTradeRouteModifier;
 	int m_iAssetValue;
 	int m_iPowerValue;
@@ -1932,6 +1969,7 @@ protected:
 	int m_iFreeTechs;
 	int m_iDefenseModifier;
 	int m_iBombardDefenseModifier;
+	int m_iUnignorableBombardDefenseModifier;
 	int m_iAllCityDefenseModifier;
 	int m_iEspionageDefenseModifier;
 	int m_iMissionType;
@@ -1957,6 +1995,7 @@ protected:
 	bool m_bNeverCapture;
 	bool m_bNukeImmune;
 	bool m_bPrereqReligion;
+	bool m_bPagan; // Leoreth
 	bool m_bCenterInCity;
 	bool m_bStateReligion;
 	bool m_bAllowsNukes;
@@ -1983,6 +2022,8 @@ protected:
 	int* m_piObsoleteSafeCommerceChange;
 	int* m_piCommerceChangeDoubleTime;
 	int* m_piCommerceModifier;
+	int* m_piPowerCommerceModifier; // Leoreth
+	int* m_piCultureCommerceModifier; // Leoreth
 	int* m_piGlobalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
 	int* m_piStateReligionCommerce;
@@ -2004,6 +2045,8 @@ protected:
 	// Leoreth
 	int* m_piPrereqBuildingClassPercent;
 	int* m_piReligionYieldChange;
+	int* m_piImprovementHappiness;
+	int* m_piImprovementHealth;
 
 	bool* m_pbCommerceFlexible;
 	bool* m_pbCommerceChangeOriginalOwner;
@@ -2264,9 +2307,15 @@ public:
 	DllExport const wchar* getAdjectiveKey() const;				// Exposed to Python
 	std::wstring pyGetAdjectiveKey() { return getAdjectiveKey(); }				// Exposed to Python
 
+	std::wstring pyGetPaganReligionName(uint uiForm) { return getPaganReligionName(uiForm); }
+	const wchar* getPaganReligionName(uint uiForm = 0);
+	const wchar* getPaganReligionKey() const;
+	std::wstring pyGetPaganReligionKey() { return getPaganReligionKey(); }
+
 	DllExport const TCHAR* getFlagTexture() const;
 	DllExport const TCHAR* getArtDefineTag() const;
 	DllExport void setArtDefineTag(const TCHAR* szVal);
+	const TCHAR* getPaganReligionButton() const;
 	// Arrays
 
 	DllExport int getCivilizationBuildings(int i) const;				// Exposed to Python
@@ -2319,6 +2368,8 @@ protected:
 	CvString m_szArtDefineTag;
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
+	CvWString m_szPaganReligionKey; // Leoreth
+	CvString m_szPaganReligionButton; // Leoreth
 	std::string m_szIdentifier; // Leoreth
 	// Arrays
 
@@ -2339,6 +2390,7 @@ protected:
 
 	mutable std::vector<CvWString> m_aszShortDescription;
 	mutable std::vector<CvWString> m_aszAdjective;
+	mutable std::vector<CvWString> m_aszPaganReligion;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -2963,6 +3015,7 @@ public:
 	int getUpgradeTime() const;				// Exposed to Python
 	int getAirBombDefense() const;				// Exposed to Python
 	int getDefenseModifier() const;				// Exposed to Python
+	int getHealth() const;
 	int getHappiness() const;				// Exposed to Python
 	int getPillageGold() const;				// Exposed to Python
 	int getImprovementPillage() const;				// Exposed to Python
@@ -3043,6 +3096,7 @@ protected:
 	int m_iUpgradeTime;
 	int m_iAirBombDefense;
 	int m_iDefenseModifier;
+	int m_iHealth;
 	int m_iHappiness;
 	int m_iPillageGold;
 	int m_iImprovementPillage;

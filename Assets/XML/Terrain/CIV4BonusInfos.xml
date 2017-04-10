@@ -13,7 +13,7 @@
 			<Civilopedia>TXT_KEY_BONUS_ALUMINUM_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_MODERN</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_ALUMINUM</ArtDefineTag>
-			<TechReveal>TECH_INDUSTRIALISM</TechReveal>
+			<TechReveal>TECH_METALLURGY</TechReveal>
 			<TechCityTrade>TECH_ELECTRICITY</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -54,7 +54,7 @@
 			<Civilopedia>TXT_KEY_BONUS_COAL_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COAL</ArtDefineTag>
-			<TechReveal>TECH_STEAM_POWER</TechReveal>
+			<TechReveal>TECH_GEOLOGY</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -91,7 +91,7 @@
 			<Civilopedia>TXT_KEY_BONUS_COPPER_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_RUSH</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COPPER</ArtDefineTag>
-			<TechReveal>TECH_BRONZE_WORKING</TechReveal>
+			<TechReveal>TECH_SMELTING</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -143,8 +143,8 @@
 			<Civilopedia>TXT_KEY_BONUS_HORSE_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_RUSH</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_HORSE</ArtDefineTag>
-			<TechReveal>TECH_ANIMAL_HUSBANDRY</TechReveal>
-			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
+			<TechReveal>TECH_PASTORALISM</TechReveal>
+			<TechCityTrade>TECH_PASTORALISM</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
@@ -186,7 +186,7 @@
 			<Civilopedia>TXT_KEY_BONUS_IRON_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_RUSH</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_IRON</ArtDefineTag>
-			<TechReveal>TECH_IRON_WORKING</TechReveal>
+			<TechReveal>TECH_BLOOMERY</TechReveal>
 			<TechCityTrade>TECH_MINING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -280,8 +280,8 @@
 			<Civilopedia>TXT_KEY_BONUS_OIL_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_MODERN</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_OIL</ArtDefineTag>
-			<TechReveal>TECH_SCIENTIFIC_METHOD</TechReveal>
-			<TechCityTrade>TECH_COMBUSTION</TechCityTrade>
+			<TechReveal>TECH_REFINING</TechReveal>
+			<TechCityTrade>TECH_REFINING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
@@ -378,7 +378,7 @@
 			<Civilopedia>TXT_KEY_BONUS_URANIUM_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_MODERN</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_URANIUM</ArtDefineTag>
-			<TechReveal>TECH_PHYSICS</TechReveal>
+			<TechReveal>TECH_RADIO</TechReveal>
 			<TechCityTrade>TECH_FISSION</TechCityTrade>
 			<iAITradeModifier>30</iAITradeModifier>
 			<iPlacementOrder>2</iPlacementOrder>
@@ -565,7 +565,7 @@
 			<Civilopedia>TXT_KEY_BONUS_COW_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_LIVESTOCK</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COW</ArtDefineTag>
-			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
+			<TechCityTrade>TECH_PASTORALISM</TechCityTrade>
 			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -636,7 +636,7 @@
 			<Civilopedia>TXT_KEY_BONUS_DEER_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_DEER</ArtDefineTag>
-			<TechCityTrade>TECH_HUNTING</TechCityTrade>
+			<TechCityTrade>TECH_TANNING</TechCityTrade>
 			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -720,7 +720,7 @@
 			<Civilopedia>TXT_KEY_BONUS_PIG_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_LIVESTOCK</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_PIG</ArtDefineTag>
-			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
+			<TechCityTrade>TECH_PASTORALISM</TechCityTrade>
 			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -814,7 +814,7 @@
 			<Civilopedia>TXT_KEY_BONUS_SHEEP_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_LIVESTOCK</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_SHEEP</ArtDefineTag>
-			<TechCityTrade>TECH_ANIMAL_HUSBANDRY</TechCityTrade>
+			<TechCityTrade>TECH_PASTORALISM</TechCityTrade>
 			<TechPlayerTrade>TECH_REFRIGERATION</TechPlayerTrade>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
@@ -888,8 +888,8 @@
 			<Civilopedia>TXT_KEY_BONUS_COFFEE_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_COFFEE</ArtDefineTag>
-			<TechReveal>TECH_GUILDS</TechReveal>
-			<TechCityTrade>TECH_GUILDS</TechCityTrade>
+			<TechReveal>TECH_COMPANIES</TechReveal>
+			<TechCityTrade>TECH_COMPANIES</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1017,8 +1017,8 @@
 			<Civilopedia>TXT_KEY_BONUS_FUR_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_FUR</ArtDefineTag>
-			<TechCityTrade>TECH_HUNTING</TechCityTrade>
-			<TechObsolete>TECH_PLASTICS</TechObsolete>
+			<TechCityTrade>TECH_TANNING</TechCityTrade>
+			<TechObsolete>TECH_SYNTHETICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1198,8 +1198,8 @@
 			<Civilopedia>TXT_KEY_BONUS_IVORY_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_IVORY</ArtDefineTag>
-			<TechCityTrade>TECH_HUNTING</TechCityTrade>
-			<TechObsolete>TECH_INDUSTRIALISM</TechObsolete>
+			<TechCityTrade>TECH_TANNING</TechCityTrade>
+			<TechObsolete>TECH_ENGINE</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
@@ -1247,7 +1247,7 @@
 			<Civilopedia>TXT_KEY_BONUS_PEARL_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_PEARL</ArtDefineTag>
-			<TechObsolete>TECH_PLASTICS</TechObsolete>
+			<TechObsolete>TECH_SYNTHETICS</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1578,7 +1578,7 @@
 			<Civilopedia>TXT_KEY_BONUS_WINE_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_WINE</ArtDefineTag>
-			<TechCityTrade>TECH_MONARCHY</TechCityTrade>
+			<TechCityTrade>TECH_POTTERY</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>0</iYieldChange>
@@ -1617,7 +1617,7 @@
 			<Civilopedia>TXT_KEY_BONUS_WHALE_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_WHALE</ArtDefineTag>
-			<TechObsolete>TECH_COMBUSTION</TechObsolete>
+			<TechObsolete>TECH_ECOLOGY</TechObsolete>
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>

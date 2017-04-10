@@ -363,6 +363,7 @@ public:
 	void setCurrentEra(int /*EraTypes*/ iNewValue);
 
 	int /*ReligonTypes*/ getStateReligion();
+	int getLastStateReligion();
 	void setLastStateReligion(int /*ReligionTypes*/ iNewReligion);
 
 	int getTeam();
@@ -571,6 +572,11 @@ public:
 	int getBirthYear();
 	int getBirthTurn();
 	void setBirthYear(int iNewValue);
+	void AI_chooseFreeTech();
+	bool isEnslave();
+	bool isSlavery();
+	bool isColonialSlavery();
+	int AI_bestCivic(int iCivicOptionType);
 
 private:
 	CvPlayer* m_pPlayer;

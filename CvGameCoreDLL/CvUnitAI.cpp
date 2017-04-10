@@ -1343,7 +1343,7 @@ void CvUnitAI::AI_settleMove()
 				return;
 			}
 		}
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)ASTRONOMY))
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 		{
 			if (AI_found_map(20))
 			{

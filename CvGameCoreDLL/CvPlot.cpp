@@ -5517,7 +5517,7 @@ void CvPlot::setOwner(PlayerTypes eNewValue, bool bCheckUnits, bool bUpdatePlotG
 		{
 			if (getImprovementType() == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION"))
 			{
-				if (GET_PLAYER(eNewValue).getCivics((CivicOptionTypes)1) == CIVIC_EGALITARIANISM)
+				if (!GET_PLAYER(eNewValue).isColonialSlavery())
 				{
 					setImprovementType((ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_PLANTATION"));
 				}
@@ -6168,7 +6168,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		updateIrrigated();
 		updateYield();
 
-		for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+		/*for (iI = 0; iI < NUM_CITY_PLOTS; ++iI)
 		{
 			CvPlot* pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), iI);
 
@@ -6181,7 +6181,7 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 					pLoopCity->updateFeatureHappiness();
 				}
 			}
-		}
+		}*/
 
 		// Building or removing a fort will now force a plotgroup update to verify resource connections.
 		if ( (NO_IMPROVEMENT != getImprovementType() && GC.getImprovementInfo(getImprovementType()).isActsAsCity()) !=
@@ -6225,12 +6225,12 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		CvCity* pWorkingCity = getWorkingCity();
 		if (NULL != pWorkingCity)
 		{
+			//pWorkingCity->updateWorkedImprovement(eOldImprovement, eNewValue);
+
 			if ((NO_IMPROVEMENT != eNewValue && pWorkingCity->getImprovementFreeSpecialists(eNewValue) > 0)	||
 				(NO_IMPROVEMENT != eOldImprovement && pWorkingCity->getImprovementFreeSpecialists(eOldImprovement) > 0))
 			{
-
 				pWorkingCity->AI_setAssignWorkDirty(true);
-
 			}
 		}
 
@@ -11273,15 +11273,18 @@ int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 		{
 			if (iSpreadFactor < getSpreadFactor(CATHOLICISM))
 			{
-				iSpreadFactor = getSpreadFactor(CATHOLICISM);
+				return getSpreadFactor(CATHOLICISM);
 			}
 		}
+	}
 
+	if (eReligion == CATHOLICISM)
+	{
 		if (!GC.getGameINLINE().isReligionFounded(PROTESTANTISM))
 		{
 			if (iSpreadFactor < getSpreadFactor(PROTESTANTISM))
 			{
-				iSpreadFactor = getSpreadFactor(PROTESTANTISM);
+				return getSpreadFactor(PROTESTANTISM);
 			}
 		}
 	}

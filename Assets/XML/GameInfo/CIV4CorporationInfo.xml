@@ -10,7 +10,7 @@
 			<Type>CORPORATION_SILK_ROUTE</Type>
 			<Description>TXT_KEY_CORPORATION_SILK_ROUTE</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_SILK_ROUTE_PEDIA</Civilopedia>
-			<TechPrereq>TECH_CURRENCY</TechPrereq>
+			<TechPrereq>TECH_COMPASS</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
@@ -41,7 +41,7 @@
 			<Type>CORPORATION_TRADING_COMPANY</Type>
 			<Description>TXT_KEY_CORPORATION_TRADING_COMPANY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_TRADING_COMPANY_PEDIA</Civilopedia>
-			<TechPrereq>TECH_ASTRONOMY</TechPrereq>
+			<TechPrereq>TECH_EXPLORATION</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
@@ -145,7 +145,7 @@
 			<Type>CORPORATION_TEXTILE_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_TEXTILE_INDUSTRY_PEDIA</Civilopedia>
-			<TechPrereq>TECH_STEAM_POWER</TechPrereq>
+			<TechPrereq>TECH_THERMODYNAMICS</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
@@ -183,7 +183,7 @@
 			<Type>CORPORATION_STEEL_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_STEEL_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_STEEL_INDUSTRY_PEDIA</Civilopedia>
-			<TechPrereq>TECH_STEEL</TechPrereq>
+			<TechPrereq>TECH_METALLURGY</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
@@ -220,7 +220,7 @@
 			<Type>CORPORATION_OIL_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_OIL_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_OIL_INDUSTRY_PEDIA</Civilopedia>
-			<TechPrereq>TECH_COMBUSTION</TechPrereq>
+			<TechPrereq>TECH_REFINING</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
@@ -252,7 +252,7 @@
 			<Type>CORPORATION_LUXURY_INDUSTRY</Type>
 			<Description>TXT_KEY_CORPORATION_LUXURY_INDUSTRY</Description>
 			<Civilopedia>TXT_KEY_CORPORATION_LUXURY_INDUSTRY_PEDIA</Civilopedia>
-			<TechPrereq>TECH_ELECTRICITY</TechPrereq>
+			<TechPrereq>TECH_CONSUMERISM</TechPrereq>
 			<FreeUnitClass>NONE</FreeUnitClass>
 			<iSpreadFactor>200</iSpreadFactor>
 			<iSpreadCost>50</iSpreadCost>
