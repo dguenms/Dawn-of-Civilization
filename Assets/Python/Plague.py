@@ -348,19 +348,20 @@ class Plague:
 			CyInterface().addMessage(city.getOwner(), True, iDuration/2, CyTranslator().getText("TXT_KEY_PLAGUE_SPREAD_CITY", ()) + " " + city.getName() + "!", "AS2D_PLAGUE", 0, "", ColorTypes(iLime), -1, -1, True, True)
 		for (x, y) in utils.surroundingPlots((city.getX(), city.getY()), 2):
 			pPlot = gc.getMap().plot( x, y )
-			pPlot.setUpgradeProgress(0)
-			iImprovement = pPlot.getImprovementType()
-			if iImprovement == iTown:
-				pPlot.setImprovementType(iVillage)
-			elif iImprovement == iVillage:
-				pPlot.setImprovementType(iHamlet)
-			elif iImprovement == iHamlet:
-				pPlot.setImprovementType(iCottage)
-			elif iImprovement == iCottage:
-				pPlot.setImprovementType(-1)
-			if pPlot.isCity():
-				if (city.getX(), city.getY()) == (x, y):
-					self.killUnitsByPlague(city, pPlot, 0, 100, 0)
+			if pPlot.getUpgradeProgress() > 0:
+				pPlot.setUpgradeProgress(0)
+				iImprovement = pPlot.getImprovementType()
+				if iImprovement == iTown:
+					pPlot.setImprovementType(iVillage)
+				elif iImprovement == iVillage:
+					pPlot.setImprovementType(iHamlet)
+				elif iImprovement == iHamlet:
+					pPlot.setImprovementType(iCottage)
+				elif iImprovement == iCottage:
+					pPlot.setImprovementType(-1)
+				if pPlot.isCity():
+					if (city.getX(), city.getY()) == (x, y):
+						self.killUnitsByPlague(city, pPlot, 0, 100, 0)
 
 
 	def isVulnerable(self, iPlayer):
