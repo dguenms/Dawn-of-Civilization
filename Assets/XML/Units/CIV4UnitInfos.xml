@@ -11783,12 +11783,6 @@
 			<iMinAreaSize>20</iMinAreaSize>
 			<iMoves>4</iMoves>
 			<iNukeRange>-1</iNukeRange>
-			<TerrainImpassables>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-			</TerrainImpassables>
 			<iCombat>12</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
