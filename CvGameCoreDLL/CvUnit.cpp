@@ -506,17 +506,31 @@ void CvUnit::convert(CvUnit* pUnit)
 
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
-		setHasPromotion(((PromotionTypes)iI), (pUnit->isHasPromotion((PromotionTypes)iI) || m_pUnitInfo->getFreePromotions(iI)));
+		setHasPromotion(((PromotionTypes)iI), (/*pUnit->isHasPromotion((PromotionTypes)iI) ||*/ m_pUnitInfo->getFreePromotions(iI)));
 	}
 
 	setGameTurnCreated(pUnit->getGameTurnCreated());
 	setDamage(pUnit->getDamage());
 	setMoves(pUnit->getMoves());
 
-	setLevel(pUnit->getLevel());
+	int iNewExperience = pUnit->getExperience();
+
 	int iOldModifier = std::max(1, 100 + GET_PLAYER(pUnit->getOwnerINLINE()).getLevelExperienceModifier());
 	int iOurModifier = std::max(1, 100 + GET_PLAYER(getOwnerINLINE()).getLevelExperienceModifier());
-	setExperience(std::max(0, (pUnit->getExperience() * iOurModifier) / iOldModifier));
+
+	iNewExperience *= iOurModifier;
+	iNewExperience /= iOldModifier;
+
+	if (getLeaderUnitType() == NO_UNIT)
+	{
+		iNewExperience *= GC.getUnitInfo(pUnit->getUnitType()).getCombat();
+		iNewExperience /= GC.getUnitInfo(getUnitType()).getCombat();
+	}
+
+	if (iNewExperience > 0)
+	{
+		setExperience(iNewExperience);
+	}
 
 	setName(pUnit->getNameNoDesc());
 // BUG - Unit Name - start
@@ -7700,13 +7714,13 @@ void CvUnit::upgrade(UnitTypes eUnit)
 
 	pUpgradeUnit->finishMoves();
 
-	if (pUpgradeUnit->getLeaderUnitType() == NO_UNIT)
+	/*if (pUpgradeUnit->getLeaderUnitType() == NO_UNIT)
 	{
 		if (pUpgradeUnit->getExperience() > GC.getDefineINT("MAX_EXPERIENCE_AFTER_UPGRADE"))
 		{
 			pUpgradeUnit->setExperience(GC.getDefineINT("MAX_EXPERIENCE_AFTER_UPGRADE"));
 		}
-	}
+	}*/
 
 // BUG - Upgrade Unit Event - start
 	CvEventReporter::getInstance().unitUpgraded(this, pUpgradeUnit, iPrice);
