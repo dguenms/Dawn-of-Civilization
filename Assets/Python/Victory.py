@@ -1414,9 +1414,14 @@ def checkTurn(iGameTurn, iPlayer):
 			if isHealthiest(iPlayer):
 				data.iTaoistHealthTurns += 1
 				
-		elif iVictoryType == iVictoryPolytheism:
+		elif iVictoryType == iVictoryPaganism:
 			if 2 * countReligionCities(iPlayer) > pPlayer.getNumCities():
 				data.bPolytheismNeverReligion = False
+				
+			if gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionName() == "Vedism":
+				for city in utils.getCityList(iPlayer):
+					if city.isWeLoveTheKingDay():
+						data.iVedicHappiness += 1
 				
 		if checkReligiousGoals(iPlayer):
 			gc.getGame().setWinner(iPlayer, 8)
@@ -1843,10 +1848,13 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 					win(iKorea, 2)
 					
 def onGreatPersonBorn(iPlayer, unit):
-
 	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 	
-	pUnitInfo = gc.getUnitInfo(unit.getUnitType())
+	iUnitType = unit.getUnitType()
+	pUnitInfo = gc.getUnitInfo(iUnitType)
+	
+	if not isFirstBorn(iUnitType):
+		data.lFirstGreatPeople[lGreatPeopleUnits.index(iUnitType)] = iPlayer
 	
 	# second Mexican goal: get three great generals by 1940 AD
 	if iPlayer == iAztecs:
@@ -2124,17 +2132,103 @@ def checkReligiousGoal(iPlayer, iGoal):
 			pHolyCity = gc.getGame().getHolyCity(iZoroastrianism)
 			if pHolyCity.getOwner() == iPlayer and pHolyCity.getCultureLevel() >= 6: return 1
 			
-	elif iVictoryType == iVictoryPolytheism:
+	elif iVictoryType == iVictoryPaganism:
 	
-		# first Polytheist goal: make sure there are 15 pagan temples in the world
+		# first Pagan goal: make sure there are 15 pagan temples in the world
 		if iGoal == 0:
 			if countWorldBuildings(iPaganTemple) >= 15: return 1
 			
-		# second Polytheist goal: control ten wonders that require no state religion
+		# second Pagan goal: depends on Pagan religion
 		elif iGoal == 1:
-			if countReligionWonders(iPlayer, -1) >= 10: return 1
+			paganReligion = gc.getCivilizationInfo(pPlayer.getCivilizationType()).getPaganReligionName(0)
 			
-		# third Polytheist goal: don't allow more than half of your cities to have a religion
+			# Annunaki: have more wonders in your capital than any other city in the world
+			if paganReligion == "Annunaki":
+				capital = pPlayer.getCapitalCity()
+				
+				if capital and isBestCity(iPlayer, (capital.getX(), capital.getY()), cityWonders):
+					return 1
+					
+			# Asatru: have five units of level five
+			elif paganReligion == "Asatru":
+				if countUnitsOfLevel(iPlayer, 5) >= 5:
+					return 1
+					
+			# Atua: acquire four pearl resources and 50 Ocean tiles
+			elif paganReligion == "Atua":
+				if pPlayer.getNumAvailableBonuses(iPearls) >= 4 and countControlledTerrain(iPlayer, iOcean) >= 50:
+					return 1
+			
+			# Baalism: make your capital the city with the highest trade income in the world
+			elif paganReligion == "Baalism":
+				capital = pPlayer.getCapitalCity()
+				
+				if capital and isBestCity(iPlayer, (capital.getX(), capital.getY()), cityTradeIncome):
+					return 1
+					
+			# Druidism: control 20 unimproved Forest or Marsh tiles
+			elif paganReligion == "Druidism":
+				if countControlledFeatures(iPlayer, iForest, -1) + countControlledFeatures(iPlayer, iMud, -1) >= 20:
+					return 1
+					
+			# Inti: have more gold in your treasury than the rest of the world combined
+			elif paganReligion == "Inti":
+				if 2 * pPlayer.getGold() >= getGlobalTreasury():
+					return 1
+					
+			# Mazdaism: acquire six incense resources
+			elif paganReligion == "Mazdaism":
+				if pPlayer.getNumAvailableBonuses(iIncense) >= 6:
+					return 1
+					
+			# Olympianism: control ten wonders that require no state religion
+			elif paganReligion == "Olympianism":
+				if countReligionWonders(iPlayer, -1) >= 10:
+					return 1
+					
+			# Pesedjet: be the first to create to three different types of great person
+			elif paganReligion == "Pesedjet":
+				if countFirstGreatPeople(iPlayer) >= 3:
+					return 1
+				
+			# Rodnovery: acquire seven fur resources
+			elif paganReligion == "Rodnovery":
+				if pPlayer.getNumAvailableBonuses(iFur) >= 7:
+					return 1
+					
+			# Shendao: control 25% of the world's population
+			elif paganReligion == "Shendao":
+				if getPopulationPercent(iPlayer) >= 25.0:
+					return 1
+					
+			# Shinto: settle three great spies in your capital
+			elif paganReligion == "Shinto":
+				capital = pPlayer.getCapitalCity()
+				
+				if capital and countCitySpecialists(iPlayer, (capital.getX(), capital.getY()), iSpecialistGreatSpy) >= 3:
+					return 1
+			
+			# Tengri: acquire eight horse resources
+			elif paganReligion == "Tengri":
+				if pPlayer.getNumAvailableBonuses(iHorse) >= 8:
+					return 1
+				
+			# Teotl: sacrifice ten slaves
+			elif paganReligion == "Teotl":
+				if data.iTeotlSacrifices >= 10:
+					return 1
+					
+			# Vedism: have 100 turns of cities celebrating "We Love the King" day
+			elif paganReligion == "Vedism":
+				if data.iVedicHappiness >= 100:
+					return 1
+					
+			# Yoruba: acquire eight ivory resources and six gem resources
+			elif paganReligion == "Yoruba":
+				if pPlayer.getNumAvailableBonuses(iIvory) >= 8 and pPlayer.getNumAvailableBonuses(iGems) >= 6:
+					return 1
+			
+		# third Pagan goal: don't allow more than half of your cities to have a religion
 		elif iGoal == 2:
 			if data.bPolytheismNeverReligion: return 1
 			
@@ -2210,6 +2304,10 @@ def isDiscovered(iTech):
 def isEntered(iEra):
 	return data.lFirstDiscovered[iEra] != -1
 	
+def isFirstBorn(iGreatPerson):
+	if iGreatPerson not in lGreatPeopleUnits: return True
+	return data.lFirstGreatPeople[lGreatPeopleUnits.index(iGreatPerson)] != -1
+	
 	
 def getBestCity(iPlayer, tPlot, function):
 	x, y = tPlot
@@ -2239,6 +2337,24 @@ def cityPopulation(city):
 def cityCulture(city):
 	if not city: return 0
 	return city.getCulture(city.getOwner())
+	
+def cityWonders(city):
+	if not city: return 0
+	return len([iWonder for iWonder in lWonders if city.isHasRealBuilding(iWonder)])
+
+def cityTradeIncome(city):
+	if not city: return 0
+	return city.getTradeYield(YieldTypes.YIELD_COMMERCE)
+	
+def cityHappiness(city):
+	if not city: return 0
+	
+	iHappiness = 0
+	iHappiness += city.happyLevel()
+	iHappiness -= city.unhappyLevel(0)
+	iHappiness += city.getPopulation()
+	
+	return iHappiness
 	
 def getBestPlayer(iPlayer, function):
 	iBestPlayer = iPlayer
@@ -2764,7 +2880,7 @@ def calculateShrineIncome(iPlayer, iReligion):
 	if getNumBuildings(iPlayer, iShrine  + 4*iReligion) == 0: return 0
 	
 	iThreshold = 20
-	if getNumBuildings(iPlayer, iTempleOfSolomon) > 0 and not gc.getTeam(iPlayer).isHasTech(iLiberalism): iThreshold = 40
+	if getNumBuildings(iPlayer, iDomeOfTheRock) > 0 and not gc.getTeam(iPlayer).isHasTech(iLiberalism): iThreshold = 40
 	
 	return min(iThreshold, gc.getGame().countReligionLevels(iReligion))
 	
@@ -2819,6 +2935,48 @@ def isTradeConnected(iPlayer):
 			return True
 			
 	return False
+	
+def countUnitsOfLevel(iPlayer, iLevel):
+	pPlayer = gc.getPlayer(iPlayer)
+	iCount = 0
+	
+	for iUnit in range(pPlayer.getNumUnits()):
+		unit = pPlayer.getUnit(iUnit)
+		if unit.getLevel() >= iLevel:
+			iCount += 1
+			
+	return iCount
+	
+def countControlledTerrain(iPlayer, iTerrain):
+	iCount = 0
+	
+	for (x, y) in utils.getWorldPlotsList():
+		plot = gc.getMap().plot(x, y)
+		if plot.getOwner() == iPlayer and plot.getTerrainType() == iTerrain:
+			iCount += 1
+			
+	return iCount
+	
+def countControlledFeatures(iPlayer, iFeature, iImprovement):
+	iCount = 0
+	
+	for (x, y) in utils.getWorldPlotsList():
+		plot = gc.getMap().plot(x, y)
+		if plot.getOwner() == iPlayer and plot.getFeatureType() == iFeature and plot.getImprovementType() == iImprovement:
+			iCount += 1
+			
+	return iCount
+	
+def getGlobalTreasury():
+	iTreasury = 0
+
+	for iPlayer in range(iNumPlayers):
+		iTreasury += gc.getPlayer(iPlayer).getGold()
+		
+	return iTreasury
+	
+def countFirstGreatPeople(iPlayer):
+	return len([iGreatPerson for iGreatPerson in lGreatPeople if isFirstBorn(iGreatPerson) == iPlayer])
 	
 ### UHV HELP SCREEN ###
 
@@ -2976,13 +3134,12 @@ def getURVHelp(iPlayer, iGoal):
 			holyCity = gc.getGame().getHolyCity(iZoroastrianism)
 			aHelp.append(getIcon(holyCity.getOwner() == iPlayer) + localText.getText("TXT_KEY_VICTORY_CONTROL_HOLY_CITY", (holyCity.getName(),)) + ' ' + getIcon(holyCity.getCultureLevel() >= 6) + localText.getText("TXT_KEY_VICTORY_LEGENDARY_CULTURE_CITY", (holyCity.getName(),)))
 
-	elif iVictoryType == iVictoryPolytheism:
+	elif iVictoryType == iVictoryPaganism:
 		if iGoal == 0:
 			iCount = countWorldBuildings(iPaganTemple)
 			aHelp.append(getIcon(iCount >= 15) + localText.getText("TXT_KEY_VICTORY_NUM_PAGAN_TEMPLES_WORLD", (iCount, 15)))
 		elif iGoal == 1:
-			iCount = countReligionWonders(iPlayer, -1)
-			aHelp.append(getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_NONRELIGIOUS_WONDERS", (iCount, 10)))
+			aHelp.append(getPaganGoalHelp(iPlayer))
 		elif iGoal == 2:
 			bPolytheismNeverReligion = data.bPolytheismNeverReligion
 			aHelp.append(getIcon(bPolytheismNeverReligion) + localText.getText("TXT_KEY_VICTORY_POLYTHEISM_NEVER_RELIGION", ()))
@@ -3009,11 +3166,101 @@ def getURVHelp(iPlayer, iGoal):
 			aHelp.append(sString)
 				
 	return aHelp
+	
+def getPaganGoalHelp(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	paganReligion = gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionName(0)
+
+	if paganReligion == "Anunnaki":
+		x, y = 0, 0
+		capital = pPlayer.getCapitalCity()
+		
+		if capital:
+			x, y = capital.getX(), capital.getY()
+		pBestCity = getBestCity(iPlayer, (x, y), cityWonders)
+		bBestCity = isBestCity(iPlayer, (x, y), cityWonders)
+		sBestCity = "(none)"
+		if pBestCity:
+			sBestCity = pBestCity.getName()
+		return getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_CITY_WITH_MOST_WONDERS", (sBestCity,))
+		
+	elif paganReligion == "Asatru":
+		iCount = countUnitsOfLevel(iPlayer, 5)
+		return getIcon(iCount >= 5) + localText.getText("TXT_KEY_VICTORY_UNITS_OF_LEVEL", (5, iCount, 5))
+		
+	elif paganReligion == "Atua":
+		iNumPearls = pPlayer.getNumAvailableBonuses(iPearls)
+		iOceanTiles = countControlledTerrain(iPlayer, iOcean)
+		return getIcon(iNumPearls >= 4) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iPearls).getText().lower(), iNumPearls, 4)) + ' ' + getIcon(iOceanTiles >= 50) + localText.getText("TXT_KEY_VICTORY_CONTROLLED_OCEAN_TILES", (iOceanTiles, 50))
+		
+	elif paganReligion == "Baalism":
+		x, y = 0, 0
+		capital = pPlayer.getCapitalCity()
+		
+		if capital:
+			x, y = capital.getX(), capital.getY()
+		pBestCity = getBestCity(iPlayer, (x, y), cityTradeIncome)
+		bBestCity = isBestCity(iPlayer, (x, y), cityTradeIncome)
+		return getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_HIGHEST_TRADE_CITY", (pBestCity.getName(),))
+		
+	elif paganReligion == "Druidism":
+		iCount = countControlledFeatures(iPlayer, iForest, -1) + countControlledFeatures(iPlayer, iMud, -1)
+		return getIcon(iCount >= 20) + localText.getText("TXT_KEY_VICTORY_CONTROLLED_FOREST_AND_MARSH_TILES", (iCount, 20))
+	
+	elif paganReligion == "Inti":
+		iOurTreasury = pPlayer.getGold()
+		iWorldTreasury = getGlobalTreasury()
+		return getIcon(2 * iOurTreasury >= iWorldTreasury) + localText.getText("TXT_KEY_VICTORY_TOTAL_GOLD", (iOurTreasury, iWorldTreasury - iOurTreasury))
+	
+	elif paganReligion == "Mazdaism":
+		iCount = pPlayer.getNumAvailableBonuses(iIncense)
+		return getIcon(iCount >= 6) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iIncense).getText().lower(), iCount, 6))
+	
+	elif paganReligion == "Olympianism":
+		iCount = countReligionWonders(iPlayer, -1)
+		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_NUM_NONRELIGIOUS_WONDERS", (iCount, 10))
+		
+	elif paganReligion == "Pesedjet":
+		iCount = countFirstGreatPeople(iPlayer)
+		return getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_FIRST_GREAT_PEOPLE", (iCount, 3))
+	
+	elif paganReligion == "Rodnovery":
+		iCount = pPlayer.getNumAvailableBonuses(iFur)
+		return getIcon(iCount >= 7) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iFur).getText().lower(), iCount, 7))
+	
+	elif paganReligion == "Shendao":
+		fPopulationPercent = getPopulationPercent(iPlayer)
+		return getIcon(fPopulationPercent >= 25.0) + localText.getText("TXT_KEY_VICTORY_PERCENTAGE_WORLD_POPULATION", (str(u"%.2f%%" % fPopulationPercent), str(25)))
+	
+	elif paganReligion == "Shinto":
+		capital = pPlayer.getCapitalCity()
+		iCount = 0
+		if capital: iCount = countCitySpecialists(iPlayer, (capital.getX(), capital.getY()), iSpecialistGreatSpy)
+		return getIcon(iCount >= 3) + localText.getText("TXT_KEY_VICTORY_CAPITAL_GREAT_SPIES", (iCount, 3))
+	
+	elif paganReligion == "Tengri":
+		iCount = pPlayer.getNumAvailableBonuses(iHorse)
+		return getIcon(iCount >= 8) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iHorse).getText().lower(), iCount, 8))
+	
+	elif paganReligion == "Teotl":
+		iCount = data.iTeotlSacrifices
+		if iPlayer == iMaya:
+			return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_FOOD_FROM_COMBAT", (iCount * 5, 50))
+		return getIcon(iCount >= 10) + localText.getText("TXT_KEY_VICTORY_SACRIFICED_SLAVES", (iCount, 10))
+	
+	elif paganReligion == "Vedism":
+		iCount = data.iVedicHappiness
+		return getIcon(iCount >= 100) + localText.getText("TXT_KEY_VICTORY_WE_LOVE_RULER_TURNS", (iCount, 100))
+	
+	elif paganReligion == "Yoruba":
+		iNumIvory = pPlayer.getNumAvailableBonuses(iIvory)
+		iNumGems = pPlayer.getNumAvailableBonuses(iGems)
+		return getIcon(iNumIvory >= 8) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iIvory).getText().lower(), iNumIvory, 8)) + ' ' + getIcon(iNumGems >= 6) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_RESOURCES", (gc.getBonusInfo(iGems).getText().lower(), iNumGems, 6))
 
 def getUHVHelp(iPlayer, iGoal):
 	"Returns an array of help strings used by the Victory Screen table"
 
-	aHelp = [];
+	aHelp = []
 
 	# the info is outdated or irrelevant once the goal has been accomplished or failed
 	if data.players[iPlayer].lGoals[iGoal] == 1:

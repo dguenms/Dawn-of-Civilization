@@ -2103,9 +2103,89 @@
 		<German>Stellen Sie sicher, dass es 15 heidnische Tempel in der Welt gibt</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_URV_POL2</Tag>
+		<Tag>TXT_KEY_URV_POL2_ANUNNAKI</Tag>
+		<English>Have more wonders in your capital than any other city in the world</English>
+		<German>Haben Sie mehr Wunder in Ihrer Hauptstadt als jede andere Stadt in der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_ASATRU</Tag>
+		<English>Have five units of level five</English>
+		<German>Haben Sie fünf Einheiten der Stufe fünf</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_ATUA</Tag>
+		<English>Acquire four pearl resources and control 50 ocean tiles</English>
+		<German>Erwerben Sie vier Perlen-Ressourcen und kontrollieren Sie 50 Ozean-Felder</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_BAALISM</Tag>
+		<English>Make your capital the city with the highest trade income in the world</English>
+		<German>Machen Sie Ihre Hauptstadt zur Stadt mit dem höchsten Handelseinkommen der Welt</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_DRUIDISM</Tag>
+		<English>Control 20 unimproved forest or marsh tiles</English>
+		<German>Kontrollieren Sie 20 unverbesserte Wald- oder Marsch-Felder</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_INTI</Tag>
+		<English>Have more gold in your treasury than the rest of the world combined</English>
+		<German>Haben Sie mehr Gold in Ihrer Schatzkammer als der Rest der Welt zusammen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_MAZDAISM</Tag>
+		<English>Acquire six incense resources</English>
+		<German>Erwerben Sie sechs Weihrauch-Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_OLYMPIANISM</Tag>
 		<English>Control ten wonders that require no state religion</English>
 		<German>Kontrollieren Sie zehn Wunder, die keine Staatsreligion erfordern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_PESEDJET</Tag>
+		<English>Be first to create three different types of great person</English>
+		<German>Erhalten Sie als erster drei verschiedene Arten von großen Persönlichkeiten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_RODNOVERY</Tag>
+		<English>Acquire seven fur resources</English>
+		<German>Erwerben Sie sieben Pelz-Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_SHENDAO</Tag>
+		<English>Control 25% of the world's population</English>
+		<German>Kontrollieren Sie 25% der Weltbevölkerung</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_SHINTO</Tag>
+		<English>Settle three great spies in your capital</English>
+		<German>Siedeln Sie drei große Spione in Ihrer Hauptstadt an</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_TENGRI</Tag>
+		<English>Acquire eight horse resources</English>
+		<German>Erwerben Sie acht Pferde-Ressourcen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_TEOTL</Tag>
+		<English>Sacrifice ten slaves</English>
+		<German>Opfern Sie zehn Sklaven</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_TEOTL_MAYA</Tag>
+		<English>Acquire 50 food from combat</English>
+		<German>Erhalten Sie 50 Nahrung durch Kämpfe</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_VEDISM</Tag>
+		<English>Have 100 turns of cities celebrating "We Love the King" day</English>
+		<German>Haben Sie 100 Runden von Städten, die den "Wir leben den König"-Tag feiern</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_URV_POL2_YORUBA</Tag>
+		<English>Acquire eight ivory resources and six gem resources</English>
+		<German>Erwerben Sie acht Elfenbein-Ressourcen und sechs Edelstein-Ressourcen</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_POL3</Tag>
@@ -2223,6 +2303,10 @@
 		<English>Available spice resources: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_AVAILABLE_RESOURCES</Tag>
+		<English>Available %s1 resources: %d2 / %d3d</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION</Tag>
 		<English>Average city population: %s1 / %s2</English>
 	</TEXT>
@@ -2257,6 +2341,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CANADIAN_PEACE_DEALS</Tag>
 		<English>Peace deals arranged: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CAPITAL_GREAT_SPIES</Tag>
+		<English>Great Spies in capital: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CATHOLIC_SAINTS</Tag>
@@ -2311,6 +2399,10 @@
 		<English>%s1_city: %d2 / %d3</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CITY_WITH_MOST_WONDERS</Tag>
+		<English>City with the most wonders: %s1_city</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_COLONIAL_RESOURCES</Tag>
 		<English>Available colonial resources: %d1 / %d2</English>
 	</TEXT>
@@ -2337,6 +2429,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_CONTROL_SOUTH_AMERICA</Tag>
 		<English>South America</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROLLED_OCEAN_TILES</Tag>
+		<English>Controlled Ocean tiles: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_CONTROLLED_FOREST_AND_MARSH_TILES</Tag>
+		<English>Controlled unimproved Forest and Marsh tiles: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DECCAN</Tag>
@@ -2405,6 +2505,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FIRST_ENTER_MODERN</Tag>
 		<English>First to enter the Modern Era</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FIRST_GREAT_PEOPLE</Tag>
+		<English>First great people born: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_FOOD_FROM_COMBAT</Tag>
+		<English>Food acquired from combat: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_FRIENDLY_CIVS</Tag>
@@ -2489,6 +2597,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HIGHEST_POPULATION_CIV</Tag>
 		<English>Civilization with the largest population: </English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_HIGHEST_TRADE_CITY</Tag>
+		<English>City with the highest trade income: %s1_city</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_HINDU_LARGEST_CITIES</Tag>
@@ -2909,6 +3021,10 @@
 		<English>Colonize Siberia</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_SACRIFICED_SLAVES</Tag>
+		<English>Slaves sacrificed: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SANKORE_PROPHETS</Tag>
 		<English>Great prophets settled in the Sankore city: %d1 / %d2</English>
 	</TEXT>
@@ -3029,8 +3145,16 @@
 		<German>(Runde %d1)</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_UNITS_OF_LEVEL</Tag>
+		<English>Units of level %d1: %d2 / %d3</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_VIENNA</Tag>
 		<English>Vienna</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_WE_LOVE_RULER_TURNS</Tag>
+		<English>Turns of "We Love the King" days: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_WEST_AFRICA</Tag>

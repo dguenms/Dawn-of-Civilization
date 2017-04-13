@@ -1527,6 +1527,8 @@ iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEng
 
 iMissionary = iJewishMissionary # generic
 
+lGreatPeopleUnits = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman]
+
 dFemaleGreatPeople = {
 iGreatProphet : iFemaleGreatProphet,
 iGreatArtist : iFemaleGreatArtist,
@@ -1593,13 +1595,6 @@ iSovereignty, iConquest, iTributaries, iIsolationism, iColonialism, iNationhood,
 
 iNumCivicCategories = 6
 (iCivicsGovernment, iCivicsLegitimacy, iCivicsSociety, iCivicsEconomy, iCivicsReligion, iCivicsTerritory) = range(iNumCivicCategories)
-
-#(iCivicTyranny, iCivicDynasticism, iCivicCityStates, iCivicTheocracy, iCivicAutocracy, iCivicRepublic,
-#iCivicDirectRule, iCivicVassalage, iCivicAbsolutism, iCivicRepresentation, iCivicTotalitarianism, iCivicEgalitarianism,
-#iCivicTribalism, iCivicSlavery, iCivicAgrarianism, iCivicCapitalism, iCivicIndustrialism, iCivicPublicWelfare,
-#iCivicSubsistence, iCivicGuilds, iCivicMercantilism, iCivicFreeMarket, iCivicCentralPlanning, iCivicEnvironmentalism,
-#iCivicAnimism, iCivicPantheon, iCivicOrganizedReligion, iCivicScholasticism, iCivicFanaticism, iCivicSecularism,
-#iCivicMilitia, iCivicMercenaries, iCivicLevyArmies, iCivicStandingArmy, iCivicNavalSupremacy, iCivicMultilateralism)
 
 #Specialists
 iNumSpecialists = 16
@@ -1703,7 +1698,7 @@ iMarsh = 9
 iImmunity = 20
 
 # Victory
-iVictoryPolytheism = 10
+iVictoryPaganism = 10
 iVictorySecularism = 11
 
 

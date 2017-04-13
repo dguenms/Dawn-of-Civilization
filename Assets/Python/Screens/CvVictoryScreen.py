@@ -1601,8 +1601,11 @@ class CvVictoryScreen:
 					else:
 						for i in range(3):
 							iRow = screen.appendTableRow(szTable)
-							sGoalText = localText.getText(tReligiousGoals[gc.getGame().getGameSpeedType()][iVictoryType][i], ())
-							screen.setTableText(szTable, 0, iRow, sGoalText, '', WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+							sGoalText = tReligiousGoals[gc.getGame().getGameSpeedType()][iVictoryType][i]
+							if iVictoryType == iVictoryPaganism and i == 1: 
+								sGoalText += "_" + str(gc.getCivilizationInfo(gc.getPlayer(self.iActivePlayer).getCivilizationType()).getPaganReligionName(0).upper())
+								if self.iActivePlayer == iMaya: sGoalText += "_MAYA"
+							screen.setTableText(szTable, 0, iRow, localText.getText(sGoalText, ()), '', WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 							screen.setTableText(szTable, 2, iRow, localText.getText("TXT_KEY_VICTORY_SCREEN_ACCOMPLISHED", ()), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 							if vic.checkReligiousGoal(self.iActivePlayer, i) == 1: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_YES'
 							elif vic.checkReligiousGoal(self.iActivePlayer, i) == 0: sGoalProgress = 'TXT_KEY_VICTORY_SCREEN_NO'

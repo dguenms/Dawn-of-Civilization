@@ -1470,7 +1470,7 @@ class RFCUtils:
 		if iStateReligion >= 0:
 			return iStateReligion
 		elif pPlayer.getLastStateReligion() == -1:
-			return iVictoryPolytheism
+			return iVictoryPaganism
 		elif not pPlayer.isStateReligion():
 			return iVictorySecularism
 			

@@ -205,6 +205,7 @@ class GameData:
 		self.lReligionFounder = [-1] * iNumReligions
 		self.lFirstDiscovered = [-1] * iNumTechs
 		self.lFirstEntered = [-1] * iNumEras
+		self.lFirstGreatPeople = [-1] * len(lGreatPeopleUnits)
 		self.iFirstNewWorldColony = -1
 		
 		self.iChineseGoldenAgeTurns = 0
@@ -226,6 +227,8 @@ class GameData:
 		self.iBuddhistPeaceTurns = 0
 		self.iBuddhistHappinessTurns = 0
 		self.iTaoistHealthTurns = 0
+		self.iVedicHappiness = 0
+		self.iTeotlSacrifices = 0
 		self.bPolytheismNeverReligion = True
 		
 		# Stability

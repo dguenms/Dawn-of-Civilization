@@ -5655,6 +5655,7 @@ class CvMainInterface:
 			city = gc.getMap().plot(iX, iY).getPlotCity()
 			city.changeHappinessTimer(5)
 			city.setWeLoveTheKingDay(True)
+			if utils.getHumanID() == self.pPushedButtonUnit.getOwner(): data.iTeotlSacrifices += 1
 			self.pPushedButtonUnit.kill(false, city.getOwner())
 		
 		# Leoreth: start Byzantine UP
