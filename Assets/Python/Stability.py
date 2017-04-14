@@ -1461,7 +1461,7 @@ def calculateStability(iPlayer):
 		
 	iStateReligion = pPlayer.getStateReligion()
 	
-	if iStateReligion == Hinduism:
+	if iStateReligion == iHinduism:
 		if iCivicSociety == iCasteSystem: iCivicStability += 3
 		
 	if iStateReligion == iConfucianism:
