@@ -18065,9 +18065,9 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 		removeReligion(eDisappearingReligion);
 	}
 
-	if (isHasRealBuilding(PAGAN_TEMPLE) && GC.getReligionInfo(eReligion).isLocal())
+	if (isHasRealBuilding(getUniqueBuilding(getCivilizationType(), PAGAN_TEMPLE)) && !GC.getReligionInfo(eReligion).isLocal())
 	{
-		setHasRealBuilding(PAGAN_TEMPLE, false);
+		setHasRealBuilding(getUniqueBuilding(getCivilizationType(), PAGAN_TEMPLE), false);
 
 		ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
 		if (eStateReligion != NO_RELIGION && eStateReligion == eReligion)
