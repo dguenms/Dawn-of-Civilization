@@ -2488,10 +2488,6 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	case TIBET:
 		aiUnitAIVal[UNITAI_MISSIONARY] *= 5;
 		break;
-	case KHMER:
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
-		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
-		break;
 	case INDONESIA:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
 		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
@@ -2524,6 +2520,10 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
+		break;
+	case KHMER:
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 2;
+		//aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
 		break;
 	case ENGLAND:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
@@ -3199,16 +3199,6 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case TIBET:
 										break;
-									case KHMER:
-										if (iI == WAT_PREAH_PISNULOK) iTempValue *= 3;
-										else if (iI == SHWEDAGON_PAYA) iTempValue *= 3;
-										else if (iI == TAJ_MAHAL) iTempValue *= 2;
-										else if (iI == BOROBUDUR) iTempValue *= 2;
-										else {
-											iTempValue *= 2;
-											iTempValue /= 3;
-											}
-										break;
 									case INDONESIA:
 										if (iI == BOROBUDUR) iTempValue *= 3;
 										else if (iI == SHWEDAGON_PAYA || iI == WAT_PREAH_PISNULOK) iTempValue *= 2;
@@ -3240,6 +3230,16 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 											iTempValue *= 3;
 											iTempValue /= 4;
 										}
+										break;
+									case KHMER:
+										if (iI == WAT_PREAH_PISNULOK) iTempValue *= 3;
+										else if (iI == SHWEDAGON_PAYA) iTempValue *= 3;
+										else if (iI == TAJ_MAHAL) iTempValue *= 2;
+										else if (iI == BOROBUDUR) iTempValue *= 2;
+										else {
+											iTempValue *= 2;
+											iTempValue /= 3;
+											}
 										break;
 									case ENGLAND:
 										if (iI == TRADING_COMPANY) iTempValue *= 5;

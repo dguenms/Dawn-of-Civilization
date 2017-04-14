@@ -1048,67 +1048,6 @@ iCivArabia : {
 		"Ahmah al-Mansur", # 16th
 	],
 },
-iCivKhmer : {
-	iGreatProphet : [
-		"Kirtipandita", # 10th x
-		"Tamalinda", # 12th
-		iIndustrial,
-		"Chuon Nath", # 19th
-		iGlobal,
-		"Maha Ghosananda", # 20th
-	],
-	iGreatArtist : [
-		"Thammaracha", # 16th
-		iIndustrial,
-		"Ang Duong", # 19th
-		iGlobal,
-		"Vann Nath", # 20th
-		"Chath Piersath", # 20th
-		"Chhim Sothy", # 20th
-	],
-	iGreatScientist : [
-		"Jayavarman", # 10th
-		"fSaptadevakula Prana", # 10th
-		iGlobal,
-		"Krisana Kraisintu", # 20th
-		"Shaiwatna Kupratakul", # 20th
-	],
-	iGreatMerchant : [
-		"Srindravarman", # 14th
-		"Uthong", # 14th
-		"fDaun Penh",
-		iRenaissance,
-		"Chey Chettha", # 16th
-		"Srei Meara", # 17th
-		iGlobal,
-		"Teng Bunma", # 20th
-	],
-	iGreatEngineer : [
-		"Indravarman", # 9th
-		"Yasovarman", # 9th
-		"fJahavi", # 10th
-		iGlobal,
-		"Vann Molyvann", # 20th
-	],
-	iGreatStatesman : [
-		"Jayavarman", # 9th
-		"Harshavarman", # 10th
-		iIndustrial,
-		"Norodom", # 19th
-		iGlobal,
-		"Tou Samouth", # 20th
-	],
-	iGreatGeneral : [
-		"fTrieu Thi Trinh", # 3rd
-		"Bhavavarman", # 6th
-		"Vinyanandana", # 9th
-		"Rajendravarman", # 10th
-		iGlobal,
-		"Sak Sutsakhan", # 20th
-		"Dien Del", # 20th
-	],
-},
-
 
 iCivIndonesia : {
 	iGreatProphet : [
@@ -1331,6 +1270,66 @@ iCivFrance : {
 		"Louis-Nicolas Davout", # 18th
 		iIndustrial,
 		"Gilbert de Lafayette", # 19th
+	],
+},
+iCivKhmer : {
+	iGreatProphet : [
+		"Kirtipandita", # 10th x
+		"Tamalinda", # 12th
+		iIndustrial,
+		"Chuon Nath", # 19th
+		iGlobal,
+		"Maha Ghosananda", # 20th
+	],
+	iGreatArtist : [
+		"Thammaracha", # 16th
+		iIndustrial,
+		"Ang Duong", # 19th
+		iGlobal,
+		"Vann Nath", # 20th
+		"Chath Piersath", # 20th
+		"Chhim Sothy", # 20th
+	],
+	iGreatScientist : [
+		"Jayavarman", # 10th
+		"fSaptadevakula Prana", # 10th
+		iGlobal,
+		"Krisana Kraisintu", # 20th
+		"Shaiwatna Kupratakul", # 20th
+	],
+	iGreatMerchant : [
+		"Srindravarman", # 14th
+		"Uthong", # 14th
+		"fDaun Penh",
+		iRenaissance,
+		"Chey Chettha", # 16th
+		"Srei Meara", # 17th
+		iGlobal,
+		"Teng Bunma", # 20th
+	],
+	iGreatEngineer : [
+		"Indravarman", # 9th
+		"Yasovarman", # 9th
+		"fJahavi", # 10th
+		iGlobal,
+		"Vann Molyvann", # 20th
+	],
+	iGreatStatesman : [
+		"Jayavarman", # 9th
+		"Harshavarman", # 10th
+		iIndustrial,
+		"Norodom", # 19th
+		iGlobal,
+		"Tou Samouth", # 20th
+	],
+	iGreatGeneral : [
+		"fTrieu Thi Trinh", # 3rd
+		"Bhavavarman", # 6th
+		"Vinyanandana", # 9th
+		"Rajendravarman", # 10th
+		iGlobal,
+		"Sak Sutsakhan", # 20th
+		"Dien Del", # 20th
 	],
 },
 iCivEngland : {

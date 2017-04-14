@@ -53,7 +53,7 @@ iModifierInflationRate, iModifierGreatPeopleThreshold, iModifierGrowthThreshold)
 
 ### Sequence of spawns ###
 
-lOrder = [iCivEgypt, iCivChina, iCivBabylonia, iCivHarappa, iCivGreece, iCivIndia, iCivCarthage, iCivPolynesia, iCivPersia, iCivRome, iCivTamils, iCivEthiopia, iCivKorea, iCivMaya, iCivByzantium, iCivJapan, iCivVikings, iCivArabia, iCivTibet, iCivKhmer, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivEngland, iCivHolyRome, iCivRussia, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongols, iCivAztecs, iCivMughals, iCivTurkey, iCivThailand, iCivCongo, iCivIran, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivCanada, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivSeljuks, iCivBarbarian]
+lOrder = [iCivEgypt, iCivChina, iCivBabylonia, iCivHarappa, iCivGreece, iCivIndia, iCivCarthage, iCivPolynesia, iCivPersia, iCivRome, iCivTamils, iCivEthiopia, iCivKorea, iCivMaya, iCivByzantium, iCivJapan, iCivVikings, iCivArabia, iCivTibet, iCivIndonesia, iCivMoors, iCivSpain, iCivFrance, iCivKhmer, iCivEngland, iCivHolyRome, iCivRussia, iCivMali, iCivPoland, iCivPortugal, iCivInca, iCivItaly, iCivMongols, iCivAztecs, iCivMughals, iCivTurkey, iCivThailand, iCivCongo, iCivIran, iCivNetherlands, iCivGermany, iCivAmerica, iCivArgentina, iCivMexico, iCivColombia, iCivBrazil, iCivCanada, iCivIndependent, iCivIndependent2, iCivNative, iCivCeltia, iCivSeljuks, iCivBarbarian]
 
 ### Modifiers (by civilization!) ###
 

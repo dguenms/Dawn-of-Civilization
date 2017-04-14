@@ -152,7 +152,7 @@ lBlackSea = [(69, 44), (70, 44), (71, 44), (71, 45), (72, 45), (73, 45), (73, 44
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
 tSouthAsiaTL = (88, 24)
 tSouthAsiaBR = (110, 38)
-lSouthAsianCivs = [iIndia, iTamils, iKhmer, iIndonesia, iMughals, iThailand]
+lSouthAsianCivs = [iIndia, iTamils, iIndonesia, iKhmer, iMughals, iThailand]
 
 # second Iranian goal: control Mesopotamia, Transoxania and Northwest India in 1750 AD
 tSafavidMesopotamiaTL = (75, 39)
@@ -765,28 +765,6 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1700):
 			expire(iTibet, 2)
 			
-	elif iPlayer == iKhmer:
-	
-		# first goal: build four Hindu and Buddhist monasteries and Wat Preah Pisnulok by 1200 AD
-		if iGameTurn == getTurnForYear(1200):
-			expire(iKhmer, 0)
-			
-		# second goal: have an average city size of 12 by 1450 AD
-		if isPossible(iKhmer, 1):
-			if getAverageCitySize(iKhmer) >= 12.0:
-				win(iKhmer, 1)
-				
-		if iGameTurn == getTurnForYear(1450):
-			expire(iKhmer, 1)
-			
-		# third goal: have 8000 culture by 1450 AD
-		if isPossible(iKhmer, 2):
-			if pKhmer.countTotalCulture() >= utils.getTurns(8000):
-				win(iKhmer, 2)
-				
-		if iGameTurn == getTurnForYear(1450):
-			expire(iKhmer, 2)
-			
 	elif iPlayer == iIndonesia:
 	
 		# first goal: have the largest population in the world in 1300 AD
@@ -898,6 +876,28 @@ def checkTurn(iGameTurn, iPlayer):
 		# third goal: build Notre Dame, Versailles, the Statue of Liberty and the Eiffel Tower by 1900 AD
 		if iGameTurn == getTurnForYear(1900):
 			expire(iFrance, 2)
+			
+	elif iPlayer == iKhmer:
+	
+		# first goal: build four Hindu and Buddhist monasteries and Wat Preah Pisnulok by 1200 AD
+		if iGameTurn == getTurnForYear(1200):
+			expire(iKhmer, 0)
+			
+		# second goal: have an average city size of 12 by 1450 AD
+		if isPossible(iKhmer, 1):
+			if getAverageCitySize(iKhmer) >= 12.0:
+				win(iKhmer, 1)
+				
+		if iGameTurn == getTurnForYear(1450):
+			expire(iKhmer, 1)
+			
+		# third goal: have 8000 culture by 1450 AD
+		if isPossible(iKhmer, 2):
+			if pKhmer.countTotalCulture() >= utils.getTurns(8000):
+				win(iKhmer, 2)
+				
+		if iGameTurn == getTurnForYear(1450):
+			expire(iKhmer, 2)
 			
 	elif iPlayer == iEngland:
 	
@@ -3550,19 +3550,6 @@ def getUHVHelp(iPlayer, iGoal):
 			iCounter = countCitySpecialists(iTibet, Areas.getCapital(iTibet), iSpecialistGreatProphet)
 			aHelp.append(getIcon(iCounter >= 5) + localText.getText("TXT_KEY_VICTORY_GREAT_PROPHETS_SETTLED", ("Lhasa", iCounter, 5)))
 
-	elif iPlayer == iKhmer:
-		if iGoal == 0:
-			iNumBuddhism = getNumBuildings(iKhmer, iBuddhistMonastery)
-			iNumHinduism = getNumBuildings(iKhmer, iHinduMonastery)
-			bWatPreahPisnulok = data.getWonderBuilder(iWatPreahPisnulok) == iKhmer
-			aHelp.append(getIcon(iNumBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iNumBuddhism, 4)) + ' ' + getIcon(iNumHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES", (iNumHinduism, 4)) + ' ' + getIcon(bWatPreahPisnulok) + localText.getText("TXT_KEY_BUILDING_WAT_PREAH_PISNULOK", ()))
-		elif iGoal == 1:
-			fPopPerCity = getAverageCitySize(iKhmer)
-			aHelp.append(getIcon(fPopPerCity >= 12.0) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", (str(u"%.2f" % fPopPerCity), str(12))))
-		elif iGoal == 2:
-			iCulture = pKhmer.countTotalCulture()
-			aHelp.append(getIcon(iCulture >= utils.getTurns(8000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(8000))))
-
 	elif iPlayer == iIndonesia:
 		if iGoal == 0:
 			iHighestCiv = getBestPlayer(iIndonesia, playerRealPopulation)
@@ -3618,6 +3605,19 @@ def getUHVHelp(iPlayer, iGoal):
 			bStatueOfLiberty = data.getWonderBuilder(iStatueOfLiberty) == iFrance
 			bEiffelTower = data.getWonderBuilder(iEiffelTower) == iFrance
 			aHelp.append(getIcon(bNotreDame) + localText.getText("TXT_KEY_BUILDING_NOTRE_DAME", ()) + ' ' + getIcon(bVersailles) + localText.getText("TXT_KEY_BUILDING_VERSAILLES", ()) + ' ' + getIcon(bStatueOfLiberty) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_LIBERTY", ()) + ' ' + getIcon(bEiffelTower) + localText.getText("TXT_KEY_BUILDING_EIFFEL_TOWER", ()))
+
+	elif iPlayer == iKhmer:
+		if iGoal == 0:
+			iNumBuddhism = getNumBuildings(iKhmer, iBuddhistMonastery)
+			iNumHinduism = getNumBuildings(iKhmer, iHinduMonastery)
+			bWatPreahPisnulok = data.getWonderBuilder(iWatPreahPisnulok) == iKhmer
+			aHelp.append(getIcon(iNumBuddhism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_BUDDHIST_MONASTERIES", (iNumBuddhism, 4)) + ' ' + getIcon(iNumHinduism >= 4) + localText.getText("TXT_KEY_VICTORY_NUM_HINDU_MONASTERIES", (iNumHinduism, 4)) + ' ' + getIcon(bWatPreahPisnulok) + localText.getText("TXT_KEY_BUILDING_WAT_PREAH_PISNULOK", ()))
+		elif iGoal == 1:
+			fPopPerCity = getAverageCitySize(iKhmer)
+			aHelp.append(getIcon(fPopPerCity >= 12.0) + localText.getText("TXT_KEY_VICTORY_AVERAGE_CITY_POPULATION", (str(u"%.2f" % fPopPerCity), str(12))))
+		elif iGoal == 2:
+			iCulture = pKhmer.countTotalCulture()
+			aHelp.append(getIcon(iCulture >= utils.getTurns(8000)) + localText.getText("TXT_KEY_VICTORY_TOTAL_CULTURE", (iCulture, utils.getTurns(8000))))
 
 	elif iPlayer == iEngland:
 		if iGoal == 0:

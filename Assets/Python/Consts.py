@@ -10,20 +10,20 @@ iWorldY = 68
 # initialise player variables to player IDs from WBS
 iNumPlayers = 44
 (iEgypt, iChina, iBabylonia, iHarappa, iGreece, iIndia, iCarthage, iPolynesia, iPersia, iRome, 
-iTamils, iEthiopia, iKorea, iMaya, iByzantium, iJapan, iVikings, iArabia, iTibet, iKhmer, 
-iIndonesia, iMoors, iSpain, iFrance, iEngland, iHolyRome, iRussia, iMali, iPoland, iPortugal, 
+iTamils, iEthiopia, iKorea, iMaya, iByzantium, iJapan, iVikings, iArabia, iTibet, iIndonesia,
+iMoors, iSpain, iFrance, iKhmer, iEngland, iHolyRome, iRussia, iMali, iPoland, iPortugal, 
 iInca, iItaly, iMongolia, iAztecs, iMughals, iTurkey, iThailand, iCongo, iNetherlands, iGermany,
 iAmerica, iArgentina, iBrazil, iCanada) = range(iNumPlayers)
 
 (pEgypt, pChina, pBabylonia, pHarappa, pGreece, pIndia, pCarthage, pPolynesia, pPersia, pRome, 
-pTamils, pEthiopia, pKorea, pMaya, pByzantium, pJapan, pVikings, pArabia, pTibet, pKhmer, 
-pIndonesia, pMoors, pSpain, pFrance, pEngland, pHolyRome, pRussia, pMali, pPoland, pPortugal, 
+pTamils, pEthiopia, pKorea, pMaya, pByzantium, pJapan, pVikings, pArabia, pTibet, pIndonesia, 
+pMoors, pSpain, pFrance, pKhmer, pEngland, pHolyRome, pRussia, pMali, pPoland, pPortugal, 
 pInca, pItaly, pMongolia, pAztecs, pMughals, pTurkey, pThailand, pCongo, pNetherlands, pGermany, 
 pAmerica, pArgentina, pBrazil, pCanada) = [gc.getPlayer(i) for i in range(iNumPlayers)]
 
 (teamEgypt, teamChina, teamBabylonia, teamHarappa, teamGreece, teamIndia, teamCarthage, teamPolynesia, teamPersia, teamRome, 
-teamTamils, teamEthiopia, teamKorea, teamMaya, teamByzantium, teamJapan, teamVikings, teamArabia, teamTibet, teamKhmer, 
-teamIndonesia, teamMoors, teamSpain, teamFrance, teamEngland, teamHolyRome, teamRussia, teamMali, teamPoland, teamPortugal, 
+teamTamils, teamEthiopia, teamKorea, teamMaya, teamByzantium, teamJapan, teamVikings, teamArabia, teamTibet, teamIndonesia,
+teamMoors, teamSpain, teamFrance, teamKhmer, teamEngland, teamHolyRome, teamRussia, teamMali, teamPoland, teamPortugal, 
 teamInca, teamItaly, teamMongolia, teamAztecs, teamMughals, teamTurkey, teamThailand, teamCongo, teamNetherlands, teamGermany, 
 teamAmerica, teamArgentina, teamBrazil, teamCanada) = [gc.getTeam(i) for i in range(iNumPlayers)]
 
@@ -168,11 +168,11 @@ lNeighbours = [
 [iFrance, iEngland, iHolyRome, iRussia, iPoland, iNetherlands, iGermany], #Vikings
 [iEgypt, iBabylonia, iPersia, iEthiopia, iByzantium, iTurkey, iCarthage], #Arabia
 [iChina, iHarappa, iIndia, iMongolia, iMughals], #Tibet
-[iIndia, iChina, iTamils, iJapan, iIndonesia, iThailand], #Khmer
 [iIndia, iJapan, iKhmer, iThailand, iTamils], #Indonesia
 [iEgypt, iSpain, iPortugal, iMali], #Moors
 [iCarthage, iRome, iMoors, iFrance, iEngland, iPortugal], #Spain
 [iRome, iVikings, iSpain, iEngland, iHolyRome, iNetherlands, iPortugal, iItaly, iGermany], #France
+[iIndia, iChina, iTamils, iJapan, iIndonesia, iThailand], #Khmer
 [iRome, iVikings, iSpain, iFrance, iHolyRome, iNetherlands, iGermany], #England
 [iRome, iVikings, iFrance, iEngland, iNetherlands, iItaly, iPoland, iGermany], #Holy Rome
 [iPersia, iByzantium, iVikings, iPoland, iTurkey, iMongolia, iGermany], #Russia
@@ -216,11 +216,11 @@ lOlderNeighbours = [
 [], #Vikings
 [iEgypt, iPersia, iByzantium], #Arabia
 [iChina, iHarappa, iIndia], #Tibet
-[iIndia], #Khmer
 [iKhmer], #Indonesia
 [], #Moors
 [iCarthage, iRome], #Spain
 [iRome], #France
+[iIndia], #Khmer
 [], #England
 [iGreece, iRome, iVikings], #Holy Rome
 [iPersia, iGreece, iByzantium], #Russia
@@ -266,11 +266,11 @@ tBirth = (
 551, # 177, #551AD			# Vikings
 620, # 183, #622AD			# Arabia
 630,					# Tibet
-655, # 187, #657AD			# Khmer
-700,					# Indonesia
+650,					# Indonesia
 711,					# Moors
 722, # 193, #718AD			# Spain
 750, # 196, #751AD			# France
+800, # 187, #657AD			# Khmer
 820, # 203, #829AD			# England
 840, # 205, #843AD			# Holy Rome
 860, # 207, #860AD			# Russia
@@ -321,11 +321,11 @@ tFall = (
 1300,					# Vikings
 900,					# Arabia
 1500,					# Tibet
-1200, # earlier so that the Thai can spawn # Khmer
 1500,					# Indonesia
 1500,					# Moors
 2020,					# Spain
 2020,					# France
+1200, # earlier so that the Thai can spawn # Khmer
 2020,					# England
 2020, #1648,				# Holy Rome
 2020,					# Russia
@@ -367,11 +367,11 @@ iCivJapan : (1600, 1940, -1),
 iCivVikings : (1050, 1100, 1500),
 iCivArabia : (1300, 1300, -1),
 iCivTibet : (1000, 1400, 1700),
-iCivKhmer : (1200, 1450, 1450),
 iCivIndonesia : (1300, 1500, 1940),
 iCivMoors : (1200, 1300, 1650),
 iCivSpain : (-1, 1650, 1650),
 iCivFrance : (1700, 1800, 1900),
+iCivKhmer : (1200, 1450, 1450),
 iCivEngland : (1730, 1800, -1),
 iCivHolyRome : (1200, -1, 1700),
 iCivRussia : (1920, -1, 1950),
@@ -419,11 +419,11 @@ tRebirth = (
 -1,				# Vikings
 -1,				# Arabia
 -1,				# Tibet
--1,				# Khmer
 -1,				# Indonesia
 -1,				# Moors
 -1,				# Spain
 -1,				# France
+-1,				# Khmer
 -1,				# England
 -1,				# Holy Rome
 -1,				# Russia
@@ -466,11 +466,11 @@ iCivColombia,	# Maya
 -1,		# Vikings
 -1,		# Arabia
 -1,		# Tibet
--1,		# Khmer
 -1,		# Indonesia
 -1,		# Moors
 -1,		# Spain
 -1,		# France
+-1,		# Khmer
 -1,		# England
 -1,		# Holy Rome
 -1,		# Russia
@@ -512,11 +512,11 @@ tResurrectionIntervals = (
 [(1520, 2020)], #Vikings
 [(1900, 2020)], #Arabia
 [],		#Tibet
-[(1950, 2020)], #Khmer
 [(1900, 2020)], #Indonesia
 [(1000, 2020)],	#Moors
 [(1700, 2020)], #Spain
 [(1700, 2020)], #France
+[(1950, 2020)], #Khmer
 [(1700, 2020)], #England
 [(1800, 2020)], #Holy Rome
 [(1280, 1550), (1700, 2020)], #Russia
@@ -559,11 +559,11 @@ tYear = (
 ("545 ", "TXT_KEY_AD"),		# Vikings
 ("620 ", "TXT_KEY_AD"),		# Arabia
 ("630 ", "TXT_KEY_AD"),		# Tibet
-("660 ", "TXT_KEY_AD"),		# Khmer
 ("700 ", "TXT_KEY_AD"),		# Indonesia
 ("711 ", "TXT_KEY_AD"),		# Moors
 ("722 ", "TXT_KEY_AD"),		# Spain
 ("750 ", "TXT_KEY_AD"),		# France
+("660 ", "TXT_KEY_AD"),		# Khmer
 ("820 ", "TXT_KEY_AD"),		# England
 ("840 ", "TXT_KEY_AD"),		# Holy Rome
 ("860 ", "TXT_KEY_AD"),		# Russia
@@ -608,11 +608,11 @@ tGoals1 = (
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3_MARATHON"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_TIB1", "TXT_KEY_UHV_TIB2", "TXT_KEY_UHV_TIB3"),
-("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3_MARATHON"),
 ("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_MOO1", "TXT_KEY_UHV_MOO2", "TXT_KEY_UHV_MOO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1_MARATHON", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
+("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3_MARATHON"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
 ("TXT_KEY_UHV_HRE1", "TXT_KEY_UHV_HRE2", "TXT_KEY_UHV_HRE3"),
 ("TXT_KEY_UHV_RUS1", "TXT_KEY_UHV_RUS2", "TXT_KEY_UHV_RUS3"),
@@ -654,11 +654,11 @@ tGoals1 = (
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3_EPIC"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_TIB1", "TXT_KEY_UHV_TIB2", "TXT_KEY_UHV_TIB3"),
-("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3_EPIC"),
 ("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_MOO1", "TXT_KEY_UHV_MOO2", "TXT_KEY_UHV_MOO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1_EPIC", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
+("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3_EPIC"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
 ("TXT_KEY_UHV_HRE1", "TXT_KEY_UHV_HRE2", "TXT_KEY_UHV_HRE3"),
 ("TXT_KEY_UHV_RUS1", "TXT_KEY_UHV_RUS2", "TXT_KEY_UHV_RUS3"),
@@ -700,11 +700,11 @@ tGoals1 = (
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_TIB1", "TXT_KEY_UHV_TIB2", "TXT_KEY_UHV_TIB3"),
-("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
 ("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_MOO1", "TXT_KEY_UHV_MOO2", "TXT_KEY_UHV_MOO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
+("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
 ("TXT_KEY_UHV_HRE1", "TXT_KEY_UHV_HRE2", "TXT_KEY_UHV_HRE3"),
 ("TXT_KEY_UHV_RUS1", "TXT_KEY_UHV_RUS2", "TXT_KEY_UHV_RUS3"),
@@ -749,11 +749,11 @@ tGoals2 = (
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3_MARATHON"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_TIB1", "TXT_KEY_UHV_TIB2", "TXT_KEY_UHV_TIB3"),
-("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3_MARATHON"),
 ("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_MOO1", "TXT_KEY_UHV_MOO2", "TXT_KEY_UHV_MOO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
+("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3_MARATHON"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
 ("TXT_KEY_UHV_HRE1", "TXT_KEY_UHV_HRE2", "TXT_KEY_UHV_HRE3"),
 ("TXT_KEY_UHV_RUS1", "TXT_KEY_UHV_RUS2", "TXT_KEY_UHV_RUS3"),
@@ -795,11 +795,11 @@ tGoals2 = (
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3_EPIC"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_TIB1", "TXT_KEY_UHV_TIB2", "TXT_KEY_UHV_TIB3"),
-("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3_EPIC"),
 ("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_MOO1", "TXT_KEY_UHV_MOO2", "TXT_KEY_UHV_MOO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
+("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3_EPIC"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
 ("TXT_KEY_UHV_HRE1", "TXT_KEY_UHV_HRE2", "TXT_KEY_UHV_HRE3"),
 ("TXT_KEY_UHV_RUS1", "TXT_KEY_UHV_RUS2", "TXT_KEY_UHV_RUS3"),
@@ -841,11 +841,11 @@ tGoals2 = (
 ("TXT_KEY_UHV_VIK1", "TXT_KEY_UHV_VIK2", "TXT_KEY_UHV_VIK3"),
 ("TXT_KEY_UHV_ARA1", "TXT_KEY_UHV_ARA2", "TXT_KEY_UHV_ARA3"),
 ("TXT_KEY_UHV_TIB1", "TXT_KEY_UHV_TIB2", "TXT_KEY_UHV_TIB3"),
-("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
 ("TXT_KEY_UHV_INO1", "TXT_KEY_UHV_INO2", "TXT_KEY_UHV_INO3"),
 ("TXT_KEY_UHV_MOO1", "TXT_KEY_UHV_MOO2", "TXT_KEY_UHV_MOO3"),
 ("TXT_KEY_UHV_SPA1", "TXT_KEY_UHV_SPA2", "TXT_KEY_UHV_SPA3"),
 ("TXT_KEY_UHV_FRA1", "TXT_KEY_UHV_FRA2", "TXT_KEY_UHV_FRA3"),
+("TXT_KEY_UHV_KHM1", "TXT_KEY_UHV_KHM2", "TXT_KEY_UHV_KHM3"),
 ("TXT_KEY_UHV_ENG1", "TXT_KEY_UHV_ENG2", "TXT_KEY_UHV_ENG3"),
 ("TXT_KEY_UHV_HRE1", "TXT_KEY_UHV_HRE2", "TXT_KEY_UHV_HRE3"),
 ("TXT_KEY_UHV_RUS1", "TXT_KEY_UHV_RUS2", "TXT_KEY_UHV_RUS3"),
@@ -933,11 +933,11 @@ iByzantium	:	"TXT_KEY_DOM_BYZANTIUM",
 iVikings	:	"TXT_KEY_DOM_VIKINGS",
 iArabia		:	"TXT_KEY_DOM_ARABIA",
 iTibet		:	"TXT_KEY_DOM_TIBET",
-iMoors		:	"TXT_KEY_DOM_MOORS",
 iIndonesia	:	"TXT_KEY_DOM_INDONESIA",
-iKhmer		:	"TXT_KEY_DOM_KHMER",
+iMoors		:	"TXT_KEY_DOM_MOORS",
 iSpain		:	"TXT_KEY_DOM_SPAIN",
 iFrance		:	"TXT_KEY_DOM_FRANCE",
+iKhmer		:	"TXT_KEY_DOM_KHMER",
 iEngland	:	"TXT_KEY_DOM_ENGLAND",
 iHolyRome	:	"TXT_KEY_DOM_HOLY_ROME",
 iRussia		:	"TXT_KEY_DOM_RUSSIA",
@@ -1050,11 +1050,11 @@ tStartingGold = (
 150,	# Viking
 300,	# Arabia
 50,	# Tibet
-200,	# Khmer
 300,	# Indonesia
 200,	# Moors
 200,	# Spain
 150,	# France
+200,	# Khmer
 200,	# England
 150,	# Holy Rome
 200,	# Russia
@@ -1130,11 +1130,11 @@ lEnemyCivsOnSpawn = [
 [iEngland,iEngland,iFrance,iIndependent,iIndependent2], #Vikings
 [iEgypt,iEgypt,iEgypt,iBabylonia,iBabylonia,iGreece,iPersia,iCarthage,iRome,iByzantium,iByzantium,iSpain,iFrance,iCeltia,iCeltia,iIndependent,iIndependent2], #Arabia
 [], #Tibet
-[], #Khmer
 [iKhmer, iKhmer], #Indonesia
 [], #Moors
 [], #Spain
 [], #France
+[], #Khmer
 [], #England
 [iRome,iArabia,iArabia], #Holy Rome
 [], #Russia
@@ -1178,11 +1178,11 @@ lTotalWarOnSpawn = [
 [], #Vikings
 [iEgypt, iBabylonia, iCarthage, iPersia], #Arabia
 [], #Tibet
-[], #Khmer
 [], #Indonesia
 [], #Moors
 [iMoors], #Spain
 [], #France
+[], #Khmer
 [], #England
 [iRome], #Holy Rome
 [], #Russia
@@ -1227,11 +1227,11 @@ tAggressionLevel = (
 2, #Viking
 2, #Arabia
 1, #Tibet
-2, #Khmer
 1, #Indonesia
 1, #Moors
 2, #Spain
 1, #France
+2, #Khmer
 1, #England
 3, #Holy Rome
 1, #Russia
@@ -1276,11 +1276,11 @@ tAIStopBirthThreshold = (
     80, #Viking
     80, #Arabia
     80, #Tibet
-    80, #Khmer
     80, #Indonesia
     80, #Moors
     80, #Spain  #60 in vanilla and Warlords
     80, #France #60 in vanilla and Warlords
+    80, #Khmer
     50, #England
     80, #Holy Rome #70 in vanilla and Warlords
     50, #Russia
@@ -1329,11 +1329,11 @@ tResurrectionProb = (
 60, #Viking
 100, #Arabia
 60, #Tibet
-60, #Khmer
 80, #Indonesia
 70, #Moors
 100, #Spain
 100, #France
+60, #Khmer
 100, #England
 80, #Holy Rome
 100, #Russia
@@ -1380,11 +1380,11 @@ tPatienceThreshold = (
 30, #Viking
 30, #Arabia
 50, #Tibet
-30, #Khmer
 30, #Indonesia
 20, #Moors
 20, #Spain
 20, #France
+30, #Khmer
 20, #England
 20, #Holy Rome
 30, #Russia
@@ -1429,11 +1429,11 @@ tMaxColonists = (
 1, #Viking
 0, #Arabia
 0, #Tibet
-0, #Khmer
 0, #Indonesia
 0, #Moors
 7, #Spain
 5, #France
+0, #Khmer
 6, #England
 0, #Holy Rome
 0, #Russia

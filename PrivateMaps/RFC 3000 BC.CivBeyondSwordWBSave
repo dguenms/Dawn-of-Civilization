@@ -67,19 +67,19 @@ BeginTeam
 	TeamID=18, (Tibet)
 EndTeam
 BeginTeam
-	TeamID=19, (Khmer)
+	TeamID=19, (Indonesia)
 EndTeam
 BeginTeam
-	TeamID=20, (Indonesia)
+	TeamID=20, (Moors)
 EndTeam
 BeginTeam
-	TeamID=21, (Moors)
+	TeamID=21, (Spain)
 EndTeam
 BeginTeam
-	TeamID=22, (Spain)
+	TeamID=22, (France)
 EndTeam
 BeginTeam
-	TeamID=23, (France)
+	TeamID=23, (Khmer)
 EndTeam
 BeginTeam
 	TeamID=24, (England)
@@ -369,19 +369,6 @@ BeginPlayer
 EndPlayer
 BeginPlayer
 	Team=19
-	LeaderType=LEADER_SURYAVARMAN
-	CivType=CIVILIZATION_KHMER
-	PlayableCiv=1
-	StartingGold=200
-	StateReligion=RELIGION_HINDUISM
-	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
-	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
-	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
-	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
-	Handicap=HANDICAP_REGENT
-EndPlayer
-BeginPlayer
-	Team=20
 	LeaderType=LEADER_HAYAM_WURUK
 	CivType=CIVILIZATION_INDONESIA
 	PlayableCiv=1
@@ -394,7 +381,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=21
+	Team=20
 	LeaderType=LEADER_RAHMAN
 	CivType=CIVILIZATION_MOORS
 	PlayableCiv=1
@@ -408,7 +395,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=22
+	Team=21
 	LeaderType=LEADER_ISABELLA
 	CivType=CIVILIZATION_SPAIN
 	PlayableCiv=1
@@ -422,7 +409,7 @@ BeginPlayer
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer
-	Team=23
+	Team=22
 	LeaderType=LEADER_LOUIS_XIV
 	CivType=CIVILIZATION_FRANCE
 	PlayableCiv=1
@@ -434,6 +421,19 @@ BeginPlayer
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_MERCHANT_TRADE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_CLERGY
 	CivicOption=CIVICOPTION_TERRITORY, Civic=CIVIC_TRIBUTARIES
+	Handicap=HANDICAP_REGENT
+EndPlayer
+BeginPlayer
+	Team=23
+	LeaderType=LEADER_SURYAVARMAN
+	CivType=CIVILIZATION_KHMER
+	PlayableCiv=1
+	StartingGold=200
+	StateReligion=RELIGION_HINDUISM
+	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
+	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_CASTE_SYSTEM
+	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_REDISTRIBUTION
+	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_DEIFICATION
 	Handicap=HANDICAP_REGENT
 EndPlayer
 BeginPlayer

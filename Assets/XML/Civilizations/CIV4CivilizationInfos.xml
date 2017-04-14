@@ -2487,7 +2487,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>INO</Identifier>
-			<StartingYear>700</StartingYear>
+			<StartingYear>650</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>2</LoadingTime>
@@ -2906,7 +2906,7 @@
 			<PaganReligionName>TXT_KEY_RELIGION_VEDISM</PaganReligionName>
 			<PaganReligionButton>Art/Interface/Buttons/Religions/Vedism.dds</PaganReligionButton>
 			<Identifier>KHM</Identifier>
-			<StartingYear>660</StartingYear>
+			<StartingYear>800</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>20</LoadingTime>
 				<LoadingTime>2</LoadingTime>

@@ -5173,14 +5173,6 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == ENGINEERING || iI == PAPER || iI == THEOLOGY || iI == DOCTRINE)
 										iValue *= 2;
 									break;
-								case KHMER:
-									if (iI == PHILOSOPHY || iI == SAILING || iI == CALENDAR || iI == CIVIL_SERVICE)
-										iValue *= 3;
-									if (iI == CURRENCY || iI == EXPLORATION)
-										iValue /= 3;
-									if (iI == AESTHETICS)
-										iValue *= 2;
-									break;
 								case INDONESIA:
 									if (iI == AESTHETICS || iI == ARTISANRY)
 										iValue *= 3;
@@ -5215,6 +5207,14 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									if (iI == REPLACEABLE_PARTS)
 										iValue *= 3;
+									break;
+								case KHMER:
+									if (iI == PHILOSOPHY || iI == SAILING || iI == CALENDAR || iI == CIVIL_SERVICE)
+										iValue *= 3;
+									if (iI == CURRENCY || iI == EXPLORATION)
+										iValue /= 3;
+									if (iI == AESTHETICS)
+										iValue *= 2;
 									break;
 								case ENGLAND:
 									if (iI == EXPLORATION || iI == GEOGRAPHY)
@@ -11463,17 +11463,17 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			case CHINA:
 				iValue += 20;
 				break;
-			case KHMER:
+			case INDIA:
 				iValue += 20;
 				break;
 			case INDONESIA:
 				iValue += 20;
 				break;
-			case INDIA:
-				iValue += 20;
-				break;
 			case ENGLAND:
 				iValue += 40;
+				break;
+			case KHMER:
+				iValue += 20;
 				break;
 		}
 	}
