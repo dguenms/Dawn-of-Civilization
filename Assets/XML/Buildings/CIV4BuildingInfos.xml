@@ -187,6 +187,16 @@
 			<iAsset>2</iAsset>
 			<iPower>3</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
 			<ConstructSound>AS2D_BUILD_CASTLE</ConstructSound>
 			<UnitCombatFreeExperiences>
 				<UnitCombatFreeExperience>
@@ -649,7 +659,7 @@
 			<Type>BUILDING_BATH</Type>
 			<Description>TXT_KEY_BUILDING_BATH</Description>
 			<Civilopedia>TXT_KEY_BUILDING_BATH_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_BATH_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BATH</ArtDefineTag>
 			<PrereqTech>TECH_MEDICINE</PrereqTech>
@@ -694,7 +704,7 @@
 			<Type>BUILDING_HARAPPAN_RESERVOIR</Type>
 			<Description>TXT_KEY_BUILDING_HARAPPAN_RESERVOIR</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HARAPPAN_RESERVOIR_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_HARAPPAN_RESERVOIR_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HARAPPAN_RESERVOIR</ArtDefineTag>
 			<PrereqTech>TECH_MASONRY</PrereqTech>
@@ -708,6 +718,16 @@
 			<iAsset>2</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -724,7 +744,7 @@
 			<Type>BUILDING_OTTOMAN_HAMMAM</Type>
 			<Description>TXT_KEY_BUILDING_OTTOMAN_HAMMAM</Description>
 			<Civilopedia>TXT_KEY_BUILDING_OTTOMAN_HAMMAM_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_OTTOMAN_HAMMAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_OTTOMAN_HAMMAM</ArtDefineTag>
 			<PrereqTech>TECH_MEDICINE</PrereqTech>
@@ -868,7 +888,7 @@
 			<Type>BUILDING_SEWER</Type>
 			<Description>TXT_KEY_BUILDING_SEWER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SEWER_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_SEWER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SEWER</ArtDefineTag>
 			<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
@@ -894,7 +914,7 @@
 			<Type>BUILDING_PARK</Type>
 			<Description>TXT_KEY_BUILDING_PARK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PARK_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_PARK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PARK</ArtDefineTag>
 			<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
@@ -1136,7 +1156,7 @@
 			<Type>BUILDING_WHARF</Type>
 			<Description>TXT_KEY_BUILDING_WHARF</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WHARF_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_WHARF_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WHARF</ArtDefineTag>
 			<PrereqTech>TECH_COMPASS</PrereqTech>
@@ -1193,7 +1213,7 @@
 			<Type>BUILDING_POST_OFFICE</Type>
 			<Description>TXT_KEY_BUILDING_POST_OFFICE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_POST_OFFICE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_POST_OFFICE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_POST_OFFICE</ArtDefineTag>
 			<PrereqTech>TECH_PAPER</PrereqTech>
@@ -1235,7 +1255,7 @@
 			<Type>BUILDING_INCAN_TAMBO</Type>
 			<Description>TXT_KEY_BUILDING_INCAN_TAMBO</Description>
 			<Civilopedia>TXT_KEY_BUILDING_INCAN_TAMBO_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_INCAN_TAMBO_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_INCAN_TAMBO</ArtDefineTag>
 			<PrereqTech>TECH_ENGINEERING</PrereqTech>
@@ -1937,7 +1957,7 @@
 			<Type>BUILDING_MONUMENT</Type>
 			<Description>TXT_KEY_BUILDING_MONUMENT</Description>
 			<Civilopedia>TXT_KEY_NEW_BUILDING_MONUMENT_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_MONUMENT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MONUMENT</ArtDefineTag>
 			<PrereqTech>TECH_CEREMONY</PrereqTech>
@@ -2699,7 +2719,7 @@
 			<Type>BUILDING_WEAVER</Type>
 			<Description>TXT_KEY_BUILDING_WEAVER</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WEAVER_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_WEAVER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WEAVER</ArtDefineTag>
 			<PrereqTech>TECH_AESTHETICS</PrereqTech>
@@ -2752,7 +2772,7 @@
 			<Type>BUILDING_CONGOLESE_MBWADI</Type>
 			<Description>TXT_KEY_BUILDING_CONGOLESE_MBWADI</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CONGOLESE_MBWADI_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_CONGOLESE_MBWADI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CONGOLESE_MBWADI</ArtDefineTag>
 			<PrereqTech>TECH_AESTHETICS</PrereqTech>
@@ -3162,7 +3182,7 @@
 			<Type>BUILDING_CINEMA</Type>
 			<Description>TXT_KEY_BUILDING_CINEMA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CINEMA_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_CINEMA_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CINEMA</ArtDefineTag>
 			<PrereqTech>TECH_FILM</PrereqTech>
@@ -3839,7 +3859,7 @@
 			<Type>BUILDING_COFFEEHOUSE</Type>
 			<Description>TXT_KEY_BUILDING_COFFEEHOUSE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_COFFEEHOUSE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_COFFEEHOUSE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COFFEEHOUSE</ArtDefineTag>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
@@ -3900,7 +3920,7 @@
 			<Type>BUILDING_FRENCH_SALON</Type>
 			<Description>TXT_KEY_BUILDING_FRENCH_SALON</Description>
 			<Civilopedia>TXT_KEY_BUILDING_FRENCH_SALON_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_FRENCH_SALON_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FRENCH_SALON</ArtDefineTag>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
@@ -3973,7 +3993,7 @@
 			<Type>BUILDING_DISTILLERY</Type>
 			<Description>TXT_KEY_BUILDING_DISTILLERY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_DISTILLERY_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_DISTILLERY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DISTILLERY</ArtDefineTag>
 			<PrereqTech>TECH_CHEMISTRY</PrereqTech>
@@ -4026,7 +4046,7 @@
 			<Type>BUILDING_HOTEL</Type>
 			<Description>TXT_KEY_BUILDING_HOTEL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HOTEL_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_HOTEL_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_HOTEL_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HOTEL</ArtDefineTag>
@@ -4071,7 +4091,7 @@
 			<Type>BUILDING_CONSTABULARY</Type>
 			<Description>TXT_KEY_BUILDING_CONSTABULARY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CONSTABULARY_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_CONSTABULARY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CONSTABULARY</ArtDefineTag>
 			<PrereqTech>TECH_JUDICIARY</PrereqTech>
@@ -4125,7 +4145,7 @@
 			<Type>BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Type>
 			<Description>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CANADIAN_ROYAL_MOUNTED_POLICE</ArtDefineTag>
 			<PrereqTech>TECH_JUDICIARY</PrereqTech>
@@ -4185,7 +4205,7 @@
 			<Type>BUILDING_CIVIC_SQUARE</Type>
 			<Description>TXT_KEY_BUILDING_CIVIC_SQUARE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_CIVIC_SQUARE_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_CIVIC_SQUARE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CIVIC_SQUARE</ArtDefineTag>
 			<PrereqTech>TECH_STATECRAFT</PrereqTech>
@@ -4259,7 +4279,7 @@
 			<Type>BUILDING_HOLY_ROMAN_RATHAUS</Type>
 			<Description>TXT_KEY_BUILDING_HOLY_ROMAN_RATHAUS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HOLY_ROMAN_RATHAUS_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_HOLY_ROMAN_RATHAUS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HOLY_ROMAN_RATHAUS</ArtDefineTag>
 			<PrereqTech>TECH_STATECRAFT</PrereqTech>
@@ -4334,7 +4354,7 @@
 			<Type>BUILDING_POLISH_SEJMIK</Type>
 			<Description>TXT_KEY_BUILDING_POLISH_SEJMIK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_POLISH_SEJMIK_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_POLISH_SEJMIK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_POLISH_SEJMIK</ArtDefineTag>
 			<PrereqTech>TECH_STATECRAFT</PrereqTech>
@@ -4697,7 +4717,7 @@
 			<Type>BUILDING_NEWS_PRESS</Type>
 			<Description>TXT_KEY_BUILDING_NEWS_PRESS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NEWS_PRESS_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_NEWS_PRESS_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NEWS_PRESS</ArtDefineTag>
 			<PrereqTech>TECH_JOURNALISM</PrereqTech>
@@ -7286,16 +7306,6 @@
 			<iAsset>6</iAsset>
 			<iPower>6</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>3</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
@@ -7743,7 +7753,7 @@
 			<Type>BUILDING_NATIONAL_MONUMENT</Type>
 			<Description>TXT_KEY_BUILDING_NATIONAL_MONUMENT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_MONUMENT_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_NATIONAL_MONUMENT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_MONUMENT</ArtDefineTag>
 			<PrereqTech>TECH_HERITAGE</PrereqTech>
@@ -7872,7 +7882,7 @@
 			<Type>BUILDING_MILITARY_ACADEMY</Type>
 			<Description>TXT_KEY_BUILDING_MILITARY_ACADEMY</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MILITARY_ACADEMY_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_BUILDING_MILITARY_ACADEMY_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MILITARY_ACADEMY</ArtDefineTag>
 			<PrereqTech>TECH_SOCIOLOGY</PrereqTech>
@@ -8686,6 +8696,7 @@
 			<Description>TXT_KEY_BUILDING_STATUE_OF_ZEUS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_STATUE_OF_ZEUS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_STATUE_OF_ZEUS_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_STATUE_OF_ZEUS_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STATUE_OF_ZEUS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STATUE_OF_ZEUS</MovieDefineTag>

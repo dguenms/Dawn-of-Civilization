@@ -442,7 +442,7 @@ class CvRFCEventHandler:
 		# Leoreth/Voyhkah: Empire State Building effect
 		if pCity.isHasRealBuilding(iEmpireStateBuilding):
 			iPop = pCity.getPopulation()
-			pCity.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE_BUILDING"), 0, iPop)
+			pCity.setBuildingCommerceChange(gc.getBuildingInfo(iEmpireStateBuilding).getBuildingClassType(), 0, iPop)
 			
 	def onUnitPillage(self, argsList):
 		unit, iImprovement, iRoute, iPlayer, iGold = argsList
@@ -525,7 +525,7 @@ class CvRFCEventHandler:
 		# Leoreth/Voyhkah: Empire State Building
 		if iBuildingType == iEmpireStateBuilding:
 			iPop = city.getPopulation()
-			city.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_EMPIRE_STATE_BUILDING"), 0, iPop)
+			city.setBuildingCommerceChange(gc.getBuildingInfo(iEmpireStateBuilding).getBuildingClassType(), 0, iPop)
 			
 		# Leoreth: Machu Picchu
 		if iBuildingType == iMachuPicchu:
@@ -533,7 +533,7 @@ class CvRFCEventHandler:
 			for i in range(21):
 				if city.getCityIndexPlot(i).isPeak():
 					iNumPeaks += 1
-			city.setBuildingCommerceChange(gc.getInfoTypeForString("BUILDINGCLASS_MACHU_PICCHU"), 0, iNumPeaks * 2)
+			city.setBuildingCommerceChange(gc.getBuildingInfo(iMachuPicchu).getBuildingClassType(), 0, iNumPeaks * 2)
 			
 		# Leoreth: Great Wall
 		if iBuildingType == iGreatWall:
