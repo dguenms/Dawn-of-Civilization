@@ -523,8 +523,14 @@ void CvUnit::convert(CvUnit* pUnit)
 
 	if (getLeaderUnitType() == NO_UNIT)
 	{
-		iNewExperience *= GC.getUnitInfo(pUnit->getUnitType()).getCombat();
-		iNewExperience /= GC.getUnitInfo(getUnitType()).getCombat();
+		int iOldCombat = GC.getUnitInfo(pUnit->getUnitType()).getCombat();
+		int iNewCombat = GC.getUnitInfo(getUnitType()).getCombat();
+
+		if (iNewCombat > iOldCombat)
+		{
+			iNewExperience *= iOldCombat;
+			iNewExperience /= iNewCombat;
+		}
 	}
 
 	if (iNewExperience > 0)
