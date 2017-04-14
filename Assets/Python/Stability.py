@@ -1431,7 +1431,7 @@ def calculateStability(iPlayer):
 	
 	iCivicStability = 0
 	
-	# Civics (eras and techs)
+	# Civics (eras and techs and religions)
 	if iCivicLegitimacy == iVassalage:
 		if iCurrentEra == iMedieval: iCivicStability += 2
 		elif iCurrentEra >= iIndustrial: iCivicStability -= 5
@@ -1458,6 +1458,23 @@ def calculateStability(iPlayer):
 		
 	if tPlayer.isHasTech(iTheology):
 		if iCivicReligion in [iAnimism, iDeification]: iCivicStability -= 5
+		
+	iStateReligion = pPlayer.getStateReligion()
+	
+	if iStateReligion == Hinduism:
+		if iCivicSociety == iCasteSystem: iCivicStability += 3
+		
+	if iStateReligion == iConfucianism:
+		if iCivicLegitimacy == iMeritocracy: iCivicStability += 3
+		
+	if iStateReligion in [iZoroastrianism, iOrthodoxy, iCatholicism, iProtestantism]:
+		if iCivicSociety == iSlavery: iCivicStability -= 3
+		
+	if iStateReligion == iIslam:
+		if iCivicSociety == iSlavery: iCivicStability += 2
+		
+	if iStateReligion == iBuddhism:
+		if iCivicReligion == iMonasticism: iCivicStability += 2
 		
 	if utils.getHumanID() != iPlayer and iCivicStability < 0: iCivicStability /= 2
 	
