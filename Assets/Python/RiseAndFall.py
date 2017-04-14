@@ -2030,7 +2030,7 @@ class RiseAndFall:
 						utils.makeUnitAI(iRifleman, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 4)
 						utils.makeUnitAI(iCannon, iCiv, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2)
 				else:
-					if not utils.isFree(iRussia, tVladivostok, True): # Also bNoEnemyUnits?
+					if utils.isFree(iRussia, tVladivostok, True): # Also bNoEnemyUnits?
 						pRussia.found(x, y)
 						utils.makeUnit(iRifleman, iCiv, tVladivostok, 2)
 						utils.makeUnit(iRifleman, iCiv, tVladivostok, 2)

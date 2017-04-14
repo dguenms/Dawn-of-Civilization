@@ -4047,7 +4047,6 @@
 			<Description>TXT_KEY_BUILDING_HOTEL</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HOTEL_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HOTEL_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_HOTEL_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HOTEL</ArtDefineTag>
 			<PrereqTech>TECH_TOURISM</PrereqTech>
@@ -4057,7 +4056,8 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
-			<iTradeRouteModifier>25</iTradeRouteModifier>
+			<iTradeRouteModifier>20</iTradeRouteModifier>
+			<iCultureTradeRouteModifier>10</iCultureTradeRouteModifier>
 			<iAsset>6</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>

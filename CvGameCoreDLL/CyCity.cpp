@@ -2710,3 +2710,8 @@ void CyCity::removeReligion(int eReligion)
 {
 	if (m_pCity) m_pCity->removeReligion((ReligionTypes)eReligion);
 }
+
+void CyCity::spreadReligion(int eReligion)
+{
+	if (m_pCity) m_pCity->spreadReligion((ReligionTypes)eReligion, false);
+}

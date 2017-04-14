@@ -1389,7 +1389,7 @@ CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bUpdatePlotGrou
 	if (eMasterTeam != NO_TEAM)
 	{
 		CvPlayer& kMasterPlayer = GET_PLAYER(GET_TEAM(eMasterTeam).getLeaderID());
-		kMasterPlayer.changeVassalCityCommerce(kMasterPlayer.getVassalCityCommerce());
+		kMasterPlayer.changeCapitalCommerce(kMasterPlayer.getVassalCityCommerce());
 	}
 
 	return pCity;

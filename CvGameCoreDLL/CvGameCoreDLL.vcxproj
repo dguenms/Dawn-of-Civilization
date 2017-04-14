@@ -138,6 +138,7 @@ nmake clean</NMakeCleanCommandLine>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Sid Meier%27s Civilization 4\Beyond the Sword\Mods\RFC Dawn of Civilization\CvGameCoreDLL\CyCityInterface2.cpp" />
     <ClCompile Include="_precompile.cpp" />
     <ClCompile Include="CvArea.cpp" />
     <ClCompile Include="CvArtFileMgr.cpp" />

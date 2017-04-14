@@ -576,6 +576,7 @@ public:
 	void updateGreatWall();
 	void replaceReligion(int eOldReligion, int eNewReligion);
 	void removeReligion(int eReligion);
+	void spreadReligion(int eReligion);
 
 private:
 	CvCity* m_pCity;

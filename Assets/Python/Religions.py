@@ -256,7 +256,7 @@ class Religions:
 		if 2 * len(lJewishCities) < len(lEuropeanCities):
 			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lEuropeanCities, iJudaism))
 			if pSpreadCity:
-				pSpreadCity.setHasReligion(iJudaism, True, True, True)
+				pSpreadCity.spreadReligion(iJudaism)
 				
 	def spreadJudaismMiddleEast(self, iGameTurn):
 		if not gc.getGame().isReligionFounded(iJudaism): return
@@ -270,7 +270,7 @@ class Religions:
 		if 2 * len(lJewishCities) < len(lMiddleEastCities):
 			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lMiddleEastCities, iJudaism))
 			if pSpreadCity:
-				pSpreadCity.setHasReligion(iJudaism, True, True, True)
+				pSpreadCity.spreadReligion(iJudaism)
 		
 ## BUDDHISM
 
