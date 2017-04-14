@@ -32,7 +32,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities. Further, it allows Artists to be hired using Priest slots. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Wat Preah Pisnulok[COLOR_REVERT] adds an additional population point in all cities and adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] specialists. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLUE_MOSQUE</Tag>
@@ -77,7 +77,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BRANDENBURG_GATE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] doubles the amount of great general points you receive inside your cultural borders. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Brandenburg Gate[COLOR_REVERT] resets the [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] threshold when a [COLOR_UNIT_TEXT]Great General[COLOR_REVERT] dies. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WEMBLEY</Tag>
@@ -133,7 +133,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CERN_RESEARCH_COMPLEX_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] greatly increases the scientific output of its city. It also allows you to hire three [COLOR_HIGHLIGHT_TEXT]Scientist[COLOR_REVERT] specialists and increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]CERN Research Complex[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Laboratory[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Scientist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN</Tag>
@@ -205,7 +205,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOSSUS_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in your coastal cities. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Colossus[COLOR_REVERT] adds extra commerce to all water tiles in its city. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COLOSSEUM</Tag>
@@ -259,7 +259,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_LIGHTHOUSE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] gives one additional trade route and one additional trade routes to all coastal cities. It also increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Great Lighthouse[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Lighthouse[COLOR_REVERT] in every coastal city and provides a free trade route in its city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_WALL_HELP</Tag>
@@ -463,11 +463,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PARTHENON_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Government[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Parthenon[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Legitimacy[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISHTAR_GATE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] increases war weariness in the cities of those who go to war against its builder. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Ishtar Gate[COLOR_REVERT] allows you to hire a specialist of each type. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HIMEJI_CASTLE_STRATEGY</Tag>
@@ -499,7 +499,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HANGING_GARDENS_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] improves the health of your city and adds an additional population point in all cities. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Hanging Gardens[COLOR_REVERT] removes the unhealthiness of all Flood Plains in its city. It increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRAND_CANAL</Tag>
@@ -590,7 +590,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PORCELAIN_TOWER_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists and counts all trade routes in your civilization as foreign. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Porcelain Tower[COLOR_REVERT] gives 2 free [COLOR_HIGHLIGHT_TEXT]Merchant[COLOR_REVERT] specialists and removes the open border requirement for trade routes. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS</Tag>
@@ -623,7 +623,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] makes slavery unhappiness not increase with the amount of population sacrificed, makes workers build improvements faster and centers the world map. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Pyramids[COLOR_REVERT] centers the world map and lets cities grow when they produce with food. They also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RED_FORT</Tag>
@@ -632,7 +632,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RED_FORT_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] gives 2 free specialists. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Red Fort[COLOR_REVERT] increases war weariness in the cities of those who go to war against its builder. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GRACELAND</Tag>
@@ -715,7 +715,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows Great Prophets to create Great Works. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Great Sphinx[COLOR_REVERT] allows wonders to be produces with food. It increases its city's odds of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAJ_MAHAL_STRATEGY</Tag>
@@ -815,7 +815,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TOPKAPI_PALACE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] increases the amount of culture converted on city conquest. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Topkapi Palace[COLOR_REVERT] increases the amount of culture converted on city conquest and grants extra initial production in the conquered city. It also increase their city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE</Tag>
@@ -824,7 +824,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SHWEDAGON_PAYA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Religious[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Shwedagon Paya[COLOR_REVERT] grants access to all [COLOR_HIGHLIGHT_TEXT]Religion[COLOR_REVERT] Civics. It also increases the odds of its city generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TRAFALGAR_SQUARE_HELP</Tag>
@@ -882,7 +882,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WESTMINSTER_PALACE_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] reduces the cost of hurrying production and increases its city's chances of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<English>The [COLOR_BUILDING_TEXT]Westminster Palace[COLOR_REVERT] creates a free [COLOR_BUILDING_TEXT]Courthouse[COLOR_REVERT] in every city. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HAGIA_SOPHIA_STRATEGY</Tag>
