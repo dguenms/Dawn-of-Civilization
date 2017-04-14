@@ -10586,7 +10586,7 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	if (kBuilding.getCultureTradeRouteModifier() != 0)
 	{
 		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_CULTURE_TRADE_ROUTE_MOD", kBuilding.getCultureTradeRouteModifier() * pCity->getCultureLevel()));
+		szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_CULTURE_TRADE_ROUTE_MOD", kBuilding.getCultureTradeRouteModifier()));
 	}
 
 	if (kBuilding.getForeignTradeRouteModifier() != 0)
@@ -19091,24 +19091,11 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 				if (pCity->getNumActiveBuilding((BuildingTypes)iBuilding) > 0)
 				{
 					iNewMod = pCity->getNumActiveBuilding((BuildingTypes)iBuilding) * GC.getBuildingInfo((BuildingTypes)iBuilding).getTradeRouteModifier();
+					iNewMod += pCity->getNumActiveBuilding((BuildingTypes)iBuilding) * GC.getBuildingInfo((BuildingTypes)iBuilding).getCultureTradeRouteModifier() * pCity->getCultureLevel();
 					if (0 != iNewMod)
 					{
 						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_BUILDING", GC.getBuildingInfo((BuildingTypes)iBuilding).getTextKeyWide(), iNewMod));
-						iModifier += iNewMod;
-					}
-				}
-			}
-
-			for (int iBuilding = 0; iBuilding < GC.getNumBuildingInfos(); ++iBuilding)
-			{
-				if (pCity->getNumActiveBuilding((BuildingTypes)iBuilding) > 0)
-				{
-					iNewMod = pCity->getNumActiveBuilding((BuildingTypes)iBuilding) * GC.getBuildingInfo((BuildingTypes)iBuilding).getCultureTradeRouteModifier() * pCity->getCultureLevel();
-					if (0 != iNewMod)
-					{
-						szBuffer.append(NEWLINE);
-						szBuffer.append(gDLL->getText("TXT_KEY_CULTURE_TRADE_ROUTE_MOD_BUILDING", GC.getBuildingInfo((BuildingTypes)iBuilding).getTextKeyWide(), iNewMod));
 						iModifier += iNewMod;
 					}
 				}
