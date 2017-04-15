@@ -2224,6 +2224,8 @@ def doResurrection(iPlayer, lCityList, bAskFlip = True):
 	
 	# set state religion based on religions in the area
 	setStateReligion(iPlayer)
+	
+	switchCivics(iPlayer)
 		
 	CyInterface().addMessage(iHuman, True, iDuration, CyTranslator().getText("TXT_KEY_INDEPENDENCE_TEXT", (pPlayer.getCivilizationAdjectiveKey(),)), "", 0, "", ColorTypes(iGreen), -1, -1, True, True)
 	
@@ -2347,6 +2349,17 @@ def setStateReligion(iCiv):
 	
 	if iHighestEntry > 0:
 		gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))
+		
+def switchCivics(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+
+	for iCategory in range(iNumCivicCategories):
+		iBestCivic = pPlayer.AI_bestCivic(iCategory)
+		
+		if iBestCivic >= 0:
+			pPlayer.setCivics(iCategory, iBestCivic)
+			
+	pPlayer.setRevolutionTimer(gc.getDefineINT("MIN_REVOLUTION_TURNS"))
 
 def rebellionPopup(iRebelCiv):
 	utils.showPopup(7622, CyTranslator().getText("TXT_KEY_REBELLION_TITLE", ()), \

@@ -16,6 +16,7 @@
 class CvDiploParameters;
 class CvPopupInfo;
 class CvEventTriggerInfo;
+class CvPlayerAI;
 
 typedef std::list<CvTalkingHeadMessage> CvMessageQueue;
 typedef std::list<CvPopupInfo*> CvPopupQueue;
@@ -36,6 +37,9 @@ public:
 	DllExport void init(PlayerTypes eID);
 	DllExport void setupGraphical();
 	DllExport void reset(PlayerTypes eID = NO_PLAYER, bool bConstructorCall = false);
+
+	CvPlayerAI* AI() { return (CvPlayerAI*)(this); }
+	const CvPlayerAI* AI() const { return (const CvPlayerAI*)(this); }
 
 protected:
 
