@@ -5370,6 +5370,8 @@ public:
 	virtual ~CvCultureLevelInfo();
 
 	int getCityDefenseModifier() const;		//	Exposed to Python
+	int getWonderLimit() const;
+	int getNationalWonderLimit() const;
 
 	int getSpeedThreshold(int i) const;		//	Exposed to Python
 
@@ -5379,6 +5381,8 @@ public:
 protected:
 
 	int m_iCityDefenseModifier;
+	int m_iWonderLimit;
+	int m_iNationalWonderLimit;
 
 	int* m_paiSpeedThreshold;
 

@@ -19694,6 +19694,8 @@ bool CvUpkeepInfo::read(CvXMLLoadUtility* pXml)
 
 CvCultureLevelInfo::CvCultureLevelInfo() :
 m_iCityDefenseModifier(0),
+m_iWonderLimit(0),
+m_iNationalWonderLimit(0),
 m_paiSpeedThreshold(NULL)
 {
 }
@@ -19706,6 +19708,16 @@ CvCultureLevelInfo::~CvCultureLevelInfo()
 int CvCultureLevelInfo::getCityDefenseModifier() const
 {
 	return m_iCityDefenseModifier;
+}
+
+int CvCultureLevelInfo::getWonderLimit() const
+{
+	return m_iWonderLimit;
+}
+
+int CvCultureLevelInfo::getNationalWonderLimit() const
+{
+	return m_iNationalWonderLimit;
 }
 
 int CvCultureLevelInfo::getSpeedThreshold(int i) const
@@ -19723,6 +19735,8 @@ bool CvCultureLevelInfo::read(CvXMLLoadUtility* pXml)
 	}
 
 	pXml->GetChildXmlValByName(&m_iCityDefenseModifier, "iCityDefenseModifier");
+	pXml->GetChildXmlValByName(&m_iWonderLimit, "iWonderLimit");
+	pXml->GetChildXmlValByName(&m_iNationalWonderLimit, "iNationalWonderLimit");
 
 	pXml->SetVariableListTagPair(&m_paiSpeedThreshold, "SpeedThresholds", sizeof(GC.getGameSpeedInfo((GameSpeedTypes)0)), GC.getNumGameSpeedInfos());
 

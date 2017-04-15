@@ -11082,8 +11082,17 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			{
 				if (pCity->isWorldWondersMaxed())
 				{
+					int iWonderLimit = GC.getCultureLevelInfo(pCity->getCultureLevel()).getWonderLimit();
 					szBuffer.append(NEWLINE);
-					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_WORLD_WONDERS_PER_CITY", GC.getDefineINT("MAX_WORLD_WONDERS_PER_CITY")));
+					//szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_WORLD_WONDERS_PER_CITY", GC.getDefineINT("MAX_WORLD_WONDERS_PER_CITY")));
+					if (iWonderLimit > 0)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_WORLD_WONDERS_PER_CULTURE_LEVEL", iWonderLimit, GC.getCultureLevelInfo(pCity->getCultureLevel()).getTextKeyWide()));
+					}
+					else
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_WORLD_WONDERS_NONE_FOR_CULTURE_LEVEL", GC.getCultureLevelInfo(pCity->getCultureLevel()).getTextKeyWide()));
+					}
 				}
 			}
 			else if (isTeamWonderClass((BuildingClassTypes)(kBuilding.getBuildingClassType())))
@@ -11098,9 +11107,18 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			{
 				if (pCity->isNationalWondersMaxed())
 				{
-					int iMaxNumWonders = (GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && GET_PLAYER(pCity->getOwnerINLINE()).isHuman()) ? GC.getDefineINT("MAX_NATIONAL_WONDERS_PER_CITY_FOR_OCC") : GC.getDefineINT("MAX_NATIONAL_WONDERS_PER_CITY");
+					//int iMaxNumWonders = (GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && GET_PLAYER(pCity->getOwnerINLINE()).isHuman()) ? GC.getDefineINT("MAX_NATIONAL_WONDERS_PER_CITY_FOR_OCC") : GC.getDefineINT("MAX_NATIONAL_WONDERS_PER_CITY");
+					int iNationalWonderLimit = GC.getCultureLevelInfo(pCity->getCultureLevel()).getNationalWonderLimit();
 					szBuffer.append(NEWLINE);
-					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NATIONAL_WONDERS_PER_CITY", iMaxNumWonders));
+					//szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NATIONAL_WONDERS_PER_CITY", iMaxNumWonders));
+					if (iNationalWonderLimit > 0)
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NATIONAL_WONDERS_PER_CULTURE_LEVEL", iNationalWonderLimit, GC.getCultureLevelInfo(pCity->getCultureLevel()).getTextKeyWide()));
+					}
+					else
+					{
+						szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_NATIONAL_WONDERS_NONE_FOR_CULTURE_LEVEL", GC.getCultureLevelInfo(pCity->getCultureLevel()).getTextKeyWide()));
+					}
 				}
 			}
 			else
@@ -11469,6 +11487,7 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 				}
 			}
 		}
+
 		// Leoreth: display civic requirements
 		if (kBuilding.getPrereqCivic() != -1)
 		{

@@ -1710,4 +1710,24 @@
 		<English>[ICON_BULLET]%D1_Mod%% Trade Route Yield per Culture Level</English>
 		<German>[ICON_BULLET]%D1_Mod%% Ertr&#228;ge durch Handelswege pro Kulturstufe</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WORLD_WONDERS_PER_CULTURE_LEVEL</Tag>
+		<English>[COLOR_WARNING_TEXT]Can only Construct %d1_Num World Wonders with %s2_LevelName Culture[COLOR_REVERT]</English>
+		<German>[COLOR_WARNING_TEXT]Kann nur %d1_Num Weltwunder mit %s2_LevelName Kultur errichten[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WORLD_WONDERS_NONE_FOR_CULTURE_LEVEL</Tag>
+		<English>[COLOR_WARNING_TEXT]Cannot Construct World Wonders with %s1_LevelName Culture[COLOR_REVERT]</English>
+		<German>[COLOR_WARNING_TEXT]Kann keine Weltwunder mit %s1_LevelName Kultur errichten[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_WONDERS_PER_CULTURE_LEVEL</Tag>
+		<English>[COLOR_WARNING_TEXT]Can only Construct %d1_Num National Wonders with %s2_LevelName Culture[COLOR_REVERT]</English>
+		<German>[COLOR_WARNING_TEXT]Kann nur %d1_Num [NUM1:Nationales:Nationale] Wunder mit %s2_LevelName Kultur errichten[COLOR_REVERT]</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_WONDERS_NONE_FOR_CULTURE_LEVEL</Tag>
+		<English>[COLOR_WARNING_TEXT]Cannot Construct National Wonders with %s1_LevelName Culture[COLOR_REVERT]</English>
+		<German>[COLOR_WARNING_TEXT]Kann keine Nationale Wunder mit %s1_LevelName Kultur errichten[COLOR_REVERT]</German>
+	</TEXT>
 </Civ4GameText>

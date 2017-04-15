@@ -1825,12 +1825,17 @@ bool CvCity::isWorldWondersMaxed() const
 		return false;
 	}
 
-	if (GC.getDefineINT("MAX_WORLD_WONDERS_PER_CITY") == -1)
+	/*if (GC.getDefineINT("MAX_WORLD_WONDERS_PER_CITY") == -1)
 	{
 		return false;
 	}
 
 	if (getNumWorldWonders() >= GC.getDefineINT("MAX_WORLD_WONDERS_PER_CITY"))
+	{
+		return true;
+	}*/
+
+	if (getNumWorldWonders() >= GC.getCultureLevelInfo(getCultureLevel()).getWonderLimit())
 	{
 		return true;
 	}
@@ -1862,7 +1867,9 @@ bool CvCity::isTeamWondersMaxed() const
 
 bool CvCity::isNationalWondersMaxed() const
 {
-	int iMaxNumWonders = (GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman()) ? GC.getDefineINT("MAX_NATIONAL_WONDERS_PER_CITY_FOR_OCC") : GC.getDefineINT("MAX_NATIONAL_WONDERS_PER_CITY");
+	//int iMaxNumWonders = (GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && isHuman()) ? GC.getDefineINT("MAX_NATIONAL_WONDERS_PER_CITY_FOR_OCC") : GC.getDefineINT("MAX_NATIONAL_WONDERS_PER_CITY");
+
+	int iMaxNumWonders = GC.getCultureLevelInfo(getCultureLevel()).getNationalWonderLimit();
 
 	if (iMaxNumWonders == -1)
 	{
