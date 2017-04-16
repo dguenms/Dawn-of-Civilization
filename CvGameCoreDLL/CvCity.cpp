@@ -1835,7 +1835,7 @@ bool CvCity::isWorldWondersMaxed() const
 		return true;
 	}*/
 
-	if (getNumWorldWonders() >= GC.getCultureLevelInfo(getCultureLevel()).getWonderLimit())
+	if (getNumActiveWorldWonders() >= GC.getCultureLevelInfo(getCultureLevel()).getWonderLimit())
 	{
 		return true;
 	}

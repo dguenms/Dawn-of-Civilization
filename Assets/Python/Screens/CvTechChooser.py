@@ -267,9 +267,9 @@ class CvTechChooser:
 				iTech = BuildingInfo.getPrereqAndTech()
 				if iTech > -1:
 					self.TechEffects[iTech].append(("Building", iBuilding))
-				iTech = BuildingInfo.getObsoleteTech()
-				if iTech > -1:
-					self.TechEffects[iTech].append(("ObsoleteBuilding", iBuilding))
+				#iTech = BuildingInfo.getObsoleteTech()
+				#if iTech > -1:
+				#	self.TechEffects[iTech].append(("ObsoleteBuilding", iBuilding))
 
 		# Special Buildings
 		for iSpecial in xrange(gc.getNumSpecialBuildingInfos()):
