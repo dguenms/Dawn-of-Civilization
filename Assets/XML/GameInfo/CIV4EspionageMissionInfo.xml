@@ -14,6 +14,13 @@
 			<bSeeDemographics>1</bSeeDemographics>
 		</EspionageMissionInfo>
 		<EspionageMissionInfo>
+			<Type>ESPIONAGEMISSION_SEE_ESPIONAGE</Type>
+			<Description>TXT_KEY_ESPIONAGE_SEE_ESPIONAGE</Description>
+			<Help>TXT_KEY_ESPIONAGE_SEE_ESPIONAGE_HELP</Help>
+			<iCost>100</iCost>
+			<bIsPassive>1</bIsPassive>
+		</EspionageMissionInfo>
+		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_VISIBILITY</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_VISIBILITY</Description>
 			<iCost>160</iCost>

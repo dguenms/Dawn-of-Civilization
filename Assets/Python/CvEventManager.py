@@ -19,10 +19,11 @@ import CvTopCivs
 import sys
 import CvAdvisorUtils
 import CvTechChooser
+import CvEspionageAdvisor
 
 #Rhye
-import RFCUtils
-utils = RFCUtils.RFCUtils()
+from Consts import *
+from RFCUtils import utils
 
 ## Ultrapack ##
 import WBCityEditScreen
@@ -316,6 +317,14 @@ class CvEventManager(object):
 		iData1, iData2, iData3, iData4, iData5 = argsList
 		
 		print("Modder's net message!")
+		
+		if iData1 == lNetworkEvents["CHANGE_COMMERCE_PERCENT"]:
+			CommerceType = [CommerceTypes.COMMERCE_GOLD, CommerceTypes.COMMERCE_RESEARCH, CommerceTypes.COMMERCE_CULTURE, CommerceTypes.COMMERCE_ESPIONAGE]
+			gc.getPlayer(iData2).changeCommercePercent(CommerceType[iData3], iData4)
+			if iData2 == CyGame().getActivePlayer():
+				screen = CvEspionageAdvisor.CvEspionageAdvisor().getScreen()
+				if screen.isActive():
+					CvEspionageAdvisor.CvEspionageAdvisor().updateEspionageWeights()
 		
 		CvUtil.pyPrint( 'onModNetMessage' )
 

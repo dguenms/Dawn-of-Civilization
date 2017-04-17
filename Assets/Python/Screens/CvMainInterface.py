@@ -313,6 +313,10 @@ class CvMainInterface:
 
 		# Widgets
 		WidgetUtil.createWidget("WIDGET_PEDIA_JUMP_TO_RESOURCE")
+		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_PLAYER")
+		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_CITY")
+		WidgetUtil.createWidget("WIDGET_ESPIONAGE_SELECT_MISSION")
+		WidgetUtil.createWidget("WIDGET_GO_TO_CITY")
 
 		
 		

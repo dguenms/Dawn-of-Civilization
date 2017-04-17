@@ -102,4 +102,14 @@
 		<Italian>Con questo ordine si consumano uno o pi&#249; Grandi Personaggi (di tipi differenti) e si avvia un'Et&#224; dell'Oro (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</Italian>
 		<Spanish>Esta orden consume uno o m&#225;s grandes personajes (de diferentes tipos) e inicia una edad de oro (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ESPIONAGE_SEE_ESPIONAGE</Tag>
+		<English>See Espionage</English>
+		<German>Spionage Anzeigen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ESPIONAGE_SEE_ESPIONAGE_HELP</Tag>
+		<English>Lets you see more details about a rival civilization's espionage against you in the Espionage Advisor.</English>
+		<German>Zeigt zusätzliche Details über die Spionage einer gegnerischen Zivilisation im Spionageberater an</German>
+	</TEXT>
 </Civ4GameText>
