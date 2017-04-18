@@ -1730,4 +1730,8 @@
 		<English>[COLOR_WARNING_TEXT]Cannot Construct National Wonders with %s1_LevelName Culture[COLOR_REVERT]</English>
 		<German>[COLOR_WARNING_TEXT]Kann keine Nationale Wunder mit %s1_LevelName Kultur errichten[COLOR_REVERT]</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CARRIER_BASE</Tag>
+		<English>[ICON_BULLET]Can be Based on [LINK=UNIT_CARRIER]Carriers[\LINK]</English>
+	</TEXT>
 </Civ4GameText>

@@ -558,6 +558,7 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_LABOURER</Class>
@@ -5400,7 +5401,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SKIRMISHER</Description>
 			<Civilopedia>TXT_KEY_UNIT_SKIRMISHER_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_SKIRMISHER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -5559,7 +5560,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MANDE_KELEBOLO</Description>
 			<Civilopedia>TXT_KEY_UNIT_MANDE_KELEBOLO_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_MANDE_KELEBOLO_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -6344,7 +6345,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HORSEMAN</Description>
 			<Civilopedia>TXT_KEY_UNIT_HORSEMAN_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_HORSEMAN_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -10609,7 +10610,6 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
-			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iAsset>3</iAsset>
 			<iPower>3</iPower>
 			<UnitMeshGroups>
@@ -11328,7 +11328,6 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
-			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iAsset>3</iAsset>
 			<iPower>9</iPower>
 			<UnitMeshGroups>
@@ -11442,7 +11441,6 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassDefenseMod>
 			</UnitClassDefenseMods>
-			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iAsset>3</iAsset>
 			<iPower>6</iPower>
 			<UnitMeshGroups>
@@ -11548,7 +11546,6 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassDefenseMod>
 			</UnitClassDefenseMods>
-			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iAsset>3</iAsset>
 			<iPower>6</iPower>
 			<UnitMeshGroups>
@@ -11620,7 +11617,6 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
-			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iAsset>3</iAsset>
 			<iPower>12</iPower>
 			<UnitMeshGroups>
@@ -11684,7 +11680,6 @@
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iBombardRate>8</iBombardRate>
-			<DomainCargo>DOMAIN_LAND</DomainCargo>
 			<iAsset>3</iAsset>
 			<iPower>15</iPower>
 			<UnitMeshGroups>
@@ -11851,7 +11846,7 @@
 			<DefaultUnitAI>UNITAI_ATTACK_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CRUISER</Description>
 			<Civilopedia>TXT_KEY_UNIT_CRUISER_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_CRUISER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>

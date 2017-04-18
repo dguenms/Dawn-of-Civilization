@@ -193,7 +193,8 @@ def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 	bSettlerValueChanged = bForce
 	if not bSettlerValueChanged:
 		for (x, y) in utils.getWorldPlotsList():
-			if getSettlerValue(iPlayer, (x, y)) != SettlerMaps.getMapValue(iCiv, x, y):
+			plot = gc.getMap().plot(x, y)
+			if plot.getSettlerValue(iPlayer) != SettlerMaps.getMapValue(iCiv, x, y):
 				bSettlerValueChanged = True
 				break
 	if bSettlerValueChanged:
@@ -207,7 +208,7 @@ def exportSettlerMap(iPlayer, bForce = False, bAll = False):
 					if plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions):
 						iValue = 20
 					else:
-						iValue = getSettlerValue(iPlayer, (x, y))
+						iValue = plot.getSettlerValue(iPlayer)
 					sLine += "%d,\t" % iValue
 				if y == 0:
 					sLine += ")),"
@@ -239,7 +240,8 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 	bWarMapChanged = bForce
 	if not bWarMapChanged:
 		for (x, y) in utils.getWorldPlotsList():
-			if getWarValue(iPlayer, (x, y)) != WarMaps.getMapValue(iCiv, x, y):
+			plot = gc.getMap().plot(x, y)
+			if plot.getWarValue(iPlayer) != WarMaps.getMapValue(iCiv, x, y):
 				bWarMapChanged = True
 				break
 	if bWarMapChanged:
@@ -253,9 +255,9 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 					if plot.isWater() or (plot.isPeak() and (x, y) not in Areas.lPeakExceptions):
 						iValue = 0
 					elif plot.isCore(iPlayer):
-						iValue = max(8, getWarValue(iPlayer, (x, y)))
+						iValue = max(8, plot.getWarValue(iPlayer))
 					else:
-						iValue = getWarValue(iPlayer, (x, y))
+						iValue = plot.getWarValue(iPlayer)
 					sLine += "%d,\t" % iValue
 				if y == 0:
 					sLine += ")),"
