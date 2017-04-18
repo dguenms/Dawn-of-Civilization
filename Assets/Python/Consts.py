@@ -484,6 +484,7 @@ iCivMexico,	# Aztecs
 -1,		# Mughals
 -1,		# Turkey
 -1,		# Thailand
+-1,		# Congo
 -1,		# Netherlands
 -1,		# Germany
 -1,		# America
@@ -578,7 +579,7 @@ tYear = (
 ("1280 ", "TXT_KEY_AD"),	# Turkey
 ("1350 ", "TXT_KEY_AD"),	# Thailand
 ("1390 ", "TXT_KEY_AD"),	# Congo
-("1500 ", "TXT_KEY_AD"),	# Netherlands
+("1581 ", "TXT_KEY_AD"),	# Netherlands
 ("1701 ", "TXT_KEY_AD"),	# Germany
 ("1775 ", "TXT_KEY_AD"),	# America
 ("1810 ", "TXT_KEY_AD"),	# Argentina
@@ -859,7 +860,7 @@ tGoals2 = (
 ("TXT_KEY_UHV_MUG1", "TXT_KEY_UHV_MUG2", "TXT_KEY_UHV_MUG3"),
 ("TXT_KEY_UHV_TUR1", "TXT_KEY_UHV_TUR2", "TXT_KEY_UHV_TUR3"),
 ("TXT_KEY_UHV_THA1", "TXT_KEY_UHV_THA2", "TXT_KEY_UHV_THA3"),
-("TXT_KEY_UHV_CON1", "TXT_KEY_UHV_CON", "TXT_KEY_UHV_CON3"),
+("TXT_KEY_UHV_CON1", "TXT_KEY_UHV_CON2", "TXT_KEY_UHV_CON3"),
 ("TXT_KEY_UHV_HOL1", "TXT_KEY_UHV_HOL2", "TXT_KEY_UHV_HOL3"),
 ("TXT_KEY_UHV_GER1", "TXT_KEY_UHV_GER2", "TXT_KEY_UHV_GER3"),
 ("TXT_KEY_UHV_AME1", "TXT_KEY_UHV_AME2", "TXT_KEY_UHV_AME3"),

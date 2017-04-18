@@ -1268,6 +1268,10 @@
 		<English>Hotel</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HOTEL_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Hotels[COLOR_REVERT] increase a city's cultural output. They also increase trade route yield and increase trade route yield even more for each level of culture.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PARK</Tag>
 		<English>Park</English>
 	</TEXT>
