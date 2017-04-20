@@ -6776,6 +6776,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_NOBILITY</PrereqTech>
+			<BonusType>BONUS_CAMEL</BonusType>
 			<iCost>70</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -8001,6 +8002,7 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_COMBINED_ARMS</PrereqTech>
+			<BonusType>BONUS_CAMEL</BonusType>
 			<iCost>100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>

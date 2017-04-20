@@ -133,9 +133,16 @@
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TEA</Tag>
 		<English>Tea</English>
+		<German>Tee</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TOBACCO</Tag>
 		<English>Tobacco</English>
+		<German>Tabak</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_CAMEL</Tag>
+		<English>Camel</English>
+		<German>Kamel</German>
 	</TEXT>
 </Civ4GameText>

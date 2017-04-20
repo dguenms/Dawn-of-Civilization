@@ -3479,17 +3479,29 @@
 		<!-- Pasture -->
 		<ArtRef Name="goal:IMPROVEMENT_PASTURE">
 			<Attribute Class="Improvement">IMPROVEMENT_PASTURE</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_CAMEL</Attribute>
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:1</Attribute>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PASTURE">
 			<Attribute Class="Improvement">IMPROVEMENT_PASTURE</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_CAMEL</Attribute>
 			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Scalar">bApplyRotation:1</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Pasture/mod_pasture.nif</Attribute>
 			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Pasture/mod_pasture.kfm</Attribute>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_PASTURE">
+			<Attribute Class="Improvement">IMPROVEMENT_PASTURE</Attribute>
+			<Attribute Class="Bonus">BONUS_CAMEL</Attribute>
+			<Attribute Class="Era">ERA_ALL</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bApplyRotation:1</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Camp/Camp.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Camp/Camp.kfm</Attribute>
+			<Scale>0.9</Scale> 
 		</ArtRef>
 		
 		<!-- Quarry -->

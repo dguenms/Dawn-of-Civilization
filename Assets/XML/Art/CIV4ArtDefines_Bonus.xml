@@ -376,13 +376,23 @@
 			<FontButtonIndex>39</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
+			<Type>ART_DEF_BONUS_CAMEL</Type>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Terrain/Resources/Camel/Camel.nif</NIF>
+			<KFM>Art/Terrain/Resources/Deer/Deer.kfm</KFM>
+			<SHADERNIF>Art/Terrain/Resources/Camel/Camel.nif</SHADERNIF>
+			<Button>Art/Terrain/Resources/Camel/Camel_button.dds</Button>
+			<FontButtonIndex>40</FontButtonIndex>
+		</BonusArtInfo>
+		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_OLIVES</Type>
 			<fScale>0.5</fScale>
 			<fInterfaceScale>1.6</fInterfaceScale>
 			<NIF>Art/Terrain/Resources/Olives/olives.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Spices.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,14</Button>
-			<FontButtonIndex>40</FontButtonIndex>
+			<FontButtonIndex>41</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_BLUE</Type>
@@ -391,7 +401,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_blue.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,2,13</Button>
-			<FontButtonIndex>41</FontButtonIndex>
+			<FontButtonIndex>42</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_PURPLE</Type>
@@ -400,7 +410,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_purple.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,3,13</Button>
-			<FontButtonIndex>42</FontButtonIndex>
+			<FontButtonIndex>43</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_RED</Type>
@@ -409,7 +419,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_red.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,4,13</Button>
-			<FontButtonIndex>43</FontButtonIndex>
+			<FontButtonIndex>44</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_YELLOW</Type>
@@ -418,7 +428,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_yellow.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,13</Button>
-			<FontButtonIndex>44</FontButtonIndex>
+			<FontButtonIndex>45</FontButtonIndex>
 		</BonusArtInfo>
 		<BonusArtInfo>
 			<Type>ART_DEF_BONUS_VICTORY_GREEN</Type>
@@ -427,7 +437,7 @@
 			<NIF>Art/Structures/Buildings/Obelisk Marker/Obelisk_marker_green.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/WorldBuilder/Music.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,6,13</Button>
-			<FontButtonIndex>45</FontButtonIndex>
+			<FontButtonIndex>46</FontButtonIndex>
 		</BonusArtInfo>
 	</BonusArtInfos>
 </Civ4ArtDefines>

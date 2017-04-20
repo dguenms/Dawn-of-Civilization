@@ -275,6 +275,8 @@ class Resources:
 			self.createResource(1, 38, iSugar) # Hawaii
 			self.createResource(5, 36, iBanana) # Hawaii
 			
+			self.createResource(108, 18, iCamel) # Australia
+			
 			# flood plains in California
 			for tPlot in [(11, 46), (11, 47), (11, 48)]:
 				x, y = tPlot
