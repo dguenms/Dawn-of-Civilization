@@ -8037,7 +8037,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_PLAINS
@@ -15653,7 +15653,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -16531,7 +16531,7 @@ EndPlot
 BeginPlot
 	x=38,y=25
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -39069,7 +39069,7 @@ EndPlot
 BeginPlot
 	x=84,y=38
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	TeamReveal=8,24,34,44,45,
@@ -39565,7 +39565,7 @@ EndPlot
 BeginPlot
 	x=85,y=39
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=8,34,44,45,
@@ -42333,7 +42333,7 @@ EndPlot
 BeginPlot
 	x=91,y=32
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -46360,7 +46360,7 @@ EndPlot
 BeginPlot
 	x=100,y=32
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -49330,7 +49330,7 @@ EndPlot
 BeginPlot
 	x=106,y=25
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -50724,7 +50724,7 @@ EndPlot
 BeginPlot
 	x=109,y=26
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
@@ -52484,7 +52484,7 @@ EndPlot
 BeginPlot
 	x=113,y=27
 	BonusType=BONUS_SPICES
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
