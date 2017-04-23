@@ -1712,9 +1712,13 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 	//Leoreth: protect middle eastern cities from Seljuk invasions
 	if (pNewCity->isMiddleEast() && pNewCity->getOwnerINLINE() == SELJUKS)
+	{
 		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation)) : iPopulation);
+	}
 	else
+	{
 		pNewCity->setPopulation((bConquest && !bRecapture) ? std::max(1, (iPopulation - 1)) : iPopulation);
+	}
 
 	pNewCity->setHighestPopulation(iHighestPopulation);
 	pNewCity->setName(szName);
@@ -1850,10 +1854,13 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 			//Rhye - start UP (Babylonian)
 			//pNewCity->changeOccupationTimer(((GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100)) * (100 - iTeamCulturePercent)) / 100);
 			//if (getID() != BABYLONIA)
-			pNewCity->changeOccupationTimer(((GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100)) * (100 - iTeamCulturePercent)) / 100);
+			//pNewCity->changeOccupationTimer(((GC.getDefineINT("BASE_OCCUPATION_TURNS") + ((pNewCity->getPopulation() * GC.getDefineINT("OCCUPATION_TURNS_POPULATION_PERCENT")) / 100)) * (100 - iTeamCulturePercent)) / 100);
 			//else
 				//pNewCity->changeOccupationTimer(0);
 			//Rhye - end UP
+
+			// Leoreth: occupation timer depends on culture level
+			pNewCity->changeOccupationTimer((pNewCity->getCultureLevel() + 1) * (100 - iTeamCulturePercent) / 100);
 		}
 
 		GC.getMapINLINE().verifyUnitValidPlot();
