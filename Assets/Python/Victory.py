@@ -1418,7 +1418,7 @@ def checkTurn(iGameTurn, iPlayer):
 			if 2 * countReligionCities(iPlayer) > pPlayer.getNumCities():
 				data.bPolytheismNeverReligion = False
 				
-			if gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionName() == "Vedism":
+			if gc.getCivilizationInfo(gc.getPlayer(iPlayer).getCivilizationType()).getPaganReligionName(0) == "Vedism":
 				for city in utils.getCityList(iPlayer):
 					if city.isWeLoveTheKingDay():
 						data.iVedicHappiness += 1
