@@ -637,7 +637,9 @@ public:
 	void changeHappinessBonusCommerce(int iChange);
 
 	// Leoreth
-	void changeCapitalCommerce(int iChange);
+	int getCapitalCommerce() const;
+	void updateCapitalCommerce();
+	void applyCapitalCommerce(int iChange);
 
 	// Leoreth
 	int getWorkerCount() const;
@@ -1480,6 +1482,8 @@ protected:
 	int m_iReligiousTolerance;
 
 	int m_iWorkerCount;
+
+	int m_iCapitalCommerce;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;

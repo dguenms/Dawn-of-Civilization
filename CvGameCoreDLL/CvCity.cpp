@@ -951,14 +951,6 @@ void CvCity::kill(bool bUpdatePlotGroups)
 
 	GET_PLAYER(getOwnerINLINE()).deleteCity(getID());
 
-	// Leoreth
-	TeamTypes eMasterTeam = GET_TEAM(getTeam()).getMaster();
-	if (eMasterTeam != NO_TEAM)
-	{
-		CvPlayer& kMasterPlayer = GET_PLAYER(GET_TEAM(eMasterTeam).getLeaderID());
-		kMasterPlayer.changeCapitalCommerce(-kMasterPlayer.getVassalCityCommerce());
-	}
-
 	pPlot->updateCulture(true, false);
 
 	for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
@@ -10014,7 +10006,7 @@ void CvCity::setTradeYield(YieldTypes eIndex, int iNewValue)
 		// Leoreth: catch the overflow bug
 		if (getBaseYieldRate(eIndex) < 0 || getBaseYieldRate(eIndex) > 1000) {
 				GC.getGame().logMsg("Overflow in (%d, %d) for setTradeYield", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "setTradeYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setTradeYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
 			gDLL->getEngineIFace()->AutoSave(true);
@@ -10121,7 +10113,7 @@ void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 		// Leoreth: catch the overflow bug
 		if (getBaseYieldRate(eYield) < 0 || getBaseYieldRate(eYield) > 1000) {
 				GC.getGame().logMsg("Overflow in (%d, %d) for updateExtraSpecialistYield", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "updateExtraSpecialistYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"updateExtraSpecialistYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
 			gDLL->getEngineIFace()->AutoSave(true);
@@ -10808,7 +10800,7 @@ void CvCity::setCorporationYield(YieldTypes eIndex, int iNewValue)
 		// Leoreth: catch the overflow bug
 		if (getBaseYieldRate(eIndex) < 0 || getBaseYieldRate(eIndex) > 1000) {
 				GC.getGame().logMsg("Overflow in (%d, %d) for setCorporationYield", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "setCorporationYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setCorporationYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
 			gDLL->getEngineIFace()->AutoSave(true);
@@ -10949,7 +10941,7 @@ void CvCity::updateCorporationYield(YieldTypes eIndex)
 		// Leoreth: catch the overflow bug
 		if (getBaseYieldRate(eIndex) < 0 || getBaseYieldRate(eIndex) > 1000) {
 				GC.getGame().logMsg("Overflow in (%d, %d) for updateCorporationYield", getX(), getY());
-			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "updateCorporationYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"updateCorporationYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
 			gDLL->getEngineIFace()->AutoSave(true);
@@ -11885,11 +11877,6 @@ void CvCity::changeNumBonuses(BonusTypes eIndex, int iChange)
 		bool bOldHasBonus = hasBonus(eIndex);
 
 		m_paiNumBonuses[eIndex] += iChange;
-
-		if (isCapital() && GC.getBonusInfo(eIndex).getHappiness() > 0)
-		{
-			GET_PLAYER(getOwnerINLINE()).changeCapitalCommerce(iChange * GET_PLAYER(getOwnerINLINE()).getHappinessBonusCommerce());
-		}
 
 		if (bOldHasBonus != hasBonus(eIndex))
 		{
@@ -12827,7 +12814,7 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 					// Leoreth: catch the overflow bug
 					if (getBaseYieldRate((YieldTypes)iI) < 0 || getBaseYieldRate((YieldTypes)iI) > 1000) {
 						GC.getGame().logMsg("Overflow in (%d, %d) for setWorkingPlot", getX(), getY());
-						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "setWorkingPlot()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setWorkingPlot()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 						GC.getGame().setAIAutoPlay(0);
 						GC.getGame().setAIAutoPlayCatapult(0);
 						gDLL->getEngineIFace()->AutoSave(true);
@@ -12851,7 +12838,7 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 					// Leoreth: catch the overflow bug
 					if (getBaseYieldRate((YieldTypes)iI) < 0 || getBaseYieldRate((YieldTypes)iI) > 1000) {
 						GC.getGame().logMsg("Overflow in (%d, %d) for setWorkingPlot2", getX(), getY());
-						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "setWorkingPlot2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setWorkingPlot2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 						GC.getGame().setAIAutoPlay(0);
 						GC.getGame().setAIAutoPlayCatapult(0);
 						gDLL->getEngineIFace()->AutoSave(true);
@@ -16793,7 +16780,7 @@ void CvCity::updateBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldT
 			// Leoreth: catch the overflow bug
 			if (getBaseYieldRate(eYield) < 0 || getBaseYieldRate(eYield) > 1000) {
 				GC.getGame().logMsg("Overflow in (%d, %d) for updateBuildingYieldChange()", getX(), getY());
-				gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "setBuildingYieldChange2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+				gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setBuildingYieldChange2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 				GC.getGame().setAIAutoPlay(0);
 				GC.getGame().setAIAutoPlayCatapult(0);
 				gDLL->getEngineIFace()->AutoSave(true);
