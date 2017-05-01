@@ -10720,7 +10720,7 @@
 			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_COG</Description>
 			<Civilopedia>TXT_KEY_UNIT_COG_PEDIA</Civilopedia>
-			<Strategy/>
+			<Strategy>TXT_KEY_UNIT_COG_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -11094,24 +11094,12 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_CAPE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
 			<TerrainPassableTechs>
 				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_OPTICS</PassableTech>
 				</TerrainPassableTech>
 			</TerrainPassableTechs>
-			<FeaturePassableTechs>
-				<FeaturePassableTech>
-					<FeatureType>FEATURE_CAPE</FeatureType>
-					<PassableTech>TECH_CARTOGRAPHY</PassableTech>
-				</FeaturePassableTech>
-			</FeaturePassableTechs>
 			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
@@ -11409,24 +11397,12 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_CAPE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
 			<TerrainPassableTechs>
 				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_OPTICS</PassableTech>
 				</TerrainPassableTech>
 			</TerrainPassableTechs>
-			<FeaturePassableTechs>
-				<FeaturePassableTech>
-					<FeatureType>FEATURE_CAPE</FeatureType>
-					<PassableTech>TECH_COMPASS</PassableTech>
-				</FeaturePassableTech>
-			</FeaturePassableTechs>
 			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>

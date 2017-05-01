@@ -1469,7 +1469,7 @@
 		<English>Cog</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_GALLEY_STRATEGY</Tag>
+		<Tag>TXT_KEY_UNIT_COG_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Cogs[COLOR_REVERT] have two cargo spaces, cannot enter [COLOR_HIGHLIGHT_TEXT]Ocean[COLOR_REVERT] and cannot pass [COLOR_HIGHLIGHT_TEXT]Capes[COLOR_REVERT] until [COLOR_TECH_TEXT]Compass[COLOR_REVERT].</English>
 	</TEXT>
 	<TEXT>
