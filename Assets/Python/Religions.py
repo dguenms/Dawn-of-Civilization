@@ -422,10 +422,10 @@ class Religions:
 			if gc.getGame().isReligionFounded(iCatholicism): return
 		
 			pOrthodoxHolyCity = gc.getGame().getHolyCity(iOrthodoxy)
-			pCatholicHolyCity = gc.getGame().getHolyCity(iCatholicism)
 		
 			if pOrthodoxHolyCity.getOwner() != iPlayer:
 				self.foundReligion((city.getX(), city.getY()), iCatholicism)
+				pCatholicHolyCity = gc.getGame().getHolyCity(iCatholicism)
 				self.schism(pOrthodoxHolyCity, pCatholicHolyCity, [], [city for city in utils.getAllCities() if city.isHasReligion(iOrthodoxy) and city.getOwner() != pOrthodoxHolyCity.getOwner()])
 				
 					
