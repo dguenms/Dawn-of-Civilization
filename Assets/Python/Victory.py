@@ -195,7 +195,7 @@ dTechGoals = {
 	iChina: (1, [iCompass, iPaper, iGunpowder, iPrinting]),
 	iBabylonia: (0, [iConstruction, iArithmetics, iWriting, iCalendar, iContract]),
 	iGreece: (0, [iMathematics, iLiterature, iAesthetics, iPhilosophy, iMedicine]),
-	iRome: (2, [iArchitecture, iPolitics, iMachinery, iCivilService, iTheology]),
+	iRome: (2, [iArchitecture, iPolitics, iScholarship, iMachinery, iCivilService]),
 	iKorea: (1, [iPrinting]),
 	iPoland: (1, [iCivilLiberties]),
 }
@@ -3427,11 +3427,11 @@ def getUHVHelp(iPlayer, iGoal):
 		elif iGoal == 2:
 			bArchitecture = data.lFirstDiscovered[iArchitecture] == iRome
 			bPolitics = data.lFirstDiscovered[iPolitics] == iRome
+			bScholarship = data.lFirstDiscovered[iScholarship] == iRome
 			bMachinery = data.lFirstDiscovered[iMachinery] == iRome
 			bCivilService = data.lFirstDiscovered[iCivilService] == iRome
-			bTheology = data.lFirstDiscovered[iTheology] == iRome
-			aHelp.append(getIcon(bArchitecture) + localText.getText("TXT_KEY_TECH_ARCHITECTURE", ()) + ' ' + getIcon(bPolitics) + localText.getText("TXT_KEY_TECH_POLITICS", ()) + ' ' + getIcon(bMachinery) + localText.getText("TXT_KEY_TECH_MACHINERY", ()))
-			aHelp.append(getIcon(bCivilService) + localText.getText("TXT_KEY_TECH_CIVIL_SERVICE", ()) + ' ' + getIcon(bTheology) + localText.getText("TXT_KEY_TECH_THEOLOGY", ()))
+			aHelp.append(getIcon(bArchitecture) + localText.getText("TXT_KEY_TECH_ARCHITECTURE", ()) + ' ' + getIcon(bPolitics) + localText.getText("TXT_KEY_TECH_POLITICS", ()) + ' ' + getIcon(bScholarship) + localText.getText("TXT_KEY_TECH_SCHOLARSHIP", ()))
+			aHelp.append(getIcon(bMachinery) + localText.getText("TXT_KEY_TECH_MACHINERY", ()) + ' ' + getIcon(bCivilService) + localText.getText("TXT_KEY_TECH_CIVIL_SERVICE", ()) + ' ' + getIcon(bTheology) + localText.getText("TXT_KEY_TECH_THEOLOGY", ()))
 
 	elif iPlayer == iTamils:
 		if iGoal == 0:
