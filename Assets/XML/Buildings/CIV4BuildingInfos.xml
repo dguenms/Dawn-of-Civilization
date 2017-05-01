@@ -3631,7 +3631,7 @@
 			<iAsset>7</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceModifiers>
-				<iCommerce>65</iCommerce>
+				<iCommerce>40</iCommerce>
 			</CommerceModifiers>
 			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
 			<Flavors>
