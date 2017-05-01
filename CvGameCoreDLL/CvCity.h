@@ -858,6 +858,8 @@ public:
 	int getBuildingOriginalOwner(BuildingTypes eIndex) const;											// Exposed to Python
 	int getBuildingOriginalTime(BuildingTypes eIndex) const;											// Exposed to Python
 
+	void setBuildingOriginalOwner(BuildingTypes eBuilding, PlayerTypes ePlayer); // Leoreth
+
 	int getUnitProduction(UnitTypes eIndex) const;											// Exposed to Python
 	void setUnitProduction(UnitTypes eIndex, int iNewValue);								// Exposed to Python
 	void changeUnitProduction(UnitTypes eIndex, int iChange);								// Exposed to Python

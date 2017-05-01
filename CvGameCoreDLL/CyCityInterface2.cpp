@@ -133,5 +133,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("replaceReligion", &CyCity::replaceReligion, "void (int eOldReligion, int eNewReligion)")
 		.def("removeReligion", &CyCity::removeReligion, "void (int eReligion)")
 		.def("spreadReligion", &CyCity::spreadReligion, "void (int eReligion)")
+		.def("setBuildingOriginalOwner", &CyCity::setBuildingOriginalOwner, "void (int eBuilding, int ePlayer)")
 		;
 }

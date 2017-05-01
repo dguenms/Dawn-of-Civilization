@@ -18338,3 +18338,8 @@ int CvCity::getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuil
 	// cap total bombard defense at 100
 	return std::min(kBuilding.getUnignorableBombardDefenseModifier() + iBaseDefense, 100) - iBaseDefense;
 }
+
+void CvCity::setBuildingOriginalOwner(BuildingTypes eBuilding, PlayerTypes ePlayer)
+{
+	m_paiBuildingOriginalOwner[eBuilding] = ePlayer;
+}

@@ -2715,3 +2715,8 @@ void CyCity::spreadReligion(int eReligion)
 {
 	if (m_pCity) m_pCity->spreadReligion((ReligionTypes)eReligion, false);
 }
+
+void CyCity::setBuildingOriginalOwner(int eBuilding, int ePlayer)
+{
+	if (m_pCity) m_pCity->setBuildingOriginalOwner((BuildingTypes)eBuilding, (PlayerTypes)ePlayer);
+}

@@ -253,6 +253,7 @@ class RiseAndFall:
 			
 		if utils.getScenario() == i600AD:
 			self.create600ADstartingUnits()
+			self.adjust600ADWonders()
 			data.iBabylonianTechs = 4
 			
 		if utils.getScenario() == i1700AD:
@@ -260,6 +261,7 @@ class RiseAndFall:
 			self.init1700ADDiplomacy()
 			self.prepareColonists()
 			self.adjust1700ADCulture()
+			self.adjust1700ADWonders()
 			
 			for iPlayer in [iIndia, iPersia, iSpain, iHolyRome, iTurkey]:
 				utils.setReborn(iPlayer, True)
@@ -502,6 +504,96 @@ class RiseAndFall:
 			pShenyang.setHasRealBuilding(iGranary, True)
 			pShenyang.setHasRealBuilding(iWalls, True)
 			pShenyang.setHasRealBuilding(iConfucianTemple, True)
+			
+	def adjust600ADWonders(self):	
+		pBeijing = gc.getMap().plot(102, 47).getPlotCity()
+		pBeijing.setBuildingOriginalOwner(iTaoistShrine, iChina)
+		pBeijing.setBuildingOriginalOwner(iGreatWall, iChina)
+		
+		pNanjing = gc.getMap().plot(105, 43).getPlotCity()
+		pNanjing.setBuildingOriginalOwner(iConfucianShrine, iChina)
+		
+		pPataliputra = gc.getMap().plot(94, 40).getPlotCity()
+		pPataliputra.setBuildingOriginalOwner(iHinduShrine, iIndia)
+		pPataliputra.setBuildingOriginalOwner(iBuddhistShrine, iIndia)
+		
+		pSirajis = gc.getMap().plot(82, 38).getPlotCity()
+		pSirajis.setBuildingOriginalOwner(iZoroastrianShrine, iPersia)
+		
+		pAlexandria = gc.getMap().plot(67, 36).getPlotCity()
+		pAlexandria.setBuildingOriginalOwner(iGreatLighthouse, iEgypt)
+		pAlexandria.setBuildingOriginalOwner(iGreatLibrary, iEgypt)
+		
+		pMemphis = gc.getMap().plot(69, 35).getPlotCity()
+		pMemphis.setBuildingOriginalOwner(iPyramids, iEgypt)
+		pMemphis.setBuildingOriginalOwner(iGreatSphinx, iEgypt)
+		
+		pAthens = gc.getMap().plot(67, 41).getPlotCity()
+		pAthens.setBuildingOriginalOwner(iParthenon, iGreece)
+		
+		pRome = gc.getMap().plot(60, 44).getPlotCity()
+		pRome.setBuildingOriginalOwner(iColosseum, iRome)
+		
+		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
+		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
+		
+	def adjust1700ADWonders(self):
+		pMilan = gc.getMap().plot(59, 47).getPlotCity()
+		pMilan.setBuildingOriginalOwner(iLeaningTower, iItaly)
+		pMilan.setBuildingOriginalOwner(iSanMarcoBasilica, iItaly)
+		
+		pDjenne = gc.getMap().plot(51, 29).getPlotCity()
+		pDjenne.setBuildingOriginalOwner(iUniversityOfSankore, iMali)
+		
+		pJerusalem = gc.getMap().plot(73, 38).getPlotCity()
+		pJerusalem.setBuildingOriginalOwner(iJewishShrine, iIndependent)
+		pJerusalem.setBuildingOriginalOwner(iOrthodoxShrine, iByzantium)
+		pJerusalem.setBuildingOriginalOwner(iDomeOfTheRock, iArabia)
+		
+		pBaghdad = gc.getMap().plot(77, 40).getPlotCity()
+		pBaghdad.setBuildingOriginalOwner(iSpiralMinaret, iArabia)
+		
+		pRome = gc.getMap().plot(60, 44).getPlotCity()
+		pRome.setBuildingOriginalOwner(iColosseum, iRome)
+		pRome.setBuildingOriginalOwner(iSistineChapel, iItaly)
+		
+		pSeville = gc.getMap().plot(51, 41).getPlotCity()
+		pSeville.setBuildingOriginalOwner(iMezquita, iMoors)
+		
+		pBangkok = gc.getMap().plot(101, 33).getPlotCity()
+		pBangkok.setBuildingOriginalOwner(iWatPreahPisnulok, iKhmer)
+		
+		pChichenItza = gc.getMap().plot(23, 37).getPlotCity()
+		pChichenItza.setBuildingOriginalOwner(iTempleOfKukulkan, iMaya)
+		
+		pConstantinople = gc.getMap().plot(68, 45).getPlotCity()
+		pConstantinople.setBuildingOriginalOwner(iTheodosianWalls, iByzantium)
+		pConstantinople.setBuildingOriginalOwner(iHagiaSophia, iByzantium)
+		
+		pJakarta = gc.getMap().plot(104, 25).getPlotCity()
+		pJakarta.setBuildingOriginalOwner(iBorobudur, iIndonesia)
+		
+		pMexicoCity = gc.getMap().plot(18, 37).getPlotCity()
+		pMexicoCity.setBuildingOriginalOwner(iFloatingGardens, iAztecs)
+		
+		pCairo = gc.getMap().plot(69, 35).getPlotCity()
+		pCairo.setBuildingOriginalOwner(iPyramids, iEgypt)
+		pCairo.setBuildingOriginalOwner(iGreatSphinx, iEgypt)
+		
+		pAthens = gc.getMap().plot(67, 41).getPlotCity()
+		pAthens.setBuildingOriginalOwner(iParthenon, iGreece)
+		
+		pShiraz = gc.getMap().plot(82, 38).getPlotCity()
+		pShiraz.setBuildingOriginalOwner(iZoroastrianShrine, iPersia)
+		
+		pPataliputra = gc.getMap().plot(94, 40).getPlotCity()
+		pPataliputra.setBuildingOriginalOwner(iHinduShrine, iIndia)
+		pPataliputra.setBuildingOriginalOwner(iBuddhistShrine, iIndia)
+		
+		pMecca = gc.getMap().plot(75, 33).getPlotCity()
+		pMecca.setBuildingOriginalOwner(iIslamicShrine, iArabia)
+		
+		
 
 	def setupBirthTurnModifiers(self):
 		for iCiv in range(iNumPlayers):
