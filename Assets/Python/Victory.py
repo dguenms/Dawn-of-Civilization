@@ -551,7 +551,7 @@ def checkTurn(iGameTurn, iPlayer):
 					
 	elif iPlayer == iEthiopia:
 	
-		# first goal: found Catholicism
+		# first goal: found Orthodoxy
 		
 		# second goal: acquire three incense resources by 600 AD
 		if isPossible(iEthiopia, 1):

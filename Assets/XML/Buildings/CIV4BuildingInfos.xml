@@ -1966,7 +1966,6 @@
 			<iCost>30</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iMaxLatitude>90</iMaxLatitude>
 			<iAsset>1</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
