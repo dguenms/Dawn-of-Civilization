@@ -2591,7 +2591,7 @@
 			<Type>ART_DEF_BUILDING_MAZDAIST_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>5.8</fScale>
+			<fScale>0.6</fScale>
 			<fInterfaceScale>0.08</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Mazdaist_Temple/pavillon.nif</NIF>
 			<KFM/>
@@ -2619,9 +2619,9 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ASATRU_HOF</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
+			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
-			<fScale>5.0</fScale>
+			<fScale>1.2</fScale>
 			<fInterfaceScale>1.6</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Asatru_Hof/norse_temple.nif</NIF>
 			<KFM/>
