@@ -1569,11 +1569,11 @@
 			<Civilopedia>TXT_KEY_IMPROVEMENT_ORCHARD_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_ORCHARD</ArtDefineTag>
 			<PrereqNatureYields/>
-			<IrrigatedYieldChange>
-				<iYield>1</iYield>
-				<iYield>0</iYield>
-				<iYield>0</iYield>
-			</IrrigatedYieldChange>
+			<YieldChanges>
+				<iYieldChange>1</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+			</YieldChanges>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
@@ -1582,7 +1582,7 @@
 			<bRequiresFlatlands>0</bRequiresFlatlands>
 			<bRequiresRiverSide>0</bRequiresRiverSide>
 			<bRequiresIrrigation>0</bRequiresIrrigation>
-			<bCarriesIrrigation>0</bCarriesIrrigation>
+			<bCarriesIrrigation>1</bCarriesIrrigation>
 			<bRequiresFeature>0</bRequiresFeature>
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
