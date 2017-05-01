@@ -5950,7 +5950,7 @@ int CvCity::getNumActiveWorldWonders() const
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
-		if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType())))
+		if (isWorldWonderClass((BuildingClassTypes)(GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType())) && GC.getBuildingInfo((BuildingTypes)iI).getProductionCost() > 0)
 		{
 			if (getNumRealBuilding((BuildingTypes)iI) > 0 && !(GET_TEAM(getTeam()).isObsoleteBuilding((BuildingTypes)iI)))
 			{
