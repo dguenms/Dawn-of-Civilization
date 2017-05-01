@@ -7325,19 +7325,17 @@ void CvCity::changeBonusBadHealth(int iChange)
 
 int CvCity::getMilitaryHappinessUnits() const
 {
+	int iMilitaryHappinessUnits = m_iMilitaryHappinessUnits;
 	int iMilitaryHappinessLimit = GET_PLAYER(getOwnerINLINE()).getMilitaryHappinessLimit();
-
-	// Leoreth: at most half the city population
-	iMilitaryHappinessLimit = std::min(iMilitaryHappinessLimit, getPopulation() / 2);
 
 	if (iMilitaryHappinessLimit > 0)
 	{
-		return std::min(m_iMilitaryHappinessUnits, iMilitaryHappinessLimit);
+		iMilitaryHappinessUnits = std::min(iMilitaryHappinessUnits, iMilitaryHappinessLimit);
 	}
-	else
-	{
-		return m_iMilitaryHappinessUnits;
-	}
+
+	iMilitaryHappinessUnits = std::min(iMilitaryHappinessUnits, getPopulation() / 2);
+
+	return iMilitaryHappinessUnits;
 }
 
 
