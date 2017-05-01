@@ -244,6 +244,7 @@ class RiseAndFall:
 		self.foundCapitals()
 		self.flipStartingTerritory()
 		
+		self.adjustReligionFoundingDates()
 		self.initStartingReligions()
 		
 		Civilizations.initScenarioTechs(utils.getScenario())
@@ -592,8 +593,6 @@ class RiseAndFall:
 		
 		pMecca = gc.getMap().plot(75, 33).getPlotCity()
 		pMecca.setBuildingOriginalOwner(iIslamicShrine, iArabia)
-		
-		
 
 	def setupBirthTurnModifiers(self):
 		for iCiv in range(iNumPlayers):
@@ -639,6 +638,13 @@ class RiseAndFall:
 		self.placeHut((114, 10), (118, 17)) # Western Australia
 		self.placeHut((120, 5), (123, 11)) # New Zealand
 		self.placeHut((59, 25), (67, 28)) # Central Africa
+		
+	def adjustReligionFoundingDates(self):
+		lReligionFoundingYears = [-2000, 40, 500, 1521, 622, -1500, 80, -500, -400, -600]
+	
+		for iReligion in range(iNumReligions):
+			if gc.getGame().isReligionFounded(iReligion):
+				gc.getGame().setReligionGameTurnFounded(iReligion, getTurnForYear(lReligionFoundingYears[iReligion]))
 		
 	def initStartingReligions(self):
 	

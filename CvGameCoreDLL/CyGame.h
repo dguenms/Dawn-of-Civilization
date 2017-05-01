@@ -202,6 +202,7 @@ public:
 	int getVoteOutcome(int /*VoteTypes*/ eIndex);
 
 	int getReligionGameTurnFounded(int /*ReligionTypes*/ eIndex);
+	void setReligionGameTurnFounded(int eReligion, int iGameTurn);
 	bool isReligionFounded(int /*ReligionTypes*/ eIndex);
 	bool isReligionSlotTaken(int /*ReligionTypes*/ eIndex);
 	int getCorporationGameTurnFounded(int /*CorporationTypes*/ eIndex);

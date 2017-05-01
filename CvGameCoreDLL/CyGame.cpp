@@ -835,6 +835,11 @@ int CyGame::getReligionGameTurnFounded(int /*ReligionTypes*/ eIndex)
 	return m_pGame ? m_pGame->getReligionGameTurnFounded((ReligionTypes) eIndex) : -1;
 }
 
+void CyGame::setReligionGameTurnFounded(int eReligion, int iGameTurn)
+{
+	if (m_pGame) m_pGame->setReligionGameTurnFounded((ReligionTypes)eReligion, iGameTurn);
+}
+
 bool CyGame::isReligionFounded(int /*ReligionTypes*/ eIndex)
 {
 	return m_pGame ? m_pGame->isReligionFounded((ReligionTypes) eIndex) : false;

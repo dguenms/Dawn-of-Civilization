@@ -5670,6 +5670,12 @@ int CvGame::getReligionGameTurnFounded(ReligionTypes eIndex)
 }
 
 
+void CvGame::setReligionGameTurnFounded(ReligionTypes eReligion, int iGameTurn)
+{
+	m_paiReligionGameTurnFounded[eReligion] = iGameTurn;
+}
+
+
 bool CvGame::isReligionFounded(ReligionTypes eIndex)
 {
 	return (getReligionGameTurnFounded(eIndex) != -1);
@@ -5684,7 +5690,7 @@ void CvGame::makeReligionFounded(ReligionTypes eIndex, PlayerTypes ePlayer)
 	if (!isReligionFounded(eIndex))
 	{
 		FAssertMsg(getGameTurn() != -1, "getGameTurn() is not expected to be equal with -1");
-		m_paiReligionGameTurnFounded[eIndex] = getGameTurn();
+		setReligionGameTurnFounded(eIndex, getGameTurn());
 
 		CvEventReporter::getInstance().religionFounded(eIndex, ePlayer);
 
