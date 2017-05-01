@@ -4875,44 +4875,43 @@ void CvPlayer::findNewCapital()
 	int iOldCapitalArea = -1;
 	
 	if (pOldCapital != NULL)
+	{
 		pOldCapital->getArea();
+	}
 
 	iBestValue = 0;
 	pBestCity = NULL;
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		if (pLoopCity != pOldCapital)
+		if (0 == pLoopCity->getNumRealBuilding(eCapitalBuilding))
 		{
-			if (0 == pLoopCity->getNumRealBuilding(eCapitalBuilding))
+			iValue = (pLoopCity->getPopulation() * 4);
+
+			iValue += pLoopCity->getYieldRate(YIELD_FOOD);
+			iValue += (pLoopCity->getYieldRate(YIELD_PRODUCTION) * 3);
+			iValue += (pLoopCity->getYieldRate(YIELD_COMMERCE) * 2);
+			iValue += pLoopCity->getCultureLevel();
+			iValue += pLoopCity->getReligionCount();
+			iValue += pLoopCity->getCorporationCount();
+			iValue += (pLoopCity->getNumGreatPeople() * 2);
+
+			if (getID() == ARABIA)
+				iValue += (pLoopCity->isHolyCity())? 25 : 0;
+
+			// Leoreth: prefer cities on the same continent
+			if (pLoopCity->getArea() == iOldCapitalArea)
 			{
-				iValue = (pLoopCity->getPopulation() * 4);
+				iValue *= 10;
+			}
 
-				iValue += pLoopCity->getYieldRate(YIELD_FOOD);
-				iValue += (pLoopCity->getYieldRate(YIELD_PRODUCTION) * 3);
-				iValue += (pLoopCity->getYieldRate(YIELD_COMMERCE) * 2);
-				iValue += pLoopCity->getCultureLevel();
-				iValue += pLoopCity->getReligionCount();
-				iValue += pLoopCity->getCorporationCount();
-				iValue += (pLoopCity->getNumGreatPeople() * 2);
+			iValue *= (pLoopCity->calculateCulturePercent(getID()) + 100);
+			iValue /= 100;
 
-				if (getID() == ARABIA)
-					iValue += (pLoopCity->isHolyCity())? 25 : 0;
-
-				// Leoreth: prefer cities on the same continent
-				if (pLoopCity->getArea() == iOldCapitalArea)
-				{
-					iValue *= 10;
-				}
-
-				iValue *= (pLoopCity->calculateCulturePercent(getID()) + 100);
-				iValue /= 100;
-
-				if (iValue > iBestValue)
-				{
-					iBestValue = iValue;
-					pBestCity = pLoopCity;
-				}
+			if (iValue > iBestValue)
+			{
+				iBestValue = iValue;
+				pBestCity = pLoopCity;
 			}
 		}
 	}
@@ -4924,6 +4923,7 @@ void CvPlayer::findNewCapital()
 			pOldCapital->setNumRealBuilding(eCapitalBuilding, 0);
 		}
 		FAssertMsg(!(pBestCity->getNumRealBuilding(eCapitalBuilding)), "(pBestCity->getNumRealBuilding(eCapitalBuilding)) did not return false as expected");
+		
 		pBestCity->setNumRealBuilding(eCapitalBuilding, 1);
 	}
 }
@@ -10947,6 +10947,7 @@ void CvPlayer::setCapitalCity(CvCity* pNewCapitalCity)
 
 			pOldCapitalCity->setInfoDirty(true);
 		}
+
 		if (pNewCapitalCity != NULL)
 		{
 			pNewCapitalCity->changeBuildingYieldChange(BUILDING_PALACE, YIELD_COMMERCE, getCapitalCommerce());
