@@ -715,8 +715,8 @@ class CvRFCEventHandler:
 		if iPlayer == iItaly and iEra == iIndustrial:
 			utils.setReborn(iItaly, True)
 			
-		# Arabia's core moves to Iraq when Scholarship is discovered
-		if iPlayer == iArabia and iTech == iScholarship:
+		# Arabia's core moves to Iraq when Education is discovered
+		if iPlayer == iArabia and iTech == iEducation:
 			utils.setReborn(iArabia, True)
 			
 		# Japan's core extends when reaching the Industrial era
