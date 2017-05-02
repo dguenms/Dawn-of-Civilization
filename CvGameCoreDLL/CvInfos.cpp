@@ -3126,6 +3126,7 @@ m_bReformGovernment(false), // Leoreth
 m_bDiplomaticMission(false), // Leoreth
 m_bPersecute(false), // Leoreth
 m_bGreatMission(false), // Leoreth
+m_bSlave(false), // Leoreth
 m_fUnitMaxSpeed(0.0f),
 m_fUnitPadTime(0.0f),
 m_pbUpgradeUnitClass(NULL),
@@ -3812,11 +3813,6 @@ void CvUnitInfo::setCommandType(int iNewType)
 	m_iCommandType = iNewType;
 }
 
-bool CvUnitInfo::isSlave() const
-{
-	return (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SLAVE"));
-}
-
 bool CvUnitInfo::isResolveCrisis() const
 {
 	return m_bResolveCrisis;
@@ -3842,9 +3838,14 @@ bool CvUnitInfo::isGreatMission() const
 	return m_bGreatMission;
 }
 
+bool CvUnitInfo::isSlave() const
+{
+	return m_bSlave;
+}
+
 bool CvUnitInfo::isWorker() const
 {
-	return getWorkRate() > 0 && getDomainType() == DOMAIN_LAND && getCombat() == 0;
+	return getWorkRate() > 0 && getDomainType() == DOMAIN_LAND && getCombat() == 0 && !isSlave();
 }
 
 // BUG - Unit Experience - start
@@ -4395,6 +4396,7 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bMilitarySupport);
 	stream->Read(&m_bMilitaryProduction);
 	stream->Read(&m_bPillage);
+	stream->Read(&m_bSlave); // Leoreth
 	stream->Read(&m_bSpy);
 	stream->Read(&m_bSabotage);
 	stream->Read(&m_bDestroy);
@@ -4707,6 +4709,7 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bMilitarySupport);
 	stream->Write(m_bMilitaryProduction);
 	stream->Write(m_bPillage);
+	stream->Write(m_bSlave); // Leoreth
 	stream->Write(m_bSpy);
 	stream->Write(m_bSabotage);
 	stream->Write(m_bDestroy);
@@ -4856,6 +4859,7 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bMilitarySupport, "bMilitarySupport");
 	pXML->GetChildXmlValByName(&m_bMilitaryProduction, "bMilitaryProduction");
 	pXML->GetChildXmlValByName(&m_bPillage, "bPillage");
+	pXML->GetChildXmlValByName(&m_bSlave, "bSlave"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bSpy, "bSpy");
 	pXML->GetChildXmlValByName(&m_bSabotage, "bSabotage");
 	pXML->GetChildXmlValByName(&m_bDestroy, "bDestroy");

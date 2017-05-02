@@ -1134,6 +1134,7 @@ protected:
 	bool m_bDiplomaticMission;
 	bool m_bPersecute;
 	bool m_bGreatMission;
+	bool m_bSlave;
 
 	float m_fUnitMaxSpeed;
 	float m_fUnitPadTime;

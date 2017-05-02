@@ -115,6 +115,7 @@
 	<ElementType name="bMilitarySupport" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bMilitaryProduction" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPillage" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bSlave" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSpy" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bSabotage" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bDestroy" content="textOnly" dt:type="boolean"/>
@@ -544,6 +545,7 @@
 		<element type="bMilitarySupport" minOccurs="0"/>
 		<element type="bMilitaryProduction" minOccurs="0"/>
 		<element type="bPillage" minOccurs="0"/>
+		<element type="bSlave" minOccurs="0"/>
 		<element type="bSpy" minOccurs="0"/>
 		<element type="bSabotage" minOccurs="0"/>
 		<element type="bDestroy" minOccurs="0"/>
