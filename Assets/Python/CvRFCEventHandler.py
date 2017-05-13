@@ -357,11 +357,12 @@ class CvRFCEventHandler:
 		sta.onPlayerChangeStateReligion(iPlayer)
 
 	def onCombatResult(self, argsList):
-		self.up.aztecUP(argsList)
 		self.rnf.immuneMode(argsList)
 		self.up.vikingUP(argsList) # includes Moorish Corsairs
 		
 		pWinningUnit, pLosingUnit = argsList
+		iWinningPlayer = pWinningUnit.getOwner()
+		iLosingPlayer = pLosingUnit.getOwner()
 		
 		vic.onCombatResult(pWinningUnit, pLosingUnit)
 		
@@ -371,18 +372,24 @@ class CvRFCEventHandler:
 		if pLosingUnitInfo.getUnitCombatType() != gc.getInfoTypeForString("UNITCOMBAT_SIEGE"):
 			iUnitPower = pLosingUnitInfo.getPowerValue()
 		
-		sta.onCombatResult(pWinningUnit.getOwner(), pLosingUnit.getOwner(), iUnitPower)
+		sta.onCombatResult(iWinningPlayer, iLosingPlayer, iUnitPower)
 		
-		# catch slaves by defeating native and barbarian Pombos or Impis
-		if pLosingUnit.getOwner() in [iBarbarian, iNative] and pLosingUnit.getUnitType() in [iImpi, iPombos]:
-			if gc.getMap().plot(pLosingUnit.getX(), pLosingUnit.getY()).getOwner() == pWinningUnit.getOwner():
-				if gc.getPlayer(pWinningUnit.getOwner()).isEnslave():
-					iRand = gc.getGame().getSorenRandNum(5, "Caught slaves?")
-					if iRand == 1:
-						iNewUnit = utils.getUniqueUnitType(pWinningUnit.getOwner(), gc.getUnitInfo(iSlave).getUnitClassType())
-						utils.makeUnit(iNewUnit, pWinningUnit.getOwner(), (pWinningUnit.getX(), pWinningUnit.getY()), 1)
-						CyInterface().addMessage(pWinningUnit.getOwner(),True,15,CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()),'SND_REVOLTEND',1,'Art/Units/slave/button_slave.dds',ColorTypes(8),pWinningUnit.getX(),pWinningUnit.getY(),True,True)
-
+		# capture slaves
+		if iLosingPlayer == iNative:
+			if iWinningPlayer == iAztecs:
+				utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
+			elif gc.getPlayer(iWinningPlayer).isColonialSlavery() or gc.getPlayer(iWinningPlayer).isSlavery():
+				utils.captureUnit(pLosingUnit, pWinningUnit, iNativeSlave, 35)
+				
+		elif iLosingPlayer == iBarbarian:
+			if iWinningPlayer == iAztecs:
+				utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
+			elif gc.getPlayer(iWinningPlayer).isSlavery():
+				utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 25)
+				
+		elif iWinningPlayer == iAztecs:
+			utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
+		
 		# Maya Holkans give food to closest city on victory
 		if pWinningUnit.getUnitType() == iHolkan:
 			iOwner = pWinningUnit.getOwner()
@@ -489,7 +496,7 @@ class CvRFCEventHandler:
 			utils.handleChineseCities(unit)
 			
 		# Leoreth: help AI by moving new slaves to the new world
-		if unit.getUnitType() == iSlave and city.getRegionID() in [rIberia, rBritain, rEurope, rScandinavia, rRussia, rItaly, rBalkans, rMaghreb, rAnatolia] and utils.getHumanID() != city.getOwner():
+		if unit.getUnitType() == iNativeSlave and city.getRegionID() in [rIberia, rBritain, rEurope, rScandinavia, rRussia, rItaly, rBalkans, rMaghreb, rAnatolia] and utils.getHumanID() != city.getOwner():
 			utils.moveSlaveToNewWorld(city.getOwner(), unit)
 			
 	

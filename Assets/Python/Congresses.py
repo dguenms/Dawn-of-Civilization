@@ -732,7 +732,7 @@ class Congress:
 		print sDebugText
 		
 		# everyone agrees on AI American claims in the west
-		if iClaimant == iAmerica and utils.getHumanID() != iAmerica and iVoter != iOwner:
+		if iClaimant == iAmerica and iVoter != iOwner:
 			if utils.isPlotInArea((x, y), tAmericanClaimsTL, tAmericanClaimsBR):
 				self.vote(iVoter, iClaimant, 1)
 				return

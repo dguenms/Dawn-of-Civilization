@@ -1134,6 +1134,7 @@ protected:
 	bool m_bDiplomaticMission;
 	bool m_bPersecute;
 	bool m_bGreatMission;
+	bool m_bSlave;
 
 	float m_fUnitMaxSpeed;
 	float m_fUnitPadTime;
@@ -1402,7 +1403,6 @@ public:
 	bool isStabilityFoundBonus() const;				//Rhye 6th
 	bool isStabilityConquestBonus() const;				//Rhye 6th
 	bool isStabilityCommerceBonus() const;				//Rhye 6th
-	bool isEnslave() const; // Leoreth
 	bool isSlavery() const; // Leoreth
 	bool isColonialSlavery() const; // Leoreth
 
@@ -1521,7 +1521,6 @@ protected:
 	bool m_bStabilityFoundBonus; //Rhye 6th
 	bool m_bStabilityConquestBonus; //Rhye 6th
 	bool m_bStabilityCommerceBonus; //Rhye 6th
-	bool m_bEnslave; // Leoreth
 	bool m_bSlavery; // Leoreth
 	bool m_bColonialSlavery; // Leoreth
 

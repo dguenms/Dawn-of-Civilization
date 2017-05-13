@@ -2087,12 +2087,9 @@ void CvGame::startFlyoutMenu(const CvPlot* pPlot, std::vector<CvFlyoutMenuData>&
 				}
 			}
 
-			if (pCity->canConscript() || pCity->canEnslave()) //Leoreth
+			if (pCity->canConscript()) //Leoreth
 			{
 				UnitTypes eConscriptUnit = pCity->getConscriptUnit();
-
-				if (pCity->canEnslave())
-					eConscriptUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(pCity->getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE"));
 
 				if (eConscriptUnit != NO_UNIT)
 				{
