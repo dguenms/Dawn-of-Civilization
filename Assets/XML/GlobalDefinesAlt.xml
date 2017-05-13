@@ -20,6 +20,10 @@
 		<DefineName>AI_SLAVE_VALUE</DefineName>
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>CAPTURE_GOLD_FOR_CAPTURED_SLAVES</DefineName>
+		<iDefineIntVal>50</iDefineIntVal>
+	</Define>
 	<!-- Merijn: Additional options for game personalization -->
 	<Define>
 		<DefineName>NO_HUMAN_STABILITY</DefineName>

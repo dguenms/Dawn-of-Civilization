@@ -606,11 +606,7 @@ public:
 	void changeCoastalTradeRoutes(int iChange);																													// Exposed to Python
 
 	int getTradeRoutes() const;																																								// Exposed to Python
-	void changeTradeRoutes(int iChange);																																// Exposed to Python
-
-	// Leoreth
-	bool isEnslave() const;
-	void changeEnslaveCount(int iChange);
+	void changeTradeRoutes(int iChange);
 
 	// Leoreth
 	bool isSlavery() const;
@@ -1147,7 +1143,6 @@ public:
 	DllExport const CvArtInfoUnit* getUnitArtInfo(UnitTypes eUnit, int iMeshGroup = 0) const;
 	DllExport bool hasSpaceshipArrived() const;
 
-	bool canEnslave() const;
 	TeamTypes getWorstEnemy() const;
 
 // BUG - Reminder Mod - start
@@ -1406,7 +1401,6 @@ protected:
 	int m_iVassalCityCommerce; // Leoreth
 	int m_iHappinessBonusCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
-	int m_iEnslaveCount; // Leoreth
 	int m_iSlaveryCount; // Leoreth
 	int m_iColonialSlaveryCount; // Leoreth
 	int m_iRevolutionTimer;

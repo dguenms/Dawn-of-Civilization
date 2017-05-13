@@ -1157,7 +1157,7 @@ class RFCUtils:
 						
 		lSlaves = []
 		for unit in PyPlayer(iPlayer).getUnitList():
-			if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_SLAVE"):
+			if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_NATIVE_SLAVE"):
 				lSlaves.append(unit)
 				
 		for slave in lSlaves:
@@ -1170,7 +1170,7 @@ class RFCUtils:
 		iNumSlaves = city.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"))
 		if iNumSlaves > 0:
 			city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
-			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(iSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
+			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(iNativeSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
 		
 	def getRandomEntry(self, list):
 		if not list: return False
@@ -1786,5 +1786,24 @@ class RFCUtils:
 		
 	def getWorldPlotsList(self):
 		return [(x, y) for x in range(iWorldX) for y in range(iWorldY)]
-
+		
+	def captureUnit(self, pLosingUnit, pWinningUnit, iUnit, iChance):
+		if pLosingUnit.isAnimal(): return
+		
+		if pLosingUnit.getDomainType() != DomainTypes.DOMAIN_LAND: return
+		
+		if gc.getUnitInfo(pLosingUnit.getUnitType()).getCombat() == 0: return
+		
+		iPlayer = pWinningUnit.getOwner()
+		
+		iRand = gc.getGame().getSorenRandNum(100, "capture slaves")
+		if iRand < iChance:
+			self.makeUnitAI(iUnit, iPlayer, (pWinningUnit.getX(), pWinningUnit.getY()), UnitAITypes.UNITAI_WORKER, 1)
+			CyInterface().addMessage(pWinningUnit.getOwner(), True, 15, CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()), 'SND_REVOLTEND', 1, gc.getUnitInfo(iUnit).getButton(), ColorTypes(8), pWinningUnit.getX(), pWinningUnit.getY(), True, True)
+			CyInterface().addMessage(pLosingUnit.getOwner(), True, 15, CyTranslator().getText("TXT_KEY_UP_ENSLAVE_LOSE", ()), 'SND_REVOLTEND', 1, gc.getUnitInfo(iUnit).getButton(), ColorTypes(7), pWinningUnit.getX(), pWinningUnit.getY(), True, True)
+			
+			if iPlayer == iAztecs:
+				if pLosingUnit.getOwner() not in lCivGroups[5] and pLosingUnit.getOwner() < iNumPlayers:
+					data.iAztecSlaves += 1
+			
 utils = RFCUtils()

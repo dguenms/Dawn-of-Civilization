@@ -2114,7 +2114,7 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	}
 
 	// Leoreth: can't train slaves
-	if (GC.getUnitInfo(eUnit).getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+	if (GC.getUnitInfo(eUnit).isSlave())
 	{
 		return false;
 	}
@@ -3985,12 +3985,6 @@ UnitTypes CvCity::getConscriptUnit() const
 		eBestUnit = ((UnitTypes)lConscriptUnit);
 	}
 
-	//Leoreth: enslavement
-	if (canEnslave(true))
-	{
-		eBestUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE"));
-	}
-
 	return eBestUnit;
 }
 
@@ -4147,7 +4141,7 @@ CvUnit* CvCity::initConscriptedUnit()
 
 void CvCity::conscript()
 {
-	if (!canConscript() && !canEnslave())
+	if (!canConscript())
 	{
 		return;
 	}
@@ -10029,7 +10023,9 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
 
 	if (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
+	{
 		return 0;
+	}
 
 	return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex)));
 }
@@ -17508,44 +17504,6 @@ bool CvCity::isMiddleEast() const
 	return (getRegionID() == REGION_PERSIA || getRegionID() == REGION_MESOPOTAMIA || getRegionID() == REGION_ANATOLIA || (getX_INLINE() == 68 && getY_INLINE() == 45));
 }
 
-bool CvCity::canEnslave(bool bGeneral) const
-{			
-	if (GET_PLAYER(getOwnerINLINE()).canEnslave())
-	{
-		if (getRegionID() == REGION_WEST_AFRICA || getRegionID() == REGION_SOUTH_AFRICA || getRegionID() == REGION_ETHIOPIA)
-		{
-			if (bGeneral)
-			{
-				return true;
-			}
-
-			if (isDisorder())
-			{
-				return false;
-			}
-
-			if (isDrafted())
-			{
-				return false;
-			}
-
-			if (getPopulation() <= 2)
-			{
-				return false;
-			}
-
-			if (getPopulation() < conscriptMinCityPopulation())
-			{
-				return false;
-			}
-
-			return true;
-		}
-	}
-
-	return false;
-}
-
 int CvCity::getSpecialistGoodHappiness() const
 {
 	return m_iSpecialistGoodHappiness;
@@ -17687,7 +17645,9 @@ bool CvCity::isColony() const
 // Leoreth: at most half of the population may be slaves
 bool CvCity::canSlaveJoin() const
 {
-	if (!GET_PLAYER(getOwnerINLINE()).isSlavery()) return false;
+	if (!GET_PLAYER(getOwnerINLINE()).isColonialSlavery()) return false;
+
+	if (!isColony()) return false;
 
 	SpecialistTypes eSlave = (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE");
 	int iNumSlaves = getFreeSpecialistCount(eSlave);

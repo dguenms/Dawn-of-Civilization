@@ -762,6 +762,16 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	eOwner = getOwnerINLINE();
 	eCapturingPlayer = getCapturingPlayer();
 	eCaptureUnitType = ((eCapturingPlayer != NO_PLAYER) ? getCaptureUnitType(GET_PLAYER(eCapturingPlayer).getCivilizationType()) : NO_UNIT);
+
+	// captured workers become slaves with Slavery
+	if (eCaptureUnitType != NO_UNIT && GC.getUnitInfo(eCaptureUnitType).isWorker())
+	{
+		if (eCapturingPlayer != NO_PLAYER && GET_PLAYER(eCapturingPlayer).isSlavery())
+		{
+			eCaptureUnitType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(eCapturingPlayer).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE"));
+		}
+	}
+
 // BUG - Unit Captured Event - start
 	PlayerTypes eFromPlayer = getOwner();
 	UnitTypes eCapturedUnitType = getUnitType();
@@ -5959,7 +5969,7 @@ bool CvUnit::canJoin(const CvPlot* pPlot, SpecialistTypes eSpecialist) const
 	}
 
 	//Leoreth: no slavery in the motherland or with egalitarianism
-	if (getUnitType() == GC.getInfoTypeForString("UNIT_SLAVE"))
+	if (GC.getUnitInfo(getUnitType()).isSlave())
 	{
 		if (!GET_PLAYER(getOwner()).isSlavery() && !GET_PLAYER(getOwner()).isColonialSlavery())
 		{
@@ -7031,7 +7041,7 @@ bool CvUnit::canBuild(const CvPlot* pPlot, BuildTypes eBuild, bool bTestVisible)
 		return false;
 	}
 
-	if (getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+	if (GC.getUnitInfo(getUnitType()).isSlave() && GC.getBuildInfo(eBuild).isKill())
 	{
 		if (!pPlot->canUseSlave(getOwner())) return false;
 	}

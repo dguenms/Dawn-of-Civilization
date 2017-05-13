@@ -6240,46 +6240,6 @@ void CvCityAI::AI_doDraft(bool bForce)
 		return;
 	}
 
-	if (canEnslave())
-	{
-		if (bForce)
-		{
-			conscript();
-			return;
-		}
-
-		int iConscriptPop = getConscriptPopulation();
-		int iHappyDiff = GC.getDefineINT("CONSCRIPT_POP_ANGER") - iConscriptPop;
-
-		if (angryPopulation(iHappyDiff) == 0 || angryPopulation(0) > 0) // either no unhappiness risk, or there is unhappiness already anyway
-		{
-			bool bWait = false;
-
-			if (!bWait)
-			{
-				if (getConscriptAngerTimer() > 0)
-				{
-					bWait = true;
-				}
-			}
-
-			if (!bWait)
-			{
-				if (2 * (getPopulation() - iConscriptPop) < getHighestPopulation())
-				{
-					bWait = true;
-				}
-			}
-
-			if (!bWait)
-			{
-				conscript();
-			}
-		}
-		
-		return;
-	}
-
 	if (canConscript())
 	{
 	    if (GC.getUnitInfo(getConscriptUnit()).getCombat() > 5)

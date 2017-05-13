@@ -266,40 +266,40 @@ class Barbs:
 			else:
 				sAdj = ["TXT_KEY_ADJECTIVE_SONGHAI"]
 			self.checkSpawn(iBarbarian, iFarari, 1, (48, 26), (65, 37), self.spawnMinors, iGameTurn, 16, 4, sAdj)
-			self.checkSpawn(iBarbarian, iImpi, 2, (48, 22), (63, 29), self.spawnMinors, iGameTurn, 16, 10, sAdj)
+			self.checkSpawn(iNative, iImpi, 2, (48, 22), (63, 29), self.spawnMinors, iGameTurn, 16, 10, sAdj)
 
 		#American natives
 		if utils.isYearIn(600, 1100):
-			self.checkSpawn(iBarbarian, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
+			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 20, 0)
 			if utils.getScenario() == i3000BC:  #late start condition
-				self.checkSpawn(iBarbarian, iJaguar, 3, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
+				self.checkSpawn(iNative, iJaguar, 3, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
 			else:  #late start condition
-				self.checkSpawn(iBarbarian, iJaguar, 2, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
+				self.checkSpawn(iNative, iJaguar, 2, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 16 - 2*iHandicap, 10)
 		if utils.isYearIn(1300, 1600):
-			self.checkSpawn(iBarbarian, iDogSoldier, 2 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 8, 0)
+			self.checkSpawn(iNative, iDogSoldier, 2 + iHandicap, (15, 38), (24, 47), self.spawnNatives, iGameTurn, 8, 0)
 		if utils.isYearIn(1400, 1800):
-			self.checkSpawn(iBarbarian, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 0)
-			self.checkSpawn(iBarbarian, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 6)
+			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 0)
+			self.checkSpawn(iNative, iDogSoldier, 1 + iHandicap, (11, 44), (33, 51), self.spawnUprising, iGameTurn, 12, 6)
 		if utils.isYearIn(1300, 1600):
 			if iGameTurn % 18 == 0:
 				if not gc.getMap().plot(27, 29).isUnit():
-					utils.makeUnitAI(iDogSoldier, iBarbarian, (27, 29), UnitAITypes.UNITAI_ATTACK, 3 + iHandicap)
+					utils.makeUnitAI(iDogSoldier, iNative, (27, 29), UnitAITypes.UNITAI_ATTACK, 3 + iHandicap)
 			elif iGameTurn % 18 == 9:
 				if not gc.getMap().plot(30, 13).isUnit():
-					utils.makeUnitAI(iDogSoldier, iBarbarian, (30, 13), UnitAITypes.UNITAI_ATTACK, 3 + iHandicap)
+					utils.makeUnitAI(iDogSoldier, iNative, (30, 13), UnitAITypes.UNITAI_ATTACK, 3 + iHandicap)
 		
 		if utils.isYearIn(1700, 1900):
-			self.checkSpawn(iBarbarian, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
+			self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
 			
 		if utils.isYearIn(1500, 1850):
-			self.checkSpawn(iBarbarian, iMohawk, 2 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
+			self.checkSpawn(iNative, iMohawk, 2 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
 				
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):
-			self.checkSpawn(iBarbarian, iPrivateer, 1, (24, 32), (35, 46), self.spawnPirates, iGameTurn, 5, 0)
+			self.checkSpawn(iNative, iPrivateer, 1, (24, 32), (35, 46), self.spawnPirates, iGameTurn, 5, 0)
 		#pirates in Asia
 		if utils.isYearIn(1500, 1900):
-			self.checkSpawn(iBarbarian, iPrivateer, 1, (72, 24), (110, 36), self.spawnPirates, iGameTurn, 8, 0)
+			self.checkSpawn(iNative, iPrivateer, 1, (72, 24), (110, 36), self.spawnPirates, iGameTurn, 8, 0)
 
 		if iGameTurn < getTurnForYear(tMinorCities[len(tMinorCities)-1][0])+10:
 			self.foundMinorCities(iGameTurn)
