@@ -510,7 +510,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iVassalCityCommerce = 0; // Leoreth
 	m_iHappinessBonusCommerce = 0; // Leoreth
 	m_iCaptureGoldModifier = 0; // Leoreth
-	m_iEnslaveCount = 0; // Leoreth
 	m_iSlaveryCount = 0; // Leoreth
 	m_iColonialSlaveryCount = 0; // Leoreth
 	m_iRevolutionTimer = 0;
@@ -1864,6 +1863,17 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	if (bConquest && isHasBuildingEffect((BuildingTypes)TOPKAPI_PALACE))
 	{
 		pNewCity->changeProduction(GC.getGameINLINE().getProductionPerPopulation((HurryTypes)0) * getCurrentEra() / 2);
+	}
+
+	// Leoreth: receive slaves with slavery proportional to capture gold
+	if (bConquest && isSlavery())
+	{
+		int iNumCapturedSlaves = 1 + iCaptureGold / GC.getDefineINT("CAPTURE_GOLD_FOR_CAPTURED_SLAVES");
+
+		for (int iI = 0; iI < iNumCapturedSlaves; iI++)
+		{
+			initUnit((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE")), pNewCity->getX(), pNewCity->getY());
+		}
 	}
 
 	pCityPlot->setRevealed(GET_PLAYER(eOldOwner).getTeam(), true, false, NO_TEAM, false);
@@ -10618,19 +10628,6 @@ void CvPlayer::changeCaptureGoldModifier(int iChange)
 	}
 }
 
-
-// Leoreth
-bool CvPlayer::isEnslave() const
-{
-	return m_iEnslaveCount > 0;
-}
-
-// Leoreth
-void CvPlayer::changeEnslaveCount(int iChange)
-{
-	m_iEnslaveCount += iChange;
-}
-
 // Leoreth
 bool CvPlayer::isSlavery() const
 {
@@ -17802,7 +17799,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeVassalCityCommerce(GC.getCivicInfo(eCivic).getVassalCityCommerce() * iChange); // Leoreth
 	changeHappinessBonusCommerce(GC.getCivicInfo(eCivic).getHappinessBonusCommerce() * iChange); // Leoreth
 	changeCaptureGoldModifier(GC.getCivicInfo(eCivic).getCaptureGoldModifier() * iChange); // Leoreth
-	changeEnslaveCount(GC.getCivicInfo(eCivic).isEnslave() * iChange); // Leoreth
 	changeSlaveryCount(GC.getCivicInfo(eCivic).isSlavery() * iChange); // Leoreth
 	changeColonialSlaveryCount(GC.getCivicInfo(eCivic).isColonialSlavery() * iChange); // Leoreth
 	changeNoForeignTradeCount(GC.getCivicInfo(eCivic).isNoForeignTrade() * iChange);
@@ -18206,7 +18202,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iVassalCityCommerce); // Leoreth
 	pStream->Read(&m_iHappinessBonusCommerce); // Leoreth
 	pStream->Read(&m_iCaptureGoldModifier); // Leoreth
-	pStream->Read(&m_iEnslaveCount); // Leoreth
 	pStream->Read(&m_iSlaveryCount); // Leoreth
 	pStream->Read(&m_iColonialSlaveryCount); // Leoreth
 	pStream->Read(&m_iRevolutionTimer);
@@ -18742,7 +18737,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iVassalCityCommerce); // Leoreth
 	pStream->Write(m_iHappinessBonusCommerce); // Leoreth
 	pStream->Write(m_iCaptureGoldModifier); // Leoreth
-	pStream->Write(m_iEnslaveCount); // Leoreth
 	pStream->Write(m_iSlaveryCount); // Leoreth
 	pStream->Write(m_iColonialSlaveryCount); // Leoreth
 	pStream->Write(m_iRevolutionTimer);
@@ -24770,8 +24764,31 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 		return DENIAL_NO_GAIN;
 	}*/
 
+	bool bColonialism = getCivics(CIVICOPTION_TERRITORY) == CIVIC_COLONIALISM;
+	bool bNewWorld = false;
+
+	/*if (getCapitalCity() != NULL)
+	{
+		switch (getCapitalCity()->getRegionID())
+		{
+			case REGION_ALASKA:
+			case REGION_CANADA:
+			case REGION_UNITED_STATES:
+			case REGION_MESOAMERICA:
+			case REGION_CARIBBEAN:
+			case REGION_COLOMBIA:
+			case REGION_PERU:
+			case REGION_BRAZIL:
+			case REGION_ARGENTINA:
+				bNewWorld = false;
+				break;
+			default:
+				bNewWorld = true;
+		}
+	}*/
+
 	// don't buy when not running Colonialism
-	if (getCivics(CIVICOPTION_TERRITORY) != CIVIC_COLONIALISM)
+	if (!bColonialism && !bNewWorld)
 	{
 		return DENIAL_NO_GAIN;
 	}
@@ -24817,11 +24834,6 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 	return NO_DENIAL;
 }
 // edead: end
-
-bool CvPlayer::canEnslave() const
-{
-	return (isEnslave() && getMaxConscript() <= 0);
-}
 
 bool CvPlayer::hasCivic(CivicTypes eCivic) const
 {
@@ -25031,8 +25043,13 @@ int CvPlayer::countRequiredSlaves() const
 	}*/
 
 	// subtract slaves they already have
-	UnitClassTypes eSlaveUnitClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE");
-	iNumRequiredSlaves -= getUnitClassCount(eSlaveUnitClass);
+	for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+	{
+		if (GC.getUnitInfo((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)iI)).getBuilds(eSlavePlantation))
+		{
+			iNumRequiredSlaves -= getUnitClassCount((UnitClassTypes)iI);
+		}
+	}
 
 	return iNumRequiredSlaves;
 }

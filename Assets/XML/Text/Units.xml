@@ -1210,7 +1210,23 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Slaves[COLOR_REVERT] can create [COLOR_HIGHLIGHT_TEXT]Slave Plantations[COLOR_REVERT] and can settle in a city as a [COLOR_HIGHLIGHT_TEXT]Slave[COLOR_REVERT] specialist.</English>
+		<English>[COLOR_UNIT_TEXT]Slaves[COLOR_REVERT] build improvements and hurry the production of buildings.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NATIVE_SLAVE</Tag>
+		<English>Native Slave</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NATIVE_SLAVE_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Native Slaves[COLOR_REVERT] build improvements including [COLOR_HIGHLIGHT_TEXT]Slave Plantations[COLOR_REVERT] and can settle in a city as a [COLOR_HIGHLIGHT_TEXT]Slave[COLOR_REVERT] specialist.</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_NATIVE_SLAVE_HELP</Tag>
+		<English>[ICON_BULLET]Can build [LINK=literal]Slave Plantation[\LINK]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_AZTEC_SLAVE</Tag>
+		<English>Aztec Slave</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI</Tag>

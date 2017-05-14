@@ -324,7 +324,7 @@
     <ClCompile Include="Bugmod.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Sid Meier%27s Civilization 4\Beyond the Sword\Mods\RFC Dawn of Civilization\CvGameCoreDLL\CyCityInterface2.cpp">
+    <ClCompile Include="CyCityInterface2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -354,9 +354,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CvDLLDataStreamIFaceBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CvDLLEngineIFaceBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CvDLLEntity.h">
@@ -622,6 +619,9 @@
     </ClInclude>
     <ClInclude Include="CvRhyes.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CvDLLEngineIFaceBase.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

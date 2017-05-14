@@ -1681,9 +1681,24 @@
 		<German>[ICON_BULLET]Kann Sklaven verwenden</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES_IN_COLONIES</Tag>
-		<English>[ICON_BULLET]Can Use Slaves in Colonies</English>
-		<German>[ICON_BULLET]Kann Sklaven in Kolonien verwenden</German>
+		<Tag>TXT_KEY_CIVIC_CAN_USE_SLAVES</Tag>
+		<English>[ICON_BULLET]Can Use Slaves</English>
+		<German>[ICON_BULLET]Kann Sklaven verwenden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_CAPTURE_SLAVES</Tag>
+		<English>[ICON_BULLET]Can Capture Slaves from Cities, Workers and Barbarians</English>
+		<German>[ICON_BULLET]Kann Sklaven von Städten, Arbeitern und Barbaren gefangen nehmen</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_USE_NATIVE_SLAVES_IN_COLONIES</Tag>
+		<English>[ICON_BULLET]Can Use Native Slaves in Colonies</English>
+		<German>[ICON_BULLET]Kann Eingeborene Sklaven in Kolonien verwenden</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CAN_CAPTURE_AND_TRADE_NATIVE_SLAVES</Tag>
+		<English>[ICON_BULLET]Can Capture and Trade Native Slaves</English>
+		<German>[ICON_BULLET]Kann Eingeborene Sklaven gefangen nehmen und handeln</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REQUIRES_PAGAN_RELIGION</Tag>

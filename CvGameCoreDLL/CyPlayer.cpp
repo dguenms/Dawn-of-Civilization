@@ -2590,11 +2590,6 @@ void CyPlayer::AI_chooseFreeTech()
 		m_pPlayer->AI_chooseFreeTech();
 }
 
-bool CyPlayer::isEnslave()
-{
-	return m_pPlayer ? m_pPlayer->isEnslave() : false;
-}
-
 bool CyPlayer::isSlavery()
 {
 	return m_pPlayer ? m_pPlayer->isSlavery() : false;

@@ -2069,11 +2069,7 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 	{
 		if (pHeadSelectedCity->getConscriptUnit() != NO_UNIT)
 		{
-			//Leoreth: enslavement
 			UnitTypes eConscriptUnit = pHeadSelectedCity->getConscriptUnit();
-
-			//if (pHeadSelectedCity->canEnslave())
-			//	eConscriptUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE"));
 
 			CvWString szTemp;
 			szTemp.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_UNIT_TEXT"), GC.getUnitInfo(eConscriptUnit).getDescription());
@@ -2122,24 +2118,14 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 			{
 				bFirst = true;
 
-				// Leoreth: if enslaving possible, show the correct requirement civic
-				if (pHeadSelectedCity->canEnslave(true))
+				for (iI = 0; iI < GC.getNumCivicInfos(); iI++)
 				{
-					szTempBuffer = NEWLINE + gDLL->getText("TXT_KEY_REQUIRES");
-					setListHelp(szBuffer, szTempBuffer, GC.getCivicInfo((CivicTypes)CIVIC_SLAVERY).getDescription(), gDLL->getText("TXT_KEY_OR").c_str(), bFirst);
-					bFirst = false;
-				}
-				else
-				{
-					for (iI = 0; iI < GC.getNumCivicInfos(); iI++)
+					if (getWorldSizeMaxConscript((CivicTypes)iI) > 0)
 					{
-						if (getWorldSizeMaxConscript((CivicTypes)iI) > 0)
-						{
-							szTempBuffer = NEWLINE + gDLL->getText("TXT_KEY_REQUIRES");
-							setListHelp(szBuffer, szTempBuffer, GC.getCivicInfo((CivicTypes)iI).getDescription(), gDLL->getText("TXT_KEY_OR").c_str(), bFirst);
-							bFirst = false;
-						}
-					}	
+						szTempBuffer = NEWLINE + gDLL->getText("TXT_KEY_REQUIRES");
+						setListHelp(szBuffer, szTempBuffer, GC.getCivicInfo((CivicTypes)iI).getDescription(), gDLL->getText("TXT_KEY_OR").c_str(), bFirst);
+						bFirst = false;
+					}
 				}
 
 				if (!bFirst)

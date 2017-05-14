@@ -185,7 +185,6 @@ public:
 	long getRealPopulation();
 
 	int getRegionID(); //Leoreth
-	bool canEnslave(bool bGeneral); //Leoreth
 	void setWeLoveTheKingDay(bool bNewValue); //Leoreth
 
 	int getHighestPopulation();

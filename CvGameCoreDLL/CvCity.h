@@ -1028,7 +1028,6 @@ public:
 
 	//Leoreth
 	bool isMiddleEast() const;
-	bool canEnslave(bool bGeneral = false) const;
 	int getSpecialistGoodHappiness() const;
 	int getSpecialistBadHappiness() const;
 	void changeSpecialistGoodHappiness(int iChange);
