@@ -11489,6 +11489,7 @@
 			<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
 			<iCost>30</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
