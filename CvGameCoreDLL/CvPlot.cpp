@@ -11334,6 +11334,9 @@ int CvPlot::calculateCultureCost() const
 bool CvPlot::canUseSlave(PlayerTypes ePlayer) const
 {
 	if (GET_PLAYER(ePlayer).getNumCities() == 0) return false;
+
+	if (GET_PLAYER(ePlayer).getCapitalCity() == NULL) return false;
+
 	int rid = GET_PLAYER(ePlayer).getCapitalCity()->getRegionID();
 
 	switch (getRegionID())
