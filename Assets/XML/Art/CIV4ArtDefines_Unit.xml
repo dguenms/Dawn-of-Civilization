@@ -2913,9 +2913,9 @@
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
-			<NIF>Art/Units/NuclearBomber/Bomber.nif</NIF>
-			<KFM>Art/Units/NuclearBomber/Bomber.kfm</KFM>
-			<SHADERNIF>Art/Units/NuclearBomber/Bomber_FX.nif</SHADERNIF>
+			<NIF>Art/Units/NuclearBomber/JetFighter.nif</NIF>
+			<KFM>Art/Units/NuclearBomber/JetFighter.kfm</KFM>
+			<SHADERNIF>Art/Units/NuclearBomber/JetFighter_FX.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/BomberShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>

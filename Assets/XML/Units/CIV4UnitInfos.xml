@@ -12919,7 +12919,6 @@
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
 			<bMechanized>1</bMechanized>
-			<bSuicide>1</bSuicide>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ICBM</UnitAIType>
@@ -12937,6 +12936,7 @@
 			<iMoves>1</iMoves>
 			<iAirRange>8</iAirRange>
 			<iNukeRange>1</iNukeRange>
+			<iAirCombat>-1</iAirCombat>
 			<iXPValueDefense>4</iXPValueDefense>
 			<iAsset>5</iAsset>
 			<iPower>30</iPower>

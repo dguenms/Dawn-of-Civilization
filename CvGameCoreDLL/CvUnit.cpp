@@ -925,6 +925,13 @@ void CvUnit::updateAirStrike(CvPlot* pPlot, bool bQuick, bool bFinish)
 			bVisible = isCombatVisible(NULL);
 		}
 
+		// Leoreth/Dale: nuclear bomber
+		if (canNuke(pPlot))
+		{
+			kill(true);
+			return;
+		}
+
 		if (!airStrike(pPlot))
 		{
 			return;
@@ -4148,6 +4155,15 @@ bool CvUnit::nuke(int iX, int iY)
 		}
 	}
 
+	// Leoreth/Dale: nuclear bomber
+	if (airBaseCombatStr() != 0)
+	{
+		if (interceptTest(pPlot))
+		{
+			return true;
+		}
+	}
+
 	iBestInterception = 0;
 	eBestTeam = NO_TEAM;
 
@@ -4197,18 +4213,37 @@ bool CvUnit::nuke(int iX, int iY)
 		return true; // Intercepted!!! (XXX need special event for this...)
 	}
 
+	// Leoreth/Dale: nuclear bomber
 	if (pPlot->isActiveVisible(false))
 	{
-		// Nuke entity mission
-		CvMissionDefinition kDefiniton;
-		kDefiniton.setMissionTime(GC.getMissionInfo(MISSION_NUKE).getTime() * gDLL->getSecsPerTurn());
-		kDefiniton.setMissionType(MISSION_NUKE);
-		kDefiniton.setPlot(pPlot);
-		kDefiniton.setUnit(BATTLE_UNIT_ATTACKER, this);
-		kDefiniton.setUnit(BATTLE_UNIT_DEFENDER, NULL);
+		if (airBaseCombatStr() != 0)
+		{
+			CvAirMissionDefinition kAirMission;
 
-		// Add the non-intercepted mission (defender is NULL)
-		gDLL->getEntityIFace()->AddMission(&kDefiniton);
+			kAirMission.setMissionTime(GC.getMissionInfo(MISSION_AIRSTRIKE).getTime() * gDLL->getSecsPerTurn());
+			kAirMission.setMissionType(MISSION_AIRSTRIKE);
+			kAirMission.setPlot(pPlot);
+			kAirMission.setUnit(BATTLE_UNIT_ATTACKER, this);
+			kAirMission.setUnit(BATTLE_UNIT_DEFENDER, NULL);
+			kAirMission.setDamage(BATTLE_UNIT_DEFENDER, 0);
+			kAirMission.setDamage(BATTLE_UNIT_ATTACKER, 0);
+
+			gDLL->getEntityIFace()->AddMission(&kAirMission);
+		}
+		else 
+		{
+			// Nuke entity mission
+			CvMissionDefinition kDefiniton;
+
+			kDefiniton.setMissionTime(GC.getMissionInfo(MISSION_NUKE).getTime() * gDLL->getSecsPerTurn());
+			kDefiniton.setMissionType(MISSION_NUKE);
+			kDefiniton.setPlot(pPlot);
+			kDefiniton.setUnit(BATTLE_UNIT_ATTACKER, this);
+			kDefiniton.setUnit(BATTLE_UNIT_DEFENDER, NULL);
+
+			// Add the non-intercepted mission (defender is NULL)
+			gDLL->getEntityIFace()->AddMission(&kDefiniton);
+		}
 	}
 
 	setMadeAttack(true);
