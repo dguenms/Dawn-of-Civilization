@@ -146,8 +146,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AZT2</Tag>
-		<English>Build 6 pagan temples and sacrificial altars by 1650 AD</English>
-		<German>Bauen Sie bis zum Jahr 1650 n. Chr. 6 heidnische Tempel und Opferalt&#228;re</German>
+		<English>Build 6 step pyramids and sacrificial altars by 1650 AD</English>
+		<German>Bauen Sie bis zum Jahr 1650 n. Chr. 6 Stufenpyramiden und Opferalt&#228;re</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_AZT3_TITLE</Tag>
@@ -2895,8 +2895,8 @@
 		<English>Taoist Gongs: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_NUM_TEMPLES</Tag>
-		<English>Pagan Temples: %d1 / %d2</English>
+		<Tag>TXT_KEY_VICTORY_NUM_STEP_PYRAMIDS</Tag>
+		<English>Step Pyramids: %d1 / %d2</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_VASSALS</Tag>

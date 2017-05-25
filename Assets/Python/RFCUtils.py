@@ -5,7 +5,6 @@ import CvUtil
 import PyHelpers
 import Popup
 from Consts import *
-#import cPickle as pickle
 from StoredData import data
 import BugCore
 import Areas
@@ -38,13 +37,6 @@ class RFCUtils:
 			if data.players[iPlayer].lGoals[iGoal] == 1:
 				iResult += 1
 		return iResult
-		
-	def getGoalsColor(self, iPlayer): #by CyberChrist
-		iCol = 0
-		for iGoal in range(3):
-			if data.players[iPlayer].lGoals[iGoal] == 0:
-				iCol += 1
-		return tCol[iCol]
 
 
 	#Plague

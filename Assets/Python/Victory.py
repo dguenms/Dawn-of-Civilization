@@ -1136,9 +1136,9 @@ def checkTurn(iGameTurn, iPlayer):
 				else:
 					lose(iAztecs, 0)
 					
-			# second goal: build six pagan temples and sacrificial altars by 1650 AD
+			# second goal: build six step pyramids and sacrificial altars by 1650 AD
 			if isPossible(iAztecs, 1):
-				if getNumBuildings(iAztecs, iPaganTemple) >= 6 and getNumBuildings(iAztecs, iSacrificialAltar) >= 6:
+				if getNumBuildings(iAztecs, utils.getUniqueBuilding(iAztecs, iPaganTemple)) >= 6 and getNumBuildings(iAztecs, iSacrificialAltar) >= 6:
 					win(iAztecs, 1)
 			
 			if iGameTurn == getTurnForYear(1650):
@@ -3767,9 +3767,9 @@ def getUHVHelp(iPlayer, iGoal):
 				bBestCity = isBestCity(iAztecs, (18, 37), cityPopulation)
 				aHelp.append(getIcon(bBestCity) + localText.getText("TXT_KEY_VICTORY_MOST_POPULOUS_CITY", (pBestCity.getName(),)))
 			elif iGoal == 1:
-				iTemples = getNumBuildings(iAztecs, iPaganTemple)
+				iStepPyramids = getNumBuildings(iAztecs, utils.getUniqueBuilding(iAztecs, iPaganTemple))
 				iAltars = getNumBuildings(iAztecs, iSacrificialAltar)
-				aHelp.append(getIcon(iTemples >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_TEMPLES", (iTemples, 6)) + " " + getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_ALTARS", (iAltars, 6)))
+				aHelp.append(getIcon(iStepPyramids >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_STEP_PYRAMIDS", (iStepPyramids, 6)) + " " + getIcon(iAltars >= 6) + localText.getText("TXT_KEY_VICTORY_NUM_ALTARS", (iAltars, 6)))
 			elif iGoal == 2:
 				iEnslavedUnits = data.iAztecSlaves
 				aHelp.append(getIcon(iEnslavedUnits >= 20) + localText.getText("TXT_KEY_VICTORY_ENSLAVED_UNITS", (iEnslavedUnits, 20)))
