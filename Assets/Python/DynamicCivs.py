@@ -619,7 +619,7 @@ def onPalaceMoved(iPlayer):
 			setShort(iPlayer, short(iPlayer))
 			setAdjective(iPlayer, civAdjective(iPlayer))
 			
-	#checkName(iPlayer)
+	checkName(iPlayer)
 	
 def checkTurn(iGameTurn):
 	for iPlayer in range(iNumPlayers):
@@ -670,9 +670,6 @@ def getOrElse(dDictionary, iPlayer, sDefault=None):
 
 def key(iPlayer, sSuffix):
 	if sSuffix: sSuffix = "_" + sSuffix
-	print "short(iPlayer) %s" % (short(iPlayer),)
-	print "short(iPlayer).replace() %s" % (short(iPlayer).replace(" ", "_"),)
-	print "short(iPlayer).replace().upper() %s" % (short(iPlayer).replace(" ", "_").upper(),)
 	return "TXT_KEY_CIV_" + short(iPlayer).replace(" ", "_").upper() + sSuffix
 
 def text(sTextKey, tInput=()):
@@ -703,7 +700,9 @@ def adjectiveChange(iPlayer):
 	setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
 	
 def getColumn(iPlayer):
-	return max([gc.getTechInfo(iTech).getGridX() for iTech in range(iNumTechs) if gc.getTeam(iPlayer).isHasTech(iTech)])
+	lTechs = [gc.getTechInfo(iTech).getGridX() for iTech in range(iNumTechs) if gc.getTeam(iPlayer).isHasTech(iTech)]
+	if not lTechs: return 0
+	return max(lTechs)
 	
 ### Utility methods for civilization status ###
 
@@ -1199,7 +1198,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ETHIOPIA_ADAL"
 			
 	elif iPlayer == iByzantium:
-		if pRome.isAlive():
+		if pRome.getNumCities() > 0:
 			return "TXT_KEY_CIV_BYZANTIUM_EASTERN"
 			
 		x, y = Areas.getCapital(iRome)
