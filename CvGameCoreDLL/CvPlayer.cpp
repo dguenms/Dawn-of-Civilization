@@ -24764,12 +24764,13 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 		return DENIAL_NO_GAIN;
 	}*/
 
-	bool bColonialism = getCivics(CIVICOPTION_TERRITORY) == CIVIC_COLONIALISM;
+	bool bColonialism = GET_PLAYER(ePlayer).getCivics(CIVICOPTION_TERRITORY) == CIVIC_COLONIALISM;
 	bool bNewWorld = false;
 
-	/*if (getCapitalCity() != NULL)
+	CvCity* pCapital = GET_PLAYER(ePlayer).getCapitalCity();
+	if (pCapital != NULL)
 	{
-		switch (getCapitalCity()->getRegionID())
+		switch (pCapital->getRegionID())
 		{
 			case REGION_ALASKA:
 			case REGION_CANADA:
@@ -24780,12 +24781,12 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 			case REGION_PERU:
 			case REGION_BRAZIL:
 			case REGION_ARGENTINA:
-				bNewWorld = false;
+				bNewWorld = true;
 				break;
 			default:
 				bNewWorld = true;
 		}
-	}*/
+	}
 
 	// don't buy when not running Colonialism
 	if (!bColonialism && !bNewWorld)
@@ -24826,10 +24827,10 @@ DenialTypes CvPlayer::AI_slaveTrade(PlayerTypes ePlayer) const
 	}
 
 	// only sell if no slaves are needed
-	if (countRequiredSlaves() >= 0)
+	/*if (countRequiredSlaves() >= 0)
 	{
 		return DENIAL_NO_GAIN;
-	}
+	}*/
 
 	return NO_DENIAL;
 }
