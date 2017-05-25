@@ -1614,8 +1614,8 @@ class RiseAndFall:
 			if plotList:
 				tPlot = utils.getRandomEntry(plotList)
 				if tPlot:
-					self.createStartingUnits(iCiv, result)
-					#self.createStartingWorkers(iCiv, result)
+					self.createStartingUnits(iCiv, tPlot)
+					#self.createStartingWorkers(iCiv, tPlot)
 					self.assignTechs(iCiv)
 					data.players[iCiv].iPlagueCountdown = -iImmunity
 					utils.clearPlague(iCiv)
