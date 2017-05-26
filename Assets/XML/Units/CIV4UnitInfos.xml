@@ -4902,7 +4902,7 @@
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
 				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_ARTILLERY</UnitClassType>
+					<UnitClassType>UNITCLASS_HOWITZER</UnitClassType>
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
 			</UnitClassAttackMods>
@@ -10071,6 +10071,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
