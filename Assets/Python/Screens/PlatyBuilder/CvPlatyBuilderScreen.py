@@ -1098,7 +1098,7 @@ class CvWorldBuilderScreen:
 			screen.setImageButton("StoredDataScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 41)
 			screen.setStyle("StoredDataScreen", "Button_HUDAdvisorRecord_Style")
 			iX += iAdjust
-			screen.addCheckBoxGFC("WorldBuilderStabMapModeButton", "Art/Interface/Buttons/DoCMaps.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
+			screen.addCheckBoxGFC("WorldBuilderDoCMapsModeButton", "Art/Interface/Buttons/DoCMaps.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
 				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 42, ButtonStyles.BUTTON_STYLE_LABEL)
 
 			iX = iXStart + 8
@@ -1514,7 +1514,7 @@ class CvWorldBuilderScreen:
 		screen.setState("HideInactive", bHideInactive)
 		screen.setState("SensibilityCheck", self.bSensibility)
 		screen.setState("RegionButton", self.bRegion)
-		screen.setState("WorldBuilderStabMapModeButton", self.iPlayerAddMode in self.DoCMapMode)
+		screen.setState("WorldBuilderDoCMapsModeButton", self.iPlayerAddMode in self.DoCMapMode)
 		screen.setState("FlipButton", self.iPlayerAddMode == "Flip")
 		screen.setState("CoreButton", self.iPlayerAddMode == "Core")
 		screen.setState("SettlerValueButton", self.iPlayerAddMode == "SettlerValue")
@@ -2293,9 +2293,10 @@ class CvWorldBuilderScreen:
 			self.iPlayerAddMode = "River"
 			self.refreshSideMenu()
 
-		elif inputClass.getFunctionName() == "WorldBuilderStabMapModeButton":
+		elif inputClass.getFunctionName() == "WorldBuilderDoCMapsModeButton":
 			self.iPlayerAddMode = "Flip"
 			self.refreshSideMenu()
+			self.showFlipZone()
 
 		elif inputClass.getFunctionName() == "FlipButton":
 			self.iPlayerAddMode = "Flip"
@@ -2417,7 +2418,7 @@ class CvWorldBuilderScreen:
 			self.bRegion = not self.bRegion
 			self.setCurrentModeCheckbox()
 
-		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() not in ["FlipButton", "CoreButton", "SettlerValueButton", "WarMapButton", "ReligionMapButton", "RegionMapButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight", "SensibilityCheck", "RegionButton"]:
+		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() not in ["WorldBuilderDoCMapsModeButton", "FlipButton", "CoreButton", "SettlerValueButton", "WarMapButton", "ReligionMapButton", "RegionMapButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight", "SensibilityCheck", "RegionButton"]:
 			utils.removeStabilityOverlay()
 
 		return 1
