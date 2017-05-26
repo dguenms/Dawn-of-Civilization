@@ -63,7 +63,7 @@
 		<RouteInfo>
 			<Type>ROUTE_HIGHWAY</Type>
 			<Description>TXT_KEY_ROUTE_HIGHWAY</Description>
-			<iValue>4</iValue>
+			<iValue>3</iValue>
 			<iAdvancedStartCost>18</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iMovement>20</iMovement>
