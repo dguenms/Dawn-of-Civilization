@@ -52,9 +52,9 @@ class CvCivicsScreen:
 		self.H_CIVIC_TEXT = self.H_CIVIC_CATEGORY - (self.MARGIN * 2)
 
 		self.X_TURNS = 25
-		self.Y_TURNS = self.Y_BOTTOM_PANEL + 24
+		self.Y_TURNS = self.Y_BOTTOM_PANEL + 20
 
-		self.X_MAINTENANCE = (self.W_BOTTOM_PANEL / 2) - 25
+		self.X_MAINTENANCE = self.W_BOTTOM_PANEL / 2 + 25
 		self.Y_MAINTENANCE = self.Y_BOTTOM_PANEL + 20
 
 		self.X_DISSENT = (self.W_BOTTOM_PANEL / 2) + 25
@@ -259,7 +259,7 @@ class CvCivicsScreen:
 
 		# Maintenance
 		szText = CyTranslator().getText("TXT_KEY_CIVIC_SCREEN_UPKEEP", (player.getCivicUpkeep(self.DisplayedCivics, True), ))
-		screen.setLabel("UpkeepText", "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_RIGHT_JUSTIFY, self.X_MAINTENANCE, self.Y_MAINTENANCE, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		screen.setLabel("UpkeepText", "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, self.X_MAINTENANCE, self.Y_MAINTENANCE, 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 
 	def updateRevolution(self):
