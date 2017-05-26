@@ -621,6 +621,9 @@ def onPalaceMoved(iPlayer):
 			
 	checkName(iPlayer)
 	
+def onReligionFounded(iPlayer):
+	checkName(iPlayer)
+	
 def checkTurn(iGameTurn):
 	for iPlayer in range(iNumPlayers):
 		checkName(iPlayer)
@@ -808,6 +811,12 @@ def capitalCoords(iPlayer):
 	if capital: return (capital.getX(), capital.getY())
 	
 	return (-1, -1)
+	
+def controlsHolyCity(iPlayer, iReligion):
+	holyCity = gc.getGame().getHolyCity(iReligion)
+	if holyCity and holyCity.getOwner() == iPlayer: return True
+	
+	return False
 	
 ### Naming methods ###
 
@@ -1211,7 +1220,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_VIKINGS_SWEDISH"
 			
 	elif iPlayer == iArabia:
-		if bTheocracy and iReligion == iIslam:
+		if (bTheocracy or controlsHolyCity(iArabia, iIslam)) and iReligion == iIslam:
 			if not bEmpire:
 				return "TXT_KEY_CIV_ARABIA_RASHIDUN"
 				
@@ -1444,7 +1453,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				
 		if iEra == iAncient:
 			if iAnarchyTurns == 0: return "TXT_KEY_CIV_EGYPT_OLD_KINGDOM"
-			if iAnarchyTurns == 1: return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
+			if iAnarchyTurns == utils.getTurns(1): return "TXT_KEY_CIV_EGYPT_MIDDLE_KINGDOM"
 			return "TXT_KEY_CIV_EGYPT_NEW_KINGDOM"
 		
 		if iEra == iClassical:
@@ -1584,7 +1593,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bResurrected:
 			return "TXT_KEY_KINGDOM_OF"
 			
-		if iReligion == iIslam and bTheocracy:
+		if iReligion == iIslam and (bTheocracy or controlsHolyCity(iArabia, iIslam)):
 			return "TXT_KEY_CALIPHATE_ADJECTIVE"
 			
 	elif iPlayer == iTibet:

@@ -409,6 +409,7 @@ class CvRFCEventHandler:
 	
 		vic.onReligionFounded(iFounder, iReligion)
 		self.rel.onReligionFounded(iReligion, iFounder)
+		dc.onReligionFounded(iFounder)
 		techlog.onReligionFounded(iFounder, iReligion)
 
 	def onVassalState(self, argsList):
