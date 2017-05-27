@@ -540,7 +540,11 @@
 			<Button>,Art/Interface/Buttons/Civics/Redistribution.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<bNoForeignTrade>1</bNoForeignTrade>
+			<TradeYieldModifiers>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
+				<iYield>-25</iYield>
+			</TradeYieldModifiers>
 			<CapitalYieldModifiers>
 				<iYield>25</iYield>
 			</CapitalYieldModifiers>
