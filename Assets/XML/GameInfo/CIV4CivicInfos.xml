@@ -879,7 +879,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Conquest.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iNumCitiesMaintenanceModifier>100</iNumCitiesMaintenanceModifier>
+			<iImprovementUpgradeRateModifier>-100</iImprovementUpgradeRateModifier>
 			<DomainExperienceModifiers>
 				<DomainExperienceModifier>
 					<DomainType>DOMAIN_LAND</DomainType>
