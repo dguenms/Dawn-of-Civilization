@@ -7390,7 +7390,7 @@
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
 			<UnitClassAttackMods>
 				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_PIKEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_HEAVY_SPEARMAN</UnitClassType>
 					<iUnitClassMod>50</iUnitClassMod>
 				</UnitClassAttackMod>
 				<UnitClassAttackMod>
