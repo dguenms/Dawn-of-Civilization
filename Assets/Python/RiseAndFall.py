@@ -2021,7 +2021,7 @@ class RiseAndFall:
 		# Leoreth: Mongol horde event against Mughals, Persia, Arabia, Byzantium, Russia
 		if iHasMetTeamY == iMongolia and not utils.getHumanID() == iMongolia:
 			if iTeamX in [iPersia, iByzantium, iRussia]:
-				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.isFirstContactMongols():
+				if gc.getGame().getGameTurn() < getTurnForYear(1500) and data.isFirstContactMongols(iTeamX):
 
 					data.setFirstContactMongols(iTeamX, False)
 		
