@@ -26,6 +26,9 @@ typedef list<char*> LISTCHAR;
 #define BUILDING_PALACE			((BuildingClassTypes)0)
 #define BUILDING_PLAGUE			(NUM_BUILDINGS_PLAGUE-1)
 
+#define UNITCLASS_SLAVE			((UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
+#define UNITCLASS_NATIVE_SLAVE	((UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_NATIVE_SLAVE"))
+
 enum DoCTechs
 {
 	TANNING,

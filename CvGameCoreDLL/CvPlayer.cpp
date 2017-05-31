@@ -7247,7 +7247,9 @@ int CvPlayer::calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& i
 		}
 	}
 
-	iPaidUnits = std::max(0, getNumUnits() - iFreeUnits);
+	int iSlaveUnits = getUnitClassCount(UNITCLASS_SLAVE) + getUnitClassCount(UNITCLASS_NATIVE_SLAVE);
+
+	iPaidUnits = std::max(0, getNumUnits() - iSlaveUnits - iFreeUnits);
 	iPaidMilitaryUnits = std::max(0, getNumMilitaryUnits() - iFreeMilitaryUnits);
 
 	iSupport = 0;
