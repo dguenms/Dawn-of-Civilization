@@ -23254,17 +23254,14 @@ BeginPlot
 		UnitType=UNIT_ARCHER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SWORDSMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=16, (Vikings)
 		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_SWORDSMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=16, (Vikings)
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_VIKING_HUSCARL, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SCOUT, UnitOwner=16, (Vikings)

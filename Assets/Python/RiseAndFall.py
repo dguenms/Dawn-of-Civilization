@@ -2558,17 +2558,15 @@ class RiseAndFall:
 					utils.makeUnit(iWorkboat, iByzantium, tSeaPlot, 1)
 		elif iCiv == iVikings:
 			utils.createSettlers(iCiv, 2)
-			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
-			utils.makeUnit(iAxeman, iCiv, tPlot, 2)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
+			utils.makeUnit(iHuscarl, iCiv, tPlot, 3)
 			utils.makeUnit(iScout, iCiv, tPlot, 1)
-			pVikings.initUnit(iSwordsman, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
-			utils.makeUnit(iSwordsman, iCiv, tPlot, 1)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
-				utils.makeUnit(iCrossbowman, iCiv, tSeaPlot, 1)
+				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
 				pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
 				pVikings.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_EXPLORE_SEA, DirectionTypes.DIRECTION_SOUTH)
 		elif iCiv == iArabia:
@@ -3041,18 +3039,18 @@ class RiseAndFall:
 			if utils.getHumanID() == iVikings:
 				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_SETTLER_SEA, 1)
 				utils.makeUnit(iSettler, iVikings, tSeaPlot, 1)
-				utils.makeUnit(iCrossbowman, iVikings, tSeaPlot, 1)
+				utils.makeUnit(iArcher, iVikings, tSeaPlot, 1)
 				utils.makeUnitAI(iGalley, iVikings, tSeaPlot, UnitAITypes.UNITAI_EXPLORE_SEA, 2)
 				
 		# start AI settler and garrison in Denmark and Sweden
 		if utils.getHumanID() != iVikings:
 			utils.makeUnit(iSettler, iVikings, (60, 56), 1)
-			utils.makeUnit(iCrossbowman, iVikings, (60, 56), 1)
+			utils.makeUnit(iArcher, iVikings, (60, 56), 1)
 			utils.makeUnit(iSettler, iVikings, (63, 59), 1)
-			utils.makeUnit(iCrossbowman, iVikings, (63, 59), 1)
+			utils.makeUnit(iArcher, iVikings, (63, 59), 1)
 		else:
 			utils.makeUnit(iSettler, iVikings, tCapital, 1)
-			utils.makeUnit(iCrossbowman, iVikings, tCapital, 2)
+			utils.makeUnit(iArcher, iVikings, tCapital, 2)
 
 		tCapital = Areas.getCapital(iKorea)
 		if utils.getHumanID() != iKorea:
