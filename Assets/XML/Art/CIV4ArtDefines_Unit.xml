@@ -6413,7 +6413,7 @@
 			<AudioRunSounds/>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</Type>
+			<Type>ART_DEF_UNIT_PHOENICIAN_ATLAS_ELEPHANT</Type>
 			<Button>,Art/Interface/Buttons/Units/WarElephant.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,2</Button>
 			<fScale>0.34</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>

@@ -8818,13 +8818,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_WAR_ELEPHANT</Class>
-			<Type>UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</Type>
+			<Type>UNIT_PHOENICIAN_ATLAS_ELEPHANT</Type>
 			<Combat>UNITCOMBAT_MOUNTED</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</Description>
-			<Civilopedia>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT</Description>
+			<Civilopedia>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -8885,7 +8885,7 @@
 				<iRangedWaveSize>2</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_PHOENICIAN_ATLAS_ELEPHANT</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>

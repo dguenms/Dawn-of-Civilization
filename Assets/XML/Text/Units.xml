@@ -229,12 +229,12 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]African War Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Atlas Elephant[COLOR_REVERT], the Phoenician replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</Tag>
-		<English>African War Elephant</English>
+		<Tag>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT</Tag>
+		<English>Atlas Elephant</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHINESE_CHOKONU_STRATEGY</Tag>

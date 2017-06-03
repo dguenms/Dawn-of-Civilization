@@ -890,7 +890,7 @@
 			<Units>
 				<Unit>
 					<UnitClassType>UNITCLASS_WAR_ELEPHANT</UnitClassType>
-					<UnitType>UNIT_PHOENICIAN_AFRICAN_WAR_ELEPHANT</UnitType>
+					<UnitType>UNIT_PHOENICIAN_ATLAS_ELEPHANT</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
