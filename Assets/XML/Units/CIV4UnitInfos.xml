@@ -8847,7 +8847,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_GENERALSHIP</PrereqTech>
+			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_RIDING</PrereqTech>
 			</TechTypes>
