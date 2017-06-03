@@ -12312,7 +12312,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_SUPERMATERIALS</PrereqTech>
+			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
@@ -12815,7 +12815,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_SUPERMATERIALS</PrereqTech>
+			<PrereqTech>TECH_SUPERCONDUCTORS</PrereqTech>
 			<BonusType>BONUS_OIL</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_ALUMINUM</BonusType>
