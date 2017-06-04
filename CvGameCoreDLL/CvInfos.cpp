@@ -3050,6 +3050,8 @@ m_iCityDefenseModifier(0),
 m_iAnimalCombatModifier(0),
 m_iHillsAttackModifier(0),
 m_iHillsDefenseModifier(0),
+m_iPlainsAttackModifier(0), // Leoreth
+m_iPlainsDefenseModifier(0), // Leoreth
 m_iBombRate(0),
 m_iBombardRate(0),
 m_iSpecialCargo(0),
@@ -3421,6 +3423,18 @@ int CvUnitInfo::getHillsAttackModifier() const
 int CvUnitInfo::getHillsDefenseModifier() const
 {
 	return m_iHillsDefenseModifier;
+}
+
+// Leoreth
+int CvUnitInfo::getPlainsAttackModifier() const
+{
+	return m_iPlainsAttackModifier;
+}
+
+// Leoreth
+int CvUnitInfo::getPlainsDefenseModifier() const
+{
+	return m_iPlainsDefenseModifier;
 }
 
 int CvUnitInfo::getBombRate() const
@@ -4330,6 +4344,8 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iAnimalCombatModifier);
 	stream->Read(&m_iHillsAttackModifier);
 	stream->Read(&m_iHillsDefenseModifier);
+	stream->Read(&m_iPlainsAttackModifier); // Leoreth
+	stream->Read(&m_iPlainsDefenseModifier); // Leoreth
 	stream->Read(&m_iBombRate);
 	stream->Read(&m_iBombardRate);
 	stream->Read(&m_iSpecialCargo);
@@ -4649,6 +4665,8 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iAnimalCombatModifier);
 	stream->Write(m_iHillsAttackModifier);
 	stream->Write(m_iHillsDefenseModifier);
+	stream->Write(m_iPlainsAttackModifier); // Leoreth
+	stream->Write(m_iPlainsDefenseModifier); // Leoreth
 	stream->Write(m_iBombRate);
 	stream->Write(m_iBombardRate);
 	stream->Write(m_iSpecialCargo);
@@ -5063,6 +5081,8 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iAnimalCombatModifier, "iAnimalCombat");
 	pXML->GetChildXmlValByName(&m_iHillsAttackModifier, "iHillsAttack");
 	pXML->GetChildXmlValByName(&m_iHillsDefenseModifier, "iHillsDefense");
+	pXML->GetChildXmlValByName(&m_iPlainsAttackModifier, "iPlainsAttack"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iPlainsDefenseModifier, "iPlainsDefense"); // Leoreth
 
 	pXML->SetVariableListTagPair(&m_pbTerrainNative, "TerrainNatives", sizeof(GC.getTerrainInfo((TerrainTypes)0)), GC.getNumTerrainInfos());
 	pXML->SetVariableListTagPair(&m_pbFeatureNative, "FeatureNatives", sizeof(GC.getFeatureInfo((FeatureTypes)0)), GC.getNumFeatureInfos());

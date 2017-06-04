@@ -397,6 +397,8 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iExtraCityDefensePercent = 0;
 	m_iExtraHillsAttackPercent = 0;
 	m_iExtraHillsDefensePercent = 0;
+	m_iExtraPlainsAttackPercent = 0; // Leoreth
+	m_iExtraPlainsDefensePercent = 0; // Leoreth
 	m_iRevoltProtection = 0;
 	m_iCollateralDamageProtection = 0;
 	m_iPillageChange = 0;
@@ -8306,6 +8308,8 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		pCombatDetails->iCityDefenseModifier = 0;
 		pCombatDetails->iHillsAttackModifier = 0;
 		pCombatDetails->iHillsDefenseModifier = 0;
+		pCombatDetails->iPlainsAttackModifier = 0; // Leoreth
+		pCombatDetails->iPlainsDefenseModifier = 0; // Leoreth
 		pCombatDetails->iFeatureAttackModifier = 0;
 		pCombatDetails->iFeatureDefenseModifier = 0;
 		pCombatDetails->iTerrainAttackModifier = 0;
@@ -8493,6 +8497,17 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 			}
 		}
 
+		// Leoreth
+		if (pPlot->isPlains())
+		{
+			iExtraModifier = plainsDefenseModifier();
+			iModifier += iExtraModifier;
+			if (pCombatDetails != NULL)
+			{
+				pCombatDetails->iPlainsDefenseModifier = iExtraModifier;
+			}
+		}
+
 		if (pPlot->getFeatureType() != NO_FEATURE)
 		{
 			iExtraModifier = featureDefenseModifier(pPlot->getFeatureType());
@@ -8562,6 +8577,17 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 			if (pCombatDetails != NULL)
 			{
 				pCombatDetails->iHillsAttackModifier = iExtraModifier;
+			}
+		}
+
+		// Leoreth
+		if (pAttackedPlot->isPlains())
+		{
+			iExtraModifier = -pAttacker->plainsAttackModifier();
+			iTempModifier += iExtraModifier;
+			if (pCombatDetails != NULL)
+			{
+				pCombatDetails->iPlainsAttackModifier = iExtraModifier;
 			}
 		}
 
@@ -9427,6 +9453,20 @@ int CvUnit::hillsAttackModifier() const
 int CvUnit::hillsDefenseModifier() const
 {
 	return (m_pUnitInfo->getHillsDefenseModifier() + getExtraHillsDefensePercent());
+}
+
+
+// Leoreth
+int CvUnit::plainsAttackModifier() const
+{
+	return m_pUnitInfo->getPlainsAttackModifier() + getExtraPlainsAttackPercent();
+}
+
+
+// Leoreth
+int CvUnit::plainsDefenseModifier() const
+{
+	return m_pUnitInfo->getPlainsDefenseModifier() + getExtraPlainsDefensePercent();
 }
 
 
@@ -11207,6 +11247,40 @@ void CvUnit::changeExtraHillsDefensePercent(int iChange)
 	}
 }
 
+// Leoreth
+int CvUnit::getExtraPlainsAttackPercent() const
+{
+	return m_iExtraPlainsAttackPercent;
+}
+
+// Leoreth
+void CvUnit::changeExtraPlainsAttackPercent(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iExtraPlainsAttackPercent += iChange;
+
+		setInfoBarDirty(true);
+	}
+}
+
+// Leoreth
+int CvUnit::getExtraPlainsDefensePercent() const
+{
+	return m_iExtraPlainsDefensePercent;
+}
+
+// Leoreth
+void CvUnit::changeExtraPlainsDefensePercent(int iChange)
+{
+	if (iChange != 0)
+	{
+		m_iExtraPlainsDefensePercent += iChange;
+
+		setInfoBarDirty(true);
+	}
+}
+
 int CvUnit::getRevoltProtection() const
 {
 	return m_iRevoltProtection;
@@ -12338,6 +12412,8 @@ void CvUnit::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iExtraCityDefensePercent);
 	pStream->Read(&m_iExtraHillsAttackPercent);
 	pStream->Read(&m_iExtraHillsDefensePercent);
+	pStream->Read(&m_iExtraPlainsAttackPercent); // Leoreth
+	pStream->Read(&m_iExtraPlainsDefensePercent); // Leoreth
 	pStream->Read(&m_iRevoltProtection);
 	pStream->Read(&m_iCollateralDamageProtection);
 	pStream->Read(&m_iPillageChange);
@@ -12444,6 +12520,8 @@ void CvUnit::write(FDataStreamBase* pStream)
 	pStream->Write(m_iExtraCityDefensePercent);
 	pStream->Write(m_iExtraHillsAttackPercent);
 	pStream->Write(m_iExtraHillsDefensePercent);
+	pStream->Write(m_iExtraPlainsAttackPercent); // Leoreth
+	pStream->Write(m_iExtraPlainsDefensePercent); // Leoreth
 	pStream->Write(m_iRevoltProtection);
 	pStream->Write(m_iCollateralDamageProtection);
 	pStream->Write(m_iPillageChange);

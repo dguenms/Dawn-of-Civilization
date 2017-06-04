@@ -1757,4 +1757,24 @@
 		<Tag>TXT_KEY_UNITCOMBAT_LIGHT_CAVALRY</Tag>
 		<English>Light Cavalry Units</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PLAINS_STRENGTH</Tag>
+		<English>[ICON_BULLET]%D1_Change%% Open Terrain Strength</English>
+		<German>[ICON_BULLET]%D1_Change%% St&#228;rke in offenem Terrain</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PLAINS_ATTACK</Tag>
+		<English>[ICON_BULLET]%D1_Change%% Open Terrain Attack</English>
+		<German>[ICON_BULLET]%D1_Change%% Angriff in offenem Terrain</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PLAINS_DEFENSE</Tag>
+		<English>[ICON_BULLET]%D1_Change%% Open Terrain Defense</English>
+		<German>[ICON_BULLET]%D1_Change%% Verteidigung in offenem Terrain</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COMBAT_PLOT_PLAINS_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</English>
+		<German>[ICON_BULLET]%D1_Bonus%% durch offenes Terrain (Einheitenf&#228;higkeit)</German>
+	</TEXT>
 </Civ4GameText>

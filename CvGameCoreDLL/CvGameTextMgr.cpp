@@ -981,6 +981,30 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 			}
 		}
 
+		// Leoreth
+		if (pUnit->plainsAttackModifier() == pUnit->plainsDefenseModifier())
+		{
+			if (pUnit->plainsAttackModifier() != 0)
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_UNIT_PLAINS_STRENGTH", pUnit->plainsAttackModifier()));
+			}
+		}
+		else
+		{
+			if (pUnit->plainsAttackModifier() != 0)
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_UNIT_PLAINS_ATTACK", pUnit->plainsAttackModifier()));
+			}
+
+			if (pUnit->plainsDefenseModifier() != 0)
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_UNIT_PLAINS_DEFENSE", pUnit->plainsDefenseModifier()));
+			}
+		}
+
 		for (iI = 0; iI < GC.getNumTerrainInfos(); ++iI)
 		{
 			if (pUnit->terrainAttackModifier((TerrainTypes)iI) == pUnit->terrainDefenseModifier((TerrainTypes)iI))
@@ -3250,6 +3274,18 @@ It is fine for a human player mouse-over (which is what it is used for).
                         }
                     }
 
+					// Leoreth
+					if (pPlot->isPlains())
+					{
+						iModifier = pDefender->plainsDefenseModifier();
+
+						if (iModifier != 0)
+						{
+							szString.append(NEWLINE);
+							szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_PLAINS_MOD", iModifier));
+						}
+					}
+
                     if (pPlot->getFeatureType() != NO_FEATURE)
                     {
                         iModifier = pDefender->featureDefenseModifier(pPlot->getFeatureType());
@@ -3329,6 +3365,18 @@ It is fine for a human player mouse-over (which is what it is used for).
                             szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_HILLS_MOD", -iModifier));
                         }
                     }
+
+					// Leoreth
+					if (pPlot->isPlains())
+					{
+						iModifier = pAttacker->plainsAttackModifier();
+
+						if (iModifier != 0)
+						{
+							szString.append(NEWLINE);
+							szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_PLAINS_MOD", -iModifier));
+						}
+					}
 
                     if (pPlot->getFeatureType() != NO_FEATURE)
                     {
@@ -3486,6 +3534,18 @@ It is fine for a human player mouse-over (which is what it is used for).
 				{
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_HILLS_MOD", iModifier));
+				}
+			}
+
+			// Leoreth
+			if (pPlot->isPlains())
+			{
+				iModifier = pAttacker->plainsAttackModifier();
+
+				if (iModifier != 0)
+				{
+					szString.append(NEWLINE);
+					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_PLAINS_MOD", iModifier));
 				}
 			}
 
@@ -3681,6 +3741,18 @@ It is fine for a human player mouse-over (which is what it is used for).
 				{
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_HILLS_MOD", iModifier));
+				}
+			}
+
+			// Leoreth
+			if (pPlot->isPlains())
+			{
+				iModifier = pDefender->plainsDefenseModifier();
+
+				if (iModifier != 0)
+				{
+					szString.append(NEWLINE);
+					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_PLAINS_MOD", iModifier));
 				}
 			}
 
@@ -9034,6 +9106,30 @@ void CvGameTextMgr::setBasicUnitHelpWithCity(CvWStringBuffer &szBuffer, UnitType
 		{
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_HILLS_DEFENSE", GC.getUnitInfo(eUnit).getHillsDefenseModifier()));
+		}
+	}
+
+	// Leoreth
+	if (GC.getUnitInfo(eUnit).getPlainsAttackModifier() == GC.getUnitInfo(eUnit).getPlainsDefenseModifier())
+	{
+		if (GC.getUnitInfo(eUnit).getPlainsAttackModifier() != 0)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_PLAINS_STRENGTH", GC.getUnitInfo(eUnit).getPlainsAttackModifier()));
+		}
+	}
+	else
+	{
+		if (GC.getUnitInfo(eUnit).getPlainsAttackModifier() != 0)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_PLAINS_ATTACK", GC.getUnitInfo(eUnit).getPlainsAttackModifier()));
+		}
+
+		if (GC.getUnitInfo(eUnit).getPlainsDefenseModifier() != 0)
+		{
+			szBuffer.append(NEWLINE);
+			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_PLAINS_DEFENSE", GC.getUnitInfo(eUnit).getPlainsDefenseModifier()));
 		}
 	}
 

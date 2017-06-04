@@ -299,6 +299,8 @@ public:
 	DllExport bool isPeak() const;																																								// Exposed to Python
 	void setPlotType(PlotTypes eNewValue, bool bRecalculate = true, bool bRebuildGraphics = true);			// Exposed to Python
 
+	bool isPlains() const; // Leoreth
+
 	DllExport TerrainTypes getTerrainType() const;																																	// Exposed to Python
 	void setTerrainType(TerrainTypes eNewValue, bool bRecalculate = true, bool bRebuildGraphics = true);	// Exposed to Python
 

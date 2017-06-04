@@ -11380,3 +11380,8 @@ bool CvPlot::canSpread(ReligionTypes eReligion) const
 {
 	return getReligionInfluence(eReligion) > 0;
 }
+
+bool CvPlot::isPlains() const
+{
+	return isFlatlands() && (getFeatureType() == NO_FEATURE) && !isCity();
+}

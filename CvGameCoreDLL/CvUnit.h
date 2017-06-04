@@ -34,6 +34,8 @@ struct DllExport CombatDetails					// Exposed to Python
 	int iCityDefenseModifier;
 	int iHillsAttackModifier;
 	int iHillsDefenseModifier;
+	int iPlainsAttackModifier; // Leoreth
+	int iPlainsDefenseModifier; // Leoreth
 	int iFeatureAttackModifier;
 	int iFeatureDefenseModifier;
 	int iTerrainAttackModifier;
@@ -419,6 +421,8 @@ public:
 	int animalCombatModifier() const;																				// Exposed to Python
 	int hillsAttackModifier() const;																				// Exposed to Python
 	int hillsDefenseModifier() const;																				// Exposed to Python
+	int plainsAttackModifier() const; // Leoreth
+	int plainsDefenseModifier() const; // Leoreth
 	int terrainAttackModifier(TerrainTypes eTerrain) const;								// Exposed to Python
 	int terrainDefenseModifier(TerrainTypes eTerrain) const;								// Exposed to Python
 	int featureAttackModifier(FeatureTypes eFeature) const;								// Exposed to Python
@@ -620,6 +624,14 @@ public:
 
 	int getExtraHillsDefensePercent() const;																									// Exposed to Python
 	void changeExtraHillsDefensePercent(int iChange);
+
+	// Leoreth
+	int getExtraPlainsAttackPercent() const;
+	void changeExtraPlainsAttackPercent(int iChange);
+
+	// Leoreth
+	int getExtraPlainsDefensePercent() const;
+	void changeExtraPlainsDefensePercent(int iChange);
 
 	int getRevoltProtection() const;																									// Exposed to Python
 	void changeRevoltProtection(int iChange);
@@ -875,6 +887,8 @@ protected:
 	int m_iExtraCityDefensePercent;
 	int m_iExtraHillsAttackPercent;
 	int m_iExtraHillsDefensePercent;
+	int m_iExtraPlainsAttackPercent; // Leoreth
+	int m_iExtraPlainsDefensePercent; // Leoreth
 	int m_iRevoltProtection;
 	int m_iCollateralDamageProtection;
 	int m_iPillageChange;
