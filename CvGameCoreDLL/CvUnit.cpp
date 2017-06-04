@@ -12726,6 +12726,14 @@ void CvUnit::collateralCombat(const CvPlot* pPlot, CvUnit* pSkipUnit)
 				iCollateralDamage = std::max(0, iCollateralDamage);
 
 				int iMaxDamage = std::min(collateralDamageLimit(), (collateralDamageLimit() * (iCollateralStrength + iStrengthFactor)) / (iTheirStrength + iStrengthFactor));
+
+				// Leoreth: city defense limits collateral damage
+				if (pPlot->isCity())
+				{
+					int iCityDefenseLimit = std::max(0, 100 - pPlot->getPlotCity()->getDefenseModifier(false));
+					iMaxDamage = std::min(iMaxDamage, iCityDefenseLimit);
+				}
+
 				iUnitDamage = std::max(pBestUnit->getDamage(), std::min(pBestUnit->getDamage() + iCollateralDamage, iMaxDamage));
 
 				if (pBestUnit->getDamage() != iUnitDamage)
