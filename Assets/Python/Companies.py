@@ -203,6 +203,7 @@ class Companies:
 			
 		elif iCompany == iTextileIndustry:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iMarket)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWeaver)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
 
 		elif iCompany == iSteelIndustry:
@@ -213,13 +214,14 @@ class Companies:
 
 		elif iCompany == iOilIndustry:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBank)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iDistillery)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iIndustrialPark)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iStockExchange)): iValue += 3
 
 		elif iCompany == iLuxuryIndustry:
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iFactory)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iTheatre)): iValue += 1
-			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iBroadcastTower)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iWeaver)): iValue += 1
+			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iDepartmentStore)): iValue += 1
 			if city.hasBuilding(utils.getUniqueBuilding(iOwner, iNationalGallery)): iValue += 3
 
 		elif iCompany == iComputerIndustry:
