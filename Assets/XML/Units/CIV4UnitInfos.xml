@@ -5219,6 +5219,12 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<iUnitCombatMod>50</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
 			<iFirstStrikes>1</iFirstStrikes>
 			<iCityDefense>50</iCityDefense>
 			<iHillsDefense>25</iHillsDefense>
@@ -5890,6 +5896,12 @@
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
 			<iFirstStrikes>1</iFirstStrikes>
 			<iCityDefense>25</iCityDefense>
 			<iHillsDefense>25</iHillsDefense>
@@ -5977,7 +5989,11 @@
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<iCultureGarrison>6</iCultureGarrison>
