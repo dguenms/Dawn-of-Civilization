@@ -903,7 +903,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			return -1
 		elif iDefaultUnit > -1 and iDefaultUnit != iUnit:
 			return 2
-		elif UnitInfo.getCombat() > 0 or UnitInfo.getAirCombat() > 0 or UnitInfo.isSuicide():
+		elif UnitInfo.getCombat() > 0 or UnitInfo.getAirCombat() != 0 or UnitInfo.isSuicide():
 			if not UnitInfo.isAnimal() and not UnitInfo.isFound():
 				return 1
 
