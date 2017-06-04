@@ -2808,7 +2808,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>100</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -2905,7 +2905,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>100</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -3018,7 +3018,7 @@
 			</UnitClassAttackMods>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>100</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -3105,7 +3105,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>100</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -3192,7 +3192,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>100</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -3278,7 +3278,7 @@
 					<iUnitCombatMod>100</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>100</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -3360,7 +3360,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>100</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
@@ -3544,7 +3544,7 @@
 					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -6001,7 +6001,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CHARIOT</Class>
 			<Type>UNIT_CHARIOT</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CHARIOT</Description>
@@ -6088,7 +6088,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CHARIOT</Class>
 			<Type>UNIT_EGYPTIAN_WARCHARIOT</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_EGYPTIAN_WARCHARIOT</Description>
@@ -6178,7 +6178,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CHARIOT</Class>
 			<Type>UNIT_HITTITE_HULUGANNI</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HITTITE_HULUGANNI</Description>
@@ -6261,7 +6261,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CHARIOT</Class>
 			<Type>UNIT_CELTIC_CIDAINH</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CELTIC_CIDAINH</Description>
@@ -6346,7 +6346,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_HORSEMAN</Class>
 			<Type>UNIT_HORSEMAN</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HORSEMAN</Description>
@@ -6447,7 +6447,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_HORSEMAN</Class>
 			<Type>UNIT_NUMIDIAN_CAVALRY</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_NUMIDIAN_CAVALRY</Description>
@@ -6558,7 +6558,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_HORSEMAN</Class>
 			<Type>UNIT_KUSHAN_ASVAKA</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_KUSHAN_ASVAKA</Description>
@@ -6663,7 +6663,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_HORSE_ARCHER</Class>
 			<Type>UNIT_HORSE_ARCHER</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HORSE_ARCHER</Description>
@@ -6748,7 +6748,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_HORSE_ARCHER</Class>
 			<Type>UNIT_ARABIAN_CAMEL_ARCHER</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ARABIAN_CAMEL_ARCHER</Description>
@@ -6828,7 +6828,7 @@
 			</UnitClassAttackMods>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -6857,7 +6857,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_HORSE_ARCHER</Class>
 			<Type>UNIT_TIBETAN_KHAMPA</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_TIBETAN_KHAMPA</Description>
@@ -6935,7 +6935,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>
 			<Type>UNIT_LANCER</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_LANCER</Description>
@@ -7027,7 +7027,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>
 			<Type>UNIT_MONGOLIAN_KESHIK</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MONGOLIAN_KESHIK</Description>
@@ -7118,7 +7118,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>
 			<Type>UNIT_BYZANTINE_CATAPHRACT</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BYZANTINE_CATAPHRACT</Description>
@@ -7216,7 +7216,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>
 			<Type>UNIT_THAI_CHANG_SUEK</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_THAI_CHANG_SUEK</Description>
@@ -7290,7 +7290,7 @@
 			</UnitClassAttackMods>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -7313,7 +7313,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>
 			<Type>UNIT_SELJUK_GHULAM_WARRIOR</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SELJUK_GHULAM_WARRIOR</Description>
@@ -7417,7 +7417,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>
 			<Type>UNIT_MANDE_FARARI</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MANDE_FARARI</Description>
@@ -7515,7 +7515,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_PISTOLIER</Class>
 			<Type>UNIT_PISTOLIER</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_PISTOLIER</Description>
@@ -7614,7 +7614,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CUIRASSIER</Class>
 			<Type>UNIT_CUIRASSIER</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CUIRASSIER</Description>
@@ -7697,7 +7697,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CUIRASSIER</Class>
 			<Type>UNIT_SPANISH_CONQUISTADOR</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SPANISH_CONQUISTADOR</Description>
@@ -7796,7 +7796,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CUIRASSIER</Class>
 			<Type>UNIT_POLISH_WINGED_HUSSAR</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_POLISH_WINGED_HUSSAR</Description>
@@ -7889,7 +7889,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CUIRASSIER</Class>
 			<Type>UNIT_SIOUX_MOUNTED_BRAVE</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SIOUX_MOUNTED_BRAVE</Description>
@@ -7973,7 +7973,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CUIRASSIER</Class>
 			<Type>UNIT_MOORISH_CAMEL_GUNNER</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MOORISH_CAMEL_GUNNER</Description>
@@ -8036,7 +8036,7 @@
 			<iCollateralDamageMaxUnits>5</iCollateralDamageMaxUnits>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -8066,7 +8066,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_HUSSAR</Class>
 			<Type>UNIT_HUSSAR</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HUSSAR</Description>
@@ -8177,7 +8177,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_DRAGOON</Class>
 			<Type>UNIT_DRAGOON</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_DRAGOON</Description>
@@ -8256,7 +8256,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_DRAGOON</Class>
 			<Type>UNIT_RUSSIAN_COSSACK</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_RUSSIAN_COSSACK</Description>
@@ -8325,7 +8325,7 @@
 			</UnitClassAttackMods>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -8348,7 +8348,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_DRAGOON</Class>
 			<Type>UNIT_ARGENTINE_GRENADIER_CAVALRY</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_ARGENTINE_GRENADIER_CAVALRY</Description>
@@ -8437,7 +8437,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CAVALRY</Class>
 			<Type>UNIT_CAVALRY</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_CAVALRY</Description>
@@ -8549,7 +8549,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CAVALRY</Class>
 			<Type>UNIT_MEXICAN_RURALES</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MEXICAN_RURALES</Description>
@@ -8666,7 +8666,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_WAR_ELEPHANT</Class>
 			<Type>UNIT_WAR_ELEPHANT</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_WAR_ELEPHANT</Description>
@@ -8717,7 +8717,7 @@
 			<iCityAttack>-25</iCityAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -8740,7 +8740,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_WAR_ELEPHANT</Class>
 			<Type>UNIT_KHMER_BALLISTA_ELEPHANT</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_KHMER_BALLISTA_ELEPHANT</Description>
@@ -8760,7 +8760,7 @@
 			</UnitClassUpgrades>
 			<UnitCombatTargets>
 				<UnitCombatTarget>
-					<UnitCombatTargetType>UNITCOMBAT_MOUNTED</UnitCombatTargetType>
+					<UnitCombatTargetType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatTargetType>
 					<bUnitCombatTarget>1</bUnitCombatTarget>
 				</UnitCombatTarget>
 			</UnitCombatTargets>
@@ -8796,7 +8796,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
@@ -8819,7 +8819,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_WAR_ELEPHANT</Class>
 			<Type>UNIT_PHOENICIAN_ATLAS_ELEPHANT</Type>
-			<Combat>UNITCOMBAT_MOUNTED</Combat>
+			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_PHOENICIAN_ATLAS_ELEPHANT</Description>
@@ -8870,7 +8870,7 @@
 			<iCityAttack>-25</iCityAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>

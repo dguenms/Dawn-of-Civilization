@@ -9822,7 +9822,7 @@
 			<UnitName/>
 			<UnitCombatPromotions>
 				<UnitCombatPromotion>
-					<UnitCombat>UNITCOMBAT_MOUNTED</UnitCombat>
+					<UnitCombat>UNITCOMBAT_HEAVY_CAVALRY</UnitCombat>
 					<UnitPromotion>PROMOTION_FLANKING1</UnitPromotion>
 				</UnitCombatPromotion>
 			</UnitCombatPromotions>
@@ -16240,7 +16240,7 @@
 			<UnitName/>
 			<UnitCombatPromotions>
 				<UnitCombatPromotion>
-					<UnitCombat>UNITCOMBAT_MOUNTED</UnitCombat>
+					<UnitCombat>UNITCOMBAT_HEAVY_CAVALRY</UnitCombat>
 					<UnitPromotion>PROMOTION_SENTRY</UnitPromotion>
 				</UnitCombatPromotion>
 			</UnitCombatPromotions>

@@ -1749,4 +1749,12 @@
 		<Tag>TXT_KEY_UNIT_CARRIER_BASE</Tag>
 		<English>[ICON_BULLET]Can be Based on [LINK=UNIT_CARRIER]Carriers[\LINK]</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCOMBAT_HEAVY_CAVALRY</Tag>
+		<English>Heavy Cavalry Units</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCOMBAT_LIGHT_CAVALRY</Tag>
+		<English>Light Cavalry Units</English>
+	</TEXT>
 </Civ4GameText>

@@ -17,8 +17,13 @@
 			<Button>,Art/Interface/Buttons/Promotions/Cover.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,5</Button>
 		</UnitCombatInfo>
 		<UnitCombatInfo>
-			<Type>UNITCOMBAT_MOUNTED</Type>
-			<Description>TXT_KEY_UNITCOMBAT_MOUNTED</Description>
+			<Type>UNITCOMBAT_HEAVY_CAVALRY</Type>
+			<Description>TXT_KEY_UNITCOMBAT_HEAVY_CAVALRY</Description>
+			<Button>,Art/Interface/Buttons/Promotions/Formation.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,2</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+			<Type>UNITCOMBAT_LIGHT_CAVALRY</Type>
+			<Description>TXT_KEY_UNITCOMBAT_LIGHT_CAVALRY</Description>
 			<Button>,Art/Interface/Buttons/Promotions/Formation.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,2</Button>
 		</UnitCombatInfo>
 		<UnitCombatInfo>
