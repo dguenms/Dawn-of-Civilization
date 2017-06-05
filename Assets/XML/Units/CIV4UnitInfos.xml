@@ -7027,7 +7027,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_LANCER</Class>
 			<Type>UNIT_MONGOLIAN_KESHIK</Type>
-			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_MONGOLIAN_KESHIK</Description>
@@ -7099,6 +7099,7 @@
 			<iCollateralDamage>50</iCollateralDamage>
 			<iCollateralDamageLimit>60</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>5</iCollateralDamageMaxUnits>
+			<iCityAttack>25</iCityAttack>
 			<iPlainsAttack>25</iPlainsAttack>
 			<iPlainsDefense>25</iPlainsDefense>
 			<iCultureGarrison>6</iCultureGarrison>
