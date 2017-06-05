@@ -1785,7 +1785,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 			{
 				int iCombatOdds = getCombatOdds(pAttacker, pDefender);
 
-				if (pAttacker->combatLimit() >= GC.getMAX_HIT_POINTS())
+				if (pAttacker->combatLimitAgainst(pDefender) >= GC.getMAX_HIT_POINTS())
 				{
 					if (iCombatOdds > 999)
 					{
@@ -1821,14 +1821,14 @@ It is fine for a human player mouse-over (which is what it is used for).
 
 				int iWithdrawal = 0;
 
-				if (pAttacker->combatLimit() < GC.getMAX_HIT_POINTS())
+				if (pAttacker->combatLimitAgainst(pDefender) < GC.getMAX_HIT_POINTS())
 				{
 					iWithdrawal += 100 * iCombatOdds;
 				}
 
 				iWithdrawal += std::min(100, pAttacker->withdrawalProbability()) * (1000 - iCombatOdds);
 
-				if (iWithdrawal > 0 || pAttacker->combatLimit() < GC.getMAX_HIT_POINTS())
+				if (iWithdrawal > 0 || pAttacker->combatLimitAgainst(pDefender) < GC.getMAX_HIT_POINTS())
 				{
 					if (iWithdrawal > 99900)
 					{
@@ -1975,7 +1975,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 					int iWithdrawXP;//thanks to phungus420
 					iWithdrawXP = GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL");//thanks to phungus420
 
-					if (pAttacker->combatLimit() < 100)
+					if (pAttacker->combatLimitAgainst(pDefender) < 100)
 					{
 						iExperience        = GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL");
 					}
@@ -2048,7 +2048,7 @@ It is fine for a human player mouse-over (which is what it is used for).
                         }
                     }
 
-					int iNeededRoundsAttacker = (pDefender->currHitPoints() - pDefender->maxHitPoints() + pAttacker->combatLimit() - (((pAttacker->combatLimit())==pDefender->maxHitPoints())?1:0))/iDamageToDefender + 1;
+					int iNeededRoundsAttacker = (pDefender->currHitPoints() - pDefender->maxHitPoints() + pAttacker->combatLimitAgainst(pDefender) - (((pAttacker->combatLimitAgainst(pDefender)) == pDefender->maxHitPoints())? 1 : 0)) / iDamageToDefender + 1;
 					//The extra term introduced here was to account for the incorrect way it treated units that had combatLimits.
 					//A catapult that deals 25HP per round, and has a combatLimit of 75HP must deal four successful hits before it kills the warrior -not 3.  This is proved in the way CvUnit::resolvecombat works
 					// The old formula (with just a plain -1 instead of a conditional -1 or 0) was incorrectly saying three.
@@ -2062,7 +2062,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 					//pDefender->currHitPoints(),pDefender->maxHitPoints(),pAttacker->combatLimit(),pAttacker->combatLimit(),pDefender->maxHitPoints(),iDamageToDefender);
 					//szString.append(NEWLINE);szString.append(szTempBuffer.GetCString());
 
-					int iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimit();
+					int iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimitAgainst(pDefender);
 
 					//NOW WE CALCULATE SOME INTERESTING STUFF :)
 
@@ -2158,9 +2158,9 @@ It is fine for a human player mouse-over (which is what it is used for).
                     E_HP_Def_Defeat = E_HP_Def;
                     E_HP_Def_Withdraw = 0.0f;
 
-                    if (pAttacker->combatLimit() < (pDefender->maxHitPoints() ))//if attacker has a combatLimit (eg. catapult)
+                    if (pAttacker->combatLimitAgainst(pDefender) < pDefender->maxHitPoints())//if attacker has a combatLimit (eg. catapult)
                     {
-                        if (pAttacker->combatLimit() == iDamageToDefender*(iNeededRoundsAttacker-1) )
+                        if (pAttacker->combatLimitAgainst(pDefender) == iDamageToDefender*(iNeededRoundsAttacker-1) )
                         {
                             //Then we have an odd situation because the last successful hit by an attacker will do 0 damage, and doing either iNeededRoundsAttacker or iNeededRoundsAttacker-1 will cause the same damage
                             if (ACO_debug)
@@ -2190,7 +2190,7 @@ It is fine for a human player mouse-over (which is what it is used for).
                         {
                             if (ACO_debug)
                             {
-                                szTempBuffer.Format(L"Odds that attacker withdraws at combatLimit (normal)",pAttacker->combatLimit());
+                                szTempBuffer.Format(L"Odds that attacker withdraws at combatLimit (normal)", pAttacker->combatLimitAgainst(pDefender));
                                 szString.append(NEWLINE);
                                 szString.append(szTempBuffer.GetCString());
                             }
@@ -2235,7 +2235,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 
 
 					// General odds
-                    if (pAttacker->combatLimit() == (pDefender->maxHitPoints() )) //ie. we can kill the defender... I hope this is the most general form
+                    if (pAttacker->combatLimitAgainst(pDefender) == (pDefender->maxHitPoints() )) //ie. we can kill the defender... I hope this is the most general form
                     {
                         //float AttackerKillOdds = 0.0f;
                         for (int n_A = 0; n_A < iNeededRoundsDefender; n_A++)
@@ -2344,7 +2344,7 @@ It is fine for a human player mouse-over (which is what it is used for).
 
 
                     szString.append(NEWLINE);
-                    if (pAttacker->combatLimit() == (pDefender->maxHitPoints() ))
+                    if (pAttacker->combatLimitAgainst(pDefender) == (pDefender->maxHitPoints() ))
                     {
                         szTempBuffer.Format(L": " SETCOLR L"%.2f%% " L"%d" ENDCOLR,
                                             TEXT_COLOR("COLOR_POSITIVE_TEXT"),100.0f*AttackerKillOdds,iExperience);
@@ -2667,7 +2667,7 @@ It is fine for a human player mouse-over (which is what it is used for).
                         int def_HP;
                         for (int n_D = iNeededRoundsAttacker; n_D >= 1; n_D--)//
                         {
-                            if (pAttacker->combatLimit() >= pDefender->maxHitPoints())// a unit with a combat limit
+                            if (pAttacker->combatLimitAgainst(pDefender) >= pDefender->maxHitPoints())// a unit with a combat limit
                             {
                                 if (n_D == iNeededRoundsAttacker)
                                 {
@@ -2675,15 +2675,15 @@ It is fine for a human player mouse-over (which is what it is used for).
                                 }
                             }
 
-                            def_HP = std::max((pDefender->currHitPoints()) - n_D*iDamageToDefender,(pDefender->maxHitPoints()  - pAttacker->combatLimit()));
+                            def_HP = std::max((pDefender->currHitPoints()) - n_D*iDamageToDefender, (pDefender->maxHitPoints() - pAttacker->combatLimitAgainst(pDefender)));
 
-                            if ( (pDefender->maxHitPoints() - pAttacker->combatLimit() ) == pDefender->currHitPoints() - (n_D-1)*iDamageToDefender)
+                            if ( (pDefender->maxHitPoints() - pAttacker->combatLimitAgainst(pDefender)) == pDefender->currHitPoints() - (n_D-1)*iDamageToDefender)
                             {
                                 // if abnormal
                                 if (n_D == iNeededRoundsAttacker)
                                 {
                                     n_D--;
-                                    def_HP = (pDefender->maxHitPoints()  - pAttacker->combatLimit());
+                                    def_HP = (pDefender->maxHitPoints()  - pAttacker->combatLimitAgainst(pDefender));
                                     prob += 100.0f*PullOutOdds;
                                     prob += 100.0f*(getCombatOddsSpecific(pAttacker,pDefender,iNeededRoundsDefender,n_D)+(getCombatOddsSpecific(pAttacker,pDefender,iNeededRoundsDefender-1,n_D)));
                                 }
@@ -2701,7 +2701,7 @@ It is fine for a human player mouse-over (which is what it is used for).
                                 }
                             }
 
-                            if (prob > HP_percent_cutoff || (pAttacker->combatLimit()<pDefender->maxHitPoints() && (n_D==iNeededRoundsAttacker)))
+                            if (prob > HP_percent_cutoff || (pAttacker->combatLimitAgainst(pDefender) < pDefender->maxHitPoints() && (n_D==iNeededRoundsAttacker)))
                             {
                                 if (bIsCondensed) // then we need to print the prev ones
                                 {
@@ -2775,7 +2775,7 @@ It is fine for a human player mouse-over (which is what it is used for).
                             {
                                 bIsCondensed = true;
                                 first_combined_HP_Def = (std::min(first_combined_HP_Def,def_HP));
-                                last_combined_HP = std::max(((pDefender->currHitPoints()) - n_D*iDamageToDefender),pDefender->maxHitPoints()-pAttacker->combatLimit());
+                                last_combined_HP = std::max(((pDefender->currHitPoints()) - n_D*iDamageToDefender), pDefender->maxHitPoints() - pAttacker->combatLimitAgainst(pDefender));
                                 combined_HP_sum += prob;
                             }
                             prob = 0.0f;
@@ -2870,7 +2870,7 @@ It is fine for a human player mouse-over (which is what it is used for).
                                             TEXT_COLOR("COLOR_POSITIVE_TEXT"),float(iAttackerOdds)*100.0f / float(GC.getDefineINT("COMBAT_DIE_SIDES")));
                         szString.append(szTempBuffer.GetCString());
                     }
-                    if (!(iView & getBugOptionINT("ACO__ShowExperienceRange", 2, "ACO_SHOW_EXPERIENCE_RANGE")) || (pAttacker->combatLimit() < (pDefender->maxHitPoints() ))) //medium and high only
+                    if (!(iView & getBugOptionINT("ACO__ShowExperienceRange", 2, "ACO_SHOW_EXPERIENCE_RANGE")) || (pAttacker->combatLimitAgainst(pDefender) < (pDefender->maxHitPoints() ))) //medium and high only
                     {
                         if (iView & getBugOptionINT("ACO__ShowBasicInfo", 3, "ACO_SHOW_BASIC_INFO"))
                         {
@@ -2884,7 +2884,7 @@ It is fine for a human player mouse-over (which is what it is used for).
                         //we do an XP range display
                         //This should hopefully now work for any max and min XP values.
 
-                        if (pAttacker->combatLimit() == (pDefender->maxHitPoints() ))
+                        if (pAttacker->combatLimitAgainst(pDefender) == (pDefender->maxHitPoints() ))
                         {
                             FAssert(GC.getDefineINT("MAX_EXPERIENCE_PER_COMBAT") > GC.getDefineINT("MIN_EXPERIENCE_PER_COMBAT")); //ensuring the differences is at least 1
                             int size = GC.getDefineINT("MAX_EXPERIENCE_PER_COMBAT") - GC.getDefineINT("MIN_EXPERIENCE_PER_COMBAT");

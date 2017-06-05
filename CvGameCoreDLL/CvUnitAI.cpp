@@ -826,7 +826,7 @@ int CvUnitAI::AI_attackOdds(const CvPlot* pPlot, bool bPotentialEnemy) const
 	iDamageToUs = std::max(1,((GC.getDefineINT("COMBAT_DAMAGE") * (iTheirFirepower + iStrengthFactor)) / (iOurFirepower + iStrengthFactor)));
 	iDamageToThem = std::max(1,((GC.getDefineINT("COMBAT_DAMAGE") * (iOurFirepower + iStrengthFactor)) / (iTheirFirepower + iStrengthFactor)));
 
-	iHitLimitThem = pDefender->maxHitPoints() - combatLimit();
+	iHitLimitThem = pDefender->maxHitPoints() - combatLimitAgainst(pDefender);
 
 	iNeededRoundsUs = (std::max(0, pDefender->currHitPoints() - iHitLimitThem) + iDamageToThem - 1 ) / iDamageToThem;
 	iNeededRoundsThem = (std::max(0, currHitPoints()) + iDamageToUs - 1 ) / iDamageToUs;

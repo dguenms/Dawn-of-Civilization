@@ -708,7 +708,7 @@ int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender)
 	// Needed rounds = round_up(health/damage)
 	//////
 
-	iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimit();
+	iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimitAgainst(pDefender);
 
 	iNeededRoundsAttacker = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - 1 ) / iDamageToDefender;
 	iNeededRoundsDefender = (pAttacker->currHitPoints() + iDamageToAttacker - 1 ) / iDamageToAttacker;
@@ -956,12 +956,12 @@ float getCombatOddsSpecific(CvUnit* pAttacker, CvUnit* pDefender, int n_A, int n
         }
     }
 
-    iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimit();
+    iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimitAgainst(pDefender);
 
     //iNeededRoundsAttacker = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - (((pAttacker->combatLimit())==GC.getMAX_HIT_POINTS())?1:0) ) / iDamageToDefender;
-    iNeededRoundsAttacker = (pDefender->currHitPoints() - pDefender->maxHitPoints() + pAttacker->combatLimit() - (((pAttacker->combatLimit())==pDefender->maxHitPoints())?1:0))/iDamageToDefender + 1;
+    iNeededRoundsAttacker = (pDefender->currHitPoints() - pDefender->maxHitPoints() + pAttacker->combatLimitAgainst(pDefender) - (((pAttacker->combatLimitAgainst(pDefender)) == pDefender->maxHitPoints()) ? 1 : 0)) / iDamageToDefender + 1;
 
-    int N_D = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - (((pAttacker->combatLimit())==GC.getMAX_HIT_POINTS())?1:0) ) / iDamageToDefender;
+    int N_D = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - (((pAttacker->combatLimitAgainst(pDefender))==GC.getMAX_HIT_POINTS())?1:0) ) / iDamageToDefender;
 
     //int N_A = (pAttacker->currHitPoints() + iDamageToAttacker - 1 ) / iDamageToAttacker;  //same as next line
     int N_A = (pAttacker->currHitPoints() - 1)/iDamageToAttacker + 1;

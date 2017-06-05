@@ -1312,10 +1312,10 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 		{
 			if (pDefender->getCombatFirstStrikes() == 0)
 			{
-				if (std::min(GC.getMAX_HIT_POINTS(), pDefender->getDamage() + iDefenderDamage) > combatLimit())
+				if (std::min(GC.getMAX_HIT_POINTS(), pDefender->getDamage() + iDefenderDamage) > combatLimitAgainst(pDefender))
 				{
 					changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
-					pDefender->setDamage(combatLimit(), getOwnerINLINE());
+					pDefender->setDamage(combatLimitAgainst(pDefender), getOwnerINLINE());
 // BUG - Combat Events - start
 					CvEventReporter::getInstance().combatWithdrawal(this, pDefender);
 // BUG - Combat Events - end
@@ -8799,6 +8799,7 @@ bool CvUnit::canAttack() const
 
 	return true;
 }
+
 bool CvUnit::canAttack(const CvUnit& defender) const
 {
 	if (!canAttack())
@@ -8806,7 +8807,7 @@ bool CvUnit::canAttack(const CvUnit& defender) const
 		return false;
 	}
 
-	if (defender.getDamage() >= combatLimit())
+	if (defender.getDamage() >= combatLimitAgainst(&defender))
 	{
 		return false;
 	}
@@ -8814,7 +8815,7 @@ bool CvUnit::canAttack(const CvUnit& defender) const
 	// Artillery can't amphibious attack
 	if (plot()->isWater() && !defender.plot()->isWater())
 	{
-		if (combatLimit() < 100)
+		if (combatLimitAgainst(&defender) < 100)
 		{
 			return false;
 		}
@@ -8945,6 +8946,21 @@ float CvUnit::airCurrCombatStrFloat(const CvUnit* pOther) const
 int CvUnit::combatLimit() const
 {
 	return m_pUnitInfo->getCombatLimit();
+}
+
+
+// Leoreth
+int CvUnit::combatLimitAgainst(const CvUnit* pUnit) const
+{
+	int iCombatLimit = combatLimit();
+
+	if (pUnit != NULL && pUnit->plot()->isCity())
+	{
+		int iCityDefense = std::max(0, 100 - pUnit->plot()->getPlotCity()->getDefenseModifier(false));
+		iCombatLimit = std::min(iCombatLimit, iCityDefense);
+	}
+
+	return iCombatLimit;
 }
 
 

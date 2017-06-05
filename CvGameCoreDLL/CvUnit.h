@@ -372,6 +372,7 @@ public:
 	DllExport float airMaxCombatStrFloat(const CvUnit* pOther) const;																			// Exposed to Python
 	DllExport float airCurrCombatStrFloat(const CvUnit* pOther) const;																		// Exposed to Python
 	int combatLimit() const;																												// Exposed to Python
+	int combatLimitAgainst(const CvUnit* pUnit) const;
 	int airCombatLimit() const;																												// Exposed to Python
 	DllExport bool canAirAttack() const;																							// Exposed to Python
 	DllExport bool canAirDefend(const CvPlot* pPlot = NULL) const;										// Exposed to Python
