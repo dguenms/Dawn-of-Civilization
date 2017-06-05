@@ -508,12 +508,13 @@ void CvUnit::convert(CvUnit* pUnit)
 
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
-		setHasPromotion(((PromotionTypes)iI), (/*pUnit->isHasPromotion((PromotionTypes)iI) ||*/ m_pUnitInfo->getFreePromotions(iI)));
+		setHasPromotion(((PromotionTypes)iI), m_pUnitInfo->getFreePromotions(iI) || (pUnit->isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isLeader()));
 	}
 
 	setGameTurnCreated(pUnit->getGameTurnCreated());
 	setDamage(pUnit->getDamage());
 	setMoves(pUnit->getMoves());
+	setLeaderUnitType(pUnit->getLeaderUnitType());
 
 	int iNewExperience = pUnit->getExperience();
 
@@ -550,7 +551,6 @@ void CvUnit::convert(CvUnit* pUnit)
 		m_szName.replace(m_szName.find(szUnitType), szUnitType.length(), m_pUnitInfo->getDescription());
 	}
 // BUG - Unit Name - end
-	setLeaderUnitType(pUnit->getLeaderUnitType());
 
 	CvUnit* pTransportUnit = pUnit->getTransportUnit();
 	if (pTransportUnit != NULL)
@@ -7778,21 +7778,6 @@ void CvUnit::upgrade(UnitTypes eUnit)
 // BUG - Upgrade Unit Event - start
 	CvEventReporter::getInstance().unitUpgraded(this, pUpgradeUnit, iPrice);
 // BUG - Upgrade Unit Event - end
-
-	//Rhye - start UP (used to be German and Ethiopian UP)
-	/*if (pUpgradeUnit->getOwnerINLINE() == GERMANY) {
-		if (pUpgradeUnit->getUnitCombatType() == 5) //gunpowder
-			{
-				pUpgradeUnit->setHasPromotion(((PromotionTypes)14), true); //commando
-			}
-	}
-	if (pUpgradeUnit->getOwnerINLINE() == ETHIOPIA) {
-		if (pUpgradeUnit->getUnitCombatType() == 5) //gunpowder
-			{
-				pUpgradeUnit->setHasPromotion(((PromotionTypes)0), true); //combat1
-			}
-	}*/
-	//Rhye - end UP
 }
 
 //Rhye - start (for some UPs)
