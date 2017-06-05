@@ -5898,7 +5898,7 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
 					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
