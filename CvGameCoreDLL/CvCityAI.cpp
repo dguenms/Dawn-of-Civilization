@@ -3071,7 +3071,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == PARTHENON) iTempValue *= 3;
 										else if (iI == TEMPLE_OF_ARTEMIS) iTempValue *= 3;
 										else if (iI == STATUE_OF_ZEUS) iTempValue *= 3;
-										else if (iI == GREAT_COTHON) iTempValue /= 4;
+										else if (iI == GREAT_COTHON) iTempValue /= 8;
 										else if (iI == HAGIA_SOPHIA) iTempValue *= 2;
 										else {
 											iTempValue *= 2;
