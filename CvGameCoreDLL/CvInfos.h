@@ -474,6 +474,8 @@ public:
 	int getCityDefensePercent() const;				// Exposed to Python
 	int getHillsAttackPercent() const;				// Exposed to Python
 	int getHillsDefensePercent() const;				// Exposed to Python
+	int getPlainsAttackPercent() const; // Leoreth
+	int getPlainsDefensePercent() const; // Leoreth
 	int getCommandType() const;									// Exposed to Python
 	void setCommandType(int iNewType);
 
@@ -550,6 +552,8 @@ protected:
 	int m_iCityDefensePercent;
 	int m_iHillsAttackPercent;
 	int m_iHillsDefensePercent;
+	int m_iPlainsAttackPercent;
+	int m_iPlainsDefensePercent;
 	int m_iCommandType;
 	int m_iRevoltProtection;
 	int m_iCollateralDamageProtection;

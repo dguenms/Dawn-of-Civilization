@@ -1777,4 +1777,14 @@
 		<English>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</English>
 		<German>[ICON_BULLET]%D1_Bonus%% durch offenes Terrain (Einheitenf&#228;higkeit)</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PLAINS_ATTACK_TEXT</Tag>
+		<English>[ICON_BULLET]%D1_Bonus%% Open Terrain Attack</English>
+		<German>[ICON_BULLET]%D1_Bonus%% Angriff in offenem Terrain</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PLAINS_DEFENSE_TEXT</Tag>
+		<English>[ICON_BULLET]%D1_Bonus%% Open Terrain Defense</English>
+		<German>[ICON_BULLET]%D1_Bonus%% Verteidigung in offenem Terrain</German>
+	</TEXT>
 </Civ4GameText>

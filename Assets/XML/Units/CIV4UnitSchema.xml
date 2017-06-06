@@ -891,6 +891,8 @@
 		<element type="iCityDefense" minOccurs="0"/>
 		<element type="iHillsAttack" minOccurs="0"/>
 		<element type="iHillsDefense" minOccurs="0"/>
+		<element type="iPlainsAttack" minOccurs="0"/>
+		<element type="iPlainsDefense" minOccurs="0"/>
 		<element type="iKamikazePercent" minOccurs="0"/>
 		<element type="iRevoltProtection" minOccurs="0"/>
 		<element type="iCollateralDamageProtection" minOccurs="0"/>

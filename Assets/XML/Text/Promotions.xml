@@ -113,4 +113,8 @@
 		<Tag>TXT_KEY_PROMOTION_DISENGAGE2</Tag>
 		<English>Disengage II</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_FLANKING3</Tag>
+		<English>Flanking III</English>
+	</TEXT>
 </Civ4GameText>

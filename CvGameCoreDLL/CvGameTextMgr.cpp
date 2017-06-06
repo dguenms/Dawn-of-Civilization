@@ -6937,6 +6937,20 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_HILLS_DEFENSE_TEXT", GC.getPromotionInfo(ePromotion).getHillsDefensePercent()));
 	}
 
+	// Leoreth
+	if (GC.getPromotionInfo(ePromotion).getPlainsAttackPercent() != 0)
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_PLAINS_ATTACK_TEXT", GC.getPromotionInfo(ePromotion).getPlainsAttackPercent()));
+	}
+
+	// Leoreth
+	if (GC.getPromotionInfo(ePromotion).getPlainsDefensePercent() != 0)
+	{
+		szBuffer.append(pcNewline);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROMOTION_PLAINS_DEFENSE_TEXT", GC.getPromotionInfo(ePromotion).getPlainsDefensePercent()));
+	}
+
 	if (GC.getPromotionInfo(ePromotion).getRevoltProtection() != 0)
 	{
 		szBuffer.append(pcNewline);

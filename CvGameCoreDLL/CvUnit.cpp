@@ -12262,6 +12262,8 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeExtraCityDefensePercent(GC.getPromotionInfo(eIndex).getCityDefensePercent() * iChange);
 		changeExtraHillsAttackPercent(GC.getPromotionInfo(eIndex).getHillsAttackPercent() * iChange);
 		changeExtraHillsDefensePercent(GC.getPromotionInfo(eIndex).getHillsDefensePercent() * iChange);
+		changeExtraPlainsAttackPercent(GC.getPromotionInfo(eIndex).getPlainsAttackPercent() * iChange); // Leoreth
+		changeExtraPlainsDefensePercent(GC.getPromotionInfo(eIndex).getPlainsDefensePercent() * iChange); // Leoreth
 		changeRevoltProtection(GC.getPromotionInfo(eIndex).getRevoltProtection() * iChange);
 		changeCollateralDamageProtection(GC.getPromotionInfo(eIndex).getCollateralDamageProtection() * iChange);
 		changePillageChange(GC.getPromotionInfo(eIndex).getPillageChange() * iChange);
