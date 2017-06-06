@@ -8954,10 +8954,13 @@ int CvUnit::combatLimitAgainst(const CvUnit* pUnit) const
 {
 	int iCombatLimit = combatLimit();
 
-	if (pUnit != NULL && pUnit->plot()->isCity())
+	if (iCombatLimit < 100)
 	{
-		int iCityDefense = std::max(0, 100 - pUnit->plot()->getPlotCity()->getDefenseModifier(false));
-		iCombatLimit = std::min(iCombatLimit, iCityDefense);
+		if (pUnit != NULL && pUnit->plot()->isCity())
+		{
+			int iCityDefense = std::max(0, 100 - pUnit->plot()->getPlotCity()->getDefenseModifier(false));
+			iCombatLimit = std::min(iCombatLimit, iCityDefense);
+		}
 	}
 
 	return iCombatLimit;
