@@ -2332,7 +2332,7 @@ class RiseAndFall:
 	def createAdditionalUnits(self, iCiv, tPlot):
 		if iCiv == iIndia:
 			utils.makeUnit(iArcher, iCiv, tPlot, 2)
-			utils.makeUnit(iAxeman, iCiv, tPlot, 1)
+			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 1)
 		elif iCiv == iGreece:
 			utils.makeUnit(iHoplite, iCiv, tPlot, 4)
 		elif iCiv == iPersia:
@@ -2362,10 +2362,9 @@ class RiseAndFall:
 			utils.makeUnit(iCataphract, iCiv, tPlot, 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 2)   
 		elif iCiv == iVikings:
-			utils.makeUnit(iAxeman, iCiv, tPlot, 2)
-			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
+			utils.makeUnit(iHuscarl, iCiv, tPlot, 3)
 		elif iCiv == iArabia:
-			utils.makeUnit(iLongbowman, iCiv, tPlot, 2)
+			utils.makeUnit(iCrossbowman, iCiv, tPlot, 2)
 			utils.makeUnit(iCamelArcher, iCiv, tPlot, 4)
 		elif iCiv == iTibet:
 			utils.makeUnit(iKhampa, iCiv, tPlot, 2)
