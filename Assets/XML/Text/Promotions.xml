@@ -105,4 +105,12 @@
 		<Tag>TXT_KEY_PROMOTION_SKIRMISH</Tag>
 		<English>Skirmish</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DISENGAGE1</Tag>
+		<English>Disengage I</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_DISENGAGE2</Tag>
+		<English>Disengage II</English>
+	</TEXT>
 </Civ4GameText>

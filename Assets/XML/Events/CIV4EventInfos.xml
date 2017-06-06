@@ -9823,7 +9823,7 @@
 			<UnitCombatPromotions>
 				<UnitCombatPromotion>
 					<UnitCombat>UNITCOMBAT_HEAVY_CAVALRY</UnitCombat>
-					<UnitPromotion>PROMOTION_FLANKING1</UnitPromotion>
+					<UnitPromotion>PROMOTION_DISENGAGE1</UnitPromotion>
 				</UnitCombatPromotion>
 			</UnitCombatPromotions>
 			<UnitClassPromotions/>
@@ -22992,7 +22992,7 @@
 			<UnitClassPromotions>
 				<UnitClassPromotion>
 					<UnitClass>UNITCLASS_LANCER</UnitClass>
-					<UnitPromotion>PROMOTION_FLANKING1</UnitPromotion>
+					<UnitPromotion>PROMOTION_DISENGAGE1</UnitPromotion>
 				</UnitClassPromotion>
 			</UnitClassPromotions>
 			<BuildingClass>NONE</BuildingClass>

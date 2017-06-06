@@ -1373,8 +1373,8 @@
 			<Button>,Art/Interface/Buttons/Promotions/Accuracy.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,1</Button>
 		</PromotionInfo>
 		<PromotionInfo>
-			<Type>PROMOTION_FLANKING1</Type>
-			<Description>TXT_KEY_PROMOTION_FLANKING1</Description>
+			<Type>PROMOTION_DISENGAGE1</Type>
+			<Description>TXT_KEY_PROMOTION_DISENGAGE1</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<iWithdrawalChange>10</iWithdrawalChange>
 			<UnitCombats>
@@ -1402,10 +1402,10 @@
 			<Button>,Art/Interface/Buttons/Promotions/Flanking1.dds,Art/Interface/Buttons/Promotions_Atlas.dds,6,3</Button>
 		</PromotionInfo>
 		<PromotionInfo>
-			<Type>PROMOTION_FLANKING2</Type>
-			<Description>TXT_KEY_PROMOTION_FLANKING2</Description>
+			<Type>PROMOTION_DISENGAGE2</Type>
+			<Description>TXT_KEY_PROMOTION_DISENGAGE2</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_FLANKING1</PromotionPrereqOr1>
+			<PromotionPrereqOr1>PROMOTION_DISENGAGE1</PromotionPrereqOr1>
 			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
 			<iWithdrawalChange>20</iWithdrawalChange>
 			<UnitCombats>
@@ -1436,7 +1436,7 @@
 			<Type>PROMOTION_SENTRY</Type>
 			<Description>TXT_KEY_PROMOTION_SENTRY</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_FLANKING1</PromotionPrereqOr1>
+			<PromotionPrereqOr1>PROMOTION_DISENGAGE1</PromotionPrereqOr1>
 			<PromotionPrereqOr2>PROMOTION_COMBAT3</PromotionPrereqOr2>
 			<iVisibilityChange>1</iVisibilityChange>
 			<UnitCombats>
@@ -1467,7 +1467,7 @@
 			<Type>PROMOTION_MOBILITY</Type>
 			<Description>TXT_KEY_PROMOTION_MOBILITY</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_FLANKING2</PromotionPrereqOr1>
+			<PromotionPrereqOr1>PROMOTION_DISENGAGE2</PromotionPrereqOr1>
 			<iMoveDiscountChange>1</iMoveDiscountChange>
 			<UnitCombats>
 				<UnitCombat>
@@ -1489,7 +1489,7 @@
 			<Type>PROMOTION_NAVIGATION1</Type>
 			<Description>TXT_KEY_PROMOTION_NAVIGATION1</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_FLANKING1</PromotionPrereqOr1>
+			<PromotionPrereqOr1>PROMOTION_DISENGAGE1</PromotionPrereqOr1>
 			<iMovesChange>1</iMovesChange>
 			<UnitCombats>
 				<UnitCombat>
@@ -1503,7 +1503,7 @@
 			<Type>PROMOTION_NAVIGATION2</Type>
 			<Description>TXT_KEY_PROMOTION_NAVIGATION2</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereq>PROMOTION_FLANKING1</PromotionPrereq>
+			<PromotionPrereq>PROMOTION_DISENGAGE1</PromotionPrereq>
 			<PromotionPrereqOr1>PROMOTION_NAVIGATION1</PromotionPrereqOr1>
 			<iMovesChange>1</iMovesChange>
 			<UnitCombats>
