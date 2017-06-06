@@ -1,0 +1,2495 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText>
+ <TEXT>
+  <Tag>TXT_KET_ESPIONAGE_MISSION_COST</Tag>
+  <English>%s1_espionage_mission (%d2[ICON_ESPIONAGE])</English>
+  <French>%s1_espionage_mission (%d2[ICON_ESPIONAGE])</French>
+  <German>%s1_espionage_mission (%d2[ICON_ESPIONAGE])</German>
+  <Italian>%s1_espionage_mission (%d2[ICON_ESPIONAGE])</Italian>
+  <Spanish>%s1_espionage_mission (%d2 [ICON_ESPIONAGE])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ALL_UNITS</Tag>
+  <English>[SPACE](&lt;ALT> for All Units)</English>
+  <French>[SPACE](&lt;ALT> pour toutes les unit&#233;s)</French>
+  <German>[SPACE](&lt;ALT> f&#252;r alle Einheiten)</German>
+  <Italian>[SPACE](&lt;ALT> per tutte le unit&#224;)</Italian>
+  <Spanish>[SPACE](&lt;ALT> para todas las unidades)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ASSASSIN_MISSION</Tag>
+  <English>Eliminate %s1_unit for %d2[ICON_ESPIONAGE] %d3_percent%% chance of success.</English>
+  <French>&#201;liminez %s1_unit pour la chance de %d2[ICON_ESPIONAGE] %d3_percent%% de succ&#232;s.</French>
+  <German>Eliminiert %s1_unit gegen %d2[ICON_ESPIONAGE] mit einer %d3_percent%% Erfolgschance.</German>
+  <Italian>Elimini %s1_unit per la possibilit&#224; di successo di %d2[ICON_ESPIONAGE] %d3_percent%%.</Italian>
+  <Spanish>Elimine %s1_unit para la oportunidad de &#233;xito de %d2[ICON_ESPIONAGE] el %d3_percent%%.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_BUILD</Tag>
+  <English>Build Improvements (Automated)</English>
+  <French>Construire am&#233;nagements (auto)</French>
+  <German>Modernisierungen bauen (automatisch)</German>
+  <Italian>Costruire i miglioramenti (automaticamente)</Italian>
+  <Spanish>Construir mejoras (automatizado)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_BUILD_HELP</Tag>
+  <English>Automate all [COLOR_UNIT_TEXT]Worker[COLOR_REVERT] actions. The unit will continue working until you cancel its automation.</English>
+  <French>Automatise toutes les actions des [COLOR_UNIT_TEXT]ouvriers[COLOR_REVERT]. L'unit&#233; continue &#224; travailler tant qu'elle reste automatis&#233;e.</French>
+  <German>Automatisiert alle Aktionen Ihres [COLOR_UNIT_TEXT]Bautrupps[COLOR_REVERT]. Die Einheit arbeitet, bis Sie die Automatisierung beenden.</German>
+  <Italian>Automatizza tutte le azioni del [COLOR_UNIT_TEXT]lavoratore[COLOR_REVERT]. L'unit&#224; continuer&#224; a lavorare finch&#233; non annullerai l'automazione.</Italian>
+  <Spanish>Automatizar todas las acciones del [COLOR_UNIT_TEXT]Trabajador[COLOR_REVERT]. La unidad seguir&#225; trabajando hasta que cancel&#233;is la automatizaci&#243;n.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_CITY</Tag>
+  <English>Improve Nearest City (Automated)</English>
+  <French>Am&#233;liorer ville la plus proche (auto)</French>
+  <German>N&#228;chste Stadt modernisieren (automatisch)</German>
+  <Italian>Migliora la citt&#224; pi&#249; vicina (automaticamente)</Italian>
+  <Spanish>Mejorar ciudad m&#225;s pr&#243;xima (automatizado)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_CITY_HELP</Tag>
+  <English>The unit will improve its closest city only. It will continue working until you cancel its automation.</English>
+  <French>L'unit&#233; n'am&#233;nage que le territoire de la ville la plus proche. Elle continue &#224; travailler tant qu'elle reste automatis&#233;e.</French>
+  <German>Die Einheit modernisiert nur die n&#228;chstgelegene Stadt und arbeitet weiter, bis Sie die Automatisierung beenden.</German>
+  <Italian>L'unit&#224; migliorer&#224; solamente la citt&#224; pi&#249; vicina e continuer&#224; a lavorare finch&#233; non annullerai l'automazione.</Italian>
+  <Spanish>La unidad solo mejorar&#225; la ciudad que tenga m&#225;s cerca. Seguir&#225; trabajando hasta que cancel&#233;is la automatizaci&#243;n.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_EXPLORE</Tag>
+  <English>Explore (Automated)</English>
+  <French>Explorer (auto)</French>
+  <German>Erkunden (automatisch)</German>
+  <Italian>Esplora (automaticamente)</Italian>
+  <Spanish>Explorar (automatizado)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_EXPLORE_HELP</Tag>
+  <English>This order tells the unit to explore the uncharted regions on the map. The unit will continue to move until it has run out of places to explore.</English>
+  <French>L'unit&#233; d&#233;couvre les zones inconnues de la carte et continue &#224; le faire jusqu'&#224; ce qu'elle n'ait plus rien &#224; explorer.</French>
+  <German>Erteilen Sie einer Einheit diesen Befehl, erforscht diese alle unbekannten Gebiete, bis sie auch den entlegensten Winkel der Karte erkundet hat.</German>
+  <Italian>Questo ordine comanda all'unit&#224; di esplorare le regioni ancora inesplorate della mappa. L'unit&#224; continuer&#224; a muoversi finch&#233; ci saranno luoghi da esplorare.</Italian>
+  <Spanish>Con esta orden le dec&#237;s a la unidad que explore las zonas del mapa que est&#233;n sin cartografiar. Seguir&#225; movi&#233;ndose hasta que se quede sin lugares que explorar.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_NETWORK</Tag>
+  <English>Build Trade Network (Automated)</English>
+  <French>Construire r&#233;seau commercial (auto)</French>
+  <German>Handelsnetz errichten (automatisch)</German>
+  <Italian>Costruire una rete commerciale (automaticamente)</Italian>
+  <Spanish>Construir red comercial (automatizado)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_NETWORK_HELP</Tag>
+  <English>The unit will create a trade network connecting all your cities and resources. It will continue working until you cancel its automation.</English>
+  <French>L'unit&#233; cr&#233;e un r&#233;seau commercial desservant toutes vos villes et ressources. Elle continue &#224; travailler tant qu'elle reste automatis&#233;e.</French>
+  <German>Die Einheit verbindet alle St&#228;dte und Ressourcen &#252;ber ein Handelsnetz und arbeitet weiter, bis Sie die Automatisierung beenden.</German>
+  <Italian>L'unit&#224; creer&#224; una rete commerciale per collegare tutte le tue citt&#224; e le risorse e continuer&#224; a lavorare finch&#233; non annullerai l'automazione.</Italian>
+  <Spanish>La unidad crear&#225; una red comercial que comunicar&#225; todas vuestras ciudades y recursos. Seguir&#225; trabajando hasta que cancel&#233;is la automatizaci&#243;n.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_RELIGION</Tag>
+  <English>Spread Automatically</English>
+  <French>R&#233;pandre automatiquement</French>
+  <German>Automatisch verbreiten</German>
+  <Italian>Diffusione automatica.</Italian>
+  <Spanish>Propagar autom&#225;ticamente</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMATE_RELIGION_HELP</Tag>
+  <English>Will order the unit to automatically spread its religion or corporation</English>
+  <French>Donner l'ordre &#224; l'unit&#233; de r&#233;pandre automatiquement sa religion ou sa soci&#233;t&#233; commerciale</French>
+  <German>Der Einheit wird angeordnet, ihre Religion oder Kapitalgesellschaft automatisch zu verbreiten.</German>
+  <Italian>Ordiner&#224; all'unit&#224; di diffondere automaticamente la sua religione o corporazione.</Italian>
+  <Spanish>Ordenar&#225; a la unidad que propague autom&#225;ticamente su religi&#243;n o corporaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_AUTOMOVES</Tag>
+  <English>Triggers All Automated Moves</English>
+  <French>D&#233;clenche tous les mouvements automatis&#233;s</French>
+  <German>Alle automatisierten Z&#252;ge ausl&#246;sen</German>
+  <Italian>Attiva tutti i movimenti automatici</Italian>
+  <Spanish>Activa todos los movimientos automatizados</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_BARE_MAP</Tag>
+  <English>Toggle Bare Map</English>
+  <French>Afficher/masquer la carte vierge</French>
+  <German>Leere Karte ein/aus</German>
+  <Italian>Abilita/disabilita la mappa semplificata</Italian>
+  <Spanish>Activar mapa limpio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_BARE_MAP_HELP</Tag>
+  <English>Makes it easier to see the landscape</English>
+  <French>Facilite l'inspection du terrain</French>
+  <German>Erleichtert die Sicht auf die Landschaft.</German>
+  <Italian>Agevola la visione del panorama.</Italian>
+  <Spanish>Hace que ver el paisaje sea m&#225;s f&#225;cil</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_BECOMES_IMP</Tag>
+  <English>[ICON_BULLET]Becomes a [LINK=literal]%s1_ImpName[\LINK] in %d2_Num [NUM2:Turn:Turns]</English>
+  <French>[ICON_BULLET]Transformation en : [LINK=literal]%s1_ImpName[\LINK] dans %d2_Num [NUM2:tour:tours]</French>
+  <German>[ICON_BULLET]Wird in %d2_Num [NUM2:Runde:Runden] zur Modernisierung [LINK=literal]%s1_ImpName[\LINK]</German>
+  <Italian>[ICON_BULLET]Diventa [NUM1:un:una] [LINK=literal]%s1_ImpName[\LINK] in %d2_Num [NUM2:Turno:Turni]</Italian>
+  <Spanish>[ICON_BULLET]Se convierte en [LINK=literal]%s1_ImpName[\LINK] en %d2_Num [NUM2:turno:turnos]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_BOMB</Tag>
+  <English>Bomb</English>
+  <French>Bombarder</French>
+  <German>Bombe</German>
+  <Italian>Bombarda</Italian>
+  <Spanish>Bombardear</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_BUILDING_HURRY</Tag>
+  <English>[COLOR_WARNING_TEXT]Can only Hurry Production of a Building.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Ne peut acc&#233;l&#233;rer que la construction d'un b&#226;timent.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Kann nur die Produktion eines Geb&#228;udes beschleunigen.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Puoi velocizzare solamente la produzione di un edificio.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Solo se puede acelerar la producci&#243;n de un edificio.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_BYZANTINE_UP</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]Bribe Barbarians[COLOR_REVERT][NEWLINE]Allows your spy to offer gold to bribe one barbarian unit on this plot to join your army.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CANCEL</Tag>
+  <English>Cancel Action</English>
+  <French>Annuler l'action</French>
+  <German>Aktion abbrechen</German>
+  <Italian>Annulla azione</Italian>
+  <Spanish>Cancelar acci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CANNOT_FOUND</Tag>
+  <English>[COLOR_WARNING_TEXT]Cannot found within %d1_Num plots of city.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Introuvable &#224; moins de %d1_Num cases de la ville.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Kann nicht innerhalb eines Radius von %d1_Num Gel&#228;ndefeldern um die Stadt gegr&#252;ndet werden.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Non &#232; stato trovato all'interno di %d1_Num [NUM1:spazio:spazi] della citt&#224;.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]No se encuentra en un radio de %d1_Num casillas de la ciudad.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CANNOT_SPREAD_NON_STATE_RELIGION</Tag>
+  <English>[COLOR_WARNING_TEXT]Cannot spread Non-State [ICON_RELIGION] in this city.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Impossible de r&#233;pandre une [ICON_RELIGION] qui n'est pas une religion d'&#233;tat dans cette ville.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Kann die nichtstaatliche Religion [ICON_RELIGION] in dieser Stadt nicht verbreiten.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Non si pu&#242; diffondere una religione non ufficiale[ICON_RELIGION] in questa citt&#224;.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]En esta ciudad no se puede propagar una [ICON_RELIGION] que no sea la oficial.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CENTER_SELECTION</Tag>
+  <English>Center on Selection</English>
+  <French>Centrer sur la s&#233;lection</French>
+  <German>Auf Auswahl zentrieren</German>
+  <Italian>Centra sulla selezione</Italian>
+  <Spanish>Centrar en selecci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CHANCE_DISCOVER</Tag>
+  <English>[ICON_BULLET]Small chance of discovering[SPACE]</English>
+  <French>[ICON_BULLET]Faibles chances de d&#233;couvrir :[SPACE]</French>
+  <German>[ICON_BULLET]Geringe Entdeckungschance f&#252;r[SPACE]</German>
+  <Italian>[ICON_BULLET]Una piccola probabilit&#224; di scoprire[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]Peque&#241;a probabilidad de descubrir[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CHANGE_PRODUCTION</Tag>
+  <English>[ICON_BULLET]%D1_Change [ICON_PRODUCTION] in %s2_CityName</English>
+  <French>[ICON_BULLET]%D1_Change [ICON_PRODUCTION] &#224; %s2_CityName</French>
+  <Italian>[ICON_BULLET]%D1_Change [ICON_PRODUCTION] a %s2_CityName</Italian>
+  <Spanish>[ICON_BULLET]%D1_Change [ICON_PRODUCTION] en %s2_CityName</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONNECTS_RESOURCES</Tag>
+  <English>[ICON_BULLET]Connects Improved Resources with your Cities</English>
+  <French>[ICON_BULLET]Relie les ressources exploit&#233;es &#224; vos villes.</French>
+  <German>[ICON_BULLET]Verbindet modernisierte Ressourcen mit Euren St&#228;dten</German>
+  <Italian>[ICON_BULLET]Collega le citt&#224; ai miglioramenti delle risorse</Italian>
+  <Spanish>[ICON_BULLET]Comunica los recursos mejorados con tus ciudades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONSUME_GREAT_PEOPLE</Tag>
+  <English>[COLOR_WARNING_TEXT]Will consume %d1_Num[ICON_GREATPEOPLE][COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Consommera %d1_Num[ICON_GREATPEOPLE][COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Wird %d1_Num[ICON_GREATPEOPLE] verbrauchen[COLOR_REVERT]</German>
+  <Italian>[COLOR__WARNING_TEXT] %d1_Num[ICON_GREATPEOPLE][NUM1:verr&#224;:verranno] sacrificati[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Consumir&#225; %d1_Num [ICON_GREATPEOPLE][COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONSUME_UNIT</Tag>
+  <English>[COLOR_WARNING_TEXT]Will consume the unit[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]L'unit&#233; sera d&#233;truite[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Wird die Einheit verbrauchen[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]L'unit&#224; verr&#224; sacrificata nel procedimento[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Consumir&#225; la unidad[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_AUTOMOVES_HELP</Tag>
+  <English>Forces all units with queued actions to make their moves</English>
+  <French>Forcer toutes les unit&#233;s ayant des actions en attente &#224; effectuer leurs t&#226;ches.</French>
+  <German>Zwingt alle Einheiten mit offenen Aktionen, diese auszuf&#252;hren.</German>
+  <Italian>Impone a tutte le unit&#224; con azioni in coda a compiere i propri movimenti.</Italian>
+  <Spanish>Para obligar a todas las unidades con acciones en cola a que hagan sus movimientos.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_CENTER_SELECTION_HELP</Tag>
+  <English>Centers camera on the selected unit.</English>
+  <French>Centrer la cam&#233;ra sur l'unit&#233; s&#233;lectionn&#233;e.</French>
+  <German>Zentriert die Kamera &#252;ber der gew&#228;hlten Einheit.</German>
+  <Italian>Centra la visuale sull'unit&#224; selezionata.</Italian>
+  <Spanish>Centra la c&#225;mara en la unidad seleccionada.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_CYCLE_UNIT_ALT_HELP</Tag>
+  <English>Cycle unit selection to one that still needs to perform an action this turn.</English>
+  <French>Faire d&#233;filer les unit&#233;s jusqu'&#224; une unit&#233; devant encore effectuer une action pendant ce tour.</French>
+  <German>Zu einer Einheit, die in der aktuellen Runde noch eine Aktion ausf&#252;hren muss.</German>
+  <Italian>Passa dall'unit&#224; selezionata a una che deve ancora compiere azioni durante questo turno.</Italian>
+  <Spanish>La unidad seleccionada pasa a ser una que a&#250;n tenga que realizar una acci&#243;n en este turno.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_CYCLES_UNIT_HELP</Tag>
+  <English>Cycle unit selection to one that still needs to perform an action this turn.</English>
+  <French>Faire d&#233;filer les unit&#233;s jusqu'&#224; une unit&#233; devant encore effectuer une action pendant ce tour.</French>
+  <German>Zu einer Einheit, die in der aktuellen Runde noch eine Aktion ausf&#252;hren muss.</German>
+  <Italian>Passa la selezione dell'unit&#224; a una che deve ancora compiere un'azione in questo turno.</Italian>
+  <Spanish>La unidad seleccionada pasa a ser una que a&#250;n tenga que realizar una acci&#243;n en este turno.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_ENDTURN_ALT_HELP</Tag>
+  <English>End your turn</English>
+  <French>Fin de votre tour.</French>
+  <German>Runde beenden.</German>
+  <Italian>Termina il tuo turno</Italian>
+  <Spanish>Para terminar el turno.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_ENDTURN_HELP</Tag>
+  <English>End your turn</English>
+  <French>Fin de votre tour.</French>
+  <German>Runde beenden.</German>
+  <Italian>Termina il tuo turno</Italian>
+  <Spanish>Para terminar el turno.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_FORCE_ENDTURN_HELP</Tag>
+  <English>Forces the turn to end even though units may still need to receive orders</English>
+  <French>Forcer la fin du tour m&#234;me si des unit&#233;s peuvent encore recevoir des ordres.</French>
+  <German>Runde beenden, obwohl m&#246;glicherweise noch Einheiten auf Befehle warten.</German>
+  <Italian>Impone la fine del turno, anche se ci sono ancora unit&#224; che devono ricevere ordini.</Italian>
+  <Spanish>Para hacer que termine el turno aunque a&#250;n haya unidades que tengan que recibir &#243;rdenes.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_LOAD_GAME_HELP</Tag>
+  <English>Display the Load Game Screen</English>
+  <French>Ouvrir l'&#233;cran de chargement.</French>
+  <German>Laden-Bildschirm einblenden.</German>
+  <Italian>Visualizza la schermata di caricamento della partita.</Italian>
+  <Spanish>Muestra la pantalla de cargar partida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_NEXT_CITY_HELP</Tag>
+  <English>Cycle to the next city screen.</English>
+  <French>Ouvrir l'&#233;cran de la ville suivante.</French>
+  <German>Zum n&#228;chsten Stadt-Bildschirm.</German>
+  <Italian>Scorre alla schermata della citt&#224; successiva.</Italian>
+  <Spanish>Para pasar a la siguiente pantalla de ciudad.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_NEXT_PLOT_UNIT_HELP</Tag>
+  <English>Cycle unit selection to the next unit on the plot.</English>
+  <French>Faire d&#233;filer les unit&#233;s jusqu'&#224; l'unit&#233; suivante sur la case.</French>
+  <German>Zur n&#228;chsten Einheit auf dem Gel&#228;ndefeld.</German>
+  <Italian>Passa la selezione dell'unit&#224; a quella successiva sulla casella.</Italian>
+  <Spanish>La unidad seleccionada pasa a ser la siguiente en la casilla.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_OPTIONS_SCREEN_HELP</Tag>
+  <English>Display the Options Screen</English>
+  <French>Afficher l'&#233;cran des options.</French>
+  <German>Optionen-Bildschirm aufrufen.</German>
+  <Italian>Mostra la schermata delle opzioni.</Italian>
+  <Spanish>Muestra la pantalla de opciones.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_PREVIOUS_CITY_HELP</Tag>
+  <English>Cycle to previous city screen.</English>
+  <French>Ouvrir l'&#233;cran de la ville pr&#233;c&#233;dente.</French>
+  <German>Zum vorherigen Stadt-Bildschirm.</German>
+  <Italian>Scorre alla schermata della citt&#224; precedente.</Italian>
+  <Spanish>Para pasar a la anterior pantalla de ciudad.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_PREVIOUS_PLOT_UNIT_HELP</Tag>
+  <English>Cycle unit selection to the previous unit on the plot.</English>
+  <French>Faire d&#233;filer les unit&#233;s jusqu'&#224; l'unit&#233; pr&#233;c&#233;dente sur la case.</French>
+  <German>Zur vorherigen Einheit auf dem Gel&#228;ndefeld.</German>
+  <Italian>Passa la selezione dell'unit&#224; a quella precedente sulla casella.</Italian>
+  <Spanish>La unidad seleccionada pasa a ser la anterior en la casilla.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_RETIRE_HELP</Tag>
+  <English>Retire from the game. When done in multiplayer, the AI will take over the player's Civilization.</English>
+  <French>Abandonner la partie. En mode Multijoueur, l'I.A. prend le contr&#244;le de la civilisation du joueur.</French>
+  <German>Spiel beenden. Im Multiplayer-Modus &#252;bernimmt in diesem Fall die KI die Zivilisation des entsprechenden Spielers.</German>
+  <Italian>Ritirati dal gioco. Se ci si ritira durante una partita in multigiocatore, l'IA rilever&#224; la civilt&#224; del giocatore.</Italian>
+  <Spanish>Para retirarse de la partida. Cuando se haga en multijugador, la IA llevar&#225; a la civilizaci&#243;n del jugador que abandone.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_SAVE_GAME_HELP</Tag>
+  <English>Save the Game</English>
+  <French>Sauvegarder la partie.</French>
+  <German>Spiel speichern.</German>
+  <Italian>Salva la partita</Italian>
+  <Spanish>Guarda la partida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_SAVE_GROUP_HELP</Tag>
+  <English>Save the Game on all computers (for multi-player)</English>
+  <French>Sauvegarder la partie sur tous les ordinateurs (en mode Multijoueur).</French>
+  <German>Spiel auf allen Computern speichern (Multiplayer-Modus).</German>
+  <Italian>Salva la partita su tutti i computer (per il multiplayer).</Italian>
+  <Spanish>Guarda la partida en todos los ordenadores (para multijugador)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CONTROL_WORKERS_HELP</Tag>
+  <English>Cycle unit selection to a worker that still needs to perform an action this turn.</English>
+  <French>Faire d&#233;filer les unit&#233;s jusqu'&#224; un ouvrier devant encore effectuer une action pendant ce tour.</French>
+  <German>Zu einem Bautrupp, der in dieser Runde noch eine Aktion ausf&#252;hren muss.</German>
+  <Italian>Passa la selezione dell'unit&#224; a lavoratore che deve ancora compiere un'azione in questo turno.</Italian>
+  <Spanish>La unidad seleccionada pasa a ser un Trabajador que a&#250;n tenga que realizar una acci&#243;n en este turno.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CORPORATION_COMPETING_HEADQUARTERS</Tag>
+  <English>[COLOR_WARNING_TEXT]Cannot expand %s1_corporation into %s2_corporation Headquarters[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Impossible de d&#233;velopper %s1_corporation dans le si&#232;ge social de la soci&#233;t&#233; commerciale %s2_corporation</French>
+  <German>[COLOR_WARNING_TEXT]Die Kapitalgesellschaft %s1_corporation kann nicht in den Hauptsitz der Kapitalgesellschaft %s2_corporation expandieren[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Impossibile espandere %s1_corporation nel quartier generale di %s2_corporation[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]%s1_corporation no se puede expandir en la sede de %s2_corporation.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CORPORATION_NO_RESOURCES</Tag>
+  <English>[COLOR_WARNING_TEXT]%s1_city has no access to %s2_bonus_list[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]%s1_city n'a pas acc&#232;s &#224; la liste : %s2_bonus_list[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]%s1_city hat keinen Zugang zu %s2_bonus_list[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]%s1_city non ha accesso a %s2_bonus_list[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]%s1_city no tiene acceso a %s2_bonus_list.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CORPORATION_NOT_ACTIVE</Tag>
+  <English>[COLOR_WARNING_TEXT]Cannot expand %s1_corporation within %s2_civ_adjective borders[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Impossible de d&#233;velopper %s1_corporation &#224; l'int&#233;rieur des fronti&#232;res %s2:4_civ_adjective[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Die Kapitalgesellschaft %s1_corporation kann innerhalb der %s2:2_civ_adjective Grenzen nicht expandieren[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Impossibile espandere %s1_corporation all'interno dei confini %s2_civ_adjective[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]%s1_corporation no se puede expandir dentro de las fronteras %s2:4_civ_adjective.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CYCLE_CAMERA_FLYING_MODES</Tag>
+  <English>Cycle Camera Flying Modes</English>
+  <French>Faire d&#233;filer modes de cam&#233;ra libre</French>
+  <German>Durch Kameraflugmodi schalten</German>
+  <Italian>Scorri le visuali dall'alto</Italian>
+  <Spanish>Alternar modos a&#233;reos de c&#225;mara</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CYCLE_UNITS</Tag>
+  <English>Cycle Units</English>
+  <French>Faire d&#233;filer les unit&#233;s</French>
+  <German>Durch Einheiten schalten</German>
+  <Italian>Scorri unit&#224;</Italian>
+  <Spanish>Alternar unidades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CYCLE_UNITS_ALT</Tag>
+  <English>Cycle Units (Alt)</English>
+  <French>Faire d&#233;filer les unit&#233;s (Alt)</French>
+  <German>Durch Einheiten schalten (Alt)</German>
+  <Italian>Scorri unit&#224; (Alt)</Italian>
+  <Spanish>Alternar unidades (Alt)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_CYCLE_WORKERS</Tag>
+  <English>Cycle Workers</English>
+  <French>Faire d&#233;filer les ouvriers</French>
+  <German>Durch Bautrupps schalten</German>
+  <Italian>Scorri lavoratori</Italian>
+  <Spanish>Alternar trabajadores</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_DEFENSE_MODIFIER</Tag>
+  <English>[ICON_BULLET]%D1%% Tile Defense</English>
+  <French>[ICON_BULLET]D&#233;fense de la case %D1%%</French>
+  <German>[ICON_BULLET]%D1%% Gel&#228;ndefeld-Verteidigung</German>
+  <Italian>[ICON_BULLET]%D1%% difensiva della casella</Italian>
+  <Spanish>[ICON_BULLET]%D1%% a la defensa de la casilla</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_DELETE</Tag>
+  <English>Delete the Unit</English>
+  <French>D&#233;truire l'unit&#233;</French>
+  <German>Einheit aufl&#246;sen</German>
+  <Italian>Elimina l'unit&#224;</Italian>
+  <Spanish>Borrar la unidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_DESTROY_IMP</Tag>
+  <English>[ICON_BULLET]Destroys [COLOR_HIGHLIGHT_TEXT]%s1_ImpName[COLOR_REVERT]</English>
+  <French>[ICON_BULLET]D&#233;truit : [COLOR_HIGHLIGHT_TEXT]%s1_ImpName[COLOR_REVERT]</French>
+  <German>[ICON_BULLET]Vernichtet die Modernisierung [COLOR_HIGHLIGHT_TEXT]%s1_ImpName[COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET]Distruggi [NUM1:il:la:gli:le] [COLOR_HIGHLIGHT_TEXT]%s1_ImpName[COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]Destruye [NUM1:el:la:los:las] [COLOR_HIGHLIGHT_TEXT]%s1:2_ImpName[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_PEACE</Tag>
+  <English>The Great Person will make another civilization forget your past transgressions and improve your relations. It consumes the Great Person.</English>
+  <German>Die Gro&#223;e Pers&#246;nlichkeit wird eine andere Zivilisation eure Vergehen aus der Vergangenheit vergessen lassen und eure Beziehungen verbessern. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_DIPLOMATIC_MISSION_WAR</Tag>
+  <English>The Great Person will broker an immediate peace treaty between you and your enemy. It consumes the Great Person.</English>
+  <German>Die Gro&#223;e Pers&#246;nlichkeit wird einen unmittelbaren Friedensvertrag zwischen Euch und Eurem Feind aushandeln. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ENDTURN</Tag>
+  <English>End of Turn</English>
+  <French>Fin du tour</French>
+  <German>Rundenende</German>
+  <Italian>Fine del turno</Italian>
+  <Spanish>Fin del turno</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ENDTURN_ALT</Tag>
+  <English>End of Turn (Alt)</English>
+  <French>Fin du tour (Alt)</French>
+  <German>Rundenende (Alt)</German>
+  <Italian>Fine del turno (Alt)</Italian>
+  <Spanish>Fin del turno (Alt)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ESPIONAGE_MISSION</Tag>
+  <English>Unit can perform Espionage Missions when in a valid location and if the player has sufficient Espionage Points to execute them.</English>
+  <French>Cette unit&#233; peux ex&#233;cuter des missions d'espionnage si elle se trouve dans un lieu autoris&#233; et si le joueur a suffisamment de points d'espionnage pour les ex&#233;cuter.</French>
+  <German>Einheit kann Spionagemissionen ausf&#252;hren, wenn sie sich an einer g&#252;ltigen Stelle befindet und der Spieler gen&#252;gend Spionagepunkte besitzt.</German>
+  <Italian>L'unit&#224; pu&#242; effettuare missioni di spionaggio se si trova in una posizione valida e se il giocatore ha abbastanza punti spionaggio.</Italian>
+  <Spanish>La unidad puede realizar misiones de espionaje si est&#225; en un lugar v&#225;lido y el jugador tiene suficientes puntos de espionaje para llevarla a cabo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_EXTRA_CONSTRUCTION</Tag>
+  <English>%D1_Change[ICON_PRODUCTION] for Construction of [COLOR_BUILDING_TEXT]%s2_BuildName[COLOR_REVERT].</English>
+  <French>%D1_Change[ICON_PRODUCTION] pour construire : [COLOR_BUILDING_TEXT]%s2_BuildName[COLOR_REVERT].</French>
+  <German>%D1_Change[ICON_PRODUCTION] f&#252;r die Errichtung des Geb&#228;udes [COLOR_BUILDING_TEXT]%s2_BuildName[COLOR_REVERT].</German>
+  <Italian>%D1_Change[ICON_PRODUCTION] per la costruzione [NUM1:del:della:dei:delle] [COLOR_BUILDING_TEXT]%s2_BuildName[COLOR_REVERT].</Italian>
+  <Spanish>%D1_Change [ICON_PRODUCTION] para construir [NUM2:el:la:los:las] [COLOR_BUILDING_TEXT]%s2_BuildName[COLOR_REVERT].</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_EXTRA_RESEARCH</Tag>
+  <English>%D1_NumResearch[ICON_RESEARCH] for Research of [COLOR_TECH_TEXT]%s2_TechName[COLOR_REVERT].</English>
+  <French>%D1_NumResearch[ICON_RESEARCH] pour rechercher : [COLOR_TECH_TEXT]%s2_TechName[COLOR_REVERT].</French>
+  <German>%D1_NumResearch[ICON_RESEARCH] f&#252;r die Erforschung der Technologie [COLOR_TECH_TEXT]%s2_TechName[COLOR_REVERT].</German>
+  <Italian>%D1_NumResearch[ICON_RESEARCH] per la ricerca [NUM2:del:della:degli:delle] [COLOR_TECH_TEXT]%s2_TechName[COLOR_REVERT].</Italian>
+  <Spanish>%D1_NumResearch [ICON_RESEARCH] para investigar [NUM2:el:la:los:las] [COLOR_TECH_TEXT]%s2_TechName[COLOR_REVERT].</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_FINISH_CONSTRUCTION</Tag>
+  <English>Finish Construction of [COLOR_BUILDING_TEXT]%s1_BuildName[COLOR_REVERT].</English>
+  <French>Terminer la construction de : [COLOR_BUILDING_TEXT]%s1_BuildName[COLOR_REVERT].</French>
+  <German>Errichtung des Geb&#228;udes [COLOR_BUILDING_TEXT]%s1_BuildName[COLOR_REVERT] abschlie&#223;en.</German>
+  <Italian>Termina la costruzione [NUM1:del:della:dei:delle] [COLOR_BUILDING_TEXT]%s1_BuildName[COLOR_REVERT].</Italian>
+  <Spanish>Terminar la construcci&#243;n [NUM1:del:de la:de los:de las] [COLOR_BUILDING_TEXT]%s1_BuildName[COLOR_REVERT].</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_FLAT_MOVEMENT_COST</Tag>
+  <English>[ICON_BULLET]All Units Can Move %d1 Tiles/Turn</English>
+  <French>[ICON_BULLET]Toutes les unit&#233;s peuvent se d&#233;placer de %d1 cases par tour.</French>
+  <German>[ICON_BULLET]Alle Einheiten k&#246;nnen sich %d1 Gel&#228;ndefelder/Runde fortbewegen</German>
+  <Italian>[ICON_BULLET]Tutte le unit&#224; possono muovere %d1 caselle/turno</Italian>
+  <Spanish>[ICON_BULLET]Todas las unidades se pueden mover %d1 casillas/turno.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_FLYING_CAMERA</Tag>
+  <English>Toggle Flying Camera</English>
+  <French>Activer/d&#233;sactiver la cam&#233;ra libre</French>
+  <German>Kameraflug umschalten</German>
+  <Italian>Abilita/disabilita la visuale dall'alto</Italian>
+  <Spanish>Activar c&#225;mara a&#233;rea</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_FORCE_DELETE</Tag>
+  <English>Delete the Unit</English>
+  <French>D&#233;truire l'unit&#233;</French>
+  <German>Einheit aufl&#246;sen</German>
+  <Italian>Elimina l'unit&#224;</Italian>
+  <Spanish>Borrar la unidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_FORCE_ENDTURN</Tag>
+  <English>Force End of Turn</English>
+  <French>Forcer la fin du tour</French>
+  <German>Rundenende erzwingen</German>
+  <Italian>Forza la fine del turno</Italian>
+  <Spanish>Forzar fin del turno </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_GIFT</Tag>
+  <English>Gift Unit</English>
+  <French>Offrir l'unit&#233;'</French>
+  <German>Einheit schenken</German>
+  <Italian>Dona unit&#224;</Italian>
+  <Spanish>Regalar unidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_GOES_TO_CIV</Tag>
+  <English>[ICON_BULLET]Goes To[SPACE]</English>
+  <French>[ICON_BULLET]Se rend &#224; :[SPACE]</French>
+  <German>[ICON_BULLET]Geht an[SPACE]</German>
+  <Italian>[ICON_BULLET]Vai verso[SPACE]</Italian>
+  <Spanish>[ICON_BULLET]Pasa a ser de[SPACE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_GRID</Tag>
+  <English>Toggle Show Tiles</English>
+  <French>Afficher/masquer la grille</French>
+  <German>Gel&#228;ndefelder anzeigen ein/aus</German>
+  <Italian>Abilita/disabilita le caselle</Italian>
+  <Spanish>Activar casillas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_GRID_HELP</Tag>
+  <English>Toggle Gridlines On / Off</English>
+  <French>Afficher/masquer la grille</French>
+  <German>Rasterlinien ein-/ausblenden.</German>
+  <Italian>Attiva/disattiva la griglia</Italian>
+  <Spanish>Activar cuadr&#237;cula</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_INFILTRATE_MISSION_FOREIGN</Tag>
+  <English>[COLOR_WARNING_TEXT]Can only Conduct an Infiltrate Mission in a Foreign City.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Doit &#234;tre dans une ville &#233;trang&#232;re pour ex&#233;cuter une mission d'espionnage.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Kann nur eine Infiltrationsmission in einer fremden Stadt durchf&#252;hren.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Pu&#242; condurre una missione d'infiltrazione solamente in una citt&#224; straniera.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Solo puede llevar a cabo una misi&#243;n de infiltraci&#243;n en una ciudad extranjera.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_IRRIGATED</Tag>
+  <English>Irrigated</English>
+  <French>Irrigation</French>
+  <German>Bew&#228;ssert</German>
+  <Italian>Irrigato</Italian>
+  <Spanish>Tiene riego</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ISOMETRIC_CAMERA_LEFT</Tag>
+  <English>Turn Camera 45 Degrees Left</English>
+  <French>Faire pivoter la cam&#233;ra de 45&#176; &#224; gauche</French>
+  <German>Kamera um 45 Grad nach links drehen</German>
+  <Italian>Sposta la visuale di 45&#176; a sinistra</Italian>
+  <Spanish>Girar c&#225;mara 45 grados a la izquierda</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ISOMETRIC_CAMERA_RIGHT</Tag>
+  <English>Turn Camera 45 Degrees Right</English>
+  <French>Faire pivoter la cam&#233;ra de 45&#176; &#224; droite</French>
+  <German>Kamera um 45 Grad nach rechts drehen</German>
+  <Italian>Sposta la visuale di 45&#176; a destra</Italian>
+  <Spanish>Girar c&#225;mara 45 grados a la derecha</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_LASTUNIT</Tag>
+  <English>Cycle Units (Backwards)</English>
+  <French>Faire d&#233;filer unit&#233;s (en arri&#232;re)</French>
+  <German>Durch Einheiten schalten (r&#252;ckw&#228;rts)</German>
+  <Italian>Scorri unit&#224; (indietro)</Italian>
+  <Spanish>Alternar unidades (atr&#225;s)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_LEAD_TROOPS</Tag>
+  <English>Gives a Total of %d1_Num Experience to Units in the Same Tile</English>
+  <French>Octroie un total de %d1_Num exp&#233;rience aux unit&#233;s dans la m&#234;me case</French>
+  <German>&#220;bertr&#228;gt insgesamt %d1_Num Erfahrungspunkte auf Einheiten auf demselben Gel&#228;ndefeld</German>
+  <Italian>D&#224; un totale di %d1_Num di esperienza alle unit&#224; presenti nella stessa casella</Italian>
+  <Spanish>Da un total de %d1_Num de experiencia a las unidades en la misma casilla</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_LOAD</Tag>
+  <English>Load</English>
+  <French>Charger</French>
+  <German>Laden</German>
+  <Italian>Imbarca</Italian>
+  <Spanish>Embarcar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_LOAD_GAME</Tag>
+  <English>Load Game</English>
+  <French>Charger une partie</French>
+  <German>Spiel laden</German>
+  <Italian>Carica partita</Italian>
+  <Spanish>Cargar partida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_MORE_GREAT_PEOPLE</Tag>
+  <English>[COLOR_WARNING_TEXT]Requires %d1_Num More [ICON_GREATPEOPLE][COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Il faut %d1_Num [ICON_GREATPEOPLE] de plus[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Erfordert %d1_Num weitere [ICON_GREATPEOPLE][COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Richiede altri %d1_Num [ICON_GREATPEOPLE][COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Requiere %d1_Num [ICON_GREATPEOPLE] m&#225;s.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_MOUSE_FLYING_CAMERA</Tag>
+  <English>Unlock Flying Camera Mouse</English>
+  <French>D&#233;bloquer cam&#233;ra libre &#224; la souris</French>
+  <German>Maus-Kameraflug aktivieren</German>
+  <Italian>Sblocca il movimento della visuale dall'alto con il mouse</Italian>
+  <Spanish>Desbloquear rat&#243;n de c&#225;mara a&#233;rea</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_MOVEMENT_COST</Tag>
+  <English>[ICON_BULLET]Travel Costs 1/%d1 Movement Point</English>
+  <French>[ICON_BULLET]Le d&#233;placement co&#251;te 1/%d1 point(s) de mouvement.</French>
+  <German>[ICON_BULLET]Reisekosten 1/%d1 Fortbewegungspunkt</German>
+  <Italian>[ICON_BULLET]Il viaggio costa 1/%d1 punto movimento</Italian>
+  <Spanish>[ICON_BULLET]Viajar cuesta 1/%d1 de los puntos de movimiento.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_NEEDS_CULTURE_BORDER</Tag>
+  <English>[COLOR_WARNING_TEXT]Must be within our Cultural Borders.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Uniquement &#224; l'int&#233;rieur de nos fronti&#232;res culturelles.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Muss sich innerhalb unserer kulturellen Grenzen befinden.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Bisogna essere all'interno dei propri confini culturali.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Ha de estar dentro de las fronteras de nuestra cultura.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_NEEDS_OUT_RIVAL_CULTURE_BORDER</Tag>
+  <English>[COLOR_WARNING_TEXT]Must be outside rival Cultural Borders.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Doit &#234;tre en dehors des fronti&#232;res culturelles adverses.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Muss sich au&#223;erhalb der Kulturgrenzen des Gegners befinden.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Bisogna essere all'esterno dei confini culturali avversari.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Ha de estar fuera de las fronteras de la cultura rival.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_NEXT_CITY</Tag>
+  <English>Next City</English>
+  <French>Ville suivante</French>
+  <German>N&#228;chste Stadt</German>
+  <Italian>Citt&#224; successiva</Italian>
+  <Spanish>Ciudad siguiente</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_NEXT_UNIT</Tag>
+  <English>Next Unit</English>
+  <French>Unit&#233; suivante</French>
+  <German>N&#228;chste Einheit</German>
+  <Italian>Unit&#224; successiva</Italian>
+  <Spanish>Unidad siguiente</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_NUKE</Tag>
+  <English>NUKE</English>
+  <French>ATTAQUE NUCLEAIRE</French>
+  <German>ATOMRAKETE</German>
+  <Italian>BOMBA ATOMICA</Italian>
+  <Spanish>BOMBARDEO NUCLEAR</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_NUM_TURNS</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]%d1_Num[COLOR_REVERT] [NUM1:Turn:Turns]</English>
+  <French>[COLOR_HIGHLIGHT_TEXT]%d1_Num[COLOR_REVERT] [NUM1:tour:tours]</French>
+  <German>[COLOR_HIGHLIGHT_TEXT]%d1_Num[COLOR_REVERT] [NUM1:Runde:Runden]</German>
+  <Italian>[COLOR_HIGHLIGHT_TEXT]%d1_Num[COLOR_REVERT] [NUM1:Turno:Turni]</Italian>
+  <Spanish>[COLOR_HIGHLIGHT_TEXT]%d1_Num[COLOR_REVERT] [NUM1:turno:turnos]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ONLY_HOLY_CONSTRUCT</Tag>
+  <English>[COLOR_WARNING_TEXT]Can only be Constructed in the %F1_RelIcon Holy City.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Construction possible uniquement dans la ville sainte %F1_RelIcon.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Kann nur in der Heiligen Stadt der Religion %F1_RelIcon errichtet werden.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Pu&#242; essere costruito solo nella %F1_RelIcon Citt&#224; Santa.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Solo se puede erigir en la ciudad santa del %F1_RelIcon.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_OPTIONS_SCREEN</Tag>
+  <English>Options Screen</English>
+  <French>Ecran des options</French>
+  <German>Optionen</German>
+  <Italian>Schermata delle opzioni</Italian>
+  <Spanish>Pantalla de opciones</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ORTHO_CAMERA</Tag>
+  <English>Orthographic Camera</English>
+  <French>Cam&#233;ra orthographique</French>
+  <German>Fixierte Kamera</German>
+  <Italian>Visuale ortografica</Italian>
+  <Spanish>C&#225;mara ortogr&#225;fica</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PERSECUTION</Tag>
+  <English>Attempts to remove one non-State religion from the city. This will consume the Prosecutor.</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PING</Tag>
+  <English>Ping</English>
+  <French>Balise</French>
+  <German>Pingen</German>
+  <Italian>Segnala</Italian>
+  <Spanish>Se&#241;alar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PING_HELP</Tag>
+  <English>Ping a plot to bring it to the attention of your team mates</English>
+  <French>D&#233;signer un terrain pour y attirer l'attention de vos co&#233;quipiers</French>
+  <German>Pingen Sie ein Gel&#228;ndefeld an, um Ihre Mitstreiter darauf aufmerksam zu machen.</German>
+  <Italian>Segnala un punto per richiamare l'attenzione dei tuoi compagni di squadra.</Italian>
+  <Spanish>Hac&#233;is que destaque una casilla para llamar la atenci&#243;n sobre ella a vuestros compa&#241;eros de equipo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PLUNDER_IN_BORDERS</Tag>
+  <English>[COLOR_WARNING_TEXT]Must be outside Cultural Borders.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Doit &#234;tre en dehors des fronti&#232;res culturelles.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Muss sich au&#223;erhalb der Kulturgrenzen befinden.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Bisogna essere all'esterno dei confini culturali.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Ha de estar dentro de las fronteras de nuestra cultura.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PREVIOUS_CITY</Tag>
+  <English>Previous City</English>
+  <French>Ville pr&#233;c&#233;dente</French>
+  <German>Vorherige Stadt</German>
+  <Italian>Citt&#224; precedente</Italian>
+  <Spanish>Ciudad anterior</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PREVIOUS_UNIT</Tag>
+  <English>Previous Unit</English>
+  <French>Unit&#233; pr&#233;c&#233;dente</French>
+  <German>Vorherige Einheit</German>
+  <Italian>Unit&#224; precedente</Italian>
+  <Spanish>Unidad anterior</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PROBABILITY</Tag>
+  <English>Probability of Success: %d1_Prob%%</English>
+  <French>Chances de r&#233;ussite : %d1_Prob%%</French>
+  <German>Erfolgschance: %d1_Prob%%</German>
+  <Italian>Probabilit&#224; di successo: %d1_Prob%%</Italian>
+  <Spanish>Probabilidad de &#233;xito: %d1_Prob%%</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PROBABILITY_RANGE</Tag>
+  <English>Probability of Success: %d1_Prob - %d2_Prob%%</English>
+  <French>Chances de r&#233;ussite : %d1_Prob - %d2_Prob%%</French>
+  <German>Erfolgschance: %d1_Prob - %d2_Prob%%</German>
+  <Italian>Probabilit&#224; di successo: %d1_Prob - %d2_Prob%%</Italian>
+  <Spanish>Probabilidad de &#233;xito: %d1_Prob - %d2_Prob%%</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_PROVIDES_BONUS</Tag>
+  <English>[ICON_BULLET]Provides [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT]</English>
+  <French>[ICON_BULLET]Fournit : [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT]</French>
+  <German>[ICON_BULLET]Liefert das Bonusgut [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT]</German>
+  <Italian>[ICON_BULLET]Fornisce [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT]</Italian>
+  <Spanish>[ICON_BULLET]Da [COLOR_HIGHLIGHT_TEXT]%s1_BonusName[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_QUICK_LOAD</Tag>
+  <English>Quick Load Game</English>
+  <French>Chargement rapide</French>
+  <German>Schnell laden</German>
+  <Italian>Caricamento rapido</Italian>
+  <Spanish>Carga r&#225;pida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_QUICK_SAVE</Tag>
+  <English>Quick Save Game</English>
+  <French>Sauvegarde rapide</French>
+  <German>Schnell speichern</German>
+  <Italian>Salvataggio rapido</Italian>
+  <Spanish>Guardado r&#225;pido</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_REFORM_GOVERNMENT</Tag>
+  <English>This will order the Great Person to reform your government, allowing you to change civics this turn without any anarchy. It consumes the Great Person.</English>
+  <German>Dies wird die Gro&#223;en Pers&#246;nlichkeit veranlassen, Eure Regierung zu reformieren, was Euch erlaubt diese Runde Staatsformen ohne jegliche Anarchie zu wechseln. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_REMOVE_FEATURE</Tag>
+  <English>[COLOR_WARNING_TEXT]Will remove the %s1_FeatName[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Supprimera : %s1_FeatName[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Entfernt die Gel&#228;ndeart %s1_FeatName[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Per eliminare [NUM1:il:la:gli:le] %s1_FeatName[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Quitar&#225; [NUM1:el:la:los:las] %s1_FeatName.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_RESOLVE_CRISIS</Tag>
+  <English>This will order the Great Person to end the anarchy in your civilization and the unrest in all your cities. It consumes the Great Person.</English>
+  <German>Dies wird die Gro&#223;e Pers&#246;nlichkeit veranlassen, the Anarchie in Eurer Zivilisation sowie den Aufruhr in all Euren St&#228;dten zu beenden. Die Gro&#223;e Pers&#246;nlichkeit wird dabei aufgebraucht.</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_RESOURCE_ALL</Tag>
+  <English>Toggle Show All Resource Display</English>
+  <French>Afficher/masquer les ressources</French>
+  <German>Alle Ressourcen anzeigen ein/aus</German>
+  <Italian>Abilita/disabilita la finestra 'Mostra tutte le risorse'</Italian>
+  <Spanish>Activar visor de todos los recursos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_RETIRE</Tag>
+  <English>Retire from the game</English>
+  <French>Abandonner la partie</French>
+  <German>Aus dem Spiel ausscheiden</German>
+  <Italian>Ritirati dalla partita</Italian>
+  <Spanish>Retirarse de la partida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_ROUTE_TO</Tag>
+  <English>Build Route To</English>
+  <French>Construire une route vers</French>
+  <German>Stra&#223;e nach bauen</German>
+  <Italian>Assegna un 'Itinerario'</Italian>
+  <Spanish>Construir ruta a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SAVE</Tag>
+  <English>Save</English>
+  <French>Sauvegarder</French>
+  <German>Speichern</German>
+  <Italian>Salva</Italian>
+  <Spanish>Guardar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SAVE_GROUP</Tag>
+  <English>Save Game (Group)</English>
+  <French>Sauvegarder (groupe)</French>
+  <German>Spiel speichern (Gruppe)</German>
+  <Italian>Salva partita (gruppo)</Italian>
+  <Spanish>Guardar partida (grupo)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SAVE_NORMAL</Tag>
+  <English>Save Game</English>
+  <French>Sauvegarder</French>
+  <German>Spiel speichern</German>
+  <Italian>Salva partita</Italian>
+  <Spanish>Guardar partida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SCORES</Tag>
+  <English>Toggle Scores Display</English>
+  <French>Afficher/masquer les scores</French>
+  <German>Punkteanzeige ein/aus</German>
+  <Italian>Abilita/disabilita la 'Finestra dei punteggi'</Italian>
+  <Spanish>Activar visor de puntuaciones</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SCORES_HELP</Tag>
+  <English>Toggle Score Visibility</English>
+  <French>Afficher/masquer les scores.</French>
+  <German>Punktestand ein-/ausblenden.</German>
+  <Italian>Attiva/disattiva la visibilit&#224; del punteggio.</Italian>
+  <Spanish>Activa la visibilidad de la puntuaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SELECT_CAPITAL</Tag>
+  <English>Select Capital</English>
+  <French>S&#233;lectionner capitale</French>
+  <German>Hauptstadt w&#228;hlen</German>
+  <Italian>Seleziona citt&#224;</Italian>
+  <Spanish>Seleccionar capital</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SELECT_CITY</Tag>
+  <English>Select City</English>
+  <French>S&#233;lectionner la ville</French>
+  <German>Stadt w&#228;hlen</German>
+  <Italian>Seleziona citt&#224;</Italian>
+  <Spanish>Seleccionar ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SELECT_UNIT_ALL</Tag>
+  <English>Select All Units</English>
+  <French>S&#233;lectionner toutes les unit&#233;s</French>
+  <German>Alle Einheiten w&#228;hlen</German>
+  <Italian>Seleziona tutte le unit&#224;</Italian>
+  <Spanish>Seleccionar todas las unidades</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SELECT_UNIT_TYPE</Tag>
+  <English>Select All Units (Same Type)</English>
+  <French>S&#233;lectionner toutes les unit&#233;s (m&#234;me type)</French>
+  <German>Alle Einheiten w&#228;hlen (Gleicher Typ)</German>
+  <Italian>Seleziona tutte le unit&#224; (dello stesso tipo)</Italian>
+  <Spanish>Seleccionar todas las unidades (del mismo tipo)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SHOW_CIVICS_SCREEN</Tag>
+  <English>Change Civics</English>
+  <French>Changer de doctrine</French>
+  <German>Staatsformen &#228;ndern</German>
+  <Italian>Cambia forme di governo</Italian>
+  <Spanish>Cambiar de principios</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SHOW_CIVICS_SCREEN_HELP</Tag>
+  <English>Display the Civics Screen</English>
+  <French>Ouvrir l'&#233;cran de doctrine</French>
+  <German>Staatsformen-Bildschirm einblenden.</German>
+  <Italian>Visualizza la schermata della politica.</Italian>
+  <Spanish>Muestra la pantalla de principios.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SHOW_CORPORATION_SCREEN</Tag>
+  <English>Corporation Advisor</English>
+  <French>Conseiller des soci&#233;t&#233;s commerciales</French>
+  <German>Unternehmensberater</German>
+  <Italian>Consigliere corporativo</Italian>
+  <Spanish>Consejero de corporaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SHOW_CORPORATION_SCREEN_HELP</Tag>
+  <English>Display the Corporation Screen</English>
+  <French>Afficher l'&#233;cran des soci&#233;t&#233;s commerciales</French>
+  <German>Kapitalgesellschaft-Bildschirm anzeigen</German>
+  <Italian>Mostra la schermata della Corporazione</Italian>
+  <Spanish>Mostrar la pantalla de la corporaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SHOW_RELIGION_SCREEN</Tag>
+  <English>Convert Religion</English>
+  <French>Ecran de Religion</French>
+  <German>Religion wechseln</German>
+  <Italian>Conversione alla religione</Italian>
+  <Spanish>Convertirse a una religi&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SHOW_RELIGION_SCREEN_HELP</Tag>
+  <English>Display the Religion Screen</English>
+  <French>Ouvrir l'&#233;cran de Religion</French>
+  <German>Religionen-Bildschirm einblenden.</German>
+  <Italian>Visualizza la schermata della religione.</Italian>
+  <Spanish>Muestra la pantalla de religi&#243;n.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SHOW_RESOURCES_HELP</Tag>
+  <English>Makes finding resources easier</English>
+  <French>Facilite la recherche de ressources</French>
+  <German>Erleichtert die Suche nach Ressourcen.</German>
+  <Italian>Agevola la ricerca di risorse.</Italian>
+  <Spanish>Hace que sea m&#225;s f&#225;cil encontrar recursos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SIGN</Tag>
+  <English>Sign</English>
+  <French>Panneau</French>
+  <German>Zeichen</German>
+  <Italian>Segnale</Italian>
+  <Spanish>Letrero</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_SIGN_HELP</Tag>
+  <English>Adds a sign to a specific plot that you and your teammates can see.</English>
+  <French>Ajoutez un panneau &#224; un endroit pr&#233;cis pour vous et vos co&#233;quipiers.</French>
+  <German>Markieren Sie ein Gel&#228;ndefeld mit einem Zeichen, das nur Sie und Ihre Teammitglieder sehen k&#246;nnen.</German>
+  <Italian>Aggiunge in una determinata casella un segnale visibile soltanto a te e ai tuoi alleati.</Italian>
+  <Spanish>A&#241;ade a una casilla concreta un letrero que pod&#225;is ver tus compa&#241;eros y t&#250;.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_STOP_AUTOMATION</Tag>
+  <English>Stops Automation</English>
+  <French>Ne plus automatiser</French>
+  <German>Automatisierung stoppen</German>
+  <Italian>Interrompi le automazioni</Italian>
+  <Spanish>Detiene la automatizaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_TOP_DOWN_CAMERA</Tag>
+  <English>Toggle Camera Top Down View</English>
+  <French>Activer/d&#233;sactiver vue invers&#233;e</French>
+  <German>Kamera-Draufsicht umschalten</German>
+  <Italian>Abilita la visuale sottosopra</Italian>
+  <Spanish>Activar vista superior de la c&#225;mara</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_TRADE_MISSION_FOREIGN</Tag>
+  <English>[COLOR_WARNING_TEXT]Can only Conduct a Trade Mission in a Foreign City.[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]Mission commerciale possible uniquement dans une ville &#233;trang&#232;re.[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Kann nur eine Handelsmission in einer fremden Stadt durchf&#252;hren.[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Pu&#242; condurre una missione commerciale solamente in una citt&#224; straniera.[COLOR_REVERT]</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Solo puede realizar una misi&#243;n comercial en una ciudad extranjera.[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_UNIT_ICONS</Tag>
+  <English>Toggle enemy units display</English>
+  <French>Afficher/masquer les unit&#233;s ennemies</French>
+  <German>Feindanzeige ein-/ausblenden</German>
+  <Italian>Abilita/Disabilita la visualizzazione delle unit&#224; nemiche</Italian>
+  <Spanish>Activar el visor de unidades enemigas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_UNLOAD</Tag>
+  <English>Unload</English>
+  <French>D&#233;charger</French>
+  <German>Entladen</German>
+  <Italian>Sbarca</Italian>
+  <Spanish>Desembarcar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_WILL_DESTROY_IMP</Tag>
+  <English>[COLOR_WARNING_TEXT]Will destroy the %s1_ImpName[COLOR_REVERT]</English>
+  <French>[COLOR_WARNING_TEXT]D&#233;truira : %s1_ImpName[COLOR_REVERT]</French>
+  <German>[COLOR_WARNING_TEXT]Wird die Modernisierung %s1_ImpName zerst&#246;ren[COLOR_REVERT]</German>
+  <Italian>[COLOR_WARNING_TEXT]Il miglioramento %s1_ImpName[COLOR_REVERT] verr&#224; distrutto.</Italian>
+  <Spanish>[COLOR_WARNING_TEXT]Destruir&#225; [NUM1:el:la:los:las] %s1_ImpName[COLOR_REVERT]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_WILL_ELIMINATE_CORPORATION</Tag>
+  <English>[ICON_BULLET]Buy out %s1_corporation in this city</English>
+  <French>[ICON_BULLET]Racheter %s1_corporation dans cette ville</French>
+  <German>[ICON_BULLET]Aufl&#246;sung der Kapitalgesellschaft %s1_corporation in dieser Stadt</German>
+  <Italian>[ICON_BULLET]Elimina la %s1_corporation in questa citt&#224;</Italian>
+  <Spanish>[ICON_BULLET]Liquidar %s1_corporation en esta ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_YIELDS</Tag>
+  <English>Toggle Yield Display</English>
+  <French>Afficher/masquer la production</French>
+  <German>Ertragsanzeige umschalten</German>
+  <Italian>Abilita/disabilita la visualizzazione della produzione</Italian>
+  <Spanish>Activar visor de rendimiento</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ACTION_YIELDS_HELP</Tag>
+  <English>Toggle Food / Production / Commerce icon visibility</English>
+  <French>Alterner entre l'affichage des ic&#244;nes Nourriture / Production / Commerce</French>
+  <German>Nahrungs-/Produktions-/Wirtschaftssymbole ein-/ausblenden.</German>
+  <Italian>Attiva/disattiva la visibilit&#224; delle icone Cibo/Produzione/Commercio.</Italian>
+  <Spanish>Activa la visibilidad de iconos de alimentos / producci&#243;n / comercio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_1_2X_ADVANTAGE</Tag>
+  <English>200%% Cost</English>
+  <French>Co&#251;t 200%%</French>
+  <German>200%% Kosten</German>
+  <Italian>Costo 200%%</Italian>
+  <Spanish>200%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_1_3X_ADVANTAGE</Tag>
+  <English>300% Cost</English>
+  <French>Co&#251;t 300%%</French>
+  <German>300%% Kosten</German>
+  <Italian>Costo 200%%</Italian>
+  <Spanish>300% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_1_4X_ADVANTAGE</Tag>
+  <English>400%% Cost</English>
+  <French>Co&#251;t 400%%</French>
+  <German>400%% Kosten</German>
+  <Italian>Costo 400%%</Italian>
+  <Spanish>400%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_1X_ADVANTAGE</Tag>
+  <English>100%% Cost</English>
+  <French>Co&#251;t 100%%</French>
+  <German>100%% Kosten</German>
+  <Italian>Costo 100%%</Italian>
+  <Spanish>100%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_2_3X_ADVANTAGE</Tag>
+  <English>150%% Cost</English>
+  <French>Co&#251;t 150%%</French>
+  <German>150%% Kosten</German>
+  <Italian>Costo 150%%</Italian>
+  <Spanish>150%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_2X_ADVANTAGE</Tag>
+  <English>50%% Cost</English>
+  <French>Co&#251;t 50%%</French>
+  <German>50%% Kosten</German>
+  <Italian>Costo 50%%</Italian>
+  <Spanish>50%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_3_2X_ADVANTAGE</Tag>
+  <English>67%% Cost</English>
+  <French>Co&#251;t 67%%</French>
+  <German>67%% Kosten</German>
+  <Italian>Costo 67%%</Italian>
+  <Spanish>67%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_3X_ADVANTAGE</Tag>
+  <English>33%% Cost</English>
+  <French>Co&#251;t 33%%</French>
+  <German>33%% Kosten</German>
+  <Italian>Costo 33%%</Italian>
+  <Spanish>33%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_4_5X_ADVANTAGE</Tag>
+  <English>125%% Cost</English>
+  <French>Co&#251;t 125%%</French>
+  <German>125%% Kosten</German>
+  <Italian>Costo 125%%</Italian>
+  <Spanish>125%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_4X_ADVANTAGE</Tag>
+  <English>25%% Cost</English>
+  <French>Co&#251;t 25%%</French>
+  <German>25%% Kosten</German>
+  <Italian>Costo 25%%</Italian>
+  <Spanish>25%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_5_4X_ADVANTAGE</Tag>
+  <English>80%% Cost</English>
+  <French>Co&#251;t 80%%</French>
+  <German>80%% Kosten</German>
+  <Italian>Costo 80%%</Italian>
+  <Spanish>80%% de coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_AGAINST_PLAYER</Tag>
+  <English>[ICON_ESPIONAGE] Ratio with %s1_player: %d2/%d3[NEWLINE]</English>
+  <French>[ICON_ESPIONAGE] Rapport avec %s1_player : %d2/%d3[NEWLINE]</French>
+  <German>[ICON_ESPIONAGE] Verh&#228;ltnis zu %s1_player: %d2/%d3[NEWLINE]</German>
+  <Italian>[ICON_ESPIONAGE] rapporto con %s1_player: %d2/%d3[NEWLINE]</Italian>
+  <Spanish>[ICON_ESPIONAGE] Proporci&#243;n con %s1_player: %d2/%d3[NEWLINE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_AI_SPENDING_TOGGLE</Tag>
+  <English>Show AI Espionage</English>
+  <German>KI-Spionage</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_BASE_COST</Tag>
+  <English>%d1 [ICON_ESPIONAGE]: Base Cost</English>
+  <French>%d1 [ICON_ESPIONAGE] : co&#251;t de base</French>
+  <German>%d1 [ICON_ESPIONAGE]: Basiskosten</German>
+  <Italian>%d1 [ICON_ESPIONAGE]: costo basilare</Italian>
+  <Spanish>%d1 [ICON_ESPIONAGE]: Coste base</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_BUY_CITY</Tag>
+  <English>Bribe City</English>
+  <French>Corrompre la ville</French>
+  <German>Stadt bestechen</German>
+  <Italian>Corrompi citt&#224;</Italian>
+  <Spanish>Sobornar ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_BUY_TECH</Tag>
+  <English>Steal Technology</English>
+  <French>Voler une technologie</French>
+  <German>Technologie stehlen</German>
+  <Italian>Ruba tecnologie</Italian>
+  <Spanish>Robar tecnolog&#237;a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_BUY_UNIT</Tag>
+  <English>Bribe Unit</English>
+  <French>Corrompre unit&#233;</French>
+  <German>Einheit bestechen</German>
+  <Italian>Corrompi unit&#224;</Italian>
+  <Spanish>Sobornar unidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CAN_SEE_DEMOGRAPHICS</Tag>
+  <English>Can See Demographics</English>
+  <French>Voir donn&#233;es d&#233;mographiques</French>
+  <German>Demografie sichtbar</German>
+  <Italian>Visione demografica</Italian>
+  <Spanish>Puede ver estad&#237;sticas</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CANNOT_DO_MISSION</Tag>
+  <English>That Mission cannot be used there right now.</English>
+  <French>Cette mission ne peut &#234;tre ex&#233;cut&#233;e pour l'instant.</French>
+  <German>Diese Mission kann dort im Augenblick nicht ausgef&#252;hrt werden.</German>
+  <Italian>Quella missione non pu&#242; essere utilizzata qui ora.</Italian>
+  <Spanish>Esta misi&#243;n no se puede realizar all&#237; ahora mismo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CHANCE_OF_SUCCESS</Tag>
+  <English>Chance of Success: %d1%%</English>
+  <French>Chance de r&#233;ussite : %d1%%</French>
+  <German>Erfolgschance: %d1%%</German>
+  <Italian>Probabilit&#224; di successo: %d1%%.</Italian>
+  <Spanish>Posibilidades de &#233;xito: %d1%%</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CHOOSE_TARGET</Tag>
+  <English>Choose Your Target</English>
+  <French>Choisir votre cible</French>
+  <German>W&#228;hlt Euer Ziel aus</German>
+  <Italian>Scegli il bersaglio</Italian>
+  <Spanish>Elegir el objetivo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CITY_INSERT_CULTURE</Tag>
+  <English>Spread Culture</English>
+  <French>Propager la culture</French>
+  <German>Kultur verbreiten</German>
+  <Italian>Diffondi cultura</Italian>
+  <Spanish>Propagar cultura</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CITY_POISON_WATER</Tag>
+  <English>Poison Water</English>
+  <French>Empoisonner l'eau</French>
+  <German>Wasser vergiften</German>
+  <Italian>Avvelena acqua</Italian>
+  <Spanish>Envenenar agua</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CITY_REVOLT</Tag>
+  <English>Support City Revolt</English>
+  <French>Soutenir la r&#233;volte de la ville</French>
+  <German>Stadt-Revolte unterst&#252;tzen</German>
+  <Italian>Supporta rivolta cittadina</Italian>
+  <Spanish>Apoyar rebeli&#243;n en la ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CITY_UNHAPPINESS</Tag>
+  <English>Foment Unhappiness</English>
+  <French>Comploter du m&#233;contentement</French>
+  <German>Unzufriedenheit sch&#252;ren</German>
+  <Italian>Alimenta infelicit&#224;</Italian>
+  <Spanish>Fomentar la infelicidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CITY_VISIBILITY</Tag>
+  <English>City Visibility</English>
+  <French>Afficher la ville</French>
+  <German>Stadtsichtbarkeit</German>
+  <Italian>Visibilit&#224; citt&#224;</Italian>
+  <Spanish>Visibilidad de la ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_COST</Tag>
+  <English>%d1%% [ICON_ESPIONAGE] Cost</English>
+  <French>%d1%% [ICON_ESPIONAGE] Co&#251;t</French>
+  <German>%d1%% [ICON_ESPIONAGE] Kosten</German>
+  <Italian>[ICON_ESPIONAGE] Costo %d1%%</Italian>
+  <Spanish>%d1%% de coste [ICON_ESPIONAGE]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_COST_TOTAL</Tag>
+  <English>%d1 [ICON_ESPIONAGE]: Total Cost</English>
+  <French>%d1 [ICON_ESPIONAGE] : co&#251;t total</French>
+  <German>%d1 [ICON_ESPIONAGE]: Gesamtkosten</German>
+  <Italian>%d1 [ICON_ESPIONAGE]: costo totale</Italian>
+  <Spanish>%d1 [ICON_ESPIONAGE]: Coste total</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_COUNTERESPIONAGE</Tag>
+  <English>Perform Counterespionage</English>
+  <French>Contre-espionnage</French>
+  <German>Spionageabwehr ausf&#252;hren</German>
+  <Italian>Effettua controspionaggio</Italian>
+  <Spanish>Contraespionaje</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_COUNTERESPIONAGE_MOD</Tag>
+  <English>%D1%%: for Counterespionage</English>
+  <French>%D1%% : pour le contre-espionnage</French>
+  <German>%D1%%: f&#252;r Gegenspionage</German>
+  <Italian>%D1%%: per il controspionaggio</Italian>
+  <Spanish>%D1%%: Por contraespionaje</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CULTURE</Tag>
+  <English>Espionage</English>
+  <French>
+   <Text>Espionnage</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </French>
+  <German>
+   <Text>Spionage</Text>
+   <Gender>Female</Gender>
+   <Plural>0</Plural>
+  </German>
+  <Italian>
+   <Text>Spionaggio</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Italian>
+  <Spanish>
+   <Text>Espionaje</Text>
+   <Gender>Male</Gender>
+   <Plural>0</Plural>
+  </Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_CULTURE_MOD</Tag>
+  <English>%D1%%: for City Culture</English>
+  <French>%D1%% : pour la culture de la ville</French>
+  <German>%D1%%: f&#252;r st&#228;dtische Kultur</German>
+  <Italian>%D1%%: per la cultura della citt&#224;</Italian>
+  <Spanish>%D1%%: Por la cultura de la ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_DEFENSE_MOD</Tag>
+  <English>%D1%%: for City Espionage Defense</English>
+  <French>%D1%% : pour la d&#233;fense de la ville contre l'espionnage</French>
+  <German>%D1%%: f&#252;r st&#228;dtische Spionageabwehr</German>
+  <Italian>%D1%%: per la difesa cittadina dallo spionaggio</Italian>
+  <Spanish>%D1%%: Por defensa contra el espionaje de la ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_DESTROY_BUILDING</Tag>
+  <English>Sabotage Building</English>
+  <French>Saboter le b&#226;timent</French>
+  <German>Geb&#228;ude sabotieren</German>
+  <Italian>Sabota edifici</Italian>
+  <Spanish>Sabotear edificio</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_DESTROY_IMPROVEMENT</Tag>
+  <English>Sabotage Improvement</English>
+  <French>Saboter l'am&#233;nagement</French>
+  <German>Modernisierung sabotieren</German>
+  <Italian>Sabota miglioramenti</Italian>
+  <Spanish>Sabotear mejora</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_DESTROY_PRODUCTION</Tag>
+  <English>Sabotage Production</English>
+  <French>Sabotage de production</French>
+  <German>Produktion sabotieren</German>
+  <Italian>Sabota produzione</Italian>
+  <Spanish>Sabotear la producci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_DESTROY_PROJECT</Tag>
+  <English>Sabotage Project</English>
+  <French>Sabotage de projet</French>
+  <German>Projekt sabotieren</German>
+  <Italian>Sabota progetto</Italian>
+  <Spanish>Sabotear proyecto</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_DESTROY_UNIT</Tag>
+  <English>Destroy Unit</English>
+  <French>D&#233;truire l'unit&#233;</French>
+  <German>Einheit zerst&#246;ren</German>
+  <Italian>Distruggi unit&#224;</Italian>
+  <Spanish>Destruir unidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_DISTANCE_MOD</Tag>
+  <English>%D1%%: for Distance</English>
+  <French>%D1%% : pour la distance</French>
+  <German>%D1%%: f&#252;r Entfernung</German>
+  <Italian>%D1%%: per la distanza</Italian>
+  <Spanish>%D1%%: Por distancia</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_EP_RATIO_MOD</Tag>
+  <English>%D1%%: for Espionage Point Spending</English>
+  <French>%D1%% : pour les points d'espionnage d&#233;pens&#233;s</French>
+  <German>%D1%%: f&#252;r Spionagepunkt-Aufwendung</German>
+  <Italian>%D1%%: per la spesa dei punti spionaggio</Italian>
+  <Spanish>%D1%%: Por gasto en puntos de espionaje</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_ANARCHY</Tag>
+  <English>Cause %s1_player to enter Anarchy for %d2 [NUM2:turn:turns]</English>
+  <French>Semer l'anarchie chez %s1_player pendant %d2 [NUM2:tour:tours]</French>
+  <German>Bei %s1_player bricht f&#252;r %d2 [NUM2:Runde:Runden] Anarchie aus</German>
+  <Italian>Spingi %s1_player all'Anarchia per %d2 [NUM2:turno:turni]</Italian>
+  <Spanish>Hacer que %s1_player entre en la anarqu&#237;a durante %d2 [NUM2:turno:turnos]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_BRIBE</Tag>
+  <English>Bribe the loyalty of %s1_name</English>
+  <French>Acheter la loyaut&#233; de : %s1_name</French>
+  <German>Die Loyalit&#228;t von %s1_name kaufen</German>
+  <Italian>Compra la lealt&#224; di %s1_name</Italian>
+  <Spanish>Comprar la lealtad de %s1_name</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_COUNTERESPIONAGE</Tag>
+  <English>Add %d1%% to the cost of %s2_civ_adjective espionage missions against you (lasts for %d3 [NUM3:turn:turns])</English>
+  <French>Ajouter %d1%% au co&#251;t des missions d'espionnage %s2:4_civ_adjective lanc&#233;es contre vous (dure %d3 [NUM3:tour:tours])</French>
+  <German>Kosten der gegen Sie gerichteten %s2:2_civ_adjective Spionagemissionen um %d1%% erh&#246;hen (dauert %d3 [NUM3:Runde:Runden])</German>
+  <Italian>Aggiungi %d1%% al costo delle missioni di spionaggio %s2_civ_adjective contro di te (dura per %d3 [NUM3:turno:turni])</Italian>
+  <Spanish>A&#241;adir un %d1%% al coste de las misiones de espionaje %s2:4_civ_adjective contra ti (dura %d3 [NUM3:turno:turnos])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_DESTROY_IMPROVEMENT</Tag>
+  <English>Sabotage %s1_improvement</English>
+  <French>Saboter %s1_improvement</French>
+  <German>%s1_improvement sabotieren</German>
+  <Italian>Sabota %s1_improvement</Italian>
+  <Spanish>Sabotear %s1_improvement</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_DESTROY_IMPROVEMENT_RADIATION</Tag>
+  <English>Will create fallout on the tile.</English>
+  <French>Cr&#233;era des retomb&#233;es radioactives sur la tuile.</French>
+  <German>Erzeugt Kontamination auf dem Feld.</German>
+  <Italian>Generer&#224; la precipitazione radioattiva sulle mattonelle.</Italian>
+  <Spanish>Crear&#225; el polvillo radiactivo en el azulejo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_DESTROY_PRODUCTION</Tag>
+  <English>Sabotage current production (%d1[ICON_PRODUCTION])</English>
+  <French>Saboter la production actuelle (%d1[ICON_PRODUCTION])</French>
+  <German>Aktuelle Produktion sabotieren (%d1[ICON_PRODUCTION])</German>
+  <Italian>Sabota la produzione corrente (%d1[ICON_PRODUCTION])</Italian>
+  <Spanish>Sabotear producci&#243;n actual (%d1 [ICON_PRODUCTION])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_DESTROY_UNIT</Tag>
+  <English>Assassinate %s1_unit_name</English>
+  <French>Assassiner : %s1_unit_name</French>
+  <German>%s1_unit_name ermorden</German>
+  <Italian>Uccidi %s1_unit_name</Italian>
+  <Spanish>Asesinar [NUM1:al:a la:a los:a las] %s1_unit_name</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_INSERT_CULTURE</Tag>
+  <English>Spread %d2[ICON_CULTURE] to %s1_city (%d3%%)</English>
+  <French>Etendre %d2[ICON_CULTURE] &#224; %s1_city (%d3%%)</French>
+  <German>%d2[ICON_CULTURE] Kultur in %s1_city (%d3%%) verbreiten</German>
+  <Italian>Diffondi %d2[ICON_CULTURE] a %s1_city (%d3%%)</Italian>
+  <Spanish>Propagar %d2[ICON_CULTURE] a %s1_city (%d3%%)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_POISON</Tag>
+  <English>Cause %d1%F2 in %s3_city (fully recovers after %d4 [NUM4:turn:turns])</English>
+  <French>Provoquer %d1%F2 dans la ville : %s3_city (gu&#233;rison totale apr&#232;s %d4 [NUM4:tour:tours])</French>
+  <German>%d1%F2 in %s3_city verursachen (nach %d4 [NUM4:Runde:Runden] vollst&#228;ndig wiederhergestellt)</German>
+  <Italian>Provoca %d1%F2 a %s3_city (recupera pienamente dopo %d4 [NUM4:turno:turni])</Italian>
+  <Spanish>Provocar %d1 %F2 en %s3_city (se recuperar&#225; totalmente tras %d4 [NUM4:turno:turnos])</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_REVOLT</Tag>
+  <English>Cause %s1_city to revolt for %d2 [NUM2:turn:turns]</English>
+  <French>Provoquer la r&#233;volte de la ville : %s1_city pendant %d2 [NUM2:tour:tours]</French>
+  <German>%d2 [NUM2:Runde:Runden] eine Revolte in %s1_city verursachen</German>
+  <Italian>Provoca una rivolta a %s1_city per %d2 [NUM2:turno:turni]</Italian>
+  <Spanish>Provocar en %s1_city una revuelta durante %d2 [NUM2:turno:turnos]</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_STEAL_TECH</Tag>
+  <English>Gain knowledge of %s1_tech</English>
+  <French>Acqu&#233;rir la connaissance de : %s1_tech</French>
+  <German>Technologie %s1_tech ausspionieren</German>
+  <Italian>Ottieni la conoscenza di %s1_tech</Italian>
+  <Spanish>Adquirir el conocimiento [NUM1:del:de la:de los:de las] %s1_tech</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_STEAL_TREASURY</Tag>
+  <English>Steal %d1[ICON_GOLD] from the %s2_civ_adjective treasury</English>
+  <French>D&#233;rober %d1[ICON_GOLD] au tr&#233;sor %s2:1_civ_adjective</French>
+  <German>%d1[ICON_GOLD] aus der %s2:2_civ_adjective Schatzkammer stehlen</German>
+  <Italian>Ruba %d1[ICON_GOLD] dal tesoro %s2_civ_adjective</Italian>
+  <Spanish>Robar %d1 [ICON_GOLD] del tesoro %s2:1_civ_adjective</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_HELP_SWITCH_CIVIC</Tag>
+  <English>Induce %s1_player to switch to %s2_civic</English>
+  <French>Pousser %s1_player &#224; adopter la doctrine : %s2_civic</French>
+  <German>%s1_player zum Wechsel zur Staatsform %s2_civic verleiten</German>
+  <Italian>Induci %s1_player a passare a %s2_civic</Italian>
+  <Spanish>Inducir a %s1_player a pasarse [NUM2:al:a la:a los:a las] %s2_civic</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_INVESTIGATE_CITY</Tag>
+  <English>Investigate City</English>
+  <French>Enqu&#234;ter sur la ville</French>
+  <German>Stadt erkunden</German>
+  <Italian>Infiltrati nella citt&#224;</Italian>
+  <Spanish>Investigar ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_MISSION_PERFORMED</Tag>
+  <English>Espionage Mission undertaken successfully!</English>
+  <French>Mission d'espionnage r&#233;ussie !</French>
+  <German>Spionagemission war erfolgreich!</German>
+  <Italian>Missione di spionaggio portata a termine con successo!</Italian>
+  <Spanish>&#161;La misi&#243;n de espionaje se ha realizado con &#233;xito!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_MISSIONS_SPY</Tag>
+  <English>Must be enacted by Spy units in an opponent's city or other valid plot</English>
+  <French>Doit &#234;tre ex&#233;cut&#233;e par des espions dans une ville ennemie ou dans un autre site autoris&#233;</French>
+  <German>Muss von Spionageeinheiten in einer gegnerischen Stadt oder auf einem anderen g&#252;ltigen Gel&#228;ndefeld ausgef&#252;hrt werden.</German>
+  <Italian>Dev'essere eseguita da una Spia in citt&#224; nemiche o altre caselle valide</Italian>
+  <Spanish>Lo han de realizar unidades de esp&#237;as en la ciudad de un oponente o en otra casilla v&#225;lida</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_MISSIONS_TAB</Tag>
+  <English>Missions</English>
+  <German>Missionen</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_NO_ACTIVE_MISSIONS</Tag>
+  <English>Spies Cannot Enter Our Borders</English>
+  <French>Les espions ne peuvent pas franchir nos fronti&#232;res</French>
+  <German>Spione k&#246;nnen unsere Grenzen nicht &#252;berwinden</German>
+  <Italian>Le spie non possono entrare nei nostri confini</Italian>
+  <Spanish>Los esp&#237;as no pueden atravesar nuestras fronteras</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_NUM_EPS</Tag>
+  <English>%d1 EPs</English>
+  <French>EXP %d1</French>
+  <German>%d1 SP</German>
+  <Italian>%d1 PS</Italian>
+  <Spanish>%d1 PE</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_NUM_EPS_PER_TURN</Tag>
+  <English>+%d1 per Turn</English>
+  <French>+%d1 par tour</French>
+  <German>+%d1 pro Runde</German>
+  <Italian>+%d1 per turno</Italian>
+  <Spanish>+%d1 por turno</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_NUM_GOLD</Tag>
+  <English>Steal %d1_Num Gold</English>
+  <French>Voler %d1_Num or</French>
+  <German>%d1_Num Gold stehlen</German>
+  <Italian>Ruba %d1_Num oro</Italian>
+  <Spanish>Robar %d1_Num de oro</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_PASSIVE_AUTOMATIC</Tag>
+  <English>Active automatically when enough points have been accumulated</English>
+  <French>Automatiquement activ&#233; quand suffisamment de points ont &#233;t&#233; cumul&#233;s</French>
+  <German>Automatisch aktiv, wenn gen&#252;gend Punkte gesammelt wurden</German>
+  <Italian>Attiva automaticamente quando ci sono abbastanza punti spionaggio</Italian>
+  <Spanish>Activar autom&#225;ticamente cuando se hayan acumulado puntos suficientes</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_PLAYER_ANARCHY</Tag>
+  <English>Spread Anarchy</English>
+  <French>Propager l'anarchie</French>
+  <German>Anarchie verbreiten</German>
+  <Italian>Diffondi anarchia</Italian>
+  <Spanish>Propagar anarqu&#237;a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_POPULATION_MOD</Tag>
+  <English>%D1%%: for City Size</English>
+  <French>%D1%% : pour la taille de la ville</French>
+  <German>%D1%%: f&#252;r Stadtgr&#246;&#223;e</German>
+  <Italian>%D1%%: per dimensione della citt&#224;</Italian>
+  <Spanish>%D1%%: Por tama&#241;o de la ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_RELIGION_MOD</Tag>
+  <English>%D1%%: for our State Religion</English>
+  <French>%D1%% : pour notre religion d'Etat</French>
+  <German>%D1%%: f&#252;r unsere Staatsreligion</German>
+  <Italian>%D1%%: per la religione ufficiale</Italian>
+  <Spanish>%D1%%: Por nuestra religi&#243;n oficial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SCREEN</Tag>
+  <English>Espionage Screen</English>
+  <French>Ecran d'espionnage</French>
+  <German>Spionagebildschirm</German>
+  <Italian>Schermata dello spionaggio</Italian>
+  <Spanish>Pantalla de espionaje</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SCREEN_COST</Tag>
+  <English>Cost</English>
+  <French>Co&#251;t</French>
+  <German>Kosten</German>
+  <Italian>Costo</Italian>
+  <Spanish>Coste</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SCREEN_MISSIONS</Tag>
+  <English>Missions</English>
+  <German>Missionen</German>
+  <Italian>Missioni</Italian>
+  <Spanish>Misiones</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SCREEN_PASSIVE_EFFECTS</Tag>
+  <English>Passive Effects</English>
+  <French>Effets passifs</French>
+  <German>Passive Auswirkungen</German>
+  <Italian>Effetti passivi</Italian>
+  <Spanish>Efectos pasivos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SCREEN_SPENDING_WEIGHT</Tag>
+  <English>Weight</English>
+  <French>Poids</French>
+  <German>Gewich.</German>
+  <Italian>Peso</Italian>
+  <Spanish>Peso</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SCREEN_TOTAL_NUM_EPS</Tag>
+  <English>Total EPs Made Per Turn: %D1_Num</English>
+  <French>Total de PE gagn&#233;s par tour : %D1_Num</French>
+  <German>Gesamt-SP pro Runde: %D1_Num</German>
+  <Italian>PS totali per turno: %D1_Num</Italian>
+  <Spanish>Total de PE ganados por turno: %D1_Num</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SEE_RESEARCH</Tag>
+  <English>Can See Research</English>
+  <French>Peut voir l'&#233;tat des recherches</French>
+  <German>Forschung sichtbar</German>
+  <Italian>Visione ricerche</Italian>
+  <Spanish>Puede ver investigaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SPY_STATIONARY_MOD</Tag>
+  <English>%D1%%: for Stationary Spy</English>
+  <French>%D1%% : pour un espion immobile</French>
+  <German>%D1%%: f&#252;r station&#228;ren Spion</German>
+  <Italian>%D1%%: per la spia stazionaria</Italian>
+  <Spanish>%D1%%: Por esp&#237;a estacionario</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SPY_SUCCESS</Tag>
+  <English>Upon completing the mission the %s1_unit has returned safely to %s2_city.</English>
+  <French>Apr&#232;s avoir compl&#233;t&#233; la mission, l'unit&#233; : %s1_unit est revenue saine et sauve &#224; %s2_city.</French>
+  <German>Nach Beendigung der Mission ist die Einheit %s1_unit sicher nach %s2_city zur&#252;ckgekehrt.</German>
+  <Italian>Dopo aver completato la missione, l'unit&#224; %s1_unit &#232; tornata sana e salva a %s2_city.</Italian>
+  <Spanish>Tras completar la misi&#243;n, [NUM1:el:la:los:las] %s1_unit [NUM1:ha:ha:han:han] vuelto a salvo a %s2_city.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SPYVSPY_TAB</Tag>
+  <English>Spy v Spy</English>
+  <German>Gegenspionage</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_STEAL_TREASURY</Tag>
+  <English>Steal Treasury</English>
+  <French>Voler le tr&#233;sor</French>
+  <German>Schatzkammer ausrauben</German>
+  <Italian>Ruba tesoro</Italian>
+  <Spanish>Robar tesoro</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SWITCH_CIVIC</Tag>
+  <English>Influence Civics</English>
+  <French>Influencer les civils</French>
+  <German>Staatsform beeinflussen</German>
+  <Italian>Influenza forme di governo</Italian>
+  <Spanish>Influir en principios</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_SWITCH_RELIGION</Tag>
+  <English>Influence Religion</English>
+  <French>Influencer la religion</French>
+  <German>Religion beeinflussen</German>
+  <Italian>Influenza religione</Italian>
+  <Spanish>Influir en religi&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_CITY_BOUGHT</Tag>
+  <English>The loyalty of the city of %s1_CityName was bought by enemy infiltrators!</English>
+  <French>La loyaut&#233; de la ville %s1_CityName a &#233;t&#233; achet&#233;e par des ennemis infiltr&#233;s !</French>
+  <German>Die Loyalit&#228;t der Stadt %s1_CityName wurde von feindlichen Spionen gekauft!</German>
+  <Italian>Infiltrati nemici hanno comperato la lealt&#224; della citt&#224; di %s1_CityName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han comprado la lealtad de la ciudad de %s1_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_CITY_CULTURE_INSERTED</Tag>
+  <English>Elements loyal to another empire have spread propaganda within the city of %s1_CityName!</English>
+  <French>Des fid&#232;les d'un autre empire ont sem&#233; la propagande dans la ville de %s1_CityName !</French>
+  <German>Elemente, die einem anderen Reich treu sind, haben in %s1_CityName Propaganda verbreitet!</German>
+  <Italian>Elementi leali a un altro impero hanno diffuso propaganda nella citt&#224; di %s1_CityName!</Italian>
+  <Spanish>&#161;Los elementos leales a otro imperio han hecho propaganda en la ciudad de %s1_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_CITY_POISONED</Tag>
+  <English>The Water Supply of the city of %s1_CityName was poisoned by enemy infiltrators!</English>
+  <French>>L'eau de la ville de %s1_CityName a &#233;t&#233; empoisonn&#233;e par des ennemis infiltr&#233;s !</French>
+  <German>Die Wasservorr&#228;te der Stadt %s1_CityName wurden von feindlichen Spionen vergiftet!</German>
+  <Italian>Infiltrati nemici hanno avvelenato la riserva d'acqua della citt&#224; di %s1_CityName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han envenenado el agua de la ciudad de %s1_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_CITY_REVOLT</Tag>
+  <English>Enemy infiltrators have assassinated the governor of the city of %s1_CityName!</English>
+  <French>Des ennemis infiltr&#233;s ont assassin&#233; le gouverneur de la ville de %s1_CityName !</French>
+  <German>Feindliche Spione haben den Stadtverwalter von %s1_CityName ermordet!</German>
+  <Italian>Infiltrati nemici hanno assassinato il governatore della citt&#224; di %s1_CityName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han asesinado al gobernante de la ciudad de %s1_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_CITY_UNHAPPY</Tag>
+  <English>Enemy infiltrators have fomented unrest within the city of %s1_CityName!</English>
+  <French>Des ennemis infiltr&#233;s ont foment&#233; une &#233;meute dans la ville de %s1_CityName !</French>
+  <German>Feindliche Spione haben Unruhen in der Stadt %s1_CityName verbreitet!</German>
+  <Italian>Infiltrati nemici hanno fomentato una rivolta nella citt&#224; di %s1_CityName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han fomentado la agitaci&#243;n en la ciudad de %s1_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_COUNTERESPIONAGE</Tag>
+  <English>Enemy spies appear to be extra vigilant to our espionage efforts in the near future.</English>
+  <French>Les espions ennemis semblent porter une attention particuli&#232;re &#224; nos tentatives d'espionnage.</French>
+  <German>Feindliche Spione werden unsere Spionage-Unternehmungen demn&#228;chst gut im Auge behalten.</German>
+  <Italian>Pare che le spie nemiche saranno molto attente a scoprire i nostri tentativi di spionaggio nell'immediato futuro.</Italian>
+  <Spanish>Parece que los esp&#237;as enemigos no perder&#225;n de vista a nuestros agentes de ahora en adelante.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_PLAYER_ANARCHY</Tag>
+  <English>Enemy infiltrators have supported a rebellion within our lands!</English>
+  <French>Des ennemis infiltr&#233;s ont soutenu une r&#233;bellion sur nos terres !</French>
+  <German>Feindliche Spione haben einen Aufstand in unserem Land angefacht!</German>
+  <Italian>Infiltrati nemici hanno aiutato una ribellione nei nostri territori!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han apoyado una rebeli&#243;n en nuestras propias tierras!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_PRODUCTION_DESTROYED_IN</Tag>
+  <English>All %s1_buildName progress in %s2_CityName was destroyed by enemy infiltrators!</English>
+  <French>Toutes les progressions du b&#226;timent : %s1_buildName dans %s2_CityName ont &#233;t&#233; d&#233;truites par les infiltrateurs ennemis !</French>
+  <German>Der gesamte Fortschritt bei der Errichtung des Geb&#228;udes %s1_buildName in %s2_CityName wurde von gegnerischen Eindringlingen zerst&#246;rt!</German>
+  <Italian>Tutti i progressi in %s1_buildName presso %s2_CityName sono stati distrutti da nemici infiltrati!</Italian>
+  <Spanish>&#161;Los infiltrados enemigos han destruido todo el progreso [NUM1:del:de la:de los:de las] %s1_buildName en %s2_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_ASSASSINATED</Tag>
+  <English>A %s1_ThingName was assassinated by enemy infiltrators at %s2_CityName!</English>
+  <French>Un %s1_ThingName a &#233;t&#233; assassin&#233; par les envahisseurs ennemis &#224; %s2_CityName!</French>
+  <German>Ein %s1_ThingName wurde durch einen feindlichen Geheimdienst in %s2_CityName ermordet!</German>
+  <Spanish>Un %s1_ThingName fue asesinado por los infiltrados enemigos en %s2_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_BRIBED</Tag>
+  <English>A %s1_ThingName was bribed by enemy infiltrators!</English>
+  <French>Un %s1_ThingName a &#233;t&#233; suborn&#233; par les envahisseurs ennemis!</French>
+  <German>Ein %s1_ThingName wurde durch einen feindlichen Geheimdienst bestochen!</German>
+  <Italian>Un %s1_ThingName &#232; stato corrotto dagli infiltrati nemici!</Italian>
+  <Spanish>Un %s1_ThingName fue sobornado por los infiltrados enemigos!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_BRIBED_NEAR_CITY</Tag>
+  <English>A %s1_ThingName was bribed by enemy infiltrators near %s2_CityName!</English>
+  <French>Un %s1_ThingName a &#233;t&#233; suborn&#233; par les envahisseurs ennemis pr&#232;s de %s2_CityName!</French>
+  <German>Ein %s1_ThingName wurde einen feindlichen Geheimdienst nahe %s2_CityName bestochen!</German>
+  <Italian>Un %s1_ThingName &#232; stato corrotto dagli infiltrati nemici vicino a %s2_CityName!</Italian>
+  <Spanish>Un %s1_ThingName fue sobornado por los infiltrados enemigos cerca de %s2_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED</Tag>
+  <English>A %s1_ThingName was destroyed by enemy infiltrators!</English>
+  <French>Un %s1_ThingName a &#233;t&#233; d&#233;truit par les envahisseurs ennemis!</French>
+  <German>Eine %s1_ThingName wurde durch einen feindlichen Geheimdienst zerst&#246;rt!</German>
+  <Italian>Un %s1_ThingName si &#232; distrutto dagli infiltrati nemici!</Italian>
+  <Spanish>Un %s1_ThingName fue destruido por los infiltrados enemigos!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED_IN</Tag>
+  <English>A %s1_BldngName in %s2_CityName was destroyed by enemy infiltrators!</English>
+  <French>[NUM1:Un:Une] %s1_BldngName [NUM1:a &#233;t&#233; d&#233;truit:a &#233;t&#233; d&#233;truite] &#224; %s2_CityName par des ennemis infiltr&#233;s !</French>
+  <German>Das Geb&#228;ude %s1_BldngName in %s2_CityName wurde von feindlichen Spionen zerst&#246;rt!</German>
+  <Italian>Infiltrati nemici hanno distrutto [NUM1:un:una] %s1_BldngName a %s2_CityName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han destruido [NUM1:un:una:unos:unas] %s1_BldngName en %s2_CityName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_SOMETHING_DESTROYED_NEAR_CITY</Tag>
+  <English>A %s1_ThingName was destroyed by enemy infiltrators near %s2_CityName!</English>
+  <German>Eine %s1_ThingName nahe %s2_CityName wurde durch einen feindlichen Geheimdienst zerst&#246;rt!</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_STEAL_TREASURY</Tag>
+  <English>A portion of our state treasury was looted by enemy infiltrators!</English>
+  <French>>Une partie de notre tr&#233;sor a &#233;t&#233; pill&#233;e par des ennemis infiltr&#233;s !</French>
+  <German>Feindliche Spione haben einen Teil unseres Staatsschatzes erbeutet!</German>
+  <Italian>Infiltrati nemici hanno rubato una parte del nostro tesoro di stato!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han saqueado parte de nuestro tesoro!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_SWITCH_CIVIC</Tag>
+  <English>Enemy infiltrators have taken control of the government and imposed %s1_CivicName upon our nation!</English>
+  <French>Des ennemis infiltr&#233;s ont pris le contr&#244;le du gouvernement et impos&#233; la doctrine %s1_CivicName &#224; notre nation !</French>
+  <German>Feindliche Spione haben die Kontrolle &#252;ber die Regierung &#252;bernommen und unserer Nation die Staatsform %s1_CivicName aufgezwungen!</German>
+  <Italian>Infiltrati nemici hanno preso il controllo del governo e hanno imposto alla nostra nazione la forma di governo %s1_CivicName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados se han hecho con el control del gobierno y han impuesto [NUM1:el:la:los:las] %s1_CivicName en nuestra propia naci&#243;n!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_SWITCH_RELIGION</Tag>
+  <English>Enemy infiltrators have taken control of the clergy and imposed %s1_ReligionName upon our nation!</English>
+  <French>Des ennemis infiltr&#233;s ont pris le contr&#244;le du clerg&#233; et impos&#233; la religion %s1_ReligionName &#224; notre nation !</French>
+  <German>Feindliche Spione haben die Kontrolle &#252;ber die Geistlichkeit &#252;bernommen und unserer Nation die Religion %s1_ReligionName aufgezwungen!</German>
+  <Italian>Infiltrati nemici hanno preso il controllo del clero e hanno imposto alla nostra nazione la religione %s1_ReligionName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados se han hecho con el control del gobierno y han impuesto el %s1_ReligionName en nuestra propia naci&#243;n!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_TECH_BOUGHT</Tag>
+  <English>The secrets of %s1_TechName were stolen by enemy infiltrators!</English>
+  <French>Les secrets de la technologie %s1_TechName ont &#233;t&#233; vol&#233;s par des ennemis infiltr&#233;s !</French>
+  <German>Die Geheimnisse der Technologie %s1_TechName wurden von feindlichen Spionen gestohlen!</German>
+  <Italian>Infiltrati nemici hanno rubato i segreti della tecnologia %s1_TechName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han robado los secretos [NUM1:del:de la:de los:de las] %s1_TechName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TARGET_UNIT_BOUGHT</Tag>
+  <English>The loyalty of a %s1_UnitName was bought by enemy infiltrators!</English>
+  <French>La loyaut&#233; [NUM1:d'un:d'une] %s1_UnitName a &#233;t&#233; achet&#233;e par des ennemis infiltr&#233;s !</French>
+  <German>Die Loyalit&#228;t der Einheit %s1_UnitName wurde von feindlichen Spionen gekauft!</German>
+  <Italian>Infiltrati nemici hanno comperato la lealt&#224; dell'unit&#224; %s1_UnitName!</Italian>
+  <Spanish>&#161;Los enemigos infiltrados han comprado la lealtad [NUM1:de un:de una:de unos:de unas] %s1_UnitName!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TOO_EXPENSIVE</Tag>
+  <English>That action costs %d1_CostNum Espionage Points. You have %d2_HaveNum.</English>
+  <French>Cette action co&#251;te %d1_CostNum points d'espionnage. Vous avez %d2_HaveNum points.</French>
+  <German>Diese Aktion kostet %d1_CostNum Spionagepunkte. Ihr habt %d2_HaveNum.</German>
+  <Italian>Quell'azione costa %d1_CostNum punti spionaggio. Ne hai %d2_HaveNum.</Italian>
+  <Spanish>Esta acci&#243;n cuesta %d1_CostNum [NUM1:punto de espionaje:puntos de espionaje]. Ten&#233;is %d2_HaveNum.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_TRADE_ROUTE_MOD</Tag>
+  <English>%D1%%: for Trade Routes</English>
+  <French>%D1%% : pour les routes commerciales</French>
+  <German>%D1%%: f&#252;r Handelswege</German>
+  <Italian>%D1%%: per le rotte commerciali</Italian>
+  <Spanish>%D1%%: Por rutas comerciales</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_ESPIONAGE_USED_RADIATION</Tag>
+  <English>A dirty bomb was used! Radioactive fallout has covered the area!</English>
+  <French>Une bombe sale a &#233;t&#233; employ&#233;e! Les retomb&#233;es radioactives radioactives ont couvert le domaine!</French>
+  <German>Eine schmutzige Bombe wurde benutzt! Die betroffenen Gebiete wurden radioaktiv kontaminiert</German>
+  <Italian>Una bomba sporca &#232; stata usata! La precipitazione radioattiva radioattiva ha riguardato la zona!</Italian>
+  <Spanish>Una bomba sucia fue utilizada! El polvillo radiactivo radiactivo ha cubierto el &#225;rea!</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_AIRBOMB</Tag>
+  <English>Air Bomb</English>
+  <French>Bombardement a&#233;rien</French>
+  <German>Luftbombardierung</German>
+  <Italian>Bombardamento aereo</Italian>
+  <Spanish>Bombardeo a&#233;reo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_AIRBOMB_HELP</Tag>
+  <English>Destroys city fortifications and tile improvements.</English>
+  <French>D&#233;truire les fortifications de la ville et les am&#233;nagements des cases.</French>
+  <German>Zerst&#246;ren Sie Befestigungen und Modernisierungen.</German>
+  <Italian>Distrugge le fortificazioni delle citt&#224; e i miglioramenti delle caselle.</Italian>
+  <Spanish>Destruye fortificaciones de ciudades y mejoras de casillas.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_AIRLIFT</Tag>
+  <English>Airlift</English>
+  <French>Transport a&#233;rien</French>
+  <German>Lufttransport</German>
+  <Italian>Trasporto aereo</Italian>
+  <Spanish>Aerotransportar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_AIRLIFT_HELP</Tag>
+  <English>Airlifts the unit to another city.</English>
+  <French>Transport a&#233;rien de l'unit&#233; vers une autre ville.</French>
+  <German>Fliegen Sie die Einheit in eine andere Stadt.</German>
+  <Italian>L'unit&#224; viene trasportata in aereo verso un'altra citt&#224;.</Italian>
+  <Spanish>Para aerotransportar a la unidad a otra ciudad.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_ASSASSIN</Tag>
+  <English>Assassinate</English>
+  <French>Assassinez</French>
+  <German>Attentat ver&#252;ben</German>
+  <Italian>Assassini</Italian>
+  <Spanish>Asesine</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_ASSASSIN_HELP</Tag>
+  <English>The spy attempts to kill a great specialist inside a rival city.</English>
+  <French>L'espion essaye de tuer un grand sp&#233;cialiste &#224; l'int&#233;rieur d'une ville rivale.</French>
+  <German>Versucht eine gro&#223;en Spezialisten in einer feindlichen Stadt zu ermorden.</German>
+  <Italian>La spia tenta di uccidere un grande specialista all'interno di una citt&#224; rivale.</Italian>
+  <Spanish>El esp&#237;a intenta matar a un gran especialista dentro de una ciudad rival.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_BOMBARD</Tag>
+  <English>Bombard</English>
+  <French>Bombardement</French>
+  <German>Bombardierung</German>
+  <Italian>Bombarda</Italian>
+  <Spanish>Ca&#241;onear</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_BOMBARD_HELP</Tag>
+  <English>Destroys fortifications and reduces the city's defensive bonus.</English>
+  <French>D&#233;truire les fortifications de la ville et r&#233;duire ses bonus de d&#233;fense.</French>
+  <German>Zerst&#246;ren Sie die Befestigungen einer Stadt und senken Sie deren Defensivbonus.</German>
+  <Italian>Distrugge le fortificazioni e riduce i bonus difensivi delle citt&#224;.</Italian>
+  <Spanish>Destruye las fortificaciones y reduce la bonificaci&#243;n defensiva de las ciudades.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_BRIBE</Tag>
+  <English>Bribe Worker</English>
+  <French>Subornez ouvrier</French>
+  <German>Arbeiter bestechen</German>
+  <Italian>Corrompa operaio</Italian>
+  <Spanish>Trabajador del soborno</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_BRIBE_HELP</Tag>
+  <English>The spy attempts to win the allegiance of a foreign worker.</English>
+  <French>L'espion essaye de gagner l'all&#233;geance d'un travailleur &#233;tranger.</French>
+  <German>Versucht einen fremden Arbeitstrupp abzuwerben.</German>
+  <Italian>La spia tenta di vincere la fedelt&#224; dei lavoratori stranieri.</Italian>
+  <Spanish>El esp&#237;a intenta ganar la lealtad de un trabajador extranjero.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_BUILD_CITY</Tag>
+  <English>Build City</English>
+  <French>Fonder une ville</French>
+  <German>Stadt gr&#252;nden</German>
+  <Italian>Costruisci citt&#224;</Italian>
+  <Spanish>Construir ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_BUILD_CITY_HELP</Tag>
+  <English>This order causes the [COLOR_UNIT_TEXT]Settler[COLOR_REVERT] to build a city in its current location. The [COLOR_UNIT_TEXT]Settler[COLOR_REVERT] is consumed in the process.</English>
+  <French>Ordonne au [COLOR_UNIT_TEXT]colon[COLOR_REVERT] de s'installer et de fonder une ville. Le [COLOR_UNIT_TEXT]colon[COLOR_REVERT] s'autod&#233;truit dans l'op&#233;ration.</French>
+  <German>Opfern Sie einen [COLOR_UNIT_TEXT]Siedler[COLOR_REVERT], damit dieser an seinem aktuellen Standort eine Stadt gr&#252;ndet.</German>
+  <Italian>Con questo comando, si ordina al [COLOR_UNIT_TEXT]colono[COLOR_REVERT] di costruire una citt&#224; nel punto in cui si trova. Il [COLOR_UNIT_TEXT]colono[COLOR_REVERT] viene sacrificato durante il procedimento.</Italian>
+  <Spanish>Esta orden hace que el [COLOR_UNIT_TEXT]Colono[COLOR_REVERT] construya una ciudad en el lugar en que se encuentre. El [COLOR_UNIT_TEXT]Colono[COLOR_REVERT] se consumir&#225; en el proceso.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_BUILD_IMPROVEMENT</Tag>
+  <English>Build Improvement</English>
+  <French>Construire am&#233;nagement</French>
+  <German>Modernisierung errichten</German>
+  <Italian>Costruire miglioramento</Italian>
+  <Spanish>Construir mejora</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_CONDUCT_TRADE_MISSION</Tag>
+  <English>Conduct Trade Mission</English>
+  <French>Mission commerciale</French>
+  <German>Handelsmission ausf&#252;hren</German>
+  <Italian>Esegui una missione commerciale</Italian>
+  <Spanish>Realizar misi&#243;n comercial</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_CONDUCT_TRADE_MISSION_HELP</Tag>
+  <English>This order will have the Great Merchant conduct a trade mission with a foreign city. The amount of gold created is relative to the size of the city and its distance from your capital. It consumes the Great Person.</English>
+  <French>Ordonner au marchand illustre d'&#233;tablir une liaison commerciale avec une autre ville. La quantit&#233; d'or g&#233;n&#233;r&#233;e d&#233;pend de la taille de la ville et de son &#233;loignement de votre capitale. Ceci d&#233;truit le personnage illustre.</French>
+  <German>Opfern Sie die Gro&#223;e Pers&#246;nlichkeit, damit ein Gro&#223;er H&#228;ndler in einer anderen Stadt eine Handelsmission gr&#252;ndet. Die auf diese Weise erzeugte Goldmenge ist von der Gr&#246;&#223;e der Stadt und der Entfernung von Ihrer Hauptstadt abh&#228;ngig.</German>
+  <Italian>Ordina a un Grande Mercante di eseguire una missione commerciale in una citt&#224; straniera. Il quantitativo d'oro generato &#232; relativo alla dimensione della citt&#224; e alla distanza dalla tua capitale. L'unit&#224; viene sacrificata nel procedimento.</Italian>
+  <Spanish>Esta orden hace que el gran mercader lleve a cabo una misi&#243;n comercial en una ciudad extranjera. La cantidad de oro que se genera va en relaci&#243;n al tama&#241;o de la ciudad y la distancia que la separe de la capital. El gran mercader se sacrifica, consumi&#233;ndose en el proceso.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_CONSTRUCT</Tag>
+  <English>Construct</English>
+  <French>Construire</French>
+  <German>Bauen</German>
+  <Italian>Costruire</Italian>
+  <Spanish>Erigir</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_CONSTRUCT_HELP</Tag>
+  <English>This will have the Great Person create their special building. It consumes the Great Person.</English>
+  <French>Ordonner au personnage illustre de construire son &#233;difice sp&#233;cial. Le personnage illustre est alors d&#233;truit.</French>
+  <German>Opfern Sie die Gro&#223;e Pers&#246;nlichkeit, damit diese ihr Spezialgeb&#228;ude errichtet.</German>
+  <Italian>Con questo comando, ordini a un Grande Personaggio di creare un edificio speciale. L'unit&#224; viene sacrificata nel procedimento.</Italian>
+  <Spanish>Hace que el gran personaje cree su edificio especial, consumi&#233;ndose en el proceso.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_CREATE_GREAT_WORK</Tag>
+  <English>Create Great Work</English>
+  <French>Cr&#233;er un chef d'oeuvre</French>
+  <German>Gro&#223;es Bauwerk errichten</German>
+  <Italian>Crea una Grande Opera</Italian>
+  <Spanish>Crear gran obra</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_CREATE_GREAT_WORK_HELP</Tag>
+  <English>This order will have the Great Artist create a Great Work in the city they are currently in. It consumes the Great Person.</English>
+  <French>Ordonner &#224; l'artiste illustre de cr&#233;er un chef d'oeuvre dans la ville o&#249; il se trouve. Ceci d&#233;truit le personnage illustre.</French>
+  <German>Opfern Sie die Gro&#223;e Pers&#246;nlichkeit, damit ein Gro&#223;er K&#252;nstler in der aktuellen Stadt ein gro&#223;es Kunstwerk erschafft.</German>
+  <Italian>Ordina a un Grande Artista di creare una Grande Opera nella citt&#224; in cui si trova. L'unit&#224; viene sacrificata nel procedimento.</Italian>
+  <Spanish>Esta orden hace que el gran artista cree una gran obra en la ciudad en la que se encuentre, consumi&#233;ndose en el proceso.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_DESTROY</Tag>
+  <English>Destroy Production</English>
+  <French>Saboter la production</French>
+  <German>Produktion zerst&#246;ren</German>
+  <Italian>Distruggi produzione</Italian>
+  <Spanish>Destruir producci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_DESTROY_HELP</Tag>
+  <English>The [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] will attempt to destroy the city's current production.</English>
+  <French>L'[COLOR_UNIT_TEXT]espion[COLOR_REVERT] tentera de saboter la production en cours de la ville.</French>
+  <German>Der [COLOR_UNIT_TEXT]Spion[COLOR_REVERT] versucht, die aktuelle Produktion der Stadt zu zerst&#246;ren.</German>
+  <Italian>La [COLOR_UNIT_TEXT]spia[COLOR_REVERT] tenter&#224; di distruggere la produzione attuale della citt&#224;.</Italian>
+  <Spanish>El [COLOR_UNIT_TEXT]Esp&#237;a[COLOR_REVERT] intentar&#225; destruir la producci&#243;n que haya en ese momento en la ciudad.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_DIPLOMATIC_MISSION</Tag>
+  <English>Diplomatic Mission</English>
+  <German>Diplomatische Mission</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_DISCOVER_TECH</Tag>
+  <English>Discover Technology</English>
+  <French>D&#233;couvrir une technologie</French>
+  <German>Technologie entdecken</German>
+  <Italian>Scopri tecnologia</Italian>
+  <Spanish>Descubrir tecnolog&#237;a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_DISCOVER_TECH_HELP</Tag>
+  <English>This will have the Great Person help research a technology. It consumes the Great Person.</English>
+  <French>Ordonner au personnage illustre de d&#233;couvrir automatiquement une nouvelle technologie. Le personnage illustre est alors d&#233;truit.</French>
+  <German>Opfern Sie die Gro&#223;e Pers&#246;nlichkeit, damit diese automatisch eine Technologie entdeckt.</German>
+  <Italian>Con questo comando, un Grande Personaggio scopre automaticamente una tecnologia. L'unit&#224; viene sacrificata nel procedimento.</Italian>
+  <Spanish>Hace que el gran personaje descubra autom&#225;ticamente una tecnolog&#237;a, consumi&#233;ndose en el proceso.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_FORTIFY</Tag>
+  <English>Fortify</English>
+  <French>Se retrancher</French>
+  <German>Verschanzen</German>
+  <Italian>Fortifica</Italian>
+  <Spanish>Fortificar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_FORTIFY_HELP</Tag>
+  <English>The unit "digs in" to better withstand enemy attack. A unit gets a 5%% defensive bonus for each turn it is fortified, to a maximum bonus of 25%%.</English>
+  <French>L'unit&#233; se retranche pour mieux r&#233;sister aux attaques ennemies. Une unit&#233; retranch&#233;e b&#233;n&#233;ficie d'un bonus de d&#233;fense de 5%% pour chaque tour pass&#233; &#224; se r&#233;g&#233;n&#233;rer, avec un maximum de 25%%.</French>
+  <German>Die Einheit "gr&#228;bt sich ein", um dem Feind besser standhalten zu k&#246;nnen. Befestigte Einheiten erhalten pro Runde 5%% Defensivbonus (maximal 25%%).</German>
+  <Italian>L'unit&#224; si "trincera" per poter fronteggiare meglio l'attacco nemico. Un'unit&#224; guadagna il 5%% di bonus difensivo per ogni turno che rimane fortificata, fino a un massimo del 25%%.</Italian>
+  <Spanish>La unidad se "atrinchera" para aguantar mejor los ataques del enemigo. Obtiene una bonificaci&#243;n defensiva del 5%% por cada turno que se fortifique hasta un m&#225;ximo de un 25%%.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_HEAL</Tag>
+  <English>Fortify Until Healed</English>
+  <French>Se retrancher jusqu'&#224; gu&#233;rison</French>
+  <German>Bis zur vollst&#228;ndigen Heilung verschanzen</German>
+  <Italian>Fortifica finch&#233; non raggiunge il massimo della salute</Italian>
+  <Spanish>Fortificar hasta curarse</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_HEAL_HELP</Tag>
+  <English>The unit remains inactive until it reaches full strength.</English>
+  <French>L'unit&#233; reste inactive tant que son niveau de sant&#233; n'est pas au maximum.</French>
+  <German>Die Einheit bleibt inaktiv, bis sie wieder ihre volle St&#228;rke erreicht hat.</German>
+  <Italian>L'unit&#224; rimane inattiva finch&#233; non ritorna al massimo delle forze.</Italian>
+  <Spanish>La unidad permanecer&#225; inactiva hasta que recobre el total de su fuerza.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_HURRY_PRODUCTION</Tag>
+  <English>Hurry Production</English>
+  <French>Acc&#233;l&#233;rer la production</French>
+  <German>Produktion beschleunigen</German>
+  <Italian>Produzione accelerata</Italian>
+  <Spanish>Acelerar la producci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_HURRY_PRODUCTION_HELP</Tag>
+  <English>This order will hurry production on the city's current effort. It consumes the Great Person.</English>
+  <French>Acc&#233;l&#233;rer la production en cours de la ville, ce qui d&#233;truit le personnage illustre.</French>
+  <German>Opfern Sie die Gro&#223;e Pers&#246;nlichkeit, um die aktuelle Produktion der Stadt zu beschleunigen.</German>
+  <Italian>Con questo ordine, la produzione attuale di una citt&#224; viene accelerata. L'unit&#224; viene sacrificata nel procedimento.</Italian>
+  <Spanish>El gran personaje acelera la producci&#243;n que la ciudad est&#233; llevando a cabo, consumi&#233;ndose en el proceso.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_INFILTRATE</Tag>
+  <English>Infiltrate Player's City</English>
+  <French>Infiltrer la ville d'un joueur</French>
+  <German>Spielerstadt infiltrieren</German>
+  <Italian>Infiltrati nella citt&#224;</Italian>
+  <Spanish>Infiltrar en ciudad de jugador</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_INFILTRATE_HELP</Tag>
+  <English>This order will have the Spy infiltrate a foreign city, providing you Espionage Points against the target player. It consumes the Spy.</English>
+  <French>Ordonner &#224; votre espion d'infiltrer une ville &#233;trang&#232;re, vous faisant ainsi b&#233;n&#233;ficier de points d'espionnage contre le joueur vis&#233;. L'espion est d&#233;truit apr&#232;s la mission.</French>
+  <German>Dem Spion befehlen, eine feindliche Stadt zu infiltrieren. Daf&#252;r erhaltet Ihr Spionagepunkte gegen den Spieler des Ziels. Der Spion wird geopfert.</German>
+  <Italian>Questo ordine far&#224; in modo che la Spia si infiltri in una citt&#224; straniera, ammesso che tu abbia punti spionaggio contro il giocatore bersaglio. L'unit&#224; viene sacrificata nel procedimento.</Italian>
+  <Spanish>Esta orden har&#225; que el esp&#237;a se infiltre en una ciudad extranjera y proporcione puntos de espionaje contra el jugador objetivo. Ello consumir&#225; al esp&#237;a.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_INTERCEPT</Tag>
+  <English>Intercept</English>
+  <French>Intercepter</French>
+  <German>Abfangen</German>
+  <Italian>Intercetta</Italian>
+  <Spanish>Interceptar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_INTERCEPT_HELP</Tag>
+  <English>This air unit order will tell the craft to attempt interception with any incoming air attacks.</English>
+  <French>Ordonner &#224; l'unit&#233; de tenter d'intercepter toutes les raids a&#233;riens ennemis.</French>
+  <German>Befehlen Sie einer Lufteinheit, alle Luftangriffe abzufangen.</German>
+  <Italian>Questo ordine serve per dire al velivolo di intercettare qualsiasi tentativo di attacco aereo.</Italian>
+  <Spanish>Esta orden es para unidades a&#233;reas y les dice que intenten interceptar todos los ataques a&#233;reos que lleguen.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_JOIN_CITY</Tag>
+  <English>Join City</English>
+  <French>Rejoindre la ville</French>
+  <German>Sich einer Stadt anschlie&#223;en</German>
+  <Italian>Unisci alla citt&#224;</Italian>
+  <Spanish>Unirse a ciudad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_JOIN_CITY_HELP</Tag>
+  <English>This order will make the Great Person join the city as a super specialist. It will consume the Great Person.</English>
+  <French>Ordonner &#224; ce personnage illustre de rejoindre la ville en tant que super-sp&#233;cialiste. Il est alors d&#233;truit.</French>
+  <German>Opfern Sie eine Gro&#223;e Pers&#246;nlichkeit und befehlen Sie ihr, sich als Super-Spezialist in der Stadt anzusiedeln.</German>
+  <Italian>Con questo ordine, i Grandi Personaggi possono unirsi alla citt&#224; in veste di super specialisti, venendo sacrificati nel procedimento.</Italian>
+  <Spanish>Esta orden hace que el gran personaje se quede en la ciudad como un superespecialista, consumi&#233;ndose en el proceso.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_KILL_SPY</Tag>
+  <English>Kill Nearby Spy</English>
+  <French>Tuer espion proche</French>
+  <German>Spion in der N&#228;he t&#246;ten</German>
+  <Italian>Uccidi la spia vicina</Italian>
+  <Spanish>Matar al esp&#237;a cercano</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_KILL_SPY_HELP</Tag>
+  <English>Kill adjacent Spy</English>
+  <French>Tuer espion adjacent</French>
+  <German>Spion in der N&#228;he eliminieren</German>
+  <Italian>Uccidi la spia adiacente</Italian>
+  <Spanish>Matar al esp&#237;a adyacente.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_LEAD_TROOPS</Tag>
+  <English>Lead Troops as a Warlord</English>
+  <French>Diriger les troupes en tant que Seigneur de guerre</French>
+  <German>Truppen als Kriegsherr anf&#252;hren</German>
+  <Italian>Guida le truppe come Guerriero</Italian>
+  <Spanish>Liderar tropas como un Caudillo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_MOVE_TO</Tag>
+  <English>Move To</English>
+  <French>Aller vers</French>
+  <German>Fortbewegen nach</German>
+  <Italian>Vai</Italian>
+  <Spanish>Mover a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_MOVE_TO_HELP</Tag>
+  <English>Set your unit to move to a specific plot</English>
+  <French>Ordonner &#224; l'unit&#233; de rejoindre une position sur la carte.</French>
+  <German>Schicken Sie Ihre Einheit auf ein bestimmtes Gel&#228;ndefeld.</German>
+  <Italian>Ordina alla tua unit&#224; di muoversi in una casella specifica.</Italian>
+  <Spanish>Para decirle a la unidad que vaya a una casilla concreta.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_MOVE_TO_UNIT</Tag>
+  <English>Move To Unit</English>
+  <French>Aller vers l'unit&#233;</French>
+  <German>Einheit fortbewegen nach</German>
+  <Italian>Vai all'unit&#224;</Italian>
+  <Spanish>Llevar hasta la unidad</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_MOVE_TO_UNIT_HELP</Tag>
+  <English>Set your unit to move to a unit</English>
+  <French>Ordonner &#224; l'unit&#233; de rejoindre une autre unit&#233;.</French>
+  <German>Schicken Sie Ihre Einheit zu einer anderen Einheit.</German>
+  <Italian>Ordina alla tua unit&#224; di muoversi verso un'altra unit&#224;.</Italian>
+  <Spanish>Para decirle a la unidad que vaya hasta otra unidad.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_NUKE</Tag>
+  <English>Nuke</English>
+  <French>Attaque nucl&#233;aire</French>
+  <German>Atomrakete</German>
+  <Italian>Bomba nucleare</Italian>
+  <Spanish>Lanzar arma nuclear</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_NUKE_HELP</Tag>
+  <English>Drops a nuclear device onto the selected space.</English>
+  <French>Larguer une arme nucl&#233;aire sur la case s&#233;lectionn&#233;e.</French>
+  <German>Werfen Sie im Zielgebiet eine Atombombe ab.</German>
+  <Italian>Lancia una bomba nucleare nella casella selezionata.</Italian>
+  <Spanish>Deja caer una bomba nuclear en la casilla seleccionada.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PARADROP</Tag>
+  <English>Paradrop</English>
+  <French>Parachuter</French>
+  <German>Fallschirmsprung</German>
+  <Italian>Lancio col paracadute</Italian>
+  <Spanish>Desembarco a&#233;reo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PARADROP_HELP</Tag>
+  <English>Paradrops to a specified location. The mission is subject to interception.</English>
+  <French>Parachuter des troupes &#224; un endroit pr&#233;cis. La mission peut &#234;tre intercept&#233;e.</French>
+  <German>Fallschirmsprung an eine ausgew&#228;hlte Stelle. Die Mission kann abgefangen werden.</German>
+  <Italian>Si lancia col paracadute nella posizione specificata. La missione pu&#242; essere intercettata.</Italian>
+  <Spanish>Se lanza en paraca&#237;das en el lugar especificado. La misi&#243;n es susceptible de ser interceptada.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PATROL_TO_HELP</Tag>
+  <English>Set your unit to patrol (repeats a goto path indefinitely)</English>
+  <French>Ordonner &#224; l'unit&#233; de patrouiller entre sa position et le point indiqu&#233; (l'unit&#233; ob&#233;it &#224; deux ordres Aller &#224; ind&#233;finiment).</French>
+  <German>Versetzen Sie die Einheit in den Patrouillenmodus.</German>
+  <Italian>Ordina all'unit&#224; di pattugliare la zona (ripetendo lo stesso percorso a tempo indeterminato).</Italian>
+  <Spanish>Para poner la unidad a patrullar (recorrer indefinidamente un camino)</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PERFORM_ESPIONAGE</Tag>
+  <English>Perform Espionage Mission</English>
+  <French>Ex&#233;cuter mission d'espionnage</French>
+  <German>Spionagemission ausf&#252;hren</German>
+  <Italian>Effettua missione di spionaggio</Italian>
+  <Spanish>Realizar misi&#243;n de espionaje</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PERSECUTE</Tag>
+  <English>[COLOR_HIGHLIGHT_TEXT]Persecution[COLOR_REVERT]</English>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PILLAGE</Tag>
+  <English>Pillage</English>
+  <German>Pl&#252;nderung</German>
+  <Italian>Saccheggia</Italian>
+  <Spanish>Saquear</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PILLAGE_HELP</Tag>
+  <English>The unit destroys an improvement or route in the tile it occupies.</English>
+  <French>L'unit&#233; d&#233;truit un am&#233;nagement ou une route/voie ferr&#233;e dans la case qu'elle occupe.</French>
+  <German>Die Einheit zerst&#246;rt eine Modernisierung oder Stra&#223;e auf ihrem Gel&#228;ndefeld.</German>
+  <Italian>L'unit&#224; distrugge un miglioramento o un collegamento sulla casella che occupa.</Italian>
+  <Spanish>La unidad destruye una mejora o ruta en la casilla en que se encuentre.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PLUNDER</Tag>
+  <English>Blockade</English>
+  <French>Blocus</French>
+  <Italian>Embargo</Italian>
+  <Spanish>Bloqueo</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_PLUNDER_HELP</Tag>
+  <English>The unit disrupts the trade route so that no intercontinental trade can pass through the blockaded tile</English>
+  <French>L'unit&#233; effectue le blocus de la case pour emp&#234;cher tout commerce intercontinental par cette route commerciale.</French>
+  <German>Die Einheit unterbricht den Handelsweg, daher kann kein interkontinentaler Handel auf dem blockierten Gel&#228;ndefeld stattfinden</German>
+  <Italian>L'unit&#224; interrompe la rotta commerciale in modo che nessuna rotta commerciale intercontinentale possa passare dalla casella bloccata.</Italian>
+  <Spanish>La unidad corta la ruta comercial para que ninguna operaci&#243;n de comercio intercontinental pueda atravesar la casilla bloqueada.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_RECON</Tag>
+  <English>Recon</English>
+  <French>Reconnaissance</French>
+  <German>Aufkl&#228;rung</German>
+  <Italian>Ricognizione</Italian>
+  <Spanish>Reconocer</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_RECON_HELP</Tag>
+  <English>Clears the fog of war from around the selected space for one turn.</English>
+  <French>Lever le brouillard de guerre autour de la case s&#233;lectionn&#233;e pendant un tour.</French>
+  <German>Der Nebel des Krieges lichtet sich im Zielgebiet eine Runde lang.</German>
+  <Italian>Elimina la nebbia di guerra dallo spazio selezionato per un turno.</Italian>
+  <Spanish>Despeja durante un turno la niebla de la guerra que haya alrededor de la casilla seleccionada.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_REFORM_GOVERNMENT</Tag>
+  <English>Reform Government</English>
+  <German>Regierung Reformieren</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_RESOLVE_CRISIS</Tag>
+  <English>Resolve Crisis</English>
+  <German>Krise &#220;berwinden</German>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_ROUTE_TO</Tag>
+  <English>Route To</English>
+  <French>Route vers</French>
+  <German>Stra&#223;e nach</German>
+  <Italian>Intinerario</Italian>
+  <Spanish>Ir en ruta a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_ROUTE_TO_HELP</Tag>
+  <English>This order causes the worker to build a road (or railroad) to the location selected. The worker will follow the shortest path to the location. The worker wakes when it has completed the assignment.</English>
+  <French>Ordonner &#224; l'ouvrier de construire une route (ou une voie ferr&#233;e) vers l'endroit indiqu&#233;. Il suivra le chemin le plus court et sera &#224; nouveau disponible lorsqu'il aura termin&#233; sa mission.</French>
+  <German>Befehlen Sie einem Bautrupp, eine Stra&#223;e (oder Eisenbahnstrecke) zur gew&#228;hlten Position zu bauen. Ihr Bautrupp w&#228;hlt nun den k&#252;rzesten Weg und wartet nach dem Bau der Stra&#223;e/Eisenbahnstrecke auf weitere Befehle.</German>
+  <Italian>Con questo ordine, si obbliga un lavoratore a costruire una strada (o una ferrovia) nel luogo prescelto. Il lavoratore far&#224; il percorso pi&#249; breve per raggiungere il punto e si sveglier&#224; quando avr&#224; completato il proprio incarico.</Italian>
+  <Spanish>Con esta orden hac&#233;is que un trabajador construya una carretera (o ferrocarril) al lugar seleccionado. El trabajador seguir&#225; el camino m&#225;s corto hasta dicho lugar. Se despertar&#225; cuando haya cumplido su cometido.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SABOTAGE</Tag>
+  <English>Sabotage</English>
+  <Italian>Sabota</Italian>
+  <Spanish>Sabotear</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SABOTAGE_HELP</Tag>
+  <English>The [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] will attempt to sabotage the tile's improvement.</English>
+  <French>L'[COLOR_UNIT_TEXT]espion[COLOR_REVERT] tente de saboter un am&#233;nagement sur cette case.</French>
+  <German>Der [COLOR_UNIT_TEXT]Spion[COLOR_REVERT] versucht, alle Modernisierungen eines Gel&#228;ndefelds zu sabotieren.</German>
+  <Italian>La [COLOR_UNIT_TEXT]spia[COLOR_REVERT] tenter&#224; di sabotare il miglioramento della casella.</Italian>
+  <Spanish>El [COLOR_UNIT_TEXT]Esp&#237;a[COLOR_REVERT] intentar&#225; sabotear la mejora que haya en la casilla.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SEAPATROL</Tag>
+  <English>Sea Patrol</English>
+  <French>Patrouille des mers</French>
+  <German>Seepatrouille</German>
+  <Italian>Pattuglia marina</Italian>
+  <Spanish>Patrulla mar&#237;tima</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SEAPATROL_HELP</Tag>
+  <English>This order will tell the unit to attack enemy ships attempting to pillage adjacent tiles</English>
+  <French>Ordonner &#224; l'unit&#233; d'attaquer les navires ennemis se livrant au pillage de cases adjacentes</French>
+  <German>Die Einheit wird feindliche Schiffe angreifen, um angrenzende Gel&#228;ndefelder zu pl&#252;ndern</German>
+  <Italian>Questo ordine far&#224; in modo che l'unit&#224; attacchi le navi nemiche che cercano di saccheggiare le caselle circostanti</Italian>
+  <Spanish>Esta orden le dir&#225; a la unidad que ataque a los barcos enemigos que intenten saquear las casillas adyacentes.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SENTRY</Tag>
+  <English>Sentry</English>
+  <French>Sentinelle</French>
+  <German>Wache</German>
+  <Italian>Sentinella</Italian>
+  <Spanish>Vigilar</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SENTRY_HELP</Tag>
+  <English>The unit remains inactive until an enemy unit enters its visibility range.</English>
+  <French>L'unit&#233; reste inactive tant qu'une unit&#233; ennemie ne p&#233;n&#232;tre pas dans son champ de vision.</French>
+  <German>Die Einheit bleibt inaktiv, bis eine feindliche Einheit in Sichtweite ist.</German>
+  <Italian>L'unit&#224; rimane inattiva finch&#233; un'unit&#224; nemica non diventa visibile.</Italian>
+  <Spanish>La unidad permanecer&#225; inactiva hasta que una unidad enemiga se sit&#250;e al alcance de la visibilidad.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SKIP</Tag>
+  <English>Skip Turn</English>
+  <French>Passer le tour</French>
+  <German>Runde &#252;berspringen</German>
+  <Italian>Salta turno</Italian>
+  <Spanish>Saltar turno</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SKIP_HELP</Tag>
+  <English>Do nothing. The unit will awake and ask again for orders the next turn.</English>
+  <French>Ne rien faire. L'unit&#233; attend le tour suivant pour demander de nouveaux ordres.</French>
+  <German>Tun Sie gar nichts, wartet die Einheit in der n&#228;chsten Runde auf weitere Befehle.</German>
+  <Italian>Nessun ordine. L'unit&#224; si sveglier&#224; e attender&#224; altri ordini al turno successivo.</Italian>
+  <Spanish>La unidad no har&#225; nada, despertar&#225; y volver&#225; a solicitar &#243;rdenes al turno siguiente.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SLEEP</Tag>
+  <English>Sleep</English>
+  <French>Dormir</French>
+  <German>Ausruhen</German>
+  <Italian>Dormi</Italian>
+  <Spanish>Dormir</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SLEEP_HELP</Tag>
+  <English>Order the unit to sleep until activated by the player</English>
+  <French>Ordonner &#224; l'unit&#233; de se mettre en sommeil tant qu'elle n'est pas r&#233;activ&#233;e par le joueur.</French>
+  <German>Versetzen Sie die Einheit in den Ausruhmodus, bis Sie sie wieder aktivieren.</German>
+  <Italian>Ordina all'unit&#224; di riposare finch&#233; non viene attivata dal giocatore</Italian>
+  <Spanish>Para ordenarle a la unidad que duerma hasta que la activ&#233;is.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SPREAD</Tag>
+  <English>Spread Religion</English>
+  <French>Propager la religion</French>
+  <German>Religion verbreiten</German>
+  <Italian>Diffondi religione</Italian>
+  <Spanish>Propagar religi&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SPREAD_CORPORATION</Tag>
+  <English>Expand Corporation</English>
+  <French>D&#233;velopper une soci&#233;t&#233; commerciale</French>
+  <German>Kapitalgesellschaft expandieren</German>
+  <Italian>Espandi corporazione</Italian>
+  <Spanish>Expandir corporaci&#243;n</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SPREAD_CORPORATION_HELP</Tag>
+  <English>This order will consume the [COLOR_UNIT_TEXT]Executive[COLOR_REVERT] unit but expand their corporation into the city.</English>
+  <French>Cet ordre d&#233;truira le [COLOR_UNIT_TEXT]Directeur[COLOR_REVERT] mais d&#233;veloppera sa soci&#233;t&#233; commerciale dans la ville.</French>
+  <German>Der [COLOR_UNIT_TEXT]Vorstand[COLOR_REVERT] wird geopfert, damit die Kapitalgesellschaft in die Stadt expandieren kann.</German>
+  <Italian>Con questo ordine, si sacrifica un [COLOR_UNIT_TEXT]Funzionario[COLOR_REVERT], ma la corporazione si espande nella citt&#224;.</Italian>
+  <Spanish>Esta orden consumir&#225; a la unidad de [COLOR_UNIT_TEXT]Ejecutivo[COLOR_REVERT] pero expandir&#225; su corporaci&#243;n en la ciudad.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_SPREAD_HELP</Tag>
+  <English>This order will consume the [COLOR_UNIT_TEXT]Missionary[COLOR_REVERT] unit but spread their religion to the city.</English>
+  <French>Cet ordre d&#233;truit le [COLOR_UNIT_TEXT]missionnaire[COLOR_REVERT], mais sa religion sera propag&#233;e &#224; la ville.</French>
+  <German>Opfern Sie einen [COLOR_UNIT_TEXT]Missionar[COLOR_REVERT], damit dieser seine Religion in der Welt verbreitet.</German>
+  <Italian>Con questo ordine, si sacrifica un [COLOR_UNIT_TEXT]missionario[COLOR_REVERT], ma viene diffusa la religione nella citt&#224;.</Italian>
+  <Spanish>Esta orden har&#225; que se consuma la unidad de [COLOR_UNIT_TEXT]Misionero[COLOR_REVERT], pero propagar&#225; la religi&#243;n por la ciudad.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_START_GOLDENAGE</Tag>
+  <English>Start a Golden Age</English>
+  <French>D&#233;clencher un &#226;ge d'or</French>
+  <German>Goldenes Zeitalter beginnen</German>
+  <Italian>Avvia un'Et&#224; dell'Oro</Italian>
+  <Spanish>Iniciar una edad de oro</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_START_GOLDENAGE_HELP</Tag>
+  <English>This order will consume one or more Great People (of different types) and initiate a Golden Age (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</English>
+  <French>Cette ordre consommera plusieurs personnages illustres (de types diff&#233;rents) et d&#233;clenchera un &#226;ge d'or ([ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE] suppl&#233;mentaires).</French>
+  <German>Opfern Sie eine oder mehrere Gro&#223;e Pers&#246;nlichkeiten (unterschiedlicher Klassen), um ein Goldenes Zeitalter (zus&#228;tzliche [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE], keine Anarchie) zu begr&#252;nden.</German>
+  <Italian>Con questo ordine si consumano uno o pi&#249; Grandi Personaggi (di tipi differenti) e si avvia un'Et&#224; dell'Oro (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</Italian>
+  <Spanish>Esta orden consume uno o m&#225;s grandes personajes (de diferentes tipos) e inicia una edad de oro (extra [ICON_PRODUCTION], [ICON_COMMERCE], [ICON_GREATPEOPLE]).</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_STEAL_PLANS</Tag>
+  <English>Steal Plans</English>
+  <French>Voler des plans</French>
+  <German>Pl&#228;ne stehlen</German>
+  <Italian>Ruba i piani</Italian>
+  <Spanish>Robar planos</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_STEAL_PLANS_HELP</Tag>
+  <English>The [COLOR_UNIT_TEXT]Spy[COLOR_REVERT] will attempt to steal plans, which will reveal all of the target civilization's units.</English>
+  <French>L'[COLOR_UNIT_TEXT]espion[COLOR_REVERT] tentera de voler des plans, qui r&#233;v&#232;lent toutes les unit&#233;s de la civilisation vis&#233;e.</French>
+  <German>Der [COLOR_UNIT_TEXT]Spion[COLOR_REVERT] versucht, Pl&#228;ne zu stehlen, die alle Einheiten der gew&#252;nschten Zivilisation enth&#252;llen.</German>
+  <Italian>La [COLOR_UNIT_TEXT]spia[COLOR_REVERT] tenter&#224; di rubare dei documenti per rivelare tutte le unit&#224; della civilt&#224; bersaglio.</Italian>
+  <Spanish>El [COLOR_UNIT_TEXT]Esp&#237;a[COLOR_REVERT] intentar&#225; robar los planos, que revelar&#225;n todas las unidades de la civilizaci&#243;n objetivo.</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_TRADE_NET_TO</Tag>
+  <English>Trade Route To</English>
+  <French>>Route commerciale vers</French>
+  <German>Handelsweg nach</German>
+  <Italian>Itinerario commerciale</Italian>
+  <Spanish>Ruta comercial a</Spanish>
+ </TEXT>
+ <TEXT>
+  <Tag>TXT_KEY_MISSION_TRADE_NET_TO_HELP</Tag>
+  <English>This order causes the workboat to build a sea trade route to the location selected. The workboat will follow the shortest path to the location. The workboat wakes when it has completed the assignment.</English>
+  <French>Ordonner au Bateau-atelier de construire une route commerciale jusqu'&#224; l'endroit s&#233;lectionn&#233;. Le bateau-atelier suivra le chemin le plus court et sera de nouveau disponible lorsqu'il aura termin&#233; sa mission</French>
+  <German>Das Arbeitsboot beginnt, einen Seehandelsweg zur ausgew&#228;hlten Stelle zu errichten. Das Arbeitsboot w&#228;hlt den k&#252;rzesten Weg, um zu dieser Stelle zu gelangen. Wenn es die Aufgabe erf&#252;llt hat, ist das Arbeitsboot erneut einsatzbereit.</German>
+  <Italian>Con questo ordine, si obbliga una barca da lavoro a creare una rotta commerciale marina verso il luogo prescelto. La barca da lavoro far&#224; il percorso pi&#249; breve per raggiungere il punto e rimarr&#224; in attesa di ordini quando avr&#224; completato il proprio incarico.</Italian>
+  <Spanish>Con esta orden hac&#233;is que un barco faenero construya una ruta comercial mar&#237;tima al lugar seleccionado. El barco faenero seguir&#225; el camino m&#225;s corto hasta dicho lugar. Se despertar&#225; cuando haya cumplido su cometido.</Spanish>
+ </TEXT>
+</Civ4GameText>
