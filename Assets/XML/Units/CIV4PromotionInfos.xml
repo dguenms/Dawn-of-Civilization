@@ -511,6 +511,35 @@
 			<Button>,Art/Interface/Buttons/Promotions/Ambush.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,1</Button>
 		</PromotionInfo>
 		<PromotionInfo>
+			<Type>PROMOTION_SKIRMISH</Type>
+			<Description>TXT_KEY_PROMOTION_SKIRMISH</Description>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereqOr1>PROMOTION_COMBAT1</PromotionPrereqOr1>
+			<PromotionPrereqOr2>PROMOTION_DRILL1</PromotionPrereqOr2>
+			<TechPrereq>TECH_RIDING</TechPrereq>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
+			<UnitCombats>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<bUnitCombat>1</bUnitCombat>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_HEAVY_CAVALRY</UnitCombatType>
+					<bUnitCombat>1</bUnitCombat>
+				</UnitCombat>
+				<UnitCombat>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<bUnitCombat>1</bUnitCombat>
+				</UnitCombat>
+			</UnitCombats>
+			<Button>Art/Interface/Buttons/Promotions/Skirmish.dds</Button>
+		</PromotionInfo>
+		<PromotionInfo>
 			<Type>PROMOTION_AMPHIBIOUS</Type>
 			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>

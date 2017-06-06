@@ -101,4 +101,8 @@
 		<Tag>TXT_KEY_PROMOTION_DESERT_ADAPTATION</Tag>
 		<English>Desert Adaptation</English>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_SKIRMISH</Tag>
+		<English>Skirmish</English>
+	</TEXT>
 </Civ4GameText>
