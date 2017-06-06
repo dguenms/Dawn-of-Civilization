@@ -42834,13 +42834,13 @@ BeginPlot
 		UnitType=UNIT_HORSE_ARCHER, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_LIGHT_SWORDSMAN, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_LIGHT_SWORDSMAN, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_AXEMAN, UnitOwner=12, (Korea)
+		UnitType=UNIT_LIGHT_SWORDSMAN, UnitOwner=12, (Korea)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARCHER, UnitOwner=12, (Korea)
