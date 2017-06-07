@@ -190,10 +190,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_AVIATION</ObsoleteTech>
 				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech>
-				<ObsoleteTech>TECH_TOURISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FISSION</ObsoleteTech>
 				<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech>
 				<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_RIGHTS</ObsoleteTech>
+				<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
+				<ObsoleteTech>TECH_GLOBALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -291,9 +292,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ELECTRICITY</ObsoleteTech>
-				<ObsoleteTech>TECH_REFRIGERATION</ObsoleteTech>
-				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_METALLURGY</ObsoleteTech>
+				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
+				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
+				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>1</bRecurring>
 			<bTeam>0</bTeam>
@@ -556,10 +559,10 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
 				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
 				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
@@ -918,10 +921,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_AVIATION</ObsoleteTech>
 				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech>
-				<ObsoleteTech>TECH_TOURISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FISSION</ObsoleteTech>
 				<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech>
 				<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_RIGHTS</ObsoleteTech>
+				<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
+				<ObsoleteTech>TECH_GLOBALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -6116,9 +6120,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ELECTRICITY</ObsoleteTech>
-				<ObsoleteTech>TECH_REFRIGERATION</ObsoleteTech>
-				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_METALLURGY</ObsoleteTech>
+				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
+				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
+				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -7498,10 +7504,10 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
 				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
 				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
@@ -8012,10 +8018,10 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
 				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
 				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
@@ -8102,7 +8108,6 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
 				<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
@@ -8279,9 +8284,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ELECTRICITY</ObsoleteTech>
-				<ObsoleteTech>TECH_REFRIGERATION</ObsoleteTech>
-				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_METALLURGY</ObsoleteTech>
+				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
+				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
+				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -8367,10 +8374,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_AVIATION</ObsoleteTech>
 				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech>
-				<ObsoleteTech>TECH_TOURISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FISSION</ObsoleteTech>
 				<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech>
 				<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_RIGHTS</ObsoleteTech>
+				<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
+				<ObsoleteTech>TECH_GLOBALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -8624,9 +8632,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ELECTRICITY</ObsoleteTech>
-				<ObsoleteTech>TECH_REFRIGERATION</ObsoleteTech>
-				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_METALLURGY</ObsoleteTech>
+				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
+				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
+				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -8710,10 +8720,10 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
 				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
 				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
@@ -11470,9 +11480,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ELECTRICITY</ObsoleteTech>
-				<ObsoleteTech>TECH_REFRIGERATION</ObsoleteTech>
-				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_METALLURGY</ObsoleteTech>
+				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
+				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
+				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -11562,9 +11574,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ELECTRICITY</ObsoleteTech>
-				<ObsoleteTech>TECH_REFRIGERATION</ObsoleteTech>
-				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_METALLURGY</ObsoleteTech>
+				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
+				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
+				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -12011,8 +12025,12 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-				<ObsoleteTech>TECH_MICROBIOLOGY</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_HYDRAULICS</ObsoleteTech>
+				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
+				<ObsoleteTech>TECH_GEOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_MEASUREMENT</ObsoleteTech>
+				<ObsoleteTech>TECH_SOCIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_SOCIAL_CONTRACT</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -12099,8 +12117,12 @@
 			<AndPreReqs/>
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-				<ObsoleteTech>TECH_MICROBIOLOGY</ObsoleteTech>
-				<ObsoleteTech>TECH_ECONOMICS</ObsoleteTech>
+				<ObsoleteTech>TECH_HYDRAULICS</ObsoleteTech>
+				<ObsoleteTech>TECH_PHYSICS</ObsoleteTech>
+				<ObsoleteTech>TECH_GEOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_MEASUREMENT</ObsoleteTech>
+				<ObsoleteTech>TECH_SOCIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_SOCIAL_CONTRACT</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -12184,10 +12206,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_AVIATION</ObsoleteTech>
 				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech>
-				<ObsoleteTech>TECH_TOURISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FISSION</ObsoleteTech>
 				<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech>
 				<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_RIGHTS</ObsoleteTech>
+				<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
+				<ObsoleteTech>TECH_GLOBALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -12275,10 +12298,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_AVIATION</ObsoleteTech>
 				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech>
-				<ObsoleteTech>TECH_TOURISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FISSION</ObsoleteTech>
 				<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech>
 				<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_RIGHTS</ObsoleteTech>
+				<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
+				<ObsoleteTech>TECH_GLOBALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -12695,9 +12719,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_MACHINE_TOOLS</ObsoleteTech>
 				<ObsoleteTech>TECH_THERMODYNAMICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ELECTRICITY</ObsoleteTech>
-				<ObsoleteTech>TECH_REFRIGERATION</ObsoleteTech>
-				<ObsoleteTech>TECH_ECOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_METALLURGY</ObsoleteTech>
+				<ObsoleteTech>TECH_CHEMISTRY</ObsoleteTech>
+				<ObsoleteTech>TECH_BIOLOGY</ObsoleteTech>
+				<ObsoleteTech>TECH_REPRESENTATION</ObsoleteTech>
+				<ObsoleteTech>TECH_NATIONALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -12884,10 +12910,11 @@
 			<ObsoleteTechs>
 				<ObsoleteTech>TECH_AVIATION</ObsoleteTech>
 				<ObsoleteTech>TECH_ROCKETRY</ObsoleteTech>
-				<ObsoleteTech>TECH_TOURISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FISSION</ObsoleteTech>
 				<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech>
 				<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
-				<ObsoleteTech>TECH_CIVIL_RIGHTS</ObsoleteTech>
+				<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
+				<ObsoleteTech>TECH_GLOBALISM</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -14430,10 +14457,10 @@
 			</OrPreReqs>
 			<AndPreReqs/>
 			<ObsoleteTechs>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
 				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
 				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
@@ -14521,10 +14548,10 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
 				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
 				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
@@ -15860,10 +15887,10 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
 				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
 				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
-				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
-				<ObsoleteTech>TECH_ARCHITECTURE</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
 				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
 				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
 				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
