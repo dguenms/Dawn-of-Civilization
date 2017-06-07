@@ -3199,6 +3199,24 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		return pUnit->maxMoves();
 	}
 
+	// Leoreth: entering enemy waters ends the turn
+	if (isWater())
+	{
+		if (getOwner() != NO_PLAYER)
+		{
+			if (getOwner() != pUnit->getOwner())
+			{
+				if (atWar(getTeam(), pUnit->getTeam()))
+				{
+					if (pFromPlot->getTeam() == NO_TEAM || !atWar(pUnit->getTeam(), pFromPlot->getTeam()))
+					{
+						return pUnit->maxMoves();
+					}
+				}
+			}
+		}
+	}
+
 	if (!isValidDomainForAction(*pUnit))
 	{
 		return GC.getMOVE_DENOMINATOR();
