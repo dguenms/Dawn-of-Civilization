@@ -129,7 +129,7 @@ iCivChina :	Techs([iMachinery, iAlchemy, iCivilService], column=6, exceptions=[i
 iCivKorea :	Techs([iMachinery], column=6, exceptions=[iNobility]),
 iCivByzantium :	Techs([iFortification,iMachinery, iCivilService], column=6),
 iCivJapan :	Techs(column=6, exceptions=[iScholarship]),
-iCivVikings :	Techs([iFeudalism], column=6),
+iCivVikings :	Techs([iGuilds], column=6),
 },
 {
 iCivIndependent:Techs(column=10),
