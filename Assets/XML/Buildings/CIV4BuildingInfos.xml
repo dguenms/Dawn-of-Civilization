@@ -8710,6 +8710,7 @@
 			<Description>TXT_KEY_BUILDING_STATUE_OF_ZEUS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_STATUE_OF_ZEUS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_STATUE_OF_ZEUS_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_STATUE_OF_ZEUS_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STATUE_OF_ZEUS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_STATUE_OF_ZEUS</MovieDefineTag>
@@ -8733,7 +8734,7 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>10</iCommerce>
+				<iCommerce>6</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>

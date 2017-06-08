@@ -692,8 +692,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STATUE_OF_ZEUS_HELP</Tag>
-		<English>[ICON_BULLET]No city resistance on conquest[NEWLINE][ICON_BULLET]Increases military unit production speed by 25% in all cities with pagan temples</English>
-		<German>[ICON_BULLET]Kein Widerstand nach Stadteroberung[NEWLINE][ICON_BULLET]Erh&#246;ht die Produktionsgeschwindigkeit milit&#228;rischer Einheiten in allen St&#228;dten mit heidnischen Tempeln um 25%</German>
+		<English>[ICON_BULLET]No City Resistance on Conquest</English>
+		<German>[ICON_BULLET]Kein Widerstand nach Stadteroberung</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STATUE_OF_ZEUS_STRATEGY</Tag>
