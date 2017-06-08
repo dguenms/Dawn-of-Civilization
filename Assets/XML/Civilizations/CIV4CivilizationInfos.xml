@@ -4520,7 +4520,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_AMPHITHEATRE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
 					<BuildingType>BUILDING_POLYNESIAN_MALAE</BuildingType>
 				</Building>
 				<Building>
