@@ -81,7 +81,7 @@ iCivIndia :	Techs([iAlloys, iWriting, iCalendar], column=2, exceptions=[iSeafari
 iCivGreece :	Techs([iAlloys, iArithmetics, iWriting], column=2),
 iCivPersia :	Techs([iBloomery, iPriesthood], column=3, exceptions=[iSeafaring, iShipbuilding]),
 iCivCarthage :	Techs([iAlloys, iWriting, iShipbuilding], column=2),
-iCivPolynesia :	Techs([iTanning, iPottery, iMythology, iSailing, iSeafaring]),
+iCivPolynesia :	Techs([iTanning, iMythology, iSailing, iSeafaring]),
 iCivRome : 	Techs([iBloomery, iCement, iMathematics, iLiterature], column=3, exceptions=[iRiding, iCalendar, iShipbuilding]),
 iCivTamils :	Techs([iBloomery, iMathematics, iPriesthood], column=3),
 iCivEthiopia :	Techs([iAlloys, iWriting, iCalendar, iPriesthood], column=2),
