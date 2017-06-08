@@ -1063,8 +1063,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_FLANKING2</PromotionPrereqOr1>
 			<iWithdrawalChange>25</iWithdrawalChange>
-			<iPlainsAttack>25</iPlainsAttack>
-			<iPlainsDefense>25</iPlainsDefense>
+			<iPlainsDefense>50</iPlainsDefense>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
