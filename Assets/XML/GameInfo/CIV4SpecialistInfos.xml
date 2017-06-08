@@ -175,7 +175,12 @@
 				<iYield>0</iYield>
 				<iYield>2</iYield>
 			</Yields>
-			<Commerces/>
+			<Commerces>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</Commerces>
 			<iExperience>0</iExperience>
 			<Flavors/>
 			<HotKey/>
@@ -342,7 +347,12 @@
 				<iYield>0</iYield>
 				<iYield>4</iYield>
 			</Yields>
-			<Commerces/>
+			<Commerces>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</Commerces>
 			<iExperience>0</iExperience>
 			<Flavors/>
 			<HotKey/>
