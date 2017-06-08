@@ -2583,9 +2583,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/ATUA_SHRINE/southpacificpalace.nif</NIF>
+			<NIF>Art/Structures/Buildings/fale_tele/southpacificpalace.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/ATUA_SHRINE/ATUA_SHRINE.dds</Button>
+			<Button>Art/Structures/Buildings/fale_tele/fale_tele.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MAZDAIST_TEMPLE</Type>
