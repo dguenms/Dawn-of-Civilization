@@ -8484,7 +8484,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_MOAI_STATUES</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_MOAI_STATUES</MovieDefineTag>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
-			<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
+			<PrereqTech>TECH_NAVIGATION</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
