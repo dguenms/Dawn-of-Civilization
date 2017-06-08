@@ -2578,14 +2578,14 @@
 			<Button>Art/Structures/Buildings/Baalist_Temple/baalist_temple.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_FALE_TELE</Type>
+			<Type>ART_DEF_BUILDING_ATUA_SHRINE</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Fale_Tele/southpacificpalace.nif</NIF>
+			<NIF>Art/Structures/Buildings/ATUA_SHRINE/southpacificpalace.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Fale_Tele/Fale_Tele.dds</Button>
+			<Button>Art/Structures/Buildings/ATUA_SHRINE/ATUA_SHRINE.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MAZDAIST_TEMPLE</Type>

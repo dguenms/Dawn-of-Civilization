@@ -4525,7 +4525,7 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
-					<BuildingType>BUILDING_FALE_TELE</BuildingType>
+					<BuildingType>BUILDING_ATUA_SHRINE</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

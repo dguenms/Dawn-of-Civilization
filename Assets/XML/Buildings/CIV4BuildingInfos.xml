@@ -11622,12 +11622,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClass>
-			<Type>BUILDING_FALE_TELE</Type>
-			<Description>TXT_KEY_BUILDING_FALE_TELE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_FALE_TELE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_FALE_TELE_STRATEGY</Strategy>
+			<Type>BUILDING_ATUA_SHRINE</Type>
+			<Description>TXT_KEY_BUILDING_ATUA_SHRINE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ATUA_SHRINE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ATUA_SHRINE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_FALE_TELE</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_ATUA_SHRINE</ArtDefineTag>
 			<PrereqTech>TECH_MYTHOLOGY</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
