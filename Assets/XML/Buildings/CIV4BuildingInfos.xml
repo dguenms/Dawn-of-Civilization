@@ -10366,7 +10366,7 @@
 			<Description>TXT_KEY_BUILDING_SAN_MARCO_BASILICA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_SAN_MARCO_BASILICA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SAN_MARCO_BASILICA_STRATEGY</Strategy>
-			<Advisor>ADVISOR_RELIGION</Advisor>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SAN_MARCO_BASILICA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_SAN_MARCO_BASILICA</MovieDefineTag>
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
