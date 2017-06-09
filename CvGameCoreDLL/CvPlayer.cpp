@@ -8244,7 +8244,7 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		if (pLoopCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE)
+		if (pLoopCity->plot()->getSpreadFactor(eReligion) == REGION_SPREAD_CORE || eReligion == PROTESTANTISM)
 		{
 			iValue = 10;
 			iValue += pLoopCity->getPopulation();

@@ -123,8 +123,8 @@ tSpreadFactors = (
 },
 # Protestantism
 {
-	iCore :		[rEurope, rScandinavia, rUnitedStates],
-	iHistorical :	[rBritain, rCanada, rAlaska, rAustralia],
+	iCore :		[rBritain, rEurope, rScandinavia, rUnitedStates],
+	iHistorical :	[rCanada, rAlaska, rAustralia],
 	iPeriphery :	[rOceania, rSouthAfrica],
 },
 # Islam
