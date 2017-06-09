@@ -245,19 +245,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_GER_TITLE</Tag>
-		<English>The Power of Technique:</English>
-		<French>Le Pouvoir de la Technique :</French>
-		<German>Die Macht der Technik:</German>
-		<Italian>Il potere della tecnica:</Italian>
-		<Spanish>El poder de la t&#233;cnica:</Spanish>
+		<English>The Power of Doctrine:</English>
+		<German>Die Macht der Doktrin:</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_GER</Tag>
-		<English>Free unit upgrades</English>
-		<French>Les unit&#233;s gratuites s'am&#233;liorent apr&#232;s la d&#233;couverte de l'Industrialisation</French>
-		<German>Gratis Einheitenaufwertung</German>
-		<Italian>Aggiornamenti gratuiti per le unit&#224; dopo la scoperta dell'industrialismo</Italian>
-		<Spanish>Modernizaci&#243;n de unidades gratuita tras el descubrimiento del Industrialismo</Spanish>
+		<English>Units retain all their experience when upgraded</English>
+		<German>Modernisierte Einheiten behalten ihre gesamte Erfahrung</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_GRE_TITLE</Tag>

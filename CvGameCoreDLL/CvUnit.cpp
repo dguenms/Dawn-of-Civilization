@@ -524,7 +524,8 @@ void CvUnit::convert(CvUnit* pUnit)
 	iNewExperience *= iOurModifier;
 	iNewExperience /= iOldModifier;
 
-	if (getLeaderUnitType() == NO_UNIT)
+	// Leoreth: includes German UP
+	if (getLeaderUnitType() == NO_UNIT && getOwner() != GERMANY)
 	{
 		int iOldCombat = GC.getUnitInfo(pUnit->getUnitType()).getCombat();
 		int iNewCombat = GC.getUnitInfo(getUnitType()).getCombat();
@@ -7400,13 +7401,6 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 	{
 		return 0;
 	}
-
-	//Rhye - start UP
-	if (getOwnerINLINE() == GERMANY)
-	{
-		return 0;
-	}
-	//Rhye - end UP
 
 	iPrice = GC.getDefineINT("BASE_UNIT_UPGRADE_COST");
 
