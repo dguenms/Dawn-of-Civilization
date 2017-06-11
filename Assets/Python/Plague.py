@@ -368,14 +368,19 @@ class Plague:
 		if iPlayer >= iNumMajorPlayers:
 			if -10 < data.players[iPlayer].iPlagueCountdown <= 0: #more vulnerable
 				return True
-		else:
-			pPlayer = gc.getPlayer(iPlayer)
-			if data.players[iPlayer].iPlagueCountdown == 0: #vulnerable
-				if not gc.getTeam(pPlayer.getTeam()).isHasTech(iMicrobiology):
-					iHealth = self.calculateHealth(iPlayer)
-					if iHealth < 14: #no spread for iHealth >= 74 years
-						return True
-						
+				
+		pPlayer = gc.getPlayer(iPlayer)
+			
+		if gc.getTeam(pPlayer.getTeam()).isHasTech(iMicrobiology): return False
+		
+		if iPlayer in lCivBioNewWorld and not data.lFirstContactConquerors[lCivBioNewWorld.index(iPlayer)]: return False
+			
+		if data.players[iPlayer].iPlagueCountdown == 0: #vulnerable
+			if not gc.getTeam(pPlayer.getTeam()).isHasTech(iMicrobiology):
+				iHealth = self.calculateHealth(iPlayer)
+				if iHealth < 14: #no spread for iHealth >= 74 years
+					return True
+					
 		return False
 
 
