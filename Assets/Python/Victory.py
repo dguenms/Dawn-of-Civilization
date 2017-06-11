@@ -1617,8 +1617,9 @@ def onTechAcquired(iPlayer, iTech):
 	# first Maya goal: discover Calendar by 600 AD
 	if iPlayer == iMaya:
 		if not pMaya.isReborn() and isPossible(iMaya, 0):
-			if iTech == iCalendar:
-				win(iMaya, 0)
+			if iTech in [iWriting, iMathematics]:
+				if teamMaya.isHasTech(iWriting) and teamMaya.isHasTech(iMathematics):
+					win(iMaya, 0)
 				
 	# third Congolese goal: enter the Industrial era before anyone enters the Modern era
 	if isPossible(iCongo, 2):
