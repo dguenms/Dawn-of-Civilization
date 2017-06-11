@@ -5390,8 +5390,8 @@
 			<iCityDefense>50</iCityDefense>
 			<iHillsDefense>25</iHillsDefense>
 			<iCultureGarrison>4</iCultureGarrison>
-			<iAsset>1</iAsset>
-			<iPower>3</iPower>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -5473,8 +5473,8 @@
 			<iCollateralDamageMaxUnits>2</iCollateralDamageMaxUnits>
 			<iHillsAttack>25</iHillsAttack>
 			<iCultureGarrison>3</iCultureGarrison>
-			<iAsset>1</iAsset>
-			<iPower>2</iPower>
+			<iAsset>2</iAsset>
+			<iPower>4</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -5523,10 +5523,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_CONTRACT</PrereqTech>
-			<TechTypes>
-				<PrereqTech>TECH_TANNING</PrereqTech>
-			</TechTypes>
+			<PrereqTech>TECH_SMELTING</PrereqTech>
 			<iCost>30</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -5538,19 +5535,19 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>4</iCombat>
+			<iCombat>3</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<iFirstStrikes>1</iFirstStrikes>
-			<iWithdrawalProb>75</iWithdrawalProb>
+			<iWithdrawalProb>50</iWithdrawalProb>
 			<iCollateralDamage>100</iCollateralDamage>
 			<iCollateralDamageLimit>25</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>2</iCollateralDamageMaxUnits>
 			<iHillsAttack>25</iHillsAttack>
 			<iCultureGarrison>3</iCultureGarrison>
 			<iAsset>1</iAsset>
-			<iPower>2</iPower>
+			<iPower>3</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
