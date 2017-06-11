@@ -142,7 +142,7 @@ iTan = 90
 iLime = 100
 
 # independent cities
-iNumMinorCities = 37
+iNumMinorCities = 38
 
 # scripted conquerors
 iNumConquests = 10
@@ -260,7 +260,7 @@ tBirth = (
 -300,					# Tamils
 -290, # 121, #300BC			# Ethiopia
 -50,					# Korea
-60, # 145, #60AD			# Maya
+65, # 145, #60AD			# Maya
 330,					# Byzantium
 525, # 97, #660BC			# Japan
 551, # 177, #551AD			# Vikings
@@ -539,53 +539,6 @@ tResurrectionIntervals = (
 [(1820, 2020)], #Brazil
 [(1867, 2020)], #Canada
 )
-
-tYear = (
-("3000 ", "TXT_KEY_BC"),	# Egypt
-("3000 ", "TXT_KEY_BC"),	# China
-("3000 ", "TXT_KEY_BC"),	# Babylonia
-("3000 ", "TXT_KEY_BC"),	# Harappa
-("1600 ", "TXT_KEY_BC"),	# Greece
-("1500 ", "TXT_KEY_BC"),	# India
-("1200 ", "TXT_KEY_BC"),	# Phoenicia
-("1000 ", "TXT_KEY_BC"),	# Polynesia
-("850 ", "TXT_KEY_BC"),		# Persia
-("760 ", "TXT_KEY_BC"),		# Rome
-("300 ", "TXT_KEY_BC"),		# Tamils
-("295 ", "TXT_KEY_BC"),		# Ethiopia
-("50 ", "TXT_KEY_BC"),		# Korea
-("65 ", "TXT_KEY_AD"),		# Maya
-("330 ", "TXT_KEY_AD"),		# Byzantium
-("525 ", "TXT_KEY_AD"),		# Japan
-("545 ", "TXT_KEY_AD"),		# Vikings
-("620 ", "TXT_KEY_AD"),		# Arabia
-("630 ", "TXT_KEY_AD"),		# Tibet
-("700 ", "TXT_KEY_AD"),		# Indonesia
-("711 ", "TXT_KEY_AD"),		# Moors
-("722 ", "TXT_KEY_AD"),		# Spain
-("750 ", "TXT_KEY_AD"),		# France
-("660 ", "TXT_KEY_AD"),		# Khmer
-("820 ", "TXT_KEY_AD"),		# England
-("840 ", "TXT_KEY_AD"),		# Holy Rome
-("860 ", "TXT_KEY_AD"),		# Russia
-("980 ", "TXT_KEY_AD"),		# Mali
-("1025 ", "TXT_KEY_AD"),	# Poland
-("1130 ", "TXT_KEY_AD"),	# Portugal
-("1150 ", "TXT_KEY_AD"),	# Inca
-("1167 ", "TXT_KEY_AD"),	# Italy
-("1190 ", "TXT_KEY_AD"),	# Mongolia
-("1200 ", "TXT_KEY_AD"),	# Aztecs
-("1206 ", "TXT_KEY_AD"),	# Mughals
-("1280 ", "TXT_KEY_AD"),	# Turkey
-("1350 ", "TXT_KEY_AD"),	# Thailand
-("1390 ", "TXT_KEY_AD"),	# Congo
-("1581 ", "TXT_KEY_AD"),	# Netherlands
-("1701 ", "TXT_KEY_AD"),	# Germany
-("1775 ", "TXT_KEY_AD"),	# America
-("1810 ", "TXT_KEY_AD"),	# Argentina
-("1822 ", "TXT_KEY_AD"),	# Brazil
-("1867 ", "TXT_KEY_AD"))	# Canada
-
 # edead: tGoals[iGameSpeed][iCiv][iGoal]
 # Leoreth: tGoals[reborn][iGameSpeed][iCiv][iGoal]
 tGoals1 = (
