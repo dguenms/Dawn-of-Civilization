@@ -2650,6 +2650,12 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_WORKER] *= 2;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] *= 3;
 		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 2;
+		break;
+	case NATIVE:
+		aiUnitAIVal[UNITAI_CITY_DEFENSE] /= 5;
+		aiUnitAIVal[UNITAI_CITY_COUNTER] /= 2;
+		aiUnitAIVal[UNITAI_PILLAGE] *= 2;
+		break;
 	default:
 		break;
 	}
