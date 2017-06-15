@@ -6483,15 +6483,7 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 			else
 			{
 				aiYields[iI] = GET_PLAYER((pCity != NULL) ? pCity->getOwnerINLINE() : GC.getGameINLINE().getActivePlayer()).specialistYield(eSpecialist, ((YieldTypes)iI));
-
-				// Leoreth: (city states effect)
-				if (pCity != NULL)
-				{
-					if (pCity->isSpecialistExtraYieldThreshold() && eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
-					{
-						aiYields[iI] += GET_PLAYER(pCity->getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, ((YieldTypes)iI));
-					}
-				}
+				aiYields[iI] += pCity != NULL ? GC.getSpecialistInfo(eSpecialist).getCultureLevelYieldChange(pCity->getCultureLevel(), (YieldTypes)iI) : 0;
 			}
 		}
 
@@ -6506,6 +6498,7 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 			else
 			{
 				aiCommerces[iI] = GET_PLAYER((pCity != NULL) ? pCity->getOwnerINLINE() : GC.getGameINLINE().getActivePlayer()).specialistCommerce(((SpecialistTypes)eSpecialist), ((CommerceTypes)iI));
+				aiCommerces[iI] += pCity != NULL ? GC.getSpecialistInfo(eSpecialist).getCultureLevelCommerceChange(pCity->getCultureLevel(), (CommerceTypes)iI) : 0;
 			}
 		}
 
@@ -6536,10 +6529,13 @@ void CvGameTextMgr::parseSpecialistHelpActual(CvWStringBuffer &szHelpString, Spe
 			szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_EXPERIENCE", GC.getSpecialistInfo(eSpecialist).getExperience()));
 		}
 
-		if (GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() != 0)
+		int iGreatPeopleRateChange = GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
+		iGreatPeopleRateChange += pCity != NULL ? GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(pCity->getCultureLevel()) : 0;
+
+		if (iGreatPeopleRateChange != 0)
 		{
 			szHelpString.append(NEWLINE);
-			szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_BIRTH_RATE", GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange()));
+			szHelpString.append(gDLL->getText("TXT_KEY_SPECIALIST_BIRTH_RATE", iGreatPeopleRateChange));
 		}
 
 // BUG - Specialist Actual Effects - start
@@ -7349,23 +7345,8 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	//	Happiness per military unit
 	if (GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit() != 0)
 	{
-		int iMilitaryHappinessLimit = GC.getCivicInfo(eCivic).getMilitaryHappinessLimit();
-
-		if (bPlayerContext && GC.getGame().getActivePlayer() == THAILAND)
-		{
-			iMilitaryHappinessLimit *= 2;
-		}
-
 		szHelpText.append(NEWLINE);
-
-		if (iMilitaryHappinessLimit > 0)
-		{
-			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_LIMITED_UNIT_HAPPINESS", GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit(), ((GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit() > 0) ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)), iMilitaryHappinessLimit));
-		}
-		else
-		{
-			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_UNIT_HAPPINESS", GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit(), ((GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit() > 0) ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR))));
-		}
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_UNIT_HAPPINESS", GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit(), ((GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit() > 0) ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR))));
 	}
 
 	//	Military units produced with food
@@ -7623,33 +7604,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_NON_STATE_SPREAD"));
 	}
 
-	//Rhye - start 6th
-	if (GC.getCivicInfo(eCivic).isStabilityVassalBonus())
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_VASSAL_BONUS"));
-	}
-	if (GC.getCivicInfo(eCivic).isStabilityFoundBonus())
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FOUND_BONUS"));
-	}
-	if (GC.getCivicInfo(eCivic).isStabilityConquestBonus())
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CONQUEST_BONUS"));
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_OCCUPATION_BONUS"));
-	}
-	if (GC.getCivicInfo(eCivic).isStabilityCommerceBonus())
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_COMMERCE_BONUS"));
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_ECONOMY_BONUS"));
-	}
-	//Rhye - end 6th
-
 	//	Yield Modifiers
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_IN_ALL_CITIES").GetCString(), GC.getCivicInfo(eCivic).getYieldModifierArray(), true);
 
@@ -7670,25 +7624,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 
 	// Leoreth: Specialist Yield
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST").GetCString(), GC.getCivicInfo(eCivic).getSpecialistExtraYieldArray());
-
-	// Leoreth: Specialist Threshold Yield
-	int iBaseThreshold = GC.getCivicInfo(eCivic).getSpecialistExtraYieldBaseThreshold();
-	int iEraThreshold = GC.getCivicInfo(eCivic).getSpecialistExtraYieldEraThreshold();
-	if (iBaseThreshold != 0 || iEraThreshold != 0)
-	{
-		CvWString szEnd;
-		if (bPlayerContext)
-		{
-			int iCurrentEra = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCurrentEra();
-			szEnd = gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD", iBaseThreshold + iCurrentEra * iEraThreshold).GetCString();
-		}
-		else
-		{
-			szEnd = gDLL->getText("TXT_KEY_CIVIC_PER_SPECIALIST_THRESHOLD", iBaseThreshold).GetCString();
-		}
-
-		setYieldChangeHelp(szHelpText, L"", L"", szEnd, GC.getCivicInfo(eCivic).getSpecialistThresholdExtraYieldArray());
-	}
 
 	// Leoreth: excess happiness yield
 	setYieldChangeHelp(szHelpText, L"", L"", gDLL->getText("TXT_KEY_CIVIC_PER_EXCESS_HAPPINESS").GetCString(), GC.getCivicInfo(eCivic).getHappinessExtraYieldArray());
@@ -17855,6 +17790,7 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 			if (iCount > 0)
 			{
 				iRate += iCount * GC.getSpecialistInfo((SpecialistTypes)i).getGreatPeopleRateChange();
+				iRate += iCount * GC.getSpecialistInfo((SpecialistTypes)i).getCultureLevelGreatPeopleRateChange(city.getCultureLevel());
 			}
 		}
 		if (iRate > 0)

@@ -477,10 +477,6 @@ public:
 	int getHappyPerMilitaryUnit() const;																																			// Exposed to Python
 	void changeHappyPerMilitaryUnit(int iChange);
 
-	//Leoreth
-	int getMilitaryHappinessLimit() const;
-	void changeMilitaryHappinessLimit(int iChange);
-
 	int getMilitaryFoodProductionCount() const;
 	bool isMilitaryFoodProduction() const;																																		// Exposed to Python
 	void changeMilitaryFoodProductionCount(int iChange);
@@ -671,14 +667,6 @@ public:
 
 	int getStateReligionFreeExperience() const;																																// Exposed to Python
 	void changeStateReligionFreeExperience(int iChange);
-
-	//Leoreth
-	int getSpecialistExtraYieldBaseThreshold() const;
-	void changeSpecialistExtraYieldBaseThreshold(int iChange);
-
-	//Leoreth
-	int getSpecialistExtraYieldEraThreshold() const;
-	void changeSpecialistExtraYieldEraThreshold(int iChange);
 
 	DllExport CvCity* getCapitalCity() const;																																	// Exposed to Python
 	void setCapitalCity(CvCity* pNewCapitalCity);
@@ -925,10 +913,6 @@ public:
 
 	int getSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2) const;										// Exposed to Python
 	void changeSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange);
-
-	// Leoreth
-	int getSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2) const;
-	void changeSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange);
 
 	// Leoreth
 	int getHappinessExtraYield(YieldTypes eIndex) const;
@@ -1359,12 +1343,11 @@ protected:
 	int m_iExtraUnitCost;
 	int m_iNumMilitaryUnits;
 	int m_iHappyPerMilitaryUnit;
-	int m_iMilitaryHappinessLimit; //Leoreth
 	int m_iMilitaryFoodProductionCount;
 	int m_iConscriptCount;
 	int m_iMaxConscript;
 	int m_iHighestUnitLevel;
-	int m_iHighestNavalUnitLevel; //Leoreth
+	int m_iHighestNavalUnitLevel; // Leoreth
 	int m_iOverflowResearch;
 	int m_iNoUnhealthyPopulationCount;
 	int m_iExpInBorderModifier;
@@ -1372,14 +1355,14 @@ protected:
 	int m_iDistanceMaintenanceModifier;
 	int m_iNumCitiesMaintenanceModifier;
 	int m_iCorporationMaintenanceModifier;
-	int m_iCorporationCommerceModifier; //Leoreth
+	int m_iCorporationCommerceModifier; // Leoreth
 	int m_iCorporationUnhappinessModifier; // Leoreth
-	int m_iProcessModifier; //Leoreth
+	int m_iProcessModifier; // Leoreth
 	int m_iTotalMaintenance;
 	int m_iUpkeepModifier;
 	int m_iLevelExperienceModifier;
 	int m_iExtraHealth;
-	int m_iPollutionModifier; //Leoreth
+	int m_iPollutionModifier; // Leoreth
 	int m_iBuildingGoodHealth;
 	int m_iBuildingBadHealth;
 	int m_iExtraHappiness;
@@ -1389,7 +1372,7 @@ protected:
 	int m_iWarWearinessPercentAnger;
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
-	int m_iCoreFreeSpecialist; //Leoreth
+	int m_iCoreFreeSpecialist; // Leoreth
 	int m_iNoForeignTradeCount;
 	int m_iNoForeignTradeModifierCount; // Leoreth
 	int m_iNoCorporationsCount;
@@ -1412,8 +1395,6 @@ protected:
 	int m_iStateReligionUnitProductionModifier;
 	int m_iStateReligionBuildingProductionModifier;
 	int m_iStateReligionFreeExperience;
-	int m_iSpecialistExtraYieldBaseThreshold; //Leoreth
-	int m_iSpecialistExtraYieldEraThreshold; //Leoreth
 	int m_iCapitalCityID;
 	int m_iCitiesLost;
 	int m_iWinsVsBarbs;
@@ -1499,7 +1480,7 @@ protected:
 	int* m_aiCapitalCommerceRateModifier;
 	int* m_aiStateReligionBuildingCommerce;
 	int* m_aiSpecialistExtraCommerce;
-	int* m_aiSpecialistExtraYield; //Leoreth
+	int* m_aiSpecialistExtraYield; // Leoreth
 	int* m_aiHappinessExtraYield; // Leoreth
 	int* m_aiUnhappinessExtraYield; // Leoreth
 	int* m_aiCommerceFlexibleCount;
@@ -1551,7 +1532,6 @@ protected:
 	CivicTypes* m_paeCivics;
 
 	int** m_ppaaiSpecialistExtraYield;
-	int** m_ppaaiSpecialistThresholdExtraYield; //Leoreth
 	int** m_ppaaiImprovementYieldChange;
 
 	CLinkList<int> m_groupCycle;

@@ -6315,36 +6315,7 @@ int CvCity::getGreatPeopleRate() const
 		return 0;
 	}
 
-	//Rhye - start switch
-	int baseValue = (getBaseGreatPeopleRate() * getTotalGreatPeopleRateModifier()) / 100;
-	int result = baseValue;
-	//int iI;
-
-	if (getOwnerINLINE() == GREECE) {
-		//Rhye - start UP
-		if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= 1) //Leoreth: expires after Classical now
-			result = (baseValue*250/100);
-		//Rhye - end UP
-	}
-	//switch used to be here, now in CvPlayer::greatPeopleThreshold()
-
-	// Leoreth - Italian UP OLD
-	/*
-	if (getOwnerINLINE() == ROME && GET_PLAYER(getOwnerINLINE()).isReborn())
-	{
-	    for (iI = HEROICEPIC; iI < NUM_WONDERS; iI++)
-	    {
-	        if (hasBuilding((BuildingTypes)iI))
-	        {
-	            result += GC.getBuildingInfo((BuildingTypes)iI).getCommerceChange(COMMERCE_CULTURE);
-	        }
-	    }
-	}*/
-
-	return result;
-
-	//return ((getBaseGreatPeopleRate() * getTotalGreatPeopleRateModifier()) / 100);
-	//Rhye - end
+	return (getBaseGreatPeopleRate() + calculateCultureSpecialistGreatPeopleRate()) * getTotalGreatPeopleRateModifier() / 100;
 }
 
 
@@ -6370,6 +6341,12 @@ int CvCity::getTotalGreatPeopleRateModifier() const
 	if (GET_PLAYER(getOwnerINLINE()).isGoldenAge())
 	{
 		iModifier += GC.getDefineINT("GOLDEN_AGE_GREAT_PEOPLE_MODIFIER");
+	}
+
+	// Leoreth: Greek UP
+	if (getOwnerINLINE() == GREECE && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_CLASSICAL)
+	{
+		iModifier += 150;
 	}
 
 	return std::max(0, (iModifier + 100));
@@ -6506,7 +6483,7 @@ int CvCity::getAdditionalBaseGreatPeopleRateBySpecialist(SpecialistTypes eSpecia
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 
-	return iChange * GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange();
+	return iChange * (GC.getSpecialistInfo(eSpecialist).getGreatPeopleRateChange() + GC.getSpecialistInfo(eSpecialist).getCultureLevelGreatPeopleRateChange(getCultureLevel()));
 }
 // BUG - Specialist Additional Great People - end
 
@@ -7319,17 +7296,7 @@ void CvCity::changeBonusBadHealth(int iChange)
 
 int CvCity::getMilitaryHappinessUnits() const
 {
-	int iMilitaryHappinessUnits = m_iMilitaryHappinessUnits;
-	int iMilitaryHappinessLimit = GET_PLAYER(getOwnerINLINE()).getMilitaryHappinessLimit();
-
-	if (iMilitaryHappinessLimit > 0)
-	{
-		iMilitaryHappinessUnits = std::min(iMilitaryHappinessUnits, iMilitaryHappinessLimit);
-	}
-
-	iMilitaryHappinessUnits = std::min(iMilitaryHappinessUnits, getPopulation() / 2);
-
-	return iMilitaryHappinessUnits;
+	return std::min(m_iMilitaryHappinessUnits, getPopulation() / 2);
 }
 
 
@@ -9468,7 +9435,7 @@ int CvCity::getAdditionalBaseYieldRateBySpecialist(YieldTypes eIndex, Specialist
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 	
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
-	return iChange * (kSpecialist.getYieldChange(eIndex) + GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex));
+	return iChange * (kSpecialist.getYieldChange(eIndex) + kSpecialist.getCultureLevelYieldChange(getCultureLevel(), eIndex) + GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex));
 }
 // BUG - Specialist Additional Yield - end
 
@@ -10030,55 +9997,6 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	return ((getSpecialistCount(eSpecialist) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex)));
 }
 
-int CvCity::getExtraSpecialistThresholdYield(YieldTypes eIndex, SpecialistTypes eSpecialist) const
-{
-	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
-	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex expected to be < NUM_YIELD_TYPES");
-	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
-	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
-	if (isSpecialistExtraYieldThreshold() && eSpecialist != (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
-	{
-		return ((std::min(getSpecialistCount(eSpecialist), (eSpecialist != GC.getInfoTypeForString("SPECIALIST_CITIZEN")? getMaxSpecialistCount(eSpecialist) : getSpecialistCount(eSpecialist))) + getFreeSpecialistCount(eSpecialist)) * (GET_PLAYER(getOwnerINLINE()).getSpecialistThresholdExtraYield(eSpecialist, eIndex)));
-	}
-	else
-	{
-		return 0;
-	}
-}
-
-bool CvCity::isSpecialistExtraYieldThreshold() const
-{
-	CvPlot* pLoopPlot;
-	int iCount = 0;
-	int iBaseThreshold = GET_PLAYER(getOwner()).getSpecialistExtraYieldBaseThreshold();
-	int iEraThreshold = GET_PLAYER(getOwner()).getSpecialistExtraYieldEraThreshold();
-
-	if (iBaseThreshold == 0 && iEraThreshold == 0)
-	{
-		return false;
-	}
-
-	for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
-	{
-		pLoopPlot = getCityIndexPlot(iI);
-
-		if (pLoopPlot->getWorkingCity() == this && pLoopPlot->isBeingWorked() && !pLoopPlot->isWater())
-		{
-			iCount++;
-		}
-	}
-
-	iCount--; // city tile shouldn't count
-
-	if (iCount <= iBaseThreshold + iEraThreshold * GET_PLAYER(getOwner()).getCurrentEra())
-	{
-		return true;
-	}
-
-	return false;
-}
-
-
 void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 {
 	int iOldYield;
@@ -10095,7 +10013,7 @@ void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 	for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 	{
 		iNewYield += getExtraSpecialistYield(eYield, ((SpecialistTypes)iI));
-		iNewYield += getExtraSpecialistThresholdYield(eYield, ((SpecialistTypes)iI));
+		iNewYield += getSpecialistCount((SpecialistTypes)iI) * GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelYieldChange(getCultureLevel(), eYield); // Leoreth
 	}
 
 	if (iOldYield != iNewYield)
@@ -10294,6 +10212,7 @@ void CvCity::updateCommerce(CommerceTypes eIndex)
 	{
 		iNewCommerce = (getBaseCommerceRateTimes100(eIndex) * getTotalCommerceRateModifier(eIndex)) / 100;
 		iNewCommerce += getBaseYieldRate(YIELD_PRODUCTION) * getProductionToCommerceModifier(eIndex); // Leoreth: no production modifiers for processes anymore
+		iNewCommerce += calculateCultureSpecialistCommerce(eIndex); // Leoreth
 	}
 
 	if (iOldCommerce != iNewCommerce)
@@ -10694,7 +10613,7 @@ int CvCity::getAdditionalBaseCommerceRateBySpecialistImpl(CommerceTypes eIndex, 
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
-	return iChange * (kSpecialist.getCommerceChange(eIndex) + GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
+	return iChange * (kSpecialist.getCommerceChange(eIndex) + kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex) + GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
 }
 // BUG - Specialist Additional Commerce - end
 
@@ -18300,4 +18219,28 @@ int CvCity::getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuil
 void CvCity::setBuildingOriginalOwner(BuildingTypes eBuilding, PlayerTypes ePlayer)
 {
 	m_paiBuildingOriginalOwner[eBuilding] = ePlayer;
+}
+
+int CvCity::calculateCultureSpecialistCommerce(CommerceTypes eCommerce) const
+{
+	int iCommerce = 0;
+
+	for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+	{
+		iCommerce += getSpecialistCount((SpecialistTypes)iI) * GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelCommerceChange(getCultureLevel(), eCommerce);
+	}
+
+	return iCommerce;
+}
+
+int CvCity::calculateCultureSpecialistGreatPeopleRate() const
+{
+	int iGreatPeopleRate = 0;
+
+	for (int iI = 0; iI < GC.getNumSpecialBuildingInfos(); iI++)
+	{
+		iGreatPeopleRate += getSpecialistCount((SpecialistTypes)iI) * GC.getSpecialistInfo((SpecialistTypes)iI).getCultureLevelGreatPeopleRateChange(getCultureLevel());
+	}
+
+	return iGreatPeopleRate;
 }

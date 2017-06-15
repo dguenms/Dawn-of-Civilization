@@ -832,7 +832,10 @@ m_piYieldChange(NULL),
 m_piCommerceChange(NULL),
 m_piFlavorValue(NULL),
 m_iExperience(0),
-m_iHappiness(0)
+m_iHappiness(0),
+m_paiCultureLevelYieldChanges(NULL),
+m_paiCultureLevelCommerceChanges(NULL),
+m_piCultureLevelGreatPeopleRateChanges(NULL)
 {
 }
 
@@ -848,6 +851,25 @@ CvSpecialistInfo::~CvSpecialistInfo()
 	SAFE_DELETE_ARRAY(m_piYieldChange);
 	SAFE_DELETE_ARRAY(m_piCommerceChange);
 	SAFE_DELETE_ARRAY(m_piFlavorValue);
+	SAFE_DELETE_ARRAY(m_piCultureLevelGreatPeopleRateChanges);
+
+	if (m_paiCultureLevelYieldChanges != NULL)
+	{
+		for (int i = 0; i < GC.getNumCultureLevelInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_paiCultureLevelYieldChanges[i]);
+		}
+		SAFE_DELETE_ARRAY(m_paiCultureLevelYieldChanges);
+	}
+
+	if (m_paiCultureLevelCommerceChanges != NULL)
+	{
+		for (int i = 0; i < GC.getNumCultureLevelInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_paiCultureLevelCommerceChanges[i]);
+		}
+		SAFE_DELETE_ARRAY(m_paiCultureLevelCommerceChanges);
+	}
 }
 
 int CvSpecialistInfo::getGreatPeopleUnitClass() const
@@ -914,6 +936,39 @@ int CvSpecialistInfo::getFlavorValue(int i) const
 	return m_piFlavorValue ? m_piFlavorValue[i] : -1;
 }
 
+// Leoreth
+int CvSpecialistInfo::getCultureLevelYieldChange(CultureLevelTypes eCultureLevel, YieldTypes eYield) const
+{
+	if (eCultureLevel == NO_CULTURELEVEL)
+	{
+		return 0;
+	}
+
+	return m_paiCultureLevelYieldChanges[eCultureLevel][eYield];
+}
+
+// Leoreth
+int CvSpecialistInfo::getCultureLevelCommerceChange(CultureLevelTypes eCultureLevel, CommerceTypes eCommerce) const
+{
+	if (eCultureLevel == NO_CULTURELEVEL)
+	{
+		return 0;
+	}
+
+	return m_paiCultureLevelCommerceChanges[eCultureLevel][eCommerce];
+}
+
+// Leoreth
+int CvSpecialistInfo::getCultureLevelGreatPeopleRateChange(CultureLevelTypes eCultureLevel) const
+{
+	if (eCultureLevel == NO_CULTURELEVEL)
+	{
+		return 0;
+	}
+
+	return m_piCultureLevelGreatPeopleRateChanges[eCultureLevel];
+}
+
 const TCHAR* CvSpecialistInfo::getTexture() const
 {
 	return m_szTexture;
@@ -970,6 +1025,138 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 
 	pXML->SetVariableListTagPair(&m_piFlavorValue, "Flavors", GC.getFlavorTypes(), GC.getNumFlavorTypes());
+
+	int iNumSibs, iIndex, iValue;
+	pXML->InitList(&m_piCultureLevelGreatPeopleRateChanges, GC.getNumCultureLevelInfos());
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "CultureLevelGreatPeopleRateChanges"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+				if (0 < iNumSibs)
+				{
+					for (int j = 0; j < iNumSibs; j++)
+					{
+						pXML->GetChildXmlValByName(szTextVal, "CultureLevelType");
+						iIndex = pXML->FindInInfoClass(szTextVal);
+
+						if (iIndex > -1)
+						{
+							pXML->GetChildXmlValByName(&iValue, "iGreatPeopleRateChange");
+							m_piCultureLevelGreatPeopleRateChanges[iIndex] = iValue;
+						}
+
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+						{
+							break;
+						}
+					}
+				}
+
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	
+	// initialize the boolean list to the correct size and all the booleans to false
+	FAssertMsg((GC.getNumCultureLevelInfos() > 0) && (NUM_YIELD_TYPES) > 0,"either the number of improvement infos is zero or less or the number of yield types is zero or less");
+	pXML->Init2DIntList(&m_paiCultureLevelYieldChanges, GC.getNumCultureLevelInfos(), NUM_YIELD_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CultureLevelYieldChanges"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+				if (0 < iNumSibs)
+				{
+					for (int j = 0; j < iNumSibs; j++)
+					{
+						pXML->GetChildXmlValByName(szTextVal, "CultureLevelType");
+						iIndex = pXML->FindInInfoClass(szTextVal);
+
+						if (iIndex > -1)
+						{
+							// delete the array since it will be reallocated
+							SAFE_DELETE_ARRAY(m_paiCultureLevelYieldChanges[iIndex]);
+							// if we can set the current xml node to it's next sibling
+							if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CultureLevelYields"))
+							{
+								// call the function that sets the yield change variable
+								pXML->SetYields(&m_paiCultureLevelYieldChanges[iIndex]);
+								gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+							}
+							else
+							{
+								pXML->InitList(&m_paiCultureLevelYieldChanges[iIndex], NUM_YIELD_TYPES);
+							}
+						}
+
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+						{
+							break;
+						}
+					}
+				}
+
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	
+	// initialize the boolean list to the correct size and all the booleans to false
+	FAssertMsg((GC.getNumCultureLevelInfos() > 0) && (NUM_COMMERCE_TYPES) > 0,"either the number of improvement infos is zero or less or the number of yield types is zero or less");
+	pXML->Init2DIntList(&m_paiCultureLevelCommerceChanges, GC.getNumCultureLevelInfos(), NUM_COMMERCE_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CultureLevelCommerceChanges"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+				if (0 < iNumSibs)
+				{
+					for (int j=0 ; j < iNumSibs; j++)
+					{
+						pXML->GetChildXmlValByName(szTextVal, "CultureLevelType");
+						iIndex = pXML->FindInInfoClass(szTextVal);
+
+						if (iIndex > -1)
+						{
+							// delete the array since it will be reallocated
+							SAFE_DELETE_ARRAY(m_paiCultureLevelCommerceChanges[iIndex]);
+							// if we can set the current xml node to it's next sibling
+							if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CultureLevelCommerces"))
+							{
+								// call the function that sets the yield change variable
+								pXML->SetYields(&m_paiCultureLevelCommerceChanges[iIndex]);
+								gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+							}
+							else
+							{
+								pXML->InitList(&m_paiCultureLevelCommerceChanges[iIndex], NUM_COMMERCE_TYPES);
+							}
+						}
+
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+						{
+							break;
+						}
+					}
+				}
+
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
 
 	return true;
 }
@@ -5500,7 +5687,6 @@ m_iFreeMilitaryUnitsPopulationPercent(0),
 m_iGoldPerUnit(0),
 m_iGoldPerMilitaryUnit(0),
 m_iHappyPerMilitaryUnit(0),
-m_iMilitaryHappinessLimit(0), //Leoreth
 m_iLargestCityHappiness(0),
 m_iSpecialistHappiness(0), // Leoreth
 m_iWarWearinessModifier(0),
@@ -5521,8 +5707,6 @@ m_iStateReligionUnitProductionModifier(0),
 m_iStateReligionBuildingProductionModifier(0),
 m_iStateReligionFreeExperience(0),
 m_iExpInBorderModifier(0),
-m_iSpecialistExtraYieldBaseThreshold(0), //Leoreth
-m_iSpecialistExtraYieldEraThreshold(0), //Leoreth
 m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
@@ -5532,10 +5716,6 @@ m_bNoCorporations(false),
 m_bNoForeignCorporations(false),
 m_bStateReligion(false),
 m_bNoNonStateReligionSpread(false),
-m_bStabilityVassalBonus(false), //Rhye 6th
-m_bStabilityFoundBonus(false), //Rhye 6th
-m_bStabilityConquestBonus(false), //Rhye 6th
-m_bStabilityCommerceBonus(false), //Rhye 6th
 m_bSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
 m_piYieldModifier(NULL),
@@ -5545,7 +5725,6 @@ m_piCommerceModifier(NULL),
 m_piCapitalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
 m_piSpecialistExtraYield(NULL), //Leoreth
-m_piSpecialistThresholdExtraYield(NULL), //Leoreth
 m_piHappinessExtraYield(NULL), // Leoreth
 m_piUnhappinessExtraYield(NULL), // Leoreth
 m_paiBuildingHappinessChanges(NULL),
@@ -5579,7 +5758,6 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piCapitalCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield); //Leoreth
-	SAFE_DELETE_ARRAY(m_piSpecialistThresholdExtraYield); //Leoreth
 	SAFE_DELETE_ARRAY(m_piHappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_piUnhappinessExtraYield); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
@@ -5752,12 +5930,6 @@ int CvCivicInfo::getHappyPerMilitaryUnit() const
 	return m_iHappyPerMilitaryUnit;
 }
 
-// Leoreth
-int CvCivicInfo::getMilitaryHappinessLimit() const
-{
-	return m_iMilitaryHappinessLimit;
-}
-
 int CvCivicInfo::getLargestCityHappiness() const
 {
 	return m_iLargestCityHappiness;
@@ -5865,18 +6037,6 @@ int CvCivicInfo::getExpInBorderModifier() const
 	return m_iExpInBorderModifier;
 }
 
-// Leoreth
-int CvCivicInfo::getSpecialistExtraYieldBaseThreshold() const
-{
-	return m_iSpecialistExtraYieldBaseThreshold;
-}
-
-// Leoreth
-int CvCivicInfo::getSpecialistExtraYieldEraThreshold() const
-{
-	return m_iSpecialistExtraYieldEraThreshold;
-}
-
 bool CvCivicInfo::isMilitaryFoodProduction() const
 {
 	return m_bMilitaryFoodProduction;
@@ -5921,25 +6081,6 @@ bool CvCivicInfo::isNoNonStateReligionSpread() const
 {
 	return m_bNoNonStateReligionSpread;
 }
-
-//Rhye - start 6th
-bool CvCivicInfo::isStabilityVassalBonus() const
-{
-	return m_bStabilityVassalBonus;
-}
-bool CvCivicInfo::isStabilityFoundBonus() const
-{
-	return m_bStabilityFoundBonus;
-}
-bool CvCivicInfo::isStabilityConquestBonus() const
-{
-	return m_bStabilityConquestBonus;
-}
-bool CvCivicInfo::isStabilityCommerceBonus() const
-{
-	return m_bStabilityCommerceBonus;
-}
-//Rhye - end 6th
 
 // Leoreth
 bool CvCivicInfo::isSlavery() const
@@ -6049,20 +6190,6 @@ int CvCivicInfo::getSpecialistExtraYield(int i) const
 int* CvCivicInfo::getSpecialistExtraYieldArray() const
 {
 	return m_piSpecialistExtraYield;
-}
-
-//Leoreth
-int CvCivicInfo::getSpecialistThresholdExtraYield(int i) const
-{
-	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_piSpecialistThresholdExtraYield ? m_piSpecialistThresholdExtraYield[i] : -1;
-}
-
-//Leoreth
-int* CvCivicInfo::getSpecialistThresholdExtraYieldArray() const
-{
-	return m_piSpecialistThresholdExtraYield;
 }
 
 // Leoreth
@@ -6204,7 +6331,6 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iGoldPerUnit);
 	stream->Read(&m_iGoldPerMilitaryUnit);
 	stream->Read(&m_iHappyPerMilitaryUnit);
-	stream->Read(&m_iMilitaryHappinessLimit); //Leoreth
 	stream->Read(&m_iLargestCityHappiness);
 	stream->Read(&m_iSpecialistHappiness); // Leoreth
 	stream->Read(&m_iWarWearinessModifier);
@@ -6225,8 +6351,6 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionBuildingProductionModifier);
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
-	stream->Read(&m_iSpecialistExtraYieldBaseThreshold); //Leoreth
-	stream->Read(&m_iSpecialistExtraYieldEraThreshold); //Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6237,10 +6361,6 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bNoForeignCorporations);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bNoNonStateReligionSpread);
-	stream->Read(&m_bStabilityVassalBonus); //Rhye 6th
-	stream->Read(&m_bStabilityFoundBonus); //Rhye 6th
-	stream->Read(&m_bStabilityConquestBonus); //Rhye 6th
-	stream->Read(&m_bStabilityCommerceBonus); //Rhye 6th
 	stream->Read(&m_bSlavery); // Leoreth
 	stream->Read(&m_bColonialSlavery); // Leoreth
 
@@ -6274,11 +6394,6 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield);
 	m_piSpecialistExtraYield = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piSpecialistExtraYield);
-
-	//Leoreth
-	SAFE_DELETE_ARRAY(m_piSpecialistThresholdExtraYield);
-	m_piSpecialistThresholdExtraYield = new int[NUM_YIELD_TYPES];
-	stream->Read(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield);
 
 	// Leoreth
 	SAFE_DELETE_ARRAY(m_piHappinessExtraYield);
@@ -6384,7 +6499,6 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iGoldPerUnit);
 	stream->Write(m_iGoldPerMilitaryUnit);
 	stream->Write(m_iHappyPerMilitaryUnit);
-	stream->Write(m_iMilitaryHappinessLimit); //Leoreth
 	stream->Write(m_iLargestCityHappiness);
 	stream->Write(m_iSpecialistHappiness); // Leoreth
 	stream->Write(m_iWarWearinessModifier);
@@ -6405,8 +6519,6 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iStateReligionBuildingProductionModifier);
 	stream->Write(m_iStateReligionFreeExperience);
 	stream->Write(m_iExpInBorderModifier);
-	stream->Write(m_iSpecialistExtraYieldBaseThreshold); //Leoreth
-	stream->Write(m_iSpecialistExtraYieldEraThreshold); //Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6417,10 +6529,6 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bNoForeignCorporations);
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bNoNonStateReligionSpread);
-	stream->Write(m_bStabilityVassalBonus); //Rhye 6th
-	stream->Write(m_bStabilityFoundBonus); //Rhye 6th
-	stream->Write(m_bStabilityConquestBonus); //Rhye 6th
-	stream->Write(m_bStabilityCommerceBonus); //Rhye 6th
 	stream->Write(m_bSlavery); // Leoreth
 	stream->Write(m_bColonialSlavery); // Leoreth
 
@@ -6433,7 +6541,6 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piCapitalCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistExtraYield); //Leoreth
-	stream->Write(NUM_YIELD_TYPES, m_piSpecialistThresholdExtraYield); //Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piHappinessExtraYield); // Leoreth
 	stream->Write(NUM_YIELD_TYPES, m_piUnhappinessExtraYield); // Leoreth
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
@@ -6504,7 +6611,6 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iGoldPerUnit, "iGoldPerUnit");
 	pXML->GetChildXmlValByName(&m_iGoldPerMilitaryUnit, "iGoldPerMilitaryUnit");
 	pXML->GetChildXmlValByName(&m_iHappyPerMilitaryUnit, "iHappyPerMilitaryUnit");
-	pXML->GetChildXmlValByName(&m_iMilitaryHappinessLimit, "iMilitaryHappinessLimit"); //Leoreth
 	pXML->GetChildXmlValByName(&m_bMilitaryFoodProduction, "bMilitaryFoodProduction");
 	pXML->GetChildXmlValByName(&m_iMaxConscript, "iMaxConscript");
 	pXML->GetChildXmlValByName(&m_bNoUnhealthyPopulation, "bNoUnhealthyPopulation");
@@ -6527,10 +6633,6 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCivicPercentAnger, "iCivicPercentAnger");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
 	pXML->GetChildXmlValByName(&m_bNoNonStateReligionSpread, "bNoNonStateReligionSpread");
-	pXML->GetChildXmlValByName(&m_bStabilityVassalBonus, "bStabilityVassalBonus"); //Rhye 6th
-	pXML->GetChildXmlValByName(&m_bStabilityFoundBonus, "bStabilityFoundBonus"); //Rhye 6th
-	pXML->GetChildXmlValByName(&m_bStabilityConquestBonus, "bStabilityConquestBonus"); //Rhye 6th
-	pXML->GetChildXmlValByName(&m_bStabilityCommerceBonus, "bStabilityCommerceBonus"); //Rhye 6th
 	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
@@ -6609,19 +6711,6 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_piSpecialistExtraYield, NUM_YIELD_TYPES);
-	}
-
-	//Leoreth
-	pXML->GetChildXmlValByName(&m_iSpecialistExtraYieldBaseThreshold, "iSpecialistExtraYieldBaseThreshold");
-	pXML->GetChildXmlValByName(&m_iSpecialistExtraYieldEraThreshold, "iSpecialistExtraYieldEraThreshold");
-	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "SpecialistThresholdExtraYields"))
-	{
-		pXML->SetYields(&m_piSpecialistThresholdExtraYield);
-		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
-	}
-	else
-	{
-		pXML->InitList(&m_piSpecialistThresholdExtraYield, NUM_YIELD_TYPES);
 	}
 
 	// Leoreth

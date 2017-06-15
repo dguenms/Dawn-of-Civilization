@@ -259,6 +259,10 @@ public:
 	int getCommerceChange(int i) const;		// Exposed to Python
 	int getFlavorValue(int i) const;		// Exposed to Python
 
+	int getCultureLevelYieldChange(CultureLevelTypes eCultureLevel, YieldTypes eYield) const;
+	int getCultureLevelCommerceChange(CultureLevelTypes eCultureLevel, CommerceTypes eCommerce) const;
+	int getCultureLevelGreatPeopleRateChange(CultureLevelTypes eCultureLevel) const;
+
 	const TCHAR* getTexture() const;				// Exposed to Python
 	void setTexture(const TCHAR* szVal);
 
@@ -283,6 +287,10 @@ protected:
 	int* m_piYieldChange;
 	int* m_piCommerceChange;
 	int* m_piFlavorValue;
+	int* m_piCultureLevelGreatPeopleRateChanges;
+
+	int** m_paiCultureLevelYieldChanges;
+	int** m_paiCultureLevelCommerceChanges;
 
 };
 
@@ -1355,12 +1363,12 @@ public:
 	int getDistanceMaintenanceModifier() const;				// Exposed to Python
 	int getNumCitiesMaintenanceModifier() const;				// Exposed to Python
 	int getCorporationMaintenanceModifier() const;				// Exposed to Python
-	int getCorporationCommerceModifier() const; //Leoreth
+	int getCorporationCommerceModifier() const; // Leoreth
 	int getCorporationUnhappinessModifier() const; // Leoreth
 	int getWonderProductionModifier() const; // Leoreth
-	int getProcessModifier() const; //Leoreth
+	int getProcessModifier() const; // Leoreth
 	int getExtraHealth() const;						// Exposed to Python
-	int getPollutionModifier() const; //Leoreth
+	int getPollutionModifier() const; // Leoreth
 	int getFreeExperience() const;				// Exposed to Python
 	int getWorkerProductionModifier() const; // Leoreth
 	int getWorkerSpeedModifier() const;				// Exposed to Python
@@ -1373,12 +1381,11 @@ public:
 	int getGoldPerUnit() const;				// Exposed to Python
 	int getGoldPerMilitaryUnit() const;				// Exposed to Python
 	int getHappyPerMilitaryUnit() const;				// Exposed to Python
-	int getMilitaryHappinessLimit() const; //Leoreth
 	int getLargestCityHappiness() const;					// Exposed to Python
 	int getSpecialistHappiness() const; // Leoreth
 	int getWarWearinessModifier() const;					// Exposed to Python
 	int getFreeSpecialist() const;				// Exposed to Python
-	int getCoreFreeSpecialist() const; //Leoreth
+	int getCoreFreeSpecialist() const; // Leoreth
 	int getTradeRoutes() const;				// Exposed to Python
 	int getCapitalTradeModifier() const; // Leoreth
 	int getDefensivePactTradeModifier() const; // Leoreth
@@ -1395,9 +1402,6 @@ public:
 	int getStateReligionFreeExperience() const;								// Exposed to Python
 	int getExpInBorderModifier() const;				// Exposed to Python
 
-	int getSpecialistExtraYieldBaseThreshold() const; //Leoreth
-	int getSpecialistExtraYieldEraThreshold() const; //Leoreth
-
 	bool isMilitaryFoodProduction() const;				// Exposed to Python
 	bool isNoUnhealthyPopulation() const;				// Exposed to Python
 	bool isBuildingOnlyHealthy() const;				// Exposed to Python
@@ -1407,10 +1411,6 @@ public:
 	bool isNoForeignCorporations() const;				// Exposed to Python
 	bool isStateReligion() const;				// Exposed to Python
 	bool isNoNonStateReligionSpread() const;				// Exposed to Python
-	bool isStabilityVassalBonus() const;				//Rhye 6th
-	bool isStabilityFoundBonus() const;				//Rhye 6th
-	bool isStabilityConquestBonus() const;				//Rhye 6th
-	bool isStabilityCommerceBonus() const;				//Rhye 6th
 	bool isSlavery() const; // Leoreth
 	bool isColonialSlavery() const; // Leoreth
 
@@ -1432,10 +1432,8 @@ public:
 	int* getCapitalCommerceModifierArray() const;
 	int getSpecialistExtraCommerce(int i) const;				// Exposed to Python
 	int* getSpecialistExtraCommerceArray() const;
-	int getSpecialistExtraYield(int i) const; //Leoreth
-	int* getSpecialistExtraYieldArray() const; //Leoreth
-	int getSpecialistThresholdExtraYield(int i) const; //Leoreth
-	int* getSpecialistThresholdExtraYieldArray() const; //Leoreth
+	int getSpecialistExtraYield(int i) const; // Leoreth
+	int* getSpecialistExtraYieldArray() const; // Leoreth
 	int getHappinessExtraYield(int i) const; // Leoreth
 	int* getHappinessExtraYieldArray() const; // Leoreth
 	int getUnhappinessExtraYield(int i) const; // Leoreth
@@ -1473,10 +1471,10 @@ protected:
 	int m_iDistanceMaintenanceModifier;
 	int m_iNumCitiesMaintenanceModifier;
 	int m_iCorporationMaintenanceModifier;
-	int m_iCorporationCommerceModifier; //Leoreth
+	int m_iCorporationCommerceModifier; // Leoreth
 	int m_iCorporationUnhappinessModifier; // Leoreth
 	int m_iWonderProductionModifier; // Leoreth
-	int m_iProcessModifier; //Leoreth
+	int m_iProcessModifier; // Leoreth
 	int m_iExtraHealth;
 	int m_iPollutionModifier; //Leoreth
 	int m_iFreeExperience;
@@ -1491,12 +1489,11 @@ protected:
 	int m_iGoldPerUnit;
 	int m_iGoldPerMilitaryUnit;
 	int m_iHappyPerMilitaryUnit;
-	int m_iMilitaryHappinessLimit; //Leoreth
 	int m_iLargestCityHappiness;
 	int m_iSpecialistHappiness; // Leoreth
 	int m_iWarWearinessModifier;
 	int m_iFreeSpecialist;
-	int m_iCoreFreeSpecialist; //Leoreth
+	int m_iCoreFreeSpecialist; // Leoreth
 	int m_iTradeRoutes;
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
@@ -1513,9 +1510,6 @@ protected:
 	int m_iStateReligionFreeExperience;
 	int m_iExpInBorderModifier;
 
-	int m_iSpecialistExtraYieldBaseThreshold; //Leoreth
-	int m_iSpecialistExtraYieldEraThreshold; //Leoreth
-
 	bool m_bMilitaryFoodProduction;
 	bool m_bNoUnhealthyPopulation;
 	bool m_bBuildingOnlyHealthy;
@@ -1525,10 +1519,6 @@ protected:
 	bool m_bNoForeignCorporations;
 	bool m_bStateReligion;
 	bool m_bNoNonStateReligionSpread;
-	bool m_bStabilityVassalBonus; //Rhye 6th
-	bool m_bStabilityFoundBonus; //Rhye 6th
-	bool m_bStabilityConquestBonus; //Rhye 6th
-	bool m_bStabilityCommerceBonus; //Rhye 6th
 	bool m_bSlavery; // Leoreth
 	bool m_bColonialSlavery; // Leoreth
 
@@ -1542,13 +1532,12 @@ protected:
 	int* m_piCommerceModifier;
 	int* m_piCapitalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
-	int* m_piSpecialistExtraYield; //Leoreth
-	int* m_piSpecialistThresholdExtraYield; //Leoreth
+	int* m_piSpecialistExtraYield; // Leoreth
 	int* m_piHappinessExtraYield; // Leoreth
 	int* m_piUnhappinessExtraYield; // Leoreth
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
-	int* m_paiBuildingProductionModifiers; //Leoreth
+	int* m_paiBuildingProductionModifiers; // Leoreth
 	int* m_paiFeatureHappinessChanges;
 
 	int* m_paiDomainProductionModifiers; // Leoreth

@@ -98,7 +98,6 @@ CvPlayer::CvPlayer()
 	m_paeCivics = NULL;
 
 	m_ppaaiSpecialistExtraYield = NULL;
-	m_ppaaiSpecialistThresholdExtraYield = NULL; //Leoreth
 	m_ppaaiImprovementYieldChange = NULL;
 
 	//Rhye (jdog) - start ---------------------
@@ -365,16 +364,6 @@ void CvPlayer::uninit()
 		SAFE_DELETE_ARRAY(m_ppaaiSpecialistExtraYield);
 	}
 
-	//Leoreth
-	if (m_ppaaiSpecialistThresholdExtraYield != NULL)
-	{
-		for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
-		{
-			SAFE_DELETE_ARRAY(m_ppaaiSpecialistThresholdExtraYield[iI]);
-		}
-		SAFE_DELETE_ARRAY(m_ppaaiSpecialistThresholdExtraYield);
-	}
-
 	if (m_ppaaiImprovementYieldChange != NULL)
 	{
 		for (int iI = 0; iI < GC.getNumImprovementInfos(); iI++)
@@ -467,7 +456,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iExtraUnitCost = 0;
 	m_iNumMilitaryUnits = 0;
 	m_iHappyPerMilitaryUnit = 0;
-	m_iMilitaryHappinessLimit = 0; //Leoreth
 	m_iMilitaryFoodProductionCount = 0;
 	m_iConscriptCount = 0;
 	m_iMaxConscript = 0;
@@ -521,8 +509,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iStateReligionUnitProductionModifier = 0;
 	m_iStateReligionBuildingProductionModifier = 0;
 	m_iStateReligionFreeExperience = 0;
-	m_iSpecialistExtraYieldBaseThreshold = 0; //Leoreth
-	m_iSpecialistExtraYieldEraThreshold = 0; //Leoreth
 	m_iCapitalCityID = FFreeList::INVALID_INDEX;
 	m_iCitiesLost = 0;
 	m_iWinsVsBarbs = 0;
@@ -811,19 +797,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 			{
 				m_ppaaiSpecialistExtraYield[iI][iJ] = 0;
-			}
-		}
-
-		//Leoreth
-		FAssertMsg(0 < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos() is not greater than zero but it is used to allocate memory in CvPlayer::reset");
-		FAssertMsg(m_ppaaiSpecialistThresholdExtraYield==NULL, "about to leak memory, CvPlayer::m_ppaaiSpecialistExtraYield");
-		m_ppaaiSpecialistThresholdExtraYield = new int*[GC.getNumSpecialistInfos()];
-		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
-		{
-			m_ppaaiSpecialistThresholdExtraYield[iI] = new int[NUM_YIELD_TYPES];
-			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
-			{
-				m_ppaaiSpecialistThresholdExtraYield[iI][iJ] = 0;
 			}
 		}
 
@@ -8793,13 +8766,7 @@ int CvPlayer::greatPeopleModifier() const
 
 int CvPlayer::specialistYield(SpecialistTypes eSpecialist, YieldTypes eYield) const
 {
-	//Leoreth: Indian UP (+1 food for artists, scientists, merchants, priests) -- deprecated
-	/*if (getID() == (PlayerTypes)INDIA && (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_PRIEST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_ARTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SCIENTIST") || eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_MERCHANT")) && eYield == (YieldTypes)0) // food
-	{
-		return (GC.getSpecialistInfo(eSpecialist).getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield)+1);
-	}else{*/
-		return (GC.getSpecialistInfo(eSpecialist).getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield));
-	//}
+	return (GC.getSpecialistInfo(eSpecialist).getYieldChange(eYield) + getSpecialistExtraYield(eSpecialist, eYield));
 }
 
 
@@ -9764,24 +9731,6 @@ void CvPlayer::changeHappyPerMilitaryUnit(int iChange)
 	if (iChange != 0)
 	{
 		m_iHappyPerMilitaryUnit = (m_iHappyPerMilitaryUnit + iChange);
-
-		AI_makeAssignWorkDirty();
-	}
-}
-
-
-// Leoreth
-int CvPlayer::getMilitaryHappinessLimit() const
-{
-	return m_iMilitaryHappinessLimit;
-}
-
-
-void CvPlayer::changeMilitaryHappinessLimit(int iChange)
-{
-	if (iChange != 0)
-	{
-		m_iMilitaryHappinessLimit = (m_iMilitaryHappinessLimit + iChange);
 
 		AI_makeAssignWorkDirty();
 	}
@@ -10862,30 +10811,6 @@ int CvPlayer::getStateReligionFreeExperience() const
 void CvPlayer::changeStateReligionFreeExperience(int iChange)
 {
 	m_iStateReligionFreeExperience = (m_iStateReligionFreeExperience + iChange);
-}
-
-//Leoreth
-int CvPlayer::getSpecialistExtraYieldBaseThreshold() const
-{
-	return m_iSpecialistExtraYieldBaseThreshold;
-}
-
-//Leoreth
-void CvPlayer::changeSpecialistExtraYieldBaseThreshold(int iChange)
-{
-	m_iSpecialistExtraYieldBaseThreshold = (m_iSpecialistExtraYieldBaseThreshold + iChange);
-}
-
-//Leoreth
-int CvPlayer::getSpecialistExtraYieldEraThreshold() const
-{
-	return m_iSpecialistExtraYieldEraThreshold;
-}
-
-//Leoreth
-void CvPlayer::changeSpecialistExtraYieldEraThreshold(int iChange)
-{
-	m_iSpecialistExtraYieldEraThreshold = (m_iSpecialistExtraYieldEraThreshold + iChange);
 }
 
 CvCity* CvPlayer::getCapitalCity() const
@@ -13606,35 +13531,6 @@ void CvPlayer::changeSpecialistExtraYield(SpecialistTypes eIndex1, YieldTypes eI
 	{
 		m_ppaaiSpecialistExtraYield[eIndex1][eIndex2] = (m_ppaaiSpecialistExtraYield[eIndex1][eIndex2] + iChange);
 		FAssert(getSpecialistExtraYield(eIndex1, eIndex2) >= 0);
-
-		updateExtraSpecialistYield();
-
-		AI_makeAssignWorkDirty();
-	}
-}
-
-//Leoreth
-int CvPlayer::getSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2) const
-{
-	FAssertMsg(eIndex1 >= 0, "eIndex1 expected to be >= 0");
-	FAssertMsg(eIndex1 < GC.getNumSpecialistInfos(), "eIndex1 expected to be < GC.getNumSpecialistInfos()");
-	FAssertMsg(eIndex2 >= 0, "eIndex2 expected to be >= 0");
-	FAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 expected to be < NUM_YIELD_TYPES");
-	return m_ppaaiSpecialistThresholdExtraYield[eIndex1][eIndex2];
-}
-
-//Leoreth
-void CvPlayer::changeSpecialistThresholdExtraYield(SpecialistTypes eIndex1, YieldTypes eIndex2, int iChange)
-{
-	FAssertMsg(eIndex1 >= 0, "eIndex1 expected to be >= 0");
-	FAssertMsg(eIndex1 < GC.getNumSpecialistInfos(), "eIndex1 expected to be < GC.getNumSpecialistInfos()");
-	FAssertMsg(eIndex2 >= 0, "eIndex2 expected to be >= 0");
-	FAssertMsg(eIndex2 < NUM_YIELD_TYPES, "eIndex2 expected to be < NUM_YIELD_TYPES");
-
-	if (iChange != 0)
-	{
-		m_ppaaiSpecialistThresholdExtraYield[eIndex1][eIndex2] = (m_ppaaiSpecialistThresholdExtraYield[eIndex1][eIndex2] + iChange);
-		FAssert(getSpecialistThresholdExtraYield(eIndex1, eIndex2) >= 0);
 
 		updateExtraSpecialistYield();
 
@@ -17787,7 +17683,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeGoldPerUnit(GC.getCivicInfo(eCivic).getGoldPerUnit() * iChange);
 	changeGoldPerMilitaryUnit(GC.getCivicInfo(eCivic).getGoldPerMilitaryUnit() * iChange);
 	changeHappyPerMilitaryUnit(GC.getCivicInfo(eCivic).getHappyPerMilitaryUnit() * iChange);
-	changeMilitaryHappinessLimit(GC.getCivicInfo(eCivic).getMilitaryHappinessLimit() * (getID() == THAILAND ? 2 * iChange : iChange)); //Leoreth: includes Thai UP
 	changeMilitaryFoodProductionCount((GC.getCivicInfo(eCivic).isMilitaryFoodProduction()) ? iChange : 0);
 	changeMaxConscript(getWorldSizeMaxConscript(eCivic) * iChange);
 	changeNoUnhealthyPopulationCount((GC.getCivicInfo(eCivic).isNoUnhealthyPopulation()) ? iChange : 0);
@@ -17817,8 +17712,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeStateReligionBuildingProductionModifier(GC.getCivicInfo(eCivic).getStateReligionBuildingProductionModifier() * iChange);
 	changeStateReligionFreeExperience(GC.getCivicInfo(eCivic).getStateReligionFreeExperience() * iChange);
 	changeExpInBorderModifier(GC.getCivicInfo(eCivic).getExpInBorderModifier() * iChange);
-	changeSpecialistExtraYieldBaseThreshold(GC.getCivicInfo(eCivic).getSpecialistExtraYieldBaseThreshold() * iChange); //Leoreth
-	changeSpecialistExtraYieldEraThreshold(GC.getCivicInfo(eCivic).getSpecialistExtraYieldEraThreshold() * iChange); //Leoreth
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
@@ -17829,8 +17722,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 		changeUnhappinessExtraYield((YieldTypes)iI, GC.getCivicInfo(eCivic).getUnhappinessExtraYield(iI) * iChange);
 		for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
 		{
-			changeSpecialistExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange)); //Leoreth
-			changeSpecialistThresholdExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistThresholdExtraYield(iI) * iChange)); //Leoreth
+			changeSpecialistExtraYield(((SpecialistTypes)iJ), ((YieldTypes)iI), (GC.getCivicInfo(eCivic).getSpecialistExtraYield(iI) * iChange)); // Leoreth
 		}
 	}
 
@@ -18163,7 +18055,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iExtraUnitCost);
 	pStream->Read(&m_iNumMilitaryUnits);
 	pStream->Read(&m_iHappyPerMilitaryUnit);
-	pStream->Read(&m_iMilitaryHappinessLimit); //Leoreth
 	pStream->Read(&m_iMilitaryFoodProductionCount);
 	pStream->Read(&m_iConscriptCount);
 	pStream->Read(&m_iMaxConscript);
@@ -18217,8 +18108,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iStateReligionUnitProductionModifier);
 	pStream->Read(&m_iStateReligionBuildingProductionModifier);
 	pStream->Read(&m_iStateReligionFreeExperience);
-	pStream->Read(&m_iSpecialistExtraYieldBaseThreshold); //Leoreth
-	pStream->Read(&m_iSpecialistExtraYieldEraThreshold); //Leoreth
 	pStream->Read(&m_iCapitalCityID);
 	pStream->Read(&m_iCitiesLost);
 	pStream->Read(&m_iWinsVsBarbs);
@@ -18338,7 +18227,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	for (iI=0;iI<GC.getNumSpecialistInfos();iI++)
 	{
 		pStream->Read(NUM_YIELD_TYPES, m_ppaaiSpecialistExtraYield[iI]);
-		pStream->Read(NUM_YIELD_TYPES, m_ppaaiSpecialistThresholdExtraYield[iI]); //Leoreth
 	}
 
 	for (iI=0;iI<GC.getNumImprovementInfos();iI++)
@@ -18698,12 +18586,11 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iExtraUnitCost);
 	pStream->Write(m_iNumMilitaryUnits);
 	pStream->Write(m_iHappyPerMilitaryUnit);
-	pStream->Write(m_iMilitaryHappinessLimit); //Leoreth
 	pStream->Write(m_iMilitaryFoodProductionCount);
 	pStream->Write(m_iConscriptCount);
 	pStream->Write(m_iMaxConscript);
 	pStream->Write(m_iHighestUnitLevel);
-	pStream->Write(m_iHighestNavalUnitLevel); //Leoreth
+	pStream->Write(m_iHighestNavalUnitLevel); // Leoreth
 	pStream->Write(m_iOverflowResearch);
 	pStream->Write(m_iNoUnhealthyPopulationCount);
 	pStream->Write(m_iExpInBorderModifier);
@@ -18711,14 +18598,14 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iDistanceMaintenanceModifier);
 	pStream->Write(m_iNumCitiesMaintenanceModifier);
 	pStream->Write(m_iCorporationMaintenanceModifier);
-	pStream->Write(m_iCorporationCommerceModifier); //Leoreth
+	pStream->Write(m_iCorporationCommerceModifier); // Leoreth
 	pStream->Write(m_iCorporationUnhappinessModifier); // Leoreth
-	pStream->Write(m_iProcessModifier); //Leoreth
+	pStream->Write(m_iProcessModifier); // Leoreth
 	pStream->Write(m_iTotalMaintenance);
 	pStream->Write(m_iUpkeepModifier);
 	pStream->Write(m_iLevelExperienceModifier);
 	pStream->Write(m_iExtraHealth);
-	pStream->Write(m_iPollutionModifier); //Leoreth
+	pStream->Write(m_iPollutionModifier); // Leoreth
 	pStream->Write(m_iBuildingGoodHealth);
 	pStream->Write(m_iBuildingBadHealth);
 	pStream->Write(m_iExtraHappiness);
@@ -18752,8 +18639,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iStateReligionUnitProductionModifier);
 	pStream->Write(m_iStateReligionBuildingProductionModifier);
 	pStream->Write(m_iStateReligionFreeExperience);
-	pStream->Write(m_iSpecialistExtraYieldBaseThreshold); //Leoreth
-	pStream->Write(m_iSpecialistExtraYieldEraThreshold); //Leoreth
 	pStream->Write(m_iCapitalCityID);
 	pStream->Write(m_iCitiesLost);
 	pStream->Write(m_iWinsVsBarbs);
@@ -18873,7 +18758,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	for (iI=0;iI<GC.getNumSpecialistInfos();iI++)
 	{
 		pStream->Write(NUM_YIELD_TYPES, m_ppaaiSpecialistExtraYield[iI]);
-		pStream->Write(NUM_YIELD_TYPES, m_ppaaiSpecialistThresholdExtraYield[iI]); //Leoreth
 	}
 
 	for (iI=0;iI<GC.getNumImprovementInfos();iI++)

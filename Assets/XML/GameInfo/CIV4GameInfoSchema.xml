@@ -862,7 +862,6 @@
 		<element type="iGoldPerUnit" minOccurs="0"/>
 		<element type="iGoldPerMilitaryUnit" minOccurs="0"/>
 		<element type="iHappyPerMilitaryUnit" minOccurs="0"/>
-		<element type="iMilitaryHappinessLimit" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bMilitaryFoodProduction" minOccurs="0"/>
 		<element type="iMaxConscript" minOccurs="0"/>
 		<element type="bSlavery" minOccurs="0"/> <!-- Leoreth -->
@@ -893,10 +892,6 @@
 		<element type="iStateReligionUnitProductionModifier" minOccurs="0"/>
 		<element type="iStateReligionBuildingProductionModifier" minOccurs="0"/>
 		<element type="iStateReligionFreeExperience" minOccurs="0"/>
-		<element type="bStabilityVassalBonus" minOccurs="0"/>
-		<element type="bStabilityFoundBonus" minOccurs="0"/>
-		<element type="bStabilityConquestBonus" minOccurs="0"/>
-		<element type="bStabilityCommerceBonus" minOccurs="0"/>
 		<element type="YieldModifiers" minOccurs="0"/>
 		<element type="CapitalYieldModifiers" minOccurs="0"/>
 		<element type="TradeYieldModifiers" minOccurs="0"/>
@@ -904,9 +899,6 @@
 		<element type="CapitalCommerceModifiers" minOccurs="0"/>
 		<element type="SpecialistExtraCommerces" minOccurs="0"/>
 		<element type="SpecialistExtraYields" minOccurs="0"/> <!-- Leoreth -->
-		<element type="iSpecialistExtraYieldBaseThreshold" minOccurs="0"/> <!-- Leoreth -->
-		<element type="iSpecialistExtraYieldEraThreshold" minOccurs="0"/> <!-- Leoreth -->
-		<element type="SpecialistThresholdExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="HappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="UnhappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Hurrys" minOccurs="0"/>
@@ -1069,6 +1061,34 @@
 	<ElementType name="bVisible" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iGreatPeopleRateChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="CultureLevelType" content="textOnly"/>
+	<ElementType name="CultureLevelYields" content="eltOnly">
+		<element type="iYield" minOccurs="0"/>
+	</ElementType>
+	<ElementType name="CultureLevelYieldChange" content="eltOnly">
+		<element type="CultureLevelType"/>
+		<element type="CultureLevelYields"/>
+	</ElementType>
+	<ElementType name="CultureLevelYieldChanges" content="eltOnly">
+		<element type="CultureLevelYieldChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="CultureLevelCommerces" content="eltOnly">
+		<element type="iCommerce" minOccurs="0"/>
+	</ElementType>
+	<ElementType name="CultureLevelCommerceChange" content="eltOnly">
+		<element type="CultureLevelType"/>
+		<element type="CultureLevelCommerces"/>
+	</ElementType>
+	<ElementType name="CultureLevelCommerceChanges" content="eltOnly">
+		<element type="CultureLevelCommerceChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="CultureLevelGreatPeopleRateChange" content="eltOnly">
+		<element type="CultureLevelType"/>
+		<element type="iGreatPeopleRateChange"/>
+	</ElementType>
+	<ElementType name="CultureLevelGreatPeopleRateChanges" content="eltOnly">
+		<element type="CultureLevelGreatPeopleRateChange" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="SpecialistInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -1081,6 +1101,9 @@
 		<element type="iGreatPeopleRateChange"/>
 		<element type="Yields"/>
 		<element type="Commerces"/>
+		<element type="CultureLevelYieldChanges" minOccurs="0"/> <!-- Leoreth -->
+		<element type="CultureLevelCommerceChanges" minOccurs="0"/> <!-- Leoreth -->
+		<element type="CultureLevelGreatPeopleRateChanges" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iExperience"/>
 		<element type="iHappiness" minOccurs="0"/>
 		<element type="Flavors"/>

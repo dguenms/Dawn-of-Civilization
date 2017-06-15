@@ -11007,46 +11007,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}*/
 	}
 
-	// Leoreth: specialist threshold extra yield
-	if (getSpecialistExtraYieldBaseThreshold() > 0 || getSpecialistExtraYieldEraThreshold() > 0)
-	{
-		int iLoop;
-		CvCity* pLoopCity;
-		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-		{
-			int iPopulation = pLoopCity->getPopulation();
-			if (pLoopCity->isCoastal(20))
-			{
-				iPopulation -= 3;
-			}
-
-			if (iPopulation <= getSpecialistExtraYieldBaseThreshold() + getSpecialistExtraYieldEraThreshold() * getCurrentEra())
-			{
-				for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
-				{
-					int iMultiplier = 3;
-
-					if (iI == YIELD_PRODUCTION)
-						iMultiplier = (AI_avoidScience()? 6 : 2);
-					else if (iI == YIELD_COMMERCE)
-						iMultiplier = (AI_avoidScience()? 1 : 2);
-
-					iValue += pLoopCity->getSpecialistPopulation() * iMultiplier;
-				}
-			}
-		}
-
-		if (getID() == MALI || getID() == EGYPT)
-		{
-			iValue -= 40;
-		}
-
-		if (getID() == GREECE || getID() == PHOENICIA || getID() == KOREA || getID() == ITALY)
-		{
-			iValue += 80;
-		}
-	}
-
 	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * /*3*/ 2) * /*6*/ 8) + (getNumCities() * 2));
 	iValue += -((kCivic.isNoForeignTrade()) ? (iConnectedForeignCities * /*3*/ 4) : 0);
 	iValue -= kCivic.isNoForeignTradeModifier() ? (iConnectedForeignCities * 3 / 2) : 0; // Leoreth
@@ -11366,132 +11326,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += (kCivic.getDomainProductionModifier(iI) * getNumCities() * iWarmongerPercent) / (iDomainDivisor * (bWarPlan ? 300 : 500));
 	}
 
-	//Rhye - start 6th
-	int iEraModifier = getCurrentEra();
-	if (GC.getCivicInfo(eCivic).isStabilityVassalBonus()) {
-		int vassalCounter = 0;
-		for (iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
-			if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isVassal(getTeam()))
-				vassalCounter++;
-		iValue += vassalCounter*100;
-	}
-	if (GC.getCivicInfo(eCivic).isStabilityFoundBonus()) {
-		//Rhye - start switch
-		if (iEraModifier < 5) { //from Astronomy to the end of Industrial
-			switch (getID())
-			{
-			case PERSIA:
-				iValue += 60;
-				break;
-			case JAPAN:
-				iValue += 60;
-				break;
-			case ARABIA:
-				iValue += 80;
-				break;
-			case SPAIN:
-				iValue += 180;
-				break;
-			case FRANCE:
-				iValue += 180;
-				break;
-			case ENGLAND:
-				iValue += 180;
-				break;
-			case RUSSIA:
-				iValue += 80;
-				break;
-			case NETHERLANDS:
-				iValue += 190;
-				break;
-			case PORTUGAL:
-				iValue += 190;
-				break;
-			case MONGOLIA:
-				iValue += 80;
-				break;
-			case AMERICA:
-				iValue += 60;
-				break;
-			default:
-				break;
-			}
-			//if (iValue > 0) {
-			//	if (!verifySettlersHalt(300)) //time consuming?
-			//		iValue -= 60;
-			//}
-		}
-
-	}
-	if (GC.getCivicInfo(eCivic).isStabilityConquestBonus()) {
-		int iNumEnemies = 0;
-		for (int iI = 0; iI < NUM_MAJOR_PLAYERS; iI++)
-		{
-			if (iI != getID())
-			{
-				if (GET_TEAM((TeamTypes)iI).isAlive())
-				{
-					if (GET_TEAM((TeamTypes)iI).isAtWar(getTeam()))
-					{
-						iNumEnemies++;
-					}
-				}
-			}
-		}
-		iValue += iNumEnemies*20;
-		if (iNumEnemies > 0)
-			iValue += 20;
-		if (bWarPlan)
-		{
-			iValue += getNumMilitaryUnits();
-		}
-	}
-	if (GC.getCivicInfo(eCivic).isStabilityCommerceBonus()) {
-		/*int iImports = calculateTotalImports(YIELD_COMMERCE);  //time consuming?
-		int iExports = calculateTotalExports(YIELD_COMMERCE);  //time consuming?
-		int iTotal = (iImports+iExports)/(2*iEraModifier+1) -5;
-		if (iTotal < 0)
-			iValue += - ((iTotal-2) * 10);
-		else
-			iValue += 15;*/
-		iValue += 40;
-		switch (getID())
-		{
-			case JAPAN:
-				iValue += 50;
-				break;
-			case CHINA:
-				iValue += 20;
-				break;
-			case INDIA:
-				iValue += 20;
-				break;
-			case INDONESIA:
-				iValue += 20;
-				break;
-			case ENGLAND:
-				iValue += 40;
-				break;
-			case KHMER:
-				iValue += 20;
-				break;
-		}
-	}
-	//Rhye - end 6th
-
-	//Leoreth: Pantheon civic
-	/*if (eCivic == CIVIC_PANTHEON)
-	{
-		if (eBestReligion == NO_RELIGION && GET_PLAYER(getID()).getCurrentEra() < ERA_MEDIEVAL && getID() != MAYA)
-		{
-			iValue += GC.getLeaderHeadInfo(GET_PLAYER(getID()).getLeader()).getWonderConstructRand() * 2;
-		}
-		else
-		{
-			return 0;
-		}
-	}*/
-
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)
 	{
 		if (!kCivic.isStateReligion() || iHighestReligionCount > 0)
@@ -11503,56 +11337,11 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}
 	}
 
-	// Leoreth - preferred civics (by era and civ), see CvRhyes
-	/*if (GET_PLAYER((PlayerTypes)getID()).getCivicPreference(kCivic.getCivicOptionType()) == eCivic)
-	{
-	    iValue *= 6;
-	    iValue /= 5;
-	}*/
-
-	// Leoreth - prefer Pantheon if more than half of their cities has no religion
-	/*if (eCivic == CIVIC_PANTHEON)  // Pantheon
-	{
-        if (getID() == EGYPT || getID() == BABYLONIA || getID() == GREECE || getID() == PHOENICIA || getID() == ROME)
-		{
-            int iCityCounter = 0;
-            for (int iI = 0; iI < GET_PLAYER((PlayerTypes)getID()).getNumCities(); iI++)
-			{
-                for (int iJ = 0; iJ < 8; iJ++)
-				{
-                    if (GET_PLAYER((PlayerTypes)getID()).getCity(iI))
-					{
-						if (GET_PLAYER((PlayerTypes)getID()).getCity(iI)->isHasReligion((ReligionTypes)iJ))
-						{
-							iCityCounter++;
-							break;
-						}
-					}
-				}
-            }
-
-            if (2 * iCityCounter >= GET_PLAYER((PlayerTypes)getID()).getNumCities())
-			{
-                iValue /= 2;
-			}
-        }
-	}*/
-
 	// Leoreth: prefer deification if no state religion
 	if (eCivic == CIVIC_DEIFICATION && getLastStateReligion() == NO_RELIGION)
 	{
 		iValue *= 2;
 	}
-
-	// Leoreth - prefer Vassalage for medieval Eurocivs
-	/*if (eCivic == (CivicTypes)VASSALAGE){
-	    if (getID() == SPAIN || getID() == FRANCE || getID() == ENGLAND || getID() == HOLY_ROME || getID() == VIKINGS || getID() == PORTUGAL || getID() == RUSSIA){
-	        if (GET_PLAYER((PlayerTypes)getID()).getCurrentEra() == 2){
-	            iValue *= 2;
-	        }
-	    }
-	}*/
-
 
 	if (AI_isDoStrategy(AI_STRATEGY_CULTURE2) && (GC.getCivicInfo(eCivic).isNoNonStateReligionSpread()))
 	{

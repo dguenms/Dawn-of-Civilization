@@ -698,8 +698,6 @@ public:
 
 	int getExtraSpecialistYield(YieldTypes eIndex) const;																				// Exposed to Python
 	int getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpecialist) const;					// Exposed to Python
-	int getExtraSpecialistThresholdYield(YieldTypes eIndex, SpecialistTypes eSpecialist) const;
-	bool isSpecialistExtraYieldThreshold() const;
 	void updateExtraSpecialistYield(YieldTypes eYield);
 	void updateExtraSpecialistYield();
 
@@ -1084,6 +1082,9 @@ public:
 	int getBuildingUnignorableBombardDefense() const;
 	void changeBuildingUnignorableBombardDefense(int iChange);
 	int getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuilding) const;
+
+	int calculateCultureSpecialistCommerce(CommerceTypes eCommerce) const;
+	int calculateCultureSpecialistGreatPeopleRate() const;
 
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
