@@ -418,6 +418,8 @@ void CyInfoPythonInterface3()
 
 	python::class_<CvCultureLevelInfo, python::bases<CvInfoBase> >("CvCultureLevelInfo")
 		.def("getCityDefenseModifier", &CvCultureLevelInfo::getCityDefenseModifier, "int ()")
+		.def("getWonderLimit", &CvCultureLevelInfo::getWonderLimit, "int ()")
+		.def("getNationalWonderLimit", &CvCultureLevelInfo::getNationalWonderLimit, "int ()")
 
 		.def("getSpeedThreshold", &CvCultureLevelInfo::getSpeedThreshold, "int ()")
 		;

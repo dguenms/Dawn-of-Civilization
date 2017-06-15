@@ -545,6 +545,10 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseTechTreePrereq(widgetDataStruct, szBuffer, true);
 		break;
 
+	case WIDGET_PEDIA_JUMP_TO_CULTURE_LEVEL:
+		parseCultureLevelHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_PEDIA_JUMP_TO_UNIT:
 		parseUnitHelp(widgetDataStruct, szBuffer);
 		break;
@@ -872,6 +876,10 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 		doPediaTechJump(widgetDataStruct);
 		break;
 
+	case WIDGET_PEDIA_JUMP_TO_CULTURE_LEVEL:
+		doPediaCultureLevelJump(widgetDataStruct);
+		break;
+
 	case WIDGET_PEDIA_BACK:
 		doPediaBack();
 		break;
@@ -1126,6 +1134,7 @@ bool CvDLLWidgetData::isLink(const CvWidgetDataStruct &widgetDataStruct) const
 	case WIDGET_PEDIA_JUMP_TO_TECH:
 	case WIDGET_PEDIA_JUMP_TO_REQUIRED_TECH:
 	case WIDGET_PEDIA_JUMP_TO_DERIVED_TECH:
+	case WIDGET_PEDIA_JUMP_TO_CULTURE_LEVEL:
 	case WIDGET_PEDIA_JUMP_TO_BUILDING:
 	case WIDGET_PEDIA_JUMP_TO_UNIT:
 	case WIDGET_PEDIA_JUMP_TO_UNIT_COMBAT:
@@ -1552,6 +1561,13 @@ void CvDLLWidgetData::doPediaTechJump(CvWidgetDataStruct &widgetDataStruct)
 	CyArgsList argsList;
 	argsList.add(widgetDataStruct.m_iData1);
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToTech", argsList.makeFunctionArgs());
+}
+
+void CvDLLWidgetData::doPediaCultureLevelJump(CvWidgetDataStruct &widgetDataStruct)
+{
+	CyArgsList argsList;
+	argsList.add(widgetDataStruct.m_iData1);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToCultureLevel", argsList.makeFunctionArgs());
 }
 
 void CvDLLWidgetData::doPediaUnitJump(CvWidgetDataStruct &widgetDataStruct)
@@ -4444,6 +4460,11 @@ void CvDLLWidgetData::parseTechPrereqHelp(CvWidgetDataStruct &widgetDataStruct, 
 void CvDLLWidgetData::parseTechTreePrereq(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer, bool bTreeInfo)
 {
 	GAMETEXT.setTechHelp(szBuffer, (TechTypes)widgetDataStruct.m_iData1, false, false, false, bTreeInfo, (TechTypes)widgetDataStruct.m_iData2);
+}
+
+void CvDLLWidgetData::parseCultureLevelHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	szBuffer.assign(GC.getCultureLevelInfo((CultureLevelTypes)widgetDataStruct.m_iData1).getText());
 }
 
 

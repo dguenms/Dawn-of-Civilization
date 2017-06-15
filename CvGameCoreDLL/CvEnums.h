@@ -587,6 +587,7 @@ enum WidgetTypes					// Exposed to Python
 
 	WIDGET_HELP_GREAT_SPY, // Leoreth
 	WIDGET_HELP_BONUS_PLAYER_TRADE, // Leoreth
+	WIDGET_PEDIA_JUMP_TO_CULTURE_LEVEL, // Leoreth
 
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES

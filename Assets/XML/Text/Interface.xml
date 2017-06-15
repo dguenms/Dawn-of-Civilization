@@ -1792,4 +1792,24 @@
 		<English>Culture Levels</English>
 		<German>Kulturstufen</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_BUILDINGS</Tag>
+		<English>Buildings</English>
+		<German>Gebäude</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_SPECIALISTS</Tag>
+		<English>Specialists</English>
+		<German>Spezialisten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_WONDER_LIMIT</Tag>
+		<English>Can build %d1 World Wonders per City</English>
+		<German>Kann pro Stadt %d1 Weltwunder errichten</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_NATIONAL_WONDER_LIMIT</Tag>
+		<English>Can build %d1 National Wonders per City</English>
+		<German>Kann pro Stadt %d1 Nationale Wunder errichten</German>
+	</TEXT>
 </Civ4GameText>

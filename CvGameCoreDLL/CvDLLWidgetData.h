@@ -58,6 +58,7 @@ public:
 	void doPediaTechJump(CvWidgetDataStruct &widgetDataStruct);
 	void doPediaUnitJump(CvWidgetDataStruct &widgetDataStruct);
 	void doPediaBuildingJump(CvWidgetDataStruct &widgetDataStruct);
+	void doPediaCultureLevelJump(CvWidgetDataStruct &widgetDataStruct);
 	void doPediaBack();
 	void doPediaForward();
 	void doPediaBonusJump(CvWidgetDataStruct &widgetDataStruct, bool bData2 = false);
@@ -144,6 +145,7 @@ public:
 // BUG - Trade Denial - end
 	void parseTechPrereqHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseTechTreePrereq(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer, bool bTechTreeInfo);
+	void parseCultureLevelHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseObsoleteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseObsoleteBonusString(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void parseObsoleteSpecialHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
