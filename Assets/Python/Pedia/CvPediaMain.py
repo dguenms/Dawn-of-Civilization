@@ -22,6 +22,7 @@ import CvPediaTerrain
 import CvPediaFeature
 import CvPediaResource
 import CvPediaImprovement
+import CvPediaCultureLevel
 import CvPediaConcepts
 
 import BugUtil
@@ -114,6 +115,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_CORPORATIONS		: self.placeCorporations,
 			PEDIA_SPECIALISTS		: self.placeSpecialists,
 			PEDIA_TECHS			: self.placeTechs,
+			PEDIA_CULTURE_LEVELS		: self.placeCultureLevels,
 			PEDIA_UNITS			: self.placeUnits,
 			PEDIA_MILITARY_UNITS		: self.placeMilitaryUnits,
 			PEDIA_UNIQUE_UNITS		: self.placeUniqueUnits,
@@ -149,6 +151,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_CORPORATIONS		: CvPediaCorporation.CvPediaCorporation(self),
 			PEDIA_SPECIALISTS		: CvPediaSpecialist.CvPediaSpecialist(self),
 			PEDIA_TECHS			: CvPediaTech.CvPediaTech(self),
+			PEDIA_CULTURE_LEVELS		: CvPediaCultureLevel.CvPediaCultureLevel(self),
 			PEDIA_UNITS			: CvPediaUnit.CvPediaUnit(self),
 			PEDIA_MILITARY_UNITS		: CvPediaUnit.CvPediaUnit(self),
 			PEDIA_UNIQUE_UNITS		: CvPediaUnit.CvPediaUnit(self),
@@ -218,6 +221,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		self.szCategoryFeatures			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_FEATURE", ())
 		self.szCategoryBonuses			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_BONUS", ())
 		self.szCategoryImprovements		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_IMPROVEMENT", ())
+		self.szCategoryCultureLevels		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CULTURE_LEVELS", ())
 		self.szCategoryConcepts			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CONCEPTS", ())
 		self.szCategoryHints			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_HINTS", ())
 		self.szCategoryShortcuts		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_SHORTCUTS", ())
@@ -230,6 +234,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			["CORPORATIONS",	self.szCategoryCorporations],
 			["SPECIALISTS",		self.szCategorySpecialists],
 			["TECHS",		self.szCategoryTechs],
+			["CULTURE",		self.szCategoryCultureLevels],
 			["UNITS",		self.szCategoryUnits],
 			["UNITS",		self.szCategoryMilitaryUnits],
 			["UNITS",		self.szCategoryUniqueUnits],
@@ -259,6 +264,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			"CORPORATIONS"	: u"%c  " % gc.getCommerceInfo(CommerceTypes.COMMERCE_GOLD).getChar(),
 			"SPECIALISTS"	: u"%c  " % CyGame().getSymbolID(FontSymbols.GREAT_PEOPLE_CHAR),
 			"TECHS"		: u"%c  " % gc.getCommerceInfo(CommerceTypes.COMMERCE_RESEARCH).getChar(),
+			"CULTURE"	: u"%c  " % gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar(),
 			"UNITS"		: u"%c  " % CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR),
 			"PROMOTIONS"	: u"%c  " % CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR),
 			"BUILDINGS"	: u"%c  " % gc.getYieldInfo(YieldTypes.YIELD_PRODUCTION).getChar(),
@@ -493,6 +499,11 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 
 
 
+	def placeCultureLevels(self):
+		self.list = self.getSortedList(gc.getNumCultureLevelInfos(), gc.getCultureLevelInfo, True)
+		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_CULTURE_LEVEL, gc.getCultureLevelInfo)
+		
+
 	def placeUnits(self):
 		UnitList 	= [("Support Units", -1)]
 		GreatPeopleList	= [("Great People", -1)]
@@ -616,12 +627,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 				if iBuilding == utils.getUniqueBuilding(self.iActivePlayer, iBuilding):
 					lBuildings.append((gc.getBuildingInfo(iBuilding).getDescription(), iBuilding))
 			
-				#iUniqueBuilding = utils.getUniqueBuilding(self.iActivePlayer, iBuilding)
-				#if iBuilding == iUniqueBuilding and not gc.getBuildingInfo(iBuilding).isGraphicalOnly():
-				#	lBuildings.append((gc.getBuildingInfo(iBuilding).getDescription(), iBuilding))
-				#elif iBuilding != iUniqueBuilding and gc.getBuildingInfo(iUniqueBuilding).isGraphicalOnly():
-				#	lBuildings.append((gc.getBuildingInfo(iUniqueBuilding).getDescription(), iUniqueBuilding))
-
 		lBuildings.sort()
 		self.list = lBuildings
 		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, gc.getBuildingInfo)
@@ -746,7 +751,6 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeImprovements(self):
 		self.list = self.getSortedList(gc.getNumImprovementInfos(), gc.getImprovementInfo)
 		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT, gc.getImprovementInfo)
-
 
 
 	def placeConcepts(self):

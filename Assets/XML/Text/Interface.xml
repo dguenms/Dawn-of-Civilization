@@ -1787,4 +1787,9 @@
 		<English>[ICON_BULLET]%D1_Bonus%% Open Terrain Defense</English>
 		<German>[ICON_BULLET]%D1_Bonus%% Verteidigung in offenem Terrain</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_CULTURE_LEVELS</Tag>
+		<English>Culture Levels</English>
+		<German>Kulturstufen</German>
+	</TEXT>
 </Civ4GameText>

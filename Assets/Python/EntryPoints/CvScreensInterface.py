@@ -432,6 +432,11 @@ def pediaJumpToSpecialist(argsList):
 
 def pediaJumpToTech(argsList):
 	pediaMainScreen.pediaJump(PEDIA_TECHS, argsList[0], True, False)
+	
+	
+	
+def pediaJumpToCultureLevel(argsList):
+	pediaMainScreen.pediaJump(PEDIA_CULTURE_LEVELS, argsList[0], True, False)
 
 
 
