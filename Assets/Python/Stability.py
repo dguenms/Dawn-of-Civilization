@@ -563,11 +563,12 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 	for city in lCities:
 		if bRazeMinorCities:
 			bMaxPopulation = (city.getPopulation() < 10)
+			bMaxCulture = (city.getCultureLevel() < 3)
 			bNoHolyCities = (not city.isHolyCity())
 			bNoCapitals = (not city.isCapital())
 			bNotJerusalem = (not (city.getX() == 73 and city.getY() == 38))
 			
-			if bMaxPopulation and bNoHolyCities and bNoCapitals and bNotJerusalem:
+			if bMaxPopulation and bMaxCulture and bNoHolyCities and bNoCapitals and bNotJerusalem:
 				closestCity = gc.getMap().findCity(city.getX(), city.getY(), iPlayer, -1, True, False, -1, -1, city)
 				
 				if closestCity:
