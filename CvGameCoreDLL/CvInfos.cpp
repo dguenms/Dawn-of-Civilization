@@ -1061,6 +1061,17 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
+
+	int iLastValue = 0;
+	for (int i = 0; i < GC.getNumCultureLevelInfos(); i++)
+	{
+		if (m_piCultureLevelGreatPeopleRateChanges[i] < iLastValue)
+		{
+			m_piCultureLevelGreatPeopleRateChanges[i] = iLastValue;
+		}
+
+		iLastValue = m_piCultureLevelGreatPeopleRateChanges[i];
+	}
 	
 	// initialize the boolean list to the correct size and all the booleans to false
 	FAssertMsg((GC.getNumCultureLevelInfos() > 0) && (NUM_YIELD_TYPES) > 0,"either the number of improvement infos is zero or less or the number of yield types is zero or less");
@@ -1109,6 +1120,20 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
+
+	for (int i = 0; i < NUM_YIELD_TYPES; i++)
+	{
+		iLastValue = 0;
+		for (int j = 0; j < GC.getNumCultureLevelInfos(); j++)
+		{
+			if (m_paiCultureLevelYieldChanges[j][i] < iLastValue)
+			{
+				m_paiCultureLevelYieldChanges[j][i] = iLastValue;
+			}
+
+			iLastValue = m_paiCultureLevelYieldChanges[j][i];
+		}
+	}
 	
 	// initialize the boolean list to the correct size and all the booleans to false
 	FAssertMsg((GC.getNumCultureLevelInfos() > 0) && (NUM_COMMERCE_TYPES) > 0,"either the number of improvement infos is zero or less or the number of yield types is zero or less");
@@ -1135,7 +1160,7 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 							if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CultureLevelCommerces"))
 							{
 								// call the function that sets the yield change variable
-								pXML->SetYields(&m_paiCultureLevelCommerceChanges[iIndex]);
+								pXML->SetCommerce(&m_paiCultureLevelCommerceChanges[iIndex]);
 								gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 							}
 							else
@@ -1156,6 +1181,20 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 		}
 
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	for (int i = 0; i < NUM_COMMERCE_TYPES; i++)
+	{
+		iLastValue = 0;
+		for (int j = 0; j < GC.getNumCultureLevelInfos(); j++)
+		{
+			if (m_paiCultureLevelCommerceChanges[j][i] < iLastValue)
+			{
+				m_paiCultureLevelCommerceChanges[j][i] = iLastValue;
+			}
+
+			iLastValue = m_paiCultureLevelCommerceChanges[j][i];
+		}
 	}
 
 	return true;

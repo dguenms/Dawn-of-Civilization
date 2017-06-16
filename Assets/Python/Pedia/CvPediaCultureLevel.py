@@ -27,15 +27,15 @@ class CvPediaCultureLevel:
 		self.W_EFFECTS = self.W_INFO_PANE
 		self.H_EFFECTS = 120
 		
-		self.X_BUILDINGS = self.X_INFO_PANE
-		self.Y_BUILDINGS = self.Y_EFFECTS + self.H_EFFECTS + 10
-		self.W_BUILDINGS = self.W_INFO_PANE
-		self.H_BUILDINGS = 120
-		
 		self.X_SPECIALISTS = self.X_INFO_PANE
-		self.Y_SPECIALISTS = self.Y_BUILDINGS + self.H_BUILDINGS + 10
-		self.W_SPECIALISTS = self.W_INFO_PANE
+		self.Y_SPECIALISTS = self.Y_EFFECTS + self.H_EFFECTS + 10
+		self.W_SPECIALISTS = self.W_INFO_PANE / 2 - 5
 		self.H_SPECIALISTS = self.top.B_PEDIA_PAGE - self.Y_SPECIALISTS
+		
+		self.X_BUILDINGS = self.X_SPECIALISTS + self.W_SPECIALISTS + 10
+		self.Y_BUILDINGS = self.Y_SPECIALISTS
+		self.W_BUILDINGS = self.W_SPECIALISTS
+		self.H_BUILDINGS = self.H_SPECIALISTS
 		
 	def interfaceScreen(self, iCultureLevel):
 		self.iCultureLevel = iCultureLevel
