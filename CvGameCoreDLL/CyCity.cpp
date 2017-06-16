@@ -2715,3 +2715,8 @@ void CyCity::setBuildingOriginalOwner(int eBuilding, int ePlayer)
 {
 	if (m_pCity) m_pCity->setBuildingOriginalOwner((BuildingTypes)eBuilding, (PlayerTypes)ePlayer);
 }
+
+int CyCity::getHappinessYield(int eYield)
+{
+	return m_pCity ? m_pCity->getHappinessYield((YieldTypes)eYield) : 0;
+}

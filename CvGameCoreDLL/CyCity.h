@@ -577,6 +577,7 @@ public:
 	void removeReligion(int eReligion);
 	void spreadReligion(int eReligion);
 	void setBuildingOriginalOwner(int eBuilding, int ePlayer);
+	int getHappinessYield(int eYield);
 
 private:
 	CvCity* m_pCity;

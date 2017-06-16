@@ -15,7 +15,7 @@ import TradeUtil
 gc = CyGlobalContext()
 
 # Types
-NUM_TYPES = 11
+NUM_TYPES = 12
 (
 	WORKED_TILES,
 	CITY_TILES,
@@ -28,6 +28,7 @@ NUM_TYPES = 11
 	BUILDINGS,
 	CORPORATIONS,
 	SPECIALISTS,
+	HAPPINESS,
 	
 	# Hold the percents, not the actual yield values
 	BASE_MODIFIER,
@@ -54,6 +55,7 @@ LABEL_KEYS = ("TXT_KEY_CONCEPT_WORKED_TILES",
 			  "TXT_KEY_CONCEPT_BUILDINGS",
 			  "TXT_KEY_CONCEPT_CORPORATIONS",
 			  "TXT_KEY_CONCEPT_SPECIALISTS",
+			  "TXT_KEY_CONCEPT_HAPPINESS",
 			  "TXT_KEY_CONCEPT_BASE_MODIFIER",
 			  "TXT_KEY_CONCEPT_PRODUCTION_MODIFIER")
 
@@ -115,6 +117,7 @@ class Tracker:
 		self.calculateTiles(pCity)
 		self.calculateSpecialists(pCity)
 		self.calculateCorporations(pCity)
+		self.calculateHappiness(pCity)
 		self.calculateModifiers(pCity)
 	
 	def calculateTiles(self, pCity):
@@ -160,6 +163,14 @@ class Tracker:
 	
 	def addCorporation(self, eYield, iValue):
 		self._addYield(eYield, CORPORATIONS, iValue)
+		
+	def calculateHappiness(self, pCity):
+		for eYield in range(YieldTypes.NUM_YIELD_TYPES):
+			iValue = pCity.getHappinessYield(eYield)
+			self.addHappiness(eYield, iValue)
+			
+	def addHappiness(self, eYield, iValue):
+		self._addYield(eYield, HAPPINESS, iValue)
 	
 	def calculateModifiers(self, pCity):
 		for eYield in range(YieldTypes.NUM_YIELD_TYPES):
@@ -189,8 +200,8 @@ class Tracker:
 			iValue //= 100
 		iTotal += iValue
 		
-		# Buildings, Corporations, Specialists
-		for eType in (BUILDINGS, CORPORATIONS, SPECIALISTS):
+		# Buildings, Corporations, Specialists, Happiness
+		for eType in (BUILDINGS, CORPORATIONS, SPECIALISTS, HAPPINESS):
 			iValue = self.getYield(eYield, eType)
 			if iValue != 0:
 				iTotal += iValue
