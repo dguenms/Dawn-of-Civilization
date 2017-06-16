@@ -349,6 +349,8 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	updateFeatureHappiness();
 	updatePowerHealth();
 
+	updateHappinessYield();
+
 	GET_PLAYER(getOwnerINLINE()).updateMaintenance();
 
 	GC.getMapINLINE().updateWorkingCity();

@@ -671,8 +671,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_THA</Tag>
-		<English>Can use twice as many units to generate military happiness</English>
-		<German>Kann zweimal soviele milit&#228;rische Einheiten einsetzen, um Zufriedenheit zu generieren</German>
+		<English>+2 Commerce per Excess Happiness</English>
+		<German>+2 Kommerz pro überzählige Zufriedenheit</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TIB_TITLE</Tag>

@@ -830,6 +830,12 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 
 	m_eventsTriggered.removeAll();
 
+	// Thai UP: +2 commerce per excess happiness
+	if (getID() == THAILAND)
+	{
+		changeHappinessExtraYield(YIELD_COMMERCE, 2);
+	}
+
 	if (!bConstructorCall)
 	{
 		AI_reset(false);
