@@ -73,6 +73,9 @@ dSpecificVassalTitles = {
 		iPersia : "TXT_KEY_CIV_GREEK_PERSIA",
 		iRome : "TXT_KEY_CIV_GREEK_ROME",
 	},
+	iIndia : {
+		iAztecs: "TXT_KEY_CIV_INDIAN_AZTECS",
+	},
 	iPersia : {
 		iEgypt : "TXT_KEY_CIV_PERSIAN_EGYPT",
 		iIndia : "TXT_KEY_CIV_PERSIAN_INDIA",
