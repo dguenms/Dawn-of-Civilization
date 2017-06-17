@@ -1789,7 +1789,7 @@ class RFCUtils:
 		iPlayer = pWinningUnit.getOwner()
 		
 		iRand = gc.getGame().getSorenRandNum(100, "capture slaves")
-		if iRand < iChance:
+		if iRand < iChance or True:
 			self.makeUnitAI(iUnit, iPlayer, (pWinningUnit.getX(), pWinningUnit.getY()), UnitAITypes.UNITAI_WORKER, 1)
 			CyInterface().addMessage(pWinningUnit.getOwner(), True, 15, CyTranslator().getText("TXT_KEY_UP_ENSLAVE_WIN", ()), 'SND_REVOLTEND', 1, gc.getUnitInfo(iUnit).getButton(), ColorTypes(8), pWinningUnit.getX(), pWinningUnit.getY(), True, True)
 			CyInterface().addMessage(pLosingUnit.getOwner(), True, 15, CyTranslator().getText("TXT_KEY_UP_ENSLAVE_LOSE", ()), 'SND_REVOLTEND', 1, gc.getUnitInfo(iUnit).getButton(), ColorTypes(7), pWinningUnit.getX(), pWinningUnit.getY(), True, True)

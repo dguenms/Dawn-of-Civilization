@@ -375,20 +375,14 @@ class CvRFCEventHandler:
 		sta.onCombatResult(iWinningPlayer, iLosingPlayer, iUnitPower)
 		
 		# capture slaves
-		if iLosingPlayer == iNative:
-			if iWinningPlayer == iAztecs:
-				utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
-			elif gc.getPlayer(iWinningPlayer).isColonialSlavery() or gc.getPlayer(iWinningPlayer).isSlavery():
-				utils.captureUnit(pLosingUnit, pWinningUnit, iNativeSlave, 35)
+		if iWinningPlayer == iAztecs:
+			utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
+			
+		elif iLosingPlayer == iNative:
+			utils.captureUnit(pLosingUnit, pWinningUnit, iNativeSlave, 35)
 				
 		elif iLosingPlayer == iBarbarian:
-			if iWinningPlayer == iAztecs:
-				utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
-			elif gc.getPlayer(iWinningPlayer).isSlavery():
-				utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 25)
-				
-		elif iWinningPlayer == iAztecs:
-			utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
+			utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 25)
 		
 		# Maya Holkans give food to closest city on victory
 		if pWinningUnit.getUnitType() == iHolkan:
