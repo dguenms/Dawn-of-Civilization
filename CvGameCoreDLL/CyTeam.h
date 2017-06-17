@@ -229,6 +229,7 @@ public:
 	void setDefensivePact(int eTeam, bool bNewValue);
 	bool isCapitulated();
 	int getTotalTechValue();
+	void changeObsoleteBuildingCount(int eBuilding, int iChange);
 
 protected:
 

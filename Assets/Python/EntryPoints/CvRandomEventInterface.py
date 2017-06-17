@@ -18,10 +18,10 @@ import Religions #Leoreth
 import PyHelpers #Leoreth
 import CityNameManager as cnm
 from StoredData import data
+from RFCUtils import utils
 
 gc = CyGlobalContext()
 localText = CyTranslator()
-utils = RFCUtils.RFCUtils()
 rel = Religions.Religions()
 localText = CyTranslator()
 
@@ -4594,3 +4594,27 @@ def doReformation3(argsList):
 	for iTargetCiv in range(iNumPlayers):
 		if data.players[iTargetCiv].iReformationDecision == 0:
 			gc.getTeam(iPlayer).declareWar(iTargetCiv, True, WarPlanTypes.WARPLAN_DOGPILE)
+			
+def getNuclearReactorLeak1HelpText(argsList):
+	return localText.getText("TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_1_HELP", ())
+	
+def getNuclearReactorLeak2HelpText(argsList):
+	return localText.getText("TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_2_HELP", ())
+	
+def getNuclearReactorLeak3HelpText(argsList):
+	return localText.getText("TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_3_HELP", ())
+			
+def doNuclearReactorLeak3(argsList):
+	kTriggeredData = argsList[1]
+	pPlayer = gc.getPlayer(kTriggeredData.ePlayer)
+	pTeam = gc.getTeam(pPlayer.getTeam())
+	
+	pTeam.changeObsoleteBuildingCount(gc.getInfoTypeForString("BUILDING_NUCLEAR_PLANT"), 1)
+	
+def doNuclearMeltdown(argsList):
+	kTriggeredData = argsList[1]
+	iPlayer = kTriggeredData.ePlayer
+	iCity = kTriggeredData.iCityId
+	
+	pCity = gc.getPlayer(iPlayer).getCity(iCity)
+	pCity.triggerMeltdown(gc.getInfoTypeForString("BUILDING_NUCLEAR_PLANT"))

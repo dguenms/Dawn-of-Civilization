@@ -578,6 +578,7 @@ public:
 	void spreadReligion(int eReligion);
 	void setBuildingOriginalOwner(int eBuilding, int ePlayer);
 	int getHappinessYield(int eYield);
+	void triggerMeltdown(int eBuilding);
 
 private:
 	CvCity* m_pCity;

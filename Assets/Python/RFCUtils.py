@@ -1797,5 +1797,11 @@ class RFCUtils:
 			if iPlayer == iAztecs:
 				if pLosingUnit.getOwner() not in lCivGroups[5] and pLosingUnit.getOwner() < iNumPlayers:
 					data.iAztecSlaves += 1
+					
+	def triggerMeltdown(self, iPlayer, iCity):
+		print "trigger meltdown"
+		
+		pCity = gc.getPlayer(iPlayer).getCity(iCity)
+		pCity.triggerMeltdown(iNuclearPlant)
 			
 utils = RFCUtils()

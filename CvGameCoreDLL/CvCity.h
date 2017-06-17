@@ -1086,6 +1086,8 @@ public:
 	int calculateCultureSpecialistCommerce(CommerceTypes eCommerce) const;
 	int calculateCultureSpecialistGreatPeopleRate() const;
 
+	void triggerMeltdown(BuildingTypes eBuilding);
+
 	DllExport int getMusicScriptId() const;
 	DllExport int getSoundscapeScriptId() const;
 	DllExport void cheat(bool bCtrl, bool bAlt, bool bShift);

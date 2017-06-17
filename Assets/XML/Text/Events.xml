@@ -6756,4 +6756,54 @@
 		<Italian>I monaci %s1:3_civ_adjective hanno coltivato per anni i propri vigneti e ora producono vini in quantit&#224; significative.</Italian>
 		<Spanish>Monjes %s1:3_civ_adjective que llevan a&#241;os cultivando vi&#241;as producen ahora vinos en cantidades significativas.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_NUCLEAR_REACTOR_LEAK</Tag>
+		<English>Radiation leaks have been discovered in the reactor of the Nuclear Plant in the %s1_civ_adjective city of %s2_city.</English>
+		<German>Im Atomkraftwerk der %s1:2_civ_adjective Stadt %s2_city wurden Strahlungslecks im Reaktor entdeckt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NUCLEAR_REACTOR_LEAK_1</Tag>
+		<English>Radiation leaks have been discovered in the reactor of the Nuclear Plant in %s2_city.</English>
+		<German>Im Atomkraftwerk von %s2_city wurden Strahlungsleck im Reaktor entdeckt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENTTRIGGER_NUCLEAR_REACTOR_LEAK_AGAIN</Tag>
+		<English>The radioactive leaks in Nuclear Plant in the %s1_civ_adjective city of %s2_city are still not contained.</English>
+		<German>Die Strahlungslecks im Atomkraftwerk der %s1:2_civ_adjective Stadt %s2_city sind immer noch nicht eingedämmt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_NUCLEAR_REACTOR_LEAK_AGAIN_1</Tag>
+		<English>Our inspectors are still reporting radiation leaks in the Nuclear Plant in %s2_city.</English>
+		<German>Unsere Inspektoren berichten immer noch von Strahlungslecks im Atomkraftwerk von %s2_city.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_1</Tag>
+		<English>Our reactors are safe. Contain the leaks, but there is no need for further action.</English>
+		<German>Unsere Reaktoren sind sicher. Dämmt das Leck ein, aber es besteht kein Bedarf für weitere Maßnahmen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_2</Tag>
+		<English>Leaks like these are dangerous. We must invest in modernizing our reactors to keep them safe for the future.</English>
+		<German>Diese Lecks sind gefährlich. Wir müssen in die Modernisierung unserer Reaktoren investieren, um sie auch in Zukunft sicher zu halten.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_3</Tag>
+		<English>This shows that nuclear energy is too dangerous for our society. Make plans to transition out of nuclear power as soon as possible.</English>
+		<German>Dies zeigt, dass Atomenergie zu gefährlich für unsere Gesellschaft ist. Fasst Pläne, so schnell wie möglich aus der Atomkraft auszusteigen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_1_HELP</Tag>
+		<English>[ICON_BULLET]Medium risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</English>
+		<German>[ICON_BULLET]Mittleres Risiko einer Kernschmelze.[NEWLINE][ICON_BULLET]Strahlungslecks können sich fortsetzen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_2_HELP</Tag>
+		<English>[ICON_BULLET]Low risk of a nuclear meltdown.[NEWLINE][ICON_BULLET]Radiation leaks may continue.</English>
+		<German>[ICON_BULLET]Geringes Risiko einer Kernschmelze.[NEWLINE][ICON_BULLET]Strahlungslecks können sich fortsetzen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_NUCLEAR_REACTOR_LEAK_3_HELP</Tag>
+		<English>[ICON_BULLET]Nuclear Plants will become obsolete.</English>
+		<German>[ICON_BULLET]Atomkraftwerke werden veraltet.</German>
+	</TEXT>
 </Civ4GameText>

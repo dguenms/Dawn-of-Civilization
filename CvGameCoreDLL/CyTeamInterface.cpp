@@ -221,5 +221,6 @@ void CyTeamPythonInterface()
 		.def("isCapitulated", &CyTeam::isCapitulated, "bool ()")
 		.def("canCutContact", &CyTeam::canCutContact, "bool (int eTeam)")
 		.def("getTotalTechValue", &CyTeam::getTotalTechValue, "int ()")
+		.def("changeObsoleteBuildingCount", &CyTeam::changeObsoleteBuildingCount, "void (int eBuilding, int iChange)")
 		;
 }

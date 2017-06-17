@@ -1014,3 +1014,8 @@ int CyTeam::getTotalTechValue()
 {
 	return m_pTeam ? m_pTeam->getTotalTechValue() : -1;
 }
+
+void CyTeam::changeObsoleteBuildingCount(int eBuilding, int iChange)
+{
+	if (m_pTeam) m_pTeam->changeObsoleteBuildingCount((BuildingTypes)eBuilding, iChange);
+}

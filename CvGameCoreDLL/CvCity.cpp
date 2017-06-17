@@ -15146,7 +15146,6 @@ void CvCity::doGreatPeople()
 
 void CvCity::doMeltdown()
 {
-	CvWString szBuffer;
 	int iI;
 
 /*************************************************************************************************/
@@ -15176,21 +15175,29 @@ void CvCity::doMeltdown()
 			{
 				if (GC.getGameINLINE().getSorenRandNum(GC.getBuildingInfo((BuildingTypes)iI).getNukeExplosionRand(), "Meltdown!!!") == 0)
 				{
-					if (getNumRealBuilding((BuildingTypes)iI) > 0)
-					{
-						setNumRealBuilding(((BuildingTypes)iI), 0);
-					}
-
-					plot()->nukeExplosion(1);
-
-					szBuffer = gDLL->getText("TXT_KEY_MISC_MELTDOWN_CITY", getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_MINOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("INTERFACE_UNHEALTHY_PERSON")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-
+					triggerMeltdown((BuildingTypes)iI);
 					break;
 				}
 			}
 		}
 	}
+}
+
+void CvCity::triggerMeltdown(BuildingTypes eBuilding)
+{
+	log("trigger meltdown");
+
+	CvWString szBuffer;
+	
+	if (getNumRealBuilding(eBuilding) > 0)
+	{
+		setNumRealBuilding((eBuilding), 0);
+	}
+
+	plot()->nukeExplosion(1);
+
+	szBuffer = gDLL->getText("TXT_KEY_MISC_MELTDOWN_CITY", getNameKey());
+	gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MELTDOWN", MESSAGE_TYPE_MINOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("INTERFACE_UNHEALTHY_PERSON")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);	
 }
 
 // Private Functions...
@@ -16104,9 +16111,12 @@ int CvCity::getTriggerValue(EventTriggerTypes eTrigger) const
 				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(kTrigger.getBuildingRequired(i));
 				if (NO_BUILDING != eBuilding)
 				{
-					if (getNumRealBuilding(eBuilding) > 0)
+					if (!GET_TEAM(getTeam()).isObsoleteBuilding(eBuilding))
 					{
-						bFoundValid = true;
+						if (getNumRealBuilding(eBuilding) > 0)
+						{
+							bFoundValid = true;
+						}
 					}
 				}
 			}
