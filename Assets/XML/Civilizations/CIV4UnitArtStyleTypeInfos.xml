@@ -184,6 +184,22 @@
 						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SWORDSMAN_ASIAN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_SPEARMAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HEAVY_SPEARMAN_ASIAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HEAVY_SPEARMAN_ASIAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SPEARMAN_ASIAN</LateArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PIKEMAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PIKEMAN_ASIAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PIKEMAN_ASIAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PIKEMAN_ASIAN</LateArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
 			</StyleUnits>
 		</UnitArtStyleTypeInfo>
 		<UnitArtStyleTypeInfo>
@@ -539,6 +555,22 @@
 						<LateArtDefineTag>ART_DEF_UNIT_HORSEMAN_MIDDLE_EASTERN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_SPEARMAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_HEAVY_SPEARMAN_MIDDLE_EASTERN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_HEAVY_SPEARMAN_MIDDLE_EASTERN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_HEAVY_SPEARMAN_MIDDLE_EASTERN</LateArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PIKEMAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PIKEMAN_MIDDLE_EASTERN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PIKEMAN_MIDDLE_EASTERN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PIKEMAN_MIDDLE_EASTERN</LateArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
 			</StyleUnits>
 		</UnitArtStyleTypeInfo>
 		<UnitArtStyleTypeInfo>
@@ -572,6 +604,24 @@
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_SPEARMAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</LateArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</LateArtDefineTag>
+					</UnitMeshGroup>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_MAYAN_HOLKAN_SPEARMAN</LateArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_HEAVY_SPEARMAN</UnitType>
 					<UnitMeshGroup>
 						<EarlyArtDefineTag>ART_DEF_UNIT_SPEARMAN_SOUTH_AMERICAN</EarlyArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_SPEARMAN_SOUTH_AMERICAN</MiddleArtDefineTag>
@@ -680,6 +730,14 @@
 						<EarlyArtDefineTag>ART_DEF_UNIT_HORSEMAN_SOUTH_AMERICAN</EarlyArtDefineTag>
 						<MiddleArtDefineTag>ART_DEF_UNIT_HORSEMAN_SOUTH_AMERICAN</MiddleArtDefineTag>
 						<LateArtDefineTag>ART_DEF_UNIT_HORSEMAN_SOUTH_AMERICAN</LateArtDefineTag>
+					</UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_PIKEMAN</UnitType>
+					<UnitMeshGroup>
+						<EarlyArtDefineTag>ART_DEF_UNIT_PIKEMAN_SOUTH_AMERICAN</EarlyArtDefineTag>
+						<MiddleArtDefineTag>ART_DEF_UNIT_PIKEMAN_SOUTH_AMERICAN</MiddleArtDefineTag>
+						<LateArtDefineTag>ART_DEF_UNIT_PIKEMAN_SOUTH_AMERICAN</LateArtDefineTag>
 					</UnitMeshGroup>
 				</StyleUnit>
 			</StyleUnits>
