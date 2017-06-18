@@ -588,7 +588,9 @@ def secedeCities(iPlayer, lCities, bRazeMinorCities = False):
 		lCededCities.append(city)
 			
 	for city in lRemovedCities:
+		plot = city.plot()
 		gc.getPlayer(iBarbarian).disband(city)
+		plot.setCulture(iPlayer, 0, True)
 	
 	for city in lCededCities:
 	
