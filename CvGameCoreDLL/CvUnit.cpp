@@ -5806,7 +5806,7 @@ int CvUnit::getSpreadChance(ReligionTypes eReligion) const
 		iSpreadChance += (100 - iSpreadChance) / 2;
 	}
 
-	if (eSpreadFactor == RELIGION_SPREAD_MINORITY) iSpreadChance /= 2;
+	if (eSpreadFactor == RELIGION_SPREAD_NONE) iSpreadChance /= 2;
 
 	return iSpreadChance;
 }

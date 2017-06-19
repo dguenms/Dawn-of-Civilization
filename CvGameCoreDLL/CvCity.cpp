@@ -14781,13 +14781,15 @@ bool CvCity::canSpread(ReligionTypes eReligion, bool bMissionary) const
 {
 	if (isHasReligion(eReligion)) return false;
 
-	if (!bMissionary && !plot()->canSpread(eReligion)) return false;
+	if (bMissionary) return true;
+
+	if (!plot()->canSpread(eReligion)) return false;
 
 	ReligionSpreadTypes eSpread = GET_PLAYER(getOwner()).getSpreadType(plot(), eReligion);
 
 	if (eSpread == RELIGION_SPREAD_NONE) return false;
 
-	if (!bMissionary && eSpread == RELIGION_SPREAD_MINORITY && getReligionCount() == 0) return false;
+	if (eSpread == RELIGION_SPREAD_MINORITY && getReligionCount() == 0) return false;
 
 	return true;
 }
