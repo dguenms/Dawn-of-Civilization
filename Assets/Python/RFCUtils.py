@@ -524,19 +524,13 @@ class RFCUtils:
 		for city in self.getCityList(iOldOwner):
 			if city.isCoastalOld():
 				tDestination = (city.getX(), city.getY())
-		if tDestination == (-1, -1):
-			for (i, j) in self.surroundingPlots(tCityPlot, 12):
-				pDestination = gc.getMap().plot(i, j)
-				if pDestination.isWater():
-					tDestination = (i, j)
-					break
 		if tDestination != (-1, -1):
 			plotCity = gc.getMap().plot(x, y)
 			iNumUnitsInAPlot = plotCity.getNumUnits()
 			j = 0
 			for i in range(iNumUnitsInAPlot):
 				unit = plotCity.getUnit(j)
-				if unit.getDomainType() == DomainTypes.DOMAIN_SEA:
+				if unit.getOwner() == iOldOwner and unit.getDomainType() == DomainTypes.DOMAIN_SEA:
 					unit.setXYOld(tDestination[0], tDestination[1])
 				else:
 					j += 1
