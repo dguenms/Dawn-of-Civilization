@@ -83,11 +83,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARA3</Tag>
-		<English>Spread Islam to 40% of the cities in the world</English>
-		<French>R&#233;pandre l'Islam &#224; 40% des villes du monde</French>
-		<German>Sorgen Sie f&#252;r eine weltweit 40%%-ige Verbreitung des Islam</German>
-		<Italian>Diffondi l'Islam nel 40% delle citt&#224; mondiali</Italian>
-		<Spanish>Propagar el Islam al 40% de las ciudades del mundo</Spanish>
+		<English>Spread Islam to 30% of the cities in the world</English>
+		<French>R&#233;pandre l'Islam &#224; 30% des villes du monde</French>
+		<German>Sorgen Sie f&#252;r eine weltweit 30%-ige Verbreitung des Islam</German>
+		<Italian>Diffondi l'Islam nel 30% delle citt&#224; mondiali</Italian>
+		<Spanish>Propagar el Islam al 30% de las ciudades del mundo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ARG1_TITLE</Tag>
@@ -1759,8 +1759,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_SPA3</Tag>
-		<English>Spread Catholicism to 40% of the world population and allow no Protestant civilizations in Europe in 1650 AD</English>
-		<German>Verbreiten Sie den Katholizismus zu 40% der Weltbev&#246;lkerung und erlauben sie im Jahr 1650 n. Chr. keine protestantischen Zivilisationen in Europa</German>
+		<English>Spread Catholicism to 30% of the world population and allow no Protestant civilizations in Europe in 1650 AD</English>
+		<German>Verbreiten Sie den Katholizismus zu 30% der Weltbev&#246;lkerung und erlauben sie im Jahr 1650 n. Chr. keine protestantischen Zivilisationen in Europa</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TAM1_TITLE</Tag>
@@ -1858,8 +1858,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB2</Tag>
-		<English>Spread Buddhism to 30% by 1400 AD</English>
-		<German>Verbreiten Sie bis zum Jahr 1400 n. Chr. den Buddhismus auf 30%</German>
+		<English>Spread Buddhism to 25% by 1400 AD</English>
+		<German>Verbreiten Sie bis zum Jahr 1400 n. Chr. den Buddhismus auf 25%</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_TIB3_TITLE</Tag>
@@ -2057,8 +2057,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_ISL1</Tag>
-		<English>Shahada: Spread Islam to 50%</English>
-		<German>Schahada: Verbreiten Sie den Islam auf 50%</German>
+		<English>Shahada: Spread Islam to 40%</English>
+		<German>Schahada: Verbreiten Sie den Islam auf 40%</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_ISL2</Tag>
@@ -2242,8 +2242,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_ZOR2</Tag>
-		<English>Mathra: Spread Zoroastrianism to 20%</English>
-		<German>Mathra: Verbreiten Sie den Zoroastrianismus auf 20%</German>
+		<English>Mathra: Spread Zoroastrianism to 10%</English>
+		<German>Mathra: Verbreiten Sie den Zoroastrianismus auf 10%</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_URV_ZOR3</Tag>
