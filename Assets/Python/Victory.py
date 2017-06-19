@@ -3432,7 +3432,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bMachinery = data.lFirstDiscovered[iMachinery] == iRome
 			bCivilService = data.lFirstDiscovered[iCivilService] == iRome
 			aHelp.append(getIcon(bArchitecture) + localText.getText("TXT_KEY_TECH_ARCHITECTURE", ()) + ' ' + getIcon(bPolitics) + localText.getText("TXT_KEY_TECH_POLITICS", ()) + ' ' + getIcon(bScholarship) + localText.getText("TXT_KEY_TECH_SCHOLARSHIP", ()))
-			aHelp.append(getIcon(bMachinery) + localText.getText("TXT_KEY_TECH_MACHINERY", ()) + ' ' + getIcon(bCivilService) + localText.getText("TXT_KEY_TECH_CIVIL_SERVICE", ()) + ' ' + getIcon(bTheology) + localText.getText("TXT_KEY_TECH_THEOLOGY", ()))
+			aHelp.append(getIcon(bMachinery) + localText.getText("TXT_KEY_TECH_MACHINERY", ()) + ' ' + getIcon(bCivilService) + localText.getText("TXT_KEY_TECH_CIVIL_SERVICE", ()))
 
 	elif iPlayer == iTamils:
 		if iGoal == 0:
