@@ -1010,6 +1010,7 @@
 			<Type>PROMOTION_FLANKING1</Type>
 			<Description>TXT_KEY_PROMOTION_FLANKING1</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereqOr1>PROMOTION_COMBAT1</PromotionPrereqOr1>
 			<iPlainsAttack>20</iPlainsAttack>
 			<UnitCombats>
 				<UnitCombat>
