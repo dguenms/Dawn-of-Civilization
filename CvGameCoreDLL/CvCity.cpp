@@ -10060,7 +10060,7 @@ int CvCity::getHappinessYield(YieldTypes eIndex) const
 // Leoreth
 void CvCity::updateHappinessYield()
 {
-	int iHappinessDifference = happyLevel() - unhappyLevel(0);
+	int iHappinessDifference = std::min(getPopulation(), happyLevel() - unhappyLevel(0));
 
 	int iOldYield, iNewYield;
 	for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
