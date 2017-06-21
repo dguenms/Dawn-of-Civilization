@@ -2000,18 +2000,6 @@
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Scale>0.6</Scale>
 		</ArtRef>
-		<ArtRef Name="art:Spice_crop">
-			<!-- when in the rough -->
-			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
-			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
-			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
-			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Scalar">szBatchGroup:spice_crop</Attribute>
-			<Scale>0.8</Scale>
-			<Rotate>+45</Rotate>
-		</ArtRef>
 		<!-- OLIVES crops -->
 		<ArtRef Name="art:olives_crop">
 			<!-- when worked by plantation -->
@@ -2351,7 +2339,7 @@
 		<!-- General plantation -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
@@ -2361,7 +2349,7 @@
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON</Attribute>
+			<Attribute Class="Bonus">NO_BONUS,BONUS_ALL,!BONUS_SILK,!BONUS_DYE,!BONUS_SUGAR,!BONUS_COTTON,!BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Rotation">0,180</Attribute>
 			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
@@ -2536,95 +2524,34 @@
 			<Rotate>+45</Rotate>
 		</ArtRef>
 		<!-- Spices -->
-		<!--ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			< worked ancient spices plantation >
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
+		<ArtRef Name="goal:IMPROVEMENT_ORCHARD">
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
 			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">iCropArea:16</Attribute>
-			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_GRINDER</Attribute>
-			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_RACK</Attribute>
-			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
-			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SPICE_ORCHARD_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SPICE_ORCHARD_RACK</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
-			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
-			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
-			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Rotation">0,180</Attribute>
-			<Scale>0.9</Scale>
-		</ArtRef>
-		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			< worked ancient spices plantation >
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
-			<Attribute Class="Scalar">iCropArea:16</Attribute>
-			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_GRINDER</Attribute>
-			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_RACK</Attribute>
-			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
-			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
-			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
-			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
-			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
-			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Rotation">0,180</Attribute>
-			<Scale>0.9</Scale>
-		</ArtRef>
-		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			< unworked ancient spices plantation >
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
-			<Attribute Class="Scalar">iCropArea:8</Attribute>
-			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_GRINDER</Attribute>
-			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_RACK</Attribute>
-			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL,ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
-			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation.nif</Attribute>
-			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Plantation_Plain/Plantation.kfm</Attribute>
-			<Scale>0.9</Scale>
-			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
-			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
-			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
-			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Rotation">0,180</Attribute>
-		</ArtRef>
-		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
-			< unworked modern spices plantation >
-			<Attribute Class="Improvement">IMPROVEMENT_PLANTATION,IMPROVEMENT_SLAVE_PLANTATION</Attribute>
-			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
-			<Attribute Class="Scalar">iCropArea:8</Attribute>
-			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_GRINDER</Attribute>
-			<Attribute Class="Scalar">szExtra:art:SPICE_PLANTATION_RACK</Attribute>
-			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
-			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Plantation_Plain/Plantation_Modern.nif</Attribute>
-			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
-			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
-			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
-			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Rotation">0,180</Attribute>
-			<Scale>0.9</Scale>
-		</ArtRef-->
-		<!--ArtRef Name="goal:BONUS_SPICES">
-			< unworked spice >
-			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_FARM</Attribute>
-			<Attribute Class="Scalar">bGoalOnly:1</Attribute>
-			<Attribute Class="Scalar">bPlace:0</Attribute>
-			<Attribute Class="Scalar">iCropArea:12</Attribute>
-			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
-			<Scale>0.6</Scale>
-		</ArtRef>
-		<ArtRef Name="art:Spice_crop">
-			< when in the rough >
-			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Spices/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_ORCHARD</Attribute>
-			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
-			<Attribute Class="Scalar">szBatchGroup:spice_crop</Attribute>
-			<Scale>0.8</Scale>
-			<Rotate>+45</Rotate>
-		</ArtRef-->
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_ORCHARD">
+			<Attribute Class="Improvement">IMPROVEMENT_ORCHARD</Attribute>
+			<Attribute Class="Bonus">BONUS_SPICES</Attribute>
+			<Attribute Class="Scalar">iCropArea:8</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SPICE_ORCHARD_GRINDER</Attribute>
+			<Attribute Class="Scalar">szExtra:art:SPICE_ORCHARD_RACK</Attribute>
+			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
+			<Attribute Class="Scalar">bImprovementWorkedOnly:0</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfBonus:1</Attribute>
+			<Attribute Class="Rotation">0,180</Attribute>
+			<Scale>0.9</Scale>
+		</ArtRef>
 		<!-- Olives -->
 		<ArtRef Name="goal:IMPROVEMENT_PLANTATION">
 			<!-- worked ancient olives plantation -->
