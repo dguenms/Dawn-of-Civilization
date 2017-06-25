@@ -379,10 +379,8 @@ class CvRFCEventHandler:
 			utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
 			
 		elif iLosingPlayer == iNative:
-			utils.captureUnit(pLosingUnit, pWinningUnit, iNativeSlave, 35)
-				
-		elif iLosingPlayer == iBarbarian:
-			utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 25)
+			if gc.getPlayer(iWinningPlayer).isSlavery() or gc.getPlayer(iWinningPlayer).isColonialSlavery():
+				utils.captureUnit(pLosingUnit, pWinningUnit, iNativeSlave, 35)
 		
 		# Maya Holkans give food to closest city on victory
 		if pWinningUnit.getUnitType() == iHolkan:
