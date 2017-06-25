@@ -7476,24 +7476,24 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_NO_FOREIGN_CORPORATIONS"));
 	}
 
-	// Leoreth: can use slaves
+	// Leoreth: can capture workers
 	if (GC.getCivicInfo(eCivic).isSlavery())
 	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_USE_SLAVES"));
+		//szHelpText.append(NEWLINE);
+		//szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_USE_SLAVES"));
 
 		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_CAPTURE_SLAVES"));
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_CAPTURE_WORKERS"));
 	}
 
 	// Leoreth: can use slaves in colonies
 	if (GC.getCivicInfo(eCivic).isColonialSlavery())
 	{
 		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_USE_NATIVE_SLAVES_IN_COLONIES"));
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_USE_SLAVES_IN_COLONIES"));
 
 		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_CAPTURE_AND_TRADE_NATIVE_SLAVES"));
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_CAN_CAPTURE_AND_TRADE_SLAVES"));
 	}
 
 	//	Freedom Anger

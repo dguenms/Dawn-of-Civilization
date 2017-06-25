@@ -766,14 +766,14 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	eCapturingPlayer = getCapturingPlayer();
 	eCaptureUnitType = ((eCapturingPlayer != NO_PLAYER) ? getCaptureUnitType(GET_PLAYER(eCapturingPlayer).getCivilizationType()) : NO_UNIT);
 
-	// captured workers become slaves with Slavery
-	if (eCaptureUnitType != NO_UNIT && GC.getUnitInfo(eCaptureUnitType).isWorker())
+	// captured workers become slaves with Slavery (disabled)
+	/*if (eCaptureUnitType != NO_UNIT && GC.getUnitInfo(eCaptureUnitType).isWorker())
 	{
 		if (eCapturingPlayer != NO_PLAYER && GET_PLAYER(eCapturingPlayer).isSlavery())
 		{
 			eCaptureUnitType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(eCapturingPlayer).getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE"));
 		}
-	}
+	}*/
 
 // BUG - Unit Captured Event - start
 	PlayerTypes eFromPlayer = getOwner();
@@ -788,40 +788,43 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 
 	GET_PLAYER(getOwnerINLINE()).deleteUnit(getID());
 
-	if ((eCapturingPlayer != NO_PLAYER) && (eCaptureUnitType != NO_UNIT) && !(GET_PLAYER(eCapturingPlayer).isBarbarian()) && GET_PLAYER(eCapturingPlayer).canTrain(eCaptureUnitType))
+	if (GET_PLAYER(eCapturingPlayer).isSlavery())
 	{
-		if (GET_PLAYER(eCapturingPlayer).isHuman() || GET_PLAYER(eCapturingPlayer).AI_captureUnit(eCaptureUnitType, pPlot) || 0 == GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
+		if ((eCapturingPlayer != NO_PLAYER) && (eCaptureUnitType != NO_UNIT) && !(GET_PLAYER(eCapturingPlayer).isBarbarian()) && GET_PLAYER(eCapturingPlayer).canTrain(eCaptureUnitType))
 		{
-			CvUnit* pkCapturedUnit = GET_PLAYER(eCapturingPlayer).initUnit(eCaptureUnitType, pPlot->getX_INLINE(), pPlot->getY_INLINE());
-
-			if (pkCapturedUnit != NULL)
+			if (GET_PLAYER(eCapturingPlayer).isHuman() || GET_PLAYER(eCapturingPlayer).AI_captureUnit(eCaptureUnitType, pPlot) || 0 == GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
 			{
-// BUG - Unit Captured Event - start
-				CvEventReporter::getInstance().unitCaptured(eFromPlayer, eCapturedUnitType, pkCapturedUnit);
-// BUG - Unit Captured Event - end
+				CvUnit* pkCapturedUnit = GET_PLAYER(eCapturingPlayer).initUnit(eCaptureUnitType, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
-				szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_CAPTURED_UNIT", GC.getUnitInfo(eCaptureUnitType).getTextKeyWide());
-				gDLL->getInterfaceIFace()->addMessage(eCapturingPlayer, true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_UNITCAPTURE", MESSAGE_TYPE_INFO, pkCapturedUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
-
-				// Add a captured mission
-				CvMissionDefinition kMission;
-				kMission.setMissionTime(GC.getMissionInfo(MISSION_CAPTURED).getTime() * gDLL->getSecsPerTurn());
-				kMission.setUnit(BATTLE_UNIT_ATTACKER, pkCapturedUnit);
-				kMission.setUnit(BATTLE_UNIT_DEFENDER, NULL);
-				kMission.setPlot(pPlot);
-				kMission.setMissionType(MISSION_CAPTURED);
-				gDLL->getEntityIFace()->AddMission(&kMission);
-
-				pkCapturedUnit->finishMoves();
-
-				if (!GET_PLAYER(eCapturingPlayer).isHuman())
+				if (pkCapturedUnit != NULL)
 				{
-					CvPlot* pPlot = pkCapturedUnit->plot();
-					if (pPlot && !pPlot->isCity(false))
+	// BUG - Unit Captured Event - start
+					CvEventReporter::getInstance().unitCaptured(eFromPlayer, eCapturedUnitType, pkCapturedUnit);
+	// BUG - Unit Captured Event - end
+
+					szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_CAPTURED_UNIT", GC.getUnitInfo(eCaptureUnitType).getTextKeyWide());
+					gDLL->getInterfaceIFace()->addMessage(eCapturingPlayer, true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_UNITCAPTURE", MESSAGE_TYPE_INFO, pkCapturedUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+
+					// Add a captured mission
+					CvMissionDefinition kMission;
+					kMission.setMissionTime(GC.getMissionInfo(MISSION_CAPTURED).getTime() * gDLL->getSecsPerTurn());
+					kMission.setUnit(BATTLE_UNIT_ATTACKER, pkCapturedUnit);
+					kMission.setUnit(BATTLE_UNIT_DEFENDER, NULL);
+					kMission.setPlot(pPlot);
+					kMission.setMissionType(MISSION_CAPTURED);
+					gDLL->getEntityIFace()->AddMission(&kMission);
+
+					pkCapturedUnit->finishMoves();
+
+					if (!GET_PLAYER(eCapturingPlayer).isHuman())
 					{
-						if (GET_PLAYER(eCapturingPlayer).AI_getPlotDanger(pPlot) && GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
+						CvPlot* pPlot = pkCapturedUnit->plot();
+						if (pPlot && !pPlot->isCity(false))
 						{
-							pkCapturedUnit->kill(false);
+							if (GET_PLAYER(eCapturingPlayer).AI_getPlotDanger(pPlot) && GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
+							{
+								pkCapturedUnit->kill(false);
+							}
 						}
 					}
 				}

@@ -1847,8 +1847,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		pNewCity->changeProduction(GC.getGameINLINE().getProductionPerPopulation((HurryTypes)0) * getCurrentEra() / 2);
 	}
 
-	// Leoreth: receive slaves with slavery proportional to capture gold
-	if (bConquest && isSlavery())
+	// Leoreth: receive slaves with slavery proportional to capture gold (disabled)
+	/*if (bConquest && isSlavery())
 	{
 		int iNumCapturedSlaves = 1 + iCaptureGold / GC.getDefineINT("CAPTURE_GOLD_FOR_CAPTURED_SLAVES");
 
@@ -1856,7 +1856,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		{
 			initUnit((UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getInfoTypeForString("UNITCLASS_SLAVE")), pNewCity->getX(), pNewCity->getY());
 		}
-	}
+	}*/
 
 	pCityPlot->setRevealed(GET_PLAYER(eOldOwner).getTeam(), true, false, NO_TEAM, false);
 
