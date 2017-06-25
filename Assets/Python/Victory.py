@@ -204,7 +204,7 @@ dEraGoals = {}
 
 dWonderGoals = {
 	iEgypt: (1, [iPyramids, iGreatLibrary, iGreatLighthouse], True),
-	iGreece: (1, [iOracle, iColossus, iParthenon, iTempleOfArtemis], True),
+	iGreece: (1, [iColossus, iParthenon, iStatueOfZeus, iTempleOfArtemis], True),
 	iCarthage: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
 	iMaya: (1, [iTempleOfKukulkan], True),
@@ -351,9 +351,9 @@ def checkTurn(iGameTurn, iPlayer):
 			
 	elif iPlayer == iGreece:
 	
-		# first goal: be the first to discover Literature, Drama and Philosophy
+		# first goal: be the first to discover Mathematics, Literature, Aesthetics, Medicine and Philosophy
 		
-		# second goal: build the Oracle, the Parthenon, the Colossus and the Temple of Artemis by 250 BC
+		# second goal: build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC
 		if iGameTurn == getTurnForYear(-250):
 			expire(iGreece, 1)
 			
