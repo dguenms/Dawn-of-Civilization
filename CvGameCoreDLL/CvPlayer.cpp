@@ -8304,8 +8304,6 @@ void CvPlayer::foundReligion(ReligionTypes eReligion, ReligionTypes eSlotReligio
 
 	if (pBestCity != NULL)
 	{
-		pBestCity->spreadReligion(eReligion);
-
 		GC.getGameINLINE().setHolyCity(eReligion, pBestCity, true);
 		
 		if (bAward)
