@@ -5871,14 +5871,14 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 			}
 		}
 
-		// Leoreth: at most one worker per city
-		if (GC.getUnitInfo(eUnit).isWorker())
+		// Leoreth: at most one worker per city (disabled)
+		/*if (GC.getUnitInfo(eUnit).isWorker())
 		{
 			if (getWorkerCount() + (bContinue ? -1 : 0) >= getNumCities())
 			{
 				return false;
 			}
-		}
+		}*/
 	}
 
 	return true;

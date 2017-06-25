@@ -14406,5 +14406,5 @@ SpecialistTypes CvUnit::getSettledSpecialist() const
 
 bool CvUnit::isWorker() const
 {
-	return GC.getUnitInfo(getUnitType()).isWorker();
+	return m_pUnitInfo->isWorker();
 }
