@@ -17746,7 +17746,7 @@ void CvCity::setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups)
 
 		if (iOldValue > 0)
 		{
-			for (iI = iOldValue; iI > iNewValue; iI--)
+			for (iI = iOldValue - 1; iI >= iNewValue; iI--)
 			{
 				if (iI >= NUM_CITY_PLOTS_3) continue;
 
@@ -17842,6 +17842,8 @@ int CvCity::getEffectiveNextCoveredPlot() const
 	{
 		pLoopPlot = getCulturePlot(iI);
 		iDistance = plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY());
+
+		if (pLoopPlot == NULL) break;
 
 		if (pLoopPlot->getOwner() == NO_PLAYER && (iI >= iNextCoveredPlot || (iDistance > getCultureLevel() && iDistance > 0 && getCultureCost(iNextCoveredPlot) > getCultureThreshold((CultureLevelTypes)(iDistance-1))))) break;
 

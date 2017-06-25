@@ -1441,30 +1441,33 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		{
 			pLoopPlot = pOldCity->getCulturePlot(iI);
 
-			if (pLoopPlot->getOwnerINLINE() == pOldCity->getOwnerINLINE())
+			if (pLoopPlot != NULL)
 			{
-				if (pLoopPlot->getNumCultureRangeCities(pOldCity->getOwnerINLINE()) == 1)
+				if (pLoopPlot->getOwnerINLINE() == pOldCity->getOwnerINLINE())
 				{
-					bool bForceUnowned = false;
-
-					for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+					if (pLoopPlot->getNumCultureRangeCities(pOldCity->getOwnerINLINE()) == 1)
 					{
-						if (GET_PLAYER((PlayerTypes)iJ).isAlive())
+						bool bForceUnowned = false;
+
+						for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
 						{
-							if ((GET_PLAYER((PlayerTypes)iJ).getTeam() != getTeam()) && (GET_PLAYER((PlayerTypes)iJ).getTeam() != pOldCity->getTeam()))
+							if (GET_PLAYER((PlayerTypes)iJ).isAlive())
 							{
-								if (pLoopPlot->getNumCultureRangeCities((PlayerTypes)iJ) > 0)
+								if ((GET_PLAYER((PlayerTypes)iJ).getTeam() != getTeam()) && (GET_PLAYER((PlayerTypes)iJ).getTeam() != pOldCity->getTeam()))
 								{
-									bForceUnowned = true;
-									break;
+									if (pLoopPlot->getNumCultureRangeCities((PlayerTypes)iJ) > 0)
+									{
+										bForceUnowned = true;
+										break;
+									}
 								}
 							}
 						}
-					}
 
-					if (bForceUnowned)
-					{
-						pLoopPlot->setForceUnownedTimer(GC.getDefineINT("FORCE_UNOWNED_CITY_TIMER"));
+						if (bForceUnowned)
+						{
+							pLoopPlot->setForceUnownedTimer(GC.getDefineINT("FORCE_UNOWNED_CITY_TIMER"));
+						}
 					}
 				}
 			}
