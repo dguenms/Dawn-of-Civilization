@@ -94,8 +94,8 @@
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
-					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>500</iTime>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
