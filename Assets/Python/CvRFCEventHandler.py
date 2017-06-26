@@ -380,7 +380,7 @@ class CvRFCEventHandler:
 			
 		elif iLosingPlayer == iNative:
 			if gc.getPlayer(iWinningPlayer).isSlavery() or gc.getPlayer(iWinningPlayer).isColonialSlavery():
-				utils.captureUnit(pLosingUnit, pWinningUnit, iNativeSlave, 35)
+				utils.captureUnit(pLosingUnit, pWinningUnit, iSlave, 35)
 		
 		# Maya Holkans give food to closest city on victory
 		if pWinningUnit.getUnitType() == iHolkan:
@@ -489,7 +489,7 @@ class CvRFCEventHandler:
 			utils.handleChineseCities(unit)
 			
 		# Leoreth: help AI by moving new slaves to the new world
-		if unit.getUnitType() == iNativeSlave and city.getRegionID() in [rIberia, rBritain, rEurope, rScandinavia, rRussia, rItaly, rBalkans, rMaghreb, rAnatolia] and utils.getHumanID() != city.getOwner():
+		if unit.getUnitType() == iSlave and city.getRegionID() in [rIberia, rBritain, rEurope, rScandinavia, rRussia, rItaly, rBalkans, rMaghreb, rAnatolia] and utils.getHumanID() != city.getOwner():
 			utils.moveSlaveToNewWorld(city.getOwner(), unit)
 			
 	

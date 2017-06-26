@@ -1459,7 +1459,7 @@ iTranshumanism) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 180
+iNumUnits = 179
 (iLion, iBear, iPanther, iWolf, iSettler, iCityBuilder, iWorker, iPunjabiWorker, iLabourer, iMadeireiro, 
 iScout, iExplorer, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, iIslamicMissionary, iHinduMissionary, 
 iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iMilitia, iAxeman, iLightSwordsman, iVulture, iDogSoldier, 
@@ -1477,7 +1477,7 @@ iGalleass, iCaravel, iCarrack, iDharani, iGalleon, iEastIndiaman, iPrivateer, iO
 iShipOfTheLine, iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, 
 iSubmarine, iNuclearSubmarine, iCarrier, iBiplane, iFighter, iJetFighter, iBomber, iStealthBomber, iGuidedMissile, iNuclearBomber, 
 iICBM, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy, iFemaleGreatProphet, 
-iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iNativeSlave, iAztecSlave) = range(iNumUnits)
+iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iAztecSlave) = range(iNumUnits)
 
 iMissionary = iJewishMissionary # generic
 

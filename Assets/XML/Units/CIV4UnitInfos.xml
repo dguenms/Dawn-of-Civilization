@@ -14196,49 +14196,11 @@
 			<Type>UNIT_SLAVE</Type>
 			<Capture>UNITCLASS_SLAVE</Capture>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_ENGINEER</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_SLAVE</Description>
 			<Civilopedia>TXT_KEY_UNIT_SLAVE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_SLAVE_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<bSlave>1</bSlave>
-			<UnitAIs>
-				<UnitAI>
-					<UnitAIType>UNITAI_ENGINEER</UnitAIType>
-					<bUnitAI>1</bUnitAI>
-				</UnitAI>
-			</UnitAIs>
-			<iCost>60</iCost>
-			<iAdvancedStartCost>-1</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iMoves>2</iMoves>
-			<iNukeRange>-1</iNukeRange>
-			<iBaseHurry>20</iBaseHurry>
-			<iAsset>2</iAsset>
-			<UnitMeshGroups>
-				<iGroupSize>2</iGroupSize>
-				<fMaxSpeed>1.75</fMaxSpeed>
-				<fPadTime>1</fPadTime>
-				<iMeleeWaveSize>2</iMeleeWaveSize>
-				<iRangedWaveSize>0</iRangedWaveSize>
-				<UnitMeshGroup>
-					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_SLAVE</EarlyArtDefineTag>
-					<LateArtDefineTag>ART_DEF_UNIT_SLAVE</LateArtDefineTag>
-				</UnitMeshGroup>
-			</UnitMeshGroups>
-			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
-		</UnitInfo>
-		<UnitInfo>
-			<Class>UNITCLASS_NATIVE_SLAVE</Class>
-			<Type>UNIT_NATIVE_SLAVE</Type>
-			<Capture>UNITCLASS_NATIVE_SLAVE</Capture>
-			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_NATIVE_SLAVE</Description>
-			<Civilopedia>TXT_KEY_UNIT_NATIVE_SLAVE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_NATIVE_SLAVE_STRATEGY</Strategy>
-			<Help>TXT_KEY_UNIT_NATIVE_SLAVE_HELP</Help>
+			<Help>TXT_KEY_UNIT_SLAVE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bSlave>1</bSlave>
 			<UnitAIs>
@@ -14285,15 +14247,15 @@
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_NATIVE_SLAVE</Class>
+			<Class>UNITCLASS_SLAVE</Class>
 			<Type>UNIT_AZTEC_SLAVE</Type>
-			<Capture>UNITCLASS_NATIVE_SLAVE</Capture>
+			<Capture>UNITCLASS_SLAVE</Capture>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_WORKER</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_AZTEC_SLAVE</Description>
 			<Civilopedia>TXT_KEY_UNIT_AZTEC_SLAVE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_NATIVE_SLAVE_STRATEGY</Strategy>
-			<Help>TXT_KEY_UNIT_NATIVE_SLAVE_HELP</Help>
+			<Strategy>TXT_KEY_UNIT_SLAVE_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_SLAVE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<bSlave>1</bSlave>
 			<UnitAIs>

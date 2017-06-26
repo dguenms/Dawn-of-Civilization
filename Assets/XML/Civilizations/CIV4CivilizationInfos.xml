@@ -1106,10 +1106,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -1654,10 +1650,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
 					<UnitType>UNIT_ETHIOPIAN_ASKARI</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -3072,10 +3064,6 @@
 					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_CONGOLESE_POMBOS</UnitType>
 				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -3291,10 +3279,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
 					<UnitType>UNIT_MANDE_KELEBOLO</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -3946,12 +3930,7 @@
 				<City>Kuujjuaq</City>
 			</Cities>
 			<Buildings/>
-			<Units>
-				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-			</Units>
+			<Units/>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -5065,10 +5044,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -5259,12 +5234,7 @@
 				<City>Ubaid</City>
 			</Cities>
 			<Buildings/>
-			<Units>
-				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-			</Units>
+			<Units/>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -5824,12 +5794,7 @@
 				<City>Qunu</City>
 			</Cities>
 			<Buildings/>
-			<Units>
-				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-			</Units>
+			<Units/>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -6064,10 +6029,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6297,10 +6258,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6498,10 +6455,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_SPY</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6616,12 +6569,7 @@
 				<City>Tartar</City>
 			</Cities>
 			<Buildings/>
-			<Units>
-				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
-				</Unit>
-			</Units>
+			<Units/>
 			<FreeUnitClasses>
 				<FreeUnitClass>
 					<UnitClassType>UNITCLASS_SETTLER</UnitClassType>
@@ -6888,10 +6836,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ICBM</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SLAVE</UnitClassType>
-					<UnitType>UNIT_NATIVE_SLAVE</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_GREAT_PROPHET</UnitClassType>

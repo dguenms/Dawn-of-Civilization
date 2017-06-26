@@ -719,14 +719,6 @@
 			<DefaultUnit>UNIT_SLAVE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_NATIVE_SLAVE</Type>
-			<Description>TXT_KEY_UNIT_SLAVE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<DefaultUnit>UNIT_NATIVE_SLAVE</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_SKIRMISHER</Type>
 			<Description>TXT_KEY_UNIT_SKIRMISHER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

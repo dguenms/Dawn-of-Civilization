@@ -1156,7 +1156,7 @@ class RFCUtils:
 		iNumSlaves = city.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"))
 		if iNumSlaves > 0:
 			city.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE"), 0)
-			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(iNativeSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
+			self.makeUnit(gc.getUnitClassInfo(gc.getUnitInfo(iSlave).getUnitClassType()).getDefaultUnitIndex(), iPlayer, (city.getX(), city.getY()), iNumSlaves)
 		
 	def getRandomEntry(self, list):
 		if not list: return False
