@@ -27742,19 +27742,19 @@ BeginPlot
 		UnitType=UNIT_CATAPULT, UnitOwner=37, (Congo)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+		UnitType=UNIT_SLAVE, UnitOwner=37, (Congo)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+		UnitType=UNIT_SLAVE, UnitOwner=37, (Congo)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+		UnitType=UNIT_SLAVE, UnitOwner=37, (Congo)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+		UnitType=UNIT_SLAVE, UnitOwner=37, (Congo)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_NATIVE_SLAVE, UnitOwner=37, (Congo)
+		UnitType=UNIT_SLAVE, UnitOwner=37, (Congo)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_SETTLER, UnitOwner=37, (Congo)
