@@ -1143,7 +1143,7 @@ class RFCUtils:
 						
 		lSlaves = []
 		for unit in PyPlayer(iPlayer).getUnitList():
-			if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_NATIVE_SLAVE"):
+			if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_SLAVE"):
 				lSlaves.append(unit)
 				
 		for slave in lSlaves:
