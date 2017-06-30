@@ -5634,6 +5634,8 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 				}
 			}
 
+			int iFreeTechs = 0;
+
 			if (bFirst)
 			{
 				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1)
@@ -5650,57 +5652,70 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 						}
 					}
 
-					if (GC.getTechInfo(eIndex).getFirstFreeTechs() > 0)
+					iFreeTechs += GC.getTechInfo(eIndex).getFirstFreeTechs();
+					szBuffer = gDLL->getText("TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE", GC.getTechInfo(eIndex).getTextKeyWide());
+				}
+			}
+
+			if (iFreeTechs == 0 && GET_PLAYER(ePlayer).getFreeTechsOnDiscovery() > 0 && !GET_PLAYER(ePlayer).isFreeTechReceived())
+			{
+				iFreeTechs++;
+				szBuffer = gDLL->getText("TXT_KEY_BABYLONIAN_UP");
+				GET_PLAYER(ePlayer).changeFreeTechsOnDiscovery(-1);
+				GET_PLAYER(ePlayer).setFreeTechReceived(true);
+			}
+			
+			if (iFreeTechs > 0)
+			{
+				bFirstBonus = true;
+
+				if (!isHuman())
+				{
+					for (iI = 0; iI < iFreeTechs; iI++)
 					{
-						bFirstBonus = true;
+						GET_PLAYER(ePlayer).AI_chooseFreeTech();
+					}
+				}
+				else
+				{
+					GET_PLAYER(ePlayer).chooseTech(iFreeTechs, szBuffer.GetCString());
+				}
 
-						if (!isHuman())
+				if (GC.getTechInfo(eIndex).getFirstFreeTechs() > 0)
+				{
+					for (iI = 0; iI < MAX_PLAYERS; iI++)
+					{
+						if (GET_PLAYER((PlayerTypes)iI).isAlive())
 						{
-							for (iI = 0; iI < GC.getTechInfo(eIndex).getFirstFreeTechs(); iI++)
+							if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
 							{
-								GET_PLAYER(ePlayer).AI_chooseFreeTech();
+								//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getNameKey(), GC.getTechInfo(eIndex).getTextKeyWide()); //Rhye
+								szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getCivilizationShortDescriptionKey(), GC.getTechInfo(eIndex).getTextKeyWide()); //Rhye
 							}
-						}
-						else
-						{
-							szBuffer = gDLL->getText("TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE", GC.getTechInfo(eIndex).getTextKeyWide());
-							GET_PLAYER(ePlayer).chooseTech(GC.getTechInfo(eIndex).getFirstFreeTechs(), szBuffer.GetCString());
-						}
-
-						for (iI = 0; iI < MAX_PLAYERS; iI++)
-						{
-							if (GET_PLAYER((PlayerTypes)iI).isAlive())
+							else
 							{
-								if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
-								{
-									//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getNameKey(), GC.getTechInfo(eIndex).getTextKeyWide()); //Rhye
-									szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getCivilizationShortDescriptionKey(), GC.getTechInfo(eIndex).getTextKeyWide()); //Rhye
-								}
-								else
-								{
-									szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_FIRST_TO_TECH", GC.getTechInfo(eIndex).getTextKeyWide());
-								}
-								gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FIRSTTOTECH", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+								szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_FIRST_TO_TECH", GC.getTechInfo(eIndex).getTextKeyWide());
 							}
+							gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FIRSTTOTECH", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 						}
-
-						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getName(), GC.getTechInfo(eIndex).getTextKeyWide());
-						GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, ePlayer, szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 					}
 
-					if (bFirstBonus)
+					szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getName(), GC.getTechInfo(eIndex).getTextKeyWide());
+					GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, ePlayer, szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+				}
+			}
+
+			if (bFirstBonus)
+			{
+				for (iI = 0; iI < MAX_PLAYERS; iI++)
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isAlive())
 					{
-						for (iI = 0; iI < MAX_PLAYERS; iI++)
+						if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
 						{
-							if (GET_PLAYER((PlayerTypes)iI).isAlive())
+							if (GET_PLAYER((PlayerTypes)iI).isResearchingTech(eIndex))
 							{
-								if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
-								{
-									if (GET_PLAYER((PlayerTypes)iI).isResearchingTech(eIndex))
-									{
-										GET_PLAYER((PlayerTypes)iI).clearResearchQueue();
-									}
-								}
+								GET_PLAYER((PlayerTypes)iI).clearResearchQueue();
 							}
 						}
 					}

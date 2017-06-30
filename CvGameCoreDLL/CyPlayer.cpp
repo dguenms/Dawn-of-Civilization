@@ -2604,3 +2604,9 @@ int CyPlayer::AI_bestCivic(int iCivicOptionType)
 {
 	return m_pPlayer ? m_pPlayer->AI()->AI_bestCivic((CivicOptionTypes)iCivicOptionType) : NO_CIVIC;
 }
+
+void CyPlayer::setFreeTechsOnDiscovery(int iNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setFreeTechsOnDiscovery(iNewValue);
+}

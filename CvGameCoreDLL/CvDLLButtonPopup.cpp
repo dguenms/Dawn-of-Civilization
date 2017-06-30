@@ -1560,7 +1560,7 @@ bool CvDLLButtonPopup::launchChooseTechPopup(CvPopup* pPopup, CvPopupInfo &info)
 			{
 				if (player.canResearch((TechTypes)iI))
 				{
-					if (iDiscover == 0 || GC.getTechInfo((TechTypes)iI).getEra() <= player.getCurrentEra()) //Leoreth: free techs only for your current era or earlier
+					if (iDiscover == 0 || GC.getTechInfo((TechTypes)iI).getEra() <= player.getCurrentEra()) // Leoreth: free techs only for your current era or earlier
 					{
 						CvWString szBuffer;
 						szBuffer.Format(L"%s (%d)", GC.getTechInfo((TechTypes)iI).getDescription(), ((iDiscover > 0) ? 0 : player.getResearchTurnsLeft(((TechTypes)iI), true)));

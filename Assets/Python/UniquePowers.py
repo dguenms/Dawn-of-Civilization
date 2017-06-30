@@ -76,10 +76,10 @@ class UniquePowers:
 			elif iOtherTeam == iMongolia:
 				for city in utils.getCityList(iTeam):
 					city.setMongolUP(False)
-					
-	def onTechAcquired(self, iPlayer, iTech):
-		if iPlayer == iBabylonia:
-			self.babylonianUP()
+			
+	def setup(self):
+		# Babylonian UP: receive a free tech after discovering the first four techs
+		pBabylonia.setFreeTechsOnDiscovery(4)
 					
 #------------------VIKING UP----------------------
 
@@ -569,15 +569,3 @@ class UniquePowers:
 			gc.getPlayer(iIndonesia).changeGold(iGold)
 			if utils.getHumanID() == iIndonesia:
 				CyInterface().addMessage(iIndonesia, False, iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
-				
-	# Babylonian UP: receives a free tech after the first four techs discovered
-	def babylonianUP(self):
-		iGameTurn = gc.getGame().getGameTurn()
-		if data.iFreeBabylonianTechs < 4 and iGameTurn > data.iLastTurnFreeBabylonianTech:
-			data.iFreeBabylonianTechs += 1
-			data.iLastTurnFreeBabylonianTech = iGameTurn + 1
-
-			if pBabylonia.isHuman():
-				pBabylonia.chooseTech(1, CyTranslator().getText("TXT_KEY_BABYLONIAN_UP", ()), False)
-			else:
-				pBabylonia.AI_chooseFreeTech()

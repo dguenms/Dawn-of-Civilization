@@ -113,5 +113,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("isColonialSlavery", &CyPlayer::isColonialSlavery, "bool ()")
 		.def("getLastStateReligion", &CyPlayer::getLastStateReligion, "int ()")
 		.def("AI_bestCivic", &CyPlayer::AI_bestCivic, "int (int iCivicOptionType)")
+		.def("setFreeTechsOnDiscovery", &CyPlayer::setFreeTechsOnDiscovery, "void (int iNewValue)")
 		;
 }

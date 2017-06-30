@@ -5330,6 +5330,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == MACHINERY || iI == GUNPOWDER || iI == GUILDS)
 										iValue /= 2;
 									break;
+								case THAILAND:
+									if (iI == CARTOGRAPHY || iI == EXPLORATION)
+										iValue /= 5;
+									break;
 								case NETHERLANDS:
 									if (iI == EXPLORATION || iI == OPTICS || iI == GEOGRAPHY || iI == REPLACEABLE_PARTS || iI == LOGISTICS || iI == ECONOMICS || iI == CIVIL_LIBERTIES || iI == HUMANITIES || iI == ACADEMIA)
 										iValue *= 2;

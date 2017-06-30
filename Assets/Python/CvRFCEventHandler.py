@@ -103,6 +103,7 @@ class CvRFCEventHandler:
 		self.pla.setup()
 		dc.setup()
 		self.aiw.setup()
+		self.up.setup()
 		
 		vic.setup()
 		cong.setup()
@@ -650,8 +651,7 @@ class CvRFCEventHandler:
 
 		if gc.getGame().getGameTurn() == utils.getScenarioStartTurn():
 			return
-			
-		self.up.onTechAcquired(iPlayer, iTech)
+		
 		sta.onTechAcquired(iPlayer, iTech)
 		AIParameters.onTechAcquired(iPlayer, iTech)
 

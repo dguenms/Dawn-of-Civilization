@@ -370,15 +370,26 @@ void CvNetResearch::Execute()
 	if (m_ePlayer != NO_PLAYER)
 	{
 		CvPlayer& kPlayer = GET_PLAYER(m_ePlayer);
-		if (m_iDiscover > 0)
+		int iDiscover = m_iDiscover;
+		CvWString szMessage = "";
+
+		if (iDiscover > 0)
 		{
+			if (kPlayer.isHuman() && kPlayer.getFreeTechsOnDiscovery() > 0 && !kPlayer.isFreeTechReceived())
+			{
+				iDiscover++;
+				szMessage = gDLL->getText("TXT_KEY_BABYLONIAN_UP");
+				kPlayer.changeFreeTechsOnDiscovery(-1);
+				kPlayer.setFreeTechReceived(true);
+			}
+
 			GET_TEAM(kPlayer.getTeam()).setHasTech(m_eTech, true, m_ePlayer, true, true);
 
-			if (m_iDiscover > 1)
+			if (iDiscover > 1)
 			{
 				if (m_ePlayer == GC.getGameINLINE().getActivePlayer())
 				{
-					kPlayer.chooseTech(m_iDiscover - 1);
+					kPlayer.chooseTech(iDiscover - 1, szMessage);
 				}
 			}
 		}

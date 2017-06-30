@@ -141,7 +141,7 @@ public:
 /************************************************************************************************/
 	// Free Tech Popup Fix
 	bool isChoosingFreeTech() const;
-	void setChoosingFreeTech(bool bValue);
+	void changeChoosingFreeTechCount(int iChange);
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -1286,6 +1286,13 @@ public:
 
 	bool canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered = NO_TECH) const;
 
+	int getFreeTechsOnDiscovery() const;
+	void setFreeTechsOnDiscovery(int iNewValue);
+	void changeFreeTechsOnDiscovery(int iChange);
+
+	bool isFreeTechReceived() const;
+	void setFreeTechReceived(bool bNewValue);
+
 	int calculateDistanceMaintenance() const;
 	int calculateColonyMaintenance() const;
 	int calculateCorporationMaintenance() const;
@@ -1429,7 +1436,7 @@ protected:
 /* Bugfix                                                                                       */
 /************************************************************************************************/
 	// Free Tech Popup Fix
-	bool m_bChoosingFreeTech;
+	int m_iChoosingFreeTechCount;
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -1459,6 +1466,9 @@ protected:
 	int m_iWorkerCount;
 
 	int m_iCapitalCommerce;
+
+	int m_iFreeTechsOnDiscovery;
+	int m_bFreeTechReceived;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;

@@ -1404,7 +1404,7 @@ void CvDLLWidgetData::doResearch(CvWidgetDataStruct &widgetDataStruct)
 		}
 		else
 		{
-			kPlayer.setChoosingFreeTech(false);
+			kPlayer.changeChoosingFreeTechCount(-1);
 		}
 	}
 /************************************************************************************************/

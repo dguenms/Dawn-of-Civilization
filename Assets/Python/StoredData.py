@@ -170,9 +170,6 @@ class GameData:
 		
 		self.lLatestRazeData = [-1] * 5
 		
-		self.iFreeBabylonianTechs = 0
-		self.iLastTurnFreeBabylonianTech = 0
-		
 		# AI Wars
 		
 		self.iNextTurnAIWar = -1

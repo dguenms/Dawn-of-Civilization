@@ -576,6 +576,7 @@ public:
 	bool isSlavery();
 	bool isColonialSlavery();
 	int AI_bestCivic(int iCivicOptionType);
+	void setFreeTechsOnDiscovery(int iNewValue);
 
 private:
 	CvPlayer* m_pPlayer;

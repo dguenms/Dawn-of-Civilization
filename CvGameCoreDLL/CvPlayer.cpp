@@ -525,6 +525,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iWorkerCount = 0; // Leoreth
 	m_uiStartTime = 0;
 
+	m_iChoosingFreeTechCount = 0;
+
 	m_bAlive = false;
 	m_bEverAlive = false;
 	m_bTurnActive = false;
@@ -534,8 +536,6 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_bExtendedGame = false;
 	m_bFoundedFirstCity = false;
 	m_bStrike = false;
-
-	m_bChoosingFreeTech = false;
 
 	m_bTurnPlayed = false;
 
@@ -554,6 +554,9 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iCompactnessModifier = 0;
 	m_iTargetDistanceValueModifier = 0;
 	m_iReligiousTolerance = 0;
+
+	m_iFreeTechsOnDiscovery = 0;
+	m_bFreeTechReceived = false;
 
 	m_eID = eID;
 	updateTeamType();
@@ -3417,12 +3420,12 @@ bool CvPlayer::hasBusyUnit() const
 // Free Tech Popup Fix
 bool CvPlayer::isChoosingFreeTech() const
 {
-	return m_bChoosingFreeTech;
+	return m_iChoosingFreeTechCount > 0;
 }
 
-void CvPlayer::setChoosingFreeTech(bool bValue)
+void CvPlayer::changeChoosingFreeTechCount(int iChange)
 {
-	m_bChoosingFreeTech = bValue;
+	m_iChoosingFreeTechCount += iChange;
 }
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
@@ -3438,7 +3441,7 @@ void CvPlayer::chooseTech(int iDiscover, CvWString szText, bool bFront)
 	// Free Tech Popup Fix
 	if (iDiscover > 0)
 	{
-		setChoosingFreeTech(true);
+		changeChoosingFreeTechCount(1);
 	}
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
@@ -14681,6 +14684,8 @@ void CvPlayer::doResearch()
 /**	END	                                        												**/
 /*************************************************************************************************/
 
+	setFreeTechReceived(false);
+
 	if (isResearch())
 	{
 		bForceResearchChoice = false;
@@ -18127,6 +18132,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCombatExperience);
 	pStream->Read(&m_iEspionageExperience); // Leoreth
 	pStream->Read(&m_iWorkerCount); // Leoreth
+	pStream->Read(&m_iChoosingFreeTechCount); // Leoreth
 
 	pStream->Read(&m_bAlive);
 	pStream->Read(&m_bEverAlive);
@@ -18137,7 +18143,6 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bExtendedGame);
 	pStream->Read(&m_bFoundedFirstCity);
 	pStream->Read(&m_bStrike);
-	pStream->Read(&m_bChoosingFreeTech);
 
 	//Rhye (jdog) -  start ---------------------
 	//pStream->ReadString(m_szName);
@@ -18159,6 +18164,9 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCompactnessModifier);
 	pStream->Read(&m_iTargetDistanceValueModifier);
 	pStream->Read(&m_iReligiousTolerance);
+
+	pStream->Read(&m_iFreeTechsOnDiscovery);
+	pStream->Read(&m_bFreeTechReceived);
 
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
@@ -18658,6 +18666,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCombatExperience);
 	pStream->Write(m_iEspionageExperience); // Leoreth
 	pStream->Write(m_iWorkerCount); // Leoreth
+	pStream->Write(m_iChoosingFreeTechCount);
 
 	pStream->Write(m_bAlive);
 	pStream->Write(m_bEverAlive);
@@ -18668,7 +18677,6 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bExtendedGame);
 	pStream->Write(m_bFoundedFirstCity);
 	pStream->Write(m_bStrike);
-	pStream->Write(m_bChoosingFreeTech);
 
 
 	//Rhye (jdog) -  start ---------------------
@@ -18691,6 +18699,9 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCompactnessModifier);
 	pStream->Write(m_iTargetDistanceValueModifier);
 	pStream->Write(m_iReligiousTolerance);
+
+	pStream->Write(m_iFreeTechsOnDiscovery);
+	pStream->Write(m_bFreeTechReceived);
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);
@@ -25450,4 +25461,29 @@ void CvPlayer::applyCapitalCommerce(int iChange)
 	{
 		getCapitalCity()->changeBuildingYieldChange(BUILDING_PALACE, YIELD_COMMERCE, iChange);
 	}
+}
+
+int CvPlayer::getFreeTechsOnDiscovery() const
+{
+	return m_iFreeTechsOnDiscovery;
+}
+
+void CvPlayer::setFreeTechsOnDiscovery(int iNewValue)
+{
+	m_iFreeTechsOnDiscovery = iNewValue;
+}
+
+void CvPlayer::changeFreeTechsOnDiscovery(int iChange)
+{
+	m_iFreeTechsOnDiscovery += iChange;
+}
+
+bool CvPlayer::isFreeTechReceived() const
+{
+	return m_bFreeTechReceived;
+}
+
+void CvPlayer::setFreeTechReceived(bool bNewValue)
+{
+	m_bFreeTechReceived = bNewValue;
 }
