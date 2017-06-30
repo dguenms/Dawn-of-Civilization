@@ -241,17 +241,17 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	switch (getOwnerINLINE())
 	{
     case KOREA:
-        if (getUnitCombatType() == 8) //naval
+        if (getUnitCombatType() == 9) //naval
             {
-                setHasPromotion((PromotionTypes)PROMOTION_DRILL1, true);
-                setHasPromotion((PromotionTypes)PROMOTION_DRILL2, true);
+                setHasPromotion(PROMOTION_DRILL1, true);
+                setHasPromotion(PROMOTION_DRILL2, true);
             }
         break;
 	case SPAIN:
-		if (getUnitCombatType() == 8) //naval
+		if (getUnitCombatType() == 9) //naval
 			{
-				setHasPromotion((PromotionTypes)PROMOTION_NAVIGATION1, true);
-				setHasPromotion((PromotionTypes)PROMOTION_NAVIGATION2, true);
+				setHasPromotion(PROMOTION_NAVIGATION1, true);
+				setHasPromotion(PROMOTION_NAVIGATION2, true);
 			}
 		break;
 	default:
