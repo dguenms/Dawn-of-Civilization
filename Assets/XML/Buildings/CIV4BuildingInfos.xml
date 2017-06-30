@@ -121,6 +121,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CASTLE</ArtDefineTag>
 			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
+			<ObsoleteTech>TECH_URBAN_PLANNING</ObsoleteTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>100</iCost>
@@ -176,6 +177,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_SPANISH_CITADEL</ArtDefineTag>
 			<PrereqTech>TECH_FORTIFICATION</PrereqTech>
+			<ObsoleteTech>TECH_URBAN_PLANNING</ObsoleteTech>
 			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>50</iCost>
