@@ -14636,13 +14636,13 @@
 				<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
 			</AndPreReqs>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
-				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
-				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
-				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
+				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
+				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
+				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
+				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
@@ -14727,13 +14727,13 @@
 			<OrPreReqs/>
 			<AndPreReqs/>
 			<ObsoleteTechs>
-				<ObsoleteTech>TECH_FIREARMS</ObsoleteTech>
-				<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_EXPLORATION</ObsoleteTech>
-				<ObsoleteTech>TECH_OPTICS</ObsoleteTech>
-				<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
-				<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
-				<ObsoleteTech>TECH_HERITAGE</ObsoleteTech>
+				<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
+				<ObsoleteTech>TECH_FORTIFICATION</ObsoleteTech>
+				<ObsoleteTech>TECH_MACHINERY</ObsoleteTech>
+				<ObsoleteTech>TECH_ALCHEMY</ObsoleteTech>
+				<ObsoleteTech>TECH_GUILDS</ObsoleteTech>
+				<ObsoleteTech>TECH_CIVIL_SERVICE</ObsoleteTech>
+				<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
 			</ObsoleteTechs>
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
