@@ -341,9 +341,9 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(-1500):
 			expire(iHarappa, 1)
 			
-		# third goal: have a total population of 20 by 800 BC
+		# third goal: have a total population of 30 by 800 BC
 		if isPossible(iHarappa, 2):
-			if pHarappa.getTotalPopulation() >= 20:
+			if pHarappa.getTotalPopulation() >= 30:
 				win(iHarappa, 2)
 				
 		if iGameTurn == getTurnForYear(-800):
@@ -3308,7 +3308,7 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iNumReservoirs >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_RESERVOIRS", (iNumReservoirs, 3)) + ' ' + getIcon(iNumGranaries >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_GRANARIES", (iNumGranaries, 2)) + ' ' + getIcon(iNumSmokehouses >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_SMOKEHOUSES", (iNumSmokehouses, 2)))
 		elif iGoal == 2:
 			iNumPopulation = pHarappa.getTotalPopulation()
-			aHelp.append(getIcon(iNumPopulation >= 20) + localText.getText("TXT_KEY_VICTORY_TOTAL_POPULATION", (iNumPopulation, 20)))
+			aHelp.append(getIcon(iNumPopulation >= 30) + localText.getText("TXT_KEY_VICTORY_TOTAL_POPULATION", (iNumPopulation, 30)))
 			
 	elif iPlayer == iBabylonia:
 		if iGoal == 0:
