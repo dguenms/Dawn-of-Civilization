@@ -781,8 +781,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR2</Tag>
-		<English>Build three Reservoirs and two Walls by 1500 BC</English>
-		<German>Errichten Sie bis zum Jahr 1500 v. Chr. drei Reservoirs und zwei Stadtmauern</German>
+		<English>Build three Reservoirs, two Granaries and two Smokehouses by 1500 BC</English>
+		<German>Errichten Sie bis zum Jahr 1500 v. Chr. drei Reservoirs, zwei Kornkammern und zwei Räucherkammern</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR3_TITLE</Tag>
@@ -3148,5 +3148,13 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_WESTERN_NORTH_AMERICA_CITIES</Tag>
 		<English>Western North America: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_GRANARIES</Tag>
+		<English>Granaries: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NUM_SMOKEHOUSES</Tag>
+		<English>Smokehouses: %d1 / %d2</English>
 	</TEXT>
 </Civ4GameText>

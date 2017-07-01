@@ -1672,13 +1672,14 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				if iConfucian >= 2 and iTaoist >= 2:
 					win(iChina, 0)
 					
-	# second Harappan goal: build three Baths and two Walls by 1500 BC
+	# second Harappan goal: build three Baths, two Granaries and two Smokehouses by 1500 BC
 	elif iPlayer == iHarappa:
 		if isPossible(iHarappa, 1):
-			if iBuilding in [iReservoir, iWalls]:
+			if iBuilding in [iReservoir, iGranary, iSmokehouse]:
 				iNumBaths = getNumBuildings(iHarappa, iReservoir)
-				iNumWalls = getNumBuildings(iHarappa, iWalls)
-				if iNumBaths >= 3 and iNumWalls >= 2:
+				iNumGranaries = getNumBuildings(iHarappa, iGranary)
+				iNumSmokehouses = getNumBuildings(iHarappa, iSmokehouse)
+				if iNumBaths >= 3 and iNumGranaries >= 2 and iNumSmokehouses >= 2:
 					win(iHarappa, 1)
 					
 	# second Indian goal: build 20 temples by 700 AD
@@ -3302,8 +3303,9 @@ def getUHVHelp(iPlayer, iGoal):
 	elif iPlayer == iHarappa:
 		if iGoal == 1:
 			iNumReservoirs = getNumBuildings(iHarappa, iReservoir)
-			iNumWalls = getNumBuildings(iHarappa, iWalls)
-			aHelp.append(getIcon(iNumReservoirs >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_RESERVOIRS", (iNumReservoirs, 3)) + ' ' + getIcon(iNumWalls >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_WALLS", (iNumWalls, 2)))
+			iNumGranaries = getNumBuildings(iHarappa, iGranary)
+			iNumSmokehouses = getNumBuildings(iHarappa, iSmokehouse)
+			aHelp.append(getIcon(iNumReservoirs >= 3) + localText.getText("TXT_KEY_VICTORY_NUM_RESERVOIRS", (iNumReservoirs, 3)) + ' ' + getIcon(iNumGranaries >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_GRANARIES", (iNumGranaries, 2)) + ' ' + getIcon(iNumSmokehouses >= 2) + localText.getText("TXT_KEY_VICTORY_NUM_SMOKEHOUSES", (iNumSmokehouses, 2)))
 		elif iGoal == 2:
 			iNumPopulation = pHarappa.getTotalPopulation()
 			aHelp.append(getIcon(iNumPopulation >= 20) + localText.getText("TXT_KEY_VICTORY_TOTAL_POPULATION", (iNumPopulation, 20)))
