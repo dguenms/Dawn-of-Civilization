@@ -6806,4 +6806,19 @@
 		<English>[ICON_BULLET]Nuclear Plants will become obsolete.</English>
 		<German>[ICON_BULLET]Atomkraftwerke werden veraltet.</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_TRIGGER_HARBORMASTER</Tag>
+		<English>Our harbormasters request government aid in expanding our overseas trading empire.[PARAGRAPH:1]We will need to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in our cities and construct enough ocean worthy ships.</English>
+		<German>Unsere Hafenmeister fordern Hilfe von der Regierung, um unseren &#220;berseehandel auszudehnen.[PARAGRAPH:1]Wir m&#252;ssen genug[COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] in unseren St&#228;dten bauen und genug hochseetaugliche Schiffe konstruieren.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_HARBORMASTER_1</Tag>
+		<English>The Harbormaster[PARAGRAPH:1]You are tasked by your merchant marine industry to build enough [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] for them to become the undisputed trading kings of the sea. You will also need to build a fleet of [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT] to help carry cargo across deep water.</English>
+		<German>Der Hafenmeister[PARAGRAPH:1]Eure Handelsmarine hat Euch den Auftrag gegeben, genug [COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] zu bauen, damit sie die unangefochtenen Handelsk&#246;nige der See werden. Au&#223;erdem m&#252;sst Ihr eine Flotte von [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen, um die Fracht &#252;ber die Tiefsee zu bringen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_HARBORMASTER_HELP</Tag>
+		<English>[PARAGRAPH:1]To complete this quest, you must construct %d1 [COLOR_BUILDING_TEXT]Wharfs[COLOR_REVERT] in your various coastal cities. You will also have to build %d2 [COLOR_UNIT_TEXT]Caravels[COLOR_REVERT].[PARAGRAPH:1]You will fail this quest if a rival civilization completes it first, or if you reach the Industrial Era without having met the conditions.</English>
+		<German>[PARAGRAPH:1]Um diese Quest abzuschlie&#223;en, m&#252;ssen Sie %d1 [COLOR_BUILDING_TEXT]Docks[COLOR_REVERT] in Ihren K&#252;stenst&#228;dten bauen. Au&#223;erdem m&#252;ssen Sie %d2 [COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] bauen.[PARAGRAPH:1]Sie scheitern, wenn eine andere Zivilisation die Quest vor Ihnen abschlie&#223;t oder wenn Sie das Industriezeitalter erreichen, ohne die Bedingungen erf&#252;llt zu haben.</German>
+	</TEXT>
 </Civ4GameText>

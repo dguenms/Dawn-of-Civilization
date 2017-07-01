@@ -11539,7 +11539,7 @@
 			<iUnitExperienceWeight>0</iUnitExperienceWeight>
 			<bUnitsOnPlot>0</bUnitsOnPlot>
 			<BuildingsRequired>
-				<BuildingClass>BUILDINGCLASS_HARBOR</BuildingClass>
+				<BuildingClass>BUILDINGCLASS_WHARF</BuildingClass>
 			</BuildingsRequired>
 			<iNumBuildings>1</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>

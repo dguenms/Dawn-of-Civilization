@@ -2547,12 +2547,12 @@ def canTriggerHarbormasterDone(argsList):
 	trigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	
-	iHarbor = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_HARBOR')
+	iWharf = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_WHARF')
 	#Rhye - start
 	#iHarborsRequired = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers()
 	iHarborsRequired = 7
 	#Rhye - end
-	if iHarborsRequired > player.getBuildingClassCount(iHarbor):
+	if iHarborsRequired > player.getBuildingClassCount(iWharf):
 		return false
 
 	iCaravel = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_CARAVEL')
