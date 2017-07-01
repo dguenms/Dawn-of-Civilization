@@ -904,10 +904,16 @@ class RFCUtils:
 		else:
 			gc.getMap().plot(x, y).setCulture(iCiv, 10, True)
 			gc.getMap().plot(x, y).setOwner(iCiv)
-			if self.getHumanID() == iCiv:
-				self.makeUnit(iSettler, iCiv, tPlot, 1)
-			else:
-				gc.getPlayer(iCiv).found(x, y)
+			
+			for (i, j) in utils.surroundingPlots((x, y)):
+				plot = gc.getMap().plot(i, j)
+				if (x, y) == (i, j):
+					self.convertPlotCulture(plot, iCiv, 80, True)
+				else:
+					self.convertPlotCulture(plot, iCiv, 60, True)
+					
+			gc.getPlayer(iCiv).found(x, y)
+			
 			self.makeUnit(iWorker, iCiv, tPlot, 2)
 			iInfantry = self.getBestInfantry(iCiv)
 			if iInfantry:
