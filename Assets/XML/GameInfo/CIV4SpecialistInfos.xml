@@ -370,7 +370,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/Interface/MainScreen/CityScreen/Citizen.dds</Button>
+			<Button>Art/Interface/MainScreen/CityScreen/Statesman.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_PRIEST</Type>
@@ -651,7 +651,7 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<Button>Art/Interface/MainScreen/CityScreen/Great_Citizen.dds</Button>
+			<Button>Art/Interface/MainScreen/CityScreen/Great_Statesman.dds</Button>
 		</SpecialistInfo>
 		<SpecialistInfo>
 			<Type>SPECIALIST_GREAT_GENERAL</Type>
