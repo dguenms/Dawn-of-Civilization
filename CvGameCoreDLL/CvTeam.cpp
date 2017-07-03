@@ -2756,7 +2756,7 @@ int CvTeam::getScenarioResearchModifier() const
 	int iScenarioModifier = 100;
 
 	if (getScenario() == SCENARIO_600AD) iScenarioModifier = 110;
-	else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 120;
+	else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 125;
 
 	return iScenarioModifier;
 }
@@ -2815,7 +2815,11 @@ int CvTeam::getTechLeaderModifier() const
 {
 	int iModifier = 0;
 
-	return iModifier;
+	// Leoreth: only during human autoplay
+	if (GC.getGame().getGameTurn() >= GET_PLAYER(GC.getGame().getActivePlayer()).getBirthTurn())
+	{
+		return iModifier;
+	}
 
 	// Leoreth: penalty for the tech leader
 	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() - GET_PLAYER(getLeaderID()).getBirthTurn() > getTurns(30))
