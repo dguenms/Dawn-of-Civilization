@@ -6400,7 +6400,7 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -6792,7 +6792,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -7574,7 +7574,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -7617,7 +7617,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -9636,7 +9636,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -9682,7 +9682,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -10055,7 +10055,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -10897,7 +10897,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -11034,7 +11034,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -11431,7 +11431,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -12207,7 +12207,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -12852,7 +12852,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -13266,7 +13266,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -13868,7 +13868,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -14605,7 +14605,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -15528,7 +15528,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -16456,7 +16456,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
@@ -16543,7 +16543,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
@@ -17735,7 +17735,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
@@ -18200,7 +18200,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
@@ -19131,7 +19131,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
@@ -20320,7 +20320,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
@@ -21197,22 +21197,22 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=29, (Portugal)
@@ -21274,7 +21274,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -22149,7 +22149,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -22159,7 +22159,6 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
@@ -22649,22 +22648,22 @@ BeginPlot
 		UnitType=UNIT_SPANISH_CONQUISTADOR, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=21, (Spain)
@@ -22836,7 +22835,6 @@ BeginPlot
 		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_MONUMENT
 		BuildingType=BUILDING_POST_OFFICE
-		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
 		Player24Culture=100, (England)
@@ -23247,7 +23245,6 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_FRENCH_SALON
@@ -23371,7 +23368,6 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_ENGLISH_ROYAL_EXCHANGE
-		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_BATH
@@ -24222,7 +24218,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -24330,19 +24326,19 @@ BeginPlot
 		UnitType=UNIT_MUSKETMAN, UnitOwner=22, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=22, (France)
+		UnitType=UNIT_BOMBARD, UnitOwner=22, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=22, (France)
+		UnitType=UNIT_BOMBARD, UnitOwner=22, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=22, (France)
+		UnitType=UNIT_BOMBARD, UnitOwner=22, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=22, (France)
+		UnitType=UNIT_BOMBARD, UnitOwner=22, (France)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_FRENCH_HEAVY_CANNON, UnitOwner=22, (France)
+		UnitType=UNIT_BOMBARD, UnitOwner=22, (France)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CUIRASSIER, UnitOwner=22, (France)
@@ -25335,10 +25331,10 @@ BeginPlot
 		UnitType=UNIT_MUSKETMAN, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_BOMBARD, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=38, (Netherlands)
+		UnitType=UNIT_BOMBARD, UnitOwner=38, (Netherlands)
 	EndUnit
 	BeginCity
 		CityOwner=38, (Netherlands)
@@ -25359,7 +25355,6 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
-		BuildingType=BUILDING_COURTHOUSE
 		BuildingType=BUILDING_DUTCH_DIKE
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_WEAVER
@@ -25706,9 +25701,7 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
 		Player35Culture=100, (Tanus)
@@ -25888,7 +25881,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_JAIL
 		ReligionType=RELIGION_PROTESTANTISM
 		Player44Culture=100, (Bergen)
 	EndCity
@@ -26091,7 +26084,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
@@ -26132,10 +26125,10 @@ BeginPlot
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LONGBOWMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_CROSSBOWMAN, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=44, (Independent)
@@ -26268,10 +26261,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=25, (Holy Rome)
@@ -26836,7 +26829,7 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_CATHEDRAL
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
@@ -27022,7 +27015,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
-		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
 		Player44Culture=100, (Independent)
@@ -27556,7 +27549,7 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
 		Player44Culture=100, (Independent)
@@ -28007,22 +28000,22 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=25, (Holy Rome)
@@ -28118,13 +28111,13 @@ BeginPlot
 		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=39, (Germany)
+		UnitType=UNIT_BOMBARD, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=39, (Germany)
+		UnitType=UNIT_BOMBARD, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=39, (Germany)
+		UnitType=UNIT_BOMBARD, UnitOwner=39, (Germany)
 	EndUnit
 	BeginCity
 		CityOwner=39, (Germany)
@@ -28679,28 +28672,28 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=16, (Vikings)
@@ -29580,13 +29573,10 @@ BeginPlot
 	BeginCity
 		CityOwner=35, (Turkey)
 		CityName=Belgrad
-		CityPopulation=6
+		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
@@ -29623,10 +29613,10 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=25, (Holy Rome)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=25, (Holy Rome)
 	EndUnit
 	BeginCity
 		CityOwner=25, (Holy Rome)
@@ -29835,7 +29825,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginCity
 		CityOwner=16, (Vikings)
@@ -30647,7 +30637,6 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_JAIL
@@ -30878,7 +30867,7 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=16, (Vikings)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=16, (Vikings)
 	EndUnit
 	BeginCity
 		CityOwner=16, (Vikings)
@@ -31354,7 +31343,6 @@ BeginPlot
 		BuildingType=BUILDING_OTTOMAN_HAMMAM
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_CUSTOMS_HOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_UNIVERSITY
@@ -31799,14 +31787,13 @@ BeginPlot
 	BeginCity
 		CityOwner=35, (Turkey)
 		CityName=El-Kahire
-		CityPopulation=7
+		CityPopulation=5
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
@@ -32043,7 +32030,6 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_POST_OFFICE
-		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
@@ -32667,7 +32653,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=29, (Portugal)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=29, (Portugal)
 	EndUnit
 	BeginCity
 		CityOwner=29, (Portugal)
@@ -32677,8 +32663,6 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
 		Player29Culture=50, (Portugal)
@@ -32734,7 +32718,7 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_JAIL
 		ReligionType=RELIGION_ISLAM
 		Player44Culture=100, (Independent)
 	EndCity
@@ -32909,8 +32893,6 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
@@ -33836,9 +33818,6 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_JEWISH_TEMPLE
@@ -34318,7 +34297,7 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_CANNON, UnitOwner=44, (Independent)
+		UnitType=UNIT_BOMBARD, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
@@ -34336,7 +34315,7 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_COURTHOUSE
+		BuildingType=BUILDING_JAIL
 		ReligionType=RELIGION_ISLAM
 		Player44Culture=100, (Independent)
 	EndCity
@@ -34461,9 +34440,6 @@ BeginPlot
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_JUDAISM
@@ -34550,12 +34526,11 @@ BeginPlot
 	BeginCity
 		CityOwner=26, (Russia)
 		CityName=Rostov-na-Donu
-		CityPopulation=6
+		CityPopulation=4
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
@@ -34910,9 +34885,7 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -35015,8 +34988,6 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
@@ -35908,7 +35879,6 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_JAIL
@@ -36067,7 +36037,7 @@ BeginPlot
 	BeginCity
 		CityOwner=26, (Russia)
 		CityName=Vyatka
-		CityPopulation=4
+		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
@@ -36498,11 +36468,10 @@ BeginPlot
 	BeginCity
 		CityOwner=26, (Russia)
 		CityName=Samara
-		CityPopulation=5
+		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
@@ -37419,11 +37388,10 @@ BeginPlot
 	BeginCity
 		CityOwner=26, (Russia)
 		CityName=Obdorsk
-		CityPopulation=3
+		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
 		ReligionType=RELIGION_ORTHODOXY
@@ -37876,12 +37844,10 @@ BeginPlot
 	BeginCity
 		CityOwner=26, (Russia)
 		CityName=Ekaterinburg
-		CityPopulation=5
+		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
@@ -39538,7 +39504,6 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
@@ -40439,7 +40404,6 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
@@ -40837,28 +40801,28 @@ BeginPlot
 		UnitType=UNIT_CUIRASSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=5, (India)
@@ -41527,12 +41491,9 @@ BeginPlot
 	BeginCity
 		CityOwner=26, (Russia)
 		CityName=Tomsk
-		CityPopulation=3
+		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_ORTHODOX_TEMPLE
 		ReligionType=RELIGION_ORTHODOXY
 		Player26Culture=50, (Russia)
@@ -41771,22 +41732,22 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=10, (Tamils)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=10, (Tamils)
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=10, (Tamils)
@@ -41873,10 +41834,10 @@ BeginPlot
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=5, (India)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=5, (India)
 	EndUnit
 	BeginCity
 		CityOwner=5, (India)
@@ -41951,7 +41912,6 @@ BeginPlot
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
@@ -42355,13 +42315,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent2)
@@ -43785,8 +43745,6 @@ BeginPlot
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_SMOKEHOUSE
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
@@ -46291,13 +46249,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=45, (Independent2)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=45, (Independent2)
 	EndUnit
 	BeginCity
 		CityOwner=45, (Independent2)
@@ -46959,16 +46917,16 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=44, (Independent)
@@ -48395,13 +48353,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=44, (Independent)
@@ -48451,13 +48409,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=44, (Independent)
@@ -50250,13 +50208,13 @@ BeginPlot
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=44, (Independent)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=44, (Independent)
 	EndUnit
 	BeginCity
 		CityOwner=44, (Independent)
@@ -50778,7 +50736,7 @@ BeginPlot
 		UnitType=UNIT_GALLEON, UnitOwner=21, (Spain)
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_MUSKETMAN, UnitOwner=21, (Spain)
+		UnitType=UNIT_ARQUEBUSIER, UnitOwner=21, (Spain)
 	EndUnit
 	BeginCity
 		CityOwner=21, (Spain)
@@ -52660,7 +52618,6 @@ BeginPlot
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MONUMENT
 		BuildingType=BUILDING_JAIL
-		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_CATHEDRAL
