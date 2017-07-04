@@ -30,14 +30,14 @@ class WBGameDataScreen:
 
 	def interfaceScreen(self):
 		screen = CyGInterfaceScreen( "WBGameDataScreen", CvScreenEnums.WB_GAMEDATA)
-		
+
 		screen.setRenderInterfaceOnly(True)
 		screen.addPanel( "MainBG", u"", u"", True, False, -10, -10, screen.getXResolution() + 20, screen.getYResolution() + 20, PanelStyles.PANEL_STYLE_MAIN )
 		screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
 
 		screen.setLabel("GameDataHeader", "Background", "<font=4b>" + CyTranslator().getText("TXT_KEY_PITBOSS_GAME_OPTIONS",()) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution() /2, 20, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 		screen.setText("GameDataExit", "Background", "<font=4>" + CyTranslator().getText("TXT_KEY_PEDIA_SCREEN_EXIT", ()).upper() + "</font>", CvUtil.FONT_RIGHT_JUSTIFY, screen.getXResolution() - 30, screen.getYResolution() - 42, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1 )
-		
+
 		iWidth = screen.getXResolution()/4 - 40
 		screen.addDropDownBoxGFC("ChangeBy", 20, 50, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		i = 1
@@ -47,10 +47,10 @@ class WBGameDataScreen:
 				i *= 5
 			else:
 				i *= 2
-				
+
 		screen.addDropDownBoxGFC("ChangeType", 20, 50 + 20 + 15, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), 1, 1, not bRemove)
-		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), 0, 0, bRemove)				
+		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), 0, 0, bRemove)
 
 		screen.addDropDownBoxGFC("CurrentPage", 20, screen.getYResolution() - 42, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
 		screen.addPullDownString("CurrentPage", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_RELIGION", ()), 8, 8, False)
@@ -132,12 +132,12 @@ class WBGameDataScreen:
 
 		iY += 30
 		screen.setLabel("AutoPlayStop", "Background", "<font=3>" + CyTranslator().getText("TXT_KEY_WB_AI_AUTOPLAY_WARNING",()) + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution() /4, iY, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-		
+
 	def placeNewPlayer(self):
 		if CyGame().countCivPlayersEverAlive() == gc.getMAX_CIV_PLAYERS(): return
 		screen = CyGInterfaceScreen( "WBGameDataScreen", CvScreenEnums.WB_GAMEDATA)
 		sHeaderText = CyTranslator().getText("TXT_KEY_WB_ADD_NEW_PLAYER",())
-		
+
 		sColor = CyTranslator().getText("[COLOR_WARNING_TEXT]", ())
 		if bRepeat:
 			sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ()) 
@@ -177,7 +177,6 @@ class WBGameDataScreen:
 			for i in xrange(nColumns):
 				screen.setTableColumnHeader("WBNewLeader", i, "", iWidth/nColumns)
 
-			
 			lList = []
 			for item in xrange(gc.getNumLeaderHeadInfos()):
 				Info = gc.getLeaderHeadInfo(item)
@@ -244,7 +243,7 @@ class WBGameDataScreen:
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_CONGRESS", ()), 2004])
 		lList2.append([CyTranslator().getText("TXT_KEY_WB_NO_PLAGUE", ()), 2005])
 		lList2.sort()
-		
+
 		# Stored variables
 		lList3 = []
 		lList3.append([CyTranslator().getText("TXT_KEY_WB_ALREADY_SWITCHED", ()), 3001])
@@ -314,14 +313,14 @@ class WBGameDataScreen:
 			screen.setTableText("WBGameOptions", 2, iRow, sText, "", WidgetTypes.WIDGET_PYTHON, 1028, item, CvUtil.FONT_LEFT_JUSTIFY)
 			sText = self.colorText(CyTranslator().getText("TXT_KEY_WB_DEFAULT", ()), bDefault)
 			screen.setTableText("WBGameOptions", 3, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-						
+
 		for i in xrange(len(lList3)):
 			item = lList3[i][1]
 			iRow = iNumRows + 3 + i
 
 			bEnabled = False
 			bWhite = False
-			
+
 			if item == 3001:
 				bEnabled = data.bAlreadySwitched
 			elif item == 3002:
