@@ -1651,26 +1651,23 @@ class RFCUtils:
 		WarMaps.updateMap(iPlayer, bReborn)
 
 	def toggleStabilityOverlay(self, iPlayer = -1):
-		engine = CyEngine()
-		map = CyMap()
+		bReturn = self.bStabilityOverlay
+		self.removeStabilityOverlay()
 
-		bWB = False
+		if bReturn:
+			return
+
+		bWB = (iPlayer != -1)
 		if iPlayer == -1:
 			iPlayer = self.getHumanID()
-		else:
-			bWB = True
-			
-		self.removeStabilityOverlay()
-			
-		if self.bStabilityOverlay and not bWB:
-			self.bStabilityOverlay = False
-			CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
-			return
 
 		self.bStabilityOverlay = True
 		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", True)
 
 		iTeam = gc.getPlayer(iPlayer).getTeam()
+
+		engine = CyEngine()
+		map = CyMap()
 
 		# apply the highlight
 		for i in range(map.numPlots()):
@@ -1702,6 +1699,8 @@ class RFCUtils:
 		# clear the highlight
 		for i in range(max(iNumPlotStabilityTypes, iMaxWarValue/2)):
 			engine.clearAreaBorderPlots(1000+i)
+		self.bStabilityOverlay = False
+		CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE).setState("StabilityOverlay", False)
 			
 	def getRegionCities(self, lRegions):
 		lCities = []
