@@ -178,7 +178,7 @@ tCaribbeanTL = (25, 33)
 tCaribbeanBR = (33, 39)
 
 # first Canadian goal: connect your capital to an Atlantic and a Pacific port by 1920 AD
-lAtlanticCoast = [(31, 50), (32, 50), (34, 50), (32, 51), (33, 51), (35, 51), (30, 52), (31, 52), (32, 52), (30, 53), (35, 53), (30, 54), (31, 54), (32, 54), (35, 54), (36, 54), (32, 55), (33, 55), (34, 55)]
+lAtlanticCoast = [(34, 50), (33, 51), (35, 51), (30, 52), (31, 52), (32, 52), (30, 53), (35, 53), (30, 54), (31, 54), (32, 54), (35, 54), (36, 54), (32, 55), (33, 55), (34, 55)]
 lPacificCoast = [(11, 51), (10, 52), (11, 53), (10, 56)]
 
 # second Canadian goal: control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD
@@ -187,7 +187,7 @@ tCanadaWestBR = (26, 61)
 tCanadaWestExceptions = ((10, 59), (10, 60), (10, 61), (21, 61), (22, 61), (23, 61), (24, 61), (25, 61))
 tCanadaEastTL = (27, 50)
 tCanadaEastBR = (36, 59)
-tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50))
+tCanadaEastExceptions = ((30, 50), (31, 50), (32, 50), (32, 51))
 
 ### GOAL CONSTANTS ###
 
