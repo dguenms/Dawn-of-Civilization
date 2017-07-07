@@ -1850,12 +1850,10 @@ def onCombatResult(pWinningUnit, pLosingUnit):
 					win(iKorea, 2)
 					
 def onGreatPersonBorn(iPlayer, unit):
-	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
-	
-	iUnitType = unit.getUnitType()
+	iUnitType = utils.getBaseUnit(unit.getUnitType())
 	pUnitInfo = gc.getUnitInfo(iUnitType)
 	
-	if not isFirstBorn(iUnitType):
+	if not isGreatPersonTypeBorn(iUnitType):
 		data.lFirstGreatPeople[lGreatPeopleUnits.index(iUnitType)] = iPlayer
 	
 	# second Mexican goal: get three great generals by 1940 AD
@@ -2306,9 +2304,13 @@ def isDiscovered(iTech):
 def isEntered(iEra):
 	return data.lFirstDiscovered[iEra] != -1
 	
-def isFirstBorn(iGreatPerson):
+def isGreatPersonTypeBorn(iGreatPerson):
 	if iGreatPerson not in lGreatPeopleUnits: return True
-	return data.lFirstGreatPeople[lGreatPeopleUnits.index(iGreatPerson)] != -1
+	return getFirstBorn(iGreatPerson) != -1
+	
+def getFirstBorn(iGreatPerson):
+	if iGreatPerson not in lGreatPeopleUnits: return -1
+	return data.lFirstGreatPeople[lGreatPeopleUnits.index(iGreatPerson)]
 	
 	
 def getBestCity(iPlayer, tPlot, function):
@@ -2978,7 +2980,7 @@ def getGlobalTreasury():
 	return iTreasury
 	
 def countFirstGreatPeople(iPlayer):
-	return len([iGreatPerson for iGreatPerson in lGreatPeople if isFirstBorn(iGreatPerson) == iPlayer])
+	return len([iGreatPerson for iGreatPerson in lGreatPeopleUnits if getFirstBorn(iGreatPerson) == iPlayer])
 	
 ### UHV HELP SCREEN ###
 
