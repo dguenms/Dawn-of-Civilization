@@ -3544,7 +3544,7 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 	}
 
 	// Leoreth
-	if (GC.getUnitInfo(eUnit).getWorkRate() > 0 && GC.getUnitInfo(eUnit).getCombat() <= 0)
+	if (GC.getUnitInfo(eUnit).isWorker())
 	{
 		iMultiplier += GET_PLAYER(getOwnerINLINE()).getWorkerProductionModifier();
 	}
