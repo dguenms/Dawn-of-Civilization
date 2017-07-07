@@ -2145,7 +2145,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 			paganReligion = gc.getCivilizationInfo(pPlayer.getCivilizationType()).getPaganReligionName(0)
 			
 			# Annunaki: have more wonders in your capital than any other city in the world
-			if paganReligion == "Annunaki":
+			if paganReligion == "Anunnaki":
 				capital = pPlayer.getCapitalCity()
 				
 				if capital and isBestCity(iPlayer, (capital.getX(), capital.getY()), cityWonders):
