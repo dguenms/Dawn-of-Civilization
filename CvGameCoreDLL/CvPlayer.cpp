@@ -6002,7 +6002,7 @@ bool CvPlayer::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestV
 	// Leoreth: pagan buildings require no state religion
 	if (GC.getBuildingInfo(eBuilding).isPagan())
 	{
-		if (getStateReligion() != NO_RELIGION)
+		if (!isStateReligion() || getStateReligion() != NO_RELIGION)
 		{
 			return false;
 		}
