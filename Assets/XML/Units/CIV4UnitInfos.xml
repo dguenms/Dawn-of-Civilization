@@ -11988,6 +11988,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_ENGINE</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_REFINING</PrereqTech>
+			</TechTypes>
 			<PrereqBonuses>
 				<BonusType>BONUS_COAL</BonusType>
 				<BonusType>BONUS_OIL</BonusType>

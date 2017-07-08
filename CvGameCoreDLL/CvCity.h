@@ -1061,7 +1061,7 @@ public:
 	int getReligionPopulation(ReligionTypes eReligion) const;
 
 	void updateWorkedImprovements();
-	void updateWorkedImprovement(int iIndex);
+	void updateWorkedImprovement(int iIndex, bool bNewValue);
 	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement);
 
 	int getImprovementHappiness(ImprovementTypes eImprovement) const;

@@ -12720,7 +12720,7 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 				if (iIndex != CITY_HOME_PLOT)
 				{
 					changeWorkingPopulation(1);
-					updateExtraSpecialistYield(); //Leoreth: city states
+					updateWorkedImprovement(iIndex, true);
 				}
 
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
@@ -12744,7 +12744,7 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 				if (iIndex != CITY_HOME_PLOT)
 				{
 					changeWorkingPopulation(-1);
-					updateExtraSpecialistYield(); //Leoreth: city states
+					updateWorkedImprovement(iIndex, false);
 				}
 
 				for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
@@ -12760,8 +12760,6 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 					}
 				}
 			}
-
-			updateWorkedImprovement(iIndex);
 
 			if ((getTeam() == GC.getGameINLINE().getActiveTeam()) || GC.getGameINLINE().isDebugMode())
 			{
@@ -18113,14 +18111,14 @@ void CvCity::updateWorkedImprovement(ImprovementTypes eOldImprovement, Improveme
 	}
 }
 
-void CvCity::updateWorkedImprovement(int iIndex)
+void CvCity::updateWorkedImprovement(int iIndex, bool bNewValue)
 {
 	CvPlot* pPlot = getCityIndexPlot(iIndex);
 
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 	{
-		changeImprovementHappiness(getImprovementHappiness(pPlot->getImprovementType()) * (isWorkingPlot(iIndex) ? 1 : -1));
-		changeImprovementHealth(getImprovementHealth(pPlot->getImprovementType()) * (isWorkingPlot(iIndex) ? 1 : -1));
+		changeImprovementHappiness(getImprovementHappiness(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
+		changeImprovementHealth(getImprovementHealth(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
 	}
 }
 
