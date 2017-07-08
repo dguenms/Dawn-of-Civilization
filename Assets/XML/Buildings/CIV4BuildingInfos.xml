@@ -1961,6 +1961,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
@@ -11410,6 +11414,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -11450,6 +11458,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -11494,6 +11506,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -11534,6 +11550,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -11578,6 +11598,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -11618,6 +11642,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -11662,6 +11690,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -11702,6 +11734,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -11746,6 +11782,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -11786,6 +11826,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -11830,6 +11874,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -11871,6 +11919,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -11910,6 +11962,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -11954,6 +12010,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -11996,6 +12056,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -12035,6 +12099,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -12079,6 +12147,10 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
 			</Flavors>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildingInfo>
@@ -12119,6 +12191,10 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
