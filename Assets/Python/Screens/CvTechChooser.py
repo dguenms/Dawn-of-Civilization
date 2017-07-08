@@ -292,12 +292,6 @@ class CvTechChooser:
 			if iTech > -1:
 				self.TechEffects[iTech].append(("Civic", iCivic))
 
-		# Religions
-		for iReligion in xrange(gc.getNumReligionInfos()):
-			iTech = gc.getReligionInfo(iReligion).getTechPrereq()
-			if iTech > -1:
-				self.TechEffects[iTech].append(("Religion", iReligion))
-
 		# Corporations
 		for iCorporation in xrange(gc.getNumCorporationInfos()):
 			iTech = gc.getCorporationInfo(iCorporation).getTechPrereq()
@@ -409,6 +403,12 @@ class CvTechChooser:
 			iTech = gc.getProcessInfo(iProcess).getTechPrereq()
 			if iTech > -1:
 				self.TechEffects[iTech].append(("Process", iProcess))
+
+		# Religions
+		for iReligion in xrange(gc.getNumReligionInfos()):
+			iTech = gc.getReligionInfo(iReligion).getTechPrereq()
+			if iTech > -1:
+				self.TechEffects[iTech].append(("Religion", iReligion))
 
 
 
