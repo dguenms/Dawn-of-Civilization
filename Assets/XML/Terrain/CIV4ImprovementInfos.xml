@@ -510,7 +510,6 @@
 			<iAirBombDefense>10</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappiness>0</iHappiness>
-			<iHealth>-1</iHealth>
 			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>

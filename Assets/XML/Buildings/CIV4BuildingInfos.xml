@@ -991,10 +991,6 @@
 			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
 			<ImprovementHealths>
 				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_MINE</ImprovementType>
-					<iHealth>1</iHealth>
-				</ImprovementHealth>
-				<ImprovementHealth>
 					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 					<iHealth>1</iHealth>
 				</ImprovementHealth>
