@@ -657,7 +657,6 @@
 			<iAsset>12</iAsset>
 			<bTrade>1</bTrade>
 			<bGoodyTech>1</bGoodyTech>
-			<bTechTrading>1</bTechTrading>
 			<iGridX>3</iGridX>
 			<iGridY>9</iGridY>
 			<Flavors>
@@ -930,6 +929,7 @@
 			<Era>ERA_CLASSICAL</Era>
 			<iAsset>16</iAsset>
 			<bTrade>1</bTrade>
+			<bTechTrading>1</bTechTrading>
 			<bGoodyTech>0</bGoodyTech>
 			<iGridX>4</iGridX>
 			<iGridY>9</iGridY>
