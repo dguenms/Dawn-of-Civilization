@@ -159,7 +159,12 @@ class CvPediaRoute:
 		iMoveDenominator = gc.getDefineINT("MOVE_DENOMINATOR")
 		
 		iMovement = iMoveDenominator / info.getMovementCost()
-		szText += (u"%cUnits move %d times faster\n" % (szBullet, iMovement))
+		iFlatMovement = iMoveDenominator / info.getFlatMovementCost()
+		
+		szText += (u"%cUnits move %d times faster\n" % (szBullet, max(iMovement, iFlatMovement)))
+		
+		if iFlatMovement > iMovement:
+			szText += (u"%cUnit can move at most %d tiles per turn\n" % (szBullet, iFlatMovement))
 		
 		for iTech in range(gc.getNumTechInfos()):
 			iTechMovementChange = info.getTechMovementChange(iTech)
