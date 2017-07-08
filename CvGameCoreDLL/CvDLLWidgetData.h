@@ -247,6 +247,9 @@ public:
 	void parseMinorReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
 	void doPediaMinorReligionJump(CvWidgetDataStruct &widgetDataStruct);
 
+	void parseRouteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer);
+	void doPediaRouteJump(CvWidgetDataStruct &widgetDataStruct);
+
 protected:
 	
 	static CvDLLWidgetData* m_pInst;

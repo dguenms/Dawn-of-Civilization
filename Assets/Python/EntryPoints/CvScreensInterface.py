@@ -335,6 +335,7 @@ def createCivilopedia():
 								PEDIA_FEATURES			: pediaMainScreen,
 								PEDIA_RESOURCES			: pediaMainScreen,
 								PEDIA_IMPROVEMENTS		: pediaMainScreen,
+								PEDIA_ROUTES			: pediaMainScreen,
 								PEDIA_CONCEPTS			: pediaMainScreen,
 								PEDIA_SHORTCUTS 		: pediaMainScreen,
 								PEDIA_BTS_CONCEPTS		: pediaMainScreen,
@@ -367,6 +368,7 @@ def createCivilopedia():
 							PEDIA_FEATURES			: pediaMainScreen,
 							PEDIA_RESOURCES			: pediaMainScreen,
 							PEDIA_IMPROVEMENTS		: pediaMainScreen,
+							PEDIA_ROUTES			: pediaMainScreen,
 							PEDIA_CONCEPTS			: pediaMainScreen,
 							PEDIA_SHORTCUTS 		: pediaMainScreen,
 							PEDIA_BTS_CONCEPTS		: pediaMainScreen,
@@ -482,6 +484,11 @@ def pediaJumpToBonus(argsList):
 
 def pediaJumpToImprovement(argsList):
 	pediaMainScreen.pediaJump(PEDIA_IMPROVEMENTS, argsList[0], True, False)
+	
+	
+	
+def pediaJumpToRoute(argsList):
+	pediaMainScreen.pediaJump(PEDIA_ROUTES, argsList[0], True, False)
 
 
 

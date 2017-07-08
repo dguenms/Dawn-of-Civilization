@@ -183,7 +183,7 @@ class CvPediaBuilding:
 		if iOrPrereq >= 0 and iStatePrereq >= 0:
 			screen.attachLabel(panel, "", "(")
 		
-		if (iPrereq >= 0):
+		if iPrereq >= 0:
 			screen.attachImageButton( panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, -1, False )
 
 		if iOrPrereq >= 0:

@@ -22,6 +22,7 @@ import CvPediaTerrain
 import CvPediaFeature
 import CvPediaResource
 import CvPediaImprovement
+import CvPediaRoute
 import CvPediaCultureLevel
 import CvPediaConcepts
 
@@ -133,6 +134,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_FEATURES			: self.placeFeatures,
 			PEDIA_RESOURCES			: self.placeResources,
 			PEDIA_IMPROVEMENTS		: self.placeImprovements,
+			PEDIA_ROUTES			: self.placeRoutes,
 			PEDIA_CONCEPTS			: self.placeConcepts,
 			PEDIA_HINTS			: self.placeHints,
 			PEDIA_SHORTCUTS  		: self.placeShortcuts,
@@ -167,6 +169,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			PEDIA_FEATURES			: CvPediaFeature.CvPediaFeature(self),
 			PEDIA_RESOURCES			: CvPediaResource.CvPediaResource(self),
 			PEDIA_IMPROVEMENTS		: CvPediaImprovement.CvPediaImprovement(self),
+			PEDIA_ROUTES			: CvPediaRoute.CvPediaRoute(self),
 			PEDIA_CONCEPTS			: CvPediaConcepts.CvPediaConcepts(self),
 			PEDIA_HINTS			: CvPediaConcepts.CvPediaConcepts(self),
 			PEDIA_SHORTCUTS  		: CvPediaConcepts.CvPediaConcepts(self),
@@ -221,6 +224,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		self.szCategoryFeatures			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_FEATURE", ())
 		self.szCategoryBonuses			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_BONUS", ())
 		self.szCategoryImprovements		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_IMPROVEMENT", ())
+		self.szCategoryRoutes			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_ROUTE", ())
 		self.szCategoryCultureLevels		= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CULTURE_LEVELS", ())
 		self.szCategoryConcepts			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CONCEPTS", ())
 		self.szCategoryHints			= CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_HINTS", ())
@@ -252,6 +256,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			["TERRAINS",		self.szCategoryFeatures],
 			["TERRAINS",		self.szCategoryBonuses],
 			["TERRAINS",		self.szCategoryImprovements],
+			["TERRAINS",		self.szCategoryRoutes],
 			["HINTS",		self.szCategoryConcepts],
 			["HINTS",		self.szCategoryHints],
 			["HINTS",		self.szCategoryShortcuts],
@@ -751,6 +756,11 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 	def placeImprovements(self):
 		self.list = self.getSortedList(gc.getNumImprovementInfos(), gc.getImprovementInfo)
 		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_IMPROVEMENT, gc.getImprovementInfo)
+		
+		
+	def placeRoutes(self):
+		self.list = self.getSortedList(gc.getNumRouteInfos(), gc.getRouteInfo)
+		self.placeItems(WidgetTypes.WIDGET_PEDIA_JUMP_TO_ROUTE, gc.getRouteInfo)
 
 
 	def placeConcepts(self):
@@ -965,6 +975,8 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 			return self.pediaJump(PEDIA_MAIN, PEDIA_RESOURCES, True, True)
 		elif szLink == "PEDIA_MAIN_IMPROVEMENT":
 			return self.pediaJump(PEDIA_MAIN, PEDIA_IMPROVEMENTS, True, True)
+		elif szLink == "PEDIA_MAIN_ROUTE":
+			return self.pediaJump(PEDIA_MAIN, PEDIA_ROUTES, True, True)
 		elif szLink == "PEDIA_MAIN_CONCEPT":
 			return self.pediaJump(PEDIA_MAIN, PEDIA_CONCEPTS, True, True)
 		elif szLink == "PEDIA_MAIN_SHORTCUTS":
@@ -1019,6 +1031,9 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 		for i in xrange(gc.getNumImprovementInfos()):
 			if gc.getImprovementInfo(i).isMatchForLink(szLink, False):
 				return self.pediaJump(PEDIA_IMPROVEMENTS, i, True, True)
+		for i in xrange(gc.getNumRouteInfos()):
+			if gc.getImprovementInfo(i).isMatchForLink(szLink, False):
+				return self.pediaJump(PEDIA_ROUTES, i, True, True)
 		for i in xrange(gc.getNumConceptInfos()):
 			if gc.getConceptInfo(i).isMatchForLink(szLink, False):
 				return self.pediaJump(PEDIA_CONCEPTS, i, True, True)

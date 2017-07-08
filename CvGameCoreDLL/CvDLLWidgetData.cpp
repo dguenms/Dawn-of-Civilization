@@ -595,6 +595,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseImprovementHelp(widgetDataStruct, szBuffer);
 		break;
 
+	// Leoreth
+	case WIDGET_PEDIA_JUMP_TO_ROUTE:
+		parseRouteHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_PEDIA_JUMP_TO_CIVIC:
 		parseCivicHelp(widgetDataStruct, szBuffer);
 		break;
@@ -907,6 +912,11 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 		doPediaImprovementJump(widgetDataStruct);
 		break;
 
+	// Leoreth
+	case WIDGET_PEDIA_JUMP_TO_ROUTE:
+		doPediaRouteJump(widgetDataStruct);
+		break;
+
 	case WIDGET_PEDIA_JUMP_TO_CIVIC:
 		doPediaCivicJump(widgetDataStruct);
 		break;
@@ -1141,6 +1151,7 @@ bool CvDLLWidgetData::isLink(const CvWidgetDataStruct &widgetDataStruct) const
 	case WIDGET_PEDIA_JUMP_TO_PROMOTION:
 	case WIDGET_PEDIA_JUMP_TO_BONUS:
 	case WIDGET_PEDIA_JUMP_TO_IMPROVEMENT:
+	case WIDGET_PEDIA_JUMP_TO_ROUTE:
 	case WIDGET_PEDIA_JUMP_TO_CIVIC:
 	case WIDGET_PEDIA_JUMP_TO_CIV:
 	case WIDGET_PEDIA_JUMP_TO_LEADER:
@@ -1710,6 +1721,13 @@ void CvDLLWidgetData::doPediaImprovementJump(CvWidgetDataStruct &widgetDataStruc
 		argsList.add(widgetDataStruct.m_iData1);
 	}
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToImprovement", argsList.makeFunctionArgs());
+}
+
+void CvDLLWidgetData::doPediaRouteJump(CvWidgetDataStruct &widgetDataStruct)
+{
+	CyArgsList argsList;
+	argsList.add(widgetDataStruct.m_iData1);
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToRoute", argsList.makeFunctionArgs());
 }
 
 void CvDLLWidgetData::doPediaCivicJump(CvWidgetDataStruct &widgetDataStruct)
@@ -4467,6 +4485,10 @@ void CvDLLWidgetData::parseCultureLevelHelp(CvWidgetDataStruct &widgetDataStruct
 	szBuffer.assign(GC.getCultureLevelInfo((CultureLevelTypes)widgetDataStruct.m_iData1).getText());
 }
 
+void CvDLLWidgetData::parseRouteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	szBuffer.assign(GC.getRouteInfo((RouteTypes)widgetDataStruct.m_iData1).getText());
+}
 
 void CvDLLWidgetData::parseObsoleteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
