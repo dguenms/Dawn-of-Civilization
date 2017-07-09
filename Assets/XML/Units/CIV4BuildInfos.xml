@@ -193,7 +193,7 @@
 			<Type>BUILD_WORKSHOP</Type>
 			<Description>TXT_KEY_BUILD_WORKSHOP</Description>
 			<PrereqTech>TECH_ARTISANRY</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
@@ -281,7 +281,7 @@
 			<Type>BUILD_WATERMILL</Type>
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -561,7 +561,7 @@
 			<Type>BUILD_COTTAGE</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
 			<PrereqTech>TECH_PROPERTY</PrereqTech>
-			<iTime>800</iTime>
+			<iTime>600</iTime>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -870,7 +870,7 @@
 			<Type>BUILD_WORKSHOP_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WORKSHOP</Description>
 			<PrereqTech>TECH_ARTISANRY</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
@@ -946,7 +946,7 @@
 			<Type>BUILD_WATERMILL_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_WATERMILL</Description>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>800</iTime>
 			<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
@@ -1180,7 +1180,7 @@
 			<Type>BUILD_COTTAGE_DEFORESTATION</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
 			<PrereqTech>TECH_PROPERTY</PrereqTech>
-			<iTime>800</iTime>
+			<iTime>600</iTime>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
