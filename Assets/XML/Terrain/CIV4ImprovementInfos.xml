@@ -703,11 +703,6 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
-			<RiverSideYieldChange>
-				<iYield>0</iYield>
-				<iYield>1</iYield>
-				<iYield>0</iYield>
-			</RiverSideYieldChange>
 			<bActsAsCity>0</bActsAsCity>
 			<bHillsMakesValid>0</bHillsMakesValid>
 			<bFreshWaterMakesValid>0</bFreshWaterMakesValid>
