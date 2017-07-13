@@ -211,6 +211,9 @@ class AIWars:
 			
 			if iPlayer == iTamils:
 				utils.makeUnitAI(iWarElephant, iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 1)
+				
+			if iPlayer == iSpain:
+				utils.makeUnitAI(utils.getBestCavalry(iPlayer), iPlayer, tPlot, UnitAITypes.UNITAI_ATTACK_CITY, 2 * iExtra)
 	
 	def forgetMemory(self, iTech, iPlayer):
 		if iTech in [iPsychology, iTelevision]:
