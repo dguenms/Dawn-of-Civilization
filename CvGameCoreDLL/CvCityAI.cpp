@@ -5779,6 +5779,8 @@ void CvCityAI::AI_updateBestBuild()
 	int iHappyAdjust = 0;
 	int iHealthAdjust = 0;
 
+	int iCommercePlots = 0;
+
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
 		if (iI != CITY_HOME_PLOT)
@@ -5893,6 +5895,11 @@ void CvCityAI::AI_updateBestBuild()
 				{
 					iHillFoodDeficit += std::max(0, GC.getFOOD_CONSUMPTION_PER_POPULATION() - pLoopPlot->calculateNatureYield(YIELD_FOOD, getTeam()));
 				}
+
+				if (eBonus == NO_BONUS && pLoopPlot->calculateNatureYield(YIELD_FOOD, getTeam()) >= GC.getFOOD_CONSUMPTION_PER_POPULATION())
+				{
+					iCommercePlots++;
+				}
 			}
 		}
 	}
@@ -5908,7 +5915,7 @@ void CvCityAI::AI_updateBestBuild()
 
 	int iBonusFoodDiff = ((iBonusFoodSurplus + iFeatureFoodSurplus) - (iBonusFoodDeficit + iHillFoodDeficit / 2));
 
-	int iHealth = goodHealth() - badHealth() + iHealthAdjust; // Leoreth: use health adjust to discourage 
+	int iHealth = goodHealth() - badHealth();
 	int iTargetSize = std::min(iGoodTileCount, getPopulation()+(happyLevel()-unhappyLevel()));
 	iTargetSize = std::min(iTargetSize, 1 + getPopulation() + iHealth);
 
@@ -5933,7 +5940,7 @@ void CvCityAI::AI_updateBestBuild()
 		iExtraFoodForGrowth ++;
 	}
 
-	int iFoodDifference = iFoodTotal - ((iTargetSize * GC.getFOOD_CONSUMPTION_PER_POPULATION()) + iExtraFoodForGrowth);;
+	int iFoodDifference = iFoodTotal - ((iTargetSize * GC.getFOOD_CONSUMPTION_PER_POPULATION()) + iExtraFoodForGrowth);
 
 	int iDesiredFoodChange = -iFoodDifference + std::max(0, -iHealth);
 	if (iTargetSize > getPopulation())
@@ -5956,15 +5963,18 @@ void CvCityAI::AI_updateBestBuild()
 
 	if (iProductionTotal < 10)
 	{
-	    iProductionMultiplier += (80 - 8 * iProductionTotal);
+	    iProductionMultiplier += (80 - 8 * iProductionTotal) / 2;
 	}
 	int iProductionTarget = 1 + (std::min(getPopulation(), (iTargetSize * 3) / 5));
 
 	if (iProductionTotal < iProductionTarget)
 	{
-	    iProductionMultiplier += 8 * (iProductionTarget - iProductionTotal);
+	    iProductionMultiplier += 8 * (iProductionTarget - iProductionTotal) / 2;
 	}
 
+	iCommerceMultiplier += 10 * std::max(0, iCommercePlots - (iFoodDifference / GC.getFOOD_CONSUMPTION_PER_POPULATION()));
+
+	/* Leoreth: this probably applies to most DoC cities
 	if ((iBonusFoodSurplus + iFeatureFoodSurplus > 5) && ((iBonusFoodDeficit + iHillFoodDeficit) > 5))
 	{
 		if ((iBonusFoodDeficit + iHillFoodDeficit) > 8)
@@ -5973,7 +5983,7 @@ void CvCityAI::AI_updateBestBuild()
 			iProductionMultiplier += 40;
 			iCommerceMultiplier += (kPlayer.AI_isFinancialTrouble()) ? 0 : -40;
 		}
-	}
+	}*/
 
 
 	int iNetCommerce = 1 + kPlayer.getCommerceRate(COMMERCE_GOLD) + kPlayer.getCommerceRate(COMMERCE_RESEARCH) + std::max(0, kPlayer.getGoldPerTurn());
@@ -5996,22 +6006,24 @@ void CvCityAI::AI_updateBestBuild()
 		iCommerceMultiplier += (33 * (iRatio - 40)) / 60;;
 	}
 
-	if (AI_isEmphasizeYield(YIELD_FOOD))
+	if (isHuman())
 	{
-		iFoodMultiplier *= 130;
-		iFoodMultiplier /= 100;
+		if (AI_isEmphasizeYield(YIELD_FOOD))
+		{
+			iFoodMultiplier *= 130;
+			iFoodMultiplier /= 100;
+		}
+		if (AI_isEmphasizeYield(YIELD_PRODUCTION))
+		{
+			iProductionMultiplier *= 140;
+			iProductionMultiplier /= 100;
+		}
+		if (AI_isEmphasizeYield(YIELD_COMMERCE))
+		{
+			iCommerceMultiplier *= 140;
+			iCommerceMultiplier /= 100;
+		}
 	}
-	if (AI_isEmphasizeYield(YIELD_PRODUCTION))
-	{
-		iProductionMultiplier *= 140;
-		iProductionMultiplier /= 100;
-	}
-	if (AI_isEmphasizeYield(YIELD_COMMERCE))
-	{
-		iCommerceMultiplier *= 140;
-		iCommerceMultiplier /= 100;
-	}
-
 
 
 	int iProductionAdvantage = 100 * AI_yieldMultiplier(YIELD_PRODUCTION);
@@ -6097,6 +6109,15 @@ void CvCityAI::AI_updateBestBuild()
     	iHappyAdjust += getBuildingHappiness(getProductionBuilding());
     	iHealthAdjust += getBuildingHealth(getProductionBuilding());
     }
+
+	/*iProductionMultiplier *= 2;
+	iProductionMultiplier /= 3;
+	iCommerceMultiplier *= 3;
+	iCommerceMultiplier /= 2;*/
+
+	int x = getX();
+	int y = getY();
+	log(CvWString::format(L"(%d, %d) - food %d, production %d, commerce %d", x, y, iFoodMultiplier, iProductionMultiplier, iCommerceMultiplier));
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
@@ -8362,7 +8383,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 
 	//When improving new plots only, count emphasis twice
 	//helps to avoid too much tearing up of old improvements.
-	if (pPlot->getImprovementType() == NO_IMPROVEMENT)
+	if (isHuman && pPlot->getImprovementType() == NO_IMPROVEMENT)
 	{
 		if (AI_isEmphasizeYield(YIELD_FOOD))
 		{
@@ -8679,8 +8700,8 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 					for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 					{
 						aiFinalYields[iJ] = 2*(pPlot->calculateNatureYield(((YieldTypes)iJ), getTeam(), bIgnoreFeature));
-						aiFinalYields[iJ] += (pPlot->calculateImprovementYieldChange(eFinalImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
-						aiFinalYields[iJ] += (pPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+						aiFinalYields[iJ] += 2*(pPlot->calculateImprovementYieldChange(eFinalImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
+						//aiFinalYields[iJ] += (pPlot->calculateImprovementYieldChange(eImprovement, ((YieldTypes)iJ), getOwnerINLINE(), false));
 						if (bIgnoreFeature && pPlot->getFeatureType() != NO_FEATURE)
 						{
 							aiFinalYields[iJ] -= 2 * GC.getFeatureInfo(pPlot->getFeatureType()).getYieldChange((YieldTypes)iJ);
@@ -8690,7 +8711,8 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 
 					iValue += (aiDiffYields[YIELD_FOOD] * ((100 * iFoodPriority) / 100));
 					iValue += (aiDiffYields[YIELD_PRODUCTION] * ((60 * iProductionPriority) / 100));
-					iValue += (aiDiffYields[YIELD_COMMERCE] * ((40 * iCommercePriority) / 100));
+					//iValue += (aiDiffYields[YIELD_COMMERCE] * ((40 * iCommercePriority) / 100));
+					iValue += (aiDiffYields[YIELD_COMMERCE] * ((60 * iCommercePriority) / 100));
 
 					iValue /= 2;
 
@@ -8706,7 +8728,8 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 						//flood plain > grassland > plain > tundra
 						iValue += (aiFinalYields[YIELD_FOOD] * 10);
 						iValue += (aiFinalYields[YIELD_PRODUCTION] * 6);
-						iValue += (aiFinalYields[YIELD_COMMERCE] * 4);
+						//iValue += (aiFinalYields[YIELD_COMMERCE] * 4);
+						iValue += (aiFinalYields[YIELD_COMMERCE] * 6);
 
 						if (aiFinalYields[YIELD_FOOD] >= GC.getFOOD_CONSUMPTION_PER_POPULATION())
 						{
@@ -8722,7 +8745,8 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 							}
 							if (iCommercePriority > 100)
 							{
-								iValue *= 100 + (((iCommercePriority - 100) * aiDiffYields[YIELD_COMMERCE]) / 2);
+								//iValue *= 100 + (((iCommercePriority - 100) * aiDiffYields[YIELD_COMMERCE]) / 2);
+								iValue *= 100 + (((iCommercePriority - 100) * aiDiffYields[YIELD_COMMERCE]));
 								iValue /= 100;
 							}
 						}
