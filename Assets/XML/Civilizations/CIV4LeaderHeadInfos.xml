@@ -394,7 +394,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -933,7 +933,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -1494,7 +1494,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -2035,7 +2035,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -2591,7 +2591,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -3132,7 +3132,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -3682,7 +3682,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -4232,7 +4232,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -4786,7 +4786,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -5327,7 +5327,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -5872,7 +5872,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -6426,7 +6426,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -6983,7 +6983,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -7536,7 +7536,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -8086,7 +8086,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -8640,7 +8640,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -9192,7 +9192,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -9708,7 +9708,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -10258,7 +10258,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -10807,7 +10807,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -11365,7 +11365,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -11921,7 +11921,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -12468,7 +12468,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -13016,7 +13016,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -13577,7 +13577,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -14135,7 +14135,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -14680,7 +14680,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -15225,7 +15225,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -15779,7 +15779,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -16333,7 +16333,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -16874,7 +16874,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -17428,7 +17428,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -17978,7 +17978,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -18538,7 +18538,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -19086,7 +19086,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -19640,7 +19640,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -20198,7 +20198,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -20752,7 +20752,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -21313,7 +21313,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -21854,7 +21854,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -22402,7 +22402,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -22950,7 +22950,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -23495,7 +23495,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -24047,7 +24047,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -24592,7 +24592,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -25153,7 +25153,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -25725,7 +25725,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -26290,7 +26290,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -26853,7 +26853,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -27415,7 +27415,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -27983,7 +27983,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -28560,7 +28560,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -29130,7 +29130,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -29691,7 +29691,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -30247,7 +30247,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -30815,7 +30815,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -31360,7 +31360,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -31930,7 +31930,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -32475,7 +32475,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -33020,7 +33020,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -33565,7 +33565,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -34122,7 +34122,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -34667,7 +34667,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -35212,7 +35212,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -35766,7 +35766,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -36314,7 +36314,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -36872,7 +36872,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -37428,7 +37428,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -37978,7 +37978,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -38526,7 +38526,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -39078,7 +39078,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -39626,7 +39626,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -40176,7 +40176,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -40696,7 +40696,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -41190,7 +41190,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -41735,7 +41735,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -42276,7 +42276,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -42822,7 +42822,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -43376,7 +43376,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -43904,7 +43904,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -44451,7 +44451,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -45233,7 +45233,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -45781,7 +45781,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -46337,7 +46337,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -46883,7 +46883,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -47433,7 +47433,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -47980,7 +47980,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -48525,7 +48525,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -49070,7 +49070,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -49615,7 +49615,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -50161,7 +50161,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -50683,7 +50683,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -51237,7 +51237,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -51785,7 +51785,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -52330,7 +52330,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -52882,7 +52882,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -53391,7 +53391,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -53943,7 +53943,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -54495,7 +54495,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -55040,7 +55040,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -55594,7 +55594,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -56164,7 +56164,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -56730,7 +56730,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -57275,7 +57275,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -57823,7 +57823,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -58380,7 +58380,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -58930,7 +58930,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -59468,7 +59468,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -60016,7 +60016,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -60557,7 +60557,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -61109,7 +61109,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -61642,7 +61642,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -62196,7 +62196,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -62714,7 +62714,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -63268,7 +63268,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -63822,7 +63822,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -64376,7 +64376,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -64930,7 +64930,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
@@ -65479,7 +65479,7 @@
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_TECH</ContactType>
-					<iContactDelay>30</iContactDelay>
+					<iContactDelay>15</iContactDelay>
 				</ContactDelay>
 				<ContactDelay>
 					<ContactType>CONTACT_TRADE_BONUS</ContactType>
