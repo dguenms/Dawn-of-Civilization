@@ -2755,8 +2755,8 @@ int CvTeam::getScenarioResearchModifier() const
 	// scale the scenario tech speed with its starting conditions
 	int iScenarioModifier = 100;
 
-	if (getScenario() == SCENARIO_600AD) iScenarioModifier = 110;
-	else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 125;
+	//if (getScenario() == SCENARIO_600AD) iScenarioModifier = 110;
+	//else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 125;
 
 	return iScenarioModifier;
 }
