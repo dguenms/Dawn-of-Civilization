@@ -7958,7 +7958,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_PARK</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_NATIONAL_PARK</MovieDefineTag>
-			<PrereqTech>TECH_TOURISM</PrereqTech>
+			<PrereqTech>TECH_CIVIL_RIGHTS</PrereqTech>
 			<NoBonus>BONUS_COAL</NoBonus>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
