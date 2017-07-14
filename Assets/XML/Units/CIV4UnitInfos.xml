@@ -12651,6 +12651,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_POWER_PROJECTION</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_FLIGHT</PrereqTech>
+			</TechTypes>
 			<PrereqBonuses>
 				<BonusType>BONUS_OIL</BonusType>
 				<BonusType>BONUS_URANIUM</BonusType>
