@@ -5350,6 +5350,7 @@ tRenames = (
 },
 #Language: Latin
 {
+	'Milano'		:	'Mediolanum',
 	'Alexandreia'		:	'Alexandria',
 	'Per-Wadjet'		:	'Buto',
 	'Ineb Hedj'		:	'Memphis',
