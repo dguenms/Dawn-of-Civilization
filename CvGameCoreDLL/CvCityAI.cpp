@@ -8383,7 +8383,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 
 	//When improving new plots only, count emphasis twice
 	//helps to avoid too much tearing up of old improvements.
-	if (isHuman && pPlot->getImprovementType() == NO_IMPROVEMENT)
+	if (isHuman() && pPlot->getImprovementType() == NO_IMPROVEMENT)
 	{
 		if (AI_isEmphasizeYield(YIELD_FOOD))
 		{
@@ -8400,6 +8400,11 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 			iCommercePriority *= 180;
 			iCommercePriority /= 100;
 		}
+	}
+
+	if (pPlot->isHills())
+	{
+		iProductionPriority += 50;
 	}
 
 	FAssertMsg(pPlot->getOwnerINLINE() == getOwnerINLINE(), "pPlot must be owned by this city's owner");
@@ -8659,7 +8664,8 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 						if (GC.getImprovementInfo(eFinalImprovement).isImprovementBonusTrade(eNonObsoleteBonus))
 						{
 							iValue += (GET_PLAYER(getOwnerINLINE()).AI_bonusVal(eNonObsoleteBonus) * 10);
-							iValue += 200;
+							//iValue += 200;
+							iValue += 500;
 							if (eBestBuild != NO_BUILD)
 							{
 								if ((GC.getBuildInfo(eBestBuild).getImprovement() == NO_IMPROVEMENT) || (!GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBestBuild).getImprovement()).isImprovementBonusTrade(eNonObsoleteBonus)))
@@ -8867,16 +8873,19 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 					{
 						// cottage/villages (don't want to chop them up if turns have been invested)
 						ImprovementTypes eImprovementDowngrade = (ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage();
+						//int iUpgradeValue = 8;
+						int iUpgradeValue = 16;
+
 						while (eImprovementDowngrade != NO_IMPROVEMENT)
 						{
 							CvImprovementInfo& kImprovementDowngrade = GC.getImprovementInfo(eImprovementDowngrade);
-							iValue -= kImprovementDowngrade.getUpgradeTime() * 8;
+							iValue -= kImprovementDowngrade.getUpgradeTime() * iUpgradeValue;
 							eImprovementDowngrade = (ImprovementTypes)kImprovementDowngrade.getImprovementPillage();
 						}
 
 						if (GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementUpgrade() != NO_IMPROVEMENT)
 						{
-							iValue -= (GC.getImprovementInfo(pPlot->getImprovementType()).getUpgradeTime() * 8 * (pPlot->getUpgradeProgress())) / std::max(1, GC.getGameINLINE().getImprovementUpgradeTime(pPlot->getImprovementType()));
+							iValue -= (GC.getImprovementInfo(pPlot->getImprovementType()).getUpgradeTime() * iUpgradeValue * (pPlot->getUpgradeProgress())) / std::max(1, GC.getGameINLINE().getImprovementUpgradeTime(pPlot->getImprovementType()));
 						}
 
 						if (eNonObsoleteBonus == NO_BONUS)
@@ -8896,6 +8905,9 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 						{
 							iValue /= 4;	//Greatly prefer builds which are legal.
 						}
+
+						// Leoreth: should be better by a significant margin
+						iValue -= iBestValue / 4;
 					}
 
 					if (iValue > iBestValue)
