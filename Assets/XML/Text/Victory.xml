@@ -714,57 +714,57 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE2_TITLE</Tag>
-		<English>Wonders of the Aegean</English>
-		<German>Wunder der &#196;g&#228;is</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GRE2</Tag>
-		<English>Build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC</English>
-		<German>Bauen Sie bis zum Jahr 250 v. Chr. den Parthenon, den Koloss, die Zeus-Statue und den Artemis-Tempel</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GRE2_EPIC</Tag>
-		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
-		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
-		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
-		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GRE2_MARATHON</Tag>
-		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
-		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
-		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
-		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GRE2_NOTURN</Tag>
-		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
-		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
-		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
-		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
-		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_GRE3_TITLE</Tag>
 		<English>Alexander's Empire</English>
 		<German>Alexanders Reich</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UHV_GRE3</Tag>
+		<Tag>TXT_KEY_UHV_GRE2</Tag>
 		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
 		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_EPIC</Tag>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
+		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE2_MARATHON</Tag>
+		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
+		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3_TITLE</Tag>
+		<English>Wonders of the Aegean</English>
+		<German>Wunder der &#196;g&#228;is</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3</Tag>
+		<English>Build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC</English>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. den Parthenon, den Koloss, die Zeus-Statue und den Artemis-Tempel</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE3_EPIC</Tag>
-		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
-		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
+		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_GRE3_MARATHON</Tag>
-		<English>Control Egypt, Phoenicia, Babylonia and Persia in 330 BC</English>
-		<German>Kontrollieren Sie im Jahr 330 v.Chr. &#196;gypten, Ph&#246;nizien, Babylonien und Persien</German>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
+		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UHV_GRE3_NOTURN</Tag>
+		<English>Build the Oracle, the Parthenon, the Colossus, and the Temple of Artemis by 250 BC</English>
+		<French>Construire l'Oracle, le Parth&#233;non, le Colosse et le Temple d'Art&#233;mis avant 250 av. J.-C.</French>
+		<German>Bauen Sie bis zum Jahr 250 v. Chr. das Orakel, den Parthenon, den Koloss und den Artemis-Tempel</German>
+		<Italian>Devi costruire l'Oracolo, il Partenone, il Colosso e il Tempio di Artemide entro il 250 a.C.</Italian>
+		<Spanish>Construir el Or&#225;culo, el Parten&#243;n, el Coloso y el Templo de Artemisa antes del 250 a. C.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_HAR1_TITLE</Tag>

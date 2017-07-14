@@ -352,21 +352,21 @@ def checkTurn(iGameTurn, iPlayer):
 	elif iPlayer == iGreece:
 	
 		# first goal: be the first to discover Mathematics, Literature, Aesthetics, Medicine and Philosophy
-		
-		# second goal: build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC
-		if iGameTurn == getTurnForYear(-250):
-			expire(iGreece, 1)
 			
-		# third goal: control Egypt, Phoenicia, Babylonia and Persia in 325 BC
-		if iGameTurn == getTurnForYear(-325):
+		# second goal: control Egypt, Phoenicia, Babylonia and Persia in 330 BC
+		if iGameTurn == getTurnForYear(-330):
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
 			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
 			bBabylonia = checkOwnedCiv(iGreece, iBabylonia)
 			bPersia = checkOwnedCiv(iGreece, iPersia)
 			if bEgypt and bPhoenicia and bBabylonia and bPersia:
-				win(iGreece, 2)
+				win(iGreece, 1)
 			else:
-				lose(iGreece, 2)
+				lose(iGreece, 1)
+		
+		# third goal: build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC
+		if iGameTurn == getTurnForYear(-250):
+			expire(iGreece, 2)
 				
 	elif iPlayer == iIndia:
 	
@@ -3340,17 +3340,17 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bMathematics) + localText.getText("TXT_KEY_TECH_MATHEMATICS", ()) + ' ' + getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bAesthetics) + localText.getText("TXT_KEY_TECH_AESTHETICS", ()))
 			aHelp.append(getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()) + ' ' + getIcon(bMedicine) + localText.getText("TXT_KEY_TECH_MEDICINE", ()))
 		elif iGoal == 1:
-			bParthenon = (getNumBuildings(iGreece, iParthenon) > 0)
-			bColossus = (getNumBuildings(iGreece, iColossus) > 0)
-			bStatueOfZeus = (getNumBuildings(iGreece, iStatueOfZeus) > 0)
-			bArtemis = (getNumBuildings(iGreece, iTempleOfArtemis) > 0)
-			aHelp.append(getIcon(bParthenon) + localText.getText("TXT_KEY_BUILDING_PARTHENON", ()) + ' ' + getIcon(bColossus) + localText.getText("TXT_KEY_BUILDING_COLOSSUS", ()) + ' ' + getIcon(bStatueOfZeus) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_ZEUS", ()) + ' ' + getIcon(bArtemis) + localText.getText("TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS", ()))
-		elif iGoal == 2:
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
 			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
 			bBabylonia = checkOwnedCiv(iGreece, iBabylonia)
 			bPersia = checkOwnedCiv(iGreece, iPersia)
 			aHelp.append(getIcon(bEgypt) + localText.getText("TXT_KEY_CIV_EGYPT_SHORT_DESC", ()) + ' ' + getIcon(bPhoenicia) + localText.getText("TXT_KEY_CIV_PHOENICIA_SHORT_DESC", ()) + ' ' + getIcon(bBabylonia) + localText.getText("TXT_KEY_CIV_BABYLONIA_SHORT_DESC", ()) + ' ' + getIcon(bPersia) + localText.getText("TXT_KEY_CIV_PERSIA_SHORT_DESC", ()))
+		elif iGoal == 2:
+			bParthenon = (getNumBuildings(iGreece, iParthenon) > 0)
+			bColossus = (getNumBuildings(iGreece, iColossus) > 0)
+			bStatueOfZeus = (getNumBuildings(iGreece, iStatueOfZeus) > 0)
+			bArtemis = (getNumBuildings(iGreece, iTempleOfArtemis) > 0)
+			aHelp.append(getIcon(bParthenon) + localText.getText("TXT_KEY_BUILDING_PARTHENON", ()) + ' ' + getIcon(bColossus) + localText.getText("TXT_KEY_BUILDING_COLOSSUS", ()) + ' ' + getIcon(bStatueOfZeus) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_ZEUS", ()) + ' ' + getIcon(bArtemis) + localText.getText("TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS", ()))
 
 	elif iPlayer == iIndia:
 		if iGoal == 0:
