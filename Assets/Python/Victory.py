@@ -3340,11 +3340,11 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(bMathematics) + localText.getText("TXT_KEY_TECH_MATHEMATICS", ()) + ' ' + getIcon(bLiterature) + localText.getText("TXT_KEY_TECH_LITERATURE", ()) + ' ' + getIcon(bAesthetics) + localText.getText("TXT_KEY_TECH_AESTHETICS", ()))
 			aHelp.append(getIcon(bPhilosophy) + localText.getText("TXT_KEY_TECH_PHILOSOPHY", ()) + ' ' + getIcon(bMedicine) + localText.getText("TXT_KEY_TECH_MEDICINE", ()))
 		elif iGoal == 1:
-			bOracle = (getNumBuildings(iGreece, iOracle) > 0)
 			bParthenon = (getNumBuildings(iGreece, iParthenon) > 0)
 			bColossus = (getNumBuildings(iGreece, iColossus) > 0)
+			bStatueOfZeus = (getNumBuildings(iGreece, iStatueOfZeus) > 0)
 			bArtemis = (getNumBuildings(iGreece, iTempleOfArtemis) > 0)
-			aHelp.append(getIcon(bOracle) + localText.getText("TXT_KEY_BUILDING_ORACLE", ()) + ' ' + getIcon(bParthenon) + localText.getText("TXT_KEY_BUILDING_PARTHENON", ()) + ' ' + getIcon(bColossus) + localText.getText("TXT_KEY_BUILDING_COLOSSUS", ()) + ' ' + getIcon(bArtemis) + localText.getText("TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS", ()))
+			aHelp.append(getIcon(bParthenon) + localText.getText("TXT_KEY_BUILDING_PARTHENON", ()) + ' ' + getIcon(bColossus) + localText.getText("TXT_KEY_BUILDING_COLOSSUS", ()) + ' ' + getIcon(bStatueOfZeus) + localText.getText("TXT_KEY_BUILDING_STATUE_OF_ZEUS", ()) + ' ' + getIcon(bArtemis) + localText.getText("TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS", ()))
 		elif iGoal == 2:
 			bEgypt = checkOwnedCiv(iGreece, iEgypt)
 			bPhoenicia = checkOwnedCiv(iGreece, iCarthage)
