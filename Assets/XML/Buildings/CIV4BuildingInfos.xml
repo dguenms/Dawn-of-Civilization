@@ -8005,7 +8005,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_RED_CROSS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_RED_CROSS</MovieDefineTag>
-			<PrereqTech>TECH_CIVIL_RIGHTS</PrereqTech>
+			<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
 			<FreePromotion>PROMOTION_MEDIC1</FreePromotion>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
