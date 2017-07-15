@@ -54,13 +54,21 @@ class Companies:
 		else:
 			iMaxCompanies = tCompaniesLimit[iCompany]
 		
+		# count the number of companies
+		iCompanyCount = 0
+		for iLoopPlayer in range(iNumPlayers):
+			if gc.getPlayer(iLoopPlayer).isAlive():
+				iCompanyCount += gc.getPlayer(iLoopPlayer).countCorporations(iCompany)
+		
+		# return if gameturn is beyond company fall date and removed from all cities
+		if iMaxCompanies == 0 and iCompanyCount == 0:
+			return
+		
 		# loop through all cities, check the company value for each and add the good ones to a list of tuples (city, value)
 		cityValueList = []
 		for iPlayer in range(iNumPlayers):
 			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(tCompanyTechs[iCompany]) and (gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(iEconomics) or iCompany <= iTradingCompany):
-				apCityList = PyPlayer(iPlayer).getCityList()
-				for pCity in apCityList:
-					city = pCity.GetCy()
+				for city in utils.getCityList(iPlayer):
 					iValue = self.getCityValue(city, iCompany)
 					if iValue > 0: 
 						cityValueList.append((city, iValue * 10 + gc.getGame().getSorenRandNum(10, 'random bonus')))
@@ -69,12 +77,6 @@ class Companies:
 		
 		# sort cities from highest to lowest value
 		cityValueList.sort(key=itemgetter(1), reverse=True)
-		
-		# count the number of companies
-		iCompanyCount = 0
-		for iLoopPlayer in range(iNumPlayers):
-			if gc.getPlayer(iLoopPlayer).isAlive():
-				iCompanyCount += gc.getPlayer(iLoopPlayer).countCorporations(iCompany)
 		
 		#debugText = 'ID: %d, ' %(iCompany)
 		# spread the company
@@ -122,13 +124,9 @@ class Companies:
 		
 		# Central Planning: only one company per city
 		if owner.getCivics(iCivicsEconomy) == iCentralPlanning:
-			bOtherCorp = False
 			for iLoopCorporation in range(iNumCompanies):
 				if city.isHasCorporation(iLoopCorporation) and iLoopCorporation != iCompany:
-					bOtherCorp = True
-					break
-			if bOtherCorp:
-				return -1
+					return -1
 
 		# Colonialism increases likeliness for trading company
 		if iCompany == iTradingCompany and owner.getCivics(iCivicsTerritory) == iColonialism:
@@ -144,14 +142,14 @@ class Companies:
 
 		# civilization requirements
 		if iCompany == iTradingCompany:
-			if not owner.getID() in lTradingCompanyCivs:
+			if not iOwner in lTradingCompanyCivs:
 				return -1
-			if owner.getID() == iNetherlands:
+			if iOwner == iNetherlands:
 				iValue += 2
 		elif iCompany == iSilkRoute:
-			if owner.getID() == iMongolia:
+			if iOwner == iMongolia:
 				iValue += 2
-			elif owner.getID() == iChina:
+			elif iOwner == iChina:
 				iValue -= 2
 		
 		# geographical requirements
@@ -165,7 +163,7 @@ class Companies:
 				iValue += 1
 		
 		# trade companies and fishing industry - coastal cities only
-		if iCompany == iTradingCompany or iCompany == iFishingIndustry:
+		if iCompany in [iTradingCompany, iFishingIndustry]:
 			if not city.isCoastal(20):
 				return -1
 
@@ -239,23 +237,25 @@ class Companies:
 		for i in range(6):
 			iBonus = gc.getCorporationInfo(iCompany).getPrereqBonus(i)
 			if iBonus > -1:
-				if city.getNumBonuses(iBonus) > 0: bFound = True
-				if iCompany in [iFishingIndustry, iCerealIndustry, iTextileIndustry]:
-					iTempValue += city.getNumBonuses(iBonus)
-				elif iCompany == iOilIndustry:
-					iTempValue += city.getNumBonuses(iBonus) * 4
-				elif iCompany == iSilkRoute:
-					if iBonus == iSilk:
+				if city.getNumBonuses(iBonus) > 0: 
+					bFound = True
+					if iCompany in [iFishingIndustry, iCerealIndustry, iTextileIndustry]:
+						iTempValue += city.getNumBonuses(iBonus)
+					elif iCompany == iOilIndustry:
 						iTempValue += city.getNumBonuses(iBonus) * 4
+					elif iCompany == iSilkRoute:
+						if iBonus == iSilk:
+							iTempValue += city.getNumBonuses(iBonus) * 4
+						else:
+							iTempValue += city.getNumBonuses(iBonus) * 2
 					else:
 						iTempValue += city.getNumBonuses(iBonus) * 2
-				else:
-					iTempValue += city.getNumBonuses(iBonus) * 2
 		
 		# Brazilian UP: sugar counts as oil for Oil Industry
-		if owner.getID() == iBrazil and iCompany == iOilIndustry:
-			iValue += city.getNumBonuses(iSugar) * 3
-			if city.getNumBonuses(iSugar) > 0: bFound = True
+		if iOwner == iBrazil and iCompany == iOilIndustry:
+			if city.getNumBonuses(iSugar) > 0:
+				bFound = True
+				iTempValue += city.getNumBonuses(iSugar) * 3
 					
 		if not bFound: return -1
 		iValue += iTempValue

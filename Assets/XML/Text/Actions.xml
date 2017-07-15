@@ -19,23 +19,23 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_ROMAN_ROAD</Tag>
-		<English>Build a [LINK=CONCEPT_MOVEMENT]Roman Road[\LINK]</English>
+		<English>Build a [LINK=ROUTE_ROMAN_ROAD]Roman Road[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HIGHWAY</Tag>
-		<English>Build a [LINK=CONCEPT_MOVEMENT]Highway[\LINK]</English>
+		<English>Build a [LINK=ROUTE_HIGHWAY]Highway[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_ORCHARD</Tag>
-		<English>Build a [LINK=CONCEPT_MOVEMENT]Orchard[\LINK]</English>
+		<English>Build a [LINK=IMPROVEMENT_ORCHARD]Orchard[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_NATURE_RESERVE</Tag>
-		<English>Build a [LINK=CONCEPT_MOVEMENT]Nature Reserve[\LINK]</English>
+		<English>Build a [LINK=IMPROVEMENT_NATURE_RESERVE]Nature Reserve[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_MARINE_RESERVE</Tag>
-		<English>Build a [LINK=CONCEPT_MOVEMENT]Marine Reserve[\LINK]</English>
+		<English>Build a [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SACRIFICE</Tag>

@@ -276,7 +276,7 @@ class CvPediaResource:
 						break
 
 			if bFound:
-				screen.attachImageButton(panel, "", RouteInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+				screen.attachImageButton(panel, "", RouteInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_ROUTE, iRoute, -1, False)
 
 
 

@@ -127,7 +127,7 @@ class Barbs:
 		#tibet
 		if utils.isYearIn(-350, 200):
 			self.checkSpawn(iBarbarian, iLightSwordsman, 1 + iHandicap, (92, 41), (99, 45), self.spawnMinors, iGameTurn, 10-iHandicap, 3, ["TXT_KEY_ADJECTIVE_TIBETAN"])
-		if utils.isYearIn(200, 1100):
+		elif utils.isYearIn(200, 1100):
 			self.checkSpawn(iBarbarian, iSwordsman, 1 + iHandicap, (92, 41), (99, 45), self.spawnMinors, iGameTurn, 10-iHandicap, 3, ["TXT_KEY_ADJECTIVE_TIBETAN"])
 
 		# Deccan barbarians
