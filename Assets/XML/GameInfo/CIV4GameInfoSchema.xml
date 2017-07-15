@@ -819,6 +819,9 @@
 	<ElementType name="UnhappinessExtraYields" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="UnimprovedTileYields" content="eltOnly">
+		<element type="iYield" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="iVassalCityCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iColonyCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iSpecialistHappiness" content="textOnly" dt:type="int"/>
@@ -901,6 +904,7 @@
 		<element type="SpecialistExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="HappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="UnhappinessExtraYields" minOccurs="0"/> <!-- Leoreth -->
+		<element type="UnimprovedTileYields" minOccurs="0"/> <!-- Leoreth -->
 		<element type="Hurrys" minOccurs="0"/>
 		<element type="SpecialBuildingNotRequireds" minOccurs="0"/>
 		<element type="SpecialistValids" minOccurs="0"/>

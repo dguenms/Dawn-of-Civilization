@@ -923,6 +923,10 @@ public:
 	void changeUnhappinessExtraYield(YieldTypes eIndex, int iChange);
 
 	// Leoreth
+	int getUnimprovedTileYield(YieldTypes eIndex) const;
+	void changeUnimprovedTileYield(YieldTypes eIndex, int iChange);
+
+	// Leoreth
 	void updateHappinessExtraYield();
 
 	// Leoreth
@@ -1493,6 +1497,7 @@ protected:
 	int* m_aiSpecialistExtraYield; // Leoreth
 	int* m_aiHappinessExtraYield; // Leoreth
 	int* m_aiUnhappinessExtraYield; // Leoreth
+	int* m_aiUnimprovedTileYield; // Leoreth
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;

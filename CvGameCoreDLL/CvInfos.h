@@ -1438,6 +1438,8 @@ public:
 	int* getHappinessExtraYieldArray() const; // Leoreth
 	int getUnhappinessExtraYield(int i) const; // Leoreth
 	int* getUnhappinessExtraYieldArray() const; // Leoreth
+	int getUnimprovedTileYield(int i) const; // Leoreth
+	int* getUnimprovedTileYieldArray() const; // Leoreth
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
 	int getBuildingHealthChanges(int i) const;				// Exposed to Python
 	int getBuildingProductionModifier(int i) const;	//Leoreth
@@ -1535,6 +1537,7 @@ protected:
 	int* m_piSpecialistExtraYield; // Leoreth
 	int* m_piHappinessExtraYield; // Leoreth
 	int* m_piUnhappinessExtraYield; // Leoreth
+	int* m_piUnimprovedTileYield; // Leoreth
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
 	int* m_paiBuildingProductionModifiers; // Leoreth
