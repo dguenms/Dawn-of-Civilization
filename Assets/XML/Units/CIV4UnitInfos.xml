@@ -338,6 +338,10 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
+					<BuildType>BUILD_PADDY_FIELD</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
 					<BuildType>BUILD_MINE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -464,6 +468,10 @@
 				</Build>
 				<Build>
 					<BuildType>BUILD_FARM</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_PADDY_FIELD</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
@@ -596,6 +604,10 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
+					<BuildType>BUILD_PADDY_FIELD</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
 					<BuildType>BUILD_MINE</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
@@ -722,6 +734,10 @@
 				</Build>
 				<Build>
 					<BuildType>BUILD_FARM_DEFORESTATION</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
+				<Build>
+					<BuildType>BUILD_PADDY_FIELD_DEFORESTATION</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>

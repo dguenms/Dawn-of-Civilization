@@ -30,6 +30,10 @@
 		<English>Build a [LINK=CONCEPT_MOVEMENT]Orchard[\LINK]</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_PADDY_FIELD</Tag>
+		<English>Build a [LINK=CONCEPT_MOVEMENT]Paddy Field[\LINK]</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILD_NATURE_RESERVE</Tag>
 		<English>Build a [LINK=CONCEPT_MOVEMENT]Nature Reserve[\LINK]</English>
 	</TEXT>

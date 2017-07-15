@@ -23,6 +23,10 @@
 		<English>Marine Reserve</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_PADDY_FIELD</Tag>
+		<English>Paddy Field</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ROUTE_ROMAN_ROAD</Tag>
 		<English>Roman Road</English>
 	</TEXT>

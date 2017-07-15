@@ -52,6 +52,15 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildFarm.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,7</Button>
 		</ImprovementArtInfo>
 		<ImprovementArtInfo>
+			<Type>ART_DEF_IMPROVEMENT_PADDY_FIELD</Type>
+			<bExtraAnimations>1</bExtraAnimations>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Improvements/Farm/an_eu_farm01.nif</NIF>
+			<KFM>Art/Structures/Improvements/Farm/an_eu_farm01.kfm</KFM>
+			<Button>Art/Interface/Buttons/Builds/PaddyField.dds</Button>
+		</ImprovementArtInfo>
+		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_FISHING_BOATS</Type>
 			<bExtraAnimations>0</bExtraAnimations>
 			<fScale>1.0</fScale>

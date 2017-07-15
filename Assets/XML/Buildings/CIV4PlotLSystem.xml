@@ -3531,7 +3531,18 @@
 			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Farm/an_eu_farm01.nif</Attribute>
 			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Farm/an_eu_farm01.kfm</Attribute>
-			<Attribute Class="Bonus">BONUS_RICE,BONUS_WHEAT</Attribute>
+			<Attribute Class="Bonus">BONUS_WHEAT</Attribute>
+			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM1</Attribute>
+			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Rotate>-45</Rotate>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_PADDY_FIELD">
+			<Attribute Class="Era">ERA_ANCIENT,ERA_CLASSICAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Farm/an_eu_farm01.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Farm/an_eu_farm01.kfm</Attribute>
+			<Attribute Class="Bonus">BONUS_RICE</Attribute>
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM1</Attribute>
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
@@ -3574,7 +3585,20 @@
 			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Farm/med_eu_farm01.nif</Attribute>
 			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Farm/med_eu_farm01.kfm</Attribute>
-			<Attribute Class="Bonus">BONUS_RICE,BONUS_WHEAT</Attribute>
+			<Attribute Class="Bonus">BONUS_WHEAT</Attribute>
+			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM1</Attribute>
+			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
+			<Rotate>-45</Rotate>
+			<Scale>0.5</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_PADDY_FIELD">
+			<Attribute Class="Era">ERA_MEDIEVAL,ERA_RENAISSANCE</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Farm/med_eu_farm01.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Farm/med_eu_farm01.kfm</Attribute>
+			<Attribute Class="Bonus">BONUS_RICE</Attribute>
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM1</Attribute>
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
@@ -3619,7 +3643,20 @@
 			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
 			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Farm/mod_eu_farm01.nif</Attribute>
 			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Farm/mod_eu_farm01.kfm</Attribute>
-			<Attribute Class="Bonus">BONUS_RICE,BONUS_WHEAT</Attribute>
+			<Attribute Class="Bonus">BONUS_WHEAT</Attribute>
+			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM1</Attribute>
+			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
+			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
+			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
+			<Rotate>-45</Rotate>
+			<Scale>0.5</Scale>
+		</ArtRef>
+		<ArtRef Name="goal:IMPROVEMENT_PADDY_FIELD">
+			<Attribute Class="Era">ERA_INDUSTRIAL,ERA_GLOBAL,ERA_DIGITAL</Attribute>
+			<Attribute Class="Scalar">NIF:Art/Structures/Improvements/Farm/mod_eu_farm01.nif</Attribute>
+			<Attribute Class="Scalar">KFM:Art/Structures/Improvements/Farm/mod_eu_farm01.kfm</Attribute>
+			<Attribute Class="Bonus">BONUS_RICE</Attribute>
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM1</Attribute>
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
@@ -3930,28 +3967,56 @@
 	<!-- SPECIAL Rice & wheat farm:			Place a farm in the top-right of the plot -->
 	<LProduction Name="4x4_Farm_Rice" From="Node_12x12">
 		<Attribute Class="Improvement">IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">BONUS_RICE,BONUS_WHEAT</Attribute>
+		<Attribute Class="Bonus">BONUS_WHEAT</Attribute>
+		<To Name="Farm_4x4">
+			<Translate>3,3</Translate>
+		</To>
+	</LProduction>
+	<LProduction Name="4x4_Farm_Rice" From="Node_12x12">
+		<Attribute Class="Improvement">IMPROVEMENT_PADDY_FIELD</Attribute>
+		<Attribute Class="Bonus">BONUS_RICE</Attribute>
 		<To Name="Farm_4x4">
 			<Translate>3,3</Translate>
 		</To>
 	</LProduction>
 	<LProduction Name="4x4_Farm_Rice2" From="Node_12x12">
 		<Attribute Class="Improvement">IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">BONUS_RICE,BONUS_WHEAT</Attribute>
+		<Attribute Class="Bonus">BONUS_WHEAT</Attribute>
+		<To Name="Farm_4x4">
+			<Translate>-3,3</Translate>
+		</To>
+	</LProduction>
+	<LProduction Name="4x4_Farm_Rice2" From="Node_12x12">
+		<Attribute Class="Improvement">IMPROVEMENT_PADDY_FIELD</Attribute>
+		<Attribute Class="Bonus">BONUS_RICE</Attribute>
 		<To Name="Farm_4x4">
 			<Translate>-3,3</Translate>
 		</To>
 	</LProduction>
 	<LProduction Name="4x4_Farm_Rice3" From="Node_12x12">
 		<Attribute Class="Improvement">IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">BONUS_RICE,BONUS_WHEAT</Attribute>
+		<Attribute Class="Bonus">BONUS_WHEAT</Attribute>
+		<To Name="Farm_4x4">
+			<Translate>-3,-3</Translate>
+		</To>
+	</LProduction>
+	<LProduction Name="4x4_Farm_Rice3" From="Node_12x12">
+		<Attribute Class="Improvement">IMPROVEMENT_PADDY_FIELD</Attribute>
+		<Attribute Class="Bonus">BONUS_RICE</Attribute>
 		<To Name="Farm_4x4">
 			<Translate>-3,-3</Translate>
 		</To>
 	</LProduction>
 	<LProduction Name="4x4_Farm_Rice4" From="Node_12x12">
 		<Attribute Class="Improvement">IMPROVEMENT_FARM</Attribute>
-		<Attribute Class="Bonus">BONUS_RICE,BONUS_WHEAT</Attribute>
+		<Attribute Class="Bonus">BONUS_WHEAT</Attribute>
+		<To Name="Farm_4x4">
+			<Translate>3,-3</Translate>
+		</To>
+	</LProduction>
+	<LProduction Name="4x4_Farm_Rice4" From="Node_12x12">
+		<Attribute Class="Improvement">IMPROVEMENT_PADDY_FIELD</Attribute>
+		<Attribute Class="Bonus">BONUS_RICE</Attribute>
 		<To Name="Farm_4x4">
 			<Translate>3,-3</Translate>
 		</To>

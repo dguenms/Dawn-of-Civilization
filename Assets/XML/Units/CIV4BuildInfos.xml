@@ -108,6 +108,50 @@
 			<Button>,Art/Interface/Buttons/Builds/BuildFarm.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,7</Button>
 		</BuildInfo>
 		<BuildInfo>
+			<Type>BUILD_PADDY_FIELD</Type>
+			<Description>TXT_KEY_BUILD_PADDY_FIELD</Description>
+			<PrereqTech>TECH_AGRICULTURE</PrereqTech>
+			<iTime>600</iTime>
+			<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
+					<PrereqTech>NONE</PrereqTech>
+					<iTime>300</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_I</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>Art/Interface/Buttons/Builds/PaddyField.dds</Button>
+		</BuildInfo>
+		<BuildInfo>
 			<Type>BUILD_FISHING_BOATS</Type>
 			<Description>TXT_KEY_BUILD_FISHING_BOATS</Description>
 			<PrereqTech>TECH_SAILING</PrereqTech>
@@ -812,13 +856,6 @@
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
-				<FeatureStruct>
-					<FeatureType>FEATURE_FLOOD_PLAINS</FeatureType>
-					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>500</iTime>
-					<iProduction>0</iProduction>
-					<bRemove>0</bRemove>
-				</FeatureStruct>
 			</FeatureStructs>
 			<HotKey>KB_I</HotKey>
 			<bAltDown>0</bAltDown>
@@ -826,6 +863,44 @@
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
 			<Button>,Art/Interface/Buttons/Builds/BuildFarm.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,7</Button>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildInfo>
+		<BuildInfo>
+			<Type>BUILD_PADDY_FIELD_DEFORESTATION</Type>
+			<Description>TXT_KEY_BUILD_PADDY_FIELD</Description>
+			<PrereqTech>TECH_AGRICULTURE</PrereqTech>
+			<iTime>600</iTime>
+			<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
+			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
+					<iTime>600</iTime>
+					<iProduction>40</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+				<FeatureStruct>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<PrereqTech>TECH_ALLOYS</PrereqTech>
+					<iTime>400</iTime>
+					<iProduction>30</iProduction>
+					<bRemove>1</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
+			<HotKey>KB_I</HotKey>
+			<bAltDown>0</bAltDown>
+			<bShiftDown>0</bShiftDown>
+			<bCtrlDown>0</bCtrlDown>
+			<iHotKeyPriority>0</iHotKeyPriority>
+			<Button>Art/Interface/Buttons/Builds/PaddyField.dds</Button>
 			<bGraphicalOnly>1</bGraphicalOnly>
 		</BuildInfo>
 		<BuildInfo>
