@@ -7257,10 +7257,10 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	}
 
 	// Worker production modifier
-	if (GC.getCivicInfo(eCivic).getWorkerProductionModifier() != 0)
+	if (GC.getCivicInfo(eCivic).getWorkerCostModifier() != 0)
 	{
 		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_WORKER_PRODUCTION", GC.getCivicInfo(eCivic).getWorkerProductionModifier()));
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_WORKER_COST", GC.getCivicInfo(eCivic).getWorkerCostModifier()));
 	}
 
 	//	Worker speed modifier

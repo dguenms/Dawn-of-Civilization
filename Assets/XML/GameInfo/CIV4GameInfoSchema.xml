@@ -654,7 +654,7 @@
 	<ElementType name="iExtraHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iPollutionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iFreeExperience" content="textOnly" dt:type="int"/>
-	<ElementType name="iWorkerProductionModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iWorkerCostModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iWorkerSpeedModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iImprovementUpgradeRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iMilitaryProductionModifier" content="textOnly" dt:type="int"/>
@@ -851,7 +851,7 @@
 		<element type="iExtraHealth" minOccurs="0"/>
 		<element type="iPollutionModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iFreeExperience" minOccurs="0"/>
-		<element type="iWorkerProductionModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iWorkerCostModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWorkerSpeedModifier" minOccurs="0"/>
 		<element type="iImprovementUpgradeRateModifier" minOccurs="0"/>
 		<element type="iMilitaryProductionModifier" minOccurs="0"/>

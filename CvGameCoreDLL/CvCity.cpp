@@ -3543,12 +3543,6 @@ int CvCity::getProductionModifier(UnitTypes eUnit) const
 		iMultiplier += getMilitaryProductionModifier();
 	}
 
-	// Leoreth
-	if (GC.getUnitInfo(eUnit).isWorker())
-	{
-		iMultiplier += GET_PLAYER(getOwnerINLINE()).getWorkerProductionModifier();
-	}
-
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		if (hasBonus((BonusTypes)iI))

@@ -422,8 +422,8 @@ public:
 	void changeFeatureProductionModifier(int iChange);
 
 	// Leoreth
-	int getWorkerProductionModifier() const;
-	void changeWorkerProductionModifier(int iChange);
+	int getWorkerCostModifier() const;
+	void changeWorkerCostModifier(int iChange);
 
 	int getWorkerSpeedModifier() const;																																		// Exposed to Python
 	void changeWorkerSpeedModifier(int iChange);
@@ -1333,7 +1333,7 @@ protected:
 	int m_iMaxPlayerBuildingProductionModifier;
 	int m_iFreeExperience;
 	int m_iFeatureProductionModifier;
-	int m_iWorkerProductionModifier; // Leoreth
+	int m_iWorkerCostModifier; // Leoreth
 	int m_iWorkerSpeedModifier;
 	int m_iImprovementUpgradeRateModifier;
 	int m_iMilitaryProductionModifier;

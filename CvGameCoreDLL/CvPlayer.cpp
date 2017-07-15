@@ -439,7 +439,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iMaxPlayerBuildingProductionModifier = 0;
 	m_iFreeExperience = 0;
 	m_iFeatureProductionModifier = 0;
-	m_iWorkerProductionModifier = 0; // Leoreth
+	m_iWorkerCostModifier = 0; // Leoreth
 	m_iWorkerSpeedModifier = 0;
 	m_iImprovementUpgradeRateModifier = 0;
 	m_iMilitaryProductionModifier = 0;
@@ -6456,6 +6456,13 @@ int CvPlayer::getProductionNeeded(UnitTypes eUnit) const
 	iProductionNeeded *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getTrainPercent();
 	iProductionNeeded /= 100;
 
+	// Leoreth
+	if (GC.getUnitInfo(eUnit).isWorker())
+	{
+		iProductionNeeded *= 100 + getWorkerCostModifier();
+		iProductionNeeded /= 100;
+	}
+
 	if (!isHuman() && !isBarbarian())
 	{
 		if (isWorldUnitClass(eUnitClass))
@@ -9424,20 +9431,18 @@ void CvPlayer::changeFeatureProductionModifier(int iChange)
 
 
 // Leoreth
-int CvPlayer::getWorkerProductionModifier() const
+int CvPlayer::getWorkerCostModifier() const
 {
-	return m_iWorkerProductionModifier;
+	return m_iWorkerCostModifier;
 }
 
 
 // Leoreth
-void CvPlayer::changeWorkerProductionModifier(int iChange)
+void CvPlayer::changeWorkerCostModifier(int iChange)
 {
 	if (iChange != 0)
 	{
-		m_iWorkerProductionModifier += iChange;
-
-
+		m_iWorkerCostModifier += iChange;
 	}
 }
 
@@ -17684,7 +17689,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeExtraHealth(GC.getCivicInfo(eCivic).getExtraHealth() * iChange);
 	changePollutionModifier(GC.getCivicInfo(eCivic).getPollutionModifier() * iChange); //Leoreth
 	changeFreeExperience(GC.getCivicInfo(eCivic).getFreeExperience() * iChange);
-	changeWorkerProductionModifier(GC.getCivicInfo(eCivic).getWorkerProductionModifier() * iChange); // Leoreth
+	changeWorkerCostModifier(GC.getCivicInfo(eCivic).getWorkerCostModifier() * iChange); // Leoreth
 	changeWorkerSpeedModifier(GC.getCivicInfo(eCivic).getWorkerSpeedModifier() * iChange);
 	changeImprovementUpgradeRateModifier(GC.getCivicInfo(eCivic).getImprovementUpgradeRateModifier() * iChange);
 	changeMilitaryProductionModifier(GC.getCivicInfo(eCivic).getMilitaryProductionModifier() * iChange);
@@ -18050,7 +18055,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iMaxPlayerBuildingProductionModifier);
 	pStream->Read(&m_iFreeExperience);
 	pStream->Read(&m_iFeatureProductionModifier);
-	pStream->Read(&m_iWorkerProductionModifier); // Leoreth
+	pStream->Read(&m_iWorkerCostModifier); // Leoreth
 	pStream->Read(&m_iWorkerSpeedModifier);
 	pStream->Read(&m_iImprovementUpgradeRateModifier);
 	pStream->Read(&m_iMilitaryProductionModifier);
@@ -18584,7 +18589,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iMaxPlayerBuildingProductionModifier);
 	pStream->Write(m_iFreeExperience);
 	pStream->Write(m_iFeatureProductionModifier);
-	pStream->Write(m_iWorkerProductionModifier); // Leoreth
+	pStream->Write(m_iWorkerCostModifier); // Leoreth
 	pStream->Write(m_iWorkerSpeedModifier);
 	pStream->Write(m_iImprovementUpgradeRateModifier);
 	pStream->Write(m_iMilitaryProductionModifier);

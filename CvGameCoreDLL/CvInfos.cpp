@@ -5715,7 +5715,7 @@ m_iProcessModifier(0), //Leoreth
 m_iExtraHealth(0),
 m_iPollutionModifier(0), //Leoreth
 m_iFreeExperience(0),
-m_iWorkerProductionModifier(0), // Leoreth
+m_iWorkerCostModifier(0), // Leoreth
 m_iWorkerSpeedModifier(0),
 m_iImprovementUpgradeRateModifier(0),
 m_iMilitaryProductionModifier(0),
@@ -5914,9 +5914,9 @@ int CvCivicInfo::getFreeExperience() const
 }
 
 // Leoreth
-int CvCivicInfo::getWorkerProductionModifier() const
+int CvCivicInfo::getWorkerCostModifier() const
 {
-	return m_iWorkerProductionModifier;
+	return m_iWorkerCostModifier;
 }
 
 int CvCivicInfo::getWorkerSpeedModifier() const
@@ -6359,7 +6359,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iExtraHealth);
 	stream->Read(&m_iPollutionModifier); //Leoreth
 	stream->Read(&m_iFreeExperience);
-	stream->Read(&m_iWorkerProductionModifier); // Leoreth
+	stream->Read(&m_iWorkerCostModifier); // Leoreth
 	stream->Read(&m_iWorkerSpeedModifier);
 	stream->Read(&m_iImprovementUpgradeRateModifier);
 	stream->Read(&m_iMilitaryProductionModifier);
@@ -6527,7 +6527,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iExtraHealth);
 	stream->Write(m_iPollutionModifier); //Leoreth
 	stream->Write(m_iFreeExperience);
-	stream->Write(m_iWorkerProductionModifier); // Leoreth
+	stream->Write(m_iWorkerCostModifier); // Leoreth
 	stream->Write(m_iWorkerSpeedModifier);
 	stream->Write(m_iImprovementUpgradeRateModifier);
 	stream->Write(m_iMilitaryProductionModifier);
@@ -6639,7 +6639,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iExtraHealth, "iExtraHealth");
 	pXML->GetChildXmlValByName(&m_iPollutionModifier, "iPollutionModifier"); //Leoreth
 	pXML->GetChildXmlValByName(&m_iFreeExperience, "iFreeExperience");
-	pXML->GetChildXmlValByName(&m_iWorkerProductionModifier, "iWorkerProductionModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iWorkerCostModifier, "iWorkerCostModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iWorkerSpeedModifier, "iWorkerSpeedModifier");
 	pXML->GetChildXmlValByName(&m_iImprovementUpgradeRateModifier, "iImprovementUpgradeRateModifier");
 	pXML->GetChildXmlValByName(&m_iMilitaryProductionModifier, "iMilitaryProductionModifier");
