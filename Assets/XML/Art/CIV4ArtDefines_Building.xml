@@ -841,7 +841,7 @@
 			<Type>ART_DEF_BUILDING_PROTESTANT_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.49</fScale>
+			<fScale>1.20</fScale>
 			<fInterfaceScale>0.42</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
 			<KFM/>
@@ -851,7 +851,7 @@
 			<Type>ART_DEF_BUILDING_PROTESTANT_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.50</fScale>
+			<fScale>2.00</fScale>
 			<fInterfaceScale>0.65</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Christian_Cathedral/kathedrale.nif</NIF>
 			<KFM/>
@@ -881,7 +881,7 @@
 			<Type>ART_DEF_BUILDING_CATHOLIC_TEMPLE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.49</fScale>
+			<fScale>1.20</fScale>
 			<fInterfaceScale>0.42</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
 			<KFM/>
@@ -891,7 +891,7 @@
 			<Type>ART_DEF_BUILDING_CATHOLIC_CATHEDRAL</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.50</fScale>
+			<fScale>2.00</fScale>
 			<fInterfaceScale>0.65</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Christian_Cathedral/kathedrale.nif</NIF>
 			<KFM/>
