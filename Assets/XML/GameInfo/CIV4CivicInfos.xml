@@ -890,7 +890,7 @@
 			<TechPrereq>TECH_GENERALSHIP</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Conquest.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<iImprovementUpgradeRateModifier>-50</iImprovementUpgradeRateModifier>
 			<DomainExperienceModifiers>
 				<DomainExperienceModifier>
