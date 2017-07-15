@@ -909,7 +909,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Tributaries.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iVassalCityCommerce>5</iVassalCityCommerce>
+			<iVassalCityCommerce>2</iVassalCityCommerce>
 			<iCaptureGoldModifier>50</iCaptureGoldModifier>
 		</CivicInfo>
 		<CivicInfo>
