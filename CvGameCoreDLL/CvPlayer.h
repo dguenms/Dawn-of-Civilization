@@ -625,8 +625,8 @@ public:
 	void changeVassalCityCommerce(int iChange);
 
 	// Leoreth
-	int getHappinessBonusCommerce() const;
-	void changeHappinessBonusCommerce(int iChange);
+	int getColonyCommerce() const;
+	void changeColonyCommerce(int iChange);
 
 	// Leoreth
 	int getCapitalCommerce() const;
@@ -1389,7 +1389,7 @@ protected:
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
 	int m_iVassalCityCommerce; // Leoreth
-	int m_iHappinessBonusCommerce; // Leoreth
+	int m_iColonyCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
 	int m_iSlaveryCount; // Leoreth
 	int m_iColonialSlaveryCount; // Leoreth

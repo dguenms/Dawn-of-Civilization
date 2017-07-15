@@ -496,7 +496,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iDefensivePactTradeModifier = 0; // Leoreth
 	m_iCapitalCommerce = 0; // Leoreth
 	m_iVassalCityCommerce = 0; // Leoreth
-	m_iHappinessBonusCommerce = 0; // Leoreth
+	m_iColonyCommerce = 0; // Leoreth
 	m_iCaptureGoldModifier = 0; // Leoreth
 	m_iSlaveryCount = 0; // Leoreth
 	m_iColonialSlaveryCount = 0; // Leoreth
@@ -10554,18 +10554,18 @@ void CvPlayer::changeVassalCityCommerce(int iChange)
 
 
 // Leoreth
-int CvPlayer::getHappinessBonusCommerce() const
+int CvPlayer::getColonyCommerce() const
 {
-	return m_iHappinessBonusCommerce;
+	return m_iColonyCommerce;
 }
 
 
 // Leoreth
-void CvPlayer::changeHappinessBonusCommerce(int iChange)
+void CvPlayer::changeColonyCommerce(int iChange)
 {
 	if (iChange != 0)
 	{
-		m_iHappinessBonusCommerce += iChange;
+		m_iColonyCommerce += iChange;
 
 		updateCapitalCommerce();
 	}
@@ -17713,7 +17713,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	changeCapitalTradeModifier(GC.getCivicInfo(eCivic).getCapitalTradeModifier() * iChange); // Leoreth
 	changeDefensivePactTradeModifier(GC.getCivicInfo(eCivic).getDefensivePactTradeModifier() * iChange); // Leoreth
 	changeVassalCityCommerce(GC.getCivicInfo(eCivic).getVassalCityCommerce() * iChange); // Leoreth
-	changeHappinessBonusCommerce(GC.getCivicInfo(eCivic).getHappinessBonusCommerce() * iChange); // Leoreth
+	changeColonyCommerce(GC.getCivicInfo(eCivic).getColonyCommerce() * iChange); // Leoreth
 	changeCaptureGoldModifier(GC.getCivicInfo(eCivic).getCaptureGoldModifier() * iChange); // Leoreth
 	changeSlaveryCount(GC.getCivicInfo(eCivic).isSlavery() * iChange); // Leoreth
 	changeColonialSlaveryCount(GC.getCivicInfo(eCivic).isColonialSlavery() * iChange); // Leoreth
@@ -18112,7 +18112,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iDefensivePactTradeModifier); // Leoreth
 	pStream->Read(&m_iCapitalCommerce); // Leoreth
 	pStream->Read(&m_iVassalCityCommerce); // Leoreth
-	pStream->Read(&m_iHappinessBonusCommerce); // Leoreth
+	pStream->Read(&m_iColonyCommerce); // Leoreth
 	pStream->Read(&m_iCaptureGoldModifier); // Leoreth
 	pStream->Read(&m_iSlaveryCount); // Leoreth
 	pStream->Read(&m_iColonialSlaveryCount); // Leoreth
@@ -18646,7 +18646,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iDefensivePactTradeModifier); // Leoreth
 	pStream->Write(m_iCapitalCommerce); // Leoreth
 	pStream->Write(m_iVassalCityCommerce); // Leoreth
-	pStream->Write(m_iHappinessBonusCommerce); // Leoreth
+	pStream->Write(m_iColonyCommerce); // Leoreth
 	pStream->Write(m_iCaptureGoldModifier); // Leoreth
 	pStream->Write(m_iSlaveryCount); // Leoreth
 	pStream->Write(m_iColonialSlaveryCount); // Leoreth
@@ -25441,15 +25441,9 @@ void CvPlayer::updateCapitalCommerce()
 		}
 	}
 
-	if (getHappinessBonusCommerce() != 0)
+	if (getColonyCommerce() != 0)
 	{
-		for (int iI = 0; iI < GC.getNumBonusInfos(); iI++)
-		{
-			if (GC.getBonusInfo((BonusTypes)iI).getHappiness() > 0)
-			{
-				iNewCapitalCommerce += getNumAvailableBonuses((BonusTypes)iI) * getHappinessBonusCommerce();
-			}
-		}
+		iNewCapitalCommerce += countColonies() * getColonyCommerce();
 	}
 
 	if (iNewCapitalCommerce != iOldCapitalCommerce)

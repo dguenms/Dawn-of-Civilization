@@ -936,7 +936,7 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
 			<bColonialSlavery>1</bColonialSlavery>
-			<iHappinessBonusCommerce>2</iHappinessBonusCommerce>
+			<iColonyCommerce>1</iColonyCommerce>
 			<DomainExperienceModifiers>
 				<DomainExperienceModifier>
 					<DomainType>DOMAIN_SEA</DomainType>

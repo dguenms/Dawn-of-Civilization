@@ -7239,6 +7239,20 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_POLLUTION_MODIFIER", GC.getCivicInfo(eCivic).getPollutionModifier()));
 	}
 
+	// Commerce from vassal cities
+	if (GC.getCivicInfo(eCivic).getVassalCityCommerce() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_VASSAL_CITY_COMMERCE", GC.getCivicInfo(eCivic).getVassalCityCommerce()));
+	}
+
+	// Commerce from colonies
+	if (GC.getCivicInfo(eCivic).getColonyCommerce() != 0)
+	{
+		szHelpText.append(NEWLINE);
+		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_COLONY_COMMERCE", GC.getCivicInfo(eCivic).getColonyCommerce()));
+	}
+
 	//	Free Experience
 	if (GC.getCivicInfo(eCivic).getFreeExperience() != 0)
 	{
@@ -7665,20 +7679,6 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 			szHelpText.append(NEWLINE);
 			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_AMERICAN_UP_HAPPINESS", 2, gDLL->getSymbolID(HAPPY_CHAR)));
 		}
-	}
-
-	// Commerce from vassal cities
-	if (GC.getCivicInfo(eCivic).getVassalCityCommerce() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_VASSAL_CITY_COMMERCE", GC.getCivicInfo(eCivic).getVassalCityCommerce()));
-	}
-
-	// Commerce from happiness resources
-	if (GC.getCivicInfo(eCivic).getHappinessBonusCommerce() != 0)
-	{
-		szHelpText.append(NEWLINE);
-		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_HAPPINESS_BONUS_COMMERCE", GC.getCivicInfo(eCivic).getHappinessBonusCommerce()));
 	}
 
 	// Capture gold modifier

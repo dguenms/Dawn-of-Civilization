@@ -167,13 +167,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSAL_CITY_COMMERCE</Tag>
-		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital per Vassal City</English>
+		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Vassal City</English>
 		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro Vasallenstadt</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIVIC_HAPPINESS_BONUS_COMMERCE</Tag>
-		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital per [ICON_HAPPY] Resource</English>
-		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro [ICON_HAPPY] Resource</German>
+		<Tag>TXT_KEY_CIVIC_COLONY_COMMERCE</Tag>
+		<English>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in Capital for every Colony</English>
+		<German>[ICON_BULLET]%D1_Change[ICON_COMMERCE] in der Hauptstadt pro Kolonie</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_VASSAL_BONUS</Tag>

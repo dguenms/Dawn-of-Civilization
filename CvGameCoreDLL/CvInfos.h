@@ -1390,7 +1390,7 @@ public:
 	int getCapitalTradeModifier() const; // Leoreth
 	int getDefensivePactTradeModifier() const; // Leoreth
 	int getVassalCityCommerce() const; // Leoreth
-	int getHappinessBonusCommerce() const; // Leoreth
+	int getColonyCommerce() const; // Leoreth
 	int getCaptureGoldModifier() const; // Leoreth
 	int getTechPrereq() const;				// Exposed to Python
 	int getCivicPercentAnger() const;				// Exposed to Python
@@ -1498,7 +1498,7 @@ protected:
 	int m_iCapitalTradeModifier; // Leoreth
 	int m_iDefensivePactTradeModifier; // Leoreth
 	int m_iVassalCityCommerce; // Leoreth
-	int m_iHappinessBonusCommerce; // Leoreth
+	int m_iColonyCommerce; // Leoreth
 	int m_iCaptureGoldModifier; // Leoreth
 	int m_iTechPrereq;
 	int m_iCivicPercentAnger;

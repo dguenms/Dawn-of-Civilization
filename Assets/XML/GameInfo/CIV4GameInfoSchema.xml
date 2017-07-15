@@ -820,7 +820,7 @@
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="iVassalCityCommerce" content="textOnly" dt:type="int"/>
-	<ElementType name="iHappinessBonusCommerce" content="textOnly" dt:type="int"/>
+	<ElementType name="iColonyCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="iSpecialistHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iCaptureGoldModifier" content="textOnly" dt:type="int"/>
 	<!-- Leoreth end -->
@@ -878,7 +878,7 @@
 		<element type="iCapitalTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iDefensivePactTradeModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iVassalCityCommerce" minOccurs="0"/> <!-- Leoreth -->
-		<element type="iHappinessBonusCommerce" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iColonyCommerce" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iCaptureGoldModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bNoForeignTrade" minOccurs="0"/>
 		<element type="bNoForeignTradeModifier" minOccurs="0"/> <!-- Leoreth -->
