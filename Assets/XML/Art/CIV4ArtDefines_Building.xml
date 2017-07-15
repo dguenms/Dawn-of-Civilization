@@ -2291,7 +2291,7 @@
 			<Type>ART_DEF_BUILDING_POST_OFFICE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>50.0</fScale>
+			<fScale>32.0</fScale>
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Print_Shop/print_shop.nif</NIF>
 			<KFM/>
