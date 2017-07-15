@@ -15912,6 +15912,7 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 		int iParameterCoreScore = player.getStabilityParameter(PARAMETER_CORE_SCORE);
 		int iParameterPeripheryScore = player.getStabilityParameter(PARAMETER_PERIPHERY_SCORE);
 		int iParameterRazedCities = player.getStabilityParameter(PARAMETER_RAZED_CITIES);
+		int iParameterIsolationism = player.getStabilityParameter(PARAMETER_ISOLATIONISM);
 
 		iTotalStability = iParameterCorePeriphery;
 
@@ -15919,6 +15920,13 @@ void CvGameTextMgr::buildStabilityParameterString(CvWStringBuffer& szBuffer, int
 
 		szColor.Format(SETCOLR, TEXT_COLOR("COLOR_GREEN"));
 		szStabilityParameters += szColor;
+
+		if (iParameterIsolationism > 0)
+		{
+			CvWString szTemp;
+			szTemp.Format(L"+%d: %s", iParameterIsolationism, gDLL->getText("TXT_KEY_STABILITY_ISOLATIONISM").GetCString());
+			szStabilityParameters += NEWLINE + szTemp;
+		}
 
 		if (iParameterCorePeriphery >= 0)
 		{
