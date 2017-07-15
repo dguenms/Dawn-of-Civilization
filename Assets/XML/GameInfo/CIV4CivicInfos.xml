@@ -966,13 +966,19 @@
 			<TechPrereq>TECH_GLOBALISM</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Multilateralism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iGoldPerMilitaryUnit>1</iGoldPerMilitaryUnit>
+			<Upkeep>UPKEEP_LOW</Upkeep>>
+			<iWarWearinessModifier>100</iWarWearinessModifier>
 			<iDefensivePactTradeModifier>100</iDefensivePactTradeModifier>
 			<TradeYieldModifiers>
 				<iYield>0</iYield>
 				<iYield>25</iYield>
 			</TradeYieldModifiers>
+			<DomainExperienceModifiers>
+				<DomainExperienceModifier>
+					<DomainType>DOMAIN_AIR</DomainType>
+					<iExperienceModifier>4</iExperienceModifier>
+				</DomainExperienceModifier>
+			</DomainExperienceModifiers>
 		</CivicInfo>
 	</CivicInfos>
 </Civ4CivicInfos>
