@@ -22626,6 +22626,7 @@ BeginPlot
 	x=52,y=43
 	isNOfRiver
 	RiverWEDirection=3
+	ImprovementType=IMPROVEMENT_FARM
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 	TeamReveal=16,21,22,24,29,35,38,45,
