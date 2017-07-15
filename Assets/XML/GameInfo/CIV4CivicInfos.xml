@@ -688,6 +688,14 @@
 						<iYield>1</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
+				<ImprovementYieldChange>
+					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
+					<ImprovementYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</ImprovementYields>
+				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
 		</CivicInfo>
 		<CivicInfo>
