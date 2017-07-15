@@ -420,7 +420,7 @@
 					</ImprovementYields>
 				</ImprovementYieldChange>
 				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
+					<ImprovementType>IMPROVEMENT_ORCHARD</ImprovementType>
 					<ImprovementYields>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
