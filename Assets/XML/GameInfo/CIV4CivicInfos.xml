@@ -934,7 +934,7 @@
 			<TechPrereq>TECH_GEOGRAPHY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Colonialism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_HIGH</Upkeep>
+			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<bColonialSlavery>1</bColonialSlavery>
 			<iColonyCommerce>1</iColonyCommerce>
 			<DomainExperienceModifiers>
