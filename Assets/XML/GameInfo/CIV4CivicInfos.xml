@@ -571,6 +571,12 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iTradeRoutes>1</iTradeRoutes>
+			<FeatureHappinessChanges>
+				<FeatureHappinessChange>
+					<FeatureType>FEATURE_OASIS</FeatureType>
+					<iHappinessChange>1</iHappinessChange>
+				</FeatureHappinessChange>
+			</FeatureHappinessChanges>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_ECONOMY</CivicOptionType>
