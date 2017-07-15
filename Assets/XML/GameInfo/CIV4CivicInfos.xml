@@ -264,15 +264,9 @@
 			</CapitalCommerceModifiers>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_WINDMILL</ImprovementType>
+					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
 					<ImprovementYields>
-						<iYield>1</iYield>
-					</ImprovementYields>
-				</ImprovementYieldChange>>
-				<ImprovementYieldChange>
-					<ImprovementType>IMPROVEMENT_WATERMILL</ImprovementType>
-					<ImprovementYields>
-						<iYield>1</iYield>
+						<iYield>2</iYield>
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
