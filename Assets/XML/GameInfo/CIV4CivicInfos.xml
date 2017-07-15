@@ -914,7 +914,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Isolationism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iCoreFreeSpecialist>1</iCoreFreeSpecialist>
+			<iFreeSpecialist>1</iFreeSpecialist>
 			<bNoForeignTrade>1</bNoForeignTrade>
 		</CivicInfo>
 		<CivicInfo>
