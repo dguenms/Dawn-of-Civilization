@@ -39581,7 +39581,7 @@ EndPlot
 BeginPlot
 	x=101,y=42
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -40402,7 +40402,7 @@ EndPlot
 BeginPlot
 	x=103,y=42
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -41657,7 +41657,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

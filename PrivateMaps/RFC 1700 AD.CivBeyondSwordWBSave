@@ -41812,7 +41812,7 @@ EndPlot
 BeginPlot
 	x=90,y=35
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=5,24,29,34,38,44,45,
@@ -42381,7 +42381,7 @@ EndPlot
 BeginPlot
 	x=91,y=39
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -45466,7 +45466,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -46988,7 +46988,7 @@ EndPlot
 BeginPlot
 	x=101,y=42
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,44,45,
@@ -47952,7 +47952,7 @@ EndPlot
 BeginPlot
 	x=103,y=42
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,45,
@@ -49390,7 +49390,7 @@ EndPlot
 BeginPlot
 	x=106,y=40
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -49418,7 +49418,7 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=1,12,15,44,45,
@@ -51304,7 +51304,7 @@ EndPlot
 BeginPlot
 	x=110,y=45
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -52149,7 +52149,7 @@ EndPlot
 BeginPlot
 	x=112,y=45
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -53431,7 +53431,7 @@ EndPlot
 BeginPlot
 	x=115,y=45
 	BonusType=BONUS_RICE
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
