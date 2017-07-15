@@ -2264,7 +2264,7 @@ def checkReligiousGoal(iPlayer, iGoal):
 
 def lose(iPlayer, iGoal):
 	data.players[iPlayer].lGoals[iGoal] = 0
-	if utils.getHumanID() == iPlayer:
+	if utils.getHumanID() == iPlayer and gc.getGame().getGameTurn() > utils.getScenarioStartTurn():
 		utils.show(localText.getText("TXT_KEY_VICTORY_GOAL_FAILED_ANNOUNCE", (iGoal+1,)))
 	
 def win(iPlayer, iGoal):
