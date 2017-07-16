@@ -201,8 +201,8 @@ class CvEspionageAdvisor:
 				screen.setLabelAt("CivName" + str(iRival), PlayerPanel, szCivName, CvUtil.FONT_LEFT_JUSTIFY, self.X_PLAYER_INFO, self.Y_PLAYER_INFO + self.LINE_SPACING, -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 				# Weight Buttons
-				screen.setImageButtonAt("WeightIncrease" + str(iRival), PlayerPanel, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_PLUS").getPath(), self.X_PLAYER_INFO, self.Y_PLAYER_INFO + (self.LINE_SPACING * 2), self.WEIGHT_BUTTON_SIZE, self.WEIGHT_BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, iRivalTeam, self.iIncrement)
-				screen.setImageButtonAt("WeightDecrease" + str(iRival), PlayerPanel, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_MINUS").getPath(), self.X_PLAYER_INFO + self.WEIGHT_BUTTON_SIZE, self.Y_PLAYER_INFO + (self.LINE_SPACING * 2), self.WEIGHT_BUTTON_SIZE, self.WEIGHT_BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, iRivalTeam, self.iIncrement)
+				screen.setImageButtonAt("WeightIncrease" + str(iRival), PlayerPanel, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_PLUS").getPath(), self.X_PLAYER_INFO, self.Y_PLAYER_INFO + (self.LINE_SPACING * 2), self.WEIGHT_BUTTON_SIZE, self.WEIGHT_BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, iRivalTeam + 1, self.iIncrement)
+				screen.setImageButtonAt("WeightDecrease" + str(iRival), PlayerPanel, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_MINUS").getPath(), self.X_PLAYER_INFO + self.WEIGHT_BUTTON_SIZE, self.Y_PLAYER_INFO + (self.LINE_SPACING * 2), self.WEIGHT_BUTTON_SIZE, self.WEIGHT_BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, iRivalTeam + 1, self.iIncrement)
 
 				# Espionage Accumulated
 				iRivalAmount = pRivalTeam.getEspionagePointsAgainstTeam(self.iActiveTeam)
@@ -503,10 +503,10 @@ class CvEspionageAdvisor:
 				self.updateRightPanel()
 
 			elif inputClass.getFunctionName().startswith("WeightIncrease"):
-				self.changeEspionageWeight(inputClass.getData1(), self.iIncrement)
+				self.changeEspionageWeight(inputClass.getData1() - 1, self.iIncrement)
 
 			elif inputClass.getFunctionName().startswith("WeightDecrease"):
-				self.changeEspionageWeight(inputClass.getData1(), -self.iIncrement)
+				self.changeEspionageWeight(inputClass.getData1() - 1, -self.iIncrement)
 
 		if inputClass.getFunctionName() == "EspionagePlus" or inputClass.getFunctionName() == "EspionageMinus":
 			iChange = inputClass.getData2()
