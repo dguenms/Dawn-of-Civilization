@@ -103,7 +103,6 @@ class Communications:
 
 	def decay(self, iCiv):
 		teamCiv = gc.getTeam(gc.getPlayer(iCiv).getTeam())
-		iCounter = 0
 		
 		# Initialize list
 		lContacts = [i for i in range(iNumPlayers) if gc.getPlayer(i).isAlive() and teamCiv.canContact(i) and teamCiv.canCutContact(i)]

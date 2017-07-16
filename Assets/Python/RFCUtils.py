@@ -1557,7 +1557,6 @@ class RFCUtils:
 		
 	def canRespawn(self, iPlayer):
 		iGameTurn = gc.getGame().getGameTurn()
-		bPossible = False
 		
 		# no respawn before spawn
 		if iGameTurn < getTurnForYear(tBirth[iPlayer]) + 10: return False
@@ -1573,25 +1572,26 @@ class RFCUtils:
 			for tInterval in tResurrectionIntervals[iPlayer]:
 				iStart, iEnd = tInterval
 				if getTurnForYear(iStart) <= iGameTurn <= getTurnForYear(iEnd):
-					bPossible = True
 					break
+			else:
+				return False
 					
 		# Thailand cannot respawn when Khmer is alive and vice versa
-		if iPlayer == iThailand and gc.getPlayer(iKhmer).isAlive(): bPossible = False
-		if iPlayer == iKhmer and gc.getPlayer(iThailand).isAlive(): bPossible = False
+		if iPlayer == iThailand and gc.getPlayer(iKhmer).isAlive(): return False
+		if iPlayer == iKhmer and gc.getPlayer(iThailand).isAlive(): return False
 		
 		# Rome cannot respawn when Italy is alive and vice versa
-		if iPlayer == iRome and gc.getPlayer(iItaly).isAlive(): bPossible = False
-		if iPlayer == iItaly and gc.getPlayer(iRome).isAlive(): bPossible = False
+		if iPlayer == iRome and gc.getPlayer(iItaly).isAlive(): return False
+		if iPlayer == iItaly and gc.getPlayer(iRome).isAlive(): return False
 		
 		# Greece cannot respawn when Byzantium is alive and vice versa
-		if iPlayer == iGreece and gc.getPlayer(iByzantium).isAlive(): bPossible = False
-		if iPlayer == iByzantium and gc.getPlayer(iGreece).isAlive(): bPossible = False
+		if iPlayer == iGreece and gc.getPlayer(iByzantium).isAlive(): return False
+		if iPlayer == iByzantium and gc.getPlayer(iGreece).isAlive(): return False
 		
 		# India cannot respawn when Mughals are alive (not vice versa -> Pakistan)
-		if iPlayer == iIndia and gc.getPlayer(iMughals).isAlive(): bPossible = False
+		if iPlayer == iIndia and gc.getPlayer(iMughals).isAlive(): return False
 		
-		if bPossible and not gc.getPlayer(iPlayer).isAlive() and iGameTurn > data.players[iPlayer].iLastTurnAlive + self.getTurns(20):
+		if not gc.getPlayer(iPlayer).isAlive() and iGameTurn > data.players[iPlayer].iLastTurnAlive + self.getTurns(20):
 			if tRebirth[iPlayer] == -1 or iGameTurn > getTurnForYear(tRebirth[iPlayer]) + 10:
 				return True
 				

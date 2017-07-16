@@ -193,7 +193,7 @@ class CvPediaImprovement:
 				if iYieldChange > 0:
 					szSign = u"+"
 				if iYieldChange != 0:
-					szText += u"%c%s%d%c with <link=CONCEPT_MOVEMENT>%s</link>\n" % (szBullet, szSign, iYieldChange, gc.getYieldInfo(iYieldType).getChar(), gc.getRouteInfo(iRoute).getDescription())
+					szText += u"%c%s%d%c with <link=literal>%s</link>\n" % (szBullet, szSign, iYieldChange, gc.getYieldInfo(iYieldType).getChar(), gc.getRouteInfo(iRoute).getDescription())
 
 		for iTech in xrange(gc.getNumTechInfos()):
 			for iYieldType in xrange(YieldTypes.NUM_YIELD_TYPES):
