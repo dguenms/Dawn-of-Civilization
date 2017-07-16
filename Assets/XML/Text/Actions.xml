@@ -6,8 +6,8 @@
 		<English>Deforestation</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILD_HIGH_SEA_FISHING_BOATS</Tag>
-		<English>Create [LINK=IMPROVEMENT_HIGH_SEA_FISHING_BOATS]High Sea Fishing Boats[\LINK]</English>
+		<Tag>TXT_KEY_BUILD_OCEAN_FISHERY</Tag>
+		<English>Create [LINK=IMPROVEMENT_OCEAN_FISHERY]Ocean Fishery[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_SLAVE_PLANTATION</Tag>

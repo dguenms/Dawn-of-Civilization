@@ -403,8 +403,8 @@
 			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
-			<Type>IMPROVEMENT_HIGH_SEA_FISHING_BOATS</Type>
-			<Description>TXT_KEY_IMPROVEMENT_HIGH_SEA_FISHING_BOATS</Description>
+			<Type>IMPROVEMENT_OCEAN_FISHERY</Type>
+			<Description>TXT_KEY_IMPROVEMENT_OCEAN_FISHERY</Description>
 			<Civilopedia>TXT_KEY_IMPROVEMENT_FISHING_BOATS_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_FISHING_BOATS</ArtDefineTag>
 			<bActsAsCity>0</bActsAsCity>

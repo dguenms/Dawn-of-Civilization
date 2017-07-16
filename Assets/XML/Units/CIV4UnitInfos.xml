@@ -10333,7 +10333,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_HIGH_SEA_FISHING_BOATS</BuildType>
+					<BuildType>BUILD_OCEAN_FISHERY</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>

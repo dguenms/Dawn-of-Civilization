@@ -2,9 +2,9 @@
 <!-- Improvements -->
 <Civ4GameText>
 	<TEXT>
-		<Tag>TXT_KEY_IMPROVEMENT_HIGH_SEA_FISHING_BOATS</Tag>
-		<English>High Sea Fishing Boats</English>
-		<German>Hochsee-Fischerboot</German>
+		<Tag>TXT_KEY_IMPROVEMENT_OCEAN_FISHERY</Tag>
+		<English>Ocean Fishery</English>
+		<German>Hochsee-Fischerei</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_SLAVE_PLANTATION</Tag>
