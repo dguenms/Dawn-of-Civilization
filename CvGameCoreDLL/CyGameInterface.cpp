@@ -301,6 +301,8 @@ void CyGamePythonInterface()
 
 		.def("addGreatPersonBornName", &CyGame::addGreatPersonBornName, "void (string sName)")
 		.def("isGreatPersonBorn", &CyGame::isGreatPersonBorn, "bool (string sName)")
+
+		.def("autosave", &CyGame::autosave, "void ()");
 		;
 
 	python::class_<CyDeal>("CyDeal")

@@ -4408,7 +4408,7 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 				gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "processBuilding()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 				GC.getGame().setAIAutoPlay(0);
 				GC.getGame().setAIAutoPlayCatapult(0);
-				gDLL->getEngineIFace()->AutoSave(true);
+				gDLL->getEngineIFace()->AutoSave();
 			}
 			changeYieldRateModifier(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getYieldModifier(iI) * iChange));
 			changePowerYieldRateModifier(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getPowerYieldModifier(iI) * iChange));
@@ -4598,7 +4598,7 @@ void CvCity::processSpecialist(SpecialistTypes eSpecialist, int iChange)
 			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), "processSpecialist()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave(true);
+			gDLL->getEngineIFace()->AutoSave();
 		}
 	}
 
@@ -9964,7 +9964,7 @@ void CvCity::setTradeYield(YieldTypes eIndex, int iNewValue)
 			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setTradeYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave(true);
+			gDLL->getEngineIFace()->AutoSave();
 		}
 	}
 }
@@ -10024,7 +10024,7 @@ void CvCity::updateExtraSpecialistYield(YieldTypes eYield)
 			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"updateExtraSpecialistYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave(true);
+			gDLL->getEngineIFace()->AutoSave();
 		}
 	}
 }
@@ -10712,7 +10712,7 @@ void CvCity::setCorporationYield(YieldTypes eIndex, int iNewValue)
 			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setCorporationYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave(true);
+			gDLL->getEngineIFace()->AutoSave();
 		}
 	}
 }
@@ -10853,7 +10853,7 @@ void CvCity::updateCorporationYield(YieldTypes eIndex)
 			gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"updateCorporationYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 			GC.getGame().setAIAutoPlay(0);
 			GC.getGame().setAIAutoPlayCatapult(0);
-			gDLL->getEngineIFace()->AutoSave(true);
+			gDLL->getEngineIFace()->AutoSave();
 		}
 	}
 }
@@ -12726,7 +12726,7 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setWorkingPlot()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 						GC.getGame().setAIAutoPlay(0);
 						GC.getGame().setAIAutoPlayCatapult(0);
-						gDLL->getEngineIFace()->AutoSave(true);
+						gDLL->getEngineIFace()->AutoSave();
 					}
 				}
 
@@ -12750,7 +12750,7 @@ void CvCity::setWorkingPlot(int iIndex, bool bNewValue)
 						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setWorkingPlot2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 						GC.getGame().setAIAutoPlay(0);
 						GC.getGame().setAIAutoPlayCatapult(0);
-						gDLL->getEngineIFace()->AutoSave(true);
+						gDLL->getEngineIFace()->AutoSave();
 					}
 				}
 			}
@@ -16702,7 +16702,7 @@ void CvCity::updateBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldT
 				gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", getX(), getY(), L"setBuildingYieldChange2()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 				GC.getGame().setAIAutoPlay(0);
 				GC.getGame().setAIAutoPlayCatapult(0);
-				gDLL->getEngineIFace()->AutoSave(true);
+				gDLL->getEngineIFace()->AutoSave();
 			}
 		}
 	}

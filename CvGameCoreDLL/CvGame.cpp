@@ -10512,3 +10512,8 @@ void CvGame::changeYResolution(int iChange)
 {
 	setYResolution(getYResolution() + iChange);
 }
+
+void CvGame::autosave()
+{
+	gDLL->getEngineIFace()->AutoSave();
+}

@@ -86,6 +86,15 @@ class RiseAndFall:
 						
 		if gc.getDefineINT("NO_AI_UHV_CHECKS") == 1:
 			vic.loseAll(iPreviousCiv)
+			
+	def scheduleFlipPopup(self, iNewCiv, lPlots):
+		data.lTempEvents.append((iNewCiv, lPlots))
+		self.checkFlipPopup()
+		
+	def checkFlipPopup(self):
+		for tEvent in data.lTempEvents:
+			iNewCiv, lPlots = tEvent
+			self.flipPopup(iNewCiv, lPlots)
 
 	def flipPopup(self, iNewCiv, lPlots):
 		iHuman = utils.getHumanID()
@@ -168,6 +177,10 @@ class RiseAndFall:
 						gc.getTeam(gc.getPlayer(iNewCivFlip).getTeam()).declareWar(iHuman, False, -1) ##True??
 						data.iBetrayalTurns = iBetrayalPeriod
 						self.initBetrayal()
+						
+		data.lTempEvents.remove((iNewCivFlip, lPlots))
+		
+		gc.getGame().autosave()
 				
 	def rebellionPopup(self, iRebelCiv):
 		self.showPopup(7622, CyTranslator().getText("TXT_KEY_REBELLION_TITLE", ()), \
@@ -936,6 +949,10 @@ class RiseAndFall:
 		for tTimedConquest in data.lTimedConquests:
 			iConqueror, tPlot = tTimedConquest
 			utils.colonialConquest(iConqueror, tPlot)
+			
+		if utils.getHumanID() == iPlayer:
+			self.checkFlipPopup()
+			
 		data.lTimedConquests = []
 
 	def rebirthFirstTurn(self, iCiv):
@@ -1073,7 +1090,7 @@ class RiseAndFall:
 		
 		# ask human player for flips
 		if iHumanCities > 0 and iCiv != utils.getHumanID():
-			self.flipPopup(iCiv, lRebirthPlots)
+			self.scheduleFlipPopup(iCiv, lRebirthPlots)
 
 		# adjust civics, religion and other special settings
 		if iCiv == iPersia:
@@ -1552,7 +1569,7 @@ class RiseAndFall:
 
 			if iNumHumanCitiesToConvert > 0 and iCiv != utils.getHumanID(): # Leoreth: quick fix for the "flip your own cities" popup, still need to find out where it comes from
 				print "Flip Popup: free region"
-				self.flipPopup(iCiv, lPlots)
+				self.scheduleFlipPopup(iCiv, lPlots)
 				
 
 			
@@ -1623,7 +1640,7 @@ class RiseAndFall:
 
 		if iNumHumanCitiesToConvert > 0:
 			print "Flip Popup: foreign borders"
-			self.flipPopup(iCiv, lPlots)
+			self.scheduleFlipPopup(iCiv, lPlots)
 			
 		if iCiv == iGermany:
 			self.germanSpawn()
@@ -1690,7 +1707,7 @@ class RiseAndFall:
 			# convert human cities
 			if iNumHumanCitiesToConvert > 0:
 				print "Flip Popup: in capital"
-				self.flipPopup(iCiv, lPlots)
+				self.scheduleFlipPopup(iCiv, lPlots)
 				
 			utils.convertPlotCulture(gc.getMap().plot(x, y), iCiv, 100, True)
 			
@@ -3263,3 +3280,5 @@ class RiseAndFall:
 		
 		if iHighestEntry > 0:
 			gc.getPlayer(iCiv).setLastStateReligion(lReligions.index(iHighestEntry))
+			
+rnf = RiseAndFall()

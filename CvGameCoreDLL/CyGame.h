@@ -313,6 +313,8 @@ public:
 	void addGreatPersonBornName(std::wstring sName);
 	bool isGreatPersonBorn(std::wstring sName);
 
+	void autosave();
+
 protected:
 	CvGame* m_pGame;
 };

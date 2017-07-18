@@ -7156,7 +7156,7 @@ void CvPlot::updateYield()
 						gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OVERFLOW", pWorkingCity->getX(), pWorkingCity->getY(), L"CvPlot::updateYield()"), "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 						GC.getGame().setAIAutoPlay(0);
 						GC.getGame().setAIAutoPlayCatapult(0);
-						gDLL->getEngineIFace()->AutoSave(true);
+						gDLL->getEngineIFace()->AutoSave();
 					}
 				}
 
