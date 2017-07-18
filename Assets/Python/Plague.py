@@ -353,12 +353,12 @@ class Plague:
 				iImprovement = pPlot.getImprovementType()
 				if iImprovement == iTown:
 					pPlot.setImprovementType(iVillage)
-				elif iImprovement == iVillage:
-					pPlot.setImprovementType(iHamlet)
-				elif iImprovement == iHamlet:
-					pPlot.setImprovementType(iCottage)
-				elif iImprovement == iCottage:
-					pPlot.setImprovementType(-1)
+				#elif iImprovement == iVillage:
+				#	pPlot.setImprovementType(iHamlet)
+				#elif iImprovement == iHamlet:
+				#	pPlot.setImprovementType(iCottage)
+				#elif iImprovement == iCottage:
+				#	pPlot.setImprovementType(-1)
 				if pPlot.isCity():
 					if (city.getX(), city.getY()) == (x, y):
 						self.killUnitsByPlague(city, pPlot, 0, 100, 0)
