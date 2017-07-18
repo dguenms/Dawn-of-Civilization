@@ -204,7 +204,7 @@ dEraGoals = {}
 
 dWonderGoals = {
 	iEgypt: (1, [iPyramids, iGreatLibrary, iGreatLighthouse], True),
-	iGreece: (1, [iColossus, iParthenon, iStatueOfZeus, iTempleOfArtemis], True),
+	iGreece: (2, [iColossus, iParthenon, iStatueOfZeus, iTempleOfArtemis], True),
 	iCarthage: (0, [iGreatCothon], False),
 	iPolynesia: (2, [iMoaiStatues], True),
 	iMaya: (1, [iTempleOfKukulkan], True),
