@@ -1624,14 +1624,9 @@ iNumEras = 7
 #Improvements
 
 iNumImprovements = 28
-(iLandWorked, iWaterWorked, iCityRuins, iHut, iFarm, iPaddyField, iFishingBoats, iHighSeaFishingBoats, iWhalingBoats, iMine, 
+(iLandWorked, iWaterWorked, iCityRuins, iHut, iFarm, iPaddyField, iFishingBoats, iOceanFishery, iWhalingBoats, iMine, 
 iWorkshop, iLumbermill, iWindmill, iWatermill, iPlantation, iSlavePlantation, iQuarry, iPasture, iCamp, iWell, 
 iOffshorePlatform, iWinery, iCottage, iHamlet, iVillage, iTown, iFort, iForestPreserve) = range(iNumImprovements)
-
-iNumImprovements = 28
-(iLandWorked, iWaterWorked, iCityRuins, iTribalVillage, iFarm, iFishingBoats, iHighSeaFishingBoats, iWhalingBoats, iMine, iWorkshop,
-iLumbermill, iWindmill, iWatermill, iPlantation, iSlavePlantation, iQuarry, iPasture, iCamp, iWell, iOffshorePlatform,
-iOrchard, iCottage, iHamlet, iVillage, iTown, iFort, iNatureReserve, iMarineReserve) = range(iNumImprovements)
 
 #feature & terrain
 
