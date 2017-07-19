@@ -1738,13 +1738,12 @@ def getCivicStability(iPlayer, lCivics):
 	if iCentralPlanning in civics:
 		if iEgalitarianism in civics: iStability += 2
 		if iStateParty in civics: iStability += 2
-		if iIndividualism in civics: iStability -= 5
 		if iCentralism in civics: iStability += 2
 		
 	if iEgalitarianism in civics:
 		if iDemocracy in civics: iStability += 2
 		if iConstitution in civics: iStability += 2
-		if civics.no(iSecularism): iStability -= 3
+		if civics.no(iSecularism) and civics.no(iTolerance): iStability -= 3
 		
 	if iIndividualism in civics:
 		if civics.any(iRepublic, iDemocracy): iStability += 2
@@ -1790,7 +1789,7 @@ def getCivicStability(iPlayer, lCivics):
 		if iNationhood in civics: iStability += 3
 		
 	if iCasteSystem in civics:
-		if civics.any(iCitizenship, iMeritocracy): iStability -= 4
+		if iCitizenship: iStability -= 4
 		if iClergy in civics: iStability += 2
 		if iSecularism in civics: iStability -= 3
 		
@@ -1810,7 +1809,7 @@ def getCivicStability(iPlayer, lCivics):
 		if iDemocracy in civics: iStability += 2
 		
 	if iIdeology in civics:
-		if civics.no(iSecularism): iStability -= 3
+		if civics.no(iSecularism) and civics.no(iTolerance): iStability -= 3
 		
 	if iRegulatedTrade in civics:
 		if iManorialism in civics: iStability += 2
