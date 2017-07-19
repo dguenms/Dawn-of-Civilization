@@ -3901,7 +3901,7 @@ def getUHVHelp(iPlayer, iGoal):
 			bWembley = data.getWonderBuilder(iWembley) == iBrazil
 			bCristoRedentor = data.getWonderBuilder(iCristoRedentor) == iBrazil
 			bItaipuDam = data.getWonderBuilder(iItaipuDam) == iBrazil
-			aHelp.append(getIcon(bWembley) + localText.getText("TXT_KEY_BUILDING_WEMBLEY", ()) + ' ' + getIcon(bCristoRedentor) + localText.getText("TXT_KEY_BUILDING_CRISTO_REDENTOR", ()) + ' ' + getIcon(bItaipuDam) + localText.getText("TXT_KEY_BUILDING_THREE_GORGES_DAM", ()))
+			aHelp.append(getIcon(bWembley) + localText.getText("TXT_KEY_BUILDING_WEMBLEY", ()) + ' ' + getIcon(bCristoRedentor) + localText.getText("TXT_KEY_BUILDING_CRISTO_REDENTOR", ()) + ' ' + getIcon(bItaipuDam) + localText.getText("TXT_KEY_BUILDING_ITAIPU_DAM", ()))
 		elif iGoal == 2:
 			iForestPreserves = countImprovements(iBrazil, iForestPreserve)
 			bNationalPark = False
