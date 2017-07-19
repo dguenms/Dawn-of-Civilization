@@ -512,7 +512,7 @@
 			<Description>TXT_KEY_CIVIC_EGALITARIANISM</Description>
 			<Civilopedia>TXT_KEY_CIVIC_EGALITARIANISM_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_CIVIC_EGALITARIANISM_STRATEGY</Strategy>
-			<TechPrereq>TECH_CIVIL_RIGHTS</TechPrereq>
+			<TechPrereq>TECH_SOCIOLOGY</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Egalitarianism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
