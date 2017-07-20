@@ -2561,7 +2561,7 @@ bool CvPlot::canHaveImprovement(ImprovementTypes eImprovement, TeamTypes eTeam, 
 	if (GC.getImprovementInfo(eImprovement).isWater())
 	{
 		if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_FISHING_BOATS") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_COAST")) return false;
-		if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_HIGH_SEA_FISHING_BOATS") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_OCEAN")) return false;
+		if (eImprovement == GC.getInfoTypeForString("IMPROVEMENT_OCEAN_FISHERY") && getTerrainType() != GC.getInfoTypeForString("TERRAIN_OCEAN")) return false;
 	}
 
 	if (getFeatureType() != NO_FEATURE)
