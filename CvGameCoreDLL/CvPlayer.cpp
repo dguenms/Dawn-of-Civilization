@@ -3704,7 +3704,7 @@ int CvPlayer::countUnimprovedBonuses(CvArea* pArea, CvPlot* pFromPlot) const
 	{
 		pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
 
-		if (pLoopPlot->area() == pArea)
+		if (pLoopPlot == NULL || pLoopPlot->area() == pArea)
 		{
 			if (pLoopPlot->getOwnerINLINE() == getID())
 			{

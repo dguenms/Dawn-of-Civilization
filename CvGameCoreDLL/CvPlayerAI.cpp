@@ -10091,10 +10091,10 @@ int CvPlayerAI::AI_neededWorkers(CvArea* pArea) const
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		if (pLoopCity->getArea() == pArea->getID())
+		if (pArea == NULL || pLoopCity->getArea() == pArea->getID())
 		{
-		iCount += pLoopCity->AI_getWorkersNeeded() * 3;
-	}
+			iCount += pLoopCity->AI_getWorkersNeeded() * 3;
+		}
 	}
 
 	if (iCount == 0)
@@ -10107,11 +10107,10 @@ int CvPlayerAI::AI_neededWorkers(CvArea* pArea) const
 		iCount += pArea->getCitiesPerPlayer(getID()) / 2;
 	}
 
-
-	    iCount += 1;
-		iCount /= 3;
-		iCount = std::min(iCount, 3 * pArea->getCitiesPerPlayer(getID()));
-		iCount = std::min(iCount, (1 + getTotalPopulation()) / 2);
+	iCount += 1;
+	iCount /= 3;
+	iCount = std::min(iCount, 3 * (pArea == NULL ? getNumCities() : pArea->getCitiesPerPlayer(getID())));
+	iCount = std::min(iCount, (1 + getTotalPopulation()) / 2);
 
 	return std::max(1, iCount);
 
@@ -10944,6 +10943,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * calculateCitiesMaintenance()) / 100);
 	iValue += (kCivic.getFreeExperience() * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 100;
 	iValue += ((kCivic.getWorkerSpeedModifier() * AI_getNumAIUnits(UNITAI_WORKER)) / 15);
+	iValue += (100 * AI_neededWorkers() / kCivic.getWorkerCostModifier() / 15); // Leoreth
 	iValue += ((kCivic.getImprovementUpgradeRateModifier() * getNumCities()) / 50);
 	iValue += (kCivic.getMilitaryProductionModifier() * getNumCities() * iWarmongerPercent) / (bWarPlan ? 300 : 500 );
 	iValue += (kCivic.getBaseFreeUnits() / 2);
@@ -10952,11 +10952,12 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.getFreeMilitaryUnitsPopulationPercent() * getTotalPopulation()) / 300);
 	iValue += -(kCivic.getGoldPerUnit() * getNumUnits());
 	iValue += -(kCivic.getGoldPerMilitaryUnit() * getNumMilitaryUnits() * iWarmongerPercent) / 200;
+	iValue += (kCivic.getCaptureGoldModifier() * iWarmongerPercent / (bWarPlan ? 20 : 100)); // Leoreth
 
 	//iValue += ((kCivic.isMilitaryFoodProduction()) ? 0 : 0);
 	iValue += (getWorldSizeMaxConscript(eCivic) * ((bWarPlan) ? (20 + getNumCities()) : ((8 + getNumCities()) / 2)));
 	iValue += ((kCivic.isNoUnhealthyPopulation()) ? (getTotalPopulation() / 3) : 0);
-	if (bWarPlan)
+	if (true || bWarPlan) // Leoreth: also defensive vs barbarians
 	{
 		iValue += ((kCivic.getExpInBorderModifier() * getNumMilitaryUnits()) / 200);
 	}
@@ -11219,6 +11220,27 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		// Leoreth: specialist extra yield
 		iTempValue += ((kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15);
 
+		// Leoreth: commerce in capital per colony
+		if (iI == YIELD_COMMERCE)
+		{
+			iTempValue += kCivic.getColonyCommerce() * countColonies();
+		}
+
+		// Leoreth: commerce in capital per vassal city
+		if (iI == YIELD_COMMERCE)
+		{
+			if (kCivic.getVassalCityCommerce() != 0)
+			{
+				for (int iJ = 0; iJ < MAX_PLAYERS; iJ++)
+				{
+					if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isVassal(getTeam()))
+					{
+						iTempValue += kCivic.getVassalCityCommerce() * GET_PLAYER((PlayerTypes)iJ).getNumCities();
+					}
+				}
+			}
+		}
+
 		if (iI == YIELD_FOOD)
 		{
 			iTempValue *= 3;
@@ -11328,6 +11350,18 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 		iValue += (kCivic.getDomainExperienceModifier(iI) * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / (iDomainDivisor * 100);
 		iValue += (kCivic.getDomainProductionModifier(iI) * getNumCities() * iWarmongerPercent) / (iDomainDivisor * (bWarPlan ? 300 : 500));
+	}
+
+	// Leoreth: capture workers
+	if (kCivic.isSlavery())
+	{
+		iValue += AI_neededWorkers() * iWarmongerPercent / 15;
+	}
+
+	// Leoreth: trade slaves and use in colonies
+	if (kCivic.isColonialSlavery())
+	{
+		iValue += countRequiredSlaves() * 50 / 15;
 	}
 
 	if (GC.getLeaderHeadInfo(getPersonalityType()).getFavoriteCivic() == eCivic)

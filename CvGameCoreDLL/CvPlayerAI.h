@@ -173,7 +173,7 @@ public:
 	int AI_countCargoSpace(UnitAITypes eUnitAI) const;
 
 	int AI_neededExplorers(CvArea* pArea) const;
-	int AI_neededWorkers(CvArea* pArea) const;
+	int AI_neededWorkers(CvArea* pArea = NULL) const;
 	int AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) const;
 	int AI_neededExecutives(CvArea* pArea, CorporationTypes eCorporation) const;
 	
