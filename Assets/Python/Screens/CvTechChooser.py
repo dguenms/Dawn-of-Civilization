@@ -785,15 +785,15 @@ class CvTechChooser:
 				screen.setPanelColor(szTechBox, 200, 175, 0)
 			elif player.canEverResearch(tech):
 				if TechInfo.getEra() == 0:
-					screen.setPanelColor(szTechBox, 40, 80, 30)
+					screen.setPanelColor(szTechBox, 40, 100, 35)
 				if TechInfo.getEra() == 1:
 					screen.setPanelColor(szTechBox, 150, 100, 35)
 				if TechInfo.getEra() == 2:
 					screen.setPanelColor(szTechBox, 80, 70, 60)
 				if TechInfo.getEra() == 3:
-					screen.setPanelColor(szTechBox, 40, 80, 115)
+					screen.setPanelColor(szTechBox, 40, 40, 115)
 				if TechInfo.getEra() == 4:
-					screen.setPanelColor(szTechBox, 120, 120, 120)
+					screen.setPanelColor(szTechBox, 100, 100, 100)
 				if TechInfo.getEra() == 5:
 					screen.setPanelColor(szTechBox, 80, 40, 100)
 				if TechInfo.getEra() == 6:
