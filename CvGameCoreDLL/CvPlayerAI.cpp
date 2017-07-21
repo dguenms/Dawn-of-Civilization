@@ -10943,7 +10943,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += -((kCivic.getNumCitiesMaintenanceModifier() * calculateCitiesMaintenance()) / 100);
 	iValue += (kCivic.getFreeExperience() * getNumCities() * (bWarPlan ? 8 : 5) * iWarmongerPercent) / 100;
 	iValue += ((kCivic.getWorkerSpeedModifier() * AI_getNumAIUnits(UNITAI_WORKER)) / 15);
-	iValue += (100 * AI_neededWorkers() / kCivic.getWorkerCostModifier() / 15); // Leoreth
+	iValue += (100 * AI_neededWorkers() / (std::max(1, 100 + kCivic.getWorkerCostModifier())) / 15); // Leoreth
 	iValue += ((kCivic.getImprovementUpgradeRateModifier() * getNumCities()) / 50);
 	iValue += (kCivic.getMilitaryProductionModifier() * getNumCities() * iWarmongerPercent) / (bWarPlan ? 300 : 500 );
 	iValue += (kCivic.getBaseFreeUnits() / 2);
