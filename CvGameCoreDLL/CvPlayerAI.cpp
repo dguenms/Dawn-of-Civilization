@@ -10102,14 +10102,16 @@ int CvPlayerAI::AI_neededWorkers(CvArea* pArea) const
 		return 0;
 	}
 
+	int iNumCities = pArea == NULL ? getNumCities() : pArea->getCitiesPerPlayer(getID());
+
 	if (getBestRoute() != NO_ROUTE)
 	{
-		iCount += pArea->getCitiesPerPlayer(getID()) / 2;
+		iCount += iNumCities / 2;
 	}
 
 	iCount += 1;
 	iCount /= 3;
-	iCount = std::min(iCount, 3 * (pArea == NULL ? getNumCities() : pArea->getCitiesPerPlayer(getID())));
+	iCount = std::min(iCount, 3 * iNumCities);
 	iCount = std::min(iCount, (1 + getTotalPopulation()) / 2);
 
 	return std::max(1, iCount);

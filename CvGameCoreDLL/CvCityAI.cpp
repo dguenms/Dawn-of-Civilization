@@ -6110,15 +6110,9 @@ void CvCityAI::AI_updateBestBuild()
     	iHealthAdjust += getBuildingHealth(getProductionBuilding());
     }
 
-	/*iProductionMultiplier *= 2;
-	iProductionMultiplier /= 3;
-	iCommerceMultiplier *= 3;
-	iCommerceMultiplier /= 2;*/
-
 	int x = getX();
 	int y = getY();
-	log(CvWString::format(L"(%d, %d) - food %d, production %d, commerce %d", x, y, iFoodMultiplier, iProductionMultiplier, iCommerceMultiplier));
-
+	
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
 		m_aiBestBuildValue[iI] = 0;

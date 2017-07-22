@@ -208,12 +208,9 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 		iIndex = GC.getMap().plotIndex(iLoopX, iLoopY);
 
-		if (iIndex < 0) log("Index < 0 for (%d, %d)", iX, iY);
-
 		m_aiCulturePlots[iI] = iIndex;
 	}
 
-	//log(CvWString::format(L"Init: update plot culture: %s (%d, %d)", getName().GetCString(), getX(), getY()));
 	updateCultureCosts();
 
 	// Leoreth: update art style before graphics are set up
@@ -15179,8 +15176,6 @@ void CvCity::doMeltdown()
 
 void CvCity::triggerMeltdown(BuildingTypes eBuilding)
 {
-	log("trigger meltdown");
-
 	CvWString szBuffer;
 	
 	if (getNumRealBuilding(eBuilding) > 0)

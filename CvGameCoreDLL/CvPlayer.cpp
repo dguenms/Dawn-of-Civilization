@@ -24814,7 +24814,7 @@ void CvPlayer::changeDomainExperienceModifier(DomainTypes eDomainType, int iChan
 int CvPlayer::countColonies() const
 {
 	// also need to check minors because they have no capitals
-	if (isMinorCiv() || getNumCities() == 0)
+	if (isBarbarian() || isMinorCiv() || getNumCities() == 0)
 	{
 		return 0;
 	}
