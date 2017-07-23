@@ -1256,6 +1256,7 @@ public:
 	int countSlaveCities() const;
 	int countRequiredSlaves() const;
 	CvCity* findSlaveCity() const;
+	bool canBuySlaves() const;
 
 	bool isTolerating(ReligionTypes eReligion) const;
 	bool isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) const;

@@ -2624,7 +2624,7 @@ class RiseAndFall:
 				utils.makeUnit(iArcher, iCiv, tSeaPlot, 1)
 		elif iCiv == iMoors:
 			utils.createSettlers(iCiv, 2)
-			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+			utils.makeUnitAI(iArcher, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
 			utils.makeUnit(iSpearman, iCiv, tPlot, 2)
 			utils.makeUnit(iHorseArcher, iCiv, tPlot, 1)
@@ -2635,7 +2635,7 @@ class RiseAndFall:
 				utils.makeUnit(iWarGalley, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 			if utils.getHumanID() in [iSpain, iMoors]:
-				utils.makeUnitAI(iLongbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
+				utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 1)
 		elif iCiv == iSpain:
 			iSpanishSettlers = 2
 			if utils.getHumanID() != iSpain: iSpanishSettlers = 3

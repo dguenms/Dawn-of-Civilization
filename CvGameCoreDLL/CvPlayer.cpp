@@ -4541,7 +4541,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 			if (GC.getUnitInfo(pUnitTraded->getUnitType()).isSlave() && (pTheirCapitalCity != NULL))
 			{
 				// receiving player must be able to use slaves in colonies
-				if (GET_PLAYER(eWhoTo).isColonialSlavery())
+				if (GET_PLAYER(eWhoTo).canBuySlaves())
 				{
 					// make sure slaves aren't on sea
 					if (!pUnitTraded->isCargo() || pUnitTraded->canUnload())
@@ -25514,4 +25514,36 @@ bool CvPlayer::isFreeTechReceived() const
 void CvPlayer::setFreeTechReceived(bool bNewValue)
 {
 	m_bFreeTechReceived = bNewValue;
+}
+
+bool CvPlayer::canBuySlaves() const
+{
+	if (isMinorCiv() || isBarbarian()) return false;
+
+	if (isColonialSlavery() && countColonies() > 0) return true;
+
+	if (isSlavery())
+	{
+		if (getNumCities() > 0)
+		{
+			switch (getCapitalCity()->getRegionID())
+			{
+				case REGION_CANADA:
+				case REGION_ALASKA:
+				case REGION_UNITED_STATES:
+				case REGION_CARIBBEAN:
+				case REGION_MESOAMERICA:
+				case REGION_BRAZIL:
+				case REGION_ARGENTINA:
+				case REGION_PERU:
+				case REGION_COLOMBIA:
+					return true;
+					break;
+				default:
+					;
+			}
+		}
+	}
+
+	return false;
 }

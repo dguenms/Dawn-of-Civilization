@@ -11358,6 +11358,8 @@ int CvPlot::calculateCultureCost() const
 // Leoreth
 bool CvPlot::canUseSlave(PlayerTypes ePlayer) const
 {
+	if (GET_PLAYER(ePlayer).isMinorCiv() || GET_PLAYER(ePlayer).isBarbarian()) return false;
+
 	if (GET_PLAYER(ePlayer).getNumCities() == 0) return false;
 
 	if (GET_PLAYER(ePlayer).getCapitalCity() == NULL) return false;

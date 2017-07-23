@@ -2504,15 +2504,13 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_PIRATE_SEA] *= 2;
 		break;
 	case SPAIN:
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 3;
-		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 2;
+		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
+		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
-			aiUnitAIVal[UNITAI_SETTLE] *= 2;
+			aiUnitAIVal[UNITAI_SETTLE] *= 3;
 		aiUnitAIVal[UNITAI_MISSIONARY_SEA] *= 2;
 		aiUnitAIVal[UNITAI_MISSIONARY] *= 2;
-		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
-		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		break;
 	case FRANCE:
 		aiUnitAIVal[UNITAI_COUNTER] *= 2;
@@ -2578,7 +2576,6 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		break;
 	case PORTUGAL:
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
-		aiUnitAIVal[UNITAI_EXPLORE_SEA] /= 2;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
 		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
@@ -2586,8 +2583,6 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
 		aiUnitAIVal[UNITAI_WORKER_SEA] *= 3;
 		aiUnitAIVal[UNITAI_WORKER_SEA] /= 2;
-		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
-		aiUnitAIVal[UNITAI_ASSAULT_SEA] /= 2;
 		break;
 	case INCA:
 		aiUnitAIVal[UNITAI_EXPLORE] *= 2;

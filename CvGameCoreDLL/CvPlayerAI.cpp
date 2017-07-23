@@ -5185,7 +5185,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == CIVIL_SERVICE)
 										iValue *= 2;
 								case SPAIN:
-									if (iI == CARTOGRAPHY || iI == EXPLORATION)
+									if (iI == CARTOGRAPHY || iI == EXPLORATION || iI == COMPASS)
+										iValue *= 10;
+									if (iI == PATRONAGE)
 										iValue *= 5;
 									if (iI == FIREARMS || iI == REPLACEABLE_PARTS)
 										iValue *= 3;
@@ -5291,8 +5293,12 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case PORTUGAL:
 									if (iI == REPLACEABLE_PARTS)
 										iValue *= 2;
-									if (iI == CARTOGRAPHY || iI == EXPLORATION || iI == COMPANIES || iI == OPTICS)
+									if (iI == COMPANIES || iI == PATRONAGE)
+									{
 										iValue *= 5;
+									}
+									if (iI == CARTOGRAPHY || iI == EXPLORATION || iI == OPTICS || iI == COMPASS)
+										iValue *= 10;
 									break;
 								case INCA:
 									if (iI == CONSTRUCTION || iI == CALENDAR)
