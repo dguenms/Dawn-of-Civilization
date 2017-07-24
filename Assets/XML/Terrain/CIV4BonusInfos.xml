@@ -1661,7 +1661,7 @@
 			<YieldChanges>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
-			<iHappiness>1</iHappiness>
+			<iHealth>1</iHealth>
 			<iPlacementOrder>6</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
 			<iMinAreaSize>10</iMinAreaSize>
