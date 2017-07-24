@@ -25,7 +25,7 @@ class CvPediaCultureLevel:
 		self.X_EFFECTS = self.X_INFO_PANE
 		self.Y_EFFECTS = self.Y_INFO_PANE + self.H_INFO_PANE + 10
 		self.W_EFFECTS = self.W_INFO_PANE
-		self.H_EFFECTS = 120
+		self.H_EFFECTS = 150
 		
 		self.X_SPECIALISTS = self.X_INFO_PANE
 		self.Y_SPECIALISTS = self.Y_EFFECTS + self.H_EFFECTS + 10
@@ -80,6 +80,10 @@ class CvPediaCultureLevel:
 		iDefense = CultureLevelInfo.getCityDefenseModifier()
 		if iDefense > 0:
 			szText += u"+%d%s %c\n" % (iDefense, "%", CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR),)
+			
+		iUnrest = self.iCultureLevel
+		if iUnrest > 0:
+			szText += u"%d turns of unrest %c on conquest\n" % (iUnrest, CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR),)
 		
 		iWonderLimit = CultureLevelInfo.getWonderLimit()
 		if iWonderLimit > 0:
