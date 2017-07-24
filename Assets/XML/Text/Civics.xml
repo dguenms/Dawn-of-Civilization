@@ -10,6 +10,14 @@
 		<English>Extra production from specialists; extra production from workshops and lumbermills; extra commerce from watermills; double production speed for factories and coal plants</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ANIMISM</Tag>
+		<English>Animism</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ANIMISM_STRATEGY</Tag>
+		<English>The most primitive Religion civic</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIVIC_SOVEREIGNTY</Tag>
 		<English>Sovereignty</English>
 	</TEXT>
