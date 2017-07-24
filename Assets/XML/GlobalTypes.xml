@@ -39,7 +39,7 @@
 		<FlavorType>FLAVOR_CULTURE</FlavorType>
 		<FlavorType>FLAVOR_GROWTH</FlavorType>
 		<FlavorType>FLAVOR_ESPIONAGE</FlavorType>
-		<FlavorType>FLAVOR_CIVICS</FlavorType>
+		<FlavorType>FLAVOR_ADMIN</FlavorType>
 	</FlavorTypes>
 	<ArtStyleTypes>
 		<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType>

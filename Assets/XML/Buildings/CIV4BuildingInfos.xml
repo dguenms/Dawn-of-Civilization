@@ -1247,7 +1247,7 @@
 			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -1290,7 +1290,7 @@
 			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -4274,7 +4274,7 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -4349,7 +4349,7 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -4424,7 +4424,7 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -4496,7 +4496,7 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -4558,7 +4558,7 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -4656,7 +4656,7 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -4728,7 +4728,7 @@
 					<iFlavor>2</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -4836,7 +4836,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>3</iFlavor>
 				</Flavor>
 				<Flavor>
@@ -7397,7 +7397,7 @@
 					<iFlavor>10</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CIVICS</FlavorType>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
