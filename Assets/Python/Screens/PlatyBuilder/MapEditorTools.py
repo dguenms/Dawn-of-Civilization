@@ -277,3 +277,38 @@ def exportWarMap(iPlayer, bForce = False, bAll = False):
 	popup = PyPopup.PyPopup()
 	popup.setBodyString(sText)
 	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+
+def exportRegionMap(bForce = False):
+	bAutoWater = True
+
+	bMapChanged = bForce
+	if not bMapChanged:
+		for (x, y) in utils.getWorldPlotsList():
+			plot = gc.getMap().plot(x, y)
+			if plot.getRegionID() != RegionMap.getMapValue(x, y):
+				bMapChanged = True
+				break
+	if bMapChanged:
+		file = open(IMAGE_LOCATION + "\Other\\RegionMap.txt", 'wt')
+		try:
+			file.write("tRegionMap = ( \n")
+			for y in reversed(range(iWorldY)):
+				sLine = "(\t"
+				for x in range(iWorldX):
+					plot = gc.getMap().plot(x, y)
+					if plot.isWater() and bAutoWater:
+						iValue = -1
+					else:
+						iValue = plot.getRegionID()
+					sLine += "%d,\t" % iValue
+				sLine += "),\n"
+				file.write(sLine)
+			file.write(")")
+		finally:
+			file.close()
+		sText = "Regionmap exported"
+	else:
+		sText = "No changes between current regionmap and values defined in python"
+	popup = PyPopup.PyPopup()
+	popup.setBodyString(sText)
+	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)

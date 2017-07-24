@@ -559,13 +559,11 @@ class CvWorldBuilderScreen:
 				if not bMulti:
 					self.showWarOverlay()
 		elif self.iPlayerAddMode == "ReligionMap":
-			pPlot = CyMap().plot(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-			met.changeReligionValue(self.m_iCurrentReligion, pPlot, self.m_iReligionMapValue)
+			met.changeReligionValue(self.m_iCurrentReligion, self.m_pCurrentPlot, self.m_iReligionMapValue)
 			if not bMulti:
 				self.showReligionOverlay()
 		elif self.iPlayerAddMode == "RegionMap":
-			pPlot = CyMap().plot(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-			met.changeRegionID(pPlot, self.m_iRegionMapID)
+			met.changeRegionID(self.m_pCurrentPlot, self.m_iRegionMapID)
 			if not bMulti:
 				self.showRegionOverlay()
 		return 1
@@ -688,13 +686,11 @@ class CvWorldBuilderScreen:
 				if not bMulti:
 					self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "ReligionMap":
-			pPlot = CyMap().plot(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-			met.changeReligionValue(self.m_iCurrentReligion, pPlot, 0)
+			met.changeReligionValue(self.m_iCurrentReligion, self.m_pCurrentPlot, 0)
 			if not bMulti:
 				self.showReligionOverlay()
 		elif self.iPlayerAddMode == "RegionMap":
-			pPlot = CyMap().plot(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-			met.resetPlotRegionID(pPlot)
+			self.m_pCurrentPlot.setRegionID(-1)
 			if not bMulti:
 				self.showRegionOverlay()
 		return 1
@@ -1411,18 +1407,23 @@ class CvWorldBuilderScreen:
 
 					iX = iXStart + 8
 					iY += iAdjust
-					if self.iPlayerAddMode in ["ReligionMap", "RegionMap"]:
+					if self.iPlayerAddMode  == "ReligionMap":
 						screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, screen.getXResolution() - 8 - iX, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 					else:
-						screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-						iX += 2*iAdjust
-						screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-						iX += 2*iAdjust
-						bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
-						if bExtended and not self.iPlayerAddMode == "ReligionMap":
-							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+						if self.iPlayerAddMode == "RegionMap":
+							iSpan = 3
 						else:
-							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+							iSpan = 2
+						screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+						iX += iSpan*iAdjust
+						screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+						iX += iSpan*iAdjust
+						if self.iPlayerAddMode != "RegionMap":
+							bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
+							if bExtended:
+								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+							else:
+								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 			elif self.iPlayerAddMode in self.RevealMode:
 				iX = iXStart + 8
@@ -2353,13 +2354,16 @@ class CvWorldBuilderScreen:
 				else:
 					met.exportSettlerMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showStabilityOverlay()
-			else: # Warmap
+			elif self.iPlayerAddMode == "WarMap":
 				if CvEventInterface.getEventManager().bAlt:
 					for iPlayer in range(iNumPlayers):
 						met.exportWarMap(iPlayer, True, True)
 				else:
 					met.exportWarMap(self.m_iCurrentPlayer, CyInterface().shiftKey())
 				self.showWarOverlay()
+			else: # Region ID map
+				met.exportRegionMap(CyInterface().shiftKey())
+				self.showRegionOverlay()
 
 		elif inputClass.getFunctionName() == "SwitchReborn":
 			utils.setReborn(self.m_iCurrentPlayer, not utils.isReborn(self.m_iCurrentPlayer))
