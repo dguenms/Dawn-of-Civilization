@@ -319,6 +319,10 @@ class CvTechChooser:
 			iTech = gc.getBonusInfo(iResource).getTechObsolete()
 			if iTech > -1:
 				self.TechEffects[iTech].append(("ObsoleteResource", iResource))
+			iTech = gc.getBonusInfo(iResource).getTechPlayerTrade()
+			if iTech > -1:
+				if ("ResourceTrade", -1) not in self.TechEffects[iTech]:
+					self.TechEffects[iTech].append(("ResourceTrade", -1))
 
 		# Other Effects
 		for iTech in xrange(gc.getNumTechInfos()):
@@ -543,6 +547,9 @@ class CvTechChooser:
 					screen.addDDSGFCAt(szItem, szTechBox, gc.getBonusInfo(item).getButton(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_BONUS, item, -1, False)
 					screen.addDDSGFCAt(szObsolete, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_RED_X").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_OBSOLETE_BONUS, item, -1, False)
 
+				elif type == "ResourceTrade":
+					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_GOLDTRADING").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_BONUS_PLAYER_TRADE, tech, -1, False)
+					
 				elif type == "EnableIrrigation":
 					screen.addDDSGFCAt(szItem, szTechBox, CyArtFileMgr().getInterfaceArtInfo("INTERFACE_TECH_IRRIGATION").getPath(), iX + fX, iY + self.Y_ITEMS, self.ICON_SIZE, self.ICON_SIZE, WidgetTypes.WIDGET_HELP_IRRIGATION, tech, -1, False)
 
