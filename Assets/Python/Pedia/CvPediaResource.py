@@ -235,6 +235,8 @@ class CvPediaResource:
 					bFound = True
 				elif BuildingInfo.getNoBonus() == self.iResource:
 					bFound = True
+				elif BuildingInfo.getPowerBonus() == self.iResource:
+					bFound = True
 				else:
 					for iYield in xrange(YieldTypes.NUM_YIELD_TYPES):
 						if BuildingInfo.getBonusYieldModifier(self.iResource, iYield) > 0:
