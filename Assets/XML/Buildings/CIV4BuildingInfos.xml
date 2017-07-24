@@ -844,6 +844,10 @@
 					<BonusType>BONUS_WHALE</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_SPICES</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
 			</BonusHealthChanges>
 			<Flavors>
 				<Flavor>
@@ -893,6 +897,10 @@
 				</BonusHealthChange>
 				<BonusHealthChange>
 					<BonusType>BONUS_WHALE</BonusType>
+					<iHealthChange>1</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_SPICES</BonusType>
 					<iHealthChange>1</iHealthChange>
 				</BonusHealthChange>
 			</BonusHealthChanges>
@@ -3352,10 +3360,6 @@
 					<BonusType>BONUS_SILK</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SPICES</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
 			</BonusHappinessChanges>
 			<Flavors>
 				<Flavor>
@@ -3408,10 +3412,6 @@
 					<BonusType>BONUS_SILK</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SPICES</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
 			</BonusHappinessChanges>
 			<Flavors>
 				<Flavor>
@@ -3458,10 +3458,6 @@
 				</BonusHappinessChange>
 				<BonusHappinessChange>
 					<BonusType>BONUS_SILK</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SPICES</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
@@ -3532,10 +3528,6 @@
 					<BonusType>BONUS_SILK</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SPICES</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
 			</BonusHappinessChanges>
 			<BonusYieldChanges>
 				<BonusYieldChange>
@@ -3602,10 +3594,6 @@
 				</BonusHappinessChange>
 				<BonusHappinessChange>
 					<BonusType>BONUS_SILK</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_SPICES</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
