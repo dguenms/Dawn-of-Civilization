@@ -3303,10 +3303,6 @@
 					<BonusType>BONUS_HIT_SINGLES</BonusType>
 					<iHappinessChange>1</iHappinessChange>
 				</BonusHappinessChange>
-				<BonusHappinessChange>
-					<BonusType>BONUS_HIT_MOVIES</BonusType>
-					<iHappinessChange>1</iHappinessChange>
-				</BonusHappinessChange>
 			</BonusHappinessChanges>
 			<Flavors>
 				<Flavor>
