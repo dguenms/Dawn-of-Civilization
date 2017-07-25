@@ -24929,6 +24929,11 @@ bool CvPlayer::canEverRespawn() const
 // Leoreth
 int CvPlayer::countRequiredSlaves() const
 {
+	if (isMinorCiv() || isBarbarian())
+	{
+		return 0;
+	}
+
 	int iNumRequiredSlaves = 0;
 	ImprovementTypes eSlavePlantation = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_SLAVE_PLANTATION");
 	CvImprovementInfo& kSlavePlantation = GC.getImprovementInfo(eSlavePlantation);
