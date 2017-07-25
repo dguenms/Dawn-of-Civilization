@@ -8726,7 +8726,6 @@
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<ObsoleteTech>TECH_GUNPOWDER</ObsoleteTech>
-			<CivicOption>CIVICOPTION_LEGITIMACY</CivicOption>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -8737,6 +8736,7 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
+			<iGlobalGreatPeopleRateModifier>50</iGlobalGreatPeopleRateModifier>
 			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
