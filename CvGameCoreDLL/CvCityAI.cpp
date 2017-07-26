@@ -3193,7 +3193,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										break;
 									case ARABIA:
 										if (iI == TOPKAPI_PALACE || iI == LA_MEZQUITA) iTempValue /= 8;
-										else if (iI == SPIRAL_MINARET || iI == DOME_OF_THE_ROCK) iTempValue *= 4;
+										else if (iI == SPIRAL_MINARET || iI == DOME_OF_THE_ROCK) iTempValue *= 6;
 										else {
 											iTempValue *= 2;
 											iTempValue /= 3;
