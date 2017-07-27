@@ -79,7 +79,7 @@ iSpainMoorsYear = 1200
 tSpainMoorsTL = (50, 40)
 tSpainMoorsBR = (54, 42)
 
-tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 0, iSpainMoorsYear, 10)
+tConquestSpainMoors = (9, iSpain, iMoors, tSpainMoorsTL, tSpainMoorsBR, 1, iSpainMoorsYear, 10)
 lConquests = [tConquestRomeCarthage, tConquestRomeGreece, tConquestRomeAnatolia, tConquestRomeCelts, tConquestRomeEgypt, tConquestGreeceMesopotamia, tConquestGreeceEgypt, tConquestGreecePersia, tConquestCholaSumatra, tConquestSpainMoors]
 
 class AIWars:
@@ -195,7 +195,7 @@ class AIWars:
 			
 		for city in lTargetCities:
 			iExtra = 0
-			if utils.getHumanID() not in [iPlayer, city.getOwner()]: iExtra = 1
+			if utils.getHumanID() not in [iPlayer, city.getOwner()]: iExtra = 1 #max(1, gc.getPlayer(iPlayer).getCurrentEra())
 			
 			tPlot = utils.findNearestLandPlot((city.getX(), city.getY()), iPlayer)
 			
