@@ -273,7 +273,7 @@
 			<TechPrereq>TECH_EDUCATION</TechPrereq>
 			<Button>,Art/Interface/Buttons/Civics/Meritocracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
+			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iExpInBorderModifier>50</iExpInBorderModifier>
 			<CapitalCommerceModifiers>
 				<iCommerce>0</iCommerce>
