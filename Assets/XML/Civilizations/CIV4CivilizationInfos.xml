@@ -5337,7 +5337,7 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
+					<UnitClassType>UNITCLASS_HEAVY_GALLEY</UnitClassType>
 					<UnitType>UNIT_TAMIL_DHARANI</UnitType>
 				</Unit>
 			</Units>
