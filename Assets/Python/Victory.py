@@ -1518,11 +1518,11 @@ def onCityAcquired(iPlayer, iOwner, city, bConquest):
 
 	if not gc.getGame().isVictoryValid(7): return
 	
-	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
-	
 	# first Japanese goal: have an average city culture of 6000 by 1600 AD without ever losing a city
 	if iOwner == iJapan:
 		expire(iJapan, 0)
+	
+	if utils.getHumanID() != iPlayer and data.bIgnoreAI: return
 				
 	# first Tibetan goal: acquire five cities by 1000 AD
 	if iPlayer == iTibet:
