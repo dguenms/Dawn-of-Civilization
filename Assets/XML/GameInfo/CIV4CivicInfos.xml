@@ -970,7 +970,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Nationhood.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iMaxConscript>2</iMaxConscript>
+			<iMaxConscript>3</iMaxConscript>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_FORT</ImprovementType>
