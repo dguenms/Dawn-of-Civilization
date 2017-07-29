@@ -2298,7 +2298,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PRIVATEER</Type>
 			<Button>,Art/Interface/Buttons/Units/Privateer.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,11</Button>
-			<fScale>0.22</fScale>
+			<fScale>0.26</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -2415,7 +2415,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_IRONCLAD</Type>
 			<Button>Art/Interface/Buttons/Units/Ironclad.dds</Button>
-			<fScale>0.6</fScale>
+			<fScale>0.8</fScale>
 			<fInterfaceScale>0.3</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -7077,7 +7077,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_COG</Type>
 			<Button>Art/Interface/Buttons/Units/Cog.dds</Button>
-			<fScale>0.14</fScale>
+			<fScale>0.2</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -7115,7 +7115,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GALLEASS</Type>
 			<Button>Art/Interface/Buttons/Units/Galleass.dds</Button>
-			<fScale>0.09</fScale>
+			<fScale>0.1</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -7154,7 +7154,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TORPEDO_BOAT</Type>
 			<Button>Art/Interface/Buttons/Units/TorpedoBoat.dds</Button>
-			<fScale>0.5</fScale>
+			<fScale>0.7</fScale>
 			<fInterfaceScale>1.2</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -7193,7 +7193,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CRUISER</Type>
 			<Button>Art/Interface/Buttons/Units/Cruiser.dds</Button>
-			<fScale>0.35</fScale>
+			<fScale>0.38</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
