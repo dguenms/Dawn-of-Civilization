@@ -1012,8 +1012,11 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_ENGLAND_GREAT_BRITAIN"
 			
 	elif iPlayer == iHolyRome:
-		if not bEmpire and iGameTurn < getTurnForYear(tBirth[iGermany]):
-			return "TXT_KEY_CIV_HOLY_ROME_GERMANY"
+		if not bEmpire:
+			if iGameTurn < getTurnForYear(tBirth[iGermany]):
+				return "TXT_KEY_CIV_HOLY_ROME_GERMANY"
+			else:
+				return "TXT_KEY_CIV_AUSTRIA_SHORT_DESC"
 			
 	elif iPlayer == iRussia:
 		if not (bEmpire and iEra >= iRenaissance) and not isAreaControlled(iPlayer, tEuropeanRussiaTL, tEuropeanRussiaBR, 5, tEuropeanRussiaExceptions):
