@@ -1789,7 +1789,7 @@ def getCivicStability(iPlayer, lCivics):
 		if iNationhood in civics: iStability += 3
 		
 	if iCasteSystem in civics:
-		if iCitizenship: iStability -= 4
+		if iCitizenship in civics: iStability -= 4
 		if iClergy in civics: iStability += 2
 		if iSecularism in civics: iStability -= 3
 		
