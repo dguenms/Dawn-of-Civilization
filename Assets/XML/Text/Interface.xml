@@ -1817,4 +1817,9 @@
 		<English>Can build %d1 National Wonders per City</English>
 		<German>Kann pro Stadt %d1 Nationale Wunder errichten</German>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_GREATPEOPLE_CULTURE_LEVEL</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from Culture Level</English>
+		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] durch Kulturstufe</German>
+	</TEXT>
 </Civ4GameText>
