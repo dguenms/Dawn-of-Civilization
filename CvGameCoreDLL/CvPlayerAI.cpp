@@ -10960,7 +10960,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	iValue += ((kCivic.getFreeMilitaryUnitsPopulationPercent() * getTotalPopulation()) / 300);
 	iValue += -(kCivic.getGoldPerUnit() * getNumUnits());
 	iValue += -(kCivic.getGoldPerMilitaryUnit() * getNumMilitaryUnits() * iWarmongerPercent) / 200;
-	iValue += (kCivic.getCaptureGoldModifier() * iWarmongerPercent / (bWarPlan ? 20 : 100)); // Leoreth
+	iValue += (kCivic.getCaptureGoldModifier() * iWarmongerPercent / (bWarPlan ? 100 : 500)); // Leoreth
 
 	//iValue += ((kCivic.isMilitaryFoodProduction()) ? 0 : 0);
 	iValue += (getWorldSizeMaxConscript(eCivic) * ((bWarPlan) ? (20 + getNumCities()) : ((8 + getNumCities()) / 2)));
@@ -11225,28 +11225,73 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue += (AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) /*+ getNumCities() * 2*/))) / 100;
 		}
 
-		// Leoreth: specialist extra yield
-		iTempValue += ((kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15);
-
-		// Leoreth: commerce in capital per colony
-		if (iI == YIELD_COMMERCE)
+		// Leoreth: unimproved tile yield
+		if (kCivic.getUnimprovedTileYield(iI) != 0)
 		{
-			iTempValue += kCivic.getColonyCommerce() * countColonies();
+			CvCity* pLoopCity;
+			int iLoop;
+			int iUnimprovedWorkedTiles = 0;
+
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				iUnimprovedWorkedTiles += std::max(0, pLoopCity->getWorkingPopulation() - pLoopCity->countNumImprovedPlots());
+			}
+
+			iTempValue += std::max(0, iUnimprovedWorkedTiles - AI_getNumAIUnits(UNITAI_WORKER) * 2) * AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getUnimprovedTileYield(iI) / 100;
 		}
 
-		// Leoreth: commerce in capital per vassal city
+		// Leoreth: specialist extra yield
+		iTempValue += ((AI_averageYieldMultiplier((YieldTypes)iI) * kCivic.getSpecialistExtraYield(iI) * getTotalPopulation()) / 15) / 100;
+
+		// Leoreth: excess happiness yield
+		if (kCivic.getHappinessExtraYield(iI) != 0)
+		{
+			CvCity* pLoopCity;
+			int iLoop;
+			int iHappinessYield = 0;
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				iHappinessYield += std::min(pLoopCity->getPopulation(), std::max(0, pLoopCity->happyLevel() - pLoopCity->unhappyLevel())) * kCivic.getHappinessExtraYield(iI);
+			}
+
+			iTempValue += iHappinessYield * AI_averageYieldMultiplier((YieldTypes)iI) / 100;
+		}
+
+		// Leoreth: excess unhappiness yield
+		if (kCivic.getUnhappinessExtraYield(iI) != 0)
+		{
+			CvCity* pLoopCity;
+			int iLoop;
+			int iUnhappinessYield = 0;
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				iUnhappinessYield += std::max(0, pLoopCity->unhappyLevel() - pLoopCity->happyLevel()) * kCivic.getUnhappinessExtraYield(iI);
+			}
+
+			iTempValue += iUnhappinessYield * AI_averageYieldMultiplier((YieldTypes)iI) / 100;
+		}
+
+
 		if (iI == YIELD_COMMERCE)
 		{
+			int iCapitalCommerce = 0;
+			
+			// Leoreth: commerce in capital per colony
+			iCapitalCommerce += kCivic.getColonyCommerce() * countColonies();
+			
+			// Leoreth: commerce in capital per vassal city
 			if (kCivic.getVassalCityCommerce() != 0)
 			{
 				for (int iJ = 0; iJ < MAX_PLAYERS; iJ++)
 				{
 					if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isVassal(getTeam()))
 					{
-						iTempValue += kCivic.getVassalCityCommerce() * GET_PLAYER((PlayerTypes)iJ).getNumCities();
+						iCapitalCommerce += kCivic.getVassalCityCommerce() * GET_PLAYER((PlayerTypes)iJ).getNumCities();
 					}
 				}
 			}
+
+			iTempValue += getCapitalYieldRateModifier(YIELD_COMMERCE) * iCapitalCommerce / 100;
 		}
 
 		if (iI == YIELD_FOOD)
