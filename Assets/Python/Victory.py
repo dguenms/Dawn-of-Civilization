@@ -738,7 +738,7 @@ def checkTurn(iGameTurn, iPlayer):
 			else:
 				lose(iArabia, 1)
 		
-		# third goal: spread Islam to 40% of the cities in the world
+		# third goal: spread Islam to 30% of the cities in the world
 		if isPossible(iArabia, 2):
 			if gc.getGame().calculateReligionPercent(iIslam) >= 30.0:
 				win(iArabia, 2)
@@ -749,7 +749,7 @@ def checkTurn(iGameTurn, iPlayer):
 		if iGameTurn == getTurnForYear(1000):
 			expire(iTibet, 0)
 			
-		# second goal: spread Buddhism to 30% by 1400 AD
+		# second goal: spread Buddhism to 25% by 1400 AD
 		if isPossible(iTibet, 1):
 			if gc.getGame().calculateReligionPercent(iBuddhism) >= 25.0:
 				win(iTibet, 1)
