@@ -6978,7 +6978,8 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		}
 
 		// Leoreth: unimproved land tiles by civic effect
-		if (getImprovementType() == NO_IMPROVEMENT && !isWater() && !isImpassable())
+		// yield is subtracted again in calculateImprovementYieldChange()
+		if (!isWater() && !isImpassable())
 		{
 			iYield += GET_PLAYER(ePlayer).getUnimprovedTileYield(eYield);
 		}

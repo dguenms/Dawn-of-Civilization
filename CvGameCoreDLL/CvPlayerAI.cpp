@@ -11020,7 +11020,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}*/
 	}
 
-	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * /*3*/ 2) * /*6*/ 8) + (getNumCities() * 2));
+	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * 3) * 6) + (getNumCities() * 2));
 	iValue += -((kCivic.isNoForeignTrade()) ? (iConnectedForeignCities * /*3*/ 4) : 0);
 	iValue -= kCivic.isNoForeignTradeModifier() ? (iConnectedForeignCities * 3 / 2) : 0; // Leoreth
 	iValue += (pCapital) ? ((100 + kCivic.getCapitalTradeModifier()) * pCapital->getTradeRoutes() * AI_yieldWeight(YIELD_COMMERCE) * 2 / 100) : 0; // Leoreth
