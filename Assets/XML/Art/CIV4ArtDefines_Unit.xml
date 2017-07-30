@@ -7038,7 +7038,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_HEAVY_GALLEY</Type>
 			<Button>Art/Interface/Buttons/Units/Dromon.dds</Button>
-			<fScale>0.12</fScale>
+			<fScale>0.14</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
