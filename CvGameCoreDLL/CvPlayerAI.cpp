@@ -11020,7 +11020,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}*/
 	}
 
-	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * 3) * 6) + (getNumCities() * 2));
+	iValue += ((kCivic.getTradeRoutes() * std::max(0, iConnectedForeignCities - getNumCities() * 3) * 8) + (getNumCities() * 2));
 	iValue += -((kCivic.isNoForeignTrade()) ? (iConnectedForeignCities * /*3*/ 4) : 0);
 	iValue -= kCivic.isNoForeignTradeModifier() ? (iConnectedForeignCities * 3 / 2) : 0; // Leoreth
 	iValue += (pCapital) ? ((100 + kCivic.getCapitalTradeModifier()) * pCapital->getTradeRoutes() * AI_yieldWeight(YIELD_COMMERCE) * 2 / 100) : 0; // Leoreth
@@ -11053,17 +11053,6 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		}
 		iValue += (-kCivic.getCorporationMaintenanceModifier() * (iHQCount * (25 + getNumCities() * 2) + iCorpCount * 7)) / 25;
 
-	}
-
-	//Leoreth: corporation commerce modifier
-	if (kCivic.getCorporationCommerceModifier() != 0)
-	{
-		int iCorpCount = 0;
-		for (int iCorp = 0; iCorp < GC.getNumCorporationInfos(); ++iCorp)
-		{
-			iCorpCount += countCorporations((CorporationTypes)iCorp);
-		}
-		iValue += ((kCivic.getCorporationCommerceModifier() * iCorpCount) / 5);
 	}
 
 	if (kCivic.getCivicPercentAnger() != 0)
@@ -11218,7 +11207,18 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		{
 			iTempValue += ((kCivic.getCapitalYieldModifier(iI) * pCapital->getBaseYieldRate((YieldTypes)iI)) / 80);
 		}
-		iTempValue += ((kCivic.getTradeYieldModifier(iI) * getNumCities()) / 11);
+		//iTempValue += ((kCivic.getTradeYieldModifier(iI) * getNumCities()) / 11);
+
+		// Leoreth: more accurate trade yield modifier
+		if (kCivic.getTradeYieldModifier(iI) != 0)
+		{
+			CvCity* pLoopCity;
+			int iLoop;
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				iTempValue += pLoopCity->getTradeYield(YIELD_COMMERCE) * kCivic.getTradeYieldModifier(iI) / 100;
+			}
+		}
 
 		for (iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
 		{
@@ -11325,6 +11325,17 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iTempValue /= 500;
 		}
 		iTempValue += ((kCivic.getSpecialistExtraCommerce(iI) * getTotalPopulation()) / 15);
+
+		// Leoreth: corporation commerce modifier
+		if (kCivic.getCorporationCommerceModifier() != 0)
+		{
+			CvCity* pLoopCity;
+			int iLoop;
+			for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				iTempValue += pLoopCity->getCorporationCommerce((CommerceTypes)iI) * kCivic.getCorporationCommerceModifier();
+			}
+		}
 
 		iTempValue *= AI_commerceWeight((CommerceTypes)iI);
 
