@@ -605,7 +605,7 @@
 			<Type>BUILD_COTTAGE</Type>
 			<Description>TXT_KEY_BUILD_COTTAGE</Description>
 			<PrereqTech>TECH_PROPERTY</PrereqTech>
-			<iTime>600</iTime>
+			<iTime>700</iTime>
 			<ImprovementType>IMPROVEMENT_COTTAGE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<FeatureStructs>
