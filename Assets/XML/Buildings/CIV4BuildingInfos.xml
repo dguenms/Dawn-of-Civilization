@@ -7958,7 +7958,6 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iLevelPrereq>4</iLevelPrereq>
 			<iMaxLatitude>90</iMaxLatitude>
-			<iMilitaryProductionModifier>100</iMilitaryProductionModifier>
 			<iAsset>10</iAsset>
 			<iPower>8</iPower>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
