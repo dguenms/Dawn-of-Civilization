@@ -785,7 +785,7 @@
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
-					<BuildType>BUILD_COTTAGE_DEFORESTATION</BuildType>
+					<BuildType>BUILD_HAMLET_DEFORESTATION</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
 				<Build>
