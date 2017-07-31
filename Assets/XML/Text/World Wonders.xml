@@ -618,8 +618,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_HELP</Tag>
-		<English>[ICON_BULLET]Cities grow while producing with food</English>
-		<German>[ICON_BULLET]Städte wachsen, wenn Nahrung zur Produktion verwendet wird</German>
+		<English>[ICON_BULLET]Cities continue to grow when using Food for Production</English>
+		<German>[ICON_BULLET]Städte wachsen weiterhin, wenn Nahrung zur Produktion verwendet wird</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PYRAMIDS_STRATEGY</Tag>
@@ -710,8 +710,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_HELP</Tag>
-		<English>[ICON_BULLET]Wonders can be produced using food</English>
-		<German>[ICON_BULLET]Wunder können mithilfe von Nahrung errichtet werden</German>
+		<English>[ICON_BULLET]Food is added to Production when building Wonders</English>
+		<German>[ICON_BULLET]Beim Errichten von Wundern wird Nahrung zur Produktion addiert</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GREAT_SPHINX_STRATEGY</Tag>
