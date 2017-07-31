@@ -7817,12 +7817,12 @@
 			<Description>TXT_KEY_BUILDING_NATIONAL_MONUMENT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_NATIONAL_MONUMENT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_NATIONAL_MONUMENT_STRATEGY</Strategy>
-			<Advisor>ADVISOR_MILITARY</Advisor>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NATIONAL_MONUMENT</ArtDefineTag>
 			<PrereqTech>TECH_HERITAGE</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
-			<iCost>250</iCost>
+			<iCost>500</iCost>
 			<iHurryCostModifier>50</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
