@@ -257,7 +257,7 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_CHEMISTRY</PrereqTech>
 					<TechYields>
 						<iYield>1</iYield>
 					</TechYields>
@@ -316,7 +316,7 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
-					<PrereqTech>TECH_BIOLOGY</PrereqTech>
+					<PrereqTech>TECH_CHEMISTRY</PrereqTech>
 					<TechYields>
 						<iYield>1</iYield>
 					</TechYields>
