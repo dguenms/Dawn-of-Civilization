@@ -80,6 +80,10 @@ class UniquePowers:
 	def setup(self):
 		# Babylonian UP: receive a free tech after discovering the first four techs
 		pBabylonia.setFreeTechsOnDiscovery(4)
+		
+	def onBuildingBuilt(self, city, iOwner, iBuilding):
+		if iOwner == iMughals:
+			self.mughalUP(city, iBuilding)
 					
 #------------------VIKING UP----------------------
 
@@ -207,14 +211,6 @@ class UniquePowers:
 
 
 #------------------ARABIAN U.P.-------------------
-
-	def mughalUP(self, city): # Unused
-		return
-		# pMughals = gc.getPlayer(iMughals)
-		iStateReligion = pMughals.getStateReligion()
-
-		if iStateReligion >= 0:
-			city.setHasReligion(iStateReligion, True, True, False)
 
 	def seljukUP(self, city): # Unused
 		return
@@ -569,3 +565,8 @@ class UniquePowers:
 			gc.getPlayer(iIndonesia).changeGold(iGold)
 			if utils.getHumanID() == iIndonesia:
 				CyInterface().addMessage(iIndonesia, False, iDuration, CyTranslator().getText("TXT_KEY_INDONESIAN_UP", (iGold,)), "", 0, "", ColorTypes(iWhite), -1, -1, True, True)
+	
+	# Mughal UP: receives 50% of building cost as culture when building is completed
+	def mughalUP(self, city, iBuilding):
+		iCost = gc.getPlayer(iMughals).getBuildingProductionNeeded(iBuilding)
+		city.changeCulture(iMughals, iCost / 2, True)

@@ -843,6 +843,10 @@ def name(iPlayer):
 def vassalName(iPlayer, iMaster):
 	if iMaster == iRome and short(iPlayer) == "Carthage":
 		return "TXT_KEY_CIV_ROMAN_NAME_CARTHAGE"
+		
+	if iPlayer == iNetherlands: return short(iPlayer)
+	
+	if gc.getPlayer(iPlayer).isReborn(): return short(iPlayer)
 
 	sSpecificName = getOrElse(getOrElse(dForeignNames, iMaster, {}), iPlayer)
 	if sSpecificName: return sSpecificName
@@ -853,6 +857,8 @@ def republicName(iPlayer):
 	if iPlayer in [iMoors, iEngland]: return None
 	
 	if iPlayer == iInca and data.players[iPlayer].iResurrections > 0: return None
+	
+	if iPlayer == iNetherlands and isCommunist(iPlayer): return "TXT_KEY_CIV_NETHERLANDS_ARTICLE"
 
 	return short(iPlayer)
 	

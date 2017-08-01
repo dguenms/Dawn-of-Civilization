@@ -3210,7 +3210,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										break;
 									case MOORS:
-										if (iI == LA_MEZQUITA && getRegionID() == REGION_IBERIA) iTempValue *= 5;
+										if (iI == LA_MEZQUITA && getRegionID() == REGION_IBERIA) iTempValue *= 10;
 										else if (iI == UNIVERSITY_OF_SANKORE || iI == SPIRAL_MINARET || iI == TOPKAPI_PALACE || iI == BLUE_MOSQUE) iTempValue /= 4;
 										break;
 									case SPAIN:

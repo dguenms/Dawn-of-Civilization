@@ -502,6 +502,7 @@ class CvRFCEventHandler:
 		
 		vic.onBuildingBuilt(iOwner, iBuildingType)
 		self.rel.onBuildingBuilt(city, iOwner, iBuildingType)
+		self.up.onBuildingBuilt(city, iOwner, iBuildingType)
 		
 		if iOwner < iNumPlayers:
 			self.com.onBuildingBuilt(iOwner, iBuildingType, city)

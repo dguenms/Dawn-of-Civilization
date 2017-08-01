@@ -2006,9 +2006,6 @@ def isTolerated(iPlayer, iReligion):
 	# civics
 	if pPlayer.getCivics(4) in [iTolerance, iSecularism]: return True
 	
-	# Mughal UP
-	if iPlayer == iMughals: return True
-	
 	# Exceptions
 	if iStateReligion == iConfucianism and iReligion == iTaoism: return True
 	if iStateReligion == iTaoism and iReligion == iConfucianism: return True

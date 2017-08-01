@@ -7859,9 +7859,6 @@ int CvCity::getReligionGoodHappiness() const
 
 int CvCity::getReligionBadHappiness() const
 {
-	if (getOwnerINLINE() == (PlayerTypes)MUGHALS)
-		return 0;
-
 	return m_iReligionBadHappiness;
 }
 
