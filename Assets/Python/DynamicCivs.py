@@ -1266,7 +1266,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_FRANCE_FRANKISH"
 			
 	elif iPlayer == iEngland:
-		if getColumn(iEngland) >= 12 and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
+		if getColumn(iEngland) >= 12 and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 2):
 			return "TXT_KEY_CIV_ENGLAND_BRITISH"
 			
 	elif iPlayer == iHolyRome:
@@ -1672,7 +1672,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
-		if getColumn(iPlayer) >= 12 and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 3):
+		if getColumn(iPlayer) >= 12 and isAreaControlled(iPlayer, tBritainTL, tBritainBR, 2):
 			return "TXT_KEY_CIV_ENGLAND_UNITED_KINGDOM_OF"
 			
 	elif iPlayer == iHolyRome:
