@@ -1230,7 +1230,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Caravel[COLOR_REVERT] has one less movement point, cannot enter the ocean until [COLOR_TECH_TEXT]Optics[COLOR_REVERT], cannot pass capes until [COLOR_TECH_TEXT]Cartography[COLOR_REVERT], has two first strikes, can transport military units and has an additional cargo space.</English>
+		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Heavy Galley[COLOR_REVERT] has one extra movement point, has two first strikes and has two additional cargo spaces.</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK</Tag>
