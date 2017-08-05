@@ -187,7 +187,6 @@
 			<Button>,Art/Interface/Buttons/Civics/Democracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_HIGH</Upkeep>
-			<iLargestCityHappiness>2</iLargestCityHappiness>
 			<iFreeSpecialist>1</iFreeSpecialist>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_PRESIDENT</WeLoveTheKing>
 		</CivicInfo>
@@ -211,6 +210,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Citizenship.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<iLargestCityHappiness>2</iLargestCityHappiness>
 			<BuildingProductionModifiers>
 				<BuildingProductionModifier>
 					<BuildingType>BUILDINGCLASS_AQUEDUCT</BuildingType>
