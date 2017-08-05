@@ -275,10 +275,6 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<iExpInBorderModifier>50</iExpInBorderModifier>
-			<CapitalCommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
-			</CapitalCommerceModifiers>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
