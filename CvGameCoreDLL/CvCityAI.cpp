@@ -8913,7 +8913,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 						}
 
 						// Leoreth: should be better by a significant margin
-						iValue -= iBestValue / 4;
+						//iValue -= iBestValue / 4;
 					}
 
 					if (iValue > iBestValue)

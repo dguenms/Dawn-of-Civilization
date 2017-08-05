@@ -10990,7 +10990,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			{
 				if (canConstruct((BuildingTypes)iI) || (canConstruct((BuildingTypes)iI, false, false, false, true) && canResearch((TechTypes)kBuilding.getPrereqAndTech())))
 				{
-					iValue += iTempValue * 20 / 100;
+					iValue += iTempValue * 40 / 100;
 				}
 			}
 		}
@@ -11357,6 +11357,16 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		if (kCivic.getBuildingHappinessChanges(iI) != 0)
 		{
 			iValue += (kCivic.getBuildingHappinessChanges(iI) * getBuildingClassCount((BuildingClassTypes)iI) * 3);
+		}
+
+		if (kCivic.getBuildingProductionModifier(iI) != 0)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+
+			if (eBuilding != NO_BUILDING && getNumCities() > 0 && canConstruct(eBuilding))
+			{
+				iValue += 20 * kCivic.getBuildingProductionModifier(iI) * (getNumCities() - getBuildingClassCountPlusMaking((BuildingClassTypes)iI)) / (100 * getNumCities());
+			}
 		}
 	}
 
