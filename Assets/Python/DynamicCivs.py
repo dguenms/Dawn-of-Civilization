@@ -890,11 +890,12 @@ def specificName(iPlayer):
 	bWar = isAtWar(iPlayer)
 	
 	if iPlayer == iChina:
-		if iEra >= iIndustrial or utils.getScenario() == i1700AD:
-			return "TXT_KEY_CIV_CHINA_QING"
+		if bEmpire:
+			if iEra >= iIndustrial or utils.getScenario() == i1700AD:
+				return "TXT_KEY_CIV_CHINA_QING"
 			
-		if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
-			return "TXT_KEY_CIV_CHINA_MING"
+			if iEra == iRenaissance and iGameTurn >= getTurnForYear(1400):
+				return "TXT_KEY_CIV_CHINA_MING"
 			
 	elif iPlayer == iBabylonia:
 		if isCapital(iPlayer, ["Ninua", "Kalhu"]):
