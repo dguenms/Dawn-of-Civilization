@@ -3192,7 +3192,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										break;
 									case ARABIA:
-										if (iI == TOPKAPI_PALACE || iI == LA_MEZQUITA) iTempValue /= 8;
+										if (iI == LA_MEZQUITA) iTempValue *= -5;
+										else if (iI == TOPKAPI_PALACE) iTempValue /= 8;
 										else if (iI == SPIRAL_MINARET || iI == DOME_OF_THE_ROCK) iTempValue *= 6;
 										else {
 											iTempValue *= 2;
@@ -3210,7 +3211,11 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										}
 										break;
 									case MOORS:
-										if (iI == LA_MEZQUITA && getRegionID() == REGION_IBERIA) iTempValue *= 10;
+										if (iI == LA_MEZQUITA && getRegionID() == REGION_IBERIA) 
+										{
+											iTempValue *= 10;
+											iTempValue += 1000;
+										}
 										else if (iI == UNIVERSITY_OF_SANKORE || iI == SPIRAL_MINARET || iI == TOPKAPI_PALACE || iI == BLUE_MOSQUE) iTempValue /= 4;
 										break;
 									case SPAIN:
@@ -3310,7 +3315,8 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 										else if (iI == MACHU_PICCHU) iTempValue /= 4;
 										break;
 									case MUGHALS:
-										if (iI == TAJ_MAHAL || iI == RED_FORT) iTempValue *= 4;
+										if (iI == LA_MEZQUITA) iTempValue /= 5;
+										else if (iI == TAJ_MAHAL || iI == RED_FORT) iTempValue *= 4;
 										else if (iI == HARMANDIR_SAHIB) iTempValue *= 2;
 										else if (iI == BLUE_MOSQUE || iI == TOPKAPI_PALACE) iTempValue /= 8;
 										break;
@@ -3492,6 +3498,15 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 			}
 		}
 	}
+
+	if (getOwner() == MOORS && isCapital() && getRegionID() == REGION_IBERIA)
+	{
+		if (canConstruct((BuildingTypes)LA_MEZQUITA))
+		{
+			eBestBuilding = (BuildingTypes)LA_MEZQUITA;
+		}
+	}
+
 	return eBestBuilding;
 }
 
