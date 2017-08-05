@@ -244,8 +244,8 @@
 			<Button>,Art/Interface/Buttons/Civics/Vassalage.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
-			<iBaseFreeMilitaryUnits>5</iBaseFreeMilitaryUnits>
-			<iFreeMilitaryUnitsPopulationPercent>25</iFreeMilitaryUnitsPopulationPercent>
+			<iBaseFreeMilitaryUnits>15</iBaseFreeMilitaryUnits>
+			<iFreeMilitaryUnitsPopulationPercent>10</iFreeMilitaryUnitsPopulationPercent>
 			<bMilitaryFoodProduction>1</bMilitaryFoodProduction>
 			<BuildingHappinessChanges>
 				<BuildingHappinessChange>
