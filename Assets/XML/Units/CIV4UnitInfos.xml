@@ -6444,14 +6444,15 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>5</iCombat>
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<iCityAttack>-25</iCityAttack>
+			<iCityDefense>-25</iCityDefense>
 			<iWithdrawalProb>20</iWithdrawalProb>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>3</iCollateralDamageMaxUnits>
-			<iPlainsAttack>25</iPlainsAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
@@ -6544,14 +6545,15 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>5</iCombat>
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<iCityAttack>-25</iCityAttack>
+			<iCityDefense>-25</iCityDefense>
 			<iWithdrawalProb>20</iWithdrawalProb>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>3</iCollateralDamageMaxUnits>
-			<iPlainsAttack>25</iPlainsAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
@@ -6654,14 +6656,15 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>5</iCombat>
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
+			<iCityAttack>-25</iCityAttack>
+			<iCityDefense>-25</iCityDefense>
 			<iWithdrawalProb>20</iWithdrawalProb>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>3</iCollateralDamageMaxUnits>
-			<iPlainsAttack>25</iPlainsAttack>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
