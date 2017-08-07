@@ -3216,9 +3216,9 @@ It is fine for a human player mouse-over (which is what it is used for).
 
                     if (pAttacker->getUnitCombatType() != NO_UNITCOMBAT)
                     {
-                        iModifier = pDefender->unitCombatModifier(pAttacker->getUnitCombatType());
+						iModifier = pDefender->unitCombatModifier(pAttacker->getUnitCombatType()) - pAttacker->unitCombatModifier(pDefender->getUnitCombatType());
 
-                        if (iModifier != 0)
+                        if (iModifier > 0)
                         {
                             szString.append(NEWLINE);
                             szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_MOD_VS_TYPE", iModifier, GC.getUnitCombatInfo(pAttacker->getUnitCombatType()).getTextKeyWide()));
@@ -3327,9 +3327,9 @@ It is fine for a human player mouse-over (which is what it is used for).
 
                     if (pDefender->getUnitCombatType() != NO_UNITCOMBAT)
                     {
-                        iModifier = pAttacker->unitCombatModifier(pDefender->getUnitCombatType());
+						iModifier = pAttacker->unitCombatModifier(pDefender->getUnitCombatType()) - pDefender->unitCombatModifier(pAttacker->getUnitCombatType());
 
-                        if (iModifier != 0)
+                        if (iModifier > 0)
                         {
                             szString.append(NEWLINE);
                             szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_MOD_VS_TYPE", -iModifier, GC.getUnitCombatInfo(pDefender->getUnitCombatType()).getTextKeyWide()));
