@@ -1277,7 +1277,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 /* BETTER_BTS_AI_MOD                       END                                                  */
 /************************************************************************************************/
 		{
-			if (getCombatFirstStrikes() == 0)	//Leoreth: let cavalry with first strikes flank too (side effects??)
+			if (getCombatFirstStrikes() == 0)	// Leoreth: let cavalry with first strikes flank too (side effects??)
 			//if (true)
 			{
 				if (getDamage() + iAttackerDamage >= maxHitPoints() && GC.getGameINLINE().getSorenRandNum(100, "Withdrawal") < withdrawalProbability())
