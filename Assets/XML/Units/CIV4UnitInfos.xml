@@ -8614,8 +8614,8 @@
 			<iWithdrawalProb>30</iWithdrawalProb>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
-			<iPlainsAttack>50</iPlainsAttack>
-			<iPlainsDefense>50</iPlainsDefense>
+			<iPlainsAttack>25</iPlainsAttack>
+			<iPlainsDefense>25</iPlainsDefense>
 			<UnitClassAttackMods>
 				<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_ARTILLERY</UnitClassType>
