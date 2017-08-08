@@ -10179,10 +10179,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_ASSEMBLY_LINE</PrereqTech>
-			<TechTypes>
-				<PrereqTech>TECH_BALLISTICS</PrereqTech>
-			</TechTypes>
+			<PrereqTech>TECH_FLIGHT</PrereqTech>
 			<BonusType>BONUS_IRON</BonusType>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -10264,7 +10261,7 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_ROCKETRY</PrereqTech>
+			<PrereqTech>TECH_COMPUTERS</PrereqTech>
 			<BonusType>BONUS_OIL</BonusType>
 			<PrereqBonuses>
 				<BonusType>BONUS_IRON</BonusType>
