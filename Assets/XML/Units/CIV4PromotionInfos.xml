@@ -1038,7 +1038,7 @@
 			<Description>TXT_KEY_PROMOTION_FLANKING2</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_FLANKING1</PromotionPrereqOr1>
-			<iPlainsAttack>30</iPlainsAttack>
+			<iPlainsAttack>20</iPlainsAttack>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
@@ -1065,7 +1065,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_FLANKING2</PromotionPrereqOr1>
 			<iWithdrawalChange>25</iWithdrawalChange>
-			<iPlainsDefense>50</iPlainsDefense>
+			<iPlainsDefense>25</iPlainsDefense>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
