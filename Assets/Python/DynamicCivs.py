@@ -1055,6 +1055,10 @@ def specificName(iPlayer):
 	elif iPlayer == iNetherlands:
 		if isCapital(iPlayer, ["Brussels", "Antwerpen"]):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIUM"
+			
+	elif iPlayer == iGermany:
+		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
+			return "TXT_KEY_CIV_GERMANY_PRUSSIA"
 	
 def adjective(iPlayer):
 	if isCapitulated(iPlayer):
@@ -1319,6 +1323,10 @@ def specificAdjective(iPlayer):
 	elif iPlayer == iNetherlands:
 		if isCapital(iPlayer, ["Brussels", "Antwerpen"]):
 			return "TXT_KEY_CIV_NETHERLANDS_BELGIAN"
+			
+	elif iPlayer == iGermany:
+		if getColumn(iGermany) <= 14 and pHolyRome.isAlive():
+			return "TXT_KEY_CIV_GERMANY_PRUSSIAN"
 	
 ### Title methods ###
 
@@ -1784,7 +1792,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 	elif iPlayer == iTurkey:
 		if iReligion == iIslam:
-			if bTheocracy:
+			if bTheocracy and gc.getGame().getHolyCity(iIslam) and gc.getGame().getHolyCity(iIslam).getOwner() == iTurkey:
 				return "TXT_KEY_CALIPHATE_ADJECTIVE"
 				
 			if bEmpire:
