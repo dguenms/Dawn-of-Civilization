@@ -11824,7 +11824,7 @@ EspionageMissionTypes CvPlayerAI::AI_bestPlotEspionage(CvPlot* pSpyPlot, PlayerT
 								if (NULL != pCity)
 								{
 									//loop through all great specialist types
-									for (int iSpecialist = 7; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
+									for (int iSpecialist = SPECIALIST_GREAT_PRIEST; iSpecialist <= SPECIALIST_GREAT_SPY; iSpecialist++)
 									{
 										SpecialistTypes tempSpecialist = (SpecialistTypes)0;
 										//does this city contain this great specialist type?
@@ -12056,7 +12056,7 @@ int CvPlayerAI::AI_espionageVal(PlayerTypes eTargetPlayer, EspionageMissionTypes
 		CvCity* pCity = pPlot->getPlotCity();
 		if (NULL != pCity)
 		{
-			for (int iSpecialist = 7; iSpecialist < GC.getNumSpecialistInfos(); iSpecialist++)
+			for (int iSpecialist = SPECIALIST_GREAT_PRIEST; iSpecialist <= SPECIALIST_GREAT_SPY; iSpecialist++)
 			{
 				SpecialistTypes tempSpecialist = (SpecialistTypes)0;
 				if (pCity->getFreeSpecialistCount((SpecialistTypes)iSpecialist) > 0)

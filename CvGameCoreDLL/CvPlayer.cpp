@@ -15124,7 +15124,7 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 	else if (kMission.getDestroyUnitCostFactor() > 0)
 	{
 		// Destroys Unit
-		CvUnit* pUnit = GET_PLAYER(eTargetPlayer).getUnit(iExtraData);
+		/*CvUnit* pUnit = GET_PLAYER(eTargetPlayer).getUnit(iExtraData);
 		int iCost = MAX_INT;
 
 		if (NULL == pUnit)
@@ -15162,7 +15162,9 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 			{
 				iMissionCost = iBaseMissionCost + ((100 + kMission.getDestroyUnitCostFactor()) * iCost) / 100;
 			}
-		}
+		}*/
+
+		iMissionCost = iBaseMissionCost + (500 + kMission.getDestroyUnitCostFactor() * 200 * GET_PLAYER(eTargetPlayer).getGreatPeopleCreated()) / 100;
 	}
 	else if (kMission.getDestroyProjectCostFactor() > 0)
 	{
@@ -15650,7 +15652,7 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 		if (pSpyUnit->canAssassin(pPlot, false))
 		{
 			SpecialistTypes theGreatSpecialistTarget = (SpecialistTypes)iExtraData;
-			if (theGreatSpecialistTarget >= 7)
+			if (theGreatSpecialistTarget >= SPECIALIST_GREAT_PRIEST)
 			{
 				//Assassinate
 				CvCity* pCity = pPlot->getPlotCity();

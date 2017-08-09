@@ -19362,13 +19362,16 @@ void CvGameTextMgr::setEspionageCostHelp(CvWStringBuffer &szBuffer, EspionageMis
 	{
 		if (NO_PLAYER != eTargetPlayer)
 		{
-			int iTargetUnitID = iExtraData;
+			/*int iTargetUnitID = iExtraData;
 
-			CvUnit* pUnit = GET_PLAYER(eTargetPlayer).getUnit(iTargetUnitID);
+			CvUnit* pUnit = GET_PLAYER(eTargetPlayer).getUnit(iTargetUnitID);*/
+			
+			int iSpecialist = iExtraData;
 
-			if (NULL != pUnit)
+			if (iSpecialist != NO_SPECIALIST)
 			{
-				szBuffer.append(gDLL->getText("TXT_KEY_ESPIONAGE_HELP_DESTROY_UNIT", pUnit->getNameKey()));
+				CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo((SpecialistTypes)iSpecialist);
+				szBuffer.append(gDLL->getText("TXT_KEY_ESPIONAGE_HELP_DESTROY_UNIT", kSpecialist.getDescription()));
 				szBuffer.append(NEWLINE);
 			}
 		}
