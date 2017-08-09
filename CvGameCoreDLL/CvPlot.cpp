@@ -2790,7 +2790,17 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 	{
 		if (getRouteType() != NO_ROUTE)
 		{
-			if (GC.getRouteInfo(getRouteType()).getValue() >= GC.getRouteInfo(eRoute).getValue())
+			if (getRouteType() == eRoute)
+			{
+				return false;
+			}
+
+			if (GC.getRouteInfo(getRouteType()).getValue() > GC.getRouteInfo(eRoute).getValue())
+			{
+				return false;
+			}
+
+			if (getOwner() != GC.getGame().getActivePlayer() && GC.getRouteInfo(getRouteType()).getValue() == GC.getRouteInfo(eRoute).getValue())
 			{
 				return false;
 			}
