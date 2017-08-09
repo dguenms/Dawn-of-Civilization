@@ -162,7 +162,7 @@ dNewCapitals = {
 iJapan : (116, 46),	# Tokyo
 iVikings : (63, 59),	# Stockholm
 iHolyRome : (62, 49),	# Vienna
-iItaly : (59, 41),	# Rome
+iItaly : (60, 44),	# Rome
 iMongolia : (102, 47),	# Khanbaliq
 iTurkey : (68, 45),	# Istanbul
 }
@@ -173,14 +173,14 @@ iEgypt : (69, 35),	# Cairo
 iChina : (102, 47),	# Beijing
 iIndia : (90, 40),	# Delhi
 iPersia : (81, 41),	# Esfahan
-iEthiopia : (72, 36),	# Addis Ababa
+iEthiopia : (72, 28),	# Addis Ababa
 iJapan : (116, 46),	# Tokyo
-iVikings : (63, 58),	# Stockholm
+iVikings : (63, 59),	# Stockholm
 iIndonesia : (104, 25),	# Jakarta
 iMoors : (51, 37),	# Marrakesh
 iHolyRome : (62, 49),	# Vienna
 iInca : (26, 22),	# Lima
-iItaly : (59, 41),	# Rome
+iItaly : (60, 44),	# Rome
 iMughals : (85, 37),	# Karachi
 iTurkey : (68, 45),	# Istanbul
 }
