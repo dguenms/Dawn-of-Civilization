@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+	Reminder
+	by eotinb, EmperorFool, Ruff_Hi
+
+	Copyright (c) 2008 The BUG Mod.
+-->
+<mod id="Reminder" 
+	 module="ReminderEventManager" 
+	 name="Reminder" 
+	 author="eotinb, EmperorFool, Ruff_Hi" 
+	 version="1.0" 
+	 date="11/29/2005"
+	 url="http://forums.civfanatics.com/showthread.php?t=144612">
+	 
+	<options id="Reminder" file="Reminder.ini">
+		<section id="Reminder">
+			<option id="Enabled" 
+					type="boolean" default="True" 
+					get="isEnabled" set="setEnabled" 
+					label="Enable Reminders [ALT + M]" 
+					help="Turn on eotinb's Reminders mod."/>
+			<list   id="DisplayMethod" key="Display Method" 
+					type="int" default="2" listType="string" 
+					get="getDisplayMethod" set="setDisplayMethod">
+				<choice id="Message" get="isShowMessage"/>
+				<choice id="Popup" get="isShowPopup"/>
+				<choice id="Both" get="isShowMessage isShowPopup"/>
+			</list>
+			<option id="Autolog" 
+					type="boolean" default="True" 
+					get="isAutolog" set="setAutolog"/>
+		</section>
+	</options>
+	
+	<events/>
+	<shortcut key="Alt Ctrl R | Alt M" function="createReminder"/>
+	
+</mod>

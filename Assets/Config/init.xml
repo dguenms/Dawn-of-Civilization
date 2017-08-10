@@ -151,7 +151,8 @@
 	<load mod="Not Just Another Game Clock"/>
 	<load mod="Advanced Scoreboard"/>
 	<load mod="Plot List Enhancements"/>
-	
+
+	<load mod="Reminder"/>	
 	<load mod="Civ4lerts"/>
 	<load mod="MoreCiv4lerts"/>
 	<load mod="Unit Naming"/>

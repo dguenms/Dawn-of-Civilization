@@ -69,3 +69,9 @@ class BugAlertsOptionsTab(BugOptionsTab.BugOptionsTab):
 		self.addCheckboxFloatDropdown(screen, rightL, rightR, "MoreCiv4lerts__DomLand", "MoreCiv4lerts__DomLandThresh", "LAYOUT_LEFT")
 		
 		screen.attachHSeparator(column, column + "Sep")
+		
+		# Reminders
+		left, right = self.addTwoColumnLayout(screen, column, "Main")
+		self.addCheckbox(screen, left, "Reminder__Enabled")
+		self.addCheckbox(screen, left, "Reminder__Autolog")
+		self.addTextDropdown(screen, left, left, "Reminder__DisplayMethod")
