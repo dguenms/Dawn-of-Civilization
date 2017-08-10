@@ -2307,7 +2307,7 @@ class RiseAndFall:
 	
 		iHuman = utils.getHumanID()
 		turnsLeft = data.iBetrayalTurns
-		lTempPlots = data.lTempPlots
+		lTempPlots = [(x, y) for (x, y) in data.lTempPlots if not gc.getMap().plot(x, y).isCore(data.iOldCivFlip)]
 		plotList = utils.listSearch(lTempPlots, utils.outerInvasion, [] )
 		if not plotList:
 			plotList = utils.listSearch(lTempPlots, utils.innerSpawn, [data.iOldCivFlip, data.iNewCivFlip] )			
