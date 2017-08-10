@@ -93,6 +93,8 @@ class Religions:
 
 		self.spreadJudaismEurope(iGameTurn)
 		self.spreadJudaismMiddleEast(iGameTurn)
+		
+		self.spreadIslamIndonesia(iGameTurn)
 
 
 	def foundReligion(self, tPlot, iReligion):
@@ -271,6 +273,30 @@ class Religions:
 			pSpreadCity = utils.getRandomEntry(self.getTargetCities(lMiddleEastCities, iJudaism))
 			if pSpreadCity:
 				pSpreadCity.spreadReligion(iJudaism)
+				
+## ISLAM
+
+	def spreadIslamIndonesia(self, iGameTurn):
+		if not gc.getGame().isReligionFounded(iIslam): return
+		if not pIndonesia.isAlive(): return
+		if not (getTurnForYear(1300) <= iGameTurn <= getTurnForYear(1600)): return
+		
+		if iGameTurn % utils.getTurns(15) != utils.getTurns(4): return
+		
+		lIndonesianContacts = [iPlayer for iPlayer in range(iNumPlayers) if pIndonesia.canContact(iPlayer) and gc.getPlayer(iPlayer).getStateReligion() == iIslam]
+		if not lIndonesianContacts: 
+			return
+		
+		lIndonesianCities = utils.getRegionCities([rIndonesia])
+		lPotentialCities = [city for city in lIndonesianCities if not city.isHasReligion(iIslam)]
+		
+		iMaxCitiesMultiplier = 2
+		if pIndonesia.getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
+		
+		if len(lPotentialCities) * iMaxCitiesMultiplier >= len(lIndonesianCities):
+			pSpreadCity = utils.getRandomEntry(lPotentialCities)
+			if pSpreadCity:
+				pSpreadCity.spreadReligion(iIslam)
 		
 ## BUDDHISM
 
