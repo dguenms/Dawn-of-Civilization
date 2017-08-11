@@ -11421,5 +11421,5 @@ bool CvPlot::canSpread(ReligionTypes eReligion) const
 
 bool CvPlot::isPlains() const
 {
-	return isFlatlands() && (getFeatureType() == NO_FEATURE) && !isCity(true);
+	return isFlatlands() && (getFeatureType() == NO_FEATURE || GC.getFeatureInfo(getFeatureType()).getDefenseModifier() > 0) && !isCity(true);
 }
