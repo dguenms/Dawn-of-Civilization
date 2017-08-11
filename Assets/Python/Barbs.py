@@ -291,8 +291,10 @@ class Barbs:
 		if utils.isYearIn(1700, 1900):
 			self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
 			
-		if utils.isYearIn(1500, 1850):
-			self.checkSpawn(iNative, iMohawk, 2 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
+		if utils.isYearIn(1500, 1650):
+			self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
+		elif utils.isYearIn(1650, 1850):
+			self.checkSpawn(iNative, iMohawk, 1 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
 				
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):
