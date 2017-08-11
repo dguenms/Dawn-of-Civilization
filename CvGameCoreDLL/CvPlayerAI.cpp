@@ -11365,7 +11365,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 			if (eBuilding != NO_BUILDING && getNumCities() > 0 && canConstruct(eBuilding))
 			{
-				iValue += 20 * kCivic.getBuildingProductionModifier(iI) * (getNumCities() - getBuildingClassCountPlusMaking((BuildingClassTypes)iI)) / (100 * getNumCities());
+				iValue += 2 * kCivic.getBuildingProductionModifier(iI) * (getNumCities() - getBuildingClassCountPlusMaking((BuildingClassTypes)iI)) / (100 * getNumCities());
 			}
 		}
 	}
