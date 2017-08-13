@@ -221,10 +221,40 @@
 			<Description>TXT_KEY_BUG_HINT_INTERFACE_7</Description>
 		</HintInfo>
 		<HintInfo>
+			<Description>TXT_KEY_HINT_1</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_2</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_3</Description>
+		</HintInfo>
+		<HintInfo>
 			<Description>TXT_KEY_HINT_4</Description>
 		</HintInfo>
 		<HintInfo>
+			<Description>TXT_KEY_HINT_5</Description>
+		</HintInfo>
+		<HintInfo>
 			<Description>TXT_KEY_HINT_6</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_7</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_8</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_9</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_10</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_11</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_12</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_13</Description>
@@ -243,6 +273,12 @@
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_18</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_19</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_20</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_21</Description>
@@ -272,10 +308,19 @@
 			<Description>TXT_KEY_HINT_29</Description>
 		</HintInfo>
 		<HintInfo>
+			<Description>TXT_KEY_HINT_30</Description>
+		</HintInfo>
+		<HintInfo>
 			<Description>TXT_KEY_HINT_31</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_32</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_33</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_34</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_35</Description>
@@ -293,55 +338,10 @@
 			<Description>TXT_KEY_HINT_39</Description>
 		</HintInfo>
 		<HintInfo>
-			<Description>TXT_KEY_HINT_47</Description>
+			<Description>TXT_KEY_HINT_40</Description>
 		</HintInfo>
 		<HintInfo>
-			<Description>TXT_KEY_HINT_51</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_52</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_53</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_55</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_56</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_57</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_58</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_61</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_62</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_63</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_64</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_65</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_68</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_69</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_70</Description>
-		</HintInfo>
-		<HintInfo>
-			<Description>TXT_KEY_HINT_71</Description>
+			<Description>TXT_KEY_HINT_41</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_1</Description>
@@ -378,6 +378,9 @@
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_12</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_13</Description>
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_14</Description>
@@ -534,6 +537,36 @@
 		</HintInfo>
 		<HintInfo>
 			<Description>TXT_KEY_HINT_DOC_65</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_66</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_67</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_68</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_69</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_70</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_71</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_72</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_73</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_74</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_DOC_75</Description>
 		</HintInfo>
 	</HintInfos>
 </Civ4Hints>
