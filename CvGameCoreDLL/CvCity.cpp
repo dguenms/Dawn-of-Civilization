@@ -9425,7 +9425,7 @@ int CvCity::getAdditionalBaseYieldRateBySpecialist(YieldTypes eIndex, Specialist
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 	
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
-	return iChange * (kSpecialist.getYieldChange(eIndex) + kSpecialist.getCultureLevelYieldChange(getCultureLevel(), eIndex) + GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex));
+	return iChange * (kSpecialist.getYieldChange(eIndex) + kSpecialist.getCultureLevelYieldChange(getCultureLevel(), eIndex) + (eSpecialist != SPECIALIST_SLAVE ? GET_PLAYER(getOwnerINLINE()).getSpecialistExtraYield(eSpecialist, eIndex) : 0));
 }
 // BUG - Specialist Additional Yield - end
 
@@ -9979,7 +9979,7 @@ int CvCity::getExtraSpecialistYield(YieldTypes eIndex, SpecialistTypes eSpeciali
 	FAssertMsg(eSpecialist >= 0, "eSpecialist expected to be >= 0");
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "GC.getNumSpecialistInfos expected to be >= 0");
 
-	if (eSpecialist == (SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))
+	if (eSpecialist == SPECIALIST_SLAVE)
 	{
 		return 0;
 	}
@@ -10136,7 +10136,7 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 
 	iBaseCommerceRate = getCommerceFromPercent(eIndex, getYieldRate(YIELD_COMMERCE) * 100);
 
-	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople() - getFreeSpecialistCount((SpecialistTypes)GC.getInfoTypeForString("SPECIALIST_SLAVE"))) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
+	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople() - getFreeSpecialistCount(SPECIALIST_SLAVE)) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
 	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
 
 	// Leoreth: Himeji Castle effect
@@ -10603,7 +10603,7 @@ int CvCity::getAdditionalBaseCommerceRateBySpecialistImpl(CommerceTypes eIndex, 
 	FAssertMsg(eSpecialist < GC.getNumSpecialistInfos(), "eSpecialist expected to be < GC.getNumSpecialistInfos()");
 
 	CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo(eSpecialist);
-	return iChange * (kSpecialist.getCommerceChange(eIndex) + kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex) + GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
+	return iChange * (kSpecialist.getCommerceChange(eIndex) + kSpecialist.getCultureLevelCommerceChange(getCultureLevel(), eIndex) + (eSpecialist != SPECIALIST_SLAVE ? GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex) : 0));
 }
 // BUG - Specialist Additional Commerce - end
 
