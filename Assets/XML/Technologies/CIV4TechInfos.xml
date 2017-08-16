@@ -689,7 +689,7 @@
 			<Quote>TXT_KEY_TECH_WRITING_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Writing.dds,Art/Interface/Buttons/TechTree_Atlas.dds,6,12</Button>
+			<Button>Art/Interface/Buttons/TechTree/Writing.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -2140,7 +2140,7 @@
 			<Quote>TXT_KEY_TECH_COMPANIES_QUOTE</Quote>
 			<Sound>AS2D_TECH_GENERIC</Sound>
 			<SoundMP>AS2D_TECH_GENERIC</SoundMP>
-			<Button>,Art/Interface/Buttons/TechTree/Economics.dds,Art/Interface/Buttons/mem_techtree_atlas.dds,1,5</Button>
+			<Button>Art/Interface/Buttons/TechTree/Companies.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
