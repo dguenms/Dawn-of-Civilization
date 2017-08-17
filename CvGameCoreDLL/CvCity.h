@@ -1064,11 +1064,11 @@ public:
 	void updateWorkedImprovement(int iIndex, bool bNewValue);
 	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement);
 
-	int getImprovementHappiness(ImprovementTypes eImprovement) const;
-	void changeImprovementHappiness(ImprovementTypes eImprovement, int iChange);
+	int getImprovementHappinessChange(ImprovementTypes eImprovement) const;
+	void changeImprovementHappinessChange(ImprovementTypes eImprovement, int iChange);
 
-	int getImprovementHealth(ImprovementTypes eImprovement) const;
-	void changeImprovementHealth(ImprovementTypes eImprovement, int iChange);
+	int getImprovementHealthChange(ImprovementTypes eImprovement) const;
+	void changeImprovementHealthChange(ImprovementTypes eImprovement, int iChange);
 
 	int getCultureGreatPeopleRateModifier() const;
 	void changeCultureGreatPeopleRateModifier(int iChange);
@@ -1352,8 +1352,8 @@ protected:
 	int* m_paiForceSpecialistCount;
 	int* m_paiFreeSpecialistCount;
 	int* m_paiImprovementFreeSpecialists;
-	int* m_paiImprovementHealth; // Leoreth
-	int* m_paiImprovementHappiness; // Leoreth
+	int* m_paiImprovementHealthChange; // Leoreth
+	int* m_paiImprovementHappinessChange; // Leoreth
 	int* m_paiReligionInfluence;
 	int* m_paiStateReligionHappiness;
 	int* m_paiUnitCombatFreeExperience;

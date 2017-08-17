@@ -5825,12 +5825,12 @@ void CvCityAI::AI_updateBestBuild()
 							}
 
 							// Leoreth: account for buildings here
-							iHappyAdjust += (GC.getImprovementInfo(eImprovement).getHappiness() + getImprovementHappiness(eImprovement));
-							iHealthAdjust += (GC.getImprovementInfo(eImprovement).getHealth() + getImprovementHealth(eImprovement));
+							iHappyAdjust += getImprovementHappinessChange(eImprovement);
+							iHealthAdjust += getImprovementHealthChange(eImprovement);
 							if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 							{
-								iHappyAdjust -= (GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHappiness() + getImprovementHappiness(pLoopPlot->getImprovementType()));
-								iHealthAdjust -= (GC.getImprovementInfo(pLoopPlot->getImprovementType()).getHealth() + getImprovementHealth(pLoopPlot->getImprovementType()));
+								iHappyAdjust -= getImprovementHappinessChange(pLoopPlot->getImprovementType());
+								iHealthAdjust -= getImprovementHealthChange(pLoopPlot->getImprovementType());
 							}
 
 							// Leoreth: ignore yield change of defensive structures if no natural food on the tile
@@ -8617,7 +8617,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 					// Leoreth: try to discourage workshops with low health
 					if (iFoodChange > 0 && !pPlot->isHills())
 					{
-						if (GC.getImprovementInfo(eImprovement).getHealth() + getImprovementHealth(eImprovement) < 0)
+						if (getImprovementHealthChange(eImprovement) < 0)
 						{
 							bValid = false;
 						}
