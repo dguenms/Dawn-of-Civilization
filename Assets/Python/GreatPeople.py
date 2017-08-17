@@ -2236,7 +2236,7 @@ iCivAmerica : {
 		"Joseph Smith", # 19th
 		"Charles Taze Russell", # 19th
 		iGlobal, 
-		"Martin Luther King", # 20th
+		"Malcolm Little", # 20th
 	],
 	iGreatArtist : [
 		"Edgar Allan Poe", # 19th
@@ -2296,12 +2296,13 @@ iCivAmerica : {
 		iIndustrial,
 		"Andrew Jackson", # 19th
 		"Frederick Douglass", # 19th
-		"fSojourner Truth", # 19th
 		"fVictoria Claflin Woodhull", # 19th
 		"fJane Addams", # 19th
+		"fSusan B. Anthony", # 19th
 		iGlobal,
 		"fEleanor Roosevelt", # 20th
 		"George Kennan", # 20th
+		"Martin Luther King", # 20th
 	],
 	iGreatGeneral : [
 		"Andrew Jackson", # 19th
