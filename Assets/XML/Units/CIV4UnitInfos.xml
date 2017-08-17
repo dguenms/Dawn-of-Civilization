@@ -4927,11 +4927,11 @@
 			<UnitClassAttackMods>
 				<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_MACHINE_GUN</UnitClassType>
-					<iUnitClassMod>50</iUnitClassMod>
+					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
 				<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_HOWITZER</UnitClassType>
-					<iUnitClassMod>50</iUnitClassMod>
+					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
 			</UnitClassAttackMods>
 			<iConscription>1</iConscription>
