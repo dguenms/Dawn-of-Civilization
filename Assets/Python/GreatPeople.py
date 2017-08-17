@@ -126,6 +126,9 @@ iCivChina : {
 		iMedieval,
 		"fLin Moniang", # 10th
 		"fSun Bu'er", # 12th
+		"Qiu Chuji", # 12th
+		iGlobal,
+		"Xiong Shili", # 20th
 	],
 	iGreatArtist : [
 		"Ling Lun", # legendary
@@ -141,6 +144,9 @@ iCivChina : {
 		iRenaissance, 
 		"Wu Cheng'en", # 16th
 		"Cao Xueqin", # 18th
+		iGlobal,
+		"Qi Baishi", # 20th
+		"Lu Xun", # 20th
 	],
 	iGreatScientist : [
 		"Li Fan", # 1st
@@ -152,7 +158,7 @@ iCivChina : {
 		"Zhu Shijie", # 14th
 		iRenaissance,
 		"fTan Yunxian", # 16th
-		iIndustrial,
+		iGlobal,
 		"Li Yuanzhe", # 20th
 		"Chen Ning Yang", # 20th
 	],
@@ -163,7 +169,9 @@ iCivChina : {
 		"Wang Anshi", # 11th
 		iRenaissance,
 		"Zheng He", # 15th
+		"Pan Qiguan", # 18th
 		iGlobal,
+		"Zeng Junchen", # 20th
 		"Deng Xiaoping", # 20th
 	],
 	iGreatEngineer : [
@@ -227,10 +235,14 @@ iCivIndia : {
 		"fAnjeze Gonxhe Bojaxhiu", # 20th
 	],
 	iGreatArtist : [
-		"Kalidasa", # 5th BC
 		"Valmiki", # 4th BC
+		"Asvaghosa", # 1st
+		"Kalidasa", # 5th
 		iRenaissance,
-		"Basawan", # 16th
+		"Purandara Dasa", # 15th
+		"Nainsukh", # 18th
+		iIndustrial, 
+		"Raja Ravi Varma", # 19th
 		iGlobal,
 		"Raja Rao", # 20th
 		"Rabindranath Tagore", # 20th
@@ -349,7 +361,6 @@ iCivEgypt : {
 		"Ptah-Hotep", # 25th BC
 		"Meryre", # 15th BC
 		"Akhenaten", # 14th BC
-		"Moses", # 13th BC
 		"fNefertiti", # 13th BC
 		iClassical, 
 		"Petiese", # 7th BC
@@ -655,6 +666,7 @@ iCivJapan : {
 		iRenaissance,
 		"Takuan Souhou", # 17th
 		iIndustrial,
+		"Hirata Atsutane", # 19th
 		"Uchimura Kanzou", # 19th
 	],
 	iGreatArtist : [
@@ -666,7 +678,8 @@ iCivJapan : {
 		"Yosa Buson", # 18th
 		iIndustrial,
 		"Katsushika Hokusai", # 19th
-		"Utagawa Hiroshige", # 
+		"Utagawa Hiroshige", # 19th
+		"fHiguchi Ichiyou", # 19th
 		iGlobal,
 		"Yukio Mishima", # 20th
 		"Hayao Miyazaki", # 20th
@@ -674,7 +687,7 @@ iCivJapan : {
 	],
 	iGreatScientist : [
 		"Yoshida Mitsuyoshi", # 17th
-		"Aida Yasuaki", # 18t
+		"Aida Yasuaki", # 18th
 		iGlobal,
 		"Kiyoshi Itou", # 20th
 		"Hideki Yukawa", # 20th
@@ -703,7 +716,6 @@ iCivJapan : {
 	],
 	iGreatStatesman : [
 		"Shoutouku Taishi", # 6th
-		iMedieval,
 		"Taira no Kiyomori", # 12th
 		"fHoujou Masako", # 12th
 		iRenaissance,
@@ -712,12 +724,13 @@ iCivJapan : {
 		iIndustrial,
 		"Sakamoto Ryouma", # 19th
 		"Oukubo Toshimichi", # 19th
+		"Fukuzawa Yukichi", # 19th
 		iGlobal,
 		"Shigeru Yoshida", # 20th
+		"fSadako Ogata", # 20th
 	],
 	iGreatGeneral : [
 		"Fujiwara no Kamatari", # 7th
-		iMedieval,
 		"Minamoto no Yoritomo", # 12th
 		"Ashikaga Takauji", # 14th
 		iRenaissance,
@@ -971,6 +984,7 @@ iCivVikings : {
 		"fMargrete", # 14th
 		iRenaissance,
 		"Gustav Vasa", # 16th
+		"fKristina", # 17th swedish
 		iIndustrial,
 		"Nikolaj Frederik Severin Grundtvig", # 19th
 		iGlobal,
@@ -1024,6 +1038,8 @@ iCivArabia : {
 		"Abbas ibn Firnas", # 9th
 		"Ibn Wahshiyah", # 10th
 		"Al-Jazari", # 12th
+		iGlobal, 
+		"fZaha Hadid", # 20th
 	],
 	iGreatStatesman : [
 		"fFatimah bint Muhammad", # 7th
@@ -1172,6 +1188,7 @@ iCivFrance : {
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
 		"Jean Calvin", # 16th
+		"fJeanne Mance", # 17th
 		iIndustrial,
 		u"fThérèse de Lisieux", # 19th
 		iGlobal,
@@ -1185,51 +1202,61 @@ iCivFrance : {
 		iRenaissance,
 		"Charles Le Brun", # 17th
 		"Jean-Baptiste Lully", # 17th
-		"Jean-Antoine Watteau", # 17th
+		"Jean Racine", # 17th
 		u"Molière", # 17th
 		"Voltaire", # 18th
+		u"fÉlisabeth Vigée Le Brun", # 18th
 		iIndustrial,
 		"Victor Hugo", # 19th
 		"Claude Monet", # 19th
 		"Henri Matisse", # 19th
 		"Claude Debussy", # 19th
 		"fGeorge Sand", # 19th
-		"Alexandre Dumas", # 19th
+		u"Honoré de Balzac", # 19th
 		"Auguste Rodin", # 19th
 		iGlobal,
+		"Maurice Ravel", # 20th
 		"Marcel Proust", # 20th
 		u"fÉdith Piaf", # 20th
-		"fEdith Piaf", # 20th
+		"Albert Camus", # 20th
 	],
 	iGreatScientist : [
+		"Gerbert d'Aurillac", # 10th
 		"Nicole Oresme", # 14th
 		iRenaissance,
 		u"René Descartes", # 17th
 		"Pierre de Fermat", # 17th
+		"Blaise Pascal", # 17th
 		"Antoine Lavoisier", # 18th
 		u"fÉmilie du Châtelet", # 18th
-		"Pierre-Simon Laplace", # 18th
 		iIndustrial,
+		"Pierre-Simon Laplace", # 18th
+		"Sadi Carnot", # 19th
 		"Louis Pasteur", # 19th
 		"fMarie-Sophie Germain", # 19th
 		"fMarie Curie", # 19th
 		iGlobal,
 		"Antoine Henri Becquerel", # 20th
+		"Jacques Monod", # 20th
 	],
 	iGreatMerchant : [
 		"Jacques Cartier", # 16th
 		"Samuel de Champlain", # 17th
-		u"fThérèse de Couagne", # 18th
+		"Antoine de Lamothe-Cadillac", # 18th
 		iIndustrial,
-		u"Frédéric Bastiat", # 18th
+		u"Frédéric Bastiat", # 19th
 		"Ferdinand de Lesseps", # 19th
+		"Louis Vuitton", # 19th
 		iGlobal,
 		"fCoco Chanel", # 20th
 		"Marcel Dessault", # 20th
+		"fMarie Marvingt", # 20th
 	],
 	iGreatEngineer : [
-		"Jules Hardouin Mansart", # 17th
-		"Blaise Pascal", # 17th
+		"Pierre de Montreuil", # 13th
+		iRenaissance,
+		u"Sébastien Le Prestre de Vauban", # 17th
+		"Jules Hardouin-Mansart", # 17th
 		"Claude Perrault", # 17th
 		"Charles-Augustin Coulomb", # 18th
 		"Joseph-Michel Montgolfier", # 18th
@@ -1241,7 +1268,6 @@ iCivFrance : {
 		iGlobal,
 		u"Louis Lumière", # 20th
 		"Le Corbusier", # 20th
-		"fMarie Marvingt", # 20th
 	],
 	iGreatStatesman : [
 		u"fAliénor d'Aquitaine", # 12th
@@ -1265,11 +1291,18 @@ iCivFrance : {
 		"Charles V", # 14th
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
+		u"Louis de Bouron-Condé", # 17th
+		"Henri de la Tour d'Auvergne", # 17th
 		"Louis-Joseph de Montcalm", # 18th
 		u"Louis-René de Latouche-Tréville", # 18th
-		"Louis-Nicolas Davout", # 18th
 		iIndustrial,
+		"Louis-Nicolas Davout", # 18th
+		"Joachim Murat", # 18th
+		"Louis-Alexandre Berthier", # 19th
 		"Gilbert de Lafayette", # 19th
+		iGlobal, 
+		u"Philippe Pétain", # 20th
+		"Philippe Leclerc de Hauteclocque", # 20th
 	],
 },
 iCivKhmer : {
@@ -1384,14 +1417,18 @@ iCivEngland : {
 		"John Maynard Keynes", # 20th
 	],
 	iGreatEngineer : [
+		"Henry Yevele", # 14th
+		iRenaissance, 
+		"Inigo Jones", # 17th
 		"Christopher Wren", # 17th
-		"James Watt", # 18th
 		iIndustrial,
+		"James Watt", # 18th
 		"Isambard Kingdom Brunel", # 19th
 		"Henry Bessemer", # 19th
 		"Charles Babbage", # 19th
 		"fAda Lovelace", # 19th
 		iGlobal,
+		"John Logie Baird", # 20th
 		"Alan Turing", # 20th
 		"Tim Berners-Lee", # 20th
 	],
@@ -1447,6 +1484,7 @@ iCivGermany : {
 		"Friedrich Schiller", # 18th
 		iIndustrial,
 		"fClara Schumann", # 19th
+		"Johann Strauss", # 19th
 		"Richard Wagner", # 19th
 		"Gustav Klimt", # 19th
 		iGlobal,
@@ -1486,6 +1524,8 @@ iCivGermany : {
 		"Ludwig von Mises", # 20th
 	],
 	iGreatEngineer : [
+		"Peter Parler", # 14th
+		iRenaissance,
 		"Johann Lukas von Hildebrandt", # 18th
 		iIndustrial,
 		"Alfred Krupp", # 19th
@@ -1968,6 +2008,7 @@ iCivMughals : {
 		"Bulleh Shah", # 18th
 	],
 	iGreatArtist : [
+		"Basawan", # 16th
 		"fShahzadi Gulbadan Begum", # 16th
 		"Abu al-Faiz ibn Mubarak", # 16th
 		"Abd al-Samad", # 16th
