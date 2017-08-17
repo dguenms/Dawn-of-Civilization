@@ -10026,6 +10026,12 @@
 			<iCollateralDamageLimit>60</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>6</iCollateralDamageMaxUnits>
 			<iCityAttack>25</iCityAttack>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
 			<UnitCombatCollateralImmunes>
 				<UnitCombatCollateralImmune>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
@@ -10197,6 +10203,12 @@
 			<iCollateralDamageLimit>70</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>7</iCollateralDamageMaxUnits>
 			<iCityAttack>25</iCityAttack>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
 			<UnitCombatCollateralImmunes>
 				<UnitCombatCollateralImmune>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
