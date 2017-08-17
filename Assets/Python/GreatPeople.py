@@ -1435,6 +1435,7 @@ iCivEngland : {
 		"fAda Lovelace", # 19th
 		iGlobal,
 		"John Logie Baird", # 20th
+		"fVictoria Drummond", # 20th
 		"Alan Turing", # 20th
 		"Tim Berners-Lee", # 20th
 	],
