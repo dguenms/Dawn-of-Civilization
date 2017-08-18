@@ -201,7 +201,7 @@ class CvRFCEventHandler:
 					city.setOccupationTimer(0)
 					
 			# Statue of Zeus effect: no city resistance on conquest
-			if gc.getPlayer(iPlayer).countNumBuildings(iStatueOfZeus) > 0:
+			if gc.getPlayer(iPlayer).isHasBuildingEffect(iStatueOfZeus):
 				city.setOccupationTimer(0)
 				
 			# Byzantium reduced to four cities: core shrinks to Constantinople
