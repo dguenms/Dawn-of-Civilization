@@ -756,6 +756,16 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			{
 				if (GC.getPromotionInfo((PromotionTypes)iI).isLeader())
 				{
+					GET_PLAYER(getOwnerINLINE()).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((GET_PLAYER(getOwnerINLINE()).getGreatGeneralsCreated() / 10) + 1));
+
+					for (int iI = 0; iI < MAX_PLAYERS; iI++)
+					{
+						if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+						{
+							GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((GET_PLAYER(getOwnerINLINE()).getGreatGeneralsCreated() / 10) + 1));
+						}
+					}
+
 					GET_PLAYER(getOwnerINLINE()).decrementGreatGeneralsCreated();
 				}
 			}
