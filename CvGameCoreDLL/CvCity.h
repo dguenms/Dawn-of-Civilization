@@ -237,7 +237,7 @@ public:
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
 
-	int getReligionCount() const;																						// Exposed to Python  
+	int getReligionCount(bool bCountLocalReligions = true) const;																						// Exposed to Python  
 	int getCorporationCount() const;																						// Exposed to Python  
 
 	DllExport int getID() const;																			// Exposed to Python

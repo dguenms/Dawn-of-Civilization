@@ -5952,7 +5952,7 @@ int CvCity::getNumActiveWorldWonders() const
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
 
-int CvCity::getReligionCount() const
+int CvCity::getReligionCount(bool bCountLocalReligions) const
 {
 	int iCount;
 	int iI;
@@ -5961,7 +5961,7 @@ int CvCity::getReligionCount() const
 
 	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
-		if (isHasReligion((ReligionTypes)iI))
+		if (isHasReligion((ReligionTypes)iI) && (bCountLocalReligions || !GC.getReligionInfo((ReligionTypes)iI).isLocal()))
 		{
 			iCount++;
 		}
