@@ -680,7 +680,7 @@ iCivJapan : {
 		iIndustrial,
 		"Katsushika Hokusai", # 19th
 		"Utagawa Hiroshige", # 19th
-		"fHiguchi Ichiyou", # 19th
+		"fIchiyou Higuchi", # 19th
 		iGlobal,
 		"Yukio Mishima", # 20th
 		"Hayao Miyazaki", # 20th
@@ -725,7 +725,7 @@ iCivJapan : {
 		iIndustrial,
 		"Sakamoto Ryouma", # 19th
 		"Oukubo Toshimichi", # 19th
-		"Fukuzawa Yukichi", # 19th
+		"Yukichi Fukuzawa", # 19th
 		iGlobal,
 		"Shigeru Yoshida", # 20th
 		"fSadako Ogata", # 20th
@@ -1206,6 +1206,7 @@ iCivFrance : {
 		"Jean-Baptiste Lully", # 17th
 		"Jean Racine", # 17th
 		u"Molière", # 17th
+		"Antoine Watteau", # 18th
 		"Voltaire", # 18th
 		u"fÉlisabeth Vigée Le Brun", # 18th
 		iIndustrial,
@@ -1215,6 +1216,7 @@ iCivFrance : {
 		"Claude Debussy", # 19th
 		"fGeorge Sand", # 19th
 		u"Honoré de Balzac", # 19th
+		"Alexandre Dumas", # 19th
 		"Auguste Rodin", # 19th
 		iGlobal,
 		"Maurice Ravel", # 20th
@@ -1245,6 +1247,7 @@ iCivFrance : {
 		"Jacques Cartier", # 16th
 		"Samuel de Champlain", # 17th
 		"Antoine de Lamothe-Cadillac", # 18th
+		u"fThérèse de Couagne", # 18th
 		iIndustrial,
 		u"Frédéric Bastiat", # 19th
 		"Ferdinand de Lesseps", # 19th
@@ -1293,7 +1296,7 @@ iCivFrance : {
 		"Charles V", # 14th
 		"fJeanne d'Arc", # 15th
 		iRenaissance,
-		u"Louis de Bouron-Condé", # 17th
+		u"Louis de Bourbon-Condé", # 17th
 		"Henri de la Tour d'Auvergne", # 17th
 		"Louis-Joseph de Montcalm", # 18th
 		u"Louis-René de Latouche-Tréville", # 18th
