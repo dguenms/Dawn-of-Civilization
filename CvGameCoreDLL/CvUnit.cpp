@@ -6329,14 +6329,14 @@ int CvUnit::getTradeGold(const CvPlot* pPlot) const
 
 	iGold = (m_pUnitInfo->getBaseTrade() + (m_pUnitInfo->getTradeMultiplier() * ((pCapitalCity != NULL) ? pCity->calculateTradeProfit(pCapitalCity) : 0)));
 
-	iGold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitTradePercent();
-	iGold /= 100;
-
 	// Leoreth: to help Mali
-	if (pCity->isHolyCity())
+	if (pCity->isHolyCity() && iGold < 2000)
 	{
 		iGold = std::min(iGold*2, 2000);
 	}
+
+	iGold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitTradePercent();
+	iGold /= 100;
 
 	return std::max(0, iGold);
 }
