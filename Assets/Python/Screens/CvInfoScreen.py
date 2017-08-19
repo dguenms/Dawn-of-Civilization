@@ -15,6 +15,7 @@ import math
 from Consts import *
 import RFCUtils
 from PyHelpers import PyPlayer
+from operator import itemgetter
 
 # BUG - 3.17 No Espionage - start
 import GameUtil
@@ -1703,7 +1704,7 @@ class CvInfoScreen:
 
 			self.szCityAnimWidgets.append(self.getNextWidgetName())
 			
-			if (pCity.isRevealed(gc.getGame().getActiveTeam(), false)):			
+			if (pCity.isRevealed(gc.getGame().getActiveTeam(), false)):
 				screen.addPlotGraphicGFC(self.szCityAnimWidgets[iWidgetLoop], self.X_CITY_ANIMATION, self.Y_ROWS_CITIES[iWidgetLoop] + self.Y_CITY_ANIMATION_BUFFER - self.H_CITY_ANIMATION / 2, self.W_CITY_ANIMATION, self.H_CITY_ANIMATION, pPlot, iDistance, false, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 		# Draw Wonder icons
@@ -1766,51 +1767,16 @@ class CvInfoScreen:
 					GenericButtonSizes.BUTTON_SIZE_46, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuildingID, -1, False )
 
 	def calculateTopCities(self):
-
-		# Calculate the top 5 cities
-
-		for iPlayerLoop in range(gc.getMAX_PLAYERS()):
-
-			apCityList = PyPlayer(iPlayerLoop).getCityList()
-			
-			for pCity in apCityList:
-			
-				iTotalCityValue = ((pCity.getCulture() / 5) + (pCity.getFoodRate() + pCity.getProductionRate() \
-					+ pCity.calculateGoldRate())) * pCity.getPopulation()
-
-				for iRankLoop in range(5):
-
-					if (iTotalCityValue > self.iCityValues[iRankLoop] and not pCity.isBarbarian()):
-
-						self.addCityToList(iRankLoop, pCity, iTotalCityValue)
-
-						break
-
-	# Recursive
-	def addCityToList(self, iRank, pCity, iTotalCityValue):
-
-		if (iRank > 4):
-
-			return
-
-		else:
-			pTempCity = self.pCityPointers[iRank]
-
-			# Verify a city actually exists at this rank
-			if (pTempCity):
-
-				iTempCityValue = self.iCityValues[iRank]
-
-				self.addCityToList(iRank+1, pTempCity, iTempCityValue)
-
-				self.pCityPointers[iRank] = pCity
-				self.iCityValues[iRank] = iTotalCityValue
-
-			else:
-				self.pCityPointers[iRank] = pCity
-				self.iCityValues[iRank] = iTotalCityValue
-
-				return
+		lCities = []
+		for iLoopPlayer in range(iNumPlayers):
+			for city in utils.getCityList(iLoopPlayer):
+				iValue = ((city.getCulture(iLoopPlayer) / 5) + (city.getYieldRate(YieldTypes.YIELD_FOOD) + city.getYieldRate(YieldTypes.YIELD_PRODUCTION) \
+					+ city.getYieldRate(YieldTypes.YIELD_COMMERCE))) * city.getPopulation()
+				lCities.append((city, iValue))
+		lCities.sort(key=itemgetter(1), reverse=True)
+		for i in range(5):
+			self.pCityPointers[i] = lCities[i][0]
+			self.iCityValues[i] = lCities[i][1]
 
 	def determineCityData(self):
 
@@ -1832,7 +1798,7 @@ class CvInfoScreen:
 				else:
 					szTurnFounded = localText.getText("TXT_KEY_TIME_AD", (iTurnYear,))#"%d %s" %(iTurnYear, self.TEXT_AD)
 
-				if (pCity.isRevealed(gc.getGame().getActiveTeam()) or gc.getTeam(pPlayer.getTeam()).isHasMet(gc.getGame().getActiveTeam())):
+				if (pCity.isRevealed(gc.getGame().getActiveTeam(), False) or gc.getTeam(pPlayer.getTeam()).isHasMet(gc.getGame().getActiveTeam())):
 					self.szCityNames[iRankLoop] = pCity.getName().upper()
 					self.szCityDescs[iRankLoop] = ("%s, %s" %(pPlayer.getCivilizationAdjective(0), localText.getText("TXT_KEY_MISC_FOUNDED_IN", (szTurnFounded,))))
 				else:

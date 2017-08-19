@@ -1864,6 +1864,21 @@ bool CvUnit::isActionRecommended(int iAction)
 				eRoute = ((RouteTypes)(GC.getBuildInfo(eBuild).getRoute()));
 				eBonus = pPlot->getBonusType(getTeam());
 				pWorkingCity = pPlot->getWorkingCity();
+				
+				if (eImprovement != NO_IMPROVEMENT)
+				{
+					if (eBonus != NO_BONUS)
+					{
+						if (GC.getImprovementInfo(eImprovement).isImprovementBonusTrade(eBonus))
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				}
 
 				if (pPlot->getImprovementType() == NO_IMPROVEMENT)
 				{
