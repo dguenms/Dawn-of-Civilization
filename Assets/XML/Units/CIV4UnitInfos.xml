@@ -7025,12 +7025,6 @@
 			<iCityDefense>-25</iCityDefense>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
-			<UnitClassAttackMods>
-				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
-					<iUnitClassMod>25</iUnitClassMod>
-				</UnitClassAttackMod>
-			</UnitClassAttackMods>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>3</iAsset>
 			<iPower>10</iPower>
@@ -7123,12 +7117,6 @@
 			<iCollateralDamageLimit>60</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>5</iCollateralDamageMaxUnits>
 			<iCityDefense>-25</iCityDefense>
-			<UnitClassAttackMods>
-				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
-					<iUnitClassMod>25</iUnitClassMod>
-				</UnitClassAttackMod>
-			</UnitClassAttackMods>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>3</iAsset>
 			<iPower>10</iPower>
@@ -7223,12 +7211,6 @@
 			<iCityDefense>-25</iCityDefense>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
-			<UnitClassAttackMods>
-				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
-					<iUnitClassMod>25</iUnitClassMod>
-				</UnitClassAttackMod>
-			</UnitClassAttackMods>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
@@ -7319,10 +7301,6 @@
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
 			<UnitClassAttackMods>
-				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
-					<iUnitClassMod>25</iUnitClassMod>
-				</UnitClassAttackMod>
 				<UnitClassAttackMod>
 					<UnitClassType>UNITCLASS_ARQUEBUSIER</UnitClassType>
 					<iUnitClassMod>50</iUnitClassMod>
@@ -7443,10 +7421,6 @@
 					<UnitClassType>UNITCLASS_LANCER</UnitClassType>
 					<iUnitClassMod>25</iUnitClassMod>
 				</UnitClassAttackMod>
-				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
-					<iUnitClassMod>25</iUnitClassMod>
-				</UnitClassAttackMod>
 			</UnitClassAttackMods>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>3</iAsset>
@@ -7542,12 +7516,6 @@
 			<iCityDefense>-25</iCityDefense>
 			<iCollateralDamageLimit>100</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
-			<UnitClassAttackMods>
-				<UnitClassAttackMod>
-					<UnitClassType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassType>
-					<iUnitClassMod>25</iUnitClassMod>
-				</UnitClassAttackMod>
-			</UnitClassAttackMods>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>3</iAsset>
 			<iPower>10</iPower>
