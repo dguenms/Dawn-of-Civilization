@@ -4586,7 +4586,6 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
-			<TechTypes>
 			<iCost>140</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -4667,9 +4666,6 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
-			<TechTypes>
-				<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
-			</TechTypes>
 			<iCost>140</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
