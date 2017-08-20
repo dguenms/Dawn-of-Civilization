@@ -217,7 +217,6 @@ dWonderGoals = {
 }
 
 dReligionGoals = {
-	iEthiopia: (0, [iOrthodoxy]),
 	iHolyRome: (1, [iProtestantism]),
 }
 		
@@ -550,7 +549,13 @@ def checkTurn(iGameTurn, iPlayer):
 					
 	elif iPlayer == iEthiopia:
 	
-		# first goal: found Orthodoxy
+		# first goal: settle a great prophet in two Orthodox cities by 500 AD
+		if isPossible(iEthiopia, 0):
+			if countReligionSpecialistCities(iEthiopia, iOrthodoxy, iSpecialistGreatProphet):
+				win(iEthiopia, 0)
+				
+		if iGameTurn == getTurnForYear(500):
+			expire(iEthiopia, 0)
 		
 		# second goal: acquire three incense resources by 600 AD
 		if isPossible(iEthiopia, 1):
@@ -2979,6 +2984,13 @@ def getGlobalTreasury():
 def countFirstGreatPeople(iPlayer):
 	return len([iGreatPerson for iGreatPerson in lGreatPeopleUnits if getFirstBorn(iGreatPerson) == iPlayer])
 	
+def countReligionSpecialistCities(iPlayer, iReligion, iSpecialist):
+	iCount = 0
+	for city in utils.getCityList(iPlayer):
+		if city.isHasReligion(iReligion) and city.getFreeSpecialistCount(iSpecialist) > 0:
+			iCount += 1
+	return iCount
+	
 ### UHV HELP SCREEN ###
 
 def getIcon(bVal):
@@ -3450,7 +3462,10 @@ def getUHVHelp(iPlayer, iGoal):
 			aHelp.append(getIcon(iTradeGold >= utils.getTurns(4000)) + localText.getText("TXT_KEY_VICTORY_TRADE_GOLD", (iTradeGold, utils.getTurns(4000))))
 
 	elif iPlayer == iEthiopia:
-		if iGoal == 1:
+		if iGoal == 0:
+			iOrthodoxCitiesWithProphets = countReligionSpecialistCities(iEthiopia, iOrthodoxy, iSpecialistGreatProphet)
+			aHelp.append(getIcon(iOrthodoxCitiesWithProphets >= 2) + localText.getText("TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS", (iOrthodoxCitiesWithProphets, 2)))
+		elif iGoal == 1:
 			iNumIncense = pEthiopia.getNumAvailableBonuses(iIncense)
 			aHelp.append(getIcon(iNumIncense >= 3) + localText.getText("TXT_KEY_VICTORY_AVAILABLE_INCENSE_RESOURCES", (iNumIncense, 3)))
 		elif iGoal == 2:

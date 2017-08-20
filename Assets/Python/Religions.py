@@ -316,7 +316,7 @@ class Religions:
 		if utils.getHumanID() == iEthiopia: iEthiopiaOffset = utils.getTurns(10 + data.iSeed % 5)
 		iOffset = utils.getTurns(data.iSeed % 15)
 		
-		if iGameTurn == getTurnForYear(0) + iOffset + iEthiopiaOffset:
+		if iGameTurn == getTurnForYear(0) + iOffset:
 			pHolyCity = gc.getGame().getHolyCity(iJudaism)
 			
 			if pHolyCity.getOwner() != utils.getHumanID() and gc.getGame().getSorenRandNum(2, "Holy city?") == 0:
