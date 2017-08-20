@@ -312,8 +312,6 @@ class Religions:
 		if not gc.getGame().isReligionFounded(iJudaism): return
 		if gc.getGame().isReligionFounded(iOrthodoxy): return
 		
-		iEthiopiaOffset = 0
-		if utils.getHumanID() == iEthiopia: iEthiopiaOffset = utils.getTurns(10 + data.iSeed % 5)
 		iOffset = utils.getTurns(data.iSeed % 15)
 		
 		if iGameTurn == getTurnForYear(0) + iOffset:
