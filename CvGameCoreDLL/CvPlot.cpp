@@ -2800,7 +2800,7 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 				return false;
 			}
 
-			if (getOwner() != GC.getGame().getActivePlayer() && GC.getRouteInfo(getRouteType()).getValue() == GC.getRouteInfo(eRoute).getValue())
+			if (ePlayer != GC.getGame().getActivePlayer() && GC.getRouteInfo(getRouteType()).getValue() == GC.getRouteInfo(eRoute).getValue())
 			{
 				return false;
 			}
