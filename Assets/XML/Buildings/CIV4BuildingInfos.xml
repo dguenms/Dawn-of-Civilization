@@ -1824,7 +1824,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_SOLAR_PLANT</ArtDefineTag>
 			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 			<bPower>1</bPower>
-			<iCost>250</iCost>
+			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
