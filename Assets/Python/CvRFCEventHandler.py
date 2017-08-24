@@ -654,12 +654,12 @@ class CvRFCEventHandler:
 
 		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]):
 			vic.onTechAcquired(iPlayer, iTech)
-			cnm.onTechAcquired(argsList[2])
+			cnm.onTechAcquired(iPlayer)
 
 		if gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:
-			self.rel.onTechAcquired(argsList[0], argsList[2])
+			self.rel.onTechAcquired(iTech, iPlayer)
 			if (gc.getGame().getGameTurn() > getTurnForYear(1700)):
-				self.aiw.forgetMemory(argsList[0], argsList[2])
+				self.aiw.forgetMemory(iTech, iPlayer)
 
 		if iTech == iExploration:
 			if iPlayer in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
@@ -670,10 +670,10 @@ class CvRFCEventHandler:
 				gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
 
 		elif iTech == iMicrobiology:
-			self.pla.onTechAcquired(argsList[0], argsList[2])
+			self.pla.onTechAcquired(iTech, iPlayer)
 
 		elif iTech == iRailroad:
-			self.rnf.onRailroadDiscovered(argsList[2])
+			self.rnf.onRailroadDiscovered(iPlayer)
 			
 		if iTech in [iExploration, iFirearms]:
 			teamPlayer = gc.getTeam(iPlayer)
