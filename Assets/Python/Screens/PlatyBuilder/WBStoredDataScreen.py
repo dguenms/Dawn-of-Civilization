@@ -5,6 +5,7 @@ import CvScreenEnums
 import Popup
 import WBReligionScreen
 import WBCorporationScreen
+import WBGameDataScreen
 import WBInfoScreen
 import Barbs
 import AIWars
