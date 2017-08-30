@@ -317,7 +317,7 @@
 			<Strategy>TXT_KEY_BUILDING_STABLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STABLE</ArtDefineTag>
-			<ObsoleteTech>TECH_ENGINE</ObsoleteTech>
+			<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
 			<PrereqTech>TECH_RIDING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
@@ -352,7 +352,7 @@
 			<Strategy>TXT_KEY_BUILDING_MONGOLIAN_GER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MONGOLIAN_GER</ArtDefineTag>
-			<ObsoleteTech>TECH_ENGINE</ObsoleteTech>
+			<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
 			<PrereqTech>TECH_RIDING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
