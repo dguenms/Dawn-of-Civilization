@@ -18065,8 +18065,6 @@ void CvCity::updateWorkedImprovements()
 	int iI;
 	ImprovementTypes eImprovement;
 
-	log(CvWString::format(L"(%d, %d): before updateWorkedImprovements(): happiness %d, health %d", getX(), getY(), getImprovementHappiness(), getImprovementHealth()));
-
 	setImprovementHappiness(0);
 	setImprovementHealth(0);
 
@@ -18082,35 +18080,25 @@ void CvCity::updateWorkedImprovements()
 			}
 		}
 	}
-
-	log(CvWString::format(L"(%d, %d): after updateWorkedImprovements(): happiness %d, health %d", getX(), getY(), getImprovementHappiness(), getImprovementHealth()));
 }
 
 void CvCity::updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement)
 {
-	log(CvWString::format(L"(%d, %d): before updateWorkedImprovement(): old improvement %s, new improvement %s, happiness %d, health %d", getX(), getY(), eOldImprovement != NO_IMPROVEMENT ? GC.getImprovementInfo(eOldImprovement).getText() : L"NONE", eNewImprovement != NO_IMPROVEMENT ? GC.getImprovementInfo(eNewImprovement).getText() : L"NONE", getImprovementHappiness(), getImprovementHealth()));
-
 	if (eOldImprovement != NO_IMPROVEMENT)
 	{
 		changeImprovementHappiness(-getImprovementHappinessChange(eOldImprovement));
 		changeImprovementHealth(-getImprovementHealthChange(eOldImprovement));
-
-		log(CvWString::format(L"(%d, %d): after old improvement: happiness %d, health %d", getX(), getY(), getImprovementHappiness(), getImprovementHealth()));
 	}
 
 	if (eNewImprovement != NO_IMPROVEMENT)
 	{
 		changeImprovementHappiness(getImprovementHappinessChange(eNewImprovement));
 		changeImprovementHealth(getImprovementHealthChange(eNewImprovement));
-
-		log(CvWString::format(L"(%d, %d): after new improvement: happiness %d, health %d", getX(), getY(), getImprovementHappiness(), getImprovementHealth()));
 	}
 }
 
 void CvCity::updateWorkedImprovement(int iIndex, bool bNewValue)
 {
-	log(CvWString::format(L"(%d, %d): before updateWorkedImprovement(): index %d, bNewValue %s, happiness %d, health %d", getX(), getY(), iIndex, bNewValue ? L"true" : L"false", getImprovementHappiness(), getImprovementHealth()));
-
 	CvPlot* pPlot = getCityIndexPlot(iIndex);
 
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
@@ -18118,8 +18106,6 @@ void CvCity::updateWorkedImprovement(int iIndex, bool bNewValue)
 		changeImprovementHappiness(getImprovementHappinessChange(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
 		changeImprovementHealth(getImprovementHealthChange(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
 	}
-
-	log(CvWString::format(L"(%d, %d): after updateWorkedImprovement(): happiness %d, health %d", getX(), getY(), getImprovementHappiness(), getImprovementHealth()));
 }
 
 int CvCity::getPowerConsumedCount() const

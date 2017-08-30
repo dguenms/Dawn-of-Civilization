@@ -6253,7 +6253,10 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		CvCity* pWorkingCity = getWorkingCity();
 		if (NULL != pWorkingCity)
 		{
-			pWorkingCity->updateWorkedImprovement(eOldImprovement, eNewValue);
+			if (pWorkingCity->isWorkingPlot(this))
+			{
+				pWorkingCity->updateWorkedImprovement(eOldImprovement, eNewValue);
+			}
 
 			if ((NO_IMPROVEMENT != eNewValue && pWorkingCity->getImprovementFreeSpecialists(eNewValue) > 0)	||
 				(NO_IMPROVEMENT != eOldImprovement && pWorkingCity->getImprovementFreeSpecialists(eOldImprovement) > 0))
