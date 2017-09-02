@@ -10313,6 +10313,10 @@
 					<BuildType>BUILD_OFFSHORE_PLATFORM</BuildType>
 					<bBuild>1</bBuild>
 				</Build>
+				<Build>
+					<BuildType>BUILD_MARINE_RESERVE</BuildType>
+					<bBuild>1</bBuild>
+				</Build>
 			</Builds>
 			<PrereqTech>TECH_SAILING</PrereqTech>
 			<iCost>30</iCost>
