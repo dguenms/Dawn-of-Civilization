@@ -508,7 +508,7 @@ void CvUnit::convert(CvUnit* pUnit)
 
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
-		setHasPromotion(((PromotionTypes)iI), m_pUnitInfo->getFreePromotions(iI) || (pUnit->isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isLeader()));
+		setHasPromotion(((PromotionTypes)iI), m_pUnitInfo->getFreePromotions(iI) || isHasPromotion((PromotionTypes)iI) || (pUnit->isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isLeader()));
 	}
 
 	setGameTurnCreated(pUnit->getGameTurnCreated());
