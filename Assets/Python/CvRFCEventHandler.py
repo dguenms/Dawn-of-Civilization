@@ -655,6 +655,7 @@ class CvRFCEventHandler:
 		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]):
 			vic.onTechAcquired(iPlayer, iTech)
 			cnm.onTechAcquired(iPlayer)
+			dc.onTechAcquired(iPlayer, iTech)
 
 		if gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:
 			self.rel.onTechAcquired(iTech, iPlayer)
