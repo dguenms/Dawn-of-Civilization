@@ -128,10 +128,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_GLOBAL_TEXT</Tag>
-		<English>Modern Era</English>
-		<French>Ere Moderne</French>
-		<German>Moderne</German>
-		<Italian>Era Moderna</Italian>
+		<English>Global Era</English>
+		<German>Globalzeitalter</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_GLOBAL_HOVER</Tag>
@@ -142,10 +140,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_DIGITAL_TEXT</Tag>
-		<English>Future Era</English>
-		<French>Temps Futurs</French>
-		<German>Zukunft</German>
-		<Italian>Era Futura</Italian>
+		<English>Digital Era</English>
+		<German>Digitalzeitalter</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_OPT_NJAGC__COLOR_ERA_DIGITAL_HOVER</Tag>
