@@ -428,7 +428,7 @@ class Religions:
 		if utils.getScenario() == i1700AD:
 			return
 
-		if iTech == iPrinting:
+		if iTech == iAcademia:
 			if gc.getPlayer(iPlayer).getStateReligion() == iCatholicism:
 				if not gc.getGame().isReligionFounded(iProtestantism):
 					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
