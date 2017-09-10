@@ -638,7 +638,9 @@ def onTechAcquired(iPlayer, iTech):
 				
 	elif iPlayer == iMoors:
 		if iEra == iIndustrial:
-			if capital.getRegionID() != rIberia:
+			capital = gc.getPlayer(iPlayer).getCapitalCity()
+			
+			if capital and capital.getRegionID() != rIberia:
 				nameChange(iPlayer)
 				adjectiveChange(iPlayer)
 			else:
