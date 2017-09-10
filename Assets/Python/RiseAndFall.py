@@ -1119,7 +1119,7 @@ class RiseAndFall:
 			pAztecs.setCivics(iCivicsTerritory, iNationhood)
 		elif iCiv == iMaya:
 			pMaya.setCivics(iCivicsGovernment, iDespotism)
-			pMaya.setCivics(iCivicsLegitimacy, iIdeology)
+			pMaya.setCivics(iCivicsLegitimacy, iConstitution)
 			pMaya.setCivics(iCivicsSociety, iIndividualism)
 			pMaya.setCivics(iCivicsEconomy, iRegulatedTrade)
 			pMaya.setCivics(iCivicsReligion, iClergy)
