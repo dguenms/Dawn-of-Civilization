@@ -374,7 +374,7 @@ class CvRFCEventHandler:
 		sta.onCombatResult(iWinningPlayer, iLosingPlayer, iUnitPower)
 		
 		# capture slaves
-		if iWinningPlayer == iAztecs:
+		if iWinningPlayer == iAztecs and not pAztecs.isReborn():
 			utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
 			
 		elif iLosingPlayer == iNative:
