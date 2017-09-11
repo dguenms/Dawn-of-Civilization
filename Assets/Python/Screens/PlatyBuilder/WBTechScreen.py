@@ -7,6 +7,7 @@ import WBTeamScreen
 import WBPlayerScreen
 import WBPlayerUnits
 import WBInfoScreen
+import DynamicCivs as dc
 gc = CyGlobalContext()
 
 iChangeType = 2
@@ -177,10 +178,12 @@ class WBTechScreen:
 					if iChangeType == 2:
 						iType = not pTeamX.isHasTech(item)
 					pTeamX.setHasTech(item, iType, pTeam.getLeaderID(), False, False)
+					dc.checkName(pTeamX.getLeaderID())
 		else:
 			if iChangeType == 2:
 				iType = not pTeam.isHasTech(item)
 			pTeam.setHasTech(item, iType, pTeam.getLeaderID(), False, False)
+			dc.checkName(pTeam.getLeaderID())
 
 	def createTechList(self):
 		global lTech

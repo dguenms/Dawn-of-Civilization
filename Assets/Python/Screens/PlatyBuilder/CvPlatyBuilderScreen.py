@@ -35,6 +35,7 @@ import Areas
 import SettlerMaps
 import WarMaps
 import RiseAndFall
+import DynamicCivs as dc
 rnf = RiseAndFall.RiseAndFall()
 localText = CyTranslator()
 
@@ -479,11 +480,20 @@ class CvWorldBuilderScreen:
 				pCity.setNumRealBuilding(self.iSelection, 1)
 				if bEffects:
 					CvEventManager.CvEventManager().onBuildingBuilt([pCity, self.iSelection])
+				
+				if self.iSelection == iPalace:
+					dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "City":
 			if self.m_pCurrentPlot.isCity(): return
-			pCity = gc.getPlayer(self.m_iCurrentPlayer).initCity(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+			x = self.m_pCurrentPlot.getX()
+			y = self.m_pCurrentPlot.getY()
+			pCity = gc.getPlayer(self.m_iCurrentPlayer).initCity(x, y)
+			sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+			if sName != "-1":
+				pCity.setName(sName, True)
 			if bPython:
 				CvEventManager.CvEventManager().onCityBuilt([pCity])
+			dc.checkName(self.m_iCurrentPlayer)
 	## Python Effects ##
 		elif self.iPlayerAddMode == "Improvements":
 			self.m_pCurrentPlot.setImprovementType(self.iSelection)
@@ -546,6 +556,7 @@ class CvWorldBuilderScreen:
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, True)
 				if not bMulti:
 					self.showStabilityOverlay()
+					dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "SettlerValue":
 			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
@@ -673,6 +684,7 @@ class CvWorldBuilderScreen:
 				met.changeCoreForce(self.m_iCurrentPlayer, tPlot, False)
 				if not bMulti:
 					self.showStabilityOverlay()
+					dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "SettlerValue":
 			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
@@ -921,6 +933,7 @@ class CvWorldBuilderScreen:
 				self.placeObject()
 		if self.iPlayerAddMode in ["Core", "SettlerValue"]:
 			self.showStabilityOverlay()
+			dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "WarMap":
 			self.showWarOverlay()
 		elif self.iPlayerAddMode == "ReligionMap":
@@ -1984,8 +1997,12 @@ class CvWorldBuilderScreen:
 			if self.m_pCurrentPlot.isCity(): return
 			pOldCity = pPlayer.getCity(self.iMoveCity)
 			if pOldCity:
-				pNewCity = pPlayer.initCity(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
-				sName = pOldCity.getName()
+				x = self.m_pCurrentPlot.getX()
+				y = self.m_pCurrentPlot.getY()
+				pNewCity = pPlayer.initCity(x, y)
+				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+				if sName == "-1":
+					sName = pOldCity.getName()
 				pOldCity.setName("ToBeRazed", False)
 				pNewCity.setName(sName, True)
 				self.copyCityStats(pOldCity, pNewCity, True)
@@ -1996,21 +2013,27 @@ class CvWorldBuilderScreen:
 					for item in self.lMoveUnit:
 						loopUnit = gc.getPlayer(item[0]).getUnit(item[1])
 						if loopUnit.isNone(): continue
-						loopUnit.setXY(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), True, True, False)
+						loopUnit.setXY(x, y, True, True, False)
 					self.lMoveUnit = []
 			self.iPlayerAddMode = "CityDataI"
 			self.iMoveCity = -1
+			dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "DuplicateCity" or self.iPlayerAddMode == "DuplicateCityPlus":
 			if self.m_pCurrentPlot.isCity(): return
 			pOldCity = pPlayer.getCity(self.iMoveCity)
 			if pOldCity:
-				pNewCity = pPlayer.initCity(self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+				x = self.m_pCurrentPlot.getX()
+				y = self.m_pCurrentPlot.getY()
+				pNewCity = pPlayer.initCity(x, y)
+				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
+				if sName != "-1":
+					pNewCity.setName(sName, True)
 				self.copyCityStats(pOldCity, pNewCity, False)
 				if self.iPlayerAddMode == "DuplicateCityPlus":
 					for item in self.lMoveUnit:
 						loopUnit = gc.getPlayer(item[0]).getUnit(item[1])
 						if loopUnit.isNone(): continue
-						pNewUnit = pPlayer.initUnit(loopUnit.getUnitType(), self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
+						pNewUnit = pPlayer.initUnit(loopUnit.getUnitType(), x, y, UnitAITypes.NO_UNITAI, DirectionTypes.NO_DIRECTION)
 						pNewUnit.setName(loopUnit.getNameNoDesc())
 						pNewUnit.setLevel(loopUnit.getLevel())
 						pNewUnit.setExperience(loopUnit.getExperience(), -1)
@@ -2023,6 +2046,7 @@ class CvWorldBuilderScreen:
 						pNewUnit.changeCargoSpace(loopUnit.cargoSpace() - pNewUnit.cargoSpace())
 						pNewUnit.setImmobileTimer(loopUnit.getImmobileTimer())
 						pNewUnit.setScriptData(loopUnit.getScriptData())
+			dc.checkName(self.m_iCurrentPlayer)
 		elif self.useLargeBrush():
 			self.placeMultipleObjects()
 		else:

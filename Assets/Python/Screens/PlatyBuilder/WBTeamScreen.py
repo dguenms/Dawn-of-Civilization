@@ -7,6 +7,7 @@ import WBTechScreen
 import WBPlayerScreen
 import WBPlayerUnits
 import WBInfoScreen
+import DynamicCivs as dc
 gc = CyGlobalContext()
 
 iChange = 1
@@ -452,6 +453,7 @@ class WBTeamScreen:
 		elif inputClass.getFunctionName() == "MergeTeam":
 			pTeam.addTeam(screen.getPullDownData("MergeTeam", screen.getSelectedPullDownID("MergeTeam")))
 			self.interfaceScreen(pTeam.getID())
+			dc.checkName(iPlayer)
 
 		elif inputClass.getFunctionName().find("NukeInterception") > -1:
 			if inputClass.getData1() == 1030:
