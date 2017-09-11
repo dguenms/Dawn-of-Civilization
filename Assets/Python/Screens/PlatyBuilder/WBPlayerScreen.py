@@ -11,6 +11,7 @@ import WBCorporationScreen
 import WBInfoScreen
 import CvPlatyBuilderScreen
 import Popup
+import DynamicCivs as dc
 gc = CyGlobalContext()
 iChange = 1
 bRemove = False
@@ -388,6 +389,7 @@ class WBPlayerScreen:
 
 		elif inputClass.getFunctionName() == "CurrentEra":
 			pPlayer.setCurrentEra(screen.getPullDownData("CurrentEra", screen.getSelectedPullDownID("CurrentEra")))
+			dc.checkName(iPlayer)
 
 		elif inputClass.getFunctionName().find("PlayerGold") > -1:
 			if inputClass.getData1() == 1030:
@@ -466,6 +468,7 @@ class WBPlayerScreen:
 		elif inputClass.getFunctionName() == "WBPlayerReligions":
 			iReligion = inputClass.getData1()
 			pPlayer.setLastStateReligion(inputClass.getData1())
+			# dc.checkName(iPlayer)
 			self.placeReligions()
 
 		elif inputClass.getFunctionName().find("StateReligionUnit") > -1:
@@ -484,8 +487,9 @@ class WBPlayerScreen:
 
 		elif inputClass.getFunctionName() == "WBPlayerCivics":
 			iCivic = inputClass.getData2()
-			if pPlayer.canDoCivics(iCivic):
+			if pPlayer.canDoCivics(iCivic) or not CvPlatyBuilderScreen.bHideInactive:
 				pPlayer.setCivics(gc.getCivicInfo(iCivic).getCivicOptionType(), iCivic)
+				dc.checkName(iPlayer)
 			self.interfaceScreen(iPlayer)
 			
 		elif inputClass.getFunctionName() == "CivEnabledButton":
