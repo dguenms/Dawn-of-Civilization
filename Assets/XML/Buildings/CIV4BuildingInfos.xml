@@ -963,12 +963,16 @@
 			<iMaxLatitude>90</iMaxLatitude>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ImprovementHappinesses>
-				<ImprovementHappiness>
+			<ImprovementHealths>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
+					<iHealthPercent>50</iHealthPercent>
+				</ImprovementHealth>
+				<ImprovementHealth>
 					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHappiness>1</iHappiness>
-				</ImprovementHappiness>
-			</ImprovementHappinesses>
+					<iHealthPercent>50</iHealthPercent>
+				</ImprovementHealth>
+			</ImprovementHealths>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -1020,7 +1024,7 @@
 			<ImprovementHealths>
 				<ImprovementHealth>
 					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
-					<iHealth>1</iHealth>
+					<iHealthPercent>100</iHealthPercent>
 				</ImprovementHealth>
 			</ImprovementHealths>
 			<Flavors>
@@ -2281,12 +2285,8 @@
 			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
 			<ImprovementHealths>
 				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
-					<iHealth>1</iHealth>
-				</ImprovementHealth>
-				<ImprovementHealth>
 					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHealth>1</iHealth>
+					<iHealthPercent>50</iHealthPercent>
 				</ImprovementHealth>
 			</ImprovementHealths>
 			<Flavors>
