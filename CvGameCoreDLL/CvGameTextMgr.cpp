@@ -10841,30 +10841,34 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	}
 
 	iLast = 0;
-	int iImprovementHappiness;
+	int iImprovementHappinessPercent;
+	CvWString szHappiness;
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		iImprovementHappiness = kBuilding.getImprovementHappiness(iI);
-		if (iImprovementHappiness != 0)
+		iImprovementHappinessPercent = kBuilding.getImprovementHappinessPercent(iI);
+		if (iImprovementHappinessPercent != 0)
 		{
-			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS", std::abs(iImprovementHappiness), iImprovementHappiness > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)).GetCString());
+			szHappiness.Format(L"%.2f", 0.01f * abs(iImprovementHappinessPercent));
+			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS", szHappiness.GetCString(), iImprovementHappinessPercent > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)).GetCString());
 			szTempBuffer.Format(L"<link=literal>%s</link>", GC.getImprovementInfo((ImprovementTypes)iI).getDescription());
-			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHappiness != iLast));
-			iLast = iImprovementHappiness;
+			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHappinessPercent != iLast));
+			iLast = iImprovementHappinessPercent;
 		}
 	}
 
 	iLast = 0;
-	int iImprovementHealth;
+	int iImprovementHealthPercent;
+	CvWString szHealth;
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		iImprovementHealth = kBuilding.getImprovementHealth(iI);
-		if (iImprovementHealth != 0)
+		iImprovementHealthPercent = kBuilding.getImprovementHealthPercent(iI);
+		if (iImprovementHealthPercent != 0)
 		{
-			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HEALTH", std::abs(iImprovementHealth), iImprovementHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)).GetCString());
+			szHealth.Format(L"%.2f", 0.01f * abs(iImprovementHealthPercent));
+			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HEALTH", szHealth.GetCString(), iImprovementHealthPercent > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)).GetCString());
 			szTempBuffer.Format(L"<link=literal>%s</link>", GC.getImprovementInfo((ImprovementTypes)iI).getDescription());
-			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHealth != iLast));
-			iLast = iImprovementHealth;
+			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHealthPercent != iLast));
+			iLast = iImprovementHealthPercent;
 		}
 	}
 

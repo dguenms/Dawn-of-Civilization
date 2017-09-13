@@ -7312,8 +7312,8 @@ m_piFlavorValue(NULL),
 m_piImprovementFreeSpecialist(NULL),
 m_piPrereqBuildingClassPercent(NULL), // Leoreth
 m_piReligionYieldChange(NULL), // Leoreth
-m_piImprovementHappiness(NULL), // Leoreth
-m_piImprovementHealth(NULL), // Leoreth
+m_piImprovementHappinessPercent(NULL), // Leoreth
+m_piImprovementHealthPercent(NULL), // Leoreth
 m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
@@ -7372,8 +7372,8 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_pbCommerceChangeOriginalOwner);
 	SAFE_DELETE_ARRAY(m_pbBuildingClassNeededInCity);
 	SAFE_DELETE_ARRAY(m_piReligionYieldChange); // Leoreth
-	SAFE_DELETE_ARRAY(m_piImprovementHappiness); // Leoreth
-	SAFE_DELETE_ARRAY(m_piImprovementHealth); // Leoreth
+	SAFE_DELETE_ARRAY(m_piImprovementHappinessPercent); // Leoreth
+	SAFE_DELETE_ARRAY(m_piImprovementHealthPercent); // Leoreth
 
 	if (m_ppaiSpecialistYieldChange != NULL)
 	{
@@ -8385,18 +8385,18 @@ int CvBuildingInfo::getImprovementFreeSpecialist(int i) const
 	return m_piImprovementFreeSpecialist ? m_piImprovementFreeSpecialist[i] : -1;
 }
 
-int CvBuildingInfo::getImprovementHappiness(int i) const
+int CvBuildingInfo::getImprovementHappinessPercent(int i) const
 {
 	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
-	return m_piImprovementHappiness ? m_piImprovementHappiness[i] : -1;
+	return m_piImprovementHappinessPercent ? m_piImprovementHappinessPercent[i] : -1;
 }
 
-int CvBuildingInfo::getImprovementHealth(int i) const
+int CvBuildingInfo::getImprovementHealthPercent(int i) const
 {
 	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
 	FAssertMsg(i > -1, "Index out of bounds");
-	return m_piImprovementHealth ? m_piImprovementHealth[i] : -1;
+	return m_piImprovementHealthPercent ? m_piImprovementHealthPercent[i] : -1;
 }
 
 bool CvBuildingInfo::isCommerceFlexible(int i) const
@@ -8840,13 +8840,13 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	m_piImprovementFreeSpecialist = new int[GC.getNumImprovementInfos()];
 	stream->Read(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
 
-	SAFE_DELETE_ARRAY(m_piImprovementHappiness);
-	m_piImprovementHappiness = new int[GC.getNumImprovementInfos()];
-	stream->Read(GC.getNumImprovementInfos(), m_piImprovementHappiness);
+	SAFE_DELETE_ARRAY(m_piImprovementHappinessPercent);
+	m_piImprovementHappinessPercent = new int[GC.getNumImprovementInfos()];
+	stream->Read(GC.getNumImprovementInfos(), m_piImprovementHappinessPercent);
 
-	SAFE_DELETE_ARRAY(m_piImprovementHealth);
-	m_piImprovementHealth = new int[GC.getNumImprovementInfos()];
-	stream->Read(GC.getNumImprovementInfos(), m_piImprovementHealth);
+	SAFE_DELETE_ARRAY(m_piImprovementHealthPercent);
+	m_piImprovementHealthPercent = new int[GC.getNumImprovementInfos()];
+	stream->Read(GC.getNumImprovementInfos(), m_piImprovementHealthPercent);
 
 	SAFE_DELETE_ARRAY(m_pbCommerceFlexible);
 	m_pbCommerceFlexible = new bool[NUM_COMMERCE_TYPES];
@@ -9101,8 +9101,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piReligionYieldChange);
 	stream->Write(GC.getNumFlavorTypes(), m_piFlavorValue);
 	stream->Write(GC.getNumImprovementInfos(), m_piImprovementFreeSpecialist);
-	stream->Write(GC.getNumImprovementInfos(), m_piImprovementHappiness);
-	stream->Write(GC.getNumImprovementInfos(), m_piImprovementHealth);
+	stream->Write(GC.getNumImprovementInfos(), m_piImprovementHappinessPercent);
+	stream->Write(GC.getNumImprovementInfos(), m_piImprovementHealthPercent);
 
 	stream->Write(NUM_COMMERCE_TYPES, m_pbCommerceFlexible);
 	stream->Write(NUM_COMMERCE_TYPES, m_pbCommerceChangeOriginalOwner);
@@ -9827,8 +9827,8 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->SetVariableListTagPair(&m_piFlavorValue, "Flavors", GC.getFlavorTypes(), GC.getNumFlavorTypes());
 	pXML->SetVariableListTagPair(&m_piImprovementFreeSpecialist, "ImprovementFreeSpecialists", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
-	pXML->SetVariableListTagPair(&m_piImprovementHappiness, "ImprovementHappinesses", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
-	pXML->SetVariableListTagPair(&m_piImprovementHealth, "ImprovementHealths", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
+	pXML->SetVariableListTagPair(&m_piImprovementHappinessPercent, "ImprovementHappinesses", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
+	pXML->SetVariableListTagPair(&m_piImprovementHealthPercent, "ImprovementHealths", sizeof(GC.getImprovementInfo((ImprovementTypes)0)), GC.getNumImprovementInfos());
 
 	pXML->SetVariableListTagPair(&m_piBuildingHappinessChanges, "BuildingHappinessChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 
@@ -12886,8 +12886,8 @@ m_iFeatureGrowthProbability(0),
 m_iUpgradeTime(0),
 m_iAirBombDefense(0),
 m_iDefenseModifier(0),
-m_iHealth(0),
-m_iHappiness(0),
+m_iHealthPercent(0),
+m_iHappinessPercent(0),
 m_iPillageGold(0),
 m_iImprovementPillage(NO_IMPROVEMENT),
 m_iImprovementUpgrade(NO_IMPROVEMENT),
@@ -13002,14 +13002,14 @@ int CvImprovementInfo::getDefenseModifier() const
 	return m_iDefenseModifier;
 }
 
-int CvImprovementInfo::getHealth() const
+int CvImprovementInfo::getHealthPercent() const
 {
-	return m_iHealth;
+	return m_iHealthPercent;
 }
 
-int CvImprovementInfo::getHappiness() const
+int CvImprovementInfo::getHappinessPercent() const
 {
-	return m_iHappiness;
+	return m_iHappinessPercent;
 }
 
 int CvImprovementInfo::getPillageGold() const
@@ -13297,8 +13297,8 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iUpgradeTime);
 	stream->Read(&m_iAirBombDefense);
 	stream->Read(&m_iDefenseModifier);
-	stream->Read(&m_iHappiness);
-	stream->Read(&m_iHealth);
+	stream->Read(&m_iHappinessPercent);
+	stream->Read(&m_iHealthPercent);
 	stream->Read(&m_iPillageGold);
 	stream->Read(&m_iImprovementPillage);
 	stream->Read(&m_iImprovementUpgrade);
@@ -13409,8 +13409,8 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iUpgradeTime);
 	stream->Write(m_iAirBombDefense);
 	stream->Write(m_iDefenseModifier);
-	stream->Write(m_iHappiness);
-	stream->Write(m_iHealth);
+	stream->Write(m_iHappinessPercent);
+	stream->Write(m_iHealthPercent);
 	stream->Write(m_iPillageGold);
 	stream->Write(m_iImprovementPillage);
 	stream->Write(m_iImprovementUpgrade);
@@ -13549,8 +13549,8 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iUpgradeTime, "iUpgradeTime");
 	pXML->GetChildXmlValByName(&m_iAirBombDefense, "iAirBombDefense");
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefenseModifier");
-	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
-	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
+	pXML->GetChildXmlValByName(&m_iHappinessPercent, "iHappinessPercent");
+	pXML->GetChildXmlValByName(&m_iHealthPercent, "iHealthPercent");
 	pXML->GetChildXmlValByName(&m_iPillageGold, "iPillageGold");
 	pXML->GetChildXmlValByName(&m_bOutsideBorders, "bOutsideBorders");
 

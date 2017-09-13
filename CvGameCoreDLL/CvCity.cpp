@@ -94,8 +94,8 @@ CvCity::CvCity()
 	m_paiFreePromotionCount = NULL;
 	m_paiNumRealBuilding = NULL;
 	m_paiNumFreeBuilding = NULL;
-	m_paiImprovementHappinessChange = NULL; // Leoreth
-	m_paiImprovementHealthChange = NULL; // Leoreth
+	m_paiImprovementHappinessPercentChange = NULL; // Leoreth
+	m_paiImprovementHealthPercentChange = NULL; // Leoreth
 
 	m_pabWorkingPlot = NULL;
 	m_pabHasReligion = NULL;
@@ -417,8 +417,8 @@ void CvCity::uninit()
 	SAFE_DELETE_ARRAY(m_paiFreePromotionCount);
 	SAFE_DELETE_ARRAY(m_paiNumRealBuilding);
 	SAFE_DELETE_ARRAY(m_paiNumFreeBuilding);
-	SAFE_DELETE_ARRAY(m_paiImprovementHappinessChange); // Leoreth
-	SAFE_DELETE_ARRAY(m_paiImprovementHealthChange); // Leoreth
+	SAFE_DELETE_ARRAY(m_paiImprovementHappinessPercentChange); // Leoreth
+	SAFE_DELETE_ARRAY(m_paiImprovementHealthPercentChange); // Leoreth
 
 	SAFE_DELETE_ARRAY(m_pabWorkingPlot);
 	SAFE_DELETE_ARRAY(m_pabHasReligion);
@@ -550,8 +550,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 	m_iNextCoveredPlot = 0;
 
-	m_iImprovementHappiness = 0;
-	m_iImprovementHealth = 0;
+	m_iImprovementHappinessPercent = 0;
+	m_iImprovementHealthPercent = 0;
 
 	m_iCultureGreatPeopleRateModifier = 0;
 	m_iCultureHappiness = 0;
@@ -736,13 +736,13 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 		FAssertMsg((0 < GC.getNumImprovementInfos()),  "GC.getNumImprovementInfos() is not greater than zero but an array is being allocated in CvCity::reset");
 		m_paiImprovementFreeSpecialists = new int[GC.getNumImprovementInfos()];
-		m_paiImprovementHappinessChange = new int[GC.getNumImprovementInfos()];
-		m_paiImprovementHealthChange = new int[GC.getNumImprovementInfos()];
+		m_paiImprovementHappinessPercentChange = new int[GC.getNumImprovementInfos()];
+		m_paiImprovementHealthPercentChange = new int[GC.getNumImprovementInfos()];
 		for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 		{
 			m_paiImprovementFreeSpecialists[iI] = 0;
-			m_paiImprovementHappinessChange[iI] = GC.getImprovementInfo((ImprovementTypes)iI).getHappiness();
-			m_paiImprovementHealthChange[iI] = GC.getImprovementInfo((ImprovementTypes)iI).getHealth();
+			m_paiImprovementHappinessPercentChange[iI] = GC.getImprovementInfo((ImprovementTypes)iI).getHappinessPercent();
+			m_paiImprovementHealthPercentChange[iI] = GC.getImprovementInfo((ImprovementTypes)iI).getHealthPercent();
 		}
 
 		m_paiReligionInfluence = new int[GC.getNumReligionInfos()];
@@ -4433,8 +4433,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 		{
 			changeImprovementFreeSpecialists((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementFreeSpecialist(iI) * iChange);
-			changeImprovementHappinessChange((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementHappiness(iI) * iChange);
-			changeImprovementHealthChange((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementHealth(iI) * iChange);
+			changeImprovementHappinessPercentChange((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementHappinessPercent(iI) * iChange);
+			changeImprovementHealthPercentChange((ImprovementTypes)iI, GC.getBuildingInfo(eBuilding).getImprovementHealthPercent(iI) * iChange);
 		}
 
 		FAssertMsg((0 < GC.getNumBonusInfos()) && "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlotGroup::reset", "GC.getNumBonusInfos() is not greater than zero but an array is being allocated in CvPlotGroup::reset");
@@ -15294,8 +15294,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationHealth);
 	pStream->Read(&m_iCorporationUnhealth);
 	pStream->Read(&m_iNextCoveredPlot); // Leoreth
-	pStream->Read(&m_iImprovementHappiness);
-	pStream->Read(&m_iImprovementHealth);
+	pStream->Read(&m_iImprovementHappinessPercent);
+	pStream->Read(&m_iImprovementHealthPercent);
 	pStream->Read(&m_iCultureGreatPeopleRateModifier);
 	pStream->Read(&m_iCultureHappiness);
 	pStream->Read(&m_iCultureTradeRouteModifier);
@@ -15376,8 +15376,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiForceSpecialistCount);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiFreeSpecialistCount);
 	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementFreeSpecialists);
-	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHappinessChange);
-	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHealthChange);
+	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHappinessPercentChange);
+	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHealthPercentChange);
 	pStream->Read(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Read(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
 	pStream->Read(GC.getNumUnitCombatInfos(), m_paiUnitCombatFreeExperience);
@@ -15569,8 +15569,8 @@ void CvCity::write(FDataStreamBase* pStream)
 
 	pStream->Write(m_iNextCoveredPlot);
 
-	pStream->Write(m_iImprovementHappiness);
-	pStream->Write(m_iImprovementHealth);
+	pStream->Write(m_iImprovementHappinessPercent);
+	pStream->Write(m_iImprovementHealthPercent);
 
 	pStream->Write(m_iCultureGreatPeopleRateModifier);
 	pStream->Write(m_iCultureHappiness);
@@ -15653,8 +15653,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiForceSpecialistCount);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiFreeSpecialistCount);
 	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementFreeSpecialists);
-	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHappinessChange);
-	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHealthChange);
+	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHappinessPercentChange);
+	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHealthPercentChange);
 	pStream->Write(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Write(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
 	pStream->Write(GC.getNumUnitCombatInfos(), m_paiUnitCombatFreeExperience);
@@ -18025,37 +18025,47 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion) const
 
 int CvCity::getImprovementHappiness() const
 {
-	return m_iImprovementHappiness;
+	return getImprovementHappinessPercent() / 100;
 }
 
-void CvCity::setImprovementHappiness(int iNewValue)
+int CvCity::getImprovementHappinessPercent() const
 {
-	if (getImprovementHappiness() != iNewValue)
+	return m_iImprovementHappinessPercent;
+}
+
+void CvCity::setImprovementHappinessPercent(int iNewValue)
+{
+	if (getImprovementHappinessPercent() != iNewValue)
 	{
-		m_iImprovementHappiness = iNewValue;
+		m_iImprovementHappinessPercent = iNewValue;
 		
 		AI_setAssignWorkDirty(true);
 	}
 }
 
-void CvCity::changeImprovementHappiness(int iChange)
+void CvCity::changeImprovementHappinessPercent(int iChange)
 {
-	setImprovementHappiness(getImprovementHappiness() + iChange);
+	setImprovementHappinessPercent(getImprovementHappinessPercent() + iChange);
 }
 
 int CvCity::getImprovementHealth() const
 {
-	return m_iImprovementHealth;
+	return getImprovementHealthPercent() / 100;
 }
 
-void CvCity::setImprovementHealth(int iNewValue)
+int CvCity::getImprovementHealthPercent() const
 {
-	m_iImprovementHealth = iNewValue;
+	return m_iImprovementHealthPercent;
 }
 
-void CvCity::changeImprovementHealth(int iChange)
+void CvCity::setImprovementHealthPercent(int iNewValue)
 {
-	m_iImprovementHealth += iChange;
+	m_iImprovementHealthPercent = iNewValue;
+}
+
+void CvCity::changeImprovementHealthPercent(int iChange)
+{
+	m_iImprovementHealthPercent += iChange;
 }
 
 void CvCity::updateWorkedImprovements()
@@ -18063,8 +18073,8 @@ void CvCity::updateWorkedImprovements()
 	int iI;
 	ImprovementTypes eImprovement;
 
-	setImprovementHappiness(0);
-	setImprovementHealth(0);
+	setImprovementHappinessPercent(0);
+	setImprovementHealthPercent(0);
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
@@ -18073,8 +18083,8 @@ void CvCity::updateWorkedImprovements()
 			eImprovement = getCityIndexPlot(iI)->getImprovementType();
 			if (eImprovement != NO_IMPROVEMENT)
 			{
-				changeImprovementHappiness(getImprovementHappinessChange(eImprovement));
-				changeImprovementHealth(getImprovementHealthChange(eImprovement));
+				changeImprovementHappinessPercent(getImprovementHappinessPercentChange(eImprovement));
+				changeImprovementHealthPercent(getImprovementHealthPercentChange(eImprovement));
 			}
 		}
 	}
@@ -18084,14 +18094,14 @@ void CvCity::updateWorkedImprovement(ImprovementTypes eOldImprovement, Improveme
 {
 	if (eOldImprovement != NO_IMPROVEMENT)
 	{
-		changeImprovementHappiness(-getImprovementHappinessChange(eOldImprovement));
-		changeImprovementHealth(-getImprovementHealthChange(eOldImprovement));
+		changeImprovementHappinessPercent(-getImprovementHappinessPercentChange(eOldImprovement));
+		changeImprovementHealthPercent(-getImprovementHealthPercentChange(eOldImprovement));
 	}
 
 	if (eNewImprovement != NO_IMPROVEMENT)
 	{
-		changeImprovementHappiness(getImprovementHappinessChange(eNewImprovement));
-		changeImprovementHealth(getImprovementHealthChange(eNewImprovement));
+		changeImprovementHappinessPercent(getImprovementHappinessPercentChange(eNewImprovement));
+		changeImprovementHealthPercent(getImprovementHealthPercentChange(eNewImprovement));
 	}
 }
 
@@ -18101,8 +18111,8 @@ void CvCity::updateWorkedImprovement(int iIndex, bool bNewValue)
 
 	if (pPlot->getImprovementType() != NO_IMPROVEMENT)
 	{
-		changeImprovementHappiness(getImprovementHappinessChange(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
-		changeImprovementHealth(getImprovementHealthChange(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
+		changeImprovementHappinessPercent(getImprovementHappinessPercentChange(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
+		changeImprovementHealthPercent(getImprovementHealthPercentChange(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
 	}
 }
 
@@ -18121,31 +18131,31 @@ void CvCity::changePowerConsumedCount(int iChange)
 	}
 }
 
-int CvCity::getImprovementHappinessChange(ImprovementTypes eImprovement) const
+int CvCity::getImprovementHappinessPercentChange(ImprovementTypes eImprovement) const
 {
-	return m_paiImprovementHappinessChange[eImprovement];
+	return m_paiImprovementHappinessPercentChange[eImprovement];
 }
 
-void CvCity::changeImprovementHappinessChange(ImprovementTypes eImprovement, int iChange)
+void CvCity::changeImprovementHappinessPercentChange(ImprovementTypes eImprovement, int iChange)
 {
 	if (iChange != 0)
 	{
-		m_paiImprovementHappinessChange[eImprovement] += iChange;
+		m_paiImprovementHappinessPercentChange[eImprovement] += iChange;
 
 		updateWorkedImprovements();
 	}
 }
 
-int CvCity::getImprovementHealthChange(ImprovementTypes eImprovement) const
+int CvCity::getImprovementHealthPercentChange(ImprovementTypes eImprovement) const
 {
-	return m_paiImprovementHealthChange[eImprovement];
+	return m_paiImprovementHealthPercentChange[eImprovement];
 }
 
-void CvCity::changeImprovementHealthChange(ImprovementTypes eImprovement, int iChange)
+void CvCity::changeImprovementHealthPercentChange(ImprovementTypes eImprovement, int iChange)
 {
 	if (iChange != 0)
 	{
-		m_paiImprovementHealthChange[eImprovement] += iChange;
+		m_paiImprovementHealthPercentChange[eImprovement] += iChange;
 
 		updateWorkedImprovements();
 	}

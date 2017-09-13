@@ -429,9 +429,10 @@ public:
 	int getFeatureBadHappiness() const;																		// Exposed to Python
 	void updateFeatureHappiness();
 
-	int getImprovementHappiness() const;																	// Exposed to Python
-	void setImprovementHappiness(int iNewValue);
-	void changeImprovementHappiness(int iChange);
+	int getImprovementHappiness() const;
+	int getImprovementHappinessPercent() const;																	// Exposed to Python
+	void setImprovementHappinessPercent(int iNewValue);
+	void changeImprovementHappinessPercent(int iChange);
 
 	int getBonusGoodHappiness() const;																		// Exposed to Python  
 	int getBonusBadHappiness() const;																			// Exposed to Python  
@@ -476,8 +477,9 @@ public:
 
 	// Leoreth
 	int getImprovementHealth() const;
-	void setImprovementHealth(int iNewValue);
-	void changeImprovementHealth(int iChange);
+	int getImprovementHealthPercent() const;
+	void setImprovementHealthPercent(int iNewValue);
+	void changeImprovementHealthPercent(int iChange);
 
 	int getFood() const;																				// Exposed to Python
 	void setFood(int iNewValue);																		// Exposed to Python
@@ -1064,11 +1066,11 @@ public:
 	void updateWorkedImprovement(int iIndex, bool bNewValue);
 	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement);
 
-	int getImprovementHappinessChange(ImprovementTypes eImprovement) const;
-	void changeImprovementHappinessChange(ImprovementTypes eImprovement, int iChange);
+	int getImprovementHappinessPercentChange(ImprovementTypes eImprovement) const;
+	void changeImprovementHappinessPercentChange(ImprovementTypes eImprovement, int iChange);
 
-	int getImprovementHealthChange(ImprovementTypes eImprovement) const;
-	void changeImprovementHealthChange(ImprovementTypes eImprovement, int iChange);
+	int getImprovementHealthPercentChange(ImprovementTypes eImprovement) const;
+	void changeImprovementHealthPercentChange(ImprovementTypes eImprovement, int iChange);
 
 	int getCultureGreatPeopleRateModifier() const;
 	void changeCultureGreatPeopleRateModifier(int iChange);
@@ -1255,8 +1257,8 @@ protected:
 	int m_iCorporationHealth;
 	int m_iCorporationUnhealth;
 	
-	int m_iImprovementHappiness;
-	int m_iImprovementHealth;
+	int m_iImprovementHappinessPercent;
+	int m_iImprovementHealthPercent;
 
 	int m_iNextCoveredPlot;
 
@@ -1352,8 +1354,8 @@ protected:
 	int* m_paiForceSpecialistCount;
 	int* m_paiFreeSpecialistCount;
 	int* m_paiImprovementFreeSpecialists;
-	int* m_paiImprovementHealthChange; // Leoreth
-	int* m_paiImprovementHappinessChange; // Leoreth
+	int* m_paiImprovementHealthPercentChange; // Leoreth
+	int* m_paiImprovementHappinessPercentChange; // Leoreth
 	int* m_paiReligionInfluence;
 	int* m_paiStateReligionHappiness;
 	int* m_paiUnitCombatFreeExperience;

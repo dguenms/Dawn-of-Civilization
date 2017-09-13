@@ -1857,8 +1857,8 @@ public:
 
 	// Leoreth
 	int getPrereqBuildingClassPercent(int i) const;
-	int getImprovementHappiness(int i) const;
-	int getImprovementHealth(int i) const;
+	int getImprovementHappinessPercent(int i) const;
+	int getImprovementHealthPercent(int i) const;
 
 	// Other
 
@@ -2044,8 +2044,8 @@ protected:
 	// Leoreth
 	int* m_piPrereqBuildingClassPercent;
 	int* m_piReligionYieldChange;
-	int* m_piImprovementHappiness;
-	int* m_piImprovementHealth;
+	int* m_piImprovementHappinessPercent;
+	int* m_piImprovementHealthPercent;
 
 	bool* m_pbCommerceFlexible;
 	bool* m_pbCommerceChangeOriginalOwner;
@@ -3014,8 +3014,8 @@ public:
 	int getUpgradeTime() const;				// Exposed to Python
 	int getAirBombDefense() const;				// Exposed to Python
 	int getDefenseModifier() const;				// Exposed to Python
-	int getHealth() const;
-	int getHappiness() const;				// Exposed to Python
+	int getHealthPercent() const;
+	int getHappinessPercent() const;				// Exposed to Python
 	int getPillageGold() const;				// Exposed to Python
 	int getImprovementPillage() const;				// Exposed to Python
 	void setImprovementPillage(int i);
@@ -3095,8 +3095,8 @@ protected:
 	int m_iUpgradeTime;
 	int m_iAirBombDefense;
 	int m_iDefenseModifier;
-	int m_iHealth;
-	int m_iHappiness;
+	int m_iHealthPercent;
+	int m_iHappinessPercent;
 	int m_iPillageGold;
 	int m_iImprovementPillage;
 	int m_iImprovementUpgrade;

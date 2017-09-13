@@ -3712,7 +3712,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				// Leoreth: for worked improvements
 				for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 				{
-					iBuildingHappiness += kBuilding.getImprovementHappiness(iI) * aiWorkedImprovementCount[iI];
+					iBuildingHappiness += kBuilding.getImprovementHappinessPercent(iI) * aiWorkedImprovementCount[iI] / 100;
 				}
 
 				if (iBuildingHappiness != 0)
@@ -3801,7 +3801,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				for (iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 				{
-					iBuildingHealth += kBuilding.getImprovementHealth(iI) * aiWorkedImprovementCount[iI];
+					iBuildingHealth += kBuilding.getImprovementHealthPercent(iI) * aiWorkedImprovementCount[iI] / 100;
 				}
 
 				if (iBuildingHealth != 0)
@@ -5831,12 +5831,12 @@ void CvCityAI::AI_updateBestBuild()
 							}
 
 							// Leoreth: account for buildings here
-							iHappyAdjust += getImprovementHappinessChange(eImprovement);
-							iHealthAdjust += getImprovementHealthChange(eImprovement);
+							iHappyAdjust += getImprovementHappinessPercentChange(eImprovement) / 100;
+							iHealthAdjust += getImprovementHealthPercentChange(eImprovement) / 100;
 							if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 							{
-								iHappyAdjust -= getImprovementHappinessChange(pLoopPlot->getImprovementType());
-								iHealthAdjust -= getImprovementHealthChange(pLoopPlot->getImprovementType());
+								iHappyAdjust -= getImprovementHappinessPercentChange(pLoopPlot->getImprovementType());
+								iHealthAdjust -= getImprovementHealthPercentChange(pLoopPlot->getImprovementType());
 							}
 
 							// Leoreth: ignore yield change of defensive structures if no natural food on the tile
@@ -8623,7 +8623,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 					// Leoreth: try to discourage workshops with low health
 					if (iFoodChange > 0 && !pPlot->isHills())
 					{
-						if (getImprovementHealthChange(eImprovement) < 0)
+						if (getImprovementHealthPercentChange(eImprovement) < 0)
 						{
 							bValid = false;
 						}
@@ -8819,7 +8819,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 						iValue += 2000;
 					}
 
-					int iHappiness = GC.getImprovementInfo(eFinalImprovement).getHappiness();
+					int iHappiness =  getImprovementHappinessPercentChange(eFinalImprovement) / 100;
 					if ((iHappiness != 0) && !(GET_PLAYER(getOwnerINLINE()).getAdvancedStartPoints() >= 0))
 					{
 						int iHappyLevel = iHappyAdjust + (happyLevel() - unhappyLevel(0));
@@ -10332,7 +10332,7 @@ void CvCityAI::AI_updateWorkersNeededHere()
 						ImprovementTypes eImprovement = (ImprovementTypes)GC.getBuildInfo(AI_getBestBuild(iI)).getImprovement();
 						if (eImprovement != NO_IMPROVEMENT)
 						{
-							if ((getImprovementFreeSpecialists(eImprovement) > 0) || (GC.getImprovementInfo(eImprovement).getHappiness() > 0))
+							if ((getImprovementFreeSpecialists(eImprovement) > 0) || (getImprovementHappinessPercentChange(eImprovement) > 0))
 							{
 								iSpecialCount ++;
 							}
