@@ -14952,6 +14952,22 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 		setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_MISC_ON_HILLS").c_str(), info.getHillsYieldChangeArray());
 		setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_MISC_ALONG_RIVER").c_str(), info.getRiverSideYieldChangeArray());
 
+		// Leoreth: routes
+		for (int iRoute = 0; iRoute < GC.getNumRouteInfos(); iRoute++)
+		{
+			for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+			{
+				int iChange = info.getRouteYieldChanges(iRoute, iYield);
+				if (0 != iChange)
+				{
+					szTempBuffer.Format( SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getRouteInfo((RouteTypes)iRoute).getDescription());
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_CIVIC_IMPROVEMENT_YIELD_CHANGE", iChange, GC.getYieldInfo((YieldTypes)iYield).getChar()));
+					szBuffer.append(szTempBuffer);
+				}
+			}
+		}
+
 		for (int iTech = 0; iTech < GC.getNumTechInfos(); iTech++)
 		{
 			for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
@@ -14965,9 +14981,9 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 		}
 
 		//	Civics
-		for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+		for (int iCivic = 0; iCivic < GC.getNumCivicInfos(); iCivic++)
 		{
-			for (int iCivic = 0; iCivic < GC.getNumCivicInfos(); iCivic++)
+			for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 			{
 				int iChange = GC.getCivicInfo((CivicTypes)iCivic).getImprovementYieldChanges(eImprovement, iYield);
 				if (0 != iChange)
