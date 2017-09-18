@@ -17412,7 +17412,7 @@ void CvCity::getBuildQueue(std::vector<std::string>& astrQueue) const
 
 int CvCity::getRegionID() const
 {
-	return GC.getMapINLINE().plotSorenINLINE(getX_INLINE(), getY_INLINE())->getRegionID();
+	return plot()->getRegionID();
 }
 
 //Leoreth: to protect Middle Eastern cities from repeated invasions
