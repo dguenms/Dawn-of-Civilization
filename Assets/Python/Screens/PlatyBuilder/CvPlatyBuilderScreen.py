@@ -154,11 +154,13 @@ class CvWorldBuilderScreen:
 						sText = ""
 				else:
 					# CNM and settlervalue
+					sText = ""
 					if self.m_iCurrentX > -1 and self.m_iCurrentY > -1: #If you move you mouse to fast, I cannot always keep track of the current tile, which can lead to pythex
 						sCityName = cnm.getFoundName(self.m_iCurrentPlayer, (self.m_iCurrentX, self.m_iCurrentY))
 					else:
-						sCityName = " "
-					sText = "<font=3b>%s</font>" % sCityName
+						sCityName = None
+					if sCityName:
+						sText += "<font=3b>%s</font>" % sCityName
 					if self.iPlayerAddMode == "WarMap":
 						iPlotWarValue = self.m_pCurrentPlot.getWarValue(self.m_iCurrentPlayer)
 						sText += "<font=3b>   %s: %d</font>" %(localText.getText("TXT_KEY_WB_WARVALUE", ()), iPlotWarValue)
@@ -489,7 +491,7 @@ class CvWorldBuilderScreen:
 			y = self.m_pCurrentPlot.getY()
 			pCity = gc.getPlayer(self.m_iCurrentPlayer).initCity(x, y)
 			sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
-			if sName != "-1":
+			if sName:
 				pCity.setName(sName, True)
 			if bPython:
 				CvEventManager.CvEventManager().onCityBuilt([pCity])
@@ -2001,7 +2003,7 @@ class CvWorldBuilderScreen:
 				y = self.m_pCurrentPlot.getY()
 				pNewCity = pPlayer.initCity(x, y)
 				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
-				if sName == "-1":
+				if sName:
 					sName = pOldCity.getName()
 				pOldCity.setName("ToBeRazed", False)
 				pNewCity.setName(sName, True)
@@ -2026,7 +2028,7 @@ class CvWorldBuilderScreen:
 				y = self.m_pCurrentPlot.getY()
 				pNewCity = pPlayer.initCity(x, y)
 				sName = cnm.getFoundName(self.m_iCurrentPlayer, (x, y))
-				if sName != "-1":
+				if sName:
 					pNewCity.setName(sName, True)
 				self.copyCityStats(pOldCity, pNewCity, False)
 				if self.iPlayerAddMode == "DuplicateCityPlus":
