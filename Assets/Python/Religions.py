@@ -506,7 +506,7 @@ class Religions:
 						city.setHasReligion(iCatholicism, True, False, False)
 				
 		pPlayer = gc.getPlayer(iCiv)
-		pPlayer.changeGold(iNumCatholicCities*100)
+		pPlayer.changeGold(iNumCatholicCities * utils.getTurns(100))
 		
 		pPlayer.setLastStateReligion(iProtestantism)
 		pPlayer.setConversionTimer(10)
