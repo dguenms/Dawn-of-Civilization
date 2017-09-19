@@ -10156,7 +10156,7 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>18</iCombat>
+			<iCombat>15</iCombat>
 			<iCombatLimit>70</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
@@ -10179,7 +10179,7 @@
 			</UnitCombatCollateralImmunes>
 			<iBombardRate>16</iBombardRate>
 			<iAsset>4</iAsset>
-			<iPower>20</iPower>
+			<iPower>15</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>2</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -10264,7 +10264,7 @@
 			</UnitCombatCollateralImmunes>
 			<iBombardRate>16</iBombardRate>
 			<iAsset>5</iAsset>
-			<iPower>24</iPower>
+			<iPower>20</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>1</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
