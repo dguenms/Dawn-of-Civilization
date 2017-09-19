@@ -1978,7 +1978,7 @@ def leader(iPlayer):
 		if capital.getRegionID() not in [rMesopotamia, rAnatolia]: return iHannibal
 		
 	elif iPlayer == iRome:
-		if not bEmpire and not bCityStates: return iAugustus
+		if bEmpire or not bCityStates: return iAugustus
 		
 	elif iPlayer == iKorea:		
 		if iEra >= iRenaissance: return iSejong
