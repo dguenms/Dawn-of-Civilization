@@ -1,0 +1,241 @@
+# Added the Canadian civilization (full credit to srpt)
+	# Spawn: 1867 AD in Montreal
+	# Leader: Trudeau
+	# Color: Pale Red
+	# Unique Building: Royal Mounted Police (Jail): +2 happiness with Horse
+	# Unique Unit: Corvette (Destroyer): weaker, but cheaper and faster
+	# Unique Power: Multiculturalism: Immigrants bring GPP to your cities
+	# Unique Historical Victory:
+		# A Mari Usque Ad Mare: Connect your capital to an Atlantic and a Pacific Port by 1920 AD
+		# The Great White North: Control all cities and 90% of the territory in Canada without ever conquering a city by 1950 AD
+		# Peacekeeping: End twelve wars through diplomacy by 2000 AD
+# Enlarged North America to the north to make more room for Canada, extensive terrain changes
+# Capes and marshes blocking access to America from Newfoundland only appear when the player controls the Vikings
+# added the CN Tower wonder: requires Mass Media, free Broadcast Tower for all cities
+# seceding cities in the New World always go to the Natives instead of Independents
+# New culture rules
+	# instead of culture expansion when a city reaches a new culture level, the covered tiles gradually expand as a city gets more culture
+	# city culture can only extend up to the third ring
+	# more culture required to cover the entire second ring
+	# properties of the plot influence how much culture it takes to cover it (more for desert, peaks ..., less for tiles with bonuses or river connections, making for more geographically appropriate borders)
+	# tiles get covered in order of their culture costs (cheapest first)
+	# forts reduce the culture cost to zero
+# Oasis now yields +3 food, +1 commerce
+# immigration happens more frequently now, cities in North America are preferred as targets
+# additional improvement yields now only apply to city tiles for cities on small islands
+# vassal stability is reset to shaky (if lower) on vassalization
+# contact can now only be lost if neither of the two civs can currently see the other's territory
+# Ocean changes:
+	# reduced food yield from Ocean tiles by 1
+	# fishing boats on Ocean require Compass
+	# fishing boats on Ocean produce +1 food
+	# increased food from whaling boats by +1
+	# replaced Coast tiles across the map with Ocean
+	# reduced the size of the Falklands
+	# units only receive double movement on Ocean when they are able to enter Ocean tiles
+	# new terrain feature: Island (+1 production on water tiles)
+	# new resource: Pearls (+1 happiness, expires with Plastics)
+	# Pearls contribute to Luxury Industry
+	# Pearls added in Polynesia, the East China Sea, near Tamil Nadu, the Persian Gulf and the Venezuelan coast
+# replaced Marsh graphics so that they will not appear in the resource map mode anymore
+# majority culture instead of owner decides city style
+# units on impassable features can still be attacked (but advancing into the tile afterwards is still impossible)
+# all foreign culture inside of cities is flipped on spawn
+# overall increase in costs for techs from the Industrial and Modern era
+# fixed a bug that decreased costs for all techs in later scenarios
+# New Civilization: Polynesia
+	# Spawn: 1000 BC on Tonga
+	# Leader: Aho'eitu
+	# Color: Light Pink
+	# Unique Building: Mala'e (Amphitheatre): requires Priesthood, halved costs, +2 culture, +1 priest and artist slots
+	# Unique Unit: Waka (Galley): halved costs, +2 movement, only one cargo, can build fishing boats
+	# Unique Power: Navigation: No penalties for cultural expansion over Ocean tiles
+	# Unique Historical Victory:
+		# Settle two of the following island groups by 800 AD: Hawaii, New Zealand, Marquesas, Easter Island
+		# Settle Hawaii, New Zealand, Marquesas and Easter Island by 1000 AD
+		# Build the Moai Statues by 1200 AD
+# added the Moai Statues wonder: requires Priesthood and 20 water tiles in city radius, +2 production on water improvements
+# revised the Pacific Ocean, moving or adding islands and changing coast to ocean tiles
+# cities can be founded on one tile islands even with jungle
+# only normal territory instead of broader territory is revealed on spawn (generally smaller rectangle)
+# removed the trade route yield modifier for overseas cities
+# added a trade route yield modifier based on city distance
+# changed the deadline for the first and second American UHV goals to 1900 and 1950 AD respectively
+# changed the following UHV goals from "in" to "by":
+	# third Brazilian
+	# first Thai
+	# third Italian
+	# first Polish
+	# second English
+# buildings now can increase the yield of tiles with specific resources if they have an appropriate improvement
+	# Persian Apothecary now gives +2 food on improved incense tiles, +1 food on improved silk and spices tiles
+	# Iranian Caravanserai now gives +2 food on improved incense tiles, +1 food on improved silk and spices tiles
+	# Mongol Ger now gives +2 food on improved horse tiles, +1 food on improved cow and sheep tiles
+	# Congolese Mbwadi now gives +2 commerce on improved cotton tiles
+	# Argentine Cold Storage Plant now gives +2 commerce on improved cow, pig and deer tiles
+	# Colombian Hacienda now gives +1 food on improved banana tiles, +3 commerce on improved coffee tiles
+	# Brazilian Fazenda now gives +1 commerce on improved banana, spices, sugar, coffee and tobacco tiles
+# moved location of Parsa (Persian spawn tile) 1S
+# moved wheat near Sirajis north to Aspadana
+# moved sheep near Aspadana east to Balkh
+# Persia starts with one additional settler and worker
+# Persian Immortals start with the March promotion
+# Parthian barbarians will only spawn if Persia is dead
+# increased Arabian unit and city upkeep and unit cost
+# increased Turkish unit and city upkeep
+# reduced Turkish unit costs
+# Arabian UP does not remove foreign religions anymore
+# Temple of Solomon expires with Banking
+# additional Seljuk conquerors against Arabia
+# Seljuks also target Jerusalem
+# new third Maya goal: make contact with a European civilization before anyone discovers America
+# Included the SuperSpies mod component:
+	# Spies can now get experience from successful missions or intercepting other spies
+	# new Spy promotions to improve their abilities
+	# Spies do not start with Commando anymore
+	# Intelligence Agency now also gives +2 experience to Spies
+	# Security Bureau lets all Spies start with the Security promotion, increasing their chances to intercept other spies
+	# Interpol gives an additional +3 experience to Spies
+# Changed Spy specialists and Great Spies:
+	# Spy specialist has been removed from the game
+	# Great Spies are now created like Great Generals: a new Great Spy is born as soon as enough Spy experience has been accumulated
+	# adjusted the interface so that Spy experience until the next Great Spy is displayed
+	# Great Spies cannot start Golden Ages anymore
+# new specialist: Statesman
+	# generates +2 commerce and +3 GPP (Great Statesman)
+	# can be hired with Palace, Courthouse, Castle, Jail
+# new Great Person type: Great Statesman
+	# represents politicians, political philosophers, political scientists and political activists
+	# can discover technologies (new Civics flavor associated with a number of appropriate technologies)
+	# can start a golden age
+	# can build Administrative Center (requires 8 Courthouses): counts as a government center for city maintenance
+	# can resolve a crisis: immediately ends anarchy and removes unrest from all cities
+	# can reform the government: allows to change civics this turn without anarchy
+	# can conduct a diplomatic mission: EITHER immediately make peace with a civ you are at war with OR improve relations and reduce past transgression penalties with a civ you are at peace with
+	# can join city as a Great Statesman (+4 commerce)
+	# some wonders now create Great Statesman points, especially those which previously generated Great Spy points
+# further espionage related adjustments:
+	# reduced the amount of raw espionage from Intelligence Agencies and Security Bureaus
+	# reduced the Espionage modifier of Jails from 50% to 25%
+	# Instead of double Spy specialists, Totalitarianism now gives +1 espionage per specialist
+# changed additional scientist slot for the Chinese Taixue to a statesman slot
+# changed additional scientist slot for the Greek Odeon to a statesman slot
+# the Roman Forum now gives an additional statesman slot
+# the French Salon now gives an additional statesman slot
+# turned Kyushu into grassland
+# added Tea to southern Honshu
+# added Clams south of Kyushu
+# changed first Japanese goal: have 18000 culture in cities with 90% Japanese culture in 1600 AD
+# Himeji Castle does not increase pillaging gold anymore
+# reduced Himeji Castle base culture to +4
+# new Himeji Castle effect: +1 culture for every fully fortified unit
+# new Japanese UP: Modernization: On entering a new era, technologies from that eras spread from civilizations with Open Borders agreement
+# Farms on Rice now give +2 food
+# Independents do not pay unit upkeep and never disband their units
+# AI only asks you to join wars if you share a border with their enemy
+# starting gold is adjusted for game speed
+# the AI will disregard the value of wonders in techs that cannot be built
+# Watermills receive +2 commerce from Electricity again
+# Lumbermills require Guilds now
+# New Guilds civic effect: High upkeep, +1 gold per specialist, double production for Forge, Market, Grocer
+# New Dynasticism effect: Low upkeep, +1 happiness per military unit up to a maximum of 4, +1 happiness from Palace
+# New Theocracy effect: Medium upkeep, +2 happiness with state religion, double priest slots, +2 experience with state religion, +1 unhappiness from non-state religions
+# if technology cost modifiers exist, they are displayed in the tech tooltip
+# if units are produced with food, their cost is now modified by their civilization's growth modifier
+# Cottages can be built on Oasis tiles now
+# extensive expansion of India to the south and rearrangement of its resources
+# new arrangement of Indian cities in the 600 AD and 1700 AD scenarios
+# India (Maratha Empire) and Tamils (Kingdom of Mysore) playable in 1700 AD
+# Shivaji Bhosle renamed Shahuji
+# extended Indochina to the east
+# Saigon spawns in 1400 AD
+# new Indian UP: Purity: one extra health for every three excess happiness
+# new building: Smokehouse (requires Animal Husbandry): +1 health from Cow, Deer, Pig, Sheep
+# Granary does not give extra health for Wheat, Corn, Rice anymore
+# Supermarket does not give extra health for Cow, Deer, Pig, Sheep anymore
+# new Supermarket effect: +1 health from Wheat, Corn, Rice
+# Cow, Deer, Pig, Sheep, Fish, Clam and Crab cannot be traded until the discovery of Refrigeration
+# new Indian UU: Patiyodha (Longbowman): strength 5, requires Monarchy and Calendar, can enter Jungle, starts with Formation and Woodsman I
+# new Indian UB: Edict (Pagan Temple): -10% maintenance cost
+# new terrain feature: Rainforest
+	# minus 1 food
+	# passable only to civilian units and elephants
+	# can build mines, cottages and plantations with Iron Working
+	# Khmer can enter Rainforest and build Farms due to their UP
+	# rainforests are included in the Congolese UP
+	# replace jungle in India, Indochina, Indonesia, Polynesia, West Africa, East Africa and Mesoamerica
+# impassable terrain features can be entered if improved
+# improved terrain features do not provide defense bonuses
+# New civilization: Harappa
+	# Human player only
+	# Spawn: 3000 BC at Harappa
+	# Leader: Vatavelli
+	# Color: Purple
+	# Unique Building: Bath (Aqueduct): requires Masonry, less production cost, +2 culture
+	# Unique Unit: City Builder (Settler): cheaper, new cities start with additional population
+	# Unique Power: Sanitation: positive health contributes to city growth
+	# Unique Historical Victory:
+		# Establish a trade connection with another civilization by 1600 BC
+		# Build three Baths and two Walls by 1500 BC
+		# Have a total population of 20 by 800 BC
+# Independent cities spawn with some initial culture
+# Tech trade requires a trade connection
+# Instead of being born in cities, new Great Spies replace the most experienced Spy unit
+# removed the Persecution project
+# added a Persecutor unit (national unit)
+# Congresses establish contact between all participants
+# When choosing to refuse a Congress city assignment, the dialog lists the civs that voted yes
+# removed the Embassy building
+# vassal dynamic names only apply to capitulated vassals
+# included the improved Civics interface from History Rewritten
+# added an option to enable graphics paging to reduce memory consumption
+# civilizations far ahead/behind in tech receive a penalty/bonus to research costs that scales with era
+# added the Tarim river and more oases in the Tarim basin
+# included graphics and names for various female Great People across all civilizations
+# AIs are now willing to trade away their last resource or corporation resources if the trade is otherwise favorable
+# AI resource value is now scaling with the overall benefit on its cities
+# War Elephants now require Horseback Riding and Monarchy
+# Forts increase tile defense by 50%
+# current year is always displayed during autoplay (even for civs that start without Calendar)
+# disabled the "100 turns left" message
+# Dharanis cannot cross Capes anymore
+# Removed free techs based on game era for respawned civilizations
+# Civics rebalancing and redesign:
+	# Dynasticism: limit for happiness from military units increased to 6
+	# City States: moved tech requirement to Alphabet
+	# Theocracy: reduced state religion happiness to +1
+	# Autocracy: removed drafts per turn to 2, removed espionage modifier
+	# Republic: reduced upkeep to medium
+	# Vassalage: reduced happiness from Castle to +1, added +2 commerce from Forts
+	# Representation: now gives +2 happiness for largest cities, +1 happiness from Courthouse, double statesman slots
+	# Egalitarianism: now gives double scientist, artist, merchant slots, +1 production from Towns, unhappiness for everyone without Egalitarianism
+	# Slavery: removed extra commerce for Plantations and Slave Plantations
+	# Industrialism: reduced upkeep to low, added +1 production from Watermill
+	# Public Welfare: replaced extra specialist slots with -50% corporation unhappiness
+	# Mercantilism: now gives no extra trade yield for foreign trade routes, +50% yield from trade through capital, +1 commerce from Plantations, double production for Customs House
+	# Central Planning: added -1 commerce from Town
+	# Environmentalism: added +2 commerce from Watermill
+	# Scholasticism: increased great people birth modifier to +40%
+	# Militia: removed all effects
+	# Mercenaries: added double production for Walls
+	# Warrior Code: removed and replaced with Multilateralism
+	# Levy Armies: increased number of free units, added double production for Castles
+	# Standing Army: removed land production modifier, added double production for Barracks and Stables, added +1 production from Forts
+	# Naval Dominance: renamed to Naval Supremacy, added +1 production for Fishing Boats, removed double production for Harbors, Customs House
+	# Multilateralism: new civic (low upkeep, requires Radio) with +100% war weariness, +1 upkeep per military unit, +1 free specialist, +25% trade yield with Defensive Pact
+# reduced production to gold conversion after failed wonder construction to 50%
+# production to commerce conversion processes now do not benefit from production modifiers anymore
+# Japan redesign:
+	# Their UU, the Samurai, now starts with the Leadership instead of the Drill promotions
+	# New UB: Zaibatsu (Factory with halved cost, +1 commerce on water tiles, free engineer)
+	# New UP: Modernization: After discovering all medieval techs, techs that three civs are willing to trade cost -50% research
+	# New first UHV goal: Have an average city culture of 6000 by 1600 AD without ever losing a city
+	# New third UHV goal: Be the first to discover five modern technologies
+	# reduced base tech speed
+	# starts with Calendar in the 3000 BC and 600 AD scenarios
+# Changed Himeji Castle effect: +1 culture per level of every fully fortified unit in the city, defense modifiers increase culture output in all cities
+# During AI trades, human players always have at least as much gold per turn available as they would make at 50% gold rate, even if it is currently spent on research/culture/espionage
+# added the Guadalquivir river in Iberia
+# fixed a bug that gave Arabia a higher tech score in the 600 AD scenario
+# Scientific Method also requires Education
+# Forts cannot be constructed next to cities and other forts
