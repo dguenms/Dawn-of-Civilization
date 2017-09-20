@@ -355,6 +355,7 @@ class RiseAndFall:
 		for (x, y) in utils.getWorldPlotsList():
 			plot = gc.getMap().plot(x, y)
 			if plot.getOwner() != -1:
+				plot.changeCulture(plot.getOwner(), 100, True)
 				utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
 					
 		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
