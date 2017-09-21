@@ -343,7 +343,7 @@ class Religions:
 		if not gc.getGame().isReligionFounded(iOrthodoxy): return
 		if gc.getGame().isReligionFounded(iCatholicism): return
 		
-		if gc.getGame().getReligionLevels(iOrthodoxy) < 10: return
+		if gc.getGame().countReligionLevels(iOrthodoxy) < 10: return
 		
 		lStateReligionCities = []
 		lNoStateReligionCities = []
