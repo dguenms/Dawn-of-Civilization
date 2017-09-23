@@ -3222,7 +3222,7 @@
 		<ArtRef Name="art:Coffee_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Coffee/Cofwes_LSystem.nif::2x2_01_Cofwe_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_COFFEE</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
@@ -3312,7 +3312,7 @@
 		<ArtRef Name="art:Tea_crop">
 			<!-- when in the rough -->
 			<Attribute Class="Scalar">NIF:Art/Terrain/Resources/Tea/Spices_LSystem.nif::2x2_01_Spice_Normal</Attribute>
-			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION</Attribute>
+			<Attribute Class="Improvement">NO_IMPROVEMENT,IMPROVEMENT_ALL,!IMPROVEMENT_PLANTATION,!IMPROVEMENT_SLAVE_PLANTATION</Attribute>
 			<Attribute Class="Bonus">BONUS_TEA</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">bBonusImprovedOnly:0</Attribute>
