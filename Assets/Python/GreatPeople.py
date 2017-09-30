@@ -47,7 +47,7 @@ def getEraNames(iCiv, iType, iEra):
 	iNextOffset = len(lNames)
 	if iEra + 1 < iNumEras: iNextOffset = lOffsets[iCiv][iType][iEra+1]
 	
-	iSpread = max(iNextOffset - iOffset, iEra+2)
+	iSpread = max(iNextOffset - iOffset, min(iEra+2, 5))
 	
 	lBefore = [sName for sName in lNames[:iOffset] if not gc.getGame().isGreatPersonBorn(sName)]
 	lAfter = [sName for sName in lNames[iOffset:] if not gc.getGame().isGreatPersonBorn(sName)]
@@ -56,7 +56,7 @@ def getEraNames(iCiv, iType, iEra):
 		return lAfter[:iSpread]
 	
 	iSpread -= len(lAfter)
-	return lBefore[:-iSpread] + lAfter
+	return lBefore[-iSpread:] + lAfter
 	
 def getName(unit):
 	iType = getType(unit.getUnitType())
@@ -101,16 +101,21 @@ def setup():
 	for iCiv in dGreatPeople.keys():
 		for iType in dGreatPeople[iCiv].keys():
 			lEntries = dGreatPeople[iCiv][iType]
+			iOffsets = 0
+			
 			for i in range(len(lEntries)):
 				entry = lEntries[i]
-				if entry in range(iNumEras): lOffsets[iCiv][lTypes.index(iType)][entry] = i
-				else: lGreatPeople[iCiv][lTypes.index(iType)].append(entry)
+				if entry in range(iNumEras): 
+					lOffsets[iCiv][lTypes.index(iType)][entry] = i - iOffsets
+					iOffsets += 1
+				else: 
+					lGreatPeople[iCiv][lTypes.index(iType)].append(entry)
 				
 			lCurrentOffsets = lOffsets[iCiv][lTypes.index(iType)]
 			for i in range(1, len(lCurrentOffsets)):
 				if lCurrentOffsets[i] < lCurrentOffsets[i-1]: lCurrentOffsets[i] = lCurrentOffsets[i-1]
 				
-			lCurrentOffsets[iDigital] = len(lEntries)
+			lCurrentOffsets[iDigital] = len(lGreatPeople[iCiv][lTypes.index(iType)])
 				
 	print lGreatPeople
 
