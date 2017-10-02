@@ -4978,10 +4978,10 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									iValue /= 2;
 								}
 
-								/*if (iI == ASTRONOMY || iI == COMPASS) { //otherwise they tend to beeline
+								if (iI == EXPLORATION || iI == OPTICS || iI == GEOGRAPHY) { //otherwise they tend to beeline
 									iValue *= 4;
 									iValue /= 5;
-								}*/
+								}
 
 								if (getCurrentEra() < GC.getTechInfo((TechTypes)iI).getEra()) { //otherwise they tend to beeline
 									/*iValue *= 4;
@@ -5042,8 +5042,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == MYTHOLOGY || iI == DIVINATION || iI == CEREMONY)
 										iValue /= 5;
 								case GREECE:
-									if (iI == THEOLOGY)
-									{
+									if (iI == THEOLOGY) {
 										iValue *= 2;
 										iValue /= 3;
 									}
@@ -5156,16 +5155,11 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 3;
 									}*/
 									if (iI == SCHOLARSHIP || iI == ALCHEMY)
-									{
 										iValue *= 3;
-									}
-									else if (iI == FINANCE || iI == FIREARMS || iI == COMPANIES) {
+									else if (iI == FINANCE || iI == FIREARMS || iI == COMPANIES)
 									    iValue /= 5;
-									}
 									else if (iI == PAPER)
-									{
 										iValue /= 2;
-									}
 									break;
 								case TIBET:
 									if (iI == PHILOSOPHY)
@@ -5227,20 +5221,18 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == CIVIL_LIBERTIES) {
+									if (iI == CIVIL_LIBERTIES)
 										iValue *= 2;
-									}
 									break;
 								case HOLY_ROME:
-									if (iI == PRINTING)
+									if (iI == ACADEMIA || iI == PRINTING)
 										iValue *= 5;
 									if (iI == EDUCATION || iI == GUILDS || iI == OPTICS) {
 										iValue *= 3;
 										iValue /= 2;
 									}
-									if (iI == REPLACEABLE_PARTS) {
+									if (iI == REPLACEABLE_PARTS)
 										iValue *= 2;
-									}
 									if (iI == FISSION) {
 										iValue *= 5;
 										iValue /= 4;
@@ -5251,7 +5243,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									if (iI == COMBINED_ARMS || iI == REPLACEABLE_PARTS)
 										iValue *= 3;
-									if (iI == HERITAGE || iI == PATRONAGE) {
+									if (iI == HERITAGE || iI == PATRONAGE || iI == URBAN_PLANNING) {
 										iValue *= 3;
 										iValue /= 2;
 									}
@@ -5263,7 +5255,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									}
 									break;
 								case MALI:
-									if (iI == PAPER)
+									if (iI == EDUCATION)
 										iValue *= 3;
 									break;
 								case TURKEY:
@@ -5279,8 +5271,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue *= 3;
 									if (iI == PHILOSOPHY || iI == EDUCATION || iI == PAPER || iI == PATRONAGE)
 										iValue *= 2;
-									if (iI == ENGINEERING)
-									{
+									if (iI == ENGINEERING) {
 										iValue *= 3;
 										iValue /= 2;
 									}
@@ -5294,9 +5285,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									if (iI == REPLACEABLE_PARTS)
 										iValue *= 2;
 									if (iI == COMPANIES || iI == PATRONAGE)
-									{
 										iValue *= 5;
-									}
 									if (iI == CARTOGRAPHY || iI == EXPLORATION || iI == OPTICS || iI == COMPASS)
 										iValue *= 10;
 									break;
@@ -5322,9 +5311,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 										iValue /= 2;
 									}
 									if (iI == FIREARMS || iI == COMBINED_ARMS)
-									{
 										iValue /= 4;
-									}
 									break;
 								case AZTECS:
 									if (iI == CONSTRUCTION)
@@ -5351,8 +5338,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 								case GERMANY:
 									if (iI == ENGINE || iI == INFRASTRUCTURE || iI == CHEMISTRY || iI == ASSEMBLY_LINE || iI == PSYCHOLOGY || iI == SOCIOLOGY)
 										iValue *= 2;
-									if (iI == FISSION)
-									{
+									if (iI == FISSION) {
 										iValue *= 5;
 										iValue /= 4;
 									}

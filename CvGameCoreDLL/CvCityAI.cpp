@@ -3433,6 +3433,19 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 
 								//Rhye - start switch for the UHV
 								//see CvCity::canConstruct
+								if (iI == ORACLE)
+									if (getOwnerINLINE() != GREECE) {
+										if (GET_PLAYER((PlayerTypes)GREECE).isHuman()) {
+											if (!GET_PLAYER((PlayerTypes)GREECE).isAlive()) {
+												bValid = false;
+											}
+											else {
+												iValue *= 2;
+												iValue /= 3;
+											}
+										}
+									}
+
 								if (iI == TEMPLE_OF_KUKULKAN)
 									if (getOwnerINLINE() != MAYA) {
 										if (GET_PLAYER((PlayerTypes)MAYA).isHuman()) {
