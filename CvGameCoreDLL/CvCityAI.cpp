@@ -3434,12 +3434,14 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 								//Rhye - start switch for the UHV
 								//see CvCity::canConstruct
 								if (iI == ORACLE)
-									if (getOwnerINLINE() != GREECE) {
-										if (GET_PLAYER((PlayerTypes)GREECE).isHuman()) {
-											if (!GET_PLAYER((PlayerTypes)GREECE).isAlive()) {
+									if (getOwnerINLINE() != GREECE) 
+									{
+										if (GET_PLAYER((PlayerTypes)GREECE).isHuman()) 
+										{
+											if (!GET_PLAYER((PlayerTypes)GREECE).isAlive())
 												bValid = false;
-											}
-											else {
+											else
+											{
 												iValue *= 2;
 												iValue /= 3;
 											}
@@ -3447,12 +3449,14 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									}
 
 								if (iI == TEMPLE_OF_KUKULKAN)
-									if (getOwnerINLINE() != MAYA) {
-										if (GET_PLAYER((PlayerTypes)MAYA).isHuman()) {
-											if (!GET_PLAYER((PlayerTypes)MAYA).isAlive()) {
+									if (getOwnerINLINE() != MAYA)
+									{
+										if (GET_PLAYER((PlayerTypes)MAYA).isHuman())
+										{
+											if (!GET_PLAYER((PlayerTypes)MAYA).isAlive())
 												bValid = false;
-											}
-											else {
+											else
+											{
 												iValue *= 2;
 												iValue /= 3;
 											}
@@ -3460,15 +3464,18 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 									}
 
 								if (iI == NOTRE_DAME) //for the UHV
-									if (getOwnerINLINE() != FRANCE) {
-										if (GET_PLAYER((PlayerTypes)FRANCE).isHuman()) {
-											if (!GET_PLAYER((PlayerTypes)FRANCE).isAlive()) {
+									if (getOwnerINLINE() != FRANCE)
+									{
+										if (GET_PLAYER((PlayerTypes)FRANCE).isHuman())
+										{
+											if (!GET_PLAYER((PlayerTypes)FRANCE).isAlive())
 												bValid = false;
-												}
-											else {
+											else
+											{
 												if (getID() >= NUM_MAJOR_PLAYERS)
 													bValid = false;
-												else {
+												else 
+												{
 													iValue *= 2;
 													iValue /= 3;
 												}
@@ -3478,11 +3485,12 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 
 								if (iI == STATUE_OF_LIBERTY) //for the UHV
 									if (getOwnerINLINE() != AMERICA) {
-										if (GET_PLAYER((PlayerTypes)AMERICA).isHuman()) {
-											if (!GET_PLAYER((PlayerTypes)AMERICA).isAlive()) {
+										if (GET_PLAYER((PlayerTypes)AMERICA).isHuman())
+										{
+											if (!GET_PLAYER((PlayerTypes)AMERICA).isAlive())
 												bValid = false;
-												}
-											else {
+											else 
+											{
 												iValue *= 2;
 												iValue /= 3;
 											}
