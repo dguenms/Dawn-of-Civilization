@@ -2578,7 +2578,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_EXPLORE_SEA] *= 5;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
 		aiUnitAIVal[UNITAI_ESCORT_SEA] *= 2;
-		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)EXPLORATION))
+		if (GET_TEAM((TeamTypes)getOwnerINLINE()).isHasTech((TechTypes)CARTOGRAPHY))
 			aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_RESERVE_SEA] *= 2;
 		aiUnitAIVal[UNITAI_WORKER_SEA] *= 3;

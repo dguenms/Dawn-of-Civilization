@@ -4978,7 +4978,7 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 									iValue /= 2;
 								}
 
-								if (iI == EXPLORATION || iI == OPTICS || iI == GEOGRAPHY) { //otherwise they tend to beeline
+								if (iI == CARTOGRAPHY || iI == EXPLORATION || iI == OPTICS || iI == GEOGRAPHY) { //otherwise they tend to beeline
 									iValue *= 4;
 									iValue /= 5;
 								}
