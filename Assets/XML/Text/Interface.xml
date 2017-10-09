@@ -1631,11 +1631,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS</Tag>
-		<English>[ICON_BULLET]%D1_Change%F2_HappyOrUn per[SPACE]</English>
+		<English>[ICON_BULLET]+%s1%F2_HappyOrUn per[SPACE]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_IMPROVEMENT_HEALTH</Tag>
-		<English>[ICON_BULLET]%D1_Change%F2_HealthOrUn per[SPACE]</English>
+		<English>[ICON_BULLET]+%s1%F2_HealthOrUn per[SPACE]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_UNIGNORABLE_BOMBARD_DEFENSE_MOD</Tag>

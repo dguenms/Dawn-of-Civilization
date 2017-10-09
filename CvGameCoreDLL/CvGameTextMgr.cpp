@@ -10841,30 +10841,34 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	}
 
 	iLast = 0;
-	int iImprovementHappiness;
+	int iImprovementHappinessPercent;
+	CvWString szHappiness;
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		iImprovementHappiness = kBuilding.getImprovementHappiness(iI);
-		if (iImprovementHappiness != 0)
+		iImprovementHappinessPercent = kBuilding.getImprovementHappinessPercent(iI);
+		if (iImprovementHappinessPercent != 0)
 		{
-			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS", std::abs(iImprovementHappiness), iImprovementHappiness > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)).GetCString());
+			szHappiness.Format(L"%.2f", 0.01f * abs(iImprovementHappinessPercent));
+			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HAPPINESS", szHappiness.GetCString(), iImprovementHappinessPercent > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)).GetCString());
 			szTempBuffer.Format(L"<link=literal>%s</link>", GC.getImprovementInfo((ImprovementTypes)iI).getDescription());
-			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHappiness != iLast));
-			iLast = iImprovementHappiness;
+			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHappinessPercent != iLast));
+			iLast = iImprovementHappinessPercent;
 		}
 	}
 
 	iLast = 0;
-	int iImprovementHealth;
+	int iImprovementHealthPercent;
+	CvWString szHealth;
 	for (iI = 0; iI < GC.getNumImprovementInfos(); ++iI)
 	{
-		iImprovementHealth = kBuilding.getImprovementHealth(iI);
-		if (iImprovementHealth != 0)
+		iImprovementHealthPercent = kBuilding.getImprovementHealthPercent(iI);
+		if (iImprovementHealthPercent != 0)
 		{
-			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HEALTH", std::abs(iImprovementHealth), iImprovementHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)).GetCString());
+			szHealth.Format(L"%.2f", 0.01f * abs(iImprovementHealthPercent));
+			szFirstBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_IMPROVEMENT_HEALTH", szHealth.GetCString(), iImprovementHealthPercent > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)).GetCString());
 			szTempBuffer.Format(L"<link=literal>%s</link>", GC.getImprovementInfo((ImprovementTypes)iI).getDescription());
-			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHealth != iLast));
-			iLast = iImprovementHealth;
+			setListHelp(szBuffer, szFirstBuffer, szTempBuffer, L", ", (iImprovementHealthPercent != iLast));
+			iLast = iImprovementHealthPercent;
 		}
 	}
 
@@ -13947,7 +13951,7 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 		if (bActive)
 		{
 			//iYield += (kCorporation.getYieldProduced(i) * iNumResources * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-			iYield += (kCorporation.getYieldProduced(i) * std::min(12,iNumResources) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+			iYield += (kCorporation.getYieldProduced(i) * iNumResources * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 		}
 
 		if (pCity->getOwnerINLINE() == NETHERLANDS && eCorporation == (CorporationTypes)1)
@@ -13977,7 +13981,7 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 		if (bActive)
 		{
 			//iCommerce += (kCorporation.getCommerceProduced(i) * iNumResources * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
-			iCommerce += (kCorporation.getCommerceProduced(i) * std::min(12,iNumResources) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
+			iCommerce += (kCorporation.getCommerceProduced(i) * iNumResources * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 		}
 
 		if (pCity->getOwnerINLINE() == NETHERLANDS && eCorporation == (CorporationTypes)1)
@@ -14948,6 +14952,22 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 		setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_MISC_ON_HILLS").c_str(), info.getHillsYieldChangeArray());
 		setYieldChangeHelp(szBuffer, L"", L"", gDLL->getText("TXT_KEY_MISC_ALONG_RIVER").c_str(), info.getRiverSideYieldChangeArray());
 
+		// Leoreth: routes
+		for (int iRoute = 0; iRoute < GC.getNumRouteInfos(); iRoute++)
+		{
+			for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+			{
+				int iChange = info.getRouteYieldChanges(iRoute, iYield);
+				if (0 != iChange)
+				{
+					szTempBuffer.Format( SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getRouteInfo((RouteTypes)iRoute).getDescription());
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_CIVIC_IMPROVEMENT_YIELD_CHANGE", iChange, GC.getYieldInfo((YieldTypes)iYield).getChar()));
+					szBuffer.append(szTempBuffer);
+				}
+			}
+		}
+
 		for (int iTech = 0; iTech < GC.getNumTechInfos(); iTech++)
 		{
 			for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
@@ -14961,9 +14981,9 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 		}
 
 		//	Civics
-		for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+		for (int iCivic = 0; iCivic < GC.getNumCivicInfos(); iCivic++)
 		{
-			for (int iCivic = 0; iCivic < GC.getNumCivicInfos(); iCivic++)
+			for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 			{
 				int iChange = GC.getCivicInfo((CivicTypes)iCivic).getImprovementYieldChanges(eImprovement, iYield);
 				if (0 != iChange)

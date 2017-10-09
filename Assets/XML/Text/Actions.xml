@@ -39,7 +39,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_MARINE_RESERVE</Tag>
-		<English>Build a [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</English>
+		<English>Create [LINK=IMPROVEMENT_MARINE_RESERVE]Marine Reserve[\LINK]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HAMLET</Tag>

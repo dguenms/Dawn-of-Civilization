@@ -422,7 +422,7 @@ BeginPlayer
 	StartingGold=600
 	StateReligion=RELIGION_PROTESTANTISM
 	CivicOption=CIVICOPTION_GOVERNMENT, Civic=CIVIC_MONARCHY
-	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CONSTITUTION
+	CivicOption=CIVICOPTION_LEGITIMACY, Civic=CIVIC_CENTRALISM
 	CivicOption=CIVICOPTION_SOCIETY, Civic=CIVIC_INDIVIDUALISM
 	CivicOption=CIVICOPTION_ECONOMY, Civic=CIVIC_FREE_ENTERPRISE
 	CivicOption=CIVICOPTION_RELIGION, Civic=CIVIC_TOLERANCE
@@ -26351,6 +26351,8 @@ BeginPlot
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_COFFEEHOUSE
 		BuildingType=BUILDING_POST_OFFICE
 		BuildingType=BUILDING_MILITARY_ACADEMY
@@ -28112,6 +28114,12 @@ BeginPlot
 		UnitType=UNIT_MUSKETMAN, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CUIRASSIER, UnitOwner=39, (Germany)
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_BOMBARD, UnitOwner=39, (Germany)
 	EndUnit
 	BeginUnit
@@ -28134,11 +28142,14 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_THEATRE
 		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_BATH
 		BuildingType=BUILDING_POST_OFFICE
 		BuildingType=BUILDING_ESTATE
+		BuildingType=BUILDING_JEWISH_TEMPLE
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		BuildingType=BUILDING_ACADEMY
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_PROTESTANTISM
 		Player39Culture=250, (Germany)
@@ -28635,6 +28646,7 @@ BeginPlot
 	RiverNSDirection=0
 	isWOfRiver
 	ImprovementType=IMPROVEMENT_HAMLET
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,24,25,26,28,39,44,45,
@@ -29170,6 +29182,7 @@ EndPlot
 BeginPlot
 	x=64,y=54
 	ImprovementType=IMPROVEMENT_VILLAGE
+	RouteType=ROUTE_ROAD
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 	TeamReveal=16,25,26,28,39,44,45,
@@ -29724,8 +29737,6 @@ BeginPlot
 		BuildingType=BUILDING_PHARMACY
 		BuildingType=BUILDING_BANK
 		BuildingType=BUILDING_POLISH_SEJMIK
-		BuildingType=BUILDING_MONUMENT
-		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_BATH
 		BuildingType=BUILDING_COFFEEHOUSE
@@ -29768,6 +29779,12 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_THEATRE
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_UNIVERSITY
+		BuildingType=BUILDING_ESTATE
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
 		Player39Culture=100, (Germany)
 	EndCity
@@ -30826,8 +30843,6 @@ BeginPlot
 		BuildingType=BUILDING_LIBRARY
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_POLISH_SEJMIK
-		BuildingType=BUILDING_MONUMENT
-		BuildingType=BUILDING_ESTATE
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_BATH
 		BuildingType=BUILDING_CATHOLIC_TEMPLE

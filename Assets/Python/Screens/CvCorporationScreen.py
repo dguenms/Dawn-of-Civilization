@@ -384,11 +384,11 @@ class CvCorporationScreen:
 				iRow += 16
 			
 			szButtonName = self.TECH_REQUIRED_BUTTON
-			iRequiredCorp = gc.getCorporationInfo(iLinkCorporation).getTechPrereq()
-			screen.addDDSGFC(szButtonName, gc.getTechInfo(iRequiredCorp).getButton(), self.X_REQUIREMENTS_AREA + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, gc.getCorporationInfo(iLinkCorporation).getTechPrereq(), -1)
+			iRequiredTech = gc.getCorporationInfo(iLinkCorporation).getTechPrereq()
+			screen.addDDSGFC(szButtonName, gc.getTechInfo(iRequiredTech).getButton(), self.X_REQUIREMENTS_AREA + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, gc.getCorporationInfo(iLinkCorporation).getTechPrereq(), -1)
 			
 			szList = u""
-			if teamCiv.isHasTech(iRequiredCorp):
+			if teamCiv.isHasTech(iRequiredTech):
 				szList += u"%c" % (CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
 			else:
 				szList += u"%c" % (CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
@@ -396,7 +396,7 @@ class CvCorporationScreen:
 		
 			if (iLinkCorporation > 1):
 				szButtonName = self.TECH_REQUIRED_BUTTON_CORPORATION
-				screen.addDDSGFC(szButtonName, gc.getTechInfo(iEconomicsTech).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iCorporation, -1)
+				screen.addDDSGFC(szButtonName, gc.getTechInfo(iEconomicsTech).getButton(), self.X_REQUIREMENTS_AREA + 20 + self.BUTTON_SIZE + 15, self.Y_REQUIREMENTS_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iEconomicsTech, -1)
 				
 				szList = u""
 				if teamCiv.isHasTech(iEconomicsTech):

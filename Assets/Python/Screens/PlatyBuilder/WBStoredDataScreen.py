@@ -5,10 +5,12 @@ import CvScreenEnums
 import Popup
 import WBReligionScreen
 import WBCorporationScreen
+import WBGameDataScreen
 import WBInfoScreen
 import Barbs
 import AIWars
 import BugData
+import DynamicCivs as dc
 gc = CyGlobalContext()
 
 iChange = 1
@@ -368,6 +370,12 @@ class WBStoredDataScreen:
 					data.__dict__[item] = iValue
 				else:
 					data.players[iSelectedCiv].__dict__[item] = iValue
+			if iSelectedMode == 0:
+				for iPlayer in range(iNumPlayers):
+					if not gc.getPlayer(iPlayer).isAlive(): continue
+					dc.checkName(iPlayer)
+			else:
+				dc.checkName(iSelectedCiv)
 			self.placeDataTable()
 
 		elif inputClass.getFunctionName() == "WBListTable":
@@ -410,6 +418,12 @@ class WBStoredDataScreen:
 						popup.createEditBox(sText)
 						popup.launch()
 						return 1
+			if iSelectedMode == 0:
+				for iPlayer in range(iNumPlayers):
+					if not gc.getPlayer(iPlayer).isAlive(): continue
+					dc.checkName(iPlayer)
+			else:
+				dc.checkName(iSelectedCiv)
 			self.placeListTables()
 
 

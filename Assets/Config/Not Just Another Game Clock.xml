@@ -55,15 +55,15 @@
 					get="getIndustrialEraColor" set="setIndustrialEraColor" dirtyBit="GameData" 
 					label="Industrial Era" 
 					help="Color to use for the Industrial era."/>
-			<list   id="Color_ERA_MODERN" key="ERA_MODERN" 
+			<list   id="Color_ERA_GLOBAL" key="ERA_GLOBAL" 
 					type="color" default="COLOR_MAGENTA" 
-					get="getModernEraColor" set="setModernEraColor" dirtyBit="GameData" 
-					label="Modern Era" 
-					help="Color to use for the Modern era."/>
-			<list   id="Color_ERA_FUTURE" key="ERA_FUTURE" 
+					get="getGlobalEraColor" set="setGlobalEraColor" dirtyBit="GameData" 
+					label="Global Era" 
+					help="Color to use for the Global era."/>
+			<list   id="Color_ERA_DIGITAL" key="ERA_DIGITAL" 
 					type="color" default="COLOR_WHITE" 
-					get="getFutureEraColor" set="getFutureEraColor" dirtyBit="GameData" 
-					label="Future Era" 
+					get="getDigitalEraColor" set="getDigitalEraColor" dirtyBit="GameData" 
+					label="Digital Era" 
 					help="Color to use for the Future era."/>
 			<accessor get="getEraColor" set="setEraColor" args="era" id="Color_%s"/>
 			

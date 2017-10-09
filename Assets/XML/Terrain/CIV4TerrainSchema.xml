@@ -198,6 +198,7 @@
 	<ElementType name="iAIObjective" content="textOnly" dt:type="int"/>
 	<ElementType name="iHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iHappinessPercent" content="textOnly" dt:type="int"/>
 	<ElementType name="iPlacementOrder" content="textOnly" dt:type="int"/>
 	<ElementType name="iConstAppearance" content="textOnly" dt:type="int"/>
 	<ElementType name="iMinAreaSize" content="textOnly" dt:type="int"/>
@@ -255,8 +256,8 @@
 		<element type="YieldChanges" minOccurs="0"/>
 		<element type="iAITradeModifier" minOccurs="0"/>
 		<element type="iAIObjective" minOccurs="0"/>
-		<element type="iHealth" minOccurs="0"/>
-		<element type="iHappiness" minOccurs="0"/>
+		<element type="iHealthPercent" minOccurs="0"/>
+		<element type="iHappinessPercent" minOccurs="0"/>
 		<element type="iPlacementOrder" minOccurs="0"/>
 		<element type="iConstAppearance" minOccurs="0"/>
 		<element type="iMinAreaSize" minOccurs="0"/>
@@ -451,8 +452,8 @@
 		<element type="iUpgradeTime"/>
 		<element type="iAirBombDefense"/>
 		<element type="iDefenseModifier"/>
-		<element type="iHappiness"/>
-		<element type="iHealth" minOccurs="0"/>
+		<element type="iHappinessPercent"/>
+		<element type="iHealthPercent" minOccurs="0"/>
 		<element type="iPillageGold"/>
 		<element type="bOutsideBorders"/>
 		<element type="TerrainMakesValids"/>

@@ -20,8 +20,8 @@ tMinorCities = (
 (-3000, (73, 38), iIndependent, 'Yerushalayim', 2, iArcher, 3),	# Jerusalem
 (-3000, (79, 40), iIndependent2, 'Shushan', 1, iArcher, 1), 	# Susa
 (-2000, (85, 47), iIndependent, 'Afrasiyab', 1, iArcher, 1), 	# Samarkand
-#(-2000, (92, 39), iIndependent, 'Varanasi', 1, iWarrior, 1), 	# Varanasi
-(-1600, (90, 40), iIndependent, 'Indraprastha', 1, iWarrior, 1),	# Delhi
+#(-2000, (92, 39), iIndependent, 'Varanasi', 1, iMilitia, 1), 	# Varanasi
+(-1600, (90, 40), iIndependent, 'Indraprastha', 1, iMilitia, 1),	# Delhi
 (-1000, (102, 47), iIndependent, 'Zhongdu', 2, iSpearman, 1),	# Beijing
 (-1000, (72, 44), iIndependent, 'Ankuwash', 2, iArcher, 2),		# Ankara
 (-760, (59, 47), iCeltia, 'Melpum', 2, iArcher, 2),			# Milan
@@ -292,9 +292,9 @@ class Barbs:
 			self.checkSpawn(iNative, iMountedBrave, 1 + iHandicap, (15, 44), (24, 52), self.spawnUprising, iGameTurn, 12 - iHandicap, 2)
 			
 		if utils.isYearIn(1500, 1650):
-			self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
+			self.checkSpawn(iNative, iMohawk, 1, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
 		elif utils.isYearIn(1650, 1850):
-			self.checkSpawn(iNative, iMohawk, 1 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8 - iHandicap, 4)
+			self.checkSpawn(iNative, iMohawk, 1 + iHandicap, (24, 46), (30, 51), self.spawnUprising, iGameTurn, 8, 4)
 				
 		#pirates in the Caribbean
 		if utils.isYearIn(1600, 1800):

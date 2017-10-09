@@ -14,6 +14,8 @@ import WBCorporationScreen
 import WBInfoScreen
 import CvPlatyBuilderScreen
 import CvEventManager
+import DynamicCivs as dc
+from Consts import *
 gc = CyGlobalContext()
 
 iChangeType = 2
@@ -305,6 +307,8 @@ class WBBuildingScreen:
 		elif inputClass.getFunctionName() == "WBWonders":
 			bUpdate = self.editBuilding(inputClass.getData1(), gc.getPlayer(iPlayer), False, True)
 			self.placeWonders()
+			if inputClass.getData1() == iPalace:
+				dc.checkName(iPlayer)
 			if bUpdate:
 				self.placeBuildings()
 

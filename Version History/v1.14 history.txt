@@ -1,0 +1,133 @@
+* Laurenco Marques renamed Mocambique, added Saint Louis du Senegal (credit to Panopticon)
+* Added the Senegal River
+* Improved corporation advisor (lists tech requirements, number of available resources, factors influencing spread) (credit to merijn_v1)
+* Included Platyping's PlatyBuilder to replace the standard World Builder (credit to merijn_v1 for the inclusion)
+* New city renaming system to ensure that all names are correctly translated between all languages and to limit file size
+* Communist names are based on civic, not on tech changes
+* Communist names are reverted when abandoning communism
+* The first to discover Democracy receives a Great Statesman
+* If no city name is available, the name of a civ native to the area is used
+* Additional city names for: Poland, Babylonia, Ethiopia
+* Peak on the Bogota tile becomes a hill when the conquerors appear
+* reimplementation of the dynamic civilization name mechanic
+	* More generic civ names: "Kingdom of {}", "Empire of {}" and so on
+	* Short names ("England", "Britain" ...) and adjectives ("English", "British") are determined and inserted separately
+	* Vassal names are often generic and use master adjectives and vassal short names
+	* Auto-discovery code for commonly used text keys like republican, communist, fascist and default names
+	* Some civ names are dynamically derived from the name of its capital (e.g. Byzantium when not controlling Constantinople)
+	* Changed capital location based names to use coordinates instead of city names so it is compatible with renamed cities
+	* Default foreign names for basic short names to allow for sensible short name or adjective insertion (e.g. "the Netherlands" instead of "Netherlands")
+	* standardized mechanism for renaming civ short description and adjective (Phoenicia -> Carthage, Holy Rome -> Austria) including automatically accounting for their long titles
+	* used all the above features to significantly cut down on the number of required text keys and their registration in the dynamic names Python code
+* Added stability maps for Harappa, Polynesia and Canada
+* Starting workers are also created when the first city is conquered
+* Sugar is displayed in the Oil Industry tooltip for Brazil
+* Extensive refactoring of all DLL constants and maps, exposing them to Python
+* standardized and rebalanced starting population and buildings 
+* stricter conditions for full flips on respawn
+* Optics requires Machinery again
+* continent boundaries adjusted so that Timbuktu's entire radius is in Africa
+* Made the saved data code more adaptive to changes so that saves are more likely to remain compatible with new features
+* PlatyBuilder extended to edit stability, settler and war maps for the ongoing game and export them to file (credit to merijn_v1)
+* score calculation formula takes game length into account, higher scores for longer games (credit to Alexius08)
+* additional wonder movies, including national wonders (credit to Imp. Knoedel)
+* positive/negative civic combinations are highlighted in the civics advisor (credit to merijn_v1)
+* ability to ignore desert movement penalties is now a special promotion for: War Chariot, Numidian Cavalry, Camel Archer, Camel Gunner
+* restored old Julius Caesar background
+* new LH art for: Barbarossa, Casimir, Gustavus Adolphus, Hongwu, Rahman (credit to Bautos42)
+* new religion spread rules
+	* less randomness
+	* religions spread gradually around cities that already have them, not just holy cities
+	* religious buildings influence religion spread
+	* regions influence which religions can spread more easily
+	* special mechanism to spread religions over long distances or to different continents
+* unique great people names now implemented entirely in Python (removed DLL code, removed name definition from XML)
+* associated great people names with eras to avoid inappropriate names for a given era
+* added Judaism
+	* founded with Priesthood
+	* scripted founding in Jerusalem or nearby independent city
+	* Shrine: Temple of Solomon
+	* effect of Temple of Solomon wonder moved to Dome of the Rock
+* new design for Orthodoxy
+	* founded with Theology
+	* scripted founding in a Jewish city
+	* Shrine: Church of the Anastasis
+* new design for Catholicism
+	* founded when more than half of all Christian cities are outside of Christian civilizations OR when the first Orthodox Cathedral is built without controlling the Orthodox holy city
+	* new Catholic holy city becomes city that built the Orthodox Cathedral, or the largest Catholic city in historically Catholic region in case of the former founding trigger
+	* cities in Orthodox civilizations remain Orthodox
+	* other cities convert to Catholicism if they are closer to the Catholic holy city than to the Orthodox holy city
+	* civilizations convert to Catholicism if most of their cities are Catholic
+	* Shrine: Saint Peter's Basilica
+* better implementation for starting religions (all Christian civs start out as Orthodox but are updated if their appropriate religion is founded before their birth)
+* removed Apostolic Palace wonder, Papal elections are triggered by building Saint Peter's Cathedral instead
+* Hagia Sophia is a wonder again: +2 production for all state religion buildings
+* new Ethiopian first UHV goal: found Orthodoxy
+* new Holy Roman first UHV goal: control Saint Peter's Basilica and the Church of the Anastasis in 1200 AD
+* missionary success chances also depend on regional spread factors
+* only missionaries of proselytizing religions (Buddhism, Christianity, Islam) can spread in cities of civs with a different state religion
+* to adopt a local religion (Judaism, Taoism) you need to control its shrine
+* religions can disappear from a city if that religion cannot spread to the city under current circumstances (e.g. after owner or state religion change) or if too many religions are in a city, higher chances of disappearance right after a new religion has spread to the city
+* religious buildings disappear with their religion
+* moved code for removing/replacing Pagan Temples after religion spread to the DLL
+* removed AI state religion autospread (free Arabian UP) from Seljuks and Mughals
+* new LHs: Mussolini, Sejong, Walesa, Pilsudski, Gerhardsen, Vargas, MacDonald, Benazir Bhutto, Castilla, George I, William III (credit to Bautos42)
+* replaced Yaroslav with Ivan IV (credit to Bautos42)
+* new action for Great Prophets: Great Mission
+	* spreads state religion to several surrounding cities
+	* if state religion already exists in all nearby cities, some non-state religions are removed
+	* cities are targeted using missionary/persecutor AI
+* added a Jewish URV:
+	* Chosen People: Have a total of 15 Great Prophets, Great Scientists and Great Statesmen in your cities
+	* Promised Land: Have legendary culture in the Jewish holy city
+	* Diaspora: Have friendly relations with six civilizations with Jewish minorities
+* new Secular URV:
+	* Tolerance: Control a Cathedral of every religion
+	* Humanism: Make sure there are 25 Universities, 10 Great Scientists and 10 Great Statesmen in Secular civilizations
+	* Modernity: Make sure the five most advanced independent civilizations are Secular
+* independents always have no state religion
+* reduced overall raze chance, especially for barbarians (back to BtS levels)
+* new formula for religious spread percentage calculation
+* new art for Zoroastrianism (credit to Sgt. Bears and History Rewritten)
+* Persia balance:
+	* excluded Anatolia from AI flip
+	* slight tech speed decrease
+	* enabled Parthian barbarians again
+	* more Greek conquerors if both civs are AI controlled
+* Russia balance:
+	* Ivan less willing to trade techs
+	* Tatar/Nogai barbarian spawns in the European steppe and north of the Caspian Sea unless Mongols control Russia
+	* Sibir barbarian spawns in Siberia when settlement has begun
+	* Kazakh/Uzbek barbarian spawns in Central Asia when settlement has begun
+	* more plains in northern European Russia, slightly more grassland around Moscow
+	* removed Clams from the Black Sea
+	* removed Gems from the Arctic coast
+	* reduced unit production modifier
+	* starts with fewer techs in 1700 AD
+* Iran balance:
+	* also starts with Optics, Drama and Patronage
+	* AI receives additional units on spawn
+* Congo fixes: can build cities on Marsh again, Marsh/Rainforest/Jungle excluded from culture spread penalties
+* religion specific names for all religious buildings
+* new art for the Buddhist, Confucian and Taoist shrines (credit to History Rewritten)
+* new art for Pagan Temple, Glassmaker and Great Cothon
+* new Arabian UB: Alchemist (replaces Forge): +1 scientist slot, no unhealthiness (credit to merijn_v1)
+* improved distance calculation for culture spread order to do actual pathfinding (e.g. Pataliputra will spread to Tibet last)
+* added more Indonesian GP names (credit to BenZL42)
+* added more dynamic names (credit to the ECDN team)
+* removed some unverified or mythological GP names
+* fixed a bug where transports finished their turn after unloading cargo
+* new unique personalities for Trudeau, Ataturk and Meiji (credit to Sgt. Bears)
+* new diplo texts for Afonso and Trudeau (credit to Sgt. Bears)
+* Roman building goal is checked when a building is built (credit to merijn_v1)
+* included the History Rewritten civilopedia adapted to DoC (credit to History Rewritten)
+* fixed a bug in the culture coverage initialization
+* added Chinese Qiqihar to the 1700 AD scenario
+* Sana'a is independent in the 1700 AD scenario
+* culture coverage is properly updated when a city changes owner
+* Trafalgar Square requires a Lighthouse now
+* Conquerors in the New World come with missionaries
+* Changes for post war congresses:
+	* global wars are now triggered depending on how many major powers are involved (and there need to be at least two on each side)
+	* neutral powers can participate, but not make claims
+	* losing powers are allowed to reclaim cities lost during the war

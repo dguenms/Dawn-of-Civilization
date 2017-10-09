@@ -8527,7 +8527,7 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_MATHEMATICS</SoundID>
-			<Filename>Sounds/Tech/TECH_MATHEMATICS</Filename>
+			<Filename>Sounds/Tech/Tech_Mathematics</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
@@ -8632,7 +8632,7 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_MEDICINE</SoundID>
-			<Filename>Sounds/Tech/TECH_MEDICINE</Filename>
+			<Filename>Sounds/Tech/Tech_Medicine</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
@@ -8646,7 +8646,7 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_ENGINE</SoundID>
-			<Filename>Sounds/Tech/TECH_ENGINE</Filename>
+			<Filename>Sounds/Tech/Tech_Combustion</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
@@ -8667,7 +8667,7 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_SYNTHETICS</SoundID>
-			<Filename>Sounds/Tech/TECH_SYNTHETICS</Filename>
+			<Filename>Sounds/Tech/Tech_Plastics</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

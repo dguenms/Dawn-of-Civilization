@@ -10,6 +10,14 @@
 		<English>Andalusian Peoples</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_MOROCCO_SHORT_DESC</Tag>
+		<English>Morocco</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MOROCCO_ADJECTIVE</Tag>
+		<English>Moroccan</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_MOORS_DEFAULT</Tag>
 		<English>Kingdom of %s1</English>
 		<French>

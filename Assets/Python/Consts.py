@@ -1266,10 +1266,10 @@ tAIStopBirthThreshold = (
 tResurrectionProb = (
 25, #Egypt
 100, #China
-30, #Babylonia
+40, #Babylonia
 0, #Harappa
 60, #Greece
-20, #India
+50, #India
 30, #Carthage
 40, #Polynesia
 70, #Persia

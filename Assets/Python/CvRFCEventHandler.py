@@ -29,7 +29,6 @@ import Areas
 import Civilizations
 import AIParameters
 import GreatPeople as gp
-import TechLog as techlog
 
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
@@ -107,7 +106,6 @@ class CvRFCEventHandler:
 		
 		vic.setup()
 		cong.setup()
-		techlog.setup()
 		
 		# Leoreth: set DLL core values
 		Modifiers.init()
@@ -201,7 +199,7 @@ class CvRFCEventHandler:
 					city.setOccupationTimer(0)
 					
 			# Statue of Zeus effect: no city resistance on conquest
-			if gc.getPlayer(iPlayer).countNumBuildings(iStatueOfZeus) > 0:
+			if gc.getPlayer(iPlayer).isHasBuildingEffect(iStatueOfZeus):
 				city.setOccupationTimer(0)
 				
 			# Byzantium reduced to four cities: core shrinks to Constantinople
@@ -376,7 +374,7 @@ class CvRFCEventHandler:
 		sta.onCombatResult(iWinningPlayer, iLosingPlayer, iUnitPower)
 		
 		# capture slaves
-		if iWinningPlayer == iAztecs:
+		if iWinningPlayer == iAztecs and not pAztecs.isReborn():
 			utils.captureUnit(pLosingUnit, pWinningUnit, iAztecSlave, 35)
 			
 		elif iLosingPlayer == iNative:
@@ -403,7 +401,6 @@ class CvRFCEventHandler:
 		vic.onReligionFounded(iFounder, iReligion)
 		self.rel.onReligionFounded(iReligion, iFounder)
 		dc.onReligionFounded(iFounder)
-		techlog.onReligionFounded(iFounder, iReligion)
 
 	def onVassalState(self, argsList):
 		'Vassal State'
@@ -593,7 +590,6 @@ class CvRFCEventHandler:
 		
 		sta.checkTurn(iGameTurn)
 		cong.checkTurn(iGameTurn)
-		techlog.checkTurn(iGameTurn)
 		
 		if iGameTurn % 10 == 0:
 			dc.checkTurn(iGameTurn)
@@ -657,14 +653,14 @@ class CvRFCEventHandler:
 		AIParameters.onTechAcquired(iPlayer, iTech)
 
 		if gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]):
-			techlog.onTechAcquired(iPlayer, iTech)
 			vic.onTechAcquired(iPlayer, iTech)
-			cnm.onTechAcquired(argsList[2])
+			cnm.onTechAcquired(iPlayer)
+			dc.onTechAcquired(iPlayer, iTech)
 
 		if gc.getPlayer(iPlayer).isAlive() and gc.getGame().getGameTurn() > getTurnForYear(tBirth[iPlayer]) and iPlayer < iNumPlayers:
-			self.rel.onTechAcquired(argsList[0], argsList[2])
+			self.rel.onTechAcquired(iTech, iPlayer)
 			if (gc.getGame().getGameTurn() > getTurnForYear(1700)):
-				self.aiw.forgetMemory(argsList[0], argsList[2])
+				self.aiw.forgetMemory(iTech, iPlayer)
 
 		if iTech == iExploration:
 			if iPlayer in [iSpain, iFrance, iEngland, iGermany, iVikings, iNetherlands, iPortugal]:
@@ -675,10 +671,10 @@ class CvRFCEventHandler:
 				gc.getMap().plot(49, 62).setTerrainType(iCoast, True, True)
 
 		elif iTech == iMicrobiology:
-			self.pla.onTechAcquired(argsList[0], argsList[2])
+			self.pla.onTechAcquired(iTech, iPlayer)
 
 		elif iTech == iRailroad:
-			self.rnf.onRailroadDiscovered(argsList[2])
+			self.rnf.onRailroadDiscovered(iPlayer)
 			
 		if iTech in [iExploration, iFirearms]:
 			teamPlayer = gc.getTeam(iPlayer)
@@ -734,7 +730,7 @@ class CvRFCEventHandler:
 		pass
 
 	def onLoadGame(self, argsList):
-		techlog.setup()
+		pass
 		
 	def onChangeWar(self, argsList):
 		bWar, iTeam, iOtherTeam = argsList

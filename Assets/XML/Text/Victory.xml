@@ -443,7 +443,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_COL1_TITLE</Tag>
-		<English>The Boliver Doctrine</English>
+		<English>The Bolivar Doctrine</English>
 		<German>Die Bolivar-Doktrin</German>
 	</TEXT>
 	<TEXT>
@@ -598,13 +598,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1_TITLE</Tag>
-		<English>Prester John</English>
-		<German>Presbyter Johannes</German>
+		<English>Nine Saints</English>
+		<German>Neun Heilige</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH1</Tag>
-		<English>Found Orthodoxy</English>
-		<German>Begr&#252;nden Sie die Orthodoxie</German>
+		<English>Settle a Great Prophet in two Orthodox cities by 500 AD</English>
+		<German>Siedeln Sie bis zum Jahr 500 n. Chr. einen Großen Propheten in zwei orthodoxen Städten an</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_ETH2_TITLE</Tag>
@@ -3156,5 +3156,9 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NUM_SMOKEHOUSES</Tag>
 		<English>Smokehouses: %d1 / %d2</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_ORTHODOX_CITIES_WITH_GREAT_PROPHETS</Tag>
+		<English>Orthodox cities with Great Prophets: %d1 / %d2</English>
 	</TEXT>
 </Civ4GameText>

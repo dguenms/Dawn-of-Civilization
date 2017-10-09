@@ -450,6 +450,8 @@ dNameChanges = {
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_SHORT_DESC",
 	iMali : "TXT_KEY_CIV_SONGHAI_SHORT_DESC",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
+	iVikings : "TXT_KEY_CIV_SWEDEN_SHORT_DESC",
+	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 }
 
 dAdjectiveChanges = {
@@ -459,6 +461,8 @@ dAdjectiveChanges = {
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_ADJECTIVE",
 	iMali : "TXT_KEY_CIV_SONGHAI_ADJECTIVE",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
+	iVikings : "TXT_KEY_CIV_SWEDEN_ADJECTIVE",
+	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 }
 
 dCapitals = {
@@ -560,6 +564,10 @@ def setup():
 		
 	elif iScenario == i1700AD:
 		data.players[iEgypt].iResurrections += 1
+		
+		for iPlayer in [iVikings, iMoors]:
+			nameChange(iPlayer)
+			adjectiveChange(iPlayer)
 	
 	for iPlayer in range(iNumPlayers):
 		setDesc(iPlayer, peoplesName(iPlayer))
@@ -574,8 +582,8 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 	data.players[iPlayer].iResurrections += 1
 	
 	if iPlayer in lRespawnNameChanges:
-		setShort(iPlayer, text(dNameChanges[iPlayer]))
-		setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
+		nameChange(iPlayer)
+		adjectiveChange(iPlayer)
 		
 	setDesc(iPlayer, defaultTitle(iPlayer))
 	checkName(iPlayer)
@@ -584,16 +592,16 @@ def onCivRespawn(iPlayer, tOriginalOwners):
 def onVassalState(iVassal):
 	if iVassal in lVassalNameChanges:
 		data.players[iVassal].iResurrections += 1
-		setShort(iVassal, text(dNameChanges[iVassal]))
-		setAdjective(iVassal, text(dAdjectiveChanges[iVassal]))
+		nameChange(iVassal)
+		adjectiveChange(iVassal)
 		
 	checkName(iVassal)
 	
 def onPlayerChangeStateReligion(iPlayer, iReligion):
 	if iPlayer in lChristianityNameChanges and iReligion in lChristianity:
 		data.players[iPlayer].iResurrections += 1
-		setShort(iPlayer, text(dNameChanges[iPlayer]))
-		setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
+		nameChange(iPlayer)
+		adjectiveChange(iPlayer)
 		
 	checkName(iPlayer)
 	
@@ -611,16 +619,70 @@ def onCityRazed(iOwner):
 def onCityBuilt(iOwner):
 	checkName(iOwner)
 	
+def onTechAcquired(iPlayer, iTech):
+	iEra = gc.getTechInfo(iTech).getEra()
+	
+	if iPlayer == iVikings:
+		if iEra == iRenaissance:
+			if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
+				setShort(iVikings, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
+				setAdjective(iVikings, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
+			
+			elif isCapital(iPlayer, ["Oslo", "Nidaros"]):
+				setShort(iVikings, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
+				setAdjective(iVikings, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
+			
+			elif isCapital(iPlayer, ["Roskilde"]):
+				setShort(iVikings, text("TXT_KEY_CIV_DENMARK_SHORT_DESC"))
+				setAdjective(iVikings, text("TXT_KEY_CIV_DENMARK_ADJECTIVE"))
+				
+	elif iPlayer == iMoors:
+		if iEra == iIndustrial:
+			capital = gc.getPlayer(iPlayer).getCapitalCity()
+			
+			if capital and capital.getRegionID() != rIberia:
+				nameChange(iPlayer)
+				adjectiveChange(iPlayer)
+			else:
+				setShort(iPlayer, short(iPlayer))
+				setAdjective(iPlayer, civAdjective(iPlayer))
+				
+	checkName(iPlayer)
+	
 def onPalaceMoved(iPlayer):
 	capital = gc.getPlayer(iPlayer).getCapitalCity()
+	iEra = gc.getPlayer(iPlayer).getCurrentEra()
 
 	if iPlayer == iPhoenicia:
 		if capital.getRegionID() not in [rMesopotamia, rAnatolia]:
-			setShort(iPlayer, text(dNameChanges[iPlayer]))
-			setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
+			nameChange(iPlayer)
+			adjectiveChange(iPlayer)
 		else:
 			setShort(iPlayer, short(iPlayer))
 			setAdjective(iPlayer, civAdjective(iPlayer))
+			
+	elif iPlayer == iVikings:
+		if iEra >= iRenaissance:
+			if isCapital(iPlayer, ["Stockholm", "Kalmar"]):
+				setShort(iVikings, text("TXT_KEY_CIV_SWEDEN_SHORT_DESC"))
+				setAdjective(iVikings, text("TXT_KEY_CIV_SWEDEN_ADJECTIVE"))
+			
+			elif isCapital(iPlayer, ["Oslo", "Nidaros"]):
+				setShort(iVikings, text("TXT_KEY_CIV_NORWAY_SHORT_DESC"))
+				setAdjective(iVikings, text("TXT_KEY_CIV_NORWAY_ADJECTIVE"))
+			
+			elif isCapital(iPlayer, ["Roskilde"]):
+				setShort(iVikings, text("TXT_KEY_CIV_DENMARK_SHORT_DESC"))
+				setAdjective(iVikings, text("TXT_KEY_CIV_DENMARK_ADJECTIVE"))
+				
+	elif iPlayer == iMoors:
+		if iEra >= iIndustrial:
+			if capital.getRegionID() != rIberia:
+				nameChange(iPlayer)
+				adjectiveChange(iPlayer)
+			else:
+				setShort(iPlayer, short(iPlayer))
+				setAdjective(iPlayer, civAdjective(iPlayer))
 			
 	checkName(iPlayer)
 	
@@ -700,10 +762,12 @@ def capitalName(iPlayer):
 	return short(iPlayer)
 	
 def nameChange(iPlayer):
-	setShort(iPlayer, text(dNameChanges[iPlayer]))
+	if iPlayer in dNameChanges:
+		setShort(iPlayer, text(dNameChanges[iPlayer]))
 	
 def adjectiveChange(iPlayer):
-	setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
+	if iPlayer in dAdjectiveChanges:
+		setAdjective(iPlayer, text(dAdjectiveChanges[iPlayer]))
 	
 def getColumn(iPlayer):
 	lTechs = [gc.getTechInfo(iTech).getGridX() for iTech in range(iNumTechs) if gc.getTeam(iPlayer).isHasTech(iTech)]
@@ -953,7 +1017,7 @@ def specificName(iPlayer):
 			
 	elif iPlayer == iVikings:
 		if bEmpire:
-			if not isCapital(iPlayer, ["Stockholm"]) or iEra != iRenaissance:
+			if not isCapital(iPlayer, ["Stockholm", "Kalmar"]) or iEra > iRenaissance:
 				return "TXT_KEY_CIV_VIKINGS_DENMARK_NORWAY"
 	
 		if isCapital(iPlayer, ["Oslo", "Nidaros"]):
@@ -1914,7 +1978,7 @@ def leader(iPlayer):
 		if capital.getRegionID() not in [rMesopotamia, rAnatolia]: return iHannibal
 		
 	elif iPlayer == iRome:
-		if not bEmpire and not bCityStates: return iAugustus
+		if bEmpire or not bCityStates: return iAugustus
 		
 	elif iPlayer == iKorea:		
 		if iEra >= iRenaissance: return iSejong

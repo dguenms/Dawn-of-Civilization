@@ -17441,6 +17441,11 @@ int CvUnitAI::AI_nukeValue(CvCity* pCity)
 	PROFILE_FUNC();
 	FAssertMsg(pCity != NULL, "City is not assigned a valid value");
 
+	if (GET_PLAYER(pCity->getOwnerINLINE()).isMinorCiv() || GET_PLAYER(pCity->getOwnerINLINE()).isBarbarian())
+	{
+		return 0;
+	}
+
 	for (int iI = 0; iI < MAX_TEAMS; iI++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iI);

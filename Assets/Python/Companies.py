@@ -147,9 +147,9 @@ class Companies:
 			if iOwner == iNetherlands:
 				iValue += 2
 		elif iCompany == iSilkRoute:
-			if iOwner == iMongolia:
+			if city.getRegionID() in [rCentralAsia, rPersia]:
 				iValue += 2
-			elif iOwner == iChina:
+			elif city.getRegionID() == rChina:
 				iValue -= 2
 		
 		# geographical requirements

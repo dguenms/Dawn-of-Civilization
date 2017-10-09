@@ -11515,6 +11515,11 @@ ReligionTypes CvPlayerAI::AI_bestReligion() const
 					iValue /= 2;
 				}
 			}
+
+			if (iI == JUDAISM && getStateReligion() == NO_RELIGION)
+			{
+				iValue /= 2;
+			}
 			
 			if (iValue > iBestValue)
 			{
@@ -11573,35 +11578,35 @@ int CvPlayerAI::AI_religionValue(ReligionTypes eReligion) const
 		bool bOurHolyCity = pHolyCity->getOwnerINLINE() == getID();
 		bool bOurTeamHolyCity = pHolyCity->getTeam() == getTeam();
 
-		if (bOurHolyCity || bOurTeamHolyCity)
-	{
+		if ((bOurHolyCity || bOurTeamHolyCity) && !GC.getReligionInfo(eReligion).isLocal())
+		{
 			int iCommerceCount = 0;
 
 			for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
-		{
-			if (pHolyCity->getNumActiveBuilding((BuildingTypes)iI) > 0)
 			{
-					for (int iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+				if (pHolyCity->getNumActiveBuilding((BuildingTypes)iI) > 0)
 				{
-					if (GC.getBuildingInfo((BuildingTypes)iI).getGlobalReligionCommerce() == eReligion)
+					for (int iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
 					{
-						iCommerceCount += GC.getReligionInfo(eReligion).getGlobalReligionCommerce((CommerceTypes)iJ) * pHolyCity->getNumActiveBuilding((BuildingTypes)iI);
+						if (GC.getBuildingInfo((BuildingTypes)iI).getGlobalReligionCommerce() == eReligion)
+						{
+							iCommerceCount += GC.getReligionInfo(eReligion).getGlobalReligionCommerce((CommerceTypes)iJ) * pHolyCity->getNumActiveBuilding((BuildingTypes)iI);
+						}
 					}
 				}
 			}
-		}
 
 			if (bOurHolyCity)
-		{
-			iValue *= (3 + iCommerceCount);
-			iValue /= 2;
-		}
+			{
+				iValue *= (3 + iCommerceCount);
+				iValue /= 2;
+			}
 			else if (bOurTeamHolyCity)
-		{
-			iValue *= (4 + iCommerceCount);
-			iValue /= 3;
+			{
+				iValue *= (4 + iCommerceCount);
+				iValue /= 3;
+			}
 		}
-	}
 	}
 
 	return iValue;

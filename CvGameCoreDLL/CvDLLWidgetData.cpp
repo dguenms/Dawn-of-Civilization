@@ -2872,19 +2872,19 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 
 				if (NO_IMPROVEMENT != eImprovement)
 				{
-					int iHappy = GC.getImprovementInfo(eImprovement).getHappiness();
+					int iHappinessPercent = GC.getImprovementInfo(eImprovement).getHappinessPercent();
 
-					if (iHappy != 0)
+					if (iHappinessPercent != 0)
 					{
-						szTempBuffer.Format(L", +%d%c", abs(iHappy), (iHappy > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
+						szTempBuffer.Format(L", +%.2f%c", 0.01f * abs(iHappinessPercent), (iHappinessPercent > 0 ? gDLL->getSymbolID(HAPPY_CHAR) : gDLL->getSymbolID(UNHAPPY_CHAR)));
 						szBuffer.append(szTempBuffer);
 					}
 
-					int iHealth = GC.getImprovementInfo(eImprovement).getHealth();
+					int iHealthPercent = GC.getImprovementInfo(eImprovement).getHealthPercent();
 
-					if (iHealth != 0)
+					if (iHealthPercent != 0)
 					{
-						szTempBuffer.Format(L", +%d%c", abs(iHealth), (iHealth > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)));
+						szTempBuffer.Format(L", +%.2f%c", 0.01f * abs(iHealthPercent), (iHealthPercent > 0 ? gDLL->getSymbolID(HEALTHY_CHAR) : gDLL->getSymbolID(UNHEALTHY_CHAR)));
 						szBuffer.append(szTempBuffer);
 					}
 				}

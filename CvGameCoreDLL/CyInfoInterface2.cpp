@@ -293,8 +293,8 @@ void CyInfoPythonInterface2()
 /* original bts code
 		.def("getHappiness", &CvImprovementInfo::getDefenseModifier, "int ()")
 */
-		.def("getHappiness", &CvImprovementInfo::getHappiness, "int ()")
-		.def("getHealth", &CvImprovementInfo::getHealth, "int ()")
+		.def("getHappinessPercent", &CvImprovementInfo::getHappinessPercent, "int ()")
+		.def("getHealthPercent", &CvImprovementInfo::getHealthPercent, "int ()")
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/

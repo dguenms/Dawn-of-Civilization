@@ -6,6 +6,7 @@ import WBPlayerScreen
 import CvPlatyBuilderScreen
 import CvEventManager
 import WBTradeScreen
+import DynamicCivs as dc
 gc = CyGlobalContext()
 
 iChange = 1
@@ -430,6 +431,8 @@ class WBDiplomacyScreen:
 				CvEventManager.CvEventManager().onVassalState([iTeam1, iTeam2, True, True])
 			else:
 				CvEventManager.CvEventManager().onVassalState([iTeam2, iTeam1, True, iNewStatus == 0])
+		dc.checkName(gc.getTeam(iTeam1).getLeaderID())
+		dc.checkName(gc.getTeam(iTeam2).getLeaderID())
 
 	def editContact(self, iTeam):
 		if not bRemove:

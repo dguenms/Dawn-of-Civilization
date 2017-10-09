@@ -355,6 +355,7 @@ class RiseAndFall:
 		for (x, y) in utils.getWorldPlotsList():
 			plot = gc.getMap().plot(x, y)
 			if plot.getOwner() != -1:
+				plot.changeCulture(plot.getOwner(), 100, True)
 				utils.convertPlotCulture(plot, plot.getOwner(), 100, True)
 					
 		for x, y in [(48, 45), (50, 44), (50, 43), (50, 42), (49, 40)]:
@@ -1119,7 +1120,7 @@ class RiseAndFall:
 			pAztecs.setCivics(iCivicsTerritory, iNationhood)
 		elif iCiv == iMaya:
 			pMaya.setCivics(iCivicsGovernment, iDespotism)
-			pMaya.setCivics(iCivicsLegitimacy, iIdeology)
+			pMaya.setCivics(iCivicsLegitimacy, iConstitution)
 			pMaya.setCivics(iCivicsSociety, iIndividualism)
 			pMaya.setCivics(iCivicsEconomy, iRegulatedTrade)
 			pMaya.setCivics(iCivicsReligion, iClergy)
@@ -2655,9 +2656,9 @@ class RiseAndFall:
 				utils.makeUnit(iWorker, iCiv, tPlot, 1) #there is no carthaginian city in Iberia and Portugal may found 2 cities otherwise (a settler is too much)
 		elif iCiv == iFrance:
 			utils.createSettlers(iCiv, 3)
-			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 4)
+			utils.makeUnitAI(iCrossbowman, iCiv, tPlot, UnitAITypes.UNITAI_CITY_DEFENSE, 3)
+			utils.makeUnit(iHeavySpearman, iCiv, tPlot, 2)
 			utils.makeUnit(iSwordsman, iCiv, tPlot, 2)
-			utils.makeUnit(iLightSwordsman, iCiv, tPlot, 3)
 			utils.createMissionaries(iCiv, 1)
 		elif iCiv == iEngland:
 			utils.createSettlers(iCiv, 3)

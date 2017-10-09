@@ -1,0 +1,493 @@
+TABLE OF CONTENTS
+* Major Features
+* Game Rules
+* Technologies
+* Buildings
+* Unique Buildings
+* Wonders
+* Units
+* Civics
+* Specialists
+* Religion
+* Civilizations
+* Leaders
+* Unique Powers
+* Unique Historical Victories
+* Unique Religious Victories
+* Resources
+* Improvements
+* Events
+* Stability
+* Balance
+* Artificial Intelligence
+* Scenarios
+* Historical Immersion
+* Interface
+* Bugfixes
+* Performance
+
+MAJOR FEATURES
+* Completely new tech tree covering 141 technologies over 7 eras (based on and inspired by History Rewritten), see Technologies section for details
+* Included 21 new buildings and changed 16 existing ones, see Buildings section for details
+* Included 10 new land, 5 new naval and 2 new air units, see Units section for details
+* Major changes and redesign of many existing units, see Units section for details
+* Completely new selection of 42 civics from 6 categories, see Civics section for details
+* Instead of having no religion, all civs start out with a pagan religion unique to them, see Religion section for details
+* New espionage advisor (merged in from History Rewritten)
+
+GAME RULES
+* Units are moved to a nearby tile when an independent city spawns
+* Wonders only grant free buildings to cities in a valid building location
+* Non-state religions cause unhappiness
+* Civs with state religion dislike civs without a state religion as if they had a different religion
+* When upgraded, units lose all their promotions and regain the expended experience
+* Some experience is lost on unit upgrade depending on the combat strength difference between the units
+* City unrest after conquest depends on culture level instead of population
+* Happiness from military units stationed in a city is limited to half the city size
+* Units in cities can only be damaged as much as the current city defense modifier
+* Entering enemy waters consumes all remaining movement points
+* Unhealthiness from power is applied for every building that consumes power
+* Enemy workers cannot be captured unless enabled by a civic
+* Happiness and health change from improvements only apply when being worked
+* The number of National Wonders and Great Wonders in a city is limited by its current culture level
+* It is no longer possible to create slaves in cities, instead the chances of capturing them from Native units have been increased
+
+TECHNOLOGIES
+* Completely new tech tree covering 141 technologies over 7 eras
+* The eras are: Ancient, Classical, Medieval, Renaissance, Industrial, Global, Digital
+* Every era except Digital includes 3 tiers of techs with 7 eras each (21 techs per era)
+* Complete list of technologies:
+    * Early Ancient: Tanning, Mining, Pottery, Pastoralism, Agriculture, Mythology, Sailing
+    * Middle Ancient: Smelting, Masonry, Leverage, Property, Ceremony, Divination, Seafaring
+    * Late Ancient: Alloys, Construction, Riding, Arithmetics, Writing, Calendar, Shipbuilding
+    * Early Classical: Bloomery, Cement, Mathematics, Contract, Literature, Priesthood, Navigation
+    * Middle Classical: Generalship, Engineering, Aesthetics, Currency, Law, Philosophy, Medicine
+    * Late Classical: Nobility, Steel, Architecture, Artisanry, Politics, Scholarship, Ethics
+    * Early Medieval: Feudalism, Fortification, Machinery, Alchemy, Guilds, Civil Service, Theology
+    * Middle Medieval: Charter, Crop Rotation, Paper, Compass, Patronage, Education, Clergy
+    * Late Medieval: Gunpowder, Companies, Finance, Cartography, Humanities, Printing, Judiciary
+    * Early Renaissance: Firearms, Logistics, Exploration, Optics, Academia, Statecraft, Heritage
+    * Middle Renaissance: Combined Arms, Economics, Geography, Scientific Method, Urban Planning, Civil Liberties, Horticulture
+    * Late Renaissance: Replaceable Parts, Hydraulics, Physics, Geology, Measurement, Sociology, Social Contract
+    * Early Industrial: Machine Tools, Thermodynamics, Metallurgy, Chemistry, Biology, Representation, Nationalism
+    * Middle Industrial: Ballistics, Engine, Railroad, Electricity, Refrigeration, Labour Unions, Journalism
+    * Late Industrial: Pneumatics, Assembly Line, Refining, Film, Microbiology, Consumerism, Civil Rights
+    * Early Global: Infrastructure, Flight, Synthetics, Radio, Psychology, Macroeconomics, Social Services
+    * Middle Global: Aviation, Rocketry, Fission, Electronics, Television, Power Projection, Globalism
+    * Late Global: Radar, Spaceflight, Nuclear Power, Laser, Computers, Tourism, Ecology
+    * Early Digital: Aerodynamics, Satellites, Superconductors, Robotics, Telecommunications, Renewable Energy, Genetics
+    * Middle Digital: Supermaterials, Fusion, Nanotechnology, Automation, Biotechnology
+    * Late Digital: Unified Theory, Artificial Intelligence, Transhumanism
+
+BUILDINGS
+* 21 new buildings:
+    * Monument (Ceremony): +2 culture
+    * Weaver (Aesthetics): +25% culture, +1 happiness from Cotton, Silk, Dye
+    * Bath (Medicine): +2 health, +2 culture
+    * Pharmacy (Alchemy): +1 health from Wine, Banana, Whale, +1 scientist slot
+    * Coffeehouse (Patronage): +1 happiness from Sugar, Tea, Coffee, Tobacco
+    * Post Office (Paper): +1 trade route, +1 statesman slot
+    * Wharf (Compass): +50% trade route yield, +1 health from Fish, Clam, Crab
+    * Constabulary (Judiciary): -25% war weariness, +25% espionage
+    * Civic Square (Statecraft): +25% great people birth, +1 statesman slot
+    * Sewer (Urban Planning): +2 health
+    * Star Fort (Urban Planning): -50% bombard damage
+    * Estate (Horticulture): +1 artist slot, +1 statesman slot, +1 happiness per 20% culture rate
+    * Park (Sociology): +1 happiness for Town
+    * Distillery (Chemistry): +10% gold with Sugar, Wine, Banana, -1 health from Sugar, Wine, Banana, +1 merchant slot
+    * Railway Station (Railroad): +25% gold, +1 engineer slot, +1 unhealth from Coal, Oil
+    * News Press (Journalism): +25% great people birth, +25% culture, +1 statesman slot
+    * Department Store (Synthetics): +25% gold with power, +1 merchant slot
+    * Cinema (Film): +1 happiness, +25% culture, +1 happiness from Movies, +1 artist slot
+    * Electrical Grid (Social Services): +10% commerce with power
+    * Hotel (Tourism): +20% trade route yield per culture level
+    * Solar Plant (Renewable Energy): Provides power, maximum latitude 45 degrees
+* 17 existing buildings have been changed:
+    * Granary (Pottery): retains 25% food after growth, +1 health with Wheat, Rice, Corn
+    * Pagan Temple (Mythology): +1 culture, +1 priest slot
+    * Aqueduct (Cement): retains 25% food after growth
+    * Lighthouse (Navigation): +1 trade route
+    * Market (Currency): +25% gold, +1 happiness with Fur, Spices, Ivory, Incense
+    * Jail (Law): +2 espionage, -25% maintenance, +25% espionage
+    * Castle (Architecture): +1 culture, +50% city defense, +4 Siege experience
+    * Bank (Finance): +25% gold, +1 merchant slot
+    * Courthouse (Social Contract): -25% maintenance, +1 statesman slot
+    * Laboratory (Electricity): +25% research with power
+    * Industrial Park (Assembly Line): +15% production with Aluminum, Oil, +1 unhealth, +1 unhealth from Aluminum, Oil, +2 engineer slots
+    * Hospital (Microbiology): +3 health, -25% war weariness
+    * Supermarket (Consumerism): +10% food with power
+    * Public Transport (Infrastructure): +1 health from Village, Town
+    * Broadcast Tower (Radio): +25% culture with power
+    * Nuclear Plant (Nuclear Energy): provides power with Uranium, +1 scientist slot, required to build ICBMs
+    * Recycling Center (Renewable Energy): +1 health from Workshop
+* Redesign of buildings constructed by Great People:
+    * Academy (Great Scientist, Philosophy): +50% research
+    * Stock Exchange (Great Merchant, Economics): +50% wealth
+    * Manufactory (Great Engineer, Guilds): +25% production, +50% trade route yield
+    * Museum (Great Artist, Heritage): +20% great people birth per culture level
+    * Armoury (Great General, Commune): +50% unit production
+    * Administrative Centre (Great Statesman, Politics): counts as government centre
+    * Secret Service (Great Spy, Social Contract): +50% espionage, +3 spy experience
+* Grocers have been removed from the game
+* New building art for Orthodox, Catholic and Protestant religious buildings
+* Stable, Ger and Charreada Arena also provide Light Cavalry experience
+* Removed nuclear meltdown chance for Nuclear Plants
+
+UNIQUE BUILDINGS
+* Existing unique buildings now replace different buildings:
+    * Egyptian Obelisk: replaces Monument
+    * Indian Edict: replaces Monument
+    * Polynesian Mala'e: replaces Monument
+    * Ethiopian Stele: replaces Monument
+    * Arab Alchemist: replaces Pharmacy
+    * French Salon: replaces Coffeehouse
+    * Holy Roman Rathaus: replaces Civic Square
+    * Polish Sejmik: replaces Civic Square
+    * Incan Tambo: replaces Post Office
+    * Aztec Sacrificial Altar: replaces Jail
+    * Mughal Mausoleum: replaces Estate
+    * Ottoman Hammam: replaces Bath
+    * Congolese Mbwadi: replaces Weaver
+    * American Mall: replaces Department Store
+    * Colombian Hacienda: replaces Estate
+    * Brazilian Fazenda: replaces Estate
+    * Canadian Royal Mounted Police: replaces Constabulary
+* New building art for:
+    * Moorish Noria
+    * Colombian Hacienda
+* New Babylonian UB: Edubba (Library): -50% cost
+* The Harappan Bath has been renamed Reservoir, replacing the generic Bath building
+* The German Assembly Plant no longer increases military production and instead provides additional experience for Armoured units
+
+NATIONAL WONDERS
+* Redesign of all National Wonders in the game:
+    * National Theatre (Humanities, Theatre): +2 happiness per culture level, +1 happiness per 10% culture rate
+    * Trading Company (Economics, colony): +2 trade routes, +1 health from Spices, +1 happiness from Sugar, Coffee, Tea, Tobacco
+    * Central Bank (Macroeconomics, Bank): +100% wealth, +3 merchant slots
+    * National College (Scientific Method, University): +100% research, +3 scientist slots
+    * National Gallery (Civil Liberties): +100% culture, +3 artist slots
+    * National Monument (Heritage, Monument): +50% great people birth rate, +3 statesman slots
+    * Ironworks (Metallurgy, Forge): +50% production with Iron, +50% production with Coal, +3 engineer slots
+    * Military Academy (Sociology, Barracks): free Leadership promotion
+    * National Park (Civil Rights): +8 health, +1 free specialist from Nature Reserve, Marine Reserve
+    * Red Cross (Microbiology, Hospital): Free Medic I promotion 
+
+WONDERS
+* Classical wonders require having no state religion and no religion in the city
+* Changed wonder effects:
+    * The Great Sphinx (Mythology): food is added to production when building wonders
+    * The Pyramids (Masonry): cities continue to grow when using food for production
+    * The Oracle (Divination): +2 free techs
+    * Ishtar Gate (Construction): +1 slot for every specialist
+    * Hanging Gardens (Calendar): no bad health from Floodplains
+    * The Colossus (Cement): +2 commerce on water tiles (its city only)
+    * The Statue of Zeus (Cement): no city resistance on conquest
+    * Parthenon (Mathematics): +50% great people birth rate in all cities
+    * The Great Lighthouse (Navigation): +2 trade routes, free Lighthouse in all cities
+    * Borobudur (Artisanry): +1 production for Priests, +3 priest slots
+    * La Mezquita (Scholarship): +2 free specialists
+    * Wat Preah Pisnulok (Civil Service): +1 food for Priests, +1 population in all cities
+    * Dome of the Rock (Theology): doubles the revenue limit for all shrines
+    * Porcelain Tower (Printing): No open borders required for trade, +2 free merchants
+    * Red Fort (Logistics): +100% enemy war weariness
+    * Brandenburg Gate (Nationalism): Great General threshold is reset whenever a military commander dies in combat
+    * Westminster Palace (Journalism): free Courthouse in all cities
+    * CERN Research Complex (Fission): free Laboratory in all cities
+    * Itaipu Dam (Electronics): renamed from Three Gorges Dam
+* Better building art for:
+    * The Great Sphinx
+    * Hanging Gardens
+    * Wat Preah Pisnulok
+    * Spiral Minaret
+    * Red Fort
+    * Pentagon
+
+UNITS
+* 11 new land units
+    * Militia (none): Strength 2, +25% city defense
+    * Light Swordsman (Alloys): Strength 4, +25% attack against Spearman
+    * Horseman (Riding): Strength 5, 20% retreat chance, +25% open terrain attack, +25% against siege units
+    * Skirmisher (Contract, Tanning): Strength 4, 1 first strike, 50% retreat chance, collateral damage against 2 units (max. 25%), +25% hills attack
+    * Heavy Spearman (Civil Service): Strength 6, +100% against Heavy Cavalry
+    * Arquebusier (Firearms): Strength 9
+    * Pistolier (Firearms): Strength 8, 25% retreat chance, +25% open terrain strength
+    * Dragoon (Biology): Strength 14, -25% city strength
+    * Hussar (Nationalism): Strength 10, 30% retreat chance, +25% open terrain strength
+    * Labourer (Labour Unions): +50% work rate, can build Hamlets
+    * Howitzer (Flight): Strength 15, 75% retreat chance, collateral damage against 7 units (max. 70%), +25% city attack, 16% bombard rate
+* 5 new naval units:
+    * Heavy Galley (Alchemy): Strength 5, 50% retreat chance, +25% coast attack
+    * Cog (Guilds): Strength 5, 25% retreat chance, 2 cargo
+    * Galleass (Gunpowder): Strength 6, 25% retreat chance, +50% coast strength
+    * Torpedo Boat (Ballistics): Strength 18, 50% retreat chance, +50% coast attack
+    * Cruiser (Engine, Refining): Strength 28, 25% retreat chance, 16% bombard rate
+* 2 new air units:
+    * Biplane (Flight): Strength 12, range 6, 50% interception chance, 8% bombard rate
+    * Nuclear Bomber (Fission): Range 6, can drop a nuclear bomb
+* Changed and rebalanced many existing units:
+    * War Elephant (Generalship): Strength 8, +25% against Heavy Cavalry, -25% against Archers
+    * Knight has been renamed to Lancer
+    * Crossbowman (Machinery): Strength 6, +25% against Melee, +25% city defense, +25% hill defense
+    * Longbowman (Commune): Strength 6, 50% retreat chance, collateral damage against 3 units (max. 50%), +50% hills attack, +25% against Light Cavalry
+    * Pikeman (Companies): Strength 6, +100% against Melee and Heavy Cavalry
+    * Musketman (Replaceable Parts): Strength 12
+    * Grenadier (Chemistry): Strength 10, 50% retreat chance, collateral damage against 3 units (max. 50%), +25% against Rifleman, starts with City Raider I
+    * Artillery (Ballistics): Strength 14, 75% retreat chance, collateral damage against 6 units (max. 60%), 12% bombard rate
+* Changes to Unique Units:
+    * Vulture now replaces Light Swordsman
+    * Greek Hoplite now replaces Spearman
+    * Dog Soldier now replaces Light Swordsman
+    * Numidian Cavalry now replaces Horseman
+    * African War Elephant renamed to Atlas Elephant
+    * Ethiopian Askari now replaces Arquebusier
+    * Asvaka now replaces Horseman
+    * Mayan Holkan now replaces Skirmisher
+    * Tamil Dharani now replaces Heavy Galley
+    * Arabian Camel Archer now replaces Horse Archer
+    * English Redcoat now replaces Musketman
+    * Russian Cossack now replaces Dragoon
+    * Mande Skirmisher renamed to Kelebolo, replacing Skirmisher
+    * Incan Aucac now replaces Swordsman
+    * Ottoman Janissary now replaces Arquebusier
+    * Iranian Qizilbash now replaces Arquebusier
+    * American Minuteman now replaces Musketman
+    * Argentine Grenadier Cavalry now replaces Dragoon
+* Added a unit strength modifier for fighting in open terrain (flat, no features or cities)
+* Split Mounted units in Heavy Cavalry and Light Cavalry
+* Heavy Cavalry units are countered by spear units (Spearman, Heavy Spearman, Pikeman)
+* Light Cavalry units are weaker, have increased open terrain strength and are countered by archers (Archer, Longbowman)
+* Siege units have increased cost and very high retreat chance to make them reusable and less expendable
+* Light naval combat units have a high retreat chance and increased attack/strength on coast tiles
+* Naval transport units have a retreat chance
+* New promotion: Skirmish: +25% against Light Cavalry
+* Renamed Flanking promotions to Disengage
+* New series of promotions: Flanking: additional open terrain attack and defense
+* Gunpowder units have access to City Raider II and III
+
+CIVICS
+* Completely new selection of 42 civics
+* Categories: Government, Legitimacy, Society, Economy, Religion, Territory
+* Starting civic from any category cannot be selected after switching to another one
+* Government:
+    * Chiefdom (low)
+    * Despotism (Property, medium): +1 happiness from Palace, Monument, can hurry using population
+    * Monarchy (Ceremony, medium): +1 happiness per military unit in a city
+    * Republic (Writing, high): +1 food per specialist, -1 food from Farm, Plantation, Cottage, Hamlet, Village, Town, can hurry units with gold
+    * Elective (Politics, low): +2 commerce from Camp, Pasture, +1 commerce from unimproved tiles, double production for Palace
+    * State Party (Social Services, medium): no number of cities maintenance, +3 espionage per specialist
+    * Democracy (Representation, high): +1 free specialist
+* Legitimacy:
+    * Authority (low)
+    * Citizenship (Law, medium): +2 happiness in largest cities, double production for Aqueduct, Library, Forge, Market, Library
+    * Vassalage (Nobility, low): extra units without upkeep, units are produced with food, +1 food +2 commerce from Fort
+    * Meritocracy (Education, medium): +2 food from Paddy Field, +50% unit experience within own borders, +50% research in capital
+    * Centralism (Statecraft, high): +50% production in capital, +50% wealth in capital
+    * Ideology (Journalism, low): +50% great general birth rate, +1 production from Town, +1 happiness from News Press, Broadcasting Tower
+    * Constitution (Social Contract, medium): +100% great people birth rate, double statesman slots
+* Society:
+    * Traditionalism (low)
+    * Slavery (Masonry, low): can capture enemy workers, +1 production from Quarry, +1 commerce from Mine, Plantation, Slave Plantation
+    * Manorialism (Calendar, low): -50% worker cost, +1 production from Pasture, +1 commerce from Orchard, Farm
+    * Caste System (Contract, high): +50% improvement construction speed, +1 food from Plantation
+    * Individualism (Civil Liberties, medium): +2 commerce from Village, Town, +100% improvement upgrade rate
+    * Totalitarianism (Psychology, none): +25% military production, no war weariness, +1 production per unhappy citizen
+    * Egalitarianism (Sociology, high): +2 research per specialist, double slots for artists, scientists and engineers
+* Economy:
+    * Reciprocity (low)
+    * Redistribution (Arithmetics, medium): +25% food in capital, -25% trade route commerce, double production for Granary
+    * Merchant Trade (Currency, low): +1 trade route, +1 happiness from Oasis
+    * Regulated Trade (Guilds, high): +50% commerce in capital, +1 commerce from Workshop, Plantation, Slave Plantation, double production from Customs House
+    * Free Enterprise (Economics, low): +50% corporation commerce, +50% trade route commerce, double merchant slots
+    * Central Planning (Macroeconomics, medium): +1 production per specialist, +1 production from Workshop, Lumbermill, +1 commerce from Mine, Watermill, double production for Factory, Coal Plant
+    * Public Welfare (Labour Unions, high): -50% unhappiness from corporations, +1 commerce per excess happiness, +2 commerce from Windmill, Nature Reserve, Marine Reserve, can hurry buildings using gold
+* Religion:
+    * Animism (low)
+    * Deification (Divination, medium): +25% wonder production, +1 happiness from Pagan Temple, +1 unhappiness with state religion
+    * Clergy (Priesthood, high): +25% building production with state religion
+    * Monasticism (Ethics, low): +50% great people birth with state religion
+    * Theocracy (Doctrine, high): +2 experience with state religion, no non-state religion spread, double priest slots
+    * Tolerance (Civil Liberties, low): +1 happiness per non-state religion, +50% culture in capital, can train missionaries without monasteries
+    * Secularism (Civil Rights, medium): no state religion, +10% research, double production for Hospital, University, Laboratory
+* Territory:
+    * Sovereignty (low)
+    * Conquest (Generalship, high): +2 land unit experience, -50% improvement upgrade speed
+    * Tributaries (Feudalism, low): +1 commerce per vassal city in capital, +50% gold on city conquest
+    * Isolationism (Heritage, medium): no foreign trade routes, +1 free specialist
+    * Colonialism (Geography, medium): can use and trade slaves in colonies, +1 commerce per colony in capital, +4 naval unit experience
+    * Nationhood (Nationalism, medium): can draft 3 units per turn, +2 production from Fort
+    * Multilateralism (Globalism, low): +100% war weariness, +100% trade route yield with defensive pact partners, +25% production from trade routes, +4 air unit experience
+
+SPECIALISTS
+* Statesmen also produce espionage points
+* All base specialists provide +1 GPP after reaching the Refined culture level
+* All base specialists and settled great people provide additional yields and/or commerce depending on their type after reaching the Influential culture level
+
+CIVILIZATIONS
+* Indonesia now spawns in 650 AD
+* Khmer now spawns in 800 AD
+
+LEADERS
+* Renamed Nicholas II to Alexander II
+
+RELIGION
+* New technologies required to found religions
+    * Judaism: Literature
+    * Orthodoxy: Ethics
+    * Catholicism: Doctrine (if not founded by Schism event)
+    * Protestantism: Printing
+    * Islam: Theology
+    * Hindusim: Calendar
+    * Buddhism: Philosophy
+    * Confucianism: Contract
+    * Taoism: Aesthetics
+    * Zoroastrianism: Priesthood
+* Religions can only be founded in their core or historical regions
+* Minor religions do not replace Pagan Temples
+* Civs with no state religion instead have their own pagan religion with its own pagan temple
+* Pagan religions have none of the attributes major religions have
+
+UNIQUE POWERS
+* New Babylonian UP effect: free tech after discovering the first four techs
+* New Mughal UP: The Power of Architecture: Cities receive half the construction cost as culture on building completion
+* New Thai UP effect: +1 commerce per excess happiness
+* New German UP: The Power of Doctrine: Units retain all their experience when upgraded
+
+UNIQUE HISTORICAL VICTORIES
+* First Babylonian goal: be the first to discover Construction, Arithmetics, Writing, Calendar and Contract
+* Second Harappan goal: build three Reservoirs, two Granaries and two Smokehouses by 1500 BC
+* Third Harappan goal: increased required population to 30
+* First Greek goal: be the first to discover Mathematics, Literature, Aesthetics, Philosophy  and Medicine
+* New second Greek goal: build the Parthenon, the Colossus, the Statue of Zeus and the Temple of Artemis by 250 BC
+* Switched order of second and third Greek goal
+* Third Roman goal: be the first to discover Architecture, Politics, Scholarship, Machinery and Civil Service
+* First Ethiopian goal: settle a Great Prophet in two Orthodox cities by 500 AD
+* First Maya goal: discover Writing and Mathematics by 600 AD
+* Third Arab goal: spread Islam to 30% of the cities in the world
+* Second Tibetan goal: spread Buddhism to 25% of the cities in the world
+* Third Spanish goal: spread Catholicism to 30% of the cities in the world and allow no Protestant civilisations in Europe in 1650 AD
+* Second Polish goal: be the first to discover Civil Liberties
+
+UNIQUE RELIGIOUS VICTORIES
+* First Muslim goal: spread Islam to 40% of the cities in the world
+* Second Zoroastrian goal: spread Zoroastrianism to 10% of the cities in the world
+* The second goal of the pagan URV depends on your pagan religion:
+    * Anunnaki: have more wonders in your capital than any other city in the world
+    * Asatru: have five units of level five
+    * Atua: control four Pearls and 50 Ocean tiles
+    * Baalism: have the highest trade income in the world in your capital
+    * Druidism: control 20 unimproved Forest or Marsh tiles
+    * Inti: have more gold than the rest of the world combined
+    * Mazdaism: acquire six Incense resources
+    * Olympianism: control ten wonders that require no state religion
+    * Pesedjet: be the first to create three different types of great person
+    * Rodnovery: acquire seven Fur resources
+    * Shendao: control 25% of the world's population
+    * Shinto: settle three great spies in your capital
+    * Tengri: acquire eight Horse resources
+    * Teotl: sacrifice ten slaves
+    * Vedism: have 100 turns of cities celebrating "We love the King" day
+    * Yoruba: acquire eight Ivory and six Gem resources
+
+RESOURCES
+* New resource: Camel (North Africa, East Africa, Arabia, Mesopotamia, Persia)
+* Sugar provides +1 base health instead of +1 base happiness
+* Whale provides +1 base health instead of +1 base happiness
+
+IMPROVEMENTS
+* Happiness and health change from improvements only apply when being worked
+* New route type: Highway, requires Oil, provides commerce with certain improvements
+* New improvement: Paddy Field: requires Agriculture, +2 food for Rice, +1 food with Chemistry
+* New improvement: Orchard (replaces Winery): requires Pottery, +1 food, +2 commerce for Wine, +2 commerce for Spices, +1 commerce with Crop Rotation, +1 commerce with Highway, slightly reduced build time
+* New improvement: Nature Reserve (replaces Forest Reserve): requires Civil Rights, +1 happiness, -1 production +3 commerce for Ivory, +2 commerce for Fur
+* New improvement: Marine Reserve: requires Ecology, +1 food, +1 commerce, +1 happiness, +2 commerce for Pearl, -1 food +2 commerce for Whale
+* Changes to existing improvements:
+    * Road (Leverage)
+    * Roman Road (Leverage): slightly increased build time
+    * Railroad (Railroad): increased build time
+    * Farm (Agriculture): now +1 food with Chemistry, can be built on Floodplains, no additional food for Rice
+    * Workshop (Artisanry): now +1 production, -1 health, +1 production with Machine Tools, +1 commerce with Highway, slightly increased build time
+    * Lumbermill (Steel): now +1 commerce with Paper, slightly reduced build time
+    * Watermill (Machinery): now +1 production, +1 commerce, +1 commerce with Electricity, slightly reduced build time
+    * Plantation (Calendar): now +1 commerce with Horticulture, +1 commerce with Railroad, slightly increased build time
+    * Mine (Mining): now +1 production with Geology, slightly increased build time
+    * Pasture (Pastoralism): now +1 production with Biology
+    * Well (Refining): -1 health
+    * Village: -1 health
+    * Town: -1 happiness, -1 health
+    * Ocean Fishery (Compass): renamed from High Sea Fishing Boats
+    * Whaling Boats (Navigation)
+    * Camp (Tanning): now +1 commerce with Firearms
+    * Fort (Generalship)
+* Increased time required to remove Forests, Rainforests, Jungles
+* Significantly increased time required to remove Fallout
+* Reduced additional time for building improvements on Floodplains
+
+EVENTS
+* New event: Radiation Leak. Requires Nuclear Plant. Options:
+    * Refit the nuclear plant: costs gold, very low chance of nuclear meltdown
+    * Ignore the problem: causes unhappiness, low chance of nuclear meltdown, event may continue
+    * Abandon nuclear energy: all nuclear plants become obsolete
+
+STABILITY
+* Collapse after overextension triggers collapse to core instead of a complete collapse
+* Some civics have stability effects in combination with particular state religions
+* Civs with Isolationism receive additional stability if they only control cities in their core
+
+BALANCE
+* Increased time that needs to pass until civs can respawn after their collapse
+* Native and Celtic units are not eliminated if they lose their last city
+* Spies without remaining moves cannot use the Byzantine UP
+* Long distance religion spread requires contact
+* Faster religion spread under Secularism
+* The AI receives a free civic switch on respawn
+* Increased culture required to reach Refined to 1000
+* Reduced base power health change to -1
+* Increased chances for religion spread by missionary
+* Yields from city happiness or unhappiness are limited by city size
+* Surrounding culture is converted when trading company cities are founded
+
+ARTIFICIAL INTELLIGENCE
+* AI will emphasise commerce for improvements more
+* AI will attempt to trade techs more often
+* AI will emphasise connecting bonuses and keeping already constructed improvements more
+
+SCENARIOS
+* Teotihuacan spawns in 100 AD
+
+HISTORICAL IMMERSION
+* Wonders in scenarios have the correct original owners
+* Religions in scenarios have the correct founding dates
+* Added the Deccan to the peripheral spread regions for Islam
+* AI Spain receives additional help in conquering Cordoba
+
+INTERFACE
+* New civilopedia section: Culture Levels (city defense, wonder limits, specialist modifiers, building effects)
+* New civilopedia section: Routes (construction time, movement speed changes, required resources, improvement yield changes)
+* The Plague symbol is displayed over the city bar of affected cities
+* New high resolution waiting cursor
+* Improved display for the Turkish UP
+* Removed victory announcement in the middle of the screen
+* Included a city name viewer into the World Builder (credit to merijn_v1)
+* New symbols for Catholicism and Orthodoxy
+
+GRAPHICS
+* Improved arrangement of art assets for Tobacco, Coffee and Tea on the map, especially in combination with Plantation improvements
+
+BUGFIXES
+* Fixed an AI bug that prevented AIs from building religious buildings unless they control the holy city
+* The range of Air units is now correctly displayed in the civilopedia
+* Disabled the buy option for the Trading Company event if no cities are available
+* Fixed long distance religion spread and scripted religion spread to obey spread rules
+* Fixed the spawn event for Vladivostok
+* New capitals always receive a palace
+* Cities next to the spawning tile now correctly flip to the new civ
+* Founding a religion also removes Pagan Temples
+* Fixed a bug that left culture on a tile after a city is razed
+* Fixed a bug that prevented you from receiving multiple techs in the same turn from different sources
+* Fixed icons for Statesman and Great Statesman specialists
+* Fixed an exploit that allowed to avoid city flips on spawn by reloading the latest autosave
+
+PERFORMANCE
+* Optimised how persistent data is stored and accessed in Python
+
+

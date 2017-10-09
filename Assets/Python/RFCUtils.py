@@ -1194,7 +1194,7 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return iWarrior
+		return iMilitia
 		
 	def getBestCavalry(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -1205,7 +1205,7 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return iWarrior
+		return iMilitia
 		
 	def getBestSiege(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -1216,7 +1216,7 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return iWarrior
+		return iMilitia
 				
 	def getBestCounter(self, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
@@ -1227,21 +1227,21 @@ class RFCUtils:
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return iWarrior
+		return iMilitia
 		
 	def getBestDefender(self, iPlayer):
 		# Leoreth: there is a C++ error for barbarians for some reason, workaround by simply using independents
 		if iPlayer == iBarbarian: iPlayer = iIndependent
 		
 		pPlayer = gc.getPlayer(iPlayer)
-		lDefenderList = [iInfantry, iMachineGun, iRifleman, iMusketman, iArquebusier, iCrossbowman, iArcher, iWarrior]
+		lDefenderList = [iInfantry, iMachineGun, iRifleman, iMusketman, iArquebusier, iCrossbowman, iArcher, iMilitia]
 		
 		for iBaseUnit in lDefenderList:
 			iUnit = self.getUniqueUnitType(iPlayer, gc.getUnitInfo(iBaseUnit).getUnitClassType())
 			if pPlayer.canTrain(iUnit, False, False):
 				return iUnit
 				
-		return iWarrior
+		return iMilitia
 		
 	def getPlotList(self, tTL, tBR, tExceptions=()):
 		return [(x, y) for x in range(tTL[0], tBR[0]+1) for y in range(tTL[1], tBR[1]+1) if (x, y) not in tExceptions]

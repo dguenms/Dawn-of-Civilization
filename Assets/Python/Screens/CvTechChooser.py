@@ -413,6 +413,8 @@ class CvTechChooser:
 			iTech = gc.getReligionInfo(iReligion).getTechPrereq()
 			if iTech > -1:
 				self.TechEffects[iTech].append(("Religion", iReligion))
+				
+		self.TechEffects[iAcademia].append(("Religion", iProtestantism))
 
 
 

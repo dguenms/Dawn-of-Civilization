@@ -312,11 +312,9 @@ class Religions:
 		if not gc.getGame().isReligionFounded(iJudaism): return
 		if gc.getGame().isReligionFounded(iOrthodoxy): return
 		
-		iEthiopiaOffset = 0
-		if utils.getHumanID() == iEthiopia: iEthiopiaOffset = utils.getTurns(10 + data.iSeed % 5)
 		iOffset = utils.getTurns(data.iSeed % 15)
 		
-		if iGameTurn == getTurnForYear(0) + iOffset + iEthiopiaOffset:
+		if iGameTurn == getTurnForYear(0) + iOffset:
 			pHolyCity = gc.getGame().getHolyCity(iJudaism)
 			
 			if pHolyCity.getOwner() != utils.getHumanID() and gc.getGame().getSorenRandNum(2, "Holy city?") == 0:
@@ -344,6 +342,8 @@ class Religions:
 	def checkSchism(self, iGameTurn):
 		if not gc.getGame().isReligionFounded(iOrthodoxy): return
 		if gc.getGame().isReligionFounded(iCatholicism): return
+		
+		if gc.getGame().countReligionLevels(iOrthodoxy) < 10: return
 		
 		lStateReligionCities = []
 		lNoStateReligionCities = []
@@ -430,7 +430,7 @@ class Religions:
 		if utils.getScenario() == i1700AD:
 			return
 
-		if iTech == iPrinting:
+		if iTech == iAcademia:
 			if gc.getPlayer(iPlayer).getStateReligion() == iCatholicism:
 				if not gc.getGame().isReligionFounded(iProtestantism):
 					gc.getPlayer(iPlayer).foundReligion(iProtestantism, iProtestantism, True)
@@ -499,14 +499,13 @@ class Religions:
 			if city.isHasReligion(iCatholicism):
 				iNumCatholicCities += 1
 				
-				city.replaceReligion(iCatholicism, iProtestantism)
-				
-				if city.getPopulation() > 7:
-					if not self.chooseProtestantism(iCiv):
-						city.setHasReligion(iCatholicism, True, False, False)
+				if city.getPopulation() >= 8 and not self.chooseProtestantism(iCiv):
+					city.spreadReligion(iProtestantism)
+				else:
+					city.replaceReligion(iCatholicism, iProtestantism)
 				
 		pPlayer = gc.getPlayer(iCiv)
-		pPlayer.changeGold(iNumCatholicCities*100)
+		pPlayer.changeGold(iNumCatholicCities * utils.getTurns(100))
 		
 		pPlayer.setLastStateReligion(iProtestantism)
 		pPlayer.setConversionTimer(10)
@@ -518,10 +517,11 @@ class Religions:
 		for city in utils.getCityList(iCiv):
 			if city.isHasReligion(iCatholicism):
 				if self.isProtestantAnyway(iCiv):
-					if city.getPopulation() <= 9 and not city.isHolyCityByType(iCatholicism):
-						city.setHasReligion(iCatholicism, False, False, False)
-					city.setHasReligion(iProtestantism, True, False, False)
-		
+					if city.getPopulation() <= 8 and not city.isHolyCityByType(iCatholicism):
+						city.replaceReligion(iCatholicism, iProtestantism)
+					else:
+						city.spreadReligion(iProtestantism)
+
 		if iCiv < iNumPlayers:
 			data.players[iCiv].iReformationDecision = 1
 					
@@ -529,8 +529,8 @@ class Religions:
 		for city in utils.getCityList(iCiv):
 			if city.isHasReligion(iCatholicism):
 				if self.chooseProtestantism(iCiv):
-					if city.getPopulation() > 6:
-						city.setHasReligion(iProtestantism, True, False, False)
+					if city.getPopulation() >= 8:
+						city.spreadReligion(iProtestantism)
 		
 		if iCiv < iNumPlayers:
 			data.players[iCiv].iReformationDecision = 2

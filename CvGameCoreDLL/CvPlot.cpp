@@ -2800,7 +2800,7 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 				return false;
 			}
 
-			if (getOwner() != GC.getGame().getActivePlayer() && GC.getRouteInfo(getRouteType()).getValue() == GC.getRouteInfo(eRoute).getValue())
+			if (ePlayer != GC.getGame().getActivePlayer() && GC.getRouteInfo(getRouteType()).getValue() == GC.getRouteInfo(eRoute).getValue())
 			{
 				return false;
 			}
@@ -6253,7 +6253,10 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		CvCity* pWorkingCity = getWorkingCity();
 		if (NULL != pWorkingCity)
 		{
-			pWorkingCity->updateWorkedImprovement(eOldImprovement, eNewValue);
+			if (pWorkingCity->isWorkingPlot(this))
+			{
+				pWorkingCity->updateWorkedImprovement(eOldImprovement, eNewValue);
+			}
 
 			if ((NO_IMPROVEMENT != eNewValue && pWorkingCity->getImprovementFreeSpecialists(eNewValue) > 0)	||
 				(NO_IMPROVEMENT != eOldImprovement && pWorkingCity->getImprovementFreeSpecialists(eOldImprovement) > 0))

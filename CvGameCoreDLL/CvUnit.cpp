@@ -508,7 +508,7 @@ void CvUnit::convert(CvUnit* pUnit)
 
 	for (int iI = 0; iI < GC.getNumPromotionInfos(); iI++)
 	{
-		setHasPromotion(((PromotionTypes)iI), m_pUnitInfo->getFreePromotions(iI) || (pUnit->isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isLeader()));
+		setHasPromotion(((PromotionTypes)iI), m_pUnitInfo->getFreePromotions(iI) || isHasPromotion((PromotionTypes)iI) || (pUnit->isHasPromotion((PromotionTypes)iI) && GC.getPromotionInfo((PromotionTypes)iI).isLeader()));
 	}
 
 	setGameTurnCreated(pUnit->getGameTurnCreated());
@@ -756,6 +756,16 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 			{
 				if (GC.getPromotionInfo((PromotionTypes)iI).isLeader())
 				{
+					GET_PLAYER(getOwnerINLINE()).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE") * ((GET_PLAYER(getOwnerINLINE()).getGreatGeneralsCreated() / 10) + 1));
+
+					for (int iI = 0; iI < MAX_PLAYERS; iI++)
+					{
+						if (GET_PLAYER((PlayerTypes)iI).getTeam() == getTeam())
+						{
+							GET_PLAYER((PlayerTypes)iI).changeGreatGeneralsThresholdModifier(-GC.getDefineINT("GREAT_GENERALS_THRESHOLD_INCREASE_TEAM") * ((GET_PLAYER(getOwnerINLINE()).getGreatGeneralsCreated() / 10) + 1));
+						}
+					}
+
 					GET_PLAYER(getOwnerINLINE()).decrementGreatGeneralsCreated();
 				}
 			}
@@ -1854,6 +1864,21 @@ bool CvUnit::isActionRecommended(int iAction)
 				eRoute = ((RouteTypes)(GC.getBuildInfo(eBuild).getRoute()));
 				eBonus = pPlot->getBonusType(getTeam());
 				pWorkingCity = pPlot->getWorkingCity();
+				
+				if (eImprovement != NO_IMPROVEMENT)
+				{
+					if (eBonus != NO_BONUS)
+					{
+						if (GC.getImprovementInfo(eImprovement).isImprovementBonusTrade(eBonus))
+						{
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+					}
+				}
 
 				if (pPlot->getImprovementType() == NO_IMPROVEMENT)
 				{
@@ -6319,14 +6344,14 @@ int CvUnit::getTradeGold(const CvPlot* pPlot) const
 
 	iGold = (m_pUnitInfo->getBaseTrade() + (m_pUnitInfo->getTradeMultiplier() * ((pCapitalCity != NULL) ? pCity->calculateTradeProfit(pCapitalCity) : 0)));
 
-	iGold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitTradePercent();
-	iGold /= 100;
-
 	// Leoreth: to help Mali
-	if (pCity->isHolyCity())
+	if (pCity->isHolyCity() && iGold < 2000)
 	{
 		iGold = std::min(iGold*2, 2000);
 	}
+
+	iGold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitTradePercent();
+	iGold /= 100;
 
 	return std::max(0, iGold);
 }

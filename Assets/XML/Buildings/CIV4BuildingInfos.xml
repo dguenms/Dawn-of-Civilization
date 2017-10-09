@@ -317,7 +317,7 @@
 			<Strategy>TXT_KEY_BUILDING_STABLE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_STABLE</ArtDefineTag>
-			<ObsoleteTech>TECH_ENGINE</ObsoleteTech>
+			<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
 			<PrereqTech>TECH_RIDING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
@@ -352,7 +352,7 @@
 			<Strategy>TXT_KEY_BUILDING_MONGOLIAN_GER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MONGOLIAN_GER</ArtDefineTag>
-			<ObsoleteTech>TECH_ENGINE</ObsoleteTech>
+			<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
 			<PrereqTech>TECH_RIDING</PrereqTech>
 			<bNeverCapture>1</bNeverCapture>
 			<iCost>60</iCost>
@@ -701,10 +701,10 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BATH</ArtDefineTag>
 			<PrereqTech>TECH_MEDICINE</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iHealth>2</iHealth>
 			<iAsset>2</iAsset>
@@ -746,11 +746,11 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HARAPPAN_RESERVOIR</ArtDefineTag>
 			<PrereqTech>TECH_MASONRY</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iHealth>2</iHealth>
 			<iAsset>2</iAsset>
@@ -786,10 +786,10 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_OTTOMAN_HAMMAM</ArtDefineTag>
 			<PrereqTech>TECH_MEDICINE</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>100</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iHealth>2</iHealth>
 			<iHappiness>2</iHappiness>
@@ -963,12 +963,16 @@
 			<iMaxLatitude>90</iMaxLatitude>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<ImprovementHappinesses>
-				<ImprovementHappiness>
+			<ImprovementHealths>
+				<ImprovementHealth>
+					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
+					<iHealthPercent>50</iHealthPercent>
+				</ImprovementHealth>
+				<ImprovementHealth>
 					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHappiness>1</iHappiness>
-				</ImprovementHappiness>
-			</ImprovementHappinesses>
+					<iHealthPercent>50</iHealthPercent>
+				</ImprovementHealth>
+			</ImprovementHealths>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -1020,7 +1024,7 @@
 			<ImprovementHealths>
 				<ImprovementHealth>
 					<ImprovementType>IMPROVEMENT_WORKSHOP</ImprovementType>
-					<iHealth>1</iHealth>
+					<iHealthPercent>100</iHealthPercent>
 				</ImprovementHealth>
 			</ImprovementHealths>
 			<Flavors>
@@ -1824,7 +1828,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_SOLAR_PLANT</ArtDefineTag>
 			<PrereqTech>TECH_RENEWABLE_ENERGY</PrereqTech>
 			<bPower>1</bPower>
-			<iCost>250</iCost>
+			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -2281,12 +2285,8 @@
 			<ConstructSound>AS2D_BUILD_RECYCLING_CENTER</ConstructSound>
 			<ImprovementHealths>
 				<ImprovementHealth>
-					<ImprovementType>IMPROVEMENT_VILLAGE</ImprovementType>
-					<iHealth>1</iHealth>
-				</ImprovementHealth>
-				<ImprovementHealth>
 					<ImprovementType>IMPROVEMENT_TOWN</ImprovementType>
-					<iHealth>1</iHealth>
+					<iHealthPercent>50</iHealthPercent>
 				</ImprovementHealth>
 			</ImprovementHealths>
 			<Flavors>
@@ -2630,7 +2630,6 @@
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iDefense>25</iDefense>
-			<iBombardDefense>0</iBombardDefense>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -3245,10 +3244,10 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CINEMA</ArtDefineTag>
 			<PrereqTech>TECH_FILM</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iHappiness>1</iHappiness>
 			<iAsset>5</iAsset>
@@ -3932,11 +3931,10 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COFFEEHOUSE</ArtDefineTag>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iAsset>3</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
@@ -3993,11 +3991,10 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FRENCH_SALON</ArtDefineTag>
 			<PrereqTech>TECH_PATRONAGE</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>75</iConquestProb>
 			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iAsset>3</iAsset>
@@ -4131,11 +4128,10 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HOTEL</ArtDefineTag>
 			<PrereqTech>TECH_TOURISM</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>100</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iTradeRouteModifier>20</iTradeRouteModifier>
 			<iCultureTradeRouteModifier>10</iCultureTradeRouteModifier>
@@ -4151,7 +4147,7 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -4290,12 +4286,11 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_CIVIC_SQUARE</ArtDefineTag>
 			<PrereqTech>TECH_STATECRAFT</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
+			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>100</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
 			<iAsset>4</iAsset>
@@ -4364,12 +4359,11 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HOLY_ROMAN_RATHAUS</ArtDefineTag>
 			<PrereqTech>TECH_STATECRAFT</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
+			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>100</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
 			<iMaintenanceModifier>-25</iMaintenanceModifier>
@@ -4439,12 +4433,11 @@
 			<Advisor>ADVISOR_CULTURE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_POLISH_SEJMIK</ArtDefineTag>
 			<PrereqTech>TECH_STATECRAFT</PrereqTech>
-			<bNukeImmune>1</bNukeImmune>
+			<bNeverCapture>1</bNeverCapture>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>100</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
 			<iHappiness>2</iHappiness>
@@ -4515,10 +4508,10 @@
 			<ArtDefineTag>ART_DEF_BUILDING_ESTATE</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>66</iConquestProb>
 			<iAsset>1</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceChanges>
@@ -4571,10 +4564,10 @@
 			<ArtDefineTag>ART_DEF_BUILDING_MUGHAL_MAUSOLEUM</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HERITAGE</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>66</iConquestProb>
 			<iAsset>1</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceChanges>
@@ -4633,10 +4626,10 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BRAZILIAN_FAZENDA</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>66</iConquestProb>
 			<iAsset>1</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceChanges>
@@ -4731,10 +4724,10 @@
 			<ArtDefineTag>ART_DEF_BUILDING_COLOMBIAN_HACIENDA</ArtDefineTag>
 			<FreeStartEra>ERA_GLOBAL</FreeStartEra>
 			<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>66</iConquestProb>
 			<iAsset>1</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<CommerceChanges>
@@ -4802,10 +4795,10 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_NEWS_PRESS</ArtDefineTag>
 			<PrereqTech>TECH_JOURNALISM</PrereqTech>
+			<bNeverCapture>1</bNeverCapture>
 			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
-			<iConquestProb>75</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
 			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
 			<iAsset>5</iAsset>
@@ -7877,9 +7870,6 @@
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
-			<SpecialistYieldChanges/>
-			<BonusYieldModifiers/>
-			<ImprovementFreeSpecialists/>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
@@ -7890,11 +7880,6 @@
 					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
-			<HotKey/>
-			<bAltDown>0</bAltDown>
-			<bShiftDown>0</bShiftDown>
-			<bCtrlDown>0</bCtrlDown>
-			<iHotKeyPriority>0</iHotKeyPriority>
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_IRONWORKS</BuildingClass>
@@ -9242,7 +9227,6 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iDefense>100</iDefense>
-			<iBombardDefense>0</iBombardDefense>
 			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -10893,7 +10877,7 @@
 			<ConstructSound>AS2D_BUILD_BARRACKS</ConstructSound>
 			<BuildingClassNeededs>
 				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_SECURITY_BUREAU</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_INTELLIGENCE_AGENCY</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
 			</BuildingClassNeededs>
