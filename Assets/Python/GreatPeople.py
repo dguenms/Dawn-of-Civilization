@@ -1114,7 +1114,7 @@ iCivMoors : {
 	iGreatScientist : [
 		"Al-Zahrawi", # 10th
 		"Ibn Zuhr", # 12th
-		"Jabir bin Aflah" # 12th
+		"Jabir bin Aflah", # 12th
 		"Ibn Rushd", # 12th
 		"Ibn Bajja", # 12th
 		"Al-Qalasadi", # 15th
@@ -2014,7 +2014,7 @@ iCivItaly : {
 		iRenaissance,
 		"Giordano Bruno", # 16th
 		"Galileo Galilei", # 16th
-		"fElena Cornaro Piscopia" # 17th
+		"fElena Cornaro Piscopia", # 17th
 		"Luigi Galvani", # 18th
 		"Alessandro Volta", # 18th
 		"fMaria Gaetana Agnesi", # 18th
