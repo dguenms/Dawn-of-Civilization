@@ -23,7 +23,6 @@ def getAlias(iCiv, iType):
 	if iCiv in [iCivHarappa, iCivTamils]: return iCivIndia
 	elif iCiv == iCivHolyRome: return iCivGermany
 	elif iCiv == iCivMaya: return iCivAztec
-	elif iCiv == iCivMoors: return iCivArabia
 	elif iCiv == iCivThailand: return iCivKhmer
 	
 	return iCiv
@@ -163,6 +162,7 @@ iCivChina : {
 		"Zhu Shijie", # 14th
 		iRenaissance,
 		"fTan Yunxian", # 16th
+		"fWang Zhenyi", # 18th
 		iGlobal,
 		"Li Yuanzhe", # 20th
 		"Chen Ning Yang", # 20th
@@ -236,6 +236,7 @@ iCivIndia : {
 		"fMeera", # 16th
 		iIndustrial,
 		"Tipu Sultan", # 18th
+		"Mirza Ghulam Ahmad", # 19th
 		iGlobal,
 		"fAnjeze Gonxhe Bojaxhiu", # 20th
 	],
@@ -266,9 +267,10 @@ iCivIndia : {
 		"fAsima Chatterjee", # 20th
 	],
 	iGreatMerchant : [
-		"Todar Mal", # 16th
-		"Shah Jahan", # 17th
+		"Nattal Sahu", # 12th
+		"Jagadu", # 13th
 		iIndustrial,
+		"Jamsetjee Jejeebhoy", # 19th
 		"Jamshetji Tata", # 19th
 		"Ardeshir Godrej", # 19th
 		iGlobal,
@@ -608,25 +610,29 @@ iCivPersia : {
 },
 iCivRome : {
 	iGreatProphet : [
-		"Augustinus", # 4th
+		"fClaudia Quinta", # 3rd BC
+		"Petrus", # 1st
+		"Paulus Tarsensis", # 1st
+		"Augustinus Hipponensis", # 4th
 		"Aurelius Ambrosius", # 4th
-		"Eusebius", # 4th
+		"Eusebius Pamphili", # 4th
 		"fMarcella", # 4th
 	],
 	iGreatArtist : [
-		"Vergilius", # 1st BC
+		"Publius Vergilius Maro", # 1st BC
 		"fIaia", # 1st BC
-		"Livius", # 1st
-		"Ovidius", # 1st
+		"Titus Livius", # 1st
+		"Publius Ovidius Naso", # 1st
 		"Plutarchus", # 1st
-		"Iuvenalis", # 2nd
+		"Decimus Iunius Iuvenalis", # 2nd
 	],
 	iGreatScientist : [
-		"Cato", # 1st BC
+		"Titus Lucretius Carus", # 1st BC
 		"Sosigenes", # 1st BC
-		"Plinius", # 1st
+		"Antonius Castor", # 1st 
+		"Gaius Plinius Secundus", # 1st
 		"Strabo", # 1st
-		"Seneca", # 1st
+		"Lucius Annaeus Seneca", # 1st
 	],
 	iGreatMerchant : [
 		"Marcus Crassus", # 1st BC
@@ -636,18 +642,18 @@ iCivRome : {
 	],
 	iGreatEngineer : [
 		"Sergius Orata", # 2nd BC
-		"Vitruvius", # 1st BC
+		"Marcus Vitruvius Pollio", # 1st BC
 		"Marcus Vipsanius Agrippa", # 1st AD
 		"Sextus Julius Frontinus", # 1st AD
-		"Apollodorus", # 2nd AD
+		"Apollodorus Damascenus", # 2nd AD
 	],
 	iGreatStatesman : [
-		"Publicola", # 6th BC
-		"Cincinnatus", # 5th BC
+		"Publius Valerius Publicola", # 6th BC
+		"Lucius Quinctius Cincinnatus", # 5th BC
 		"Quintus Hortensius", # 3rd BC
-		"Cato", # 2nd BC
-		"Cicero", # 1st BC
-		"Sulla", # 1st BC
+		"Marcus Porcius Cato", # 2nd BC
+		"Marcus Tullius Cicero", # 1st BC
+		"Lucius Cornelius Sulla", # 1st BC
 		"fLivia Drusilla", # 1st BC
 		"fFulvia", # 1st AD
 		"Diocletianus", # 3rd
@@ -655,7 +661,7 @@ iCivRome : {
 	iGreatGeneral : [
 		"Scipio Africanus", # 2nd BC
 		"Gaius Marius", # 2nd BC
-		"Pompeius", # 1st BC
+		"Gnaeus Pompeius Magnus", # 1st BC
 		"Vaspasianus", # 1st
 		"Traianus", # 1st
 		"fAgrippina", # 1st AD
@@ -680,6 +686,7 @@ iCivJapan : {
 		"Saigyou Houshi", # 12th
 		iRenaissance,
 		"Kanou Eitoku", # 16th
+		"Monzaemon Chikamatsu", # 17th
 		"Toushusai Sharaku", # 18th
 		"Yosa Buson", # 18th
 		iIndustrial,
@@ -693,6 +700,7 @@ iCivJapan : {
 	],
 	iGreatScientist : [
 		"Yoshida Mitsuyoshi", # 17th
+		"Takakazu Seki", # 17th
 		"Aida Yasuaki", # 18th
 		iGlobal,
 		"Kiyoshi Itou", # 20th
@@ -701,6 +709,8 @@ iCivJapan : {
 		"Kenkichi Iwasawa", # 20th
 	],
 	iGreatMerchant : [
+		"Shousuke Tanaka", # 17th
+		iIndustrial, 
 		"Torakusu Yamaha", # 19th
 		"Outano Kouzui", # 19th
 		iGlobal,
@@ -726,6 +736,7 @@ iCivJapan : {
 		"fHoujou Masako", # 12th
 		iRenaissance,
 		"Tokugawa Ieyasu", # 16th
+		"Tsunenaga Hasekura", # 17th
 		"Arai Hakuseki", # 17th
 		iIndustrial,
 		"Sakamoto Ryouma", # 19th
@@ -818,6 +829,8 @@ iCivKorea : {
 		"Baegun", # 13th
 		iRenaissance,
 		"fHeo Nanseolheon", # 16th
+		iGlobal, 
+		"Sun Myung Moon", # 20th
 	],
 	iGreatArtist : [
 		"Damjing", # 7th
@@ -845,6 +858,9 @@ iCivKorea : {
 		"Kim Sa-hyeong", # 15th
 		"Yi Mu", # 15th
 		"Yi Hoe", # 15th
+		iGlobal, 
+		"Lee Byung-chul", # 20th
+		"Chung Ju-yung", # 20th
 	],
 	iGreatEngineer : [
 		"Choe Yun-ui", # 13th
@@ -1014,63 +1030,128 @@ iCivArabia : {
 		"Umar ibn al-Kattab", # 7th
 		"fRabia Basri", # 9th
 		"Al-Baqilanni", # 10th
+		iRenaissance, 
+		"Muhammad ibn Abd al-Wahhab", # 18th
 	],
 	iGreatArtist : [
-		"Ibn Muqlah", # 10th
+		"Ibn Muqla", # 10th
 		"Ibn al-Nadim", # 10th
 		"Al-Mutanabbi", # 10th
-		"Ibn Quzman", # 12th
-		"Yaqut al-Hamawi", # 13th
+		"Muhammad ibn al-Zayn", # 14th
 		iRenaissance,
 		"Ibn Furtu", # 16th
+		iGlobal, 
+		"Muhammad al-Maghut", # 20th
 	],
 	iGreatScientist : [
 		"Al-Kindi", # 9th
 		"Al-Farabi", # 10th
 		"Ibrahim ibn Sinan", # 10th
 		"Ibn al-Jazzar", # 10th
-		"Al-Zarqali", # 11th
 		"Ibn al-Haytam", # 11th
 	],
 	iGreatMerchant : [
 		"Ibn Hawqal", # 10th
-		"Al-Idrisi", # 12th
-		"Ibn Jubayr", # 12th
-		"Ibn Battuta", # 14th
+		"Yaqut al-Hamawi", # 13th
 		"Ahmad ibn Majid", # 15th
+		iRenaissance,
+		"Sulaiman Al Mahri", # 16th
 	],
 	iGreatEngineer : [
 		"Jabir ibn Hayyan", # 8th
-		"Abbas ibn Firnas", # 9th
+		"Banu Musa", # 9th
 		"Ibn Wahshiyah", # 10th
+		"fMariam al-Astrulabi", # 10th
 		"Al-Jazari", # 12th
 		iGlobal, 
+		"Hassan Fathy", # 20th
 		"fZaha Hadid", # 20th
 	],
 	iGreatStatesman : [
 		"fFatimah bint Muhammad", # 7th
 		"Al-Jahiz", # 9th
+		"Al-Mawardi", # 11th
 		"Izz al-Din Usama", # 12th
-		"Ibn al-Khatib", # 14th
-		"Ibn Khaldun", # 14th
-		iIndustrial,
+		iRenaissance,
 		"Muhammad ibn Saud", # 18th
+		iIndustrial,
+		"Hussein bin Ali", # 19th
 		iGlobal,
 		"Yasser Arafat", # 20th
 	],
 	iGreatGeneral : [
 		"Khalid ibn al-Walid", # 7th
 		"Muawiyah", # 7th
-		"Ziyad ibn Abihi", # 7th
+		"Ziyad ibn Abih", # 7th
 		"Amr ibn al-As", # 7th
 		"fKhawla bint al-Azwar", # 7th
 		"Nur ad-Din Zengi", # 12th
-		"Yusuf ibn Tashfin", # 12th
 		iRenaissance,
-		"Ahmah al-Mansur", # 16th
+		"Rahmah ibn Jabir Al Jalhami", # 18th
 	],
 },
-
+iCivMoors : {
+	iGreatProphet : [
+		"Ibn Masarra", # 10th
+		"Ibn Hazm", # 11th
+		"Musa bin Maymun", # 12th
+		"fFatima bint al-Muthanna", # 12th
+		"Ibn Arabi", # 12th
+	],
+	iGreatArtist : [
+		"Ziryab", # 9th
+		"fWallada bint al-Mustakfi", # 11th
+		"Ibn Tufail", # 12th
+		"Ibn Quzman", # 12th
+		"Al-Shustari", # 13th
+		iRenaissance, 
+		"Ahmad Ibn al-Qadi", # 16th
+		"Mohammed Awzal", # 18th
+		iGlobal, 
+		"Abdessadeq Cheqara", # 20th
+	],
+	iGreatScientist : [
+		"Al-Zahrawi", # 10th
+		"Ibn Zuhr", # 12th
+		"Jabir bin Aflah" # 12th
+		"Ibn Rushd", # 12th
+		"Ibn Bajja", # 12th
+		"Al-Qalasadi", # 15th
+	],
+	iGreatMerchant : [
+		"Ibrahim ibn Yaqub", # 10th
+		"Al-Idrisi", # 12th
+		"Ibn Jubayr", # 12th
+		"Ibn Battuta", # 14th
+		iRenaissance, 
+		"Hassan al-Wazzan", # 16th
+	],
+	iGreatEngineer : [
+		"Abbas ibn Firnas", # 9th
+		"Ibn Bassal", # 11th
+		"Al-Zarqali", # 11th
+		"Al-Muradi", # 11th
+		iRenaissance, 
+		"Ahmed el Inglizi", # 18th
+	],
+	iGreatStatesman : [
+		"fZaynab an-Nafzawiyyah", # 11h
+		"Ibn al-Khatib", # 14th
+		"Ibn Khaldun", # 14th
+		iGlobal, 
+		"Habib Bourguiba", # 20th
+	],
+	iGreatGeneral : [
+		"Tariq ibn Ziyad", # 8th
+		"Muhammad ibn Abi Aamir", # 10th
+		"Yusuf ibn Tashfin", # 11th
+		iRenaissance,
+		"Mohammed ash-Sheikh", # 16th
+		"Ahmad al-Mansur", # 16th
+		iIndustrial,
+		"Abdelkader ibn Muhieddine", # 19th
+	],
+},
 iCivIndonesia : {
 	iGreatProphet : [
 		"Maha Rsi Agastya", # 5th
@@ -1094,6 +1175,7 @@ iCivIndonesia : {
 		"Dewawarman", #1st
 		"fCri Kahulunnan", #9th
 		iRenaissance,
+		"Raja Mudaliar", # 16th
 		"Nahkoda Muda", #18th
 	],
 	iGreatEngineer : [
