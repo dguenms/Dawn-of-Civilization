@@ -1509,6 +1509,7 @@ iCivEngland : {
 		"Francis Bacon", # 16th
 		"Robert Boyle", # 17th
 		"Isaac Newton", # 17th
+		"David Hume", # 18th
 		"William Herschel", # 18th
 		iIndustrial,
 		"John Dalton", # 19th
@@ -1538,6 +1539,7 @@ iCivEngland : {
 		"Inigo Jones", # 17th
 		"Robert Hooke", # 17th
 		"Christopher Wren", # 17th
+		"William Adam", # 18th
 		iIndustrial,
 		"James Watt", # 18th
 		"Isambard Kingdom Brunel", # 19th
@@ -2406,10 +2408,14 @@ iCivNetherlands : {
 },
 iCivAmerica : {
 	iGreatProphet : [
-		"fSojourner Truth", # 19th
 		"Joseph Smith", # 19th
+		"fMary Baker Eddy", # 19th
+		"fEllen G. White", # 19th
 		"Charles Taze Russell", # 19th
 		iGlobal, 
+		"Menachem Mendel Schneerson", # 20th
+		"L. Ron Hubbard", # 20th
+		"Billy Graham", # 20th
 		"Malcolm Little", # 20th
 	],
 	iGreatArtist : [
@@ -2469,10 +2475,11 @@ iCivAmerica : {
 		"Benjamin Franklin", # 18th
 		iIndustrial,
 		"Andrew Jackson", # 19th
+		"fSojourner Truth", # 19th
 		"Frederick Douglass", # 19th
 		"fVictoria Claflin Woodhull", # 19th
-		"fJane Addams", # 19th
 		"fSusan B. Anthony", # 19th
+		"fJane Addams", # 19th
 		iGlobal,
 		"fEleanor Roosevelt", # 20th
 		"George Kennan", # 20th
@@ -2618,6 +2625,7 @@ iCivPoland : {
 		"Stanislaw", # 11th
 		"fJadwiga", # 14th
 		iRenaissance, 
+		"Piotr z Goniadza", # 16th
 		"Israel Baal Szem Tow", # 18th
 		iGlobal,
 		"Karol Wojtyla", # 20th
@@ -2628,7 +2636,9 @@ iCivPoland : {
 		"Adam Mickiewicz", # 19th
 		"Fryderyk Chopin", # 19th
 		"Jan Matejko", # 19th
+		"Stanislaw Wyspianski", # 19th
 		iGlobal,
+		"fTamara de Lempicka", # 20th
 		"Witold Lutoslawski", # 20th
 	],
 	iGreatScientist : [
@@ -2641,11 +2651,15 @@ iCivPoland : {
 		"fMaria Sklodowska", # 19th
 	],
 	iGreatMerchant : [
+		"Konstanty Korniakt", # 16th
+		iIndustrial,
 		"Leopold Kronenberg", # 19th
 		iGlobal,
 		"Jan Kulczyk", # 20th
 	],
 	iGreatEngineer : [
+		"Laurynas Gucevicius", # 18th
+		iIndustrial,
 		"Ignacy Lukasiewicz", # 19th
 		iGlobal,
 		"Kasimiersz Proszynski", # 20th
@@ -2656,6 +2670,7 @@ iCivPoland : {
 		iRenaissance,
 		"Andrzej Frycz Modrzewski", # 16th
 		"Jan Zamoyski", # 16th
+		"fElzbieta Sieniawska", # 17th
 		"Stanislaw Staszic", # 18th
 		iGlobal,
 		"Ignacy Daszynski", # 20th
@@ -2973,6 +2988,54 @@ iCivCanada : {
 		"Arthur Currie", # 20th
 		"Andrew McNaughton", # 20th
 		u"Roméo Dallaire", # 20th
+	],
+},
+iCivPolynesia : {
+	iGreatProphet : [
+		"Kuamo'o Mo'okini", # 12th
+		iIndustrial, 
+		"Te Kooti", # 19th
+		"fAngata", # 19th
+	],
+	iGreatArtist : [
+		"Hawaiiloa", # legendary
+		"Hotu Matu'a", # 4th-7th
+		"Ui-te-Rangiora", # 7th
+		"Kupe", # 10th-14th
+		iGlobal, 
+		"fKawena", # 20th
+		"Uiliami Leilua Vi", # 20th
+	],
+	iGreatScientist : [
+		"Nga'ara", # 19th
+		"Mau Piailug", # 20th
+	],
+	iGreatMerchant : [
+		"Tupaia", # 18th
+		"Mai", # 18th
+		iGlobal, 
+		"Tuilaepa Aiono Sailele Malielegaoi", # 20th
+	],
+	iGreatEngineer : [
+		"Tu'itatui", # 13th
+		"Uluakimata", # 16th
+	],
+	iGreatStatesman : [
+		"fSalamasina", # 15th
+		"fKa'ahumanu", # 19th
+		iIndustrial,
+		"Haalilio", # 19th
+		"fMeri Te Tai Mangakahia", # 19th
+		"Apirana Ngata", # 19th
+	],
+	iGreatGeneral : [
+		"Momo", # 11th
+		iRenaissance,
+		"Kamehameha", # 18th
+		iIndustrial,
+		"Te Rauparaha", # 19th
+		"Hone Heke", # 19th
+		"Seru Epenisa Cakobau", # 19th
 	],
 },
 }
