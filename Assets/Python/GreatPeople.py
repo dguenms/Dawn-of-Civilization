@@ -323,10 +323,10 @@ iCivBabylonia : {
 		"fEnheduanna", # 23rd BC
 		"Gudea", # 22nd BC
 		"Samsu-ditana", # 17th BC
+		"Sin-leqi-unninni", # 13th BC
 	],
 	iGreatScientist : [
 		"fTapputi", # legendary
-		"Sin-leqi-unninni", # 13th BC
 		"Esagil-kin-apli", # 11th BC
 		iClassical,
 		"fEnnigaldi", # 6th BC 
