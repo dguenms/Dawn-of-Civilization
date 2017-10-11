@@ -2992,43 +2992,51 @@ iCivCanada : {
 },
 iCivPolynesia : {
 	iGreatProphet : [
+		"Maui", # legendary
 		"Kuamo'o Mo'okini", # 12th
 		iIndustrial, 
 		"Te Kooti", # 19th
 		"fAngata", # 19th
+		"Rua Kenana Hepetipa", # 19th
 	],
 	iGreatArtist : [
 		"Hawaiiloa", # legendary
 		"Hotu Matu'a", # 4th-7th
 		"Ui-te-Rangiora", # 7th
 		"Kupe", # 10th-14th
-		iGlobal, 
+		iIndustrial, 
 		"fKawena", # 20th
 		"Uiliami Leilua Vi", # 20th
+		"Rangi Hetet", # 20th
 	],
 	iGreatScientist : [
 		"Nga'ara", # 19th
+		"Te Rangi Hiroa", # 20th
 		"Mau Piailug", # 20th
 	],
 	iGreatMerchant : [
 		"Tupaia", # 18th
 		"Mai", # 18th
-		iGlobal, 
+		iIndustrial, 
+		"fPiipi Raumati", # 19th
 		"Tuilaepa Aiono Sailele Malielegaoi", # 20th
 	],
 	iGreatEngineer : [
-		"Tu'itatui", # 13th
+		"Olisihpa", # 12th
+		"Tu'itatui", # 12th
 		"Uluakimata", # 16th
 	],
 	iGreatStatesman : [
+		"Talatama", # 12th
 		"fSalamasina", # 15th
-		"fKa'ahumanu", # 19th
+		"fKa'ahumanu", # 18th
 		iIndustrial,
 		"Haalilio", # 19th
 		"fMeri Te Tai Mangakahia", # 19th
 		"Apirana Ngata", # 19th
 	],
 	iGreatGeneral : [
+		"fNafanua", # legendary
 		"Momo", # 11th
 		iRenaissance,
 		"Kamehameha", # 18th
