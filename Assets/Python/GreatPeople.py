@@ -1564,6 +1564,7 @@ iCivEngland : {
 		"William Gladstone", # 19th
 		"Benjamin Disraeli", # 19th
 		iGlobal,
+		"fEmmeline Pankhurst", # 20th
 		"Clement Atlee", # 20th
 	],
 	iGreatGeneral : [
