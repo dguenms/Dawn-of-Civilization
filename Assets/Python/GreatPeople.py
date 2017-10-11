@@ -2253,7 +2253,7 @@ iCivTurkey : {
 		"Yaakov Culi", # 18th
 		iGlobal,
 		u"Fethullah Gülen", # 20th
-		u"Mustada Çagrici", # 20th
+		u"Mustafa Çagrici", # 20th
 	],
 	iGreatArtist : [
 		"Yunus Emre", # 13th
