@@ -1573,10 +1573,10 @@ iCivEngland : {
 		"Edward III", # 14th
 		iRenaissance,
 		"Oliver Cromwell", # 17th
-		"John Churchill, Duke of Marlborough", # 17th
+		"John Churchill Marlborough", # 17th
 		"Horatio Nelson", # 18th
 		iIndustrial,
-		"Arthur Wellesley, Duke of Wellington", # 19th
+		"Arthur Wellesley Wellington", # 19th
 		"Edmund Lyons", # 19th
 		iGlobal,
 		"Thomas Edward Lawrence", # 20th
