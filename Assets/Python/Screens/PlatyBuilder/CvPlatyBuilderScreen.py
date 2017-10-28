@@ -103,6 +103,8 @@ class CvWorldBuilderScreen:
 		self.TempInfo = []
 ## Platy Builder ##
 
+		self.dFlipZoneEdits = {}
+
 	def interfaceScreen (self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
 		self.__init__()
@@ -552,6 +554,17 @@ class CvWorldBuilderScreen:
 					self.m_pRiverStartPlot = self.m_pCurrentPlot
 			else:
 				self.m_pRiverStartPlot = self.m_pCurrentPlot
+		elif self.iPlayerAddMode == "Flip":
+			if self.m_iCurrentPlayer < iNumPlayers:
+				if self.m_iCurrentPlayer not in self.dFlipZoneEdits.keys():
+					self.dFlipZoneEdits[self.m_iCurrentPlayer] = Areas.getBirthArea(self.m_iCurrentPlayer)
+				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+				lPlots = self.dFlipZoneEdits[self.m_iCurrentPlayer]
+				if tPlot not in lPlots:
+					lPlots.append(tPlot)
+					self.dFlipZoneEdits[self.m_iCurrentPlayer] = lPlots
+				if not bMulti:
+					self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
 			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
@@ -680,6 +693,18 @@ class CvWorldBuilderScreen:
 				self.m_pCurrentPlot.setWOfRiver(False, CardinalDirectionTypes.NO_CARDINALDIRECTION)
 		elif self.iPlayerAddMode == "AddLandMark":
 			CyEngine().removeSign(self.m_pCurrentPlot, self.m_iCurrentPlayer)
+		elif self.iPlayerAddMode == "Flip":
+			if self.m_iCurrentPlayer < iNumPlayers:
+				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+				if self.m_iCurrentPlayer not in self.dFlipZoneEdits.keys():
+					self.dFlipZoneEdits[self.m_iCurrentPlayer] = Areas.getBirthArea(self.m_iCurrentPlayer)
+				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
+				lPlots = self.dFlipZoneEdits[self.m_iCurrentPlayer]
+				if tPlot in lPlots:
+					lPlots.remove(tPlot)
+					self.dFlipZoneEdits[self.m_iCurrentPlayer] = lPlots
+				if not bMulti:
+					self.showFlipZone()
 		elif self.iPlayerAddMode == "Core":
 			if self.m_iCurrentPlayer < iNumPlayers:
 				tPlot = (self.m_pCurrentPlot.getX(), self.m_pCurrentPlot.getY())
@@ -933,7 +958,9 @@ class CvWorldBuilderScreen:
 					self.placeObject(True)
 			else:
 				self.placeObject()
-		if self.iPlayerAddMode in ["Core", "SettlerValue"]:
+		if self.iPlayerAddMode == "Flip":
+			self.showFlipZone()
+		elif self.iPlayerAddMode in ["Core", "SettlerValue"]:
 			self.showStabilityOverlay()
 			dc.checkName(self.m_iCurrentPlayer)
 		elif self.iPlayerAddMode == "WarMap":
@@ -952,7 +979,9 @@ class CvWorldBuilderScreen:
 			self.m_pCurrentPlot = pPlot
 			if self.m_pCurrentPlot.isNone(): continue
 			self.removeObject(True)
-		if self.iPlayerAddMode in ["Core", "SettlerValue"]:
+		if self.iPlayerAddMode == "Flip":
+			self.showFlipZone()
+		elif self.iPlayerAddMode in ["Core", "SettlerValue"]:
 			self.showStabilityOverlay()
 		elif self.iPlayerAddMode == "WarMap":
 			self.showWarOverlay()
@@ -1023,15 +1052,7 @@ class CvWorldBuilderScreen:
 			return True
 		if self.iPlayerAddMode == "Features":
 			return True
-		if self.iPlayerAddMode == "Core":
-			return True
-		if self.iPlayerAddMode == "SettlerValue":
-			return True
-		if self.iPlayerAddMode == "WarMap":
-			return True
-		if self.iPlayerAddMode == "ReligionMap":
-			return True
-		if self.iPlayerAddMode == "RegionMap":
+		if self.iPlayerAddMode in self.DoCMapMode:
 			return True
 		return False
 
@@ -1225,9 +1246,7 @@ class CvWorldBuilderScreen:
 			nRows = 1
 			if self.iPlayerAddMode in self.PlayerMode + self.RevealMode + self.MapMode:
 				nRows = 3
-			elif self.iPlayerAddMode == "Flip":
-				nRows = 2
-			elif self.iPlayerAddMode in ["Core", "SettlerValue", "WarMap", "ReligionMap", "RegionMap"]:
+			elif self.iPlayerAddMode in self.DoCMapMode:
 				nRows = 4
 
 			iHeight = 16 + iAdjust * nRows
@@ -1403,42 +1422,41 @@ class CvWorldBuilderScreen:
 								sName = "[" + sName + "]"
 							screen.addPullDownString("WorldBuilderPlayerChoice", sName, iPlayer, iPlayer, self.m_iCurrentPlayer == iPlayer)
 
-				if self.iPlayerAddMode != "Flip":
-					iX = iXStart + 8
-					iY += iAdjust
-					screen.addCheckBoxGFC("RegionButton", ",-,Art/Interface/Buttons/FinalFrontier2_Atlas.dds,1,6", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
-						 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 43, ButtonStyles.BUTTON_STYLE_LABEL)
-					iX += iAdjust
-					iWidth = (screen.getXResolution() - 8 - iX - 3)/2
-					screen.addDropDownBoxGFC("BrushWidth", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-					for i in range(1, 11):
-						screen.addPullDownString("BrushWidth", "W: " + str(i), i, i, self.iBrushWidth == i)
-					screen.addPullDownString("BrushWidth", "W: " + "--", -1, -1, self.iBrushWidth == -1)
-					iX += iWidth
-					screen.addDropDownBoxGFC("BrushHeight", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-					for i in range(1, 11):
-						screen.addPullDownString("BrushHeight", "H: " + str(i), i, i, self.iBrushHeight == i)
-					screen.addPullDownString("BrushHeight", "H: " + "--", -1, -1, self.iBrushHeight == -1)
+				iX = iXStart + 8
+				iY += iAdjust
+				screen.addCheckBoxGFC("RegionButton", ",-,Art/Interface/Buttons/FinalFrontier2_Atlas.dds,1,6", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(),
+					 iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 43, ButtonStyles.BUTTON_STYLE_LABEL)
+				iX += iAdjust
+				iWidth = (screen.getXResolution() - 8 - iX - 3)/2
+				screen.addDropDownBoxGFC("BrushWidth", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+				for i in range(1, 11):
+					screen.addPullDownString("BrushWidth", "W: " + str(i), i, i, self.iBrushWidth == i)
+				screen.addPullDownString("BrushWidth", "W: " + "--", -1, -1, self.iBrushWidth == -1)
+				iX += iWidth
+				screen.addDropDownBoxGFC("BrushHeight", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+				for i in range(1, 11):
+					screen.addPullDownString("BrushHeight", "H: " + str(i), i, i, self.iBrushHeight == i)
+				screen.addPullDownString("BrushHeight", "H: " + "--", -1, -1, self.iBrushHeight == -1)
 
-					iX = iXStart + 8
-					iY += iAdjust
-					if self.iPlayerAddMode  == "ReligionMap":
-						screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, screen.getXResolution() - 8 - iX, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+				iX = iXStart + 8
+				iY += iAdjust
+				if self.iPlayerAddMode  == "ReligionMap":
+					screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, screen.getXResolution() - 8 - iX, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+				else:
+					if self.iPlayerAddMode == "RegionMap":
+						iSpan = 3
 					else:
-						if self.iPlayerAddMode == "RegionMap":
-							iSpan = 3
+						iSpan = 2
+					screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+					iX += iSpan*iAdjust
+					screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+					iX += iSpan*iAdjust
+					if self.iPlayerAddMode != "RegionMap":
+						bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
+						if bExtended:
+							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 						else:
-							iSpan = 2
-						screen.setButtonGFC("ClearChanges", CyTranslator().getText("TXT_KEY_WB_REVERT_CHANGES", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-						iX += iSpan*iAdjust
-						screen.setButtonGFC("Export", CyTranslator().getText("TXT_KEY_WB_EXPORT", ()), "", iX, iY, iSpan*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-						iX += iSpan*iAdjust
-						if self.iPlayerAddMode != "RegionMap":
-							bExtended = (self.m_iCurrentPlayer in Areas.dChangedCoreArea or self.m_iCurrentPlayer in Areas.dChangedNormalArea or self.m_iCurrentPlayer in Areas.dChangedBroaderArea or self.m_iCurrentPlayer in SettlerMaps.dChangedSettlerMaps or self.m_iCurrentPlayer in WarMaps.dChangedWarMaps)
-							if bExtended:
-								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_EXTENDED", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
-							else:
-								screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
 			elif self.iPlayerAddMode in self.RevealMode:
 				iX = iXStart + 8
@@ -1821,11 +1839,14 @@ class CvWorldBuilderScreen:
 		if self.m_iCurrentPlayer < iNumPlayers:
 			sColor = "COLOR_MAGENTA"
 			sColorAI = "COLOR_RED"
-			# Human flipzone
-			if utils.canEverRespawn(self.m_iCurrentPlayer) or (gc.getPlayer(self.m_iCurrentPlayer).isAlive() and not utils.isReborn(self.m_iCurrentPlayer)) or gc.getGame().getGameTurn() < getTurnForYear(tBirth[self.m_iCurrentPlayer]):
-				lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
+			if self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
+				lHumanPlotList = self.dFlipZoneEdits[self.m_iCurrentPlayer]
 			else:
-				lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
+				# Human flipzone
+				if utils.isReborn(self.m_iCurrentPlayer):
+					lHumanPlotList = Areas.getRebirthArea(self.m_iCurrentPlayer)
+				else:
+					lHumanPlotList = Areas.getBirthArea(self.m_iCurrentPlayer)
 			# Additional cities outside flipzone (Canada)
 			lExtraCities = rnf.getConvertedCities(self.m_iCurrentPlayer)
 			for city in lExtraCities:
@@ -2350,7 +2371,11 @@ class CvWorldBuilderScreen:
 			self.showRegionOverlay()
 
 		elif inputClass.getFunctionName() == "ClearChanges":
-			if self.iPlayerAddMode == "Core":
+			if self.iPlayerAddMode == "Flip":
+				if self.m_iCurrentPlayer in self.dFlipZoneEdits.keys():
+					del self.dFlipZoneEdits[self.m_iCurrentPlayer]
+					self.showFlipZone()
+			elif self.iPlayerAddMode == "Core":
 				met.resetCore(self.m_iCurrentPlayer)
 				self.showStabilityOverlay()
 			elif self.iPlayerAddMode == "SettlerValue":
@@ -2367,7 +2392,12 @@ class CvWorldBuilderScreen:
 				self.showRegionOverlay()
 
 		elif inputClass.getFunctionName() == "Export":
-			if self.iPlayerAddMode == "Core":
+			if self.iPlayerAddMode == "Flip":
+				if CvEventInterface.getEventManager().bAlt:
+					met.exportAllFlip(self.dFlipZoneEdits)
+				else:
+					met.exportFlip(self.m_iCurrentPlayer, self.dFlipZoneEdits)
+			elif self.iPlayerAddMode == "Core":
 				if CvEventInterface.getEventManager().bAlt:
 					met.exportAllCores()
 				else:
@@ -2393,7 +2423,9 @@ class CvWorldBuilderScreen:
 
 		elif inputClass.getFunctionName() == "SwitchReborn":
 			utils.setReborn(self.m_iCurrentPlayer, not utils.isReborn(self.m_iCurrentPlayer))
-			if self.iPlayerAddMode == "WarMap":
+			if self.iPlayerAddMode == "Flip":
+				self.showFlipZone()
+			elif self.iPlayerAddMode == "WarMap":
 				self.showWarOverlay()
 			else:
 				self.showStabilityOverlay()

@@ -64,6 +64,138 @@ def resetReligionMap(iReligion):
 def resetRegionMap():
 	RegionMap.updateRegionMap()
 
+def exportFlip(iPlayer, dFlipZoneEdits):
+	if iPlayer not in dFlipZoneEdits.keys():
+		sText = "No changes between current flipzone and flipzone defined in python"
+		popup = PyPopup.PyPopup()
+		popup.setBodyString(sText)
+		popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+		return
+
+	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+	if iPlayer == iHolyRome:
+		sName = "HolyRome"
+	elif iPlayer == iAztecs:
+		sName = "Aztecs"
+
+	lNewFlipPlotList = dFlipZoneEdits[iPlayer]
+	if utils.isReborn(iPlayer):
+		lOldFlipPlotList = Areas.getRebirthArea(iPlayer)
+	else:
+		lOldFlipPlotList = Areas.getBirthArea(iPlayer)
+	bFlipChanged = len(lOldFlipPlotList) != len(lNewFlipPlotList)
+	if not bFlipChanged:
+		for tPlot in lNewFlipPlotList:
+			if tPlot not in lOldFlipPlotList:
+				bFlipChanged = True
+				break
+
+	if bFlipChanged:
+		Bottom = iWorldY
+		Top = 0
+		Left = iWorldX
+		Right = 0
+		for (x, y) in lNewFlipPlotList:
+			if x < Left:
+				Left = x
+			if x > Right:
+				Right = x
+			if y < Bottom:
+				Bottom = y
+			if y > Top:
+				Top = y
+		BL = (Left, Bottom)
+		TR = (Right, Top)
+
+		lExceptions = []
+		for tPlot in utils.getPlotList(BL, TR):
+			if tPlot not in lNewFlipPlotList:
+				lExceptions.append(tPlot)
+
+		file = open(IMAGE_LOCATION + "\FlipZones\\" + sName + ".txt", 'wt')
+		try:
+			if not utils.isReborn(iPlayer):
+				file.write("# tBirthArea\n")
+				file.write("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
+				if lExceptions:
+					file.write("\n\n# dBirthAreaExceptions\n")
+					file.write("i" + sName + " : " + str(lExceptions) + ",")
+			else:
+				file.write("# dRebirthArea\n")
+				file.write("i" + sName + " : " "("+ str(BL) + ",\t" + str(TR) + "),")
+				if lExceptions:
+					file.write("\n\n# dRebirthAreaExceptions\n")
+					file.write("i" + sName + " : " + str(lExceptions) + ",")
+		finally:
+			file.close()
+		sText = "Flipzone map of %s exported" %sName
+	else:
+		sText = "No changes between current flipzone and flipzone defined in python"
+	popup = PyPopup.PyPopup()
+	popup.setBodyString(sText)
+	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+
+def exportAllFlip(dFlipZoneEdits):
+	lAllFlips = []
+	lAllExceptions = []
+	for iPlayer in range(iNumPlayers):
+		iCiv = gc.getPlayer(iPlayer).getCivilizationType()
+		sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
+		if iPlayer == iHolyRome:
+			sName = "HolyRome"
+		elif iPlayer == iAztecs:
+			sName = "Aztecs"
+			
+		if iPlayer in dFlipZoneEdits.keys():
+			lNewFlipPlotList = dFlipZoneEdits[iPlayer]
+		elif utils.isReborn(iPlayer):
+			lNewFlipPlotList = Areas.getRebirthArea(iPlayer)
+		else:
+			lNewFlipPlotList = Areas.getBirthArea(iPlayer)
+
+		Bottom = iWorldY
+		Top = 0
+		Left = iWorldX
+		Right = 0
+		for (x, y) in lNewFlipPlotList:
+			if x < Left:
+				Left = x
+			if x > Right:
+				Right = x
+			if y < Bottom:
+				Bottom = y
+			if y > Top:
+				Top = y
+		BL = (Left, Bottom)
+		TR = (Right, Top)
+
+		lExceptions = []
+		for tPlot in utils.getPlotList(BL, TR):
+			if tPlot not in lNewFlipPlotList:
+				lExceptions.append(tPlot)
+
+		lAllFlips.append("("+ str(BL) + ",\t" + str(TR) + "),\t# " + sName)
+		if lExceptions:
+			lAllExceptions.append("i" + sName + " : " + str(lExceptions) + ",")
+
+	file = open(IMAGE_LOCATION + "\FlipZones\\AllFlipZones.txt", 'wt')
+	try:
+		file.write("tBirthArea = (\n")
+		for sString in lAllFlips:
+			file.write(sString + "\n")
+		file.write(")")
+		file.write("\n\ndBirthAreaExceptions = {\n")
+		for sString in lAllExceptions:
+			file.write(sString + "\n")
+		file.write("}")
+	finally:
+		file.close()
+	sText = "All flipzone maps exported"
+	popup = PyPopup.PyPopup()
+	popup.setBodyString(sText)
+	popup.launch(True, PopupStates.POPUPSTATE_IMMEDIATE)
+
 def exportCore(iPlayer, bForce = False):
 	iCiv = gc.getPlayer(iPlayer).getCivilizationType()
 	sName = gc.getCivilizationInfo(iCiv).getShortDescription(0)
