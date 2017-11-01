@@ -701,18 +701,6 @@
 		<English>N/A</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_CORE_ADD</Tag>
-		<English>Add current tile to core</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_CORE_REMOVE</Tag>
-		<English>Remove current tile from core</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_CHANGE_SETTLERVALUE</Tag>
-		<English>Change settlervalue</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_WB_FLIP</Tag>
 		<English>Flip</English>
 	</TEXT>
@@ -739,14 +727,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_TOGGLE_AI_FORBIDDEN</Tag>
 		<English>Toggle AI Forbidden</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_SHOW</Tag>
-		<English>Show</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_HIDE</Tag>
-		<English>Hide</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_WARVALUE</Tag>
