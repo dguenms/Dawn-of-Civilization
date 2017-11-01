@@ -104,6 +104,7 @@ class CvWorldBuilderScreen:
 ## Platy Builder ##
 
 		self.dFlipZoneEdits = {}
+		self.iMoveMapReset = 0
 
 	def interfaceScreen (self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN )
@@ -1054,6 +1055,10 @@ class CvWorldBuilderScreen:
 			return True
 		if self.iPlayerAddMode in self.DoCMapMode:
 			return True
+		if self.iPlayerAddMode == "MoveMap":
+			return True
+		if self.iPlayerAddMode == "MoveMap2":
+			return True
 		return False
 
 	def setSideMenu(self):
@@ -1130,8 +1135,11 @@ class CvWorldBuilderScreen:
 			screen.setImageButton("StoredDataScreen", "", iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 41)
 			screen.setStyle("StoredDataScreen", "Button_HUDAdvisorRecord_Style")
 			iX += iAdjust
-			screen.addCheckBoxGFC("WorldBuilderDoCMapsModeButton", "Art/Interface/Buttons/DoCMaps.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
+			screen.addCheckBoxGFC("DoCMapsScreen", "Art/Interface/Buttons/DoCMaps.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
 				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 42, ButtonStyles.BUTTON_STYLE_LABEL)
+			iX += iAdjust
+			screen.addCheckBoxGFC("MoveMapScreen", "Art/Interface/Buttons/MoveMap.dds", CyArtFileMgr().getInterfaceArtInfo("BUTTON_HILITE_SMALLCIRCLE").getPath(),
+				iX, iY, iButtonWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, 1029, 44, ButtonStyles.BUTTON_STYLE_LABEL)
 
 			iX = iXStart + 8
 			iY += iAdjust
@@ -1248,6 +1256,8 @@ class CvWorldBuilderScreen:
 				nRows = 3
 			elif self.iPlayerAddMode in self.DoCMapMode:
 				nRows = 4
+			elif self.iPlayerAddMode in ["MoveMap", "MoveMap2"]:
+				nRows = 2
 
 			iHeight = 16 + iAdjust * nRows
 			iXStart = screen.getXResolution() - iScreenWidth
@@ -1458,6 +1468,31 @@ class CvWorldBuilderScreen:
 						else:
 							screen.setButtonGFC("SwitchReborn", CyTranslator().getText("TXT_KEY_WB_NA", ()), "", iX, iY, 2*iAdjust-3, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
 
+			elif self.iPlayerAddMode in ["MoveMap", "MoveMap2"]:
+				if self.iPlayerAddMode == "MoveMap":
+					iX = iXStart + 8
+					iWidth = (screen.getXResolution() - 8 - iX - 3)/2
+					screen.addDropDownBoxGFC("BrushWidth", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+					for i in range(1, 125):
+						screen.addPullDownString("BrushWidth", "W: " + str(i), i, i, self.iBrushWidth == i)
+					screen.addPullDownString("BrushWidth", "W: " + "--", -1, -1, self.iBrushWidth == -1)
+					iX += iWidth
+					screen.addDropDownBoxGFC("BrushHeight", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+					for i in range(1, 69):
+						screen.addPullDownString("BrushHeight", "H: " + str(i), i, i, self.iBrushHeight == i)
+					screen.addPullDownString("BrushHeight", "H: " + "--", -1, -1, self.iBrushHeight == -1)
+				elif self.iPlayerAddMode == "MoveMap2":
+					iX = iXStart + 8
+					iWidth = (screen.getXResolution() - 8 - iX - 3)
+					screen.setButtonGFC("CancelMoveMap", CyTranslator().getText("TXT_KEY_SCREEN_CANCEL", ()), "", iX, iY, iWidth, iButtonWidth, WidgetTypes.WIDGET_PYTHON, -1, -1, ButtonStyles.BUTTON_STYLE_STANDARD)
+				iX = iXStart + 8
+				iY += iAdjust
+				iWidth = (screen.getXResolution() - 8 - iX - 3)
+				screen.addDropDownBoxGFC("MoveMapReset", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+				for i in range(3):
+					szText = "TXT_KEY_WB_MOVEMAP_RESET%d" % i
+					screen.addPullDownString("MoveMapReset", CyTranslator().getText(szText, ()), i, i, self.iMoveMapReset == i)
+
 			elif self.iPlayerAddMode in self.RevealMode:
 				iX = iXStart + 8
 				screen.addDropDownBoxGFC("RevealMode", iX, iY, screen.getXResolution() - 8 - iX, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
@@ -1542,13 +1577,14 @@ class CvWorldBuilderScreen:
 		screen.setState("HideInactive", bHideInactive)
 		screen.setState("SensibilityCheck", self.bSensibility)
 		screen.setState("RegionButton", self.bRegion)
-		screen.setState("WorldBuilderDoCMapsModeButton", self.iPlayerAddMode in self.DoCMapMode)
+		screen.setState("DoCMapsScreen", self.iPlayerAddMode in self.DoCMapMode)
 		screen.setState("FlipButton", self.iPlayerAddMode == "Flip")
 		screen.setState("CoreButton", self.iPlayerAddMode == "Core")
 		screen.setState("SettlerValueButton", self.iPlayerAddMode == "SettlerValue")
 		screen.setState("WarMapButton", self.iPlayerAddMode == "WarMap")
 		screen.setState("ReligionMapButton", self.iPlayerAddMode == "ReligionMap")
 		screen.setState("RegionMapButton", self.iPlayerAddMode == "RegionMap")
+		screen.setState("MoveMapScreen", self.iPlayerAddMode == "MoveMap")
 
 	def setSelectionTable(self):
 		screen = CyGInterfaceScreen( "WorldBuilderScreen", CvScreenEnums.WORLDBUILDER_SCREEN)
@@ -1892,6 +1928,50 @@ class CvWorldBuilderScreen:
 		for plot in lPlots:
 			CyEngine().fillAreaBorderPlotAlt(plot.getX(), plot.getY(), 1000, "COLOR_BLUE", 0.7)
 
+	def getPlotItems(self, tPlot):
+		x, y = tPlot
+		plot = gc.getMap().plot(x, y)
+		lInfo = [tPlot, plot.getPlotType(), plot.getTerrainType(), plot.getRouteType(), (plot.getFeatureType(), plot.getFeatureVariety()), plot.getBonusType(-1), plot.getImprovementType(), (plot.getRiverNSDirection(), plot.getRiverWEDirection())]
+		return lInfo
+
+	def placePlotItems(self, tPlot):
+		x, y = tPlot
+		lInfos = self.TempInfo
+		for j in range(len(lInfos)):
+			if y-j < 0:
+				break
+			for i in range(len(lInfos[j])):
+				item = lInfos[j][i]
+				plot = gc.getMap().plot(x+i, y-j)
+				plot.setPlotType(item[1], True, True)
+				plot.setTerrainType(item[2], True, True)
+				plot.setRouteType(item[3])
+				plot.setFeatureType(item[4][0], item[4][1])
+				plot.setBonusType(item[5])
+				plot.setImprovementType(item[6])
+				plot.setWOfRiver(item[7][0] != -1, item[7][0])
+				plot.setNOfRiver(item[7][1] != -1, item[7][1])
+
+	def moveMapReset(self):
+		if self.iMoveMapReset == 0:
+			return
+		lInfos = self.TempInfo
+		if self.iMoveMapReset == 1:
+			for j in range(len(lInfos)):
+				for i in range(len(lInfos[j])):
+					item = lInfos[j][i]
+					plot = gc.getMap().plot(item[0][0], item[0][1])
+					plot.erase()
+					plot.setPlotType(PlotTypes.PLOT_OCEAN, True, True)
+		else:
+			for j in range(len(lInfos)):
+				for i in range(len(lInfos[j])):
+					item = lInfos[j][i]
+					plot = gc.getMap().plot(item[0][0], item[0][1])
+					plot.erase()
+					plot.setPlotType(PlotTypes.PLOT_LAND, True, True)
+					plot.setTerrainType(iGrass, True, True)
+
 	def Exit(self):
 		CyInterface().setWorldBuilder(False)
 		return
@@ -2070,6 +2150,29 @@ class CvWorldBuilderScreen:
 						pNewUnit.setImmobileTimer(loopUnit.getImmobileTimer())
 						pNewUnit.setScriptData(loopUnit.getScriptData())
 			dc.checkName(self.m_iCurrentPlayer)
+		elif self.iPlayerAddMode == "MoveMap":
+			x = self.m_pCurrentPlot.getX()
+			y = self.m_pCurrentPlot.getY()
+			lList = []
+			for j in range(self.iBrushHeight):
+				if y-j < 0:
+					break
+				lList2 = []
+				for i in range(self.iBrushWidth):
+					lList2.append(self.getPlotItems((x+i, y-j)))
+					CyEngine().fillAreaBorderPlotAlt(x+i, y-j, 1000, "COLOR_RED", 0.7)
+				lList.append(lList2)
+			self.TempInfo = lList
+			self.iPlayerAddMode = "MoveMap2"
+			self.refreshSideMenu()
+		elif self.iPlayerAddMode == "MoveMap2":
+			utils.removeStabilityOverlay()
+			x = self.m_pCurrentPlot.getX()
+			y = self.m_pCurrentPlot.getY()
+			self.moveMapReset()
+			self.placePlotItems((x, y))
+			self.iPlayerAddMode = "MoveMap"
+			self.refreshSideMenu()
 		elif self.useLargeBrush():
 			self.placeMultipleObjects()
 		else:
@@ -2335,7 +2438,7 @@ class CvWorldBuilderScreen:
 			self.iPlayerAddMode = "River"
 			self.refreshSideMenu()
 
-		elif inputClass.getFunctionName() == "WorldBuilderDoCMapsModeButton":
+		elif inputClass.getFunctionName() == "DoCMapsScreen":
 			self.iPlayerAddMode = "Flip"
 			self.refreshSideMenu()
 			self.showFlipZone()
@@ -2369,6 +2472,11 @@ class CvWorldBuilderScreen:
 			self.iPlayerAddMode = "RegionMap"
 			self.refreshSideMenu()
 			self.showRegionOverlay()
+
+		elif inputClass.getFunctionName() == "MoveMapScreen":
+			self.iPlayerAddMode = "MoveMap"
+			self.bRegion = False
+			self.refreshSideMenu()
 
 		elif inputClass.getFunctionName() == "ClearChanges":
 			if self.iPlayerAddMode == "Flip":
@@ -2474,7 +2582,14 @@ class CvWorldBuilderScreen:
 			self.bRegion = not self.bRegion
 			self.setCurrentModeCheckbox()
 
-		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() not in ["WorldBuilderDoCMapsModeButton", "FlipButton", "CoreButton", "SettlerValueButton", "WarMapButton", "ReligionMapButton", "RegionMapButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight", "SensibilityCheck", "RegionButton"]:
+		elif inputClass.getFunctionName() == "CancelMoveMap":
+			self.iPlayerAddMode = "MoveMap"
+			self.refreshSideMenu()
+
+		elif inputClass.getFunctionName() == "MoveMapReset":
+			self.iMoveMapReset = screen.getPullDownData("MoveMapReset", screen.getSelectedPullDownID("MoveMapReset"))
+
+		if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED and inputClass.getFunctionName() not in ["DoCMapsScreen", "FlipButton", "CoreButton", "SettlerValueButton", "WarMapButton", "ReligionMapButton", "RegionMapButton", "ClearChanges", "Export", "WorldBuilderPlayerChoice", "SwitchReborn", "PresetValue", "BrushWidth", "BrushHeight", "SensibilityCheck", "RegionButton"]:
 			utils.removeStabilityOverlay()
 
 		return 1
