@@ -22868,4 +22868,27 @@
 		<fMaxWetLevel>0.0</fMaxWetLevel>
 		<iNotPlayPercent>0</iNotPlayPercent>
 	</Script2DSound>
+	<Script2DSound>
+		<ScriptID>AS2D_DIPLO_CANADA</ScriptID>
+		<SoundID>DIPLO_CANADA</SoundID>
+		<SoundType>GAME_MUSIC</SoundType>
+		<iMinVolume>65</iMinVolume>
+		<iMaxVolume>65</iMaxVolume>
+		<iPitchChangeDown>0</iPitchChangeDown>
+		<iPitchChangeUp>0</iPitchChangeUp>
+		<iMinLeftPan>-1</iMinLeftPan>
+		<iMaxLeftPan>-1</iMaxLeftPan>
+		<iMinRightPan>-1</iMinRightPan>
+		<iMaxRightPan>-1</iMaxRightPan>
+		<bLooping>1</bLooping>
+		<iMinTimeDelay>0</iMinTimeDelay>
+		<iMaxTimeDelay>0</iMaxTimeDelay>
+		<bTaperForSoundtracks>0</bTaperForSoundtracks>
+		<iLengthOfSound>0</iLengthOfSound>
+		<fMinDryLevel>1.0</fMinDryLevel>
+		<fMaxDryLevel>1.0</fMaxDryLevel>
+		<fMinWetLevel>0.0</fMinWetLevel>
+		<fMaxWetLevel>0.0</fMaxWetLevel>
+		<iNotPlayPercent>0</iNotPlayPercent>
+	</Script2DSound>
 </Script2DSounds>
