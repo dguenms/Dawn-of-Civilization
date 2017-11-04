@@ -59,10 +59,8 @@ class WBPlotScreen:
 
 		iY += 30
 		screen.addDropDownBoxGFC("ChangeType", iX, iY, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), 1, 1, 1 == iChangeType)
-		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), 0, 0, 0 == iChangeType)
-		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_SET_VALUE", ()), 2, 2, 2 == iChangeType)
-		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_INPUT", ()), 3, 3, 3 == iChangeType)
+		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_ADD", ()), 1, 1, not bRemove)
+		screen.addPullDownString("ChangeType", CyTranslator().getText("TXT_KEY_WB_CITY_REMOVE", ()), 0, 0, bRemove)
 
 		iY += 30
 		iButtonWidth = 28
@@ -184,9 +182,6 @@ class WBPlotScreen:
 		sText = CyTranslator().getText("[COLOR_SELECTED_TEXT]", ()) + "<font=3b>" + CyTranslator().getText("TXT_KEY_WB_LANDMARKS", ()) + "</color></font>"
 		screen.setText("EditLandMark", "Background", sText, CvUtil.FONT_RIGHT_JUSTIFY, iX + iSignWidth, iY - 30, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
-		if iChangeType == 2:
-			self.placeValueChanger()
-
 		lSigns = []
 		for iPlayerX in xrange(gc.getMAX_PLAYERS()):
 			lSigns.append(-1)
@@ -195,16 +190,12 @@ class WBPlotScreen:
 			if pSign.getPlot().getX() != pPlot.getX(): continue
 			if pSign.getPlot().getY() != pPlot.getY(): continue
 			lSigns[pSign.getPlayerType()] = i
-		tPlot = (pPlot.getX(), pPlot.getY())
 
-		screen.addTableControlGFC("WBSigns", 7, iX, iY, iSignWidth, iHeight, True, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
+		screen.addTableControlGFC("WBSigns", 4, iX, iY, iSignWidth, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 		screen.setTableColumnHeader("WBSigns", 0, "", 24)
 		screen.setTableColumnHeader("WBSigns", 1, "", 24)
-		screen.setTableColumnHeader("WBSigns", 2, CyTranslator().getText("TXT_KEY_COMMERCE_CULTURE", ()), (iSignWidth - 48) /5)
-		screen.setTableColumnHeader("WBSigns", 3, CyTranslator().getText("TXT_KEY_WB_CORE", ()), (iSignWidth - 48) /10)
-		screen.setTableColumnHeader("WBSigns", 4, CyTranslator().getText("TXT_KEY_WB_SETTLERVALUE", ()), (iSignWidth - 48) /6)
-		screen.setTableColumnHeader("WBSigns", 5, CyTranslator().getText("TXT_KEY_WB_FLIP", ()), (iSignWidth - 48) /10)
-		screen.setTableColumnHeader("WBSigns", 6, CyTranslator().getText("TXT_KEY_WB_LANDMARKS", ()), (iSignWidth - 48) /30*13)
+		screen.setTableColumnHeader("WBSigns", 2, "", (iSignWidth - 48) /3)
+		screen.setTableColumnHeader("WBSigns", 3, "", (iSignWidth - 48) *2/3)
 
 		for iPlayerX in xrange(gc.getMAX_PLAYERS()):
 			pPlayerX = gc.getPlayer(iPlayerX)
@@ -216,51 +207,11 @@ class WBPlotScreen:
 				screen.setTableText("WBSigns", 1, iRow, "", gc.getLeaderHeadInfo(iLeader).getButton(), WidgetTypes.WIDGET_PYTHON, 7876, iPlayerX * 10000 + iLeader, CvUtil.FONT_LEFT_JUSTIFY )
 				sText = "<font=3>" + CvPlatyBuilderScreen.CvWorldBuilderScreen().addComma(pPlot.getCulture(iPlayerX)) + CyTranslator().getText("[ICON_CULTURE]", ()) + "</font>"
 				screen.setTableText("WBSigns", 2, iRow, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
-				if iPlayerX < iNumPlayers:
-					if gc.getMap().plot(tPlot[0], tPlot[1]).isCore(iPlayerX):
-						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
-						iCore = 22011
-					else:
-						sCore = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
-						iCore = 22012
-					screen.setTableText("WBSigns", 3, iRow, sCore, "", WidgetTypes.WIDGET_PYTHON, iCore, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
-					iSettlerValue = pPlot.getSettlerValue(iPlayerX)
-					screen.setTableText("WBSigns", 4, iRow, str(iSettlerValue), "", WidgetTypes.WIDGET_PYTHON, 22003, iPlayerX, CvUtil.FONT_CENTER_JUSTIFY)
-					if tPlot in Areas.getBirthArea(iPlayerX):
-						sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.SUCCESS_CHAR))
-					else:
-						sSpawn = u"%c" %(CyGame().getSymbolID(FontSymbols.FAILURE_CHAR))
-					screen.setTableText("WBSigns", 5, iRow, sSpawn, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-				else:
-					screen.setTableText("WBSigns", 3, iRow, "", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
-					screen.setTableText("WBSigns", 4, iRow, "", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
-					screen.setTableText("WBSigns", 5, iRow, "", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
 				iIndex = lSigns[iPlayerX]
 				sText = ""
 				if iIndex > -1:
 					sText = CyEngine().getSignByIndex(iIndex).getCaption()
-				screen.setTableText("WBSigns", 6, iRow, "<font=3>" + sText + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
-
-	def placeValueChanger(self):
-		screen = CyGInterfaceScreen("WBPlotScreen", CvScreenEnums.WB_PLOT)
-		iX = 225
-		iY = screen.getYResolution()/2
-		if iChangeType == 2:
-			screen.addTableControlGFC("SetValueBox", 1, iX,  iY - 30, 100, 26, False, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
-			screen.setTableColumnHeader("SetValueBox", 1, "", 100)
-			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-
-			screen.setButtonGFC("SetValueIncrease", "", "", iX-30,  iY - 30, 26, 26, WidgetTypes.WIDGET_PYTHON, 1030, -1, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
-			screen.setButtonGFC("SetValueDecrease", "", "", iX + 4 + 100,  iY - 30, 26, 26, WidgetTypes.WIDGET_PYTHON, 1031, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
-
-			screen.addDropDownBoxGFC("PresetValue", iX + 135,  iY - 32, 160, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-			for i in range(len(lPresetValues)):
-				screen.addPullDownString("PresetValue", str(lPresetValues[i]), i, lPresetValues[i], False)
-		else:
-			screen.deleteWidget("SetValueBox")
-			screen.deleteWidget("SetValueIncrease")
-			screen.deleteWidget("SetValueDecrease")
-			screen.deleteWidget("PresetValue")
+				screen.setTableText("WBSigns", 3, iRow, "<font=3>" + sText + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 	def placeMap(self):
 		screen = CyGInterfaceScreen("WBPlotScreen", CvScreenEnums.WB_PLOT)
@@ -545,12 +496,6 @@ class WBPlotScreen:
 		sText = "<font=3>" + sColor + TerrainInfo.getDescription() + "</font></color>"
 		screen.setTableText("WBPlotType", 0, 3, sText, TerrainInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7875, iTerrain, CvUtil.FONT_LEFT_JUSTIFY)
 
-	def changeSettlerValuePopup(self, iPlayer, iValue):
-		screen = CyGInterfaceScreen("WBPlotScreen", CvScreenEnums.WB_PLOT)
-		tPlot = (pPlot.getX(), pPlot.getY())
-		met.changeSettlerValue(iPlayer, tPlot, iValue)
-		screen.setTableText("WBSigns", 4, iPlayer, str(iValue), "", WidgetTypes.WIDGET_PYTHON, 22003, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
-
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBPlotScreen", CvScreenEnums.WB_PLOT)
 		global iChangeType
@@ -560,7 +505,6 @@ class WBPlotScreen:
 		global iChange
 		global iCulturePlayer
 		global iSelectedClass
-		global iSetValue
 		global bRemove
 
 		if inputClass.getFunctionName() == "ChangeBy":
@@ -574,8 +518,8 @@ class WBPlotScreen:
 			pPlot.setOwner(iIndex)
 
 		elif inputClass.getFunctionName() == "ChangeType":
-			iChangeType = screen.getPullDownData("ChangeType", screen.getSelectedPullDownID("ChangeType"))
-			self.placeValueChanger()
+			bRemove = not bRemove
+			iChange = -iChange
 
 		elif inputClass.getFunctionName() == "EditType":
 			iEditType = screen.getPullDownData("EditType", screen.getSelectedPullDownID("EditType"))
@@ -679,34 +623,9 @@ class WBPlotScreen:
 			self.placeStats()
 
 		elif inputClass.getFunctionName() == "WBSigns":
-			iData1 = inputClass.getData1()
-			if iData1 == 7876 or iData1 == 7872:
+			if inputClass.getData1() in [7876, 7872]:
 				iCulturePlayer = inputClass.getData2() /10000
 				self.placeSigns()
-
-			elif iData1 == 22011 or iData1 == 22012:
-				iPlayer = inputClass.getData2()
-				tPlot = (pPlot.getX(), pPlot.getY())
-				met.changeCore(iPlayer, tPlot)
-				self.placeSigns()
-			elif iData1 == 22003:
-				iPlayer = inputClass.getData2()
-				tPlot = (pPlot.getX(), pPlot.getY())
-				if iChangeType < 3:
-					if iChangeType == 0:
-						iValue = pPlot.getSettlerValue(iPlayer) - abs(iChange)
-					elif iChangeType == 1:
-						iValue = pPlot.getSettlerValue(iPlayer) + abs(iChange)
-					elif iChangeType == 2:
-						iValue = iSetValue
-					met.changeSettlerValue(iPlayer, tPlot, iValue)
-					screen.setTableText("WBSigns", 4, iPlayer, str(iValue), "", WidgetTypes.WIDGET_PYTHON, 22003, iPlayer, CvUtil.FONT_CENTER_JUSTIFY)
-				else:
-					popup = Popup.PyPopup(6666, EventContextTypes.EVENTCONTEXT_ALL)
-					popup.setUserData((iPlayer, -1))
-					sText = str(pPlot.getSettlerValue(iPlayer))
-					popup.createEditBox(sText)
-					popup.launch()
 
 		elif inputClass.getFunctionName().find("EditCulture") > -1:
 			if inputClass.getData1() == 1030:
@@ -751,7 +670,7 @@ class WBPlotScreen:
 		elif inputClass.getFunctionName() == "WBPlotBonus":
 			iBonus = inputClass.getData2()
 			if iEditType == 0:
-				if iChangeType != 0:
+				if not bRemove:
 					pPlot.setBonusType(iBonus)
 				else:
 					pPlot.setBonusType(-1)
@@ -761,7 +680,7 @@ class WBPlotScreen:
 					if pLoopPlot.isNone(): continue
 					if iEditType == 1 and pLoopPlot.getArea() != pPlot.getArea(): continue
 					iOld = pLoopPlot.getBonusType(-1)
-					if iChangeType != 0:
+					if not bRemove:
 						pLoopPlot.setBonusType(-1)
 						if iBonus > -1 and bSensibility and not pLoopPlot.canHaveBonus(iBonus, False):
 							pLoopPlot.setBonusType(iOld)
@@ -774,7 +693,7 @@ class WBPlotScreen:
 		elif inputClass.getFunctionName() == "WBPlotImprovement":
 			iImprovement = inputClass.getData2()
 			if iEditType == 0:
-				if iChangeType != 0:
+				if not bRemove:
 					pPlot.setImprovementType(iImprovement)
 				else:
 					pPlot.setImprovementType(-1)
@@ -783,7 +702,7 @@ class WBPlotScreen:
 					pLoopPlot = CyMap().plotByIndex(i)
 					if pLoopPlot.isNone(): continue
 					if iEditType == 1 and pLoopPlot.getArea() != pPlot.getArea(): continue
-					if iChangeType != 0:
+					if not bRemove:
 						if iImprovement > -1 and bSensibility and not pLoopPlot.canHaveImprovement(iImprovement, -1, True): continue
 						pLoopPlot.setImprovementType(iImprovement)
 					else:
@@ -804,7 +723,7 @@ class WBPlotScreen:
 				iFeature = -1
 				iVariety = 0
 			if iEditType == 0:
-				if iChangeType != 0:
+				if not bRemove:
 					pPlot.setFeatureType(iFeature, iVariety)
 				else:
 					pPlot.setFeatureType(-1, 0)
@@ -815,7 +734,7 @@ class WBPlotScreen:
 					if iEditType == 1 and pLoopPlot.getArea() != pPlot.getArea(): continue
 					iOldFeature = pLoopPlot.getFeatureType()
 					iOldVariety = pLoopPlot.getFeatureVariety()
-					if iChangeType != 0:
+					if not bRemove:
 						pLoopPlot.setFeatureType(-1, 0)
 						if iFeature > -1 and bSensibility and not pLoopPlot.canHaveFeature(iFeature):
 							pLoopPlot.setFeatureType(iOldFeature, iOldVariety)
@@ -828,7 +747,7 @@ class WBPlotScreen:
 		elif inputClass.getFunctionName() == "WBPlotRoutes":
 			iRoute = inputClass.getData2()
 			if iEditType == 0:
-				if iChangeType != 0:
+				if not bRemove:
 					pPlot.setRouteType(iRoute)
 				else:
 					pPlot.setRouteType(-1)
@@ -840,7 +759,7 @@ class WBPlotScreen:
 						if pLoopPlot.isImpassable(): continue
 						if pLoopPlot.isWater(): continue
 					if iEditType == 1 and pLoopPlot.getArea() != pPlot.getArea(): continue
-					if iChangeType != 0:
+					if not bRemove:
 						pLoopPlot.setRouteType(iRoute)
 					else:
 						if pLoopPlot.getRouteType() == iRoute:
@@ -875,17 +794,6 @@ class WBPlotScreen:
 		elif inputClass.getFunctionName() == "SensibilityCheck":
 			bSensibility = not bSensibility
 			screen.setState("SensibilityCheck", bSensibility)
-
-		elif inputClass.getFunctionName().find("SetValue") > -1:
-			if inputClass.getData1() == 1030:
-				iSetValue += abs(iChange)
-			elif inputClass.getData1() == 1031:
-				iSetValue -= abs(iChange)
-			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-		elif inputClass.getFunctionName() == "PresetValue":
-			iSetValue = screen.getPullDownData("PresetValue", screen.getSelectedPullDownID("PresetValue"))
-			screen.setTableText("SetValueBox", 0, 0, str(iSetValue), "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
-
 		return 1
 
 	def update(self, fDelta):

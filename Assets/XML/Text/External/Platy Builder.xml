@@ -682,7 +682,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_IN_SPAWN</Tag>
-		<English>Flipzone[NEWLINE](view only)</English>
+		<English>Flipzone</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_CORE</Tag>
@@ -699,18 +699,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_NA</Tag>
 		<English>N/A</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_CORE_ADD</Tag>
-		<English>Add current tile to core</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_CORE_REMOVE</Tag>
-		<English>Remove current tile from core</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_CHANGE_SETTLERVALUE</Tag>
-		<English>Change settlervalue</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_FLIP</Tag>
@@ -739,14 +727,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_TOGGLE_AI_FORBIDDEN</Tag>
 		<English>Toggle AI Forbidden</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_SHOW</Tag>
-		<English>Show</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_HIDE</Tag>
-		<English>Hide</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WB_WARVALUE</Tag>
@@ -903,5 +883,21 @@
 	<TEXT>
 		<Tag>TXT_KEY_WB_DOCMAPS</Tag>
 		<English>DoC Maps</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MOVEMAP</Tag>
+		<English>Move large portions of map at once</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MOVEMAP_RESET0</Tag>
+		<English>Do not change old area</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MOVEMAP_RESET1</Tag>
+		<English>Turn old area to water tiles</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_MOVEMAP_RESET2</Tag>
+		<English>Turn old area to grass tiles</English>
 	</TEXT>
 </Civ4GameText>

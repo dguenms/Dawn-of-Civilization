@@ -196,7 +196,6 @@ class CvEventManager(object):
 			3333 : ('WBUnitScript', self.__eventWBUnitScriptPopupApply, self.__eventWBScriptPopupBegin),
 			4444 : ('WBGameScript', self.__eventWBGameScriptPopupApply, self.__eventWBScriptPopupBegin),
 			5555 : ('WBPlotScript', self.__eventWBPlotScriptPopupApply, self.__eventWBScriptPopupBegin),
-			6666 : ('WBSettlerValue', self.__eventWBSettlerValuePopupApply, self.__eventWBScriptPopupBegin),
 			7777 : ('WBStoredDataValue', self.__eventWBStoredDataValuePopupApply, self.__eventWBScriptPopupBegin),
 ## Platy Builder ##
 		}	
@@ -1198,18 +1197,6 @@ class CvEventManager(object):
 		pPlot = CyMap().plot(userData[0], userData[1])
 		pPlot.setScriptData(CvUtil.convertToStr(sScript))
 		WBPlotScreen.WBPlotScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).placeScript()
-		return
-
-	def __eventWBSettlerValuePopupApply(self, playerID, userData, popupReturn):
-		sScript = popupReturn.getEditBoxString(0)
-		try:
-			int(sScript)
-			bInt = True
-		except ValueError:
-			bInt = False
-		if bInt:
-			iValue = int(sScript)
-			WBPlotScreen.WBPlotScreen().changeSettlerValuePopup(userData[0], iValue)
 		return
 
 	def __eventWBStoredDataValuePopupApply(self, playerID, userData, popupReturn):

@@ -12,18 +12,11 @@ import WBProjectScreen
 import CvPlatyBuilderScreen
 gc = CyGlobalContext()
 
-from Consts import *
-from RFCUtils import utils
-import MapEditorTools as met
-import Areas
-
 iMode = 0
 iSelectedPlayer = -1
 iItem = -1
 lItems = []
 lSelectedItem = [-1, -1]
-bShowAIForbidden = False
-bShowForeignCores = False
 
 class WBInfoScreen:
 
@@ -47,10 +40,6 @@ class WBInfoScreen:
 				gc.getTechInfo,
 				gc.getProjectInfo,
 				]
-
-		# Merijn StabMap colors
-		self.iColorSpawn = "COLOR_PLAYER_DARK_PINK"
-		self.iColorSpawnWater = "COLOR_PLAYER_GREYISH_CYAN"
 
 	def interfaceScreen(self, iPlayerX):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
@@ -89,22 +78,16 @@ class WBInfoScreen:
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIVIC", ()), 11, 11, 11 == iMode)
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_TECH", ()), 12, 12, 12 == iMode)
 		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_PROJECT", ()), 13, 13, 13 == iMode)
-		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_STABILITY_MAPS", ()), 14, 14, 14 == iMode)
-		screen.addPullDownString("ItemType", CyTranslator().getText("TXT_KEY_SPAWN_MAPS", ()), 15, 15, 15 == iMode)
-
-		if iMode < 14:
-			screen.addDropDownBoxGFC("CurrentPlayer", iX + iWidth/2, iY, iWidth/2, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-			for i in xrange(gc.getMAX_PLAYERS()):
-				pPlayerX = gc.getPlayer(i)
-				if pPlayerX.isAlive():
-					sText = pPlayerX.getName()
-					screen.addPullDownString("CurrentPlayer", sText, i, i, i == iSelectedPlayer)
+		
+		screen.addDropDownBoxGFC("CurrentPlayer", iX + iWidth/2, iY, iWidth/2, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
+		for i in xrange(gc.getMAX_PLAYERS()):
+			pPlayerX = gc.getPlayer(i)
+			if pPlayerX.isAlive():
+				sText = pPlayerX.getName()
+				screen.addPullDownString("CurrentPlayer", sText, i, i, i == iSelectedPlayer)
 
 		self.placeMap()
-		if iMode < 14:
-			self.placeItems()
-		else:
-			self.placeItemsStabMap()
+		self.placeItems()
 		self.refreshMap()
 
 	def placePlotData(self):
@@ -134,7 +117,7 @@ class WBInfoScreen:
 			iPlayer = lSelectedItem[0]
 			pPlayer = gc.getPlayer(iPlayer)
 			sText += u" %s (%s)" %(pPlayer.getName(), pPlayer.getCivilizationDescription(0))
-		elif iMode < 14:
+		else:
 			iTeam = lSelectedItem[0]
 			pTeam = gc.getTeam(iTeam)
 			sText += pTeam.getName()
@@ -173,9 +156,8 @@ class WBInfoScreen:
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
 		global lSelectedItem
 		screen.minimapClearAllFlashingTiles()
-		screen.bringMinimapToFront()
 		sHeader = ""
-		if iItem == -1 and iMode < 14:
+		if iItem == -1:
 			screen.hide("InfoHeader")
 			return
 
@@ -187,30 +169,25 @@ class WBInfoScreen:
 		iHeight = (screen.getYResolution() - iY - 40) / 24 * 24 + 2
 
 		nColumns = iWidth / self.iMinColWidth
-		if iMode < 14:
-			screen.addTableControlGFC("PlotTable", nColumns, iX, iY, iWidth, iHeight, False, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
-			for i in xrange(nColumns):
-				screen.setTableColumnHeader("PlotTable", i, "", iWidth/nColumns)
+		screen.addTableControlGFC("PlotTable", nColumns, iX, iY, iWidth, iHeight, False, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
+		for i in xrange(nColumns):
+			screen.setTableColumnHeader("PlotTable", i, "", iWidth/nColumns)
 
 		iCount = 0
 		iMaxRows = -1
-		if iItem != -1 and iMode < 14:
-			lTemp = lItems[iItem][5]
-			if not lSelectedItem in lTemp:
-				if len(lTemp) > 0:
-					lSelectedItem = lTemp[0]
-				else:
-					lSelectedItem = [-1, -1]
-			sHeader = self.Mode[iMode](iItem).getDescription()
-		else:
-			if iItem != -1:
-				sHeader = gc.getCivilizationInfo(gc.getPlayer(iItem).getCivilizationType()).getShortDescription(0)
+		lTemp = lItems[iItem][5]
+		if not lSelectedItem in lTemp:
+			if len(lTemp) > 0:
+				lSelectedItem = lTemp[0]
+			else:
+				lSelectedItem = [-1, -1]
+		sHeader = self.Mode[iMode](iItem).getDescription()
 		screen.setLabel("InfoHeader", "Background", "<font=4b>" + sHeader + "</font>", CvUtil.FONT_CENTER_JUSTIFY, screen.getXResolution()/2, 20, -0.1, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+		screen.bringMinimapToFront()
 
-		if iItem != -1 and iMode < 14:
-			if not lSelectedItem in lTemp:
-				screen.hide("PlotData")
-				return
+		if not lSelectedItem in lTemp:
+			screen.hide("PlotData")
+			return
 		self.placePlotData()
 
 		if iMode < 2:
@@ -283,7 +260,7 @@ class WBInfoScreen:
 				screen.minimapFlashPlot(iX, iY, iColorB, -1)
 				if lSelectedItem == lPlots:
 					screen.minimapFlashPlot(iX, iY, iColorA, -1)
-		elif iMode < 14:
+		else:
 			for lPlots in lItems[iItem][5]:
 				iPlayer = lPlots[0]
 				if iMode > 11:
@@ -300,43 +277,6 @@ class WBInfoScreen:
 				sButton = gc.getLeaderHeadInfo(iLeader).getButton()
 				sText = u"%s%s" % (sColor, pPlayer.getName())
 				screen.setTableText("PlotTable", iColumn, iRow, "<font=3>" + sText + "</color></font>", sButton, WidgetTypes.WIDGET_PYTHON, 7876, iPlayer * 10000 + iLeader, CvUtil.FONT_LEFT_JUSTIFY)
-		elif iMode == 14 and iItem != -1:
-			iPlayer = iItem
-			tCapital = Areas.getCapital(iPlayer)
-			for (x, y) in utils.getWorldPlotsList():
-				plot = gc.getMap().plot(x, y)
-				if plot.isWater(): continue
-				if plot.isCore(iPlayer):
-					iPlotType = iCore
-				else:
-					bForeignCore = Areas.isForeignCore(iPlayer, (x, y))
-					iSettlerValue = plot.getSettlerValue(iPlayer)
-					if iSettlerValue >= 90:
-						if bForeignCore:
-							iPlotType = iContest
-						else:
-							iPlotType = iHistorical
-					elif iSettlerValue == 3 and bShowAIForbidden:
-						iPlotType = iAIForbidden
-					elif bForeignCore and bShowForeignCores:
-						iPlotType = iForeignCore
-					else:
-						iPlotType = -1
-				if iPlotType != -1:
-					iColor = gc.getInfoTypeForString(lStabilityColors[iPlotType])
-					screen.minimapFlashPlot(x, y, iColor, -1)
-
-		elif iMode == 15 and iItem != -1:
-			iColorS = gc.getInfoTypeForString(self.iColorSpawn)
-			iColorSW = gc.getInfoTypeForString(self.iColorSpawnWater)
-			iColorC = gc.getInfoTypeForString(lStabilityColors[2])
-			iPlayer = iItem
-			for tPlot in Areas.getBirthArea(iPlayer):
-				plot = gc.getMap().plot(tPlot[0], tPlot[1])
-				if plot.isWater():  screen.minimapFlashPlot(tPlot[0], tPlot[1], iColorSW, -1)
-				else: screen.minimapFlashPlot(tPlot[0], tPlot[1], iColorS, -1)
-			x, y = Areas.getCapital(iPlayer)
-			screen.minimapFlashPlot(x, y, iColorC, -1)
 
 	def placeItems(self):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
@@ -346,7 +286,7 @@ class WBInfoScreen:
 		iX = 20
 		iY = self.iTable_Y - 20
 		iWidth = screen.getXResolution()/3 - 20
-		iHeight = (screen.getYResolution() - iY - 40) / 24 * 24 + 20
+		iHeight = (screen.getYResolution() - iY - 40) / 24 * 24 + 2
 
 		screen.addTableControlGFC("InfoTable", 3, iX, iY, iWidth, iHeight, True, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
 		screen.setTableColumnHeader("InfoTable", 0, "<font=3>" + CyTranslator().getText("TXT_KEY_DOMESTIC_ADVISOR_NAME", ()) + "</font>", iWidth/2)
@@ -595,48 +535,15 @@ class WBInfoScreen:
 				iItem = item[3]
 			iRow = screen.appendTableRow("InfoTable")
 			screen.setTableText("InfoTable", 0, iRow, "<font=3>" + item[0] + "</font>", item[4], WidgetTypes.WIDGET_PYTHON, iData1, item[3], CvUtil.FONT_LEFT_JUSTIFY)
-			screen.setTableInt("InfoTable", 1, iRow, "<font=3>" + str(item[1]) + "</font>", "", WidgetTypes.WIDGET_PYTHON, iData1, item[3], CvUtil.FONT_CENTER_JUSTIFY)
-			screen.setTableInt("InfoTable", 2, iRow, "<font=3>" + str(item[2]) + "</font>", "", WidgetTypes.WIDGET_PYTHON, iData1, item[3], CvUtil.FONT_CENTER_JUSTIFY)
-
-	def placeItemsStabMap(self):
-		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
-		iX = 20
-		iY = self.iTable_Y - 20
-		iWidth = screen.getXResolution()/3 - 20
-		iHeight = (screen.getYResolution() - iY - 40) / 24 * 24 + 20
-
-		# Merijn Spawnmap
-		screen.addTableControlGFC("InfoTable", 2, iX, iY, iWidth, iHeight, True, True, 24, 24, TableStyles.TABLE_STYLE_STANDARD)
-		screen.setTableColumnHeader("InfoTable", 0, "<font=3>" + CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_CIV", ()) + "</font>", iWidth)
-
-		for iPlayer in range(iNumPlayers):
-			iCiv = gc.getPlayer(iPlayer).getCivilizationType()
-			iRow = screen.appendTableRow("InfoTable")
-			screen.setTableText("InfoTable", 0, iRow, "<font=3>" + gc.getCivilizationInfo(iCiv).getShortDescription(0) + "</font>", gc.getCivilizationInfo(iCiv).getButton(), WidgetTypes.WIDGET_PYTHON, 22005, iPlayer, CvUtil.FONT_LEFT_JUSTIFY)
-
-		if iMode == 14:
-			self.placeStabMapButtons()
-		else:
-			screen.deleteWidget("ToggleForeignCore")
-			screen.deleteWidget("ToggleAIForbidden")
-
-	def placeStabMapButtons(self):
-		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
-		iX = screen.getXResolution()/3 + 20
-		iY = screen.getYResolution() *2/3 + 30
-		iButtonWidth = 200
-		iButtonHeight = 45
-		screen.setButtonGFC("ToggleForeignCore", CyTranslator().getText("TXT_KEY_WB_TOGGLE_FOREIGN_CORES", ()), "", iX, iY, iButtonWidth, iButtonHeight, WidgetTypes.WIDGET_PYTHON, 22006, int(not bShowForeignCores), ButtonStyles.BUTTON_STYLE_STANDARD)
-		screen.setButtonGFC("ToggleAIForbidden", CyTranslator().getText("TXT_KEY_WB_TOGGLE_AI_FORBIDDEN", ()), "", iX + iButtonWidth + 20, iY, iButtonWidth, iButtonHeight, WidgetTypes.WIDGET_PYTHON, 22006, int(not bShowAIForbidden), ButtonStyles.BUTTON_STYLE_STANDARD)
-
+			screen.setTableInt("InfoTable", 1, iRow, "<font=3>" + str(item[1]) + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+			screen.setTableInt("InfoTable", 2, iRow, "<font=3>" + str(item[2]) + "</font>", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_CENTER_JUSTIFY)
+			
 	def handleInput(self, inputClass):
 		screen = CyGInterfaceScreen("WBInfoScreen", CvScreenEnums.WB_INFO)
 		global iSelectedPlayer
 		global iItem
 		global iMode
 		global lSelectedItem
-		global bShowAIForbidden
-		global bShowForeignCores
 
 		if inputClass.getFunctionName() == "PlotData":
 			if iMode == 0:
@@ -650,7 +557,7 @@ class WBInfoScreen:
 			elif iMode < 6:
 				pCity = gc.getPlayer(lSelectedItem[0]).getCity(lSelectedItem[1])
 				if pCity:
-					WBCityEditScreen.WBCityEditScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).interfaceScreen(pCity)
+					WBCityEditScreen.WBCityEditScreen(CvPlatyBuilderScreen.CvWorldBuilderScreen()).interfaceScreen(pCity)				
 			elif iMode < 11:
 				pPlot = CyMap().plot(lSelectedItem[0], lSelectedItem[1])
 				if not pPlot.isNone():
@@ -714,16 +621,7 @@ class WBInfoScreen:
 				iPlayerX = inputClass.getData2() /10000
 				lSelectedItem = [gc.getPlayer(iPlayerX).getTeam(), -1]
 			self.placePlotData()
-
-		elif inputClass.getFunctionName() == "ToggleForeignCore":
-			bShowForeignCores = not bShowForeignCores
-			self.placeStabMapButtons()
-			self.refreshMap()
-		elif inputClass.getFunctionName() == "ToggleAIForbidden":
-			bShowAIForbidden = not bShowAIForbidden
-			self.placeStabMapButtons()
-			self.refreshMap()
-
+			
 		elif inputClass.getFunctionName() == "HideInactive":
 			CvPlatyBuilderScreen.bHideInactive = not CvPlatyBuilderScreen.bHideInactive
 			CvPlatyBuilderScreen.CvWorldBuilderScreen().refreshSideMenu()
@@ -733,6 +631,7 @@ class WBInfoScreen:
 				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
 			screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_LEFT_JUSTIFY, screen.getXResolution()/3 + 20, self.iTable_Y - 22, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 			self.placeItems()
+
 
 	def update(self, fDelta):
 		return 1
