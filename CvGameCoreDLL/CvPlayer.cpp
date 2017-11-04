@@ -13615,8 +13615,8 @@ void CvPlayer::updateHappinessExtraYield()
 // Leoreth
 int CvPlayer::getUnimprovedTileYield(YieldTypes eYield) const
 {
-	FAssertMsg(eIndex < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(eIndex > -1, "Index out of bounds");
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > -1, "Index out of bounds");
 
 	return m_aiUnimprovedTileYield[eYield];
 }
@@ -13624,8 +13624,8 @@ int CvPlayer::getUnimprovedTileYield(YieldTypes eYield) const
 // Leoreth
 void CvPlayer::changeUnimprovedTileYield(YieldTypes eYield, int iChange)
 {
-	FAssertMsg(eIndex < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(eIndex > -1, "Index out of bounds");
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > -1, "Index out of bounds");
 
 	if (iChange != 0)
 	{
