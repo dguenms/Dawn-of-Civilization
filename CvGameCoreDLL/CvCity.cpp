@@ -17997,7 +17997,7 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion) const
 		for (iI = 0; iI < NUM_RELIGIONS; iI++)
 		{
 			eReligion = (ReligionTypes)iI;
-			if (eReligion != eNewReligion && isHasReligion(eReligion))
+			if (eReligion != eNewReligion && isHasReligion(eReligion) && GET_PLAYER(getOwnerINLINE()).getStateReligion() != eReligion)
 			{
 				eCurrentSpread = GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eReligion);
 				if (eCurrentSpread <= eNewReligionSpread)

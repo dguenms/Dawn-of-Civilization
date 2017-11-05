@@ -486,6 +486,7 @@ BUGFIXES
 * Fixed a bug that prevented you from receiving multiple techs in the same turn from different sources
 * Fixed icons for Statesman and Great Statesman specialists
 * Fixed an exploit that allowed to avoid city flips on spawn by reloading the latest autosave
+* Your state religion can never disappear from your cities
 
 PERFORMANCE
 * Optimised how persistent data is stored and accessed in Python
