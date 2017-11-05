@@ -2475,6 +2475,7 @@ class RiseAndFall:
 			pGreece.initUnit(iHoplite, tPlot[0], tPlot[1], UnitAITypes.UNITAI_ATTACK_CITY, DirectionTypes.DIRECTION_SOUTH)
 			tSeaPlot = self.findSeaPlots(tPlot, 1, iCiv)
 			if tSeaPlot:
+				utils.makeUnit(iWorkboat, iCiv, tSeaPlot, 1)
 				pGreece.initUnit(iGalley, tSeaPlot[0], tSeaPlot[1], UnitAITypes.UNITAI_SETTLER_SEA, DirectionTypes.DIRECTION_SOUTH)
 				utils.makeUnit(iSettler, iCiv, tSeaPlot, 1)
 				utils.makeUnit(iMilitia, iCiv, tSeaPlot, 1)
