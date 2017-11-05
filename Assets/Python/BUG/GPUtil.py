@@ -24,11 +24,9 @@ from CvPythonExtensions import *
 import BugUtil
 import FontUtil
 import PlayerUtil
-import RFCUtils
+from RFCUtils import utils
 
 gc = CyGlobalContext()
-
-utils = RFCUtils.RFCUtils()
 
 # Generic GP icon
 g_gpIcon = None

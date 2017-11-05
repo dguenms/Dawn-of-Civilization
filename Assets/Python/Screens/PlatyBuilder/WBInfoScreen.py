@@ -621,7 +621,7 @@ class WBInfoScreen:
 				iPlayerX = inputClass.getData2() /10000
 				lSelectedItem = [gc.getPlayer(iPlayerX).getTeam(), -1]
 			self.placePlotData()
-			
+
 		elif inputClass.getFunctionName() == "HideInactive":
 			CvPlatyBuilderScreen.bHideInactive = not CvPlatyBuilderScreen.bHideInactive
 			CvPlatyBuilderScreen.CvWorldBuilderScreen().refreshSideMenu()
@@ -631,7 +631,6 @@ class WBInfoScreen:
 				sColor = CyTranslator().getText("[COLOR_POSITIVE_TEXT]", ())
 			screen.setText("HideInactive", "Background", sColor + sText + "</color>", CvUtil.FONT_LEFT_JUSTIFY, screen.getXResolution()/3 + 20, self.iTable_Y - 22, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 			self.placeItems()
-
 
 	def update(self, fDelta):
 		return 1

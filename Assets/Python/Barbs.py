@@ -5,14 +5,13 @@ import CvUtil
 import PyHelpers	# LOQ
 #import Popup
 #import cPickle as pickle
-import RFCUtils
+from RFCUtils import utils
 from Consts import *
 from StoredData import data
 
 # globals
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer	# LOQ
-utils = RFCUtils.RFCUtils()
 
 # Spawning cities (Leoreth)
 # Year, coordinates, owner, name, population, unit type, unit number, religions, forced spawn
