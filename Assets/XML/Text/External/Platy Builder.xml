@@ -721,14 +721,6 @@
 		<English>Reset</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_WB_TOGGLE_FOREIGN_CORES</Tag>
-		<English>Toggle Foreign Cores</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_WB_TOGGLE_AI_FORBIDDEN</Tag>
-		<English>Toggle AI Forbidden</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_WB_WARVALUE</Tag>
 		<English>Warvalue</English>
 	</TEXT>

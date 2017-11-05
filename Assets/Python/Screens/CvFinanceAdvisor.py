@@ -7,8 +7,7 @@ import ScreenInput
 import CvScreenEnums
 
 from Consts import *
-import RFCUtils #Rhye
-utils = RFCUtils.RFCUtils() #Rhye
+from RFCUtils import utils
 
 from StoredData import data
 

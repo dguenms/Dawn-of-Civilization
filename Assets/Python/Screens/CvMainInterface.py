@@ -7,7 +7,7 @@ import CvScreenEnums
 import CvEventInterface
 import time
 
-import RFCUtils
+from RFCUtils import utils
 from StoredData import data
 from Consts import *
 
@@ -65,7 +65,6 @@ import WidgetUtil
 import FontUtil
 
 # globals
-utils = RFCUtils.RFCUtils() #Rhye
 gc = CyGlobalContext()
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()

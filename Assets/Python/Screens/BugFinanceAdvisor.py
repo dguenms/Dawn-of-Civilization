@@ -11,15 +11,13 @@ import PlayerUtil
 import TradeUtil
 
 from Consts import *
-import RFCUtils
+from RFCUtils import utils
 from StoredData import data
 
 # globals
 gc = CyGlobalContext()
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
-
-utils = RFCUtils.RFCUtils()
 
 class BugFinanceAdvisor:
 
