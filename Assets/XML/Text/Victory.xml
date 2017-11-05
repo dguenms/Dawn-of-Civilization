@@ -1088,24 +1088,8 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM1</Tag>
-		<English>Build four Buddhist Sanghas and Hindu Ashrams and Wat Preah Pisnulok by 1200 AD</English>
-		<German>Bauen Sie bis zum Jahr 1200 n. Chr. vier Buddhistische und Hinduistische Kl&#246;ster und Wat Preah Pisnulok</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_KHM1_EPIC</Tag>
-		<English>Have more than 18000 Culture in 1450 AD</English>
-		<French>Avoir plus de 18000 en Culture en 1450 ap. J.-C.</French>
-		<German>Haben Sie im Jahr 1450 n. Chr. mehr als 18.000 Kulturpunkte</German>
-		<Italian>Devi avere pi&#249; di 18.000 cultura nel 1450 d.C.</Italian>
-		<Spanish>Conseguir una cultura superior a 18.000 en el 1450 d. C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UHV_KHM1_MARATHON</Tag>
-		<English>Have more than 36000 Culture in 1450 AD</English>
-		<French>Avoir plus de 36000 en Culture en 1450 ap. J.-C.</French>
-		<German>Haben Sie im Jahr 1450 n. Chr. mehr als 36.000 Kulturpunkte</German>
-		<Italian>Devi avere pi&#249; di 36.000 cultura nel 1450 d.C.</Italian>
-		<Spanish>Conseguir una cultura superior a 36.000 en el 1450 d. C.</Spanish>
+		<English>Build four Buddhist Sanghas and Hindu Ashrams and Wat Preah Pisnulok and control them in 1200 AD</English>
+		<German>Bauen und kontrollieren Sie bis zum Jahr 1200 n. Chr. vier Buddhistische und Hinduistische Kl&#246;ster und Wat Preah Pisnulok</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM2_TITLE</Tag>
@@ -1113,9 +1097,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UHV_KHM2</Tag>
-		<English>Have an average city size of 12 or more by 1450 AD</English>
+		<English>Have an average city size of 12 or more in 1450 AD</English>
 		<French>Taille moyenne des villes de 12 ou plus en 1450 ap. J.-C.</French>
-		<German>Haben Sie bis zum Jahr 1450 n. Chr. eine durchschnittliche Stadtgr&#246;&#223;e von 12 oder mehr</German>
+		<German>Haben Sie im Jahr 1450 n. Chr. eine durchschnittliche Stadtgr&#246;&#223;e von 12 oder mehr</German>
 		<Italian>Le tue citt&#224; devono avere una dimensione media di 12 o pi&#249; nel 1450 d.C.</Italian>
 		<Spanish>Tener un tama&#241;o medio de las ciudades de 12 o m&#225;s en el 1450 d. C.</Spanish>
 	</TEXT>

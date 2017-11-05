@@ -883,17 +883,24 @@ def checkTurn(iGameTurn, iPlayer):
 			
 	elif iPlayer == iKhmer:
 	
-		# first goal: build four Hindu and Buddhist monasteries and Wat Preah Pisnulok by 1200 AD
+		# first Khmer goal: build four Buddhist and Hindu monasteries and Wat Preah Pisnulok in 1200 AD
 		if iGameTurn == getTurnForYear(1200):
-			expire(iKhmer, 0)
-			
-		# second goal: have an average city size of 12 by 1450 AD
-		if isPossible(iKhmer, 1):
-			if getAverageCitySize(iKhmer) >= 12.0:
-				win(iKhmer, 1)
+			if isPossible(iKhmer, 0):
+				iBuddhist = getNumBuildings(iKhmer, iBuddhistMonastery)
+				iHindu = getNumBuildings(iKhmer, iHinduMonastery)
+				bWatPreahPisnulok = data.getWonderBuilder(iWatPreahPisnulok) == iKhmer
+				if iBuddhist >= 4 and iHindu >= 4 and bWatPreahPisnulok:
+					win(iKhmer, 0)
+				else:
+					lose(iKhmer, 0)
 				
+		# second goal: have an average city size of 12 in 1450 AD
 		if iGameTurn == getTurnForYear(1450):
-			expire(iKhmer, 1)
+			if isPossible(iKhmer, 1):
+				if getAverageCitySize(iKhmer) >= 12.0:
+					win(iKhmer, 1)
+				else:
+					lose(iKhmer, 1)
 			
 		# third goal: have 8000 culture by 1450 AD
 		if isPossible(iKhmer, 2):
@@ -1714,16 +1721,6 @@ def onBuildingBuilt(iPlayer, iBuilding):
 				bConfucian = getNumBuildings(iKorea, iConfucianCathedral) > 0
 				if bBuddhist and bConfucian:
 					win(iKorea, 0)
-					
-	# first Khmer goal: build four Buddhist and Hindu monasteries and Wat Preah Pisnulok by 1200 AD
-	elif iPlayer == iKhmer:
-		if isPossible(iKhmer, 0):
-			if iBuilding in [iWatPreahPisnulok, iBuddhistMonastery, iHinduMonastery]:
-				iBuddhist = getNumBuildings(iKhmer, iBuddhistMonastery)
-				iHindu = getNumBuildings(iKhmer, iHinduMonastery)
-				bWatPreahPisnulok = data.getWonderBuilder(iWatPreahPisnulok) == iKhmer
-				if iBuddhist >= 4 and iHindu >= 4 and bWatPreahPisnulok:
-					win(iKhmer, 0)
 					
 	# third Polish goal: build a total of three Catholic, Orthodox and Protestant Cathedrals by 1600 AD
 	elif iPlayer == iPoland:
