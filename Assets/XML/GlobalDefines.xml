@@ -367,7 +367,7 @@
 	</Define>
 	<Define>
 		<DefineName>POWER_HEALTH_CHANGE</DefineName>
-		<iDefineIntVal>-1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>DIRTY_POWER_HEALTH_CHANGE</DefineName>
