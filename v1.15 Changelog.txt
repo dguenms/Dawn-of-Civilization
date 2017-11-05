@@ -44,7 +44,7 @@ GAME RULES
 * Some experience is lost on unit upgrade depending on the combat strength difference between the units
 * City unrest after conquest depends on culture level instead of population
 * Happiness from military units stationed in a city is limited to half the city size
-* Units in cities can only be damaged as much as the current city defense modifier
+* Units in cities can be damaged by collateral damage only as much as the current city defense modifier
 * Entering enemy waters consumes all remaining movement points
 * Unhealthiness from power is applied for every building that consumes power
 * Enemy workers cannot be captured unless enabled by a civic
@@ -489,5 +489,3 @@ BUGFIXES
 
 PERFORMANCE
 * Optimised how persistent data is stored and accessed in Python
-
-
