@@ -17,10 +17,10 @@ gc = CyGlobalContext()
 
 # see gc.getNumFlavorTypes() and gc.getFlavorTypes()
 # not available via gc.getInfoTypeForString(), thus the hard-coding here :(
-NUM_FLAVORS = 8
+NUM_FLAVORS = 9
 FLAVORS = [ "Military", "Religion", "Production",
 			"Gold", "Science", "Culture",
-			"Growth", "Espionage" ]
+			"Growth", "Espionage", "Admin" ]
 (
 	FLAVOR_MILITARY,
 	FLAVOR_RELIGION,
@@ -30,6 +30,7 @@ FLAVORS = [ "Military", "Religion", "Production",
 	FLAVOR_CULTURE,
 	FLAVOR_GROWTH,
 	FLAVOR_ESPIONAGE,
+	FLAVOR_ADMIN,
 ) = range(NUM_FLAVORS)
 
 class TechPrefs:

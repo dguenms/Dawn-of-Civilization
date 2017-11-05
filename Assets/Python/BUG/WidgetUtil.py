@@ -41,10 +41,9 @@
 from CvPythonExtensions import *
 import BugConfig
 import BugUtil
-import RFCUtils
+from RFCUtils import utils
+import TechPrefs
 gc = CyGlobalContext()
-
-utils = RFCUtils.RFCUtils()
 
 ## Widget Types
 
@@ -129,6 +128,12 @@ def getWidgetHelp(argsList):
 	# Leoreth: Byzantine UP: bribe button
 	if iData1 == 10001:
 		return CyTranslator().getText("TXT_KEY_ACTION_BYZANTINE_UP", ())
+		
+	if iData1 == 12001:
+		szText = BugUtil.getPlainText("TXT_KEY_BUG_TECH_PREFS_ALL") + "\n"
+		for pTech in TechPrefs.TechPrefs().getAllFlavorTechs(iData2):
+			szText += "<img=%s size=24></img>" % pTech.getInfo().getButton().replace(" ", "_")
+		return szText
 	
 	func = g_widgetHelp.get(eWidgetType)
 	if func:
