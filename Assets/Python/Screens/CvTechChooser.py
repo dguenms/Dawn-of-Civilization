@@ -856,8 +856,7 @@ class CvTechChooser:
 		screen = self.getScreen()
 		iGPX = 25
 
-		for j in xrange(len(self.GreatPeopleList)):
-			iUnit = self.GreatPeopleList[j]
+		for iUnit in self.GreatPeopleList:
 			for iFlavor in xrange(gc.getNumFlavorTypes()):
 				if gc.getUnitInfo(iUnit).getFlavorValue(iFlavor) > 0:
 					break
@@ -874,12 +873,13 @@ class CvTechChooser:
 			iGPX += self.GP_ICON_SIZE
 
 			if iTech > -1:
-				screen.addDDSGFCAt("GreatPeopliPrereq" + str(iUnit),"TechBottomPanel", gc.getTechInfo(iTech).getButton(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iTech, -1, False)
-				iGPX += self.GP_ICON_SIZE * 2
+				screen.addDDSGFCAt("GreatPeoplePrereq" + str(iUnit),"TechBottomPanel", gc.getTechInfo(iTech).getButton(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_TECH_TREE, iTech, -1, False)
 			else:
-				screen.addDDSGFCAt("GreatPeopliPrereq" + str(iUnit),"TechBottomPanel", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
-				iGPX += self.GP_ICON_SIZE * 2
-
+				screen.addDDSGFCAt("GreatPeoplePrereq" + str(iUnit),"TechBottomPanel", CyArtFileMgr().getInterfaceArtInfo("INTERFACE_BUTTONS_CANCEL").getPath(), iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
+			iGPX += self.GP_ICON_SIZE
+			
+			screen.addDDSGFCAt("GreatPeopleTechList" + str(iUnit),"TechBottomPanel", "Art/Interface/Buttons/TechList.dds", iGPX, 16, self.GP_ICON_SIZE, self.GP_ICON_SIZE, WidgetTypes.WIDGET_GENERAL, 12001, iFlavor, False)
+			iGPX += self.GP_ICON_SIZE * 2
 
 
 	def getWidth(self, xDiff):
