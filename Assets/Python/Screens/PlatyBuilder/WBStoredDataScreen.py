@@ -173,7 +173,7 @@ class WBStoredDataScreen:
 		global iSelectedCiv
 		global iWarList
 
-		bCiv = lLists[iSelectedList] in ["lFirstDiscovered", "lWonderBuilder", "lReligionFounder", "lFirstEntered"]
+		bCiv = lLists[iSelectedList] in ["lFirstDiscovered", "lWonderBuilder", "lReligionFounder", "lFirstEntered", "lFirstGreatPeople"]
 
 		iWidth = (screen.getXResolution() * 3 / 4 - 40) / 2 - 40
 		iHeightMax = self.allignTable((screen.getYResolution() - 85 - 50 - 50) / 2)
@@ -239,6 +239,9 @@ class WBStoredDataScreen:
 			elif item == "lFirstEntered": # Eras
 				sText = gc.getEraInfo(i).getDescription()
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+			elif item == "lFirstGreatPeople": # Great People
+				sText = gc.getUnitInfo(lGreatPeopleUnits[i]).getDescription()
+				screen.setTableText("WBListTableTwo", 0, i, sText, gc.getUnitInfo(lGreatPeopleUnits[i]).getButton(), WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 			elif item == "lStabilityCategoryValues": # Stability Categories
 				sText = CyTranslator().getText(StabilityTypesTexts[i], ())
 				screen.setTableText("WBListTableTwo", 0, i, sText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -394,7 +397,7 @@ class WBStoredDataScreen:
 				else:
 					data.players[iSelectedCiv].__dict__[sList][iItem] = not data.players[iSelectedCiv].__dict__[sList][iItem]
 			elif isinstance(scriptDict[sList][iItem], int):
-				bCiv = sList in ["lFirstDiscovered", "lWonderBuilder", "lReligionFounder", "lFirstEntered"]
+				bCiv = sList in ["lFirstDiscovered", "lWonderBuilder", "lReligionFounder", "lFirstEntered", "lFirstGreatPeople"]
 				if bCiv:
 					data.__dict__[sList][iItem] = iSelectedCiv
 				else:
